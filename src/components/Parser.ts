@@ -40,7 +40,7 @@ export interface ParsedItem {
 
 const LATEST_MAP_VARIANT = 'Metamorph'
 
-enum WellKnownType {
+export enum WellKnownType {
   Map = 'Map',
   UniqueFlask = 'Unique Flask',
   MetamorphPart = 'Metamorph Part'

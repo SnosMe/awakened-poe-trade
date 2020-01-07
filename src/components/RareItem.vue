@@ -56,21 +56,27 @@ export default {
       required: true
     }
   },
-  async created () {
-    try {
-      this.loading = true
-      this.price = await requestPoeprices(this.item)
-    } catch (err) {
-      this.error = err.message
-    } finally {
-      this.loading = false
-    }
-  },
   data () {
     return {
       price: null,
       error: null,
       loading: false
+    }
+  },
+  watch: {
+    item: {
+      immediate: true,
+      async handler (item) {
+        try {
+          this.loading = true
+          this.price = null
+          this.price = await requestPoeprices(this.item)
+        } catch (err) {
+          this.error = err.message
+        } finally {
+          this.loading = false
+        }
+      }
     }
   },
   computed: {

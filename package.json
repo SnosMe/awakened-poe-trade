@@ -15,6 +15,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "iohook": "^0.6.2",
+    "luxon": "^1.21.3",
     "node-window-manager": "^2.0.1",
     "robotjs": "^0.6.0",
     "tailwindcss": "^1.1.4",

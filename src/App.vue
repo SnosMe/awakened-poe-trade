@@ -23,9 +23,13 @@ export default {
 </script>
 
 <style lang="postcss">
-@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
 @import url('https://web.poecdn.com/css/font.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.table-stripped tbody tr:nth-child(odd) {
+  background: theme('colors.gray.900');
+}
 </style>

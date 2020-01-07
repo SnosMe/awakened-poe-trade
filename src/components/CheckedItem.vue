@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 border-b border-gray-700" v-if="price">
+  <div class="p-4 border-b border-gray-700" v-if="price">
     <div class="bg-gray-900 mb-2 p-1 leading-none">{{ item.name }}</div>
     <rare-item v-if="item.rarity === 'Rare' && item.computed.type !== 'Map'" :item="item" />
     <div v-else class="flex items-center pb-4">
@@ -31,6 +31,9 @@
         }]" padding="2" />
       </div>
     </div>
+    <div>
+      <trade-listing :item="item" />
+    </div>
   </div>
 </template>
 
@@ -38,10 +41,11 @@
 import { Parser, parseClipboard } from './Parser'
 import { Prices } from './Prices'
 import RareItem from './RareItem'
+import TradeListing from './TradeListing'
 
 export default {
   name: 'CheckedItem',
-  components: { RareItem },
+  components: { RareItem, TradeListing },
   props: {
     clipboard: String
   },

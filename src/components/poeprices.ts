@@ -1,8 +1,6 @@
 import { stringify } from 'querystring'
-import { ParsedItem, ItemRarity } from './Parser'
+import { ParsedItem, ItemRarity, WellKnownType } from './Parser'
 import { Leagues } from './Leagues'
-
-let MAX_1 = false
 
 /* eslint-disable camelcase */
 interface PoepricesApiResponse {
@@ -29,9 +27,7 @@ interface RareItemPrice {
 }
 
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
-  console.assert(item.rarity === ItemRarity.Rare)
-  if (MAX_1) return null
-  // MAX_1 = true
+  console.assert(item.rarity === ItemRarity.Rare && item.computed.type !== WellKnownType.Map)
 
   const query = stringify({
     i: Buffer.from(item.rawText).toString('base64'),
