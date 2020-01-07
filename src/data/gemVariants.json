@@ -1,0 +1,290 @@
+[
+  {
+    "variant": "1",
+    "name": "Portal",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 21,
+    "qualityTo": 23,
+    "corrupted": null
+  },
+  {
+    "variant": "1",
+    "name": "Detonate Mines",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 21,
+    "qualityTo": 23,
+    "corrupted": null
+  },
+  {
+    "variant": "1",
+    "name": "Empower",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "1c",
+    "name": "Empower",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "2",
+    "name": "Empower",
+    "levelFrom": 2,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "2c",
+    "name": "Empower",
+    "levelFrom": 2,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "3",
+    "name": "Empower",
+    "levelFrom": 3,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "3c",
+    "name": "Empower",
+    "levelFrom": 3,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "4c",
+    "name": "Empower",
+    "levelFrom": 4,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "1",
+    "name": "Enhance",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "1c",
+    "name": "Enhance",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "2",
+    "name": "Enhance",
+    "levelFrom": 2,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "2c",
+    "name": "Enhance",
+    "levelFrom": 2,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "3",
+    "name": "Enhance",
+    "levelFrom": 3,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "3c",
+    "name": "Enhance",
+    "levelFrom": 3,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "4c",
+    "name": "Enhance",
+    "levelFrom": 4,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "1",
+    "name": "Enlighten",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "1c",
+    "name": "Enlighten",
+    "levelFrom": 1,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "2",
+    "name": "Enlighten",
+    "levelFrom": 2,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "2c",
+    "name": "Enlighten",
+    "levelFrom": 2,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "3",
+    "name": "Enlighten",
+    "levelFrom": 3,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": false
+  },
+  {
+    "variant": "3c",
+    "name": "Enlighten",
+    "levelFrom": 3,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "4c",
+    "name": "Enlighten",
+    "levelFrom": 4,
+    "qualityFrom": 0,
+    "levelTo": 1,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "21/23c",
+    "name": null,
+    "levelFrom": 21,
+    "qualityFrom": 23,
+    "levelTo": 21,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "21/20c",
+    "name": null,
+    "levelFrom": 21,
+    "qualityFrom": 17,
+    "levelTo": 21,
+    "qualityTo": 20,
+    "corrupted": true
+  },
+  {
+    "variant": "21c",
+    "name": null,
+    "levelFrom": 21,
+    "qualityFrom": 0,
+    "levelTo": 21,
+    "qualityTo": 16,
+    "corrupted": true
+  },
+  {
+    "variant": "20c",
+    "name": null,
+    "levelFrom": 20,
+    "qualityFrom": 0,
+    "levelTo": 20,
+    "qualityTo": 16,
+    "corrupted": true
+  },
+  {
+    "variant": "20/23c",
+    "name": null,
+    "levelFrom": 20,
+    "qualityFrom": 23,
+    "levelTo": 20,
+    "qualityTo": 23,
+    "corrupted": true
+  },
+  {
+    "variant": "20/20c",
+    "name": null,
+    "levelFrom": 20,
+    "qualityFrom": 17,
+    "levelTo": 20,
+    "qualityTo": 20,
+    "corrupted": true
+  },
+  {
+    "variant": "20/20",
+    "name": null,
+    "levelFrom": 20,
+    "qualityFrom": 17,
+    "levelTo": 20,
+    "qualityTo": 20,
+    "corrupted": false
+  },
+  {
+    "variant": "20",
+    "name": null,
+    "levelFrom": 20,
+    "qualityFrom": 0,
+    "levelTo": 20,
+    "qualityTo": 16,
+    "corrupted": false
+  },
+  {
+    "variant": "1/20",
+    "name": null,
+    "levelFrom": 1,
+    "qualityFrom": 17,
+    "levelTo": 19,
+    "qualityTo": 20,
+    "corrupted": false
+  }
+]

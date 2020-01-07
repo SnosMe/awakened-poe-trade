@@ -1,0 +1,57 @@
+{
+  "name": "xeno_vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "iohook": "^0.6.2",
+    "node-window-manager": "^2.0.1",
+    "robotjs": "^0.6.0",
+    "tailwindcss": "^1.1.4",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vue-trend-chart": "^0.15.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@vue/cli-plugin-babel": "^3.12.0",
+    "@vue/cli-plugin-eslint": "^3.12.0",
+    "@vue/cli-plugin-typescript": "^3.12.0",
+    "@vue/cli-service": "^3.12.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "electron": "^6.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "postcss-nested": "^4.2.1",
+    "typescript": "^3.4.3",
+    "vue-cli-plugin-electron-builder": "^1.4.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "iohook": {
+    "targets": [
+      "node-72",
+      "electron-73"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  }
+}
