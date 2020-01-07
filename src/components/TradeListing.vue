@@ -3,6 +3,7 @@
     <i class="fas fa-exclamation-circle pr-1 text-gray-600"></i>
     <span>Requesting search results...</span>
   </div>
+  <!-- @TODO: use css grids to achieve sticky header row -->
   <table v-else-if="results" class="table-stripped w-full">
     <thead>
       <tr class="text-left">
@@ -13,7 +14,7 @@
         <th class="px-2 w-full">Listed</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="overflow: scroll;">
       <tr v-for="result in results" :key="result.id">
         <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
         <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>

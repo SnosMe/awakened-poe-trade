@@ -1,14 +1,11 @@
 <template>
   <div class="titlebar">
     <div class="flex">
-      <button class="button" title="Settings"><i class="fas fa-cog"></i></button>
+      <!-- <button class="button" title="Settings"><i class="fas fa-cog"></i></button> -->
       <button class="button" title="Update price data"><i class="fas fa-sync-alt" :class="{ 'fa-spin': isLoading }"></i></button>
-      <button class="button" title="Close all"><i class="fas fa-times-circle"></i></button>
     </div>
     <div class="text-gray-600 truncate leading-none px-4">Awakened PoE Trade</div>
     <div class="flex">
-      <button tabindex="-1" class="button" title="Lock"><i class="fas fa-unlock"></i></button>
-      <button tabindex="-1" class="button" title="Minimize"><i class="fas fa-window-minimize"></i></button>
       <button tabindex="-1" class="button" title="Close"><i class="fas fa-window-close"></i></button>
     </div>
   </div>

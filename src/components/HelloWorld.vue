@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-gray-800 text-gray-200">
+  <div class="flex flex-col bg-gray-800 text-gray-200 layout-column">
     <checked-item v-for="(item, idx) in price" :key="idx"
       :clipboard="item" />
   </div>
@@ -479,7 +479,7 @@ export default {
   },
   data () {
     return {
-      items: ITEMS
+      items: [ITEMS[20]]
     }
   },
   created () {

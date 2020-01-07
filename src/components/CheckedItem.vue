@@ -1,7 +1,7 @@
 <template>
-  <div class="p-4 border-b border-gray-700" v-if="price">
+  <div class="p-4 border-b border-gray-700 layout-column" v-if="price">
     <div class="bg-gray-900 mb-2 p-1 leading-none">{{ item.name }}</div>
-    <rare-item v-if="item.rarity === 'Rare' && item.computed.type !== 'Map'" :item="item" />
+    <rare-item v-if="item.rarity === 'Rare' && item.computed.type !== 'Map'" :item="item" class="mb-2" />
     <div v-else class="flex items-center pb-4">
       <div class="flex items-center justify-center flex-1">
         <div class="w-8 h-8 flex items-center justify-center">
@@ -31,7 +31,7 @@
         }]" padding="2" />
       </div>
     </div>
-    <div>
+    <div class="flex overflow-auto">
       <trade-listing :item="item" />
     </div>
   </div>

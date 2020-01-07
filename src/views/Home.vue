@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    OMYHOF
-    ------
+  <div class="home layout-column">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>

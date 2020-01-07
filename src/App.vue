@@ -1,12 +1,10 @@
 <template>
-  <div id="app" class="text-sm font-fontin-small-caps">
-    <app-titlebar />
-    <div id="nav">
+  <div id="app" class="text-sm font-fontin-small-caps bg-gray-800">
+    <app-titlebar style="align-self: stretch;" />
+    <div class="flex-grow layout-column">
       <app-bootstrap />
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
 
@@ -30,6 +28,32 @@ export default {
 @tailwind utilities;
 
 .table-stripped tbody tr:nth-child(odd) {
-  background: theme('colors.gray.900');
+  background: #353f52;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.layout-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 </style>
