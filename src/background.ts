@@ -1,6 +1,8 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import path from 'path'
+import { app, protocol, BrowserWindow, Tray, Menu } from 'electron'
+import { autoUpdater } from 'electron-updater'
 import {
   createProtocol,
   installVueDevtools
@@ -11,6 +13,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win: BrowserWindow | null
+let tray: Tray | null
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
@@ -20,6 +23,7 @@ function createWindow () {
   win = new BrowserWindow({
     width: 460,
     height: 200,
+    icon: path.join(__static, 'icon.png'),
     fullscreenable: false,
     alwaysOnTop: true,
     skipTaskbar: true,
@@ -40,6 +44,7 @@ function createWindow () {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
+    autoUpdater.checkForUpdatesAndNotify()
   }
 
   win.once('ready-to-show', () => {
@@ -49,6 +54,22 @@ function createWindow () {
   win.on('closed', () => {
     win = null
   })
+}
+
+function createTray () {
+  tray = new Tray(path.join(__static, 'icon.png')) // @TODO .ico for windows
+
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Close',
+      click: () => {
+        win && win.close()
+      }
+    }
+  ])
+
+  tray.setToolTip('Awakened PoE Trade')
+  tray.setContextMenu(contextMenu)
 }
 
 // Quit when all windows are closed.
@@ -86,6 +107,7 @@ app.on('ready', async () => {
     }
   }
   createWindow()
+  createTray()
 
   setupShowHide(win!)
   setupShortcuts(win!)

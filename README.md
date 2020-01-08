@@ -1,4 +1,4 @@
-# Awakened PoE Trade
+# ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
 ## Project setup
 ```
