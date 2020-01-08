@@ -2,7 +2,7 @@
 
 ## Tool showcase
 
-**DISCLAIMER** Not final wanted results are shown, but what you will see using the tool today.
+**DISCLAIMER** Not the final desired results are shown, but what you will see using the tool today.
 
 | Gem | Rare | Unique | Currency |
 |-----|------|--------|----------|
@@ -12,32 +12,33 @@
 |-----|
 | [![](http://img.youtube.com/vi/PCohkEmWRT8/0.jpg)](http://www.youtube.com/watch?v=PCohkEmWRT8 "") |
 
-## What item types it already supports?
-At first I want to rephrase this question to "Window shows a bunch of numbers, to what of them I can trust?"
+## What types of items are supported?
+First I want to rephrase this question in
+At first I want to rephrase this question to "The tool shows a bunch of numbers, which of these can I trust?"
 - Rare items
-  - [x] Price prediction
-  - [ ] Trade results
-  - [ ] Rare Maps
+  - :heavy_check_mark: Price prediction
+  - :heavy_multiplication_x: Trade results
+  - :heavy_multiplication_x: Rare Maps
 - Currency, Fragments, Fossils...
-  - [x] poe.ninja instant prices and trends
-  - [x] Trade results
+  - :heavy_check_mark: poe.ninja instant prices and trends
+  - :heavy_check_mark: Trade results
 - Unique items
-  - [-] poe.ninja instant prices and trends
-    - [ ] 5, 6 Linked sockets
-    - [x] Item
-  - [x] 
-  - [-] Trade results
-    - [x] ordered by min price, without applying +/- 20% mod rolls
-    - [x] 5, 6 Linked sockets
-    - [ ] Has 2 Abyssal Sockets...
-    - [ ] Corrupted implicits
+  - :warning: poe.ninja instant prices and trends
+    - :heavy_multiplication_x: 5, 6 Linked sockets
+    - :heavy_check_mark: Item
+  - :heavy_check_mark: 
+  - :warning: Trade results
+    - :heavy_check_mark: ordered by min price, without applying +/- 20% mod rolls
+    - :heavy_check_mark: 5, 6 Linked sockets
+    - :heavy_multiplication_x: Has 2 Abyssal Sockets...
+    - :heavy_multiplication_x: Corrupted implicits
 - Gems
-  - [x] poe.ninja instant prices and trends
-    - [x] Level, Quality, Corrupted
-  - [-] Trade results
-    - [x] Level
-    - [x] Quality
-    - [-] Corrupted
+  - :heavy_check_mark: poe.ninja instant prices and trends
+    - :heavy_check_mark: Level, Quality, Corrupted
+  - :warning: Trade results
+    - :heavy_check_mark: Level
+    - :heavy_check_mark: Quality
+    - :warning: Corrupted
 
 ### Acknowledgments
 
