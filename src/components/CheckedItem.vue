@@ -36,6 +36,7 @@
         <trade-listing :item="item" />
       </div>
     </div>
+    <div class="p-4" v-else-if="item">"{{ item.name }}" recognized as a valid PoE item, but not supported currently!</div>
   </div>
 </template>
 
@@ -82,7 +83,6 @@ export default {
           if (this.item.rarity === 'Rare' && this.item.computed.type !== 'Map') {
             return this.item
           } else {
-            if (!Prices.findByDetailsId(this.item.computed.detailsId)) console.log(this.item)
             return Prices.findByDetailsId(this.item.computed.detailsId)
           }
         }
