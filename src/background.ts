@@ -5,7 +5,7 @@ import {
   createProtocol,
   installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
-import { setupShortcuts } from './components/electron-main'
+import { setupShortcuts, setupShowHide } from './components/electron-main'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -19,11 +19,13 @@ function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
     width: 460,
-    height: 950,
+    height: 200,
     fullscreenable: false,
     alwaysOnTop: true,
     skipTaskbar: true,
     frame: false,
+    show: false,
+    backgroundColor: '#2d3748', // gray-800
     webPreferences: {
       nodeIntegration: true,
       webSecurity: false
@@ -33,12 +35,16 @@ function createWindow () {
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string)
-    // if (!process.env.IS_TEST) win.webContents.openDevTools()
+    if (!process.env.IS_TEST) win.webContents.openDevTools({ mode: 'detach' })
   } else {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+
+  win.once('ready-to-show', () => {
+    win!.show()
+  })
 
   win.on('closed', () => {
     win = null
@@ -81,6 +87,7 @@ app.on('ready', async () => {
   }
   createWindow()
 
+  setupShowHide(win!)
   setupShortcuts(win!)
 })
 

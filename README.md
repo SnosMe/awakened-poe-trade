@@ -1,4 +1,4 @@
-# xeno_vue
+# Awakened PoE Trade
 
 ## Project setup
 ```

@@ -1,17 +1,15 @@
 <template>
   <div class="home layout-column">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <checked-item />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+<script>
+import CheckedItem from '@/components/CheckedItem'
 
-export default Vue.extend({
-  name: 'home',
+export default {
   components: {
-    HelloWorld
+    CheckedItem
   }
-})
+}
 </script>

@@ -1,15 +1,4 @@
-<template>
-  <div class="flex flex-col bg-gray-800 text-gray-200 layout-column">
-    <checked-item v-for="(item, idx) in price" :key="idx"
-      :clipboard="item" />
-  </div>
-</template>
-
-<script>
-import { ipcRenderer } from 'electron'
-import CheckedItem from './CheckedItem'
-
-const ITEMS = [`Rarity: Unique
+export default [`Rarity: Unique
 Devoto's Devotion
 Nightmare Bascinet
 --------
@@ -470,28 +459,3 @@ Adds 2 to 4 Fire Damage to Attacks with this Weapon per 10 Strength
 --------
 Hunter Item
 `]
-
-export default {
-  name: 'HelloWorld',
-  components: { CheckedItem },
-  props: {
-    msg: String
-  },
-  data () {
-    return {
-      items: [ITEMS[20]]
-    }
-  },
-  created () {
-    ipcRenderer.on('price-check', (e, clipboard) => {
-      this.items = [clipboard]
-      // this.items.push(clipboard)
-    })
-  },
-  computed: {
-    price () {
-      return this.items
-    }
-  }
-}
-</script>

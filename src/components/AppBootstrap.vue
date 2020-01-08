@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
 import { Leagues } from './Leagues'
 import { Prices } from './Prices'
 
@@ -19,6 +20,7 @@ export default {
   async created () {
     await Leagues.load()
     await Prices.load()
+    ipcRenderer.send('price-check-visible', false)
   },
   computed: {
     leaguesService: () => Leagues,

@@ -199,6 +199,7 @@ class PriceService {
           }
         }
       } catch (e) {
+        // @TODO: poeninja often returns empty document body, retry failed
         console.log(e)
       }
     }

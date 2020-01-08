@@ -9,6 +9,7 @@ export async function pollClipboard (delay: number, limit: number): Promise<stri
       const textAfter = clipboard.readText()
 
       if (textBefore !== textAfter) {
+        clipboard.writeText(textBefore)
         resolve(textAfter)
       } else {
         elapsed += delay

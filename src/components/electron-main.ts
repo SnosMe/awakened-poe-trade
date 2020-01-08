@@ -1,21 +1,30 @@
-import { BrowserWindow, screen, Rectangle } from 'electron'
+import { BrowserWindow, screen, Rectangle, ipcMain, Point } from 'electron'
 import { keyTap } from 'robotjs'
 import { windowManager } from 'node-window-manager'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 
+const KEY_CTRL = 29
+const KEY_D = 32
+
+const CLOSE_THRESHOLD_PX = 40
+
+let isPollingClipboard = false
+let checkPressPosition: Point | undefined
+let isCtrlDown = false
+
 export function setupShortcuts (win: BrowserWindow) {
-  let IS_CHECKING = false
-  ioHook.registerShortcut([29, 32], () => {
-    if (!IS_CHECKING) {
-      IS_CHECKING = true
-      pollClipboard(32, 2000)
+  ioHook.registerShortcut([KEY_CTRL, KEY_D], () => {
+    if (!isPollingClipboard) {
+      isPollingClipboard = true
+      pollClipboard(32, 1750)
         .then(clipboard => {
           win.webContents.send('price-check', clipboard)
         })
         .catch(() => { /* nothing bad */ })
-        .finally(() => { IS_CHECKING = false })
+        .finally(() => { isPollingClipboard = false })
     }
+    checkPressPosition = screen.getCursorScreenPoint()
 
     // NOTE:
     // keyTap('c', ['control']) must be never used
@@ -28,14 +37,35 @@ export function setupShortcuts (win: BrowserWindow) {
     // Alternative impl:
     // - use Ctrl+C, as original XenoTrade does
     keyTap('c')
-
-    positionWindow(win)
   }, () => {
     // both keys released
   })
 
+  ioHook.on('mousemove', (e: { x: number, y: number }) => {
+    if (!isPollingClipboard && checkPressPosition && !isCtrlDown) {
+      const distance = Math.hypot(e.x - checkPressPosition.x, e.y - checkPressPosition.y)
+      if (distance > CLOSE_THRESHOLD_PX) {
+        checkPressPosition = undefined
+        win.hide()
+      }
+    }
+  })
+
   const DEBUG_IO_HOOK = false
   ioHook.start(DEBUG_IO_HOOK)
+}
+
+export function setupShowHide (win: BrowserWindow) {
+  ipcMain.on('price-check-visible', (e, isVisible) => {
+    if (isVisible) {
+      positionWindow(win)
+      win.showInactive()
+      // setup listener mouse move
+    } else {
+      checkPressPosition = undefined
+      win.hide()
+    }
+  })
 }
 
 function positionWindow (tradeWindow: BrowserWindow) {
@@ -64,11 +94,11 @@ function positionWindow (tradeWindow: BrowserWindow) {
       }
     }
 
-    // step 2 - remove title space. Values taken on Windows 10. Also DPI may apply?
+    // step 2 - remove title space. 32px taken on Windows 10. Also DPI may apply?
     if (!isWindowedFullscreen) {
       if (isMaximized) {
-        poePos.y += 23
-        poePos.height -= 23
+        poePos.y += (32 - WINDOW_OFFSET)
+        poePos.height -= (32 - WINDOW_OFFSET)
       } else {
         poePos.y += 32
         poePos.height -= 32
