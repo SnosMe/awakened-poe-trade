@@ -41,7 +41,9 @@ First I want to rephrase this question in "The tool shows a bunch of numbers, wh
   - :warning: Trade results
     - :heavy_check_mark: Level
     - :heavy_check_mark: Quality
-    - :warning: Corrupted
+    - :heavy_check_mark: Corrupted
+    - :heavy_check_mark: Empower, Enlighten, Enhance
+    - :heavy_multiplication_x: Gem experience
 
 ### Requirements
 - Supported OS: Windows
