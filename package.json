@@ -10,11 +10,16 @@
     "electron:publish": "vue-cli-service electron:build -p onTagOrDraft",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "patch-package && electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
-  "author": { "name": "Alexander Drozdov" },
-  "repository": { "type": "git", "url": "https://github.com/SnosMe/awakened-poe-trade.git" },
+  "author": {
+    "name": "Alexander Drozdov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SnosMe/awakened-poe-trade.git"
+  },
   "main": "background.js",
   "dependencies": {
     "core-js": "^2.6.5",
@@ -41,7 +46,9 @@
     "electron-icon-builder": "^1.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "patch-package": "^6.2.0",
     "postcss-nested": "^4.2.1",
+    "postinstall-postinstall": "^2.0.0",
     "typescript": "^3.4.3",
     "vue-cli-plugin-electron-builder": "^1.4.4",
     "vue-template-compiler": "^2.6.10"

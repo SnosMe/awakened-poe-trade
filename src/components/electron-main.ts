@@ -1,11 +1,13 @@
 import { BrowserWindow, screen, Rectangle, ipcMain, Point } from 'electron'
-import { keyTap } from 'robotjs'
 import { windowManager } from 'node-window-manager'
+import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 
 const KEY_CTRL = 29
 const KEY_D = 32
+const KEY_F5 = 63
+const POE_TITLE = 'Path of Exile'
 
 const CLOSE_THRESHOLD_PX = 40
 
@@ -14,6 +16,11 @@ let checkPressPosition: Point | undefined
 let isCtrlDown = false
 
 export function setupShortcuts (win: BrowserWindow) {
+  // A value of zero causes the thread to relinquish the remainder of its
+  // time slice to any other thread that is ready to run. If there are no other
+  // threads ready to run, the function returns immediately
+  robotjs.setKeyboardDelay(0)
+
   ioHook.registerShortcut([KEY_CTRL, KEY_D], () => {
     if (!isPollingClipboard) {
       isPollingClipboard = true
@@ -30,13 +37,7 @@ export function setupShortcuts (win: BrowserWindow) {
     // keyTap('c', ['control']) must be never used
     // - this callback called on "keypress" not "keyup"
     // - ability to price multiple items with holded Ctrl, while variant above will change Ctrl key state to "up"
-    // Known bugs:
-    // - press Ctrl+D very very often, or just hold down Ctrl+D
-    //   After releasing keys "Character Screen" will flesh ~times~
-    //   Because Ctrl is released, but event loop still has events
-    // Alternative impl:
-    // - use Ctrl+C, as original XenoTrade does
-    keyTap('c')
+    robotjs.keyTap('c')
   }, () => {
     // both keys released
   })
@@ -51,6 +52,20 @@ export function setupShortcuts (win: BrowserWindow) {
     }
   })
 
+  ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, () => {
+    const window = windowManager.getActiveWindow()
+    if (window && window.getTitle() === POE_TITLE) {
+      robotjs.keyTap('enter')
+      robotjs.typeString('/hideout')
+      robotjs.keyTap('enter')
+      // restore the last chat
+      robotjs.keyTap('enter')
+      robotjs.keyTap('up')
+      robotjs.keyTap('up')
+      robotjs.keyTap('escape')
+    }
+  })
+
   const DEBUG_IO_HOOK = false
   ioHook.start(DEBUG_IO_HOOK)
 }
@@ -60,7 +75,6 @@ export function setupShowHide (win: BrowserWindow) {
     if (isVisible) {
       positionWindow(win)
       win.showInactive()
-      // setup listener mouse move
     } else {
       checkPressPosition = undefined
       win.hide()
