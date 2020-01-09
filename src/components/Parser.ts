@@ -7,6 +7,7 @@ import {
   TAG_RARITY,
   TAG_STACK_SIZE,
   TAG_SOCKETS,
+  TAG_QUALITY,
   CORRUPTED,
   UNIDENTIFIED,
   SUFFIX_INFLUENCE
@@ -74,7 +75,7 @@ export function parseClipboard (clipboard: string) {
   const parsers = new Set([
     parseUnidentified,
     parseItemLevel,
-    parseGemLevel,
+    parseGem,
     parseStackSize,
     parseCorrupted,
     parseInfluence,
@@ -199,13 +200,16 @@ function parseItemLevel (section: string[], item: ParsedItem) {
   return SECTION_SKIPPED
 }
 
-function parseGemLevel (section: string[], item: ParsedItem) {
+function parseGem (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Gem) {
     return PARSER_SKIPPED
   }
   if (section[1]?.startsWith(TAG_GEM_LEVEL)) {
     // "Level: 20 (Max)"
     item.gemLevel = parseInt(section[1].substr(TAG_GEM_LEVEL.length), 10)
+
+    parseQualityNested(section, item)
+
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -238,6 +242,16 @@ function parseSockets (section: string[], item: ParsedItem) {
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
+}
+
+function parseQualityNested (section: string[], item: ParsedItem) {
+  for (const line of section) {
+    if (line.startsWith(TAG_QUALITY)) {
+      // "Quality: +20% (augmented)"
+      item.quality = parseInt(line.substr(TAG_QUALITY.length), 10)
+      break
+    }
+  }
 }
 
 // detailsId
