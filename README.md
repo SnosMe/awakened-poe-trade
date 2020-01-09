@@ -21,7 +21,7 @@ First I want to rephrase this question in "The tool shows a bunch of numbers, wh
 - Rare items
   - :heavy_check_mark: Price prediction
   - :heavy_multiplication_x: Trade results
-  - :heavy_multiplication_x: Rare Maps
+- Maps
 - Currency, Fragments, Fossils...
   - :heavy_check_mark: poe.ninja instant prices and trends
   - :heavy_check_mark: Trade results

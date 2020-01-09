@@ -1,4 +1,4 @@
-import { ParsedItem } from './Parser'
+import { ParsedItem, WellKnownType } from './Parser'
 import { ItemRarity } from './parser-constants'
 import { Leagues } from './Leagues'
 
@@ -16,6 +16,13 @@ interface TradeRequest { /* eslint-disable camelcase */
     name?: string
     type?: string
     filters: {
+      type_filters: {
+        filters: {
+          rarity: {
+            option?: 'unique'
+          }
+        }
+      }
       socket_filters: {
         filters: {
           links: {
@@ -36,6 +43,14 @@ interface TradeRequest { /* eslint-disable camelcase */
           }
           corrupted: {
             option?: 'true' | 'false'
+          }
+        }
+      }
+      map_filters: {
+        filters: {
+          map_tier: {
+            min?: number
+            max?: number
           }
         }
       }
@@ -86,6 +101,11 @@ export async function requestTradeResultList (item: ParsedItem) {
     query: {
       status: { option: 'online' },
       filters: {
+        type_filters: {
+          filters: {
+            rarity: {}
+          }
+        },
         socket_filters: {
           filters: {
             links: {}
@@ -96,6 +116,11 @@ export async function requestTradeResultList (item: ParsedItem) {
             quality: {},
             gem_level: {},
             corrupted: {}
+          }
+        },
+        map_filters: {
+          filters: {
+            map_tier: {}
           }
         }
       }
@@ -129,6 +154,24 @@ export async function requestTradeResultList (item: ParsedItem) {
     }
   } else if (item.rarity === ItemRarity.DivinationCard) {
     query.type = item.name
+  } else if (item.computed.type === WellKnownType.Map) {
+    query.type = item.computed.mapName
+    if (item.rarity === ItemRarity.Unique) {
+      query.filters.type_filters.filters.rarity.option = 'unique'
+
+      // NOTE:
+      // 1 baseType = 1 Unique map. Now there is no need for this condition
+      // if (!item.isUnidentified) {
+      //   query.name = item.name
+      // }
+    }
+
+    query.filters.map_filters.filters.map_tier.min = item.mapTier
+    query.filters.map_filters.filters.map_tier.max = item.mapTier
+
+    // @TODO
+    // I did not find a filter in TradeMacro: by quantity and pack size
+    // Should this be added for juicy corrupted maps?
   } else if (item.rarity === ItemRarity.Unique) {
     query.name = item.name
     query.type = item.baseType
@@ -151,6 +194,10 @@ export async function requestTradeResultList (item: ParsedItem) {
 
   // console.log(body)
 
+  // patch query for GGG api
+  if (!query.filters.type_filters.filters.rarity.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.type_filters!.filters!.rarity = undefined
+  }
   const response = await fetch(`https://www.pathofexile.com/api/trade/search/${Leagues.selected}`, {
     method: 'POST',
     headers: {
