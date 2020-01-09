@@ -1,5 +1,7 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
+[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.1.1/Awakened-PoE-Trade-Setup-0.1.1.exe "")
+
 [Download for Windows v0.1.1](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.1.1/Awakened-PoE-Trade-Setup-0.1.1.exe)
 
 ## Tool showcase
@@ -46,6 +48,9 @@ First I want to rephrase this question in "The tool shows a bunch of numbers, wh
 - Run as Administrator
 
 That’s all, no Java, no .NET Framework, no AHK . . .
+
+### Usage
+- Press `Ctrl + D` to check the price of the item
 
 ### Tool end goals
 - One Tool To Rule Them All
