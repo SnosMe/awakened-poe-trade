@@ -34,6 +34,9 @@ interface TradeRequest { /* eslint-disable camelcase */
             min?: number
             max?: number
           }
+          corrupted: {
+            option?: 'true' | 'false'
+          }
         }
       }
     }
@@ -91,7 +94,8 @@ export async function requestTradeResultList (item: ParsedItem) {
         misc_filters: {
           filters: {
             quality: {},
-            gem_level: {}
+            gem_level: {},
+            corrupted: {}
           }
         }
       }
@@ -133,6 +137,12 @@ export async function requestTradeResultList (item: ParsedItem) {
     if (item.rarity !== ItemRarity.Rare && item.rarity !== ItemRarity.Magic) {
       query.type = item.name
     }
+  }
+
+  if (item.isCorrupted) {
+    query.filters.misc_filters.filters.corrupted.option = 'true'
+  } else {
+    query.filters.misc_filters.filters.corrupted.option = 'false'
   }
 
   if (item.linkedSockets) {
