@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { Leagues, LeaguesService } from './Leagues'
+import { nameToDetailsId } from './Parser'
 
 /* eslint-disable camelcase */
 interface NinjaCurrencyInfo {
@@ -46,7 +47,7 @@ interface NinjaItemInfo {
   icon: string
   mapTier: number
   levelRequired: number
-  baseType: null
+  baseType: string | null
   stackSize: number
   variant: null
   prophecyText: null
@@ -184,10 +185,13 @@ class PriceService {
           const priceData: {
             lines: NinjaItemInfo[]
           } = await response.json()
-
           for (const item of priceData.lines) {
-            PRICE_BY_DETAILS_ID.set(item.detailsId, {
-              detailsId: item.detailsId,
+            const detailsId = dataType.type === 'UniqueFlask'
+              ? nameToDetailsId(`${item.name} ${item.baseType}`) // seems poe.ninja keeps this for compatability
+              : item.detailsId
+
+            PRICE_BY_DETAILS_ID.set(detailsId, {
+              detailsId,
               icon: item.icon,
               name: item.name,
               receive: {

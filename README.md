@@ -25,10 +25,11 @@ First I want to rephrase this question in "The tool shows a bunch of numbers, wh
   - :heavy_check_mark: Trade results
 - Unique items
   - :warning: poe.ninja instant prices and trends
-    - :heavy_multiplication_x: 5, 6 Linked sockets
+    - :heavy_check_mark: 5, 6 Linked sockets
     - :heavy_check_mark: Item
+    - :heavy_multiplication_x: Uniques with variants (Doryani's Invitation, Atziri's Splendour, Vessel of Vinktar)
   - :warning: Trade results
-    - :heavy_check_mark: ordered by min price, without applying +/- 20% mod rolls
+    - :warning: ordered by min price (without applying +/- 20% mod rolls)
     - :heavy_check_mark: 5, 6 Linked sockets
     - :heavy_multiplication_x: Has 2 Abyssal Sockets...
     - :heavy_multiplication_x: Corrupted implicits

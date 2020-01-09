@@ -246,17 +246,12 @@ function getDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
     return getGemDetailsId(item)
   }
-
   if (item.computed.type === WellKnownType.Map) {
     return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
   }
-
   if (item.rarity === ItemRarity.Unique) {
-    if (item.baseType?.endsWith(' Flask')) {
-      return nameToDetailsId(item.name)
-    }
+    return getUniqueDetailsId(item)
   }
-
   if (item.rarity === ItemRarity.Rare) {
     return getRareItemDetailsId(item)
   }
@@ -284,7 +279,17 @@ function getRareItemDetailsId (item: ParsedItem) {
   return nameToDetailsId(`${item.baseType || item.name} 82`)
 }
 
-function nameToDetailsId (name: string) {
+function getUniqueDetailsId (item: ParsedItem) {
+  let id = nameToDetailsId(`${item.name} ${item.baseType}`)
+
+  if (item.linkedSockets) {
+    id += `-${item.linkedSockets}l`
+  }
+
+  return id
+}
+
+export function nameToDetailsId (name: string) {
   return name
     .toLowerCase()
     .replace(/\s/g, '-')
