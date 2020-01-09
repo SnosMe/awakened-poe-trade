@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { Leagues, LeaguesService } from './Leagues'
-import { nameToDetailsId } from './Parser'
+import { nameToDetailsId } from './trends/getDetailsId'
 
 /* eslint-disable camelcase */
 interface NinjaCurrencyInfo {
@@ -69,7 +69,7 @@ interface NinjaItemInfo {
   detailsId: string
 }
 
-interface ItemInfo {
+export interface ItemInfo {
   name: string
   icon: string
   pay?: {

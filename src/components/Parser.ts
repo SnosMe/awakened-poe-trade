@@ -12,6 +12,8 @@ import {
   UNIDENTIFIED,
   SUFFIX_INFLUENCE
 } from './parser-constants'
+import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
+import { ItemInfo, Prices } from './Prices'
 
 export {
   ItemRarity,
@@ -35,11 +37,10 @@ export interface ParsedItem {
   computed: {
     type?: WellKnownType
     mapName?: string
-    detailsId: string
+    icon?: string
+    trend?: ItemInfo
   }
 }
-
-const LATEST_MAP_VARIANT = 'Metamorph'
 
 export enum WellKnownType {
   Map = 'Map',
@@ -70,6 +71,9 @@ export function parseClipboard (clipboard: string) {
   const parsed = parseNamePlate(sections[0])
   if (!parsed) {
     return null
+  } else if (parsed.name === 'Chaos Orb') {
+    // need to think how to handle it
+    return null
   }
 
   const parsers = new Set([
@@ -97,9 +101,9 @@ export function parseClipboard (clipboard: string) {
   }
 
   parsed.rawText = clipboard
-  parsed.computed.detailsId = getDetailsId(parsed)
+  enrichItem(parsed)
 
-  return parsed
+  return Object.freeze(parsed)
 }
 
 function parseComputedInfo (section: string[], item: ParsedItem) {
@@ -254,58 +258,31 @@ function parseQualityNested (section: string[], item: ParsedItem) {
   }
 }
 
-// detailsId
+// --------
 
-function getDetailsId (item: ParsedItem) {
+function enrichItem (item: ParsedItem) {
+  const detailsId = getDetailsId(item)
+  const trend = Prices.findByDetailsId(detailsId)
+
+  item.computed.trend = trend
+  item.computed.icon = trend?.icon || Prices.findByDetailsId(getIconDetailsId(item))?.icon
+}
+
+// this must be removed, since I want to depend on poe.ninja only for prices
+export function getIconDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
-    return getGemDetailsId(item)
+    return nameToDetailsId(`${item.name} 20`)
   }
   if (item.computed.type === WellKnownType.Map) {
+    const LATEST_MAP_VARIANT = 'Metamorph'
     return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
   }
   if (item.rarity === ItemRarity.Unique) {
-    return getUniqueDetailsId(item)
+    return nameToDetailsId(`${item.name} ${item.baseType}`)
   }
   if (item.rarity === ItemRarity.Rare) {
-    return getRareItemDetailsId(item)
+    return nameToDetailsId(`${item.baseType || item.name} 82`)
   }
 
   return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
-}
-
-function getGemDetailsId (item: ParsedItem) {
-  let id = nameToDetailsId(item.name)
-
-  if (item.gemLevel! > 1) {
-    id += `-${item.gemLevel}`
-  }
-  if (item.quality! > 0) {
-    id += `-${item.quality}`
-  }
-  if (item.isCorrupted) {
-    id += 'c'
-  }
-
-  return id
-}
-
-function getRareItemDetailsId (item: ParsedItem) {
-  return nameToDetailsId(`${item.baseType || item.name} 82`)
-}
-
-function getUniqueDetailsId (item: ParsedItem) {
-  let id = nameToDetailsId(`${item.name} ${item.baseType}`)
-
-  if (item.linkedSockets) {
-    id += `-${item.linkedSockets}l`
-  }
-
-  return id
-}
-
-export function nameToDetailsId (name: string) {
-  return name
-    .toLowerCase()
-    .replace(/\s/g, '-')
-    .replace(/'|,/g, '')
 }
