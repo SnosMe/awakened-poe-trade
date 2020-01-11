@@ -92,6 +92,7 @@ export function parseClipboard (clipboard: string) {
       return section
     }
   }, sections[0])
+  sections = sections.filter(section => section.length)
 
   const parsed = parseNamePlate(sections[0])
   if (!parsed) {
