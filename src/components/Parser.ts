@@ -10,6 +10,7 @@ import {
   TAG_QUALITY,
   CORRUPTED,
   UNIDENTIFIED,
+  PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
 import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
@@ -43,20 +44,44 @@ export interface ParsedItem {
 }
 
 export enum WellKnownType {
-  Map = 'Map',
-  UniqueFlask = 'Unique Flask',
-  MetamorphPart = 'Metamorph Part'
+  Map = 'Map'
 }
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
 const PARSER_SKIPPED = -1
 
+interface ParserFn {
+  (section: string[], item: ParsedItem):
+    typeof SECTION_PARSED |
+    typeof SECTION_SKIPPED |
+    typeof PARSER_SKIPPED
+}
+
+interface ParserAfterHookFn {
+  (item: ParsedItem): void
+}
+
+const parsers: ParserFn[] = [
+  parseUnidentified,
+  parseItemLevel,
+  parseGem,
+  parseStackSize,
+  parseCorrupted,
+  parseInfluence,
+  parseMap,
+  parseSockets
+]
+
+const parserAfterHooks = new Map<ParserFn, ParserAfterHookFn>([
+  [parseUnidentified, normalizeName]
+])
+
 export function parseClipboard (clipboard: string) {
   const lines = clipboard.split(/\s*\n/)
   lines.pop()
 
-  const sections: string[][] = [[]]
+  let sections: string[][] = [[]]
   lines.reduce((section, line) => {
     if (line !== '--------') {
       section.push(line)
@@ -76,27 +101,21 @@ export function parseClipboard (clipboard: string) {
     return null
   }
 
-  const parsers = new Set([
-    parseUnidentified,
-    parseItemLevel,
-    parseGem,
-    parseStackSize,
-    parseCorrupted,
-    parseInfluence,
-    parseMap,
-    parseSockets,
-    parseComputedInfo
-  ])
-
-  for (const section of sections) {
-    for (const parser of parsers) {
+  // each section can be parsed at most by one parser
+  for (const parser of parsers) {
+    for (const section of sections) {
       const result = parser(section, parsed)
       if (result === SECTION_PARSED) {
-        parsers.delete(parser)
+        sections = sections.filter(s => s !== section)
         break
       } else if (result === PARSER_SKIPPED) {
-        parsers.delete(parser)
+        break
       }
+    }
+
+    const afterHook = parserAfterHooks.get(parser)
+    if (afterHook) {
+      afterHook(parsed)
     }
   }
 
@@ -106,7 +125,18 @@ export function parseClipboard (clipboard: string) {
   return Object.freeze(parsed)
 }
 
-function parseComputedInfo (section: string[], item: ParsedItem) {
+function normalizeName (item: ParsedItem) {
+  if (
+    item.rarity === ItemRarity.Normal || // quality >= +1%
+    item.rarity === ItemRarity.Magic || // unidentified && quality >= +1%
+    item.rarity === ItemRarity.Rare || // unidentified && quality >= +1%
+    item.rarity === ItemRarity.Unique // unidentified && quality >= +1%
+  ) {
+    if (item.name.startsWith(PREFIX_SUPERIOR)) {
+      item.name = item.name.substr(PREFIX_SUPERIOR.length)
+    }
+  }
+
   if (item.computed.type == null) {
     // Map
     const mapName = (item.isUnidentified || item.rarity === ItemRarity.Normal)
@@ -117,14 +147,7 @@ function parseComputedInfo (section: string[], item: ParsedItem) {
       item.computed.type = WellKnownType.Map
       item.computed.mapName = mapName
     }
-
-    // Metamorph
-    if (section[0] === `Combine this with four other different samples in Tane's Laboratory.`) {
-      item.computed.type = WellKnownType.MetamorphPart
-      return SECTION_PARSED
-    }
   }
-  return SECTION_SKIPPED
 }
 
 function parseMap (section: string[], item: ParsedItem) {
