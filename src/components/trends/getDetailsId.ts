@@ -8,7 +8,12 @@ export function getDetailsId (item: ParsedItem) {
     return getGemDetailsId(item)
   }
   if (item.computed.type === WellKnownType.Map) {
-    return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
+    if (item.rarity === ItemRarity.Unique) {
+      // @TODO if unidentified get name by baseType
+      return nameToDetailsId(`${item.name} t${item.mapTier}`)
+    } else {
+      return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
+    }
   }
   if (item.rarity === ItemRarity.Unique) {
     return getUniqueDetailsId(item)
