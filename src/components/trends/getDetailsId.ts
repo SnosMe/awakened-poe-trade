@@ -1,4 +1,5 @@
 import { ParsedItem, ItemRarity, WellKnownType } from '../Parser'
+import { SPECIAL_SUPPORT_GEM } from '../pathofexile-trade'
 
 const LATEST_MAP_VARIANT = 'Metamorph'
 
@@ -22,7 +23,7 @@ function getGemDetailsId (item: ParsedItem) {
   if (item.gemLevel! > 1) {
     id += `-${item.gemLevel}`
   }
-  if (item.quality! > 0) {
+  if (item.quality! > 0 && !SPECIAL_SUPPORT_GEM.includes(item.name)) {
     id += `-${item.quality}`
   }
   if (item.isCorrupted) {

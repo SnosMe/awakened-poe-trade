@@ -8,7 +8,7 @@ const TradeOpts = {
   GemQualityRange: 0
 }
 
-const EXACT_GEM_LEVEL = ['Empower Support', 'Enlighten Support', 'Enhance Support']
+export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
@@ -141,7 +141,7 @@ export async function requestTradeResultList (item: ParsedItem) {
       query.filters.misc_filters.filters.quality.min = item.quality
     }
 
-    if (EXACT_GEM_LEVEL.includes(item.name)) {
+    if (SPECIAL_SUPPORT_GEM.includes(item.name)) {
       query.filters.misc_filters.filters.gem_level.min = item.gemLevel
       query.filters.misc_filters.filters.gem_level.max = item.gemLevel
     } else if (item.gemLevel! >= TradeOpts.GemLevel) {
