@@ -122,12 +122,6 @@ class PriceService {
     chaosExaRate: 1
   })
 
-  private leagues: LeaguesService
-
-  constructor (leagues: LeaguesService) {
-    this.leagues = leagues
-  }
-
   get isLoading () { return this.state.isLoading }
 
   get isLoaded () { return this.state.isLoaded }
@@ -145,7 +139,7 @@ class PriceService {
 
     for (const dataType of PRICE_DATA) {
       try {
-        const response = await fetch(`https://poe.ninja/api/data/${dataType.overview}overview?league=${this.leagues.selected}&type=${dataType.type}`)
+        const response = await fetch(`https://poe.ninja/api/data/${dataType.overview}overview?league=${Leagues.selected}&type=${dataType.type}`)
 
         if (dataType.overview === 'currency') {
           const priceData: {
@@ -239,4 +233,4 @@ class PriceService {
   }
 }
 
-export const Prices = new PriceService(Leagues)
+export const Prices = new PriceService()

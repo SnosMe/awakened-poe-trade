@@ -23,6 +23,7 @@
   "main": "background.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "iohook": "^0.6.2",
     "luxon": "^1.21.3",

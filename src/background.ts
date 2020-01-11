@@ -6,6 +6,7 @@ import { setupShortcuts } from './main/shortcuts'
 import { createTray } from './main/tray'
 import { createWindow } from './main/window'
 import { setupShowHide } from './main/positioning'
+import { setupConfig } from './main/config'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Scheme must be registered before the app is ready
@@ -26,6 +27,7 @@ app.on('ready', async () => {
     }
   }
 
+  setupConfig()
   setupShowHide()
   createWindow()
   createTray()
