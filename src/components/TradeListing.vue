@@ -58,12 +58,23 @@ export default {
           this.loading = true
           this.results = []
           const list = await requestTradeResultList(item)
-          this.results = await requestResults(list.id, list.result.slice(0, 10))
-          this.loading = false
 
-          if (list.total > 10) {
-            this.results.push(...await requestResults(list.id, list.result.slice(10, 20)))
-          }
+          await Promise.all([
+            requestResults(list.id, list.result.slice(0, 10))
+              .then(results => {
+                if (this.results.length) {
+                  // if second request loaded faster
+                  this.results = [...results, ...this.results]
+                } else {
+                  this.results = results
+                }
+                this.loading = false
+              }),
+            (list.total > 10)
+              ? requestResults(list.id, list.result.slice(10, 20))
+                .then(results => { this.results.push(...results) })
+              : Promise.resolve()
+          ])
         } catch (err) {
           this.error = err.message
         } finally {
