@@ -243,7 +243,6 @@ export function createTradeRequest (item: ParsedItem) {
     ) {
       if (item.itemLevel > 86) {
         query.filters.misc_filters.filters.ilvl.min = 86
-        item.itemLevel = 86
         // @TODO limit by item type
         // If (RegExMatch(subtype, "i)Helmet|Gloves|Boots|Body Armour|Shield|Quiver")) {
         //   Return (iLvl >= 84) ? 84 : false
