@@ -10,6 +10,7 @@ import {
   TAG_QUALITY,
   CORRUPTED,
   UNIDENTIFIED,
+  PREFIX_VAAL,
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
@@ -65,6 +66,7 @@ interface ParserAfterHookFn {
 const parsers: ParserFn[] = [
   parseUnidentified,
   parseItemLevel,
+  parseVaalGem,
   parseGem,
   parseStackSize,
   parseCorrupted,
@@ -225,6 +227,16 @@ function parseUnidentified (section: string[], item: ParsedItem) {
 function parseItemLevel (section: string[], item: ParsedItem) {
   if (section[0].startsWith(TAG_ITEM_LEVEL)) {
     item.itemLevel = Number(section[0].substr(TAG_ITEM_LEVEL.length))
+    return SECTION_PARSED
+  }
+  return SECTION_SKIPPED
+}
+
+function parseVaalGem (section: string[], item: ParsedItem) {
+  if (item.rarity !== ItemRarity.Gem) return PARSER_SKIPPED
+
+  if (section[0] === `${PREFIX_VAAL}${item.name}`) {
+    item.name = section[0]
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
