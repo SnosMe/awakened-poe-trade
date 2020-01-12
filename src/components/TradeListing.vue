@@ -44,6 +44,7 @@
       <thead>
         <tr class="text-left">
           <th class="px-2">Price</th>
+          <th v-if="item.stackSize" class="px-2">Stock</th>
           <th v-if="misc_filters.ilvl.min" class="px-2">iLvl</th>
           <th v-if="item.rarity === 'Gem'" class="px-2">Level</th>
           <th v-if="item.rarity === 'Gem'" class="px-2">Quality</th>
@@ -53,6 +54,7 @@
       <tbody style="overflow: scroll;">
         <tr v-for="result in results" :key="result.id">
           <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
+          <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
           <td v-if="misc_filters.ilvl.min" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
           <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
           <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>

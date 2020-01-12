@@ -81,6 +81,7 @@ interface FetchResult {
   id: string
   item: {
     ilvl?: number
+    stackSize?: number
     corrupted?: boolean
     properties?: Array<{
       name: 'Quality' | 'Level'
@@ -100,6 +101,7 @@ interface FetchResult {
 interface PricingResult {
   id: string
   itemLevel?: number
+  stackSize?: number
   corrupted?: boolean
   quality?: string
   level?: string
@@ -292,6 +294,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
     return {
       id: result.id,
       itemLevel: result.item.ilvl,
+      stackSize: result.item.stackSize,
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.name === 'Quality')?.values[0][0],
       level: result.item.properties?.find(prop => prop.name === 'Level')?.values[0][0],
