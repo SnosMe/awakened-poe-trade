@@ -33,6 +33,10 @@ interface TradeRequest { /* eslint-disable camelcase */
       }
       misc_filters: {
         filters: {
+          ilvl: {
+            min?: number
+            max?: number
+          }
           quality: {
             min?: number
             max?: number
@@ -76,6 +80,7 @@ interface SearchResult {
 interface FetchResult {
   id: string
   item: {
+    ilvl?: number
     corrupted?: boolean
     properties?: Array<{
       name: 'Quality' | 'Level'
@@ -94,6 +99,7 @@ interface FetchResult {
 
 interface PricingResult {
   id: string
+  itemLevel?: number
   corrupted?: boolean
   quality?: string
   level?: string
@@ -119,6 +125,7 @@ export function createTradeRequest (item: ParsedItem) {
         },
         misc_filters: {
           filters: {
+            ilvl: {},
             quality: {},
             gem_level: {},
             corrupted: {},
@@ -227,6 +234,33 @@ export function createTradeRequest (item: ParsedItem) {
     }
   }
 
+  if (item.itemLevel) {
+    if (
+      item.rarity !== ItemRarity.Unique &&
+      item.rarity !== ItemRarity.DivinationCard &&
+      item.computed.type !== WellKnownType.Map
+      /* @TODO && !isJewel https://pathofexile.gamepedia.com/Jewel#Affixes */
+    ) {
+      if (item.itemLevel > 86) {
+        query.filters.misc_filters.filters.ilvl.min = 86
+        item.itemLevel = 86
+        // @TODO limit by item type
+        // If (RegExMatch(subtype, "i)Helmet|Gloves|Boots|Body Armour|Shield|Quiver")) {
+        //   Return (iLvl >= 84) ? 84 : false
+        // }
+        // Else If (RegExMatch(subtype, "i)Weapon")) {
+        //   Return (iLvl >= 83) ? 83 : false
+        // }
+        // Else If (RegExMatch(subtype, "i)Belt|Amulet|Ring")) {
+        //   Return (iLvl >= 83) ? 83 : false
+        // }
+        // Return false
+      } else {
+        query.filters.misc_filters.filters.ilvl.min = item.itemLevel
+      }
+    }
+  }
+
   return body
 }
 
@@ -258,6 +292,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
   return data.result.map(result => {
     return {
       id: result.id,
+      itemLevel: result.item.ilvl,
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.name === 'Quality')?.values[0][0],
       level: result.item.properties?.find(prop => prop.name === 'Level')?.values[0][0],

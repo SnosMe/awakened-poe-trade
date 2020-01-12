@@ -7,6 +7,7 @@
     <div v-if="!item.stackSize" class="flex flex-wrap mb-2 -m-1">
       <div v-if="socket_filters.links.min" class="trade-tag">Links: {{ socket_filters.links.min }}</div>
       <div v-if="map_filters.map_tier.min" class="trade-tag">Map Tier: {{ map_filters.map_tier.min }}</div>
+      <div v-if="misc_filters.ilvl.min" class="trade-tag">Item Level: {{ misc_filters.ilvl.min }}</div>
       <div v-if="misc_filters.gem_level.min" class="trade-tag">Level: {{ misc_filters.gem_level.min }}</div>
       <div v-if="misc_filters.quality.min" class="trade-tag">Quality: {{ misc_filters.quality.min }}%</div>
       <div v-if="misc_filters.shaper_item.option === 'true'" class="trade-tag flex items-center">
@@ -43,6 +44,7 @@
       <thead>
         <tr class="text-left">
           <th class="px-2">Price</th>
+          <th v-if="misc_filters.ilvl.min" class="px-2">iLvl</th>
           <th v-if="item.rarity === 'Gem'" class="px-2">Level</th>
           <th v-if="item.rarity === 'Gem'" class="px-2">Quality</th>
           <th class="px-2 w-full">Listed</th>
@@ -51,6 +53,7 @@
       <tbody style="overflow: scroll;">
         <tr v-for="result in results" :key="result.id">
           <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
+          <td v-if="misc_filters.ilvl.min" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
           <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
           <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
           <td class="font-sans text-xs px-2">{{ getRelativeTime(result.listedAt) }}</td>
