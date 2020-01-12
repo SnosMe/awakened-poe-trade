@@ -33,7 +33,7 @@ export interface ParsedItem {
   isUnidentified: boolean
   isCorrupted: boolean
   gemLevel?: number
-  influence: ItemInfluence // @TODO items can have second transfered influence type
+  influences: ItemInfluence[]
   rawText: string
   computed: {
     type?: WellKnownType
@@ -179,7 +179,7 @@ function parseNamePlate (section: string[]) {
         baseType: section[2],
         isUnidentified: false,
         isCorrupted: false,
-        influence: ItemInfluence.Normal,
+        influences: [] as ItemInfluence[],
         computed: {}
       } as ParsedItem
     default:
@@ -189,17 +189,19 @@ function parseNamePlate (section: string[]) {
 
 function parseInfluence (section: string[], item: ParsedItem) {
   if (section[0].endsWith(SUFFIX_INFLUENCE)) {
-    const influence = section[0].slice(0, -SUFFIX_INFLUENCE.length)
-    switch (influence) {
-      case ItemInfluence.Crusader:
-      case ItemInfluence.Elder:
-      case ItemInfluence.Shaper:
-      case ItemInfluence.Hunter:
-      case ItemInfluence.Redeemer:
-      case ItemInfluence.Warlord:
-        item.influence = influence
-        return SECTION_PARSED
+    for (const line of section) {
+      const influence = line.slice(0, -SUFFIX_INFLUENCE.length)
+      switch (influence) {
+        case ItemInfluence.Crusader:
+        case ItemInfluence.Elder:
+        case ItemInfluence.Shaper:
+        case ItemInfluence.Hunter:
+        case ItemInfluence.Redeemer:
+        case ItemInfluence.Warlord:
+          item.influences.push(influence)
+      }
     }
+    return SECTION_PARSED
   }
   return SECTION_SKIPPED
 }

@@ -4,11 +4,35 @@
     <span>Requesting search results...</span>
   </div>
   <div v-else-if="results" class="layout-column overflow-y-auto overflow-x-hidden">
-    <div v-if="!item.stackSize" class="flex mb-2 -mx-1">
+    <div v-if="!item.stackSize" class="flex flex-wrap mb-2 -m-1">
       <div v-if="socket_filters.links.min" class="trade-tag">Links: {{ socket_filters.links.min }}</div>
       <div v-if="map_filters.map_tier.min" class="trade-tag">Map Tier: {{ map_filters.map_tier.min }}</div>
       <div v-if="misc_filters.gem_level.min" class="trade-tag">Level: {{ misc_filters.gem_level.min }}</div>
       <div v-if="misc_filters.quality.min" class="trade-tag">Quality: {{ misc_filters.quality.min }}%</div>
+      <div v-if="misc_filters.shaper_item.option === 'true'" class="trade-tag flex items-center">
+        <img class="w-5 h-5 -m-1" src="@/assets/influence/Shaper.png">
+        <span class="ml-2">Shaper</span>
+      </div>
+      <div v-if="misc_filters.elder_item.option === 'true'" class="trade-tag flex items-center">
+        <img class="w-5 h-5 -m-1" src="@/assets/influence/Elder.png">
+        <span class="ml-2">Elder</span>
+      </div>
+      <div v-if="misc_filters.crusader_item.option === 'true'" class="trade-tag flex items-center">
+        <img class="w-5 h-5 -m-1" src="@/assets/influence/Crusader.png">
+        <span class="ml-2">Crusader</span>
+      </div>
+      <div v-if="misc_filters.hunter_item.option === 'true'" class="trade-tag flex items-center">
+        <img class="w-5 h-5 -m-1" src="@/assets/influence/Hunter.png">
+        <span class="ml-2">Hunter</span>
+      </div>
+      <div v-if="misc_filters.redeemer_item.option === 'true'" class="trade-tag flex items-center">
+        <img class="w-5 h-5 -m-1" src="@/assets/influence/Redeemer.png">
+        <span class="ml-2">Redeemer</span>
+      </div>
+      <div v-if="misc_filters.warlord_item.option === 'true'" class="trade-tag flex items-center">
+        <img class="w-5 h-5 -m-1" src="@/assets/influence/Warlord.png">
+        <span class="ml-2">Warlord</span>
+      </div>
       <div v-if="misc_filters.corrupted.option" class="trade-tag">
         <span v-if="misc_filters.corrupted.option === 'true'" class="text-red-500">Corrupted</span>
         <span v-if="misc_filters.corrupted.option === 'false'">Not Corrupted</span>
@@ -117,6 +141,6 @@ export default {
 
 <style lang="postcss">
 .trade-tag {
-  @apply bg-gray-900 py-1 px-2 mx-1 rounded-full leading-none;
+  @apply bg-gray-900 py-1 px-2 m-1 rounded-full leading-none;
 }
 </style>

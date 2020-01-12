@@ -9,7 +9,6 @@ export enum ItemRarity {
 }
 
 export enum ItemInfluence {
-  Normal = 'Normal',
   Crusader = 'Crusader',
   Elder = 'Elder',
   Hunter = 'Hunter',

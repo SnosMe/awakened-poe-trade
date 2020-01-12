@@ -1,5 +1,5 @@
 import { ParsedItem, WellKnownType } from './Parser'
-import { ItemRarity } from './parser-constants'
+import { ItemRarity, ItemInfluence } from './parser-constants'
 import { Leagues } from './Leagues'
 
 const TradeOpts = {
@@ -44,6 +44,12 @@ interface TradeRequest { /* eslint-disable camelcase */
           corrupted: {
             option?: 'true' | 'false'
           }
+          shaper_item: { option?: 'true' | 'false' }
+          crusader_item: { option?: 'true' | 'false' }
+          hunter_item: { option?: 'true' | 'false' }
+          elder_item: { option?: 'true' | 'false' }
+          redeemer_item: { option?: 'true' | 'false' }
+          warlord_item: { option?: 'true' | 'false' }
         }
       }
       map_filters: {
@@ -115,7 +121,13 @@ export function createTradeRequest (item: ParsedItem) {
           filters: {
             quality: {},
             gem_level: {},
-            corrupted: {}
+            corrupted: {},
+            crusader_item: {},
+            elder_item: {},
+            hunter_item: {},
+            redeemer_item: {},
+            shaper_item: {},
+            warlord_item: {}
           }
         },
         map_filters: {
@@ -190,6 +202,29 @@ export function createTradeRequest (item: ParsedItem) {
 
   if (item.linkedSockets) {
     query.filters.socket_filters.filters.links.min = item.linkedSockets
+  }
+
+  for (const influence of item.influences) {
+    switch (influence) {
+      case ItemInfluence.Shaper:
+        query.filters.misc_filters.filters.shaper_item.option = 'true'
+        break
+      case ItemInfluence.Elder:
+        query.filters.misc_filters.filters.elder_item.option = 'true'
+        break
+      case ItemInfluence.Crusader:
+        query.filters.misc_filters.filters.crusader_item.option = 'true'
+        break
+      case ItemInfluence.Hunter:
+        query.filters.misc_filters.filters.hunter_item.option = 'true'
+        break
+      case ItemInfluence.Redeemer:
+        query.filters.misc_filters.filters.redeemer_item.option = 'true'
+        break
+      case ItemInfluence.Warlord:
+        query.filters.misc_filters.filters.warlord_item.option = 'true'
+        break
+    }
   }
 
   return body
