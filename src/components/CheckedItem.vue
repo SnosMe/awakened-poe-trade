@@ -4,9 +4,7 @@
       <div class="bg-gray-900 mb-2 p-1 leading-none">{{ item.name }}</div>
       <price-trend :item="item" />
       <rare-item v-if="showPredictedPrice" :item="item" class="mb-2" />
-      <div v-else class="flex overflow-auto">
-        <trade-listing :item="item" />
-      </div>
+      <trade-listing v-else :item="item" />
     </div>
   </div>
 </template>

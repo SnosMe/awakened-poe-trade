@@ -3,27 +3,37 @@
     <i class="fas fa-exclamation-circle pr-1 text-gray-600"></i>
     <span>Requesting search results...</span>
   </div>
-  <!-- @TODO: use css grids to achieve sticky header row -->
-  <table v-else-if="results" class="table-stripped w-full">
-    <thead>
-      <tr class="text-left">
-        <th class="px-2">Price</th>
-        <th v-if="item.rarity === 'Gem'" class="px-2">Level</th>
-        <th v-if="item.rarity === 'Gem'" class="px-2">Quality</th>
-        <th class="px-2"></th>
-        <th class="px-2 w-full">Listed</th>
-      </tr>
-    </thead>
-    <tbody style="overflow: scroll;">
-      <tr v-for="result in results" :key="result.id">
-        <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
-        <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
-        <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
-        <td class="px-2 whitespace-no-wrap text-red-500"><span v-if="result.corrupted">Corrupted</span></td>
-        <td class="font-sans text-xs px-2">{{ getRelativeTime(result.listedAt) }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div v-else-if="results" class="layout-column overflow-y-auto overflow-x-hidden">
+    <div v-if="!item.stackSize" class="flex mb-2 -mx-1">
+      <div v-if="socket_filters.links.min" class="trade-tag">Links: {{ socket_filters.links.min }}</div>
+      <div v-if="map_filters.map_tier.min" class="trade-tag">Map Tier: {{ map_filters.map_tier.min }}</div>
+      <div v-if="misc_filters.gem_level.min" class="trade-tag">Level: {{ misc_filters.gem_level.min }}</div>
+      <div v-if="misc_filters.quality.min" class="trade-tag">Quality: {{ misc_filters.quality.min }}%</div>
+      <div v-if="misc_filters.corrupted.option" class="trade-tag">
+        <span v-if="misc_filters.corrupted.option === 'true'" class="text-red-500">Corrupted</span>
+        <span v-if="misc_filters.corrupted.option === 'false'">Not Corrupted</span>
+      </div>
+    </div>
+    <!-- @TODO: use css grids to achieve sticky header row -->
+    <table class="table-stripped w-full">
+      <thead>
+        <tr class="text-left">
+          <th class="px-2">Price</th>
+          <th v-if="item.rarity === 'Gem'" class="px-2">Level</th>
+          <th v-if="item.rarity === 'Gem'" class="px-2">Quality</th>
+          <th class="px-2 w-full">Listed</th>
+        </tr>
+      </thead>
+      <tbody style="overflow: scroll;">
+        <tr v-for="result in results" :key="result.id">
+          <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
+          <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
+          <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
+          <td class="font-sans text-xs px-2">{{ getRelativeTime(result.listedAt) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <div v-else-if="error">
     <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
     <span>{{ error }}</span>
@@ -32,7 +42,7 @@
 
 <script>
 import { DateTime } from 'luxon'
-import { requestTradeResultList, requestResults } from './pathofexile-trade'
+import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
 
 export default {
   props: {
@@ -45,7 +55,8 @@ export default {
     return {
       loading: false,
       error: null,
-      results: null
+      results: null,
+      request: null
     }
   },
   watch: {
@@ -57,7 +68,9 @@ export default {
 
           this.loading = true
           this.results = []
-          const list = await requestTradeResultList(item)
+          const request = createTradeRequest(item)
+          this.request = request
+          const list = await requestTradeResultList(request)
 
           await Promise.all([
             requestResults(list.id, list.result.slice(0, 10))
@@ -83,10 +96,27 @@ export default {
       }
     }
   },
+  computed: {
+    map_filters () {
+      return this.request.query.filters.map_filters.filters
+    },
+    misc_filters () {
+      return this.request.query.filters.misc_filters.filters
+    },
+    socket_filters () {
+      return this.request.query.filters.socket_filters.filters
+    }
+  },
   methods: {
     getRelativeTime (iso) {
-      return DateTime.fromISO(iso).toRelative()
+      return DateTime.fromISO(iso).toRelative({ style: 'short' })
     }
   }
 }
 </script>
+
+<style lang="postcss">
+.trade-tag {
+  @apply bg-gray-900 py-1 px-2 mx-1 rounded-full leading-none;
+}
+</style>

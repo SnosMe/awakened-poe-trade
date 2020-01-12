@@ -96,7 +96,7 @@ interface PricingResult {
   priceCurrency: string
 }
 
-export async function requestTradeResultList (item: ParsedItem) {
+export function createTradeRequest (item: ParsedItem) {
   const body: TradeRequest = {
     query: {
       status: { option: 'online' },
@@ -192,7 +192,12 @@ export async function requestTradeResultList (item: ParsedItem) {
     query.filters.socket_filters.filters.links.min = item.linkedSockets
   }
 
-  // console.log(body)
+  return body
+}
+
+export async function requestTradeResultList (body: TradeRequest) {
+  body = JSON.parse(JSON.stringify(body))
+  const { query } = body
 
   // patch query for GGG api
   if (!query.filters.type_filters.filters.rarity.option) {
