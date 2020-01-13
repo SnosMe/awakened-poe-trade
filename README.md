@@ -1,8 +1,8 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.3.0/Awakened-PoE-Trade-Setup-0.3.0.exe "")
+[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.4.0/Awakened-PoE-Trade-Setup-0.4.0.exe "")
 
-[Download for Windows v0.3.0](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.3.0/Awakened-PoE-Trade-Setup-0.3.0.exe)
+[Download for Windows v0.4.0](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.4.0/Awakened-PoE-Trade-Setup-0.4.0.exe)
 
 ## Tool showcase
 
@@ -44,7 +44,7 @@ First I want to rephrase this question in "The tool shows a bunch of numbers, wh
     - :heavy_check_mark: Corrupted
     - :heavy_check_mark: Empower, Enlighten, Enhance
     - :heavy_multiplication_x: Gem experience
-  - :heavy_multiplication_x: Vaal gems
+  - :heavy_check_mark: Vaal gems
 
 ### Requirements
 - Supported OS: Windows
