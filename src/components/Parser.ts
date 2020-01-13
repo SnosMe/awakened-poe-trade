@@ -14,6 +14,7 @@ import {
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
+import { Prophecies } from '../data'
 import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
 import { ItemInfo, Prices } from './Prices'
 
@@ -45,7 +46,8 @@ export interface ParsedItem {
 }
 
 export enum WellKnownType {
-  Map = 'Map'
+  Map = 'Map',
+  Prophecy = 'Prophecy'
 }
 
 const SECTION_PARSED = 1
@@ -140,7 +142,9 @@ function normalizeName (item: ParsedItem) {
     }
   }
 
-  if (item.computed.type == null) {
+  if (Prophecies.has(item.name)) {
+    item.computed.type = WellKnownType.Prophecy
+  } else {
     // Map
     const mapName = (item.isUnidentified || item.rarity === ItemRarity.Normal)
       ? item.name

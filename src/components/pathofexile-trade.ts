@@ -196,6 +196,9 @@ export function createTradeRequest (item: ParsedItem) {
   } else if (item.rarity === ItemRarity.Unique) {
     query.name = item.name
     query.type = item.baseType
+  } else if (item.computed.type === WellKnownType.Prophecy) {
+    query.name = item.name
+    query.type = 'Prophecy'
   } else {
     // TODO
     if (item.rarity !== ItemRarity.Rare && item.rarity !== ItemRarity.Magic) {
