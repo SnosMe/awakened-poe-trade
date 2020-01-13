@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     showPredictedPrice () {
-      return this.item.rarity === 'Rare' && this.item.computed.type !== 'Map'
+      return this.item.rarity === 'Rare' && this.item.computed.category !== 'Map'
     }
   }
 }

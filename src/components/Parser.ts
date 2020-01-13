@@ -38,14 +38,14 @@ export interface ParsedItem {
   influences: ItemInfluence[]
   rawText: string
   computed: {
-    type?: WellKnownType
+    category?: ItemCategory
     mapName?: string
     icon?: string
     trend?: ItemInfo
   }
 }
 
-export enum WellKnownType {
+export enum ItemCategory {
   Map = 'Map',
   Prophecy = 'Prophecy'
 }
@@ -143,7 +143,7 @@ function normalizeName (item: ParsedItem) {
   }
 
   if (Prophecies.has(item.name)) {
-    item.computed.type = WellKnownType.Prophecy
+    item.computed.category = ItemCategory.Prophecy
   } else {
     // Map
     const mapName = (item.isUnidentified || item.rarity === ItemRarity.Normal)
@@ -151,7 +151,7 @@ function normalizeName (item: ParsedItem) {
       : item.baseType
 
     if (mapName?.endsWith(' Map')) {
-      item.computed.type = WellKnownType.Map
+      item.computed.category = ItemCategory.Map
       item.computed.mapName = mapName
     }
   }
@@ -315,7 +315,7 @@ export function getIconDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
     return nameToDetailsId(`${item.name} 20`)
   }
-  if (item.computed.type === WellKnownType.Map) {
+  if (item.computed.category === ItemCategory.Map) {
     const LATEST_MAP_VARIANT = 'Metamorph'
     return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
   }

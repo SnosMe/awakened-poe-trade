@@ -1,4 +1,4 @@
-import { ParsedItem, ItemRarity, WellKnownType } from '../Parser'
+import { ParsedItem, ItemRarity, ItemCategory } from '../Parser'
 import { SPECIAL_SUPPORT_GEM } from '../pathofexile-trade'
 
 const LATEST_MAP_VARIANT = 'Metamorph'
@@ -7,7 +7,7 @@ export function getDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
     return getGemDetailsId(item)
   }
-  if (item.computed.type === WellKnownType.Map) {
+  if (item.computed.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique) {
       // @TODO if unidentified get name by baseType
       return nameToDetailsId(`${item.name} t${item.mapTier}`)

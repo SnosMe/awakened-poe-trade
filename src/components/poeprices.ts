@@ -1,5 +1,5 @@
 import { stringify } from 'querystring'
-import { ParsedItem, ItemRarity, WellKnownType } from './Parser'
+import { ParsedItem, ItemRarity, ItemCategory } from './Parser'
 import { Leagues } from './Leagues'
 
 /* eslint-disable camelcase */
@@ -27,7 +27,7 @@ interface RareItemPrice {
 }
 
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
-  console.assert(item.rarity === ItemRarity.Rare && item.computed.type !== WellKnownType.Map)
+  console.assert(item.rarity === ItemRarity.Rare && item.computed.category !== ItemCategory.Map)
 
   const query = stringify({
     i: Buffer.from(item.rawText).toString('base64'),

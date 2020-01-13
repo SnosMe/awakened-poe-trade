@@ -1,4 +1,4 @@
-import { ParsedItem, WellKnownType } from './Parser'
+import { ParsedItem, ItemCategory } from './Parser'
 import { ItemRarity, ItemInfluence } from './parser-constants'
 import { Leagues } from './Leagues'
 
@@ -175,7 +175,7 @@ export function createTradeRequest (item: ParsedItem) {
     }
   } else if (item.rarity === ItemRarity.DivinationCard) {
     query.type = item.name
-  } else if (item.computed.type === WellKnownType.Map) {
+  } else if (item.computed.category === ItemCategory.Map) {
     query.type = item.computed.mapName
     if (item.rarity === ItemRarity.Unique) {
       query.filters.type_filters.filters.rarity.option = 'unique'
@@ -196,7 +196,7 @@ export function createTradeRequest (item: ParsedItem) {
   } else if (item.rarity === ItemRarity.Unique) {
     query.name = item.name
     query.type = item.baseType
-  } else if (item.computed.type === WellKnownType.Prophecy) {
+  } else if (item.computed.category === ItemCategory.Prophecy) {
     query.name = item.name
     query.type = 'Prophecy'
   } else {
@@ -243,7 +243,7 @@ export function createTradeRequest (item: ParsedItem) {
     if (
       item.rarity !== ItemRarity.Unique &&
       item.rarity !== ItemRarity.DivinationCard &&
-      item.computed.type !== WellKnownType.Map
+      item.computed.category !== ItemCategory.Map
       /* @TODO && !isJewel https://pathofexile.gamepedia.com/Jewel#Affixes */
     ) {
       if (item.itemLevel > 86) {
