@@ -13,7 +13,7 @@ export class WindowManager implements IWindowManager {
 
     if (process.platform === 'win32' || process.platform === 'darwin') {
       const { NWMWrapper } = require('./NWMWrapper')
-      manager.impl = NWMWrapper.createManager()
+      manager.impl = await NWMWrapper.createManager()
     } else {
       const { LinuxX11 } = require('./LinuxX11')
       manager.impl = await LinuxX11.createManager()
