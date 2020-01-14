@@ -22,6 +22,7 @@
   },
   "main": "background.js",
   "dependencies": {
+    "async": "^3.1.0",
     "core-js": "^2.6.5",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
@@ -32,10 +33,13 @@
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-    "vue-trend-chart": "^0.15.1"
+    "vue-trend-chart": "^0.15.1",
+    "x11": "git+https://git@github.com/sidorares/node-x11.git"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@types/async": "^3.0.3",
+    "@types/x11": "./src/main/window-manager/x11",
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-plugin-typescript": "^3.12.0",

@@ -1,9 +1,9 @@
 import { screen, Point } from 'electron'
-import { windowManager } from 'node-window-manager'
 import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
+import { windowManager } from './window-manager'
 
 const KEY_CTRL = 29
 const KEY_D = 32
@@ -40,9 +40,9 @@ export function setupShortcuts () {
     // both keys released
   })
 
-  ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, () => {
-    const window = windowManager.getActiveWindow()
-    if (window && window.getTitle() === POE_TITLE) {
+  ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, async () => {
+    const title = await windowManager.getActiveWindowTitle()
+    if (title === POE_TITLE) {
       typeChatCommand('/hideout')
     }
   })

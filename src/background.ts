@@ -3,6 +3,7 @@
 import { app, protocol } from 'electron'
 import { installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 import { setupShortcuts } from './main/shortcuts'
+import { setupWindowManager } from './main/window-manager'
 import { createTray } from './main/tray'
 import { createWindow } from './main/window'
 import { setupShowHide } from './main/positioning'
@@ -27,6 +28,7 @@ app.on('ready', async () => {
     }
   }
 
+  await setupWindowManager()
   setupConfig()
   setupShowHide()
   createWindow()

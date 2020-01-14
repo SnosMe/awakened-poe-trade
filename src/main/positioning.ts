@@ -1,8 +1,8 @@
 import { BrowserWindow, ipcMain, screen, Rectangle } from 'electron'
-import { windowManager } from 'node-window-manager'
 import ioHook from 'iohook'
 import { win } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
+import { windowManager } from './window-manager'
 
 const CLOSE_THRESHOLD_PX = 40
 
@@ -10,11 +10,14 @@ let isCtrlDown = false
 let isWindowShown = true
 
 export function setupShowHide () {
-  ipcMain.on('price-check-visible', (e, isVisible) => {
+  ipcMain.on('price-check-visible', async (e, isVisible) => {
     if (isVisible) {
-      positionWindow(win)
+      await positionWindow(win)
       isWindowShown = true
       win.showInactive()
+      if (process.platform === 'linux') {
+        win.setAlwaysOnTop(true)
+      }
     } else {
       isWindowShown = false
       win.hide()
@@ -23,7 +26,16 @@ export function setupShowHide () {
 
   ioHook.on('mousemove', (e: { x: number, y: number }) => {
     if (!isPollingClipboard && checkPressPosition && isWindowShown && !isCtrlDown) {
-      const distance = Math.hypot(e.x - checkPressPosition.x, e.y - checkPressPosition.y)
+      let distance: number
+      if (process.platform === 'linux' /* @TODO: && displays.length > 1 */) {
+        // ioHook returns mouse position that is not compatible with electron's position
+        // when user has more than one monitor
+        const cursorNow = screen.getCursorScreenPoint()
+        distance = Math.hypot(cursorNow.x - checkPressPosition.x, cursorNow.y - checkPressPosition.y)
+      } else {
+        distance = Math.hypot(e.x - checkPressPosition.x, e.y - checkPressPosition.y)
+      }
+
       if (distance > CLOSE_THRESHOLD_PX) {
         isWindowShown = false
         win.hide()
@@ -32,43 +44,8 @@ export function setupShowHide () {
   })
 }
 
-function positionWindow (tradeWindow: BrowserWindow) {
-  const poeWindow = windowManager.getActiveWindow()
-  const poePos = poeWindow.getBounds() as Rectangle
-  console.assert(poePos.x != null && poePos.y != null && poePos.width != null && poePos.height != null)
-
-  if (process.platform === 'win32') {
-    // Interesting fact:
-    //   some windows have `1px border` in focused state,
-    //   so it would be 7px for them, but not PoE window
-    const WINDOW_OFFSET = 8
-
-    const isWindowedFullscreen = (poePos.y === 0)
-    const isMaximized = !isWindowedFullscreen && (poePos.y === -WINDOW_OFFSET)
-
-    if (!isWindowedFullscreen) {
-      poePos.x += WINDOW_OFFSET
-      poePos.width! -= WINDOW_OFFSET * 2
-
-      if (isMaximized) {
-        poePos.y += WINDOW_OFFSET
-        poePos.height -= WINDOW_OFFSET * 2
-      } else {
-        poePos.height -= WINDOW_OFFSET
-      }
-    }
-
-    // step 2 - remove title space. 32px taken on Windows 10. Also DPI may apply?
-    if (!isWindowedFullscreen) {
-      if (isMaximized) {
-        poePos.y += (32 - WINDOW_OFFSET)
-        poePos.height -= (32 - WINDOW_OFFSET)
-      } else {
-        poePos.y += 32
-        poePos.height -= 32
-      }
-    }
-  }
+async function positionWindow (tradeWindow: BrowserWindow) {
+  const poePos = (await windowManager.getActiveWindowBounds())!
 
   tradeWindow.setBounds({
     x: getOffsetX(poePos),
