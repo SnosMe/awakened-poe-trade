@@ -35,7 +35,9 @@ export default {
   },
   computed: {
     showPredictedPrice () {
-      return this.item.rarity === 'Rare' && this.item.computed.category !== 'Map'
+      return this.item.rarity === 'Rare' &&
+        this.item.computed.category !== 'Map' &&
+        this.item.computed.category !== 'Itemised Monster'
     }
   }
 }

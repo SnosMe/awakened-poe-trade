@@ -14,7 +14,7 @@ import {
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
-import { Prophecies } from '../data'
+import { Prophecies, ItemisedMonsters } from '../data'
 import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
 import { ItemInfo, Prices } from './Prices'
 
@@ -47,7 +47,8 @@ export interface ParsedItem {
 
 export enum ItemCategory {
   Map = 'Map',
-  Prophecy = 'Prophecy'
+  Prophecy = 'Prophecy',
+  ItemisedMonster = 'Itemised Monster'
 }
 
 const SECTION_PARSED = 1
@@ -144,6 +145,11 @@ function normalizeName (item: ParsedItem) {
 
   if (Prophecies.has(item.name)) {
     item.computed.category = ItemCategory.Prophecy
+  } else if (
+    ItemisedMonsters.has(item.name) || // Unique beast
+    (item.baseType && ItemisedMonsters.has(item.baseType)) // Rare beast
+  ) {
+    item.computed.category = ItemCategory.ItemisedMonster
   } else {
     // Map
     const mapName = (item.isUnidentified || item.rarity === ItemRarity.Normal)

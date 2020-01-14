@@ -15,6 +15,9 @@ export function getDetailsId (item: ParsedItem) {
       return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
+  if (item.computed.category === ItemCategory.ItemisedMonster) {
+    return nameToDetailsId(item.baseType || item.name)
+  }
   if (item.rarity === ItemRarity.Unique) {
     return getUniqueDetailsId(item)
   }

@@ -5,7 +5,8 @@ interface ApiItems {
   result: Array<{
     label: string,
     entries: Array<{
-      name: string
+      name?: string
+      type?: string
     }>
   }>
 }
@@ -16,7 +17,14 @@ interface ApiItems {
   const prophecies = result
     .find(category => category.label === 'Prophecies')!
     .entries
-    .map(proph => proph.name)
+    .map(item => item.name)
 
   fs.writeFileSync('./src/data/prophecies.json', JSON.stringify(prophecies, null, 2))
+
+  const itemisedMonsters = result
+    .find(category => category.label === 'Itemised Monsters')!
+    .entries
+    .map(item => item.type)
+
+  fs.writeFileSync('./src/data/itemised-monsters.json', JSON.stringify(itemisedMonsters, null, 2))
 })()

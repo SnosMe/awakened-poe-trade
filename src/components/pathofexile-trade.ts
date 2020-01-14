@@ -152,6 +152,15 @@ export function createTradeRequest (item: ParsedItem) {
   }
   const { query } = body
 
+  // #region early return
+
+  if (item.computed.category === ItemCategory.ItemisedMonster) {
+    query.type = item.baseType || item.name
+    return body
+  }
+
+  // #endregion early return
+
   if (item.rarity === ItemRarity.Gem) {
     query.type = item.name
 
