@@ -14,7 +14,7 @@ import {
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
-import { Prophecies, ItemisedMonsters } from '../data'
+import { Prophecies, ItemisedMonsters, Mods, Mod } from '../data'
 import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
 import { ItemInfo, Prices } from './Prices'
 
@@ -37,6 +37,11 @@ export interface ParsedItem {
   gemLevel?: number
   influences: ItemInfluence[]
   rawText: string
+  modifiers: Array<{
+    mod: Mod
+    values?: number[]
+    type: ModifierType
+  }>
   computed: {
     category?: ItemCategory
     mapName?: string
@@ -49,6 +54,14 @@ export enum ItemCategory {
   Map = 'Map',
   Prophecy = 'Prophecy',
   ItemisedMonster = 'Itemised Monster'
+}
+
+export enum ModifierType {
+  Pseudo = 'pseudo',
+  Explicit = 'explicit',
+  Implicit = 'implicit',
+  Crafted = 'crafted',
+  Enchant = 'enchant'
 }
 
 const SECTION_PARSED = 1
@@ -75,7 +88,10 @@ const parsers: ParserFn[] = [
   parseCorrupted,
   parseInfluence,
   parseMap,
-  parseSockets
+  parseSockets,
+  parseModifiers, // enchant
+  parseModifiers, // implicit
+  parseModifiers // explicit
 ]
 
 const parserAfterHooks = new Map<ParserFn, ParserAfterHookFn>([
@@ -106,6 +122,7 @@ export function parseClipboard (clipboard: string) {
     // need to think how to handle it
     return null
   }
+  sections.shift()
 
   // each section can be parsed at most by one parser
   for (const parser of parsers) {
@@ -185,15 +202,18 @@ function parseNamePlate (section: string[]) {
     case ItemRarity.Magic:
     case ItemRarity.Rare:
     case ItemRarity.Unique:
-      return {
+      const item : ParsedItem = {
         rarity,
         name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
         baseType: section[2],
         isUnidentified: false,
         isCorrupted: false,
-        influences: [] as ItemInfluence[],
-        computed: {}
-      } as ParsedItem
+        modifiers: [],
+        influences: [],
+        computed: {},
+        rawText: undefined!
+      }
+      return item
     default:
       return null
   }
@@ -304,6 +324,87 @@ function parseQualityNested (section: string[], item: ParsedItem) {
       break
     }
   }
+}
+
+function parseModifiers (section: string[], item: ParsedItem) {
+  const IMPLICIT_SUFFIX = ' (implicit)'
+  const CRAFTED_SUFFIX = ' (crafted)'
+
+  const countBefore = item.modifiers.length
+
+  for (let line of section) {
+    let modType: ModifierType | undefined
+    let mod: Mod | undefined
+    const values: number[] = []
+
+    // cleanup suffix
+    if (line.endsWith(IMPLICIT_SUFFIX)) {
+      line = line.slice(0, -IMPLICIT_SUFFIX.length)
+      modType = ModifierType.Implicit
+    } else if (line.endsWith(CRAFTED_SUFFIX)) {
+      line = line.slice(0, -CRAFTED_SUFFIX.length)
+      modType = ModifierType.Crafted
+    }
+
+    // 1. try to find "as is"
+    mod = Mods.get(line)
+    if (!mod) {
+      // 2. replace
+      // example: +#%, #%, #, +#, # to #, #-#
+      line = line.replace(/(?<![\d])[+-]?[\d.]+/g, (value) => {
+        values.push(Number(value))
+        return '#'
+      })
+      if (values.length !== 1 && values.length !== 2) {
+        continue
+      }
+      // 3. match variants
+      // @TODO: IMPORTANT! distinguish between local and global mods
+      const variants = [
+        { invertSign: false, text: line },
+        { invertSign: false, text: line + ' (Local)' },
+        { invertSign: false, text: line.replace('#', '+#') },
+        { invertSign: false, text: line.replace('#', '+#') + ' (Local)' },
+        { invertSign: true, text: line.replace('#% reduced', '#% increased') },
+        { invertSign: true, text: line.replace('#% reduced', '#% increased') + ' (Local)' }
+      ]
+      for (const variant of variants) {
+        mod = Mods.get(variant.text)
+        if (mod) {
+          if (variant.invertSign) {
+            values[0] *= -1
+          }
+          break
+        }
+      }
+    }
+
+    if (mod) {
+      if (modType == null) {
+        for (const type of mod.types) {
+          if (
+            type.name !== ModifierType.Pseudo &&
+            type.name !== ModifierType.Implicit &&
+            type.name !== ModifierType.Crafted
+          ) {
+            // explicit/enchant
+            modType = type.name as ModifierType
+          }
+        }
+      }
+
+      item.modifiers.push({
+        mod,
+        type: modType!,
+        values: values.length ? values : undefined
+      })
+    }
+  }
+
+  if (countBefore < item.modifiers.length) {
+    return SECTION_PARSED
+  }
+  return SECTION_SKIPPED
 }
 
 // --------
