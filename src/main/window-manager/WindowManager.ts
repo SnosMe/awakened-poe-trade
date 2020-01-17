@@ -1,8 +1,8 @@
 import { Rectangle } from 'electron'
 
 export interface IWindowManager {
-  getActiveWindowTitle(): Promise<string | null>
-  getActiveWindowBounds (): Promise<Rectangle | null>
+  getActiveWindowTitle (): Promise<string | null>
+  getActiveWindowContentBounds (): Promise<Rectangle | null>
 }
 
 export class WindowManager implements IWindowManager {
@@ -26,7 +26,7 @@ export class WindowManager implements IWindowManager {
     return this.impl.getActiveWindowTitle()
   }
 
-  getActiveWindowBounds () {
-    return this.impl.getActiveWindowBounds()
+  getActiveWindowContentBounds () {
+    return this.impl.getActiveWindowContentBounds()
   }
 }

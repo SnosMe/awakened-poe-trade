@@ -45,7 +45,7 @@ export function setupShowHide () {
 }
 
 async function positionWindow (tradeWindow: BrowserWindow) {
-  const poePos = (await windowManager.getActiveWindowBounds())!
+  const poePos = (await windowManager.getActiveWindowContentBounds())!
 
   tradeWindow.setBounds({
     x: getOffsetX(poePos),

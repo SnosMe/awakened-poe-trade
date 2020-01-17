@@ -70,7 +70,7 @@ export class LinuxX11 implements IWindowManager {
     })
   }
 
-  async getActiveWindowBounds (): Promise<Rectangle | null> {
+  async getActiveWindowContentBounds (): Promise<Rectangle | null> {
     return new Promise((resolve, reject) => {
       async.waterfall([
         (cb: any) => {

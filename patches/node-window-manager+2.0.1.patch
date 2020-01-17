@@ -1,0 +1,27 @@
+diff --git a/node_modules/node-window-manager/lib/windows.cc b/node_modules/node-window-manager/lib/windows.cc
+index 461ab78..162bf8d 100644
+--- a/node_modules/node-window-manager/lib/windows.cc
++++ b/node_modules/node-window-manager/lib/windows.cc
+@@ -129,14 +129,17 @@ Napi::Object getWindowBounds (const Napi::CallbackInfo& info) {
+     auto handle{ getValueFromCallbackData<HWND> (info, 0) };
+ 
+     RECT rect{};
+-    GetWindowRect (handle, &rect);
++    GetClientRect (handle, &rect);
++
++    POINT ptClientUL{ rect.left, rect.top };
++    ClientToScreen (handle, &ptClientUL);
+ 
+     Napi::Object bounds{ Napi::Object::New (env) };
+ 
+-    bounds.Set ("x", rect.left);
+-    bounds.Set ("y", rect.top);
+-    bounds.Set ("width", rect.right - rect.left);
+-    bounds.Set ("height", rect.bottom - rect.top);
++    bounds.Set ("x", ptClientUL.x);
++    bounds.Set ("y", ptClientUL.y);
++    bounds.Set ("width", rect.right);
++    bounds.Set ("height", rect.bottom);
+ 
+     return bounds;
+ }
