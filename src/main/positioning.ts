@@ -1,16 +1,17 @@
 import { BrowserWindow, ipcMain, screen, Rectangle } from 'electron'
 import ioHook from 'iohook'
 import { win } from './window'
-import { checkPressPosition, isPollingClipboard } from './shortcuts'
+import { checkPressPosition, isPollingClipboard, poeWindowId } from './shortcuts'
 import { windowManager } from './window-manager'
+import { PRICE_CHECK_VISIBLE, LOCK_WINDOW } from '../shared/ipc-event'
 
 const CLOSE_THRESHOLD_PX = 40
 
-let isCtrlDown = false
 let isWindowShown = true
+let isWindowLocked = false
 
 export function setupShowHide () {
-  ipcMain.on('price-check-visible', async (e, isVisible) => {
+  ipcMain.on(PRICE_CHECK_VISIBLE, async (e, isVisible) => {
     if (isVisible) {
       await positionWindow(win)
       isWindowShown = true
@@ -21,11 +22,21 @@ export function setupShowHide () {
     } else {
       isWindowShown = false
       win.hide()
+
+      if (poeWindowId && isWindowLocked) {
+        isWindowLocked = false
+        windowManager.focusWindowById(poeWindowId)
+      }
     }
   })
 
-  ioHook.on('mousemove', (e: { x: number, y: number }) => {
-    if (!isPollingClipboard && checkPressPosition && isWindowShown && !isCtrlDown) {
+  ipcMain.on(LOCK_WINDOW, async () => {
+    isWindowLocked = true
+    win.focus()
+  })
+
+  ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: true }) => {
+    if (!isPollingClipboard && checkPressPosition && isWindowShown && !e.ctrlKey && !isWindowLocked) {
       let distance: number
       if (process.platform === 'linux' /* @TODO: && displays.length > 1 */) {
         // ioHook returns mouse position that is not compatible with electron's position

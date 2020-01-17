@@ -11,6 +11,7 @@
 
 <script>
 import { ipcRenderer } from 'electron'
+import { PRICE_CHECK_VISIBLE, LOCK_WINDOW } from '../shared/ipc-event'
 import { parseClipboard } from './Parser'
 import RareItem from './RareItem'
 import TradeListing from './TradeListing'
@@ -24,7 +25,19 @@ export default {
       const item = parseClipboard(clipboard)
       if (item != null) {
         this.item = item
-        ipcRenderer.send('price-check-visible', true)
+        ipcRenderer.send(PRICE_CHECK_VISIBLE, true)
+      }
+    })
+
+    document.addEventListener('mouseenter', (e) => {
+      if (e.ctrlKey) {
+        ipcRenderer.send(LOCK_WINDOW, false)
+      }
+    })
+
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
       }
     })
   },

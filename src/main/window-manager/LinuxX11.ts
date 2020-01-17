@@ -108,6 +108,18 @@ export class LinuxX11 implements IWindowManager {
       })
     })
   }
+
+  getActiveWindowId (): Promise<number | null> {
+    return new Promise((resolve, reject) => {
+      reject(new Error('Method not implemented.'))
+    })
+  }
+
+  focusWindowById (id: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+      reject(new Error('Method not implemented.'))
+    })
+  }
 }
 
 function decodeWindow (data: Buffer): Window {

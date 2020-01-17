@@ -1,17 +1,19 @@
 <template>
   <div class="titlebar">
     <div class="flex">
-      <!-- <button class="button" title="Settings"><i class="fas fa-cog"></i></button> -->
-      <button class="button" title="Update price data"><i class="fas fa-sync-alt" :class="{ 'fa-spin': isLoading }"></i></button>
+      <button v-if="isLoading"
+        class="button" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
     </div>
     <div class="text-gray-600 truncate leading-none px-4">Awakened PoE Trade</div>
     <div class="flex">
-      <button tabindex="-1" class="button" title="Close"><i class="fas fa-window-close"></i></button>
+      <button @click="hideWindow" tabindex="-1" class="button" title="Close"><i class="fas fa-window-close"></i></button>
     </div>
   </div>
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
+import { PRICE_CHECK_VISIBLE } from '../shared/ipc-event'
 import { Leagues } from './Leagues'
 import { Prices } from './Prices'
 
@@ -19,6 +21,11 @@ export default {
   name: 'AppTitlebar',
   computed: {
     isLoading: () => Leagues.isLoading || Prices.isLoading
+  },
+  methods: {
+    hideWindow () {
+      ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
+    }
   }
 }
 </script>

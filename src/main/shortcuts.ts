@@ -12,6 +12,7 @@ const POE_TITLE = 'Path of Exile'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
+export let poeWindowId: number | null = null
 
 export function setupShortcuts () {
   // A value of zero causes the thread to relinquish the remainder of its
@@ -23,8 +24,9 @@ export function setupShortcuts () {
     if (!isPollingClipboard) {
       isPollingClipboard = true
       pollClipboard(32, 1750)
-        .then(clipboard => {
+        .then(async (clipboard) => {
           win.webContents.send('price-check', clipboard)
+          poeWindowId = await windowManager.getActiveWindowId()
         })
         .catch(() => { /* nothing bad */ })
         .finally(() => { isPollingClipboard = false })

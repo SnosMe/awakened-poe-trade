@@ -3,6 +3,8 @@ import { Rectangle } from 'electron'
 export interface IWindowManager {
   getActiveWindowTitle (): Promise<string | null>
   getActiveWindowContentBounds (): Promise<Rectangle | null>
+  getActiveWindowId (): Promise<number | null>
+  focusWindowById (id: number): Promise<void>
 }
 
 export class WindowManager implements IWindowManager {
@@ -28,5 +30,13 @@ export class WindowManager implements IWindowManager {
 
   getActiveWindowContentBounds () {
     return this.impl.getActiveWindowContentBounds()
+  }
+
+  getActiveWindowId () {
+    return this.impl.getActiveWindowId()
+  }
+
+  focusWindowById (id: number) {
+    return this.impl.focusWindowById(id)
   }
 }

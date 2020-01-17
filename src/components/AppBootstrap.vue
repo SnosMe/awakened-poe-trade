@@ -12,6 +12,7 @@
 
 <script>
 import { ipcRenderer } from 'electron'
+import { PRICE_CHECK_VISIBLE } from '../shared/ipc-event'
 import { Leagues } from './Leagues'
 import { Prices } from './Prices'
 
@@ -20,7 +21,7 @@ export default {
   async created () {
     await Leagues.load()
     await Prices.load()
-    ipcRenderer.send('price-check-visible', false)
+    ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
   },
   computed: {
     leaguesService: () => Leagues,
