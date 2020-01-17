@@ -32,10 +32,10 @@ export function setupShortcuts () {
     checkPressPosition = screen.getCursorScreenPoint()
 
     // NOTE:
-    // keyTap('c', ['control']) must be never used
+    // keyTap('key_c', -->> ['control'] <<--) must be never used
     // - this callback called on "keypress" not "keyup"
     // - ability to price multiple items with holded Ctrl, while variant above will change Ctrl key state to "up"
-    robotjs.keyTap('c')
+    robotjs.keyTap('key_c')
   }, () => {
     // both keys released
   })

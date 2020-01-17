@@ -1,3 +1,34 @@
+diff --git a/node_modules/robotjs/src/keycode.h b/node_modules/robotjs/src/keycode.h
+index 9d0b099..f4818e8 100644
+--- a/node_modules/robotjs/src/keycode.h
++++ b/node_modules/robotjs/src/keycode.h
+@@ -17,6 +17,8 @@ extern "C"
+ 	
+ enum _MMKeyCode {
+ 	K_NOT_A_KEY = 9999,
++	K_KEY_C = 0x43,
++	K_KEY_V = 0x56,
+ 	K_BACKSPACE = kVK_Delete,
+ 	K_DELETE = kVK_ForwardDelete,
+ 	K_RETURN = kVK_Return,
+@@ -114,6 +116,8 @@ typedef CGKeyCode MMKeyCode;
+ 
+ enum _MMKeyCode {
+ 	K_NOT_A_KEY = 9999,
++	K_KEY_C = 0x43,
++	K_KEY_V = 0x56,
+ 	K_BACKSPACE = XK_BackSpace,
+ 	K_DELETE = XK_Delete,
+ 	K_RETURN = XK_Return,
+@@ -208,6 +212,8 @@ typedef KeySym MMKeyCode;
+ 
+ enum _MMKeyCode {
+ 	K_NOT_A_KEY = 9999,
++	K_KEY_C = 0x43,
++	K_KEY_V = 0x56,
+ 	K_BACKSPACE = VK_BACK,
+ 	K_DELETE = VK_DELETE,
+ 	K_RETURN = VK_RETURN,
 diff --git a/node_modules/robotjs/src/keypress.c b/node_modules/robotjs/src/keypress.c
 index 2bbdccd..ec19c80 100644
 --- a/node_modules/robotjs/src/keypress.c
@@ -21,3 +52,20 @@ index 2bbdccd..ec19c80 100644
  #endif
  
  #if defined(IS_MACOSX)
+diff --git a/node_modules/robotjs/src/robotjs.cc b/node_modules/robotjs/src/robotjs.cc
+index 8aadd5d..72c2a06 100644
+--- a/node_modules/robotjs/src/robotjs.cc
++++ b/node_modules/robotjs/src/robotjs.cc
+@@ -288,6 +288,12 @@ struct KeyNames
+ 
+ static KeyNames key_names[] =
+ {
++	// https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
++	// http://keycode.info/
++	// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode#Printable_keys_in_standard_position
++	{ "key_c",          K_KEY_C },
++	{ "key_v",          K_KEY_V },
++
+ 	{ "backspace",      K_BACKSPACE },
+ 	{ "delete",         K_DELETE },
+ 	{ "enter",          K_RETURN },
