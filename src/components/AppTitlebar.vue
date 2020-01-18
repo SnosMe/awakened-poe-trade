@@ -39,16 +39,18 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 1.5rem;
 }
 
 .titlebar .button {
   -webkit-app-region: no-drag;
   @apply text-gray-600;
-  line-height: 1;
-  @apply p-1;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  @apply px-2;
 
   &:hover {
-    @apply text-gray-500;
+    @apply text-red-200 bg-red-500;
   }
 }
 </style>

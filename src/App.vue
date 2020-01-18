@@ -34,6 +34,10 @@ export default {
   /* align-items: center; */
   flex-direction: column;
   overflow: hidden;
+
+  :focus {
+    outline: 0;
+  }
 }
 
 .layout-column {
