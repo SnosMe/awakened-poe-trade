@@ -5,3 +5,4 @@ export const LEAGUE_SELECTED = 'league-selected'
 
 export const PRICE_CHECK_VISIBLE = 'price-check-visible'
 export const LOCK_WINDOW = 'lock-window'
+export const OPEN_LINK = 'open-link'

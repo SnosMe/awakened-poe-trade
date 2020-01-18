@@ -1,14 +1,17 @@
-import { BrowserWindow, ipcMain, screen, Rectangle } from 'electron'
+import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView } from 'electron'
 import ioHook from 'iohook'
 import { win } from './window'
 import { checkPressPosition, isPollingClipboard, poeWindowId } from './shortcuts'
 import { windowManager } from './window-manager'
-import { PRICE_CHECK_VISIBLE, LOCK_WINDOW } from '../shared/ipc-event'
+import { PRICE_CHECK_VISIBLE, LOCK_WINDOW, OPEN_LINK } from '../shared/ipc-event'
 
 const CLOSE_THRESHOLD_PX = 40
 
 let isWindowShown = true
 let isWindowLocked = false
+
+let lastPoePos: Rectangle
+let browserViewExternal: BrowserView | undefined
 
 export function setupShowHide () {
   ipcMain.on(PRICE_CHECK_VISIBLE, async (e, isVisible) => {
@@ -26,13 +29,35 @@ export function setupShowHide () {
       if (poeWindowId && isWindowLocked) {
         isWindowLocked = false
         windowManager.focusWindowById(poeWindowId)
+        if (browserViewExternal) {
+          win.removeBrowserView(browserViewExternal)
+          // uncomment to trade performance for less memory usage
+          // browserViewExternal.destroy()
+          // browserViewExternal = undefined
+        }
       }
     }
   })
 
-  ipcMain.on(LOCK_WINDOW, async () => {
+  ipcMain.on(LOCK_WINDOW, () => {
     isWindowLocked = true
     win.focus()
+  })
+
+  ipcMain.on(OPEN_LINK, (e, link) => {
+    if (!browserViewExternal) {
+      browserViewExternal = new BrowserView()
+    }
+
+    win.setBrowserView(browserViewExternal)
+    win.setBounds(lastPoePos)
+    browserViewExternal.setBounds({
+      x: 0,
+      y: 24,
+      width: lastPoePos.width - 460,
+      height: lastPoePos.height - 24
+    })
+    browserViewExternal.webContents.loadURL(link)
   })
 
   ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: true }) => {
@@ -57,6 +82,7 @@ export function setupShowHide () {
 
 async function positionWindow (tradeWindow: BrowserWindow) {
   const poePos = (await windowManager.getActiveWindowContentBounds())!
+  lastPoePos = poePos
 
   tradeWindow.setBounds({
     x: getOffsetX(poePos),

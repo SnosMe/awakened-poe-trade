@@ -4,7 +4,7 @@
     <span>Requesting search results...</span>
   </div>
   <div v-else-if="results" class="layout-column overflow-y-auto overflow-x-hidden">
-    <div v-if="!item.stackSize" class="flex flex-wrap mb-2 -m-1">
+    <div v-if="!item.stackSize" class="flex flex-wrap items-center mb-2 -m-1">
       <div v-if="socket_filters.links.min" class="trade-tag">Links: {{ socket_filters.links.min }}</div>
       <div v-if="map_filters.map_tier.min" class="trade-tag">Map Tier: {{ map_filters.map_tier.min }}</div>
       <div v-if="misc_filters.ilvl.min" class="trade-tag">Item Level: {{ misc_filters.ilvl.min }}</div>
@@ -38,6 +38,9 @@
         <span v-if="misc_filters.corrupted.option === 'true'" class="text-red-500">Corrupted</span>
         <span v-if="misc_filters.corrupted.option === 'false'">Not Corrupted</span>
       </div>
+      <div class="m-1 flex-1 flex justify-end">
+        <button @click="openTradeLink" class="py-1 px-2 leading-none align-left"><i class="fas fa-external-link-alt"></i></button>
+      </div>
     </div>
     <!-- @TODO: use css grids to achieve sticky header row -->
     <table class="table-stripped w-full">
@@ -70,8 +73,11 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
 import { DateTime } from 'luxon'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
+import { OPEN_LINK } from '../shared/ipc-event'
+import { Leagues } from './Leagues'
 
 export default {
   props: {
@@ -85,7 +91,8 @@ export default {
       loading: false,
       error: null,
       results: null,
-      request: null
+      request: null,
+      tradeId: null
     }
   },
   watch: {
@@ -100,6 +107,7 @@ export default {
           const request = createTradeRequest(item)
           this.request = request
           const list = await requestTradeResultList(request)
+          this.tradeId = list.id
 
           await Promise.all([
             requestResults(list.id, list.result.slice(0, 10))
@@ -139,6 +147,9 @@ export default {
   methods: {
     getRelativeTime (iso) {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
+    },
+    openTradeLink () {
+      ipcRenderer.send(OPEN_LINK, `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.tradeId}`)
     }
   }
 }
