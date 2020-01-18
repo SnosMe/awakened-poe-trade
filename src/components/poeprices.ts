@@ -48,7 +48,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
     confidence: Number(data.pred_confidence_score.toFixed(0)),
     explanation: data.pred_explanation.map(expl => ({
       name: expl[0],
-      contrib: Number(expl[1].toFixed(2))
+      contrib: Number((expl[1] * 100).toFixed(0))
     }))
   }
 }
