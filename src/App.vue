@@ -2,7 +2,6 @@
   <div id="app" class="text-sm font-fontin-small-caps bg-gray-800">
     <app-titlebar style="align-self: stretch;" />
     <div class="flex-grow layout-column">
-      <app-bootstrap />
       <router-view/>
     </div>
   </div>
@@ -10,12 +9,10 @@
 
 <script>
 import AppTitlebar from './components/AppTitlebar'
-import AppBootstrap from './components/AppBootstrap'
 
 export default {
   components: {
-    AppTitlebar,
-    AppBootstrap
+    AppTitlebar
   }
 }
 </script>
