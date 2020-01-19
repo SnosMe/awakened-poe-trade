@@ -1,8 +1,8 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.4.0/Awakened-PoE-Trade-Setup-0.4.0.exe "")
+[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.5.0/Awakened-PoE-Trade-Setup-0.5.0.exe "")
 
-[Download for Windows v0.4.0](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.4.0/Awakened-PoE-Trade-Setup-0.4.0.exe)
+[Download for Windows v0.5.0](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.5.0/Awakened-PoE-Trade-Setup-0.5.0.exe)
 
 ## Tool showcase
 
@@ -55,6 +55,7 @@ That’s all, no Java, no .NET Framework, no AHK . . .
 ### Usage
 - Press `Ctrl + D` to check the price of the item
 - Press `F5` to go to hideout
+- Hold `Ctrl` if you do not want the window to close. As soon as the cursor is within the window, you can release `Ctrl`. Now, to close the window, press `Esc` or the cross icon in title bar.
 
 ### Tool end goals
 - One Tool To Rule Them All
