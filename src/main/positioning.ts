@@ -31,9 +31,10 @@ export function setupShowHide () {
         windowManager.focusWindowById(poeWindowId)
         if (browserViewExternal) {
           win.removeBrowserView(browserViewExternal)
-          // uncomment to trade performance for less memory usage
+          // uncomment to trade performance for less memory usage (1 process & 13 MB)
           // browserViewExternal.destroy()
           // browserViewExternal = undefined
+          browserViewExternal.webContents.loadURL('about:blank')
         }
       }
     }
