@@ -38,14 +38,22 @@
       </tbody>
     </table>
     <div class="mt-4">
-      <i class="fas fa-exclamation-circle pr-1 text-green-600"></i>
-      <span class="text-green-400">Advanced search by modifiers will be available in the next release</span>
+      <i class="fas fa-exclamation-triangle pr-1 text-orange-600"></i>
+      <span class="font-sans text-orange-200">poeprices.info: &laquo;Our services (web & API) will be shutdown during 01/22/2020 to 01/26/2020 due to service upgrade. We will put it back ASAP. Sorry about the inconvenience.&raquo;</span>
+    </div>
+    <div class="mt-6">
+      <i class="fas fa-exclamation-circle pr-1 text-gray-600"></i>
+      <span class="text-gray-400">Search by modifiers will be available in the next release</span>
       <modifiers-picker class="mt-2" :item="item" />
     </div>
   </div>
   <div v-else-if="error">
     <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
     <span>{{ error }}</span>
+    <div class="mt-4">
+      <i class="fas fa-exclamation-triangle pr-1 text-orange-600"></i>
+      <span class="font-sans text-orange-200">poeprices.info: &laquo;Our services (web & API) will be shutdown during 01/22/2020 to 01/26/2020 due to service upgrade. We will put it back ASAP. Sorry about the inconvenience.&raquo;</span>
+    </div>
   </div>
 </template>
 
