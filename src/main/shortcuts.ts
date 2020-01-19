@@ -1,4 +1,4 @@
-import { screen, Point } from 'electron'
+import { screen, Point, clipboard } from 'electron'
 import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
@@ -54,12 +54,19 @@ export function setupShortcuts () {
 }
 
 function typeChatCommand (command: string) {
+  const saved = clipboard.readText()
+
+  clipboard.writeText(command)
   robotjs.keyTap('enter')
-  robotjs.typeString(command)
+  robotjs.keyTap('key_v', ['control'])
   robotjs.keyTap('enter')
   // restore the last chat
   robotjs.keyTap('enter')
   robotjs.keyTap('up')
   robotjs.keyTap('up')
   robotjs.keyTap('escape')
+
+  setTimeout(() => {
+    clipboard.writeText(saved)
+  }, 100)
 }
