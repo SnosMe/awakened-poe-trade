@@ -37,6 +37,11 @@
         </tr>
       </tbody>
     </table>
+    <div class="mt-4">
+      <i class="fas fa-exclamation-circle pr-1 text-green-600"></i>
+      <span class="text-green-400">Advanced search by modifiers will be available in the next release</span>
+      <modifiers-picker class="mt-2" :item="item" />
+    </div>
   </div>
   <div v-else-if="error">
     <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
@@ -47,9 +52,11 @@
 <script>
 import { requestPoeprices } from './poeprices'
 import { Prices } from './Prices'
+import ModifiersPicker from './ModifiersPicker'
 
 export default {
   name: 'RareItem',
+  components: { ModifiersPicker },
   props: {
     item: {
       type: Object,

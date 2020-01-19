@@ -285,6 +285,40 @@ export async function requestTradeResultList (body: TradeRequest) {
   if (!query.filters.type_filters.filters.rarity.option) {
     (query as DeepPartial<TradeRequest['query']>).filters!.type_filters!.filters!.rarity = undefined
   }
+
+  if (!query.filters.misc_filters.filters.crusader_item.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.crusader_item = undefined
+  }
+  if (!query.filters.misc_filters.filters.warlord_item.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.warlord_item = undefined
+  }
+  if (!query.filters.misc_filters.filters.shaper_item.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.shaper_item = undefined
+  }
+  if (!query.filters.misc_filters.filters.elder_item.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.elder_item = undefined
+  }
+  if (!query.filters.misc_filters.filters.redeemer_item.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.redeemer_item = undefined
+  }
+  if (!query.filters.misc_filters.filters.hunter_item.option) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.hunter_item = undefined
+  }
+
+  if (query.filters.socket_filters.filters.links.min == null && query.filters.socket_filters.filters.links.max == null) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.socket_filters!.filters!.links = undefined
+  }
+  if (query.filters.socket_filters.filters.links == null) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.socket_filters = undefined
+  }
+
+  if (query.filters.map_filters.filters.map_tier.min == null && query.filters.map_filters.filters.map_tier.max == null) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.map_filters!.filters!.map_tier = undefined
+  }
+  if (query.filters.map_filters.filters.map_tier == null) {
+    (query as DeepPartial<TradeRequest['query']>).filters!.map_filters = undefined
+  }
+
   const response = await fetch(`https://www.pathofexile.com/api/trade/search/${Leagues.selected}`, {
     method: 'POST',
     headers: {
