@@ -14,9 +14,10 @@ import {
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
-import { Prophecies, ItemisedMonsters, Mods, Mod } from '../data'
+import { Prophecies, ItemisedMonsters } from '../data'
 import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
 import { ItemInfo, Prices } from './Prices'
+import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './parser/modifiers'
 
 export {
   ItemRarity,
@@ -37,11 +38,7 @@ export interface ParsedItem {
   gemLevel?: number
   influences: ItemInfluence[]
   rawText: string
-  modifiers: Array<{
-    mod: Mod
-    values?: number[]
-    type: ModifierType
-  }>
+  modifiers: ItemModifier[]
   computed: {
     category?: ItemCategory
     mapName?: string
@@ -54,14 +51,6 @@ export enum ItemCategory {
   Map = 'Map',
   Prophecy = 'Prophecy',
   ItemisedMonster = 'Itemised Monster'
-}
-
-export enum ModifierType {
-  Pseudo = 'pseudo',
-  Explicit = 'explicit',
-  Implicit = 'implicit',
-  Crafted = 'crafted',
-  Enchant = 'enchant'
 }
 
 const SECTION_PARSED = 1
@@ -332,56 +321,27 @@ function parseModifiers (section: string[], item: ParsedItem) {
 
   const countBefore = item.modifiers.length
 
-  for (let line of section) {
+  const statIterator = sectionToStatStrings(section)
+  let stat = statIterator.next()
+  while (!stat.done) {
     let modType: ModifierType | undefined
-    let mod: Mod | undefined
-    const values: number[] = []
+    let mod: ItemModifier | undefined
 
     // cleanup suffix
-    if (line.endsWith(IMPLICIT_SUFFIX)) {
-      line = line.slice(0, -IMPLICIT_SUFFIX.length)
+    if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
+      stat.value = stat.value.slice(0, -IMPLICIT_SUFFIX.length)
       modType = ModifierType.Implicit
-    } else if (line.endsWith(CRAFTED_SUFFIX)) {
-      line = line.slice(0, -CRAFTED_SUFFIX.length)
+    } else if (stat.value.endsWith(CRAFTED_SUFFIX)) {
+      stat.value = stat.value.slice(0, -CRAFTED_SUFFIX.length)
       modType = ModifierType.Crafted
     }
 
-    // 1. try to find "as is"
-    mod = Mods.get(line)
-    if (!mod) {
-      // 2. replace
-      // example: +#%, #%, #, +#, # to #, #-#
-      line = line.replace(/(?<![\d])[+-]?[\d.]+/g, (value) => {
-        values.push(Number(value))
-        return '#'
-      })
-      if (values.length !== 1 && values.length !== 2) {
-        continue
-      }
-      // 3. match variants
-      // @TODO: IMPORTANT! distinguish between local and global mods
-      const variants = [
-        { invertSign: false, text: line },
-        { invertSign: false, text: line + ' (Local)' },
-        { invertSign: false, text: line.replace('#', '+#') },
-        { invertSign: false, text: line.replace('#', '+#') + ' (Local)' },
-        { invertSign: true, text: line.replace('#% reduced', '#% increased') },
-        { invertSign: true, text: line.replace('#% reduced', '#% increased') + ' (Local)' }
-      ]
-      for (const variant of variants) {
-        mod = Mods.get(variant.text)
-        if (mod) {
-          if (variant.invertSign) {
-            values[0] *= -1
-          }
-          break
-        }
-      }
-    }
-
+    mod = tryFindModifier(stat.value)
     if (mod) {
+      // @TODO: IMPORTANT! distinguish between local and global mods
+
       if (modType == null) {
-        for (const type of mod.types) {
+        for (const type of mod.modInfo.types) {
           if (
             type.name !== ModifierType.Pseudo &&
             type.name !== ModifierType.Implicit &&
@@ -393,11 +353,14 @@ function parseModifiers (section: string[], item: ParsedItem) {
         }
       }
 
-      item.modifiers.push({
-        mod,
-        type: modType!,
-        values: values.length ? values : undefined
-      })
+      mod.type = modType!
+      if (mod.modInfo.types.find(type => type.name === mod!.type)!.tradeId) {
+        item.modifiers.push(mod)
+      }
+
+      stat = statIterator.next(true)
+    } else {
+      stat = statIterator.next(false)
     }
   }
 

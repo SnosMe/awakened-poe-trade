@@ -25,4 +25,15 @@ export interface Mod {
 
 export const Prophecies = new Set(prophecies as string[])
 export const ItemisedMonsters = new Set(monsters as string[])
-export const Mods = new Map<string, Mod>(mods)
+
+// Mods
+export const Mods = new Map<string, { condition: StatMatcher, mod: Mod }>()
+
+for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
+  for (const condition of entry.conditions) {
+    Mods.set(condition.string, {
+      condition,
+      mod: entry.mod
+    })
+  }
+}
