@@ -1,9 +1,8 @@
 import { stringify } from 'querystring'
-import { ParsedItem, ItemRarity, ItemCategory } from './Parser'
-import { Leagues } from './Leagues'
+import { ParsedItem } from '../Parser'
+import { Leagues } from '../Leagues'
 
-/* eslint-disable camelcase */
-interface PoepricesApiResponse {
+interface PoepricesApiResponse { /* eslint-disable camelcase */
   currency: 'chaos' | 'exalted'
   error: number
   error_msg: string
@@ -13,7 +12,6 @@ interface PoepricesApiResponse {
   pred_confidence_score: number
   pred_explanation: Array<[string, number]>
 }
-/* eslint-enable camelcase */
 
 interface RareItemPrice {
   max: number
@@ -27,8 +25,6 @@ interface RareItemPrice {
 }
 
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
-  console.assert(item.rarity === ItemRarity.Rare && item.computed.category !== ItemCategory.Map)
-
   const query = stringify({
     i: Buffer.from(item.rawText).toString('base64'),
     l: Leagues.selected,

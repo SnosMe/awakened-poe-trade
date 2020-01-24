@@ -57,4 +57,16 @@ export default {
 ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+
+.btn {
+  @apply bg-gray-700;
+  @apply px-2 py-1;
+  @apply text-gray-400;
+  @apply leading-none;
+  @apply rounded;
+}
+
+.btn-icon {
+  @apply text-xs text-gray-600;
+}
 </style>
