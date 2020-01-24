@@ -2,11 +2,14 @@
   <div class="titlebar">
     <div class="flex">
       <button v-if="isLoading"
-        class="button" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
+        class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
+      <button v-if="exaltedCost"
+        class="titlebar-btn"><i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}</button>
     </div>
     <div class="text-gray-600 truncate leading-none px-4">Awakened PoE Trade</div>
     <div class="flex">
-      <button @click="hideWindow" tabindex="-1" class="button" title="Close"><i class="fas fa-window-close"></i></button>
+      <button @click="hideWindow" tabindex="-1"
+        class="titlebar-btn app-close pt-px" title="Close"><i class="fas fa-window-close"></i></button>
     </div>
   </div>
 </template>
@@ -20,7 +23,12 @@ import { Prices } from './Prices'
 export default {
   name: 'AppTitlebar',
   computed: {
-    isLoading: () => Leagues.isLoading || Prices.isLoading
+    isLoading: () => Leagues.isLoading || Prices.isLoading,
+    exaltedCost () {
+      if (!Prices.isLoaded) return null
+
+      return Math.round(Prices.exaToChaos(1))
+    }
   },
   methods: {
     hideWindow () {
@@ -42,7 +50,7 @@ export default {
   height: 1.5rem;
 }
 
-.titlebar .button {
+.titlebar-btn {
   -webkit-app-region: no-drag;
   @apply text-gray-600;
   line-height: 1.5rem;
@@ -50,7 +58,13 @@ export default {
   @apply px-2;
 
   &:hover {
-    @apply text-red-200 bg-red-500;
+    @apply text-gray-500;
+  }
+
+  &.app-close {
+    &:hover {
+      @apply text-red-200 bg-red-500;
+    }
   }
 }
 </style>
