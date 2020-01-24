@@ -95,6 +95,11 @@ interface FetchResult {
       currency: string
       type: '~price'
     }
+    account: {
+      online?: {
+        status?: 'afk'
+      }
+    }
   }
 }
 
@@ -108,6 +113,7 @@ interface PricingResult {
   listedAt: string
   priceAmount: number
   priceCurrency: string
+  accountStatus: 'offline' | 'online' | 'afk'
 }
 
 export function createTradeRequest (item: ParsedItem) {
@@ -346,7 +352,10 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       level: result.item.properties?.find(prop => prop.name === 'Level')?.values[0][0],
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price.amount,
-      priceCurrency: result.listing.price.currency
+      priceCurrency: result.listing.price.currency,
+      accountStatus: result.listing.account.online
+        ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
+        : 'offline'
     } as PricingResult
   })
 }

@@ -51,7 +51,7 @@
           <th v-if="misc_filters.ilvl.min" class="px-2">iLvl</th>
           <th v-if="item.rarity === 'Gem'" class="px-2">Level</th>
           <th v-if="item.rarity === 'Gem'" class="px-2">Quality</th>
-          <th class="px-2 w-full">Listed</th>
+          <th class="pr-2 pl-4 w-full"><span class="ml-1" style="padding-left: 0.375rem;">Listed</span></th>
         </tr>
       </thead>
       <tbody style="overflow: scroll;">
@@ -61,7 +61,12 @@
           <td v-if="misc_filters.ilvl.min" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
           <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
           <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
-          <td class="font-sans text-xs px-2">{{ getRelativeTime(result.listedAt) }}</td>
+          <td class="font-sans text-xs pr-2 pl-4">
+            <div class="flex items-center">
+              <div class="account-status" :class="result.accountStatus"></div>
+              <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -158,5 +163,19 @@ export default {
 <style lang="postcss">
 .trade-tag {
   @apply bg-gray-900 py-1 px-2 m-1 rounded-full leading-none;
+}
+
+.account-status {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 100%;
+
+  &.online { /* */ }
+  &.offline {
+    @apply bg-red-600;
+  }
+  &.afk {
+    @apply bg-orange-500;
+  }
 }
 </style>
