@@ -63,7 +63,7 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
       return '#'
     })
 
-  if (matches.length > PLACEHOLDER_MAP.length) return
+  if (matches.length >= PLACEHOLDER_MAP.length) return
 
   const comboVariants = PLACEHOLDER_MAP[matches.length]
   for (const combo of comboVariants) {
