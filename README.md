@@ -1,4 +1,5 @@
-# ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
+# ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSnosMe%2Fawakened-poe-trade.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSnosMe%2Fawakened-poe-trade?ref=badge_shield)
+Awakened PoE Trade
 
 [![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.5.0/Awakened-PoE-Trade-Setup-0.5.0.exe "")
 
@@ -92,3 +93,7 @@ Good news: this only happens for a few seconds
 - [robotjs](https://github.com/octalmage/robotjs)
 - [poeprices.info](https://www.poeprices.info/)
 - [poe.ninja](https://poe.ninja/)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSnosMe%2Fawakened-poe-trade.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSnosMe%2Fawakened-poe-trade?ref=badge_large)
