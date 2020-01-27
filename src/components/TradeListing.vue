@@ -1,77 +1,65 @@
 <template>
-  <div v-if="loading">
-    <i class="fas fa-exclamation-circle pr-1 text-gray-600"></i>
-    <span>Requesting search results...</span>
-  </div>
-  <div v-else-if="results" class="layout-column overflow-y-auto overflow-x-hidden">
-    <div v-if="!item.stackSize" class="flex flex-wrap items-center mb-2 -m-1">
-      <div v-if="socket_filters.links.min" class="trade-tag">Links: {{ socket_filters.links.min }}</div>
-      <div v-if="map_filters.map_tier.min" class="trade-tag">Map Tier: {{ map_filters.map_tier.min }}</div>
-      <div v-if="misc_filters.ilvl.min" class="trade-tag">Item Level: {{ misc_filters.ilvl.min }}</div>
-      <div v-if="misc_filters.gem_level.min" class="trade-tag">Level: {{ misc_filters.gem_level.min }}</div>
-      <div v-if="misc_filters.quality.min" class="trade-tag">Quality: {{ misc_filters.quality.min }}%</div>
-      <div v-if="misc_filters.shaper_item.option === 'true'" class="trade-tag flex items-center">
-        <img class="w-5 h-5 -m-1" src="@/assets/influence/Shaper.png">
-        <span class="ml-2">Shaper</span>
+  <div v-if="!error" class="layout-column flex-grow">
+    <div class="mb-1 flex pl-2 justify-between">
+      <div class="flex items-baseline text-gray-500">
+        <span>Matched:&nbsp;&nbsp;</span>
+        <span v-if="!list" class="text-gray-600">...</span>
+        <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }} (Online)</span>
       </div>
-      <div v-if="misc_filters.elder_item.option === 'true'" class="trade-tag flex items-center">
-        <img class="w-5 h-5 -m-1" src="@/assets/influence/Elder.png">
-        <span class="ml-2">Elder</span>
-      </div>
-      <div v-if="misc_filters.crusader_item.option === 'true'" class="trade-tag flex items-center">
-        <img class="w-5 h-5 -m-1" src="@/assets/influence/Crusader.png">
-        <span class="ml-2">Crusader</span>
-      </div>
-      <div v-if="misc_filters.hunter_item.option === 'true'" class="trade-tag flex items-center">
-        <img class="w-5 h-5 -m-1" src="@/assets/influence/Hunter.png">
-        <span class="ml-2">Hunter</span>
-      </div>
-      <div v-if="misc_filters.redeemer_item.option === 'true'" class="trade-tag flex items-center">
-        <img class="w-5 h-5 -m-1" src="@/assets/influence/Redeemer.png">
-        <span class="ml-2">Redeemer</span>
-      </div>
-      <div v-if="misc_filters.warlord_item.option === 'true'" class="trade-tag flex items-center">
-        <img class="w-5 h-5 -m-1" src="@/assets/influence/Warlord.png">
-        <span class="ml-2">Warlord</span>
-      </div>
-      <div v-if="misc_filters.corrupted.option" class="trade-tag">
-        <span v-if="misc_filters.corrupted.option === 'true'" class="text-red-500">Corrupted</span>
-        <span v-if="misc_filters.corrupted.option === 'false'">Not Corrupted</span>
-      </div>
-      <div class="m-1 flex-1 flex justify-end">
-        <button @click="openTradeLink" class="py-1 px-2 leading-none align-left"><i class="fas fa-external-link-alt"></i></button>
+      <div v-if="list">
+        <button @click="openTradeLink" class="py-1 -my-1 px-2 leading-none align-left"><i class="fas fa-external-link-alt"></i></button>
       </div>
     </div>
-    <!-- @TODO: use css grids to achieve sticky header row -->
-    <table class="table-stripped w-full">
-      <thead>
-        <tr class="text-left">
-          <th class="px-2">Price</th>
-          <th v-if="item.stackSize" class="px-2">Stock</th>
-          <th v-if="misc_filters.ilvl.min" class="px-2">iLvl</th>
-          <th v-if="item.rarity === 'Gem'" class="px-2">Level</th>
-          <th v-if="item.rarity === 'Gem'" class="px-2">Quality</th>
-          <th class="pr-2 pl-4 w-full"><span class="ml-1" style="padding-left: 0.375rem;">Listed</span></th>
-        </tr>
-      </thead>
-      <tbody style="overflow: scroll;">
-        <tr v-for="result in results" :key="result.id">
-          <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
-          <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
-          <td v-if="misc_filters.ilvl.min" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
-          <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
-          <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
-          <td class="font-sans text-xs pr-2 pl-4">
-            <div class="flex items-center">
-              <div class="account-status" :class="result.accountStatus"></div>
-              <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="layout-column overflow-y-auto overflow-x-hidden">
+      <table class="table-stripped w-full">
+        <thead>
+          <tr class="text-left">
+            <th class="trade-table-heading">
+              <div class="px-2">Price</div>
+            </th>
+            <th v-if="item.stackSize" class="trade-table-heading">
+              <div class="px-2">Stock</div>
+            </th>
+            <th v-if="filters.itemLevel" class="trade-table-heading">
+              <div class="px-2">iLvl</div>
+            </th>
+            <th v-if="filters.gemLevel" class="trade-table-heading">
+              <div class="px-2">Level</div>
+            </th>
+            <th v-if="filters.quality" class="trade-table-heading">
+              <div class="px-2">Quality</div>
+            </th>
+            <th class="w-full trade-table-heading">
+              <div class="pr-2 pl-4">
+                <span class="ml-1" style="padding-left: 0.375rem;">Listed</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody style="overflow: scroll;">
+          <template v-for="(result, idx) in results">
+            <tr v-if="!result" :key="idx">
+              <td colspan="100">&nbsp;</td>
+            </tr>
+            <tr v-else :key="result.id">
+              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
+              <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
+              <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
+              <td v-if="filters.gemLevel" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
+              <td v-if="filters.quality" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
+              <td class="font-sans text-xs pr-2 pl-4">
+                <div class="flex items-center">
+                  <div class="account-status" :class="result.accountStatus"></div>
+                  <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
+                </div>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div v-else-if="error">
+  <div v-else>
     <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
     <span>{{ error }}</span>
   </div>
@@ -86,6 +74,14 @@ import { Leagues } from './Leagues'
 
 export default {
   props: {
+    filters: {
+      type: Object,
+      required: true
+    },
+    stats: {
+      type: Array,
+      required: true
+    },
     item: {
       type: Object,
       required: true
@@ -95,74 +91,57 @@ export default {
     return {
       loading: false,
       error: null,
-      results: null,
-      request: null,
-      tradeId: null
-    }
-  },
-  watch: {
-    item: {
-      immediate: true,
-      async handler (item) {
-        try {
-          // @TODO https://www.pathofexile.com/forum/view-thread/2079853#p15244273
-
-          this.loading = true
-          this.results = []
-          const request = createTradeRequest(item)
-          this.request = request
-          const list = await requestTradeResultList(request)
-          this.tradeId = list.id
-
-          await Promise.all([
-            requestResults(list.id, list.result.slice(0, 10))
-              .then(results => {
-                if (this.results.length) {
-                  // if second request loaded faster
-                  this.results = [...results, ...this.results]
-                } else {
-                  this.results = results
-                }
-                this.loading = false
-              }),
-            (list.total > 10)
-              ? requestResults(list.id, list.result.slice(10, 20))
-                .then(results => { this.results.push(...results) })
-              : Promise.resolve()
-          ])
-        } catch (err) {
-          this.error = err.message
-        } finally {
-          this.loading = false
-        }
-      }
-    }
-  },
-  computed: {
-    map_filters () {
-      return this.request.query.filters.map_filters.filters
-    },
-    misc_filters () {
-      return this.request.query.filters.misc_filters.filters
-    },
-    socket_filters () {
-      return this.request.query.filters.socket_filters.filters
+      results: Array(20),
+      list: null
     }
   },
   methods: {
+    async execSearch () {
+      try {
+        // NOTE: rate limiting https://www.pathofexile.com/forum/view-thread/2079853#p15244273
+
+        this.loading = true
+        this.error = null
+        this.results = Array(20)
+
+        this.list = null
+        const request = createTradeRequest(this.filters, this.stats)
+        const list = await requestTradeResultList(request)
+        this.list = list
+
+        await Promise.all([
+          requestResults(list.id, list.result.slice(0, 10))
+            .then(results => { this.results.splice(0, results.length, ...results) }),
+          (list.total > 10)
+            ? requestResults(list.id, list.result.slice(10, 20))
+              .then(results => { this.results.splice(10, results.length, ...results) })
+            : Promise.resolve()
+        ])
+      } catch (err) {
+        this.error = err.message
+      } finally {
+        this.loading = false
+      }
+    },
     getRelativeTime (iso) {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
     openTradeLink () {
-      ipcRenderer.send(OPEN_LINK, `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.tradeId}`)
+      ipcRenderer.send(OPEN_LINK, `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`)
     }
   }
 }
 </script>
 
 <style lang="postcss">
-.trade-tag {
-  @apply bg-gray-900 py-1 px-2 m-1 rounded-full leading-none;
+.trade-table-heading {
+  @apply sticky top-0;
+  @apply bg-gray-800;
+  @apply p-0 m-0;
+
+  & > div {
+    @apply border-b border-gray-700;
+  }
 }
 
 .account-status {

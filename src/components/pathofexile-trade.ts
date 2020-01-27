@@ -1,66 +1,117 @@
-import { ParsedItem, ItemCategory } from './Parser'
-import { ItemRarity, ItemInfluence } from './parser-constants'
+import { ItemInfluence } from './parser-constants'
 import { Leagues } from './Leagues'
+import { ItemFilters } from './filters/interface'
+import prop from 'dot-prop'
+import { UiModFilter } from './trade/interfaces'
+import { ItemCategory } from './Parser'
 
-const TradeOpts = {
-  GemLevel: 16,
-  GemLevelRange: 0,
-  GemQualityRange: 0
-}
-
-export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
+const CATEGORY_TO_TRADE_ID = new Map([
+  [ItemCategory.AbyssJewel, 'jewel.abyss'],
+  [ItemCategory.Amulet, 'accessory.amulet'],
+  [ItemCategory.Belt, 'accessory.belt'],
+  [ItemCategory.BodyArmour, 'armour.chest'],
+  [ItemCategory.Boots, 'armour.boots'],
+  [ItemCategory.Bow, 'weapon.bow'],
+  [ItemCategory.Claw, 'weapon.claw'],
+  [ItemCategory.Dagger, 'weapon.dagger'],
+  [ItemCategory.FishingRod, 'weapon.rod'],
+  [ItemCategory.Flask, 'flask'],
+  [ItemCategory.Gloves, 'armour.gloves'],
+  [ItemCategory.Helmet, 'armour.helmet'],
+  // [ItemCategory.ItemisedMonster, ''],
+  [ItemCategory.Jewel, 'jewel'],
+  // [ItemCategory.Map, ''],
+  [ItemCategory.OneHandedAxe, 'weapon.oneaxe'],
+  [ItemCategory.OneHandedMace, 'weapon.onemace'],
+  [ItemCategory.OneHandedSword, 'weapon.onesword'],
+  // [ItemCategory.Prophecy, ''],
+  [ItemCategory.Quiver, 'armour.quiver'],
+  [ItemCategory.Ring, 'accessory.ring'],
+  [ItemCategory.RuneDagger, 'weapon.runedagger'],
+  [ItemCategory.Sceptre, 'weapon.sceptre'],
+  [ItemCategory.Shield, 'armour.shield'],
+  [ItemCategory.Staff, 'weapon.staff'],
+  [ItemCategory.TwoHandedAxe, 'weapon.twoaxe'],
+  [ItemCategory.TwoHandedMace, 'weapon.twomace'],
+  [ItemCategory.TwoHandedSword, 'weapon.twosword'],
+  [ItemCategory.Wand, 'weapon.wand'],
+  [ItemCategory.Warstaff, 'weapon.warstaff']
+])
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
     status: { option: 'online' }
     name?: string
     type?: string
+    stats: Array<{
+      type: 'and' | 'if',
+      filters: Array<{
+        id: string
+        value?: {
+          min?: number
+          max?: number
+          option?: number | string
+        }
+        disabled?: boolean
+      }>
+      disabled?: boolean
+    }>
     filters: {
-      type_filters: {
+      type_filters?: {
         filters: {
-          rarity: {
+          rarity?: {
             option?: 'unique'
           }
-        }
-      }
-      socket_filters: {
-        filters: {
-          links: {
-            min?: number
-            max?: number
+          category?: {
+            option?: string
           }
         }
       }
-      misc_filters: {
+      socket_filters?: {
         filters: {
-          ilvl: {
+          links?: {
             min?: number
             max?: number
           }
-          quality: {
+        }
+      }
+      misc_filters?: {
+        filters: {
+          ilvl?: {
             min?: number
             max?: number
           }
-          gem_level: {
+          quality?: {
             min?: number
             max?: number
           }
-          corrupted: {
+          gem_level?: {
+            min?: number
+            max?: number
+          }
+          corrupted?: {
             option?: 'true' | 'false'
           }
-          shaper_item: { option?: 'true' | 'false' }
-          crusader_item: { option?: 'true' | 'false' }
-          hunter_item: { option?: 'true' | 'false' }
-          elder_item: { option?: 'true' | 'false' }
-          redeemer_item: { option?: 'true' | 'false' }
-          warlord_item: { option?: 'true' | 'false' }
+          shaper_item?: { option?: 'true' | 'false' }
+          crusader_item?: { option?: 'true' | 'false' }
+          hunter_item?: { option?: 'true' | 'false' }
+          elder_item?: { option?: 'true' | 'false' }
+          redeemer_item?: { option?: 'true' | 'false' }
+          warlord_item?: { option?: 'true' | 'false' }
         }
       }
-      map_filters: {
+      map_filters?: {
         filters: {
-          map_tier: {
+          map_tier?: {
             min?: number
             max?: number
+          }
+        }
+      }
+      trade_filters: {
+        filters: {
+          sale_type: {
+            option?: 'priced'
           }
         }
       }
@@ -75,6 +126,11 @@ interface SearchResult {
   id: string
   result: string[]
   total: number
+  inexact?: boolean
+  error?: {
+    code: number
+    message: string
+  }
 }
 
 interface FetchResult {
@@ -116,38 +172,15 @@ interface PricingResult {
   accountStatus: 'offline' | 'online' | 'afk'
 }
 
-export function createTradeRequest (item: ParsedItem) {
+export function createTradeRequest (filters: ItemFilters, stats: UiModFilter[]) {
   const body: TradeRequest = {
     query: {
       status: { option: 'online' },
+      stats: [],
       filters: {
-        type_filters: {
+        trade_filters: {
           filters: {
-            rarity: {}
-          }
-        },
-        socket_filters: {
-          filters: {
-            links: {}
-          }
-        },
-        misc_filters: {
-          filters: {
-            ilvl: {},
-            quality: {},
-            gem_level: {},
-            corrupted: {},
-            crusader_item: {},
-            elder_item: {},
-            hunter_item: {},
-            redeemer_item: {},
-            shaper_item: {},
-            warlord_item: {}
-          }
-        },
-        map_filters: {
-          filters: {
-            map_tier: {}
+            sale_type: { option: 'priced' }
           }
         }
       }
@@ -158,173 +191,98 @@ export function createTradeRequest (item: ParsedItem) {
   }
   const { query } = body
 
-  // #region early return
-
-  if (item.computed.category === ItemCategory.ItemisedMonster) {
-    query.type = item.baseType || item.name
-    return body
+  if (filters.name) {
+    query.name = filters.name.value
   }
 
-  // #endregion early return
+  if (filters.baseType) {
+    query.type = filters.baseType.value
+  }
 
-  if (item.rarity === ItemRarity.Gem) {
-    query.type = item.name
+  if (filters.rarity) {
+    prop.set(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
+  }
 
-    if (TradeOpts.GemQualityRange > 0) {
-      query.filters.misc_filters.filters.quality.min = (item.quality || 0) - TradeOpts.GemQualityRange
-      query.filters.misc_filters.filters.quality.max = (item.quality || 0) + TradeOpts.GemQualityRange
-    } else {
-      query.filters.misc_filters.filters.quality.min = item.quality
-    }
-
-    if (SPECIAL_SUPPORT_GEM.includes(item.name)) {
-      query.filters.misc_filters.filters.gem_level.min = item.gemLevel
-      query.filters.misc_filters.filters.gem_level.max = item.gemLevel
-    } else if (item.gemLevel! >= TradeOpts.GemLevel) {
-      if (TradeOpts.GemLevelRange > 0) {
-        query.filters.misc_filters.filters.gem_level.min = item.gemLevel! - TradeOpts.GemLevelRange
-        query.filters.misc_filters.filters.gem_level.max = item.gemLevel! + TradeOpts.GemLevelRange
-      } else {
-        query.filters.misc_filters.filters.gem_level.min = item.gemLevel!
-      }
-    }
-  } else if (item.rarity === ItemRarity.DivinationCard) {
-    query.type = item.name
-  } else if (item.computed.category === ItemCategory.Map) {
-    query.type = item.computed.mapName
-    if (item.rarity === ItemRarity.Unique) {
-      query.filters.type_filters.filters.rarity.option = 'unique'
-
-      // NOTE:
-      // 1 baseType = 1 Unique map. Now there is no need for this condition
-      // if (!item.isUnidentified) {
-      //   query.name = item.name
-      // }
-    }
-
-    query.filters.map_filters.filters.map_tier.min = item.mapTier
-    query.filters.map_filters.filters.map_tier.max = item.mapTier
-
-    // @TODO
-    // I did not find a filter in TradeMacro: by quantity and pack size
-    // Should this be added for juicy corrupted maps?
-  } else if (item.rarity === ItemRarity.Unique) {
-    query.name = item.name
-    query.type = item.baseType
-  } else if (item.computed.category === ItemCategory.Prophecy) {
-    query.name = item.name
-    query.type = 'Prophecy'
-  } else {
-    // TODO
-    if (item.rarity !== ItemRarity.Rare && item.rarity !== ItemRarity.Magic) {
-      query.type = item.name
+  if (filters.category) {
+    const id = CATEGORY_TO_TRADE_ID.get(filters.category.value)
+    if (id) {
+      prop.set(query.filters, 'type_filters.filters.category.option', id)
+    } else if (process.env.NODE_ENV !== 'development') {
+      throw new Error(`Invalid category: ${filters.category.value}`)
     }
   }
 
-  if (item.isCorrupted) {
-    query.filters.misc_filters.filters.corrupted.option = 'true'
-  } else {
-    query.filters.misc_filters.filters.corrupted.option = 'false'
+  if (filters.corrupted) {
+    prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
   }
 
-  if (item.linkedSockets) {
-    query.filters.socket_filters.filters.links.min = item.linkedSockets
+  if (filters.gemLevel) {
+    prop.set(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.min)
+    prop.set(query.filters, 'misc_filters.filters.gem_level.max', filters.gemLevel.max)
   }
 
-  for (const influence of item.influences) {
-    switch (influence) {
-      case ItemInfluence.Shaper:
-        query.filters.misc_filters.filters.shaper_item.option = 'true'
-        break
-      case ItemInfluence.Elder:
-        query.filters.misc_filters.filters.elder_item.option = 'true'
-        break
-      case ItemInfluence.Crusader:
-        query.filters.misc_filters.filters.crusader_item.option = 'true'
-        break
-      case ItemInfluence.Hunter:
-        query.filters.misc_filters.filters.hunter_item.option = 'true'
-        break
-      case ItemInfluence.Redeemer:
-        query.filters.misc_filters.filters.redeemer_item.option = 'true'
-        break
-      case ItemInfluence.Warlord:
-        query.filters.misc_filters.filters.warlord_item.option = 'true'
-        break
-    }
+  if (filters.quality) {
+    prop.set(query.filters, 'misc_filters.filters.quality.min', filters.quality.min)
+    prop.set(query.filters, 'misc_filters.filters.quality.max', filters.quality.max)
   }
 
-  if (item.itemLevel) {
-    if (
-      item.rarity !== ItemRarity.Unique &&
-      item.rarity !== ItemRarity.DivinationCard &&
-      item.computed.category !== ItemCategory.Map
-      /* @TODO && !isJewel https://pathofexile.gamepedia.com/Jewel#Affixes */
-    ) {
-      if (item.itemLevel > 86) {
-        query.filters.misc_filters.filters.ilvl.min = 86
-        // @TODO limit by item type
-        // If (RegExMatch(subtype, "i)Helmet|Gloves|Boots|Body Armour|Shield|Quiver")) {
-        //   Return (iLvl >= 84) ? 84 : false
-        // }
-        // Else If (RegExMatch(subtype, "i)Weapon")) {
-        //   Return (iLvl >= 83) ? 83 : false
-        // }
-        // Else If (RegExMatch(subtype, "i)Belt|Amulet|Ring")) {
-        //   Return (iLvl >= 83) ? 83 : false
-        // }
-        // Return false
-      } else {
-        query.filters.misc_filters.filters.ilvl.min = item.itemLevel
+  if (filters.itemLevel && !filters.itemLevel.disabled) {
+    prop.set(query.filters, 'misc_filters.filters.ilvl.min', filters.itemLevel.value)
+  }
+
+  if (filters.linkedSockets && !filters.linkedSockets.disabled) {
+    prop.set(query.filters, 'socket_filters.filters.links.min', filters.linkedSockets.value)
+  }
+
+  if (filters.mapTier) {
+    prop.set(query.filters, 'map_filters.filters.map_tier.min', filters.mapTier.value)
+    prop.set(query.filters, 'map_filters.filters.map_tier.max', filters.mapTier.value)
+  }
+
+  if (filters.influences) {
+    for (const influence of filters.influences) {
+      if (influence.disabled) continue
+
+      switch (influence.value) {
+        case ItemInfluence.Shaper:
+          prop.set(query.filters, 'misc_filters.filters.shaper_item.option', 'true')
+          break
+        case ItemInfluence.Elder:
+          prop.set(query.filters, 'misc_filters.filters.elder_item.option', 'true')
+          break
+        case ItemInfluence.Crusader:
+          prop.set(query.filters, 'misc_filters.filters.crusader_item.option', 'true')
+          break
+        case ItemInfluence.Hunter:
+          prop.set(query.filters, 'misc_filters.filters.hunter_item.option', 'true')
+          break
+        case ItemInfluence.Redeemer:
+          prop.set(query.filters, 'misc_filters.filters.redeemer_item.option', 'true')
+          break
+        case ItemInfluence.Warlord:
+          prop.set(query.filters, 'misc_filters.filters.warlord_item.option', 'true')
+          break
       }
     }
   }
+
+  query.stats.push({
+    type: 'and',
+    filters: stats.map(stat => ({
+      id: stat.tradeId,
+      value: {
+        min: typeof stat.min === 'number' ? stat.min : undefined,
+        max: typeof stat.max === 'number' ? stat.max : undefined,
+        option: stat.option != null ? stat.option.tradeId : undefined
+      },
+      disabled: stat.disabled
+    }))
+  })
 
   return body
 }
 
 export async function requestTradeResultList (body: TradeRequest) {
-  body = JSON.parse(JSON.stringify(body))
-  const { query } = body
-
-  // patch query for GGG api
-  if (!query.filters.type_filters.filters.rarity.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.type_filters!.filters!.rarity = undefined
-  }
-
-  if (!query.filters.misc_filters.filters.crusader_item.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.crusader_item = undefined
-  }
-  if (!query.filters.misc_filters.filters.warlord_item.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.warlord_item = undefined
-  }
-  if (!query.filters.misc_filters.filters.shaper_item.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.shaper_item = undefined
-  }
-  if (!query.filters.misc_filters.filters.elder_item.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.elder_item = undefined
-  }
-  if (!query.filters.misc_filters.filters.redeemer_item.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.redeemer_item = undefined
-  }
-  if (!query.filters.misc_filters.filters.hunter_item.option) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.misc_filters!.filters!.hunter_item = undefined
-  }
-
-  if (query.filters.socket_filters.filters.links.min == null && query.filters.socket_filters.filters.links.max == null) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.socket_filters!.filters!.links = undefined
-  }
-  if (query.filters.socket_filters.filters.links == null) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.socket_filters = undefined
-  }
-
-  if (query.filters.map_filters.filters.map_tier.min == null && query.filters.map_filters.filters.map_tier.max == null) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.map_filters!.filters!.map_tier = undefined
-  }
-  if (query.filters.map_filters.filters.map_tier == null) {
-    (query as DeepPartial<TradeRequest['query']>).filters!.map_filters = undefined
-  }
-
   const response = await fetch(`https://www.pathofexile.com/api/trade/search/${Leagues.selected}`, {
     method: 'POST',
     headers: {
@@ -334,6 +292,9 @@ export async function requestTradeResultList (body: TradeRequest) {
     body: JSON.stringify(body)
   })
   const data: SearchResult = await response.json()
+  if (data.error) {
+    throw new Error(data.error.message)
+  }
 
   return data
 }

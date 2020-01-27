@@ -1,5 +1,5 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '../Parser'
-import { SPECIAL_SUPPORT_GEM } from '../pathofexile-trade'
+import { SPECIAL_SUPPORT_GEM } from '../filters/create'
 
 const LATEST_MAP_VARIANT = 'Metamorph'
 

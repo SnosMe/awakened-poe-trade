@@ -1,6 +1,8 @@
 import prophecies from './prophecies.json'
 import monsters from './itemised-monsters.json'
 import mods from './mods.json'
+import baseTypes from './base-types.json'
+import { ItemCategory } from '../components/Parser'
 
 export interface StatMatcher {
   string: string
@@ -25,6 +27,12 @@ export interface Mod {
 
 export const Prophecies = new Set(prophecies as string[])
 export const ItemisedMonsters = new Set(monsters as string[])
+
+export interface BaseType {
+  category: ItemCategory
+}
+
+export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
 
 // Mods
 export const Mods = new Map<string, { condition: StatMatcher, mod: Mod }>()

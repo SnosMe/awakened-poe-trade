@@ -1,5 +1,5 @@
 <template>
-  <div style="min-height: 70px;">
+  <div :style="{ 'min-height': !showContrib ? '70px' : undefined }">
     <div v-if="loading" class="text-center py-2">
       <i class="fas fa-dna fa-spin text-gray-600"></i>
       <span class="pl-2">Getting price prediction...</span>
@@ -79,6 +79,7 @@ export default {
       async handler (item) {
         try {
           this.loading = true
+          this.error = null
           this.price = null
           this.showContrib = false
           this.price = await requestPoeprices(this.item)

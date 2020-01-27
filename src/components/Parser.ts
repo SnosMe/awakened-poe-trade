@@ -14,7 +14,7 @@ import {
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE
 } from './parser-constants'
-import { Prophecies, ItemisedMonsters } from '../data'
+import { Prophecies, ItemisedMonsters, BaseTypes } from '../data'
 import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
 import { ItemInfo, Prices } from './Prices'
 import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './parser/modifiers'
@@ -50,7 +50,34 @@ export interface ParsedItem {
 export enum ItemCategory {
   Map = 'Map',
   Prophecy = 'Prophecy',
-  ItemisedMonster = 'Itemised Monster'
+  ItemisedMonster = 'Itemised Monster',
+  Helmet = 'Helmet',
+  BodyArmour = 'Body Armour',
+  Gloves = 'Gloves',
+  Boots = 'Boots',
+  Shield = 'Shield',
+  Amulet = 'Amulet',
+  Belt = 'Belt',
+  Ring = 'Ring',
+  Flask = 'Flask',
+  AbyssJewel = 'Abyss Jewel',
+  Jewel = 'Jewel',
+  Quiver = 'Quiver',
+  Claw = 'Claw',
+  Bow = 'Bow',
+  Sceptre = 'Sceptre',
+  Wand = 'Wand',
+  FishingRod = 'Fishing Rod',
+  Staff = 'Staff',
+  Warstaff = 'Warstaff',
+  Dagger = 'Dagger',
+  RuneDagger = 'Rune Dagger',
+  OneHandedAxe = 'One-Handed Axe',
+  TwoHandedAxe = 'Two-Handed Axe',
+  OneHandedMace = 'One-Handed Mace',
+  TwoHandedMace = 'Two-Handed Mace',
+  OneHandedSword = 'One-Handed Sword',
+  TwoHandedSword = 'Two-Handed Sword'
 }
 
 const SECTION_PARSED = 1
@@ -156,6 +183,8 @@ function normalizeName (item: ParsedItem) {
     (item.baseType && ItemisedMonsters.has(item.baseType)) // Rare beast
   ) {
     item.computed.category = ItemCategory.ItemisedMonster
+  } else if (BaseTypes.has(item.baseType || item.name)) {
+    item.computed.category = BaseTypes.get(item.baseType || item.name)!.category
   } else {
     // Map
     const mapName = (item.isUnidentified || item.rarity === ItemRarity.Normal)
@@ -316,6 +345,15 @@ function parseQualityNested (section: string[], item: ParsedItem) {
 }
 
 function parseModifiers (section: string[], item: ParsedItem) {
+  if (
+    item.rarity !== ItemRarity.Normal &&
+    item.rarity !== ItemRarity.Magic &&
+    item.rarity !== ItemRarity.Rare &&
+    item.rarity !== ItemRarity.Unique
+  ) {
+    return PARSER_SKIPPED
+  }
+
   const IMPLICIT_SUFFIX = ' (implicit)'
   const CRAFTED_SUFFIX = ' (crafted)'
 
@@ -353,12 +391,18 @@ function parseModifiers (section: string[], item: ParsedItem) {
         }
       }
 
-      mod.type = modType!
-      if (mod.modInfo.types.find(type => type.name === mod!.type)!.tradeId) {
-        item.modifiers.push(mod)
-      }
+      if (modType == null) {
+        // This can happen on flasks implicit, smth else?
+        stat = statIterator.next(false)
+      } else {
+        mod.type = modType
+        // @TODO trade handling must be out of parser responsibility
+        if (mod.modInfo.types.find(type => type.name === mod!.type)!.tradeId) {
+          item.modifiers.push(mod)
+        }
 
-      stat = statIterator.next(true)
+        stat = statIterator.next(true)
+      }
     } else {
       stat = statIterator.next(false)
     }

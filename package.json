@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,6 +24,7 @@
   "dependencies": {
     "async": "^3.1.0",
     "core-js": "^2.6.5",
+    "dot-prop": "^5.2.0",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "iohook": "^0.6.2",
@@ -32,6 +33,7 @@
     "robotjs": "^0.6.0",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10",
+    "vue-popperjs": "^2.3.0",
     "vue-router": "^3.0.3",
     "vue-trend-chart": "^0.15.1",
     "x11": "git+https://git@github.com/sidorares/node-x11.git"

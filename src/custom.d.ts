@@ -5,3 +5,5 @@ type DeepPartial<T> = {
     ? Array<DeepPartial<I>>
     : DeepPartial<T[P]>
 }
+
+type Writeable<T> = { -readonly [P in keyof T]: T[P] }
