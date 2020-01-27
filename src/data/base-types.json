@@ -1,0 +1,4982 @@
+[
+  [
+    "Blue Pearl Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Marble Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Jet Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Paua Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Citrine Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Ruby Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Coral Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Amber Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Jade Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Lapis Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Gold Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Onyx Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Turquoise Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Agate Amulet",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Black Maw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Mandible Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Chrysalis Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Writhing Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Bonespire Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Ashscale Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Lone Antler Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Deep One Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Breakrib Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Deadhand Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Undying Flesh Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Rot Head Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Hexclaw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Primal Skull Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Wereclaw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Splitnewt Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Clutching Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Avian Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Avian Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Avian Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Avian Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Avian Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Avian Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Fangjaw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Horned Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Spinefuse Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Three Rat Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Monkey Twins Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Longtooth Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Rotfeather Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Monkey Paw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Monkey Paw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Monkey Paw Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Three Hands Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Greatwolf Talisman",
+    {
+      "category": "Amulet"
+    }
+  ],
+  [
+    "Golden Mantle",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Shabby Jerkin",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Glorious Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Coronal Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Cutthroat's Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sharkskin Tunic",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Destiny Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Exquisite Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Zodiac Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Assassin's Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Strapped Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Buckskin Tunic",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Wild Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sun Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Thief's Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Eelskin Tunic",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Frontier Leather",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Padded Vest",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Crimson Raiment",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Lacquered Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Crypt Armour",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sentinel Jacket",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Varnished Coat",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Blood Raiment",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sadist Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Carnal Armour",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Oiled Vest",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Padded Jacket",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Oiled Coat",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Scarlet Raiment",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Waxed Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Bone Armour",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Quilted Jacket",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sleek Coat",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Simple Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Conjurer's Vestment",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Spidersilk Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Destroyer Regalia",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Savant's Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Necromancer Silks",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Occultist's Vestment",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Widowsilk Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Vaal Regalia",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Silken Vest",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Scholar's Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Silken Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Mage's Vestment",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Silk Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Cabalist Regalia",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sage's Robe",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Silken Wrap",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Plate Vest",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sun Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Colosseum Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Majestic Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Golden Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Crusader Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Astral Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Gladiator Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Glorious Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Chestplate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Copper Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "War Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Arena Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Lordly Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Bronze Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Battle Plate",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Scale Vest",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Wyrmscale",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Commander's Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Battle Lamellar",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Dragonscale Doublet",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Desert Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Dragonscale",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "General's Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Triumphant Lamellar",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Light Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Scale Doublet",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Infantry Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Scale Armour",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Soldier's Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Field Lamellar",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Wyrmscale Doublet",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Hussar Brigandine",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Sacrificial Garb",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Chainmail Vest",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Ornate Ringmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Chain Hauberk",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Devout Chainmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Loricated Ringmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Conquest Chainmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Elegant Ringmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Saint's Hauberk",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Saintly Chainmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Chainmail Tunic",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Ringmail Coat",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Chainmail Doublet",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Ringmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Full Chainmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Holy Chainmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Latticed Ringmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Crusader Chainmail",
+    {
+      "category": "Body Armour"
+    }
+  ],
+  [
+    "Two-Toned Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Two-Toned Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Two-Toned Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Golden Caligae",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Avian Slippers",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Rawhide Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Goathide Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Deerskin Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Nubuck Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Eelskin Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Sharkskin Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Shagreen Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Stealth Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Slink Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Wrapped Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Strapped Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Clasped Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Shackled Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Trapper Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Ambush Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Carnal Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Assassin's Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Murder Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Wool Shoes",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Velvet Slippers",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Silk Slippers",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Scholar Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Satin Slippers",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Samite Slippers",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Conjurer Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Arcanist Slippers",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Sorcerer Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Iron Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Steel Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Plated Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Reinforced Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Antique Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Ancient Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Goliath Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Vaal Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Titan Greaves",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Leatherscale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Ironscale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Bronzescale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Steelscale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Serpentscale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Wyrmscale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Hydrascale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Dragonscale Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Chain Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Ringmail Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Mesh Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Riveted Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Zealot Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Soldier Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Legion Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Crusader Boots",
+    {
+      "category": "Boots"
+    }
+  ],
+  [
+    "Gripped Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Fingerless Silk Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Spiked Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Golden Bracers",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Rawhide Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Goathide Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Deerskin Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Nubuck Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Eelskin Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Sharkskin Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Shagreen Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Stealth Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Slink Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Wrapped Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Strapped Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Clasped Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Trapper Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Ambush Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Carnal Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Assassin's Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Murder Mitts",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Wool Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Velvet Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Silk Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Embroidered Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Satin Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Samite Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Conjurer Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Arcanist Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Sorcerer Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Iron Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Plated Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Bronze Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Steel Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Antique Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Ancient Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Goliath Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Vaal Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Titan Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Fishscale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Ironscale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Bronzescale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Steelscale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Serpentscale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Wyrmscale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Hydrascale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Dragonscale Gauntlets",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Chain Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Ringmail Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Mesh Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Riveted Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Zealot Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Soldier Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Legion Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Crusader Gloves",
+    {
+      "category": "Gloves"
+    }
+  ],
+  [
+    "Bone Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Golden Visage",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Leather Cap",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Lion Pelt",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Tricorne",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Leather Hood",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Wolf Pelt",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Hunter Hood",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Noble Tricorne",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Ursine Pelt",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Silken Hood",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Sinner Tricorne",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Scare Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Vaal Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Deicide Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Plague Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Iron Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Festival Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Golden Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Raven Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Callous Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Regicide Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Harlequin Mask",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Vine Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Mind Cage",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Hubris Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Iron Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Torture Cage",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Tribal Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Bone Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Lunaris Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Steel Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Necromancer Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Solaris Circlet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Iron Hat",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Royal Burgonet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Eternal Burgonet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Cone Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Barbute Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Close Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Gladiator Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Reaver Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Siege Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Samite Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Ezomyte Burgonet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Battered Helm",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Nightmare Bascinet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Sallet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Visored Sallet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Gilded Sallet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Secutor Helm",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Fencer Helm",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Lacquered Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Fluted Bascinet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Pig-Faced Bascinet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Rusted Coif",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Praetor Crown",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Soldier Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Great Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Crusader Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Aventail Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Zealot Helmet",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Great Crown",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Magistrate Crown",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Prophet Crown",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Golden Wreath",
+    {
+      "category": "Helmet"
+    }
+  ],
+  [
+    "Golden Flame",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Goathide Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Battle Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Golden Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ironwood Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Lacquered Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Vaal Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Crusader Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Imperial Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Pine Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Painted Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Hammered Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "War Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Gilded Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Oak Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Enameled Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Corrugated Buckler",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Spiked Bundle",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Alder Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ezomyte Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Mirrored Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Supreme Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Driftwood Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Alloyed Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Burnished Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ornate Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Redwood Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Compound Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Polished Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Sovereign Spiked Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Twig Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Chiming Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Thorium Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Lacewood Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Fossilised Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Vaal Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Harmonic Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Titanium Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Yew Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Bone Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Tarnished Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Jingling Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Brass Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Walnut Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ivory Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ancient Spirit Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Splintered Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Bronze Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Girded Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Crested Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Shagreen Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ebony Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ezomyte Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Colossal Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Pinnacle Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Corroded Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Rawhide Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Cedar Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Copper Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Reinforced Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Painted Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Buckskin Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Mahogany Tower Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Rotted Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Teak Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Spiny Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Cardinal Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Elegant Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Fir Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Studded Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Scarlet Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Splendid Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Maple Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Spiked Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Crimson Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Baroque Round Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Plank Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Branded Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Champion Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Mosaic Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Archon Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Linden Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Reinforced Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Layered Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Ceremonial Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Etched Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Steel Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Laminated Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Angelic Kite Shield",
+    {
+      "category": "Shield"
+    }
+  ],
+  [
+    "Rustic Sash",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Chain Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Leather Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Heavy Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Cloth Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Studded Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Stygian Vise",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Vanguard Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Crystal Belt",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Golden Obi",
+    {
+      "category": "Belt"
+    }
+  ],
+  [
+    "Small Hybrid Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Medium Hybrid Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Large Hybrid Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Colossal Hybrid Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sacred Hybrid Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Hallowed Hybrid Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Small Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sanctified Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Divine Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Eternal Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Medium Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Large Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Greater Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Grand Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Giant Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Colossal Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sacred Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Hallowed Life Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Small Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sanctified Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Divine Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Eternal Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Medium Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Large Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Greater Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Grand Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Giant Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Colossal Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sacred Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Hallowed Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Diamond Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Basalt Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Aquamarine Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Stibnite Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sulphur Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Silver Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Bismuth Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Ruby Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Sapphire Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Topaz Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Granite Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Quicksilver Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Amethyst Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Quartz Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Jade Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Hypnotic Eye Jewel",
+    {
+      "category": "Abyss Jewel"
+    }
+  ],
+  [
+    "Murderous Eye Jewel",
+    {
+      "category": "Abyss Jewel"
+    }
+  ],
+  [
+    "Searching Eye Jewel",
+    {
+      "category": "Abyss Jewel"
+    }
+  ],
+  [
+    "Ghastly Eye Jewel",
+    {
+      "category": "Abyss Jewel"
+    }
+  ],
+  [
+    "Viridian Jewel",
+    {
+      "category": "Jewel"
+    }
+  ],
+  [
+    "Cobalt Jewel",
+    {
+      "category": "Jewel"
+    }
+  ],
+  [
+    "Prismatic Jewel",
+    {
+      "category": "Jewel"
+    }
+  ],
+  [
+    "Crimson Jewel",
+    {
+      "category": "Jewel"
+    }
+  ],
+  [
+    "Timeless Jewel",
+    {
+      "category": "Jewel"
+    }
+  ],
+  [
+    "Cured Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Fire Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Broadhead Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Penetrating Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Spike-Point Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Ornate Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Rugged Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Conductive Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Heavy Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Light Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Serrated Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Two-Point Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Sharktooth Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Blunt Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Serrated Arrow Quiver",
+    {
+      "category": "Quiver"
+    }
+  ],
+  [
+    "Breach Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Iron Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Amethyst Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Diamond Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Two-Stone Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Two-Stone Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Two-Stone Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Unset Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Coral Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Paua Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Gold Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Topaz Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Sapphire Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Ruby Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Prismatic Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Moonstone Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Steel Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Opal Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Vermillion Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Cerulean Ring",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Golden Hoop",
+    {
+      "category": "Ring"
+    }
+  ],
+  [
+    "Nailed Fist",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Gouger",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Tiger's Paw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Gut Ripper",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Prehistoric Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Noble Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Eagle Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Great White Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Throat Stabber",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Hellion's Paw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Eye Gouger",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Sharktooth Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Vaal Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Imperial Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Terror Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Awl",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Cat's Paw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Blinder",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Timeworn Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Sparkling Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Fright Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Thresher Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Double Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Twin Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Gemini Claw",
+    {
+      "category": "Claw"
+    }
+  ],
+  [
+    "Glass Shank",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Butcher Knife",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Poignard",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Boot Blade",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Golden Kris",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Royal Skean",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Fiend Dagger",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Gutting Knife",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Slaughter Knife",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Ambusher",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Ezomyte Dagger",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Skinning Knife",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Platinum Kris",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Imperial Skean",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Demon Dagger",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Carving Knife",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Stiletto",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Boot Knife",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Copper Kris",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Skean",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Imp Dagger",
+    {
+      "category": "Rune Dagger"
+    }
+  ],
+  [
+    "Flaying Knife",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Prong Dagger",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Trisula",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Sai",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
+    "Rusted Hatchet",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Tomahawk",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Wrist Chopper",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "War Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Chest Splitter",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Ceremonial Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Wraith Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Karui Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Siege Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Reaver Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Butcher Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Jade Hatchet",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Vaal Hatchet",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Royal Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Infernal Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Boarding Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Cleaver",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Broad Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Arming Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Decorative Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Spectral Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Jasper Axe",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Etched Hatchet",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Engraved Hatchet",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Runic Hatchet",
+    {
+      "category": "One-Handed Axe"
+    }
+  ],
+  [
+    "Driftwood Club",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Barbed Club",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Rock Breaker",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Battle Hammer",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Flanged Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Ornate Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Phantom Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Ancestral Club",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Tenderizer",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Gavel",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Legion Hammer",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Tribal Club",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Pernarch",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Auric Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Nightmare Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Spiked Club",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Stone Hammer",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "War Hammer",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Bladed Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Ceremonial Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Dream Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Petrified Club",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Wyrm Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Dragon Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Behemoth Mace",
+    {
+      "category": "One-Handed Mace"
+    }
+  ],
+  [
+    "Driftwood Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Sekhem",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Crystal Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Lead Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Blood Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Royal Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Abyssal Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Karui Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Tyrant's Sekhem",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Opal Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Platinum Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Darkwood Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Vaal Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Carnal Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Void Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Bronze Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Quartz Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Iron Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Ochre Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Ritual Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Shadow Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Grinning Fetish",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Horned Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Stag Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Sambar Sceptre",
+    {
+      "category": "Sceptre"
+    }
+  ],
+  [
+    "Rusted Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Cutlass",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Baselard",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Battle Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Elder Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Graceful Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Twilight Blade",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Gemstone Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Corsair Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Gladius",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Legion Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Copper Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Vaal Blade",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Eternal Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Midnight Blade",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Sabre",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Broad Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "War Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Ancient Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Elegant Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Dusk Blade",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Variscite Blade",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Hook Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Grappler",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Tiger Hook",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Rusted Spike",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Burnished Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Estoc",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Serrated Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Primeval Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Fancy Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Apex Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Dragonbone Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Tempered Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Pecoraro",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Spiraled Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Whalebone Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Vaal Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Jewelled Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Harpy Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Battered Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Basket Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Jagged Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Antique Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Elegant Foil",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Thorn Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Wyrmbone Rapier",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Smallsword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Courtesan Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Dragoon Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ],
+  [
+    "Driftwood Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Serpent Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Omen Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Demon's Horn",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Imbued Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Opal Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Tornado Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Prophecy Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Goat's Horn",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Carved Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Quartz Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Spiraled Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Sage Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Faun's Horn",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Engraved Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Crystal Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Convoking Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Pagan Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Heathen Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Profane Wand",
+    {
+      "category": "Wand"
+    }
+  ],
+  [
+    "Fishing Rod",
+    {
+      "category": "Fishing Rod"
+    }
+  ],
+  [
+    "Crude Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Decurve Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Compound Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Sniper Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Ivory Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Highborn Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Decimation Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Thicket Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Citadel Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Ranger Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Assassin Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Short Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Spine Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Imperial Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Harbinger Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Long Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Composite Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Recurve Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Bone Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Royal Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Death Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Grove Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Reflex Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Steelwood Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Maraketh Bow",
+    {
+      "category": "Bow"
+    }
+  ],
+  [
+    "Gnarled Branch",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Military Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Serpentine Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Highborn Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Foul Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Primordial Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Lathi",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Ezomyte Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Maelström Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Imperial Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Judgement Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Primitive Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Long Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Iron Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Coiled Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Royal Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Vile Staff",
+    {
+      "category": "Warstaff"
+    }
+  ],
+  [
+    "Woodful Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Quarterstaff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Crescent Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Moon Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Eclipse Staff",
+    {
+      "category": "Staff"
+    }
+  ],
+  [
+    "Stone Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Headsman Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Labrys",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Noble Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Abyssal Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Karui Chopper",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Sundering Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Ezomyte Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Vaal Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Despot Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Void Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Jade Chopper",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Woodsplitter",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Poleaxe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Double Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Gilded Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Shadow Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Jasper Chopper",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Timber Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Dagger Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Talon Axe",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Fleshripper",
+    {
+      "category": "Two-Handed Axe"
+    }
+  ],
+  [
+    "Driftwood Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Steelhead",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Spiny Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Plated Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Dread Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Karui Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Colossus Mallet",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Piledriver",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Meatgrinder",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Imperial Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Terror Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Tribal Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Mallet",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Sledgehammer",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Jagged Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Brass Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Fright Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Totemic Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Great Mallet",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Morning Star",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Solar Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Coronal Maul",
+    {
+      "category": "Two-Handed Mace"
+    }
+  ],
+  [
+    "Corroded Blade",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Highland Blade",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Engraved Greatsword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Tiger Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Wraith Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Headman's Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Reaver Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Ezomyte Blade",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Vaal Greatsword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Lion Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Infernal Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Longsword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Bastard Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Two-Handed Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Etched Greatsword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Ornate Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Spectral Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Butcher Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Footman Sword",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Curved Blade",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Lithe Blade",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Exquisite Blade",
+    {
+      "category": "Two-Handed Sword"
+    }
+  ],
+  [
+    "Charan's Sword",
+    {
+      "category": "One-Handed Sword"
+    }
+  ]
+]
