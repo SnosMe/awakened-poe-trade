@@ -57,8 +57,8 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       if (mod.values) {
         const roll = getRollAsSingleNumber(mod.values)
         filter.roll = roll
-        filter.min = percentRoll(roll, -10, Math.floor)
-        filter.max = percentRoll(roll, +10, Math.ceil)
+        filter.min = percentRoll(roll, -10 * Math.sign(roll), Math.floor)
+        filter.max = percentRoll(roll, +10 * Math.sign(roll), Math.ceil)
       }
     }
 
