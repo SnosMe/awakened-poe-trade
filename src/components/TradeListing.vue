@@ -110,8 +110,10 @@ export default {
         this.list = list
 
         await Promise.all([
-          requestResults(list.id, list.result.slice(0, 10))
-            .then(results => { this.results.splice(0, results.length, ...results) }),
+          (list.total > 0)
+            ? requestResults(list.id, list.result.slice(0, 10))
+              .then(results => { this.results.splice(0, results.length, ...results) })
+            : Promise.resolve(),
           (list.total > 10)
             ? requestResults(list.id, list.result.slice(10, 20))
               .then(results => { this.results.splice(10, results.length, ...results) })
