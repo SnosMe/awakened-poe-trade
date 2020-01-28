@@ -23,10 +23,10 @@
             <th v-if="filters.itemLevel" class="trade-table-heading">
               <div class="px-2">iLvl</div>
             </th>
-            <th v-if="filters.gemLevel" class="trade-table-heading">
+            <th v-if="item.rarity === 'Gem'" class="trade-table-heading">
               <div class="px-2">Level</div>
             </th>
-            <th v-if="filters.quality" class="trade-table-heading">
+            <th v-if="filters.quality || item.rarity === 'Gem'" class="trade-table-heading">
               <div class="px-2">Quality</div>
             </th>
             <th class="w-full trade-table-heading">
@@ -45,8 +45,8 @@
               <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
-              <td v-if="filters.gemLevel" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
-              <td v-if="filters.quality" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
+              <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
+              <td v-if="filters.quality || item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
               <td class="font-sans text-xs pr-2 pl-4">
                 <div class="flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
