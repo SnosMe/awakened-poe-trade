@@ -9,12 +9,14 @@
         <span class="truncate flex-1 pr-1">{{ filter.text }}</span>
       </button>
       <div class="flex">
-        <input class="search-num-input rounded-tl mr-px" placeholder="min" type="number"
+        <input class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
           v-if="showMinmaxInput"
           v-model.number="filter.min" @focus="inputFocus">
-        <input class="search-num-input rounded-tr" placeholder="max" type="number"
+        <input class="search-num-input rounded-tr" placeholder="max" type="number" :class="{ 'rounded-br': filter.roll == null }"
           v-if="showMinmaxInput"
           v-model.number="filter.max" @focus="inputFocus">
+        <div v-if="filter.option"
+          class="search-option">{{ filter.option.text }}</div>
       </div>
     </div>
     <div class="flex">
@@ -97,5 +99,14 @@ export default {
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
+}
+
+.search-option {
+  @apply bg-gray-900;
+  @apply text-gray-300 text-center truncate;
+  @apply w-48;
+  @apply px-1;
+  @apply border border-transparent;
+  @apply rounded;
 }
 </style>
