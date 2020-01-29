@@ -56,7 +56,16 @@ export default {
 
     document.addEventListener('mouseenter', (e) => {
       if (e.ctrlKey) {
+        this.isClickedAfterLock = false
         ipcRenderer.send(LOCK_WINDOW)
+      }
+    })
+    document.addEventListener('click', () => {
+      this.isClickedAfterLock = true
+    })
+    document.addEventListener('mouseleave', () => {
+      if (!this.isClickedAfterLock) {
+        ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
       }
     })
 
@@ -82,6 +91,7 @@ export default {
   },
   data () {
     return {
+      isClickedAfterLock: false,
       item: null,
       itemFilters: null,
       itemStats: null
