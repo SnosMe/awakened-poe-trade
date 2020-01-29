@@ -3,8 +3,14 @@
     <div class="flex">
       <button v-if="isLoading"
         class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
-      <button v-if="exaltedCost"
-        class="titlebar-btn"><i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}</button>
+      <ui-popper v-if="exaltedCost" trigger="clickToToggle">
+        <template slot="reference">
+          <button class="titlebar-btn"><i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}</button>
+        </template>
+        <div class="popper">
+          <div>TODO POG</div>
+        </div>
+      </ui-popper>
     </div>
     <div class="text-gray-600 truncate leading-none px-4">Awakened PoE Trade</div>
     <div class="flex">

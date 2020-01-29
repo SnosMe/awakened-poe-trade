@@ -10,6 +10,7 @@ module.exports = {
           allowToChangeInstallationDirectory: true
         }
         // win: {
+        //   target: ['nsis', 'portable'],
         //   requestedExecutionLevel: 'requireAdministrator'
         // }
       }
