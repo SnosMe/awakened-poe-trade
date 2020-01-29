@@ -28,7 +28,9 @@ export function setupShowHide () {
 
       if (poeWindowId && isWindowLocked) {
         isWindowLocked = false
-        windowManager.focusWindowById(poeWindowId)
+        if (process.platform === 'win32') {
+          windowManager.focusWindowById(poeWindowId)
+        }
         if (browserViewExternal) {
           win.removeBrowserView(browserViewExternal)
           // uncomment to trade performance for less memory usage (1 process & 13 MB)

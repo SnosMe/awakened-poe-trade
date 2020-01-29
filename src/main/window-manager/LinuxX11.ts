@@ -111,7 +111,13 @@ export class LinuxX11 implements IWindowManager {
 
   getActiveWindowId (): Promise<number | null> {
     return new Promise((resolve, reject) => {
-      reject(new Error('Method not implemented.'))
+      this.X.GetProperty(0, this.rootWid, this.USED_ATOMS._NET_ACTIVE_WINDOW, this.USED_ATOMS.WINDOW, 0, 4, (err, prop) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve(decodeWindow(prop.data))
+        }
+      })
     })
   }
 
