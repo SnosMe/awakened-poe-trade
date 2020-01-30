@@ -1,8 +1,10 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.0/Awakened-PoE-Trade-Setup-0.6.0.exe "")
+[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.1/Awakened-PoE-Trade-Setup-0.6.1.exe "")
 
-[Download for Windows v0.6.0](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.0/Awakened-PoE-Trade-Setup-0.6.0.exe)
+[Download for Windows v0.6.1](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.1/Awakened-PoE-Trade-Setup-0.6.1.exe)
+
+[Download for Linux v0.6.1](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.1/Awakened-PoE-Trade-0.6.1.AppImage)
 
 ## Tool showcase
 
@@ -74,11 +76,8 @@ Type `APT` ?
 
 |    | On program load | After some time |
 |----|-----------------|-----------------|
-| APT | 115 MB         | 68 MB |
+| APT | 115 MB         | 78 MB |
 | TradeMacro | 60 MB   | 24 MB |
-
-- **Any chance of Linux support**\
-Yes it is absolutely possible. (Wishing to help: a problem in the `node-window-manager` library)
 
 - **My mouse and computer freeze when I start the program**\
 Bad news: It is unavoidable, some app on your computer uses the same library as APT https://github.com/wilix-team/iohook/issues/93 \
