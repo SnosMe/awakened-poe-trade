@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ItemRarity, ItemCategory } from '../Parser'
+import { ItemRarity, ItemCategory } from '../parser'
 
 export default {
   name: 'FilterName',

@@ -2,7 +2,7 @@ import prophecies from './prophecies.json'
 import monsters from './itemised-monsters.json'
 import mods from './mods.json'
 import baseTypes from './base-types.json'
-import { ItemCategory } from '../components/Parser'
+import { ItemCategory } from '../components/parser'
 
 export interface StatMatcher {
   string: string

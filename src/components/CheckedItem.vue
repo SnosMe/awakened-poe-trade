@@ -25,7 +25,7 @@
 <script>
 import { ipcRenderer } from 'electron'
 import { PRICE_CHECK_VISIBLE, LOCK_WINDOW } from '../shared/ipc-event'
-import { parseClipboard, ItemRarity, ItemCategory } from './Parser'
+import { parseClipboard, ItemRarity, ItemCategory } from './parser'
 import TradeListing from './TradeListing'
 import PriceTrend from './trends/PriceTrend'
 import FiltersBlock from './filters/FiltersBlock'

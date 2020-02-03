@@ -1,5 +1,5 @@
 import { stringify } from 'querystring'
-import { ParsedItem } from '../Parser'
+import { ParsedItem } from '../parser'
 import { Leagues } from '../Leagues'
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */

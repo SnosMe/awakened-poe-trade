@@ -1,4 +1,4 @@
-import { ParsedItem } from '../Parser'
+import { ParsedItem } from '../parser'
 import { ItemModifier } from '../parser/modifiers'
 
 export interface UiModFilter {

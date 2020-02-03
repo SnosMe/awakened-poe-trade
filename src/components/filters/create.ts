@@ -1,6 +1,5 @@
 import { ItemFilters } from './interface'
-import { ParsedItem, ItemCategory } from '../Parser'
-import { ItemRarity } from '../parser-constants'
+import { ParsedItem, ItemCategory, ItemRarity } from '../parser'
 
 const TradeOpts = {
   GemLevel: 16,

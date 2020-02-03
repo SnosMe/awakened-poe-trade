@@ -12,73 +12,16 @@ import {
   UNIDENTIFIED,
   PREFIX_VAAL,
   PREFIX_SUPERIOR,
-  SUFFIX_INFLUENCE
-} from './parser-constants'
-import { Prophecies, ItemisedMonsters, BaseTypes } from '../data'
-import { getDetailsId, nameToDetailsId } from './trends/getDetailsId'
-import { ItemInfo, Prices } from './Prices'
-import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './parser/modifiers'
-
-export {
-  ItemRarity,
-  ItemInfluence
-}
-
-export interface ParsedItem {
-  rarity: ItemRarity
-  name: string
-  baseType: string | undefined
-  itemLevel?: number
-  mapTier?: number
-  quality?: number
-  linkedSockets?: number // only 5 or 6
-  stackSize?: number
-  isUnidentified: boolean
-  isCorrupted: boolean
-  gemLevel?: number
-  influences: ItemInfluence[]
-  rawText: string
-  modifiers: ItemModifier[]
-  computed: {
-    category?: ItemCategory
-    mapName?: string
-    icon?: string
-    trend?: ItemInfo
-  }
-}
-
-export enum ItemCategory {
-  Map = 'Map',
-  Prophecy = 'Prophecy',
-  ItemisedMonster = 'Itemised Monster',
-  Helmet = 'Helmet',
-  BodyArmour = 'Body Armour',
-  Gloves = 'Gloves',
-  Boots = 'Boots',
-  Shield = 'Shield',
-  Amulet = 'Amulet',
-  Belt = 'Belt',
-  Ring = 'Ring',
-  Flask = 'Flask',
-  AbyssJewel = 'Abyss Jewel',
-  Jewel = 'Jewel',
-  Quiver = 'Quiver',
-  Claw = 'Claw',
-  Bow = 'Bow',
-  Sceptre = 'Sceptre',
-  Wand = 'Wand',
-  FishingRod = 'Fishing Rod',
-  Staff = 'Staff',
-  Warstaff = 'Warstaff',
-  Dagger = 'Dagger',
-  RuneDagger = 'Rune Dagger',
-  OneHandedAxe = 'One-Handed Axe',
-  TwoHandedAxe = 'Two-Handed Axe',
-  OneHandedMace = 'One-Handed Mace',
-  TwoHandedMace = 'Two-Handed Mace',
-  OneHandedSword = 'One-Handed Sword',
-  TwoHandedSword = 'Two-Handed Sword'
-}
+  SUFFIX_INFLUENCE,
+  IMPLICIT_SUFFIX,
+  CRAFTED_SUFFIX
+} from './constants'
+import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
+import { getDetailsId, nameToDetailsId } from '../trends/getDetailsId'
+import { Prices } from '../Prices'
+import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
+import { ItemCategory } from './meta'
+import { ParsedItem } from './ParsedItem'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -353,9 +296,6 @@ function parseModifiers (section: string[], item: ParsedItem) {
   ) {
     return PARSER_SKIPPED
   }
-
-  const IMPLICIT_SUFFIX = ' (implicit)'
-  const CRAFTED_SUFFIX = ' (crafted)'
 
   const countBefore = item.modifiers.length
 

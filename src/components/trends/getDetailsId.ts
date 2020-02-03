@@ -1,4 +1,4 @@
-import { ParsedItem, ItemRarity, ItemCategory } from '../Parser'
+import { ParsedItem, ItemRarity, ItemCategory } from '../parser'
 import { SPECIAL_SUPPORT_GEM } from '../filters/create'
 
 const LATEST_MAP_VARIANT = 'Metamorph'

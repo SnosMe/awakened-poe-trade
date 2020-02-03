@@ -24,8 +24,12 @@ export const TAG_GEM_LEVEL = 'Level: '
 export const TAG_STACK_SIZE = 'Stack Size: '
 export const TAG_SOCKETS = 'Sockets: '
 export const TAG_QUALITY = 'Quality: '
+
 export const PREFIX_SUPERIOR = 'Superior '
 export const PREFIX_VAAL = 'Vaal '
 export const SUFFIX_INFLUENCE = ' Item'
+export const IMPLICIT_SUFFIX = ' (implicit)'
+export const CRAFTED_SUFFIX = ' (crafted)'
+
 export const CORRUPTED = 'Corrupted'
 export const UNIDENTIFIED = 'Unidentified'

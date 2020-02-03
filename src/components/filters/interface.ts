@@ -1,4 +1,4 @@
-import { ItemInfluence, ItemCategory } from '../Parser'
+import { ItemInfluence, ItemCategory } from '../parser'
 
 export interface ItemFilters {
   name?: {
