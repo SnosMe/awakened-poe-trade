@@ -391,17 +391,13 @@ function parseModifiers (section: string[], item: ParsedItem) {
         }
       }
 
-      if (modType == null) {
-        // This can happen on flasks implicit, smth else?
-        stat = statIterator.next(false)
-      } else {
-        mod.type = modType
-        // @TODO trade handling must be out of parser responsibility
-        if (mod.modInfo.types.find(type => type.name === mod!.type)!.tradeId) {
-          item.modifiers.push(mod)
-        }
-
+      // @TODO tradeId handling must be out of parser responsibility
+      if (mod.modInfo.types.find(type => type.name === modType)?.tradeId) {
+        mod.type = modType!
+        item.modifiers.push(mod)
         stat = statIterator.next(true)
+      } else {
+        stat = statIterator.next(false)
       }
     } else {
       stat = statIterator.next(false)
