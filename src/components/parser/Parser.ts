@@ -14,7 +14,15 @@ import {
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE,
   IMPLICIT_SUFFIX,
-  CRAFTED_SUFFIX
+  CRAFTED_SUFFIX,
+  TAG_ARMOUR,
+  TAG_EVASION,
+  TAG_ENERGY_SHIELD,
+  TAG_BLOCK_CHANCE,
+  TAG_CRIT_CHANCE,
+  TAG_ATTACK_SPEED,
+  TAG_PHYSICAL_DAMAGE,
+  TAG_ELEMENTAL_DAMAGE
 } from './constants'
 import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
 import { getDetailsId, nameToDetailsId } from '../trends/getDetailsId'
@@ -22,16 +30,19 @@ import { Prices } from '../Prices'
 import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
 import { ParsedItem } from './ParsedItem'
+import { getRollAsSingleNumber } from '../trade/interfaces'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
 const PARSER_SKIPPED = -1
 
+type SectionParseResult =
+  typeof SECTION_PARSED |
+  typeof SECTION_SKIPPED |
+  typeof PARSER_SKIPPED
+
 interface ParserFn {
-  (section: string[], item: ParsedItem):
-    typeof SECTION_PARSED |
-    typeof SECTION_SKIPPED |
-    typeof PARSER_SKIPPED
+  (section: string[], item: ParsedItem): SectionParseResult
 }
 
 interface ParserAfterHookFn {
@@ -43,6 +54,8 @@ const parsers: ParserFn[] = [
   parseItemLevel,
   parseVaalGem,
   parseGem,
+  parseArmour,
+  parseWeapon,
   parseStackSize,
   parseCorrupted,
   parseInfluence,
@@ -167,6 +180,7 @@ function parseNamePlate (section: string[]) {
         rarity,
         name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
         baseType: section[2],
+        props: {},
         isUnidentified: false,
         isCorrupted: false,
         modifiers: [],
@@ -285,6 +299,64 @@ function parseQualityNested (section: string[], item: ParsedItem) {
       break
     }
   }
+}
+
+function parseArmour (section: string[], item: ParsedItem) {
+  let isParsed = SECTION_SKIPPED as SectionParseResult
+
+  for (const line of section) {
+    if (line.startsWith(TAG_ARMOUR)) {
+      item.props.armour = parseInt(line.substr(TAG_ARMOUR.length), 10)
+      isParsed = SECTION_PARSED; continue
+    }
+    if (line.startsWith(TAG_EVASION)) {
+      item.props.evasion = parseInt(line.substr(TAG_EVASION.length), 10)
+      isParsed = SECTION_PARSED; continue
+    }
+    if (line.startsWith(TAG_ENERGY_SHIELD)) {
+      item.props.energyShield = parseInt(line.substr(TAG_ENERGY_SHIELD.length), 10)
+      isParsed = SECTION_PARSED; continue
+    }
+    if (line.startsWith(TAG_BLOCK_CHANCE)) {
+      item.props.blockChance = parseInt(line.substr(TAG_BLOCK_CHANCE.length), 10)
+      isParsed = SECTION_PARSED; continue
+    }
+  }
+
+  return isParsed
+}
+
+function parseWeapon (section: string[], item: ParsedItem) {
+  let isParsed = SECTION_SKIPPED as SectionParseResult
+
+  for (const line of section) {
+    if (line.startsWith(TAG_CRIT_CHANCE)) {
+      item.props.critChance = parseFloat(line.substr(TAG_CRIT_CHANCE.length))
+      isParsed = SECTION_PARSED; continue
+    }
+    if (line.startsWith(TAG_ATTACK_SPEED)) {
+      item.props.attackSpeed = parseFloat(line.substr(TAG_ATTACK_SPEED.length))
+      isParsed = SECTION_PARSED; continue
+    }
+    if (line.startsWith(TAG_PHYSICAL_DAMAGE)) {
+      item.props.physicalDamage = getRollAsSingleNumber(
+        line.substr(TAG_PHYSICAL_DAMAGE.length)
+          .split('-').map(str => parseInt(str, 10))
+      )
+      isParsed = SECTION_PARSED; continue
+    }
+    if (line.startsWith(TAG_ELEMENTAL_DAMAGE)) {
+      item.props.elementalDamage =
+        line.substr(TAG_ELEMENTAL_DAMAGE.length)
+          .split(', ')
+          .map(element => getRollAsSingleNumber(element.split('-').map(str => parseInt(str, 10))))
+          .reduce((sum, x) => sum + x, 0)
+
+      isParsed = SECTION_PARSED; continue
+    }
+  }
+
+  return isParsed
 }
 
 function parseModifiers (section: string[], item: ParsedItem) {

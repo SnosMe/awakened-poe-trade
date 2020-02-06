@@ -8,6 +8,16 @@ export interface ParsedItem {
   name: string
   baseType: string | undefined
   itemLevel?: number
+  props: {
+    armour?: number
+    evasion?: number
+    energyShield?: number
+    blockChance?: number
+    critChance?: number
+    attackSpeed?: number
+    physicalDamage?: number
+    elementalDamage?: number
+  }
   mapTier?: number
   quality?: number
   linkedSockets?: number // only 5 or 6
