@@ -1,8 +1,8 @@
-import { ItemInfluence, ItemCategory } from './parser'
-import { Leagues } from './Leagues'
-import { ItemFilters } from './filters/interface'
+import { ItemInfluence, ItemCategory } from '../parser'
+import { Leagues } from '../Leagues'
+import { ItemFilters } from '../filters/interface'
 import prop from 'dot-prop'
-import { UiModFilter, INTERNAL_TRADE_ID } from './trade/interfaces'
+import { UiModFilter, INTERNAL_TRADE_ID } from './interfaces'
 
 const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],

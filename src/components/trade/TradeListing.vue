@@ -69,8 +69,8 @@
 import { ipcRenderer } from 'electron'
 import { DateTime } from 'luxon'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
-import { OPEN_LINK } from '../shared/ipc-event'
-import { Leagues } from './Leagues'
+import { OPEN_LINK } from '../../shared/ipc-event'
+import { Leagues } from '../Leagues'
 
 export default {
   props: {
