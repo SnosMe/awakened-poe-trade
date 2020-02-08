@@ -2090,6 +2090,12 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_960081730"
+        },
+        {
+          "name": "implicit"
+        },
+        {
+          "name": "crafted"
         }
       ]
     }
@@ -3316,6 +3322,9 @@
         {
           "name": "crafted",
           "tradeId": "crafted.stat_809229260"
+        },
+        {
+          "name": "implicit"
         }
       ]
     }
@@ -3464,6 +3473,9 @@
         {
           "name": "crafted",
           "tradeId": "crafted.stat_2144192055"
+        },
+        {
+          "name": "implicit"
         }
       ]
     }
@@ -5060,6 +5072,26 @@
         {
           "name": "crafted",
           "tradeId": "crafted.stat_350598685"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "# uses remaining"
+      }
+    ],
+    "mod": {
+      "text": "# uses remaining",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_1479533453"
+        },
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_290368246"
         }
       ]
     }
@@ -9142,6 +9174,9 @@
         {
           "name": "implicit",
           "tradeId": "implicit.stat_795138349"
+        },
+        {
+          "name": "crafted"
         }
       ]
     }
@@ -14973,6 +15008,22 @@
   {
     "conditions": [
       {
+        "string": "#% increased effect of Modifiers on non-unique Maps"
+      }
+    ],
+    "mod": {
+      "text": "#% increased effect of Modifiers on non-unique Maps",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_3191123893"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased effect of Non-Curse Auras from your Skills"
       },
       {
@@ -19293,6 +19344,26 @@
   {
     "conditions": [
       {
+        "string": "#% increased Quantity of Items found in Areas"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Quantity of Items found in Areas",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_2390685262"
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_2390685262"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Quantity of Items found when on Low Life"
       },
       {
@@ -19522,6 +19593,22 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_121185030"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Rarity of Items found in this Area"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Rarity of Items found in this Area",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_2306002879"
         }
       ]
     }
@@ -25170,6 +25257,22 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_162742068"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% Monster pack size"
+      }
+    ],
+    "mod": {
+      "text": "+#% Monster pack size",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_2017682521"
         }
       ]
     }
@@ -51130,6 +51233,22 @@
   {
     "conditions": [
       {
+        "string": "While your Passive Skill Tree connects to a class' starting location, you gain:\nMarauder: Melee Skills have #% increased Area of Effect\nDuelist: #% of Attack Damage Leeched as Life\nRanger: #% increased Movement Speed\nShadow: #% to Critical Strike Chance\nWitch: #% of Mana Regenerated per second\nTemplar: Damage Penetrates #% Elemental Resistances\nScion: # to All Attributes"
+      }
+    ],
+    "mod": {
+      "text": "While your Passive Skill Tree connects to a class' starting location, you gain:\nMarauder: Melee Skills have #% increased Area of Effect\nDuelist: #% of Attack Damage Leeched as Life\nRanger: #% increased Movement Speed\nShadow: #% to Critical Strike Chance\nWitch: #% of Mana Regenerated per second\nTemplar: Damage Penetrates #% Elemental Resistances\nScion: # to All Attributes",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_769192511"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Wicked Ward"
       }
     ],
@@ -63038,6 +63157,22 @@
   {
     "conditions": [
       {
+        "string": "#% increased Pack Size in Unidentified Maps"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Pack Size in Unidentified Maps",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_2130041903"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Phase Run Duration"
       },
       {
@@ -63251,6 +63386,22 @@
         {
           "name": "enchant",
           "tradeId": "enchant.stat_1924239636"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Quantity of Items found in Unidentified Maps"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Quantity of Items found in Unidentified Maps",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_98212089"
         }
       ]
     }
@@ -67725,6 +67876,22 @@
   {
     "conditions": [
       {
+        "string": "Found Items drop Identified in Identified Maps"
+      }
+    ],
+    "mod": {
+      "text": "Found Items drop Identified in Identified Maps",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_75100665"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Freeze Mine causes Enemies to lose an additional #% Cold Resistance while Frozen",
         "negate": true
       }
@@ -68622,6 +68789,22 @@
   {
     "conditions": [
       {
+        "string": "Magic Maps contain # additional packs of Magic Monsters"
+      }
+    ],
+    "mod": {
+      "text": "Magic Maps contain # additional packs of Magic Monsters",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_839907382"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Magma Orb Chains an additional time",
         "condition": {
           "max": 1,
@@ -68948,6 +69131,22 @@
         {
           "name": "enchant",
           "tradeId": "enchant.stat_2329255938"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Normal Maps contain # additional packs of Normal Monsters"
+      }
+    ],
+    "mod": {
+      "text": "Normal Maps contain # additional packs of Normal Monsters",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_3893420071"
         }
       ]
     }
@@ -69542,6 +69741,22 @@
         {
           "name": "enchant",
           "tradeId": "enchant.stat_2871777604"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Rare Maps contain # additional Rare Monster packs"
+      }
+    ],
+    "mod": {
+      "text": "Rare Maps contain # additional Rare Monster packs",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_3672378181"
         }
       ]
     }
@@ -71135,6 +71350,22 @@
         {
           "name": "enchant",
           "tradeId": "enchant.stat_3481854423"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Unique Bosses of Corrupted Maps drop an additional Vaal Item"
+      }
+    ],
+    "mod": {
+      "text": "Unique Bosses of Corrupted Maps drop an additional Vaal Item",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_2747603858"
         }
       ]
     }
@@ -73784,55 +74015,20 @@
   {
     "conditions": [
       {
-        "string": "# uses remaining"
+        "string": "#% Chance to Block"
       }
     ],
     "mod": {
-      "text": "# uses remaining",
+      "text": "#% Chance to Block",
       "types": [
         {
-          "name": "explicit",
-          "tradeId": "explicit.stat_1479533453"
+          "name": "explicit"
         },
         {
-          "name": "enchant",
-          "tradeId": "enchant.stat_290368246"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased effect of Modifiers on non-unique Maps"
-      }
-    ],
-    "mod": {
-      "text": "#% increased effect of Modifiers on non-unique Maps",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_3191123893"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Quantity of Items found in Areas"
-      }
-    ],
-    "mod": {
-      "text": "#% increased Quantity of Items found in Areas",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_2390685262"
+          "name": "implicit"
         },
         {
-          "name": "implicit",
-          "tradeId": "implicit.stat_2390685262"
+          "name": "crafted"
         }
       ]
     }
@@ -73840,15 +74036,21 @@
   {
     "conditions": [
       {
-        "string": "#% increased Rarity of Items found in this Area"
+        "string": "#% increased Armour and Energy Shield"
+      },
+      {
+        "string": "#% reduced Armour and Energy Shield",
+        "negate": true
       }
     ],
     "mod": {
-      "text": "#% increased Rarity of Items found in this Area",
+      "text": "#% increased Armour and Energy Shield",
       "types": [
         {
-          "name": "explicit",
-          "tradeId": "explicit.stat_2306002879"
+          "name": "explicit"
+        },
+        {
+          "name": "crafted"
         }
       ]
     }
@@ -73856,15 +74058,21 @@
   {
     "conditions": [
       {
-        "string": "#% Monster pack size"
+        "string": "#% increased Armour and Evasion"
+      },
+      {
+        "string": "#% reduced Armour and Evasion",
+        "negate": true
       }
     ],
     "mod": {
-      "text": "+#% Monster pack size",
+      "text": "#% increased Armour and Evasion",
       "types": [
         {
-          "name": "explicit",
-          "tradeId": "explicit.stat_2017682521"
+          "name": "explicit"
+        },
+        {
+          "name": "crafted"
         }
       ]
     }
@@ -73872,15 +74080,21 @@
   {
     "conditions": [
       {
-        "string": "While your Passive Skill Tree connects to a class' starting location, you gain:\nMarauder: Melee Skills have #% increased Area of Effect\nDuelist: #% of Attack Damage Leeched as Life\nRanger: #% increased Movement Speed\nShadow: #% to Critical Strike Chance\nWitch: #% of Mana Regenerated per second\nTemplar: Damage Penetrates #% Elemental Resistances\nScion: # to All Attributes"
+        "string": "#% increased Armour, Evasion and Energy Shield"
+      },
+      {
+        "string": "#% reduced Armour, Evasion and Energy Shield",
+        "negate": true
       }
     ],
     "mod": {
-      "text": "While your Passive Skill Tree connects to a class' starting location, you gain:\nMarauder: Melee Skills have #% increased Area of Effect\nDuelist: #% of Attack Damage Leeched as Life\nRanger: #% increased Movement Speed\nShadow: #% to Critical Strike Chance\nWitch: #% of Mana Regenerated per second\nTemplar: Damage Penetrates #% Elemental Resistances\nScion: # to All Attributes",
+      "text": "#% increased Armour, Evasion and Energy Shield",
       "types": [
         {
-          "name": "explicit",
-          "tradeId": "explicit.stat_769192511"
+          "name": "explicit"
+        },
+        {
+          "name": "crafted"
         }
       ]
     }
@@ -73888,15 +74102,24 @@
   {
     "conditions": [
       {
-        "string": "#% increased Pack Size in Unidentified Maps"
+        "string": "#% increased Energy Shield"
+      },
+      {
+        "string": "#% reduced Energy Shield",
+        "negate": true
       }
     ],
     "mod": {
-      "text": "#% increased Pack Size in Unidentified Maps",
+      "text": "#% increased Energy Shield",
       "types": [
         {
-          "name": "enchant",
-          "tradeId": "enchant.stat_2130041903"
+          "name": "explicit"
+        },
+        {
+          "name": "implicit"
+        },
+        {
+          "name": "crafted"
         }
       ]
     }
@@ -73904,95 +74127,21 @@
   {
     "conditions": [
       {
-        "string": "#% increased Quantity of Items found in Unidentified Maps"
-      }
-    ],
-    "mod": {
-      "text": "#% increased Quantity of Items found in Unidentified Maps",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": "enchant.stat_98212089"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
+        "string": "#% increased Evasion and Energy Shield"
+      },
       {
-        "string": "Found Items drop Identified in Identified Maps"
+        "string": "#% reduced Evasion and Energy Shield",
+        "negate": true
       }
     ],
     "mod": {
-      "text": "Found Items drop Identified in Identified Maps",
+      "text": "#% increased Evasion and Energy Shield",
       "types": [
         {
-          "name": "enchant",
-          "tradeId": "enchant.stat_75100665"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Magic Maps contain # additional packs of Magic Monsters"
-      }
-    ],
-    "mod": {
-      "text": "Magic Maps contain # additional packs of Magic Monsters",
-      "types": [
+          "name": "explicit"
+        },
         {
-          "name": "enchant",
-          "tradeId": "enchant.stat_839907382"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Normal Maps contain # additional packs of Normal Monsters"
-      }
-    ],
-    "mod": {
-      "text": "Normal Maps contain # additional packs of Normal Monsters",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": "enchant.stat_3893420071"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Rare Maps contain # additional Rare Monster packs"
-      }
-    ],
-    "mod": {
-      "text": "Rare Maps contain # additional Rare Monster packs",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": "enchant.stat_3672378181"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Unique Bosses of Corrupted Maps drop an additional Vaal Item"
-      }
-    ],
-    "mod": {
-      "text": "Unique Bosses of Corrupted Maps drop an additional Vaal Item",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": "enchant.stat_2747603858"
+          "name": "crafted"
         }
       ]
     }
