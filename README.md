@@ -1,10 +1,13 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-[![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.1/Awakened-PoE-Trade-Setup-0.6.1.exe "")
+![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)
 
-[Download for Windows v0.6.1](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.1/Awakened-PoE-Trade-Setup-0.6.1.exe)
 
-[Download for Linux v0.6.1](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.6.1/Awakened-PoE-Trade-0.6.1.AppImage)
+| Download | Automatic update | Startup time |
+|----------|------------------|--------------|
+| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.7.0/Awakened-PoE-Trade-Setup-0.7.0.exe) | :heavy_check_mark: | Fast |
+| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.7.0/Awakened-PoE-Trade-0.7.0.exe) | :heavy_multiplication_x: | Slow |
+| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.7.0/Awakened-PoE-Trade-0.7.0.AppImage) | :heavy_check_mark: | Fast |
 
 ## Tool showcase
 
@@ -50,10 +53,9 @@
   - :heavy_check_mark: Vaal gems
 
 ### Requirements
-- Supported OS: Windows
-- Run as Administrator
 
-That’s all, no Java, no .NET Framework, no AHK . . .
+Neither Java nor the .NET Framework nor AHK are required\
+No Administrator rights required
 
 ### Usage
 - Press `Ctrl + D` to check the price of the item

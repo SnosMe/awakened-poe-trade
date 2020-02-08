@@ -8,11 +8,11 @@ module.exports = {
         nsis: {
           oneClick: false,
           allowToChangeInstallationDirectory: true
+        },
+        win: {
+          target: ['nsis', 'portable']
+          // requestedExecutionLevel: 'requireAdministrator'
         }
-        // win: {
-        //   target: ['nsis', 'portable'],
-        //   requestedExecutionLevel: 'requireAdministrator'
-        // }
       }
     }
   }
