@@ -22,10 +22,13 @@
     <div class="flex">
       <div class="w-5"></div>
       <div class="flex-1 flex items-start">
-        <span class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ filter.type }}</span>
+        <span v-if="showTypeTags"
+          class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ filter.type }}</span>
       </div>
+      <div v-if="showQ20Notice"
+        class="bg-gray-700 text-gray-500 text-center rounded-l px-1 mr-px">Q 20%</div>
       <div v-if="filter.roll != null"
-        class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: 97px">{{ filter.roll }}</div>
+        class="bg-gray-700 text-gray-500 text-center rounded-br" style="width: 97px" :class="{ 'rounded-bl': !showQ20Notice }">{{ filter.roll }}</div>
     </div>
   </div>
 </template>
@@ -46,6 +49,14 @@ export default {
       ) return false
 
       return true
+    },
+    showTypeTags () {
+      return this.filter.type !== 'armour' &&
+        this.filter.type !== 'weapon'
+    },
+    showQ20Notice () {
+      return this.filter.type === 'armour' ||
+        this.filter.type === 'weapon'
     }
   },
   methods: {

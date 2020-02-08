@@ -323,6 +323,10 @@ function parseArmour (section: string[], item: ParsedItem) {
     }
   }
 
+  if (isParsed === SECTION_PARSED) {
+    parseQualityNested(section, item)
+  }
+
   return isParsed
 }
 
@@ -339,7 +343,7 @@ function parseWeapon (section: string[], item: ParsedItem) {
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(TAG_PHYSICAL_DAMAGE)) {
-      item.props.physicalDamage = getRollAsSingleNumber(
+      item.props.physicalDamage = (
         line.substr(TAG_PHYSICAL_DAMAGE.length)
           .split('-').map(str => parseInt(str, 10))
       )
@@ -354,6 +358,10 @@ function parseWeapon (section: string[], item: ParsedItem) {
 
       isParsed = SECTION_PARSED; continue
     }
+  }
+
+  if (isParsed === SECTION_PARSED) {
+    parseQualityNested(section, item)
   }
 
   return isParsed
@@ -403,8 +411,7 @@ function parseModifiers (section: string[], item: ParsedItem) {
         }
       }
 
-      // @TODO tradeId handling must be out of parser responsibility
-      if (mod.modInfo.types.find(type => type.name === modType)?.tradeId) {
+      if (mod.modInfo.types.find(type => type.name === modType)) {
         mod.type = modType!
         item.modifiers.push(mod)
         stat = statIterator.next(true)

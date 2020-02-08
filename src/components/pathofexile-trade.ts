@@ -2,7 +2,7 @@ import { ItemInfluence, ItemCategory } from './parser'
 import { Leagues } from './Leagues'
 import { ItemFilters } from './filters/interface'
 import prop from 'dot-prop'
-import { UiModFilter } from './trade/interfaces'
+import { UiModFilter, INTERNAL_TRADE_ID } from './trade/interfaces'
 
 const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -97,6 +97,30 @@ interface TradeRequest { /* eslint-disable camelcase */
           elder_item?: { option?: 'true' | 'false' }
           redeemer_item?: { option?: 'true' | 'false' }
           warlord_item?: { option?: 'true' | 'false' }
+        }
+      }
+      armour_filters?: {
+        filters: {
+          ar?: {
+            min?: number
+            max?: number
+          }
+          es?: {
+            min?: number
+            max?: number
+          }
+          ev?: {
+            min?: number
+            max?: number
+          }
+        }
+      }
+      weapon_filters?: {
+        filters: {
+          pdps?: {
+            min?: number
+            max?: number
+          }
         }
       }
       map_filters?: {
@@ -264,6 +288,31 @@ export function createTradeRequest (filters: ItemFilters, stats: UiModFilter[]) 
       }
     }
   }
+
+  for (const stat of stats) {
+    if (stat.disabled) continue
+
+    switch (stat.tradeId as INTERNAL_TRADE_ID) {
+      case 'armour.armour':
+        prop.set(query.filters, 'armour_filters.filters.ar.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ar.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'armour.evasion_rating':
+        prop.set(query.filters, 'armour_filters.filters.ev.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ev.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'armour.energy_shield':
+        prop.set(query.filters, 'armour_filters.filters.es.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.es.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'weapon.physical_dps':
+        prop.set(query.filters, 'weapon_filters.filters.pdps.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.pdps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+    }
+  }
+
+  stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId))
 
   query.stats.push({
     type: 'and',

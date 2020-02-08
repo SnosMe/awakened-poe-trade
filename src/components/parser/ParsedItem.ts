@@ -15,7 +15,7 @@ export interface ParsedItem {
     blockChance?: number
     critChance?: number
     attackSpeed?: number
-    physicalDamage?: number
+    physicalDamage?: number[]
     elementalDamage?: number
   }
   mapTier?: number
