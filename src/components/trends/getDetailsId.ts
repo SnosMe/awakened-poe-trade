@@ -3,7 +3,10 @@ import { SPECIAL_SUPPORT_GEM } from '../filters/create'
 import { ACCESSORY, ARMOUR, WEAPON } from '../parser/meta'
 
 export function isValuableBasetype (item: ParsedItem): boolean {
-  if (!item.computed.category) return false
+  if (
+    !(item.rarity === ItemRarity.Normal || item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare) ||
+    !item.computed.category
+  ) return false
 
   return (
     ACCESSORY.has(item.computed.category) ||
