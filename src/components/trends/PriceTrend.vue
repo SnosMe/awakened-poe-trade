@@ -1,7 +1,8 @@
 <template>
   <div v-if="price" class="flex items-center pb-4">
     <div class="flex items-center justify-center flex-1">
-      <div class="w-8 h-8 flex items-center justify-center">
+      <div v-if="isValuableBasetype" class="text-gray-400">Item base</div>
+      <div v-else class="w-8 h-8 flex items-center justify-center">
         <img :src="item.computed.icon" :alt="item.name" class="max-w-full max-h-full">
       </div>
       <span class="px-1 text-base" v-if="item.stackSize">× 1</span>
@@ -32,6 +33,7 @@
 
 <script>
 import { Prices } from '../Prices'
+import { isValuableBasetype } from './getDetailsId'
 
 export default {
   props: {
@@ -49,6 +51,9 @@ export default {
     },
     price () {
       return this.item.computed.trend
+    },
+    isValuableBasetype () {
+      return isValuableBasetype(this.item)
     }
   }
 }

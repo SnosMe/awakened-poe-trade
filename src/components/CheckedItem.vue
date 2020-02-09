@@ -4,9 +4,9 @@
       <filter-name
         :filters="itemFilters"
         :item="item" />
-      <price-trend
-        :item="item" />
       <price-prediction v-if="showPredictedPrice" class="mb-4"
+        :item="item" />
+      <price-trend
         :item="item" />
       <filters-block v-if="!item.stackSize"
         :filters="itemFilters"

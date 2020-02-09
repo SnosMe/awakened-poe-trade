@@ -30,3 +30,48 @@ export enum ItemCategory {
   OneHandedSword = 'One-Handed Sword',
   TwoHandedSword = 'Two-Handed Sword'
 }
+
+export const WEAPON_ONE_HANDED_MELEE = new Set([
+  ItemCategory.OneHandedAxe,
+  ItemCategory.OneHandedMace,
+  ItemCategory.OneHandedSword,
+  ItemCategory.Claw,
+  ItemCategory.Dagger,
+  ItemCategory.RuneDagger,
+  ItemCategory.Sceptre
+])
+
+export const WEAPON_ONE_HANDED = new Set([
+  ItemCategory.Wand,
+  ...WEAPON_ONE_HANDED_MELEE
+])
+
+export const WEAPONE_TWO_HANDED_MELEE = new Set([
+  ItemCategory.TwoHandedAxe,
+  ItemCategory.TwoHandedMace,
+  ItemCategory.TwoHandedSword,
+  ItemCategory.Staff,
+  ItemCategory.Warstaff
+])
+
+export const WEAPON = new Set([
+  ItemCategory.FishingRod,
+  ItemCategory.Bow,
+  ...WEAPON_ONE_HANDED,
+  ...WEAPONE_TWO_HANDED_MELEE
+])
+
+export const ARMOUR = new Set([
+  ItemCategory.BodyArmour,
+  ItemCategory.Boots,
+  ItemCategory.Gloves,
+  ItemCategory.Helmet,
+  ItemCategory.Shield
+])
+
+export const ACCESSORY = new Set([
+  ItemCategory.Amulet,
+  ItemCategory.Belt,
+  ItemCategory.Ring
+  // ItemCategory.Quiver
+])

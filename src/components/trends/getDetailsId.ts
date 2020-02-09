@@ -1,5 +1,17 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '../parser'
 import { SPECIAL_SUPPORT_GEM } from '../filters/create'
+import { ACCESSORY, ARMOUR, WEAPON } from '../parser/meta'
+
+export function isValuableBasetype (item: ParsedItem): boolean {
+  if (!item.computed.category) return false
+
+  return (
+    ACCESSORY.has(item.computed.category) ||
+    ARMOUR.has(item.computed.category) ||
+    WEAPON.has(item.computed.category) ||
+    item.computed.category === ItemCategory.Quiver
+  )
+}
 
 const LATEST_MAP_VARIANT = 'Metamorph'
 
@@ -20,6 +32,9 @@ export function getDetailsId (item: ParsedItem) {
   }
   if (item.rarity === ItemRarity.Unique) {
     return getUniqueDetailsId(item)
+  }
+  if (isValuableBasetype(item)) {
+    return getBaseTypeDetailsId(item)
   }
 
   return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
@@ -68,7 +83,15 @@ function getGemDetailsId (item: ParsedItem) {
 }
 
 function getBaseTypeDetailsId (item: ParsedItem) {
-  return nameToDetailsId(`${item.baseType || item.name} 82`)
+  let id = nameToDetailsId(`${item.baseType || item.name}`)
+
+  id += `-${Math.min(item.itemLevel!, 86)}`
+
+  if (item.influences.length) {
+    id += `-${item.influences[0].toLowerCase()}`
+  }
+
+  return id
 }
 
 function getUniqueDetailsId (item: ParsedItem) {
