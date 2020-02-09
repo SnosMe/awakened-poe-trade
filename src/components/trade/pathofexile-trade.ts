@@ -3,6 +3,7 @@ import { Leagues } from '../Leagues'
 import { ItemFilters } from '../filters/interface'
 import prop from 'dot-prop'
 import { UiModFilter, INTERNAL_TRADE_ID } from './interfaces'
+import { MainProcess } from '../main-process-bindings'
 
 const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -331,7 +332,7 @@ export function createTradeRequest (filters: ItemFilters, stats: UiModFilter[]) 
 }
 
 export async function requestTradeResultList (body: TradeRequest) {
-  const response = await fetch(`https://www.pathofexile.com/api/trade/search/${Leagues.selected}`, {
+  const response = await fetch(`${MainProcess.CORS}https://www.pathofexile.com/api/trade/search/${Leagues.selected}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

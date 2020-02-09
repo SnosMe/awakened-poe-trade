@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import { Leagues, LeaguesService } from './Leagues'
+import { MainProcess } from './main-process-bindings'
+import { Leagues } from './Leagues'
 import { nameToDetailsId } from './trends/getDetailsId'
 
 /* eslint-disable camelcase */
@@ -139,7 +140,7 @@ class PriceService {
 
     for (const dataType of PRICE_DATA) {
       try {
-        const response = await fetch(`https://poe.ninja/api/data/${dataType.overview}overview?league=${Leagues.selected}&type=${dataType.type}`)
+        const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/${dataType.overview}overview?league=${Leagues.selected}&type=${dataType.type}`)
 
         if (dataType.overview === 'currency') {
           const priceData: {

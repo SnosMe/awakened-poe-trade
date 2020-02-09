@@ -66,10 +66,9 @@
 </template>
 
 <script>
-import { ipcRenderer } from 'electron'
 import { DateTime } from 'luxon'
+import { MainProcess } from '../main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
-import { OPEN_LINK } from '../../shared/ipc-event'
 import { Leagues } from '../Leagues'
 
 export default {
@@ -129,7 +128,7 @@ export default {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
     openTradeLink () {
-      ipcRenderer.send(OPEN_LINK, `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`)
+      MainProcess.openAppBrowser(`https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`)
     }
   }
 }

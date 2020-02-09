@@ -1,6 +1,7 @@
 import { stringify } from 'querystring'
 import { ParsedItem } from '../parser'
 import { Leagues } from '../Leagues'
+import { MainProcess } from '../main-process-bindings'
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */
   currency: 'chaos' | 'exalted'
@@ -30,7 +31,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
     l: Leagues.selected,
     s: 'awakened-poe-trade'
   })
-  const response = await fetch(`https://www.poeprices.info/api?${query}`)
+  const response = await fetch(`${MainProcess.CORS}https://www.poeprices.info/api?${query}`)
   const data: PoepricesApiResponse = await response.json()
 
   if (data.error !== 0) {

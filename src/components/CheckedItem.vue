@@ -23,8 +23,7 @@
 </template>
 
 <script>
-import { ipcRenderer } from 'electron'
-import { PRICE_CHECK_VISIBLE, LOCK_WINDOW } from '../shared/ipc-event'
+import { MainProcess } from './main-process-bindings'
 import { parseClipboard, ItemRarity, ItemCategory } from './parser'
 import TradeListing from './trade/TradeListing'
 import PriceTrend from './trends/PriceTrend'
@@ -44,20 +43,20 @@ export default {
     FilterName
   },
   created () {
-    ipcRenderer.on('price-check', (e, clipboard) => {
+    MainProcess.addEventListener('price-check', ({ detail: clipboard }) => {
       const item = parseClipboard(clipboard)
       if (item != null) {
         this.item = item
         this.itemFilters = createFilters(item)
         this.itemStats = initUiModFilters(item)
-        ipcRenderer.send(PRICE_CHECK_VISIBLE, true)
+        MainProcess.priceCheckVisible(true)
       }
     })
 
     document.addEventListener('mouseenter', (e) => {
       if (e.ctrlKey) {
         this.isClickedAfterLock = false
-        ipcRenderer.send(LOCK_WINDOW)
+        MainProcess.lockWindow()
       }
     })
     document.addEventListener('click', () => {
@@ -65,13 +64,13 @@ export default {
     })
     document.addEventListener('mouseleave', () => {
       if (!this.isClickedAfterLock) {
-        ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
+        MainProcess.priceCheckVisible(false)
       }
     })
 
     document.addEventListener('keyup', (e) => {
       if (e.key === 'Escape') {
-        ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
+        MainProcess.priceCheckVisible(false)
       }
     })
   },

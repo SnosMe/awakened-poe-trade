@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { shell } from 'electron'
+import { MainProcess } from '../main-process-bindings'
 import { requestPoeprices } from './poeprices'
 import { Prices } from '../Prices'
 
@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     openWebsite (e) {
-      shell.openExternal(e.target.href)
+      MainProcess.openUserBrowser(e.target.href)
     }
   }
 }

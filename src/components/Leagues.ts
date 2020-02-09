@@ -1,7 +1,6 @@
 import Vue from 'vue'
-import { ipcRenderer } from 'electron'
+import { MainProcess } from './main-process-bindings'
 import { League } from '@/shared/types'
-import { LEAGUES_READY, LEAGUE_SELECTED } from '@/shared/ipc-event'
 import { Prices } from './Prices'
 import { Config } from './Config'
 
@@ -46,7 +45,7 @@ export class LeaguesService {
       }
     }
 
-    ipcRenderer.send(LEAGUES_READY, tradeLeagues.map(league => ({
+    MainProcess.sendLeaguesReady(tradeLeagues.map(league => ({
       id: league.id,
       selected: league.id === this.state.selected
     } as League)))
@@ -56,7 +55,8 @@ export class LeaguesService {
   }
 
   constructor () {
-    ipcRenderer.on(LEAGUE_SELECTED, (e, leagueId: string) => {
+    MainProcess.addEventListener('league-selected', (e) => {
+      const leagueId = (e as CustomEvent<string>).detail
       this.state.selected = leagueId
       Prices.load()
     })

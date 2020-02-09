@@ -1,18 +1,32 @@
 <template>
   <div id="app" class="text-sm font-fontin-small-caps bg-gray-800">
-    <app-titlebar style="align-self: stretch;" />
+    <div v-if="browserMode"
+      class="w-full layout-column" style="width: calc(100% - 460px);">
+      <BrowserMode />
+    </div>
     <div class="flex-grow layout-column">
-      <router-view/>
+      <app-titlebar style="align-self: stretch;" />
+      <div class="flex-grow layout-column">
+        <router-view/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import AppTitlebar from './components/AppTitlebar'
+import BrowserMode from './components/BrowserMode'
+import { MainProcess } from './components/main-process-bindings'
 
 export default {
   components: {
-    AppTitlebar
+    AppTitlebar,
+    BrowserMode
+  },
+  computed: {
+    browserMode () {
+      return !MainProcess.isElectron
+    }
   }
 }
 </script>
@@ -32,8 +46,8 @@ export default {
   height: 100vh;
   display: flex;
   /* align-items: center; */
-  flex-direction: column;
   overflow: hidden;
+  justify-content: space-between;
 
   :focus {
     outline: 0;

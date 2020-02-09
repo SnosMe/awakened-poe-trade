@@ -11,8 +11,7 @@
 </template>
 
 <script>
-import { ipcRenderer } from 'electron'
-import { PRICE_CHECK_VISIBLE } from '../shared/ipc-event'
+import { MainProcess } from './main-process-bindings'
 import { Leagues } from './Leagues'
 import { Prices } from './Prices'
 
@@ -21,7 +20,7 @@ export default {
   async created () {
     await Leagues.load()
     await Prices.load()
-    ipcRenderer.send(PRICE_CHECK_VISIBLE, false)
+    MainProcess.priceCheckVisible(false)
   },
   computed: {
     leaguesService: () => Leagues,
