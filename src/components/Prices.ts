@@ -22,11 +22,11 @@ interface NinjaCurrencyInfo {
     includes_secondary: boolean
   }
   paySparkLine: {
-    data: number[]
+    data: Array<number | null>
     totalChange: number
   }
   receiveSparkLine: {
-    data: number[]
+    data: Array<number | null>
     totalChange: number
   }
   chaosEquivalent: number
@@ -160,7 +160,7 @@ class PriceService {
               name: currency.currencyTypeName,
               receive: {
                 chaosValue: currency.receive.value,
-                graphPoints: currency.receiveSparkLine.data,
+                graphPoints: currency.receiveSparkLine.data.filter(d => d != null),
                 totalChange: currency.receiveSparkLine.totalChange
               },
               pay: currency.pay ? {
@@ -191,7 +191,7 @@ class PriceService {
               name: item.name,
               receive: {
                 chaosValue: item.chaosValue,
-                graphPoints: item.sparkline.data,
+                graphPoints: item.sparkline.data.filter(d => d != null),
                 totalChange: item.sparkline.totalChange
               }
             } as ItemInfo)
