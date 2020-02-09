@@ -5,7 +5,7 @@ const LATEST_MAP_VARIANT = 'Metamorph'
 
 export function getDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
-    return getGemDetailsId(item)
+    return getGemDetailsId(item)!
   }
   if (item.computed.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique) {
@@ -25,14 +25,40 @@ export function getDetailsId (item: ParsedItem) {
   return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
 }
 
+const BRAND_RECALL_GEM = 'Brand Recall'
+const BLOOD_AND_SAND_GEM = 'Blood and Sand'
+const PORTAL_GEM = 'Portal'
+
 function getGemDetailsId (item: ParsedItem) {
+  if (item.name === PORTAL_GEM) {
+    return 'portal-1'
+  }
+  if (item.name.startsWith('Awakened')) {
+    return (item.gemLevel === 1)
+      ? `${nameToDetailsId(item.name)}-1-20`
+      : undefined
+  }
+
   let id = nameToDetailsId(item.name)
 
-  if (item.gemLevel! > 1) {
+  if (
+    SPECIAL_SUPPORT_GEM.includes(item.name) ||
+    item.name === BRAND_RECALL_GEM ||
+    item.name === BLOOD_AND_SAND_GEM ||
+    item.gemLevel! >= 20
+  ) {
     id += `-${item.gemLevel}`
   }
-  if (item.quality! > 0 && !SPECIAL_SUPPORT_GEM.includes(item.name)) {
-    id += `-${item.quality}`
+  if (item.quality) {
+    if (
+      !SPECIAL_SUPPORT_GEM.includes(item.name) &&
+      !(item.name === BRAND_RECALL_GEM && item.isCorrupted)
+      // @TODO(poe.ninja blocking): !(item.name === BLOOD_AND_SAND_GEM && item.isCorrupted)
+    ) {
+      // Gem Q20 with up to 4xGCP
+      const q = (item.quality >= 16 && item.quality <= 20) ? 20 : item.quality
+      id += `-${q}`
+    }
   }
   if (item.isCorrupted) {
     id += 'c'
