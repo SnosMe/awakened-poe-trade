@@ -282,7 +282,8 @@ function parseSockets (section: string[], item: ParsedItem) {
       item.linkedSockets = 6
     } else if (
       sockets === '# #-#-#-#-#' ||
-      sockets === '#-#-#-#-# #'
+      sockets === '#-#-#-#-# #' ||
+      sockets === '#-#-#-#-#'
     ) {
       item.linkedSockets = 5
     }
