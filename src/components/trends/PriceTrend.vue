@@ -7,9 +7,9 @@
       </div>
       <span class="px-1 text-base" v-if="item.stackSize">× 1</span>
       <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-      <span class="px-1 text-base">{{ Number(price.receive.chaosValue.toFixed(1)) }} ×</span>
+      <span class="px-1 text-base">{{ price.value.val | displayRounding(true) }} ×</span>
       <div class="w-8 h-8 flex items-center justify-center">
-        <img :src="chaosOrb.icon" :alt="chaosOrb.name" class="max-w-full max-h-full">
+        <img :src="icon[price.value.curr].url" :alt="icon[price.value.curr].text" class="max-w-full max-h-full">
       </div>
     </div>
     <div class="px-2 text-center">
@@ -17,7 +17,7 @@
         <i v-if="price.receive.totalChange < 0" class="fas fa-angle-double-down pr-1 text-red-600"></i>
         <i v-if="price.receive.totalChange > 0" class="fas fa-angle-double-up pr-1 text-green-500"></i>
         <i v-if="price.receive.totalChange === 0" class="fas fa-equals pr-1 text-gray-600"></i>
-        <span>{{ Number(price.receive.totalChange.toFixed(1)) }}&nbsp;%</span>
+        <span>{{ price.receive.totalChange | displayRounding }}&nbsp;%</span>
       </div>
       <div class="text-xs text-gray-500 leading-none">Last 7 days</div>
     </div>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { Prices } from '../Prices'
+import { Prices, displayRounding } from '../Prices'
 import { isValuableBasetype } from './getDetailsId'
 
 export default {
@@ -42,15 +42,29 @@ export default {
       required: true
     }
   },
+  filters: { displayRounding },
   computed: {
-    chaosOrb () {
-      return Prices.findByDetailsId('chaos-orb')
-    },
-    exaltedOrb () {
-      return Prices.findByDetailsId('exalted-orb')
+    icon () {
+      return {
+        e: {
+          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1',
+          text: 'exa'
+        },
+        c: {
+          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1',
+          text: 'chaos'
+        }
+      }
     },
     price () {
-      return this.item.computed.trend
+      const price = this.item.computed.trend
+      if (!price) return
+
+      const value = (this.item.name === 'Exalted Orb')
+        ? { val: price.receive.chaosValue, curr: 'c' }
+        : Prices.autoCurrency(price.receive.chaosValue, 'c')
+
+      return { value, ...price }
     },
     isValuableBasetype () {
       return isValuableBasetype(this.item)

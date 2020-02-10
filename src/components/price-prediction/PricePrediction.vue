@@ -12,10 +12,10 @@
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
           <span class="px-1 text-base">
-            <span v-if="price.min === price.max" class="text-gray-600 font-sans">~&nbsp;</span><span>{{ price.min }}</span>
-            <template v-if="price.min !== price.max"><span class="text-gray-600 font-sans">&nbsp;~&nbsp;</span>{{ price.max }}</template> ×</span>
+            <span v-if="price.min === price.max" class="text-gray-600 font-sans">~&nbsp;</span><span>{{ price.min | displayRounding }}</span>
+            <template v-if="price.min !== price.max"><span class="text-gray-600 font-sans">&nbsp;~&nbsp;</span>{{ price.max | displayRounding }}</template> ×</span>
           <div class="w-8 h-8 flex items-center justify-center">
-            <img :src="currency.icon" :alt="currency.name" class="max-w-full max-h-full">
+            <img :src="currency.url" :alt="currency.text" class="max-w-full max-h-full">
           </div>
         </div>
         <div class="text-center">
@@ -55,7 +55,7 @@
 <script>
 import { MainProcess } from '../main-process-bindings'
 import { requestPoeprices } from './poeprices'
-import { Prices } from '../Prices'
+import { displayRounding } from '../Prices'
 
 export default {
   name: 'PricePrediction',
@@ -65,6 +65,7 @@ export default {
       required: true
     }
   },
+  filters: { displayRounding },
   data () {
     return {
       price: null,
@@ -93,7 +94,16 @@ export default {
   },
   computed: {
     currency () {
-      return Prices.findByDetailsId(this.price.currency)
+      return {
+        e: {
+          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1',
+          text: 'exa'
+        },
+        c: {
+          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1',
+          text: 'chaos'
+        }
+      }[this.price.currency]
     }
   },
   methods: {

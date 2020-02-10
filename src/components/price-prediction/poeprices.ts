@@ -39,13 +39,13 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   }
 
   return {
-    currency: data.currency === 'chaos' ? 'chaos-orb' : 'exalted-orb',
-    max: Number(data.max.toFixed(1)),
-    min: Number(data.min.toFixed(1)),
-    confidence: Number(data.pred_confidence_score.toFixed(0)),
+    currency: (data.currency === 'chaos') ? 'c' : 'e',
+    min: data.min,
+    max: data.max,
+    confidence: Math.round(data.pred_confidence_score),
     explanation: data.pred_explanation.map(expl => ({
       name: expl[0],
-      contrib: Number((expl[1] * 100).toFixed(0))
+      contrib: Math.round(expl[1] * 100)
     }))
   }
 }

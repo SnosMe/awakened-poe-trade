@@ -6,13 +6,6 @@ import { nameToDetailsId } from './trends/getDetailsId'
 /* eslint-disable camelcase */
 interface NinjaCurrencyInfo {
   currencyTypeName: string
-  pay: {
-    pay_currency_id: number
-    get_currency_id: number
-    count: number
-    value: number
-    includes_secondary: boolean
-  }
   receive: {
     league_id: number
     pay_currency_id: number
@@ -21,19 +14,11 @@ interface NinjaCurrencyInfo {
     value: number
     includes_secondary: boolean
   }
-  paySparkLine: {
-    data: Array<number | null>
-    totalChange: number
-  }
   receiveSparkLine: {
     data: Array<number | null>
     totalChange: number
   }
   chaosEquivalent: number
-  lowConfidencePaySparkLine: {
-    data: number[]
-    totalChange: number
-  }
   lowConfidenceReceiveSparkLine: {
     data: number[]
     totalChange: number
@@ -73,11 +58,6 @@ interface NinjaItemInfo {
 export interface ItemInfo {
   name: string
   icon: string
-  pay?: {
-    chaosValue: number
-    graphPoints: number[]
-    totalChange: number
-  }
   receive: {
     chaosValue: number
     graphPoints: number[]
@@ -162,12 +142,7 @@ class PriceService {
                 chaosValue: currency.receive.value,
                 graphPoints: currency.receiveSparkLine.data.filter(d => d != null),
                 totalChange: currency.receiveSparkLine.totalChange
-              },
-              pay: currency.pay ? {
-                chaosValue: currency.pay.value,
-                graphPoints: currency.paySparkLine.data,
-                totalChange: currency.paySparkLine.totalChange
-              } : undefined
+              }
             } as ItemInfo)
           }
 
@@ -221,6 +196,23 @@ class PriceService {
     return PRICE_BY_DETAILS_ID.get(id)
   }
 
+  autoCurrency (value: number, currency: string) {
+    if (currency === 'c') {
+      if (value > (this.state.chaosExaRate * 0.94)) {
+        if (value < (this.state.chaosExaRate * 1.06)) {
+          return { val: 1, curr: 'e' }
+        } else {
+          return { val: this.chaosToExa(value), curr: 'e' }
+        }
+      }
+    } else if (currency === 'e') {
+      if (value < 1) {
+        return { val: this.exaToChaos(value), curr: 'c' }
+      }
+    }
+    return { val: value, curr: currency }
+  }
+
   chaosToExa (count: number) {
     this.assertReady()
 
@@ -235,3 +227,14 @@ class PriceService {
 }
 
 export const Prices = new PriceService()
+
+export function displayRounding (value: number, fraction: boolean = false): string {
+  if (fraction && Math.abs(value) < 1) {
+    if (value === 0) return '0'
+    return `1/${displayRounding(1 / value)}`
+  }
+  if (Math.abs(value) < 10) {
+    return Number(value.toFixed(1)).toString()
+  }
+  return Math.round(value).toString()
+}
