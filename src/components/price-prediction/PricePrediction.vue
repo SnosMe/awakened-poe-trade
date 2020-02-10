@@ -12,8 +12,8 @@
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
           <span class="px-1 text-base">
-            <span v-if="price.min === price.max" class="text-gray-600 font-sans">~&nbsp;</span><span>{{ price.min | displayRounding }}</span>
-            <template v-if="price.min !== price.max"><span class="text-gray-600 font-sans">&nbsp;~&nbsp;</span>{{ price.max | displayRounding }}</template> ×</span>
+            <span v-if="!showAsRange" class="text-gray-600 font-sans">~&nbsp;</span><span>{{ price.min | displayRounding }}</span>
+            <template v-if="showAsRange"><span class="text-gray-600 font-sans">&nbsp;~&nbsp;</span>{{ price.max | displayRounding }}</template> ×</span>
           <div class="w-8 h-8 flex items-center justify-center">
             <img :src="currency.url" :alt="currency.text" class="max-w-full max-h-full">
           </div>
@@ -104,6 +104,9 @@ export default {
           text: 'chaos'
         }
       }[this.price.currency]
+    },
+    showAsRange () {
+      return displayRounding(this.price.min) !== displayRounding(this.price.max)
     }
   },
   methods: {
