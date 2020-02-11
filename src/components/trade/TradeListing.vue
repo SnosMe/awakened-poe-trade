@@ -101,7 +101,8 @@ export default {
 
         this.loading = true
         this.error = null
-        this.results = Array(20)
+        const resultsVar = Array(20)
+        this.results = resultsVar
 
         this.list = null
         const request = createTradeRequest(this.filters, this.stats)
@@ -111,11 +112,11 @@ export default {
         await Promise.all([
           (list.total > 0)
             ? requestResults(list.id, list.result.slice(0, 10))
-              .then(results => { this.results.splice(0, results.length, ...results) })
+              .then(results => { resultsVar.splice(0, results.length, ...results) })
             : Promise.resolve(),
           (list.total > 10)
             ? requestResults(list.id, list.result.slice(10, 20))
-              .then(results => { this.results.splice(10, results.length, ...results) })
+              .then(results => { resultsVar.splice(10, results.length, ...results) })
             : Promise.resolve()
         ])
       } catch (err) {
