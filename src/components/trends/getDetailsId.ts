@@ -90,7 +90,7 @@ function getBaseTypeDetailsId (item: ParsedItem) {
 
   id += `-${Math.min(item.itemLevel!, 86)}`
 
-  if (item.influences.length) {
+  if (item.influences.length === 1) {
     id += `-${item.influences[0].toLowerCase()}`
   }
 

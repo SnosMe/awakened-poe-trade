@@ -109,6 +109,7 @@ export default {
 
   &::placeholder {
     @apply text-gray-700;
+    font-size: 13px;
   }
 
   /* &:not(:placeholder-shown) { @apply border-gray-600; } */

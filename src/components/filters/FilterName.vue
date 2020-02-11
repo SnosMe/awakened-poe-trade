@@ -34,7 +34,7 @@ export default {
         return this.filters.baseType.value
       }
       if (this.filters.category) {
-        return `Type: ${this.filters.category.value}`
+        return `Category: ${this.filters.category.value}`
       }
 
       return '??? Report if you see this text'
@@ -48,7 +48,7 @@ export default {
         return false
       }
 
-      return !this.label.startsWith('Type:')
+      return !this.label.startsWith('Category:')
     }
   },
   methods: {

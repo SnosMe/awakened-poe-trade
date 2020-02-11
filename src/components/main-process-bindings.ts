@@ -65,6 +65,8 @@ class MainProcessBinding extends EventTarget {
   openAppBrowser (url: string) {
     if (electron) {
       electron.ipcRenderer.send(OPEN_LINK, url)
+    } else {
+      window.open(url)
     }
   }
 
