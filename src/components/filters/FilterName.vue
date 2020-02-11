@@ -1,6 +1,12 @@
 <template>
-  <div class="bg-gray-900 mb-2 leading-none rounded">
-    <button class="py-1 px-2" @click="toggleAccuracy">{{ label }}</button>
+  <div class="filter-name">
+    <button class="px-2 rounded border"
+      :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
+      @click="toggleAccuracy">{{ label }}</button>
+    <button v-if="filters.corrupted" class="px-2" @click="filters.corrupted.value = !filters.corrupted.value">
+      <span v-if="filters.corrupted.value" class="text-red-500">Corrupted</span>
+      <span v-else class="text-gray-600">Not Corrupted</span>
+    </button>
   </div>
 </template>
 
@@ -32,6 +38,17 @@ export default {
       }
 
       return '??? Report if you see this text'
+    },
+    showAsActive () {
+      if (
+        this.item.rarity === ItemRarity.Unique ||
+        !this.item.computed.category ||
+        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.computed.category)
+      ) {
+        return false
+      }
+
+      return !this.label.startsWith('Type:')
     }
   },
   methods: {
@@ -57,3 +74,12 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss">
+.filter-name {
+  @apply bg-gray-900 mb-2 rounded;
+  line-height: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+</style>

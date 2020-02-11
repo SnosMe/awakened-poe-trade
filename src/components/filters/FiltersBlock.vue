@@ -8,7 +8,9 @@
       <div v-if="filters.gemLevel" class="trade-tag">Level: {{ filters.gemLevel.min }}</div>
       <div v-if="filters.quality" class="trade-tag">Quality: {{ filters.quality.min }}%</div>
       <template v-if="filters.influences">
-        <div v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center">
+        <button v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center"
+          :class="{ disabled: influence.disabled }"
+          @click="influence.disabled = !influence.disabled">
           <template v-if="influence.value === 'Shaper'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Shaper.png">
             <span class="ml-2">Shaper</span>
@@ -33,13 +35,9 @@
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Warlord.png">
             <span class="ml-2">Warlord</span>
           </template>
-        </div>
+        </button>
       </template>
-      <button v-if="filters.corrupted" class="trade-tag" @click="filters.corrupted.value = !filters.corrupted.value">
-        <span v-if="filters.corrupted.value" class="text-red-500">Corrupted</span>
-        <span v-else>Not Corrupted</span>
-      </button>
-      <button v-if="stats.length" class="trade-tag" @click="toggleStatsBlock">
+      <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
         <span v-if="totalSelectedMods === 0">Stats ignored</span>
         <span v-else>{{ totalSelectedMods }} Stats</span>
       </button>
@@ -102,10 +100,12 @@ export default {
 
 <style lang="postcss">
 .trade-tag {
-  @apply bg-gray-900 py-1 px-2 m-1 rounded leading-none;
+  @apply bg-gray-900 px-2 m-1 rounded;
+  @apply border border-gray-500;
+  line-height: 1.25rem;
 
   &.disabled {
-    @apply line-through text-gray-700;
+    @apply border-gray-900;
   }
 }
 </style>
