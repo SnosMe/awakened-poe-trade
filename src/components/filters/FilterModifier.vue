@@ -11,10 +11,10 @@
       <div class="flex">
         <input class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
           v-if="showMinmaxInput"
-          v-model.number="filter.min" @focus="inputFocus">
+          v-model.number="filter.min" @focus="inputFocus($event, 'min')">
         <input class="search-num-input rounded-tr" placeholder="max" type="number" :class="{ 'rounded-br': filter.roll == null }"
           v-if="showMinmaxInput"
-          v-model.number="filter.max" @focus="inputFocus">
+          v-model.number="filter.max" @focus="inputFocus($event, 'max')">
         <div v-if="filter.option"
           class="search-option">{{ filter.option.text }}</div>
       </div>
@@ -60,8 +60,19 @@ export default {
     }
   },
   methods: {
-    inputFocus (e) {
-      e.target.select()
+    inputFocus (e, type) {
+      if (e.target.value === '') {
+        if (type === 'max') {
+          this.filter.max = this.filter.defaultMax
+        } else if (type === 'min') {
+          this.filter.min = this.filter.defaultMin
+        }
+        this.$nextTick(() => {
+          e.target.select()
+        })
+      } else {
+        e.target.select()
+      }
       this.filter.disabled = false
     },
     toggleFilter () {

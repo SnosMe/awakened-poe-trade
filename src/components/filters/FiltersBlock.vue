@@ -39,7 +39,7 @@
       </template>
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
         <span v-if="totalSelectedMods === 0">Stats ignored</span>
-        <span v-else>{{ totalSelectedMods }} Stats</span>
+        <span v-else>{{ totalSelectedMods }} of {{ stats.length }}, stats</span>
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">

@@ -9,6 +9,8 @@ export interface UiModFilter {
   readonly roll?: number
   readonly type: string
   readonly option?: ItemModifier['option']
+  readonly defaultMin?: number
+  readonly defaultMax?: number
   disabled: boolean
   min: number | '' | undefined
   max: number | '' | undefined
@@ -65,8 +67,10 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       type: 'armour',
       roll: totalQ20,
       disabled: false,
+      defaultMin: percentRoll(totalQ20, -10, Math.floor),
+      defaultMax: percentRoll(totalQ20, +10, Math.ceil),
       min: percentRoll(totalQ20, -10, Math.floor),
-      max: percentRoll(totalQ20, +10, Math.ceil)
+      max: undefined
     })
   }
 
@@ -79,8 +83,10 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       type: 'armour',
       roll: totalQ20,
       disabled: false,
+      defaultMin: percentRoll(totalQ20, -10, Math.floor),
+      defaultMax: percentRoll(totalQ20, +10, Math.ceil),
       min: percentRoll(totalQ20, -10, Math.floor),
-      max: percentRoll(totalQ20, +10, Math.ceil)
+      max: undefined
     })
   }
 
@@ -93,8 +99,10 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       type: 'armour',
       roll: totalQ20,
       disabled: false,
+      defaultMin: percentRoll(totalQ20, -10, Math.floor),
+      defaultMax: percentRoll(totalQ20, +10, Math.ceil),
       min: percentRoll(totalQ20, -10, Math.floor),
-      max: percentRoll(totalQ20, +10, Math.ceil)
+      max: undefined
     })
   }
 
@@ -109,8 +117,10 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       type: 'weapon',
       roll: dpsQ20,
       disabled: false,
+      defaultMin: percentRoll(dpsQ20, -10, Math.floor),
+      defaultMax: percentRoll(dpsQ20, +10, Math.ceil),
       min: percentRoll(dpsQ20, -10, Math.floor),
-      max: percentRoll(dpsQ20, +10, Math.ceil)
+      max: undefined
     })
   }
 
@@ -139,8 +149,8 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       option: mod.option,
       roll: undefined,
       disabled: true, // @TODO: can do very clever logic here
-      max: undefined,
-      min: undefined
+      min: undefined,
+      max: undefined
     }
 
     if (mod.condition) {
@@ -150,8 +160,9 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       if (mod.values) {
         const roll = getRollAsSingleNumber(mod.values)
         filter.roll = roll
-        filter.min = percentRoll(roll, -10 * Math.sign(roll), Math.floor)
-        filter.max = percentRoll(roll, +10 * Math.sign(roll), Math.ceil)
+        filter.defaultMin = percentRoll(roll, -10 * Math.sign(roll), Math.floor)
+        filter.defaultMax = percentRoll(roll, +10 * Math.sign(roll), Math.ceil)
+        filter.min = filter.defaultMin
       }
     }
 

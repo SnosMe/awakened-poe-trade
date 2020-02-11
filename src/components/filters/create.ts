@@ -105,7 +105,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
   if (item.influences) {
     filters.influences = item.influences.map(influecne => ({
       value: influecne,
-      disabled: false
+      disabled: true
     }))
   }
 
@@ -118,7 +118,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
       if (item.itemLevel > 86) {
         filters.itemLevel = {
           value: 86,
-          disabled: false
+          disabled: true
         }
         // @TODO limit by item type
         // If (RegExMatch(subtype, "i)Helmet|Gloves|Boots|Body Armour|Shield|Quiver")) {
@@ -134,7 +134,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
       } else {
         filters.itemLevel = {
           value: item.itemLevel,
-          disabled: false
+          disabled: true
         }
       }
     }
