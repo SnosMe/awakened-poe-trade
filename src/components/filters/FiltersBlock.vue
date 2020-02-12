@@ -45,7 +45,7 @@
     <div v-if="showStatsBlock && stats.length" class="my-4">
       <filter-modifier v-for="filter of stats" :key="filter.id"
         :filter="filter"/>
-      <button @click="applyStats" class="btn w-40 mt-2">Search</button>
+      <button @click="toggleStatsBlock" class="btn w-40 mt-2">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
     </div>
   </div>
 </template>
@@ -74,7 +74,7 @@ export default {
   },
   data () {
     return {
-      showStatsBlock: false
+      showStatsBlock: true
     }
   },
   computed: {
@@ -84,15 +84,7 @@ export default {
   },
   methods: {
     toggleStatsBlock () {
-      if (!this.showStatsBlock) {
-        this.showStatsBlock = true
-      } else {
-        this.applyStats()
-      }
-    },
-    applyStats () {
-      this.showStatsBlock = false
-      this.$emit('refine-search')
+      this.showStatsBlock = !this.showStatsBlock
     }
   }
 }

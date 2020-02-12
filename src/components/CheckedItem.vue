@@ -11,8 +11,7 @@
       <filters-block v-if="!item.stackSize"
         :filters="itemFilters"
         :stats="itemStats"
-        :item="item"
-        @refine-search="refineSearch" />
+        :item="item" />
       <trade-listing
         ref="tradeService"
         :filters="itemFilters"
@@ -73,20 +72,13 @@ export default {
         MainProcess.priceCheckVisible(false)
       }
     })
-  },
-  watch: {
-    itemFilters: {
-      deep: true,
-      immediate: true,
-      handler (filters) {
-        if (filters == null) return
 
-        // NOTE: children component receives props on nextTick
-        this.$nextTick(() => {
-          this.$refs.tradeService.execSearch()
-        })
-      }
-    }
+    this.$watch(vm => [vm.itemFilters, vm.itemStats], () => {
+      // NOTE: children component receives props on nextTick
+      this.$nextTick(() => {
+        this.$refs.tradeService.execSearch()
+      })
+    }, { deep: true })
   },
   data () {
     return {
@@ -104,9 +96,6 @@ export default {
     }
   },
   methods: {
-    refineSearch () {
-      this.$refs.tradeService.execSearch()
-    }
   }
 }
 </script>
