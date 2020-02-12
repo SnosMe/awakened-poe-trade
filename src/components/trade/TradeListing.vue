@@ -37,12 +37,12 @@
           </tr>
         </thead>
         <tbody style="overflow: scroll;">
-          <template v-for="(result, idx) in results">
+          <template v-for="(result, idx) in grouppedResults">
             <tr v-if="!result" :key="idx">
               <td colspan="100">&nbsp;</td>
             </tr>
             <tr v-else :key="result.id">
-              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
+              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2">× {{ result.listedTimes }}</span></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
@@ -71,6 +71,9 @@ import { MainProcess } from '../main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
 import { Leagues } from '../Leagues'
 
+const SHOW_RESULTS = 20
+const API_FETCH_LIMIT = 100
+
 export default {
   props: {
     filters: {
@@ -88,10 +91,44 @@ export default {
   },
   data () {
     return {
+      searchId: 0,
       loading: false,
       error: null,
-      results: Array(20),
+      results: Array(SHOW_RESULTS),
       list: null
+    }
+  },
+  computed: {
+    grouppedResults () {
+      // first req ready
+      if (this.results[0] == null) return Array(SHOW_RESULTS)
+
+      const out = []
+      for (const result of this.results) {
+        // second req ready
+        if (result == null) break
+
+        if (out.length === 0) {
+          out.push({ listedTimes: 1, ...result })
+          continue
+        }
+
+        const prevRes = out[out.length - 1]
+        if (
+          prevRes.priceAmount === result.priceAmount &&
+          prevRes.priceCurrency === result.priceCurrency &&
+          prevRes.accountName === result.accountName
+        ) {
+          prevRes.listedTimes += 1
+        } else {
+          out.push({ listedTimes: 1, ...result })
+        }
+      }
+
+      if (out.length < SHOW_RESULTS) {
+        out.push(...Array(SHOW_RESULTS - out.length))
+      }
+      return out
     }
   },
   methods: {
@@ -99,16 +136,21 @@ export default {
       try {
         // NOTE: rate limiting https://www.pathofexile.com/forum/view-thread/2079853#p15244273
 
+        this.searchId += 1
+        const searchId = this.searchId
+
         this.loading = true
         this.error = null
-        const resultsVar = Array(20)
+        const resultsVar = Array(SHOW_RESULTS) // keep as local to searchId
         this.results = resultsVar
 
         this.list = null
         const request = createTradeRequest(this.filters, this.stats)
         const list = await requestTradeResultList(request)
+        if (this.searchId !== searchId) return
         this.list = list
 
+        // first two req are parallel, then sequential on demand
         await Promise.all([
           (list.total > 0)
             ? requestResults(list.id, list.result.slice(0, 10))
@@ -119,6 +161,25 @@ export default {
               .then(results => { resultsVar.splice(10, results.length, ...results) })
             : Promise.resolve()
         ])
+
+        let fetched = 20
+        const fetchMore = async () => {
+          if (this.searchId !== searchId) return
+
+          const totalGroupped = this.grouppedResults.reduce((len, res) => res != null ? len + 1 : len, 0)
+          if (
+            totalGroupped < SHOW_RESULTS &&
+            fetched < list.total &&
+            fetched < API_FETCH_LIMIT
+          ) {
+            await requestResults(list.id, list.result.slice(fetched, fetched + 10))
+              .then(results => { resultsVar.push(...results) })
+
+            fetched += 10
+            return fetchMore()
+          }
+        }
+        return fetchMore()
       } catch (err) {
         this.error = err.message
       } finally {

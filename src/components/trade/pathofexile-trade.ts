@@ -176,6 +176,7 @@ interface FetchResult {
       type: '~price'
     }
     account: {
+      name: string
       online?: {
         status?: 'afk'
       }
@@ -363,6 +364,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price.amount,
       priceCurrency: result.listing.price.currency,
+      accountName: result.listing.account.name,
       accountStatus: result.listing.account.online
         ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
         : 'offline'
