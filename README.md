@@ -5,9 +5,9 @@
 
 | Download | Automatic update | Startup time |
 |----------|------------------|--------------|
-| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.7.0/Awakened-PoE-Trade-Setup-0.7.0.exe) | :heavy_check_mark: | Fast |
-| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.7.0/Awakened-PoE-Trade-0.7.0.exe) | :heavy_multiplication_x: | Slow |
-| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.7.0/Awakened-PoE-Trade-0.7.0.AppImage) | :heavy_check_mark: | Fast |
+| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.8.0/Awakened-PoE-Trade-Setup-0.8.0.exe) | :heavy_check_mark: | Fast |
+| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.8.0/Awakened-PoE-Trade-0.8.0.exe) | :heavy_multiplication_x: | Slow |
+| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.8.0/Awakened-PoE-Trade-0.8.0.AppImage) | :heavy_check_mark: | Fast |
 
 ## Tool showcase
 
@@ -22,37 +22,56 @@
 | Video shows the very first release, now a lot of features have been added, but this did not affect the speed. The video is still relevant. |
 | [![](http://img.youtube.com/vi/PCohkEmWRT8/0.jpg)](http://www.youtube.com/watch?v=PCohkEmWRT8 "") |
 
-## What types of items are supported?
+## Trade tool checklist
+
+- Poe.ninja
+  - :heavy_check_mark: Currency, Fragments, Oils, Incubators, Scarabs, Fossils, Resonators, Essences, Divination Cards, Prophecies
+  - :heavy_multiplication_x: Watchstones
+  - :heavy_check_mark: Gems
+    - :heavy_check_mark: Level(20, 21), Quality(0, 20, 23), Corrupted
+    - :heavy_check_mark: Empower, Enlighten, Enhance: Level(1-4)
+    - :heavy_check_mark: Awakened Gems
+    - :heavy_check_mark: "Brand Recall", "Blood and Sand", "Portal"
+  - :heavy_check_mark: Base types (Item Level, Influence)
+  - :heavy_check_mark: Maps (Map Tier)
+    - :heavy_check_mark: Blighted
+    - :heavy_check_mark: Unique maps
+  - :heavy_check_mark: Unique Jewels
+  - :heavy_check_mark: Unique Flasks
+    - :heavy_multiplication_x: "Vessel of Vinktar"
+  - :heavy_check_mark: Unique Weapons
+    - :heavy_check_mark: Links (1-4, 5, 6)
+  - :heavy_check_mark: Unique Armours
+    - :heavy_check_mark: Links (1-4, 5, 6)
+    - :heavy_multiplication_x: "Atziri's Splendour", "Bubonic Trail", "Lightpoacher", "Shroud of the Lightless", "Volkuur's Guidance", "Yriel's Fostering"
+  - :heavy_check_mark: Unique Accessories
+    - :heavy_multiplication_x: "Doryani's Invitation", "Impresence"
+  - :heavy_check_mark: Beasts
 
 - Rare items
-  - :heavy_check_mark: Price prediction
-  - :warning: Advanced search by modifiers
-- Maps
-- Currency, Fragments, Fossils...
-  - :heavy_check_mark: poe.ninja instant prices and trends
-  - :heavy_check_mark: Trade results
-- Unique items
-  - :warning: poe.ninja instant prices and trends
-    - :heavy_check_mark: 5, 6 Linked sockets
-    - :heavy_check_mark: Item
-    - :heavy_multiplication_x: Uniques with variants (Doryani's Invitation, Atziri's Splendour, Vessel of Vinktar)
-  - :warning: Trade results
-    - :warning: ordered by min price (without applying +/- 20% mod rolls)
-    - :heavy_check_mark: 5, 6 Linked sockets
-    - :heavy_multiplication_x: Has 2 Abyssal Sockets...
-    - :heavy_multiplication_x: Corrupted implicits
-- Gems
-  - :heavy_check_mark: poe.ninja instant prices and trends
-    - :heavy_check_mark: Level, Quality, Corrupted
-  - :warning: Trade results
-    - :heavy_check_mark: Level
-    - :heavy_check_mark: Quality
+  - :heavy_check_mark: Price prediction (poeprices.info)
+
+- Trade
+  - Items
+    - :heavy_check_mark: Item Level
     - :heavy_check_mark: Corrupted
-    - :heavy_check_mark: Empower, Enlighten, Enhance
+    - :heavy_check_mark: Influence
+    - :heavy_check_mark: 5, 6 Linked sockets
+    - :heavy_check_mark: Item base/Item category
+    - :heavy_check_mark: Q20 props (Armour, Evasion, ES, Physical Damage)
+  - :heavy_check_mark: +-10% Rare rolls
+  - :heavy_multiplication_x: Unique item roll range
+  - :heavy_multiplication_x: Pseudo stats
+  - Gems
+    - :heavy_check_mark: Level, Quality, Corrupted
     - :heavy_multiplication_x: Gem experience
-  - :heavy_check_mark: Vaal gems
+  - :heavy_multiplication_x: Currency bulk search
+  - :heavy_check_mark: Grouping results from one account (protection against "pricefixing")
 
 ### Requirements
+
+- Run PoE in "Windowed" or "Windowed Fullscreen" mode
+- PoE language must be English
 
 Neither Java nor the .NET Framework nor AHK are required\
 No Administrator rights required

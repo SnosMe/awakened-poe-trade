@@ -73,7 +73,7 @@ function getGemDetailsId (item: ParsedItem) {
       !(item.name === BRAND_RECALL_GEM && item.isCorrupted)
       // @TODO(poe.ninja blocking): !(item.name === BLOOD_AND_SAND_GEM && item.isCorrupted)
     ) {
-      // Gem Q20 with up to 4xGCP
+      // Gem Q20 with up to 4xGCP (TODO: should this rule apply to corrupted gems?)
       const q = (item.quality >= 16 && item.quality <= 20) ? 20 : item.quality
       id += `-${q}`
     }
