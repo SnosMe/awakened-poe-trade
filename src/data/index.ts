@@ -2,6 +2,7 @@ import prophecies from './prophecies.json'
 import monsters from './itemised-monsters.json'
 import mods from './mods.json'
 import baseTypes from './base-types.json'
+import uniques from './uniques.json'
 import { ItemCategory } from '../components/parser'
 
 export interface StatMatcher {
@@ -21,7 +22,7 @@ export interface Mod {
   text: string
   types: Array<{
     name: string
-    tradeId?: string
+    tradeId: string | string[]
   }>
 }
 
@@ -45,3 +46,15 @@ for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
     })
   }
 }
+
+export interface UniqueItem {
+  icon: string
+  mods: Array<{
+    text: string
+    implicit?: true
+    variant?: true
+    bounds: Array<{ min: number, max: number }>
+  }>
+}
+
+export const Uniques = new Map(uniques as Array<[string, UniqueItem]>)

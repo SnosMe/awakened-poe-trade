@@ -44,7 +44,11 @@ interface TradeRequest { /* eslint-disable camelcase */
     name?: string
     type?: string
     stats: Array<{
-      type: 'and' | 'if',
+      type: 'and' | 'if' | 'count',
+      value?: {
+        min?: number
+        max?: number
+      }
       filters: Array<{
         id: string
         value?: {
@@ -314,20 +318,36 @@ export function createTradeRequest (filters: ItemFilters, stats: UiModFilter[]) 
     }
   }
 
-  stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId))
+  stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId as string))
 
-  query.stats.push({
-    type: 'and',
-    filters: stats.map(stat => ({
-      id: stat.tradeId,
-      value: {
-        min: typeof stat.min === 'number' ? stat.min : undefined,
-        max: typeof stat.max === 'number' ? stat.max : undefined,
-        option: stat.option != null ? stat.option.tradeId : undefined
-      },
-      disabled: stat.disabled
-    }))
-  })
+  query.stats.push({ type: 'and', filters: [] })
+  for (const stat of stats) {
+    if (!Array.isArray(stat.tradeId)) {
+      query.stats[0]!.filters.push({
+        id: stat.tradeId,
+        value: {
+          min: typeof stat.min === 'number' ? stat.min : undefined,
+          max: typeof stat.max === 'number' ? stat.max : undefined,
+          option: stat.option != null ? stat.option.tradeId : undefined
+        },
+        disabled: stat.disabled
+      })
+    } else {
+      query.stats.push({
+        type: 'count',
+        value: { min: 1 },
+        filters: stat.tradeId.map(id => ({
+          id,
+          value: {
+            min: typeof stat.min === 'number' ? stat.min : undefined,
+            max: typeof stat.max === 'number' ? stat.max : undefined,
+            option: stat.option != null ? stat.option.tradeId : undefined
+          },
+          disabled: stat.disabled
+        }))
+      })
+    }
+  }
 
   return body
 }

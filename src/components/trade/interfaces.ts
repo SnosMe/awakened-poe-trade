@@ -4,7 +4,7 @@ import { localStats } from './cleanup'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 
 export interface UiModFilter {
-  readonly tradeId: string
+  readonly tradeId: string | string[]
   readonly text: string
   readonly roll?: number
   readonly type: string

@@ -43,7 +43,7 @@
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
-      <filter-modifier v-for="filter of stats" :key="filter.id"
+      <filter-modifier v-for="filter of stats" :key="filter.type + '/' + filter.text"
         :filter="filter"/>
       <button @click="toggleStatsBlock" class="btn w-40 mt-2">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
     </div>

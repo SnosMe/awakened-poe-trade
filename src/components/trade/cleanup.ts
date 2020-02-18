@@ -21,15 +21,10 @@ export const localStats = new Set<string>([
   ...QUALITY_STATS.PHYSICAL_DAMAGE.incr,
   assertStat('#% Chance to Block'),
   assertStat('#% increased Attack Speed'),
+  assertStat('#% increased Critical Strike Chance'),
 
   assertStat('Adds # to # Chaos Damage'),
   assertStat('Adds # to # Lightning Damage'),
   assertStat('Adds # to # Cold Damage'),
-  assertStat('Adds # to # Fire Damage'),
-
-  // NOTE: atm it is better to include it in this list to avoid bugs
-  // \/\/\/\/
-  assertStat('#% increased Critical Strike Chance'),
-  assertStat('#% chance to Poison on Hit')
-  // /\/\/\/\
+  assertStat('Adds # to # Fire Damage')
 ])

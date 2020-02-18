@@ -6,7 +6,10 @@
           'far fa-square text-gray-500': filter.disabled,
           'fas fa-check-square': !filter.disabled
         }"></i>
-        <span class="truncate flex-1 pr-1">{{ filter.text }}</span>
+        <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
+          <span class="truncate">{{ filter.text }}</span>
+          <span class="search-text-full">{{ filter.text }}</span>
+        </div>
       </button>
       <div class="flex">
         <input class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
@@ -131,5 +134,20 @@ export default {
   @apply px-1;
   @apply border border-transparent;
   @apply rounded;
+}
+
+.search-text-full {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-bottom: 1px;
+
+  .search-text:not(:hover) & {
+    display: none;
+  }
+
+  .search-text:hover & {
+    @apply bg-gray-700;
+  }
 }
 </style>
