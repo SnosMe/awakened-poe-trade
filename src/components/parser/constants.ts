@@ -43,3 +43,4 @@ export const CRAFTED_SUFFIX = ' (crafted)'
 
 export const CORRUPTED = 'Corrupted'
 export const UNIDENTIFIED = 'Unidentified'
+export const FLASK_CHARGES = /^Currently has \d+ Charges$/

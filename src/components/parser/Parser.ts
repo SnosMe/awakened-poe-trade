@@ -22,7 +22,8 @@ import {
   TAG_CRIT_CHANCE,
   TAG_ATTACK_SPEED,
   TAG_PHYSICAL_DAMAGE,
-  TAG_ELEMENTAL_DAMAGE
+  TAG_ELEMENTAL_DAMAGE,
+  FLASK_CHARGES
 } from './constants'
 import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
 import { getDetailsId, nameToDetailsId } from '../trends/getDetailsId'
@@ -56,6 +57,7 @@ const parsers: ParserFn[] = [
   parseGem,
   parseArmour,
   parseWeapon,
+  parseFlask,
   parseStackSize,
   parseCorrupted,
   parseInfluence,
@@ -427,6 +429,19 @@ function parseModifiers (section: string[], item: ParsedItem) {
   if (countBefore < item.modifiers.length) {
     return SECTION_PARSED
   }
+  return SECTION_SKIPPED
+}
+
+function parseFlask (section: string[], item: ParsedItem) {
+  // the purpose of this parser is to "consume" flask buffs
+  // so they are not recognized as modifiers
+
+  for (const line of section) {
+    if (FLASK_CHARGES.test(line)) {
+      return SECTION_PARSED
+    }
+  }
+
   return SECTION_SKIPPED
 }
 
