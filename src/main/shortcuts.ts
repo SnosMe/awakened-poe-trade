@@ -23,7 +23,7 @@ export function setupShortcuts () {
   ioHook.registerShortcut([KEY_CTRL, KEY_D], () => {
     if (!isPollingClipboard) {
       isPollingClipboard = true
-      pollClipboard(32, 1750)
+      pollClipboard(32, 1000)
         .then(async (clipboard) => {
           win.webContents.send('price-check', clipboard)
           poeWindowId = await windowManager.getActiveWindowId()

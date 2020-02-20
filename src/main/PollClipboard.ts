@@ -1,8 +1,14 @@
 import { clipboard } from 'electron'
+import { TAG_RARITY } from '../components/parser/constants'
 
 export async function pollClipboard (delay: number, limit: number): Promise<string> {
-  const textBefore = clipboard.readText()
+  let textBefore = clipboard.readText()
   let elapsed = 0
+
+  if (textBefore.startsWith(TAG_RARITY)) {
+    textBefore = ''
+    clipboard.writeText('')
+  }
 
   return new Promise((resolve, reject) => {
     function poll () {
