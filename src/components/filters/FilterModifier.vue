@@ -23,10 +23,43 @@
       </div>
     </div>
     <div class="flex">
-      <div class="w-5"></div>
+      <div class="w-5 flex">
+        <span v-if="filter.hidden" class="text-xs leading-none text-gray-600">
+          <i class="fas fa-eye-slash"></i>
+        </span>
+      </div>
       <div class="flex-1 flex items-start">
         <span v-if="showTypeTags"
           class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ filter.type }}</span>
+        <span v-if="filter.variant"
+          class="text-xs leading-none px-1 rounded mod-type-variant">variant</span>
+      </div>
+      <div class="flex-1 mr-4">
+        <div style="width: 200px;">
+          <ui-slider v-if="filter.boundMin !== undefined"
+            class="search-slider-rail" style="padding: 0;" :dotSize="[0, 20]" :height="20"
+            :railStyle="{ background: 'transparent' }" :processStyle="{ background: '#cbd5e0', borderRadius: 0 }"
+            drag-on-click lazy adsorb :enable-cross="false"
+
+            v-model="sliderValue"
+            :marks="{
+              [filter.boundMin]: { label: 'min' },
+              [filter.boundMax]: { label: 'max' },
+              [filter.roll]: { label: 'roll' }
+            }"
+            :min="filter.boundMin"
+            :max="filter.boundMax"
+            :interval="(filter.boundMax - filter.boundMin) < 1 ? 0.01 : 1"
+          >
+          <template v-slot:mark="{ pos, label, active }">
+            <div class="custom-mark" :class="{ active, [label]: true }" :style="{ flex: pos }">
+              <div class="custom-mark-tick" :style="{ 'left': `calc(${pos}% - 1px)` }"></div>
+              {{ label === 'min' ? filter.boundMin : label === 'max' ? filter.boundMax
+                : (filter.roll === filter.boundMin || filter.roll === filter.boundMax ? filter.roll : '') }}
+            </div>
+          </template>
+          </ui-slider>
+        </div>
       </div>
       <div v-if="showQ20Notice"
         class="bg-gray-700 text-gray-500 text-center rounded-l px-1 mr-px">Q 20%</div>
@@ -54,12 +87,28 @@ export default {
       return true
     },
     showTypeTags () {
+      if (this.filter.boundMin !== undefined || this.filter.variant) {
+        return false
+      }
       return this.filter.type !== 'armour' &&
         this.filter.type !== 'weapon'
     },
     showQ20Notice () {
       return this.filter.type === 'armour' ||
         this.filter.type === 'weapon'
+    },
+    sliderValue: {
+      get () {
+        return [
+          typeof this.filter.min === 'number' ? this.filter.min : this.filter.boundMin,
+          typeof this.filter.max === 'number' ? this.filter.max : this.filter.boundMax
+        ]
+      },
+      set (value) {
+        this.filter.min = value[0]
+        this.filter.max = value[1]
+        this.filter.disabled = false
+      }
     }
   },
   methods: {
@@ -86,7 +135,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.mod-type-implicit {
+.mod-type-implicit, .mod-type-variant {
   @apply bg-yellow-700 text-yellow-100
 }
 
@@ -141,6 +190,7 @@ export default {
   left: 0px;
   top: 0px;
   padding-bottom: 1px;
+  z-index: 10;
 
   .search-text:not(:hover) & {
     display: none;
@@ -148,6 +198,37 @@ export default {
 
   .search-text:hover & {
     @apply bg-gray-700;
+  }
+}
+
+.search-slider-rail { @apply rounded bg-gray-700; }
+.vue-slider-marks { display: flex; }
+.custom-mark {
+  text-align: right;
+  white-space: nowrap;
+  padding: 0 4px;
+  @apply text-gray-500;
+
+  &.active {
+    z-index: 1;
+    @apply text-gray-900;
+  }
+
+  &.roll .custom-mark-tick {
+    position: absolute;
+    height: 100%;
+
+    &::before, &::after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 2px;
+      @apply bg-gray-900;
+    }
+
+    &::before { top: 0; }
+    &::after { bottom: 0; }
   }
 }
 </style>

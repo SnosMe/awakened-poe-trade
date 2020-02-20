@@ -30,7 +30,7 @@ import { Prices } from '../Prices'
 import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
 import { ParsedItem } from './ParsedItem'
-import { getRollAsSingleNumber } from '../trade/interfaces'
+import { getRollAsSingleNumber } from '../filters/util'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0

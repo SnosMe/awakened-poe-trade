@@ -1,7 +1,9 @@
-import { ParsedItem } from '../parser'
+import { ParsedItem, ItemRarity } from '../parser'
 import { ItemModifier } from '../parser/modifiers'
 import { localStats } from './cleanup'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
+import { uniqueModFilter } from '../filters/unique-roll'
+import { percentRoll, getRollAsSingleNumber } from '../filters/util'
 
 export interface UiModFilter {
   readonly tradeId: string | string[]
@@ -11,34 +13,13 @@ export interface UiModFilter {
   readonly option?: ItemModifier['option']
   readonly defaultMin?: number
   readonly defaultMax?: number
+  readonly boundMin?: number
+  readonly boundMax?: number
+  readonly variant?: true
+  readonly hidden?: string
   disabled: boolean
   min: number | '' | undefined
   max: number | '' | undefined
-}
-
-function countDecimals (num: number) {
-  return !Number.isInteger(num)
-    ? String(num).substring(String(num).indexOf('.') + 1).length
-    : 0
-}
-
-function percentRoll (value: number, p: number, method: Math['floor'] | Math['ceil']) {
-  const res = value + value * p / 100
-
-  const rounding = Math.pow(10, countDecimals(value))
-  return method((res + Number.EPSILON) * rounding) / rounding
-}
-
-export function getRollAsSingleNumber (values: number[]): number {
-  if (values.length === 1) {
-    return values[0]
-  } else {
-    const avg = (values[0] + values[1]) / 2
-
-    const maxPrecision = Math.max(countDecimals(values[0]), countDecimals(values[1]))
-    const rounding = Math.pow(10, maxPrecision)
-    return Math.floor((avg + Number.EPSILON) * rounding) / rounding
-  }
 }
 
 export type INTERNAL_TRADE_ID =
@@ -137,13 +118,9 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
     parsedMods = parsedMods.filter(mod => !localStats.has(mod.modInfo.text))
   }
 
-  parsedMods = parsedMods.filter(
-    mod => mod.modInfo.types.find(type => type.name === mod.type)!.tradeId != null
-  )
-
   modFilters.push(...parsedMods.map(mod => {
     const filter: Writeable<UiModFilter> = {
-      tradeId: mod.modInfo.types.find(type => type.name === mod.type)!.tradeId!,
+      tradeId: mod.modInfo.types.find(type => type.name === mod.type)!.tradeId,
       text: mod.modInfo.text,
       type: mod.type,
       option: mod.option,
@@ -153,21 +130,37 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       max: undefined
     }
 
-    if (mod.condition) {
-      filter.min = mod.condition.min
-      filter.max = mod.condition.max
-    } else if (!mod.option) {
-      if (mod.values) {
-        const roll = getRollAsSingleNumber(mod.values)
-        filter.roll = roll
-        filter.defaultMin = percentRoll(roll, -10 * Math.sign(roll), Math.floor)
-        filter.defaultMax = percentRoll(roll, +10 * Math.sign(roll), Math.ceil)
-        filter.min = filter.defaultMin
+    if (item.rarity === ItemRarity.Unique) {
+      const isKnown = uniqueModFilter(item, mod, filter)
+      if (!isKnown) {
+        itemModFilter(mod, filter)
       }
+    } else {
+      itemModFilter(mod, filter)
     }
 
     return filter
   }))
 
   return modFilters
+}
+
+function itemModFilter (
+  mod: ItemModifier,
+  filter: Writeable<UiModFilter>
+) {
+  if (mod.condition) {
+    filter.min = mod.condition.min
+    filter.max = mod.condition.max
+    filter.defaultMin = filter.min
+    filter.defaultMax = filter.max
+  } else if (!mod.option) {
+    if (mod.values) {
+      const roll = getRollAsSingleNumber(mod.values)
+      filter.roll = roll
+      filter.defaultMin = percentRoll(roll, -10 * Math.sign(roll), Math.floor)
+      filter.defaultMax = percentRoll(roll, +10 * Math.sign(roll), Math.ceil)
+      filter.min = filter.defaultMin
+    }
+  }
 }

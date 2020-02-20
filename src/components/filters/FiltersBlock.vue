@@ -43,9 +43,17 @@
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
-      <filter-modifier v-for="filter of stats" :key="filter.type + '/' + filter.text"
+      <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
         :filter="filter"/>
-      <button @click="toggleStatsBlock" class="btn w-40 mt-2">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
+      <div class="flex mt-2">
+        <button @click="toggleStatsBlock" class="btn w-40">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
+        <button v-if="shownStats.length != stats.length"
+          @click="showHidden = !showHidden" class="ml-4 flex items-center">
+          <i v-if="showHidden" class="fas fa-toggle-on pr-1 text-gray-300"></i>
+          <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
+          <span class="text-gray-400">Hidden</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -74,12 +82,25 @@ export default {
   },
   data () {
     return {
-      showStatsBlock: true
+      showStatsBlock: true,
+      showHidden: false
+    }
+  },
+  watch: {
+    item () {
+      this.showHidden = false
     }
   },
   computed: {
     totalSelectedMods () {
       return this.stats.filter(stat => !stat.disabled).length
+    },
+    shownStats () {
+      if (this.showHidden) {
+        return this.stats.filter(s => s.hidden)
+      } else {
+        return this.stats.filter(s => !s.hidden)
+      }
     }
   },
   methods: {
