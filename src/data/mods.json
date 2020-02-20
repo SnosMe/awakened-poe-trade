@@ -1693,11 +1693,17 @@
         },
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_3531280422"
+          "tradeId": [
+            "explicit.stat_3531280422",
+            "explicit.stat_2223678961"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_3531280422"
+          "tradeId": [
+            "implicit.stat_3531280422",
+            "implicit.stat_2223678961"
+          ]
         }
       ]
     }
@@ -1765,15 +1771,24 @@
         },
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_2387423236"
+          "tradeId": [
+            "explicit.stat_2387423236",
+            "explicit.stat_1037193709"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_2387423236"
+          "tradeId": [
+            "implicit.stat_2387423236",
+            "implicit.stat_1037193709"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_2387423236"
+          "tradeId": [
+            "crafted.stat_2387423236",
+            "crafted.stat_1037193709"
+          ]
         }
       ]
     }
@@ -1921,15 +1936,24 @@
         },
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_321077055"
+          "tradeId": [
+            "explicit.stat_321077055",
+            "explicit.stat_709508406"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_321077055"
+          "tradeId": [
+            "implicit.stat_321077055",
+            "implicit.stat_709508406"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_321077055"
+          "tradeId": [
+            "crafted.stat_321077055",
+            "crafted.stat_709508406"
+          ]
         }
       ]
     }
@@ -2005,15 +2029,24 @@
         },
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_1334060246"
+          "tradeId": [
+            "explicit.stat_1334060246",
+            "explicit.stat_3336890334"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_1334060246"
+          "tradeId": [
+            "implicit.stat_1334060246",
+            "implicit.stat_3336890334"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_1334060246"
+          "tradeId": [
+            "crafted.stat_1334060246",
+            "crafted.stat_3336890334"
+          ]
         }
       ]
     }
@@ -2089,13 +2122,18 @@
         },
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_960081730"
+          "tradeId": [
+            "explicit.stat_960081730",
+            "explicit.stat_1940865751"
+          ]
         },
         {
-          "name": "implicit"
+          "name": "implicit",
+          "tradeId": "implicit.stat_1940865751"
         },
         {
-          "name": "crafted"
+          "name": "crafted",
+          "tradeId": "crafted.stat_1940865751"
         }
       ]
     }
@@ -2954,7 +2992,11 @@
       "text": "# Physical Damage taken from Attack Hits",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3441651621",
+            "explicit.stat_1569463444"
+          ]
         },
         {
           "name": "implicit",
@@ -3237,15 +3279,24 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_803737631"
+          "tradeId": [
+            "explicit.stat_803737631",
+            "explicit.stat_691932474"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_803737631"
+          "tradeId": [
+            "implicit.stat_803737631",
+            "implicit.stat_691932474"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_803737631"
+          "tradeId": [
+            "crafted.stat_803737631",
+            "crafted.stat_691932474"
+          ]
         }
       ]
     }
@@ -3317,14 +3368,21 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_809229260"
+          "tradeId": [
+            "explicit.stat_809229260",
+            "explicit.stat_3484657501"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_3484657501"
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_809229260"
-        },
-        {
-          "name": "implicit"
+          "tradeId": [
+            "crafted.stat_809229260",
+            "crafted.stat_3484657501"
+          ]
         }
       ]
     }
@@ -3468,14 +3526,21 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_2144192055"
+          "tradeId": [
+            "explicit.stat_2144192055",
+            "explicit.stat_53045048"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_53045048"
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_2144192055"
-        },
-        {
-          "name": "implicit"
+          "tradeId": [
+            "crafted.stat_2144192055",
+            "crafted.stat_53045048"
+          ]
         }
       ]
     }
@@ -4379,15 +4444,24 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_3489782002"
+          "tradeId": [
+            "explicit.stat_3489782002",
+            "explicit.stat_4052037485"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_3489782002"
+          "tradeId": [
+            "implicit.stat_3489782002",
+            "implicit.stat_4052037485"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_3489782002"
+          "tradeId": [
+            "crafted.stat_3489782002",
+            "crafted.stat_4052037485"
+          ]
         }
       ]
     }
@@ -5766,6 +5840,9 @@
     "conditions": [
       {
         "string": "#% chance to Avoid being Poisoned"
+      },
+      {
+        "string": "Cannot be Poisoned"
       }
     ],
     "mod": {
@@ -5773,11 +5850,11 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_4053951709"
+          "tradeId": ["explicit.stat_4053951709", "explicit.stat_3835551335"]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_4053951709"
+          "tradeId": ["implicit.stat_4053951709", "implicit.stat_3835551335"]
         }
       ]
     }
@@ -5838,6 +5915,9 @@
     "conditions": [
       {
         "string": "#% chance to Avoid being Stunned"
+      },
+      {
+        "string": "Cannot be Stunned"
       }
     ],
     "mod": {
@@ -5845,7 +5925,7 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_4262448838"
+          "tradeId": ["explicit.stat_4262448838", "explicit.stat_1694106311"]
         },
         {
           "name": "implicit",
@@ -5862,6 +5942,9 @@
     "conditions": [
       {
         "string": "#% chance to avoid Bleeding"
+      },
+      {
+        "string": "Bleeding cannot be inflicted on you"
       }
     ],
     "mod": {
@@ -5869,11 +5952,11 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_1618589784"
+          "tradeId": ["explicit.stat_1618589784", "explicit.stat_1901158930"]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_1618589784"
+          "tradeId": ["implicit.stat_1618589784", "implicit.stat_1901158930"]
         }
       ]
     }
@@ -6274,6 +6357,30 @@
   {
     "conditions": [
       {
+        "string": "#% Chance to Block"
+      }
+    ],
+    "mod": {
+      "text": "#% Chance to Block",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_4253454700"
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_4253454700"
+        },
+        {
+          "name": "crafted",
+          "tradeId": "crafted.stat_4253454700"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% Chance to Block Attack Damage"
       }
     ],
@@ -6281,13 +6388,25 @@
       "text": "#% Chance to Block Attack Damage",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2530372417",
+            "explicit.stat_1702195217"
+          ]
         },
         {
-          "name": "implicit"
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2530372417",
+            "implicit.stat_1702195217"
+          ]
         },
         {
-          "name": "crafted"
+          "name": "crafted",
+          "tradeId": [
+            "crafted.stat_2530372417",
+            "crafted.stat_1702195217"
+          ]
         }
       ]
     }
@@ -6398,7 +6517,11 @@
       "text": "#% Chance to Block Attack Damage per Endurance Charge",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3039589351",
+            "explicit.stat_2355741828"
+          ]
         }
       ]
     }
@@ -6582,7 +6705,14 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_1778298516"
+          "tradeId": [
+            "explicit.stat_1778298516",
+            "explicit.stat_1001829678"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_1001829678"
         }
       ]
     }
@@ -6645,11 +6775,19 @@
       "text": "#% Chance to Block Spell Damage",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_561307714",
+            "explicit.stat_19803471",
+            "explicit.stat_2881111359"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_561307714"
+          "tradeId": [
+            "implicit.stat_561307714",
+            "implicit.stat_2881111359"
+          ]
         },
         {
           "name": "crafted",
@@ -6812,7 +6950,11 @@
       "text": "#% Chance to Block Spell Damage while on Low Life",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2253286128",
+            "explicit.stat_4070519133"
+          ]
         }
       ]
     }
@@ -7683,6 +7825,9 @@
     "conditions": [
       {
         "string": "#% chance to gain a Flask Charge when you deal a Critical Strike"
+      },
+      {
+        "string": "Gain a Flask Charge when you deal a Critical Strike"
       }
     ],
     "mod": {
@@ -7690,7 +7835,10 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_2858921304"
+          "tradeId": [
+            "explicit.stat_2858921304",
+            "explicit.stat_3738001379", "explicit.stat_1546046884"
+          ]
         }
       ]
     }
@@ -8510,7 +8658,11 @@
       "text": "#% chance to gain Onslaught for 4 seconds on Kill",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3023957681",
+            "explicit.stat_665823128"
+          ]
         },
         {
           "name": "implicit",
@@ -9023,7 +9175,11 @@
       "text": "#% chance to Intimidate Enemies for 4 seconds on Hit",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2089652545",
+            "explicit.stat_78985352"
+          ]
         },
         {
           "name": "implicit",
@@ -9169,14 +9325,18 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_795138349"
+          "tradeId": [
+            "explicit.stat_795138349",
+            "explicit.stat_3885634897"
+          ]
         },
         {
           "name": "implicit",
           "tradeId": "implicit.stat_795138349"
         },
         {
-          "name": "crafted"
+          "name": "crafted",
+          "tradeId": "crafted.stat_3885634897"
         }
       ]
     }
@@ -10474,15 +10634,24 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_2866361420"
+          "tradeId": [
+            "explicit.stat_2866361420",
+            "explicit.stat_1062208444"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_2866361420"
+          "tradeId": [
+            "implicit.stat_2866361420",
+            "implicit.stat_1062208444"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_2866361420"
+          "tradeId": [
+            "crafted.stat_2866361420",
+            "crafted.stat_1062208444"
+          ]
         }
       ]
     }
@@ -10503,6 +10672,54 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_706246936"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Armour and Energy Shield"
+      },
+      {
+        "string": "#% reduced Armour and Energy Shield",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Armour and Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_3321629045"
+        },
+        {
+          "name": "crafted",
+          "tradeId": "crafted.stat_3321629045"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Armour and Evasion"
+      },
+      {
+        "string": "#% reduced Armour and Evasion",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Armour and Evasion",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_2451402625"
+        },
+        {
+          "name": "crafted",
+          "tradeId": "crafted.stat_2451402625"
         }
       ]
     }
@@ -10611,6 +10828,30 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_3184053924"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Armour, Evasion and Energy Shield"
+      },
+      {
+        "string": "#% reduced Armour, Evasion and Energy Shield",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Armour, Evasion and Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_3523867985"
+        },
+        {
+          "name": "crafted",
+          "tradeId": "crafted.stat_3523867985"
         }
       ]
     }
@@ -11057,15 +11298,24 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_681332047"
+          "tradeId": [
+            "explicit.stat_681332047",
+            "explicit.stat_210067635"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_681332047"
+          "tradeId": [
+            "implicit.stat_681332047",
+            "implicit.stat_210067635"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_681332047"
+          "tradeId": [
+            "crafted.stat_681332047",
+            "crafted.stat_210067635"
+          ]
         }
       ]
     }
@@ -14217,7 +14467,11 @@
       "text": "#% increased Damage with Hits and Ailments against Blinded Enemies",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3503466234",
+            "explicit.stat_3565956680"
+          ]
         }
       ]
     }
@@ -15483,6 +15737,34 @@
   {
     "conditions": [
       {
+        "string": "#% increased Energy Shield"
+      },
+      {
+        "string": "#% reduced Energy Shield",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_4015621042"
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_4015621042"
+        },
+        {
+          "name": "crafted",
+          "tradeId": "crafted.stat_4015621042"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Energy Shield from Body Armour"
       }
     ],
@@ -15619,6 +15901,30 @@
   {
     "conditions": [
       {
+        "string": "#% increased Evasion and Energy Shield"
+      },
+      {
+        "string": "#% reduced Evasion and Energy Shield",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Evasion and Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_1999113824"
+        },
+        {
+          "name": "crafted",
+          "tradeId": "crafted.stat_1999113824"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Evasion Rating"
       },
       {
@@ -15631,15 +15937,24 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_2106365538"
+          "tradeId": [
+            "explicit.stat_2106365538",
+            "explicit.stat_124859000"
+          ]
         },
         {
           "name": "implicit",
-          "tradeId": "implicit.stat_2106365538"
+          "tradeId": [
+            "implicit.stat_2106365538",
+            "implicit.stat_124859000"
+          ]
         },
         {
           "name": "crafted",
-          "tradeId": "crafted.stat_2106365538"
+          "tradeId": [
+            "crafted.stat_2106365538",
+            "crafted.stat_124859000"
+          ]
         }
       ]
     }
@@ -15775,11 +16090,18 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_3666934677"
+          "tradeId": [
+            "explicit.stat_3666934677",
+            "explicit.stat_57434274"
+          ]
         },
         {
           "name": "implicit",
           "tradeId": "implicit.stat_3666934677"
+        },
+        {
+          "name": "enchant",
+          "tradeId": "enchant.stat_57434274"
         }
       ]
     }
@@ -17490,7 +17812,11 @@
       "text": "#% increased Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2731416566",
+            "explicit.stat_3848992177"
+          ]
         }
       ]
     }
@@ -17509,7 +17835,11 @@
       "text": "#% increased Maximum total Recovery per second from Life Leech",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4118987751",
+            "explicit.stat_2916634441"
+          ]
         },
         {
           "name": "implicit",
@@ -21167,7 +21497,11 @@
       "text": "#% more Monster Life",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_95249895",
+            "explicit.stat_2710898947"
+          ]
         }
       ]
     }
@@ -21944,7 +22278,11 @@
       "text": "#% of Fire Damage from Hits taken as Physical Damage",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3205239847",
+            "explicit.stat_1029319062"
+          ]
         }
       ]
     }
@@ -28636,7 +28974,11 @@
       "text": "Area has patches of burning ground",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3665534869",
+            "explicit.stat_133340941"
+          ]
         }
       ]
     }
@@ -28651,7 +28993,11 @@
       "text": "Area has patches of chilled ground",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_389725673",
+            "explicit.stat_349586058"
+          ]
         }
       ]
     }
@@ -28682,7 +29028,11 @@
       "text": "Area has patches of shocking ground",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3246076198",
+            "explicit.stat_3477720557"
+          ]
         }
       ]
     }
@@ -28939,7 +29289,11 @@
       "text": "Area is inhabited by Lunaris fanatics",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3134632618",
+            "explicit.stat_3408601861"
+          ]
         }
       ]
     }
@@ -29027,7 +29381,11 @@
       "text": "Area is inhabited by Solaris fanatics",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2457517302",
+            "explicit.stat_1934713036"
+          ]
         }
       ]
     }
@@ -29809,26 +30167,6 @@
   {
     "conditions": [
       {
-        "string": "Bleeding cannot be inflicted on you"
-      }
-    ],
-    "mod": {
-      "text": "Bleeding cannot be inflicted on you",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_1901158930"
-        },
-        {
-          "name": "implicit",
-          "tradeId": "implicit.stat_1901158930"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "Bleeding Enemies you Kill Explode, dealing #% of\ntheir Maximum Life as Physical Damage"
       }
     ],
@@ -30268,46 +30606,6 @@
   {
     "conditions": [
       {
-        "string": "Cannot be Knocked Back"
-      }
-    ],
-    "mod": {
-      "text": "Cannot be Knocked Back",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_4212255859"
-        },
-        {
-          "name": "implicit",
-          "tradeId": "implicit.stat_4212255859"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Cannot be Poisoned"
-      }
-    ],
-    "mod": {
-      "text": "Cannot be Poisoned",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_3835551335"
-        },
-        {
-          "name": "implicit",
-          "tradeId": "implicit.stat_3835551335"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "Cannot be Shocked if Intelligence is higher than Strength"
       }
     ],
@@ -30333,22 +30631,6 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_3592330380"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Cannot be Stunned"
-      }
-    ],
-    "mod": {
-      "text": "Cannot be Stunned",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_1694106311"
         }
       ]
     }
@@ -34459,25 +34741,6 @@
   {
     "conditions": [
       {
-        "string": "Gain a Flask Charge when you deal a Critical Strike",
-        "condition": {
-          "min": 100
-        }
-      }
-    ],
-    "mod": {
-      "text": "Gain a Flask Charge when you deal a Critical Strike",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_3738001379"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "Gain a Flask Charge when you deal a Critical Strike while affected by Precision"
       }
     ],
@@ -34503,22 +34766,6 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_3598983877"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Gain a Frenzy Charge on Critical Strike"
-      }
-    ],
-    "mod": {
-      "text": "Gain a Frenzy Charge on Critical Strike",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_398702949"
         }
       ]
     }
@@ -36878,7 +37125,11 @@
       "text": "Hits have #% increased Critical Strike Chance against you",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4270096386",
+            "explicit.stat_165218607"
+          ]
         },
         {
           "name": "implicit",
@@ -42945,7 +43196,11 @@
           "tradeId": "explicit.stat_2067062068"
         },
         {
-          "name": "implicit"
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2067062068",
+            "implicit.stat_2902845638"
+          ]
         },
         {
           "name": "crafted",
@@ -43745,7 +44000,11 @@
       "text": "Recover #% of Mana on Kill",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1030153674",
+            "explicit.stat_1604736568"
+          ]
         },
         {
           "name": "implicit",
@@ -43981,7 +44240,11 @@
       "text": "Regenerate # Energy Shield per second",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2561836520",
+            "explicit.stat_1330109706"
+          ]
         }
       ]
     }
@@ -46793,7 +47056,11 @@
       "text": "Socketed Gems are Supported by Level # Fire Penetration",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3265951306",
+            "explicit.stat_1979658770"
+          ]
         }
       ]
     }
@@ -47128,7 +47395,11 @@
       "text": "Socketed Gems are Supported by Level # Inspiration",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_749770518",
+            "explicit.stat_1866911844"
+          ]
         },
         {
           "name": "implicit",
@@ -47743,7 +48014,11 @@
       "text": "Socketed Gems are Supported by Level # Spell Echo",
       "types": [
         {
-          "name": "explicit"
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_438778966",
+            "explicit.stat_913919528"
+          ]
         }
       ]
     }
@@ -53944,6 +54219,9 @@
     "conditions": [
       {
         "string": "Your Chaos Damage has #% chance to Poison Enemies"
+      },
+      {
+        "string": "Your Chaos Damage Poisons Enemies"
       }
     ],
     "mod": {
@@ -53951,23 +54229,7 @@
       "types": [
         {
           "name": "explicit",
-          "tradeId": "explicit.stat_2894297982"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Your Chaos Damage Poisons Enemies"
-      }
-    ],
-    "mod": {
-      "text": "Your Chaos Damage Poisons Enemies",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": "explicit.stat_3549040753"
+          "tradeId": ["explicit.stat_2894297982", "explicit.stat_3549040753"]
         }
       ]
     }
@@ -65665,7 +65927,14 @@
       "text": "Area contains # additional Clusters of Mysterious Barrels",
       "types": [
         {
-          "name": "enchant"
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1669553893",
+            "enchant.stat_1207515735",
+            "enchant.stat_4019701925",
+            "enchant.stat_3798342608",
+            "enchant.stat_1080470148"
+          ]
         }
       ]
     }
@@ -69688,7 +69957,11 @@
       "text": "Pyroclast Mine has #% increased Throwing Speed",
       "types": [
         {
-          "name": "enchant"
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2432759583",
+            "enchant.stat_2005440071"
+          ]
         }
       ]
     }
@@ -73118,11 +73391,22 @@
     "conditions": [
       {
         "string": "#% chance to Avoid being Knocked Back"
+      },
+      {
+        "string": "Cannot be Knocked Back"
       }
     ],
     "mod": {
       "text": "#% chance to Avoid being Knocked Back",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_4212255859"
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_4212255859"
+        },
         {
           "name": "crafted",
           "tradeId": "crafted.stat_2362265695"
@@ -73218,11 +73502,18 @@
     "conditions": [
       {
         "string": "#% chance to gain a Frenzy Charge on Critical Strike"
+      },
+      {
+        "string": "Gain a Frenzy Charge on Critical Strike"
       }
     ],
     "mod": {
       "text": "#% chance to gain a Frenzy Charge on Critical Strike",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_398702949"
+        },
         {
           "name": "crafted",
           "tradeId": "crafted.stat_3032585258"
@@ -74008,140 +74299,6 @@
         {
           "name": "crafted",
           "tradeId": "crafted.stat_1349659520"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% Chance to Block"
-      }
-    ],
-    "mod": {
-      "text": "#% Chance to Block",
-      "types": [
-        {
-          "name": "explicit"
-        },
-        {
-          "name": "implicit"
-        },
-        {
-          "name": "crafted"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Armour and Energy Shield"
-      },
-      {
-        "string": "#% reduced Armour and Energy Shield",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Armour and Energy Shield",
-      "types": [
-        {
-          "name": "explicit"
-        },
-        {
-          "name": "crafted"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Armour and Evasion"
-      },
-      {
-        "string": "#% reduced Armour and Evasion",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Armour and Evasion",
-      "types": [
-        {
-          "name": "explicit"
-        },
-        {
-          "name": "crafted"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Armour, Evasion and Energy Shield"
-      },
-      {
-        "string": "#% reduced Armour, Evasion and Energy Shield",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Armour, Evasion and Energy Shield",
-      "types": [
-        {
-          "name": "explicit"
-        },
-        {
-          "name": "crafted"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Energy Shield"
-      },
-      {
-        "string": "#% reduced Energy Shield",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Energy Shield",
-      "types": [
-        {
-          "name": "explicit"
-        },
-        {
-          "name": "implicit"
-        },
-        {
-          "name": "crafted"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Evasion and Energy Shield"
-      },
-      {
-        "string": "#% reduced Evasion and Energy Shield",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Evasion and Energy Shield",
-      "types": [
-        {
-          "name": "explicit"
-        },
-        {
-          "name": "crafted"
         }
       ]
     }
