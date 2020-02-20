@@ -35,14 +35,11 @@ export const INTERNAL_TRADE_ID = [
   'weapon.physical_dps'
 ]
 
-export function initUiModFilters (item: ParsedItem): UiModFilter[] {
-  let parsedMods = item.modifiers
-  const modFilters = [] as Writeable<UiModFilter>[]
-
+function filtersFromLocalProp (item: ParsedItem, modFilters: Writeable<UiModFilter>[]) {
   if (item.props.armour) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.armour, QUALITY_STATS.ARMOUR, item))
 
-    modFilters.unshift({
+    modFilters.push({
       tradeId: 'armour.armour' as INTERNAL_TRADE_ID,
       text: 'Armour',
       type: 'armour',
@@ -58,7 +55,7 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
   if (item.props.evasion) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.evasion, QUALITY_STATS.EVASION, item))
 
-    modFilters.unshift({
+    modFilters.push({
       tradeId: 'armour.evasion_rating' as INTERNAL_TRADE_ID,
       text: 'Evasion Rating',
       type: 'armour',
@@ -74,7 +71,7 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
   if (item.props.energyShield) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.energyShield, QUALITY_STATS.ENERGY_SHIELD, item))
 
-    modFilters.unshift({
+    modFilters.push({
       tradeId: 'armour.energy_shield' as INTERNAL_TRADE_ID,
       text: 'Energy Shield',
       type: 'armour',
@@ -92,7 +89,7 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
 
     const dpsQ20 = Math.floor((damageQ20[0] + damageQ20[1]) / 2 * item.props.attackSpeed!)
 
-    modFilters.unshift({
+    modFilters.push({
       tradeId: 'weapon.physical_dps' as INTERNAL_TRADE_ID,
       text: 'Physical DPS',
       type: 'weapon',
@@ -104,21 +101,16 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
       max: undefined
     })
   }
+}
 
-  if (
-    item.props.armour ||
-    item.props.evasion ||
-    item.props.energyShield ||
-    item.props.blockChance ||
-    item.props.attackSpeed ||
-    item.props.critChance ||
-    item.props.elementalDamage ||
-    item.props.physicalDamage
-  ) {
-    parsedMods = parsedMods.filter(mod => !localStats.has(mod.modInfo.text))
+export function initUiModFilters (item: ParsedItem): UiModFilter[] {
+  const modFilters = [] as Writeable<UiModFilter>[]
+
+  if (item.rarity !== ItemRarity.Unique) {
+    filtersFromLocalProp(item, modFilters)
   }
 
-  modFilters.push(...parsedMods.map(mod => {
+  modFilters.push(...item.modifiers.map(mod => {
     const filter: Writeable<UiModFilter> = {
       tradeId: mod.modInfo.types.find(type => type.name === mod.type)!.tradeId,
       text: mod.modInfo.text,
@@ -141,6 +133,22 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
 
     return filter
   }))
+
+  if (
+    item.rarity !== ItemRarity.Unique &&
+    (item.props.armour ||
+    item.props.evasion ||
+    item.props.energyShield ||
+    item.props.blockChance ||
+    item.props.attackSpeed ||
+    item.props.critChance ||
+    item.props.elementalDamage ||
+    item.props.physicalDamage)
+  ) {
+    modFilters
+      .filter(f => localStats.has(f.text))
+      .forEach(f => { f.hidden = 'Contributes to the item property' })
+  }
 
   return modFilters
 }

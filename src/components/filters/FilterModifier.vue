@@ -23,10 +23,17 @@
       </div>
     </div>
     <div class="flex">
-      <div class="w-5 flex">
-        <span v-if="filter.hidden" class="text-xs leading-none text-gray-600">
-          <i class="fas fa-eye-slash"></i>
-        </span>
+      <div class="w-5 flex items-start">
+        <ui-popper v-if="filter.hidden" tag-name="div" class="flex" :options="{ placement: 'right-start' }">
+          <template slot="reference">
+            <span class="text-xs leading-none text-gray-600 cursor-pointer">
+              <i class="fas fa-eye-slash"></i>
+            </span>
+          </template>
+          <div class="popper">
+            <div>{{ filter.hidden }}</div>
+          </div>
+        </ui-popper>
       </div>
       <div class="flex-1 flex items-start">
         <span v-if="showTypeTags"
