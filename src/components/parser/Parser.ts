@@ -26,7 +26,7 @@ import {
   FLASK_CHARGES
 } from './constants'
 import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
-import { getDetailsId, nameToDetailsId } from '../trends/getDetailsId'
+import { getDetailsId } from '../trends/getDetailsId'
 import { Prices } from '../Prices'
 import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
@@ -452,24 +452,5 @@ function enrichItem (item: ParsedItem) {
   const trend = Prices.findByDetailsId(detailsId)
 
   item.computed.trend = trend
-  item.computed.icon = trend?.icon || Prices.findByDetailsId(getIconDetailsId(item))?.icon
-}
-
-// this must be removed, since I want to depend on poe.ninja only for prices
-export function getIconDetailsId (item: ParsedItem) {
-  if (item.rarity === ItemRarity.Gem) {
-    return nameToDetailsId(`${item.name} 20`)
-  }
-  if (item.computed.category === ItemCategory.Map) {
-    const LATEST_MAP_VARIANT = 'Metamorph'
-    return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
-  }
-  if (item.rarity === ItemRarity.Unique) {
-    return nameToDetailsId(`${item.name} ${item.baseType}`)
-  }
-  if (item.rarity === ItemRarity.Rare) {
-    return nameToDetailsId(`${item.baseType || item.name} 82`)
-  }
-
-  return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
+  item.computed.icon = BaseTypes.get(item.baseType || item.name)?.icon
 }

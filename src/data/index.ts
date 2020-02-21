@@ -31,6 +31,7 @@ export const ItemisedMonsters = new Set(monsters as string[])
 
 export interface BaseType {
   category: ItemCategory
+  icon?: string
 }
 
 export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
