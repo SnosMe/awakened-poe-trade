@@ -5,9 +5,9 @@
 
 | Download | Automatic update | Startup time |
 |----------|------------------|--------------|
-| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.8.0/Awakened-PoE-Trade-Setup-0.8.0.exe) | :heavy_check_mark: | Fast |
-| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.8.0/Awakened-PoE-Trade-0.8.0.exe) | :heavy_multiplication_x: | Slow |
-| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.8.0/Awakened-PoE-Trade-0.8.0.AppImage) | :heavy_check_mark: | Fast |
+| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.9.0/Awakened-PoE-Trade-Setup-0.9.0.exe) | :heavy_check_mark: | Fast |
+| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.9.0/Awakened-PoE-Trade-0.9.0.exe) | :heavy_multiplication_x: | Slow |
+| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.9.0/Awakened-PoE-Trade-0.9.0.AppImage) | :heavy_check_mark: | Fast |
 
 ## Tool showcase
 
@@ -60,7 +60,7 @@
     - :heavy_check_mark: Item base/Item category
     - :heavy_check_mark: Q20 props (Armour, Evasion, ES, Physical Damage)
   - :heavy_check_mark: +-10% Rare rolls
-  - :heavy_multiplication_x: Unique item roll range
+  - :heavy_check_mark: Unique item roll range
   - :heavy_multiplication_x: Pseudo stats
   - Gems
     - :heavy_check_mark: Level, Quality, Corrupted
@@ -77,9 +77,11 @@ Neither Java nor the .NET Framework nor AHK are required\
 No Administrator rights required
 
 ### Usage
-- Press `Ctrl + D` to check the price of the item
+- Press `Ctrl + D` to check the price of the item\
+  *Hold `Ctrl` if you do not want the window to close. As soon as the cursor is within the window, you can release `Ctrl`.*
+- Press `Ctrl + Alt + D` to check the price of the item\
+  *Opens a window, but does not hide it automatically when moving the mouse*
 - Press `F5` to go to hideout
-- Hold `Ctrl` if you do not want the window to close. As soon as the cursor is within the window, you can release `Ctrl`. Now, to close the window, press `Esc` or the cross icon in title bar.
 
 ### Tool end goals
 - One Tool To Rule Them All
@@ -90,19 +92,12 @@ No Administrator rights required
 
 ## FAQ
 
-- **Typing `Awakened PoE Trade` tires**\
-Type `APT` ?
-
 - **How much memory does it need?**
 
 |    | On program load | After some time |
 |----|-----------------|-----------------|
 | APT | 115 MB         | 78 MB |
 | TradeMacro | 60 MB   | 24 MB |
-
-- **My mouse and computer freeze when I start the program**\
-Bad news: It is unavoidable, some app on your computer uses the same library as APT https://github.com/wilix-team/iohook/issues/93 \
-Good news: this only happens for a few seconds
 
 
 ### Acknowledgments

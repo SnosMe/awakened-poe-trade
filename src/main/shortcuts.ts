@@ -64,7 +64,7 @@ export function setupShortcuts () {
 
     robotjs.keyToggle('alt', 'up')
     robotjs.keyTap('key_c')
-  }, () => { /* ignore keyup */ })
+  })
 
   ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, async () => {
     const title = await windowManager.getActiveWindowTitle()
