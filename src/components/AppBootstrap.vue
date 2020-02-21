@@ -20,7 +20,7 @@ export default {
   async created () {
     await Leagues.load()
     await Prices.load()
-    MainProcess.priceCheckVisible(false)
+    MainProcess.priceCheckHide()
   },
   computed: {
     leaguesService: () => Leagues,

@@ -1,5 +1,5 @@
 import { RendererInterface } from 'electron'
-import { PRICE_CHECK_VISIBLE, LOCK_WINDOW, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK } from '@/shared/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, LOCK_WINDOW, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK } from '@/shared/ipc-event'
 import { Config, League } from '@/shared/types'
 
 let electron: RendererInterface | undefined
@@ -30,9 +30,9 @@ class MainProcessBinding extends EventTarget {
     }))
   }
 
-  priceCheckVisible (isVisible: boolean) {
+  priceCheckHide () {
     if (electron) {
-      electron.ipcRenderer.send(PRICE_CHECK_VISIBLE, isVisible)
+      electron.ipcRenderer.send(PRICE_CHECK_HIDE)
     }
   }
 
@@ -47,6 +47,12 @@ class MainProcessBinding extends EventTarget {
   lockWindow () {
     if (electron) {
       electron.ipcRenderer.send(LOCK_WINDOW)
+    }
+  }
+
+  priceCheckMouse (string: string) {
+    if (electron) {
+      electron.ipcRenderer.send(PRICE_CHECK_MOUSE, string)
     }
   }
 

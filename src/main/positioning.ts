@@ -3,48 +3,63 @@ import ioHook from 'iohook'
 import { win } from './window'
 import { checkPressPosition, isPollingClipboard, poeWindowId } from './shortcuts'
 import { windowManager } from './window-manager'
-import { PRICE_CHECK_VISIBLE, LOCK_WINDOW, OPEN_LINK } from '../shared/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, LOCK_WINDOW, OPEN_LINK } from '../shared/ipc-event'
 
 const CLOSE_THRESHOLD_PX = 40
 
 let isWindowShown = true
 let isWindowLocked = false
+let isClickedAfterLock = false
 
 let lastPoePos: Rectangle
 let browserViewExternal: BrowserView | undefined
 
-export function setupShowHide () {
-  ipcMain.on(PRICE_CHECK_VISIBLE, async (e, isVisible) => {
-    if (isVisible) {
-      await positionWindow(win)
-      isWindowShown = true
-      win.showInactive()
-      if (process.platform === 'linux') {
-        win.setAlwaysOnTop(true)
-      }
-    } else {
-      isWindowShown = false
-      win.hide()
+export async function showWindow () {
+  await positionWindow(win)
+  isWindowShown = true
+  win.showInactive()
+  if (process.platform === 'linux') {
+    win.setAlwaysOnTop(true)
+  }
+}
 
-      if (poeWindowId && isWindowLocked) {
-        isWindowLocked = false
-        if (process.platform === 'win32') {
-          windowManager.focusWindowById(poeWindowId)
-        }
-        if (browserViewExternal) {
-          win.removeBrowserView(browserViewExternal)
-          // uncomment to trade performance for less memory usage (1 process & 13 MB)
-          // browserViewExternal.destroy()
-          // browserViewExternal = undefined
-          browserViewExternal.webContents.loadURL('about:blank')
-        }
+function hideWindow () {
+  isWindowShown = false
+  win.hide()
+
+  if (poeWindowId && isWindowLocked) {
+    isWindowLocked = false
+    if (process.platform === 'win32') {
+      windowManager.focusWindowById(poeWindowId)
+    }
+    if (browserViewExternal) {
+      win.removeBrowserView(browserViewExternal)
+      // uncomment to trade performance for less memory usage (1 process & 13 MB)
+      // browserViewExternal.destroy()
+      // browserViewExternal = undefined
+      browserViewExternal.webContents.loadURL('about:blank')
+    }
+  }
+}
+
+export function lockWindow (syntheticClick = false) {
+  isWindowLocked = true
+  isClickedAfterLock = syntheticClick
+  win.focus()
+}
+
+export function setupShowHide () {
+  ipcMain.on(PRICE_CHECK_HIDE, () => { hideWindow() })
+  ipcMain.on(LOCK_WINDOW, () => { lockWindow() })
+
+  ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string) => {
+    if (name === 'click') {
+      isClickedAfterLock = true
+    } else if (name === 'leave') {
+      if (!isClickedAfterLock) {
+        hideWindow()
       }
     }
-  })
-
-  ipcMain.on(LOCK_WINDOW, () => {
-    isWindowLocked = true
-    win.focus()
   })
 
   ipcMain.on(OPEN_LINK, (e, link) => {

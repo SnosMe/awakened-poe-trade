@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     hideWindow () {
-      MainProcess.priceCheckVisible(false)
+      MainProcess.priceCheckHide()
     }
   }
 }

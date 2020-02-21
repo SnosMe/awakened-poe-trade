@@ -43,33 +43,22 @@ export default {
   },
   created () {
     MainProcess.addEventListener('price-check', ({ detail: clipboard }) => {
-      const item = parseClipboard(clipboard)
-      if (item != null) {
-        this.item = item
-        this.itemFilters = createFilters(item)
-        this.itemStats = initUiModFilters(item)
-        MainProcess.priceCheckVisible(true)
-      }
+      this.item = parseClipboard(clipboard)
+      this.itemFilters = createFilters(this.item)
+      this.itemStats = initUiModFilters(this.item)
     })
 
     document.addEventListener('mouseenter', (e) => {
       if (e.ctrlKey) {
-        this.isClickedAfterLock = false
         MainProcess.lockWindow()
       }
     })
-    document.addEventListener('click', () => {
-      this.isClickedAfterLock = true
-    })
-    document.addEventListener('mouseleave', () => {
-      if (!this.isClickedAfterLock) {
-        MainProcess.priceCheckVisible(false)
-      }
-    })
+    document.addEventListener('click', () => { MainProcess.priceCheckMouse('click') })
+    document.addEventListener('mouseleave', () => { MainProcess.priceCheckMouse('leave') })
 
     document.addEventListener('keyup', (e) => {
       if (e.key === 'Escape') {
-        MainProcess.priceCheckVisible(false)
+        MainProcess.priceCheckHide()
       }
     })
 
@@ -82,7 +71,6 @@ export default {
   },
   data () {
     return {
-      isClickedAfterLock: false,
       item: null,
       itemFilters: null,
       itemStats: null

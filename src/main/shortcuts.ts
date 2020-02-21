@@ -4,9 +4,11 @@ import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
 import { windowManager } from './window-manager'
+import { showWindow, lockWindow } from './positioning'
 
 const KEY_CTRL = 29
 const KEY_D = 32
+const KEY_ALT = 56
 const KEY_F5 = 63
 const POE_TITLE = 'Path of Exile'
 
@@ -20,13 +22,16 @@ export function setupShortcuts () {
   // threads ready to run, the function returns immediately
   robotjs.setKeyboardDelay(0)
 
-  ioHook.registerShortcut([KEY_CTRL, KEY_D], () => {
+  ioHook.on('keydown', async (e: { keycode: number, ctrlKey: boolean, altKey: boolean }) => {
+    if (e.keycode !== KEY_D || !e.ctrlKey || e.altKey) return
+
     if (!isPollingClipboard) {
       isPollingClipboard = true
       pollClipboard(32, 1000)
         .then(async (clipboard) => {
           win.webContents.send('price-check', clipboard)
           poeWindowId = await windowManager.getActiveWindowId()
+          await showWindow()
         })
         .catch(() => { /* nothing bad */ })
         .finally(() => { isPollingClipboard = false })
@@ -38,9 +43,28 @@ export function setupShortcuts () {
     // - this callback called on "keypress" not "keyup"
     // - ability to price multiple items with holded Ctrl, while variant above will change Ctrl key state to "up"
     robotjs.keyTap('key_c')
-  }, () => {
-    // both keys released
   })
+
+  ioHook.on('keydown', async (e: { keycode: number, ctrlKey: boolean, altKey: boolean }) => {
+    if (e.keycode !== KEY_D || !e.ctrlKey || !e.altKey) return
+
+    if (!isPollingClipboard) {
+      isPollingClipboard = true
+      pollClipboard(32, 1000)
+        .then(async (clipboard) => {
+          win.webContents.send('price-check', clipboard)
+          poeWindowId = await windowManager.getActiveWindowId()
+          await showWindow()
+          lockWindow(true)
+        })
+        .catch(() => { /* nothing bad */ })
+        .finally(() => { isPollingClipboard = false })
+    }
+    checkPressPosition = screen.getCursorScreenPoint()
+
+    robotjs.keyToggle('alt', 'up')
+    robotjs.keyTap('key_c')
+  }, () => { /* ignore keyup */ })
 
   ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, async () => {
     const title = await windowManager.getActiveWindowTitle()

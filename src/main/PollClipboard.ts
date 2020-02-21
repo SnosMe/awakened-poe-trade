@@ -14,7 +14,7 @@ export async function pollClipboard (delay: number, limit: number): Promise<stri
     function poll () {
       const textAfter = clipboard.readText()
 
-      if (textBefore !== textAfter) {
+      if (textAfter.startsWith(TAG_RARITY)) {
         clipboard.writeText(textBefore)
         resolve(textAfter)
       } else {
