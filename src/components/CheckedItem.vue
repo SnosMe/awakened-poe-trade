@@ -91,8 +91,8 @@ export default {
   computed: {
     showPredictedPrice () {
       return this.item.rarity === ItemRarity.Rare &&
-        this.item.computed.category !== ItemCategory.Map &&
-        this.item.computed.category !== ItemCategory.ItemisedMonster
+        this.item.category !== ItemCategory.Map &&
+        this.item.category !== ItemCategory.ItemisedMonster
     }
   },
   methods: {

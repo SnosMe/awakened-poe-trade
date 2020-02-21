@@ -42,8 +42,8 @@ export default {
     showAsActive () {
       if (
         this.item.rarity === ItemRarity.Unique ||
-        !this.item.computed.category ||
-        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.computed.category)
+        !this.item.category ||
+        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.category)
       ) {
         return false
       }
@@ -55,8 +55,8 @@ export default {
     toggleAccuracy () {
       if (
         this.item.rarity === ItemRarity.Unique ||
-        !this.item.computed.category ||
-        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.computed.category)
+        !this.item.category ||
+        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.category)
       ) return
 
       if (this.filters.category) {
@@ -67,7 +67,7 @@ export default {
       } else {
         this.filters.baseType = undefined
         this.$set(this.filters, 'category', {
-          value: this.item.computed.category
+          value: this.item.category
         })
       }
     }

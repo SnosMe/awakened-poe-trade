@@ -16,7 +16,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
 
   const filters: ItemFilters = {}
 
-  if (item.computed.category === ItemCategory.ItemisedMonster) {
+  if (item.category === ItemCategory.ItemisedMonster) {
     filters.baseType = {
       value: item.baseType || item.name
     }
@@ -31,7 +31,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
     return filters
   }
-  if (item.computed.category === ItemCategory.Prophecy) {
+  if (item.category === ItemCategory.Prophecy) {
     filters.name = {
       value: item.name
     }
@@ -41,7 +41,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     return filters
   }
 
-  if (item.computed.category === ItemCategory.Map) {
+  if (item.category === ItemCategory.Map) {
     filters.baseType = {
       value: item.baseType || item.name
     }
@@ -63,7 +63,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
 
     filters.mapTier = {
-      value: item.mapTier!
+      value: item.props.mapTier!
     }
 
     // @TODO: juicy corrupted maps
@@ -75,9 +75,9 @@ export function createFilters (item: ParsedItem): ItemFilters {
       value: item.baseType!
     }
   } else if (item.rarity === ItemRarity.Rare) {
-    if (item.computed.category) {
+    if (item.category) {
       filters.category = {
-        value: item.computed.category
+        value: item.category
       }
     }
     // else { never? }
@@ -88,9 +88,9 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
   }
 
-  if (item.linkedSockets) {
+  if (item.sockets.linked) {
     filters.linkedSockets = {
-      value: item.linkedSockets,
+      value: item.sockets.linked,
       disabled: false
     }
   }
@@ -116,7 +116,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
   if (item.itemLevel) {
     if (
       item.rarity !== ItemRarity.Unique &&
-      item.computed.category !== ItemCategory.Map
+      item.category !== ItemCategory.Map
       /* @TODO && !isJewel https://pathofexile.gamepedia.com/Jewel#Affixes */
     ) {
       if (item.itemLevel > 86) {
@@ -173,18 +173,18 @@ export function createGemFilters (item: ParsedItem) {
 
   if (SPECIAL_SUPPORT_GEM.includes(item.name)) {
     filters.gemLevel = {
-      min: item.gemLevel,
-      max: item.gemLevel
+      min: item.props.gemLevel,
+      max: item.props.gemLevel
     }
-  } else if (item.gemLevel! >= TradeOpts.GemLevel) {
+  } else if (item.props.gemLevel! >= TradeOpts.GemLevel) {
     if (TradeOpts.GemLevelRange > 0) {
       filters.gemLevel = {
-        min: item.gemLevel! - TradeOpts.GemLevelRange,
-        max: item.gemLevel! + TradeOpts.GemLevelRange
+        min: item.props.gemLevel! - TradeOpts.GemLevelRange,
+        max: item.props.gemLevel! + TradeOpts.GemLevelRange
       }
     } else {
       filters.gemLevel = {
-        min: item.gemLevel
+        min: item.props.gemLevel
       }
     }
   }

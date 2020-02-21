@@ -38,6 +38,9 @@ const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Warstaff, 'weapon.warstaff']
 ])
 
+type FilterBoolean = { option?: 'true' | 'false' }
+type FilterRange = { min?: number, max?: number }
+
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
     status: { option: 'online' }
@@ -45,10 +48,7 @@ interface TradeRequest { /* eslint-disable camelcase */
     type?: string
     stats: Array<{
       type: 'and' | 'if' | 'count',
-      value?: {
-        min?: number
-        max?: number
-      }
+      value?: FilterRange
       filters: Array<{
         id: string
         value?: {
@@ -73,70 +73,39 @@ interface TradeRequest { /* eslint-disable camelcase */
       }
       socket_filters?: {
         filters: {
-          links?: {
-            min?: number
-            max?: number
-          }
+          links?: FilterRange
         }
       }
       misc_filters?: {
         filters: {
-          ilvl?: {
-            min?: number
-            max?: number
-          }
-          quality?: {
-            min?: number
-            max?: number
-          }
-          gem_level?: {
-            min?: number
-            max?: number
-          }
-          corrupted?: {
-            option?: 'true' | 'false'
-          }
-          shaper_item?: { option?: 'true' | 'false' }
-          crusader_item?: { option?: 'true' | 'false' }
-          hunter_item?: { option?: 'true' | 'false' }
-          elder_item?: { option?: 'true' | 'false' }
-          redeemer_item?: { option?: 'true' | 'false' }
-          warlord_item?: { option?: 'true' | 'false' }
+          ilvl?: FilterRange
+          quality?: FilterRange
+          gem_level?: FilterRange
+          corrupted?: FilterBoolean
+          shaper_item?: FilterBoolean
+          crusader_item?: FilterBoolean
+          hunter_item?: FilterBoolean
+          elder_item?: FilterBoolean
+          redeemer_item?: FilterBoolean
+          warlord_item?: FilterBoolean
         }
       }
       armour_filters?: {
         filters: {
-          ar?: {
-            min?: number
-            max?: number
-          }
-          es?: {
-            min?: number
-            max?: number
-          }
-          ev?: {
-            min?: number
-            max?: number
-          }
+          ar?: FilterRange
+          es?: FilterRange
+          ev?: FilterRange
         }
       }
       weapon_filters?: {
         filters: {
-          pdps?: {
-            min?: number
-            max?: number
-          }
+          pdps?: FilterRange
         }
       }
       map_filters?: {
         filters: {
-          map_tier?: {
-            min?: number
-            max?: number
-          }
-          map_blighted?: {
-            option?: 'true' | 'false'
-          }
+          map_tier?: FilterRange
+          map_blighted?: FilterBoolean
         }
       }
       trade_filters: {

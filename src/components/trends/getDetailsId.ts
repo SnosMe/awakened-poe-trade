@@ -5,14 +5,14 @@ import { ACCESSORY, ARMOUR, WEAPON } from '../parser/meta'
 export function isValuableBasetype (item: ParsedItem): boolean {
   if (
     !(item.rarity === ItemRarity.Normal || item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare) ||
-    !item.computed.category
+    !item.category
   ) return false
 
   return (
-    ACCESSORY.has(item.computed.category) ||
-    ARMOUR.has(item.computed.category) ||
-    WEAPON.has(item.computed.category) ||
-    item.computed.category === ItemCategory.Quiver
+    ACCESSORY.has(item.category) ||
+    ARMOUR.has(item.category) ||
+    WEAPON.has(item.category) ||
+    item.category === ItemCategory.Quiver
   )
 }
 
@@ -22,15 +22,15 @@ export function getDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
     return getGemDetailsId(item)!
   }
-  if (item.computed.category === ItemCategory.Map) {
+  if (item.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique) {
       // @TODO if unidentified get name by baseType
-      return nameToDetailsId(`${item.name} t${item.mapTier}`)
+      return nameToDetailsId(`${item.name} t${item.props.mapTier}`)
     } else {
-      return nameToDetailsId(`${item.props.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
+      return nameToDetailsId(`${item.props.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.props.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
-  if (item.computed.category === ItemCategory.ItemisedMonster) {
+  if (item.category === ItemCategory.ItemisedMonster) {
     return nameToDetailsId(item.baseType || item.name)
   }
   if (item.rarity === ItemRarity.Unique) {
@@ -52,7 +52,7 @@ function getGemDetailsId (item: ParsedItem) {
     return 'portal-1'
   }
   if (item.name.startsWith('Awakened')) {
-    return (item.gemLevel === 1)
+    return (item.props.gemLevel === 1)
       ? `${nameToDetailsId(item.name)}-1-20`
       : undefined
   }
@@ -63,9 +63,9 @@ function getGemDetailsId (item: ParsedItem) {
     SPECIAL_SUPPORT_GEM.includes(item.name) ||
     item.name === BRAND_RECALL_GEM ||
     item.name === BLOOD_AND_SAND_GEM ||
-    item.gemLevel! >= 20
+    item.props.gemLevel! >= 20
   ) {
-    id += `-${item.gemLevel}`
+    id += `-${item.props.gemLevel}`
   }
   if (item.quality) {
     if (
@@ -100,8 +100,8 @@ function getBaseTypeDetailsId (item: ParsedItem) {
 function getUniqueDetailsId (item: ParsedItem) {
   let id = nameToDetailsId(`${item.name} ${item.baseType}`)
 
-  if (item.linkedSockets) {
-    id += `-${item.linkedSockets}l`
+  if (item.sockets.linked) {
+    id += `-${item.sockets.linked}l`
   }
 
   return id

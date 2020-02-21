@@ -17,19 +17,21 @@ export interface ParsedItem {
     physicalDamage?: number[]
     elementalDamage?: number
     mapBlighted?: true
+    mapTier?: number
+    gemLevel?: number
   }
-  mapTier?: number
   quality?: number
-  linkedSockets?: number // only 5 or 6
+  sockets: {
+    linked?: number // only 5 or 6
+    // @TODO "white?: number"
+    // PoE 4.0 "count?: number"
+  }
   stackSize?: number
   isUnidentified: boolean
   isCorrupted: boolean
-  gemLevel?: number
   influences: ItemInfluence[]
-  rawText: string
   modifiers: ItemModifier[]
+  category?: ItemCategory
   icon?: string
-  computed: {
-    category?: ItemCategory
-  }
+  rawText: string
 }

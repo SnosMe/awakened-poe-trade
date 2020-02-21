@@ -129,15 +129,15 @@ function normalizeName (_: string[], item: ParsedItem) {
   }
 
   if (Prophecies.has(item.name)) {
-    item.computed.category = ItemCategory.Prophecy
+    item.category = ItemCategory.Prophecy
   } else if (
     ItemisedMonsters.has(item.name) || // Unique beast
     (item.baseType && ItemisedMonsters.has(item.baseType)) // Rare beast
   ) {
-    item.computed.category = ItemCategory.ItemisedMonster
+    item.category = ItemCategory.ItemisedMonster
   } else {
     const baseType = BaseTypes.get(item.baseType || item.name)
-    item.computed.category = baseType?.category
+    item.category = baseType?.category
     item.icon = baseType?.icon
   }
 
@@ -146,12 +146,12 @@ function normalizeName (_: string[], item: ParsedItem) {
 
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(TAG_MAP_TIER)) {
-    item.mapTier = Number(section[0].substr(TAG_MAP_TIER.length))
+    item.props.mapTier = Number(section[0].substr(TAG_MAP_TIER.length))
 
     if (item.rarity === ItemRarity.Normal) {
       if (item.name.startsWith(PREFIX_BLIGHTED)) {
         item.name = item.name.substr(PREFIX_BLIGHTED.length)
-        item.computed.category = ItemCategory.Map
+        item.category = ItemCategory.Map
         item.props.mapBlighted = true
       }
     }
@@ -184,7 +184,7 @@ function parseNamePlate (section: string[]) {
         isCorrupted: false,
         modifiers: [],
         influences: [],
-        computed: {},
+        sockets: {},
         rawText: undefined!
       }
       return item
@@ -252,7 +252,7 @@ function parseGem (section: string[], item: ParsedItem) {
   }
   if (section[1]?.startsWith(TAG_GEM_LEVEL)) {
     // "Level: 20 (Max)"
-    item.gemLevel = parseInt(section[1].substr(TAG_GEM_LEVEL.length), 10)
+    item.props.gemLevel = parseInt(section[1].substr(TAG_GEM_LEVEL.length), 10)
 
     parseQualityNested(section, item)
 
@@ -278,13 +278,13 @@ function parseSockets (section: string[], item: ParsedItem) {
     let sockets = section[0].substr(TAG_SOCKETS.length)
     sockets = sockets.replace(/[^ -]/g, '#')
     if (sockets === '#-#-#-#-#-#') {
-      item.linkedSockets = 6
+      item.sockets.linked = 6
     } else if (
       sockets === '# #-#-#-#-#' ||
       sockets === '#-#-#-#-# #' ||
       sockets === '#-#-#-#-#'
     ) {
-      item.linkedSockets = 5
+      item.sockets.linked = 5
     }
     return SECTION_PARSED
   }
