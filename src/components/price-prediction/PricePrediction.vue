@@ -8,7 +8,7 @@
       <div class="flex items-center pb-4">
         <div class="flex items-center justify-center flex-1">
           <div class="w-8 h-8 flex items-center justify-center">
-            <img :src="item.computed.icon" :alt="item.name" class="max-w-full max-h-full">
+            <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
           <span class="px-1 text-base">

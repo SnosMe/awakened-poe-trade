@@ -1,7 +1,6 @@
 import { ItemRarity, ItemInfluence } from './constants'
 import { ItemModifier } from './modifiers'
 import { ItemCategory } from './meta'
-import { ItemInfo } from '../Prices'
 
 export interface ParsedItem {
   rarity: ItemRarity
@@ -28,10 +27,9 @@ export interface ParsedItem {
   influences: ItemInfluence[]
   rawText: string
   modifiers: ItemModifier[]
+  icon?: string
   computed: {
     category?: ItemCategory
     mapName?: string
-    icon?: string
-    trend?: ItemInfo
   }
 }
