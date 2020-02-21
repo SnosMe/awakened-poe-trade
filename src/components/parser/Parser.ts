@@ -27,12 +27,11 @@ import {
   PREFIX_BLIGHTED
 } from './constants'
 import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
-import { getDetailsId } from '../trends/getDetailsId'
-import { Prices } from '../Prices'
 import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
 import { ParsedItem } from './ParsedItem'
 import { getRollAsSingleNumber } from '../filters/util'
+import { magicBasetype } from './magic-name'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -47,12 +46,9 @@ interface ParserFn {
   (section: string[], item: ParsedItem): SectionParseResult
 }
 
-interface ParserAfterHookFn {
-  (item: ParsedItem): void
-}
-
 const parsers: ParserFn[] = [
   parseUnidentified,
+  normalizeName,
   parseItemLevel,
   parseVaalGem,
   parseGem,
@@ -68,10 +64,6 @@ const parsers: ParserFn[] = [
   parseModifiers, // implicit
   parseModifiers // explicit
 ]
-
-const parserAfterHooks = new Map<ParserFn, ParserAfterHookFn>([
-  [parseUnidentified, normalizeName]
-])
 
 export function parseClipboard (clipboard: string) {
   const lines = clipboard.split(/\s*\n/)
@@ -110,20 +102,14 @@ export function parseClipboard (clipboard: string) {
         break
       }
     }
-
-    const afterHook = parserAfterHooks.get(parser)
-    if (afterHook) {
-      afterHook(parsed)
-    }
   }
 
   parsed.rawText = clipboard
-  enrichItem(parsed)
 
   return Object.freeze(parsed)
 }
 
-function normalizeName (item: ParsedItem) {
+function normalizeName (_: string[], item: ParsedItem) {
   if (
     item.rarity === ItemRarity.Normal || // quality >= +1%
     item.rarity === ItemRarity.Magic || // unidentified && quality >= +1%
@@ -135,6 +121,13 @@ function normalizeName (item: ParsedItem) {
     }
   }
 
+  if (item.rarity === ItemRarity.Magic) {
+    const baseType = magicBasetype(item.name)
+    if (baseType) {
+      item.name = baseType
+    }
+  }
+
   if (Prophecies.has(item.name)) {
     item.computed.category = ItemCategory.Prophecy
   } else if (
@@ -142,19 +135,13 @@ function normalizeName (item: ParsedItem) {
     (item.baseType && ItemisedMonsters.has(item.baseType)) // Rare beast
   ) {
     item.computed.category = ItemCategory.ItemisedMonster
-  } else if (BaseTypes.has(item.baseType || item.name)) {
-    item.computed.category = BaseTypes.get(item.baseType || item.name)!.category
   } else {
-    // Map
-    const mapName = (item.isUnidentified || item.rarity === ItemRarity.Normal)
-      ? item.name
-      : item.baseType
-
-    if (mapName?.endsWith(' Map')) {
-      item.computed.category = ItemCategory.Map
-      item.computed.mapName = mapName
-    }
+    const baseType = BaseTypes.get(item.baseType || item.name)
+    item.computed.category = baseType?.category
+    item.icon = baseType?.icon
   }
+
+  return PARSER_SKIPPED as SectionParseResult // fake parser
 }
 
 function parseMap (section: string[], item: ParsedItem) {
@@ -453,14 +440,4 @@ function parseFlask (section: string[], item: ParsedItem) {
   }
 
   return SECTION_SKIPPED
-}
-
-// --------
-
-function enrichItem (item: ParsedItem) {
-  const detailsId = getDetailsId(item)
-  const trend = Prices.findByDetailsId(detailsId)
-
-  item.computed.trend = trend
-  item.computed.icon = BaseTypes.get(item.baseType || item.name)?.icon
 }
