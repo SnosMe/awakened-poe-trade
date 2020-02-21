@@ -43,7 +43,11 @@ export function createFilters (item: ParsedItem): ItemFilters {
 
   if (item.computed.category === ItemCategory.Map) {
     filters.baseType = {
-      value: item.computed.mapName!
+      value: item.baseType || item.name
+    }
+
+    if (item.props.mapBlighted) {
+      filters.mapBlighted = { value: true }
     }
 
     if (item.rarity === ItemRarity.Unique) {

@@ -35,6 +35,7 @@ export const TAG_EVASION = 'Evasion Rating: '
 export const TAG_ENERGY_SHIELD = 'Energy Shield: '
 export const TAG_BLOCK_CHANCE = 'Chance to Block: '
 
+export const PREFIX_BLIGHTED = 'Blighted '
 export const PREFIX_SUPERIOR = 'Superior '
 export const PREFIX_VAAL = 'Vaal '
 export const SUFFIX_INFLUENCE = ' Item'

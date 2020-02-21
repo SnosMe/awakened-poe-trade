@@ -134,6 +134,9 @@ interface TradeRequest { /* eslint-disable camelcase */
             min?: number
             max?: number
           }
+          map_blighted?: {
+            option?: 'true' | 'false'
+          }
         }
       }
       trade_filters: {
@@ -266,6 +269,10 @@ export function createTradeRequest (filters: ItemFilters, stats: UiModFilter[]) 
   if (filters.mapTier) {
     prop.set(query.filters, 'map_filters.filters.map_tier.min', filters.mapTier.value)
     prop.set(query.filters, 'map_filters.filters.map_tier.max', filters.mapTier.value)
+  }
+
+  if (filters.mapBlighted) {
+    prop.set(query.filters, 'map_filters.filters.map_blighted.option', 'true')
   }
 
   if (filters.influences) {

@@ -16,6 +16,7 @@ export interface ParsedItem {
     attackSpeed?: number
     physicalDamage?: number[]
     elementalDamage?: number
+    mapBlighted?: true
   }
   mapTier?: number
   quality?: number
@@ -30,6 +31,5 @@ export interface ParsedItem {
   icon?: string
   computed: {
     category?: ItemCategory
-    mapName?: string
   }
 }

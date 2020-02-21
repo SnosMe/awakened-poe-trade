@@ -23,7 +23,8 @@ import {
   TAG_ATTACK_SPEED,
   TAG_PHYSICAL_DAMAGE,
   TAG_ELEMENTAL_DAMAGE,
-  FLASK_CHARGES
+  FLASK_CHARGES,
+  PREFIX_BLIGHTED
 } from './constants'
 import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
 import { getDetailsId } from '../trends/getDetailsId'
@@ -159,6 +160,15 @@ function normalizeName (item: ParsedItem) {
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(TAG_MAP_TIER)) {
     item.mapTier = Number(section[0].substr(TAG_MAP_TIER.length))
+
+    if (item.rarity === ItemRarity.Normal) {
+      if (item.name.startsWith(PREFIX_BLIGHTED)) {
+        item.name = item.name.substr(PREFIX_BLIGHTED.length)
+        item.computed.category = ItemCategory.Map
+        item.props.mapBlighted = true
+      }
+    }
+
     return SECTION_PARSED
   }
   return SECTION_SKIPPED

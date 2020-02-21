@@ -35,6 +35,9 @@ export interface ItemFilters {
   mapTier?: {
     value: number
   }
+  mapBlighted?: {
+    value: true
+  }
   itemLevel?: {
     value: number
     disabled: boolean

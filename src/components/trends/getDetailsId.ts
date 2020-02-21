@@ -27,7 +27,7 @@ export function getDetailsId (item: ParsedItem) {
       // @TODO if unidentified get name by baseType
       return nameToDetailsId(`${item.name} t${item.mapTier}`)
     } else {
-      return nameToDetailsId(`${item.computed.mapName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
+      return nameToDetailsId(`${item.props.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
   if (item.computed.category === ItemCategory.ItemisedMonster) {

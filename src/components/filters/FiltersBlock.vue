@@ -3,6 +3,7 @@
     <div class="flex flex-wrap items-center mb-2 -m-1">
       <div v-if="filters.linkedSockets" class="trade-tag">Links: {{ filters.linkedSockets.value }}</div>
       <div v-if="filters.mapTier" class="trade-tag">Map Tier: {{ filters.mapTier.value }}</div>
+      <div v-if="filters.mapBlighted" class="trade-tag">Blighted</div>
       <button v-if="filters.itemLevel" class="trade-tag" :class="{ disabled: filters.itemLevel.disabled }"
         @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">Item Level: {{ filters.itemLevel.value }}</button>
       <div v-if="filters.gemLevel" class="trade-tag">Level: {{ filters.gemLevel.min }}</div>
