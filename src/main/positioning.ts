@@ -55,6 +55,7 @@ export function setupShowHide () {
   ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string) => {
     if (name === 'click') {
       isClickedAfterLock = true
+      isWindowLocked = true
     } else if (name === 'leave') {
       if (!isClickedAfterLock) {
         hideWindow()
