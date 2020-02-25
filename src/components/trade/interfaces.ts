@@ -4,6 +4,7 @@ import { localStats } from './cleanup'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 import { uniqueModFilter } from '../filters/unique-roll'
 import { percentRoll, getRollAsSingleNumber } from '../filters/util'
+import { filterResists } from '../filters/pseudo'
 
 export interface UiModFilter {
   readonly tradeId: string | string[]
@@ -20,6 +21,12 @@ export interface UiModFilter {
   disabled: boolean
   min: number | '' | undefined
   max: number | '' | undefined
+}
+
+export interface FiltersCreationContext {
+  readonly item: ParsedItem
+  filters: Writeable<UiModFilter>[]
+  modifiers: ParsedItem['modifiers']
 }
 
 export type INTERNAL_TRADE_ID =
@@ -104,13 +111,18 @@ function filtersFromLocalProp (item: ParsedItem, modFilters: Writeable<UiModFilt
 }
 
 export function initUiModFilters (item: ParsedItem): UiModFilter[] {
-  const modFilters = [] as Writeable<UiModFilter>[]
-
-  if (item.rarity !== ItemRarity.Unique) {
-    filtersFromLocalProp(item, modFilters)
+  const ctx: FiltersCreationContext = {
+    item,
+    filters: [],
+    modifiers: [...item.modifiers]
   }
 
-  modFilters.push(...item.modifiers.map(mod => {
+  if (item.rarity !== ItemRarity.Unique) {
+    filtersFromLocalProp(item, ctx.filters)
+    filterResists(ctx)
+  }
+
+  ctx.filters.push(...ctx.modifiers.map(mod => {
     const filter: Writeable<UiModFilter> = {
       tradeId: mod.modInfo.types.find(type => type.name === mod.type)!.tradeId,
       text: mod.modInfo.text,
@@ -145,12 +157,12 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
     item.props.elementalDamage ||
     item.props.physicalDamage)
   ) {
-    modFilters
+    ctx.filters
       .filter(f => localStats.has(f.text))
       .forEach(f => { f.hidden = 'Contributes to the item property' })
   }
 
-  return modFilters
+  return ctx.filters
 }
 
 function itemModFilter (

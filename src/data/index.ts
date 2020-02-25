@@ -46,6 +46,13 @@ for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
       mod: entry.mod
     })
   }
+  // pseudo
+  if (!entry.conditions.length) {
+    Mods.set(entry.mod.text, {
+      condition: { string: entry.mod.text },
+      mod: entry.mod
+    })
+  }
 }
 
 export interface UniqueItem {

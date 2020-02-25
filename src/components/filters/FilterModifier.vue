@@ -158,6 +158,10 @@ export default {
   @apply bg-purple-600 text-purple-100
 }
 
+.mod-type-pseudo {
+  @apply bg-gray-700 text-gray-900
+}
+
 .search-num-input {
   @apply bg-gray-900;
   @apply text-gray-300;
