@@ -4,7 +4,7 @@ import { localStats } from './cleanup'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 import { uniqueModFilter } from '../filters/unique-roll'
 import { percentRoll, getRollAsSingleNumber } from '../filters/util'
-import { filterResists } from '../filters/pseudo'
+import { filterPseudo } from '../filters/pseudo'
 
 export interface UiModFilter {
   readonly tradeId: string | string[]
@@ -119,7 +119,7 @@ export function initUiModFilters (item: ParsedItem): UiModFilter[] {
 
   if (item.rarity !== ItemRarity.Unique) {
     filtersFromLocalProp(item, ctx.filters)
-    filterResists(ctx)
+    filterPseudo(ctx)
   }
 
   ctx.filters.push(...ctx.modifiers.map(mod => {

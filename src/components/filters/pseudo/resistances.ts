@@ -1,17 +1,9 @@
-import { assertStat } from '../trade/cleanup'
-import { FiltersCreationContext } from '../trade/interfaces'
-import { percentRoll } from './util'
-import { Mods } from '../../data'
+import { assertStat } from '../../trade/cleanup'
+import { pseudoStat } from './util'
+import { FiltersCreationContext } from '../../trade/interfaces'
+import { percentRoll } from '../util'
 
-function pseudoStat (text: string) {
-  const mod = Mods.get(text)!.mod
-
-  return {
-    text: mod.text,
-    type: 'pseudo',
-    tradeId: mod.types.find(t => t.name === 'pseudo')!.tradeId as string
-  }
-}
+const TO_ALL_RES = assertStat('#% to all Elemental Resistances')
 
 const ELEMENTAL_RES = [
   {
@@ -21,7 +13,7 @@ const ELEMENTAL_RES = [
       assertStat('#% to Fire and Lightning Resistances'),
       assertStat('#% to Fire and Cold Resistances'),
       assertStat('#% to Fire and Chaos Resistances'),
-      assertStat('#% to all Elemental Resistances')
+      TO_ALL_RES
     ]
   },
   {
@@ -31,7 +23,7 @@ const ELEMENTAL_RES = [
       assertStat('#% to Fire and Cold Resistances'),
       assertStat('#% to Cold and Lightning Resistances'),
       assertStat('#% to Cold and Chaos Resistances'),
-      assertStat('#% to all Elemental Resistances')
+      TO_ALL_RES
     ]
   },
   {
@@ -41,7 +33,7 @@ const ELEMENTAL_RES = [
       assertStat('#% to Fire and Lightning Resistances'),
       assertStat('#% to Cold and Lightning Resistances'),
       assertStat('#% to Lightning and Chaos Resistances'),
-      assertStat('#% to all Elemental Resistances')
+      TO_ALL_RES
     ]
   }
 ]
@@ -58,15 +50,18 @@ const CHAOS_RES = {
 }
 
 export function filterResists (ctx: FiltersCreationContext) {
-  const resists: Array<{ pseudo: ReturnType<typeof pseudoStat>, total: number }> = []
+  const resists: Array<{ pseudo: ReturnType<typeof pseudoStat>, total: number, hasFlat: boolean }> = []
 
   for (const eleRes of ELEMENTAL_RES) {
+    const hasFlat = ctx.modifiers.some(m =>
+      eleRes.stats.includes(m.modInfo.text) && m.modInfo.text !== TO_ALL_RES)
+
     const total = ctx.modifiers.reduce((res, mod) => eleRes.stats.includes(mod.modInfo.text)
       ? (res || 0) + mod.values![0]
       : res, undefined as number | undefined)
 
     if (total !== undefined) {
-      resists.push({ pseudo: eleRes.pseudo, total })
+      resists.push({ pseudo: eleRes.pseudo, total, hasFlat })
     }
   }
 
@@ -87,7 +82,7 @@ export function filterResists (ctx: FiltersCreationContext) {
   if (resists.length > 0) {
     const maxRes = Math.max(...resists.map(r => r.total))
 
-    if (maxRes / totalRes > 0.67) {
+    if ((maxRes / totalRes > 0.67) || resists.filter(r => r.hasFlat).length === 1) {
       ctx.filters.push({
         text: '+#% total to one of Elemental Resistances',
         tradeId: ELEMENTAL_RES.map(r => r.pseudo.tradeId),
@@ -150,33 +145,3 @@ export function filterResists (ctx: FiltersCreationContext) {
   const statsToRemove = new Set([...ELEMENTAL_RES.flatMap(r => r.stats), ...CHAOS_RES.stats])
   ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.modInfo.text))
 }
-
-const TODO_PSEUDO = [
-  {
-    name: '+# total to Strength',
-    okay: [
-      '# to Strength',
-      '# to Strength and Intelligence',
-      '# to Strength and Dexterity',
-      '# to all Attributes'
-    ]
-  },
-  {
-    name: '+# total to Dexterity',
-    okay: [
-      '# to Dexterity',
-      '# to Dexterity and Intelligence',
-      '# to Strength and Dexterity',
-      '# to all Attributes'
-    ]
-  },
-  {
-    name: '+# total to Intelligence',
-    okay: [
-      '# to Intelligence',
-      '# to Strength and Intelligence',
-      '# to Dexterity and Intelligence',
-      '# to all Attributes'
-    ]
-  }
-]

@@ -1,13 +1,13 @@
-import { Mods } from '../../data'
+import { STAT_BY_TEXT } from '../../data'
 import { QUALITY_STATS } from './calc-q20'
 
 // assertion, to avoid regressions in mods.json
 export function assertStat (name: string) {
-  const mod = Mods.get(name)
-  if (!mod) {
+  const stat = STAT_BY_TEXT.get(name)
+  if (!stat) {
     throw new Error(`Cannot find stat: ${name}`)
   }
-  return mod.mod.text
+  return stat.text
 }
 
 export const localStats = new Set<string>([

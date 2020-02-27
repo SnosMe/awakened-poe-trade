@@ -38,6 +38,7 @@ export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
 
 // Mods
 export const Mods = new Map<string, { condition: StatMatcher, mod: Mod }>()
+export const STAT_BY_TEXT = new Map<string, Mod>()
 
 for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
   for (const condition of entry.conditions) {
@@ -46,13 +47,7 @@ for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
       mod: entry.mod
     })
   }
-  // pseudo
-  if (!entry.conditions.length) {
-    Mods.set(entry.mod.text, {
-      condition: { string: entry.mod.text },
-      mod: entry.mod
-    })
-  }
+  STAT_BY_TEXT.set(entry.mod.text, entry.mod)
 }
 
 export interface UniqueItem {
