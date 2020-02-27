@@ -1,8 +1,8 @@
 import { UniqueItem, Uniques } from '../../data'
 import { ParsedItem } from '../parser'
-import { UiModFilter } from '../trade/interfaces'
 import { ItemModifier } from '../parser/modifiers'
 import { getRollAsSingleNumber, percentRollDelta } from './util'
+import { StatFilter } from './interfaces'
 
 function isConstantMod (mod: UniqueItem['mods'][0]) {
   return mod.bounds.every(b => b.min === b.max)
@@ -16,10 +16,10 @@ function isWithinBounds (values: number[], { bounds }: UniqueItem['mods'][0]) {
   ))
 }
 
-export function uniqueModFilter (
+export function uniqueModFilterPartial (
   item: ParsedItem,
   mod: ItemModifier,
-  filter: Writeable<UiModFilter>
+  filter: Writeable<StatFilter>
 ): boolean {
   const uniqueInfo = Uniques.get(`${item.name} ${item.baseType}`)
   if (!uniqueInfo) return false

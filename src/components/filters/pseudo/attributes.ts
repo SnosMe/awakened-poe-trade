@@ -1,18 +1,17 @@
-import { assertStat } from '../../trade/cleanup'
 import { pseudoStat, sumPseudoStats } from './util'
-import { FiltersCreationContext } from '../../trade/interfaces'
-import { percentRoll } from '../util'
-import { STAT_BY_TEXT } from '../../../data'
+import { FiltersCreationContext } from '../create-stat-filters'
+import { rollToFilter } from '../util'
+import { STAT_BY_TEXT, stat } from '@/data'
 import { ModifierType } from '../../parser/modifiers'
 
-const TO_ALL_ATTRS = assertStat('# to all Attributes')
+const TO_ALL_ATTRS = stat('# to all Attributes')
 
 const STR_ATTR = {
   pseudo: pseudoStat('+# total to Strength'),
   stats: [
-    assertStat('# to Strength'),
-    assertStat('# to Strength and Intelligence'),
-    assertStat('# to Strength and Dexterity'),
+    stat('# to Strength'),
+    stat('# to Strength and Intelligence'),
+    stat('# to Strength and Dexterity'),
     TO_ALL_ATTRS
   ]
 }
@@ -20,9 +19,9 @@ const STR_ATTR = {
 const DEX_ATTR = {
   pseudo: pseudoStat('+# total to Dexterity'),
   stats: [
-    assertStat('# to Dexterity'),
-    assertStat('# to Dexterity and Intelligence'),
-    assertStat('# to Strength and Dexterity'),
+    stat('# to Dexterity'),
+    stat('# to Dexterity and Intelligence'),
+    stat('# to Strength and Dexterity'),
     TO_ALL_ATTRS
   ]
 }
@@ -30,9 +29,9 @@ const DEX_ATTR = {
 const INT_ATTR = {
   pseudo: pseudoStat('+# total to Intelligence'),
   stats: [
-    assertStat('# to Intelligence'),
-    assertStat('# to Strength and Intelligence'),
-    assertStat('# to Dexterity and Intelligence'),
+    stat('# to Intelligence'),
+    stat('# to Strength and Intelligence'),
+    stat('# to Dexterity and Intelligence'),
     TO_ALL_ATTRS
   ]
 }
@@ -43,8 +42,8 @@ const ATTRS = [
   INT_ATTR
 ]
 
-const TO_MAXIMUM_LIFE = assertStat('# to maximum Life')
-const TO_MAXIMUM_MANA = assertStat('# to maximum Mana')
+const TO_MAXIMUM_LIFE = stat('# to maximum Life')
+const TO_MAXIMUM_MANA = stat('# to maximum Mana')
 
 export function filterAttributes (ctx: FiltersCreationContext) {
   const attrs: Array<{ pseudo: ReturnType<typeof pseudoStat>, total: number, hasFlat: boolean }> = []
@@ -64,12 +63,8 @@ export function filterAttributes (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       ...attr.pseudo,
-      roll: attr.total,
       disabled: true,
-      defaultMin: percentRoll(attr.total, -10, Math.floor),
-      defaultMax: percentRoll(attr.total, +10, Math.ceil),
-      min: percentRoll(attr.total, -10, Math.floor),
-      max: undefined
+      ...rollToFilter(attr.total)
     })
   }
 
@@ -79,12 +74,8 @@ export function filterAttributes (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       ...pseudoStat('+# total to all Attributes'),
-      roll: totalToAllAttrs,
       disabled: true,
-      defaultMin: percentRoll(totalToAllAttrs, -10, Math.floor),
-      defaultMax: percentRoll(totalToAllAttrs, +10, Math.ceil),
-      min: percentRoll(totalToAllAttrs, -10, Math.floor),
-      max: undefined
+      ...rollToFilter(totalToAllAttrs)
     })
   }
 

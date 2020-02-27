@@ -1,8 +1,7 @@
 import { ItemInfluence, ItemCategory } from '../parser'
 import { Leagues } from '../Leagues'
-import { ItemFilters } from '../filters/interface'
+import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
-import { UiModFilter, INTERNAL_TRADE_ID } from './interfaces'
 import { MainProcess } from '../main-process-bindings'
 
 const CATEGORY_TO_TRADE_ID = new Map([
@@ -173,7 +172,7 @@ interface PricingResult {
   accountStatus: 'offline' | 'online' | 'afk'
 }
 
-export function createTradeRequest (filters: ItemFilters, stats: UiModFilter[]) {
+export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   const body: TradeRequest = {
     query: {
       status: { option: 'online' },

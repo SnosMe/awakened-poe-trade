@@ -1,4 +1,4 @@
-import { ItemFilters } from './interface'
+import { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '../parser'
 
 const TradeOpts = {

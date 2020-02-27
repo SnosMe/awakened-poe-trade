@@ -1,5 +1,5 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '../parser'
-import { SPECIAL_SUPPORT_GEM } from '../filters/create'
+import { SPECIAL_SUPPORT_GEM } from '../filters/create-item-filters'
 import { ACCESSORY, ARMOUR, WEAPON } from '../parser/meta'
 
 export function isValuableBasetype (item: ParsedItem): boolean {

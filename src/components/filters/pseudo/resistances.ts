@@ -1,38 +1,38 @@
-import { assertStat } from '../../trade/cleanup'
 import { pseudoStat, sumPseudoStats } from './util'
-import { FiltersCreationContext } from '../../trade/interfaces'
-import { percentRoll } from '../util'
+import { FiltersCreationContext } from '../create-stat-filters'
+import { rollToFilter } from '../util'
+import { stat } from '@/data'
 
-const TO_ALL_RES = assertStat('#% to all Elemental Resistances')
+const TO_ALL_RES = stat('#% to all Elemental Resistances')
 
 const ELEMENTAL_RES = [
   {
     pseudo: pseudoStat('+#% total to Fire Resistance'),
     stats: [
-      assertStat('#% to Fire Resistance'),
-      assertStat('#% to Fire and Lightning Resistances'),
-      assertStat('#% to Fire and Cold Resistances'),
-      assertStat('#% to Fire and Chaos Resistances'),
+      stat('#% to Fire Resistance'),
+      stat('#% to Fire and Lightning Resistances'),
+      stat('#% to Fire and Cold Resistances'),
+      stat('#% to Fire and Chaos Resistances'),
       TO_ALL_RES
     ]
   },
   {
     pseudo: pseudoStat('+#% total to Cold Resistance'),
     stats: [
-      assertStat('#% to Cold Resistance'),
-      assertStat('#% to Fire and Cold Resistances'),
-      assertStat('#% to Cold and Lightning Resistances'),
-      assertStat('#% to Cold and Chaos Resistances'),
+      stat('#% to Cold Resistance'),
+      stat('#% to Fire and Cold Resistances'),
+      stat('#% to Cold and Lightning Resistances'),
+      stat('#% to Cold and Chaos Resistances'),
       TO_ALL_RES
     ]
   },
   {
     pseudo: pseudoStat('+#% total to Lightning Resistance'),
     stats: [
-      assertStat('#% to Lightning Resistance'),
-      assertStat('#% to Fire and Lightning Resistances'),
-      assertStat('#% to Cold and Lightning Resistances'),
-      assertStat('#% to Lightning and Chaos Resistances'),
+      stat('#% to Lightning Resistance'),
+      stat('#% to Fire and Lightning Resistances'),
+      stat('#% to Cold and Lightning Resistances'),
+      stat('#% to Lightning and Chaos Resistances'),
       TO_ALL_RES
     ]
   }
@@ -40,12 +40,12 @@ const ELEMENTAL_RES = [
 
 const CHAOS_RES = {
   pseudo: pseudoStat('+#% total to Chaos Resistance'),
-  base: assertStat('#% to Chaos Resistance'),
+  base: stat('#% to Chaos Resistance'),
   stats: [
-    assertStat('#% to Chaos Resistance'),
-    assertStat('#% to Fire and Chaos Resistances'),
-    assertStat('#% to Cold and Chaos Resistances'),
-    assertStat('#% to Lightning and Chaos Resistances')
+    stat('#% to Chaos Resistance'),
+    stat('#% to Fire and Chaos Resistances'),
+    stat('#% to Cold and Chaos Resistances'),
+    stat('#% to Lightning and Chaos Resistances')
   ]
 }
 
@@ -67,12 +67,8 @@ export function filterResists (ctx: FiltersCreationContext) {
   if (resists.length > 1) {
     ctx.filters.push({
       ...pseudoStat('+#% total Elemental Resistance'),
-      roll: totalRes,
       disabled: false,
-      defaultMin: percentRoll(totalRes, -10, Math.floor),
-      defaultMax: percentRoll(totalRes, +10, Math.ceil),
-      min: percentRoll(totalRes, -10, Math.floor),
-      max: undefined
+      ...rollToFilter(totalRes)
     })
   }
 
@@ -84,12 +80,8 @@ export function filterResists (ctx: FiltersCreationContext) {
         text: '+#% total to one of Elemental Resistances',
         tradeId: ELEMENTAL_RES.map(r => r.pseudo.tradeId),
         type: 'pseudo',
-        roll: maxRes,
         disabled: false,
-        defaultMin: percentRoll(maxRes, -10, Math.floor),
-        defaultMax: percentRoll(maxRes, +10, Math.ceil),
-        min: percentRoll(maxRes, -10, Math.floor),
-        max: undefined
+        ...rollToFilter(maxRes)
       })
     }
   }
@@ -100,12 +92,8 @@ export function filterResists (ctx: FiltersCreationContext) {
     if ((totalToAllRes * resists.length) / totalRes > 0.8) {
       ctx.filters.push({
         ...pseudoStat('+#% total to all Elemental Resistances'),
-        roll: totalToAllRes,
         disabled: false,
-        defaultMin: percentRoll(totalToAllRes, -10, Math.floor),
-        defaultMax: percentRoll(totalToAllRes, +10, Math.ceil),
-        min: percentRoll(totalToAllRes, -10, Math.floor),
-        max: undefined
+        ...rollToFilter(totalToAllRes)
       })
     }
   }
@@ -113,13 +101,9 @@ export function filterResists (ctx: FiltersCreationContext) {
   for (const resist of resists) {
     ctx.filters.push({
       ...resist.pseudo,
-      roll: resist.total,
       disabled: true,
       hidden: 'Filtering by exact Elemental Resistance unreasonably increases the price',
-      defaultMin: percentRoll(resist.total, -10, Math.floor),
-      defaultMax: percentRoll(resist.total, +10, Math.ceil),
-      min: percentRoll(resist.total, -10, Math.floor),
-      max: undefined
+      ...rollToFilter(resist.total)
     })
   }
 
@@ -129,12 +113,8 @@ export function filterResists (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       ...CHAOS_RES.pseudo,
-      roll: chaosTotal,
       disabled: true, // NOTE: unlike EleRes it is disabled
-      defaultMin: percentRoll(chaosTotal, -10, Math.floor),
-      defaultMax: percentRoll(chaosTotal, +10, Math.ceil),
-      min: percentRoll(chaosTotal, -10, Math.floor),
-      max: undefined
+      ...rollToFilter(chaosTotal)
     })
   }
 

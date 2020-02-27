@@ -1,3 +1,5 @@
+import { StatFilter } from './interfaces'
+
 function countDecimals (num: number) {
   return !Number.isInteger(num)
     ? String(num).substring(String(num).indexOf('.') + 1).length
@@ -27,5 +29,15 @@ export function getRollAsSingleNumber (values: number[]): number {
     const maxPrecision = Math.max(countDecimals(values[0]), countDecimals(values[1]))
     const rounding = Math.pow(10, maxPrecision)
     return Math.floor((avg + Number.EPSILON) * rounding) / rounding
+  }
+}
+
+export function rollToFilter (roll: number): Pick<StatFilter, 'roll' | 'min' | 'max' | 'defaultMin' | 'defaultMax'> {
+  return {
+    roll,
+    defaultMin: percentRoll(roll, -10 * Math.sign(roll), Math.floor),
+    defaultMax: percentRoll(roll, +10 * Math.sign(roll), Math.ceil),
+    min: percentRoll(roll, -10 * Math.sign(roll), Math.floor),
+    max: undefined
   }
 }

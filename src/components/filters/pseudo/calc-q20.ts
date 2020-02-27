@@ -1,38 +1,38 @@
-import { ParsedItem } from '../parser'
-import { assertStat } from './cleanup'
+import { ParsedItem } from '../../parser'
+import { stat } from '@/data'
 
 export const QUALITY_STATS = {
   ARMOUR: {
-    flat: assertStat('# to Armour'),
+    flat: stat('# to Armour'),
     incr: [
-      assertStat('#% increased Armour'),
-      assertStat('#% increased Armour and Energy Shield'),
-      assertStat('#% increased Armour and Evasion'),
-      assertStat('#% increased Armour, Evasion and Energy Shield')
+      stat('#% increased Armour'),
+      stat('#% increased Armour and Energy Shield'),
+      stat('#% increased Armour and Evasion'),
+      stat('#% increased Armour, Evasion and Energy Shield')
     ]
   },
   EVASION: {
-    flat: assertStat('# to Evasion Rating'),
+    flat: stat('# to Evasion Rating'),
     incr: [
-      assertStat('#% increased Evasion Rating'),
-      assertStat('#% increased Armour and Evasion'),
-      assertStat('#% increased Evasion and Energy Shield'),
-      assertStat('#% increased Armour, Evasion and Energy Shield')
+      stat('#% increased Evasion Rating'),
+      stat('#% increased Armour and Evasion'),
+      stat('#% increased Evasion and Energy Shield'),
+      stat('#% increased Armour, Evasion and Energy Shield')
     ]
   },
   ENERGY_SHIELD: {
-    flat: assertStat('# to maximum Energy Shield'),
+    flat: stat('# to maximum Energy Shield'),
     incr: [
-      assertStat('#% increased Energy Shield'),
-      assertStat('#% increased Armour and Energy Shield'),
-      assertStat('#% increased Evasion and Energy Shield'),
-      assertStat('#% increased Armour, Evasion and Energy Shield')
+      stat('#% increased Energy Shield'),
+      stat('#% increased Armour and Energy Shield'),
+      stat('#% increased Evasion and Energy Shield'),
+      stat('#% increased Armour, Evasion and Energy Shield')
     ]
   },
   PHYSICAL_DAMAGE: {
-    flat: assertStat('Adds # to # Physical Damage'),
+    flat: stat('Adds # to # Physical Damage'),
     incr: [
-      assertStat('#% increased Physical Damage')
+      stat('#% increased Physical Damage')
     ]
   }
 }

@@ -50,6 +50,14 @@ for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
   STAT_BY_TEXT.set(entry.mod.text, entry.mod)
 }
 
+// assertion, to avoid regressions in mods.json
+export function stat (text: string) {
+  if (!STAT_BY_TEXT.has(text)) {
+    throw new Error(`Cannot find stat: ${text}`)
+  }
+  return text
+}
+
 export interface UniqueItem {
   icon: string
   mods: Array<{
