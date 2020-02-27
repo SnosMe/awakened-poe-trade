@@ -1,5 +1,5 @@
 import { assertStat } from '../../trade/cleanup'
-import { pseudoStat } from './util'
+import { pseudoStat, sumPseudoStats } from './util'
 import { FiltersCreationContext } from '../../trade/interfaces'
 import { percentRoll } from '../util'
 import { STAT_BY_TEXT } from '../../../data'
@@ -53,10 +53,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
     const hasFlat = ctx.modifiers.some(m =>
       attr.stats.includes(m.modInfo.text) && m.modInfo.text !== TO_ALL_ATTRS)
 
-    const total = ctx.modifiers.reduce((res, mod) => attr.stats.includes(mod.modInfo.text)
-      ? (res || 0) + mod.values![0]
-      : res, undefined as number | undefined)
-
+    const total = sumPseudoStats(ctx.modifiers, attr.stats)
     if (total !== undefined) {
       attrs.push({ pseudo: attr.pseudo, total, hasFlat })
     }
@@ -78,8 +75,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
 
   const isOnlyToTotal = (attrs.length && attrs.every(a => !a.hasFlat))
   if (isOnlyToTotal) {
-    const totalToAllAttrs = ctx.modifiers
-      .find(m => m.modInfo.text === TO_ALL_ATTRS)?.values![0]
+    const totalToAllAttrs = sumPseudoStats(ctx.modifiers, [TO_ALL_ATTRS])!
 
     ctx.filters.push({
       ...pseudoStat('+# total to all Attributes'),

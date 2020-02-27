@@ -2,7 +2,7 @@ import { assertStat } from '../../trade/cleanup'
 import { FiltersCreationContext } from '../../trade/interfaces'
 import { percentRoll } from '../util'
 import { ARMOUR } from '../../parser/meta'
-import { pseudoStat } from './util'
+import { pseudoStat, sumPseudoStats } from './util'
 import { filterResists } from './resistances'
 import { filterAttributes } from './attributes'
 
@@ -20,9 +20,7 @@ function filterRemainingPseudo (ctx: FiltersCreationContext) {
   }
 
   for (const pseudoMod of pseudoMods) {
-    const total = ctx.modifiers.reduce((res, mod) => pseudoMod.stats.includes(mod.modInfo.text)
-      ? (res || 0) + mod.values![0]
-      : res, undefined as number | undefined)
+    const total = sumPseudoStats(ctx.modifiers, pseudoMod.stats)
 
     if (total !== undefined) {
       ctx.filters.push({

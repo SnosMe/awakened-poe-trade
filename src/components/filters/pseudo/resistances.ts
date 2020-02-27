@@ -1,5 +1,5 @@
 import { assertStat } from '../../trade/cleanup'
-import { pseudoStat } from './util'
+import { pseudoStat, sumPseudoStats } from './util'
 import { FiltersCreationContext } from '../../trade/interfaces'
 import { percentRoll } from '../util'
 
@@ -56,10 +56,7 @@ export function filterResists (ctx: FiltersCreationContext) {
     const hasFlat = ctx.modifiers.some(m =>
       eleRes.stats.includes(m.modInfo.text) && m.modInfo.text !== TO_ALL_RES)
 
-    const total = ctx.modifiers.reduce((res, mod) => eleRes.stats.includes(mod.modInfo.text)
-      ? (res || 0) + mod.values![0]
-      : res, undefined as number | undefined)
-
+    const total = sumPseudoStats(ctx.modifiers, eleRes.stats)
     if (total !== undefined) {
       resists.push({ pseudo: eleRes.pseudo, total, hasFlat })
     }
@@ -128,8 +125,7 @@ export function filterResists (ctx: FiltersCreationContext) {
 
   const hasBaseChaosRes = ctx.modifiers.some(m => m.modInfo.text === CHAOS_RES.base)
   if (hasBaseChaosRes) {
-    const chaosTotal = ctx.modifiers.reduce((res, mod) =>
-      CHAOS_RES.stats.includes(mod.modInfo.text) ? res + mod.values![0] : res, 0)
+    const chaosTotal = sumPseudoStats(ctx.modifiers, CHAOS_RES.stats)!
 
     ctx.filters.push({
       ...CHAOS_RES.pseudo,
