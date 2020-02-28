@@ -231,7 +231,8 @@ export const Prices = new PriceService()
 export function displayRounding (value: number, fraction: boolean = false): string {
   if (fraction && Math.abs(value) < 1) {
     if (value === 0) return '0'
-    return `1/${displayRounding(1 / value)}`
+    const r = `1/${displayRounding(1 / value)}`
+    return r === '1/1' ? '1' : r
   }
   if (Math.abs(value) < 10) {
     return Number(value.toFixed(1)).toString()
