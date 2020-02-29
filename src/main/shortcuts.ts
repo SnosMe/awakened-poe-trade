@@ -4,11 +4,11 @@ import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
 import { windowManager } from './window-manager'
-import { showWindow, lockWindow } from './positioning'
+import { showWindow, lockWindow, poeUserInterfaceWidth } from './positioning'
 
-const KEY_CTRL = 29
+// const KEY_CTRL = 29
+// const KEY_ALT = 56
 const KEY_D = 32
-const KEY_ALT = 56
 const KEY_F5 = 63
 const POE_TITLE = 'Path of Exile'
 
@@ -64,6 +64,29 @@ export function setupShortcuts () {
 
     robotjs.keyToggle('alt', 'up')
     robotjs.keyTap('key_c')
+  })
+
+  let naiveInventoryCheckX: number | undefined
+  ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, rotation: 1 | -1 }) => {
+    if (!e.ctrlKey) return
+    if (naiveInventoryCheckX === undefined) {
+      if (await windowManager.getActiveWindowTitle() !== POE_TITLE) {
+        return
+      } else {
+        // NOTE: will not be updated if window moved
+        const poePos = await windowManager.getActiveWindowContentBounds()
+        naiveInventoryCheckX = (poePos!.x + poePos!.width) - poeUserInterfaceWidth(poePos!.height)
+      }
+    }
+
+    const mouseX = (process.platform === 'linux') ? screen.getCursorScreenPoint().x : e.x
+    if (mouseX > naiveInventoryCheckX) {
+      if (e.rotation > 0) {
+        robotjs.keyTap('right')
+      } else if (e.rotation < 0) {
+        robotjs.keyTap('left')
+      }
+    }
   })
 
   ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, async () => {

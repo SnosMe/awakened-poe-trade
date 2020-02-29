@@ -123,7 +123,7 @@ function getOffsetX (poePos: Rectangle): number {
   }
 }
 
-function poeUserInterfaceWidth (windowHeight: number) {
+export function poeUserInterfaceWidth (windowHeight: number) {
   // sidebar is 370px at 800x600
   const ratio = 370 / 600
   return Math.round(windowHeight * ratio)
