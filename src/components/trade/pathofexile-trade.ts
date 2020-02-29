@@ -3,6 +3,7 @@ import { Leagues } from '../Leagues'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '../main-process-bindings'
+import { SearchResult } from './common'
 
 const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -118,17 +119,6 @@ interface TradeRequest { /* eslint-disable camelcase */
   }
   sort: {
     price: 'asc'
-  }
-}
-
-interface SearchResult {
-  id: string
-  result: string[]
-  total: number
-  inexact?: boolean
-  error?: {
-    code: number
-    message: string
   }
 }
 
@@ -311,14 +301,14 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
       query.stats.push({
         type: 'count',
         value: { min: 1 },
+        disabled: stat.disabled,
         filters: stat.tradeId.map(id => ({
           id,
           value: {
             min: typeof stat.min === 'number' ? stat.min : undefined,
             max: typeof stat.max === 'number' ? stat.max : undefined,
             option: stat.option != null ? stat.option.tradeId : undefined
-          },
-          disabled: stat.disabled
+          }
         }))
       })
     }

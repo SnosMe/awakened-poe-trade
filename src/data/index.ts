@@ -3,6 +3,7 @@ import monsters from './itemised-monsters.json'
 import mods from './mods.json'
 import baseTypes from './base-types.json'
 import uniques from './uniques.json'
+import tradeTags from './trade-tags.json'
 import { ItemCategory } from '../components/parser'
 
 export interface StatMatcher {
@@ -57,6 +58,9 @@ export function stat (text: string) {
   }
   return text
 }
+
+export const TRADE_TAGS = tradeTags as Array<[string, string]>
+export const TRADE_TAG_BY_NAME = new Map(TRADE_TAGS)
 
 export interface UniqueItem {
   icon: string

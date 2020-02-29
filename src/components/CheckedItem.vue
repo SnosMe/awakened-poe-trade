@@ -13,10 +13,15 @@
         :stats="itemStats"
         :item="item" />
       <trade-listing
+        v-if="tradeAPI === 'trade'"
         ref="tradeService"
         :filters="itemFilters"
         :stats="itemStats"
         :item="item" />
+      <trade-bulk
+        v-else-if="tradeAPI === 'bulk'"
+        ref="tradeService"
+        :filters="itemFilters" />
     </div>
   </div>
 </template>
@@ -25,6 +30,8 @@
 import { MainProcess } from './main-process-bindings'
 import { parseClipboard, ItemRarity, ItemCategory } from './parser'
 import TradeListing from './trade/TradeListing'
+import TradeBulk from './trade/TradeBulk'
+import { apiToSatisfySearch } from './trade/common'
 import PriceTrend from './trends/PriceTrend'
 import FiltersBlock from './filters/FiltersBlock'
 import { createFilters } from './filters/create-item-filters'
@@ -37,6 +44,7 @@ export default {
   components: {
     PricePrediction,
     TradeListing,
+    TradeBulk,
     PriceTrend,
     FiltersBlock,
     FilterName
@@ -63,6 +71,8 @@ export default {
     })
 
     this.$watch(vm => [vm.itemFilters, vm.itemStats], () => {
+      this.tradeAPI = apiToSatisfySearch(this.itemFilters, this.itemStats)
+
       // NOTE: children component receives props on nextTick
       this.$nextTick(() => {
         this.$refs.tradeService.execSearch()
@@ -73,7 +83,8 @@ export default {
     return {
       item: null,
       itemFilters: null,
-      itemStats: null
+      itemStats: null,
+      tradeAPI: 'bulk'
     }
   },
   computed: {

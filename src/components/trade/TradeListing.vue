@@ -7,7 +7,7 @@
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }} (Online)</span>
       </div>
       <div v-if="list">
-        <button @click="openTradeLink" class="py-1 -my-1 px-2 leading-none align-left"><i class="fas fa-external-link-alt"></i></button>
+        <button @click="openTradeLink" class="py-1 -my-1 px-2 leading-none align-left"><span class="mr-1">Trade</span><i class="fas fa-external-link-alt"></i></button>
       </div>
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
