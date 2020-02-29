@@ -85,9 +85,6 @@ export function parseClipboard (clipboard: string) {
   const parsed = parseNamePlate(sections[0])
   if (!parsed) {
     return null
-  } else if (parsed.name === 'Chaos Orb') {
-    // need to think how to handle it
-    return null
   }
   sections.shift()
 

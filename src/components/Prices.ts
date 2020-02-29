@@ -145,12 +145,6 @@ class PriceService {
               }
             } as ItemInfo)
           }
-
-          PRICE_BY_DETAILS_ID.set('chaos-orb', {
-            detailsId: 'chaos-orb',
-            icon: priceData.currencyDetails.find(detail => detail.name === 'Chaos Orb')!.icon,
-            name: 'Chaos Orb'
-          } as ItemInfo)
         } else if (dataType.overview === 'item') {
           const priceData: {
             lines: NinjaItemInfo[]
