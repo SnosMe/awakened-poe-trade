@@ -5,9 +5,9 @@
 
 | Download | Automatic update | Startup time |
 |----------|------------------|--------------|
-| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.9.0/Awakened-PoE-Trade-Setup-0.9.0.exe) | :heavy_check_mark: | Fast |
-| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.9.0/Awakened-PoE-Trade-0.9.0.exe) | :heavy_multiplication_x: | Slow |
-| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.9.0/Awakened-PoE-Trade-0.9.0.AppImage) | :heavy_check_mark: | Fast |
+| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.10.0/Awakened-PoE-Trade-Setup-0.10.0.exe) | :heavy_check_mark: | Fast |
+| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.10.0/Awakened-PoE-Trade-0.10.0.exe) | :heavy_multiplication_x: | Slow |
+| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.10.0/Awakened-PoE-Trade-0.10.0.AppImage) | :heavy_check_mark: | Fast |
 
 ## Tool showcase
 
@@ -61,11 +61,11 @@
     - :heavy_check_mark: Q20 props (Armour, Evasion, ES, Physical Damage)
   - :heavy_check_mark: +-10% Rare rolls
   - :heavy_check_mark: Unique item roll range
-  - :heavy_multiplication_x: Pseudo stats
+  - :heavy_check_mark: Pseudo stats
   - Gems
     - :heavy_check_mark: Level, Quality, Corrupted
     - :heavy_multiplication_x: Gem experience
-  - :heavy_multiplication_x: Currency bulk search
+  - :heavy_check_mark: Currency bulk search
   - :heavy_check_mark: Grouping results from one account (protection against "pricefixing")
 
 ### Requirements
@@ -82,6 +82,7 @@ No Administrator rights required
 - Press `Ctrl + Alt + D` to check the price of the item\
   *Opens a window, but does not hide it automatically when moving the mouse*
 - Press `F5` to go to hideout
+- `Ctrl + MouseWheel` to scroll through stash tabs
 
 ### Tool end goals
 - One Tool To Rule Them All
