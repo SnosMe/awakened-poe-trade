@@ -116,8 +116,8 @@ export function createFilters (item: ParsedItem): ItemFilters {
   if (item.itemLevel) {
     if (
       item.rarity !== ItemRarity.Unique &&
-      item.category !== ItemCategory.Map
-      /* @TODO && !isJewel https://pathofexile.gamepedia.com/Jewel#Affixes */
+      item.category !== ItemCategory.Map &&
+      item.category !== ItemCategory.Jewel /* https://pathofexile.gamepedia.com/Jewel#Affixes */
     ) {
       if (item.itemLevel > 86) {
         filters.itemLevel = {
