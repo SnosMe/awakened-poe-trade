@@ -179,7 +179,7 @@ function parseNamePlate (section: string[]) {
       const item : ParsedItem = {
         rarity,
         name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
-        baseType: section[2],
+        baseType: section[2]?.replace(/^(<<.*?>>|<.*?>)+/, ''),
         props: {},
         isUnidentified: false,
         isCorrupted: false,
