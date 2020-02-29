@@ -229,7 +229,7 @@ export function displayRounding (value: number, fraction: boolean = false): stri
     return r === '1/1' ? '1' : r
   }
   if (Math.abs(value) < 10) {
-    return Number(value.toFixed(1)).toString()
+    return Number(value.toFixed(1)).toString().replace('.', '\u200A.\u200A')
   }
   return Math.round(value).toString()
 }
