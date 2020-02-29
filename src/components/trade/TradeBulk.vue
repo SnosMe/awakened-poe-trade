@@ -142,5 +142,6 @@ export default {
   height: 28px;
   margin: -7px;
   margin-right: 2px;
+  filter: grayscale(1);
 }
 </style>
