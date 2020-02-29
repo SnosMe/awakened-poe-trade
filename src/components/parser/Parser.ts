@@ -24,7 +24,9 @@ import {
   TAG_PHYSICAL_DAMAGE,
   TAG_ELEMENTAL_DAMAGE,
   FLASK_CHARGES,
-  PREFIX_BLIGHTED
+  PREFIX_BLIGHTED,
+  SECTION_SYNTHESISED,
+  PREFIX_SYNTHESISED
 } from './constants'
 import { Prophecies, ItemisedMonsters, BaseTypes } from '../../data'
 import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
@@ -48,7 +50,9 @@ interface ParserFn {
 
 const parsers: ParserFn[] = [
   parseUnidentified,
+  parseSynthesised,
   normalizeName,
+  // -----------
   parseItemLevel,
   parseVaalGem,
   parseGem,
@@ -432,6 +436,21 @@ function parseFlask (section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (FLASK_CHARGES.test(line)) {
+      return SECTION_PARSED
+    }
+  }
+
+  return SECTION_SKIPPED
+}
+
+function parseSynthesised (section: string[], item: ParsedItem) {
+  if (section.length === 1) {
+    if (section[0] === SECTION_SYNTHESISED) {
+      if (item.baseType) {
+        item.baseType = item.baseType.substr(PREFIX_SYNTHESISED.length)
+      } else {
+        item.name = item.name.substr(PREFIX_SYNTHESISED.length)
+      }
       return SECTION_PARSED
     }
   }
