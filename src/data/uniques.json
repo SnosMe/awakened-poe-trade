@@ -4452,7 +4452,7 @@
         },
         {
           "text": "Herald of Purity has #% reduced Mana Reservation",
-          "bounds": [{"min": 40, "max": 30}]
+          "bounds": [{"min": 30, "max": 40}]
         },
         {
           "text": "Regenerate #% of Life per second",
@@ -10274,7 +10274,7 @@
         },
         {
           "text": "Summoned Holy Relics have #% reduced Cooldown Recovery Speed",
-          "bounds": [{"min": 25, "max": 20}]
+          "bounds": [{"min": 20, "max": 25}]
         }
       ]
     }
@@ -11103,7 +11103,7 @@
         },
         {
           "text": "#% reduced Spark Duration",
-          "bounds": [{"min": 20, "max": 15}]
+          "bounds": [{"min": 15, "max": 20}]
         },
         {
           "text": "With at least 40 Intelligence in Radius, Spark fires an additional Projectile",
@@ -16005,7 +16005,7 @@
         },
         {
           "text": "Minions have #% reduced Flask Charges used",
-          "bounds": [{"min": 40, "max": 25}]
+          "bounds": [{"min": 25, "max": 40}]
         },
         {
           "text": "Your Minions use your Flasks when summoned",
@@ -19415,7 +19415,7 @@
         },
         {
           "text": "#% less Minimum Physical Attack Damage",
-          "bounds": [{"min": 40, "max": 30}]
+          "bounds": [{"min": 30, "max": 40}]
         },
         {
           "text": "#% more Maximum Physical Attack Damage",
@@ -20095,7 +20095,7 @@
         {
           "text": "#% reduced Lightning Damage taken",
           "implicit": true,
-          "bounds": [{"min": 6, "max": 4}]
+          "bounds": [{"min": 4, "max": 6}]
         },
         {
           "text": "#% to all Resistances for each Corrupted Item Equipped",
@@ -20519,7 +20519,7 @@
         },
         {
           "text": "#% reduced Mana Cost of Minion Skills",
-          "bounds": [{"min": 15, "max": 10}]
+          "bounds": [{"min": 10, "max": 15}]
         },
         {
           "text": "#% to Cold Resistance",
@@ -21252,7 +21252,7 @@
         },
         {
           "text": "Vaal Skills used during effect have #% reduced Soul Gain Prevention Duration",
-          "bounds": [{"min": 40, "max": 20}]
+          "bounds": [{"min": 20, "max": 40}]
         }
       ]
     }
@@ -21440,7 +21440,7 @@
         },
         {
           "text": "#% reduced Mana Cost of Raise Spectre",
-          "bounds": [{"min": 50, "max": 40}]
+          "bounds": [{"min": 40, "max": 50}]
         },
         {
           "text": "Spectres have #% increased Critical Strike Chance",
@@ -24851,7 +24851,7 @@
         },
         {
           "text": "Golems Deal #% less Damage",
-          "bounds": [{"min": 45, "max": 35}]
+          "bounds": [{"min": 35, "max": 45}]
         },
         {
           "text": "Golems have #% increased Movement Speed",
@@ -24859,7 +24859,7 @@
         },
         {
           "text": "Golems have #% less Life",
-          "bounds": [{"min": 45, "max": 35}]
+          "bounds": [{"min": 35, "max": 45}]
         },
         {
           "text": "Primordial",
