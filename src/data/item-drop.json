@@ -1,0 +1,178 @@
+[
+  {
+    "query": [
+      "splinter-of-uul-netol",
+      "uul-netols-breachstone"
+    ],
+    "items": [
+      "blessing-of-uul-netol",
+      "the-infinite-pursuit-goliath-greaves",
+      "uul-netols-kiss-labrys",
+      "the-anticipation-ezomyte-tower-shield"
+    ]
+  },
+  {
+    "query": [
+      "splinter-of-xoph",
+      "xophs-breachstone"
+    ],
+    "items": [
+      "blessing-of-xoph",
+      "the-formless-flame-siege-helmet",
+      "xophs-heart-amber-amulet",
+      "xophs-inception-bone-bow",
+      "the-escape"
+    ]
+  },
+  {
+    "query": [
+      "splinter-of-tul",
+      "tuls-breachstone"
+    ],
+    "items": [
+      "blessing-of-tul",
+      "tulborn-spiraled-wand",
+      "the-halcyon-jade-amulet",
+      "the-snowblind-grace-coronal-leather",
+      "the-escape"
+    ]
+  },
+  {
+    "query": [
+      "splinter-of-esh",
+      "eshs-breachstone"
+    ],
+    "items": [
+      "blessing-of-esh",
+      "voice-of-the-storm-lapis-amulet",
+      "hand-of-thought-and-motion-blinder",
+      "eshs-mirror-thorium-spirit-shield",
+      "the-escape"
+    ]
+  },
+  {
+    "query": [
+      "splinter-of-chayula",
+      "chayulas-breachstone"
+    ],
+    "items": [
+      "blessing-of-chayula",
+      "skin-of-the-loyal-simple-robe-6l",
+      "severed-in-sleep-cutlass",
+      "the-blue-dream-cobalt-jewel",
+      "the-green-dream-viridian-jewel",
+      "the-red-dream-crimson-jewel"
+    ]
+  },
+  {
+    "query": [
+      "sacrifice-at-dawn",
+      "sacrifice-at-midnight",
+      "sacrifice-at-noon",
+      "sacrifice-at-dusk"
+    ],
+    "items": [
+      "atziris-promise-amethyst-flask",
+      "doryanis-catalyst-vaal-sceptre",
+      "mortal-ignorance",
+      "mortal-hope",
+      "mortal-rage",
+      "mortal-grief",
+      "alluring-bounty",
+      "the-ethereal"
+    ]
+  },
+  {
+    "query": [
+      "mortal-ignorance",
+      "mortal-hope",
+      "mortal-rage",
+      "mortal-grief"
+    ],
+    "items": [
+      "atziris-acuity-vaal-gauntlets",
+      "atziris-disfavour-vaal-axe",
+      "the-vertex-vaal-mask",
+      "atziris-splendour-es-sacrificial-garb",
+      "atziris-splendour-evasion-es-life-sacrificial-garb",
+      "alluring-bounty",
+      "house-of-mirrors"
+    ]
+  },
+  {
+    "query": [
+      "volkuurs-key",
+      "yriels-key",
+      "inyas-key",
+      "ebers-key"
+    ],
+    "items": [
+      "ebers-unification-hubris-circlet",
+      "inyas-epiphany-arcanist-slippers",
+      "yriels-fostering-poison-exquisite-leather",
+      "yriels-fostering-bleeding-exquisite-leather",
+      "yriels-fostering-maim-exquisite-leather",
+      "volkuurs-guidance-cold-zealot-gloves",
+      "volkuurs-guidance-fire-zealot-gloves",
+      "volkuurs-guidance-lightning-zealot-gloves"
+    ]
+  },
+  {
+    "query": [
+      "fragment-of-the-minotaur",
+      "fragment-of-the-chimera",
+      "fragment-of-the-phoenix",
+      "fragment-of-the-hydra"
+    ],
+    "items": [
+      "starforge-infernal-sword",
+      "dying-sun-ruby-flask",
+      "shapers-touch-crusader-gloves",
+      "solstice-vigil-onyx-amulet",
+      "voidwalker-murder-boots",
+      "fragment-of-knowledge",
+      "fragment-of-shape"
+    ]
+  },
+  {
+    "query": [
+      "fragment-of-eradication",
+      "fragment-of-enslavement",
+      "fragment-of-purification",
+      "fragment-of-constriction"
+    ],
+    "items": [
+      "blasphemers-grasp-assassins-mitts",
+      "cyclopean-coil-leather-belt",
+      "nebuloch-nightmare-mace",
+      "shimmeron-tornado-wand",
+      "hopeshredder-ranger-bow",
+      "watchers-eye-prismatic-jewel",
+      "impresence-cold-onyx-amulet",
+      "impresence-lightning-onyx-amulet",
+      "impresence-fire-onyx-amulet",
+      "impresence-chaos-onyx-amulet",
+      "impresence-physical-onyx-amulet",
+      "fragment-of-terror",
+      "fragment-of-emptiness"
+    ]
+  },
+  {
+    "query": [
+      "fragment-of-knowledge",
+      "fragment-of-shape",
+      "fragment-of-terror",
+      "fragment-of-emptiness"
+    ],
+    "items": [
+      "watchers-eye-prismatic-jewel",
+      "disintegrator-maelstrom-staff",
+      "voidfletcher-penetrating-arrow-quiver",
+      "mark-of-the-elder-steel-ring",
+      "mark-of-the-shaper-opal-ring",
+      "indigon-hubris-circlet",
+      "voidforge-infernal-sword",
+      "the-eternity-shroud-blood-raiment"
+    ]
+  }
+]

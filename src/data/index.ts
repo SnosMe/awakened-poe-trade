@@ -4,6 +4,7 @@ import mods from './mods.json'
 import baseTypes from './base-types.json'
 import uniques from './uniques.json'
 import tradeTags from './trade-tags.json'
+import itemDrop from './item-drop.json'
 import { ItemCategory } from '../components/parser'
 
 export interface StatMatcher {
@@ -73,3 +74,15 @@ export interface UniqueItem {
 }
 
 export const Uniques = new Map(uniques as Array<[string, UniqueItem]>)
+
+export interface DropEntry {
+  query: string[]
+  items: string[]
+}
+
+export const ITEM_DROP = new Map<string, DropEntry>()
+for (const entry of (itemDrop as DropEntry[])) {
+  for (const query of entry.query) {
+    ITEM_DROP.set(query, entry)
+  }
+}

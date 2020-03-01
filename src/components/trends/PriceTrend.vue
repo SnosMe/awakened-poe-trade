@@ -1,6 +1,7 @@
 <template>
   <div v-if="trend" class="flex items-center pb-4">
     <div class="flex items-center justify-center flex-1">
+      <related-items :details-id="trend.detailsId" />
       <div v-if="isValuableBasetype" class="text-gray-400">Item base</div>
       <div v-else class="w-8 h-8 flex items-center justify-center">
         <img :src="trend.icon" :alt="item.name" class="max-w-full max-h-full">
@@ -37,6 +38,7 @@
 <script>
 import { Prices, displayRounding } from '../Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
+import RelatedItems from './RelatedItems'
 
 export default {
   props: {
@@ -45,6 +47,7 @@ export default {
       required: true
     }
   },
+  components: { RelatedItems },
   filters: { displayRounding },
   computed: {
     icon () {
