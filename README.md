@@ -82,7 +82,8 @@ No Administrator rights required
 - Press `Ctrl + Alt + D` to check the price of the item\
   *Opens a window, but does not hide it automatically when moving the mouse*
 - Press `F5` to go to hideout
-- `Ctrl + MouseWheel` to scroll through stash tabs
+- `Ctrl + MouseWheel` to scroll through stash tabs\
+  *You can also disable "Mousewheel Zoom" in PoE settings (Options -> UI -> 3-rd check mark starting from the bottom)*
 
 ### Tool end goals
 - One Tool To Rule Them All

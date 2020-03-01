@@ -75,7 +75,7 @@ export function setupShortcuts () {
       } else {
         // NOTE: will not be updated if window moved
         const poePos = await windowManager.getActiveWindowContentBounds()
-        naiveInventoryCheckX = (poePos!.x + poePos!.width) - poeUserInterfaceWidth(poePos!.height)
+        naiveInventoryCheckX = poePos!.x + poeUserInterfaceWidth(poePos!.height)
       }
     }
 
