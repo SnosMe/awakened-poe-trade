@@ -88,7 +88,8 @@ const PRICE_DATA = [
   { overview: 'item', type: 'UniqueWeapon' },
   { overview: 'item', type: 'UniqueArmour' },
   { overview: 'item', type: 'UniqueAccessory' },
-  { overview: 'item', type: 'Beast' }
+  { overview: 'item', type: 'Beast' },
+  { overview: 'item', type: 'Vial' }
 ] as const
 
 const PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
