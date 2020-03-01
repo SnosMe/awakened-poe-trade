@@ -8,12 +8,26 @@ function isConstantMod (mod: UniqueItem['mods'][0]) {
   return mod.bounds.every(b => b.min === b.max)
 }
 
-function isWithinBounds (values: number[], { bounds }: UniqueItem['mods'][0]) {
-  return values.every((value, idx) => (
+// NOTE: can mutate mod values to non-negated
+function isWithinBounds (mod: ItemModifier, { bounds }: UniqueItem['mods'][0]): boolean {
+  let isWithin = mod.values!.every((value, idx) => (
     bounds[idx] !== undefined &&
     value >= bounds[idx].min &&
     value <= bounds[idx].max
   ))
+
+  if (!isWithin && mod.negatedValues) {
+    const values = mod.values!.map(v => v * -1)
+    isWithin = values.every((value, idx) => (
+      bounds[idx] !== undefined &&
+      value >= bounds[idx].min &&
+      value <= bounds[idx].max
+    ))
+    if (isWithin) {
+      mod.values = values
+    }
+  }
+  return isWithin
 }
 
 export function uniqueModFilterPartial (
@@ -41,12 +55,16 @@ export function uniqueModFilterPartial (
     mod.condition &&
     mod.condition.min === mod.condition.max &&
     !isConstantMod(modInfo) &&
-    isWithinBounds([mod.condition.min!], modInfo)
+    (
+      modInfo.bounds[0] !== undefined &&
+      mod.condition.min! >= modInfo.bounds[0].min &&
+      mod.condition.min! <= modInfo.bounds[0].max
+    )
   ) {
     mod.values = [mod.condition.min!]
   }
 
-  if (!mod.values || (isConstantMod(modInfo) && isWithinBounds(mod.values, modInfo))) {
+  if (!mod.values || (isConstantMod(modInfo) && isWithinBounds(mod, modInfo))) {
     filter.min = getRollAsSingleNumber(modInfo.bounds.map(b => b.min))
     filter.max = getRollAsSingleNumber(modInfo.bounds.map(b => b.max))
     filter.defaultMin = filter.min
@@ -56,7 +74,7 @@ export function uniqueModFilterPartial (
     }
   } else {
     // it may be catalysts or stale data after patch
-    if (!isWithinBounds(mod.values, modInfo)) return false
+    if (!isWithinBounds(mod, modInfo)) return false
 
     filter.boundMin = getRollAsSingleNumber(modInfo.bounds.map(b => b.min))
     filter.boundMax = getRollAsSingleNumber(modInfo.bounds.map(b => b.max))

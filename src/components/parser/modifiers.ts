@@ -13,6 +13,7 @@ export interface ItemModifier {
   values?: number[]
   option?: StatMatcher['option']
   condition?: StatMatcher['condition']
+  negatedValues?: true
   type: ModifierType
 }
 
@@ -88,6 +89,7 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
         values: values.length ? values : undefined,
         option: found.condition.option,
         condition: found.condition.condition,
+        negatedValues: found.condition.negate,
         type: undefined!
       }
     }
