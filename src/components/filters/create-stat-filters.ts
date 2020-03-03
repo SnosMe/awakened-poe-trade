@@ -77,7 +77,18 @@ function itemModFilterPartial (
     filter.defaultMax = filter.max
   } else if (!mod.option) {
     if (mod.values) {
-      Object.assign(filter, rollToFilter(getRollAsSingleNumber(mod.values)))
+      if (mod.type === 'enchant') {
+        if (mod.negatedValues) {
+          mod.values = mod.values.map(v => v * -1)
+          mod.negatedValues = undefined
+        }
+        filter.min = getRollAsSingleNumber(mod.values)
+        filter.max = getRollAsSingleNumber(mod.values)
+        filter.defaultMin = filter.min
+        filter.defaultMax = filter.max
+      } else {
+        Object.assign(filter, rollToFilter(getRollAsSingleNumber(mod.values)))
+      }
     }
   }
 }

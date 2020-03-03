@@ -64,9 +64,9 @@ const parsers: ParserFn[] = [
   parseInfluence,
   parseMap,
   parseSockets,
-  parseModifiers, // enchant
-  parseModifiers, // implicit
-  parseModifiers // explicit
+  parseModifiers(['enchant']),
+  parseModifiers(['implicit']),
+  parseModifiers(['explicit', 'crafted'])
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -368,66 +368,69 @@ function parseWeapon (section: string[], item: ParsedItem) {
   return isParsed
 }
 
-function parseModifiers (section: string[], item: ParsedItem) {
-  if (
-    item.rarity !== ItemRarity.Normal &&
-    item.rarity !== ItemRarity.Magic &&
-    item.rarity !== ItemRarity.Rare &&
-    item.rarity !== ItemRarity.Unique
-  ) {
-    return PARSER_SKIPPED
-  }
-
-  const countBefore = item.modifiers.length
-
-  const statIterator = sectionToStatStrings(section)
-  let stat = statIterator.next()
-  while (!stat.done) {
-    let modType: ModifierType | undefined
-    let mod: ItemModifier | undefined
-
-    // cleanup suffix
-    if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -IMPLICIT_SUFFIX.length)
-      modType = ModifierType.Implicit
-    } else if (stat.value.endsWith(CRAFTED_SUFFIX)) {
-      stat.value = stat.value.slice(0, -CRAFTED_SUFFIX.length)
-      modType = ModifierType.Crafted
+function parseModifiers (expected: string[]) {
+  return function parseModifiers (section: string[], item: ParsedItem) {
+    if (
+      item.rarity !== ItemRarity.Normal &&
+      item.rarity !== ItemRarity.Magic &&
+      item.rarity !== ItemRarity.Rare &&
+      item.rarity !== ItemRarity.Unique
+    ) {
+      return PARSER_SKIPPED
     }
 
-    mod = tryFindModifier(stat.value)
-    if (mod) {
-      // @TODO: IMPORTANT! distinguish between local and global mods
+    const countBefore = item.modifiers.length
 
-      if (modType == null) {
-        for (const type of mod.modInfo.types) {
-          if (
-            type.name !== ModifierType.Pseudo &&
-            type.name !== ModifierType.Implicit &&
-            type.name !== ModifierType.Crafted
-          ) {
-            // explicit/enchant
-            modType = type.name as ModifierType
-          }
-        }
+    const statIterator = sectionToStatStrings(section)
+    let stat = statIterator.next()
+    while (!stat.done) {
+      let modType: ModifierType | undefined
+      let mod: ItemModifier | undefined
+
+      // cleanup suffix
+      if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
+        stat.value = stat.value.slice(0, -IMPLICIT_SUFFIX.length)
+        modType = ModifierType.Implicit
+      } else if (stat.value.endsWith(CRAFTED_SUFFIX)) {
+        stat.value = stat.value.slice(0, -CRAFTED_SUFFIX.length)
+        modType = ModifierType.Crafted
       }
 
-      if (mod.modInfo.types.find(type => type.name === modType)) {
-        mod.type = modType!
-        item.modifiers.push(mod)
-        stat = statIterator.next(true)
+      mod = tryFindModifier(stat.value)
+      if (mod) {
+        // @TODO: IMPORTANT! distinguish between local and global mods
+
+        if (modType == null) {
+          for (const type of mod.modInfo.types) {
+            if (
+              type.name !== ModifierType.Pseudo &&
+              type.name !== ModifierType.Implicit &&
+              type.name !== ModifierType.Crafted &&
+              expected.includes(type.name)
+            ) {
+              // explicit/enchant
+              modType = type.name as ModifierType
+            }
+          }
+        }
+
+        if (mod.modInfo.types.find(type => type.name === modType)) {
+          mod.type = modType!
+          item.modifiers.push(mod)
+          stat = statIterator.next(true)
+        } else {
+          stat = statIterator.next(false)
+        }
       } else {
         stat = statIterator.next(false)
       }
-    } else {
-      stat = statIterator.next(false)
     }
-  }
 
-  if (countBefore < item.modifiers.length) {
-    return SECTION_PARSED
+    if (countBefore < item.modifiers.length) {
+      return SECTION_PARSED
+    }
+    return SECTION_SKIPPED
   }
-  return SECTION_SKIPPED
 }
 
 function parseFlask (section: string[], item: ParsedItem) {
