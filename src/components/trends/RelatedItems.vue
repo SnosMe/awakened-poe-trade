@@ -18,7 +18,7 @@
             <div class="text-left text-gray-600 truncate mb-1">{{ item.name }}</div>
           </div>
         </div>
-        <div class="flex-1 p-2">
+        <div class="flex-1 p-2" v-if="result.items.length">
           <div v-for="item in result.items" :key="item.detailsId">
             <div class="flex items-center flex-1">
               <div class="w-8 h-8 flex items-center justify-center">

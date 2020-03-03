@@ -174,5 +174,76 @@
       "voidforge-infernal-sword",
       "the-eternity-shroud-blood-raiment"
     ]
+  },
+  {
+    "query": [
+      "golden-oil",
+      "silver-oil",
+      "opalescent-oil",
+      "black-oil",
+      "crimson-oil",
+      "violet-oil",
+      "azure-oil",
+      "teal-oil",
+      "verdant-oil",
+      "amber-oil",
+      "sepia-oil",
+      "clear-oil"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "timeless-eternal-empire-splinter",
+      "timeless-karui-splinter",
+      "timeless-maraketh-splinter",
+      "timeless-templar-splinter",
+      "timeless-vaal-splinter"
+    ],
+    "items": [
+      "timeless-eternal-emblem",
+      "timeless-karui-emblem",
+      "timeless-maraketh-emblem",
+      "timeless-templar-emblem",
+      "timeless-vaal-emblem"
+    ]
+  },
+  {
+    "query": [
+      "timeless-eternal-emblem",
+      "timeless-karui-emblem",
+      "timeless-maraketh-emblem",
+      "timeless-templar-emblem",
+      "timeless-vaal-emblem"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "prime-chaotic-resonator",
+      "powerful-chaotic-resonator",
+      "potent-chaotic-resonator",
+      "primitive-chaotic-resonator"
+    ],
+    "items": [
+      "prime-alchemical-resonator",
+      "powerful-alchemical-resonator",
+      "potent-alchemical-resonator",
+      "primitive-alchemical-resonator"
+    ]
+  },
+  {
+    "query": [
+      "prime-alchemical-resonator",
+      "powerful-alchemical-resonator",
+      "potent-alchemical-resonator",
+      "primitive-alchemical-resonator"
+    ],
+    "items": [
+      "prime-chaotic-resonator",
+      "powerful-chaotic-resonator",
+      "potent-chaotic-resonator",
+      "primitive-chaotic-resonator"
+    ]
   }
 ]
