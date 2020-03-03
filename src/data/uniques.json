@@ -1856,13 +1856,58 @@
           "variant": true
         },
         {
+          "text": "Anger Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Clarity Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Determination Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Discipline Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Envy Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Grace Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "Grants Level # Envy Skill",
           "bounds": [{"min": 15, "max": 15}],
           "variant": true
         },
         {
+          "text": "Haste Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Hatred Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "Hits against Nearby Enemies have #% increased Critical Strike Chance",
           "bounds": [{"min": 50, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "Malevolence Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
           "variant": true
         },
         {
@@ -1876,8 +1921,44 @@
           "variant": true
         },
         {
+          "text": "Pride Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Purity of Elements Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Purity of Fire Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Purity of Ice Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Purity of Lightning Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Vitality Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Wrath Reserves no Mana",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "Zealotry Reserves no Mana",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
@@ -4363,6 +4444,11 @@
           "bounds": [{"min": 11, "max": 12}]
         },
         {
+          "text": "#% increased Fire Damage while affected by Herald of Ash",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
           "text": "#% of Fire Damage Leeched as Life",
           "implicit": true,
           "bounds": [{"min": 0.2, "max": 0.2}]
@@ -4373,7 +4459,13 @@
         },
         {
           "text": "#% to Fire Resistance while affected by Herald of Ash",
-          "bounds": [{"min": 50, "max": 60}]
+          "bounds": [{"min": 50, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% to maximum Fire Resistance while affected by Herald of Ash",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         },
         {
           "text": "Adds # to # Fire Damage",
@@ -4384,7 +4476,13 @@
         },
         {
           "text": "Herald of Ash has #% increased Buff Effect",
-          "bounds": [{"min": 70, "max": 100}]
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Herald of Ash has #% reduced Mana Reservation",
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
         }
       ]
     }
@@ -4399,6 +4497,11 @@
           "bounds": [{"min": 20, "max": 30}]
         },
         {
+          "text": "#% increased Cold Damage while affected by Herald of Ice",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
           "text": "#% increased Lightning Damage",
           "implicit": true,
           "bounds": [{"min": 13, "max": 14}]
@@ -4409,11 +4512,13 @@
         },
         {
           "text": "#% to Cold Resistance while affected by Herald of Ice",
-          "bounds": [{"min": 50, "max": 60}]
+          "bounds": [{"min": 50, "max": 60}],
+          "variant": true
         },
         {
           "text": "#% to maximum Cold Resistance while affected by Herald of Ice",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         },
         {
           "text": "Adds # to # Cold Damage",
@@ -4421,6 +4526,16 @@
             {"min": 20, "max": 25},
             {"min": 26, "max": 35}
           ]
+        },
+        {
+          "text": "Herald of Ice has #% increased Buff Effect",
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Herald of Ice has #% reduced Mana Reservation",
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
         }
       ]
     }
@@ -4439,9 +4554,19 @@
           "bounds": [{"min": 350, "max": 400}]
         },
         {
+          "text": "#% additional Physical Damage Reduction while affected by Herald of Purity",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
           "text": "#% increased Cold Damage",
           "implicit": true,
           "bounds": [{"min": 13, "max": 14}]
+        },
+        {
+          "text": "#% increased Physical Damage while affected by Herald of Purity",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
         },
         {
           "text": "Adds # to # Physical Damage",
@@ -4451,8 +4576,14 @@
           ]
         },
         {
+          "text": "Herald of Purity has #% increased Buff Effect",
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
+        },
+        {
           "text": "Herald of Purity has #% reduced Mana Reservation",
-          "bounds": [{"min": 30, "max": 40}]
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
         },
         {
           "text": "Regenerate #% of Life per second",
@@ -4461,7 +4592,8 @@
         },
         {
           "text": "Sentinels of Purity deal #% increased Damage",
-          "bounds": [{"min": 70, "max": 100}]
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
         }
       ]
     }
@@ -4481,6 +4613,11 @@
           "bounds": [{"min": 18, "max": 20}]
         },
         {
+          "text": "#% increased Chaos Damage while affected by Herald of Agony",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
           "text": "#% increased Damage",
           "implicit": true,
           "bounds": [{"min": 12, "max": 13}]
@@ -4495,6 +4632,11 @@
           "bounds": [{"min": 17, "max": 23}]
         },
         {
+          "text": "#% to Chaos Resistance while affected by Herald of Agony",
+          "bounds": [{"min": 31, "max": 43}],
+          "variant": true
+        },
+        {
           "text": "Adds # to # Chaos Damage",
           "bounds": [
             {"min": 15, "max": 20},
@@ -4503,11 +4645,18 @@
         },
         {
           "text": "Agony Crawler deals #% increased Damage",
-          "bounds": [{"min": 70, "max": 100}]
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
         },
         {
           "text": "Herald of Agony has #% increased Buff Effect",
-          "bounds": [{"min": 70, "max": 100}]
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Herald of Agony has #% reduced Mana Reservation",
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
         }
       ]
     }
@@ -4528,7 +4677,8 @@
         },
         {
           "text": "#% increased Lightning Damage while affected by Herald of Thunder",
-          "bounds": [{"min": 40, "max": 60}]
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
         },
         {
           "text": "#% of Elemental Damage Leeched as Life",
@@ -4540,6 +4690,16 @@
           "bounds": [{"min": 20, "max": 30}]
         },
         {
+          "text": "#% to Lightning Resistance while affected by Herald of Thunder",
+          "bounds": [{"min": 50, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% to maximum Lightning Resistance while affected by Herald of Thunder",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "Adds # to # Lightning Damage",
           "bounds": [
             {"min": 1, "max": 1},
@@ -4548,7 +4708,13 @@
         },
         {
           "text": "Herald of Thunder has #% increased Buff Effect",
-          "bounds": [{"min": 70, "max": 100}]
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Herald of Thunder has #% reduced Mana Reservation",
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
         }
       ]
     }
@@ -7459,7 +7625,8 @@
       "mods": [
         {
           "text": "# to Armour",
-          "bounds": [{"min": 300, "max": 350}]
+          "bounds": [{"min": 300, "max": 350}],
+          "variant": true
         },
         {
           "text": "# to Strength",
@@ -7467,24 +7634,79 @@
           "bounds": [{"min": 25, "max": 35}]
         },
         {
+          "text": "#% chance to Freeze during any Flask Effect",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Ignite during any Flask Effect",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
           "text": "#% chance to Shock during any Flask Effect",
-          "bounds": [{"min": 10, "max": 10}]
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Cold Damage",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Fire Damage",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Global Physical Damage",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
         },
         {
           "text": "#% increased Lightning Damage",
-          "bounds": [{"min": 20, "max": 30}]
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "#% of Cold Damage Leeched as Life",
+          "bounds": [{"min": 0.2, "max": 0.2}],
+          "variant": true
+        },
+        {
+          "text": "#% of Fire Damage Leeched as Life",
+          "bounds": [{"min": 0.2, "max": 0.2}],
+          "variant": true
         },
         {
           "text": "#% of Lightning Damage Leeched as Life",
-          "bounds": [{"min": 0.2, "max": 0.2}]
+          "bounds": [{"min": 0.2, "max": 0.2}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage Leeched as Life",
+          "bounds": [{"min": 0.2, "max": 0.2}],
+          "variant": true
+        },
+        {
+          "text": "#% reduced Enemy Stun Threshold during any Flask Effect",
+          "bounds": [{"min": 25, "max": 25}],
+          "variant": true
         },
         {
           "text": "#% to Cold Resistance",
-          "bounds": [{"min": 30, "max": 35}]
+          "bounds": [{"min": 30, "max": 35}],
+          "variant": true
         },
         {
           "text": "#% to Fire Resistance",
-          "bounds": [{"min": 30, "max": 35}]
+          "bounds": [{"min": 30, "max": 35}],
+          "variant": true
+        },
+        {
+          "text": "#% to Lightning Resistance",
+          "bounds": [{"min": 30, "max": 35}],
+          "variant": true
         }
       ]
     }
@@ -12149,30 +12371,126 @@
         },
         {
           "text": "# to Armour",
-          "bounds": [{"min": 400, "max": 500}]
+          "bounds": [{"min": 400, "max": 500}],
+          "variant": true
         },
         {
           "text": "# to maximum Life",
           "bounds": [{"min": 50, "max": 70}]
         },
         {
+          "text": "#% increased Damage over Time",
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Mana Regeneration Rate",
+          "bounds": [{"min": 45, "max": 50}],
+          "variant": true
+        },
+        {
           "text": "#% increased Stun and Block Recovery",
-          "bounds": [{"min": 30, "max": 40}]
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% to Chaos Resistance",
+          "bounds": [{"min": 17, "max": 23}],
+          "variant": true
+        },
+        {
+          "text": "#% to Cold Resistance",
+          "bounds": [{"min": 20, "max": 25}],
+          "variant": true
+        },
+        {
+          "text": "#% to Fire Resistance",
+          "bounds": [{"min": 20, "max": 25}],
+          "variant": true
+        },
+        {
+          "text": "#% to Lightning Resistance",
+          "bounds": [{"min": 20, "max": 25}],
+          "variant": true
+        },
+        {
+          "text": "Adds # to # Chaos Damage",
+          "bounds": [
+            {"min": 17, "max": 19},
+            {"min": 23, "max": 29}
+          ],
+          "variant": true
+        },
+        {
+          "text": "Adds # to # Cold Damage",
+          "bounds": [
+            {"min": 20, "max": 24},
+            {"min": 33, "max": 36}
+          ],
+          "variant": true
+        },
+        {
+          "text": "Adds # to # Fire Damage",
+          "bounds": [
+            {"min": 20, "max": 24},
+            {"min": 33, "max": 36}
+          ],
+          "variant": true
+        },
+        {
+          "text": "Adds # to # Lightning Damage",
+          "bounds": [
+            {"min": 10, "max": 13},
+            {"min": 43, "max": 47}
+          ],
+          "variant": true
         },
         {
           "text": "Adds # to # Physical Damage",
           "bounds": [
             {"min": 12, "max": 16},
             {"min": 20, "max": 25}
-          ]
+          ],
+          "variant": true
+        },
+        {
+          "text": "Conductivity has #% reduced Mana Reservation",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Despair has #% reduced Mana Reservation",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Flammability has #% reduced Mana Reservation",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "Frostbite has #% reduced Mana Reservation",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
         },
         {
           "text": "Gain Maddening Presence for 10 seconds when you Kill a Rare or Unique Enemy",
           "bounds": [{"min": 10, "max": 10}]
         },
         {
+          "text": "Regenerate #% of Energy Shield per second",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "Vulnerability has #% reduced Mana Reservation",
-          "bounds": [{"min": 100, "max": 100}]
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
         }
       ]
     }
@@ -15544,8 +15862,64 @@
       "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/TemplarCivilization.png?scale=1&w=1&h=1",
       "mods": [
         {
+          "text": "#% increased Area Damage per 10 Devotion",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
           "text": "#% increased Damage with Brand Skills per 10 Devotion",
-          "bounds": [{"min": 4, "max": 4}]
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Defences from Equipped Shield per 10 Devotion",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Duration of Curses on you per 10 Devotion",
+          "bounds": [{"min": -4, "max": -4}],
+          "variant": true
+        },
+        {
+          "text": "#% increased effect of Non-Curse Auras per 10 Devotion",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Effect of non-Damaging Ailments on Enemies per 10 Devotion",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Elemental Damage per 10 Devotion",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Mana Cost of Skills per 10 Devotion",
+          "bounds": [{"min": -1, "max": -1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Minion Attack and Cast Speed per 10 Devotion",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Totem Damage per 10 Devotion",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
+          "text": "#% reduced Elemental Ailment Duration on you per 10 Devotion",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
+          "text": "#% to all Elemental Resistances per 10 Devotion",
+          "bounds": [{"min": 2, "max": 2}],
+          "variant": true
         },
         {
           "text": "Carved to glorify # new faithful converted by High Templar Dominus",
@@ -15553,11 +15927,17 @@
         },
         {
           "text": "Channelling Skills deal #% increased Damage per 10 Devotion",
-          "bounds": [{"min": 4, "max": 4}]
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
         },
         {
           "text": "Historic",
           "bounds": [{"min": 1, "max": 1}]
+        },
+        {
+          "text": "Regenerate # Mana per Second per 10 Devotion",
+          "bounds": [{"min": 0.6, "max": 0.6}],
+          "variant": true
         }
       ]
     }
@@ -17529,20 +17909,213 @@
       "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/CombinedGreenBlueRing.png?scale=1&w=1&h=1",
       "mods": [
         {
+          "text": "# to # Cold Damage per Frenzy Charge",
+          "bounds": [
+            {"min": 6, "max": 8},
+            {"min": 12, "max": 13}
+          ],
+          "variant": true
+        },
+        {
+          "text": "# to # Fire Damage per Endurance Charge",
+          "bounds": [
+            {"min": 7, "max": 9},
+            {"min": 13, "max": 14}
+          ],
+          "variant": true
+        },
+        {
+          "text": "# to # Lightning Damage per Power Charge",
+          "bounds": [
+            {"min": 1, "max": 2},
+            {"min": 18, "max": 20}
+          ],
+          "variant": true
+        },
+        {
           "text": "# to Dexterity and Intelligence",
-          "bounds": [{"min": 20, "max": 20}]
+          "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "# to Maximum Frenzy Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "# to Maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "# to Strength and Dexterity",
+          "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "# to Strength and Intelligence",
+          "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance that if you would gain Endurance Charges, you instead gain up to your maximum number of Endurance Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
         },
         {
           "text": "#% chance that if you would gain Frenzy Charges, you instead gain up to your maximum number of Frenzy Charges",
-          "bounds": [{"min": 15, "max": 15}]
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% chance that if you would gain Power Charges, you instead gain up to\nyour maximum number of Power Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         },
         {
           "text": "#% Chance to Block Attack Damage per Power Charge",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Flask Charge when you deal a Critical Strike while at maximum Frenzy Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Frenzy Charge on Hit",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Frenzy Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Power Charge on Critical Strike",
+          "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Power Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain an Endurance Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Gain Arcane Surge on Hit with Spells while at maximum Power Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Gain Onslaught for 4 seconds on Hit while at maximum Frenzy Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Intimidate Enemies for 4 seconds on Hit with Attacks while at maximum Endurance Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Accuracy Rating per Frenzy Charge",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Armour per Endurance Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack and Cast Speed per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack and Cast Speed per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance per Endurance Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance per Frenzy Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Endurance Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Frenzy Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Power Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Endurance Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
         },
         {
           "text": "#% increased Energy Shield per Power Charge",
-          "bounds": [{"min": 3, "max": 3}]
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Evasion Rating per Frenzy Charge",
+          "bounds": [{"min": 8, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Frenzy Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
         },
         {
           "text": "#% increased maximum Energy Shield",
@@ -17553,9 +18126,99 @@
           "bounds": [{"min": 5, "max": 5}]
         },
         {
+          "text": "#% increased Movement Speed per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Movement Speed per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Movement Speed per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Power Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% to Chaos Resistance per Endurance Charge",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
           "text": "#% to Cold and Lightning Resistances",
           "implicit": true,
           "bounds": [{"min": 12, "max": 16}]
+        },
+        {
+          "text": "#% to Critical Strike Multiplier per Power Charge",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Cold Damage as Extra Chaos Damage per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Fire Damage as Extra Chaos Damage per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Lightning Damage as Extra Chaos Damage per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain an Endurance Charge every second if you've been Hit Recently",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Endurance Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Frenzy Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Power Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "You can apply an additional Curse while at maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You cannot be Stunned while at maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You have Iron Reflexes while at maximum Frenzy Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You have Mind over Matter while at maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You have Vaal Pact while at maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
@@ -20834,10 +21497,6 @@
         {
           "text": "#% increased Global Defences",
           "bounds": [{"min": 100, "max": 100}]
-        },
-        {
-          "text": "Crimson Dance",
-          "bounds": [{"min": 1, "max": 1}]
         },
         {
           "text": "Sockets cannot be modified",
@@ -28914,6 +29573,146 @@
       "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/ElderJewel.png?scale=1&w=1&h=1",
       "mods": [
         {
+          "text": "# Energy Shield gained for each Enemy Hit while affected by Discipline",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "# Life gained for each Enemy Hit while affected by Vitality",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "# to Armour while affected by Determination",
+          "bounds": [{"min": 600, "max": 1000}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction while affected by Determination",
+          "bounds": [{"min": 5, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Blind Enemies which Hit you while affected by Grace",
+          "bounds": [{"min": 30, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage while affected by Determination",
+          "bounds": [{"min": 5, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Spell Damage while affected by Discipline",
+          "bounds": [{"min": 5, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to deal Double Damage while using Pride",
+          "bounds": [{"min": 8, "max": 12}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits while affected by Grace",
+          "bounds": [{"min": 6, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Spell Hits while affected by Haste",
+          "bounds": [{"min": 5, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Evade Attacks while affected by Grace",
+          "bounds": [{"min": 5, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Impale Enemies on Hit with Attacks while using Pride",
+          "bounds": [{"min": 25, "max": 25}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Recover 10% of Mana when you use a Skill while affected by Clarity",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% faster start of Energy Shield Recharge while affected by Discipline",
+          "bounds": [{"min": 30, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack Damage while affected by Precision",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack Physical Damage while using Pride",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack Speed while affected by Precision",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Cast Speed while affected by Zealotry",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Cold Damage while affected by Hatred",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% increased cooldown recovery speed of Movement Skills used while affected by Haste",
+          "bounds": [{"min": 30, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance against Enemies on Consecrated Ground while affected by Zealotry",
+          "bounds": [{"min": 100, "max": 120}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance while affected by Wrath",
+          "bounds": [{"min": 70, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Energy Shield Recovery Rate while affected by Discipline",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Fire Damage while affected by Anger",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Life Recovery from Flasks while affected by Vitality",
+          "bounds": [{"min": 50, "max": 70}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Life Recovery Rate while affected by Vitality",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Lightning Damage while affected by Wrath",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Mana Recovery Rate while affected by Clarity",
+          "bounds": [{"min": 20, "max": 30}],
+          "variant": true
+        },
+        {
           "text": "#% increased maximum Energy Shield",
           "bounds": [{"min": 4, "max": 6}]
         },
@@ -28926,12 +29725,317 @@
           "bounds": [{"min": 4, "max": 6}]
         },
         {
+          "text": "#% increased Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry",
+          "bounds": [{"min": 30, "max": 30}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Movement Speed while affected by Grace",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Recovery rate of Life and Energy Shield while affected by Malevolence",
+          "bounds": [{"min": 15, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "#% of Damage leeched as Life while affected by Vitality",
+          "bounds": [{"min": 1, "max": 1.5}],
+          "variant": true
+        },
+        {
+          "text": "#% of Damage taken from Mana before Life while affected by Clarity",
+          "bounds": [{"min": 6, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% of Damage taken gained as Mana over 4 seconds when Hit while affected by Clarity",
+          "bounds": [{"min": 15, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "#% of Fire Damage Leeched as Life while affected by Anger",
+          "bounds": [{"min": 1, "max": 1.5}],
+          "variant": true
+        },
+        {
+          "text": "#% of Lightning Damage is Leeched as Energy Shield while affected by Wrath",
+          "bounds": [{"min": 1, "max": 1.5}],
+          "variant": true
+        },
+        {
           "text": "#% of Physical Damage Converted to Cold Damage while affected by Hatred",
-          "bounds": [{"min": 25, "max": 40}]
+          "bounds": [{"min": 25, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage Converted to Fire Damage while affected by Anger",
+          "bounds": [{"min": 25, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage Converted to Lightning Damage while affected by Wrath",
+          "bounds": [{"min": 25, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage from Hits taken as Cold Damage while affected by Purity of Elements",
+          "bounds": [{"min": 8, "max": 12}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage from Hits taken as Cold Damage while affected by Purity of Ice",
+          "bounds": [{"min": 6, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage from Hits taken as Fire Damage while affected by Purity of Elements",
+          "bounds": [{"min": 8, "max": 12}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage from Hits taken as Fire Damage while affected by Purity of Fire",
+          "bounds": [{"min": 6, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage from Hits taken as Lightning Damage while affected by Purity of Elements",
+          "bounds": [{"min": 8, "max": 12}],
+          "variant": true
+        },
+        {
+          "text": "#% of Physical Damage from Hits taken as Lightning Damage while affected by Purity of Lightning",
+          "bounds": [{"min": 6, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% reduced Reflected Elemental Damage taken while affected by Purity of Elements",
+          "bounds": [{"min": 40, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% reduced Reflected Physical Damage taken while affected by Determination",
+          "bounds": [{"min": 40, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% to Chaos Resistance while affected by Purity of Elements",
+          "bounds": [{"min": 30, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% to Critical Strike Chance while affected by Hatred",
+          "bounds": [{"min": 1.2, "max": 1.8}],
+          "variant": true
+        },
+        {
+          "text": "#% to Critical Strike Multiplier while affected by Anger",
+          "bounds": [{"min": 30, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% to Critical Strike Multiplier while affected by Precision",
+          "bounds": [{"min": 30, "max": 50}],
+          "variant": true
+        },
+        {
+          "text": "#% to Damage over Time Multiplier while affected by Malevolence",
+          "bounds": [{"min": 18, "max": 22}],
+          "variant": true
+        },
+        {
+          "text": "Adds # to # Cold Damage while affected by Hatred",
+          "bounds": [
+            {"min": 58, "max": 70},
+            {"min": 88, "max": 104}
+          ],
+          "variant": true
+        },
+        {
+          "text": "Cannot be Blinded while affected by Precision",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Consecrated Ground you create while affected by Zealotry causes enemies to take #% increased Damage",
+          "bounds": [{"min": 8, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "Critical Strikes Penetrate #% of Enemy Elemental Resistances while affected by Zealotry",
+          "bounds": [{"min": 8, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "Damage Penetrates #% Cold Resistance while affected by Hatred",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "Damage Penetrates #% Fire Resistance while affected by Anger ",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
         },
         {
           "text": "Damage Penetrates #% Lightning Resistance while affected by Wrath",
-          "bounds": [{"min": 10, "max": 15}]
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "Damaging Ailments you inflict deal Damage #% faster while affected by Malevolence",
+          "bounds": [{"min": 10, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "Debuffs on you expire #% faster while affected by Haste",
+          "bounds": [{"min": 15, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "Effects of Consecrated Ground you create while affected by Zealotry Linger for # seconds",
+          "bounds": [{"min": 2, "max": 2}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Maximum Mana as Extra Maximum Energy Shield while affected by Clarity",
+          "bounds": [{"min": 12, "max": 18}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Physical Damage as Extra Fire Damage while affected by Anger",
+          "bounds": [{"min": 15, "max": 25}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Physical Damage as Extra Lightning Damage while affected by Wrath",
+          "bounds": [{"min": 15, "max": 25}],
+          "variant": true
+        },
+        {
+          "text": "Gain a Flask Charge when you deal a Critical Strike while affected by Precision",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain Arcane Surge for 4 seconds when you create Consecrated Ground while affected by Zealotry",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Immune to Freeze while affected by Purity of Ice",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Immune to Ignite while affected by Purity of Fire",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Immune to Shock while affected by Purity of Lightning",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Impales you inflict last # additional Hits while using Pride",
+          "bounds": [{"min": 2, "max": 2}],
+          "variant": true
+        },
+        {
+          "text": "Non-Channelling Skills have # to Total Mana Cost while affected by Clarity",
+          "bounds": [{"min": -10, "max": -5}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate # Life per Second while affected by Vitality",
+          "bounds": [{"min": 100, "max": 140}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Energy Shield per Second while affected by Discipline",
+          "bounds": [{"min": 1.5, "max": 2.5}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Bleeding while affected by Malevolence",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Burning Ground while affected by Purity of Fire",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Chilled Ground while affected by Purity of Ice",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Conductivity while affected by Purity of Lightning",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Elemental Weakness while affected by Purity of Elements",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Enfeeble while affected by Grace",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Flammability while affected by Purity of Fire",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Frostbite while affected by Purity of Ice",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Poison while affected by Malevolence",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Shocked Ground while affected by Purity of Lightning",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Temporal Chains while affected by Haste",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Unaffected by Vulnerability while affected by Determination",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You gain Onslaught for # seconds on Kill while affected by Haste",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
+          "text": "You have Phasing while affected by Haste",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You take #% reduced Extra Damage from Critical Strikes while affected by Determination",
+          "bounds": [{"min": 40, "max": 60}],
+          "variant": true
+        },
+        {
+          "text": "Your Hits Intimidate Enemies for 4 seconds while you are using Pride",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
