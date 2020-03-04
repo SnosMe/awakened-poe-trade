@@ -12,12 +12,12 @@
         </div>
       </button>
       <div class="flex">
-        <input class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
+        <input-debounced class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
           v-if="showMinmaxInput"
-          v-model.number="filter.min" @focus="inputFocus($event, 'min')">
-        <input class="search-num-input rounded-tr" placeholder="max" type="number" :class="{ 'rounded-br': filter.roll == null }"
+          v-model.number="filter.min" @focus="inputFocus($event, 'min')" />
+        <input-debounced class="search-num-input rounded-tr" placeholder="max" type="number" :class="{ 'rounded-br': filter.roll == null }"
           v-if="showMinmaxInput"
-          v-model.number="filter.max" @focus="inputFocus($event, 'max')">
+          v-model.number="filter.max" @focus="inputFocus($event, 'max')" />
         <div v-if="filter.option"
           class="search-option">{{ filter.option.text }}</div>
       </div>
@@ -77,6 +77,8 @@
 </template>
 
 <script>
+import InputDebounced from '../InputDebounced'
+
 export default {
   props: {
     filter: {
@@ -84,6 +86,7 @@ export default {
       required: true
     }
   },
+  components: { InputDebounced },
   computed: {
     showMinmaxInput () {
       if (
