@@ -398,8 +398,6 @@ function parseModifiers (expected: string[]) {
 
       mod = tryFindModifier(stat.value)
       if (mod) {
-        // @TODO: IMPORTANT! distinguish between local and global mods
-
         if (modType == null) {
           for (const type of mod.modInfo.types) {
             if (
@@ -414,7 +412,10 @@ function parseModifiers (expected: string[]) {
           }
         }
 
-        if (mod.modInfo.types.find(type => type.name === modType)) {
+        if (
+          expected.includes(modType!) &&
+          mod.modInfo.types.find(type => type.name === modType)
+        ) {
           mod.type = modType!
           item.modifiers.push(mod)
           stat = statIterator.next(true)
