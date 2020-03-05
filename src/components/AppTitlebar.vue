@@ -24,9 +24,9 @@
         </div>
       </ui-popper>
     </div>
-    <div class="text-gray-600 truncate leading-none px-4">Awakened PoE Trade</div>
+    <div class="text-gray-600 truncate leading-none px-4">{{ title }}</div>
     <div class="flex">
-      <button @click="hideWindow" tabindex="-1"
+      <button @click="$emit('close')" tabindex="-1"
         class="titlebar-btn app-close pt-px" title="Close"><i class="fas fa-window-close"></i></button>
     </div>
   </div>
@@ -40,17 +40,18 @@ import { Prices, displayRounding } from './Prices'
 export default {
   name: 'AppTitlebar',
   filters: { displayRounding },
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   computed: {
     isLoading: () => Leagues.isLoading || Prices.isLoading,
     exaltedCost () {
       if (!Prices.isLoaded) return null
 
       return Math.round(Prices.exaToChaos(1))
-    }
-  },
-  methods: {
-    hideWindow () {
-      MainProcess.priceCheckHide()
     }
   }
 }

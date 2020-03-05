@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol } from 'electron'
+import { app, protocol, ipcMain } from 'electron'
 import { installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 import ioHook from 'iohook'
 import { setupShortcuts } from './main/shortcuts'
@@ -8,7 +8,10 @@ import { setupWindowManager } from './main/window-manager'
 import { createTray } from './main/tray'
 import { createWindow } from './main/window'
 import { setupShowHide } from './main/positioning'
-import { setupConfig } from './main/config'
+import { setupConfig, batchUpdateConfig } from './main/config'
+import { CLOSE_SETTINGS_WINDOW } from './shared/ipc-event'
+import { closeWindow as closeSettings } from './main/SettingsWindow'
+import { PoeWindow } from './main/PoeWindow'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Scheme must be registered before the app is ready
@@ -30,11 +33,19 @@ app.on('ready', async () => {
   }
 
   await setupWindowManager()
+  PoeWindow.startPolling()
   setupConfig()
   setupShowHide()
   createWindow()
   createTray()
   setupShortcuts()
+
+  ipcMain.on(CLOSE_SETTINGS_WINDOW, closeSettings)
+  ipcMain.on(CLOSE_SETTINGS_WINDOW, (e, cfg) => {
+    if (cfg != null) {
+      batchUpdateConfig(cfg)
+    }
+  })
 })
 
 // Exit cleanly on request from parent process in development mode.

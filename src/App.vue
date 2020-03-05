@@ -1,35 +1,8 @@
 <template>
   <div id="app" class="text-sm font-fontin-small-caps bg-gray-800">
-    <div v-if="browserMode"
-      class="w-full layout-column" style="width: calc(100% - 460px);">
-      <BrowserMode />
-    </div>
-    <div class="flex-grow layout-column">
-      <app-titlebar style="align-self: stretch;" />
-      <div class="flex-grow layout-column">
-        <router-view/>
-      </div>
-    </div>
+    <router-view />
   </div>
 </template>
-
-<script>
-import AppTitlebar from './components/AppTitlebar'
-import BrowserMode from './components/BrowserMode'
-import { MainProcess } from './components/main-process-bindings'
-
-export default {
-  components: {
-    AppTitlebar,
-    BrowserMode
-  },
-  computed: {
-    browserMode () {
-      return !MainProcess.isElectron
-    }
-  }
-}
-</script>
 
 <style lang="postcss">
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
@@ -45,6 +18,7 @@ export default {
 #app {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   /* align-items: center; */
   overflow: hidden;
   justify-content: space-between;

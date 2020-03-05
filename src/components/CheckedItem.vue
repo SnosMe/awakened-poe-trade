@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-800 text-gray-200 layout-column" v-if="item">
-    <div class="p-4 border-b border-gray-700 layout-column">
+    <div class="p-4 layout-column">
       <filter-name
         :filters="itemFilters"
         :item="item" />
@@ -57,9 +57,8 @@ export default {
     })
 
     document.addEventListener('mouseenter', (e) => {
-      if (e.ctrlKey) {
-        MainProcess.lockWindow()
-      }
+      const key = e.ctrlKey ? 'Ctrl' : e.shiftKey ? 'Shift' : undefined
+      MainProcess.priceCheckMouse('enter', key)
     })
     document.addEventListener('click', () => { MainProcess.priceCheckMouse('click') })
     document.addEventListener('mouseleave', () => { MainProcess.priceCheckMouse('leave') })

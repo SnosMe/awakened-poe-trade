@@ -1,10 +1,11 @@
 import path from 'path'
-import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions } from 'electron'
+import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions, shell } from 'electron'
 import { checkForUpdates } from './updates'
 import { config } from './config'
 import { win } from './window'
 import { League } from '@/shared/types'
 import { LEAGUES_READY, LEAGUE_SELECTED } from '@/shared/ipc-event'
+import { createWindow as settingsWindow } from './SettingsWindow'
 
 let tray: Tray
 
@@ -53,11 +54,25 @@ function rebuildContextMenu () {
   const contextMenu = Menu.buildFromTemplate([
     ...leaguesMenuItem(),
     {
+      label: 'Settings',
+      click: () => {
+        settingsWindow()
+      }
+    },
+    { type: 'separator' },
+    {
       label: 'Check for updates',
       click: () => {
         checkForUpdates()
       }
     },
+    {
+      label: 'Open data folder',
+      click: () => {
+        shell.openItem(path.join(app.getPath('userData'), 'apt-data'))
+      }
+    },
+    { type: 'separator' },
     {
       label: 'Quit',
       click: () => {

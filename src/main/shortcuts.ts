@@ -3,18 +3,43 @@ import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
-import { windowManager } from './window-manager'
 import { showWindow, lockWindow, poeUserInterfaceWidth } from './positioning'
-
-// const KEY_CTRL = 29
-// const KEY_ALT = 56
-const KEY_D = 32
-const KEY_F5 = 63
-const POE_TITLE = 'Path of Exile'
+import { KeyCodeToName } from '@/components/settings/KeyToCode'
+import { config } from './config'
+import { PoeWindow } from './PoeWindow'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
-export let poeWindowId: number | null = null
+
+function priceCheck (lockedMode: boolean) {
+  if (!isPollingClipboard) {
+    isPollingClipboard = true
+    pollClipboard(32, 1000)
+      .then(async (clipboard) => {
+        win.webContents.send('price-check', clipboard)
+        await showWindow()
+        if (lockedMode) {
+          lockWindow(true)
+        }
+      })
+      .catch(() => { /* nothing bad */ })
+      .finally(() => { isPollingClipboard = false })
+  }
+  checkPressPosition = screen.getCursorScreenPoint()
+
+  if (!lockedMode) {
+    if (config.get('priceCheckKeyHold') === 'Ctrl') {
+      robotjs.keyTap('key_c')
+    } else {
+      robotjs.keyTap('key_c', ['control'])
+    }
+  } else {
+    if (config.get('priceCheckLocked').includes('Alt')) {
+      robotjs.keyToggle('alt', 'up')
+    }
+    robotjs.keyTap('key_c', ['control'])
+  }
+}
 
 export function setupShortcuts () {
   // A value of zero causes the thread to relinquish the remainder of its
@@ -22,60 +47,34 @@ export function setupShortcuts () {
   // threads ready to run, the function returns immediately
   robotjs.setKeyboardDelay(0)
 
-  ioHook.on('keydown', async (e: { keycode: number, ctrlKey: boolean, altKey: boolean }) => {
-    if (e.keycode !== KEY_D || !e.ctrlKey || e.altKey) return
-
-    if (!isPollingClipboard) {
-      isPollingClipboard = true
-      pollClipboard(32, 1000)
-        .then(async (clipboard) => {
-          win.webContents.send('price-check', clipboard)
-          poeWindowId = await windowManager.getActiveWindowId()
-          await showWindow()
-        })
-        .catch(() => { /* nothing bad */ })
-        .finally(() => { isPollingClipboard = false })
+  ioHook.on('keydown', async (e: any) => {
+    if (!PoeWindow.isActive) {
+      return
     }
-    checkPressPosition = screen.getCursorScreenPoint()
 
-    // NOTE:
-    // keyTap('key_c', -->> ['control'] <<--) must be never used
-    // - this callback called on "keypress" not "keyup"
-    // - ability to price multiple items with holded Ctrl, while variant above will change Ctrl key state to "up"
-    robotjs.keyTap('key_c')
-  })
+    const pressed = eventToString(e)
+    // console.log(pressed)
 
-  ioHook.on('keydown', async (e: { keycode: number, ctrlKey: boolean, altKey: boolean }) => {
-    if (e.keycode !== KEY_D || !e.ctrlKey || !e.altKey) return
-
-    if (!isPollingClipboard) {
-      isPollingClipboard = true
-      pollClipboard(32, 1000)
-        .then(async (clipboard) => {
-          win.webContents.send('price-check', clipboard)
-          poeWindowId = await windowManager.getActiveWindowId()
-          await showWindow()
-          lockWindow(true)
-        })
-        .catch(() => { /* nothing bad */ })
-        .finally(() => { isPollingClipboard = false })
+    if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
+      priceCheck(false)
+    } else if (pressed === config.get('priceCheckLocked')) {
+      priceCheck(true)
+    } else {
+      const command = config.get('commands').find(c => c.hotkey === pressed)
+      if (command) {
+        typeChatCommand(command.text)
+      }
     }
-    checkPressPosition = screen.getCursorScreenPoint()
-
-    robotjs.keyToggle('alt', 'up')
-    robotjs.keyTap('key_c')
   })
 
   let naiveInventoryCheckX: number | undefined
   ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, rotation: 1 | -1 }) => {
     if (!e.ctrlKey) return
     if (naiveInventoryCheckX === undefined) {
-      if (await windowManager.getActiveWindowTitle() !== POE_TITLE) {
+      if (!PoeWindow.bounds) {
         return
       } else {
-        // NOTE: will not be updated if window moved
-        const poePos = await windowManager.getActiveWindowContentBounds()
-        naiveInventoryCheckX = poePos!.x + poeUserInterfaceWidth(poePos!.height)
+        naiveInventoryCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
       }
     }
 
@@ -86,13 +85,6 @@ export function setupShortcuts () {
       } else if (e.rotation < 0) {
         robotjs.keyTap('left')
       }
-    }
-  })
-
-  ioHook.registerShortcut([KEY_F5], () => { /* ignore keydown */ }, async () => {
-    const title = await windowManager.getActiveWindowTitle()
-    if (title === POE_TITLE) {
-      typeChatCommand('/hideout')
     }
   })
 
@@ -116,4 +108,20 @@ function typeChatCommand (command: string) {
   setTimeout(() => {
     clipboard.writeText(saved)
   }, 100)
+}
+
+function eventToString (e: { rawcode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
+  let { ctrlKey, shiftKey, altKey } = e
+
+  let code = KeyCodeToName[e.rawcode]
+  if (!code) return 'unknown'
+
+  if (shiftKey && altKey) code = `Shift + Alt + ${code}`
+  else if (ctrlKey && shiftKey) code = `Ctrl + Shift + ${code}`
+  else if (ctrlKey && altKey) code = `Ctrl + Alt + ${code}`
+  else if (altKey) code = `Alt + ${code}`
+  else if (ctrlKey) code = `Ctrl + ${code}`
+  else if (shiftKey) code = `Shift + ${code}`
+
+  return code
 }

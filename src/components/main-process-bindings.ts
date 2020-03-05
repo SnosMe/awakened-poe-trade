@@ -1,6 +1,6 @@
 import { RendererInterface } from 'electron'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, LOCK_WINDOW, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK } from '@/shared/ipc-event'
-import { Config, League } from '@/shared/types'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK, CLOSE_SETTINGS_WINDOW } from '@/shared/ipc-event'
+import { Config, League, defaultConfig } from '@/shared/types'
 
 let electron: RendererInterface | undefined
 try {
@@ -40,19 +40,13 @@ class MainProcessBinding extends EventTarget {
     if (electron) {
       return electron.ipcRenderer.sendSync(GET_CONFIG)
     } else {
-      return {}
+      return defaultConfig
     }
   }
 
-  lockWindow () {
+  priceCheckMouse (string: string, modifier?: string) {
     if (electron) {
-      electron.ipcRenderer.send(LOCK_WINDOW)
-    }
-  }
-
-  priceCheckMouse (string: string) {
-    if (electron) {
-      electron.ipcRenderer.send(PRICE_CHECK_MOUSE, string)
+      electron.ipcRenderer.send(PRICE_CHECK_MOUSE, string, modifier)
     }
   }
 
@@ -73,6 +67,12 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.send(OPEN_LINK, url)
     } else {
       window.open(url)
+    }
+  }
+
+  closeSettingsWindow (config?: Config) {
+    if (electron) {
+      electron.ipcRenderer.send(CLOSE_SETTINGS_WINDOW, config)
     }
   }
 

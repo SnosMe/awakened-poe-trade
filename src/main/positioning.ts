@@ -1,9 +1,11 @@
 import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView } from 'electron'
 import ioHook from 'iohook'
 import { win } from './window'
-import { checkPressPosition, isPollingClipboard, poeWindowId } from './shortcuts'
+import { checkPressPosition, isPollingClipboard } from './shortcuts'
+import { PoeWindow } from './PoeWindow'
 import { windowManager } from './window-manager'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, LOCK_WINDOW, OPEN_LINK } from '../shared/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK } from '../shared/ipc-event'
+import { config } from './config'
 
 const CLOSE_THRESHOLD_PX = 40
 
@@ -15,7 +17,10 @@ let lastPoePos: Rectangle
 let browserViewExternal: BrowserView | undefined
 
 export async function showWindow () {
-  await positionWindow(win)
+  positionWindow(win)
+  if (isWindowShown && isWindowLocked) {
+    hideWindow()
+  }
   isWindowShown = true
   win.showInactive()
   if (process.platform === 'linux') {
@@ -27,10 +32,15 @@ function hideWindow () {
   isWindowShown = false
   win.hide()
 
-  if (poeWindowId && isWindowLocked) {
+  if (isWindowLocked) {
     isWindowLocked = false
+    PoeWindow.isActive = true
+    if (config.get('altTabToGame')) {
+      win.setSkipTaskbar(true)
+      win.setAlwaysOnTop(true)
+    }
     if (process.platform === 'win32') {
-      windowManager.focusWindowById(poeWindowId)
+      windowManager.focusWindowById(PoeWindow.pid!)
     }
     if (browserViewExternal) {
       win.removeBrowserView(browserViewExternal)
@@ -44,21 +54,29 @@ function hideWindow () {
 
 export function lockWindow (syntheticClick = false) {
   isWindowLocked = true
+  PoeWindow.isActive = false
   isClickedAfterLock = syntheticClick
   win.focus()
+  if (config.get('altTabToGame')) {
+    win.setSkipTaskbar(false)
+    win.setAlwaysOnTop(false)
+  }
 }
 
 export function setupShowHide () {
   ipcMain.on(PRICE_CHECK_HIDE, () => { hideWindow() })
-  ipcMain.on(LOCK_WINDOW, () => { lockWindow() })
 
-  ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string) => {
+  ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string, modifier?: string) => {
     if (name === 'click') {
       isClickedAfterLock = true
       isWindowLocked = true
     } else if (name === 'leave') {
       if (!isClickedAfterLock) {
         hideWindow()
+      }
+    } else if (name === 'enter') {
+      if (modifier === config.get('priceCheckKeyHold')) {
+        lockWindow()
       }
     }
   })
@@ -79,8 +97,9 @@ export function setupShowHide () {
     browserViewExternal.webContents.loadURL(link)
   })
 
-  ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: true }) => {
-    if (!isPollingClipboard && checkPressPosition && isWindowShown && !e.ctrlKey && !isWindowLocked) {
+  ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: boolean, shiftKey?: boolean }) => {
+    const modifier = e.ctrlKey ? 'Ctrl' : e.shiftKey ? 'Shift' : undefined
+    if (!isPollingClipboard && checkPressPosition && isWindowShown && !isWindowLocked && modifier !== config.get('priceCheckKeyHold')) {
       let distance: number
       if (process.platform === 'linux' /* @TODO: && displays.length > 1 */) {
         // ioHook returns mouse position that is not compatible with electron's position
@@ -99,8 +118,8 @@ export function setupShowHide () {
   })
 }
 
-async function positionWindow (tradeWindow: BrowserWindow) {
-  const poePos = (await windowManager.getActiveWindowContentBounds())!
+function positionWindow (tradeWindow: BrowserWindow) {
+  const poePos = PoeWindow.bounds!
   lastPoePos = poePos
 
   tradeWindow.setBounds({
