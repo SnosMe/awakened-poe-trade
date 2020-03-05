@@ -1,0 +1,24 @@
+@font-face{
+  font-family:'FontinSmallCaps';
+  font-weight:normal;
+  font-style:normal;
+  src:local("☺"),url('./font/fontin-smallcaps-webfont.woff') format("woff")
+}
+@font-face{
+  font-family:'FontinRegular';
+  font-weight:normal;
+  font-style:normal;
+  src:local("☺"),url('./font/fontin-regular-webfont.woff') format("woff")
+}
+@font-face{
+  font-family:'FontinItalic';
+  font-weight:normal;
+  font-style:normal;
+  src:local("☺"),url('./font/fontin-italic-webfont.woff') format("woff")
+}
+@font-face{
+  font-family:'FontinBold';
+  font-weight:normal;
+  font-style:normal;
+  src:local("☺"),url('./font/fontin-bold-webfont.woff') format("woff")
+}
