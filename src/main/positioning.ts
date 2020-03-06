@@ -6,6 +6,7 @@ import { PoeWindow } from './PoeWindow'
 import { windowManager } from './window-manager'
 import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK } from '../shared/ipc-event'
 import { config } from './config'
+import { leagues } from './tray'
 
 const CLOSE_THRESHOLD_PX = 40
 
@@ -71,7 +72,7 @@ export function setupShowHide () {
       isClickedAfterLock = true
       isWindowLocked = true
     } else if (name === 'leave') {
-      if (!isClickedAfterLock) {
+      if (!isClickedAfterLock && leagues.length) {
         hideWindow()
       }
     } else if (name === 'enter') {

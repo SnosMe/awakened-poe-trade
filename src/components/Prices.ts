@@ -66,62 +66,65 @@ export interface ItemInfo {
   detailsId: string
 }
 
-const PRICE_DATA = [
-  { overview: 'currency', type: 'Currency' },
-  { overview: 'currency', type: 'Fragment' },
-  { overview: 'item', type: 'Watchstone' },
-  { overview: 'item', type: 'Oil' },
-  { overview: 'item', type: 'Incubator' },
-  { overview: 'item', type: 'Scarab' },
-  { overview: 'item', type: 'Fossil' },
-  { overview: 'item', type: 'Resonator' },
-  { overview: 'item', type: 'Essence' },
-  { overview: 'item', type: 'DivinationCard' },
-  { overview: 'item', type: 'Prophecy' },
-  { overview: 'item', type: 'SkillGem' },
-  { overview: 'item', type: 'BaseType' },
-  { overview: 'item', type: 'HelmetEnchant' },
-  { overview: 'item', type: 'UniqueMap' },
-  { overview: 'item', type: 'Map' },
-  { overview: 'item', type: 'UniqueJewel' },
-  { overview: 'item', type: 'UniqueFlask' },
-  { overview: 'item', type: 'UniqueWeapon' },
-  { overview: 'item', type: 'UniqueArmour' },
-  { overview: 'item', type: 'UniqueAccessory' },
-  { overview: 'item', type: 'Beast' },
-  { overview: 'item', type: 'Vial' }
-] as const
-
 const PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
+
+const RETRY_TIME = 60 * 1000
+const UPDATE_TIME = 10 * 60 * 1000
 
 class PriceService {
   private state = Vue.observable({
     isLoading: false,
-    isLoaded: false,
-    loadingError: undefined as string | undefined,
-    leagues: [] as string[],
-    selected: '',
-    chaosExaRate: 1
+    chaosExaRate: undefined as number | undefined,
+    priceData: [
+      { overview: 'currency', type: 'Currency', loaded: 0 },
+      { overview: 'currency', type: 'Fragment', loaded: 0 },
+      { overview: 'item', type: 'Watchstone', loaded: 0 },
+      { overview: 'item', type: 'Oil', loaded: 0 },
+      { overview: 'item', type: 'Incubator', loaded: 0 },
+      { overview: 'item', type: 'Scarab', loaded: 0 },
+      { overview: 'item', type: 'Fossil', loaded: 0 },
+      { overview: 'item', type: 'Resonator', loaded: 0 },
+      { overview: 'item', type: 'Essence', loaded: 0 },
+      { overview: 'item', type: 'DivinationCard', loaded: 0 },
+      { overview: 'item', type: 'Prophecy', loaded: 0 },
+      { overview: 'item', type: 'SkillGem', loaded: 0 },
+      { overview: 'item', type: 'BaseType', loaded: 0 },
+      // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
+      { overview: 'item', type: 'UniqueMap', loaded: 0 },
+      { overview: 'item', type: 'Map', loaded: 0 },
+      { overview: 'item', type: 'UniqueJewel', loaded: 0 },
+      { overview: 'item', type: 'UniqueFlask', loaded: 0 },
+      { overview: 'item', type: 'UniqueWeapon', loaded: 0 },
+      { overview: 'item', type: 'UniqueArmour', loaded: 0 },
+      { overview: 'item', type: 'UniqueAccessory', loaded: 0 },
+      { overview: 'item', type: 'Beast', loaded: 0 },
+      { overview: 'item', type: 'Vial', loaded: 0 }
+    ]
   })
 
   get isLoading () { return this.state.isLoading }
 
-  get isLoaded () { return this.state.isLoaded }
+  get isLoaded () { return this.state.chaosExaRate != null }
 
-  get loadingError () { return this.state.loadingError }
-
-  get selected () {
-    return (this.state.isLoaded)
-      ? this.state.selected
-      : null
+  constructor () {
+    setInterval(() => {
+      this.load()
+    }, RETRY_TIME)
   }
 
-  async load () {
+  async load (force: boolean = false) {
+    if (this.state.isLoading && !force) return
+
     this.state.isLoading = true
 
-    for (const dataType of PRICE_DATA) {
+    const leagueAtStartOfLoad = Leagues.selected
+
+    for (const dataType of this.state.priceData) {
+      if (!force && (Date.now() - dataType.loaded) < UPDATE_TIME) continue
+
       try {
         const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/${dataType.overview}overview?league=${Leagues.selected}&type=${dataType.type}`)
+        if (leagueAtStartOfLoad !== Leagues.selected) return
 
         if (dataType.overview === 'currency') {
           const priceData: {
@@ -129,8 +132,6 @@ class PriceService {
             currencyDetails: Array<{
               id: number
               icon: string
-              name: string
-              poeTradeId: number
             }>
           } = await response.json()
 
@@ -145,6 +146,10 @@ class PriceService {
                 totalChange: currency.receiveSparkLine.totalChange
               }
             } as ItemInfo)
+
+            if (currency.detailsId === 'exalted-orb') {
+              this.state.chaosExaRate = currency.receive.value
+            }
           }
         } else if (dataType.overview === 'item') {
           const priceData: {
@@ -167,34 +172,22 @@ class PriceService {
             } as ItemInfo)
           }
         }
-      } catch (e) {
-        // @TODO: poeninja often returns empty document body, retry failed
-        console.log(e)
-      }
+
+        dataType.loaded = Date.now()
+      } catch (e) {}
     }
 
     this.state.isLoading = false
-    this.state.isLoaded = true
-
-    this.state.chaosExaRate = this.findByDetailsId('exalted-orb')!.receive.chaosValue
-  }
-
-  private assertReady () {
-    if (!this.isLoaded) {
-      throw new Error('Prices service not ready yet')
-    }
   }
 
   findByDetailsId (id: string) {
-    this.assertReady()
-
     return PRICE_BY_DETAILS_ID.get(id)
   }
 
   autoCurrency (value: number, currency: string) {
     if (currency === 'c') {
-      if (value > (this.state.chaosExaRate * 0.94)) {
-        if (value < (this.state.chaosExaRate * 1.06)) {
+      if (value > ((this.state.chaosExaRate || 9999) * 0.94)) {
+        if (value < ((this.state.chaosExaRate || 9999) * 1.06)) {
           return { val: 1, curr: 'e' }
         } else {
           return { val: this.chaosToExa(value), curr: 'e' }
@@ -209,15 +202,11 @@ class PriceService {
   }
 
   chaosToExa (count: number) {
-    this.assertReady()
-
-    return count / this.state.chaosExaRate
+    return count / (this.state.chaosExaRate || 9999)
   }
 
   exaToChaos (count: number) {
-    this.assertReady()
-
-    return count * this.state.chaosExaRate
+    return count * (this.state.chaosExaRate || 9999)
   }
 }
 

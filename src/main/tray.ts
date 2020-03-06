@@ -9,7 +9,7 @@ import { createWindow as settingsWindow } from './SettingsWindow'
 
 let tray: Tray
 
-let leagues: League[] = []
+export let leagues: League[] = []
 
 function selectLeague (league: League) {
   config.set('leagueId', league.id)

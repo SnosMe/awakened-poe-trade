@@ -1,29 +1,6 @@
 <template>
   <div class="titlebar">
-    <div class="flex">
-      <button v-if="isLoading"
-        class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
-      <ui-popper v-if="exaltedCost" trigger="clickToToggle">
-        <template slot="reference">
-          <button class="titlebar-btn"><i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}</button>
-        </template>
-        <div class="popper">
-          <div class="flex items-center justify-center flex-1">
-            <div class="w-8 h-8 flex items-center justify-center">
-              <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1" alt="exa" class="max-w-full max-h-full">
-            </div>
-            <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-            <span class="px-1 text-base">{{ exaltedCost | displayRounding(true) }} ×</span>
-            <div class="w-8 h-8 flex items-center justify-center">
-              <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1" alt="chaos" class="max-w-full max-h-full">
-            </div>
-          </div>
-          <div v-for="i in 9" :key="i">
-            <div class="text-left pl-1">{{ i / 10 }} exa ⇒ {{ (exaltedCost * i / 10) | displayRounding(true) }} c</div>
-          </div>
-        </div>
-      </ui-popper>
-    </div>
+    <slot />
     <div class="text-gray-600 truncate leading-none px-4">{{ title }}</div>
     <div class="flex">
       <button @click="$emit('close')" tabindex="-1"
@@ -33,25 +10,12 @@
 </template>
 
 <script>
-import { MainProcess } from './main-process-bindings'
-import { Leagues } from './Leagues'
-import { Prices, displayRounding } from './Prices'
-
 export default {
   name: 'AppTitlebar',
-  filters: { displayRounding },
   props: {
     title: {
       type: String,
       default: ''
-    }
-  },
-  computed: {
-    isLoading: () => Leagues.isLoading || Prices.isLoading,
-    exaltedCost () {
-      if (!Prices.isLoaded) return null
-
-      return Math.round(Prices.exaToChaos(1))
     }
   }
 }

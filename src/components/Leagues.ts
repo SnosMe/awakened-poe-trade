@@ -26,39 +26,45 @@ export class LeaguesService {
 
   async load () {
     this.state.isLoading = true
+    this.state.loadingError = undefined
 
-    const response = await fetch('https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
-    const leagues: Array<{ id: string }> = await response.json()
-    const tradeLeagues = leagues.filter(league => !league.id.startsWith('SSF '))
+    try {
+      const response = await fetch('https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
+      const leagues: Array<{ id: string }> = await response.json()
+      const tradeLeagues = leagues.filter(league => !league.id.startsWith('SSF '))
 
-    const leagueIsAlive = tradeLeagues.some(league => league.id === Config.store.leagueId)
+      const leagueIsAlive = tradeLeagues.some(league => league.id === Config.store.leagueId)
 
-    if (leagueIsAlive) {
-      this.state.selected = Config.store.leagueId!
-    } else {
-      if (tradeLeagues.length > 2) {
-        const TMP_STANDARD = 2
-        this.state.selected = tradeLeagues[TMP_STANDARD].id
+      if (leagueIsAlive) {
+        this.state.selected = Config.store.leagueId!
       } else {
-        const STANDARD = 0
-        this.state.selected = tradeLeagues[STANDARD].id
+        if (tradeLeagues.length > 2) {
+          const TMP_STANDARD = 2
+          this.state.selected = tradeLeagues[TMP_STANDARD].id
+        } else {
+          const STANDARD = 0
+          this.state.selected = tradeLeagues[STANDARD].id
+        }
       }
+
+      MainProcess.sendLeaguesReady(tradeLeagues.map(league => ({
+        id: league.id,
+        selected: league.id === this.state.selected
+      } as League)))
+
+      this.state.isLoaded = true
+    } catch (e) {
+      this.state.loadingError = e.message
     }
 
-    MainProcess.sendLeaguesReady(tradeLeagues.map(league => ({
-      id: league.id,
-      selected: league.id === this.state.selected
-    } as League)))
-
     this.state.isLoading = false
-    this.state.isLoaded = true
   }
 
   constructor () {
     MainProcess.addEventListener('league-selected', (e) => {
       const leagueId = (e as CustomEvent<string>).detail
       this.state.selected = leagueId
-      Prices.load()
+      Prices.load(true)
     })
   }
 }

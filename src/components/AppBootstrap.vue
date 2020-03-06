@@ -3,9 +3,10 @@
     <div v-if="leaguesService.isLoading"
       class="bg-gray-800 text-gray-200 py-1 px-2">
       <i class="fas fa-info-circle text-gray-600"></i> Loading leagues...</div>
-    <div v-if="pricesService.isLoading"
-      class="bg-gray-800 text-gray-200 py-1 px-2">
-      <i class="fas fa-info-circle text-gray-600"></i> Updating price data... <span class="text-gray-500 font-semibold">{{ leaguesService.selected }}</span>
+    <div class="bg-gray-800 text-gray-200 py-1 px-2" v-else-if="leaguesService.loadingError">
+      <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
+      <span>{{ leaguesService.loadingError }}</span>
+      <button class="px-2 mx-1 rounded border text-gray-200" @click="retry">Retry</button>
     </div>
   </div>
 </template>
@@ -17,16 +18,20 @@ import { Prices } from './Prices'
 
 export default {
   name: 'AppBootstrap',
-  async created () {
-    await Leagues.load()
-    await Prices.load()
-    MainProcess.priceCheckHide()
+  created () {
+    this.retry()
   },
   computed: {
-    leaguesService: () => Leagues,
-    pricesService: () => Prices
+    leaguesService: () => Leagues
   },
   methods: {
+    async retry () {
+      await Leagues.load()
+      if (Leagues.isLoaded) {
+        Prices.load()
+        MainProcess.priceCheckHide()
+      }
+    }
   }
 }
 </script>
