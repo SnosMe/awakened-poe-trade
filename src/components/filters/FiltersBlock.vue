@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="flex flex-wrap items-center mb-2 -m-1">
-      <div v-if="filters.linkedSockets" class="trade-tag">Links: {{ filters.linkedSockets.value }}</div>
+      <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
+        @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">Links: {{ filters.linkedSockets.value }}</button>
       <div v-if="filters.mapTier" class="trade-tag">Map Tier: {{ filters.mapTier.value }}</div>
       <div v-if="filters.mapBlighted" class="trade-tag">Blighted</div>
       <button v-if="filters.itemLevel" class="trade-tag" :class="{ disabled: filters.itemLevel.disabled }"
