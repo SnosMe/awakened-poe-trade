@@ -108,8 +108,13 @@ export default {
         this.filter.type !== 'weapon'
     },
     showQ20Notice () {
-      return this.filter.type === 'armour' ||
-        this.filter.type === 'weapon'
+      return [
+        'armour.armour',
+        'armour.evasion_rating',
+        'armour.energy_shield',
+        'weapon.total_dps',
+        'weapon.physical_dps'
+      ].includes(this.filter.tradeId)
     },
     sliderValue: {
       get () {

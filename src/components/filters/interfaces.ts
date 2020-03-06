@@ -71,11 +71,19 @@ export type INTERNAL_TRADE_ID =
   'armour.armour' |
   'armour.evasion_rating' |
   'armour.energy_shield' |
-  'weapon.physical_dps'
+  'armour.block' |
+  'weapon.total_dps' |
+  'weapon.physical_dps' |
+  'weapon.elemental_dps' |
+  'weapon.crit'
 
 export const INTERNAL_TRADE_ID = [
   'armour.armour',
   'armour.evasion_rating',
   'armour.energy_shield',
-  'weapon.physical_dps'
+  'armour.block',
+  'weapon.total_dps',
+  'weapon.physical_dps',
+  'weapon.elemental_dps',
+  'weapon.crit'
 ]

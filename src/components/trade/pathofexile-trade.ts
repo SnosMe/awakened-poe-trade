@@ -98,11 +98,15 @@ interface TradeRequest { /* eslint-disable camelcase */
           ar?: FilterRange
           es?: FilterRange
           ev?: FilterRange
+          block?: FilterRange
         }
       }
       weapon_filters?: {
         filters: {
+          dps?: FilterRange
           pdps?: FilterRange
+          edps?: FilterRange
+          crit?: FilterRange
         }
       }
       map_filters?: {
@@ -282,9 +286,25 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
         prop.set(query.filters, 'armour_filters.filters.es.min', typeof stat.min === 'number' ? stat.min : undefined)
         prop.set(query.filters, 'armour_filters.filters.es.max', typeof stat.max === 'number' ? stat.max : undefined)
         break
+      case 'armour.block':
+        prop.set(query.filters, 'armour_filters.filters.block.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.block.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'weapon.total_dps':
+        prop.set(query.filters, 'weapon_filters.filters.dps.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.dps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
       case 'weapon.physical_dps':
         prop.set(query.filters, 'weapon_filters.filters.pdps.min', typeof stat.min === 'number' ? stat.min : undefined)
         prop.set(query.filters, 'weapon_filters.filters.pdps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'weapon.elemental_dps':
+        prop.set(query.filters, 'weapon_filters.filters.edps.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.edps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'weapon.crit':
+        prop.set(query.filters, 'weapon_filters.filters.crit.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.crit.max', typeof stat.max === 'number' ? stat.max : undefined)
         break
     }
   }

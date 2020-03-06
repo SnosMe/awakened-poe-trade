@@ -3,10 +3,15 @@ import { INTERNAL_TRADE_ID } from '../interfaces'
 import { FiltersCreationContext, itemModFilterFull } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 import { stat } from '@/data'
+import { ARMOUR, WEAPON } from '@/components/parser/meta'
 
 export function filterItemProp (ctx: FiltersCreationContext) {
-  armourProps(ctx)
-  weaponProps(ctx)
+  if (ARMOUR.has(ctx.item.category!)) {
+    armourProps(ctx)
+  }
+  if (WEAPON.has(ctx.item.category!)) {
+    weaponProps(ctx)
+  }
 }
 
 export const ARMOUR_STATS = new Set<string>([
@@ -58,6 +63,16 @@ function armourProps (ctx: FiltersCreationContext) {
     })
   }
 
+  if (item.props.blockChance) {
+    ctx.filters.push({
+      tradeId: 'armour.block' as INTERNAL_TRADE_ID,
+      text: 'Block',
+      type: 'armour',
+      disabled: true,
+      ...rollToFilter(item.props.blockChance)
+    })
+  }
+
   if (
     item.props.armour ||
     item.props.evasion ||
@@ -74,7 +89,7 @@ export const WEAPON_STATS = new Set<string>([
   stat('#% increased Attack Speed'),
   stat('#% increased Critical Strike Chance'),
 
-  stat('Adds # to # Chaos Damage'),
+  // stat('Adds # to # Chaos Damage'),
   stat('Adds # to # Lightning Damage'),
   stat('Adds # to # Cold Damage'),
   stat('Adds # to # Fire Damage')
@@ -83,19 +98,47 @@ export const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  if (item.props.physicalDamage) {
-    const damageQ20 = variablePropAt20Quality(item.props.physicalDamage, QUALITY_STATS.PHYSICAL_DAMAGE, item)
+  const physQ20 = variablePropAt20Quality(item.props.physicalDamage!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
+  const pdpsQ20 = Math.floor((physQ20[0] + physQ20[1]) / 2 * item.props.attackSpeed!)
 
-    const dpsQ20 = Math.floor((damageQ20[0] + damageQ20[1]) / 2 * item.props.attackSpeed!)
+  const edps = Math.floor((item.props.elementalDamage || 0) * item.props.attackSpeed!)
+  const dps = pdpsQ20 + edps
 
+  if (item.props.elementalDamage) {
     ctx.filters.push({
-      tradeId: 'weapon.physical_dps' as INTERNAL_TRADE_ID,
-      text: 'Physical DPS',
+      tradeId: 'weapon.total_dps' as INTERNAL_TRADE_ID,
+      text: 'DPS',
       type: 'weapon',
       disabled: false,
-      ...rollToFilter(dpsQ20)
+      ...rollToFilter(dps)
+    })
+
+    ctx.filters.push({
+      tradeId: 'weapon.elemental_dps' as INTERNAL_TRADE_ID,
+      text: 'Elemental DPS',
+      type: 'weapon',
+      disabled: (edps / dps < 0.67),
+      hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
+      ...rollToFilter(edps)
     })
   }
+
+  ctx.filters.push({
+    tradeId: 'weapon.physical_dps' as INTERNAL_TRADE_ID,
+    text: 'Physical DPS',
+    type: 'weapon',
+    disabled: (pdpsQ20 / dps < 0.67),
+    hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
+    ...rollToFilter(pdpsQ20)
+  })
+
+  ctx.filters.push({
+    tradeId: 'weapon.crit' as INTERNAL_TRADE_ID,
+    text: 'Critical Chance',
+    type: 'weapon',
+    disabled: true,
+    ...rollToFilter(item.props.critChance!)
+  })
 
   if (
     item.props.attackSpeed ||
