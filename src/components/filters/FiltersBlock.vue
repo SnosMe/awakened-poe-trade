@@ -50,7 +50,8 @@
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
       <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
-        :filter="filter"/>
+        :filter="filter"
+        :item="item" />
       <div class="flex mt-2">
         <button @click="toggleStatsBlock" class="btn w-40">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <button v-if="shownStats.length != stats.length"

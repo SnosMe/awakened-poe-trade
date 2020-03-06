@@ -54,7 +54,7 @@ export function propAt20Quality (
   }
 
   const base = calcBase(total, incr, flat, item.quality)
-  return calcQ20(base, incr, flat)
+  return calcQ20(base, incr, flat, item.quality)
 }
 
 export function variablePropAt20Quality (
@@ -79,8 +79,8 @@ export function variablePropAt20Quality (
   ]
 
   return [
-    Math.round(calcQ20(base[0], incr, flat[0])),
-    Math.round(calcQ20(base[1], incr, flat[1]))
+    Math.round(calcQ20(base[0], incr, flat[0], item.quality)),
+    Math.round(calcQ20(base[1], incr, flat[1], item.quality))
   ]
 }
 
@@ -88,6 +88,6 @@ function calcBase (total: number, incr: number, flat: number, quality: number | 
   return Math.round((total / (1 + incr / 100 + (quality || 0) / 100)) - flat)
 }
 
-function calcQ20 (base: number, incr: number, flat: number) {
-  return (base + flat) * (1 + incr / 100 + 20 / 100)
+function calcQ20 (base: number, incr: number, flat: number, quality: number | undefined) {
+  return (base + flat) * (1 + incr / 100 + Math.max(20, quality || 0) / 100)
 }

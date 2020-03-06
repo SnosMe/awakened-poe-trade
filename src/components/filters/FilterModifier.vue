@@ -69,7 +69,7 @@
         </div>
       </div>
       <div v-if="showQ20Notice"
-        class="bg-gray-700 text-gray-500 text-center rounded-l px-1 mr-px">Q 20%</div>
+        class="bg-gray-700 text-gray-500 text-center rounded-l px-1 mr-px">Q {{ Math.max(20, item.quality || 0) }}%</div>
       <div v-if="filter.roll != null"
         class="bg-gray-700 text-gray-500 text-center rounded-br" style="width: 97px" :class="{ 'rounded-bl': !showQ20Notice }">{{ filter.roll }}</div>
     </div>
@@ -82,6 +82,10 @@ import InputDebounced from '../InputDebounced'
 export default {
   props: {
     filter: {
+      type: Object,
+      required: true
+    },
+    item: {
       type: Object,
       required: true
     }
