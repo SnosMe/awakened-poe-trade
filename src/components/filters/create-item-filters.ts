@@ -1,12 +1,6 @@
 import { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '../parser'
 
-const TradeOpts = {
-  GemLevel: 16,
-  GemLevelRange: 0,
-  GemQualityRange: 0
-}
-
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
 export function createFilters (item: ParsedItem): ItemFilters {
@@ -165,34 +159,23 @@ export function createGemFilters (item: ParsedItem) {
     value: item.isCorrupted
   }
 
-  if (item.quality != null) {
-    if (TradeOpts.GemQualityRange > 0) {
-      filters.quality = {
-        min: (item.quality || 0) - TradeOpts.GemQualityRange,
-        max: (item.quality || 0) + TradeOpts.GemQualityRange
-      }
-    } else {
-      filters.quality = {
-        min: item.quality
-      }
+  if (item.quality) {
+    filters.quality = {
+      value: item.quality,
+      disabled: false
     }
   }
 
   if (SPECIAL_SUPPORT_GEM.includes(item.name)) {
     filters.gemLevel = {
-      min: item.props.gemLevel,
-      max: item.props.gemLevel
+      min: item.props.gemLevel!,
+      max: item.props.gemLevel!,
+      disabled: false
     }
-  } else if (item.props.gemLevel! >= TradeOpts.GemLevel) {
-    if (TradeOpts.GemLevelRange > 0) {
-      filters.gemLevel = {
-        min: item.props.gemLevel! - TradeOpts.GemLevelRange,
-        max: item.props.gemLevel! + TradeOpts.GemLevelRange
-      }
-    } else {
-      filters.gemLevel = {
-        min: item.props.gemLevel
-      }
+  } else {
+    filters.gemLevel = {
+      min: item.props.gemLevel!,
+      disabled: item.props.gemLevel! < 16
     }
   }
 

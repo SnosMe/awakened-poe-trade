@@ -8,8 +8,10 @@
         @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">Item Level: {{ filters.itemLevel.value }}</button>
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
         @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">White: {{ filters.whiteSockets.value }}</button>
-      <div v-if="filters.gemLevel" class="trade-tag">Level: {{ filters.gemLevel.min }}</div>
-      <div v-if="filters.quality" class="trade-tag">Quality: {{ filters.quality.min }}%</div>
+      <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
+        @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">Level: {{ filters.gemLevel.min }}</button>
+      <button v-if="filters.quality" class="trade-tag" :class="{ disabled: filters.quality.disabled }"
+        @click="filters.quality.disabled = !filters.quality.disabled">Quality: {{ filters.quality.value }}%</button>
       <template v-if="filters.influences">
         <button v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center"
           :class="{ disabled: influence.disabled }"

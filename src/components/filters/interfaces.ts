@@ -30,12 +30,13 @@ export interface ItemFilters {
     disabled: boolean
   }>
   quality?: {
-    min?: number
-    max?: number
+    value: number
+    disabled: boolean
   }
   gemLevel?: {
-    min?: number
+    min: number
     max?: number
+    disabled: boolean
   }
   mapTier?: {
     value: number

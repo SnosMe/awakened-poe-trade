@@ -209,14 +209,13 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
   }
 
-  if (filters.gemLevel) {
+  if (filters.gemLevel && !filters.gemLevel.disabled) {
     prop.set(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.min)
     prop.set(query.filters, 'misc_filters.filters.gem_level.max', filters.gemLevel.max)
   }
 
-  if (filters.quality) {
-    prop.set(query.filters, 'misc_filters.filters.quality.min', filters.quality.min)
-    prop.set(query.filters, 'misc_filters.filters.quality.max', filters.quality.max)
+  if (filters.quality && !filters.quality.disabled) {
+    prop.set(query.filters, 'misc_filters.filters.quality.min', filters.quality.value)
   }
 
   if (filters.itemLevel && !filters.itemLevel.disabled) {
