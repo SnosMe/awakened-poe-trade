@@ -23,8 +23,7 @@ export interface ParsedItem {
   quality?: number
   sockets: {
     linked?: number // only 5 or 6
-    // @TODO "white?: number"
-    // PoE 4.0 "count?: number"
+    white?: number
   }
   stackSize?: number
   isUnidentified: boolean

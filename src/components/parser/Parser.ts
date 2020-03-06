@@ -277,6 +277,9 @@ function parseStackSize (section: string[], item: ParsedItem) {
 function parseSockets (section: string[], item: ParsedItem) {
   if (section[0].startsWith(TAG_SOCKETS)) {
     let sockets = section[0].substr(TAG_SOCKETS.length)
+
+    item.sockets.white = (sockets.split('W').length - 1)
+
     sockets = sockets.replace(/[^ -]/g, '#')
     if (sockets === '#-#-#-#-#-#') {
       item.sockets.linked = 6

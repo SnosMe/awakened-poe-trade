@@ -74,6 +74,9 @@ interface TradeRequest { /* eslint-disable camelcase */
       socket_filters?: {
         filters: {
           links?: FilterRange
+          sockets?: {
+            w?: number
+          }
         }
       }
       misc_filters?: {
@@ -222,6 +225,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 
   if (filters.linkedSockets && !filters.linkedSockets.disabled) {
     prop.set(query.filters, 'socket_filters.filters.links.min', filters.linkedSockets.value)
+  }
+
+  if (filters.whiteSockets && !filters.whiteSockets.disabled) {
+    prop.set(query.filters, 'socket_filters.filters.sockets.w', filters.whiteSockets.value)
   }
 
   if (filters.mapTier) {

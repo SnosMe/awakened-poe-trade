@@ -6,6 +6,8 @@
       <div v-if="filters.mapBlighted" class="trade-tag">Blighted</div>
       <button v-if="filters.itemLevel" class="trade-tag" :class="{ disabled: filters.itemLevel.disabled }"
         @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">Item Level: {{ filters.itemLevel.value }}</button>
+      <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
+        @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">White: {{ filters.whiteSockets.value }}</button>
       <div v-if="filters.gemLevel" class="trade-tag">Level: {{ filters.gemLevel.min }}</div>
       <div v-if="filters.quality" class="trade-tag">Quality: {{ filters.quality.min }}%</div>
       <template v-if="filters.influences">

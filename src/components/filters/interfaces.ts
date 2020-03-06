@@ -18,6 +18,10 @@ export interface ItemFilters {
     value: number
     disabled: boolean
   }
+  whiteSockets?: {
+    value: number
+    disabled: boolean
+  }
   corrupted?: {
     value: boolean
   }

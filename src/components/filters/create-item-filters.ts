@@ -95,6 +95,13 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
   }
 
+  if (item.sockets.white) {
+    filters.whiteSockets = {
+      value: item.sockets.white,
+      disabled: false
+    }
+  }
+
   if (
     item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||
