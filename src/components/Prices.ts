@@ -156,8 +156,8 @@ class PriceService {
             lines: NinjaItemInfo[]
           } = await response.json()
           for (const item of priceData.lines) {
-            const detailsId = dataType.type === 'UniqueFlask'
-              ? nameToDetailsId(`${item.name} ${item.baseType}`) // seems poe.ninja keeps this for compatability
+            const detailsId = dataType.type === 'UniqueFlask' // seems poe.ninja keeps this for compatability
+              ? nameToDetailsId(`${item.detailsId} ${item.baseType}`)
               : item.detailsId
 
             PRICE_BY_DETAILS_ID.set(detailsId, {

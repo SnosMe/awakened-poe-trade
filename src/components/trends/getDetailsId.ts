@@ -98,7 +98,7 @@ function getBaseTypeDetailsId (item: ParsedItem) {
 }
 
 function getUniqueDetailsId (item: ParsedItem) {
-  let id = nameToDetailsId(`${item.name} ${item.baseType}`)
+  let id = nameToDetailsId(`${item.name}${getUniqueVariant(item) || ''} ${item.baseType}`)
 
   if (item.sockets.linked) {
     id += `-${item.sockets.linked}l`
@@ -109,6 +109,89 @@ function getUniqueDetailsId (item: ParsedItem) {
   }
 
   return id
+}
+
+function getUniqueVariant (item: ParsedItem) {
+  function hasStat (item: ParsedItem, stat: string) {
+    return item.modifiers.some(m => m.modInfo.text === stat)
+  }
+
+  if (item.name === 'Vessel of Vinktar') {
+    if (hasStat(item, 'Adds # to # Lightning Damage to Attacks during Flask effect')) {
+      return '-added-attacks'
+    } else if (hasStat(item, 'Adds # to # Lightning Damage to Spells during Flask effect')) {
+      return '-added-spells'
+    } else if (hasStat(item, 'Damage Penetrates #% Lightning Resistance during Flask effect')) {
+      return '-penetration'
+    } else if (hasStat(item, '#% of Physical Damage Converted to Lightning during Flask effect')) {
+      return '-conversion'
+    }
+  } else if (item.name === `Atziri's Splendour`) {
+    if (hasStat(item, '#% increased Armour, Evasion and Energy Shield')) {
+      return '-armour-evasion-es'
+    } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '# to maximum Energy Shield')) {
+      return '-evasion-es'
+    } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '# to maximum Life')) {
+      return '-evasion-es-life'
+    } else if (hasStat(item, '#% increased Armour and Energy Shield') && hasStat(item, '# to maximum Energy Shield')) {
+      return '-armour-es'
+    } else if (hasStat(item, '#% increased Armour and Energy Shield') && hasStat(item, '# to maximum Life')) {
+      return '-armour-es-life'
+    } else if (hasStat(item, '#% increased Armour and Evasion') && hasStat(item, '# to maximum Life')) {
+      return '-armour-evasion'
+    } else if (hasStat(item, '# to maximum Energy Shield') && hasStat(item, '#% increased Energy Shield')) {
+      return '-es'
+    } else if (hasStat(item, '#% increased Evasion Rating') && hasStat(item, '# to maximum Life')) {
+      return '-evasion'
+    } else if (hasStat(item, '#% increased Armour') && hasStat(item, '# to maximum Life')) {
+      return '-armour'
+    }
+  } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
+    const sockets = item.modifiers.find(m => m.type === 'explicit' && m.modInfo.text === 'Has # Abyssal Sockets')!.values![0]
+    if (sockets === 2) {
+      return '-2-jewels'
+    } else if (sockets === 1) {
+      return '-1-jewel'
+    }
+  } else if (item.name === `Volkuur's Guidance`) {
+    if (hasStat(item, 'Adds # to # Cold Damage to Spells and Attacks')) {
+      return '-cold'
+    } else if (hasStat(item, 'Adds # to # Fire Damage to Spells and Attacks')) {
+      return '-fire'
+    } else if (hasStat(item, 'Adds # to # Lightning Damage to Spells and Attacks')) {
+      return '-lightning'
+    }
+  } else if (item.name === `Yriel's Fostering`) {
+    if (hasStat(item, 'Projectiles from Attacks have #% chance to Maim on Hit while\nyou have a Bestial Minion')) {
+      return '-maim'
+    } else if (hasStat(item, 'Projectiles from Attacks have #% chance to Poison on Hit while\nyou have a Bestial Minion')) {
+      return '-poison'
+    } else if (hasStat(item, 'Projectiles from Attacks have #% chance to inflict Bleeding on Hit while\nyou have a Bestial Minion')) {
+      return '-bleeding'
+    }
+  } else if (item.name === `Doryani's Invitation`) {
+    if (hasStat(item, '#% increased Global Physical Damage')) {
+      return '-physical'
+    } else if (hasStat(item, '#% increased Fire Damage')) {
+      return '-fire'
+    } else if (hasStat(item, '#% increased Cold Damage')) {
+      return '-cold'
+    } else if (hasStat(item, '#% increased Lightning Damage')) {
+      return '-lightning'
+    }
+  } else if (item.name === `Impresence`) {
+    if (hasStat(item, 'Adds # to # Cold Damage')) {
+      return '-cold'
+    } else if (hasStat(item, 'Adds # to # Chaos Damage')) {
+      return '-chaos'
+    } else if (hasStat(item, 'Adds # to # Fire Damage')) {
+      return '-fire'
+    } else if (hasStat(item, 'Adds # to # Lightning Damage')) {
+      return '-lightning'
+    } else if (hasStat(item, 'Adds # to # Physical Damage')) {
+      return '-physical'
+    }
+  }
 }
 
 export function nameToDetailsId (name: string) {
