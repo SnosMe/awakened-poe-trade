@@ -2,7 +2,7 @@
   <div v-if="!error" class="layout-column flex-grow">
     <div class="mb-1 flex pl-2 justify-between items-baseline" style="min-height: 22px;">
       <div class="flex items-center text-gray-500">
-        <span>Matched:&nbsp;&nbsp;</span>
+        <span class="mr-1">Matched:</span>
         <span v-if="!result" class="text-gray-600">...</span>
         <div v-else class="flex items-center">
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'chaos' ? 'transparent' : undefined }"
@@ -48,7 +48,7 @@
         <tbody style="overflow: scroll;">
           <template v-for="(result, idx) in selectedResults">
             <tr v-if="!result" :key="idx">
-              <td colspan="100">&nbsp;</td>
+              <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
               <td class="px-2">{{ Number((result.exchangeAmount / result.itemAmount).toFixed(4)) }}</td>

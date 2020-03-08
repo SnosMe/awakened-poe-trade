@@ -115,7 +115,7 @@ function typeChatCommand (command: string) {
 }
 
 function eventToString (e: { rawcode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
-  let { ctrlKey, shiftKey, altKey } = e
+  const { ctrlKey, shiftKey, altKey } = e
 
   let code = KeyCodeToName[e.rawcode]
   if (!code) return 'unknown'

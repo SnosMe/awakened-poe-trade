@@ -12,7 +12,7 @@ export function createWindow () {
     frame: false,
     backgroundColor: '#2d3748', // gray-800
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any
     }
   })
 

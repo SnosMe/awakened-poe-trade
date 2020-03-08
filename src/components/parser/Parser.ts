@@ -176,7 +176,7 @@ function parseNamePlate (section: string[]) {
     case ItemRarity.Normal:
     case ItemRarity.Magic:
     case ItemRarity.Rare:
-    case ItemRarity.Unique:
+    case ItemRarity.Unique: {
       const item : ParsedItem = {
         rarity,
         name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
@@ -190,6 +190,7 @@ function parseNamePlate (section: string[]) {
         rawText: undefined!
       }
       return item
+    }
     default:
       return null
   }
@@ -389,7 +390,6 @@ function parseModifiers (sn: number) {
     let stat = statIterator.next()
     while (!stat.done) {
       let modType: ModifierType | undefined
-      let mod: ItemModifier | undefined
 
       // cleanup suffix
       if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
@@ -400,7 +400,7 @@ function parseModifiers (sn: number) {
         modType = ModifierType.Crafted
       }
 
-      mod = tryFindModifier(stat.value)
+      const mod = tryFindModifier(stat.value)
       if (mod) {
         if (modType == null) {
           // explicit/enchant

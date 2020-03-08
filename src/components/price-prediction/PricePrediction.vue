@@ -39,7 +39,7 @@
         </thead>
         <tbody class="align-top">
           <tr v-for="expl in price.explanation" :key="expl.name">
-            <td class="text-right text-gray-500">{{ expl.contrib }}&nbsp;%</td>
+            <td class="text-right text-gray-500 whitespace-no-wrap">{{ expl.contrib }}&nbsp;%</td>
             <td class="pl-2 truncate w-full" style="max-width: 0;">{{ expl.name }}</td>
           </tr>
         </tbody>

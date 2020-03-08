@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     handleItemPaste (e) {
-      let text = e.target.value
+      const text = e.target.value
       MainProcess.selfEmitPriceCheck(text)
       e.target.value = ''
       this.item = parseClipboard(text)

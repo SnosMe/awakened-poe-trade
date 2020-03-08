@@ -1,6 +1,7 @@
 module.exports = {
   pluginOptions: {
     electronBuilder: {
+      nodeIntegration: true,
       externals: ['node-window-manager', 'iohook'],
       builderOptions: {
         publish: ['github'],

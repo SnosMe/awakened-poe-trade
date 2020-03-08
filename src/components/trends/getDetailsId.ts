@@ -126,7 +126,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, '#% of Physical Damage Converted to Lightning during Flask effect')) {
       return '-conversion'
     }
-  } else if (item.name === `Atziri's Splendour`) {
+  } else if (item.name === "Atziri's Splendour") {
     if (hasStat(item, '#% increased Armour, Evasion and Energy Shield')) {
       return '-armour-evasion-es'
     } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '# to maximum Energy Shield')) {
@@ -153,7 +153,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (sockets === 1) {
       return '-1-jewel'
     }
-  } else if (item.name === `Volkuur's Guidance`) {
+  } else if (item.name === "Volkuur's Guidance") {
     if (hasStat(item, 'Adds # to # Cold Damage to Spells and Attacks')) {
       return '-cold'
     } else if (hasStat(item, 'Adds # to # Fire Damage to Spells and Attacks')) {
@@ -161,7 +161,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, 'Adds # to # Lightning Damage to Spells and Attacks')) {
       return '-lightning'
     }
-  } else if (item.name === `Yriel's Fostering`) {
+  } else if (item.name === "Yriel's Fostering") {
     if (hasStat(item, 'Projectiles from Attacks have #% chance to Maim on Hit while\nyou have a Bestial Minion')) {
       return '-maim'
     } else if (hasStat(item, 'Projectiles from Attacks have #% chance to Poison on Hit while\nyou have a Bestial Minion')) {
@@ -169,7 +169,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, 'Projectiles from Attacks have #% chance to inflict Bleeding on Hit while\nyou have a Bestial Minion')) {
       return '-bleeding'
     }
-  } else if (item.name === `Doryani's Invitation`) {
+  } else if (item.name === "Doryani's Invitation") {
     if (hasStat(item, '#% increased Global Physical Damage')) {
       return '-physical'
     } else if (hasStat(item, '#% increased Fire Damage')) {
@@ -179,7 +179,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, '#% increased Lightning Damage')) {
       return '-lightning'
     }
-  } else if (item.name === `Impresence`) {
+  } else if (item.name === 'Impresence') {
     if (hasStat(item, 'Adds # to # Cold Damage')) {
       return '-cold'
     } else if (hasStat(item, 'Adds # to # Chaos Damage')) {

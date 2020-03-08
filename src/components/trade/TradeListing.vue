@@ -2,7 +2,7 @@
   <div v-if="!error" class="layout-column flex-grow">
     <div class="mb-1 flex pl-2 justify-between">
       <div class="flex items-baseline text-gray-500">
-        <span>Matched:&nbsp;&nbsp;</span>
+        <span class="mr-1">Matched:</span>
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }} (Online)</span>
       </div>
@@ -39,7 +39,7 @@
         <tbody style="overflow: scroll;">
           <template v-for="(result, idx) in grouppedResults">
             <tr v-if="!result" :key="idx">
-              <td colspan="100">&nbsp;</td>
+              <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
               <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2">× {{ result.listedTimes }}</span></td>
