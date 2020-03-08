@@ -103,6 +103,10 @@ function getUniqueDetailsId (item: ParsedItem) {
   if (item.sockets.linked) {
     id += `-${item.sockets.linked}l`
   }
+  if (item.baseType === 'Ivory Watchstone') {
+    const uses = item.modifiers.find(m => m.type === 'explicit' && m.modInfo.text === '# uses remaining')!.values![0]
+    id += `-${uses}`
+  }
 
   return id
 }
