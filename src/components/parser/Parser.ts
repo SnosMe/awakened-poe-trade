@@ -64,9 +64,10 @@ const parsers: ParserFn[] = [
   parseInfluence,
   parseMap,
   parseSockets,
-  parseModifiers(['enchant']),
-  parseModifiers(['implicit']),
-  parseModifiers(['explicit', 'crafted'])
+  parseModifiers(1),
+  parseModifiers(2),
+  parseModifiers(3),
+  resolveStatTypes
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -206,9 +207,9 @@ function parseInfluence (section: string[], item: ParsedItem) {
         case ItemInfluence.Redeemer:
         case ItemInfluence.Warlord:
           item.influences.push(influence)
+          return SECTION_PARSED
       }
     }
-    return SECTION_PARSED
   }
   return SECTION_SKIPPED
 }
@@ -371,7 +372,7 @@ function parseWeapon (section: string[], item: ParsedItem) {
   return isParsed
 }
 
-function parseModifiers (expected: string[]) {
+function parseModifiers (sn: number) {
   return function parseModifiers (section: string[], item: ParsedItem) {
     if (
       item.rarity !== ItemRarity.Normal &&
@@ -402,21 +403,20 @@ function parseModifiers (expected: string[]) {
       mod = tryFindModifier(stat.value)
       if (mod) {
         if (modType == null) {
-          for (const type of mod.modInfo.types) {
-            if (
-              type.name !== ModifierType.Pseudo &&
-              type.name !== ModifierType.Implicit &&
-              type.name !== ModifierType.Crafted &&
-              expected.includes(type.name)
-            ) {
-              // explicit/enchant
-              modType = type.name as ModifierType
-            }
+          // explicit/enchant
+          const possible = mod.modInfo.types.filter(type =>
+            type.name !== ModifierType.Pseudo &&
+            type.name !== ModifierType.Implicit &&
+            type.name !== ModifierType.Crafted
+          )
+          if (possible.length === 1) {
+            modType = possible[0].name as ModifierType
           }
         }
+        mod.source = sn
 
         if (
-          expected.includes(modType!) &&
+          modType == null ||
           mod.modInfo.types.find(type => type.name === modType)
         ) {
           mod.type = modType!
@@ -435,6 +435,47 @@ function parseModifiers (expected: string[]) {
     }
     return SECTION_SKIPPED
   }
+}
+
+function resolveStatTypes (section: string[], item: ParsedItem) {
+  // NOTE: (m.type == null) ==> (explicit OR enchant)
+
+  const hasImplicit = item.modifiers.some(m => m.type === 'implicit')
+  let hasExplicit = item.modifiers.some(m =>
+    m.type === 'explicit' ||
+    m.type === 'crafted' ||
+    m.source === 3 ||
+    (m.type == null && m.source === 2)
+  )
+  let hasEnchant = item.modifiers.some(m =>
+    m.type === 'enchant' ||
+    (hasImplicit && m.type == null && m.source === 1)
+  )
+  if (!hasImplicit) {
+    if (
+      item.modifiers.some(m => m.type == null && m.source === 1) &&
+      item.modifiers.some(m => m.type == null && m.source === 2)
+    ) {
+      hasEnchant = true
+      hasExplicit = true
+    }
+
+    if (!hasEnchant && !hasExplicit) {
+      hasExplicit = true // fallback
+    }
+  }
+
+  for (const mod of item.modifiers) {
+    if (mod.type != null) continue
+
+    if (mod.source === 1 && hasEnchant) {
+      mod.type = 'enchant' as ModifierType
+    } else {
+      mod.type = 'explicit' as ModifierType
+    }
+  }
+
+  return PARSER_SKIPPED as SectionParseResult
 }
 
 function parseFlask (section: string[], item: ParsedItem) {
