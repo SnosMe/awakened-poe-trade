@@ -26,6 +26,12 @@
                 <hotkey-input v-model="config.priceCheckLocked" :forbidden="['C','V']" class="w-48" />
               </div>
             </div>
+            <div class="mb-8">
+              <div class="flex">
+                <div class="flex-1">Open wiki</div>
+                <hotkey-input v-model="config.wikiKey" :forbidden="['C','V']" class="w-48" />
+              </div>
+            </div>
             <div class="mb-2">
               <div class="flex-1 mb-1">Custom commands</div>
               <div class="mb-4" v-for="(command, idx) in config.commands" :key="idx">

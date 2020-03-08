@@ -28,7 +28,7 @@ class PoeWindowClass extends EventEmitter {
         this.bounds = (await windowManager.getActiveWindowContentBounds())!
         this.pid = (await windowManager.getActiveWindowId())!
       }
-    }, 1000)
+    }, 500)
   }
 }
 

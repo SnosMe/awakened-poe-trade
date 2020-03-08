@@ -7,6 +7,7 @@ import { showWindow, lockWindow, poeUserInterfaceWidth } from './positioning'
 import { KeyCodeToName } from '@/components/settings/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
+import { openWiki } from './wiki'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
@@ -14,7 +15,7 @@ export let checkPressPosition: Point | undefined
 function priceCheck (lockedMode: boolean) {
   if (!isPollingClipboard) {
     isPollingClipboard = true
-    pollClipboard(32, 1000)
+    pollClipboard(32, 500)
       .then(async (clipboard) => {
         win.webContents.send('price-check', clipboard)
         await showWindow()
@@ -59,6 +60,9 @@ export function setupShortcuts () {
       priceCheck(false)
     } else if (pressed === config.get('priceCheckLocked')) {
       priceCheck(true)
+    } else if (pressed === config.get('wikiKey')) {
+      pollClipboard(32, 500).then(openWiki).catch(() => {})
+      robotjs.keyTap('key_c', ['control'])
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
