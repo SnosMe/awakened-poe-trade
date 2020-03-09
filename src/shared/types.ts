@@ -26,7 +26,7 @@ export const defaultConfig: Config = {
     hotkey: 'F5'
   }, {
     text: '/exit',
-    hotkey: 'F12'
+    hotkey: 'F9'
   }],
   altTabToGame: true
 }
