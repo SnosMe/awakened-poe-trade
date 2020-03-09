@@ -7,11 +7,11 @@ export interface Config {
   leagueId?: string
   priceCheckKey: string
   priceCheckKeyHold: string
-  priceCheckLocked: string
-  wikiKey: string
+  priceCheckLocked?: string
+  wikiKey?: string
   commands: Array<{
     text: string
-    hotkey: string
+    hotkey?: string
   }>
   altTabToGame: boolean
 }

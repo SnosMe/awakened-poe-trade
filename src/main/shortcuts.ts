@@ -1,10 +1,10 @@
-import { screen, Point, clipboard } from 'electron'
+import { screen, Point, clipboard, globalShortcut, Notification } from 'electron'
 import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
 import { showWindow, lockWindow, poeUserInterfaceWidth } from './positioning'
-import { KeyCodeToName } from '@/components/settings/KeyToCode'
+import { KeyCodeToName, KeyToElectron } from '@/components/settings/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
@@ -35,11 +35,48 @@ function priceCheck (lockedMode: boolean) {
       robotjs.keyTap('key_c', ['control'])
     }
   } else {
-    if (config.get('priceCheckLocked').includes('Alt')) {
+    if (config.get('priceCheckLocked')!.includes('Alt')) {
       robotjs.keyToggle('alt', 'up')
     }
     robotjs.keyTap('key_c', ['control'])
   }
+}
+
+function registerGlobal () {
+  const register = [
+    {
+      accelerator: `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
+      cb: () => priceCheck(false)
+    }, {
+      accelerator: config.get('priceCheckLocked'),
+      cb: () => priceCheck(true)
+    }, {
+      accelerator: config.get('wikiKey'),
+      cb: () => {
+        pollClipboard(32, 500).then(openWiki).catch(() => {})
+        robotjs.keyTap('key_c', ['control'])
+      }
+    },
+    ...config.get('commands')
+      .map(command => ({
+        accelerator: command.hotkey,
+        cb: () => typeChatCommand(command.text)
+      }))
+  ].filter(a => Boolean(a.accelerator))
+
+  register.forEach(a => {
+    const success = globalShortcut.register(shortcutToElectron(a.accelerator!), a.cb)
+    if (!success) {
+      new Notification({
+        title: 'Awakened PoE Trade',
+        body: `Cannot register shortcut ${a.accelerator}, because it is already registered by another application.`
+      }).show()
+    }
+  })
+}
+
+function unregisterGlobal () {
+  globalShortcut.unregisterAll()
 }
 
 export function setupShortcuts () {
@@ -48,26 +85,14 @@ export function setupShortcuts () {
   // threads ready to run, the function returns immediately
   robotjs.setKeyboardDelay(0)
 
-  ioHook.on('keydown', async (e: any) => {
-    if (!PoeWindow.isActive) {
-      return
-    }
-
-    const pressed = eventToString(e)
-    // console.log(pressed)
-
-    if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
-      priceCheck(false)
-    } else if (pressed === config.get('priceCheckLocked')) {
-      priceCheck(true)
-    } else if (pressed === config.get('wikiKey')) {
-      pollClipboard(32, 500).then(openWiki).catch(() => {})
-      robotjs.keyTap('key_c', ['control'])
+  if (PoeWindow.isActive) {
+    registerGlobal()
+  }
+  PoeWindow.addListener('active-change', (isActive) => {
+    if (isActive) {
+      registerGlobal()
     } else {
-      const command = config.get('commands').find(c => c.hotkey === pressed)
-      if (command) {
-        typeChatCommand(command.text)
-      }
+      unregisterGlobal()
     }
   })
 
@@ -128,4 +153,11 @@ function eventToString (e: { rawcode: number, ctrlKey: boolean, altKey: boolean,
   else if (shiftKey) code = `Shift + ${code}`
 
   return code
+}
+
+function shortcutToElectron (shortcut: string) {
+  return shortcut
+    .split(' + ')
+    .map(k => KeyToElectron[k as keyof typeof KeyToElectron])
+    .join('+')
 }
