@@ -2,7 +2,7 @@
   <div class="flex-grow layout-column">
     <app-titlebar @close="cancel" title="Settings" />
     <div class="flex flex-grow min-h-0">
-      <div class="p-2 bg-gray-900 flex flex-col">
+      <div class="px-2 pb-2 bg-gray-900 flex flex-col">
         <button class="menu-item active">Hotkeys</button>
         <div style="min-width: 150px;"></div>
         <!-- <button class="menu-item">TODO</button> -->

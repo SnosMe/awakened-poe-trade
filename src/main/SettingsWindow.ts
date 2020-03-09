@@ -4,6 +4,11 @@ import { BrowserWindow } from 'electron'
 let settingsWindow: BrowserWindow | undefined
 
 export function createWindow () {
+  if (settingsWindow) {
+    settingsWindow.focus()
+    return
+  }
+
   settingsWindow = new BrowserWindow({
     width: 800,
     height: 600,
