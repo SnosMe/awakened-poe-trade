@@ -1,7 +1,8 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-![](./showcase/total-000-flat-square.svg)
-![](./showcase/Patreon-Donate-F96854-style-flat-square-logo-patreon.svg)
+[![](./showcase/total-000-flat-square.svg)](https://somsubhra.com/github-release-stats/?username=SnosMe&repository=awakened-poe-trade)
+[![](./showcase/Patreon-Donate-F96854-style-flat-square-logo-patreon.svg)](https://patreon.com/awakened_poe_trade)
+[![](./showcase/Discrod-Join-7289DA.svg)](https://discord.gg/hXgSDS6)
 
 
 | Download | Automatic update | Startup time |
@@ -23,7 +24,7 @@
 
 ## Trade tool checklist
 
-- Poe.ninja
+- Poe.ninja (https://poe.ninja/)
   - :heavy_check_mark: Currency, Fragments, Oils, Incubators, Scarabs, Fossils, Resonators, Essences, Divination Cards, Prophecies, Beasts, Vials
   - :heavy_check_mark: Watchstones (Uses)
   - :heavy_check_mark: Gems
@@ -41,7 +42,7 @@
 - Rare items
   - :heavy_check_mark: Price prediction (https://www.poeprices.info/)
 
-- Trade
+- Trade (https://pathofexile.com/trade/search)
   - Items
     - :heavy_check_mark: Item Level
     - :heavy_check_mark: Corrupted
@@ -54,7 +55,7 @@
   - :heavy_check_mark: Pseudo stats
   - Gems
     - :heavy_check_mark: Level, Quality, Corrupted
-  - :heavy_check_mark: Currency bulk search
+  - :heavy_check_mark: Currency bulk search (https://www.pathofexile.com/trade/exchange)
   - :heavy_check_mark: Grouping results from one account (protection against "pricefixing")
 
 ### Requirements
