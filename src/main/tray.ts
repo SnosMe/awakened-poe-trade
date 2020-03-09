@@ -1,5 +1,5 @@
 import path from 'path'
-import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions, shell } from 'electron'
+import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions, shell, nativeImage } from 'electron'
 import { checkForUpdates } from './updates'
 import { config } from './config'
 import { win } from './window'
@@ -73,6 +73,18 @@ function rebuildContextMenu () {
       }
     },
     { type: 'separator' },
+    {
+      label: 'Patreon',
+      click: () => {
+        shell.openExternal('https://patreon.com/awakened_poe_trade')
+      }
+    },
+    {
+      label: 'Discord',
+      click: () => {
+        shell.openExternal('https://discord.gg/hXgSDS6')
+      }
+    },
     {
       label: 'Quit',
       click: () => {
