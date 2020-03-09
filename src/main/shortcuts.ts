@@ -96,19 +96,12 @@ export function setupShortcuts () {
     }
   })
 
-  let naiveInventoryCheckX: number | undefined
   ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, rotation: 1 | -1 }) => {
-    if (!e.ctrlKey) return
-    if (naiveInventoryCheckX === undefined) {
-      if (!PoeWindow.bounds) {
-        return
-      } else {
-        naiveInventoryCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
-      }
-    }
+    if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive) return
 
+    const stashCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
     const mouseX = (process.platform === 'linux') ? screen.getCursorScreenPoint().x : e.x
-    if (mouseX > naiveInventoryCheckX) {
+    if (mouseX > stashCheckX) {
       if (e.rotation > 0) {
         robotjs.keyTap('right')
       } else if (e.rotation < 0) {
