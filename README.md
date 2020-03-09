@@ -1,17 +1,16 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-![](https://img.shields.io/github/downloads/SnosMe/awakened-poe-trade/total?color=%23000&label=Players%20using%20this%20tool%20%28Downloads%29&style=flat-square)
+![](./showcase/total-000-flat-square.svg)
+![](./showcase/Patreon-Donate-F96854-style-flat-square-logo-patreon.svg)
 
 
 | Download | Automatic update | Startup time |
 |----------|------------------|--------------|
-| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.10.0/Awakened-PoE-Trade-Setup-0.10.0.exe) | :heavy_check_mark: | Fast |
-| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.10.0/Awakened-PoE-Trade-0.10.0.exe) | :heavy_multiplication_x: | Slow |
-| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.10.0/Awakened-PoE-Trade-0.10.0.AppImage) | :heavy_check_mark: | Fast |
+| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.11.0/Awakened-PoE-Trade-Setup-0.11.0.exe) | :heavy_check_mark: | Fast |
+| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.11.0/Awakened-PoE-Trade-0.11.0.exe) | :heavy_multiplication_x: | Slow |
+| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.11.0/Awakened-PoE-Trade-0.11.0.AppImage) | :heavy_check_mark: | Fast |
 
 ## Tool showcase
-
-**DISCLAIMER** Not the final desired results are shown, but what you will see using the tool today.
 
 | Gem | Rare | Unique | Currency |
 |-----|------|--------|----------|
@@ -25,38 +24,29 @@
 ## Trade tool checklist
 
 - Poe.ninja
-  - :heavy_check_mark: Currency, Fragments, Oils, Incubators, Scarabs, Fossils, Resonators, Essences, Divination Cards, Prophecies
-  - :heavy_multiplication_x: Watchstones
+  - :heavy_check_mark: Currency, Fragments, Oils, Incubators, Scarabs, Fossils, Resonators, Essences, Divination Cards, Prophecies, Beasts, Vials
+  - :heavy_check_mark: Watchstones (Uses)
   - :heavy_check_mark: Gems
     - :heavy_check_mark: Level(20, 21), Quality(0, 20, 23), Corrupted
     - :heavy_check_mark: Empower, Enlighten, Enhance: Level(1-4)
-    - :heavy_check_mark: Awakened Gems
-    - :heavy_check_mark: "Brand Recall", "Blood and Sand", "Portal"
+    - :heavy_check_mark: Awakened Gems, "Brand Recall", "Blood and Sand", "Portal"
   - :heavy_check_mark: Base types (Item Level, Influence)
   - :heavy_check_mark: Maps (Map Tier)
     - :heavy_check_mark: Blighted
     - :heavy_check_mark: Unique maps
-  - :heavy_check_mark: Unique Jewels
-  - :heavy_check_mark: Unique Flasks
-    - :heavy_multiplication_x: "Vessel of Vinktar"
-  - :heavy_check_mark: Unique Weapons
+  - :heavy_check_mark: Unique Jewels, Unique Flasks, Unique Weapons, Unique Armours, Unique Accessories
     - :heavy_check_mark: Links (1-4, 5, 6)
-  - :heavy_check_mark: Unique Armours
-    - :heavy_check_mark: Links (1-4, 5, 6)
-    - :heavy_multiplication_x: "Atziri's Splendour", "Bubonic Trail", "Lightpoacher", "Shroud of the Lightless", "Volkuur's Guidance", "Yriel's Fostering"
-  - :heavy_check_mark: Unique Accessories
-    - :heavy_multiplication_x: "Doryani's Invitation", "Impresence"
-  - :heavy_check_mark: Beasts
+    - :heavy_check_mark: 10 items that have variants
 
 - Rare items
-  - :heavy_check_mark: Price prediction (poeprices.info)
+  - :heavy_check_mark: Price prediction (https://www.poeprices.info/)
 
 - Trade
   - Items
     - :heavy_check_mark: Item Level
     - :heavy_check_mark: Corrupted
     - :heavy_check_mark: Influence
-    - :heavy_check_mark: 5, 6 Linked sockets
+    - :heavy_check_mark: 5, 6 Linked sockets, White sockets
     - :heavy_check_mark: Item base/Item category
     - :heavy_check_mark: Q20 props (Armour, Evasion, ES, Physical Damage)
   - :heavy_check_mark: +-10% Rare rolls
@@ -64,7 +54,6 @@
   - :heavy_check_mark: Pseudo stats
   - Gems
     - :heavy_check_mark: Level, Quality, Corrupted
-    - :heavy_multiplication_x: Gem experience
   - :heavy_check_mark: Currency bulk search
   - :heavy_check_mark: Grouping results from one account (protection against "pricefixing")
 
@@ -84,23 +73,13 @@ No Administrator rights required
 - Press `F5` to go to hideout
 - `Ctrl + MouseWheel` to scroll through stash tabs\
   *You can also disable "Mousewheel Zoom" in PoE settings (Options -> UI -> 3-rd check mark starting from the bottom)*
+- `Alt + W` to open the item on Wiki
 
 ### Tool end goals
 - One Tool To Rule Them All
   - TradeMacro
   - MercuryTrade
   - Win, Linux, Mac
-  - Multi-language (difficult to achieve, may be denied)
-
-## FAQ
-
-- **How much memory does it need?**
-
-|    | On program load | After some time |
-|----|-----------------|-----------------|
-| APT | 115 MB         | 78 MB |
-| TradeMacro | 60 MB   | 24 MB |
-
 
 ### Acknowledgments
 
@@ -108,5 +87,6 @@ No Administrator rights required
 - [iohook](https://github.com/wilix-team/iohook)
 - [node-window-manager](https://github.com/sentialx/node-window-manager)
 - [robotjs](https://github.com/octalmage/robotjs)
+- [RePoE](https://github.com/brather1ng/RePoE)
 - [poeprices.info](https://www.poeprices.info/)
 - [poe.ninja](https://poe.ninja/)
