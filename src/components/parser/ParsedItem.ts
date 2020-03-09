@@ -22,7 +22,7 @@ export interface ParsedItem {
   }
   quality?: number
   sockets: {
-    linked?: number // only 5 or 6
+    linked?: 5 | 6 // only 5 or 6
     white?: number
   }
   stackSize?: number
