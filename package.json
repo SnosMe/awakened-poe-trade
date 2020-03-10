@@ -39,6 +39,7 @@
     "vue-router": "^3.1.5",
     "vue-slider-component": "^3.1.1",
     "vue-trend-chart": "^0.15.1",
+    "winston": "^3.2.1",
     "x11": "git+https://git@github.com/sidorares/node-x11.git"
   },
   "devDependencies": {

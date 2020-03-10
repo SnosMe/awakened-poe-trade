@@ -4,15 +4,18 @@ import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
 import { showWindow, lockWindow, poeUserInterfaceWidth } from './positioning'
-import { KeyCodeToName, KeyToElectron } from '@/components/settings/KeyToCode'
+import { IohookToName, KeyToElectron } from '@/components/settings/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
+import { logger } from './logger'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
 
 function priceCheck (lockedMode: boolean) {
+  logger.info('Price check', { source: 'price-check', lockedMode })
+
   if (!isPollingClipboard) {
     isPollingClipboard = true
     pollClipboard(32, 500)
@@ -28,6 +31,7 @@ function priceCheck (lockedMode: boolean) {
   }
   checkPressPosition = screen.getCursorScreenPoint()
 
+  // @TODO: linux os shortcuts, to prevent delay need to robotjs.keyToggle('key_XXX', 'up')
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {
       robotjs.keyTap('key_c')
@@ -73,10 +77,13 @@ function registerGlobal () {
       }).show()
     }
   })
+
+  logger.verbose('Registered Global', { source: 'shortcuts', total: register.length })
 }
 
 function unregisterGlobal () {
   globalShortcut.unregisterAll()
+  logger.verbose('Unregistered Global', { source: 'shortcuts' })
 }
 
 export function setupShortcuts () {
@@ -85,15 +92,42 @@ export function setupShortcuts () {
   // threads ready to run, the function returns immediately
   robotjs.setKeyboardDelay(0)
 
-  if (PoeWindow.isActive) {
+  if (PoeWindow.isActive && config.get('useOsGlobalShortcut')) {
     registerGlobal()
   }
   PoeWindow.addListener('active-change', (isActive) => {
-    if (isActive) {
-      registerGlobal()
-    } else {
-      unregisterGlobal()
+    if (config.get('useOsGlobalShortcut')) {
+      if (isActive) {
+        registerGlobal()
+      } else {
+        unregisterGlobal()
+      }
     }
+  })
+
+  ioHook.on('keydown', (e) => {
+    const pressed = eventToString(e)
+    logger.debug('Keydown', { source: 'shortcuts', keys: pressed })
+    
+    if (!PoeWindow.isActive || config.get('useOsGlobalShortcut')) return
+
+    if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
+      priceCheck(false)
+    } else if (pressed === config.get('priceCheckLocked')) {
+      priceCheck(true)
+    } else if (pressed === config.get('wikiKey')) {
+      pollClipboard(32, 500).then(openWiki).catch(() => {})
+      robotjs.keyTap('key_c', ['control'])
+    } else {
+      const command = config.get('commands').find(c => c.hotkey === pressed)
+      if (command) {
+        typeChatCommand(command.text)
+      }
+    }
+  })
+
+  ioHook.on('keyup', (e) => {
+    logger.debug('Keyup', { source: 'shortcuts', key: IohookToName[e.keycode] || 'unknown' })
   })
 
   ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, rotation: 1 | -1 }) => {
@@ -132,11 +166,13 @@ function typeChatCommand (command: string) {
   }, 100)
 }
 
-function eventToString (e: { rawcode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
+function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
   const { ctrlKey, shiftKey, altKey } = e
 
-  let code = KeyCodeToName[e.rawcode]
+  let code = IohookToName[e.keycode]
   if (!code) return 'unknown'
+
+  if (code === 'Shift' || code === 'Alt' || code === 'Ctrl') return code
 
   if (shiftKey && altKey) code = `Shift + Alt + ${code}`
   else if (ctrlKey && shiftKey) code = `Ctrl + Shift + ${code}`

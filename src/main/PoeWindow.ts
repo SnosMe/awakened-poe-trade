@@ -1,6 +1,7 @@
 import { Rectangle } from 'electron'
 import { windowManager } from './window-manager'
 import { EventEmitter } from 'events'
+import { logger } from './logger'
 
 const POE_TITLE = 'Path of Exile'
 
@@ -15,18 +16,34 @@ class PoeWindowClass extends EventEmitter {
 
   set isActive (active: boolean) {
     if (this.isActive !== active) {
+      if (active) {
+        logger.verbose('Is active', { source: 'poe-window' })
+      } else {
+        logger.verbose('Not focused', { source: 'poe-window' })
+      }
       this.emit('active-change', active, this.isActive)
+      this._isActive = active
     }
-    this._isActive = active
   }
 
   startPolling () {
     setInterval(async () => {
-      const title = await windowManager.getActiveWindowTitle()
-      this.isActive = (title === POE_TITLE)
+      try {
+        const title = await windowManager.getActiveWindowTitle()
+        this.isActive = (title === POE_TITLE)
+      } catch (e) {
+        this.isActive = false
+      }
+
       if (this.isActive) {
-        this.bounds = (await windowManager.getActiveWindowContentBounds())!
-        this.pid = (await windowManager.getActiveWindowId())!
+        try {
+          this.bounds = (await windowManager.getActiveWindowContentBounds())!
+          this.pid = (await windowManager.getActiveWindowId())!
+        } catch (e) {
+          this.isActive = false
+          this.bounds = undefined
+          this.pid = undefined
+        }
       }
     }, 500)
   }

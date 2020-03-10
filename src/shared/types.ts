@@ -14,6 +14,8 @@ export interface Config {
     hotkey?: string
   }>
   altTabToGame: boolean
+  useOsGlobalShortcut: boolean
+  logLevel: string
 }
 
 export const defaultConfig: Config = {
@@ -28,5 +30,7 @@ export const defaultConfig: Config = {
     text: '/exit',
     hotkey: 'F9'
   }],
-  altTabToGame: true
+  altTabToGame: true,
+  useOsGlobalShortcut: (process?.platform === 'win32'),
+  logLevel: 'error'
 }

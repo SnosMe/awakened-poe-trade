@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, ipcMain } from 'electron'
+import { app, protocol, ipcMain, screen } from 'electron'
 import { installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 import ioHook from 'iohook'
 import { setupShortcuts } from './main/shortcuts'
@@ -12,12 +12,28 @@ import { setupConfig, batchUpdateConfig } from './main/config'
 import { CLOSE_SETTINGS_WINDOW } from './shared/ipc-event'
 import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { PoeWindow } from './main/PoeWindow'
+import { logger } from './main/logger'
+import os from 'os'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
 app.on('ready', async () => {
+  logger.info('App is running', {
+    source: 'init',
+    version: app.getVersion(),
+    osName: os.type(),
+    osRelease: os.release(),
+    logLevel: logger.level,
+    displays: screen.getAllDisplays().map(d => ({
+      bounds: d.bounds,
+      workArea: d.workArea,
+      scaleFactor: d.scaleFactor,
+      isPrimary: d.id === screen.getPrimaryDisplay().id
+    }))
+  })
+
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
     // Devtools extensions are broken in Electron 6.0.0 and greater

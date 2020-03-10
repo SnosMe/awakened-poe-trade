@@ -1,12 +1,13 @@
 import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView } from 'electron'
 import ioHook from 'iohook'
-import { win } from './window'
+import { win, WIDTH, TITLE_HEIGHT } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
 import { windowManager } from './window-manager'
 import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK } from '../shared/ipc-event'
 import { config } from './config'
 import { leagues } from './tray'
+import { logger } from './logger'
 
 const CLOSE_THRESHOLD_PX = 40
 
@@ -14,32 +15,38 @@ let isWindowShown = true
 let isWindowLocked = false
 let isClickedAfterLock = false
 
-let lastPoePos: Rectangle
 let browserViewExternal: BrowserView | undefined
 
-export async function showWindow () {
+export function showWindow () {
   positionWindow(win)
+  const wasLockedLinux = isWindowLocked
   if (isWindowShown && isWindowLocked) {
+    logger.debug('Hide the window (was left in background)', { source: 'price-check', fn: 'showWindow' })
     hideWindow()
   }
   isWindowShown = true
   win.showInactive()
   if (process.platform === 'linux') {
-    win.setAlwaysOnTop(true)
+    if (wasLockedLinux && config.get('altTabToGame')) {
+      win.setSkipTaskbar(true) // fix: GNOME window is ready
+    }
+    win.setAlwaysOnTop(true) // X11: alwaysOnTop resets on show/hide
   }
 }
 
 function hideWindow () {
+  logger.verbose('Hide window', { source: 'price-check', fn: 'hideWindow', wasLocked: isWindowLocked })
+
   isWindowShown = false
+  if (isWindowLocked && config.get('altTabToGame')) {
+    win.setSkipTaskbar(true)
+    win.setAlwaysOnTop(true)
+  }
   win.hide()
 
   if (isWindowLocked) {
     isWindowLocked = false
     PoeWindow.isActive = true
-    if (config.get('altTabToGame')) {
-      win.setSkipTaskbar(true)
-      win.setAlwaysOnTop(true)
-    }
     if (process.platform === 'win32') {
       windowManager.focusWindowById(PoeWindow.pid!)
     }
@@ -54,6 +61,7 @@ function hideWindow () {
 }
 
 export function lockWindow (syntheticClick = false) {
+  logger.verbose('Disable auto-hide and focus window', { source: 'price-check', fn: 'lockWindow', syntheticClick })
   isWindowLocked = true
   PoeWindow.isActive = false
   isClickedAfterLock = syntheticClick
@@ -69,15 +77,23 @@ export function setupShowHide () {
 
   ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string, modifier?: string) => {
     if (name === 'click') {
+      if (!isWindowShown) return // close button `click` event arrives after hide
+
       isClickedAfterLock = true
       isWindowLocked = true
+      logger.debug('Clicked inside window after lock', { source: 'price-check' })
     } else if (name === 'leave') {
       if (!isClickedAfterLock && leagues.length) {
+        logger.debug('Mouse has left the window without a single click', { source: 'price-check' })
         hideWindow()
       }
     } else if (name === 'enter') {
+      if (isWindowLocked) return
+
       if (modifier === config.get('priceCheckKeyHold')) {
         lockWindow()
+      } else {
+        logger.debug('Not locking window, the key is not held', { source: 'price-check' })
       }
     }
   })
@@ -88,12 +104,12 @@ export function setupShowHide () {
     }
 
     win.setBrowserView(browserViewExternal)
-    win.setBounds(lastPoePos)
+    win.setBounds(PoeWindow.bounds!)
     browserViewExternal.setBounds({
       x: 0,
-      y: 24,
-      width: lastPoePos.width - 460,
-      height: lastPoePos.height - 24
+      y: TITLE_HEIGHT,
+      width: PoeWindow.bounds!.width - WIDTH,
+      height: PoeWindow.bounds!.height - TITLE_HEIGHT
     })
     browserViewExternal.webContents.loadURL(link)
   })
@@ -111,9 +127,9 @@ export function setupShowHide () {
         distance = Math.hypot(e.x - checkPressPosition.x, e.y - checkPressPosition.y)
       }
 
+      logger.silly('Auto-hide mouse move', { source: 'price-check', distance, threshold: CLOSE_THRESHOLD_PX })
       if (distance > CLOSE_THRESHOLD_PX) {
-        isWindowShown = false
-        win.hide()
+        hideWindow()
       }
     }
   })
@@ -121,14 +137,16 @@ export function setupShowHide () {
 
 function positionWindow (tradeWindow: BrowserWindow) {
   const poePos = PoeWindow.bounds!
-  lastPoePos = poePos
 
-  tradeWindow.setBounds({
+  const newBounds = {
     x: getOffsetX(poePos),
     y: poePos.y,
-    width: 460,
+    width: WIDTH,
     height: poePos.height
-  }, false)
+  }
+
+  logger.debug('Reposition window', { source: 'price-check', newBounds, poeBounds: poePos })
+  tradeWindow.setBounds(newBounds, false)
 }
 
 function getOffsetX (poePos: Rectangle): number {

@@ -5,6 +5,9 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 
 export let win: BrowserWindow
 
+export const WIDTH = 460
+export const TITLE_HEIGHT = 24
+
 export function createWindow () {
   win = new BrowserWindow({
     width: 460,

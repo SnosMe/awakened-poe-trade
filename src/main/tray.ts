@@ -6,12 +6,14 @@ import { win } from './window'
 import { League } from '@/shared/types'
 import { LEAGUES_READY, LEAGUE_SELECTED } from '@/shared/ipc-event'
 import { createWindow as settingsWindow } from './SettingsWindow'
+import { logger } from './logger'
 
 let tray: Tray
 
 export let leagues: League[] = []
 
 function selectLeague (league: League) {
+  logger.info('League selected', { source: 'config', leagueId: league.id })
   config.set('leagueId', league.id)
 
   leagues.forEach(league => { league.selected = false })
@@ -42,8 +44,11 @@ export function createTray () {
 
   ipcMain.on(LEAGUES_READY, (e, leagues_: League[]) => {
     leagues = leagues_
-    config.set('leagueId', leagues.find(league => league.selected)!.id)
+    const selected = leagues.find(league => league.selected)!.id
+    config.set('leagueId', selected)
     rebuildContextMenu()
+
+    logger.info('Leagues ready', { source: 'init', leagues, selected })
   })
 
   tray.setToolTip('Awakened PoE Trade')

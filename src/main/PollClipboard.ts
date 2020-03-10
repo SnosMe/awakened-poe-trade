@@ -1,5 +1,6 @@
 import { clipboard } from 'electron'
 import { TAG_RARITY } from '../components/parser/constants'
+import { logger } from './logger'
 
 export async function pollClipboard (delay: number, limit: number): Promise<string> {
   let textBefore = clipboard.readText()
@@ -22,6 +23,7 @@ export async function pollClipboard (delay: number, limit: number): Promise<stri
         if (elapsed < limit) {
           setTimeout(poll, delay)
         } else {
+          logger.warn('No changes found', { source: 'clipboard', timeout: limit })
           reject(new Error('Clipboard was not changed'))
         }
       }
