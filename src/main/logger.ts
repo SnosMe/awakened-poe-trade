@@ -9,7 +9,8 @@ export const logger = winston.createLogger({
   defaultMeta: { source: 'etc' },
   transports: [
     new winston.transports.File({
-      filename: path.join(app.getPath('userData'), 'apt-data', 'logs.txt')
+      filename: path.join(app.getPath('userData'), 'apt-data', 'logs.txt'),
+      options: { flags: 'w' }
     })
   ]
 })

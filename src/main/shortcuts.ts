@@ -34,15 +34,15 @@ function priceCheck (lockedMode: boolean) {
   // @TODO: linux os shortcuts, to prevent delay need to robotjs.keyToggle('key_XXX', 'up')
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {
-      robotjs.keyTap('key_c')
+      robotjs.keyTap('C')
     } else {
-      robotjs.keyTap('key_c', ['control'])
+      robotjs.keyTap('C', ['Ctrl'])
     }
   } else {
     if (config.get('priceCheckLocked')!.includes('Alt')) {
-      robotjs.keyToggle('alt', 'up')
+      robotjs.keyToggle('Alt', 'up')
     }
-    robotjs.keyTap('key_c', ['control'])
+    robotjs.keyTap('C', ['Ctrl'])
   }
 }
 
@@ -58,7 +58,7 @@ function registerGlobal () {
       accelerator: config.get('wikiKey'),
       cb: () => {
         pollClipboard(32, 500).then(openWiki).catch(() => {})
-        robotjs.keyTap('key_c', ['control'])
+        robotjs.keyTap('C', ['Ctrl'])
       }
     },
     ...config.get('commands')
@@ -108,7 +108,7 @@ export function setupShortcuts () {
   ioHook.on('keydown', (e) => {
     const pressed = eventToString(e)
     logger.debug('Keydown', { source: 'shortcuts', keys: pressed })
-    
+
     if (!PoeWindow.isActive || config.get('useOsGlobalShortcut')) return
 
     if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
@@ -117,7 +117,7 @@ export function setupShortcuts () {
       priceCheck(true)
     } else if (pressed === config.get('wikiKey')) {
       pollClipboard(32, 500).then(openWiki).catch(() => {})
-      robotjs.keyTap('key_c', ['control'])
+      robotjs.keyTap('C', ['Ctrl'])
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
@@ -137,9 +137,9 @@ export function setupShortcuts () {
     const mouseX = (process.platform === 'linux') ? screen.getCursorScreenPoint().x : e.x
     if (mouseX > stashCheckX) {
       if (e.rotation > 0) {
-        robotjs.keyTap('right')
+        robotjs.keyTap('ArrowRight')
       } else if (e.rotation < 0) {
-        robotjs.keyTap('left')
+        robotjs.keyTap('ArrowLeft')
       }
     }
   })
@@ -152,14 +152,14 @@ function typeChatCommand (command: string) {
   const saved = clipboard.readText()
 
   clipboard.writeText(command)
-  robotjs.keyTap('enter')
-  robotjs.keyTap('key_v', ['control'])
-  robotjs.keyTap('enter')
+  robotjs.keyTap('Enter')
+  robotjs.keyTap('V', ['Ctrl'])
+  robotjs.keyTap('Enter')
   // restore the last chat
-  robotjs.keyTap('enter')
-  robotjs.keyTap('up')
-  robotjs.keyTap('up')
-  robotjs.keyTap('escape')
+  robotjs.keyTap('Enter')
+  robotjs.keyTap('ArrowUp')
+  robotjs.keyTap('ArrowUp')
+  robotjs.keyTap('Escape')
 
   setTimeout(() => {
     clipboard.writeText(saved)

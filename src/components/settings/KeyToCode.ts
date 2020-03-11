@@ -325,4 +325,18 @@ export const KeyToIohook = {
   Shift: 0x002A
 }
 
+// https://github.com/wilix-team/iohook/blob/master/libuiohook/src/windows/input_helper.c#L311
+if (process?.platform === 'win32') {
+  KeyToIohook.PageUp |= 0xEE00
+  KeyToIohook.PageDown |= 0xEE00
+  KeyToIohook.End |= 0xEE00
+  KeyToIohook.Home |= 0xEE00
+  KeyToIohook.ArrowLeft |= 0xEE00
+  KeyToIohook.ArrowUp |= 0xEE00
+  KeyToIohook.ArrowRight |= 0xEE00
+  KeyToIohook.ArrowDown |= 0xEE00
+  KeyToIohook.Insert |= 0xEE00
+  KeyToIohook.Delete |= 0xEE00
+}
+
 export const IohookToName = Object.fromEntries(Object.entries(KeyToIohook).map(([k, v]) => ([v, k])))

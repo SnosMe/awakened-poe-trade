@@ -32,5 +32,5 @@ export const defaultConfig: Config = {
   }],
   altTabToGame: true,
   useOsGlobalShortcut: (process?.platform === 'win32'),
-  logLevel: 'error'
+  logLevel: 'warn'
 }
