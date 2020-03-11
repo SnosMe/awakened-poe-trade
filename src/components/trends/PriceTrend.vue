@@ -13,7 +13,7 @@
         <img :src="icon[trend.price.curr].url" :alt="icon[trend.price.curr].text" class="max-w-full max-h-full">
       </div>
     </div>
-    <div class="px-2 text-center">
+    <div v-if="trend.changeStr" class="px-2 text-center">
       <div class="leading-tight">
         <i v-if="trend.changeStr === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
         <i v-if="trend.changeStr === 'up'" class="fas fa-angle-double-up pr-1 text-green-500"></i>
@@ -22,7 +22,7 @@
       </div>
       <div class="text-xs text-gray-500 leading-none">Last 7 days</div>
     </div>
-    <div class="w-12 h-8">
+    <div v-if="trend.changeStr" class="w-12 h-8">
       <trend-chart padding="2"
       :datasets="[{
         data: trend.receive.graphPoints,
@@ -71,26 +71,30 @@ export default {
         ? { val: trend.receive.chaosValue, curr: 'c' }
         : Prices.autoCurrency(trend.receive.chaosValue, 'c')
 
-      let changeStr = 'const'
-      if (trend.receive.graphPoints.length === 7) {
-        if (
-          trend.receive.graphPoints.filter(p => p > 0).length >= 4 ||
-          trend.receive.graphPoints.slice(4).every(p => p > 0)
-        ) {
-          changeStr = 'up'
-        } else if (
-          trend.receive.graphPoints.filter(p => p < 0).length >= 4 ||
-          trend.receive.graphPoints.slice(4).every(p => p < 0)
-        ) {
-          changeStr = 'down'
+      if (trend.receive.graphPoints.length >= 2) {
+        let changeStr = 'const'
+        if (trend.receive.graphPoints.length === 7) {
+          if (
+            trend.receive.graphPoints.filter(p => p > 0).length >= 4 ||
+            trend.receive.graphPoints.slice(4).every(p => p > 0)
+          ) {
+            changeStr = 'up'
+          } else if (
+            trend.receive.graphPoints.filter(p => p < 0).length >= 4 ||
+            trend.receive.graphPoints.slice(4).every(p => p < 0)
+          ) {
+            changeStr = 'down'
+          }
         }
+
+        const n = trend.receive.graphPoints.length
+        const mean = trend.receive.graphPoints.reduce((a, b) => a + b) / n
+        const changeVal = Math.sqrt(trend.receive.graphPoints.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (n - 1))
+
+        return { price, ...trend, changeStr, changeVal }
+      } else {
+        return { price, ...trend }
       }
-
-      const n = trend.receive.graphPoints.length
-      const mean = trend.receive.graphPoints.reduce((a, b) => a + b) / n
-      const changeVal = Math.sqrt(trend.receive.graphPoints.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (n - 1))
-
-      return { price, ...trend, changeStr, changeVal }
     },
     isValuableBasetype () {
       return isValuableBasetype(this.item)
