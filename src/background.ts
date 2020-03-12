@@ -54,7 +54,10 @@ app.on('ready', async () => {
   PoeWindow.startPolling()
   setupConfig()
   setupShowHide()
-  createWindow()
+  setTimeout(
+    createWindow, // fix: linux window black instead of transparent
+    process.platform === 'linux' ? 1000 : 0
+  )
   createTray()
   setupShortcuts()
 

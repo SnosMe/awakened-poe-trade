@@ -19,22 +19,16 @@ let browserViewExternal: BrowserView | undefined
 
 export function showWindow () {
   positionWindow(win)
-  const wasLockedLinux = isWindowLocked
   if (isWindowShown && isWindowLocked) {
     logger.debug('Hide the window (was left in background)', { source: 'price-check', fn: 'showWindow' })
-    hideWindow()
+    hideWindow(true)
   }
+
   isWindowShown = true
   win.showInactive()
-  if (process.platform === 'linux') {
-    if (wasLockedLinux && config.get('altTabToGame')) {
-      win.setSkipTaskbar(true) // fix: GNOME window is ready
-    }
-    win.setAlwaysOnTop(true) // X11: alwaysOnTop resets on show/hide
-  }
 }
 
-function hideWindow () {
+function hideWindow (willShow?: boolean) {
   logger.verbose('Hide window', { source: 'price-check', fn: 'hideWindow', wasLocked: isWindowLocked })
 
   isWindowShown = false
@@ -42,13 +36,15 @@ function hideWindow () {
     win.setSkipTaskbar(true)
     win.setAlwaysOnTop(true, 'screen-saver')
   }
-  win.hide()
+  if (!willShow) {
+    win.hide()
+  }
   win.setIgnoreMouseEvents(true)
 
   if (isWindowLocked) {
     isWindowLocked = false
     PoeWindow.isActive = true
-    if (process.platform === 'win32') {
+    if (process.platform === 'win32' && !willShow) {
       windowManager.focusWindowById(PoeWindow.pid!)
     }
     if (browserViewExternal) {

@@ -19,6 +19,7 @@ export function createWindow () {
     frame: false,
     show: false,
     transparent: true,
+    fullscreen: true, // linux does not support changing at runtime, add config?
     resizable: false,
     // backgroundColor: '#2d3748', // gray-800
     webPreferences: {
@@ -38,9 +39,10 @@ export function createWindow () {
     checkForUpdates()
   }
 
-  win.setAlwaysOnTop(true, 'screen-saver')
   win.setIgnoreMouseEvents(true)
   win.once('ready-to-show', () => {
+    // place here because of linux
+    win.setAlwaysOnTop(true, 'screen-saver')
     // win.show()
   })
 }
