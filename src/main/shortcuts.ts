@@ -48,32 +48,33 @@ function priceCheck (lockedMode: boolean) {
 
 function registerGlobal () {
   const register = [
-    {
-      accelerator: `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
-      cb: () => priceCheck(false)
-    }, {
-      accelerator: config.get('priceCheckLocked'),
-      cb: () => priceCheck(true)
-    }, {
-      accelerator: config.get('wikiKey'),
-      cb: () => {
+    shortcutCallback(
+      `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
+      () => priceCheck(false)
+    ),
+    shortcutCallback(
+      config.get('priceCheckLocked'),
+      () => priceCheck(true)
+    ),
+    shortcutCallback(
+      config.get('wikiKey'),
+      () => {
         pollClipboard(32, 500).then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }
-    },
+    ),
     ...config.get('commands')
-      .map(command => ({
-        accelerator: command.hotkey,
-        cb: () => typeChatCommand(command.text)
-      }))
-  ].filter(a => Boolean(a.accelerator))
+      .map(command =>
+        shortcutCallback(command.hotkey, () => typeChatCommand(command.text))
+      )
+  ].filter(a => Boolean(a.shortcut))
 
   register.forEach(a => {
-    const success = globalShortcut.register(shortcutToElectron(a.accelerator!), a.cb)
+    const success = globalShortcut.register(shortcutToElectron(a.shortcut!), a.cb)
     if (!success) {
       new Notification({
         title: 'Awakened PoE Trade',
-        body: `Cannot register shortcut ${a.accelerator}, because it is already registered by another application.`
+        body: `Cannot register shortcut ${a.shortcut}, because it is already registered by another application.`
       }).show()
     }
   })
@@ -112,16 +113,24 @@ export function setupShortcuts () {
     if (!PoeWindow.isActive || config.get('useOsGlobalShortcut')) return
 
     if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
-      priceCheck(false)
+      shortcutCallback(pressed, () => {
+        priceCheck(false)
+      }).cb()
     } else if (pressed === config.get('priceCheckLocked')) {
-      priceCheck(true)
+      shortcutCallback(pressed, () => {
+        priceCheck(true)
+      }).cb()
     } else if (pressed === config.get('wikiKey')) {
-      pollClipboard(32, 500).then(openWiki).catch(() => {})
-      robotjs.keyTap('C', ['Ctrl'])
+      shortcutCallback(pressed, () => {
+        pollClipboard(32, 500).then(openWiki).catch(() => {})
+        robotjs.keyTap('C', ['Ctrl'])
+      }).cb()
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
-        typeChatCommand(command.text)
+        shortcutCallback(pressed, () => {
+          typeChatCommand(command.text)
+        }).cb()
       }
     }
   })
@@ -182,6 +191,24 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
   else if (shiftKey) code = `Shift + ${code}`
 
   return code
+}
+
+function shortcutCallback<T extends Function> (shortcut: string | undefined, cb: T) {
+  return {
+    shortcut,
+    cb: function () {
+      if (process.platform === 'linux' && config.get('useOsGlobalShortcut')) {
+        linuxToggleUpNonModKey(shortcut!)
+      }
+      cb()
+    }
+  }
+}
+
+function linuxToggleUpNonModKey (shortcut: string) {
+  const nonModKey = shortcut.split(' + ').reverse()[0]
+  logger.debug('Toggling key up, to fix Linux freeze', { source: 'shortcuts', key: nonModKey })
+  robotjs.keyToggle(nonModKey, 'up')
 }
 
 function shortcutToElectron (shortcut: string) {

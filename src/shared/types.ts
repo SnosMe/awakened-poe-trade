@@ -31,6 +31,6 @@ export const defaultConfig: Config = {
     hotkey: 'F9'
   }],
   altTabToGame: true,
-  useOsGlobalShortcut: (process?.platform === 'win32'),
+  useOsGlobalShortcut: true,
   logLevel: 'warn'
 }
