@@ -1,10 +1,14 @@
 <template>
-  <div class="flex-grow flex h-full">
+  <div class="flex-grow flex h-full justify-between">
     <div v-if="browserMode"
       class="w-full layout-column" style="width: calc(100% - 460px);">
       <browser-mode />
     </div>
-    <div class="flex-grow layout-column">
+    <div v-if="!browserMode" class="layout-column border border-green-700" style="border-width: 4px;"
+      :style="{ width: poeUiWidth }">
+      wiasds
+    </div>
+    <div class="flex-grow layout-column" style="max-width: 460px;">
       <app-titlebar @close="hideWindow" :title="title">
         <div class="flex">
           <ui-popper v-if="exaltedCost" trigger="clickToToggle">
@@ -35,12 +39,16 @@
         <router-view/>
         <div id="home" class="flex-grow layout-column">
           <div class="flex-1"></div>
-          <div class="flex-grow layout-column" style="max-width: 460px;">
+          <div class="flex-grow layout-column">
             <app-bootstrap />
             <checked-item />
           </div>
         </div>
       </div>
+    </div>
+    <div v-if="!browserMode" class="layout-column border border-green-700" style="border-width: 4px;"
+      :style="{ width: poeUiWidth }">
+      wiasds
     </div>
   </div>
 </template>
@@ -62,6 +70,17 @@ export default {
     BrowserMode
   },
   filters: { displayRounding },
+  created () {
+    window.addEventListener('resize', () => {
+      this.updatePoeUiWidth()
+    })
+    this.updatePoeUiWidth()
+  },
+  data () {
+    return {
+      poeUiWidth: '0px'
+    }
+  },
   computed: {
     browserMode () {
       return !MainProcess.isElectron
@@ -83,6 +102,11 @@ export default {
   methods: {
     hideWindow () {
       MainProcess.priceCheckHide()
+    },
+    updatePoeUiWidth () {
+      // sidebar is 370px at 800x600
+      const ratio = 370 / 600
+      this.poeUiWidth = `${Math.round(window.innerHeight * ratio)}px`
     }
   }
 }

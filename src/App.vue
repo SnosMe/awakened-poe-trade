@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="text-sm font-fontin-small-caps bg-gray-800">
+  <div id="app" class="text-sm font-fontin-small-caps">
     <router-view />
   </div>
 </template>

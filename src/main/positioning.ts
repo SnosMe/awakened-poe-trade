@@ -11,7 +11,7 @@ import { logger } from './logger'
 
 const CLOSE_THRESHOLD_PX = 40
 
-let isWindowShown = true
+let isWindowShown = false
 let isWindowLocked = false
 let isClickedAfterLock = false
 
@@ -40,9 +40,10 @@ function hideWindow () {
   isWindowShown = false
   if (isWindowLocked && config.get('altTabToGame')) {
     win.setSkipTaskbar(true)
-    win.setAlwaysOnTop(true)
+    win.setAlwaysOnTop(true, 'screen-saver')
   }
   win.hide()
+  win.setIgnoreMouseEvents(true)
 
   if (isWindowLocked) {
     isWindowLocked = false
@@ -70,6 +71,7 @@ export function lockWindow (syntheticClick = false) {
     win.setSkipTaskbar(false)
     win.setAlwaysOnTop(false)
   }
+  win.setIgnoreMouseEvents(false)
 }
 
 export function setupShowHide () {
@@ -79,9 +81,13 @@ export function setupShowHide () {
     if (name === 'click') {
       if (!isWindowShown) return // close button `click` event arrives after hide
 
-      isClickedAfterLock = true
-      isWindowLocked = true
-      logger.debug('Clicked inside window after lock', { source: 'price-check' })
+      if (!isWindowLocked) {
+        logger.debug('Clicked inside window fix', { source: 'price-check' })
+        lockWindow(true)
+      } else {
+        isClickedAfterLock = true
+        logger.debug('Clicked inside window after lock', { source: 'price-check' })
+      }
     } else if (name === 'leave') {
       if (!isClickedAfterLock && leagues.length) {
         logger.debug('Mouse has left the window without a single click', { source: 'price-check' })
@@ -138,12 +144,7 @@ export function setupShowHide () {
 function positionWindow (tradeWindow: BrowserWindow) {
   const poePos = PoeWindow.bounds!
 
-  const newBounds = {
-    x: getOffsetX(poePos),
-    y: poePos.y,
-    width: WIDTH,
-    height: poePos.height
-  }
+  const newBounds = poePos
 
   logger.debug('Reposition window', { source: 'price-check', newBounds, poeBounds: poePos })
   tradeWindow.setBounds(newBounds, false)

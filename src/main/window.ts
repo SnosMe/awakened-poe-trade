@@ -18,7 +18,9 @@ export function createWindow () {
     skipTaskbar: true,
     frame: false,
     show: false,
-    backgroundColor: '#2d3748', // gray-800
+    transparent: true,
+    resizable: false,
+    // backgroundColor: '#2d3748', // gray-800
     webPreferences: {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
       webSecurity: false
@@ -36,7 +38,9 @@ export function createWindow () {
     checkForUpdates()
   }
 
+  win.setAlwaysOnTop(true, 'screen-saver')
+  win.setIgnoreMouseEvents(true)
   win.once('ready-to-show', () => {
-    win.show()
+    // win.show()
   })
 }

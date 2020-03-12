@@ -8,7 +8,7 @@ import { setupWindowManager } from './main/window-manager'
 import { createTray } from './main/tray'
 import { createWindow } from './main/window'
 import { setupShowHide } from './main/positioning'
-import { setupConfig, batchUpdateConfig } from './main/config'
+import { setupConfig, batchUpdateConfig, config } from './main/config'
 import { CLOSE_SETTINGS_WINDOW } from './shared/ipc-event'
 import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { PoeWindow } from './main/PoeWindow'
@@ -32,7 +32,8 @@ app.on('ready', async () => {
       workArea: d.workArea,
       scaleFactor: d.scaleFactor,
       isPrimary: d.id === screen.getPrimaryDisplay().id
-    }))
+    })),
+    config: config.store
   })
 
   if (isDevelopment && !process.env.IS_TEST) {
