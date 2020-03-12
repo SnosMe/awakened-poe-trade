@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!error" class="layout-column flex-grow">
+  <div v-if="!error" class="layout-column flex-grow min-h-0">
     <div class="mb-1 flex pl-2 justify-between items-baseline" style="min-height: 22px;">
       <div class="flex items-center text-gray-500">
         <span class="mr-1">Matched:</span>
