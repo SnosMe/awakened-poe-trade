@@ -189,8 +189,13 @@ export default {
     getRelativeTime (iso) {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
-    openTradeLink () {
-      MainProcess.openAppBrowser(`https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`)
+    openTradeLink (e) {
+      const link = `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`
+      if (e.ctrlKey) {
+        MainProcess.openUserBrowser(link)
+      } else {
+        MainProcess.openAppBrowser(link)
+      }
     }
   }
 }
