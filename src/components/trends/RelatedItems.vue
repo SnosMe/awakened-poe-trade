@@ -1,5 +1,5 @@
 <template>
-  <ui-popper v-if="result" tag-name="div" class="flex" :delayOnMouseOut="150">
+  <ui-popper v-if="result" tag-name="div" class="flex" :delayOnMouseOut="150" boundaries-selector="#price-window">
     <template slot="reference">
       <button class="text-gray-500 py-2 px-4 flex items-baseline"><i class="fas fa-chevron-circle-down"></i></button>
     </template>

@@ -4,15 +4,15 @@
       class="w-full layout-column" style="width: calc(100% - 460px);">
       <browser-mode />
     </div>
-    <div v-if="!isBrowserShown && !browserMode" class="layout-column border border-green-700" style="border-width: 4px;"
+    <div v-if="!isBrowserShown && !browserMode" class="layout-column"
       :style="{ width: poeUiWidth }">
     </div>
-    <div class="flex-grow layout-column" style="max-width: 460px;"
+    <div id="price-window" class="flex-grow layout-column" style="max-width: 460px;"
       @mouseleave="handleMouseleave"
       @click="handleClick">
       <app-titlebar @close="hideWindow" :title="title">
         <div class="flex">
-          <ui-popper v-if="exaltedCost" trigger="clickToToggle">
+          <ui-popper v-if="exaltedCost" trigger="clickToToggle" boundaries-selector="#price-window">
             <template slot="reference">
               <button class="titlebar-btn"><i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}</button>
             </template>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div v-if="!browserMode" class="layout-column border border-red-700 flex-1" style="border-width: 4px;"
+    <div v-if="!browserMode" class="layout-column flex-1"
       :style="{ width: poeUiWidth }">
     </div>
   </div>

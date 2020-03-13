@@ -138,7 +138,7 @@ export function setupShowHide () {
     const modifier = e.ctrlKey ? 'Ctrl' : e.shiftKey ? 'Shift' : undefined
     if (!isPollingClipboard && checkPressPosition && isWindowShown && !isWindowLocked && modifier !== config.get('priceCheckKeyHold')) {
       const mousePos = mousePosFromEvent(e)
-      let distance = Math.hypot(mousePos.x - checkPressPosition.x, mousePos.y - checkPressPosition.y)
+      const distance = Math.hypot(mousePos.x - checkPressPosition.x, mousePos.y - checkPressPosition.y)
 
       logger.silly('Auto-hide mouse move', { source: 'price-check', distance, threshold: CLOSE_THRESHOLD_PX })
       if (distance > CLOSE_THRESHOLD_PX) {

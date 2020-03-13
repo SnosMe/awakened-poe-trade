@@ -24,7 +24,7 @@
     </div>
     <div class="flex">
       <div class="w-5 flex items-start">
-        <ui-popper v-if="filter.hidden" tag-name="div" class="flex" :options="{ placement: 'right-start' }">
+        <ui-popper v-if="filter.hidden" tag-name="div" class="flex" :options="{ placement: 'right-start' }" boundaries-selector="#price-window">
           <template slot="reference">
             <span class="text-xs leading-none text-gray-600 cursor-pointer">
               <i class="fas fa-eye-slash"></i>
