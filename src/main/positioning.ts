@@ -1,12 +1,11 @@
 import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point } from 'electron'
 import ioHook from 'iohook'
-import { win, WIDTH, TITLE_HEIGHT } from './window'
+import { win, WIDTH } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
 import { windowManager } from './window-manager'
 import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK } from '../shared/ipc-event'
 import { config } from './config'
-import { leagues } from './tray'
 import { logger } from './logger'
 
 const CLOSE_THRESHOLD_PX = 40
@@ -96,7 +95,7 @@ export function setupShowHide () {
       isMouseInside = false
       win.setIgnoreMouseEvents(true)
 
-      if (!isClickedAfterLock && leagues.length) {
+      if (!isClickedAfterLock) {
         logger.debug('Mouse has left the window without a single click', { source: 'price-check' })
         hideWindow()
       }

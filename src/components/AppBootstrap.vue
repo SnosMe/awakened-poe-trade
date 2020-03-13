@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col">
     <div v-if="leaguesService.isLoading"
       class="bg-gray-800 text-gray-200 py-1 px-2">
       <i class="fas fa-info-circle text-gray-600"></i> Loading leagues...</div>
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { MainProcess } from './main-process-bindings'
 import { Leagues } from './Leagues'
 import { Prices } from './Prices'
 
@@ -29,7 +28,6 @@ export default {
       await Leagues.load()
       if (Leagues.isLoaded) {
         Prices.load()
-        MainProcess.priceCheckHide()
       }
     }
   }

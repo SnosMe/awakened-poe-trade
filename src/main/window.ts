@@ -43,6 +43,5 @@ export function createWindow () {
   win.once('ready-to-show', () => {
     // place here because of linux
     win.setAlwaysOnTop(true, 'screen-saver')
-    // win.show()
   })
 }

@@ -1,20 +1,16 @@
-import { Rectangle, screen, app, Display } from 'electron'
+import { Rectangle } from 'electron'
 import { windowManager } from './window-manager'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
+import { win } from './window'
 
 const POE_TITLE = 'Path of Exile'
-let USER_DISPLAYS: Display[]
-
-app.on('ready', () => {
-  USER_DISPLAYS = screen.getAllDisplays()
-})
 
 class PoeWindowClass extends EventEmitter {
   private _isActive: boolean = false
   bounds: Rectangle | undefined
   pid: number | undefined
-  isFullscreen: boolean | undefined
+  private onceActive = false
 
   get isActive () {
     return this._isActive
@@ -45,12 +41,11 @@ class PoeWindowClass extends EventEmitter {
         try {
           this.bounds = (await windowManager.getActiveWindowContentBounds())!
           this.pid = (await windowManager.getActiveWindowId())!
-          this.isFullscreen = USER_DISPLAYS.some(d =>
-            d.bounds.x === this.bounds!.x &&
-            d.bounds.y === this.bounds!.y &&
-            d.bounds.width === this.bounds!.width &&
-            d.bounds.height === this.bounds!.height
-          )
+
+          if (this.onceActive === false && win) {
+            win.setBounds(this.bounds!)
+            this.onceActive = true
+          }
         } catch (e) {
           this.isActive = false
           this.bounds = undefined
