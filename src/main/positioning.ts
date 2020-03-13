@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point } from 'electron'
+import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point, app } from 'electron'
 import ioHook from 'iohook'
 import { win, WIDTH } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
@@ -17,6 +17,11 @@ let priceCheckActualBounds : Rectangle | undefined
 let isMouseInside = false
 
 let browserViewExternal: BrowserView | undefined
+
+let COUNT_DISPALYS = 1
+app.on('ready', () => {
+  COUNT_DISPALYS = screen.getAllDisplays().length
+})
 
 export function showWindow (willLocked?: boolean) {
   positionWindow(win)
@@ -132,26 +137,21 @@ export function setupShowHide () {
   ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: boolean, shiftKey?: boolean }) => {
     const modifier = e.ctrlKey ? 'Ctrl' : e.shiftKey ? 'Shift' : undefined
     if (!isPollingClipboard && checkPressPosition && isWindowShown && !isWindowLocked && modifier !== config.get('priceCheckKeyHold')) {
-      let distance: number
-      if (process.platform === 'linux' /* @TODO: && displays.length > 1 */) {
-        // ioHook returns mouse position that is not compatible with electron's position
-        // when user has more than one monitor
-        const cursorNow = screen.getCursorScreenPoint()
-        distance = Math.hypot(cursorNow.x - checkPressPosition.x, cursorNow.y - checkPressPosition.y)
-      } else {
-        distance = Math.hypot(e.x - checkPressPosition.x, e.y - checkPressPosition.y)
-      }
+      const mousePos = mousePosFromEvent(e)
+      let distance = Math.hypot(mousePos.x - checkPressPosition.x, mousePos.y - checkPressPosition.y)
 
       logger.silly('Auto-hide mouse move', { source: 'price-check', distance, threshold: CLOSE_THRESHOLD_PX })
       if (distance > CLOSE_THRESHOLD_PX) {
         hideWindow()
       }
     } else if (priceCheckActualBounds && !isMouseInside) {
+      const mousePos = mousePosFromEvent(e)
+
       if (
-        e.x > priceCheckActualBounds.x &&
-        e.x < priceCheckActualBounds.x + priceCheckActualBounds.width &&
-        e.y > priceCheckActualBounds.y &&
-        e.y < priceCheckActualBounds.y + priceCheckActualBounds.height
+        mousePos.x > priceCheckActualBounds.x &&
+        mousePos.x < priceCheckActualBounds.x + priceCheckActualBounds.width &&
+        mousePos.y > priceCheckActualBounds.y &&
+        mousePos.y < priceCheckActualBounds.y + priceCheckActualBounds.height
       ) {
         ipcMain.emit(PRICE_CHECK_MOUSE, undefined, 'enter', modifier)
       }
@@ -197,4 +197,14 @@ export function poeUserInterfaceWidth (windowHeight: number) {
   // sidebar is 370px at 800x600
   const ratio = 370 / 600
   return Math.round(windowHeight * ratio)
+}
+
+function mousePosFromEvent (e: { x: number, y: number }): Point {
+  if (process.platform === 'linux' && COUNT_DISPALYS > 1) {
+    // ioHook returns mouse position that is not compatible with electron's position
+    // when user has more than one monitor
+    return screen.getCursorScreenPoint()
+  } else {
+    return e
+  }
 }
