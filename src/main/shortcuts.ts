@@ -3,7 +3,7 @@ import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
-import { showWindow, lockWindow, poeUserInterfaceWidth } from './positioning'
+import { showWindow, lockWindow, poeUserInterfaceWidth, getPoeUiPosition } from './positioning'
 import { IohookToName, KeyToElectron } from '@/components/settings/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
@@ -20,8 +20,8 @@ function priceCheck (lockedMode: boolean) {
     isPollingClipboard = true
     pollClipboard(32, 500)
       .then(async (clipboard) => {
-        win.webContents.send('price-check', clipboard)
-        await showWindow()
+        win.webContents.send('price-check', { clipboard, position: getPoeUiPosition(checkPressPosition!) })
+        await showWindow(lockedMode)
         if (lockedMode) {
           lockWindow(true)
         }

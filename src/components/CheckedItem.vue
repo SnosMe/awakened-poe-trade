@@ -50,23 +50,10 @@ export default {
     FilterName
   },
   created () {
-    MainProcess.addEventListener('price-check', ({ detail: clipboard }) => {
+    MainProcess.addEventListener('price-check', ({ detail: { clipboard } }) => {
       this.item = parseClipboard(clipboard)
       this.itemFilters = createFilters(this.item)
       this.itemStats = initUiModFilters(this.item)
-    })
-
-    document.addEventListener('mouseenter', (e) => {
-      const key = e.ctrlKey ? 'Ctrl' : e.shiftKey ? 'Shift' : undefined
-      MainProcess.priceCheckMouse('enter', key)
-    })
-    document.addEventListener('click', () => { MainProcess.priceCheckMouse('click') })
-    document.addEventListener('mouseleave', () => { MainProcess.priceCheckMouse('leave') })
-
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        MainProcess.priceCheckHide()
-      }
     })
 
     this.$watch(vm => [vm.itemFilters, vm.itemStats], () => {

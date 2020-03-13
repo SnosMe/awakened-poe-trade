@@ -1,14 +1,15 @@
 <template>
-  <div class="flex-grow flex h-full justify-between">
+  <div class="flex-grow flex h-full" :class="clickPosition === 'stash' ? 'flex-row' : 'flex-row-reverse'">
     <div v-if="browserMode"
       class="w-full layout-column" style="width: calc(100% - 460px);">
       <browser-mode />
     </div>
-    <div v-if="!browserMode" class="layout-column border border-green-700" style="border-width: 4px;"
+    <div v-if="!isBrowserShown && !browserMode" class="layout-column border border-green-700" style="border-width: 4px;"
       :style="{ width: poeUiWidth }">
-      wiasds
     </div>
-    <div class="flex-grow layout-column" style="max-width: 460px;">
+    <div class="flex-grow layout-column" style="max-width: 460px;"
+      @mouseleave="handleMouseleave"
+      @click="handleClick">
       <app-titlebar @close="hideWindow" :title="title">
         <div class="flex">
           <ui-popper v-if="exaltedCost" trigger="clickToToggle">
@@ -46,9 +47,8 @@
         </div>
       </div>
     </div>
-    <div v-if="!browserMode" class="layout-column border border-green-700" style="border-width: 4px;"
+    <div v-if="!browserMode" class="layout-column border border-red-700 flex-1" style="border-width: 4px;"
       :style="{ width: poeUiWidth }">
-      wiasds
     </div>
   </div>
 </template>
@@ -71,6 +71,19 @@ export default {
   },
   filters: { displayRounding },
   created () {
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        MainProcess.priceCheckHide()
+      }
+    })
+    MainProcess.addEventListener('price-check', ({ detail: { position } }) => {
+      this.clickPosition = position
+      this.isBrowserShown = false
+    })
+    MainProcess.addEventListener('open-link', () => {
+      this.clickPosition = 'inventory'
+      this.isBrowserShown = true
+    })
     window.addEventListener('resize', () => {
       this.updatePoeUiWidth()
     })
@@ -78,7 +91,9 @@ export default {
   },
   data () {
     return {
-      poeUiWidth: '0px'
+      poeUiWidth: '0px',
+      clickPosition: 'stash',
+      isBrowserShown: false
     }
   },
   computed: {
@@ -107,6 +122,14 @@ export default {
       // sidebar is 370px at 800x600
       const ratio = 370 / 600
       this.poeUiWidth = `${Math.round(window.innerHeight * ratio)}px`
+    },
+    handleClick () {
+      MainProcess.priceCheckMouse('click')
+    },
+    handleMouseleave () {
+      if (!this.isBrowserShown) {
+        MainProcess.priceCheckMouse('leave')
+      }
     }
   }
 }

@@ -12,8 +12,8 @@ class MainProcessBinding extends EventTarget {
     super()
 
     if (electron) {
-      electron.ipcRenderer.on('price-check', (e, clipboard) => {
-        this.selfEmitPriceCheck(clipboard)
+      electron.ipcRenderer.on('price-check', (e, data) => {
+        this.selfEmitPriceCheck(data)
       })
 
       electron.ipcRenderer.on(LEAGUE_SELECTED, (e, leagueId) => {
@@ -24,9 +24,9 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  selfEmitPriceCheck (text: string) {
+  selfEmitPriceCheck (data: { clipboard: string, position: string }) {
     this.dispatchEvent(new CustomEvent('price-check', {
-      detail: text
+      detail: data
     }))
   }
 
@@ -65,6 +65,7 @@ class MainProcessBinding extends EventTarget {
   openAppBrowser (url: string) {
     if (electron) {
       electron.ipcRenderer.send(OPEN_LINK, url)
+      this.dispatchEvent(new Event(OPEN_LINK))
     } else {
       window.open(url)
     }

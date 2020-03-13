@@ -10,7 +10,7 @@ export const TITLE_HEIGHT = 24
 
 export function createWindow () {
   win = new BrowserWindow({
-    width: 460,
+    width: WIDTH,
     height: 200,
     icon: path.join(__static, 'icon.png'),
     fullscreenable: false,

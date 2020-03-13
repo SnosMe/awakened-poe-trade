@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView } from 'electron'
+import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point } from 'electron'
 import ioHook from 'iohook'
 import { win, WIDTH, TITLE_HEIGHT } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
@@ -14,30 +14,37 @@ const CLOSE_THRESHOLD_PX = 40
 let isWindowShown = false
 let isWindowLocked = false
 let isClickedAfterLock = false
+let priceCheckActualBounds : Rectangle | undefined
+let isMouseInside = false
 
 let browserViewExternal: BrowserView | undefined
 
-export function showWindow () {
+export function showWindow (willLocked?: boolean) {
   positionWindow(win)
   if (isWindowShown && isWindowLocked) {
     logger.debug('Hide the window (was left in background)', { source: 'price-check', fn: 'showWindow' })
-    hideWindow(true)
+    hideWindow(true, willLocked)
   }
 
   isWindowShown = true
   win.showInactive()
 }
 
-function hideWindow (willShow?: boolean) {
+function hideWindow (willShow?: boolean, willLocked?: boolean) {
   logger.verbose('Hide window', { source: 'price-check', fn: 'hideWindow', wasLocked: isWindowLocked })
 
   isWindowShown = false
-  if (isWindowLocked && config.get('altTabToGame')) {
+  isMouseInside = false
+  if (isWindowLocked && config.get('altTabToGame') && !willLocked) {
     win.setSkipTaskbar(true)
     win.setAlwaysOnTop(true, 'screen-saver')
+    if (process.platform === 'win32' && willShow) {
+      win.hide()
+    }
   }
   if (!willShow) {
     win.hide()
+    priceCheckActualBounds = undefined
   }
   win.setIgnoreMouseEvents(true)
 
@@ -67,7 +74,6 @@ export function lockWindow (syntheticClick = false) {
     win.setSkipTaskbar(false)
     win.setAlwaysOnTop(false)
   }
-  win.setIgnoreMouseEvents(false)
 }
 
 export function setupShowHide () {
@@ -80,16 +86,24 @@ export function setupShowHide () {
       if (!isWindowLocked) {
         logger.debug('Clicked inside window fix', { source: 'price-check' })
         lockWindow(true)
+        isMouseInside = true
       } else {
         isClickedAfterLock = true
+        isMouseInside = true
         logger.debug('Clicked inside window after lock', { source: 'price-check' })
       }
     } else if (name === 'leave') {
+      isMouseInside = false
+      win.setIgnoreMouseEvents(true)
+
       if (!isClickedAfterLock && leagues.length) {
         logger.debug('Mouse has left the window without a single click', { source: 'price-check' })
         hideWindow()
       }
     } else if (name === 'enter') {
+      isMouseInside = true
+      win.setIgnoreMouseEvents(false)
+
       if (isWindowLocked) return
 
       if (modifier === config.get('priceCheckKeyHold')) {
@@ -109,9 +123,9 @@ export function setupShowHide () {
     win.setBounds(PoeWindow.bounds!)
     browserViewExternal.setBounds({
       x: 0,
-      y: TITLE_HEIGHT,
+      y: 0,
       width: PoeWindow.bounds!.width - WIDTH,
-      height: PoeWindow.bounds!.height - TITLE_HEIGHT
+      height: PoeWindow.bounds!.height
     })
     browserViewExternal.webContents.loadURL(link)
   })
@@ -133,28 +147,50 @@ export function setupShowHide () {
       if (distance > CLOSE_THRESHOLD_PX) {
         hideWindow()
       }
+    } else if (priceCheckActualBounds && !isMouseInside) {
+      if (
+        e.x > priceCheckActualBounds.x &&
+        e.x < priceCheckActualBounds.x + priceCheckActualBounds.width &&
+        e.y > priceCheckActualBounds.y &&
+        e.y < priceCheckActualBounds.y + priceCheckActualBounds.height
+      ) {
+        ipcMain.emit(PRICE_CHECK_MOUSE, undefined, 'enter', modifier)
+      }
     }
   })
 }
 
 function positionWindow (tradeWindow: BrowserWindow) {
-  const poePos = PoeWindow.bounds!
+  const poeBounds = PoeWindow.bounds!
 
-  const newBounds = poePos
+  priceCheckActualBounds = {
+    x: getOffsetX(poeBounds),
+    y: poeBounds.y,
+    width: WIDTH,
+    height: poeBounds.height
+  }
 
-  logger.debug('Reposition window', { source: 'price-check', newBounds, poeBounds: poePos })
-  tradeWindow.setBounds(newBounds, false)
+  logger.debug('Reposition window', { source: 'price-check', poeBounds })
+  tradeWindow.setBounds(poeBounds, false)
 }
 
 function getOffsetX (poePos: Rectangle): number {
-  const mousePos = screen.getCursorScreenPoint()
+  const mousePos = checkPressPosition!
 
   if (mousePos.x > (poePos.x + poePos.width / 2)) {
     // inventory
-    return (poePos.x + poePos.width) - poeUserInterfaceWidth(poePos.height) - 460
+    return (poePos.x + poePos.width) - poeUserInterfaceWidth(poePos.height) - WIDTH
   } else {
     // stash or chat
     return poePos.x + poeUserInterfaceWidth(poePos.height)
+  }
+}
+
+export function getPoeUiPosition (mousePos: Point) {
+  if (mousePos.x > (PoeWindow.bounds!.x + PoeWindow.bounds!.width / 2)) {
+    return 'inventory'
+  } else {
+    return 'stash' // or chat/vendor/center of screen
   }
 }
 
