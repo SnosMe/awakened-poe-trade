@@ -58,7 +58,6 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
   const matches = [] as string[]
 
   const withPlaceholders = stat
-    .replace(/[ ]{2,}/gm, ' ') // required to align with how "mods.json" was generated
     .replace(/(?<![\d#])[+-]?[\d.]+/gm, (value) => {
       matches.push(value)
       return '#'
