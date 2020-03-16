@@ -1862,6 +1862,12 @@
     }
   ],
   [
+    "Ethereal Blade",
+    {
+      "category": "Dagger"
+    }
+  ],
+  [
     "Flaying Knife",
     {
       "category": "Dagger",
@@ -3063,10 +3069,31 @@
     }
   ],
   [
+    "Large Cluster Jewel",
+    {
+      "category": "Jewel",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase3.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
+    "Medium Cluster Jewel",
+    {
+      "category": "Jewel",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase2.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
     "Prismatic Jewel",
     {
       "category": "Jewel",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/Mastery.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
+    "Small Cluster Jewel",
+    {
+      "category": "Jewel",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase1.png?scale=1&w=1&h=1"
     }
   ],
   [
