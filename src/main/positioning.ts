@@ -32,11 +32,11 @@ export function showWindow (willLocked?: boolean) {
 
   isWindowShown = true
   win.showInactive()
-  // @TODO: test on linux
   win.moveTop()
-  if (!willLocked) {
-    // alternative: win.setAlwaysOnTop(true, 'screen-saver')
-  }
+  // alternative
+  // if (!willLocked) {
+  //   win.setAlwaysOnTop(true, 'screen-saver')
+  // }
 }
 
 function hideWindow (willShow?: boolean, willLocked?: boolean) {

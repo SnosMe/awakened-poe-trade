@@ -66,6 +66,10 @@ function rebuildContextMenu () {
     },
     { type: 'separator' },
     {
+      label: `APT v${app.getVersion()}`,
+      enabled: false
+    },
+    {
       label: 'Check for updates',
       click: () => {
         checkForUpdates(true)
