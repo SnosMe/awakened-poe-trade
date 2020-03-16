@@ -1,4 +1,5 @@
 import { Mods, Mod, StatMatcher } from '../../data'
+import { CLUSTER_JEWEL_GRANT } from './constants'
 
 export enum ModifierType {
   Pseudo = 'pseudo',
@@ -22,7 +23,19 @@ export function * sectionToStatStrings (section: string[]) {
   let multi = (idx + 1) < section.length
 
   while (idx < section.length) {
-    const str = multi ? `${section[idx]}\n${section[idx + 1]}` : section[idx]
+    let str: string
+    if (multi) {
+      const lines = [
+        section[idx],
+        section[idx + 1]
+      ]
+      if (lines.every(l => l.startsWith(CLUSTER_JEWEL_GRANT))) {
+        lines[1] = lines[1].substr(CLUSTER_JEWEL_GRANT.length)
+      }
+      str = lines.join('\n')
+    } else {
+      str = section[idx]
+    }
 
     const isParsed: boolean = yield str
 
