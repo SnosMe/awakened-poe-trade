@@ -13,6 +13,7 @@ import {
   PREFIX_VAAL,
   PREFIX_SUPERIOR,
   SUFFIX_INFLUENCE,
+  ENCHANT_SUFFIX,
   IMPLICIT_SUFFIX,
   CRAFTED_SUFFIX,
   TAG_ARMOUR,
@@ -64,10 +65,9 @@ const parsers: ParserFn[] = [
   parseInfluence,
   parseMap,
   parseSockets,
-  parseModifiers(1),
-  parseModifiers(2),
-  parseModifiers(3),
-  resolveStatTypes
+  parseModifiers,
+  parseModifiers,
+  parseModifiers
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -373,109 +373,62 @@ function parseWeapon (section: string[], item: ParsedItem) {
   return isParsed
 }
 
-function parseModifiers (sn: number) {
-  return function parseModifiers (section: string[], item: ParsedItem) {
-    if (
-      item.rarity !== ItemRarity.Normal &&
-      item.rarity !== ItemRarity.Magic &&
-      item.rarity !== ItemRarity.Rare &&
-      item.rarity !== ItemRarity.Unique
-    ) {
-      return PARSER_SKIPPED
+function parseModifiers (section: string[], item: ParsedItem) {
+  if (
+    item.rarity !== ItemRarity.Normal &&
+    item.rarity !== ItemRarity.Magic &&
+    item.rarity !== ItemRarity.Rare &&
+    item.rarity !== ItemRarity.Unique
+  ) {
+    return PARSER_SKIPPED
+  }
+
+  const countBefore = item.modifiers.length
+
+  const statIterator = sectionToStatStrings(section)
+  let stat = statIterator.next()
+  while (!stat.done) {
+    let modType: ModifierType | undefined
+
+    // cleanup suffix
+    if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
+      stat.value = stat.value.slice(0, -IMPLICIT_SUFFIX.length)
+      modType = ModifierType.Implicit
+    } else if (stat.value.endsWith(CRAFTED_SUFFIX)) {
+      stat.value = stat.value.slice(0, -CRAFTED_SUFFIX.length)
+      modType = ModifierType.Crafted
+    } else if (stat.value.endsWith(ENCHANT_SUFFIX)) {
+      stat.value = stat.value.slice(0, -ENCHANT_SUFFIX.length)
+      modType = ModifierType.Enchant
     }
 
-    const countBefore = item.modifiers.length
-
-    const statIterator = sectionToStatStrings(section)
-    let stat = statIterator.next()
-    while (!stat.done) {
-      let modType: ModifierType | undefined
-
-      // cleanup suffix
-      if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
-        stat.value = stat.value.slice(0, -IMPLICIT_SUFFIX.length)
-        modType = ModifierType.Implicit
-      } else if (stat.value.endsWith(CRAFTED_SUFFIX)) {
-        stat.value = stat.value.slice(0, -CRAFTED_SUFFIX.length)
-        modType = ModifierType.Crafted
+    const mod = tryFindModifier(stat.value)
+    if (mod) {
+      if (modType == null) {
+        const isExplicit = mod.modInfo.types.find(type =>
+          type.name === ModifierType.Explicit
+        )
+        if (isExplicit) {
+          modType = ModifierType.Explicit
+        }
       }
 
-      const mod = tryFindModifier(stat.value)
-      if (mod) {
-        if (modType == null) {
-          // explicit/enchant
-          const possible = mod.modInfo.types.filter(type =>
-            type.name !== ModifierType.Pseudo &&
-            type.name !== ModifierType.Implicit &&
-            type.name !== ModifierType.Crafted
-          )
-          if (possible.length === 1) {
-            modType = possible[0].name as ModifierType
-          }
-        }
-        mod.source = sn
-
-        if (
-          modType == null ||
-          mod.modInfo.types.find(type => type.name === modType)
-        ) {
-          mod.type = modType!
-          item.modifiers.push(mod)
-          stat = statIterator.next(true)
-        } else {
-          stat = statIterator.next(false)
-        }
+      if (mod.modInfo.types.find(type => type.name === modType)) {
+        mod.type = modType!
+        item.modifiers.push(mod)
+        stat = statIterator.next(true)
       } else {
         stat = statIterator.next(false)
       }
-    }
-
-    if (countBefore < item.modifiers.length) {
-      return SECTION_PARSED
-    }
-    return SECTION_SKIPPED
-  }
-}
-
-function resolveStatTypes (section: string[], item: ParsedItem) {
-  // NOTE: (m.type == null) ==> (explicit OR enchant)
-
-  const hasImplicit = item.modifiers.some(m => m.type === 'implicit')
-  let hasExplicit = item.modifiers.some(m =>
-    m.type === 'explicit' ||
-    m.type === 'crafted' ||
-    m.source === 3 ||
-    (m.type == null && m.source === 2)
-  )
-  let hasEnchant = item.modifiers.some(m =>
-    m.type === 'enchant' ||
-    (hasImplicit && m.type == null && m.source === 1)
-  )
-  if (!hasImplicit) {
-    if (
-      item.modifiers.some(m => m.type == null && m.source === 1) &&
-      item.modifiers.some(m => m.type == null && m.source === 2)
-    ) {
-      hasEnchant = true
-      hasExplicit = true
-    }
-
-    if (!hasEnchant && !hasExplicit) {
-      hasExplicit = true // fallback
-    }
-  }
-
-  for (const mod of item.modifiers) {
-    if (mod.type != null) continue
-
-    if (mod.source === 1 && hasEnchant) {
-      mod.type = 'enchant' as ModifierType
     } else {
-      mod.type = 'explicit' as ModifierType
+      stat = statIterator.next(false)
     }
   }
 
-  return PARSER_SKIPPED as SectionParseResult
+  if (countBefore < item.modifiers.length) {
+    return SECTION_PARSED
+  }
+  return SECTION_SKIPPED
 }
 
 function parseFlask (section: string[], item: ParsedItem) {

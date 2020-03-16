@@ -15,7 +15,6 @@ export interface ItemModifier {
   condition?: StatMatcher['condition']
   negatedValues?: true
   type: ModifierType
-  source?: number
 }
 
 export function * sectionToStatStrings (section: string[]) {

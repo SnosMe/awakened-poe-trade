@@ -41,6 +41,7 @@ export const PREFIX_VAAL = 'Vaal '
 export const SUFFIX_INFLUENCE = ' Item'
 export const IMPLICIT_SUFFIX = ' (implicit)'
 export const CRAFTED_SUFFIX = ' (crafted)'
+export const ENCHANT_SUFFIX = ' (enchant)'
 
 export const CORRUPTED = 'Corrupted'
 export const UNIDENTIFIED = 'Unidentified'
