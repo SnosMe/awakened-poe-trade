@@ -17755,20 +17755,192 @@
       "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/CombinedPrismaticRing.png?scale=1&w=1&h=1",
       "mods": [
         {
+          "text": "# to # Cold Damage per Frenzy Charge",
+          "bounds": [
+            {"min": 6, "max": 8},
+            {"min": 12, "max": 13}
+          ],
+          "variant": true
+        },
+        {
+          "text": "# to # Fire Damage per Endurance Charge",
+          "bounds": [
+            {"min": 7, "max": 9},
+            {"min": 13, "max": 14}
+          ],
+          "variant": true
+        },
+        {
+          "text": "# to # Lightning Damage per Power Charge",
+          "bounds": [
+            {"min": 1, "max": 2},
+            {"min": 18, "max": 20}
+          ],
+          "variant": true
+        },
+        {
           "text": "# to all Attributes",
           "bounds": [{"min": 20, "max": 20}]
         },
         {
+          "text": "# to Maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "# to Maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance that if you would gain Endurance Charges, you instead gain up to your maximum number of Endurance Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
           "text": "#% chance that if you would gain Frenzy Charges, you instead gain up to your maximum number of Frenzy Charges",
-          "bounds": [{"min": 15, "max": 15}]
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% chance that if you would gain Power Charges, you instead gain up to\nyour maximum number of Power Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Frenzy Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Power Charge on Critical Strike",
+          "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Power Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain an Endurance Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Gain Arcane Surge on Hit with Spells while at maximum Power Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Gain Onslaught for 4 seconds on Hit while at maximum Frenzy Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Accuracy Rating per Frenzy Charge",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Armour per Endurance Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
         },
         {
           "text": "#% increased Attack and Cast Speed per Endurance Charge",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack and Cast Speed per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance per Endurance Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance per Frenzy Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Endurance Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Frenzy Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
         },
         {
           "text": "#% increased Damage per Power Charge",
-          "bounds": [{"min": 5, "max": 5}]
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Endurance Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Energy Shield per Power Charge",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Evasion Rating per Frenzy Charge",
+          "bounds": [{"min": 8, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Frenzy Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
         },
         {
           "text": "#% increased maximum Energy Shield",
@@ -17779,9 +17951,84 @@
           "bounds": [{"min": 5, "max": 5}]
         },
         {
+          "text": "#% increased Movement Speed per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Movement Speed per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Movement Speed per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Power Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
+        },
+        {
           "text": "#% to all Elemental Resistances",
           "implicit": true,
           "bounds": [{"min": 8, "max": 10}]
+        },
+        {
+          "text": "#% to Chaos Resistance per Endurance Charge",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
+          "text": "#% to Critical Strike Multiplier per Power Charge",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Cold Damage as Extra Chaos Damage per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Fire Damage as Extra Chaos Damage per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain #% of Lightning Damage as Extra Chaos Damage per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain an Endurance Charge every second if you've been Hit Recently",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Endurance Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Frenzy Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Power Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "You cannot be Stunned while at maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You have Vaal Pact while at maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
@@ -17799,16 +18046,63 @@
           ]
         },
         {
+          "text": "# to Maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "# to Strength",
           "bounds": [{"min": 20, "max": 20}]
         },
         {
+          "text": "#% chance that if you would gain Endurance Charges, you instead gain up to your maximum number of Endurance Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
           "text": "#% Chance to Block Attack Damage per Endurance Charge",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         },
         {
           "text": "#% chance to gain an Endurance Charge on Kill",
-          "bounds": [{"min": 10, "max": 10}]
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Intimidate Enemies for 4 seconds on Hit with Attacks while at maximum Endurance Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Armour per Endurance Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack and Cast Speed per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance per Endurance Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Endurance Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Endurance Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
         },
         {
           "text": "#% increased maximum Energy Shield",
@@ -17819,9 +18113,44 @@
           "bounds": [{"min": 5, "max": 5}]
         },
         {
+          "text": "#% increased Movement Speed per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% to Chaos Resistance per Endurance Charge",
+          "bounds": [{"min": 4, "max": 4}],
+          "variant": true
+        },
+        {
           "text": "#% to Fire Resistance",
           "implicit": true,
           "bounds": [{"min": 20, "max": 30}]
+        },
+        {
+          "text": "Gain #% of Fire Damage as Extra Chaos Damage per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Gain an Endurance Charge every second if you've been Hit Recently",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Endurance Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "You cannot be Stunned while at maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You have Vaal Pact while at maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
@@ -17836,19 +18165,77 @@
           "bounds": [
             {"min": 6, "max": 8},
             {"min": 12, "max": 13}
-          ]
+          ],
+          "variant": true
         },
         {
           "text": "# to Dexterity",
           "bounds": [{"min": 20, "max": 20}]
         },
         {
+          "text": "# to Maximum Frenzy Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance that if you would gain Frenzy Charges, you instead gain up to your maximum number of Frenzy Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
           "text": "#% Chance to Block Attack Damage per Frenzy Charge",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Frenzy Charge on Hit",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Frenzy Charge on Kill",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Gain Onslaught for 4 seconds on Hit while at maximum Frenzy Charges",
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Accuracy Rating per Frenzy Charge",
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Critical Strike Chance per Frenzy Charge",
+          "bounds": [{"min": 6, "max": 6}],
+          "variant": true
         },
         {
           "text": "#% increased Damage per Frenzy Charge",
-          "bounds": [{"min": 5, "max": 5}]
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Evasion Rating per Frenzy Charge",
+          "bounds": [{"min": 8, "max": 8}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Frenzy Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
         },
         {
           "text": "#% increased maximum Energy Shield",
@@ -17859,9 +18246,29 @@
           "bounds": [{"min": 5, "max": 5}]
         },
         {
+          "text": "#% increased Movement Speed per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
           "text": "#% to Cold Resistance",
           "implicit": true,
           "bounds": [{"min": 20, "max": 30}]
+        },
+        {
+          "text": "Gain #% of Cold Damage as Extra Chaos Damage per Frenzy Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Frenzy Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "You have Iron Reflexes while at maximum Frenzy Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
@@ -17872,16 +18279,71 @@
       "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/CombinedBlueRing.png?scale=1&w=1&h=1",
       "mods": [
         {
+          "text": "# to # Lightning Damage per Power Charge",
+          "bounds": [
+            {"min": 1, "max": 2},
+            {"min": 18, "max": 20}
+          ],
+          "variant": true
+        },
+        {
           "text": "# to Intelligence",
           "bounds": [{"min": 20, "max": 20}]
         },
         {
+          "text": "# to Maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% additional Physical Damage Reduction per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance that if you would gain Power Charges, you instead gain up to\nyour maximum number of Power Charges",
+          "bounds": [{"min": 15, "max": 15}],
+          "variant": true
+        },
+        {
+          "text": "#% Chance to Block Attack Damage per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to gain a Power Charge on Critical Strike",
+          "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
           "text": "#% chance to gain a Power Charge on Kill",
-          "bounds": [{"min": 10, "max": 10}]
+          "bounds": [{"min": 10, "max": 10}],
+          "variant": true
         },
         {
           "text": "#% chance to Gain Arcane Surge on Hit with Spells while at maximum Power Charges",
-          "bounds": [{"min": 100, "max": 100}]
+          "bounds": [{"min": 100, "max": 100}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Attack and Cast Speed per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Damage per Power Charge",
+          "bounds": [{"min": 5, "max": 5}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Energy Shield per Power Charge",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
         },
         {
           "text": "#% increased maximum Energy Shield",
@@ -17893,12 +18355,43 @@
         },
         {
           "text": "#% increased Movement Speed per Power Charge",
-          "bounds": [{"min": 1, "max": 1}]
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% increased Power Charge Duration",
+          "bounds": [{"min": 20, "max": 40}],
+          "variant": true
+        },
+        {
+          "text": "#% to Critical Strike Multiplier per Power Charge",
+          "bounds": [{"min": 3, "max": 3}],
+          "variant": true
         },
         {
           "text": "#% to Lightning Resistance",
           "implicit": true,
           "bounds": [{"min": 20, "max": 30}]
+        },
+        {
+          "text": "Gain #% of Lightning Damage as Extra Chaos Damage per Power Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "Regenerate #% of Life per second per Power Charge",
+          "bounds": [{"min": 0.3, "max": 0.3}],
+          "variant": true
+        },
+        {
+          "text": "You can apply an additional Curse while at maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "You have Mind over Matter while at maximum Power Charges",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
         }
       ]
     }
@@ -17935,6 +18428,11 @@
         {
           "text": "# to Dexterity and Intelligence",
           "bounds": [{"min": 20, "max": 20}],
+          "variant": true
+        },
+        {
+          "text": "# to Maximum Endurance Charges",
+          "bounds": [{"min": 1, "max": 1}],
           "variant": true
         },
         {
@@ -17999,6 +18497,11 @@
         },
         {
           "text": "#% chance to Dodge Attack Hits per Endurance Charge",
+          "bounds": [{"min": 1, "max": 1}],
+          "variant": true
+        },
+        {
+          "text": "#% chance to Dodge Attack Hits per Frenzy Charge",
           "bounds": [{"min": 1, "max": 1}],
           "variant": true
         },
@@ -29588,6 +30091,11 @@
           "variant": true
         },
         {
+          "text": "# to Total Mana Cost of Skills while affected by Clarity",
+          "bounds": [{"min": -10, "max": -5}],
+          "variant": true
+        },
+        {
           "text": "#% additional Physical Damage Reduction while affected by Determination",
           "bounds": [{"min": 5, "max": 8}],
           "variant": true
@@ -29730,6 +30238,11 @@
           "variant": true
         },
         {
+          "text": "#% increased Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry",
+          "bounds": [{"min": 30, "max": 30}],
+          "variant": true
+        },
+        {
           "text": "#% increased Movement Speed while affected by Grace",
           "bounds": [{"min": 10, "max": 15}],
           "variant": true
@@ -29761,6 +30274,11 @@
         },
         {
           "text": "#% of Lightning Damage is Leeched as Energy Shield while affected by Wrath",
+          "bounds": [{"min": 1, "max": 1.5}],
+          "variant": true
+        },
+        {
+          "text": "#% of Lightning Damage is Leeched as Mana while affected by Wrath",
           "bounds": [{"min": 1, "max": 1.5}],
           "variant": true
         },

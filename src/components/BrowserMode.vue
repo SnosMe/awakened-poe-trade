@@ -21,7 +21,7 @@ export default {
   methods: {
     handleItemPaste (e) {
       const text = e.target.value
-      MainProcess.selfEmitPriceCheck(text)
+      MainProcess.selfEmitPriceCheck({ clipboard: text, position: 'stash' })
       e.target.value = ''
       this.item = parseClipboard(text)
     }
