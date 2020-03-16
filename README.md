@@ -50,6 +50,7 @@
     - :heavy_check_mark: 5, 6 Linked sockets, White sockets
     - :heavy_check_mark: Item base/Item category
     - :heavy_check_mark: Q20 props (Armour, Evasion, ES, Physical Damage)
+    - :heavy_check_mark: DPS (Physical, Elemental, Total)
   - :heavy_check_mark: +-10% Rare rolls
   - :heavy_check_mark: Unique item roll range
   - :heavy_check_mark: Pseudo stats
@@ -62,9 +63,12 @@
 
 - Run PoE in "Windowed" or "Windowed Fullscreen" mode
 - PoE language must be English
+- No Administrator rights required **(there are exceptions)**
 
-Neither Java nor the .NET Framework nor AHK are required\
-No Administrator rights required
+Neither Java nor the .NET Framework nor AHK are required
+
+**NOTE: If you run PoE client as Admin, OS security boundaries take effect.
+In order for Awakened PoE Trade to have access to the PoE window, it must be started with Administrator rights.**
 
 ### Usage
 - Press `Ctrl + D` to check the price of the item\
