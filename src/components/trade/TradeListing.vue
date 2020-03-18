@@ -29,10 +29,13 @@
             <th v-if="filters.quality || item.rarity === 'Gem'" class="trade-table-heading">
               <div class="px-2">Quality</div>
             </th>
-            <th class="w-full trade-table-heading">
+            <th class="trade-table-heading" :class="{ 'w-full': !config.showSeller }">
               <div class="pr-2 pl-4">
                 <span class="ml-1" style="padding-left: 0.375rem;">Listed</span>
               </div>
+            </th>
+            <th v-if="config.showSeller" class="trade-table-heading w-full">
+              <div class="px-2">Seller</div>
             </th>
           </tr>
         </thead>
@@ -45,13 +48,16 @@
               <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2">× {{ result.listedTimes }}</span></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
-              <td v-if="item.rarity === 'Gem'" class="px-2 whitespace-no-wrap">{{ result.level }}</td>
+              <td v-if="item.rarity === 'Gem'" class="pl-2 whitespace-no-wrap">{{ result.level }}</td>
               <td v-if="filters.quality || item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
               <td class="font-sans text-xs pr-2 pl-4">
-                <div class="flex items-center">
+                <div class="flex items-center whitespace-no-wrap">
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
+              </td>
+              <td v-if="config.showSeller" class="px-2 font-sans text-xs whitespace-no-wrap">
+                {{ config.showSeller === 'ign' ? result.ign : result.accountName }}
               </td>
             </tr>
           </template>
@@ -70,6 +76,7 @@ import { DateTime } from 'luxon'
 import { MainProcess } from '../main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
 import { Leagues } from '../Leagues'
+import { Config } from '../Config'
 
 const SHOW_RESULTS = 20
 const API_FETCH_LIMIT = 100
@@ -113,13 +120,13 @@ export default {
           continue
         }
 
-        const prevRes = out[out.length - 1]
-        if (
-          prevRes.priceAmount === result.priceAmount &&
-          prevRes.priceCurrency === result.priceCurrency &&
-          prevRes.accountName === result.accountName
-        ) {
-          prevRes.listedTimes += 1
+        const existingRes = out.find(added =>
+          added.priceAmount === result.priceAmount &&
+          added.priceCurrency === result.priceCurrency &&
+          added.accountName === result.accountName
+        )
+        if (existingRes) {
+          existingRes.listedTimes += 1
         } else {
           out.push({ listedTimes: 1, ...result })
         }
@@ -129,6 +136,9 @@ export default {
         out.push(...Array(SHOW_RESULTS - out.length))
       }
       return out
+    },
+    config () {
+      return Config.store
     }
   },
   methods: {

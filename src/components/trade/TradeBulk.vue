@@ -30,18 +30,21 @@
               <div class="px-2">Price</div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-2 flex text-xs" style="line-height: 21px;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ selectedCurr }}</span>&thinsp;/&thinsp;<span class="w-8 inline-block">bulk</span></div>
+              <div class="pl-1 pr-2 flex text-xs" style="line-height: 21px;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ selectedCurr }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">bulk</span></div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-2">Stock</div>
+              <div class="px-1">Stock</div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-2">Fulfill</div>
+              <div class="px-1">Fulfill</div>
             </th>
-            <th class="w-full trade-table-heading">
+            <th class="trade-table-heading" :class="{ 'w-full': !config.showSeller }">
               <div class="pr-2 pl-4">
                 <span class="ml-1" style="padding-left: 0.375rem;">Listed</span>
               </div>
+            </th>
+            <th v-if="config.showSeller" class="trade-table-heading w-full">
+              <div class="px-2">Seller</div>
             </th>
           </tr>
         </thead>
@@ -52,14 +55,17 @@
             </tr>
             <tr v-else :key="result.id">
               <td class="px-2">{{ Number((result.exchangeAmount / result.itemAmount).toFixed(4)) }}</td>
-              <td class="pl-2 whitespace-no-wrap"><span class="w-8 inline-block text-right">{{ result.exchangeAmount }}</span>&thinsp;/&thinsp;<span class="w-8 inline-block">{{ result.itemAmount }}</span></td>
-              <td class="px-2 text-right">{{ result.stock }}</td>
-              <td class="px-2 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
+              <td class="pl-1 whitespace-no-wrap"><span class="w-8 inline-block text-right">{{ result.exchangeAmount }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ result.itemAmount }}</span></td>
+              <td class="px-1 text-right">{{ result.stock }}</td>
+              <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
               <td class="font-sans text-xs pr-2 pl-4">
-                <div class="flex items-center">
+                <div class="flex items-center whitespace-no-wrap">
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
+              </td>
+              <td v-if="config.showSeller" class="px-2 font-sans text-xs whitespace-no-wrap">
+                {{ config.showSeller === 'ign' ? result.ign : result.accountName }}
               </td>
             </tr>
           </template>
@@ -79,6 +85,7 @@ import { MainProcess } from '../main-process-bindings'
 import { execBulkSearch } from './pathofexile-bulk'
 import { tradeTag } from './common'
 import { Leagues } from '../Leagues'
+import { Config } from '../Config'
 
 export default {
   props: {
@@ -104,6 +111,9 @@ export default {
       const listed = this.result[this.selectedCurr].listed
       arr.splice(0, listed.length, ...listed)
       return arr
+    },
+    config () {
+      return Config.store
     }
   },
   methods: {

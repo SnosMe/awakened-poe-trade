@@ -16,6 +16,7 @@ export interface Config {
   altTabToGame: boolean
   useOsGlobalShortcut: boolean
   logLevel: string
+  showSeller: false | 'account' | 'ign'
 }
 
 export const defaultConfig: Config = {
@@ -32,5 +33,6 @@ export const defaultConfig: Config = {
   }],
   altTabToGame: true,
   useOsGlobalShortcut: true,
-  logLevel: 'warn'
+  logLevel: 'warn',
+  showSeller: false
 }

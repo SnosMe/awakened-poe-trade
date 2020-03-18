@@ -1,6 +1,14 @@
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { TRADE_TAG_BY_NAME } from '@/data'
 
+export interface Account {
+  name: string
+  lastCharacterName: string
+  online?: {
+    status?: 'afk'
+  }
+}
+
 export interface SearchResult {
   id: string
   result: string[]

@@ -1,6 +1,6 @@
 import { MainProcess } from '../main-process-bindings'
 import { Leagues } from '../Leagues'
-import { SearchResult } from './common'
+import { SearchResult, Account } from './common'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
@@ -25,11 +25,7 @@ interface FetchResult {
         stock: number
       }
     }
-    account: {
-      online?: {
-        status?: 'afk'
-      }
-    }
+    account: Account
   }
 }
 
@@ -40,6 +36,8 @@ interface PricingResult {
   itemAmount: number
   stock: number
   accountStatus: 'offline' | 'online' | 'afk'
+  accountName: string
+  ign: string
 }
 
 async function requestTradeResultList (body: TradeRequest) {
@@ -72,6 +70,8 @@ async function requestResults (queryId: string, resultIds: string[]): Promise<Pr
         exchangeAmount: result.listing.price.exchange.amount,
         itemAmount: result.listing.price.item.amount,
         stock: result.listing.price.item.stock,
+        ign: result.listing.account.lastCharacterName,
+        accountName: result.listing.account.name,
         accountStatus: result.listing.account.online
           ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
           : 'offline'

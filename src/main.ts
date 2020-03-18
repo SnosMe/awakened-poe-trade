@@ -6,6 +6,7 @@ import Popper from 'vue-popperjs'
 import VueSlider from 'vue-slider-component'
 import 'vue-popperjs/dist/vue-popper.css'
 import 'vue-slider-component/theme/default.css'
+import './components/ui'
 
 Vue.use(TrendChart)
 Vue.component('UiPopper', Popper)

@@ -3,7 +3,7 @@ import { Leagues } from '../Leagues'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '../main-process-bindings'
-import { SearchResult } from './common'
+import { SearchResult, Account } from './common'
 
 const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -147,12 +147,7 @@ interface FetchResult {
       currency: string
       type: '~price'
     }
-    account: {
-      name: string
-      online?: {
-        status?: 'afk'
-      }
-    }
+    account: Account
   }
 }
 
@@ -166,7 +161,9 @@ interface PricingResult {
   listedAt: string
   priceAmount: number
   priceCurrency: string
+  accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
+  ign: string
 }
 
 export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
@@ -375,6 +372,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price.amount,
       priceCurrency: result.listing.price.currency,
+      ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online
         ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
