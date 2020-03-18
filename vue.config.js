@@ -12,7 +12,9 @@ module.exports = {
         },
         win: {
           target: ['nsis', 'portable']
-          // requestedExecutionLevel: 'requireAdministrator'
+        },
+        linux: {
+          target: ['AppImage']
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -65,7 +65,6 @@
     "node-fetch": "^2.6.0",
     "patch-package": "^6.2.0",
     "postcss-nested": "^4.2.1",
-    "postinstall-postinstall": "^2.0.0",
     "ts-node": "^8.6.1",
     "typescript": "~3.7.5",
     "vue-cli-plugin-electron-builder": "~2.0.0-beta.4",
@@ -85,5 +84,8 @@
       "x64",
       "ia32"
     ]
+  },
+  "engines": {
+    "node": "12.x.x"
   }
 }

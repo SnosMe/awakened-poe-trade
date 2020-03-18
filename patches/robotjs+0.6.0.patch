@@ -1,17 +1,64 @@
 diff --git a/node_modules/robotjs/src/keycode.h b/node_modules/robotjs/src/keycode.h
-index 9d0b099..ce74619 100644
+index 9d0b099..0b026c1 100644
 --- a/node_modules/robotjs/src/keycode.h
 +++ b/node_modules/robotjs/src/keycode.h
-@@ -17,6 +17,8 @@ extern "C"
+@@ -17,6 +17,55 @@ extern "C"
  	
  enum _MMKeyCode {
  	K_NOT_A_KEY = 9999,
-+	K_KEY_C = 0x43,
-+	K_KEY_V = 0x56,
++
++	K_DIGIT_0 = kVK_ANSI_0,
++	K_DIGIT_1 = kVK_ANSI_1,
++	K_DIGIT_2 = kVK_ANSI_2,
++	K_DIGIT_3 = kVK_ANSI_3,
++	K_DIGIT_4 = kVK_ANSI_4,
++	K_DIGIT_5 = kVK_ANSI_5,
++	K_DIGIT_6 = kVK_ANSI_6,
++	K_DIGIT_7 = kVK_ANSI_7,
++	K_DIGIT_8 = kVK_ANSI_8,
++	K_DIGIT_9 = kVK_ANSI_9,
++	K_KEY_A = kVK_ANSI_A,
++	K_KEY_B = kVK_ANSI_B,
++	K_KEY_C = kVK_ANSI_C,
++	K_KEY_D = kVK_ANSI_D,
++	K_KEY_E = kVK_ANSI_E,
++	K_KEY_F = kVK_ANSI_F,
++	K_KEY_G = kVK_ANSI_G,
++	K_KEY_H = kVK_ANSI_H,
++	K_KEY_I = kVK_ANSI_I,
++	K_KEY_J = kVK_ANSI_J,
++	K_KEY_K = kVK_ANSI_K,
++	K_KEY_L = kVK_ANSI_L,
++	K_KEY_M = kVK_ANSI_M,
++	K_KEY_N = kVK_ANSI_N,
++	K_KEY_O = kVK_ANSI_O,
++	K_KEY_P = kVK_ANSI_P,
++	K_KEY_Q = kVK_ANSI_Q,
++	K_KEY_R = kVK_ANSI_R,
++	K_KEY_S = kVK_ANSI_S,
++	K_KEY_T = kVK_ANSI_T,
++	K_KEY_U = kVK_ANSI_U,
++	K_KEY_V = kVK_ANSI_V,
++	K_KEY_W = kVK_ANSI_W,
++	K_KEY_X = kVK_ANSI_X,
++	K_KEY_Y = kVK_ANSI_Y,
++	K_KEY_Z = kVK_ANSI_Z,
++	K_SEMICOLON = kVK_ANSI_Semicolon,
++	K_EQUAL = kVK_ANSI_Equal,
++	K_COMMA = kVK_ANSI_Comma,
++	K_MINUS = kVK_ANSI_Minus,
++	K_PERIOD = kVK_ANSI_Period,
++	K_SLASH = kVK_ANSI_Slash,
++	K_BACKQUOTE = kVK_ANSI_Grave,
++	K_BRACKET_LEFT = kVK_ANSI_LeftBracket,
++	K_BACKSLASH = kVK_ANSI_Backslash,
++	K_BRACKET_RIGHT = kVK_ANSI_RightBracket,
++	K_QUOTE = kVK_ANSI_Quote,
++
  	K_BACKSPACE = kVK_Delete,
  	K_DELETE = kVK_ForwardDelete,
  	K_RETURN = kVK_Return,
-@@ -114,6 +116,55 @@ typedef CGKeyCode MMKeyCode;
+@@ -114,6 +163,55 @@ typedef CGKeyCode MMKeyCode;
  
  enum _MMKeyCode {
  	K_NOT_A_KEY = 9999,
@@ -67,7 +114,7 @@ index 9d0b099..ce74619 100644
  	K_BACKSPACE = XK_BackSpace,
  	K_DELETE = XK_Delete,
  	K_RETURN = XK_Return,
-@@ -166,21 +217,21 @@ enum _MMKeyCode {
+@@ -166,21 +264,21 @@ enum _MMKeyCode {
  	K_MENU = K_NOT_A_KEY,
  
  	K_NUMPAD_LOCK = K_NOT_A_KEY,
@@ -104,7 +151,7 @@ index 9d0b099..ce74619 100644
  
  	K_AUDIO_VOLUME_MUTE = XF86XK_AudioMute,
  	K_AUDIO_VOLUME_DOWN = XF86XK_AudioLowerVolume,
-@@ -208,6 +259,55 @@ typedef KeySym MMKeyCode;
+@@ -208,6 +306,55 @@ typedef KeySym MMKeyCode;
  
  enum _MMKeyCode {
  	K_NOT_A_KEY = 9999,
