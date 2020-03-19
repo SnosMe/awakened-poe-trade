@@ -1,7 +1,8 @@
 import Store from 'electron-store'
 import { ipcMain } from 'electron'
 import { Config, defaultConfig } from '@/shared/types'
-import { GET_CONFIG } from '@/shared/ipc-event'
+import { GET_CONFIG, PUSH_CONFIG } from '@/shared/ipc-event'
+import { win } from './window'
 
 export function setupConfig () {
   ipcMain.on(GET_CONFIG, (e) => {
@@ -20,4 +21,5 @@ export function batchUpdateConfig (upd: Config) {
   //   config.set(key as keyof Config, upd[key as keyof Config])
   // }
   config.store = upd
+  win.webContents.send(PUSH_CONFIG, upd)
 }

@@ -1,5 +1,5 @@
 import { RendererInterface } from 'electron'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK, CLOSE_SETTINGS_WINDOW } from '@/shared/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK, CLOSE_SETTINGS_WINDOW, PUSH_CONFIG } from '@/shared/ipc-event'
 import { Config, League, defaultConfig } from '@/shared/types'
 
 let electron: RendererInterface | undefined
@@ -17,8 +17,14 @@ class MainProcessBinding extends EventTarget {
       })
 
       electron.ipcRenderer.on(LEAGUE_SELECTED, (e, leagueId) => {
-        this.dispatchEvent(new CustomEvent('league-selected', {
+        this.dispatchEvent(new CustomEvent(LEAGUE_SELECTED, {
           detail: leagueId
+        }))
+      })
+
+      electron.ipcRenderer.on(PUSH_CONFIG, (e, cfg) => {
+        this.dispatchEvent(new CustomEvent(PUSH_CONFIG, {
+          detail: cfg
         }))
       })
     }
