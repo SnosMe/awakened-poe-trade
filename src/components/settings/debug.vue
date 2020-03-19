@@ -9,6 +9,13 @@
       </div>
     </div>
     <div class="mb-2">
+      <div class="flex-1 mb-1">Hardware Acceleration <span class="bg-gray-200 text-gray-900 rounded px-1">Restart required</span></div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="config.hardwareAcceleration" :value="true" class="mr-4">Enabled</ui-radio>
+        <ui-radio v-model="config.hardwareAcceleration" :value="false" class="mr-4">Disabled (render on CPU)</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
       <div class="flex-1 mb-1">Shortcut registration</div>
       <div class="mb-4 flex">
         <ui-radio v-model="config.useOsGlobalShortcut" :value="true" class="mr-4">OS global (blocking)</ui-radio>

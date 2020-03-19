@@ -18,6 +18,7 @@ export interface Config {
   windowTitle: string
   logLevel: string
   showSeller: false | 'account' | 'ign'
+  hardwareAcceleration: boolean
 }
 
 export const defaultConfig: Config = {
@@ -36,5 +37,6 @@ export const defaultConfig: Config = {
   useOsGlobalShortcut: true,
   windowTitle: 'Path of Exile',
   logLevel: 'warn',
-  showSeller: false
+  showSeller: false,
+  hardwareAcceleration: false
 }

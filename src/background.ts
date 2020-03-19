@@ -19,6 +19,9 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 app.allowRendererProcessReuse = true
+if (!config.get('hardwareAcceleration')) {
+  app.disableHardwareAcceleration()
+}
 
 app.on('ready', async () => {
   logger.info('App is running', {
