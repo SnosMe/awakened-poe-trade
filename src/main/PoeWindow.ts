@@ -3,8 +3,7 @@ import { windowManager } from './window-manager'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { win } from './window'
-
-const POE_TITLE = 'Path of Exile'
+import { config } from './config'
 
 class PoeWindowClass extends EventEmitter {
   private _isActive: boolean = false
@@ -32,7 +31,7 @@ class PoeWindowClass extends EventEmitter {
     setInterval(async () => {
       try {
         const title = await windowManager.getActiveWindowTitle()
-        this.isActive = (title === POE_TITLE)
+        this.isActive = (title === config.get('windowTitle'))
       } catch (e) {
         this.isActive = false
       }

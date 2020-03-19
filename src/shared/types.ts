@@ -15,6 +15,7 @@ export interface Config {
   }>
   altTabToGame: boolean
   useOsGlobalShortcut: boolean
+  windowTitle: string
   logLevel: string
   showSeller: false | 'account' | 'ign'
 }
@@ -33,6 +34,7 @@ export const defaultConfig: Config = {
   }],
   altTabToGame: true,
   useOsGlobalShortcut: true,
+  windowTitle: 'Path of Exile',
   logLevel: 'warn',
   showSeller: false
 }
