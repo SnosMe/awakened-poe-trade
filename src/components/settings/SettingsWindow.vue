@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow layout-column bg-gray-800">
-    <app-titlebar @close="cancel" title="Settings" />
+    <app-titlebar @close="cancel" title="Settings" native />
     <div class="flex flex-grow min-h-0">
       <div class="px-2 pb-10 bg-gray-900 flex flex-col">
         <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">Hotkeys</router-link>
