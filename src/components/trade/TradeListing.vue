@@ -50,14 +50,16 @@
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.rarity === 'Gem'" class="pl-2 whitespace-no-wrap">{{ result.level }}</td>
               <td v-if="filters.quality || item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
-              <td class="font-sans text-xs pr-2 pl-4">
-                <div class="flex items-center whitespace-no-wrap">
+              <td class="pr-2 pl-4 whitespace-no-wrap">
+                <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
-                  <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
+                  <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
+                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">You</span>
               </td>
-              <td v-if="config.showSeller" class="px-2 font-sans text-xs whitespace-no-wrap">
-                {{ config.showSeller === 'ign' ? result.ign : result.accountName }}
+              <td v-if="config.showSeller" class="px-2 whitespace-no-wrap">
+                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">You</span>
+                <span v-else class="font-sans text-xs">{{ config.showSeller === 'ign' ? result.ign : result.accountName }}</span>
               </td>
             </tr>
           </template>

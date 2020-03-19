@@ -58,14 +58,16 @@
               <td class="pl-1 whitespace-no-wrap"><span class="w-8 inline-block text-right">{{ result.exchangeAmount }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ result.itemAmount }}</span></td>
               <td class="px-1 text-right">{{ result.stock }}</td>
               <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
-              <td class="font-sans text-xs pr-2 pl-4">
-                <div class="flex items-center whitespace-no-wrap">
+              <td class="pr-2 pl-4 whitespace-no-wrap">
+                <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
-                  <div class="ml-1">{{ getRelativeTime(result.listedAt) }}</div>
+                  <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
+                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">You</span>
               </td>
-              <td v-if="config.showSeller" class="px-2 font-sans text-xs whitespace-no-wrap">
-                {{ config.showSeller === 'ign' ? result.ign : result.accountName }}
+              <td v-if="config.showSeller" class="px-2 whitespace-no-wrap">
+                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">You</span>
+                <span v-else class="font-sans text-xs">{{ config.showSeller === 'ign' ? result.ign : result.accountName }}</span>
               </td>
             </tr>
           </template>
