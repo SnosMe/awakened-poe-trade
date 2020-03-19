@@ -25,6 +25,8 @@ autoUpdater.on('update-not-available', () => {
 })
 
 export async function checkForUpdates (manual: boolean = false) {
+  if (process.platform === 'darwin') return
+
   _manual = manual
   autoUpdater.checkForUpdatesAndNotify()
 
