@@ -7,7 +7,7 @@
     <div v-if="!isBrowserShown && !browserMode" class="layout-column"
       :style="{ width: poeUiWidth }">
     </div>
-    <div id="price-window" class="flex-grow layout-column" style="max-width: 460px;"
+    <div id="price-window" class="flex-grow layout-column bg-gray-800 text-gray-200" style="max-width: 460px;"
       @mouseleave="handleMouseleave"
       @click="handleClick">
       <app-titlebar @close="hideWindow" :title="title">

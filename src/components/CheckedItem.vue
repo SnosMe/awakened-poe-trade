@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 text-gray-200 layout-column" v-if="item">
+  <div class="layout-column" v-if="item">
     <div class="p-4 layout-column">
       <filter-name
         :filters="itemFilters"
