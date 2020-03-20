@@ -35054,8 +35054,8 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_133340941",
-            "explicit.stat_3665534869"
+            "explicit.stat_3665534869",
+            "explicit.stat_133340941"
           ]
         }
       ]
@@ -59071,6 +59071,30 @@
   {
     "conditions": [
       {
+        "string": "You and your Minions take #% increased Reflected Damage"
+      },
+      {
+        "string": "You and your Minions take #% reduced Reflected Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "You and your Minions take #% reduced Reflected Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_3577248251"
+        },
+        {
+          "name": "implicit",
+          "tradeId": "implicit.stat_3577248251"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "You and your Minions take #% increased Reflected Elemental Damage"
       },
       {
@@ -64064,26 +64088,6 @@
         {
           "name": "implicit",
           "tradeId": "implicit.stat_1419713278"
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "You and your Minions take #% increased Reflected Damage"
-      },
-      {
-        "string": "You and your Minions take #% reduced Reflected Damage",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "You and your Minions take #% reduced Reflected Damage",
-      "types": [
-        {
-          "name": "implicit",
-          "tradeId": "implicit.stat_3577248251"
         }
       ]
     }
@@ -73298,8 +73302,10 @@
         {
           "name": "enchant",
           "tradeId": [
-            "enchant.stat_3003096493",
+            "enchant.stat_1727791743",
             "enchant.stat_1525452114",
+            "enchant.stat_3003096493",
+            "enchant.stat_2244550200",
             "enchant.stat_2693668441"
           ]
         }
