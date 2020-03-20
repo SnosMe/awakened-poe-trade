@@ -112,6 +112,16 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
   }
 
+  if (
+    item.rarity === ItemRarity.Normal ||
+    item.rarity === ItemRarity.Magic ||
+    item.rarity === ItemRarity.Rare
+  ) {
+    filters.rarity = {
+      value: 'nonunique'
+    }
+  }
+
   if (item.influences) {
     filters.influences = item.influences.map(influecne => ({
       value: influecne,
