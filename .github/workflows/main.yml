@@ -30,14 +30,14 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  darwin:
-    runs-on: macos-10.15
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    - run: yarn --frozen-lockfile
-    - run: yarn electron:publish
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # darwin:
+  #   runs-on: macos-10.15
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: 12
+  #   - run: yarn --frozen-lockfile
+  #   - run: yarn electron:publish
+  #     env:
+  #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

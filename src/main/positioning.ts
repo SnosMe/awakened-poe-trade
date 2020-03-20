@@ -1,10 +1,10 @@
-import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point, app } from 'electron'
+import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point, app, shell } from 'electron'
 import ioHook from 'iohook'
 import { win, WIDTH } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
 import { windowManager } from './window-manager'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK } from '../shared/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK, OPEN_LINK_EXTERNAL } from '../shared/ipc-event'
 import { config } from './config'
 import { logger } from './logger'
 
@@ -137,6 +137,11 @@ export function setupShowHide () {
       height: PoeWindow.bounds!.height
     })
     browserViewExternal.webContents.loadURL(link)
+  })
+
+  ipcMain.on(OPEN_LINK_EXTERNAL, (e, link) => {
+    hideWindow()
+    shell.openExternal(link)
   })
 
   ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: boolean, shiftKey?: boolean }) => {

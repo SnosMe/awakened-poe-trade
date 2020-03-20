@@ -1,5 +1,5 @@
 import { RendererInterface } from 'electron'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, GET_CONFIG, LEAGUES_READY, LEAGUE_SELECTED, OPEN_LINK, CLOSE_SETTINGS_WINDOW, PUSH_CONFIG } from '@/shared/ipc-event'
+import * as ipcEvent from '@/shared/ipc-event'
 import { Config, League, defaultConfig } from '@/shared/types'
 
 let electron: RendererInterface | undefined
@@ -16,14 +16,14 @@ class MainProcessBinding extends EventTarget {
         this.selfEmitPriceCheck(data)
       })
 
-      electron.ipcRenderer.on(LEAGUE_SELECTED, (e, leagueId) => {
-        this.dispatchEvent(new CustomEvent(LEAGUE_SELECTED, {
+      electron.ipcRenderer.on(ipcEvent.LEAGUE_SELECTED, (e, leagueId) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.LEAGUE_SELECTED, {
           detail: leagueId
         }))
       })
 
-      electron.ipcRenderer.on(PUSH_CONFIG, (e, cfg) => {
-        this.dispatchEvent(new CustomEvent(PUSH_CONFIG, {
+      electron.ipcRenderer.on(ipcEvent.PUSH_CONFIG, (e, cfg) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.PUSH_CONFIG, {
           detail: cfg
         }))
       })
@@ -38,13 +38,13 @@ class MainProcessBinding extends EventTarget {
 
   priceCheckHide () {
     if (electron) {
-      electron.ipcRenderer.send(PRICE_CHECK_HIDE)
+      electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_HIDE)
     }
   }
 
   getConfig (): Config {
     if (electron) {
-      return electron.ipcRenderer.sendSync(GET_CONFIG)
+      return electron.ipcRenderer.sendSync(ipcEvent.GET_CONFIG)
     } else {
       return defaultConfig
     }
@@ -52,26 +52,26 @@ class MainProcessBinding extends EventTarget {
 
   priceCheckMouse (string: string, modifier?: string) {
     if (electron) {
-      electron.ipcRenderer.send(PRICE_CHECK_MOUSE, string, modifier)
+      electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_MOUSE, string, modifier)
     }
   }
 
   sendLeaguesReady (leagues: League[]) {
     if (electron) {
-      electron.ipcRenderer.send(LEAGUES_READY, leagues)
+      electron.ipcRenderer.send(ipcEvent.LEAGUES_READY, leagues)
     }
   }
 
   openUserBrowser (url: string) {
     if (electron) {
-      electron.shell.openExternal(url)
+      electron.ipcRenderer.send(ipcEvent.OPEN_LINK_EXTERNAL, url)
     }
   }
 
   openAppBrowser (url: string) {
     if (electron) {
-      electron.ipcRenderer.send(OPEN_LINK, url)
-      this.dispatchEvent(new Event(OPEN_LINK))
+      electron.ipcRenderer.send(ipcEvent.OPEN_LINK, url)
+      this.dispatchEvent(new Event(ipcEvent.OPEN_LINK))
     } else {
       window.open(url)
     }
@@ -79,7 +79,7 @@ class MainProcessBinding extends EventTarget {
 
   closeSettingsWindow (config?: Config) {
     if (electron) {
-      electron.ipcRenderer.send(CLOSE_SETTINGS_WINDOW, config)
+      electron.ipcRenderer.send(ipcEvent.CLOSE_SETTINGS_WINDOW, config)
     }
   }
 
