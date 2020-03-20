@@ -15,14 +15,8 @@ export default {
     prop: 'modelValue'
   },
   props: {
-    value: {
-      type: [Boolean, String, Number, Object],
-      required: true
-    },
-    modelValue: {
-      type: [Boolean, String, Number, Object],
-      required: true
-    }
+    value: {},
+    modelValue: {}
   },
   computed: {
     isChecked () {

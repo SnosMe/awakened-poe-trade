@@ -1,6 +1,6 @@
 <template>
   <div v-if="!error" class="layout-column flex-grow min-h-0">
-    <div class="mb-1 flex pl-2 justify-between items-baseline" style="min-height: 22px;">
+    <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 22px;">
       <div class="flex items-center text-gray-500">
         <span class="mr-1">Matched:</span>
         <span v-if="!result" class="text-gray-600">...</span>
@@ -18,8 +18,9 @@
           <span>(Online)</span>
         </div>
       </div>
-      <div v-if="result">
-        <button @click="openTradeLink" class="py-1 -my-1 px-2 leading-none align-left"><span class="mr-1">Trade</span><i class="fas fa-external-link-alt"></i></button>
+      <div v-if="result" class="flex">
+        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2">Trade</button>
+        <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2"><i class="fas fa-external-link-alt text-xs"></i></button>
       </div>
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
@@ -141,9 +142,9 @@ export default {
     getRelativeTime (iso) {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
-    openTradeLink (e) {
+    openTradeLink (isExternal) {
       const link = `https://www.pathofexile.com/trade/exchange/${Leagues.selected}/${this.result[this.selectedCurr].queryId}`
-      if (e.ctrlKey) {
+      if (isExternal) {
         MainProcess.openUserBrowser(link)
       } else {
         MainProcess.openAppBrowser(link)

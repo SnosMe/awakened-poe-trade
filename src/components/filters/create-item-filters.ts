@@ -8,7 +8,12 @@ export function createFilters (item: ParsedItem): ItemFilters {
     return createGemFilters(item)
   }
 
-  const filters: ItemFilters = {}
+  const filters: ItemFilters = {
+    trade: {
+      offline: false,
+      listed: undefined
+    }
+  }
 
   if (item.category === ItemCategory.ItemisedMonster) {
     filters.baseType = {
@@ -149,7 +154,12 @@ export function createFilters (item: ParsedItem): ItemFilters {
 }
 
 export function createGemFilters (item: ParsedItem) {
-  const filters: ItemFilters = {}
+  const filters: ItemFilters = {
+    trade: {
+      offline: false,
+      listed: undefined
+    }
+  }
 
   filters.baseType = {
     value: item.name

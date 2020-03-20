@@ -48,6 +48,10 @@ export interface ItemFilters {
     value: number
     disabled: boolean
   }
+  trade: {
+    offline: boolean
+    listed: string | undefined
+  }
 }
 
 export interface StatFilter {

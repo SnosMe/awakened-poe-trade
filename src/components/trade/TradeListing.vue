@@ -1,13 +1,31 @@
 <template>
   <div v-if="!error" class="layout-column flex-grow min-h-0">
-    <div class="mb-1 flex pl-2 justify-between">
-      <div class="flex items-baseline text-gray-500">
+    <div class="mb-2 flex pl-2">
+      <div class="flex items-baseline text-gray-500 mr-2">
         <span class="mr-1">Matched:</span>
         <span v-if="!list" class="text-gray-600">...</span>
-        <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }} (Online)</span>
+        <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
-      <div v-if="list">
-        <button @click="openTradeLink" class="py-1 -my-1 px-2 leading-none align-left"><span class="mr-1">Trade</span><i class="fas fa-external-link-alt"></i></button>
+      <ui-popper v-if="list" tag-name="div" class="flex" :delayOnMouseOut="150" :options="{ placement: 'bottom' }" boundaries-selector="#price-window">
+        <template slot="reference">
+          <button class="text-gray-500 rounded mr-1 px-2"><i class="fas fa-history"></i> {{ filters.trade.offline ? 'Offline' : 'Online' }}</button>
+        </template>
+        <div class="popper">
+          <div class="p-2 text-left bg-gray-800 text-gray-400">
+            <ui-toggle v-model="filters.trade.offline" class="mb-2">Offline &amp; Online</ui-toggle>
+            <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">Listed: Any Time</ui-radio></div>
+            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">1 Day Ago</ui-radio></div>
+            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">3 Days Ago</ui-radio></div>
+            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">1 Week Ago</ui-radio></div>
+            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">2 Weeks Ago</ui-radio></div>
+            <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">1 Month Ago</ui-radio></div>
+          </div>
+        </div>
+      </ui-popper>
+      <div class="flex-1"></div>
+      <div v-if="list" class="flex">
+        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">Trade</button>
+        <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2 leading-none"><i class="fas fa-external-link-alt text-xs"></i></button>
       </div>
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
@@ -201,9 +219,9 @@ export default {
     getRelativeTime (iso) {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
-    openTradeLink (e) {
+    openTradeLink (isExternal) {
       const link = `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`
-      if (e.ctrlKey) {
+      if (isExternal) {
         MainProcess.openUserBrowser(link)
       } else {
         MainProcess.openAppBrowser(link)

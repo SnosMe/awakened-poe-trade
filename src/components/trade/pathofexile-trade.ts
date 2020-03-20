@@ -43,7 +43,7 @@ type FilterRange = { min?: number, max?: number }
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
-    status: { option: 'online' }
+    status: { option: 'online' | 'any' }
     name?: string
     type?: string
     stats: Array<{
@@ -117,9 +117,8 @@ interface TradeRequest { /* eslint-disable camelcase */
       }
       trade_filters: {
         filters: {
-          sale_type: {
-            option?: 'priced'
-          }
+          sale_type: { option: 'priced' }
+          indexed?: { option?: string }
         }
       }
     }
@@ -169,7 +168,7 @@ interface PricingResult {
 export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   const body: TradeRequest = {
     query: {
-      status: { option: 'online' },
+      status: { option: filters.trade.offline ? 'any' : 'online' },
       stats: [],
       filters: {
         trade_filters: {
@@ -184,6 +183,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     }
   }
   const { query } = body
+
+  if (filters.trade.listed) {
+    prop.set(query.filters, 'trade_filters.filters.indexed.option', filters.trade.listed)
+  }
 
   if (filters.name) {
     query.name = filters.name.value
