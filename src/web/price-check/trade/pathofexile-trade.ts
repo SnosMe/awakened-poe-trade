@@ -5,7 +5,7 @@ import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account } from './common'
 
-const CATEGORY_TO_TRADE_ID = new Map([
+export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
   [ItemCategory.Amulet, 'accessory.amulet'],
   [ItemCategory.Belt, 'accessory.belt'],
@@ -18,13 +18,10 @@ const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Flask, 'flask'],
   [ItemCategory.Gloves, 'armour.gloves'],
   [ItemCategory.Helmet, 'armour.helmet'],
-  // [ItemCategory.ItemisedMonster, ''],
   [ItemCategory.Jewel, 'jewel'],
-  // [ItemCategory.Map, ''],
   [ItemCategory.OneHandedAxe, 'weapon.oneaxe'],
   [ItemCategory.OneHandedMace, 'weapon.onemace'],
   [ItemCategory.OneHandedSword, 'weapon.onesword'],
-  // [ItemCategory.Prophecy, ''],
   [ItemCategory.Quiver, 'armour.quiver'],
   [ItemCategory.Ring, 'accessory.ring'],
   [ItemCategory.RuneDagger, 'weapon.runedagger'],

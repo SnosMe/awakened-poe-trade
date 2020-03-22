@@ -1,7 +1,8 @@
 export enum ItemCategory {
   Map = 'Map',
   Prophecy = 'Prophecy',
-  ItemisedMonster = 'Itemised Monster',
+  CapturedBeast = 'Captured Beast',
+  MetamorphSample = 'Metamorph Sample',
   Helmet = 'Helmet',
   BodyArmour = 'Body Armour',
   Gloves = 'Gloves',
@@ -74,4 +75,9 @@ export const ACCESSORY = new Set([
   ItemCategory.Belt,
   ItemCategory.Ring
   // ItemCategory.Quiver
+])
+
+export const ITEMISED_MONSTER = new Set([
+  ItemCategory.CapturedBeast,
+  ItemCategory.MetamorphSample
 ])

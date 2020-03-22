@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { ItemRarity, ItemCategory } from '@/parser'
+import { ItemRarity } from '@/parser'
+import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 
 export default {
   name: 'FilterName',
@@ -39,25 +40,18 @@ export default {
 
       return '??? Report if you see this text'
     },
+    canFilterByCategory () {
+      return this.item.rarity !== ItemRarity.Unique &&
+        CATEGORY_TO_TRADE_ID.has(this.item.category)
+    },
     showAsActive () {
-      if (
-        this.item.rarity === ItemRarity.Unique ||
-        !this.item.category ||
-        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.category)
-      ) {
-        return false
-      }
-
-      return !this.label.startsWith('Category:')
+      return this.canFilterByCategory &&
+        !this.label.startsWith('Category:')
     }
   },
   methods: {
     toggleAccuracy () {
-      if (
-        this.item.rarity === ItemRarity.Unique ||
-        !this.item.category ||
-        [ItemCategory.Map, ItemCategory.Prophecy, ItemCategory.ItemisedMonster].includes(this.item.category)
-      ) return
+      if (!this.canFilterByCategory) return
 
       if (this.filters.category) {
         this.filters.category = undefined

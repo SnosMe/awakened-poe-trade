@@ -1,5 +1,6 @@
 import { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { ITEMISED_MONSTER } from '@/parser/meta'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -15,7 +16,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
   }
 
-  if (item.category === ItemCategory.ItemisedMonster) {
+  if (ITEMISED_MONSTER.has(item.category!)) {
     filters.baseType = {
       value: item.baseType || item.name
     }

@@ -1,5 +1,3 @@
-import prophecies from './prophecies.json'
-import monsters from './itemised-monsters.json'
 import mods from './mods.json'
 import baseTypes from './base-types.json'
 import uniques from './uniques.json'
@@ -27,9 +25,6 @@ export interface Mod {
     tradeId: string | string[]
   }>
 }
-
-export const Prophecies = new Set(prophecies as string[])
-export const ItemisedMonsters = new Set(monsters as string[])
 
 export interface BaseType {
   category: ItemCategory

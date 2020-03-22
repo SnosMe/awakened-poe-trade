@@ -27,10 +27,13 @@ import {
   FLASK_CHARGES,
   PREFIX_BLIGHTED,
   SECTION_SYNTHESISED,
-  PREFIX_SYNTHESISED
+  PREFIX_SYNTHESISED,
+  PROPHECY_HELP,
+  BEAST_HELP,
+  METAMORPH_HELP
 } from './constants'
-import { Prophecies, ItemisedMonsters, BaseTypes } from '@/assets/data'
-import { ItemModifier, ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
+import { BaseTypes } from '@/assets/data'
+import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
 import { ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
@@ -53,6 +56,7 @@ interface ParserFn {
 const parsers: ParserFn[] = [
   parseUnidentified,
   parseSynthesised,
+  parseCategoryByHelpText,
   normalizeName,
   // -----------
   parseItemLevel,
@@ -131,14 +135,7 @@ function normalizeName (_: string[], item: ParsedItem) {
     }
   }
 
-  if (Prophecies.has(item.name)) {
-    item.category = ItemCategory.Prophecy
-  } else if (
-    ItemisedMonsters.has(item.name) || // Unique beast
-    (item.baseType && ItemisedMonsters.has(item.baseType)) // Rare beast
-  ) {
-    item.category = ItemCategory.ItemisedMonster
-  } else {
+  if (!item.category) {
     const baseType = BaseTypes.get(item.baseType || item.name)
     item.category = baseType?.category
     item.icon = baseType?.icon
@@ -453,6 +450,23 @@ function parseSynthesised (section: string[], item: ParsedItem) {
       } else {
         item.name = item.name.substr(PREFIX_SYNTHESISED.length)
       }
+      return SECTION_PARSED
+    }
+  }
+
+  return SECTION_SKIPPED
+}
+
+function parseCategoryByHelpText (section: string[], item: ParsedItem) {
+  if (section.length === 1) {
+    if (section[0] === PROPHECY_HELP) {
+      item.category = ItemCategory.Prophecy
+      return SECTION_PARSED
+    } else if (section[0] === BEAST_HELP) {
+      item.category = ItemCategory.CapturedBeast
+      return SECTION_PARSED
+    } else if (section[0] === METAMORPH_HELP) {
+      item.category = ItemCategory.MetamorphSample
       return SECTION_PARSED
     }
   }
