@@ -54,3 +54,9 @@ export const CLUSTER_JEWEL_GRANT = 'Added Small Passive Skills grant: '
 export const PROPHECY_HELP = 'Right-click to add this prophecy to your character.'
 export const BEAST_HELP = 'Right-click to add this to your bestiary.'
 export const METAMORPH_HELP = "Combine this with four other different samples in Tane's Laboratory."
+
+export const METAMORPH_BRAIN = 'Brain'
+export const METAMORPH_EYE = 'Eye'
+export const METAMORPH_LUNG = 'Lung'
+export const METAMORPH_HEART = 'Heart'
+export const METAMORPH_LIVER = 'Liver'

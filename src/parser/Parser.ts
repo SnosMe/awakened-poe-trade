@@ -30,7 +30,12 @@ import {
   PREFIX_SYNTHESISED,
   PROPHECY_HELP,
   BEAST_HELP,
-  METAMORPH_HELP
+  METAMORPH_HELP,
+  METAMORPH_BRAIN,
+  METAMORPH_EYE,
+  METAMORPH_LUNG,
+  METAMORPH_HEART,
+  METAMORPH_LIVER
 } from './constants'
 import { BaseTypes } from '@/assets/data'
 import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
@@ -132,6 +137,20 @@ function normalizeName (_: string[], item: ParsedItem) {
     const baseType = magicBasetype(item.name)
     if (baseType) {
       item.name = baseType
+    }
+  }
+
+  if (item.category === ItemCategory.MetamorphSample) {
+    if (item.name.endsWith(METAMORPH_BRAIN)) {
+      item.name = `Metamorph ${METAMORPH_BRAIN}`
+    } else if (item.name.endsWith(METAMORPH_EYE)) {
+      item.name = `Metamorph ${METAMORPH_EYE}`
+    } else if (item.name.endsWith(METAMORPH_LUNG)) {
+      item.name = `Metamorph ${METAMORPH_LUNG}`
+    } else if (item.name.endsWith(METAMORPH_HEART)) {
+      item.name = `Metamorph ${METAMORPH_HEART}`
+    } else if (item.name.endsWith(METAMORPH_LIVER)) {
+      item.name = `Metamorph ${METAMORPH_LIVER}`
     }
   }
 

@@ -5,10 +5,6 @@ import { ITEMISED_MONSTER } from '@/parser/meta'
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
 export function createFilters (item: ParsedItem): ItemFilters {
-  if (item.rarity === ItemRarity.Gem) {
-    return createGemFilters(item)
-  }
-
   const filters: ItemFilters = {
     trade: {
       offline: false,
@@ -16,9 +12,23 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
   }
 
-  if (ITEMISED_MONSTER.has(item.category!)) {
+  if (item.rarity === ItemRarity.Gem) {
+    return createGemFilters(item, filters)
+  }
+
+  if (item.category === ItemCategory.CapturedBeast) {
     filters.baseType = {
       value: item.baseType || item.name
+    }
+    return filters
+  }
+  if (item.category === ItemCategory.MetamorphSample) {
+    filters.baseType = {
+      value: item.name
+    }
+    filters.itemLevel = {
+      value: item.itemLevel!,
+      disabled: false
     }
     return filters
   }
@@ -164,14 +174,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
   return filters
 }
 
-export function createGemFilters (item: ParsedItem) {
-  const filters: ItemFilters = {
-    trade: {
-      offline: false,
-      listed: undefined
-    }
-  }
-
+function createGemFilters (item: ParsedItem, filters: ItemFilters) {
   filters.baseType = {
     value: item.name
   }
