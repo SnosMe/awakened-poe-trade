@@ -3,8 +3,8 @@ import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions, shell, 
 import { checkForUpdates } from './updates'
 import { config } from './config'
 import { win } from './window'
-import { League } from '@/shared/types'
-import { LEAGUES_READY, LEAGUE_SELECTED } from '@/shared/ipc-event'
+import { League } from '@/ipc/types'
+import { LEAGUES_READY, LEAGUE_SELECTED } from '@/ipc/ipc-event'
 import { createWindow as settingsWindow } from './SettingsWindow'
 import { logger } from './logger'
 

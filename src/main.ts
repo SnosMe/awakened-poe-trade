@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import App from './web/App.vue'
+import router from './web/router'
 import TrendChart from 'vue-trend-chart'
 import Popper from 'vue-popperjs'
 import VueSlider from 'vue-slider-component'
 import 'vue-popperjs/dist/vue-popper.css'
 import 'vue-slider-component/theme/default.css'
-import './components/ui'
+import './web/ui'
 
 Vue.use(TrendChart)
 Vue.component('UiPopper', Popper)

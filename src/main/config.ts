@@ -1,7 +1,7 @@
 import Store from 'electron-store'
 import { ipcMain } from 'electron'
-import { Config, defaultConfig } from '@/shared/types'
-import { GET_CONFIG, PUSH_CONFIG } from '@/shared/ipc-event'
+import { Config, defaultConfig } from '@/ipc/types'
+import { GET_CONFIG, PUSH_CONFIG } from '@/ipc/ipc-event'
 import { win } from './window'
 
 export function setupConfig () {

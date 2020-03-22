@@ -1,5 +1,5 @@
 import { shell } from 'electron'
-import { parseClipboard, ItemRarity } from '../components/parser'
+import { parseClipboard, ItemRarity } from '@/parser'
 
 const WIKI_URL = 'https://pathofexile.gamepedia.com'
 

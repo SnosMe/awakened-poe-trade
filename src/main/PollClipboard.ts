@@ -1,5 +1,5 @@
 import { clipboard } from 'electron'
-import { TAG_RARITY } from '../components/parser/constants'
+import { TAG_RARITY } from '@/parser/constants'
 import { logger } from './logger'
 
 export async function pollClipboard (delay: number, limit: number): Promise<string> {
