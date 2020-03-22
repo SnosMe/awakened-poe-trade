@@ -77,8 +77,7 @@ export default {
     showPredictedPrice () {
       return this.item.rarity === ItemRarity.Rare &&
         this.item.category !== ItemCategory.Map &&
-        this.item.category !== ItemCategory.CapturedBeast &&
-        !(this.item.category === ItemCategory.Jewel && this.item.baseType.endsWith(' Cluster Jewel'))
+        this.item.category !== ItemCategory.CapturedBeast
     }
   },
   methods: {
