@@ -2,12 +2,14 @@
   <div class="layout-column" v-if="item">
     <div class="p-4 layout-column">
       <filter-name
+        ref="nameFilter"
         :filters="itemFilters"
         :item="item" />
       <price-prediction v-if="showPredictedPrice" class="mb-4"
         :item="item" />
       <price-trend
-        :item="item" />
+        :item="item"
+        @filter-item-base="applyItemBaseFilter" />
       <filters-block v-if="!item.stackSize"
         :filters="itemFilters"
         :stats="itemStats"
@@ -81,6 +83,16 @@ export default {
     }
   },
   methods: {
+    applyItemBaseFilter () {
+      for (const stat of this.itemStats) {
+        stat.disabled = true
+      }
+      this.itemFilters.itemLevel.disabled = false
+      if (this.itemFilters.influences) {
+        this.itemFilters.influences[0].disabled = false
+      }
+      this.$refs.nameFilter.toggleAccuracy()
+    }
   }
 }
 </script>
