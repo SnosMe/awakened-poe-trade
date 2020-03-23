@@ -76,8 +76,3 @@ export const ACCESSORY = new Set([
   ItemCategory.Ring
   // ItemCategory.Quiver
 ])
-
-export const ITEMISED_MONSTER = new Set([
-  ItemCategory.CapturedBeast,
-  ItemCategory.MetamorphSample
-])
