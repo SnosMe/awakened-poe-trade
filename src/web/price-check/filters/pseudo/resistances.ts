@@ -64,15 +64,13 @@ export function filterResists (ctx: FiltersCreationContext) {
 
   const totalRes = resists.reduce((a, b) => a + b.total, 0)
 
-  if (resists.length > 1) {
+  if (resists.length > 0) {
     ctx.filters.push({
       ...pseudoStat('+#% total Elemental Resistance'),
-      disabled: false,
+      disabled: (resists.length === 1),
       ...rollToFilter(totalRes)
     })
-  }
 
-  if (resists.length > 0) {
     const maxRes = Math.max(...resists.map(r => r.total))
 
     if ((maxRes / totalRes > 0.67) || resists.filter(r => r.hasFlat).length === 1) {
