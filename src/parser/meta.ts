@@ -29,7 +29,8 @@ export enum ItemCategory {
   OneHandedMace = 'One-Handed Mace',
   TwoHandedMace = 'Two-Handed Mace',
   OneHandedSword = 'One-Handed Sword',
-  TwoHandedSword = 'Two-Handed Sword'
+  TwoHandedSword = 'Two-Handed Sword',
+  ClusterJewel = 'Cluster Jewel',
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([

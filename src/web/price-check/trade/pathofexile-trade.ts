@@ -32,7 +32,8 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.TwoHandedMace, 'weapon.twomace'],
   [ItemCategory.TwoHandedSword, 'weapon.twosword'],
   [ItemCategory.Wand, 'weapon.wand'],
-  [ItemCategory.Warstaff, 'weapon.warstaff']
+  [ItemCategory.Warstaff, 'weapon.warstaff'],
+  [ItemCategory.ClusterJewel, 'jewel.cluster']
 ])
 
 type FilterBoolean = { option?: 'true' | 'false' }
