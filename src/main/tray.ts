@@ -1,6 +1,6 @@
 import path from 'path'
 import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions, shell, nativeImage } from 'electron'
-import { checkForUpdates } from './updates'
+import { checkForUpdates, UpdateState } from './updates'
 import { config } from './config'
 import { win } from './window'
 import { League } from '@/ipc/types'
@@ -55,7 +55,7 @@ export function createTray () {
   rebuildContextMenu()
 }
 
-function rebuildContextMenu () {
+export function rebuildContextMenu () {
   const contextMenu = Menu.buildFromTemplate([
     ...leaguesMenuItem(),
     {
@@ -70,10 +70,10 @@ function rebuildContextMenu () {
       enabled: false
     },
     {
-      label: 'Check for updates',
-      click: () => {
-        checkForUpdates(true)
-      }
+      label: UpdateState.canCheck ? 'Check for updates' : UpdateState.status,
+      sublabel: UpdateState.canCheck ? UpdateState.status : undefined,
+      enabled: UpdateState.canCheck,
+      click: checkForUpdates
     },
     {
       label: 'Open data folder',

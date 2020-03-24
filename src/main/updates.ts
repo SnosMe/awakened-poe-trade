@@ -1,34 +1,53 @@
 import { autoUpdater } from 'electron-updater'
-import { Notification } from 'electron'
 import { logger } from './logger'
+import { rebuildContextMenu } from './tray'
 
-let _manual = false
+export const UpdateState = {
+  canCheck: true,
+  status: ''
+}
 
-autoUpdater.on('update-available', () => {
-  new Notification({
-    title: 'Awakened PoE Trade',
-    body: 'New update found and is downloading in the background now'
-  }).show()
-
-  logger.info('Update is downloading', { source: 'updater' })
+autoUpdater.on('update-available', (info: { version: string }) => {
+  UpdateState.canCheck = false
+  if (autoUpdater.autoDownload) {
+    UpdateState.status = `Downloading v${info.version} ...`
+  } else {
+    UpdateState.status = `Update v${info.version} available on Github`
+  }
+  rebuildContextMenu()
 })
 
 autoUpdater.on('update-not-available', () => {
-  if (_manual) {
-    new Notification({
-      title: 'Awakened PoE Trade',
-      body: 'You already have the latest version'
-    }).show()
-  }
-
-  logger.info('No updates available', { source: 'updater' })
+  UpdateState.canCheck = true
+  UpdateState.status = 'No updates available'
+  rebuildContextMenu()
 })
 
-export async function checkForUpdates (manual: boolean = false) {
-  if (process.platform === 'darwin') return
+autoUpdater.on('error', () => {
+  UpdateState.canCheck = true
+  UpdateState.status = 'Something went wrong, check logs'
+  rebuildContextMenu()
+})
 
-  _manual = manual
-  autoUpdater.checkForUpdatesAndNotify()
+autoUpdater.on('update-downloaded', (info: { version: string }) => {
+  UpdateState.canCheck = false
+  UpdateState.status = `v${info.version} will be installed on exit`
+  rebuildContextMenu()
+})
 
-  logger.info('Checking for updates', { source: 'updater', manual })
+// on('download-progress') https://github.com/electron-userland/electron-builder/issues/2521
+
+export async function checkForUpdates () {
+  autoUpdater.logger = logger
+  autoUpdater.autoDownload = !process.env.PORTABLE_EXECUTABLE_DIR // https://www.electron.build/configuration/nsis.html#portable
+
+  UpdateState.canCheck = false
+  UpdateState.status = 'Checking for update...'
+  rebuildContextMenu()
+
+  try {
+    await autoUpdater.checkForUpdates()
+  } catch {
+    // handled by event
+  }
 }
