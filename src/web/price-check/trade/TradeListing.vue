@@ -86,8 +86,11 @@
     </div>
   </div>
   <div v-else>
-    <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
-    <span>{{ error }}</span>
+    <div>
+      <span class="text-red-400">Trade site request failed</span>
+      <button class="btn ml-2" @click="execSearch">Retry</button>
+    </div>
+    <div>Error: {{ error }}</div>
   </div>
 </template>
 
