@@ -40,7 +40,9 @@ function leaguesMenuItem () {
 }
 
 export function createTray () {
-  tray = new Tray(path.join(__static, 'icon.png'))
+  tray = new Tray(
+    nativeImage.createFromPath(path.join(__static, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
+  )
 
   ipcMain.on(LEAGUES_READY, (e, leagues_: League[]) => {
     leagues = leagues_
