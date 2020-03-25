@@ -42,13 +42,16 @@
           <div class="flex-1"></div>
           <div class="flex-grow layout-column">
             <app-bootstrap />
-            <checked-item />
+            <checked-item :item="item" />
           </div>
         </div>
       </div>
     </div>
     <div v-if="!browserMode" class="layout-column flex-1"
       :style="{ width: poeUiWidth }">
+      <div class="flex" :class="clickPosition === 'stash' ? 'flex-row' : 'flex-row-reverse'">
+        <related-items :item="item" />
+      </div>
     </div>
   </div>
 </template>
@@ -60,12 +63,15 @@ import AppBootstrap from './AppBootstrap'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Prices, displayRounding } from './Prices'
 import { Leagues } from './Leagues'
+import { parseClipboard } from '@/parser'
+import RelatedItems from './related-items/RelatedItems'
 
 export default {
   components: {
     CheckedItem,
     AppBootstrap,
-    BrowserMode
+    BrowserMode,
+    RelatedItems
   },
   filters: { displayRounding },
   created () {
@@ -74,9 +80,10 @@ export default {
         MainProcess.priceCheckHide()
       }
     })
-    MainProcess.addEventListener('price-check', ({ detail: { position } }) => {
+    MainProcess.addEventListener('price-check', ({ detail: { position, clipboard } }) => {
       this.clickPosition = position
       this.isBrowserShown = false
+      this.item = parseClipboard(clipboard)
     })
     MainProcess.addEventListener('open-link', () => {
       this.clickPosition = 'inventory'
@@ -91,7 +98,8 @@ export default {
     return {
       poeUiWidth: '0px',
       clickPosition: 'stash',
-      isBrowserShown: false
+      isBrowserShown: false,
+      item: null
     }
   },
   computed: {

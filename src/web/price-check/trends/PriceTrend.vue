@@ -1,7 +1,6 @@
 <template>
   <div v-if="trend" class="flex items-center pb-4">
     <div class="flex items-center justify-center flex-1">
-      <related-items :details-id="trend.detailsId" />
       <button v-if="isValuableBasetype" class="text-gray-400"
         @click="$emit('filter-item-base')">Item base</button>
       <div v-else class="w-8 h-8 flex items-center justify-center">
@@ -39,7 +38,6 @@
 <script>
 import { Prices, displayRounding } from '../Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
-import RelatedItems from './RelatedItems'
 
 export default {
   props: {
@@ -48,7 +46,6 @@ export default {
       required: true
     }
   },
-  components: { RelatedItems },
   filters: { displayRounding },
   computed: {
     icon () {

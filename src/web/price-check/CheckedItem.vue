@@ -29,8 +29,7 @@
 </template>
 
 <script>
-import { MainProcess } from '@/ipc/main-process-bindings'
-import { parseClipboard, ItemRarity, ItemCategory } from '@/parser'
+import { ItemRarity, ItemCategory } from '@/parser'
 import TradeListing from './trade/TradeListing'
 import TradeBulk from './trade/TradeBulk'
 import { apiToSatisfySearch } from './trade/common'
@@ -52,12 +51,6 @@ export default {
     FilterName
   },
   created () {
-    MainProcess.addEventListener('price-check', ({ detail: { clipboard } }) => {
-      this.item = parseClipboard(clipboard)
-      this.itemFilters = createFilters(this.item)
-      this.itemStats = initUiModFilters(this.item)
-    })
-
     this.$watch(vm => [vm.itemFilters, vm.itemStats], () => {
       this.tradeAPI = apiToSatisfySearch(this.itemFilters, this.itemStats)
 
@@ -67,9 +60,20 @@ export default {
       })
     }, { deep: true })
   },
+  props: {
+    item: {
+      type: Object,
+      default: null
+    }
+  },
+  watch: {
+    item (item) {
+      this.itemFilters = createFilters(item)
+      this.itemStats = initUiModFilters(item)
+    }
+  },
   data () {
     return {
-      item: null,
       itemFilters: null,
       itemStats: null,
       tradeAPI: 'bulk'
