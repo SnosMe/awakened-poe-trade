@@ -15,13 +15,16 @@
         :stats="itemStats"
         :item="item" />
       <trade-listing
-        v-if="tradeAPI === 'trade'"
+        v-if="tradeAPI === 'trade' && intaractedOnce"
         ref="tradeService"
         :filters="itemFilters"
         :stats="itemStats"
         :item="item" />
+      <div v-if="tradeAPI === 'trade' && !intaractedOnce">
+        <button class="btn" @click="intaractedOnce = true">Search</button>
+      </div>
       <trade-bulk
-        v-else-if="tradeAPI === 'bulk'"
+        v-if="tradeAPI === 'bulk'"
         ref="tradeService"
         :filters="itemFilters" />
     </div>
@@ -39,6 +42,7 @@ import { createFilters } from './filters/create-item-filters'
 import { initUiModFilters } from './filters/create-stat-filters'
 import PricePrediction from './price-prediction/PricePrediction'
 import FilterName from './filters/FilterName'
+import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 
 export default {
   name: 'CheckedItem',
@@ -51,8 +55,17 @@ export default {
     FilterName
   },
   created () {
-    this.$watch(vm => [vm.itemFilters, vm.itemStats], () => {
+    this.$watch(vm => [vm.itemFilters, vm.itemStats, vm.intaractedOnce], (curr, prev) => {
       this.tradeAPI = apiToSatisfySearch(this.itemFilters, this.itemStats)
+
+      const cItem = curr[0]
+      const pItem = prev[0]
+      const cIntaracted = curr[2]
+      if (cItem === pItem && cIntaracted === false) {
+        // In that case, the change is either in itemFilters or itemStats, and this counts as an interaction
+        this.intaractedOnce = true
+        return
+      }
 
       // NOTE: children component receives props on nextTick
       this.$nextTick(() => {
@@ -70,12 +83,17 @@ export default {
     item (item) {
       this.itemFilters = createFilters(item)
       this.itemStats = initUiModFilters(item)
+      this.intaractedOnce = (
+        this.item.rarity === ItemRarity.Unique ||
+        !CATEGORY_TO_TRADE_ID.has(this.item.category)
+      )
     }
   },
   data () {
     return {
       itemFilters: null,
       itemStats: null,
+      intaractedOnce: false,
       tradeAPI: 'bulk'
     }
   },
