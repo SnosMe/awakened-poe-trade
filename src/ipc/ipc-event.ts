@@ -10,3 +10,5 @@ export const OPEN_LINK = 'open-link'
 export const OPEN_LINK_EXTERNAL = 'open-link-external'
 
 export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'
+
+export const UPDATE_AVAILABLE = 'update-available'
