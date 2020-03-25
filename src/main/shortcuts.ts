@@ -3,7 +3,7 @@ import robotjs from 'robotjs'
 import ioHook from 'iohook'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
-import { showWindow, lockWindow, poeUserInterfaceWidth, getPoeUiPosition } from './positioning'
+import { showWindow, lockWindow, poeUserInterfaceWidth, getPoeUiPosition, mousePosFromEvent } from './positioning'
 import { IohookToName, KeyToElectron } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
@@ -139,11 +139,11 @@ export function setupShortcuts () {
     logger.debug('Keyup', { source: 'shortcuts', key: IohookToName[e.keycode] || 'unknown' })
   })
 
-  ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, rotation: 1 | -1 }) => {
+  ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, y: number, rotation: 1 | -1 }) => {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive) return
 
     const stashCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
-    const mouseX = (process.platform === 'linux') ? screen.getCursorScreenPoint().x : e.x
+    const mouseX = mousePosFromEvent(e).x
     if (mouseX > stashCheckX) {
       if (e.rotation > 0) {
         robotjs.keyTap('ArrowRight')
