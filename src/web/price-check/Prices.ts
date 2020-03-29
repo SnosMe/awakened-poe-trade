@@ -6,7 +6,7 @@ import { nameToDetailsId } from './trends/getDetailsId'
 /* eslint-disable camelcase */
 interface NinjaCurrencyInfo {
   currencyTypeName: string
-  receive: {
+  receive?: {
     league_id: number
     pay_currency_id: number
     get_currency_id: number
@@ -137,9 +137,13 @@ class PriceService {
           } = await response.json()
 
           for (const currency of priceData.lines) {
+            if (!currency.receive) {
+              continue
+            }
+
             PRICE_BY_DETAILS_ID.set(currency.detailsId, {
               detailsId: currency.detailsId,
-              icon: priceData.currencyDetails.find(detail => detail.id === currency.receive.get_currency_id)!.icon,
+              icon: priceData.currencyDetails.find(detail => detail.id === currency.receive!.get_currency_id)!.icon,
               name: currency.currencyTypeName,
               receive: {
                 chaosValue: currency.receive.value,
