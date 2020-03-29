@@ -60,15 +60,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
 
     if (item.rarity === ItemRarity.Unique) {
-      filters.rarity = {
-        value: 'unique'
-      }
-
-      // NOTE:
-      // 1 baseType = 1 Unique map. Now there is no need for this condition
-      // if (!item.isUnidentified) {
-      //   filters.name = { value: item.name }
-      // }
+      filters.name = { value: item.name }
     }
 
     filters.mapTier = {

@@ -29,6 +29,11 @@ export function apiToSatisfySearch (filters: ItemFilters, stats: StatFilter[]): 
 }
 
 export function tradeTag (filters: ItemFilters): string | undefined {
+  if (
+    filters.mapTier &&
+    (filters.baseType && filters.name) // unique map
+  ) return
+
   let name = filters.baseType?.value || filters.name?.value
   if (name) {
     if (filters.mapBlighted) {
