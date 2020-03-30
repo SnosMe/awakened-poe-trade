@@ -42,8 +42,7 @@ import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers
 import { ItemCategory } from './meta'
 import { ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-// TODO: refactor
-import { getRollAsSingleNumber } from '@/web/price-check/filters/util'
+import { getRollAsSingleNumber } from './utils'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0

@@ -1,8 +1,9 @@
 import { UniqueItem, Uniques } from '@/assets/data'
 import { ParsedItem } from '@/parser'
 import { ItemModifier } from '@/parser/modifiers'
-import { getRollAsSingleNumber, percentRollDelta } from './util'
+import { percentRollDelta } from './util'
 import { StatFilter } from './interfaces'
+import { getRollAsSingleNumber } from '@/parser/utils'
 
 function isConstantMod (mod: UniqueItem['mods'][0]) {
   return mod.bounds.every(b => b.min === b.max)

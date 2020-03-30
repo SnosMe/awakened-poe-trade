@@ -1,12 +1,8 @@
 import { StatFilter } from './interfaces'
+import { countDecimals } from '@/parser/utils'
+import { Config } from '@/web/Config'
 
-function countDecimals (num: number) {
-  return !Number.isInteger(num)
-    ? String(num).substring(String(num).indexOf('.') + 1).length
-    : 0
-}
-
-export function percentRoll (value: number, p: number, method: Math['floor'] | Math['ceil']) {
+function percentRoll (value: number, p: number, method: Math['floor'] | Math['ceil']) {
   const res = value + value * p / 100
 
   const rounding = Math.pow(10, countDecimals(value))
@@ -20,24 +16,14 @@ export function percentRollDelta (value: number, delta: number, p: number, metho
   return method((res + Number.EPSILON) * rounding) / rounding
 }
 
-export function getRollAsSingleNumber (values: number[]): number {
-  if (values.length === 1) {
-    return values[0]
-  } else {
-    const avg = (values[0] + values[1]) / 2
-
-    const maxPrecision = Math.max(countDecimals(values[0]), countDecimals(values[1]))
-    const rounding = Math.pow(10, maxPrecision)
-    return Math.floor((avg + Number.EPSILON) * rounding) / rounding
-  }
-}
-
 export function rollToFilter (roll: number): Pick<StatFilter, 'roll' | 'min' | 'max' | 'defaultMin' | 'defaultMax'> {
+  const percent = Config.store.searchStatRange
+
   return {
     roll,
-    defaultMin: percentRoll(roll, -10 * Math.sign(roll), Math.floor),
-    defaultMax: percentRoll(roll, +10 * Math.sign(roll), Math.ceil),
-    min: percentRoll(roll, -10 * Math.sign(roll), Math.floor),
+    defaultMin: percentRoll(roll, -percent * Math.sign(roll), Math.floor),
+    defaultMax: percentRoll(roll, +percent * Math.sign(roll), Math.ceil),
+    min: percentRoll(roll, -percent * Math.sign(roll), Math.floor),
     max: undefined
   }
 }

@@ -1,10 +1,11 @@
 import { ParsedItem, ItemRarity } from '@/parser'
 import { ItemModifier } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
-import { getRollAsSingleNumber, rollToFilter } from './util'
+import { rollToFilter } from './util'
 import { StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
+import { getRollAsSingleNumber } from '@/parser/utils'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
