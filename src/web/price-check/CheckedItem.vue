@@ -69,7 +69,9 @@ export default {
 
       // NOTE: children component receives props on nextTick
       this.$nextTick(() => {
-        this.$refs.tradeService.execSearch()
+        if (this.$refs.tradeService) {
+          this.$refs.tradeService.execSearch()
+        }
       })
     }, { deep: true })
   },

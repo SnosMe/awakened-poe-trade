@@ -1,5 +1,8 @@
 <template>
-  <div class="flex-grow flex h-full" :class="clickPosition === 'stash' ? 'flex-row' : 'flex-row-reverse'">
+  <div class="flex-grow flex h-full" :class="{
+    'flex-row': clickPosition === 'stash',
+    'flex-row-reverse': clickPosition === 'inventory',
+  }">
     <div v-if="browserMode"
       class="w-full layout-column" style="width: calc(100% - 460px);">
       <browser-mode />
@@ -7,7 +10,7 @@
     <div v-if="!isBrowserShown && !browserMode" class="layout-column"
       :style="{ width: poeUiWidth }">
     </div>
-    <div id="price-window" class="flex-grow layout-column bg-gray-800 text-gray-200" style="max-width: 460px;"
+    <div id="price-window" class="flex-grow layout-column text-gray-200" style="max-width: 460px;"
       @mouseleave="handleMouseleave"
       @click="handleClick">
       <app-titlebar @close="hideWindow" :title="title">
@@ -36,8 +39,8 @@
             class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
         </div>
       </app-titlebar>
-      <div class="flex-grow layout-column min-h-0">
-        <router-view/>
+      <div class="flex-grow layout-column min-h-0 bg-gray-800"
+        :class="{ 'opacity-0': hideUI }">
         <div id="home" class="flex-grow layout-column">
           <div class="flex-1"></div>
           <div class="flex-grow layout-column">
@@ -49,7 +52,11 @@
     </div>
     <div v-if="!browserMode" class="layout-column flex-1"
       :style="{ width: poeUiWidth }">
-      <div class="flex" :class="clickPosition === 'stash' ? 'flex-row' : 'flex-row-reverse'">
+      <div class="flex" :class="{
+        'flex-row': clickPosition === 'stash',
+        'flex-row-reverse': clickPosition === 'inventory',
+        'opacity-0': hideUI
+      }">
         <related-items :item="item" />
       </div>
     </div>
@@ -83,6 +90,7 @@ export default {
     MainProcess.addEventListener('price-check', ({ detail: { position, clipboard } }) => {
       this.clickPosition = position
       this.isBrowserShown = false
+      this.hideUI = false
       this.item = parseClipboard(clipboard)
     })
     MainProcess.addEventListener('open-link', () => {
@@ -92,6 +100,20 @@ export default {
     window.addEventListener('resize', () => {
       this.updatePoeUiWidth()
     })
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Alt') {
+        this.hideUI = true
+      }
+    })
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'Alt') {
+        this.hideUI = false
+      }
+    })
+    window.addEventListener('blur', (e) => {
+      // Alt+Tab
+      this.hideUI = false
+    })
     this.updatePoeUiWidth()
   },
   data () {
@@ -99,6 +121,7 @@ export default {
       poeUiWidth: '0px',
       clickPosition: 'stash',
       isBrowserShown: false,
+      hideUI: false,
       item: null
     }
   },
