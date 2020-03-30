@@ -124,7 +124,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
   }
 
-  if (item.influences) {
+  if (item.influences.length) {
     filters.influences = item.influences.map(influecne => ({
       value: influecne,
       disabled: true
