@@ -493,27 +493,6 @@
           "text": "1% chance to Dodge Attack Hits",
           "tradeId": 50
         }
-      },
-      {
-        "string": "Added Small Passive Skills grant: +10 to Strength",
-        "option": {
-          "text": "+10 to Strength",
-          "tradeId": 51
-        }
-      },
-      {
-        "string": "Added Small Passive Skills grant: +10 to Dexterity",
-        "option": {
-          "text": "+10 to Dexterity",
-          "tradeId": 52
-        }
-      },
-      {
-        "string": "Added Small Passive Skills grant: +10 to Intelligence",
-        "option": {
-          "text": "+10 to Intelligence",
-          "tradeId": 53
-        }
       }
     ],
     "mod": {
@@ -7760,12 +7739,6 @@
     "conditions": [
       {
         "string": "#% chance to Curse Enemies with Level 10 Vulnerability on Hit"
-      },
-      {
-        "string": "Curse Enemies with Level 10 Vulnerability on Hit",
-        "condition": {
-          "min": 100
-        }
       }
     ],
     "mod": {
@@ -15610,11 +15583,11 @@
   {
     "conditions": [
       {
-        "string": "#% increased Effect of Auras on you"
+        "string": "#% increased Effect of Aura Buffs on you"
       }
     ],
     "mod": {
-      "text": "#% increased Effect of Auras on you",
+      "text": "#% increased Effect of Aura Buffs on you",
       "types": [
         {
           "name": "explicit",
@@ -15630,11 +15603,11 @@
   {
     "conditions": [
       {
-        "string": "#% increased Effect of Auras on your Minions"
+        "string": "#% increased Effect of Aura Buffs on your Minions"
       }
     ],
     "mod": {
-      "text": "#% increased Effect of Auras on your Minions",
+      "text": "#% increased Effect of Aura Buffs on your Minions",
       "types": [
         {
           "name": "explicit",
@@ -37342,6 +37315,22 @@
         {
           "name": "explicit",
           "tradeId": "explicit.stat_2459809121"
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Chill Nearby Enemies when you Block"
+      }
+    ],
+    "mod": {
+      "text": "Chill Nearby Enemies when you Block",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": "explicit.stat_583277599"
         }
       ]
     }
@@ -73302,9 +73291,9 @@
         {
           "name": "enchant",
           "tradeId": [
-            "enchant.stat_1727791743",
-            "enchant.stat_1525452114",
             "enchant.stat_3003096493",
+            "enchant.stat_1525452114",
+            "enchant.stat_1727791743",
             "enchant.stat_2244550200",
             "enchant.stat_2693668441"
           ]
