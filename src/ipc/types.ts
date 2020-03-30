@@ -7,11 +7,11 @@ export interface Config {
   leagueId?: string
   priceCheckKey: string
   priceCheckKeyHold: string
-  priceCheckLocked?: string
-  wikiKey?: string
+  priceCheckLocked: string | null
+  wikiKey: string | null
   commands: Array<{
     text: string
-    hotkey?: string
+    hotkey: string | null
   }>
   altTabToGame: boolean
   useOsGlobalShortcut: boolean
@@ -33,6 +33,18 @@ export const defaultConfig: Config = {
   }, {
     text: '/exit',
     hotkey: 'F9'
+  }, {
+    text: '@last ty',
+    hotkey: null
+  }, {
+    text: '/invite @last',
+    hotkey: null
+  }, {
+    text: '/tradewith @last',
+    hotkey: null
+  }, {
+    text: '/hideout @last',
+    hotkey: null
   }],
   altTabToGame: true,
   useOsGlobalShortcut: true,

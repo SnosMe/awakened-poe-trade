@@ -160,8 +160,23 @@ export function setupShortcuts () {
 function typeChatCommand (command: string) {
   const saved = clipboard.readText()
 
-  clipboard.writeText(command)
-  robotjs.keyTap('Enter')
+  const whisperLast = command.startsWith('@last ')
+  const commandLast = command.endsWith(' @last')
+  if (whisperLast) {
+    command = command.substr('@last '.length)
+    clipboard.writeText(command)
+    robotjs.keyTap('Enter', ['Ctrl'])
+  } else if (commandLast) {
+    command = command.slice(0, -'@last'.length)
+    clipboard.writeText(command)
+    robotjs.keyTap('Enter', ['Ctrl'])
+    robotjs.keyTap('Home')
+    robotjs.keyTap('Delete')
+  } else {
+    clipboard.writeText(command)
+    robotjs.keyTap('Enter')
+  }
+
   robotjs.keyTap('V', ['Ctrl'])
   robotjs.keyTap('Enter')
   // restore the last chat
@@ -193,7 +208,7 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
   return code
 }
 
-function shortcutCallback<T extends Function> (shortcut: string | undefined, cb: T) {
+function shortcutCallback<T extends Function> (shortcut: string | null, cb: T) {
   return {
     shortcut,
     cb: function () {
