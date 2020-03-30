@@ -31,7 +31,6 @@ function priceCheck (lockedMode: boolean) {
   }
   checkPressPosition = screen.getCursorScreenPoint()
 
-  // @TODO: linux os shortcuts, to prevent delay need to robotjs.keyToggle('key_XXX', 'up')
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {
       robotjs.keyTap('C')
