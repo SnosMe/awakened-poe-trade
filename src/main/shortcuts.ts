@@ -39,9 +39,6 @@ function priceCheck (lockedMode: boolean) {
       robotjs.keyTap('C', ['Ctrl'])
     }
   } else {
-    if (config.get('priceCheckLocked')!.includes('Alt')) {
-      robotjs.keyToggle('Alt', 'up')
-    }
     robotjs.keyTap('C', ['Ctrl'])
   }
 }

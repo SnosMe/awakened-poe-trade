@@ -147,8 +147,8 @@ export function setupShowHide () {
     shell.openExternal(link)
   })
 
-  ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: boolean, shiftKey?: boolean }) => {
-    const modifier = e.ctrlKey ? 'Ctrl' : e.shiftKey ? 'Shift' : undefined
+  ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: boolean, altKey?: boolean }) => {
+    const modifier = e.ctrlKey ? 'Ctrl' : e.altKey ? 'Alt' : undefined
     if (!isPollingClipboard && checkPressPosition && isWindowShown && !isWindowLocked && modifier !== config.get('priceCheckKeyHold')) {
       const mousePos = mousePosFromEvent(e)
       const distance = Math.hypot(mousePos.x - checkPressPosition.x, mousePos.y - checkPressPosition.y)

@@ -6,8 +6,8 @@
         <div class="flex">
           <span class="text-gray-500 mr-2">Auto-hide Mode</span>
           <button :class="{ border: config.priceCheckKeyHold === 'Ctrl' }" @click="config.priceCheckKeyHold = 'Ctrl'" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
-          <button :class="{ border: config.priceCheckKeyHold === 'Shift' }" @click="config.priceCheckKeyHold = 'Shift'" class="rounded px-1 bg-gray-900 leading-none">Shift</button>
-          <span class="mx-3">+</span>
+          <button :class="{ border: config.priceCheckKeyHold === 'Alt' }" @click="config.priceCheckKeyHold = 'Alt'" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
+          <span class="mx-4">+</span>
           <hotkey-input v-model="config.priceCheckKey" :forbidden="['Ctrl','Shift','Alt','C','V']" required class="w-20" />
         </div>
       </div>
