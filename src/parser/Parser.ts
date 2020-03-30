@@ -259,9 +259,11 @@ function parseItemLevel (section: string[], item: ParsedItem) {
 function parseVaalGem (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Gem) return PARSER_SKIPPED
 
-  if (section[0] === `${PREFIX_VAAL}${item.name}`) {
-    item.name = section[0]
-    return SECTION_PARSED
+  if (section.length === 1) {
+    if (section[0].startsWith(PREFIX_VAAL)) {
+      item.name = section[0]
+      return SECTION_PARSED
+    }
   }
   return SECTION_SKIPPED
 }
