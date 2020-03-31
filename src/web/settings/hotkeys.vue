@@ -1,5 +1,7 @@
 <template>
   <div class="max-w-md p-2">
+    <div class="bg-gray-700 rounded px-2 py-1 mb-2 leading-none">
+      <i class="fas fa-info-circle"></i> You can disable any hotkey by pressing Backspace</div>
     <div class="mb-8">
       <div class="flex">
         <div class="flex-1">Price check</div>
@@ -8,7 +10,7 @@
           <button :class="{ border: config.priceCheckKeyHold === 'Ctrl' }" @click="config.priceCheckKeyHold = 'Ctrl'" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
           <button :class="{ border: config.priceCheckKeyHold === 'Alt' }" @click="config.priceCheckKeyHold = 'Alt'" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
           <span class="mx-4">+</span>
-          <hotkey-input v-model="config.priceCheckKey" :forbidden="['Ctrl','Shift','Alt','C','V']" required class="w-20" />
+          <hotkey-input v-model="config.priceCheckKey" :forbidden="['Ctrl','Shift','Alt','C','V']" class="w-20" />
         </div>
       </div>
       <div class="text-right mt-2">
@@ -20,6 +22,15 @@
       <div class="flex">
         <div class="flex-1">Open wiki</div>
         <hotkey-input v-model="config.wikiKey" :forbidden="['C','V']" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-8">
+      <div class="flex">
+        <div class="flex-1">Stash tab scrolling</div>
+        <div class="flex">
+          <ui-radio v-model="config.stashScroll" :value="true" class="mr-4 font-fontin-regular">Ctrl + MouseWheel</ui-radio>
+          <ui-radio v-model="config.stashScroll" :value="false">Disabled</ui-radio>
+        </div>
       </div>
     </div>
     <div class="mb-2">

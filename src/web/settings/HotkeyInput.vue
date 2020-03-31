@@ -2,7 +2,8 @@
   <input
     @keyup="handleKeyup"
     @keydown.prevent
-    :placeholder="value || 'Not assigned ...'"
+    :placeholder="value || 'Not Set'"
+    :class="{ 'placeholder-red-500': !value }"
     class="rounded bg-gray-900 px-1 text-center font-fontin-regular" />
 </template>
 

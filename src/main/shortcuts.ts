@@ -45,7 +45,7 @@ function priceCheck (lockedMode: boolean) {
 function registerGlobal () {
   const register = [
     shortcutCallback(
-      `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
+      config.get('priceCheckKey') && `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
       () => priceCheck(false)
     ),
     shortcutCallback(
@@ -136,7 +136,7 @@ export function setupShortcuts () {
   })
 
   ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, y: number, rotation: 1 | -1 }) => {
-    if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive) return
+    if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
     const stashCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
     const mouseX = mousePosFromEvent(e).x

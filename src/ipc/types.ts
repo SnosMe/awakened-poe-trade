@@ -5,7 +5,7 @@ export interface League {
 
 export interface Config {
   leagueId?: string
-  priceCheckKey: string
+  priceCheckKey: string | null
   priceCheckKeyHold: string
   priceCheckLocked: string | null
   wikiKey: string | null
@@ -19,8 +19,9 @@ export interface Config {
   logLevel: string
   showSeller: false | 'account' | 'ign'
   hardwareAcceleration: boolean
-  accountName: string,
+  accountName: string
   searchStatRange: number
+  stashScroll: boolean
 }
 
 export const defaultConfig: Config = {
@@ -54,5 +55,6 @@ export const defaultConfig: Config = {
   showSeller: false,
   hardwareAcceleration: false,
   accountName: '',
-  searchStatRange: 10
+  searchStatRange: 10,
+  stashScroll: true
 }
