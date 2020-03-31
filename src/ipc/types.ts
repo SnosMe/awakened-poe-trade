@@ -22,6 +22,7 @@ export interface Config {
   accountName: string
   searchStatRange: number
   stashScroll: boolean
+  subdomain: string
 }
 
 export const defaultConfig: Config = {
@@ -56,5 +57,6 @@ export const defaultConfig: Config = {
   hardwareAcceleration: false,
   accountName: '',
   searchStatRange: 10,
-  stashScroll: true
+  stashScroll: true,
+  subdomain: 'us'
 }

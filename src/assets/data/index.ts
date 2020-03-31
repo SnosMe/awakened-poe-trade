@@ -81,3 +81,13 @@ for (const entry of (itemDrop as DropEntry[])) {
     ITEM_DROP.set(query, entry)
   }
 }
+
+function apiTradeItemsToConsumableFormat (items: any) {
+  const ret = items.result.flatMap((category: any) => category.entries) as any[]
+  return ret.filter((item: any) => !item.disc) as Array<{ name?: string, type: string }>
+}
+export const API_TRADE_ITEMS = {
+  us: apiTradeItemsToConsumableFormat(require('./api_trade_items/us.json')),
+  kr: apiTradeItemsToConsumableFormat(require('./api_trade_items/kr.json')),
+  th: apiTradeItemsToConsumableFormat(require('./api_trade_items/th.json'))
+}

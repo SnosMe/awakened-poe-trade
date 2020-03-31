@@ -1,6 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Leagues } from '../Leagues'
-import { SearchResult, Account } from './common'
+import { SearchResult, Account, getTradeEndpoint } from './common'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
@@ -41,7 +41,7 @@ interface PricingResult {
 }
 
 async function requestTradeResultList (body: TradeRequest) {
-  const response = await fetch(`${MainProcess.CORS}https://www.pathofexile.com/api/trade/exchange/${Leagues.selected}`, {
+  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${Leagues.selected}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -58,7 +58,7 @@ async function requestTradeResultList (body: TradeRequest) {
 }
 
 async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
-  const response = await fetch(`https://www.pathofexile.com/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
+  const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
   const data: { result: FetchResult[] } = await response.json()
 
   return data.result

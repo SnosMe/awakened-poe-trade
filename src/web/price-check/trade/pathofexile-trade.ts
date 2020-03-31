@@ -3,7 +3,9 @@ import { Leagues } from '../Leagues'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { SearchResult, Account } from './common'
+import { SearchResult, Account, getTradeEndpoint } from './common'
+import { Config } from '@/web/Config'
+import { API_TRADE_ITEMS } from '@/assets/data'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -342,7 +344,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 }
 
 export async function requestTradeResultList (body: TradeRequest) {
-  const response = await fetch(`${MainProcess.CORS}https://www.pathofexile.com/api/trade/search/${Leagues.selected}`, {
+  body = patchRequestForSubdomain(body)
+
+  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${Leagues.selected}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -359,7 +363,7 @@ export async function requestTradeResultList (body: TradeRequest) {
 }
 
 export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
-  const response = await fetch(`https://www.pathofexile.com/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
+  const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
   const data: { result: FetchResult[] } = await response.json()
 
   return data.result.map(result => {
@@ -380,4 +384,20 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
         : 'offline'
     } as PricingResult
   })
+}
+
+function patchRequestForSubdomain (body: TradeRequest) {
+  if (Config.store.subdomain === 'us') return body
+  if (!body.query.name || !body.query.type) return body
+
+  const usIdx = API_TRADE_ITEMS.us.findIndex(item =>
+    item.name === body.query.name &&
+    item.type === body.query.type
+  )
+  const translated = API_TRADE_ITEMS[Config.store.subdomain as keyof typeof API_TRADE_ITEMS][usIdx]
+
+  body = JSON.parse(JSON.stringify(body))
+  body.query.name = translated.name
+  body.query.type = translated.type
+  return body
 }

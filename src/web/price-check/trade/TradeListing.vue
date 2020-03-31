@@ -223,7 +223,10 @@ export default {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
     openTradeLink (isExternal) {
-      const link = `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`
+      const link = (Config.store.subdomain === 'us')
+        ? `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`
+        : `https://www.pathofexile.com/api/trade/search/${Leagues.selected}?redirect&source=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
+
       if (isExternal) {
         MainProcess.openUserBrowser(link)
       } else {

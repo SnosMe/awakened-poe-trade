@@ -1,5 +1,6 @@
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
+import { Config } from '@/web/Config'
 
 export interface Account {
   name: string
@@ -44,4 +45,14 @@ export function tradeTag (filters: ItemFilters): string | undefined {
 
     return TRADE_TAG_BY_NAME.get(name)
   }
+}
+
+const SUBDOMAIN_ENDPOINT = {
+  us: 'www.pathofexile.com',
+  th: 'th.pathofexile.com',
+  kr: 'poe.game.daum.net'
+}
+
+export function getTradeEndpoint () {
+  return SUBDOMAIN_ENDPOINT[Config.store.subdomain as keyof typeof SUBDOMAIN_ENDPOINT]
 }

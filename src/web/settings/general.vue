@@ -19,7 +19,15 @@
       <div class="flex-1 mb-1">Fill stat values</div>
       <div class="mb-4 flex">
         <ui-radio v-model="config.searchStatRange" :value="10" class="mr-4">+-10%</ui-radio>
-        <ui-radio v-model="config.searchStatRange" :value="0" class="mr-4">Exact roll</ui-radio>
+        <ui-radio v-model="config.searchStatRange" :value="0">Exact roll</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">Trade API Subdomain</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="config.subdomain" value="us" class="mr-4">Main (www)</ui-radio>
+        <ui-radio v-model="config.subdomain" value="th" class="mr-4">Mirror 1 (th)</ui-radio>
+        <ui-radio v-model="config.subdomain" value="kr">Mirror 2 (kr)</ui-radio>
       </div>
     </div>
   </div>
