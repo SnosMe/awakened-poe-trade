@@ -59,7 +59,10 @@ async function requestTradeResultList (body: TradeRequest) {
 
 async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
   const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
-  const data: { result: FetchResult[] } = await response.json()
+  const data: { result: FetchResult[], error: SearchResult['error'] } = await response.json()
+  if (data.error) {
+    throw new Error(data.error.message)
+  }
 
   return data.result
     .filter(result => result != null) // { gone: true }
