@@ -214,6 +214,8 @@ function parseNamePlate (section: string[]) {
 
 function parseInfluence (section: string[], item: ParsedItem) {
   if (section[0].endsWith(SUFFIX_INFLUENCE)) {
+    const countBefore = item.influences.length
+
     for (const line of section) {
       const influence = line.slice(0, -SUFFIX_INFLUENCE.length)
       switch (influence) {
@@ -224,8 +226,11 @@ function parseInfluence (section: string[], item: ParsedItem) {
         case ItemInfluence.Redeemer:
         case ItemInfluence.Warlord:
           item.influences.push(influence)
-          return SECTION_PARSED
       }
+    }
+
+    if (countBefore < item.influences.length) {
+      return SECTION_PARSED
     }
   }
   return SECTION_SKIPPED
