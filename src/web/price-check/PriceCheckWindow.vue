@@ -58,6 +58,7 @@
         'opacity-0': hideUI
       }">
         <related-items :item="item" />
+        <rate-limiter-state />
       </div>
     </div>
   </div>
@@ -72,13 +73,15 @@ import { Prices, displayRounding } from './Prices'
 import { Leagues } from './Leagues'
 import { parseClipboard } from '@/parser'
 import RelatedItems from './related-items/RelatedItems'
+import RateLimiterState from './trade/RateLimiterState'
 
 export default {
   components: {
     CheckedItem,
     AppBootstrap,
     BrowserMode,
-    RelatedItems
+    RelatedItems,
+    RateLimiterState
   },
   filters: { displayRounding },
   created () {

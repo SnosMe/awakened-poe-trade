@@ -3,9 +3,10 @@ import { Leagues } from '../Leagues'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { SearchResult, Account, getTradeEndpoint } from './common'
+import { SearchResult, Account, getTradeEndpoint, SEARCH_LIMIT, FETCH_LIMIT } from './common'
 import { Config } from '@/web/Config'
 import { API_TRADE_ITEMS } from '@/assets/data'
+import { RateLimiter } from './RateLimiter'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -344,8 +345,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 }
 
 export async function requestTradeResultList (body: TradeRequest) {
-  body = patchRequestForSubdomain(body)
+  await RateLimiter.waitMulti(SEARCH_LIMIT)
 
+  body = patchRequestForSubdomain(body)
   const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${Leagues.selected}`, {
     method: 'POST',
     headers: {
@@ -363,6 +365,8 @@ export async function requestTradeResultList (body: TradeRequest) {
 }
 
 export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
+  await RateLimiter.waitMulti(FETCH_LIMIT)
+
   const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
   const data: { result: FetchResult[], error: SearchResult['error'] } = await response.json()
   if (data.error) {

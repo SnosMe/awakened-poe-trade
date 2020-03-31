@@ -1,6 +1,7 @@
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { Config } from '@/web/Config'
+import { RateLimiter } from './RateLimiter'
 
 export interface Account {
   name: string
@@ -56,3 +57,15 @@ const SUBDOMAIN_ENDPOINT = {
 export function getTradeEndpoint () {
   return SUBDOMAIN_ENDPOINT[Config.store.subdomain as keyof typeof SUBDOMAIN_ENDPOINT]
 }
+
+export const SEARCH_LIMIT = [
+  new RateLimiter(8, 6),
+  new RateLimiter(12, 30),
+  new RateLimiter(15, 60)
+]
+
+export const FETCH_LIMIT = [
+  new RateLimiter(4, 4),
+  new RateLimiter(8, 12),
+  new RateLimiter(10, 30)
+]

@@ -1,6 +1,7 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Leagues } from '../Leagues'
-import { SearchResult, Account, getTradeEndpoint } from './common'
+import { SearchResult, Account, getTradeEndpoint, SEARCH_LIMIT, FETCH_LIMIT } from './common'
+import { RateLimiter } from './RateLimiter'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
@@ -41,6 +42,8 @@ interface PricingResult {
 }
 
 async function requestTradeResultList (body: TradeRequest) {
+  await RateLimiter.waitMulti(SEARCH_LIMIT)
+
   const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${Leagues.selected}`, {
     method: 'POST',
     headers: {
@@ -58,6 +61,8 @@ async function requestTradeResultList (body: TradeRequest) {
 }
 
 async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
+  await RateLimiter.waitMulti(FETCH_LIMIT)
+
   const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
   const data: { result: FetchResult[], error: SearchResult['error'] } = await response.json()
   if (data.error) {
