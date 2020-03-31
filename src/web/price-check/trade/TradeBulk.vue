@@ -136,6 +136,12 @@ export default {
         if (this.searchId !== searchId) return
         this.result = result
         this.selectedCurr = (result.exa.total > result.chaos.total) ? 'exa' : 'chaos'
+        // override, because at league start many players set wrong price, and this breaks auto-detection
+        if (tradeTag(this.filters) === 'chaos') {
+          this.selectedCurr = 'exa'
+        } else if (tradeTag(this.filters) === 'exa') {
+          this.selectedCurr = 'chaos'
+        }
       } catch (err) {
         this.error = err.message
       } finally {
