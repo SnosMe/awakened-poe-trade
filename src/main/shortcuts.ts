@@ -61,7 +61,7 @@ function registerGlobal () {
     ),
     ...config.get('commands')
       .map(command =>
-        shortcutCallback(command.hotkey, () => typeChatCommand(command.text))
+        shortcutCallback(command.hotkey, () => typeChatCommand(command.text), { resetKeys: true })
       )
   ].filter(a => Boolean(a.shortcut))
 
@@ -126,7 +126,7 @@ export function setupShortcuts () {
       if (command) {
         shortcutCallback(pressed, () => {
           typeChatCommand(command.text)
-        }).cb()
+        }, { resetKeys: true }).cb()
       }
     }
   })
@@ -204,12 +204,16 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
   return code
 }
 
-function shortcutCallback<T extends Function> (shortcut: string | null, cb: T) {
+function shortcutCallback<T extends Function> (shortcut: string | null, cb: T, opts?: { resetKeys?: boolean }) {
   return {
     shortcut,
     cb: function () {
-      if (process.platform === 'linux' && config.get('useOsGlobalShortcut')) {
-        linuxToggleUpNonModKey(shortcut!)
+      if (!shortcut) throw new Error('Never: callback called on null shortcut')
+
+      if (opts?.resetKeys) {
+        shortcut.split(' + ').forEach(key => { robotjs.keyToggle(key, 'up') })
+      } else if (process.platform === 'linux' && config.get('useOsGlobalShortcut')) {
+        linuxToggleUpNonModKey(shortcut)
       }
       cb()
     }
