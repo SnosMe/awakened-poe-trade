@@ -58,14 +58,7 @@ export default {
     this.$watch(vm => [vm.itemFilters, vm.itemStats, vm.intaractedOnce], (curr, prev) => {
       this.tradeAPI = apiToSatisfySearch(this.itemFilters, this.itemStats)
 
-      const cItem = curr[0]
-      const pItem = prev[0]
-      const cIntaracted = curr[2]
-      if (cItem === pItem && cIntaracted === false) {
-        // In that case, the change is either in itemFilters or itemStats, and this counts as an interaction
-        this.intaractedOnce = true
-        return
-      }
+      if (this.intaractedOnce === false) return
 
       // NOTE: children component receives props on nextTick
       this.$nextTick(() => {
@@ -73,6 +66,28 @@ export default {
           this.$refs.tradeService.execSearch()
         }
       })
+    }, { deep: true })
+
+    this.$watch(vm => [vm.itemStats, vm.intaractedOnce], (curr, prev) => {
+      const cItem = curr[0]
+      const pItem = prev[0]
+      const cIntaracted = curr[1]
+      const pIntaracted = prev[1]
+
+      if (cItem === pItem && cIntaracted === true && pIntaracted === true) {
+        // force user to press Search button on change
+        this.intaractedOnce = false
+      }
+    }, { deep: true })
+
+    this.$watch(vm => [vm.itemFilters, vm.intaractedOnce], (curr, prev) => {
+      const cItem = curr[0]
+      const pItem = prev[0]
+      const cIntaracted = curr[1]
+      const pIntaracted = prev[1]
+      if (cItem === pItem && cIntaracted === false && pIntaracted === false) {
+        this.intaractedOnce = true
+      }
     }, { deep: true })
   },
   props: {

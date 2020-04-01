@@ -14,10 +14,10 @@
       <div class="flex">
         <ui-input-debounced class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
           v-if="showMinmaxInput"
-          v-model.number="filter.min" @focus="inputFocus($event, 'min')" />
+          v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
         <ui-input-debounced class="search-num-input rounded-tr" placeholder="max" type="number" :class="{ 'rounded-br': filter.roll == null }"
           v-if="showMinmaxInput"
-          v-model.number="filter.max" @focus="inputFocus($event, 'max')" />
+          v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
         <div v-if="filter.option"
           class="search-option">{{ filter.option.text }}</div>
       </div>
