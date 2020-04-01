@@ -14,20 +14,21 @@
 </template>
 
 <script>
-import { SEARCH_LIMIT, FETCH_LIMIT } from './common'
+import { RATE_LIMIT_RULES } from './common'
 import { Config } from '@/web/Config'
-
-const LIMITS = [
-  { policy: 'trade-search-request-limit', rules: SEARCH_LIMIT },
-  { policy: 'trade-fetch-request-limit', rules: FETCH_LIMIT }
-]
 
 export default {
   computed: {
     show () {
-      return Config.store.logLevel === 'debug'
+      return Config.store.logLevel === 'debug' ||
+        this.limits.some(limit => limit.hasQueue)
     },
     limits () {
+      const LIMITS = [
+        { policy: 'trade-search-request-limit', rules: RATE_LIMIT_RULES.SEARCH },
+        { policy: 'trade-fetch-request-limit', rules: RATE_LIMIT_RULES.FETCH }
+      ]
+
       return LIMITS.map((limit) => ({
         policy: limit.policy,
         hasQueue: limit.rules.some(rl => rl.state.queue),

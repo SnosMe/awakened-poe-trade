@@ -1,6 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Leagues } from '../Leagues'
-import { SearchResult, Account, getTradeEndpoint, SEARCH_LIMIT, FETCH_LIMIT } from './common'
+import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits } from './common'
 import { RateLimiter } from './RateLimiter'
 
 interface TradeRequest { /* eslint-disable camelcase */
@@ -42,7 +42,7 @@ interface PricingResult {
 }
 
 async function requestTradeResultList (body: TradeRequest) {
-  await RateLimiter.waitMulti(SEARCH_LIMIT)
+  await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
 
   const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${Leagues.selected}`, {
     method: 'POST',
@@ -52,6 +52,7 @@ async function requestTradeResultList (body: TradeRequest) {
     },
     body: JSON.stringify(body)
   })
+  RATE_LIMIT_RULES.SEARCH = adjustRateLimits(RATE_LIMIT_RULES.SEARCH, response.headers)
   const data: SearchResult = await response.json()
   if (data.error) {
     throw new Error(data.error.message)
@@ -61,9 +62,10 @@ async function requestTradeResultList (body: TradeRequest) {
 }
 
 async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
-  await RateLimiter.waitMulti(FETCH_LIMIT)
+  await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
   const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
+  RATE_LIMIT_RULES.FETCH = adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
   const data: { result: FetchResult[], error: SearchResult['error'] } = await response.json()
   if (data.error) {
     throw new Error(data.error.message)

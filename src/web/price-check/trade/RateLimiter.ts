@@ -6,6 +6,8 @@ export class RateLimiter {
     queue: 0
   })
 
+  private _destroyed = false
+
   // eslint-disable-next-line no-useless-constructor
   constructor (
     public max: number,
@@ -17,6 +19,8 @@ export class RateLimiter {
   }
 
   private async _wait (borrow: boolean, immediate = true): Promise<boolean> {
+    if (this._destroyed) throw new Error('RateLimiter is no longer active')
+
     if (this.state.stack.length === this.max) {
       this.state.queue++
       await this.state.stack[0]
@@ -46,5 +50,18 @@ export class RateLimiter {
     } else {
       return this.waitMulti(limiters)
     }
+  }
+
+  isEqualLimit (other: { max: number, window: number }) {
+    return this.max === other.max &&
+      this.window === other.window
+  }
+
+  destroy () {
+    this._destroyed = true
+  }
+
+  toString () {
+    return `RateLimiter<max=${this.max}:window=${this.window}>: (stack=${this.state.stack.length},queue=${this.state.queue})`
   }
 }
