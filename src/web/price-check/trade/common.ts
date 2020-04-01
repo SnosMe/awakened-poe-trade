@@ -72,7 +72,7 @@ export const RATE_LIMIT_RULES = {
 }
 
 export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers) {
-  const DEBUG = true
+  const DEBUG = false
 
   if (!headers.has('x-rate-limit-ip') || !headers.get('x-rate-limit-ip-state')) return clientLimits
 

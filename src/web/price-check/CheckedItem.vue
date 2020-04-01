@@ -13,7 +13,8 @@
       <filters-block v-if="!item.stackSize"
         :filters="itemFilters"
         :stats="itemStats"
-        :item="item" />
+        :item="item"
+        @submit="intaractedOnce = true" />
       <trade-listing
         v-if="tradeAPI === 'trade' && intaractedOnce"
         ref="tradeService"

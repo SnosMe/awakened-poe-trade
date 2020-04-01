@@ -49,9 +49,13 @@
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
-      <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
-        :filter="filter"
-        :item="item" />
+      <form @submit.prevent="handleStatsSubmit">
+        <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
+          :filter="filter"
+          :item="item"
+          @submit="handleStatsSubmit" />
+        <input type="submit" class="hidden" />
+      </form>
       <div class="flex mt-2">
         <button @click="toggleStatsBlock" class="btn w-40">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <button v-if="shownStats.length != stats.length"
@@ -113,6 +117,9 @@ export default {
   methods: {
     toggleStatsBlock () {
       this.showStatsBlock = !this.showStatsBlock
+    },
+    handleStatsSubmit () {
+      this.$emit('submit')
     }
   }
 }

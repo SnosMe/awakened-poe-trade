@@ -1,7 +1,7 @@
 <template>
   <div class="py-2 border-b border-gray-700">
     <div class="pb-px flex items-baseline justify-between">
-      <button class="flex items-baseline text-left min-w-0" @click="toggleFilter">
+      <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
         <i class="w-5" :class="{
           'far fa-square text-gray-500': filter.disabled,
           'fas fa-check-square': !filter.disabled
@@ -13,10 +13,10 @@
       </button>
       <div class="flex">
         <ui-input-debounced class="search-num-input rounded-tl mr-px" placeholder="min" type="number" :class="{ 'rounded-bl': filter.roll == null }"
-          v-if="showMinmaxInput"
+          v-if="showMinmaxInput" ref="inputMin"
           v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
         <ui-input-debounced class="search-num-input rounded-tr" placeholder="max" type="number" :class="{ 'rounded-br': filter.roll == null }"
-          v-if="showMinmaxInput"
+          v-if="showMinmaxInput" ref="inputMax"
           v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
         <div v-if="filter.option"
           class="search-option">{{ filter.option.text }}</div>
@@ -121,8 +121,17 @@ export default {
         ]
       },
       set (value) {
-        this.filter.min = value[0]
-        this.filter.max = value[1]
+        if (this.filter.min !== value[0]) {
+          this.filter.min = value[0]
+          this.$nextTick(() => {
+            this.$refs.inputMin.$el.focus()
+          })
+        } else if (this.filter.max !== value[1]) {
+          this.filter.max = value[1]
+          this.$nextTick(() => {
+            this.$refs.inputMax.$el.focus()
+          })
+        }
         this.filter.disabled = false
       }
     }
@@ -143,8 +152,12 @@ export default {
       }
       this.filter.disabled = false
     },
-    toggleFilter () {
-      this.filter.disabled = !this.filter.disabled
+    toggleFilter (e) {
+      if (e.detail === 0) {
+        this.$emit('submit')
+      } else {
+        this.filter.disabled = !this.filter.disabled
+      }
     }
   }
 }
