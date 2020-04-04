@@ -6,6 +6,7 @@ module.exports = {
       builderOptions: {
         publish: ['github'],
         productName: 'Awakened PoE Trade',
+        npmRebuild: false,
         nsis: {
           oneClick: false,
           allowToChangeInstallationDirectory: true
