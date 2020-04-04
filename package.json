@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -54,6 +54,7 @@
     "@vue/eslint-config-standard": "^5.1.0",
     "@vue/eslint-config-typescript": "^5.0.1",
     "electron": "^8.0.0",
+    "electron-builder": "22.3.6",
     "electron-icon-builder": "^1.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
