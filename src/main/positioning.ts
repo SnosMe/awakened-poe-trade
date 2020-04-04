@@ -48,11 +48,15 @@ function hideWindow (willShow?: boolean, willLocked?: boolean) {
   isWindowShown = false
   isMouseInside = false
   if (isWindowLocked && config.get('altTabToGame') && !willLocked) {
+    if (process.platform === 'win32') {
+      if (willShow) {
+        win.hide() // prevent bug: if user decides to move mouse into window then taskbar will be shown
+      } else {
+        win.blur() // return focus to PoE
+      }
+    }
     win.setSkipTaskbar(true)
     win.setAlwaysOnTop(true, 'screen-saver')
-    if (process.platform === 'win32' && willShow) {
-      win.hide()
-    }
   }
   if (!willShow) {
     win.hide()
@@ -63,9 +67,7 @@ function hideWindow (willShow?: boolean, willLocked?: boolean) {
   if (isWindowLocked) {
     isWindowLocked = false
     PoeWindow.isActive = true
-    if (process.platform === 'win32' && !willShow) {
-      windowManager.focusWindowById(PoeWindow.pid!)
-    }
+
     if (browserViewExternal) {
       win.removeBrowserView(browserViewExternal)
       // uncomment to trade performance for less memory usage (1 process & 13 MB)
