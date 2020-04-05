@@ -70,6 +70,7 @@ export function uniqueModFilterPartial (
     filter.max = getRollAsSingleNumber(modInfo.bounds.map(b => b.max))
     filter.defaultMin = filter.min
     filter.defaultMax = filter.max
+    filter.roll = getRollAsSingleNumber([filter.min, filter.max])
     if (!filter.variant) {
       filter.hidden = 'Roll is not variable'
     }

@@ -32,7 +32,7 @@ function armourProps (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       tradeId: 'armour.armour' as INTERNAL_TRADE_ID,
-      text: 'Armour',
+      text: 'Armour: #',
       type: 'armour',
       disabled: false,
       ...rollToFilter(totalQ20)
@@ -44,7 +44,7 @@ function armourProps (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       tradeId: 'armour.evasion_rating' as INTERNAL_TRADE_ID,
-      text: 'Evasion Rating',
+      text: 'Evasion Rating: #',
       type: 'armour',
       disabled: false,
       ...rollToFilter(totalQ20)
@@ -56,7 +56,7 @@ function armourProps (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       tradeId: 'armour.energy_shield' as INTERNAL_TRADE_ID,
-      text: 'Energy Shield',
+      text: 'Energy Shield: #',
       type: 'armour',
       disabled: false,
       ...rollToFilter(totalQ20)
@@ -66,7 +66,7 @@ function armourProps (ctx: FiltersCreationContext) {
   if (item.props.blockChance) {
     ctx.filters.push({
       tradeId: 'armour.block' as INTERNAL_TRADE_ID,
-      text: 'Block',
+      text: 'Block: #%',
       type: 'armour',
       disabled: true,
       ...rollToFilter(item.props.blockChance)
@@ -107,7 +107,7 @@ function weaponProps (ctx: FiltersCreationContext) {
   if (item.props.elementalDamage) {
     ctx.filters.push({
       tradeId: 'weapon.total_dps' as INTERNAL_TRADE_ID,
-      text: 'DPS',
+      text: 'DPS: #',
       type: 'weapon',
       disabled: false,
       ...rollToFilter(dps)
@@ -115,7 +115,7 @@ function weaponProps (ctx: FiltersCreationContext) {
 
     ctx.filters.push({
       tradeId: 'weapon.elemental_dps' as INTERNAL_TRADE_ID,
-      text: 'Elemental DPS',
+      text: 'Elemental DPS: #',
       type: 'weapon',
       disabled: (edps / dps < 0.67),
       hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
@@ -125,7 +125,7 @@ function weaponProps (ctx: FiltersCreationContext) {
 
   ctx.filters.push({
     tradeId: 'weapon.physical_dps' as INTERNAL_TRADE_ID,
-    text: 'Physical DPS',
+    text: 'Physical DPS: #',
     type: 'weapon',
     disabled: (pdpsQ20 / dps < 0.67),
     hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
@@ -134,7 +134,7 @@ function weaponProps (ctx: FiltersCreationContext) {
 
   ctx.filters.push({
     tradeId: 'weapon.crit' as INTERNAL_TRADE_ID,
-    text: 'Critical Chance',
+    text: 'Critical Chance: #%',
     type: 'weapon',
     disabled: true,
     ...rollToFilter(item.props.critChance!)
