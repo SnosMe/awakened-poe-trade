@@ -61,7 +61,7 @@ export default {
   methods: {
     addComand () {
       this.config.commands.push({
-        name: '',
+        text: '',
         hotkey: null
       })
     },
