@@ -7,10 +7,10 @@
       class="w-full layout-column" style="width: calc(100% - 460px);">
       <browser-mode />
     </div>
-    <div v-if="!isBrowserShown && !browserMode" class="layout-column"
+    <div v-if="!isBrowserShown && !browserMode" class="layout-column flex-shrink-0"
       :style="{ width: poeUiWidth }">
     </div>
-    <div id="price-window" class="flex-grow layout-column text-gray-200" style="max-width: 460px;"
+    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;"
       @mouseleave="handleMouseleave"
       @click="handleClick">
       <app-titlebar @close="hideWindow" :title="title">
@@ -50,8 +50,7 @@
         </div>
       </div>
     </div>
-    <div v-if="!browserMode" class="layout-column flex-1"
-      :style="{ width: poeUiWidth }">
+    <div v-if="!browserMode" class="layout-column flex-1 min-w-0">
       <div class="flex" :class="{
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory',
