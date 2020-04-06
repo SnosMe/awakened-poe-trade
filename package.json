@@ -54,7 +54,6 @@
     "@vue/eslint-config-standard": "^5.1.0",
     "@vue/eslint-config-typescript": "^5.0.1",
     "electron": "^8.0.0",
-    "electron-builder": "22.3.6",
     "electron-icon-builder": "^1.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
@@ -67,6 +66,9 @@
     "typescript": "^3.8.3",
     "vue-cli-plugin-electron-builder": "2.0.0-beta.4",
     "vue-template-compiler": "^2.6.11"
+  },
+  "resolutions": {
+    "vue-cli-plugin-electron-builder/electron-builder": "22.3.6"
   },
   "iohook": {
     "targets": [
