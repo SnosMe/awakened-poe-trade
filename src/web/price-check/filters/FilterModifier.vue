@@ -31,7 +31,7 @@
             </span>
           </template>
           <div class="popper">
-            <div>{{ filter.hidden }}</div>
+            <div style="max-width: 300px;">{{ filter.hidden }}</div>
           </div>
         </ui-popper>
       </div>
