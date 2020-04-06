@@ -16,6 +16,10 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Hash
       run: type .\dist_electron\latest.yml
+    - uses: actions/upload-artifact@v1
+      with:
+        name: binary-assets
+        path: dist_electron
 
   # linux:
   #   runs-on: ubuntu-18.04
