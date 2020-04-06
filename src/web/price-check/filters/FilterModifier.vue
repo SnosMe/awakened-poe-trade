@@ -160,9 +160,6 @@ export default {
       } else {
         this.filter.disabled = !this.filter.disabled
       }
-    },
-    inputStep (e) {
-      console.log(e)
     }
   }
 }
