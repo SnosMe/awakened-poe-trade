@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "electron:build": "vue-cli-service electron:build",
-    "electron:publish": "vue-cli-service electron:build -p onTagOrDraft",
+    "electron:publish": "vue-cli-service electron:build -p always",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
     "postinstall": "patch-package && electron-builder install-app-deps",

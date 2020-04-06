@@ -17,22 +17,22 @@ jobs:
     - name: Hash
       run: type .\dist_electron\latest.yml
 
-  linux:
-    runs-on: ubuntu-18.04
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    - run: |
-        sudo apt-get update
-        sudo apt-get install -y libxtst-dev libpng++-dev
-    - run: yarn --frozen-lockfile
-    - run: yarn electron:publish
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Hash
-      run: cat ./dist_electron/latest-linux.yml
+  # linux:
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: 12
+  #   - run: |
+  #       sudo apt-get update
+  #       sudo apt-get install -y libxtst-dev libpng++-dev
+  #   - run: yarn --frozen-lockfile
+  #   - run: yarn electron:publish
+  #     env:
+  #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #   - name: Hash
+  #     run: cat ./dist_electron/latest-linux.yml
 
   # darwin:
   #   runs-on: macos-10.15
