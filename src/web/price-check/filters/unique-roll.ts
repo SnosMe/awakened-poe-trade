@@ -4,6 +4,7 @@ import { ItemModifier } from '@/parser/modifiers'
 import { percentRollDelta } from './util'
 import { StatFilter } from './interfaces'
 import { getRollAsSingleNumber } from '@/parser/utils'
+import { Config } from '@/web/Config'
 
 function isConstantMod (mod: UniqueItem['mods'][0]) {
   return mod.bounds.every(b => b.min === b.max)
@@ -83,8 +84,9 @@ export function uniqueModFilterPartial (
 
     const roll = getRollAsSingleNumber(mod.values)
     filter.roll = roll
-    filter.defaultMin = Math.max(percentRollDelta(roll, (filter.boundMax - filter.boundMin), -20, Math.floor), filter.boundMin)
-    filter.defaultMax = Math.min(percentRollDelta(roll, (filter.boundMax - filter.boundMin), +20, Math.ceil), filter.boundMax)
+    const percent = Config.store.searchStatRange * 2
+    filter.defaultMin = Math.max(percentRollDelta(roll, (filter.boundMax - filter.boundMin), -percent, Math.floor), filter.boundMin)
+    filter.defaultMax = filter.boundMax
     filter.min = filter.defaultMin
     filter.max = filter.defaultMax
   }
