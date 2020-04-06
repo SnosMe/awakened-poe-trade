@@ -12,12 +12,12 @@
         </div>
       </button>
       <div class="flex">
-        <ui-input-debounced class="search-num-input rounded-tl mr-px" placeholder="min" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
+        <ui-input-debounced class="search-num-input rounded-tl mr-px" placeholder="min" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMin"
-          v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
-        <ui-input-debounced class="search-num-input rounded-tr" placeholder="max" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
+          v-model.number="filter.min" @focus.native="inputFocus($event, 'min')" :delay="0" />
+        <ui-input-debounced class="search-num-input rounded-tr" placeholder="max" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMax"
-          v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
+          v-model.number="filter.max" @focus.native="inputFocus($event, 'max')" :delay="0" />
         <div v-if="filter.option"
           class="search-option">{{ filter.option.text }}</div>
       </div>
@@ -160,6 +160,9 @@ export default {
       } else {
         this.filter.disabled = !this.filter.disabled
       }
+    },
+    inputStep (e) {
+      console.log(e)
     }
   }
 }

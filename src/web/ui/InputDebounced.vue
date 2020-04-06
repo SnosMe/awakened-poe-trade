@@ -2,7 +2,7 @@
   <input
     :value="value"
     @input="update"
-    @focus="$emit('focus', $event)">
+    @mousewheel="noop">
 </template>
 
 <script>
@@ -21,6 +21,11 @@ export default {
     this.update = debounce(this.delay, (e) => {
       this.$emit('input', e.target.value)
     })
+  },
+  methods: {
+    noop () {
+      // fix not working mouseScroll
+    }
   }
 }
 </script>
