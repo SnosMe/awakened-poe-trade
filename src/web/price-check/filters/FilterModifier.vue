@@ -27,7 +27,7 @@
         <ui-popper v-if="filter.hidden" tag-name="div" class="flex" :options="{ placement: 'right-start' }" boundaries-selector="#price-window">
           <template slot="reference">
             <span class="text-xs leading-none text-gray-600 cursor-pointer">
-              <i class="fas fa-eye-slash"></i>
+              <i class="fas fa-eye-slash" :class="{ 'faa-ring': !filter.disabled }"></i>
             </span>
           </template>
           <div class="popper">
