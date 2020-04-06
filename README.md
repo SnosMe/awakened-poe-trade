@@ -7,9 +7,9 @@
 
 | Download | Automatic update | Startup time |
 |----------|------------------|--------------|
-| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.16.0/Awakened-PoE-Trade-Setup-0.16.0.exe) | :heavy_check_mark: | Fast |
-| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.16.0/Awakened-PoE-Trade-0.16.0.exe) | :heavy_multiplication_x: | Slow |
-| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.16.0/Awakened-PoE-Trade-0.16.0.AppImage) | :heavy_check_mark: | Fast |
+| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.17.0/Awakened-PoE-Trade-Setup-0.17.0.exe) | :heavy_check_mark: | Fast |
+| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.17.0/Awakened-PoE-Trade-0.17.0.exe) | :heavy_multiplication_x: | Slow |
+| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v0.17.0/Awakened-PoE-Trade-0.17.0.AppImage) | :heavy_check_mark: | Fast |
 
 ## Tool showcase
 
