@@ -105,14 +105,15 @@ export function filterResists (ctx: FiltersCreationContext) {
     })
   }
 
-  const hasBaseChaosRes = ctx.modifiers.some(m => m.modInfo.text === CHAOS_RES.base)
-  if (hasBaseChaosRes) {
-    const chaosTotal = sumPseudoStats(ctx.modifiers, CHAOS_RES.stats)!
+  const chaosTotal = sumPseudoStats(ctx.modifiers, CHAOS_RES.stats)
+  if (chaosTotal != null) {
+    const hasBaseChaosRes = ctx.modifiers.some(m => m.modInfo.text === CHAOS_RES.base)
 
     ctx.filters.push({
       ...CHAOS_RES.pseudo,
       disabled: true, // NOTE: unlike EleRes it is disabled
-      ...rollToFilter(chaosTotal)
+      hidden: hasBaseChaosRes ? undefined : 'Crafted Chaos Resistance without Explicit mod has no value',
+      ...rollToFilter(chaosTotal!)
     })
   }
 
