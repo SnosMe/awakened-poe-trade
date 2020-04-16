@@ -80,7 +80,7 @@ const parsers: ParserFn[] = [
 ]
 
 export function parseClipboard (clipboard: string) {
-  const lines = clipboard.split(/\s*\n/)
+  const lines = clipboard.split('\n')
   lines.pop()
 
   let sections: string[][] = [[]]
