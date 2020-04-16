@@ -31,7 +31,7 @@ function armourProps (ctx: FiltersCreationContext) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.armour, QUALITY_STATS.ARMOUR, item))
 
     ctx.filters.push({
-      tradeId: 'armour.armour' as INTERNAL_TRADE_ID,
+      tradeId: ['armour.armour' as INTERNAL_TRADE_ID],
       text: 'Armour: #',
       type: 'armour',
       disabled: false,
@@ -43,7 +43,7 @@ function armourProps (ctx: FiltersCreationContext) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.evasion, QUALITY_STATS.EVASION, item))
 
     ctx.filters.push({
-      tradeId: 'armour.evasion_rating' as INTERNAL_TRADE_ID,
+      tradeId: ['armour.evasion_rating' as INTERNAL_TRADE_ID],
       text: 'Evasion Rating: #',
       type: 'armour',
       disabled: false,
@@ -55,7 +55,7 @@ function armourProps (ctx: FiltersCreationContext) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.energyShield, QUALITY_STATS.ENERGY_SHIELD, item))
 
     ctx.filters.push({
-      tradeId: 'armour.energy_shield' as INTERNAL_TRADE_ID,
+      tradeId: ['armour.energy_shield' as INTERNAL_TRADE_ID],
       text: 'Energy Shield: #',
       type: 'armour',
       disabled: false,
@@ -65,7 +65,7 @@ function armourProps (ctx: FiltersCreationContext) {
 
   if (item.props.blockChance) {
     ctx.filters.push({
-      tradeId: 'armour.block' as INTERNAL_TRADE_ID,
+      tradeId: ['armour.block' as INTERNAL_TRADE_ID],
       text: 'Block: #%',
       type: 'armour',
       disabled: true,
@@ -106,7 +106,7 @@ function weaponProps (ctx: FiltersCreationContext) {
 
   if (item.props.elementalDamage) {
     ctx.filters.push({
-      tradeId: 'weapon.total_dps' as INTERNAL_TRADE_ID,
+      tradeId: ['weapon.total_dps' as INTERNAL_TRADE_ID],
       text: 'DPS: #',
       type: 'weapon',
       disabled: false,
@@ -114,7 +114,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     })
 
     ctx.filters.push({
-      tradeId: 'weapon.elemental_dps' as INTERNAL_TRADE_ID,
+      tradeId: ['weapon.elemental_dps' as INTERNAL_TRADE_ID],
       text: 'Elemental DPS: #',
       type: 'weapon',
       disabled: (edps / dps < 0.67),
@@ -124,7 +124,7 @@ function weaponProps (ctx: FiltersCreationContext) {
   }
 
   ctx.filters.push({
-    tradeId: 'weapon.physical_dps' as INTERNAL_TRADE_ID,
+    tradeId: ['weapon.physical_dps' as INTERNAL_TRADE_ID],
     text: 'Physical DPS: #',
     type: 'weapon',
     disabled: (pdpsQ20 / dps < 0.67),
@@ -133,7 +133,7 @@ function weaponProps (ctx: FiltersCreationContext) {
   })
 
   ctx.filters.push({
-    tradeId: 'weapon.crit' as INTERNAL_TRADE_ID,
+    tradeId: ['weapon.crit' as INTERNAL_TRADE_ID],
     text: 'Critical Chance: #%',
     type: 'weapon',
     disabled: true,
@@ -152,12 +152,12 @@ function weaponProps (ctx: FiltersCreationContext) {
 
 function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
   for (const m of ctx.modifiers) {
-    if (stats.has(m.modInfo.text)) {
+    if (stats.has(m.stat.ref)) {
       const filter = itemModFilterFull(m)
       filter.hidden = 'Contributes to the item property'
       ctx.filters.push(filter)
     }
   }
 
-  ctx.modifiers = ctx.modifiers.filter(m => !stats.has(m.modInfo.text))
+  ctx.modifiers = ctx.modifiers.filter(m => !stats.has(m.stat.ref))
 }

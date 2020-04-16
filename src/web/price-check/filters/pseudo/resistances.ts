@@ -54,7 +54,7 @@ export function filterResists (ctx: FiltersCreationContext) {
 
   for (const eleRes of ELEMENTAL_RES) {
     const hasFlat = ctx.modifiers.some(m =>
-      eleRes.stats.includes(m.modInfo.text) && m.modInfo.text !== TO_ALL_RES)
+      eleRes.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_RES)
 
     const total = sumPseudoStats(ctx.modifiers, eleRes.stats)
     if (total !== undefined) {
@@ -76,7 +76,7 @@ export function filterResists (ctx: FiltersCreationContext) {
     if ((maxRes / totalRes > 0.67) || resists.filter(r => r.hasFlat).length === 1) {
       ctx.filters.push({
         text: '+#% total to one of Elemental Resistances',
-        tradeId: ELEMENTAL_RES.map(r => r.pseudo.tradeId),
+        tradeId: ELEMENTAL_RES.flatMap(r => r.pseudo.tradeId),
         type: 'pseudo',
         disabled: false,
         ...rollToFilter(maxRes)
@@ -107,7 +107,7 @@ export function filterResists (ctx: FiltersCreationContext) {
 
   const chaosTotal = sumPseudoStats(ctx.modifiers, CHAOS_RES.stats)
   if (chaosTotal != null) {
-    const hasBaseChaosRes = ctx.modifiers.some(m => m.modInfo.text === CHAOS_RES.base)
+    const hasBaseChaosRes = ctx.modifiers.some(m => m.stat.ref === CHAOS_RES.base)
 
     ctx.filters.push({
       ...CHAOS_RES.pseudo,
@@ -118,5 +118,5 @@ export function filterResists (ctx: FiltersCreationContext) {
   }
 
   const statsToRemove = new Set([...ELEMENTAL_RES.flatMap(r => r.stats), ...CHAOS_RES.stats])
-  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.modInfo.text))
+  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.stat.ref))
 }

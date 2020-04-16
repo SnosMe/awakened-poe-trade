@@ -1,4 +1,4 @@
-import { Mods, Mod, StatMatcher } from '@/assets/data'
+import { STAT_BY_MATCH_STR, Stat, StatMatcher } from '@/assets/data'
 import { CLUSTER_JEWEL_GRANT } from './constants'
 
 export enum ModifierType {
@@ -9,12 +9,9 @@ export enum ModifierType {
   Enchant = 'enchant'
 }
 
-export interface ItemModifier {
-  modInfo: Mod
+export interface ItemModifier extends StatMatcher {
+  stat: Stat
   values?: number[]
-  option?: StatMatcher['option']
-  condition?: StatMatcher['condition']
-  negatedValues?: true
   type: ModifierType
 }
 
@@ -90,18 +87,19 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
       }
     })
 
-    const found = Mods.get(possibleStat)
+    const found = STAT_BY_MATCH_STR.get(possibleStat)
     if (found) {
       const values = matches
         .filter((_, idx) => !combo.includes(idx))
-        .map(str => Number(str) * (found.condition.negate ? -1 : 1))
+        .map(str => Number(str) * (found.matcher.negate ? -1 : 1))
 
       return {
-        modInfo: found.mod,
+        stat: found.stat,
+        string: found.matcher.string,
+        negate: found.matcher.negate,
+        option: found.matcher.option,
+        condition: found.matcher.condition,
         values: values.length ? values : undefined,
-        option: found.condition.option,
-        condition: found.condition.condition,
-        negatedValues: found.condition.negate,
         type: undefined!
       }
     }

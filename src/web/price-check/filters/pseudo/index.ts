@@ -25,7 +25,7 @@ function filterRemainingPseudo (ctx: FiltersCreationContext) {
   }
 
   const statsToRemove = new Set(REST_PSEUDO.flatMap(a => a.stats))
-  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.modInfo.text))
+  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.stat.ref))
 }
 
 const REST_PSEUDO = [

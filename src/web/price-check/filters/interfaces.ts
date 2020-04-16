@@ -55,7 +55,7 @@ export interface ItemFilters {
 }
 
 export interface StatFilter {
-  readonly tradeId: string | string[]
+  readonly tradeId: string[]
   readonly text: string
   readonly roll?: number
   readonly type: string

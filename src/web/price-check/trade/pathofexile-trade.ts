@@ -274,7 +274,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   for (const stat of stats) {
     if (stat.disabled) continue
 
-    switch (stat.tradeId as INTERNAL_TRADE_ID) {
+    switch (stat.tradeId[0] as INTERNAL_TRADE_ID) {
       case 'armour.armour':
         prop.set(query.filters, 'armour_filters.filters.ar.min', typeof stat.min === 'number' ? stat.min : undefined)
         prop.set(query.filters, 'armour_filters.filters.ar.max', typeof stat.max === 'number' ? stat.max : undefined)
@@ -310,13 +310,13 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     }
   }
 
-  stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId as string))
+  stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId[0]))
 
   query.stats.push({ type: 'and', filters: [] })
   for (const stat of stats) {
-    if (!Array.isArray(stat.tradeId)) {
+    if (stat.tradeId.length === 1) {
       query.stats[0]!.filters.push({
-        id: stat.tradeId,
+        id: stat.tradeId[0],
         value: {
           min: typeof stat.min === 'number' ? stat.min : undefined,
           max: typeof stat.max === 'number' ? stat.max : undefined,

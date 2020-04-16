@@ -27,8 +27,8 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
 
   ctx.filters.push(...ctx.modifiers.map(mod => {
     const filter: Writeable<StatFilter> = {
-      tradeId: mod.modInfo.types.find(type => type.name === mod.type)!.tradeId,
-      text: mod.modInfo.text,
+      tradeId: mod.stat.types.find(type => type.name === mod.type)!.tradeId,
+      text: mod.stat.text, // TODO: rework
       type: mod.type,
       option: mod.option,
       roll: undefined,
@@ -54,8 +54,8 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
 
 export function itemModFilterFull (mod: ItemModifier) {
   const filter: Writeable<StatFilter> = {
-    tradeId: mod.modInfo.types.find(type => type.name === mod.type)!.tradeId,
-    text: mod.modInfo.text,
+    tradeId: mod.stat.types.find(type => type.name === mod.type)!.tradeId,
+    text: mod.stat.text, // TODO: rework
     type: mod.type,
     option: mod.option,
     roll: undefined,
@@ -80,10 +80,6 @@ function itemModFilterPartial (
   } else if (!mod.option) {
     if (mod.values) {
       if (mod.type === 'enchant') {
-        if (mod.negatedValues) {
-          mod.values = mod.values.map(v => v * -1)
-          mod.negatedValues = undefined
-        }
         filter.min = getRollAsSingleNumber(mod.values)
         filter.max = getRollAsSingleNumber(mod.values)
         filter.defaultMin = filter.min

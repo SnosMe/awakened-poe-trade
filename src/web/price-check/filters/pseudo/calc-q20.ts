@@ -46,9 +46,9 @@ export function propAt20Quality (
   let flat = 0
 
   for (const mod of item.modifiers) {
-    if (mod.modInfo.text === stats.flat) {
+    if (mod.stat.ref === stats.flat) {
       flat = mod.values![0]
-    } else if (stats.incr.includes(mod.modInfo.text)) {
+    } else if (stats.incr.includes(mod.stat.ref)) {
       incr += mod.values![0]
     }
   }
@@ -66,9 +66,9 @@ export function variablePropAt20Quality (
   let flat = [0, 0]
 
   for (const mod of item.modifiers) {
-    if (mod.modInfo.text === stats.flat) {
+    if (mod.stat.ref === stats.flat) {
       flat = mod.values!
-    } else if (stats.incr.includes(mod.modInfo.text)) {
+    } else if (stats.incr.includes(mod.stat.ref)) {
       incr += mod.values![0]
     }
   }

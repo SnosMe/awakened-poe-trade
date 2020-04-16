@@ -113,7 +113,7 @@ export default {
         'armour.energy_shield',
         'weapon.total_dps',
         'weapon.physical_dps'
-      ].includes(this.filter.tradeId)
+      ].includes(this.filter.tradeId[0])
     },
     sliderValue: {
       get () {

@@ -106,7 +106,7 @@ function getUniqueDetailsId (item: ParsedItem) {
     id += `-${item.sockets.linked}l`
   }
   if (item.baseType === 'Ivory Watchstone') {
-    const uses = item.modifiers.find(m => m.type === 'explicit' && m.modInfo.text === '# uses remaining')!.values![0]
+    const uses = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!.values![0]
     id += `-${uses}`
   }
 
@@ -115,7 +115,7 @@ function getUniqueDetailsId (item: ParsedItem) {
 
 function getUniqueVariant (item: ParsedItem) {
   function hasStat (item: ParsedItem, stat: string) {
-    return item.modifiers.some(m => m.modInfo.text === stat)
+    return item.modifiers.some(m => m.stat.ref === stat)
   }
 
   if (item.name === 'Vessel of Vinktar') {
@@ -149,7 +149,7 @@ function getUniqueVariant (item: ParsedItem) {
       return '-armour'
     }
   } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
-    const sockets = item.modifiers.find(m => m.type === 'explicit' && m.modInfo.text === 'Has # Abyssal Sockets')!.values![0]
+    const sockets = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!.values![0]
     if (sockets === 2) {
       return '-2-jewels'
     } else if (sockets === 1) {

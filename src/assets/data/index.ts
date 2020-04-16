@@ -1,4 +1,4 @@
-import mods from './mods.json'
+import mods from './stats_English.json'
 import baseTypes from './base-types.json'
 import uniques from './uniques.json'
 import tradeTags from './trade-tags.json'
@@ -18,11 +18,13 @@ export interface StatMatcher {
   }
 }
 
-export interface Mod {
+export interface Stat {
   text: string
+  ref: string
+  inverted?: true
   types: Array<{
     name: string
-    tradeId: string | string[]
+    tradeId: string[]
   }>
 }
 
@@ -34,22 +36,23 @@ export interface BaseType {
 export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
 
 // Mods
-export const Mods = new Map<string, { condition: StatMatcher, mod: Mod }>()
-export const STAT_BY_TEXT = new Map<string, Mod>()
+export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat, matchers: StatMatcher[] }>()
+export const STAT_BY_REF = new Map<string, Stat>()
 
-for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Mod }>)) {
+for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Stat }>)) {
   for (const condition of entry.conditions) {
-    Mods.set(condition.string, {
-      condition,
-      mod: entry.mod
+    STAT_BY_MATCH_STR.set(condition.string, {
+      matcher: condition,
+      stat: entry.mod,
+      matchers: entry.conditions
     })
   }
-  STAT_BY_TEXT.set(entry.mod.text, entry.mod)
+  STAT_BY_REF.set(entry.mod.ref, entry.mod)
 }
 
-// assertion, to avoid regressions in mods.json
+// assertion, to avoid regressions in stats.json
 export function stat (text: string) {
-  if (!STAT_BY_TEXT.has(text)) {
+  if (!STAT_BY_REF.has(text)) {
     throw new Error(`Cannot find stat: ${text}`)
   }
   return text
@@ -59,8 +62,9 @@ export const TRADE_TAGS = tradeTags as Array<[string, string]>
 export const TRADE_TAG_BY_NAME = new Map(TRADE_TAGS)
 
 export interface UniqueItem {
-  icon: string
-  mods: Array<{
+  name: string
+  basetype: string
+  stats: Array<{
     text: string
     implicit?: true
     variant?: true
@@ -68,7 +72,9 @@ export interface UniqueItem {
   }>
 }
 
-export const Uniques = new Map(uniques as Array<[string, UniqueItem]>)
+export const Uniques = new Map(
+  (uniques as UniqueItem[]).map(item => [`${item.name} ${item.basetype}`, item])
+)
 
 export interface DropEntry {
   query: string[]

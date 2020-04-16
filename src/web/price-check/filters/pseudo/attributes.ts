@@ -1,7 +1,7 @@
 import { pseudoStat, sumPseudoStats } from './util'
 import { FiltersCreationContext } from '../create-stat-filters'
 import { rollToFilter } from '../util'
-import { STAT_BY_TEXT, stat } from '@/assets/data'
+import { STAT_BY_REF, stat } from '@/assets/data'
 import { ModifierType } from '@/parser/modifiers'
 
 const TO_ALL_ATTRS = stat('# to all Attributes')
@@ -50,7 +50,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
 
   for (const attr of ATTRS) {
     const hasFlat = ctx.modifiers.some(m =>
-      attr.stats.includes(m.modInfo.text) && m.modInfo.text !== TO_ALL_ATTRS)
+      attr.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_ATTRS)
 
     const total = sumPseudoStats(ctx.modifiers, attr.stats)
     if (total !== undefined) {
@@ -82,14 +82,16 @@ export function filterAttributes (ctx: FiltersCreationContext) {
   for (const attr of attrs) {
     if (attr.pseudo.text === STR_ATTR.pseudo.text) {
       ctx.modifiers.push({
-        modInfo: STAT_BY_TEXT.get(TO_MAXIMUM_LIFE)!,
+        stat: STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
+        string: 'N/A',
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
       })
     }
     if (attr.pseudo.text === INT_ATTR.pseudo.text) {
       ctx.modifiers.push({
-        modInfo: STAT_BY_TEXT.get(TO_MAXIMUM_MANA)!,
+        stat: STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
+        string: 'N/A',
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
       })
@@ -97,5 +99,5 @@ export function filterAttributes (ctx: FiltersCreationContext) {
   }
 
   const statsToRemove = new Set(ATTRS.flatMap(a => a.stats))
-  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.modInfo.text))
+  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.stat.ref))
 }

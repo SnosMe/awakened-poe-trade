@@ -6,30 +6,16 @@ import { StatFilter } from './interfaces'
 import { getRollAsSingleNumber } from '@/parser/utils'
 import { Config } from '@/web/Config'
 
-function isConstantMod (mod: UniqueItem['mods'][0]) {
+function isConstantMod (mod: UniqueItem['stats'][0]) {
   return mod.bounds.every(b => b.min === b.max)
 }
 
-// NOTE: can mutate mod values to non-negated
-function isWithinBounds (mod: ItemModifier, { bounds }: UniqueItem['mods'][0]): boolean {
-  let isWithin = mod.values!.every((value, idx) => (
+function isWithinBounds (mod: ItemModifier, { bounds }: UniqueItem['stats'][0]): boolean {
+  return mod.values!.every((value, idx) => (
     bounds[idx] !== undefined &&
     value >= bounds[idx].min &&
     value <= bounds[idx].max
   ))
-
-  if (!isWithin && mod.negatedValues) {
-    const values = mod.values!.map(v => v * -1)
-    isWithin = values.every((value, idx) => (
-      bounds[idx] !== undefined &&
-      value >= bounds[idx].min &&
-      value <= bounds[idx].max
-    ))
-    if (isWithin) {
-      mod.values = values
-    }
-  }
-  return isWithin
 }
 
 export function uniqueModFilterPartial (
@@ -40,9 +26,9 @@ export function uniqueModFilterPartial (
   const uniqueInfo = Uniques.get(`${item.name} ${item.baseType}`)
   if (!uniqueInfo) return false
 
-  const modInfo = uniqueInfo.mods.find(m =>
-    m.text === mod.modInfo.text &&
-    m.implicit === (mod.type === 'implicit' ? true : undefined)
+  const modInfo = uniqueInfo.stats.find(stat =>
+    stat.text === mod.stat.ref &&
+    stat.implicit === (mod.type === 'implicit' ? true : undefined)
   )
   if (!modInfo) return false
 

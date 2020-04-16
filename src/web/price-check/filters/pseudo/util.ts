@@ -1,18 +1,18 @@
-import { STAT_BY_TEXT } from '@/assets/data'
+import { STAT_BY_REF } from '@/assets/data'
 import { ItemModifier } from '@/parser/modifiers'
 
-export function pseudoStat (text: string) {
-  const mod = STAT_BY_TEXT.get(text)!
+export function pseudoStat (ref: string) {
+  const stat = STAT_BY_REF.get(ref)!
 
   return {
-    text: mod.text,
+    text: stat.text,
     type: 'pseudo',
-    tradeId: mod.types.find(t => t.name === 'pseudo')!.tradeId as string
+    tradeId: stat.types.find(t => t.name === 'pseudo')!.tradeId
   }
 }
 
 export function sumPseudoStats (modifiers: ItemModifier[], stats: string[]): number | undefined {
-  return modifiers.reduce((res, mod) => stats.includes(mod.modInfo.text)
+  return modifiers.reduce((res, mod) => stats.includes(mod.stat.ref)
     ? (res || 0) + mod.values![0]
     : res, undefined as number | undefined)
 }
