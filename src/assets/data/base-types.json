@@ -6972,5 +6972,35 @@
       "category": "Warstaff",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff7.png?scale=1&w=2&h=4"
     }
+  ],
+  [
+    "Cobalt Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Crimson Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Golden Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Ivory Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Viridian Watchstone",
+    {
+      "category": "Watchstone"
+    }
   ]
 ]
