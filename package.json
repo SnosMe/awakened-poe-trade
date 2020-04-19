@@ -27,12 +27,12 @@
     "dot-prop": "^5.2.0",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
-    "iohook": "^0.6.2",
     "luxon": "^1.21.3",
     "node-window-manager": "^2.0.1",
     "robotjs": "^0.6.0",
     "tailwindcss": "^1.1.4",
     "throttle-debounce": "^2.1.0",
+    "uiohook-napi": "^1.0.3",
     "vue": "^2.6.11",
     "vue-popperjs": "^2.3.0",
     "vue-router": "^3.1.5",
@@ -69,21 +69,6 @@
   },
   "resolutions": {
     "vue-cli-plugin-electron-builder/electron-builder": "22.3.6"
-  },
-  "iohook": {
-    "targets": [
-      "node-72",
-      "electron-76"
-    ],
-    "platforms": [
-      "win32",
-      "darwin",
-      "linux"
-    ],
-    "arches": [
-      "x64",
-      "ia32"
-    ]
   },
   "engines": {
     "node": "12.x.x"

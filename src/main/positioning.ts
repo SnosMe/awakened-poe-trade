@@ -1,5 +1,5 @@
 import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point, app, shell } from 'electron'
-import ioHook from 'iohook'
+import { uIOhook } from 'uiohook-napi'
 import { win, WIDTH } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
@@ -149,7 +149,7 @@ export function setupShowHide () {
     shell.openExternal(link)
   })
 
-  ioHook.on('mousemove', (e: { x: number, y: number, ctrlKey?: boolean, altKey?: boolean }) => {
+  uIOhook.on('mousemove', (e) => {
     const modifier = e.ctrlKey ? 'Ctrl' : e.altKey ? 'Alt' : undefined
     if (!isPollingClipboard && checkPressPosition && isWindowShown && !isWindowLocked && modifier !== config.get('priceCheckKeyHold')) {
       const mousePos = mousePosFromEvent(e)

@@ -2,7 +2,7 @@ module.exports = {
   pluginOptions: {
     electronBuilder: {
       nodeIntegration: true,
-      externals: ['node-window-manager', 'iohook'],
+      externals: ['node-window-manager', 'uiohook-napi'],
       builderOptions: {
         publish: ['github'],
         productName: 'Awakened PoE Trade',

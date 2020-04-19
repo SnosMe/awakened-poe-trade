@@ -1,10 +1,10 @@
 import { screen, Point, clipboard, globalShortcut, Notification } from 'electron'
 import robotjs from 'robotjs'
-import ioHook from 'iohook'
+import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { pollClipboard } from './PollClipboard'
 import { win } from './window'
 import { showWindow, lockWindow, poeUserInterfaceWidth, getPoeUiPosition, mousePosFromEvent } from './positioning'
-import { IohookToName, KeyToElectron } from '@/ipc/KeyToCode'
+import { KeyToElectron } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
@@ -12,6 +12,8 @@ import { logger } from './logger'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
+
+export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
 function priceCheck (lockedMode: boolean) {
   logger.info('Price check', { source: 'price-check', lockedMode })
@@ -102,7 +104,7 @@ export function setupShortcuts () {
     }
   })
 
-  ioHook.on('keydown', (e) => {
+  uIOhook.on('keydown', (e) => {
     const pressed = eventToString(e)
     logger.debug('Keydown', { source: 'shortcuts', keys: pressed })
 
@@ -131,11 +133,11 @@ export function setupShortcuts () {
     }
   })
 
-  ioHook.on('keyup', (e) => {
-    logger.debug('Keyup', { source: 'shortcuts', key: IohookToName[e.keycode] || 'unknown' })
+  uIOhook.on('keyup', (e) => {
+    logger.debug('Keyup', { source: 'shortcuts', key: UiohookToName[e.keycode] || 'unknown' })
   })
 
-  ioHook.on('mousewheel', async (e: { ctrlKey?: true, x: number, y: number, rotation: 1 | -1 }) => {
+  uIOhook.on('wheel', async (e) => {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
     const stashCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
@@ -149,8 +151,7 @@ export function setupShortcuts () {
     }
   })
 
-  const DEBUG_IO_HOOK = false
-  ioHook.start(DEBUG_IO_HOOK)
+  uIOhook.start()
 }
 
 function typeChatCommand (command: string) {
@@ -189,7 +190,7 @@ function typeChatCommand (command: string) {
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
   const { ctrlKey, shiftKey, altKey } = e
 
-  let code = IohookToName[e.keycode]
+  let code = UiohookToName[e.keycode]
   if (!code) return 'unknown'
 
   if (code === 'Shift' || code === 'Alt' || code === 'Ctrl') return code

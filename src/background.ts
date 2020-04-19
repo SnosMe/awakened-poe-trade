@@ -2,7 +2,6 @@
 
 import { app, protocol, ipcMain, screen } from 'electron'
 import { installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
-import ioHook from 'iohook'
 import { setupShortcuts } from './main/shortcuts'
 import { setupWindowManager } from './main/window-manager'
 import { createTray } from './main/tray'
@@ -80,13 +79,11 @@ if (isDevelopment) {
   if (process.platform === 'win32') {
     process.on('message', data => {
       if (data === 'graceful-exit') {
-        ioHook.stop()
         app.quit()
       }
     })
   } else {
     process.on('SIGTERM', () => {
-      ioHook.stop()
       app.quit()
     })
   }

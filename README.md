@@ -89,7 +89,7 @@ In order for Awakened PoE Trade to have access to the PoE window, it must be sta
 ### Acknowledgments
 
 - [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)
-- [iohook](https://github.com/wilix-team/iohook)
+- [libuiohook](https://github.com/kwhat/libuiohook)
 - [node-window-manager](https://github.com/sentialx/node-window-manager)
 - [robotjs](https://github.com/octalmage/robotjs)
 - [RePoE](https://github.com/brather1ng/RePoE)
