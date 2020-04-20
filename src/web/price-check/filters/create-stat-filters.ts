@@ -6,6 +6,7 @@ import { StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { getRollAsSingleNumber } from '@/parser/utils'
+import { filterUniqueItemProp } from './pseudo/item-property-unique'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -21,7 +22,7 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
   }
 
   if (item.rarity === ItemRarity.Unique) {
-    // TODO
+    filterUniqueItemProp(ctx)
   } else {
     filterItemProp(ctx)
     filterPseudo(ctx)
@@ -131,7 +132,9 @@ function filterAdjustmentForNegate (
     if (filter.min == null && filter.max == null && filter.defaultMax != null) {
       filter.min = -1 * (raw.defaultMax as number)
     }
-    filter.roll = -1 * raw.roll!
+    if (filter.roll != null) {
+      filter.roll = -1 * raw.roll!
+    }
   } else {
     if (filter.min == null && filter.max == null && filter.defaultMin != null) {
       filter.min = filter.defaultMin

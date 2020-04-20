@@ -64,6 +64,12 @@ export const TRADE_TAG_BY_NAME = new Map(TRADE_TAGS)
 export interface UniqueItem {
   name: string
   basetype: string
+  props: {
+    pdps?: { min: number, max: number }
+    ar?: { min: number, max: number }
+    ev?: { min: number, max: number }
+    es?: { min: number, max: number }
+  }
   stats: Array<{
     text: string
     implicit?: true
