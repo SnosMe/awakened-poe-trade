@@ -3,7 +3,8 @@ import { INTERNAL_TRADE_ID } from '../interfaces'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 import { stat } from '@/assets/data'
-import { ARMOUR, WEAPON } from '@/parser/meta'
+import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
+import { ParsedItem } from '@/parser'
 
 export function filterItemProp (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
@@ -34,7 +35,7 @@ function armourProps (ctx: FiltersCreationContext) {
       tradeId: ['armour.armour' as INTERNAL_TRADE_ID],
       text: 'Armour: #',
       type: 'armour',
-      disabled: false,
+      disabled: !isSingleAttrArmour(item),
       ...rollToFilter(totalQ20, { neverNegated: true })
     })
   }
@@ -46,7 +47,7 @@ function armourProps (ctx: FiltersCreationContext) {
       tradeId: ['armour.evasion_rating' as INTERNAL_TRADE_ID],
       text: 'Evasion Rating: #',
       type: 'armour',
-      disabled: false,
+      disabled: !isSingleAttrArmour(item),
       ...rollToFilter(totalQ20, { neverNegated: true })
     })
   }
@@ -58,7 +59,7 @@ function armourProps (ctx: FiltersCreationContext) {
       tradeId: ['armour.energy_shield' as INTERNAL_TRADE_ID],
       text: 'Energy Shield: #',
       type: 'armour',
-      disabled: false,
+      disabled: !isSingleAttrArmour(item),
       ...rollToFilter(totalQ20, { neverNegated: true })
     })
   }
@@ -127,7 +128,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     tradeId: ['weapon.physical_dps' as INTERNAL_TRADE_ID],
     text: 'Physical DPS: #',
     type: 'weapon',
-    disabled: (pdpsQ20 / dps < 0.67),
+    disabled: !isPdpsImportant(item) || (pdpsQ20 / dps < 0.67),
     hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
     ...rollToFilter(pdpsQ20, { neverNegated: true })
   })
@@ -160,4 +161,23 @@ function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
   }
 
   ctx.modifiers = ctx.modifiers.filter(m => !stats.has(m.stat.ref))
+}
+
+function isSingleAttrArmour (item: ParsedItem) {
+  return (item.props.armour != null && item.props.energyShield == null && item.props.evasion == null) ||
+    (item.props.armour == null && item.props.energyShield != null && item.props.evasion == null) ||
+    (item.props.armour == null && item.props.energyShield == null && item.props.evasion != null)
+}
+
+function isPdpsImportant (item: ParsedItem) {
+  switch (item.category) {
+    case ItemCategory.OneHandedAxe:
+    case ItemCategory.TwoHandedAxe:
+    case ItemCategory.OneHandedSword:
+    case ItemCategory.TwoHandedSword:
+    case ItemCategory.Bow:
+      return true
+    default:
+      return false
+  }
 }
