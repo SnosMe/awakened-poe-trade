@@ -11,6 +11,7 @@ export enum ModifierType {
 
 export interface ItemModifier extends StatMatcher {
   stat: Stat
+  statMatchers: StatMatcher[]
   values?: number[]
   type: ModifierType
 }
@@ -95,6 +96,7 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
 
       return {
         stat: found.stat,
+        statMatchers: found.matchers,
         string: found.matcher.string,
         negate: found.matcher.negate,
         option: found.matcher.option,

@@ -16,14 +16,17 @@ export function percentRollDelta (value: number, delta: number, p: number, metho
   return method((res + Number.EPSILON) * rounding) / rounding
 }
 
-export function rollToFilter (roll: number): Pick<StatFilter, 'roll' | 'min' | 'max' | 'defaultMin' | 'defaultMax'> {
+export function rollToFilter (roll: number, opts?: { neverNegated?: true }): Pick<StatFilter, 'roll' | 'min' | 'max' | 'defaultMin' | 'defaultMax'> {
   const percent = Config.store.searchStatRange
 
+  // opts.neverNegated is false only in one case, but keep it
+  // disabled by default, so opts.neverNegated acts more like
+  // acknowledgment of what you are doing
   return {
     roll,
     defaultMin: percentRoll(roll, -percent * Math.sign(roll), Math.floor),
     defaultMax: percentRoll(roll, +percent * Math.sign(roll), Math.ceil),
-    min: percentRoll(roll, -percent * Math.sign(roll), Math.floor),
+    min: opts?.neverNegated ? percentRoll(roll, -percent * Math.sign(roll), Math.floor) : undefined,
     max: undefined
   }
 }

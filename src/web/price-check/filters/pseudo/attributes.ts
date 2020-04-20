@@ -64,7 +64,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
     ctx.filters.push({
       ...attr.pseudo,
       disabled: true,
-      ...rollToFilter(attr.total)
+      ...rollToFilter(attr.total, { neverNegated: true })
     })
   }
 
@@ -75,7 +75,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
     ctx.filters.push({
       ...pseudoStat('+# total to all Attributes'),
       disabled: true,
-      ...rollToFilter(totalToAllAttrs)
+      ...rollToFilter(totalToAllAttrs, { neverNegated: true })
     })
   }
 
@@ -84,6 +84,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
       ctx.modifiers.push({
         stat: STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
         string: 'N/A',
+        statMatchers: [],
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
       })
@@ -92,6 +93,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
       ctx.modifiers.push({
         stat: STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
         string: 'N/A',
+        statMatchers: [],
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
       })

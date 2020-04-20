@@ -68,7 +68,7 @@ export function filterResists (ctx: FiltersCreationContext) {
     ctx.filters.push({
       ...pseudoStat('+#% total Elemental Resistance'),
       disabled: (resists.length === 1),
-      ...rollToFilter(totalRes)
+      ...rollToFilter(totalRes, { neverNegated: true })
     })
 
     const maxRes = Math.max(...resists.map(r => r.total))
@@ -79,7 +79,7 @@ export function filterResists (ctx: FiltersCreationContext) {
         tradeId: ELEMENTAL_RES.flatMap(r => r.pseudo.tradeId),
         type: 'pseudo',
         disabled: false,
-        ...rollToFilter(maxRes)
+        ...rollToFilter(maxRes, { neverNegated: true })
       })
     }
   }
@@ -91,7 +91,7 @@ export function filterResists (ctx: FiltersCreationContext) {
       ctx.filters.push({
         ...pseudoStat('+#% total to all Elemental Resistances'),
         disabled: false,
-        ...rollToFilter(totalToAllRes)
+        ...rollToFilter(totalToAllRes, { neverNegated: true })
       })
     }
   }
@@ -101,7 +101,7 @@ export function filterResists (ctx: FiltersCreationContext) {
       ...resist.pseudo,
       disabled: true,
       hidden: 'Filtering by exact Elemental Resistance unreasonably increases the price',
-      ...rollToFilter(resist.total)
+      ...rollToFilter(resist.total, { neverNegated: true })
     })
   }
 
@@ -113,7 +113,7 @@ export function filterResists (ctx: FiltersCreationContext) {
       ...CHAOS_RES.pseudo,
       disabled: true, // NOTE: unlike EleRes it is disabled
       hidden: hasBaseChaosRes ? undefined : 'Crafted Chaos Resistance without Explicit mod has no value',
-      ...rollToFilter(chaosTotal!)
+      ...rollToFilter(chaosTotal!, { neverNegated: true })
     })
   }
 

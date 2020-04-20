@@ -318,8 +318,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
       query.stats[0]!.filters.push({
         id: stat.tradeId[0],
         value: {
-          min: typeof stat.min === 'number' ? stat.min : undefined,
-          max: typeof stat.max === 'number' ? stat.max : undefined,
+          ...getMinMax(stat),
           option: stat.option != null ? stat.option.tradeId : undefined
         },
         disabled: stat.disabled
@@ -332,8 +331,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
         filters: stat.tradeId.map(id => ({
           id,
           value: {
-            min: typeof stat.min === 'number' ? stat.min : undefined,
-            max: typeof stat.max === 'number' ? stat.max : undefined,
+            ...getMinMax(stat),
             option: stat.option != null ? stat.option.tradeId : undefined
           }
         }))
@@ -409,4 +407,12 @@ function patchRequestForSubdomain (body: TradeRequest) {
   body.query.name = translated.name
   body.query.type = translated.type
   return body
+}
+
+function getMinMax (stat: StatFilter) {
+  const sign = stat.invert ? -1 : 1
+  const a = typeof stat.min === 'number' ? stat.min * sign : undefined
+  const b = typeof stat.max === 'number' ? stat.max * sign : undefined
+
+  return !stat.invert ? { min: a, max: b } : { min: b, max: a }
 }

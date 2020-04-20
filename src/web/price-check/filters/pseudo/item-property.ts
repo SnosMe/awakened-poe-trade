@@ -1,6 +1,6 @@
 import { rollToFilter } from '../util'
 import { INTERNAL_TRADE_ID } from '../interfaces'
-import { FiltersCreationContext, itemModFilterFull } from '../create-stat-filters'
+import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 import { stat } from '@/assets/data'
 import { ARMOUR, WEAPON } from '@/parser/meta'
@@ -35,7 +35,7 @@ function armourProps (ctx: FiltersCreationContext) {
       text: 'Armour: #',
       type: 'armour',
       disabled: false,
-      ...rollToFilter(totalQ20)
+      ...rollToFilter(totalQ20, { neverNegated: true })
     })
   }
 
@@ -47,7 +47,7 @@ function armourProps (ctx: FiltersCreationContext) {
       text: 'Evasion Rating: #',
       type: 'armour',
       disabled: false,
-      ...rollToFilter(totalQ20)
+      ...rollToFilter(totalQ20, { neverNegated: true })
     })
   }
 
@@ -59,7 +59,7 @@ function armourProps (ctx: FiltersCreationContext) {
       text: 'Energy Shield: #',
       type: 'armour',
       disabled: false,
-      ...rollToFilter(totalQ20)
+      ...rollToFilter(totalQ20, { neverNegated: true })
     })
   }
 
@@ -69,7 +69,7 @@ function armourProps (ctx: FiltersCreationContext) {
       text: 'Block: #%',
       type: 'armour',
       disabled: true,
-      ...rollToFilter(item.props.blockChance)
+      ...rollToFilter(item.props.blockChance, { neverNegated: true })
     })
   }
 
@@ -110,7 +110,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       text: 'DPS: #',
       type: 'weapon',
       disabled: false,
-      ...rollToFilter(dps)
+      ...rollToFilter(dps, { neverNegated: true })
     })
 
     ctx.filters.push({
@@ -119,7 +119,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       type: 'weapon',
       disabled: (edps / dps < 0.67),
       hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
-      ...rollToFilter(edps)
+      ...rollToFilter(edps, { neverNegated: true })
     })
   }
 
@@ -129,7 +129,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     type: 'weapon',
     disabled: (pdpsQ20 / dps < 0.67),
     hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
-    ...rollToFilter(pdpsQ20)
+    ...rollToFilter(pdpsQ20, { neverNegated: true })
   })
 
   ctx.filters.push({
@@ -137,7 +137,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     text: 'Critical Chance: #%',
     type: 'weapon',
     disabled: true,
-    ...rollToFilter(item.props.critChance!)
+    ...rollToFilter(item.props.critChance!, { neverNegated: true })
   })
 
   if (
@@ -153,7 +153,7 @@ function weaponProps (ctx: FiltersCreationContext) {
 function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
   for (const m of ctx.modifiers) {
     if (stats.has(m.stat.ref)) {
-      const filter = itemModFilterFull(m)
+      const filter = itemModToFilter(m, ctx.item)
       filter.hidden = 'Contributes to the item property'
       ctx.filters.push(filter)
     }

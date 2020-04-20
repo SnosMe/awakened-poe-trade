@@ -66,6 +66,7 @@ export interface StatFilter {
   readonly boundMax?: number
   readonly variant?: true
   readonly hidden?: string
+  readonly invert?: boolean
   disabled: boolean
   min: number | '' | undefined
   max: number | '' | undefined

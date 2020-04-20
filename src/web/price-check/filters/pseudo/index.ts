@@ -19,7 +19,7 @@ function filterRemainingPseudo (ctx: FiltersCreationContext) {
       ctx.filters.push({
         ...pseudoMod.pseudo,
         disabled: true,
-        ...rollToFilter(total)
+        ...rollToFilter(total, { neverNegated: true })
       })
     }
   }
