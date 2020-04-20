@@ -46,6 +46,7 @@
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
         <span v-if="totalSelectedMods === 0">Stats ignored</span>
         <span v-else>{{ totalSelectedMods }} of {{ stats.length }}, stats</span>
+        <i v-if="!showStatsBlock" class="fas fa-chevron-down pl-2 text-xs text-gray-400"></i>
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
@@ -56,10 +57,11 @@
           @submit="handleStatsSubmit" />
         <input type="submit" class="hidden" />
       </form>
-      <div class="flex mt-2">
-        <button @click="toggleStatsBlock" class="btn w-40">Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
+      <div class="flex" @mouseenter="handleStatsSubmit">
+        <button @click="toggleStatsBlock" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
+          >Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <button v-if="shownStats.length != stats.length"
-          @click="showHidden = !showHidden" class="ml-4 flex items-center">
+          @click="showHidden = !showHidden" class="ml-2 px-2 pt-2 flex items-center leading-none">
           <i v-if="showHidden" class="fas fa-toggle-on pr-1 text-gray-300"></i>
           <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
           <span class="text-gray-400">Hidden</span>
