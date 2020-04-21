@@ -18,11 +18,9 @@ let isMouseInside = false
 
 let browserViewExternal: BrowserView | undefined
 
-let COUNT_DISPALYS = 1
 let DISPLAY_SCALED = false
 app.on('ready', () => {
   const displays = screen.getAllDisplays()
-  COUNT_DISPALYS = displays.length
   DISPLAY_SCALED = displays.some(display => display.scaleFactor !== 1)
 })
 
@@ -215,11 +213,7 @@ export function poeUserInterfaceWidth (windowHeight: number) {
 }
 
 export function mousePosFromEvent (e: { x: number, y: number }): Point {
-  if (process.platform === 'linux' && COUNT_DISPALYS > 1) {
-    // ioHook returns mouse position that is not compatible with electron's position
-    // when user has more than one monitor
-    return screen.getCursorScreenPoint()
-  } else if (DISPLAY_SCALED) {
+  if (DISPLAY_SCALED) {
     return screen.getCursorScreenPoint()
   } else {
     return e
