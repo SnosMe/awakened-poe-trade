@@ -9269,10 +9269,10 @@ uglify-js@3.4.x:
     commander "~2.19.0"
     source-map "~0.6.1"
 
-uiohook-napi@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/uiohook-napi/-/uiohook-napi-1.0.3.tgz#cf250c08fc8761c57635316cd1e32a371ba9e76a"
-  integrity sha512-m4B4sFCdMvqNeuBiYgTYMa0aI/lHEy6iAtfCLjJgptIKb18kc2ymWrzWWoKbMAk6KqJZfUdv/JrVbYhcvd4ZTQ==
+uiohook-napi@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/uiohook-napi/-/uiohook-napi-1.0.5.tgz#131668fb5ab1979e83546b95828ae8c115ea1113"
+  integrity sha512-6v4EFqoWTzOW5TqZ/NOVMWxoOQYn7qtF5WoqJeFD0Itu2/aoMAffMHHoHoE1OWeDM0uxDsO442Zi/QuCKctzkw==
   dependencies:
     node-gyp-build "4.x.x"
 

@@ -32,7 +32,7 @@
     "robotjs": "^0.6.0",
     "tailwindcss": "^1.1.4",
     "throttle-debounce": "^2.1.0",
-    "uiohook-napi": "^1.0.3",
+    "uiohook-napi": "^1.0.5",
     "vue": "^2.6.11",
     "vue-popperjs": "^2.3.0",
     "vue-router": "^3.1.5",
