@@ -18,7 +18,8 @@
           <span class="text-red-400">Failed to load leagues</span>
           <button class="btn ml-2" @click="retry">Retry</button>
         </div>
-        <div>Error: {{ leaguesService.loadingError }}</div>
+        <pre class="text-gray-500 whitespace-normal">Error: {{ leaguesService.loadingError }}</pre>
+        <div class="font-fontin-bold">Verify that the realm is not under maintenance and pathofexile.com is loading.</div>
       </div>
     </div>
   </div>
