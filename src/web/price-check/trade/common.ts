@@ -73,6 +73,7 @@ export const RATE_LIMIT_RULES = {
 
 export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers) { /* eslint-disable no-console */
   const DEBUG = false
+  const DESYNC_FIX = 1
 
   if (!headers.has('x-rate-limit-ip') || !headers.get('x-rate-limit-ip-state')) return clientLimits
 
@@ -85,7 +86,7 @@ export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers)
     .map(rule => rule.split(':'))
     .map((rule, idx) => ({
       max: Number(rule[0]),
-      window: Number(rule[1]),
+      window: Number(rule[1]) + (DESYNC_FIX + (idx + 1)),
       state: limitIpState[idx]
     }))
 
