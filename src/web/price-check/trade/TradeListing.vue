@@ -225,7 +225,7 @@ export default {
     openTradeLink (isExternal) {
       const link = (Config.store.subdomain === 'us')
         ? `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`
-        : `https://www.pathofexile.com/api/trade/search/${Leagues.selected}?redirect&source=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
+        : `https://www.pathofexile.com/trade/search/${Leagues.selected}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
 
       if (isExternal) {
         MainProcess.openUserBrowser(link)
