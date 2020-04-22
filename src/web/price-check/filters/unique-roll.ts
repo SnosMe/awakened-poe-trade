@@ -22,15 +22,15 @@ export function uniqueModFilterPartial (
   item: ParsedItem,
   mod: ItemModifier,
   filter: Writeable<StatFilter>
-): boolean {
+): void {
   const uniqueInfo = Uniques.get(`${item.name} ${item.baseType}`)
-  if (!uniqueInfo) return false
+  if (!uniqueInfo) return fallbackToExact(mod, filter)
 
   const modInfo = uniqueInfo.stats.find(stat =>
     stat.text === mod.stat.ref &&
     stat.implicit === (mod.type === 'implicit' ? true : undefined)
   )
-  if (!modInfo) return false
+  if (!modInfo) return fallbackToExact(mod, filter)
 
   filter.variant = modInfo.variant
 
@@ -40,7 +40,7 @@ export function uniqueModFilterPartial (
   }
 
   // it may be catalysts or stale data after patch
-  if (!isWithinBounds(mod, modInfo)) return false
+  if (!isWithinBounds(mod, modInfo)) return fallbackToExact(mod, filter)
 
   if (isConstantMod(modInfo)) {
     filter.defaultMin = getRollAsSingleNumber(mod.values)
@@ -61,6 +61,13 @@ export function uniqueModFilterPartial (
     filter.defaultMin = Math.max(percentRollDelta(roll, (filter.boundMax - filter.boundMin), -percent, Math.floor), filter.boundMin)
     filter.defaultMax = Math.min(percentRollDelta(roll, (filter.boundMax - filter.boundMin), +percent, Math.ceil), filter.boundMax)
   }
+}
 
-  return true
+function fallbackToExact (mod: ItemModifier, filter: Writeable<StatFilter>) {
+  if (!mod.values) return
+
+  filter.roll = getRollAsSingleNumber(mod.values)
+  filter.defaultMin = filter.roll
+  filter.defaultMax = filter.roll
+  filter.min = filter.roll
 }

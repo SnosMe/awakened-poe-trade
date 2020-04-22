@@ -1,5 +1,5 @@
 import { ParsedItem, ItemRarity } from '@/parser'
-import { ItemModifier } from '@/parser/modifiers'
+import { ItemModifier, ModifierType } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
 import { rollToFilter } from './util'
 import { StatFilter } from './interfaces'
@@ -52,9 +52,9 @@ export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
 
   if (
     item.rarity === ItemRarity.Unique &&
-    uniqueModFilterPartial(item, mod, filter)
+    mod.type !== ModifierType.Enchant
   ) {
-    // ok. parsed as stat on unique item
+    uniqueModFilterPartial(item, mod, filter)
   } else {
     itemModFilterPartial(mod, filter)
   }

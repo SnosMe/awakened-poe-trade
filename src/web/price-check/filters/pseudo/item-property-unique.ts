@@ -1,4 +1,4 @@
-import { rollToFilter, percentRollDelta } from '../util'
+import { percentRollDelta } from '../util'
 import { INTERNAL_TRADE_ID, StatFilter } from '../interfaces'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
@@ -157,7 +157,11 @@ function propToFilter (
       text,
       type,
       disabled: true,
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      defaultMin: totalQ20,
+      defaultMax: totalQ20,
+      min: totalQ20,
+      max: undefined,
+      roll: totalQ20
     })
   }
 }
