@@ -9,6 +9,7 @@ export class LeaguesService {
     isLoading: false,
     isLoaded: false,
     loadingError: undefined as string | undefined,
+    tradeLeagues: [] as Array<{ id: string }>,
     selected: ''
   })
 
@@ -33,6 +34,7 @@ export class LeaguesService {
       if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
       const leagues: Array<{ id: string }> = await response.json()
       const tradeLeagues = leagues.filter(league => !league.id.startsWith('SSF '))
+      this.state.tradeLeagues = tradeLeagues
 
       const leagueIsAlive = tradeLeagues.some(league => league.id === Config.store.leagueId)
 

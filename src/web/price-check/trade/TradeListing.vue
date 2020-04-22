@@ -6,19 +6,31 @@
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
-      <ui-popper v-if="list" tag-name="div" class="flex" :delayOnMouseOut="150" :options="{ placement: 'bottom' }" boundaries-selector="#price-window">
+      <ui-popper v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOut="150" :options="{ placement: 'bottom-start' }" boundaries-selector="#price-window">
         <template slot="reference">
-          <button class="text-gray-500 rounded mr-1 px-2"><i class="fas fa-history"></i> {{ filters.trade.offline ? 'Offline' : 'Online' }}</button>
+          <button class="text-gray-500 rounded mr-1 px-2 truncate">
+            <span><i class="fas fa-history"></i> {{ filters.trade.offline ? 'Offline' : 'Online' }}</span>
+            <span v-if="Leagues.selected !== filters.trade.league">, {{ filters.trade.league }}</span>
+          </button>
         </template>
         <div class="popper">
           <div class="p-2 text-left bg-gray-800 text-gray-400">
             <ui-toggle v-model="filters.trade.offline" class="mb-2">Offline &amp; Online</ui-toggle>
-            <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">Listed: Any Time</ui-radio></div>
-            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">1 Day Ago</ui-radio></div>
-            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">3 Days Ago</ui-radio></div>
-            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">1 Week Ago</ui-radio></div>
-            <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">2 Weeks Ago</ui-radio></div>
-            <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">1 Month Ago</ui-radio></div>
+            <div class="flex">
+              <div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">Listed: Any Time</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">1 Day Ago</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">3 Days Ago</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">1 Week Ago</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">2 Weeks Ago</ui-radio></div>
+                <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">1 Month Ago</ui-radio></div>
+              </div>
+              <div class="ml-8">
+                <div class="mb-1" v-for="league of Leagues.tradeLeagues" :key="league.id">
+                  <ui-radio v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </ui-popper>
@@ -162,6 +174,9 @@ export default {
     },
     config () {
       return Config.store
+    },
+    Leagues () {
+      return Leagues.state
     }
   },
   methods: {
@@ -179,7 +194,7 @@ export default {
 
         this.list = null
         const request = createTradeRequest(this.filters, this.stats)
-        const list = await requestTradeResultList(request)
+        const list = await requestTradeResultList(request, this.filters.trade.league)
         if (this.searchId !== searchId) return
         this.list = list
 
@@ -224,8 +239,8 @@ export default {
     },
     openTradeLink (isExternal) {
       const link = (Config.store.subdomain === 'us')
-        ? `https://www.pathofexile.com/trade/search/${Leagues.selected}/${this.list.id}`
-        : `https://www.pathofexile.com/trade/search/${Leagues.selected}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
+        ? `https://www.pathofexile.com/trade/search/${this.filters.trade.league}/${this.list.id}`
+        : `https://www.pathofexile.com/trade/search/${this.filters.trade.league}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
 
       if (isExternal) {
         MainProcess.openUserBrowser(link)

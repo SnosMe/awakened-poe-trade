@@ -1,5 +1,4 @@
 import { ItemInfluence, ItemCategory } from '@/parser'
-import { Leagues } from '../Leagues'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -342,11 +341,11 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   return body
 }
 
-export async function requestTradeResultList (body: TradeRequest) {
+export async function requestTradeResultList (body: TradeRequest, leagueId: string) {
   await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
 
   body = patchRequestForSubdomain(body)
-  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${Leagues.selected}`, {
+  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

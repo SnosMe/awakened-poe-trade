@@ -1,5 +1,6 @@
 import { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { Leagues } from '../Leagues'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -7,7 +8,8 @@ export function createFilters (item: ParsedItem): ItemFilters {
   const filters: ItemFilters = {
     trade: {
       offline: false,
-      listed: undefined
+      listed: undefined,
+      league: Leagues.selected!
     }
   }
 

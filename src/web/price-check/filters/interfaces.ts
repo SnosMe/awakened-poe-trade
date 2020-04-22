@@ -51,6 +51,7 @@ export interface ItemFilters {
   trade: {
     offline: boolean
     listed: string | undefined
+    league: string
   }
 }
 
