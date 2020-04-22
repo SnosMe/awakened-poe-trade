@@ -1,8 +1,13 @@
 <template>
   <div :style="{ 'min-height': !showContrib ? '70px' : undefined }">
-    <div v-if="loading" class="text-center py-2">
-      <i class="fas fa-dna fa-spin text-gray-600"></i>
-      <span class="pl-2">Getting price prediction...</span>
+    <div v-if="loading" class="py-2 flex justify-center pr-4">
+      <div>
+        <i class="fas fa-dna fa-spin text-gray-600"></i>
+      </div>
+      <div class="pl-2 text-center">
+        <div>Getting price prediction...</div>
+        <div class="text-gray-600">Powered by poeprices.info</div>
+      </div>
     </div>
     <div v-else-if="price">
       <div class="flex items-center pb-4">
@@ -20,7 +25,7 @@
         </div>
         <div class="text-center">
           <div class="leading-tight">
-            <i v-if="price.confidence < 70" class="fas fa-exclamation-circle pr-1 text-orange-500"></i>
+            <i v-if="price.confidence < 70" class="fas fa-exclamation-triangle pr-1 text-orange-400"></i>
             <span>{{ price.confidence }}&nbsp;%</span>
           </div>
           <div class="text-xs text-gray-500 leading-none">Confidence</div>
@@ -28,7 +33,11 @@
       </div>
       <div v-if="!showContrib" class="flex justify-between items-center">
         <button @click="showContrib = true" class="btn">Contribution to predicted price<i class="fas fa-chevron-down btn-icon ml-2"></i></button>
-        <a href="https://www.poeprices.info/" @click.prevent="openWebsite" class="text-xs text-gray-700">poeprices.info</a>
+        <div class="flex" v-if="!feedbackSent && (price.confidence < 80)">
+          <feedback-option :item="item" :prediction="price" @sent="feedbackSent = true" option="low" />
+          <feedback-option :item="item" :prediction="price" @sent="feedbackSent = true" option="fair" />
+          <feedback-option :item="item" :prediction="price" @sent="feedbackSent = true" option="high" />
+        </div>
       </div>
       <table v-else>
         <thead>
@@ -53,12 +62,13 @@
 </template>
 
 <script>
-import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestPoeprices } from './poeprices'
 import { displayRounding } from '../Prices'
+import FeedbackOption from './FeedbackOption'
 
 export default {
   name: 'PricePrediction',
+  components: { FeedbackOption },
   props: {
     item: {
       type: Object,
@@ -71,7 +81,8 @@ export default {
       price: null,
       error: null,
       loading: false,
-      showContrib: false
+      showContrib: false,
+      feedbackSent: false
     }
   },
   watch: {
@@ -83,6 +94,7 @@ export default {
           this.error = null
           this.price = null
           this.showContrib = false
+          this.feedbackSent = false
           this.price = await requestPoeprices(this.item)
         } catch (err) {
           this.error = err.message
@@ -95,11 +107,11 @@ export default {
   computed: {
     currency () {
       return {
-        e: {
+        exalt: {
           url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1',
           text: 'exa'
         },
-        c: {
+        chaos: {
           url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1',
           text: 'chaos'
         }
@@ -110,9 +122,7 @@ export default {
     }
   },
   methods: {
-    openWebsite (e) {
-      MainProcess.openUserBrowser(e.target.href)
-    }
+    //
   }
 }
 </script>

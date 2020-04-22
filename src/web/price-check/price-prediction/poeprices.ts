@@ -4,7 +4,7 @@ import { Leagues } from '../Leagues'
 import { MainProcess } from '@/ipc/main-process-bindings'
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */
-  currency: 'chaos' | 'exalted'
+  currency: 'chaos' | 'exalt'
   error: number
   error_msg: string
   warning_msg: string
@@ -39,7 +39,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   }
 
   return {
-    currency: (data.currency === 'chaos') ? 'c' : 'e',
+    currency: data.currency,
     min: data.min,
     max: data.max,
     confidence: Math.round(data.pred_confidence_score),
@@ -48,4 +48,28 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
       contrib: Math.round(expl[1] * 100)
     }))
   }
+}
+
+export async function sendFeedback (
+  feedback: { text: string, option: 'fair' | 'low' | 'high' },
+  prediction: { min: number, max: number, currency: 'chaos' | 'exalt' },
+  item: ParsedItem
+) {
+  const body = new FormData()
+  body.append('selector', feedback.option)
+  body.append('feedbacktxt', feedback.text)
+  body.append('qitem_txt', Buffer.from(item.rawText).toString('base64'))
+  body.append('source', 'awakened-poe-trade')
+  body.append('min', String(prediction.min))
+  body.append('max', String(prediction.max))
+  body.append('currency', prediction.currency)
+  body.append('league', Leagues.selected!)
+  // body.append('debug', String(1))
+
+  const response = await fetch('https://www.poeprices.info/send_feedback', {
+    method: 'POST',
+    body
+  })
+  const text = await response.text()
+  console.assert(text === `"${feedback.option}"`)
 }
