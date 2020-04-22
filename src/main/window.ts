@@ -2,6 +2,7 @@ import path from 'path'
 import { BrowserWindow } from 'electron'
 import { checkForUpdates } from './updates'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
+import { hideWindow } from './positioning'
 
 export let win: BrowserWindow
 
@@ -43,5 +44,9 @@ export function createWindow () {
   win.once('ready-to-show', () => {
     // place here because of linux
     win.setAlwaysOnTop(true, 'screen-saver')
+  })
+  win.on('close', (e) => {
+    e.preventDefault()
+    hideWindow()
   })
 }

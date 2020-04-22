@@ -3,7 +3,6 @@ import { uIOhook } from 'uiohook-napi'
 import { win, WIDTH } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
-import { windowManager } from './window-manager'
 import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK, OPEN_LINK_EXTERNAL } from '@/ipc/ipc-event'
 import { config } from './config'
 import { logger } from './logger'
@@ -40,7 +39,7 @@ export function showWindow (willLocked?: boolean) {
   // }
 }
 
-function hideWindow (willShow?: boolean, willLocked?: boolean) {
+export function hideWindow (willShow?: boolean, willLocked?: boolean) {
   logger.verbose('Hide window', { source: 'price-check', fn: 'hideWindow', wasLocked: isWindowLocked })
 
   isWindowShown = false
