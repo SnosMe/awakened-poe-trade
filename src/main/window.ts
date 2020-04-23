@@ -3,6 +3,8 @@ import { BrowserWindow } from 'electron'
 import { checkForUpdates } from './updates'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { hideWindow } from './positioning'
+import { isQuiting } from './tray'
+import { uIOhook } from 'uiohook-napi'
 
 export let win: BrowserWindow
 
@@ -46,7 +48,11 @@ export function createWindow () {
     win.setAlwaysOnTop(true, 'screen-saver')
   })
   win.on('close', (e) => {
-    e.preventDefault()
-    hideWindow()
+    if (isQuiting) {
+      uIOhook.stop()
+    } else {
+      e.preventDefault()
+      hideWindow()
+    }
   })
 }

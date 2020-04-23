@@ -9,6 +9,7 @@ import { createWindow as settingsWindow } from './SettingsWindow'
 import { logger } from './logger'
 
 let tray: Tray
+export let isQuiting = false
 
 export let leagues: League[] = []
 
@@ -99,6 +100,7 @@ export function rebuildContextMenu () {
     {
       label: 'Quit',
       click: () => {
+        isQuiting = true
         app.quit()
       }
     }
