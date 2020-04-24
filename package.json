@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "0.18.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -32,7 +32,7 @@
     "robotjs": "^0.6.0",
     "tailwindcss": "^1.1.4",
     "throttle-debounce": "^2.1.0",
-    "uiohook-napi": "^1.0.5",
+    "uiohook-napi": "^1.0.6",
     "vue": "^2.6.11",
     "vue-popperjs": "^2.3.0",
     "vue-router": "^3.1.5",

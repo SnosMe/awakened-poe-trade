@@ -48,9 +48,7 @@ export function createWindow () {
     win.setAlwaysOnTop(true, 'screen-saver')
   })
   win.on('close', (e) => {
-    if (isQuiting) {
-      uIOhook.stop()
-    } else {
+    if (!isQuiting) {
       e.preventDefault()
       hideWindow()
     }
