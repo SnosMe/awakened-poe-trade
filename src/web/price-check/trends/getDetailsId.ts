@@ -66,6 +66,8 @@ function getGemDetailsId (item: ParsedItem) {
     item.props.gemLevel! >= 20
   ) {
     id += `-${item.props.gemLevel}`
+  } else {
+    id += '-1'
   }
   if (item.quality) {
     if (
