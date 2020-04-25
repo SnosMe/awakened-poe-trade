@@ -151,10 +151,10 @@ function getUniqueVariant (item: ParsedItem) {
       return '-armour'
     }
   } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
-    const sockets = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!.values![0]
-    if (sockets === 2) {
+    const sockets = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!
+    if (sockets.values?.[0] === 2) {
       return '-2-jewels'
-    } else if (sockets === 1) {
+    } else if (sockets.condition?.max === 1) {
       return '-1-jewel'
     }
   } else if (item.name === "Volkuur's Guidance") {
