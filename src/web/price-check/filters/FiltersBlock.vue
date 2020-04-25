@@ -50,14 +50,14 @@
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
-      <form @submit.prevent="handleStatsSubmit">
+      <form @submit.prevent="handleStatsSubmit" @mouseleave="handleStatsSubmit">
         <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
           :filter="filter"
           :item="item"
           @submit="handleStatsSubmit" />
         <input type="submit" class="hidden" />
       </form>
-      <div class="flex" @mouseenter="handleStatsSubmit">
+      <div class="flex">
         <button @click="toggleStatsBlock" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
           >Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <button v-if="shownStats.length != stats.length"
