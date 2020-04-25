@@ -69,5 +69,4 @@ function fallbackToExact (mod: ItemModifier, filter: Writeable<StatFilter>) {
   filter.roll = getRollAsSingleNumber(mod.values)
   filter.defaultMin = filter.roll
   filter.defaultMax = filter.roll
-  filter.min = filter.roll
 }
