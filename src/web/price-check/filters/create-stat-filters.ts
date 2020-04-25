@@ -125,12 +125,15 @@ function filterAdjustmentForNegate (
       filter.defaultMin = -1 * raw.defaultMax!
       filter.defaultMax = -1 * raw.defaultMin!
     }
-    if (filter.min != null && filter.max != null) {
-      filter.min = -1 * (raw.max as number)
-      filter.max = -1 * (raw.min as number)
-    }
     if (filter.min == null && filter.max == null && filter.defaultMax != null) {
       filter.min = -1 * (raw.defaultMax as number)
+    } else {
+      if (filter.max != null) {
+        filter.min = -1 * (raw.max as number)
+      }
+      if (filter.min != null) {
+        filter.max = -1 * (raw.min as number)
+      }
     }
     if (filter.roll != null) {
       filter.roll = -1 * raw.roll!
