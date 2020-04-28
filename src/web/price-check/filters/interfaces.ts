@@ -48,6 +48,10 @@ export interface ItemFilters {
     value: number
     disabled: boolean
   }
+  unidentified?: {
+    value: true
+    disabled: boolean
+  }
   trade: {
     offline: boolean
     listed: string | undefined

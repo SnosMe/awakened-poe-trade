@@ -45,7 +45,10 @@
           <div class="flex-1"></div>
           <div class="flex-grow layout-column">
             <app-bootstrap />
-            <checked-item :item="item" />
+            <template>
+              <unidentified-resolver :item="item" @identify="item = $event" />
+              <checked-item :item="item" />
+            </template>
           </div>
         </div>
       </div>
@@ -73,10 +76,12 @@ import { Leagues } from './Leagues'
 import { parseClipboard } from '@/parser'
 import RelatedItems from './related-items/RelatedItems'
 import RateLimiterState from './trade/RateLimiterState'
+import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver'
 
 export default {
   components: {
     CheckedItem,
+    UnidentifiedResolver,
     AppBootstrap,
     BrowserMode,
     RelatedItems,

@@ -43,6 +43,8 @@
           </template>
         </button>
       </template>
+      <button v-if="filters.unidentified" class="trade-tag" :class="{ disabled: filters.unidentified.disabled }"
+        @click="filters.unidentified.disabled = !filters.unidentified.disabled">Unidentified</button>
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
         <span v-if="totalSelectedMods === 0">Stats ignored</span>
         <span v-else>{{ totalSelectedMods }} of {{ stats.length }}, stats</span>

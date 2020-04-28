@@ -1,34 +1,32 @@
 <template>
-  <div class="layout-column" v-if="item">
-    <div class="p-4 layout-column">
-      <filter-name
-        ref="nameFilter"
-        :filters="itemFilters"
-        :item="item" />
-      <price-prediction v-if="showPredictedPrice" class="mb-4"
-        :item="item" />
-      <price-trend
-        :item="item"
-        @filter-item-base="applyItemBaseFilter" />
-      <filters-block v-if="!item.stackSize"
-        :filters="itemFilters"
-        :stats="itemStats"
-        :item="item"
-        @submit="intaractedOnce = true" />
-      <trade-listing
-        v-if="tradeAPI === 'trade' && intaractedOnce"
-        ref="tradeService"
-        :filters="itemFilters"
-        :stats="itemStats"
-        :item="item" />
-      <div v-if="tradeAPI === 'trade' && !intaractedOnce">
-        <button class="btn" @click="intaractedOnce = true">Search</button>
-      </div>
-      <trade-bulk
-        v-if="tradeAPI === 'bulk'"
-        ref="tradeService"
-        :filters="itemFilters" />
+  <div v-if="show" class="p-4 layout-column">
+    <filter-name
+      ref="nameFilter"
+      :filters="itemFilters"
+      :item="item" />
+    <price-prediction v-if="showPredictedPrice" class="mb-4"
+      :item="item" />
+    <price-trend
+      :item="item"
+      @filter-item-base="applyItemBaseFilter" />
+    <filters-block v-if="!item.stackSize"
+      :filters="itemFilters"
+      :stats="itemStats"
+      :item="item"
+      @submit="intaractedOnce = true" />
+    <trade-listing
+      v-if="tradeAPI === 'trade' && intaractedOnce"
+      ref="tradeService"
+      :filters="itemFilters"
+      :stats="itemStats"
+      :item="item" />
+    <div v-if="tradeAPI === 'trade' && !intaractedOnce">
+      <button class="btn" @click="intaractedOnce = true">Search</button>
     </div>
+    <trade-bulk
+      v-if="tradeAPI === 'bulk'"
+      ref="tradeService"
+      :filters="itemFilters" />
   </div>
 </template>
 
@@ -103,7 +101,8 @@ export default {
       this.itemStats = initUiModFilters(item)
       this.intaractedOnce = (
         this.item.rarity === ItemRarity.Unique ||
-        !CATEGORY_TO_TRADE_ID.has(this.item.category)
+        !CATEGORY_TO_TRADE_ID.has(this.item.category) ||
+        this.item.isUnidentified
       )
     }
   },
@@ -119,7 +118,15 @@ export default {
     showPredictedPrice () {
       return this.item.rarity === ItemRarity.Rare &&
         this.item.category !== ItemCategory.Map &&
-        this.item.category !== ItemCategory.CapturedBeast
+        this.item.category !== ItemCategory.CapturedBeast &&
+        !this.item.isUnidentified
+    },
+    show () {
+      if (!this.item) return false
+
+      return !(this.item.rarity === ItemRarity.Unique &&
+        this.item.isUnidentified &&
+        this.item.baseType == null)
     }
   },
   methods: {

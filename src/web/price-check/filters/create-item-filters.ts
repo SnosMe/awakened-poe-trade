@@ -16,7 +16,6 @@ export function createFilters (item: ParsedItem): ItemFilters {
   if (item.rarity === ItemRarity.Gem) {
     return createGemFilters(item, filters)
   }
-
   if (item.category === ItemCategory.CapturedBeast) {
     filters.baseType = {
       value: item.baseType || item.name
@@ -160,6 +159,26 @@ export function createFilters (item: ParsedItem): ItemFilters {
           value: item.itemLevel,
           disabled: true
         }
+      }
+    }
+  }
+
+  if (item.isUnidentified) {
+    filters.unidentified = {
+      value: true,
+      disabled: (item.rarity !== ItemRarity.Unique)
+    }
+
+    if (item.rarity !== ItemRarity.Unique) {
+      if (filters.itemLevel) {
+        filters.itemLevel.disabled = false
+      }
+      if (filters.influences) {
+        filters.influences[0].disabled = false
+      }
+      filters.category = undefined
+      filters.baseType = {
+        value: item.baseType || item.name
       }
     }
   }

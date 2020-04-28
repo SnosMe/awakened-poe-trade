@@ -64,6 +64,7 @@ export const TRADE_TAG_BY_NAME = new Map(TRADE_TAGS)
 export interface UniqueItem {
   name: string
   basetype: string
+  icon: string
   props: {
     pdps?: { min: number, max: number }
     ar?: { min: number, max: number }
@@ -81,6 +82,8 @@ export interface UniqueItem {
 export const Uniques = new Map(
   (uniques as UniqueItem[]).map(item => [`${item.name} ${item.basetype}`, item])
 )
+
+export const UniquesList = (uniques as UniqueItem[])
 
 export interface DropEntry {
   query: string[]

@@ -21,11 +21,13 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     modifiers: [...item.modifiers]
   }
 
-  if (item.rarity === ItemRarity.Unique) {
-    filterUniqueItemProp(ctx)
-  } else {
-    filterItemProp(ctx)
-    filterPseudo(ctx)
+  if (!item.isUnidentified) {
+    if (item.rarity === ItemRarity.Unique) {
+      filterUniqueItemProp(ctx)
+    } else {
+      filterItemProp(ctx)
+      filterPseudo(ctx)
+    }
   }
 
   ctx.filters.push(

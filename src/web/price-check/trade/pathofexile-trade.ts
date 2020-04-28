@@ -85,6 +85,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           quality?: FilterRange
           gem_level?: FilterRange
           corrupted?: FilterBoolean
+          identified?: FilterBoolean
           shaper_item?: FilterBoolean
           crusader_item?: FilterBoolean
           hunter_item?: FilterBoolean
@@ -240,7 +241,11 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
 
   if (filters.mapBlighted) {
-    prop.set(query.filters, 'map_filters.filters.map_blighted.option', 'true')
+    prop.set(query.filters, 'map_filters.filters.map_blighted.option', String(true))
+  }
+
+  if (filters.unidentified && !filters.unidentified.disabled) {
+    prop.set(query.filters, 'misc_filters.filters.identified.option', String(false))
   }
 
   if (filters.influences) {
@@ -249,22 +254,22 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 
       switch (influence.value) {
         case ItemInfluence.Shaper:
-          prop.set(query.filters, 'misc_filters.filters.shaper_item.option', 'true')
+          prop.set(query.filters, 'misc_filters.filters.shaper_item.option', String(true))
           break
         case ItemInfluence.Elder:
-          prop.set(query.filters, 'misc_filters.filters.elder_item.option', 'true')
+          prop.set(query.filters, 'misc_filters.filters.elder_item.option', String(true))
           break
         case ItemInfluence.Crusader:
-          prop.set(query.filters, 'misc_filters.filters.crusader_item.option', 'true')
+          prop.set(query.filters, 'misc_filters.filters.crusader_item.option', String(true))
           break
         case ItemInfluence.Hunter:
-          prop.set(query.filters, 'misc_filters.filters.hunter_item.option', 'true')
+          prop.set(query.filters, 'misc_filters.filters.hunter_item.option', String(true))
           break
         case ItemInfluence.Redeemer:
-          prop.set(query.filters, 'misc_filters.filters.redeemer_item.option', 'true')
+          prop.set(query.filters, 'misc_filters.filters.redeemer_item.option', String(true))
           break
         case ItemInfluence.Warlord:
-          prop.set(query.filters, 'misc_filters.filters.warlord_item.option', 'true')
+          prop.set(query.filters, 'misc_filters.filters.warlord_item.option', String(true))
           break
       }
     }
