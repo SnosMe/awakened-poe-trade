@@ -70,7 +70,7 @@
           </tr>
         </thead>
         <tbody style="overflow: scroll;">
-          <template v-for="(result, idx) in grouppedResults">
+          <template v-for="(result, idx) in groupedResults">
             <tr v-if="!result" :key="idx">
               <td colspan="100" class="text-transparent">***</td>
             </tr>
@@ -115,6 +115,8 @@ import { Config } from '@/web/Config'
 
 const SHOW_RESULTS = 20
 const API_FETCH_LIMIT = 100
+const MIN_NOT_GROUPED = 7
+const MIN_GROUPED = 10
 
 export default {
   props: {
@@ -141,7 +143,7 @@ export default {
     }
   },
   computed: {
-    grouppedResults () {
+    groupedResults () {
       // first req ready
       if (this.results[0] == null) return Array(SHOW_RESULTS)
 
@@ -220,9 +222,13 @@ export default {
         const fetchMore = async () => {
           if (this.searchId !== searchId) return
 
-          const totalGroupped = this.grouppedResults.reduce((len, res) => res != null ? len + 1 : len, 0)
+          const totalGrouped = this.groupedResults.reduce((len, res) =>
+            res != null ? len + 1 : len, 0)
+          const totalNotGrouped = this.groupedResults.reduce((len, res) =>
+            res != null && res.listedTimes <= 2 ? len + 1 : len, 0)
+
           if (
-            totalGroupped < SHOW_RESULTS &&
+            (totalNotGrouped < MIN_NOT_GROUPED || totalGrouped < MIN_GROUPED) &&
             fetched < list.total &&
             fetched < API_FETCH_LIMIT
           ) {
