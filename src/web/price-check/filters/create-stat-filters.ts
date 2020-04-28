@@ -1,4 +1,4 @@
-import { ParsedItem, ItemRarity } from '@/parser'
+import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ItemModifier, ModifierType } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
 import { rollToFilter } from './util'
@@ -15,6 +15,10 @@ export interface FiltersCreationContext {
 }
 
 export function initUiModFilters (item: ParsedItem): StatFilter[] {
+  if (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) {
+    return []
+  }
+
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
