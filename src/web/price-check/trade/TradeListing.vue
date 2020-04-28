@@ -155,10 +155,16 @@ export default {
           continue
         }
 
-        const existingRes = out.find(added =>
-          added.priceAmount === result.priceAmount &&
-          added.priceCurrency === result.priceCurrency &&
-          added.accountName === result.accountName
+        const existingRes = out.find((added, idx) =>
+          (
+            added.accountName === result.accountName &&
+            added.priceCurrency === result.priceCurrency &&
+            added.priceAmount === result.priceAmount
+          ) ||
+          (
+            added.accountName === result.accountName &&
+            (out.length - idx) <= 2 // last or prev
+          )
         )
         if (existingRes) {
           existingRes.listedTimes += 1
