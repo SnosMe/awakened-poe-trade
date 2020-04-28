@@ -38,6 +38,10 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     ...ctx.modifiers.map(mod => itemModToFilter(mod, item))
   )
 
+  if (item.isUnidentified && item.rarity === ItemRarity.Unique) {
+    ctx.filters = ctx.filters.filter(f => !f.hidden)
+  }
+
   return ctx.filters
 }
 
