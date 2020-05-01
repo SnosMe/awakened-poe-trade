@@ -161,6 +161,13 @@ export function createFilters (item: ParsedItem): ItemFilters {
         }
       }
     }
+
+    if (item.isUnidentified && item.name === "Watcher's Eye") {
+      filters.itemLevel = {
+        value: item.itemLevel,
+        disabled: false
+      }
+    }
   }
 
   if (item.isUnidentified) {
