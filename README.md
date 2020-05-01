@@ -5,11 +5,7 @@
 [![](./showcase/Discrod-Join-7289DA.svg)](https://discord.gg/hXgSDS6)
 
 
-| Download | Automatic update | Startup time |
-|----------|------------------|--------------|
-| [Windows (installer)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v1.1.0/Awakened-PoE-Trade-Setup-1.1.0.exe) | :heavy_check_mark: | Fast |
-| [Windows (portable)](https://github.com/SnosMe/awakened-poe-trade/releases/download/v1.1.0/Awakened-PoE-Trade-1.1.0.exe) | :heavy_multiplication_x: | Slow |
-| [Linux](https://github.com/SnosMe/awakened-poe-trade/releases/download/v1.1.0/Awakened-PoE-Trade-1.1.0.AppImage) | :heavy_check_mark: | Fast |
+[Download for Windows & Linux](https://github.com/SnosMe/awakened-poe-trade/wiki/Download)
 
 ## Tool showcase
 
@@ -58,17 +54,6 @@
     - :heavy_check_mark: Level, Quality, Corrupted
   - :heavy_check_mark: Currency bulk search (https://www.pathofexile.com/trade/exchange)
   - :heavy_check_mark: Grouping results from one account (protection against "pricefixing")
-
-### Requirements
-
-- Run PoE in "Windowed" or "Windowed Fullscreen" mode
-- PoE language must be English
-- No Administrator rights required **(there are exceptions)**
-
-Neither Java nor the .NET Framework nor AHK are required
-
-**NOTE: If you run PoE client as Admin, OS security boundaries take effect.
-In order for Awakened PoE Trade to have access to the PoE window, it must be started with Administrator rights.**
 
 ### Usage
 - Press `Ctrl + D` to check the price of the item\
