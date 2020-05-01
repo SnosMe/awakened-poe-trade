@@ -52,7 +52,7 @@
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
-      <form @submit.prevent="handleStatsSubmit" @mouseleave="handleStatsSubmit">
+      <form @submit.prevent="handleStatsSubmit" @mouseleave="handleMouseLeaveStats">
         <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
           :filter="filter"
           :item="item"
@@ -124,6 +124,12 @@ export default {
     },
     handleStatsSubmit () {
       this.$emit('submit')
+    },
+    handleMouseLeaveStats (e) {
+      // ignore if mouse moves to filters block
+      if (e.offsetY > 0) {
+        this.handleStatsSubmit()
+      }
     }
   }
 }
