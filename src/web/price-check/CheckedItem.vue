@@ -130,10 +130,12 @@ export default {
     }
   },
   methods: {
-    applyItemBaseFilter () {
+    async applyItemBaseFilter () {
       for (const stat of this.itemStats) {
         stat.disabled = true
       }
+      await this.$nextTick()
+
       this.itemFilters.itemLevel.disabled = false
       if (this.itemFilters.influences) {
         this.itemFilters.influences[0].disabled = false
