@@ -1,8 +1,14 @@
-export function countDecimals (num: number) {
+export function rollCountDecimals (num: number) {
   return !Number.isInteger(num)
-    ? String(num).substring(String(num).indexOf('.') + 1).length
+    ? 2
     : 0
 }
+
+// export function countDecimals (num: number) {
+//   return !Number.isInteger(num)
+//     ? String(num).substring(String(num).indexOf('.') + 1).length
+//     : 0
+// }
 
 export function getRollAsSingleNumber (values: number[]): number {
   if (values.length === 1) {
@@ -10,7 +16,7 @@ export function getRollAsSingleNumber (values: number[]): number {
   } else {
     const avg = (values[0] + values[1]) / 2
 
-    const maxPrecision = Math.max(countDecimals(values[0]), countDecimals(values[1]))
+    const maxPrecision = Math.max(rollCountDecimals(values[0]), rollCountDecimals(values[1]))
     const rounding = Math.pow(10, maxPrecision)
     return Math.floor((avg + Number.EPSILON) * rounding) / rounding
   }

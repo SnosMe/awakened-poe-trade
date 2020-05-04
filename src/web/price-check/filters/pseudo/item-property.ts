@@ -138,7 +138,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     text: 'Attacks per Second: #',
     type: 'weapon',
     disabled: true,
-    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true })
+    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, decimals: 2 })
   })
 
   ctx.filters.push({
@@ -146,7 +146,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     text: 'Critical Strike Chance: #%',
     type: 'weapon',
     disabled: true,
-    ...rollToFilter(item.props.critChance!, { neverNegated: true })
+    ...rollToFilter(item.props.critChance!, { neverNegated: true, decimals: 2 })
   })
 
   if (
