@@ -30,6 +30,10 @@ export interface ParsedItem {
   isCorrupted: boolean
   influences: ItemInfluence[]
   modifiers: ItemModifier[]
+  extra: {
+    veiled?: 'prefix' | 'suffix' | 'prefix-suffix'
+    // TODO prophecyMaster?: string
+  }
   category?: ItemCategory
   icon?: string
   rawText: string

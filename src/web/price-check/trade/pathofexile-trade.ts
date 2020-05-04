@@ -4,7 +4,7 @@ import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES } from './common'
 import { Config } from '@/web/Config'
-import { API_TRADE_ITEMS } from '@/assets/data'
+import { API_TRADE_ITEMS, STAT_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
@@ -315,6 +315,19 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
 
   stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId[0]))
+  if (filters.veiled) {
+    const refs = filters.veiled.stat.split('<<and>>')
+    for (const statRef of refs) {
+      stats.push({
+        disabled: filters.veiled.disabled,
+        text: undefined!,
+        type: undefined!,
+        min: undefined,
+        max: undefined,
+        tradeId: STAT_BY_REF.get(statRef)!.types[0].tradeId
+      })
+    }
+  }
 
   query.stats.push({ type: 'and', filters: [] })
   for (const stat of stats) {

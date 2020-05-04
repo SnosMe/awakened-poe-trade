@@ -60,3 +60,6 @@ export const METAMORPH_EYE = 'Eye'
 export const METAMORPH_LUNG = 'Lung'
 export const METAMORPH_HEART = 'Heart'
 export const METAMORPH_LIVER = 'Liver'
+
+export const VEILED_PREFIX = 'Veiled Prefix'
+export const VEILED_SUFFIX = 'Veiled Suffix'

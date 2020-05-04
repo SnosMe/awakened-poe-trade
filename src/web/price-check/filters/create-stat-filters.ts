@@ -42,6 +42,10 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     ctx.filters = ctx.filters.filter(f => !f.hidden)
   }
 
+  if (item.extra.veiled) {
+    ctx.filters.forEach(filter => { filter.disabled = true })
+  }
+
   return ctx.filters
 }
 

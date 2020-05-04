@@ -35,7 +35,9 @@ import {
   METAMORPH_EYE,
   METAMORPH_LUNG,
   METAMORPH_HEART,
-  METAMORPH_LIVER
+  METAMORPH_LIVER,
+  VEILED_PREFIX,
+  VEILED_SUFFIX
 } from './constants'
 import { BaseTypes } from '@/assets/data'
 import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
@@ -203,6 +205,7 @@ function parseNamePlate (section: string[]) {
         modifiers: [],
         influences: [],
         sockets: {},
+        extra: {},
         rawText: undefined!
       }
       return item
@@ -411,6 +414,11 @@ function parseModifiers (section: string[], item: ParsedItem) {
   const statIterator = sectionToStatStrings(section)
   let stat = statIterator.next()
   while (!stat.done) {
+    if (parseVeiledNested(stat.value, item)) {
+      stat = statIterator.next(true)
+      continue
+    }
+
     let modType: ModifierType | undefined
 
     // cleanup suffix
@@ -452,6 +460,18 @@ function parseModifiers (section: string[], item: ParsedItem) {
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
+}
+
+function parseVeiledNested (text: string, item: ParsedItem) {
+  if (text === VEILED_SUFFIX) {
+    item.extra.veiled = (item.extra.veiled == null ? 'suffix' : 'prefix-suffix')
+    return true
+  }
+  if (text === VEILED_PREFIX) {
+    item.extra.veiled = (item.extra.veiled == null ? 'prefix' : 'prefix-suffix')
+    return true
+  }
+  return false
 }
 
 function parseFlask (section: string[], item: ParsedItem) {

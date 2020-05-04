@@ -52,6 +52,10 @@ export interface ItemFilters {
     value: true
     disabled: boolean
   }
+  veiled?: {
+    stat: string
+    disabled: boolean
+  }
   trade: {
     offline: boolean
     listed: string | undefined

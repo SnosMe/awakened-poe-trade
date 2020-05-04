@@ -102,7 +102,8 @@ export default {
       this.intaractedOnce = (
         this.item.rarity === ItemRarity.Unique ||
         !CATEGORY_TO_TRADE_ID.has(this.item.category) ||
-        this.item.isUnidentified
+        Boolean(this.item.isUnidentified) ||
+        Boolean(this.item.extra.veiled)
       )
     }
   },

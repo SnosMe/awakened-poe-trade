@@ -1,5 +1,6 @@
 import { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { VEILED_STAT } from './veiled'
 import { Leagues } from '../Leagues'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
@@ -186,6 +187,19 @@ export function createFilters (item: ParsedItem): ItemFilters {
       filters.category = undefined
       filters.baseType = {
         value: item.baseType || item.name
+      }
+    }
+  }
+
+  if (item.extra.veiled) {
+    filters.veiled = {
+      stat: VEILED_STAT.filter(s => s.test(item))[0].stat,
+      disabled: false
+    }
+
+    if (item.rarity !== ItemRarity.Unique) {
+      if (filters.itemLevel) {
+        filters.itemLevel.disabled = false
       }
     }
   }
