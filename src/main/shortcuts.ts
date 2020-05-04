@@ -48,7 +48,8 @@ function registerGlobal () {
   const register = [
     shortcutCallback(
       config.get('priceCheckKey') && `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
-      () => priceCheck(false)
+      () => priceCheck(false),
+      { doNotResetModKey: true }
     ),
     shortcutCallback(
       config.get('priceCheckLocked'),
@@ -63,7 +64,7 @@ function registerGlobal () {
     ),
     ...config.get('commands')
       .map(command =>
-        shortcutCallback(command.hotkey, () => typeChatCommand(command.text), { resetKeys: true })
+        shortcutCallback(command.hotkey, () => typeChatCommand(command.text))
       )
   ].filter(a => Boolean(a.shortcut))
 
@@ -113,7 +114,7 @@ export function setupShortcuts () {
     if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
       shortcutCallback(pressed, () => {
         priceCheck(false)
-      }).cb()
+      }, { doNotResetModKey: true }).cb()
     } else if (pressed === config.get('priceCheckLocked')) {
       shortcutCallback(pressed, () => {
         priceCheck(true)
@@ -128,7 +129,7 @@ export function setupShortcuts () {
       if (command) {
         shortcutCallback(pressed, () => {
           typeChatCommand(command.text)
-        }, { resetKeys: true }).cb()
+        }).cb()
       }
     }
   })
@@ -205,26 +206,21 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
   return code
 }
 
-function shortcutCallback<T extends Function> (shortcut: string | null, cb: T, opts?: { resetKeys?: boolean }) {
+function shortcutCallback<T extends Function> (shortcut: string | null, cb: T, opts?: { doNotResetModKey?: boolean }) {
   return {
     shortcut,
     cb: function () {
       if (!shortcut) throw new Error('Never: callback called on null shortcut')
 
-      if (opts?.resetKeys) {
-        shortcut.split(' + ').forEach(key => { robotjs.keyToggle(key, 'up') })
-      } else if (process.platform === 'linux' && config.get('useOsGlobalShortcut')) {
-        linuxToggleUpNonModKey(shortcut)
+      if (opts?.doNotResetModKey) {
+        const nonModKey = shortcut.split(' + ').reverse()[0]
+        robotjs.keyToggle(nonModKey, 'up')
+      } else {
+        shortcut.split(' + ').reverse().forEach(key => { robotjs.keyToggle(key, 'up') })
       }
       cb()
     }
   }
-}
-
-function linuxToggleUpNonModKey (shortcut: string) {
-  const nonModKey = shortcut.split(' + ').reverse()[0]
-  logger.debug('Toggling key up, to fix Linux freeze', { source: 'shortcuts', key: nonModKey })
-  robotjs.keyToggle(nonModKey, 'up')
 }
 
 function shortcutToElectron (shortcut: string) {
