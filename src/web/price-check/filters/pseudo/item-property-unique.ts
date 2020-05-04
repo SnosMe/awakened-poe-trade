@@ -144,7 +144,7 @@ function propToFilter (
         boundMax: propInfo.max,
         defaultMin: Math.max(percentRollDelta(totalQ20, (propInfo.max - propInfo.min), -percent, Math.floor), propInfo.min),
         defaultMax: Math.min(percentRollDelta(totalQ20, (propInfo.max - propInfo.min), +percent, Math.ceil), propInfo.max),
-        min: totalQ20,
+        min: Math.max(percentRollDelta(totalQ20, (propInfo.max - propInfo.min), -percent, Math.floor), propInfo.min),
         max: undefined,
         roll: totalQ20
       })
