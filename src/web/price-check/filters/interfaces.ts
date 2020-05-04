@@ -89,7 +89,8 @@ export type INTERNAL_TRADE_ID =
   'weapon.total_dps' |
   'weapon.physical_dps' |
   'weapon.elemental_dps' |
-  'weapon.crit'
+  'weapon.crit' |
+  'weapon.aps'
 
 export const INTERNAL_TRADE_ID = [
   'armour.armour',
@@ -99,5 +100,6 @@ export const INTERNAL_TRADE_ID = [
   'weapon.total_dps',
   'weapon.physical_dps',
   'weapon.elemental_dps',
-  'weapon.crit'
+  'weapon.crit',
+  'weapon.aps'
 ]

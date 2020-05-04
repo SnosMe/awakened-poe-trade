@@ -70,8 +70,7 @@ function armourProps (ctx: FiltersCreationContext) {
 
 const WEAPON_STATS = new Set<string>([
   QUALITY_STATS.PHYSICAL_DAMAGE.flat,
-  ...QUALITY_STATS.PHYSICAL_DAMAGE.incr,
-  stat('#% increased Attack Speed')
+  ...QUALITY_STATS.PHYSICAL_DAMAGE.incr
 ])
 
 function weaponProps (ctx: FiltersCreationContext) {

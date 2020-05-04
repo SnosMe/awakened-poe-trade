@@ -134,8 +134,16 @@ function weaponProps (ctx: FiltersCreationContext) {
   })
 
   ctx.filters.push({
+    tradeId: ['weapon.aps' as INTERNAL_TRADE_ID],
+    text: 'Attacks per Second: #',
+    type: 'weapon',
+    disabled: true,
+    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true })
+  })
+
+  ctx.filters.push({
     tradeId: ['weapon.crit' as INTERNAL_TRADE_ID],
-    text: 'Critical Chance: #%',
+    text: 'Critical Strike Chance: #%',
     type: 'weapon',
     disabled: true,
     ...rollToFilter(item.props.critChance!, { neverNegated: true })

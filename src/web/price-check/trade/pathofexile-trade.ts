@@ -108,6 +108,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           pdps?: FilterRange
           edps?: FilterRange
           crit?: FilterRange
+          aps?: FilterRange
         }
       }
       map_filters?: {
@@ -310,6 +311,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
       case 'weapon.crit':
         prop.set(query.filters, 'weapon_filters.filters.crit.min', typeof stat.min === 'number' ? stat.min : undefined)
         prop.set(query.filters, 'weapon_filters.filters.crit.max', typeof stat.max === 'number' ? stat.max : undefined)
+        break
+      case 'weapon.aps':
+        prop.set(query.filters, 'weapon_filters.filters.aps.min', typeof stat.min === 'number' ? stat.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.aps.max', typeof stat.max === 'number' ? stat.max : undefined)
         break
     }
   }
