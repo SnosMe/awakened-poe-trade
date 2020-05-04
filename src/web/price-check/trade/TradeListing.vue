@@ -6,7 +6,7 @@
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
-      <ui-popper v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOut="150" :options="{ placement: 'bottom-start' }" boundaries-selector="#price-window">
+      <ui-popper v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOver="70" :delayOnMouseOut="150" :options="{ placement: 'bottom-start' }" boundaries-selector="#price-window">
         <template slot="reference">
           <button class="text-gray-500 rounded mr-1 px-2 truncate">
             <span><i class="fas fa-history"></i> {{ filters.trade.offline ? 'Offline' : 'Online' }}</span>
