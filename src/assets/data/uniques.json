@@ -3526,7 +3526,7 @@
         "bounds": [{"min": 8, "max": 10}]
       },
       {
-        "text": "Temporal Chains has #% reduced Mana Reservation",
+        "text": "Temporal Chains has #% reduced Mana Reservation if Cast as an Aura",
         "bounds": [{"min": -100, "max": -100}]
       },
       {
@@ -16215,7 +16215,7 @@
         "implicit": true
       },
       {
-        "text": "Consumes a Void Charge to Trigger Level # Void Shot when you fire Arrows",
+        "text": "Consumes a Void Charge to Trigger Level # Void Shot when you fire Arrows with a Non-Triggered Skill",
         "bounds": [{"min": 20, "max": 20}]
       },
       {
@@ -29283,7 +29283,7 @@
         "variant": true
       },
       {
-        "text": "Frostbite has #% reduced Mana Reservation",
+        "text": "Frostbite has #% reduced Mana Reservation if Cast as an Aura",
         "bounds": [{"min": -100, "max": -100}],
         "variant": true
       },
@@ -29306,7 +29306,7 @@
         "variant": true
       },
       {
-        "text": "Vulnerability has #% reduced Mana Reservation",
+        "text": "Vulnerability has #% reduced Mana Reservation if Cast as an Aura",
         "bounds": [{"min": -100, "max": -100}],
         "variant": true
       },
@@ -29329,7 +29329,7 @@
         "variant": true
       },
       {
-        "text": "Conductivity has #% reduced Mana Reservation",
+        "text": "Conductivity has #% reduced Mana Reservation if Cast as an Aura",
         "bounds": [{"min": -100, "max": -100}],
         "variant": true
       },
@@ -29352,7 +29352,7 @@
         "variant": true
       },
       {
-        "text": "Flammability has #% reduced Mana Reservation",
+        "text": "Flammability has #% reduced Mana Reservation if Cast as an Aura",
         "bounds": [{"min": -100, "max": -100}],
         "variant": true
       },
@@ -29375,7 +29375,7 @@
         "variant": true
       },
       {
-        "text": "Despair has #% reduced Mana Reservation",
+        "text": "Despair has #% reduced Mana Reservation if Cast as an Aura",
         "bounds": [{"min": -100, "max": -100}],
         "variant": true
       }
@@ -31836,6 +31836,11 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Awakened Added Fire Damage",
+        "bounds": [{"min": 5, "max": 5}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Awakened Brutality",
         "bounds": [{"min": 5, "max": 5}],
         "variant": true
@@ -31856,12 +31861,27 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Awakened Increased Area Of Effect",
+        "bounds": [{"min": 5, "max": 5}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Awakened Melee Physical Damage",
         "bounds": [{"min": 5, "max": 5}],
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Awakened Melee Splash",
+        "bounds": [{"min": 5, "max": 5}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Awakened Minion Damage",
+        "bounds": [{"min": 5, "max": 5}],
+        "variant": true
+      },
+      {
+        "text": "Socketed Gems are Supported by Level # Awakened Multistrike",
         "bounds": [{"min": 5, "max": 5}],
         "variant": true
       },
@@ -32392,6 +32412,11 @@
       },
       {
         "text": "Socketed Gems are Supported by Level # Ruthless",
+        "bounds": [{"min": 20, "max": 20}],
+        "variant": true
+      },
+      {
+        "text": "Socketed Gems are Supported by Level # Second Wind",
         "bounds": [{"min": 20, "max": 20}],
         "variant": true
       },
