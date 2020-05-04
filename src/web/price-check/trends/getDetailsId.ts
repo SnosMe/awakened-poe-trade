@@ -24,7 +24,6 @@ export function getDetailsId (item: ParsedItem) {
   }
   if (item.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique) {
-      // @TODO if unidentified get name by baseType
       return nameToDetailsId(`${item.name} t${item.props.mapTier}`)
     } else {
       return nameToDetailsId(`${item.props.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.props.mapTier} ${LATEST_MAP_VARIANT}`)
