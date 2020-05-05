@@ -80,3 +80,5 @@
 - [RePoE](https://github.com/brather1ng/RePoE)
 - [poeprices.info](https://www.poeprices.info/)
 - [poe.ninja](https://poe.ninja/)
+
+![](./showcase/poe-deps.png)
