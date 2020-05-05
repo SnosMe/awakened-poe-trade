@@ -12,6 +12,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "price-check" */ './price-check/PriceCheckWindow.vue')
     },
     {
+      path: '/overlay',
+      name: 'overlay',
+      component: () => import(/* webpackChunkName: "overlay" */ './overlay/OverlayWindow.vue')
+    },
+    {
       path: '/settings',
       name: 'settings',
       component: () => import(/* webpackChunkName: "settings" */ './settings/SettingsWindow.vue'),

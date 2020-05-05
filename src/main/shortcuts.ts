@@ -9,6 +9,7 @@ import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
 import { logger } from './logger'
+import { toggleOverlayState } from './overlay-window'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
@@ -56,6 +57,10 @@ function registerGlobal () {
       () => priceCheck(true)
     ),
     shortcutCallback(
+      config.get('overlayKey'),
+      toggleOverlayState
+    ),
+    shortcutCallback(
       config.get('wikiKey'),
       () => {
         pollClipboard(32, 500).then(openWiki).catch(() => {})
@@ -95,7 +100,7 @@ export function setupShortcuts () {
   if (PoeWindow.isActive && config.get('useOsGlobalShortcut')) {
     registerGlobal()
   }
-  PoeWindow.addListener('active-change', (isActive) => {
+  PoeWindow.on('active-change', (isActive) => {
     if (config.get('useOsGlobalShortcut')) {
       if (isActive) {
         registerGlobal()
@@ -119,6 +124,8 @@ export function setupShortcuts () {
       shortcutCallback(pressed, () => {
         priceCheck(true)
       }).cb()
+    } else if (pressed === config.get('overlayKey')) {
+      shortcutCallback(pressed, toggleOverlayState).cb()
     } else if (pressed === config.get('wikiKey')) {
       shortcutCallback(pressed, () => {
         pollClipboard(32, 500).then(openWiki).catch(() => {})

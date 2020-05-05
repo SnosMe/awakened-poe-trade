@@ -4,7 +4,7 @@ import { checkForUpdates } from './updates'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { hideWindow } from './positioning'
 import { isQuiting } from './tray'
-import { uIOhook } from 'uiohook-napi'
+import { PoeWindow } from './PoeWindow'
 
 export let win: BrowserWindow
 
@@ -52,5 +52,9 @@ export function createWindow () {
       e.preventDefault()
       hideWindow()
     }
+  })
+
+  PoeWindow.once('active-change', () => {
+    win.setBounds(PoeWindow.bounds!)
   })
 }

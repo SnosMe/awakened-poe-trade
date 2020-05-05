@@ -13,6 +13,7 @@ import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { PoeWindow } from './main/PoeWindow'
 import { logger } from './main/logger'
 import os from 'os'
+import { createOverlayWindow } from './main/overlay-window'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {
@@ -56,11 +57,15 @@ app.on('ready', async () => {
   }
 
   await setupWindowManager()
-  PoeWindow.startPolling()
   setupConfig()
   setupShowHide()
   setTimeout(
-    createWindow, // fix: linux window black instead of transparent
+    () => {
+      createWindow()
+      createOverlayWindow()
+      PoeWindow.startPolling()
+    },
+    // fix: linux window black instead of transparent
     process.platform === 'linux' ? 1000 : 0
   )
   createTray()

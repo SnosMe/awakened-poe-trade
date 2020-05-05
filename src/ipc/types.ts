@@ -9,6 +9,7 @@ export interface Config {
   priceCheckKeyHold: string
   priceCheckLocked: string | null
   wikiKey: string | null
+  overlayKey: string
   commands: Array<{
     text: string
     hotkey: string | null
@@ -30,6 +31,7 @@ export const defaultConfig: Config = {
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
   wikiKey: 'Alt + W',
+  overlayKey: 'Shift + Space',
   commands: [{
     text: '/hideout',
     hotkey: 'F5'
