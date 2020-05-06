@@ -28,6 +28,10 @@ class MainProcessBinding extends EventTarget {
         }))
       })
 
+      electron.ipcRenderer.on(ipcEvent.OVERLAY_ACTIVE_CHANGE, (e, updateInfo) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.OVERLAY_ACTIVE_CHANGE))
+      })
+
       electron.ipcRenderer.on(ipcEvent.UPDATE_AVAILABLE, (e, updateInfo) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.UPDATE_AVAILABLE, {
           detail: updateInfo

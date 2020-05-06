@@ -2,6 +2,7 @@ import path from 'path'
 import { BrowserWindow } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
+import { OVERLAY_ACTIVE_CHANGE } from '@/ipc/ipc-event'
 
 let overlayWindow: BrowserWindow | undefined
 let isInteractable = false
@@ -14,7 +15,7 @@ export function createOverlayWindow () {
     skipTaskbar: true,
     frame: false,
     show: false,
-    focusable: false,
+    // focusable: false,
     transparent: true,
     fullscreen: true, // linux does not support changing at runtime, add config?
     resizable: false,
@@ -39,13 +40,18 @@ export function createOverlayWindow () {
 
   PoeWindow.once('active-change', () => {
     overlayWindow!.setBounds(PoeWindow.bounds!)
+    overlayWindow!.show()
+
   })
 
   PoeWindow.on('active-change', (isActive) => {
     if (isActive) {
-      overlayWindow!.show()
+      overlayWindow!.showInactive()
+      overlayWindow!.moveTop()
     } else {
-      overlayWindow!.hide()
+      if (!overlayWindow!.isFocused()) {
+        overlayWindow!.hide()
+      }
     }
   })
 }
@@ -62,5 +68,12 @@ export function toggleOverlayState () {
   } else {
     overlayWindow.setIgnoreMouseEvents(false)
     isInteractable = true
+    setTimeout(() => {
+      logger.info('Reset', { source: 'overlay' })
+      toggleOverlayState()
+      overlayWindow!.blur()
+    }, 2000)
   }
+
+  overlayWindow.webContents.send(OVERLAY_ACTIVE_CHANGE)
 }

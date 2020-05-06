@@ -12,3 +12,5 @@ export const OPEN_LINK_EXTERNAL = 'open-link-external'
 export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'
 
 export const UPDATE_AVAILABLE = 'update-available'
+
+export const OVERLAY_ACTIVE_CHANGE = 'overlay-active-change'
