@@ -64,9 +64,17 @@ export function uniqueModFilterPartial (
 }
 
 function fallbackToExact (mod: ItemModifier, filter: Writeable<StatFilter>) {
-  if (!mod.values) return
-
-  filter.roll = getRollAsSingleNumber(mod.values)
-  filter.defaultMin = filter.roll
-  filter.defaultMax = filter.roll
+  if (!mod.values) {
+    if (mod.condition) {
+      filter.min = mod.condition.min
+      filter.max = mod.condition.max
+      filter.defaultMin = filter.min
+      filter.defaultMax = filter.max
+      filter.roll = filter.min || filter.max
+    }
+  } else {
+    filter.roll = getRollAsSingleNumber(mod.values)
+    filter.defaultMin = filter.roll
+    filter.defaultMax = filter.roll
+  }
 }

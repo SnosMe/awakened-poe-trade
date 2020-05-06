@@ -82,24 +82,21 @@ function itemModFilterPartial (
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ) {
-  if (
-    !mod.values &&
-    mod.condition &&
-    (mod.condition.min === mod.condition.max) &&
-    (mod.condition.min == null || mod.condition.max == null)
-  ) {
-    filter.min = mod.condition.min
-    filter.max = mod.condition.max
-    filter.defaultMin = filter.min
-    filter.defaultMax = filter.max
-    filter.roll = filter.min || filter.max
-  } else if (mod.values) {
-    if (mod.type === 'enchant') {
-      filter.min = getRollAsSingleNumber(mod.values)
-      filter.max = getRollAsSingleNumber(mod.values)
+  if (!mod.values) {
+    if (mod.condition) {
+      filter.min = mod.condition.min
+      filter.max = mod.condition.max
       filter.defaultMin = filter.min
       filter.defaultMax = filter.max
-      filter.roll = filter.min
+      filter.roll = filter.min || filter.max
+    }
+  } else {
+    if (mod.type === 'enchant') {
+      filter.roll = getRollAsSingleNumber(mod.values)
+      filter.min = filter.roll
+      filter.max = filter.roll
+      filter.defaultMin = filter.roll
+      filter.defaultMax = filter.roll
     } else {
       Object.assign(filter, rollToFilter(getRollAsSingleNumber(mod.values)))
     }
