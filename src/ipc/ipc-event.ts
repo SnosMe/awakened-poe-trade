@@ -13,4 +13,10 @@ export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'
 
 export const UPDATE_AVAILABLE = 'update-available'
 
-export const OVERLAY_ACTIVE_CHANGE = 'overlay-active-change'
+export const FOCUS_CHANGE = 'OVERLAY::focus-change'
+
+export const PRICE_CHECK = 'OVERLAY::price-check'
+export const PRICE_CHECK_STATE = 'OVERLAY::price-check-state'
+export const PRICE_CHECK_CANCELED = 'OVERLAY::price-check-canceled'
+
+export const OVERLAY_READY = 'OVERLAY::ready'

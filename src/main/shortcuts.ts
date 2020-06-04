@@ -2,14 +2,14 @@ import { screen, Point, clipboard, globalShortcut, Notification } from 'electron
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { pollClipboard } from './PollClipboard'
-import { win } from './window'
-import { showWindow, lockWindow, poeUserInterfaceWidth, getPoeUiPosition, mousePosFromEvent } from './positioning'
+import { showWindow, lockWindow, getPoeUiPosition, mousePosFromEvent } from './positioning'
 import { KeyToElectron } from '@/ipc/KeyToCode'
+import { PRICE_CHECK } from '@/ipc/ipc-event'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
 import { logger } from './logger'
-import { toggleOverlayState } from './overlay-window'
+import { toggleOverlayState, overlayWindow } from './overlay-window'
 
 export let isPollingClipboard = false
 export let checkPressPosition: Point | undefined
@@ -23,8 +23,8 @@ function priceCheck (lockedMode: boolean) {
     isPollingClipboard = true
     pollClipboard(32, 500)
       .then(async (clipboard) => {
-        win.webContents.send('price-check', { clipboard, position: getPoeUiPosition(checkPressPosition!) })
-        await showWindow(lockedMode)
+        overlayWindow!.webContents.send(PRICE_CHECK, { clipboard, position: getPoeUiPosition(checkPressPosition!) })
+        showWindow()
         if (lockedMode) {
           lockWindow(true)
         }
@@ -148,7 +148,7 @@ export function setupShortcuts () {
   uIOhook.on('wheel', async (e) => {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
-    const stashCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
+    const stashCheckX = PoeWindow.bounds.x + PoeWindow.uiSidebarWidth
     const mouseX = mousePosFromEvent(e).x
     if (mouseX > stashCheckX) {
       if (e.rotation > 0) {

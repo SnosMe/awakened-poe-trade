@@ -12,7 +12,7 @@ class MainProcessBinding extends EventTarget {
     super()
 
     if (electron) {
-      electron.ipcRenderer.on('price-check', (e, data) => {
+      electron.ipcRenderer.on(ipcEvent.PRICE_CHECK, (e, data) => {
         this.selfEmitPriceCheck(data)
       })
 
@@ -28,8 +28,12 @@ class MainProcessBinding extends EventTarget {
         }))
       })
 
-      electron.ipcRenderer.on(ipcEvent.OVERLAY_ACTIVE_CHANGE, (e, updateInfo) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.OVERLAY_ACTIVE_CHANGE))
+      electron.ipcRenderer.on(ipcEvent.FOCUS_CHANGE, (e, data) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.FOCUS_CHANGE, { detail: data }))
+      })
+
+      electron.ipcRenderer.on(ipcEvent.PRICE_CHECK_CANCELED, () => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK_CANCELED))
       })
 
       electron.ipcRenderer.on(ipcEvent.UPDATE_AVAILABLE, (e, updateInfo) => {
@@ -44,6 +48,12 @@ class MainProcessBinding extends EventTarget {
     this.dispatchEvent(new CustomEvent('price-check', {
       detail: data
     }))
+  }
+
+  readyReceiveEvents () {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.OVERLAY_READY)
+    }
   }
 
   priceCheckHide () {
