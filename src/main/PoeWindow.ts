@@ -1,8 +1,8 @@
-import { Rectangle } from 'electron'
-import { windowManager } from './window-manager'
+import { Rectangle, BrowserWindow } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { config } from './config'
+import { overlayWindow as OW } from 'overlay-window'
 
 interface PoeWindowClass {
   on(event: 'active-change', listener: (isActive: boolean) => void): this
@@ -10,7 +10,6 @@ interface PoeWindowClass {
 class PoeWindowClass extends EventEmitter {
   private _isActive: boolean = false
   bounds: Rectangle | undefined
-  pid: number | undefined
 
   get isActive () {
     return this._isActive
@@ -28,29 +27,29 @@ class PoeWindowClass extends EventEmitter {
     }
   }
 
-  startPolling () {
-    setInterval(async () => {
-      let isActive = false
-
-      try {
-        const title = await windowManager.getActiveWindowTitle()
-        isActive = (title === config.get('windowTitle'))
-      } catch (e) {}
-
-      if (isActive) {
-        try {
-          this.bounds = (await windowManager.getActiveWindowContentBounds())!
-          this.pid = (await windowManager.getActiveWindowId())!
-        } catch (e) {
-          isActive = false
-          this.bounds = undefined
-          this.pid = undefined
-        }
-      }
-
-      this.isActive = isActive
-    }, 500)
+  get uiSidebarWidth () {
+    // sidebar is 370px at 800x600
+    const ratio = 370 / 600
+    return Math.round(this.bounds!.height * ratio)
   }
+
+  attach (window: BrowserWindow) {
+    OW.on('focus', () => { this.isActive = true })
+    OW.on('blur', () => { this.isActive = false })
+
+    window.on('resize', () => {
+      this.bounds = window.getContentBounds()
+    })
+
+    window.on('move', () => {
+      this.bounds = window.getContentBounds()
+    })
+
+    OW.attachTo(window.getNativeWindowHandle(), config.get('windowTitle'))
+  }
+
+  onAttach (cb: () => void) { OW.on('attach', cb) }
+  onDetach (cb: () => void) { OW.on('detach', cb) }
 }
 
 export const PoeWindow = new PoeWindowClass()
