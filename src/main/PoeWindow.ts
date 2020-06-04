@@ -2,7 +2,7 @@ import { Rectangle, BrowserWindow, Point } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { config } from './config'
-import { overlayWindow as OW } from 'overlay-window'
+import { overlayWindow as OW } from 'electron-overlay-window'
 
 interface PoeWindowClass {
   on(event: 'active-change', listener: (isActive: boolean) => void): this

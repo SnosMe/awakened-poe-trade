@@ -37,7 +37,7 @@
     "vue-slider-component": "^3.1.1",
     "vue-trend-chart": "^0.15.1",
     "vuedraggable": "^2.23.2",
-    "overlay-window": "^1.0.0",
+    "electron-overlay-window": "^1.0.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {

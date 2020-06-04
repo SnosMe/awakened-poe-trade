@@ -5,7 +5,7 @@ import { logger } from './logger'
 import { OVERLAY_READY, FOCUS_CHANGE } from '@/ipc/ipc-event'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { checkForUpdates } from './updates'
-import { overlayWindow as OW } from 'overlay-window'
+import { overlayWindow as OW } from 'electron-overlay-window'
 
 export let overlayWindow: BrowserWindow | undefined
 export let isInteractable = false
