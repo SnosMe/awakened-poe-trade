@@ -1,4 +1,4 @@
-import { Rectangle, BrowserWindow } from 'electron'
+import { Rectangle, BrowserWindow, Point } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { config } from './config'
@@ -31,6 +31,14 @@ class PoeWindowClass extends EventEmitter {
     // sidebar is 370px at 800x600
     const ratio = 370 / 600
     return Math.round(this.bounds!.height * ratio)
+  }
+
+  getPoeUiPosition (mousePos: Point) {
+    if (mousePos.x > (this.bounds!.x + this.bounds!.width / 2)) {
+      return 'inventory'
+    } else {
+      return 'stash' // or chat/vendor/center of screen
+    }
   }
 
   attach (window: BrowserWindow) {

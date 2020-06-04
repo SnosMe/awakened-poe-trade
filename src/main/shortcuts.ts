@@ -2,7 +2,7 @@ import { screen, Point, clipboard, globalShortcut, Notification } from 'electron
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { pollClipboard } from './PollClipboard'
-import { showWindow, lockWindow, getPoeUiPosition, mousePosFromEvent } from './positioning'
+import { showWindow, lockWindow, mousePosFromEvent } from './positioning'
 import { KeyToElectron } from '@/ipc/KeyToCode'
 import { PRICE_CHECK } from '@/ipc/ipc-event'
 import { config } from './config'
@@ -23,7 +23,7 @@ function priceCheck (lockedMode: boolean) {
     isPollingClipboard = true
     pollClipboard(32, 500)
       .then(async (clipboard) => {
-        overlayWindow!.webContents.send(PRICE_CHECK, { clipboard, position: getPoeUiPosition(checkPressPosition!) })
+        overlayWindow!.webContents.send(PRICE_CHECK, { clipboard, position: PoeWindow.getPoeUiPosition(checkPressPosition!) })
         showWindow()
         if (lockedMode) {
           lockWindow(true)
@@ -102,11 +102,15 @@ export function setupShortcuts () {
   }
   PoeWindow.on('active-change', (isActive) => {
     if (config.get('useOsGlobalShortcut')) {
+      process.nextTick(() => {
+        if (isActive === PoeWindow.isActive) {
       if (isActive) {
         registerGlobal()
       } else {
         unregisterGlobal()
       }
+    }
+  })
     }
   })
 

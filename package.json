@@ -23,12 +23,10 @@
   "main": "background.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
-    "async": "^3.1.0",
     "dot-prop": "^5.2.0",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "luxon": "^1.21.3",
-    "node-window-manager": "^2.0.1",
     "robotjs": "^0.6.0",
     "tailwindcss": "^1.1.4",
     "throttle-debounce": "^2.1.0",
@@ -38,13 +36,13 @@
     "vue-router": "^3.1.5",
     "vue-slider-component": "^3.1.1",
     "vue-trend-chart": "^0.15.1",
-    "winston": "^3.2.1",
-    "x11": "git+https://git@github.com/sidorares/node-x11.git"
+    "vuedraggable": "^2.23.2",
+    "overlay-window": "^1.0.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@types/async": "^3.0.3",
     "@types/node": "^12.0.0",
-    "@types/x11": "./src/main/window-manager/x11",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "@vue/cli-plugin-eslint": "~4.2.0",

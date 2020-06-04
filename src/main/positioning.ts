@@ -1,18 +1,19 @@
-import { BrowserWindow, ipcMain, screen, Rectangle, BrowserView, Point, app, shell } from 'electron'
+import { ipcMain, screen, Rectangle, BrowserView, Point, app, shell } from 'electron'
 import { uIOhook } from 'uiohook-napi'
-import { win, WIDTH } from './window'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK, OPEN_LINK_EXTERNAL } from '@/ipc/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK, OPEN_LINK_EXTERNAL, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { config } from './config'
 import { logger } from './logger'
+import { overlayWindow, isInteractable, assertOverlayActive, assertPoEActive } from './overlay-window'
 
+const WIDTH = 460
 const CLOSE_THRESHOLD_PX = 40
 
-let isWindowShown = false
-let isWindowLocked = false
+let isPriceCheckShown = false
 let isClickedAfterLock = false
-let priceCheckActualBounds : Rectangle | undefined
+
+let activeAreaRect: Rectangle | undefined
 let isMouseInside = false
 
 let browserViewExternal: BrowserView | undefined
@@ -23,50 +24,28 @@ app.on('ready', () => {
   DISPLAY_SCALED = displays.some(display => display.scaleFactor !== 1)
 })
 
-export function showWindow (willLocked?: boolean) {
-  positionWindow(win)
-  if (isWindowShown && isWindowLocked) {
-    logger.debug('Hide the window (was left in background)', { source: 'price-check', fn: 'showWindow' })
-    hideWindow(true, willLocked)
+export function showWindow () {
+  const poeBounds = PoeWindow.bounds!
+  activeAreaRect = {
+    x: getOffsetX(checkPressPosition!, poeBounds),
+    y: poeBounds.y,
+    width: WIDTH,
+    height: poeBounds.height
   }
 
-  isWindowShown = true
-  win.showInactive()
-  win.moveTop()
-  // alternative
-  // if (!willLocked) {
-  //   win.setAlwaysOnTop(true, 'screen-saver')
-  // }
+  isPriceCheckShown = true
+  isClickedAfterLock = false
+  isMouseInside = false
 }
 
-export function hideWindow (willShow?: boolean, willLocked?: boolean) {
-  logger.verbose('Hide window', { source: 'price-check', fn: 'hideWindow', wasLocked: isWindowLocked })
-
-  isWindowShown = false
+function hideWindow () {
+  isPriceCheckShown = false
   isMouseInside = false
-  if (isWindowLocked && config.get('altTabToGame') && !willLocked) {
-    if (process.platform === 'win32') {
-      if (willShow) {
-        win.hide() // prevent bug: if user decides to move mouse into window then taskbar will be shown
-      } else {
-        win.blur() // return focus to PoE
-      }
-    }
-    win.setSkipTaskbar(true)
-    win.setAlwaysOnTop(true, 'screen-saver')
-  }
-  if (!willShow) {
-    win.hide()
-    priceCheckActualBounds = undefined
-  }
-  win.setIgnoreMouseEvents(true)
+  activeAreaRect = undefined
 
-  if (isWindowLocked) {
-    isWindowLocked = false
-    PoeWindow.isActive = true
-
+  if (isInteractable) {
     if (browserViewExternal) {
-      win.removeBrowserView(browserViewExternal)
+      overlayWindow!.removeBrowserView(browserViewExternal)
       // uncomment to trade performance for less memory usage (1 process & 13 MB)
       // browserViewExternal.destroy()
       // browserViewExternal = undefined
@@ -77,45 +56,40 @@ export function hideWindow (willShow?: boolean, willLocked?: boolean) {
 
 export function lockWindow (syntheticClick = false) {
   logger.verbose('Disable auto-hide and focus window', { source: 'price-check', fn: 'lockWindow', syntheticClick })
-  isWindowLocked = true
-  PoeWindow.isActive = false
   isClickedAfterLock = syntheticClick
-  win.focus()
-  if (config.get('altTabToGame')) {
-    win.setSkipTaskbar(false)
-    win.setAlwaysOnTop(false)
-  }
+  assertOverlayActive()
 }
 
 export function setupShowHide () {
-  ipcMain.on(PRICE_CHECK_HIDE, () => { hideWindow() })
+  ipcMain.on(PRICE_CHECK_HIDE, () => {
+    logger.debug('Closing', { source: 'price-check', reason: 'Close button or hotkey' })
+    isPriceCheckShown = false
+    assertPoEActive()
+  })
+
+  PoeWindow.on('active-change', (isActive) => {
+    if (isActive && isInteractable) {
+      logger.debug('Closing', { source: 'price-check', reason: 'PoE is focused' })
+      isPriceCheckShown = false
+    }
+  })
 
   ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string, modifier?: string) => {
     if (name === 'click') {
-      if (!isWindowShown) return // close button `click` event arrives after hide
-
-      if (!isWindowLocked) {
-        logger.debug('Clicked inside window fix', { source: 'price-check' })
-        lockWindow(true)
-        isMouseInside = true
-      } else {
-        isClickedAfterLock = true
-        isMouseInside = true
-        logger.debug('Clicked inside window after lock', { source: 'price-check' })
-      }
+      isClickedAfterLock = true
+      logger.debug('Clicked inside window after lock', { source: 'price-check' })
     } else if (name === 'leave') {
       isMouseInside = false
-      win.setIgnoreMouseEvents(true)
 
       if (!isClickedAfterLock) {
-        logger.debug('Mouse has left the window without a single click', { source: 'price-check' })
-        hideWindow()
+        logger.debug('Closing', { source: 'price-check', reason: 'Mouse has left the window without a single click' })
+        isPriceCheckShown = false
+        assertPoEActive()
       }
     } else if (name === 'enter') {
       isMouseInside = true
-      win.setIgnoreMouseEvents(false)
 
-      if (isWindowLocked) return
+      if (isInteractable) return
 
       if (modifier === config.get('priceCheckKeyHold')) {
         lockWindow()
@@ -130,8 +104,7 @@ export function setupShowHide () {
       browserViewExternal = new BrowserView()
     }
 
-    win.setBrowserView(browserViewExternal)
-    win.setBounds(PoeWindow.bounds!)
+    overlayWindow!.setBrowserView(browserViewExternal)
     browserViewExternal.setBounds({
       x: 0,
       y: 0,
@@ -147,23 +120,26 @@ export function setupShowHide () {
   })
 
   uIOhook.on('mousemove', (e) => {
-    const modifier = e.ctrlKey ? 'Ctrl' : e.altKey ? 'Alt' : undefined
-    if (!isPollingClipboard && checkPressPosition && isWindowShown && !isWindowLocked && modifier !== config.get('priceCheckKeyHold')) {
-      const mousePos = mousePosFromEvent(e)
-      const distance = Math.hypot(mousePos.x - checkPressPosition.x, mousePos.y - checkPressPosition.y)
+    if (!isPriceCheckShown) return
 
-      logger.silly('Auto-hide mouse move', { source: 'price-check', distance, threshold: CLOSE_THRESHOLD_PX })
+    const modifier = e.ctrlKey ? 'Ctrl' : e.altKey ? 'Alt' : undefined
+    if (!isPollingClipboard && !isInteractable && modifier !== config.get('priceCheckKeyHold')) {
+      const mousePos = mousePosFromEvent(e)
+      const distance = Math.hypot(mousePos.x - checkPressPosition!.x, mousePos.y - checkPressPosition!.y)
+
       if (distance > CLOSE_THRESHOLD_PX) {
-        hideWindow()
+        logger.debug('Closing', { source: 'price-check', reason: 'Auto-hide on mouse move', distance, threshold: CLOSE_THRESHOLD_PX })
+        overlayWindow!.webContents.send(PRICE_CHECK_CANCELED)
+        isPriceCheckShown = false
       }
-    } else if (priceCheckActualBounds && !isMouseInside) {
+    } else if (!isMouseInside) {
       const mousePos = mousePosFromEvent(e)
 
       if (
-        mousePos.x > priceCheckActualBounds.x &&
-        mousePos.x < priceCheckActualBounds.x + priceCheckActualBounds.width &&
-        mousePos.y > priceCheckActualBounds.y &&
-        mousePos.y < priceCheckActualBounds.y + priceCheckActualBounds.height
+        mousePos.x > activeAreaRect!.x &&
+        mousePos.x < activeAreaRect!.x + activeAreaRect!.width &&
+        mousePos.y > activeAreaRect!.y &&
+        mousePos.y < activeAreaRect!.y + activeAreaRect!.height
       ) {
         ipcMain.emit(PRICE_CHECK_MOUSE, undefined, 'enter', modifier)
       }
@@ -171,44 +147,14 @@ export function setupShowHide () {
   })
 }
 
-function positionWindow (tradeWindow: BrowserWindow) {
-  const poeBounds = PoeWindow.bounds!
-
-  priceCheckActualBounds = {
-    x: getOffsetX(poeBounds),
-    y: poeBounds.y,
-    width: WIDTH,
-    height: poeBounds.height
-  }
-
-  logger.debug('Reposition window', { source: 'price-check', poeBounds })
-  tradeWindow.setBounds(poeBounds, false)
-}
-
-function getOffsetX (poePos: Rectangle): number {
-  const mousePos = checkPressPosition!
-
+function getOffsetX (mousePos: Point, poePos: Rectangle): number {
   if (mousePos.x > (poePos.x + poePos.width / 2)) {
     // inventory
-    return (poePos.x + poePos.width) - poeUserInterfaceWidth(poePos.height) - WIDTH
+    return (poePos.x + poePos.width) - PoeWindow.uiSidebarWidth - WIDTH
   } else {
     // stash or chat
-    return poePos.x + poeUserInterfaceWidth(poePos.height)
+    return poePos.x + PoeWindow.uiSidebarWidth
   }
-}
-
-export function getPoeUiPosition (mousePos: Point) {
-  if (mousePos.x > (PoeWindow.bounds!.x + PoeWindow.bounds!.width / 2)) {
-    return 'inventory'
-  } else {
-    return 'stash' // or chat/vendor/center of screen
-  }
-}
-
-export function poeUserInterfaceWidth (windowHeight: number) {
-  // sidebar is 370px at 800x600
-  const ratio = 370 / 600
-  return Math.round(windowHeight * ratio)
 }
 
 export function mousePosFromEvent (e: { x: number, y: number }): Point {

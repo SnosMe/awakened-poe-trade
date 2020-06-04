@@ -5,7 +5,12 @@ let settingsWindow: BrowserWindow | undefined
 
 export function createWindow () {
   if (settingsWindow) {
-    settingsWindow.focus()
+    try {
+      settingsWindow.focus()
+    } catch {
+      settingsWindow = undefined
+      createWindow()
+    }
     return
   }
 
@@ -23,7 +28,6 @@ export function createWindow () {
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     settingsWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#settings/hotkeys')
-    // settingsWindow.webContents.openDevTools({ mode: 'detach' })
   } else {
     settingsWindow.loadURL('app://./index.html#settings/hotkeys')
   }

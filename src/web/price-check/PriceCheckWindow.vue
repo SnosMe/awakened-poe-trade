@@ -1,5 +1,7 @@
 <template>
-  <div class="flex-grow flex h-full" :class="{
+  <div
+    style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
+    class="flex-grow flex h-full" :class="{
     'flex-row': clickPosition === 'stash',
     'flex-row-reverse': clickPosition === 'inventory',
   }">
@@ -13,7 +15,7 @@
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;"
       @mouseleave="handleMouseleave"
       @click="handleClick">
-      <app-titlebar @close="hideWindow" :title="title">
+      <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
           <ui-popper v-if="exaltedCost" trigger="clickToToggle" boundaries-selector="#price-window">
             <template slot="reference">
@@ -39,8 +41,7 @@
             class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
         </div>
       </app-titlebar>
-      <div class="flex-grow layout-column min-h-0 bg-gray-800"
-        :class="{ 'opacity-0': hideUI }">
+      <div class="flex-grow layout-column min-h-0 bg-gray-800">
         <div id="home" class="flex-grow layout-column">
           <div class="flex-1"></div>
           <div class="flex-grow layout-column">
@@ -56,8 +57,7 @@
     <div v-if="!browserMode" class="layout-column flex-1 min-w-0">
       <div class="flex" :class="{
         'flex-row': clickPosition === 'stash',
-        'flex-row-reverse': clickPosition === 'inventory',
-        'opacity-0': hideUI
+        'flex-row-reverse': clickPosition === 'inventory'
       }">
         <related-items :item="item" />
         <rate-limiter-state />
@@ -71,6 +71,7 @@ import BrowserMode from './BrowserMode'
 import CheckedItem from './CheckedItem'
 import AppBootstrap from './AppBootstrap'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import { PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { Prices, displayRounding } from './Prices'
 import { Leagues } from './Leagues'
 import { parseClipboard } from '@/parser'
@@ -88,39 +89,28 @@ export default {
     RateLimiterState
   },
   filters: { displayRounding },
+  inject: ['wm'],
+  props: {
+    config: {
+      type: Object,
+      required: true
+    }
+  },
   created () {
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        MainProcess.priceCheckHide()
-      }
-    })
     MainProcess.addEventListener('price-check', ({ detail: { position, clipboard } }) => {
       this.clickPosition = position
       this.isBrowserShown = false
-      this.hideUI = false
+      this.wm.show(this.config.wmId)
       this.item = parseClipboard(clipboard)
+    })
+    MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
+      this.wm.hide(this.config.wmId)
     })
     MainProcess.addEventListener('open-link', () => {
       this.clickPosition = 'inventory'
       this.isBrowserShown = true
     })
-    window.addEventListener('resize', () => {
-      this.updatePoeUiWidth()
-    })
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Alt') {
-        this.hideUI = true
-      }
-    })
-    window.addEventListener('keyup', (e) => {
-      if (e.key === 'Alt') {
-        this.hideUI = false
-      }
-    })
-    window.addEventListener('blur', (e) => {
-      // Alt+Tab
-      this.hideUI = false
-    })
+    window.addEventListener('resize', this.updatePoeUiWidth)
     this.updatePoeUiWidth()
   },
   data () {
@@ -128,7 +118,6 @@ export default {
       poeUiWidth: '0px',
       clickPosition: 'stash',
       isBrowserShown: false,
-      hideUI: false,
       item: null
     }
   },
@@ -151,7 +140,7 @@ export default {
     }
   },
   methods: {
-    hideWindow () {
+    closePriceCheck () {
       MainProcess.priceCheckHide()
     },
     updatePoeUiWidth () {

@@ -1,23 +1,30 @@
 import path from 'path'
-import { BrowserWindow } from 'electron'
+import { BrowserWindow, ipcMain } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
-import { OVERLAY_ACTIVE_CHANGE } from '@/ipc/ipc-event'
+import { OVERLAY_READY, FOCUS_CHANGE } from '@/ipc/ipc-event'
+import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
+import { checkForUpdates } from './updates'
+import { overlayWindow as OW } from 'overlay-window'
 
-let overlayWindow: BrowserWindow | undefined
-let isInteractable = false
+export let overlayWindow: BrowserWindow | undefined
+export let isInteractable = false
 
-export function createOverlayWindow () {
+let _resolveOverlayReady: Function
+export const overlayReady = new Promise<void>((resolve) => {
+  _resolveOverlayReady = resolve
+})
+
+export async function createOverlayWindow () {
   overlayWindow = new BrowserWindow({
     icon: path.join(__static, 'icon.png'),
-    fullscreenable: false,
-    alwaysOnTop: true,
+    // fullscreenable: false,
     skipTaskbar: true,
     frame: false,
     show: false,
-    // focusable: false,
     transparent: true,
-    fullscreen: true, // linux does not support changing at runtime, add config?
+    // backgroundColor: '#00000008',
+    // fullscreen: true, // linux does not support changing at runtime, add config?
     resizable: false,
     webPreferences: {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
@@ -27,33 +34,46 @@ export function createOverlayWindow () {
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#overlay')
-    // overlayWindow.webContents.openDevTools({ mode: 'detach' })
+    overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
   } else {
+    createProtocol('app')
     overlayWindow.loadURL('app://./index.html#overlay')
+    checkForUpdates()
   }
 
   overlayWindow.setIgnoreMouseEvents(true)
-  overlayWindow.once('ready-to-show', () => {
-    // place here because of linux
-    overlayWindow!.setAlwaysOnTop(true, 'pop-up-menu')
+
+  ipcMain.once(OVERLAY_READY, () => {
+    _resolveOverlayReady()
   })
 
-  PoeWindow.once('active-change', () => {
-    overlayWindow!.setBounds(PoeWindow.bounds!)
-    overlayWindow!.show()
+  PoeWindow.onAttach(() => {
+    overlayWindow!.showInactive()
+  })
 
+  PoeWindow.onDetach(() => {
+    overlayWindow!.hide()
   })
 
   PoeWindow.on('active-change', (isActive) => {
-    if (isActive) {
-      overlayWindow!.showInactive()
-      overlayWindow!.moveTop()
-    } else {
-      if (!overlayWindow!.isFocused()) {
-        overlayWindow!.hide()
-      }
+    if (!overlayWindow) {
+      logger.error('Window is not ready')
+      return
     }
+
+    if (isActive && isInteractable) {
+      isInteractable = false
+      overlayWindow.setIgnoreMouseEvents(true)
+    }
+    overlayWindow.webContents.send(FOCUS_CHANGE, { game: isActive, overlay: isInteractable })
   })
+
+  const electronReadyToShow = new Promise<void>((resolve) => {
+    overlayWindow!.once('ready-to-show', resolve)
+  })
+  await electronReadyToShow
+  await overlayReady
+  PoeWindow.attach(overlayWindow)
 }
 
 export function toggleOverlayState () {
@@ -61,19 +81,40 @@ export function toggleOverlayState () {
     logger.warn('Window is not ready', { source: 'overlay' })
     return
   }
-
   if (isInteractable) {
-    overlayWindow.setIgnoreMouseEvents(true)
-    isInteractable = false
+    focusPoE()
   } else {
-    overlayWindow.setIgnoreMouseEvents(false)
-    isInteractable = true
-    setTimeout(() => {
-      logger.info('Reset', { source: 'overlay' })
-      toggleOverlayState()
-      overlayWindow!.blur()
-    }, 2000)
+    focusOverlay()
   }
+  overlayWindow.webContents.send(FOCUS_CHANGE, { game: PoeWindow.isActive, overlay: isInteractable })
+}
 
-  overlayWindow.webContents.send(OVERLAY_ACTIVE_CHANGE)
+export function assertOverlayActive () {
+  if (!overlayWindow || isInteractable) return
+
+  focusOverlay()
+}
+
+export function assertPoEActive () {
+  if (!overlayWindow || !isInteractable) return
+
+  focusPoE()
+}
+
+function focusOverlay () {
+  if (!overlayWindow) return
+
+  overlayWindow.setIgnoreMouseEvents(false)
+  isInteractable = true
+  OW.activateOverlay()
+  PoeWindow.isActive = false
+}
+
+function focusPoE () {
+  if (!overlayWindow) return
+
+  overlayWindow.setIgnoreMouseEvents(true)
+  isInteractable = false
+  overlayWindow.blur()
+  PoeWindow.isActive = true
 }
