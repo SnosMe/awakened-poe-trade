@@ -45,19 +45,15 @@ class PoeWindowClass extends EventEmitter {
     OW.on('focus', () => { this.isActive = true })
     OW.on('blur', () => { this.isActive = false })
 
-    window.on('resize', () => {
-      this.bounds = window.getContentBounds()
+    OW.on('moveresize', (e) => {
+      this.bounds = e
+    })
+    OW.on('attach', (e) => {
+      this.bounds = e
     })
 
-    window.on('move', () => {
-      this.bounds = window.getContentBounds()
-    })
-
-    OW.attachTo(window.getNativeWindowHandle(), config.get('windowTitle'))
+    OW.attachTo(window, config.get('windowTitle'))
   }
-
-  onAttach (cb: () => void) { OW.on('attach', cb) }
-  onDetach (cb: () => void) { OW.on('detach', cb) }
 }
 
 export const PoeWindow = new PoeWindowClass()

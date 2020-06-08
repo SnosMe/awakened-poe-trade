@@ -18,14 +18,10 @@ export const overlayReady = new Promise<void>((resolve) => {
 export async function createOverlayWindow () {
   overlayWindow = new BrowserWindow({
     icon: path.join(__static, 'icon.png'),
-    // fullscreenable: false,
-    skipTaskbar: true,
-    frame: false,
-    show: false,
-    transparent: true,
+    ...OW.WINDOW_OPTS,
+    width: 800,
+    height: 600,
     // backgroundColor: '#00000008',
-    // fullscreen: true, // linux does not support changing at runtime, add config?
-    resizable: false,
     webPreferences: {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
       webSecurity: false
@@ -45,14 +41,6 @@ export async function createOverlayWindow () {
 
   ipcMain.once(OVERLAY_READY, () => {
     _resolveOverlayReady()
-  })
-
-  PoeWindow.onAttach(() => {
-    overlayWindow!.showInactive()
-  })
-
-  PoeWindow.onDetach(() => {
-    overlayWindow!.hide()
   })
 
   PoeWindow.on('active-change', (isActive) => {
@@ -115,6 +103,6 @@ function focusPoE () {
 
   overlayWindow.setIgnoreMouseEvents(true)
   isInteractable = false
-  overlayWindow.blur()
+  OW.focusTarget()
   PoeWindow.isActive = true
 }
