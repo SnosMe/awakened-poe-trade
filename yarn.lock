@@ -3042,6 +3042,14 @@ electron-icon-builder@^1.0.2:
     icon-gen "^2.0.0"
     jimp "^0.9.3"
 
+electron-overlay-window@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-1.0.0.tgz#5b8bb0681eb8a8676bc9262fde08af77df4a5c9c"
+  integrity sha512-0VUjN7IF4Nxg9TvjaO7uY52ivTmtlWmbGAH6TD6U7KvK6OrlKicdEzHoO8iI38hN3tQIPwrbEpr54Urb1BXyAg==
+  dependencies:
+    node-gyp-build "4.x.x"
+    throttle-debounce "2.x.x"
+
 electron-publish@22.3.6:
   version "22.3.6"
   resolved "https://registry.yarnpkg.com/electron-publish/-/electron-publish-22.3.6.tgz#97500b832d5b281785882100d7c01dbf55dabd03"
@@ -8875,6 +8883,11 @@ thread-loader@^2.1.3:
     loader-runner "^2.3.1"
     loader-utils "^1.1.0"
     neo-async "^2.6.0"
+
+throttle-debounce@2.x.x:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-2.2.1.tgz#fbd933ae6793448816f7d5b3cae259d464c98137"
+  integrity sha512-i9hAVld1f+woAiyNGqWelpDD5W1tpMroL3NofTz9xzwq6acWBlO2dC8k5EFSZepU6oOINtV5Q3aSPoRg7o4+fA==
 
 throttle-debounce@^2.1.0:
   version "2.1.0"

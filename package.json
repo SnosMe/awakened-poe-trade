@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "1.3.0",
+  "version": "2.0.0-beta.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,6 +24,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "dot-prop": "^5.2.0",
+    "electron-overlay-window": "^1.0.0",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "luxon": "^1.21.3",
@@ -37,7 +38,6 @@
     "vue-slider-component": "^3.1.1",
     "vue-trend-chart": "^0.15.1",
     "vuedraggable": "^2.23.2",
-    "electron-overlay-window": "^1.0.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
