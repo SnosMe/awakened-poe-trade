@@ -1,5 +1,5 @@
 import path from 'path'
-import { BrowserWindow, ipcMain } from 'electron'
+import { BrowserWindow, ipcMain, dialog } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import { OVERLAY_READY, FOCUS_CHANGE } from '@/ipc/ipc-event'
@@ -54,6 +54,18 @@ export async function createOverlayWindow () {
       overlayWindow.setIgnoreMouseEvents(true)
     }
     overlayWindow.webContents.send(FOCUS_CHANGE, { game: isActive, overlay: isInteractable })
+  })
+
+  PoeWindow.onceAttached((hasAccess) => {
+    if (hasAccess === false) {
+      dialog.showErrorBox(
+        'PoE window - No access',
+        // ----------------------
+        'Path of Exile is running with administrator rights.\n' +
+        '\n' +
+        'You need to restart Awakened PoE Trade with administrator rights.'
+      )
+    }
   })
 
   const electronReadyToShow = new Promise<void>((resolve) => {
