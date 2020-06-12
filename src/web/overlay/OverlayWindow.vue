@@ -89,7 +89,16 @@ export default {
           wmWants: 'hide',
           wmFlags: ['hide-on-blur', 'skip-menu']
         }
-      ]
+      ],
+      devicePixelRatio: null
+    }
+  },
+  watch: {
+    devicePixelRatio: {
+      immediate: false,
+      handler (dpr) {
+        MainProcess.dprChanged(dpr)
+      }
     }
   },
   created () {
@@ -110,6 +119,10 @@ export default {
         }
       }
     })
+    window.addEventListener('resize', () => {
+      this.devicePixelRatio = window.devicePixelRatio
+    })
+    this.devicePixelRatio = window.devicePixelRatio
   },
   mounted () {
     this.$nextTick(() => {

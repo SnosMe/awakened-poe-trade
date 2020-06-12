@@ -56,6 +56,12 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  dprChanged (dpr: number) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.DPR_CHANGE, dpr)
+    }
+  }
+
   priceCheckHide () {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_HIDE)

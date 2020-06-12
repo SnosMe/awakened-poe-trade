@@ -2,7 +2,7 @@ import { screen, Point, clipboard, globalShortcut, Notification } from 'electron
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { pollClipboard } from './PollClipboard'
-import { showWindow, lockWindow, mousePosFromEvent } from './positioning'
+import { showWindow, lockWindow } from './positioning'
 import { KeyToElectron } from '@/ipc/KeyToCode'
 import { PRICE_CHECK } from '@/ipc/ipc-event'
 import { config } from './config'
@@ -33,6 +33,9 @@ function priceCheck (lockedMode: boolean) {
       .finally(() => { isPollingClipboard = false })
   }
   checkPressPosition = screen.getCursorScreenPoint()
+  if (process.platform === 'win32') {
+    checkPressPosition = screen.dipToScreenPoint(checkPressPosition)
+  }
 
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {
@@ -153,7 +156,7 @@ export function setupShortcuts () {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
     const stashCheckX = PoeWindow.bounds.x + PoeWindow.uiSidebarWidth
-    const mouseX = mousePosFromEvent(e).x
+    const mouseX = e.x
     if (mouseX > stashCheckX) {
       if (e.rotation > 0) {
         robotjs.keyTap('ArrowRight')

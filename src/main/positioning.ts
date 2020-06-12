@@ -1,14 +1,15 @@
-import { ipcMain, screen, Rectangle, BrowserView, Point, app, shell } from 'electron'
+import { ipcMain, screen, Rectangle, BrowserView, Point, shell } from 'electron'
 import { uIOhook } from 'uiohook-napi'
 import { checkPressPosition, isPollingClipboard } from './shortcuts'
 import { PoeWindow } from './PoeWindow'
-import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK, OPEN_LINK_EXTERNAL, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
+import { PRICE_CHECK_HIDE, PRICE_CHECK_MOUSE, OPEN_LINK, OPEN_LINK_EXTERNAL, PRICE_CHECK_CANCELED, DPR_CHANGE } from '@/ipc/ipc-event'
 import { config } from './config'
 import { logger } from './logger'
 import { overlayWindow, isInteractable, assertOverlayActive, assertPoEActive } from './overlay-window'
 
-const WIDTH = 460
-const CLOSE_THRESHOLD_PX = 40
+const WIDTH_96DPI = 460
+const CLOSE_THRESHOLD_96DPI = 40
+let DPR = 1
 
 let isPriceCheckShown = false
 let isClickedAfterLock = false
@@ -18,18 +19,12 @@ let isMouseInside = false
 
 let browserViewExternal: BrowserView | undefined
 
-let DISPLAY_SCALED = false
-app.on('ready', () => {
-  const displays = screen.getAllDisplays()
-  DISPLAY_SCALED = displays.some(display => display.scaleFactor !== 1)
-})
-
 export function showWindow () {
   const poeBounds = PoeWindow.bounds!
   activeAreaRect = {
     x: getOffsetX(checkPressPosition!, poeBounds),
     y: poeBounds.y,
-    width: WIDTH,
+    width: Math.floor(WIDTH_96DPI * DPR),
     height: poeBounds.height
   }
 
@@ -74,6 +69,12 @@ export function setupShowHide () {
     }
   })
 
+  ipcMain.on(DPR_CHANGE, (_: any, devicePixelRatio: number) => {
+    if (process.platform === 'win32') {
+      DPR = devicePixelRatio
+    }
+  })
+
   ipcMain.on(PRICE_CHECK_MOUSE, (e, name: string, modifier?: string) => {
     if (name === 'click') {
       isClickedAfterLock = true
@@ -105,12 +106,16 @@ export function setupShowHide () {
     }
 
     overlayWindow!.setBrowserView(browserViewExternal)
-    browserViewExternal.setBounds({
+    let browserBounds = {
       x: 0,
       y: 0,
-      width: PoeWindow.bounds!.width - WIDTH,
+      width: PoeWindow.bounds!.width - Math.floor(WIDTH_96DPI * DPR),
       height: PoeWindow.bounds!.height
-    })
+    }
+    if (process.platform === 'win32') {
+      browserBounds = screen.screenToDipRect(overlayWindow!, browserBounds)
+    }
+    browserViewExternal.setBounds(browserBounds)
     browserViewExternal.webContents.loadURL(link)
   })
 
@@ -124,16 +129,16 @@ export function setupShowHide () {
 
     const modifier = e.ctrlKey ? 'Ctrl' : e.altKey ? 'Alt' : undefined
     if (!isPollingClipboard && !isInteractable && modifier !== config.get('priceCheckKeyHold')) {
-      const mousePos = mousePosFromEvent(e)
+      const mousePos = e
       const distance = Math.hypot(mousePos.x - checkPressPosition!.x, mousePos.y - checkPressPosition!.y)
 
-      if (distance > CLOSE_THRESHOLD_PX) {
-        logger.debug('Closing', { source: 'price-check', reason: 'Auto-hide on mouse move', distance, threshold: CLOSE_THRESHOLD_PX })
+      if (distance > (CLOSE_THRESHOLD_96DPI * DPR)) {
+        logger.debug('Closing', { source: 'price-check', reason: 'Auto-hide on mouse move', distance, threshold: CLOSE_THRESHOLD_96DPI })
         overlayWindow!.webContents.send(PRICE_CHECK_CANCELED)
         isPriceCheckShown = false
       }
     } else if (!isMouseInside) {
-      const mousePos = mousePosFromEvent(e)
+      const mousePos = e
 
       if (
         mousePos.x > activeAreaRect!.x &&
@@ -150,17 +155,9 @@ export function setupShowHide () {
 function getOffsetX (mousePos: Point, poePos: Rectangle): number {
   if (mousePos.x > (poePos.x + poePos.width / 2)) {
     // inventory
-    return (poePos.x + poePos.width) - PoeWindow.uiSidebarWidth - WIDTH
+    return (poePos.x + poePos.width) - PoeWindow.uiSidebarWidth - Math.floor(WIDTH_96DPI * DPR)
   } else {
     // stash or chat
     return poePos.x + PoeWindow.uiSidebarWidth
-  }
-}
-
-export function mousePosFromEvent (e: { x: number, y: number }): Point {
-  if (DISPLAY_SCALED) {
-    return screen.getCursorScreenPoint()
-  } else {
-    return e
   }
 }

@@ -15,6 +15,8 @@ export const UPDATE_AVAILABLE = 'update-available'
 
 export const FOCUS_CHANGE = 'OVERLAY::focus-change'
 
+export const DPR_CHANGE = 'OVERLAY->MAIN::devicePixelRatio-change'
+
 export const PRICE_CHECK = 'OVERLAY::price-check'
 export const PRICE_CHECK_STATE = 'OVERLAY::price-check-state'
 export const PRICE_CHECK_CANCELED = 'OVERLAY::price-check-canceled'
