@@ -24,7 +24,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "dot-prop": "^5.2.0",
-    "electron-overlay-window": "^1.0.1",
+    "electron-overlay-window": "^1.0.2",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "luxon": "^1.21.3",

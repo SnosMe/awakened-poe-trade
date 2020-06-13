@@ -3042,10 +3042,10 @@ electron-icon-builder@^1.0.2:
     icon-gen "^2.0.0"
     jimp "^0.9.3"
 
-electron-overlay-window@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-1.0.1.tgz#8e6713eebb542de97d98ac2da761b908af33f437"
-  integrity sha512-FNwghDvP8Mtkiu30CEYPVosYfANNCioZn5BITRNbNPNQC4u7vVtWm8dlxEnFllsSLOW0NxQQm9vBsbPxc+Na6w==
+electron-overlay-window@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-1.0.2.tgz#cba304f8d5f2cc72db904967c729e7dca639d553"
+  integrity sha512-RZi5xTYsKgWhJll0QuLgBhAXBQXg3ANR3ygoZJgflPv+mGLduxXJxyCSzH0K1WfTeHt4HOhS8N22HC1yYyO94A==
   dependencies:
     node-gyp-build "4.x.x"
     throttle-debounce "2.x.x"
