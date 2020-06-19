@@ -11,6 +11,7 @@ import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { logger } from './main/logger'
 import os from 'os'
 import { createOverlayWindow } from './main/overlay-window'
+import { setupAltVisibility } from './main/alt-visibility'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {
@@ -55,6 +56,7 @@ app.on('ready', async () => {
     async () => {
       await createOverlayWindow()
       setupShortcuts()
+      setupAltVisibility()
     },
     // fixes(linux): window is black instead of transparent
     process.platform === 'linux' ? 1000 : 0

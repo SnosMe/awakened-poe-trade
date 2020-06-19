@@ -17,8 +17,10 @@ export const FOCUS_CHANGE = 'OVERLAY::focus-change'
 
 export const DPR_CHANGE = 'OVERLAY->MAIN::devicePixelRatio-change'
 
-export const PRICE_CHECK = 'OVERLAY::price-check'
-export const PRICE_CHECK_STATE = 'OVERLAY::price-check-state'
-export const PRICE_CHECK_CANCELED = 'OVERLAY::price-check-canceled'
+
+export const VISIBILITY = 'MAIN->OVERLAY::visibility'
+export interface IpcVisibility {
+  isVisible: boolean
+}
 
 export const OVERLAY_READY = 'OVERLAY::ready'

@@ -41,6 +41,10 @@ class MainProcessBinding extends EventTarget {
           detail: updateInfo
         }))
       })
+
+      electron.ipcRenderer.on(ipcEvent.VISIBILITY, (e, detail) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.VISIBILITY, { detail }))
+      })
     }
   }
 

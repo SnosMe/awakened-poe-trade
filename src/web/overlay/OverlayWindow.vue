@@ -2,7 +2,6 @@
   <div id="overlay-window" class="overflow-hidden relative w-full h-full">
     <div v-if="active" style="background: rgba(256,256,256,0.15); top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
     <div style="border: 4px solid red; top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
-    <div :class="{ 'opacity-0 pointer-e-none TODO ALL CLASSES_FUCK': hideUI }">
       <template v-for="widget of widgets">
         <component :key="widget.wmId"
           v-show="isVisible(widget.wmId)"
@@ -14,7 +13,6 @@
         <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -23,7 +21,7 @@ import WidgetTimer from './WidgetTimer'
 import WidgetInventorySearch from './WidgetInventorySearch'
 import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
-import { FOCUS_CHANGE } from '@/ipc/ipc-event'
+import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 
 export default {
   components: {
@@ -119,6 +117,9 @@ export default {
         }
       }
     })
+    MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {
+      this.hideUI = !e.isVisible
+    })
     window.addEventListener('resize', () => {
       this.devicePixelRatio = window.devicePixelRatio
     })
@@ -135,10 +136,10 @@ export default {
 
       return this.widgets.map(w => ({
         wmId: w.wmId,
-        isVisible: showExclusive
-          ? w === showExclusive
-          : !this.active && w.wmFlags.includes('invisible-on-blur')
-            ? false
+        isVisible:
+          this.hideUI ? false
+            : showExclusive ? w === showExclusive
+              : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
             : w.wmWants === 'show'
       }))
     }
