@@ -2,17 +2,16 @@ import { screen, Point, clipboard, globalShortcut, Notification } from 'electron
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { pollClipboard } from './PollClipboard'
-import { showWindow, lockWindow } from './positioning'
+import { showWidget as showPriceCheck } from './price-check'
 import { KeyToElectron } from '@/ipc/KeyToCode'
-import { PRICE_CHECK } from '@/ipc/ipc-event'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
 import { logger } from './logger'
-import { toggleOverlayState, overlayWindow } from './overlay-window'
+import { toggleOverlayState } from './overlay-window'
 
 export let isPollingClipboard = false
-export let checkPressPosition: Point | undefined
+export let hotkeyPressPosition: Point | undefined
 
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
@@ -22,20 +21,16 @@ function priceCheck (lockedMode: boolean) {
   if (!isPollingClipboard) {
     isPollingClipboard = true
     pollClipboard(32, 500)
-      .then(async (clipboard) => {
-        overlayWindow!.webContents.send(PRICE_CHECK, { clipboard, position: PoeWindow.getPoeUiPosition(checkPressPosition!) })
-        showWindow()
-        if (lockedMode) {
-          lockWindow(true)
-        }
-      })
+      .then(clipboard =>
+        showPriceCheck({ clipboard, hotkeyPressPosition: hotkeyPressPosition!, lockedMode })
+      )
       .catch(() => { /* nothing bad */ })
       .finally(() => { isPollingClipboard = false })
   }
-  checkPressPosition = screen.getCursorScreenPoint()
-  if (process.platform === 'win32') {
-    checkPressPosition = screen.dipToScreenPoint(checkPressPosition)
-  }
+  hotkeyPressPosition = screen.getCursorScreenPoint()
+  // if (process.platform === 'win32') {
+  //   hotkeyPressPosition = screen.dipToScreenPoint(hotkeyPressPosition)
+  // }
 
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {

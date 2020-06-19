@@ -2,20 +2,25 @@ import path from 'path'
 import { BrowserWindow, ipcMain, dialog } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
-import { OVERLAY_READY, FOCUS_CHANGE } from '@/ipc/ipc-event'
+import * as ipc from '@/ipc/ipc-event'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
-import { checkForUpdates } from './updates'
 import { overlayWindow as OW } from 'electron-overlay-window'
 
 export let overlayWindow: BrowserWindow | undefined
 export let isInteractable = false
+export let DPR = 1
 
-let _resolveOverlayReady: Function
+let _resolveOverlayReady: () => void
 export const overlayReady = new Promise<void>((resolve) => {
   _resolveOverlayReady = resolve
 })
 
 export async function createOverlayWindow () {
+  ipcMain.once(ipc.OVERLAY_READY, _resolveOverlayReady)
+  ipcMain.on(ipc.DPR_CHANGE, (_: any, dpr: number) => handleDprChange(dpr))
+  PoeWindow.on('active-change', handlePoeWindowActiveChange)
+  PoeWindow.onceAttached(handleOverlayAttached)
+
   overlayWindow = new BrowserWindow({
     icon: path.join(__static, 'icon.png'),
     ...OW.WINDOW_OPTS,
@@ -28,49 +33,18 @@ export async function createOverlayWindow () {
     }
   })
 
+  overlayWindow.setIgnoreMouseEvents(true)
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#overlay')
     overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
   } else {
     createProtocol('app')
     overlayWindow.loadURL('app://./index.html#overlay')
-    checkForUpdates()
   }
 
-  overlayWindow.setIgnoreMouseEvents(true)
-
-  ipcMain.once(OVERLAY_READY, () => {
-    _resolveOverlayReady()
-  })
-
-  PoeWindow.on('active-change', (isActive) => {
-    if (!overlayWindow) {
-      logger.error('Window is not ready')
-      return
-    }
-
-    if (isActive && isInteractable) {
-      isInteractable = false
-      overlayWindow.setIgnoreMouseEvents(true)
-    }
-    overlayWindow.webContents.send(FOCUS_CHANGE, { game: isActive, overlay: isInteractable })
-  })
-
-  PoeWindow.onceAttached((hasAccess) => {
-    if (hasAccess === false) {
-      dialog.showErrorBox(
-        'PoE window - No access',
-        // ----------------------
-        'Path of Exile is running with administrator rights.\n' +
-        '\n' +
-        'You need to restart Awakened PoE Trade with administrator rights.'
-      )
-    }
-  })
-
-  const electronReadyToShow = new Promise<void>((resolve) => {
-    overlayWindow!.once('ready-to-show', resolve)
-  })
+  const electronReadyToShow = new Promise<void>(resolve =>
+    overlayWindow!.once('ready-to-show', resolve))
   await electronReadyToShow
   await overlayReady
   PoeWindow.attach(overlayWindow)
@@ -86,7 +60,15 @@ export function toggleOverlayState () {
   } else {
     focusOverlay()
   }
-  overlayWindow.webContents.send(FOCUS_CHANGE, { game: PoeWindow.isActive, overlay: isInteractable })
+  overlayWindow.webContents.send(ipc.FOCUS_CHANGE, { game: PoeWindow.isActive, overlay: isInteractable })
+}
+
+function handlePoeWindowActiveChange (isActive: boolean) {
+  if (isActive && isInteractable) {
+    isInteractable = false
+    overlayWindow!.setIgnoreMouseEvents(true)
+  }
+  overlayWindow!.webContents.send(ipc.FOCUS_CHANGE, { game: isActive, overlay: isInteractable })
 }
 
 export function assertOverlayActive () {
@@ -117,4 +99,22 @@ function focusPoE () {
   isInteractable = false
   OW.focusTarget()
   PoeWindow.isActive = true
+}
+
+function handleOverlayAttached (hasAccess?: boolean) {
+  if (hasAccess === false) {
+    dialog.showErrorBox(
+      'PoE window - No access',
+      // ----------------------
+      'Path of Exile is running with administrator rights.\n' +
+      '\n' +
+      'You need to restart Awakened PoE Trade with administrator rights.'
+    )
+  }
+}
+
+function handleDprChange (devicePixelRatio: number) {
+  if (process.platform === 'win32') {
+    DPR = devicePixelRatio
+  }
 }

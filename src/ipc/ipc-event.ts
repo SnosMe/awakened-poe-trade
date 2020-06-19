@@ -15,6 +15,13 @@ export const FOCUS_CHANGE = 'OVERLAY::focus-change'
 
 export const DPR_CHANGE = 'OVERLAY->MAIN::devicePixelRatio-change'
 
+export const PRICE_CHECK = 'MAIN->OVERLAY::price-check'
+export const PRICE_CHECK_CANCELED = 'MAIN->OVERLAY::price-check-canceled'
+export interface IpcPriceCheck {
+  clipboard: string
+  position: { x: number, y: number }
+}
+
 
 export const SHOW_BROWSER = 'OVERLAY->MAIN::show-browser'
 export interface IpcShowBrowser {

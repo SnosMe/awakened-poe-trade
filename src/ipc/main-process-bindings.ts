@@ -48,9 +48,9 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  selfEmitPriceCheck (data: { clipboard: string, position: string }) {
-    this.dispatchEvent(new CustomEvent('price-check', {
-      detail: data
+  selfEmitPriceCheck (e: ipcEvent.IpcPriceCheck) {
+    this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK, {
+      detail: e
     }))
   }
 

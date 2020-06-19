@@ -71,7 +71,7 @@ import BrowserMode from './BrowserMode'
 import CheckedItem from './CheckedItem'
 import AppBootstrap from './AppBootstrap'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
+import { PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { Prices, displayRounding } from './Prices'
 import { Leagues } from './Leagues'
 import { parseClipboard } from '@/parser'
@@ -100,34 +100,29 @@ export default {
     }
   },
   created () {
-    MainProcess.addEventListener('price-check', ({ detail: { position, clipboard } }) => {
-      this.clickPosition = position
-      this.isBrowserShown = false
+    MainProcess.addEventListener(PRICE_CHECK, ({ detail: e }) => {
+      this.wm.closeBrowser(this.config.wmId)
       this.wm.show(this.config.wmId)
-      this.item = parseClipboard(clipboard)
+      this.checkPosition = {
+        x: e.position.x - window.screenX,
+        y: e.position.y - window.screenY
+      }
+      this.item = parseClipboard(e.clipboard)
     })
     MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
       this.wm.hide(this.config.wmId)
-    })
-    MainProcess.addEventListener('open-link', () => {
-      this.clickPosition = 'inventory'
-      this.isBrowserShown = true
     })
     window.addEventListener('resize', this.updatePoeUiWidth)
     this.updatePoeUiWidth()
   },
   data () {
     return {
-      poeUiWidth: '0px',
-      clickPosition: 'stash',
-      isBrowserShown: false,
+      poeUiWidth: '1px',
+      checkPosition: { x: 1, y: 1 },
       item: null
     }
   },
   computed: {
-    browserMode () {
-      return !MainProcess.isElectron
-    },
     title () {
       if (!Leagues.isLoaded) {
         return 'Awakened PoE Trade'
@@ -140,6 +135,19 @@ export default {
       if (!Prices.isLoaded) return null
 
       return Math.round(Prices.exaToChaos(1))
+    },
+    isBrowserShown () {
+      return this.config.wmFlags.includes('has-browser')
+    },
+    clickPosition () {
+      if (this.isBrowserShown) {
+        return 'inventory'
+      } else {
+        return this.checkPosition.x > (window.innerWidth / 2)
+          ? 'inventory'
+          : 'stash'
+          // or {chat, vendor, center of screen}
+      }
     }
   },
   methods: {

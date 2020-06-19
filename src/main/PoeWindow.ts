@@ -33,14 +33,6 @@ class PoeWindowClass extends EventEmitter {
     return Math.round(this.bounds!.height * ratio)
   }
 
-  getPoeUiPosition (mousePos: Point) {
-    if (mousePos.x > (this.bounds!.x + this.bounds!.width / 2)) {
-      return 'inventory'
-    } else {
-      return 'stash' // or chat/vendor/center of screen
-    }
-  }
-
   attach (window: BrowserWindow) {
     OW.on('focus', () => { this.isActive = true })
     OW.on('blur', () => { this.isActive = false })

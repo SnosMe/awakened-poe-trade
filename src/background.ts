@@ -4,11 +4,12 @@ import { app, protocol, ipcMain, screen } from 'electron'
 import { installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 import { setupShortcuts } from './main/shortcuts'
 import { createTray } from './main/tray'
-import { setupShowHide } from './main/positioning'
+import { setupShowHide } from './main/price-check'
 import { setupConfigEvents, config } from './main/config'
 import { CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
 import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { logger } from './main/logger'
+import { checkForUpdates } from './main/updates'
 import os from 'os'
 import { createOverlayWindow } from './main/overlay-window'
 import { setupAltVisibility } from './main/alt-visibility'
@@ -63,6 +64,10 @@ app.on('ready', async () => {
     // fixes(linux): window is black instead of transparent
     process.platform === 'linux' ? 1000 : 0
   )
+
+  if (!isDevelopment) {
+    checkForUpdates()
+  }
 
   ipcMain.on(CLOSE_SETTINGS_WINDOW, closeSettings)
 })
