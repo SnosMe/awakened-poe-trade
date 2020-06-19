@@ -92,18 +92,23 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  openUserBrowser (url: string) {
+  openSystemBrowser (url: string) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.OPEN_LINK_EXTERNAL, url)
+      electron.ipcRenderer.send(ipcEvent.OPEN_SYSTEM_BROWSER, { url } as ipcEvent.IpcOpenSystemBrowser)
     }
   }
 
-  openAppBrowser (url: string) {
+  openAppBrowser (opts: ipcEvent.IpcShowBrowser) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.OPEN_LINK, url)
-      this.dispatchEvent(new Event(ipcEvent.OPEN_LINK))
-    } else {
-      window.open(url)
+      electron.ipcRenderer.send(ipcEvent.SHOW_BROWSER, opts)
+    } else if (opts.url) {
+      window.open(opts.url)
+    }
+  }
+
+  hideAppBrowser (opts: ipcEvent.IpcHideBrowser) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.HIDE_BROWSER, opts)
     }
   }
 

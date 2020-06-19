@@ -90,6 +90,9 @@ export default {
   },
   filters: { displayRounding },
   inject: ['wm'],
+  provide () {
+    return { widget: this }
+  },
   props: {
     config: {
       type: Object,

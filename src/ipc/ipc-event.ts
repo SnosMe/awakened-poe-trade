@@ -6,8 +6,6 @@ export const LEAGUE_SELECTED = 'league-selected'
 
 export const PRICE_CHECK_HIDE = 'price-check-hide'
 export const PRICE_CHECK_MOUSE = 'price-check-mouse'
-export const OPEN_LINK = 'open-link'
-export const OPEN_LINK_EXTERNAL = 'open-link-external'
 
 export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'
 
@@ -18,9 +16,22 @@ export const FOCUS_CHANGE = 'OVERLAY::focus-change'
 export const DPR_CHANGE = 'OVERLAY->MAIN::devicePixelRatio-change'
 
 
+export const SHOW_BROWSER = 'OVERLAY->MAIN::show-browser'
+export interface IpcShowBrowser {
+  url?: string
+}
+
+export const HIDE_BROWSER = 'OVERLAY->MAIN::hide-browser'
+export interface IpcHideBrowser {
+  close?: boolean
+}
+
 export const VISIBILITY = 'MAIN->OVERLAY::visibility'
 export interface IpcVisibility {
   isVisible: boolean
 }
 
-export const OVERLAY_READY = 'OVERLAY::ready'
+export const OPEN_SYSTEM_BROWSER = 'OVERLAY->MAIN::system-browser'
+export interface IpcOpenSystemBrowser {
+  url: string
+}

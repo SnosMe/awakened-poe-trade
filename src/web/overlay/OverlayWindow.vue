@@ -2,17 +2,17 @@
   <div id="overlay-window" class="overflow-hidden relative w-full h-full">
     <div v-if="active" style="background: rgba(256,256,256,0.15); top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
     <div style="border: 4px solid red; top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
-      <template v-for="widget of widgets">
-        <component :key="widget.wmId"
-          v-show="isVisible(widget.wmId)"
-          :config="widget"
-          :id="`widget-${widget.wmId}`"
-          :is="`widget-${widget.wmType}`" />
-      </template>
-      <div v-show="!gameFocused && !active">
-        <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
-      </div>
+    <template v-for="widget of widgets">
+      <component :key="widget.wmId"
+        v-show="isVisible(widget.wmId)"
+        :config="widget"
+        :id="`widget-${widget.wmId}`"
+        :is="`widget-${widget.wmType}`" />
+    </template>
+    <div v-show="!gameFocused && !active">
+      <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -97,6 +97,21 @@ export default {
       handler (dpr) {
         MainProcess.dprChanged(dpr)
       }
+    },
+    visibilityState (stateNow, stateOld) {
+      for (const w of this.widgets) {
+        if (w.wmFlags.includes('has-browser')) {
+          const vNow = stateNow.find(_ => _.wmId === w.wmId)
+          const vOld = stateOld.find(_ => _.wmId === w.wmId)
+          if (vNow.isVisible === (vOld && vOld.isVisible)) return
+
+          if (vNow.isVisible) {
+            this.showBrowser(w.wmId)
+          } else {
+            this.hideBrowser(w.wmId)
+          }
+        }
+      }
     }
   },
   created () {
@@ -140,7 +155,7 @@ export default {
           this.hideUI ? false
             : showExclusive ? w === showExclusive
               : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
-            : w.wmWants === 'show'
+                : w.wmWants === 'show'
       }))
     }
   },
@@ -158,6 +173,24 @@ export default {
     },
     remove (wmId) {
       this.widgets = this.widgets.filter(_ => _.wmId !== wmId)
+    },
+    showBrowser (wmId, url) {
+      const widget = this.widgets.find(_ => _.wmId === wmId)
+      widget.wmFlags = Array.from(new Set(widget.wmFlags).add('has-browser'))
+      MainProcess.openAppBrowser({ url })
+    },
+    closeBrowser (wmId) {
+      const widget = this.widgets.find(_ => _.wmId === wmId)
+      if (widget.wmFlags.includes('has-browser')) {
+        widget.wmFlags = widget.wmFlags.filter(_ => _ !== 'has-browser')
+        MainProcess.hideAppBrowser({ close: true })
+      }
+    },
+    hideBrowser (wmId) {
+      const widget = this.widgets.find(_ => _.wmId === wmId)
+      if (widget.wmFlags.includes('has-browser')) {
+        MainProcess.hideAppBrowser({ close: false })
+      }
     },
     create (wmType) {
       this.widgets.push({

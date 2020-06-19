@@ -12,6 +12,7 @@ import { logger } from './main/logger'
 import os from 'os'
 import { createOverlayWindow } from './main/overlay-window'
 import { setupAltVisibility } from './main/alt-visibility'
+import { setupBuiltinBrowser } from './main/builtin-browser'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {
@@ -51,6 +52,7 @@ app.on('ready', async () => {
   setupConfigEvents()
   createTray()
   setupShowHide()
+  setupBuiltinBrowser()
 
   setTimeout(
     async () => {
