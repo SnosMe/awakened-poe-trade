@@ -1334,6 +1334,26 @@
   {
     "conditions": [
       {
+        "string": "# Life Regenerated per Second while in Blood Stance",
+        "ref": "# Life Regenerated per Second while in Blood Stance"
+      }
+    ],
+    "mod": {
+      "text": "# Life Regenerated per Second while in Blood Stance",
+      "ref": "# Life Regenerated per Second while in Blood Stance",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_550848224"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "# Lightning Damage taken from Hits",
         "ref": "# Lightning Damage taken from Hits"
       }
@@ -1699,7 +1719,6 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_1569463444",
             "explicit.stat_3441651621"
           ]
         },
@@ -3620,6 +3639,10 @@
       {
         "string": "# to Maximum Charges",
         "ref": "# to Maximum Charges"
+      },
+      {
+        "string": "# to Maximum Charges. -1 to this value when used",
+        "ref": "# to Maximum Charges. -1 to this value when used"
       }
     ],
     "mod": {
@@ -3629,7 +3652,13 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_3608809816"
+            "explicit.stat_1437957544"
+          ]
+        },
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1437957544"
           ]
         }
       ]
@@ -4199,6 +4228,26 @@
   {
     "conditions": [
       {
+        "string": "# to Maximum Rage while wielding a Sword",
+        "ref": "# to Maximum Rage while wielding a Sword"
+      }
+    ],
+    "mod": {
+      "text": "# to Maximum Rage while wielding a Sword",
+      "ref": "# to Maximum Rage while wielding a Sword",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_406887685"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "# to Maximum Siphoning Charges per Elder or Shaper Item Equipped",
         "ref": "# to Maximum Siphoning Charges per Elder or Shaper Item Equipped"
       }
@@ -4297,6 +4346,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2076080860"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "# to Melee Strike Range while Unarmed",
+        "ref": "# to Melee Strike Range while Unarmed"
+      }
+    ],
+    "mod": {
+      "text": "# to Melee Strike Range while Unarmed",
+      "ref": "# to Melee Strike Range while Unarmed",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3273962791"
           ]
         }
       ]
@@ -5186,6 +5255,34 @@
   {
     "conditions": [
       {
+        "string": "#% chance for Impales on Enemies you Kill to Reflect Damage to surrounding Enemies",
+        "ref": "#% chance for Impales on Enemies you Kill to Reflect Damage to surrounding Enemies"
+      },
+      {
+        "string": "Impales on Enemies you Kill Reflect Damage to surrounding Enemies",
+        "ref": "Impales on Enemies you Kill Reflect Damage to surrounding Enemies",
+        "condition": {
+          "max": 100,
+          "min": 100
+        }
+      }
+    ],
+    "mod": {
+      "text": "#% chance for Impales on Enemies you Kill to Reflect Damage to surrounding Enemies",
+      "ref": "#% chance for Impales on Enemies you Kill to Reflect Damage to surrounding Enemies",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3927388937"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% chance for Kills to count twice for Rampage",
         "ref": "#% chance for Kills to count twice for Rampage"
       },
@@ -5447,6 +5544,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3483999943"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3483999943"
           ]
         },
         {
@@ -7215,6 +7318,12 @@
           "tradeId": [
             "explicit.stat_2120297997"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2120297997"
+          ]
         }
       ]
     }
@@ -7866,6 +7975,32 @@
   {
     "conditions": [
       {
+        "string": "#% chance to Defend with Double Armour",
+        "ref": "#% chance to Defend with Double Armour"
+      }
+    ],
+    "mod": {
+      "text": "#% chance to Defend with Double Armour",
+      "ref": "#% chance to Defend with Double Armour",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_327253797"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_327253797"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% chance to Dodge Attack and Spell Hits if you've\nbeen Hit Recently",
         "ref": "#% chance to Dodge Attack and Spell Hits if you've\nbeen Hit Recently"
       },
@@ -8343,6 +8478,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2622251413"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2622251413"
           ]
         }
       ]
@@ -10527,6 +10668,12 @@
           "tradeId": [
             "explicit.stat_2763429652"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2763429652"
+          ]
         }
       ]
     }
@@ -12658,33 +12805,6 @@
   {
     "conditions": [
       {
-        "string": "#% chance to Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
-        "ref": "#% chance to Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight"
-      },
-      {
-        "string": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
-        "ref": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
-        "condition": {
-          "min": 100
-        }
-      }
-    ],
-    "mod": {
-      "text": "#% chance to Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
-      "ref": "#% chance to Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_2554328719"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill",
         "ref": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill"
       },
@@ -13199,32 +13319,6 @@
   {
     "conditions": [
       {
-        "string": "#% chance when Hit for double Armour effect",
-        "ref": "#% chance when Hit for double Armour effect"
-      }
-    ],
-    "mod": {
-      "text": "#% chance when Hit for double Armour effect",
-      "ref": "#% chance when Hit for double Armour effect",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_327253797"
-          ]
-        },
-        {
-          "name": "implicit",
-          "tradeId": [
-            "implicit.stat_327253797"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "#% Chaos Resistance against Damage Over Time",
         "ref": "#% Chaos Resistance against Damage Over Time"
       }
@@ -13385,31 +13479,6 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3062763405"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Abyssal Cry Damage",
-        "ref": "#% increased Abyssal Cry Damage"
-      },
-      {
-        "string": "#% reduced Abyssal Cry Damage",
-        "ref": "#% reduced Abyssal Cry Damage",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Abyssal Cry Damage",
-      "ref": "#% increased Abyssal Cry Damage",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_780453137"
           ]
         }
       ]
@@ -13924,81 +13993,6 @@
   {
     "conditions": [
       {
-        "string": "#% increased Arctic Breath Area of Effect",
-        "ref": "#% increased Arctic Breath Area of Effect"
-      },
-      {
-        "string": "#% reduced Arctic Breath Area of Effect",
-        "ref": "#% reduced Arctic Breath Area of Effect",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Arctic Breath Area of Effect",
-      "ref": "#% increased Arctic Breath Area of Effect",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_3816022821"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Arctic Breath Damage",
-        "ref": "#% increased Arctic Breath Damage"
-      },
-      {
-        "string": "#% reduced Arctic Breath Damage",
-        "ref": "#% reduced Arctic Breath Damage",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Arctic Breath Damage",
-      "ref": "#% increased Arctic Breath Damage",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_2846773529"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Arctic Breath Duration",
-        "ref": "#% increased Arctic Breath Duration"
-      },
-      {
-        "string": "#% reduced Arctic Breath Duration",
-        "ref": "#% reduced Arctic Breath Duration",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Arctic Breath Duration",
-      "ref": "#% increased Arctic Breath Duration",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_3804575865"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "#% increased Area Damage",
         "ref": "#% increased Area Damage"
       },
@@ -14237,6 +14231,12 @@
           "tradeId": [
             "explicit.stat_895264825"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_895264825"
+          ]
         }
       ]
     }
@@ -14386,6 +14386,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4070157876"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Area of Effect while in Sand Stance",
+        "ref": "#% increased Area of Effect while in Sand Stance"
+      },
+      {
+        "string": "#% reduced Area of Effect while in Sand Stance",
+        "ref": "#% reduced Area of Effect while in Sand Stance",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Area of Effect while in Sand Stance",
+      "ref": "#% increased Area of Effect while in Sand Stance",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1647746883"
           ]
         }
       ]
@@ -15612,6 +15637,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased Attack Speed if you haven’t Cast Dash recently",
+        "ref": "#% increased Attack Speed if you haven’t Cast Dash recently"
+      },
+      {
+        "string": "#% reduced Attack Speed if you haven’t Cast Dash recently",
+        "ref": "#% reduced Attack Speed if you haven’t Cast Dash recently",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Attack Speed if you haven’t Cast Dash recently",
+      "ref": "#% increased Attack Speed if you haven’t Cast Dash recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1003608257"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Attack Speed if you've been Hit Recently",
         "ref": "#% increased Attack Speed if you've been Hit Recently"
       },
@@ -15679,6 +15729,51 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1507059769"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Attack Speed if you've taken a Savage Hit Recently",
+        "ref": "#% increased Attack Speed if you've taken a Savage Hit Recently"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Attack Speed if you've taken a Savage Hit Recently",
+      "ref": "#% increased Attack Speed if you've taken a Savage Hit Recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3842406602"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Attack Speed if you’ve changed Stance Recently",
+        "ref": "#% increased Attack Speed if you’ve changed Stance Recently"
+      },
+      {
+        "string": "#% reduced Attack Speed if you’ve changed Stance Recently",
+        "ref": "#% reduced Attack Speed if you’ve changed Stance Recently",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Attack Speed if you’ve changed Stance Recently",
+      "ref": "#% increased Attack Speed if you’ve changed Stance Recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2188905761"
           ]
         }
       ]
@@ -16999,6 +17094,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased Brand Damage per 10 Devotion",
+        "ref": "#% increased Brand Damage per 10 Devotion"
+      },
+      {
+        "string": "#% reduced Brand Damage per 10 Devotion",
+        "ref": "#% reduced Brand Damage per 10 Devotion",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Brand Damage per 10 Devotion",
+      "ref": "#% increased Brand Damage per 10 Devotion",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2697019412"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Burning Arrow Damage",
         "ref": "#% increased Burning Arrow Damage"
       },
@@ -17877,6 +17997,15 @@
         "string": "#% reduced Charges used",
         "ref": "#% reduced Charges used",
         "negate": true
+      },
+      {
+        "string": "#% increased Charges used. -1% to this value when used",
+        "ref": "#% increased Charges used. -1% to this value when used"
+      },
+      {
+        "string": "#% reduced Charges used. -1% to this value when used",
+        "ref": "#% reduced Charges used. -1% to this value when used",
+        "negate": true
       }
     ],
     "mod": {
@@ -17886,7 +18015,7 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_3139816101"
+            "explicit.stat_388617051"
           ]
         }
       ]
@@ -18751,6 +18880,81 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_2078691497"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Creeping Frost Area of Effect",
+        "ref": "#% increased Creeping Frost Area of Effect"
+      },
+      {
+        "string": "#% reduced Creeping Frost Area of Effect",
+        "ref": "#% reduced Creeping Frost Area of Effect",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Creeping Frost Area of Effect",
+      "ref": "#% increased Creeping Frost Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3816022821"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Creeping Frost Damage",
+        "ref": "#% increased Creeping Frost Damage"
+      },
+      {
+        "string": "#% reduced Creeping Frost Damage",
+        "ref": "#% reduced Creeping Frost Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Creeping Frost Damage",
+      "ref": "#% increased Creeping Frost Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2846773529"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Creeping Frost Duration",
+        "ref": "#% increased Creeping Frost Duration"
+      },
+      {
+        "string": "#% reduced Creeping Frost Duration",
+        "ref": "#% reduced Creeping Frost Duration",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Creeping Frost Duration",
+      "ref": "#% increased Creeping Frost Duration",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3804575865"
           ]
         }
       ]
@@ -20704,26 +20908,6 @@
   {
     "conditions": [
       {
-        "string": "#% increased Damage when you have no Energy Shield",
-        "ref": "#% increased Damage when you have no Energy Shield"
-      }
-    ],
-    "mod": {
-      "text": "#% increased Damage when you have no Energy Shield",
-      "ref": "#% increased Damage when you have no Energy Shield",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_414379784"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "#% increased Damage while Dead",
         "ref": "#% increased Damage while Dead"
       },
@@ -20911,6 +21095,26 @@
   {
     "conditions": [
       {
+        "string": "#% increased Damage while you have no Energy Shield",
+        "ref": "#% increased Damage while you have no Energy Shield"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Damage while you have no Energy Shield",
+      "ref": "#% increased Damage while you have no Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_414379784"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Damage while you have no Frenzy Charges",
         "ref": "#% increased Damage while you have no Frenzy Charges"
       },
@@ -21065,31 +21269,6 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4188894176"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Damage with Brand Skills per 10 Devotion",
-        "ref": "#% increased Damage with Brand Skills per 10 Devotion"
-      },
-      {
-        "string": "#% reduced Damage with Brand Skills per 10 Devotion",
-        "ref": "#% reduced Damage with Brand Skills per 10 Devotion",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Damage with Brand Skills per 10 Devotion",
-      "ref": "#% increased Damage with Brand Skills per 10 Devotion",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_2697019412"
           ]
         }
       ]
@@ -22343,6 +22522,15 @@
         "string": "#% reduced Duration",
         "ref": "#% reduced Duration",
         "negate": true
+      },
+      {
+        "string": "#% increased Duration. -1% to this value when used",
+        "ref": "#% increased Duration. -1% to this value when used"
+      },
+      {
+        "string": "#% reduced Duration. -1% to this value when used",
+        "ref": "#% reduced Duration. -1% to this value when used",
+        "negate": true
       }
     ],
     "mod": {
@@ -22352,7 +22540,13 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_156096868"
+            "explicit.stat_1256719186"
+          ]
+        },
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1256719186"
           ]
         }
       ]
@@ -22619,6 +22813,15 @@
         "string": "#% reduced effect",
         "ref": "#% reduced effect",
         "negate": true
+      },
+      {
+        "string": "#% increased effect. -1% to this value when used",
+        "ref": "#% increased effect. -1% to this value when used"
+      },
+      {
+        "string": "#% reduced effect. -1% to this value when used",
+        "ref": "#% reduced effect. -1% to this value when used",
+        "negate": true
       }
     ],
     "mod": {
@@ -22628,7 +22831,13 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_553298121"
+            "explicit.stat_2448920197"
+          ]
+        },
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2448920197"
           ]
         }
       ]
@@ -23175,6 +23384,37 @@
           "name": "implicit",
           "tradeId": [
             "implicit.stat_2527686725"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Effect of Shock on you",
+        "ref": "#% increased Effect of Shock on you"
+      },
+      {
+        "string": "#% reduced Effect of Shock on you",
+        "ref": "#% reduced Effect of Shock on you",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Effect of Shock on you",
+      "ref": "#% increased Effect of Shock on you",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3801067695"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3801067695"
           ]
         }
       ]
@@ -24426,6 +24666,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1073310669"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Evasion Rating if you've Cast Dash recently",
+        "ref": "#% increased Evasion Rating if you've Cast Dash recently"
+      },
+      {
+        "string": "#% reduced Evasion Rating if you've Cast Dash recently",
+        "ref": "#% reduced Evasion Rating if you've Cast Dash recently",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Evasion Rating if you've Cast Dash recently",
+      "ref": "#% increased Evasion Rating if you've Cast Dash recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_237513297"
           ]
         }
       ]
@@ -27449,6 +27714,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased Infernal Cry Damage",
+        "ref": "#% increased Infernal Cry Damage"
+      },
+      {
+        "string": "#% reduced Infernal Cry Damage",
+        "ref": "#% reduced Infernal Cry Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Infernal Cry Damage",
+      "ref": "#% increased Infernal Cry Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_780453137"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Intelligence",
         "ref": "#% increased Intelligence"
       },
@@ -29355,6 +29645,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased Maximum Recovery per Energy Shield Leech",
+        "ref": "#% increased Maximum Recovery per Energy Shield Leech"
+      },
+      {
+        "string": "#% reduced Maximum Recovery per Energy Shield Leech",
+        "ref": "#% reduced Maximum Recovery per Energy Shield Leech",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Maximum Recovery per Energy Shield Leech",
+      "ref": "#% increased Maximum Recovery per Energy Shield Leech",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3589396689"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Maximum Recovery per Life Leech",
         "ref": "#% increased Maximum Recovery per Life Leech"
       },
@@ -30490,6 +30805,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3854949926"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Movement Speed if you've Cast Dash recently",
+        "ref": "#% increased Movement Speed if you've Cast Dash recently"
+      },
+      {
+        "string": "#% reduced Movement Speed if you've Cast Dash recently",
+        "ref": "#% reduced Movement Speed if you've Cast Dash recently",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Movement Speed if you've Cast Dash recently",
+      "ref": "#% increased Movement Speed if you've Cast Dash recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2659793306"
           ]
         }
       ]
@@ -32130,6 +32470,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased Projectile Damage while in Blood Stance",
+        "ref": "#% increased Projectile Damage while in Blood Stance"
+      },
+      {
+        "string": "#% reduced Projectile Damage while in Blood Stance",
+        "ref": "#% reduced Projectile Damage while in Blood Stance",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Projectile Damage while in Blood Stance",
+      "ref": "#% increased Projectile Damage while in Blood Stance",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2982500944"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Projectile Speed",
         "ref": "#% increased Projectile Speed"
       },
@@ -32677,11 +33042,6 @@
       {
         "string": "#% increased Rallying Cry Buff Effect",
         "ref": "#% increased Rallying Cry Buff Effect"
-      },
-      {
-        "string": "#% reduced Rallying Cry Buff Effect",
-        "ref": "#% reduced Rallying Cry Buff Effect",
-        "negate": true
       }
     ],
     "mod": {
@@ -32691,7 +33051,9 @@
         {
           "name": "enchant",
           "tradeId": [
-            "enchant.stat_4147277532"
+            "enchant.stat_4147277532",
+            "enchant.stat_865263728",
+            "enchant.stat_945725535"
           ]
         }
       ]
@@ -35176,81 +35538,6 @@
   {
     "conditions": [
       {
-        "string": "#% increased Sunder Area of Effect",
-        "ref": "#% increased Sunder Area of Effect"
-      },
-      {
-        "string": "#% reduced Sunder Area of Effect",
-        "ref": "#% reduced Sunder Area of Effect",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Sunder Area of Effect",
-      "ref": "#% increased Sunder Area of Effect",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_3316767657"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Sunder Attack Speed",
-        "ref": "#% increased Sunder Attack Speed"
-      },
-      {
-        "string": "#% reduced Sunder Attack Speed",
-        "ref": "#% reduced Sunder Attack Speed",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Sunder Attack Speed",
-      "ref": "#% increased Sunder Attack Speed",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_1999307054"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Sunder Damage",
-        "ref": "#% increased Sunder Damage"
-      },
-      {
-        "string": "#% reduced Sunder Damage",
-        "ref": "#% reduced Sunder Damage",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Sunder Damage",
-      "ref": "#% increased Sunder Damage",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_4033078288"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "#% increased Sweep Area of Effect",
         "ref": "#% increased Sweep Area of Effect"
       },
@@ -35318,56 +35605,6 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3651611160"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Tectonic Slam Area of Effect",
-        "ref": "#% increased Tectonic Slam Area of Effect"
-      },
-      {
-        "string": "#% reduced Tectonic Slam Area of Effect",
-        "ref": "#% reduced Tectonic Slam Area of Effect",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Tectonic Slam Area of Effect",
-      "ref": "#% increased Tectonic Slam Area of Effect",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_340193547"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "#% increased Tectonic Slam Damage",
-        "ref": "#% increased Tectonic Slam Damage"
-      },
-      {
-        "string": "#% reduced Tectonic Slam Damage",
-        "ref": "#% reduced Tectonic Slam Damage",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Tectonic Slam Damage",
-      "ref": "#% increased Tectonic Slam Damage",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_3999206457"
           ]
         }
       ]
@@ -35519,6 +35756,12 @@
           "tradeId": [
             "explicit.stat_2633745731"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2633745731"
+          ]
         }
       ]
     }
@@ -35551,6 +35794,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased total Recovery per second from Life, Mana, or Energy Shield Leech",
+        "ref": "#% increased total Recovery per second from Life, Mana, or Energy Shield Leech"
+      },
+      {
+        "string": "#% reduced total Recovery per second from Life, Mana, or Energy Shield Leech",
+        "ref": "#% reduced total Recovery per second from Life, Mana, or Energy Shield Leech",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased total Recovery per second from Life, Mana, or Energy Shield Leech",
+      "ref": "#% increased total Recovery per second from Life, Mana, or Energy Shield Leech",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2314393054"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased total Recovery per second from Mana Leech",
         "ref": "#% increased total Recovery per second from Mana Leech"
       },
@@ -35568,6 +35836,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_690135178"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_690135178"
           ]
         }
       ]
@@ -36386,6 +36660,37 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4159248054"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Warcry Speed",
+        "ref": "#% increased Warcry Speed"
+      },
+      {
+        "string": "#% reduced Warcry Speed",
+        "ref": "#% reduced Warcry Speed",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Warcry Speed",
+      "ref": "#% increased Warcry Speed",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1316278494"
+          ]
+        },
+        {
+          "name": "crafted",
+          "tradeId": [
+            "crafted.stat_1316278494"
           ]
         }
       ]
@@ -38382,6 +38687,26 @@
   {
     "conditions": [
       {
+        "string": "#% of Life Regenerated per second per Fragile Regrowth",
+        "ref": "#% of Life Regenerated per second per Fragile Regrowth"
+      }
+    ],
+    "mod": {
+      "text": "#% of Life Regenerated per second per Fragile Regrowth",
+      "ref": "#% of Life Regenerated per second per Fragile Regrowth",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3175722882"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% of Lightning Damage Converted to Chaos Damage",
         "ref": "#% of Lightning Damage Converted to Chaos Damage"
       }
@@ -39867,6 +40192,12 @@
           "tradeId": [
             "explicit.stat_1478653032"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1478653032"
+          ]
         }
       ],
       "inverted": true
@@ -40656,6 +40987,12 @@
           "tradeId": [
             "explicit.stat_248838155"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_248838155"
+          ]
         }
       ],
       "inverted": true
@@ -40707,6 +41044,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3158958938"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3158958938"
           ]
         }
       ],
@@ -42367,6 +42710,26 @@
   {
     "conditions": [
       {
+        "string": "#% to Damage over Time Multiplier for Bleeding",
+        "ref": "#% to Damage over Time Multiplier for Bleeding"
+      }
+    ],
+    "mod": {
+      "text": "#% to Damage over Time Multiplier for Bleeding",
+      "ref": "#% to Damage over Time Multiplier for Bleeding",
+      "types": [
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1423749435"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% to Damage over Time Multiplier for Poison per Frenzy Charge",
         "ref": "#% to Damage over Time Multiplier for Poison per Frenzy Charge"
       }
@@ -43618,6 +43981,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_100820057"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "# to Evasion Rating while in Sand Stance",
+        "ref": "# to Evasion Rating while in Sand Stance"
+      },
+      {
+        "string": "-# to Evasion Rating while in Sand Stance",
+        "ref": "-# to Evasion Rating while in Sand Stance",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "+# to Evasion Rating while in Sand Stance",
+      "ref": "+# to Evasion Rating while in Sand Stance",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1922061483"
           ]
         }
       ]
@@ -45166,6 +45554,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Blizzard Caller",
+        "ref": "1 Added Passive Skill is Blizzard Caller"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Blizzard Caller",
+      "ref": "1 Added Passive Skill is Blizzard Caller",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3758712376"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Bloodscent",
         "ref": "1 Added Passive Skill is Bloodscent"
       }
@@ -46446,6 +46854,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Exploit Weakness",
+        "ref": "1 Added Passive Skill is Exploit Weakness"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Exploit Weakness",
+      "ref": "1 Added Passive Skill is Exploit Weakness",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_50129423"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Explosive Force",
         "ref": "1 Added Passive Skill is Explosive Force"
       }
@@ -46986,6 +47414,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Grounded Commander",
+        "ref": "1 Added Passive Skill is Grounded Commander"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Grounded Commander",
+      "ref": "1 Added Passive Skill is Grounded Commander",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1309218394"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Guerilla Tactics",
         "ref": "1 Added Passive Skill is Guerilla Tactics"
       }
@@ -47446,6 +47894,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Lord of Drought",
+        "ref": "1 Added Passive Skill is Lord of Drought"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Lord of Drought",
+      "ref": "1 Added Passive Skill is Lord of Drought",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2055715585"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Low Tolerance",
         "ref": "1 Added Passive Skill is Low Tolerance"
       }
@@ -47718,6 +48186,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2595115995"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "1 Added Passive Skill is Misery Everlasting",
+        "ref": "1 Added Passive Skill is Misery Everlasting"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Misery Everlasting",
+      "ref": "1 Added Passive Skill is Misery Everlasting",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3832665876"
           ]
         }
       ]
@@ -48926,6 +49414,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Self-Control",
+        "ref": "1 Added Passive Skill is Self-Control"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Self-Control",
+      "ref": "1 Added Passive Skill is Self-Control",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3025453294"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Self-Fulfilling Prophecy",
         "ref": "1 Added Passive Skill is Self-Fulfilling Prophecy"
       }
@@ -49426,6 +49934,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Sublime Form",
+        "ref": "1 Added Passive Skill is Sublime Form"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Sublime Form",
+      "ref": "1 Added Passive Skill is Sublime Form",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2251304016"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Sublime Sensation",
         "ref": "1 Added Passive Skill is Sublime Sensation"
       }
@@ -49438,6 +49966,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1364858171"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "1 Added Passive Skill is Summer Commander",
+        "ref": "1 Added Passive Skill is Summer Commander"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Summer Commander",
+      "ref": "1 Added Passive Skill is Summer Commander",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3881737087"
           ]
         }
       ]
@@ -49546,6 +50094,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Tempt the Storm",
+        "ref": "1 Added Passive Skill is Tempt the Storm"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Tempt the Storm",
+      "ref": "1 Added Passive Skill is Tempt the Storm",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_348883745"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Thaumophage",
         "ref": "1 Added Passive Skill is Thaumophage"
       }
@@ -49638,6 +50206,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3536778624"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "1 Added Passive Skill is Uncompromising",
+        "ref": "1 Added Passive Skill is Uncompromising"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Uncompromising",
+      "ref": "1 Added Passive Skill is Uncompromising",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_382360671"
           ]
         }
       ]
@@ -50246,13 +50834,13 @@
   {
     "conditions": [
       {
-        "string": "1% increased Attack Damage per 300 of the lowest of Armour and Evasion Rating",
-        "ref": "1% increased Attack Damage per 300 of the lowest of Armour and Evasion Rating"
+        "string": "1% increased Attack Damage per 200 of the lowest of Armour and Evasion Rating",
+        "ref": "1% increased Attack Damage per 200 of the lowest of Armour and Evasion Rating"
       }
     ],
     "mod": {
-      "text": "1% increased Attack Damage per 300 of the lowest of Armour and Evasion Rating",
-      "ref": "1% increased Attack Damage per 300 of the lowest of Armour and Evasion Rating",
+      "text": "1% increased Attack Damage per 200 of the lowest of Armour and Evasion Rating",
+      "ref": "1% increased Attack Damage per 200 of the lowest of Armour and Evasion Rating",
       "types": [
         {
           "name": "explicit",
@@ -50383,6 +50971,32 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4260403588"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
+        "ref": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill"
+      }
+    ],
+    "mod": {
+      "text": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
+      "ref": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1468606528"
+          ]
+        },
+        {
+          "name": "crafted",
+          "tradeId": [
+            "crafted.stat_1468606528"
           ]
         }
       ]
@@ -51592,38 +52206,38 @@
         }
       },
       {
-        "string": "Added Small Passive Skills grant: +5% to Fire Damage over Time Multiplier",
-        "ref": "Added Small Passive Skills grant: +5% to Fire Damage over Time Multiplier",
+        "string": "Added Small Passive Skills grant: +4% to Fire Damage over Time Multiplier",
+        "ref": "Added Small Passive Skills grant: +4% to Fire Damage over Time Multiplier",
         "option": {
-          "text": "+5% to Fire Damage over Time Multiplier",
-          "ref": "+5% to Fire Damage over Time Multiplier",
+          "text": "+4% to Fire Damage over Time Multiplier",
+          "ref": "+4% to Fire Damage over Time Multiplier",
           "tradeId": 18
         }
       },
       {
-        "string": "Added Small Passive Skills grant: +5% to Chaos Damage over Time Multiplier",
-        "ref": "Added Small Passive Skills grant: +5% to Chaos Damage over Time Multiplier",
+        "string": "Added Small Passive Skills grant: +4% to Chaos Damage over Time Multiplier",
+        "ref": "Added Small Passive Skills grant: +4% to Chaos Damage over Time Multiplier",
         "option": {
-          "text": "+5% to Chaos Damage over Time Multiplier",
-          "ref": "+5% to Chaos Damage over Time Multiplier",
+          "text": "+4% to Chaos Damage over Time Multiplier",
+          "ref": "+4% to Chaos Damage over Time Multiplier",
           "tradeId": 19
         }
       },
       {
-        "string": "Added Small Passive Skills grant: +5% to Physical Damage over Time Multiplier",
-        "ref": "Added Small Passive Skills grant: +5% to Physical Damage over Time Multiplier",
+        "string": "Added Small Passive Skills grant: +4% to Physical Damage over Time Multiplier",
+        "ref": "Added Small Passive Skills grant: +4% to Physical Damage over Time Multiplier",
         "option": {
-          "text": "+5% to Physical Damage over Time Multiplier",
-          "ref": "+5% to Physical Damage over Time Multiplier",
+          "text": "+4% to Physical Damage over Time Multiplier",
+          "ref": "+4% to Physical Damage over Time Multiplier",
           "tradeId": 20
         }
       },
       {
-        "string": "Added Small Passive Skills grant: +5% to Cold Damage over Time Multiplier",
-        "ref": "Added Small Passive Skills grant: +5% to Cold Damage over Time Multiplier",
+        "string": "Added Small Passive Skills grant: +4% to Cold Damage over Time Multiplier",
+        "ref": "Added Small Passive Skills grant: +4% to Cold Damage over Time Multiplier",
         "option": {
-          "text": "+5% to Cold Damage over Time Multiplier",
-          "ref": "+5% to Cold Damage over Time Multiplier",
+          "text": "+4% to Cold Damage over Time Multiplier",
+          "ref": "+4% to Cold Damage over Time Multiplier",
           "tradeId": 21
         }
       },
@@ -51682,11 +52296,11 @@
         }
       },
       {
-        "string": "Added Small Passive Skills grant: 15% increased Warcry Buff Effect",
-        "ref": "Added Small Passive Skills grant: 15% increased Warcry Buff Effect",
+        "string": "Added Small Passive Skills grant: Exerted Attacks deal 20% increased Damage",
+        "ref": "Added Small Passive Skills grant: Exerted Attacks deal 20% increased Damage",
         "option": {
-          "text": "15% increased Warcry Buff Effect",
-          "ref": "15% increased Warcry Buff Effect",
+          "text": "Exerted Attacks deal 20% increased Damage",
+          "ref": "Exerted Attacks deal 20% increased Damage",
           "tradeId": 28
         }
       },
@@ -51745,11 +52359,11 @@
         }
       },
       {
-        "string": "Added Small Passive Skills grant: 12% increased Damage with Brand Skills",
-        "ref": "Added Small Passive Skills grant: 12% increased Damage with Brand Skills",
+        "string": "Added Small Passive Skills grant: 12% increased Brand Damage",
+        "ref": "Added Small Passive Skills grant: 12% increased Brand Damage",
         "option": {
-          "text": "12% increased Damage with Brand Skills",
-          "ref": "12% increased Damage with Brand Skills",
+          "text": "12% increased Brand Damage",
+          "ref": "12% increased Brand Damage",
           "tradeId": 35
         }
       },
@@ -55301,6 +55915,26 @@
   {
     "conditions": [
       {
+        "string": "Ancestral Cry has a minimum of # Power",
+        "ref": "Ancestral Cry has a minimum of # Power"
+      }
+    ],
+    "mod": {
+      "text": "Ancestral Cry has a minimum of # Power",
+      "ref": "Ancestral Cry has a minimum of # Power",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_988554168"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Ancestral Protector Totem deals #% increased Damage",
         "ref": "Ancestral Protector Totem deals #% increased Damage"
       },
@@ -55802,31 +56436,6 @@
         }
       ],
       "inverted": true
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Arctic Breath's Chilling Area has #% increased Movement Speed",
-        "ref": "Arctic Breath's Chilling Area has #% increased Movement Speed"
-      },
-      {
-        "string": "Arctic Breath's Chilling Area has #% reduced Movement Speed",
-        "ref": "Arctic Breath's Chilling Area has #% reduced Movement Speed",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "Arctic Breath's Chilling Area has #% increased Movement Speed",
-      "ref": "Arctic Breath's Chilling Area has #% increased Movement Speed",
-      "types": [
-        {
-          "name": "enchant",
-          "tradeId": [
-            "enchant.stat_2781179464"
-          ]
-        }
-      ]
     }
   },
   {
@@ -57357,13 +57966,13 @@
   {
     "conditions": [
       {
-        "string": "Area has patches of burning ground",
-        "ref": "Area has patches of burning ground"
+        "string": "Area has patches of Burning Ground",
+        "ref": "Area has patches of Burning Ground"
       }
     ],
     "mod": {
-      "text": "Area has patches of burning ground",
-      "ref": "Area has patches of burning ground",
+      "text": "Area has patches of Burning Ground",
+      "ref": "Area has patches of Burning Ground",
       "types": [
         {
           "name": "explicit",
@@ -57378,13 +57987,13 @@
   {
     "conditions": [
       {
-        "string": "Area has patches of chilled ground",
-        "ref": "Area has patches of chilled ground"
+        "string": "Area has patches of Chilled Ground",
+        "ref": "Area has patches of Chilled Ground"
       }
     ],
     "mod": {
-      "text": "Area has patches of chilled ground",
-      "ref": "Area has patches of chilled ground",
+      "text": "Area has patches of Chilled Ground",
+      "ref": "Area has patches of Chilled Ground",
       "types": [
         {
           "name": "explicit",
@@ -57419,13 +58028,13 @@
   {
     "conditions": [
       {
-        "string": "Area has patches of shocking ground",
-        "ref": "Area has patches of shocking ground"
+        "string": "Area has patches of Shocked Ground",
+        "ref": "Area has patches of Shocked Ground"
       }
     ],
     "mod": {
-      "text": "Area has patches of shocking ground",
-      "ref": "Area has patches of shocking ground",
+      "text": "Area has patches of Shocked Ground",
+      "ref": "Area has patches of Shocked Ground",
       "types": [
         {
           "name": "explicit",
@@ -57439,13 +58048,13 @@
   {
     "conditions": [
       {
-        "string": "Area has patches of Shocking Ground which increase Damage taken by #%",
-        "ref": "Area has patches of Shocking Ground which increase Damage taken by #%"
+        "string": "Area has patches of Shocked Ground which increase Damage taken by #%",
+        "ref": "Area has patches of Shocked Ground which increase Damage taken by #%"
       }
     ],
     "mod": {
-      "text": "Area has patches of Shocking Ground which increase Damage taken by #%",
-      "ref": "Area has patches of Shocking Ground which increase Damage taken by #%",
+      "text": "Area has patches of Shocked Ground which increase Damage taken by #%",
+      "ref": "Area has patches of Shocked Ground which increase Damage taken by #%",
       "types": [
         {
           "name": "explicit",
@@ -58094,6 +58703,26 @@
   {
     "conditions": [
       {
+        "string": "Armour also applies to Lightning Damage taken from Hits",
+        "ref": "Armour also applies to Lightning Damage taken from Hits"
+      }
+    ],
+    "mod": {
+      "text": "Armour also applies to Lightning Damage taken from Hits",
+      "ref": "Armour also applies to Lightning Damage taken from Hits",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2134207902"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Armour is increased by Uncapped Fire Resistance",
         "ref": "Armour is increased by Uncapped Fire Resistance"
       }
@@ -58151,6 +58780,90 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1019891080"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Arrows fired from the first firing points always Pierce",
+        "ref": "Arrows fired from the first firing points always Pierce"
+      }
+    ],
+    "mod": {
+      "text": "Arrows fired from the first firing points always Pierce",
+      "ref": "Arrows fired from the first firing points always Pierce",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2168987271"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Arrows fired from the fourth firing points Chain # time",
+        "ref": "Arrows fired from the fourth firing points Chain # time"
+      },
+      {
+        "string": "Arrows fired from the fourth firing points Chain # times",
+        "ref": "Arrows fired from the fourth firing points Chain # times"
+      }
+    ],
+    "mod": {
+      "text": "Arrows fired from the fourth firing points Chain # time",
+      "ref": "Arrows fired from the fourth firing points Chain # time",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_226515115"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Arrows fired from the second firing points Fork",
+        "ref": "Arrows fired from the second firing points Fork"
+      }
+    ],
+    "mod": {
+      "text": "Arrows fired from the second firing points Fork",
+      "ref": "Arrows fired from the second firing points Fork",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3290081052"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Arrows fired from the third firing points Return to you",
+        "ref": "Arrows fired from the third firing points Return to you"
+      }
+    ],
+    "mod": {
+      "text": "Arrows fired from the third firing points Return to you",
+      "ref": "Arrows fired from the third firing points Return to you",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_301746072"
           ]
         }
       ]
@@ -59780,6 +60493,66 @@
   {
     "conditions": [
       {
+        "string": "Blind does not affect your Chance to Hit",
+        "ref": "Blind does not affect your Chance to Hit"
+      }
+    ],
+    "mod": {
+      "text": "Blind does not affect your Chance to Hit",
+      "ref": "Blind does not affect your Chance to Hit",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_44716414"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Blind does not affect your Light Radius",
+        "ref": "Blind does not affect your Light Radius"
+      }
+    ],
+    "mod": {
+      "text": "Blind does not affect your Light Radius",
+      "ref": "Blind does not affect your Light Radius",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3013171896"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Blind you inflict is Reflected to you",
+        "ref": "Blind you inflict is Reflected to you"
+      }
+    ],
+    "mod": {
+      "text": "Blind you inflict is Reflected to you",
+      "ref": "Blind you inflict is Reflected to you",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2458598175"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Blink Arrow and Blink Arrow Clones have #% increased Attack Speed",
         "ref": "Blink Arrow and Blink Arrow Clones have #% increased Attack Speed"
       },
@@ -59932,6 +60705,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_3233607638"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently",
+        "ref": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently"
+      }
+    ],
+    "mod": {
+      "text": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently",
+      "ref": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2482927318"
           ]
         }
       ]
@@ -60118,6 +60911,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3576153145"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Call to Arms",
+        "ref": "Call to Arms"
+      }
+    ],
+    "mod": {
+      "text": "Call to Arms",
+      "ref": "Call to Arms",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3292262540"
           ]
         }
       ]
@@ -60682,6 +61495,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4076910393"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Cannot Block while you have no Energy Shield",
+        "ref": "Cannot Block while you have no Energy Shield"
+      }
+    ],
+    "mod": {
+      "text": "Cannot Block while you have no Energy Shield",
+      "ref": "Cannot Block while you have no Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3890287045"
           ]
         }
       ]
@@ -61441,6 +62274,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3799299052"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Chaos Damage does not bypass Minions' Energy Shield",
+        "ref": "Chaos Damage does not bypass Minions' Energy Shield"
+      }
+    ],
+    "mod": {
+      "text": "Chaos Damage does not bypass Minions' Energy Shield",
+      "ref": "Chaos Damage does not bypass Minions' Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3008104268"
           ]
         }
       ]
@@ -62516,6 +63369,26 @@
   {
     "conditions": [
       {
+        "string": "Create Profane Ground instead of Consecrated Ground",
+        "ref": "Create Profane Ground instead of Consecrated Ground"
+      }
+    ],
+    "mod": {
+      "text": "Create Profane Ground instead of Consecrated Ground",
+      "ref": "Create Profane Ground instead of Consecrated Ground",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1243613350"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Creates a Smoke Cloud on Rampage",
         "ref": "Creates a Smoke Cloud on Rampage"
       }
@@ -62615,6 +63488,31 @@
           "name": "implicit",
           "tradeId": [
             "implicit.stat_2146730404"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Creeping Frost's Chilling Area has #% increased Movement Speed",
+        "ref": "Creeping Frost's Chilling Area has #% increased Movement Speed"
+      },
+      {
+        "string": "Creeping Frost's Chilling Area has #% reduced Movement Speed",
+        "ref": "Creeping Frost's Chilling Area has #% reduced Movement Speed",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Creeping Frost's Chilling Area has #% increased Movement Speed",
+      "ref": "Creeping Frost's Chilling Area has #% increased Movement Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2781179464"
           ]
         }
       ]
@@ -63387,6 +64285,26 @@
   {
     "conditions": [
       {
+        "string": "Damage from Blocked Hits cannot bypass Energy Shield\nDamage from Unblocked hits always bypasses Energy Shield",
+        "ref": "Damage from Blocked Hits cannot bypass Energy Shield\nDamage from Unblocked hits always bypasses Energy Shield"
+      }
+    ],
+    "mod": {
+      "text": "Damage from Blocked Hits cannot bypass Energy Shield\nDamage from Unblocked hits always bypasses Energy Shield",
+      "ref": "Damage from Blocked Hits cannot bypass Energy Shield\nDamage from Unblocked hits always bypasses Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2331104018"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Damage from Enemies Hitting you is Lucky while you are Cursed with Vulnerability",
         "ref": "Damage from Enemies Hitting you is Lucky while you are Cursed with Vulnerability",
         "condition": {
@@ -63942,6 +64860,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4031851097"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Deal no Non-Lightning Damage",
+        "ref": "Deal no Non-Lightning Damage"
+      }
+    ],
+    "mod": {
+      "text": "Deal no Non-Lightning Damage",
+      "ref": "Deal no Non-Lightning Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2075742842"
           ]
         }
       ]
@@ -64644,18 +65582,18 @@
   {
     "conditions": [
       {
-        "string": "Drops Burning Ground while moving, dealing # Fire Damage per second",
-        "ref": "Drops Burning Ground while moving, dealing # Fire Damage per second"
+        "string": "Drops Shocked Ground while moving, lasting # seconds",
+        "ref": "Drops Shocked Ground while moving, lasting # seconds"
       }
     ],
     "mod": {
-      "text": "Drops Burning Ground while moving, dealing # Fire Damage per second",
-      "ref": "Drops Burning Ground while moving, dealing # Fire Damage per second",
+      "text": "Drops Shocked Ground while moving, lasting # seconds",
+      "ref": "Drops Shocked Ground while moving, lasting # seconds",
       "types": [
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_272791075"
+            "explicit.stat_3002060175"
           ]
         }
       ]
@@ -64722,6 +65660,56 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_943553365"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Earthquake deals #% increased Damage per 0.1 seconds Duration",
+        "ref": "Earthquake deals #% increased Damage per 0.1 seconds Duration"
+      },
+      {
+        "string": "Earthquake deals #% reduced Damage per 0.1 seconds Duration",
+        "ref": "Earthquake deals #% reduced Damage per 0.1 seconds Duration",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Earthquake deals #% increased Damage per 0.1 seconds Duration",
+      "ref": "Earthquake deals #% increased Damage per 0.1 seconds Duration",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2068943099"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Earthshatter deals #% increased Damage",
+        "ref": "Earthshatter deals #% increased Damage"
+      },
+      {
+        "string": "Earthshatter deals #% reduced Damage",
+        "ref": "Earthshatter deals #% reduced Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Earthshatter deals #% increased Damage",
+      "ref": "Earthshatter deals #% increased Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_335520087"
           ]
         }
       ]
@@ -64974,6 +65962,26 @@
   {
     "conditions": [
       {
+        "string": "Enemies Blinded by you while you while you are Blinded have Malediction",
+        "ref": "Enemies Blinded by you while you while you are Blinded have Malediction"
+      }
+    ],
+    "mod": {
+      "text": "Enemies Blinded by you while you while you are Blinded have Malediction",
+      "ref": "Enemies Blinded by you while you while you are Blinded have Malediction",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_15523600"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Enemies Cannot Leech Life From you",
         "ref": "Enemies Cannot Leech Life From you"
       }
@@ -65057,56 +66065,6 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1773891268"
-          ]
-        }
-      ],
-      "inverted": true
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Enemies have #% to Total Physical Damage Reduction against this Weapon's Hits",
-        "ref": "Enemies have #% to Total Physical Damage Reduction against this Weapon's Hits",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "Enemies have #% to Total Physical Damage Reduction against this Weapon's Hits",
-      "ref": "Enemies have #% to Total Physical Damage Reduction against this Weapon's Hits",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_3579673398"
-          ]
-        }
-      ],
-      "inverted": true
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Enemies have #% to Total Physical Damage Reduction against your Hits",
-        "ref": "Enemies have #% to Total Physical Damage Reduction against your Hits",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "Enemies have #% to Total Physical Damage Reduction against your Hits",
-      "ref": "Enemies have #% to Total Physical Damage Reduction against your Hits",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_2495041954"
-          ]
-        },
-        {
-          "name": "implicit",
-          "tradeId": [
-            "implicit.stat_2495041954"
           ]
         }
       ],
@@ -65542,6 +66500,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1457679290"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Energy Shield Leech Effects from Attacks are not removed at Full Energy Shield",
+        "ref": "Energy Shield Leech Effects from Attacks are not removed at Full Energy Shield"
+      }
+    ],
+    "mod": {
+      "text": "Energy Shield Leech Effects from Attacks are not removed at Full Energy Shield",
+      "ref": "Energy Shield Leech Effects from Attacks are not removed at Full Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1004885987"
           ]
         }
       ]
@@ -67691,6 +68669,26 @@
   {
     "conditions": [
       {
+        "string": "Gain 1 Fragile Regrowth each second",
+        "ref": "Gain 1 Fragile Regrowth each second"
+      }
+    ],
+    "mod": {
+      "text": "Gain 1 Fragile Regrowth each second",
+      "ref": "Gain 1 Fragile Regrowth each second",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1086623733"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Gain 1 Rage on Critical Hit with attacks, no more than once every # seconds",
         "ref": "Gain 1 Rage on Critical Hit with attacks, no more than once every # seconds"
       }
@@ -68655,6 +69653,26 @@
   {
     "conditions": [
       {
+        "string": "General's Cry has #% increased Cooldown Recovery Speed",
+        "ref": "General's Cry has #% increased Cooldown Recovery Speed"
+      }
+    ],
+    "mod": {
+      "text": "General's Cry has #% increased Cooldown Recovery Speed",
+      "ref": "General's Cry has #% increased Cooldown Recovery Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3637727672"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Ghost Reaver",
         "ref": "Ghost Reaver"
       }
@@ -68694,6 +69712,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_288248772"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Glancing Blows",
+        "ref": "Glancing Blows"
+      }
+    ],
+    "mod": {
+      "text": "Glancing Blows",
+      "ref": "Glancing Blows",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4266776872"
           ]
         }
       ]
@@ -69378,6 +70416,26 @@
           "name": "implicit",
           "tradeId": [
             "implicit.stat_461472247"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants Level # Dash Skill",
+        "ref": "Grants Level # Dash Skill"
+      }
+    ],
+    "mod": {
+      "text": "Grants Level # Dash Skill",
+      "ref": "Grants Level # Dash Skill",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3883691934"
           ]
         }
       ]
@@ -70567,6 +71625,54 @@
           "max": 6,
           "min": 6
         }
+      },
+      {
+        "string": "Grants Summon Greater Harbinger of the Arcane Skill",
+        "ref": "Grants Summon Greater Harbinger of the Arcane Skill",
+        "condition": {
+          "max": 7,
+          "min": 7
+        }
+      },
+      {
+        "string": "Grants Summon Greater Harbinger of Time Skill",
+        "ref": "Grants Summon Greater Harbinger of Time Skill",
+        "condition": {
+          "max": 8,
+          "min": 8
+        }
+      },
+      {
+        "string": "Grants Summon Greater Harbinger of Focus Skill",
+        "ref": "Grants Summon Greater Harbinger of Focus Skill",
+        "condition": {
+          "max": 9,
+          "min": 9
+        }
+      },
+      {
+        "string": "Grants Summon Greater Harbinger of Directions Skill",
+        "ref": "Grants Summon Greater Harbinger of Directions Skill",
+        "condition": {
+          "max": 10,
+          "min": 10
+        }
+      },
+      {
+        "string": "Grants Summon Greater Harbinger of Storms Skill",
+        "ref": "Grants Summon Greater Harbinger of Storms Skill",
+        "condition": {
+          "max": 11,
+          "min": 11
+        }
+      },
+      {
+        "string": "Grants Summon Greater Harbinger of Brutality Skill",
+        "ref": "Grants Summon Greater Harbinger of Brutality Skill",
+        "condition": {
+          "max": 12,
+          "min": 12
+        }
       }
     ],
     "mod": {
@@ -71200,6 +72306,26 @@
   {
     "conditions": [
       {
+        "string": "Herald of Thunder also creates a storm when you Shock an Enemy",
+        "ref": "Herald of Thunder also creates a storm when you Shock an Enemy"
+      }
+    ],
+    "mod": {
+      "text": "Herald of Thunder also creates a storm when you Shock an Enemy",
+      "ref": "Herald of Thunder also creates a storm when you Shock an Enemy",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1964607303"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Herald of Thunder has #% increased Buff Effect",
         "ref": "Herald of Thunder has #% increased Buff Effect"
       },
@@ -71257,6 +72383,30 @@
   {
     "conditions": [
       {
+        "string": "Herald of Thunder's Storms Hit Enemies with #% increased Frequency",
+        "ref": "Herald of Thunder's Storms Hit Enemies with #% increased Frequency"
+      },
+      {
+        "string": "Herald of Thunder's Storms Hit Enemies with #% reduced Frequency",
+        "ref": "Herald of Thunder's Storms Hit Enemies with #% reduced Frequency"
+      }
+    ],
+    "mod": {
+      "text": "Herald of Thunder's Storms Hit Enemies with #% increased Frequency",
+      "ref": "Herald of Thunder's Storms Hit Enemies with #% increased Frequency",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_28299254"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Historic",
         "ref": "Historic"
       }
@@ -71268,7 +72418,7 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_1811341815"
+            "explicit.stat_3787436548"
           ]
         }
       ]
@@ -71495,6 +72645,26 @@
   {
     "conditions": [
       {
+        "string": "Hits with this Weapon gain #% of Physical Damage as Extra Cold or Lightning Damage",
+        "ref": "Hits with this Weapon gain #% of Physical Damage as Extra Cold or Lightning Damage"
+      }
+    ],
+    "mod": {
+      "text": "Hits with this Weapon gain #% of Physical Damage as Extra Cold or Lightning Damage",
+      "ref": "Hits with this Weapon gain #% of Physical Damage as Extra Cold or Lightning Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1023968711"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Hits with this Weapon have Culling Strike against Bleeding Enemies",
         "ref": "Hits with this Weapon have Culling Strike against Bleeding Enemies"
       }
@@ -71507,6 +72677,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2558253923"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Hits with this Weapon Overwhelm #% Physical Damage Reduction",
+        "ref": "Hits with this Weapon Overwhelm #% Physical Damage Reduction"
+      }
+    ],
+    "mod": {
+      "text": "Hits with this Weapon Overwhelm #% Physical Damage Reduction",
+      "ref": "Hits with this Weapon Overwhelm #% Physical Damage Reduction",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3579673398"
           ]
         }
       ]
@@ -72012,6 +73202,30 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1311723478"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Immortal Ambition",
+        "ref": "Immortal Ambition"
+      },
+      {
+        "string": "Your Energy Shield starts at zero",
+        "ref": "Your Energy Shield starts at zero"
+      }
+    ],
+    "mod": {
+      "text": "Immortal Ambition",
+      "ref": "Immortal Ambition",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2413219096"
           ]
         }
       ]
@@ -72705,6 +73919,26 @@
   {
     "conditions": [
       {
+        "string": "Increases and Reductions to Minion Damage also affect you at 150% of their value",
+        "ref": "Increases and Reductions to Minion Damage also affect you at 150% of their value"
+      }
+    ],
+    "mod": {
+      "text": "Increases and Reductions to Minion Damage also affect you at 150% of their value",
+      "ref": "Increases and Reductions to Minion Damage also affect you at 150% of their value",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1433144735"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Increases and Reductions to other Damage Types in Radius are Transformed to apply to Fire Damage",
         "ref": "Increases and Reductions to other Damage Types in Radius are Transformed to apply to Fire Damage"
       }
@@ -72797,6 +74031,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_105839441"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Infernal Cry has #% increased Cooldown Recovery Speed",
+        "ref": "Infernal Cry has #% increased Cooldown Recovery Speed"
+      }
+    ],
+    "mod": {
+      "text": "Infernal Cry has #% increased Cooldown Recovery Speed",
+      "ref": "Infernal Cry has #% increased Cooldown Recovery Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2702698464"
           ]
         }
       ]
@@ -72982,6 +74236,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2546599258"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Intimidating Cry has #% increased Cooldown Recovery Speed",
+        "ref": "Intimidating Cry has #% increased Cooldown Recovery Speed"
+      }
+    ],
+    "mod": {
+      "text": "Intimidating Cry has #% increased Cooldown Recovery Speed",
+      "ref": "Intimidating Cry has #% increased Cooldown Recovery Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1134560807"
           ]
         }
       ]
@@ -74103,6 +75377,26 @@
   {
     "conditions": [
       {
+        "string": "Lightning Resistance does not affect Lightning Damage taken",
+        "ref": "Lightning Resistance does not affect Lightning Damage taken"
+      }
+    ],
+    "mod": {
+      "text": "Lightning Resistance does not affect Lightning Damage taken",
+      "ref": "Lightning Resistance does not affect Lightning Damage taken",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3999959974"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Lightning Resistance is #%",
         "ref": "Lightning Resistance is #%"
       }
@@ -74507,6 +75801,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2881426199"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Lose all Fragile Regrowth when Hit",
+        "ref": "Lose all Fragile Regrowth when Hit"
+      }
+    ],
+    "mod": {
+      "text": "Lose all Fragile Regrowth when Hit",
+      "ref": "Lose all Fragile Regrowth when Hit",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1306791873"
           ]
         }
       ]
@@ -75073,6 +76387,26 @@
   {
     "conditions": [
       {
+        "string": "Maximum # Fragile Regrowth",
+        "ref": "Maximum # Fragile Regrowth"
+      }
+    ],
+    "mod": {
+      "text": "Maximum # Fragile Regrowth",
+      "ref": "Maximum # Fragile Regrowth",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1173537953"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Melee and Melee Weapon Type modifiers in Radius are Transformed to Bow Modifiers",
         "ref": "Melee and Melee Weapon Type modifiers in Radius are Transformed to Bow Modifiers"
       }
@@ -75372,6 +76706,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3366426512"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Minions Convert #% of their Maximum Life to Maximum Energy\nShield per 1% Chaos Resistance they have",
+        "ref": "Minions Convert #% of their Maximum Life to Maximum Energy\nShield per 1% Chaos Resistance they have"
+      }
+    ],
+    "mod": {
+      "text": "Minions Convert #% of their Maximum Life to Maximum Energy\nShield per 1% Chaos Resistance they have",
+      "ref": "Minions Convert #% of their Maximum Life to Maximum Energy\nShield per 1% Chaos Resistance they have",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_433536969"
           ]
         }
       ]
@@ -75984,6 +77338,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2911442053"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Minions have #% faster start of Energy Shield Recharge",
+        "ref": "Minions have #% faster start of Energy Shield Recharge"
+      },
+      {
+        "string": "Minions have #% slower start of Energy Shield Recharge",
+        "ref": "Minions have #% slower start of Energy Shield Recharge",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Minions have #% faster start of Energy Shield Recharge",
+      "ref": "Minions have #% faster start of Energy Shield Recharge",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2834476618"
           ]
         }
       ]
@@ -78590,6 +79969,26 @@
   {
     "conditions": [
       {
+        "string": "Nearby Enemies have Lightning Resistance equal to yours",
+        "ref": "Nearby Enemies have Lightning Resistance equal to yours"
+      }
+    ],
+    "mod": {
+      "text": "Nearby Enemies have Lightning Resistance equal to yours",
+      "ref": "Nearby Enemies have Lightning Resistance equal to yours",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3549734978"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Nearby Enemies take #% increased Elemental Damage",
         "ref": "Nearby Enemies take #% increased Elemental Damage"
       }
@@ -78800,13 +80199,18 @@
   {
     "conditions": [
       {
-        "string": "Non-critical strikes deal #% Damage",
-        "ref": "Non-critical strikes deal #% Damage"
+        "string": "Non-critical strikes deal #% more Damage",
+        "ref": "Non-critical strikes deal #% more Damage"
+      },
+      {
+        "string": "Non-critical strikes deal #% less Damage",
+        "ref": "Non-critical strikes deal #% less Damage",
+        "negate": true
       }
     ],
     "mod": {
-      "text": "Non-critical strikes deal #% Damage",
-      "ref": "Non-critical strikes deal #% Damage",
+      "text": "Non-critical strikes deal #% more Damage",
+      "ref": "Non-critical strikes deal #% more Damage",
       "types": [
         {
           "name": "explicit",
@@ -78877,6 +80281,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_3893420071"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage",
+        "ref": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage"
+      }
+    ],
+    "mod": {
+      "text": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage",
+      "ref": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3430460307"
           ]
         }
       ]
@@ -79262,6 +80686,32 @@
   {
     "conditions": [
       {
+        "string": "Overwhelm #% Physical Damage Reduction",
+        "ref": "Overwhelm #% Physical Damage Reduction"
+      }
+    ],
+    "mod": {
+      "text": "Overwhelm #% Physical Damage Reduction",
+      "ref": "Overwhelm #% Physical Damage Reduction",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2495041954"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2495041954"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Pain Attunement",
         "ref": "Pain Attunement"
       }
@@ -79274,6 +80724,30 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_98977150"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Passive Skills in Radius also grant: #% increased Attack Speed with Unarmed Attacks",
+        "ref": "Passive Skills in Radius also grant: #% increased Attack Speed with Unarmed Attacks"
+      },
+      {
+        "string": "Passive Skills in Radius also grant: #% reduced Attack Speed with Unarmed Attacks",
+        "ref": "Passive Skills in Radius also grant: #% reduced Attack Speed with Unarmed Attacks"
+      }
+    ],
+    "mod": {
+      "text": "Passive Skills in Radius also grant: #% increased Attack Speed with Unarmed Attacks",
+      "ref": "Passive Skills in Radius also grant: #% increased Attack Speed with Unarmed Attacks",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3087912144"
           ]
         }
       ]
@@ -79434,6 +80908,56 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4077035099"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Penance Brand deals #% increased Damage",
+        "ref": "Penance Brand deals #% increased Damage"
+      },
+      {
+        "string": "Penance Brand deals #% reduced Damage",
+        "ref": "Penance Brand deals #% reduced Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Penance Brand deals #% increased Damage",
+      "ref": "Penance Brand deals #% increased Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_610562666"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Penance Brand has #% increased Cast Speed",
+        "ref": "Penance Brand has #% increased Cast Speed"
+      },
+      {
+        "string": "Penance Brand has #% reduced Cast Speed",
+        "ref": "Penance Brand has #% reduced Cast Speed",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Penance Brand has #% increased Cast Speed",
+      "ref": "Penance Brand has #% increased Cast Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_709541481"
           ]
         }
       ]
@@ -86633,6 +88157,26 @@
   {
     "conditions": [
       {
+        "string": "Socketed Gems are Supported by Level # Awakened Added Cold Damage",
+        "ref": "Socketed Gems are Supported by Level # Awakened Added Cold Damage"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Awakened Added Cold Damage",
+      "ref": "Socketed Gems are Supported by Level # Awakened Added Cold Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2509486489"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Socketed Gems are Supported by Level # Awakened Added Fire Damage",
         "ref": "Socketed Gems are Supported by Level # Awakened Added Fire Damage"
       }
@@ -86645,6 +88189,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_339131601"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage",
+        "ref": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage",
+      "ref": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3429304534"
           ]
         }
       ]
@@ -86991,6 +88555,26 @@
           "name": "implicit",
           "tradeId": [
             "implicit.stat_2223640518"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Block Chance Reduction",
+        "ref": "Socketed Gems are Supported by Level # Block Chance Reduction"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Block Chance Reduction",
+      "ref": "Socketed Gems are Supported by Level # Block Chance Reduction",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1966051190"
           ]
         }
       ]
@@ -88390,7 +89974,8 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_1876637240"
+            "explicit.stat_1876637240",
+            "explicit.stat_28821524"
           ]
         }
       ]
@@ -89488,6 +91073,66 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3287477747"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level 10 Controlled Destruction",
+        "ref": "Socketed Gems are Supported by Level 10 Controlled Destruction"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level 10 Controlled Destruction",
+      "ref": "Socketed Gems are Supported by Level 10 Controlled Destruction",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3425526049"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level 10 Intensify",
+        "ref": "Socketed Gems are Supported by Level 10 Intensify"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level 10 Intensify",
+      "ref": "Socketed Gems are Supported by Level 10 Intensify",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3561676020"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level 10 Spell Echo",
+        "ref": "Socketed Gems are Supported by Level 10 Spell Echo"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level 10 Spell Echo",
+      "ref": "Socketed Gems are Supported by Level 10 Spell Echo",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_725896422"
           ]
         }
       ]
@@ -90641,6 +92286,26 @@
   {
     "conditions": [
       {
+        "string": "Spells Triggered by Arcanist Brand Unnerve enemies on Hit for 4 seconds",
+        "ref": "Spells Triggered by Arcanist Brand Unnerve enemies on Hit for 4 seconds"
+      }
+    ],
+    "mod": {
+      "text": "Spells Triggered by Arcanist Brand Unnerve enemies on Hit for 4 seconds",
+      "ref": "Spells Triggered by Arcanist Brand Unnerve enemies on Hit for 4 seconds",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1350243490"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Spirit Offering grants #% of Physical Damage as Extra Chaos Damage",
         "ref": "Spirit Offering grants #% of Physical Damage as Extra Chaos Damage"
       }
@@ -91771,6 +93436,26 @@
   {
     "conditions": [
       {
+        "string": "Summoned Raging Spirits' Melee Strikes deal Fire-only Splash\nDamage to Surrounding Targets",
+        "ref": "Summoned Raging Spirits' Melee Strikes deal Fire-only Splash\nDamage to Surrounding Targets"
+      }
+    ],
+    "mod": {
+      "text": "Summoned Raging Spirits' Melee Strikes deal Fire-only Splash\nDamage to Surrounding Targets",
+      "ref": "Summoned Raging Spirits' Melee Strikes deal Fire-only Splash\nDamage to Surrounding Targets",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_221328679"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Summoned Sentinels of Dominance deal #% increased Damage",
         "ref": "Summoned Sentinels of Dominance deal #% increased Damage"
       },
@@ -91889,6 +93574,81 @@
   {
     "conditions": [
       {
+        "string": "Sunder has #% increased Area of Effect",
+        "ref": "Sunder has #% increased Area of Effect"
+      },
+      {
+        "string": "Sunder has #% reduced Area of Effect",
+        "ref": "Sunder has #% reduced Area of Effect",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Sunder has #% increased Area of Effect",
+      "ref": "Sunder has #% increased Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3316767657"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Sunder has #% increased Attack Speed",
+        "ref": "Sunder has #% increased Attack Speed"
+      },
+      {
+        "string": "Sunder has #% reduced Attack Speed",
+        "ref": "Sunder has #% reduced Attack Speed",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Sunder has #% increased Attack Speed",
+      "ref": "Sunder has #% increased Attack Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1999307054"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Sunder has #% increased Damage",
+        "ref": "Sunder has #% increased Damage"
+      },
+      {
+        "string": "Sunder has #% reduced Damage",
+        "ref": "Sunder has #% reduced Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Sunder has #% increased Damage",
+      "ref": "Sunder has #% increased Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_4033078288"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Sweep has a #% chance to grant an Endurance Charge on Hit",
         "ref": "Sweep has a #% chance to grant an Endurance Charge on Hit"
       },
@@ -91948,6 +93708,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2518598473"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Take # Lightning Damage when Herald of Thunder Hits an Enemy",
+        "ref": "Take # Lightning Damage when Herald of Thunder Hits an Enemy"
+      }
+    ],
+    "mod": {
+      "text": "Take # Lightning Damage when Herald of Thunder Hits an Enemy",
+      "ref": "Take # Lightning Damage when Herald of Thunder Hits an Enemy",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2007062029"
           ]
         }
       ]
@@ -92064,6 +93844,31 @@
   {
     "conditions": [
       {
+        "string": "Tectonic Slam deals #% increased Damage",
+        "ref": "Tectonic Slam deals #% increased Damage"
+      },
+      {
+        "string": "Tectonic Slam deals #% reduced Damage",
+        "ref": "Tectonic Slam deals #% reduced Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Tectonic Slam deals #% increased Damage",
+      "ref": "Tectonic Slam deals #% increased Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3999206457"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Tectonic Slam has #% chance to create a Charged Slam",
         "ref": "Tectonic Slam has #% chance to create a Charged Slam"
       }
@@ -92076,6 +93881,51 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_3214665792"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Tectonic Slam has #% fissure branching chance",
+        "ref": "Tectonic Slam has #% fissure branching chance"
+      }
+    ],
+    "mod": {
+      "text": "Tectonic Slam has #% fissure branching chance",
+      "ref": "Tectonic Slam has #% fissure branching chance",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_910992698"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Tectonic Slam has #% increased Area of Effect",
+        "ref": "Tectonic Slam has #% increased Area of Effect"
+      },
+      {
+        "string": "Tectonic Slam has #% reduced Area of Effect",
+        "ref": "Tectonic Slam has #% reduced Area of Effect",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Tectonic Slam has #% increased Area of Effect",
+      "ref": "Tectonic Slam has #% increased Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_340193547"
           ]
         }
       ]
@@ -92888,6 +94738,26 @@
   {
     "conditions": [
       {
+        "string": "Travel Skills other than Dash are Disabled",
+        "ref": "Travel Skills other than Dash are Disabled"
+      }
+    ],
+    "mod": {
+      "text": "Travel Skills other than Dash are Disabled",
+      "ref": "Travel Skills other than Dash are Disabled",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3066073024"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Trigger a Socketed Cold Spell on Melee Critical Strike",
         "ref": "Trigger a Socketed Cold Spell on Melee Critical Strike"
       }
@@ -92935,33 +94805,13 @@
   {
     "conditions": [
       {
-        "string": "Trigger Level # Abyssal Cry on Hit",
-        "ref": "Trigger Level # Abyssal Cry on Hit"
+        "string": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy",
+        "ref": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy"
       }
     ],
     "mod": {
-      "text": "Trigger Level # Abyssal Cry on Hit",
-      "ref": "Trigger Level # Abyssal Cry on Hit",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_1795756125"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Trigger Level # Bone Nova when you Kill a Bleeding Enemy",
-        "ref": "Trigger Level # Bone Nova when you Kill a Bleeding Enemy"
-      }
-    ],
-    "mod": {
-      "text": "Trigger Level # Bone Nova when you Kill a Bleeding Enemy",
-      "ref": "Trigger Level # Bone Nova when you Kill a Bleeding Enemy",
+      "text": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy",
+      "ref": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy",
       "types": [
         {
           "name": "explicit",
@@ -93035,13 +94885,13 @@
   {
     "conditions": [
       {
-        "string": "Trigger Level # Elemental Warding when you Hit an Enemy while Cursed",
-        "ref": "Trigger Level # Elemental Warding when you Hit an Enemy while Cursed"
+        "string": "Trigger Level # Elemental Warding on Melee Hit while Cursed",
+        "ref": "Trigger Level # Elemental Warding on Melee Hit while Cursed"
       }
     ],
     "mod": {
-      "text": "Trigger Level # Elemental Warding when you Hit an Enemy while Cursed",
-      "ref": "Trigger Level # Elemental Warding when you Hit an Enemy while Cursed",
+      "text": "Trigger Level # Elemental Warding on Melee Hit while Cursed",
+      "ref": "Trigger Level # Elemental Warding on Melee Hit while Cursed",
       "types": [
         {
           "name": "explicit",
@@ -93095,6 +94945,26 @@
   {
     "conditions": [
       {
+        "string": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength",
+        "ref": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength"
+      }
+    ],
+    "mod": {
+      "text": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength",
+      "ref": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_252427115"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Trigger Level # Icicle Burst when you Kill a Frozen Enemy",
         "ref": "Trigger Level # Icicle Burst when you Kill a Frozen Enemy"
       }
@@ -93107,6 +94977,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2812925691"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Trigger Level # Intimidating Cry on Hit",
+        "ref": "Trigger Level # Intimidating Cry on Hit"
+      }
+    ],
+    "mod": {
+      "text": "Trigger Level # Intimidating Cry on Hit",
+      "ref": "Trigger Level # Intimidating Cry on Hit",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1795756125"
           ]
         }
       ]
@@ -93147,6 +95037,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3241494164"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Trigger Level # Lightning Warp on Hit with this Weapon",
+        "ref": "Trigger Level # Lightning Warp on Hit with this Weapon"
+      }
+    ],
+    "mod": {
+      "text": "Trigger Level # Lightning Warp on Hit with this Weapon",
+      "ref": "Trigger Level # Lightning Warp on Hit with this Weapon",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1527893390"
           ]
         }
       ]
@@ -93215,6 +95125,26 @@
   {
     "conditions": [
       {
+        "string": "Trigger Level # Stalking Pustule on Kill",
+        "ref": "Trigger Level # Stalking Pustule on Kill"
+      }
+    ],
+    "mod": {
+      "text": "Trigger Level # Stalking Pustule on Kill",
+      "ref": "Trigger Level # Stalking Pustule on Kill",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1662669872"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Trigger Level # Storm Cascade when you Attack",
         "ref": "Trigger Level # Storm Cascade when you Attack"
       }
@@ -93267,6 +95197,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1869144397"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
+        "ref": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight"
+      }
+    ],
+    "mod": {
+      "text": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
+      "ref": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2554328719"
           ]
         }
       ]
@@ -94915,13 +96865,89 @@
   {
     "conditions": [
       {
-        "string": "Warcries Knock Enemies Back in an Area",
-        "ref": "Warcries Knock Enemies Back in an Area"
+        "string": "Warcries cannot Exert Travel Skills",
+        "ref": "Warcries cannot Exert Travel Skills"
       }
     ],
     "mod": {
-      "text": "Warcries Knock Enemies Back in an Area",
-      "ref": "Warcries Knock Enemies Back in an Area",
+      "text": "Warcries cannot Exert Travel Skills",
+      "ref": "Warcries cannot Exert Travel Skills",
+      "types": [
+        {
+          "name": "crafted",
+          "tradeId": [
+            "crafted.stat_2174134106"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Warcries grant Arcane Surge to you and Allies, with #% increased effect per 5 power, up to 50%",
+        "ref": "Warcries grant Arcane Surge to you and Allies, with #% increased effect per 5 power, up to 50%"
+      }
+    ],
+    "mod": {
+      "text": "Warcries grant Arcane Surge to you and Allies, with #% increased effect per 5 power, up to 50%",
+      "ref": "Warcries grant Arcane Surge to you and Allies, with #% increased effect per 5 power, up to 50%",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3399924348"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Warcries have infinite Power",
+        "ref": "Warcries have infinite Power"
+      },
+      {
+        "string": "Warcries count total Power of Enemies in Range",
+        "ref": "Warcries count total Power of Enemies in Range"
+      },
+      {
+        "string": "Warcries count total Power of Enemies and Allies in Range",
+        "ref": "Warcries count total Power of Enemies and Allies in Range"
+      },
+      {
+        "string": "Warcries count total Power of Enemies and Corpses in Range",
+        "ref": "Warcries count total Power of Enemies and Corpses in Range"
+      },
+      {
+        "string": "Warcries count total Power of Enemies, Aliies and Corpses in Range",
+        "ref": "Warcries count total Power of Enemies, Aliies and Corpses in Range"
+      }
+    ],
+    "mod": {
+      "text": "Warcries have infinite Power",
+      "ref": "Warcries have infinite Power",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3168635562"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Warcries Knock Back and Interrupt Enemies in a smaller Area",
+        "ref": "Warcries Knock Back and Interrupt Enemies in a smaller Area"
+      }
+    ],
+    "mod": {
+      "text": "Warcries Knock Back and Interrupt Enemies in a smaller Area",
+      "ref": "Warcries Knock Back and Interrupt Enemies in a smaller Area",
       "types": [
         {
           "name": "explicit",
@@ -94935,18 +96961,18 @@
   {
     "conditions": [
       {
-        "string": "Warcry Skills' Cooldown Time is 2 seconds",
-        "ref": "Warcry Skills' Cooldown Time is 2 seconds"
+        "string": "Warcry Skills' Cooldown Time is 4 seconds",
+        "ref": "Warcry Skills' Cooldown Time is 4 seconds"
       }
     ],
     "mod": {
-      "text": "Warcry Skills' Cooldown Time is 2 seconds",
-      "ref": "Warcry Skills' Cooldown Time is 2 seconds",
+      "text": "Warcry Skills' Cooldown Time is 4 seconds",
+      "ref": "Warcry Skills' Cooldown Time is 4 seconds",
       "types": [
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_244107556"
+            "explicit.stat_684268017"
           ]
         }
       ]
@@ -95269,6 +97295,26 @@
   {
     "conditions": [
       {
+        "string": "While Minions have Energy Shield, their Hits Ignore Monster Elemental Resistances",
+        "ref": "While Minions have Energy Shield, their Hits Ignore Monster Elemental Resistances"
+      }
+    ],
+    "mod": {
+      "text": "While Minions have Energy Shield, their Hits Ignore Monster Elemental Resistances",
+      "ref": "While Minions have Energy Shield, their Hits Ignore Monster Elemental Resistances",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1360359242"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "While your Passive Skill Tree connects to the Marauder's starting location, you gain:\nMelee Skills have #% increased Area of Effect",
         "ref": "While your Passive Skill Tree connects to the Marauder's starting location, you gain:\nMelee Skills have #% increased Area of Effect"
       },
@@ -95427,6 +97473,51 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_3734339018"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Wintertide Brand deals #% increased Damage",
+        "ref": "Wintertide Brand deals #% increased Damage"
+      },
+      {
+        "string": "Wintertide Brand deals #% reduced Damage",
+        "ref": "Wintertide Brand deals #% reduced Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Wintertide Brand deals #% increased Damage",
+      "ref": "Wintertide Brand deals #% increased Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_770334536"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Wintertide Brand has # to maximum Stages",
+        "ref": "Wintertide Brand has # to maximum Stages"
+      }
+    ],
+    "mod": {
+      "text": "Wintertide Brand has # to maximum Stages",
+      "ref": "Wintertide Brand has # to maximum Stages",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_35081783"
           ]
         }
       ]
@@ -95978,6 +98069,96 @@
   {
     "conditions": [
       {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike deals Splash Damage\nto surrounding targets while wielding a Mace",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike deals Splash Damage\nto surrounding targets while wielding a Mace"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Dexterity in Radius, Dual Strike deals Splash Damage\nto surrounding targets while wielding a Mace",
+      "ref": "With at least 40 Dexterity in Radius, Dual Strike deals Splash Damage\nto surrounding targets while wielding a Mace",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2562474285"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike has #% increased\nAccuracy Rating while wielding a Sword",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% increased\nAccuracy Rating while wielding a Sword"
+      },
+      {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike has #% reduced\nAccuracy Rating while wielding a Sword",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% reduced\nAccuracy Rating while wielding a Sword",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Dexterity in Radius, Dual Strike has #% increased\nAccuracy Rating while wielding a Sword",
+      "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% increased\nAccuracy Rating while wielding a Sword",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2869420801"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike has #% increased Attack\nSpeed while wielding a Claw",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% increased Attack\nSpeed while wielding a Claw"
+      },
+      {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike has #% reduced Attack\nSpeed while wielding a Claw",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% reduced Attack\nSpeed while wielding a Claw",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Dexterity in Radius, Dual Strike has #% increased Attack\nSpeed while wielding a Claw",
+      "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% increased Attack\nSpeed while wielding a Claw",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1795260970"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike has #% to Critical Strike\nMultiplier while wielding a Dagger",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% to Critical Strike\nMultiplier while wielding a Dagger"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Dexterity in Radius, Dual Strike has #% to Critical Strike\nMultiplier while wielding a Dagger",
+      "ref": "With at least 40 Dexterity in Radius, Dual Strike has #% to Critical Strike\nMultiplier while wielding a Dagger",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1503812817"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "With at least 40 Dexterity in Radius, Dual Strike has a #% chance\nto deal Double Damage with the Main-Hand Weapon",
         "ref": "With at least 40 Dexterity in Radius, Dual Strike has a #% chance\nto deal Double Damage with the Main-Hand Weapon"
       },
@@ -95998,6 +98179,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3765671129"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Dexterity in Radius, Dual Strike Hits Intimidate Enemies for\n4 seconds while wielding an Axe",
+        "ref": "With at least 40 Dexterity in Radius, Dual Strike Hits Intimidate Enemies for\n4 seconds while wielding an Axe"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Dexterity in Radius, Dual Strike Hits Intimidate Enemies for\n4 seconds while wielding an Axe",
+      "ref": "With at least 40 Dexterity in Radius, Dual Strike Hits Intimidate Enemies for\n4 seconds while wielding an Axe",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_100088509"
           ]
         }
       ]
@@ -96101,6 +98302,11 @@
       {
         "string": "With at least 40 Dexterity in Radius, Galvanic Arrow deals #% increased Area Damage",
         "ref": "With at least 40 Dexterity in Radius, Galvanic Arrow deals #% increased Area Damage"
+      },
+      {
+        "string": "With at least 40 Dexterity in Radius, Galvanic Arrow deals #% decreased Area Damage",
+        "ref": "With at least 40 Dexterity in Radius, Galvanic Arrow deals #% decreased Area Damage",
+        "negate": true
       }
     ],
     "mod": {
@@ -96272,18 +98478,18 @@
   {
     "conditions": [
       {
-        "string": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit during Rallying Cry for you and Allies",
-        "ref": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit during Rallying Cry for you and Allies"
+        "string": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently",
+        "ref": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently"
       }
     ],
     "mod": {
-      "text": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit during Rallying Cry for you and Allies",
-      "ref": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit during Rallying Cry for you and Allies",
+      "text": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently",
+      "ref": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently",
       "types": [
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_847575654"
+            "explicit.stat_303219716"
           ]
         }
       ]
@@ -96344,6 +98550,46 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2560038623"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Intelligence in Radius, Fireball cannot ignite",
+        "ref": "With at least 40 Intelligence in Radius, Fireball cannot ignite"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Intelligence in Radius, Fireball cannot ignite",
+      "ref": "With at least 40 Intelligence in Radius, Fireball cannot ignite",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_480975218"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Intelligence in Radius, Fireball has #% chance to inflict scorch",
+        "ref": "With at least 40 Intelligence in Radius, Fireball has #% chance to inflict scorch"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Intelligence in Radius, Fireball has #% chance to inflict scorch",
+      "ref": "With at least 40 Intelligence in Radius, Fireball has #% chance to inflict scorch",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1482194094"
           ]
         }
       ]
@@ -96495,6 +98741,56 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_160933750"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage",
+        "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage"
+      },
+      {
+        "string": "With at least 40 Intelligence in Radius, Magma Orb deals #% less Damage",
+        "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% less Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage",
+      "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3131110290"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain",
+        "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain"
+      },
+      {
+        "string": "With at least 40 Intelligence in Radius, Magma Orb deals #% less Damage per Chain",
+        "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% less Damage per Chain",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain",
+      "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1141756390"
           ]
         }
       ]
@@ -96828,6 +99124,31 @@
   {
     "conditions": [
       {
+        "string": "With at least 40 Strength in Radius, Molten Strike fires #% more Projectiles",
+        "ref": "With at least 40 Strength in Radius, Molten Strike fires #% more Projectiles"
+      },
+      {
+        "string": "With at least 40 Strength in Radius, Molten Strike fires #% less Projectiles",
+        "ref": "With at least 40 Strength in Radius, Molten Strike fires #% less Projectiles",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Strength in Radius, Molten Strike fires #% more Projectiles",
+      "ref": "With at least 40 Strength in Radius, Molten Strike fires #% more Projectiles",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_786380548"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "With at least 40 Strength in Radius, Molten Strike fires an additional Projectile",
         "ref": "With at least 40 Strength in Radius, Molten Strike fires an additional Projectile",
         "condition": {
@@ -96868,6 +99189,50 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1163758055"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # time",
+        "ref": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # time"
+      },
+      {
+        "string": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # times",
+        "ref": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # times"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # time",
+      "ref": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # time",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2295439133"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain on impacting ground",
+        "ref": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain on impacting ground"
+      }
+    ],
+    "mod": {
+      "text": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain on impacting ground",
+      "ref": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain on impacting ground",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_670814047"
           ]
         }
       ]
@@ -97298,6 +99663,26 @@
         }
       ],
       "inverted": true
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "You and your Totems Regenerate #% of Life per second for each Summoned Totem",
+        "ref": "You and your Totems Regenerate #% of Life per second for each Summoned Totem"
+      }
+    ],
+    "mod": {
+      "text": "You and your Totems Regenerate #% of Life per second for each Summoned Totem",
+      "ref": "You and your Totems Regenerate #% of Life per second for each Summoned Totem",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1496370423"
+          ]
+        }
+      ]
     }
   },
   {
@@ -98782,6 +101167,26 @@
   {
     "conditions": [
       {
+        "string": "You have Unholy Might while you have no Energy Shield",
+        "ref": "You have Unholy Might while you have no Energy Shield"
+      }
+    ],
+    "mod": {
+      "text": "You have Unholy Might while you have no Energy Shield",
+      "ref": "You have Unholy Might while you have no Energy Shield",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2353201291"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "You have Vaal Pact if you've dealt a Critical Strike Recently",
         "ref": "You have Vaal Pact if you've dealt a Critical Strike Recently"
       }
@@ -99697,26 +102102,6 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_2097223452"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Your Energy Shield starts at zero",
-        "ref": "Your Energy Shield starts at zero"
-      }
-    ],
-    "mod": {
-      "text": "Your Energy Shield starts at zero",
-      "ref": "Your Energy Shield starts at zero",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_2342431054"
           ]
         }
       ]

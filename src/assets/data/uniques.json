@@ -1037,7 +1037,7 @@
       },
       {
         "text": "#% increased Effect of Socketed Jewels",
-        "bounds": [{"min": 50, "max": 50}]
+        "bounds": [{"min": 75, "max": 75}]
       }
     ]
   },
@@ -1726,7 +1726,7 @@
       },
       {
         "text": "Focus has #% increased Cooldown Recovery Speed",
-        "bounds": [{"min": 15, "max": 25}]
+        "bounds": [{"min": 30, "max": 50}]
       },
       {
         "text": "#% increased Damage with Hits and Ailments against Chilled Enemies",
@@ -2773,7 +2773,7 @@
         "bounds": [{"min": 20, "max": 40}]
       },
       {
-        "text": "1% increased Attack Damage per 300 of the lowest of Armour and Evasion Rating",
+        "text": "1% increased Attack Damage per 200 of the lowest of Armour and Evasion Rating",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -3117,7 +3117,7 @@
         "implicit": true
       },
       {
-        "text": "#% Chance to Trigger Level 18 Summon Spectral Wolf on Kill",
+        "text": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
         "bounds": [{"min": 10, "max": 10}]
       },
       {
@@ -3549,26 +3549,6 @@
       {
         "text": "# to Intelligence",
         "bounds": [{"min": 20, "max": 40}]
-      },
-      {
-        "text": "Your Energy Shield starts at zero",
-        "bounds": [{"min": 1, "max": 1}]
-      },
-      {
-        "text": "You cannot Recharge Energy Shield",
-        "bounds": [{"min": 1, "max": 1}]
-      },
-      {
-        "text": "You cannot Regenerate Energy Shield",
-        "bounds": [{"min": 1, "max": 1}]
-      },
-      {
-        "text": "You lose #% of Energy Shield per second",
-        "bounds": [{"min": 5, "max": 5}]
-      },
-      {
-        "text": "Life Leech effects are not removed at Full Life\nLife Leech effects Recover Energy Shield instead while on Full Life",
-        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "Gain #% of Maximum Life as Extra Maximum Energy Shield",
@@ -4648,11 +4628,11 @@
       },
       {
         "text": "#% increased Global Critical Strike Chance",
-        "bounds": [{"min": 100, "max": 100}]
+        "bounds": [{"min": 250, "max": 350}]
       },
       {
-        "text": "#% to Global Critical Strike Multiplier",
-        "bounds": [{"min": -25, "max": -25}]
+        "text": "Your Critical Strikes do not deal extra Damage",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "# to maximum Life",
@@ -4768,11 +4748,11 @@
       },
       {
         "text": "#% of Damage Leeched as Life against Shocked Enemies",
-        "bounds": [{"min": 0.2, "max": 0.2}]
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "#% chance to Shock",
-        "bounds": [{"min": 10, "max": 10}]
+        "bounds": [{"min": 25, "max": 25}]
       }
     ]
   },
@@ -4789,7 +4769,7 @@
       },
       {
         "text": "# to maximum Energy Shield",
-        "bounds": [{"min": 10, "max": 20}]
+        "bounds": [{"min": 30, "max": 40}]
       },
       {
         "text": "#% to Fire Resistance",
@@ -5062,26 +5042,22 @@
       },
       {
         "text": "#% increased Attack Speed",
-        "bounds": [{"min": 8, "max": 12}]
+        "bounds": [{"min": 10, "max": 15}]
       },
       {
         "text": "#% increased Cast Speed",
-        "bounds": [{"min": 8, "max": 12}]
+        "bounds": [{"min": 10, "max": 15}]
       },
       {
         "text": "#% increased Movement Speed",
-        "bounds": [{"min": 12, "max": 12}]
+        "bounds": [{"min": 10, "max": 15}]
       },
       {
         "text": "#% increased Skill Effect Duration",
-        "bounds": [{"min": -12, "max": -8}]
+        "bounds": [{"min": -15, "max": -10}]
       },
       {
-        "text": "#% increased total Recovery per second from Life Leech",
-        "bounds": [{"min": 30, "max": 30}]
-      },
-      {
-        "text": "#% increased total Recovery per second from Mana Leech",
+        "text": "#% increased total Recovery per second from Life, Mana, or Energy Shield Leech",
         "bounds": [{"min": 30, "max": 30}]
       }
     ]
@@ -6731,7 +6707,7 @@
       },
       {
         "text": "#% Chance to Block",
-        "bounds": [{"min": 5, "max": 5}]
+        "bounds": [{"min": -10, "max": -10}]
       },
       {
         "text": "Gain Unholy Might on block for # seconds",
@@ -7551,7 +7527,7 @@
       },
       {
         "text": "# to maximum Life",
-        "bounds": [{"min": 50, "max": 100}]
+        "bounds": [{"min": 50, "max": 175}]
       },
       {
         "text": "Nearby Enemies have #% to all Resistances",
@@ -8466,7 +8442,7 @@
     "stats": [
       {
         "text": "Socketed Gems are Supported by Level # Added Chaos Damage",
-        "bounds": [{"min": 15, "max": 15}]
+        "bounds": [{"min": 25, "max": 25}]
       },
       {
         "text": "#% increased Armour and Evasion",
@@ -10698,7 +10674,7 @@
         "text": "Trigger Socketed Spells when\nyou Spend at least # Mana to Use a Skill",
         "bounds": [
           {"min": 100, "max": 100},
-          {"min": 30, "max": 30}
+          {"min": 50, "max": 50}
         ]
       },
       {
@@ -10719,7 +10695,7 @@
     "name": "Kongming's Stratagem",
     "basetype": "Ivory Spirit Shield",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/KongmingsStratagem.png?w=2&h=2",
-    "props": {"es": {"min": 66, "max": 79}},
+    "props": {"es": {"min": 122, "max": 138}},
     "stats": [
       {
         "text": "#% increased Spell Damage",
@@ -10736,11 +10712,11 @@
       },
       {
         "text": "#% increased Energy Shield",
-        "bounds": [{"min": 80, "max": 120}]
+        "bounds": [{"min": 250, "max": 300}]
       },
       {
         "text": "#% increased Fire Damage with Hits and Ailments against Blinded Enemies",
-        "bounds": [{"min": 30, "max": 30}]
+        "bounds": [{"min": 30, "max": 50}]
       },
       {
         "text": "#% reduced Spell Damage taken from Blinded Enemies",
@@ -11291,7 +11267,7 @@
       },
       {
         "text": "#% increased Spell Damage per Power Charge",
-        "bounds": [{"min": 6, "max": 6}]
+        "bounds": [{"min": 12, "max": 16}]
       },
       {
         "text": "Lose all Power Charges on reaching Maximum Power Charges",
@@ -11399,7 +11375,7 @@
       },
       {
         "text": "Regenerate # Energy Shield per second if all Equipped items are Corrupted",
-        "bounds": [{"min": 100, "max": 100}]
+        "bounds": [{"min": 250, "max": 250}]
       },
       {
         "text": "Regenerate # Mana per second if all Equipped Items are Corrupted",
@@ -11439,7 +11415,7 @@
       },
       {
         "text": "Nearby allies Recover #% of your Maximum Life when you Die",
-        "bounds": [{"min": 2, "max": 2}]
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -11616,7 +11592,7 @@
       },
       {
         "text": "Minions have #% increased Movement Speed",
-        "bounds": [{"min": 10, "max": 15}]
+        "bounds": [{"min": 25, "max": 45}]
       },
       {
         "text": "Summoned Raging Spirits deal #% increased Damage",
@@ -11678,7 +11654,7 @@
         "bounds": [{"min": 30, "max": 50}]
       },
       {
-        "text": "Your Energy Shield starts at zero",
+        "text": "Immortal Ambition",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -11729,7 +11705,7 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "Your Energy Shield starts at zero",
+        "text": "Immortal Ambition",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -12929,8 +12905,8 @@
     "props": {"ev": {"min": 622, "max": 692}},
     "stats": [
       {
-        "text": "#% chance to Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
-        "bounds": [{"min": 25, "max": 25}]
+        "text": "Trigger Level 20 Tornado when you gain Avian's Might or Avian's Flight",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "#% increased Evasion Rating",
@@ -14225,11 +14201,11 @@
       },
       {
         "text": "#% reduced Attack and Cast Speed per Frenzy Charge",
-        "bounds": [{"min": -3, "max": -3}]
+        "bounds": [{"min": -4, "max": -4}]
       },
       {
         "text": "Regenerate #% of Life per second per Frenzy Charge",
-        "bounds": [{"min": 0.5, "max": 0.5}]
+        "bounds": [{"min": 0.8, "max": 0.8}]
       },
       {
         "text": "#% chance to gain a Frenzy Charge on Kill",
@@ -14237,7 +14213,7 @@
       },
       {
         "text": "#% increased Damage per Frenzy Charge with Hits against Enemies on Low Life",
-        "bounds": [{"min": 6, "max": 6}]
+        "bounds": [{"min": 20, "max": 30}]
       },
       {
         "text": "Gore Footprints",
@@ -15791,7 +15767,7 @@
         "bounds": [{"min": 40, "max": 60}]
       },
       {
-        "text": "Regenerate #% of Life per second",
+        "text": "You and your Totems Regenerate #% of Life per second for each Summoned Totem",
         "bounds": [{"min": 0.5, "max": 0.5}]
       },
       {
@@ -18335,7 +18311,7 @@
     "stats": [
       {
         "text": "#% increased Movement Speed while Ignited",
-        "bounds": [{"min": 10, "max": 15}]
+        "bounds": [{"min": 10, "max": 20}]
       }
     ]
   },
@@ -19004,7 +18980,7 @@
         "bounds": [{"min": 7, "max": 10}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit during Rallying Cry for you and Allies",
+        "text": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently",
         "bounds": [{"min": 10, "max": 10}]
       }
     ]
@@ -19761,7 +19737,7 @@
     "name": "Agnerod East",
     "basetype": "Imperial Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 135, "max": 135}},
+    "props": {"pdps": {"min": 156, "max": 156}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -19798,7 +19774,7 @@
     "name": "Agnerod North",
     "basetype": "Imperial Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 135, "max": 135}},
+    "props": {"pdps": {"min": 156, "max": 156}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -19835,7 +19811,7 @@
     "name": "Agnerod South",
     "basetype": "Imperial Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 135, "max": 135}},
+    "props": {"pdps": {"min": 156, "max": 156}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -19872,7 +19848,7 @@
     "name": "Agnerod West",
     "basetype": "Imperial Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 135, "max": 135}},
+    "props": {"pdps": {"min": 156, "max": 156}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -19964,7 +19940,7 @@
         "implicit": true
       },
       {
-        "text": "Trigger Level # Abyssal Cry on Hit",
+        "text": "Trigger Level # Intimidating Cry on Hit",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -19977,10 +19953,10 @@
       },
       {
         "text": "#% increased Warcry Buff Effect",
-        "bounds": [{"min": 50, "max": 50}]
+        "bounds": [{"min": 25, "max": 25}]
       },
       {
-        "text": "Warcry Skills' Cooldown Time is 2 seconds",
+        "text": "Warcry Skills' Cooldown Time is 4 seconds",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -20034,18 +20010,18 @@
       },
       {
         "text": "# to Level of Socketed Gems",
+        "bounds": [{"min": 2, "max": 2}]
+      },
+      {
+        "text": "Socketed Gems are Supported by Level 10 Intensify",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "Socketed Gems are Supported by Level # Increased Area of Effect",
+        "text": "Socketed Gems are Supported by Level 10 Spell Echo",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "Socketed Gems are Supported by Level # Spell Echo",
-        "bounds": [{"min": 1, "max": 1}]
-      },
-      {
-        "text": "Socketed Gems are Supported by Level # Controlled Destruction",
+        "text": "Socketed Gems are Supported by Level 10 Controlled Destruction",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -20213,8 +20189,13 @@
     "name": "Atziri's Disfavour",
     "basetype": "Vaal Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/AtzirisDisfavour.png?w=2&h=4",
-    "props": {"pdps": {"min": 564, "max": 613}},
+    "props": {"pdps": {"min": 566, "max": 614}},
     "stats": [
+      {
+        "text": "#% chance to Maim on Hit",
+        "bounds": [{"min": 25, "max": 25}],
+        "implicit": true
+      },
       {
         "text": "# to Level of Socketed Support Gems",
         "bounds": [{"min": 2, "max": 2}]
@@ -20222,8 +20203,8 @@
       {
         "text": "Adds # to # Physical Damage",
         "bounds": [
-          {"min": 220, "max": 235},
-          {"min": 270, "max": 290}
+          {"min": 205, "max": 220},
+          {"min": 250, "max": 270}
         ]
       },
       {
@@ -20580,18 +20561,18 @@
     "name": "Brain Rattler",
     "basetype": "Meatgrinder",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/BrainScrambler.png?w=2&h=4",
-    "props": {"pdps": {"min": 435, "max": 487}},
+    "props": {"pdps": {"min": 406, "max": 459}},
     "stats": [
       {
-        "text": "#% increased Stun Duration on Enemies",
-        "bounds": [{"min": 30, "max": 30}],
+        "text": "#% chance to deal Double Damage",
+        "bounds": [{"min": 5, "max": 5}],
         "implicit": true
       },
       {
         "text": "Adds # to # Physical Damage",
         "bounds": [
-          {"min": 80, "max": 100},
-          {"min": 320, "max": 370}
+          {"min": 60, "max": 80},
+          {"min": 270, "max": 320}
         ]
       },
       {
@@ -20600,7 +20581,7 @@
       },
       {
         "text": "#% chance to Shock",
-        "bounds": [{"min": 15, "max": 15}]
+        "bounds": [{"min": 50, "max": 50}]
       },
       {
         "text": "#% chance to Cause Monsters to Flee",
@@ -20841,11 +20822,11 @@
     "name": "Cane of Unravelling",
     "basetype": "Ezomyte Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/CaneOfUnravelling.png?w=2&h=4",
-    "props": {"pdps": {"min": 136, "max": 136}},
+    "props": {"pdps": {"min": 160, "max": 160}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 18, "max": 18}],
+        "bounds": [{"min": 20, "max": 20}],
         "implicit": true
       },
       {
@@ -20915,7 +20896,7 @@
     "name": "Chaber Cairn",
     "basetype": "Great Mallet",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/ChoberChaber.png?w=2&h=4",
-    "props": {"pdps": {"min": 365, "max": 431}},
+    "props": {"pdps": {"min": 402, "max": 469}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -21036,7 +21017,7 @@
     "name": "Chober Chaber",
     "basetype": "Great Mallet",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/ChoberChaber.png?w=2&h=4",
-    "props": {"pdps": {"min": 225, "max": 240}},
+    "props": {"pdps": {"min": 262, "max": 278}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -21412,7 +21393,7 @@
     "name": "Debeon's Dirge",
     "basetype": "Despot Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/StringAxe.png?w=2&h=4",
-    "props": {"pdps": {"min": 139, "max": 139}},
+    "props": {"pdps": {"min": 177, "max": 177}},
     "stats": [
       {
         "text": "Adds # to # Cold Damage",
@@ -21430,7 +21411,7 @@
         "bounds": [{"min": 150, "max": 150}]
       },
       {
-        "text": "Warcries Knock Enemies Back in an Area",
+        "text": "Warcries Knock Back and Interrupt Enemies in a smaller Area",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -21439,18 +21420,18 @@
     "name": "Disintegrator",
     "basetype": "Maelström Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/ElderStaff.png?w=2&h=4&elder=1",
-    "props": {"pdps": {"min": 563, "max": 616}},
+    "props": {"pdps": {"min": 530, "max": 568}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 20, "max": 20}],
+        "bounds": [{"min": 25, "max": 25}],
         "implicit": true
       },
       {
         "text": "Adds # to # Physical Damage",
         "bounds": [
-          {"min": 250, "max": 280},
-          {"min": 315, "max": 355}
+          {"min": 220, "max": 240},
+          {"min": 270, "max": 300}
         ]
       },
       {
@@ -21598,11 +21579,11 @@
     "name": "Doomsower",
     "basetype": "Lion Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/DoomSower.png?w=2&h=4",
-    "props": {"pdps": {"min": 398, "max": 500}},
+    "props": {"pdps": {"min": 402, "max": 509}},
     "stats": [
       {
-        "text": "# to Accuracy Rating",
-        "bounds": [{"min": 470, "max": 470}],
+        "text": "# to Strength and Dexterity",
+        "bounds": [{"min": 50, "max": 50}],
         "implicit": true
       },
       {
@@ -21611,7 +21592,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 50, "max": 70}]
+        "bounds": [{"min": 30, "max": 50}]
       },
       {
         "text": "Adds # to # Physical Damage",
@@ -21879,11 +21860,11 @@
     "name": "Duskdawn",
     "basetype": "Maelström Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/SolarisLunarisStaff.png?w=2&h=4",
-    "props": {"pdps": {"min": 140, "max": 140}},
+    "props": {"pdps": {"min": 163, "max": 163}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 20, "max": 20}],
+        "bounds": [{"min": 25, "max": 25}],
         "implicit": true
       },
       {
@@ -21954,7 +21935,7 @@
     "name": "Dying Breath",
     "basetype": "Iron Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/DyingBreath.png?w=2&h=4",
-    "props": {"pdps": {"min": 37, "max": 37}},
+    "props": {"pdps": {"min": 43, "max": 43}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -22068,11 +22049,11 @@
     "name": "Edge of Madness",
     "basetype": "Etched Greatsword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/EdgeOfMadness.png?w=2&h=4",
-    "props": {"pdps": {"min": 68, "max": 77}},
+    "props": {"pdps": {"min": 79, "max": 88}},
     "stats": [
       {
         "text": "#% increased Global Accuracy Rating",
-        "bounds": [{"min": 40, "max": 40}],
+        "bounds": [{"min": 60, "max": 60}],
         "implicit": true
       },
       {
@@ -22261,7 +22242,7 @@
     "name": "Femurs of the Saints",
     "basetype": "Primordial Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/FemursoftheSaints.png?w=2&h=4",
-    "props": {"pdps": {"min": 129, "max": 129}},
+    "props": {"pdps": {"min": 151, "max": 151}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -22298,7 +22279,7 @@
     "name": "Fencoil",
     "basetype": "Gnarled Branch",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff1unique.png?w=1&h=4",
-    "props": {"pdps": {"min": 19, "max": 19}},
+    "props": {"pdps": {"min": 22, "max": 22}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -22450,7 +22431,7 @@
     "name": "Geofri's Baptism",
     "basetype": "Brass Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 163, "max": 163}},
+    "props": {"pdps": {"min": 192, "max": 192}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -22482,7 +22463,7 @@
     "name": "Geofri's Devotion",
     "basetype": "Brass Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 399, "max": 420}},
+    "props": {"pdps": {"min": 399, "max": 418}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -22490,7 +22471,7 @@
         "implicit": true
       },
       {
-        "text": "Trigger Level # Elemental Warding when you Hit an Enemy while Cursed",
+        "text": "Trigger Level # Elemental Warding on Melee Hit while Cursed",
         "bounds": [{"min": 20, "max": 20}]
       },
       {
@@ -22500,8 +22481,8 @@
       {
         "text": "Adds # to # Physical Damage",
         "bounds": [
-          {"min": 50, "max": 56},
-          {"min": 73, "max": 78}
+          {"min": 42, "max": 47},
+          {"min": 66, "max": 71}
         ]
       },
       {
@@ -22739,11 +22720,11 @@
     "name": "Hegemony's Era",
     "basetype": "Judgement Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HegemonysEra.png?w=2&h=4",
-    "props": {"pdps": {"min": 463, "max": 506}},
+    "props": {"pdps": {"min": 440, "max": 478}},
     "stats": [
       {
-        "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 18, "max": 18}],
+        "text": "#% Chance to Block Spell Damage while wielding a Staff",
+        "bounds": [{"min": 20, "max": 20}],
         "implicit": true
       },
       {
@@ -22753,8 +22734,8 @@
       {
         "text": "Adds # to # Physical Damage",
         "bounds": [
-          {"min": 165, "max": 175},
-          {"min": 185, "max": 205}
+          {"min": 135, "max": 145},
+          {"min": 160, "max": 175}
         ]
       },
       {
@@ -22763,7 +22744,7 @@
       },
       {
         "text": "#% increased Critical Strike Chance",
-        "bounds": [{"min": 20, "max": 30}]
+        "bounds": [{"min": 10, "max": 20}]
       },
       {
         "text": "# to Maximum Power Charges",
@@ -22779,11 +22760,16 @@
     "name": "Hezmana's Bloodlust",
     "basetype": "Vaal Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HezmanasBloodlust.png?w=2&h=4",
-    "props": {"pdps": {"min": 375, "max": 426}},
+    "props": {"pdps": {"min": 379, "max": 441}},
     "stats": [
       {
+        "text": "#% chance to Maim on Hit",
+        "bounds": [{"min": 25, "max": 25}],
+        "implicit": true
+      },
+      {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 150, "max": 170}]
+        "bounds": [{"min": 100, "max": 125}]
       },
       {
         "text": "Adds # to # Physical Damage",
@@ -22806,11 +22792,11 @@
     "name": "Hiltless",
     "basetype": "Reaver Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Hiltless.png?w=2&h=4",
-    "props": {"pdps": {"min": 398, "max": 445}},
+    "props": {"pdps": {"min": 437, "max": 486}},
     "stats": [
       {
         "text": "#% increased Global Accuracy Rating",
-        "bounds": [{"min": 40, "max": 40}],
+        "bounds": [{"min": 60, "max": 60}],
         "implicit": true
       },
       {
@@ -22842,7 +22828,7 @@
     "name": "Hopeshredder",
     "basetype": "Ranger Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/ElderBow.png?w=2&h=4&elder=1",
-    "props": {"pdps": {"min": 106, "max": 116}},
+    "props": {"pdps": {"min": 107, "max": 117}},
     "stats": [
       {
         "text": "Adds # to # Cold Damage",
@@ -22888,7 +22874,7 @@
     "name": "Hrimnor's Dirge",
     "basetype": "Sledgehammer",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 157, "max": 234}},
+    "props": {"pdps": {"min": 174, "max": 256}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -22932,7 +22918,7 @@
     "name": "Hrimnor's Hymn",
     "basetype": "Sledgehammer",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 89, "max": 109}},
+    "props": {"pdps": {"min": 106, "max": 131}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -22989,7 +22975,7 @@
       },
       {
         "text": "#% increased Lightning Damage per Frenzy Charge",
-        "bounds": [{"min": 12, "max": 12}]
+        "bounds": [{"min": 15, "max": 20}]
       },
       {
         "text": "# Life gained on Kill per Frenzy Charge",
@@ -23236,7 +23222,7 @@
     "name": "Jorrhast's Blacksteel",
     "basetype": "Steelhead",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/JorrhastsBlacksteel.png?w=2&h=4",
-    "props": {"pdps": {"min": 221, "max": 272}},
+    "props": {"pdps": {"min": 256, "max": 314}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -23273,11 +23259,11 @@
     "name": "Kaom's Primacy",
     "basetype": "Karui Chopper",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe11Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 330, "max": 400}},
+    "props": {"pdps": {"min": 358, "max": 423}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 160, "max": 220}]
+        "bounds": [{"min": 100, "max": 140}]
       },
       {
         "text": "# Life gained on Kill",
@@ -23305,11 +23291,11 @@
     "name": "Kingmaker",
     "basetype": "Despot Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/Alexaxeandheartbreaker.png?w=2&h=4",
-    "props": {"pdps": {"min": 460, "max": 527}},
+    "props": {"pdps": {"min": 460, "max": 531}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 250, "max": 285}]
+        "bounds": [{"min": 170, "max": 200}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -23345,7 +23331,7 @@
     "name": "Kitava's Feast",
     "basetype": "Void Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/KitavasHunger.png?w=2&h=4",
-    "props": {"pdps": {"min": 457, "max": 534}},
+    "props": {"pdps": {"min": 480, "max": 540}},
     "stats": [
       {
         "text": "Socketed Gems are supported by Level # Melee Splash",
@@ -23353,7 +23339,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 265, "max": 330}]
+        "bounds": [{"min": 200, "max": 240}]
       },
       {
         "text": "#% of Physical Attack Damage Leeched as Life",
@@ -23377,16 +23363,16 @@
     "name": "Kondo's Pride",
     "basetype": "Ezomyte Blade",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/KondosPride.png?w=2&h=4",
-    "props": {"pdps": {"min": 413, "max": 466}},
+    "props": {"pdps": {"min": 421, "max": 458}},
     "stats": [
       {
-        "text": "# to Accuracy Rating",
-        "bounds": [{"min": 435, "max": 435}],
+        "text": "#% to Global Critical Strike Multiplier",
+        "bounds": [{"min": 25, "max": 25}],
         "implicit": true
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 270, "max": 320}]
+        "bounds": [{"min": 220, "max": 250}]
       },
       {
         "text": "#% of Physical Attack Damage Leeched as Life",
@@ -23414,11 +23400,11 @@
     "name": "Kongor's Undying Rage",
     "basetype": "Terror Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/KongorsUndyingRage.png?w=2&h=4",
-    "props": {"pdps": {"min": 412, "max": 474}},
+    "props": {"pdps": {"min": 421, "max": 478}},
     "stats": [
       {
-        "text": "#% increased Stun Duration on Enemies",
-        "bounds": [{"min": 30, "max": 30}],
+        "text": "#% chance to double Stun Duration",
+        "bounds": [{"min": 25, "max": 25}],
         "implicit": true
       },
       {
@@ -23604,7 +23590,7 @@
     "name": "Limbsplit",
     "basetype": "Woodsplitter",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe_spare.png?w=2&h=4",
-    "props": {"pdps": {"min": 83, "max": 91}},
+    "props": {"pdps": {"min": 94, "max": 104}},
     "stats": [
       {
         "text": "# to Level of Socketed Strength Gems",
@@ -23635,7 +23621,7 @@
     "name": "Lioneye's Glare",
     "basetype": "Imperial Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow8unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 265, "max": 361}},
+    "props": {"pdps": {"min": 267, "max": 364}},
     "stats": [
       {
         "text": "#% increased Elemental Damage with Attack Skills",
@@ -23709,11 +23695,11 @@
     "name": "Marohi Erqi",
     "basetype": "Karui Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace2unique2.png?w=2&h=4",
-    "props": {"pdps": {"min": 462, "max": 501}},
+    "props": {"pdps": {"min": 504, "max": 551}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
-        "bounds": [{"min": 30, "max": 30}],
+        "bounds": [{"min": 45, "max": 45}],
         "implicit": true
       },
       {
@@ -23722,7 +23708,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 230, "max": 260}]
+        "bounds": [{"min": 200, "max": 230}]
       },
       {
         "text": "Adds # to # Physical Damage",
@@ -23753,7 +23739,7 @@
     "name": "Martyr of Innocence",
     "basetype": "Highborn Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/MartyrInnocence.png?w=2&h=4",
-    "props": {"pdps": {"min": 114, "max": 114}},
+    "props": {"pdps": {"min": 133, "max": 133}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -23877,7 +23863,7 @@
     "name": "Mirebough",
     "basetype": "Gnarled Branch",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff1unique.png?w=1&h=4",
-    "props": {"pdps": {"min": 19, "max": 19}},
+    "props": {"pdps": {"min": 22, "max": 22}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -23988,7 +23974,7 @@
     "name": "Moonbender's Wing",
     "basetype": "Tomahawk",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/MoonbendersWing.png?w=2&h=3",
-    "props": {"pdps": {"min": 126, "max": 152}},
+    "props": {"pdps": {"min": 100, "max": 123}},
     "stats": [
       {
         "text": "Grants Level # Lightning Warp Skill",
@@ -23996,7 +23982,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 70, "max": 90}]
+        "bounds": [{"min": 30, "max": 50}]
       },
       {
         "text": "Adds # to # Physical Damage",
@@ -24152,7 +24138,7 @@
     "name": "Ngamahu's Flame",
     "basetype": "Abyssal Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/RiriTeNgamahu.png?w=2&h=4",
-    "props": {"pdps": {"min": 361, "max": 424}},
+    "props": {"pdps": {"min": 395, "max": 438}},
     "stats": [
       {
         "text": "#% chance to Trigger Level 16 Molten Burst on Melee Hit",
@@ -24160,7 +24146,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 190, "max": 230}]
+        "bounds": [{"min": 170, "max": 190}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -24168,7 +24154,7 @@
       },
       {
         "text": "#% of Physical Damage Converted to Fire Damage",
-        "bounds": [{"min": 50, "max": 50}]
+        "bounds": [{"min": 60, "max": 60}]
       },
       {
         "text": "Damage Penetrates #% Fire Resistance",
@@ -24180,7 +24166,7 @@
     "name": "Null's Inclination",
     "basetype": "Ranger Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/NullBow.png?w=2&h=4",
-    "props": {"pdps": {"min": 99, "max": 104}},
+    "props": {"pdps": {"min": 100, "max": 104}},
     "stats": [
       {
         "text": "Adds # to # Chaos Damage",
@@ -24411,7 +24397,7 @@
     "props": {"pdps": {"min": 0, "max": 0}},
     "stats": [
       {
-        "text": "#% increased Global Accuracy Rating",
+        "text": "#% increased Elemental Damage with Attack Skills",
         "bounds": [{"min": 30, "max": 30}],
         "implicit": true
       },
@@ -24456,7 +24442,7 @@
     "name": "Panquetzaliztli",
     "basetype": "Jagged Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 356, "max": 406}},
+    "props": {"pdps": {"min": 370, "max": 421}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -24509,7 +24495,7 @@
     "name": "Pillar of the Caged God",
     "basetype": "Iron Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/PillaroftheCagedGod.png?w=2&h=4",
-    "props": {"pdps": {"min": 37, "max": 37}},
+    "props": {"pdps": {"min": 43, "max": 43}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -24571,11 +24557,11 @@
     "name": "Pledge of Hands",
     "basetype": "Judgement Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/PledgeofHands.png?w=2&h=4",
-    "props": {"pdps": {"min": 140, "max": 140}},
+    "props": {"pdps": {"min": 163, "max": 163}},
     "stats": [
       {
-        "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 18, "max": 18}],
+        "text": "#% Chance to Block Spell Damage while wielding a Staff",
+        "bounds": [{"min": 20, "max": 20}],
         "implicit": true
       },
       {
@@ -24636,7 +24622,7 @@
     "name": "Quecholli",
     "basetype": "Jagged Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 123, "max": 135}},
+    "props": {"pdps": {"min": 137, "max": 151}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -24672,7 +24658,7 @@
     "name": "Queen's Decree",
     "basetype": "Ornate Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordUnique3.png?w=2&h=4",
-    "props": {"pdps": {"min": 58, "max": 58}},
+    "props": {"pdps": {"min": 67, "max": 67}},
     "stats": [
       {
         "text": "# to Accuracy Rating",
@@ -24713,7 +24699,7 @@
     "name": "Queen's Escape",
     "basetype": "Ornate Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordUnique3.png?w=2&h=4",
-    "props": {"pdps": {"min": 58, "max": 58}},
+    "props": {"pdps": {"min": 67, "max": 67}},
     "stats": [
       {
         "text": "# to Accuracy Rating",
@@ -24810,7 +24796,7 @@
       },
       {
         "text": "#% of Physical Damage Converted to Fire Damage",
-        "bounds": [{"min": 25, "max": 25}]
+        "bounds": [{"min": 30, "max": 30}]
       },
       {
         "text": "#% chance to Ignite",
@@ -24865,7 +24851,7 @@
     "name": "Realm Ender",
     "basetype": "Iron Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff5unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 37, "max": 37}},
+    "props": {"pdps": {"min": 43, "max": 43}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -24912,7 +24898,7 @@
     "name": "Realmshaper",
     "basetype": "Iron Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff5unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 37, "max": 37}},
+    "props": {"pdps": {"min": 43, "max": 43}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -24955,7 +24941,7 @@
     "name": "Reaper's Pursuit",
     "basetype": "Shadow Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeUnique1.png?w=2&h=4",
-    "props": {"pdps": {"min": 142, "max": 159}},
+    "props": {"pdps": {"min": 168, "max": 186}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
@@ -25079,7 +25065,7 @@
     "name": "Reefbane",
     "basetype": "Fishing Rod",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/FishingRods/Reefbane.png?w=1&h=4",
-    "props": {"pdps": {"min": 14, "max": 14}},
+    "props": {"pdps": {"min": 16, "max": 16}},
     "stats": [
       {
         "text": "#% increased Cast Speed",
@@ -25147,10 +25133,10 @@
       },
       {
         "text": "# to Level of Socketed Gems",
-        "bounds": [{"min": 1, "max": 1}]
+        "bounds": [{"min": 2, "max": 2}]
       },
       {
-        "text": "Socketed Gems are Supported by Level # Spell Echo",
+        "text": "Socketed Gems are Supported by Level 10 Spell Echo",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -25163,7 +25149,7 @@
     "name": "Rigwald's Charge",
     "basetype": "Highland Blade",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword5Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 216, "max": 242}},
+    "props": {"pdps": {"min": 251, "max": 282}},
     "stats": [
       {
         "text": "# to Accuracy Rating",
@@ -25529,11 +25515,11 @@
     "name": "Shiversting",
     "basetype": "Bastard Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword6Unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 58, "max": 63}},
+    "props": {"pdps": {"min": 66, "max": 73}},
     "stats": [
       {
         "text": "#% increased Global Accuracy Rating",
-        "bounds": [{"min": 40, "max": 40}],
+        "bounds": [{"min": 60, "max": 60}],
         "implicit": true
       },
       {
@@ -25689,11 +25675,11 @@
     "name": "Sinvicta's Mettle",
     "basetype": "Ezomyte Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/SinvictasMettle.png?w=2&h=4",
-    "props": {"pdps": {"min": 404, "max": 435}},
+    "props": {"pdps": {"min": 413, "max": 448}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 200, "max": 212}]
+        "bounds": [{"min": 140, "max": 152}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -25714,7 +25700,7 @@
     "name": "Sire of Shards",
     "basetype": "Serpentine Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Radience.png?w=2&h=4",
-    "props": {"pdps": {"min": 111, "max": 111}},
+    "props": {"pdps": {"min": 129, "max": 129}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -25751,7 +25737,7 @@
     "name": "Slivertongue",
     "basetype": "Harbinger Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/SilverTongue.png?w=2&h=4",
-    "props": {"pdps": {"min": 346, "max": 371}},
+    "props": {"pdps": {"min": 346, "max": 372}},
     "stats": [
       {
         "text": "#% increased Critical Strike Chance",
@@ -25783,7 +25769,7 @@
     "name": "Song of the Sirens",
     "basetype": "Fishing Rod",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/FishingRods/UniqueFishingRod1.png?w=1&h=4",
-    "props": {"pdps": {"min": 14, "max": 14}},
+    "props": {"pdps": {"min": 16, "max": 16}},
     "stats": [
       {
         "text": "Rhoa Feather Lure",
@@ -25842,11 +25828,11 @@
     "name": "Soulwrest",
     "basetype": "Ezomyte Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/TopDownStaveIcon.png?w=2&h=4",
-    "props": {"pdps": {"min": 136, "max": 136}},
+    "props": {"pdps": {"min": 160, "max": 160}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 18, "max": 18}],
+        "bounds": [{"min": 20, "max": 20}],
         "implicit": true
       },
       {
@@ -25923,16 +25909,16 @@
     "name": "Starforge",
     "basetype": "Infernal Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Starforge.png?w=2&h=4&shaper=1",
-    "props": {"pdps": {"min": 589, "max": 723}},
+    "props": {"pdps": {"min": 433, "max": 584}},
     "stats": [
       {
-        "text": "#% increased Global Accuracy Rating",
+        "text": "#% increased Elemental Damage with Attack Skills",
         "bounds": [{"min": 30, "max": 30}],
         "implicit": true
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 400, "max": 500}]
+        "bounds": [{"min": 200, "max": 300}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -26093,11 +26079,11 @@
     "name": "Taryn's Shiver",
     "basetype": "Maelström Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Tarynsshiver.png?w=2&h=4",
-    "props": {"pdps": {"min": 140, "max": 140}},
+    "props": {"pdps": {"min": 163, "max": 163}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 20, "max": 20}],
+        "bounds": [{"min": 25, "max": 25}],
         "implicit": true
       },
       {
@@ -26130,7 +26116,7 @@
     "name": "Terminus Est",
     "basetype": "Tiger Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordUnique2.png?w=2&h=4",
-    "props": {"pdps": {"min": 347, "max": 389}},
+    "props": {"pdps": {"min": 360, "max": 409}},
     "stats": [
       {
         "text": "# to Accuracy Rating",
@@ -26139,7 +26125,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 220, "max": 260}]
+        "bounds": [{"min": 180, "max": 220}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -26200,7 +26186,7 @@
     "name": "The Blood Reaper",
     "basetype": "Headsman Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeUnique2.png?w=2&h=4",
-    "props": {"pdps": {"min": 257, "max": 274}},
+    "props": {"pdps": {"min": 298, "max": 317}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
@@ -26232,7 +26218,7 @@
     "name": "The Blood Thorn",
     "basetype": "Gnarled Branch",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/TheBloodThorn.png?w=1&h=4",
-    "props": {"pdps": {"min": 37, "max": 39}},
+    "props": {"pdps": {"min": 42, "max": 44}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -26265,7 +26251,7 @@
     "name": "The Cauteriser",
     "basetype": "Woodsplitter",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe_spare.png?w=2&h=4",
-    "props": {"pdps": {"min": 213, "max": 263}},
+    "props": {"pdps": {"min": 224, "max": 276}},
     "stats": [
       {
         "text": "# to Level of Socketed Strength Gems",
@@ -26373,16 +26359,16 @@
     "name": "The Dancing Dervish",
     "basetype": "Reaver Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Rhysblade.png?w=2&h=4",
-    "props": {"pdps": {"min": 350, "max": 403}},
+    "props": {"pdps": {"min": 389, "max": 453}},
     "stats": [
       {
         "text": "#% increased Global Accuracy Rating",
-        "bounds": [{"min": 40, "max": 40}],
+        "bounds": [{"min": 60, "max": 60}],
         "implicit": true
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 160, "max": 190}]
+        "bounds": [{"min": 130, "max": 160}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -26411,16 +26397,16 @@
     "name": "The Dancing Duo",
     "basetype": "Reaver Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Rhysblade.png?w=2&h=4",
-    "props": {"pdps": {"min": 350, "max": 403}},
+    "props": {"pdps": {"min": 389, "max": 453}},
     "stats": [
       {
         "text": "#% increased Global Accuracy Rating",
-        "bounds": [{"min": 40, "max": 40}],
+        "bounds": [{"min": 60, "max": 60}],
         "implicit": true
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 160, "max": 190}]
+        "bounds": [{"min": 130, "max": 160}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -26453,7 +26439,7 @@
     "name": "The Enmity Divine",
     "basetype": "Imperial Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Rage%20Staff.png?w=2&h=4",
-    "props": {"pdps": {"min": 383, "max": 418}},
+    "props": {"pdps": {"min": 405, "max": 439}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -26642,11 +26628,11 @@
     "name": "The Grey Spire",
     "basetype": "Judgement Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/TheGreySpire.png?w=2&h=4",
-    "props": {"pdps": {"min": 168, "max": 182}},
+    "props": {"pdps": {"min": 195, "max": 212}},
     "stats": [
       {
-        "text": "#% Chance to Block Attack Damage while wielding a Staff",
-        "bounds": [{"min": 18, "max": 18}],
+        "text": "#% Chance to Block Spell Damage while wielding a Staff",
+        "bounds": [{"min": 20, "max": 20}],
         "implicit": true
       },
       {
@@ -26710,7 +26696,7 @@
     "name": "The Harvest",
     "basetype": "Jasper Chopper",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TheExtractor.png?w=2&h=4",
-    "props": {"pdps": {"min": 176, "max": 191}},
+    "props": {"pdps": {"min": 205, "max": 223}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
@@ -26897,7 +26883,7 @@
         "implicit": true
       },
       {
-        "text": "#% Chance to Trigger Level 18 Summon Spectral Wolf on Kill",
+        "text": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
         "bounds": [{"min": 10, "max": 10}]
       },
       {
@@ -26916,7 +26902,7 @@
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "Increases and Reductions to Minion Damage also affect you",
+        "text": "Increases and Reductions to Minion Damage also affect you at 150% of their value",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -26960,7 +26946,7 @@
     "name": "The Searing Touch",
     "basetype": "Lathi",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff4unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 128, "max": 128}},
+    "props": {"pdps": {"min": 149, "max": 149}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -26989,7 +26975,7 @@
     "name": "The Stormheart",
     "basetype": "Royal Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff8uniqueX.png?w=2&h=4",
-    "props": {"pdps": {"min": 106, "max": 117}},
+    "props": {"pdps": {"min": 124, "max": 136}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -27032,7 +27018,7 @@
     "name": "The Stormwall",
     "basetype": "Royal Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff8uniqueX.png?w=2&h=4",
-    "props": {"pdps": {"min": 416, "max": 440}},
+    "props": {"pdps": {"min": 426, "max": 450}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -27224,7 +27210,7 @@
     "name": "The Whispering Ice",
     "basetype": "Vile Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff8unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 78, "max": 78}},
+    "props": {"pdps": {"min": 91, "max": 91}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -27257,11 +27243,11 @@
     "name": "Tidebreaker",
     "basetype": "Imperial Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/Tidebreaker.png?w=2&h=4",
-    "props": {"pdps": {"min": 428, "max": 460}},
+    "props": {"pdps": {"min": 438, "max": 468}},
     "stats": [
       {
-        "text": "#% increased Stun Duration on Enemies",
-        "bounds": [{"min": 30, "max": 30}],
+        "text": "#% increased Strength",
+        "bounds": [{"min": 10, "max": 10}],
         "implicit": true
       },
       {
@@ -27337,7 +27323,7 @@
     "name": "Tremor Rod",
     "basetype": "Military Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/MineStaff.png?w=2&h=4",
-    "props": {"pdps": {"min": 98, "max": 98}},
+    "props": {"pdps": {"min": 114, "max": 114}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -27370,7 +27356,7 @@
     "name": "Trypanon",
     "basetype": "Great Mallet",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/Trypanon.png?w=2&h=4",
-    "props": {"pdps": {"min": 42, "max": 42}},
+    "props": {"pdps": {"min": 49, "max": 49}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -27572,10 +27558,15 @@
     "name": "Uul-Netol's Embrace",
     "basetype": "Vaal Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/UulNetolsKissUpgraded.png?w=2&h=4",
-    "props": {"pdps": {"min": 352, "max": 415}},
+    "props": {"pdps": {"min": 447, "max": 527}},
     "stats": [
       {
-        "text": "Trigger Level # Bone Nova when you Kill a Bleeding Enemy",
+        "text": "#% chance to Maim on Hit",
+        "bounds": [{"min": 25, "max": 25}],
+        "implicit": true
+      },
+      {
+        "text": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy",
         "bounds": [{"min": 20, "max": 20}]
       },
       {
@@ -27596,7 +27587,7 @@
     "name": "Uul-Netol's Kiss",
     "basetype": "Labrys",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/UulNetolsKiss.png?w=2&h=4",
-    "props": {"pdps": {"min": 222, "max": 248}},
+    "props": {"pdps": {"min": 261, "max": 291}},
     "stats": [
       {
         "text": "#% increased Physical Damage",
@@ -27689,16 +27680,16 @@
     "name": "Voidforge",
     "basetype": "Infernal Sword",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/Starforge.png?w=2&h=4&elder=1",
-    "props": {"pdps": {"min": 192, "max": 256}},
+    "props": {"pdps": {"min": 203, "max": 250}},
     "stats": [
       {
-        "text": "#% increased Global Accuracy Rating",
+        "text": "#% increased Elemental Damage with Attack Skills",
         "bounds": [{"min": 30, "max": 30}],
         "implicit": true
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 50, "max": 100}]
+        "bounds": [{"min": 30, "max": 60}]
       },
       {
         "text": "#% increased Attack Speed",
@@ -27730,7 +27721,7 @@
     "name": "Voidhome",
     "basetype": "Dread Maul",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/Voidhome.png?w=2&h=4",
-    "props": {"pdps": {"min": 391, "max": 391}},
+    "props": {"pdps": {"min": 458, "max": 458}},
     "stats": [
       {
         "text": "#% increased Stun Duration on Enemies",
@@ -27877,15 +27868,15 @@
       },
       {
         "text": "# to Evasion Rating",
-        "bounds": [{"min": 300, "max": 400}]
+        "bounds": [{"min": 1000, "max": 1500}]
       },
       {
         "text": "#% chance to Dodge Attack Hits while your Off Hand is empty",
-        "bounds": [{"min": 20, "max": 20}]
+        "bounds": [{"min": 15, "max": 25}]
       },
       {
         "text": "#% increased Cold Damage while your Off Hand is empty",
-        "bounds": [{"min": 100, "max": 100}]
+        "bounds": [{"min": 100, "max": 200}]
       }
     ]
   },
@@ -27893,7 +27884,7 @@
     "name": "Wideswing",
     "basetype": "Poleaxe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/Wideswing.png?w=2&h=4",
-    "props": {"pdps": {"min": 96, "max": 113}},
+    "props": {"pdps": {"min": 112, "max": 130}},
     "stats": [
       {
         "text": "Socketed Gems are Supported by Level # Increased Area of Effect",
@@ -28005,7 +27996,7 @@
     "name": "Windripper",
     "basetype": "Imperial Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Eagle.png?w=2&h=4",
-    "props": {"pdps": {"min": 93, "max": 97}},
+    "props": {"pdps": {"min": 94, "max": 98}},
     "stats": [
       {
         "text": "#% increased Elemental Damage with Attack Skills",
@@ -28048,32 +28039,37 @@
     "name": "Wings of Entropy",
     "basetype": "Sundering Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/Entropywings.png?w=2&h=4",
-    "props": {"pdps": {"min": 261, "max": 285}},
+    "props": {"pdps": {"min": 267, "max": 297}},
     "stats": [
       {
+        "text": "#% to Damage over Time Multiplier for Bleeding",
+        "bounds": [{"min": 20, "max": 20}],
+        "implicit": true
+      },
+      {
         "text": "#% Chance to Block Spell Damage",
-        "bounds": [{"min": 6, "max": 7}]
+        "bounds": [{"min": 7, "max": 10}]
       },
       {
         "text": "#% Chance to Block Attack Damage while Dual Wielding",
-        "bounds": [{"min": 8, "max": 8}]
+        "bounds": [{"min": 8, "max": 12}]
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 100, "max": 120}]
+        "bounds": [{"min": 60, "max": 80}]
       },
       {
         "text": "Adds # to # Fire Damage in Main Hand",
         "bounds": [
-          {"min": 55, "max": 65},
-          {"min": 100, "max": 120}
+          {"min": 75, "max": 100},
+          {"min": 165, "max": 200}
         ]
       },
       {
         "text": "Adds # to # Chaos Damage in Off Hand",
         "bounds": [
-          {"min": 55, "max": 65},
-          {"min": 100, "max": 120}
+          {"min": 75, "max": 100},
+          {"min": 165, "max": 200}
         ]
       },
       {
@@ -28086,7 +28082,7 @@
     "name": "Xirgil's Crank",
     "basetype": "Coiled Staff",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff7unique.png?w=2&h=4",
-    "props": {"pdps": {"min": 57, "max": 57}},
+    "props": {"pdps": {"min": 65, "max": 65}},
     "stats": [
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
@@ -28150,7 +28146,7 @@
     "name": "Xoph's Nurture",
     "basetype": "Citadel Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/BloodPerigreeBREACH.png?w=2&h=4",
-    "props": {"pdps": {"min": 303, "max": 355}},
+    "props": {"pdps": {"min": 250, "max": 281}},
     "stats": [
       {
         "text": "Socketed Gems are Supported by Level # Ignite Proliferation",
@@ -28158,7 +28154,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 265, "max": 330}]
+        "bounds": [{"min": 200, "max": 240}]
       },
       {
         "text": "#% of Physical Damage Converted to Fire Damage",
@@ -28722,11 +28718,11 @@
       },
       {
         "text": "#% increased Global Damage",
-        "bounds": [{"min": 30, "max": 50}]
+        "bounds": [{"min": 40, "max": 60}]
       },
       {
         "text": "#% Global chance to Blind Enemies on hit",
-        "bounds": [{"min": 7, "max": 7}]
+        "bounds": [{"min": 10, "max": 10}]
       },
       {
         "text": "Cannot be Blinded",
@@ -28928,7 +28924,7 @@
       },
       {
         "text": "Herald of Ash has #% increased Buff Effect",
-        "bounds": [{"min": 70, "max": 100}],
+        "bounds": [{"min": 40, "max": 60}],
         "variant": true
       },
       {
@@ -28943,7 +28939,7 @@
       },
       {
         "text": "Herald of Ash has #% reduced Mana Reservation",
-        "bounds": [{"min": -40, "max": -30}],
+        "bounds": [{"min": -20, "max": -15}],
         "variant": true
       },
       {
@@ -28991,12 +28987,12 @@
       },
       {
         "text": "Herald of Ice has #% increased Buff Effect",
-        "bounds": [{"min": 70, "max": 100}],
+        "bounds": [{"min": 40, "max": 60}],
         "variant": true
       },
       {
         "text": "Herald of Ice has #% reduced Mana Reservation",
-        "bounds": [{"min": -40, "max": -30}],
+        "bounds": [{"min": -20, "max": -15}],
         "variant": true
       },
       {
@@ -29037,7 +29033,7 @@
       },
       {
         "text": "Herald of Purity has #% increased Buff Effect",
-        "bounds": [{"min": 70, "max": 100}],
+        "bounds": [{"min": 40, "max": 60}],
         "variant": true
       },
       {
@@ -29057,7 +29053,7 @@
       },
       {
         "text": "Herald of Purity has #% reduced Mana Reservation",
-        "bounds": [{"min": -40, "max": -30}],
+        "bounds": [{"min": -20, "max": -15}],
         "variant": true
       }
     ]
@@ -29100,7 +29096,7 @@
       },
       {
         "text": "Herald of Agony has #% increased Buff Effect",
-        "bounds": [{"min": 70, "max": 100}],
+        "bounds": [{"min": 40, "max": 60}],
         "variant": true
       },
       {
@@ -29110,7 +29106,7 @@
       },
       {
         "text": "Herald of Agony has #% reduced Mana Reservation",
-        "bounds": [{"min": -40, "max": -30}],
+        "bounds": [{"min": -20, "max": -15}],
         "variant": true
       }
     ]
@@ -29143,7 +29139,7 @@
       },
       {
         "text": "Herald of Thunder has #% increased Buff Effect",
-        "bounds": [{"min": 70, "max": 100}],
+        "bounds": [{"min": 40, "max": 60}],
         "variant": true
       },
       {
@@ -29163,7 +29159,7 @@
       },
       {
         "text": "Herald of Thunder has #% reduced Mana Reservation",
-        "bounds": [{"min": -40, "max": -30}],
+        "bounds": [{"min": -20, "max": -15}],
         "variant": true
       }
     ]
@@ -29190,7 +29186,7 @@
       },
       {
         "text": "#% of Physical Damage Leeched as Life",
-        "bounds": [{"min": 0.2, "max": 0.2}],
+        "bounds": [{"min": 0.6, "max": 0.6}],
         "variant": true
       },
       {
@@ -29210,12 +29206,12 @@
       },
       {
         "text": "#% of Fire Damage Leeched as Life",
-        "bounds": [{"min": 0.2, "max": 0.2}],
+        "bounds": [{"min": 0.6, "max": 0.6}],
         "variant": true
       },
       {
         "text": "#% chance to Ignite during any Flask Effect",
-        "bounds": [{"min": 10, "max": 10}],
+        "bounds": [{"min": 20, "max": 30}],
         "variant": true
       },
       {
@@ -29235,12 +29231,12 @@
       },
       {
         "text": "#% of Cold Damage Leeched as Life",
-        "bounds": [{"min": 0.2, "max": 0.2}],
+        "bounds": [{"min": 0.6, "max": 0.6}],
         "variant": true
       },
       {
         "text": "#% chance to Freeze during any Flask Effect",
-        "bounds": [{"min": 10, "max": 10}],
+        "bounds": [{"min": 20, "max": 30}],
         "variant": true
       }
     ]
@@ -31048,6 +31044,11 @@
         "variant": true
       },
       {
+        "text": "Call to Arms",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "Conduit",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -31074,6 +31075,11 @@
       },
       {
         "text": "Ghost Reaver",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "Glancing Blows",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
       },
@@ -31836,7 +31842,17 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Awakened Added Cold Damage",
+        "bounds": [{"min": 5, "max": 5}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Awakened Added Fire Damage",
+        "bounds": [{"min": 5, "max": 5}],
+        "variant": true
+      },
+      {
+        "text": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage",
         "bounds": [{"min": 5, "max": 5}],
         "variant": true
       },
@@ -32391,6 +32407,11 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Block Chance Reduction",
+        "bounds": [{"min": 20, "max": 20}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Less Duration",
         "bounds": [{"min": 20, "max": 20}],
         "variant": true
@@ -32679,7 +32700,7 @@
         "variant": true
       },
       {
-        "text": "#% increased Damage with Brand Skills per 10 Devotion",
+        "text": "#% increased Brand Damage per 10 Devotion",
         "bounds": [{"min": 4, "max": 4}],
         "variant": true
       },
@@ -32886,6 +32907,11 @@
       },
       {
         "text": "1 Added Passive Skill is Blessed Rebirth",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "1 Added Passive Skill is Blizzard Caller",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
       },
@@ -33210,6 +33236,11 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Exploit Weakness",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Explosive Force",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -33340,6 +33371,11 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Grounded Commander",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Guerilla Tactics",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -33455,6 +33491,11 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Lord of Drought",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Low Tolerance",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -33521,6 +33562,11 @@
       },
       {
         "text": "1 Added Passive Skill is Mindfulness",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "1 Added Passive Skill is Misery Everlasting",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
       },
@@ -33825,6 +33871,11 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Self-Control",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Self-Fulfilling Prophecy",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -33950,7 +34001,17 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Sublime Form",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Sublime Sensation",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "1 Added Passive Skill is Summer Commander",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
       },
@@ -33980,6 +34041,11 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Tempt the Storm",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Thaumophage",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -34001,6 +34067,11 @@
       },
       {
         "text": "1 Added Passive Skill is Towering Threat",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "1 Added Passive Skill is Uncompromising",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
       },
@@ -34384,10 +34455,6 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/KaruiCivilization.png?w=1&h=1",
     "props": {},
     "stats": [
-      {
-        "text": "Commanded leadership over # warriors under Kiloava",
-        "bounds": [{"min": 10000, "max": 18000}]
-      },
       {"text": "Historic", "bounds": [{"min": 1, "max": 1}]}
     ]
   },
@@ -34397,10 +34464,6 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/EternalEmpireCivilization.png?w=1&h=1",
     "props": {},
     "stats": [
-      {
-        "text": "Commissioned # coins to commemorate Chitus",
-        "bounds": [{"min": 2000, "max": 160000}]
-      },
       {"text": "Historic", "bounds": [{"min": 1, "max": 1}]}
     ]
   },
