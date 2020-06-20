@@ -102,7 +102,7 @@ interface BulkSearch {
   }
 }
 
-const HAVE_CURRENCY = ['exa', 'chaos']
+const HAVE_CURRENCY = ['exalted', 'chaos']
 
 export async function execBulkSearch (want: string): Promise<BulkSearch> {
   const resultByHave = await Promise.all(HAVE_CURRENCY.map(async (have) => {
