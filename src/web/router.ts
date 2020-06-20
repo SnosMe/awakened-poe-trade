@@ -7,11 +7,6 @@ export default new Router({
   linkActiveClass: 'active',
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: () => import(/* webpackChunkName: "price-check" */ './price-check/PriceCheckWindow.vue')
-    },
-    {
       path: '/overlay',
       name: 'overlay',
       component: () => import(/* webpackChunkName: "overlay" */ './overlay/OverlayWindow.vue')

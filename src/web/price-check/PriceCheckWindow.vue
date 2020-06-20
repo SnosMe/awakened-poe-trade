@@ -5,11 +5,7 @@
     'flex-row': clickPosition === 'stash',
     'flex-row-reverse': clickPosition === 'inventory',
   }">
-    <div v-if="browserMode"
-      class="w-full layout-column" style="width: calc(100% - 460px);">
-      <browser-mode />
-    </div>
-    <div v-if="!isBrowserShown && !browserMode" class="layout-column flex-shrink-0"
+    <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
       :style="{ width: poeUiWidth }">
     </div>
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;"
@@ -54,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div v-if="!browserMode" class="layout-column flex-1 min-w-0">
+    <div class="layout-column flex-1 min-w-0">
       <div class="flex" :class="{
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
@@ -67,7 +63,6 @@
 </template>
 
 <script>
-import BrowserMode from './BrowserMode'
 import CheckedItem from './CheckedItem'
 import AppBootstrap from './AppBootstrap'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -84,7 +79,6 @@ export default {
     CheckedItem,
     UnidentifiedResolver,
     AppBootstrap,
-    BrowserMode,
     RelatedItems,
     RateLimiterState
   },

@@ -9,6 +9,7 @@
         :id="`widget-${widget.wmId}`"
         :is="`widget-${widget.wmType}`" />
     </template>
+    <widget-debug id="widget-debug" />
     <div v-show="!gameFocused && !active">
       <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
     </div>
@@ -21,6 +22,7 @@ import WidgetTimer from './WidgetTimer'
 import WidgetInventorySearch from './WidgetInventorySearch'
 import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
+import WidgetDebug from './WidgetDebug'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 
 export default {
@@ -28,7 +30,8 @@ export default {
     WidgetTimer,
     WidgetInventorySearch,
     WidgetMenu,
-    WidgetPriceCheck: PriceCheckWindow
+    WidgetPriceCheck: PriceCheckWindow,
+    WidgetDebug
   },
   provide () {
     return { wm: this }

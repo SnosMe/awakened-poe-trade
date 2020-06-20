@@ -11,7 +11,7 @@ export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'
 
 export const UPDATE_AVAILABLE = 'update-available'
 
-export const FOCUS_CHANGE = 'OVERLAY::focus-change'
+export const FOCUS_CHANGE = 'MAIN->OVERLAY::focus-change'
 
 export const DPR_CHANGE = 'OVERLAY->MAIN::devicePixelRatio-change'
 
@@ -22,6 +22,7 @@ export interface IpcPriceCheck {
   position: { x: number, y: number }
 }
 
+export const OVERLAY_READY = 'OVERLAY->MAIN::ready'
 
 export const SHOW_BROWSER = 'OVERLAY->MAIN::show-browser'
 export interface IpcShowBrowser {
