@@ -419,11 +419,15 @@ function patchRequestForSubdomain (body: TradeRequest) {
   if (Config.store.subdomain === 'us') return body
   if (!body.query.name || !body.query.type) return body
 
-  const usIdx = API_TRADE_ITEMS.us.findIndex(item =>
-    item.name === body.query.name &&
-    item.type === body.query.type
-  )
-  const translated = API_TRADE_ITEMS[Config.store.subdomain as keyof typeof API_TRADE_ITEMS][usIdx]
+  // const usIdx = API_TRADE_ITEMS.us.findIndex(item =>
+  //   item.name === body.query.name &&
+  //   item.type === body.query.type
+  // )
+  // const translated = API_TRADE_ITEMS[Config.store.subdomain as keyof typeof API_TRADE_ITEMS][usIdx]
+  const translated = {
+    name: body.query.name,
+    type: body.query.type
+  }
 
   body = JSON.parse(JSON.stringify(body))
   body.query.name = translated.name

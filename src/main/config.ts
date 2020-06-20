@@ -6,7 +6,7 @@ import { win } from './window'
 
 export function setupConfig () {
   ipcMain.on(GET_CONFIG, (e) => {
-    e.returnValue = config.store
+    e.returnValue = { ...config.store, subdomain: 'us' }
   })
 }
 
