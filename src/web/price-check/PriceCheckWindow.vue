@@ -43,6 +43,9 @@
           <div class="flex-grow layout-column">
             <app-bootstrap />
             <template>
+              <check-position-circle
+                v-if="showTips"
+                :position="checkPosition" style="z-index: -1;" />
               <unidentified-resolver :item="item" @identify="item = $event" />
               <checked-item :item="item" />
             </template>
@@ -73,6 +76,7 @@ import { parseClipboard } from '@/parser'
 import RelatedItems from './related-items/RelatedItems'
 import RateLimiterState from './trade/RateLimiterState'
 import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver'
+import CheckPositionCircle from './CheckPositionCircle'
 
 export default {
   components: {
@@ -80,7 +84,8 @@ export default {
     UnidentifiedResolver,
     AppBootstrap,
     RelatedItems,
-    RateLimiterState
+    RateLimiterState,
+    CheckPositionCircle
   },
   filters: { displayRounding },
   inject: ['wm'],
@@ -102,6 +107,7 @@ export default {
         y: e.position.y - window.screenY
       }
       this.item = parseClipboard(e.clipboard)
+      this.showTips = false
     })
     MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
       this.wm.hide(this.config.wmId)
@@ -113,7 +119,15 @@ export default {
     return {
       poeUiWidth: '1px',
       checkPosition: { x: 1, y: 1 },
-      item: null
+      item: null,
+      showTips: false
+    }
+  },
+  watch: {
+    'wm.active' (isActive) {
+      if (isActive) {
+        this.showTips = true
+      }
     }
   },
   computed: {
