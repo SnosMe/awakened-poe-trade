@@ -24,6 +24,7 @@ import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
 import WidgetDebug from './WidgetDebug'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
+import { Config } from '@/web/Config'
 
 export default {
   components: {
@@ -132,6 +133,10 @@ export default {
             }
           }
         }
+      }
+
+      if (this.active === false && this.gameFocused === false) {
+        Config.saveConfig()
       }
     })
     MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {

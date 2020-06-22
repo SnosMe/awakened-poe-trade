@@ -118,6 +118,12 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  saveConfig (config: Config) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.PUSH_CONFIG, config)
+    }
+  }
+
   get CORS () {
     return (!electron)
       ? 'https://apt-cors.snos.workers.dev/?'
