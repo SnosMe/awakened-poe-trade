@@ -1,5 +1,5 @@
 import path from 'path'
-import { BrowserWindow, ipcMain, dialog } from 'electron'
+import { BrowserWindow, ipcMain, dialog, Menu } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
@@ -18,6 +18,7 @@ export const overlayReady = new Promise<void>((resolve) => {
 export async function createOverlayWindow () {
   ipcMain.once(ipc.OVERLAY_READY, _resolveOverlayReady)
   ipcMain.on(ipc.DPR_CHANGE, (_: any, dpr: number) => handleDprChange(dpr))
+  ipcMain.on(ipc.CLOSE_OVERLAY, assertPoEActive)
   PoeWindow.on('active-change', handlePoeWindowActiveChange)
   PoeWindow.onceAttached(handleOverlayAttached)
 
@@ -35,6 +36,13 @@ export async function createOverlayWindow () {
 
   overlayWindow.setIgnoreMouseEvents(true)
 
+  overlayWindow.setMenu(Menu.buildFromTemplate([
+    { role: 'editMenu' },
+    { role: 'reload' },
+    { role: 'toggleDevTools' }
+  ]))
+  overlayWindow.webContents.on('before-input-event', handleExtraCommands)
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#overlay')
     overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
@@ -50,17 +58,18 @@ export async function createOverlayWindow () {
   PoeWindow.attach(overlayWindow)
 }
 
+let _isOverlayKeyUsed = false
 export function toggleOverlayState () {
   if (!overlayWindow) {
     logger.warn('Window is not ready', { source: 'overlay' })
     return
   }
+  _isOverlayKeyUsed = true
   if (isInteractable) {
     focusPoE()
   } else {
     focusOverlay()
   }
-  overlayWindow.webContents.send(ipc.FOCUS_CHANGE, { game: PoeWindow.isActive, overlay: isInteractable })
 }
 
 function handlePoeWindowActiveChange (isActive: boolean) {
@@ -68,7 +77,13 @@ function handlePoeWindowActiveChange (isActive: boolean) {
     isInteractable = false
     overlayWindow!.setIgnoreMouseEvents(true)
   }
-  overlayWindow!.webContents.send(ipc.FOCUS_CHANGE, { game: isActive, overlay: isInteractable })
+  overlayWindow!.webContents.send(ipc.FOCUS_CHANGE, {
+    game: isActive,
+    overlay: isInteractable,
+    usingHotkey: _isOverlayKeyUsed
+  } as ipc.IpcFocusChange)
+
+  _isOverlayKeyUsed = false
 }
 
 export function assertOverlayActive () {
@@ -116,5 +131,23 @@ function handleOverlayAttached (hasAccess?: boolean) {
 function handleDprChange (devicePixelRatio: number) {
   if (process.platform === 'win32') {
     DPR = devicePixelRatio
+  }
+}
+
+export function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
+  if (input.type === 'keyDown') {
+    if (input.code === 'Escape') {
+      event.preventDefault()
+      process.nextTick(assertPoEActive)
+    } else if (input.code === 'Space' && input.shift) {
+      event.preventDefault()
+      process.nextTick(toggleOverlayState)
+    } else if (input.code === 'Space') {
+      event.preventDefault()
+      process.nextTick(assertPoEActive)
+    } else if (input.code === 'KeyW' && input.control) {
+      event.preventDefault()
+      process.nextTick(assertPoEActive)
+    }
   }
 }

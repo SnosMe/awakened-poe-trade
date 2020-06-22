@@ -66,7 +66,13 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  priceCheckHide () {
+  closeOverlay () {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.CLOSE_OVERLAY)
+    }
+  }
+
+  priceCheckWidgetIsHidden () {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_HIDE)
     }
@@ -77,12 +83,6 @@ class MainProcessBinding extends EventTarget {
       return electron.ipcRenderer.sendSync(ipcEvent.GET_CONFIG)
     } else {
       return defaultConfig
-    }
-  }
-
-  priceCheckMouse (string: string, modifier?: string) {
-    if (electron) {
-      electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_MOUSE, string, modifier)
     }
   }
 

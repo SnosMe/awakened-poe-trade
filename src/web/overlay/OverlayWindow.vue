@@ -118,11 +118,6 @@ export default {
     }
   },
   created () {
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        MainProcess.priceCheckHide()
-      }
-    })
     MainProcess.addEventListener(FOCUS_CHANGE, ({ detail: state }) => {
       this.active = state.overlay
       this.gameFocused = state.game
@@ -131,6 +126,10 @@ export default {
         for (const w of this.widgets) {
           if (w.wmFlags.includes('hide-on-blur')) {
             this.hide(w.wmId)
+          } else if (w.wmFlags.includes('hide-on-blur(close)')) {
+            if (!state.usingHotkey) {
+              this.hide(w.wmId)
+            }
           }
         }
       }
@@ -150,14 +149,17 @@ export default {
   },
   computed: {
     visibilityState () {
-      const showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
+      let showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
+      if (!this.active && showExclusive && showExclusive.wmFlags.includes('invisible-on-blur')) {
+        showExclusive = undefined
+      }
 
       return this.widgets.map(w => ({
         wmId: w.wmId,
         isVisible:
           this.hideUI ? false
-            : showExclusive ? w === showExclusive
-              : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
+            : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
+              : showExclusive ? w === showExclusive
                 : w.wmWants === 'show'
       }))
     }
@@ -178,14 +180,13 @@ export default {
       this.widgets = this.widgets.filter(_ => _.wmId !== wmId)
     },
     showBrowser (wmId, url) {
-      const widget = this.widgets.find(_ => _.wmId === wmId)
-      widget.wmFlags = Array.from(new Set(widget.wmFlags).add('has-browser'))
+      this.setFlag(wmId, 'has-browser', true)
       MainProcess.openAppBrowser({ url })
     },
     closeBrowser (wmId) {
       const widget = this.widgets.find(_ => _.wmId === wmId)
       if (widget.wmFlags.includes('has-browser')) {
-        widget.wmFlags = widget.wmFlags.filter(_ => _ !== 'has-browser')
+        this.setFlag(wmId, 'has-browser', false)
         MainProcess.hideAppBrowser({ close: true })
       }
     },
@@ -194,6 +195,19 @@ export default {
       if (widget.wmFlags.includes('has-browser')) {
         MainProcess.hideAppBrowser({ close: false })
       }
+    },
+    setFlag (wmId, flag, state) {
+      const widget = this.widgets.find(_ => _.wmId === wmId)
+      const hasFlag = widget.wmFlags.includes(flag)
+      if (state === false && hasFlag === true) {
+        widget.wmFlags = widget.wmFlags.filter(_ => _ !== flag)
+        return true
+      }
+      if (state === true && hasFlag === false) {
+        widget.wmFlags.push(flag)
+        return true
+      }
+      return false
     },
     create (wmType) {
       this.widgets.push({

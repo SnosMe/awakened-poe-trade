@@ -8,9 +8,7 @@
     <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
       :style="{ width: poeUiWidth }">
     </div>
-    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;"
-      @mouseleave="handleMouseleave"
-      @click="handleClick">
+    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;">
       <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
           <ui-popper v-if="exaltedCost" trigger="clickToToggle" boundaries-selector="#price-window">
@@ -128,6 +126,23 @@ export default {
       if (isActive) {
         this.showTips = true
       }
+    },
+    'config.wmWants' (state) {
+      if (state === 'hide') {
+        MainProcess.priceCheckWidgetIsHidden()
+      }
+    },
+    'isBrowserShown' (isShown) {
+      // @use-case: send trade message
+      if (isShown) {
+        this.wm.setFlag(this.config.wmId, 'hide-on-blur', false)
+        this.wm.setFlag(this.config.wmId, 'hide-on-blur(close)', true)
+        this.wm.setFlag(this.config.wmId, 'invisible-on-blur', true)
+      } else {
+        this.wm.setFlag(this.config.wmId, 'hide-on-blur(close)', false)
+        this.wm.setFlag(this.config.wmId, 'invisible-on-blur', false)
+        this.wm.setFlag(this.config.wmId, 'hide-on-blur', true)
+      }
     }
   },
   computed: {
@@ -160,20 +175,12 @@ export default {
   },
   methods: {
     closePriceCheck () {
-      MainProcess.priceCheckHide()
+      MainProcess.closeOverlay()
     },
     updatePoeUiWidth () {
       // sidebar is 370px at 800x600
       const ratio = 370 / 600
       this.poeUiWidth = `${Math.round(window.innerHeight * ratio)}px`
-    },
-    handleClick () {
-      MainProcess.priceCheckMouse('click')
-    },
-    handleMouseleave () {
-      if (!this.isBrowserShown) {
-        MainProcess.priceCheckMouse('leave')
-      }
     }
   }
 }

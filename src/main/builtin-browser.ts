@@ -1,6 +1,6 @@
 import { ipcMain, BrowserView, screen, shell } from 'electron'
 import * as ipc from '@/ipc/ipc-event'
-import { DPR, overlayWindow } from './overlay-window'
+import { DPR, overlayWindow, handleExtraCommands } from './overlay-window'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 
@@ -13,6 +13,7 @@ export function setupBuiltinBrowser () {
     logger.debug('Show', { source: 'builtin-browser', opts })
     if (!browserViewExternal) {
       browserViewExternal = new BrowserView()
+      browserViewExternal.webContents.on('before-input-event', handleExtraCommands)
     }
 
     overlayWindow!.setBrowserView(browserViewExternal)
