@@ -42,56 +42,6 @@ export default {
       active: false,
       gameFocused: false,
       hideUI: false,
-      widgets: [
-        {
-          wmId: 1,
-          wmType: 'timer',
-          wmWants: 'show',
-          wmTitle: 'Timer',
-          wmFlags: [],
-          anchor: {
-            pos: 'cc',
-            x: 10,
-            y: 50
-          }
-        },
-        {
-          wmId: 4,
-          wmType: 'menu',
-          wmWants: 'show',
-          wmFlags: ['invisible-on-blur', 'skip-menu'],
-          anchor: {
-            pos: 'tl',
-            x: 5,
-            y: 5
-          }
-        },
-        {
-          wmId: 2,
-          wmType: 'inventory-search',
-          wmFlags: ['invisible-on-blur'],
-          wmWants: 'hide',
-          anchor: {
-            pos: 'tr',
-            x: 81,
-            y: 20
-          },
-          wmTitle: 'Map rolling',
-          entries: [
-            { id: 2, text: 'Reflect' },
-            { id: 1, text: '"Quantity: +3"' },
-            { id: 3, text: '"Cannot Leech Life"' },
-            { id: 4, text: '"Cannot Leech Mana"' }
-          ]
-        },
-        {
-          wmId: 3,
-          wmType: 'price-check',
-          wmZorder: 'exclusive',
-          wmWants: 'hide',
-          wmFlags: ['hide-on-blur', 'skip-menu']
-        }
-      ],
       devicePixelRatio: null
     }
   },
@@ -136,7 +86,9 @@ export default {
       }
 
       if (this.active === false && this.gameFocused === false) {
-        Config.saveConfig()
+        this.$nextTick(() => {
+          Config.saveConfig()
+        })
       }
     })
     MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {
@@ -153,6 +105,14 @@ export default {
     })
   },
   computed: {
+    widgets: {
+      get () {
+        return Config.store.widgets
+      },
+      set (value) {
+        Config.store.widgets = value
+      }
+    },
     visibilityState () {
       let showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
       if (!this.active && showExclusive && showExclusive.wmFlags.includes('invisible-on-blur')) {

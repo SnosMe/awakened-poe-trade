@@ -114,6 +114,9 @@ export default {
     this.updatePoeUiWidth()
   },
   data () {
+    this.config.wmWants = 'hide'
+    this.config.wmFlags = ['hide-on-blur', 'skip-menu']
+
     return {
       poeUiWidth: '1px',
       checkPosition: { x: 1, y: 1 },
