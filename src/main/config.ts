@@ -19,11 +19,31 @@ export function setupConfigEvents () {
   })
 }
 
-export const config = new Store<Config>({
-  name: 'config',
-  cwd: 'apt-data',
-  defaults: defaultConfig
-})
+export const config = (() => {
+  const config = new Store<Config>({
+    name: 'config',
+    cwd: 'apt-data',
+    defaults: defaultConfig
+  })
+
+  const forbidden = ['Ctrl + C', 'Ctrl + V', 'Ctrl + A', 'Ctrl + F']
+  if (forbidden.includes(config.get('priceCheckLocked') as string)) { config.set('priceCheckLocked', null) }
+  if (forbidden.includes(config.get('wikiKey') as string)) { config.set('wikiKey', null) }
+  if (forbidden.includes(config.get('mapCheckKey') as string)) { config.set('mapCheckKey', null) }
+  const comands = config.get('commands')
+  for (const c of comands) {
+    if (forbidden.includes(c.hotkey as string)) { c.hotkey = null }
+  }
+  config.set('commands', comands)
+
+  if (config.get('priceCheckKeyHold') === 'Ctrl') {
+    if (['C', 'V', 'A', 'F'].includes(config.get('priceCheckKey') as string)) {
+      config.set('priceCheckKey', null)
+    }
+  }
+
+  return config
+})()
 
 export function batchUpdateConfig (upd: Config, push = true) {
   // for (const key in upd) {

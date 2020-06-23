@@ -23,6 +23,7 @@ import WidgetInventorySearch from './WidgetInventorySearch'
 import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
 import WidgetDebug from './WidgetDebug'
+import WidgetMapCheck from '@/web/map-check/WidgetMapCheck'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 import { Config } from '@/web/Config'
 
@@ -32,7 +33,8 @@ export default {
     WidgetInventorySearch,
     WidgetMenu,
     WidgetPriceCheck: PriceCheckWindow,
-    WidgetDebug
+    WidgetDebug,
+    WidgetMapCheck
   },
   provide () {
     return { wm: this }

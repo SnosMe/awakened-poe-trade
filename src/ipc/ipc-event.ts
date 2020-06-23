@@ -26,6 +26,12 @@ export interface IpcPriceCheck {
   position: { x: number, y: number }
 }
 
+export const MAP_CHECK = 'MAIN->OVERLAY::map-check'
+export interface IpcMapCheck {
+  clipboard: string
+  position: { x: number, y: number }
+}
+
 export const OVERLAY_READY = 'OVERLAY->MAIN::ready'
 
 export const CLOSE_OVERLAY = 'OVERLAY->MAIN::close-overlay'

@@ -1,32 +1,28 @@
 import { screen, Point, clipboard, globalShortcut, Notification } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
-import { pollClipboard } from './PollClipboard'
+import { pollClipboard } from './poll-clipboard'
 import { showWidget as showPriceCheck } from './price-check'
 import { KeyToElectron } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
 import { logger } from './logger'
-import { toggleOverlayState } from './overlay-window'
+import { toggleOverlayState, overlayWindow } from './overlay-window'
+import * as ipc from '@/ipc/ipc-event'
 
-export let isPollingClipboard = false
 export let hotkeyPressPosition: Point | undefined
 
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
 function priceCheck (lockedMode: boolean) {
-  logger.info('Price check', { source: 'price-check', lockedMode })
+  logger.info('Price check', { source: 'shortcuts', lockedMode })
 
-  if (!isPollingClipboard) {
-    isPollingClipboard = true
-    pollClipboard(32, 500)
+  pollClipboard()
       .then(clipboard =>
         showPriceCheck({ clipboard, hotkeyPressPosition: hotkeyPressPosition!, lockedMode })
       )
       .catch(() => { /* nothing bad */ })
-      .finally(() => { isPollingClipboard = false })
-  }
   hotkeyPressPosition = screen.getCursorScreenPoint()
   // if (process.platform === 'win32') {
   //   hotkeyPressPosition = screen.dipToScreenPoint(hotkeyPressPosition)
@@ -41,6 +37,18 @@ function priceCheck (lockedMode: boolean) {
   } else {
     robotjs.keyTap('C', ['Ctrl'])
   }
+}
+
+function mapCheck () {
+  logger.info('Map check', { source: 'shortcuts' })
+
+  pollClipboard()
+    .then(clipboard =>
+      overlayWindow!.webContents.send(ipc.MAP_CHECK, { clipboard, position: hotkeyPressPosition! } as ipc.IpcMapCheck)
+    )
+    .catch(() => {})
+  hotkeyPressPosition = screen.getCursorScreenPoint()
+  robotjs.keyTap('C', ['Ctrl'])
 }
 
 function registerGlobal () {
@@ -62,9 +70,13 @@ function registerGlobal () {
     shortcutCallback(
       config.get('wikiKey'),
       () => {
-        pollClipboard(32, 500).then(openWiki).catch(() => {})
+        pollClipboard().then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }
+    ),
+    shortcutCallback(
+      config.get('mapCheckKey'),
+      mapCheck
     ),
     ...config.get('commands')
       .map(command =>
@@ -131,9 +143,11 @@ export function setupShortcuts () {
       shortcutCallback(pressed, toggleOverlayState, { doNotResetModKey: true }).cb()
     } else if (pressed === config.get('wikiKey')) {
       shortcutCallback(pressed, () => {
-        pollClipboard(32, 500).then(openWiki).catch(() => {})
+        pollClipboard().then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }).cb()
+    } else if (pressed === config.get('mapCheckKey')) {
+      shortcutCallback(pressed, mapCheck).cb()
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {

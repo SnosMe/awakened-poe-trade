@@ -1,6 +1,6 @@
 import { ipcMain, Rectangle, Point } from 'electron'
 import { uIOhook } from 'uiohook-napi'
-import { isPollingClipboard } from './shortcuts'
+import { isPollingClipboard } from './poll-clipboard'
 import { PoeWindow } from './PoeWindow'
 import * as ipc from '@/ipc/ipc-event'
 import { config } from './config'

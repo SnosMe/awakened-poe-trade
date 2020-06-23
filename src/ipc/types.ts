@@ -10,6 +10,7 @@ export interface Config {
   priceCheckLocked: string | null
   wikiKey: string | null
   overlayKey: string
+  mapCheckKey: string | null
   commands: Array<{
     text: string
     hotkey: string | null
@@ -51,6 +52,7 @@ export const defaultConfig: Config = {
   priceCheckLocked: 'Ctrl + Alt + D',
   wikiKey: 'Alt + W',
   overlayKey: 'Shift + Space',
+  mapCheckKey: null,
   commands: [{
     text: '/hideout',
     hotkey: 'F5'
@@ -101,6 +103,17 @@ export const defaultConfig: Config = {
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu']
+    },
+    {
+      wmId: 3,
+      wmType: 'map-check',
+      wmTitle: '',
+      wmWants: 'hide',
+      wmZorder: 3,
+      wmFlags: ['hide-on-blur', 'skip-menu'],
+      selectedStats: [
+        // { text: '' }
+      ]
     },
     // --- DEFAULT ---
     {
