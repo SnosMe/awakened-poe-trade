@@ -14,7 +14,6 @@ export interface Config {
     text: string
     hotkey: string | null
   }>
-  altTabToGame: boolean
   useOsGlobalShortcut: boolean
   windowTitle: string
   logLevel: string
@@ -71,7 +70,6 @@ export const defaultConfig: Config = {
     text: '/hideout @last',
     hotkey: null
   }],
-  altTabToGame: true,
   useOsGlobalShortcut: true,
   windowTitle: 'Path of Exile',
   logLevel: 'warn',

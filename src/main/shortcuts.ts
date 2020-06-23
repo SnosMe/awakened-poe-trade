@@ -56,7 +56,8 @@ function registerGlobal () {
     ),
     shortcutCallback(
       config.get('overlayKey'),
-      toggleOverlayState
+      toggleOverlayState,
+      { doNotResetModKey: true }
     ),
     shortcutCallback(
       config.get('wikiKey'),
@@ -127,7 +128,7 @@ export function setupShortcuts () {
         priceCheck(true)
       }).cb()
     } else if (pressed === config.get('overlayKey')) {
-      shortcutCallback(pressed, toggleOverlayState).cb()
+      shortcutCallback(pressed, toggleOverlayState, { doNotResetModKey: true }).cb()
     } else if (pressed === config.get('wikiKey')) {
       shortcutCallback(pressed, () => {
         pollClipboard(32, 500).then(openWiki).catch(() => {})
