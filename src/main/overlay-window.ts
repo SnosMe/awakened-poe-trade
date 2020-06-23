@@ -1,5 +1,5 @@
 import path from 'path'
-import { BrowserWindow, ipcMain, dialog, Menu } from 'electron'
+import { BrowserWindow, ipcMain, dialog, Menu, systemPreferences } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
@@ -124,6 +124,16 @@ function handleOverlayAttached (hasAccess?: boolean) {
       'Path of Exile is running with administrator rights.\n' +
       '\n' +
       'You need to restart Awakened PoE Trade with administrator rights.'
+    )
+    return
+  }
+
+  if (process.platform === 'win32' && !systemPreferences.isAeroGlassEnabled()) {
+    dialog.showErrorBox(
+      'Windows 7 - Aero',
+      // ----------------------
+      'You must enable Windows Aero in "Appearance and Personalization".\n' +
+      'It is required to create a transparent overlay window.'
     )
   }
 }

@@ -33,6 +33,7 @@ export default {
       const text = e.target.value
       MainProcess.selfEmitPriceCheck({ clipboard: text, position: { x: window.screenX + 100, y: window.screenY + 100 } })
       e.target.value = ''
+      // eslint-disable-next-line no-console
       console.log(
         parseClipboard(text)
       )

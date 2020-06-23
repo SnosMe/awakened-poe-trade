@@ -13,6 +13,8 @@ export function setupBuiltinBrowser () {
     logger.debug('Show', { source: 'builtin-browser', opts })
     if (!browserViewExternal) {
       browserViewExternal = new BrowserView()
+      // hopefully someday this will enable subpixel AA
+      // browserViewExternal.setBackgroundColor('#2d3748') // gray-800
       browserViewExternal.webContents.on('before-input-event', handleExtraCommands)
     }
 
