@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @mousedown="handleMouseDown">
     <div :class="$style.widget" :style="widgetPosition">
       <div :class="{ 'opacity-75': isMoving }">
         <slot :isEditing="isEditing" :isMoving="isMoving" />
@@ -70,8 +70,9 @@ export default {
     },
     moverPosition () {
       return {
-        top: `max(0%, min(calc(${this.anchor.y}% - (16px/2)), calc(100% - 16px)))`,
-        left: `max(0%, min(calc(${this.anchor.x}% - (16px/2)), calc(100% - 16px)))`
+        'top': `max(0%, min(calc(${this.anchor.y}% - (16px/2)), calc(100% - 16px)))`,
+        'left': `max(0%, min(calc(${this.anchor.x}% - (16px/2)), calc(100% - 16px)))`,
+        'z-index': this.config.wmZorder
       }
     },
     widgetPosition () {
@@ -99,9 +100,10 @@ export default {
       }
 
       return {
-        top: `${this.anchor.y}%`,
-        left: `${this.anchor.x}%`,
-        transform: translate
+        'top': `${this.anchor.y}%`,
+        'left': `${this.anchor.x}%`,
+        'transform': translate,
+        'z-index': this.config.wmZorder
       }
     },
     actionsPosition () {
@@ -185,6 +187,11 @@ export default {
       this.isRemoving = false
       clearTimeout(this.removeTimeout)
       this.removeTimeout = undefined
+    },
+    handleMouseDown () {
+      if (this.config.wmId != null) {
+        this.wm.bringToTop(this.config.wmId)
+      }
     }
   }
 }

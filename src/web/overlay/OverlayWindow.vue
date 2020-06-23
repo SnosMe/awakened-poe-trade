@@ -127,6 +127,11 @@ export default {
               : showExclusive ? w === showExclusive
                 : w.wmWants === 'show'
       }))
+    },
+    topmostWidget () {
+      return this.widgets
+        .filter(w => w.wmZorder !== 'exclusive')
+        .sort((a, b) => b.wmZorder - a.wmZorder)[0] // guaranteed to always exist because of the 'widget-menu'
     }
   },
   methods: {
@@ -136,6 +141,7 @@ export default {
         .isVisible
     },
     show (wmId) {
+      this.bringToTop(wmId)
       this.widgets.find(_ => _.wmId === wmId).wmWants = 'show'
     },
     hide (wmId) {
@@ -173,6 +179,14 @@ export default {
         return true
       }
       return false
+    },
+    bringToTop (wmId) {
+      if (wmId === this.topmostWidget.wmId) return
+
+      const widget = this.widgets.find(_ => _.wmId === wmId)
+      if (widget.wmZorder !== 'exclusive') {
+        widget.wmZorder = this.topmostWidget.wmZorder + 1
+      }
     },
     create (wmType) {
       this.widgets.push({
