@@ -1,4 +1,4 @@
-import { screen, Point, clipboard, globalShortcut, Notification } from 'electron'
+import { screen, Point, clipboard, globalShortcut, Notification, ipcMain } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
@@ -8,7 +8,7 @@ import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
 import { logger } from './logger'
-import { toggleOverlayState, overlayWindow } from './overlay-window'
+import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive } from './overlay-window'
 import * as ipc from '@/ipc/ipc-event'
 
 export let hotkeyPressPosition: Point | undefined
@@ -43,9 +43,10 @@ function mapCheck () {
   logger.info('Map check', { source: 'shortcuts' })
 
   pollClipboard()
-    .then(clipboard =>
+    .then(clipboard => {
       overlayWindow!.webContents.send(ipc.MAP_CHECK, { clipboard, position: hotkeyPressPosition! } as ipc.IpcMapCheck)
-    )
+      assertOverlayActive()
+    })
     .catch(() => {})
   hotkeyPressPosition = screen.getCursorScreenPoint()
   robotjs.keyTap('C', ['Ctrl'])
@@ -124,6 +125,8 @@ export function setupShortcuts () {
   })
     }
   })
+
+  ipcMain.on(ipc.STASH_SEARCH, (e, opts: ipc.IpcStashSearch) => { stashSearch(opts.text) })
 
   uIOhook.on('keydown', (e) => {
     const pressed = eventToString(e)
@@ -209,7 +212,21 @@ function typeChatCommand (command: string) {
 
   setTimeout(() => {
     clipboard.writeText(saved)
-  }, 100)
+  }, 120)
+}
+
+function stashSearch (text: string) {
+  const saved = clipboard.readText()
+
+  assertPoEActive()
+  clipboard.writeText(text)
+  robotjs.keyTap('F', ['Ctrl'])
+  robotjs.keyTap('V', ['Ctrl'])
+  robotjs.keyTap('Enter')
+
+  setTimeout(() => {
+    clipboard.writeText(saved)
+  }, 120)
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {

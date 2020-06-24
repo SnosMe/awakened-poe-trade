@@ -1,9 +1,23 @@
 import path from 'path'
-import { BrowserWindow } from 'electron'
+import { BrowserWindow, dialog } from 'electron'
+import { PoeWindow } from './PoeWindow'
+import { isInteractable } from './overlay-window'
 
 let settingsWindow: BrowserWindow | undefined
 
 export function createWindow () {
+  if (PoeWindow.isActive || isInteractable) {
+    dialog.showErrorBox(
+      'Settings - Possible data loss',
+      // ----------------------
+      'Settings cannot be opened when overlay is active.\n' +
+      'Settings cannot be opened when Path of Exile window has focus.\n' +
+      '\n' +
+      'This prevents the loss of any changes made in overlay window.'
+    )
+    return
+  }
+
   if (settingsWindow) {
     try {
       settingsWindow.focus()

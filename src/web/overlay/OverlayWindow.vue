@@ -19,7 +19,7 @@
 <script>
 import { MainProcess } from '@/ipc/main-process-bindings'
 import WidgetTimer from './WidgetTimer'
-import WidgetInventorySearch from './WidgetInventorySearch'
+import WidgetStashSearch from './WidgetStashSearch'
 import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
 import WidgetDebug from './WidgetDebug'
@@ -30,7 +30,7 @@ import { Config } from '@/web/Config'
 export default {
   components: {
     WidgetTimer,
-    WidgetInventorySearch,
+    WidgetStashSearch,
     WidgetMenu,
     WidgetPriceCheck: PriceCheckWindow,
     WidgetDebug,

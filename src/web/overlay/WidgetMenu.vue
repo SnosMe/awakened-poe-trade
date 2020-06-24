@@ -16,7 +16,7 @@
             <!-- add widget -->
             <!-- <div class="text-gray-600 text-sm px-1 select-none mt-2 whitespace-no-wrap">add widget</div> -->
             <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('timer')">Timer</button>
-            <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('inventory-search')">Inventory search</button>
+            <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('stash-search')">Stash search</button>
             <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('TODO')">Image</button> -->
           </div>
         </div>

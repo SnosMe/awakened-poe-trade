@@ -133,7 +133,7 @@ export const defaultConfig: Config = {
     // --- DEFAULT ---
     {
       wmId: 4,
-      wmType: 'inventory-search',
+      wmType: 'stash-search',
       wmTitle: 'Map rolling',
       wmWants: 'hide',
       wmZorder: 4,
@@ -152,7 +152,7 @@ export const defaultConfig: Config = {
     },
     {
       wmId: 5,
-      wmType: 'inventory-search',
+      wmType: 'stash-search',
       wmTitle: 'Dump sorting',
       wmWants: 'hide',
       wmZorder: 5,

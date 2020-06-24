@@ -26,7 +26,7 @@
           </div>
         </dnd-container>
         <template v-else>
-          <button v-for="entry in config.entries" :key="entry.id"
+          <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
             class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 mb-1 whitespace-no-wrap">{{ entry.text }}</button>
         </template>
         <button v-if="isEditing" @click="addEntry"
@@ -39,6 +39,7 @@
 <script>
 import Widget from './Widget'
 import DndContainer from 'vuedraggable'
+import { MainProcess } from '@/ipc/main-process-bindings'
 
 export default {
   components: { Widget, DndContainer },
@@ -74,6 +75,9 @@ export default {
         id: Math.max(0, ...this.config.entries.map(_ => _.id)) + 1,
         text: ''
       })
+    },
+    stashSearch (text) {
+      MainProcess.stashSearch(text)
     }
   }
 }

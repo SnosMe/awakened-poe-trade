@@ -32,6 +32,11 @@ export interface IpcMapCheck {
   position: { x: number, y: number }
 }
 
+export const STASH_SEARCH = 'OVERLAY->MAIN::stash-search'
+export interface IpcStashSearch {
+  text: string
+}
+
 export const OVERLAY_READY = 'OVERLAY->MAIN::ready'
 
 export const CLOSE_OVERLAY = 'OVERLAY->MAIN::close-overlay'

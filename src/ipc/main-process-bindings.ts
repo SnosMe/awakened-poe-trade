@@ -124,6 +124,12 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  stashSearch (text: string) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.STASH_SEARCH, { text })
+    }
+  }
+
   saveConfig (config: Config) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.PUSH_CONFIG, config)
