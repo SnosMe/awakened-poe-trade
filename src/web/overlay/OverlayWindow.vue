@@ -1,7 +1,7 @@
 <template>
   <div id="overlay-window" class="overflow-hidden relative w-full h-full">
     <div v-if="active" style="background: rgba(256,256,256,0.15); top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
-    <div style="border: 4px solid red; top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
+    <!-- <div style="border: 4px solid red; top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div> -->
     <template v-for="widget of widgets">
       <component :key="widget.wmId"
         v-show="isVisible(widget.wmId)"
@@ -10,9 +10,9 @@
         :is="`widget-${widget.wmType}`" />
     </template>
     <widget-debug id="widget-debug" />
-    <div v-show="!gameFocused && !active">
+    <!-- <div v-show="!gameFocused && !active">
       <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
-    </div>
+    </div> -->
   </div>
 </template>
 
