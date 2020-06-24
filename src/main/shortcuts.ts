@@ -1,37 +1,32 @@
-import { screen, Point, clipboard, globalShortcut, Notification } from 'electron'
+import { screen, Point, clipboard, globalShortcut, Notification, ipcMain } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
-import { pollClipboard } from './PollClipboard'
-import { win } from './window'
-import { showWindow, lockWindow, poeUserInterfaceWidth, getPoeUiPosition, mousePosFromEvent } from './positioning'
+import { pollClipboard } from './poll-clipboard'
+import { showWidget as showPriceCheck } from './price-check'
 import { KeyToElectron } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { openWiki } from './wiki'
 import { logger } from './logger'
+import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive } from './overlay-window'
+import * as ipc from '@/ipc/ipc-event'
 
-export let isPollingClipboard = false
-export let checkPressPosition: Point | undefined
+export let hotkeyPressPosition: Point | undefined
 
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
 function priceCheck (lockedMode: boolean) {
-  logger.info('Price check', { source: 'price-check', lockedMode })
+  logger.info('Price check', { source: 'shortcuts', lockedMode })
 
-  if (!isPollingClipboard) {
-    isPollingClipboard = true
-    pollClipboard(32, 500)
-      .then(async (clipboard) => {
-        win.webContents.send('price-check', { clipboard, position: getPoeUiPosition(checkPressPosition!) })
-        await showWindow(lockedMode)
-        if (lockedMode) {
-          lockWindow(true)
-        }
-      })
+  pollClipboard()
+      .then(clipboard =>
+        showPriceCheck({ clipboard, hotkeyPressPosition: hotkeyPressPosition!, lockedMode })
+      )
       .catch(() => { /* nothing bad */ })
-      .finally(() => { isPollingClipboard = false })
-  }
-  checkPressPosition = screen.getCursorScreenPoint()
+  hotkeyPressPosition = screen.getCursorScreenPoint()
+  // if (process.platform === 'win32') {
+  //   hotkeyPressPosition = screen.dipToScreenPoint(hotkeyPressPosition)
+  // }
 
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {
@@ -42,6 +37,19 @@ function priceCheck (lockedMode: boolean) {
   } else {
     robotjs.keyTap('C', ['Ctrl'])
   }
+}
+
+function mapCheck () {
+  logger.info('Map check', { source: 'shortcuts' })
+
+  pollClipboard()
+    .then(clipboard => {
+      overlayWindow!.webContents.send(ipc.MAP_CHECK, { clipboard, position: hotkeyPressPosition! } as ipc.IpcMapCheck)
+      assertOverlayActive()
+    })
+    .catch(() => {})
+  hotkeyPressPosition = screen.getCursorScreenPoint()
+  robotjs.keyTap('C', ['Ctrl'])
 }
 
 function registerGlobal () {
@@ -56,11 +64,20 @@ function registerGlobal () {
       () => priceCheck(true)
     ),
     shortcutCallback(
+      config.get('overlayKey'),
+      toggleOverlayState,
+      { doNotResetModKey: true }
+    ),
+    shortcutCallback(
       config.get('wikiKey'),
       () => {
-        pollClipboard(32, 500).then(openWiki).catch(() => {})
+        pollClipboard().then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }
+    ),
+    shortcutCallback(
+      config.get('mapCheckKey'),
+      mapCheck
     ),
     ...config.get('commands')
       .map(command =>
@@ -95,8 +112,10 @@ export function setupShortcuts () {
   if (PoeWindow.isActive && config.get('useOsGlobalShortcut')) {
     registerGlobal()
   }
-  PoeWindow.addListener('active-change', (isActive) => {
+  PoeWindow.on('active-change', (isActive) => {
     if (config.get('useOsGlobalShortcut')) {
+      process.nextTick(() => {
+        if (isActive === PoeWindow.isActive) {
       if (isActive) {
         registerGlobal()
       } else {
@@ -104,6 +123,10 @@ export function setupShortcuts () {
       }
     }
   })
+    }
+  })
+
+  ipcMain.on(ipc.STASH_SEARCH, (e, opts: ipc.IpcStashSearch) => { stashSearch(opts.text) })
 
   uIOhook.on('keydown', (e) => {
     const pressed = eventToString(e)
@@ -119,11 +142,15 @@ export function setupShortcuts () {
       shortcutCallback(pressed, () => {
         priceCheck(true)
       }).cb()
+    } else if (pressed === config.get('overlayKey')) {
+      shortcutCallback(pressed, toggleOverlayState, { doNotResetModKey: true }).cb()
     } else if (pressed === config.get('wikiKey')) {
       shortcutCallback(pressed, () => {
-        pollClipboard(32, 500).then(openWiki).catch(() => {})
+        pollClipboard().then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }).cb()
+    } else if (pressed === config.get('mapCheckKey')) {
+      shortcutCallback(pressed, mapCheck).cb()
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
@@ -141,8 +168,8 @@ export function setupShortcuts () {
   uIOhook.on('wheel', async (e) => {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
-    const stashCheckX = PoeWindow.bounds.x + poeUserInterfaceWidth(PoeWindow.bounds.height)
-    const mouseX = mousePosFromEvent(e).x
+    const stashCheckX = PoeWindow.bounds.x + PoeWindow.uiSidebarWidth
+    const mouseX = e.x
     if (mouseX > stashCheckX) {
       if (e.rotation > 0) {
         robotjs.keyTap('ArrowRight')
@@ -185,7 +212,21 @@ function typeChatCommand (command: string) {
 
   setTimeout(() => {
     clipboard.writeText(saved)
-  }, 100)
+  }, 120)
+}
+
+function stashSearch (text: string) {
+  const saved = clipboard.readText()
+
+  assertPoEActive()
+  clipboard.writeText(text)
+  robotjs.keyTap('F', ['Ctrl'])
+  robotjs.keyTap('V', ['Ctrl'])
+  robotjs.keyTap('Enter')
+
+  setTimeout(() => {
+    clipboard.writeText(saved)
+  }, 120)
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {

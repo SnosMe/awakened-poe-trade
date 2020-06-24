@@ -16,6 +16,10 @@ class ConfigService {
       }
     })
   }
+
+  saveConfig () {
+    MainProcess.saveConfig(this.store)
+  }
 }
 
 export const Config = new ConfigService()

@@ -12,8 +12,14 @@ class MainProcessBinding extends EventTarget {
     super()
 
     if (electron) {
-      electron.ipcRenderer.on('price-check', (e, data) => {
+      electron.ipcRenderer.on(ipcEvent.PRICE_CHECK, (e, data) => {
         this.selfEmitPriceCheck(data)
+      })
+
+      electron.ipcRenderer.on(ipcEvent.MAP_CHECK, (e, data) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.MAP_CHECK, {
+          detail: data
+        }))
       })
 
       electron.ipcRenderer.on(ipcEvent.LEAGUE_SELECTED, (e, leagueId) => {
@@ -28,21 +34,51 @@ class MainProcessBinding extends EventTarget {
         }))
       })
 
+      electron.ipcRenderer.on(ipcEvent.FOCUS_CHANGE, (e, data) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.FOCUS_CHANGE, { detail: data }))
+      })
+
+      electron.ipcRenderer.on(ipcEvent.PRICE_CHECK_CANCELED, () => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK_CANCELED))
+      })
+
       electron.ipcRenderer.on(ipcEvent.UPDATE_AVAILABLE, (e, updateInfo) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.UPDATE_AVAILABLE, {
           detail: updateInfo
         }))
       })
+
+      electron.ipcRenderer.on(ipcEvent.VISIBILITY, (e, detail) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.VISIBILITY, { detail }))
+      })
     }
   }
 
-  selfEmitPriceCheck (data: { clipboard: string, position: string }) {
-    this.dispatchEvent(new CustomEvent('price-check', {
-      detail: data
+  selfEmitPriceCheck (e: ipcEvent.IpcPriceCheck) {
+    this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK, {
+      detail: e
     }))
   }
 
-  priceCheckHide () {
+  readyReceiveEvents () {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.OVERLAY_READY)
+    }
+  }
+
+  dprChanged (dpr: number) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.DPR_CHANGE, dpr)
+    }
+  }
+
+  closeOverlay () {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.CLOSE_OVERLAY)
+    }
+  }
+
+  priceCheckWidgetIsHidden () {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_HIDE)
     }
@@ -56,36 +92,47 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  priceCheckMouse (string: string, modifier?: string) {
-    if (electron) {
-      electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_MOUSE, string, modifier)
-    }
-  }
-
   sendLeaguesReady (leagues: League[]) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.LEAGUES_READY, leagues)
     }
   }
 
-  openUserBrowser (url: string) {
+  openSystemBrowser (url: string) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.OPEN_LINK_EXTERNAL, url)
+      electron.ipcRenderer.send(ipcEvent.OPEN_SYSTEM_BROWSER, { url } as ipcEvent.IpcOpenSystemBrowser)
     }
   }
 
-  openAppBrowser (url: string) {
+  openAppBrowser (opts: ipcEvent.IpcShowBrowser) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.OPEN_LINK, url)
-      this.dispatchEvent(new Event(ipcEvent.OPEN_LINK))
-    } else {
-      window.open(url)
+      electron.ipcRenderer.send(ipcEvent.SHOW_BROWSER, opts)
+    } else if (opts.url) {
+      window.open(opts.url)
+    }
+  }
+
+  hideAppBrowser (opts: ipcEvent.IpcHideBrowser) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.HIDE_BROWSER, opts)
     }
   }
 
   closeSettingsWindow (config?: Config) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.CLOSE_SETTINGS_WINDOW, config)
+    }
+  }
+
+  stashSearch (text: string) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.STASH_SEARCH, { text })
+    }
+  }
+
+  saveConfig (config: Config) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.PUSH_CONFIG, config)
     }
   }
 

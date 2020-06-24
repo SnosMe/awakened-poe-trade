@@ -7,8 +7,8 @@
           'fas fa-check-square': !filter.disabled
         }"></i>
         <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-          <span class="truncate"><filter-stat-text :filter="filter" /></span>
-          <span class="search-text-full"><filter-stat-text :filter="filter" /></span>
+          <span class="truncate"><item-modifier-text :text="filter.text" :roll="filter.roll" /></span>
+          <span class="search-text-full"><item-modifier-text :text="filter.text" :roll="filter.roll" /></span>
         </div>
       </button>
       <div class="flex">
@@ -76,10 +76,10 @@
 </template>
 
 <script>
-import FilterStatText from './FilteStatText'
+import ItemModifierText from '../../ui/ItemModifierText'
 
 export default {
-  components: { FilterStatText },
+  components: { ItemModifierText },
   props: {
     filter: {
       type: Object,

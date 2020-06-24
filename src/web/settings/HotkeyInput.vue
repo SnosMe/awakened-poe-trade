@@ -17,7 +17,7 @@ export default {
     },
     forbidden: {
       type: Array,
-      default: () => []
+      default: () => ['Ctrl + C', 'Ctrl + V', 'Ctrl + A', 'Ctrl + F']
     },
     required: {
       type: Boolean,
@@ -48,7 +48,6 @@ export default {
 
       if (
         KeyToCode[code] &&
-        !this.forbidden.includes(code) &&
         (ctrlKey ? !this.forbidden.includes('Ctrl') : true) &&
         (shiftKey ? !this.forbidden.includes('Shift') : true) &&
         (altKey ? !this.forbidden.includes('Alt') : true)
@@ -60,7 +59,9 @@ export default {
         else if (ctrlKey) code = `Ctrl + ${code}`
         else if (shiftKey) code = `Shift + ${code}`
 
-        this.$emit('input', code)
+        if (!this.forbidden.includes(code)) {
+          this.$emit('input', code)
+        }
       }
     }
   }

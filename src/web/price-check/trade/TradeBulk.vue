@@ -100,6 +100,7 @@ export default {
       required: true
     }
   },
+  inject: ['wm', 'widget'],
   data () {
     return {
       searchId: 0,
@@ -154,9 +155,9 @@ export default {
     openTradeLink (isExternal) {
       const link = `https://www.pathofexile.com/trade/exchange/${Leagues.selected}/${this.result[this.selectedCurr].queryId}`
       if (isExternal) {
-        MainProcess.openUserBrowser(link)
+        MainProcess.openSystemBrowser(link)
       } else {
-        MainProcess.openAppBrowser(link)
+        this.wm.showBrowser(this.widget.config.wmId, link)
       }
     }
   }
