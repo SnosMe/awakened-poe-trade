@@ -30,6 +30,11 @@ export default new Router({
           path: 'debug',
           name: 'settings.debug',
           component: () => import(/* webpackChunkName: "settings" */ './settings/debug.vue')
+        },
+        {
+          path: 'maps',
+          name: 'settings.maps',
+          component: () => import(/* webpackChunkName: "settings" */ './settings/maps.vue')
         }
       ]
     }

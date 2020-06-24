@@ -6,7 +6,7 @@
     'flex-row-reverse': clickPosition === 'inventory',
   }">
     <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
-      :style="{ width: poeUiWidth }">
+      :style="{ width: `${wm.poeUiWidth}px` }">
     </div>
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;">
       <app-titlebar @close="closePriceCheck" :title="title">
@@ -110,15 +110,12 @@ export default {
     MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
       this.wm.hide(this.config.wmId)
     })
-    window.addEventListener('resize', this.updatePoeUiWidth)
-    this.updatePoeUiWidth()
   },
   data () {
     this.config.wmWants = 'hide'
     this.config.wmFlags = ['hide-on-blur', 'skip-menu']
 
     return {
-      poeUiWidth: '1px',
       checkPosition: { x: 1, y: 1 },
       item: null,
       showTips: false
@@ -179,11 +176,6 @@ export default {
   methods: {
     closePriceCheck () {
       MainProcess.closeOverlay()
-    },
-    updatePoeUiWidth () {
-      // sidebar is 370px at 800x600
-      const ratio = 370 / 600
-      this.poeUiWidth = `${Math.round(window.innerHeight * ratio)}px`
     }
   }
 }

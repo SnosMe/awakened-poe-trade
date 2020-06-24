@@ -10,7 +10,7 @@
             :class="$style.action">hide</button>
           <button v-if="!readonly" @click="toggleEdit"
             :class="[$style.action, { [$style.active]: isEditing }]">edit</button>
-          <button @click="toggleMove"
+          <button v-if="moveHandles !== 'none'" @click="toggleMove"
             :class="[$style.action, { [$style.active]: isMoving }]">move</button>
           <button v-if="removable" @mousedown="startRemoveTimer" @mouseup="cancelRemoveTimer" @mouseleave="cancelRemoveTimer"
             :class="[$style.action, $style.removable, { [$style.removing]: isRemoving }]">delete</button>

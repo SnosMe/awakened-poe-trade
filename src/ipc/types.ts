@@ -112,7 +112,22 @@ export const defaultConfig: Config = {
       wmZorder: 3,
       wmFlags: ['hide-on-blur', 'skip-menu'],
       selectedStats: [
-        // { text: '' }
+        {
+          text: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
+          markedAs: 'desirable'
+        },
+        {
+          text: '#% maximum Player Resistances',
+          markedAs: 'warning'
+        },
+        {
+          text: 'Monsters reflect #% of Physical Damage',
+          markedAs: 'danger'
+        },
+        {
+          text: 'Area contains two Unique Bosses',
+          markedAs: 'desirable'
+        }
       ]
     },
     // --- DEFAULT ---

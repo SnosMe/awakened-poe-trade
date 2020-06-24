@@ -16,6 +16,12 @@ class MainProcessBinding extends EventTarget {
         this.selfEmitPriceCheck(data)
       })
 
+      electron.ipcRenderer.on(ipcEvent.MAP_CHECK, (e, data) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.MAP_CHECK, {
+          detail: data
+        }))
+      })
+
       electron.ipcRenderer.on(ipcEvent.LEAGUE_SELECTED, (e, leagueId) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.LEAGUE_SELECTED, {
           detail: leagueId

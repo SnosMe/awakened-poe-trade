@@ -44,7 +44,9 @@ export default {
       active: false,
       gameFocused: false,
       hideUI: false,
-      devicePixelRatio: null
+      devicePixelRatio: null,
+      width: window.innerWidth,
+      height: window.innerHeight
     }
   },
   watch: {
@@ -98,8 +100,10 @@ export default {
     })
     window.addEventListener('resize', () => {
       this.devicePixelRatio = window.devicePixelRatio
+      this.width = window.innerWidth
+      this.height = window.innerHeight
     })
-    this.devicePixelRatio = window.devicePixelRatio
+    this.devicePixelRatio = window.devicePixelRatio // trigger watcher
   },
   mounted () {
     this.$nextTick(() => {
@@ -134,6 +138,11 @@ export default {
       return this.widgets
         .filter(w => w.wmZorder !== 'exclusive')
         .sort((a, b) => b.wmZorder - a.wmZorder)[0] // guaranteed to always exist because of the 'widget-menu'
+    },
+    poeUiWidth () {
+      // sidebar is 370px at 800x600
+      const ratio = 370 / 600
+      return Math.round(this.height * ratio)
     }
   },
   methods: {

@@ -5,6 +5,7 @@
       <div class="px-2 pb-10 bg-gray-900 flex flex-col">
         <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">Hotkeys</router-link>
         <router-link :to="{ name: 'settings.general' }" class="menu-item">General</router-link>
+        <router-link :to="{ name: 'settings.maps' }" class="menu-item">Maps</router-link>
         <router-link :to="{ name: 'settings.debug' }" class="menu-item">Debug</router-link>
         <div style="min-width: 150px;"></div>
       </div>
