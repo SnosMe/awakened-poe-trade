@@ -20,7 +20,13 @@
     </div>
     <div class="mb-4">
       <div class="flex">
-        <div class="flex-1">Open wiki</div>
+        <div class="flex-1">Overlay</div>
+        <hotkey-input required v-model="config.overlayKey" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="flex">
+        <div class="flex-1">Open item on wiki</div>
         <hotkey-input v-model="config.wikiKey" class="w-48" />
       </div>
     </div>

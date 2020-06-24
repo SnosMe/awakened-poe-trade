@@ -5,6 +5,7 @@ import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { overlayWindow as OW } from 'electron-overlay-window'
+import { config } from './config'
 
 export let overlayWindow: BrowserWindow | undefined
 export let isInteractable = false
@@ -145,19 +146,34 @@ function handleDprChange (devicePixelRatio: number) {
 }
 
 export function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
-  if (input.type === 'keyDown') {
-    if (input.code === 'Escape') {
+  if (input.type !== 'keyDown') return
+
+  let { code, control: ctrlKey, shift: shiftKey, alt: altKey } = input
+
+  if (code.startsWith('Key')) {
+    code = code.substr('Key'.length)
+  } else if (code.startsWith('Digit')) {
+    code = code.substr('Digit'.length)
+  }
+
+  if (shiftKey && altKey) code = `Shift + Alt + ${code}`
+  else if (ctrlKey && shiftKey) code = `Ctrl + Shift + ${code}`
+  else if (ctrlKey && altKey) code = `Ctrl + Alt + ${code}`
+  else if (altKey) code = `Alt + ${code}`
+  else if (ctrlKey) code = `Ctrl + ${code}`
+  else if (shiftKey) code = `Shift + ${code}`
+
+  switch (code) {
+    case 'Escape':
+    case 'Ctrl + W': {
       event.preventDefault()
       process.nextTick(assertPoEActive)
-    } else if (input.code === 'Space' && input.shift) {
+      break
+    }
+    case config.get('overlayKey'): {
       event.preventDefault()
       process.nextTick(toggleOverlayState)
-    } else if (input.code === 'Space') {
-      event.preventDefault()
-      process.nextTick(assertPoEActive)
-    } else if (input.code === 'KeyW' && input.control) {
-      event.preventDefault()
-      process.nextTick(assertPoEActive)
+      break
     }
   }
 }
