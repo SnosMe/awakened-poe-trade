@@ -17,8 +17,9 @@
         <div>
           <span class="text-red-400">Failed to load leagues</span>
           <button class="btn ml-2" @click="retry">Retry</button>
+          <button class="btn ml-1" @click="openCaptcha">Browser</button>
         </div>
-        <pre class="text-gray-500 whitespace-normal">Error: {{ leaguesService.loadingError }}</pre>
+        <!-- <pre class="text-gray-500 whitespace-normal">Error: {{ leaguesService.loadingError }}</pre> -->
         <div class="font-fontin-bold">Verify that the realm is not under maintenance and pathofexile.com is loading.</div>
       </div>
     </div>
@@ -40,6 +41,7 @@ export default {
       this.updateInfo = updateInfo
     })
   },
+  inject: ['wm', 'widget'],
   data () {
     return {
       updateInfo: null
@@ -54,6 +56,9 @@ export default {
       if (Leagues.isLoaded) {
         Prices.load()
       }
+    },
+    openCaptcha () {
+      this.wm.showBrowser(this.widget.config.wmId, 'https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
     }
   }
 }

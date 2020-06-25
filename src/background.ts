@@ -11,6 +11,7 @@ import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { logger } from './main/logger'
 import { checkForUpdates } from './main/updates'
 import os from 'os'
+import { setupCfProtection } from './main/cf-protection'
 import { createOverlayWindow } from './main/overlay-window'
 import { setupAltVisibility } from './main/alt-visibility'
 import { setupBuiltinBrowser } from './main/builtin-browser'
@@ -58,6 +59,7 @@ app.on('ready', async () => {
   setTimeout(
     async () => {
       await createOverlayWindow()
+      setupCfProtection()
       setupShortcuts()
       setupAltVisibility()
     },
