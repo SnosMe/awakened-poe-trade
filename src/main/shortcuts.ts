@@ -19,10 +19,10 @@ function priceCheck (lockedMode: boolean) {
   logger.info('Price check', { source: 'shortcuts', lockedMode })
 
   pollClipboard()
-      .then(clipboard =>
-        showPriceCheck({ clipboard, hotkeyPressPosition: hotkeyPressPosition!, lockedMode })
-      )
-      .catch(() => { /* nothing bad */ })
+    .then(clipboard =>
+      showPriceCheck({ clipboard, hotkeyPressPosition: hotkeyPressPosition!, lockedMode })
+    )
+    .catch(() => { /* nothing bad */ })
   hotkeyPressPosition = screen.getCursorScreenPoint()
   // if (process.platform === 'win32') {
   //   hotkeyPressPosition = screen.dipToScreenPoint(hotkeyPressPosition)
@@ -116,13 +116,13 @@ export function setupShortcuts () {
     if (config.get('useOsGlobalShortcut')) {
       process.nextTick(() => {
         if (isActive === PoeWindow.isActive) {
-      if (isActive) {
-        registerGlobal()
-      } else {
-        unregisterGlobal()
-      }
-    }
-  })
+          if (isActive) {
+            registerGlobal()
+          } else {
+            unregisterGlobal()
+          }
+        }
+      })
     }
   })
 
