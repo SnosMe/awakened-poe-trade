@@ -2,6 +2,7 @@ import path from 'path'
 import { BrowserWindow, dialog } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { isInteractable } from './overlay-window'
+import { config } from './config'
 
 let settingsWindow: BrowserWindow | undefined
 
@@ -29,14 +30,15 @@ export function createWindow () {
   }
 
   settingsWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 50 * config.get('fontSize'),
+    height: 37.5 * config.get('fontSize'),
     icon: path.join(__static, 'icon.png'),
     fullscreenable: false,
     frame: false,
     backgroundColor: '#2d3748', // gray-800
     webPreferences: {
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any
+      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
+      defaultFontSize: config.get('fontSize')
     }
   })
 

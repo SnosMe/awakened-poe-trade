@@ -7,8 +7,8 @@ import { config } from './config'
 import { logger } from './logger'
 import { overlayWindow, isInteractable, assertOverlayActive, assertPoEActive, DPR } from './overlay-window'
 
-const WIDTH_96DPI = 460
-const CLOSE_THRESHOLD_96DPI = 40
+const WIDTH_96DPI = 460 / 16
+const CLOSE_THRESHOLD_96DPI = 40 / 16
 
 let isPriceCheckShown = false
 let isClickedAfterLock = false
@@ -30,7 +30,7 @@ export function showWidget (opts: {
   activeAreaRect = {
     x: getOffsetX(checkPressPosition!, poeBounds),
     y: poeBounds.y,
-    width: Math.floor(WIDTH_96DPI * DPR),
+    width: Math.floor(WIDTH_96DPI * DPR * config.get('fontSize')),
     height: poeBounds.height
   }
 
@@ -64,7 +64,7 @@ export function setupShowHide () {
     if (!isPollingClipboard && !isInteractable && modifier !== config.get('priceCheckKeyHold')) {
       const distance = Math.hypot(e.x - checkPressPosition!.x, e.y - checkPressPosition!.y)
 
-      if (distance > (CLOSE_THRESHOLD_96DPI * DPR)) {
+      if (distance > (CLOSE_THRESHOLD_96DPI * DPR * config.get('fontSize'))) {
         logger.debug('Closing', { source: 'price-check', reason: 'Auto-hide on mouse move', distance, threshold: CLOSE_THRESHOLD_96DPI })
         overlayWindow!.webContents.send(ipc.PRICE_CHECK_CANCELED)
         isPriceCheckShown = false
@@ -124,7 +124,7 @@ function isPointInsideRect (point: Point, rect: Rectangle) {
 function getOffsetX (mousePos: Point, poePos: Rectangle): number {
   if (mousePos.x > (poePos.x + poePos.width / 2)) {
     // inventory
-    return (poePos.x + poePos.width) - PoeWindow.uiSidebarWidth - Math.floor(WIDTH_96DPI * DPR)
+    return (poePos.x + poePos.width) - PoeWindow.uiSidebarWidth - Math.floor(WIDTH_96DPI * DPR * config.get('fontSize'))
   } else {
     // stash or chat
     return poePos.x + PoeWindow.uiSidebarWidth

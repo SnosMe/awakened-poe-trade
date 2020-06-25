@@ -1,6 +1,7 @@
 <template>
   <div v-if="!error" class="layout-column flex-grow min-h-0">
-    <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 22px;">
+    <!-- @TODO: fix "Matched" text jumping (min-height: 22px) -->
+    <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 1.375rem;">
       <div class="flex items-center text-gray-500">
         <span class="mr-1">Matched:</span>
         <span v-if="!result" class="text-gray-600">...</span>
@@ -31,7 +32,7 @@
               <div class="px-2">Price</div>
             </th>
             <th class="trade-table-heading">
-              <div class="pl-1 pr-2 flex text-xs" style="line-height: 21px;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ selectedCurr }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">bulk</span></div>
+              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ selectedCurr }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">bulk</span></div>
             </th>
             <th class="trade-table-heading">
               <div class="px-1">Stock</div>
@@ -166,10 +167,10 @@ export default {
 
 <style lang="postcss">
 .trade-bulk-currency-icon {
-  width: 28px;
-  height: 28px;
-  margin: -7px;
-  margin-right: 2px;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: -0.4375rem;
+  margin-right: 0.125rem;
   filter: grayscale(1);
 }
 </style>

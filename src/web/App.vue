@@ -35,15 +35,21 @@
 }
 
 ::-webkit-scrollbar {
-  width: 14px;
+  width: 0.875rem;
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 0.375rem rgba(0,0,0,0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 0.375rem rgba(0,0,0,0.5);
+}
+
+.popper {
+  font-size: 0.875rem !important;
+  border-radius: 0.25rem !important;
+  padding: 0.125rem !important;
 }
 
 .btn {

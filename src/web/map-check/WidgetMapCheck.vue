@@ -1,6 +1,6 @@
 <template>
   <widget :config="{ ...config, anchor }" move-handles="none" readonly :removable="false">
-    <div class="bg-gray-800 text-gray-200" style="min-width: 320px;" :style="{ 'max-width': `${wm.width - wm.poeUiWidth}px` }">
+    <div class="bg-gray-800 text-gray-200" style="min-width: 20rem;" :style="{ 'max-width': `${wm.width - wm.poeUiWidth}px` }">
       <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
       <div v-if="!item" class="px-8 py-2">
         Item under cursor is not a map.

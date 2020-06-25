@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ 'min-height': !showContrib ? '70px' : undefined }">
+  <div :style="{ 'min-height': !showContrib ? '4.375rem' : undefined }">
     <div v-if="loading" class="py-2 flex justify-center pr-4">
       <div>
         <i class="fas fa-dna fa-spin text-gray-600"></i>

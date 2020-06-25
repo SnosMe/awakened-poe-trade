@@ -31,7 +31,8 @@ export async function createOverlayWindow () {
     // backgroundColor: '#00000008',
     webPreferences: {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
-      webSecurity: false
+      webSecurity: false,
+      defaultFontSize: config.get('fontSize')
     }
   })
 

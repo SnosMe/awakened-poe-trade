@@ -42,6 +42,10 @@ export const config = (() => {
     }
   }
 
+  if (typeof config.get('fontSize') !== 'number') {
+    config.set('fontSize', defaultConfig.fontSize)
+  }
+
   return config
 })()
 

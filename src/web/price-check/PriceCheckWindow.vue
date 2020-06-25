@@ -8,7 +8,7 @@
     <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
       :style="{ width: `${wm.poeUiWidth}px` }">
     </div>
-    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 460px;">
+    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
           <ui-popper v-if="exaltedCost" trigger="clickToToggle" boundaries-selector="#price-window">

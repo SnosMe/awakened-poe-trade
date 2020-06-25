@@ -7,7 +7,7 @@
         <router-link :to="{ name: 'settings.general' }" class="menu-item">General</router-link>
         <router-link :to="{ name: 'settings.maps' }" class="menu-item">Maps</router-link>
         <router-link :to="{ name: 'settings.debug' }" class="menu-item">Debug</router-link>
-        <div style="min-width: 150px;"></div>
+        <div style="min-width: 9.5rem;"></div>
       </div>
       <div class="text-gray-100 flex-grow layout-column">
         <div class="flex-grow overflow-y-auto">
@@ -44,11 +44,11 @@ export default {
 <style lang="postcss">
 .menu-item {
   text-align: left;
-  padding: 8px;
+  @apply p-2;
   line-height: 1;
   @apply text-gray-600;
   @apply rounded;
-  margin-bottom: 2px;
+  margin-bottom: 0.125rem;
 
   &:hover {
     @apply text-gray-100;

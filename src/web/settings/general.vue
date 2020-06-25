@@ -22,6 +22,13 @@
         <ui-radio v-model="config.searchStatRange" :value="0">Exact roll</ui-radio>
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">Font size <span class="bg-gray-200 text-gray-900 rounded px-1">Restart required</span></div>
+      <div class="mb-4 flex">
+        <input v-model.number="config.fontSize" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+        <span class="ml-1">px</span>
+      </div>
+    </div>
     <!--div class="mb-2">
       <div class="flex-1 mb-1">Trade API Subdomain</div>
       <div class="mb-4 flex">

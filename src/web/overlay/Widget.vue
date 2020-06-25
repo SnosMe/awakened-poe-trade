@@ -17,15 +17,15 @@
         </div>
       </div>
       <div v-if="isMoving">
-        <div v-if="isHandleShown('tl')" :class="$style.mover" @mousedown="startMove('tl', $event)" style="left: -8px; top: -8px;"></div>
-        <div v-if="isHandleShown('tc')" :class="$style.mover" @mousedown="startMove('tc', $event)" style="left: calc(50%  - 8px); top: -8px;"></div>
-        <div v-if="isHandleShown('tr')" :class="$style.mover" @mousedown="startMove('tr', $event)" style="left: calc(100% - 8px); top: -8px;"></div>
-        <div v-if="isHandleShown('cr')" :class="$style.mover" @mousedown="startMove('cr', $event)" style="left: calc(100% - 8px); top: calc(50% - 8px);"></div>
-        <div v-if="isHandleShown('br')" :class="$style.mover" @mousedown="startMove('br', $event)" style="left: calc(100% - 8px); top: calc(100% - 8px);"></div>
-        <div v-if="isHandleShown('bc')" :class="$style.mover" @mousedown="startMove('bc', $event)" style="left: calc(50%  - 8px); top: calc(100% - 8px);"></div>
-        <div v-if="isHandleShown('bl')" :class="$style.mover" @mousedown="startMove('bl', $event)" style="left: -8px; top: calc(100% - 8px);"></div>
-        <div v-if="isHandleShown('cl')" :class="$style.mover" @mousedown="startMove('cl', $event)" style="left: -8px; top: calc(50%  - 8px);"></div>
-        <div v-if="isHandleShown('cc')" :class="$style.mover" @mousedown="startMove('cc', $event)" style="left: calc(50%  - 8px); top: calc(50%  - 8px);"></div>
+        <div v-if="isHandleShown('tl')" :class="$style.mover" @mousedown="startMove('tl', $event)" style="left: -0.5rem; top: -0.5rem;"></div>
+        <div v-if="isHandleShown('tc')" :class="$style.mover" @mousedown="startMove('tc', $event)" style="left: calc(50%  - 0.5rem); top: -0.5rem;"></div>
+        <div v-if="isHandleShown('tr')" :class="$style.mover" @mousedown="startMove('tr', $event)" style="left: calc(100% - 0.5rem); top: -0.5rem;"></div>
+        <div v-if="isHandleShown('cr')" :class="$style.mover" @mousedown="startMove('cr', $event)" style="left: calc(100% - 0.5rem); top: calc(50% - 0.5rem);"></div>
+        <div v-if="isHandleShown('br')" :class="$style.mover" @mousedown="startMove('br', $event)" style="left: calc(100% - 0.5rem); top: calc(100% - 0.5rem);"></div>
+        <div v-if="isHandleShown('bc')" :class="$style.mover" @mousedown="startMove('bc', $event)" style="left: calc(50%  - 0.5rem); top: calc(100% - 0.5rem);"></div>
+        <div v-if="isHandleShown('bl')" :class="$style.mover" @mousedown="startMove('bl', $event)" style="left: -0.5rem; top: calc(100% - 0.5rem);"></div>
+        <div v-if="isHandleShown('cl')" :class="$style.mover" @mousedown="startMove('cl', $event)" style="left: -0.5rem; top: calc(50%  - 0.5rem);"></div>
+        <div v-if="isHandleShown('cc')" :class="$style.mover" @mousedown="startMove('cc', $event)" style="left: calc(50%  - 0.5rem); top: calc(50%  - 0.5rem);"></div>
       </div>
     </div>
     <div v-if="isMoving" :class="[$style.mover, $style.active]" :style="moverPosition" @mousedown="startMove(anchor.pos, $event)"></div>
@@ -70,8 +70,8 @@ export default {
     },
     moverPosition () {
       return {
-        'top': `max(0%, min(calc(${this.anchor.y}% - (16px/2)), calc(100% - 16px)))`,
-        'left': `max(0%, min(calc(${this.anchor.x}% - (16px/2)), calc(100% - 16px)))`,
+        'top': `max(0%, min(calc(${this.anchor.y}% - (1rem/2)), calc(100% - 1rem)))`,
+        'left': `max(0%, min(calc(${this.anchor.x}% - (1rem/2)), calc(100% - 1rem)))`,
         'z-index': this.config.wmZorder
       }
     },
@@ -209,7 +209,7 @@ export default {
 }
 
 .actionsPanel {
-  padding: 0.25rem 0;
+  @apply py-1;
   color: #fff;
   background: rgba(0,0,0, 0.25);
   display: flex;
@@ -218,7 +218,7 @@ export default {
 }
 
 .action {
-  padding: 0 4px;
+  @apply px-1;
   text-align: left;
 
   &:hover {
@@ -244,11 +244,11 @@ export default {
 
 .mover {
   position: absolute;
-  /* top: max(0%, min(calc(y% - (16px/2)), calc(100% - 16px))); */
-  /* left: max(0%, min(calc(x% - (16px/2)), calc(100% - 16px))); */
-  width: 16px;
-  height: 16px;
-  border: 4px solid rgba(0, 0, 0, 0.5);
+  /* top: max(0%, min(calc(y% - (1rem/2)), calc(100% - 1rem))); */
+  /* left: max(0%, min(calc(x% - (1rem/2)), calc(100% - 1rem))); */
+  width: 1rem;
+  height: 1rem;
+  border: 0.25rem solid rgba(0, 0, 0, 0.5);
   cursor: move;
   user-select: none;
 
