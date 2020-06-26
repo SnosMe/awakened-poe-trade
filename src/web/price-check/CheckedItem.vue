@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show" class="p-4 layout-column">
+  <div v-if="show" class="p-4 layout-column min-h-0">
     <filter-name
       ref="nameFilter"
       :filters="itemFilters"

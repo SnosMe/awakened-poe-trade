@@ -46,6 +46,9 @@
                 :position="checkPosition" style="z-index: -1;" />
               <unidentified-resolver :item="item" @identify="item = $event" />
               <checked-item :item="item" />
+              <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
+                Press <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span> to switch between browser and game.
+              </div>
             </template>
           </div>
         </div>
@@ -70,6 +73,7 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 import { PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { Prices, displayRounding } from './Prices'
 import { Leagues } from './Leagues'
+import { Config } from '@/web/Config'
 import { parseClipboard } from '@/parser'
 import RelatedItems from './related-items/RelatedItems'
 import RateLimiterState from './trade/RateLimiterState'
@@ -171,6 +175,9 @@ export default {
           : 'stash'
           // or {chat, vendor, center of screen}
       }
+    },
+    overlayKey () {
+      return Config.store.overlayKey
     }
   },
   methods: {
