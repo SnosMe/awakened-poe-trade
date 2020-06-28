@@ -1,7 +1,7 @@
 <template>
   <widget v-if="show"
     :config="config" :removable="false" readonly :hideable="false">
-    <div class="bg-gray-900 rounded p-1">
+    <div class="widget-default-style p-1">
       <div class="text-gray-100">Price check</div>
       <textarea type="text" class="px-2 py-1 bg-gray-700 rounded resize-none block" rows="1"
         placeholder="Paste here (Ctrl+V)" @input="handleItemPaste"></textarea>

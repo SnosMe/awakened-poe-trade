@@ -1,6 +1,6 @@
 <template>
   <widget :config="config" readonly :hideable="false" :removable="false" move-handles="corners">
-    <div class="bg-gray-900 rounded py-1 pr-1 flex items-center text-base">
+    <div class="widget-default-style py-1 pr-1 flex items-center text-base">
       <template v-for="widget in wm.widgets">
         <button v-if="!widget.wmFlags.includes('skip-menu') && widget.wmWants === 'hide'" :key="widget.wmId" @click="wm.show(widget.wmId)"
           class="bg-gray-800 rounded text-gray-100 ml-1 p-2 leading-none whitespace-no-wrap">{{ widget.wmTitle || `#${widget.wmId}` }}</button>

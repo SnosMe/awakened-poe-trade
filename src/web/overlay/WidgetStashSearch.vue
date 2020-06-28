@@ -1,6 +1,6 @@
 <template>
   <widget :config="config" v-slot="{ isEditing }" move-handles="corners">
-    <div class="bg-gray-900 p-1 rounded" style="min-width: 15rem;">
+    <div class="widget-default-style p-1" style="min-width: 5rem;">
       <template>
         <div v-if="!isEditing" class="text-gray-100 m-1 leading-4 truncate">{{ config.wmTitle || 'Untitled' }}</div>
         <input v-else

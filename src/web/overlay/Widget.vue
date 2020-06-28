@@ -260,3 +260,12 @@ export default {
   }
 }
 </style>
+
+<style lang="postcss">
+.widget-default-style {
+  @apply rounded;
+  @apply bg-gray-900;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.75),
+              0 1px 2px 0 rgba(0, 0, 0, 0.75);
+}
+</style>
