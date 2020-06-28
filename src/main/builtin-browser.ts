@@ -13,7 +13,10 @@ export function setupBuiltinBrowser () {
   ipcMain.on(ipc.SHOW_BROWSER, (e, opts: ipc.IpcShowBrowser) => {
     logger.debug('Show', { source: 'builtin-browser', opts })
     if (!browserViewExternal) {
-      browserViewExternal = new BrowserView({ webPreferences: { zoomFactor: config.get('fontSize') / 16 } })
+      browserViewExternal = new BrowserView()
+      browserViewExternal.webContents.on('did-navigate', () => {
+        browserViewExternal!.webContents.zoomFactor = config.get('fontSize') / 16
+      })
       // hopefully someday this will enable subpixel AA
       // browserViewExternal.setBackgroundColor('#2d3748') // gray-800
       browserViewExternal.webContents.on('before-input-event', handleExtraCommands)
