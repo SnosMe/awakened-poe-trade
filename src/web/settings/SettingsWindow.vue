@@ -1,10 +1,11 @@
 <template>
   <div class="flex-grow layout-column bg-gray-800">
-    <app-titlebar @close="cancel" title="Settings" native />
+    <app-titlebar @close="cancel" title="Settings - Awakened PoE Trade" native />
     <div class="flex flex-grow min-h-0">
       <div class="px-2 pb-10 bg-gray-900 flex flex-col">
         <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">Hotkeys</router-link>
         <router-link :to="{ name: 'settings.general' }" class="menu-item">General</router-link>
+        <router-link :to="{ name: 'settings.price-check' }" class="menu-item">Price check</router-link>
         <router-link :to="{ name: 'settings.maps' }" class="menu-item">Maps</router-link>
         <router-link :to="{ name: 'settings.debug' }" class="menu-item">Debug</router-link>
         <div style="min-width: 9.5rem;"></div>
@@ -28,7 +29,7 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 
 export default {
   beforeCreate () {
-    document.title = 'Settings'
+    document.title = 'Settings - Awakened PoE Trade'
   },
   methods: {
     save () {

@@ -10,6 +10,10 @@ export interface Config {
   priceCheckLocked: string | null
   wikiKey: string | null
   overlayKey: string
+  overlayBackground: string
+  overlayBackgroundExclusive: boolean
+  overlayBackgroundClose: boolean
+  priceCheckShowCursor: boolean
   mapCheckKey: string | null
   commands: Array<{
     text: string
@@ -53,6 +57,10 @@ export const defaultConfig: Config = {
   priceCheckLocked: 'Ctrl + Alt + D',
   wikiKey: 'Alt + W',
   overlayKey: 'Shift + Space',
+  overlayBackground: 'rgba(255, 255, 255, 0.15)',
+  overlayBackgroundExclusive: true,
+  overlayBackgroundClose: true,
+  priceCheckShowCursor: true,
   mapCheckKey: null,
   commands: [{
     text: '/hideout',

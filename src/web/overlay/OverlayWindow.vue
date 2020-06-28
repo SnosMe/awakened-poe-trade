@@ -1,7 +1,9 @@
 <template>
   <div id="overlay-window" class="overflow-hidden relative w-full h-full">
-    <div v-if="active" style="background: rgba(256,256,256,0.15); top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div>
     <!-- <div style="border: 4px solid red; top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div> -->
+    <div style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
+      :style="{ background: overlayBackground }"
+      @click="handleBackgroundClick"></div>
     <template v-for="widget of widgets">
       <component :key="widget.wmId"
         v-show="isVisible(widget.wmId)"
@@ -139,10 +141,25 @@ export default {
         .filter(w => w.wmZorder !== 'exclusive')
         .sort((a, b) => b.wmZorder - a.wmZorder)[0] // guaranteed to always exist because of the 'widget-menu'
     },
+    topmostOrExclusiveWidget () {
+      const showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
+
+      return showExclusive || this.topmostWidget
+    },
     poeUiWidth () {
       // sidebar is 370px at 800x600
       const ratio = 370 / 600
       return Math.round(this.height * ratio)
+    },
+    overlayBackground () {
+      if (!this.active) return undefined
+
+      if (this.topmostOrExclusiveWidget.wmZorder === 'exclusive') {
+        if (!Config.store.overlayBackgroundExclusive) {
+          return undefined
+        }
+      }
+      return Config.store.overlayBackground
     }
   },
   methods: {
@@ -208,6 +225,11 @@ export default {
         wmZorder: undefined,
         wmFlags: ['uninitialized']
       })
+    },
+    handleBackgroundClick () {
+      if (Config.store.overlayBackgroundClose) {
+        MainProcess.closeOverlay()
+      }
     }
   }
 }

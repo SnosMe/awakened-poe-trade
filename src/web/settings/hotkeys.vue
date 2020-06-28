@@ -20,7 +20,7 @@
     </div>
     <div class="mb-4">
       <div class="flex">
-        <div class="flex-1">Overlay</div>
+        <div class="flex-1">Overlay <span class="text-red-500 text-lg leading-none">*</span></div>
         <hotkey-input required v-model="config.overlayKey" class="w-48" />
       </div>
     </div>

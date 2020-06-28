@@ -1,14 +1,14 @@
 <template>
   <div
     style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
-    class="flex-grow flex h-full" :class="{
+    class="flex-grow flex h-full pointer-events-none" :class="{
     'flex-row': clickPosition === 'stash',
     'flex-row-reverse': clickPosition === 'inventory',
   }">
     <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
       :style="{ width: `${wm.poeUiWidth}px` }">
     </div>
-    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200" style="width: 28.75rem;">
+    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
           <ui-popper v-if="exaltedCost" trigger="clickToToggle" boundaries-selector="#price-window">
@@ -42,7 +42,7 @@
             <app-bootstrap />
             <template>
               <check-position-circle
-                v-if="showTips"
+                v-if="showCheckPos"
                 :position="checkPosition" style="z-index: -1;" />
               <unidentified-resolver :item="item" @identify="item = $event" />
               <checked-item :item="item" />
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="layout-column flex-1 min-w-0">
-      <div class="flex" :class="{
+      <div class="flex pointer-events-auto" :class="{
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
@@ -178,6 +178,9 @@ export default {
     },
     overlayKey () {
       return Config.store.overlayKey
+    },
+    showCheckPos () {
+      return this.showTips && Config.store.priceCheckShowCursor
     }
   },
   methods: {
