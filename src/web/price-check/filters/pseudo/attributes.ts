@@ -84,6 +84,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
       ctx.modifiers.push({
         stat: STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
         string: 'N/A',
+        ref: 'N/A',
         statMatchers: [],
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
@@ -93,6 +94,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
       ctx.modifiers.push({
         stat: STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
         string: 'N/A',
+        ref: 'N/A',
         statMatchers: [],
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]

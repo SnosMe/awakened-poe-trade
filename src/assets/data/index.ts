@@ -1,4 +1,4 @@
-import mods from './stats_English.json'
+import stats from './stats_English.json'
 import baseTypes from './base-types.json'
 import uniques from './uniques.json'
 import tradeTags from './trade-tags.json'
@@ -7,6 +7,7 @@ import { ItemCategory } from '@/parser'
 
 export interface StatMatcher {
   string: string
+  ref: string
   negate?: true
   condition?: {
     min?: number
@@ -35,11 +36,13 @@ export interface BaseType {
 
 export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
 
+export { stats }
+
 // Mods
 export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat, matchers: StatMatcher[] }>()
 export const STAT_BY_REF = new Map<string, Stat>()
 
-for (const entry of (mods as Array<{ conditions: StatMatcher[], mod: Stat }>)) {
+for (const entry of (stats as Array<{ conditions: StatMatcher[], mod: Stat }>)) {
   for (const condition of entry.conditions) {
     STAT_BY_MATCH_STR.set(condition.string, {
       matcher: condition,
