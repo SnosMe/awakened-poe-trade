@@ -32,7 +32,7 @@
       class="flex-1" style="overflow-y: scroll;"
       :items="filteredStats"
       key-field="matchRef"
-      :item-size="30"
+      :item-size="1.875 * fontSize"
       v-slot="{ item }"
     >
       <maps-stat-entry :stat="item" :auto-remove="!onlySelected" />
@@ -76,6 +76,9 @@ export default {
     },
     config () {
       return Config.store.widgets.find(widget => widget.wmType === 'map-check')
+    },
+    fontSize () {
+      return Config.store.fontSize
     }
   }
 }
