@@ -7,8 +7,8 @@
           'fas fa-check-square': !filter.disabled
         }"></i>
         <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-          <span class="truncate"><filter-stat-text :filter="filter" /></span>
-          <span class="search-text-full"><filter-stat-text :filter="filter" /></span>
+          <span class="truncate"><item-modifier-text :text="filter.text" :roll="filter.roll" /></span>
+          <span class="search-text-full"><item-modifier-text :text="filter.text" :roll="filter.roll" /></span>
         </div>
       </button>
       <div class="flex">
@@ -31,7 +31,7 @@
             </span>
           </template>
           <div class="popper">
-            <div style="max-width: 300px;">{{ filter.hidden }}</div>
+            <div style="max-width: 18.75rem;">{{ filter.hidden }}</div>
           </div>
         </ui-popper>
       </div>
@@ -42,9 +42,9 @@
           class="text-xs leading-none px-1 rounded mod-type-variant">variant</span>
       </div>
       <div class="flex-1 mr-4">
-        <div style="width: 200px;">
+        <div style="width: 12.5rem;">
           <ui-slider v-if="filter.boundMin !== undefined"
-            class="search-slider-rail" style="padding: 0;" :dotSize="[0, 20]" :height="20"
+            class="search-slider-rail" style="padding: 0;" :dotSize="[0, 1.25*fontSize]" :height="1.25*fontSize"
             :railStyle="{ background: 'transparent' }" :processStyle="{ background: '#cbd5e0', borderRadius: 0 }"
             drag-on-click lazy adsorb :enable-cross="false"
 
@@ -69,17 +69,18 @@
         </div>
       </div>
       <div v-if="showQ20Notice"
-        class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: 97px">Q {{ Math.max(20, item.quality || 0) }}%</div>
-      <div v-else style="width: 97px"></div>
+        class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: calc(2*3rem + 1px)">Q {{ Math.max(20, item.quality || 0) }}%</div>
+      <div v-else style="width: calc(2*3rem + 1px)"></div>
     </div>
   </div>
 </template>
 
 <script>
-import FilterStatText from './FilteStatText'
+import ItemModifierText from '../../ui/ItemModifierText'
+import { Config } from '@/web/Config'
 
 export default {
-  components: { FilterStatText },
+  components: { ItemModifierText },
   props: {
     filter: {
       type: Object,
@@ -136,6 +137,9 @@ export default {
         }
         this.filter.disabled = false
       }
+    },
+    fontSize () {
+      return Config.store.fontSize
     }
   },
   methods: {
@@ -196,7 +200,7 @@ export default {
 
   &::placeholder {
     @apply text-gray-700;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   /* &:not(:placeholder-shown) { @apply border-gray-600; } */
@@ -238,10 +242,20 @@ export default {
 
 .search-slider-rail { @apply rounded bg-gray-700; }
 .vue-slider-marks { display: flex; }
+.vue-slider-dot-tooltip-inner {
+  font-size: 0.875rem;
+  padding: 0.125rem 0.3125rem;
+  min-width: 1.25rem;
+  border-radius: 0.25rem;
+
+  &::after {
+    border-width: 0.3125rem;
+  }
+}
 .custom-mark {
   text-align: right;
   white-space: nowrap;
-  padding: 0 4px;
+  @apply px-1;
   @apply text-gray-500;
 
   &.active {
@@ -257,8 +271,8 @@ export default {
       content: ' ';
       display: block;
       position: absolute;
-      height: 4px;
-      width: 2px;
+      height: 0.25rem;
+      width: 0.125rem;
       @apply bg-gray-900;
     }
 

@@ -133,6 +133,7 @@ export default {
       required: true
     }
   },
+  inject: ['wm', 'widget'],
   data () {
     return {
       searchId: 0,
@@ -255,9 +256,9 @@ export default {
         : `https://www.pathofexile.com/trade/search/${this.filters.trade.league}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
 
       if (isExternal) {
-        MainProcess.openUserBrowser(link)
+        MainProcess.openSystemBrowser(link)
       } else {
-        MainProcess.openAppBrowser(link)
+        this.wm.showBrowser(this.widget.config.wmId, link)
       }
     }
   }

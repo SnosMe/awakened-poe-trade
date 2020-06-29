@@ -12,24 +12,28 @@
 <script>
 export default {
   props: {
-    filter: {
-      type: Object,
+    text: {
+      type: String,
       required: true
+    },
+    roll: {
+      type: Number,
+      default: undefined
     }
   },
   computed: {
     parts () {
       const res = []
-      this.filter.text.split(/(?<![#])[+-]?[#]/gm).forEach((text, idx, parts) => {
+      this.text.split(/(?<![#])[+-]?[#]/gm).forEach((text, idx, parts) => {
         if (text !== '') {
           res.push({ text })
         }
         if (idx !== (parts.length - 1)) {
-          if (this.filter.roll == null) {
+          if (this.roll == null) {
             res.push({ text: '#' })
           } else {
             res.push({
-              text: this.filter.roll,
+              text: this.roll,
               placeholder: true
             })
           }

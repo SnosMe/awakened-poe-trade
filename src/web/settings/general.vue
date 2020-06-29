@@ -1,34 +1,37 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-2">
-      <div class="flex-1 mb-1">Account name</div>
-      <div class="mb-4">
-        <input v-model="config.accountName" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
+      <div class="flex-1 mb-1">Font size <span class="bg-gray-200 text-gray-900 rounded px-1">Restart required</span></div>
+      <div class="mb-4 flex">
+        <input v-model.number="config.fontSize" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+        <span class="ml-1">px</span>
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">Show seller</div>
+      <div class="flex-1 mb-1">Clicking on background focuses game</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="config.overlayBackgroundClose" :value="false" class="mr-4">No</ui-radio>
+        <ui-radio v-model="config.overlayBackgroundClose" :value="true" class="mr-4">Yes</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">Background, when APT window is clickable</div>
       <div class="mb-1 flex">
-        <ui-radio v-model="config.showSeller" :value="false" class="mr-4">No</ui-radio>
-        <ui-radio v-model="config.showSeller" value="account" class="mr-4">Account name</ui-radio>
-        <ui-radio v-model="config.showSeller" value="ign">Last character name</ui-radio>
+        <input v-model="config.overlayBackground" class="rounded bg-gray-900 px-1 block w-48 mb-1 mr-4 font-fontin-regular text-center" />
+        <ui-radio v-model="config.overlayBackground" value="rgba(255, 255, 255, 0)">Transparent</ui-radio>
       </div>
-      <div class="mb-4 italic text-gray-500">Your items will be highlighted even if it is turned off</div>
-    </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">Fill stat values</div>
-      <div class="mb-4 flex">
-        <ui-radio v-model="config.searchStatRange" :value="10" class="mr-4">+-10%</ui-radio>
-        <ui-radio v-model="config.searchStatRange" :value="0">Exact roll</ui-radio>
+      <div class="mb-2" v-if="config.overlayBackground !== 'rgba(255, 255, 255, 0)'">
+        <ui-radio v-model="config.overlayBackgroundExclusive" :value="true" class="mr-4">Show for Overlay and Price Check</ui-radio><br>
+        <ui-radio v-model="config.overlayBackgroundExclusive" :value="false">Show only for Overlay</ui-radio>
       </div>
-    </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">Trade API Subdomain</div>
-      <div class="mb-4 flex">
-        <ui-radio v-model="config.subdomain" value="us" class="mr-4">Main (www)</ui-radio>
-        <ui-radio v-model="config.subdomain" value="th" class="mr-4">Mirror 1 (th)</ui-radio>
-        <ui-radio v-model="config.subdomain" value="kr">Mirror 2 (kr)</ui-radio>
-      </div>
+      <ul class="bg-gray-700 pl-6 pr-2 py-1 rounded mb-4 font-fontin-bold list-decimal">
+        <li>You promise to verify that the problem or question you have is not caused by the fact of changing background.</li>
+        <li>You understand that you will not be able to quickly react in case of accidental overlay activation, which can lead to the death of your character.</li>
+        <li>You are aware that transparent background reduces contrast.</li>
+        <li>You agree that contrast issues cannot be fixed by changing the color theme of application.</li>
+        <li>You are aware that non-transparent background helps detect bugs when window not behaving as expected.</li>
+        <li>You understand that the help you receive may be wrong due to incorrect interpretation of the background in the screenshot by the person who helps.</li>
+      </ul>
     </div>
   </div>
 </template>

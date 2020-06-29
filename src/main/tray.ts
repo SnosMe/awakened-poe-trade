@@ -2,7 +2,7 @@ import path from 'path'
 import { app, Tray, Menu, ipcMain, MenuItem, MenuItemConstructorOptions, shell, nativeImage } from 'electron'
 import { checkForUpdates, UpdateState } from './updates'
 import { config } from './config'
-import { win } from './window'
+import { overlayWindow } from './overlay-window'
 import { League } from '@/ipc/types'
 import { LEAGUES_READY, LEAGUE_SELECTED } from '@/ipc/ipc-event'
 import { createWindow as settingsWindow } from './SettingsWindow'
@@ -21,7 +21,7 @@ function selectLeague (league: League) {
   league.selected = true
   rebuildContextMenu()
 
-  win.webContents.send(LEAGUE_SELECTED, league.id)
+  overlayWindow!.webContents.send(LEAGUE_SELECTED, league.id)
 }
 
 function leaguesMenuItem () {

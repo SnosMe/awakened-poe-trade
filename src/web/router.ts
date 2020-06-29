@@ -7,9 +7,9 @@ export default new Router({
   linkActiveClass: 'active',
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: () => import(/* webpackChunkName: "price-check" */ './price-check/PriceCheckWindow.vue')
+      path: '/overlay',
+      name: 'overlay',
+      component: () => import(/* webpackChunkName: "overlay" */ './overlay/OverlayWindow.vue')
     },
     {
       path: '/settings',
@@ -27,9 +27,19 @@ export default new Router({
           component: () => import(/* webpackChunkName: "settings" */ './settings/general.vue')
         },
         {
+          path: 'price-check',
+          name: 'settings.price-check',
+          component: () => import(/* webpackChunkName: "settings" */ './settings/price-check.vue')
+        },
+        {
           path: 'debug',
           name: 'settings.debug',
           component: () => import(/* webpackChunkName: "settings" */ './settings/debug.vue')
+        },
+        {
+          path: 'maps',
+          name: 'settings.maps',
+          component: () => import(/* webpackChunkName: "settings" */ './settings/maps.vue')
         }
       ]
     }

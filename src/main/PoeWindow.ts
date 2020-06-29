@@ -1,15 +1,15 @@
-import { Rectangle } from 'electron'
-import { windowManager } from './window-manager'
+import { Rectangle, BrowserWindow, Point } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
-import { win } from './window'
 import { config } from './config'
+import { overlayWindow as OW, AttachEvent } from 'electron-overlay-window'
 
+interface PoeWindowClass {
+  on(event: 'active-change', listener: (isActive: boolean) => void): this
+}
 class PoeWindowClass extends EventEmitter {
   private _isActive: boolean = false
   bounds: Rectangle | undefined
-  pid: number | undefined
-  private onceActive = false
 
   get isActive () {
     return this._isActive
@@ -22,36 +22,35 @@ class PoeWindowClass extends EventEmitter {
       } else {
         logger.verbose('Not focused', { source: 'poe-window' })
       }
-      this.emit('active-change', active, this.isActive)
       this._isActive = active
+      this.emit('active-change', this._isActive)
     }
   }
 
-  startPolling () {
-    setInterval(async () => {
-      try {
-        const title = await windowManager.getActiveWindowTitle()
-        this.isActive = (title === config.get('windowTitle'))
-      } catch (e) {
-        this.isActive = false
-      }
+  get uiSidebarWidth () {
+    // sidebar is 370px at 800x600
+    const ratio = 370 / 600
+    return Math.round(this.bounds!.height * ratio)
+  }
 
-      if (this.isActive) {
-        try {
-          this.bounds = (await windowManager.getActiveWindowContentBounds())!
-          this.pid = (await windowManager.getActiveWindowId())!
+  attach (window: BrowserWindow) {
+    OW.on('focus', () => { this.isActive = true })
+    OW.on('blur', () => { this.isActive = false })
 
-          if (this.onceActive === false && win) {
-            win.setBounds(this.bounds!)
-            this.onceActive = true
-          }
-        } catch (e) {
-          this.isActive = false
-          this.bounds = undefined
-          this.pid = undefined
-        }
-      }
-    }, 500)
+    OW.on('moveresize', (e) => {
+      this.bounds = e
+    })
+    OW.on('attach', (e) => {
+      this.bounds = e
+    })
+
+    OW.attachTo(window, config.get('windowTitle'))
+  }
+
+  onceAttached (cb: (hasAccess: boolean | undefined) => void) {
+    OW.once('attach', (e: AttachEvent) => {
+      cb(e.hasAccess)
+    })
   }
 }
 

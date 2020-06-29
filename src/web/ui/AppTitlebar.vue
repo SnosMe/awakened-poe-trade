@@ -3,7 +3,7 @@
     <slot />
     <div class="text-gray-600 truncate leading-none px-4">{{ title }}</div>
     <div class="flex">
-      <button @click="$emit('close')" tabindex="-1"
+      <button @click.stop="$emit('close')" tabindex="-1"
         class="titlebar-btn app-close pt-px" title="Close"><i class="fas fa-window-close"></i></button>
     </div>
   </div>

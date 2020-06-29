@@ -1,29 +1,49 @@
 import path from 'path'
-import { BrowserWindow } from 'electron'
+import { BrowserWindow, dialog } from 'electron'
+import { PoeWindow } from './PoeWindow'
+import { isInteractable } from './overlay-window'
+import { config } from './config'
 
 let settingsWindow: BrowserWindow | undefined
 
 export function createWindow () {
+  if (PoeWindow.isActive || isInteractable) {
+    dialog.showErrorBox(
+      'Settings - Possible data loss',
+      // ----------------------
+      'Settings cannot be opened when overlay is active.\n' +
+      'Settings cannot be opened when Path of Exile window has focus.\n' +
+      '\n' +
+      'This prevents the loss of any changes made in overlay window.'
+    )
+    return
+  }
+
   if (settingsWindow) {
-    settingsWindow.focus()
+    try {
+      settingsWindow.focus()
+    } catch {
+      settingsWindow = undefined
+      createWindow()
+    }
     return
   }
 
   settingsWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 50 * config.get('fontSize'),
+    height: 37.5 * config.get('fontSize'),
     icon: path.join(__static, 'icon.png'),
     fullscreenable: false,
     frame: false,
     backgroundColor: '#2d3748', // gray-800
     webPreferences: {
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any
+      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
+      defaultFontSize: config.get('fontSize')
     }
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     settingsWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#settings/hotkeys')
-    // settingsWindow.webContents.openDevTools({ mode: 'detach' })
   } else {
     settingsWindow.loadURL('app://./index.html#settings/hotkeys')
   }
