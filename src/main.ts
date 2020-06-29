@@ -4,11 +4,14 @@ import router from './web/router'
 import TrendChart from 'vue-trend-chart'
 import Popper from 'vue-popperjs'
 import VueSlider from 'vue-slider-component'
+import VueVirtualScroller from 'vue-virtual-scroller'
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 import 'vue-popperjs/dist/vue-popper.css'
 import 'vue-slider-component/theme/default.css'
 import './web/ui'
 
 Vue.use(TrendChart)
+Vue.use(VueVirtualScroller)
 Vue.component('UiPopper', Popper)
 Vue.component('UiSlider', VueSlider)
 

@@ -3,7 +3,7 @@ import { getRollAsSingleNumber } from '@/parser/utils'
 
 type PreparedStat = {
   text: string
-  ref: string
+  matchRef: string
   roll?: number
 }
 
@@ -11,7 +11,7 @@ export function prepareMapStats (item: ParsedItem): PreparedStat[] {
   return item.modifiers.map(mod => {
     const prepared = {
       text: mod.string,
-      ref: mod.stat.ref,
+      matchRef: mod.ref,
       roll: mod.values && getRollAsSingleNumber(mod.values)
     }
 
