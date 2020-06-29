@@ -46,6 +46,24 @@ export const config = (() => {
     config.set('fontSize', defaultConfig.fontSize)
   }
 
+  const widgets = config.get('widgets')
+  if (config.get('configVersion') == null) {
+    const mapWidget = widgets.find(w => w.wmType === 'map-check')!
+    mapWidget.wmZorder = 'exclusive'
+    mapWidget.selectedStats = mapWidget.selectedStats.map((legacy: { text: string, markedAs: string }) => ({
+      matchRef: legacy.text,
+      invert: false,
+      valueWarning: legacy.markedAs === 'warning' ? '+' : '',
+      valueDanger: legacy.markedAs === 'danger' ? '+' : '',
+      valueDesirable: legacy.markedAs === 'desirable' ? '+' : ''
+    }))
+    config.set('widgets', widgets)
+  }
+
+  if (config.get('configVersion') == null) {
+    config.set('configVersion', 1)
+  }
+
   return config
 })()
 

@@ -4,6 +4,7 @@ export interface League {
 }
 
 export interface Config {
+  configVersion?: number
   leagueId?: string
   priceCheckKey: string | null
   priceCheckKeyHold: string
@@ -119,24 +120,43 @@ export const defaultConfig: Config = {
       wmType: 'map-check',
       wmTitle: '',
       wmWants: 'hide',
-      wmZorder: 3,
+      wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
       selectedStats: [
         {
-          text: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
-          markedAs: 'desirable'
+          matchRef: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
+          invert: false,
+          valueWarning: '',
+          valueDanger: '',
+          valueDesirable: '+'
         },
         {
-          text: '#% maximum Player Resistances',
-          markedAs: 'warning'
+          matchRef: '#% maximum Player Resistances',
+          invert: true,
+          valueWarning: '-10',
+          valueDanger: '',
+          valueDesirable: ''
         },
         {
-          text: 'Monsters reflect #% of Physical Damage',
-          markedAs: 'danger'
+          matchRef: 'Monsters reflect #% of Physical Damage',
+          invert: false,
+          valueWarning: '',
+          valueDanger: '+',
+          valueDesirable: ''
         },
         {
-          text: 'Area contains two Unique Bosses',
-          markedAs: 'desirable'
+          matchRef: 'Monsters reflect #% of Elemental Damage',
+          invert: false,
+          valueWarning: '',
+          valueDanger: '+',
+          valueDesirable: ''
+        },
+        {
+          matchRef: 'Area contains two Unique Bosses',
+          invert: false,
+          valueWarning: '',
+          valueDanger: '',
+          valueDesirable: '+'
         }
       ]
     },
