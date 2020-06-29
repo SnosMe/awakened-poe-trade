@@ -32,7 +32,12 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
     s: 'awakened-poe-trade'
   })
   const response = await fetch(`${MainProcess.CORS}https://www.poeprices.info/api?${query}`)
-  const data: PoepricesApiResponse = await response.json()
+  let data: PoepricesApiResponse
+  try {
+    data = await response.json()
+  } catch (e) {
+    throw new Error(`${response.status}, poeprices.info API is under load or down.`)
+  }
 
   if (data.error !== 0) {
     throw new Error(data.error_msg)

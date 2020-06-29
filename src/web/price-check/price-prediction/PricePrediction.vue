@@ -55,8 +55,8 @@
       </table>
     </div>
     <div v-else-if="error">
-      <i class="fas fa-exclamation-circle pr-1 text-red-600"></i>
-      <span>{{ error }}</span>
+      <div class="text-red-400">Failed to get price prediction</div>
+      <div>Error: {{ error }}</div>
     </div>
   </div>
 </template>
