@@ -170,6 +170,9 @@ export default {
     },
     show (wmId) {
       this.bringToTop(wmId)
+      if (this.topmostOrExclusiveWidget.wmZorder === 'exclusive') {
+        this.hide(this.topmostOrExclusiveWidget.wmId)
+      }
       this.widgets.find(_ => _.wmId === wmId).wmWants = 'show'
     },
     hide (wmId) {
