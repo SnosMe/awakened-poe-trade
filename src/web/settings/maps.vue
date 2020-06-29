@@ -1,9 +1,31 @@
 <template>
-  <div class="max-w-md p-2">
+  <div class="p-2">
     <div class="bg-gray-700 rounded px-2 py-1 mb-2 leading-none">
-      <i class="fas fa-info-circle"></i> You can click on stat to cycle through available marks: danger, warning, desirable, none.</div>
-
-    <span class="bg-gray-200 text-gray-800 rounded px-1">Preview Version</span><span> More features and configuration options to come in the next release</span>
+      <i class="fas fa-info-circle"></i> You can click on stat to cycle through available marks:<br>danger, warning, desirable, none.</div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Stat</th>
+            <th>Invert</th>
+            <th>Danger</th>
+            <th>Warning</th>
+            <th>Desirable</th>
+            <th>DEL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#% increased Monster Life</td>
+            <td><div class="flex justify-center"><ui-toggle/></div></td>
+            <td><input class="bg-gray-900 rounded w-12 text-center"></td>
+            <td><input class="bg-gray-900 rounded w-12 text-center"></td>
+            <td><input class="bg-gray-900 rounded w-12 text-center"></td>
+            <td>DEL</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
