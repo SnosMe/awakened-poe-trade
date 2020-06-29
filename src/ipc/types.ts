@@ -58,7 +58,7 @@ export const defaultConfig: Config = {
   priceCheckLocked: 'Ctrl + Alt + D',
   wikiKey: 'Alt + W',
   overlayKey: 'Shift + Space',
-  overlayBackground: 'rgba(255, 255, 255, 0.15)',
+  overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
   overlayBackgroundClose: true,
   priceCheckShowCursor: true,

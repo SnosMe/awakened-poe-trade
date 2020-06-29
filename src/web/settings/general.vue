@@ -20,18 +20,10 @@
         <input v-model="config.overlayBackground" class="rounded bg-gray-900 px-1 block w-48 mb-1 mr-4 font-fontin-regular text-center" />
         <ui-radio v-model="config.overlayBackground" value="rgba(255, 255, 255, 0)">Transparent</ui-radio>
       </div>
-      <div class="mb-2" v-if="config.overlayBackground !== 'rgba(255, 255, 255, 0)'">
+      <div class="mb-4" v-if="config.overlayBackground !== 'rgba(255, 255, 255, 0)'">
         <ui-radio v-model="config.overlayBackgroundExclusive" :value="true" class="mr-4">Show for Overlay and Price Check</ui-radio><br>
         <ui-radio v-model="config.overlayBackgroundExclusive" :value="false">Show only for Overlay</ui-radio>
       </div>
-      <ul class="bg-gray-700 pl-6 pr-2 py-1 rounded mb-4 font-fontin-bold list-decimal">
-        <li>You promise to verify that the problem or question you have is not caused by the fact of changing background.</li>
-        <li>You understand that you will not be able to quickly react in case of accidental overlay activation, which can lead to the death of your character.</li>
-        <li>You are aware that transparent background reduces contrast.</li>
-        <li>You agree that contrast issues cannot be fixed by changing the color theme of application.</li>
-        <li>You are aware that non-transparent background helps detect bugs when window not behaving as expected.</li>
-        <li>You understand that the help you receive may be wrong due to incorrect interpretation of the background in the screenshot by the person who helps.</li>
-      </ul>
     </div>
   </div>
 </template>
