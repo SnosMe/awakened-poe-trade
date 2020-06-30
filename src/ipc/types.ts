@@ -4,7 +4,7 @@ export interface League {
 }
 
 export interface Config {
-  configVersion?: number
+  configVersion: number
   leagueId?: string
   priceCheckKey: string | null
   priceCheckKeyHold: string
@@ -53,6 +53,7 @@ type WidgetWellKnownFlag =
   'hide-on-blur(close)'
 
 export const defaultConfig: Config = {
+  configVersion: 2,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',

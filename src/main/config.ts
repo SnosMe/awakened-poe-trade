@@ -47,8 +47,8 @@ export const config = (() => {
   }
 
   const widgets = config.get('widgets')
-  if (config.get('configVersion') == null) {
-    const mapWidget = widgets.find(w => w.wmType === 'map-check')!
+  const mapWidget = widgets.find(w => w.wmType === 'map-check')!
+  if (mapWidget.wmZorder !== 'exclusive') {
     mapWidget.wmZorder = 'exclusive'
     mapWidget.selectedStats = mapWidget.selectedStats.map((legacy: { text: string, markedAs: string }) => ({
       matchRef: legacy.text,
@@ -58,10 +58,6 @@ export const config = (() => {
       valueDesirable: legacy.markedAs === 'desirable' ? '+' : ''
     }))
     config.set('widgets', widgets)
-  }
-
-  if (config.get('configVersion') == null) {
-    config.set('configVersion', 1)
   }
 
   return config
