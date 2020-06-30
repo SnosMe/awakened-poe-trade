@@ -9,7 +9,7 @@
     <price-trend
       :item="item"
       @filter-item-base="applyItemBaseFilter" />
-    <filters-block v-if="!item.stackSize"
+    <filters-block
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"

@@ -23,7 +23,10 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
     return filters
   }
-  if (item.category === ItemCategory.MetamorphSample) {
+  if (
+    item.category === ItemCategory.MetamorphSample ||
+    item.category === ItemCategory.Seed
+  ) {
     filters.baseType = {
       value: item.name
     }

@@ -30,6 +30,7 @@ import {
   PREFIX_SYNTHESISED,
   PROPHECY_HELP,
   BEAST_HELP,
+  SEED_HELP,
   METAMORPH_HELP,
   METAMORPH_BRAIN,
   METAMORPH_EYE,
@@ -37,7 +38,8 @@ import {
   METAMORPH_HEART,
   METAMORPH_LIVER,
   VEILED_PREFIX,
-  VEILED_SUFFIX
+  VEILED_SUFFIX,
+  SEED_MONSTER_LEVEL
 } from './constants'
 import { BaseTypes } from '@/assets/data'
 import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
@@ -297,9 +299,24 @@ function parseStackSize (section: string[], item: ParsedItem) {
   if (section[0].startsWith(TAG_STACK_SIZE)) {
     // "Stack Size: 2/9"
     item.stackSize = parseInt(section[0].substr(TAG_STACK_SIZE.length), 10)
+
+    if (item.category === ItemCategory.Seed) {
+      parseSeedLevelNested(section, item)
+    }
+
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
+}
+
+function parseSeedLevelNested (section: string[], item: ParsedItem) {
+  for (const line of section) {
+    const match = line.match(SEED_MONSTER_LEVEL)
+    if (match != null) {
+      item.itemLevel = Number(match[1])
+      break
+    }
+  }
 }
 
 function parseSockets (section: string[], item: ParsedItem) {
@@ -503,17 +520,18 @@ function parseSynthesised (section: string[], item: ParsedItem) {
 }
 
 function parseCategoryByHelpText (section: string[], item: ParsedItem) {
-  if (section.length === 1) {
-    if (section[0] === PROPHECY_HELP) {
-      item.category = ItemCategory.Prophecy
-      return SECTION_PARSED
-    } else if (section[0] === BEAST_HELP) {
-      item.category = ItemCategory.CapturedBeast
-      return SECTION_PARSED
-    } else if (section[0] === METAMORPH_HELP) {
-      item.category = ItemCategory.MetamorphSample
-      return SECTION_PARSED
-    }
+  if (section[0] === PROPHECY_HELP) {
+    item.category = ItemCategory.Prophecy
+    return SECTION_PARSED
+  } else if (section[0] === BEAST_HELP) {
+    item.category = ItemCategory.CapturedBeast
+    return SECTION_PARSED
+  } else if (section[0] === METAMORPH_HELP) {
+    item.category = ItemCategory.MetamorphSample
+    return SECTION_PARSED
+  } else if (section[0].startsWith(SEED_HELP)) {
+    item.category = ItemCategory.Seed
+    return SECTION_PARSED
   }
 
   return SECTION_SKIPPED

@@ -137,7 +137,7 @@ interface FetchResult {
     stackSize?: number
     corrupted?: boolean
     properties?: Array<{
-      name: 'Quality' | 'Level'
+      name: 'Quality' | 'Level' | 'Spawns a Level %0 Monster when Harvested'
       values: [[string, number]]
     }>
   }
@@ -398,7 +398,9 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
   return data.result.map(result => {
     return {
       id: result.id,
-      itemLevel: result.item.ilvl,
+      itemLevel:
+        result.item.ilvl ||
+        result.item.properties?.find(prop => prop.name === 'Spawns a Level %0 Monster when Harvested')?.values[0][0],
       stackSize: result.item.stackSize,
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.name === 'Quality')?.values[0][0],
