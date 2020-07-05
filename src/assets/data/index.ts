@@ -1,9 +1,41 @@
-import stats from './stats_English.json'
 import baseTypes from './base-types.json'
 import uniques from './uniques.json'
 import tradeTags from './trade-tags.json'
 import itemDrop from './item-drop.json'
 import { ItemCategory } from '@/parser'
+import type { TranslationDict } from '@/assets/data/ru/client_strings'
+import { Config } from '@/web/Config'
+
+export let clientStrings: TranslationDict
+export let itemNameRefByTranslated: Map<string, string>
+export let translatedItemNameByRef: Map<string, string>
+
+export let stats: Array<{ conditions: StatMatcher[], mod: Stat }>
+
+// Mods
+export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat, matchers: StatMatcher[] }>()
+export const STAT_BY_REF = new Map<string, Stat>()
+
+;(async function initData () {
+  clientStrings = (require(`@/assets/data/${Config.store.language}/client_strings`).default)
+  console.log(clientStrings)
+
+  const itemNames: Array<[string, string]> = (require(`@/assets/data/${Config.store.language}/item-names`))
+  translatedItemNameByRef = new Map(itemNames)
+  itemNameRefByTranslated = new Map(itemNames.map(_ => [_[1], _[0]]))
+
+  stats = (require(`@/assets/data/${Config.store.language}/stats`))
+  for (const entry of stats) {
+    for (const condition of entry.conditions) {
+      STAT_BY_MATCH_STR.set(condition.string, {
+        matcher: condition,
+        stat: entry.mod,
+        matchers: entry.conditions
+      })
+    }
+    STAT_BY_REF.set(entry.mod.ref, entry.mod)
+  }
+})()
 
 export interface StatMatcher {
   string: string
@@ -35,23 +67,6 @@ export interface BaseType {
 }
 
 export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
-
-export { stats }
-
-// Mods
-export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat, matchers: StatMatcher[] }>()
-export const STAT_BY_REF = new Map<string, Stat>()
-
-for (const entry of (stats as Array<{ conditions: StatMatcher[], mod: Stat }>)) {
-  for (const condition of entry.conditions) {
-    STAT_BY_MATCH_STR.set(condition.string, {
-      matcher: condition,
-      stat: entry.mod,
-      matchers: entry.conditions
-    })
-  }
-  STAT_BY_REF.set(entry.mod.ref, entry.mod)
-}
 
 // assertion, to avoid regressions in stats.json
 export function stat (text: string) {

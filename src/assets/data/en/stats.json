@@ -43,6 +43,12 @@
           "tradeId": [
             "explicit.stat_4079888060"
           ]
+        },
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_4079888060"
+          ]
         }
       ]
     }
@@ -2381,6 +2387,26 @@
   {
     "conditions": [
       {
+        "string": "# to Armour while you have Fortify",
+        "ref": "# to Armour while you have Fortify"
+      }
+    ],
+    "mod": {
+      "text": "# to Armour while you have Fortify",
+      "ref": "# to Armour while you have Fortify",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_153004860"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "# to Dexterity",
         "ref": "# to Dexterity"
       }
@@ -4228,6 +4254,26 @@
   {
     "conditions": [
       {
+        "string": "# to Maximum Rage",
+        "ref": "# to Maximum Rage"
+      }
+    ],
+    "mod": {
+      "text": "# to Maximum Rage",
+      "ref": "# to Maximum Rage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1181501418"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "# to Maximum Rage while wielding a Sword",
         "ref": "# to Maximum Rage while wielding a Sword"
       }
@@ -4300,6 +4346,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2264295449"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2264295449"
           ]
         },
         {
@@ -4758,6 +4810,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_290368246"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "# Weapon Range per 10% Quality",
+        "ref": "# Weapon Range per 10% Quality"
+      }
+    ],
+    "mod": {
+      "text": "# Weapon Range per 10% Quality",
+      "ref": "# Weapon Range per 10% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2967267655"
           ]
         }
       ]
@@ -6093,6 +6165,26 @@
   {
     "conditions": [
       {
+        "string": "#% chance to Avoid Elemental Ailments while you have Elusive",
+        "ref": "#% chance to Avoid Elemental Ailments while you have Elusive"
+      }
+    ],
+    "mod": {
+      "text": "#% chance to Avoid Elemental Ailments while you have Elusive",
+      "ref": "#% chance to Avoid Elemental Ailments while you have Elusive",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2662268382"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% chance to Avoid Elemental Damage from Hits during Soul Gain Prevention",
         "ref": "#% chance to Avoid Elemental Damage from Hits during Soul Gain Prevention"
       },
@@ -6214,6 +6306,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1916706958"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1916706958"
           ]
         }
       ]
@@ -7899,6 +7997,26 @@
           "name": "crafted",
           "tradeId": [
             "crafted.stat_1172810729"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% chance to deal Double Damage if you have Stunned an Enemy Recently",
+        "ref": "#% chance to deal Double Damage if you have Stunned an Enemy Recently"
+      }
+    ],
+    "mod": {
+      "text": "#% chance to deal Double Damage if you have Stunned an Enemy Recently",
+      "ref": "#% chance to deal Double Damage if you have Stunned an Enemy Recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4224978303"
           ]
         }
       ]
@@ -10473,6 +10591,33 @@
   {
     "conditions": [
       {
+        "string": "#% chance to inflict Withered for 2 seconds on Hit",
+        "ref": "#% chance to inflict Withered for 2 seconds on Hit"
+      },
+      {
+        "string": "Inflict Withered for 2 seconds on Hit",
+        "ref": "Inflict Withered for 2 seconds on Hit",
+        "condition": {
+          "min": 100
+        }
+      }
+    ],
+    "mod": {
+      "text": "#% chance to inflict Withered for 2 seconds on Hit",
+      "ref": "#% chance to inflict Withered for 2 seconds on Hit",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1957711555"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% chance to Intimidate Enemies for 4 seconds on Hit",
         "ref": "#% chance to Intimidate Enemies for 4 seconds on Hit"
       }
@@ -12765,6 +12910,33 @@
   {
     "conditions": [
       {
+        "string": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
+        "ref": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon"
+      },
+      {
+        "string": "Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
+        "ref": "Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
+        "condition": {
+          "min": 100
+        }
+      }
+    ],
+    "mod": {
+      "text": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
+      "ref": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4221489692"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill",
         "ref": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill"
       }
@@ -13579,6 +13751,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_347697569"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Accuracy Rating while you have Onslaught",
+        "ref": "#% increased Accuracy Rating while you have Onslaught"
+      },
+      {
+        "string": "#% reduced Accuracy Rating while you have Onslaught",
+        "ref": "#% reduced Accuracy Rating while you have Onslaught",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Accuracy Rating while you have Onslaught",
+      "ref": "#% increased Accuracy Rating while you have Onslaught",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2593021351"
           ]
         }
       ]
@@ -14436,6 +14633,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2216127021"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Area of Effect while you have Arcane Surge",
+        "ref": "#% increased Area of Effect while you have Arcane Surge"
+      },
+      {
+        "string": "#% reduced Area of Effect while you have Arcane Surge",
+        "ref": "#% reduced Area of Effect while you have Arcane Surge",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Area of Effect while you have Arcane Surge",
+      "ref": "#% increased Area of Effect while you have Arcane Surge",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1406617410"
           ]
         }
       ]
@@ -15637,18 +15859,18 @@
   {
     "conditions": [
       {
-        "string": "#% increased Attack Speed if you haven’t Cast Dash recently",
-        "ref": "#% increased Attack Speed if you haven’t Cast Dash recently"
+        "string": "#% increased Attack Speed if you haven't Cast Dash recently",
+        "ref": "#% increased Attack Speed if you haven't Cast Dash recently"
       },
       {
-        "string": "#% reduced Attack Speed if you haven’t Cast Dash recently",
-        "ref": "#% reduced Attack Speed if you haven’t Cast Dash recently",
+        "string": "#% reduced Attack Speed if you haven't Cast Dash recently",
+        "ref": "#% reduced Attack Speed if you haven't Cast Dash recently",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% increased Attack Speed if you haven’t Cast Dash recently",
-      "ref": "#% increased Attack Speed if you haven’t Cast Dash recently",
+      "text": "#% increased Attack Speed if you haven't Cast Dash recently",
+      "ref": "#% increased Attack Speed if you haven't Cast Dash recently",
       "types": [
         {
           "name": "explicit",
@@ -15679,6 +15901,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_4137521191"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Attack Speed if you've changed Stance Recently",
+        "ref": "#% increased Attack Speed if you've changed Stance Recently"
+      },
+      {
+        "string": "#% reduced Attack Speed if you've changed Stance Recently",
+        "ref": "#% reduced Attack Speed if you've changed Stance Recently",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Attack Speed if you've changed Stance Recently",
+      "ref": "#% increased Attack Speed if you've changed Stance Recently",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2188905761"
           ]
         }
       ]
@@ -15757,31 +16004,6 @@
   {
     "conditions": [
       {
-        "string": "#% increased Attack Speed if you’ve changed Stance Recently",
-        "ref": "#% increased Attack Speed if you’ve changed Stance Recently"
-      },
-      {
-        "string": "#% reduced Attack Speed if you’ve changed Stance Recently",
-        "ref": "#% reduced Attack Speed if you’ve changed Stance Recently",
-        "negate": true
-      }
-    ],
-    "mod": {
-      "text": "#% increased Attack Speed if you’ve changed Stance Recently",
-      "ref": "#% increased Attack Speed if you’ve changed Stance Recently",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_2188905761"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
         "string": "#% increased Attack Speed per 10 Dexterity",
         "ref": "#% increased Attack Speed per 10 Dexterity"
       },
@@ -15819,6 +16041,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2241560081"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Attack Speed per 8% Quality",
+        "ref": "#% increased Attack Speed per 8% Quality"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Attack Speed per 8% Quality",
+      "ref": "#% increased Attack Speed per 8% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3331111689"
           ]
         }
       ]
@@ -18017,6 +18259,12 @@
           "tradeId": [
             "explicit.stat_388617051"
           ]
+        },
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_388617051"
+          ]
         }
       ]
     }
@@ -19499,6 +19747,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2856328513"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Critical Strike Chance per 4% Quality",
+        "ref": "#% increased Critical Strike Chance per 4% Quality"
+      }
+    ],
+    "mod": {
+      "text": "#% increased Critical Strike Chance per 4% Quality",
+      "ref": "#% increased Critical Strike Chance per 4% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3103053611"
           ]
         }
       ]
@@ -23017,6 +23285,31 @@
   {
     "conditions": [
       {
+        "string": "#% increased Effect of Curses on you while on Consecrated Ground",
+        "ref": "#% increased Effect of Curses on you while on Consecrated Ground"
+      },
+      {
+        "string": "#% reduced Effect of Curses on you while on Consecrated Ground",
+        "ref": "#% reduced Effect of Curses on you while on Consecrated Ground",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Effect of Curses on you while on Consecrated Ground",
+      "ref": "#% increased Effect of Curses on you while on Consecrated Ground",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3444629796"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% increased Effect of Elusive on you per Power Charge",
         "ref": "#% increased Effect of Elusive on you per Power Charge"
       },
@@ -23278,6 +23571,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1810368194"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Effect of Non-Damaging Ailments on you",
+        "ref": "#% increased Effect of Non-Damaging Ailments on you"
+      },
+      {
+        "string": "#% reduced Effect of Non-Damaging Ailments on you",
+        "ref": "#% reduced Effect of Non-Damaging Ailments on you",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Effect of Non-Damaging Ailments on you",
+      "ref": "#% increased Effect of Non-Damaging Ailments on you",
+      "types": [
+        {
+          "name": "crafted",
+          "tradeId": [
+            "crafted.stat_1519474779"
           ]
         }
       ]
@@ -24923,6 +25241,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2241902512"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2241902512"
           ]
         }
       ]
@@ -31539,6 +31863,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_555311393"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% increased Physical Damage per 10 Rage",
+        "ref": "#% increased Physical Damage per 10 Rage"
+      },
+      {
+        "string": "#% reduced Physical Damage per 10 Rage",
+        "ref": "#% reduced Physical Damage per 10 Rage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "#% increased Physical Damage per 10 Rage",
+      "ref": "#% increased Physical Damage per 10 Rage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2688118197"
           ]
         }
       ]
@@ -42730,6 +43079,46 @@
   {
     "conditions": [
       {
+        "string": "#% to Damage over Time Multiplier for Bleeding from Critical Strikes",
+        "ref": "#% to Damage over Time Multiplier for Bleeding from Critical Strikes"
+      }
+    ],
+    "mod": {
+      "text": "#% to Damage over Time Multiplier for Bleeding from Critical Strikes",
+      "ref": "#% to Damage over Time Multiplier for Bleeding from Critical Strikes",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1454648374"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe",
+        "ref": "#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe"
+      }
+    ],
+    "mod": {
+      "text": "#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe",
+      "ref": "#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_769468514"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "#% to Damage over Time Multiplier for Poison per Frenzy Charge",
         "ref": "#% to Damage over Time Multiplier for Poison per Frenzy Charge"
       }
@@ -44006,6 +44395,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1922061483"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "# to Evasion Rating while you have Phasing",
+        "ref": "# to Evasion Rating while you have Phasing"
+      },
+      {
+        "string": "-# to Evasion Rating while you have Phasing",
+        "ref": "-# to Evasion Rating while you have Phasing",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "+# to Evasion Rating while you have Phasing",
+      "ref": "+# to Evasion Rating while you have Phasing",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3169671355"
           ]
         }
       ]
@@ -50714,6 +51128,26 @@
   {
     "conditions": [
       {
+        "string": "1 Added Passive Skill is Winter Commander",
+        "ref": "1 Added Passive Skill is Winter Commander"
+      }
+    ],
+    "mod": {
+      "text": "1 Added Passive Skill is Winter Commander",
+      "ref": "1 Added Passive Skill is Winter Commander",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_792262925"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "1 Added Passive Skill is Winter Prowler",
         "ref": "1 Added Passive Skill is Winter Prowler"
       }
@@ -56409,6 +56843,31 @@
   {
     "conditions": [
       {
+        "string": "Arcanist Brand has #% increased Cast Speed",
+        "ref": "Arcanist Brand has #% increased Cast Speed"
+      },
+      {
+        "string": "Arcanist Brand has #% reduced Cast Speed",
+        "ref": "Arcanist Brand has #% reduced Cast Speed",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Arcanist Brand has #% increased Cast Speed",
+      "ref": "Arcanist Brand has #% increased Cast Speed",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1147445274"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Arctic Armour has #% increased Mana Reservation",
         "ref": "Arctic Armour has #% increased Mana Reservation"
       },
@@ -59332,6 +59791,46 @@
   {
     "conditions": [
       {
+        "string": "Attacks Exerted by Ancestral Cry deal #% increased Damage ",
+        "ref": "Attacks Exerted by Ancestral Cry deal #% increased Damage "
+      }
+    ],
+    "mod": {
+      "text": "Attacks Exerted by Ancestral Cry deal #% increased Damage ",
+      "ref": "Attacks Exerted by Ancestral Cry deal #% increased Damage ",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2146663823"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Attacks Exerted by Seismic Cry deal #% increased Damage ",
+        "ref": "Attacks Exerted by Seismic Cry deal #% increased Damage "
+      }
+    ],
+    "mod": {
+      "text": "Attacks Exerted by Seismic Cry deal #% increased Damage ",
+      "ref": "Attacks Exerted by Seismic Cry deal #% increased Damage ",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3252913608"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Attacks fire an additional Projectile when in Off Hand",
         "ref": "Attacks fire an additional Projectile when in Off Hand",
         "condition": {
@@ -60713,13 +61212,13 @@
   {
     "conditions": [
       {
-        "string": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently",
-        "ref": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently"
+        "string": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
+        "ref": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently"
       }
     ],
     "mod": {
-      "text": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently",
-      "ref": "Bow Attacks fire # additional Arrows if you haven’t Cast Dash recently",
+      "text": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
+      "ref": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
       "types": [
         {
           "name": "explicit",
@@ -60779,6 +61278,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3261557635"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Brand Skills have #% increased Duration",
+        "ref": "Brand Skills have #% increased Duration"
+      },
+      {
+        "string": "Brand Skills have #% reduced Duration",
+        "ref": "Brand Skills have #% reduced Duration",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Brand Skills have #% increased Duration",
+      "ref": "Brand Skills have #% increased Duration",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3089482869"
           ]
         }
       ]
@@ -60911,6 +61435,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3576153145"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Cages created by Your Glacial Cage Towers are #% larger",
+        "ref": "Cages created by Your Glacial Cage Towers are #% larger"
+      }
+    ],
+    "mod": {
+      "text": "Cages created by Your Glacial Cage Towers are #% larger",
+      "ref": "Cages created by Your Glacial Cage Towers are #% larger",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2449293016"
           ]
         }
       ]
@@ -62712,6 +63256,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2373079502"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Combust has #% increased Area of Effect",
+        "ref": "Combust has #% increased Area of Effect"
+      }
+    ],
+    "mod": {
+      "text": "Combust has #% increased Area of Effect",
+      "ref": "Combust has #% increased Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_4225882962"
           ]
         }
       ]
@@ -65456,6 +66020,26 @@
   {
     "conditions": [
       {
+        "string": "Does not consume Sextant Uses",
+        "ref": "Does not consume Sextant Uses"
+      }
+    ],
+    "mod": {
+      "text": "Does not consume Sextant Uses",
+      "ref": "Does not consume Sextant Uses",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_989837434"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Dominating Blow can summon an additional Magic Sentinel of Dominance",
         "ref": "Dominating Blow can summon an additional Magic Sentinel of Dominance",
         "condition": {
@@ -65582,6 +66166,30 @@
   {
     "conditions": [
       {
+        "string": "Drops Burning Ground while moving, dealing # Fire Damage per second for # second",
+        "ref": "Drops Burning Ground while moving, dealing # Fire Damage per second for # second"
+      },
+      {
+        "string": "Drops Burning Ground while moving, dealing # Fire Damage per second for # seconds",
+        "ref": "Drops Burning Ground while moving, dealing # Fire Damage per second for # seconds"
+      }
+    ],
+    "mod": {
+      "text": "Drops Burning Ground while moving, dealing # Fire Damage per second for # second",
+      "ref": "Drops Burning Ground while moving, dealing # Fire Damage per second for # second",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3595254837"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Drops Shocked Ground while moving, lasting # seconds",
         "ref": "Drops Shocked Ground while moving, lasting # seconds"
       }
@@ -65693,6 +66301,26 @@
   {
     "conditions": [
       {
+        "string": "Earthshatter creates # fissures",
+        "ref": "Earthshatter creates # fissures"
+      }
+    ],
+    "mod": {
+      "text": "Earthshatter creates # fissures",
+      "ref": "Earthshatter creates # fissures",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1020575720"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Earthshatter deals #% increased Damage",
         "ref": "Earthshatter deals #% increased Damage"
       },
@@ -65710,6 +66338,31 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_335520087"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Earthshatter has #% increased Area of Effect",
+        "ref": "Earthshatter has #% increased Area of Effect"
+      },
+      {
+        "string": "Earthshatter has #% reduced Area of Effect",
+        "ref": "Earthshatter has #% reduced Area of Effect",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Earthshatter has #% increased Area of Effect",
+      "ref": "Earthshatter has #% increased Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3469056056"
           ]
         }
       ]
@@ -65750,6 +66403,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2262736444"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Elemental Ailments inflicted on Enemies Exposed by you have #% increased Duration",
+        "ref": "Elemental Ailments inflicted on Enemies Exposed by you have #% increased Duration"
+      },
+      {
+        "string": "Elemental Ailments inflicted on Enemies Exposed by you have #% reduced Duration",
+        "ref": "Elemental Ailments inflicted on Enemies Exposed by you have #% reduced Duration",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Elemental Ailments inflicted on Enemies Exposed by you have #% increased Duration",
+      "ref": "Elemental Ailments inflicted on Enemies Exposed by you have #% increased Duration",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_261996832"
           ]
         }
       ]
@@ -65891,6 +66569,30 @@
   {
     "conditions": [
       {
+        "string": "Enduring Cry grants # additional Endurance Charge",
+        "ref": "Enduring Cry grants # additional Endurance Charge"
+      },
+      {
+        "string": "Enduring Cry grants # additional Endurance Charges",
+        "ref": "Enduring Cry grants # additional Endurance Charges"
+      }
+    ],
+    "mod": {
+      "text": "Enduring Cry grants # additional Endurance Charge",
+      "ref": "Enduring Cry grants # additional Endurance Charge",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2977067558"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Enemies affected by Bear Trap take #% increased Damage from Trap or Mine Hits",
         "ref": "Enemies affected by Bear Trap take #% increased Damage from Trap or Mine Hits"
       },
@@ -65954,6 +66656,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_785655723"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Blinded by you have #% increased Critical Strike Chance",
+        "ref": "Enemies Blinded by you have #% increased Critical Strike Chance"
+      },
+      {
+        "string": "Enemies Blinded by you have #% reduced Critical Strike Chance",
+        "ref": "Enemies Blinded by you have #% reduced Critical Strike Chance",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies Blinded by you have #% increased Critical Strike Chance",
+      "ref": "Enemies Blinded by you have #% increased Critical Strike Chance",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_4216282855"
           ]
         }
       ]
@@ -66028,6 +66755,51 @@
   {
     "conditions": [
       {
+        "string": "Enemies Cursed by you are Hindered with #% reduced Movement\nSpeed if 25% of Curse Duration expired",
+        "ref": "Enemies Cursed by you are Hindered with #% reduced Movement\nSpeed if 25% of Curse Duration expired"
+      }
+    ],
+    "mod": {
+      "text": "Enemies Cursed by you are Hindered with #% reduced Movement\nSpeed if 25% of Curse Duration expired",
+      "ref": "Enemies Cursed by you are Hindered with #% reduced Movement\nSpeed if 25% of Curse Duration expired",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_313419608"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Cursed by you take #% increased Damage if 75% of Curse Duration expired",
+        "ref": "Enemies Cursed by you take #% increased Damage if 75% of Curse Duration expired"
+      },
+      {
+        "string": "Enemies Cursed by you take #% reduced Damage if 75% of Curse Duration expired",
+        "ref": "Enemies Cursed by you take #% reduced Damage if 75% of Curse Duration expired",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies Cursed by you take #% increased Damage if 75% of Curse Duration expired",
+      "ref": "Enemies Cursed by you take #% increased Damage if 75% of Curse Duration expired",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2057136736"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Enemies Frozen by you take 20% increased Damage",
         "ref": "Enemies Frozen by you take 20% increased Damage"
       }
@@ -66069,6 +66841,31 @@
         }
       ],
       "inverted": true
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Hindered by you have #% increased Life Regeneration rate",
+        "ref": "Enemies Hindered by you have #% increased Life Regeneration rate"
+      },
+      {
+        "string": "Enemies Hindered by you have #% reduced Life Regeneration rate",
+        "ref": "Enemies Hindered by you have #% reduced Life Regeneration rate",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies Hindered by you have #% increased Life Regeneration rate",
+      "ref": "Enemies Hindered by you have #% increased Life Regeneration rate",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3709502856"
+          ]
+        }
+      ]
     }
   },
   {
@@ -66169,6 +66966,31 @@
   {
     "conditions": [
       {
+        "string": "Enemies Intimidated by you have #% increased duration of stuns against them",
+        "ref": "Enemies Intimidated by you have #% increased duration of stuns against them"
+      },
+      {
+        "string": "Enemies Intimidated by you have #% reduced duration of stuns against them",
+        "ref": "Enemies Intimidated by you have #% reduced duration of stuns against them",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies Intimidated by you have #% increased duration of stuns against them",
+      "ref": "Enemies Intimidated by you have #% increased duration of stuns against them",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1919892065"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Enemies Killed by Zombies' Hits Explode, dealing #% of their Life as Fire Damage",
         "ref": "Enemies Killed by Zombies' Hits Explode, dealing #% of their Life as Fire Damage"
       }
@@ -66201,6 +67023,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3457687358"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Maimed by you take #% increased Damage Over Time",
+        "ref": "Enemies Maimed by you take #% increased Damage Over Time"
+      },
+      {
+        "string": "Enemies Maimed by you take #% reduced Damage Over Time",
+        "ref": "Enemies Maimed by you take #% reduced Damage Over Time",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies Maimed by you take #% increased Damage Over Time",
+      "ref": "Enemies Maimed by you take #% increased Damage Over Time",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2745149002"
           ]
         }
       ]
@@ -66256,6 +67103,26 @@
   {
     "conditions": [
       {
+        "string": "Enemies Petrified by Your Stone Gaze Towers take #% increased Damage",
+        "ref": "Enemies Petrified by Your Stone Gaze Towers take #% increased Damage"
+      }
+    ],
+    "mod": {
+      "text": "Enemies Petrified by Your Stone Gaze Towers take #% increased Damage",
+      "ref": "Enemies Petrified by Your Stone Gaze Towers take #% increased Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3169825208"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Enemies take #% increased Damage for each type of Ailment you have inflicted on them",
         "ref": "Enemies take #% increased Damage for each type of Ailment you have inflicted on them"
       },
@@ -66273,6 +67140,103 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1217730254"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies take #% increased Elemental Damage from your Hits for\neach Withered you have inflicted on them",
+        "ref": "Enemies take #% increased Elemental Damage from your Hits for\neach Withered you have inflicted on them"
+      },
+      {
+        "string": "Enemies take #% reduced Elemental Damage from your Hits for\neach Withered you have inflicted on them",
+        "ref": "Enemies take #% reduced Elemental Damage from your Hits for\neach Withered you have inflicted on them",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies take #% increased Elemental Damage from your Hits for\neach Withered you have inflicted on them",
+      "ref": "Enemies take #% increased Elemental Damage from your Hits for\neach Withered you have inflicted on them",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3507915723"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Taunted by you deal #% more Area Damage",
+        "ref": "Enemies Taunted by you deal #% more Area Damage"
+      },
+      {
+        "string": "Enemies Taunted by you deal #% less Area Damage",
+        "ref": "Enemies Taunted by you deal #% less Area Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Enemies Taunted by you deal #% more Area Damage",
+      "ref": "Enemies Taunted by you deal #% more Area Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1684204928"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Taunted by your Warcries have #% chance to Explode on death, dealing 8% of their maximum Life as Chaos Damage",
+        "ref": "Enemies Taunted by your Warcries have #% chance to Explode on death, dealing 8% of their maximum Life as Chaos Damage"
+      },
+      {
+        "string": "Enemies Taunted by your Warcries Explode on death, dealing 8% of their maximum Life as Chaos Damage",
+        "ref": "Enemies Taunted by your Warcries Explode on death, dealing 8% of their maximum Life as Chaos Damage",
+        "condition": {
+          "min": 100
+        }
+      }
+    ],
+    "mod": {
+      "text": "Enemies Taunted by your Warcries have #% chance to Explode on death, dealing 8% of their maximum Life as Chaos Damage",
+      "ref": "Enemies Taunted by your Warcries have #% chance to Explode on death, dealing 8% of their maximum Life as Chaos Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2937093415"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Enemies Withered by you have #% to all Resistances",
+        "ref": "Enemies Withered by you have #% to all Resistances"
+      }
+    ],
+    "mod": {
+      "text": "Enemies Withered by you have #% to all Resistances",
+      "ref": "Enemies Withered by you have #% to all Resistances",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1032614900"
           ]
         }
       ]
@@ -66638,6 +67602,26 @@
   {
     "conditions": [
       {
+        "string": "Eternal Youth",
+        "ref": "Eternal Youth"
+      }
+    ],
+    "mod": {
+      "text": "Eternal Youth",
+      "ref": "Eternal Youth",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1308467455"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Ethereal Knives Pierces an additional Target ",
         "ref": "Ethereal Knives Pierces an additional Target ",
         "condition": {
@@ -66758,6 +67742,31 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3345955207"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Exerted Attacks deal #% increased Damage",
+        "ref": "Exerted Attacks deal #% increased Damage"
+      },
+      {
+        "string": "Exerted Attacks deal #% reduced Damage",
+        "ref": "Exerted Attacks deal #% reduced Damage",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Exerted Attacks deal #% increased Damage",
+      "ref": "Exerted Attacks deal #% increased Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1569101201"
           ]
         }
       ]
@@ -69653,6 +70662,26 @@
   {
     "conditions": [
       {
+        "string": "General's Cry has # to maximum number of Mirage Warriors",
+        "ref": "General's Cry has # to maximum number of Mirage Warriors"
+      }
+    ],
+    "mod": {
+      "text": "General's Cry has # to maximum number of Mirage Warriors",
+      "ref": "General's Cry has # to maximum number of Mirage Warriors",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2889995769"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "General's Cry has #% increased Cooldown Recovery Speed",
         "ref": "General's Cry has #% increased Cooldown Recovery Speed"
       }
@@ -70085,6 +71114,166 @@
   {
     "conditions": [
       {
+        "string": "Grants # to Dexterity per 2% Quality",
+        "ref": "Grants # to Dexterity per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants # to Dexterity per 2% Quality",
+      "ref": "Grants # to Dexterity per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_452753731"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants # to Intelligence per 2% Quality",
+        "ref": "Grants # to Intelligence per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants # to Intelligence per 2% Quality",
+      "ref": "Grants # to Intelligence per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2748574832"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants # to Maximum Life per 2% Quality",
+        "ref": "Grants # to Maximum Life per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants # to Maximum Life per 2% Quality",
+      "ref": "Grants # to Maximum Life per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2711867632"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants # to Maximum Mana per 2% Quality",
+        "ref": "Grants # to Maximum Mana per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants # to Maximum Mana per 2% Quality",
+      "ref": "Grants # to Maximum Mana per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3764009282"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants # to Strength per 2% Quality",
+        "ref": "Grants # to Strength per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants # to Strength per 2% Quality",
+      "ref": "Grants # to Strength per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1519019245"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants #% increased Accuracy per 2% Quality",
+        "ref": "Grants #% increased Accuracy per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants #% increased Accuracy per 2% Quality",
+      "ref": "Grants #% increased Accuracy per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2421363283"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants #% increased Area of Effect per 4% Quality",
+        "ref": "Grants #% increased Area of Effect per 4% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants #% increased Area of Effect per 4% Quality",
+      "ref": "Grants #% increased Area of Effect per 4% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_334333797"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants #% increased Elemental Damage per 2% Quality",
+        "ref": "Grants #% increased Elemental Damage per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants #% increased Elemental Damage per 2% Quality",
+      "ref": "Grants #% increased Elemental Damage per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1482025771"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Grants #% of Life Recovery to Minions",
         "ref": "Grants #% of Life Recovery to Minions"
       }
@@ -70097,6 +71286,66 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2416869319"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants #% to Cold Resistance per 2% Quality",
+        "ref": "Grants #% to Cold Resistance per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants #% to Cold Resistance per 2% Quality",
+      "ref": "Grants #% to Cold Resistance per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1665106429"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants #% to Fire Resistance per 2% Quality",
+        "ref": "Grants #% to Fire Resistance per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants #% to Fire Resistance per 2% Quality",
+      "ref": "Grants #% to Fire Resistance per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2787227226"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants #% to Lightning Resistance per 2% Quality",
+        "ref": "Grants #% to Lightning Resistance per 2% Quality"
+      }
+    ],
+    "mod": {
+      "text": "Grants #% to Lightning Resistance per 2% Quality",
+      "ref": "Grants #% to Lightning Resistance per 2% Quality",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2702369635"
           ]
         }
       ]
@@ -70164,26 +71413,6 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3686711832"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "conditions": [
-      {
-        "string": "Grants Level # Abyssal Cry Skill",
-        "ref": "Grants Level # Abyssal Cry Skill"
-      }
-    ],
-    "mod": {
-      "text": "Grants Level # Abyssal Cry Skill",
-      "ref": "Grants Level # Abyssal Cry Skill",
-      "types": [
-        {
-          "name": "explicit",
-          "tradeId": [
-            "explicit.stat_1271338211"
           ]
         }
       ]
@@ -70370,6 +71599,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3985468650"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants Level # Brandsurge Skill",
+        "ref": "Grants Level # Brandsurge Skill"
+      }
+    ],
+    "mod": {
+      "text": "Grants Level # Brandsurge Skill",
+      "ref": "Grants Level # Brandsurge Skill",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2859437049"
           ]
         }
       ]
@@ -70932,6 +72181,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3279574030"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Grants Level # Intimidating Cry Skill",
+        "ref": "Grants Level # Intimidating Cry Skill"
+      }
+    ],
+    "mod": {
+      "text": "Grants Level # Intimidating Cry Skill",
+      "ref": "Grants Level # Intimidating Cry Skill",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1271338211"
           ]
         }
       ]
@@ -72427,6 +73696,31 @@
   {
     "conditions": [
       {
+        "string": "Hits against Enemies Unnerved by you have #% increased Spell Critical Strike Chance",
+        "ref": "Hits against Enemies Unnerved by you have #% increased Spell Critical Strike Chance"
+      },
+      {
+        "string": "Hits against Enemies Unnerved by you have #% reduced Spell Critical Strike Chance",
+        "ref": "Hits against Enemies Unnerved by you have #% reduced Spell Critical Strike Chance",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Hits against Enemies Unnerved by you have #% increased Spell Critical Strike Chance",
+      "ref": "Hits against Enemies Unnerved by you have #% increased Spell Critical Strike Chance",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2090693207"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Hits against Nearby Enemies have #% increased Critical Strike Chance",
         "ref": "Hits against Nearby Enemies have #% increased Critical Strike Chance"
       },
@@ -73202,6 +74496,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1311723478"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Imbalanced Guard",
+        "ref": "Imbalanced Guard"
+      }
+    ],
+    "mod": {
+      "text": "Imbalanced Guard",
+      "ref": "Imbalanced Guard",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3868073741"
           ]
         }
       ]
@@ -74236,6 +75550,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2546599258"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Intimidating Cry has #% increased Area of Effect",
+        "ref": "Intimidating Cry has #% increased Area of Effect"
+      }
+    ],
+    "mod": {
+      "text": "Intimidating Cry has #% increased Area of Effect",
+      "ref": "Intimidating Cry has #% increased Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1088946611"
           ]
         }
       ]
@@ -75297,6 +76631,12 @@
           "tradeId": [
             "explicit.stat_3836017971"
           ]
+        },
+        {
+          "name": "crafted",
+          "tradeId": [
+            "crafted.stat_3836017971"
+          ]
         }
       ]
     }
@@ -76239,6 +77579,26 @@
   {
     "conditions": [
       {
+        "string": "Map Boss is surrounded by Tormented Spirits",
+        "ref": "Map Boss is surrounded by Tormented Spirits"
+      }
+    ],
+    "mod": {
+      "text": "Map Boss is surrounded by Tormented Spirits",
+      "ref": "Map Boss is surrounded by Tormented Spirits",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3750528071"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Map has # additional random Modifier",
         "ref": "Map has # additional random Modifier"
       },
@@ -76327,6 +77687,46 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2132807290"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Map has a Vaal Side Area",
+        "ref": "Map has a Vaal Side Area"
+      }
+    ],
+    "mod": {
+      "text": "Map has a Vaal Side Area",
+      "ref": "Map has a Vaal Side Area",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_73209495"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Map has an additional random Modifier from Zana's Crafting Bench",
+        "ref": "Map has an additional random Modifier from Zana's Crafting Bench"
+      }
+    ],
+    "mod": {
+      "text": "Map has an additional random Modifier from Zana's Crafting Bench",
+      "ref": "Map has an additional random Modifier from Zana's Crafting Bench",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1389457945"
           ]
         }
       ]
@@ -77933,6 +79333,26 @@
   {
     "conditions": [
       {
+        "string": "Minions summoned by Your Scout Towers inflict Malediction on Hit",
+        "ref": "Minions summoned by Your Scout Towers inflict Malediction on Hit"
+      }
+    ],
+    "mod": {
+      "text": "Minions summoned by Your Scout Towers inflict Malediction on Hit",
+      "ref": "Minions summoned by Your Scout Towers inflict Malediction on Hit",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_42482990"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Minions summoned by Your Sentinel Towers have #% increased Damage",
         "ref": "Minions summoned by Your Sentinel Towers have #% increased Damage"
       },
@@ -78000,6 +79420,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_1971866993"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Minions summoned by Your Sentinel Towers Leech #% of Damage as Life",
+        "ref": "Minions summoned by Your Sentinel Towers Leech #% of Damage as Life"
+      }
+    ],
+    "mod": {
+      "text": "Minions summoned by Your Sentinel Towers Leech #% of Damage as Life",
+      "ref": "Minions summoned by Your Sentinel Towers Leech #% of Damage as Life",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_4148328809"
           ]
         }
       ]
@@ -79707,6 +81147,26 @@
   {
     "conditions": [
       {
+        "string": "Nearby Enemies are Crushed while you have least # Rage",
+        "ref": "Nearby Enemies are Crushed while you have least # Rage"
+      }
+    ],
+    "mod": {
+      "text": "Nearby Enemies are Crushed while you have least # Rage",
+      "ref": "Nearby Enemies are Crushed while you have least # Rage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3069588220"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Nearby Enemies are Hindered, with #% increased Movement Speed",
         "ref": "Nearby Enemies are Hindered, with #% increased Movement Speed"
       },
@@ -80933,6 +82393,31 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_610562666"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Penance Brand has #% increased Area of Effect",
+        "ref": "Penance Brand has #% increased Area of Effect"
+      },
+      {
+        "string": "Penance Brand has #% reduced Area of Effect",
+        "ref": "Penance Brand has #% reduced Area of Effect",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Penance Brand has #% increased Area of Effect",
+      "ref": "Penance Brand has #% increased Area of Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1486948114"
           ]
         }
       ]
@@ -83026,6 +84511,26 @@
   {
     "conditions": [
       {
+        "string": "Projectiles that have Chained gain #% of Non-Chaos Damage as extra Chaos Damage",
+        "ref": "Projectiles that have Chained gain #% of Non-Chaos Damage as extra Chaos Damage"
+      }
+    ],
+    "mod": {
+      "text": "Projectiles that have Chained gain #% of Non-Chaos Damage as extra Chaos Damage",
+      "ref": "Projectiles that have Chained gain #% of Non-Chaos Damage as extra Chaos Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1698276268"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Properties are doubled while in a Breach",
         "ref": "Properties are doubled while in a Breach"
       }
@@ -83395,6 +84900,46 @@
   {
     "conditions": [
       {
+        "string": "Quality does not increase Defences",
+        "ref": "Quality does not increase Defences"
+      }
+    ],
+    "mod": {
+      "text": "Quality does not increase Defences",
+      "ref": "Quality does not increase Defences",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2677401098"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Quality does not increase Physical Damage",
+        "ref": "Quality does not increase Physical Damage"
+      }
+    ],
+    "mod": {
+      "text": "Quality does not increase Physical Damage",
+      "ref": "Quality does not increase Physical Damage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2052525717"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Rain of Arrows has #% chance to fire an additional sequence of arrows",
         "ref": "Rain of Arrows has #% chance to fire an additional sequence of arrows"
       }
@@ -83593,6 +85138,30 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_2871777604"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Rallying Cry Exerts # additional Attack",
+        "ref": "Rallying Cry Exerts # additional Attack"
+      },
+      {
+        "string": "Rallying Cry Exerts # additional Attacks",
+        "ref": "Rallying Cry Exerts # additional Attacks"
+      }
+    ],
+    "mod": {
+      "text": "Rallying Cry Exerts # additional Attack",
+      "ref": "Rallying Cry Exerts # additional Attack",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2080441723"
           ]
         }
       ]
@@ -84187,6 +85756,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1217476473"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Recover #% of Life when you Kill an Enemy while you have Rage",
+        "ref": "Recover #% of Life when you Kill an Enemy while you have Rage"
+      }
+    ],
+    "mod": {
+      "text": "Recover #% of Life when you Kill an Enemy while you have Rage",
+      "ref": "Recover #% of Life when you Kill an Enemy while you have Rage",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3305072079"
           ]
         }
       ]
@@ -86491,6 +88080,26 @@
   {
     "conditions": [
       {
+        "string": "Seismic Cry has a minimum of # Power",
+        "ref": "Seismic Cry has a minimum of # Power"
+      }
+    ],
+    "mod": {
+      "text": "Seismic Cry has a minimum of # Power",
+      "ref": "Seismic Cry has a minimum of # Power",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_355086768"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Seismic Trap deals #% increased Damage",
         "ref": "Seismic Trap deals #% increased Damage"
       },
@@ -87541,6 +89150,31 @@
   {
     "conditions": [
       {
+        "string": "Skills Supported by Unleash have #% increased Seal gain frequency",
+        "ref": "Skills Supported by Unleash have #% increased Seal gain frequency"
+      },
+      {
+        "string": "Skills Supported by Unleash have #% reduced Seal gain frequency",
+        "ref": "Skills Supported by Unleash have #% reduced Seal gain frequency",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Skills Supported by Unleash have #% increased Seal gain frequency",
+      "ref": "Skills Supported by Unleash have #% increased Seal gain frequency",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1504513372"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Skills used by Mines have #% increased Area of Effect",
         "ref": "Skills used by Mines have #% increased Area of Effect"
       },
@@ -87956,6 +89590,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_128",
             "explicit.stat_411460446"
           ]
         }
@@ -87976,6 +89611,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_127",
             "explicit.stat_4020144606"
           ]
         }
@@ -87996,6 +89632,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_126",
             "explicit.stat_2572192375"
           ]
         },
@@ -88022,6 +89659,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_125",
             "explicit.stat_1647529598"
           ]
         }
@@ -88068,6 +89706,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_6",
             "explicit.stat_3839163699"
           ]
         }
@@ -88088,6 +89727,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_14",
             "explicit.stat_696805682"
           ]
         }
@@ -88108,6 +89748,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_123",
             "explicit.stat_2287264161"
           ]
         }
@@ -88128,6 +89769,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_122",
             "explicit.stat_3652278215"
           ]
         }
@@ -88148,6 +89790,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_121",
             "explicit.stat_1331336999"
           ]
         }
@@ -88448,6 +90091,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_27",
             "explicit.stat_3030692053"
           ]
         }
@@ -88468,6 +90112,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_120",
             "explicit.stat_3827538724"
           ]
         }
@@ -88488,6 +90133,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_119",
             "explicit.stat_539747809"
           ]
         }
@@ -88508,6 +90154,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_23",
             "explicit.stat_1710508327"
           ]
         }
@@ -88594,6 +90241,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_116",
             "explicit.stat_3922006600"
           ]
         },
@@ -88626,6 +90274,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_117",
             "explicit.stat_804508379"
           ]
         }
@@ -88646,6 +90295,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_115",
             "explicit.stat_1859244771"
           ]
         }
@@ -88666,6 +90316,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_114",
             "explicit.stat_715256302"
           ]
         }
@@ -88686,6 +90337,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_68",
             "explicit.stat_2680613507"
           ]
         }
@@ -88772,6 +90424,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_112",
             "explicit.stat_3036440332"
           ]
         }
@@ -88838,7 +90491,28 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_107",
             "explicit.stat_2643665787"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are supported by Level # Chance to Bleed",
+        "ref": "Socketed Gems are supported by Level # Chance to Bleed"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are supported by Level # Chance to Bleed",
+      "ref": "Socketed Gems are supported by Level # Chance to Bleed",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2178803872"
           ]
         }
       ]
@@ -88898,6 +90572,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_103",
             "explicit.stat_1365328494"
           ]
         }
@@ -88918,6 +90593,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_78",
             "explicit.stat_479453859"
           ]
         }
@@ -88938,6 +90614,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_102",
             "explicit.stat_694651314"
           ]
         }
@@ -88978,6 +90655,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_100",
             "explicit.stat_1991958615"
           ]
         }
@@ -88998,6 +90676,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_99",
             "explicit.stat_550444281"
           ]
         }
@@ -89018,6 +90697,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_105",
             "explicit.stat_1828254451"
           ]
         }
@@ -89038,6 +90718,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_98",
             "explicit.stat_2388360415"
           ]
         }
@@ -89058,6 +90739,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_97",
             "explicit.stat_3718597497"
           ]
         }
@@ -89078,6 +90760,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_96",
             "explicit.stat_1135493957"
           ]
         }
@@ -89098,6 +90781,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_95",
             "explicit.stat_2697741965"
           ]
         }
@@ -89138,6 +90822,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_94",
             "explicit.stat_103909236"
           ]
         }
@@ -89158,6 +90843,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_93",
             "explicit.stat_4082662318"
           ]
         }
@@ -89178,6 +90864,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_92",
             "explicit.stat_388696990"
           ]
         }
@@ -89198,6 +90885,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_91",
             "explicit.stat_3924539382"
           ]
         }
@@ -89264,6 +90952,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_90",
             "explicit.stat_1169422227"
           ]
         }
@@ -89304,6 +90993,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_89",
             "explicit.stat_2929101122"
           ]
         },
@@ -89350,6 +91040,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_88",
             "explicit.stat_3375208082"
           ]
         }
@@ -89370,6 +91061,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_87",
             "explicit.stat_799443127"
           ]
         }
@@ -89430,6 +91122,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_86",
             "explicit.stat_928701213"
           ]
         }
@@ -89450,6 +91143,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_85",
             "explicit.stat_2169938251"
           ]
         },
@@ -89502,6 +91196,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_83",
             "explicit.stat_2269282877"
           ]
         }
@@ -89522,8 +91217,29 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_82",
             "explicit.stat_1979658770",
             "explicit.stat_3265951306"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Fist of War",
+        "ref": "Socketed Gems are Supported by Level # Fist of War"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Fist of War",
+      "ref": "Socketed Gems are Supported by Level # Fist of War",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.indexable_support_129"
           ]
         }
       ]
@@ -89569,6 +91285,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_79",
             "explicit.stat_107118693"
           ]
         },
@@ -89595,6 +91312,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_77",
             "explicit.stat_2593773031"
           ]
         }
@@ -89615,6 +91333,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_1",
             "explicit.stat_359450079"
           ]
         }
@@ -89655,6 +91374,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_75",
             "explicit.stat_2223565123"
           ]
         }
@@ -89675,6 +91395,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_22",
             "explicit.stat_2116100988"
           ]
         }
@@ -89695,6 +91416,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_74",
             "explicit.stat_13669281"
           ]
         }
@@ -89715,6 +91437,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_73",
             "explicit.stat_1384629003"
           ]
         }
@@ -89735,6 +91458,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_72",
             "explicit.stat_3593797653"
           ]
         }
@@ -89755,6 +91479,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_71",
             "explicit.stat_2420410470"
           ]
         }
@@ -89775,6 +91500,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_70",
             "explicit.stat_1900098804"
           ]
         }
@@ -89795,6 +91521,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_69",
             "explicit.stat_3720936304"
           ]
         },
@@ -89836,6 +91563,26 @@
   {
     "conditions": [
       {
+        "string": "Socketed Gems are Supported by Level # Increased Critical Damage",
+        "ref": "Socketed Gems are Supported by Level # Increased Critical Damage"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Increased Critical Damage",
+      "ref": "Socketed Gems are Supported by Level # Increased Critical Damage",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.indexable_support_67"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Socketed Gems are Supported by Level # Increased Critical Strikes",
         "ref": "Socketed Gems are Supported by Level # Increased Critical Strikes"
       }
@@ -89847,6 +91594,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_66",
             "explicit.stat_2259700079"
           ]
         }
@@ -89867,6 +91615,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_65",
             "explicit.stat_407317553"
           ]
         }
@@ -89887,6 +91636,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_61",
             "explicit.stat_2201102274"
           ]
         }
@@ -89907,6 +91657,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_13",
             "explicit.stat_4048257027"
           ]
         }
@@ -89927,6 +91678,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_60",
             "explicit.stat_1106668565"
           ]
         }
@@ -89947,6 +91699,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_24",
             "explicit.stat_1866911844",
             "explicit.stat_749770518"
           ]
@@ -89974,6 +91727,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_16",
             "explicit.stat_1876637240",
             "explicit.stat_28821524"
           ]
@@ -89995,6 +91749,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_59",
             "explicit.stat_251446805"
           ]
         }
@@ -90015,6 +91770,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_58",
             "explicit.stat_906997920"
           ]
         }
@@ -90055,6 +91811,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_57",
             "explicit.stat_3587013273"
           ]
         }
@@ -90075,6 +91832,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_56",
             "explicit.stat_4066711249"
           ]
         }
@@ -90095,6 +91853,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_25",
             "explicit.stat_2487643588"
           ]
         }
@@ -90115,6 +91874,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_55",
             "explicit.stat_584144941"
           ]
         }
@@ -90135,6 +91895,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_54",
             "explicit.stat_228165595"
           ]
         }
@@ -90207,6 +91968,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_51",
             "explicit.stat_3354027870"
           ]
         }
@@ -90227,6 +91989,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_50",
             "explicit.stat_3826977109"
           ]
         }
@@ -90247,6 +92010,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_49",
             "explicit.stat_2608615082"
           ]
         }
@@ -90267,6 +92031,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_48",
             "explicit.stat_858460086"
           ]
         }
@@ -90287,6 +92052,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_46",
             "explicit.stat_2985291457"
           ]
         }
@@ -90333,6 +92099,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_44",
             "explicit.stat_2805586447"
           ]
         }
@@ -90353,6 +92120,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_64",
             "explicit.stat_808939569"
           ]
         }
@@ -90373,6 +92141,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_63",
             "explicit.stat_1337327984"
           ]
         }
@@ -90393,6 +92162,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_62",
             "explicit.stat_995332031"
           ]
         }
@@ -90413,6 +92183,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_43",
             "explicit.stat_3239503729"
           ]
         }
@@ -90433,6 +92204,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_40",
             "explicit.stat_807186595"
           ]
         }
@@ -90453,6 +92225,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_39",
             "explicit.stat_3016436615"
           ]
         }
@@ -90499,6 +92272,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_38",
             "explicit.stat_2861649515"
           ]
         }
@@ -90519,6 +92293,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_37",
             "explicit.stat_3237923082"
           ]
         },
@@ -90585,6 +92360,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_33",
             "explicit.stat_254728692"
           ]
         }
@@ -90605,6 +92381,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_32",
             "explicit.stat_3754129682"
           ]
         }
@@ -90625,6 +92402,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_31",
             "explicit.stat_2228279620"
           ]
         }
@@ -90665,6 +92443,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_29",
             "explicit.stat_282757414"
           ]
         }
@@ -90685,6 +92464,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_28",
             "explicit.stat_369650395"
           ]
         }
@@ -90705,6 +92485,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_21",
             "explicit.stat_3796013729"
           ]
         }
@@ -90725,7 +92506,28 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_20",
             "explicit.stat_402499111"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Shockwave",
+        "ref": "Socketed Gems are Supported by Level # Shockwave"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Shockwave",
+      "ref": "Socketed Gems are Supported by Level # Shockwave",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.indexable_support_19"
           ]
         }
       ]
@@ -90745,6 +92547,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_18",
             "explicit.stat_1390285657"
           ]
         }
@@ -90765,6 +92568,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_17",
             "explicit.stat_503990161"
           ]
         }
@@ -90785,6 +92589,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_42",
             "explicit.stat_438778966",
             "explicit.stat_913919528"
           ]
@@ -90806,6 +92611,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_15",
             "explicit.stat_2962840349"
           ]
         }
@@ -90852,6 +92658,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_10",
             "explicit.stat_3155072742"
           ]
         }
@@ -90872,6 +92679,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_26",
             "explicit.stat_1636220212"
           ]
         }
@@ -90892,7 +92700,28 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_9",
             "explicit.stat_4021476585"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Swiftbrand",
+        "ref": "Socketed Gems are Supported by Level # Swiftbrand"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Swiftbrand",
+      "ref": "Socketed Gems are Supported by Level # Swiftbrand",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.indexable_support_130"
           ]
         }
       ]
@@ -90912,6 +92741,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_8",
             "explicit.stat_1122134690"
           ]
         }
@@ -90952,6 +92782,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_5",
             "explicit.stat_3699494172"
           ]
         }
@@ -90972,7 +92803,28 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_4",
             "explicit.stat_3356013982"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Urgent Orders",
+        "ref": "Socketed Gems are Supported by Level # Urgent Orders"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Urgent Orders",
+      "ref": "Socketed Gems are Supported by Level # Urgent Orders",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.indexable_support_131"
           ]
         }
       ]
@@ -90992,6 +92844,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_35",
             "explicit.stat_2513293614"
           ]
         }
@@ -91012,6 +92865,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_3",
             "explicit.stat_1002855537"
           ]
         }
@@ -91032,6 +92886,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_2",
             "explicit.stat_1866583932"
           ]
         }
@@ -91052,6 +92907,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_36",
             "explicit.stat_2696557965"
           ]
         }
@@ -91072,6 +92928,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.indexable_support_104",
             "explicit.stat_3287477747"
           ]
         }
@@ -92170,6 +94027,46 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1210937073"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Spell Skills always deal Critical Strikes on final Repeat",
+        "ref": "Spell Skills always deal Critical Strikes on final Repeat"
+      }
+    ],
+    "mod": {
+      "text": "Spell Skills always deal Critical Strikes on final Repeat",
+      "ref": "Spell Skills always deal Critical Strikes on final Repeat",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3738009328"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Spell Skills cannot deal Critical Strikes except on final Repeat",
+        "ref": "Spell Skills cannot deal Critical Strikes except on final Repeat"
+      }
+    ],
+    "mod": {
+      "text": "Spell Skills cannot deal Critical Strikes except on final Repeat",
+      "ref": "Spell Skills cannot deal Critical Strikes except on final Repeat",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2516869940"
           ]
         }
       ]
@@ -93649,6 +95546,51 @@
   {
     "conditions": [
       {
+        "string": "Sunder has #% increased delay between Areas in the Wave",
+        "ref": "Sunder has #% increased delay between Areas in the Wave"
+      },
+      {
+        "string": "Sunder has #% reduced delay between Areas in the Wave",
+        "ref": "Sunder has #% reduced delay between Areas in the Wave",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Sunder has #% increased delay between Areas in the Wave",
+      "ref": "Sunder has #% increased delay between Areas in the Wave",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_40032620"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Supreme Ego",
+        "ref": "Supreme Ego"
+      }
+    ],
+    "mod": {
+      "text": "Supreme Ego",
+      "ref": "Supreme Ego",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1421267186"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Sweep has a #% chance to grant an Endurance Charge on Hit",
         "ref": "Sweep has a #% chance to grant an Endurance Charge on Hit"
       },
@@ -93900,6 +95842,7 @@
         {
           "name": "enchant",
           "tradeId": [
+            "enchant.stat_2462686988",
             "enchant.stat_910992698"
           ]
         }
@@ -94034,6 +95977,26 @@
         }
       ],
       "inverted": true
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "The Agnostic",
+        "ref": "The Agnostic"
+      }
+    ],
+    "mod": {
+      "text": "The Agnostic",
+      "ref": "The Agnostic",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_462691314"
+          ]
+        }
+      ]
     }
   },
   {
@@ -94254,6 +96217,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_329336318"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "The Impaler",
+        "ref": "The Impaler"
+      }
+    ],
+    "mod": {
+      "text": "The Impaler",
+      "ref": "The Impaler",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1441799693"
           ]
         }
       ]
@@ -95574,6 +97557,12 @@
           "tradeId": [
             "explicit.stat_3653191834"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3653191834"
+          ]
         }
       ]
     }
@@ -95961,6 +97950,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2343216207"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Unique Boss drops an additional Harbinger Scroll",
+        "ref": "Unique Boss drops an additional Harbinger Scroll"
+      }
+    ],
+    "mod": {
+      "text": "Unique Boss drops an additional Harbinger Scroll",
+      "ref": "Unique Boss drops an additional Harbinger Scroll",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1432093361"
           ]
         }
       ]
@@ -96961,6 +98970,26 @@
   {
     "conditions": [
       {
+        "string": "Warcry Skills have #% increased Area of Effect",
+        "ref": "Warcry Skills have #% increased Area of Effect"
+      }
+    ],
+    "mod": {
+      "text": "Warcry Skills have #% increased Area of Effect",
+      "ref": "Warcry Skills have #% increased Area of Effect",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2567751411"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Warcry Skills' Cooldown Time is 4 seconds",
         "ref": "Warcry Skills' Cooldown Time is 4 seconds"
       }
@@ -97411,6 +99440,26 @@
   {
     "conditions": [
       {
+        "string": "Wind Dancer",
+        "ref": "Wind Dancer"
+      }
+    ],
+    "mod": {
+      "text": "Wind Dancer",
+      "ref": "Wind Dancer",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4170338365"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Winter Orb deals #% increased Damage",
         "ref": "Winter Orb deals #% increased Damage"
       },
@@ -97518,6 +99567,31 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_35081783"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Wintertide Brand has #% increased Chill Effect",
+        "ref": "Wintertide Brand has #% increased Chill Effect"
+      },
+      {
+        "string": "Wintertide Brand has #% reduced Chill Effect",
+        "ref": "Wintertide Brand has #% reduced Chill Effect",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Wintertide Brand has #% increased Chill Effect",
+      "ref": "Wintertide Brand has #% increased Chill Effect",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1831757355"
           ]
         }
       ]
@@ -101575,6 +103649,26 @@
   {
     "conditions": [
       {
+        "string": "Your Arc Towers have #% chance to inflict Sap",
+        "ref": "Your Arc Towers have #% chance to inflict Sap"
+      }
+    ],
+    "mod": {
+      "text": "Your Arc Towers have #% chance to inflict Sap",
+      "ref": "Your Arc Towers have #% chance to inflict Sap",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_441374889"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Your Arc Towers have #% increased Range",
         "ref": "Your Arc Towers have #% increased Range"
       },
@@ -101990,6 +104084,31 @@
   {
     "conditions": [
       {
+        "string": "Your Curses have #% increased Effect if 50% of Curse Duration expired",
+        "ref": "Your Curses have #% increased Effect if 50% of Curse Duration expired"
+      },
+      {
+        "string": "Your Curses have #% reduced Effect if 50% of Curse Duration expired",
+        "ref": "Your Curses have #% reduced Effect if 50% of Curse Duration expired",
+        "negate": true
+      }
+    ],
+    "mod": {
+      "text": "Your Curses have #% increased Effect if 50% of Curse Duration expired",
+      "ref": "Your Curses have #% increased Effect if 50% of Curse Duration expired",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2339022735"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Your Elemental Damage can Shock",
         "ref": "Your Elemental Damage can Shock"
       }
@@ -102318,6 +104437,26 @@
   {
     "conditions": [
       {
+        "string": "Your Flamethrower Towers have #% chance to inflict Scorch",
+        "ref": "Your Flamethrower Towers have #% chance to inflict Scorch"
+      }
+    ],
+    "mod": {
+      "text": "Your Flamethrower Towers have #% chance to inflict Scorch",
+      "ref": "Your Flamethrower Towers have #% chance to inflict Scorch",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1248361993"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Your Flamethrower Towers have #% increased Cast Speed",
         "ref": "Your Flamethrower Towers have #% increased Cast Speed"
       },
@@ -102433,6 +104572,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_1797913614"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Your Freezebolt Towers have # chance to inflict Brittle",
+        "ref": "Your Freezebolt Towers have # chance to inflict Brittle"
+      }
+    ],
+    "mod": {
+      "text": "Your Freezebolt Towers have # chance to inflict Brittle",
+      "ref": "Your Freezebolt Towers have # chance to inflict Brittle",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3802588863"
           ]
         }
       ]
@@ -102601,6 +104760,26 @@
   {
     "conditions": [
       {
+        "string": "Your Hits cannot Penetrate or ignore Elemental Resistances",
+        "ref": "Your Hits cannot Penetrate or ignore Elemental Resistances"
+      }
+    ],
+    "mod": {
+      "text": "Your Hits cannot Penetrate or ignore Elemental Resistances",
+      "ref": "Your Hits cannot Penetrate or ignore Elemental Resistances",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3091072796"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Your Hits inflict Decay, dealing 500 Chaos Damage per second for 8 seconds",
         "ref": "Your Hits inflict Decay, dealing 500 Chaos Damage per second for 8 seconds"
       }
@@ -102683,6 +104862,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_639766324"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Your Imbuing Towers also grant Onslaught",
+        "ref": "Your Imbuing Towers also grant Onslaught"
+      }
+    ],
+    "mod": {
+      "text": "Your Imbuing Towers also grant Onslaught",
+      "ref": "Your Imbuing Towers also grant Onslaught",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_1277406505"
           ]
         }
       ]
@@ -102793,6 +104992,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1604984482"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Your Lightning Storm Towers create Storms centred on Enemies",
+        "ref": "Your Lightning Storm Towers create Storms centred on Enemies"
+      }
+    ],
+    "mod": {
+      "text": "Your Lightning Storm Towers create Storms centred on Enemies",
+      "ref": "Your Lightning Storm Towers create Storms centred on Enemies",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3354028437"
           ]
         }
       ]
@@ -102953,6 +105172,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_1819243251"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Your Meteor Towers create Burning Ground for # seconds on Hit",
+        "ref": "Your Meteor Towers create Burning Ground for # seconds on Hit"
+      }
+    ],
+    "mod": {
+      "text": "Your Meteor Towers create Burning Ground for # seconds on Hit",
+      "ref": "Your Meteor Towers create Burning Ground for # seconds on Hit",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_3704937638"
           ]
         }
       ]
@@ -103586,6 +105825,26 @@
   {
     "conditions": [
       {
+        "string": "Your Smothering Towers also grant #% chance to be Frozen, Shocked and Ignited",
+        "ref": "Your Smothering Towers also grant #% chance to be Frozen, Shocked and Ignited"
+      }
+    ],
+    "mod": {
+      "text": "Your Smothering Towers also grant #% chance to be Frozen, Shocked and Ignited",
+      "ref": "Your Smothering Towers also grant #% chance to be Frozen, Shocked and Ignited",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_906949000"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Your Smothering Towers also grant #% increased Damage",
         "ref": "Your Smothering Towers also grant #% increased Damage"
       },
@@ -103891,6 +106150,26 @@
   {
     "conditions": [
       {
+        "string": "Your Temporal Towers also grant Stun Immunity",
+        "ref": "Your Temporal Towers also grant Stun Immunity"
+      }
+    ],
+    "mod": {
+      "text": "Your Temporal Towers also grant Stun Immunity",
+      "ref": "Your Temporal Towers also grant Stun Immunity",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2538402671"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Your Temporal Towers also grant you #% reduced action speed",
         "ref": "Your Temporal Towers also grant you #% reduced action speed"
       },
@@ -103983,6 +106262,26 @@
           "name": "enchant",
           "tradeId": [
             "enchant.stat_4089551985"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Your Towers deal #% increased Damage per Type of Tower Active",
+        "ref": "Your Towers deal #% increased Damage per Type of Tower Active"
+      }
+    ],
+    "mod": {
+      "text": "Your Towers deal #% increased Damage per Type of Tower Active",
+      "ref": "Your Towers deal #% increased Damage per Type of Tower Active",
+      "types": [
+        {
+          "name": "enchant",
+          "tradeId": [
+            "enchant.stat_2125952342"
           ]
         }
       ]

@@ -1,6 +1,6 @@
 import { clipboard } from 'electron'
-import { TAG_RARITY } from '@/parser/constants'
 import { logger } from './logger'
+import { config } from './config'
 
 const DELAY = 48
 const LIMIT = 500
@@ -17,7 +17,7 @@ export async function pollClipboard (): Promise<string> {
   }
 
   let textBefore = clipboard.readText()
-  if (textBefore.startsWith(TAG_RARITY)) {
+  if (textBefore.startsWith(getTranslatedRarity())) {
     textBefore = ''
     clipboard.writeText('')
   }
@@ -26,7 +26,7 @@ export async function pollClipboard (): Promise<string> {
     function poll () {
       const textAfter = clipboard.readText()
 
-      if (textAfter.startsWith(TAG_RARITY)) {
+      if (textAfter.startsWith(getTranslatedRarity())) {
         clipboard.writeText(textBefore)
         isPollingClipboard = false
         clipboardPromise = undefined
@@ -48,4 +48,13 @@ export async function pollClipboard (): Promise<string> {
   })
 
   return clipboardPromise
+}
+
+function getTranslatedRarity () {
+  return TAG_RARITY[config.get('language')]
+}
+
+const TAG_RARITY = {
+  en: 'Rarity: ',
+  ru: 'Редкость: '
 }
