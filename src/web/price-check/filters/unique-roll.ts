@@ -1,4 +1,4 @@
-import { UniqueItem, Uniques } from '@/assets/data'
+import { UniqueItem, UNIQUES } from '@/assets/data'
 import { ParsedItem } from '@/parser'
 import { ItemModifier } from '@/parser/modifiers'
 import { percentRollDelta } from './util'
@@ -23,7 +23,7 @@ export function uniqueModFilterPartial (
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ): void {
-  const uniqueInfo = Uniques.get(`${item.name} ${item.baseType}`)
+  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType}`)
   if (!uniqueInfo) return fallbackToExact(mod, filter)
 
   const modInfo = uniqueInfo.stats.find(stat =>

@@ -22,3 +22,9 @@
   font-style:normal;
   src:local("☺"),url('./font/fontin-bold-webfont.woff') format("woff")
 }
+@font-face {
+  font-family: 'FrizQuadrataC';
+  font-weight: normal;
+  font-style: normal;
+  src: local("☺"), url('./font/FrizQuadrataC.woff') format("woff");
+}

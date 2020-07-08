@@ -7,13 +7,13 @@
       <div class="absolute px-1" :style="actionsPosition">
         <div :class="$style.actionsPanel">
           <button v-if="hideable" @click="hide"
-            :class="$style.action">hide</button>
+            :class="$style.action">{{ $t('hide') }}</button>
           <button v-if="!readonly" @click="toggleEdit"
-            :class="[$style.action, { [$style.active]: isEditing }]">edit</button>
+            :class="[$style.action, { [$style.active]: isEditing }]">{{ $t('edit') }}</button>
           <button v-if="moveHandles !== 'none'" @click="toggleMove"
-            :class="[$style.action, { [$style.active]: isMoving }]">move</button>
+            :class="[$style.action, { [$style.active]: isMoving }]">{{ $t('move') }}</button>
           <button v-if="removable" @mousedown="startRemoveTimer" @mouseup="cancelRemoveTimer" @mouseleave="cancelRemoveTimer"
-            :class="[$style.action, $style.removable, { [$style.removing]: isRemoving }]">delete</button>
+            :class="[$style.action, $style.removable, { [$style.removing]: isRemoving }]">{{ $t('delete') }}</button>
         </div>
       </div>
       <div v-if="isMoving">
@@ -269,3 +269,14 @@ export default {
               0 1px 2px 0 rgba(0, 0, 0, 0.75);
 }
 </style>
+
+<i18n>
+{
+  "ru": {
+    "hide": "скрыть",
+    "edit": "редактировать",
+    "move": "переместить",
+    "delete": "удалить"
+  }
+}
+</i18n>

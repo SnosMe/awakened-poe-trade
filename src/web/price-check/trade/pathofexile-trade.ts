@@ -1,10 +1,9 @@
-import { ItemInfluence, ItemCategory } from '@/parser'
+import { ItemInfluence, ItemCategory, ParsedItem } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES } from './common'
-import { Config } from '@/web/Config'
-import { API_TRADE_ITEMS, STAT_BY_REF } from '@/assets/data'
+import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
@@ -167,7 +166,7 @@ interface PricingResult {
   ign: string
 }
 
-export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
+export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
   const body: TradeRequest = {
     query: {
       status: { option: filters.trade.offline ? 'any' : 'online' },
@@ -191,11 +190,17 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
 
   if (filters.name) {
-    query.name = filters.name.value
+    query.name = TRANSLATED_ITEM_NAME_BY_REF.get(filters.name.value) ||
+      filters.name.value
   }
 
   if (filters.baseType) {
-    query.type = filters.baseType.value
+    if (item.category === ItemCategory.CapturedBeast) {
+      query.type = filters.baseType.value
+    } else {
+      query.type = TRANSLATED_ITEM_NAME_BY_REF.get(filters.baseType.value) ||
+        filters.baseType.value
+    }
   }
 
   if (filters.rarity) {
@@ -367,7 +372,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 export async function requestTradeResultList (body: TradeRequest, leagueId: string) {
   await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
 
-  body = patchRequestForSubdomain(body)
   const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
     method: 'POST',
     headers: {
@@ -415,26 +419,6 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
         : 'offline'
     } as PricingResult
   })
-}
-
-function patchRequestForSubdomain (body: TradeRequest) {
-  if (Config.store.subdomain === 'us') return body
-  if (!body.query.name || !body.query.type) return body
-
-  // const usIdx = API_TRADE_ITEMS.us.findIndex(item =>
-  //   item.name === body.query.name &&
-  //   item.type === body.query.type
-  // )
-  // const translated = API_TRADE_ITEMS[Config.store.subdomain as keyof typeof API_TRADE_ITEMS][usIdx]
-  const translated = {
-    name: body.query.name,
-    type: body.query.type
-  }
-
-  body = JSON.parse(JSON.stringify(body))
-  body.query.name = translated.name
-  body.query.type = translated.type
-  return body
 }
 
 function getMinMax (stat: StatFilter) {

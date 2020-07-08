@@ -1,4 +1,4 @@
-import { STAT_BY_MATCH_STR, Stat, StatMatcher, clientStrings as _$ } from '@/assets/data'
+import { STAT_BY_MATCH_STR, Stat, StatMatcher, CLIENT_STRINGS as _$ } from '@/assets/data'
 import { CLUSTER_JEWEL_GRANT } from './constants'
 
 export enum ModifierType {

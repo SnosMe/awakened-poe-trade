@@ -5,7 +5,7 @@
         <div v-if="!isEditing" class="text-gray-100 m-1 leading-4 truncate">{{ config.wmTitle || 'Untitled' }}</div>
         <input v-else
           class="leading-4 rounded text-gray-100 p-1 bg-gray-700 w-full"
-          placeholder="widget title"
+          :placeholder="$t('widget title')"
           v-model="config.wmTitle">
       </template>
       <div class="flex flex-col -mb-1 mt-2">
@@ -17,7 +17,7 @@
             <div class="relative flex-1" style="min-width: 15rem;">
               <div class="leading-4 py-2 px-2 whitespace-no-wrap">{{ entry.text }}{{ '\u2009' }}</div>
               <input v-model="entry.text"
-                placeholder="search text"
+                :placeholder="$t('search text')"
                 class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1 bg-gray-700">
             </div>
             <button class="p-2 leading-none" @click="removeEntry(entry.id)">
@@ -30,7 +30,7 @@
             class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 mb-1 whitespace-no-wrap">{{ entry.text }}</button>
         </template>
         <button v-if="isEditing" @click="addEntry"
-          class="leading-none text-gray-100 p-2 rounded text-left bg-gray-800 mb-1"><i class="fas fa-plus mr-2"></i>Add</button>
+          class="leading-none text-gray-100 p-2 rounded text-left bg-gray-800 mb-1"><i class="fas fa-plus mr-2"></i>{{ $t('Add') }}</button>
       </div>
     </div>
   </widget>
@@ -82,3 +82,12 @@ export default {
   }
 }
 </script>
+
+<i18n>
+{
+  "ru": {
+    "widget title": "заголовок виджета",
+    "search text": "текст поиска"
+  }
+}
+</i18n>

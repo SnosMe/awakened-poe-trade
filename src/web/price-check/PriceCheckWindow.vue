@@ -21,7 +21,7 @@
                   <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1" alt="exa" class="max-w-full max-h-full">
                 </div>
                 <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-                <span class="px-1 text-base">{{ exaltedCost | displayRounding(true) }} ×</span>
+                <span class="px-1 text-base">{{ exaltedCost | displayRounding(true) }} <span class="font-sans">×</span></span>
                 <div class="w-8 h-8 flex items-center justify-center">
                   <img src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1" alt="chaos" class="max-w-full max-h-full">
                 </div>
@@ -47,7 +47,9 @@
               <unidentified-resolver :item="item" @identify="item = $event" />
               <checked-item :item="item" />
               <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
-                Press <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span> to switch between browser and game.
+                <i18n path="Press {0} to switch between browser and game.">
+                  <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
+                </i18n>
               </div>
             </template>
           </div>
@@ -190,3 +192,11 @@ export default {
   }
 }
 </script>
+
+<i18n>
+{
+  "ru": {
+    "Press {0} to switch between browser and game.": "Нажмите {0} для перехода между браузером/игрой."
+  }
+}
+</i18n>

@@ -1,4 +1,6 @@
-const dict = {
+import type { TranslationDict } from '../en/client_strings'
+
+const dict: TranslationDict = {
   'Normal': 'Обычный',
   'Magic': 'Волшебный',
   'Rare': 'Редкий',
@@ -32,7 +34,7 @@ const dict = {
   'Redeemer Item': 'Предмет Избавительницы',
   'Warlord Item': 'Предмет Вождя',
   'Synthesised Item': 'Синтезированный предмет',
-  '/^Synthesised (.*)$/': /^(?:Синтезированный|Синтезированная|Синтезированное|Синтезированные) (.*)$/,
+  '/^Synthesised (.*)$/': /^(?:Синтезированный|Синтезированная|Синтезированное|Синтезированные) (.*[^ ])[ ]*$/,
   '/^Vaal .*$/': /^.* ваал$/,
   'Veiled Prefix': 'Завуалированный префикс',
   'Veiled Suffix': 'Завуалированный суффикс',
@@ -51,5 +53,3 @@ const dict = {
 }
 
 export default dict
-
-export type TranslationDict = typeof dict

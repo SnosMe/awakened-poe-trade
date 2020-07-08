@@ -42,7 +42,7 @@
 
 <script>
 import { Config } from '@/web/Config'
-import { stats } from '@/assets/data'
+import { STATS } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry'
 
 export default {
@@ -66,7 +66,7 @@ export default {
       )
     },
     statList () {
-      return stats.flatMap(stat =>
+      return STATS.flatMap(stat =>
         stat.conditions.map(c => ({
           matchRef: c.ref,
           text: c.string,

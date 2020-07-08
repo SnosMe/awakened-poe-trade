@@ -7,7 +7,7 @@ import { logger } from './logger'
 
 export function setupConfigEvents () {
   ipcMain.on(GET_CONFIG, (e) => {
-    e.returnValue = { ...config.store, subdomain: 'us' }
+    e.returnValue = config.store
   })
   ipcMain.on(PUSH_CONFIG, (e, cfg) => {
     batchUpdateConfig(cfg, false)

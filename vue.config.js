@@ -18,6 +18,9 @@ module.exports = {
           target: ['AppImage']
         }
       }
+    },
+    i18n: {
+      enableInSFC: true
     }
   }
 }

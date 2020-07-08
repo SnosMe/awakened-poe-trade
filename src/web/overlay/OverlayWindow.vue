@@ -75,6 +75,7 @@ export default {
     }
   },
   created () {
+    this.$i18n.locale = Config.store.language
     MainProcess.addEventListener(FOCUS_CHANGE, ({ detail: state }) => {
       this.active = state.overlay
       this.gameFocused = state.game

@@ -2,7 +2,7 @@ import { percentRollDelta } from '../util'
 import { INTERNAL_TRADE_ID, StatFilter } from '../interfaces'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
-import { stat, Uniques } from '@/assets/data'
+import { stat, UNIQUES } from '@/assets/data'
 import { ARMOUR, WEAPON } from '@/parser/meta'
 import { Config } from '@/web/Config'
 
@@ -27,7 +27,7 @@ const ARMOUR_STATS = new Set<string>([
 function armourProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const uniqueInfo = Uniques.get(`${item.name} ${item.baseType}`)
+  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType}`)
 
   if (item.props.armour) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.armour, QUALITY_STATS.ARMOUR, item))
@@ -76,7 +76,7 @@ const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const uniqueInfo = Uniques.get(`${item.name} ${item.baseType}`)
+  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType}`)
 
   if (item.props.physicalDamage) {
     const physQ20 = variablePropAt20Quality(item.props.physicalDamage!, QUALITY_STATS.PHYSICAL_DAMAGE, item)

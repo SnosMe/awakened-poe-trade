@@ -1,11 +1,11 @@
-import { BaseTypes, translatedItemNameByRef } from '@/assets/data'
+import { BASE_TYPES, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 let baseTypes: Set<string>
 
 export function magicBasetype (name: string) {
   if (!baseTypes) {
     baseTypes = new Set(
-      Array.from(BaseTypes.keys()).map(b => translatedItemNameByRef.get(b)!)
+      Array.from(BASE_TYPES.keys()).map(b => TRANSLATED_ITEM_NAME_BY_REF.get(b)!)
     )
   }
 

@@ -21,7 +21,7 @@
       :stats="itemStats"
       :item="item" />
     <div v-if="tradeAPI === 'trade' && !intaractedOnce">
-      <button class="btn" @click="intaractedOnce = true">Search</button>
+      <button class="btn" @click="intaractedOnce = true">{{ $t('Search') }}</button>
     </div>
     <trade-bulk
       v-if="tradeAPI === 'bulk'"
@@ -42,6 +42,7 @@ import { initUiModFilters } from './filters/create-stat-filters'
 import PricePrediction from './price-prediction/PricePrediction'
 import FilterName from './filters/FilterName'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
+import { Config } from '@/web/Config'
 
 export default {
   name: 'CheckedItem',
@@ -117,6 +118,8 @@ export default {
   },
   computed: {
     showPredictedPrice () {
+      if (Config.store.language !== 'en') return false
+
       return this.item.rarity === ItemRarity.Rare &&
         this.item.category !== ItemCategory.Map &&
         this.item.category !== ItemCategory.CapturedBeast &&

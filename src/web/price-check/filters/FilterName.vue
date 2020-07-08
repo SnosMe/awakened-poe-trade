@@ -4,8 +4,8 @@
       :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
       @click="toggleAccuracy">{{ label }}</button>
     <button v-if="filters.corrupted" class="px-2" @click="filters.corrupted.value = !filters.corrupted.value">
-      <span v-if="filters.corrupted.value" class="text-red-500">Corrupted</span>
-      <span v-else class="text-gray-600">Not Corrupted</span>
+      <span v-if="filters.corrupted.value" class="text-red-500">{{ $t('Corrupted') }}</span>
+      <span v-else class="text-gray-600">{{ $t('Not Corrupted') }}</span>
     </button>
   </div>
 </template>
@@ -13,6 +13,7 @@
 <script>
 import { ItemRarity } from '@/parser'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 export default {
   name: 'FilterName',
@@ -29,13 +30,15 @@ export default {
   computed: {
     label () {
       if (this.filters.name) {
-        return this.filters.name.value
+        return TRANSLATED_ITEM_NAME_BY_REF.get(this.filters.name.value) ||
+          this.filters.name.value
       }
       if (this.filters.baseType) {
-        return this.filters.baseType.value
+        return TRANSLATED_ITEM_NAME_BY_REF.get(this.filters.baseType.value) ||
+          this.filters.baseType.value
       }
       if (this.filters.category) {
-        return `Category: ${this.filters.category.value}`
+        return this.$t(`Category: ${this.filters.category.value}`)
       }
 
       return '??? Report if you see this text'
@@ -46,7 +49,7 @@ export default {
     },
     showAsActive () {
       return this.canFilterByCategory &&
-        !this.label.startsWith('Category:')
+        (this.filters.name || this.filters.baseType)
     }
   },
   methods: {
@@ -77,3 +80,40 @@ export default {
   justify-content: space-between;
 }
 </style>
+
+<i18n>
+{
+  "ru": {
+    "Corrupted": "Осквернен",
+    "Not Corrupted": "Не осквернен",
+    "Category: Abyss Jewel": "Категория: Самоцвет Бездны",
+    "Category: Amulet": "Категория: Амулет",
+    "Category: Belt": "Категория: Пояс",
+    "Category: Body Armour": "Категория: Нательная броня",
+    "Category: Boots": "Категория: Сапоги",
+    "Category: Bow": "Категория: Лук",
+    "Category: Claw": "Категория: Коготь",
+    "Category: Dagger": "Категория: Кинжал",
+    "Category: Fishing Rod": "Категория: Удочка",
+    "Category: Flask": "Категория: Флакон",
+    "Category: Gloves": "Категория: Перчатки",
+    "Category: Helmet": "Категория: Шлем",
+    "Category: Jewel": "Категория: Самоцвет",
+    "Category: One-Handed Axe": "Категория: Одноручный топор",
+    "Category: One-Handed Mace": "Категория: Одноручная булава",
+    "Category: One-Handed Sword": "Категория: Одноручный меч",
+    "Category: Quiver": "Категория: Колчан",
+    "Category: Ring": "Категория: Кольцо",
+    "Category: Rune Dagger": "Категория: Рунический кинжал",
+    "Category: Sceptre": "Категория: Скипетр",
+    "Category: Shield": "Категория: Щит",
+    "Category: Staff": "Категория: Посох",
+    "Category: Two-Handed Axe": "Категория: Двуручный топор",
+    "Category: Two-Handed Mace": "Категория: Двуручная булава",
+    "Category: Two-Handed Sword": "Категория: Двуручный меч",
+    "Category: Wand": "Категория: Жезл",
+    "Category: Warstaff": "Категория: Воинский посох",
+    "Category: Cluster Jewel": "Категория: Кластерный самоцвет"
+  }
+}
+</i18n>

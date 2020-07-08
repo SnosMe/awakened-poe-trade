@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './web/App.vue'
 import router from './web/router'
+import i18n from './web/i18n'
 import TrendChart from 'vue-trend-chart'
 import Popper from 'vue-popperjs'
 import VueSlider from 'vue-slider-component'
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
 

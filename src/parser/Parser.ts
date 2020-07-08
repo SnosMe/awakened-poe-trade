@@ -1,9 +1,9 @@
 import { ItemRarity, ItemInfluence } from './constants'
 import * as C from './constants'
 import {
-  BaseTypes,
-  clientStrings as _$,
-  itemNameRefByTranslated
+  BASE_TYPES,
+  CLIENT_STRINGS as _$,
+  ITEM_NAME_REF_BY_TRANSLATED
 } from '@/assets/data'
 import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
@@ -84,8 +84,6 @@ export function parseClipboard (clipboard: string) {
 
   parsed.rawText = clipboard
 
-  console.log(parsed)
-
   return Object.freeze(parsed)
 }
 
@@ -122,13 +120,13 @@ function normalizeName (_: string[], item: ParsedItem) {
     }
   }
 
-  item.name = itemNameRefByTranslated.get(item.name) || item.name
+  item.name = ITEM_NAME_REF_BY_TRANSLATED.get(item.name) || item.name
   if (item.baseType) {
-    item.baseType = itemNameRefByTranslated.get(item.baseType) || item.baseType
+    item.baseType = ITEM_NAME_REF_BY_TRANSLATED.get(item.baseType) || item.baseType
   }
 
   if (!item.category) {
-    const baseType = BaseTypes.get(item.baseType || item.name)
+    const baseType = BASE_TYPES.get(item.baseType || item.name)
     item.category = baseType?.category
     item.icon = baseType?.icon
   }
@@ -143,7 +141,7 @@ function parseMap (section: string[], item: ParsedItem) {
     if (item.rarity === ItemRarity.Normal) {
       if (_$[C.MAP_BLIGHTED].test(item.name)) {
         const name = _$[C.MAP_BLIGHTED].exec(item.name)![1]
-        item.name = itemNameRefByTranslated.get(name) || name
+        item.name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
         item.category = ItemCategory.Map
         item.props.mapBlighted = true
       }
@@ -155,8 +153,6 @@ function parseMap (section: string[], item: ParsedItem) {
 }
 
 function parseNamePlate (section: string[]) {
-  console.log(_$)
-  console.log(_$[C.TAG_RARITY])
   if (!section[0].startsWith(_$[C.TAG_RARITY])) {
     return null
   }
@@ -269,7 +265,7 @@ function parseVaalGem (section: string[], item: ParsedItem) {
   if (section.length === 1) {
     if (_$[C.VAAL_GEM].test(section[0])) {
       const name = section[0]
-      item.name = itemNameRefByTranslated.get(name) || name
+      item.name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
       return SECTION_PARSED
     }
   }
