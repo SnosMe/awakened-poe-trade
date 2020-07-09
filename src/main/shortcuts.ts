@@ -10,6 +10,7 @@ import { openWiki } from './wiki'
 import { logger } from './logger'
 import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive } from './overlay-window'
 import * as ipc from '@/ipc/ipc-event'
+import { typeInChat } from './game-chat'
 
 export let hotkeyPressPosition: Point | undefined
 
@@ -81,7 +82,7 @@ function registerGlobal () {
     ),
     ...config.get('commands')
       .map(command =>
-        shortcutCallback(command.hotkey, () => typeChatCommand(command.text))
+        shortcutCallback(command.hotkey, () => typeInChat(command.text))
       )
   ].filter(a => Boolean(a.shortcut))
 
@@ -155,7 +156,7 @@ export function setupShortcuts () {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
         shortcutCallback(pressed, () => {
-          typeChatCommand(command.text)
+          typeInChat(command.text)
         }).cb()
       }
     }
@@ -180,39 +181,6 @@ export function setupShortcuts () {
   })
 
   uIOhook.start()
-}
-
-function typeChatCommand (command: string) {
-  const saved = clipboard.readText()
-
-  const whisperLast = command.startsWith('@last ')
-  const commandLast = command.endsWith(' @last')
-  if (whisperLast) {
-    command = command.substr('@last '.length)
-    clipboard.writeText(command)
-    robotjs.keyTap('Enter', ['Ctrl'])
-  } else if (commandLast) {
-    command = command.slice(0, -'@last'.length)
-    clipboard.writeText(command)
-    robotjs.keyTap('Enter', ['Ctrl'])
-    robotjs.keyTap('Home')
-    robotjs.keyTap('Delete')
-  } else {
-    clipboard.writeText(command)
-    robotjs.keyTap('Enter')
-  }
-
-  robotjs.keyTap('V', ['Ctrl'])
-  robotjs.keyTap('Enter')
-  // restore the last chat
-  robotjs.keyTap('Enter')
-  robotjs.keyTap('ArrowUp')
-  robotjs.keyTap('ArrowUp')
-  robotjs.keyTap('Escape')
-
-  setTimeout(() => {
-    clipboard.writeText(saved)
-  }, 120)
 }
 
 function stashSearch (text: string) {
