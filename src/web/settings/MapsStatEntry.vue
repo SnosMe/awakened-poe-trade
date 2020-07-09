@@ -3,9 +3,9 @@
     <div class="flex-1 truncate px-2">{{ stat.text }}</div>
     <div class="flex" :class="{ [$style.controlsAutoHide]: !entryInSelected }">
       <div class="pr-1"><ui-toggle v-model="invert" /></div>
-      <div><input v-model.trim="valueWarning" @focus="handleFocus($event, 'valueWarning')" :placeholder="!invert ? 'min' : 'max'" class="bg-gray-900 w-12 text-center rounded-l"></div>
-      <div><input v-model.trim="valueDanger" @focus="handleFocus($event, 'valueDanger')" :placeholder="!invert ? 'min' : 'max'" class="bg-gray-900 w-12 text-center mx-px"></div>
-      <div><input v-model.trim="valueDesirable" @focus="handleFocus($event, 'valueDesirable')" :placeholder="!invert ? 'min' : 'max'" class="bg-gray-900 w-12 text-center rounded-r"></div>
+      <div><input v-model.trim="valueWarning" @focus="handleFocus($event, 'valueWarning')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-l"></div>
+      <div><input v-model.trim="valueDanger" @focus="handleFocus($event, 'valueDanger')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center mx-px"></div>
+      <div><input v-model.trim="valueDesirable" @focus="handleFocus($event, 'valueDesirable')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-r"></div>
       <div class="flex w-6">
         <button v-if="entryInSelected"
           @click="remove"
