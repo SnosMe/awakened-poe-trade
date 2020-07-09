@@ -136,8 +136,11 @@ interface FetchResult {
     stackSize?: number
     corrupted?: boolean
     properties?: Array<{
-      name: 'Quality' | 'Level' | 'Spawns a Level %0 Monster when Harvested'
       values: [[string, number]]
+      type:
+        30 | // Spawns a Level %0 Monster when Harvested
+        6 | // Quality
+        5 // Level
     }>
   }
   listing: {
@@ -404,11 +407,11 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       id: result.id,
       itemLevel:
         result.item.ilvl ||
-        result.item.properties?.find(prop => prop.name === 'Spawns a Level %0 Monster when Harvested')?.values[0][0],
+        result.item.properties?.find(prop => prop.type === 30)?.values[0][0],
       stackSize: result.item.stackSize,
       corrupted: result.item.corrupted,
-      quality: result.item.properties?.find(prop => prop.name === 'Quality')?.values[0][0],
-      level: result.item.properties?.find(prop => prop.name === 'Level')?.values[0][0],
+      quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
+      level: result.item.properties?.find(prop => prop.type === 5)?.values[0][0],
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price.amount,
       priceCurrency: result.listing.price.currency,
