@@ -1,13 +1,13 @@
 <template>
   <div class="flex-grow layout-column bg-gray-800">
-    <app-titlebar @close="cancel" title="Settings - Awakened PoE Trade" native />
+    <app-titlebar @close="cancel" :title="$t('Settings - Awakened PoE Trade')" native />
     <div class="flex flex-grow min-h-0">
       <div class="px-2 pb-10 bg-gray-900 flex flex-col">
-        <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">Hotkeys</router-link>
-        <router-link :to="{ name: 'settings.general' }" class="menu-item">General</router-link>
-        <router-link :to="{ name: 'settings.price-check' }" class="menu-item">Price check</router-link>
-        <router-link :to="{ name: 'settings.maps' }" class="menu-item">Maps</router-link>
-        <router-link :to="{ name: 'settings.debug' }" class="menu-item">Debug</router-link>
+        <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">{{ $t('Hotkeys') }}</router-link>
+        <router-link :to="{ name: 'settings.general' }" class="menu-item">{{ $t('General') }}</router-link>
+        <router-link :to="{ name: 'settings.price-check' }" class="menu-item">{{ $t('Price check') }}</router-link>
+        <router-link :to="{ name: 'settings.maps' }" class="menu-item">{{ $t('Maps') }}</router-link>
+        <router-link :to="{ name: 'settings.debug' }" class="menu-item">{{ $t('Debug') }}</router-link>
         <div style="min-width: 9.5rem;"></div>
       </div>
       <div class="text-gray-100 flex-grow layout-column">
@@ -15,8 +15,8 @@
           <router-view />
         </div>
         <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end">
-          <button @click="save" class="px-3 bg-gray-800 rounded mr-2">Save</button>
-          <button @click="cancel" class="px-3">Cancel</button>
+          <button @click="save" class="px-3 bg-gray-800 rounded mr-2">{{ $t('Save') }}</button>
+          <button @click="cancel" class="px-3">{{ $t('Cancel') }}</button>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 
 export default {
   beforeCreate () {
-    document.title = 'Settings - Awakened PoE Trade'
+    document.title = this.$t('Settings - Awakened PoE Trade')
   },
   methods: {
     save () {
@@ -62,3 +62,16 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "ru": {
+    "Settings - Awakened PoE Trade": "Настройки - Awakened PoE Trade",
+    "Hotkeys": "Быстрые клавиши",
+    "General": "Общие",
+    "Price check": "Прайс-чек",
+    "Maps": "Карты",
+    "Debug": "Debug (Отладка)"
+  }
+}
+</i18n>

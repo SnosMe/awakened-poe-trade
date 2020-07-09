@@ -4,7 +4,7 @@
       <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
       <!-- <div class="bg-gray-700" style="width: 460px; height: 258px;"></div> -->
       <div v-if="!item" class="px-8 py-2">
-        Item under cursor is not a map.
+        {{ $t('Item under cursor is not a map.') }}
       </div>
       <div v-else class="py-2 flex flex-col">
         <map-stat-button v-for="stat in mapStats" :key="stat.text"
@@ -21,7 +21,7 @@ import { MAP_CHECK } from '@/ipc/ipc-event'
 import { parseClipboard, ItemCategory, ItemRarity } from '@/parser'
 import MapStatButton from './MapStatButton'
 import { prepareMapStats } from './prepare-map-stats'
-// import CheckPositionCircle from './CheckPositionCircle'
+import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 export default {
   components: {
@@ -73,13 +73,13 @@ export default {
     },
     mapName () {
       if (!this.item) {
-        return 'Invalid item'
+        return this.$t('Invalid item')
       }
 
       if (this.item.rarity === ItemRarity.Unique) {
-        return this.item.name || this.item.baseType
+        return TRANSLATED_ITEM_NAME_BY_REF.get(this.item.name || this.item.baseType)
       } else {
-        return this.item.baseType || this.item.name
+        return TRANSLATED_ITEM_NAME_BY_REF.get(this.item.baseType || this.item.name)
       }
     },
     mapStats () {
@@ -88,3 +88,12 @@ export default {
   }
 }
 </script>
+
+<i18n>
+{
+  "ru": {
+    "Item under cursor is not a map.": "Предмет под курсором не является картой.",
+    "Invalid item": "Неверный предмет"
+  }
+}
+</i18n>

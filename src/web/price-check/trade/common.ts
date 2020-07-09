@@ -48,14 +48,13 @@ export function tradeTag (filters: ItemFilters): string | undefined {
   }
 }
 
-const SUBDOMAIN_ENDPOINT = {
-  us: 'www.pathofexile.com',
-  th: 'th.pathofexile.com',
-  kr: 'poe.game.daum.net'
+const ENDPOINT_BY_LANG = {
+  en: 'www.pathofexile.com',
+  ru: 'ru.pathofexile.com'
 }
 
 export function getTradeEndpoint () {
-  return SUBDOMAIN_ENDPOINT[Config.store.subdomain as keyof typeof SUBDOMAIN_ENDPOINT]
+  return ENDPOINT_BY_LANG[Config.store.language]
 }
 
 export const RATE_LIMIT_RULES = {

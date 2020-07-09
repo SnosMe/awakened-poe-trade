@@ -1,9 +1,9 @@
 <template>
   <div v-if="show" class="p-4 layout-column">
-    <div class="py-1 px-2 bg-gray-900 rounded mb-4">You are trying to price check unidentified Unique item with base type "{{ item.name }}". Which one?</div>
+    <div class="py-1 px-2 bg-gray-900 rounded mb-4">{{ $t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}</div>
     <div class="flex flex-wrap -m-1">
       <div v-for="item in identifiedVariants" :key="item.name" class="p-1 flex w-1/2">
-        <button @click="select(item.name)" class="bg-gray-700 rounded flex items-center p-2 w-full">
+        <button @click="select(item.refName)" class="bg-gray-700 rounded flex items-center p-2 w-full">
           <img :src="item.icon" class="w-12" />
           <div class="pl-3 leading-tight">{{ item.name }}</div>
         </button>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { UniquesList } from '@/assets/data'
+import { UNIQUES_LIST, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { ItemRarity } from '@/parser'
 
 export default {
@@ -26,9 +26,16 @@ export default {
   computed: {
     identifiedVariants () {
       const name = this.item.name
-      const possible = UniquesList.filter(unique => unique.basetype === name)
+      const possible = UNIQUES_LIST
+        .filter(unique => unique.basetype === name)
+        .map(unique => ({
+          refName: unique.name,
+          icon: unique.icon,
+          name: TRANSLATED_ITEM_NAME_BY_REF.get(unique.name) || unique.name
+        }))
+
       if (possible.length === 1) {
-        this.select(possible[0].name)
+        this.select(possible[0].refName)
       }
 
       return possible
@@ -39,6 +46,10 @@ export default {
       return this.item.rarity === ItemRarity.Unique &&
         this.item.isUnidentified &&
         this.item.baseType == null
+    },
+    baseType () {
+      return TRANSLATED_ITEM_NAME_BY_REF.get(this.item.name) ||
+        this.item.name
     }
   },
   methods: {
@@ -53,3 +64,11 @@ export default {
   }
 }
 </script>
+
+<i18n>
+{
+  "ru": {
+    "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "Вы пытаетесь сделать прайс-чек неопознанного Уникального предмета с базой \"{0}\". Какого именно?"
+  }
+}
+</i18n>

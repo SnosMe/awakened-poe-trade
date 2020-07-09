@@ -1,4 +1,4 @@
-import { STAT_BY_MATCH_STR, Stat, StatMatcher } from '@/assets/data'
+import { STAT_BY_MATCH_STR, Stat, StatMatcher, CLIENT_STRINGS as _$ } from '@/assets/data'
 import { CLUSTER_JEWEL_GRANT } from './constants'
 
 export enum ModifierType {
@@ -27,8 +27,8 @@ export function * sectionToStatStrings (section: string[]) {
         section[idx],
         section[idx + 1]
       ]
-      if (lines.every(l => l.startsWith(CLUSTER_JEWEL_GRANT))) {
-        lines[1] = lines[1].substr(CLUSTER_JEWEL_GRANT.length)
+      if (lines.every(l => l.startsWith(_$[CLUSTER_JEWEL_GRANT]))) {
+        lines[1] = lines[1].substr(_$[CLUSTER_JEWEL_GRANT].length)
       }
       str = lines.join('\n')
     } else {

@@ -10,6 +10,7 @@
     "electron:publish": "vue-cli-service electron:build -p onTagOrDraft",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/web/locales/**/*.json'",
     "postinstall": "patch-package && electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
@@ -33,6 +34,7 @@
     "throttle-debounce": "^2.1.0",
     "uiohook-napi": "^1.0.7",
     "vue": "^2.6.11",
+    "vue-i18n": "^8.18.2",
     "vue-popperjs": "^2.3.0",
     "vue-router": "^3.1.5",
     "vue-slider-component": "^3.1.1",
@@ -42,6 +44,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^1.0.0",
     "@types/async": "^3.0.3",
     "@types/node": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
@@ -64,6 +67,7 @@
     "postcss-nested": "^4.2.1",
     "typescript": "^3.8.3",
     "vue-cli-plugin-electron-builder": "2.0.0-beta.4",
+    "vue-cli-plugin-i18n": "~1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
   "resolutions": {

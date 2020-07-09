@@ -28,7 +28,7 @@ export interface Config {
   accountName: string
   searchStatRange: number
   stashScroll: boolean
-  subdomain: string
+  language: 'en' | 'ru'
   widgets: Widget[]
   fontSize: number
 }
@@ -91,7 +91,7 @@ export const defaultConfig: Config = {
   accountName: '',
   searchStatRange: 10,
   stashScroll: true,
-  subdomain: 'us',
+  language: 'en',
   fontSize: 16,
   widgets: [
     // --- REQUIRED ---

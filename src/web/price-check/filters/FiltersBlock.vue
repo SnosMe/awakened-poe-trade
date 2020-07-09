@@ -2,53 +2,53 @@
   <div>
     <div class="flex flex-wrap items-center mb-2 -m-1">
       <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
-        @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">Links: {{ filters.linkedSockets.value }}</button>
-      <div v-if="filters.mapTier" class="trade-tag">Map Tier: {{ filters.mapTier.value }}</div>
-      <div v-if="filters.mapBlighted" class="trade-tag">Blighted</div>
+        @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ $t('Links: {0}', [filters.linkedSockets.value]) }}</button>
+      <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
+      <div v-if="filters.mapBlighted" class="trade-tag">{{ $t('Blighted') }}</div>
       <button v-if="filters.itemLevel" class="trade-tag" :class="{ disabled: filters.itemLevel.disabled }"
-        @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">Item Level: {{ filters.itemLevel.value }}</button>
+        @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">{{ $t('Item Level: {0}', [filters.itemLevel.value]) }}</button>
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
-        @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">White: {{ filters.whiteSockets.value }}</button>
+        @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ $t('White: {0}', [filters.whiteSockets.value]) }}</button>
       <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
-        @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">Level: {{ filters.gemLevel.min }}</button>
+        @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">{{ $t('Level: {0}', [filters.gemLevel.min]) }}</button>
       <button v-if="filters.quality" class="trade-tag" :class="{ disabled: filters.quality.disabled }"
-        @click="filters.quality.disabled = !filters.quality.disabled">Quality: {{ filters.quality.value }}%</button>
+        @click="filters.quality.disabled = !filters.quality.disabled">{{ $t('Quality: {0}%', [filters.quality.value]) }}</button>
       <template v-if="filters.influences">
         <button v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center"
           :class="{ disabled: influence.disabled }"
           @click="influence.disabled = !influence.disabled">
           <template v-if="influence.value === 'Shaper'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Shaper.png">
-            <span class="ml-2">Shaper</span>
+            <span class="ml-2">{{ $t('Shaper') }}</span>
           </template>
           <template v-if="influence.value === 'Elder'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Elder.png">
-            <span class="ml-2">Elder</span>
+            <span class="ml-2">{{ $t('Elder') }}</span>
           </template>
           <template v-if="influence.value === 'Crusader'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Crusader.png">
-            <span class="ml-2">Crusader</span>
+            <span class="ml-2">{{ $t('Crusader') }}</span>
           </template>
           <template v-if="influence.value === 'Hunter'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Hunter.png">
-            <span class="ml-2">Hunter</span>
+            <span class="ml-2">{{ $t('Hunter') }}</span>
           </template>
           <template v-if="influence.value === 'Redeemer'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Redeemer.png">
-            <span class="ml-2">Redeemer</span>
+            <span class="ml-2">{{ $t('Redeemer') }}</span>
           </template>
           <template v-if="influence.value === 'Warlord'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Warlord.png">
-            <span class="ml-2">Warlord</span>
+            <span class="ml-2">{{ $t('Warlord') }}</span>
           </template>
         </button>
       </template>
       <button v-if="filters.unidentified" class="trade-tag" :class="{ disabled: filters.unidentified.disabled }"
-        @click="filters.unidentified.disabled = !filters.unidentified.disabled">Unidentified</button>
+        @click="filters.unidentified.disabled = !filters.unidentified.disabled">{{ $t('Unidentified') }}</button>
       <filter-veiled :item="item" :filters="filters" />
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
-        <span v-if="totalSelectedMods === 0">Stats ignored</span>
-        <span v-else>{{ totalSelectedMods }} of {{ stats.length }}, stats</span>
+        <span v-if="totalSelectedMods === 0">{{ $t('Stats ignored') }}</span>
+        <span v-else>{{ $t('{0} of {1}, stats', [totalSelectedMods, stats.length]) }}</span>
         <i v-if="!showStatsBlock" class="fas fa-chevron-down pl-2 text-xs text-gray-400"></i>
       </button>
     </div>
@@ -62,12 +62,12 @@
       </form>
       <div class="flex">
         <button @click="toggleStatsBlock" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
-          >Collapse <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
+          >{{ $t('Collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <button v-if="shownStats.length != stats.length"
           @click="showHidden = !showHidden" class="ml-2 px-2 pt-2 flex items-center leading-none">
           <i v-if="showHidden" class="fas fa-toggle-on pr-1 text-gray-300"></i>
           <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
-          <span class="text-gray-400">Hidden</span>
+          <span class="text-gray-400">{{ $t('Hidden') }}</span>
         </button>
       </div>
     </div>
@@ -149,3 +149,28 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "ru": {
+    "Hidden": "Скрытые",
+    "Collapse": "Свернуть",
+    "Links: {0}": "Связи: {0}",
+    "Map Tier: {0}": "Ур. карты: {0}",
+    "Blighted": "Заражённая",
+    "Item Level: {0}": "Ур. предмета: {0}",
+    "White: {0}": "Белые: {0}",
+    "Level: {0}": "Уровень: {0}",
+    "Quality: {0}%": "Качество: {0}%",
+    "Shaper": "Создатель",
+    "Elder": "Древний",
+    "Crusader": "Крестоносец",
+    "Hunter": "Охотник",
+    "Redeemer": "Избавительница",
+    "Warlord": "Вождь",
+    "Unidentified": "Неопознанный",
+    "Stats ignored": "Св-ва не важны",
+    "{0} of {1}, stats": "Св-ва: {0} из {1}"
+  }
+}
+</i18n>

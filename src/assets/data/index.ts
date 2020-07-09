@@ -1,57 +1,79 @@
-import stats from './stats_English.json'
-import baseTypes from './base-types.json'
-import uniques from './uniques.json'
-import tradeTags from './trade-tags.json'
-import itemDrop from './item-drop.json'
-import { ItemCategory } from '@/parser'
+import type { TranslationDict } from '@/assets/data/en/client_strings'
+import type { BaseType, DropEntry, Stat, StatMatcher, UniqueItem } from './interfaces'
+import { Config } from '@/web/Config'
 
-export interface StatMatcher {
-  string: string
-  ref: string
-  negate?: true
-  condition?: {
-    min?: number
-    max?: number
-  }
-  option?: {
-    text: string
-    tradeId: string | number
-  }
-}
+export * from './interfaces'
 
-export interface Stat {
-  text: string
-  ref: string
-  inverted?: true
-  types: Array<{
-    name: string
-    tradeId: string[]
-  }>
-}
+export let CLIENT_STRINGS: TranslationDict
+export let ITEM_NAME_REF_BY_TRANSLATED: Map<string | undefined, string>
+export let TRANSLATED_ITEM_NAME_BY_REF: Map<string | undefined, string>
 
-export interface BaseType {
-  category: ItemCategory
-  icon?: string
-}
+export let STATS: Array<{ conditions: StatMatcher[], mod: Stat }>
 
-export const BaseTypes = new Map(baseTypes as Array<[string, BaseType]>)
-
-export { stats }
-
-// Mods
 export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat, matchers: StatMatcher[] }>()
 export const STAT_BY_REF = new Map<string, Stat>()
 
-for (const entry of (stats as Array<{ conditions: StatMatcher[], mod: Stat }>)) {
-  for (const condition of entry.conditions) {
-    STAT_BY_MATCH_STR.set(condition.string, {
-      matcher: condition,
-      stat: entry.mod,
-      matchers: entry.conditions
-    })
+export let BASE_TYPES: Map<string, BaseType>
+
+export let TRADE_TAGS: Array<[string, string]>
+export let TRADE_TAG_BY_NAME: Map<string, string>
+
+export let UNIQUES_LIST: UniqueItem[]
+export let UNIQUES: Map<string, UniqueItem>
+
+export const ITEM_DROP = new Map<string, DropEntry>()
+
+;(async function initData () { /* eslint-disable no-lone-blocks */
+  {
+    CLIENT_STRINGS = (require(`./${Config.store.language}/client_strings`).default)
+
+    const itemNames: Array<[string, string]> = (require(`./${Config.store.language}/item-names.json`))
+    TRANSLATED_ITEM_NAME_BY_REF = new Map(itemNames)
+    ITEM_NAME_REF_BY_TRANSLATED = new Map(itemNames.map(_ => [_[1], _[0]]))
   }
-  STAT_BY_REF.set(entry.mod.ref, entry.mod)
-}
+
+  {
+    STATS = (require(`./${Config.store.language}/stats.json`))
+    for (const entry of STATS) {
+      for (const condition of entry.conditions) {
+        STAT_BY_MATCH_STR.set(condition.string, {
+          matcher: condition,
+          stat: entry.mod,
+          matchers: entry.conditions
+        })
+      }
+      STAT_BY_REF.set(entry.mod.ref, entry.mod)
+    }
+  }
+
+  {
+    const baseTypes: Array<[string, BaseType]> = (require('./base-types.json'))
+    BASE_TYPES = new Map(baseTypes)
+  }
+
+  {
+    const tradeTags: Array<[string, string]> = (require('./trade-tags.json'))
+    TRADE_TAGS = tradeTags
+    TRADE_TAG_BY_NAME = new Map(tradeTags)
+  }
+
+  {
+    const uniques: UniqueItem[] = (require('./uniques.json'))
+    UNIQUES_LIST = uniques
+    UNIQUES = new Map(
+      uniques.map(item => [`${item.name} ${item.basetype}`, item])
+    )
+  }
+
+  {
+    const itemDrop: DropEntry[] = (require('./item-drop.json'))
+    for (const entry of itemDrop) {
+      for (const query of entry.query) {
+        ITEM_DROP.set(query, entry)
+      }
+    }
+  }
+})()
 
 // assertion, to avoid regressions in stats.json
 export function stat (text: string) {
@@ -59,53 +81,4 @@ export function stat (text: string) {
     throw new Error(`Cannot find stat: ${text}`)
   }
   return text
-}
-
-export const TRADE_TAGS = tradeTags as Array<[string, string]>
-export const TRADE_TAG_BY_NAME = new Map(TRADE_TAGS)
-
-export interface UniqueItem {
-  name: string
-  basetype: string
-  icon: string
-  props: {
-    pdps?: { min: number, max: number }
-    ar?: { min: number, max: number }
-    ev?: { min: number, max: number }
-    es?: { min: number, max: number }
-  }
-  stats: Array<{
-    text: string
-    implicit?: true
-    variant?: true
-    bounds: Array<{ min: number, max: number }>
-  }>
-}
-
-export const Uniques = new Map(
-  (uniques as UniqueItem[]).map(item => [`${item.name} ${item.basetype}`, item])
-)
-
-export const UniquesList = (uniques as UniqueItem[])
-
-export interface DropEntry {
-  query: string[]
-  items: string[]
-}
-
-export const ITEM_DROP = new Map<string, DropEntry>()
-for (const entry of (itemDrop as DropEntry[])) {
-  for (const query of entry.query) {
-    ITEM_DROP.set(query, entry)
-  }
-}
-
-function apiTradeItemsToConsumableFormat (items: any) {
-  const ret = items.result.flatMap((category: any) => category.entries) as any[]
-  return ret.filter((item: any) => !item.disc) as Array<{ name?: string, type: string }>
-}
-export const API_TRADE_ITEMS = {
-  us: apiTradeItemsToConsumableFormat(require('./api_trade_items/us.json')),
-  kr: apiTradeItemsToConsumableFormat(require('./api_trade_items/kr.json')),
-  th: apiTradeItemsToConsumableFormat(require('./api_trade_items/th.json'))
 }

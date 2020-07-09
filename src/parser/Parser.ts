@@ -1,47 +1,10 @@
+import { ItemRarity, ItemInfluence } from './constants'
+import * as C from './constants'
 import {
-  ItemRarity,
-  ItemInfluence,
-  TAG_GEM_LEVEL,
-  TAG_ITEM_LEVEL,
-  TAG_MAP_TIER,
-  TAG_RARITY,
-  TAG_STACK_SIZE,
-  TAG_SOCKETS,
-  TAG_QUALITY,
-  CORRUPTED,
-  UNIDENTIFIED,
-  PREFIX_VAAL,
-  PREFIX_SUPERIOR,
-  SUFFIX_INFLUENCE,
-  ENCHANT_SUFFIX,
-  IMPLICIT_SUFFIX,
-  CRAFTED_SUFFIX,
-  TAG_ARMOUR,
-  TAG_EVASION,
-  TAG_ENERGY_SHIELD,
-  TAG_BLOCK_CHANCE,
-  TAG_CRIT_CHANCE,
-  TAG_ATTACK_SPEED,
-  TAG_PHYSICAL_DAMAGE,
-  TAG_ELEMENTAL_DAMAGE,
-  FLASK_CHARGES,
-  PREFIX_BLIGHTED,
-  SECTION_SYNTHESISED,
-  PREFIX_SYNTHESISED,
-  PROPHECY_HELP,
-  BEAST_HELP,
-  SEED_HELP,
-  METAMORPH_HELP,
-  METAMORPH_BRAIN,
-  METAMORPH_EYE,
-  METAMORPH_LUNG,
-  METAMORPH_HEART,
-  METAMORPH_LIVER,
-  VEILED_PREFIX,
-  VEILED_SUFFIX,
-  SEED_MONSTER_LEVEL
-} from './constants'
-import { BaseTypes } from '@/assets/data'
+  BASE_TYPES,
+  CLIENT_STRINGS as _$,
+  ITEM_NAME_REF_BY_TRANSLATED
+} from '@/assets/data'
 import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
 import { ParsedItem } from './ParsedItem'
@@ -126,13 +89,13 @@ export function parseClipboard (clipboard: string) {
 
 function normalizeName (_: string[], item: ParsedItem) {
   if (
-    item.rarity === ItemRarity.Normal || // quality >= +1%
-    item.rarity === ItemRarity.Magic || // unidentified && quality >= +1%
-    item.rarity === ItemRarity.Rare || // unidentified && quality >= +1%
-    item.rarity === ItemRarity.Unique // unidentified && quality >= +1%
+    (item.rarity === ItemRarity.Normal) ||
+    (item.rarity === ItemRarity.Magic && item.isUnidentified) ||
+    (item.rarity === ItemRarity.Rare && item.isUnidentified) ||
+    (item.rarity === ItemRarity.Unique && item.isUnidentified)
   ) {
-    if (item.name.startsWith(PREFIX_SUPERIOR)) {
-      item.name = item.name.substr(PREFIX_SUPERIOR.length)
+    if (_$[C.ITEM_SUPERIOR].test(item.name)) {
+      item.name = _$[C.ITEM_SUPERIOR].exec(item.name)![1]
     }
   }
 
@@ -144,21 +107,26 @@ function normalizeName (_: string[], item: ParsedItem) {
   }
 
   if (item.category === ItemCategory.MetamorphSample) {
-    if (item.name.endsWith(METAMORPH_BRAIN)) {
-      item.name = `Metamorph ${METAMORPH_BRAIN}`
-    } else if (item.name.endsWith(METAMORPH_EYE)) {
-      item.name = `Metamorph ${METAMORPH_EYE}`
-    } else if (item.name.endsWith(METAMORPH_LUNG)) {
-      item.name = `Metamorph ${METAMORPH_LUNG}`
-    } else if (item.name.endsWith(METAMORPH_HEART)) {
-      item.name = `Metamorph ${METAMORPH_HEART}`
-    } else if (item.name.endsWith(METAMORPH_LIVER)) {
-      item.name = `Metamorph ${METAMORPH_LIVER}`
+    if (_$[C.METAMORPH_BRAIN].test(item.name)) {
+      item.name = 'Metamorph Brain'
+    } else if (_$[C.METAMORPH_EYE].test(item.name)) {
+      item.name = 'Metamorph Eye'
+    } else if (_$[C.METAMORPH_LUNG].test(item.name)) {
+      item.name = 'Metamorph Lung'
+    } else if (_$[C.METAMORPH_HEART].test(item.name)) {
+      item.name = 'Metamorph Heart'
+    } else if (_$[C.METAMORPH_LIVER].test(item.name)) {
+      item.name = 'Metamorph Liver'
     }
   }
 
+  item.name = ITEM_NAME_REF_BY_TRANSLATED.get(item.name) || item.name
+  if (item.baseType) {
+    item.baseType = ITEM_NAME_REF_BY_TRANSLATED.get(item.baseType) || item.baseType
+  }
+
   if (!item.category) {
-    const baseType = BaseTypes.get(item.baseType || item.name)
+    const baseType = BASE_TYPES.get(item.baseType || item.name)
     item.category = baseType?.category
     item.icon = baseType?.icon
   }
@@ -167,12 +135,13 @@ function normalizeName (_: string[], item: ParsedItem) {
 }
 
 function parseMap (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(TAG_MAP_TIER)) {
-    item.props.mapTier = Number(section[0].substr(TAG_MAP_TIER.length))
+  if (section[0].startsWith(_$[C.TAG_MAP_TIER])) {
+    item.props.mapTier = Number(section[0].substr(_$[C.TAG_MAP_TIER].length))
 
     if (item.rarity === ItemRarity.Normal) {
-      if (item.name.startsWith(PREFIX_BLIGHTED)) {
-        item.name = item.name.substr(PREFIX_BLIGHTED.length)
+      if (_$[C.MAP_BLIGHTED].test(item.name)) {
+        const name = _$[C.MAP_BLIGHTED].exec(item.name)![1]
+        item.name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
         item.category = ItemCategory.Map
         item.props.mapBlighted = true
       }
@@ -184,53 +153,78 @@ function parseMap (section: string[], item: ParsedItem) {
 }
 
 function parseNamePlate (section: string[]) {
-  if (!section[0].startsWith(TAG_RARITY)) {
+  if (!section[0].startsWith(_$[C.TAG_RARITY])) {
     return null
   }
 
-  const rarity = section[0].substr(TAG_RARITY.length)
-  switch (rarity) {
-    case ItemRarity.Currency:
-    case ItemRarity.DivinationCard:
-    case ItemRarity.Gem:
-    case ItemRarity.Normal:
-    case ItemRarity.Magic:
-    case ItemRarity.Rare:
-    case ItemRarity.Unique: {
-      const item : ParsedItem = {
-        rarity,
-        name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
-        baseType: section[2]?.replace(/^(<<.*?>>|<.*?>)+/, ''),
-        props: {},
-        isUnidentified: false,
-        isCorrupted: false,
-        modifiers: [],
-        influences: [],
-        sockets: {},
-        extra: {},
-        rawText: undefined!
-      }
-      return item
-    }
+  const rarityText = section[0].substr(_$[C.TAG_RARITY].length)
+  let rarity: ItemRarity
+  switch (rarityText) {
+    case _$[ItemRarity.Currency]:
+      rarity = ItemRarity.Currency
+      break
+    case _$[ItemRarity.DivinationCard]:
+      rarity = ItemRarity.DivinationCard
+      break
+    case _$[ItemRarity.Gem]:
+      rarity = ItemRarity.Gem
+      break
+    case _$[ItemRarity.Normal]:
+      rarity = ItemRarity.Normal
+      break
+    case _$[ItemRarity.Magic]:
+      rarity = ItemRarity.Magic
+      break
+    case _$[ItemRarity.Rare]:
+      rarity = ItemRarity.Rare
+      break
+    case _$[ItemRarity.Unique]:
+      rarity = ItemRarity.Unique
+      break
     default:
       return null
   }
+
+  const item: ParsedItem = {
+    rarity,
+    name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
+    baseType: section[2]?.replace(/^(<<.*?>>|<.*?>)+/, ''),
+    props: {},
+    isUnidentified: false,
+    isCorrupted: false,
+    modifiers: [],
+    influences: [],
+    sockets: {},
+    extra: {},
+    rawText: undefined!
+  }
+  return item
 }
 
 function parseInfluence (section: string[], item: ParsedItem) {
-  if (section[0].endsWith(SUFFIX_INFLUENCE)) {
+  if (section.length <= 2) {
     const countBefore = item.influences.length
 
     for (const line of section) {
-      const influence = line.slice(0, -SUFFIX_INFLUENCE.length)
-      switch (influence) {
-        case ItemInfluence.Crusader:
-        case ItemInfluence.Elder:
-        case ItemInfluence.Shaper:
-        case ItemInfluence.Hunter:
-        case ItemInfluence.Redeemer:
-        case ItemInfluence.Warlord:
-          item.influences.push(influence)
+      switch (line) {
+        case _$[C.CRUSADER_ITEM]:
+          item.influences.push(ItemInfluence.Crusader)
+          break
+        case _$[C.ELDER_ITEM]:
+          item.influences.push(ItemInfluence.Elder)
+          break
+        case _$[C.SHAPER_ITEM]:
+          item.influences.push(ItemInfluence.Shaper)
+          break
+        case _$[C.HUNTER_ITEM]:
+          item.influences.push(ItemInfluence.Hunter)
+          break
+        case _$[C.REDEEMER_ITEM]:
+          item.influences.push(ItemInfluence.Redeemer)
+          break
+        case _$[C.WARLORD_ITEM]:
+          item.influences.push(ItemInfluence.Warlord)
+          break
       }
     }
 
@@ -242,7 +236,7 @@ function parseInfluence (section: string[], item: ParsedItem) {
 }
 
 function parseCorrupted (section: string[], item: ParsedItem) {
-  if (section[0] === CORRUPTED) {
+  if (section[0] === _$[C.CORRUPTED]) {
     item.isCorrupted = true
     return SECTION_PARSED
   }
@@ -250,7 +244,7 @@ function parseCorrupted (section: string[], item: ParsedItem) {
 }
 
 function parseUnidentified (section: string[], item: ParsedItem) {
-  if (section[0] === UNIDENTIFIED) {
+  if (section[0] === _$[C.UNIDENTIFIED]) {
     item.isUnidentified = true
     return SECTION_PARSED
   }
@@ -258,8 +252,8 @@ function parseUnidentified (section: string[], item: ParsedItem) {
 }
 
 function parseItemLevel (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(TAG_ITEM_LEVEL)) {
-    item.itemLevel = Number(section[0].substr(TAG_ITEM_LEVEL.length))
+  if (section[0].startsWith(_$[C.TAG_ITEM_LEVEL])) {
+    item.itemLevel = Number(section[0].substr(_$[C.TAG_ITEM_LEVEL].length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -269,8 +263,9 @@ function parseVaalGem (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Gem) return PARSER_SKIPPED
 
   if (section.length === 1) {
-    if (section[0].startsWith(PREFIX_VAAL)) {
-      item.name = section[0]
+    if (_$[C.VAAL_GEM].test(section[0])) {
+      const name = section[0]
+      item.name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
       return SECTION_PARSED
     }
   }
@@ -281,9 +276,9 @@ function parseGem (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Gem) {
     return PARSER_SKIPPED
   }
-  if (section[1]?.startsWith(TAG_GEM_LEVEL)) {
+  if (section[1]?.startsWith(_$[C.TAG_GEM_LEVEL])) {
     // "Level: 20 (Max)"
-    item.props.gemLevel = parseInt(section[1].substr(TAG_GEM_LEVEL.length), 10)
+    item.props.gemLevel = parseInt(section[1].substr(_$[C.TAG_GEM_LEVEL].length), 10)
 
     parseQualityNested(section, item)
 
@@ -296,9 +291,9 @@ function parseStackSize (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Currency && item.rarity !== ItemRarity.DivinationCard) {
     return PARSER_SKIPPED
   }
-  if (section[0].startsWith(TAG_STACK_SIZE)) {
+  if (section[0].startsWith(_$[C.TAG_STACK_SIZE])) {
     // "Stack Size: 2/9"
-    item.stackSize = parseInt(section[0].substr(TAG_STACK_SIZE.length), 10)
+    item.stackSize = parseInt(section[0].substr(_$[C.TAG_STACK_SIZE].length), 10)
 
     if (item.category === ItemCategory.Seed) {
       parseSeedLevelNested(section, item)
@@ -311,7 +306,7 @@ function parseStackSize (section: string[], item: ParsedItem) {
 
 function parseSeedLevelNested (section: string[], item: ParsedItem) {
   for (const line of section) {
-    const match = line.match(SEED_MONSTER_LEVEL)
+    const match = line.match(_$[C.SEED_MONSTER_LEVEL])
     if (match != null) {
       item.itemLevel = Number(match[1])
       break
@@ -320,8 +315,8 @@ function parseSeedLevelNested (section: string[], item: ParsedItem) {
 }
 
 function parseSockets (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(TAG_SOCKETS)) {
-    let sockets = section[0].substr(TAG_SOCKETS.length).trimEnd()
+  if (section[0].startsWith(_$[C.TAG_SOCKETS])) {
+    let sockets = section[0].substr(_$[C.TAG_SOCKETS].length).trimEnd()
 
     item.sockets.white = (sockets.split('W').length - 1)
 
@@ -342,9 +337,9 @@ function parseSockets (section: string[], item: ParsedItem) {
 
 function parseQualityNested (section: string[], item: ParsedItem) {
   for (const line of section) {
-    if (line.startsWith(TAG_QUALITY)) {
+    if (line.startsWith(_$[C.TAG_QUALITY])) {
       // "Quality: +20% (augmented)"
-      item.quality = parseInt(line.substr(TAG_QUALITY.length), 10)
+      item.quality = parseInt(line.substr(_$[C.TAG_QUALITY].length), 10)
       break
     }
   }
@@ -354,20 +349,20 @@ function parseArmour (section: string[], item: ParsedItem) {
   let isParsed = SECTION_SKIPPED as SectionParseResult
 
   for (const line of section) {
-    if (line.startsWith(TAG_ARMOUR)) {
-      item.props.armour = parseInt(line.substr(TAG_ARMOUR.length), 10)
+    if (line.startsWith(_$[C.TAG_ARMOUR])) {
+      item.props.armour = parseInt(line.substr(_$[C.TAG_ARMOUR].length), 10)
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(TAG_EVASION)) {
-      item.props.evasion = parseInt(line.substr(TAG_EVASION.length), 10)
+    if (line.startsWith(_$[C.TAG_EVASION])) {
+      item.props.evasion = parseInt(line.substr(_$[C.TAG_EVASION].length), 10)
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(TAG_ENERGY_SHIELD)) {
-      item.props.energyShield = parseInt(line.substr(TAG_ENERGY_SHIELD.length), 10)
+    if (line.startsWith(_$[C.TAG_ENERGY_SHIELD])) {
+      item.props.energyShield = parseInt(line.substr(_$[C.TAG_ENERGY_SHIELD].length), 10)
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(TAG_BLOCK_CHANCE)) {
-      item.props.blockChance = parseInt(line.substr(TAG_BLOCK_CHANCE.length), 10)
+    if (line.startsWith(_$[C.TAG_BLOCK_CHANCE])) {
+      item.props.blockChance = parseInt(line.substr(_$[C.TAG_BLOCK_CHANCE].length), 10)
       isParsed = SECTION_PARSED; continue
     }
   }
@@ -383,24 +378,24 @@ function parseWeapon (section: string[], item: ParsedItem) {
   let isParsed = SECTION_SKIPPED as SectionParseResult
 
   for (const line of section) {
-    if (line.startsWith(TAG_CRIT_CHANCE)) {
-      item.props.critChance = parseFloat(line.substr(TAG_CRIT_CHANCE.length))
+    if (line.startsWith(_$[C.TAG_CRIT_CHANCE])) {
+      item.props.critChance = parseFloat(line.substr(_$[C.TAG_CRIT_CHANCE].length))
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(TAG_ATTACK_SPEED)) {
-      item.props.attackSpeed = parseFloat(line.substr(TAG_ATTACK_SPEED.length))
+    if (line.startsWith(_$[C.TAG_ATTACK_SPEED])) {
+      item.props.attackSpeed = parseFloat(line.substr(_$[C.TAG_ATTACK_SPEED].length))
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(TAG_PHYSICAL_DAMAGE)) {
+    if (line.startsWith(_$[C.TAG_PHYSICAL_DAMAGE])) {
       item.props.physicalDamage = (
-        line.substr(TAG_PHYSICAL_DAMAGE.length)
+        line.substr(_$[C.TAG_PHYSICAL_DAMAGE].length)
           .split('-').map(str => parseInt(str, 10))
       )
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(TAG_ELEMENTAL_DAMAGE)) {
+    if (line.startsWith(_$[C.TAG_ELEMENTAL_DAMAGE])) {
       item.props.elementalDamage =
-        line.substr(TAG_ELEMENTAL_DAMAGE.length)
+        line.substr(_$[C.TAG_ELEMENTAL_DAMAGE].length)
           .split(', ')
           .map(element => getRollAsSingleNumber(element.split('-').map(str => parseInt(str, 10))))
           .reduce((sum, x) => sum + x, 0)
@@ -439,14 +434,14 @@ function parseModifiers (section: string[], item: ParsedItem) {
     let modType: ModifierType | undefined
 
     // cleanup suffix
-    if (stat.value.endsWith(IMPLICIT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -IMPLICIT_SUFFIX.length)
+    if (stat.value.endsWith(C.IMPLICIT_SUFFIX)) {
+      stat.value = stat.value.slice(0, -C.IMPLICIT_SUFFIX.length)
       modType = ModifierType.Implicit
-    } else if (stat.value.endsWith(CRAFTED_SUFFIX)) {
-      stat.value = stat.value.slice(0, -CRAFTED_SUFFIX.length)
+    } else if (stat.value.endsWith(C.CRAFTED_SUFFIX)) {
+      stat.value = stat.value.slice(0, -C.CRAFTED_SUFFIX.length)
       modType = ModifierType.Crafted
-    } else if (stat.value.endsWith(ENCHANT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -ENCHANT_SUFFIX.length)
+    } else if (stat.value.endsWith(C.ENCHANT_SUFFIX)) {
+      stat.value = stat.value.slice(0, -C.ENCHANT_SUFFIX.length)
       modType = ModifierType.Enchant
     }
 
@@ -480,11 +475,11 @@ function parseModifiers (section: string[], item: ParsedItem) {
 }
 
 function parseVeiledNested (text: string, item: ParsedItem) {
-  if (text === VEILED_SUFFIX) {
+  if (text === _$[C.VEILED_SUFFIX]) {
     item.extra.veiled = (item.extra.veiled == null ? 'suffix' : 'prefix-suffix')
     return true
   }
-  if (text === VEILED_PREFIX) {
+  if (text === _$[C.VEILED_PREFIX]) {
     item.extra.veiled = (item.extra.veiled == null ? 'prefix' : 'prefix-suffix')
     return true
   }
@@ -496,7 +491,7 @@ function parseFlask (section: string[], item: ParsedItem) {
   // so they are not recognized as modifiers
 
   for (const line of section) {
-    if (FLASK_CHARGES.test(line)) {
+    if (_$[C.FLASK_CHARGES].test(line)) {
       return SECTION_PARSED
     }
   }
@@ -506,11 +501,11 @@ function parseFlask (section: string[], item: ParsedItem) {
 
 function parseSynthesised (section: string[], item: ParsedItem) {
   if (section.length === 1) {
-    if (section[0] === SECTION_SYNTHESISED) {
+    if (section[0] === _$[C.SECTION_SYNTHESISED]) {
       if (item.baseType) {
-        item.baseType = item.baseType.substr(PREFIX_SYNTHESISED.length)
+        item.baseType = _$[C.ITEM_SYNTHESISED].exec(item.baseType)![1]
       } else {
-        item.name = item.name.substr(PREFIX_SYNTHESISED.length)
+        item.name = _$[C.ITEM_SYNTHESISED].exec(item.name)![1]
       }
       return SECTION_PARSED
     }
@@ -520,16 +515,16 @@ function parseSynthesised (section: string[], item: ParsedItem) {
 }
 
 function parseCategoryByHelpText (section: string[], item: ParsedItem) {
-  if (section[0] === PROPHECY_HELP) {
+  if (section[0] === _$[C.PROPHECY_HELP]) {
     item.category = ItemCategory.Prophecy
     return SECTION_PARSED
-  } else if (section[0] === BEAST_HELP) {
+  } else if (section[0] === _$[C.BEAST_HELP]) {
     item.category = ItemCategory.CapturedBeast
     return SECTION_PARSED
-  } else if (section[0] === METAMORPH_HELP) {
+  } else if (section[0] === _$[C.METAMORPH_HELP]) {
     item.category = ItemCategory.MetamorphSample
     return SECTION_PARSED
-  } else if (section[0].startsWith(SEED_HELP)) {
+  } else if (section[0].startsWith(_$[C.SEED_HELP])) {
     item.category = ItemCategory.Seed
     return SECTION_PARSED
   }

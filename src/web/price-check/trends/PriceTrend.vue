@@ -2,13 +2,13 @@
   <div v-if="trend" class="flex items-center pb-4">
     <div class="flex items-center justify-center flex-1">
       <button v-if="isValuableBasetype" class="text-gray-400"
-        @click="$emit('filter-item-base')">Item base</button>
+        @click="$emit('filter-item-base')">{{ $t('Item base') }}</button>
       <div v-else class="w-8 h-8 flex items-center justify-center">
         <img :src="trend.icon" :alt="item.name" class="max-w-full max-h-full">
       </div>
-      <span class="px-1 text-base" v-if="item.stackSize">× 1</span>
+      <span class="px-1 text-base" v-if="item.stackSize"><span class="font-sans">×</span> 1</span>
       <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-      <span class="px-1 text-base">{{ trend.price.val | displayRounding(true) }} ×</span>
+      <span class="px-1 text-base">{{ trend.price.val | displayRounding(true) }} <span class="font-sans">×</span></span>
       <div class="w-8 h-8 flex items-center justify-center">
         <img :src="icon[trend.price.curr].url" :alt="icon[trend.price.curr].text" class="max-w-full max-h-full">
       </div>
@@ -20,7 +20,7 @@
         <span v-if="trend.changeStr === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
         <span>{{ trend.changeVal * 2 | displayRounding }}&nbsp;%</span>
       </div>
-      <div class="text-xs text-gray-500 leading-none">Last 7 days</div>
+      <div class="text-xs text-gray-500 leading-none">{{ $t('Last 7 days') }}</div>
     </div>
     <div v-if="trend.changeStr" class="w-12 h-8">
       <trend-chart padding="2"
@@ -113,3 +113,12 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "ru": {
+    "Item base": "База предмета",
+    "Last 7 days": "За неделю"
+  }
+}
+</i18n>

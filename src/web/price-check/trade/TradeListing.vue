@@ -2,28 +2,28 @@
   <div v-if="!error" class="layout-column flex-grow min-h-0">
     <div class="mb-2 flex pl-2">
       <div class="flex items-baseline text-gray-500 mr-2">
-        <span class="mr-1">Matched:</span>
+        <span class="mr-1">{{ $t('Matched:') }}</span>
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
       <ui-popper v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOver="70" :delayOnMouseOut="150" :options="{ placement: 'bottom-start' }" boundaries-selector="#price-window">
         <template slot="reference">
           <button class="text-gray-500 rounded mr-1 px-2 truncate">
-            <span><i class="fas fa-history"></i> {{ filters.trade.offline ? 'Offline' : 'Online' }}</span>
+            <span><i class="fas fa-history"></i> {{ $t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
             <span v-if="Leagues.selected !== filters.trade.league">, {{ filters.trade.league }}</span>
           </button>
         </template>
         <div class="popper">
           <div class="p-2 text-left bg-gray-800 text-gray-400">
-            <ui-toggle v-model="filters.trade.offline" class="mb-2">Offline &amp; Online</ui-toggle>
+            <ui-toggle v-model="filters.trade.offline" class="mb-2">{{ $t('Offline & Online') }}</ui-toggle>
             <div class="flex">
               <div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">Listed: Any Time</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">1 Day Ago</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">3 Days Ago</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">1 Week Ago</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">2 Weeks Ago</ui-radio></div>
-                <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">1 Month Ago</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">{{ $t('Listed: Any Time') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">{{ $t('1 Day Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">{{ $t('3 Days Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">{{ $t('1 Week Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">{{ $t('2 Weeks Ago') }}</ui-radio></div>
+                <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">{{ $t('1 Month Ago') }}</ui-radio></div>
               </div>
               <div class="ml-8">
                 <div class="mb-1" v-for="league of Leagues.tradeLeagues" :key="league.id">
@@ -36,7 +36,7 @@
       </ui-popper>
       <div class="flex-1"></div>
       <div v-if="list" class="flex">
-        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">Trade</button>
+        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ $t('Trade') }}</button>
         <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2 leading-none"><i class="fas fa-external-link-alt text-xs"></i></button>
       </div>
     </div>
@@ -45,27 +45,27 @@
         <thead>
           <tr class="text-left">
             <th class="trade-table-heading">
-              <div class="px-2">Price</div>
+              <div class="px-2">{{ $t('Price') }}</div>
             </th>
             <th v-if="item.stackSize" class="trade-table-heading">
-              <div class="px-2">Stock</div>
+              <div class="px-2">{{ $t('Stock') }}</div>
             </th>
             <th v-if="filters.itemLevel" class="trade-table-heading">
-              <div class="px-2">iLvl</div>
+              <div class="px-2">{{ $t('iLvl') }}</div>
             </th>
             <th v-if="item.rarity === 'Gem'" class="trade-table-heading">
-              <div class="px-2">Level</div>
+              <div class="px-2">{{ $t('Level') }}</div>
             </th>
             <th v-if="filters.quality || item.rarity === 'Gem'" class="trade-table-heading">
-              <div class="px-2">Quality</div>
+              <div class="px-2">{{ $t('Quality') }}</div>
             </th>
             <th class="trade-table-heading" :class="{ 'w-full': !config.showSeller }">
               <div class="pr-2 pl-4">
-                <span class="ml-1" style="padding-left: 0.375rem;">Listed</span>
+                <span class="ml-1" style="padding-left: 0.375rem;">{{ $t('Listed') }}</span>
               </div>
             </th>
             <th v-if="config.showSeller" class="trade-table-heading w-full">
-              <div class="px-2">Seller</div>
+              <div class="px-2">{{ $t('Seller') }}</div>
             </th>
           </tr>
         </thead>
@@ -75,7 +75,7 @@
               <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
-              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2">× {{ result.listedTimes }}</span></td>
+              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.rarity === 'Gem'" class="pl-2 whitespace-no-wrap">{{ result.level }}</td>
@@ -85,10 +85,10 @@
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
-                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">You</span>
+                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ $t('You') }}</span>
               </td>
               <td v-if="config.showSeller" class="px-2 whitespace-no-wrap">
-                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">You</span>
+                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">{{ $t('You') }}</span>
                 <span v-else class="font-sans text-xs">{{ config.showSeller === 'ign' ? result.ign : result.accountName }}</span>
               </td>
             </tr>
@@ -99,8 +99,8 @@
   </div>
   <div v-else>
     <div>
-      <span class="text-red-400">Trade site request failed</span>
-      <button class="btn ml-2" @click="execSearch">Retry</button>
+      <span class="text-red-400">{{ $t('Trade site request failed') }}</span>
+      <button class="btn ml-2" @click="execSearch">{{ $t('Retry') }}</button>
     </div>
     <div>Error: {{ error }}</div>
   </div>
@@ -110,6 +110,7 @@
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
+import { getTradeEndpoint } from './common'
 import { Leagues } from '../Leagues'
 import { Config } from '@/web/Config'
 
@@ -202,7 +203,7 @@ export default {
         this.results = resultsVar
 
         this.list = null
-        const request = createTradeRequest(this.filters, this.stats)
+        const request = createTradeRequest(this.filters, this.stats, this.item)
         const list = await requestTradeResultList(request, this.filters.trade.league)
         if (this.searchId !== searchId) return
         this.list = list
@@ -251,9 +252,7 @@ export default {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
     openTradeLink (isExternal) {
-      const link = (Config.store.subdomain === 'us')
-        ? `https://www.pathofexile.com/trade/search/${this.filters.trade.league}/${this.list.id}`
-        : `https://www.pathofexile.com/trade/search/${this.filters.trade.league}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats))}`
+      const link = `https://${getTradeEndpoint()}/trade/search/${this.filters.trade.league}/${this.list.id}`
 
       if (isExternal) {
         MainProcess.openSystemBrowser(link)
@@ -290,3 +289,27 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "ru": {
+    "Matched:": "Найдено:",
+    "Offline & Online": "Офлайн и Онлайн",
+    "Listed: Any Time": "Любое время",
+    "1 Day Ago": "До 1-го дня",
+    "3 Days Ago": "До 3-х дней",
+    "1 Week Ago": "До 1-й недели",
+    "2 Weeks Ago": "До 2-х недель",
+    "1 Month Ago": "До 1-го месяца",
+    "Trade": "Трейд",
+    "Price": "Цена",
+    "Stock": "Запас",
+    "iLvl": "Ур.",
+    "Level": "Уровень",
+    "Quality": "К-во",
+    "Listed": "Выставлен",
+    "Seller": "Продавец",
+    "Trade site request failed": "Запрос к сайту не удался"
+  }
+}
+</i18n>
