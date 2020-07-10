@@ -43,8 +43,8 @@ type FilterRange = { min?: number, max?: number }
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
     status: { option: 'online' | 'any' }
-    name?: string
-    type?: string
+    name?: string | { discriminator: string, option: string }
+    type?: string | { discriminator: string, option: string }
     stats: Array<{
       type: 'and' | 'if' | 'count',
       value?: FilterRange
@@ -193,16 +193,14 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.name) {
-    query.name = TRANSLATED_ITEM_NAME_BY_REF.get(filters.name.value) ||
-      filters.name.value
+    query.name = nameToQuery(filters.name.value, filters, true)
   }
 
   if (filters.baseType) {
     if (item.category === ItemCategory.CapturedBeast) {
-      query.type = filters.baseType.value
+      query.type = nameToQuery(filters.baseType.value, filters, false)
     } else {
-      query.type = TRANSLATED_ITEM_NAME_BY_REF.get(filters.baseType.value) ||
-        filters.baseType.value
+      query.type = nameToQuery(filters.baseType.value, filters, true)
     }
   }
 
@@ -430,4 +428,19 @@ function getMinMax (stat: StatFilter) {
   const b = typeof stat.max === 'number' ? stat.max * sign : undefined
 
   return !stat.invert ? { min: a, max: b } : { min: b, max: a }
+}
+
+function nameToQuery (name: string, filters: ItemFilters, translate: boolean) {
+  if (translate) {
+    name = TRANSLATED_ITEM_NAME_BY_REF.get(name) || name
+  }
+
+  if (!filters.discriminator) {
+    return name
+  } else {
+    return {
+      discriminator: filters.discriminator.value.toLowerCase(),
+      option: name
+    }
+  }
 }

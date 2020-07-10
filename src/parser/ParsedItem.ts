@@ -32,7 +32,7 @@ export interface ParsedItem {
   modifiers: ItemModifier[]
   extra: {
     veiled?: 'prefix' | 'suffix' | 'prefix-suffix'
-    // TODO prophecyMaster?: string
+    prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
   }
   category?: ItemCategory
   icon?: string

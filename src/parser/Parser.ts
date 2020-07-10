@@ -41,6 +41,7 @@ const parsers: ParserFn[] = [
   parseInfluence,
   parseMap,
   parseSockets,
+  parseProphecyMaster,
   parseModifiers,
   parseModifiers,
   parseModifiers
@@ -526,6 +527,29 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
     return SECTION_PARSED
   } else if (section[0].startsWith(_$[C.SEED_HELP])) {
     item.category = ItemCategory.Seed
+    return SECTION_PARSED
+  }
+
+  return SECTION_SKIPPED
+}
+
+function parseProphecyMaster (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Prophecy) return PARSER_SKIPPED
+
+  if (section[0] === _$[C.PROPHECY_ALVA]) {
+    item.extra.prophecyMaster = 'Alva'
+    return SECTION_PARSED
+  } else if (section[0] === _$[C.PROPHECY_EINHAR]) {
+    item.extra.prophecyMaster = 'Einhar'
+    return SECTION_PARSED
+  } else if (section[0] === _$[C.PROPHECY_JUN]) {
+    item.extra.prophecyMaster = 'Jun'
+    return SECTION_PARSED
+  } else if (section[0] === _$[C.PROPHECY_NIKO]) {
+    item.extra.prophecyMaster = 'Niko'
+    return SECTION_PARSED
+  } else if (section[0] === _$[C.PROPHECY_ZANA]) {
+    item.extra.prophecyMaster = 'Zana'
     return SECTION_PARSED
   }
 

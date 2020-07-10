@@ -52,6 +52,11 @@ export function createFilters (item: ParsedItem): ItemFilters {
     filters.baseType = {
       value: 'Prophecy'
     }
+    if (item.extra.prophecyMaster) {
+      filters.discriminator = {
+        value: item.extra.prophecyMaster
+      }
+    }
     return filters
   }
 

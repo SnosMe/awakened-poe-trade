@@ -8,6 +8,9 @@ export interface ItemFilters {
   baseType?: {
     value: string
   }
+  discriminator?: {
+    value: string
+  }
   category?: {
     value: ItemCategory
   }

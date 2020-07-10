@@ -5,6 +5,7 @@
         @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ $t('Links: {0}', [filters.linkedSockets.value]) }}</button>
       <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
       <div v-if="filters.mapBlighted" class="trade-tag">{{ $t('Blighted') }}</div>
+      <div v-if="filters.discriminator" class="trade-tag">{{ $t(filters.discriminator.value) }}</div>
       <button v-if="filters.itemLevel" class="trade-tag" :class="{ disabled: filters.itemLevel.disabled }"
         @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">{{ $t('Item Level: {0}', [filters.itemLevel.value]) }}</button>
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
@@ -170,7 +171,12 @@ export default {
     "Warlord": "Вождь",
     "Unidentified": "Неопознанный",
     "Stats ignored": "Св-ва не важны",
-    "{0} of {1}, stats": "Св-ва: {0} из {1}"
+    "{0} of {1}, stats": "Св-ва: {0} из {1}",
+    "Alva": "Альва",
+    "Einhar": "Эйнар",
+    "Niko": "Нико",
+    "Jun": "Джун",
+    "Zana": "Зана"
   }
 }
 </i18n>

@@ -49,7 +49,12 @@ const dict: TranslationDict = {
   '/^.* Eye$/': /^Глаз: .*$/,
   '/^.* Lung$/': /^Лёгкое: .*$/,
   '/^.* Heart$/': /^Сердце: .*$/,
-  '/^.* Liver$/': /^Печень: .*$/
+  '/^.* Liver$/': /^Печень: .*$/,
+  'You will find Alva and complete her mission.': 'Ты встретишь Альву и выполнишь её задание.',
+  'You will find Einhar and complete his mission.': 'Ты встретишь Эйнара и выполнишь его задание.',
+  'You will find Niko and complete his mission.': 'Ты встретишь Нико и выполнишь его задание.',
+  'You will find Jun and complete her mission.': 'Ты встретишь Джун и выполнишь её задание.',
+  'You will find Zana and complete her mission.': 'Ты встретишь Зану и выполнишь её задание.'
 }
 
 export default dict

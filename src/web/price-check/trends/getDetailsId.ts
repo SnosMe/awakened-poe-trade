@@ -38,6 +38,9 @@ export function getDetailsId (item: ParsedItem) {
   if (isValuableBasetype(item)) {
     return getBaseTypeDetailsId(item)
   }
+  if (item.extra.prophecyMaster) {
+    return nameToDetailsId(`${item.name} ${item.extra.prophecyMaster}`)
+  }
 
   return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
 }
