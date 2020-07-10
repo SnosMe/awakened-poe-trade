@@ -2,7 +2,10 @@
   {
     "query": [
       "splinter-of-uul-netol",
-      "uul-netols-breachstone"
+      "uul-netols-breachstone",
+      "uul-netols-charged-breachstone",
+      "uul-netols-enriched-breachstone",
+      "uul-netols-pure-breachstone"
     ],
     "items": [
       "blessing-of-uul-netol",
@@ -14,7 +17,10 @@
   {
     "query": [
       "splinter-of-xoph",
-      "xophs-breachstone"
+      "xophs-breachstone",
+      "xophs-charged-breachstone",
+      "xophs-enriched-breachstone",
+      "xophs-pure-breachstone"
     ],
     "items": [
       "blessing-of-xoph",
@@ -27,7 +33,10 @@
   {
     "query": [
       "splinter-of-tul",
-      "tuls-breachstone"
+      "tuls-breachstone",
+      "tuls-charged-breachstone",
+      "tuls-enriched-breachstone",
+      "tuls-pure-breachstone"
     ],
     "items": [
       "blessing-of-tul",
@@ -40,7 +49,10 @@
   {
     "query": [
       "splinter-of-esh",
-      "eshs-breachstone"
+      "eshs-breachstone",
+      "eshs-charged-breachstone",
+      "eshs-enriched-breachstone",
+      "eshs-pure-breachstone"
     ],
     "items": [
       "blessing-of-esh",
@@ -53,7 +65,10 @@
   {
     "query": [
       "splinter-of-chayula",
-      "chayulas-breachstone"
+      "chayulas-breachstone",
+      "chayulas-charged-breachstone",
+      "chayulas-enriched-breachstone",
+      "chayulas-pure-breachstone"
     ],
     "items": [
       "blessing-of-chayula",
