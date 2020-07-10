@@ -261,5 +261,15 @@
       "potent-chaotic-resonator",
       "primitive-chaotic-resonator"
     ]
+  },
+  {
+    "query": [
+      "simulacrum-splinter",
+      "simulacrum"
+    ],
+    "items": [
+      "split-personality-crimson-jewel",
+      "voices-large-cluster-jewel"
+    ]
   }
 ]
