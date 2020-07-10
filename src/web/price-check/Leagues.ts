@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import { LEAGUE_SELECTED } from '@/ipc/ipc-event'
 import { League } from '@/ipc/types'
 import { Prices } from './Prices'
 import { Config } from '@/web/Config'
@@ -9,8 +10,7 @@ export class LeaguesService {
     isLoading: false,
     isLoaded: false,
     loadingError: undefined as string | undefined,
-    tradeLeagues: [] as Array<{ id: string }>,
-    selected: ''
+    tradeLeagues: [] as Array<{ id: string }>
   })
 
   get isLoading () { return this.state.isLoading }
@@ -21,8 +21,12 @@ export class LeaguesService {
 
   get selected () {
     return (this.state.isLoaded)
-      ? this.state.selected
-      : null
+      ? Config.store.leagueId
+      : undefined
+  }
+
+  set selected (id: string | undefined) {
+    Config.store.leagueId = id
   }
 
   async load () {
@@ -38,21 +42,19 @@ export class LeaguesService {
 
       const leagueIsAlive = tradeLeagues.some(league => league.id === Config.store.leagueId)
 
-      if (leagueIsAlive) {
-        this.state.selected = Config.store.leagueId!
-      } else {
+      if (!leagueIsAlive) {
         if (tradeLeagues.length > 2) {
-          const TMP_STANDARD = 2
-          this.state.selected = tradeLeagues[TMP_STANDARD].id
+          const TMP_CHALLENGE = 2
+          this.selected = tradeLeagues[TMP_CHALLENGE].id
         } else {
           const STANDARD = 0
-          this.state.selected = tradeLeagues[STANDARD].id
+          this.selected = tradeLeagues[STANDARD].id
         }
       }
 
       MainProcess.sendLeaguesReady(tradeLeagues.map(league => ({
         id: league.id,
-        selected: league.id === this.state.selected
+        selected: league.id === this.selected
       } as League)))
 
       this.state.isLoaded = true
@@ -64,9 +66,9 @@ export class LeaguesService {
   }
 
   constructor () {
-    MainProcess.addEventListener('league-selected', (e) => {
+    MainProcess.addEventListener(LEAGUE_SELECTED, (e) => {
       const leagueId = (e as CustomEvent<string>).detail
-      this.state.selected = leagueId
+      this.selected = leagueId
       Prices.load(true)
     })
   }
