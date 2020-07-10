@@ -54,6 +54,12 @@ export default {
   },
   methods: {
     select (name) {
+      if ([
+        'Agnerod East', 'Agnerod North', 'Agnerod South', 'Agnerod West'
+      ].includes(name)) {
+        name = 'Agnerod'
+      }
+
       const newItem = {
         ...this.item,
         name: name,

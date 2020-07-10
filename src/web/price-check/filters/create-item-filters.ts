@@ -166,10 +166,28 @@ export function createFilters (item: ParsedItem): ItemFilters {
       }
     }
 
-    if (item.isUnidentified && item.name === "Watcher's Eye") {
-      filters.itemLevel = {
-        value: item.itemLevel,
-        disabled: false
+    if (item.rarity === ItemRarity.Unique) {
+      if (item.isUnidentified && item.name === "Watcher's Eye") {
+        filters.itemLevel = {
+          value: item.itemLevel,
+          disabled: false
+        }
+      }
+
+      if (item.itemLevel >= 75 && [
+        'Agnerod', 'Agnerod East', 'Agnerod North', 'Agnerod South', 'Agnerod West'
+      ].includes(item.name)) {
+        // https://pathofexile.gamepedia.com/The_Vinktar_Square
+        const normalizedLvl =
+          item.itemLevel >= 82 ? 82
+            : item.itemLevel >= 80 ? 80
+              : item.itemLevel >= 78 ? 78
+                : 75
+
+        filters.itemLevel = {
+          value: normalizedLvl,
+          disabled: false
+        }
       }
     }
   }
