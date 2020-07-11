@@ -52,12 +52,12 @@ export class LeaguesService {
         }
       }
 
+      this.state.isLoaded = true
+
       MainProcess.sendLeaguesReady(tradeLeagues.map(league => ({
         id: league.id,
         selected: league.id === this.selected
       } as League)))
-
-      this.state.isLoaded = true
     } catch (e) {
       this.state.loadingError = e.message
     }
