@@ -4,7 +4,7 @@
       <div :class="{ 'opacity-75': isMoving }">
         <slot :isEditing="isEditing" :isMoving="isMoving" />
       </div>
-      <div class="absolute px-1" :style="actionsPosition">
+      <div class="absolute px-1" :style="actionsPosition" style="background: rgba(0,0,0,0.01);">
         <div :class="$style.actionsPanel">
           <button v-if="hideable" @click="hide"
             :class="$style.action">{{ $t('hide') }}</button>
@@ -211,7 +211,7 @@ export default {
 .actionsPanel {
   @apply py-1;
   color: #fff;
-  background: rgba(0,0,0, 0.25);
+  background: rgba(0,0,0, 0.3);
   display: flex;
   flex-direction: column;
   @apply rounded;
@@ -249,6 +249,7 @@ export default {
   width: 1rem;
   height: 1rem;
   border: 0.25rem solid rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.01);
   cursor: move;
   user-select: none;
 
