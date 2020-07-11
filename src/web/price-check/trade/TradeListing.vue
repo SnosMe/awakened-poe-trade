@@ -101,6 +101,7 @@
     <div>
       <span class="text-red-400">{{ $t('Trade site request failed') }}</span>
       <button class="btn ml-2" @click="execSearch">{{ $t('Retry') }}</button>
+      <button class="btn ml-1" @click="openTradeLink(false)">{{ $t('Browser') }}</button>
     </div>
     <div>Error: {{ error }}</div>
   </div>
@@ -252,7 +253,9 @@ export default {
       return DateTime.fromISO(iso).toRelative({ style: 'short' })
     },
     openTradeLink (isExternal) {
-      const link = `https://${getTradeEndpoint()}/trade/search/${this.filters.trade.league}/${this.list.id}`
+      const link = this.list
+        ? `https://${getTradeEndpoint()}/trade/search/${this.filters.trade.league}/${this.list.id}`
+        : `https://${getTradeEndpoint()}/trade/search/${this.filters.trade.league}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats, this.item))}`
 
       if (isExternal) {
         MainProcess.openSystemBrowser(link)
