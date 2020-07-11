@@ -6,7 +6,6 @@ import { showWidget as showPriceCheck } from './price-check'
 import { KeyToElectron } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
-import { openWiki } from './wiki'
 import { logger } from './logger'
 import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive } from './overlay-window'
 import * as ipc from '@/ipc/ipc-event'
@@ -197,6 +196,10 @@ function stashSearch (text: string) {
       clipboard.writeText(saved)
     }, 120)
   }
+}
+
+function openWiki (clipboard: string) {
+  overlayWindow!.webContents.send(ipc.OPEN_WIKI, clipboard)
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {

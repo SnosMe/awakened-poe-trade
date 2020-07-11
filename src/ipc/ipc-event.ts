@@ -60,3 +60,5 @@ export const OPEN_SYSTEM_BROWSER = 'OVERLAY->MAIN::system-browser'
 export interface IpcOpenSystemBrowser {
   url: string
 }
+
+export const OPEN_WIKI = 'MAIN->OVERLAY::open-wiki'

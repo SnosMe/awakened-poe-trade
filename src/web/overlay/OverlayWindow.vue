@@ -26,6 +26,7 @@ import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
 import WidgetDebug from './WidgetDebug'
 import WidgetMapCheck from '@/web/map-check/WidgetMapCheck'
+import { registerOtherServices } from '../other-services'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 import { Config } from '@/web/Config'
 
@@ -107,6 +108,7 @@ export default {
       this.height = window.innerHeight
     })
     this.devicePixelRatio = window.devicePixelRatio // trigger watcher
+    registerOtherServices()
   },
   mounted () {
     this.$nextTick(() => {

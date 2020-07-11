@@ -51,6 +51,10 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.on(ipcEvent.VISIBILITY, (e, detail) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.VISIBILITY, { detail }))
       })
+
+      electron.ipcRenderer.on(ipcEvent.OPEN_WIKI, (e, detail) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.OPEN_WIKI, { detail }))
+      })
     }
   }
 
