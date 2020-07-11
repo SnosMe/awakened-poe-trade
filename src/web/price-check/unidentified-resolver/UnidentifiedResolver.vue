@@ -1,12 +1,16 @@
 <template>
-  <div v-if="show" class="p-4 layout-column">
-    <div class="py-1 px-2 bg-gray-900 rounded mb-4">{{ $t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}</div>
-    <div class="flex flex-wrap -m-1">
-      <div v-for="item in identifiedVariants" :key="item.name" class="p-1 flex w-1/2">
-        <button @click="select(item.refName)" class="bg-gray-700 rounded flex items-center p-2 w-full">
-          <img :src="item.icon" class="w-12" />
-          <div class="pl-3 leading-tight">{{ item.name }}</div>
-        </button>
+  <div v-if="show" class="layout-column">
+    <div class="m-4 py-1 px-2 bg-gray-900 rounded">
+      {{ $t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
+    </div>
+    <div class="overflow-auto pb-4 px-4">
+      <div class="flex flex-wrap -m-1">
+        <div v-for="item in identifiedVariants" :key="item.name" class="p-1 flex w-1/2">
+          <button @click="select(item.refName)" class="bg-gray-700 rounded flex items-center p-2 w-full">
+            <img :src="item.icon" class="w-12" />
+            <div class="pl-3 leading-tight">{{ item.name }}</div>
+          </button>
+        </div>
       </div>
     </div>
   </div>
