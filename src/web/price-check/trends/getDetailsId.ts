@@ -41,6 +41,9 @@ export function getDetailsId (item: ParsedItem) {
   if (item.extra.prophecyMaster) {
     return nameToDetailsId(`${item.name} ${item.extra.prophecyMaster}`)
   }
+  if (item.category === ItemCategory.Seed) {
+    return nameToDetailsId(`${item.name} ${item.itemLevel! >= 76 ? '76' : '1-75'}`)
+  }
 
   return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
 }
