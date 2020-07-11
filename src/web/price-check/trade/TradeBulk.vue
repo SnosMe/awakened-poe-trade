@@ -91,6 +91,7 @@ import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { execBulkSearch } from './pathofexile-bulk'
 import { tradeTag, getTradeEndpoint } from './common'
+import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { Leagues } from '../Leagues'
 import { Config } from '@/web/Config'
 
@@ -139,9 +140,9 @@ export default {
         this.result = result
         this.selectedCurr = (result.exa.total > result.chaos.total) ? 'exa' : 'chaos'
         // override, because at league start many players set wrong price, and this breaks auto-detection
-        if (tradeTag(this.filters) === 'chaos') {
+        if (tradeTag(this.filters) === TRADE_TAG_BY_NAME.get('Chaos Orb')) {
           this.selectedCurr = 'exa'
-        } else if (tradeTag(this.filters) === 'exa') {
+        } else if (tradeTag(this.filters) === TRADE_TAG_BY_NAME.get('Exalted Orb')) {
           this.selectedCurr = 'chaos'
         }
       } catch (err) {
