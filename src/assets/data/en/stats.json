@@ -2267,6 +2267,26 @@
   {
     "conditions": [
       {
+        "string": "# to Armour and Evasion Rating while you have Fortify",
+        "ref": "# to Armour and Evasion Rating while you have Fortify"
+      }
+    ],
+    "mod": {
+      "text": "# to Armour and Evasion Rating while you have Fortify",
+      "ref": "# to Armour and Evasion Rating while you have Fortify",
+      "types": [
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2962782530"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "# to Armour during Soul Gain Prevention",
         "ref": "# to Armour during Soul Gain Prevention"
       }
@@ -10712,6 +10732,12 @@
           "tradeId": [
             "explicit.stat_977908611"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_977908611"
+          ]
         }
       ]
     }
@@ -10851,6 +10877,7 @@
         {
           "name": "implicit",
           "tradeId": [
+            "implicit.stat_3885634897",
             "implicit.stat_795138349"
           ]
         },
@@ -29333,6 +29360,12 @@
           "tradeId": [
             "explicit.stat_3513180117"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3513180117"
+          ]
         }
       ]
     }
@@ -37745,6 +37778,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_141810208"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_141810208"
           ]
         }
       ]
@@ -65295,6 +65334,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1736172673"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Damage with Weapons Penetrates #% Fire Resistance",
+        "ref": "Damage with Weapons Penetrates #% Fire Resistance"
+      }
+    ],
+    "mod": {
+      "text": "Damage with Weapons Penetrates #% Fire Resistance",
+      "ref": "Damage with Weapons Penetrates #% Fire Resistance",
+      "types": [
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1123291426"
           ]
         }
       ]
@@ -97517,6 +97576,12 @@
           "tradeId": [
             "explicit.stat_1643688236"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1643688236"
+          ]
         }
       ]
     }
@@ -97802,6 +97867,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2234049899"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2234049899"
           ]
         }
       ]

@@ -2267,6 +2267,26 @@
   {
     "conditions": [
       {
+        "string": "# к броне и уклонению, пока на вас действует Укрепление",
+        "ref": "# to Armour and Evasion Rating while you have Fortify"
+      }
+    ],
+    "mod": {
+      "text": "# к броне и уклонению, пока на вас действует Укрепление",
+      "ref": "# to Armour and Evasion Rating while you have Fortify",
+      "types": [
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2962782530"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "# к броне во время действия предотвращения получения душ",
         "ref": "# to Armour during Soul Gain Prevention"
       }
@@ -4658,12 +4678,12 @@
   {
     "conditions": [
       {
-        "string": "# к итоговой стоимости маны умений",
+        "string": "# к итоговому расходу маны умениями",
         "ref": "# to Total Mana Cost of Skills"
       }
     ],
     "mod": {
-      "text": "# к итоговой стоимости маны умений",
+      "text": "# к итоговому расходу маны умениями",
       "ref": "# to Total Mana Cost of Skills",
       "types": [
         {
@@ -4690,12 +4710,12 @@
   {
     "conditions": [
       {
-        "string": "# к итоговой стоимости маны умений за каждый надетый осквернённый предмет",
+        "string": "# к итоговому расходу маны умениями за каждый надетый осквернённый предмет",
         "ref": "# to Total Mana Cost of Skills for each Corrupted Item Equipped"
       }
     ],
     "mod": {
-      "text": "# к итоговой стоимости маны умений за каждый надетый осквернённый предмет",
+      "text": "# к итоговому расходу маны умениями за каждый надетый осквернённый предмет",
       "ref": "# to Total Mana Cost of Skills for each Corrupted Item Equipped",
       "types": [
         {
@@ -4710,12 +4730,12 @@
   {
     "conditions": [
       {
-        "string": "# к итоговой стоимости маны умений под действием Ясности ума",
+        "string": "# к итоговому расходу маны умениями под действием Ясности ума",
         "ref": "# to Total Mana Cost of Skills while affected by Clarity"
       }
     ],
     "mod": {
-      "text": "# к итоговой стоимости маны умений под действием Ясности ума",
+      "text": "# к итоговому расходу маны умениями под действием Ясности ума",
       "ref": "# to Total Mana Cost of Skills while affected by Clarity",
       "types": [
         {
@@ -6767,12 +6787,12 @@
   {
     "conditions": [
       {
-        "string": "#% шанс блокировать урон от атаки, если недавно вы блокировали урон от атаки",
+        "string": "#% шанс блокировать урон от атак, если вы недавно блокировали урон от атак",
         "ref": "#% Chance to Block Attack Damage if you have Blocked Attack Damage Recently"
       }
     ],
     "mod": {
-      "text": "#% шанс блокировать урон от атаки, если недавно вы блокировали урон от атаки",
+      "text": "#% шанс блокировать урон от атак, если вы недавно блокировали урон от атак",
       "ref": "#% Chance to Block Attack Damage if you have Blocked Attack Damage Recently",
       "types": [
         {
@@ -6807,12 +6827,12 @@
   {
     "conditions": [
       {
-        "string": "#% шанс заблокировать урон от атак, если недавно вы получали урон от удара",
+        "string": "#% шанс блокировать урон от атак, если вы недавно получали урон от удара",
         "ref": "#% Chance to Block Attack Damage if you were Damaged by a Hit Recently"
       }
     ],
     "mod": {
-      "text": "#% шанс заблокировать урон от атак, если недавно вы получали урон от удара",
+      "text": "#% шанс блокировать урон от атак, если вы недавно получали урон от удара",
       "ref": "#% Chance to Block Attack Damage if you were Damaged by a Hit Recently",
       "types": [
         {
@@ -7020,12 +7040,12 @@
   {
     "conditions": [
       {
-        "string": "#% шанс заблокировать урона от атак со щитом в руках",
+        "string": "#% шанс блокировать урон от атак со щитом в руках",
         "ref": "#% Chance to Block Attack Damage while holding a Shield"
       }
     ],
     "mod": {
-      "text": "#% шанс заблокировать урона от атак со щитом в руках",
+      "text": "#% шанс блокировать урон от атак со щитом в руках",
       "ref": "#% Chance to Block Attack Damage while holding a Shield",
       "types": [
         {
@@ -7242,12 +7262,12 @@
   {
     "conditions": [
       {
-        "string": "#% шанс блокировать урон от чар, если недавно вы блокировали урон от чар",
+        "string": "#% шанс блокировать урон от чар, если вы недавно блокировали урон от чар",
         "ref": "#% Chance to Block Spell Damage if you have Blocked Spell Damage Recently"
       }
     ],
     "mod": {
-      "text": "#% шанс блокировать урон от чар, если недавно вы блокировали урон от чар",
+      "text": "#% шанс блокировать урон от чар, если вы недавно блокировали урон от чар",
       "ref": "#% Chance to Block Spell Damage if you have Blocked Spell Damage Recently",
       "types": [
         {
@@ -7362,12 +7382,12 @@
   {
     "conditions": [
       {
-        "string": "#% шанс заблокировать урон от чар со щитом в руках",
+        "string": "#% шанс блокировать урон от чар со щитом в руках",
         "ref": "#% Chance to Block Spell Damage while holding a Shield"
       }
     ],
     "mod": {
-      "text": "#% шанс заблокировать урон от чар со щитом в руках",
+      "text": "#% шанс блокировать урон от чар со щитом в руках",
       "ref": "#% Chance to Block Spell Damage while holding a Shield",
       "types": [
         {
@@ -7791,12 +7811,12 @@
   {
     "conditions": [
       {
-        "string": "#% шанс создать освященную землю при блоке",
+        "string": "#% шанс создать освящённую землю при блоке",
         "ref": "#% chance to create Consecrated Ground when you Block"
       }
     ],
     "mod": {
-      "text": "#% шанс создать освященную землю при блоке",
+      "text": "#% шанс создать освящённую землю при блоке",
       "ref": "#% chance to create Consecrated Ground when you Block",
       "types": [
         {
@@ -7811,11 +7831,11 @@
   {
     "conditions": [
       {
-        "string": "#% шанс создать освященную землю, когда вы разбиваете врага",
+        "string": "#% шанс создать освящённую землю, когда вы разбиваете врага",
         "ref": "#% chance to create Consecrated Ground when you Shatter an Enemy"
       },
       {
-        "string": "Создает освященную землю, когда вы разбиваете врага",
+        "string": "Создаёт освящённую землю, когда вы разбиваете врага",
         "ref": "Create Consecrated Ground when you Shatter an Enemy",
         "condition": {
           "min": 100
@@ -7823,7 +7843,7 @@
       }
     ],
     "mod": {
-      "text": "#% шанс создать освященную землю, когда вы разбиваете врага",
+      "text": "#% шанс создать освящённую землю, когда вы разбиваете врага",
       "ref": "#% chance to create Consecrated Ground when you Shatter an Enemy",
       "types": [
         {
@@ -10712,6 +10732,12 @@
           "tradeId": [
             "explicit.stat_977908611"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_977908611"
+          ]
         }
       ]
     }
@@ -10851,6 +10877,7 @@
         {
           "name": "implicit",
           "tradeId": [
+            "implicit.stat_3885634897",
             "implicit.stat_795138349"
           ]
         },
@@ -16244,17 +16271,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение скорости атаки если подожжен",
+        "string": "#% повышение скорости атаки, если подожжён",
         "ref": "#% increased Attack Speed while Ignited"
       },
       {
-        "string": "#% снижение скорости атаки если подожжен",
+        "string": "#% снижение скорости атаки, если подожжён",
         "ref": "#% reduced Attack Speed while Ignited",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% повышение скорости атаки если подожжен",
+      "text": "#% повышение скорости атаки, если подожжён",
       "ref": "#% increased Attack Speed while Ignited",
       "types": [
         {
@@ -17743,17 +17770,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение скорости сотворения чар если подожжен",
+        "string": "#% повышение скорости сотворения чар, если подожжён",
         "ref": "#% increased Cast Speed while Ignited"
       },
       {
-        "string": "#% снижение скорости сотворения чар если подожжен",
+        "string": "#% снижение скорости сотворения чар, если подожжён",
         "ref": "#% reduced Cast Speed while Ignited",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% повышение скорости сотворения чар если подожжен",
+      "text": "#% повышение скорости сотворения чар, если подожжён",
       "ref": "#% increased Cast Speed while Ignited",
       "types": [
         {
@@ -19348,12 +19375,12 @@
   {
     "conditions": [
       {
-        "string": "Под действием Фанатизма #% повышение шанса критического удара по врагам на освящённой земле",
+        "string": "#% повышение шанса критического удара по врагам на освящённой земле под действием Фанатизма",
         "ref": "#% increased Critical Strike Chance against Enemies on Consecrated Ground while affected by Zealotry"
       }
     ],
     "mod": {
-      "text": "Под действием Фанатизма #% повышение шанса критического удара по врагам на освящённой земле",
+      "text": "#% повышение шанса критического удара по врагам на освящённой земле под действием Фанатизма",
       "ref": "#% increased Critical Strike Chance against Enemies on Consecrated Ground while affected by Zealotry",
       "types": [
         {
@@ -21201,17 +21228,17 @@
   {
     "conditions": [
       {
-        "string": "#% увеличение урона если подожжен",
+        "string": "#% увеличение урона, если подожжён",
         "ref": "#% increased Damage while Ignited"
       },
       {
-        "string": "#% уменьшение урона если подожжен",
+        "string": "#% уменьшение урона, если подожжён",
         "ref": "#% reduced Damage while Ignited",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% увеличение урона если подожжен",
+      "text": "#% увеличение урона, если подожжён",
       "ref": "#% increased Damage while Ignited",
       "types": [
         {
@@ -21313,17 +21340,17 @@
   {
     "conditions": [
       {
-        "string": "#% увеличение урона, пока вы находитесь на освященной земле",
+        "string": "#% увеличение урона при нахождении на освящённой земле",
         "ref": "#% increased Damage while on Consecrated Ground"
       },
       {
-        "string": "#% уменьшение урона, пока вы находитесь на освященной земле",
+        "string": "#% уменьшение урона при нахождении на освящённой земле",
         "ref": "#% reduced Damage while on Consecrated Ground",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% увеличение урона, пока вы находитесь на освященной земле",
+      "text": "#% увеличение урона при нахождении на освящённой земле",
       "ref": "#% increased Damage while on Consecrated Ground",
       "types": [
         {
@@ -23285,17 +23312,17 @@
   {
     "conditions": [
       {
-        "string": "#% усиление эффектов проклятий на вас при нахождении на освященной земле",
+        "string": "#% усиление эффектов проклятий на вас при нахождении на освящённой земле",
         "ref": "#% increased Effect of Curses on you while on Consecrated Ground"
       },
       {
-        "string": "#% ослабление эффектов проклятий на вас при нахождении на освященной земле",
+        "string": "#% ослабление эффектов проклятий на вас при нахождении на освящённой земле",
         "ref": "#% reduced Effect of Curses on you while on Consecrated Ground",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% усиление эффектов проклятий на вас при нахождении на освященной земле",
+      "text": "#% усиление эффектов проклятий на вас при нахождении на освящённой земле",
       "ref": "#% increased Effect of Curses on you while on Consecrated Ground",
       "types": [
         {
@@ -29220,17 +29247,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение затрат маны умений за каждые недавно потраченные 200 маны",
+        "string": "#% повышение затрат маны умениями за каждые недавно потраченные 200 маны",
         "ref": "#% increased Mana Cost of Skills for each 200 total Mana you have Spent Recently"
       },
       {
-        "string": "#% снижение затрат маны умений за каждые недавно потраченные 200 маны",
+        "string": "#% снижение затрат маны умениями за каждые недавно потраченные 200 маны",
         "ref": "#% reduced Mana Cost of Skills for each 200 total Mana you have Spent Recently",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% повышение затрат маны умений за каждые недавно потраченные 200 маны",
+      "text": "#% повышение затрат маны умениями за каждые недавно потраченные 200 маны",
       "ref": "#% increased Mana Cost of Skills for each 200 total Mana you have Spent Recently",
       "types": [
         {
@@ -29245,17 +29272,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение затрат маны умений за каждые 10 набожности",
+        "string": "#% повышение затрат маны умениями за каждые 10 набожности",
         "ref": "#% increased Mana Cost of Skills per 10 Devotion"
       },
       {
-        "string": "#% снижение затрат маны умений за каждые 10 набожности",
+        "string": "#% снижение затрат маны умениями за каждые 10 набожности",
         "ref": "#% reduced Mana Cost of Skills per 10 Devotion",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% повышение затрат маны умений за каждые 10 набожности",
+      "text": "#% повышение затрат маны умениями за каждые 10 набожности",
       "ref": "#% increased Mana Cost of Skills per 10 Devotion",
       "types": [
         {
@@ -29332,6 +29359,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3513180117"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3513180117"
           ]
         }
       ]
@@ -31472,17 +31505,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение скорости передвижения если вы подожжены",
+        "string": "#% повышение скорости передвижения, если подожжён",
         "ref": "#% increased Movement Speed while Ignited"
       },
       {
-        "string": "#% снижение скорости передвижения если вы подожжены",
+        "string": "#% снижение скорости передвижения, если подожжён",
         "ref": "#% reduced Movement Speed while Ignited",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% повышение скорости передвижения если вы подожжены",
+      "text": "#% повышение скорости передвижения, если подожжён",
       "ref": "#% increased Movement Speed while Ignited",
       "types": [
         {
@@ -37746,6 +37779,12 @@
           "tradeId": [
             "explicit.stat_141810208"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_141810208"
+          ]
         }
       ]
     }
@@ -38881,12 +38920,12 @@
   {
     "conditions": [
       {
-        "string": "#% урона от огня похищается в виде здоровья если подожжен",
+        "string": "#% урона от огня похищается в виде здоровья, если подожжён",
         "ref": "#% of Fire Damage Leeched as Life while Ignited"
       }
     ],
     "mod": {
-      "text": "#% урона от огня похищается в виде здоровья если подожжен",
+      "text": "#% урона от огня похищается в виде здоровья, если подожжён",
       "ref": "#% of Fire Damage Leeched as Life while Ignited",
       "types": [
         {
@@ -41021,17 +41060,17 @@
   {
     "conditions": [
       {
-        "string": "#% увеличение затрат маны умений приспешников",
+        "string": "#% повышение затрат маны умениями приспешников",
         "ref": "#% increased Mana Cost of Minion Skills"
       },
       {
-        "string": "#% уменьшение затрат маны умений приспешников",
+        "string": "#% снижение затрат маны умениями приспешников",
         "ref": "#% reduced Mana Cost of Minion Skills",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% уменьшение затрат маны умений приспешников",
+      "text": "#% снижение затрат маны умениями приспешников",
       "ref": "#% reduced Mana Cost of Minion Skills",
       "types": [
         {
@@ -41047,17 +41086,17 @@
   {
     "conditions": [
       {
-        "string": "#% увеличение затрат маны Сотворением призраков",
+        "string": "#% повышение затрат маны Сотворением призраков",
         "ref": "#% increased Mana Cost of Raise Spectre"
       },
       {
-        "string": "#% уменьшение затрат маны Сотворением призраков",
+        "string": "#% снижение затрат маны Сотворением призраков",
         "ref": "#% reduced Mana Cost of Raise Spectre",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% уменьшение затрат маны Сотворением призраков",
+      "text": "#% снижение затрат маны Сотворением призраков",
       "ref": "#% reduced Mana Cost of Raise Spectre",
       "types": [
         {
@@ -41073,17 +41112,17 @@
   {
     "conditions": [
       {
-        "string": "#% снижение затрат маны умений",
+        "string": "#% снижение затрат маны умениями",
         "ref": "#% reduced Mana Cost of Skills"
       },
       {
-        "string": "#% повышение затрат маны умений",
+        "string": "#% повышение затрат маны умениями",
         "ref": "#% increased Mana Cost of Skills",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% снижение затрат маны умений",
+      "text": "#% снижение затрат маны умениями",
       "ref": "#% reduced Mana Cost of Skills",
       "types": [
         {
@@ -41110,17 +41149,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение затрат маны умений, если вы недавно получали удар",
+        "string": "#% повышение затрат маны умениями, если вы недавно получали удар",
         "ref": "#% increased Mana Cost of Skills if you've been Hit Recently"
       },
       {
-        "string": "#% снижение затрат маны умений, если вы недавно получали удар",
+        "string": "#% снижение затрат маны умениями, если вы недавно получали удар",
         "ref": "#% reduced Mana Cost of Skills if you've been Hit Recently",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% снижение затрат маны умений, если вы недавно получали удар",
+      "text": "#% снижение затрат маны умениями, если вы недавно получали удар",
       "ref": "#% reduced Mana Cost of Skills if you've been Hit Recently",
       "types": [
         {
@@ -41136,17 +41175,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение затрат маны умений при малом количестве здоровья",
+        "string": "#% повышение затрат маны умениями при малом количестве здоровья",
         "ref": "#% increased Mana Cost of Skills when on Low Life"
       },
       {
-        "string": "#% снижение затрат маны умений при малом количестве здоровья",
+        "string": "#% снижение затрат маны умениями при малом количестве здоровья",
         "ref": "#% reduced Mana Cost of Skills when on Low Life",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% снижение затрат маны умений при малом количестве здоровья",
+      "text": "#% снижение затрат маны умениями при малом количестве здоровья",
       "ref": "#% reduced Mana Cost of Skills when on Low Life",
       "types": [
         {
@@ -41162,17 +41201,17 @@
   {
     "conditions": [
       {
-        "string": "#% повышение затрат маны умений тотемов, которые сотворяют ауры",
+        "string": "#% повышение затрат маны умениями тотемов, которые сотворяют ауры",
         "ref": "#% increased Mana Cost of Totem Skills that cast an Aura"
       },
       {
-        "string": "#% снижение затрат маны умений тотемов, которые сотворяют ауры",
+        "string": "#% снижение затрат маны умениями тотемов, которые сотворяют ауры",
         "ref": "#% reduced Mana Cost of Totem Skills that cast an Aura",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% снижение затрат маны умений тотемов, которые сотворяют ауры",
+      "text": "#% снижение затрат маны умениями тотемов, которые сотворяют ауры",
       "ref": "#% reduced Mana Cost of Totem Skills that cast an Aura",
       "types": [
         {
@@ -50308,12 +50347,12 @@
   {
     "conditions": [
       {
-        "string": "1 добавленное пассивное умение - Упертый студент",
+        "string": "1 добавленное пассивное умение - Упёртый воспитанник",
         "ref": "1 Added Passive Skill is Stubborn Student"
       }
     ],
     "mod": {
-      "text": "1 добавленное пассивное умение - Упертый студент",
+      "text": "1 добавленное пассивное умение - Упёртый воспитанник",
       "ref": "1 Added Passive Skill is Stubborn Student",
       "types": [
         {
@@ -56803,12 +56842,12 @@
   {
     "conditions": [
       {
-        "string": "Чародейский покров дарует регенерацию здоровья в секунду в размере #% от затраченной маны",
+        "string": "Чародейский покров дарует регенерацию здоровья в секунду в размере #% от израсходованной маны",
         "ref": "Arcane Cloak grants Life Regeneration equal to #% of Mana Spent per Second"
       }
     ],
     "mod": {
-      "text": "Чародейский покров дарует регенерацию здоровья в секунду в размере #% от затраченной маны",
+      "text": "Чародейский покров дарует регенерацию здоровья в секунду в размере #% от израсходованной маны",
       "ref": "Arcane Cloak grants Life Regeneration equal to #% of Mana Spent per Second",
       "types": [
         {
@@ -62726,12 +62765,12 @@
   {
     "conditions": [
       {
-        "string": "# маны к итоговой стоимости поддерживаемых умений",
+        "string": "# к итоговому расходу маны поддерживаемыми умениями",
         "ref": "Channelling Skills have # to Total Mana Cost"
       }
     ],
     "mod": {
-      "text": "# маны к итоговой стоимости поддерживаемых умений",
+      "text": "# к итоговому расходу маны поддерживаемыми умениями",
       "ref": "Channelling Skills have # to Total Mana Cost",
       "types": [
         {
@@ -63506,17 +63545,17 @@
   {
     "conditions": [
       {
-        "string": "Враги, находящиеся на освященной земле, созданной Тотемом священного огня, получают увеличенный на #% урон",
+        "string": "Враги, находящиеся на освящённой земле, созданной Тотемом священного огня, получают увеличенный на #% урон",
         "ref": "Consecrated Ground from Holy Flame Totem applies #% increased Damage taken to Enemies"
       },
       {
-        "string": "Враги, находящиеся на освященной земле, созданной Тотемом священного огня, получают уменьшенный на #% урон",
+        "string": "Враги, находящиеся на освящённой земле, созданной Тотемом священного огня, получают уменьшенный на #% урон",
         "ref": "Consecrated Ground from Holy Flame Totem applies #% reduced Damage taken to Enemies",
         "negate": true
       }
     ],
     "mod": {
-      "text": "Враги, находящиеся на освященной земле, созданной Тотемом священного огня, получают увеличенный на #% урон",
+      "text": "Враги, находящиеся на освящённой земле, созданной Тотемом священного огня, получают увеличенный на #% урон",
       "ref": "Consecrated Ground from Holy Flame Totem applies #% increased Damage taken to Enemies",
       "types": [
         {
@@ -63933,12 +63972,12 @@
   {
     "conditions": [
       {
-        "string": "Создаёт нечестивую землю вместо освященной земли",
+        "string": "Создаёт нечестивую землю вместо освящённой земли",
         "ref": "Create Profane Ground instead of Consecrated Ground"
       }
     ],
     "mod": {
-      "text": "Создаёт нечестивую землю вместо освященной земли",
+      "text": "Создаёт нечестивую землю вместо освящённой земли",
       "ref": "Create Profane Ground instead of Consecrated Ground",
       "types": [
         {
@@ -64013,19 +64052,19 @@
   {
     "conditions": [
       {
-        "string": "Создаёт освященную землю при нанесении критического удара",
+        "string": "Создаёт освящённую землю при нанесении критического удара",
         "ref": "Creates Consecrated Ground on Critical Strike",
         "condition": {
           "min": 100
         }
       },
       {
-        "string": "#% шанс создать освященную землю при нанесении критического удара",
+        "string": "#% шанс создать освящённую землю при нанесении критического удара",
         "ref": "#% chance on Critical Strike to create Consecrated Ground"
       }
     ],
     "mod": {
-      "text": "Создаёт освященную землю при нанесении критического удара",
+      "text": "Создаёт освящённую землю при нанесении критического удара",
       "ref": "Creates Consecrated Ground on Critical Strike",
       "types": [
         {
@@ -64040,12 +64079,12 @@
   {
     "conditions": [
       {
-        "string": "При использовании создает освященную землю",
+        "string": "При использовании создаёт освящённую землю",
         "ref": "Creates Consecrated Ground on Use"
       }
     ],
     "mod": {
-      "text": "При использовании создает освященную землю",
+      "text": "При использовании создаёт освящённую землю",
       "ref": "Creates Consecrated Ground on Use",
       "types": [
         {
@@ -65303,6 +65342,26 @@
   {
     "conditions": [
       {
+        "string": "Урон оружием пробивает #% сопротивления огню",
+        "ref": "Damage with Weapons Penetrates #% Fire Resistance"
+      }
+    ],
+    "mod": {
+      "text": "Урон оружием пробивает #% сопротивления огню",
+      "ref": "Damage with Weapons Penetrates #% Fire Resistance",
+      "types": [
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1123291426"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Наложенные вами состояния, наносящие урон, под действием Злорадства наносят урон на #% быстрее",
         "ref": "Damaging Ailments you inflict deal Damage #% faster while affected by Malevolence"
       }
@@ -65432,12 +65491,12 @@
   {
     "conditions": [
       {
-        "string": "Не наносит урон от молнии",
+        "string": "Наносит только урон от молнии",
         "ref": "Deal no Non-Lightning Damage"
       }
     ],
     "mod": {
-      "text": "Не наносит урон от молнии",
+      "text": "Наносит только урон от молнии",
       "ref": "Deal no Non-Lightning Damage",
       "types": [
         {
@@ -66371,12 +66430,12 @@
   {
     "conditions": [
       {
-        "string": "Эффекты освященной земли, которую вы создали под действием Фанатизма, не спадают в течение # секунд",
+        "string": "Эффекты освящённой земли, которую вы создали под действием Фанатизма, не спадают в течение # секунд",
         "ref": "Effects of Consecrated Ground you create while affected by Zealotry Linger for # seconds"
       }
     ],
     "mod": {
-      "text": "Эффекты освященной земли, которую вы создали под действием Фанатизма, не спадают в течение # секунд",
+      "text": "Эффекты освящённой земли, которую вы создали под действием Фанатизма, не спадают в течение # секунд",
       "ref": "Effects of Consecrated Ground you create while affected by Zealotry Linger for # seconds",
       "types": [
         {
@@ -74653,12 +74712,12 @@
   {
     "conditions": [
       {
-        "string": "Иммунитет к охлаждению и заморозке пока подожжён",
+        "string": "Иммунитет к охлаждению и заморозке, если подожжён",
         "ref": "Immune to Freeze and Chill while Ignited"
       }
     ],
     "mod": {
-      "text": "Иммунитет к охлаждению и заморозке пока подожжён",
+      "text": "Иммунитет к охлаждению и заморозке, если подожжён",
       "ref": "Immune to Freeze and Chill while Ignited",
       "types": [
         {
@@ -81573,12 +81632,12 @@
   {
     "conditions": [
       {
-        "string": "Неподдерживаемые умения имеют # к итоговой стоимости маны умений",
+        "string": "# к итоговому расходу маны неподдерживаемыми умениями",
         "ref": "Non-Channelling Skills have # to Total Mana Cost"
       }
     ],
     "mod": {
-      "text": "Неподдерживаемые умения имеют # к итоговой стоимости маны умений",
+      "text": "# к итоговому расходу маны неподдерживаемыми умениями",
       "ref": "Non-Channelling Skills have # to Total Mana Cost",
       "types": [
         {
@@ -81599,12 +81658,12 @@
   {
     "conditions": [
       {
-        "string": "Неподдерживаемые умения имеют # к итоговой стоимости маны умений под действием Ясности ума",
+        "string": "# к итоговому расходу маны неподдерживаемыми умениями под действием Ясности ума",
         "ref": "Non-Channelling Skills have # to Total Mana Cost while affected by Clarity"
       }
     ],
     "mod": {
-      "text": "Неподдерживаемые умения имеют # к итоговой стоимости маны умений под действием Ясности ума",
+      "text": "# к итоговому расходу маны неподдерживаемыми умениями под действием Ясности ума",
       "ref": "Non-Channelling Skills have # to Total Mana Cost while affected by Clarity",
       "types": [
         {
@@ -81749,12 +81808,12 @@
   {
     "conditions": [
       {
-        "string": "Значимые пассивные умения в радиусе изменены и\nтеперь даруют: #% повышение затрат маны умений и #% увеличение урона от чар",
+        "string": "Значимые пассивные умения в радиусе изменены и\nтеперь даруют: #% повышение затрат маны умениями и #% увеличение урона от чар",
         "ref": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage"
       }
     ],
     "mod": {
-      "text": "Значимые пассивные умения в радиусе изменены и\nтеперь даруют: #% повышение затрат маны умений и #% увеличение урона от чар",
+      "text": "Значимые пассивные умения в радиусе изменены и\nтеперь даруют: #% повышение затрат маны умениями и #% увеличение урона от чар",
       "ref": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage",
       "types": [
         {
@@ -86440,12 +86499,12 @@
   {
     "conditions": [
       {
-        "string": "Регенерирует # здоровья в секунду если подожжен",
+        "string": "Регенерирует # здоровья в секунду, если подожжён",
         "ref": "Regenerate # Life per second while Ignited"
       }
     ],
     "mod": {
-      "text": "Регенерирует # здоровья в секунду если подожжен",
+      "text": "Регенерирует # здоровья в секунду, если подожжён",
       "ref": "Regenerate # Life per second while Ignited",
       "types": [
         {
@@ -87586,17 +87645,17 @@
   {
     "conditions": [
       {
-        "string": "Кольцо в правом слоте: #% увеличение получаемого отраженного физического урона вами и вашими приспешниками",
+        "string": "Кольцо в правом слоте: #% увеличение отражённого физического урона, получаемого вами и вашими приспешниками",
         "ref": "Right ring slot: You and your Minions take #% increased Reflected Physical Damage"
       },
       {
-        "string": "Кольцо в правом слоте: #% уменьшение получаемого отраженного физического урона вами и вашими приспешниками",
+        "string": "Кольцо в правом слоте: #% уменьшение отражённого физического урона, получаемого вами и вашими приспешниками",
         "ref": "Right ring slot: You and your Minions take #% reduced Reflected Physical Damage",
         "negate": true
       }
     ],
     "mod": {
-      "text": "Кольцо в правом слоте: #% уменьшение получаемого отраженного физического урона вами и вашими приспешниками",
+      "text": "Кольцо в правом слоте: #% уменьшение отражённого физического урона, получаемого вами и вашими приспешниками",
       "ref": "Right ring slot: You and your Minions take #% reduced Reflected Physical Damage",
       "types": [
         {
@@ -88341,17 +88400,17 @@
   {
     "conditions": [
       {
-        "string": "Накладывает шок на врагов такой силы, как если бы по ним нанесли на #% больше урона",
+        "string": "Накладывает на врагов шок такой силы, как если бы по ним нанесли на #% больше урона",
         "ref": "Shock Enemies as though dealing #% more Damage"
       },
       {
-        "string": "Накладывает шок на врагов такой силы, как если бы по ним нанесли на #% меньше урон",
+        "string": "Накладывает на врагов шок такой силы, как если бы по ним нанесли на #% меньше урона",
         "ref": "Shock Enemies as though dealing #% less Damage",
         "negate": true
       }
     ],
     "mod": {
-      "text": "Накладывает шок на врагов такой силы, как если бы по ним нанесли на #% больше урона",
+      "text": "Накладывает на врагов шок такой силы, как если бы по ним нанесли на #% больше урона",
       "ref": "Shock Enemies as though dealing #% more Damage",
       "types": [
         {
@@ -89493,12 +89552,12 @@
   {
     "conditions": [
       {
-        "string": "# к итоговой стоимости маны размещённых атак",
+        "string": "# к итоговому расходу маны размещёнными атаками",
         "ref": "Socketed Attacks have # to Total Mana Cost"
       }
     ],
     "mod": {
-      "text": "# к итоговой стоимости маны размещённых атак",
+      "text": "# к итоговому расходу маны размещёнными атаками",
       "ref": "Socketed Attacks have # to Total Mana Cost",
       "types": [
         {
@@ -89584,7 +89643,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Added Chaos Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Урон хаосом уровня",
       "ref": "Socketed Gems are Supported by Level # Added Chaos Damage",
       "types": [
         {
@@ -89605,7 +89664,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Added Cold Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Урон холодом уровня",
       "ref": "Socketed Gems are Supported by Level # Added Cold Damage",
       "types": [
         {
@@ -89626,7 +89685,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Added Fire Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Урон огнем уровня",
       "ref": "Socketed Gems are Supported by Level # Added Fire Damage",
       "types": [
         {
@@ -89653,7 +89712,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Added Lightning Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Урон молнией уровня",
       "ref": "Socketed Gems are Supported by Level # Added Lightning Damage",
       "types": [
         {
@@ -89700,7 +89759,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Advanced Traps уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Улучшенные ловушки уровня",
       "ref": "Socketed Gems are Supported by Level # Advanced Traps",
       "types": [
         {
@@ -89721,7 +89780,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Ancestral Call уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Зов предков уровня",
       "ref": "Socketed Gems are Supported by Level # Ancestral Call",
       "types": [
         {
@@ -89742,7 +89801,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Arcane Surge уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Колдовской выброс уровня",
       "ref": "Socketed Gems are Supported by Level # Arcane Surge",
       "types": [
         {
@@ -89763,7 +89822,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Archmage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Архимаг уровня",
       "ref": "Socketed Gems are Supported by Level # Archmage",
       "types": [
         {
@@ -89784,7 +89843,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Arrow Nova уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Кольцо стрел уровня",
       "ref": "Socketed Gems are Supported by Level # Arrow Nova",
       "types": [
         {
@@ -90085,7 +90144,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Ballista Totem уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Тотем-баллиста уровня",
       "ref": "Socketed Gems are Supported by Level # Ballista Totem",
       "types": [
         {
@@ -90106,7 +90165,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Barrage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Очередь уровня",
       "ref": "Socketed Gems are Supported by Level # Barrage",
       "types": [
         {
@@ -90127,7 +90186,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Blasphemy уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Богохульство уровня",
       "ref": "Socketed Gems are Supported by Level # Blasphemy",
       "types": [
         {
@@ -90148,7 +90207,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Blastchain Mine уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Цепной подрыв уровня",
       "ref": "Socketed Gems are Supported by Level # Blastchain Mine",
       "types": [
         {
@@ -90235,7 +90294,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Blood Magic уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Магия крови уровня",
       "ref": "Socketed Gems are Supported by Level # Blood Magic",
       "types": [
         {
@@ -90268,7 +90327,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Bloodlust уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Жажда крови уровня",
       "ref": "Socketed Gems are Supported by Level # Bloodlust",
       "types": [
         {
@@ -90289,7 +90348,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Bonechill уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Леденящее охлаждение уровня",
       "ref": "Socketed Gems are Supported by Level # Bonechill",
       "types": [
         {
@@ -90310,7 +90369,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Brutality уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Жестокость уровня",
       "ref": "Socketed Gems are Supported by Level # Brutality",
       "types": [
         {
@@ -90331,7 +90390,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Burning Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Урон от горения уровня",
       "ref": "Socketed Gems are Supported by Level # Burning Damage",
       "types": [
         {
@@ -90418,7 +90477,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Cast when Damage Taken уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Сотворение чар при получении урона уровня",
       "ref": "Socketed Gems are Supported by Level # Cast when Damage Taken",
       "types": [
         {
@@ -90485,7 +90544,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Chain уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Цепь уровня",
       "ref": "Socketed Gems are Supported by Level # Chain",
       "types": [
         {
@@ -90566,7 +90625,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Charged Mines уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Заряженные мины уровня",
       "ref": "Socketed Gems are Supported by Level # Charged Mines",
       "types": [
         {
@@ -90587,7 +90646,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Charged Traps уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Заряженные ловушки уровня",
       "ref": "Socketed Gems are Supported by Level # Charged Traps",
       "types": [
         {
@@ -90608,7 +90667,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Close Combat уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Бой вплотную уровня",
       "ref": "Socketed Gems are Supported by Level # Close Combat",
       "types": [
         {
@@ -90649,7 +90708,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Cold Penetration уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Пронизывающий холод уровня",
       "ref": "Socketed Gems are Supported by Level # Cold Penetration",
       "types": [
         {
@@ -90670,7 +90729,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Cold to Fire уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Холод в огонь уровня",
       "ref": "Socketed Gems are Supported by Level # Cold to Fire",
       "types": [
         {
@@ -90691,7 +90750,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Combustion уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Воспламенение уровня",
       "ref": "Socketed Gems are Supported by Level # Combustion",
       "types": [
         {
@@ -90712,7 +90771,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Concentrated Effect уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Средоточие уровня",
       "ref": "Socketed Gems are Supported by Level # Concentrated Effect",
       "types": [
         {
@@ -90733,7 +90792,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Controlled Destruction уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Контролируемое разрушение уровня",
       "ref": "Socketed Gems are Supported by Level # Controlled Destruction",
       "types": [
         {
@@ -90754,7 +90813,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Culling Strike уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Добивание уровня",
       "ref": "Socketed Gems are Supported by Level # Culling Strike",
       "types": [
         {
@@ -90775,7 +90834,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Curse On Hit уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Проклятие при попадании уровня",
       "ref": "Socketed Gems are Supported by Level # Curse On Hit",
       "types": [
         {
@@ -90816,7 +90875,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Deadly Ailments уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Смертельные состояния уровня",
       "ref": "Socketed Gems are Supported by Level # Deadly Ailments",
       "types": [
         {
@@ -90837,7 +90896,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Deathmark уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Метка смерти уровня",
       "ref": "Socketed Gems are Supported by Level # Deathmark",
       "types": [
         {
@@ -90858,7 +90917,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Decay уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Разложение уровня",
       "ref": "Socketed Gems are Supported by Level # Decay",
       "types": [
         {
@@ -90879,7 +90938,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Efficacy уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Эффективность уровня",
       "ref": "Socketed Gems are Supported by Level # Efficacy",
       "types": [
         {
@@ -90946,7 +91005,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Elemental Focus уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Концентрация стихий уровня",
       "ref": "Socketed Gems are Supported by Level # Elemental Focus",
       "types": [
         {
@@ -90987,7 +91046,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Elemental Proliferation уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Разгул стихий уровня",
       "ref": "Socketed Gems are Supported by Level # Elemental Proliferation",
       "types": [
         {
@@ -91034,7 +91093,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Endurance Charge on Melee Stun уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Заряд выносливости при оглушении в ближнем бою уровня",
       "ref": "Socketed Gems are Supported by Level # Endurance Charge on Melee Stun",
       "types": [
         {
@@ -91055,7 +91114,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Energy Leech уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Похищение энергетического щита уровня",
       "ref": "Socketed Gems are Supported by Level # Energy Leech",
       "types": [
         {
@@ -91116,7 +91175,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Faster Attacks уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Ускорение атак уровня",
       "ref": "Socketed Gems are Supported by Level # Faster Attacks",
       "types": [
         {
@@ -91137,7 +91196,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Faster Casting уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Ускоренное сотворение чар уровня",
       "ref": "Socketed Gems are Supported by Level # Faster Casting",
       "types": [
         {
@@ -91190,7 +91249,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Feeding Frenzy уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Голодное остервенение уровня",
       "ref": "Socketed Gems are Supported by Level # Feeding Frenzy",
       "types": [
         {
@@ -91211,7 +91270,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Fire Penetration уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Пронизывающий жар уровня",
       "ref": "Socketed Gems are Supported by Level # Fire Penetration",
       "types": [
         {
@@ -91233,7 +91292,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Fist of War уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Кулак войны уровня",
       "ref": "Socketed Gems are Supported by Level # Fist of War",
       "types": [
         {
@@ -91279,7 +91338,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Fortify уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Укрепление уровня",
       "ref": "Socketed Gems are Supported by Level # Fortify",
       "types": [
         {
@@ -91306,7 +91365,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Generosity уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Щедрость уровня",
       "ref": "Socketed Gems are Supported by Level # Generosity",
       "types": [
         {
@@ -91327,7 +91386,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Greater Multiple Projectiles уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Много дополнительных снарядов уровня",
       "ref": "Socketed Gems are Supported by Level # Greater Multiple Projectiles",
       "types": [
         {
@@ -91368,7 +91427,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Greater Volley уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Большой залп уровня",
       "ref": "Socketed Gems are Supported by Level # Greater Volley",
       "types": [
         {
@@ -91389,7 +91448,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # High-Impact Mine уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Усиленная мина уровня",
       "ref": "Socketed Gems are Supported by Level # High-Impact Mine",
       "types": [
         {
@@ -91410,7 +91469,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Hypothermia уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Переохлаждение уровня",
       "ref": "Socketed Gems are Supported by Level # Hypothermia",
       "types": [
         {
@@ -91431,7 +91490,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Ice Bite уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Укус льда уровня",
       "ref": "Socketed Gems are Supported by Level # Ice Bite",
       "types": [
         {
@@ -91452,7 +91511,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Ignite Proliferation уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Распространение поджога уровня",
       "ref": "Socketed Gems are Supported by Level # Ignite Proliferation",
       "types": [
         {
@@ -91473,7 +91532,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Immolate уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Жертвенность уровня",
       "ref": "Socketed Gems are Supported by Level # Immolate",
       "types": [
         {
@@ -91494,7 +91553,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Impale уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Прокол уровня",
       "ref": "Socketed Gems are Supported by Level # Impale",
       "types": [
         {
@@ -91515,7 +91574,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Increased Area of Effect уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Расширенная область действия уровня",
       "ref": "Socketed Gems are Supported by Level # Increased Area of Effect",
       "types": [
         {
@@ -91568,7 +91627,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Increased Critical Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Усиление критических ударов уровня",
       "ref": "Socketed Gems are Supported by Level # Increased Critical Damage",
       "types": [
         {
@@ -91588,7 +91647,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Increased Critical Strikes уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Учащение критических ударов уровня",
       "ref": "Socketed Gems are Supported by Level # Increased Critical Strikes",
       "types": [
         {
@@ -91609,7 +91668,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Increased Duration уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Продление уровня",
       "ref": "Socketed Gems are Supported by Level # Increased Duration",
       "types": [
         {
@@ -91630,7 +91689,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Infernal Legion уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Пылающий легион уровня",
       "ref": "Socketed Gems are Supported by Level # Infernal Legion",
       "types": [
         {
@@ -91651,7 +91710,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Infused Channelling уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Усиленное поддержание уровня",
       "ref": "Socketed Gems are Supported by Level # Infused Channelling",
       "types": [
         {
@@ -91672,7 +91731,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Innervate уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Возбуждение уровня",
       "ref": "Socketed Gems are Supported by Level # Innervate",
       "types": [
         {
@@ -91693,7 +91752,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Inspiration уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Вдохновение уровня",
       "ref": "Socketed Gems are Supported by Level # Inspiration",
       "types": [
         {
@@ -91721,7 +91780,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Intensify уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Интенсивность уровня",
       "ref": "Socketed Gems are Supported by Level # Intensify",
       "types": [
         {
@@ -91743,7 +91802,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Iron Grip уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Железная хватка уровня",
       "ref": "Socketed Gems are Supported by Level # Iron Grip",
       "types": [
         {
@@ -91764,7 +91823,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Iron Will уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Железная воля уровня",
       "ref": "Socketed Gems are Supported by Level # Iron Will",
       "types": [
         {
@@ -91805,7 +91864,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Item Rarity уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Редкость предметов уровня",
       "ref": "Socketed Gems are Supported by Level # Item Rarity",
       "types": [
         {
@@ -91826,7 +91885,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Knockback уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Отбрасывание уровня",
       "ref": "Socketed Gems are Supported by Level # Knockback",
       "types": [
         {
@@ -91847,7 +91906,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Less Duration уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Сокращение уровня",
       "ref": "Socketed Gems are Supported by Level # Less Duration",
       "types": [
         {
@@ -91868,7 +91927,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Lesser Multiple Projectiles уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Дополнительные снаряды уровня",
       "ref": "Socketed Gems are Supported by Level # Lesser Multiple Projectiles",
       "types": [
         {
@@ -91889,7 +91948,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Lesser Poison уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Меньший яд уровня",
       "ref": "Socketed Gems are Supported by Level # Lesser Poison",
       "types": [
         {
@@ -91962,7 +92021,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Lightning Penetration уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Пронизывающие молнии уровня",
       "ref": "Socketed Gems are Supported by Level # Lightning Penetration",
       "types": [
         {
@@ -91983,7 +92042,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Maim уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Увечье уровня",
       "ref": "Socketed Gems are Supported by Level # Maim",
       "types": [
         {
@@ -92004,7 +92063,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Mana Leech уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Вытягивание маны уровня",
       "ref": "Socketed Gems are Supported by Level # Mana Leech",
       "types": [
         {
@@ -92025,7 +92084,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Meat Shield уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Живой щит уровня",
       "ref": "Socketed Gems are Supported by Level # Meat Shield",
       "types": [
         {
@@ -92046,7 +92105,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Melee Physical Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Физический урон ближнего боя уровня",
       "ref": "Socketed Gems are Supported by Level # Melee Physical Damage",
       "types": [
         {
@@ -92093,7 +92152,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Minefield уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Минное поле уровня",
       "ref": "Socketed Gems are Supported by Level # Minefield",
       "types": [
         {
@@ -92114,7 +92173,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Minion Damage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Урон приспешников уровня",
       "ref": "Socketed Gems are Supported by Level # Minion Damage",
       "types": [
         {
@@ -92135,7 +92194,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Minion Life уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Здоровье приспешников уровня",
       "ref": "Socketed Gems are Supported by Level # Minion Life",
       "types": [
         {
@@ -92156,7 +92215,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Minion Speed уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Скорость приспешников уровня",
       "ref": "Socketed Gems are Supported by Level # Minion Speed",
       "types": [
         {
@@ -92177,7 +92236,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Mirage Archer уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Призрачный лучник уровня",
       "ref": "Socketed Gems are Supported by Level # Mirage Archer",
       "types": [
         {
@@ -92198,7 +92257,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Multiple Totems уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Множество тотемов уровня",
       "ref": "Socketed Gems are Supported by Level # Multiple Totems",
       "types": [
         {
@@ -92219,7 +92278,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Multiple Traps уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Дополнительные ловушки уровня",
       "ref": "Socketed Gems are Supported by Level # Multiple Traps",
       "types": [
         {
@@ -92266,7 +92325,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Nightblade уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Клинок во тьме уровня",
       "ref": "Socketed Gems are Supported by Level # Nightblade",
       "types": [
         {
@@ -92287,7 +92346,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Onslaught уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Боевой раж уровня",
       "ref": "Socketed Gems are Supported by Level # Onslaught",
       "types": [
         {
@@ -92354,7 +92413,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Pierce уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Пронзание уровня",
       "ref": "Socketed Gems are Supported by Level # Pierce",
       "types": [
         {
@@ -92375,7 +92434,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Point Blank уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Стрельба в упор уровня",
       "ref": "Socketed Gems are Supported by Level # Point Blank",
       "types": [
         {
@@ -92396,7 +92455,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Poison уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Яд уровня",
       "ref": "Socketed Gems are Supported by Level # Poison",
       "types": [
         {
@@ -92437,7 +92496,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Pulverise уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Распыление уровня",
       "ref": "Socketed Gems are Supported by Level # Pulverise",
       "types": [
         {
@@ -92458,7 +92517,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Rage уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Свирепость уровня",
       "ref": "Socketed Gems are Supported by Level # Rage",
       "types": [
         {
@@ -92479,7 +92538,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Ruthless уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Беспощадность уровня",
       "ref": "Socketed Gems are Supported by Level # Ruthless",
       "types": [
         {
@@ -92500,7 +92559,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Second Wind уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Второе дыхание уровня",
       "ref": "Socketed Gems are Supported by Level # Second Wind",
       "types": [
         {
@@ -92521,7 +92580,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Shockwave уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Ударная волна уровня",
       "ref": "Socketed Gems are Supported by Level # Shockwave",
       "types": [
         {
@@ -92541,7 +92600,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Slower Projectiles уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Замедленные снаряды уровня",
       "ref": "Socketed Gems are Supported by Level # Slower Projectiles",
       "types": [
         {
@@ -92562,7 +92621,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Spell Cascade уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Каскад чар уровня",
       "ref": "Socketed Gems are Supported by Level # Spell Cascade",
       "types": [
         {
@@ -92583,7 +92642,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Spell Echo уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Эхо магии уровня",
       "ref": "Socketed Gems are Supported by Level # Spell Echo",
       "types": [
         {
@@ -92605,7 +92664,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Spell Totem уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Колдующий тотем уровня",
       "ref": "Socketed Gems are Supported by Level # Spell Totem",
       "types": [
         {
@@ -92652,7 +92711,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Summon Phantasm уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Призыв фантома уровня",
       "ref": "Socketed Gems are Supported by Level # Summon Phantasm",
       "types": [
         {
@@ -92673,7 +92732,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Swift Affliction уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Стремительный недуг уровня",
       "ref": "Socketed Gems are Supported by Level # Swift Affliction",
       "types": [
         {
@@ -92694,7 +92753,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Swift Assembly уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Быстрая сборка уровня",
       "ref": "Socketed Gems are Supported by Level # Swift Assembly",
       "types": [
         {
@@ -92715,7 +92774,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Swiftbrand уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Быстрое клеймение уровня",
       "ref": "Socketed Gems are Supported by Level # Swiftbrand",
       "types": [
         {
@@ -92735,7 +92794,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Trap уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Ловушка уровня",
       "ref": "Socketed Gems are Supported by Level # Trap",
       "types": [
         {
@@ -92776,7 +92835,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Unbound Ailments уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Безграничные состояния уровня",
       "ref": "Socketed Gems are Supported by Level # Unbound Ailments",
       "types": [
         {
@@ -92797,7 +92856,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Unleash уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Высвобождение уровня",
       "ref": "Socketed Gems are Supported by Level # Unleash",
       "types": [
         {
@@ -92818,7 +92877,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Urgent Orders уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Срочные приказы уровня",
       "ref": "Socketed Gems are Supported by Level # Urgent Orders",
       "types": [
         {
@@ -92838,7 +92897,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Vicious Projectiles уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Яростные снаряды уровня",
       "ref": "Socketed Gems are Supported by Level # Vicious Projectiles",
       "types": [
         {
@@ -92859,7 +92918,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Vile Toxins уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Едкие токсины уровня",
       "ref": "Socketed Gems are Supported by Level # Vile Toxins",
       "types": [
         {
@@ -92880,7 +92939,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Void Manipulation уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Манипуляция пустотой уровня",
       "ref": "Socketed Gems are Supported by Level # Void Manipulation",
       "types": [
         {
@@ -92901,7 +92960,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Volley уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Залп уровня",
       "ref": "Socketed Gems are Supported by Level # Volley",
       "types": [
         {
@@ -92922,7 +92981,7 @@
       }
     ],
     "mod": {
-      "text": "Размещенные камни усилены камнем поддержки # Withering Touch уровня",
+      "text": "Размещенные камни усилены камнем поддержки # Губительное прикосновение уровня",
       "ref": "Socketed Gems are Supported by Level # Withering Touch",
       "types": [
         {
@@ -93668,17 +93727,17 @@
   {
     "conditions": [
       {
-        "string": "#% увеличение стоимости маны размещённых чар",
+        "string": "#% повышение затрат маны размещёнными чарами",
         "ref": "Socketed Spells have #% increased Mana Cost"
       },
       {
-        "string": "#% уменьшение стоимости маны размещённых чар",
+        "string": "#% снижение затрат маны размещёнными чарами",
         "ref": "Socketed Spells have #% reduced Mana Cost",
         "negate": true
       }
     ],
     "mod": {
-      "text": "#% уменьшение стоимости маны размещённых чар",
+      "text": "#% снижение затрат маны размещёнными чарами",
       "ref": "Socketed Spells have #% reduced Mana Cost",
       "types": [
         {
@@ -97517,6 +97576,12 @@
           "tradeId": [
             "explicit.stat_1643688236"
           ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1643688236"
+          ]
         }
       ]
     }
@@ -97802,6 +97867,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_2234049899"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_2234049899"
           ]
         }
       ]
@@ -102801,12 +102872,12 @@
   {
     "conditions": [
       {
-        "string": "Пока вы находитесь на одном месте, вокруг вас создается освященная земля",
+        "string": "Пока вы находитесь на одном месте, вокруг вас создаётся освящённая земля",
         "ref": "You have Consecrated Ground around you while stationary"
       }
     ],
     "mod": {
-      "text": "Пока вы находитесь на одном месте, вокруг вас создается освященная земля",
+      "text": "Пока вы находитесь на одном месте, вокруг вас создаётся освящённая земля",
       "ref": "You have Consecrated Ground around you while stationary",
       "types": [
         {
@@ -103041,12 +103112,12 @@
   {
     "conditions": [
       {
-        "string": "Вы получаете эффект Боевой раж, если мана не на низком уровне",
+        "string": "Вы получаете Боевой раж, если мана не на низком уровне",
         "ref": "You have Onslaught while not on Low Mana"
       }
     ],
     "mod": {
-      "text": "Вы получаете эффект Боевой раж, если мана не на низком уровне",
+      "text": "Вы получаете Боевой раж, если мана не на низком уровне",
       "ref": "You have Onslaught while not on Low Mana",
       "types": [
         {
@@ -105805,12 +105876,12 @@
   {
     "conditions": [
       {
-        "string": "Ваши умения не требуют маны во время действия эффекта флакона",
+        "string": "Ваши умения не расходуют ману во время действия эффекта флакона",
         "ref": "Your Skills have no Mana Cost during Flask effect"
       }
     ],
     "mod": {
-      "text": "Ваши умения не требуют маны во время действия эффекта флакона",
+      "text": "Ваши умения не расходуют ману во время действия эффекта флакона",
       "ref": "Your Skills have no Mana Cost during Flask effect",
       "types": [
         {

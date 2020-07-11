@@ -381,6 +381,42 @@
     ]
   },
   {
+    "name": "Bear's Girdle",
+    "basetype": "Leather Belt",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/BearsClutch.png?w=2&h=1",
+    "props": {},
+    "stats": [
+      {
+        "text": "# to maximum Life",
+        "bounds": [{"min": 25, "max": 40}],
+        "implicit": true
+      },
+      {
+        "text": "Adds # to # Physical Damage to Attacks",
+        "bounds": [
+          {"min": 5, "max": 7},
+          {"min": 11, "max": 12}
+        ]
+      },
+      {
+        "text": "#% increased Stun Duration on Enemies",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "Nearby Enemies are Crushed while you have least # Rage",
+        "bounds": [{"min": 25, "max": 25}]
+      },
+      {
+        "text": "#% increased Physical Damage per 10 Rage",
+        "bounds": [{"min": 4, "max": 6}]
+      },
+      {
+        "text": "# to Maximum Rage",
+        "bounds": [{"min": 20, "max": 20}]
+      }
+    ]
+  },
+  {
     "name": "Belt of the Deceiver",
     "basetype": "Heavy Belt",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/BeltOfTheDeciever.png?w=2&h=1",
@@ -1572,8 +1608,12 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "Projectiles gain #% of Non-Chaos Damage as extra Chaos Damage per Chain",
-        "bounds": [{"min": 15, "max": 20}]
+        "text": "#% increased Projectile Speed",
+        "bounds": [{"min": 30, "max": 40}]
+      },
+      {
+        "text": "Projectiles that have Chained gain #% of Non-Chaos Damage as extra Chaos Damage",
+        "bounds": [{"min": 20, "max": 35}]
       }
     ]
   },
@@ -3106,6 +3146,39 @@
     ]
   },
   {
+    "name": "Retaliation Charm",
+    "basetype": "Citrine Amulet",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Amulets/SharedUnsight.png?w=1&h=1",
+    "props": {},
+    "stats": [
+      {
+        "text": "# to Strength and Dexterity",
+        "bounds": [{"min": 16, "max": 24}],
+        "implicit": true
+      },
+      {
+        "text": "#% increased Damage with Hits and Ailments against Blinded Enemies",
+        "bounds": [{"min": 25, "max": 40}]
+      },
+      {
+        "text": "#% increased Critical Strike Chance against Blinded Enemies",
+        "bounds": [{"min": 30, "max": 50}]
+      },
+      {
+        "text": "#% chance to Blind Enemies on Critical Strike",
+        "bounds": [{"min": 40, "max": 50}]
+      },
+      {
+        "text": "Blind does not affect your Light Radius",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Blind you inflict is Reflected to you",
+        "bounds": [{"min": 1, "max": 1}]
+      }
+    ]
+  },
+  {
     "name": "Rigwald's Crest",
     "basetype": "Two-Stone Ring",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/RigwaldsCrest.png?w=1&h=1",
@@ -3692,6 +3765,39 @@
     ]
   },
   {
+    "name": "Storm Secret",
+    "basetype": "Topaz Ring",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/ThunderLoop.png?w=1&h=1",
+    "props": {},
+    "stats": [
+      {
+        "text": "#% to Lightning Resistance",
+        "bounds": [{"min": 20, "max": 30}],
+        "implicit": true
+      },
+      {
+        "text": "# to Intelligence",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "#% increased Lightning Damage",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "#% chance to Shock",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "Herald of Thunder's Storms Hit Enemies with #% increased Frequency",
+        "bounds": [{"min": 30, "max": 50}]
+      },
+      {
+        "text": "Take # Lightning Damage when Herald of Thunder Hits an Enemy",
+        "bounds": [{"min": 250, "max": 250}]
+      }
+    ]
+  },
+  {
     "name": "String of Servitude",
     "basetype": "Heavy Belt",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/String_of_Servitude.png?w=2&h=1",
@@ -4018,6 +4124,43 @@
       {
         "text": "Damage Penetrates #% Fire Resistance against Blinded Enemies",
         "bounds": [{"min": 10, "max": 10}]
+      }
+    ]
+  },
+  {
+    "name": "The Felbog Fang",
+    "basetype": "Citrine Amulet",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Amulets/SabertoothsPendant.png?w=1&h=1",
+    "props": {},
+    "stats": [
+      {
+        "text": "# to Strength and Dexterity",
+        "bounds": [{"min": 16, "max": 24}],
+        "implicit": true
+      },
+      {
+        "text": "# to Intelligence",
+        "bounds": [{"min": 30, "max": 50}]
+      },
+      {
+        "text": "#% increased Cast Speed",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "#% increased Area of Effect",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "Enemies Cursed by you are Hindered with #% reduced Movement\nSpeed if 25% of Curse Duration expired",
+        "bounds": [{"min": 25, "max": 25}]
+      },
+      {
+        "text": "Your Curses have #% increased Effect if 50% of Curse Duration expired",
+        "bounds": [{"min": 25, "max": 25}]
+      },
+      {
+        "text": "Enemies Cursed by you take #% increased Damage if 75% of Curse Duration expired",
+        "bounds": [{"min": 25, "max": 25}]
       }
     ]
   },
@@ -4449,6 +4592,43 @@
     ]
   },
   {
+    "name": "The Torrent's Reclamation",
+    "basetype": "Cloth Belt",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/HarbingerBeltUpgraded.png?w=2&h=1",
+    "props": {},
+    "stats": [
+      {
+        "text": "#% increased Stun and Block Recovery",
+        "bounds": [{"min": 15, "max": 25}],
+        "implicit": true
+      },
+      {
+        "text": "Grants Summon Harbinger of the Arcane Skill",
+        "bounds": [{"min": 8, "max": 8}]
+      },
+      {
+        "text": "#% increased Attack and Cast Speed",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "#% increased Energy Shield Recovery rate",
+        "bounds": [{"min": 15, "max": 20}]
+      },
+      {
+        "text": "#% increased Life Recovery rate",
+        "bounds": [{"min": 15, "max": 20}]
+      },
+      {
+        "text": "#% increased Cooldown Recovery Speed",
+        "bounds": [{"min": 15, "max": 20}]
+      },
+      {
+        "text": "Debuffs on you expire #% faster",
+        "bounds": [{"min": 15, "max": 20}]
+      }
+    ]
+  },
+  {
     "name": "The Warden's Brand",
     "basetype": "Iron Ring",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/TheWardensBand.png?w=1&h=1",
@@ -4773,7 +4953,7 @@
       },
       {
         "text": "#% to Fire Resistance",
-        "bounds": [{"min": 20, "max": 30}]
+        "bounds": [{"min": 30, "max": 40}]
       },
       {
         "text": "#% to Cold Resistance",
@@ -5416,6 +5596,37 @@
       },
       {
         "text": "Burning Hoofprints",
+        "bounds": [{"min": 1, "max": 1}]
+      }
+    ]
+  },
+  {
+    "name": "Abhorrent Interrogation",
+    "basetype": "Ambush Mitts",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/DecayingGrip.png?w=2&h=2",
+    "props": {
+      "ev": {"min": 178, "max": 218},
+      "es": {"min": 35, "max": 43}
+    },
+    "stats": [
+      {
+        "text": "#% increased Evasion and Energy Shield",
+        "bounds": [{"min": 100, "max": 150}]
+      },
+      {
+        "text": "#% increased Attack and Cast Speed",
+        "bounds": [{"min": 5, "max": 7}]
+      },
+      {
+        "text": "#% chance to inflict Withered for 2 seconds on Hit",
+        "bounds": [{"min": 20, "max": 25}]
+      },
+      {
+        "text": "Enemies take #% increased Elemental Damage from your Hits for\neach Withered you have inflicted on them",
+        "bounds": [{"min": 4, "max": 4}]
+      },
+      {
+        "text": "Your Hits cannot Penetrate or ignore Elemental Resistances",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -6583,8 +6794,8 @@
         "bounds": [{"min": 20, "max": 40}]
       },
       {
-        "text": "Gain # Power Charges when you Warcry",
-        "bounds": [{"min": 2, "max": 2}]
+        "text": "Warcries grant Arcane Surge to you and Allies, with #% increased effect per 5 power, up to 50%",
+        "bounds": [{"min": 10, "max": 10}]
       }
     ]
   },
@@ -6702,20 +6913,20 @@
         "bounds": [{"min": 0.4, "max": 0.4}]
       },
       {
-        "text": "Gain #% of Physical Damage as Extra Chaos Damage",
-        "bounds": [{"min": 5, "max": 10}]
-      },
-      {
         "text": "#% Chance to Block",
         "bounds": [{"min": -10, "max": -10}]
       },
       {
-        "text": "Gain Unholy Might on block for # seconds",
-        "bounds": [{"min": 10, "max": 10}]
-      },
-      {
         "text": "#% increased Global Armour while you have no Energy Shield",
         "bounds": [{"min": 100, "max": 100}]
+      },
+      {
+        "text": "You have Unholy Might while you have no Energy Shield",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Create Profane Ground instead of Consecrated Ground",
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -8292,8 +8503,8 @@
         "bounds": [{"min": 64, "max": 96}]
       },
       {
-        "text": "# to Total Mana Cost of Skills",
-        "bounds": [{"min": 50, "max": 50}]
+        "text": "Skills Supported by Unleash have #% increased Seal gain frequency",
+        "bounds": [{"min": 30, "max": 50}]
       }
     ]
   },
@@ -8396,6 +8607,41 @@
     ]
   },
   {
+    "name": "Doryani's Prototype",
+    "basetype": "Saint's Hauberk",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/ShockCloak.png?w=2&h=3",
+    "props": {
+      "ar": {"min": 1196, "max": 1417},
+      "es": {"min": 197, "max": 233}
+    },
+    "stats": [
+      {
+        "text": "#% increased Armour and Energy Shield",
+        "bounds": [{"min": 150, "max": 200}]
+      },
+      {
+        "text": "# to maximum Life",
+        "bounds": [{"min": 60, "max": 90}]
+      },
+      {
+        "text": "Deal no Non-Lightning Damage",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Armour also applies to Lightning Damage taken from Hits",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Lightning Resistance does not affect Lightning Damage taken",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Nearby Enemies have Lightning Resistance equal to yours",
+        "bounds": [{"min": 1, "max": 1}]
+      }
+    ]
+  },
+  {
     "name": "Drillneck",
     "basetype": "Penetrating Arrow Quiver",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Quivers/Drillneck.png?w=2&h=3",
@@ -8441,8 +8687,8 @@
     },
     "stats": [
       {
-        "text": "Socketed Gems are Supported by Level # Added Chaos Damage",
-        "bounds": [{"min": 25, "max": 25}]
+        "text": "Trigger Level # Stalking Pustule on Kill",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "#% increased Armour and Evasion",
@@ -8467,6 +8713,13 @@
       {
         "text": "#% to Chaos Resistance during any Flask Effect",
         "bounds": [{"min": 50, "max": 50}]
+      },
+      {
+        "text": "Adds # to # Chaos Damage to Spells and Attacks during any Flask Effect",
+        "bounds": [
+          {"min": 30, "max": 40},
+          {"min": 50, "max": 60}
+        ]
       }
     ]
   },
@@ -8537,6 +8790,41 @@
       {
         "text": "Gain #% of Elemental Damage as Extra Chaos Damage",
         "bounds": [{"min": 5, "max": 8}]
+      }
+    ]
+  },
+  {
+    "name": "Emperor's Vigilance",
+    "basetype": "Steel Kite Shield",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HighPriestShield.png?w=2&h=3",
+    "props": {
+      "ar": {"min": 613, "max": 759},
+      "es": {"min": 121, "max": 150}
+    },
+    "stats": [
+      {
+        "text": "#% Chance to Block Spell Damage",
+        "bounds": [{"min": 16, "max": 22}]
+      },
+      {
+        "text": "#% increased Armour and Energy Shield",
+        "bounds": [{"min": 300, "max": 400}]
+      },
+      {
+        "text": "#% increased maximum Life",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "Cannot Block while you have no Energy Shield",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Damage from Blocked Hits cannot bypass Energy Shield\nDamage from Unblocked hits always bypasses Energy Shield",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Glancing Blows",
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -9092,6 +9380,34 @@
     ]
   },
   {
+    "name": "Fleshcrafter",
+    "basetype": "Necromancer Silks",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/EssenceGifter.png?w=2&h=3",
+    "props": {"es": {"min": 257, "max": 315}},
+    "stats": [
+      {
+        "text": "#% increased Energy Shield",
+        "bounds": [{"min": 100, "max": 150}]
+      },
+      {
+        "text": "Minions Convert #% of their Maximum Life to Maximum Energy\nShield per 1% Chaos Resistance they have",
+        "bounds": [{"min": 2, "max": 2}]
+      },
+      {
+        "text": "Chaos Damage does not bypass Minions' Energy Shield",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Minions have #% faster start of Energy Shield Recharge",
+        "bounds": [{"min": 50, "max": 100}]
+      },
+      {
+        "text": "While Minions have Energy Shield, their Hits Ignore Monster Elemental Resistances",
+        "bounds": [{"min": 1, "max": 1}]
+      }
+    ]
+  },
+  {
     "name": "Fox's Fortune",
     "basetype": "Wild Leather",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/Foxshade.png?w=2&h=3",
@@ -9579,6 +9895,33 @@
       {
         "text": "#% reduced Elemental Damage taken while stationary",
         "bounds": [{"min": -5, "max": -5}]
+      }
+    ]
+  },
+  {
+    "name": "Great Old One's Tentacles",
+    "basetype": "Eelskin Gloves",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/ImpaleGloves.png?w=2&h=2",
+    "props": {"ev": {"min": 150, "max": 150}},
+    "stats": [
+      {
+        "text": "Adds # to # Physical Damage to Attacks",
+        "bounds": [
+          {"min": 8, "max": 12},
+          {"min": 15, "max": 20}
+        ]
+      },
+      {
+        "text": "# to maximum Life",
+        "bounds": [{"min": 50, "max": 70}]
+      },
+      {
+        "text": "#% chance to Impale Enemies on Hit with Attacks",
+        "bounds": [{"min": 10, "max": 20}]
+      },
+      {
+        "text": "#% chance for Impales on Enemies you Kill to Reflect Damage to surrounding Enemies",
+        "bounds": [{"min": 50, "max": 50}]
       }
     ]
   },
@@ -11607,7 +11950,7 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "Summoned Raging Spirits refresh their Duration when they Kill an Ignited Enemy",
+        "text": "Summoned Raging Spirits' Melee Strikes deal Fire-only Splash\nDamage to Surrounding Targets",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -11991,6 +12334,10 @@
       {
         "text": "#% increased Warcry Buff Effect",
         "bounds": [{"min": 25, "max": 25}]
+      },
+      {
+        "text": "Call to Arms",
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -12302,6 +12649,34 @@
     ]
   },
   {
+    "name": "Plume of Pursuit",
+    "basetype": "Bone Circlet",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/RavensCrown.png?w=2&h=2",
+    "props": {"es": {"min": 68, "max": 85}},
+    "stats": [
+      {
+        "text": "#% increased Cast Speed",
+        "bounds": [{"min": -30, "max": -20}]
+      },
+      {
+        "text": "#% increased Energy Shield",
+        "bounds": [{"min": 80, "max": 130}]
+      },
+      {
+        "text": "Non-critical strikes deal #% more Damage",
+        "bounds": [{"min": -80, "max": -80}]
+      },
+      {
+        "text": "Spell Skills always deal Critical Strikes on final Repeat",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Spell Skills cannot deal Critical Strikes except on final Repeat",
+        "bounds": [{"min": 1, "max": 1}]
+      }
+    ]
+  },
+  {
     "name": "Prism Guardian",
     "basetype": "Archon Kite Shield",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/TheCorundum.png?w=2&h=3",
@@ -12570,10 +12945,6 @@
       {
         "text": "#% increased Warcry Cooldown Recovery Speed",
         "bounds": [{"min": 50, "max": 50}]
-      },
-      {
-        "text": "#% of Attack Damage Leeched as Life against Taunted Enemies",
-        "bounds": [{"min": 2, "max": 2}]
       }
     ]
   },
@@ -13058,6 +13429,46 @@
       {
         "text": "Your Skills deal you #% of Mana Spent on Skill Mana Costs as Physical Damage",
         "bounds": [{"min": 400, "max": 400}]
+      }
+    ]
+  },
+  {
+    "name": "Scorpion's Call",
+    "basetype": "Broadhead Arrow Quiver",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Quivers/BloodSandQuiver.png?w=2&h=3",
+    "props": {},
+    "stats": [
+      {
+        "text": "Adds # to # Physical Damage to Bow Attacks",
+        "bounds": [
+          {"min": 6, "max": 6},
+          {"min": 12, "max": 12}
+        ],
+        "implicit": true
+      },
+      {
+        "text": "# to Dexterity",
+        "bounds": [{"min": 20, "max": 40}]
+      },
+      {
+        "text": "# Life Regenerated per Second while in Blood Stance",
+        "bounds": [{"min": 150, "max": 200}]
+      },
+      {
+        "text": "#% increased Projectile Damage while in Blood Stance",
+        "bounds": [{"min": 40, "max": 60}]
+      },
+      {
+        "text": "+# to Evasion Rating while in Sand Stance",
+        "bounds": [{"min": 700, "max": 1000}]
+      },
+      {
+        "text": "#% increased Area of Effect while in Sand Stance",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "#% increased Attack Speed if you've changed Stance Recently",
+        "bounds": [{"min": 25, "max": 30}]
       }
     ]
   },
@@ -14685,6 +15096,10 @@
         "bounds": [{"min": 4, "max": 4}]
       },
       {
+        "text": "# to Strength and Dexterity",
+        "bounds": [{"min": 30, "max": 50}]
+      },
+      {
         "text": "Adds # to # Fire Damage to Spells and Attacks",
         "bounds": [
           {"min": 19, "max": 22},
@@ -14697,10 +15112,6 @@
           {"min": 19, "max": 22},
           {"min": 30, "max": 35}
         ]
-      },
-      {
-        "text": "# to Strength and Dexterity",
-        "bounds": [{"min": 30, "max": 50}]
       },
       {
         "text": "#% to Fire and Cold Resistances",
@@ -14744,6 +15155,46 @@
       {
         "text": "#% increased Duration of Shrine Effects on you",
         "bounds": [{"min": 50, "max": 50}]
+      }
+    ]
+  },
+  {
+    "name": "The Immortal Will",
+    "basetype": "Archon Kite Shield",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HarbingerShieldUpgraded.png?w=2&h=3",
+    "props": {
+      "ar": {"min": 187, "max": 187},
+      "es": {"min": 36, "max": 36}
+    },
+    "stats": [
+      {
+        "text": "#% to all Elemental Resistances",
+        "bounds": [{"min": 12, "max": 12}],
+        "implicit": true
+      },
+      {
+        "text": "Grants Summon Harbinger of the Arcane Skill",
+        "bounds": [{"min": 9, "max": 9}]
+      },
+      {
+        "text": "# to maximum Life",
+        "bounds": [{"min": 60, "max": 80}]
+      },
+      {
+        "text": "#% to all Elemental Resistances",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "# Mana gained when you Block",
+        "bounds": [{"min": 30, "max": 50}]
+      },
+      {
+        "text": "#% Chance to Block",
+        "bounds": [{"min": 5, "max": 5}]
+      },
+      {
+        "text": "Channelling Skills deal #% increased Damage",
+        "bounds": [{"min": 50, "max": 70}]
       }
     ]
   },
@@ -15078,6 +15529,45 @@
     ]
   },
   {
+    "name": "The Shattered Divinity",
+    "basetype": "Blunt Arrow Quiver",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Quivers/HarbingerQuiverUpgraded.png?w=2&h=3",
+    "props": {},
+    "stats": [
+      {
+        "text": "#% increased Stun Duration on Enemies",
+        "bounds": [{"min": 25, "max": 35}],
+        "implicit": true
+      },
+      {
+        "text": "Grants Summon Harbinger of the Arcane Skill",
+        "bounds": [{"min": 10, "max": 10}]
+      },
+      {
+        "text": "# to Strength and Dexterity",
+        "bounds": [{"min": 30, "max": 50}]
+      },
+      {
+        "text": "Adds # to # Fire Damage to Spells and Attacks",
+        "bounds": [
+          {"min": 19, "max": 22},
+          {"min": 30, "max": 35}
+        ]
+      },
+      {
+        "text": "Adds # to # Cold Damage to Spells and Attacks",
+        "bounds": [
+          {"min": 19, "max": 22},
+          {"min": 30, "max": 35}
+        ]
+      },
+      {
+        "text": "#% to Fire and Cold Resistances",
+        "bounds": [{"min": 15, "max": 25}]
+      }
+    ]
+  },
+  {
     "name": "The Signal Fire",
     "basetype": "Fire Arrow Quiver",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverUnique1.png?w=2&h=3",
@@ -15240,6 +15730,45 @@
       {
         "text": "Grants Summon Harbinger of the Arcane Skill",
         "bounds": [{"min": 5, "max": 5}]
+      },
+      {
+        "text": "# to Evasion Rating",
+        "bounds": [{"min": 100, "max": 150}]
+      },
+      {
+        "text": "# to maximum Energy Shield",
+        "bounds": [{"min": 40, "max": 60}]
+      },
+      {
+        "text": "# to maximum Life",
+        "bounds": [{"min": 60, "max": 80}]
+      },
+      {
+        "text": "#% to all Elemental Resistances",
+        "bounds": [{"min": 10, "max": 15}]
+      }
+    ]
+  },
+  {
+    "name": "The Tempest's Liberation",
+    "basetype": "Callous Mask",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HarbingerHelmUpgraded.png?w=2&h=2",
+    "props": {
+      "ev": {"min": 266, "max": 326},
+      "es": {"min": 76, "max": 100}
+    },
+    "stats": [
+      {
+        "text": "Socketed Gems are Supported by Level # Ice Bite",
+        "bounds": [{"min": 18, "max": 18}]
+      },
+      {
+        "text": "Socketed Gems are Supported by Level # Innervate",
+        "bounds": [{"min": 18, "max": 18}]
+      },
+      {
+        "text": "Grants Summon Harbinger of the Arcane Skill",
+        "bounds": [{"min": 11, "max": 11}]
       },
       {
         "text": "# to Evasion Rating",
@@ -16170,8 +16699,8 @@
         "bounds": [{"min": 180, "max": 250}]
       },
       {
-        "text": "#% reduced Mana Cost of Skills",
-        "bounds": [{"min": -80, "max": -40}]
+        "text": "# to Total Mana Cost of Skills",
+        "bounds": [{"min": 40, "max": 80}]
       },
       {
         "text": "# Energy Shield gained on Kill",
@@ -16357,8 +16886,8 @@
         "bounds": [{"min": 15, "max": 15}]
       },
       {
-        "text": "#% chance to Cause Monsters to Flee",
-        "bounds": [{"min": 10, "max": 10}]
+        "text": "Drops Shocked Ground while moving, lasting # seconds",
+        "bounds": [{"min": 2, "max": 2}]
       }
     ]
   },
@@ -17482,16 +18011,16 @@
         "bounds": [{"min": 8, "max": 12}]
       },
       {
-        "text": "#% increased Skeleton Movement Speed",
-        "bounds": [{"min": 3, "max": 5}]
-      },
-      {
         "text": "#% increased Skeleton Attack Speed",
         "bounds": [{"min": 7, "max": 10}]
       },
       {
         "text": "#% increased Skeleton Cast Speed",
         "bounds": [{"min": 7, "max": 10}]
+      },
+      {
+        "text": "#% increased Skeleton Movement Speed",
+        "bounds": [{"min": 3, "max": 5}]
       }
     ]
   },
@@ -17581,19 +18110,6 @@
         "text": "#% increased Damage taken while on Full Energy Shield",
         "bounds": [{"min": 10, "max": 10}]
       }
-    ]
-  },
-  {
-    "name": "Brutal Restraint",
-    "basetype": "Timeless Jewel",
-    "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/MarakethCivilization.png?w=1&h=1",
-    "props": {},
-    "stats": [
-      {
-        "text": "Denoted service of # dekhara in the akhara of Nasima",
-        "bounds": [{"min": 500, "max": 8000}]
-      },
-      {"text": "Historic", "bounds": [{"min": 1, "max": 1}]}
     ]
   },
   {
@@ -18050,12 +18566,15 @@
     "props": {},
     "stats": [
       {
-        "text": "#% increased Spell Damage",
-        "bounds": [{"min": 30, "max": 40}]
+        "text": "# to Intelligence",
+        "bounds": [{"min": 5, "max": 10}]
       },
       {
-        "text": "#% reduced Mana Cost of Skills",
-        "bounds": [{"min": -50, "max": -50}]
+        "text": "Notable Passive Skills in Radius are Transformed to\ninstead grant: #% increased Mana Cost of Skills and #% increased Spell Damage",
+        "bounds": [
+          {"min": 10, "max": 10},
+          {"min": 20, "max": 20}
+        ]
       }
     ]
   },
@@ -18158,12 +18677,20 @@
     "props": {},
     "stats": [
       {
-        "text": "Regenerate #% of Life per second",
-        "bounds": [{"min": 2, "max": 2}]
+        "text": "Maximum # Fragile Regrowth",
+        "bounds": [{"min": 10, "max": 10}]
       },
       {
-        "text": "#% increased Damage taken",
-        "bounds": [{"min": 10, "max": 10}]
+        "text": "#% of Life Regenerated per second per Fragile Regrowth",
+        "bounds": [{"min": 0.7, "max": 0.7}]
+      },
+      {
+        "text": "Lose all Fragile Regrowth when Hit",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Gain 1 Fragile Regrowth each second",
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -18304,13 +18831,21 @@
     ]
   },
   {
-    "name": "Hotfooted",
+    "name": "Hotheaded",
     "basetype": "Viridian Jewel",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/unique14.png?w=1&h=1",
     "props": {},
     "stats": [
       {
         "text": "#% increased Movement Speed while Ignited",
+        "bounds": [{"min": 10, "max": 20}]
+      },
+      {
+        "text": "#% increased Attack Speed while Ignited",
+        "bounds": [{"min": 10, "max": 20}]
+      },
+      {
+        "text": "#% increased Cast Speed while Ignited",
         "bounds": [{"min": 10, "max": 20}]
       }
     ]
@@ -18354,12 +18889,16 @@
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, Magma Orb\nhas #% increased Area of Effect per Chain",
-        "bounds": [{"min": 10, "max": 10}]
+        "text": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain",
+        "bounds": [{"min": 40, "max": 40}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, Magma Orb fires an additional Projectile",
-        "bounds": [{"min": 1, "max": 1}]
+        "text": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage",
+        "bounds": [{"min": -50, "max": -50}]
+      },
+      {
+        "text": "With at least 40 Intelligence in Radius, Magma Orb\nhas #% increased Area of Effect per Chain",
+        "bounds": [{"min": 10, "max": 10}]
       }
     ]
   },
@@ -18476,8 +19015,12 @@
     "props": {},
     "stats": [
       {
-        "text": "#% increased Area of Effect while Unarmed",
-        "bounds": [{"min": 10, "max": 15}]
+        "text": "# to Melee Strike Range while Unarmed",
+        "bounds": [{"min": 3, "max": 4}]
+      },
+      {
+        "text": "Passive Skills in Radius also grant: #% increased Attack Speed with Unarmed Attacks",
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -18488,16 +19031,28 @@
     "props": {},
     "stats": [
       {
-        "text": "#% increased Global Physical Damage",
+        "text": "#% increased Attack Damage",
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "With at least 40 Dexterity in Radius, Dual Strike deals Off-Hand Splash Damage\nto surrounding targets",
+        "text": "With at least 40 Dexterity in Radius, Dual Strike Hits Intimidate Enemies for\n4 seconds while wielding an Axe",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "With at least 40 Dexterity in Radius, Dual Strike has a #% chance\nto deal Double Damage with the Main-Hand Weapon",
-        "bounds": [{"min": 20, "max": 20}]
+        "text": "With at least 40 Dexterity in Radius, Dual Strike has #% increased Attack\nSpeed while wielding a Claw",
+        "bounds": [{"min": 10, "max": 15}]
+      },
+      {
+        "text": "With at least 40 Dexterity in Radius, Dual Strike has #% to Critical Strike\nMultiplier while wielding a Dagger",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "With at least 40 Dexterity in Radius, Dual Strike deals Splash Damage\nto surrounding targets while wielding a Mace",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "With at least 40 Dexterity in Radius, Dual Strike has #% increased\nAccuracy Rating while wielding a Sword",
+        "bounds": [{"min": 20, "max": 30}]
       }
     ]
   },
@@ -18880,8 +19435,12 @@
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, Fireball Projectiles gain Radius as they travel farther, up to # Radius",
-        "bounds": [{"min": 4, "max": 4}]
+        "text": "With at least 40 Intelligence in Radius, Fireball cannot ignite",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "With at least 40 Intelligence in Radius, Fireball has #% chance to inflict scorch",
+        "bounds": [{"min": 30, "max": 50}]
       }
     ]
   },
@@ -19611,12 +20170,16 @@
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "With at least 40 Strength in Radius, Molten Strike fires an additional Projectile",
-        "bounds": [{"min": 2, "max": 2}]
+        "text": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain on impacting ground",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "With at least 40 Strength in Radius, Molten Strike has #% increased Area of Effect",
-        "bounds": [{"min": 25, "max": 25}]
+        "text": "With at least 40 Strength in Radius, Molten Strike Projectiles Chain # time",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "With at least 40 Strength in Radius, Molten Strike fires #% more Projectiles",
+        "bounds": [{"min": -50, "max": -50}]
       }
     ]
   },
@@ -19940,16 +20503,16 @@
         "implicit": true
       },
       {
-        "text": "Trigger Level # Intimidating Cry on Hit",
-        "bounds": [{"min": 1, "max": 1}]
-      },
-      {
         "text": "#% increased Physical Damage",
         "bounds": [{"min": 100, "max": 120}]
       },
       {
         "text": "#% of Physical Attack Damage Leeched as Life",
         "bounds": [{"min": 3, "max": 3}]
+      },
+      {
+        "text": "Enemies Taunted by your Warcries have #% chance to Explode on death, dealing 8% of their maximum Life as Chaos Damage",
+        "bounds": [{"min": 100, "max": 100}]
       },
       {
         "text": "#% increased Warcry Buff Effect",
@@ -20057,8 +20620,8 @@
         "bounds": [{"min": 5, "max": 10}]
       },
       {
-        "text": "#% reduced Mana Cost of Skills",
-        "bounds": [{"min": -40, "max": -40}]
+        "text": "# to Total Mana Cost of Skills",
+        "bounds": [{"min": 40, "max": 40}]
       },
       {
         "text": "Poisons you inflict deal Damage #% faster",
@@ -20117,6 +20680,10 @@
         "implicit": true
       },
       {
+        "text": "Grants Level # Dash Skill",
+        "bounds": [{"min": 30, "max": 30}]
+      },
+      {
         "text": "Adds # to # Physical Damage",
         "bounds": [
           {"min": 95, "max": 115},
@@ -20124,27 +20691,27 @@
         ]
       },
       {
-        "text": "#% increased Evasion Rating",
-        "bounds": [{"min": 60, "max": 100}]
-      },
-      {
-        "text": "Bow Attacks fire an additional Arrow",
+        "text": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
         "bounds": [{"min": 2, "max": 2}]
       },
       {
-        "text": "Every 16 seconds you gain Iron Reflexes for 8 seconds",
+        "text": "#% increased Attack Speed if you haven't Cast Dash recently",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "#% increased Evasion Rating if you've Cast Dash recently",
+        "bounds": [{"min": 100, "max": 160}]
+      },
+      {
+        "text": "#% increased Movement Speed if you've Cast Dash recently",
+        "bounds": [{"min": 20, "max": 30}]
+      },
+      {
+        "text": "Travel Skills other than Dash are Disabled",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "#% more Damage with Arrow Hits at Close Range while you have Iron Reflexes",
-        "bounds": [{"min": 30, "max": 30}]
-      },
-      {
-        "text": "#% increased Attack, Cast and Movement Speed while you do not have Iron Reflexes",
-        "bounds": [{"min": 30, "max": 30}]
-      },
-      {
-        "text": "You have Far Shot while you do not have Iron Reflexes",
+        "text": "Iron Reflexes",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -20452,6 +21019,10 @@
         "implicit": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Bonechill",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Hypothermia",
         "bounds": [{"min": 1, "max": 1}]
       },
@@ -20461,10 +21032,6 @@
       },
       {
         "text": "Socketed Gems are Supported by Level # Cold Penetration",
-        "bounds": [{"min": 1, "max": 1}]
-      },
-      {
-        "text": "Socketed Gems are Supported by Level # Mana Leech",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -20584,8 +21151,8 @@
         "bounds": [{"min": 50, "max": 50}]
       },
       {
-        "text": "#% chance to Cause Monsters to Flee",
-        "bounds": [{"min": 10, "max": 10}]
+        "text": "Shock Enemies as though dealing #% more Damage",
+        "bounds": [{"min": 300, "max": 300}]
       },
       {
         "text": "Damage Penetrates #% Lightning Resistance",
@@ -22156,7 +22723,15 @@
         "bounds": [{"min": 30, "max": 40}]
       },
       {
-        "text": "Leech Energy Shield instead of Life",
+        "text": "#% increased Maximum Recovery per Energy Shield Leech",
+        "bounds": [{"min": -50, "max": -50}]
+      },
+      {
+        "text": "Energy Shield Leech Effects from Attacks are not removed at Full Energy Shield",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Ghost Reaver",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -22783,6 +23358,10 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
+        "text": "#% increased Attack Speed if you've taken a Savage Hit Recently",
+        "bounds": [{"min": 40, "max": 40}]
+      },
+      {
         "text": "Attacks have Blood Magic",
         "bounds": [{"min": 1, "max": 1}]
       }
@@ -23067,39 +23646,6 @@
       },
       {
         "text": "Arrows Pierce all Targets",
-        "bounds": [{"min": 1, "max": 1}]
-      }
-    ]
-  },
-  {
-    "name": "Innsbury Edge",
-    "basetype": "Elder Sword",
-    "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/ElderSword.png?w=2&h=3",
-    "props": {"pdps": {"min": 170, "max": 216}},
-    "stats": [
-      {
-        "text": "# to Accuracy Rating",
-        "bounds": [{"min": 330, "max": 330}],
-        "implicit": true
-      },
-      {
-        "text": "#% increased Physical Damage",
-        "bounds": [{"min": 100, "max": 140}]
-      },
-      {
-        "text": "#% increased Attack Speed",
-        "bounds": [{"min": 17, "max": 25}]
-      },
-      {
-        "text": "#% of Chaos Damage Leeched as Life",
-        "bounds": [{"min": 0.2, "max": 0.2}]
-      },
-      {
-        "text": "#% of Physical Damage Converted to Chaos Damage",
-        "bounds": [{"min": 25, "max": 25}]
-      },
-      {
-        "text": "Attacks with this Weapon Maim on hit",
         "bounds": [{"min": 1, "max": 1}]
       }
     ]
@@ -23550,6 +24096,35 @@
     ]
   },
   {
+    "name": "Law of the Wilds",
+    "basetype": "Hellion's Paw",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/WolfClaw.png?w=2&h=2",
+    "props": {"pdps": {"min": 92, "max": 96}},
+    "stats": [
+      {
+        "text": "#% of Physical Attack Damage Leeched as Life",
+        "bounds": [{"min": 1.6, "max": 1.6}],
+        "implicit": true
+      },
+      {
+        "text": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
+        "bounds": [{"min": 20, "max": 20}]
+      },
+      {
+        "text": "#% increased Attack Speed",
+        "bounds": [{"min": 15, "max": 20}]
+      },
+      {
+        "text": "#% increased Critical Strike Chance",
+        "bounds": [{"min": 22, "max": 28}]
+      },
+      {
+        "text": "#% to Global Critical Strike Multiplier",
+        "bounds": [{"min": 15, "max": 25}]
+      }
+    ]
+  },
+  {
     "name": "Lifesprig",
     "basetype": "Driftwood Wand",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/LifeSprig.png?w=1&h=3",
@@ -23594,6 +24169,10 @@
     "stats": [
       {
         "text": "# to Level of Socketed Strength Gems",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -23974,34 +24553,23 @@
     "name": "Moonbender's Wing",
     "basetype": "Tomahawk",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/MoonbendersWing.png?w=2&h=3",
-    "props": {"pdps": {"min": 100, "max": 123}},
+    "props": {"pdps": {"min": 80, "max": 90}},
     "stats": [
       {
-        "text": "Grants Level # Lightning Warp Skill",
-        "bounds": [{"min": 1, "max": 1}]
+        "text": "Trigger Level # Lightning Warp on Hit with this Weapon",
+        "bounds": [{"min": 15, "max": 15}]
       },
       {
         "text": "#% increased Physical Damage",
         "bounds": [{"min": 30, "max": 50}]
       },
       {
-        "text": "Adds # to # Physical Damage",
-        "bounds": [
-          {"min": 5, "max": 9},
-          {"min": 13, "max": 17}
-        ]
-      },
-      {
         "text": "#% increased Critical Strike Chance",
         "bounds": [{"min": 30, "max": 50}]
       },
       {
-        "text": "#% of Physical Damage Converted to Cold Damage",
-        "bounds": [{"min": 25, "max": 25}]
-      },
-      {
-        "text": "#% of Physical Damage Converted to Lightning Damage",
-        "bounds": [{"min": 25, "max": 25}]
+        "text": "Hits with this Weapon gain #% of Physical Damage as Extra Cold or Lightning Damage",
+        "bounds": [{"min": 75, "max": 100}]
       }
     ]
   },
@@ -24844,6 +25412,22 @@
       {
         "text": "#% increased Projectile Speed",
         "bounds": [{"min": -20, "max": -20}]
+      },
+      {
+        "text": "Arrows fired from the first firing points always Pierce",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Arrows fired from the second firing points Fork",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Arrows fired from the third firing points Return to you",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Arrows fired from the fourth firing points Chain # time",
+        "bounds": [{"min": 2, "max": 2}]
       }
     ]
   },
@@ -25197,16 +25781,12 @@
         ]
       },
       {
-        "text": "#% increased Physical Damage with Axes",
-        "bounds": [{"min": 80, "max": 80}]
-      },
-      {
         "text": "# to Accuracy Rating",
         "bounds": [{"min": 350, "max": 400}]
       },
       {
-        "text": "#% chance to gain a Frenzy Charge on Kill",
-        "bounds": [{"min": 15, "max": 15}]
+        "text": "#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe",
+        "bounds": [{"min": 1, "max": 1}]
       }
     ]
   },
@@ -25232,11 +25812,7 @@
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "#% increased Attack Speed with Swords",
-        "bounds": [{"min": 35, "max": 35}]
-      },
-      {
-        "text": "#% chance to cause Bleeding on Hit",
+        "text": "# to Maximum Rage while wielding a Sword",
         "bounds": [{"min": 25, "max": 25}]
       }
     ]
@@ -26258,6 +26834,10 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
+        "text": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength",
+        "bounds": [{"min": 5, "max": 5}]
+      },
+      {
         "text": "# to Strength",
         "bounds": [{"min": 15, "max": 30}]
       },
@@ -26447,8 +27027,8 @@
         "implicit": true
       },
       {
-        "text": "Socketed Gems are supported by Level # Life Leech",
-        "bounds": [{"min": 10, "max": 10}]
+        "text": "Socketed Gems are supported by Level # Chance to Bleed",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "Grants Summon Harbinger of the Arcane Skill",
@@ -26457,6 +27037,10 @@
       {
         "text": "#% Chance to Block Attack Damage while wielding a Staff",
         "bounds": [{"min": 5, "max": 5}]
+      },
+      {
+        "text": "#% to Damage over Time Multiplier for Bleeding from Critical Strikes",
+        "bounds": [{"min": 30, "max": 40}]
       },
       {
         "text": "Adds # to # Physical Damage",
@@ -26883,10 +27467,6 @@
         "implicit": true
       },
       {
-        "text": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
-        "bounds": [{"min": 10, "max": 10}]
-      },
-      {
         "text": "Adds # to # Physical Damage",
         "bounds": [
           {"min": 35, "max": 50},
@@ -27100,6 +27680,53 @@
     ]
   },
   {
+    "name": "The Surging Thoughts",
+    "basetype": "Legion Sword",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HarbingerSwordUpgraded.png?w=2&h=3",
+    "props": {"pdps": {"min": 235, "max": 253}},
+    "stats": [
+      {
+        "text": "#% increased Global Accuracy Rating",
+        "bounds": [{"min": 40, "max": 40}],
+        "implicit": true
+      },
+      {
+        "text": "Grants Summon Harbinger of the Arcane Skill",
+        "bounds": [{"min": 7, "max": 7}]
+      },
+      {
+        "text": "Trigger Level # Storm Cascade when you Attack",
+        "bounds": [{"min": 20, "max": 20}]
+      },
+      {
+        "text": "#% increased Spell Damage",
+        "bounds": [{"min": 75, "max": 90}]
+      },
+      {
+        "text": "#% increased Physical Damage",
+        "bounds": [{"min": 140, "max": 160}]
+      },
+      {
+        "text": "Adds # to # Lightning Damage",
+        "bounds": [
+          {"min": 1, "max": 1},
+          {"min": 60, "max": 70}
+        ]
+      },
+      {
+        "text": "Adds # to # Lightning Damage to Spells",
+        "bounds": [
+          {"min": 1, "max": 1},
+          {"min": 60, "max": 70}
+        ]
+      },
+      {
+        "text": "#% increased Area of Effect",
+        "bounds": [{"min": 10, "max": 10}]
+      }
+    ]
+  },
+  {
     "name": "The Tempest",
     "basetype": "Long Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Stormcloud.png?w=2&h=4",
@@ -27236,6 +27863,46 @@
       {
         "text": "#% increased Intelligence",
         "bounds": [{"min": 14, "max": 18}]
+      }
+    ]
+  },
+  {
+    "name": "The Yielding Mortality",
+    "basetype": "Imperial Staff",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HarbingerStaffUpgraded.png?w=2&h=4",
+    "props": {"pdps": {"min": 405, "max": 439}},
+    "stats": [
+      {
+        "text": "#% Chance to Block Attack Damage while wielding a Staff",
+        "bounds": [{"min": 18, "max": 18}],
+        "implicit": true
+      },
+      {
+        "text": "Socketed Gems are supported by Level # Chance to Bleed",
+        "bounds": [{"min": 1, "max": 1}]
+      },
+      {
+        "text": "Grants Summon Harbinger of the Arcane Skill",
+        "bounds": [{"min": 12, "max": 12}]
+      },
+      {
+        "text": "#% Chance to Block Attack Damage while wielding a Staff",
+        "bounds": [{"min": 5, "max": 5}]
+      },
+      {
+        "text": "#% to Damage over Time Multiplier for Bleeding from Critical Strikes",
+        "bounds": [{"min": 30, "max": 40}]
+      },
+      {
+        "text": "Adds # to # Physical Damage",
+        "bounds": [
+          {"min": 160, "max": 185},
+          {"min": 200, "max": 225}
+        ]
+      },
+      {
+        "text": "#% increased Critical Strike Chance",
+        "bounds": [{"min": 30, "max": 40}]
       }
     ]
   },
@@ -28037,15 +28704,10 @@
   },
   {
     "name": "Wings of Entropy",
-    "basetype": "Sundering Axe",
+    "basetype": "Ezomyte Axe",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/Entropywings.png?w=2&h=4",
-    "props": {"pdps": {"min": 267, "max": 297}},
+    "props": {"pdps": {"min": 265, "max": 294}},
     "stats": [
-      {
-        "text": "#% to Damage over Time Multiplier for Bleeding",
-        "bounds": [{"min": 20, "max": 20}],
-        "implicit": true
-      },
       {
         "text": "#% Chance to Block Spell Damage",
         "bounds": [{"min": 7, "max": 10}]
@@ -28075,6 +28737,27 @@
       {
         "text": "Counts as Dual Wielding",
         "bounds": [{"min": 1, "max": 1}]
+      }
+    ]
+  },
+  {
+    "name": "Witchhunter's Judgment",
+    "basetype": "Highborn Staff",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/BrandDetonateStaff.png?w=2&h=4",
+    "props": {"pdps": {"min": 133, "max": 133}},
+    "stats": [
+      {
+        "text": "#% Chance to Block Attack Damage while wielding a Staff",
+        "bounds": [{"min": 18, "max": 18}],
+        "implicit": true
+      },
+      {
+        "text": "Grants Level # Brandsurge Skill",
+        "bounds": [{"min": 20, "max": 20}]
+      },
+      {
+        "text": "Brand Skills have #% increased Duration",
+        "bounds": [{"min": 50, "max": 100}]
       }
     ]
   },
@@ -28146,7 +28829,7 @@
     "name": "Xoph's Nurture",
     "basetype": "Citadel Bow",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/BloodPerigreeBREACH.png?w=2&h=4",
-    "props": {"pdps": {"min": 250, "max": 281}},
+    "props": {"pdps": {"min": 300, "max": 351}},
     "stats": [
       {
         "text": "Socketed Gems are Supported by Level # Ignite Proliferation",
@@ -28154,7 +28837,7 @@
       },
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 200, "max": 240}]
+        "bounds": [{"min": 265, "max": 330}]
       },
       {
         "text": "#% of Physical Damage Converted to Fire Damage",
@@ -31074,6 +31757,11 @@
         "variant": true
       },
       {
+        "text": "Eternal Youth",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "Ghost Reaver",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -31144,6 +31832,26 @@
         "variant": true
       },
       {
+        "text": "Imbalanced Guard",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "Supreme Ego",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "The Agnostic",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "The Impaler",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "Unwavering Stance",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -31155,6 +31863,11 @@
       },
       {
         "text": "Wicked Ward",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
+        "text": "Wind Dancer",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
       },
@@ -32122,6 +32835,11 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Fist of War",
+        "bounds": [{"min": 20, "max": 20}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are supported by Level # Chance to Flee",
         "bounds": [{"min": 20, "max": 20}],
         "variant": true
@@ -32442,6 +33160,11 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Shockwave",
+        "bounds": [{"min": 20, "max": 20}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Slower Projectiles",
         "bounds": [{"min": 20, "max": 20}],
         "variant": true
@@ -32492,6 +33215,11 @@
         "variant": true
       },
       {
+        "text": "Socketed Gems are Supported by Level # Swiftbrand",
+        "bounds": [{"min": 20, "max": 20}],
+        "variant": true
+      },
+      {
         "text": "Socketed Gems are Supported by Level # Trap",
         "bounds": [{"min": 20, "max": 20}],
         "variant": true
@@ -32513,6 +33241,11 @@
       },
       {
         "text": "Socketed Gems are Supported by Level # Unleash",
+        "bounds": [{"min": 20, "max": 20}],
+        "variant": true
+      },
+      {
+        "text": "Socketed Gems are Supported by Level # Urgent Orders",
         "bounds": [{"min": 20, "max": 20}],
         "variant": true
       },
@@ -34201,6 +34934,11 @@
         "variant": true
       },
       {
+        "text": "1 Added Passive Skill is Winter Commander",
+        "bounds": [{"min": 1, "max": 1}],
+        "variant": true
+      },
+      {
         "text": "1 Added Passive Skill is Winter Prowler",
         "bounds": [{"min": 1, "max": 1}],
         "variant": true
@@ -34455,6 +35193,10 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/KaruiCivilization.png?w=1&h=1",
     "props": {},
     "stats": [
+      {
+        "text": "Commanded leadership over # warriors under Akoya",
+        "bounds": [{"min": 10000, "max": 18000}]
+      },
       {"text": "Historic", "bounds": [{"min": 1, "max": 1}]}
     ]
   },
@@ -34464,7 +35206,72 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/EternalEmpireCivilization.png?w=1&h=1",
     "props": {},
     "stats": [
+      {
+        "text": "Commissioned # coins to commemorate Caspiro",
+        "bounds": [{"min": 2000, "max": 160000}]
+      },
       {"text": "Historic", "bounds": [{"min": 1, "max": 1}]}
+    ]
+  },
+  {
+    "name": "Brutal Restraint",
+    "basetype": "Timeless Jewel",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/MarakethCivilization.png?w=1&h=1",
+    "props": {},
+    "stats": [
+      {
+        "text": "Denoted service of # dekhara in the akhara of Nasima",
+        "bounds": [{"min": 500, "max": 8000}]
+      },
+      {"text": "Historic", "bounds": [{"min": 1, "max": 1}]}
+    ]
+  },
+  {
+    "name": "Forbidden Shako",
+    "basetype": "Great Crown",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/TheEpiphany.png?w=2&h=2",
+    "props": {
+      "ar": {"min": 171, "max": 171},
+      "es": {"min": 33, "max": 33}
+    },
+    "stats": [
+      {
+        "text": "# to all Attributes",
+        "bounds": [{"min": 25, "max": 30}]
+      }
+    ]
+  },
+  {
+    "name": "Innsbury Edge",
+    "basetype": "Elder Sword",
+    "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/ElderSword.png?w=2&h=3",
+    "props": {"pdps": {"min": 170, "max": 216}},
+    "stats": [
+      {
+        "text": "# to Accuracy Rating",
+        "bounds": [{"min": 330, "max": 330}],
+        "implicit": true
+      },
+      {
+        "text": "#% increased Physical Damage",
+        "bounds": [{"min": 100, "max": 140}]
+      },
+      {
+        "text": "#% increased Attack Speed",
+        "bounds": [{"min": 17, "max": 25}]
+      },
+      {
+        "text": "#% of Chaos Damage Leeched as Life",
+        "bounds": [{"min": 0.2, "max": 0.2}]
+      },
+      {
+        "text": "#% of Physical Damage Converted to Chaos Damage",
+        "bounds": [{"min": 25, "max": 25}]
+      },
+      {
+        "text": "Attacks with this Weapon Maim on hit",
+        "bounds": [{"min": 1, "max": 1}]
+      }
     ]
   },
   {
@@ -34576,6 +35383,13 @@
     "name": "Hallowed Ground",
     "basetype": "Cemetery Map",
     "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXNcL01hcHNcL0hhbGxvd2VkR3JvdW5kIiwidyI6MSwiaCI6MSwic2NhbGUiOnRydWV9XQ/c4f055f3c5/Item.png",
+    "props": {},
+    "stats": []
+  },
+  {
+    "name": "Infused Beachhead",
+    "basetype": "Harbinger Map",
+    "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXNcL01hcHNcL0hhcmJpbmdlclViZXIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6dHJ1ZX1d/bf20d3b2ad/Item.png",
     "props": {},
     "stats": []
   },
