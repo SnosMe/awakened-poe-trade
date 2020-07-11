@@ -139,13 +139,17 @@ function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$[C.TAG_MAP_TIER])) {
     item.props.mapTier = Number(section[0].substr(_$[C.TAG_MAP_TIER].length))
 
-    if (item.rarity === ItemRarity.Normal) {
-      if (_$[C.MAP_BLIGHTED].test(item.name)) {
-        const name = _$[C.MAP_BLIGHTED].exec(item.name)![1]
-        item.name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
-        item.category = ItemCategory.Map
-        item.props.mapBlighted = true
+    let name = item.baseType || item.name
+    if (_$[C.MAP_BLIGHTED].test(name)) {
+      name = _$[C.MAP_BLIGHTED].exec(name)![1]
+      name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
+      if (item.baseType) {
+        item.baseType = name
+      } else {
+        item.name = name
       }
+      item.category = ItemCategory.Map
+      item.props.mapBlighted = true
     }
 
     return SECTION_PARSED

@@ -52,7 +52,8 @@ const dict = {
   'You will find Einhar and complete his mission.': 'You will find Einhar and complete his mission.',
   'You will find Niko and complete his mission.': 'You will find Niko and complete his mission.',
   'You will find Jun and complete her mission.': 'You will find Jun and complete her mission.',
-  'You will find Zana and complete her mission.': 'You will find Zana and complete her mission.'
+  'You will find Zana and complete her mission.': 'You will find Zana and complete her mission.',
+  'Blighted {0}': 'Blighted {0}'
 }
 
 export default dict

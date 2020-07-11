@@ -54,7 +54,8 @@ const dict: TranslationDict = {
   'You will find Einhar and complete his mission.': 'Ты встретишь Эйнара и выполнишь его задание.',
   'You will find Niko and complete his mission.': 'Ты встретишь Нико и выполнишь его задание.',
   'You will find Jun and complete her mission.': 'Ты встретишь Джун и выполнишь её задание.',
-  'You will find Zana and complete her mission.': 'Ты встретишь Зану и выполнишь её задание.'
+  'You will find Zana and complete her mission.': 'Ты встретишь Зану и выполнишь её задание.',
+  'Blighted {0}': 'Заражённая {0}'
 }
 
 export default dict

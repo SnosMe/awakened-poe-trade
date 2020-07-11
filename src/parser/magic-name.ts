@@ -1,12 +1,20 @@
-import { BASE_TYPES, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
+import { BASE_TYPES, TRANSLATED_ITEM_NAME_BY_REF, CLIENT_STRINGS } from '@/assets/data'
+import { ItemCategory } from './meta'
 
 let baseTypes: Set<string>
 
 export function magicBasetype (name: string) {
   if (!baseTypes) {
-    baseTypes = new Set(
-      Array.from(BASE_TYPES.keys()).map(b => TRANSLATED_ITEM_NAME_BY_REF.get(b)!)
-    )
+    baseTypes = new Set<string>()
+    for (let [name, info] of BASE_TYPES.entries()) {
+      name = TRANSLATED_ITEM_NAME_BY_REF.get(name)!
+      baseTypes.add(name)
+      if (info.category === ItemCategory.Map) {
+        baseTypes.add(
+          CLIENT_STRINGS['Blighted {0}'].replace('{0}', name)
+        )
+      }
+    }
   }
 
   const words = name.split(' ')
