@@ -28,6 +28,13 @@
         <input v-model="config.windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ $t('Restore clipboard') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="config.restoreClipboard" :value="true" class="mr-4">{{ $t('Yes') }}</ui-radio>
+        <ui-radio v-model="config.restoreClipboard" :value="false" class="mr-4">{{ $t('No') }}</ui-radio>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,7 +59,8 @@ export default {
     "Shortcut registration": "Регистрация быстрых клавиш",
     "OS global (blocking)": "На уровне ОС (блокирует)",
     "Hook (non-blocking)": "Хук (не блокирует нажатия)",
-    "PoE window title": "Заголовок окна игры"
+    "PoE window title": "Заголовок окна игры",
+    "Restore clipboard": "Восстанавливать буфер обмена"
   }
 }
 </i18n>

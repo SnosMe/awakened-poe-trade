@@ -1,5 +1,6 @@
 import { clipboard } from 'electron'
 import robotjs from 'robotjs'
+import { config } from './config'
 
 const PLACEHOLDER_LAST = '@last'
 const AUTO_CLEAR = [
@@ -40,7 +41,9 @@ export function typeInChat (text: string) {
   robotjs.keyTap('ArrowUp')
   robotjs.keyTap('Escape')
 
-  setTimeout(() => {
-    clipboard.writeText(saved)
-  }, 120)
+  if (config.get('restoreClipboard')) {
+    setTimeout(() => {
+      clipboard.writeText(saved)
+    }, 120)
+  }
 }

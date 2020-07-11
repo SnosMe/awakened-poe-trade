@@ -16,6 +16,7 @@ export interface Config {
   overlayBackgroundClose: boolean
   priceCheckShowCursor: boolean
   mapCheckKey: string | null
+  restoreClipboard: boolean
   commands: Array<{
     text: string
     hotkey: string | null
@@ -64,6 +65,7 @@ export const defaultConfig: Config = {
   overlayBackgroundClose: true,
   priceCheckShowCursor: true,
   mapCheckKey: null,
+  restoreClipboard: true,
   commands: [{
     text: '/hideout',
     hotkey: 'F5'

@@ -192,9 +192,11 @@ function stashSearch (text: string) {
   robotjs.keyTap('V', ['Ctrl'])
   robotjs.keyTap('Enter')
 
-  setTimeout(() => {
-    clipboard.writeText(saved)
-  }, 120)
+  if (config.get('restoreClipboard')) {
+    setTimeout(() => {
+      clipboard.writeText(saved)
+    }, 120)
+  }
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
