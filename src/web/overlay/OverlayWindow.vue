@@ -72,6 +72,13 @@ export default {
           }
         }
       }
+    },
+    active (active) {
+      if (!active) {
+        this.$nextTick(() => {
+          Config.saveConfig()
+        })
+      }
     }
   },
   created () {
@@ -89,12 +96,6 @@ export default {
             }
           }
         }
-      }
-
-      if (this.active === false && this.gameFocused === false) {
-        this.$nextTick(() => {
-          Config.saveConfig()
-        })
       }
     })
     MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {

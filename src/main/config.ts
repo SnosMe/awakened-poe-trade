@@ -1,5 +1,6 @@
 import Store from 'electron-store'
 import { ipcMain } from 'electron'
+import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
 import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
 import { overlayWindow } from './overlay-window'
@@ -10,7 +11,11 @@ export function setupConfigEvents () {
     e.returnValue = config.store
   })
   ipcMain.on(PUSH_CONFIG, (e, cfg) => {
-    batchUpdateConfig(cfg, false)
+    const old = config.store
+    Object.setPrototypeOf(old, Object.prototype)
+    if (!isDeepEq(cfg, old)) {
+      batchUpdateConfig(cfg, false)
+    }
   })
   ipcMain.on(CLOSE_SETTINGS_WINDOW, (e, cfg) => {
     if (cfg != null) {
