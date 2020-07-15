@@ -26,7 +26,7 @@
                 <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">{{ $t('1 Month Ago') }}</ui-radio></div>
               </div>
               <div class="ml-8">
-                <div class="mb-1" v-for="league of Leagues.tradeLeagues" :key="league.id">
+                <div class="mb-1" v-for="league of Leagues.state.tradeLeagues" :key="league.id">
                   <ui-radio v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default {
       return Config.store
     },
     Leagues () {
-      return Leagues.state
+      return Leagues
     }
   },
   methods: {
