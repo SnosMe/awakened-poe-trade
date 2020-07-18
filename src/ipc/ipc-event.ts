@@ -66,3 +66,5 @@ export const OPEN_WIKI = 'MAIN->OVERLAY::open-wiki'
 export const IMPORT_FILE = 'OVERLAY->MAIN::import-file'
 
 export const TOGGLE_DELVE_GRID = 'MAIN->OVERLAY::delve-grid'
+
+export const OPEN_TRADE = 'MAIN->OVERLAY::open-trade'

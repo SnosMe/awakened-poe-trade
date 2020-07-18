@@ -39,6 +39,7 @@ export const config = (() => {
   if (config.priceCheckKeyHold === 'Ctrl' && forbiddenCtrl.includes(config.priceCheckKey as string)) {
     config.priceCheckKey = null
   }
+  if (forbidden.includes(config.tradeKey as string)) { config.tradeKey = null }
   for (const c of config.commands) {
     if (forbidden.includes(c.hotkey as string)) { c.hotkey = null }
   }

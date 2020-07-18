@@ -84,6 +84,13 @@ function registerGlobal () {
       toggleDelveGrid,
       { doNotResetModKey: true }
     ),
+    shortcutCallback(
+      config.get('tradeKey'),
+      () => {
+        pollClipboard().then(openTrade).catch(() => {})
+        robotjs.keyTap('C', ['Ctrl'])
+      }
+    ),
     ...config.get('commands')
       .map(command =>
         shortcutCallback(command.hotkey, () => typeInChat(command.text))
@@ -158,6 +165,11 @@ export function setupShortcuts () {
       shortcutCallback(pressed, mapCheck).cb()
     } else if (pressed === config.get('delveGridKey')) {
       shortcutCallback(pressed, toggleDelveGrid, { doNotResetModKey: true }).cb()
+    } else if (pressed === config.get('tradeKey')) {
+      shortcutCallback(pressed, () => {
+        pollClipboard().then(openTrade).catch(() => {})
+        robotjs.keyTap('C', ['Ctrl'])
+      }).cb()
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
@@ -211,6 +223,10 @@ function openWiki (clipboard: string) {
 
 function toggleDelveGrid () {
   overlayWindow!.webContents.send(ipc.TOGGLE_DELVE_GRID)
+}
+
+function openTrade (clipboard: string) {
+  overlayWindow!.webContents.send(ipc.OPEN_TRADE, clipboard)
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {

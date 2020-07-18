@@ -18,6 +18,7 @@ export interface Config {
   mapCheckKey: string | null
   delveGridKey: string | null
   restoreClipboard: boolean
+  tradeKey: string | null
   commands: Array<{
     text: string
     hotkey: string | null
@@ -69,6 +70,7 @@ export const defaultConfig: Config = {
   mapCheckKey: null,
   delveGridKey: null,
   restoreClipboard: true,
+  tradeKey: 'Alt + D',
   commands: [{
     text: '/hideout',
     hotkey: 'F5'

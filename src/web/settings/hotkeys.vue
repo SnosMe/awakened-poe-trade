@@ -32,6 +32,12 @@
     </div>
     <div class="mb-4">
       <div class="flex">
+        <div class="flex-1">{{ $t('Open item on trade') }}</div>
+        <hotkey-input v-model="config.tradeKey" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="flex">
         <div class="flex-1">{{ $t('Map check') }}</div>
         <hotkey-input v-model="config.mapCheckKey" class="w-48" />
       </div>
@@ -77,6 +83,7 @@ export default {
     "Open without auto-hide": "Открыть без авто-скрытия",
     "Overlay": "Оверлей",
     "Open item on wiki": "Открыть предмет в вики",
+    "Open item on trade": "Открыть предмет в торговле",
     "Map check": "Проверка карты",
     "Stash tab scrolling": "Прокрутка вкладок тайника",
     "Delve grid": "Сетка \"Спуска\""
