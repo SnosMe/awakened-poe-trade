@@ -17,6 +17,7 @@
             <!-- <div class="text-gray-600 text-sm px-1 select-none mt-2 whitespace-no-wrap">add widget</div> -->
             <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('timer')">{{ $t('Stopwatch') }}</button>
             <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('stash-search')">{{ $t('Stash search') }}</button>
+            <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('image-strip')">{{ $t('Image strip') }}</button>
             <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('TODO')">Image</button> -->
           </div>
         </div>
@@ -58,7 +59,8 @@ export default {
 {
   "ru": {
     "Stopwatch": "Секундомер",
-    "Stash search": "Поиск в тайнике"
+    "Stash search": "Поиск в тайнике",
+    "Image strip": "Лента изображений"
   }
 }
 </i18n>
