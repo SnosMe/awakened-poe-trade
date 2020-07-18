@@ -48,7 +48,7 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ $t('Custom commands') }}</div>
       <div class="mb-4" v-for="(command, idx) in config.commands" :key="idx">
-        <input v-model="command.text" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
+        <input v-model.trim="command.text" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
         <div class="flex justify-end">
           <button @click="removeCommand(command)" class="mr-2 text-gray-500">{{ $t('Remove') }}</button>
           <hotkey-input v-model="command.hotkey" class="w-48" />
