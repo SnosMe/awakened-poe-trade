@@ -3,7 +3,6 @@ import { BrowserWindow, ipcMain, dialog, Menu, systemPreferences } from 'electro
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
-import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { overlayWindow as OW } from 'electron-overlay-window'
 import { config } from './config'
 
@@ -49,7 +48,6 @@ export async function createOverlayWindow () {
     overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#overlay')
     overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
   } else {
-    createProtocol('app')
     overlayWindow.loadURL('app://./index.html#overlay')
   }
 

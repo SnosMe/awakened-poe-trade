@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, protocol, ipcMain, screen } from 'electron'
-import { installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
+import { installVueDevtools, createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import { setupShortcuts } from './main/shortcuts'
 import { createTray } from './main/tray'
 import { setupShowHide } from './main/price-check'
@@ -15,6 +15,7 @@ import { setupCfProtection } from './main/cf-protection'
 import { createOverlayWindow } from './main/overlay-window'
 import { setupAltVisibility } from './main/alt-visibility'
 import { setupBuiltinBrowser } from './main/builtin-browser'
+import { createFileProtocol } from './main/app-file-protocol'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {
@@ -50,6 +51,9 @@ app.on('ready', async () => {
       console.error('Vue Devtools failed to install:', e.toString())
     }
   }
+
+  createProtocol('app')
+  createFileProtocol()
 
   setupConfigEvents()
   createTray()

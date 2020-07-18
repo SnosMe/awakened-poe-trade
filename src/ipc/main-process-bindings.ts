@@ -140,6 +140,12 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  importFile (filePath: string) {
+    if (electron) {
+      return electron.ipcRenderer.sendSync(ipcEvent.IMPORT_FILE, filePath)
+    }
+  }
+
   get CORS () {
     return (!electron)
       ? 'https://apt-cors.snos.workers.dev/?'
