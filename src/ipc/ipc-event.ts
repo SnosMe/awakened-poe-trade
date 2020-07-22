@@ -64,3 +64,7 @@ export interface IpcOpenSystemBrowser {
 export const OPEN_WIKI = 'MAIN->OVERLAY::open-wiki'
 
 export const IMPORT_FILE = 'OVERLAY->MAIN::import-file'
+
+export const NEW_INCOMING_OFFER = 'MAIN->OVERLAY::incoming-offer'
+
+export const NEW_OUTGOING_OFFER = 'MAIN->OVERLAY::outoging-offer'
