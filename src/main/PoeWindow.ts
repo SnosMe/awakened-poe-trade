@@ -1,4 +1,4 @@
-import { Rectangle, BrowserWindow, Point } from 'electron'
+import { Rectangle, BrowserWindow } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { config } from './config'
