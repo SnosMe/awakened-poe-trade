@@ -1,7 +1,6 @@
 <template>
   <div
     class="incoming-offer bg-gray-800 mt-2 mx-4 rounded capture-mouse"
-    @click="offerClicked"
   >
     <div class="bg-gray-900 offer-header">
       <ui-popper trigger="hover" :options="{ placement: 'top' }">
@@ -42,9 +41,6 @@ export default {
   }),
   created() {},
   methods: {
-    offerClicked() {
-      console.log("Offer clicked");
-    }
   }
 };
 </script>
@@ -53,7 +49,6 @@ export default {
 .incoming-offer {
   width: 80px;
   height: 50px;
-  pointer-events: all;
 }
 
 .offer-header {

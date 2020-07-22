@@ -1,7 +1,7 @@
 <template>
   <div
     id="incoming-offers-container"
-    style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
+    style="bottom: 20px; left: 0; height: 60px; width: 100%; position: absolute;"
     class="flex-grow flex h-full"
   >
     <IncomingOffer
@@ -43,7 +43,7 @@ export default {
 <style>
 .incoming-offers {
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%, -50%);
 }

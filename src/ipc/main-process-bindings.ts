@@ -1,160 +1,178 @@
-import { RendererInterface } from 'electron'
-import * as ipcEvent from '@/ipc/ipc-event'
-import { Config, League, defaultConfig } from '@/ipc/types'
+import { RendererInterface } from "electron";
+import * as ipcEvent from "@/ipc/ipc-event";
+import { Config, League, defaultConfig } from "@/ipc/types";
 
-let electron: RendererInterface | undefined
+let electron: RendererInterface | undefined;
 try {
-  electron = require('electron')
+  electron = require("electron");
 } catch {}
 
 class MainProcessBinding extends EventTarget {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
     if (electron) {
       electron.ipcRenderer.on(ipcEvent.PRICE_CHECK, (e, data) => {
-        this.selfEmitPriceCheck(data)
-      })
+        this.selfEmitPriceCheck(data);
+      });
 
       electron.ipcRenderer.on(ipcEvent.MAP_CHECK, (e, data) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.MAP_CHECK, {
-          detail: data
-        }))
-      })
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.MAP_CHECK, {
+            detail: data
+          })
+        );
+      });
 
       electron.ipcRenderer.on(ipcEvent.LEAGUE_SELECTED, (e, leagueId) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.LEAGUE_SELECTED, {
-          detail: leagueId
-        }))
-      })
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.LEAGUE_SELECTED, {
+            detail: leagueId
+          })
+        );
+      });
 
       electron.ipcRenderer.on(ipcEvent.PUSH_CONFIG, (e, cfg) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.PUSH_CONFIG, {
-          detail: cfg
-        }))
-      })
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.PUSH_CONFIG, {
+            detail: cfg
+          })
+        );
+      });
 
       electron.ipcRenderer.on(ipcEvent.FOCUS_CHANGE, (e, data) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.FOCUS_CHANGE, { detail: data }))
-      })
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.FOCUS_CHANGE, { detail: data })
+        );
+      });
 
       electron.ipcRenderer.on(ipcEvent.PRICE_CHECK_CANCELED, () => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK_CANCELED))
-      })
+        this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK_CANCELED));
+      });
 
       electron.ipcRenderer.on(ipcEvent.UPDATE_AVAILABLE, (e, updateInfo) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.UPDATE_AVAILABLE, {
-          detail: updateInfo
-        }))
-      })
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.UPDATE_AVAILABLE, {
+            detail: updateInfo
+          })
+        );
+      });
 
       electron.ipcRenderer.on(ipcEvent.VISIBILITY, (e, detail) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.VISIBILITY, { detail }))
-      })
+        this.dispatchEvent(new CustomEvent(ipcEvent.VISIBILITY, { detail }));
+      });
 
       electron.ipcRenderer.on(ipcEvent.OPEN_WIKI, (e, detail) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.OPEN_WIKI, { detail }))
+        this.dispatchEvent(new CustomEvent(ipcEvent.OPEN_WIKI, { detail }));
+      });
+
+      electron.ipcRenderer.on(ipcEvent.NEW_INCOMING_OFFER, (e, offer) => {
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.NEW_INCOMING_OFFER, { detail: offer })
+        );
+      });
+    }
+  }
+
+  selfEmitPriceCheck(e: ipcEvent.IpcPriceCheck) {
+    this.dispatchEvent(
+      new CustomEvent(ipcEvent.PRICE_CHECK, {
+        detail: e
       })
+    );
+  }
+
+  readyReceiveEvents() {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.OVERLAY_READY);
     }
   }
 
-  selfEmitPriceCheck (e: ipcEvent.IpcPriceCheck) {
-    this.dispatchEvent(new CustomEvent(ipcEvent.PRICE_CHECK, {
-      detail: e
-    }))
-  }
-
-  readyReceiveEvents () {
+  dprChanged(dpr: number) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.OVERLAY_READY)
+      electron.ipcRenderer.send(ipcEvent.DPR_CHANGE, dpr);
     }
   }
 
-  dprChanged (dpr: number) {
+  closeOverlay() {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.DPR_CHANGE, dpr)
+      electron.ipcRenderer.send(ipcEvent.CLOSE_OVERLAY);
     }
   }
 
-  closeOverlay () {
+  priceCheckWidgetIsHidden() {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.CLOSE_OVERLAY)
+      electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_HIDE);
     }
   }
 
-  priceCheckWidgetIsHidden () {
+  getConfig(): Config {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.PRICE_CHECK_HIDE)
-    }
-  }
-
-  getConfig (): Config {
-    if (electron) {
-      return electron.ipcRenderer.sendSync(ipcEvent.GET_CONFIG)
+      return electron.ipcRenderer.sendSync(ipcEvent.GET_CONFIG);
     } else {
-      return defaultConfig
+      return defaultConfig;
     }
   }
 
-  sendLeaguesReady (leagues: League[]) {
+  sendLeaguesReady(leagues: League[]) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.LEAGUES_READY, leagues)
+      electron.ipcRenderer.send(ipcEvent.LEAGUES_READY, leagues);
     }
   }
 
-  openSystemBrowser (url: string) {
+  openSystemBrowser(url: string) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.OPEN_SYSTEM_BROWSER, { url } as ipcEvent.IpcOpenSystemBrowser)
+      electron.ipcRenderer.send(ipcEvent.OPEN_SYSTEM_BROWSER, {
+        url
+      } as ipcEvent.IpcOpenSystemBrowser);
     }
   }
 
-  openAppBrowser (opts: ipcEvent.IpcShowBrowser) {
+  openAppBrowser(opts: ipcEvent.IpcShowBrowser) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.SHOW_BROWSER, opts)
+      electron.ipcRenderer.send(ipcEvent.SHOW_BROWSER, opts);
     } else if (opts.url) {
-      window.open(opts.url)
+      window.open(opts.url);
     }
   }
 
-  hideAppBrowser (opts: ipcEvent.IpcHideBrowser) {
+  hideAppBrowser(opts: ipcEvent.IpcHideBrowser) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.HIDE_BROWSER, opts)
+      electron.ipcRenderer.send(ipcEvent.HIDE_BROWSER, opts);
     }
   }
 
-  closeSettingsWindow (config?: Config) {
+  closeSettingsWindow(config?: Config) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.CLOSE_SETTINGS_WINDOW, config)
+      electron.ipcRenderer.send(ipcEvent.CLOSE_SETTINGS_WINDOW, config);
     }
   }
 
-  stashSearch (text: string) {
+  stashSearch(text: string) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.STASH_SEARCH, { text })
+      electron.ipcRenderer.send(ipcEvent.STASH_SEARCH, { text });
     }
   }
 
-  saveConfig (config: Config) {
+  saveConfig(config: Config) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.PUSH_CONFIG, config)
+      electron.ipcRenderer.send(ipcEvent.PUSH_CONFIG, config);
     }
   }
 
-  importFile (filePath: string) {
+  importFile(filePath: string) {
     if (electron) {
-      return electron.ipcRenderer.sendSync(ipcEvent.IMPORT_FILE, filePath)
+      return electron.ipcRenderer.sendSync(ipcEvent.IMPORT_FILE, filePath);
     }
   }
 
-  get CORS () {
-    return (!electron)
-      ? 'https://apt-cors.snos.workers.dev/?'
-      : ''
+  get CORS() {
+    return !electron ? "https://apt-cors.snos.workers.dev/?" : "";
   }
 
-  get isElectron () {
-    return (electron != null)
+  get isElectron() {
+    return electron != null;
   }
 }
 
-export const MainProcess = new MainProcessBinding()
+export const MainProcess = new MainProcessBinding();
