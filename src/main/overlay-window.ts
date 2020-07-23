@@ -112,7 +112,8 @@ function focusOverlay () {
 function focusPoE () {
   if (!overlayWindow) return
 
-  overlayWindow.setIgnoreMouseEvents(true)
+  // So the mouse can interact with the offers
+  // overlayWindow.setIgnoreMouseEvents(true)
   isInteractable = false
   OW.focusTarget()
   PoeWindow.isActive = true
