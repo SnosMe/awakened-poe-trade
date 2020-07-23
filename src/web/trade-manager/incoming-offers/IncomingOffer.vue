@@ -1,11 +1,16 @@
 <template>
   <div class="incoming-offer bg-gray-800 mx-1 rounded ripple">
-    <table style="width: 100%;">
-      <tr class="bg-gray-900 incoming-offer-header" @click="sendParyInvite">
+    <table
+      style="width: 100%;"
+      :class="{
+        'incoming-offer-highlight': partyInviteSent
+      }"
+    >
+      <tr class="bg-gray-900 incoming-offer-header" @click.exact="offerClicked" @click.ctrl.exact="sendSoldWhisper" @click.ctrl.shift.exact="sendStillInterestedWhisper">
         <td colspan="2">
           <ui-popper trigger="hover" :options="{ placement: 'top' }">
             <template slot="reference">
-              <p class="text-gray-500">{{ offer.item | elipsis }}</p>
+              <p class="text-gray-500" style="user-select: none">{{ offer.item | elipsis }}</p>
             </template>
 
             <div class="popper">
@@ -14,7 +19,7 @@
           </ui-popper>
         </td>
       </tr>
-      <tr class="incoming-offer-content text-gray-500" @click="sendParyInvite">
+      <tr class="incoming-offer-content text-gray-500" @click.exact="offerClicked" @click.ctrl.exact="sendSoldWhisper" @click.ctrl.shift.exact="sendStillInterestedWhisper">
         <td>
           <img
             src="https://gamepedia.cursecdn.com/pathofexile_gamepedia/9/9c/Chaos_Orb_inventory_icon.png?version=e197f9fd3de58b1ebaa95ef9160af106"
@@ -24,19 +29,37 @@
           <p class="text-gray-500">50x</p>
         </td>
       </tr>
-      <tr class="incoming-offer-actions">
+      <tr class="incoming-offer-actions" v-if="!partyInviteSent">
         <td>
           <div
-            class="incoming-offer-action-still-interested incoming-offer-action"
-            @click="sendStillInterestedWhisper"
+            class="incoming-offer-action-busy incoming-offer-action"
+            @click="sendBusyWhisper"
           >
-            <i class="fas fa-question text-gray-500"></i>
+            <i class="fas fa-clock text-gray-500"></i>
           </div>
         </td>
         <td>
           <div
             class="incoming-offer-action-dismiss incoming-offer-action"
             @click="dismiss"
+          >
+            <i class="fas fa-times text-gray-500"></i>
+          </div>
+        </td>
+      </tr>
+      <tr class="incoming-offer-actions" v-else>
+        <td>
+          <div
+            class="incoming-offer-action-party-invite incoming-offer-action"
+            @click="sendPartyInvite(true)"
+          >
+            <i class="fas fa-user-plus text-gray-500"></i>
+          </div>
+        </td>
+        <td>
+          <div
+            class="incoming-offer-action-dismiss incoming-offer-action"
+            @click="remove"
           >
             <i class="fas fa-times text-gray-500"></i>
           </div>
@@ -68,14 +91,31 @@ export default {
     }
   },
   data: () => ({
-    //
+    partyInviteSent: false,
+    tradeRequestSent: false
   }),
   created() {},
   methods: {
-    sendParyInvite() {
+    offerClicked() {
       MainProcess.focusGame();
+
+      if (this.partyInviteSent) {
+        this.sendTradeRequest();
+      } else {
+        this.sendPartyInvite();
+      }
+    },
+    sendTradeRequest() {
+      this.$emit("tradeRequest");
+      this.tradeRequestSent = true;
+    },
+    sendPartyInvite(focusGame = false) {
+      if(focusGame){
+        MainProcess.focusGame();
+      }
+
       this.$emit("partyInvite");
-      this.offer.partyInviteSent = true;
+      this.partyInviteSent = true;
     },
     sendStillInterestedWhisper() {
       MainProcess.focusGame();
@@ -84,6 +124,18 @@ export default {
     dismiss() {
       MainProcess.focusGame();
       this.$emit("dismiss");
+    },
+    remove() {
+      MainProcess.focusGame();
+      this.$emit("remove");
+    },
+    sendSoldWhisper(){
+      MainProcess.focusGame();
+      this.$emit('sold');
+    },
+    sendBusyWhisper(){
+      MainProcess.focusGame();
+      this.$emit('busy');
     }
   }
 };
@@ -94,10 +146,11 @@ export default {
   width: 5rem;
   height: 5rem;
   pointer-events: all;
+  cursor: pointer;
 }
 
 .incoming-offer > table {
-  border: 0.2rem solid #1a202c;
+  border: 0.15rem solid #1a202c;
 }
 
 .incoming-offer > table > tr > td {
@@ -106,23 +159,30 @@ export default {
 
 .incoming-offer-header {
   text-align: center;
+  user-select: none;
 }
 
 .incoming-offer-content > td > img {
   height: 2rem;
   margin: auto;
+  user-select: none;
 }
 
 .incoming-offer-content > td > p {
   text-align: center;
+  user-select: none;
 }
 
-.incoming-offer-action-still-interested:hover {
+.incoming-offer-action-busy:hover {
   background-color: rgb(47, 113, 255);
 }
 
 .incoming-offer-action-dismiss:hover {
   background-color: red;
+}
+
+.incoming-offer-action-party-invite:hover {
+  background-color: rgb(21, 167, 21);
 }
 
 .incoming-offer-action > i {
@@ -139,6 +199,10 @@ export default {
 
 .incoming-offer-actions > td > span > span > .popper {
   font-size: 0.6rem !important;
+}
+
+.incoming-offer-highlight {
+  border-color: rgb(218, 185, 0) !important;
 }
 
 /* Ripple effect */
