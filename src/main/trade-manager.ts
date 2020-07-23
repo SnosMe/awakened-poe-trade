@@ -3,8 +3,13 @@ import { watchFile, stat, open, read } from "fs";
 import { debounce } from "lodash";
 import { EOL, platform } from "os";
 import { clipboard, ipcRenderer, ipcMain } from "electron";
-import { overlayWindow } from "./overlay-window";
-import { NEW_INCOMING_OFFER } from "@/ipc/ipc-event";
+import { overlayWindow, assertPoEActive } from "./overlay-window";
+import {
+  NEW_INCOMING_OFFER,
+  SEND_STILL_INTERESTED_WHISPER,
+  SEND_PARTY_INVITE_CMD
+} from "@/ipc/ipc-event";
+import { typeInChat } from "./game-chat";
 
 interface ProcessInfos {
   pid: number;
@@ -15,7 +20,7 @@ interface ProcessInfos {
 }
 
 interface Offer {
-  id: number,
+  id: number;
   item: string;
   price: string;
   player: string;
@@ -30,6 +35,7 @@ interface Parser {
 const DEBOUNCE_READ_RATE_MS = 500;
 const FILE_WATCH_RATE_MS = 1000;
 const CLIPBOARD_POLLING_RATE_MS = 500;
+const POE_PROCESS_RETRY_RATE_MS = 30000;
 
 const PARSING = {
   eng: {
@@ -128,17 +134,49 @@ const PARSING = {
 let id = 0;
 
 class TradeManager {
+  private retryInterval: any = null;
   private logFilePath: string = "";
   private lastFilePosition: number = 0;
   // eslint-disable-next-line camelcase
   private debounced_readLastLines: any = null;
   private lastClipboardValue: string = "";
+  private isPollingClipboard: boolean = false;
 
   constructor() {
+    ipcMain.on(SEND_STILL_INTERESTED_WHISPER, (_, offer) =>
+      this.sendStillInterestedWhisper(offer)
+    );
+
+    ipcMain.on(SEND_PARTY_INVITE_CMD, (_, offer) =>
+      this.sendPartyInvite(offer)
+    );
+
     this.debounced_readLastLines = debounce(
       this.readLastLines,
       DEBOUNCE_READ_RATE_MS
     );
+  }
+
+  private sendPartyInvite(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(`/invite ${offer.player}`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendStillInterestedWhisper(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(
+      `@${offer.player} Are you still interested in my ${offer.item} listed for ${offer.price}?`
+    );
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
   private async findPoEProcess(): Promise<ProcessInfos | undefined> {
@@ -150,7 +188,18 @@ class TradeManager {
     const poeProc = await this.findPoEProcess();
 
     if (!poeProc) {
-      console.warn("Unable to find PoE process, make sure the game is running");
+      console.warn(
+        `Unable to find PoE process, make sure the game is running. Retrying in ${POE_PROCESS_RETRY_RATE_MS /
+          1000} second(s)...`
+      );
+      if (!this.retryInterval) {
+        this.retryInterval = setTimeout(() => {
+          if (this.start()) {
+            clearInterval(this.retryInterval);
+            this.retryInterval = null;
+          }
+        }, POE_PROCESS_RETRY_RATE_MS);
+      }
       return false;
     }
 
@@ -169,7 +218,7 @@ class TradeManager {
     this.moveFilePositionToEOF();
 
     this.listenIncomingTradeOffers();
-    this.listenOutgoingTradeOffers();
+    // this.listenOutgoingTradeOffers();
 
     return true;
   }
@@ -203,11 +252,15 @@ class TradeManager {
   }
 
   private listenOutgoingTradeOffers(): void {
-    setInterval(() => {
-      const text = this.pollClipboard();
+    this.isPollingClipboard = true;
 
-      if (text && text.trim().length > 0) {
-        this.parse(text, false);
+    setInterval(() => {
+      if (this.isPollingClipboard) {
+        const text = this.pollClipboard();
+
+        if (text && text.trim().length > 0) {
+          this.parse(text, false);
+        }
       }
     }, CLIPBOARD_POLLING_RATE_MS);
   }

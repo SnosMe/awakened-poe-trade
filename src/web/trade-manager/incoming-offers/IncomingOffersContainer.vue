@@ -51,7 +51,7 @@ export default {
       MainProcess.sendStillInterestedWhisper(offer);
     },
     sendPartyInvite(offer) {
-      console.log("party invite");
+      MainProcess.sendPartyInvite(offer);
     }
   }
 };

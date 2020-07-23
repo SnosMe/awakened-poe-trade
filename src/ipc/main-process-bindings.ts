@@ -86,6 +86,12 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  sendPartyInvite(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_PARTY_INVITE_CMD, offer);
+    }
+  }
+
   selfEmitPriceCheck(e: ipcEvent.IpcPriceCheck) {
     this.dispatchEvent(
       new CustomEvent(ipcEvent.PRICE_CHECK, {
