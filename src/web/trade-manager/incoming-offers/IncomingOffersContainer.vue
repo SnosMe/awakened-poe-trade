@@ -9,6 +9,9 @@
       :key="offer.id"
       v-for="offer of offers"
       :offer="offer"
+      @dismiss="dismiss(offer)"
+      @stillInterested="sendStillInterestedWhisper(offer)"
+      @partyInvite="sendPartyInvite(offer)"
     />
   </div>
 </template>
@@ -36,7 +39,21 @@ export default {
   },
   watch: {},
   computed: {},
-  methods: {}
+  methods: {
+    dismiss(offer) {
+      const index = this.offers.findIndex(o => o.id === offer.id);
+
+      if (index !== -1) {
+        this.offers.splice(index, 1);
+      }
+    },
+    sendStillInterestedWhisper(offer) {
+      console.log("still interested ?");
+    },
+    sendPartyInvite(offer) {
+      console.log("party invite");
+    }
+  }
 };
 </script>
 
