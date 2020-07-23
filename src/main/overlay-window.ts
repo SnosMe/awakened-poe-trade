@@ -21,6 +21,7 @@ export async function createOverlayWindow () {
   ipcMain.on(ipc.CLOSE_OVERLAY, assertPoEActive)
   PoeWindow.on('active-change', handlePoeWindowActiveChange)
   PoeWindow.onceAttached(handleOverlayAttached)
+  ipcMain.on(ipc.FOCUS_GAME, focusPoE);
 
   overlayWindow = new BrowserWindow({
     icon: path.join(__static, 'icon.png'),
