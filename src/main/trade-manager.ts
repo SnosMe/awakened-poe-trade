@@ -7,7 +7,11 @@ import { overlayWindow, assertPoEActive } from "./overlay-window";
 import {
   NEW_INCOMING_OFFER,
   SEND_STILL_INTERESTED_WHISPER,
-  SEND_PARTY_INVITE_CMD
+  SEND_PARTY_INVITE_CMD,
+  SEND_PARTY_KICK_CMD,
+  SEND_SOLD_WHISPER,
+  SEND_THANKS_WHISPER,
+  SEND_BUSY_WHISPER
 } from "@/ipc/ipc-event";
 import { typeInChat } from "./game-chat";
 
@@ -40,7 +44,10 @@ const POE_PROCESS_RETRY_RATE_MS = 30000;
 const PARSING = {
   eng: {
     incomingOffer: {
-      validate: (text: string) => /@From .+:* Hi, I would like to buy your .+ listed for .+ in .+/gi.test(text),
+      validate: (text: string) =>
+        /@From .+:* Hi, I would like to buy your .+ listed for .+ in .+/gi.test(
+          text
+        ),
       parse: (text: string) => {
         const AT_FROM = "@From ";
         const HI_I_WOULD_LIKE_TO_BUY_YOUR = ": Hi, I would like to buy your";
@@ -151,6 +158,18 @@ class TradeManager {
       this.sendPartyInvite(offer)
     );
 
+    ipcMain.on(SEND_PARTY_KICK_CMD, (_, offer) => this.sendPartyKick(offer));
+
+    ipcMain.on(SEND_SOLD_WHISPER, (_, offer) => this.sendSoldWhisper(offer));
+
+    ipcMain.on(SEND_THANKS_WHISPER, (_, offer) =>
+      this.sendThanksWhisper(offer)
+    );
+
+    ipcMain.on(SEND_BUSY_WHISPER, (_, offer) =>
+    this.sendBusyWhisper(offer)
+  );
+
     this.debounced_readLastLines = debounce(
       this.readLastLines,
       DEBOUNCE_READ_RATE_MS
@@ -163,6 +182,46 @@ class TradeManager {
     assertPoEActive();
 
     typeInChat(`/invite ${offer.player}`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendPartyKick(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(`/kick ${offer.player}`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendThanksWhisper(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(`@${offer.player} Thanks`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendBusyWhisper(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(`@${offer.player} I'm busy right now, but I will send you a party invite when I'm ready`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendSoldWhisper(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(`@${offer.player} Sorry, my ${offer.item} is already sold`);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }

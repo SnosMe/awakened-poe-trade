@@ -12,6 +12,9 @@
       @dismiss="dismiss(offer)"
       @stillInterested="sendStillInterestedWhisper(offer)"
       @partyInvite="sendPartyInvite(offer)"
+      @remove="remove(offer)"
+      @sold="sendSoldWhisper(offer)"
+      @busy="sendBusyWhisper(offer)"
     />
   </div>
 </template>
@@ -52,6 +55,17 @@ export default {
     },
     sendPartyInvite(offer) {
       MainProcess.sendPartyInvite(offer);
+    },
+    remove(offer) {
+      this.dismiss(offer);
+      MainProcess.sendPartyKick(offer);
+    },
+    sendSoldWhisper(offer) {
+      this.dismiss(offer);
+      MainProcess.sendSoldWhisper(offer);
+    },
+    sendBusyWhisper(offer) {
+      MainProcess.sendBusyWhisper(offer);
     }
   }
 };

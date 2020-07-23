@@ -80,6 +80,30 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  sendPartyKick(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_PARTY_KICK_CMD, offer);
+    }
+  }
+
+  sendSoldWhisper(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_SOLD_WHISPER, offer);
+    }
+  }
+
+  sendThanksWhisper(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_THANKS_WHISPER, offer);
+    }
+  }
+
+  sendBusyWhisper(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_BUSY_WHISPER, offer);
+    }
+  }
+
   sendStillInterestedWhisper(offer: any) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.SEND_STILL_INTERESTED_WHISPER, offer);
