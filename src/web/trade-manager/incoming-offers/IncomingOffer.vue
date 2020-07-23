@@ -1,5 +1,5 @@
 <template>
-  <div class="incoming-offer bg-gray-800 mt-2 mx-4 rounded">
+  <div class="incoming-offer bg-gray-800 mx-1 rounded">
     <div class="bg-gray-900 incoming-offer-header" @click="sendParyInvite">
       <ui-popper trigger="hover" :options="{ placement: 'top' }">
         <template slot="reference">
@@ -18,15 +18,23 @@
     </div>
     <div class="incoming-offer-actions">
       <div
-        class="incoming-offer-action-still-interested"
+        class="incoming-offer-action-still-interested  incoming-offer-action"
         @click="sendStillInterestedWhisper"
-      ></div>
-      <div class="incoming-offer-action-dismiss" @click="dismiss"></div>
+      >
+        <i class="fas fa-question text-gray-500"></i>
+      </div>
+      <div
+        class="incoming-offer-action-dismiss incoming-offer-action"
+        @click="dismiss"
+      >
+        <i class="fas fa-times text-gray-500"></i>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { MainProcess } from '../../../ipc/main-process-bindings';
 export default {
   props: {
     offer: {
@@ -52,12 +60,15 @@ export default {
   created() {},
   methods: {
     sendParyInvite() {
+      MainProcess.focusGame();
       this.$emit("partyInvite");
     },
     sendStillInterestedWhisper() {
+      MainProcess.focusGame();
       this.$emit("stillInterested");
     },
     dismiss() {
+      MainProcess.focusGame();
       this.$emit("dismiss");
     }
   }
@@ -81,10 +92,13 @@ export default {
 
 .incoming-offer-content {
   width: 100%;
+  margin: auto;
 }
 
 .incoming-offer-content > img {
+  height: 2.5rem;
   width: 2.5rem;
+  margin: auto;
 }
 
 .incoming-offer-actions {
@@ -111,5 +125,13 @@ export default {
 
 .incoming-offer-action-dismiss:hover {
   background-color: red;
+}
+
+.incoming-offer-action > i {
+  font-size: 0.7rem;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-95%);
 }
 </style>

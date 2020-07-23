@@ -74,6 +74,18 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
+  focusGame() {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.FOCUS_GAME);
+    }
+  }
+
+  sendStillInterestedWhisper(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_STILL_INTERESTED_WHISPER, offer);
+    }
+  }
+
   selfEmitPriceCheck(e: ipcEvent.IpcPriceCheck) {
     this.dispatchEvent(
       new CustomEvent(ipcEvent.PRICE_CHECK, {

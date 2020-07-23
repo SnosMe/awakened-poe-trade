@@ -66,5 +66,9 @@ export const OPEN_WIKI = 'MAIN->OVERLAY::open-wiki'
 export const IMPORT_FILE = 'OVERLAY->MAIN::import-file'
 
 export const NEW_INCOMING_OFFER = 'MAIN->OVERLAY::incoming-offer'
-
 export const NEW_OUTGOING_OFFER = 'MAIN->OVERLAY::outoging-offer'
+export const SEND_STILL_INTERESTED_WHISPER = 'OVERLAY->MAIM::send-still-interested-whisper';
+export const SEND_PARTY_INVITE_CMD = 'OVERLAY->MAIM::send-party-invite-cmd';
+
+export const FOCUS_GAME = 'OVERLAY->MAIN::focus-game';
+

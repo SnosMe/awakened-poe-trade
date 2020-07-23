@@ -1,7 +1,7 @@
 <template>
   <div
     id="incoming-offers-container"
-    style="bottom: 20px; left: 0; height: 60px; width: 100%; position: absolute;"
+    style="bottom: 20px; left: 0; height: 60px; width: 100%; position: absolute; justify-content: center;"
     class="flex-grow flex h-full"
   >
     <IncomingOffer
@@ -48,7 +48,7 @@ export default {
       }
     },
     sendStillInterestedWhisper(offer) {
-      console.log("still interested ?");
+      MainProcess.sendStillInterestedWhisper(offer);
     },
     sendPartyInvite(offer) {
       console.log("party invite");
@@ -59,9 +59,7 @@ export default {
 
 <style>
 .incoming-offers {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%, -50%);
+  position: relative;
+  bottom: 25px;
 }
 </style>
