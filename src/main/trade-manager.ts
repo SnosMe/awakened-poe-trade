@@ -40,7 +40,7 @@ const POE_PROCESS_RETRY_RATE_MS = 30000;
 const PARSING = {
   eng: {
     incomingOffer: {
-      validate: (text: string) => /@From .+:* /gi.test(text),
+      validate: (text: string) => /@From .+:* Hi, I would like to buy your .+ listed for .+ in .+/gi.test(text),
       parse: (text: string) => {
         const AT_FROM = "@From ";
         const HI_I_WOULD_LIKE_TO_BUY_YOUR = ": Hi, I would like to buy your";
