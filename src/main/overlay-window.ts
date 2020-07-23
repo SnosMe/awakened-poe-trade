@@ -27,6 +27,7 @@ export async function createOverlayWindow () {
     ...OW.WINDOW_OPTS,
     width: 800,
     height: 600,
+    acceptFirstMouse: true,
     // backgroundColor: '#00000008',
     webPreferences: {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
@@ -35,7 +36,7 @@ export async function createOverlayWindow () {
     }
   })
 
-  overlayWindow.setIgnoreMouseEvents(true)
+  overlayWindow.setIgnoreMouseEvents(false)
 
   overlayWindow.setMenu(Menu.buildFromTemplate([
     { role: 'editMenu' },
