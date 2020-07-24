@@ -44,10 +44,10 @@ export default {
 
     MainProcess.addEventListener(TRADE_ACCEPTED, () => {
       const offer = this.offers.find(o => o.tradeRequestSent);
-      console.debug("Trade accepted for ", offer);
 
       if (offer) {
         MainProcess.sendThanksWhisper(offer, true);
+        this.dismiss(offer);
       }
     });
 
@@ -73,11 +73,6 @@ export default {
     return {
       offers: []
     };
-  },
-  watch: {},
-  computed: {},
-  mounted() {
-    console.log(this.$refs);
   },
   methods: {
     dismiss(offer) {
