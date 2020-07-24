@@ -15,13 +15,19 @@
       @remove="remove(offer)"
       @sold="sendSoldWhisper(offer)"
       @busy="sendBusyWhisper(offer)"
+      @tradeRequest="sendTradeRequest(offer)"
+      @highlightItem="highlightItem(offer)"
     />
   </div>
 </template>
 
 <script>
 import { MainProcess } from "@/ipc/main-process-bindings";
-import { NEW_INCOMING_OFFER } from "@/ipc/ipc-event";
+import {
+  NEW_INCOMING_OFFER,
+  TRADE_ACCEPTED,
+  TRADE_CANCELLED
+} from "@/ipc/ipc-event";
 
 import IncomingOffer from "./IncomingOffer";
 
@@ -33,6 +39,21 @@ export default {
     MainProcess.addEventListener(NEW_INCOMING_OFFER, ({ detail: offer }) => {
       console.log(offer);
       this.offers.push(offer);
+    });
+
+    MainProcess.addEventListener(TRADE_ACCEPTED, () => {
+      const offer = this.offers.find(o => o.tradeRequestSent);
+
+      if (offer) {
+        MainProcess.sendThanksWhisper(offer);
+        this.remove(offer);
+      }
+    });
+
+    MainProcess.addEventListener(TRADE_CANCELLED, () => {
+      for (let i = 0; i < this.offers.length; ++i) {
+        this.offers[i].tradeRequestSent = false;
+      }
     });
   },
   data() {
@@ -66,6 +87,18 @@ export default {
     },
     sendBusyWhisper(offer) {
       MainProcess.sendBusyWhisper(offer);
+    },
+    sendTradeRequest(offer) {
+      const index = this.offers.findIndex(o => o.id === offer.id);
+
+      if (index !== -1) {
+        this.offers[index].tradeRequestSent = true;
+      }
+
+      MainProcess.sendTradeRequest(offer);
+    },
+    highlightItem(offer){
+      MainProcess.highlightOfferItem(offer);
     }
   }
 };

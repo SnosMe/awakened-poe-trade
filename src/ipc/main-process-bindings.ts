@@ -71,12 +71,26 @@ class MainProcessBinding extends EventTarget {
           new CustomEvent(ipcEvent.NEW_INCOMING_OFFER, { detail: offer })
         );
       });
+
+      electron.ipcRenderer.on(ipcEvent.TRADE_ACCEPTED, () => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.TRADE_ACCEPTED));
+      });
+
+      electron.ipcRenderer.on(ipcEvent.TRADE_CANCELLED, () => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.TRADE_CANCELLED));
+      });
     }
   }
 
   focusGame() {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.FOCUS_GAME);
+    }
+  }
+
+  highlightOfferItem(offer: any){
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.HIGHLIGHT_OFFER_ITEM, offer);
     }
   }
 
@@ -89,6 +103,12 @@ class MainProcessBinding extends EventTarget {
   sendSoldWhisper(offer: any) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.SEND_SOLD_WHISPER, offer);
+    }
+  }
+
+  sendTradeRequest(offer: any) {
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_TRADE_REQUEST_CMD, offer);
     }
   }
 

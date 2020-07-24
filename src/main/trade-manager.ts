@@ -11,9 +11,14 @@ import {
   SEND_PARTY_KICK_CMD,
   SEND_SOLD_WHISPER,
   SEND_THANKS_WHISPER,
-  SEND_BUSY_WHISPER
+  SEND_BUSY_WHISPER,
+  TRADE_ACCEPTED,
+  TRADE_CANCELLED,
+  SEND_TRADE_REQUEST_CMD,
+  HIGHLIGHT_OFFER_ITEM
 } from "@/ipc/ipc-event";
 import { typeInChat } from "./game-chat";
+import robotjs from "robotjs";
 
 interface ProcessInfos {
   pid: number;
@@ -81,7 +86,7 @@ const CURRENCY_TO_IMAGE: any = {
     "https://web.poecdn.com/image/Art/2DItems/Currency/SilverObol.png?v=93c1b204ec2736a2fe5aabbb99510bcf"
 };
 
-const PARSING = {
+const PARSING: any = {
   eng: {
     incomingOffer: {
       validate: (text: string) =>
@@ -202,6 +207,15 @@ const PARSING = {
           league
         } as Offer;
       }
+    },
+    tradeAccepted: {
+      validate: (text: string) => /Trade accepted/gi.test(text),
+      parse: (text: string) => text
+    },
+    tradeCancelled: {
+      validate: (text: string) =>
+        /Trade cancelled|Player not found in this area/gi.test(text),
+      parse: (text: string) => text
     }
   }
 };
@@ -234,12 +248,33 @@ class TradeManager {
       this.sendThanksWhisper(offer)
     );
 
+    ipcMain.on(SEND_TRADE_REQUEST_CMD, (_, offer) =>
+      this.sendTradeRequest(offer)
+    );
+
     ipcMain.on(SEND_BUSY_WHISPER, (_, offer) => this.sendBusyWhisper(offer));
+
+    ipcMain.on(HIGHLIGHT_OFFER_ITEM, (_, offer) =>
+      this.highlightOfferItem(offer)
+    );
 
     this.debounced_readLastLines = debounce(
       this.readLastLines,
       DEBOUNCE_READ_RATE_MS
     );
+  }
+
+  private highlightOfferItem(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    const savedText = clipboard.readText();
+    console.log(offer.item);
+    clipboard.writeText(offer.item);
+
+    robotjs.keyTap("F", ["Ctrl"]);
+    robotjs.keyTap("V", ["Ctrl"]);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
   private sendPartyInvite(offer: Offer) {
@@ -258,6 +293,16 @@ class TradeManager {
     assertPoEActive();
 
     typeInChat(`/kick ${offer.player}`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendTradeRequest(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    typeInChat(`/tradewith ${offer.player}`);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
@@ -386,7 +431,7 @@ class TradeManager {
         const text = this.pollClipboard();
 
         if (text && text.trim().length > 0) {
-          this.parse(text, false);
+          this.parse(text, "outgoingOffer");
         }
       }
     }, CLIPBOARD_POLLING_RATE_MS);
@@ -459,19 +504,37 @@ class TradeManager {
     };
   }
 
-  private parse(line: string, fromLog: boolean = true): void {
-    const result = this.parseLine(
-      fromLog ? PARSING.eng.incomingOffer : PARSING.eng.outgoingOffer,
-      line
-    );
+  private parse(line: string, type: string = "log"): void {
+    if (type === "log") {
+      if (PARSING.eng.incomingOffer.validate(line)) {
+        type = "incomingOffer";
+      } else if (PARSING.eng.tradeAccepted.validate(line)) {
+        type = "tradeAccepted";
+      } else if (PARSING.eng.tradeCancelled.validate(line)) {
+        type = "tradeCancelled";
+      } else {
+        return;
+      }
+    }
+
+    const result = this.parseLine(PARSING.eng[type], line);
 
     if (result.ok) {
-      console.log(
-        fromLog ? "Incoming offer: " : "Outgoing offer: ",
-        result.offer
-      );
+      console.log(type, result.offer);
 
-      overlayWindow!.webContents.send(NEW_INCOMING_OFFER, result.offer);
+      switch (type) {
+        case "incomingOffer":
+          overlayWindow!.webContents.send(NEW_INCOMING_OFFER, result.offer);
+          break;
+
+        case "tradeAccepted":
+          overlayWindow!.webContents.send(TRADE_ACCEPTED);
+          break;
+
+        case "tradeCancelled":
+          overlayWindow!.webContents.send(TRADE_CANCELLED);
+          break;
+      }
     }
   }
 }

@@ -11,6 +11,7 @@
         @click.exact="offerClicked"
         @click.ctrl.exact="sendSoldWhisper"
         @click.ctrl.shift.exact="sendStillInterestedWhisper"
+        @click.alt.exact="highlightItem"
       >
         <td colspan="2">
           <ui-popper trigger="hover" :options="{ placement: 'top' }">
@@ -31,6 +32,7 @@
         @click.exact="offerClicked"
         @click.ctrl.exact="sendSoldWhisper"
         @click.ctrl.shift.exact="sendStillInterestedWhisper"
+        @click.alt.exact="highlightItem"
       >
         <td>
           <img :src="offer.price.image" :alt="offer.price.currency" />
@@ -146,6 +148,10 @@ export default {
     sendBusyWhisper() {
       MainProcess.focusGame();
       this.$emit("busy");
+    },
+    highlightItem(){
+      MainProcess.focusGame();
+      this.$emit('highlightItem')
     }
   }
 };

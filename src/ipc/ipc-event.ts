@@ -74,5 +74,9 @@ export const SEND_PARTY_KICK_CMD = "OVERLAY->MAIN::send-party-kick-cmd";
 export const SEND_THANKS_WHISPER = "OVERLAY->MAIN::send-thanks-whisper";
 export const SEND_SOLD_WHISPER = "OVERLAY->MAIN::send-sold-whisper";
 export const SEND_BUSY_WHISPER = "OVERLAY->MAIN::send-busy-whisper";
+export const SEND_TRADE_REQUEST_CMD = "OVERLAY->MAIN::send-trade-request";
+export const TRADE_ACCEPTED = "MAIN->OVERLAY::trade-accepted";
+export const TRADE_CANCELLED = "MAIN->OVERLAY::trade-cancelled";
+export const HIGHLIGHT_OFFER_ITEM = "MAIN->OVERLAY::highlight-offer-item";
 
 export const FOCUS_GAME = "OVERLAY->MAIN::focus-game";
