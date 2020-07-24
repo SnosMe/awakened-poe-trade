@@ -118,9 +118,9 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  sendThanksWhisper(offer: any) {
+  sendThanksWhisper(offer: any, kickPlayer: boolean) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.SEND_THANKS_WHISPER, offer);
+      electron.ipcRenderer.send(ipcEvent.SEND_THANKS_WHISPER, offer, kickPlayer);
     }
   }
 

@@ -1,7 +1,7 @@
 <template>
   <div
     id="incoming-offers-container"
-    style="bottom: 20px; left: 0; height: 60px; width: 100%; position: absolute; justify-content: center;"
+    style="bottom: 20px; left: 50%; height: 60px; width: 43%; position: absolute; transform: translateX(-50%);"
     class="flex-grow flex h-full"
   >
     <IncomingOffer
@@ -44,10 +44,10 @@ export default {
 
     MainProcess.addEventListener(TRADE_ACCEPTED, () => {
       const offer = this.offers.find(o => o.tradeRequestSent);
+      console.debug("Trade accepted for ", offer);
 
       if (offer) {
-        MainProcess.sendThanksWhisper(offer);
-        this.remove(offer);
+        MainProcess.sendThanksWhisper(offer, true);
       }
     });
 
