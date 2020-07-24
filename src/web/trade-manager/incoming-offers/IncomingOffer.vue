@@ -6,11 +6,18 @@
         'incoming-offer-highlight': partyInviteSent
       }"
     >
-      <tr class="bg-gray-900 incoming-offer-header" @click.exact="offerClicked" @click.ctrl.exact="sendSoldWhisper" @click.ctrl.shift.exact="sendStillInterestedWhisper">
+      <tr
+        class="bg-gray-900 incoming-offer-header"
+        @click.exact="offerClicked"
+        @click.ctrl.exact="sendSoldWhisper"
+        @click.ctrl.shift.exact="sendStillInterestedWhisper"
+      >
         <td colspan="2">
           <ui-popper trigger="hover" :options="{ placement: 'top' }">
             <template slot="reference">
-              <p class="text-gray-500" style="user-select: none">{{ offer.item | elipsis }}</p>
+              <p class="text-gray-500" style="user-select: none">
+                {{ offer.item | elipsis }}
+              </p>
             </template>
 
             <div class="popper">
@@ -19,14 +26,17 @@
           </ui-popper>
         </td>
       </tr>
-      <tr class="incoming-offer-content text-gray-500" @click.exact="offerClicked" @click.ctrl.exact="sendSoldWhisper" @click.ctrl.shift.exact="sendStillInterestedWhisper">
+      <tr
+        class="incoming-offer-content text-gray-500"
+        @click.exact="offerClicked"
+        @click.ctrl.exact="sendSoldWhisper"
+        @click.ctrl.shift.exact="sendStillInterestedWhisper"
+      >
         <td>
-          <img
-            src="https://gamepedia.cursecdn.com/pathofexile_gamepedia/9/9c/Chaos_Orb_inventory_icon.png?version=e197f9fd3de58b1ebaa95ef9160af106"
-          />
+          <img :src="offer.price.image" :alt="offer.price.currency" />
         </td>
         <td>
-          <p class="text-gray-500">50x</p>
+          <p class="text-gray-500">{{ offer.price.value }}x</p>
         </td>
       </tr>
       <tr class="incoming-offer-actions" v-if="!partyInviteSent">
@@ -110,7 +120,7 @@ export default {
       this.tradeRequestSent = true;
     },
     sendPartyInvite(focusGame = false) {
-      if(focusGame){
+      if (focusGame) {
         MainProcess.focusGame();
       }
 
@@ -129,13 +139,13 @@ export default {
       MainProcess.focusGame();
       this.$emit("remove");
     },
-    sendSoldWhisper(){
+    sendSoldWhisper() {
       MainProcess.focusGame();
-      this.$emit('sold');
+      this.$emit("sold");
     },
-    sendBusyWhisper(){
+    sendBusyWhisper() {
       MainProcess.focusGame();
-      this.$emit('busy');
+      this.$emit("busy");
     }
   }
 };
