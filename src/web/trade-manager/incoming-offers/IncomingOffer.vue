@@ -1,11 +1,6 @@
 <template>
   <div class="incoming-offer bg-gray-800 mx-1 rounded ripple">
-    <table
-      style="width: 100%;"
-      :class="{
-        'incoming-offer-highlight': partyInviteSent
-      }"
-    >
+    <table style="width: 100%;border-radius: 0.25; border: 1px solid #000">
       <tr
         class="bg-gray-900 incoming-offer-header"
         @click.exact="offerClicked"
@@ -14,15 +9,28 @@
         @click.alt.exact="highlightItem"
       >
         <td colspan="2">
-          <ui-popper trigger="hover" :options="{ placement: 'top' }">
+          <ui-popper
+            trigger="hover"
+            :options="{ placement: 'top' }"
+            :delay-on-mouse-over="50"
+          >
             <template slot="reference">
-              <p class="text-gray-500" style="user-select: none">
-                {{ offer.item | elipsis }}
-              </p>
+              <span class="text-gray-500" style="user-select: none">
+                {{ offer.item | elipsis(playerJoined ? 7 : 10) }}
+                <i
+                  class="fas fa-user"
+                  style="font-size: 0.8rem"
+                  v-if="playerJoined"
+                ></i>
+              </span>
             </template>
 
-            <div class="popper">
-              <p>{{ offer.item }}</p>
+            <div class="popper incoming-offer-header-tooltip">
+              <p>
+                {{ offer.item }}<br />
+                {{ offer.player }}<br />
+                {{ offer.time | time }}
+              </p>
             </div>
           </ui-popper>
         </td>
@@ -84,30 +92,39 @@
 <script>
 import { MainProcess } from "../../../ipc/main-process-bindings";
 export default {
-  props: {
-    offer: {
-      type: Object,
-      required: true
-    }
-  },
+  props: ["offer"],
   filters: {
-    elipsis: function(value) {
+    elipsis: function(value, length = 10) {
       if (!value) {
         return "";
       }
 
       const strValue = value.toString();
-      return strValue.length >= 10
-        ? `${strValue.substring(0, 9)}...`
+      return strValue.length >= length
+        ? `${strValue.substring(0, length - 1)}...`
         : strValue;
+    },
+    time: function(value) {
+      if (!value) {
+        return "";
+      }
+
+      return value.substring(11);
     }
   },
   data: () => ({
     partyInviteSent: false,
-    tradeRequestSent: false
+    tradeRequestSent: false,
+    playerJoined: false,
+    showDetails: false
   }),
-  created() {},
   methods: {
+    setPlayerJoined() {
+      this.playerJoined = true;
+    },
+    setTradeRequestSent(state) {
+      this.tradeRequestSent = state;
+    },
     offerClicked() {
       MainProcess.focusGame();
 
@@ -149,9 +166,9 @@ export default {
       MainProcess.focusGame();
       this.$emit("busy");
     },
-    highlightItem(){
+    highlightItem() {
       MainProcess.focusGame();
-      this.$emit('highlightItem')
+      this.$emit("highlightItem");
     }
   }
 };
@@ -218,7 +235,12 @@ export default {
 }
 
 .incoming-offer-highlight {
-  border-color: rgb(218, 185, 0) !important;
+  background-color: #a0aec0;
+  color: #1a202c;
+}
+
+.incoming-offer-header-tooltip > p {
+  font-size: 0.7rem;
 }
 
 /* Ripple effect */

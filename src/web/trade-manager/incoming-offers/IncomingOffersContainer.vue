@@ -5,9 +5,10 @@
     class="flex-grow flex h-full"
   >
     <IncomingOffer
+      v-for="offer of offers"
+      ref="offers"
       class="incoming-offers"
       :key="offer.id"
-      v-for="offer of offers"
       :offer="offer"
       @dismiss="dismiss(offer)"
       @stillInterested="sendStillInterestedWhisper(offer)"
@@ -26,7 +27,8 @@ import { MainProcess } from "@/ipc/main-process-bindings";
 import {
   NEW_INCOMING_OFFER,
   TRADE_ACCEPTED,
-  TRADE_CANCELLED
+  TRADE_CANCELLED,
+  PLAYER_JOINED
 } from "@/ipc/ipc-event";
 
 import IncomingOffer from "./IncomingOffer";
@@ -37,7 +39,6 @@ export default {
   },
   created() {
     MainProcess.addEventListener(NEW_INCOMING_OFFER, ({ detail: offer }) => {
-      console.log(offer);
       this.offers.push(offer);
     });
 
@@ -51,8 +52,20 @@ export default {
     });
 
     MainProcess.addEventListener(TRADE_CANCELLED, () => {
+      for (let i = 0; i < this.$refs.offers.length; ++i) {
+        this.$refs.offers[i].setTradeRequestSent(false);
+      }
+    });
+
+    MainProcess.addEventListener(PLAYER_JOINED, ({ detail: player }) => {
       for (let i = 0; i < this.offers.length; ++i) {
-        this.offers[i].tradeRequestSent = false;
+        if (this.offers[i].player == player) {
+          for (let vo of this.$refs.offers) {
+            if (this.offers[i].id == vo.offer.id) {
+              vo.setPlayerJoined();
+            }
+          }
+        }
       }
     });
   },
@@ -63,6 +76,9 @@ export default {
   },
   watch: {},
   computed: {},
+  mounted() {
+    console.log(this.$refs);
+  },
   methods: {
     dismiss(offer) {
       const index = this.offers.findIndex(o => o.id === offer.id);
@@ -97,7 +113,7 @@ export default {
 
       MainProcess.sendTradeRequest(offer);
     },
-    highlightItem(offer){
+    highlightItem(offer) {
       MainProcess.highlightOfferItem(offer);
     }
   }

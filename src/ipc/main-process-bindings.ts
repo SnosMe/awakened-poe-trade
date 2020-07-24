@@ -79,6 +79,12 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.on(ipcEvent.TRADE_CANCELLED, () => {
         this.dispatchEvent(new CustomEvent(ipcEvent.TRADE_CANCELLED));
       });
+
+      electron.ipcRenderer.on(ipcEvent.PLAYER_JOINED, (e, player) => {
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.PLAYER_JOINED, { detail: player })
+        );
+      });
     }
   }
 

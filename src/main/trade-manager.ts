@@ -2,7 +2,7 @@ import findProcess from "find-process";
 import { watchFile, stat, open, read } from "fs";
 import { debounce } from "lodash";
 import { EOL, platform } from "os";
-import { clipboard, ipcRenderer, ipcMain } from "electron";
+import { clipboard, ipcMain } from "electron";
 import { overlayWindow, assertPoEActive } from "./overlay-window";
 import {
   NEW_INCOMING_OFFER,
@@ -15,7 +15,8 @@ import {
   TRADE_ACCEPTED,
   TRADE_CANCELLED,
   SEND_TRADE_REQUEST_CMD,
-  HIGHLIGHT_OFFER_ITEM
+  HIGHLIGHT_OFFER_ITEM,
+  PLAYER_JOINED
 } from "@/ipc/ipc-event";
 import { typeInChat } from "./game-chat";
 import robotjs from "robotjs";
@@ -31,6 +32,7 @@ interface ProcessInfos {
 interface Offer {
   id: number;
   item: string;
+  time: string;
   price: {
     value: string;
     currency: string;
@@ -94,7 +96,10 @@ const PARSING: any = {
           text
         ),
       parse: (text: string) => {
+        const TIME_END_INDEX = 19;
+        const TIME_START_INDEX = 0;
         const AT_FROM = "@From ";
+        const CHEV_SPACE = "> ";
         const HI_I_WOULD_LIKE_TO_BUY_YOUR = ": Hi, I would like to buy your ";
         const LISTED_FOR = " listed for ";
         const IN = " in ";
@@ -103,10 +108,20 @@ const PARSING: any = {
         const TOP = ", top ";
         const P = ")";
 
-        const player = text.substring(
-          text.indexOf(AT_FROM) + AT_FROM.length,
-          text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR)
-        );
+        const time = text.substring(TIME_START_INDEX, TIME_END_INDEX);
+
+        let player = "";
+        if (/@From <.+> .+: Hi/gi.test(text)) {
+          player = text.substring(
+            text.indexOf(CHEV_SPACE) + CHEV_SPACE.length,
+            text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR)
+          );
+        } else {
+          player = text.substring(
+            text.indexOf(AT_FROM) + AT_FROM.length,
+            text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR)
+          );
+        }
 
         const item = text.substring(
           text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR) +
@@ -141,6 +156,7 @@ const PARSING: any = {
           id: ++id,
           player,
           item,
+          time,
           price: {
             image: priceImage,
             currency,
@@ -199,6 +215,7 @@ const PARSING: any = {
         return {
           player,
           item,
+          time: "",
           price: {
             image: priceImage,
             currency,
@@ -216,6 +233,11 @@ const PARSING: any = {
       validate: (text: string) =>
         /Trade cancelled|Player not found in this area/gi.test(text),
       parse: (text: string) => text
+    },
+    playerJoined: {
+      validate: (text: string) => /.+ has joined the area/gi.test(text),
+      parse: (text: string) =>
+        text.substring(0, text.indexOf(" has joined the area"))
     }
   }
 };
@@ -496,17 +518,17 @@ class TradeManager {
   private parseLine(
     parser: Parser,
     line: string
-  ): { ok: boolean; offer: Offer } {
+  ): { ok: boolean; value: Offer | any } {
     if (parser.validate(line)) {
       return {
         ok: true,
-        offer: parser.parse(line)
+        value: parser.parse(line)
       };
     }
 
     return {
       ok: false,
-      offer: {} as Offer
+      value: {} as Offer
     };
   }
 
@@ -518,6 +540,8 @@ class TradeManager {
         type = "tradeAccepted";
       } else if (PARSING.eng.tradeCancelled.validate(line)) {
         type = "tradeCancelled";
+      } else if (PARSING.eng.playerJoined.validate(line)) {
+        type = "playerJoined";
       } else {
         return;
       }
@@ -526,11 +550,11 @@ class TradeManager {
     const result = this.parseLine(PARSING.eng[type], line);
 
     if (result.ok) {
-      console.log(type, result.offer);
+      console.log(type, result.value);
 
       switch (type) {
         case "incomingOffer":
-          overlayWindow!.webContents.send(NEW_INCOMING_OFFER, result.offer);
+          overlayWindow!.webContents.send(NEW_INCOMING_OFFER, result.value);
           break;
 
         case "tradeAccepted":
@@ -539,6 +563,10 @@ class TradeManager {
 
         case "tradeCancelled":
           overlayWindow!.webContents.send(TRADE_CANCELLED);
+          break;
+
+        case "playerJoined":
+          overlayWindow!.webContents.send(PLAYER_JOINED, result.value);
           break;
       }
     }
