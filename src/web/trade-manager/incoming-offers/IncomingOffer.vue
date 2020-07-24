@@ -16,7 +16,7 @@
           >
             <template slot="reference">
               <span class="text-gray-500" style="user-select: none">
-                {{ offer.item | elipsis(playerJoined ? 7 : 10) }}
+                {{ offer.item | elipsis(playerJoined ? 7 : 9) }}
                 <i
                   class="fas fa-user"
                   style="font-size: 0.8rem"
@@ -46,7 +46,7 @@
           <img :src="offer.price.image" :alt="offer.price.currency" />
         </td>
         <td>
-          <p class="text-gray-500">{{ offer.price.value }}x</p>
+          <p class="text-gray-500">{{ offer.price.value }}</p>
         </td>
       </tr>
       <tr class="incoming-offer-actions" v-if="!partyInviteSent">
