@@ -95,7 +95,7 @@ const PARSING: any = {
         ),
       parse: (text: string) => {
         const AT_FROM = "@From ";
-        const HI_I_WOULD_LIKE_TO_BUY_YOUR = ": Hi, I would like to buy your";
+        const HI_I_WOULD_LIKE_TO_BUY_YOUR = ": Hi, I would like to buy your ";
         const LISTED_FOR = " listed for ";
         const IN = " in ";
         const P_STASH_TAB = '(stash tab "';
@@ -267,12 +267,18 @@ class TradeManager {
   private highlightOfferItem(offer: Offer) {
     this.isPollingClipboard = false;
 
+    assertPoEActive();
+
     const savedText = clipboard.readText();
-    console.log(offer.item);
     clipboard.writeText(offer.item);
+
+    // THe Shortcut to highlight is Alt + Click, and the Alt key prevent the Ctrl + V to work properly
+    robotjs.keyToggle("Alt", "up");
 
     robotjs.keyTap("F", ["Ctrl"]);
     robotjs.keyTap("V", ["Ctrl"]);
+
+    setTimeout(() => clipboard.writeText(savedText), 120);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
