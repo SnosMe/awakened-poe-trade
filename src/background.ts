@@ -17,6 +17,7 @@ import { setupAltVisibility } from './main/alt-visibility'
 import { setupBuiltinBrowser } from './main/builtin-browser'
 import { createFileProtocol } from './main/app-file-protocol'
 import TradeManager from './main/trade-manager';
+import './main/trade-manager/String.TextBetween';
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {

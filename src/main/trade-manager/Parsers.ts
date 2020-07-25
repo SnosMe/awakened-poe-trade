@@ -32,27 +32,17 @@ export const parsing: any = {
 
           let player = "";
           if (/@From <.+> .+: Hi/gi.test(text)) {
-            player = text.substring(
-              text.indexOf(CHEV_SPACE) + CHEV_SPACE.length,
-              text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR)
-            );
+            player = text.textBetween(CHEV_SPACE, HI_I_WOULD_LIKE_TO_BUY_YOUR);
           } else {
-            player = text.substring(
-              text.indexOf(AT_FROM) + AT_FROM.length,
-              text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR)
-            );
+            player = text.textBetween(AT_FROM, HI_I_WOULD_LIKE_TO_BUY_YOUR);
           }
 
-          const item = text.substring(
-            text.indexOf(HI_I_WOULD_LIKE_TO_BUY_YOUR) +
-              HI_I_WOULD_LIKE_TO_BUY_YOUR.length,
-            text.indexOf(LISTED_FOR)
+          const item = text.textBetween(
+            HI_I_WOULD_LIKE_TO_BUY_YOUR,
+            LISTED_FOR
           );
 
-          const price = text.substring(
-            text.indexOf(LISTED_FOR) + LISTED_FOR.length,
-            text.indexOf(IN)
-          );
+          const price = text.textBetween(LISTED_FOR, IN);
 
           let currency = "",
             priceImage = "",
@@ -95,27 +85,14 @@ export const parsing: any = {
 
           let player = "";
           if (/@From <.+> .+: Hi/gi.test(text)) {
-            player = text.substring(
-              text.indexOf(CHEV_SPACE) + CHEV_SPACE.length,
-              text.indexOf(HI_ID_LIKE_TO_BUY_YOUR)
-            );
+            player = text.textBetween(CHEV_SPACE, HI_ID_LIKE_TO_BUY_YOUR)
           } else {
-            player = text.substring(
-              text.indexOf(AT_FROM) + AT_FROM.length,
-              text.indexOf(HI_ID_LIKE_TO_BUY_YOUR)
-            );
+            player = text.textBetween(AT_FROM, HI_ID_LIKE_TO_BUY_YOUR)
           }
 
-          const item = text.substring(
-            text.indexOf(HI_ID_LIKE_TO_BUY_YOUR) +
-              HI_ID_LIKE_TO_BUY_YOUR.length,
-            text.indexOf(FOR_MY)
-          );
+          const item = text.textBetween(HI_ID_LIKE_TO_BUY_YOUR, FOR_MY)
 
-          const price = text.substring(
-            text.indexOf(FOR_MY) + FOR_MY.length,
-            text.indexOf(IN)
-          );
+          const price = text.textBetween(FOR_MY, IN)
 
           let currency = "",
             priceImage = "",
