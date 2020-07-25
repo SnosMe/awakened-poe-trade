@@ -111,7 +111,8 @@ export const defaultConfig: Config = {
         pos: 'tl',
         x: 5,
         y: 5
-      }
+      },
+      alwaysShow: false
     },
     {
       wmId: 2,

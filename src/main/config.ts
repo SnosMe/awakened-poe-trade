@@ -74,6 +74,9 @@ export const config = (() => {
       wmZorder: null
     })
 
+    config.widgets.find(w => w.wmType === 'menu')!
+      .alwaysShow = false
+
     config.configVersion = 3
   }
 
