@@ -1,3 +1,6 @@
+/**
+ * Define the informations of a system process
+ */
 export interface ProcessInfos {
     pid: number;
     ppid: number;

@@ -3,6 +3,8 @@ import { watchFile, stat, open, read } from "fs";
 import { debounce } from "lodash";
 import { EOL, platform } from "os";
 import { clipboard, ipcMain } from "electron";
+import robotjs from "robotjs";
+
 import { overlayWindow, assertPoEActive } from "../overlay-window";
 import {
   NEW_INCOMING_OFFER,
@@ -19,7 +21,6 @@ import {
   PLAYER_JOINED
 } from "@/ipc/ipc-event";
 import { typeInChat } from "../game-chat";
-import robotjs from "robotjs";
 import {
   DEBOUNCE_READ_RATE_MS,
   POE_PROCESS_RETRY_RATE_MS,
@@ -32,16 +33,52 @@ import { parsing } from "./Parsers";
 import { Queue } from "./models/Queue";
 import { Offer } from "./models/Offer";
 
+
+/**
+ * Define the Trade Manager class
+ * Handles the trading processes in PoE by looking at the Client.txt 
+ * log file and the clipboard content
+ */
 class TradeManager {
+  /**
+   * Unique ID for each new offers
+   */
   private id: number = 0;
+  /**
+   * The Interval function when retying to find the PoE system process
+   */
   private retryInterval: any = null;
+/**
+ * File path to the Client.txt file
+ */
   private logFilePath: string = "";
+/**
+ * Last verified position in the Client.txt file
+ */
   private lastFilePosition: number = 0;
+  /**
+   * The debounced version of the function readLastLines
+   * Prevent calling the function multiple times if there are 
+   * multiples updates made to the file by the game
+   */
   // eslint-disable-next-line camelcase
   private debounced_readLastLines: any = null;
+  /**
+   * Last known value in the clipboard
+   * Prevent parsing the same value multiple times
+   */
   private lastClipboardValue: string = "";
+  /**
+   * Enable/Disable the clipboard polling
+   */
   private isPollingClipboard: boolean = false;
+  /**
+   * A list of queued commands that needs to be run
+   */
   private commands = new Queue();
+  /**
+   * Determine if the commands of the "commands" member are currently being executed
+   */
   private isExecuting: boolean = false;
 
   constructor() {
@@ -53,6 +90,10 @@ class TradeManager {
     );
   }
 
+  /**
+   * Setup the MainProcess events
+   * Overlay -> Main
+   */
   private handleEvents() {
     ipcMain.on(SEND_STILL_INTERESTED_WHISPER, (_, offer) =>
       this.execute(this.sendStillInterestedWhisper, [offer])
@@ -87,6 +128,11 @@ class TradeManager {
     );
   }
 
+  /**
+   * Enqueue the function with its args in a queue, that needs to be executed
+   * @param fn A function of "this" context
+   * @param args Arguments of the "fn" function
+   */
   private execute(fn: any, args: any[]): void {
     this.commands.enqueue({
       fn: fn.bind(this),
@@ -96,6 +142,9 @@ class TradeManager {
     this._execute();
   }
 
+  /**
+   * Dequeue the list of "commands" and execute them, if not already doing so
+   */
   private _execute() {
     if (!this.isExecuting) {
       this.isExecuting = true;
@@ -110,6 +159,10 @@ class TradeManager {
     }
   }
 
+  /**
+   * Do a Key Up on the Ctrl, Alt and Shift keys.
+   * Prevent problems and conflict while sending commands to the game
+   */
   private clearKeyModifiers() {
     const MODIFIERS = ["Ctrl", "Alt", "Shift"];
 
@@ -118,6 +171,9 @@ class TradeManager {
     }
   }
 
+  /**
+   * Remove the item highlighting of the in-game Ctrl + F shortcut 
+   */
   private clearOfferItemHighlighting() {
     // // Select the text
     // robotjs.keyTap("F", ["Ctrl"]);
@@ -127,9 +183,11 @@ class TradeManager {
     // robotjs.keyTap("Enter");
   }
 
+  /**
+   * Highlight the item in the "offer" using the in-game search tool
+   * @param offer The offer to be highlighted
+   */
   private highlightOfferItem(offer: Offer) {
-    console.debug("Highlight offer", offer);
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -147,23 +205,27 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Send a party invite in-game to player in the offer
+   * @param offer The offer related to the party invite command
+   */
   private sendPartyInvite(offer: Offer) {
-    console.debug("Sending party invite:", `"/invite ${offer.player}"`);
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
 
-    //this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     typeInChat(`/invite ${offer.player}`);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Kick out of the party the player in the "offer"
+   * @param offer The offer realted to the kick command
+   */
   private sendPartyKick(offer: Offer) {
-    console.debug("Sending party kick:", `"/kick ${offer.player}"`);
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -175,9 +237,11 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Send a trade request to the player in the "offer"
+   * @param offer The offer related to the trade request command
+   */
   private sendTradeRequest(offer: Offer) {
-    console.debug("Sending trade request:", `"/tradewith ${offer.player}"`);
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -189,9 +253,12 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Send a "Thanks" whisper to the player in the "offer"
+   * @param offer The offer related to the whisper
+   * @param kickPlayer Kick out of the party the player in the offer, if needed. 
+   */
   private sendThanksWhisper(offer: Offer, kickPlayer: boolean = true) {
-    console.debug("Sending thanks whisper:", `"@${offer.player} Thanks"`);
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -209,12 +276,11 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Sedn a "I'm busy" whisper to the player in the "offer"
+   * @param offer The offer related to the whisper
+   */
   private sendBusyWhisper(offer: Offer) {
-    console.debug(
-      "Sending busy whisper:",
-      `"@${offer.player} I'm busy right now, but I will send you a party invite when I'm ready"`
-    );
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -228,12 +294,11 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Send a "It's sold" to the player in the "offer"
+   * @param offer The offer related to the whisper
+   */
   private sendSoldWhisper(offer: Offer) {
-    console.debug(
-      "Sending sold whisper:",
-      `"@${offer.player} Sorry, my ${offer.item} is already sold"`
-    );
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -247,12 +312,11 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Send a "Are you still interested?" whisper to the player in the "offer"
+   * @param offer The offer related to the whisper
+   */
   private sendStillInterestedWhisper(offer: Offer) {
-    console.debug(
-      "Sending still interested whisper:",
-      `"@${offer.player} Are you still interested in my ${offer.item} listed for ${offer.price.value} ${offer.price.currency}?"`
-    );
-
     this.isPollingClipboard = false;
 
     assertPoEActive();
@@ -268,11 +332,17 @@ class TradeManager {
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
+  /**
+   * Find the informations about the Path of Exile system process, if possible
+   */
   private async findPoEProcess(): Promise<ProcessInfos | undefined> {
     const procs = await findProcess("name", /pathofexile|wine64-preloader/gi);
     return procs.length > 0 ? <ProcessInfos>procs[0] : undefined;
   }
 
+  /**
+   * Start the trade manager.
+   */
   async start(): Promise<boolean> {
     const poeProc = await this.findPoEProcess();
 
@@ -281,14 +351,16 @@ class TradeManager {
         `Unable to find PoE process, make sure the game is running. Retrying in ${POE_PROCESS_RETRY_RATE_MS /
           1000} second(s)...`
       );
+
       if (!this.retryInterval) {
-        this.retryInterval = setTimeout(() => {
-          if (this.start()) {
+        this.retryInterval = setTimeout(async () => {
+          if (await this.start()) {
             clearInterval(this.retryInterval);
             this.retryInterval = null;
           }
         }, POE_PROCESS_RETRY_RATE_MS);
       }
+
       return false;
     }
 
@@ -312,6 +384,10 @@ class TradeManager {
     return true;
   }
 
+  /**
+   * Start looking for changes in the Client.txt log
+   * file of Path of Exile. Read the new lines if any.
+   */
   private listenIncomingTradeOffers(): void {
     watchFile(
       this.logFilePath,
@@ -325,6 +401,9 @@ class TradeManager {
     );
   }
 
+  /**
+   * Gets the newest value in the clipbord, if any
+   */
   private pollClipboard(): string {
     const text = clipboard.readText();
 
@@ -340,6 +419,9 @@ class TradeManager {
     return "";
   }
 
+  /**
+   * Start looking for outgoing trade whisper in the clipboard
+   */
   private listenOutgoingTradeOffers(): void {
     this.isPollingClipboard = true;
 
@@ -354,6 +436,9 @@ class TradeManager {
     }, CLIPBOARD_POLLING_RATE_MS);
   }
 
+  /**
+   * Find the last position (EOF) in the Client.txt file
+   */
   private moveFilePositionToEOF(): void {
     stat(this.logFilePath, (err, infos) => {
       if (err) {
@@ -365,6 +450,10 @@ class TradeManager {
     });
   }
 
+  /**
+   * Read all the newest lines in the file from the last
+   * position red
+   */
   private readLastLines(): void {
     stat(this.logFilePath, (err, fileInfos) => {
       if (err) {
@@ -417,6 +506,11 @@ class TradeManager {
     });
   }
 
+  /**
+   * Parse the "line" according the "parser" provided
+   * @param parser The functions used to parse the "line"
+   * @param line The log/clipboard text line that need to be parsed
+   */
   private parseLine(
     parser: Parser,
     line: string
@@ -436,6 +530,11 @@ class TradeManager {
     };
   }
 
+  /**
+   * Parse the "line" if it's content is content has any usage for the trade manager
+   * @param line The text line that need to be parsed
+   * @param type If known, the type of text line provided
+   */
   private parse(line: string, type: string = "log"): void {
     console.log("Line: ", line);
 

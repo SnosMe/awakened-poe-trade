@@ -1,6 +1,9 @@
 import { normalizeCurrency, CURRENCY_TO_IMAGE } from "./Config";
 import { Offer } from "./models/Offer";
 
+/**
+ * Defines the way to parse different types messages/whispers/etc. based on the language
+ */
 export const parsing: any = {
   en: {
     incomingOffer: {

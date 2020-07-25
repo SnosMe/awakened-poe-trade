@@ -38,36 +38,7 @@ export default {
     IncomingOffer
   },
   created() {
-    MainProcess.addEventListener(NEW_INCOMING_OFFER, ({ detail: offer }) => {
-      this.offers.push(offer);
-    });
-
-    MainProcess.addEventListener(TRADE_ACCEPTED, () => {
-      const offer = this.offers.find(o => o.tradeRequestSent);
-
-      if (offer) {
-        MainProcess.sendThanksWhisper(offer, true);
-        this.dismiss(offer);
-      }
-    });
-
-    MainProcess.addEventListener(TRADE_CANCELLED, () => {
-      for (let i = 0; i < this.$refs.offers.length; ++i) {
-        this.$refs.offers[i].setTradeRequestSent(false);
-      }
-    });
-
-    MainProcess.addEventListener(PLAYER_JOINED, ({ detail: player }) => {
-      for (let i = 0; i < this.offers.length; ++i) {
-        if (this.offers[i].player == player) {
-          for (let vo of this.$refs.offers) {
-            if (this.offers[i].id == vo.offer.id) {
-              vo.setPlayerJoined();
-            }
-          }
-        }
-      }
-    });
+    this.handleEvents();
   },
   data() {
     return {
@@ -75,6 +46,56 @@ export default {
     };
   },
   methods: {
+    /**
+     * Handles the events from the MainProcess
+     */
+    handleEvents() {
+      /**
+       * Any new incoming offers from the Client.txt file
+       */
+      MainProcess.addEventListener(NEW_INCOMING_OFFER, ({ detail: offer }) => {
+        this.offers.push(offer);
+      });
+
+      /**
+       * Any "Trade accepted" message that might help removing completed offers
+       */
+      MainProcess.addEventListener(TRADE_ACCEPTED, () => {
+        const offer = this.offers.find(o => o.tradeRequestSent);
+
+        if (offer) {
+          MainProcess.sendThanksWhisper(offer, true);
+          this.dismiss(offer);
+        }
+      });
+
+      /**
+       * Any "Trade cancelled" or "Player not found in the area" message that reset the trading status of the offers
+       */
+      MainProcess.addEventListener(TRADE_CANCELLED, () => {
+        for (let i = 0; i < this.$refs.offers.length; ++i) {
+          this.$refs.offers[i].setTradeRequestSent(false);
+        }
+      });
+
+      /**
+       * Any "Player has joined the area" message to display a notification in the view
+       */
+      MainProcess.addEventListener(PLAYER_JOINED, ({ detail: player }) => {
+        for (let i = 0; i < this.offers.length; ++i) {
+          if (this.offers[i].player == player) {
+            for (let vo of this.$refs.offers) {
+              if (this.offers[i].id == vo.offer.id) {
+                vo.setPlayerJoined();
+              }
+            }
+          }
+        }
+      });
+    },
+    /**
+     * Remove an offer from the view
+     */
     dismiss(offer) {
       const index = this.offers.findIndex(o => o.id === offer.id);
 
@@ -82,23 +103,47 @@ export default {
         this.offers.splice(index, 1);
       }
     },
+    /**
+     * Ask the MainProcess to send a "Are you still interested?"
+     * whisper using the offer provided
+     */
     sendStillInterestedWhisper(offer) {
       MainProcess.sendStillInterestedWhisper(offer);
     },
+    /**
+     * Ask the MainProcess to send a Party Invite command
+     * using the offer provided
+     */
     sendPartyInvite(offer) {
       MainProcess.sendPartyInvite(offer);
     },
+    /**
+     * Call the Dismiss function and ask the MainProcess to send
+     * a Party Kick command using the offer provided
+     */
     remove(offer) {
       this.dismiss(offer);
       MainProcess.sendPartyKick(offer);
     },
+    /**
+     * Ask the MainProcess to send a "It's sold"
+     * whisper using the offer provided
+     */
     sendSoldWhisper(offer) {
       this.dismiss(offer);
       MainProcess.sendSoldWhisper(offer);
     },
+    /**
+     * Ask the MainProcess to send a "I'm busy"
+     * whisper using the offer provided
+     */
     sendBusyWhisper(offer) {
       MainProcess.sendBusyWhisper(offer);
     },
+    /**
+     * Ask the MainProcess to send
+     * a Trade Request command using the offer provided
+     */
     sendTradeRequest(offer) {
       const index = this.offers.findIndex(o => o.id === offer.id);
 
@@ -108,9 +153,13 @@ export default {
 
       MainProcess.sendTradeRequest(offer);
     },
+    /**
+     * Ask the MainProcess to send a
+     * item highlighting command using the offer provided
+     */
     highlightItem(offer) {
       MainProcess.highlightOfferItem(offer);
-    },
+    }
   }
 };
 </script>
