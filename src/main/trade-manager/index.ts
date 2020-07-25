@@ -26,10 +26,11 @@ import {
   FILE_WATCH_RATE_MS,
   CLIPBOARD_POLLING_RATE_MS
 } from "./Config";
-import { Offer } from "./models/Offer";
 import { ProcessInfos } from "./models/ProcessInfos";
 import { Parser } from "./models/Parser";
 import { parsing } from "./Parsers";
+import { Queue } from "./models/Queue";
+import { Offer } from "./models/Offer";
 
 class TradeManager {
   private id: number = 0;
@@ -40,38 +41,73 @@ class TradeManager {
   private debounced_readLastLines: any = null;
   private lastClipboardValue: string = "";
   private isPollingClipboard: boolean = false;
+  private commands = new Queue();
+  private isExecuting: boolean = false;
 
   constructor() {
-    ipcMain.on(SEND_STILL_INTERESTED_WHISPER, (_, offer) =>
-      this.sendStillInterestedWhisper(offer)
-    );
-
-    ipcMain.on(SEND_PARTY_INVITE_CMD, (_, offer) =>
-      this.sendPartyInvite(offer)
-    );
-
-    ipcMain.on(SEND_PARTY_KICK_CMD, (_, offer) => this.sendPartyKick(offer));
-
-    ipcMain.on(SEND_SOLD_WHISPER, (_, offer) => this.sendSoldWhisper(offer));
-
-    ipcMain.on(SEND_THANKS_WHISPER, (_, offer, kickPlayer) =>
-      this.sendThanksWhisper(offer, kickPlayer)
-    );
-
-    ipcMain.on(SEND_TRADE_REQUEST_CMD, (_, offer) =>
-      this.sendTradeRequest(offer)
-    );
-
-    ipcMain.on(SEND_BUSY_WHISPER, (_, offer) => this.sendBusyWhisper(offer));
-
-    ipcMain.on(HIGHLIGHT_OFFER_ITEM, (_, offer) =>
-      this.highlightOfferItem(offer)
-    );
+    this.handleEvents();
 
     this.debounced_readLastLines = debounce(
       this.readLastLines,
       DEBOUNCE_READ_RATE_MS
     );
+  }
+
+  private handleEvents() {
+    ipcMain.on(SEND_STILL_INTERESTED_WHISPER, (_, offer) =>
+      this.execute(this.sendStillInterestedWhisper, [offer])
+    );
+
+    ipcMain.on(SEND_PARTY_INVITE_CMD, (_, offer) =>
+      this.execute(this.sendPartyInvite, [offer])
+    );
+
+    ipcMain.on(SEND_PARTY_KICK_CMD, (_, offer) =>
+      this.execute(this.sendPartyKick, [offer])
+    );
+
+    ipcMain.on(SEND_SOLD_WHISPER, (_, offer) =>
+      this.execute(this.sendSoldWhisper, [offer])
+    );
+
+    ipcMain.on(SEND_THANKS_WHISPER, (_, offer, kickPlayer) =>
+      this.execute(this.sendThanksWhisper, [offer, kickPlayer])
+    );
+
+    ipcMain.on(SEND_TRADE_REQUEST_CMD, (_, offer) =>
+      this.execute(this.sendTradeRequest, [offer])
+    );
+
+    ipcMain.on(SEND_BUSY_WHISPER, (_, offer) =>
+      this.execute(this.sendBusyWhisper, [offer])
+    );
+
+    ipcMain.on(HIGHLIGHT_OFFER_ITEM, (_, offer) =>
+      this.execute(this.highlightOfferItem, [offer])
+    );
+  }
+
+  private execute(fn: any, args: any[]): void {
+    this.commands.enqueue({
+      fn: fn.bind(this),
+      args
+    });
+
+    this._execute();
+  }
+
+  private _execute() {
+    if (!this.isExecuting) {
+      this.isExecuting = true;
+
+      let item: any;
+
+      while ((item = this.commands.dequeue())) {
+        const _ = item.fn(...item.args);
+      }
+
+      this.isExecuting = false;
+    }
   }
 
   private clearKeyModifiers() {
@@ -114,7 +150,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    //this.clearOfferItemHighlighting();
 
     typeInChat(`/invite ${offer.player}`);
 
@@ -128,7 +164,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    // this.clearOfferItemHighlighting();
 
     typeInChat(`/kick ${offer.player}`);
 
@@ -142,7 +178,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    // this.clearOfferItemHighlighting();
 
     typeInChat(`/tradewith ${offer.player}`);
 
@@ -156,7 +192,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    // this.clearOfferItemHighlighting();
 
     typeInChat(`@${offer.player} Thanks`);
 
@@ -179,7 +215,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    // this.clearOfferItemHighlighting();
 
     typeInChat(
       `@${offer.player} I'm busy right now, but I will send you a party invite when I'm ready`
@@ -198,7 +234,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    // this.clearOfferItemHighlighting();
 
     this.clearKeyModifiers();
 
@@ -217,7 +253,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    this.clearOfferItemHighlighting();
+    // this.clearOfferItemHighlighting();
 
     this.clearKeyModifiers();
 

@@ -110,7 +110,7 @@ export default {
     },
     highlightItem(offer) {
       MainProcess.highlightOfferItem(offer);
-    }
+    },
   }
 };
 </script>
