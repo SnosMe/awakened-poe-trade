@@ -119,12 +119,12 @@ class TradeManager {
   }
 
   private clearOfferItemHighlighting() {
-    // Select the text
-    robotjs.keyTap("F", ["Ctrl"]);
-    // Remove it
-    robotjs.keyTap("Delete");
-    // Clear the Ctrl + F command
-    robotjs.keyTap("Enter");
+    // // Select the text
+    // robotjs.keyTap("F", ["Ctrl"]);
+    // // Remove it
+    // robotjs.keyTap("Delete");
+    // // Clear the Ctrl + F command
+    // robotjs.keyTap("Enter");
   }
 
   private highlightOfferItem(offer: Offer) {
@@ -402,7 +402,7 @@ class TradeManager {
             let lines: string = "";
 
             try {
-              const lines: string = buffer.toString();
+              lines = buffer.toString();
             } catch (e) {
               console.error("TradeManager: Error while parsing the buffer");
               return;
