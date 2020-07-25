@@ -82,6 +82,11 @@ class TradeManager {
     }
   }
 
+  private clearOfferItemHighlighting() {
+    robotjs.keyTap("F", ["Ctrl"]);
+    robotjs.keyTap("Escape");
+  }
+
   private highlightOfferItem(offer: Offer) {
     console.debug("Highlight offer", offer);
 
@@ -109,6 +114,8 @@ class TradeManager {
 
     assertPoEActive();
 
+    this.clearOfferItemHighlighting();
+
     typeInChat(`/invite ${offer.player}`);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
@@ -120,6 +127,8 @@ class TradeManager {
     this.isPollingClipboard = false;
 
     assertPoEActive();
+
+    this.clearOfferItemHighlighting();
 
     typeInChat(`/kick ${offer.player}`);
 
@@ -133,6 +142,8 @@ class TradeManager {
 
     assertPoEActive();
 
+    this.clearOfferItemHighlighting();
+
     typeInChat(`/tradewith ${offer.player}`);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
@@ -144,6 +155,8 @@ class TradeManager {
     this.isPollingClipboard = false;
 
     assertPoEActive();
+
+    this.clearOfferItemHighlighting();
 
     typeInChat(`@${offer.player} Thanks`);
 
@@ -166,6 +179,8 @@ class TradeManager {
 
     assertPoEActive();
 
+    this.clearOfferItemHighlighting();
+
     typeInChat(
       `@${offer.player} I'm busy right now, but I will send you a party invite when I'm ready`
     );
@@ -183,6 +198,8 @@ class TradeManager {
 
     assertPoEActive();
 
+    this.clearOfferItemHighlighting();
+
     this.clearKeyModifiers();
 
     typeInChat(`@${offer.player} Sorry, my ${offer.item} is already sold`);
@@ -199,6 +216,8 @@ class TradeManager {
     this.isPollingClipboard = false;
 
     assertPoEActive();
+
+    this.clearOfferItemHighlighting();
 
     this.clearKeyModifiers();
 
