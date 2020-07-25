@@ -144,9 +144,10 @@ export default {
       }))
     },
     topmostWidget () {
+      // guaranteed to always exist because of the 'widget-menu'
       return this.widgets
-        .filter(w => w.wmZorder !== 'exclusive')
-        .sort((a, b) => b.wmZorder - a.wmZorder)[0] // guaranteed to always exist because of the 'widget-menu'
+        .filter(w => w.wmZorder !== 'exclusive' && w.wmZorder != null)
+        .sort((a, b) => b.wmZorder - a.wmZorder)[0]
     },
     topmostOrExclusiveWidget () {
       const showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
@@ -232,7 +233,7 @@ export default {
         wmType,
         wmTitle: '',
         wmWants: 'hide',
-        wmZorder: undefined,
+        wmZorder: null,
         wmFlags: ['uninitialized']
       })
     },

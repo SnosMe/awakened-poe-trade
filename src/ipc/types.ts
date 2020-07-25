@@ -39,7 +39,7 @@ interface Widget {
   wmType: string
   wmTitle: string
   wmWants: 'show' | 'hide'
-  wmZorder: number | 'exclusive' | undefined
+  wmZorder: number | 'exclusive' | null
   wmFlags: (WidgetWellKnownFlag | string)[]
   // ---------------
   [key: string]: any
