@@ -2,6 +2,7 @@ import Store from 'electron-store'
 import { ipcMain } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
+import { forbidden, forbiddenCtrl } from '@/ipc/KeyToCode'
 import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
 import { overlayWindow } from './overlay-window'
 import { logger } from './logger'
@@ -25,53 +26,48 @@ export function setupConfigEvents () {
 }
 
 export const config = (() => {
-  const config = new Store<Config>({
+  const store = new Store<Config>({
     name: 'config',
     cwd: 'apt-data',
     defaults: defaultConfig
   })
+  const config = store.store
 
-  const forbidden = ['Ctrl + C', 'Ctrl + V', 'Ctrl + A', 'Ctrl + F']
-  if (forbidden.includes(config.get('priceCheckLocked') as string)) { config.set('priceCheckLocked', null) }
-  if (forbidden.includes(config.get('wikiKey') as string)) { config.set('wikiKey', null) }
-  if (forbidden.includes(config.get('mapCheckKey') as string)) { config.set('mapCheckKey', null) }
-  const comands = config.get('commands')
-  for (const c of comands) {
+  if (forbidden.includes(config.priceCheckLocked as string)) { config.priceCheckLocked = null }
+  if (forbidden.includes(config.wikiKey as string)) { config.wikiKey = null }
+  if (forbidden.includes(config.mapCheckKey as string)) { config.mapCheckKey = null }
+  if (config.priceCheckKeyHold === 'Ctrl' && forbiddenCtrl.includes(config.priceCheckKey as string)) {
+    config.priceCheckKey = null
+  }
+  for (const c of config.commands) {
     if (forbidden.includes(c.hotkey as string)) { c.hotkey = null }
   }
-  config.set('commands', comands)
 
-  if (config.get('priceCheckKeyHold') === 'Ctrl') {
-    if (['C', 'V', 'A', 'F'].includes(config.get('priceCheckKey') as string)) {
-      config.set('priceCheckKey', null)
+  if (typeof config.fontSize !== 'number') {
+    config.fontSize = defaultConfig.fontSize
+  }
+
+  {
+    const mapWidget = config.widgets.find(w => w.wmType === 'map-check')!
+    if (mapWidget.wmZorder !== 'exclusive') {
+      mapWidget.wmZorder = 'exclusive'
+      mapWidget.selectedStats = mapWidget.selectedStats.map((legacy: { text: string, markedAs: string }) => ({
+        matchRef: legacy.text,
+        invert: false,
+        valueWarning: legacy.markedAs === 'warning' ? '+' : '',
+        valueDanger: legacy.markedAs === 'danger' ? '+' : '',
+        valueDesirable: legacy.markedAs === 'desirable' ? '+' : ''
+      }))
     }
   }
-
-  if (typeof config.get('fontSize') !== 'number') {
-    config.set('fontSize', defaultConfig.fontSize)
-  }
-
-  const widgets = config.get('widgets')
-  const mapWidget = widgets.find(w => w.wmType === 'map-check')!
-  if (mapWidget.wmZorder !== 'exclusive') {
-    mapWidget.wmZorder = 'exclusive'
-    mapWidget.selectedStats = mapWidget.selectedStats.map((legacy: { text: string, markedAs: string }) => ({
-      matchRef: legacy.text,
-      invert: false,
-      valueWarning: legacy.markedAs === 'warning' ? '+' : '',
-      valueDanger: legacy.markedAs === 'danger' ? '+' : '',
-      valueDesirable: legacy.markedAs === 'desirable' ? '+' : ''
-    }))
     config.set('widgets', widgets)
   }
 
-  return config
+  store.store = config
+  return store
 })()
 
 export function batchUpdateConfig (upd: Config, push = true) {
-  // for (const key in upd) {
-  //   config.set(key as keyof Config, upd[key as keyof Config])
-  // }
   config.store = upd
   logger.verbose('Saved', { source: 'config', push })
   if (push) {

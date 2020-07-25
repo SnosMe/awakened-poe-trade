@@ -10,7 +10,7 @@
           <button :class="{ border: config.priceCheckKeyHold === 'Ctrl', 'line-through': config.priceCheckKey === null }" @click="config.priceCheckKeyHold = 'Ctrl'; config.priceCheckKey = null" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
           <button :class="{ border: config.priceCheckKeyHold === 'Alt', 'line-through': config.priceCheckKey === null }" @click="config.priceCheckKeyHold = 'Alt'; config.priceCheckKey = null" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
           <span class="mx-4">+</span>
-          <hotkey-input v-model="config.priceCheckKey" :forbidden="['Ctrl','Shift','Alt', ...(config.priceCheckKeyHold === 'Ctrl' ? ['C','V','A','F'] : [])]" class="w-20" />
+          <hotkey-input v-model="config.priceCheckKey" :forbidden="['Ctrl','Shift','Alt', ...(config.priceCheckKeyHold === 'Ctrl' ? ['C','V','A','F','Enter'] : [])]" class="w-20" />
         </div>
       </div>
       <div class="text-right mt-2">
