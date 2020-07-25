@@ -119,8 +119,12 @@ class TradeManager {
   }
 
   private clearOfferItemHighlighting() {
+    // Select the text
     robotjs.keyTap("F", ["Ctrl"]);
-    robotjs.keyTap("Escape");
+    // Remove it
+    robotjs.keyTap("Delete");
+    // Clear the Ctrl + F command
+    robotjs.keyTap("Enter");
   }
 
   private highlightOfferItem(offer: Offer) {
@@ -164,7 +168,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    // this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     typeInChat(`/kick ${offer.player}`);
 
@@ -178,7 +182,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    // this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     typeInChat(`/tradewith ${offer.player}`);
 
@@ -192,7 +196,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    // this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     typeInChat(`@${offer.player} Thanks`);
 
@@ -215,7 +219,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    // this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     typeInChat(
       `@${offer.player} I'm busy right now, but I will send you a party invite when I'm ready`
@@ -234,7 +238,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    // this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     this.clearKeyModifiers();
 
@@ -253,7 +257,7 @@ class TradeManager {
 
     assertPoEActive();
 
-    // this.clearOfferItemHighlighting();
+    this.clearOfferItemHighlighting();
 
     this.clearKeyModifiers();
 
@@ -374,9 +378,14 @@ class TradeManager {
           return;
         }
 
-        const buffer: Buffer = Buffer.alloc(
-          fileInfos.size - this.lastFilePosition
-        );
+        let buffer: Buffer;
+
+        try {
+          buffer = Buffer.alloc(fileInfos.size - this.lastFilePosition);
+        } catch (e) {
+          console.error("TradeManager: Error allocating buffer", e);
+          return;
+        }
 
         read(
           fd,
@@ -384,13 +393,21 @@ class TradeManager {
           0,
           buffer.length,
           this.lastFilePosition,
-          (err, bytesRead, buffer) => {
+          (err, _, buffer) => {
             if (err) {
               console.error(err);
               return;
             }
 
-            const lines: string = buffer.toString();
+            let lines: string = "";
+
+            try {
+              const lines: string = buffer.toString();
+            } catch (e) {
+              console.error("TradeManager: Error while parsing the buffer");
+              return;
+            }
+
             this.lastFilePosition = fileInfos.size;
 
             lines.split(EOL).forEach(l => this.parse(l));
