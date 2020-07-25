@@ -55,6 +55,10 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.on(ipcEvent.OPEN_WIKI, (e, detail) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.OPEN_WIKI, { detail }))
       })
+
+      electron.ipcRenderer.on(ipcEvent.TOGGLE_DELVE_GRID, (e) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.TOGGLE_DELVE_GRID))
+      })
     }
   }
 

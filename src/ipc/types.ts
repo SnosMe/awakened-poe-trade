@@ -16,6 +16,7 @@ export interface Config {
   overlayBackgroundClose: boolean
   priceCheckShowCursor: boolean
   mapCheckKey: string | null
+  delveGridKey: string | null
   restoreClipboard: boolean
   commands: Array<{
     text: string
@@ -66,6 +67,7 @@ export const defaultConfig: Config = {
   overlayBackgroundClose: true,
   priceCheckShowCursor: true,
   mapCheckKey: null,
+  delveGridKey: null,
   restoreClipboard: true,
   commands: [{
     text: '/hideout',
@@ -164,13 +166,21 @@ export const defaultConfig: Config = {
         }
       ]
     },
-    // --- DEFAULT ---
     {
       wmId: 4,
+      wmType: 'delve-grid',
+      wmTitle: '',
+      wmWants: 'hide',
+      wmZorder: 4,
+      wmFlags: ['hide-on-focus', 'skip-menu']
+    },
+    // --- DEFAULT ---
+    {
+      wmId: 101,
       wmType: 'stash-search',
       wmTitle: 'Map rolling',
       wmWants: 'hide',
-      wmZorder: 4,
+      wmZorder: 101,
       wmFlags: ['invisible-on-blur'],
       anchor: {
         pos: 'tl',
@@ -185,11 +195,11 @@ export const defaultConfig: Config = {
       ]
     },
     {
-      wmId: 5,
+      wmId: 102,
       wmType: 'stash-search',
       wmTitle: 'Dump sorting',
       wmWants: 'hide',
-      wmZorder: 5,
+      wmZorder: 102,
       wmFlags: ['invisible-on-blur'],
       anchor: {
         pos: 'tl',
@@ -206,11 +216,11 @@ export const defaultConfig: Config = {
       ]
     },
     {
-      wmId: 6,
+      wmId: 103,
       wmType: 'image-strip',
       wmTitle: 'Cheat sheets',
       wmWants: 'hide',
-      wmZorder: 6,
+      wmZorder: 103,
       wmFlags: ['invisible-on-blur'],
       anchor: {
         pos: 'tc',

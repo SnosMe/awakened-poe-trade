@@ -24,10 +24,27 @@
 
 <script>
 import Widget from './Widget'
+import { MainProcess } from '@/ipc/main-process-bindings'
+import { TOGGLE_DELVE_GRID } from '@/ipc/ipc-event'
 
 export default {
   components: { Widget },
   inject: ['wm'],
+  props: {
+    config: {
+      type: Object,
+      required: true
+    }
+  },
+  created () {
+    MainProcess.addEventListener(TOGGLE_DELVE_GRID, () => {
+      if (this.config.wmWants === 'hide') {
+        this.wm.show(this.config.wmId)
+      } else {
+        this.wm.hide(this.config.wmId)
+      }
+    })
+  },
   computed: {
     anchor () {
       const height = Math.round(this.wm.height * 808 / 1080)

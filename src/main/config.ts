@@ -68,6 +68,12 @@ export const config = (() => {
       wmZorder: null
     })
 
+    config.widgets.push({
+      ...defaultConfig.widgets.find(w => w.wmType === 'delve-grid')!,
+      wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1,
+      wmZorder: null
+    })
+
     config.configVersion = 3
   }
 

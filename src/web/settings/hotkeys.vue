@@ -30,10 +30,16 @@
         <hotkey-input v-model="config.wikiKey" class="w-48" />
       </div>
     </div>
-    <div class="mb-8">
+    <div class="mb-4">
       <div class="flex">
         <div class="flex-1">{{ $t('Map check') }}</div>
         <hotkey-input v-model="config.mapCheckKey" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-8">
+      <div class="flex">
+        <div class="flex-1">{{ $t('Delve grid') }}</div>
+        <hotkey-input v-model="config.delveGridKey" class="w-48" />
       </div>
     </div>
     <div class="mb-8">
@@ -72,7 +78,8 @@ export default {
     "Overlay": "Оверлей",
     "Open item on wiki": "Открыть предмет в вики",
     "Map check": "Проверка карты",
-    "Stash tab scrolling": "Прокрутка вкладок тайника"
+    "Stash tab scrolling": "Прокрутка вкладок тайника",
+    "Delve grid": "Сетка \"Спуска\""
   }
 }
 </i18n>

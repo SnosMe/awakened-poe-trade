@@ -79,6 +79,11 @@ function registerGlobal () {
       config.get('mapCheckKey'),
       mapCheck
     ),
+    shortcutCallback(
+      config.get('delveGridKey'),
+      toggleDelveGrid,
+      { doNotResetModKey: true }
+    ),
     ...config.get('commands')
       .map(command =>
         shortcutCallback(command.hotkey, () => typeInChat(command.text))
@@ -151,6 +156,8 @@ export function setupShortcuts () {
       }).cb()
     } else if (pressed === config.get('mapCheckKey')) {
       shortcutCallback(pressed, mapCheck).cb()
+    } else if (pressed === config.get('delveGridKey')) {
+      shortcutCallback(pressed, toggleDelveGrid, { doNotResetModKey: true }).cb()
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
@@ -200,6 +207,10 @@ function stashSearch (text: string) {
 
 function openWiki (clipboard: string) {
   overlayWindow!.webContents.send(ipc.OPEN_WIKI, clipboard)
+}
+
+function toggleDelveGrid () {
+  overlayWindow!.webContents.send(ipc.TOGGLE_DELVE_GRID)
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
