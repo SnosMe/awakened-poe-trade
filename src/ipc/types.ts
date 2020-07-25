@@ -51,7 +51,8 @@ type WidgetWellKnownFlag =
   'has-browser' |
   'invisible-on-blur' |
   'hide-on-blur' |
-  'hide-on-blur(close)'
+  'hide-on-blur(close)' |
+  'hide-on-focus'
 
 export const defaultConfig: Config = {
   configVersion: 3,

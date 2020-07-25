@@ -47,7 +47,7 @@ export const config = (() => {
     config.fontSize = defaultConfig.fontSize
   }
 
-  {
+  { // config.configVersion < 2 (undefined)
     const mapWidget = config.widgets.find(w => w.wmType === 'map-check')!
     if (mapWidget.wmZorder !== 'exclusive') {
       mapWidget.wmZorder = 'exclusive'

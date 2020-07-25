@@ -15,7 +15,7 @@
         </div>
       </ui-popper>
     </div>
-    <div class="flex font-bold py-1">
+    <div class="flex font-bold py-1 shadow">
       <div class="flex-1 px-2">{{ $t('Stat (found: {0})', [filteredStats.length]) }}</div>
       <div class="flex" style="padding-right: calc(0.875rem + 1.5rem);">
         <div class="px-2">{{ $t('Invert') }}</div>

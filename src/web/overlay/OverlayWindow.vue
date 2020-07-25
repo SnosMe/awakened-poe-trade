@@ -101,6 +101,12 @@ export default {
             }
           }
         }
+      } else {
+        for (const w of this.widgets) {
+          if (w.wmFlags.includes('hide-on-focus')) {
+            this.hide(w.wmId)
+          }
+        }
       }
     })
     MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {
