@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-md p-2">
     <div class="bg-gray-700 rounded px-2 py-1 mb-2 leading-none">
-      <i class="fas fa-info-circle"></i> {{ $t('You can disable any hotkey by pressing Backspace') }}</div>
+      <i class="fas fa-info-circle"></i> {{ $t('You can clear hotkey by pressing Backspace') }}</div>
     <div class="mb-8">
       <div class="flex">
         <div class="flex-1">{{ $t('Price check') }}</div>
@@ -45,17 +45,6 @@
         </div>
       </div>
     </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">{{ $t('Custom commands') }}</div>
-      <div class="mb-4" v-for="(command, idx) in config.commands" :key="idx">
-        <input v-model.trim="command.text" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
-        <div class="flex justify-end">
-          <button @click="removeCommand(command)" class="mr-2 text-gray-500">{{ $t('Remove') }}</button>
-          <hotkey-input v-model="command.hotkey" class="w-48" />
-        </div>
-      </div>
-      <button @click="addComand" class="bg-gray-900 rounded flex items-baseline px-2 py-1 leading-none"><i class="fas fa-plus mr-1"></i> {{ $t('Add command') }}</button>
-    </div>
   </div>
 </template>
 
@@ -69,17 +58,6 @@ export default {
     config () {
       return Config.store
     }
-  },
-  methods: {
-    addComand () {
-      this.config.commands.push({
-        text: '',
-        hotkey: null
-      })
-    },
-    removeCommand (command) {
-      this.config.commands = this.config.commands.filter(c => c !== command)
-    }
   }
 }
 </script>
@@ -87,16 +65,14 @@ export default {
 <i18n>
 {
   "ru": {
-    "You can disable any hotkey by pressing Backspace": "Вы можете отключить сочетание, нажав клавишу Backspace",
+    "You can clear hotkey by pressing Backspace": "Вы можете отключить сочетание, нажав клавишу Backspace",
     "Price check": "Прайс-чек",
     "Auto-hide Mode": "Режим авто-скрытия",
     "Open without auto-hide": "Открыть без авто-скрытия",
     "Overlay": "Оверлей",
     "Open item on wiki": "Открыть предмет в вики",
     "Map check": "Проверка карты",
-    "Stash tab scrolling": "Прокрутка вкладок тайника",
-    "Custom commands": "Команды чата",
-    "Add command": "Добавить команду"
+    "Stash tab scrolling": "Прокрутка вкладок тайника"
   }
 }
 </i18n>

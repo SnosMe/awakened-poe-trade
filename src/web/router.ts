@@ -22,6 +22,11 @@ export default new Router({
           component: () => import(/* webpackChunkName: "settings" */ './settings/hotkeys.vue')
         },
         {
+          path: 'chat',
+          name: 'settings.chat',
+          component: () => import(/* webpackChunkName: "settings" */ './settings/chat.vue')
+        },
+        {
           path: 'general',
           name: 'settings.general',
           component: () => import(/* webpackChunkName: "settings" */ './settings/general.vue')
