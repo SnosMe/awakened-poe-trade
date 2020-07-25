@@ -60,7 +60,15 @@ export const config = (() => {
       }))
     }
   }
-    config.set('widgets', widgets)
+
+  if (config.configVersion < 3) {
+    config.widgets.push({
+      ...defaultConfig.widgets.find(w => w.wmType === 'image-strip')!,
+      wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1,
+      wmZorder: null
+    })
+
+    config.configVersion = 3
   }
 
   store.store = config

@@ -54,7 +54,7 @@ type WidgetWellKnownFlag =
   'hide-on-blur(close)'
 
 export const defaultConfig: Config = {
-  configVersion: 2,
+  configVersion: 3,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -202,6 +202,22 @@ export const defaultConfig: Config = {
         { id: 4, text: '"Map Tier"' },
         { id: 5, text: '"Map Device" "Rarity: Normal"' },
         { id: 6, text: 'Tane Laboratory' }
+      ]
+    },
+    {
+      wmId: 6,
+      wmType: 'image-strip',
+      wmTitle: 'Cheat sheets',
+      wmWants: 'hide',
+      wmZorder: 6,
+      wmFlags: ['invisible-on-blur'],
+      anchor: {
+        pos: 'tc',
+        x: 50,
+        y: 10
+      },
+      images: [
+        { url: 'syndicate.jpg' }
       ]
     }
   ]
