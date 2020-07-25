@@ -30,6 +30,11 @@
                 {{ offer.item }}<br />
                 {{ offer.player }}<br />
                 {{ offer.time | time }}
+                <template v-if="offer.location.tab">
+                  <br />
+                  tab <br>"{{ offer.location.tab }}"<br />
+                  left: {{ offer.location.left }}, top: {{ offer.location.top }}
+                </template>
               </p>
             </div>
           </ui-popper>
@@ -240,7 +245,7 @@ export default {
 }
 
 .incoming-offer-header-tooltip > p {
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 /* Ripple effect */

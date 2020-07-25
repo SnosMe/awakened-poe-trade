@@ -16,4 +16,9 @@ export interface Offer {
   };
   player: string;
   league: string;
+  location: {
+    tab: string;
+    left: string;
+    top: string;
+  }
 }

@@ -62,6 +62,15 @@ export const parsing: any = {
             p_stash_tab_index !== -1 ? p_stash_tab_index : text.length
           );
 
+          let tab = "",
+            left = "",
+            top = "";
+          if (p_stash_tab_index !== -1) {
+            tab = text.textBetween(P_STASH_TAB, POSITION_LEFT);
+            left = text.textBetween(POSITION_LEFT, TOP);
+            top = text.textBetween(TOP, P);
+          }
+
           return {
             id,
             player,
@@ -72,7 +81,12 @@ export const parsing: any = {
               currency,
               value: priceValue
             },
-            league
+            league,
+            location: {
+              tab,
+              left,
+              top
+            }
           } as Offer;
         }
 
@@ -85,14 +99,14 @@ export const parsing: any = {
 
           let player = "";
           if (/@From <.+> .+: Hi/gi.test(text)) {
-            player = text.textBetween(CHEV_SPACE, HI_ID_LIKE_TO_BUY_YOUR)
+            player = text.textBetween(CHEV_SPACE, HI_ID_LIKE_TO_BUY_YOUR);
           } else {
-            player = text.textBetween(AT_FROM, HI_ID_LIKE_TO_BUY_YOUR)
+            player = text.textBetween(AT_FROM, HI_ID_LIKE_TO_BUY_YOUR);
           }
 
-          const item = text.textBetween(HI_ID_LIKE_TO_BUY_YOUR, FOR_MY)
+          const item = text.textBetween(HI_ID_LIKE_TO_BUY_YOUR, FOR_MY);
 
-          const price = text.textBetween(FOR_MY, IN)
+          const price = text.textBetween(FOR_MY, IN);
 
           let currency = "",
             priceImage = "",
@@ -110,6 +124,15 @@ export const parsing: any = {
             p_stash_tab_index !== -1 ? p_stash_tab_index : text.length
           );
 
+          let tab = "",
+            left = "",
+            top = "";
+          if (p_stash_tab_index !== -1) {
+            tab = text.textBetween(P_STASH_TAB, POSITION_LEFT);
+            left = text.textBetween(POSITION_LEFT, TOP);
+            top = text.textBetween(TOP, P);
+          }
+
           return {
             id: ++id,
             player,
@@ -120,7 +143,12 @@ export const parsing: any = {
               currency,
               value: priceValue
             },
-            league
+            league,
+            location: {
+              tab,
+              left,
+              top
+            }
           } as Offer;
         }
 
