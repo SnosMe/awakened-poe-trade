@@ -225,7 +225,10 @@ export const parsing: any = {
     playerJoined: {
       validate: (text: string) => /.+ has joined the area/gi.test(text),
       parse: (text: string) =>
-        text.substring(text.indexOf('] : '), text.indexOf(" has joined the area"))
+        text.substring(
+          text.indexOf("] : ") + 4,
+          text.indexOf(" has joined the area")
+        )
     }
   }
 };
