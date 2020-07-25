@@ -3,11 +3,13 @@ interface String {
 }
 
 String.prototype.textBetween = function(start: string, end: string): string {
-  const startIndex = this.indexOf(start);
+  let startIndex = this.indexOf(start);
 
   if (startIndex < 0) {
     return "";
   }
+
+  startIndex += start.length;
 
   const endIndex = this.indexOf(end);
 
@@ -15,5 +17,5 @@ String.prototype.textBetween = function(start: string, end: string): string {
     return "";
   }
 
-  return this.substring(startIndex, endIndex - startIndex);
+  return this.substring(startIndex, endIndex);
 };
