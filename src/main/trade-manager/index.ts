@@ -33,10 +33,9 @@ import { parsing } from "./Parsers";
 import { Queue } from "./models/Queue";
 import { Offer } from "./models/Offer";
 
-
 /**
  * Define the Trade Manager class
- * Handles the trading processes in PoE by looking at the Client.txt 
+ * Handles the trading processes in PoE by looking at the Client.txt
  * log file and the clipboard content
  */
 class TradeManager {
@@ -48,17 +47,17 @@ class TradeManager {
    * The Interval function when retying to find the PoE system process
    */
   private retryInterval: any = null;
-/**
- * File path to the Client.txt file
- */
+  /**
+   * File path to the Client.txt file
+   */
   private logFilePath: string = "";
-/**
- * Last verified position in the Client.txt file
- */
+  /**
+   * Last verified position in the Client.txt file
+   */
   private lastFilePosition: number = 0;
   /**
    * The debounced version of the function readLastLines
-   * Prevent calling the function multiple times if there are 
+   * Prevent calling the function multiple times if there are
    * multiples updates made to the file by the game
    */
   // eslint-disable-next-line camelcase
@@ -172,7 +171,7 @@ class TradeManager {
   }
 
   /**
-   * Remove the item highlighting of the in-game Ctrl + F shortcut 
+   * Remove the item highlighting of the in-game Ctrl + F shortcut
    */
   private clearOfferItemHighlighting() {
     // // Select the text
@@ -256,7 +255,7 @@ class TradeManager {
   /**
    * Send a "Thanks" whisper to the player in the "offer"
    * @param offer The offer related to the whisper
-   * @param kickPlayer Kick out of the party the player in the offer, if needed. 
+   * @param kickPlayer Kick out of the party the player in the offer, if needed.
    */
   private sendThanksWhisper(offer: Offer, kickPlayer: boolean = true) {
     this.isPollingClipboard = false;
@@ -379,7 +378,7 @@ class TradeManager {
     this.moveFilePositionToEOF();
 
     this.listenIncomingTradeOffers();
-    // this.listenOutgoingTradeOffers();
+    this.listenOutgoingTradeOffers();
 
     return true;
   }
