@@ -177,7 +177,7 @@ export const parsing: any = {
         // There are multiple whisper templates, so we need multiple parsing functions
         const reg1 = /@.+:* Hi, I would like to buy your .+ listed for .+ in .+/gi;
         function parse1(text: string) {
-          const HI_I_WOULD_LIKE_TO_BUY_YOUR = ": Hi, I would like to buy your ";
+          const HI_I_WOULD_LIKE_TO_BUY_YOUR = " Hi, I would like to buy your ";
           const LISTED_FOR = " listed for ";
 
           const player = text.textBetween(AT_FROM, HI_I_WOULD_LIKE_TO_BUY_YOUR);
@@ -241,7 +241,7 @@ export const parsing: any = {
 
         const reg2 = /@.+:* Hi, I'd like to buy your .+ for my .+ in .+/gi;
         function parse2(text: string) {
-          const HI_ID_LIKE_TO_BUY_YOUR = ": Hi, I'd like to buy your ";
+          const HI_ID_LIKE_TO_BUY_YOUR = " Hi, I'd like to buy your ";
           const FOR_MY = " for my ";
 
           const player = text.textBetween(AT_FROM, HI_ID_LIKE_TO_BUY_YOUR);
