@@ -67,8 +67,8 @@ export const parsing: any = {
             top = "";
           if (p_stash_tab_index !== -1) {
             tab = text.textBetween(P_STASH_TAB, POSITION_LEFT);
-            left = text.textBetween(POSITION_LEFT, TOP);
-            top = text.textBetween(TOP, P);
+            left = text.textBetween(POSITION_LEFT, TOP, true, true);
+            top = text.textBetween(TOP, P, true, true)
           }
 
           return {
@@ -129,8 +129,8 @@ export const parsing: any = {
             top = "";
           if (p_stash_tab_index !== -1) {
             tab = text.textBetween(P_STASH_TAB, POSITION_LEFT);
-            left = text.textBetween(POSITION_LEFT, TOP);
-            top = text.textBetween(TOP, P);
+            left = text.textBetween(POSITION_LEFT, TOP, true, true);
+            top = text.textBetween(TOP, P, true, true)
           }
 
           return {
@@ -212,8 +212,8 @@ export const parsing: any = {
             top = "";
           if (p_stash_tab_index !== -1) {
             tab = text.textBetween(P_STASH_TAB, POSITION_LEFT);
-            left = text.textBetween(POSITION_LEFT, TOP);
-            top = text.textBetween(TOP, P);
+            left = text.textBetween(POSITION_LEFT, TOP, true, true);
+            top = text.textBetween(TOP, P, true, true)
           }
 
           const now = new Date();
@@ -271,8 +271,8 @@ export const parsing: any = {
             top = "";
           if (p_stash_tab_index !== -1) {
             tab = text.textBetween(P_STASH_TAB, POSITION_LEFT);
-            left = text.textBetween(POSITION_LEFT, TOP);
-            top = text.textBetween(TOP, P);
+            left = text.textBetween(POSITION_LEFT, TOP, true, true);
+            top = text.textBetween(TOP, P, true, true);
           }
 
           const now = new Date();
