@@ -13,7 +13,7 @@
             :key="offer.id"
             :offer="offer"
             @dismiss="dismiss(offer)"
-            @thanks="sendThanksWhisper(offer)"
+            @joinHideout="sendJoinHideout(offer)"
             @tradeRequest="sendTradeRequest(offer)"
           />
         </td>
@@ -56,15 +56,37 @@ export default {
         this.offers.push(offer);
       });
     },
-    dismiss(offer) {},
-    sendThanksWhisper(offer) {},
-    sendTradeRequest(offer) {}
+    dismiss(offer) {
+      const index = this.offers.findIndex(o => o.id === offer.id);
+
+      if (index !== -1) {
+        this.offers.splice(index, 1);
+      }
+    },
+    sendJoinHideout(offer) {
+      const index = this.offers.findIndex(o => o.id === offer.id);
+
+      if (index !== -1) {
+        this.offers[index].hideoutJoined = true;
+      }
+
+      MainProcess.sendJoinHideout(offer);
+    },
+    sendTradeRequest(offer) {
+      const index = this.offers.findIndex(o => o.id === offer.id);
+
+      if (index !== -1) {
+        this.offers[index].tradeRequestSent = true;
+      }
+
+      MainProcess.sendTradeRequest(offer);
+    }
   }
 };
 </script>
 
 <style>
-#outgoing-offers-container > table > tr  {
-    margin-bottom: 10px
+#outgoing-offers-container > table > tr {
+  margin-bottom: 10px;
 }
 </style>

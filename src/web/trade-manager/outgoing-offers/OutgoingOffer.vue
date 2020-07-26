@@ -1,7 +1,7 @@
 <template>
   <div class="outgoing-offer bg-gray-800 mx-1 rounded ripple">
     <table style="width: 100%;border-radius: 0.25; border: 1px solid #000">
-      <tr class="bg-gray-900 outgoing-offer-header" @click.exact="offerClicked">
+      <tr class="bg-gray-900 outgoing-offer-header">
         <td colspan="4">
           <ui-popper
             trigger="hover"
@@ -10,7 +10,7 @@
           >
             <template slot="reference">
               <span class="text-gray-500" style="user-select: none">
-                {{ offer.item | elipsis(playerJoined ? 12 : 26) }}
+                {{ offer.item | elipsis(20) }}
               </span>
             </template>
 
@@ -38,7 +38,7 @@
         <td>
           <div
             class="outgoing-offer-action-hideout outgoing-offer-action"
-            @click=""
+            @click="sendJoinHideout"
           >
             <i class="fas fa-home text-gray-500"></i>
           </div>
@@ -46,7 +46,7 @@
         <td>
           <div
             class="outgoing-offer-action-trade outgoing-offer-action"
-            @click=""
+            @click="sendTradeRequest"
           >
             <i class="fas fa-dollar-sign text-gray-500"></i>
           </div>
@@ -54,7 +54,7 @@
         <td>
           <div
             class="outgoing-offer-action-dismiss outgoing-offer-action"
-            @click="remove"
+            @click="dismiss"
           >
             <i class="fas fa-times text-gray-500"></i>
           </div>
@@ -88,32 +88,23 @@ export default {
     }
   },
   data: () => ({
-    partyInviteSent: false,
     tradeRequestSent: false,
-    playerJoined: false,
-    showDetails: false
+    hideoutJoined: false
   }),
   methods: {
-    offerClicked() {
+    sendJoinHideout() {
       MainProcess.focusGame();
-
-      if (this.partyInviteSent) {
-        this.sendTradeRequest();
-      } else {
-        this.sendPartyInvite();
-      }
+      this.$emit("joinHideout");
+      this.hideoutJoined = true;
     },
     sendTradeRequest() {
+      MainProcess.focusGame();
       this.$emit("tradeRequest");
       this.tradeRequestSent = true;
     },
     dismiss() {
       MainProcess.focusGame();
       this.$emit("dismiss");
-    },
-    sendThanksWhisper() {
-      MainProcess.focusGame();
-      this.$emit("thanks");
     }
   }
 };
@@ -147,16 +138,12 @@ export default {
   height: 1.3rem;
   display: inline;
   user-select: none;
-  position:relative;
-  left: 50%;
 }
 
 .outgoing-offer-content > td > span {
   display: inline;
   margin-right: 3px;
   user-select: none;
-  position: relative;
-  left: 50%;
 }
 
 .outgoing-offer-action-trade:hover {
