@@ -406,11 +406,9 @@ class TradeManager {
   private pollClipboard(): string {
     const text = clipboard.readText();
 
-    if (
-      text &&
-      text !== "�" &&
-      (this.lastClipboardValue === null || text !== this.lastClipboardValue)
-    ) {
+    if (this.lastClipboardValue === null) {
+      this.lastClipboardValue = text;
+    } else if (text && text !== "�" && text !== this.lastClipboardValue) {
       this.lastClipboardValue = text;
       return text;
     }
