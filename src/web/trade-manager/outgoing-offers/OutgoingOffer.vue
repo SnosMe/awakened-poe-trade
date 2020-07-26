@@ -105,13 +105,11 @@ export default {
         }`
       );
 
-      console.log(this.time)
-
       setInterval(() => {
         const now = new Date();
         const value = (now.getTime() - this.time.getTime()) / 1000;
 
-        if (value >= 60) {
+        if (value >= 60 && !this.hideoutJoined) {
           this.$emit("dismiss");
         }
 
@@ -138,11 +136,11 @@ export default {
 
 <style>
 .outgoing-offer {
-  height: 3.7rem;
+  height: 4.5rem;
   pointer-events: all;
   cursor: pointer;
   width: 100%;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .outgoing-offer > table {
