@@ -25,7 +25,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "dot-prop": "^5.2.0",
-    "electron-overlay-window": "^1.0.2",
+    "electron-overlay-window": "github:nomis51/electron-overlay-window",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
     "fast-deep-equal": "^3.1.3",
