@@ -1,7 +1,8 @@
 'use strict'
 
 import { app, protocol, ipcMain, screen } from 'electron'
-import { installVueDevtools, createProtocol } from 'vue-cli-plugin-electron-builder/lib'
+import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
+import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import { setupShortcuts } from './main/shortcuts'
 import { createTray } from './main/tray'
 import { setupShowHide } from './main/price-check'
@@ -48,7 +49,7 @@ app.on('ready', async () => {
 
   if (isDevelopment && !process.env.IS_TEST) {
     try {
-      await installVueDevtools()
+      await installExtension(VUEJS_DEVTOOLS)
     } catch (e) {
       console.error('Vue Devtools failed to install:', e.toString())
     }

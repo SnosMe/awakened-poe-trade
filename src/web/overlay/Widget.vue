@@ -143,6 +143,9 @@ export default {
       if (this.moveHandles === 'corners') {
         return ['tl', 'tr', 'br', 'bl']
       }
+      if (this.moveHandles === 'top-bottom') {
+        return ['tl', 'tc', 'tr', 'br', 'bc', 'bl']
+      }
       return []
     }
   },

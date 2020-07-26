@@ -214,3 +214,10 @@ export const KeyToElectron = {
   Alt: 'Alt',
   Shift: 'Shift'
 }
+
+export const forbidden = [
+  'Ctrl + C', 'Ctrl + V', 'Ctrl + A', 'Ctrl + F', 'Ctrl + Enter',
+  'Home', 'Delete', 'Enter',
+  'ArrowUp', 'ArrowRight', 'ArrowLeft'
+]
+export const forbiddenCtrl = ['C', 'V', 'A', 'F', 'Enter']

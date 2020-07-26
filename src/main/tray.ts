@@ -81,7 +81,7 @@ export function rebuildContextMenu () {
     {
       label: 'Open data folder',
       click: () => {
-        shell.openItem(path.join(app.getPath('userData'), 'apt-data'))
+        shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
       }
     },
     { type: 'separator' },

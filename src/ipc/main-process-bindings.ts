@@ -65,6 +65,10 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.on(ipcEvent.OPEN_WIKI, (e, detail) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.OPEN_WIKI, { detail }));
       });
+      
+      electron.ipcRenderer.on(ipcEvent.TOGGLE_DELVE_GRID, (e) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.TOGGLE_DELVE_GRID))
+      })
 
       electron.ipcRenderer.on(ipcEvent.NEW_INCOMING_OFFER, (e, offer) => {
         this.dispatchEvent(
@@ -151,6 +155,8 @@ class MainProcessBinding extends EventTarget {
   sendStillInterestedWhisper(offer: any) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.SEND_STILL_INTERESTED_WHISPER, offer);
+        this.dispatchEvent(new CustomEvent(ipcEvent.OPEN_WIKI, { detail }))
+      })
     }
   }
 

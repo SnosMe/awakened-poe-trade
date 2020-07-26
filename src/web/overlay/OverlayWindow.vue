@@ -34,6 +34,7 @@ import PriceCheckWindow from "@/web/price-check/PriceCheckWindow";
 import WidgetDebug from "./WidgetDebug";
 import WidgetMapCheck from "@/web/map-check/WidgetMapCheck";
 import WidgetImageStrip from "./WidgetImageStrip";
+import WidgetDelveGrid from './WidgetDelveGrid'
 import { registerOtherServices } from "../other-services";
 import { FOCUS_CHANGE, VISIBILITY, NEW_INCOMING_OFFER } from "@/ipc/ipc-event";
 import { Config } from "@/web/Config";
@@ -52,6 +53,7 @@ export default {
     WidgetImageStrip,
     IncomingOffersContainer,
     OutgoingOffersContainer
+    WidgetDelveGrid
   },
   provide() {
     return { wm: this };
@@ -111,6 +113,12 @@ export default {
             }
           }
         }
+      } else {
+        for (const w of this.widgets) {
+          if (w.wmFlags.includes('hide-on-focus')) {
+            this.hide(w.wmId)
+          }
+        }
       }
     });
     MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {
@@ -152,19 +160,18 @@ export default {
 
       return this.widgets.map(w => ({
         wmId: w.wmId,
-        isVisible: this.hideUI
-          ? false
-          : !this.active && w.wmFlags.includes("invisible-on-blur")
-          ? false
-          : showExclusive
-          ? w === showExclusive
-          : w.wmWants === "show"
-      }));
+        isVisible:
+          this.hideUI ? false
+            : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
+              : showExclusive ? w === showExclusive
+                : w.wmWants === 'show'
+      }))
     },
-    topmostWidget() {
+    topmostWidget () {
+      // guaranteed to always exist because of the 'widget-menu'
       return this.widgets
-        .filter(w => w.wmZorder !== "exclusive")
-        .sort((a, b) => b.wmZorder - a.wmZorder)[0]; // guaranteed to always exist because of the 'widget-menu'
+        .filter(w => w.wmZorder !== 'exclusive' && w.wmZorder != null)
+        .sort((a, b) => b.wmZorder - a.wmZorder)[0]
     },
     topmostOrExclusiveWidget() {
       const showExclusive = this.widgets.find(
@@ -248,11 +255,11 @@ export default {
       this.widgets.push({
         wmId: Math.max(0, ...this.widgets.map(_ => _.wmId)) + 1,
         wmType,
-        wmTitle: "",
-        wmWants: "hide",
-        wmZorder: undefined,
-        wmFlags: ["uninitialized"]
-      });
+        wmTitle: '',
+        wmWants: 'hide',
+        wmZorder: null,
+        wmFlags: ['uninitialized']
+      })
     },
     handleBackgroundClick() {
       if (Config.store.overlayBackgroundClose) {

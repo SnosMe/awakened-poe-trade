@@ -1,5 +1,5 @@
 <template>
-  <widget :config="config" v-slot="{ isEditing, isMoving }">
+  <widget :config="config" v-slot="{ isEditing, isMoving }" move-handles="top-bottom">
     <div class="widget-default-style p-1" style="min-width: 5rem;">
       <template>
         <div v-if="!isEditing" class="text-gray-100 m-1 leading-4 text-center">{{ config.wmTitle || 'Untitled' }}</div>
@@ -55,7 +55,7 @@ export default {
         y: 10
       })
       this.$set(this.config, 'images', [{
-        url: 'syndicate.png'
+        url: 'syndicate.jpg'
       }])
       this.wm.show(this.config.wmId)
     }

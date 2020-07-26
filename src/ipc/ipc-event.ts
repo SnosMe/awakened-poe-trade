@@ -65,6 +65,8 @@ export const OPEN_WIKI = "MAIN->OVERLAY::open-wiki";
 
 export const IMPORT_FILE = "OVERLAY->MAIN::import-file";
 
+export const TOGGLE_DELVE_GRID = 'MAIN->OVERLAY::delve-grid'
+
 export const NEW_INCOMING_OFFER = "MAIN->OVERLAY::incoming-offer";
 export const NEW_OUTGOING_OFFER = "MAIN->OVERLAY::outoging-offer";
 export const SEND_STILL_INTERESTED_WHISPER =

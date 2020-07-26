@@ -16,6 +16,7 @@ export interface Config {
   overlayBackgroundClose: boolean
   priceCheckShowCursor: boolean
   mapCheckKey: string | null
+  delveGridKey: string | null
   restoreClipboard: boolean
   commands: Array<{
     text: string
@@ -39,7 +40,7 @@ interface Widget {
   wmType: string
   wmTitle: string
   wmWants: 'show' | 'hide'
-  wmZorder: number | 'exclusive' | undefined
+  wmZorder: number | 'exclusive' | null
   wmFlags: (WidgetWellKnownFlag | string)[]
   // ---------------
   [key: string]: any
@@ -51,10 +52,11 @@ type WidgetWellKnownFlag =
   'has-browser' |
   'invisible-on-blur' |
   'hide-on-blur' |
-  'hide-on-blur(close)'
+  'hide-on-blur(close)' |
+  'hide-on-focus'
 
 export const defaultConfig: Config = {
-  configVersion: 2,
+  configVersion: 3,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -65,6 +67,7 @@ export const defaultConfig: Config = {
   overlayBackgroundClose: true,
   priceCheckShowCursor: true,
   mapCheckKey: null,
+  delveGridKey: null,
   restoreClipboard: true,
   commands: [{
     text: '/hideout',
@@ -108,7 +111,8 @@ export const defaultConfig: Config = {
         pos: 'tl',
         x: 5,
         y: 5
-      }
+      },
+      alwaysShow: false
     },
     {
       wmId: 2,
@@ -163,13 +167,21 @@ export const defaultConfig: Config = {
         }
       ]
     },
-    // --- DEFAULT ---
     {
       wmId: 4,
+      wmType: 'delve-grid',
+      wmTitle: '',
+      wmWants: 'hide',
+      wmZorder: 4,
+      wmFlags: ['hide-on-focus', 'skip-menu']
+    },
+    // --- DEFAULT ---
+    {
+      wmId: 101,
       wmType: 'stash-search',
       wmTitle: 'Map rolling',
       wmWants: 'hide',
-      wmZorder: 4,
+      wmZorder: 101,
       wmFlags: ['invisible-on-blur'],
       anchor: {
         pos: 'tl',
@@ -184,11 +196,11 @@ export const defaultConfig: Config = {
       ]
     },
     {
-      wmId: 5,
+      wmId: 102,
       wmType: 'stash-search',
       wmTitle: 'Dump sorting',
       wmWants: 'hide',
-      wmZorder: 5,
+      wmZorder: 102,
       wmFlags: ['invisible-on-blur'],
       anchor: {
         pos: 'tl',
@@ -202,6 +214,22 @@ export const defaultConfig: Config = {
         { id: 4, text: '"Map Tier"' },
         { id: 5, text: '"Map Device" "Rarity: Normal"' },
         { id: 6, text: 'Tane Laboratory' }
+      ]
+    },
+    {
+      wmId: 103,
+      wmType: 'image-strip',
+      wmTitle: 'Cheat sheets',
+      wmWants: 'hide',
+      wmZorder: 103,
+      wmFlags: ['invisible-on-blur'],
+      anchor: {
+        pos: 'tc',
+        x: 50,
+        y: 10
+      },
+      images: [
+        { url: 'syndicate.jpg' }
       ]
     }
   ]

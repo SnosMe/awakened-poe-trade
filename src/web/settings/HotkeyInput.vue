@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { KeyToCode } from '@/ipc/KeyToCode'
+import { KeyToCode, forbidden } from '@/ipc/KeyToCode'
 
 export default {
   props: {
@@ -17,7 +17,7 @@ export default {
     },
     forbidden: {
       type: Array,
-      default: () => ['Ctrl + C', 'Ctrl + V', 'Ctrl + A', 'Ctrl + F']
+      default: () => forbidden
     },
     required: {
       type: Boolean,
