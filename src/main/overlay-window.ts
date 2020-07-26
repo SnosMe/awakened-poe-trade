@@ -109,7 +109,7 @@ function focusOverlay () {
   PoeWindow.isActive = false
 }
 
-function focusPoE () {
+export function focusPoE () {
   if (!overlayWindow) return
 
   // So the mouse can interact with the offers

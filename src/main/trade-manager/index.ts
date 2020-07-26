@@ -5,7 +5,7 @@ import { EOL, platform } from "os";
 import { clipboard, ipcMain } from "electron";
 import robotjs from "robotjs";
 
-import { overlayWindow, assertPoEActive } from "../overlay-window";
+import { overlayWindow, focusPoE } from "../overlay-window";
 import {
   NEW_INCOMING_OFFER,
   SEND_STILL_INTERESTED_WHISPER,
@@ -140,7 +140,7 @@ class TradeManager {
   private sendJoinHideout(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -211,7 +211,7 @@ class TradeManager {
   private highlightOfferItem(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     const savedText = clipboard.readText();
     clipboard.writeText(offer.item);
@@ -233,7 +233,7 @@ class TradeManager {
   private sendPartyInvite(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -249,7 +249,7 @@ class TradeManager {
   private sendPartyKick(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -265,7 +265,7 @@ class TradeManager {
   private sendTradeRequest(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -282,7 +282,7 @@ class TradeManager {
   private sendThanksWhisper(offer: Offer, kickPlayer: boolean = true) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -304,13 +304,25 @@ class TradeManager {
   private sendBusyWhisper(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
     typeInChat(
       `@${offer.player} I'm busy right now, but I will send you a party invite when I'm ready`
     );
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
+  }
+
+  private sendWhisper(whisper: string) {
+    this.isPollingClipboard = false;
+
+    focusPoE();
+
+    this.clearOfferItemHighlighting();
+
+    typeInChat(whisper);
 
     setTimeout(() => (this.isPollingClipboard = true), 500);
   }
@@ -322,7 +334,7 @@ class TradeManager {
   private sendSoldWhisper(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -340,7 +352,7 @@ class TradeManager {
   private sendStillInterestedWhisper(offer: Offer) {
     this.isPollingClipboard = false;
 
-    assertPoEActive();
+    focusPoE();
 
     this.clearOfferItemHighlighting();
 
@@ -378,8 +390,8 @@ class TradeManager {
           if (await this.start()) {
             clearInterval(this.retryInterval);
             this.retryInterval = null;
-          }else{
-            console.log('PoE process found. Starting the trade manager...')
+          } else {
+            console.log("PoE process found. Starting the trade manager...");
           }
         }, POE_PROCESS_RETRY_RATE_MS);
       }
@@ -584,6 +596,7 @@ class TradeManager {
           break;
 
         case "outgoingOffer":
+          this.sendWhisper(line);
           overlayWindow!.webContents.send(NEW_OUTGOING_OFFER, result.value);
           break;
 
