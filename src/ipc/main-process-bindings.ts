@@ -91,6 +91,18 @@ class MainProcessBinding extends EventTarget {
           new CustomEvent(ipcEvent.PLAYER_JOINED, { detail: player })
         );
       });
+
+      electron.ipcRenderer.on(ipcEvent.HIDEOUT_JOINED, (e) => {
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.HIDEOUT_JOINED)
+        );
+      });
+    }
+  }
+
+  sendJoinHideout(offer: any){
+    if (electron) {
+      electron.ipcRenderer.send(ipcEvent.SEND_JOIN_HIDEOUT, offer);
     }
   }
 

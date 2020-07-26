@@ -78,6 +78,8 @@ export const SEND_TRADE_REQUEST_CMD = "OVERLAY->MAIN::send-trade-request";
 export const TRADE_ACCEPTED = "MAIN->OVERLAY::trade-accepted";
 export const TRADE_CANCELLED = "MAIN->OVERLAY::trade-cancelled";
 export const HIGHLIGHT_OFFER_ITEM = "MAIN->OVERLAY::highlight-offer-item";
-export const PLAYER_JOINED = 'MAIN->OVERLAY::player-joined';
+export const PLAYER_JOINED = "MAIN->OVERLAY::player-joined";
+export const SEND_JOIN_HIDEOUT = "OVERLAY->MAIN::send-join-hideout";
+export const HIDEOUT_JOINED = "MAIN->OVERLAY::hideout-joined";
 
 export const FOCUS_GAME = "OVERLAY->MAIN::focus-game";
