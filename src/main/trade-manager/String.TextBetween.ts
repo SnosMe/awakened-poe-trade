@@ -5,7 +5,7 @@ interface String {
 String.prototype.textBetween = function(
   start: string,
   end: string = "",
-  , startLastOccurence: boolean = false, 
+  startLastOccurence: boolean = false, 
   endLastOccurence: boolean = false
 ): string {
   let startIndex = startLastOccurence ? this.lastIndexOf(start) : this.indexOf(start);
