@@ -10,7 +10,7 @@
           >
             <template slot="reference">
               <span class="text-gray-500" style="user-select: none">
-                {{ offer.item | elipsis(20) }}
+                {{ offer.item | elipsis(30) }}
               </span>
             </template>
 
@@ -24,10 +24,10 @@
       </tr>
       <tr>
         <td colspan="2" class="outgoing-offer-player text-gray-500">
-          {{ offer.player }}
+          {{ offer.player | elipsis(18) }}
         </td>
         <td colspan="2" class="outgoing-offer-time text-gray-500">
-          {{ offer.time }}
+          {{ offer.time }} ({{ elapsedTime }}s)
         </td>
       </tr>
       <tr class="outgoing-offer-content">
@@ -89,9 +89,35 @@ export default {
   },
   data: () => ({
     tradeRequestSent: false,
-    hideoutJoined: false
+    hideoutJoined: false,
+    elapsedTime: 0,
+    time: null
   }),
+  mounted() {
+    this.checkIfExpired();
+  },
   methods: {
+    checkIfExpired() {
+      const date = new Date();
+      this.time = new Date(
+        `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${
+          this.offer.time
+        }`
+      );
+
+      console.log(this.time)
+
+      setInterval(() => {
+        const now = new Date();
+        const value = (now.getTime() - this.time.getTime()) / 1000;
+
+        if (value >= 60) {
+          this.$emit("dismiss");
+        }
+
+        this.elapsedTime = value.toFixed(0);
+      }, 1000);
+    },
     sendJoinHideout() {
       MainProcess.focusGame();
       this.$emit("joinHideout");
@@ -112,10 +138,11 @@ export default {
 
 <style>
 .outgoing-offer {
-  height: 4.4rem;
+  height: 3.7rem;
   pointer-events: all;
   cursor: pointer;
   width: 100%;
+  font-size: 0.7rem;
 }
 
 .outgoing-offer > table {
@@ -129,9 +156,6 @@ export default {
 .outgoing-offer-header {
   text-align: center;
   user-select: none;
-}
-
-.outgoing-offer-content > td:first {
 }
 
 .outgoing-offer-content > td > img {
@@ -159,7 +183,7 @@ export default {
 }
 
 .outgoing-offer-action > i {
-  font-size: 1rem;
+  font-size: 0.7rem;
   position: relative;
   left: 50%;
   top: 50%;

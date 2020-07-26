@@ -5,19 +5,21 @@
     class="flex-grow flex h-full"
   >
     <table style="width: 100%">
-      <tr v-for="offer of offers">
-        <td>
-          <OutgoingOffer
-            ref="offers"
-            class="outgoing-offers"
-            :key="offer.id"
-            :offer="offer"
-            @dismiss="dismiss(offer)"
-            @joinHideout="sendJoinHideout(offer)"
-            @tradeRequest="sendTradeRequest(offer)"
-          />
-        </td>
-      </tr>
+      <template v-for="offer of offers">
+        <tr>
+          <td>
+            <OutgoingOffer
+              ref="offers"
+              class="outgoing-offers"
+              :key="offer.id"
+              :offer="offer"
+              @dismiss="dismiss(offer)"
+              @joinHideout="sendJoinHideout(offer)"
+              @tradeRequest="sendTradeRequest(offer)"
+            />
+          </td>
+        </tr>
+      </template>
     </table>
   </div>
 </template>
@@ -56,7 +58,7 @@ export default {
        */
       MainProcess.addEventListener(NEW_OUTGOING_OFFER, ({ detail: offer }) => {
         console.log("New outgoing offer", offer);
-        this.offers.push(offer);
+        this.offers.unshift(offer);
       });
 
       /**
@@ -103,5 +105,27 @@ export default {
 <style>
 #outgoing-offers-container > table > tr {
   margin-bottom: 10px;
+}
+
+#outgoing-offers-container {
+  max-height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
