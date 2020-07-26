@@ -51,9 +51,24 @@ export default {
      * Handles the events from the MainProcess
      */
     handleEvents() {
+      /**
+       * Any new outgoing offers from the clipboard
+       */
       MainProcess.addEventListener(NEW_OUTGOING_OFFER, ({ detail: offer }) => {
         console.log("New outgoing offer", offer);
         this.offers.push(offer);
+      });
+
+      /**
+       * Any "Trade accepted" message that might help removing completed offers
+       */
+      MainProcess.addEventListener(TRADE_ACCEPTED, () => {
+        const offer = this.offers.find(o => o.hideoutJoined);
+
+        if (offer) {
+          MainProcess.sendThanksWhisper(offer, false);
+          this.dismiss(offer);
+        }
       });
     },
     dismiss(offer) {
