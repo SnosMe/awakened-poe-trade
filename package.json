@@ -25,10 +25,11 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.x",
     "dot-prop": "5.2.x",
-    "electron-overlay-window": "1.0.x",
+    "electron-overlay-window": "github:nomis51/electron-overlay-window",
     "electron-store": "6.0.0",
     "electron-updater": "^4.2.0",
     "fast-deep-equal": "3.1.x",
+    "find-process": "^1.4.3",
     "luxon": "1.24.x",
     "portal-vue": "2.1.7",
     "robotjs": "^0.6.0",
@@ -46,7 +47,8 @@
     "winston": "3.x.x"
   },
   "devDependencies": {
-    "@intlify/vue-i18n-loader": "^1.0.0",
+    "@intlify/vue-i18n-loader": "^1.0.0",,
+    "@types/lodash": "^4.14.158",
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/node": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^2.18.0",

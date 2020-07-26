@@ -21,12 +21,14 @@ export async function createOverlayWindow () {
   ipcMain.on(ipc.CLOSE_OVERLAY, assertPoEActive)
   PoeWindow.on('active-change', handlePoeWindowActiveChange)
   PoeWindow.onceAttached(handleOverlayAttached)
+  ipcMain.on(ipc.FOCUS_GAME, focusPoE);
 
   overlayWindow = new BrowserWindow({
     icon: path.join(__static, 'icon.png'),
     ...OW.WINDOW_OPTS,
     width: 800,
     height: 600,
+    acceptFirstMouse: true,
     // backgroundColor: '#00000008',
     webPreferences: {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
@@ -35,7 +37,7 @@ export async function createOverlayWindow () {
     }
   })
 
-  overlayWindow.setIgnoreMouseEvents(true)
+  overlayWindow.setIgnoreMouseEvents(false)
 
   overlayWindow.setMenu(Menu.buildFromTemplate([
     { role: 'editMenu' },
@@ -107,10 +109,11 @@ function focusOverlay () {
   PoeWindow.isActive = false
 }
 
-function focusPoE () {
+export function focusPoE () {
   if (!overlayWindow) return
 
-  overlayWindow.setIgnoreMouseEvents(true)
+  // So the mouse can interact with the offers
+  // overlayWindow.setIgnoreMouseEvents(true)
   isInteractable = false
   OW.focusTarget()
   PoeWindow.isActive = true
