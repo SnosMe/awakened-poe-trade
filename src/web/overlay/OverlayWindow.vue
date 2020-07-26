@@ -21,6 +21,7 @@
     </div> -->
 
     <IncomingOffersContainer />
+    <OutgoingOffersContainer />
   </div>
 </template>
 
@@ -38,6 +39,7 @@ import { FOCUS_CHANGE, VISIBILITY, NEW_INCOMING_OFFER } from "@/ipc/ipc-event";
 import { Config } from "@/web/Config";
 
 import IncomingOffersContainer from "@/web/trade-manager/incoming-offers/IncomingOffersContainer";
+import OutgoingOffersContainer from "@/web/trade-manager/outgoing-offers/OutgoingOffersContainer";
 
 export default {
   components: {
@@ -48,7 +50,8 @@ export default {
     WidgetDebug,
     WidgetMapCheck,
     WidgetImageStrip,
-    IncomingOffersContainer
+    IncomingOffersContainer,
+    OutgoingOffersContainer
   },
   provide() {
     return { wm: this };
