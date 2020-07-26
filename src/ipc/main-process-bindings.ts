@@ -72,6 +72,12 @@ class MainProcessBinding extends EventTarget {
         );
       });
 
+      electron.ipcRenderer.on(ipcEvent.NEW_OUTGOING_OFFER, (e, offer) => {
+        this.dispatchEvent(
+          new CustomEvent(ipcEvent.NEW_OUTGOING_OFFER, { detail: offer })
+        );
+      });
+
       electron.ipcRenderer.on(ipcEvent.TRADE_ACCEPTED, () => {
         this.dispatchEvent(new CustomEvent(ipcEvent.TRADE_ACCEPTED));
       });

@@ -18,7 +18,8 @@ import {
   TRADE_CANCELLED,
   SEND_TRADE_REQUEST_CMD,
   HIGHLIGHT_OFFER_ITEM,
-  PLAYER_JOINED
+  PLAYER_JOINED,
+  NEW_OUTGOING_OFFER
 } from "@/ipc/ipc-event";
 import { typeInChat } from "../game-chat";
 import {
@@ -557,6 +558,10 @@ class TradeManager {
       switch (type) {
         case "incomingOffer":
           overlayWindow!.webContents.send(NEW_INCOMING_OFFER, result.value);
+          break;
+
+        case "outgoingOffer":
+          overlayWindow!.webContents.send(NEW_OUTGOING_OFFER, result.value);
           break;
 
         case "tradeAccepted":
