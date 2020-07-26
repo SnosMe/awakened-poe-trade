@@ -19,7 +19,8 @@ import {
   SEND_TRADE_REQUEST_CMD,
   HIGHLIGHT_OFFER_ITEM,
   PLAYER_JOINED,
-  NEW_OUTGOING_OFFER
+  NEW_OUTGOING_OFFER,
+  SEND_JOIN_HIDEOUT
 } from "@/ipc/ipc-event";
 import { typeInChat } from "../game-chat";
 import {
@@ -126,6 +127,26 @@ class TradeManager {
     ipcMain.on(HIGHLIGHT_OFFER_ITEM, (_, offer) =>
       this.execute(this.highlightOfferItem, [offer])
     );
+
+    ipcMain.on(SEND_JOIN_HIDEOUT, (_, offer) =>
+      this.execute(this.sendJoinHideout, [offer])
+    );
+  }
+
+  /**
+   * Send a join hideout command using the player in the offer
+   * @param offer The offer related to the hideout command
+   */
+  private sendJoinHideout(offer: Offer) {
+    this.isPollingClipboard = false;
+
+    assertPoEActive();
+
+    this.clearOfferItemHighlighting();
+
+    typeInChat(`/hideout ${offer.player}`);
+
+    setTimeout(() => (this.isPollingClipboard = true), 500);
   }
 
   /**
@@ -357,6 +378,8 @@ class TradeManager {
           if (await this.start()) {
             clearInterval(this.retryInterval);
             this.retryInterval = null;
+          }else{
+            console.log('PoE process found. Starting the trade manager...')
           }
         }, POE_PROCESS_RETRY_RATE_MS);
       }
