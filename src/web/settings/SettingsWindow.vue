@@ -75,7 +75,8 @@ export default {
     "General": "Общие",
     "Price check": "Прайс-чек",
     "Maps": "Карты",
-    "Debug": "Debug (Отладка)"
+    "Debug": "Debug (Отладка)",
+    "Chat": "Чат"
   }
 }
 </i18n>
