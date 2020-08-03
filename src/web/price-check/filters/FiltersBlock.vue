@@ -6,8 +6,7 @@
       <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
       <div v-if="filters.mapBlighted" class="trade-tag">{{ $t('Blighted') }}</div>
       <div v-if="filters.discriminator" class="trade-tag">{{ $t(filters.discriminator.value) }}</div>
-      <button v-if="filters.itemLevel" class="trade-tag" :class="{ disabled: filters.itemLevel.disabled }"
-        @click="filters.itemLevel.disabled = !filters.itemLevel.disabled">{{ $t('Item Level: {0}', [filters.itemLevel.value]) }}</button>
+      <filter-item-level :filters="filters" />
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
         @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ $t('White: {0}', [filters.whiteSockets.value]) }}</button>
       <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
@@ -78,12 +77,14 @@
 <script>
 import FilterModifier from './FilterModifier'
 import FilterVeiled from './FilterVeiled'
+import FilterItemLevel from './FilterItemLevel'
 
 export default {
   name: 'FiltersBlock',
   components: {
     FilterModifier,
-    FilterVeiled
+    FilterVeiled,
+    FilterItemLevel
   },
   props: {
     filters: {
@@ -149,6 +150,10 @@ export default {
     @apply border-gray-900;
   }
 }
+
+.trade-tag--box {
+  padding: 0;
+}
 </style>
 
 <i18n>
@@ -159,7 +164,6 @@ export default {
     "Links: {0}": "Связи: {0}",
     "Map Tier: {0}": "Ур. карты: {0}",
     "Blighted": "Заражённая",
-    "Item Level: {0}": "Ур. предмета: {0}",
     "White: {0}": "Белые: {0}",
     "Level: {0}": "Уровень: {0}",
     "Quality: {0}%": "Качество: {0}%",
