@@ -26,7 +26,8 @@
     <trade-bulk
       v-if="tradeAPI === 'bulk'"
       ref="tradeService"
-      :filters="itemFilters" />
+      :filters="itemFilters"
+      :item="item" />
   </div>
 </template>
 
@@ -56,7 +57,7 @@ export default {
   },
   created () {
     this.$watch(vm => [vm.itemFilters, vm.itemStats, vm.intaractedOnce], (curr, prev) => {
-      this.tradeAPI = apiToSatisfySearch(this.itemFilters, this.itemStats)
+      this.tradeAPI = apiToSatisfySearch(this.item, this.itemStats)
 
       if (this.intaractedOnce === false) return
 

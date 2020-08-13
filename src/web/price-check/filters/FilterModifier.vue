@@ -208,11 +208,6 @@ export default {
   &:focus {
     @apply border-gray-500;
   }
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
 }
 
 .search-option {

@@ -51,6 +51,10 @@ export interface ItemFilters {
     value: number
     disabled: boolean
   }
+  stackSize?: {
+    value: number
+    disabled: boolean
+  }
   unidentified?: {
     value: true
     disabled: boolean

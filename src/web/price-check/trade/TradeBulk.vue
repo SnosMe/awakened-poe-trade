@@ -16,7 +16,7 @@
             <img alt="exa" src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1" class="trade-bulk-currency-icon">
             <span>{{ result.exa.total }}</span>
           </button>
-          <span>({{ $t('Online') }})</span>
+          <span class="ml-1">[{{ $t('Online') }}]</span>
         </div>
       </div>
       <div v-if="result" class="flex">
@@ -100,6 +100,10 @@ export default {
     filters: {
       type: Object,
       required: true
+    },
+    item: {
+      type: Object,
+      required: true
     }
   },
   inject: ['wm', 'widget'],
@@ -135,14 +139,14 @@ export default {
         this.error = null
         this.result = null
 
-        const result = await execBulkSearch(tradeTag(this.filters))
+        const result = await execBulkSearch(this.item, this.filters)
         if (this.searchId !== searchId) return
         this.result = result
         this.selectedCurr = (result.exa.total > result.chaos.total) ? 'exa' : 'chaos'
         // override, because at league start many players set wrong price, and this breaks auto-detection
-        if (tradeTag(this.filters) === TRADE_TAG_BY_NAME.get('Chaos Orb')) {
+        if (tradeTag(this.item) === TRADE_TAG_BY_NAME.get('Chaos Orb')) {
           this.selectedCurr = 'exa'
-        } else if (tradeTag(this.filters) === TRADE_TAG_BY_NAME.get('Exalted Orb')) {
+        } else if (tradeTag(this.item) === TRADE_TAG_BY_NAME.get('Exalted Orb')) {
           this.selectedCurr = 'chaos'
         }
       } catch (err) {

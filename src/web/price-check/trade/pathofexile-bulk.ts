@@ -1,7 +1,9 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Leagues } from '../Leagues'
-import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits } from './common'
+import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag } from './common'
 import { RateLimiter } from './RateLimiter'
+import { ItemFilters } from '../filters/interfaces'
+import { ParsedItem } from '@/parser'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
@@ -104,13 +106,14 @@ interface BulkSearch {
 
 const HAVE_CURRENCY = ['exalted', 'chaos']
 
-export async function execBulkSearch (want: string): Promise<BulkSearch> {
+export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): Promise<BulkSearch> {
   const resultByHave = await Promise.all(HAVE_CURRENCY.map(async (have) => {
     const query = await requestTradeResultList({
       exchange: {
         have: [have],
-        want: [want],
-        status: { option: 'online' }
+        want: [tradeTag(item)!],
+        status: { option: 'online' },
+        minimum: (filters.stackSize && !filters.stackSize.disabled) ? filters.stackSize.value : undefined
         // fulfillable: null
       }
     })

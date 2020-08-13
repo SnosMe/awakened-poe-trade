@@ -46,6 +46,11 @@
   -webkit-box-shadow: inset 0 0 0.375rem rgba(0,0,0,0.5);
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 .popper {
   font-size: 0.875rem !important;
   border-radius: 0.25rem !important;

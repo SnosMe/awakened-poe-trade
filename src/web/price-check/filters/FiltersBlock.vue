@@ -6,7 +6,8 @@
       <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
       <div v-if="filters.mapBlighted" class="trade-tag">{{ $t('Blighted') }}</div>
       <div v-if="filters.discriminator" class="trade-tag">{{ $t(filters.discriminator.value) }}</div>
-      <filter-item-level :filters="filters" />
+      <filter-numeric-editable :filter="filters.itemLevel" name="Item Level:" />
+      <filter-numeric-editable :filter="filters.stackSize" name="Stock:" />
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
         @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ $t('White: {0}', [filters.whiteSockets.value]) }}</button>
       <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
@@ -77,14 +78,14 @@
 <script>
 import FilterModifier from './FilterModifier'
 import FilterVeiled from './FilterVeiled'
-import FilterItemLevel from './FilterItemLevel'
+import FilterNumericEditable from './FilterNumericEditable'
 
 export default {
   name: 'FiltersBlock',
   components: {
     FilterModifier,
     FilterVeiled,
-    FilterItemLevel
+    FilterNumericEditable
   },
   props: {
     filters: {

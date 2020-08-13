@@ -91,6 +91,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           elder_item?: FilterBoolean
           redeemer_item?: FilterBoolean
           warlord_item?: FilterBoolean
+          stack_size?: FilterRange
         }
       }
       armour_filters?: {
@@ -232,6 +233,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.itemLevel && !filters.itemLevel.disabled) {
     prop.set(query.filters, 'misc_filters.filters.ilvl.min', filters.itemLevel.value)
+  }
+
+  if (filters.stackSize && !filters.stackSize.disabled) {
+    prop.set(query.filters, 'misc_filters.filters.stack_size.min', filters.stackSize.value)
   }
 
   if (filters.linkedSockets && !filters.linkedSockets.disabled) {
