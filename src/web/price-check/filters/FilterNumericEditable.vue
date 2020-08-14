@@ -2,8 +2,12 @@
   <div v-if="filter"
     class="trade-tag trade-tag--box flex" :class="{ disabled: filter.disabled }">
     <button @click="filter.disabled = !filter.disabled" class="pl-2">{{ $t(name) }}</button>
-    <ui-input-debounced class="trade-tag__input" :placeholder="filter.value" step="any" type="number"
-      v-model.number="filterValue" :delay="577" />
+    <ui-input-debounced class="trade-tag__input" step="any" type="number"
+      v-model.number="filterValue"
+      :placeholder="filter.value"
+      :delay="0"
+      @focus.native="inputFocus"
+      :style="`width: ${1.2 + String(filterValue).length}ch`" />
   </div>
 </template>
 
@@ -33,6 +37,15 @@ export default {
         }
       }
     }
+  },
+  methods: {
+    inputFocus (e) {
+      if (e.target.value === '') {
+        e.target.value = this.filter.value
+      }
+      e.target.select()
+      this.filter.disabled = false
+    }
   }
 }
 </script>
@@ -40,9 +53,8 @@ export default {
 <style lang="postcss">
 .trade-tag__input {
   @apply text-center;
-  @apply w-6;
   @apply mr-1;
-  @apply bg-gray-900;
+  @apply bg-transparent;
   @apply text-gray-300;
   @apply select-all;
 
@@ -54,7 +66,11 @@ export default {
   }
 
   &::placeholder {
-    @apply text-gray-700;
+    @apply text-gray-300;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
   }
 }
 </style>

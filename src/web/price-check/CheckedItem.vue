@@ -13,21 +13,21 @@
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
-      @submit="intaractedOnce = true" />
+      @submit="interactedOnce = true" />
     <trade-listing
-      v-if="tradeAPI === 'trade' && intaractedOnce"
+      v-if="tradeAPI === 'trade' && interactedOnce"
       ref="tradeService"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item" />
-    <div v-if="tradeAPI === 'trade' && !intaractedOnce">
-      <button class="btn" @click="intaractedOnce = true">{{ $t('Search') }}</button>
-    </div>
     <trade-bulk
-      v-if="tradeAPI === 'bulk'"
+      v-if="tradeAPI === 'bulk' && interactedOnce"
       ref="tradeService"
       :filters="itemFilters"
       :item="item" />
+    <div v-if="!interactedOnce" @mouseenter="interactedOnce = true">
+      <button class="btn" @click="interactedOnce = true">{{ $t('Search') }}</button>
+    </div>
   </div>
 </template>
 
@@ -56,20 +56,20 @@ export default {
     FilterName
   },
   created () {
-    this.$watch(vm => [vm.itemFilters, vm.itemStats, vm.intaractedOnce], (curr, prev) => {
+    this.$watch(vm => [vm.item, vm.interactedOnce], (curr, prev) => {
+      if (this.interactedOnce === false) return
+
       this.tradeAPI = apiToSatisfySearch(this.item, this.itemStats)
 
-      if (this.intaractedOnce === false) return
-
-      // NOTE: children component receives props on nextTick
+      // NOTE: child `trade-xxx` component renders/receives props on nextTick
       this.$nextTick(() => {
         if (this.$refs.tradeService) {
           this.$refs.tradeService.execSearch()
         }
       })
-    }, { deep: true })
+    }, { deep: false })
 
-    this.$watch(vm => [vm.itemStats, vm.intaractedOnce], (curr, prev) => {
+    this.$watch(vm => [vm.item, vm.interactedOnce, vm.itemStats, vm.itemFilters], (curr, prev) => {
       const cItem = curr[0]
       const pItem = prev[0]
       const cIntaracted = curr[1]
@@ -77,17 +77,7 @@ export default {
 
       if (cItem === pItem && cIntaracted === true && pIntaracted === true) {
         // force user to press Search button on change
-        this.intaractedOnce = false
-      }
-    }, { deep: true })
-
-    this.$watch(vm => [vm.itemFilters, vm.intaractedOnce], (curr, prev) => {
-      const cItem = curr[0]
-      const pItem = prev[0]
-      const cIntaracted = curr[1]
-      const pIntaracted = prev[1]
-      if (cItem === pItem && cIntaracted === false && pIntaracted === false) {
-        this.intaractedOnce = true
+        this.interactedOnce = false
       }
     }, { deep: true })
   },
@@ -101,7 +91,7 @@ export default {
     item (item) {
       this.itemFilters = createFilters(item)
       this.itemStats = initUiModFilters(item)
-      this.intaractedOnce = (
+      this.interactedOnce = (
         this.item.rarity === ItemRarity.Unique ||
         !CATEGORY_TO_TRADE_ID.has(this.item.category) ||
         Boolean(this.item.isUnidentified) ||
@@ -113,7 +103,7 @@ export default {
     return {
       itemFilters: null,
       itemStats: null,
-      intaractedOnce: false,
+      interactedOnce: false,
       tradeAPI: 'bulk'
     }
   },
