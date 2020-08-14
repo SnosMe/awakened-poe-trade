@@ -25,7 +25,7 @@ export interface ParsedItem {
     linked?: number // only 5 or 6
     white?: number
   }
-  stackSize?: number
+  stackSize?: { value: number, max: number }
   isUnidentified: boolean
   isCorrupted: boolean
   influences: ItemInfluence[]

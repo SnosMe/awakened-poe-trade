@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!error" class="layout-column flex-grow min-h-0">
+  <div v-if="!error" class="layout-column min-h-0" style="height: auto;">
     <!-- @TODO: fix "Matched" text jumping (min-height: 22px) -->
     <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 1.375rem;">
       <div class="flex items-center text-gray-500">

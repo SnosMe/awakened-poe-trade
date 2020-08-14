@@ -28,6 +28,7 @@
     <div v-if="!interactedOnce" @mouseenter="interactedOnce = true">
       <button class="btn" @click="interactedOnce = true">{{ $t('Search') }}</button>
     </div>
+    <stack-value :filters="itemFilters" :item="item"/>
   </div>
 </template>
 
@@ -41,6 +42,7 @@ import FiltersBlock from './filters/FiltersBlock'
 import { createFilters } from './filters/create-item-filters'
 import { initUiModFilters } from './filters/create-stat-filters'
 import PricePrediction from './price-prediction/PricePrediction'
+import StackValue from './stack-value/StackValue'
 import FilterName from './filters/FilterName'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { Config } from '@/web/Config'
@@ -53,7 +55,8 @@ export default {
     TradeBulk,
     PriceTrend,
     FiltersBlock,
-    FilterName
+    FilterName,
+    StackValue
   },
   created () {
     this.$watch(vm => [vm.item, vm.interactedOnce], (curr, prev) => {

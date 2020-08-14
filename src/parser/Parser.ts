@@ -298,7 +298,8 @@ function parseStackSize (section: string[], item: ParsedItem) {
   }
   if (section[0].startsWith(_$[C.TAG_STACK_SIZE])) {
     // "Stack Size: 2/9"
-    item.stackSize = parseInt(section[0].substr(_$[C.TAG_STACK_SIZE].length), 10)
+    const [value, max] = section[0].substr(_$[C.TAG_STACK_SIZE].length).split('/').map(Number)
+    item.stackSize = { value, max }
 
     if (item.category === ItemCategory.Seed) {
       parseSeedLevelNested(section, item)

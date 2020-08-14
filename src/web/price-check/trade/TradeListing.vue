@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!error" class="layout-column flex-grow min-h-0">
+  <div v-if="!error" class="layout-column min-h-0" style="height: auto;">
     <div class="mb-2 flex pl-2">
       <div class="flex items-baseline text-gray-500 mr-2">
         <span class="mr-1">{{ $t('Matched:') }}</span>

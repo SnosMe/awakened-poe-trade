@@ -26,7 +26,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
   }
   if (item.stackSize || tradeTag(item)) {
     filters.stackSize = {
-      value: item.stackSize || 1,
+      value: item.stackSize?.value || 1,
       disabled: true
     }
   }
