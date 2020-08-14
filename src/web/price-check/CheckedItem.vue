@@ -73,16 +73,23 @@ export default {
     }, { deep: false })
 
     this.$watch(vm => [vm.item, vm.interactedOnce, vm.itemStats, vm.itemFilters], (curr, prev) => {
-      const cItem = curr[0]
-      const pItem = prev[0]
-      const cIntaracted = curr[1]
-      const pIntaracted = prev[1]
+      const cItem = curr[0]; const pItem = prev[0]
+      const cIntaracted = curr[1]; const pIntaracted = prev[1]
 
       if (cItem === pItem && cIntaracted === true && pIntaracted === true) {
         // force user to press Search button on change
         this.interactedOnce = false
       }
     }, { deep: true })
+
+    this.$watch(vm => [vm.item, JSON.stringify(vm.itemFilters && vm.itemFilters.trade)], (curr, prev) => {
+      const cItem = curr[0]; const pItem = prev[0]
+      const cTrade = curr[1]; const pTrade = prev[1]
+
+      if (cItem === pItem && cTrade !== pTrade) {
+        this.interactedOnce = true
+      }
+    }, { deep: false })
   },
   props: {
     item: {
