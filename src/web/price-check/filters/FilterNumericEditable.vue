@@ -72,6 +72,8 @@ export default {
   &:focus::placeholder {
     color: transparent;
   }
+
+  &:focus { cursor: none; }
 }
 </style>
 

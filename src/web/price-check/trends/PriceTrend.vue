@@ -18,7 +18,7 @@
         <i v-if="trend.changeStr === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
         <i v-if="trend.changeStr === 'up'" class="fas fa-angle-double-up pr-1 text-green-500"></i>
         <span v-if="trend.changeStr === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
-        <span>{{ trend.changeVal * 2 | displayRounding }}&nbsp;%</span>
+        <span>{{ Math.round(trend.changeVal * 2) }}{{ '\u2009' }}%</span>
       </div>
       <div class="text-xs text-gray-500 leading-none">{{ $t('Last 7 days') }}</div>
     </div>

@@ -25,8 +25,8 @@
         </div>
         <div class="text-center">
           <div class="leading-tight">
-            <i v-if="price.confidence < 70" class="fas fa-exclamation-triangle pr-1 text-orange-400"></i>
-            <span>{{ price.confidence }}&nbsp;%</span>
+            <i v-if="price.confidence < 78" class="fas fa-exclamation-triangle pr-1 text-orange-400"></i>
+            <span>{{ price.confidence }}{{ '\u2009' }}%</span>
           </div>
           <div class="text-xs text-gray-500 leading-none">Confidence</div>
         </div>

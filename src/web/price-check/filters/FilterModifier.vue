@@ -207,6 +207,7 @@ export default {
 
   &:focus {
     @apply border-gray-500;
+    cursor: none;
   }
 }
 
