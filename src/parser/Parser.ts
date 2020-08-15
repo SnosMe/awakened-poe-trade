@@ -64,6 +64,10 @@ export function parseClipboard (clipboard: string) {
   }, sections[0])
   sections = sections.filter(section => section.length)
 
+  if (sections[0][1] === _$[C.CANNOT_USE_ITEM]) {
+    sections[1].unshift(sections[0][0]) // `Rarity: xxx`
+    sections.shift()
+  }
   const parsed = parseNamePlate(sections[0])
   if (!parsed) {
     return null

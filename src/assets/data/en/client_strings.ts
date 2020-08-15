@@ -53,7 +53,8 @@ const dict = {
   'You will find Niko and complete his mission.': 'You will find Niko and complete his mission.',
   'You will find Jun and complete her mission.': 'You will find Jun and complete her mission.',
   'You will find Zana and complete her mission.': 'You will find Zana and complete her mission.',
-  'Blighted {0}': 'Blighted {0}'
+  'Blighted {0}': 'Blighted {0}',
+  'You cannot use this item. Its stats will be ignored': 'You cannot use this item. Its stats will be ignored'
 }
 
 export default dict
