@@ -21,6 +21,8 @@ export let TRADE_TAG_BY_NAME: Map<string, string>
 export let UNIQUES_LIST: UniqueItem[]
 export let UNIQUES: Map<string, UniqueItem>
 
+export let MAP_IMGS: Map<string, { img: string }>
+
 export const ITEM_DROP = new Map<string, DropEntry>()
 
 ;(async function initData () { /* eslint-disable no-lone-blocks */
@@ -72,6 +74,11 @@ export const ITEM_DROP = new Map<string, DropEntry>()
         ITEM_DROP.set(query, entry)
       }
     }
+  }
+
+  {
+    const maps: Array<[string, { img: string }]> = (require('./maps.json'))
+    MAP_IMGS = new Map(maps)
   }
 })()
 

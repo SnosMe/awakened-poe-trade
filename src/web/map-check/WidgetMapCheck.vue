@@ -1,8 +1,8 @@
 <template>
   <widget :config="{ ...config, anchor }" move-handles="none" readonly :removable="false">
-    <div class="bg-gray-800 text-gray-200 border-gray-900 border-4" style="min-width: 20rem;" :style="{ 'max-width': `${wm.width - wm.poeUiWidth}px` }">
+    <div class="bg-gray-800 text-gray-200 border-gray-900 border-4" style="min-width: 20rem;" :style="{ 'max-width': `min(${wm.width - wm.poeUiWidth}px, 30rem)` }">
       <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
-      <!-- <div class="bg-gray-700" style="width: 460px; height: 258px;"></div> -->
+      <fullscreen-image v-if="image" :src="image" />
       <div v-if="!item" class="px-8 py-2">
         {{ $t('Item under cursor is not a map.') }}
       </div>
@@ -21,7 +21,7 @@ import { MAP_CHECK } from '@/ipc/ipc-event'
 import { parseClipboard, ItemCategory, ItemRarity } from '@/parser'
 import MapStatButton from './MapStatButton'
 import { prepareMapStats } from './prepare-map-stats'
-import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
+import { TRANSLATED_ITEM_NAME_BY_REF, MAP_IMGS } from '@/assets/data'
 
 export default {
   components: {
@@ -84,6 +84,12 @@ export default {
     },
     mapStats () {
       return prepareMapStats(this.item)
+    },
+    image () {
+      if (!this.item) return undefined
+
+      const entry = MAP_IMGS.get(this.mapName)
+      return entry && entry.img
     }
   }
 }

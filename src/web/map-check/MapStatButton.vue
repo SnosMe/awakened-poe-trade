@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <button @click="handleClick"
-      class="px-2 leading-none py-2 m-0 text-left flex-1 flex items-center"
+      class="px-2 leading-none py-2 m-0 text-left flex-1 flex items-center overflow-hidden"
       :class="state === 'danger' ? 'bg-red-700'
             : state === 'warning' ? 'bg-orange-600'
             : state === 'desirable' ? 'bg-green-700'
