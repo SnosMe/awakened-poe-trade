@@ -25,7 +25,7 @@
       ref="tradeService"
       :filters="itemFilters"
       :item="item" />
-    <div v-if="!interactedOnce" @mouseenter="interactedOnce = true">
+    <div v-if="!interactedOnce">
       <button class="btn" @click="interactedOnce = true">{{ $t('Search') }}</button>
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
