@@ -85,6 +85,13 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
 
     // @TODO: juicy corrupted maps
+  } else if (
+    item.category === ItemCategory.ClusterJewel &&
+    item.rarity !== ItemRarity.Unique
+  ) {
+    filters.baseType = {
+      value: item.baseType || item.name
+    }
   } else if (item.rarity === ItemRarity.Unique) {
     filters.name = {
       value: item.name

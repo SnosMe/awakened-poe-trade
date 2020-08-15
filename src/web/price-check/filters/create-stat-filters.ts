@@ -165,4 +165,25 @@ function filterAdjustmentForNegate (
 
 function finalFilterTweaks (ctx: FiltersCreationContext) {
   const { item } = ctx
+
+  if (item.category === ItemCategory.ClusterJewel && item.rarity !== ItemRarity.Unique) {
+    for (const filter of ctx.filters) {
+      if (filter.type === 'enchant') {
+        if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
+          filter.hidden = 'Roll is not variable'
+        }
+        if (filter.statRef === 'Added Small Passive Skills grant: #') {
+          filter.disabled = false
+        }
+        if (filter.statRef === 'Adds # Passive Skills') {
+          // https://pathofexile.gamepedia.com/Cluster_Jewel#Optimal_passive_skill_amounts
+          filter.disabled = false
+          filter.min = undefined
+          if (filter.max === 4) {
+            filter.max = 5
+          }
+        }
+      }
+    }
+  }
 }
