@@ -46,12 +46,15 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     ctx.filters.forEach(filter => { filter.disabled = true })
   }
 
+  finalFilterTweaks(ctx)
+
   return ctx.filters
 }
 
 export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
   const filter: Writeable<StatFilter> = {
     tradeId: mod.stat.types.find(type => type.name === mod.type)!.tradeId,
+    statRef: mod.stat.ref,
     text: mod.stat.text,
     type: mod.type,
     option: mod.option,
@@ -158,4 +161,8 @@ function filterAdjustmentForNegate (
   if (mod.stat.inverted) {
     filter.invert = !filter.invert
   }
+}
+
+function finalFilterTweaks (ctx: FiltersCreationContext) {
+  const { item } = ctx
 }

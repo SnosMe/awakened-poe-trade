@@ -76,6 +76,7 @@ export function filterResists (ctx: FiltersCreationContext) {
     if ((maxRes / totalRes > 0.67) || resists.filter(r => r.hasFlat).length === 1) {
       ctx.filters.push({
         text: '+#% total to one of Elemental Resistances',
+        statRef: '+#% total to one of Elemental Resistances',
         tradeId: ELEMENTAL_RES.flatMap(r => r.pseudo.tradeId),
         type: 'pseudo',
         disabled: false,

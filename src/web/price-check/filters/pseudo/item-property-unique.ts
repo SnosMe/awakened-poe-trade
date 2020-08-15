@@ -2,9 +2,10 @@ import { percentRollDelta } from '../util'
 import { INTERNAL_TRADE_ID, StatFilter } from '../interfaces'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
-import { stat, UNIQUES } from '@/assets/data'
+import { UNIQUES } from '@/assets/data'
 import { ARMOUR, WEAPON } from '@/parser/meta'
 import { Config } from '@/web/Config'
+import { internalPropStat } from './util'
 
 export function filterUniqueItemProp (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
@@ -122,9 +123,11 @@ function propToFilter (
   if (propInfo && isWithinBounds(totalQ20, propInfo)) {
     if (propInfo.min === propInfo.max) {
       return ({
-        tradeId: [tradeId],
-        text,
-        type,
+        ...internalPropStat(
+          tradeId,
+          text,
+          type
+        ),
         disabled: true,
         hidden: 'Roll is not variable',
         defaultMin: totalQ20,
@@ -136,9 +139,11 @@ function propToFilter (
     } else {
       const percent = Config.store.searchStatRange * 2
       return ({
-        tradeId: [tradeId],
-        text,
-        type,
+        ...internalPropStat(
+          tradeId,
+          text,
+          type
+        ),
         disabled: true,
         boundMin: propInfo.min,
         boundMax: propInfo.max,
@@ -152,9 +157,11 @@ function propToFilter (
   } else {
     // missing unique (Two-Toned Boots) / stat affecting prop is variant (Atziri's Splendour) / corrupted implicit affecting prop
     return ({
-      tradeId: [tradeId],
-      text,
-      type,
+      ...internalPropStat(
+        tradeId,
+        text,
+        type
+      ),
       disabled: true,
       defaultMin: totalQ20,
       defaultMax: totalQ20,

@@ -1,10 +1,10 @@
 import { rollToFilter } from '../util'
-import { INTERNAL_TRADE_ID } from '../interfaces'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
 import { stat } from '@/assets/data'
 import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
 import { ParsedItem } from '@/parser'
+import { internalPropStat } from './util'
 
 export function filterItemProp (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
@@ -32,9 +32,11 @@ function armourProps (ctx: FiltersCreationContext) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.armour, QUALITY_STATS.ARMOUR, item))
 
     ctx.filters.push({
-      tradeId: ['armour.armour' as INTERNAL_TRADE_ID],
-      text: 'Armour: #',
-      type: 'armour',
+      ...internalPropStat(
+        'armour.armour',
+        'Armour: #',
+        'armour'
+      ),
       disabled: !isSingleAttrArmour(item),
       ...rollToFilter(totalQ20, { neverNegated: true })
     })
@@ -44,9 +46,11 @@ function armourProps (ctx: FiltersCreationContext) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.evasion, QUALITY_STATS.EVASION, item))
 
     ctx.filters.push({
-      tradeId: ['armour.evasion_rating' as INTERNAL_TRADE_ID],
-      text: 'Evasion Rating: #',
-      type: 'armour',
+      ...internalPropStat(
+        'armour.evasion_rating',
+        'Evasion Rating: #',
+        'armour'
+      ),
       disabled: !isSingleAttrArmour(item),
       ...rollToFilter(totalQ20, { neverNegated: true })
     })
@@ -56,9 +60,11 @@ function armourProps (ctx: FiltersCreationContext) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.energyShield, QUALITY_STATS.ENERGY_SHIELD, item))
 
     ctx.filters.push({
-      tradeId: ['armour.energy_shield' as INTERNAL_TRADE_ID],
-      text: 'Energy Shield: #',
-      type: 'armour',
+      ...internalPropStat(
+        'armour.energy_shield',
+        'Energy Shield: #',
+        'armour'
+      ),
       disabled: !isSingleAttrArmour(item),
       ...rollToFilter(totalQ20, { neverNegated: true })
     })
@@ -66,9 +72,11 @@ function armourProps (ctx: FiltersCreationContext) {
 
   if (item.props.blockChance) {
     ctx.filters.push({
-      tradeId: ['armour.block' as INTERNAL_TRADE_ID],
-      text: 'Block: #%',
-      type: 'armour',
+      ...internalPropStat(
+        'armour.block',
+        'Block: #%',
+        'armour'
+      ),
       disabled: true,
       ...rollToFilter(item.props.blockChance, { neverNegated: true })
     })
@@ -107,17 +115,21 @@ function weaponProps (ctx: FiltersCreationContext) {
 
   if (item.props.elementalDamage) {
     ctx.filters.push({
-      tradeId: ['weapon.total_dps' as INTERNAL_TRADE_ID],
-      text: 'DPS: #',
-      type: 'weapon',
+      ...internalPropStat(
+        'weapon.total_dps',
+        'DPS: #',
+        'weapon'
+      ),
       disabled: false,
       ...rollToFilter(dps, { neverNegated: true })
     })
 
     ctx.filters.push({
-      tradeId: ['weapon.elemental_dps' as INTERNAL_TRADE_ID],
-      text: 'Elemental DPS: #',
-      type: 'weapon',
+      ...internalPropStat(
+        'weapon.elemental_dps',
+        'Elemental DPS: #',
+        'weapon'
+      ),
       disabled: (edps / dps < 0.67),
       hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
       ...rollToFilter(edps, { neverNegated: true })
@@ -125,26 +137,32 @@ function weaponProps (ctx: FiltersCreationContext) {
   }
 
   ctx.filters.push({
-    tradeId: ['weapon.physical_dps' as INTERNAL_TRADE_ID],
-    text: 'Physical DPS: #',
-    type: 'weapon',
+    ...internalPropStat(
+      'weapon.physical_dps',
+      'Physical DPS: #',
+      'weapon'
+    ),
     disabled: !isPdpsImportant(item) || (pdpsQ20 / dps < 0.67),
     hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
     ...rollToFilter(pdpsQ20, { neverNegated: true })
   })
 
   ctx.filters.push({
-    tradeId: ['weapon.aps' as INTERNAL_TRADE_ID],
-    text: 'Attacks per Second: #',
-    type: 'weapon',
+    ...internalPropStat(
+      'weapon.aps',
+      'Attacks per Second: #',
+      'weapon'
+    ),
     disabled: true,
     ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, decimals: 2 })
   })
 
   ctx.filters.push({
-    tradeId: ['weapon.crit' as INTERNAL_TRADE_ID],
-    text: 'Critical Strike Chance: #%',
-    type: 'weapon',
+    ...internalPropStat(
+      'weapon.crit',
+      'Critical Strike Chance: #%',
+      'weapon'
+    ),
     disabled: true,
     ...rollToFilter(item.props.critChance!, { neverNegated: true, decimals: 2 })
   })

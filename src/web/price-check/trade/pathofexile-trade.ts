@@ -336,6 +336,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     for (const statRef of refs) {
       stats.push({
         disabled: filters.veiled.disabled,
+        statRef: undefined!,
         text: undefined!,
         type: undefined!,
         min: undefined,
