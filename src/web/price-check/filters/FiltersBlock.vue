@@ -135,6 +135,9 @@ export default {
       // ignore if mouse moves to filters block
       if (e.offsetY > 0) {
         this.handleStatsSubmit()
+        if (document.activeElement) {
+          document.activeElement.blur()
+        }
       }
     }
   }
