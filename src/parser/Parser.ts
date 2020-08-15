@@ -297,8 +297,8 @@ function parseStackSize (section: string[], item: ParsedItem) {
     return PARSER_SKIPPED
   }
   if (section[0].startsWith(_$[C.TAG_STACK_SIZE])) {
-    // "Stack Size: 2/9"
-    const [value, max] = section[0].substr(_$[C.TAG_STACK_SIZE].length).split('/').map(Number)
+    // Portal Scroll "Stack Size: 2 448/40"
+    const [value, max] = section[0].substr(_$[C.TAG_STACK_SIZE].length).replace(/\u00a0/g, '').split('/').map(Number)
     item.stackSize = { value, max }
 
     if (item.category === ItemCategory.Seed) {
