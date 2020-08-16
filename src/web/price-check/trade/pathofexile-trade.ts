@@ -46,7 +46,7 @@ interface TradeRequest { /* eslint-disable camelcase */
     name?: string | { discriminator: string, option: string }
     type?: string | { discriminator: string, option: string }
     stats: Array<{
-      type: 'and' | 'if' | 'count',
+      type: 'and' | 'if' | 'count' | 'not',
       value?: FilterRange
       filters: Array<{
         id: string
@@ -174,7 +174,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   const body: TradeRequest = {
     query: {
       status: { option: filters.trade.offline ? 'any' : 'online' },
-      stats: [],
+      stats: [
+        { type: 'and', filters: [] }
+      ],
       filters: {
         trade_filters: {
           filters: {
@@ -288,6 +290,16 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   for (const stat of stats) {
+    if (stat.tradeId[0] === 'map.no_elder_guardian') {
+      query.stats.push({
+        type: 'not',
+        disabled: stat.disabled,
+        filters: [
+          tradeIdToQuery(STAT_BY_REF.get('Map is occupied by #')!.types[0].tradeId[0], stat)
+        ]
+      })
+    }
+
     if (stat.disabled) continue
 
     switch (stat.tradeId[0] as INTERNAL_TRADE_ID) {
@@ -346,29 +358,16 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  query.stats.push({ type: 'and', filters: [] })
+  const qAnd = query.stats[0]
   for (const stat of stats) {
     if (stat.tradeId.length === 1) {
-      query.stats[0]!.filters.push({
-        id: stat.tradeId[0],
-        value: {
-          ...getMinMax(stat),
-          option: stat.option != null ? stat.option.tradeId : undefined
-        },
-        disabled: stat.disabled
-      })
+      qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat))
     } else {
       query.stats.push({
         type: 'count',
         value: { min: 1 },
         disabled: stat.disabled,
-        filters: stat.tradeId.map(id => ({
-          id,
-          value: {
-            ...getMinMax(stat),
-            option: stat.option != null ? stat.option.tradeId : undefined
-          }
-        }))
+        filters: stat.tradeId.map(id => tradeIdToQuery(id, stat))
       })
     }
   }
@@ -434,6 +433,17 @@ function getMinMax (stat: StatFilter) {
   const b = typeof stat.max === 'number' ? stat.max * sign : undefined
 
   return !stat.invert ? { min: a, max: b } : { min: b, max: a }
+}
+
+function tradeIdToQuery (id: string, stat: StatFilter) {
+  return {
+    id,
+    value: {
+      ...getMinMax(stat),
+      option: stat.option != null ? stat.option.tradeId : undefined
+    },
+    disabled: stat.disabled
+  }
 }
 
 function nameToQuery (name: string, filters: ItemFilters, translate: boolean) {

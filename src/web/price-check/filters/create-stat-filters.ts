@@ -186,4 +186,27 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       }
     }
   }
+
+  if (item.category === ItemCategory.Map) {
+    const isInfluenced = ctx.filters.find(filter => filter.statRef === 'Area is influenced by #')
+    const isElderGuardian = ctx.filters.find(filter => filter.statRef === 'Map is occupied by #')
+    if (isInfluenced && !isElderGuardian && isInfluenced.option!.tradeId === '2' /* TODO: hardcoded */) {
+      const idx = ctx.filters.indexOf(isInfluenced)
+      ctx.filters.splice(idx + 1, 0, {
+        tradeId: ['map.no_elder_guardian'],
+        text: 'Map is not occupied by Elder Guardian',
+        statRef: 'Map is not occupied by Elder Guardian',
+        disabled: false,
+        type: 'implicit',
+        min: undefined,
+        max: undefined
+      })
+    }
+    if (isInfluenced) {
+      isInfluenced.disabled = false
+    }
+    if (isElderGuardian) {
+      isElderGuardian.disabled = false
+    }
+  }
 }
