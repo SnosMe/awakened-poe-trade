@@ -16,7 +16,7 @@
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap">Chromatic calculator</button> -->
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap">Screen saver</button> -->
               <!-- add widget -->
-              <!-- <div class="text-gray-600 text-sm px-1 select-none mt-2 whitespace-no-wrap">add widget</div> -->
+              <div class="text-gray-600 text-sm px-1 select-none whitespace-no-wrap">{{ $t('add widget') }}</div>
               <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('timer')">{{ $t('Stopwatch') }}</button>
               <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('stash-search')">{{ $t('Stash search') }}</button>
               <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('image-strip')">{{ $t('Image strip') }}</button>
@@ -76,7 +76,8 @@ export default {
     "Stopwatch": "Секундомер",
     "Stash search": "Поиск в тайнике",
     "Image strip": "Лента изображений",
-    "Show button for active widgets": "Показывать кнопку для активных виджетов"
+    "Show button for active widgets": "Показывать кнопку для активных виджетов",
+    "add widget": "добавить виджет"
   }
 }
 </i18n>

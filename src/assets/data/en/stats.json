@@ -2250,6 +2250,12 @@
       "ref": "# to Armour and Evasion Rating",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2316658489"
+          ]
+        },
+        {
           "name": "implicit",
           "tradeId": [
             "implicit.stat_2316658489"
@@ -3045,6 +3051,12 @@
       "text": "# to Level of Socketed AoE Gems",
       "ref": "# to Level of Socketed AoE Gems",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2551600084"
+          ]
+        },
         {
           "name": "implicit",
           "tradeId": [
@@ -5082,6 +5094,12 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_1873457881"
+          ]
+        },
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_1873457881"
           ]
         }
       ]
@@ -8082,6 +8100,12 @@
       "ref": "#% chance to deal Double Damage while Focussed",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2908886986"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_2908886986"
@@ -8400,6 +8424,12 @@
       "text": "#% chance to Dodge Attack Hits while Focussed",
       "ref": "#% chance to Dodge Attack Hits while Focussed",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2590156965"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -9828,6 +9858,12 @@
       "ref": "#% chance to gain Arcane Surge when you Kill an Enemy",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_573223427"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_573223427"
@@ -10435,7 +10471,8 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_3739863694"
+            "explicit.stat_3739863694",
+            "explicit.stat_725880290"
           ]
         },
         {
@@ -11384,6 +11421,12 @@
       "text": "#% chance to Trigger a Socketed Spell when you Use a Skill",
       "ref": "#% chance to Trigger a Socketed Spell when you Use a Skill",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3079007202"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -13567,6 +13610,12 @@
       "ref": "#% Critical Strike Multiplier while a Rare or Unique Enemy is Nearby",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3992439283"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_3992439283"
@@ -15357,6 +15406,12 @@
       "ref": "#% increased Attack and Cast Speed while Focussed",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2628163981"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_2628163981"
@@ -16184,6 +16239,12 @@
       "text": "#% increased Attack Speed while a Rare or Unique Enemy is Nearby",
       "ref": "#% increased Attack Speed while a Rare or Unique Enemy is Nearby",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_314741699"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -24062,6 +24123,12 @@
       "ref": "#% increased Elemental Damage if you've dealt a Critical Strike Recently",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2379781920"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_2379781920"
@@ -31124,6 +31191,7 @@
         {
           "name": "explicit",
           "tradeId": [
+            "explicit.stat_1177358866",
             "explicit.stat_308396001"
           ]
         },
@@ -42171,6 +42239,12 @@
       "ref": "#% to Cold and Chaos Resistances",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3393628375"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_3393628375"
@@ -42646,6 +42720,12 @@
       "text": "#% to Critical Strike Multiplier if you've Shattered an Enemy Recently",
       "ref": "#% to Critical Strike Multiplier if you've Shattered an Enemy Recently",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_536929014"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -43247,6 +43327,12 @@
       "ref": "#% to Fire and Chaos Resistances",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_378817135"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_378817135"
@@ -43520,6 +43606,12 @@
       "text": "#% to Lightning and Chaos Resistances",
       "ref": "#% to Lightning and Chaos Resistances",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3465022881"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -44158,6 +44250,12 @@
       "text": "#% to Quality of Socketed Gems",
       "ref": "#% to Quality of Socketed Gems",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3828613551"
+          ]
+        },
         {
           "name": "implicit",
           "tradeId": [
@@ -60504,6 +60602,26 @@
   {
     "conditions": [
       {
+        "string": "Bathed in the blood of # sacrificed in the name of Ahuana",
+        "ref": "Bathed in the blood of # sacrificed in the name of Ahuana"
+      }
+    ],
+    "mod": {
+      "text": "Bathed in the blood of # sacrificed in the name of Ahuana",
+      "ref": "Bathed in the blood of # sacrificed in the name of Ahuana",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.pseudo_timeless_jewel_ahuana"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Bathed in the blood of # sacrificed in the name of Doryani",
         "ref": "Bathed in the blood of # sacrificed in the name of Doryani"
       }
@@ -61637,6 +61755,12 @@
       "ref": "Can have up to 3 Crafted Modifiers",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1859333175"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_1859333175"
@@ -62442,6 +62566,12 @@
       "ref": "Cannot roll Attack Modifiers",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_4122424929"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_4122424929"
@@ -62461,6 +62591,12 @@
       "text": "Cannot roll Caster Modifiers",
       "ref": "Cannot roll Caster Modifiers",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1149326139"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -62525,6 +62661,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.pseudo_timeless_jewel_dominus"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Carved to glorify # new faithful converted by High Templar Maxarius",
+        "ref": "Carved to glorify # new faithful converted by High Templar Maxarius"
+      }
+    ],
+    "mod": {
+      "text": "Carved to glorify # new faithful converted by High Templar Maxarius",
+      "ref": "Carved to glorify # new faithful converted by High Templar Maxarius",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.pseudo_timeless_jewel_maxarius"
           ]
         }
       ]
@@ -62773,6 +62929,12 @@
       "text": "Channelling Skills have # to Total Mana Cost",
       "ref": "Channelling Skills have # to Total Mana Cost",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2421446548"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -63323,6 +63485,26 @@
   {
     "conditions": [
       {
+        "string": "Commanded leadership over # warriors under Akoya",
+        "ref": "Commanded leadership over # warriors under Akoya"
+      }
+    ],
+    "mod": {
+      "text": "Commanded leadership over # warriors under Akoya",
+      "ref": "Commanded leadership over # warriors under Akoya",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.pseudo_timeless_jewel_akoya"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Commanded leadership over # warriors under Kaom",
         "ref": "Commanded leadership over # warriors under Kaom"
       }
@@ -63395,6 +63577,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.pseudo_timeless_jewel_cadiro"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Commissioned # coins to commemorate Caspiro",
+        "ref": "Commissioned # coins to commemorate Caspiro"
+      }
+    ],
+    "mod": {
+      "text": "Commissioned # coins to commemorate Caspiro",
+      "ref": "Commissioned # coins to commemorate Caspiro",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.pseudo_timeless_jewel_caspiro"
           ]
         }
       ]
@@ -65362,6 +65564,26 @@
   {
     "conditions": [
       {
+        "string": "Damage with Weapons Penetrates #% Lightning Resistance",
+        "ref": "Damage with Weapons Penetrates #% Lightning Resistance"
+      }
+    ],
+    "mod": {
+      "text": "Damage with Weapons Penetrates #% Lightning Resistance",
+      "ref": "Damage with Weapons Penetrates #% Lightning Resistance",
+      "types": [
+        {
+          "name": "implicit",
+          "tradeId": [
+            "implicit.stat_3301510262"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Damaging Ailments you inflict deal Damage #% faster while affected by Malevolence",
         "ref": "Damaging Ailments you inflict deal Damage #% faster while affected by Malevolence"
       }
@@ -65633,6 +65855,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.pseudo_timeless_jewel_asenath"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Denoted service of # dekhara in the akhara of Balbala",
+        "ref": "Denoted service of # dekhara in the akhara of Balbala"
+      }
+    ],
+    "mod": {
+      "text": "Denoted service of # dekhara in the akhara of Balbala",
+      "ref": "Denoted service of # dekhara in the akhara of Balbala",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.pseudo_timeless_jewel_balbala"
           ]
         }
       ]
@@ -66748,13 +66990,13 @@
   {
     "conditions": [
       {
-        "string": "Enemies Blinded by you while you while you are Blinded have Malediction",
-        "ref": "Enemies Blinded by you while you while you are Blinded have Malediction"
+        "string": "Enemies Blinded by you while you are Blinded have Malediction",
+        "ref": "Enemies Blinded by you while you are Blinded have Malediction"
       }
     ],
     "mod": {
-      "text": "Enemies Blinded by you while you while you are Blinded have Malediction",
-      "ref": "Enemies Blinded by you while you while you are Blinded have Malediction",
+      "text": "Enemies Blinded by you while you are Blinded have Malediction",
+      "ref": "Enemies Blinded by you while you are Blinded have Malediction",
       "types": [
         {
           "name": "explicit",
@@ -75862,6 +76104,12 @@
       "ref": "Item drops on Death if Equipped by an Animated Guardian",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3909846940"
+          ]
+        },
+        {
           "name": "implicit",
           "tradeId": [
             "implicit.stat_3909846940"
@@ -81777,6 +82025,12 @@
       "ref": "Non-Vaal Skills deal #% increased Damage during Soul Gain Prevention",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1583385065"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_1583385065"
@@ -84162,6 +84416,12 @@
       "ref": "Prefixes Cannot Be Changed",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2879723104"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_2879723104"
@@ -86275,6 +86535,12 @@
       "text": "Regenerate # Energy Shield per second while a Rare or Unique Enemy is Nearby",
       "ref": "Regenerate # Energy Shield per second while a Rare or Unique Enemy is Nearby",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2238019079"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -88434,6 +88700,12 @@
       "ref": "Shock nearby Enemies for # Seconds when you Focus",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3031766858"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_3031766858"
@@ -89911,6 +90183,26 @@
           "name": "explicit",
           "tradeId": [
             "explicit.stat_3429304534"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
+        "string": "Socketed Gems are Supported by Level # Awakened Blasphemy",
+        "ref": "Socketed Gems are Supported by Level # Awakened Blasphemy"
+      }
+    ],
+    "mod": {
+      "text": "Socketed Gems are Supported by Level # Awakened Blasphemy",
+      "ref": "Socketed Gems are Supported by Level # Awakened Blasphemy",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_1046449631"
           ]
         }
       ]
@@ -94948,6 +95240,12 @@
       "ref": "Suffixes Cannot Be Changed",
       "types": [
         {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_3464137628"
+          ]
+        },
+        {
           "name": "crafted",
           "tradeId": [
             "crafted.stat_3464137628"
@@ -98953,6 +99251,12 @@
       "text": "Warcries cannot Exert Travel Skills",
       "ref": "Warcries cannot Exert Travel Skills",
       "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2174134106"
+          ]
+        },
         {
           "name": "crafted",
           "tradeId": [
@@ -104651,13 +104955,13 @@
   {
     "conditions": [
       {
-        "string": "Your Freezebolt Towers have # chance to inflict Brittle",
-        "ref": "Your Freezebolt Towers have # chance to inflict Brittle"
+        "string": "Your Freezebolt Towers have #% chance to inflict Brittle",
+        "ref": "Your Freezebolt Towers have #% chance to inflict Brittle"
       }
     ],
     "mod": {
-      "text": "Your Freezebolt Towers have # chance to inflict Brittle",
-      "ref": "Your Freezebolt Towers have # chance to inflict Brittle",
+      "text": "Your Freezebolt Towers have #% chance to inflict Brittle",
+      "ref": "Your Freezebolt Towers have #% chance to inflict Brittle",
       "types": [
         {
           "name": "enchant",
