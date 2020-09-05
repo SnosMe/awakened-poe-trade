@@ -22,6 +22,7 @@ export interface Config {
     text: string
     hotkey: string | null
   }>
+  clientLog: string | null
   useOsGlobalShortcut: boolean
   windowTitle: string
   logLevel: string
@@ -88,6 +89,7 @@ export const defaultConfig: Config = {
     text: '/hideout @last',
     hotkey: null
   }],
+  clientLog: null,
   useOsGlobalShortcut: true,
   windowTitle: 'Path of Exile',
   logLevel: 'warn',
