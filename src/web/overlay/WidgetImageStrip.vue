@@ -19,7 +19,7 @@
             <button v-if="isEditing" @click="remove(img)"
               class="bg-gray-800 absolute top-0 right-0 rounded-bl text-red-500 leading-none px-2 py-1 flex"><i class="fas fa-times"></i></button>
             <button v-if="isEditing" data-qa="drag-handle"
-              class="bg-gray-900 absolute rounded text-gray-400 leading-none w-8 h-8 flex justify-center cursor-move" style="top: calc(50% - 1rem); left: calc(50% - 1rem);"><i class="fas fa-arrows-alt"></i></button>
+              class="bg-gray-900 absolute rounded text-gray-400 leading-none w-8 h-8 flex justify-center items-center cursor-move" style="top: calc(50% - 1rem); left: calc(50% - 1rem);"><i class="fas fa-arrows-alt"></i></button>
           </div>
         </dnd-container>
         <div v-if="isEditing"
