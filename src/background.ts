@@ -17,6 +17,7 @@ import { createOverlayWindow } from './main/overlay-window'
 import { setupAltVisibility } from './main/alt-visibility'
 import { setupBuiltinBrowser } from './main/builtin-browser'
 import { createFileProtocol } from './main/app-file-protocol'
+import { LogWatcher } from './main/LogWatcher'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {
@@ -70,6 +71,7 @@ app.on('ready', async () => {
       setupCfProtection()
       setupShortcuts()
       setupAltVisibility()
+      LogWatcher.start()
     },
     // fixes(linux): window is black instead of transparent
     process.platform === 'linux' ? 1000 : 0

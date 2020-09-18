@@ -6,19 +6,16 @@ import { forbidden, forbiddenCtrl } from '@/ipc/KeyToCode'
 import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
 import { overlayWindow } from './overlay-window'
 import { logger } from './logger'
+import { LogWatcher } from './LogWatcher'
 
 export function setupConfigEvents () {
   ipcMain.on(GET_CONFIG, (e) => {
     e.returnValue = config.store
   })
-  ipcMain.on(PUSH_CONFIG, (e, cfg) => {
-    const old = config.store
-    Object.setPrototypeOf(old, Object.prototype)
-    if (!isDeepEq(cfg, old)) {
-      batchUpdateConfig(cfg, false)
-    }
+  ipcMain.on(PUSH_CONFIG, (e, cfg: Config) => {
+    batchUpdateConfig(cfg, false)
   })
-  ipcMain.on(CLOSE_SETTINGS_WINDOW, (e, cfg) => {
+  ipcMain.on(CLOSE_SETTINGS_WINDOW, (e, cfg: Config | undefined) => {
     if (cfg != null) {
       batchUpdateConfig(cfg, true)
     }
@@ -84,10 +81,17 @@ export const config = (() => {
   return store
 })()
 
-export function batchUpdateConfig (upd: Config, push = true) {
-  config.store = upd
-  logger.verbose('Saved', { source: 'config', push })
-  if (push) {
-    overlayWindow!.webContents.send(PUSH_CONFIG, upd)
+export function batchUpdateConfig (newCfg: Config, push = true) {
+  const oldCfg = config.store
+  Object.setPrototypeOf(oldCfg, Object.prototype)
+  if (!isDeepEq(newCfg, oldCfg)) {
+    config.store = newCfg
+    logger.verbose('Saved', { source: 'config', push })
+    if (push) {
+      overlayWindow!.webContents.send(PUSH_CONFIG, newCfg)
+    }
+    if (oldCfg.clientLog !== newCfg.clientLog) {
+      LogWatcher.start()
+    }
   }
 }

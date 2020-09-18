@@ -59,6 +59,14 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.on(ipcEvent.TOGGLE_DELVE_GRID, (e) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.TOGGLE_DELVE_GRID))
       })
+
+      electron.ipcRenderer.on(ipcEvent.CLIENT_LOG_UPDATE, (e, data: ipcEvent.IpcClientLog) => {
+        data.lines.forEach(line => {
+          this.dispatchEvent(new CustomEvent(ipcEvent.CLIENT_LOG_UPDATE, {
+            detail: line
+          }))
+        })
+      })
     }
   }
 

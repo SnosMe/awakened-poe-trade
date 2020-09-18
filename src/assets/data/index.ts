@@ -1,10 +1,12 @@
 import type { TranslationDict } from '@/assets/data/en/client_strings'
+import type { ClientLogDict } from '@/assets/data/en/client_log'
 import type { BaseType, DropEntry, Stat, StatMatcher, UniqueItem } from './interfaces'
 import { Config } from '@/web/Config'
 
 export * from './interfaces'
 
 export let CLIENT_STRINGS: TranslationDict
+export let CLIENTLOG_STRINGS: ClientLogDict
 export let ITEM_NAME_REF_BY_TRANSLATED: Map<string | undefined, string>
 export let TRANSLATED_ITEM_NAME_BY_REF: Map<string | undefined, string>
 
@@ -28,6 +30,7 @@ export const ITEM_DROP = new Map<string, DropEntry>()
 ;(async function initData () { /* eslint-disable no-lone-blocks */
   {
     CLIENT_STRINGS = (require(`./${Config.store.language}/client_strings`).default)
+    CLIENTLOG_STRINGS = (require(`./${Config.store.language}/client_log`).default)
 
     const itemNames: Array<[string, string]> = (require(`./${Config.store.language}/item-names.json`))
     TRANSLATED_ITEM_NAME_BY_REF = new Map(itemNames)

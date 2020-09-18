@@ -66,3 +66,8 @@ export const OPEN_WIKI = 'MAIN->OVERLAY::open-wiki'
 export const IMPORT_FILE = 'OVERLAY->MAIN::import-file'
 
 export const TOGGLE_DELVE_GRID = 'MAIN->OVERLAY::delve-grid'
+
+export const CLIENT_LOG_UPDATE = 'MAIN->OVERLAY::client-log'
+export interface IpcClientLog {
+  lines: string[]
+}
