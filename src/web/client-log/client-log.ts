@@ -97,7 +97,7 @@ export function handleLine (line: string) {
         }
       }
 
-      console.log(entry)
+      // console.log(entry)
     } else if ((match = entry.body.match(TRADE_BULK_WHISPER[Config.store.language]))) {
       const [pAmount, pName] = [
         match.groups!.price.split(' ', 1).toString(),
@@ -119,7 +119,7 @@ export function handleLine (line: string) {
         }
       }
 
-      console.log(entry)
+      // console.log(entry)
     }
   }
 }

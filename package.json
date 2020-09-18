@@ -24,7 +24,7 @@
   "main": "background.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.x",
-    "dot-prop": "5.2.x",
+    "dot-prop": "5.3.x",
     "electron-overlay-window": "1.0.x",
     "electron-store": "5.2.x",
     "electron-updater": "^4.2.0",
@@ -57,7 +57,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-standard": "^5.1.0",
     "@vue/eslint-config-typescript": "^5.0.1",
-    "electron": "10.1.1",
+    "electron": "10.1.2",
     "electron-devtools-installer": "^3.1.1",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
@@ -73,7 +73,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "resolutions": {
-    "vue-cli-plugin-electron-builder/electron-builder": "22.8.0"
+    "vue-cli-plugin-electron-builder/electron-builder": "22.8.1"
   },
   "engines": {
     "node": "12.x.x"
