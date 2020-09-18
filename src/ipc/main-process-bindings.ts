@@ -1,8 +1,8 @@
-import { Renderer } from 'electron'
+import { RendererInterface } from 'electron'
 import * as ipcEvent from '@/ipc/ipc-event'
 import { Config, League, defaultConfig } from '@/ipc/types'
 
-let electron: typeof Renderer | undefined
+let electron: RendererInterface | undefined
 try {
   electron = require('electron')
 } catch {}
