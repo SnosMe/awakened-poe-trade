@@ -2982,9 +2982,9 @@ electron-devtools-installer@^3.1.1:
     unzip-crx-3 "^0.2.0"
 
 electron-overlay-window@1.0.x:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-1.0.3.tgz#db0091ea395b1eedb45072dcd2fb53d4c6520db9"
-  integrity sha512-chSiacKYyrRQiPhDndBrFQFNqlrox62VbRyIXbj/4pemyh2WxYITZ9z543scKWBX5vqHo1m/S5Ub81pW/Ny2oQ==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-1.0.4.tgz#58faccaa5aa2dc6effaf522fadc6baa69e7218e3"
+  integrity sha512-kKXuh5Sq3aFHETkYCVM882/WTtTHV8JbOdXoyc6lg9t+u/cFyvABrt1bMk5f1D/ExAPrmJktPpW6Vj4YhhN6YQ==
   dependencies:
     node-gyp-build "4.x.x"
     throttle-debounce "2.x.x"
