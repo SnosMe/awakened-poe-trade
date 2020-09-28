@@ -99,8 +99,7 @@ class PriceService {
       { overview: 'item', type: 'UniqueAccessory', loaded: 0 },
       { overview: 'item', type: 'Beast', loaded: 0 },
       { overview: 'item', type: 'Vial', loaded: 0 },
-      { overview: 'item', type: 'DeliriumOrb', loaded: 0 },
-      { overview: 'item', type: 'Seed', loaded: 0 }
+      { overview: 'item', type: 'DeliriumOrb', loaded: 0 }
     ]
   })
 
