@@ -36,6 +36,12 @@
         <hotkey-input v-model="config.mapCheckKey" class="w-48" />
       </div>
     </div>
+    <div v-if="showCraftOfExileSetting" class="mb-4">
+      <div class="flex">
+        <div class="flex-1">Open base on craftofexile</div>
+        <hotkey-input v-model="config.coeKey" class="w-48" />
+      </div>
+    </div>
     <div class="mb-8">
       <div class="flex">
         <div class="flex-1">{{ $t('Delve grid') }}</div>
@@ -61,6 +67,10 @@ import { Config } from '@/web/Config'
 export default {
   components: { HotkeyInput },
   computed: {
+    showCraftOfExileSetting () {
+      if (Config.store.language !== 'en') return false
+      return true
+    },
     config () {
       return Config.store
     }

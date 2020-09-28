@@ -10,6 +10,7 @@ export interface Config {
   priceCheckKeyHold: string
   priceCheckLocked: string | null
   wikiKey: string | null
+  coeKey: string | null
   overlayKey: string
   overlayBackground: string
   overlayBackgroundExclusive: boolean
@@ -63,6 +64,7 @@ export const defaultConfig: Config = {
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
   wikiKey: 'Alt + W',
+  coeKey: 'Alt + G',
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,

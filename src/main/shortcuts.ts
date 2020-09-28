@@ -76,6 +76,13 @@ function registerGlobal () {
       }
     ),
     shortcutCallback(
+      config.get('coeKey'),
+      () => {
+        pollClipboard().then(openCOE).catch(() => {})
+        robotjs.keyTap('C', ['Ctrl'])
+      }
+    ),
+    shortcutCallback(
       config.get('mapCheckKey'),
       mapCheck
     ),
@@ -154,6 +161,11 @@ export function setupShortcuts () {
         pollClipboard().then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }).cb()
+    } else if (pressed === config.get('coeKey')) {
+      shortcutCallback(pressed, () => {
+        pollClipboard().then(openCOE).catch(() => {})
+        robotjs.keyTap('C', ['Ctrl'])
+      }).cb()
     } else if (pressed === config.get('mapCheckKey')) {
       shortcutCallback(pressed, mapCheck).cb()
     } else if (pressed === config.get('delveGridKey')) {
@@ -207,6 +219,10 @@ function stashSearch (text: string) {
 
 function openWiki (clipboard: string) {
   overlayWindow!.webContents.send(ipc.OPEN_WIKI, clipboard)
+}
+
+function openCOE (clipboard: string) {
+  overlayWindow!.webContents.send(ipc.OPEN_COE, clipboard)
 }
 
 function toggleDelveGrid () {
