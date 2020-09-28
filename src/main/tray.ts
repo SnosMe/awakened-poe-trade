@@ -93,9 +93,21 @@ export function rebuildContextMenu () {
     },
     {
       label: 'Discord',
-      click: () => {
-        shell.openExternal('https://discord.gg/hXgSDS6')
-      }
+      submenu: [
+        {
+          label: 'Awakened PoE Trade',
+          click: () => { shell.openExternal('https://discord.gg/hXgSDS6') }
+        },
+        { type: 'separator' },
+        {
+          label: 'Path of Exile',
+          click: () => { shell.openExternal('https://discord.gg/fSwfqN5') }
+        },
+        {
+          label: 'The Forbidden Trove',
+          click: () => { shell.openExternal('https://discord.gg/KNpmhvk') }
+        }
+      ]
     },
     {
       label: 'Quit',
