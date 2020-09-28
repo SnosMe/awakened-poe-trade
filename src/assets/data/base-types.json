@@ -49,6 +49,13 @@
     }
   ],
   [
+    "Astrolabe Amulet",
+    {
+      "category": "Amulet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Amulets/HeistAmulet1.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
     "Avian Twins Talisman",
     {
       "category": "Amulet",
@@ -266,6 +273,13 @@
     }
   ],
   [
+    "Simplex Amulet",
+    {
+      "category": "Amulet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Amulets/HeistAmulet2.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
     "Spinefuse Talisman",
     {
       "category": "Amulet",
@@ -361,6 +375,20 @@
     {
       "category": "Belt",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt3.png?scale=1&w=2&h=1"
+    }
+  ],
+  [
+    "Mechalarm Belt",
+    {
+      "category": "Belt",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/HeistBelt2.png?scale=1&w=2&h=1"
+    }
+  ],
+  [
+    "Micro-Distillery Belt",
+    {
+      "category": "Belt",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Belts/HeistBelt1.png?scale=1&w=2&h=1"
     }
   ],
   [
@@ -1568,6 +1596,13 @@
     }
   ],
   [
+    "Foundry Bow",
+    {
+      "category": "Bow",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/HeistBowFire.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Grove Bow",
     {
       "category": "Bow",
@@ -1579,6 +1614,13 @@
     {
       "category": "Bow",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow8.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Hedron Bow",
+    {
+      "category": "Bow",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/HeistBowFire.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -1656,6 +1698,13 @@
     {
       "category": "Bow",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow5.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Solarine Bow",
+    {
+      "category": "Bow",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/HeistBowFire.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -1771,6 +1820,13 @@
     }
   ],
   [
+    "Malign Fangs",
+    {
+      "category": "Claw",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/HeistClaw.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Nailed Fist",
     {
       "category": "Claw",
@@ -1789,6 +1845,13 @@
     {
       "category": "Claw",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw6.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Shadow Fangs",
+    {
+      "category": "Claw",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/HeistClaw.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -1855,6 +1918,13 @@
     }
   ],
   [
+    "Void Fangs",
+    {
+      "category": "Claw",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/HeistClaw.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Large Cluster Jewel",
     {
       "category": "Cluster Jewel",
@@ -1910,10 +1980,31 @@
     }
   ],
   [
+    "Hollowpoint Dagger",
+    {
+      "category": "Dagger",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistDagger.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
+    "Pneumatic Dagger",
+    {
+      "category": "Dagger",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistDagger.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
     "Poignard",
     {
       "category": "Dagger",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger4.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
+    "Pressurised Dagger",
+    {
+      "category": "Dagger",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistDagger.png?scale=1&w=1&h=3"
     }
   ],
   [
@@ -4433,6 +4524,13 @@
     }
   ],
   [
+    "Disapprobation Axe",
+    {
+      "category": "One-Handed Axe",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/HeistOnehandAxe.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Engraved Hatchet",
     {
       "category": "One-Handed Axe",
@@ -4472,6 +4570,20 @@
     {
       "category": "One-Handed Axe",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe2.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Maltreatment Axe",
+    {
+      "category": "One-Handed Axe",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/HeistOnehandAxe.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Psychotic Axe",
+    {
+      "category": "One-Handed Axe",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/HeistOnehandAxe.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -4594,10 +4706,24 @@
     }
   ],
   [
+    "Boom Mace",
+    {
+      "category": "One-Handed Mace",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/HeistOneHandMace.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Ceremonial Mace",
     {
       "category": "One-Handed Mace",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace7.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Crack Mace",
+    {
+      "category": "One-Handed Mace",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/HeistOneHandMace.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -4629,6 +4755,13 @@
     }
   ],
   [
+    "Flare Mace",
+    {
+      "category": "One-Handed Mace",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/HeistOneHandMace.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Gavel",
     {
       "category": "One-Handed Mace",
@@ -4657,7 +4790,7 @@
     }
   ],
   [
-    "Pernarch",
+    "Pernach",
     {
       "category": "One-Handed Mace",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace6.png?scale=1&w=2&h=3"
@@ -4727,6 +4860,13 @@
     }
   ],
   [
+    "Anarchic Spiritblade",
+    {
+      "category": "One-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HeistOneHandSword.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Ancient Sword",
     {
       "category": "One-Handed Sword",
@@ -4787,6 +4927,13 @@
     {
       "category": "One-Handed Sword",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier3.png?scale=1&w=1&h=4"
+    }
+  ],
+  [
+    "Capricious Spiritblade",
+    {
+      "category": "One-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HeistOneHandSword.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -4885,6 +5032,13 @@
     {
       "category": "One-Handed Sword",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier7.png?scale=1&w=1&h=4"
+    }
+  ],
+  [
+    "Fickle Spiritblade",
+    {
+      "category": "One-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HeistOneHandSword.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -5203,6 +5357,13 @@
     }
   ],
   [
+    "Cogwork Ring",
+    {
+      "category": "Ring",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing1.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
     "Coral Ring",
     {
       "category": "Ring",
@@ -5214,6 +5375,13 @@
     {
       "category": "Ring",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/DiamondRing.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
+    "Geodesic Ring",
+    {
+      "category": "Ring",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing2.png?scale=1&w=1&h=1"
     }
   ],
   [
@@ -5371,6 +5539,20 @@
     }
   ],
   [
+    "Flashfire Blade",
+    {
+      "category": "Rune Dagger",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistRuneDagger.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
+    "Flickerflame Blade",
+    {
+      "category": "Rune Dagger",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistRuneDagger.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
     "Golden Kris",
     {
       "category": "Rune Dagger",
@@ -5389,6 +5571,13 @@
     {
       "category": "Rune Dagger",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger7.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
+    "Infernal Blade",
+    {
+      "category": "Rune Dagger",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistRuneDagger.png?scale=1&w=1&h=3"
     }
   ],
   [
@@ -5424,6 +5613,13 @@
     {
       "category": "Sceptre",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter8.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Alternating Sceptre",
+    {
+      "category": "Sceptre",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/HeistSceptreElemental.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -5518,6 +5714,13 @@
     }
   ],
   [
+    "Oscillating Sceptre",
+    {
+      "category": "Sceptre",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/HeistSceptreElemental.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Platinum Sceptre",
     {
       "category": "Sceptre",
@@ -5564,6 +5767,13 @@
     {
       "category": "Sceptre",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter8.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Stabilising Sceptre",
+    {
+      "category": "Sceptre",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/HeistSceptreElemental.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -5721,6 +5931,13 @@
     }
   ],
   [
+    "Cold-attuned Buckler",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DexHeistShield.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Colossal Tower Shield",
     {
       "category": "Shield",
@@ -5805,10 +6022,31 @@
     }
   ],
   [
+    "Endothermic Buckler",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DexHeistShield.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Etched Kite Shield",
     {
       "category": "Shield",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt2.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Exhausting Spirit Shield",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/IntHeistShield.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Exothermic Tower Shield",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HeistShield.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -5889,6 +6127,13 @@
     }
   ],
   [
+    "Heat-attuned Tower Shield",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HeistShield.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Imperial Buckler",
     {
       "category": "Shield",
@@ -5949,6 +6194,13 @@
     {
       "category": "Shield",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt2.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Magmatic Tower Shield",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HeistShield.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -6026,6 +6278,13 @@
     {
       "category": "Shield",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt1.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
+    "Polar Buckler",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DexHeistShield.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -6141,6 +6400,13 @@
     }
   ],
   [
+    "Subsuming Spirit Shield",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/IntHeistShield.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Supreme Spiked Shield",
     {
       "category": "Shield",
@@ -6173,6 +6439,13 @@
     {
       "category": "Shield",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt6.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Transfer-attuned Spirit Shield",
+    {
+      "category": "Shield",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/IntHeistShield.png?scale=1&w=2&h=3"
     }
   ],
   [
@@ -6215,6 +6488,13 @@
     {
       "category": "Shield",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Battery Staff",
+    {
+      "category": "Staff",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistStaff.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6295,10 +6575,24 @@
     }
   ],
   [
+    "Reciprocation Staff",
+    {
+      "category": "Staff",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistStaff.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Royal Staff",
     {
       "category": "Staff",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Transformer Staff",
+    {
+      "category": "Staff",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistStaff.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6313,6 +6607,13 @@
     {
       "category": "Two-Handed Axe",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe7.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Apex Cleaver",
+    {
+      "category": "Two-Handed Axe",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HeistTwoHandAxe.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6365,6 +6666,13 @@
     }
   ],
   [
+    "Honed Cleaver",
+    {
+      "category": "Two-Handed Axe",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HeistTwoHandAxe.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Jade Chopper",
     {
       "category": "Two-Handed Axe",
@@ -6404,6 +6712,13 @@
     {
       "category": "Two-Handed Axe",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe4.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Prime Cleaver",
+    {
+      "category": "Two-Handed Axe",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HeistTwoHandAxe.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6463,6 +6778,13 @@
     }
   ],
   [
+    "Blunt Force Condenser",
+    {
+      "category": "Two-Handed Mace",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Brass Maul",
     {
       "category": "Two-Handed Mace",
@@ -6481,6 +6803,13 @@
     {
       "category": "Two-Handed Mace",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace8.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Crushing Force Magnifier",
+    {
+      "category": "Two-Handed Mace",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6509,6 +6838,13 @@
     {
       "category": "Two-Handed Mace",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace3.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Impact Force Propagator ",
+    {
+      "category": "Two-Handed Mace",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6617,10 +6953,24 @@
     }
   ],
   [
+    "Banishing Blade",
+    {
+      "category": "Two-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/HeistTwoHandSword.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Bastard Sword",
     {
       "category": "Two-Handed Sword",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword3.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Blasting Blade",
+    {
+      "category": "Two-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/HeistTwoHandSword.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6736,6 +7086,13 @@
     }
   ],
   [
+    "Rebuking Blade",
+    {
+      "category": "Two-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/HeistTwoHandSword.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Spectral Sword",
     {
       "category": "Two-Handed Sword",
@@ -6771,10 +7128,31 @@
     }
   ],
   [
+    "Accumulator Wand",
+    {
+      "category": "Wand",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/HeistWand.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
+    "Assembler Wand",
+    {
+      "category": "Wand",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/HeistWand.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
     "Carved Wand",
     {
       "category": "Wand",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png?scale=1&w=1&h=3"
+    }
+  ],
+  [
+    "Congregator Wand",
+    {
+      "category": "Wand",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/HeistWand.png?scale=1&w=1&h=3"
     }
   ],
   [
@@ -6911,10 +7289,24 @@
     }
   ],
   [
+    "Capacity Rod",
+    {
+      "category": "Warstaff",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistWarStaff.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
     "Coiled Staff",
     {
       "category": "Warstaff",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff5.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Eventuality Rod",
+    {
+      "category": "Warstaff",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistWarStaff.png?scale=1&w=2&h=4"
     }
   ],
   [
@@ -6957,6 +7349,13 @@
     {
       "category": "Warstaff",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff4.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Potentiality Rod",
+    {
+      "category": "Warstaff",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistWarStaff.png?scale=1&w=2&h=4"
     }
   ],
   [
