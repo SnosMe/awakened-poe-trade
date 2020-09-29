@@ -56,11 +56,6 @@ function getGemDetailsId (item: ParsedItem) {
   if (item.name === PORTAL_GEM) {
     return 'portal-1'
   }
-  if (item.name.startsWith('Awakened')) {
-    return (item.props.gemLevel === 1)
-      ? `${nameToDetailsId(item.name)}-1-20`
-      : undefined
-  }
 
   let id = nameToDetailsId(item.name)
 
