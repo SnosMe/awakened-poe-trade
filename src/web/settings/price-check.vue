@@ -18,8 +18,12 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ $t('Fill stat values') }}</div>
       <div class="mb-4 flex">
-        <ui-radio v-model="config.searchStatRange" :value="10" class="mr-4">+-10%</ui-radio>
-        <ui-radio v-model="config.searchStatRange" :value="0">{{ $t('Exact roll') }}</ui-radio>
+        <div class="flex mr-6">
+          <span class="mr-1">+-</span>
+          <input v-model.number="searchStatRange" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+          <span class="ml-1">%</span>
+        </div>
+        <ui-radio v-model="searchStatRange" :value="0">{{ $t('Exact roll') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
@@ -39,6 +43,18 @@ export default {
   computed: {
     config () {
       return Config.store
+    },
+    searchStatRange: {
+      set (value) {
+        if (typeof value !== 'number') return
+
+        if (value >= 0 && value <= 50) {
+          this.config.searchStatRange = value
+        }
+      },
+      get () {
+        return this.config.searchStatRange
+      }
     }
   }
 }
