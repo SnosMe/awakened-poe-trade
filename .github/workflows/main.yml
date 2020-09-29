@@ -18,7 +18,13 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-    - run: yarn --frozen-lockfile
+    - id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+    - run: yarn --frozen-lockfile --prefer-offline
     - run: yarn electron:publish
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,10 +38,16 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
+    - id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
     - run: |
         sudo apt-get update
         sudo apt-get install -y libxtst-dev libpng++-dev
-    - run: yarn --frozen-lockfile
+    - run: yarn --frozen-lockfile --prefer-offline
     - run: yarn electron:publish
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
