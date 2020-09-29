@@ -41,6 +41,13 @@
         <ui-radio v-model="config.language" value="ru" class="mr-4">Русский</ui-radio>
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ $t('Auto-download updates') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="config.disableUpdateDownload" :value="false" class="mr-4">{{ $t('Yes') }}</ui-radio>
+        <ui-radio v-model="config.disableUpdateDownload" :value="true" class="mr-4">{{ $t('No') }}</ui-radio>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -72,7 +79,8 @@ export default {
     "Clicking on background focuses game": "Нажатие по фону активирует окно игры",
     "Language": "Язык",
     "PoE log file": "PoE лог файл",
-    "Browse": "Выбрать"
+    "Browse": "Выбрать",
+    "Auto-download updates": "Автозагрузка обновлений"
   }
 }
 </i18n>

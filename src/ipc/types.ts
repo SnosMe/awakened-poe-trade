@@ -34,6 +34,7 @@ export interface Config {
   language: 'en' | 'ru'
   widgets: Widget[]
   fontSize: number
+  disableUpdateDownload: boolean
 }
 
 interface Widget {
@@ -100,6 +101,7 @@ export const defaultConfig: Config = {
   stashScroll: true,
   language: 'en',
   fontSize: 16,
+  disableUpdateDownload: false,
   widgets: [
     // --- REQUIRED ---
     {

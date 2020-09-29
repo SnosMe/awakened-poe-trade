@@ -3,6 +3,7 @@ import { logger } from './logger'
 import { rebuildContextMenu } from './tray'
 import { UPDATE_AVAILABLE } from '@/ipc/ipc-event'
 import { overlayWindow, overlayReady } from './overlay-window'
+import { config } from './config'
 
 export const UpdateState = {
   canCheck: true,
@@ -45,7 +46,10 @@ autoUpdater.on('update-downloaded', async (info: { version: string }) => {
 
 export async function checkForUpdates () {
   autoUpdater.logger = logger
-  autoUpdater.autoDownload = !process.env.PORTABLE_EXECUTABLE_DIR // https://www.electron.build/configuration/nsis.html#portable
+  autoUpdater.autoDownload = (
+    !process.env.PORTABLE_EXECUTABLE_DIR && // https://www.electron.build/configuration/nsis.html#portable
+    !config.get('disableUpdateDownload')
+  )
 
   UpdateState.canCheck = false
   UpdateState.status = 'Checking for update...'
