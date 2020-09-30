@@ -453,6 +453,8 @@ function parseModifiers (section: string[], item: ParsedItem) {
     } else if (stat.value.endsWith(C.ENCHANT_SUFFIX)) {
       stat.value = stat.value.slice(0, -C.ENCHANT_SUFFIX.length)
       modType = ModifierType.Enchant
+    } else if (stat.value.endsWith(C.FRACTURED_SUFFIX)) {
+      stat.value = stat.value.slice(0, -C.FRACTURED_SUFFIX.length)
     }
 
     const mod = tryFindModifier(stat.value)
