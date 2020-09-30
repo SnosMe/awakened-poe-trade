@@ -79,3 +79,7 @@ export const PROPHECY_JUN = 'You will find Jun and complete her mission.'
 export const PROPHECY_ZANA = 'You will find Zana and complete her mission.'
 
 export const CANNOT_USE_ITEM = 'You cannot use this item. Its stats will be ignored'
+
+export const QUALITY_ANOMALOUS = '/^Anomalous (.*)$/'
+export const QUALITY_DIVERGENT = '/^Divergent (.*)$/'
+export const QUALITY_PHANTASMAL = '/^Phantasmal (.*)$/'

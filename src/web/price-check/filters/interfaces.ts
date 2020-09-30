@@ -1,5 +1,6 @@
-import { ItemInfluence, ItemCategory } from '@/parser'
-import { ItemModifier } from '@/parser/modifiers'
+import type { ItemInfluence, ItemCategory } from '@/parser'
+import type { ItemModifier } from '@/parser/modifiers'
+import type { ParsedItem } from '@/parser/ParsedItem'
 
 export interface ItemFilters {
   name?: {
@@ -61,6 +62,10 @@ export interface ItemFilters {
   }
   veiled?: {
     stat: string
+    disabled: boolean
+  }
+  altQuality?: {
+    value: NonNullable<ParsedItem['extra']['altQuality']>
     disabled: boolean
   }
   trade: {

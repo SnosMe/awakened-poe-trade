@@ -276,5 +276,10 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
     }
   }
 
+  filters.altQuality = {
+    value: item.extra.altQuality!,
+    disabled: false
+  }
+
   return filters
 }

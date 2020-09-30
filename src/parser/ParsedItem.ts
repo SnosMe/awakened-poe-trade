@@ -33,6 +33,7 @@ export interface ParsedItem {
   extra: {
     veiled?: 'prefix' | 'suffix' | 'prefix-suffix'
     prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
+    altQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
   }
   category?: ItemCategory
   icon?: string

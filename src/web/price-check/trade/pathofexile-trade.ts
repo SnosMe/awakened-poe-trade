@@ -92,6 +92,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           redeemer_item?: FilterBoolean
           warlord_item?: FilterBoolean
           stack_size?: FilterRange
+          gem_alternate_quality?: { option: '0' | '1' | '2' | '3' }
         }
       }
       armour_filters?: {
@@ -260,6 +261,23 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.unidentified && !filters.unidentified.disabled) {
     prop.set(query.filters, 'misc_filters.filters.identified.option', String(false))
+  }
+
+  if (filters.altQuality && !filters.altQuality.disabled) {
+    switch (filters.altQuality.value) {
+      case 'Superior':
+        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '0')
+        break
+      case 'Anomalous':
+        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '1')
+        break
+      case 'Divergent':
+        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '2')
+        break
+      case 'Phantasmal':
+        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '3')
+        break
+    }
   }
 
   if (filters.influences) {

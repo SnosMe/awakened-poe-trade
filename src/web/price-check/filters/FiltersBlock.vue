@@ -14,6 +14,8 @@
         @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">{{ $t('Level: {0}', [filters.gemLevel.min]) }}</button>
       <button v-if="filters.quality" class="trade-tag" :class="{ disabled: filters.quality.disabled }"
         @click="filters.quality.disabled = !filters.quality.disabled">{{ $t('Quality: {0}%', [filters.quality.value]) }}</button>
+      <button v-if="filters.altQuality" class="trade-tag" :class="{ disabled: filters.altQuality.disabled }"
+        @click="filters.altQuality.disabled = !filters.altQuality.disabled">{{ $t(filters.altQuality.value) }}</button>
       <template v-if="filters.influences">
         <button v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center"
           :class="{ disabled: influence.disabled }"
@@ -184,7 +186,11 @@ export default {
     "Einhar": "Эйнар",
     "Niko": "Нико",
     "Jun": "Джун",
-    "Zana": "Зана"
+    "Zana": "Зана",
+    "Superior": "Высокого к-ва",
+    "Anomalous": "Аномальный",
+    "Divergent": "Искривлённый",
+    "Phantasmal": "Фантомный"
   }
 }
 </i18n>

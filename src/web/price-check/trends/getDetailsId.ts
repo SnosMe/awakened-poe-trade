@@ -57,7 +57,9 @@ function getGemDetailsId (item: ParsedItem) {
     return 'portal-1'
   }
 
-  let id = nameToDetailsId(item.name)
+  let id = item.extra.altQuality === 'Superior'
+    ? nameToDetailsId(item.name)
+    : nameToDetailsId(`${item.extra.altQuality} ${item.name}`)
 
   if (
     SPECIAL_SUPPORT_GEM.includes(item.name) ||

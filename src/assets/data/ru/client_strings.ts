@@ -56,7 +56,10 @@ const dict: TranslationDict = {
   'You will find Jun and complete her mission.': 'Ты встретишь Джун и выполнишь её задание.',
   'You will find Zana and complete her mission.': 'Ты встретишь Зану и выполнишь её задание.',
   'Blighted {0}': 'Заражённая {0}',
-  'You cannot use this item. Its stats will be ignored': 'Вы не можете использовать этот предмет, его параметры не будут учтены'
+  'You cannot use this item. Its stats will be ignored': 'Вы не можете использовать этот предмет, его параметры не будут учтены',
+  '/^Anomalous (.*)$/': /^Аномальный: (.*)$/,
+  '/^Divergent (.*)$/': /^Искривлённый: (.*)$/,
+  '/^Phantasmal (.*)$/': /^Фантомный: (.*)$/
 }
 
 export default dict

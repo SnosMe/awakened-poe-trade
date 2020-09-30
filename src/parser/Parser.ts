@@ -272,9 +272,20 @@ function parseVaalGem (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Gem) return PARSER_SKIPPED
 
   if (section.length === 1) {
-    if (_$[C.VAAL_GEM].test(section[0])) {
-      const name = section[0]
-      item.name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
+    let gemName: string | undefined
+    if ((gemName = _$[C.QUALITY_ANOMALOUS].exec(section[0])?.[1])) {
+      item.extra.altQuality = 'Anomalous'
+    } else if ((gemName = _$[C.QUALITY_DIVERGENT].exec(section[0])?.[1])) {
+      item.extra.altQuality = 'Divergent'
+    } else if ((gemName = _$[C.QUALITY_PHANTASMAL].exec(section[0])?.[1])) {
+      item.extra.altQuality = 'Phantasmal'
+    } else if (_$[C.VAAL_GEM].test(section[0])) {
+      gemName = section[0]
+      item.extra.altQuality = 'Superior'
+    }
+
+    if (gemName) {
+      item.name = ITEM_NAME_REF_BY_TRANSLATED.get(gemName) || gemName
       return SECTION_PARSED
     }
   }
@@ -290,6 +301,23 @@ function parseGem (section: string[], item: ParsedItem) {
     item.props.gemLevel = parseInt(section[1].substr(_$[C.TAG_GEM_LEVEL].length), 10)
 
     parseQualityNested(section, item)
+
+    // don't override if parsed in Vaal name section
+    if (!item.extra.altQuality) {
+      let gemName: string | undefined
+      if ((gemName = _$[C.QUALITY_ANOMALOUS].exec(item.name)?.[1])) {
+        item.extra.altQuality = 'Anomalous'
+      } else if ((gemName = _$[C.QUALITY_DIVERGENT].exec(item.name)?.[1])) {
+        item.extra.altQuality = 'Divergent'
+      } else if ((gemName = _$[C.QUALITY_PHANTASMAL].exec(item.name)?.[1])) {
+        item.extra.altQuality = 'Phantasmal'
+      } else {
+        item.extra.altQuality = 'Superior'
+      }
+      if (gemName) {
+        item.name = ITEM_NAME_REF_BY_TRANSLATED.get(gemName) || gemName
+      }
+    }
 
     return SECTION_PARSED
   }
