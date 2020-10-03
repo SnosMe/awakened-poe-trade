@@ -20768,6 +20768,11 @@
       {
         "string": "#% повышение скорости перезарядки умений смещения",
         "ref": "#% increased Cooldown Recovery Rate of Travel Skills"
+      },
+      {
+        "string": "#% снижение скорости перезарядки умений смещения",
+        "ref": "#% reduced Cooldown Recovery Rate of Travel Skills",
+        "negate": true
       }
     ],
     "mod": {
@@ -68318,12 +68323,12 @@
   {
     "conditions": [
       {
-        "string": "При нанесении удара проклинает врагов Уязвимостью к снарядам с усиленным на #% эффектом",
+        "string": "При нанесении удара проклинает врагов Уязвимостью к стихиям с усиленным на #% эффектом",
         "ref": "Curse Enemies with Elemental Weakness on Hit, with #% increased Effect"
       }
     ],
     "mod": {
-      "text": "При нанесении удара проклинает врагов Уязвимостью к снарядам с усиленным на #% эффектом",
+      "text": "При нанесении удара проклинает врагов Уязвимостью к стихиям с усиленным на #% эффектом",
       "ref": "Curse Enemies with Elemental Weakness on Hit, with #% increased Effect",
       "types": [
         {
@@ -76568,12 +76573,12 @@
   {
     "conditions": [
       {
-        "string": "Grants Level # Death Wish Skill",
+        "string": "Дарует умение Смертельное желание # уровня",
         "ref": "Grants Level # Death Wish Skill"
       }
     ],
     "mod": {
-      "text": "Grants Level # Death Wish Skill",
+      "text": "Дарует умение Смертельное желание # уровня",
       "ref": "Grants Level # Death Wish Skill",
       "types": [
         {
@@ -78364,7 +78369,7 @@
       },
       {
         "string": "Холодная ненависть имеет на #% меньше количества удержанной маны",
-        "ref": "HAtred has #% less Mana Reservation",
+        "ref": "Hatred has #% less Mana Reservation",
         "negate": true
       }
     ],
@@ -79375,12 +79380,12 @@
     "conditions": [
       {
         "string": "Накладываемые вами порчи имеют двойное усиление их эффекта от количества зарядов Рока",
-        "ref": "Hexes you inflcit have their Effect increased by twice their Doom instead"
+        "ref": "Hexes you inflict have their Effect increased by twice their Doom instead"
       }
     ],
     "mod": {
       "text": "Накладываемые вами порчи имеют двойное усиление их эффекта от количества зарядов Рока",
-      "ref": "Hexes you inflcit have their Effect increased by twice their Doom instead",
+      "ref": "Hexes you inflict have their Effect increased by twice their Doom instead",
       "types": [
         {
           "name": "explicit",
@@ -105058,6 +105063,26 @@
   {
     "conditions": [
       {
+        "string": "Вызывает срабатывание Метки вождя # уровня когда вы наносите удар по редкому или уникальному врагу",
+        "ref": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy"
+      }
+    ],
+    "mod": {
+      "text": "Вызывает срабатывание Метки вождя # уровня когда вы наносите удар по редкому или уникальному врагу",
+      "ref": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2049471530"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Вызывает срабатывание Метки вождя # уровня, когда вы наносите удар по редкому или уникальному врагу",
         "ref": "Trigger Level # Warlords's Mark when you Hit a Rare or Unique Enemy"
       }
@@ -105069,8 +105094,7 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_2021420128",
-            "explicit.stat_2049471530"
+            "explicit.stat_2021420128"
           ]
         }
       ]

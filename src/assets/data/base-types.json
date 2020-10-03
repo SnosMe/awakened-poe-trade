@@ -2705,6 +2705,510 @@
     }
   ],
   [
+    "Blueprint: Bunker",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Laboratory",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Mansion",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Prohibited Library",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Records Office",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Repository",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Smuggler's Den",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Tunnels",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "Blueprint: Underbelly",
+    {
+      "category": "Heist Blueprint"
+    }
+  ],
+  [
+    "[DNT] Heist Test Reward Equipment",
+    {
+      "category": "Heist Brooch"
+    }
+  ],
+  [
+    "Enamel Brooch",
+    {
+      "category": "Heist Brooch"
+    }
+  ],
+  [
+    "Foliate Brooch",
+    {
+      "category": "Heist Brooch"
+    }
+  ],
+  [
+    "Golden Brooch",
+    {
+      "category": "Heist Brooch"
+    }
+  ],
+  [
+    "Silver Brooch",
+    {
+      "category": "Heist Brooch"
+    }
+  ],
+  [
+    "[DNT] Heist Test Utility Equipment",
+    {
+      "category": "Heist Cloak"
+    }
+  ],
+  [
+    "Hooded Cloak",
+    {
+      "category": "Heist Cloak"
+    }
+  ],
+  [
+    "Tattered Cloak",
+    {
+      "category": "Heist Cloak"
+    }
+  ],
+  [
+    "Torn Cloak",
+    {
+      "category": "Heist Cloak"
+    }
+  ],
+  [
+    "Whisper-woven Cloak",
+    {
+      "category": "Heist Cloak"
+    }
+  ],
+  [
+    "Contract: Bunker",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Laboratory",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Mansion",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Prohibited Library",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Records Office",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Repository",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Smuggler's Den",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Tunnels",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Contract: Underbelly",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Familial Contract",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Forbidden Contract",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Naval Contract",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Preventative Contract",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Vengeful Contract",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "Vigilante Contract",
+    {
+      "category": "Heist Contract"
+    }
+  ],
+  [
+    "[DNT] Heist Test Weapon",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Aggregator Charm",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Burst Band",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Conduit Line",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Fine Sharpening Stone",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Flanged Arrowhead",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Focal Stone",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Fragmenting Arrowhead",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Hollowpoint Arrowhead",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Obsidian Sharpening Stone",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Precise Arrowhead",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Rough Sharpening Stone",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "Standard Sharpening Stone",
+    {
+      "category": "Heist Gear"
+    }
+  ],
+  [
+    "[DNT] Heist Test Tool",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Azurite Flashpowder",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Basic Disguise Kit",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Crude Sensing Charm",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Crude Ward",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Eelskin Sole",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Espionage Disguise Kit",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Essential Keyring",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Fine Lockpick",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Fine Sensing Charm",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Flanged Drill",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Foxhide Sole",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Grandmaster Keyring",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Leather Bracers",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Lustrous Ward",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Master Lockpick",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Polished Sensing Charm",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Regicide Disguise Kit",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Runed Bracers",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Shining Ward",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Silkweave Sole",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Simple Lockpick",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Skeleton Keyring",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Standard Lockpick",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Steel Bracers",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Steel Drill",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Studded Bracers",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Sulphur Blowtorch",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Thaumaturgical Sensing Charm",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Thaumaturgical Ward",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Thaumetic Blowtorch",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Thaumetic Flashpowder",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Theatre Disguise Kit",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Trarthan Flashpowder",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Versatile Keyring",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Voltaxic Flashpowder",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
+    "Winged Sole",
+    {
+      "category": "Heist Tool"
+    }
+  ],
+  [
     "Aventail Helmet",
     {
       "category": "Helmet",
@@ -6600,6 +7104,12 @@
     {
       "category": "Staff",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff2.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Thief's Trinket",
+    {
+      "category": "Trinket"
     }
   ],
   [

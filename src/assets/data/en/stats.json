@@ -20768,6 +20768,11 @@
       {
         "string": "#% increased Cooldown Recovery Rate of Travel Skills",
         "ref": "#% increased Cooldown Recovery Rate of Travel Skills"
+      },
+      {
+        "string": "#% reduced Cooldown Recovery Rate of Travel Skills",
+        "ref": "#% reduced Cooldown Recovery Rate of Travel Skills",
+        "negate": true
       }
     ],
     "mod": {
@@ -78363,8 +78368,8 @@
         "ref": "Hatred has #% more Mana Reservation"
       },
       {
-        "string": "HAtred has #% less Mana Reservation",
-        "ref": "HAtred has #% less Mana Reservation",
+        "string": "Hatred has #% less Mana Reservation",
+        "ref": "Hatred has #% less Mana Reservation",
         "negate": true
       }
     ],
@@ -79374,13 +79379,13 @@
   {
     "conditions": [
       {
-        "string": "Hexes you inflcit have their Effect increased by twice their Doom instead",
-        "ref": "Hexes you inflcit have their Effect increased by twice their Doom instead"
+        "string": "Hexes you inflict have their Effect increased by twice their Doom instead",
+        "ref": "Hexes you inflict have their Effect increased by twice their Doom instead"
       }
     ],
     "mod": {
-      "text": "Hexes you inflcit have their Effect increased by twice their Doom instead",
-      "ref": "Hexes you inflcit have their Effect increased by twice their Doom instead",
+      "text": "Hexes you inflict have their Effect increased by twice their Doom instead",
+      "ref": "Hexes you inflict have their Effect increased by twice their Doom instead",
       "types": [
         {
           "name": "explicit",
@@ -105058,6 +105063,26 @@
   {
     "conditions": [
       {
+        "string": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy",
+        "ref": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy"
+      }
+    ],
+    "mod": {
+      "text": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy",
+      "ref": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy",
+      "types": [
+        {
+          "name": "explicit",
+          "tradeId": [
+            "explicit.stat_2049471530"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "conditions": [
+      {
         "string": "Trigger Level # Warlords's Mark when you Hit a Rare or Unique Enemy",
         "ref": "Trigger Level # Warlords's Mark when you Hit a Rare or Unique Enemy"
       }
@@ -105069,8 +105094,7 @@
         {
           "name": "explicit",
           "tradeId": [
-            "explicit.stat_2021420128",
-            "explicit.stat_2049471530"
+            "explicit.stat_2021420128"
           ]
         }
       ]
