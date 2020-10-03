@@ -85,6 +85,29 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
 
     // @TODO: juicy corrupted maps
+  } if (
+    item.category === ItemCategory.HeistContract ||
+    item.category === ItemCategory.HeistBlueprint
+  ) {
+    if (item.rarity === ItemRarity.Unique) {
+      filters.name = { value: item.name }
+      filters.baseType = { value: item.baseType! }
+    } else {
+      filters.category = {
+        value: item.category
+      }
+
+      filters.areaLevel = {
+        value: item.props.areaLevel!
+      }
+
+      if (item.heistJob) {
+        filters.heistJob = {
+          name: item.heistJob.name,
+          level: item.heistJob.level
+        }
+      }
+    }
   } else if (
     item.category === ItemCategory.ClusterJewel &&
     item.rarity !== ItemRarity.Unique
@@ -159,7 +182,9 @@ export function createFilters (item: ParsedItem): ItemFilters {
     if (
       item.rarity !== ItemRarity.Unique &&
       item.category !== ItemCategory.Map &&
-      item.category !== ItemCategory.Jewel /* https://pathofexile.gamepedia.com/Jewel#Affixes */
+      item.category !== ItemCategory.Jewel && /* https://pathofexile.gamepedia.com/Jewel#Affixes */
+      item.category !== ItemCategory.HeistBlueprint &&
+      item.category !== ItemCategory.HeistContract
     ) {
       if (item.itemLevel > 86) {
         filters.itemLevel = {

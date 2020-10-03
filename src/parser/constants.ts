@@ -31,6 +31,7 @@ export const TAG_GEM_LEVEL = 'Level: '
 export const TAG_STACK_SIZE = 'Stack Size: '
 export const TAG_SOCKETS = 'Sockets: '
 export const TAG_QUALITY = 'Quality: '
+export const TAG_AREA_LEVEL = 'Area Level: '
 
 export const TAG_PHYSICAL_DAMAGE = 'Physical Damage: '
 export const TAG_ELEMENTAL_DAMAGE = 'Elemental Damage: '
@@ -83,3 +84,5 @@ export const CANNOT_USE_ITEM = 'You cannot use this item. Its stats will be igno
 export const QUALITY_ANOMALOUS = '/^Anomalous (.*)$/'
 export const QUALITY_DIVERGENT = '/^Divergent (.*)$/'
 export const QUALITY_PHANTASMAL = '/^Phantasmal (.*)$/'
+
+export const HEIST_JOB = '/^Requires (.+) \\(Level (\\d+)\\)$/'

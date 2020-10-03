@@ -19,6 +19,7 @@ export interface ParsedItem {
     mapBlighted?: true
     mapTier?: number
     gemLevel?: number
+    areaLevel?: number
   }
   quality?: number
   sockets: {
@@ -35,7 +36,19 @@ export interface ParsedItem {
     prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
     altQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
   }
+  heistJob?: { name: HeistJob, level: number }
   category?: ItemCategory
   icon?: string
   rawText: string
 }
+
+export type HeistJob =
+  'Lockpicking' |
+  'Counter-Thaumaturgy' |
+  'Perception' |
+  'Deception' |
+  'Agility' |
+  'Engineering' |
+  'Trap Disarmament' |
+  'Demolition' |
+  'Brute Force'

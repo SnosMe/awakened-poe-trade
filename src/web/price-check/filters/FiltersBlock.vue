@@ -4,6 +4,8 @@
       <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
         @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ $t('Links: {0}', [filters.linkedSockets.value]) }}</button>
       <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
+      <div v-if="filters.areaLevel" class="trade-tag">{{ $t('Area Level: {0}', [filters.areaLevel.value]) }}</div>
+      <div v-if="filters.heistJob" class="trade-tag">{{ $t(`${filters.heistJob.name} (lvl {0})`, [filters.heistJob.level]) }}</div>
       <div v-if="filters.mapBlighted" class="trade-tag">{{ $t('Blighted') }}</div>
       <div v-if="filters.discriminator" class="trade-tag">{{ $t(filters.discriminator.value) }}</div>
       <filter-numeric-editable :filter="filters.itemLevel" name="Item Level:" />
@@ -190,7 +192,17 @@ export default {
     "Superior": "Высокого к-ва",
     "Anomalous": "Аномальный",
     "Divergent": "Искривлённый",
-    "Phantasmal": "Фантомный"
+    "Phantasmal": "Фантомный",
+    "Area Level: {0}": "Ур. области: {0}",
+    "Lockpicking (lvl {0})": "Взлом ({0} ур.)",
+    "Counter-Thaumaturgy (lvl {0})": "Контрмагия ({0} ур.)",
+    "Perception (lvl {0})": "Восприятие ({0} ур.)",
+    "Deception (lvl {0})": "Маскировка ({0} ур.)",
+    "Agility (lvl {0})": "Проворство ({0} ур.)",
+    "Engineering (lvl {0})": "Инженерное дело ({0} ур.)",
+    "Trap Disarmament (lvl {0})": "Разминирование ({0} ур.)",
+    "Demolition (lvl {0})": "Взрывное дело ({0} ур.)",
+    "Brute Force (lvl {0})": "Грубая сила ({0} ур.)"
   }
 }
 </i18n>

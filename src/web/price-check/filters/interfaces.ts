@@ -1,6 +1,6 @@
 import type { ItemInfluence, ItemCategory } from '@/parser'
 import type { ItemModifier } from '@/parser/modifiers'
-import type { ParsedItem } from '@/parser/ParsedItem'
+import type { HeistJob, ParsedItem } from '@/parser/ParsedItem'
 
 export interface ItemFilters {
   name?: {
@@ -67,6 +67,13 @@ export interface ItemFilters {
   altQuality?: {
     value: NonNullable<ParsedItem['extra']['altQuality']>
     disabled: boolean
+  }
+  areaLevel?: {
+    value: number
+  }
+  heistJob?: {
+    name: HeistJob
+    level: number
   }
   trade: {
     offline: boolean

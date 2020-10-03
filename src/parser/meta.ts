@@ -32,7 +32,14 @@ export enum ItemCategory {
   OneHandedSword = 'One-Handed Sword',
   TwoHandedSword = 'Two-Handed Sword',
   ClusterJewel = 'Cluster Jewel',
-  Watchstone = 'Watchstone'
+  Watchstone = 'Watchstone',
+  HeistBlueprint = 'Heist Blueprint',
+  HeistContract = 'Heist Contract',
+  HeistTool = 'Heist Tool',
+  HeistBrooch = 'Heist Brooch',
+  HeistGear = 'Heist Gear',
+  HeistCloak = 'Heist Cloak',
+  Trinket = 'Trinket',
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([
@@ -76,6 +83,7 @@ export const ARMOUR = new Set([
 export const ACCESSORY = new Set([
   ItemCategory.Amulet,
   ItemCategory.Belt,
-  ItemCategory.Ring
+  ItemCategory.Ring,
+  ItemCategory.Trinket
   // ItemCategory.Quiver
 ])

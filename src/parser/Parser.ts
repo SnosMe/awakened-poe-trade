@@ -7,7 +7,7 @@ import {
 } from '@/assets/data'
 import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
 import { ItemCategory } from './meta'
-import { ParsedItem } from './ParsedItem'
+import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { getRollAsSingleNumber } from './utils'
 
@@ -42,6 +42,7 @@ const parsers: ParserFn[] = [
   parseMap,
   parseSockets,
   parseProphecyMaster,
+  parseHeistMission,
   parseModifiers,
   parseModifiers,
   parseModifiers
@@ -591,4 +592,37 @@ function parseProphecyMaster (section: string[], item: ParsedItem) {
   }
 
   return SECTION_SKIPPED
+}
+
+function parseHeistMission (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.HeistBlueprint &&
+      item.category !== ItemCategory.HeistContract) return PARSER_SKIPPED
+
+  for (const line of section) {
+    if (line.startsWith(_$[C.TAG_AREA_LEVEL])) {
+      item.props.areaLevel = Number(line.substr(_$[C.TAG_AREA_LEVEL].length))
+      break
+    }
+  }
+  if (!item.props.areaLevel) {
+    return SECTION_SKIPPED
+  }
+
+  if (item.category === ItemCategory.HeistContract) {
+    let match = null as RegExpMatchArray | null
+    for (const line of section) {
+      if ((match = line.match(_$[C.HEIST_JOB]))) {
+        break
+      }
+    }
+    if (!match) throw new Error('never')
+
+    item.heistJob = {
+      name: Object.entries(_$)
+        .find(([_, tr]) => tr === match!.groups!.job)![0] as HeistJob,
+      level: Number(match.groups!.level)
+    }
+  }
+
+  return SECTION_PARSED
 }

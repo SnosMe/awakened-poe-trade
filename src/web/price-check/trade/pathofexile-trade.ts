@@ -34,7 +34,14 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.TwoHandedSword, 'weapon.twosword'],
   [ItemCategory.Wand, 'weapon.wand'],
   [ItemCategory.Warstaff, 'weapon.warstaff'],
-  [ItemCategory.ClusterJewel, 'jewel.cluster']
+  [ItemCategory.ClusterJewel, 'jewel.cluster'],
+  [ItemCategory.HeistBlueprint, 'heistmission.blueprint'],
+  [ItemCategory.HeistContract, 'heistmission.contract'],
+  [ItemCategory.HeistTool, 'heistequipment.heisttool'],
+  [ItemCategory.HeistBrooch, 'heistequipment.heistreward'],
+  [ItemCategory.HeistGear, 'heistequipment.heistweapon'],
+  [ItemCategory.HeistCloak, 'heistequipment.heistutility'],
+  [ItemCategory.Trinket, 'accessory.trinket']
 ])
 
 type FilterBoolean = { option?: 'true' | 'false' }
@@ -116,6 +123,20 @@ interface TradeRequest { /* eslint-disable camelcase */
         filters: {
           map_tier?: FilterRange
           map_blighted?: FilterBoolean
+        }
+      }
+      heist_filters?: {
+        filters: {
+          area_level?: FilterRange
+          heist_agility?: FilterRange
+          heist_brute_force?: FilterRange
+          heist_counter_thaumaturgy?: FilterRange
+          heist_deception?: FilterRange
+          heist_demolition?: FilterRange
+          heist_engineering?: FilterRange
+          heist_lockpicking?: FilterRange
+          heist_perception?: FilterRange
+          heist_trap_disarmament?: FilterRange
         }
       }
       trade_filters: {
@@ -276,6 +297,42 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         break
       case 'Phantasmal':
         prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '3')
+        break
+    }
+  }
+
+  if (filters.areaLevel) {
+    prop.set(query.filters, 'heist_filters.filters.area_level.min', filters.areaLevel.value)
+  }
+
+  if (filters.heistJob) {
+    switch (filters.heistJob.name) {
+      case 'Agility':
+        prop.set(query.filters, 'heist_filters.filters.heist_agility.min', filters.heistJob.level)
+        break
+      case 'Brute Force':
+        prop.set(query.filters, 'heist_filters.filters.heist_brute_force.min', filters.heistJob.level)
+        break
+      case 'Counter-Thaumaturgy':
+        prop.set(query.filters, 'heist_filters.filters.heist_counter_thaumaturgy.min', filters.heistJob.level)
+        break
+      case 'Deception':
+        prop.set(query.filters, 'heist_filters.filters.heist_deception.min', filters.heistJob.level)
+        break
+      case 'Demolition':
+        prop.set(query.filters, 'heist_filters.filters.heist_demolition.min', filters.heistJob.level)
+        break
+      case 'Engineering':
+        prop.set(query.filters, 'heist_filters.filters.heist_engineering.min', filters.heistJob.level)
+        break
+      case 'Lockpicking':
+        prop.set(query.filters, 'heist_filters.filters.heist_lockpicking.min', filters.heistJob.level)
+        break
+      case 'Perception':
+        prop.set(query.filters, 'heist_filters.filters.heist_perception.min', filters.heistJob.level)
+        break
+      case 'Trap Disarmament':
+        prop.set(query.filters, 'heist_filters.filters.heist_trap_disarmament.min', filters.heistJob.level)
         break
     }
   }

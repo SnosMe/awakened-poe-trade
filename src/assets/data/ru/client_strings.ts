@@ -59,7 +59,18 @@ const dict: TranslationDict = {
   'You cannot use this item. Its stats will be ignored': 'Вы не можете использовать этот предмет, его параметры не будут учтены',
   '/^Anomalous (.*)$/': /^Аномальный: (.*)$/,
   '/^Divergent (.*)$/': /^Искривлённый: (.*)$/,
-  '/^Phantasmal (.*)$/': /^Фантомный: (.*)$/
+  '/^Phantasmal (.*)$/': /^Фантомный: (.*)$/,
+  '/^Requires (.+) \\(Level (\\d+)\\)$/': /^Требуется (?<job>.+) \((?<level>\d+) уровень\)$/,
+  'Area Level: ': 'Уровень области: ',
+  'Lockpicking': 'взлом',
+  'Counter-Thaumaturgy': 'контрмагия',
+  'Perception': 'восприятие',
+  'Deception': 'маскировка',
+  'Agility': 'проворство',
+  'Engineering': 'инженерное дело',
+  'Trap Disarmament': 'разминирование',
+  'Demolition': 'взрывное дело',
+  'Brute Force': 'грубая сила'
 }
 
 export default dict

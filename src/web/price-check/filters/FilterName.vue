@@ -113,7 +113,14 @@ export default {
     "Category: Two-Handed Sword": "Категория: Двуручный меч",
     "Category: Wand": "Категория: Жезл",
     "Category: Warstaff": "Категория: Воинский посох",
-    "Category: Cluster Jewel": "Категория: Кластерный самоцвет"
+    "Category: Cluster Jewel": "Категория: Кластерный самоцвет",
+    "Category: Heist Blueprint": "Категория: Чертёж Кражи",
+    "Category: Heist Contract": "Категория: Контракт Кражи",
+    "Category: Heist Tool": "Категория: Разбойничий инструмент",
+    "Category: Heist Brooch": "Категория: Разбойничья брошь",
+    "Category: Heist Gear": "Категория: Разбойничьи принадлежности",
+    "Category: Heist Cloak": "Категория: Разбойничья накидка",
+    "Category: Trinket": "Категория: Украшение"
   }
 }
 </i18n>

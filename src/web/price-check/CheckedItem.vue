@@ -124,6 +124,8 @@ export default {
       return this.item.rarity === ItemRarity.Rare &&
         this.item.category !== ItemCategory.Map &&
         this.item.category !== ItemCategory.CapturedBeast &&
+        this.item.category !== ItemCategory.HeistContract &&
+        this.item.category !== ItemCategory.HeistBlueprint &&
         !this.item.isUnidentified
     },
     show () {
