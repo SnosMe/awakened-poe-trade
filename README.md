@@ -61,9 +61,14 @@
 - Press `Ctrl + Alt + D` to check the price of the item\
   *Opens a window, but does not hide it automatically when moving the mouse*
 - Press `F5` to go to hideout
+- Press `F9` to exit to character selection
 - `Ctrl + MouseWheel` to scroll through stash tabs\
   *You can also disable "Mousewheel Zoom" in PoE settings (Options -> UI -> 3-rd check mark starting from the bottom)*
 - `Alt + W` to open the item on Wiki
+- `Shift + Space` to open overlay
+  *The overlay allows setting up a stopwatch, saving stash search strings, and accessing images such as for cheat sheets.*
+
+These defaults can be changed in the settings menu, which can be accessed from the system taskbar.
 
 ### Tool end goals
 - One Tool To Rule Them All
