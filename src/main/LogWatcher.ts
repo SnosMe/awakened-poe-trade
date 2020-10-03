@@ -8,7 +8,8 @@ const COMMON_PATH = [
   'C:/Program Files (x86)/Grinding Gear Games/Path of Exile/logs/Client.txt',
   'D:/Program Files (x86)/Grinding Gear Games/Path of Exile/logs/Client.txt',
   'C:/Program Files (x86)/Steam/steamapps/common/Path of Exile/logs/Client.txt',
-  'D:/Program Files (x86)/Steam/steamapps/common/Path of Exile/logs/Client.txt'
+  'D:/Program Files (x86)/Steam/steamapps/common/Path of Exile/logs/Client.txt',
+  require('os').homedir() + '/.steam/steam/steamapps/common/Path of Exile/logs/Client.txt'
 ]
 
 export class LogWatcher {
@@ -21,7 +22,7 @@ export class LogWatcher {
   static async start () {
     let logFile = config.get('clientLog')
 
-    if (!logFile && process.platform === 'win32') {
+    if (!logFile) {
       for (const filePath of COMMON_PATH) {
         try {
           await fs.access(filePath)
