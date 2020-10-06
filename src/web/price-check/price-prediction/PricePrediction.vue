@@ -11,26 +11,13 @@
     </div>
     <div v-else-if="price">
       <div class="flex items-center pb-4">
-        <div class="flex items-center justify-center flex-1">
-          <div class="w-8 h-8 flex items-center justify-center">
-            <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
-          </div>
-          <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base">
-            <span v-if="!showAsRange" class="text-gray-600 font-sans">~ </span>
-            <span :style="{ color: currency.text === 'exa' ? '#e4c29a' : undefined }"
-              >{{ price.min | displayRounding }}</span>
-            <template v-if="showAsRange">
-              <span class="text-gray-600 font-sans"> ~ </span>
-              <span :style="{ color: currency.text === 'exa' ? '#e4c29a' : undefined }"
-                >{{ price.max | displayRounding }}</span>
-            </template>
-            <span class="font-sans" :style="{ color: currency.text === 'exa' ? '#e4c29a' : undefined }"> ×</span>
-          </span>
-          <div class="w-8 h-8 flex items-center justify-center">
-            <img :src="currency.url" :alt="currency.text" class="max-w-full max-h-full">
-          </div>
-        </div>
+        <item-quick-price class="flex-1"
+          :min="price.min"
+          :max="price.max"
+          approx
+          :item-img="item.icon"
+          :currency="price.currency === 'exalt' ? 'exa' : 'chaos'"
+        />
         <div class="text-center">
           <div class="leading-tight">
             <i v-if="price.confidence < 78" class="fas fa-exclamation-triangle pr-1 text-orange-400"></i>
@@ -71,19 +58,18 @@
 
 <script>
 import { requestPoeprices } from './poeprices'
-import { displayRounding } from '../Prices'
 import FeedbackOption from './FeedbackOption'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
 
 export default {
   name: 'PricePrediction',
-  components: { FeedbackOption },
+  components: { FeedbackOption, ItemQuickPrice },
   props: {
     item: {
       type: Object,
       required: true
     }
   },
-  filters: { displayRounding },
   data () {
     return {
       price: null,
@@ -111,26 +97,6 @@ export default {
         }
       }
     }
-  },
-  computed: {
-    currency () {
-      return {
-        exalt: {
-          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1',
-          text: 'exa'
-        },
-        chaos: {
-          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1',
-          text: 'chaos'
-        }
-      }[this.price.currency]
-    },
-    showAsRange () {
-      return displayRounding(this.price.min) !== displayRounding(this.price.max)
-    }
-  },
-  methods: {
-    //
   }
 }
 </script>

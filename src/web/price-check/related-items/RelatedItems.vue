@@ -8,7 +8,7 @@
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val | displayRounding(true) }} {{ icon[price(item).curr].text }}</span>
+          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val | displayRounding(true) }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
         </div>
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
@@ -20,7 +20,7 @@
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val | displayRounding(true) }} {{ icon[price(item).curr].text }}</span>
+          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val | displayRounding(true) }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
         </div>
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
@@ -42,18 +42,6 @@ export default {
   },
   filters: { displayRounding },
   computed: {
-    icon () {
-      return {
-        e: {
-          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1',
-          text: 'exa'
-        },
-        c: {
-          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1',
-          text: 'chaos'
-        }
-      }
-    },
     detailsId () {
       if (!this.item) return
 

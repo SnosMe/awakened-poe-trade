@@ -8,12 +8,12 @@
         <div v-else class="flex items-center">
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'chaos' ? 'transparent' : undefined }"
             @click="selectedCurr = 'chaos'">
-            <img alt="chaos" src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1" class="trade-bulk-currency-icon">
+            <img src="@/assets/images/chaos.png" class="trade-bulk-currency-icon">
             <span>{{ result.chaos.total }}</span>
           </button>
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'exa' ? 'transparent' : undefined }"
             @click="selectedCurr = 'exa'">
-            <img alt="exa" src="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1" class="trade-bulk-currency-icon">
+            <img src="@/assets/images/exa.png" class="trade-bulk-currency-icon">
             <span>{{ result.exa.total }}</span>
           </button>
           <span class="ml-1">[{{ $t('Online') }}]</span>

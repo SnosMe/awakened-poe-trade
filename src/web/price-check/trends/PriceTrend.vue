@@ -1,19 +1,17 @@
 <template>
   <div v-if="trend" class="flex items-center pb-4">
-    <div class="flex items-center justify-center flex-1">
-      <button v-if="isValuableBasetype" class="text-gray-400 hover:bg-gray-700 rounded px-1 -mx-1"
-        @click="$emit('filter-item-base')">{{ $t('Item base') }}</button>
-      <div v-else class="w-8 h-8 flex items-center justify-center">
-        <img :src="trend.icon" :alt="item.name" class="max-w-full max-h-full">
-      </div>
-      <span class="px-1 text-base" v-if="item.stackSize"><span class="font-sans">×</span> 1</span>
-      <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-      <span class="px-1 text-base" :style="{ color: trend.price.curr === 'e' ? '#e4c29a' : 'inherit' }"
-        >{{ trend.price.val | displayRounding(true) }} <span class="font-sans">×</span></span>
-      <div class="w-8 h-8 flex items-center justify-center">
-        <img :src="icon[trend.price.curr].url" :alt="icon[trend.price.curr].text" class="max-w-full max-h-full">
-      </div>
-    </div>
+    <item-quick-price class="flex-1"
+      :min="trend.price.val"
+      :max="trend.price.val"
+      fraction
+      :item-img="trend.icon"
+      :currency="trend.price.curr === 'e' ? 'exa' : 'chaos'"
+    >
+      <template #item v-if="isValuableBasetype">
+        <button class="text-gray-400 hover:bg-gray-700 rounded px-1 -mx-1"
+          @click="$emit('filter-item-base')">{{ $t('Item base') }}</button>
+      </template>
+    </item-quick-price>
     <div v-if="trend.changeStr" class="px-2 text-center">
       <div class="leading-tight">
         <i v-if="trend.changeStr === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
@@ -37,30 +35,19 @@
 </template>
 
 <script>
-import { Prices, displayRounding } from '../Prices'
+import { Prices } from '../Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
 
 export default {
+  components: { ItemQuickPrice },
   props: {
     item: {
       type: Object,
       required: true
     }
   },
-  filters: { displayRounding },
   computed: {
-    icon () {
-      return {
-        e: {
-          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png?scale=1&w=1&h=1',
-          text: 'exa'
-        },
-        c: {
-          url: 'https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png?scale=1&w=1&h=1',
-          text: 'chaos'
-        }
-      }
-    },
     trend () {
       const detailsId = getDetailsId(this.item)
       const trend = Prices.findByDetailsId(detailsId)
