@@ -8,7 +8,8 @@
       </div>
       <span class="px-1 text-base" v-if="item.stackSize"><span class="font-sans">×</span> 1</span>
       <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-      <span class="px-1 text-base">{{ trend.price.val | displayRounding(true) }} <span class="font-sans">×</span></span>
+      <span class="px-1 text-base" :style="{ color: trend.price.curr === 'e' ? '#e4c29a' : 'inherit' }"
+        >{{ trend.price.val | displayRounding(true) }} <span class="font-sans">×</span></span>
       <div class="w-8 h-8 flex items-center justify-center">
         <img :src="icon[trend.price.curr].url" :alt="icon[trend.price.curr].text" class="max-w-full max-h-full">
       </div>

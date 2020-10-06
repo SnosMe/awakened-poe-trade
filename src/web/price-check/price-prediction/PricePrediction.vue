@@ -17,8 +17,16 @@
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
           <span class="px-1 text-base">
-            <span v-if="!showAsRange" class="text-gray-600 font-sans">~&nbsp;</span><span>{{ price.min | displayRounding }}</span>
-            <template v-if="showAsRange"><span class="text-gray-600 font-sans">&nbsp;~&nbsp;</span>{{ price.max | displayRounding }}</template> <span class="font-sans">×</span></span>
+            <span v-if="!showAsRange" class="text-gray-600 font-sans">~ </span>
+            <span :style="{ color: currency.text === 'exa' ? '#e4c29a' : undefined }"
+              >{{ price.min | displayRounding }}</span>
+            <template v-if="showAsRange">
+              <span class="text-gray-600 font-sans"> ~ </span>
+              <span :style="{ color: currency.text === 'exa' ? '#e4c29a' : undefined }"
+                >{{ price.max | displayRounding }}</span>
+            </template>
+            <span class="font-sans" :style="{ color: currency.text === 'exa' ? '#e4c29a' : undefined }"> ×</span>
+          </span>
           <div class="w-8 h-8 flex items-center justify-center">
             <img :src="currency.url" :alt="currency.text" class="max-w-full max-h-full">
           </div>
