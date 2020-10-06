@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-wrap items-center mb-2 -m-1" @mouseleave="handleMouseLeaveStats">
+    <div class="flex flex-wrap items-center pb-2 -mx-1 -mt-1" @mouseleave="handleMouseLeaveStats">
       <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
         @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ $t('Links: {0}', [filters.linkedSockets.value]) }}</button>
       <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
@@ -136,8 +136,7 @@ export default {
       this.$emit('submit')
     },
     handleMouseLeaveStats (e) {
-      // ignore if mouse moves to filters block
-      if (e.offsetY > 0) {
+      if (e.offsetY >= e.fromElement.clientHeight) {
         this.handleStatsSubmit()
         if (document.activeElement) {
           document.activeElement.blur()
