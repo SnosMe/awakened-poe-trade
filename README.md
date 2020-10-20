@@ -64,6 +64,7 @@
 - `Ctrl + MouseWheel` to scroll through stash tabs\
   *You can also disable "Mousewheel Zoom" in PoE settings (Options -> UI -> 3-rd check mark starting from the bottom)*
 - `Alt + W` to open the item on Wiki
+- `Shift + Space` to open map rolling, dump tab sorting and cheat-sheet overlay
 
 ### Tool end goals
 - One Tool To Rule Them All
