@@ -70,7 +70,9 @@ export function rebuildContextMenu () {
     { type: 'separator' },
     {
       label: `APT v${app.getVersion()}`,
-      enabled: false
+      click: () => {
+        shell.openExternal('https://github.com/SnosMe/awakened-poe-trade/releases')
+      }
     },
     {
       label: UpdateState.canCheck ? 'Check for updates' : UpdateState.status,

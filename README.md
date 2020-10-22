@@ -5,7 +5,7 @@
 [![](./showcase/Discrod-Join-7289DA.svg)](https://discord.gg/hXgSDS6)
 
 
-➡ [Download for Windows & Linux](https://snosme.github.io/awakened-poe-trade/) ⬅
+➡ [Download for Windows & Linux](https://snosme.github.io/awakened-poe-trade/download) ⬅
 
 ## Tool showcase
 
