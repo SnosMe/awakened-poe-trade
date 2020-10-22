@@ -1,0 +1,7 @@
+- name: Download
+  permalink: /download
+- name: Quick Start
+  permalink: /quick-start
+- separator: true
+- name: Chat commands
+  permalink: /chat-commands

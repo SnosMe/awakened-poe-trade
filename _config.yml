@@ -1,1 +1,8 @@
-theme: jekyll-theme-cayman
+title: Awakened PoE Trade
+description: >-
+  App for price-checking items in Path of Exile
+app_version: 2.6.0
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag

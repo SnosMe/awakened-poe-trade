@@ -1,0 +1,181 @@
+---
+---
+
+.markdown-body {
+  p, blockquote, hr,
+  ul, ol, dl,
+  table,
+  pre,
+  details {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.markdown-body {
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+
+    th {
+      font-weight: 600;
+    }
+
+    th, td {
+      padding: 6px 13px;
+      border-width: 1px;
+    }
+
+    tr {
+      &:nth-child(2n) {
+        background-color: #f7fafc;
+      }
+    }
+  }
+}
+
+.markdown-body {
+  a {
+    color: #0366d6;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  b, strong {
+    font-weight: 600;
+  }
+}
+
+.markdown-body {
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul, ol {
+    padding-left: 2rem;
+
+    &.no-list {
+      padding: 0;
+      list-style-type: none;
+    }
+  }
+
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    word-wrap: break-all;
+  }
+
+  li > p {
+    margin-top: 1rem;
+  }
+
+  li + li {
+    margin-top: 0.25rem;
+  }
+
+  dl {
+    padding: 0;
+
+    dt {
+      padding: 0;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    dd {
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.markdown-body {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.markdown-body {
+  code,
+  tt {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 0.85em;
+    background-color: #edf2f7;
+    border-radius: 0.25em;
+    color: #4a5568;
+
+    br { display: none; }
+  }
+
+  del code { text-decoration: inherit; }
+
+  pre {
+    word-wrap: normal;
+
+    > code {
+      padding: 0;
+      margin: 0;
+      font-size: 1em;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  .highlight {
+    margin-bottom: 1rem;
+
+    pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+  }
+
+  .highlight pre,
+  pre {
+    padding: 1em;
+    overflow: auto;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    background-color: #edf2f7;
+    border-radius: 0.25rem;
+  }
+
+  pre code,
+  pre tt {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+}
