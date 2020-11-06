@@ -5,3 +5,8 @@
 - separator: true
 - name: Chat commands
   permalink: /chat-commands
+- separator: true
+- name: Common issues
+  permalink: /issues
+- name: FAQ
+  permalink: /faq

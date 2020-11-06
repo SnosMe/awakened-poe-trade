@@ -4,6 +4,9 @@ title: Download
 permalink: /download
 ---
 
+You can download Awakened Poe Trade here. Any other mirrors are not known
+to the developer, downloading from them may be unsafe.
+
 | Download | Automatic update | Startup time |
 |----------|------------------|--------------|
 | [Windows (installer)]({{ site.github.releases_url }}/download/v{{ site.app_version }}/Awakened-PoE-Trade-Setup-{{ site.app_version }}.exe) | ✔ | Fast |
