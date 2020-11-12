@@ -23,6 +23,8 @@ import MapStatButton from './MapStatButton'
 import { prepareMapStats } from './prepare-map-stats'
 import { TRANSLATED_ITEM_NAME_BY_REF, MAP_IMGS } from '@/assets/data'
 
+const ALLOWED_TYPES = [ItemCategory.Map, ItemCategory.HeistContract, ItemCategory.HeistBlueprint]
+
 export default {
   components: {
     Widget,
@@ -43,7 +45,7 @@ export default {
       }
       this.item = null
       const item = parseClipboard(e.clipboard)
-      if (item.category === ItemCategory.Map) {
+      if (ALLOWED_TYPES.includes(item.category)) {
         this.item = item
       }
     })
