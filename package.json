@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,25 +24,25 @@
   "main": "background.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.x",
-    "dot-prop": "5.3.x",
+    "dot-prop": "6.x.x",
     "electron-overlay-window": "1.0.x",
-    "electron-store": "5.2.x",
+    "electron-store": "6.0.x",
     "electron-updater": "^4.2.0",
     "fast-deep-equal": "3.1.x",
     "luxon": "1.25.x",
     "portal-vue": "2.1.7",
     "robotjs": "^0.6.0",
-    "tailwindcss": "1.8.x",
-    "throttle-debounce": "2.3.x",
+    "tailwindcss": "1.x.x",
+    "throttle-debounce": "3.0.x",
     "uiohook-napi": "1.0.x",
     "vue": "2.6.x",
-    "vue-i18n": "8.21.x",
+    "vue-i18n": "8.22.x",
     "vue-popperjs": "2.3.0",
     "vue-router": "3.x.x",
-    "vue-slider-component": "3.2.5",
-    "vue-trend-chart": "0.15.2",
+    "vue-slider-component": "3.2.11",
+    "vue-trend-chart": "0.15.3",
     "vue-virtual-scroller": "1.0.10",
-    "vuedraggable": "2.24.1",
+    "vuedraggable": "2.24.3",
     "winston": "3.x.x"
   },
   "devDependencies": {
@@ -57,7 +57,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-standard": "^5.1.0",
     "@vue/eslint-config-typescript": "^5.0.1",
-    "electron": "9.3.1",
+    "electron": "11.1.0",
     "electron-devtools-installer": "^3.1.1",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
@@ -68,14 +68,14 @@
     "patch-package": "^6.2.0",
     "postcss-nested": "^4.2.1",
     "typescript": "3.9.x",
-    "vue-cli-plugin-electron-builder": "2.0.0-rc.4",
+    "vue-cli-plugin-electron-builder": "2.0.0-rc.5",
     "vue-cli-plugin-i18n": "~1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
   "resolutions": {
-    "vue-cli-plugin-electron-builder/electron-builder": "22.8.1"
+    "vue-cli-plugin-electron-builder/electron-builder": "22.9.1"
   },
   "engines": {
-    "node": "12.x.x"
+    "node": ">=12"
   }
 }

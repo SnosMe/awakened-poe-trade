@@ -30,9 +30,6 @@ if (!config.get('hardwareAcceleration')) {
   app.disableHardwareAcceleration()
 }
 
-// @TODO: remove after resolved https://github.com/electron/electron/issues/23664
-app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors')
-
 app.on('ready', async () => {
   logger.info('App is running', {
     source: 'init',
