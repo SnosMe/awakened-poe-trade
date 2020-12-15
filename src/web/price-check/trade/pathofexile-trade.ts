@@ -237,7 +237,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     const id = CATEGORY_TO_TRADE_ID.get(filters.category.value)
     if (id) {
       prop.set(query.filters, 'type_filters.filters.category.option', id)
-    } else if (process.env.NODE_ENV !== 'development') {
+    } else {
       throw new Error(`Invalid category: ${filters.category.value}`)
     }
   }

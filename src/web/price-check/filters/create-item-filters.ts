@@ -85,7 +85,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     }
 
     // @TODO: juicy corrupted maps
-  } if (
+  } else if (
     item.category === ItemCategory.HeistContract ||
     item.category === ItemCategory.HeistBlueprint
   ) {
