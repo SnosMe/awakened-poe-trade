@@ -36,6 +36,12 @@
         <hotkey-input v-model="config.mapCheckKey" class="w-48" />
       </div>
     </div>
+    <div v-if="config.language === 'en'" class="mb-4">
+      <div class="flex">
+        <div class="flex-1">Open base item on Craft of Exile</div>
+        <hotkey-input v-model="config.craftOfExileKey" class="w-48" />
+      </div>
+    </div>
     <div class="mb-8">
       <div class="flex">
         <div class="flex-1">{{ $t('Delve grid') }}</div>

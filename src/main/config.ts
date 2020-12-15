@@ -32,6 +32,7 @@ export const config = (() => {
 
   if (forbidden.includes(config.priceCheckLocked as string)) { config.priceCheckLocked = null }
   if (forbidden.includes(config.wikiKey as string)) { config.wikiKey = null }
+  if (forbidden.includes(config.craftOfExileKey as string)) { config.craftOfExileKey = null }
   if (forbidden.includes(config.mapCheckKey as string)) { config.mapCheckKey = null }
   if (config.priceCheckKeyHold === 'Ctrl' && forbiddenCtrl.includes(config.priceCheckKey as string)) {
     config.priceCheckKey = null
