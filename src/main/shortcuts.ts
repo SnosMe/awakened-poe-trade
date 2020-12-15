@@ -76,9 +76,9 @@ function registerGlobal () {
       }
     ),
     shortcutCallback(
-      config.get('coeKey'),
+      config.get('craftOfExileKey'),
       () => {
-        pollClipboard().then(openCOE).catch(() => {})
+        pollClipboard().then(openCraftOfExile).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }
     ),
@@ -161,9 +161,9 @@ export function setupShortcuts () {
         pollClipboard().then(openWiki).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }).cb()
-    } else if (pressed === config.get('coeKey')) {
+    } else if (pressed === config.get('craftOfExileKey')) {
       shortcutCallback(pressed, () => {
-        pollClipboard().then(openCOE).catch(() => {})
+        pollClipboard().then(openCraftOfExile).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }).cb()
     } else if (pressed === config.get('mapCheckKey')) {
@@ -221,7 +221,7 @@ function openWiki (clipboard: string) {
   overlayWindow!.webContents.send(ipc.OPEN_WIKI, clipboard)
 }
 
-function openCOE (clipboard: string) {
+function openCraftOfExile (clipboard: string) {
   overlayWindow!.webContents.send(ipc.OPEN_COE, clipboard)
 }
 

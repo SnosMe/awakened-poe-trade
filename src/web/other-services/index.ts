@@ -1,7 +1,7 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import * as ipc from '@/ipc/ipc-event'
 import { openWiki } from './wiki'
-import { openCOE } from './coe'
+import { openCOE } from './craft-of-exile'
 import { handleLine } from '../client-log/client-log'
 
 export function registerOtherServices () {

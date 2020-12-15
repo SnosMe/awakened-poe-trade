@@ -36,10 +36,10 @@
         <hotkey-input v-model="config.mapCheckKey" class="w-48" />
       </div>
     </div>
-    <div v-if="showCraftOfExileSetting" class="mb-4">
+    <div v-if="config.language === 'en'" class="mb-4">
       <div class="flex">
-        <div class="flex-1">Open base on craftofexile</div>
-        <hotkey-input v-model="config.coeKey" class="w-48" />
+        <div class="flex-1">Open base item on Craft of Exile</div>
+        <hotkey-input v-model="config.craftOfExileKey" class="w-48" />
       </div>
     </div>
     <div class="mb-8">
@@ -67,10 +67,6 @@ import { Config } from '@/web/Config'
 export default {
   components: { HotkeyInput },
   computed: {
-    showCraftOfExileSetting () {
-      if (Config.store.language !== 'en') return false
-      return true
-    },
     config () {
       return Config.store
     }
