@@ -21,7 +21,7 @@ export class RateLimiter {
   private async _wait (borrow: boolean, immediate = true): Promise<boolean> {
     if (this._destroyed) throw new Error('RateLimiter is no longer active')
 
-    if (this.state.stack.length === this.max) {
+    if (this.state.stack.length >= this.max) {
       this.state.queue++
       await this.state.stack[0]
       this.state.queue--
@@ -40,6 +40,15 @@ export class RateLimiter {
         this.state.stack.shift()
         resolve()
       }, this.window * 1000)
+    }))
+  }
+
+  forceSmallWait () {
+    this.state.stack.unshift(new Promise((resolve) => {
+      setTimeout(() => {
+        this.state.stack.shift()
+        resolve()
+      }, 1.5 * 1000)
     }))
   }
 
