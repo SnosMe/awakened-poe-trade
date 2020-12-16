@@ -27,6 +27,15 @@
       </div>
     </div>
     <div class="mb-2">
+      <div class="flex-1 mb-1">{{ $t('Minimum buyout price') }}</div>
+      <div class="mb-4 flex">
+        <div class="flex mr-6">
+          <input v-model.number="chaosPriceThreshold" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+          <span class="ml-2">{{ $t('Chaos Orbs') }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ $t('Show memorized cursor position') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="config.priceCheckShowCursor" :value="true" class="mr-4">{{ $t('Yes') }}</ui-radio>
@@ -44,6 +53,9 @@ export default {
     config () {
       return Config.store
     },
+    configWidget () {
+      return Config.store.widgets.find(w => w.wmType === 'price-check')
+    },
     searchStatRange: {
       set (value) {
         if (typeof value !== 'number') return
@@ -54,6 +66,16 @@ export default {
       },
       get () {
         return this.config.searchStatRange
+      }
+    },
+    chaosPriceThreshold: {
+      set (value) {
+        if (typeof value !== 'number') return
+
+        this.configWidget.chaosPriceThreshold = value
+      },
+      get () {
+        return this.configWidget.chaosPriceThreshold
       }
     }
   }
@@ -69,7 +91,9 @@ export default {
     "Your items will be highlighted even if it is turned off": "Ваши предметы будут подсвечены, даже если это отключено",
     "Fill stat values": "Заполнять значения свойств",
     "Exact roll": "Точное значение",
-    "Show memorized cursor position": "Показывать запомненную позицию курсора"
+    "Show memorized cursor position": "Показывать запомненную позицию курсора",
+    "Minimum buyout price": "Минимальная цена выкупа",
+    "Chaos Orbs": "Сфер хаоса"
   }
 }
 </i18n>

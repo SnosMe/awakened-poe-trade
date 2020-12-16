@@ -49,6 +49,10 @@ interface Widget {
   [key: string]: any
 }
 
+export interface PriceCheckWidget extends Widget {
+  chaosPriceThreshold: number
+}
+
 type WidgetWellKnownFlag =
   'uninitialized' |
   'skip-menu' |
@@ -59,7 +63,7 @@ type WidgetWellKnownFlag =
   'hide-on-focus'
 
 export const defaultConfig: Config = {
-  configVersion: 3,
+  configVersion: 4,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -126,8 +130,9 @@ export const defaultConfig: Config = {
       wmTitle: '',
       wmWants: 'hide',
       wmZorder: 'exclusive',
-      wmFlags: ['hide-on-blur', 'skip-menu']
-    },
+      wmFlags: ['hide-on-blur', 'skip-menu'],
+      chaosPriceThreshold: 0.05
+    } as PriceCheckWidget,
     {
       wmId: 3,
       wmType: 'map-check',

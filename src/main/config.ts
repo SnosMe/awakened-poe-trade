@@ -78,6 +78,13 @@ export const config = (() => {
     config.configVersion = 3
   }
 
+  if (config.configVersion < 4) {
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .chaosPriceThreshold = 0.05
+
+    config.configVersion = 4
+  }
+
   store.store = config
   return store
 })()

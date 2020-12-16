@@ -5,6 +5,8 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES } from './common'
 import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
+import { Config } from '@/web/Config'
+import { PriceCheckWidget } from '@/ipc/types'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -143,6 +145,7 @@ interface TradeRequest { /* eslint-disable camelcase */
         filters: {
           sale_type: { option: 'priced' }
           indexed?: { option?: string }
+          price?: FilterRange | { option?: string }
         }
       }
     }
@@ -212,6 +215,13 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
   const { query } = body
+
+  {
+    const cfg = Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
+    if (cfg.chaosPriceThreshold !== 0) {
+      prop.set(query.filters, 'trade_filters.filters.price.min', cfg.chaosPriceThreshold)
+    }
+  }
 
   if (filters.trade.listed) {
     prop.set(query.filters, 'trade_filters.filters.indexed.option', filters.trade.listed)
