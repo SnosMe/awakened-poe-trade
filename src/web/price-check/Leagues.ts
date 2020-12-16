@@ -34,10 +34,10 @@ export class LeaguesService {
     this.state.loadingError = undefined
 
     try {
-      const response = await fetch('https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
+      const response = await fetch('https://api.pathofexile.com/leagues?type=main&realm=pc')
       if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
-      const leagues: Array<{ id: string }> = await response.json()
-      const tradeLeagues = leagues.filter(league => !league.id.startsWith('SSF '))
+      const leagues: Array<{ id: string, rules: Array<{ id: string }> }> = await response.json()
+      const tradeLeagues = leagues.filter(league => !league.rules.some(rule => rule.id === 'NoParties'))
       this.state.tradeLeagues = tradeLeagues
 
       const leagueIsAlive = tradeLeagues.some(league => league.id === Config.store.leagueId)
