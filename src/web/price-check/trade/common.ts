@@ -71,28 +71,38 @@ export const RATE_LIMIT_RULES = {
   ]
 }
 
-export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers) { /* eslint-disable no-console */
-  const DEBUG = false
-  const DESYNC_FIX = 1
+export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers) {
+  if (!headers.has('x-rate-limit-rules')) return clientLimits
 
-  if (!headers.has('x-rate-limit-ip') || !headers.get('x-rate-limit-ip-state')) return clientLimits
+  const rules = headers.get('x-rate-limit-rules')!.split(',')
 
-  const limitIpState = headers.get('x-rate-limit-ip-state')!
+  return _adjustRateLimits(
+    clientLimits,
+    rules.map(rule => headers.get(`x-rate-limit-${rule}`)!).join(','),
+    rules.map(rule => headers.get(`x-rate-limit-${rule}-state`)!).join(',')
+  )
+}
+
+function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, stateStr: string) { /* eslint-disable no-console */
+  const DEBUG = true
+  const DESYNC_FIX = 0
+
+  const limitRuleState = stateStr
     .split(',')
     .map(rule => rule.split(':'))
     .map(rule => Number(rule[0]))
-  const limitIp = headers.get('x-rate-limit-ip')!
+  const limitRule = limitStr
     .split(',')
     .map(rule => rule.split(':'))
     .map((rule, idx) => ({
       max: Number(rule[0]),
-      window: Number(rule[1]) + (DESYNC_FIX + (idx + 1)),
-      state: limitIpState[idx]
+      window: Number(rule[1]) + DESYNC_FIX,
+      state: limitRuleState[idx]
     }))
 
   // destroy
   for (const limit of clientLimits) {
-    const isActive = limitIp.some(serverLimit => limit.isEqualLimit(serverLimit))
+    const isActive = limitRule.some(serverLimit => limit.isEqualLimit(serverLimit))
     if (!isActive) {
       limit.destroy()
       DEBUG && console.log('Destroy', limit.toString())
@@ -101,28 +111,25 @@ export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers)
 
   // filter active
   clientLimits = clientLimits.filter(limit =>
-    limitIp.some(serverLimit => limit.isEqualLimit(serverLimit))
+    limitRule.some(serverLimit => limit.isEqualLimit(serverLimit))
   )
 
   // compare client<>server state
   for (const limit of clientLimits) {
-    const serverLimit = limitIp.find(serverLimit => limit.isEqualLimit(serverLimit))!
+    const serverLimit = limitRule.find(serverLimit => limit.isEqualLimit(serverLimit))!
     const delta = (serverLimit.state - limit.state.stack.length)
 
     if (delta === 0) {
       DEBUG && console.log('Limits are in sync')
     } else if (delta > 0) {
       DEBUG && console.error(`Rate limit state on Server is greater by ${Math.abs(delta)}. Bursting to prevent rate limiting.`)
-      Array(delta).fill(undefined).forEach(() => {
-        limit.wait()
-      })
     } else if (delta < 0) {
       DEBUG && console.warn(`Rate limit state on Client is greater by ${Math.abs(delta)}`)
     }
   }
 
   // add new
-  for (const serverLimit of limitIp) {
+  for (const serverLimit of limitRule) {
     if (clientLimits.some(limit => limit.isEqualLimit(serverLimit))) continue
 
     const rl = new RateLimiter(serverLimit.max, serverLimit.window)
