@@ -39,4 +39,4 @@ permalink: /faq
 
 - **I downloaded a zip with a bunch of files, but no .exe inside?**
 
-  You have downloaded the source code, download [here](/download)
+  You have downloaded the source code, download [here]({{ "/download" | relative_url }})
