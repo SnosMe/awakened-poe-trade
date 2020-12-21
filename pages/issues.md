@@ -4,7 +4,7 @@ title: Common issues
 permalink: /issues
 ---
 
-- Read the [requirements](/download) again.
+- Read the [requirements]({{ "/download" | relative_url }}) again.
 - Do you play Vulkan? Update your GPU drivers.
 - Delete `%appdata%\awakened-poe-trade`\
   *(if needed, backup `apt-data` folder inside)*{:.text-sm}
