@@ -1,10 +1,7 @@
-import { percentRollDelta } from '../util'
-import { INTERNAL_TRADE_ID, StatFilter } from '../interfaces'
+import { rollToFilter } from '../util'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
 import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
-import { UNIQUES } from '@/assets/data'
 import { ARMOUR, WEAPON } from '@/parser/meta'
-import { Config } from '@/web/Config'
 import { internalPropStat } from './util'
 
 export function filterUniqueItemProp (ctx: FiltersCreationContext) {
@@ -28,42 +25,49 @@ const ARMOUR_STATS = new Set<string>([
 function armourProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType}`)
-
   if (item.props.armour) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.armour, QUALITY_STATS.ARMOUR, item))
 
-    ctx.filters.push(propToFilter(
-      totalQ20,
-      uniqueInfo?.props.ar,
-      'armour.armour',
-      'armour',
-      'Armour: #'
-    ))
+    ctx.filters.push({
+      ...internalPropStat(
+        'armour.armour',
+        'Armour: #',
+        'armour'
+      ),
+      disabled: true,
+      hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
+      ...rollToFilter(totalQ20, { neverNegated: true })
+    })
   }
 
   if (item.props.evasion) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.evasion, QUALITY_STATS.EVASION, item))
 
-    ctx.filters.push(propToFilter(
-      totalQ20,
-      uniqueInfo?.props.ev,
-      'armour.evasion_rating',
-      'armour',
-      'Evasion Rating: #'
-    ))
+    ctx.filters.push({
+      ...internalPropStat(
+        'armour.evasion_rating',
+        'Evasion Rating: #',
+        'armour'
+      ),
+      disabled: true,
+      hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
+      ...rollToFilter(totalQ20, { neverNegated: true })
+    })
   }
 
   if (item.props.energyShield) {
     const totalQ20 = Math.floor(propAt20Quality(item.props.energyShield, QUALITY_STATS.ENERGY_SHIELD, item))
 
-    ctx.filters.push(propToFilter(
-      totalQ20,
-      uniqueInfo?.props.es,
-      'armour.energy_shield',
-      'armour',
-      'Energy Shield: #'
-    ))
+    ctx.filters.push({
+      ...internalPropStat(
+        'armour.energy_shield',
+        'Energy Shield: #',
+        'armour'
+      ),
+      disabled: true,
+      hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
+      ...rollToFilter(totalQ20, { neverNegated: true })
+    })
   }
 
   createHiddenFilters(ctx, ARMOUR_STATS)
@@ -77,97 +81,35 @@ const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType}`)
-
   if (item.props.physicalDamage) {
     const physQ20 = variablePropAt20Quality(item.props.physicalDamage!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
     const pdpsQ20 = Math.floor((physQ20[0] + physQ20[1]) / 2 * item.props.attackSpeed!)
 
-    ctx.filters.push(propToFilter(
-      pdpsQ20,
-      uniqueInfo?.props.pdps,
-      'weapon.physical_dps',
-      'weapon',
-      'Physical DPS: #'
-    ))
+    ctx.filters.push({
+      ...internalPropStat(
+        'weapon.physical_dps',
+        'Physical DPS: #',
+        'weapon'
+      ),
+      disabled: true,
+      hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
+      ...rollToFilter(pdpsQ20, { neverNegated: true })
+    })
   }
 
   createHiddenFilters(ctx, WEAPON_STATS)
 }
 
 function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
-  for (const m of ctx.modifiers) {
-    if (stats.has(m.stat.ref)) {
-      const filter = itemModToFilter(m, ctx.item)
-      filter.hidden = 'Contributes to the item property'
-      ctx.filters.push(filter)
+  if (ctx.item.isCorrupted) {
+    for (const m of ctx.modifiers) {
+      if (stats.has(m.stat.ref)) {
+        const filter = itemModToFilter(m, ctx.item)
+        filter.hidden = 'Contributes to the item property'
+        ctx.filters.push(filter)
+      }
     }
-  }
 
-  ctx.modifiers = ctx.modifiers.filter(m => !stats.has(m.stat.ref))
-}
-
-const TOLERANCE = 4
-
-function isWithinBounds (value: number, bounds: { min: number, max: number }) {
-  return ((value + TOLERANCE) >= bounds.min) && ((value - TOLERANCE) <= bounds.max)
-}
-
-function propToFilter (
-  totalQ20: number,
-  propInfo: { min: number, max: number } | undefined,
-  tradeId: INTERNAL_TRADE_ID,
-  type: 'armour' | 'weapon',
-  text: string
-): StatFilter {
-  if (propInfo && isWithinBounds(totalQ20, propInfo)) {
-    if (propInfo.min === propInfo.max) {
-      return ({
-        ...internalPropStat(
-          tradeId,
-          text,
-          type
-        ),
-        disabled: true,
-        hidden: 'Roll is not variable',
-        defaultMin: totalQ20,
-        defaultMax: totalQ20,
-        min: totalQ20,
-        max: totalQ20,
-        roll: totalQ20
-      })
-    } else {
-      const percent = Config.store.searchStatRange * 2
-      return ({
-        ...internalPropStat(
-          tradeId,
-          text,
-          type
-        ),
-        disabled: true,
-        boundMin: propInfo.min,
-        boundMax: propInfo.max,
-        defaultMin: Math.max(percentRollDelta(totalQ20, (propInfo.max - propInfo.min), -percent, Math.floor), propInfo.min),
-        defaultMax: Math.min(percentRollDelta(totalQ20, (propInfo.max - propInfo.min), +percent, Math.ceil), propInfo.max),
-        min: Math.max(percentRollDelta(totalQ20, (propInfo.max - propInfo.min), -percent, Math.floor), propInfo.min),
-        max: undefined,
-        roll: totalQ20
-      })
-    }
-  } else {
-    // missing unique (Two-Toned Boots) / stat affecting prop is variant (Atziri's Splendour) / corrupted implicit affecting prop
-    return ({
-      ...internalPropStat(
-        tradeId,
-        text,
-        type
-      ),
-      disabled: true,
-      defaultMin: totalQ20,
-      defaultMax: totalQ20,
-      min: totalQ20,
-      max: undefined,
-      roll: totalQ20
-    })
+    ctx.modifiers = ctx.modifiers.filter(m => !stats.has(m.stat.ref))
   }
 }

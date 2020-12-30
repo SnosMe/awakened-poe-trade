@@ -38,12 +38,6 @@ export interface UniqueItem {
   name: string
   basetype: string
   icon: string
-  props: {
-    pdps?: { min: number, max: number }
-    ar?: { min: number, max: number }
-    ev?: { min: number, max: number }
-    es?: { min: number, max: number }
-  }
   stats: Array<{
     text: string
     implicit?: true
