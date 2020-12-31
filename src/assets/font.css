@@ -2,29 +2,29 @@
   font-family:'FontinSmallCaps';
   font-weight:normal;
   font-style:normal;
-  src:local("☺"),url('./font/fontin-smallcaps-webfont.woff') format("woff")
+  src:url('./font/Fontin-SmallCaps-Hinted.ttf') format("truetype");
 }
 @font-face{
   font-family:'FontinRegular';
   font-weight:normal;
   font-style:normal;
-  src:local("☺"),url('./font/fontin-regular-webfont.woff') format("woff")
+  src:url('./font/Fontin-Regular-Hinted.ttf') format("truetype");
 }
 @font-face{
   font-family:'FontinItalic';
   font-weight:normal;
   font-style:normal;
-  src:local("☺"),url('./font/fontin-italic-webfont.woff') format("woff")
+  src:url('./font/Fontin-Italic-Hinted.ttf') format("truetype");
 }
 @font-face{
   font-family:'FontinBold';
   font-weight:normal;
   font-style:normal;
-  src:local("☺"),url('./font/fontin-bold-webfont.woff') format("woff")
+  src:url('./font/Fontin-Bold-Hinted.ttf') format("truetype");
 }
 @font-face {
   font-family: 'FrizQuadrataC';
   font-weight: normal;
   font-style: normal;
-  src: local("☺"), url('./font/FrizQuadrataC.woff') format("woff");
+  src:url('./font/FrizQuadrataITC-Hinted.ttf') format("truetype");
 }
