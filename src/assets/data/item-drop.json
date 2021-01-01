@@ -271,5 +271,519 @@
       "split-personality-crimson-jewel",
       "voices-large-cluster-jewel"
     ]
+  },
+
+
+
+
+
+
+
+
+  {
+    "query": [
+      "Power Magnified",
+      "Reverberation Rod Spiraled Wand"
+    ],
+    "items": [
+      "Amplification Rod Spiraled Wand"
+    ]
+  },
+  {
+    "query": [
+      "Song of the Sekhema",
+      "Asenath's Mark Iron Circlet"
+    ],
+    "items": [
+      "Asenath's Chant Iron Circlet"
+    ]
+  },
+  {
+    "query": [
+      "The Queen's Sacrifice",
+      "Atziri's Mirror Golden Buckler"
+    ],
+    "items": [
+      "Atziri's Reflection Golden Buckler"
+    ]
+  },
+  {
+    "query": [
+      "Cold Greed",
+      "Cameria's Maul Gavel"
+    ],
+    "items": [
+      "Cameria's Avarice Gavel"
+    ]
+  },
+  {
+    "query": [
+      "Faith Exhumed",
+      "Chober Chaber Great Mallet"
+    ],
+    "items": [
+      "Chaber Cairn Great Mallet"
+    ]
+  },
+  {
+    "query": [
+      "Blinding Light",
+      "Eclipse Solaris Crystal Wand"
+    ],
+    "items": [
+      "Corona Solaris Crystal Wand"
+    ]
+  },
+  {
+    "query": [
+      "Heavy Blows",
+      "Craghead Serrated Arrow Quiver"
+    ],
+    "items": [
+      "Cragfall Serrated Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "End of the Light",
+      "Icetomb Latticed Ringmail"
+    ],
+    "items": [
+      "Crystal Vault Latticed Ringmail"
+    ]
+  },
+  {
+    "query": [
+      "The Bowstring's Music",
+      "Death's Harp Death Bow"
+    ],
+    "items": [
+      "Death's Opus Death Bow"
+    ]
+  },
+  {
+    "query": [
+      "Dying Cry",
+      "Deidbell Gilded Sallet"
+    ],
+    "items": [
+      "Deidbellow Gilded Sallet"
+    ]
+  },
+  {
+    "query": [
+      "The Malevolent Witch",
+      "Doedre's Tenure Velvet Gloves"
+    ],
+    "items": [
+      "Doedre's Malevolence Velvet Gloves"
+    ]
+  },
+  {
+    "query": [
+      "Ancient Doom",
+      "Doomfletch Royal Bow"
+    ],
+    "items": [
+      "Doomfletch's Prism Royal Bow"
+    ]
+  },
+  {
+    "query": [
+      "The Dreaded Rhoa",
+      "Redbeak Rusted Sword"
+    ],
+    "items": [
+      "Dreadbeak Rusted Sword"
+    ]
+  },
+  {
+    "query": [
+      "Burning Dread",
+      "Dreadarc Cleaver"
+    ],
+    "items": [
+      "Dreadsurge Cleaver"
+    ]
+  },
+  {
+    "query": [
+      "Agony at Dusk",
+      "Dusktoe Ironscale Boots"
+    ],
+    "items": [
+      "Duskblight Ironscale Boots"
+    ]
+  },
+  {
+    "query": [
+      "The Bloody Flowers Redux",
+      "Ezomyte Peak Iron Hat"
+    ],
+    "items": [
+      "Ezomyte Hold Iron Hat"
+    ]
+  },
+  {
+    "query": [
+      "Dark Instincts",
+      "Foxshade Wild Leather"
+    ],
+    "items": [
+      "Fox's Fortune Wild Leather"
+    ]
+  },
+  {
+    "query": [
+      "A Vision of Ice and Fire",
+      "Heatshiver Leather Hood"
+    ],
+    "items": [
+      "Frostferno Leather Hood"
+    ]
+  },
+  {
+    "query": [
+      "Black Devotion",
+      "Geofri's Baptism Brass Maul"
+    ],
+    "items": [
+      "Geofri's Devotion Brass Maul"
+    ]
+  },
+  {
+    "query": [
+      "The Bishop's Legacy",
+      "Geofri's Crest Great Crown"
+    ],
+    "items": [
+      "Geofri's Legacy Great Crown"
+    ]
+  },
+  {
+    "query": [
+      "Greed's Folly",
+      "Wondertrap Velvet Slippers"
+    ],
+    "items": [
+      "Greedtrap Velvet Slippers"
+    ]
+  },
+  {
+    "query": [
+      "Fire and Ice",
+      "Hrimsorrow Goathide Gloves"
+    ],
+    "items": [
+      "Hrimburn Goathide Gloves"
+    ]
+  },
+  {
+    "query": [
+      "Winter's Mournful Melodies",
+      "Hrimnor's Hymn Sledgehammer"
+    ],
+    "items": [
+      "Hrimnor's Dirge Sledgehammer"
+    ]
+  },
+  {
+    "query": [
+      "A Dishonourable Death",
+      "Hyrri's Bite Sharktooth Arrow Quiver"
+    ],
+    "items": [
+      "Hyrri's Demise Sharktooth Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "The Snuffed Flame",
+      "Kaltenhalt Painted Buckler"
+    ],
+    "items": [
+      "Kaltensoul Painted Buckler"
+    ]
+  },
+  {
+    "query": [
+      "The King's Path",
+      "Kaom's Sign Coral Ring"
+    ],
+    "items": [
+      "Kaom's Way Coral Ring"
+    ]
+  },
+  {
+    "query": [
+      "The Karui Rebellion",
+      "Karui Ward Jade Amulet"
+    ],
+    "items": [
+      "Karui Charge Jade Amulet"
+    ]
+  },
+  {
+    "query": [
+      "The Nightmare Awakens",
+      "Malachai's Simula Iron Mask"
+    ],
+    "items": [
+      "Malachai's Awakening Iron Mask"
+    ]
+  },
+  {
+    "query": [
+      "Pleasure and Pain",
+      "Crown of Thorns Vine Circlet"
+    ],
+    "items": [
+      "Martyr's Crown Vine Circlet"
+    ]
+  },
+  {
+    "query": [
+      "Trapped in the Tower",
+      "Fencoil Gnarled Branch"
+    ],
+    "items": [
+      "Mirebough Gnarled Branch"
+    ]
+  },
+  {
+    "query": [
+      "A Forest of False Idols",
+      "Araku Tiki Coral Amulet"
+    ],
+    "items": [
+      "Ngamahu Tiki Coral Amulet"
+    ]
+  },
+  {
+    "query": [
+      "The Fall of an Empire",
+      "Quecholli Jagged Maul"
+    ],
+    "items": [
+      "Panquetzaliztli Jagged Maul"
+    ]
+  },
+  {
+    "query": [
+      "The Misunderstood Queen",
+      "Queen's Decree Ornate Sword"
+    ],
+    "items": [
+      "Queen's Escape Ornate Sword"
+    ]
+  },
+  {
+    "query": [
+      "The Beginning and the End",
+      "Realmshaper Iron Staff"
+    ],
+    "items": [
+      "Realm Ender Iron Staff"
+    ]
+  },
+  {
+    "query": [
+      "Crimson Hues",
+      "Goredrill Skinning Knife"
+    ],
+    "items": [
+      "Sanguine Gambol Skinning Knife"
+    ]
+  },
+  {
+    "query": [
+      "The Flow of Energy",
+      "Shavronne's Pace Scholar Boots"
+    ],
+    "items": [
+      "Shavronne's Gambit Scholar Boots"
+    ]
+  },
+  {
+    "query": [
+      "The Silverwood",
+      "Silverbranch Crude Bow"
+    ],
+    "items": [
+      "Silverbough Crude Bow"
+    ]
+  },
+  {
+    "query": [
+      "Sun's Punishment",
+      "Sundance Clasped Boots"
+    ],
+    "items": [
+      "Sunspite Clasped Boots"
+    ]
+  },
+  {
+    "query": [
+      "Severed Limbs",
+      "Limbsplit Woodsplitter"
+    ],
+    "items": [
+      "The Cauteriser Woodsplitter"
+    ]
+  },
+  {
+    "query": [
+      "Dance of Steel",
+      "The Dancing Dervish Reaver Sword"
+    ],
+    "items": [
+      "The Dancing Duo Reaver Sword"
+    ]
+  },
+  {
+    "query": [
+      "Blind Faith",
+      "The Ignomon Gold Amulet"
+    ],
+    "items": [
+      "The Effigon Gold Amulet"
+    ]
+  },
+  {
+    "query": [
+      "The Apex Predator",
+      "The Screaming Eagle Jade Hatchet"
+    ],
+    "items": [
+      "The Gryphon Jade Hatchet"
+    ]
+  },
+  {
+    "query": [
+      "Battle Hardened",
+      "Iron Heart Crusader Plate"
+    ],
+    "items": [
+      "The Iron Fortress Crusader Plate"
+    ]
+  },
+  {
+    "query": [
+      "The Great Leader of the North",
+      "The Great Mind of the North",
+      "The Magnate Studded Belt"
+    ],
+    "items": [
+      "The Nomad Studded Belt",
+      "The Tactician Studded Belt"
+    ]
+  },
+  {
+    "query": [
+      "Nature's Resilience",
+      "Springleaf Plank Kite Shield"
+    ],
+    "items": [
+      "The Oak Plank Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "Fire and Brimstone",
+      "Blackgleam Fire Arrow Quiver"
+    ],
+    "items": [
+      "The Signal Fire Fire Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "The Storm Spire",
+      "The Stormheart Royal Staff"
+    ],
+    "items": [
+      "The Stormwall Royal Staff"
+    ]
+  },
+  {
+    "query": [
+      "The Servant's Heart",
+      "Storm Cloud Long Bow"
+    ],
+    "items": [
+      "The Tempest Long Bow"
+    ]
+  },
+  {
+    "query": [
+      "Mouth of Horrors",
+      "Chalice of Horrors War Buckler"
+    ],
+    "items": [
+      "Thirst for Horrors War Buckler"
+    ]
+  },
+  {
+    "query": [
+      "A Rift in Time",
+      "Timeclasp Moonstone Ring"
+    ],
+    "items": [
+      "Timetwist Moonstone Ring"
+    ]
+  },
+  {
+    "query": [
+      "From The Void",
+      "Blackheart Iron Ring"
+    ],
+    "items": [
+      "Voidheart Iron Ring"
+    ]
+  },
+  {
+    "query": [
+      "The King and the Brambles",
+      "Bramblejack Plate Vest"
+    ],
+    "items": [
+      "Wall of Brambles Plate Vest"
+    ]
+  },
+  {
+    "query": [
+      "The Mentor",
+      "Matua Tupuna Tarnished Spirit Shield"
+    ],
+    "items": [
+      "Whakatutuki o Matua Tarnished Spirit Shield"
+    ]
+  },
+  {
+    "query": [
+      "Last of the Wildmen",
+      "Briskwrap Strapped Leather"
+    ],
+    "items": [
+      "Wildwrap Strapped Leather"
+    ]
+  },
+  {
+    "query": [
+      "Darktongue's Shriek",
+      "Windscream Reinforced Greaves"
+    ],
+    "items": [
+      "Windshriek Reinforced Greaves"
+    ]
+  },
+  {
+    "query": [
+      "Cold Blooded Fury",
+      "Bloodboil Coral Ring"
+    ],
+    "items": [
+      "Winterweave Coral Ring"
+    ]
   }
 ]

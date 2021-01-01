@@ -2,6 +2,7 @@ import type { TranslationDict } from '@/assets/data/en/client_strings'
 import type { ClientLogDict } from '@/assets/data/en/client_log'
 import type { BaseType, DropEntry, Stat, StatMatcher, UniqueItem } from './interfaces'
 import { Config } from '@/web/Config'
+import { nameToDetailsId } from '@/web/price-check/trends/getDetailsId'
 
 export * from './interfaces'
 
@@ -74,7 +75,10 @@ export const ITEM_DROP = new Map<string, DropEntry>()
     const itemDrop: DropEntry[] = (require('./item-drop.json'))
     for (const entry of itemDrop) {
       for (const query of entry.query) {
-        ITEM_DROP.set(query, entry)
+        ITEM_DROP.set(nameToDetailsId(query), {
+          items: entry.items.map(nameToDetailsId),
+          query: entry.query.map(nameToDetailsId)
+        })
       }
     }
   }
