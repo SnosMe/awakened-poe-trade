@@ -282,6 +282,87 @@
 
   {
     "query": [
+      "Primordial Might Crimson Jewel",
+      "Primordial Harmony Cobalt Jewel",
+      "Primordial Eminence Viridian Jewel"
+    ],
+    "items": [
+      "The Anima Stone Prismatic Jewel"
+    ]
+  },
+  {
+    "query": [
+      "Grelwood Shank Eternal Sword",
+      "Beltimber Blade Eternal Sword"
+    ],
+    "items": [
+      "Arborix Assassin Bow"
+    ]
+  },
+  {
+    "query": [
+      "Shade of Solaris Sage Wand",
+      "Light of Lunaris Jingling Spirit Shield"
+    ],
+    "items": [
+      "Duskdawn Maelström Staff"
+    ]
+  },
+  {
+    "query": [
+      "The Goddess Bound Whalebone Rapier"
+    ],
+    "items": [
+      "The Goddess Scorned Elegant Sword"
+    ]
+  },
+  {
+    "query": [
+      "Soul Taker Siege Axe",
+      "Heartbreaker Royal Skean"
+    ],
+    "items": [
+      "Kingmaker Despot Axe"
+    ]
+  },
+  {
+    "query": [
+      "Invictus Solaris Archon Kite Shield",
+      "Vix Lunaris Cardinal Round Shield"
+    ],
+    "items": [
+      "Magna Eclipsis Pinnacle Tower Shield"
+    ]
+  },
+  {
+    "query": [
+      "Feastbind Rustic Sash",
+      "Faminebind Rustic Sash"
+    ],
+    "items": [
+      "The Retch Rustic Sash"
+    ]
+  },
+  {
+    "query": [
+      "Berek's Grip Two-Stone Ring",
+      "Berek's Pass Two-Stone Ring",
+      "Berek's Respite Two-Stone Ring"
+    ],
+    "items": [
+      "The Taming Prismatic Ring"
+    ]
+  },
+
+
+
+
+
+
+
+
+  {
+    "query": [
       "Power Magnified",
       "Reverberation Rod Spiraled Wand"
     ],
