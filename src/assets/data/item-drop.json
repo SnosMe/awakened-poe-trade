@@ -353,6 +353,276 @@
       "The Taming Prismatic Ring"
     ]
   },
+  {
+    "query": [
+      "First Piece of Brutality Imperial Staff Piece",
+      "Second Piece of Brutality Imperial Staff Piece",
+      "Third Piece of Brutality Imperial Staff Piece"
+    ],
+    "items": [
+      "The Enmity Divine Imperial Staff"
+    ]
+  },
+  {
+    "query": [
+      "The Enmity Divine Imperial Staff",
+      "Haemocombustion Scroll"
+    ],
+    "items": [
+      "The Yielding Mortality Imperial Staff"
+    ]
+  },
+  {
+    "query": [
+      "First Piece of Directions Blunt Arrow Quiver Piece",
+      "Second Piece of Directions Blunt Arrow Quiver Piece",
+      "Third Piece of Directions Blunt Arrow Quiver Piece"
+    ],
+    "items": [
+      "The Fracturing Spinner Blunt Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "The Fracturing Spinner Blunt Arrow Quiver",
+      "Fragmentation Scroll"
+    ],
+    "items": [
+      "The Shattered Divinity Blunt Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "First Piece of Focus Archon Kite Shield Piece",
+      "Second Piece of Focus Archon Kite Shield Piece",
+      "Third Piece of Focus Archon Kite Shield Piece",
+      "Fourth Piece of Focus Archon Kite Shield Piece"
+    ],
+    "items": [
+      "The Unshattered Will Archon Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "The Unshattered Will Archon Kite Shield",
+      "Specularity Scroll"
+    ],
+    "items": [
+      "The Immortal Will Archon Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "First Piece of Storms Callous Mask Piece",
+      "Second Piece of Storms Callous Mask Piece",
+      "Third Piece of Storms Callous Mask Piece"
+    ],
+    "items": [
+      "The Tempest's Binding Callous Mask"
+    ]
+  },
+  {
+    "query": [
+      "The Tempest's Binding Callous Mask",
+      "Deregulation Scroll"
+    ],
+    "items": [
+      "The Tempest's Liberation Callous Mask"
+    ]
+  },
+  {
+    "query": [
+      "First Piece of the Arcane Legion Sword Piece",
+      "Second Piece of the Arcane Legion Sword Piece",
+      "Third Piece of the Arcane Legion Sword Piece"
+    ],
+    "items": [
+      "The Rippling Thoughts Legion Sword"
+    ]
+  },
+  {
+    "query": [
+      "The Rippling Thoughts Legion Sword",
+      "Electroshock Scroll"
+    ],
+    "items": [
+      "The Surging Thoughts Legion Sword"
+    ]
+  },
+  {
+    "query": [
+      "First Piece of Time Cloth Belt Piece",
+      "Second Piece of Time Cloth Belt Piece"
+    ],
+    "items": [
+      "The Flow Untethered Cloth Belt"
+    ]
+  },
+  {
+    "query": [
+      "The Flow Untethered Cloth Belt",
+      "Time-light Scroll"
+    ],
+    "items": [
+      "The Torrent's Reclamation Cloth Belt"
+    ]
+  },
+  {
+    "query": [
+      "The Blue Dream Cobalt Jewel",
+      "Skin of the Loyal Simple Robe",
+      "The Red Dream Crimson Jewel",
+      "Severed in Sleep Cutlass",
+      "Eye of Chayula Onyx Amulet",
+      "The Green Dream Viridian Jewel",
+      "Blessing of Chayula"
+    ],
+    "items": [
+      "The Blue Nightmare Cobalt Jewel",
+      "Skin of the Lords Simple Robe",
+      "The Red Nightmare Crimson Jewel",
+      "United in Dream Cutlass",
+      "Presence of Chayula Onyx Amulet",
+      "The Green Nightmare Viridian Jewel"
+    ]
+  },
+  {
+    "query": [
+      "Esh's Mirror Thorium Spirit Shield",
+      "Voice of the Storm Lapis Amulet",
+      "Hand of Thought and Motion Blinder",
+      "Blessing of Esh"
+    ],
+    "items": [
+      "Esh's Visage Vaal Spirit Shield",
+      "Choir of the Storm Lapis Amulet",
+      "Hand of Wisdom and Action Imperial Claw"
+    ]
+  },
+  {
+    "query": [
+      "Tulborn Spiraled Wand",
+      "The Snowblind Grace Coronal Leather",
+      "The Halcyon Jade Amulet",
+      "Blessing of Tul"
+    ],
+    "items": [
+      "Tulfall Tornado Wand",
+      "The Perfect Form Zodiac Leather",
+      "The Pandemonius Jade Amulet"
+    ]
+  },
+  {
+    "query": [
+      "The Infinite Pursuit Goliath Greaves",
+      "The Anticipation Ezomyte Tower Shield",
+      "Uul-Netol's Kiss Labrys",
+      "Blessing of Uul-Netol"
+    ],
+    "items": [
+      "The Red Trail Titan Greaves",
+      "The Surrender Ezomyte Tower Shield",
+      "Uul-Netol's Embrace Vaal Axe"
+    ]
+  },
+  {
+    "query": [
+      "The Formless Flame Siege Helmet",
+      "Xoph's Inception Bone Bow",
+      "Xoph's Heart Amber Amulet",
+      "Blessing of Xoph"
+    ],
+    "items": [
+      "The Formless Inferno Royal Burgonet",
+      "Xoph's Nurture Citadel Bow",
+      "Xoph's Blood Amber Amulet"
+    ]
+  },
+  {
+    "query": [
+      "Vial of Awakening",
+      "Apep's Slumber Ancient Spirit Shield"
+    ],
+    "items": [
+      "Apep's Supremacy Vaal Spirit Shield"
+    ]
+  },
+  {
+    "query": [
+      "Vial of Consequence",
+      "Coward's Chains Chain Belt"
+    ],
+    "items": [
+      "Coward's Legacy Chain Belt"
+    ]
+  },
+  {
+    "query": [
+      "Vial of Dominance",
+      "Architect's Hand Strapped Mitts"
+    ],
+    "items": [
+      "Slavedriver's Hand Ambush Mitts"
+    ]
+  },
+  {
+    "query": [
+      "Vial of Fate",
+      "Story of the Vaal Variscite Blade"
+    ],
+    "items": [
+      "Fate of the Vaal Gemstone Sword"
+    ]
+  },
+  {
+    "query": [
+      "Vial of Summoning",
+      "Mask of the Spirit Drinker Crusader Helmet"
+    ],
+    "items": [
+      "Mask of the Stitched Demon Magistrate Crown"
+    ]
+  },
+  {
+    "query": [
+      "Vial of the Ritual",
+      "Dance of the Offered Shackled Boots"
+    ],
+    "items": [
+      "Omeyocan Carnal Boots"
+    ]
+  },
+  {
+    "query": [
+      "Tempered Flesh Crimson Jewel",
+      "Tempered Spirit Viridian Jewel",
+      "Tempered Mind Cobalt Jewel",
+      "Vial of Transcendence"
+    ],
+    "items": [
+      "Transcendent Flesh Crimson Jewel",
+      "Transcendent Spirit Viridian Jewel",
+      "Transcendent Mind Cobalt Jewel"
+    ]
+  },
+  {
+    "query": [
+      "Vial of Sacrifice",
+      "Sacrificial Heart Paua Amulet"
+    ],
+    "items": [
+      "Zerphi's Heart Paua Amulet"
+    ]
+  },
+  {
+    "query": [
+      "Vial of the Ghost",
+      "Soul Catcher Quartz Flask"
+    ],
+    "items": [
+      "Soul Ripper Quartz Flask"
+    ]
+  },
 
 
 
@@ -865,6 +1135,147 @@
     ],
     "items": [
       "Winterweave Coral Ring"
+    ]
+  },
+  {
+    "query": [
+      "Anarchy's End I",
+      "Anarchy's End II",
+      "Anarchy's End III",
+      "Anarchy's End IV"
+    ],
+    "items": [
+      "Voltaxic Rift Spine Bow"
+    ]
+  },
+  {
+    "query": [
+      "Beyond Sight I",
+      "Beyond Sight II",
+      "Beyond Sight III",
+      "Beyond Sight IV"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "Day of Sacrifice I",
+      "Day of Sacrifice II",
+      "Day of Sacrifice III",
+      "Day of Sacrifice IV"
+    ],
+    "items": [
+      "Sacrifice at Dawn",
+      "Sacrifice at Noon",
+      "Sacrifice at Dusk",
+      "Sacrifice at Midnight"
+    ]
+  },
+  {
+    "query": [
+      "Deadly Rivalry I",
+      "Deadly Rivalry II",
+      "Deadly Rivalry III",
+      "Deadly Rivalry IV",
+      "Deadly Rivalry V"
+    ],
+    "items": [
+      "Kintsugi Exquisite Leather"
+    ]
+  },
+  {
+    "query": [
+      "The Feral Lord I",
+      "The Feral Lord II",
+      "The Feral Lord III",
+      "The Feral Lord IV",
+      "The Feral Lord V"
+    ],
+    "items": [
+      "Yriel's Key",
+      "Reach of the Council Spine Bow"
+    ]
+  },
+  {
+    "query": [
+      "The Plaguemaw I",
+      "The Plaguemaw II",
+      "The Plaguemaw III",
+      "The Plaguemaw IV",
+      "The Plaguemaw V"
+    ],
+    "items": [
+      "Eber's Key",
+      "Breath of the Council Carnal Sceptre"
+    ]
+  },
+  {
+    "query": [
+      "Thaumaturgical History I",
+      "Thaumaturgical History II",
+      "Thaumaturgical History III",
+      "Thaumaturgical History IV"
+    ],
+    "items": [
+      "Ascent From Flesh Chain Belt"
+    ]
+  },
+  {
+    "query": [
+      "The Ambitious Bandit I",
+      "The Ambitious Bandit II",
+      "The Ambitious Bandit III"
+    ],
+    "items": [
+      "The Ascetic Gold Amulet"
+    ]
+  },
+  {
+    "query": [
+      "Unbearable Whispers I",
+      "Unbearable Whispers II",
+      "Unbearable Whispers III",
+      "Unbearable Whispers IV",
+      "Unbearable Whispers V"
+    ],
+    "items": [
+      "Inya's Key",
+      "Mind of the Council Harlequin Mask"
+    ]
+  },
+  {
+    "query": [
+      "The Unbreathing Queen I",
+      "The Unbreathing Queen II",
+      "The Unbreathing Queen III",
+      "The Unbreathing Queen IV",
+      "The Unbreathing Queen V"
+    ],
+    "items": [
+      "Volkuur's Key",
+      "Grip of the Council Arcanist Gloves"
+    ]
+  },
+  {
+    "query": [
+      "The Warmongers I",
+      "The Warmongers II",
+      "The Warmongers III",
+      "The Warmongers IV"
+    ],
+    "items": [
+      "Brinerot Flag Tarnished Spirit Shield",
+      "Redblade Banner Painted Tower Shield",
+      "Brinerot Whalers Trapper Boots",
+      "Mutewind Pennant Enameled Buckler",
+      "Mutewind Whispersteps Serpentscale Boots",
+      "Brinerot Mark Unset Ring",
+      "Mutewind Seal Unset Ring",
+      "Redblade Band Unset Ring",
+      "Redblade Tramplers Ancient Greaves",
+      "The Pariah Unset Ring",
+      "Steppan Eard Sorcerer Boots",
+      "Broken Faith Archon Kite Shield"
     ]
   }
 ]
