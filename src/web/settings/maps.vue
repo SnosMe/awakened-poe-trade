@@ -67,7 +67,7 @@ export default {
     statList () {
       return STATS.flatMap(stat =>
         stat.conditions.map(c => ({
-          matchRef: c.ref,
+          matchRef: c.string,
           text: c.string,
           searchStr: c.string.toLowerCase()
         }))

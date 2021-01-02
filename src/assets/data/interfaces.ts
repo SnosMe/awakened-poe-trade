@@ -2,7 +2,6 @@ import type { ItemCategory } from '@/parser'
 
 export interface StatMatcher {
   string: string
-  ref: string
   negate?: true
   condition?: {
     min?: number

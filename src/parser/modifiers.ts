@@ -98,7 +98,6 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
         stat: found.stat,
         statMatchers: found.matchers,
         string: found.matcher.string,
-        ref: found.matcher.ref,
         negate: found.matcher.negate,
         option: found.matcher.option,
         condition: found.matcher.condition,

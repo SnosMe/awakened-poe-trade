@@ -11,7 +11,7 @@ export function prepareMapStats (item: ParsedItem): PreparedStat[] {
   return item.modifiers.map(mod => {
     const prepared = {
       text: mod.string,
-      matchRef: mod.ref,
+      matchRef: mod.string,
       roll: mod.values && getRollAsSingleNumber(mod.values)
     }
 
