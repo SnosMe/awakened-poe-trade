@@ -7,6 +7,7 @@ import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { Config } from '@/web/Config'
 import { PriceCheckWidget } from '@/ipc/types'
+import { ModifierType } from '@/parser/modifiers'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -380,7 +381,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         type: 'not',
         disabled: stat.disabled,
         filters: [
-          tradeIdToQuery(STAT_BY_REF.get('Map is occupied by #')!.types[0].tradeId[0], stat)
+          tradeIdToQuery(STAT_BY_REF.get('Map is occupied by #')!.trade.ids[ModifierType.Implicit][0], stat)
         ]
       })
     }
@@ -438,7 +439,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         type: undefined!,
         min: undefined,
         max: undefined,
-        tradeId: STAT_BY_REF.get(statRef)!.types[0].tradeId
+        tradeId: STAT_BY_REF.get(statRef)!.trade.ids[ModifierType.Veiled]
       })
     }
   }
@@ -525,7 +526,9 @@ function tradeIdToQuery (id: string, stat: StatFilter) {
     id,
     value: {
       ...getMinMax(stat),
-      option: stat.option != null ? stat.option.tradeId : undefined
+      option: stat.option != null
+        ? (stat.option === 'str' ? String : Number)(stat.roll!)
+        : undefined
     },
     disabled: stat.disabled
   }

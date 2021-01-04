@@ -3,36 +3,36 @@ import { FiltersCreationContext } from '../create-stat-filters'
 import { rollToFilter } from '../util'
 import { stat } from '@/assets/data'
 
-const TO_ALL_RES = stat('#% to all Elemental Resistances')
+const TO_ALL_RES = stat('+#% to all Elemental Resistances')
 
 const ELEMENTAL_RES = [
   {
     pseudo: pseudoStat('+#% total to Fire Resistance'),
     stats: [
-      stat('#% to Fire Resistance'),
-      stat('#% to Fire and Lightning Resistances'),
-      stat('#% to Fire and Cold Resistances'),
-      stat('#% to Fire and Chaos Resistances'),
+      stat('+#% to Fire Resistance'),
+      stat('+#% to Fire and Lightning Resistances'),
+      stat('+#% to Fire and Cold Resistances'),
+      stat('+#% to Fire and Chaos Resistances'),
       TO_ALL_RES
     ]
   },
   {
     pseudo: pseudoStat('+#% total to Cold Resistance'),
     stats: [
-      stat('#% to Cold Resistance'),
-      stat('#% to Fire and Cold Resistances'),
-      stat('#% to Cold and Lightning Resistances'),
-      stat('#% to Cold and Chaos Resistances'),
+      stat('+#% to Cold Resistance'),
+      stat('+#% to Fire and Cold Resistances'),
+      stat('+#% to Cold and Lightning Resistances'),
+      stat('+#% to Cold and Chaos Resistances'),
       TO_ALL_RES
     ]
   },
   {
     pseudo: pseudoStat('+#% total to Lightning Resistance'),
     stats: [
-      stat('#% to Lightning Resistance'),
-      stat('#% to Fire and Lightning Resistances'),
-      stat('#% to Cold and Lightning Resistances'),
-      stat('#% to Lightning and Chaos Resistances'),
+      stat('+#% to Lightning Resistance'),
+      stat('+#% to Fire and Lightning Resistances'),
+      stat('+#% to Cold and Lightning Resistances'),
+      stat('+#% to Lightning and Chaos Resistances'),
       TO_ALL_RES
     ]
   }
@@ -40,12 +40,12 @@ const ELEMENTAL_RES = [
 
 const CHAOS_RES = {
   pseudo: pseudoStat('+#% total to Chaos Resistance'),
-  base: stat('#% to Chaos Resistance'),
+  base: stat('+#% to Chaos Resistance'),
   stats: [
-    stat('#% to Chaos Resistance'),
-    stat('#% to Fire and Chaos Resistances'),
-    stat('#% to Cold and Chaos Resistances'),
-    stat('#% to Lightning and Chaos Resistances')
+    stat('+#% to Chaos Resistance'),
+    stat('+#% to Fire and Chaos Resistances'),
+    stat('+#% to Cold and Chaos Resistances'),
+    stat('+#% to Lightning and Chaos Resistances')
   ]
 }
 

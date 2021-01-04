@@ -7,8 +7,8 @@
           'fas fa-check-square': !filter.disabled
         }"></i>
         <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-          <span class="truncate"><item-modifier-text :text="$t(filter.text)" :roll="filter.roll" /></span>
-          <span class="search-text-full"><item-modifier-text :text="$t(filter.text)" :roll="filter.roll" /></span>
+          <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="$t(filter.text)" :roll="filter.roll" /></span>
+          <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="$t(filter.text)" :roll="filter.roll" /></span>
         </div>
       </button>
       <div class="flex">
@@ -18,8 +18,6 @@
         <ui-input-debounced class="search-num-input rounded-tr" :placeholder="$t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMax"
           v-model.number="filter.max" @focus.native="inputFocus($event, 'max')" :delay="0" />
-        <div v-if="filter.option"
-          class="search-option">{{ filter.option.text }}</div>
       </div>
     </div>
     <div class="flex">
@@ -209,15 +207,6 @@ export default {
     @apply border-gray-500;
     cursor: none;
   }
-}
-
-.search-option {
-  @apply bg-gray-900;
-  @apply text-gray-300 text-center truncate;
-  @apply w-48;
-  @apply px-1;
-  @apply border border-transparent;
-  @apply rounded;
 }
 
 .search-text-full {

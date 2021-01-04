@@ -487,15 +487,12 @@ function parseModifiers (section: string[], item: ParsedItem) {
     const mod = tryFindModifier(stat.value)
     if (mod) {
       if (modType == null) {
-        const isExplicit = mod.stat.types.find(type =>
-          type.name === ModifierType.Explicit
-        )
-        if (isExplicit) {
+        if (mod.trade.ids[ModifierType.Explicit]) {
           modType = ModifierType.Explicit
         }
       }
 
-      if (mod.stat.types.find(type => type.name === modType)) {
+      if (mod.trade.ids[modType!]) {
         mod.type = modType!
         item.modifiers.push(mod)
         stat = statIterator.next(true)

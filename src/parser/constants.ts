@@ -57,8 +57,6 @@ export const MAP_BLIGHTED = '/^Blighted (.*)$/'
 export const ITEM_SUPERIOR = '/^Superior (.*)$/'
 export const VAAL_GEM = '/^Vaal .*$/'
 
-export const CLUSTER_JEWEL_GRANT = 'Added Small Passive Skills grant: '
-
 export const PROPHECY_HELP = 'Right-click to add this prophecy to your character.'
 export const BEAST_HELP = 'Right-click to add this to your bestiary.'
 export const METAMORPH_HELP = "Combine this with four other different samples in Tane's Laboratory."

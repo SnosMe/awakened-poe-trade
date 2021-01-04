@@ -1,17 +1,17 @@
-import { STAT_BY_MATCH_STR, Stat, StatMatcher, CLIENT_STRINGS as _$ } from '@/assets/data'
-import { CLUSTER_JEWEL_GRANT } from './constants'
+import { STAT_BY_MATCH_STR, Stat, StatMatcher } from '@/assets/data'
 
 export enum ModifierType {
   Pseudo = 'pseudo',
   Explicit = 'explicit',
   Implicit = 'implicit',
   Crafted = 'crafted',
-  Enchant = 'enchant'
+  Enchant = 'enchant',
+  Veiled = 'veiled'
 }
 
-export interface ItemModifier extends StatMatcher {
-  stat: Stat
-  statMatchers: StatMatcher[]
+export interface ItemModifier extends Stat,
+  Pick<StatMatcher, 'string' | 'negate'>
+{
   values?: number[]
   type: ModifierType
 }
@@ -23,14 +23,7 @@ export function * sectionToStatStrings (section: string[]) {
   while (idx < section.length) {
     let str: string
     if (multi) {
-      const lines = [
-        section[idx],
-        section[idx + 1]
-      ]
-      if (lines.every(l => l.startsWith(_$[CLUSTER_JEWEL_GRANT]))) {
-        lines[1] = lines[1].substr(_$[CLUSTER_JEWEL_GRANT].length)
-      }
-      str = lines.join('\n')
+      str = `${section[idx]}\n${section[idx + 1]}`
     } else {
       str = section[idx]
     }
@@ -90,17 +83,19 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
 
     const found = STAT_BY_MATCH_STR.get(possibleStat)
     if (found) {
-      const values = matches
+      let values = matches
         .filter((_, idx) => !combo.includes(idx))
         .map(str => Number(str) * (found.matcher.negate ? -1 : 1))
 
+      if (!values.length && found.matcher.value) {
+        values = [found.matcher.value]
+      }
+
       return {
-        stat: found.stat,
-        statMatchers: found.matchers,
+        stat: found.stat.stat,
+        trade: found.stat.trade,
         string: found.matcher.string,
         negate: found.matcher.negate,
-        option: found.matcher.option,
-        condition: found.matcher.condition,
         values: values.length ? values : undefined,
         type: undefined!
       }

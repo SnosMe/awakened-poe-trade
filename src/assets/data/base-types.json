@@ -791,6 +791,13 @@
     }
   ],
   [
+    "Kaom's Plate",
+    {
+      "category": "Body Armour",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr3CUnique.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Lacquered Garb",
     {
       "category": "Body Armour",
@@ -1292,6 +1299,13 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Kaom's Greaves",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr4.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -5560,6 +5574,13 @@
     }
   ],
   [
+    "Golden Blade",
+    {
+      "category": "One-Handed Sword",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/DemigodsAuthority.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Graceful Sword",
     {
       "category": "One-Handed Sword",
@@ -5907,6 +5928,13 @@
     {
       "category": "Ring",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring1.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
+    "Jet Ring",
+    {
+      "category": "Ring",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/RingoftheVictor.png?scale=1&w=1&h=1"
     }
   ],
   [
@@ -7558,6 +7586,12 @@
     {
       "category": "Two-Handed Sword",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword7.png?scale=1&w=2&h=4"
+    }
+  ],
+  [
+    "Keyblade",
+    {
+      "category": "Two-Handed Sword"
     }
   ],
   [

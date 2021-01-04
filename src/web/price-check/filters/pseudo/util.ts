@@ -1,15 +1,15 @@
 import { STAT_BY_REF } from '@/assets/data'
-import { ItemModifier } from '@/parser/modifiers'
+import { ItemModifier, ModifierType } from '@/parser/modifiers'
 import { INTERNAL_TRADE_ID } from '../interfaces'
 
 export function pseudoStat (ref: string) {
   const stat = STAT_BY_REF.get(ref)!
 
   return {
-    text: stat.text,
-    statRef: stat.ref,
+    text: (stat.stat.matchers.find(m => !m.negate) || stat.stat.matchers[0]).string,
+    statRef: stat.stat.ref,
     type: 'pseudo',
-    tradeId: stat.types.find(t => t.name === 'pseudo')!.tradeId
+    tradeId: stat.trade.ids[ModifierType.Pseudo]
   }
 }
 

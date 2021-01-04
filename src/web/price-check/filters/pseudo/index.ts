@@ -32,13 +32,13 @@ const REST_PSEUDO = [
   {
     pseudo: pseudoStat('+# total maximum Life'),
     stats: [
-      stat('# to maximum Life')
+      stat('+# to maximum Life')
     ]
   },
   {
     pseudo: pseudoStat('+# total maximum Mana'),
     stats: [
-      stat('# to maximum Mana')
+      stat('+# to maximum Mana')
     ]
   },
   {
@@ -50,7 +50,7 @@ const REST_PSEUDO = [
   {
     pseudo: pseudoStat('+# total maximum Energy Shield'),
     stats: [
-      stat('# to maximum Energy Shield') // global
+      stat('+# to maximum Energy Shield') // global
     ]
   },
   {
@@ -95,7 +95,7 @@ const REST_PSEUDO = [
   {
     pseudo: pseudoStat('+#% Global Critical Strike Multiplier'),
     stats: [
-      stat('#% to Global Critical Strike Multiplier')
+      stat('+#% to Global Critical Strike Multiplier')
     ]
   },
   {

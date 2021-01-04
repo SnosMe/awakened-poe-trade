@@ -135,28 +135,28 @@ function getUniqueVariant (item: ParsedItem) {
   } else if (item.name === "Atziri's Splendour") {
     if (hasStat(item, '#% increased Armour, Evasion and Energy Shield')) {
       return '-armour-evasion-es'
-    } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '# to maximum Energy Shield')) {
+    } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '+# to maximum Energy Shield')) {
       return '-evasion-es'
-    } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '# to maximum Life')) {
+    } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '+# to maximum Life')) {
       return '-evasion-es-life'
-    } else if (hasStat(item, '#% increased Armour and Energy Shield') && hasStat(item, '# to maximum Energy Shield')) {
+    } else if (hasStat(item, '#% increased Armour and Energy Shield') && hasStat(item, '+# to maximum Energy Shield')) {
       return '-armour-es'
-    } else if (hasStat(item, '#% increased Armour and Energy Shield') && hasStat(item, '# to maximum Life')) {
+    } else if (hasStat(item, '#% increased Armour and Energy Shield') && hasStat(item, '+# to maximum Life')) {
       return '-armour-es-life'
-    } else if (hasStat(item, '#% increased Armour and Evasion') && hasStat(item, '# to maximum Life')) {
+    } else if (hasStat(item, '#% increased Armour and Evasion') && hasStat(item, '+# to maximum Life')) {
       return '-armour-evasion'
-    } else if (hasStat(item, '# to maximum Energy Shield') && hasStat(item, '#% increased Energy Shield')) {
+    } else if (hasStat(item, '+# to maximum Energy Shield') && hasStat(item, '#% increased Energy Shield')) {
       return '-es'
-    } else if (hasStat(item, '#% increased Evasion Rating') && hasStat(item, '# to maximum Life')) {
+    } else if (hasStat(item, '#% increased Evasion Rating') && hasStat(item, '+# to maximum Life')) {
       return '-evasion'
-    } else if (hasStat(item, '#% increased Armour') && hasStat(item, '# to maximum Life')) {
+    } else if (hasStat(item, '#% increased Armour') && hasStat(item, '+# to maximum Life')) {
       return '-armour'
     }
   } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
     const sockets = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!
     if (sockets.values?.[0] === 2) {
       return '-2-jewels'
-    } else if (sockets.condition?.max === 1) {
+    } else if (sockets.values?.[0] === 1) {
       return '-1-jewel'
     }
   } else if (item.name === "Volkuur's Guidance") {

@@ -4,14 +4,14 @@ import { rollToFilter } from '../util'
 import { STAT_BY_REF, stat } from '@/assets/data'
 import { ModifierType } from '@/parser/modifiers'
 
-const TO_ALL_ATTRS = stat('# to all Attributes')
+const TO_ALL_ATTRS = stat('+# to all Attributes')
 
 const STR_ATTR = {
   pseudo: pseudoStat('+# total to Strength'),
   stats: [
-    stat('# to Strength'),
-    stat('# to Strength and Intelligence'),
-    stat('# to Strength and Dexterity'),
+    stat('+# to Strength'),
+    stat('+# to Strength and Intelligence'),
+    stat('+# to Strength and Dexterity'),
     TO_ALL_ATTRS
   ]
 }
@@ -19,9 +19,9 @@ const STR_ATTR = {
 const DEX_ATTR = {
   pseudo: pseudoStat('+# total to Dexterity'),
   stats: [
-    stat('# to Dexterity'),
-    stat('# to Dexterity and Intelligence'),
-    stat('# to Strength and Dexterity'),
+    stat('+# to Dexterity'),
+    stat('+# to Dexterity and Intelligence'),
+    stat('+# to Strength and Dexterity'),
     TO_ALL_ATTRS
   ]
 }
@@ -29,9 +29,9 @@ const DEX_ATTR = {
 const INT_ATTR = {
   pseudo: pseudoStat('+# total to Intelligence'),
   stats: [
-    stat('# to Intelligence'),
-    stat('# to Strength and Intelligence'),
-    stat('# to Dexterity and Intelligence'),
+    stat('+# to Intelligence'),
+    stat('+# to Strength and Intelligence'),
+    stat('+# to Dexterity and Intelligence'),
     TO_ALL_ATTRS
   ]
 }
@@ -42,8 +42,8 @@ const ATTRS = [
   INT_ATTR
 ]
 
-const TO_MAXIMUM_LIFE = stat('# to maximum Life')
-const TO_MAXIMUM_MANA = stat('# to maximum Mana')
+const TO_MAXIMUM_LIFE = stat('+# to maximum Life')
+const TO_MAXIMUM_MANA = stat('+# to maximum Mana')
 
 export function filterAttributes (ctx: FiltersCreationContext) {
   const attrs: Array<{ pseudo: ReturnType<typeof pseudoStat>, total: number, hasFlat: boolean }> = []
@@ -82,18 +82,16 @@ export function filterAttributes (ctx: FiltersCreationContext) {
   for (const attr of attrs) {
     if (attr.pseudo.text === STR_ATTR.pseudo.text) {
       ctx.modifiers.push({
-        stat: STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
+        ...STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
         string: 'N/A',
-        statMatchers: [],
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
       })
     }
     if (attr.pseudo.text === INT_ATTR.pseudo.text) {
       ctx.modifiers.push({
-        stat: STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
+        ...STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
         string: 'N/A',
-        statMatchers: [],
         type: ModifierType.Explicit,
         values: [Math.floor(attr.total * (5 / 10))]
       })

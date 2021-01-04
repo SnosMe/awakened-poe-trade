@@ -3,7 +3,7 @@ import { stat } from '@/assets/data'
 
 export const QUALITY_STATS = {
   ARMOUR: {
-    flat: stat('# to Armour'),
+    flat: stat('+# to Armour'),
     incr: [
       stat('#% increased Armour'),
       stat('#% increased Armour and Energy Shield'),
@@ -12,7 +12,7 @@ export const QUALITY_STATS = {
     ]
   },
   EVASION: {
-    flat: stat('# to Evasion Rating'),
+    flat: stat('+# to Evasion Rating'),
     incr: [
       stat('#% increased Evasion Rating'),
       stat('#% increased Armour and Evasion'),
@@ -21,7 +21,7 @@ export const QUALITY_STATS = {
     ]
   },
   ENERGY_SHIELD: {
-    flat: stat('# to maximum Energy Shield'),
+    flat: stat('+# to maximum Energy Shield'),
     incr: [
       stat('#% increased Energy Shield'),
       stat('#% increased Armour and Energy Shield'),

@@ -53,17 +53,18 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
 
 export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
   const filter: Writeable<StatFilter> = {
-    tradeId: mod.stat.types.find(type => type.name === mod.type)!.tradeId,
+    tradeId: mod.trade.ids[mod.type],
     statRef: mod.stat.ref,
-    text: mod.stat.text,
+    text: mod.string,
     type: mod.type,
-    option: mod.option,
+    option: mod.trade.option,
     roll: undefined,
     disabled: true,
     min: undefined,
     max: undefined
   }
-  if (mod.option) {
+  if (mod.trade.option) {
+    filter.roll = mod.values![0]
     return filter
   }
 
@@ -85,15 +86,7 @@ function itemModFilterPartial (
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ) {
-  if (!mod.values) {
-    if (mod.condition) {
-      filter.min = mod.condition.min
-      filter.max = mod.condition.max
-      filter.defaultMin = filter.min
-      filter.defaultMax = filter.max
-      filter.roll = filter.min || filter.max
-    }
-  } else {
+  if (mod.values) {
     if (mod.type === 'enchant') {
       filter.roll = getRollAsSingleNumber(mod.values)
       filter.min = filter.roll
@@ -115,7 +108,7 @@ function filterAdjustmentForNegate (
   if (filter.boundMin != null && filter.boundMax != null) { // unique
     const sameSign = (Math.sign(filter.boundMin) === Math.sign(filter.boundMax))
     const isNegated = mod.negate
-    const positiveMatcher = mod.statMatchers.find(matcher => matcher.negate !== isNegated)
+    const positiveMatcher = mod.stat.matchers.find(matcher => !matcher.negate)
     if (!sameSign && isNegated && positiveMatcher) {
       filter.text = positiveMatcher.string
     } else {
@@ -158,7 +151,7 @@ function filterAdjustmentForNegate (
     }
   }
 
-  if (mod.stat.inverted) {
+  if (mod.trade.inverted) {
     filter.invert = !filter.invert
   }
 }
@@ -190,7 +183,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   if (item.category === ItemCategory.Map) {
     const isInfluenced = ctx.filters.find(filter => filter.statRef === 'Area is influenced by #')
     const isElderGuardian = ctx.filters.find(filter => filter.statRef === 'Map is occupied by #')
-    if (isInfluenced && !isElderGuardian && isInfluenced.option!.tradeId === '2' /* TODO: hardcoded */) {
+    if (isInfluenced && !isElderGuardian && isInfluenced.roll === 2 /* TODO: hardcoded */) {
       const idx = ctx.filters.indexOf(isInfluenced)
       ctx.filters.splice(idx + 1, 0, {
         tradeId: ['map.no_elder_guardian'],

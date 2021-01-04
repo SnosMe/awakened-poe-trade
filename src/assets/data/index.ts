@@ -11,9 +11,9 @@ export let CLIENTLOG_STRINGS: ClientLogDict
 export let ITEM_NAME_REF_BY_TRANSLATED: Map<string | undefined, string>
 export let TRANSLATED_ITEM_NAME_BY_REF: Map<string | undefined, string>
 
-export let STATS: Array<{ conditions: StatMatcher[], mod: Stat }>
+export let STATS: Stat[]
 
-export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat, matchers: StatMatcher[] }>()
+export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat }>()
 export const STAT_BY_REF = new Map<string, Stat>()
 
 export let BASE_TYPES: Map<string, BaseType>
@@ -41,14 +41,13 @@ export const ITEM_DROP = new Map<string, DropEntry>()
   {
     STATS = (require(`./${Config.store.language}/stats.json`))
     for (const entry of STATS) {
-      for (const condition of entry.conditions) {
+      for (const condition of entry.stat.matchers) {
         STAT_BY_MATCH_STR.set(condition.string, {
           matcher: condition,
-          stat: entry.mod,
-          matchers: entry.conditions
+          stat: entry
         })
       }
-      STAT_BY_REF.set(entry.mod.ref, entry.mod)
+      STAT_BY_REF.set(entry.stat.ref, entry)
     }
   }
 

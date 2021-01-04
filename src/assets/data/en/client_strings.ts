@@ -42,7 +42,6 @@ const dict = {
   "Combine this with four other different samples in Tane's Laboratory.": "Combine this with four other different samples in Tane's Laboratory.",
   'Right-click to add this to your bestiary.': 'Right-click to add this to your bestiary.',
   'Right-click to add this prophecy to your character.': 'Right-click to add this prophecy to your character.',
-  'Added Small Passive Skills grant: ': 'Added Small Passive Skills grant: ',
   '/^.* Brain$/': /^.* Brain$/,
   '/^.* Eye$/': /^.* Eye$/,
   '/^.* Lung$/': /^.* Lung$/,

@@ -22,7 +22,7 @@ export const ARMOUR_STATS = new Set<string>([
   ...QUALITY_STATS.ARMOUR.incr,
   ...QUALITY_STATS.EVASION.incr,
   ...QUALITY_STATS.ENERGY_SHIELD.incr,
-  stat('#% Chance to Block')
+  stat('+#% Chance to Block')
 ])
 
 function armourProps (ctx: FiltersCreationContext) {

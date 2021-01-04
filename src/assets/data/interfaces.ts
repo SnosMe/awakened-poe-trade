@@ -3,24 +3,21 @@ import type { ItemCategory } from '@/parser'
 export interface StatMatcher {
   string: string
   negate?: true
-  condition?: {
-    min?: number
-    max?: number
-  }
-  option?: {
-    text: string
-    tradeId: string | number
-  }
+  value?: number
 }
 
 export interface Stat {
-  text: string
-  ref: string
-  inverted?: true
-  types: Array<{
-    name: string
-    tradeId: string[]
-  }>
+  stat: {
+    ref: string
+    matchers: StatMatcher[]
+  }
+  trade: {
+    inverted?: true
+    option?: 'num' | 'str'
+    ids: {
+      [type: string]: string[]
+    }
+  }
 }
 
 export interface BaseType {
