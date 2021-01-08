@@ -4,8 +4,8 @@
     <div style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
       :style="{ background: overlayBackground }"
       @click="handleBackgroundClick"></div>
-    <template v-for="widget of widgets">
-      <component :key="widget.wmId"
+    <template v-for="widget of widgets" :key="widget.wmId">
+      <component
         v-show="isVisible(widget.wmId)"
         :config="widget"
         :id="`widget-${widget.wmId}`"

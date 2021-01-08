@@ -28,19 +28,41 @@
         <div v-if="isHandleShown('cc')" :class="$style.mover" @mousedown="startMove('cc', $event)" style="left: calc(50%  - 0.5rem); top: calc(50%  - 0.5rem);"></div>
       </div>
     </div>
-    <div v-if="isMoving" :class="[$style.mover, $style.active]" :style="moverPosition" @mousedown="startMove(anchor.pos, $event)"></div>
+    <div v-if="isMoving" :class="[$style.mover, $style.active]" :style="moverPosition" @mousedown="startMove(config.anchor.pos, $event)"></div>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType, computed, inject, ref } from 'vue'
+import { Widget, Anchor, WidgetManager } from './interfaces'
+
+function useRemovable (remove: () => void) {
+  const isRemoving = ref(false)
+  let tmid: ReturnType<typeof setTimeout> | null = null
+
+  function startRemoveTimer () {
+    isRemoving.value = true
+    tmid = setTimeout(remove, 1000)
+  }
+  function cancelRemoveTimer () {
+    isRemoving.value = false
+    if (tmid !== null) {
+      clearTimeout(tmid)
+      tmid = null
+    }
+  }
+
+  return { startRemoveTimer, cancelRemoveTimer, isRemoving }
+}
+
+export default defineComponent({
   props: {
     config: {
-      type: Object,
+      type: Object as PropType<Widget & { anchor: Anchor }>,
       required: true
     },
     moveHandles: {
-      type: [String, Array],
+      type: [String, Array] as PropType<string | string[]>,
       default: undefined
     },
     readonly: {
@@ -56,148 +78,150 @@ export default {
       default: true
     }
   },
-  inject: ['wm'],
-  data () {
-    return {
-      isEditing: false,
-      isMoving: false,
-      isRemoving: false
-    }
-  },
-  computed: {
-    anchor () {
-      return this.config.anchor
-    },
-    moverPosition () {
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+
+    const moverPosition = computed(() => {
+      const { anchor, wmZorder } = props.config
       return {
-        'top': `max(0%, min(calc(${this.anchor.y}% - (1rem/2)), calc(100% - 1rem)))`,
-        'left': `max(0%, min(calc(${this.anchor.x}% - (1rem/2)), calc(100% - 1rem)))`,
-        'z-index': this.config.wmZorder
+        'top': `max(0%, min(calc(${anchor.y}% - (1rem/2)), calc(100% - 1rem)))`,
+        'left': `max(0%, min(calc(${anchor.x}% - (1rem/2)), calc(100% - 1rem)))`,
+        'z-index': wmZorder
       }
-    },
-    widgetPosition () {
-      let translate
+    })
+
+    const widgetPosition = computed(() => {
+      const { anchor, wmZorder } = props.config
 
       // <top, center, bottom><left, center, right>
-      if (this.anchor.pos === 'tl') {
+      let translate
+      if (anchor.pos === 'tl') {
         translate = undefined
-      } else if (this.anchor.pos === 'tc') {
+      } else if (anchor.pos === 'tc') {
         translate = 'translate(-50%, 0%)'
-      } else if (this.anchor.pos === 'tr') {
+      } else if (anchor.pos === 'tr') {
         translate = 'translate(-100%, 0%)'
-      } else if (this.anchor.pos === 'cr') {
+      } else if (anchor.pos === 'cr') {
         translate = 'translate(-100%, -50%)'
-      } else if (this.anchor.pos === 'br') {
+      } else if (anchor.pos === 'br') {
         translate = 'translate(-100%, -100%)'
-      } else if (this.anchor.pos === 'bc') {
+      } else if (anchor.pos === 'bc') {
         translate = 'translate(-50%, -100%)'
-      } else if (this.anchor.pos === 'bl') {
+      } else if (anchor.pos === 'bl') {
         translate = 'translate(0%, -100%)'
-      } else if (this.anchor.pos === 'cl') {
+      } else if (anchor.pos === 'cl') {
         translate = 'translate(0%, -50%)'
-      } else if (this.anchor.pos === 'cc') {
+      } else if (anchor.pos === 'cc') {
         translate = 'translate(-50%, -50%)'
       }
 
       return {
-        'top': `${this.anchor.y}%`,
-        'left': `${this.anchor.x}%`,
+        'top': `${anchor.y}%`,
+        'left': `${anchor.x}%`,
         'transform': translate,
-        'z-index': this.config.wmZorder
+        'z-index': wmZorder
       }
-    },
-    actionsPosition () {
-      if (this.anchor.x <= 50 && this.anchor.y <= 50) {
+    })
+
+    const actionsPosition = computed(() => {
+      const { anchor } = props.config
+
+      if (anchor.x <= 50 && anchor.y <= 50) {
         return {
           top: '0',
           left: '100%'
         }
       }
-      if (this.anchor.x >= 50 && this.anchor.y <= 50) {
+      if (anchor.x >= 50 && anchor.y <= 50) {
         return {
           top: '0',
           right: '100%'
         }
       }
-      if (this.anchor.x >= 50 && this.anchor.y >= 50) {
+      if (anchor.x >= 50 && anchor.y >= 50) {
         return {
           bottom: '0',
           right: '100%'
         }
       }
-      if (this.anchor.x <= 50 && this.anchor.y >= 50) {
+      if (anchor.x <= 50 && anchor.y >= 50) {
         return {
           bottom: '0',
           left: '100%'
         }
       }
-      return null
-    },
-    shownHandles () {
-      if (!this.moveHandles) {
+    })
+
+    const shownHandles = computed(() => {
+      if (!props.moveHandles) {
         return ['tl', 'tc', 'tr', 'cr', 'br', 'bc', 'bl', 'cl', 'cc']
       }
-      if (this.moveHandles === 'center') {
+      if (props.moveHandles === 'center') {
         return ['cc']
       }
-      if (this.moveHandles === 'corners') {
+      if (props.moveHandles === 'corners') {
         return ['tl', 'tr', 'br', 'bl']
       }
-      if (this.moveHandles === 'top-bottom') {
+      if (props.moveHandles === 'top-bottom') {
         return ['tl', 'tc', 'tr', 'br', 'bc', 'bl']
       }
       return []
-    }
-  },
-  methods: {
-    startMove (pos, e) {
-      this.anchor.pos = pos
-      this.updatePosition(e)
-      document.addEventListener('mousemove', this.updatePosition)
-      document.addEventListener('mouseup', this.endMove)
-    },
-    endMove () {
-      document.removeEventListener('mousemove', this.updatePosition)
-      document.removeEventListener('mouseup', this.endMove)
-    },
-    updatePosition (e) {
-      this.anchor.x = Math.min(Math.max(e.clientX / window.innerWidth, 0), 1) * 100
-      this.anchor.y = Math.min(Math.max(e.clientY / window.innerHeight, 0), 1) * 100
-    },
-    isHandleShown (pos) {
-      return this.anchor.pos !== pos &&
-        this.shownHandles.includes(pos)
-    },
-    toggleEdit () {
-      this.isEditing = !this.isEditing
-      this.isMoving = false
-    },
-    toggleMove () {
-      this.isMoving = !this.isMoving
-      this.isEditing = false
-    },
-    hide () {
-      this.wm.hide(this.config.wmId)
-    },
-    remove () {
-      this.wm.remove(this.config.wmId)
-    },
-    startRemoveTimer () {
-      this.isRemoving = true
-      this.removeTimeout = setTimeout(this.remove, 1000)
-    },
-    cancelRemoveTimer () {
-      this.isRemoving = false
-      clearTimeout(this.removeTimeout)
-      this.removeTimeout = undefined
-    },
-    handleMouseDown () {
-      if (this.config.wmId != null) {
-        this.wm.bringToTop(this.config.wmId)
+    })
+
+    function startMove (pos: string, e: MouseEvent) {
+      props.config.anchor.pos = pos
+      updatePosition(e)
+      document.addEventListener('mousemove', updatePosition)
+      document.addEventListener('mouseup', endMove)
+
+      function endMove () {
+        document.removeEventListener('mousemove', updatePosition)
+        document.removeEventListener('mouseup', endMove)
       }
     }
+
+    function updatePosition (e: MouseEvent) {
+      props.config.anchor.x = Math.min(Math.max(e.clientX / window.innerWidth, 0), 1) * 100
+      props.config.anchor.y = Math.min(Math.max(e.clientY / window.innerHeight, 0), 1) * 100
+    }
+
+    const isEditing = ref(false)
+    const isMoving = ref(false)
+
+    return {
+      moverPosition,
+      widgetPosition,
+      actionsPosition,
+      handleMouseDown () {
+        // @TODO: why null check?
+        if (props.config.wmId != null) {
+          wm.bringToTop(props.config.wmId)
+        }
+      },
+      startMove,
+      isMoving,
+      isEditing,
+      isHandleShown (pos: string) {
+        return props.config.anchor.pos !== pos &&
+          shownHandles.value.includes(pos)
+      },
+      hide () {
+        wm.hide(props.config.wmId)
+      },
+      toggleEdit () {
+        isEditing.value = !isEditing.value
+        isMoving.value = false
+      },
+      toggleMove () {
+        isMoving.value = !isMoving.value
+        isEditing.value = false
+      },
+      ...useRemovable(() => {
+        wm.remove(props.config.wmId)
+      })
+    }
   }
-}
+})
 </script>
 
 <style lang="postcss" module>

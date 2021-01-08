@@ -3,19 +3,18 @@
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false">
     <img :class="$style.img" :src="isBundled ? require(`@/assets/images/${src}`) : src">
-    <portal v-if="isHovered && !disabled" mount-to="body" append>
+    <teleport v-if="isHovered && !disabled" to="body">
       <div :class="$style.imgFullscreenWrapper">
         <img :class="$style.imgFullscreen" :src="isBundled ? require(`@/assets/images/${src}`) : src">
       </div>
-    </portal>
+    </teleport>
   </div>
 </template>
 
-<script>
-import { MountingPortal as Portal } from 'portal-vue'
+<script lang="ts">
+import { defineComponent, ref, computed } from 'vue'
 
-export default {
-  components: { Portal },
+export default defineComponent({
   name: 'FullscreenImage',
   props: {
     src: {
@@ -27,17 +26,15 @@ export default {
       default: false
     }
   },
-  data () {
+  setup (props) {
+    const isHovered = ref(false)
+    const isBundled = computed(() => !props.src.includes('://'))
     return {
-      isHovered: false
-    }
-  },
-  computed: {
-    isBundled () {
-      return !this.src.includes('://')
+      isHovered,
+      isBundled
     }
   }
-}
+})
 </script>
 
 <style lang="postcss" module>
