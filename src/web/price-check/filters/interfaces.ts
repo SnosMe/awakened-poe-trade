@@ -18,14 +18,8 @@ export interface ItemFilters {
   rarity?: {
     value: string
   }
-  linkedSockets?: {
-    value: number
-    disabled: boolean
-  }
-  whiteSockets?: {
-    value: number
-    disabled: boolean
-  }
+  linkedSockets?: FilterNumeric
+  whiteSockets?: FilterNumeric
   corrupted?: {
     value: boolean
   }
@@ -33,10 +27,7 @@ export interface ItemFilters {
     value: ItemInfluence
     disabled: boolean
   }>
-  quality?: {
-    value: number
-    disabled: boolean
-  }
+  quality?: FilterNumeric
   gemLevel?: {
     min: number
     max?: number
@@ -48,14 +39,8 @@ export interface ItemFilters {
   mapBlighted?: {
     value: true
   }
-  itemLevel?: {
-    value: number
-    disabled: boolean
-  }
-  stackSize?: {
-    value: number
-    disabled: boolean
-  }
+  itemLevel?: FilterNumeric
+  stackSize?: FilterNumeric
   unidentified?: {
     value: true
     disabled: boolean
@@ -80,6 +65,11 @@ export interface ItemFilters {
     listed: string | undefined
     league: string
   }
+}
+
+export interface FilterNumeric {
+  value: number
+  disabled: boolean
 }
 
 export interface StatFilter {

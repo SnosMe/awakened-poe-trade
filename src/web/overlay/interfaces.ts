@@ -25,6 +25,7 @@ export interface Anchor {
 }
 
 export interface WidgetManager {
+  active: boolean
   widgets: Widget[]
   show (wmId: number): void
   hide (wmId: number): void

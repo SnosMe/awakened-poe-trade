@@ -6,16 +6,21 @@
       v-model.number="filterValue"
       :placeholder="filter.value"
       :delay="0"
-      @focus.native="inputFocus"
-      :style="`width: ${1.2 + String(filterValue).length}ch`" />
+      @focus="inputFocus"
+      :style="{ width: `${1.2 + String(filterValue).length}ch` }"
+    />
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType, computed } from 'vue'
+import { FilterNumeric } from './interfaces'
+
+export default defineComponent({
+  emits: [], // mutates filter
   props: {
     filter: {
-      type: Object,
+      type: Object as PropType<FilterNumeric | undefined>,
       default: undefined
     },
     name: {
@@ -23,31 +28,37 @@ export default {
       required: true
     }
   },
-  computed: {
-    filterValue: {
+  setup (props) {
+    const filterValue = computed({
       get () {
-        return this.filter.value
+        return props.filter!.value
       },
       set (value) {
         if (typeof value === 'number') {
-          this.filter.value = value
-          this.filter.disabled = false
+          props.filter!.value = value
+          props.filter!.disabled = false
         } else {
-          this.filter.disabled = true
+          props.filter!.disabled = true
         }
       }
-    }
-  },
-  methods: {
-    inputFocus (e) {
-      if (e.target.value === '') {
-        e.target.value = this.filter.value
+    })
+
+    function inputFocus (e: InputEvent) {
+      const target = e.target as HTMLInputElement
+
+      if (target.value === '') {
+        target.value = String(props.filter!.value)
       }
-      e.target.select()
-      this.filter.disabled = false
+      target.select()
+      props.filter!.disabled = false
+    }
+
+    return {
+      filterValue,
+      inputFocus
     }
   }
-}
+})
 </script>
 
 <style lang="postcss">

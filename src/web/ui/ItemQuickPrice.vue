@@ -21,10 +21,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
 import { displayRounding } from '../price-check/Prices'
 
-export default {
+export default defineComponent({
   props: {
     min: {
       type: Number,
@@ -51,13 +52,18 @@ export default {
       default: require('@/assets/images/wisdom.png')
     }
   },
-  computed: {
-    isExa () { return this.currency === 'exa' },
-    minText () { return displayRounding(this.min, this.fraction) },
-    maxText () { return displayRounding(this.max, this.fraction) },
-    isRange () { return this.minText !== this.maxText }
+  setup (props) {
+    const minText = computed(() => { return displayRounding(props.min, props.fraction) })
+    const maxText = computed(() => { return displayRounding(props.max, props.fraction) })
+
+    return {
+      minText,
+      maxText,
+      isRange: computed(() => { return minText.value !== maxText.value }),
+      isExa: computed(() => { return props.currency === 'exa' })
+    }
   }
-}
+})
 </script>
 
 <style module>
