@@ -38,13 +38,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { computed } from 'vue'
 import { Config } from '@/web/Config'
 
 export default {
-  computed: {
-    config () {
-      return Config.store
+  setup () {
+    return {
+      config: computed(() => Config.store)
     }
   }
 }

@@ -27,20 +27,22 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Config } from '@/web/Config'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import i18n from '../i18n'
 
 export default {
-  beforeCreate () {
-    document.title = this.$t('Settings - Awakened PoE Trade')
-  },
-  methods: {
-    save () {
-      MainProcess.closeSettingsWindow(Config.store)
-    },
-    cancel () {
-      MainProcess.closeSettingsWindow()
+  setup () {
+    document.title = i18n.global.t('Settings - Awakened PoE Trade')
+
+    return {
+      save () {
+        MainProcess.closeSettingsWindow(Config.store)
+      },
+      cancel () {
+        MainProcess.closeSettingsWindow()
+      }
     }
   }
 }

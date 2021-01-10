@@ -51,18 +51,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { computed } from 'vue'
 import { Config } from '@/web/Config'
 
 export default {
-  computed: {
-    config () {
-      return Config.store
-    }
-  },
-  methods: {
-    handleLogFile (e) {
-      this.config.clientLog = e.target.files[0].path
+  setup () {
+    return {
+      config: computed(() => Config.store),
+      handleLogFile (e: InputEvent) {
+        Config.store.clientLog = (e.target as HTMLInputElement).files![0].path
+      }
     }
   }
 }

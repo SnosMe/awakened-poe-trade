@@ -60,15 +60,16 @@
   </div>
 </template>
 
-<script>
-import HotkeyInput from './HotkeyInput'
+<script lang="ts">
+import { computed } from 'vue'
 import { Config } from '@/web/Config'
+import HotkeyInput from './HotkeyInput.vue'
 
 export default {
   components: { HotkeyInput },
-  computed: {
-    config () {
-      return Config.store
+  setup () {
+    return {
+      config: computed(() => Config.store)
     }
   }
 }

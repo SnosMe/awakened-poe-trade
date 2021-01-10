@@ -45,38 +45,41 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { computed } from 'vue'
 import { Config } from '@/web/Config'
+import { PriceCheckWidget } from '../overlay/interfaces'
 
 export default {
-  computed: {
-    config () {
-      return Config.store
-    },
-    configWidget () {
-      return Config.store.widgets.find(w => w.wmType === 'price-check')
-    },
-    searchStatRange: {
-      set (value) {
-        if (typeof value !== 'number') return
+  setup () {
+    const configWidget = computed(() => {
+      return Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
+    })
 
-        if (value >= 0 && value <= 50) {
-          this.config.searchStatRange = value
+    return {
+      config: computed(() => Config.store),
+      searchStatRange: computed<number>({
+        get () {
+          return Config.store.searchStatRange
+        },
+        set (value) {
+          if (typeof value !== 'number') return
+
+          if (value >= 0 && value <= 50) {
+            Config.store.searchStatRange = value
+          }
         }
-      },
-      get () {
-        return this.config.searchStatRange
-      }
-    },
-    chaosPriceThreshold: {
-      set (value) {
-        if (typeof value !== 'number') return
+      }),
+      chaosPriceThreshold: computed<number>({
+        get () {
+          return configWidget.value.chaosPriceThreshold
+        },
+        set (value) {
+          if (typeof value !== 'number') return
 
-        this.configWidget.chaosPriceThreshold = value
-      },
-      get () {
-        return this.configWidget.chaosPriceThreshold
-      }
+          configWidget.value.chaosPriceThreshold = value
+        }
+      })
     }
   }
 }
