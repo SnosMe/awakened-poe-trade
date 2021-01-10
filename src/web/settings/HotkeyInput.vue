@@ -8,10 +8,10 @@
 </template>
 
 <script lang="ts">
-import { PropType } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { KeyToCode, forbidden } from '@/ipc/KeyToCode'
 
-export default {
+export default defineComponent({
   emits: ['update:modelValue'],
   props: {
     modelValue: {
@@ -70,7 +70,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <i18n>

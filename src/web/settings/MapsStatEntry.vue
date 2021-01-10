@@ -1,6 +1,6 @@
 <template>
-  <div class="flex py-1" :class="$style.row">
-    <div class="flex-1 truncate px-2">{{ stat.text }}</div>
+  <div class="flex py-1 w-full" :class="$style.row">
+    <div class="flex-1 truncate px-2">{{ matcher }}</div>
     <div class="flex" :class="{ [$style.controlsAutoHide]: !entryInSelected }">
       <div class="pr-1"><ui-toggle v-model="invert" /></div>
       <div><input v-model.trim="valueWarning" @focus="handleFocus($event, 'valueWarning')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-l"></div>
@@ -15,13 +15,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, computed, nextTick } from 'vue'
 import { Config } from '@/web/Config'
+import { MapCheckWidget } from '../overlay/interfaces'
 
-export default {
+export default defineComponent({
+  emits: [],
   props: {
-    stat: {
-      type: Object,
+    matcher: {
+      type: String,
       required: true
     },
     autoRemove: {
@@ -29,40 +32,43 @@ export default {
       required: true
     }
   },
-  computed: {
-    invert: {
-      get () { return this.entryInSelected ? this.entryInSelected.invert : false },
-      set (value) { this.setProp('invert', value) }
-    },
-    valueWarning: {
-      get () { return this.entryInSelected ? this.entryInSelected.valueWarning : '' },
-      set (value) { this.setProp('valueWarning', value) }
-    },
-    valueDanger: {
-      get () { return this.entryInSelected ? this.entryInSelected.valueDanger : '' },
-      set (value) { this.setProp('valueDanger', value) }
-    },
-    valueDesirable: {
-      get () { return this.entryInSelected ? this.entryInSelected.valueDesirable : '' },
-      set (value) { this.setProp('valueDesirable', value) }
-    },
-    entryInSelected () {
-      return this.config.selectedStats.find(_ => _.matchRef === this.stat.matchRef)
-    },
-    config () {
-      return Config.store.widgets.find(widget => widget.wmType === 'map-check')
-    }
-  },
-  methods: {
-    setProp (key, value) {
-      if (this.entryInSelected) {
-        this.$set(this.entryInSelected, key, value)
-        if (this.autoRemove) {
-          this.removeIfNotUsed()
+  setup (props) {
+    const config = computed(() => {
+      return Config.store.widgets.find(widget => widget.wmType === 'map-check') as MapCheckWidget
+    })
+    const entryInSelected = computed(() => {
+      return config.value.selectedStats.find(_ => _.matcher === props.matcher)
+    })
+
+    const invert = computed<boolean>({
+      get () { return entryInSelected.value?.invert ?? false },
+      set (value) { setProp('invert', value) }
+    })
+    const valueWarning = computed<string>({
+      get () { return entryInSelected.value?.valueWarning ?? '' },
+      set (value) { setProp('valueWarning', value) }
+    })
+    const valueDanger = computed<string>({
+      get () { return entryInSelected.value?.valueDanger ?? '' },
+      set (value) { setProp('valueDanger', value) }
+    })
+    const valueDesirable = computed<string>({
+      get () { return entryInSelected.value?.valueDesirable ?? '' },
+      set (value) { setProp('valueDesirable', value) }
+    })
+
+    function setProp<T extends keyof MapCheckWidget['selectedStats'][number]> (
+      key: T,
+      value: MapCheckWidget['selectedStats'][number][T]
+    ) {
+      if (entryInSelected.value) {
+        entryInSelected.value[key] = value
+        if (props.autoRemove) {
+          removeIfNotUsed()
         }
       } else {
-        this.config.selectedStats.push({
-          matchRef: this.stat.matchRef,
+        config.value.selectedStats.push({
+          matcher: props.matcher,
           invert: false,
           valueWarning: '',
           valueDanger: '',
@@ -70,40 +76,59 @@ export default {
           ...{ [key]: value }
         })
       }
-    },
-    removeIfNotUsed () {
-      if (!this.entryInSelected) return
+    }
 
+    function removeIfNotUsed () {
       if (
-        !this.entryInSelected.invert &&
-        this.entryInSelected.valueWarning === '' &&
-        this.entryInSelected.valueDanger === '' &&
-        this.entryInSelected.valueDesirable === ''
+        entryInSelected.value &&
+        !entryInSelected.value.invert &&
+        entryInSelected.value.valueWarning === '' &&
+        entryInSelected.value.valueDanger === '' &&
+        entryInSelected.value.valueDesirable === ''
       ) {
-        this.config.selectedStats = this.config.selectedStats.filter(selected => selected !== this.entryInSelected)
-      }
-    },
-    remove () {
-      if (!this.entryInSelected) return
-
-      this.config.selectedStats = this.config.selectedStats.filter(selected => selected !== this.entryInSelected)
-    },
-    handleFocus (e, type) {
-      if (e.target.value === '') {
-        this[type] = '+'
-        this.$nextTick(() => {
-          e.target.select()
-        })
-      } else {
-        e.target.select()
+        remove()
       }
     }
+
+    function remove () {
+      if (!entryInSelected.value) return
+
+      config.value.selectedStats = config.value.selectedStats
+        .filter(selected => selected !== entryInSelected.value)
+    }
+
+    function handleFocus (e: FocusEvent, type: 'valueWarning' | 'valueDanger' | 'valueDesirable') {
+      const target = e.target as HTMLInputElement
+      if (target.value === '') {
+        ;({
+          valueWarning,
+          valueDanger,
+          valueDesirable
+        })[type].value = '+'
+
+        nextTick(() => {
+          target.select()
+        })
+      } else {
+        target.select()
+      }
+    }
+
+    return {
+      entryInSelected,
+      invert,
+      valueWarning,
+      valueDanger,
+      valueDesirable,
+      remove,
+      handleFocus
+    }
   }
-}
+})
 </script>
 
 <style lang="postcss" module>
-:global(.vue-recycle-scroller__item-view.hover) :local(.row) {
+.row:hover {
   @apply bg-gray-700;
 }
 
@@ -111,7 +136,7 @@ export default {
   display: none;
 }
 
-:global(.vue-recycle-scroller__item-view.hover) :local(.controlsAutoHide) {
+.row:hover .controlsAutoHide {
   display: flex;
 }
 </style>

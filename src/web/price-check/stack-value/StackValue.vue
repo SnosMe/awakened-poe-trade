@@ -17,7 +17,7 @@ import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
 import { ItemFilters } from '../filters/interfaces'
 
-export default {
+export default defineComponent({
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -58,7 +58,7 @@ export default {
       })
     }
   }
-}
+})
 </script>
 
 <i18n>
