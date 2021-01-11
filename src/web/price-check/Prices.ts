@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { reactive } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Leagues } from './Leagues'
 import { nameToDetailsId } from './trends/getDetailsId'
@@ -72,34 +72,34 @@ const RETRY_TIME = 60 * 1000
 const UPDATE_TIME = 10 * 60 * 1000
 
 class PriceService {
-  private state = Vue.observable({
+  private state = reactive({
     isLoading: false,
     chaosExaRate: undefined as number | undefined,
     priceData: [
-      { overview: 'currency', type: 'Currency', loaded: 0 },
-      { overview: 'currency', type: 'Fragment', loaded: 0 },
-      { overview: 'item', type: 'Watchstone', loaded: 0 },
-      { overview: 'item', type: 'Oil', loaded: 0 },
-      { overview: 'item', type: 'Incubator', loaded: 0 },
-      { overview: 'item', type: 'Scarab', loaded: 0 },
-      { overview: 'item', type: 'Fossil', loaded: 0 },
-      { overview: 'item', type: 'Resonator', loaded: 0 },
-      { overview: 'item', type: 'Essence', loaded: 0 },
-      { overview: 'item', type: 'DivinationCard', loaded: 0 },
-      { overview: 'item', type: 'Prophecy', loaded: 0 },
-      { overview: 'item', type: 'SkillGem', loaded: 0 },
-      { overview: 'item', type: 'BaseType', loaded: 0 },
-      // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
-      { overview: 'item', type: 'UniqueMap', loaded: 0 },
-      { overview: 'item', type: 'Map', loaded: 0 },
-      { overview: 'item', type: 'UniqueJewel', loaded: 0 },
-      { overview: 'item', type: 'UniqueFlask', loaded: 0 },
-      { overview: 'item', type: 'UniqueWeapon', loaded: 0 },
-      { overview: 'item', type: 'UniqueArmour', loaded: 0 },
-      { overview: 'item', type: 'UniqueAccessory', loaded: 0 },
-      { overview: 'item', type: 'Beast', loaded: 0 },
-      { overview: 'item', type: 'Vial', loaded: 0 },
-      { overview: 'item', type: 'DeliriumOrb', loaded: 0 }
+      { overview: 'currency', type: 'Currency', loaded: 0 }
+      // { overview: 'currency', type: 'Fragment', loaded: 0 },
+      // { overview: 'item', type: 'Watchstone', loaded: 0 },
+      // { overview: 'item', type: 'Oil', loaded: 0 },
+      // { overview: 'item', type: 'Incubator', loaded: 0 },
+      // { overview: 'item', type: 'Scarab', loaded: 0 },
+      // { overview: 'item', type: 'Fossil', loaded: 0 },
+      // { overview: 'item', type: 'Resonator', loaded: 0 },
+      // { overview: 'item', type: 'Essence', loaded: 0 },
+      // { overview: 'item', type: 'DivinationCard', loaded: 0 },
+      // { overview: 'item', type: 'Prophecy', loaded: 0 },
+      // { overview: 'item', type: 'SkillGem', loaded: 0 },
+      // { overview: 'item', type: 'BaseType', loaded: 0 },
+      // // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
+      // { overview: 'item', type: 'UniqueMap', loaded: 0 },
+      // { overview: 'item', type: 'Map', loaded: 0 },
+      // { overview: 'item', type: 'UniqueJewel', loaded: 0 },
+      // { overview: 'item', type: 'UniqueFlask', loaded: 0 },
+      // { overview: 'item', type: 'UniqueWeapon', loaded: 0 },
+      // { overview: 'item', type: 'UniqueArmour', loaded: 0 },
+      // { overview: 'item', type: 'UniqueAccessory', loaded: 0 },
+      // { overview: 'item', type: 'Beast', loaded: 0 },
+      // { overview: 'item', type: 'Vial', loaded: 0 },
+      // { overview: 'item', type: 'DeliriumOrb', loaded: 0 }
     ]
   })
 
@@ -129,7 +129,7 @@ class PriceService {
 
         if (dataType.overview === 'currency') {
           const priceData: {
-            lines: NinjaCurrencyInfo[],
+            lines: NinjaCurrencyInfo[]
             currencyDetails: Array<{
               id: number
               icon: string

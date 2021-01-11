@@ -25,6 +25,8 @@ export interface Anchor {
 }
 
 export interface WidgetManager {
+  poeUiWidth: number
+  width: number
   height: number
   active: boolean
   widgets: Widget[]

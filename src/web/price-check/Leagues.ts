@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { reactive } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { LEAGUE_SELECTED } from '@/ipc/ipc-event'
 import { League } from '@/ipc/types'
@@ -6,7 +6,7 @@ import { Prices } from './Prices'
 import { Config } from '@/web/Config'
 
 export class LeaguesService {
-  private state = Vue.observable({
+  private state = reactive({
     isLoading: false,
     isLoaded: false,
     loadingError: undefined as string | undefined,

@@ -1,7 +1,7 @@
-import Vue from 'vue'
+import { reactive } from 'vue'
 
 export class RateLimiter {
-  state = Vue.observable({
+  state = reactive({
     stack: [] as Promise<void>[],
     queue: 0
   })
