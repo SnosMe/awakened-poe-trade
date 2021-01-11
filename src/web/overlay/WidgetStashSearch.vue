@@ -36,51 +36,53 @@
   </widget>
 </template>
 
-<script>
-import Widget from './Widget'
+<script lang="ts">
+import { defineComponent, inject, PropType } from 'vue'
+import Widget from './Widget.vue'
 import DndContainer from 'vuedraggable'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import { WidgetManager, StashSearchWidget } from './interfaces'
 
-export default {
+export default defineComponent({
   components: { Widget, DndContainer },
   props: {
     config: {
-      type: Object,
+      type: Object as PropType<StashSearchWidget>,
       required: true
     }
   },
-  inject: ['wm'],
-  data () {
-    if (this.config.wmFlags[0] === 'uninitialized') {
-      this.config.wmFlags = ['invisible-on-blur']
-      this.$set(this.config, 'anchor', {
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+
+    if (props.config.wmFlags[0] === 'uninitialized') {
+      props.config.wmFlags = ['invisible-on-blur']
+      props.config.anchor = {
         pos: 'tl',
         x: 30,
         y: 30
-      })
-      this.$set(this.config, 'entries', [{
+      }
+      props.config.entries = [{
         id: 1, text: 'Currency'
-      }])
-      this.wm.show(this.config.wmId)
+      }]
+      wm.show(props.config.wmId)
     }
 
-    return {}
-  },
-  methods: {
-    removeEntry (id) {
-      this.config.entries = this.config.entries.filter(_ => _.id !== id)
-    },
-    addEntry () {
-      this.config.entries.push({
-        id: Math.max(0, ...this.config.entries.map(_ => _.id)) + 1,
-        text: ''
-      })
-    },
-    stashSearch (text) {
-      MainProcess.stashSearch(text)
+    return {
+      removeEntry (id: number) {
+        props.config.entries = props.config.entries.filter(_ => _.id !== id)
+      },
+      addEntry () {
+        props.config.entries.push({
+          id: Math.max(0, ...props.config.entries.map(_ => _.id)) + 1,
+          text: ''
+        })
+      },
+      stashSearch (text: string) {
+        MainProcess.stashSearch(text)
+      }
     }
   }
-}
+})
 </script>
 
 <i18n>

@@ -79,7 +79,7 @@ export default defineComponent({
     const showContrib = ref(false)
     const feedbackSent = ref(false)
 
-    watch(props.item, async (item) => {
+    watch(() => props.item, async (item) => {
       try {
         loading.value = true
         error.value = null

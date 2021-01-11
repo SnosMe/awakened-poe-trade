@@ -25,6 +25,7 @@ export interface Anchor {
 }
 
 export interface WidgetManager {
+  height: number
   active: boolean
   widgets: Widget[]
   show (wmId: number): void
@@ -51,5 +52,17 @@ export interface MapCheckWidget extends Widget {
     valueWarning: string
     valueDanger: string
     valueDesirable: string
+  }>
+}
+
+export interface StopwatchWidget extends Widget {
+  anchor: Anchor
+}
+
+export interface StashSearchWidget extends Widget {
+  anchor: Anchor
+  entries: Array<{
+    id: number
+    text: string
   }>
 }
