@@ -31,10 +31,25 @@ export interface WidgetManager {
   hide (wmId: number): void
   remove (wmId: number): void
   bringToTop (wmId: number): void
-  create (wmType: string): void 
+  create (wmType: string): void
+  showBrowser (wmId: number, url: string): void
 }
 
 export interface WidgetMenu extends Widget {
   anchor: Anchor
   alwaysShow: boolean
+}
+
+export interface PriceCheckWidget extends Widget {
+  chaosPriceThreshold: number
+}
+
+export interface MapCheckWidget extends Widget {
+  selectedStats: Array<{
+    matcher: string
+    invert: boolean
+    valueWarning: string
+    valueDanger: string
+    valueDesirable: string
+  }>
 }

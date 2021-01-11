@@ -14,7 +14,7 @@ interface PoepricesApiResponse { /* eslint-disable camelcase */
   pred_explanation: Array<[string, number]>
 }
 
-interface RareItemPrice {
+export interface RareItemPrice {
   max: number
   min: number
   confidence: number

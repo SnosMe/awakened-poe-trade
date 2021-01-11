@@ -16,13 +16,15 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+
+export default defineComponent({
   props: {
     position: {
-      type: Object,
+      type: Object as PropType<{ x: number, y: number }>,
       required: true
     }
   }
-}
+})
 </script>

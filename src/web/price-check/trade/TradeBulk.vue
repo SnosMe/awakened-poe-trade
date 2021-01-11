@@ -86,88 +86,104 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType, inject, ref, computed, watch } from 'vue'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { execBulkSearch } from './pathofexile-bulk'
+import { BulkSearch, execBulkSearch } from './pathofexile-bulk'
 import { tradeTag, getTradeEndpoint } from './common'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { Leagues } from '../Leagues'
 import { Config } from '@/web/Config'
+import { ItemFilters } from '../filters/interfaces'
+import { ParsedItem } from '@/parser'
+import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 
-export default {
+function useBulkApi () {
+  let searchId = 0
+  const error = ref<string | null>(null)
+  const result = ref<BulkSearch | null>(null)
+
+  async function search (item: ParsedItem, filters: ItemFilters) {
+    try {
+      searchId += 1
+      error.value = null
+      result.value = null
+  
+      const _searchId = searchId
+      const _result = await execBulkSearch(item, filters)
+      if (_searchId === searchId) {
+        result.value = _result
+      }
+    } catch (err) {
+      error.value = err.message
+    }
+  }
+
+  return { error, result, search }
+}
+
+export default defineComponent({
   props: {
     filters: {
-      type: Object,
+      type: Object as PropType<ItemFilters>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  inject: ['wm', 'widget'],
-  data () {
-    return {
-      searchId: 0,
-      loading: false,
-      error: null,
-      result: null,
-      selectedCurr: 'chaos'
-    }
-  },
-  computed: {
-    selectedResults () {
-      const arr = Array(20)
-      if (!this.result) return arr
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+    const widget = inject<{ config: PriceCheckWidget }>('widget')!
+    const { error, result, search } = useBulkApi()
 
-      const listed = this.result[this.selectedCurr].listed
+    const selectedCurr = ref<'chaos' | 'exa'>('chaos')
+
+    const selectedResults = computed(() => {
+      const arr = Array(20)
+      if (!result.value) return arr
+
+      const listed = result.value[selectedCurr.value].listed
       arr.splice(0, listed.length, ...listed)
       return arr
-    },
-    config () {
-      return Config.store
-    }
-  },
-  methods: {
-    async execSearch () {
-      try {
-        this.searchId += 1
-        const searchId = this.searchId
+    })
 
-        this.loading = true
-        this.error = null
-        this.result = null
-
-        const result = await execBulkSearch(this.item, this.filters)
-        if (this.searchId !== searchId) return
-        this.result = result
-        this.selectedCurr = (result.exa.total > result.chaos.total) ? 'exa' : 'chaos'
+    watch(result, () => {
+      if (result.value) {
+        const { exa, chaos } = result.value
+        selectedCurr.value = (exa.total > chaos.total) ? 'exa' : 'chaos'
         // override, because at league start many players set wrong price, and this breaks auto-detection
-        if (tradeTag(this.item) === TRADE_TAG_BY_NAME.get('Chaos Orb')) {
-          this.selectedCurr = 'exa'
-        } else if (tradeTag(this.item) === TRADE_TAG_BY_NAME.get('Exalted Orb')) {
-          this.selectedCurr = 'chaos'
+        if (tradeTag(props.item) === TRADE_TAG_BY_NAME.get('Chaos Orb')) {
+          selectedCurr.value = 'exa'
+        } else if (tradeTag(props.item) === TRADE_TAG_BY_NAME.get('Exalted Orb')) {
+          selectedCurr.value = 'chaos'
         }
-      } catch (err) {
-        this.error = err.message
-      } finally {
-        this.loading = false
       }
-    },
-    getRelativeTime (iso) {
-      return DateTime.fromISO(iso).toRelative({ style: 'short' })
-    },
-    openTradeLink (isExternal) {
-      const link = `https://${getTradeEndpoint()}/trade/exchange/${Leagues.selected}/${this.result[this.selectedCurr].queryId}`
-      if (isExternal) {
-        MainProcess.openSystemBrowser(link)
-      } else {
-        this.wm.showBrowser(this.widget.config.wmId, link)
+    })
+
+    return {
+      error,
+      result,
+      selectedResults,
+      selectedCurr,
+      execSearch: () => { search(props.item, props.filters) },
+      config: computed(() => Config.store),
+      openTradeLink (isExternal: boolean) {
+        const link = `https://${getTradeEndpoint()}/trade/exchange/${Leagues.selected}/${result.value![selectedCurr.value].queryId}`
+        if (isExternal) {
+          MainProcess.openSystemBrowser(link)
+        } else {
+          wm.showBrowser(widget.config.wmId, link)
+        }
+      },
+      getRelativeTime (iso: string) {
+        return DateTime.fromISO(iso).toRelative({ style: 'short' })
       }
     }
   }
-}
+})
 </script>
 
 <style lang="postcss">

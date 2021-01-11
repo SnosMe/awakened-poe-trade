@@ -14,24 +14,24 @@
       <div class="flex">
         <ui-input-debounced class="search-num-input rounded-tl mr-px" :placeholder="$t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMin"
-          v-model.number="filter.min" @focus.native="inputFocus($event, 'min')" :delay="0" />
+          v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
         <ui-input-debounced class="search-num-input rounded-tr" :placeholder="$t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMax"
-          v-model.number="filter.max" @focus.native="inputFocus($event, 'max')" :delay="0" />
+          v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
       </div>
     </div>
     <div class="flex">
       <div class="w-5 flex items-start">
-        <ui-popper v-if="filter.hidden" tag-name="div" class="flex" :options="{ placement: 'right-start' }" boundaries-selector="#price-window">
-          <template slot="reference">
+        <ui-popover v-if="filter.hidden" placement="right-start" boundary="#price-window">
+          <template #target>
             <span class="text-xs leading-none text-gray-600 cursor-pointer">
               <i class="fas fa-eye-slash" :class="{ 'faa-ring': !filter.disabled }"></i>
             </span>
           </template>
-          <div class="popper">
+          <template #content>
             <div style="max-width: 18.5rem;">{{ $t(filter.hidden) }}</div>
-          </div>
-        </ui-popper>
+          </template>
+        </ui-popover>
       </div>
       <div class="flex-1 flex items-start">
         <span v-if="showTypeTags"
@@ -73,98 +73,117 @@
   </div>
 </template>
 
-<script>
-import ItemModifierText from '../../ui/ItemModifierText'
+<script lang="ts">
+import { defineComponent, PropType, computed, ref, nextTick, ComponentPublicInstance } from 'vue'
+import ItemModifierText from '../../ui/ItemModifierText.vue'
 import { Config } from '@/web/Config'
+import { ParsedItem } from '@/parser'
+import { StatFilter } from './interfaces'
 
-export default {
+export default defineComponent({
   components: { ItemModifierText },
+  emits: ['submit'],
   props: {
     filter: {
-      type: Object,
+      type: Object as PropType<StatFilter>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  computed: {
-    showMinmaxInput () {
+  setup (props, ctx) {
+    const showMinmaxInput = computed(() => {
       if (
-        this.filter.option != null ||
-        (this.filter.roll == null && this.filter.min == null && this.filter.max == null)
+        props.filter.option != null ||
+        (props.filter.roll == null && props.filter.min == null && props.filter.max == null)
       ) return false
 
       return true
-    },
-    showTypeTags () {
-      if (this.filter.boundMin !== undefined || this.filter.variant) {
+    })
+
+    const showTypeTags = computed(() => {
+      if (props.filter.boundMin !== undefined || props.filter.variant) {
         return false
       }
-      return this.filter.type !== 'armour' &&
-        this.filter.type !== 'weapon'
-    },
-    showQ20Notice () {
+      return props.filter.type !== 'armour' &&
+        props.filter.type !== 'weapon'
+    })
+
+    const showQ20Notice = computed(() => {
       return [
         'armour.armour',
         'armour.evasion_rating',
         'armour.energy_shield',
         'weapon.total_dps',
         'weapon.physical_dps'
-      ].includes(this.filter.tradeId[0])
-    },
-    sliderValue: {
+      ].includes(props.filter.tradeId[0])
+    })
+
+    const inputMin = ref<ComponentPublicInstance | null>(null)
+    const inputMax = ref<ComponentPublicInstance | null>(null)
+
+    const sliderValue = computed<Array<number>>({
       get () {
         return [
-          typeof this.filter.min === 'number' ? this.filter.min : this.filter.boundMin,
-          typeof this.filter.max === 'number' ? this.filter.max : this.filter.boundMax
+          typeof props.filter.min === 'number' ? props.filter.min : props.filter.boundMin!,
+          typeof props.filter.max === 'number' ? props.filter.max : props.filter.boundMax!
         ]
       },
       set (value) {
-        if (this.filter.min !== value[0]) {
-          this.filter.min = value[0]
-          this.$nextTick(() => {
-            this.$refs.inputMin.$el.focus()
+        if (props.filter.min !== value[0]) {
+          props.filter.min = value[0]
+          nextTick(() => {
+            (inputMin.value!.$el as HTMLInputElement).focus()
           })
-        } else if (this.filter.max !== value[1]) {
-          this.filter.max = value[1]
-          this.$nextTick(() => {
-            this.$refs.inputMax.$el.focus()
+        } else if (props.filter.max !== value[1]) {
+          props.filter.max = value[1]
+          nextTick(() => {
+            (inputMax.value!.$el as HTMLInputElement).focus()
           })
         }
-        this.filter.disabled = false
+        props.filter.disabled = false
       }
-    },
-    fontSize () {
-      return Config.store.fontSize
-    }
-  },
-  methods: {
-    inputFocus (e, type) {
-      if (e.target.value === '') {
+    })
+
+    function inputFocus (e: FocusEvent, type: 'min' | 'max') {
+      const target = e.target as HTMLInputElement
+      if (target.value === '') {
         if (type === 'max') {
-          this.filter.max = this.filter.defaultMax
+          props.filter.max = props.filter.defaultMax
         } else if (type === 'min') {
-          this.filter.min = this.filter.defaultMin
+          props.filter.min = props.filter.defaultMin
         }
-        this.$nextTick(() => {
-          e.target.select()
+        nextTick(() => {
+          target.select()
         })
       } else {
-        e.target.select()
+        target.select()
       }
-      this.filter.disabled = false
-    },
-    toggleFilter (e) {
+      props.filter.disabled = false
+    }
+
+    function toggleFilter (e: MouseEvent) {
       if (e.detail === 0) {
-        this.$emit('submit')
+        ctx.emit('submit')
       } else {
-        this.filter.disabled = !this.filter.disabled
+        props.filter.disabled = !props.filter.disabled
       }
     }
+
+    return {
+      showMinmaxInput,
+      showTypeTags,
+      showQ20Notice,
+      inputMin,
+      inputMax,
+      sliderValue,
+      fontSize: computed(() => Config.store.fontSize),
+      inputFocus
+    }
   }
-}
+})
 </script>
 
 <style lang="postcss">

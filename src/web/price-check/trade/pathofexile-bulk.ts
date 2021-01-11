@@ -91,7 +91,7 @@ async function requestResults (queryId: string, resultIds: string[]): Promise<Pr
     })
 }
 
-interface BulkSearch {
+export interface BulkSearch {
   exa: {
     queryId: string
     total: number

@@ -1,7 +1,7 @@
 <template>
   <div
     ref="el"
-    style="position: relative; overflow: auto;"
+    style="position: relative; overflow-y: auto;"
     @scroll.passive="handleScroll"
   >
     <div :style="{ height: `${fullHeight}px` }">

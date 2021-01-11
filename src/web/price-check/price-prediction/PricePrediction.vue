@@ -56,47 +56,51 @@
   </div>
 </template>
 
-<script>
-import { requestPoeprices } from './poeprices'
-import FeedbackOption from './FeedbackOption'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
+<script lang="ts">
+import { defineComponent, watch, ref, PropType } from 'vue'
+import { RareItemPrice, requestPoeprices } from './poeprices'
+import FeedbackOption from './FeedbackOption.vue'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+import { ParsedItem } from '@/parser'
 
-export default {
+export default defineComponent({
   name: 'PricePrediction',
   components: { FeedbackOption, ItemQuickPrice },
   props: {
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  data () {
-    return {
-      price: null,
-      error: null,
-      loading: false,
-      showContrib: false,
-      feedbackSent: false
-    }
-  },
-  watch: {
-    item: {
-      immediate: true,
-      async handler (item) {
-        try {
-          this.loading = true
-          this.error = null
-          this.price = null
-          this.showContrib = false
-          this.feedbackSent = false
-          this.price = await requestPoeprices(this.item)
-        } catch (err) {
-          this.error = err.message
-        } finally {
-          this.loading = false
-        }
+  setup (props) {
+    const price = ref<RareItemPrice | null>(null)
+    const error = ref<string | null>(null)
+    const loading = ref(false)
+    const showContrib = ref(false)
+    const feedbackSent = ref(false)
+
+    watch(props.item, async (item) => {
+      try {
+        loading.value = true
+        error.value = null
+        price.value = null
+        showContrib.value = false
+        feedbackSent.value = false
+        price.value = await requestPoeprices(props.item)
+      } catch (err) {
+        error.value = err.message
+      } finally {
+        loading.value = false
       }
+    }, { immediate: true })
+
+    return {
+      price,
+      error,
+      loading,
+      showContrib,
+      feedbackSent
     }
   }
-}
+})
 </script>
