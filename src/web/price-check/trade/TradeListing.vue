@@ -6,15 +6,15 @@
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
-      <ui-popper v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOver="70" :delayOnMouseOut="150" :options="{ placement: 'bottom-start' }" boundaries-selector="#price-window">
-        <template slot="reference">
+      <ui-popover v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOver="70" :delayOnMouseOut="150" placement="bottom-start" boundary="#price-window">
+        <template #target>
           <button class="text-gray-500 rounded mr-1 px-2 truncate">
             <span><i class="fas fa-history"></i> {{ $t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
             <span v-if="Leagues.selected !== filters.trade.league">, {{ filters.trade.league }}</span>
           </button>
         </template>
-        <div class="popper">
-          <div class="p-2 text-left bg-gray-800 text-gray-400">
+        <template #content>
+          <div class="p-2 bg-gray-800 text-gray-400">
             <ui-toggle v-model="filters.trade.offline" class="mb-2">{{ $t('Offline & Online') }}</ui-toggle>
             <div class="flex">
               <div>
@@ -32,8 +32,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </ui-popper>
+        </template>
+      </ui-popover>
       <div class="flex-1"></div>
       <div v-if="list" class="flex">
         <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ $t('Trade') }}</button>

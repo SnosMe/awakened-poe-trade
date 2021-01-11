@@ -27,7 +27,7 @@ import { MapCheckWidget, WidgetManager } from '../overlay/interfaces'
 import * as ipc from '@/ipc/ipc-event'
 import i18n from '../i18n'
 
-export default {
+export default defineComponent({
   components: {
     Widget,
     MapStatButton
@@ -103,7 +103,7 @@ export default {
       mapStats
     }
   }
-}
+})
 </script>
 
 <i18n>

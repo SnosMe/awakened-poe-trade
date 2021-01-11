@@ -51,12 +51,6 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-.popper {
-  font-size: 0.875rem !important;
-  border-radius: 0.25rem !important;
-  padding: 0.125rem !important;
-}
-
 .btn {
   @apply bg-gray-700;
   @apply px-2 py-1;

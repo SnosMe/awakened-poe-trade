@@ -59,7 +59,7 @@ export default {
     StackValue
   },
   created () {
-    this.$watch(vm => [vm.item, vm.interactedOnce], (curr, prev) => {
+    this.$watch(() => [this.item, this.interactedOnce], (curr, prev) => {
       if (this.interactedOnce === false) return
 
       this.tradeAPI = apiToSatisfySearch(this.item, this.itemStats)
@@ -72,7 +72,7 @@ export default {
       })
     }, { deep: false })
 
-    this.$watch(vm => [vm.item, vm.interactedOnce, vm.itemStats, vm.itemFilters], (curr, prev) => {
+    this.$watch(() => [this.item, this.interactedOnce, this.itemStats, this.itemFilters], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
       const cIntaracted = curr[1]; const pIntaracted = prev[1]
 
@@ -82,7 +82,7 @@ export default {
       }
     }, { deep: true })
 
-    this.$watch(vm => [vm.item, JSON.stringify(vm.itemFilters && vm.itemFilters.trade)], (curr, prev) => {
+    this.$watch(() => [this.item, JSON.stringify(this.itemFilters && this.itemFilters.trade)], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
       const cTrade = curr[1]; const pTrade = prev[1]
 

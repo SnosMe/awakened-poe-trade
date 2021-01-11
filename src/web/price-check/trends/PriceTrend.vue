@@ -22,14 +22,14 @@
       <div class="text-xs text-gray-500 leading-none">{{ $t('Last 7 days') }}</div>
     </div>
     <div v-if="trend.changeStr" class="w-12 h-8">
-      <trend-chart padding="2"
+      <!-- <trend-chart padding="2"
       :datasets="[{
         data: trend.receive.graphPoints,
         smooth: true,
         fill: true
       }]"
       :min="Math.min(...trend.receive.graphPoints) - trend.changeVal"
-      :max="Math.max(...trend.receive.graphPoints) + trend.changeVal" />
+      :max="Math.max(...trend.receive.graphPoints) + trend.changeVal" /> -->
     </div>
   </div>
 </template>
