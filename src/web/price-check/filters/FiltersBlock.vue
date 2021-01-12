@@ -79,13 +79,17 @@
   </div>
 </template>
 
-<script>
-import FilterModifier from './FilterModifier'
-import FilterVeiled from './FilterVeiled'
-import FilterNumericEditable from './FilterNumericEditable'
+<script lang="ts">
+import { defineComponent, watch, ref, computed, PropType } from 'vue'
+import FilterModifier from './FilterModifier.vue'
+import FilterVeiled from './FilterVeiled.vue'
+import FilterNumericEditable from './FilterNumericEditable.vue'
+import { ItemFilters, StatFilter } from './interfaces'
+import { ParsedItem } from '@/parser'
 
-export default {
+export default defineComponent({
   name: 'FiltersBlock',
+  emits: ['submit'],
   components: {
     FilterModifier,
     FilterVeiled,
@@ -93,58 +97,56 @@ export default {
   },
   props: {
     filters: {
-      type: Object,
+      type: Object as PropType<ItemFilters>,
       required: true
     },
     stats: {
-      type: Array,
+      type: Array as PropType<StatFilter[]>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  data () {
+  setup (props, ctx) {
+    const showStatsBlock = ref(true)
+    const showHidden = ref(false)
+
+    watch(() => props.item, () => {
+      showHidden.value = false
+    })
+
     return {
-      showStatsBlock: true,
-      showHidden: false
-    }
-  },
-  watch: {
-    item () {
-      this.showHidden = false
-    }
-  },
-  computed: {
-    totalSelectedMods () {
-      return this.stats.filter(stat => !stat.disabled).length
-    },
-    shownStats () {
-      if (this.showHidden) {
-        return this.stats.filter(s => s.hidden)
-      } else {
-        return this.stats.filter(s => !s.hidden)
-      }
-    }
-  },
-  methods: {
-    toggleStatsBlock () {
-      this.showStatsBlock = !this.showStatsBlock
-    },
-    handleStatsSubmit () {
-      this.$emit('submit')
-    },
-    handleMouseLeaveStats (e) {
-      if (e.offsetY >= e.fromElement.clientHeight) {
-        this.handleStatsSubmit()
-        if (document.activeElement) {
-          document.activeElement.blur()
+      showStatsBlock,
+      showHidden,
+      totalSelectedMods: computed(() => {
+        return props.stats.filter(stat => !stat.disabled).length
+      }),
+      shownStats: computed(() => {
+        if (showHidden.value) {
+          return props.stats.filter(s => s.hidden)
+        } else {
+          return props.stats.filter(s => !s.hidden)
+        }
+      }),
+      toggleStatsBlock () {
+        showStatsBlock.value = !showStatsBlock.value
+      },
+      handleStatsSubmit () {
+        ctx.emit('submit')
+      },
+      handleMouseLeaveStats (e: MouseEvent) {
+        if (e.offsetY >= (e as any).fromElement.clientHeight) {
+          ctx.emit('submit')
+          if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur()
+          }
         }
       }
     }
   }
-}
+})
 </script>
 
 <style lang="postcss">
