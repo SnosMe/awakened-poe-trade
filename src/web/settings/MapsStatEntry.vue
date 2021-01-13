@@ -3,9 +3,9 @@
     <div class="flex-1 truncate px-2">{{ matcher }}</div>
     <div class="flex" :class="{ [$style.controlsAutoHide]: !entryInSelected }">
       <div class="pr-1"><ui-toggle v-model="invert" /></div>
-      <div><input v-model.trim="valueWarning" @focus="handleFocus($event, 'valueWarning')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-l"></div>
-      <div><input v-model.trim="valueDanger" @focus="handleFocus($event, 'valueDanger')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center mx-px"></div>
-      <div><input v-model.trim="valueDesirable" @focus="handleFocus($event, 'valueDesirable')" :placeholder="$t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-r"></div>
+      <div><input v-model.trim="valueWarning" @focus="handleFocus($event, 'valueWarning')" :placeholder="t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-l"></div>
+      <div><input v-model.trim="valueDanger" @focus="handleFocus($event, 'valueDanger')" :placeholder="t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center mx-px"></div>
+      <div><input v-model.trim="valueDesirable" @focus="handleFocus($event, 'valueDesirable')" :placeholder="t(!invert ? 'min' : 'max')" class="bg-gray-900 w-12 text-center rounded-r"></div>
       <div class="flex w-6">
         <button v-if="entryInSelected"
           @click="remove"
@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import { MapCheckWidget } from '../overlay/interfaces'
 
@@ -114,7 +115,10 @@ export default defineComponent({
       }
     }
 
+    const { t } = useI18n()
+
     return {
+      t,
       entryInSelected,
       invert,
       valueWarning,

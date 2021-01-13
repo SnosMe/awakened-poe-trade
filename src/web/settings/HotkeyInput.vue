@@ -2,13 +2,14 @@
   <input
     @keyup="handleKeyup"
     @keydown.prevent
-    :placeholder="modelValue || $t('Not Set')"
+    :placeholder="modelValue || t('Not Set')"
     :class="{ 'placeholder-red-500': !modelValue }"
     class="rounded bg-gray-900 px-1 text-center font-fontin-regular" />
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { KeyToCode, forbidden } from '@/ipc/KeyToCode'
 
 export default defineComponent({
@@ -28,7 +29,10 @@ export default defineComponent({
     }
   },
   setup (props, ctx) {
+    const { t } = useI18n()
+
     return {
+      t,
       handleKeyup (e: KeyboardEvent) {
         e.preventDefault()
         e.stopPropagation()

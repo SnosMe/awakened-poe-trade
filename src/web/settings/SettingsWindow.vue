@@ -1,17 +1,17 @@
 <template>
   <div class="flex-grow layout-column bg-gray-800">
-    <app-titlebar @close="cancel" :title="$t('Settings - Awakened PoE Trade')" native />
+    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" native />
     <div class="flex flex-grow min-h-0">
       <div class="px-2 pb-10 bg-gray-900 flex flex-col">
-        <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">{{ $t('Hotkeys') }}</router-link>
-        <router-link :to="{ name: 'settings.chat' }" class="menu-item">{{ $t('Chat') }}</router-link>
+        <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">{{ t('Hotkeys') }}</router-link>
+        <router-link :to="{ name: 'settings.chat' }" class="menu-item">{{ t('Chat') }}</router-link>
         <div class="border-b m-1 border-gray-800"></div>
-        <router-link :to="{ name: 'settings.general' }" class="menu-item">{{ $t('General') }}</router-link>
+        <router-link :to="{ name: 'settings.general' }" class="menu-item">{{ t('General') }}</router-link>
         <div class="border-b m-1 border-gray-800"></div>
-        <router-link :to="{ name: 'settings.price-check' }" class="menu-item">{{ $t('Price check') }}</router-link>
-        <router-link :to="{ name: 'settings.maps' }" class="menu-item">{{ $t('Maps') }}</router-link>
+        <router-link :to="{ name: 'settings.price-check' }" class="menu-item">{{ t('Price check') }}</router-link>
+        <router-link :to="{ name: 'settings.maps' }" class="menu-item">{{ t('Maps') }}</router-link>
         <div class="border-b m-1 border-gray-800"></div>
-        <router-link :to="{ name: 'settings.debug' }" class="menu-item">{{ $t('Debug') }}</router-link>
+        <router-link :to="{ name: 'settings.debug' }" class="menu-item">{{ t('Debug') }}</router-link>
         <div style="min-width: 9.5rem;"></div>
       </div>
       <div class="text-gray-100 flex-grow layout-column">
@@ -19,8 +19,8 @@
           <router-view />
         </div>
         <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end">
-          <button @click="save" class="px-3 bg-gray-800 rounded mr-2">{{ $t('Save') }}</button>
-          <button @click="cancel" class="px-3">{{ $t('Cancel') }}</button>
+          <button @click="save" class="px-3 bg-gray-800 rounded mr-2">{{ t('Save') }}</button>
+          <button @click="cancel" class="px-3">{{ t('Cancel') }}</button>
         </div>
       </div>
     </div>
@@ -28,15 +28,19 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import i18n from '../i18n'
 
 export default {
   setup () {
-    document.title = i18n.global.t('Settings - Awakened PoE Trade')
+    const { t } = useI18n()
+
+    document.title = t('Settings - Awakened PoE Trade')
 
     return {
+      t,
       save () {
         MainProcess.closeSettingsWindow(Config.store)
       },

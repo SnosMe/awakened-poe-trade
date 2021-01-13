@@ -37,7 +37,7 @@
     "tippy.js": "^6.2.7",
     "uiohook-napi": "1.0.x",
     "vue": "3.0.x",
-    "vue-i18n": "9.0.0-rc.1",
+    "vue-i18n": "9.0.0-rc.2",
     "vue-router": "4.x.x",
     "vue-slider-component": "4.0.0-beta.3",
     "vuedraggable": "4.0.1",
