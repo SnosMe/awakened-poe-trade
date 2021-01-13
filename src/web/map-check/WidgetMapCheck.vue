@@ -4,7 +4,7 @@
       <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
       <fullscreen-image v-if="image" :src="image" />
       <div v-if="!item" class="px-8 py-2">
-        {{ $t('Item under cursor is not a map.') }}
+        {{ t('Item under cursor is not a map.') }}
       </div>
       <div v-else class="py-2 flex flex-col">
         <map-stat-button v-for="stat in mapStats" :key="stat.text"
@@ -16,6 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, inject, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Widget from '../overlay/Widget.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { MAP_CHECK } from '@/ipc/ipc-event'
@@ -40,6 +41,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
+    const { t } = useI18n()
 
     const checkPosition = ref({ x: 1, y: 1 })
     const item = ref<ParsedItem | null>(null)
@@ -75,7 +77,7 @@ export default defineComponent({
     })
     const mapName = computed(() => {
       if (!item.value) {
-        return i18n.global.t('Invalid item')
+        return t('Invalid item')
       }
 
       if (item.value.rarity === ItemRarity.Unique) {
