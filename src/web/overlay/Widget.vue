@@ -7,13 +7,13 @@
       <div class="absolute px-1" :style="actionsPosition" style="background: rgba(0,0,0,0.01);">
         <div :class="$style.actionsPanel">
           <button v-if="hideable" @click="hide"
-            :class="$style.action">{{ $t('hide') }}</button>
+            :class="$style.action">{{ t('hide') }}</button>
           <button v-if="!readonly" @click="toggleEdit"
-            :class="[$style.action, { [$style.active]: isEditing }]">{{ $t('edit') }}</button>
+            :class="[$style.action, { [$style.active]: isEditing }]">{{ t('edit') }}</button>
           <button v-if="moveHandles !== 'none'" @click="toggleMove"
-            :class="[$style.action, { [$style.active]: isMoving }]">{{ $t('move') }}</button>
+            :class="[$style.action, { [$style.active]: isMoving }]">{{ t('move') }}</button>
           <button v-if="removable" @mousedown="startRemoveTimer" @mouseup="cancelRemoveTimer" @mouseleave="cancelRemoveTimer"
-            :class="[$style.action, $style.removable, { [$style.removing]: isRemoving }]">{{ $t('delete') }}</button>
+            :class="[$style.action, $style.removable, { [$style.removing]: isRemoving }]">{{ t('delete') }}</button>
         </div>
       </div>
       <div v-if="isMoving">
@@ -35,6 +35,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, inject, ref } from 'vue'
 import { Widget, Anchor, WidgetManager } from './interfaces'
+import { useI18n } from 'vue-i18n'
 
 function useRemovable (remove: () => void) {
   const isRemoving = ref(false)
@@ -188,7 +189,10 @@ export default defineComponent({
     const isEditing = ref(false)
     const isMoving = ref(false)
 
+    const { t } = useI18n()
+
     return {
+      t,
       moverPosition,
       widgetPosition,
       actionsPosition,

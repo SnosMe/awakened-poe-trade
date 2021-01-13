@@ -1,7 +1,7 @@
 <template>
   <div v-if="filter"
     class="trade-tag trade-tag--box flex" :class="{ disabled: filter.disabled }">
-    <button @click="filter.disabled = !filter.disabled" class="pl-2">{{ $t(name) }}</button>
+    <button @click="filter.disabled = !filter.disabled" class="pl-2">{{ t(name) }}</button>
     <ui-input-debounced class="trade-tag__input" step="any" type="number"
       v-model.number="filterValue"
       :placeholder="filter.value"
@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { FilterNumeric } from './interfaces'
 
 export default defineComponent({
@@ -53,7 +54,10 @@ export default defineComponent({
       props.filter!.disabled = false
     }
 
+    const { t } = useI18n()
+
     return {
+      t,
       filterValue,
       inputFocus
     }

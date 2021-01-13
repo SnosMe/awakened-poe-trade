@@ -7,15 +7,15 @@
           'fas fa-check-square': !filter.disabled
         }"></i>
         <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-          <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="$t(filter.text)" :roll="filter.roll" /></span>
-          <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="$t(filter.text)" :roll="filter.roll" /></span>
+          <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
+          <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
         </div>
       </button>
       <div class="flex">
-        <ui-input-debounced class="search-num-input rounded-tl mr-px" :placeholder="$t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
+        <ui-input-debounced class="search-num-input rounded-tl mr-px" :placeholder="t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMin"
           v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
-        <ui-input-debounced class="search-num-input rounded-tr" :placeholder="$t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
+        <ui-input-debounced class="search-num-input rounded-tr" :placeholder="t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
           v-if="showMinmaxInput" ref="inputMax"
           v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
       </div>
@@ -29,15 +29,15 @@
             </span>
           </template>
           <template #content>
-            <div style="max-width: 18.5rem;">{{ $t(filter.hidden) }}</div>
+            <div style="max-width: 18.5rem;">{{ t(filter.hidden) }}</div>
           </template>
         </ui-popover>
       </div>
       <div class="flex-1 flex items-start">
         <span v-if="showTypeTags"
-          class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ $t(filter.type) }}</span>
+          class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ t(filter.type) }}</span>
         <span v-if="filter.variant"
-          class="text-xs leading-none px-1 rounded mod-type-variant">{{ $t('variant') }}</span>
+          class="text-xs leading-none px-1 rounded mod-type-variant">{{ t('variant') }}</span>
       </div>
       <div class="flex-1 mr-4">
         <div style="width: 12.5rem;">
@@ -67,7 +67,7 @@
         </div>
       </div>
       <div v-if="showQ20Notice"
-        class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: calc(2*3rem + 1px)">{{ $t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
+        class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: calc(2*3rem + 1px)">{{ t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
       <div v-else style="width: calc(2*3rem + 1px)"></div>
     </div>
   </div>
@@ -75,6 +75,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, ref, nextTick, ComponentPublicInstance } from 'vue'
+import { useI18n } from 'vue-i18n'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import { Config } from '@/web/Config'
 import { ParsedItem } from '@/parser'
@@ -172,7 +173,10 @@ export default defineComponent({
       }
     }
 
+    const { t } = useI18n()
+
     return {
+      t,
       showMinmaxInput,
       showTypeTags,
       showQ20Notice,

@@ -2,16 +2,16 @@
   <ui-popover v-if="filters.veiled" placement="bottom-start" boundary="#price-window">
     <template #target>
       <div class="trade-tag flex items-center" :class="{ disabled: filters.veiled.disabled }">
-        <span>{{ $t(text) }}</span>
+        <span>{{ t(text) }}</span>
         <i v-if="showIcon" class="fas fa-caret-down pl-2 text-gray-400"></i>
       </div>
     </template>
     <template #content>
       <div class="p-2 bg-gray-800 text-gray-400">
         <div class="mb-1" v-for="opt of options" :key="opt.value">
-          <ui-radio v-model="filters.veiled.stat" :value="opt.value">{{ $t(opt.label) }}</ui-radio>
+          <ui-radio v-model="filters.veiled.stat" :value="opt.value">{{ t(opt.label) }}</ui-radio>
         </div>
-        <ui-toggle v-model="filters.veiled.disabled">{{ $t('Disable filter') }}</ui-toggle>
+        <ui-toggle v-model="filters.veiled.disabled">{{ t('Disable filter') }}</ui-toggle>
       </div>
     </template>
   </ui-popover>
@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { VEILED_STAT } from './veiled'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { ItemFilters } from './interfaces'
@@ -51,7 +52,10 @@ export default defineComponent({
         props.item.rarity !== ItemRarity.Unique
     })
 
+    const { t } = useI18n()
+
     return {
+      t,
       text,
       options,
       showIcon

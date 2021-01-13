@@ -16,17 +16,17 @@
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap">Chromatic calculator</button> -->
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap">Screen saver</button> -->
               <!-- add widget -->
-              <div class="text-gray-600 text-sm px-1 select-none whitespace-no-wrap">{{ $t('add widget') }}</div>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('timer')">{{ $t('Stopwatch') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('stash-search')">{{ $t('Stash search') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('image-strip')">{{ $t('Image strip') }}</button>
+              <div class="text-gray-600 text-sm px-1 select-none whitespace-no-wrap">{{ t('add widget') }}</div>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('timer')">{{ t('Stopwatch') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('stash-search')">{{ t('Stash search') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('image-strip')">{{ t('Image strip') }}</button>
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('TODO')">Image</button> -->
             </div>
           </template>
         </ui-popover>
       </div>
       <div v-if="isEditing" class="text-gray-100 px-2 pb-1 whitespace-no-wrap">
-        <ui-toggle v-model="config.alwaysShow">{{ $t('Show button for active widgets') }}</ui-toggle>
+        <ui-toggle v-model="config.alwaysShow">{{ t('Show button for active widgets') }}</ui-toggle>
       </div>
     </div>
   </widget>
@@ -36,6 +36,7 @@
 import { defineComponent, PropType, computed, inject, ref } from 'vue'
 import { Widget as IWidget, WidgetManager, WidgetMenu } from './interfaces'
 import Widget from './Widget.vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   components: { Widget },
@@ -54,8 +55,11 @@ export default defineComponent({
         (props.config.alwaysShow || (widget.wmWants === 'hide'))
       )
     })
+    
+    const { t } = useI18n()
 
     return {
+      t,
       widgets,
       createOfType (type: string) {
         wm.create(type)

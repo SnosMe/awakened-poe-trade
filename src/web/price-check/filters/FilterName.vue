@@ -4,19 +4,19 @@
       :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
       @click="toggleAccuracy">{{ label }}</button>
     <button v-if="filters.corrupted" class="px-2" @click="corrupted = !corrupted">
-      <span v-if="corrupted" class="text-red-500">{{ $t('Corrupted') }}</span>
-      <span v-else class="text-gray-600">{{ $t('Not Corrupted') }}</span>
+      <span v-if="corrupted" class="text-red-500">{{ t('Corrupted') }}</span>
+      <span v-else class="text-gray-600">{{ t('Not Corrupted') }}</span>
     </button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { ItemFilters } from './interfaces'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
-import i18n from '../../i18n'
 
 export default defineComponent({
   name: 'FilterName',
@@ -31,6 +31,8 @@ export default defineComponent({
     }
   },
   setup (props, ctx) {
+    const { t } = useI18n()
+
     const label = computed(() => {
       if (props.filters.name) {
         return TRANSLATED_ITEM_NAME_BY_REF.get(props.filters.name.value) ||
@@ -41,7 +43,7 @@ export default defineComponent({
           props.filters.baseType.value
       }
       if (props.filters.category) {
-        return i18n.global.t(`Category: ${props.filters.category.value}`)
+        return t(`Category: ${props.filters.category.value}`)
       }
 
       return '??? Report if you see this text'
@@ -80,6 +82,7 @@ export default defineComponent({
     })
 
     return {
+      t,
       label,
       showAsActive,
       toggleAccuracy,

@@ -1,7 +1,7 @@
 <template>
   <div v-if="show" class="layout-column">
     <div class="m-4 py-1 px-2 bg-gray-900 rounded">
-      {{ $t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
+      {{ t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
     </div>
     <div class="overflow-auto pb-4 px-4">
       <div class="flex flex-wrap -m-1">
@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { UNIQUES_LIST, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { ItemRarity, ParsedItem } from '@/parser'
 
@@ -75,7 +76,10 @@ export default defineComponent({
       ctx.emit('identify', newItem)
     }
 
+    const { t } = useI18n()
+
     return {
+      t,
       identifiedVariants,
       show,
       baseType,
