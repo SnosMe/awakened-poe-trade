@@ -1,5 +1,5 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { Leagues } from '../Leagues'
+import { selected as league } from '@/web/background/Leagues'
 import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
@@ -46,7 +46,7 @@ interface PricingResult {
 async function requestTradeResultList (body: TradeRequest) {
   await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
 
-  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${Leagues.selected}`, {
+  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${league.value}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

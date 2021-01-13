@@ -10,7 +10,7 @@
         <template #target>
           <button class="text-gray-500 rounded mr-1 px-2 truncate">
             <span><i class="fas fa-history"></i> {{ $t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
-            <span v-if="Leagues.selected !== filters.trade.league">, {{ filters.trade.league }}</span>
+            <span v-if="defaultLeague !== filters.trade.league">, {{ filters.trade.league }}</span>
           </button>
         </template>
         <template #content>
@@ -26,7 +26,7 @@
                 <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">{{ $t('1 Month Ago') }}</ui-radio></div>
               </div>
               <div class="ml-8">
-                <div class="mb-1" v-for="league of Leagues.state.tradeLeagues" :key="league.id">
+                <div class="mb-1" v-for="league of tradeLeagues" :key="league.id">
                   <ui-radio v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
                 </div>
               </div>
@@ -112,7 +112,7 @@ import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
 import { getTradeEndpoint } from './common'
-import { Leagues } from '../Leagues'
+import { selected as defaultLeague, tradeLeagues } from '../../background/Leagues'
 import { Config } from '@/web/Config'
 
 const SHOW_RESULTS = 20
@@ -186,9 +186,8 @@ export default {
     config () {
       return Config.store
     },
-    Leagues () {
-      return Leagues
-    }
+    defaultLeague,
+    tradeLeagues
   },
   methods: {
     async execSearch () {

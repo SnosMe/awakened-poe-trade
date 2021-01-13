@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
-import { Prices, displayRounding } from '../Prices'
+import { displayRounding, findByDetailsId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
 import { ItemFilters } from '../filters/interfaces'
@@ -30,11 +30,11 @@ export default defineComponent({
   },
   setup (props) {
     function getPriceFor (n: number) {
-      const one = Prices.findByDetailsId(getDetailsId(props.item)!)!
+      const one = findByDetailsId(getDetailsId(props.item)!)!
 
       const price = (props.item.name === 'Exalted Orb')
         ? { val: n * one.receive.chaosValue, curr: 'c' }
-        : Prices.autoCurrency(n * one.receive.chaosValue, 'c')
+        : autoCurrency(n * one.receive.chaosValue, 'c')
 
       return `${displayRounding(price.val, true)} ${price.curr === 'c' ? 'chaos' : 'exa'}`
     }
@@ -42,7 +42,7 @@ export default defineComponent({
     return {
       show: computed(() => {
         const id = getDetailsId(props.item)
-        return Boolean(props.filters.stackSize && id && Prices.findByDetailsId(id))
+        return Boolean(props.filters.stackSize && id && findByDetailsId(id))
       }),
       value: computed(() => {
         return {

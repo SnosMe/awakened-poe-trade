@@ -31,7 +31,7 @@
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue'
 import { ITEM_DROP } from '@/assets/data'
-import { Prices, displayRounding, ItemInfo } from '../Prices'
+import { displayRounding, ItemInfo, findByDetailsId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
 
@@ -56,15 +56,15 @@ export default defineComponent({
 
       const r = ITEM_DROP.get(detailsId.value)!
       return {
-        related: r.query.map(id => Prices.findByDetailsId(id)),
-        items: r.items.map(id => Prices.findByDetailsId(id))
+        related: r.query.map(id => findByDetailsId(id)),
+        items: r.items.map(id => findByDetailsId(id))
       }
     })
 
     return {
       result,
       price (item: ItemInfo) {
-        const _ = Prices.autoCurrency(item.receive.chaosValue, 'c')
+        const _ = autoCurrency(item.receive.chaosValue, 'c')
         return {
           val: displayRounding(_.val, true),
           curr: _.curr

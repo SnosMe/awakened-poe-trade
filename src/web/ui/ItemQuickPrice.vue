@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { displayRounding } from '../price-check/Prices'
+import { displayRounding } from '../background/Prices'
 
 export default defineComponent({
   props: {

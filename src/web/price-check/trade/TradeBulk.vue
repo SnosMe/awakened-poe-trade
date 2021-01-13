@@ -93,7 +93,7 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 import { BulkSearch, execBulkSearch } from './pathofexile-bulk'
 import { tradeTag, getTradeEndpoint } from './common'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
-import { Leagues } from '../Leagues'
+import { selected as league } from '../../background/Leagues'
 import { Config } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -171,7 +171,7 @@ export default defineComponent({
       execSearch: () => { search(props.item, props.filters) },
       config: computed(() => Config.store),
       openTradeLink (isExternal: boolean) {
-        const link = `https://${getTradeEndpoint()}/trade/exchange/${Leagues.selected}/${result.value![selectedCurr.value].queryId}`
+        const link = `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].queryId}`
         if (isExternal) {
           MainProcess.openSystemBrowser(link)
         } else {

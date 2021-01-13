@@ -29,8 +29,6 @@
               </div>
             </template>
           </ui-popover>
-          <button v-if="isLoading"
-            class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
         </div>
       </app-titlebar>
       <div class="flex-grow layout-column min-h-0 bg-gray-800">
@@ -71,8 +69,8 @@ import CheckedItem from './CheckedItem'
 import AppBootstrap from './AppBootstrap'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
-import { Prices } from './Prices'
-import { Leagues } from './Leagues'
+import { chaosExaRate } from '../background/Prices'
+import { selected as league } from '@/web/background/Leagues'
 import { Config } from '@/web/Config'
 import { parseClipboard } from '@/parser'
 import RelatedItems from './related-items/RelatedItems'
@@ -152,17 +150,12 @@ export default {
   },
   computed: {
     title () {
-      if (!Leagues.isLoaded) {
-        return 'Awakened PoE Trade'
-      } else {
-        return Leagues.selected
-      }
+      return league.value || 'Awakened PoE Trade'
     },
-    isLoading: () => Leagues.isLoading || Prices.isLoading,
     exaltedCost () {
-      if (!Prices.isLoaded) return null
+      if (!chaosExaRate.value) return null
 
-      return Math.round(Prices.exaToChaos(1))
+      return Math.round(chaosExaRate.value)
     },
     isBrowserShown () {
       return this.config.wmFlags.includes('has-browser')
