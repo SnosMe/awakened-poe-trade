@@ -35,7 +35,7 @@
         <div id="home" class="flex-grow layout-column">
           <div class="flex-1"></div>
           <div class="flex-grow layout-column">
-            <app-bootstrap />
+            <background-info />
             <template v-if="true">
               <check-position-circle
                 v-if="showCheckPos"
@@ -66,7 +66,7 @@
 
 <script>
 import CheckedItem from './CheckedItem'
-import AppBootstrap from './AppBootstrap'
+import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { chaosExaRate } from '../background/Prices'
@@ -83,7 +83,7 @@ export default {
   components: {
     CheckedItem,
     UnidentifiedResolver,
-    AppBootstrap,
+    BackgroundInfo,
     RelatedItems,
     RateLimiterState,
     CheckPositionCircle,
