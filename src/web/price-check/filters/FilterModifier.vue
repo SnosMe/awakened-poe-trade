@@ -184,7 +184,8 @@ export default defineComponent({
       inputMax,
       sliderValue,
       fontSize: computed(() => Config.store.fontSize),
-      inputFocus
+      inputFocus,
+      toggleFilter
     }
   }
 })

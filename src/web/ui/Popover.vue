@@ -31,6 +31,10 @@ export default defineComponent({
     arrow: {
       type: Boolean,
       default: true
+    },
+    delay: {
+      type: [Array, Number] as PropType<number | [number | null, number | null]>,
+      default: 0
     }
   },
   setup (props) {
@@ -46,6 +50,7 @@ export default defineComponent({
         trigger: props.trigger,
         placement: props.placement,
         arrow: props.arrow,
+        delay: props.delay,
         popperOptions: {
           modifiers: [
             ...(props.boundary
