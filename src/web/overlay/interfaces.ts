@@ -68,3 +68,11 @@ export interface StashSearchWidget extends Widget {
     text: string
   }>
 }
+
+export interface ImageStripWidget extends Widget {
+  anchor: Anchor
+  images: Array<{
+    id: number
+    url: string
+  }>
+}
