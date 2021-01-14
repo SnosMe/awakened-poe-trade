@@ -2,28 +2,28 @@
   <div v-if="!error" class="layout-column min-h-0" style="height: auto;">
     <div class="mb-2 flex pl-2">
       <div class="flex items-baseline text-gray-500 mr-2">
-        <span class="mr-1">{{ $t('Matched:') }}</span>
+        <span class="mr-1">{{ t('Matched:') }}</span>
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
       <ui-popover v-if="list" tag-name="div" class="flex min-w-0" :delayOnMouseOver="70" :delayOnMouseOut="150" placement="bottom-start" boundary="#price-window">
         <template #target>
           <button class="text-gray-500 rounded mr-1 px-2 truncate">
-            <span><i class="fas fa-history"></i> {{ $t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
+            <span><i class="fas fa-history"></i> {{ t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
             <span v-if="defaultLeague !== filters.trade.league">, {{ filters.trade.league }}</span>
           </button>
         </template>
         <template #content>
           <div class="p-2 bg-gray-800 text-gray-400">
-            <ui-toggle v-model="filters.trade.offline" class="mb-2">{{ $t('Offline & Online') }}</ui-toggle>
+            <ui-toggle v-model="filters.trade.offline" class="mb-2">{{ t('Offline & Online') }}</ui-toggle>
             <div class="flex">
               <div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">{{ $t('Listed: Any Time') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">{{ $t('1 Day Ago') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">{{ $t('3 Days Ago') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">{{ $t('1 Week Ago') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">{{ $t('2 Weeks Ago') }}</ui-radio></div>
-                <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">{{ $t('1 Month Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">{{ t('Listed: Any Time') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">{{ t('1 Day Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">{{ t('3 Days Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">{{ t('1 Week Ago') }}</ui-radio></div>
+                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">{{ t('2 Weeks Ago') }}</ui-radio></div>
+                <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">{{ t('1 Month Ago') }}</ui-radio></div>
               </div>
               <div class="ml-8">
                 <div class="mb-1" v-for="league of tradeLeagues" :key="league.id">
@@ -36,7 +36,7 @@
       </ui-popover>
       <div class="flex-1"></div>
       <div v-if="list" class="flex">
-        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ $t('Trade') }}</button>
+        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ t('Trade') }}</button>
         <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2 leading-none"><i class="fas fa-external-link-alt text-xs"></i></button>
       </div>
     </div>
@@ -45,27 +45,27 @@
         <thead>
           <tr class="text-left">
             <th class="trade-table-heading">
-              <div class="px-2">{{ $t('Price') }}</div>
+              <div class="px-2">{{ t('Price') }}</div>
             </th>
             <th v-if="item.stackSize" class="trade-table-heading">
-              <div class="px-2">{{ $t('Stock') }}</div>
+              <div class="px-2">{{ t('Stock') }}</div>
             </th>
             <th v-if="filters.itemLevel" class="trade-table-heading">
-              <div class="px-2">{{ $t('iLvl') }}</div>
+              <div class="px-2">{{ t('iLvl') }}</div>
             </th>
             <th v-if="item.rarity === 'Gem'" class="trade-table-heading">
-              <div class="px-2">{{ $t('Level') }}</div>
+              <div class="px-2">{{ t('Level') }}</div>
             </th>
             <th v-if="filters.quality || item.rarity === 'Gem'" class="trade-table-heading">
-              <div class="px-2">{{ $t('Quality') }}</div>
+              <div class="px-2">{{ t('Quality') }}</div>
             </th>
             <th class="trade-table-heading" :class="{ 'w-full': !config.showSeller }">
               <div class="pr-2 pl-4">
-                <span class="ml-1" style="padding-left: 0.375rem;">{{ $t('Listed') }}</span>
+                <span class="ml-1" style="padding-left: 0.375rem;">{{ t('Listed') }}</span>
               </div>
             </th>
             <th v-if="config.showSeller" class="trade-table-heading w-full">
-              <div class="px-2">{{ $t('Seller') }}</div>
+              <div class="px-2">{{ t('Seller') }}</div>
             </th>
           </tr>
         </thead>
@@ -85,10 +85,10 @@
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
-                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ $t('You') }}</span>
+                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
               </td>
               <td v-if="config.showSeller" class="px-2 whitespace-no-wrap">
-                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">{{ $t('You') }}</span>
+                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
                 <span v-else class="font-sans text-xs">{{ config.showSeller === 'ign' ? result.ign : result.accountName }}</span>
               </td>
             </tr>
@@ -99,171 +99,185 @@
   </div>
   <div v-else>
     <div>
-      <span class="text-red-400">{{ $t('Trade site request failed') }}</span>
-      <button class="btn ml-2" @click="execSearch">{{ $t('Retry') }}</button>
-      <button class="btn ml-1" @click="openTradeLink(false)">{{ $t('Browser') }}</button>
+      <span class="text-red-400">{{ t('Trade site request failed') }}</span>
+      <button class="btn ml-2" @click="execSearch">{{ t('Retry') }}</button>
+      <button class="btn ml-1" @click="openTradeLink(false)">{{ t('Browser') }}</button>
     </div>
     <div>Error: {{ error }}</div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { requestTradeResultList, requestResults, createTradeRequest } from './pathofexile-trade'
-import { getTradeEndpoint } from './common'
+import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
+import { getTradeEndpoint, SearchResult } from './common'
 import { selected as defaultLeague, tradeLeagues } from '../../background/Leagues'
 import { Config } from '@/web/Config'
+import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
+import { ItemFilters, StatFilter } from '../filters/interfaces'
+import { ParsedItem } from '@/parser'
 
 const SHOW_RESULTS = 20
 const API_FETCH_LIMIT = 100
 const MIN_NOT_GROUPED = 7
 const MIN_GROUPED = 10
 
-export default {
+function useTradeApi () {
+  let searchId = 0
+  const error = shallowRef<string | null>(null)
+  const searchResult = shallowRef<SearchResult | null>(null)
+  let fetchResults = shallowRef<PricingResult[]>([])
+
+  const groupedResults = computed(() => {
+    const out: Array<PricingResult & { listedTimes: number }> = []
+
+    for (const result of fetchResults.value) {
+      if (result == null) break
+
+      if (out.length === 0) {
+        out.push({ listedTimes: 1, ...result })
+        continue
+      }
+
+      const existingRes = out.find((added, idx) =>
+        (
+          added.accountName === result.accountName &&
+          added.priceCurrency === result.priceCurrency &&
+          added.priceAmount === result.priceAmount
+        ) ||
+        (
+          added.accountName === result.accountName &&
+          (out.length - idx) <= 2 // last or prev
+        )
+      )
+      if (existingRes) {
+        existingRes.listedTimes += 1
+      } else {
+        out.push({ listedTimes: 1, ...result })
+      }
+    }
+
+    return out
+  })
+
+  async function search (filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
+    try {
+      // NOTE: rate limiting https://www.pathofexile.com/forum/view-thread/2079853#p15244273
+
+      searchId += 1
+      error.value = null
+      searchResult.value = null
+      const _fetchResults: PricingResult[] = shallowReactive([])
+      fetchResults.value = _fetchResults
+
+      const _searchId = searchId
+      const request = createTradeRequest(filters, stats, item)
+      const _searchResult = await requestTradeResultList(request, filters.trade.league)
+      if (_searchId !== searchId) {
+        return
+      }
+      searchResult.value = _searchResult
+
+      // first two req are parallel, then sequential on demand
+      {
+        const r1 = (_searchResult.total > 0)
+          ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10))
+            .then(results => { _fetchResults.push(...results) })
+          : Promise.resolve()
+        const r2 = (_searchResult.total > 10)
+          ? requestResults(_searchResult.id, _searchResult.result.slice(10, 20))
+            .then(results => r1
+              .then(() => { _fetchResults.push(...results) }))
+          : Promise.resolve()
+        await Promise.all([r1, r2])
+      }
+
+      let fetched = 20
+      async function fetchMore (): Promise<void> {
+        if (_searchId !== searchId) return
+
+        const totalGrouped = groupedResults.value.length
+        const totalNotGrouped = groupedResults.value.reduce((len, res) =>
+          res.listedTimes <= 2 ? len + 1 : len, 0)
+
+        if (
+          (totalNotGrouped < MIN_NOT_GROUPED || totalGrouped < MIN_GROUPED) &&
+          fetched < _searchResult.total &&
+          fetched < API_FETCH_LIMIT
+        ) {
+          await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10))
+            .then(results => { _fetchResults.push(...results) })
+
+          fetched += 10
+          return fetchMore()
+        }
+      }
+      return fetchMore()
+    } catch (err) {
+      error.value = err.message
+    }
+  }
+
+  return { error, searchResult, fetchResults, groupedResults, search }
+}
+
+export default defineComponent({
   props: {
     filters: {
-      type: Object,
+      type: Object as PropType<ItemFilters>,
       required: true
     },
     stats: {
-      type: Array,
+      type: Array as PropType<StatFilter[]>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  inject: ['wm', 'widget'],
-  data () {
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+    const widget = inject<{ config: PriceCheckWidget }>('widget')!
+
+    const { error, searchResult, fetchResults, groupedResults, search } = useTradeApi()
+
+    const { t } = useI18n()
+
     return {
-      searchId: 0,
-      loading: false,
-      error: null,
-      results: Array(SHOW_RESULTS),
-      list: null
-    }
-  },
-  computed: {
-    groupedResults () {
-      // first req ready
-      if (this.results[0] == null) return Array(SHOW_RESULTS)
+      t,
+      list: searchResult,
+      groupedResults: computed(() => ([
+        ...groupedResults.value,
+        ...(groupedResults.value.length < SHOW_RESULTS
+          ? Array<undefined>(SHOW_RESULTS - groupedResults.value.length)
+          : [])
+      ])),
+      execSearch: () => { search(props.filters, props.stats, props.item) },
+      error,
+      config: computed(() => Config.store),
+      defaultLeague,
+      tradeLeagues,
+      getRelativeTime (iso: string) {
+        return DateTime.fromISO(iso).toRelative({ style: 'short' })
+      },
+      openTradeLink (isExternal: boolean) {
+        const link = searchResult.value
+          ? `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}/${searchResult.value.id}`
+          : `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
 
-      const out = []
-      for (const result of this.results) {
-        // second req ready
-        if (result == null) break
-
-        if (out.length === 0) {
-          out.push({ listedTimes: 1, ...result })
-          continue
-        }
-
-        const existingRes = out.find((added, idx) =>
-          (
-            added.accountName === result.accountName &&
-            added.priceCurrency === result.priceCurrency &&
-            added.priceAmount === result.priceAmount
-          ) ||
-          (
-            added.accountName === result.accountName &&
-            (out.length - idx) <= 2 // last or prev
-          )
-        )
-        if (existingRes) {
-          existingRes.listedTimes += 1
+        if (isExternal) {
+          MainProcess.openSystemBrowser(link)
         } else {
-          out.push({ listedTimes: 1, ...result })
+          wm.showBrowser(widget.config.wmId, link)
         }
-      }
-
-      if (out.length < SHOW_RESULTS) {
-        out.push(...Array(SHOW_RESULTS - out.length))
-      }
-      return out
-    },
-    config () {
-      return Config.store
-    },
-    defaultLeague,
-    tradeLeagues
-  },
-  methods: {
-    async execSearch () {
-      try {
-        // NOTE: rate limiting https://www.pathofexile.com/forum/view-thread/2079853#p15244273
-
-        this.searchId += 1
-        const searchId = this.searchId
-
-        this.loading = true
-        this.error = null
-        const resultsVar = Array(SHOW_RESULTS) // keep as local to searchId
-        this.results = resultsVar
-
-        this.list = null
-        const request = createTradeRequest(this.filters, this.stats, this.item)
-        const list = await requestTradeResultList(request, this.filters.trade.league)
-        if (this.searchId !== searchId) return
-        this.list = list
-
-        // first two req are parallel, then sequential on demand
-        await Promise.all([
-          (list.total > 0)
-            ? requestResults(list.id, list.result.slice(0, 10))
-              .then(results => { resultsVar.splice(0, results.length, ...results) })
-            : Promise.resolve(),
-          (list.total > 10)
-            ? requestResults(list.id, list.result.slice(10, 20))
-              .then(results => { resultsVar.splice(10, results.length, ...results) })
-            : Promise.resolve()
-        ])
-
-        let fetched = 20
-        const fetchMore = async () => {
-          if (this.searchId !== searchId) return
-
-          const totalGrouped = this.groupedResults.reduce((len, res) =>
-            res != null ? len + 1 : len, 0)
-          const totalNotGrouped = this.groupedResults.reduce((len, res) =>
-            res != null && res.listedTimes <= 2 ? len + 1 : len, 0)
-
-          if (
-            (totalNotGrouped < MIN_NOT_GROUPED || totalGrouped < MIN_GROUPED) &&
-            fetched < list.total &&
-            fetched < API_FETCH_LIMIT
-          ) {
-            await requestResults(list.id, list.result.slice(fetched, fetched + 10))
-              .then(results => { resultsVar.push(...results) })
-
-            fetched += 10
-            return fetchMore()
-          }
-        }
-        return fetchMore()
-      } catch (err) {
-        this.error = err.message
-      } finally {
-        this.loading = false
-      }
-    },
-    getRelativeTime (iso) {
-      return DateTime.fromISO(iso).toRelative({ style: 'short' })
-    },
-    openTradeLink (isExternal) {
-      const link = this.list
-        ? `https://${getTradeEndpoint()}/trade/search/${this.filters.trade.league}/${this.list.id}`
-        : `https://${getTradeEndpoint()}/trade/search/${this.filters.trade.league}?q=${JSON.stringify(createTradeRequest(this.filters, this.stats, this.item))}`
-
-      if (isExternal) {
-        MainProcess.openSystemBrowser(link)
-      } else {
-        this.wm.showBrowser(this.widget.config.wmId, link)
       }
     }
   }
-}
+})
 </script>
 
 <style lang="postcss">

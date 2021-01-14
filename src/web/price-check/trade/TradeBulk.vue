@@ -3,7 +3,7 @@
     <!-- @TODO: fix "Matched" text jumping (min-height: 22px) -->
     <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 1.375rem;">
       <div class="flex items-center text-gray-500">
-        <span class="mr-1">{{ $t('Matched:') }}</span>
+        <span class="mr-1">{{ t('Matched:') }}</span>
         <span v-if="!result" class="text-gray-600">...</span>
         <div v-else class="flex items-center">
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'chaos' ? 'transparent' : undefined }"
@@ -16,11 +16,11 @@
             <img src="@/assets/images/exa.png" class="trade-bulk-currency-icon">
             <span>{{ result.exa.total }}</span>
           </button>
-          <span class="ml-1">[{{ $t('Online') }}]</span>
+          <span class="ml-1">[{{ t('Online') }}]</span>
         </div>
       </div>
       <div v-if="result" class="flex">
-        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2">{{ $t('Trade') }}</button>
+        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2">{{ t('Trade') }}</button>
         <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2"><i class="fas fa-external-link-alt text-xs"></i></button>
       </div>
     </div>
@@ -29,24 +29,24 @@
         <thead>
           <tr class="text-left">
             <th class="trade-table-heading">
-              <div class="px-2">{{ $t('Price') }}</div>
+              <div class="px-2">{{ t('Price') }}</div>
             </th>
             <th class="trade-table-heading">
-              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ selectedCurr }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ $t('bulk') }}</span></div>
+              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ selectedCurr }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ t('bulk') }}</span></div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-1">{{ $t('Stock') }}</div>
+              <div class="px-1">{{ t('Stock') }}</div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-1">{{ $t('Fulfill') }}</div>
+              <div class="px-1">{{ t('Fulfill') }}</div>
             </th>
             <th class="trade-table-heading" :class="{ 'w-full': !config.showSeller }">
               <div class="pr-2 pl-4">
-                <span class="ml-1" style="padding-left: 0.375rem;">{{ $t('Listed') }}</span>
+                <span class="ml-1" style="padding-left: 0.375rem;">{{ t('Listed') }}</span>
               </div>
             </th>
             <th v-if="config.showSeller" class="trade-table-heading w-full">
-              <div class="px-2">{{ $t('Seller') }}</div>
+              <div class="px-2">{{ t('Seller') }}</div>
             </th>
           </tr>
         </thead>
@@ -65,10 +65,10 @@
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
-                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ $t('You') }}</span>
+                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
               </td>
               <td v-if="config.showSeller" class="px-2 whitespace-no-wrap">
-                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">{{ $t('You') }}</span>
+                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
                 <span v-else class="font-sans text-xs">{{ config.showSeller === 'ign' ? result.ign : result.accountName }}</span>
               </td>
             </tr>
@@ -79,8 +79,8 @@
   </div>
   <div v-else>
     <div>
-      <span class="text-red-400">{{ $t('Trade site request failed') }}</span>
-      <button class="btn ml-2" @click="execSearch">{{ $t('Retry') }}</button>
+      <span class="text-red-400">{{ t('Trade site request failed') }}</span>
+      <button class="btn ml-2" @click="execSearch">{{ t('Retry') }}</button>
     </div>
     <div>Error: {{ error }}</div>
   </div>
@@ -88,6 +88,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, inject, ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { BulkSearch, execBulkSearch } from './pathofexile-bulk'
@@ -109,7 +110,7 @@ function useBulkApi () {
       searchId += 1
       error.value = null
       result.value = null
-  
+
       const _searchId = searchId
       const _result = await execBulkSearch(item, filters)
       if (_searchId === searchId) {
@@ -163,7 +164,10 @@ export default defineComponent({
       }
     })
 
+    const { t } = useI18n()
+
     return {
+      t,
       error,
       result,
       selectedResults,
