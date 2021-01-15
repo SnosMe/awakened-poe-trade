@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRaw } from 'vue'
+import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -42,7 +42,7 @@ export default defineComponent({
     return {
       t,
       save () {
-        MainProcess.closeSettingsWindow(toRaw(Config.store))
+        MainProcess.closeSettingsWindow(JSON.parse(JSON.stringify(Config.store)))
       },
       cancel () {
         MainProcess.closeSettingsWindow()

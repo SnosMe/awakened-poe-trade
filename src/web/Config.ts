@@ -1,4 +1,4 @@
-import { reactive, toRaw } from 'vue'
+import { reactive } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { Config as ConfigType } from '@/ipc/types'
 import { PUSH_CONFIG } from '@/ipc/ipc-event'
@@ -16,7 +16,7 @@ class ConfigService {
   }
 
   saveConfig () {
-    MainProcess.saveConfig(toRaw(this.store))
+    MainProcess.saveConfig(JSON.parse(JSON.stringify(this.store)))
   }
 }
 
