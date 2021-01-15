@@ -114,10 +114,13 @@ export default {
       this.wm.hide(this.config.wmId)
     })
   },
-  data () {
+  mounted () {
+    // #HOTFIX vue reactvity loop (breaks in vuedraggable)
+    // @TODO: change component to composition
     this.config.wmWants = 'hide'
     this.config.wmFlags = ['hide-on-blur', 'skip-menu']
-
+  },
+  data () {
     return {
       checkPosition: { x: 1, y: 1 },
       item: null,
