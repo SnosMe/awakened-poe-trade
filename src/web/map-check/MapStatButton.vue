@@ -6,7 +6,7 @@
             : state === 'warning' ? 'bg-orange-600'
             : state === 'desirable' ? 'bg-green-700'
             : 'hover:bg-gray-700'">
-      <template>
+      <template v-if="true">
         <i v-if="!state || state === 'not-matched'"
           class="inline-block mr-2" style="min-width: 1rem;">{{ '\u2009' }}</i>
         <i v-else

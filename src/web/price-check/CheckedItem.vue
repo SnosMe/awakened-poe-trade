@@ -78,6 +78,17 @@ export default defineComponent({
     // FilterName.vue
     const nameFilter = ref<{ toggleAccuracy(): void }>(null!)
 
+    watch(() => props.item, (item) => {
+      itemFilters.value = createFilters(item)
+      itemStats.value = initUiModFilters(item)
+      interactedOnce.value = Boolean(
+        (item.rarity === ItemRarity.Unique) ||
+        (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
+        (item.isUnidentified) ||
+        (item.extra.veiled)
+      )
+    })
+
     watch(() => [props.item, interactedOnce.value], (curr, prev) => {
       if (interactedOnce.value === false) return
 
@@ -111,18 +122,6 @@ export default defineComponent({
         })
       }
     }, { deep: false })
-  
-    watch(() => props.item, (item) => {
-      itemFilters.value = createFilters(item)
-      itemStats.value = initUiModFilters(item)
-      interactedOnce.value = Boolean(
-        (item.rarity === ItemRarity.Unique) ||
-        (item.category &&
-          !CATEGORY_TO_TRADE_ID.has(item.category)) ||
-        (item.isUnidentified) ||
-        (item.extra.veiled)
-      )
-    })
 
     const showPredictedPrice = computed(() => {
       if (Config.store.language !== 'en') return false

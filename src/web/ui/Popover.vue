@@ -1,7 +1,7 @@
 <template>
-  <span ref="target">
+  <component :is="tagName" ref="target" v-bind="$attrs">
     <slot name="target" />
-  </span>
+  </component>
   <div ref="content">
     <slot name="content" />
   </div>
@@ -15,6 +15,7 @@ import 'tippy.js/themes/light.css'
 
 export default defineComponent({
   name: 'UiPopover',
+  inheritAttrs: false,
   props: {
     trigger: {
       type: String,
@@ -35,6 +36,10 @@ export default defineComponent({
     delay: {
       type: [Array, Number] as PropType<number | [number | null, number | null]>,
       default: 0
+    },
+    tagName: {
+      type: String,
+      default: 'span'
     }
   },
   setup (props) {
@@ -77,3 +82,13 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="postcss">
+.tippy-box {
+  @apply rounded;
+}
+
+.tippy-content {
+  @apply p-1;
+}
+</style>

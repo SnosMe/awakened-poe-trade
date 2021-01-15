@@ -5,6 +5,7 @@ import i18n from './web/i18n'
 import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
 import uiComponents from './web/ui'
+import 'animate.css/animate.css'
 
 createApp(App)
   .use(router)

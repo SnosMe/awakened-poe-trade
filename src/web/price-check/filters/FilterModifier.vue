@@ -22,7 +22,7 @@
     </div>
     <div class="flex">
       <div class="w-5 flex items-start">
-        <ui-popover v-if="filter.hidden" placement="right-start" boundary="#price-window">
+        <ui-popover v-if="filter.hidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
           <template #target>
             <span class="text-xs leading-none text-gray-600 cursor-pointer">
               <i class="fas fa-eye-slash" :class="{ 'faa-ring': !filter.disabled }"></i>

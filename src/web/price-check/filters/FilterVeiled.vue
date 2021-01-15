@@ -1,5 +1,5 @@
 <template>
-  <ui-popover v-if="filters.veiled" placement="bottom-start" boundary="#price-window">
+  <ui-popover v-if="filters.veiled" tag-name="div" placement="bottom-start" boundary="#price-window">
     <template #target>
       <div class="trade-tag flex items-center" :class="{ disabled: filters.veiled.disabled }">
         <span>{{ t(text) }}</span>

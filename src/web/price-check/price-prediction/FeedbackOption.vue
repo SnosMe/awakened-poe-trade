@@ -1,5 +1,5 @@
 <template>
-  <ui-popover trigger="click" boundary="#price-window">
+  <ui-popover tag-name="div" trigger="click" boundary="#price-window">
     <template #target>
       <button class="bg-gray-700 px-2 opacity-25" :class="{ 'rounded-l': option === 'low', 'rounded-r': option === 'high' }"
         >{{ option }}</button>

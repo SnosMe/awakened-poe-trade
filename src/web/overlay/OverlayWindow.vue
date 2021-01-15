@@ -12,6 +12,7 @@
         :is="`widget-${widget.wmType}`" />
     </template>
     <widget-debug id="widget-debug" />
+    <loading-animation />
     <!-- <div v-show="!gameFocused && !active">
       <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
     </div> -->
@@ -31,6 +32,11 @@ import WidgetDelveGrid from './WidgetDelveGrid'
 import { registerOtherServices } from '../other-services'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 import { Config } from '@/web/Config'
+import LoadingAnimation from './LoadingAnimation.vue'
+// ---
+import '@/web/background/AutoUpdates'
+import '@/web/background/Prices'
+import { load as loadLeagues } from '@/web/background/Leagues'
 
 export default {
   components: {
@@ -41,7 +47,8 @@ export default {
     WidgetDebug,
     WidgetMapCheck,
     WidgetImageStrip,
-    WidgetDelveGrid
+    WidgetDelveGrid,
+    LoadingAnimation
   },
   provide () {
     return { wm: this }
@@ -87,6 +94,8 @@ export default {
     }
   },
   created () {
+    loadLeagues()
+
     MainProcess.addEventListener(FOCUS_CHANGE, ({ detail: state }) => {
       this.active = state.overlay
       this.gameFocused = state.game
