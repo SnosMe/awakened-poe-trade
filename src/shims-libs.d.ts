@@ -1,14 +1,8 @@
-declare module 'vue-trend-chart' {
-  export default function install(): void
-}
 
-declare module 'vue-virtual-scroller' {
-  export default function install(): void
-}
-
-declare module 'vue-popperjs' {
-  import Vue from 'vue'
-  export default Vue
+declare module 'vue3-apexcharts' {
+  import type { DefineComponent } from 'vue'
+  const component: DefineComponent<{}, {}, any>
+  export default component
 }
 
 declare module '*.json' {

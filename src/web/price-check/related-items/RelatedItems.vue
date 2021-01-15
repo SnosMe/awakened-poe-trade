@@ -8,7 +8,7 @@
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val | displayRounding(true) }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
+          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
         </div>
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
@@ -20,7 +20,7 @@
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
           <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val | displayRounding(true) }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
+          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
         </div>
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
@@ -28,41 +28,49 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { computed, defineComponent, PropType } from 'vue'
 import { ITEM_DROP } from '@/assets/data'
-import { Prices, displayRounding } from '../Prices'
+import { displayRounding, ItemInfo, findByDetailsId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
+import { ParsedItem } from '@/parser'
 
-export default {
+export default defineComponent({
   props: {
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       default: null
     }
   },
-  filters: { displayRounding },
-  computed: {
-    detailsId () {
-      if (!this.item) return
+  setup (props) {
+    const detailsId = computed(() => {
+      if (props.item) {
+        return getDetailsId(props.item)
+      }
+    })
 
-      return getDetailsId(this.item)
-    },
-    result () {
-      if (!this.detailsId) return
+    const result = computed(() => {
+      if (!detailsId.value) return
 
-      if (!ITEM_DROP.has(this.detailsId)) return null
+      if (!ITEM_DROP.has(detailsId.value)) return null
 
-      const r = ITEM_DROP.get(this.detailsId)
+      const r = ITEM_DROP.get(detailsId.value)!
       return {
-        related: r.query.map(id => Prices.findByDetailsId(id)),
-        items: r.items.map(id => Prices.findByDetailsId(id))
+        related: r.query.map(id => findByDetailsId(id)),
+        items: r.items.map(id => findByDetailsId(id))
+      }
+    })
+
+    return {
+      result,
+      price (item: ItemInfo) {
+        const _ = autoCurrency(item.receive.chaosValue, 'c')
+        return {
+          val: displayRounding(_.val, true),
+          curr: _.curr
+        }
       }
     }
-  },
-  methods: {
-    price (item) {
-      return Prices.autoCurrency(item.receive.chaosValue, 'c')
-    }
   }
-}
+})
 </script>

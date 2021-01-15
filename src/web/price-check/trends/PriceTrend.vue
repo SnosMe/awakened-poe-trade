@@ -9,7 +9,7 @@
     >
       <template #item v-if="isValuableBasetype">
         <button class="text-gray-400 hover:bg-gray-700 rounded px-1 -mx-1"
-          @click="$emit('filter-item-base')">{{ $t('Base item') }}</button>
+          @click="$emit('filter-item-base')">{{ t('Base item') }}</button>
       </template>
     </item-quick-price>
     <div v-if="trend.changeStr" class="px-2 text-center">
@@ -19,43 +19,60 @@
         <span v-if="trend.changeStr === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
         <span>{{ Math.round(trend.changeVal * 2) }}{{ '\u2009' }}%</span>
       </div>
-      <div class="text-xs text-gray-500 leading-none">{{ $t('Last 7 days') }}</div>
+      <div class="text-xs text-gray-500 leading-none">{{ t('Last 7 days') }}</div>
     </div>
     <div v-if="trend.changeStr" class="w-12 h-8">
-      <trend-chart padding="2"
-      :datasets="[{
-        data: trend.receive.graphPoints,
-        smooth: true,
-        fill: true
-      }]"
-      :min="Math.min(...trend.receive.graphPoints) - trend.changeVal"
-      :max="Math.max(...trend.receive.graphPoints) + trend.changeVal" />
+      <vue-apexcharts
+        type="area"
+        :options="{
+          chart: { sparkline: { enabled: true }, animations: { enabled: false } },
+          stroke: { curve: 'smooth', width: 1, colors: ['#a0aec0' /* gray.500 */] },
+          fill: { colors: ['#4a5568' /* gray.700 */], type: 'solid' },
+          tooltip: { enabled: false },
+          plotOptions: { area: { fillTo: 'end' } },
+          yaxis: {
+            show: false,
+            min: Math.min(...trend.receive.graphPoints) - trend.changeVal,
+            max: Math.max(...trend.receive.graphPoints) + trend.changeVal
+          }
+        }"
+        :series="[{
+          data: trend.receive.graphPoints
+        }]"
+      />
     </div>
   </div>
 </template>
 
-<script>
-import { Prices } from '../Prices'
+<script lang="ts">
+import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { findByDetailsId, autoCurrency } from '../../background/Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+import VueApexcharts from 'vue3-apexcharts'
+import { ParsedItem } from '@/parser'
 
-export default {
-  components: { ItemQuickPrice },
+export default defineComponent({
+  components: {
+    ItemQuickPrice,
+    VueApexcharts
+  },
   props: {
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  computed: {
-    trend () {
-      const detailsId = getDetailsId(this.item)
-      const trend = Prices.findByDetailsId(detailsId)
+  setup (props) {
+    const trend = computed(() => {
+      const detailsId = getDetailsId(props.item)
+      const trend = detailsId && findByDetailsId(detailsId)
       if (!trend) return
 
-      const price = (this.item.name === 'Exalted Orb')
+      const price = (props.item.name === 'Exalted Orb')
         ? { val: trend.receive.chaosValue, curr: 'c' }
-        : Prices.autoCurrency(trend.receive.chaosValue, 'c')
+        : autoCurrency(trend.receive.chaosValue, 'c')
 
       if (trend.receive.graphPoints.length >= 2) {
         let changeStr = 'const'
@@ -81,26 +98,20 @@ export default {
       } else {
         return { price, ...trend }
       }
-    },
-    isValuableBasetype () {
-      return isValuableBasetype(this.item)
+    })
+
+    const { t } = useI18n()
+
+    return {
+      t,
+      trend,
+      isValuableBasetype: computed(() => {
+        return isValuableBasetype(props.item)
+      })
     }
   }
-}
+})
 </script>
-
-<style lang="postcss">
-/* vue-trend-chart */
-.vtc {
-  .fill {
-    fill: theme('colors.gray.700');
-  }
-
-  .stroke {
-    stroke: theme('colors.gray.500');
-  }
-}
-</style>
 
 <i18n>
 {

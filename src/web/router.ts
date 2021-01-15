@@ -1,9 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-Vue.use(Router)
-
-export default new Router({
+export default createRouter({
+  history: createWebHashHistory(),
   linkActiveClass: 'active',
   routes: [
     {

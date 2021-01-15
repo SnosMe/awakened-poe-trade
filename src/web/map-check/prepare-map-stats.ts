@@ -1,17 +1,15 @@
 import { ParsedItem } from '@/parser/ParsedItem'
 import { getRollAsSingleNumber } from '@/parser/utils'
 
-type PreparedStat = {
-  text: string
-  matchRef: string
+export interface PreparedStat {
+  matcher: string
   roll?: number
 }
 
 export function prepareMapStats (item: ParsedItem): PreparedStat[] {
   return item.modifiers.map(mod => {
     const prepared = {
-      text: mod.string,
-      matchRef: mod.string,
+      matcher: mod.string,
       roll: mod.values && getRollAsSingleNumber(mod.values)
     }
 

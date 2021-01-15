@@ -84,7 +84,7 @@ export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers)
 }
 
 function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, stateStr: string) { /* eslint-disable no-console */
-  const DEBUG = true
+  const DEBUG = false
   const DESYNC_FIX = 0
 
   const limitRuleState = stateStr

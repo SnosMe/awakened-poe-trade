@@ -1,7 +1,7 @@
 import { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { VEILED_STAT } from './veiled'
-import { Leagues } from '../Leagues'
+import { selected as league } from '@/web/background/Leagues'
 import { tradeTag } from '../trade/common'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
@@ -11,7 +11,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
     trade: {
       offline: false,
       listed: undefined,
-      league: Leagues.selected!
+      league: league.value!
     }
   }
 

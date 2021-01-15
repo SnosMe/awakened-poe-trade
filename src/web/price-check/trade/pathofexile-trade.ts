@@ -181,7 +181,7 @@ interface FetchResult {
   }
 }
 
-interface PricingResult {
+export interface PricingResult {
   id: string
   itemLevel?: number
   stackSize?: number

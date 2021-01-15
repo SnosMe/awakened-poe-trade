@@ -9,8 +9,10 @@
   </span>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     text: {
       type: String,
@@ -21,27 +23,29 @@ export default {
       default: undefined
     }
   },
-  computed: {
-    parts () {
-      const res = []
-      this.text.split(/(?<![#])[+-]?[#]/gm).forEach((text, idx, parts) => {
-        if (text !== '') {
-          res.push({ text })
-        }
-        if (idx !== (parts.length - 1)) {
-          if (this.roll == null) {
-            res.push({ text: '#' })
-          } else {
-            res.push({
-              text: this.roll,
-              placeholder: true
-            })
+  setup (props) {
+    return {
+      parts: computed(() => {
+        const res = [] as Array<{ text: string, placeholder?: boolean }>
+        props.text.split(/(?<![#])[+-]?[#]/gm).forEach((text, idx, parts) => {
+          if (text !== '') {
+            res.push({ text })
           }
-        }
-      })
+          if (idx !== (parts.length - 1)) {
+            if (props.roll == null) {
+              res.push({ text: '#' })
+            } else {
+              res.push({
+                text: String(props.roll),
+                placeholder: true
+              })
+            }
+          }
+        })
 
-      return res
+        return res
+      })
     }
   }
-}
+})
 </script>

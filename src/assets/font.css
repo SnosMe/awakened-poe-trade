@@ -13,12 +13,12 @@
 @font-face{
   font-family:'FontinItalic';
   font-weight:normal;
-  font-style:normal;
+  font-style:italic;
   src:url('./font/Fontin-Italic-Hinted.ttf') format("truetype");
 }
 @font-face{
   font-family:'FontinBold';
-  font-weight:normal;
+  font-weight:bold;
   font-style:normal;
   src:url('./font/Fontin-Bold-Hinted.ttf') format("truetype");
 }

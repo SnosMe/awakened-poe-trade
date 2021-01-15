@@ -4,7 +4,7 @@
       <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
       <fullscreen-image v-if="image" :src="image" />
       <div v-if="!item" class="px-8 py-2">
-        {{ $t('Item under cursor is not a map.') }}
+        {{ t('Item under cursor is not a map.') }}
       </div>
       <div v-else class="py-2 flex flex-col">
         <map-stat-button v-for="stat in mapStats" :key="stat.text"
@@ -14,52 +14,55 @@
   </widget>
 </template>
 
-<script>
-import Widget from '../overlay/Widget'
+<script lang="ts">
+import { defineComponent, PropType, computed, inject, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import Widget from '../overlay/Widget.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { MAP_CHECK } from '@/ipc/ipc-event'
-import { parseClipboard, ItemCategory, ItemRarity } from '@/parser'
-import MapStatButton from './MapStatButton'
+import { parseClipboard, ItemCategory, ItemRarity, ParsedItem } from '@/parser'
+import MapStatButton from './MapStatButton.vue'
 import { prepareMapStats } from './prepare-map-stats'
 import { TRANSLATED_ITEM_NAME_BY_REF, MAP_IMGS } from '@/assets/data'
+import { MapCheckWidget, WidgetManager } from '../overlay/interfaces'
+import * as ipc from '@/ipc/ipc-event'
 
-export default {
+export default defineComponent({
   components: {
     Widget,
     MapStatButton
   },
   props: {
     config: {
-      type: Object,
+      type: Object as PropType<MapCheckWidget>,
       required: true
     }
   },
-  created () {
-    MainProcess.addEventListener(MAP_CHECK, ({ detail: e }) => {
-      this.wm.show(this.config.wmId)
-      this.checkPosition = {
-        x: e.position.x - window.screenX,
-        y: e.position.y - window.screenY
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+    const { t } = useI18n()
+
+    const checkPosition = ref({ x: 1, y: 1 })
+    const item = ref<ParsedItem | null>(null)
+
+    MainProcess.addEventListener(MAP_CHECK, (e) => {
+      const _e = (e as CustomEvent<ipc.IpcMapCheck>).detail
+      wm.show(props.config.wmId)
+      checkPosition.value = {
+        x: _e.position.x - window.screenX,
+        y: _e.position.y - window.screenY
       }
-      this.item = null
-      const item = parseClipboard(e.clipboard)
-      if (item.category === ItemCategory.Map) {
-        this.item = item
+      item.value = null
+      const item_ = parseClipboard(_e.clipboard)
+      if (item_?.category === ItemCategory.Map) {
+        item.value = item_
       }
     })
-  },
-  inject: ['wm'],
-  data () {
-    this.config.wmWants = 'hide'
 
-    return {
-      checkPosition: { x: 1, y: 1 },
-      item: null
-    }
-  },
-  computed: {
-    anchor () {
-      const side = this.checkPosition.x > (this.wm.width / 2)
+    props.config.wmWants = 'hide'
+
+    const anchor = computed(() => {
+      const side = checkPosition.value.x > (wm.width / 2)
         ? 'inventory'
         : 'stash'
 
@@ -67,32 +70,42 @@ export default {
         pos: side === 'stash' ? 'cl' : 'cr',
         y: 50,
         x: side === 'stash'
-          ? (this.wm.poeUiWidth / this.wm.width) * 100
-          : ((this.wm.width - this.wm.poeUiWidth) / this.wm.width) * 100
+          ? (wm.poeUiWidth / wm.width) * 100
+          : ((wm.width - wm.poeUiWidth) / wm.width) * 100
       }
-    },
-    mapName () {
-      if (!this.item) {
-        return this.$t('Invalid item')
+    })
+    const mapName = computed(() => {
+      if (!item.value) {
+        return t('Invalid item')
       }
 
-      if (this.item.rarity === ItemRarity.Unique) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(this.item.name || this.item.baseType)
+      if (item.value.rarity === ItemRarity.Unique) {
+        return TRANSLATED_ITEM_NAME_BY_REF.get(item.value.name || item.value.baseType)
       } else {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(this.item.baseType || this.item.name)
+        return TRANSLATED_ITEM_NAME_BY_REF.get(item.value.baseType || item.value.name)
       }
-    },
-    mapStats () {
-      return prepareMapStats(this.item)
-    },
-    image () {
-      if (!this.item) return undefined
+    })
+    const mapStats = computed(() => {
+      return prepareMapStats(item.value!)
+    })
+    const image = computed (() => {
+      if (!item.value) return undefined
 
-      const entry = MAP_IMGS.get(this.mapName)
+      const entry = mapName.value && MAP_IMGS.get(mapName.value)
       return entry && entry.img
+    })
+
+    return {
+      t,
+      anchor,
+      wm,
+      mapName,
+      image,
+      item,
+      mapStats
     }
   }
-}
+})
 </script>
 
 <i18n>

@@ -8,25 +8,31 @@
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
   name: 'UiRadio',
-  model: {
-    prop: 'modelValue'
-  },
+  emits: ['update:modelValue'],
   props: {
-    value: {},
-    modelValue: {}
-  },
-  computed: {
-    isChecked () {
-      return this.modelValue === this.value
+    value: {
+      type: null,
+      required: true
+    },
+    modelValue: {
+      type: null,
+      required: true
     }
   },
-  methods: {
-    updateInput () {
-      this.$emit('input', this.value)
+  setup (props, ctx) {
+    return {
+      isChecked: computed(() => {
+        return props.modelValue === props.value
+      }),
+      updateInput () {
+        ctx.emit('update:modelValue', props.value)
+      }
     }
   }
-}
+})
 </script>
