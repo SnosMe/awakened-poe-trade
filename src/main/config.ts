@@ -82,6 +82,17 @@ export const config = (() => {
     config.widgets.find(w => w.wmType === 'price-check')!
       .chaosPriceThreshold = 0.05
 
+    const mapCheck = config.widgets.find(w => w.wmType === 'map-check')!
+    ;(mapCheck as any).selectedStats.forEach((e: any) => {
+      e.matcher = e.matchRef
+      e.matchRef = undefined
+    })
+
+    const imgStrip = config.widgets.find(w => w.wmType === 'image-strip')!
+    ;(imgStrip as any).images.forEach((e: any, idx: number) => {
+      e.id = idx
+    })
+
     config.configVersion = 4
   }
 
