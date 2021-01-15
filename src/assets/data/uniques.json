@@ -942,7 +942,7 @@
         "bounds": [{"min": 5, "max": 10}]
       },
       {
-        "text": "Damage from Enemies Hitting you is Unlucky while you are Cursed with Vulnerability",
+        "text": "Damage of Enemies Hitting you is Unlucky while you are Cursed with Vulnerability",
         "bounds": [{"min": -1, "max": -1}]
       },
       {
@@ -2077,10 +2077,6 @@
         "bounds": [{"min": 50, "max": 70}]
       },
       {
-        "text": "#% increased effect of Offerings",
-        "bounds": [{"min": -25, "max": -25}]
-      },
-      {
         "text": "You can have an Offering of each type",
         "bounds": [{"min": 1, "max": 1}]
       },
@@ -2148,7 +2144,7 @@
         "bounds": [{"min": 20, "max": 25}]
       },
       {
-        "text": "Damage from Enemies Hitting you is Unlucky while you are on Low Life",
+        "text": "Damage of Enemies Hitting you is Unlucky while you are on Low Life",
         "bounds": [{"min": -1, "max": -1}]
       }
     ]
@@ -2769,7 +2765,7 @@
         "bounds": [{"min": 5, "max": 8}]
       },
       {
-        "text": "Lightning Damage from Enemies Hitting you is Lucky",
+        "text": "Lightning Damage of Enemies Hitting you is Lucky",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -2833,7 +2829,7 @@
         "bounds": [{"min": -8, "max": -4}]
       },
       {
-        "text": "#% of Damage taken gained as Mana over 4 seconds when Hit",
+        "text": "#% of Damage taken Recouped as Mana",
         "bounds": [{"min": 8, "max": 8}]
       }
     ]
@@ -4809,7 +4805,7 @@
         "implicit": true
       },
       {
-        "text": "+# to maximum number of Golems",
+        "text": "+# to maximum number of Summoned Golems",
         "bounds": [{"min": 3, "max": 3}]
       },
       {
@@ -9126,7 +9122,7 @@
         "bounds": [{"min": 5, "max": 10}]
       },
       {
-        "text": "All your Damage can Freeze",
+        "text": "All Damage with Hits can Freeze",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -9655,7 +9651,7 @@
         "bounds": [{"min": 10, "max": 10}]
       },
       {
-        "text": "Damage from Enemies Hitting you is Unlucky while you are on Full Life",
+        "text": "Damage of Enemies Hitting you is Unlucky while you are on Full Life",
         "bounds": [{"min": -1, "max": -1}]
       }
     ]
@@ -10452,7 +10448,7 @@
   },
   {
     "name": "Hrimnor's Resolve",
-    "basetype": "Samite Helmet",
+    "basetype": "Samnite Helmet",
     "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HrimnorsResolve.png?w=2&h=2",
     "stats": [
       {
@@ -12154,7 +12150,7 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "#% of Damage taken gained as Life over 4 seconds when Hit",
+        "text": "#% of Damage taken Recouped as Life",
         "bounds": [{"min": 10, "max": 20}]
       }
     ]
@@ -12333,7 +12329,7 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "#% of Damage taken gained as Mana over 4 seconds when Hit",
+        "text": "#% of Damage taken Recouped as Mana",
         "bounds": [{"min": 5, "max": 10}]
       },
       {
@@ -13073,7 +13069,7 @@
         "bounds": [{"min": 1, "max": 1}]
       },
       {
-        "text": "Adds # to # Chaos Damage to Attacks per 50 Strength",
+        "text": "Adds # to # Chaos Damage to Attacks per 80 Strength",
         "bounds": [
           {"min": 1, "max": 1},
           {"min": 80, "max": 80}
@@ -19035,15 +19031,15 @@
         "bounds": [{"min": 10, "max": 15}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain",
+        "text": "With at least 40 Intelligence in Radius, Rolling Magma deals #% more Damage per Chain",
         "bounds": [{"min": 40, "max": 40}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage",
+        "text": "With at least 40 Intelligence in Radius, Rolling Magma deals #% more Damage",
         "bounds": [{"min": -50, "max": -50}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, Magma Orb\nhas #% increased Area of Effect per Chain",
+        "text": "With at least 40 Intelligence in Radius, Rolling Magma\nhas #% increased Area of Effect per Chain",
         "bounds": [{"min": 10, "max": 10}]
       }
     ]
@@ -19547,7 +19543,7 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/GolemInfernal.png?w=1&h=1",
     "stats": [
       {
-        "text": "+# to maximum number of Golems",
+        "text": "+# to maximum number of Summoned Golems",
         "bounds": [{"min": -1, "max": -1}]
       },
       {
@@ -19705,7 +19701,7 @@
         "bounds": [{"min": 7, "max": 10}]
       },
       {
-        "text": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently",
+        "text": "With at least 40 Intelligence in Radius, #% of Damage taken Recouped as Mana if you've Warcried Recently",
         "bounds": [{"min": 10, "max": 10}]
       }
     ]
@@ -19888,7 +19884,7 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Jewels/GolemChaos.png?w=1&h=1",
     "stats": [
       {
-        "text": "+# to maximum number of Golems",
+        "text": "+# to maximum number of Summoned Golems",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -21441,10 +21437,6 @@
         "implicit": true
       },
       {
-        "text": "Trigger Level # Icicle Burst when you Kill a Frozen Enemy",
-        "bounds": [{"min": 20, "max": 20}]
-      },
-      {
         "text": "#% increased Physical Damage",
         "bounds": [{"min": 140, "max": 180}]
       },
@@ -21764,7 +21756,7 @@
         "bounds": [{"min": 20, "max": 30}]
       },
       {
-        "text": "+# to maximum number of Golems",
+        "text": "+# to maximum number of Summoned Golems",
         "bounds": [{"min": 1, "max": 1}]
       },
       {
@@ -22101,13 +22093,6 @@
         "bounds": [
           {"min": 220, "max": 240},
           {"min": 270, "max": 300}
-        ]
-      },
-      {
-        "text": "Adds # to # Physical Damage to Spells",
-        "bounds": [
-          {"min": 376, "max": 400},
-          {"min": 568, "max": 600}
         ]
       },
       {
@@ -23794,7 +23779,7 @@
     "stats": [
       {
         "text": "#% increased Physical Damage",
-        "bounds": [{"min": 90, "max": 110}]
+        "bounds": [{"min": 130, "max": 150}]
       },
       {
         "text": "Adds # to # Physical Damage",
@@ -23802,18 +23787,6 @@
           {"min": 11, "max": 14},
           {"min": 18, "max": 23}
         ]
-      },
-      {
-        "text": "#% increased Attack Speed",
-        "bounds": [{"min": 10, "max": 15}]
-      },
-      {
-        "text": "#% of Physical Attack Damage Leeched as Life",
-        "bounds": [{"min": 2, "max": 2}]
-      },
-      {
-        "text": "#% increased total Recovery per second from Life Leech",
-        "bounds": [{"min": -50, "max": -50}]
       },
       {
         "text": "#% chance to cause Bleeding on Hit",
@@ -24381,15 +24354,8 @@
       {
         "text": "Adds # to # Fire Damage",
         "bounds": [
-          {"min": 350, "max": 400},
-          {"min": 500, "max": 600}
-        ]
-      },
-      {
-        "text": "Adds # to # Fire Damage to Spells",
-        "bounds": [
-          {"min": 230, "max": 250},
-          {"min": 300, "max": 350}
+          {"min": 315, "max": 360},
+          {"min": 450, "max": 540}
         ]
       },
       {
@@ -25902,12 +25868,12 @@
         "bounds": [{"min": 15, "max": 20}]
       },
       {
-        "text": "#% increased Cold Damage per 1% Missing Cold Resistance",
-        "bounds": [{"min": 3, "max": 5}]
+        "text": "#% increased Cold Damage per 1% Missing Cold Resistance, up to a maximum of 300%",
+        "bounds": [{"min": 15, "max": 20}]
       },
       {
-        "text": "#% increased Fire Damage per 1% Missing Fire Resistance",
-        "bounds": [{"min": 3, "max": 5}]
+        "text": "#% increased Fire Damage per 1% Missing Fire Resistance, up to a maximum of 300%",
+        "bounds": [{"min": 15, "max": 20}]
       }
     ]
   },
@@ -32369,7 +32335,7 @@
         "variant": true
       },
       {
-        "text": "Regenerate #% of Life per second while while affected by Vitality",
+        "text": "Regenerate #% of Life per second while affected by Vitality",
         "bounds": [{"min": 1, "max": 1.5}],
         "variant": true
       },
@@ -32419,7 +32385,7 @@
         "variant": true
       },
       {
-        "text": "#% of Damage taken gained as Mana over 4 seconds when Hit while affected by Clarity",
+        "text": "#% of Damage taken while affected by Clarity Recouped as Mana",
         "bounds": [{"min": 15, "max": 20}],
         "variant": true
       },
@@ -33332,7 +33298,7 @@
         "bounds": [{"min": 25, "max": 25}]
       },
       {
-        "text": "#% of Damage taken gained as Mana over 4 seconds when Hit",
+        "text": "#% of Damage taken Recouped as Mana",
         "bounds": [{"min": 5, "max": 10}]
       },
       {
@@ -35004,7 +34970,7 @@
     "icon": "https://web.poecdn.com/image/Art/2DItems/Currency/Strongholds/IvoryWatchstone7.png?w=1&h=1",
     "stats": [
       {
-        "text": "+#% Monster pack size",
+        "text": "#% increased Pack size",
         "bounds": [{"min": 10, "max": 20}]
       }
     ]
@@ -35203,7 +35169,7 @@
       },
       {
         "text": "Call of Steel causes #% increased Reflected Damage",
-        "bounds": [{"min": 40, "max": 50}],
+        "bounds": [{"min": 20, "max": 25}],
         "variant": true
       },
       {

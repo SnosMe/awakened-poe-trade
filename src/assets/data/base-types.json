@@ -1197,6 +1197,20 @@
     }
   ],
   [
+    "Basemetal Treads",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Brimstone Treads",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Bronzescale Boots",
     {
       "category": "Boots",
@@ -1225,6 +1239,13 @@
     }
   ],
   [
+    "Cloudwhisper Boots",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualDexBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Conjurer Boots",
     {
       "category": "Boots",
@@ -1239,6 +1260,13 @@
     }
   ],
   [
+    "Darksteel Treads",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Deerskin Boots",
     {
       "category": "Boots",
@@ -1250,6 +1278,20 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex3.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Dreamquest Slippers",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualIntBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Duskwalk Slippers",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualIntBoots.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -1334,6 +1376,13 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt4.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Nightwind Slippers",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualIntBoots.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -1477,6 +1526,13 @@
     }
   ],
   [
+    "Stormrider Boots",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualDexBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Strapped Boots",
     {
       "category": "Boots",
@@ -1516,6 +1572,13 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Windbreak Boots",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualDexBoots.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2334,6 +2397,13 @@
     }
   ],
   [
+    "Aetherwind Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualIntGloves.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Ambush Mitts",
     {
       "category": "Gloves",
@@ -2418,6 +2488,13 @@
     }
   ],
   [
+    "Debilitation Gauntlets",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualStrGloves.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Deerskin Gloves",
     {
       "category": "Gloves",
@@ -2460,6 +2537,13 @@
     }
   ],
   [
+    "Gauche Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualDexGloves.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Goathide Gloves",
     {
       "category": "Gloves",
@@ -2485,6 +2569,13 @@
     {
       "category": "Gloves",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GripGlovesBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Gruelling Gauntlets",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualStrGloves.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2516,6 +2607,13 @@
     }
   ],
   [
+    "Leyline Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualIntGloves.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Mesh Gloves",
     {
       "category": "Gloves",
@@ -2527,6 +2625,13 @@
     {
       "category": "Gloves",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt3.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Nexus Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualIntGloves.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2607,6 +2712,13 @@
     }
   ],
   [
+    "Sinistral Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualDexGloves.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Slink Gloves",
     {
       "category": "Gloves",
@@ -2625,6 +2737,13 @@
     {
       "category": "Gloves",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt4.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Southswing Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualDexGloves.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2660,6 +2779,13 @@
     {
       "category": "Gloves",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Taxing Gauntlets",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualStrGloves.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2773,7 +2899,7 @@
     }
   ],
   [
-    "[DNT] Heist Test Reward Equipment",
+    "[UNUSED] Heist Test Reward Equipment",
     {
       "category": "Heist Brooch"
     }
@@ -2803,7 +2929,7 @@
     }
   ],
   [
-    "[DNT] Heist Test Utility Equipment",
+    "[UNUSED] Heist Test Utility Equipment",
     {
       "category": "Heist Cloak"
     }
@@ -2923,7 +3049,7 @@
     }
   ],
   [
-    "[DNT] Heist Test Weapon",
+    "[UNUSED] Heist Test Weapon",
     {
       "category": "Heist Gear"
     }
@@ -3001,7 +3127,7 @@
     }
   ],
   [
-    "[DNT] Heist Test Tool",
+    "[UNUSED] Heist Test Tool",
     {
       "category": "Heist Tool"
     }
@@ -3223,6 +3349,20 @@
     }
   ],
   [
+    "Archdemon Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/MaskCrown.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Atonement Mask",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDexR.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Aventail Helmet",
     {
       "category": "Helmet",
@@ -3241,6 +3381,13 @@
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex1.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Blizzard Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexIntR.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -3293,6 +3440,13 @@
     }
   ],
   [
+    "Demon Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/MaskCrown.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Eternal Burgonet",
     {
       "category": "Helmet",
@@ -3325,6 +3479,13 @@
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex8.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Gale Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexIntR.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -3395,6 +3556,13 @@
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex5.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Imp Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/MaskCrown.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -3489,6 +3657,13 @@
     }
   ],
   [
+    "Penitent Mask",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDexR.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
     "Pig-Faced Bascinet",
     {
       "category": "Helmet",
@@ -3559,7 +3734,7 @@
     }
   ],
   [
-    "Samite Helmet",
+    "Samnite Helmet",
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr8.png?scale=1&w=2&h=2"
@@ -3612,6 +3787,13 @@
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Sorrow Mask",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDexR.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -3668,6 +3850,13 @@
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex3.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Winter Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexIntR.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -3840,6 +4029,12 @@
     }
   ],
   [
+    "Bramble Valley Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
     "Burial Chambers Map",
     {
       "category": "Map"
@@ -3906,6 +4101,12 @@
     }
   ],
   [
+    "Cold River Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
     "Colonnade Map",
     {
       "category": "Map"
@@ -3966,6 +4167,12 @@
     }
   ],
   [
+    "Crimson Township Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
     "Crystal Ore Map",
     {
       "category": "Map"
@@ -4003,6 +4210,12 @@
   ],
   [
     "Dig Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
+    "Dry Sea Map",
     {
       "category": "Map"
     }
@@ -4050,7 +4263,31 @@
     }
   ],
   [
+    "Forbidden Woods Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
     "Forge of the Phoenix Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
+    "Forking River Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
+    "Foundry Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
+    "Frozen Cabins Map",
     {
       "category": "Map"
     }
@@ -4081,6 +4318,12 @@
   ],
   [
     "Glacier Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
+    "Grave Trough Map",
     {
       "category": "Map"
     }
@@ -4842,6 +5085,12 @@
     }
   ],
   [
+    "Silo Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
     "Spider Forest Map",
     {
       "category": "Map"
@@ -4849,6 +5098,12 @@
   ],
   [
     "Spider Lair Map",
+    {
+      "category": "Map"
+    }
+  ],
+  [
+    "Stagnation Map",
     {
       "category": "Map"
     }
@@ -7917,6 +8172,54 @@
     }
   ],
   [
+    "Chromium Glennach Cairns Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium Haewark Hamlet Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium Lex Ejoris Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium Lex Proxima Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium Lira Arthain Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium New Vastir Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium Tirn's End Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Chromium Valdo's Rest Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
     "Cobalt Watchstone",
     {
       "category": "Watchstone"
@@ -7936,6 +8239,102 @@
   ],
   [
     "Ivory Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Glennach Cairns Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Haewark Hamlet Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Lex Ejoris Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Lex Proxima Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Lira Arthain Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum New Vastir Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Tirn's End Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Platinum Valdo's Rest Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Glennach Cairns Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Haewark Hamlet Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Lex Ejoris Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Lex Proxima Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Lira Arthain Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium New Vastir Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Tirn's End Watchstone",
+    {
+      "category": "Watchstone"
+    }
+  ],
+  [
+    "Titanium Valdo's Rest Watchstone",
     {
       "category": "Watchstone"
     }

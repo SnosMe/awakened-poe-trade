@@ -10,10 +10,6 @@
     "trade": {"ids": {"explicit": ["explicit.stat_4079888060"], "enchant": ["enchant.stat_4079888060"]}}
   },
   {
-    "stat": {"ref": "# Blight Chests are Lucky", "matchers": [{"string": "# Blight Chests are Lucky"}]},
-    "trade": {"ids": {"enchant": ["enchant.stat_1730598557"]}}
-  },
-  {
     "stat": {
       "ref": "# Cold Damage taken per second per Frenzy Charge while moving",
       "matchers": [{"string": "# Cold Damage taken per second per Frenzy Charge while moving"}]
@@ -486,10 +482,10 @@
   },
   {
     "stat": {
-      "ref": "#% chance for Blight Chests to drop an additional Reward",
+      "ref": "#% chance for Blight Chests to contain an additional Reward",
       "matchers": [
-        {"string": "#% chance for Blight Chests to drop an additional Reward"},
-        {"string": "Blight Chests drop an additional Reward", "value": 100}
+        {"string": "#% chance for Blight Chests to contain an additional Reward"},
+        {"string": "Blight Chests contain an additional Reward", "value": 100}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1260718722"]}}
@@ -604,6 +600,16 @@
   },
   {
     "stat": {
+      "ref": "#% chance in Heists for Basic Currency drops to be Duplicated",
+      "matchers": [
+        {"string": "#% chance in Heists for Basic Currency drops to be Duplicated"},
+        {"string": "Basic Currency drops in Heists are Duplicated", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2966079414"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance in Heists for Chaos Orbs to drop as Divine Orbs instead",
       "matchers": [
         {"string": "#% chance in Heists for Chaos Orbs to drop as Divine Orbs instead"},
@@ -641,16 +647,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3213734550"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% chance in Heists for Currency drops to be Duplicated",
-      "matchers": [
-        {"string": "#% chance in Heists for Currency drops to be Duplicated"},
-        {"string": "Currency drops in Heists are Duplicated", "value": 100}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2966079414"]}}
   },
   {
     "stat": {
@@ -2461,7 +2457,10 @@
   {
     "stat": {
       "ref": "#% chance to Intimidate Enemies for 4 seconds on Hit",
-      "matchers": [{"string": "#% chance to Intimidate Enemies for 4 seconds on Hit"}]
+      "matchers": [
+        {"string": "#% chance to Intimidate Enemies for 4 seconds on Hit"},
+        {"string": "Intimidate Enemies for 4 seconds on Hit", "value": 100}
+      ]
     },
     "trade": {
       "ids": {
@@ -5779,10 +5778,10 @@
   },
   {
     "stat": {
-      "ref": "#% increased Cold Damage per 1% Missing Cold Resistance",
+      "ref": "#% increased Cold Damage per 1% Missing Cold Resistance, up to a maximum of 300%",
       "matchers": [
-        {"string": "#% increased Cold Damage per 1% Missing Cold Resistance"},
-        {"string": "#% reduced Cold Damage per 1% Missing Cold Resistance", "negate": true}
+        {"string": "#% increased Cold Damage per 1% Missing Cold Resistance, up to a maximum of 300%"},
+        {"string": "#% reduced Cold Damage per 1% Missing Cold Resistance, up to a maximum of 300%", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2859664487"]}}
@@ -7950,22 +7949,6 @@
   },
   {
     "stat": {
-      "ref": "#% increased Effect of Non-Damaging Ailments on you",
-      "matchers": [
-        {"string": "#% increased Effect of Non-Damaging Ailments on you"},
-        {"string": "#% reduced Effect of Non-Damaging Ailments on you", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1519474779"],
-        "fractured": ["fractured.stat_1519474779"],
-        "crafted": ["crafted.stat_1519474779"]
-      }
-    }
-  },
-  {
-    "stat": {
       "ref": "#% increased Effect of non-Damaging Ailments per Elder Item Equipped",
       "matchers": [
         {"string": "#% increased Effect of non-Damaging Ailments per Elder Item Equipped"},
@@ -8673,10 +8656,10 @@
   },
   {
     "stat": {
-      "ref": "#% increased Fire Damage per 1% Missing Fire Resistance",
+      "ref": "#% increased Fire Damage per 1% Missing Fire Resistance, up to a maximum of 300%",
       "matchers": [
-        {"string": "#% increased Fire Damage per 1% Missing Fire Resistance"},
-        {"string": "#% reduced Fire Damage per 1% Missing Fire Resistance", "negate": true}
+        {"string": "#% increased Fire Damage per 1% Missing Fire Resistance, up to a maximum of 300%"},
+        {"string": "#% reduced Fire Damage per 1% Missing Fire Resistance, up to a maximum of 300%", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1060236362"]}}
@@ -10237,26 +10220,6 @@
   },
   {
     "stat": {
-      "ref": "#% increased Magma Orb Area of Effect",
-      "matchers": [
-        {"string": "#% increased Magma Orb Area of Effect"},
-        {"string": "#% reduced Magma Orb Area of Effect", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_1646093658"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased Magma Orb Damage",
-      "matchers": [
-        {"string": "#% increased Magma Orb Damage"},
-        {"string": "#% reduced Magma Orb Damage", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_600891507"]}}
-  },
-  {
-    "stat": {
       "ref": "#% increased Mana Cost of Skills during Flask Effect",
       "matchers": [
         {"string": "#% increased Mana Cost of Skills during Flask Effect"},
@@ -11251,6 +11214,13 @@
   },
   {
     "stat": {
+      "ref": "#% increased Pack size",
+      "matchers": [{"string": "#% increased Pack size"}, {"string": "#% reduced Pack size", "negate": true}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2017682521"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Pack Size in Unidentified Maps",
       "matchers": [
         {"string": "#% increased Pack Size in Unidentified Maps"},
@@ -12088,9 +12058,11 @@
   },
   {
     "stat": {
-      "ref": "#% increased Rarity of Items found in this Area",
+      "ref": "#% increased Rarity of Items found in Areas",
       "matchers": [
+        {"string": "#% increased Rarity of Items found in Areas"},
         {"string": "#% increased Rarity of Items found in this Area"},
+        {"string": "#% reduced Rarity of Items found in Areas", "negate": true},
         {"string": "#% reduced Rarity of Items found in this Area", "negate": true}
       ]
     },
@@ -12230,6 +12202,26 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2357136187"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Rolling Magma Area of Effect",
+      "matchers": [
+        {"string": "#% increased Rolling Magma Area of Effect"},
+        {"string": "#% reduced Rolling Magma Area of Effect", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1646093658"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Rolling Magma Damage",
+      "matchers": [
+        {"string": "#% increased Rolling Magma Damage"},
+        {"string": "#% reduced Rolling Magma Damage", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_600891507"]}}
   },
   {
     "stat": {
@@ -13911,15 +13903,15 @@
   },
   {
     "stat": {
-      "ref": "#% of Damage taken gained as Life over 4 seconds when Hit",
-      "matchers": [{"string": "#% of Damage taken gained as Life over 4 seconds when Hit"}]
+      "ref": "#% of Damage taken Recouped as Life",
+      "matchers": [{"string": "#% of Damage taken Recouped as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1444556985"]}}
   },
   {
     "stat": {
-      "ref": "#% of Damage taken gained as Mana over 4 seconds when Hit",
-      "matchers": [{"string": "#% of Damage taken gained as Mana over 4 seconds when Hit"}]
+      "ref": "#% of Damage taken Recouped as Mana",
+      "matchers": [{"string": "#% of Damage taken Recouped as Mana"}]
     },
     "trade": {
       "ids": {
@@ -13933,8 +13925,8 @@
   },
   {
     "stat": {
-      "ref": "#% of Damage taken gained as Mana over 4 seconds when Hit while affected by Clarity",
-      "matchers": [{"string": "#% of Damage taken gained as Mana over 4 seconds when Hit while affected by Clarity"}]
+      "ref": "#% of Damage taken while affected by Clarity Recouped as Mana",
+      "matchers": [{"string": "#% of Damage taken while affected by Clarity Recouped as Mana"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_380220671"]}}
   },
@@ -15464,7 +15456,7 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3213407110"]}}
   },
   {
-    "stat": {"ref": "+# to Agility Level", "matchers": [{"string": "# to Agility Level"}]},
+    "stat": {"ref": "+# to Agility Level for Heists", "matchers": [{"string": "# to Agility Level for Heists"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2943725337"]}}
   },
   {
@@ -15551,7 +15543,10 @@
     "trade": {"ids": {"enchant": ["enchant.stat_153004860"]}}
   },
   {
-    "stat": {"ref": "+# to Brute Force Level", "matchers": [{"string": "# to Brute Force Level"}]},
+    "stat": {
+      "ref": "+# to Brute Force Level for Heists",
+      "matchers": [{"string": "# to Brute Force Level for Heists"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1169552613"]}}
   },
   {
@@ -15559,15 +15554,18 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1172162241"]}}
   },
   {
-    "stat": {"ref": "+# to Counter-Thaumaturgy Level", "matchers": [{"string": "# to Counter-Thaumaturgy Level"}]},
+    "stat": {
+      "ref": "+# to Counter-Thaumaturgy Level for Heists",
+      "matchers": [{"string": "# to Counter-Thaumaturgy Level for Heists"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_4207149030"]}}
   },
   {
-    "stat": {"ref": "+# to Deception Level", "matchers": [{"string": "# to Deception Level"}]},
+    "stat": {"ref": "+# to Deception Level for Heists", "matchers": [{"string": "# to Deception Level for Heists"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_828170926"]}}
   },
   {
-    "stat": {"ref": "+# to Demolition Level", "matchers": [{"string": "# to Demolition Level"}]},
+    "stat": {"ref": "+# to Demolition Level for Heists", "matchers": [{"string": "# to Demolition Level for Heists"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2359025380"]}}
   },
   {
@@ -15593,7 +15591,10 @@
     }
   },
   {
-    "stat": {"ref": "+# to Engineering Level", "matchers": [{"string": "# to Engineering Level"}]},
+    "stat": {
+      "ref": "+# to Engineering Level for Heists",
+      "matchers": [{"string": "# to Engineering Level for Heists"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2978835006"]}}
   },
   {
@@ -15731,7 +15732,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_493812998"]}}
   },
   {
-    "stat": {"ref": "+# to Level of all Jobs", "matchers": [{"string": "# to Level of all Jobs"}]},
+    "stat": {
+      "ref": "+# to Level of all Jobs for Heists",
+      "matchers": [{"string": "# to Level of all Jobs for Heists"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2692578539"]}}
   },
   {
@@ -16058,7 +16062,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1672793731"], "implicit": ["implicit.stat_1672793731"]}}
   },
   {
-    "stat": {"ref": "+# to Lockpicking Level", "matchers": [{"string": "# to Lockpicking Level"}]},
+    "stat": {
+      "ref": "+# to Lockpicking Level for Heists",
+      "matchers": [{"string": "# to Lockpicking Level for Heists"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3031310169"]}}
   },
   {
@@ -16199,10 +16206,6 @@
     "trade": {"ids": {"enchant": ["enchant.stat_882630096"]}}
   },
   {
-    "stat": {"ref": "+# to maximum number of Golems", "matchers": [{"string": "# to maximum number of Golems"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_2821079699"]}}
-  },
-  {
     "stat": {
       "ref": "+# to maximum number of Raging Spirits",
       "matchers": [{"string": "# to maximum number of Raging Spirits"}]
@@ -16243,6 +16246,13 @@
   {
     "stat": {"ref": "+# to maximum number of Spectres", "matchers": [{"string": "# to maximum number of Spectres"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_125218179"], "fractured": ["fractured.stat_125218179"]}}
+  },
+  {
+    "stat": {
+      "ref": "+# to maximum number of Summoned Golems",
+      "matchers": [{"string": "# to maximum number of Summoned Golems"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2821079699"]}}
   },
   {
     "stat": {
@@ -16373,7 +16383,7 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2629689891"]}}
   },
   {
-    "stat": {"ref": "+# to Perception Level", "matchers": [{"string": "# to Perception Level"}]},
+    "stat": {"ref": "+# to Perception Level for Heists", "matchers": [{"string": "# to Perception Level for Heists"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2932532516"]}}
   },
   {
@@ -16439,7 +16449,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2445618239"]}}
   },
   {
-    "stat": {"ref": "+# to Trap Disarmament Level", "matchers": [{"string": "# to Trap Disarmament Level"}]},
+    "stat": {
+      "ref": "+# to Trap Disarmament Level for Heists",
+      "matchers": [{"string": "# to Trap Disarmament Level for Heists"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_555061211"]}}
   },
   {
@@ -17041,10 +17054,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_918170065"], "fractured": ["fractured.stat_918170065"]}}
-  },
-  {
-    "stat": {"ref": "+#% Monster pack size", "matchers": [{"string": "#% Monster pack size"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_2017682521"]}}
   },
   {
     "stat": {
@@ -20606,10 +20615,10 @@
         {"string": "Added Small Passive Skills grant: +4% to Damage over Time Multiplier", "value": 22},
         {"string": "Added Small Passive Skills grant: 10% increased Effect of Non-Damaging Ailments", "value": 23},
         {
-          "string": "Added Small Passive Skills grant: 6% increased effect of Non-Curse Auras from your Skills",
+          "string": "Added Small Passive Skills grant: 3% increased effect of Non-Curse Auras from your Skills",
           "value": 24
         },
-        {"string": "Added Small Passive Skills grant: 5% increased Effect of your Curses", "value": 25},
+        {"string": "Added Small Passive Skills grant: 3% increased Effect of your Curses", "value": 25},
         {"string": "Added Small Passive Skills grant: 10% increased Damage while affected by a Herald", "value": 26},
         {
           "string": "Added Small Passive Skills grant: Minions deal 10% increased Damage while you are affected by a Herald",
@@ -20768,8 +20777,8 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Chaos Damage to Attacks per 50 Strength",
-      "matchers": [{"string": "Adds # to # Chaos Damage to Attacks per 50 Strength"}]
+      "ref": "Adds # to # Chaos Damage to Attacks per 80 Strength",
+      "matchers": [{"string": "Adds # to # Chaos Damage to Attacks per 80 Strength"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_117885424"]}}
   },
@@ -21808,6 +21817,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3359218839"]}}
   },
   {
+    "stat": {"ref": "All Damage with Hits can Freeze", "matchers": [{"string": "All Damage with Hits can Freeze"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_4052117756"]}}
+  },
+  {
     "stat": {
       "ref": "All Monster Damage from Hits always Ignites",
       "matchers": [{"string": "All Monster Damage from Hits always Ignites"}]
@@ -21843,10 +21856,6 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1959522666"]}}
-  },
-  {
-    "stat": {"ref": "All your Damage can Freeze", "matchers": [{"string": "All your Damage can Freeze"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_4052117756"]}}
   },
   {
     "stat": {
@@ -22266,10 +22275,10 @@
   },
   {
     "stat": {
-      "ref": "An additional Currency Item drops when the first Invasion Boss is slain",
+      "ref": "An additional Basic Currency Item drops when the first Invasion Boss is slain",
       "matchers": [
-        {"string": "# additional Currency Items drops when the first Invasion Boss is slain"},
-        {"string": "An additional Currency Item drops when the first Invasion Boss is slain", "value": 1}
+        {"string": "# additional Basic Currency Items drops when the first Invasion Boss is slain"},
+        {"string": "An additional Basic Currency Item drops when the first Invasion Boss is slain", "value": 1}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2962051214"]}}
@@ -22695,30 +22704,10 @@
   },
   {
     "stat": {
-      "ref": "Area contains an additional Magic Monster pack",
-      "matchers": [
-        {"string": "Area contains # additional Magic Monster packs"},
-        {"string": "Area contains an additional Magic Monster pack", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_581013336"], "implicit": ["implicit.stat_581013336"]}}
-  },
-  {
-    "stat": {
       "ref": "Area contains an additional Magic Pack of Wealth",
       "matchers": [{"string": "Area contains an additional Magic Pack of Wealth"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3900181441"]}}
-  },
-  {
-    "stat": {
-      "ref": "Area contains an additional pack with a Rare monster",
-      "matchers": [
-        {"string": "Area contains # additional packs with a Rare monster"},
-        {"string": "Area contains an additional pack with a Rare monster", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2810286377"], "implicit": ["implicit.stat_2810286377"]}}
   },
   {
     "stat": {
@@ -22788,16 +22777,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_445988468"]}}
-  },
-  {
-    "stat": {
-      "ref": "Area contains an extra Harbinger",
-      "matchers": [
-        {"string": "Area contains # extra Harbingers"},
-        {"string": "Area contains an extra Harbinger", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_504850499"]}}
   },
   {
     "stat": {
@@ -22886,16 +22865,6 @@
       "matchers": [{"string": "Area has #% chance to contain Gifts of the Sacrificed per Sacrifice Fragment used"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2649372092"]}}
-  },
-  {
-    "stat": {
-      "ref": "Area has a #% chance to contain Cadiro Perandus",
-      "matchers": [
-        {"string": "Area has a #% chance to contain Cadiro Perandus"},
-        {"string": "Area contains Cadiro Perandus", "value": 100}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3788235244"], "implicit": ["implicit.stat_3788235244"]}}
   },
   {
     "stat": {
@@ -23312,6 +23281,30 @@
   },
   {
     "stat": {
+      "ref": "Areas contain an additional Magic Monster pack",
+      "matchers": [
+        {"string": "Area contains # additional Magic Monster packs"},
+        {"string": "Areas contain # additional Magic Monster packs"},
+        {"string": "Area contains an additional Magic Monster pack", "value": 1},
+        {"string": "Areas contain an additional Magic Monster pack", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_581013336"], "implicit": ["implicit.stat_581013336"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas contain an additional pack with a Rare monster",
+      "matchers": [
+        {"string": "Area contains # additional packs with a Rare monster"},
+        {"string": "Areas contain # additional packs with a Rare monster"},
+        {"string": "Area contains an additional pack with a Rare monster", "value": 1},
+        {"string": "Areas contain an additional pack with a Rare monster", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2810286377"], "implicit": ["implicit.stat_2810286377"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas contain an additional Tormented Betrayer",
       "matchers": [
         {"string": "Area contains # additional Tormented Betrayers"},
@@ -23360,6 +23353,18 @@
   },
   {
     "stat": {
+      "ref": "Areas contain an extra Harbinger",
+      "matchers": [
+        {"string": "Area contains # extra Harbingers"},
+        {"string": "Areas contain # extra Harbingers"},
+        {"string": "Area contains an extra Harbinger", "value": 1},
+        {"string": "Areas contain an extra Harbinger", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_504850499"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas contain an extra Resonating Shrine",
       "matchers": [
         {"string": "Area contains # extra Resonating Shrines"},
@@ -23400,6 +23405,18 @@
       "matchers": [{"string": "Area contains hunted traitors"}, {"string": "Areas contain hunted traitors"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3747734818"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have #% chance to contain Cadiro Perandus",
+      "matchers": [
+        {"string": "Area has a #% chance to contain Cadiro Perandus"},
+        {"string": "Areas have #% chance to contain Cadiro Perandus"},
+        {"string": "Area contains Cadiro Perandus", "value": 100},
+        {"string": "Areas contain Cadiro Perandus", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3788235244"], "implicit": ["implicit.stat_3788235244"]}}
   },
   {
     "stat": {
@@ -23969,9 +23986,11 @@
   },
   {
     "stat": {
-      "ref": "Beyond Portals have a #% chance to spawn an additional Beyond Demon",
+      "ref": "Beyond Portals in Areas have #% chance to spawn an additional Beyond Demon",
       "matchers": [
         {"string": "Beyond Portals have a #% chance to spawn an additional Beyond Demon"},
+        {"string": "Beyond Portals in Areas have #% chance to spawn an additional Beyond Demon"},
+        {"string": "Beyond Portals in Areas spawn an additional Beyond Demon", "value": 100},
         {"string": "Beyond Portals spawn an additional Beyond Demon", "value": 100}
       ]
     },
@@ -24283,8 +24302,11 @@
   },
   {
     "stat": {
-      "ref": "Breaches have #% increased Monster density",
-      "matchers": [{"string": "Breaches have #% increased Monster density"}]
+      "ref": "Breaches in Areas have #% increased Monster density",
+      "matchers": [
+        {"string": "Breaches have #% increased Monster density"},
+        {"string": "Breaches in Areas have #% increased Monster density"}
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1210760818"]}}
   },
@@ -25147,7 +25169,7 @@
       "ref": "Consecrated Path has #% increased Area of Effect",
       "matchers": [
         {"string": "Consecrated Path has #% increased Area of Effect"},
-        {"string": "Consecrated Path deals #% reduced Area of Effect", "negate": true}
+        {"string": "Consecrated Path has #% reduced Area of Effect", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3285061858"]}}
@@ -25660,36 +25682,6 @@
   },
   {
     "stat": {
-      "ref": "Damage from Enemies Hitting you is Unlucky while you are Cursed with Vulnerability",
-      "matchers": [
-        {"string": "Damage from Enemies Hitting you is Unlucky while you are Cursed with Vulnerability", "value": -1},
-        {"string": "Damage from Enemies Hitting you is Lucky while you are Cursed with Vulnerability", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2758554648"]}}
-  },
-  {
-    "stat": {
-      "ref": "Damage from Enemies Hitting you is Unlucky while you are on Full Life",
-      "matchers": [
-        {"string": "Damage from Enemies Hitting you is Unlucky while you are on Full Life", "value": -1},
-        {"string": "Damage from Enemies Hitting you is Lucky while you are on Full Life", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3629143471"]}}
-  },
-  {
-    "stat": {
-      "ref": "Damage from Enemies Hitting you is Unlucky while you are on Low Life",
-      "matchers": [
-        {"string": "Damage from Enemies Hitting you is Unlucky while you are on Low Life", "value": -1},
-        {"string": "Damage from Enemies Hitting you is Lucky while you are on Low Life", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3753748365"]}}
-  },
-  {
-    "stat": {
       "ref": "Damage Modifiers have #% increased Effect",
       "matchers": [
         {"string": "Damage Modifiers have #% increased Effect"},
@@ -25700,8 +25692,41 @@
   },
   {
     "stat": {
+      "ref": "Damage of Enemies Hitting you is Unlucky while you are Cursed with Vulnerability",
+      "matchers": [
+        {"string": "Damage of Enemies Hitting you is Unlucky while you are Cursed with Vulnerability", "value": -1},
+        {"string": "Damage of Enemies Hitting you is Lucky while you are Cursed with Vulnerability", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2758554648"]}}
+  },
+  {
+    "stat": {
+      "ref": "Damage of Enemies Hitting you is Unlucky while you are on Full Life",
+      "matchers": [
+        {"string": "Damage of Enemies Hitting you is Unlucky while you are on Full Life", "value": -1},
+        {"string": "Damage of Enemies Hitting you is Lucky while you are on Full Life", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3629143471"]}}
+  },
+  {
+    "stat": {
+      "ref": "Damage of Enemies Hitting you is Unlucky while you are on Low Life",
+      "matchers": [
+        {"string": "Damage of Enemies Hitting you is Unlucky while you are on Low Life", "value": -1},
+        {"string": "Damage of Enemies Hitting you is Lucky while you are on Low Life", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3753748365"]}}
+  },
+  {
+    "stat": {
       "ref": "Damage Penetrates #% Cold Resistance",
-      "matchers": [{"string": "Damage Penetrates #% Cold Resistance"}]
+      "matchers": [
+        {"string": "Damage Penetrates #% Cold Resistance"},
+        {"string": "Your Hits treat Cold Resistance as #% higher than actual value", "negate": true}
+      ]
     },
     "trade": {
       "ids": {
@@ -26858,8 +26883,8 @@
   },
   {
     "stat": {
-      "ref": "Every 5 seconds, Regenerate #% of Life over one second",
-      "matchers": [{"string": "Every 5 seconds, Regenerate #% of Life over one second"}]
+      "ref": "Every 4 seconds, Regenerate #% of Life over one second",
+      "matchers": [{"string": "Every 4 seconds, Regenerate #% of Life over one second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1242155304"]}}
   },
@@ -27184,17 +27209,10 @@
   },
   {
     "stat": {
-      "ref": "Found Items drop Identified in Identified Maps",
-      "matchers": [{"string": "Found Items drop Identified in Identified Maps"}]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_75100665"]}}
-  },
-  {
-    "stat": {
-      "ref": "Found Items have a #% chance to drop Corrupted in Areas",
+      "ref": "Found Items have #% chance to drop Corrupted in Areas",
       "matchers": [
-        {"string": "Found Items have a #% chance to drop Corrupted in Area"},
-        {"string": "Found Items have a #% chance to drop Corrupted in Areas"}
+        {"string": "Found Items have #% chance to drop Corrupted in Area"},
+        {"string": "Found Items have #% chance to drop Corrupted in Areas"}
       ]
     },
     "trade": {
@@ -28942,6 +28960,16 @@
   },
   {
     "stat": {
+      "ref": "Heist Chests have a #% chance to Duplicate contained Basic Currency",
+      "matchers": [
+        {"string": "Heist Chests have a #% chance to Duplicate contained Basic Currency"},
+        {"string": "Heist Chests Duplicate contained Basic Currency", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_14664297"]}}
+  },
+  {
+    "stat": {
       "ref": "Heist Chests have a #% chance to Duplicate contained Blighted Maps and Catalysts",
       "matchers": [
         {"string": "Heist Chests have a #% chance to Duplicate contained Blighted Maps and Catalysts"},
@@ -28965,20 +28993,10 @@
       "ref": "Heist Chests have a #% chance to Duplicate contained Catalysts",
       "matchers": [
         {"string": "Heist Chests have a #% chance to Duplicate contained Catalysts"},
-        {"string": "Heist Chests Duplicated contained Catalysts", "value": 100}
+        {"string": "Heist Chests Duplicate contained Catalysts", "value": 100}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_746798754"]}}
-  },
-  {
-    "stat": {
-      "ref": "Heist Chests have a #% chance to Duplicate contained Currency",
-      "matchers": [
-        {"string": "Heist Chests have a #% chance to Duplicate contained Currency"},
-        {"string": "Heist Chests Duplicate contained Currency", "value": 100}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_14664297"]}}
   },
   {
     "stat": {
@@ -29055,7 +29073,7 @@
       "ref": "Heist Chests have a #% chance to Duplicate contained Oils",
       "matchers": [
         {"string": "Heist Chests have a #% chance to Duplicate contained Oils"},
-        {"string": "Heist Chests Duplicated contained Oils", "value": 100}
+        {"string": "Heist Chests Duplicate contained Oils", "value": 100}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2233905349"]}}
@@ -30360,8 +30378,8 @@
   },
   {
     "stat": {
-      "ref": "Lightning Damage from Enemies Hitting you is Lucky",
-      "matchers": [{"string": "Lightning Damage from Enemies Hitting you is Lucky"}]
+      "ref": "Lightning Damage of Enemies Hitting you is Lucky",
+      "matchers": [{"string": "Lightning Damage of Enemies Hitting you is Lucky"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4224965099"]}}
   },
@@ -30623,16 +30641,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3056215807"]}}
-  },
-  {
-    "stat": {
-      "ref": "Magma Orb Chains an additional time",
-      "matchers": [
-        {"string": "Magma Orb Chains an additional # times"},
-        {"string": "Magma Orb Chains an additional time", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_2589980605"]}}
   },
   {
     "stat": {
@@ -31884,10 +31892,10 @@
   },
   {
     "stat": {
-      "ref": "Monsters with Silver Coins drop an additional Currency Item",
+      "ref": "Monsters with Silver Coins drop an additional Basic Currency Item",
       "matchers": [
-        {"string": "Monsters with Silver Coins drop # additional Currency Items"},
-        {"string": "Monsters with Silver Coins drop an additional Currency Item", "value": 1}
+        {"string": "Monsters with Silver Coins drop # additional Basic Currency Items"},
+        {"string": "Monsters with Silver Coins drop an additional Basic Currency Item", "value": 1}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1183247801"]}}
@@ -32187,10 +32195,10 @@
   },
   {
     "stat": {
-      "ref": "Nemesis Monsters drop # additional Currency Item",
+      "ref": "Nemesis Monsters drop # additional Basic Currency Item",
       "matchers": [
-        {"string": "Nemesis Monsters drop # additional Currency Item"},
-        {"string": "Nemesis Monsters drop # additional Currency Items"}
+        {"string": "Nemesis Monsters drop # additional Basic Currency Item"},
+        {"string": "Nemesis Monsters drop # additional Basic Currency Items"}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2329255938"]}}
@@ -34418,6 +34426,13 @@
   },
   {
     "stat": {
+      "ref": "Regenerate #% of Life per second while affected by Vitality",
+      "matchers": [{"string": "Regenerate #% of Life per second while affected by Vitality"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1165583295"]}}
+  },
+  {
+    "stat": {
       "ref": "Regenerate #% of Life per second while Frozen",
       "matchers": [{"string": "Regenerate #% of Life per second while Frozen"}]
     },
@@ -34436,13 +34451,6 @@
       "matchers": [{"string": "Regenerate #% of Life per second while on Low Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3942946753"]}}
-  },
-  {
-    "stat": {
-      "ref": "Regenerate #% of Life per second while while affected by Vitality",
-      "matchers": [{"string": "Regenerate #% of Life per second while while affected by Vitality"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1165583295"]}}
   },
   {
     "stat": {
@@ -34723,8 +34731,8 @@
   },
   {
     "stat": {
-      "ref": "Rogue Exiles drop # additional Currency Items",
-      "matchers": [{"string": "Rogue Exiles drop # additional Currency Items"}]
+      "ref": "Rogue Exiles drop # additional Basic Currency Items",
+      "matchers": [{"string": "Rogue Exiles drop # additional Basic Currency Items"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_600723636"]}}
   },
@@ -34775,6 +34783,16 @@
       "matchers": [{"string": "Rogue Exiles have #% more Rarity of Items Dropped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2008953542"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rolling Magma Chains an additional time",
+      "matchers": [
+        {"string": "Rolling Magma Chains an additional # times"},
+        {"string": "Rolling Magma Chains an additional time", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_2589980605"]}}
   },
   {
     "stat": {
@@ -35062,10 +35080,10 @@
   },
   {
     "stat": {
-      "ref": "Shrines drop a Currency Item when used",
+      "ref": "Shrines drop a Basic Currency Item when used",
       "matchers": [
-        {"string": "Shrines drop # Currency Items when used"},
-        {"string": "Shrines drop a Currency Item when used", "value": 1}
+        {"string": "Shrines drop # Basic Currency Items when used"},
+        {"string": "Shrines drop a Basic Currency Item when used", "value": 1}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2305944553"]}}
@@ -35327,11 +35345,13 @@
   },
   {
     "stat": {
-      "ref": "Slaying Enemies close together has a #% chance to attract monsters from Beyond",
+      "ref": "Slaying Enemies close together in Areas has a #% chance to attract monsters from Beyond",
       "matchers": [
         {"string": "Slaying Enemies close together has a #% chance to attract monsters from Beyond"},
+        {"string": "Slaying Enemies close together in Areas has a #% chance to attract monsters from Beyond"},
         {"string": "Slaying Enemies close together attracts monsters from Beyond", "value": 100},
-        {"string": "Slaying Enemies close together can attract monsters from Beyond this realm", "value": 100}
+        {"string": "Slaying Enemies close together can attract monsters from Beyond this realm", "value": 100},
+        {"string": "Slaying Enemies close together in Areas attracts monsters from Beyond", "value": 100}
       ]
     },
     "trade": {
@@ -36083,7 +36103,7 @@
       "ref": "Socketed Gems are Supported by Level # Hextouch",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Hextouch"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2697741965"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_95", "explicit.stat_2697741965"]}}
   },
   {
     "stat": {
@@ -37360,16 +37380,6 @@
   },
   {
     "stat": {
-      "ref": "Strongboxes each contain an additional random Rare Item",
-      "matchers": [
-        {"string": "Strongboxes each contain # additional random Rare Items"},
-        {"string": "Strongboxes each contain an additional random Rare Item", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3089506271"]}}
-  },
-  {
-    "stat": {
       "ref": "Strongboxes in Area have #% chance to contain an additional Vaal Orb",
       "matchers": [{"string": "Strongboxes in Area have #% chance to contain an additional Vaal Orb"}]
     },
@@ -37377,14 +37387,14 @@
   },
   {
     "stat": {
-      "ref": "Strongboxes in Areas are at least Magic Rarity",
+      "ref": "Strongboxes in Areas are at least Magic",
       "matchers": [
-        {"string": "Strongboxes in Area are at least Magic Rarity", "value": 1},
-        {"string": "Strongboxes in Areas are at least Magic Rarity", "value": 1},
-        {"string": "Strongboxes in Area are at least Rare Rarity", "value": 2},
-        {"string": "Strongboxes in Areas are at least Rare Rarity", "value": 2},
-        {"string": "Strongboxes in Area are at least Unique Rarity", "value": 3},
-        {"string": "Strongboxes in Areas are at least Unique Rarity", "value": 3}
+        {"string": "Strongboxes in Area are at least Magic", "value": 1},
+        {"string": "Strongboxes in Areas are at least Magic", "value": 1},
+        {"string": "Strongboxes in Area are at least Rare", "value": 2},
+        {"string": "Strongboxes in Areas are at least Rare", "value": 2},
+        {"string": "Strongboxes in Area are at least Unique", "value": 3},
+        {"string": "Strongboxes in Areas are at least Unique", "value": 3}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3522828354"]}}
@@ -37395,6 +37405,18 @@
       "matchers": [{"string": "Strongboxes in Area are Corrupted"}, {"string": "Strongboxes in Areas are Corrupted"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2681419531"]}}
+  },
+  {
+    "stat": {
+      "ref": "Strongboxes in Areas will each contain an additional random Rare Item",
+      "matchers": [
+        {"string": "Strongboxes each contain # additional random Rare Items"},
+        {"string": "Strongboxes in Areas will each contain # additional random Rare Items"},
+        {"string": "Strongboxes each contain an additional random Rare Item", "value": 1},
+        {"string": "Strongboxes in Areas will each contain an additional random Rare Item", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3089506271"]}}
   },
   {
     "stat": {
@@ -37917,9 +37939,9 @@
   },
   {
     "stat": {
-      "ref": "The first time a Player reaches # Rampage Kills in this Area, 6 Currency Items will drop",
+      "ref": "The first time a Player reaches # Rampage Kills in this Area, 6 Basic Currency Items will drop",
       "matchers": [
-        {"string": "The first time a Player reaches # Rampage Kills in this Area, 6 Currency Items will drop"}
+        {"string": "The first time a Player reaches # Rampage Kills in this Area, 6 Basic Currency Items will drop"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4048158159"]}}
@@ -37980,10 +38002,12 @@
   },
   {
     "stat": {
-      "ref": "Tormented Spirits have #% increased Duration",
+      "ref": "Tormented Spirits in Areas have #% increased Duration",
       "matchers": [
         {"string": "Tormented Spirits have #% increased Duration"},
-        {"string": "Tormented Spirits have #% reduced Duration", "negate": true}
+        {"string": "Tormented Spirits in Areas have #% increased Duration"},
+        {"string": "Tormented Spirits have #% reduced Duration", "negate": true},
+        {"string": "Tormented Spirits in Areas have #% reduced Duration", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_663610248"]}}
@@ -38218,13 +38242,6 @@
       "matchers": [{"string": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_252427115"]}}
-  },
-  {
-    "stat": {
-      "ref": "Trigger Level # Icicle Burst when you Kill a Frozen Enemy",
-      "matchers": [{"string": "Trigger Level # Icicle Burst when you Kill a Frozen Enemy"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2812925691"]}}
   },
   {
     "stat": {
@@ -38849,6 +38866,17 @@
     "stat": {"ref": "Vagan's Veiled", "matchers": [{"string": "Vagan's Veiled"}]},
     "trade": {"ids": {"veiled": ["veiled.mod_14269"]}}
   },
+  {
+    "stat": {
+      "ref": "Varieties of Items contained in 1 Blight Chest in Areas are Lucky",
+      "matchers": [
+        {"string": "Varieties of Items contained in # Blight Chests are Lucky"},
+        {"string": "Varieties of Items contained in # Blight Chests in Areas are Lucky"},
+        {"string": "Varieties of Items contained in 1 Blight Chest in Areas are Lucky", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1730598557"]}}
+  },
   {"stat": {"ref": "Veiled", "matchers": [{"string": "Veiled"}]}, "trade": {"ids": {"veiled": ["veiled.mod_65000"]}}},
   {
     "stat": {
@@ -39118,10 +39146,10 @@
   },
   {
     "stat": {
-      "ref": "When a Bloodline Pack is Slain, it drops a Currency Item",
+      "ref": "When a Bloodline Pack is Slain, it drops a Basic Currency Item",
       "matchers": [
-        {"string": "When a Bloodline Pack is Slain, it drops # Currency Items"},
-        {"string": "When a Bloodline Pack is Slain, it drops a Currency Item", "value": 1}
+        {"string": "When a Bloodline Pack is Slain, it drops # Basic Currency Items"},
+        {"string": "When a Bloodline Pack is Slain, it drops a Basic Currency Item", "value": 1}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_200299748"]}}
@@ -39771,10 +39799,10 @@
   },
   {
     "stat": {
-      "ref": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently",
+      "ref": "With at least 40 Intelligence in Radius, #% of Damage taken Recouped as Mana if you've Warcried Recently",
       "matchers": [
         {
-          "string": "With at least 40 Intelligence in Radius, #% of Damage taken gained as Mana over 4 seconds when Hit if you've Warcried Recently"
+          "string": "With at least 40 Intelligence in Radius, #% of Damage taken Recouped as Mana if you've Warcried Recently"
         }
       ]
     },
@@ -39909,49 +39937,6 @@
   },
   {
     "stat": {
-      "ref": "With at least 40 Intelligence in Radius, Magma Orb\nhas #% increased Area of Effect per Chain",
-      "matchers": [
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb\nhas #% increased Area of Effect per Chain"},
-        {
-          "string": "With at least 40 Intelligence in Radius, Magma Orb\nhas #% reduced Area of Effect per Chain",
-          "negate": true
-        }
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_160933750"]}}
-  },
-  {
-    "stat": {
-      "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage",
-      "matchers": [
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage"},
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb deals #% less Damage", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3131110290"]}}
-  },
-  {
-    "stat": {
-      "ref": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain",
-      "matchers": [
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb deals #% more Damage per Chain"},
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb deals #% less Damage per Chain", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1141756390"]}}
-  },
-  {
-    "stat": {
-      "ref": "With at least 40 Intelligence in Radius, Magma Orb fires an additional Projectile",
-      "matchers": [
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb fires # additional Projectiles"},
-        {"string": "With at least 40 Intelligence in Radius, Magma Orb fires an additional Projectile", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2542542825"]}}
-  },
-  {
-    "stat": {
       "ref": "With at least 40 Intelligence in Radius, Raised\nZombies' Slam Attack has #% increased Cooldown Recovery Rate",
       "matchers": [
         {
@@ -39980,6 +39965,52 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_781633505"]}}
+  },
+  {
+    "stat": {
+      "ref": "With at least 40 Intelligence in Radius, Rolling Magma\nhas #% increased Area of Effect per Chain",
+      "matchers": [
+        {"string": "With at least 40 Intelligence in Radius, Rolling Magma\nhas #% increased Area of Effect per Chain"},
+        {
+          "string": "With at least 40 Intelligence in Radius, Rolling Magma\nhas #% reduced Area of Effect per Chain",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_160933750"]}}
+  },
+  {
+    "stat": {
+      "ref": "With at least 40 Intelligence in Radius, Rolling Magma deals #% more Damage",
+      "matchers": [
+        {"string": "With at least 40 Intelligence in Radius, Rolling Magma deals #% more Damage"},
+        {"string": "With at least 40 Intelligence in Radius, Rolling Magma deals #% less Damage", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3131110290"]}}
+  },
+  {
+    "stat": {
+      "ref": "With at least 40 Intelligence in Radius, Rolling Magma deals #% more Damage per Chain",
+      "matchers": [
+        {"string": "With at least 40 Intelligence in Radius, Rolling Magma deals #% more Damage per Chain"},
+        {
+          "string": "With at least 40 Intelligence in Radius, Rolling Magma deals #% less Damage per Chain",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1141756390"]}}
+  },
+  {
+    "stat": {
+      "ref": "With at least 40 Intelligence in Radius, Rolling Magma fires an additional Projectile",
+      "matchers": [
+        {"string": "With at least 40 Intelligence in Radius, Rolling Magma fires # additional Projectiles"},
+        {"string": "With at least 40 Intelligence in Radius, Rolling Magma fires an additional Projectile", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2542542825"]}}
   },
   {
     "stat": {
