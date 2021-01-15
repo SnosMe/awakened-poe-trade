@@ -9,7 +9,7 @@
     >
       <template #item v-if="isValuableBasetype">
         <button class="text-gray-400 hover:bg-gray-700 rounded px-1 -mx-1"
-          @click="$emit('filter-item-base')">{{ $t('Base item') }}</button>
+          @click="$emit('filter-item-base')">{{ t('Base item') }}</button>
       </template>
     </item-quick-price>
     <div v-if="trend.changeStr" class="px-2 text-center">
@@ -19,7 +19,7 @@
         <span v-if="trend.changeStr === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
         <span>{{ Math.round(trend.changeVal * 2) }}{{ '\u2009' }}%</span>
       </div>
-      <div class="text-xs text-gray-500 leading-none">{{ $t('Last 7 days') }}</div>
+      <div class="text-xs text-gray-500 leading-none">{{ t('Last 7 days') }}</div>
     </div>
     <div v-if="trend.changeStr" class="w-12 h-8">
       <vue-apexcharts
@@ -44,33 +44,33 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { findByDetailsId, autoCurrency } from '../../background/Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import VueApexcharts from 'vue3-apexcharts'
+import { ParsedItem } from '@/parser'
 
-export default {
+export default defineComponent({
   components: {
     ItemQuickPrice,
     VueApexcharts
   },
   props: {
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  methods: {
-    $t (a) { return a }
-  },
-  computed: {
-    trend () {
-      const detailsId = getDetailsId(this.item)
-      const trend = findByDetailsId(detailsId)
+  setup (props) {
+    const trend = computed(() => {
+      const detailsId = getDetailsId(props.item)
+      const trend = detailsId && findByDetailsId(detailsId)
       if (!trend) return
 
-      const price = (this.item.name === 'Exalted Orb')
+      const price = (props.item.name === 'Exalted Orb')
         ? { val: trend.receive.chaosValue, curr: 'c' }
         : autoCurrency(trend.receive.chaosValue, 'c')
 
@@ -98,12 +98,19 @@ export default {
       } else {
         return { price, ...trend }
       }
-    },
-    isValuableBasetype () {
-      return isValuableBasetype(this.item)
+    })
+
+    const { t } = useI18n()
+
+    return {
+      t,
+      trend,
+      isValuableBasetype: computed(() => {
+        return isValuableBasetype(props.item)
+      })
     }
   }
-}
+})
 </script>
 
 <i18n>
