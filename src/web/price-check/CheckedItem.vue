@@ -106,7 +106,9 @@ export default defineComponent({
       const cTrade = curr[1]; const pTrade = prev[1]
 
       if (cItem === pItem && cTrade !== pTrade) {
-        interactedOnce.value = true
+        nextTick(() => {
+          interactedOnce.value = true
+        })
       }
     }, { deep: false })
   
