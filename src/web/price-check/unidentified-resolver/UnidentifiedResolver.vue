@@ -1,7 +1,7 @@
 <template>
   <div v-if="show" class="layout-column">
     <div class="m-4 py-1 px-2 bg-gray-900 rounded">
-      {{ $t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
+      {{ t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
     </div>
     <div class="overflow-auto pb-4 px-4">
       <div class="flex flex-wrap -m-1">
@@ -16,20 +16,23 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { UNIQUES_LIST, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
-import { ItemRarity } from '@/parser'
+import { ItemRarity, ParsedItem } from '@/parser'
 
-export default {
+export default defineComponent({
+  emits: ['identify'],
   props: {
     item: {
-      type: Object,
-      required: false
+      type: Object as PropType<ParsedItem | undefined>,
+      default: undefined
     }
   },
-  computed: {
-    identifiedVariants () {
-      const name = this.item.name
+  setup (props, ctx) {
+    const identifiedVariants = computed(() => {
+      const name = props.item!.name
       const possible = UNIQUES_LIST
         .filter(unique => unique.basetype === name)
         .map(unique => ({
@@ -39,40 +42,51 @@ export default {
         }))
 
       if (possible.length === 1) {
-        this.select(possible[0].refName)
+        select(possible[0].refName)
       }
 
       return possible
-    },
-    show () {
-      if (!this.item) return false
+    })
 
-      return this.item.rarity === ItemRarity.Unique &&
-        this.item.isUnidentified &&
-        this.item.baseType == null
-    },
-    baseType () {
-      return TRANSLATED_ITEM_NAME_BY_REF.get(this.item.name) ||
-        this.item.name
-    }
-  },
-  methods: {
-    select (name) {
+    const show = computed(() => {
+      if (!props.item) return false
+
+      return props.item.rarity === ItemRarity.Unique &&
+        props.item.isUnidentified &&
+        props.item.baseType == null
+    })
+
+    const baseType = computed(() => {
+      return TRANSLATED_ITEM_NAME_BY_REF.get(props.item!.name) ||
+        props.item!.name
+    })
+
+    function select (name: string) {
       if ([
         'Agnerod East', 'Agnerod North', 'Agnerod South', 'Agnerod West'
       ].includes(name)) {
         name = 'Agnerod'
       }
 
-      const newItem = {
-        ...this.item,
+      const newItem: ParsedItem = {
+        ...props.item!,
         name: name,
-        baseType: this.item.name
+        baseType: props.item!.name
       }
-      this.$emit('identify', newItem)
+      ctx.emit('identify', newItem)
+    }
+
+    const { t } = useI18n()
+
+    return {
+      t,
+      identifiedVariants,
+      show,
+      baseType,
+      select
     }
   }
-}
+})
 </script>
 
 <i18n>

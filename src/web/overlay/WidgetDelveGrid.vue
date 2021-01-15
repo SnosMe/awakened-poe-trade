@@ -22,51 +22,59 @@
   </widget>
 </template>
 
-<script>
-import Widget from './Widget'
+<script lang="ts">
+import { computed, defineComponent, inject, PropType } from 'vue'
+import Widget from './Widget.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { TOGGLE_DELVE_GRID } from '@/ipc/ipc-event'
+import { Widget as IWidget, WidgetManager } from './interfaces'
 
-export default {
+export default defineComponent({
   components: { Widget },
-  inject: ['wm'],
   props: {
     config: {
-      type: Object,
+      type: Object as PropType<IWidget>,
       required: true
     }
   },
-  created () {
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+
     MainProcess.addEventListener(TOGGLE_DELVE_GRID, () => {
-      if (this.config.wmWants === 'hide') {
-        this.wm.show(this.config.wmId)
+      if (props.config.wmWants === 'hide') {
+        wm.show(props.config.wmId)
       } else {
-        this.wm.hide(this.config.wmId)
+        wm.hide(props.config.wmId)
       }
     })
-  },
-  computed: {
-    anchor () {
-      const height = Math.round(this.wm.height * 808 / 1080)
+
+    const anchor = computed(() => {
+      const height = Math.round(wm.height * 808 / 1080)
       const width = Math.round(height * 1030 / 808)
-      const top = Math.round(this.wm.height * 67 / 1080)
-      const cell = Math.round(this.wm.height * 97 / 1080)
+      const top = Math.round(wm.height * 67 / 1080)
+      const cell = Math.round(wm.height * 97 / 1080)
 
       return {
         pos: 'tc',
-        y: (top / this.wm.height) * 100,
+        y: (top / wm.height) * 100,
         x: 50,
         height,
         width,
         cell
       }
-    },
-    cellSize () {
+    })
+
+    const cellSize = computed(() => {
       return {
-        width: `${this.anchor.cell}px`,
-        height: `${this.anchor.cell}px`
+        width: `${anchor.value.cell}px`,
+        height: `${anchor.value.cell}px`
       }
+    })
+
+    return {
+      anchor,
+      cellSize
     }
   }
-}
+})
 </script>

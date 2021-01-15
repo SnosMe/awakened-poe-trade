@@ -13,75 +13,81 @@
   </widget>
 </template>
 
-<script>
-import Widget from './Widget'
+<script lang="ts">
+import { defineComponent, PropType, inject, ref, onUnmounted, computed } from 'vue'
+import Widget from './Widget.vue'
 import { Duration } from 'luxon'
+import { WidgetManager, StopwatchWidget } from './interfaces'
 
-export default {
+export default defineComponent({
   components: { Widget },
   props: {
     config: {
-      type: Object,
+      type: Object as PropType<StopwatchWidget>,
       required: true
     }
   },
-  inject: ['wm'],
-  data () {
-    if (this.config.wmFlags[0] === 'uninitialized') {
-      this.config.wmFlags = []
-      this.$set(this.config, 'anchor', {
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+
+    if (props.config.wmFlags[0] === 'uninitialized') {
+      props.config.wmFlags = []
+      props.config.anchor = {
         pos: 'cc',
         x: 50,
         y: 50
-      })
-      this.wm.show(this.config.wmId)
+      }
+      wm.show(props.config.wmId)
     }
 
-    return {
-      isRunning: false,
-      millis: 0,
-      prevTick: 0
-    }
-  },
-  created () {
-    this.timerId_ = setInterval(this.updateTime, 1000)
-  },
-  destroyed () {
-    clearInterval(this.timerId_)
-  },
-  computed: {
-    formatted () {
-      const dur = Duration.fromMillis(this.millis).shiftTo('hours', 'minutes', 'seconds')
+    const isRunning = ref(false)
+    const millis = ref(0)
+    const prevTick = ref(0)
+
+    const timerId = setInterval(updateTime, 1000)
+    onUnmounted(() => {
+      clearInterval(timerId)
+    })
+
+    const formatted = computed(() => {
+      const dur = Duration.fromMillis(millis.value).shiftTo('hours', 'minutes', 'seconds')
 
       return {
         h: String(dur.hours).padStart(2, '0'),
         m: String(dur.minutes).padStart(2, '0'),
         s: String(Math.floor(dur.seconds)).padStart(2, '0')
       }
+    })
+
+    function start () {
+      isRunning.value = true
+      prevTick.value = Date.now()
     }
-  },
-  methods: {
-    start () {
-      this.isRunning = true
-      this.prevTick = Date.now()
-    },
-    stop () {
-      this.updateTime()
-      this.isRunning = false
-    },
-    restart () {
-      this.prevTick = Date.now()
-      this.millis = 0
-    },
-    updateTime () {
-      if (this.isRunning) {
+    function stop () {
+      updateTime()
+      isRunning.value = false
+    }
+    function restart () {
+      prevTick.value = Date.now()
+      millis.value = 0
+    }
+    function updateTime () {
+      if (isRunning.value) {
         const now = Date.now()
-        this.millis += now - this.prevTick
-        this.prevTick = now
+        millis.value += now - prevTick.value
+        prevTick.value = now
       }
     }
+
+    return {
+      formatted,
+      isRunning,
+      start,
+      stop,
+      restart
+    }
   }
-}
+})
 </script>
 
 <style lang="postcss" module>

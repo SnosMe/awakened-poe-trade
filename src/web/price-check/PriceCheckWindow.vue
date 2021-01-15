@@ -11,45 +11,41 @@
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
-          <ui-popper v-if="exaltedCost" trigger="clickToToggle" boundaries-selector="#price-window">
-            <template slot="reference">
-              <button class="titlebar-btn"><i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}</button>
+          <ui-popover v-if="exaltedCost" trigger="click" boundary="#price-window">
+            <template #target>
+              <button class="titlebar-btn">
+                <i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}
+              </button>
             </template>
-            <div class="popper">
-              <div class="flex items-center justify-center flex-1">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <img src="@/assets/images/exa.png" class="max-w-full max-h-full">
-                </div>
-                <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-                <span class="px-1 text-base">{{ Math.round(exaltedCost) }} <span class="font-sans">×</span></span>
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <img src="@/assets/images/chaos.png" class="max-w-full max-h-full">
-                </div>
-              </div>
+            <template #content>
+              <item-quick-price
+                :min="exaltedCost"
+                :max="exaltedCost"
+                :item-img="require('@/assets/images/exa.png')"
+                currency="chaos"
+              />
               <div v-for="i in 9" :key="i">
-                <div class="text-left pl-1">{{ i / 10 }} exa ⇒ {{ Math.round(exaltedCost * i / 10) }} c</div>
+                <div class="pl-1">{{ i / 10 }} exa ⇒ {{ Math.round(exaltedCost * i / 10) }} c</div>
               </div>
-            </div>
-          </ui-popper>
-          <button v-if="isLoading"
-            class="titlebar-btn" title="Update price data"><i class="fas fa-sync-alt fa-spin"></i></button>
+            </template>
+          </ui-popover>
         </div>
       </app-titlebar>
       <div class="flex-grow layout-column min-h-0 bg-gray-800">
         <div id="home" class="flex-grow layout-column">
           <div class="flex-1"></div>
           <div class="flex-grow layout-column">
-            <app-bootstrap />
-            <template>
+            <background-info />
+            <template v-if="true">
               <check-position-circle
                 v-if="showCheckPos"
                 :position="checkPosition" style="z-index: -1;" />
               <unidentified-resolver :item="item" @identify="item = $event" />
               <checked-item :item="item" />
               <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
-                <i18n path="Press {0} to switch between browser and game.">
+                <i18n-t path="Press {0} to switch between browser and game.">
                   <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
-                </i18n>
+                </i18n-t>
               </div>
             </template>
           </div>
@@ -70,26 +66,28 @@
 
 <script>
 import CheckedItem from './CheckedItem'
-import AppBootstrap from './AppBootstrap'
+import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
-import { Prices } from './Prices'
-import { Leagues } from './Leagues'
+import { chaosExaRate } from '../background/Prices'
+import { selected as league } from '@/web/background/Leagues'
 import { Config } from '@/web/Config'
 import { parseClipboard } from '@/parser'
 import RelatedItems from './related-items/RelatedItems'
 import RateLimiterState from './trade/RateLimiterState'
 import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver'
 import CheckPositionCircle from './CheckPositionCircle'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
 
 export default {
   components: {
     CheckedItem,
     UnidentifiedResolver,
-    AppBootstrap,
+    BackgroundInfo,
     RelatedItems,
     RateLimiterState,
-    CheckPositionCircle
+    CheckPositionCircle,
+    ItemQuickPrice
   },
   inject: ['wm'],
   provide () {
@@ -116,10 +114,13 @@ export default {
       this.wm.hide(this.config.wmId)
     })
   },
-  data () {
+  mounted () {
+    // #HOTFIX vue reactvity loop (breaks in vuedraggable)
+    // @TODO: change component to composition
     this.config.wmWants = 'hide'
     this.config.wmFlags = ['hide-on-blur', 'skip-menu']
-
+  },
+  data () {
     return {
       checkPosition: { x: 1, y: 1 },
       item: null,
@@ -152,17 +153,12 @@ export default {
   },
   computed: {
     title () {
-      if (!Leagues.isLoaded) {
-        return 'Awakened PoE Trade'
-      } else {
-        return Leagues.selected
-      }
+      return league.value || 'Awakened PoE Trade'
     },
-    isLoading: () => Leagues.isLoading || Prices.isLoading,
     exaltedCost () {
-      if (!Prices.isLoaded) return null
+      if (!chaosExaRate.value) return null
 
-      return Math.round(Prices.exaToChaos(1))
+      return Math.round(chaosExaRate.value)
     },
     isBrowserShown () {
       return this.config.wmFlags.includes('has-browser')

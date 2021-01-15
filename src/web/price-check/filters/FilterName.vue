@@ -3,73 +3,93 @@
     <button class="px-2 rounded border"
       :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
       @click="toggleAccuracy">{{ label }}</button>
-    <button v-if="filters.corrupted" class="px-2" @click="filters.corrupted.value = !filters.corrupted.value">
-      <span v-if="filters.corrupted.value" class="text-red-500">{{ $t('Corrupted') }}</span>
-      <span v-else class="text-gray-600">{{ $t('Not Corrupted') }}</span>
+    <button v-if="filters.corrupted" class="px-2" @click="corrupted = !corrupted">
+      <span v-if="corrupted" class="text-red-500">{{ t('Corrupted') }}</span>
+      <span v-else class="text-gray-600">{{ t('Not Corrupted') }}</span>
     </button>
   </div>
 </template>
 
-<script>
-import { ItemRarity } from '@/parser'
+<script lang="ts">
+import { defineComponent, PropType, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { ItemRarity, ParsedItem } from '@/parser'
+import { ItemFilters } from './interfaces'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
-export default {
+export default defineComponent({
   name: 'FilterName',
   props: {
     filters: {
-      type: Object,
+      type: Object as PropType<ItemFilters>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  computed: {
-    label () {
-      if (this.filters.name) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(this.filters.name.value) ||
-          this.filters.name.value
+  setup (props, ctx) {
+    const { t } = useI18n()
+
+    const label = computed(() => {
+      if (props.filters.name) {
+        return TRANSLATED_ITEM_NAME_BY_REF.get(props.filters.name.value) ||
+          props.filters.name.value
       }
-      if (this.filters.baseType) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(this.filters.baseType.value) ||
-          this.filters.baseType.value
+      if (props.filters.baseType) {
+        return TRANSLATED_ITEM_NAME_BY_REF.get(props.filters.baseType.value) ||
+          props.filters.baseType.value
       }
-      if (this.filters.category) {
-        return this.$t(`Category: ${this.filters.category.value}`)
+      if (props.filters.category) {
+        return t(`Category: ${props.filters.category.value}`)
       }
 
       return '??? Report if you see this text'
-    },
-    canFilterByCategory () {
-      return this.item.rarity !== ItemRarity.Unique &&
-        CATEGORY_TO_TRADE_ID.has(this.item.category)
-    },
-    showAsActive () {
-      return this.canFilterByCategory &&
-        (this.filters.name || this.filters.baseType)
-    }
-  },
-  methods: {
-    toggleAccuracy () {
-      if (!this.canFilterByCategory) return
+    })
 
-      if (this.filters.category) {
-        this.filters.category = undefined
-        this.$set(this.filters, 'baseType', {
-          value: this.item.baseType || this.item.name
-        })
+    const canFilterByCategory = computed(() => {
+      return props.item.rarity !== ItemRarity.Unique &&
+        props.item.category != null &&
+        CATEGORY_TO_TRADE_ID.has(props.item.category)
+    })
+
+    const showAsActive = computed(() => {
+      return canFilterByCategory.value &&
+        (props.filters.name || props.filters.baseType)
+    })
+
+    function toggleAccuracy () {
+      if (!canFilterByCategory.value) return
+
+      if (props.filters.category) {
+        props.filters.category = undefined
+        props.filters.baseType = {
+          value: props.item.baseType || props.item.name
+        }
       } else {
-        this.filters.baseType = undefined
-        this.$set(this.filters, 'category', {
-          value: this.item.category
-        })
+        props.filters.baseType = undefined
+        props.filters.category = {
+          value: props.item.category!
+        }
       }
     }
+
+    const corrupted = computed<boolean>({
+      get () { return props.filters.corrupted!.value },
+      set (value) { props.filters.corrupted!.value = value }
+    })
+
+    return {
+      t,
+      label,
+      showAsActive,
+      toggleAccuracy,
+      corrupted
+    }
   }
-}
+})
 </script>
 
 <style lang="postcss">

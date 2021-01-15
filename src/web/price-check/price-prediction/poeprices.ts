@@ -1,6 +1,6 @@
 import { stringify } from 'querystring'
 import { ParsedItem } from '@/parser'
-import { Leagues } from '../Leagues'
+import { selected as league } from '@/web/background/Leagues'
 import { MainProcess } from '@/ipc/main-process-bindings'
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */
@@ -14,7 +14,7 @@ interface PoepricesApiResponse { /* eslint-disable camelcase */
   pred_explanation: Array<[string, number]>
 }
 
-interface RareItemPrice {
+export interface RareItemPrice {
   max: number
   min: number
   confidence: number
@@ -28,7 +28,7 @@ interface RareItemPrice {
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
   const query = stringify({
     i: Buffer.from(item.rawText).toString('base64'),
-    l: Leagues.selected,
+    l: league.value,
     s: 'awakened-poe-trade'
   })
   const response = await fetch(`${MainProcess.CORS}https://www.poeprices.info/api?${query}`)
@@ -68,7 +68,7 @@ export async function sendFeedback (
   body.append('min', String(prediction.min))
   body.append('max', String(prediction.max))
   body.append('currency', prediction.currency)
-  body.append('league', Leagues.selected!)
+  body.append('league', league.value!)
   // body.append('debug', String(1))
 
   const response = await fetch('https://www.poeprices.info/send_feedback', {

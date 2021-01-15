@@ -1,3 +1,5 @@
+import { MapCheckWidget } from '@/web/overlay/interfaces'
+
 export interface League {
   id: string
   selected: boolean
@@ -142,42 +144,42 @@ export const defaultConfig: Config = {
       wmFlags: ['hide-on-blur', 'skip-menu'],
       selectedStats: [
         {
-          matchRef: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
+          matcher: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
           invert: false,
           valueWarning: '',
           valueDanger: '',
           valueDesirable: '+'
         },
         {
-          matchRef: '#% maximum Player Resistances',
+          matcher: '#% maximum Player Resistances',
           invert: true,
           valueWarning: '-10',
           valueDanger: '',
           valueDesirable: ''
         },
         {
-          matchRef: 'Monsters reflect #% of Physical Damage',
+          matcher: 'Monsters reflect #% of Physical Damage',
           invert: false,
           valueWarning: '',
           valueDanger: '+',
           valueDesirable: ''
         },
         {
-          matchRef: 'Monsters reflect #% of Elemental Damage',
+          matcher: 'Monsters reflect #% of Elemental Damage',
           invert: false,
           valueWarning: '',
           valueDanger: '+',
           valueDesirable: ''
         },
         {
-          matchRef: 'Area contains two Unique Bosses',
+          matcher: 'Area contains two Unique Bosses',
           invert: false,
           valueWarning: '',
           valueDanger: '',
           valueDesirable: '+'
         }
       ]
-    },
+    } as MapCheckWidget,
     {
       wmId: 4,
       wmType: 'delve-grid',
@@ -240,7 +242,7 @@ export const defaultConfig: Config = {
         y: 10
       },
       images: [
-        { url: 'syndicate.jpg' }
+        { id: 1, url: 'syndicate.jpg' }
       ]
     }
   ]

@@ -6,7 +6,7 @@
             : state === 'warning' ? 'bg-orange-600'
             : state === 'desirable' ? 'bg-green-700'
             : 'hover:bg-gray-700'">
-      <template>
+      <template v-if="true">
         <i v-if="!state || state === 'not-matched'"
           class="inline-block mr-2" style="min-width: 1rem;">{{ '\u2009' }}</i>
         <i v-else
@@ -15,7 +15,7 @@
             : state === 'warning' ? 'fa-exclamation-triangle'
             : 'fa-check'"></i>
       </template>
-      <item-modifier-text :text="stat.text" :roll="stat.roll" class="truncate" />
+      <item-modifier-text :text="stat.matcher" :roll="stat.roll" class="truncate" />
     </button>
     <div class="flex leading-none items-center text-gray-600 w-8 text-center justify-center">
       <i v-if="state === 'not-matched'" class="fas fa-eye-slash"></i>
@@ -23,99 +23,111 @@
   </div>
 </template>
 
-<script>
-import ItemModifierText from '../ui/ItemModifierText'
+<script lang="ts">
+import { defineComponent, PropType, computed, ref } from 'vue'
+import ItemModifierText from '../ui/ItemModifierText.vue'
 import { Config } from '@/web/Config'
+import { PreparedStat } from './prepare-map-stats'
+import { MapCheckWidget } from '../overlay/interfaces'
 
-export default {
+export default defineComponent({
   components: { ItemModifierText },
   props: {
     stat: {
-      type: Object,
+      type: Object as PropType<PreparedStat>,
       required: true
     }
   },
-  computed: {
-    state () {
-      if (!this.entryInSelected) return undefined
+  setup (props) {
+    const config = computed(() => {
+      return Config.store.widgets.find(widget => widget.wmType === 'map-check') as MapCheckWidget
+    })
 
-      const valueDanger = Number(this.entryInSelected.valueDanger || 'NaN')
-      const valueWarning = Number(this.entryInSelected.valueWarning || 'NaN')
-      const valueDesirable = Number(this.entryInSelected.valueDesirable || 'NaN')
+    const entryInSelected = computed(() => {
+      return config.value.selectedStats.find(_ => _.matcher === props.stat.matcher)
+    })
 
-      if (this.entryInSelected.valueDanger !== '' && Number.isNaN(valueDanger)) {
+    const state = computed(() => {
+      if (!entryInSelected.value) return undefined
+
+      const valueDanger = Number(entryInSelected.value.valueDanger || 'NaN')
+      const valueWarning = Number(entryInSelected.value.valueWarning || 'NaN')
+      const valueDesirable = Number(entryInSelected.value.valueDesirable || 'NaN')
+
+      if (entryInSelected.value.valueDanger !== '' && Number.isNaN(valueDanger)) {
         return 'danger'
       }
-      if (this.entryInSelected.valueWarning !== '' && Number.isNaN(valueWarning)) {
+      if (entryInSelected.value.valueWarning !== '' && Number.isNaN(valueWarning)) {
         return 'warning'
       }
-      if (this.entryInSelected.valueDesirable !== '' && Number.isNaN(valueDesirable)) {
+      if (entryInSelected.value.valueDesirable !== '' && Number.isNaN(valueDesirable)) {
         return 'desirable'
       }
 
-      if (!this.entryInSelected.invert) {
-        if (!Number.isNaN(valueDanger) && this.stat.roll >= valueDanger) {
+      if (!entryInSelected.value.invert) {
+        if (!Number.isNaN(valueDanger) && props.stat.roll! >= valueDanger) {
           return 'danger'
         }
-        if (!Number.isNaN(valueWarning) && this.stat.roll >= valueWarning) {
+        if (!Number.isNaN(valueWarning) && props.stat.roll! >= valueWarning) {
           return 'warning'
         }
-        if (!Number.isNaN(valueDesirable) && this.stat.roll >= valueDesirable) {
+        if (!Number.isNaN(valueDesirable) && props.stat.roll! >= valueDesirable) {
           return 'desirable'
         }
       } else {
-        if (!Number.isNaN(valueDanger) && this.stat.roll <= valueDanger) {
+        if (!Number.isNaN(valueDanger) && props.stat.roll! <= valueDanger) {
           return 'danger'
         }
-        if (!Number.isNaN(valueWarning) && this.stat.roll <= valueWarning) {
+        if (!Number.isNaN(valueWarning) && props.stat.roll! <= valueWarning) {
           return 'warning'
         }
-        if (!Number.isNaN(valueDesirable) && this.stat.roll <= valueDesirable) {
+        if (!Number.isNaN(valueDesirable) && props.stat.roll! <= valueDesirable) {
           return 'desirable'
         }
       }
 
       return 'not-matched'
-    },
-    entryInSelected () {
-      return this.config.selectedStats.find(_ => _.matchRef === this.stat.matchRef)
-    },
-    config () {
-      return Config.store.widgets.find(widget => widget.wmType === 'map-check')
-    }
-  },
-  methods: {
-    handleClick () {
-      if (!this.entryInSelected) {
-        this.config.selectedStats.push({
-          matchRef: this.stat.matchRef,
-          invert: false,
-          valueDanger: '+',
-          valueWarning: '',
-          valueDesirable: ''
-        })
-        return
-      }
+    })
 
-      if (!this.canCycle()) return
-
-      if (this.entryInSelected.valueDanger === '+') {
-        this.entryInSelected.valueDanger = ''
-        this.entryInSelected.valueWarning = '+'
-      } else if (this.entryInSelected.valueWarning === '+') {
-        this.entryInSelected.valueWarning = ''
-        this.entryInSelected.valueDesirable = '+'
-      } else if (this.entryInSelected.valueDesirable === '+') {
-        this.config.selectedStats = this.config.selectedStats.filter(selected => selected !== this.entryInSelected)
-      }
-    },
-    canCycle () {
-      const values = [this.entryInSelected.valueDanger, this.entryInSelected.valueWarning, this.entryInSelected.valueDesirable]
+    const canCycle = computed(() => {
+      const values = [
+        entryInSelected.value!.valueDanger,
+        entryInSelected.value!.valueWarning,
+        entryInSelected.value!.valueDesirable
+      ]
       return (
         values.filter(_ => _ === '+').length === 1 &&
         values.filter(_ => _ === '').length === 2
       )
+    })
+
+    return {
+      state,
+      handleClick () {
+        if (!entryInSelected.value) {
+          config.value.selectedStats.push({
+            matcher: props.stat.matcher,
+            invert: false,
+            valueDanger: '+',
+            valueWarning: '',
+            valueDesirable: ''
+          })
+          return
+        }
+
+        if (!canCycle.value) return
+
+        if (entryInSelected.value.valueDanger === '+') {
+          entryInSelected.value.valueDanger = ''
+          entryInSelected.value.valueWarning = '+'
+        } else if (entryInSelected.value.valueWarning === '+') {
+          entryInSelected.value.valueWarning = ''
+          entryInSelected.value.valueDesirable = '+'
+        } else if (entryInSelected.value.valueDesirable === '+') {
+          config.value.selectedStats = config.value.selectedStats.filter(selected => selected !== entryInSelected.value)
+        }
+      }
     }
   }
-}
+})
 </script>

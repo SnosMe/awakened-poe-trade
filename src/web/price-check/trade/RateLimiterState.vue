@@ -13,17 +13,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
 import { RATE_LIMIT_RULES } from './common'
 import { Config } from '@/web/Config'
 
-export default {
-  computed: {
-    show () {
-      return Config.store.logLevel === 'debug' ||
-        this.limits.some(limit => limit.hasQueue)
-    },
-    limits () {
+export default defineComponent({
+  setup () {
+    const limits = computed(() => {
       const LIMITS = [
         { policy: 'trade-search-request-limit', rules: RATE_LIMIT_RULES.SEARCH },
         { policy: 'trade-fetch-request-limit', rules: RATE_LIMIT_RULES.FETCH }
@@ -39,7 +36,17 @@ export default {
           queue: rl.state.queue
         }))
       }))
+    })
+
+    const show = computed(() => {
+      return Config.store.logLevel === 'debug' ||
+        limits.value.some(limit => limit.hasQueue)
+    })
+
+    return {
+      limits,
+      show
     }
   }
-}
+})
 </script>

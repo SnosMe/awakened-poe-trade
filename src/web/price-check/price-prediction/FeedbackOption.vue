@@ -1,11 +1,11 @@
 <template>
-  <ui-popper trigger="clickToToggle" boundaries-selector="#price-window" tag-name="div">
-    <template slot="reference">
+  <ui-popover tag-name="div" trigger="click" boundary="#price-window">
+    <template #target>
       <button class="bg-gray-700 px-2 opacity-25" :class="{ 'rounded-l': option === 'low', 'rounded-r': option === 'high' }"
         >{{ option }}</button>
     </template>
-    <div class="popper">
-      <form @submit.prevent="submit" class="w-64 text-left p-2">
+    <template #content>
+      <form @submit.prevent="submit" class="w-64 p-2">
         <div>{{ text }}</div>
         <textarea v-if="option !== 'fair'"
           v-model="feedbackText"
@@ -13,52 +13,57 @@
           rows="5" class="w-full bg-gray-700 text-gray-100 p-1"></textarea>
         <button class="btn" type="submit">Send feedback</button>
       </form>
-    </div>
-  </ui-popper>
+    </template>
+  </ui-popover>
 </template>
 
-<script>
+<script lang="ts">
+import { computed, defineComponent, PropType, ref } from 'vue'
+import { ParsedItem } from '@/parser'
 import { sendFeedback } from './poeprices'
 
-export default {
+export default defineComponent({
+  emits: ['sent'],
   props: {
     option: {
-      type: String,
+      type: String as PropType<'fair' | 'low' | 'high'>,
       required: true
     },
     prediction: {
-      type: Object,
+      type: Object as PropType<{ min: number, max: number, currency: 'chaos' | 'exalt' }>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  data () {
-    return {
-      feedbackText: ''
-    }
-  },
-  computed: {
-    text () {
-      if (this.option === 'low') {
+  setup (props, ctx) {
+    const feedbackText = ref('')
+
+    const text = computed(() => {
+      if (props.option === 'low') {
         return 'Predicted price is too low.'
-      } else if (this.option === 'high') {
+      } else if (props.option === 'high') {
         return 'Predicted price is too high.'
       } else {
         return 'Predicted price is fair.'
       }
-    }
-  },
-  methods: {
-    submit () {
-      this.$emit('sent')
+    })
+    
+    function submit () {
+      ctx.emit('sent')
       sendFeedback({
-        text: this.feedbackText,
-        option: this.option
-      }, this.prediction, this.item)
+        text: feedbackText.value,
+        option: props.option
+      }, props.prediction, props.item)
+    }
+
+    return {
+      feedbackText,
+      text,
+      submit
     }
   }
-}
+})
 </script>

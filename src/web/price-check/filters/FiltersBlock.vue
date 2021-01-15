@@ -2,58 +2,58 @@
   <div>
     <div class="flex flex-wrap items-center pb-2 -mx-1 -mt-1" @mouseleave="handleMouseLeaveStats">
       <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
-        @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ $t('Links: {0}', [filters.linkedSockets.value]) }}</button>
-      <div v-if="filters.mapTier" class="trade-tag">{{ $t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
-      <div v-if="filters.areaLevel" class="trade-tag">{{ $t('Area Level: {0}', [filters.areaLevel.value]) }}</div>
-      <div v-if="filters.heistJob" class="trade-tag">{{ $t(`${filters.heistJob.name} (lvl {0})`, [filters.heistJob.level]) }}</div>
-      <div v-if="filters.mapBlighted" class="trade-tag">{{ $t('Blighted') }}</div>
-      <div v-if="filters.discriminator" class="trade-tag">{{ $t(filters.discriminator.value) }}</div>
+        @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ t('Links: {0}', [filters.linkedSockets.value]) }}</button>
+      <div v-if="filters.mapTier" class="trade-tag">{{ t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
+      <div v-if="filters.areaLevel" class="trade-tag">{{ t('Area Level: {0}', [filters.areaLevel.value]) }}</div>
+      <div v-if="filters.heistJob" class="trade-tag">{{ t(`${filters.heistJob.name} (lvl {0})`, [filters.heistJob.level]) }}</div>
+      <div v-if="filters.mapBlighted" class="trade-tag">{{ t('Blighted') }}</div>
+      <div v-if="filters.discriminator" class="trade-tag">{{ t(filters.discriminator.value) }}</div>
       <filter-numeric-editable :filter="filters.itemLevel" name="Item Level:" />
       <filter-numeric-editable :filter="filters.stackSize" name="Stock:" />
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
-        @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ $t('White: {0}', [filters.whiteSockets.value]) }}</button>
+        @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ t('White: {0}', [filters.whiteSockets.value]) }}</button>
       <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
-        @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">{{ $t('Level: {0}', [filters.gemLevel.min]) }}</button>
+        @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">{{ t('Level: {0}', [filters.gemLevel.min]) }}</button>
       <button v-if="filters.quality" class="trade-tag" :class="{ disabled: filters.quality.disabled }"
-        @click="filters.quality.disabled = !filters.quality.disabled">{{ $t('Quality: {0}%', [filters.quality.value]) }}</button>
+        @click="filters.quality.disabled = !filters.quality.disabled">{{ t('Quality: {0}%', [filters.quality.value]) }}</button>
       <button v-if="filters.altQuality" class="trade-tag" :class="{ disabled: filters.altQuality.disabled }"
-        @click="filters.altQuality.disabled = !filters.altQuality.disabled">{{ $t(filters.altQuality.value) }}</button>
+        @click="filters.altQuality.disabled = !filters.altQuality.disabled">{{ t(filters.altQuality.value) }}</button>
       <template v-if="filters.influences">
         <button v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center"
           :class="{ disabled: influence.disabled }"
           @click="influence.disabled = !influence.disabled">
           <template v-if="influence.value === 'Shaper'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Shaper.png">
-            <span class="ml-2">{{ $t('Shaper') }}</span>
+            <span class="ml-2">{{ t('Shaper') }}</span>
           </template>
           <template v-if="influence.value === 'Elder'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Elder.png">
-            <span class="ml-2">{{ $t('Elder') }}</span>
+            <span class="ml-2">{{ t('Elder') }}</span>
           </template>
           <template v-if="influence.value === 'Crusader'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Crusader.png">
-            <span class="ml-2">{{ $t('Crusader') }}</span>
+            <span class="ml-2">{{ t('Crusader') }}</span>
           </template>
           <template v-if="influence.value === 'Hunter'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Hunter.png">
-            <span class="ml-2">{{ $t('Hunter') }}</span>
+            <span class="ml-2">{{ t('Hunter') }}</span>
           </template>
           <template v-if="influence.value === 'Redeemer'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Redeemer.png">
-            <span class="ml-2">{{ $t('Redeemer') }}</span>
+            <span class="ml-2">{{ t('Redeemer') }}</span>
           </template>
           <template v-if="influence.value === 'Warlord'">
             <img class="w-5 h-5 -m-1" src="@/assets/influence/Warlord.png">
-            <span class="ml-2">{{ $t('Warlord') }}</span>
+            <span class="ml-2">{{ t('Warlord') }}</span>
           </template>
         </button>
       </template>
       <button v-if="filters.unidentified" class="trade-tag" :class="{ disabled: filters.unidentified.disabled }"
-        @click="filters.unidentified.disabled = !filters.unidentified.disabled">{{ $t('Unidentified') }}</button>
+        @click="filters.unidentified.disabled = !filters.unidentified.disabled">{{ t('Unidentified') }}</button>
       <filter-veiled :item="item" :filters="filters" />
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
-        <span v-if="totalSelectedMods === 0">{{ $t('Stats ignored') }}</span>
-        <span v-else>{{ $t('{0} of {1}, stats', [totalSelectedMods, stats.length]) }}</span>
+        <span v-if="totalSelectedMods === 0">{{ t('Stats ignored') }}</span>
+        <span v-else>{{ t('{0} of {1}, stats', [totalSelectedMods, stats.length]) }}</span>
         <i v-if="!showStatsBlock" class="fas fa-chevron-down pl-2 text-xs text-gray-400"></i>
       </button>
     </div>
@@ -67,25 +67,30 @@
       </form>
       <div class="flex">
         <button @click="toggleStatsBlock" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
-          >{{ $t('Collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
+          >{{ t('Collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <button v-if="shownStats.length != stats.length"
           @click="showHidden = !showHidden" class="ml-2 px-2 pt-2 flex items-center leading-none">
           <i v-if="showHidden" class="fas fa-toggle-on pr-1 text-gray-300"></i>
           <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
-          <span class="text-gray-400">{{ $t('Hidden') }}</span>
+          <span class="text-gray-400">{{ t('Hidden') }}</span>
         </button>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import FilterModifier from './FilterModifier'
-import FilterVeiled from './FilterVeiled'
-import FilterNumericEditable from './FilterNumericEditable'
+<script lang="ts">
+import { defineComponent, watch, ref, computed, PropType } from 'vue'
+import { useI18n } from 'vue-i18n'
+import FilterModifier from './FilterModifier.vue'
+import FilterVeiled from './FilterVeiled.vue'
+import FilterNumericEditable from './FilterNumericEditable.vue'
+import { ItemFilters, StatFilter } from './interfaces'
+import { ParsedItem } from '@/parser'
 
-export default {
+export default defineComponent({
   name: 'FiltersBlock',
+  emits: ['submit'],
   components: {
     FilterModifier,
     FilterVeiled,
@@ -93,58 +98,59 @@ export default {
   },
   props: {
     filters: {
-      type: Object,
+      type: Object as PropType<ItemFilters>,
       required: true
     },
     stats: {
-      type: Array,
+      type: Array as PropType<StatFilter[]>,
       required: true
     },
     item: {
-      type: Object,
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
-  data () {
+  setup (props, ctx) {
+    const showStatsBlock = ref(true)
+    const showHidden = ref(false)
+
+    watch(() => props.item, () => {
+      showHidden.value = false
+    })
+
+    const { t } = useI18n()
+
     return {
-      showStatsBlock: true,
-      showHidden: false
-    }
-  },
-  watch: {
-    item () {
-      this.showHidden = false
-    }
-  },
-  computed: {
-    totalSelectedMods () {
-      return this.stats.filter(stat => !stat.disabled).length
-    },
-    shownStats () {
-      if (this.showHidden) {
-        return this.stats.filter(s => s.hidden)
-      } else {
-        return this.stats.filter(s => !s.hidden)
-      }
-    }
-  },
-  methods: {
-    toggleStatsBlock () {
-      this.showStatsBlock = !this.showStatsBlock
-    },
-    handleStatsSubmit () {
-      this.$emit('submit')
-    },
-    handleMouseLeaveStats (e) {
-      if (e.offsetY >= e.fromElement.clientHeight) {
-        this.handleStatsSubmit()
-        if (document.activeElement) {
-          document.activeElement.blur()
+      t,
+      showStatsBlock,
+      showHidden,
+      totalSelectedMods: computed(() => {
+        return props.stats.filter(stat => !stat.disabled).length
+      }),
+      shownStats: computed(() => {
+        if (showHidden.value) {
+          return props.stats.filter(s => s.hidden)
+        } else {
+          return props.stats.filter(s => !s.hidden)
+        }
+      }),
+      toggleStatsBlock () {
+        showStatsBlock.value = !showStatsBlock.value
+      },
+      handleStatsSubmit () {
+        ctx.emit('submit')
+      },
+      handleMouseLeaveStats (e: MouseEvent) {
+        if (e.offsetY >= (e as any).fromElement.clientHeight) {
+          ctx.emit('submit')
+          if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur()
+          }
         }
       }
     }
   }
-}
+})
 </script>
 
 <style lang="postcss">
