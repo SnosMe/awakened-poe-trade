@@ -22,10 +22,10 @@ export default {
     const show = ref(false)
 
     // @TODO
-    setTimeout(() => {
-      show.value = true
-      setTimeout(() => { show.value = false }, 2500)
-    }, 1000)
+    // setTimeout(() => {
+    //   show.value = true
+    //   setTimeout(() => { show.value = false }, 2500)
+    // }, 1000)
 
     const { t } = useI18n()
 
