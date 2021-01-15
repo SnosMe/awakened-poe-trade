@@ -88,10 +88,14 @@ export const config = (() => {
       e.matchRef = undefined
     })
 
-    const imgStrip = config.widgets.find(w => w.wmType === 'image-strip')!
-    ;(imgStrip as any).images.forEach((e: any, idx: number) => {
-      e.id = idx
-    })
+    {
+      const widgets = config.widgets.filter(w => w.wmType === 'image-strip')!
+      widgets.forEach((imgStrip: any) => {
+        imgStrip.images.forEach((e: any, idx: number) => {
+          e.id = idx
+        })
+      })
+    }
 
     config.configVersion = 4
   }
