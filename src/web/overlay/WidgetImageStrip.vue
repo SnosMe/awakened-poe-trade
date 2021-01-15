@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, PropType } from 'vue'
+import { defineComponent, inject, PropType, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Widget from './Widget.vue'
 import DndContainer from 'vuedraggable'
@@ -64,7 +64,9 @@ export default defineComponent({
       props.config.images = [{
         id: 1, url: 'syndicate.jpg'
       }]
-      wm.show(props.config.wmId)
+      nextTick(() => {
+        wm.show(props.config.wmId)
+      })
     }
 
     const { t } = useI18n()

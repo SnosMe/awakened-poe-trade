@@ -28,12 +28,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, toRaw } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import { MainProcess } from '@/ipc/main-process-bindings'
 
-export default {
+export default defineComponent({
   setup () {
     const { t } = useI18n()
 
@@ -42,14 +42,14 @@ export default {
     return {
       t,
       save () {
-        MainProcess.closeSettingsWindow(Config.store)
+        MainProcess.closeSettingsWindow(toRaw(Config.store))
       },
       cancel () {
         MainProcess.closeSettingsWindow()
       }
     }
   }
-}
+})
 </script>
 
 <style lang="postcss">
