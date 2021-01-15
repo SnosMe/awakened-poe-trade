@@ -26,28 +26,31 @@
       :filters="itemFilters"
       :item="item" />
     <div v-if="!interactedOnce">
-      <button class="btn" @click="interactedOnce = true">{{ $t('Search') }}</button>
+      <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
   </div>
 </template>
 
-<script>
-import { ItemRarity, ItemCategory } from '@/parser'
-import TradeListing from './trade/TradeListing'
-import TradeBulk from './trade/TradeBulk'
+<script lang="ts">
+import { defineComponent, PropType, watch, ref, nextTick, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { ItemRarity, ItemCategory, ParsedItem } from '@/parser'
+import TradeListing from './trade/TradeListing.vue'
+import TradeBulk from './trade/TradeBulk.vue'
 import { apiToSatisfySearch } from './trade/common'
-import PriceTrend from './trends/PriceTrend'
-import FiltersBlock from './filters/FiltersBlock'
+import PriceTrend from './trends/PriceTrend.vue'
+import FiltersBlock from './filters/FiltersBlock.vue'
 import { createFilters } from './filters/create-item-filters'
 import { initUiModFilters } from './filters/create-stat-filters'
-import PricePrediction from './price-prediction/PricePrediction'
-import StackValue from './stack-value/StackValue'
-import FilterName from './filters/FilterName'
+import PricePrediction from './price-prediction/PricePrediction.vue'
+import StackValue from './stack-value/StackValue.vue'
+import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { Config } from '@/web/Config'
+import { ItemFilters, StatFilter } from './filters/interfaces'
 
-export default {
+export default defineComponent({
   name: 'CheckedItem',
   components: {
     PricePrediction,
@@ -58,97 +61,112 @@ export default {
     FilterName,
     StackValue
   },
-  created () {
-    this.$watch(() => [this.item, this.interactedOnce], (curr, prev) => {
-      if (this.interactedOnce === false) return
+  props: {
+    item: {
+      type: Object as PropType<ParsedItem>,
+      default: null
+    }
+  },
+  setup (props) {
+    const itemFilters = ref<ItemFilters | null>(null)
+    const itemStats = ref<StatFilter[] | null>(null)
+    const interactedOnce = ref(false)
+    const tradeAPI = ref<'trade' | 'bulk'>('bulk')
 
-      this.tradeAPI = apiToSatisfySearch(this.item, this.itemStats)
+    // TradeListing.vue OR TradeBulk.vue
+    const tradeService = ref<{ execSearch(): void } | null>(null)
+    // FilterName.vue
+    const nameFilter = ref<{ toggleAccuracy(): void }>(null!)
+
+    watch(() => [props.item, interactedOnce.value], (curr, prev) => {
+      if (interactedOnce.value === false) return
+
+      tradeAPI.value = apiToSatisfySearch(props.item!, itemStats.value!)
 
       // NOTE: child `trade-xxx` component renders/receives props on nextTick
-      this.$nextTick(() => {
-        if (this.$refs.tradeService) {
-          this.$refs.tradeService.execSearch()
+      nextTick(() => {
+        if (tradeService.value) {
+          tradeService.value.execSearch()
         }
       })
     }, { deep: false })
 
-    this.$watch(() => [this.item, this.interactedOnce, this.itemStats, this.itemFilters], (curr, prev) => {
+    watch(() => [props.item, interactedOnce.value, itemStats.value, itemFilters.value], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
       const cIntaracted = curr[1]; const pIntaracted = prev[1]
 
       if (cItem === pItem && cIntaracted === true && pIntaracted === true) {
         // force user to press Search button on change
-        this.interactedOnce = false
+        interactedOnce.value = false
       }
     }, { deep: true })
 
-    this.$watch(() => [this.item, JSON.stringify(this.itemFilters && this.itemFilters.trade)], (curr, prev) => {
+    watch(() => [props.item, JSON.stringify(itemFilters.value?.trade)], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
       const cTrade = curr[1]; const pTrade = prev[1]
 
       if (cItem === pItem && cTrade !== pTrade) {
-        this.interactedOnce = true
+        interactedOnce.value = true
       }
     }, { deep: false })
-  },
-  props: {
-    item: {
-      type: Object,
-      default: null
-    }
-  },
-  watch: {
-    item (item) {
-      this.itemFilters = createFilters(item)
-      this.itemStats = initUiModFilters(item)
-      this.interactedOnce = (
-        this.item.rarity === ItemRarity.Unique ||
-        !CATEGORY_TO_TRADE_ID.has(this.item.category) ||
-        Boolean(this.item.isUnidentified) ||
-        Boolean(this.item.extra.veiled)
+  
+    watch(() => props.item, (item) => {
+      itemFilters.value = createFilters(item)
+      itemStats.value = initUiModFilters(item)
+      interactedOnce.value = Boolean(
+        (item.rarity === ItemRarity.Unique) ||
+        (item.category &&
+          !CATEGORY_TO_TRADE_ID.has(item.category)) ||
+        (item.isUnidentified) ||
+        (item.extra.veiled)
       )
-    }
-  },
-  data () {
-    return {
-      itemFilters: null,
-      itemStats: null,
-      interactedOnce: false,
-      tradeAPI: 'bulk'
-    }
-  },
-  computed: {
-    showPredictedPrice () {
+    })
+
+    const showPredictedPrice = computed(() => {
       if (Config.store.language !== 'en') return false
 
-      return this.item.rarity === ItemRarity.Rare &&
-        this.item.category !== ItemCategory.Map &&
-        this.item.category !== ItemCategory.CapturedBeast &&
-        this.item.category !== ItemCategory.HeistContract &&
-        this.item.category !== ItemCategory.HeistBlueprint &&
-        !this.item.isUnidentified
-    },
-    show () {
-      if (!this.item) return false
+      return props.item.rarity === ItemRarity.Rare &&
+        props.item.category !== ItemCategory.Map &&
+        props.item.category !== ItemCategory.CapturedBeast &&
+        props.item.category !== ItemCategory.HeistContract &&
+        props.item.category !== ItemCategory.HeistBlueprint &&
+        !props.item.isUnidentified
+    })
 
-      return !(this.item.rarity === ItemRarity.Unique &&
-        this.item.isUnidentified &&
-        this.item.baseType == null)
-    }
-  },
-  methods: {
-    async applyItemBaseFilter () {
-      for (const stat of this.itemStats) {
+    const show = computed(() => {
+      if (!props.item) return false
+
+      return !(props.item.rarity === ItemRarity.Unique &&
+        props.item.isUnidentified &&
+        props.item.baseType == null)
+    })
+
+    async function applyItemBaseFilter () {
+      for (const stat of itemStats.value!) {
         stat.disabled = true
       }
-      await this.$nextTick()
+      await nextTick()
 
-      this.itemFilters.itemLevel.disabled = false
-      if (this.itemFilters.influences) {
-        this.itemFilters.influences[0].disabled = false
+      itemFilters.value!.itemLevel!.disabled = false
+      if (itemFilters.value!.influences) {
+        itemFilters.value!.influences[0].disabled = false
       }
-      this.$refs.nameFilter.toggleAccuracy()
+      nameFilter.value.toggleAccuracy()
+    }
+
+    const { t } = useI18n()
+
+    return {
+      t,
+      itemFilters,
+      itemStats,
+      interactedOnce,
+      tradeAPI,
+      tradeService,
+      showPredictedPrice,
+      show,
+      applyItemBaseFilter
     }
   }
-}
+})
 </script>
