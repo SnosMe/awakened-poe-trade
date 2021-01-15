@@ -22,40 +22,57 @@
       <div class="text-xs text-gray-500 leading-none">{{ $t('Last 7 days') }}</div>
     </div>
     <div v-if="trend.changeStr" class="w-12 h-8">
-      <!-- <trend-chart padding="2"
-      :datasets="[{
-        data: trend.receive.graphPoints,
-        smooth: true,
-        fill: true
-      }]"
-      :min="Math.min(...trend.receive.graphPoints) - trend.changeVal"
-      :max="Math.max(...trend.receive.graphPoints) + trend.changeVal" /> -->
+      <vue-apexcharts
+        type="area"
+        :options="{
+          chart: { sparkline: { enabled: true }, animations: { enabled: false } },
+          stroke: { curve: 'smooth', width: 1, colors: ['#a0aec0' /* gray.500 */] },
+          fill: { colors: ['#4a5568' /* gray.700 */], type: 'solid' },
+          tooltip: { enabled: false },
+          plotOptions: { area: { fillTo: 'end' } },
+          yaxis: {
+            show: false,
+            min: Math.min(...trend.receive.graphPoints) - trend.changeVal,
+            max: Math.max(...trend.receive.graphPoints) + trend.changeVal
+          }
+        }"
+        :series="[{
+          data: trend.receive.graphPoints
+        }]"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import { Prices } from '../Prices'
+import { findByDetailsId, autoCurrency } from '../../background/Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
+import VueApexcharts from 'vue3-apexcharts'
 
 export default {
-  components: { ItemQuickPrice },
+  components: {
+    ItemQuickPrice,
+    VueApexcharts
+  },
   props: {
     item: {
       type: Object,
       required: true
     }
   },
+  methods: {
+    $t (a) { return a }
+  },
   computed: {
     trend () {
       const detailsId = getDetailsId(this.item)
-      const trend = Prices.findByDetailsId(detailsId)
+      const trend = findByDetailsId(detailsId)
       if (!trend) return
 
       const price = (this.item.name === 'Exalted Orb')
         ? { val: trend.receive.chaosValue, curr: 'c' }
-        : Prices.autoCurrency(trend.receive.chaosValue, 'c')
+        : autoCurrency(trend.receive.chaosValue, 'c')
 
       if (trend.receive.graphPoints.length >= 2) {
         let changeStr = 'const'
@@ -88,19 +105,6 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss">
-/* vue-trend-chart */
-.vtc {
-  .fill {
-    fill: theme('colors.gray.700');
-  }
-
-  .stroke {
-    stroke: theme('colors.gray.500');
-  }
-}
-</style>
 
 <i18n>
 {

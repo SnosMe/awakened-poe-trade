@@ -25,6 +25,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.x",
     "animate.css": "^4.1.1",
+    "apexcharts": "^3.23.1",
     "dot-prop": "6.x.x",
     "electron-overlay-window": "1.0.x",
     "electron-store": "6.0.x",
@@ -40,6 +41,7 @@
     "vue-i18n": "9.0.0-rc.2",
     "vue-router": "4.x.x",
     "vue-slider-component": "4.0.0-beta.3",
+    "vue3-apexcharts": "^1.1.1",
     "vuedraggable": "4.0.1",
     "winston": "3.x.x"
   },
