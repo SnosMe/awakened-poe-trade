@@ -26,7 +26,6 @@ import { prepareMapStats } from './prepare-map-stats'
 import { TRANSLATED_ITEM_NAME_BY_REF, MAP_IMGS } from '@/assets/data'
 import { MapCheckWidget, WidgetManager } from '../overlay/interfaces'
 import * as ipc from '@/ipc/ipc-event'
-import i18n from '../i18n'
 
 export default defineComponent({
   components: {
@@ -97,6 +96,7 @@ export default defineComponent({
     })
 
     return {
+      t,
       anchor,
       wm,
       mapName,
