@@ -64,12 +64,12 @@ export default defineComponent({
   props: {
     item: {
       type: Object as PropType<ParsedItem>,
-      default: null
+      required: true
     }
   },
   setup (props) {
-    const itemFilters = ref<ItemFilters | null>(null)
-    const itemStats = ref<StatFilter[] | null>(null)
+    const itemFilters = ref<ItemFilters>(null!)
+    const itemStats = ref<StatFilter[]>(null!)
     const interactedOnce = ref(false)
     const tradeAPI = ref<'trade' | 'bulk'>('bulk')
 
@@ -87,12 +87,12 @@ export default defineComponent({
         (item.isUnidentified) ||
         (item.extra.veiled)
       )
-    })
+    }, { immediate: true })
 
-    watch(() => [props.item, interactedOnce.value], (curr, prev) => {
+    watch(() => [props.item, interactedOnce.value], () => {
       if (interactedOnce.value === false) return
 
-      tradeAPI.value = apiToSatisfySearch(props.item!, itemStats.value!)
+      tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value)
 
       // NOTE: child `trade-xxx` component renders/receives props on nextTick
       nextTick(() => {
@@ -100,7 +100,7 @@ export default defineComponent({
           tradeService.value.execSearch()
         }
       })
-    }, { deep: false })
+    }, { deep: false, immediate: true })
 
     watch(() => [props.item, interactedOnce.value, itemStats.value, itemFilters.value], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
@@ -112,7 +112,7 @@ export default defineComponent({
       }
     }, { deep: true })
 
-    watch(() => [props.item, JSON.stringify(itemFilters.value?.trade)], (curr, prev) => {
+    watch(() => [props.item, JSON.stringify(itemFilters.value.trade)], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
       const cTrade = curr[1]; const pTrade = prev[1]
 
@@ -135,22 +135,20 @@ export default defineComponent({
     })
 
     const show = computed(() => {
-      if (!props.item) return false
-
       return !(props.item.rarity === ItemRarity.Unique &&
         props.item.isUnidentified &&
         props.item.baseType == null)
     })
 
     async function applyItemBaseFilter () {
-      for (const stat of itemStats.value!) {
+      for (const stat of itemStats.value) {
         stat.disabled = true
       }
       await nextTick()
 
-      itemFilters.value!.itemLevel!.disabled = false
-      if (itemFilters.value!.influences) {
-        itemFilters.value!.influences[0].disabled = false
+      itemFilters.value.itemLevel!.disabled = false
+      if (itemFilters.value.influences) {
+        itemFilters.value.influences[0].disabled = false
       }
       nameFilter.value.toggleAccuracy()
     }
