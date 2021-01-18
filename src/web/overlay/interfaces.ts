@@ -36,6 +36,8 @@ export interface WidgetManager {
   bringToTop (wmId: number): void
   create (wmType: string): void
   showBrowser (wmId: number, url: string): void
+  closeBrowser (wmId: number): void
+  setFlag (wmId: number, flag: string, state: boolean): void
 }
 
 export interface WidgetMenu extends Widget {

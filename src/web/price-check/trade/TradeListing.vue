@@ -108,7 +108,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
+import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef, ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -241,7 +241,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const widget = inject<{ config: PriceCheckWidget }>('widget')!
+    const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
 
     const { error, searchResult, fetchResults, groupedResults, search } = useTradeApi()
 
@@ -272,7 +272,7 @@ export default defineComponent({
         if (isExternal) {
           MainProcess.openSystemBrowser(link)
         } else {
-          wm.showBrowser(widget.config.wmId, link)
+          wm.showBrowser(widget.config.value.wmId, link)
         }
       }
     }

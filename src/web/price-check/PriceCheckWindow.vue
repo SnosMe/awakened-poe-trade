@@ -6,7 +6,7 @@
     'flex-row-reverse': clickPosition === 'inventory',
   }">
     <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
-      :style="{ width: `${wm.poeUiWidth}px` }">
+      :style="{ width: `${poeUiWidth}px` }">
     </div>
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" :title="title">
@@ -43,7 +43,7 @@
               <unidentified-resolver :item="item" @identify="item = $event" />
               <checked-item :item="item" />
               <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
-                <i18n-t path="Press {0} to switch between browser and game.">
+                <i18n-t keypath="Press {0} to switch between browser and game." tag="div">
                   <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
                 </i18n-t>
               </div>
@@ -64,22 +64,26 @@
   </div>
 </template>
 
-<script>
-import CheckedItem from './CheckedItem'
+<script lang="ts">
+import { defineComponent, inject, PropType, provide, shallowRef, watch, computed, getCurrentInstance } from 'vue'
+import { useI18n } from 'vue-i18n'
+import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
+import { IpcPriceCheck, PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { chaosExaRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
 import { Config } from '@/web/Config'
-import { parseClipboard } from '@/parser'
-import RelatedItems from './related-items/RelatedItems'
-import RateLimiterState from './trade/RateLimiterState'
-import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver'
-import CheckPositionCircle from './CheckPositionCircle'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice'
+import { parseClipboard, ParsedItem } from '@/parser'
+import RelatedItems from './related-items/RelatedItems.vue'
+import RateLimiterState from './trade/RateLimiterState.vue'
+import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.vue'
+import CheckPositionCircle from './CheckPositionCircle.vue'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
+import { nextTick } from 'process'
 
-export default {
+export default defineComponent({
   components: {
     CheckedItem,
     UnidentifiedResolver,
@@ -89,103 +93,97 @@ export default {
     CheckPositionCircle,
     ItemQuickPrice
   },
-  inject: ['wm'],
-  provide () {
-    return { widget: this }
-  },
   props: {
     config: {
-      type: Object,
+      type: Object as PropType<PriceCheckWidget>,
       required: true
     }
   },
-  created () {
-    MainProcess.addEventListener(PRICE_CHECK, ({ detail: e }) => {
-      this.wm.closeBrowser(this.config.wmId)
-      this.wm.show(this.config.wmId)
-      this.checkPosition = {
-        x: e.position.x - window.screenX,
-        y: e.position.y - window.screenY
+  setup (props) {
+    const wm = inject<WidgetManager>('wm')!
+
+    nextTick(() => {
+      props.config.wmWants = 'hide'
+      props.config.wmFlags = ['hide-on-blur', 'skip-menu']
+    })
+
+    const item = shallowRef<ParsedItem | null>(null)
+    const checkPosition = shallowRef({ x: 1, y: 1 })
+
+    MainProcess.addEventListener(PRICE_CHECK, (e) => {
+      const _e = (e as CustomEvent<IpcPriceCheck>).detail
+      wm.closeBrowser(props.config.wmId)
+      wm.show(props.config.wmId)
+      checkPosition.value = {
+        x: _e.position.x - window.screenX,
+        y: _e.position.y - window.screenY
       }
-      this.item = parseClipboard(e.clipboard)
-      this.showTips = false
+      item.value = parseClipboard(_e.clipboard)
     })
     MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
-      this.wm.hide(this.config.wmId)
+      wm.hide(props.config.wmId)
     })
-  },
-  mounted () {
-    // #HOTFIX vue reactvity loop (breaks in vuedraggable)
-    // @TODO: change component to composition
-    this.config.wmWants = 'hide'
-    this.config.wmFlags = ['hide-on-blur', 'skip-menu']
-  },
-  data () {
-    return {
-      checkPosition: { x: 1, y: 1 },
-      item: null,
-      showTips: false
-    }
-  },
-  watch: {
-    'wm.active' (isActive) {
-      if (isActive) {
-        this.showTips = true
-      }
-    },
-    'config.wmWants' (state) {
+
+    watch(() => props.config.wmWants, (state) => {
       if (state === 'hide') {
         MainProcess.priceCheckWidgetIsHidden()
       }
-    },
-    'isBrowserShown' (isShown) {
-      // @use-case: send trade message
-      if (isShown) {
-        this.wm.setFlag(this.config.wmId, 'hide-on-blur', false)
-        this.wm.setFlag(this.config.wmId, 'hide-on-blur(close)', true)
-        this.wm.setFlag(this.config.wmId, 'invisible-on-blur', true)
-      } else {
-        this.wm.setFlag(this.config.wmId, 'hide-on-blur(close)', false)
-        this.wm.setFlag(this.config.wmId, 'invisible-on-blur', false)
-        this.wm.setFlag(this.config.wmId, 'hide-on-blur', true)
-      }
-    }
-  },
-  computed: {
-    title () {
-      return league.value || 'Awakened PoE Trade'
-    },
-    exaltedCost () {
-      if (!chaosExaRate.value) return null
+    })
 
-      return Math.round(chaosExaRate.value)
-    },
-    isBrowserShown () {
-      return this.config.wmFlags.includes('has-browser')
-    },
-    clickPosition () {
-      if (this.isBrowserShown) {
+    const title = computed(() => league.value || 'Awakened PoE Trade')
+    const exaltedCost = computed(() => (chaosExaRate.value) ? Math.round(chaosExaRate.value) : null)
+    const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
+    const overlayKey = computed(() => Config.store.overlayKey)
+    const showCheckPos = computed(() => wm.active && Config.store.priceCheckShowCursor)
+    const poeUiWidth = computed(() => wm.poeUiWidth)
+    const clickPosition = computed(() => {
+      if (isBrowserShown.value) {
         return 'inventory'
       } else {
-        return this.checkPosition.x > (window.innerWidth / 2)
+        return checkPosition.value.x > (window.innerWidth / 2)
           ? 'inventory'
           : 'stash'
           // or {chat, vendor, center of screen}
       }
-    },
-    overlayKey () {
-      return Config.store.overlayKey
-    },
-    showCheckPos () {
-      return this.showTips && Config.store.priceCheckShowCursor
-    }
-  },
-  methods: {
-    closePriceCheck () {
+    })
+
+    watch(isBrowserShown, (isShown) => {
+      if (isShown) {
+        wm.setFlag(props.config.wmId, 'hide-on-blur', false)
+        wm.setFlag(props.config.wmId, 'hide-on-blur(close)', true)
+        wm.setFlag(props.config.wmId, 'invisible-on-blur', true)
+      } else {
+        wm.setFlag(props.config.wmId, 'hide-on-blur(close)', false)
+        wm.setFlag(props.config.wmId, 'invisible-on-blur', false)
+        wm.setFlag(props.config.wmId, 'hide-on-blur', true)
+      }
+    })
+
+    function closePriceCheck () {
       MainProcess.closeOverlay()
     }
+
+    provide('widget', {
+      config: computed(() => props.config)
+    })
+
+    const { t } = useI18n()
+
+    return {
+      t,
+      clickPosition,
+      isBrowserShown,
+      poeUiWidth,
+      closePriceCheck,
+      title,
+      exaltedCost,
+      showCheckPos,
+      checkPosition,
+      item,
+      overlayKey
+    }
   }
-}
+})
 </script>
 
 <i18n>

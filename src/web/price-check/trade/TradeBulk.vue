@@ -87,7 +87,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, inject, ref, computed, watch } from 'vue'
+import { defineComponent, PropType, inject, ref, computed, watch, ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -137,7 +137,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const widget = inject<{ config: PriceCheckWidget }>('widget')!
+    const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
     const { error, result, search } = useBulkApi()
 
     const selectedCurr = ref<'chaos' | 'exa'>('chaos')
@@ -179,7 +179,7 @@ export default defineComponent({
         if (isExternal) {
           MainProcess.openSystemBrowser(link)
         } else {
-          wm.showBrowser(widget.config.wmId, link)
+          wm.showBrowser(widget.config.value.wmId, link)
         }
       },
       getRelativeTime (iso: string) {
