@@ -3,7 +3,9 @@
     <div class="mb-2">
       <div class="mb-4" v-for="command in commands">
         <input v-model.trim="command.text" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
-        <div class="flex justify-end">
+        <div class="flex">
+          <ui-toggle v-model="command.send" class="ml-1">{{ t('press Enter') }}</ui-toggle>
+          <div class="flex-1"></div>
           <button @click="removeCommand(command)" class="mr-2 text-gray-500">{{ t('Remove') }}</button>
           <hotkey-input v-model="command.hotkey" class="w-48" />
         </div>
@@ -31,7 +33,8 @@ export default defineComponent({
       addComand () {
         Config.store.commands.push({
           text: '',
-          hotkey: null
+          hotkey: null,
+          send: true
         })
       },
       removeCommand (command: IConfig['commands'][number]) {
@@ -45,7 +48,8 @@ export default defineComponent({
 <i18n>
 {
   "ru": {
-    "Add command": "Добавить команду"
+    "Add command": "Добавить команду",
+    "press Enter": "нажимать Enter"
   }
 }
 </i18n>

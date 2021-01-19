@@ -12,7 +12,7 @@ const AUTO_CLEAR = [
   '/' // Command
 ]
 
-export function typeInChat (text: string) {
+export function typeInChat (text: string, send: boolean) {
   const saved = clipboard.readText()
 
   if (text.startsWith(PLACEHOLDER_LAST)) {
@@ -34,12 +34,15 @@ export function typeInChat (text: string) {
   }
 
   robotjs.keyTap('V', ['Ctrl'])
-  robotjs.keyTap('Enter')
-  // restore the last chat
-  robotjs.keyTap('Enter')
-  robotjs.keyTap('ArrowUp')
-  robotjs.keyTap('ArrowUp')
-  robotjs.keyTap('Escape')
+
+  if (send) {
+    robotjs.keyTap('Enter')
+    // restore the last chat
+    robotjs.keyTap('Enter')
+    robotjs.keyTap('ArrowUp')
+    robotjs.keyTap('ArrowUp')
+    robotjs.keyTap('Escape')
+  }
 
   if (config.get('restoreClipboard')) {
     setTimeout(() => {

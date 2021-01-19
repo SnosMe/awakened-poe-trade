@@ -24,6 +24,7 @@ export interface Config {
   commands: Array<{
     text: string
     hotkey: string | null
+    send: boolean
   }>
   clientLog: string | null
   useOsGlobalShortcut: boolean
@@ -81,22 +82,28 @@ export const defaultConfig: Config = {
   restoreClipboard: true,
   commands: [{
     text: '/hideout',
-    hotkey: 'F5'
+    hotkey: 'F5',
+    send: true
   }, {
     text: '/exit',
-    hotkey: 'F9'
+    hotkey: 'F9',
+    send: true
   }, {
     text: '@last ty',
-    hotkey: null
+    hotkey: null,
+    send: true
   }, {
     text: '/invite @last',
-    hotkey: null
+    hotkey: null,
+    send: true
   }, {
     text: '/tradewith @last',
-    hotkey: null
+    hotkey: null,
+    send: true
   }, {
     text: '/hideout @last',
-    hotkey: null
+    hotkey: null,
+    send: true
   }],
   clientLog: null,
   useOsGlobalShortcut: true,

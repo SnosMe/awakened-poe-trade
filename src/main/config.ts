@@ -100,6 +100,14 @@ export const config = (() => {
     config.configVersion = 4
   }
 
+  if (config.configVersion < 5) {
+    config.commands.forEach(cmd => {
+      cmd.send = true
+    })
+
+    config.configVersion = 5
+  }
+
   store.store = config
   return store
 })()

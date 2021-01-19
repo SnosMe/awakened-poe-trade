@@ -93,7 +93,7 @@ function registerGlobal () {
     ),
     ...config.get('commands')
       .map(command =>
-        shortcutCallback(command.hotkey, () => typeInChat(command.text))
+        shortcutCallback(command.hotkey, () => typeInChat(command.text, command.send))
       )
   ].filter(a => Boolean(a.shortcut))
 
@@ -174,7 +174,7 @@ export function setupShortcuts () {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
         shortcutCallback(pressed, () => {
-          typeInChat(command.text)
+          typeInChat(command.text, command.send)
         }).cb()
       }
     }
