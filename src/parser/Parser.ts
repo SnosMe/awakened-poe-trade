@@ -43,6 +43,7 @@ const parsers: ParserFn[] = [
   parseSockets,
   parseProphecyMaster,
   parseHeistMission,
+  parseMirrored,
   parseModifiers,
   parseModifiers,
   parseModifiers
@@ -520,6 +521,16 @@ function parseVeiledNested (text: string, item: ParsedItem) {
     return true
   }
   return false
+}
+
+function parseMirrored (section: string[], item: ParsedItem) {
+  if (section.length === 1) {
+    if (section[0] === _$[C.MIRRORED]) {
+      item.isMirrored = true
+      return SECTION_PARSED
+    }
+  }
+  return SECTION_SKIPPED
 }
 
 function parseFlask (section: string[], item: ParsedItem) {

@@ -29,6 +29,7 @@ export interface ParsedItem {
   stackSize?: { value: number, max: number }
   isUnidentified: boolean
   isCorrupted: boolean
+  isMirrored?: boolean
   influences: ItemInfluence[]
   modifiers: ItemModifier[]
   extra: {

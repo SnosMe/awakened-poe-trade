@@ -67,7 +67,8 @@ const dict = {
   'Engineering': 'Engineering',
   'Trap Disarmament': 'Trap Disarmament',
   'Demolition': 'Demolition',
-  'Brute Force': 'Brute Force'
+  'Brute Force': 'Brute Force',
+  'Mirrored': 'Mirrored'
 }
 
 export default dict

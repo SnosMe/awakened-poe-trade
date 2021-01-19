@@ -69,7 +69,8 @@ const dict: TranslationDict = {
   'Engineering': 'инженерное дело',
   'Trap Disarmament': 'разминирование',
   'Demolition': 'взрывное дело',
-  'Brute Force': 'грубая сила'
+  'Brute Force': 'грубая сила',
+  'Mirrored': 'Отражено'
 }
 
 export default dict

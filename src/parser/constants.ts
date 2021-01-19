@@ -84,3 +84,5 @@ export const QUALITY_DIVERGENT = '/^Divergent (.*)$/'
 export const QUALITY_PHANTASMAL = '/^Phantasmal (.*)$/'
 
 export const HEIST_JOB = '/^Requires (.+) \\(Level (\\d+)\\)$/'
+
+export const MIRRORED = 'Mirrored'
