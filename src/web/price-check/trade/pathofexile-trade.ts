@@ -1,4 +1,4 @@
-import { ItemInfluence, ItemCategory, ParsedItem } from '@/parser'
+import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -94,6 +94,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           quality?: FilterRange
           gem_level?: FilterRange
           corrupted?: FilterBoolean
+          mirrored?: FilterBoolean
           identified?: FilterBoolean
           shaper_item?: FilterBoolean
           crusader_item?: FilterBoolean
@@ -255,6 +256,15 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.corrupted) {
     prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
+  }
+  if (filters.mirrored) {
+    prop.set(query.filters, 'misc_filters.filters.mirrored.option', String(filters.mirrored.value))
+  } else if (
+    item.rarity === ItemRarity.Normal ||
+    item.rarity === ItemRarity.Magic ||
+    item.rarity === ItemRarity.Rare
+  ) {
+    prop.set(query.filters, 'misc_filters.filters.mirrored.option', String(false))
   }
 
   if (filters.gemLevel && !filters.gemLevel.disabled) {

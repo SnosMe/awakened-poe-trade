@@ -51,6 +51,8 @@
       <button v-if="filters.unidentified" class="trade-tag" :class="{ disabled: filters.unidentified.disabled }"
         @click="filters.unidentified.disabled = !filters.unidentified.disabled">{{ t('Unidentified') }}</button>
       <filter-veiled :item="item" :filters="filters" />
+      <button v-if="filters.mirrored" class="trade-tag"
+        @click="filters.mirrored.value = !filters.mirrored.value">{{ t(filters.mirrored.value ? 'Mirrored' : 'Not Mirrored') }}</button>
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
         <span v-if="totalSelectedMods === 0">{{ t('Stats ignored') }}</span>
         <span v-else>{{ t('{0} of {1}, stats', [totalSelectedMods, stats.length]) }}</span>
@@ -207,7 +209,9 @@ export default defineComponent({
     "Engineering (lvl {0})": "Инженерное дело ({0} ур.)",
     "Trap Disarmament (lvl {0})": "Разминирование ({0} ур.)",
     "Demolition (lvl {0})": "Взрывное дело ({0} ур.)",
-    "Brute Force (lvl {0})": "Грубая сила ({0} ур.)"
+    "Brute Force (lvl {0})": "Грубая сила ({0} ур.)",
+    "Mirrored": "Отражено",
+    "Not Mirrored": "Не отражено"
   }
 }
 </i18n>

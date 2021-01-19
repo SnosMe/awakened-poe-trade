@@ -170,6 +170,12 @@ export function createFilters (item: ParsedItem): ItemFilters {
       value: 'nonunique'
     }
   }
+  
+  if (item.isMirrored) {
+    filters.mirrored = {
+      value: true
+    }
+  }
 
   if (item.influences.length) {
     filters.influences = item.influences.map(influecne => ({

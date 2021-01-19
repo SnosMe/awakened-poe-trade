@@ -23,6 +23,9 @@ export interface ItemFilters {
   corrupted?: {
     value: boolean
   }
+  mirrored?: {
+    value: boolean
+  }
   influences?: Array<{
     value: ItemInfluence
     disabled: boolean
