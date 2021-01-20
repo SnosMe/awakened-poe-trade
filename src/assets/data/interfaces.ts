@@ -41,3 +41,10 @@ export interface UniqueItem {
     bounds: Array<{ min: number, max: number }>
   }>
 }
+
+export interface BlightRecipes {
+  oils: string[]
+  recipes: {
+    [statValue: number]: number[]
+  }
+}

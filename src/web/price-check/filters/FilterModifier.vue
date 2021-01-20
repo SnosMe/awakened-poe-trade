@@ -1,47 +1,48 @@
 <template>
-  <div class="py-2 border-b border-gray-700">
-    <div class="pb-px flex items-baseline justify-between">
-      <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
-        <i class="w-5" :class="{
-          'far fa-square text-gray-500': filter.disabled,
-          'fas fa-check-square': !filter.disabled
-        }"></i>
-        <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-          <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
-          <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
+  <div class="py-2 border-b border-gray-700 flex">
+    <div class="flex flex-col min-w-0 flex-1">
+      <div class="pb-px flex items-baseline justify-between">
+        <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
+          <i class="w-5" :class="{
+            'far fa-square text-gray-500': filter.disabled,
+            'fas fa-check-square': !filter.disabled
+          }"></i>
+          <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
+            <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
+            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
+          </div>
+        </button>
+        <div class="flex">
+          <ui-input-debounced class="search-num-input rounded-tl mr-px" :placeholder="t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
+            v-if="showMinmaxInput" ref="inputMin"
+            v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
+          <ui-input-debounced class="search-num-input rounded-tr" :placeholder="t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
+            v-if="showMinmaxInput" ref="inputMax"
+            v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
         </div>
-      </button>
+      </div>
       <div class="flex">
-        <ui-input-debounced class="search-num-input rounded-tl mr-px" :placeholder="t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
-          v-if="showMinmaxInput" ref="inputMin"
-          v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
-        <ui-input-debounced class="search-num-input rounded-tr" :placeholder="t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
-          v-if="showMinmaxInput" ref="inputMax"
-          v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
-      </div>
-    </div>
-    <div class="flex">
-      <div class="w-5 flex items-start">
-        <ui-popover v-if="filter.hidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
-          <template #target>
-            <span class="text-xs leading-none text-gray-600 cursor-pointer">
-              <i class="fas fa-eye-slash" :class="{ 'faa-ring': !filter.disabled }"></i>
-            </span>
-          </template>
-          <template #content>
-            <div style="max-width: 18.5rem;">{{ t(filter.hidden) }}</div>
-          </template>
-        </ui-popover>
-      </div>
-      <div class="flex-1 flex items-start">
-        <span v-if="showTypeTags"
-          class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ t(filter.type) }}</span>
-        <span v-if="filter.variant"
-          class="text-xs leading-none px-1 rounded mod-type-variant">{{ t('variant') }}</span>
-      </div>
-      <div class="flex-1 mr-4">
-        <div style="width: 12.5rem;">
-          <ui-slider v-if="filter.boundMin !== undefined"
+        <div class="w-5 flex items-start">
+          <ui-popover v-if="filter.hidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
+            <template #target>
+              <span class="text-xs leading-none text-gray-600 cursor-pointer">
+                <i class="fas fa-eye-slash" :class="{ 'faa-ring': !filter.disabled }"></i>
+              </span>
+            </template>
+            <template #content>
+              <div style="max-width: 18.5rem;">{{ t(filter.hidden) }}</div>
+            </template>
+          </ui-popover>
+        </div>
+        <div class="flex-1 flex items-start">
+          <span v-if="showTypeTags"
+            class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ t(filter.type) }}</span>
+          <span v-if="filter.variant"
+            class="text-xs leading-none px-1 rounded mod-type-variant">{{ t('variant') }}</span>
+        </div>
+        <div v-if="filter.boundMin !== undefined"
+          class="mr-4" style="width: 12.5rem;">
+          <ui-slider
             class="search-slider-rail" style="padding: 0;" :dotSize="[0, 1.25*fontSize]" :height="1.25*fontSize"
             :railStyle="{ background: 'transparent' }" :processStyle="{ background: '#cbd5e0', borderRadius: 0 }"
             drag-on-click lazy adsorb :enable-cross="false"
@@ -65,10 +66,13 @@
           </template>
           </ui-slider>
         </div>
+        <div v-if="showQ20Notice"
+          class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: calc(2*3rem + 1px)">{{ t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
+        <div v-else style="width: calc(2*3rem + 1px)"></div>
       </div>
-      <div v-if="showQ20Notice"
-        class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: calc(2*3rem + 1px)">{{ t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
-      <div v-else style="width: calc(2*3rem + 1px)"></div>
+    </div>
+    <div class="flex flex-col">
+      <modifier-anointment :filter="filter" />
     </div>
   </div>
 </template>
@@ -77,12 +81,13 @@
 import { defineComponent, PropType, computed, ref, nextTick, ComponentPublicInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
+import ModifierAnointment from './FilterModifierAnointment.vue'
 import { Config } from '@/web/Config'
 import { ParsedItem } from '@/parser'
 import { StatFilter } from './interfaces'
 
 export default defineComponent({
-  components: { ItemModifierText },
+  components: { ItemModifierText, ModifierAnointment },
   emits: ['submit'],
   props: {
     filter: {
