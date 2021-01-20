@@ -63,6 +63,7 @@ export default defineComponent({
 
     return {
       result,
+      detailsId,
       price (item: ItemInfo) {
         const _ = autoCurrency(item.receive.chaosValue, 'c')
         return {
