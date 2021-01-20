@@ -31,6 +31,7 @@ const parsers: ParserFn[] = [
   normalizeName,
   // -----------
   parseItemLevel,
+  parseTalismanTier,
   parseVaalGem,
   parseGem,
   parseArmour,
@@ -265,6 +266,14 @@ function parseUnidentified (section: string[], item: ParsedItem) {
 function parseItemLevel (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$[C.TAG_ITEM_LEVEL])) {
     item.itemLevel = Number(section[0].substr(_$[C.TAG_ITEM_LEVEL].length))
+    return SECTION_PARSED
+  }
+  return SECTION_SKIPPED
+}
+
+function parseTalismanTier (section: string[], item: ParsedItem) {
+  if (section[0].startsWith(_$[C.TAG_TALISMAN_TIER])) {
+    item.props.talismanTier = Number(section[0].substr(_$[C.TAG_TALISMAN_TIER].length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED

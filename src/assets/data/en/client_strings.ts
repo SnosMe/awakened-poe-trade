@@ -9,6 +9,7 @@ const dict = {
   'Map Tier: ': 'Map Tier: ',
   'Rarity: ': 'Rarity: ',
   'Item Level: ': 'Item Level: ',
+  'Talisman Tier: ': 'Talisman Tier: ',
   'Level: ': 'Level: ',
   'Stack Size: ': 'Stack Size: ',
   'Sockets: ': 'Sockets: ',

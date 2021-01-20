@@ -11,6 +11,7 @@ const dict: TranslationDict = {
   'Map Tier: ': 'Уровень карты: ',
   'Rarity: ': 'Редкость: ',
   'Item Level: ': 'Уровень предмета: ',
+  'Talisman Tier: ': 'Уровень талисмана: ',
   'Level: ': 'Уровень: ',
   'Stack Size: ': 'Размер стопки: ',
   'Sockets: ': 'Гнезда: ',

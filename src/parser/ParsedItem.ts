@@ -20,6 +20,7 @@ export interface ParsedItem {
     mapTier?: number
     gemLevel?: number
     areaLevel?: number
+    talismanTier?: number
   }
   quality?: number
   sockets: {
