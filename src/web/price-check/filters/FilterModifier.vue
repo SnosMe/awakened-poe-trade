@@ -323,7 +323,8 @@ export default defineComponent({
     "Filtering by exact Elemental Resistance unreasonably increases the price": "Поиск по точному виду сопротивления необоснованно увеличивает цену",
     "Crafted Chaos Resistance without Explicit mod has no value": "Крафтовое сопротивление хаосу без \"родного\" свойства не имеет ценности",
     "Contributes to the item property": "Вносит вклад в параметр предмета",
-    "Hidden for sake of familiar view of item stats": "Скрыт ради привычного просмотра свойств предмета"
+    "Hidden for sake of familiar view of item stats": "Скрыт ради привычного просмотра свойств предмета",
+    "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование"
   }
 }
 </i18n>

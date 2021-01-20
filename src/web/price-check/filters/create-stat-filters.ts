@@ -202,4 +202,15 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       isElderGuardian.disabled = false
     }
   }
+
+  if (item.category === ItemCategory.Amulet) {
+    const anointment = ctx.filters.find(filter => filter.statRef === 'Allocates #')
+    if (anointment) {
+      if (item.props.talismanTier) {
+        anointment.disabled = false
+      } else if (!item.isCorrupted && !item.isMirrored) {
+        anointment.hidden = 'Buyer will likely change anointment'
+      }
+    }
+  }
 }
