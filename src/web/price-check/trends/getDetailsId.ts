@@ -197,6 +197,16 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, 'Adds # to # Physical Damage')) {
       return '-physical'
     }
+  } else if (item.name === 'Voices') {
+    const passives = item.modifiers.find(m => m.stat.ref === 'Adds # Small Passive Skills which grant nothing')!
+
+    if (passives.values![0] === 7) {
+      return '-7-passives'
+    } else if (passives.values![0] === 5) {
+      return '-5-passives'
+    } else if (passives.values![0] === 3) {
+      return '-3-passives'
+    }
   }
 }
 
