@@ -10,6 +10,7 @@
       :item="item"
       @filter-item-base="applyItemBaseFilter" />
     <filters-block
+      ref="filtersBlock"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
@@ -33,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, watch, ref, nextTick, computed } from 'vue'
+import { defineComponent, PropType, watch, ref, nextTick, computed, Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, ItemCategory, ParsedItem } from '@/parser'
 import TradeListing from './trade/TradeListing.vue'
@@ -49,6 +50,7 @@ import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { Config } from '@/web/Config'
 import { ItemFilters, StatFilter } from './filters/interfaces'
+import { ModifierType } from '@/parser/modifiers'
 
 export default defineComponent({
   name: 'CheckedItem',
@@ -77,6 +79,8 @@ export default defineComponent({
     const tradeService = ref<{ execSearch(): void } | null>(null)
     // FilterName.vue
     const nameFilter = ref<{ toggleAccuracy(): void }>(null!)
+    // FiltersBlock.vue
+    const filtersBlock = ref<{ showHidden: Ref<boolean> }>(null!)
 
     watch(() => props.item, (item) => {
       itemFilters.value = createFilters(item)
@@ -142,7 +146,12 @@ export default defineComponent({
 
     async function applyItemBaseFilter () {
       for (const stat of itemStats.value) {
-        stat.disabled = true
+        if (stat.type === ModifierType.Fractured && stat.hidden) {
+          stat.disabled = false
+          filtersBlock.value.showHidden = true
+        } else {
+          stat.disabled = true
+        }
       }
       await nextTick()
 
@@ -162,6 +171,8 @@ export default defineComponent({
       interactedOnce,
       tradeAPI,
       tradeService,
+      nameFilter,
+      filtersBlock,
       showPredictedPrice,
       show,
       applyItemBaseFilter
