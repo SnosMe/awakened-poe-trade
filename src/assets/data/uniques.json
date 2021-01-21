@@ -21437,6 +21437,10 @@
         "implicit": true
       },
       {
+        "text": "Trigger Level # Icicle Burst when you Hit a Frozen Enemy",
+        "bounds": [{"min": 20, "max": 20}]
+      },
+      {
         "text": "#% increased Physical Damage",
         "bounds": [{"min": 140, "max": 180}]
       },
@@ -22094,6 +22098,10 @@
           {"min": 220, "max": 240},
           {"min": 270, "max": 300}
         ]
+      },
+      {
+        "text": "Battlemage",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "+# to Maximum Siphoning Charges per Elder or Shaper Item Equipped",
@@ -24357,6 +24365,10 @@
           {"min": 315, "max": 360},
           {"min": 450, "max": 540}
         ]
+      },
+      {
+        "text": "Battlemage",
+        "bounds": [{"min": 1, "max": 1}]
       },
       {
         "text": "Damage Penetrates #% of Fire Resistance if you have Blocked Recently",

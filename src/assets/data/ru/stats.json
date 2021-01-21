@@ -304,6 +304,13 @@
   },
   {
     "stat": {
+      "ref": "# to # Added Attack Lightning Damage per 200 Accuracy Rating",
+      "matchers": [{"string": "Добавляет от # до # урона от атак от молнии за 200 меткости"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_4139229725"]}}
+  },
+  {
+    "stat": {
       "ref": "# to # added Cold Damage\nPlayers and their Minions have # to # added Cold Damage",
       "matchers": [
         {
@@ -530,6 +537,13 @@
   },
   {
     "stat": {
+      "ref": "#% chance create a copy of Beasts Captured in Areas",
+      "matchers": [{"string": "#% шанс скопировать пойманных животных"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2836003955"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance for Bleeding inflicted with this Weapon to deal 100% more Damage",
       "matchers": [{"string": "#% шанс, что кровотечение, наложенное этим оружием, нанесет на 100% больше урона"}]
     },
@@ -594,6 +608,13 @@
   },
   {
     "stat": {
+      "ref": "#% chance for Incursion Architects in Areas to be Possessed by a Tormented Spirit",
+      "matchers": [{"string": "Архитекторы Вмешательства с #% шансом могут быть одержимыми страдающими духами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_617548179"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance for Kills to count twice for Rampage",
       "matchers": [
         {"string": "#% шанс, что убийства будут дважды засчитываться в Буйство"},
@@ -635,6 +656,20 @@
   },
   {
     "stat": {
+      "ref": "#% chance for Red Beasts in Areas to be the less common of two varieties",
+      "matchers": [{"string": "Красные звери с #% шансом выбираются наиболее редкие из двух видов"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4287089865"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance for Rewards from Metamorphs in Areas to be Doubled",
+      "matchers": [{"string": "#% шанс удвоения наград с Метаморфов"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4270449170"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance for Spell Hits against you to inflict Poison ",
       "matchers": [
         {"string": "#% шанс для ударов чарами по вам наложить отравление"},
@@ -645,6 +680,13 @@
   },
   {
     "stat": {
+      "ref": "#% chance for Sulphite Veins and Chests in Areas to be guarded by Sulphite-hoarding Monsters",
+      "matchers": [{"string": "Жилы и сундуки с сульфитом с #% шансом охраняются монстрами с запасами сульфита"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_413137939"]}}
+  },
+  {
+    "stat": {
       "ref": "#% Chance for Traps to Trigger an additional time",
       "matchers": [
         {"string": "#% шанс, что ловушки взорвутся ещё 1 раз"},
@@ -652,6 +694,76 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1087710344"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Amulets to drop as Anointed Talismans instead",
+      "matchers": [{"string": "Вместо амулетов с #% шансом выпадают обработанные талисманы"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3897649208"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Blessed Orbs to drop as 8 Blessed Orbs instead",
+      "matchers": [{"string": "Вместо благодатной сферы с #% шансом может выпасть 8 благодатных сфер"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2317489660"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Divine Orbs to drop as 4 Divine Orbs instead",
+      "matchers": [{"string": "Вместо божественной сферы с #% шансом может выпасть 4 божественных сферы"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_721643763"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Exalted Orbs to drop as 3 Exalted Orbs instead",
+      "matchers": [{"string": "Сферы возвышения с #% шансом могут при выпадении стать 3 сферами возвышения"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1825047276"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Gemcutter's Prisms to drop as 6 Gemcutter's Prisms instead",
+      "matchers": [{"string": "Вместо призмы камнереза с #% шансом может выпасть 6 призм камнереза"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1604751261"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Mirrors of Kalandra to drop as 2 Mirrors of Kalandra instead",
+      "matchers": [{"string": "Вместо Зеркала Каландры с #% шансом может выпасть 2 Зеркала Каландры"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1634426651"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Orbs of Annulment to drop as 3 Orbs of Annulment instead",
+      "matchers": [{"string": "Вместо сферы отмены с #% шансом может выпасть 3 сферы отмены"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3856820324"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Orbs of Regret to drop as 20 Orbs of Regret instead",
+      "matchers": [{"string": "Вместо сферы раскаяния с #% шансом может выпасть 20 сфер раскаяния"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2188554989"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Regal Orbs to drop as 5 Regal Orbs instead",
+      "matchers": [{"string": "Вместо сферы царей с #% шансом может выпасть 5 сфер царей"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3063495090"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Areas for Vaal Orbs to drop as 7 Vaal Orbs instead",
+      "matchers": [{"string": "Вместо сферы ваал с #% шансом может выпасть 7 сфер ваал"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_697969593"]}}
   },
   {
     "stat": {
@@ -909,6 +1021,17 @@
       "matchers": [{"string": "#% шанс сделать дополнительное открытие с помощью Вакано при удачном завершении Кражи"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3107439245"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance on completing a Map influenced by a Conqueror of the Atlas\nto gain double progress towards locating their Citadel",
+      "matchers": [
+        {
+          "string": "#% шанс при завершении карты с влиянием Завоевателя\nполучить двойной прогресс в нахождении Крепости этого Завоевателя"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4162516667"]}}
   },
   {
     "stat": {
@@ -3869,6 +3992,24 @@
   },
   {
     "stat": {
+      "ref": "#% chance when you Kill a Scorched Enemy to Burn Each surrounding\nEnemy for 4 seconds, dealing 8% of the Killed Enemy's Life as Fire Damage per second",
+      "matchers": [
+        {
+          "string": "#% шанс при убийстве вами опаленного врага поджечь всех\nврагов вокруг на 4 секунды, нанося 8% от здоровья убитого врага в виде урона от огня в секунду"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3717165313"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance when you pay a Skill's Mana Cost to gain that much Mana",
+      "matchers": [{"string": "#% шанс при трате маны на умение получить такое же количество маны"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_1915414884"]}}
+  },
+  {
+    "stat": {
       "ref": "#% faster start of Energy Shield Recharge",
       "matchers": [
         {"string": "#% ускорение начала перезарядки энергетического щита"},
@@ -4380,6 +4521,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Armour per 50 Strength",
+      "matchers": [
+        {"string": "#% увеличение брони за каждые 50 силы"},
+        {"string": "#% уменьшение брони за каждые 50 силы", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3621706946"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Armour per Endurance Charge",
       "matchers": [{"string": "#% повышение брони за заряд выносливости"}]
     },
@@ -4757,6 +4908,26 @@
   },
   {
     "stat": {
+      "ref": "#% increased Attack Damage with Main Hand",
+      "matchers": [
+        {"string": "#% увеличение урона от атак правой рукой"},
+        {"string": "#% уменьшение урона от атак правой рукой", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_2696701853"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Attack Damage with Off Hand",
+      "matchers": [
+        {"string": "#% увеличение урона от атак левой рукой"},
+        {"string": "#% уменьшение урона от атак левой рукой", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_2924279089"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Attack Physical Damage while using Pride",
       "matchers": [
         {"string": "#% увеличение физического урона от атак под действием Гордости"},
@@ -4815,6 +4986,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1003608257"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Attack Speed if you haven't gained a Frenzy Charge Recently",
+      "matchers": [
+        {"string": "#% повышение скорости атаки если недавно вы не получали заряд ярости"},
+        {"string": "#% снижение скорости атаки если недавно вы не получали заряд ярости", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_749465463"]}}
   },
   {
     "stat": {
@@ -5433,6 +5614,7 @@
     },
     "trade": {
       "ids": {
+        "explicit": ["explicit.stat_4223377453"],
         "implicit": ["implicit.stat_4223377453"],
         "fractured": ["fractured.stat_4223377453"],
         "crafted": ["crafted.stat_4223377453"]
@@ -5740,6 +5922,16 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_387490713"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased chance for Strongboxes in Areas to be Unique",
+      "matchers": [
+        {"string": "Ларцы с увеличенным на #% шансом могут стать уникальными"},
+        {"string": "Ларцы с уменьшенным на #% шансом могут стать уникальными", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2731689292"]}}
   },
   {
     "stat": {
@@ -6156,6 +6348,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Cooldown Recovery Rate of Movement Skills",
+      "matchers": [
+        {"string": "#% повышение скорости перезарядки умений передвижения"},
+        {"string": "#% снижение скорости перезарядки умений передвижения", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_1124980805"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Cooldown Recovery Rate of Movement Skills used while affected by Haste",
       "matchers": [
         {"string": "#% повышение скорости перезарядки умений передвижения, используемых во время действия Спешки"},
@@ -6483,6 +6685,16 @@
         "enchant": ["enchant.stat_3010587200"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "#% increased Critical Strike Chance if you haven't gained a Power Charge Recently",
+      "matchers": [
+        {"string": "#% повышение шанса критического удара если недавно вы не получали заряд энергии"},
+        {"string": "#% снижение шанса критического удара если недавно вы не получали заряд энергии", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_151106430"]}}
   },
   {
     "stat": {
@@ -7391,6 +7603,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Damage with Hits and Ailments against Cursed Enemies",
+      "matchers": [
+        {"string": "#% увеличение урона от ударов и состояний по проклятым врагам"},
+        {"string": "#% уменьшение урона от ударов и состояний по проклятым врагам", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_539970476"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Damage with Hits and Ailments against Enemies affected by 3 Spider's Webs",
       "matchers": [
         {"string": "#% увеличение урона от ударов и состояний по врагам, на которых действуют 3 Паучьих паутины"},
@@ -7956,6 +8178,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Effect of Chill and Shock on you",
+      "matchers": [
+        {"string": "#% усиление эффектов охлаждения и шока на вас"},
+        {"string": "#% ослабление эффектов охлаждения и шока на вас", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"crafted": ["crafted.stat_1984113628"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Effect of Chilled Ground",
       "matchers": [
         {"string": "#% усиление эффекта замерзшей земли"},
@@ -8171,6 +8403,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3191479793"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Effect of Scorch",
+      "matchers": [
+        {"string": "#% усиление эффекта Опаления"},
+        {"string": "#% ослабление эффекта Опаления", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_344570534"]}}
   },
   {
     "stat": {
@@ -12094,6 +12336,18 @@
   },
   {
     "stat": {
+      "ref": "#% increased Quantity of Items dropped by Possessed or Touched Monsters in Areas",
+      "matchers": [
+        {
+          "string": "#% увеличение количества предметов, выпадающих из одержимых монстров и монстров с эффектом касания"
+        },
+        {"string": "#% уменьшение количества предметов, выпадающих из одержимых монстров и монстров с эффектом касания"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2734027184"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Quantity of Items Dropped by Slain Frozen Enemies",
       "matchers": [
         {"string": "#% увеличение количества выпадающих предметов с замороженных монстров при смерти"},
@@ -12124,13 +12378,29 @@
   },
   {
     "stat": {
+      "ref": "#% increased Quantity of Items dropped in Incursions in Areas",
+      "matchers": [
+        {"string": "#% увеличение количества предметов, выпадающих во Вмешательствах"},
+        {"string": "#% уменьшение количества предметов, выпадающих во Вмешательствах", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_725617492"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Quantity of Items found",
       "matchers": [
         {"string": "#% увеличение количества найденных предметов"},
         {"string": "#% уменьшение количества найденных предметов", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_884586851"], "implicit": ["implicit.stat_884586851"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_884586851"],
+        "implicit": ["implicit.stat_884586851"],
+        "fractured": ["fractured.stat_884586851"]
+      }
+    }
   },
   {
     "stat": {
@@ -12148,6 +12418,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2390685262"], "implicit": ["implicit.stat_2390685262"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Quantity of Items found in Perandus Chests in Areas",
+      "matchers": [
+        {"string": "#% увеличение количества предметов, содержащихся в сундуках Перандусов"},
+        {"string": "#% уменьшение количества предметов, содержащихся в сундуках Перандусов", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2639334413"]}}
   },
   {
     "stat": {
@@ -13089,6 +13369,26 @@
   },
   {
     "stat": {
+      "ref": "#% increased Stack size of Rogue's Markers found in Areas",
+      "matchers": [
+        {"string": "#% увеличение размера найденных стопок с разбойничьими жетонами"},
+        {"string": "#% уменьшение размера найденных стопок с разбойничьими жетонами", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_657708069"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Stack size of Simulacrum Splinters found in Areas",
+      "matchers": [
+        {"string": "#% увеличение размера найденных стопок с осколками Симулякра"},
+        {"string": "#% уменьшение размера найденных стопок с осколками Симулякра"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2301218725"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Static Strike Area of Effect",
       "matchers": [
         {"string": "#% увеличение области действия Статичного разряда"},
@@ -13217,6 +13517,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1067429236"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Stun Threshold",
+      "matchers": [
+        {"string": "#% повышение порога оглушения"},
+        {"string": "#% снижение порога оглушения", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_680068163"]}}
   },
   {
     "stat": {
@@ -13833,10 +14143,37 @@
   },
   {
     "stat": {
+      "ref": "#% more Accuracy Rating",
+      "matchers": [{"string": "На #% больше меткости"}, {"string": "На #% меньше меткости", "negate": true}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_170394517"]}}
+  },
+  {
+    "stat": {
       "ref": "#% more Attack Speed",
       "matchers": [{"string": "На #% больше скорости атаки"}, {"string": "На #% меньше скорости атаки", "negate": true}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2418322751"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% more Blueprints found in Areas",
+      "matchers": [
+        {"string": "На #% больше выпадающих чертежей"},
+        {"string": "На #% меньше выпадающих чертежей", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_619910101"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% more Critical Strike Chance while Insane",
+      "matchers": [
+        {"string": "На #% больше шанса критического удара во время безумия"},
+        {"string": "На #% меньше шанса критического удара во время безумия", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2692289207"]}}
   },
   {
     "stat": {
@@ -13924,6 +14261,16 @@
         "fractured": ["fractured.stat_95249895"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "#% more Physical and Chaos Damage Taken while Sane",
+      "matchers": [
+        {"string": "На #% больше получаемого физического урона и урона хаосом в Здравом уме"},
+        {"string": "На #% меньше получаемого физического урона и урона хаосом в Здравом уме", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_388639924"]}}
   },
   {
     "stat": {
@@ -14458,6 +14805,15 @@
   {
     "stat": {"ref": "#% of Life Regenerated per Second", "matchers": [{"string": "Регенерация #% здоровья в секунду"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_percent_life_regen"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% of Life Regenerated per Second if you've dealt a Critical Strike in the past 8 seconds",
+      "matchers": [
+        {"string": "Регенерация #% здоровья в секунду, если вы наносили критический удар за последние 8 секунд"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_221532021"]}}
   },
   {
     "stat": {
@@ -15761,6 +16117,13 @@
   },
   {
     "stat": {
+      "ref": "+# Metamorph Monster Samples in Areas have Rewards",
+      "matchers": [{"string": "# образцов, выпадающих из монстров Метаморфа, будут иметь награду"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1274902666"]}}
+  },
+  {
+    "stat": {
       "ref": "+# Physical Damage taken from Attack Hits",
       "matchers": [{"string": "# входящего физического урона при получении удара от атак"}]
     },
@@ -15828,6 +16191,13 @@
       "matchers": [{"string": "# секунд(-ы) к длительности Кошачьей скрытности"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_387596329"]}}
+  },
+  {
+    "stat": {
+      "ref": "+# seconds to Duration of Frenzy and Power Charges on Culling Strike",
+      "matchers": [{"string": "# секунд(-ы) к длительности зарядов ярости и энергии при добивании"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4244234128"]}}
   },
   {
     "stat": {"ref": "+# seconds to Lockdown Timer", "matchers": [{"string": "# секунд(-ы) к времени до изоляции"}]},
@@ -18134,6 +18504,13 @@
   },
   {
     "stat": {
+      "ref": "+#% to Damage over Time Multiplier for Bleeding from Hits with this Weapon",
+      "matchers": [{"string": "#% к множителю постепенного урона от кровотечения, наложенного ударами этим оружием"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_951608773"]}}
+  },
+  {
+    "stat": {
       "ref": "+#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe",
       "matchers": [
         {"string": "#% к множителю постепенного урона от кровотечения за заряд свирепости с топором в руках"}
@@ -18147,6 +18524,15 @@
       "matchers": [{"string": "#% к множителю постепенного урона от яда за заряд ярости"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3504652942"]}}
+  },
+  {
+    "stat": {
+      "ref": "+#% to Damage over Time Multiplier if you've dealt a Critical Strike in the past 8 seconds",
+      "matchers": [
+        {"string": "#% к множителю постепенного урона, если вы наносили критический удар за последние 8 секунд"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3203086927"]}}
   },
   {
     "stat": {
@@ -18461,6 +18847,13 @@
         "crafted": ["crafted.stat_2016708976"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "+#% to Quality of Maps offered by Zana Missions in Areas",
+      "matchers": [{"string": "#% к качеству карт, предлагаемых в заданиях Заны"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_463675009"]}}
   },
   {
     "stat": {
@@ -20781,6 +21174,33 @@
       "matchers": [{"string": "Ларец в этой области осквернён"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2517911661"]}}
+  },
+  {
+    "stat": {
+      "ref": "Abyss Monsters in Areas grant #% increased Experience",
+      "matchers": [
+        {"string": "#% увеличение получаемого опыта от монстров Бездны"},
+        {"string": "#% уменьшение получаемого опыта от монстров Бездны", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2975078312"]}}
+  },
+  {
+    "stat": {
+      "ref": "Abyssal Troves in Areas have #% chance to drop a Rare Item with an Abyssal Socket",
+      "matchers": [{"string": "Из Кладов Бездны с #% шансом может выпасть редкий предмет с гнездом Бездны"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2609011894"]}}
+  },
+  {
+    "stat": {
+      "ref": "Abysses in Areas have #% increased chance to lead to an Abyssal Depths",
+      "matchers": [
+        {"string": "Бездны имеют увеличенный на #% шанс привести в Глубины Бездны"},
+        {"string": "Бездны имеют уменьшенный на #% шанс привести в Глубины Бездны"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2722831300"]}}
   },
   {
     "stat": {"ref": "Acrobatics", "matchers": [{"string": "Акробатика"}]},
@@ -23901,6 +24321,18 @@
   },
   {
     "stat": {
+      "ref": "Areas contain an additional Blight Encounter",
+      "matchers": [
+        {"string": "В области можно встретить дополнительных схваток со Скверной: #"},
+        {"string": "В областях можно встретить дополнительных схваток со Скверной: #"},
+        {"string": "В области можно встретить дополнительную схватку со Скверной", "value": 1},
+        {"string": "В областях можно встретить дополнительную схватку со Скверной", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_2459443694"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas contain an additional Breach",
       "matchers": [
         {"string": "В области можно встретить дополнительных Разломов: #"},
@@ -24072,6 +24504,79 @@
   },
   {
     "stat": {
+      "ref": "Areas have #% chance to grant an additional Mission on Completion",
+      "matchers": [{"string": "#% шанс получить дополнительное задание Мастера по завершению карты"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_416299653"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have #% increased chance to contain a Smuggler’s Cache",
+      "matchers": [
+        {"string": "Область с увеличенным на #% шансом может содержать тайник контрабандиста"},
+        {"string": "Область с уменьшенным на #% шансом может содержать тайник контрабандиста"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4069523014"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have +#% chance to contain a Trial of Ascendancy",
+      "matchers": [{"string": "Области имеют #% шанс содержать Испытание Восхождения"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_495465216"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have +#% chance to contain a Vaal Side Area",
+      "matchers": [{"string": "Области имеют #% шанс содержать побочные области ваал"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2156201537"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have a #% chance to contain an additional Harbinger",
+      "matchers": [{"string": "#% шанс встретить дополнительного Предвестника"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_266448395"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have a #% chance to contain an additional Invasion Boss",
+      "matchers": [{"string": "#% шанс встретить дополнительного босса Вторжения"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2059168182"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have a #% chance to contain an additional Rogue Exile",
+      "matchers": [{"string": "#% шанс встретить дополнительного бродячего изгнанника"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1123357133"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have a #% chance to contain an additional Shrine",
+      "matchers": [{"string": "#% шанс встретить дополнительный алтарь"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1260233365"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have a #% chance to contain an additional Tormented Spirit",
+      "matchers": [{"string": "#% шанс встретить дополнительного страдающего духа"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_846433713"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas that contain capturable Beasts have #% chance to contain an additional Red Beast",
+      "matchers": [{"string": "В областях со зверями с #% шансом можно встретить дополнительного красного зверя"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1044770866"]}}
+  },
+  {
+    "stat": {
       "ref": "Armageddon Brand Damage Penetrates #% of Branded Enemy's Fire Resistance",
       "matchers": [{"string": "Урон Клейма Армагеддона пробивает #% сопротивления огню заклеймённого врага"}]
     },
@@ -24110,6 +24615,20 @@
       "matchers": [{"string": "Не ограниченное сопротивление огню увеличивает броню"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_713266390"]}}
+  },
+  {
+    "stat": {
+      "ref": "Armour Items found in Areas have #% chance to drop with 20% Quality",
+      "matchers": [{"string": "Найденные предметы доспехов c #% шансом могут оказаться с 20% качества"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4109767878"]}}
+  },
+  {
+    "stat": {
+      "ref": "Armourer's Scraps found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные детали доспеха с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3515781151"]}}
   },
   {
     "stat": {"ref": "Arrow Dancing", "matchers": [{"string": "Танец со стрелами"}]},
@@ -24605,6 +25124,10 @@
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_xibaqua"]}}
   },
   {
+    "stat": {"ref": "Battlemage", "matchers": [{"string": "Боевой маг"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_448903047"]}}
+  },
+  {
     "stat": {
       "ref": "Bear Trap has #% increased Cooldown Recovery Rate",
       "matchers": [
@@ -24636,6 +25159,13 @@
   },
   {
     "stat": {
+      "ref": "Beyond Demons in Areas grant #% increased Experience",
+      "matchers": [{"string": "#% увеличение получаемого опыта от монстров Иномирья "}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3791540252"]}}
+  },
+  {
+    "stat": {
       "ref": "Beyond Portals in Areas have #% chance to spawn an additional Beyond Demon",
       "matchers": [
         {"string": "Порталы иномирья имеют #% шанс призвать дополнительного демона иномирья"},
@@ -24644,7 +25174,14 @@
         {"string": "Порталы Иномирья призывают дополнительного демона Иномирья", "value": 100}
       ]
     },
-    "trade": {"ids": {"enchant": ["enchant.stat_4008016019"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_4008016019"], "enchant": ["enchant.stat_4008016019"]}}
+  },
+  {
+    "stat": {
+      "ref": "Blacksmith's Whetstones found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные точильные камни с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3425389359"]}}
   },
   {
     "stat": {
@@ -24791,6 +25328,22 @@
       "matchers": [{"string": "Наложенные вами кровотечения отражаются в вас"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2658399404"]}}
+  },
+  {
+    "stat": {
+      "ref": "Blight Chests in Areas have #% chance to Duplicate contained Items",
+      "matchers": [{"string": "Сундуки Скверны с #% шансом могут продублировать содержащиеся предметы"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2101592167"]}}
+  },
+  {
+    "stat": {
+      "ref": "Blight Chests in Areas have #% increased chance to contain Blighted Maps or Oils",
+      "matchers": [
+        {"string": "Сундуки Скверны с увеличенным на #% шанс могут содержать в себе зараженные карты или масла"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2233120145"]}}
   },
   {
     "stat": {
@@ -24943,6 +25496,20 @@
   },
   {
     "stat": {
+      "ref": "Breach Monsters in Areas grant #% increased Experience",
+      "matchers": [{"string": "#% увеличение получаемого опыта от монстров Разлома"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3611255236"]}}
+  },
+  {
+    "stat": {
+      "ref": "Breach Splinters have #% chance to drop as Breachstones instead in Areas",
+      "matchers": [{"string": "Выпадающие осколки Разлома с #% шансом могут стать камнями Разлома"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3394339562"]}}
+  },
+  {
+    "stat": {
       "ref": "Breaches contain a Breachlord's Clasped Hand",
       "matchers": [{"string": "В Разломах можно найти сокровища Повелителей Разлома"}]
     },
@@ -24954,6 +25521,53 @@
       "matchers": [{"string": "В каждом Разломе можно встретить Повелителя Разлома"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1386808918"]}}
+  },
+  {
+    "stat": {
+      "ref": "Breaches in Areas have #% increased chance to belong to Chayula",
+      "matchers": [{"string": "Разломы с увеличенным на #% шансом могут принадлежать Чаюле"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3377019059"]}}
+  },
+  {
+    "stat": {
+      "ref": "Breaches in Areas have #% increased chance to belong to Esh",
+      "matchers": [
+        {"string": "Разломы с увеличенным на #% шансом могут принадлежать Иш"},
+        {"string": "Разломы с уменьшенным на #% шансом могут принадлежать Иш", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2147182152"]}}
+  },
+  {
+    "stat": {
+      "ref": "Breaches in Areas have #% increased chance to belong to Tul",
+      "matchers": [
+        {"string": "Разломы с увеличенным на #% шансом могут принадлежатьТул"},
+        {"string": "Разломы с уменьшенным на #% шансом могут принадлежать Тул", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_622901199"]}}
+  },
+  {
+    "stat": {
+      "ref": "Breaches in Areas have #% increased chance to belong to Uul-Netol",
+      "matchers": [
+        {"string": "Разломы с увеличенным на #% шансом могут принадлежать Уул-Нетол"},
+        {"string": "Разломы с уменьшенным на #% шансом могут принадлежать Уул-Нетол", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2819193674"]}}
+  },
+  {
+    "stat": {
+      "ref": "Breaches in Areas have #% increased chance to belong to Xoph",
+      "matchers": [
+        {"string": "Разломы с увеличенным на #% шансом могут принадлежать Ксофу"},
+        {"string": "Разломы с уменьшенным на #% шансом могут принадлежать Ксофу", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3963266703"]}}
   },
   {
     "stat": {
@@ -25332,6 +25946,13 @@
   },
   {
     "stat": {
+      "ref": "Cartographer's Chisels found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные резцы картографа с #% шансом могут упасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_553616540"]}}
+  },
+  {
+    "stat": {
       "ref": "Carved to glorify # new faithful converted by High Templar Avarius",
       "matchers": [
         {
@@ -25524,6 +26145,13 @@
   },
   {
     "stat": {
+      "ref": "Chaos Orbs found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы хаоса с #% шансом могут упасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3586007174"]}}
+  },
+  {
+    "stat": {
       "ref": "Chaos Skills have #% chance to Ignite",
       "matchers": [{"string": "Умения хаоса имеют #% шанс наложить поджог"}]
     },
@@ -25561,6 +26189,16 @@
       "matchers": [{"string": "# к радиусу последней области действия каждой волны Заряженного рывка"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2898302567"]}}
+  },
+  {
+    "stat": {
+      "ref": "Chests have #% increased Item Quantity",
+      "matchers": [
+        {"string": "Количество предметов в сундуках увеличено на #%"},
+        {"string": "Количество предметов в сундуках уменьшено на #%", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1502389239"]}}
   },
   {
     "stat": {
@@ -25623,6 +26261,13 @@
       "matchers": [{"string": "Охлаждения, наложенные Кольцом льда, всегда снижают скорость действий хотя бы на #%"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_644285691"]}}
+  },
+  {
+    "stat": {
+      "ref": "Chromatic Orbs found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные цветные сферы с #% шансом могут упасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2469861066"]}}
   },
   {
     "stat": {
@@ -26149,6 +26794,13 @@
   },
   {
     "stat": {
+      "ref": "Curse Auras from Socketed Skills also affect you",
+      "matchers": [{"string": "Ауры проклятий из размещенных умений также действуют на вас"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2965611853"]}}
+  },
+  {
+    "stat": {
       "ref": "Curse Enemies with Conductivity on Hit, with #% increased Effect",
       "matchers": [{"string": "При нанесении удара проклинает врагов Проводимостью с усиленным на #% эффектом"}]
     },
@@ -26397,6 +27049,19 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3753748365"]}}
+  },
+  {
+    "stat": {
+      "ref": "Damage of Enemies Hitting you is Unlucky while you have a Magic Ring Equipped",
+      "matchers": [
+        {
+          "string": "Урон от наносящих по вам удары монстров неудачлив, если на вас надето волшебное кольцо",
+          "value": -1
+        },
+        {"string": "Урон от наносящих по вам удары монстров удачлив, если на вас надето волшебное кольцо", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2510276385"]}}
   },
   {
     "stat": {
@@ -26654,6 +27319,23 @@
   },
   {
     "stat": {
+      "ref": "Delirium Encounters in Areas have #% chance to generate an additional Reward type",
+      "matchers": [{"string": "Зеркала Делириума с #% шансом могут даровать дополнительный тип наград"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1770833858"]}}
+  },
+  {
+    "stat": {
+      "ref": "Delirium Monsters in Areas have #% increased chance to drop Cluster Jewels",
+      "matchers": [
+        {"string": "Из монстров Делириума с увеличенным на #% шансом могут выпасть кластерные самоцветы"},
+        {"string": "Из монстров Делириума с уменьшенным на #% шансом могут выпасть кластерные самоцветы"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3580714718"]}}
+  },
+  {
+    "stat": {
       "ref": "Denoted service of # dekhara in the akhara of Asenath",
       "matchers": [
         {"string": "Символизирует служение # дехара в ахаре Азенат\nПассивные умения в радиусе завоеваны маракетами"}
@@ -26904,6 +27586,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3595254837"], "fractured": ["fractured.stat_3595254837"]}}
+  },
+  {
+    "stat": {
+      "ref": "Drops Scorched Ground while moving, lasting # seconds",
+      "matchers": [{"string": "При передвижении создает опалённую землю длительностью # секунд(-ы)"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1558131185"]}}
   },
   {
     "stat": {
@@ -27191,6 +27880,17 @@
   },
   {
     "stat": {
+      "ref": "Enemies Drenched by Hydrosphere have Cold and Lightning Exposure, applying +#% to Resistances",
+      "matchers": [
+        {
+          "string": "Промокшие из-за Гидросферы враги имеют восприимчивость к холоду и молнии, накладывающее #% к сопротивлениям"
+        }
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_3831546273"]}}
+  },
+  {
+    "stat": {
       "ref": "Enemies Frozen by you take 20% increased Damage",
       "matchers": [{"string": "Замороженные вами враги получают увеличенный на 20% урон"}]
     },
@@ -27235,6 +27935,13 @@
       "matchers": [{"string": "#% наносимого физического урона подожженных вами врагов становится уроном от огня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1272032962"]}}
+  },
+  {
+    "stat": {
+      "ref": "Enemies Ignited by you take Chaos Damage instead of Fire Damage from Ignite",
+      "matchers": [{"string": "Подожженные вами враги получают урон хаосом вместо урона от огня от поджога"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2714810050"]}}
   },
   {
     "stat": {
@@ -27287,6 +27994,13 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1919892065"]}}
+  },
+  {
+    "stat": {
+      "ref": "Enemies Killed by your Hits are destroyed while Insane",
+      "matchers": [{"string": "Убитые вашими ударами во время безумия монстры уничтожаются", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3797538318"]}}
   },
   {
     "stat": {
@@ -27624,7 +28338,7 @@
         {"string": "Улучшенные атаки наносят уменьшенный на #% урон", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1569101201"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1569101201"], "implicit": ["implicit.stat_1569101201"]}}
   },
   {
     "stat": {
@@ -27879,6 +28593,13 @@
   },
   {
     "stat": {
+      "ref": "Flasks found in Areas have #% chance to drop with 20% Quality",
+      "matchers": [{"string": "Найденные флаконы с #% шансом могут выпасть с 20% качеством"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3291313404"]}}
+  },
+  {
+    "stat": {
       "ref": "Flesh and Stone has #% reduced Mana Reservation",
       "matchers": [
         {"string": "#% увеличение количества маны, удержанной Камнем и плотью"},
@@ -28096,6 +28817,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3841984913"]}}
   },
   {
+    "stat": {"ref": "Gain # Life on Culling Strike", "matchers": [{"string": "Дает # здоровья при добивании"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_2381677442"]}}
+  },
+  {
     "stat": {
       "ref": "Gain # Life when you lose an Endurance Charge",
       "matchers": [{"string": "Дарует # здоровья, когда вы теряете заряд выносливости"}]
@@ -28108,6 +28833,10 @@
       "matchers": [{"string": "Получает # здоровья при оглушении врага"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2968301430"]}}
+  },
+  {
+    "stat": {"ref": "Gain # Mana on Culling Strike", "matchers": [{"string": "Дает # маны при добивании"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_2845511711"]}}
   },
   {
     "stat": {"ref": "Gain # Mana per Grand Spectrum", "matchers": [{"string": "Дарует # маны за Великий образ"}]},
@@ -28584,10 +29313,24 @@
   },
   {
     "stat": {
+      "ref": "Gain Absorption Charges instead of Power Charges",
+      "matchers": [{"string": "Дает заряды поглощения вместо зарядов энергии"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1379726309"]}}
+  },
+  {
+    "stat": {
       "ref": "Gain Accuracy Rating equal to your Strength",
       "matchers": [{"string": "Дарует меткость, равную вашей силе"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1575519214"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain Affliction Charges instead of Frenzy Charges",
+      "matchers": [{"string": "Дает заряды подавления вместо зарядов ярости"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1602173343"]}}
   },
   {
     "stat": {
@@ -28655,6 +29398,13 @@
   },
   {
     "stat": {
+      "ref": "Gain Brutal Charges instead of Endurance Charges",
+      "matchers": [{"string": "Дает заряды жестокости вместо зарядов выносливости"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2306836071"]}}
+  },
+  {
+    "stat": {
       "ref": "Gain Her Embrace for # seconds when you Ignite an Enemy",
       "matchers": [{"string": "Дарует Её объятие на # секунд(-ы) при поджоге врага"}]
     },
@@ -28709,6 +29459,17 @@
       "matchers": [{"string": "Эффект Буйства при максимальном количестве зарядов выносливости", "value": 1}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1643796079"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain Sacrificial Zeal when you use a Skill, dealing you #% of the Skill's Mana Cost as Physical Damage per Second",
+      "matchers": [
+        {
+          "string": "Дарует Жертвенное рвение при использовании вами умения, нанося вам #% от стоимости умения в мане в виде физического урона в секунду"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2287328323"]}}
   },
   {
     "stat": {
@@ -28812,6 +29573,13 @@
       "matchers": [{"string": "В гнёзда на этом предмете можно помещать камни любого цвета"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_899329924"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gems found in Areas have #% chance to drop with 20% Quality",
+      "matchers": [{"string": "Найденные камни с #% шансом могут выпасть с 20% качества"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3991611906"]}}
   },
   {
     "stat": {
@@ -29479,6 +30247,17 @@
   },
   {
     "stat": {
+      "ref": "Grants Level # Thirst for Blood Skill",
+      "matchers": [{"string": "Дарует умение Жажда крови # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1209807941"]}}
+  },
+  {
+    "stat": {"ref": "Grants Level # Unhinge Skill", "matchers": [{"string": "Дарует умение Расстройство # уровня"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_3239991868"]}}
+  },
+  {
+    "stat": {
       "ref": "Grants Level # Vaal Impurity of Fire Skill",
       "matchers": [{"string": "Дарует умение Погибель от огня ваал # уровня"}]
     },
@@ -29644,6 +30423,37 @@
       "matchers": [{"string": "Из Предвестников выпадают дополнительные осколки валюты"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_906446422"]}}
+  },
+  {
+    "stat": {
+      "ref": "Harbingers in Areas drop rarer value Currency Shards",
+      "matchers": [{"string": "Из Предвестников выпадают более ценные осколки валюты"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3448022820"]}}
+  },
+  {
+    "stat": {
+      "ref": "Harbingers in Areas have #% chance to drop an additional Stack of Currency Shards",
+      "matchers": [{"string": "Из Предвестников с #% шансом может выпасть дополнительная стопка осколков валюты"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_628272574"]}}
+  },
+  {
+    "stat": {
+      "ref": "Harvest Crops in Areas have #% increased chance to contain a Tier 4 Plant",
+      "matchers": [{"string": "Поля Жатвы с увеличенным на #% шансом могут вырастить растение 4 уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1505882627"]}}
+  },
+  {
+    "stat": {
+      "ref": "Harvest Crops in Areas have an extra chance to grow higher Tier Plants",
+      "matchers": [
+        {"string": "Поля Жатвы имеют дополнительных шансов вырастить растений более высокого уровня: #"},
+        {"string": "Поля Жатвы имеют дополнительный шанс вырастить растение более высокого уровня", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2456335054"]}}
   },
   {
     "stat": {
@@ -30187,6 +30997,17 @@
   },
   {
     "stat": {
+      "ref": "Hits Overwhelm #% of Physical Damage Reduction while you have Sacrificial Zeal",
+      "matchers": [
+        {
+          "string": "Удары подавляют #% уменьшения физического урона, пока вы находитесь под действием Жертвенного рвения"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1415418540"]}}
+  },
+  {
+    "stat": {
       "ref": "Hits with this Weapon always Ignite, Freeze, and Shock",
       "matchers": [{"string": "Удары этим оружием всегда накладывают поджог, заморозку и шок"}]
     },
@@ -30278,6 +31099,26 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_4082863126"]}}
+  },
+  {
+    "stat": {
+      "ref": "Hydrosphere deals #% increased Damage",
+      "matchers": [
+        {"string": "Гидросфера наносит увеличенный на #% урон"},
+        {"string": "Гидросфера наносит уменьшенный на #% урон", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1040582501"]}}
+  },
+  {
+    "stat": {
+      "ref": "Hydrosphere has #% increased Pulse Frequency",
+      "matchers": [
+        {"string": "#% повышение частоты пульсации Гидросферы"},
+        {"string": "#% снижение частоты пульсации Гидросферы", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_222917854"]}}
   },
   {
     "stat": {
@@ -30444,6 +31285,42 @@
   {
     "stat": {"ref": "Imbalanced Guard", "matchers": [{"string": "Несбалансированная защита"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3868073741"]}}
+  },
+  {
+    "stat": {
+      "ref": "Immortal Syndicate Members Executed in Areas have #% chance to gain an additional Rank",
+      "matchers": [{"string": "Казненные члены Бессмертного Синдиката с #% шансом получают дополнительный ранг"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3615401038"]}}
+  },
+  {
+    "stat": {
+      "ref": "Immortal Syndicate Members have #% chance to drop an additional Veiled Item",
+      "matchers": [
+        {"string": "Члены Бессмертного Синдиката с #% шансом могут выбросить дополнительный завуалированный предмет"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4122946258"]}}
+  },
+  {
+    "stat": {
+      "ref": "Immortal Syndicate Members in Areas are #% more\nlikely to be accompanied by reinforcements",
+      "matchers": [
+        {"string": "На #% больше шанс, что к членам Бессмертного Синдиката придёт подкрепление"},
+        {"string": "На #% меньше шанс, что к членам Бессмертного Синдиката придёт подкрепление"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2181411965"]}}
+  },
+  {
+    "stat": {
+      "ref": "Immortal Syndicate Members in Areas have #% chance to grant double Experience",
+      "matchers": [
+        {"string": "Члены Бессмертного Синдиката с #% шансом могут даровать двойное количество опыта"},
+        {"string": "Члены Бессмертного Синдиката даруют двойное количество опыта", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3467824501"]}}
   },
   {
     "stat": {
@@ -30639,6 +31516,24 @@
   },
   {
     "stat": {
+      "ref": "Imprisoned Monsters in Areas have #% chance to drop an additional Rare Item with an Essence Modifier",
+      "matchers": [
+        {
+          "string": "Из пленённых монстров с #% шансом может выпасть дополнительный редкий предмет со свойством Сущности"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1445968994"]}}
+  },
+  {
+    "stat": {
+      "ref": "Imprisoned Monsters in Areas have #% chance to have an additional Essence",
+      "matchers": [{"string": "Монстры с #% шансом могут быть пленёнными дополнительной Сущностью"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2874244045"]}}
+  },
+  {
+    "stat": {
       "ref": "Imprisoned Monsters take #% increased Damage",
       "matchers": [{"string": "Пленённые монстры получают увеличенный на #% урон"}]
     },
@@ -30773,6 +31668,27 @@
   },
   {
     "stat": {
+      "ref": "Incursion Architects in Areas have #% chance to grant double Experience",
+      "matchers": [
+        {"string": "Архитекторы Вмешательства с #% шансом могут даровать двойное количество опыта "},
+        {"string": "Архитекторы Вмешательства даруют двойное количество опыта ", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3396926649"]}}
+  },
+  {
+    "stat": {
+      "ref": "Incursion Architects in Areas have a #% chance to drop an additional Rare Incursion Item",
+      "matchers": [
+        {
+          "string": "Из Архитекторов Вмешательства с #% шансом может выпасть дополнительный редкий предмет Вмешательства"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3349136454"]}}
+  },
+  {
+    "stat": {
       "ref": "Infernal Blow Debuff deals an additional #% of Damage per Charge",
       "matchers": [{"string": "Отрицательный эффект Удара преисподней дополнительно наносит #% урона за каждый заряд"}]
     },
@@ -30804,6 +31720,41 @@
       "matchers": [{"string": "При смерти тотемов проклинает вас случайной порчей, эффект которой больше на #%"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2918129907"]}}
+  },
+  {
+    "stat": {
+      "ref": "Influenced Monsters in Areas have #% chance to drop an additional Basic Currency Item",
+      "matchers": [{"string": "Из монстров с влиянием с #% шансом может выпасть дополнительная обычная валюта"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3931293247"]}}
+  },
+  {
+    "stat": {
+      "ref": "Influenced Monsters in Areas have #% chance to drop an additional Gem with Quality",
+      "matchers": [{"string": "Из монстров с влиянием с #% шансом может выпасть дополнительный камень с качеством"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3230138360"]}}
+  },
+  {
+    "stat": {
+      "ref": "Influenced Monsters in Areas have #% chance to drop an additional Rare Armour Item",
+      "matchers": [{"string": "Из монстров с влиянием с #% шансом может выпасть дополнительный редки предмет доспехов"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4223033382"]}}
+  },
+  {
+    "stat": {
+      "ref": "Influenced Monsters in Areas have #% chance to drop an additional Rare Jewellery Item",
+      "matchers": [{"string": "Из монстров с влиянием с #% шансом может выпасть дополнительная редкая бижутерия"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2391424983"]}}
+  },
+  {
+    "stat": {
+      "ref": "Influenced Monsters in Areas have #% chance to drop an additional Rare Weapon",
+      "matchers": [{"string": "Из монстров с влиянием с #% шансом может выпасть дополнительное редкое оружие"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_914487959"]}}
   },
   {
     "stat": {"ref": "Inner Conviction", "matchers": [{"string": "Внутренняя убеждённость"}]},
@@ -31003,6 +31954,44 @@
   },
   {
     "stat": {
+      "ref": "Items found in Areas have #% chance to have a White Socket",
+      "matchers": [{"string": "Найденные предметы с #% шансом могут содержать белое гнездо"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3060454102"]}}
+  },
+  {
+    "stat": {
+      "ref": "Items found in Areas have #% chance to have the maximum number of Sockets",
+      "matchers": [{"string": "Найденные предметы с #% шансом могут выпасть с максимальным количеством гнезд"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4092986415"]}}
+  },
+  {
+    "stat": {
+      "ref": "Items found in Areas have #% increased chance to be Influenced",
+      "matchers": [
+        {"string": "Найденные предметы с увеличенным на #% шансом могут быть с влиянием"},
+        {"string": "Найденные предметы с уменьшенным на #% шансом могут быть с влиянием", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1986702303"]}}
+  },
+  {
+    "stat": {
+      "ref": "Items have #% chance to drop fully Linked in Areas",
+      "matchers": [{"string": "Предметы с #% шансом могут  выпасть с полностью соединенными между собой гнездами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2356069535"]}}
+  },
+  {
+    "stat": {
+      "ref": "Jeweller's Orbs found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы златокузнеца с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_10358266"]}}
+  },
+  {
+    "stat": {
       "ref": "Karui Stone Hook",
       "matchers": [
         {"string": "Каменный крючок каруи", "value": 1},
@@ -31194,6 +32183,62 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_625885138"]}}
+  },
+  {
+    "stat": {
+      "ref": "Legion Encounters in Areas have #% increased chance to include a Karui army",
+      "matchers": [
+        {"string": "В схватках с Легионом с увеличенным на #% шансом может участвовать армия каруи"},
+        {"string": "В схватках с Легионом с уменьшенным на #% шансом может участвовать армия каруи", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4094461744"]}}
+  },
+  {
+    "stat": {
+      "ref": "Legion Encounters in Areas have #% increased chance to include a Maraketh army",
+      "matchers": [
+        {"string": "В схватках с Легионом с увеличенным на #% шансом может участвовать армия маракетов"},
+        {"string": "В схватках с Легионом с уменьшенным на #% шансом может участвовать армия маракетов", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1611826374"]}}
+  },
+  {
+    "stat": {
+      "ref": "Legion Encounters in Areas have #% increased chance to include a Templar army",
+      "matchers": [
+        {"string": "В схватках с Легионом с увеличенным на #% шансом может участвовать армия храмовников"},
+        {
+          "string": "В схватках с Легионом с уменьшенным на #% шансом может участвовать армия храмовников",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_573511501"]}}
+  },
+  {
+    "stat": {
+      "ref": "Legion Encounters in Areas have #% increased chance to include a Vaal army",
+      "matchers": [
+        {"string": "В схватках с Легионом с увеличенным на #% шансом может участвовать армия ваал"},
+        {"string": "В схватках с Легионом с уменьшенным на #% шансом может участвовать армия ваал", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3218477736"]}}
+  },
+  {
+    "stat": {
+      "ref": "Legion Encounters in Areas have #% increased chance to include an Eternal Empire army",
+      "matchers": [
+        {"string": "В схватках с Легионом с увеличенным на #% шансом может участвовать армия Вечной Империи"},
+        {
+          "string": "В схватках с Легионом с уменьшенным на #% шансом может участвовать армия Вечной Империи",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3825355878"]}}
   },
   {
     "stat": {
@@ -31433,6 +32478,13 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1699499433"]}}
   },
   {
+    "stat": {
+      "ref": "Lose #% of Energy Shield when you deal a Critical Strike",
+      "matchers": [{"string": "Теряет #% энергетического щита при нанесении вами критического удара"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1229725509"]}}
+  },
+  {
     "stat": {"ref": "Lose #% of Life on Kill", "matchers": [{"string": "Вы теряете #% здоровья при убийстве"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_751813227"]}}
   },
@@ -31442,6 +32494,13 @@
       "matchers": [{"string": "Отнимает #% здоровья в секунду, если недавно вы получали удар"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2325592140"]}}
+  },
+  {
+    "stat": {
+      "ref": "Lose #% of Life when you deal a Critical Strike",
+      "matchers": [{"string": "Теряет #% здоровья при нанесении вами критического удара"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1862591837"]}}
   },
   {
     "stat": {"ref": "Lose #% of Mana per Second", "matchers": [{"string": "Отнимает #% маны в секунду"}]},
@@ -31540,6 +32599,41 @@
   {
     "stat": {"ref": "Magic Monsters are Maimed", "matchers": [{"string": "Волшебные монстры изувечены"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3879236300"]}}
+  },
+  {
+    "stat": {
+      "ref": "Magic Monsters in Areas have #% chance to drop an additional Basic Currency Item",
+      "matchers": [{"string": "Из волшебных монстров с #% шансом может выпасть дополнительная обычная валюта"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_481710678"]}}
+  },
+  {
+    "stat": {
+      "ref": "Magic Monsters in Areas have #% chance to drop an additional Gem with Quality",
+      "matchers": [{"string": "Из волшебных монстров с #% шансом может выпасть дополнительный камень с качеством"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2731946686"]}}
+  },
+  {
+    "stat": {
+      "ref": "Magic Monsters in Areas have #% chance to drop an additional Rare Armour Item",
+      "matchers": [{"string": "Из волшебных монстров с #% шансом может выпасть дополнительный редкий доспех"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3457217894"]}}
+  },
+  {
+    "stat": {
+      "ref": "Magic Monsters in Areas have #% chance to drop an additional Rare Jewellery Item",
+      "matchers": [{"string": "Из волшебных монстров с #% шансом может выпасть дополнительная редкая бижутерия"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4265306219"]}}
+  },
+  {
+    "stat": {
+      "ref": "Magic Monsters in Areas have #% chance to drop an additional Rare Weapon",
+      "matchers": [{"string": "Из волшебных монстров с #% шансом может выпасть дополнительное редкое оружие"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1818703431"]}}
   },
   {
     "stat": {
@@ -31685,6 +32779,43 @@
   },
   {
     "stat": {
+      "ref": "Map Items have a #% chance to drop as a random Unique Map instead in Areas",
+      "matchers": [{"string": "Предметы карты с #% шансом при выпадении могут стать случайной уникальной картой"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1750700932"]}}
+  },
+  {
+    "stat": {
+      "ref": "Map options offered by Zana Missions in Areas have #% increased chance to be Synthesis Maps",
+      "matchers": [
+        {"string": "Предложенные в заданиях Заны карты с увеличенным на # шансом могут оказаться картами Синтеза"},
+        {"string": "Предложенные в заданиях Заны карты с уменьшенным на # шансом могут оказаться картами Синтеза"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2948997921"]}}
+  },
+  {
+    "stat": {
+      "ref": "Map options offered by Zana Missions in Areas have #% increased chance to be Unique",
+      "matchers": [
+        {"string": "Предложенные в заданиях Заны карты с увеличенным на # шансом могут оказаться уникальными картами"},
+        {"string": "Предложенные в заданиях Заны карты с уменьшенным на # шансом могут оказаться уникальными картами"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4293639885"]}}
+  },
+  {
+    "stat": {
+      "ref": "Map options offered by Zana Missions in Areas have #% increased chance to have 8 Modifiers",
+      "matchers": [
+        {"string": "Предложенные в заданиях Заны карты с увеличенным на # шансом могут оказаться с 8 свойствами"},
+        {"string": "Предложенные в заданиях Заны карты с уменьшенным на # шансом могут оказаться с 8 свойствами"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2122828636"]}}
+  },
+  {
+    "stat": {
       "ref": "Maps have # additional random Modifier",
       "matchers": [
         {"string": "Карта имеет # дополнительное случайное свойство"},
@@ -31718,6 +32849,27 @@
       "matchers": [{"string": "Максимум эффектов Хрупкого восстановления: #"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1173537953"]}}
+  },
+  {
+    "stat": {
+      "ref": "Maximum Absorption Charges is equal to Maximum Power Charges",
+      "matchers": [{"string": "Максимум зарядов поглощения равен максимуму зарядов энергии"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2494027711"]}}
+  },
+  {
+    "stat": {
+      "ref": "Maximum Affliction Charges is equal to Maximum Frenzy Charges",
+      "matchers": [{"string": "Максимум зарядов подавления равен максимуму зарядов ярости"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2817027713"]}}
+  },
+  {
+    "stat": {
+      "ref": "Maximum Brutal Charges is equal to Maximum Endurance Charges",
+      "matchers": [{"string": "Максимум зарядов жестокости равен максимуму зарядов выносливости"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3710150470"]}}
   },
   {
     "stat": {
@@ -31760,6 +32912,16 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3970396418"]}}
   },
   {
+    "stat": {
+      "ref": "Metamorph Samples dropped in Areas have #% increased chance to have a Reward",
+      "matchers": [
+        {"string": "Выпадающие образцы Метаморфа с увеличенным на #% шансом могут оказаться с наградой"},
+        {"string": "Выпадающие образцы Метаморфа с уменьшенным на #% шансом могут оказаться с наградой"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3265124719"]}}
+  },
+  {
     "stat": {"ref": "Mind Over Matter", "matchers": [{"string": "Разум превыше материи"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_373964381"]}}
   },
@@ -31790,6 +32952,15 @@
   {
     "stat": {"ref": "Minions are Aggressive", "matchers": [{"string": "Приспешники агрессивны"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_128585622"]}}
+  },
+  {
+    "stat": {
+      "ref": "Minions can hear the whispers for # seconds after they deal a Critical Strike",
+      "matchers": [
+        {"string": "Приспешники могут слышать голоса в течение # секунд(-ы) после нанесения ими критического удара"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2735021664"]}}
   },
   {
     "stat": {"ref": "Minions cannot be Blinded", "matchers": [{"string": "Приспешников нельзя ослепить"}]},
@@ -32115,6 +33286,19 @@
         "crafted": ["crafted.stat_4000101551"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "Minions have #% increased Critical Strike Chance per Maximum Power Charge you have",
+      "matchers": [
+        {"string": "Приспешники имеют #% повышение шанса критического удара за максимум ваших зарядов энергии"},
+        {
+          "string": "Приспешники имеют #% снижение шанса критического удара за максимум ваших зарядов энергии",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_446070669"]}}
   },
   {
     "stat": {
@@ -32455,6 +33639,16 @@
   },
   {
     "stat": {
+      "ref": "Missions in Areas grant #% increased Favour",
+      "matchers": [
+        {"string": "Задания даруют увеличенное на #% количество расположения"},
+        {"string": "Задания даруют уменьшенное на #% количество расположения", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_298904616"]}}
+  },
+  {
+    "stat": {
       "ref": "Modifiers to Claw Attack Speed also apply to Unarmed Attack Speed",
       "matchers": [
         {"string": "Модификаторы скорости атаки когтями также действуют на скорость атак без оружия", "value": 1}
@@ -32480,6 +33674,31 @@
       "matchers": [{"string": "Модификаторы урона когтями также действуют на урон атаками без оружия", "value": 1}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_505678789"]}}
+  },
+  {
+    "stat": {
+      "ref": "Modifiers to Minimum Endurance Charges instead apply to Minimum Brutal Charges",
+      "matchers": [
+        {"string": "Модификаторы минимума зарядов выносливости вместо этого влияют на минимум зарядов жестокости"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2966482502"]}}
+  },
+  {
+    "stat": {
+      "ref": "Modifiers to Minimum Frenzy Charges instead apply to Minimum Affliction Charges",
+      "matchers": [{"string": "Модификаторы минимума зарядов ярости вместо этого влияют на минимум зарядов подавления"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1424305790"]}}
+  },
+  {
+    "stat": {
+      "ref": "Modifiers to Minimum Power Charges instead apply to Minimum Absorption Charges",
+      "matchers": [
+        {"string": "Модификаторы минимума зарядов энергии вместо этого влияют на минимум зарядов поглощения"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1752582590"]}}
   },
   {
     "stat": {
@@ -32515,6 +33734,13 @@
   {
     "stat": {"ref": "Monster Level: #", "matchers": [{"string": "Уровень монстров: #"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_284496119"]}}
+  },
+  {
+    "stat": {
+      "ref": "Monsters and Chests in Areas have #% chance to drop Items with +1 to Item Level",
+      "matchers": [{"string": "Из монстров и сундуков с #% шансом могут выпасть предметы с +1 уровнем предмета"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1238581103"]}}
   },
   {
     "stat": {"ref": "Monsters are Hexproof", "matchers": [{"string": "Монстры имеют свойство Заговоренный"}]},
@@ -33119,7 +34345,7 @@
       "ref": "Nearby Enemies have +#% to Fire Resistance",
       "matchers": [{"string": "Ближайшие враги имеют #% к сопротивлению огню"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3914021960"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3914021960"], "fractured": ["fractured.stat_3914021960"]}}
   },
   {
     "stat": {
@@ -33374,6 +34600,13 @@
   },
   {
     "stat": {
+      "ref": "Oils found in Areas have #% chance to be 1 tier higher",
+      "matchers": [{"string": "Найденные масла с #% шансом могут стать на 1 уровень выше"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3259960466"]}}
+  },
+  {
+    "stat": {
       "ref": "On Killing a Poisoned Enemy, nearby Enemies are Poisoned",
       "matchers": [{"string": "При убийстве отравленного врага, отравляются ближайшие враги"}]
     },
@@ -33401,6 +34634,48 @@
       "matchers": [{"string": "Сфера бурь имеет #% повышение скорости сотворения чар"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2778301298"]}}
+  },
+  {
+    "stat": {
+      "ref": "Orbs of Alchemy found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы алхимии с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_262769816"]}}
+  },
+  {
+    "stat": {
+      "ref": "Orbs of Alteration found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы перемен с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1857447509"]}}
+  },
+  {
+    "stat": {
+      "ref": "Orbs of Chance found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы удачи с #% шансом могут упасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3559931431"]}}
+  },
+  {
+    "stat": {
+      "ref": "Orbs of Fusing found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы соединения с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1552965282"]}}
+  },
+  {
+    "stat": {
+      "ref": "Orbs of Scouring found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы очищения с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4252890057"]}}
+  },
+  {
+    "stat": {
+      "ref": "Orbs of Transmutation found in Areas have #% chance to drop as a full stack",
+      "matchers": [{"string": "Найденные сферы превращения с #% шансом могут выпасть в виде полной стопки"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2888521660"]}}
   },
   {
     "stat": {
@@ -33593,6 +34868,56 @@
   },
   {
     "stat": {
+      "ref": "Perandus Chests in Areas have #% increased chance to be Archives",
+      "matchers": [
+        {"string": "Сундуки Перандусов с увеличенным на #% шансом могут стать Архивами"},
+        {"string": "Сундуки Перандусов с уменьшенным на #% шансом могут стать Архивами", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1183261553"]}}
+  },
+  {
+    "stat": {
+      "ref": "Perandus Chests in Areas have #% increased chance to be Catalogues",
+      "matchers": [
+        {"string": "Сундуки Перандусов с увеличенным на #% шансом могут стать Каталогами"},
+        {"string": "Сундуки Перандусов с уменьшенным на #% шансом могут стать Каталогами", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1207229270"]}}
+  },
+  {
+    "stat": {
+      "ref": "Perandus Chests in Areas have #% increased chance to be Coffers",
+      "matchers": [
+        {"string": "Сундуки Перандусов с увеличенным на #% шансом могут стать Ящиками"},
+        {"string": "Сундуки Перандусов с уменьшенным на #% шансом могут стать Ящиками", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1186599719"]}}
+  },
+  {
+    "stat": {
+      "ref": "Perandus Chests in Areas have #% increased chance to be Hoards",
+      "matchers": [
+        {"string": "Сундуки Перандусов с увеличенным на #% шансом могут стать Запасами"},
+        {"string": "Сундуки Перандусов с уменьшенным на #% шансом могут стать Запасами", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4262046342"]}}
+  },
+  {
+    "stat": {
+      "ref": "Perandus Chests in Areas have #% increased chance to be Treasuries",
+      "matchers": [
+        {"string": "Сундуки Перандусов с увеличенным на #% шансом могут стать Казной"},
+        {"string": "Сундуки Перандусов с уменьшенным на #% шансом могут стать Казной", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3568535270"]}}
+  },
+  {
+    "stat": {
       "ref": "Perandus Monsters have a #% chance to drop Perandus Coins",
       "matchers": [{"string": "#% шанс выпадения монет Перандусов из монстров Перандусов"}]
     },
@@ -33744,6 +35069,13 @@
       "matchers": [{"string": "Носитель чумы наносит урон на основании дополнительных #% значения чумы"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3672666316"]}}
+  },
+  {
+    "stat": {
+      "ref": "Plants Harvested in Areas have #% chance to give an additional Crafting option",
+      "matchers": [{"string": "Собранные растения с #% шансом могут предложить дополнительный ремесленный рецепт"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1042687374"]}}
   },
   {
     "stat": {
@@ -34762,6 +36094,76 @@
   },
   {
     "stat": {
+      "ref": "Randomly encountered Masters in Areas have #% increased chance to be Alva\nMaster Missions from completing Maps have #% increased chance to be Alva",
+      "matchers": [
+        {
+          "string": "Случайно встреченным Мастером с увеличенным на #% шансом может оказаться Альвой\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Альвы"
+        },
+        {
+          "string": "Случайно встреченным Мастером с уменьшенным на #% шансом может оказаться Альвой\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Альвы"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3629418990"]}}
+  },
+  {
+    "stat": {
+      "ref": "Randomly encountered Masters in Areas have #% increased chance to be Einhar\nMaster Missions from completing Maps have #% increased chance to be Einhar",
+      "matchers": [
+        {
+          "string": "Случайно встреченным Мастером с увеличенным на #% шансом может оказаться Эйнаром\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Эйнара"
+        },
+        {
+          "string": "Случайно встреченным Мастером с уменьшенным на #% шансом может оказаться Эйнаром\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Эйнара"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1301096166"]}}
+  },
+  {
+    "stat": {
+      "ref": "Randomly encountered Masters in Areas have #% increased chance to be Jun\nMaster Missions from completing Maps have #% increased chance to be Jun",
+      "matchers": [
+        {
+          "string": "Случайно встреченным Мастером с увеличенным на #% шансом может оказаться Джун\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Джун"
+        },
+        {
+          "string": "Случайно встреченным Мастером с уменьшенным на #% шансом может оказаться Джун\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Джун"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4116217552"]}}
+  },
+  {
+    "stat": {
+      "ref": "Randomly encountered Masters in Areas have #% increased chance to be Niko\nMaster Missions from completing Maps have #% increased chance to be Niko",
+      "matchers": [
+        {
+          "string": "Случайно встреченным Мастером с увеличенным на #% шансом может оказаться Нико\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Нико"
+        },
+        {
+          "string": "Случайно встреченным Мастером с уменьшенным на #% шансом может оказаться Нико\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Нико"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_399319107"]}}
+  },
+  {
+    "stat": {
+      "ref": "Randomly encountered Masters in Areas have #% increased chance to be Zana\nMaster Missions from completing Maps have #% increased chance to be Zana",
+      "matchers": [
+        {
+          "string": "Случайно встреченным Мастером с увеличенным на #% шансом может оказаться Заной\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Заны"
+        },
+        {
+          "string": "Случайно встреченным Мастером с уменьшенным на #% шансом может оказаться Заной\nДаруемые по завершению карт задания Мастера с увеличенным на #% шансом могут оказаться заданиями Заны"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1306304169"]}}
+  },
+  {
+    "stat": {
       "ref": "Rare Breach Monsters drop an additional Splinter",
       "matchers": [
         {"string": "Из редких монстров Разлома выпадает дополнительных осколков: #"},
@@ -34776,6 +36178,13 @@
       "matchers": [{"string": "На редких картах можно встретить дополнительных групп c редким монстром: #"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3672378181"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rare Maps found in Areas have #% chance to be Corrupted",
+      "matchers": [{"string": "Найденные редкие карты с #% шансом могут быть оскверненными"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1293790340"]}}
   },
   {
     "stat": {
@@ -34826,6 +36235,41 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3266549586"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rare Monsters in Areas have #% chance to drop an additional Basic Currency Item",
+      "matchers": [{"string": "Из редких монстров с #% шансом может выпасть дополнительная обычная валюта"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3458597256"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rare Monsters in Areas have #% chance to drop an additional Gem with Quality",
+      "matchers": [{"string": "Из редких монстров с #% шансом может выпасть дополнительный камень с качеством"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1189717666"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rare Monsters in Areas have #% chance to drop an additional Rare Armour Item",
+      "matchers": [{"string": "Из редких монстров с #% шансом может выпасть дополнительный редкий доспех"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2804918815"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rare Monsters in Areas have #% chance to drop an additional Rare Jewellery Item",
+      "matchers": [{"string": "Из редких монстров с #% шансом может выпасть дополнительная редкая бижутерия"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4028855406"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rare Monsters in Areas have #% chance to drop an additional Rare Weapon",
+      "matchers": [{"string": "Из редких монстров с #% шансом может выпасть дополнительное редкое оружие"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2737229970"]}}
   },
   {
     "stat": {
@@ -35021,6 +36465,56 @@
       "matchers": [{"string": "Восстанавливает #% от вашего максимума маны при блоке"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3041288981"], "implicit": ["implicit.stat_3041288981"]}}
+  },
+  {
+    "stat": {
+      "ref": "Red Beasts in Areas have #% chance to grant double Experience",
+      "matchers": [
+        {"string": "Красные звери с #% шансом могут даровать двойное количество опыта"},
+        {"string": "Красные звери даруют двойное количество опыта", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3190100548"]}}
+  },
+  {
+    "stat": {
+      "ref": "Red Beasts in Areas have #% increased chance to be from The Caverns",
+      "matchers": [
+        {"string": "Красные животные с увеличенным на #% шансом могут быть из пещер"},
+        {"string": "Красные животные с уменьшенным на #% шансом могут быть из пещер"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1595637549"]}}
+  },
+  {
+    "stat": {
+      "ref": "Red Beasts in Areas have #% increased chance to be from The Deep",
+      "matchers": [
+        {"string": "Красные животные с увеличенным на #% шансом могут быть из глубин"},
+        {"string": "Красные животные с уменьшенным на #% шансом могут быть из глубин"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_59091266"]}}
+  },
+  {
+    "stat": {
+      "ref": "Red Beasts in Areas have #% increased chance to be from The Sands",
+      "matchers": [
+        {"string": "Красные животные с увеличенным на #% шансом могут быть из песков"},
+        {"string": "Красные животные с уменьшенным на #% шансом могут быть из песков"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2436491720"]}}
+  },
+  {
+    "stat": {
+      "ref": "Red Beasts in Areas have #% increased chance to be from The Wilds",
+      "matchers": [
+        {"string": "Красные животные с увеличенным на #% шансом могут быть из лесов"},
+        {"string": "Красные животные с уменьшенным на #% шансом могут быть из лесов"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3090817208"]}}
   },
   {
     "stat": {
@@ -35306,6 +36800,13 @@
       "matchers": [{"string": "Регенерация # маны в секунду, пока на вас действует Птичий полет"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1495376076"]}}
+  },
+  {
+    "stat": {
+      "ref": "Regenerate #% Life over one second when Hit while Sane",
+      "matchers": [{"string": "Регенерация #% здоровья за одну секунду при получении удара в Здравом уме"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2504632495"]}}
   },
   {
     "stat": {
@@ -35827,6 +37328,13 @@
       "matchers": [{"string": "#% повышение редкости выпадающих предметов из бродячих изгнанников"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2008953542"]}}
+  },
+  {
+    "stat": {
+      "ref": "Rogue Exiles in Areas have #% chance to be Possessed by a Tormented Spirit",
+      "matchers": [{"string": "Бродячие изгнанники с #% шансом могут быть одержимыми Страдающим духом"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1065203140"]}}
   },
   {
     "stat": {
@@ -37642,6 +39150,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Trinity",
+      "matchers": [{"string": "Размещенные камни усилены Триумвиратом стихий # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_134"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Unbound Ailments",
       "matchers": [{"string": "Размещённые камни усилены Безграничными состояниями # уровня"}]
     },
@@ -37918,6 +39433,15 @@
       "matchers": [{"string": "Размещённые камни умений получают #% множитель маны"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_2865550257"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Skills apply Fire, Cold and Lightning Exposure on Hit",
+      "matchers": [
+        {"string": "Размещенные умения при нанесении удара накладывают восприимчивость к огню, холоду и молнии"}
+      ]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_2192875806"]}}
   },
   {
     "stat": {
@@ -38481,6 +40005,16 @@
   },
   {
     "stat": {
+      "ref": "Strongboxes in Areas have #% increased chance to be Rare",
+      "matchers": [
+        {"string": "Ларцы с увеличенным на #% шансом могут оказаться редкими"},
+        {"string": "Ларцы с уменьшенным на #% шансом могут оказаться редкими", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1753206712"]}}
+  },
+  {
+    "stat": {
       "ref": "Strongboxes in Areas will each contain an additional random Rare Item",
       "matchers": [
         {"string": "Каждый из ларцов содержит дополнительных редких предметов: #"},
@@ -38875,6 +40409,17 @@
   },
   {
     "stat": {
+      "ref": "Take no Extra Damage from Critical Strikes if you have a Magic Ring in left slot",
+      "matchers": [
+        {
+          "string": "Не получает дополнительный урон от критических ударов если в левом слоте находится волшебное кольцо"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_611839381"]}}
+  },
+  {
+    "stat": {
       "ref": "Talismans found in this Area are 1 Tier higher",
       "matchers": [
         {"string": "Талисманы, найденные в этой области, на # уровня(-ней) выше"},
@@ -39080,6 +40625,17 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_372478711"]}}
+  },
+  {
+    "stat": {
+      "ref": "Timeless Splinters dropped by Legion Monsters in Areas have #% chance to drop as Timeless Emblems instead",
+      "matchers": [
+        {
+          "string": "Выпадающие из монстров Легиона вневременные осколки с #% шансом могут стать вневременными эмблемами"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_407036985"]}}
   },
   {
     "stat": {
@@ -39369,6 +40925,15 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_252427115"]}}
+  },
+  {
+    "stat": {
+      "ref": "Trigger Level # Icicle Burst when you Hit a Frozen Enemy",
+      "matchers": [
+        {"string": "Вызывает срабатывание Взрыва сосулек # уровня когда вы наносите удар по замороженному врагу"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1357672429"]}}
   },
   {
     "stat": {
@@ -39880,6 +41445,74 @@
   },
   {
     "stat": {
+      "ref": "Unique Bosses drop an additional Basic Currency Item",
+      "matchers": [
+        {"string": "Из уникального босса выпадает дополнительной валюты: #"},
+        {"string": "Из уникального босса выпадает дополнительная валюта", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3014714876"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Divination Card",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительная гадальная карта"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1123167602"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Essence",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительная Сущность"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1503311893"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Item with random Influence",
+      "matchers": [
+        {"string": "Из уникальных боссов с #% шансом может выпасть дополнительный предмет со случайным влиянием"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2657125649"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Map Item",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительный предмет карт"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1946193520"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Sacrifice Fragment",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительный фрагмент Жертвы"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1384053575"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Scarab",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительный скарабей"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4086926366"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Silver Coin",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительная серебряная монета"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_364425699"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Bosses have #% chance to drop an additional Talisman",
+      "matchers": [{"string": "Из уникальных боссов с #% шансом может выпасть дополнительный талисман"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3546420819"]}}
+  },
+  {
+    "stat": {
       "ref": "Unique Bosses have #% increased Life",
       "matchers": [
         {"string": "Здоровье уникальных боссов повышено на #%"},
@@ -39905,6 +41538,27 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2747603858"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Map Bosses have #% chance to drop additional Map Currency Items",
+      "matchers": [{"string": "Из уникальных боссов карт с #% может выпасть дополнительная валюта карт"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1471729472"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Map Bosses have #% chance to drop an additional Atlas Base Type",
+      "matchers": [{"string": "Из уникальных боссов карт с #% может выпасть дополнительный базовый предмет Атласа"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_326199362"]}}
+  },
+  {
+    "stat": {
+      "ref": "Unique Map Bosses have #% chance to drop an additional Unique Item",
+      "matchers": [{"string": "Из уникальных боссов карт с #% может выпасть дополнительный уникальный предмет"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3978557462"]}}
   },
   {
     "stat": {
@@ -40123,6 +41777,13 @@
   },
   {
     "stat": {
+      "ref": "Voltaxic Sulphite Veins and Chests in Areas have #% chance to contain double Sulphite",
+      "matchers": [{"string": "Вольтаксовые сундуки и жилы с #% шансом могут содержать двойное количество сульфита"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1174549622"]}}
+  },
+  {
+    "stat": {
       "ref": "Vorici's Veiled",
       "matchers": [
         {
@@ -40273,6 +41934,13 @@
   },
   {
     "stat": {
+      "ref": "Warcry Skills have +# seconds to Cooldown",
+      "matchers": [{"string": "# к времени перезарядки боевых кличей"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_1504905117"]}}
+  },
+  {
+    "stat": {
       "ref": "Warcry Skills' Cooldown Time is 4 seconds",
       "matchers": [{"string": "Время перезарядки боевых кличей составляет 4 секунды"}]
     },
@@ -40304,6 +41972,13 @@
       "matchers": [{"string": "Восприимчивость от Волны осуждения накладывает #% к сопротивлению стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3139672534"]}}
+  },
+  {
+    "stat": {
+      "ref": "Weapons found in Areas have #% chance to drop with 20% Quality",
+      "matchers": [{"string": "Найденное оружие с #% шансом может выпасть с 20% качества"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3664934139"]}}
   },
   {
     "stat": {
@@ -41421,6 +43096,13 @@
   },
   {
     "stat": {
+      "ref": "Withered does not expire on Enemies Ignited by you",
+      "matchers": [{"string": "Увядание не истекает на подожженных вами врагах"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_279110104"]}}
+  },
+  {
+    "stat": {
       "ref": "Withering Step has #% increased Elusive Effect",
       "matchers": [
         {"string": "#% усиление эффекта Неуловимости от Губительного шага"},
@@ -41599,11 +43281,22 @@
     "trade": {"ids": {"explicit": ["explicit.stat_67132951"]}}
   },
   {
+    "stat": {"ref": "You are Crushed", "matchers": [{"string": "Вы сокрушены"}]},
+    "trade": {"ids": {"implicit": ["implicit.stat_846313030"]}}
+  },
+  {
     "stat": {
       "ref": "You are Cursed with Vulnerability, with #% increased Effect",
       "matchers": [{"string": "Вы прокляты Беззащитностью с усиленным на #% эффектом"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_694123963"]}}
+  },
+  {
+    "stat": {
+      "ref": "You are Hexproof if you have a Magic Ring in right slot",
+      "matchers": [{"string": "Вы являетесь Заговоренным если в правом слоте находится волшебное кольцо"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_165884462"]}}
   },
   {
     "stat": {
@@ -42206,6 +43899,13 @@
       "matchers": [{"string": "Вы получаете # урона хаосом в секунду в течение # секунд при убийстве"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4031081471"]}}
+  },
+  {
+    "stat": {
+      "ref": "You take #% of Damage from Blocked Hits",
+      "matchers": [{"string": "Вы получаете #% урона от заблокированных ударов"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_2905515354"]}}
   },
   {
     "stat": {
@@ -42996,6 +44696,17 @@
   },
   {
     "stat": {
+      "ref": "Your Scout Towers summon an additional minion",
+      "matchers": [
+        {"string": "Ваши Поисковые башни призывают дополнительных приспешников: #"},
+        {"string": "Ваши Поисковые башни призывают дополнительного приспешника", "value": 1},
+        {"string": "Ваши Поисковые башни призывают на # меньше дополнительных приспешников", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1441906885"]}}
+  },
+  {
+    "stat": {
       "ref": "Your Seismic Towers deal #% increased Damage",
       "matchers": [
         {"string": "Ваши сейсмические башни наносят увеличенный на #% урон"},
@@ -43308,6 +45019,13 @@
       "matchers": [{"string": "Ваши башни наносят увеличенный на #% урон за каждый активный тип башни"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2125952342"]}}
+  },
+  {
+    "stat": {
+      "ref": "Zana Missions in Areas have # additional Map option",
+      "matchers": [{"string": "Задания Заны предлагают дополнительно карт на выбор: #"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3343030527"]}}
   },
   {
     "stat": {"ref": "Zealot's Oath", "matchers": [{"string": "Обет фанатика"}]},
