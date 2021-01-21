@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-wrap items-center pb-2 -mx-1 -mt-1" @mouseleave="handleMouseLeaveStats">
+    <div class="flex flex-wrap items-center pb-2 -mx-1 -mt-1">
       <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
         @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ t('Links: {0}', [filters.linkedSockets.value]) }}</button>
       <div v-if="filters.mapTier" class="trade-tag">{{ t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
@@ -60,7 +60,7 @@
       </button>
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
-      <form @submit.prevent="handleStatsSubmit" @mouseleave="handleMouseLeaveStats">
+      <form @submit.prevent="handleStatsSubmit">
         <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
           :filter="filter"
           :item="item"
@@ -141,14 +141,6 @@ export default defineComponent({
       },
       handleStatsSubmit () {
         ctx.emit('submit')
-      },
-      handleMouseLeaveStats (e: MouseEvent) {
-        if (e.offsetY >= (e as any).fromElement.clientHeight) {
-          ctx.emit('submit')
-          if (document.activeElement instanceof HTMLElement) {
-            document.activeElement.blur()
-          }
-        }
       }
     }
   }

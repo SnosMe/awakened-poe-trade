@@ -26,7 +26,7 @@
       ref="tradeService"
       :filters="itemFilters"
       :item="item" />
-    <div v-if="!interactedOnce">
+    <div v-if="!interactedOnce" @mouseenter="handleSearchMouseenter">
       <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, watch, ref, nextTick, computed, Ref } from 'vue'
+import { defineComponent, PropType, watch, ref, nextTick, computed, Ref, ComponentPublicInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, ItemCategory, ParsedItem } from '@/parser'
 import TradeListing from './trade/TradeListing.vue'
@@ -80,7 +80,7 @@ export default defineComponent({
     // FilterName.vue
     const nameFilter = ref<{ toggleAccuracy(): void }>(null!)
     // FiltersBlock.vue
-    const filtersBlock = ref<{ showHidden: Ref<boolean> }>(null!)
+    const filtersBlock = ref<ComponentPublicInstance<{}, { showHidden: Ref<boolean> }>>(null!)
 
     watch(() => props.item, (item) => {
       itemFilters.value = createFilters(item)
@@ -162,6 +162,16 @@ export default defineComponent({
       nameFilter.value.toggleAccuracy()
     }
 
+    function handleSearchMouseenter (e: MouseEvent) {
+      if ((filtersBlock.value.$el as HTMLElement).contains(e.relatedTarget as HTMLElement)) {
+        interactedOnce.value = true
+
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur()
+        }
+      }
+    }
+
     const { t } = useI18n()
 
     return {
@@ -175,7 +185,8 @@ export default defineComponent({
       filtersBlock,
       showPredictedPrice,
       show,
-      applyItemBaseFilter
+      applyItemBaseFilter,
+      handleSearchMouseenter
     }
   }
 })
