@@ -201,6 +201,10 @@ export default defineComponent({
   @apply bg-yellow-700 text-yellow-100
 }
 
+.mod-type-fractured {
+  @apply bg-yellow-400 text-black
+}
+
 .mod-type-crafted {
   @apply bg-blue-600 text-blue-100
 }
@@ -317,6 +321,7 @@ export default defineComponent({
     "explicit": "свойство",
     "enchant": "зачарование",
     "crafted": "мастер",
+    "fractured": "расколотый",
     "Roll is not variable": "Ролл не варьируется",
     "Elemental damage is not the main source of DPS": "Стихийный урон не основной источник ДПСа",
     "Physical damage is not the main source of DPS": "Физический урон не основной источник ДПСа",
@@ -324,7 +329,8 @@ export default defineComponent({
     "Crafted Chaos Resistance without Explicit mod has no value": "Крафтовое сопротивление хаосу без \"родного\" свойства не имеет ценности",
     "Contributes to the item property": "Вносит вклад в параметр предмета",
     "Hidden for sake of familiar view of item stats": "Скрыт ради привычного просмотра свойств предмета",
-    "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование"
+    "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование",
+    "Select only if price-checking as base item for crafting": "Отмечайте, если проверяете цену в качестве базового предмета для крафта"
   }
 }
 </i18n>

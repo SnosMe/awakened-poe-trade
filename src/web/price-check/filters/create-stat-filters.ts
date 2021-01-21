@@ -22,7 +22,13 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
-    modifiers: [...item.modifiers]
+    modifiers: item.modifiers.map(mod => {
+      if (mod.type === ModifierType.Fractured && mod.trade.ids[ModifierType.Explicit]) {
+        return { ...mod, type: ModifierType.Explicit }
+      } else {
+        return mod
+      }
+    })
   }
 
   if (!item.isUnidentified) {
@@ -32,6 +38,11 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
       filterItemProp(ctx)
       filterPseudo(ctx)
     }
+  }
+
+  if (!item.isCorrupted && !item.isMirrored) {
+    ctx.modifiers = ctx.modifiers.filter(mod => mod.type !== ModifierType.Fractured)
+    ctx.modifiers.push(...item.modifiers.filter(mod => mod.type === ModifierType.Fractured))
   }
 
   ctx.filters.push(
@@ -210,6 +221,15 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         anointment.disabled = false
       } else if (!item.isCorrupted && !item.isMirrored) {
         anointment.hidden = 'Buyer will likely change anointment'
+      }
+    }
+  }
+
+  for (const filter of ctx.filters) {
+    if (filter.type === ModifierType.Fractured) {
+      const mod = ctx.item.modifiers.find(mod => mod.stat.ref === filter.statRef)!
+      if (mod.trade.ids[ModifierType.Explicit]) {
+        filter.hidden = 'Select only if price-checking as base item for crafting'
       }
     }
   }

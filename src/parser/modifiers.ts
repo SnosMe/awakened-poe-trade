@@ -6,7 +6,8 @@ export enum ModifierType {
   Implicit = 'implicit',
   Crafted = 'crafted',
   Enchant = 'enchant',
-  Veiled = 'veiled'
+  Veiled = 'veiled',
+  Fractured = 'fractured'
 }
 
 export interface ItemModifier extends Stat,

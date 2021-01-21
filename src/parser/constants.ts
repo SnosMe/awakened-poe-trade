@@ -47,6 +47,7 @@ export const TAG_BLOCK_CHANCE = 'Chance to Block: '
 export const IMPLICIT_SUFFIX = ' (implicit)'
 export const CRAFTED_SUFFIX = ' (crafted)'
 export const ENCHANT_SUFFIX = ' (enchant)'
+export const FRACTURED_SUFFIX = ' (fractured)'
 
 export const CORRUPTED = 'Corrupted'
 export const UNIDENTIFIED = 'Unidentified'
