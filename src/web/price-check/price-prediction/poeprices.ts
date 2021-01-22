@@ -55,6 +55,16 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   }
 }
 
+export function getExternalLink (item: ParsedItem) {
+  const query = stringify({
+    i: Buffer.from(item.rawText).toString('base64'),
+    l: league.value,
+    s: 'awakened-poe-trade',
+    w: 1
+  })
+  return `https://www.poeprices.info/api?${query}`
+}
+
 export async function sendFeedback (
   feedback: { text: string, option: 'fair' | 'low' | 'high' },
   prediction: { min: number, max: number, currency: 'chaos' | 'exalt' },

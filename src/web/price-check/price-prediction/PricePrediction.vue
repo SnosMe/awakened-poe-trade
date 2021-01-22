@@ -28,11 +28,14 @@
       </div>
       <div v-if="!showContrib" class="flex justify-between items-center">
         <button @click="showContrib = true" class="btn">Contribution to predicted price<i class="fas fa-chevron-down btn-icon ml-2"></i></button>
-        <div class="flex" v-if="!feedbackSent && (price.confidence < 80)">
+        <div class="flex" v-if="!feedbackSent && (price.confidence < 83)">
           <feedback-option :item="item" :prediction="price" @sent="feedbackSent = true" option="low" />
           <feedback-option :item="item" :prediction="price" @sent="feedbackSent = true" option="fair" />
           <feedback-option :item="item" :prediction="price" @sent="feedbackSent = true" option="high" />
         </div>
+        <button v-else
+          class="bg-gray-700 px-2 opacity-50 rounded"
+          @click="openWebsite">by poeprices.info</button>
       </div>
       <table v-else>
         <thead>
@@ -58,10 +61,11 @@
 
 <script lang="ts">
 import { defineComponent, watch, ref, PropType } from 'vue'
-import { RareItemPrice, requestPoeprices } from './poeprices'
+import { getExternalLink, RareItemPrice, requestPoeprices } from './poeprices'
 import FeedbackOption from './FeedbackOption.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { ParsedItem } from '@/parser'
+import { MainProcess } from '@/ipc/main-process-bindings'
 
 export default defineComponent({
   name: 'PricePrediction',
@@ -94,12 +98,19 @@ export default defineComponent({
       }
     }, { immediate: true })
 
+    function openWebsite () {
+      MainProcess.openSystemBrowser(
+        getExternalLink(props.item)
+      )
+    }
+
     return {
       price,
       error,
       loading,
       showContrib,
-      feedbackSent
+      feedbackSent,
+      openWebsite
     }
   }
 })
