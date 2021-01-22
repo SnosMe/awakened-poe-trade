@@ -87,11 +87,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, inject, ref, computed, watch, ComputedRef } from 'vue'
+import { defineComponent, PropType, inject, ref, computed, watch, ComputedRef, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { BulkSearch, execBulkSearch } from './pathofexile-bulk'
+import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pathofexile-bulk'
 import { tradeTag, getTradeEndpoint } from './common'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { selected as league } from '../../background/Leagues'
@@ -101,9 +101,14 @@ import { ParsedItem } from '@/parser'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 
 function useBulkApi () {
+  type BulkSearchExtended = BulkSearch & {
+    exa: { listed: ComputedRef<PricingResult[]> }
+    chaos: { listed: ComputedRef<PricingResult[]> }
+  }
+
   let searchId = 0
   const error = ref<string | null>(null)
-  const result = ref<BulkSearch | null>(null)
+  const result = shallowRef<BulkSearchExtended | null>(null)
 
   async function search (item: ParsedItem, filters: ItemFilters) {
     try {
@@ -114,11 +119,40 @@ function useBulkApi () {
       const _searchId = searchId
       const _result = await execBulkSearch(item, filters)
       if (_searchId === searchId) {
-        result.value = _result
+        result.value = {
+          exa: {
+            ..._result.exa,
+            listed: getResultsByQuery(_result.exa)
+          },
+          chaos: {
+            ..._result.chaos,
+            listed: getResultsByQuery(_result.chaos)
+          }
+        }
       }
     } catch (err) {
       error.value = err.message
     }
+  }
+
+  function getResultsByQuery (query: BulkSearch['exa' | 'chaos']) {
+    const items = shallowRef<PricingResult[]>([])
+    let requested = false
+
+    return computed(() => {
+      if (query.total && !requested) {
+        ;(async function () {
+          try {
+            requested = true
+            items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20))
+          } catch (err) {
+            error.value = err.message
+          }
+        })()
+      }
+
+      return items.value
+    })
   }
 
   return { error, result, search }
@@ -146,7 +180,7 @@ export default defineComponent({
       const arr = Array(20)
       if (!result.value) return arr
 
-      const listed = result.value[selectedCurr.value].listed
+      const listed = result.value[selectedCurr.value].listed.value
       arr.splice(0, listed.length, ...listed)
       return arr
     })

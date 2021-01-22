@@ -32,7 +32,7 @@ interface FetchResult {
   }
 }
 
-interface PricingResult {
+export interface PricingResult {
   id: string
   listedAt: string
   exchangeAmount: number
@@ -63,7 +63,7 @@ async function requestTradeResultList (body: TradeRequest) {
   return data
 }
 
-async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
+export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
   await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
   const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
@@ -95,12 +95,12 @@ export interface BulkSearch {
   exa: {
     queryId: string
     total: number
-    listed: PricingResult[]
+    listedIds: string[]
   }
   chaos: {
     queryId: string
     total: number
-    listed: PricingResult[]
+    listedIds: string[]
   }
 }
 
@@ -121,9 +121,7 @@ export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): P
     return {
       queryId: query.id,
       total: query.total,
-      listed: (query.total > 0)
-        ? await requestResults(query.id, query.result.slice(0, 20))
-        : []
+      listedIds: query.result
     }
   }))
 
