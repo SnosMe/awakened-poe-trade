@@ -30,6 +30,13 @@
       <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
+    <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
+      <div class="mb-1">{{ t('Support development on') }} <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer animate__animated animate__fadeInRight" src="@/assets/images/Patreon.svg"></div>
+      <i18n-t keypath="This tool relies on {0} and {1}, consider support them as well" tag="div">
+        <span @click="openLink('https://poeprices.info')" class="bg-gray-900 px-1 rounded cursor-pointer">poeprices.info</span>
+        <span @click="openLink('https://poe.ninja/support')" class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>
+      </i18n-t>
+    </div>
   </div>
 </template>
 
@@ -51,6 +58,9 @@ import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { Config } from '@/web/Config'
 import { ItemFilters, StatFilter } from './filters/interfaces'
 import { ModifierType } from '@/parser/modifiers'
+import { MainProcess } from '@/ipc/main-process-bindings'
+
+let _showSupportLinksCounter = 0
 
 export default defineComponent({
   name: 'CheckedItem',
@@ -172,6 +182,23 @@ export default defineComponent({
       }
     }
 
+    const showSupportLinks = ref(false)
+    watch(() => [props.item, interactedOnce.value], ([cItem, cInteracted], [pItem]) => {
+      if (_showSupportLinksCounter >= 13 && (!cInteracted || tradeAPI.value === 'bulk')) {
+        showSupportLinks.value = true
+        _showSupportLinksCounter = 0
+      } else {
+        showSupportLinks.value = false
+        if (cItem !== pItem) {
+          _showSupportLinksCounter += 1
+        }
+      }
+    })
+
+    function openLink (link: string) {
+      MainProcess.openSystemBrowser(link)
+    }
+
     const { t } = useI18n()
 
     return {
@@ -186,8 +213,19 @@ export default defineComponent({
       showPredictedPrice,
       show,
       applyItemBaseFilter,
-      handleSearchMouseenter
+      handleSearchMouseenter,
+      openLink,
+      showSupportLinks
     }
   }
 })
 </script>
+
+<i18n>
+{
+  "ru": {
+    "Support development on": "Поддержите разработку на",
+    "This tool relies on {0} and {1}, consider support them as well": "Это приложение полагается на сайт {1}, можете поддержать и его"
+  }
+}
+</i18n>
