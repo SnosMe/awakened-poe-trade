@@ -1,6 +1,6 @@
 # ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE Trade
 
-[![](./showcase/total-000-flat-square.svg)](https://somsubhra.com/github-release-stats/?username=SnosMe&repository=awakened-poe-trade)
+[![](./showcase/total-000-flat-square.svg)](https://somsubhra.github.io/github-release-stats/?username=SnosMe&repository=awakened-poe-trade)
 [![](./showcase/Patreon-Donate-F96854-style-flat-square-logo-patreon.svg)](https://patreon.com/awakened_poe_trade)
 [![](./showcase/Discrod-Join-7289DA.svg)](https://discord.gg/hXgSDS6)
 
