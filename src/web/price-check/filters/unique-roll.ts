@@ -6,7 +6,7 @@ import { StatFilter } from './interfaces'
 import { getRollAsSingleNumber } from '@/parser/utils'
 import { Config } from '@/web/Config'
 
-function isConstantMod (mod: UniqueItem['stats'][0]) {
+function isConstantMod (mod: UniqueItem['stats'][0]): boolean {
   return mod.bounds.every(b => b.min === b.max)
 }
 
@@ -23,7 +23,7 @@ export function uniqueModFilterPartial (
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ): void {
-  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType}`)
+  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType!}`)
   if (!uniqueInfo) return fallbackToExact(mod, filter)
 
   const modInfo = uniqueInfo.stats.find(stat =>
@@ -63,7 +63,7 @@ export function uniqueModFilterPartial (
   }
 }
 
-function fallbackToExact (mod: ItemModifier, filter: Writeable<StatFilter>) {
+function fallbackToExact (mod: ItemModifier, filter: Writeable<StatFilter>): void {
   if (mod.values) {
     filter.roll = getRollAsSingleNumber(mod.values)
     filter.defaultMin = filter.roll

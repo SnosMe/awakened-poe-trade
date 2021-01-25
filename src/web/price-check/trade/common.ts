@@ -24,7 +24,7 @@ export interface SearchResult {
 }
 
 export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[]): 'trade' | 'bulk' {
-  if (stats.some(s => s.disabled === false)) {
+  if (stats.some(s => !s.disabled)) {
     return 'trade'
   }
 
@@ -54,7 +54,7 @@ const ENDPOINT_BY_LANG = {
   ru: 'ru.pathofexile.com'
 }
 
-export function getTradeEndpoint () {
+export function getTradeEndpoint (): string {
   return ENDPOINT_BY_LANG[Config.store.language]
 }
 
@@ -71,7 +71,7 @@ export const RATE_LIMIT_RULES = {
   ]
 }
 
-export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers) {
+export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers): RateLimiter[] {
   if (!headers.has('x-rate-limit-rules')) return clientLimits
 
   const rules = headers.get('x-rate-limit-rules')!.split(',')
@@ -83,7 +83,7 @@ export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers)
   )
 }
 
-function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, stateStr: string) { /* eslint-disable no-console */
+function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, stateStr: string): RateLimiter[] { /* eslint-disable no-console */
   const DEBUG = false
   const DESYNC_FIX = 0
 
@@ -137,6 +137,7 @@ function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, state
     DEBUG && console.log('Add', rl.toString())
 
     Array(serverLimit.state).fill(undefined).forEach(() => {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       rl.wait()
     })
   }

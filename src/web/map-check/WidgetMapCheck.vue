@@ -88,7 +88,7 @@ export default defineComponent({
     const mapStats = computed(() => {
       return prepareMapStats(item.value!)
     })
-    const image = computed (() => {
+    const image = computed(() => {
       if (!item.value) return undefined
 
       const entry = mapName.value && MAP_IMGS.get(mapName.value)

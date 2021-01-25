@@ -50,6 +50,6 @@ export default defineComponent({
     return {
       result
     }
-  }  
+  }
 })
 </script>

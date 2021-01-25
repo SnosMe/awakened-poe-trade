@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     // 'spaced-comment': ['error', 'always', { markers: ['#region'], exceptions: ['#endregion'] }],
     'quote-props': ['error', 'consistent-as-needed'],
+    '@typescript-eslint/strict-boolean-expressions': 'off',
     // '@typescript-eslint/no-use-before-define': 'off',
     // 'vue/no-mutating-props': 'off',
     // '@typescript-eslint/member-delimiter-style': 'off',
@@ -27,7 +28,7 @@ module.exports = {
     // 'vue/no-deprecated-filter': 'off',
     // 'vue/no-deprecated-slot-attribute': 'off',
     // 'no-unused-vars': 'off',
-    // '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off'
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',

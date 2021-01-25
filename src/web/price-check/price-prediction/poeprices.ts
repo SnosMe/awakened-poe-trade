@@ -55,7 +55,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   }
 }
 
-export function getExternalLink (item: ParsedItem) {
+export function getExternalLink (item: ParsedItem): string {
   const query = stringify({
     i: Buffer.from(item.rawText).toString('base64'),
     l: league.value,
@@ -69,7 +69,7 @@ export async function sendFeedback (
   feedback: { text: string, option: 'fair' | 'low' | 'high' },
   prediction: { min: number, max: number, currency: 'chaos' | 'exalt' },
   item: ParsedItem
-) {
+): Promise<void> {
   const body = new FormData()
   body.append('selector', feedback.option)
   body.append('feedbacktxt', feedback.text)
