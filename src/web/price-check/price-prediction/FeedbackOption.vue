@@ -1,7 +1,7 @@
 <template>
   <ui-popover tag-name="div" trigger="click" placement="bottom" boundary="#price-window">
     <template #target>
-      <button class="bg-gray-700 px-2 opacity-50" :class="{ 'rounded-l': option === 'low', 'rounded-r': option === 'high' }"
+      <button class="bg-gray-700 px-2 py-1 text-gray-400 leading-none opacity-50" :class="{ 'rounded-l': option === 'low', 'rounded-r': option === 'high' }"
         >{{ option }}</button>
     </template>
     <template #content>
@@ -51,7 +51,7 @@ export default defineComponent({
         return 'Predicted price is fair.'
       }
     })
-    
+
     function submit () {
       ctx.emit('sent')
       sendFeedback({
