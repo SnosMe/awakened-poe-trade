@@ -6,7 +6,7 @@ import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_R
 import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { Config } from '@/web/Config'
-import { PriceCheckWidget } from '@/ipc/types'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ModifierType } from '@/parser/modifiers'
 
 export const CATEGORY_TO_TRADE_ID = new Map([

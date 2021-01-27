@@ -108,6 +108,13 @@ export const config = (() => {
     config.configVersion = 5
   }
 
+  if (config.configVersion < 6) {
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .showRateLimitState = false
+
+    config.configVersion = 6
+  }
+
   store.store = config
   return store
 })()

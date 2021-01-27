@@ -47,6 +47,7 @@ export interface WidgetMenu extends Widget {
 
 export interface PriceCheckWidget extends Widget {
   chaosPriceThreshold: number
+  showRateLimitState: boolean
 }
 
 export interface MapCheckWidget extends Widget {

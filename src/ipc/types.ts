@@ -1,4 +1,4 @@
-import { MapCheckWidget } from '@/web/overlay/interfaces'
+import { MapCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export interface League {
   id: string
@@ -50,10 +50,6 @@ interface Widget {
   wmFlags: (WidgetWellKnownFlag | string)[]
   // ---------------
   [key: string]: any
-}
-
-export interface PriceCheckWidget extends Widget {
-  chaosPriceThreshold: number
 }
 
 type WidgetWellKnownFlag =
@@ -140,7 +136,8 @@ export const defaultConfig: Config = {
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
-      chaosPriceThreshold: 0.05
+      chaosPriceThreshold: 0.05,
+      showRateLimitState: false
     } as PriceCheckWidget,
     {
       wmId: 3,
