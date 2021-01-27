@@ -3,6 +3,7 @@ import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { Config } from '@/web/Config'
 import { RateLimiter } from './RateLimiter'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export interface Account {
   name: string
@@ -85,7 +86,7 @@ export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers)
 
 function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, stateStr: string): RateLimiter[] { /* eslint-disable no-console */
   const DEBUG = false
-  const DESYNC_FIX = 0
+  const DESYNC_FIX = (Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget).apiLatencySeconds
 
   const limitRuleState = stateStr
     .split(',')

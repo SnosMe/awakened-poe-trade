@@ -48,6 +48,7 @@ export interface WidgetMenu extends Widget {
 export interface PriceCheckWidget extends Widget {
   chaosPriceThreshold: number
   showRateLimitState: boolean
+  apiLatencySeconds: number
 }
 
 export interface MapCheckWidget extends Widget {

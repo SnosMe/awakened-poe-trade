@@ -111,6 +111,8 @@ export const config = (() => {
   if (config.configVersion < 6) {
     config.widgets.find(w => w.wmType === 'price-check')!
       .showRateLimitState = false
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .apiLatencySeconds = 2
 
     config.configVersion = 6
   }

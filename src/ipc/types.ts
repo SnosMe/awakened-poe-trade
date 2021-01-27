@@ -137,7 +137,8 @@ export const defaultConfig: Config = {
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
       chaosPriceThreshold: 0.05,
-      showRateLimitState: false
+      showRateLimitState: false,
+      apiLatencySeconds: 2
     } as PriceCheckWidget,
     {
       wmId: 3,

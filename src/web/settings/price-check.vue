@@ -42,6 +42,15 @@
         <ui-radio v-model="config.priceCheckShowCursor" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
+      <div class="mb-4 flex">
+        <div class="flex mr-6">
+          <input v-model.number="apiLatencySeconds" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+          <span class="ml-2">{{ t('seconds') }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -83,6 +92,16 @@ export default defineComponent({
 
           configWidget.value.chaosPriceThreshold = value
         }
+      }),
+      apiLatencySeconds: computed<number>({
+        get () {
+          return configWidget.value.apiLatencySeconds
+        },
+        set (value) {
+          if (typeof value !== 'number') return
+
+          configWidget.value.apiLatencySeconds = Math.min(Math.max(value, 0.5), 10)
+        }
       })
     }
   }
@@ -100,7 +119,9 @@ export default defineComponent({
     "Exact roll": "Точное значение",
     "Show memorized cursor position": "Показывать запомненную позицию курсора",
     "Minimum buyout price": "Минимальная цена выкупа",
-    "Chaos Orbs": "Сфер хаоса"
+    "Chaos Orbs": "Сфер хаоса",
+    "Extra time to prevent spurious Rate limiting": "Добавочное время для предотвращения ложного срабатывания ограничения на запросы",
+    "seconds": "секунды"
   }
 }
 </i18n>

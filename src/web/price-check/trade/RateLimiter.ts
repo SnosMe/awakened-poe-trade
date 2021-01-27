@@ -18,39 +18,35 @@ export class RateLimiter {
     return this._wait(borrow)
   }
 
-  private async _wait (borrow: boolean, immediate = true): Promise<boolean> {
+  private async _wait (borrow: boolean): Promise<void> {
     if (this._destroyed) throw new Error('RateLimiter is no longer active')
 
-    if (this.state.stack.length >= this.max) {
+    if (this.isFullyUtilized()) {
       this.state.queue++
       await this.state.stack[0]
       this.state.queue--
-      return this._wait(borrow, false)
+      return this._wait(borrow)
     } else {
       if (borrow) {
         this.push()
-        if (this.state.stack.length === this.max) {
-          this.push(1.75 * 1000)
-        }
       }
-      return immediate
     }
   }
 
-  private push (extraTime = 0) {
+  private push () {
     const handle = new Promise<void>((resolve) => {
       setTimeout(() => {
         this.state.stack = this.state.stack.filter(entry => entry !== handle)
         resolve()
-      }, this.window * 1000 + extraTime)
+      }, this.window * 1000)
     })
     this.state.stack.push(handle)
   }
 
   static async waitMulti (limiters: RateLimiter[]): Promise<void> {
-    const res = await Promise.all(limiters.map(rl => rl.wait(false)))
-    if (res.every(immediate => immediate)) {
-      await Promise.all(limiters.map(rl => rl.wait()))
+    await Promise.all(limiters.map(rl => rl.wait(false)))
+    if (limiters.every(rl => !rl.isFullyUtilized())) {
+      limiters.forEach(rl => rl.wait())
     } else {
       return this.waitMulti(limiters)
     }
@@ -59,6 +55,10 @@ export class RateLimiter {
   isEqualLimit (other: { max: number, window: number }) {
     return this.max === other.max &&
       this.window === other.window
+  }
+
+  isFullyUtilized () {
+    return this.state.stack.length >= this.max
   }
 
   destroy () {
