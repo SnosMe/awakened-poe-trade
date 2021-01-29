@@ -210,6 +210,18 @@
   },
   {
     "query": [
+      "Abrasive Catalyst",
+      "Fertile Catalyst",
+      "Imbued Catalyst",
+      "Intrinsic Catalyst",
+      "Prismatic Catalyst",
+      "Tempering Catalyst",
+      "Turbulent Catalyst"
+    ],
+    "items": []
+  },
+  {
+    "query": [
       "timeless-eternal-empire-splinter",
       "timeless-karui-splinter",
       "timeless-maraketh-splinter",
