@@ -54,7 +54,7 @@ async function requestTradeResultList (body: TradeRequest) {
     },
     body: JSON.stringify(body)
   })
-  RATE_LIMIT_RULES.EXCHANGE = adjustRateLimits(RATE_LIMIT_RULES.EXCHANGE, response.headers)
+  adjustRateLimits(RATE_LIMIT_RULES.EXCHANGE, response.headers)
   const data: SearchResult = await response.json()
   if (data.error) {
     throw new Error(data.error.message)
@@ -67,7 +67,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
   await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
   const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
-  RATE_LIMIT_RULES.FETCH = adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
+  adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
   const data: { result: FetchResult[], error: SearchResult['error'] } = await response.json()
   if (data.error) {
     throw new Error(data.error.message)

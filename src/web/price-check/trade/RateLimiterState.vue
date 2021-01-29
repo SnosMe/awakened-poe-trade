@@ -33,12 +33,12 @@ export default defineComponent({
 
       return LIMITS.map((limit) => ({
         policy: limit.policy,
-        hasQueue: limit.rules.some(rl => rl.state.queue),
-        rules: limit.rules.map(rl => ({
+        hasQueue: Array.from(limit.rules).some(rl => rl.queue.value),
+        rules: Array.from(limit.rules).map(rl => ({
           max: rl.max,
           window: rl.window,
-          active: rl.state.stack.length,
-          queue: rl.state.queue
+          active: rl.stack.length,
+          queue: rl.queue.value
         }))
       }))
     })

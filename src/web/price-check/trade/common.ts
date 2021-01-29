@@ -4,6 +4,7 @@ import { Config } from '@/web/Config'
 import { RateLimiter } from './RateLimiter'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
+import { shallowReactive } from 'vue'
 
 export interface Account {
   name: string
@@ -60,36 +61,30 @@ export function getTradeEndpoint (): string {
 }
 
 export const RATE_LIMIT_RULES = {
-  SEARCH: [
-    new RateLimiter(8, 6),
-    new RateLimiter(12, 30),
-    new RateLimiter(15, 60)
-  ],
-  EXCHANGE: [
-    new RateLimiter(8, 6),
-    new RateLimiter(12, 30),
-    new RateLimiter(15, 60)
-  ],
-  FETCH: [
-    new RateLimiter(4, 4),
-    new RateLimiter(8, 12),
-    new RateLimiter(10, 30)
-  ]
+  SEARCH: shallowReactive(new Set([
+    new RateLimiter(1, 5)
+  ])),
+  EXCHANGE: shallowReactive(new Set([
+    new RateLimiter(1, 5)
+  ])),
+  FETCH: shallowReactive(new Set([
+    new RateLimiter(1, 5)
+  ]))
 }
 
-export function adjustRateLimits (clientLimits: RateLimiter[], headers: Headers): RateLimiter[] {
-  if (!headers.has('x-rate-limit-rules')) return clientLimits
+export function adjustRateLimits (clientLimits: Set<RateLimiter>, headers: Headers): void {
+  if (!headers.has('x-rate-limit-rules')) return
 
   const rules = headers.get('x-rate-limit-rules')!.split(',')
 
-  return _adjustRateLimits(
+  _adjustRateLimits(
     clientLimits,
     rules.map(rule => headers.get(`x-rate-limit-${rule}`)!).join(','),
     rules.map(rule => headers.get(`x-rate-limit-${rule}-state`)!).join(',')
   )
 }
 
-function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, stateStr: string): RateLimiter[] { /* eslint-disable no-console */
+function _adjustRateLimits (clientLimits: Set<RateLimiter>, limitStr: string, stateStr: string): void { /* eslint-disable no-console */
   const DEBUG = false
   const DESYNC_FIX = (Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget).apiLatencySeconds
 
@@ -110,43 +105,44 @@ function _adjustRateLimits (clientLimits: RateLimiter[], limitStr: string, state
   for (const limit of clientLimits) {
     const isActive = limitRule.some(serverLimit => limit.isEqualLimit(serverLimit))
     if (!isActive) {
+      clientLimits.delete(limit)
       limit.destroy()
       DEBUG && console.log('Destroy', limit.toString())
     }
   }
 
-  // filter active
-  clientLimits = clientLimits.filter(limit =>
-    limitRule.some(serverLimit => limit.isEqualLimit(serverLimit))
-  )
-
   // compare client<>server state
   for (const limit of clientLimits) {
     const serverLimit = limitRule.find(serverLimit => limit.isEqualLimit(serverLimit))!
-    const delta = (serverLimit.state - limit.state.stack.length)
+    const delta = (serverLimit.state - limit.stack.length)
 
     if (delta === 0) {
       DEBUG && console.log('Limits are in sync')
     } else if (delta > 0) {
       DEBUG && console.error(`Rate limit state on Server is greater by ${Math.abs(delta)}. Bursting to prevent rate limiting.`)
+      for (let i = 0; i < Math.min(delta, limit.available); ++i) {
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        limit.wait()
+      }
     } else if (delta < 0) {
       DEBUG && console.warn(`Rate limit state on Client is greater by ${Math.abs(delta)}`)
     }
   }
 
   // add new
+  serverLimits:
   for (const serverLimit of limitRule) {
-    if (clientLimits.some(limit => limit.isEqualLimit(serverLimit))) continue
+    for (const limit of clientLimits) {
+      if (limit.isEqualLimit(serverLimit)) continue serverLimits
+    }
 
     const rl = new RateLimiter(serverLimit.max, serverLimit.window)
-    clientLimits.push(rl)
+    clientLimits.add(rl)
     DEBUG && console.log('Add', rl.toString())
 
-    Array(serverLimit.state).fill(undefined).forEach(() => {
+    for (let i = 0; i < serverLimit.state; ++i) {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       rl.wait()
-    })
+    }
   }
-
-  return clientLimits
 }
