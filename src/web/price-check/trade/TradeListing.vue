@@ -157,7 +157,11 @@ function useTradeApi () {
         )
       )
       if (existingRes) {
-        existingRes.listedTimes += 1
+        if (existingRes.stackSize) {
+          existingRes.stackSize += result.stackSize!
+        } else {
+          existingRes.listedTimes += 1
+        }
       } else {
         out.push({ listedTimes: 1, ...result })
       }

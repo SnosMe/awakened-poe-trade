@@ -34,8 +34,8 @@ export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[]): 'tra
 
 export function tradeTag (item: ParsedItem): string | undefined {
   if (
-    item.category === ItemCategory.Map &&
-    item.rarity === ItemRarity.Unique
+    (item.rarity === ItemRarity.DivinationCard) ||
+    (item.category === ItemCategory.Map && item.rarity === ItemRarity.Unique)
   ) return
 
   let name = item.baseType || item.name
