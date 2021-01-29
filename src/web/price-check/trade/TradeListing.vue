@@ -119,6 +119,9 @@ import { Config } from '@/web/Config'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
+import { artificialSlowdown } from './artificial-slowdown'
+
+const slowdown = artificialSlowdown(1100)
 
 const SHOW_RESULTS = 20
 const API_FETCH_LIMIT = 100
@@ -243,19 +246,29 @@ export default defineComponent({
     const wm = inject<WidgetManager>('wm')!
     const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
 
-    const { error, searchResult, fetchResults, groupedResults, search } = useTradeApi()
+    watch(() => props.item, (item) => {
+      slowdown.reset(item)
+    }, { immediate: true })
+
+    const { error, searchResult, groupedResults, search } = useTradeApi()
 
     const { t } = useI18n()
 
     return {
       t,
       list: searchResult,
-      groupedResults: computed(() => ([
-        ...groupedResults.value,
-        ...(groupedResults.value.length < SHOW_RESULTS
-          ? Array<undefined>(SHOW_RESULTS - groupedResults.value.length)
-          : [])
-      ])),
+      groupedResults: computed(() => {
+        if (!slowdown.isReady.value) {
+          return Array<undefined>(SHOW_RESULTS)
+        } else {
+          return [
+            ...groupedResults.value,
+            ...(groupedResults.value.length < SHOW_RESULTS
+              ? Array<undefined>(SHOW_RESULTS - groupedResults.value.length)
+              : [])
+          ]
+        }
+      }),
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
       config: computed(() => Config.store),

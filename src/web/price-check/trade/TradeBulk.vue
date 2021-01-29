@@ -99,6 +99,9 @@ import { Config } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
+import { artificialSlowdown } from './artificial-slowdown'
+
+const slowdown = artificialSlowdown(1100)
 
 function useBulkApi () {
   type BulkSearchExtended = BulkSearch & {
@@ -176,9 +179,13 @@ export default defineComponent({
 
     const selectedCurr = ref<'chaos' | 'exa'>('chaos')
 
+    watch(() => props.item, (item) => {
+      slowdown.reset(item)
+    }, { immediate: true })
+
     const selectedResults = computed(() => {
       const arr = Array(20)
-      if (!result.value) return arr
+      if (!slowdown.isReady.value || !result.value) return arr
 
       const listed = result.value[selectedCurr.value].listed.value
       arr.splice(0, listed.length, ...listed)
