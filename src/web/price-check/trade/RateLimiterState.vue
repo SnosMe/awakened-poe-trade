@@ -27,6 +27,7 @@ export default defineComponent({
     const limits = computed(() => {
       const LIMITS = [
         { policy: 'trade-search-request-limit', rules: RATE_LIMIT_RULES.SEARCH },
+        { policy: 'trade-exchange-request-limit', rules: RATE_LIMIT_RULES.EXCHANGE },
         { policy: 'trade-fetch-request-limit', rules: RATE_LIMIT_RULES.FETCH }
       ]
 

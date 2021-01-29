@@ -44,7 +44,7 @@ export interface PricingResult {
 }
 
 async function requestTradeResultList (body: TradeRequest) {
-  await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
+  await RateLimiter.waitMulti(RATE_LIMIT_RULES.EXCHANGE)
 
   const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${league.value}`, {
     method: 'POST',
@@ -54,7 +54,7 @@ async function requestTradeResultList (body: TradeRequest) {
     },
     body: JSON.stringify(body)
   })
-  RATE_LIMIT_RULES.SEARCH = adjustRateLimits(RATE_LIMIT_RULES.SEARCH, response.headers)
+  RATE_LIMIT_RULES.EXCHANGE = adjustRateLimits(RATE_LIMIT_RULES.EXCHANGE, response.headers)
   const data: SearchResult = await response.json()
   if (data.error) {
     throw new Error(data.error.message)

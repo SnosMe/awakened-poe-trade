@@ -65,6 +65,11 @@ export const RATE_LIMIT_RULES = {
     new RateLimiter(12, 30),
     new RateLimiter(15, 60)
   ],
+  EXCHANGE: [
+    new RateLimiter(8, 6),
+    new RateLimiter(12, 30),
+    new RateLimiter(15, 60)
+  ],
   FETCH: [
     new RateLimiter(4, 4),
     new RateLimiter(8, 12),
