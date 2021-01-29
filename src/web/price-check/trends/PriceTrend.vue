@@ -37,8 +37,8 @@
             plotOptions: { area: { fillTo: 'end' } },
             yaxis: {
               show: false,
-              min: Math.min(...trend.receive.graphPoints) - trend.changeVal,
-              max: Math.max(...trend.receive.graphPoints) + trend.changeVal
+              min: Math.min(...trend.receive.graphPoints) - (trend.changeVal || 1),
+              max: Math.max(...trend.receive.graphPoints) + (trend.changeVal || 1)
             }
           }"
           :series="[{
