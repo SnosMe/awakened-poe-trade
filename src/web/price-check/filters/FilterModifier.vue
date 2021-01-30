@@ -245,6 +245,7 @@ export default defineComponent({
 .search-text-full {
   position: absolute;
   left: 0px;
+  right: 0px;
   top: 0px;
   padding-bottom: 1px;
   z-index: 10;
