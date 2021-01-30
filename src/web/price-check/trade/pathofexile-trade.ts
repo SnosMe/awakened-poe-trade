@@ -8,6 +8,7 @@ import { RateLimiter } from './RateLimiter'
 import { Config } from '@/web/Config'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ModifierType } from '@/parser/modifiers'
+import { Cache } from './Cache'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
@@ -471,34 +472,51 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   return body
 }
 
-export async function requestTradeResultList (body: TradeRequest, leagueId: string) {
-  await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
+const cache = new Cache()
 
-  const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-  adjustRateLimits(RATE_LIMIT_RULES.SEARCH, response.headers)
-  const data: SearchResult = await response.json()
-  if (data.error) {
-    throw new Error(data.error.message)
+export async function requestTradeResultList (body: TradeRequest, leagueId: string): Promise<SearchResult> {
+  let data = cache.get<SearchResult>([body, leagueId])
+
+  if (!data) {
+    await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
+  
+    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    })
+    adjustRateLimits(RATE_LIMIT_RULES.SEARCH, response.headers)
+
+    data = await response.json() as SearchResult
+    if (data.error) {
+      throw new Error(data.error.message)
+    }
+
+    cache.set<SearchResult>([body, leagueId], data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
   }
 
   return data
 }
 
 export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
-  await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
+  type ResponseT = { result: FetchResult[], error: SearchResult['error'] }
+  let data = cache.get<ResponseT>(resultIds)
 
-  const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
-  adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
-  const data: { result: FetchResult[], error: SearchResult['error'] } = await response.json()
-  if (data.error) {
-    throw new Error(data.error.message)
+  if (!data) {
+    await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
+  
+    const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
+    adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
+
+    data = await response.json() as ResponseT
+    if (data.error) {
+      throw new Error(data.error.message)
+    }
+
+    cache.set<ResponseT>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
   }
 
   return data.result.map(result => {
