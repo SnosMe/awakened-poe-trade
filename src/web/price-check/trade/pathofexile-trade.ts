@@ -174,7 +174,7 @@ interface FetchResult {
   }
   listing: {
     indexed: string
-    price: {
+    price?: {
       amount: number
       currency: string
       type: '~price'
@@ -535,8 +535,8 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
       level: result.item.properties?.find(prop => prop.type === 5)?.values[0][0],
       listedAt: result.listing.indexed,
-      priceAmount: result.listing.price.amount,
-      priceCurrency: result.listing.price.currency,
+      priceAmount: result.listing.price?.amount ?? 0,
+      priceCurrency: result.listing.price?.currency ?? 'no price',
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online
