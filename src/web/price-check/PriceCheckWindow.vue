@@ -51,12 +51,12 @@
       </div>
     </div>
     <div class="layout-column flex-1 min-w-0">
-      <div class="flex pointer-events-auto" :class="{
+      <div class="flex" :class="{
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
-        <related-items :item="item" />
-        <rate-limiter-state />
+        <related-items :item="item" class="pointer-events-auto" />
+        <rate-limiter-state class="pointer-events-auto" />
       </div>
     </div>
   </div>

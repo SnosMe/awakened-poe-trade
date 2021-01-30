@@ -1,8 +1,9 @@
 <template>
   <button :class="[$style.button, { [$style.limited]: isLimited }]"
-    @click="showRateLimitState = !showRateLimitState">Rate limiting</button>
+    @click="showRateLimitState = !showRateLimitState" v-bind="$attrs">Rate limiting</button>
   <div v-if="showRateLimitState"
-    class="font-sans p-4 bg-gray-800 text-gray-400 mb-8 border border-gray-900 absolute bottom-0" style="border-width: 0.25rem;">
+    class="font-sans p-4 bg-gray-800 text-gray-400 mb-8 border border-gray-900 absolute bottom-0"
+    style="border-width: 0.25rem;" v-bind="$attrs">
     <div v-for="limit in limits" :key="limit.policy">
       <div :class="{ 'text-red-400': limit.hasQueue }">Policy: {{ limit.policy }}</div>
       <div>
@@ -21,6 +22,7 @@ import { RATE_LIMIT_RULES } from './common'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export default defineComponent({
+  inheritAttrs: false,
   setup () {
     const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
 
