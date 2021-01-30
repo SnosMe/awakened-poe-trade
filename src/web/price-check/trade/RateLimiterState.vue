@@ -52,9 +52,7 @@ export default defineComponent({
         return widget.config.value.showRateLimitState
       },
       set (value) {
-        if (!isLimited.value) {
-          widget.config.value.showRateLimitState = value
-        }
+        widget.config.value.showRateLimitState = value
       }
     })
 
