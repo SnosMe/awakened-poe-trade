@@ -62,6 +62,11 @@ export class RateLimiter {
   }
 
   static estimateTime (count: number, limiters: Iterable<RateLimiter>, ignoreState = false): number {
+    // NOTE: Cannot handle existing queue in simulation, because
+    //       entries in queue can depend on other limiters in `waitMulti` call.
+    //       It means that time returned by `estimateTime` will be increased
+    //       multiple times between calls until queue is cleared.
+
     let simulation: Array<{ max: number, window: number, stack: number[] }>
     {
       const now = Date.now()
@@ -114,7 +119,7 @@ export class RateLimiter {
   destroy () {
     this._destroyed = true
     if (this.queue.value) {
-      // shortcircuit awaiters
+      // shortcircuit awaiters in queue
       this.stack[0].cancel(new Error('RateLimiter is no longer active'))
     }
   }
