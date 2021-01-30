@@ -2,7 +2,7 @@ import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES } from './common'
+import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { Config } from '@/web/Config'
@@ -478,6 +478,11 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
   let data = cache.get<SearchResult>([body, leagueId])
 
   if (!data) {
+    preventQueueCreation([
+      { count: 1, limiters: RATE_LIMIT_RULES.SEARCH },
+      { count: 1, limiters: RATE_LIMIT_RULES.FETCH }
+    ])
+
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
   
     const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {

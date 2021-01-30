@@ -61,6 +61,43 @@ export class RateLimiter {
     }
   }
 
+  static estimateTime (count: number, limiters: Iterable<RateLimiter>, ignoreState = false): number {
+    let simulation: Array<{ max: number, window: number, stack: number[] }>
+    {
+      const now = Date.now()
+      simulation = Array.from(limiters).map(l => ({
+        max: l.max,
+        window: l.window,
+        stack: ignoreState
+          ? []
+          : l.stack
+            .map(entry => entry.releasedAt - now)
+            .sort((a, b) => a - b)
+      }))
+    }
+
+    let total = 0
+    while (count--) {
+      while (simulation.some(limit => limit.stack.length >= limit.max)) {
+        const waitTime = simulation.reduce((ms, limit) =>
+          (limit.stack.length >= limit.max)
+            ? Math.max(limit.stack[0] - total, ms) : ms, 0)
+
+        total += waitTime
+
+        for (const limit of simulation) {
+          limit.stack = limit.stack.filter(time => time > total)
+        }
+      }
+
+      for (const limit of simulation) {
+        limit.stack.push(total + limit.window * 1000)
+      }
+    }
+
+    return total
+  }
+
   isEqualLimit (other: { max: number, window: number }) {
     return this.max === other.max &&
       this.window === other.window
@@ -89,6 +126,7 @@ export class RateLimiter {
 
 class ResourceHandle {
   public borrowedAt: number
+  public releasedAt: number
   public promise: Promise<void>
 
   private _tmid!: ReturnType<typeof setTimeout>
@@ -98,6 +136,7 @@ class ResourceHandle {
 
   constructor (millis: number, cb: () => void) {
     this.borrowedAt = Date.now()
+    this.releasedAt = this.borrowedAt + millis
     this._cb = cb
     this.promise = new Promise((_resolve, _reject) => {
       this._resolve = _resolve

@@ -146,3 +146,17 @@ function _adjustRateLimits (clientLimits: Set<RateLimiter>, limitStr: string, st
     }
   }
 }
+
+export function preventQueueCreation (targets: Array<{ count: number, limiters: Iterable<RateLimiter> }>) {
+  const estimatedMillis = Math.max(...targets.map(target => {
+    const estimated = RateLimiter.estimateTime(target.count, target.limiters)
+    const estimatedCleanState = RateLimiter.estimateTime(target.count, target.limiters, true)
+
+    // ignore if impossible to run without queue
+    return (estimated === estimatedCleanState) ? 0 : estimated
+  }))
+
+  if (estimatedMillis >= 1500) {
+    throw new Error(`Retry after ${Math.round(estimatedMillis / 1000)} seconds`)
+  }
+}

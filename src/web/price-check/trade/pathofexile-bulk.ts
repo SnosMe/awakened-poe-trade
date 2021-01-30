@@ -1,6 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { selected as league } from '@/web/background/Leagues'
-import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag } from './common'
+import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -50,6 +50,11 @@ async function requestTradeResultList (body: TradeRequest): Promise<SearchResult
   let data = cache.get<SearchResult>([body, league.value])
 
   if (!data) {
+    preventQueueCreation([
+      { count: 2, limiters: RATE_LIMIT_RULES.EXCHANGE },
+      { count: 1, limiters: RATE_LIMIT_RULES.FETCH }
+    ])
+
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.EXCHANGE)
 
     const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${league.value}`, {
