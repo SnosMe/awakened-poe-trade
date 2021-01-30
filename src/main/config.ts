@@ -110,7 +110,7 @@ export const config = (() => {
 
   if (config.configVersion < 6) {
     config.widgets.find(w => w.wmType === 'price-check')!
-      .showRateLimitState = false
+      .showRateLimitState = (config.logLevel === 'debug')
     config.widgets.find(w => w.wmType === 'price-check')!
       .apiLatencySeconds = 2
 

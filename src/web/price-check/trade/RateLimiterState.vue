@@ -1,7 +1,7 @@
 <template>
-  <button :class="[$style.button, { [$style.limitted]: isLimitted }]"
+  <button :class="[$style.button, { [$style.limited]: isLimited }]"
     @click="showRateLimitState = !showRateLimitState">Rate limiting</button>
-  <div v-if="show"
+  <div v-if="showRateLimitState"
     class="font-sans p-4 bg-gray-800 text-gray-400 mb-8 border border-gray-900 absolute bottom-0" style="border-width: 0.25rem;">
     <div v-for="limit in limits" :key="limit.policy">
       <div :class="{ 'text-red-400': limit.hasQueue }">Policy: {{ limit.policy }}</div>
@@ -43,26 +43,23 @@ export default defineComponent({
       }))
     })
 
-    const isLimitted = computed(() => limits.value.some(limit => limit.hasQueue))
+    const isLimited = computed(() => limits.value.some(limit => limit.hasQueue))
 
     const showRateLimitState = computed<boolean>({
       get () {
         return widget.config.value.showRateLimitState
       },
       set (value) {
-        if (!isLimitted.value) {
+        if (!isLimited.value) {
           widget.config.value.showRateLimitState = value
         }
       }
     })
 
-    const show = computed(() => showRateLimitState.value || isLimitted.value)
-
     return {
       limits,
-      show,
       showRateLimitState,
-      isLimitted
+      isLimited
     }
   }
 })
@@ -78,7 +75,13 @@ export default defineComponent({
   bottom: 0;
 }
 
-.limitted {
+.limited {
   @apply bg-red-700 text-red-200;
+
+  /* Animate.css */
+  :global {
+    animation: shakeX;
+    animation-duration: 1s;
+  }
 }
 </style>
