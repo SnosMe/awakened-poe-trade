@@ -1,4 +1,4 @@
-import { computed, shallowRef } from 'vue'
+import { computed, shallowRef, triggerRef } from 'vue'
 
 export function artificialSlowdown (ms: number) {
   const isReady = shallowRef(false)
@@ -14,6 +14,8 @@ export function artificialSlowdown (ms: number) {
           tmid = null
         }
         isReady.value = false
+        // force reactivity, even if isReady was `false`
+        triggerRef(isReady)
       }
     },
     isReady: computed(() => {
