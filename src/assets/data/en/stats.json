@@ -14793,7 +14793,13 @@
       "ref": "#% of Physical Damage Leeched as Life",
       "matchers": [{"string": "#% of Physical Damage Leeched as Life"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3764265320"], "implicit": ["implicit.stat_3764265320"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3764265320"],
+        "implicit": ["implicit.stat_3764265320"],
+        "fractured": ["fractured.stat_3764265320"]
+      }
+    }
   },
   {
     "stat": {
@@ -15907,7 +15913,7 @@
       "ref": "+# to Armour while you have Fortify",
       "matchers": [{"string": "# to Armour while you have Fortify"}]
     },
-    "trade": {"ids": {"enchant": ["enchant.stat_153004860"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_153004860"], "enchant": ["enchant.stat_153004860"]}}
   },
   {
     "stat": {
@@ -16145,7 +16151,7 @@
       "ref": "+# to Level of all Raise Spectre Gems",
       "matchers": [{"string": "# to Level of all Raise Spectre Gems"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3235814433"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3235814433"], "fractured": ["fractured.stat_3235814433"]}}
   },
   {
     "stat": {
@@ -18404,14 +18410,14 @@
       "ref": "+#% to Quality of Socketed Chaos Gems",
       "matchers": [{"string": "#% to Quality of Socketed Chaos Gems"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_2062835769"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2062835769"], "implicit": ["implicit.stat_2062835769"]}}
   },
   {
     "stat": {
       "ref": "+#% to Quality of Socketed Cold Gems",
       "matchers": [{"string": "#% to Quality of Socketed Cold Gems"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_1164882313"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1164882313"], "implicit": ["implicit.stat_1164882313"]}}
   },
   {
     "stat": {
@@ -18425,7 +18431,7 @@
       "ref": "+#% to Quality of Socketed Fire Gems",
       "matchers": [{"string": "#% to Quality of Socketed Fire Gems"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_3422008440"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3422008440"], "implicit": ["implicit.stat_3422008440"]}}
   },
   {
     "stat": {"ref": "+#% to Quality of Socketed Gems", "matchers": [{"string": "#% to Quality of Socketed Gems"}]},
@@ -21024,7 +21030,7 @@
         {"string": "Added Small Passive Skills grant: +4% to Fire Damage over Time Multiplier", "value": 18},
         {"string": "Added Small Passive Skills grant: +4% to Chaos Damage over Time Multiplier", "value": 19},
         {
-          "string": "Added Small Passive Skills grant: Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments\nAdded Small Passive Skills grant: Staff Attacks deal 12% increased Damage with Hits and Ailments",
+          "string": "Added Small Passive Skills grant: Staff Attacks deal 12% increased Damage with Hits and Ailments\nAdded Small Passive Skills grant: Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments",
           "value": 2
         },
         {"string": "Added Small Passive Skills grant: +4% to Physical Damage over Time Multiplier", "value": 20},
@@ -21044,7 +21050,7 @@
         {"string": "Added Small Passive Skills grant: Exerted Attacks deal 20% increased Damage", "value": 28},
         {"string": "Added Small Passive Skills grant: 15% increased Critical Strike Chance", "value": 29},
         {
-          "string": "Added Small Passive Skills grant: Dagger Attacks deal 12% increased Damage with Hits and Ailments\nAdded Small Passive Skills grant: Claw Attacks deal 12% increased Damage with Hits and Ailments",
+          "string": "Added Small Passive Skills grant: Claw Attacks deal 12% increased Damage with Hits and Ailments\nAdded Small Passive Skills grant: Dagger Attacks deal 12% increased Damage with Hits and Ailments",
           "value": 3
         },
         {"string": "Added Small Passive Skills grant: Minions have 12% increased maximum Life", "value": 30},
@@ -36917,7 +36923,7 @@
       "ref": "Socketed Attacks have +# to Total Mana Cost",
       "matchers": [{"string": "Socketed Attacks have # to Total Mana Cost"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2264586521"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2264586521"], "fractured": ["fractured.stat_2264586521"]}}
   },
   {
     "stat": {
@@ -38096,7 +38102,7 @@
       "ref": "Socketed Gems are Supported by Level # Urgent Orders",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Urgent Orders"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_131"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_131", "explicit.stat_1485525812"]}}
   },
   {
     "stat": {
@@ -39435,6 +39441,16 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2392278281"]}}
+  },
+  {
+    "stat": {
+      "ref": "The First 3 Possessed Monsters have a #% chance to drop an additional Winged Scarab",
+      "matchers": [
+        {"string": "The First 3 Possessed Monsters have a #% chance to drop an additional Winged Scarab"},
+        {"string": "The First 3 Possessed Monsters drop an additional Winged Scarab", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1697321918"]}}
   },
   {
     "stat": {

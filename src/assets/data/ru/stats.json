@@ -15206,7 +15206,13 @@
       "ref": "#% of Physical Damage Leeched as Life",
       "matchers": [{"string": "#% от физического урона похищается в виде здоровья"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3764265320"], "implicit": ["implicit.stat_3764265320"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3764265320"],
+        "implicit": ["implicit.stat_3764265320"],
+        "fractured": ["fractured.stat_3764265320"]
+      }
+    }
   },
   {
     "stat": {
@@ -16342,7 +16348,7 @@
       "ref": "+# to Armour while you have Fortify",
       "matchers": [{"string": "# к броне, пока на вас действует Укрепление"}]
     },
-    "trade": {"ids": {"enchant": ["enchant.stat_153004860"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_153004860"], "enchant": ["enchant.stat_153004860"]}}
   },
   {
     "stat": {"ref": "+# to Brute Force Level for Heists", "matchers": [{"string": "# к уровню Грубой силы в Кражах"}]},
@@ -16577,7 +16583,7 @@
       "ref": "+# to Level of all Raise Spectre Gems",
       "matchers": [{"string": "# к уровню всех камней Сотворение призрака"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3235814433"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3235814433"], "fractured": ["fractured.stat_3235814433"]}}
   },
   {
     "stat": {
@@ -17103,7 +17109,7 @@
     "trade": {"ids": {"implicit": ["implicit.stat_4138979329"]}}
   },
   {
-    "stat": {"ref": "+# to Maximum Rage", "matchers": [{"string": "# к максимуму cвирепости"}]},
+    "stat": {"ref": "+# to Maximum Rage", "matchers": [{"string": "# к максимуму свирепости"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1181501418"], "implicit": ["implicit.stat_1181501418"]}}
   },
   {
@@ -18881,14 +18887,14 @@
       "ref": "+#% to Quality of Socketed Chaos Gems",
       "matchers": [{"string": "#% к качеству размещённых камней хаоса"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_2062835769"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2062835769"], "implicit": ["implicit.stat_2062835769"]}}
   },
   {
     "stat": {
       "ref": "+#% to Quality of Socketed Cold Gems",
       "matchers": [{"string": "#% к качеству размещённых камней холода"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_1164882313"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1164882313"], "implicit": ["implicit.stat_1164882313"]}}
   },
   {
     "stat": {
@@ -18902,7 +18908,7 @@
       "ref": "+#% to Quality of Socketed Fire Gems",
       "matchers": [{"string": "#% к качеству размещённых камней огня"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_3422008440"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3422008440"], "implicit": ["implicit.stat_3422008440"]}}
   },
   {
     "stat": {"ref": "+#% to Quality of Socketed Gems", "matchers": [{"string": "#% к качеству размещённых камней"}]},
@@ -21600,7 +21606,7 @@
         },
         {"string": "Добавленные малые пассивные умения даруют: +4% к множителю постепенного урона хаосом", "value": 19},
         {
-          "string": "Добавленные малые пассивные умения даруют: Атаки булавами или скипетрами наносят увеличенный на 12% урон от ударов и состояний\nДобавленные малые пассивные умения даруют: Атаки посохами наносят увеличенный на 12% урон от ударов и состояний",
+          "string": "Добавленные малые пассивные умения даруют: Атаки посохами наносят увеличенный на 12% урон от ударов и состояний\nДобавленные малые пассивные умения даруют: Атаки булавами или скипетрами наносят увеличенный на 12% урон от ударов и состояний",
           "value": 2
         },
         {
@@ -21635,7 +21641,7 @@
         },
         {"string": "Добавленные малые пассивные умения даруют: 15% повышение шанса критического удара", "value": 29},
         {
-          "string": "Добавленные малые пассивные умения даруют: Атаки кинжалами наносят увеличенный на 12% урон от ударов и состояний\nДобавленные малые пассивные умения даруют: Атаки когтями наносят увеличенный на 12% урон от ударов и состояний",
+          "string": "Добавленные малые пассивные умения даруют: Атаки когтями наносят увеличенный на 12% урон от ударов и состояний\nДобавленные малые пассивные умения даруют: Атаки кинжалами наносят увеличенный на 12% урон от ударов и состояний",
           "value": 3
         },
         {
@@ -38004,7 +38010,7 @@
       "ref": "Socketed Attacks have +# to Total Mana Cost",
       "matchers": [{"string": "# к итоговому расходу маны размещёнными атаками"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2264586521"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2264586521"], "fractured": ["fractured.stat_2264586521"]}}
   },
   {
     "stat": {
@@ -39174,7 +39180,7 @@
       "ref": "Socketed Gems are Supported by Level # Urgent Orders",
       "matchers": [{"string": "Размещённые камни усилены Срочными приказами # уровня"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_131"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_131", "explicit.stat_1485525812"]}}
   },
   {
     "stat": {
@@ -40562,6 +40568,16 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2392278281"]}}
+  },
+  {
+    "stat": {
+      "ref": "The First 3 Possessed Monsters have a #% chance to drop an additional Winged Scarab",
+      "matchers": [
+        {"string": "Из первых 3 одержимых монстров с #% шансом может выпасть дополнительный крылатый скарабей"},
+        {"string": "Из первых 3 одержимых монстров выпадет дополнительный крылатый скарабей", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1697321918"]}}
   },
   {
     "stat": {
