@@ -101,7 +101,7 @@ import { ParsedItem } from '@/parser'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 import { artificialSlowdown } from './artificial-slowdown'
 
-const slowdown = artificialSlowdown(1100)
+const slowdown = artificialSlowdown(900)
 
 function useBulkApi () {
   type BulkSearchExtended = BulkSearch & {

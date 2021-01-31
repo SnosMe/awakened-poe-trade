@@ -121,7 +121,7 @@ import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from './artificial-slowdown'
 
-const slowdown = artificialSlowdown(1100)
+const slowdown = artificialSlowdown(900)
 
 const SHOW_RESULTS = 20
 const API_FETCH_LIMIT = 100

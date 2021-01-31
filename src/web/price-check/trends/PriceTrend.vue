@@ -72,7 +72,7 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const slowdown = artificialSlowdown(1000)
+    const slowdown = artificialSlowdown(800)
     watch(() => props.item, (item) => {
       slowdown.reset(item)
     })
