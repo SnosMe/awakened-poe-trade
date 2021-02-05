@@ -26,6 +26,7 @@ interface ParserFn {
 
 const parsers: ParserFn[] = [
   parseUnidentified,
+  parseSuperior,
   parseSynthesised,
   parseCategoryByHelpText,
   normalizeName,
@@ -96,17 +97,6 @@ export function parseClipboard (clipboard: string) {
 }
 
 function normalizeName (_: string[], item: ParsedItem) {
-  if (
-    (item.rarity === ItemRarity.Normal) ||
-    (item.rarity === ItemRarity.Magic && item.isUnidentified) ||
-    (item.rarity === ItemRarity.Rare && item.isUnidentified) ||
-    (item.rarity === ItemRarity.Unique && item.isUnidentified)
-  ) {
-    if (_$[C.ITEM_SUPERIOR].test(item.name)) {
-      item.name = _$[C.ITEM_SUPERIOR].exec(item.name)![1]
-    }
-  }
-
   if (item.rarity === ItemRarity.Magic) {
     const baseType = magicBasetype(item.name)
     if (baseType) {
@@ -571,6 +561,21 @@ function parseSynthesised (section: string[], item: ParsedItem) {
   }
 
   return SECTION_SKIPPED
+}
+
+function parseSuperior (_: string[], item: ParsedItem) {
+  if (
+    (item.rarity === ItemRarity.Normal) ||
+    (item.rarity === ItemRarity.Magic && item.isUnidentified) ||
+    (item.rarity === ItemRarity.Rare && item.isUnidentified) ||
+    (item.rarity === ItemRarity.Unique && item.isUnidentified)
+  ) {
+    if (_$[C.ITEM_SUPERIOR].test(item.name)) {
+      item.name = _$[C.ITEM_SUPERIOR].exec(item.name)![1]
+    }
+  }
+
+  return PARSER_SKIPPED as SectionParseResult // fake parser
 }
 
 function parseCategoryByHelpText (section: string[], item: ParsedItem) {
