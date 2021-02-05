@@ -189,8 +189,8 @@ function parseNamePlate (section: string[]) {
 
   const item: ParsedItem = {
     rarity,
-    name: section[1].replace(/^(<<.*?>>|<.*?>)+/, ''), // Item from chat "<<set:MS>><<set:M>><<set:S>>Beast Grinder"
-    baseType: section[2]?.replace(/^(<<.*?>>|<.*?>)+/, ''),
+    name: markupConditionParser(section[1]),
+    baseType: (section.length >= 3) ? markupConditionParser(section[2]) : undefined,
     props: {},
     isUnidentified: false,
     isCorrupted: false,
@@ -650,4 +650,19 @@ function parseHeistMission (section: string[], item: ParsedItem) {
   }
 
   return SECTION_PARSED
+}
+
+function markupConditionParser (text: string) {
+  // ignores state set by <<set:__>>
+  // always evaluates first condition to true <if:__>{...}
+  // full markup: https://gist.github.com/SnosMe/151549b532df8ea08025a76ae2920ca4
+
+  text = text.replace(/<<set:.+?>>/g, '')
+  text = text.replace(/<(if:.+?|elif:.+?|else)>{(.+?)}/g, (_, type: string, body: string) => {
+    return type.startsWith('if:')
+      ? body
+      : ''
+  })
+
+  return text
 }
