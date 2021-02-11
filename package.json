@@ -25,7 +25,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.x",
     "animate.css": "^4.1.1",
-    "apexcharts": "^3.23.1",
+    "apexcharts": "^3.24.0",
     "dot-prop": "6.x.x",
     "electron-overlay-window": "1.0.x",
     "electron-store": "6.0.x",
