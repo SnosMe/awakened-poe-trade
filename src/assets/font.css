@@ -28,3 +28,22 @@
   font-style: normal;
   src:url('./font/FrizQuadrataITC-Hinted.ttf') format("truetype");
 }
+
+@font-face {
+  font-family: 'Exo2';
+  font-weight: normal;
+  font-style: normal;
+  src:url('./font/Exo2-Regular.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Exo2';
+  font-weight: 500;
+  font-style: normal;
+  src:url('./font/Exo2-Medium.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Exo2';
+  font-weight: 600;
+  font-style: normal;
+  src:url('./font/Exo2-SemiBold.ttf') format("truetype");
+}

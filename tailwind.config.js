@@ -5,7 +5,8 @@ module.exports = {
       'fontin-small-caps': 'FontinSmallCaps, FrizQuadrataC',
       'fontin-regular': 'FontinRegular, FrizQuadrataC',
       'fontin-bold': 'FontinBold, FrizQuadrataC',
-      'fontin-italic': 'FontinItalic, FrizQuadrataC'
+      'fontin-italic': 'FontinItalic, FrizQuadrataC',
+      'exo2': 'Exo2'
     }
   },
   variants: {},
