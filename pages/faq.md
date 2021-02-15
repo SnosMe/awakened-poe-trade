@@ -41,10 +41,13 @@ permalink: /faq
 
   You have downloaded the source code, download [here]({{ "/download" | relative_url }})
 
-- **I can't pricecheck items in Divination Card stash tab.**\
-  **I can't pricecheck rewards in Curio Display room (Heist Blueprints).**\
+- **I can't price check items in Divination Card stash tab.**\
+  **I can't price check rewards in Curio Display room (Heist Blueprints).**\
   **I can't check modifiers of the maps proposed by Zana when mapping.**
 
   Yes, you can't. The game doesn't copy anything to clipboard when pressing `Ctrl + C` in these places.
   And as mentioned in the [Quick Start]({{ "/quick-start" | relative_url }}), the whole thing how
   app works based on text of item in clipboard.
+
+  Regarding Divination Card stash tab, you can use another 3rd-party apps that
+  price check your stash tabs (e.g. [Exilence Next](https://github.com/viktorgullmark/exilence-next/#readme))
