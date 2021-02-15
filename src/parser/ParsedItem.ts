@@ -1,5 +1,5 @@
 import { ItemRarity, ItemInfluence } from './constants'
-import { ItemModifier } from './modifiers'
+import { ItemModifier, ModifierType } from './modifiers'
 import { ItemCategory } from './meta'
 
 export interface ParsedItem {
@@ -33,6 +33,10 @@ export interface ParsedItem {
   isMirrored?: boolean
   influences: ItemInfluence[]
   modifiers: ItemModifier[]
+  unknownModifiers: Array<{
+    text: string
+    type: ModifierType
+  }>
   extra: {
     veiled?: 'prefix' | 'suffix' | 'prefix-suffix'
     prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'

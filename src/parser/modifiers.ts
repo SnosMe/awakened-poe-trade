@@ -1,4 +1,5 @@
 import { STAT_BY_MATCH_STR, Stat, StatMatcher } from '@/assets/data'
+import * as C from './constants'
 
 export enum ModifierType {
   Pseudo = 'pseudo',
@@ -17,11 +18,22 @@ export interface ItemModifier extends Stat,
   type: ModifierType
 }
 
-export function * sectionToStatStrings (section: string[]) {
+export function * sectionToStatStrings (section: string[]): Generator<string, string[], boolean> {
+  const notParsedLines: string[] = []
+
   let idx = 0
   let multi = (idx + 1) < section.length
 
   while (idx < section.length) {
+    if (multi && (
+      section[idx].endsWith(C.IMPLICIT_SUFFIX) ||
+      section[idx].endsWith(C.CRAFTED_SUFFIX) ||
+      section[idx].endsWith(C.ENCHANT_SUFFIX) ||
+      section[idx].endsWith(C.FRACTURED_SUFFIX))
+    ) {
+      multi = false
+    }
+
     let str: string
     if (multi) {
       str = `${section[idx]}\n${section[idx + 1]}`
@@ -40,10 +52,11 @@ export function * sectionToStatStrings (section: string[]) {
       } else {
         idx += 1
         multi = (idx + 1) < section.length
+        notParsedLines.push(str)
       }
     }
   }
-  return true
+  return notParsedLines
 }
 
 const PLACEHOLDER_MAP = [

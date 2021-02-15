@@ -195,6 +195,7 @@ function parseNamePlate (section: string[]) {
     isUnidentified: false,
     isCorrupted: false,
     modifiers: [],
+    unknownModifiers: [],
     influences: [],
     sockets: {},
     extra: {},
@@ -460,7 +461,7 @@ function parseModifiers (section: string[], item: ParsedItem) {
     return PARSER_SKIPPED
   }
 
-  const countBefore = item.modifiers.length
+  const countBefore = (item.modifiers.length + item.unknownModifiers.length)
 
   const statIterator = sectionToStatStrings(section)
   let stat = statIterator.next()
@@ -485,29 +486,34 @@ function parseModifiers (section: string[], item: ParsedItem) {
     } else if (stat.value.endsWith(C.FRACTURED_SUFFIX)) {
       stat.value = stat.value.slice(0, -C.FRACTURED_SUFFIX.length)
       modType = ModifierType.Fractured
+    } else {
+      modType = ModifierType.Explicit
     }
 
     const mod = tryFindModifier(stat.value)
-    if (mod) {
-      if (modType == null) {
-        if (mod.trade.ids[ModifierType.Explicit]) {
-          modType = ModifierType.Explicit
-        }
-      }
-
-      if (mod.trade.ids[modType!]) {
-        mod.type = modType!
-        item.modifiers.push(mod)
+    if (mod && mod.trade.ids[modType]) {
+      mod.type = modType
+      item.modifiers.push(mod)
+      stat = statIterator.next(true)
+    } else {
+      if (modType !== ModifierType.Explicit || mod) {
+        item.unknownModifiers.push({
+          text: stat.value,
+          type: modType
+        })
         stat = statIterator.next(true)
       } else {
         stat = statIterator.next(false)
       }
-    } else {
-      stat = statIterator.next(false)
     }
   }
 
-  if (countBefore < item.modifiers.length) {
+  if (countBefore < (item.modifiers.length + item.unknownModifiers.length)) {
+    item.unknownModifiers.push(...stat.value.map(line => ({
+      text: line,
+      type: ModifierType.Explicit
+    })))
+
     return SECTION_PARSED
   }
   return SECTION_SKIPPED

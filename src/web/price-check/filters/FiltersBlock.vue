@@ -65,6 +65,8 @@
           :filter="filter"
           :item="item"
           @submit="handleStatsSubmit" />
+        <unknown-modifier v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
+          :stat="stat" />
         <input type="submit" class="hidden" />
       </form>
       <div class="flex">
@@ -87,6 +89,7 @@ import { useI18n } from 'vue-i18n'
 import FilterModifier from './FilterModifier.vue'
 import FilterVeiled from './FilterVeiled.vue'
 import FilterNumericEditable from './FilterNumericEditable.vue'
+import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
 import { ParsedItem } from '@/parser'
 
@@ -96,7 +99,8 @@ export default defineComponent({
   components: {
     FilterModifier,
     FilterVeiled,
-    FilterNumericEditable
+    FilterNumericEditable,
+    UnknownModifier
   },
   props: {
     filters: {
