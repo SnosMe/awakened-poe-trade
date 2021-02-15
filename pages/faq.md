@@ -40,3 +40,11 @@ permalink: /faq
 - **I downloaded a zip with a bunch of files, but no .exe inside?**
 
   You have downloaded the source code, download [here]({{ "/download" | relative_url }})
+
+- **I can't pricecheck items in Divination Card stash tab.**\
+  **I can't pricecheck rewards in Curio Display room (Heist Blueprints).**\
+  **I can't check modifiers of the maps proposed by Zana when mapping.**
+
+  Yes, you can't. The game doesn't copy anything to clipboard when pressing `Ctrl + C` in these places.
+  And as mentioned in the [Quick Start]({{ "/quick-start" | relative_url }}), the whole thing how
+  app works based on text of item in clipboard.
