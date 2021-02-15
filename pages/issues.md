@@ -27,6 +27,12 @@ permalink: /issues
 
     *(don't forget to quit first, otherwise launching second instance will do nothing).*
 
+6. As last resort, go to Discord. But if you don't describe something specific about
+    your problem, **you will most likely be directed to this page**.
+
+    If you've resolved your issue, feel free to share it on Discord and
+    I'll update these steps accordingly.
+
 ---
 
 - [How to remove the stopwatch in center of screen?](https://github.com/SnosMe/awakened-poe-trade/issues/219)
