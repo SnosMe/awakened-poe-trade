@@ -20,6 +20,14 @@ module.exports = {
       }
     }
   },
+  configureWebpack: {
+    resolve: {
+      fallback: {
+        path: false,
+        fs: false
+      }
+    }
+  },
   chainWebpack: (config) => {
     config.module
       .rule('i18n')

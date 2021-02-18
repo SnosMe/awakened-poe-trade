@@ -49,7 +49,7 @@ export default defineComponent({
     },
     itemImg: {
       type: String,
-      default: require('@/assets/images/wisdom.png')
+      default: require('@/assets/images/wisdom.png').default
     }
   },
   setup (props) {
