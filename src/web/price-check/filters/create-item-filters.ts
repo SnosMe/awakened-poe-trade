@@ -30,6 +30,12 @@ export function createFilters (item: ParsedItem): ItemFilters {
       disabled: true
     }
   }
+  if (item.category === ItemCategory.MavenInvitation) {
+    filters.baseType = {
+      value: item.baseType || item.name
+    }
+    return filters
+  }
   if (
     item.category === ItemCategory.MetamorphSample ||
     item.category === ItemCategory.Seed

@@ -29,7 +29,8 @@ export function getDetailsId (item: ParsedItem) {
       return nameToDetailsId(`${item.props.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.props.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
-  if (item.category === ItemCategory.CapturedBeast) {
+  if (item.category === ItemCategory.CapturedBeast ||
+      item.category === ItemCategory.MavenInvitation) {
     return nameToDetailsId(item.baseType || item.name)
   }
   if (item.rarity === ItemRarity.Unique) {

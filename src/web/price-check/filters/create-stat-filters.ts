@@ -15,7 +15,10 @@ export interface FiltersCreationContext {
 }
 
 export function initUiModFilters (item: ParsedItem): StatFilter[] {
-  if (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) {
+  if (
+    (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) ||
+    item.category === ItemCategory.MavenInvitation
+  ) {
     return []
   }
 

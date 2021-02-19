@@ -145,6 +145,7 @@ export default defineComponent({
         props.item.category !== ItemCategory.CapturedBeast &&
         props.item.category !== ItemCategory.HeistContract &&
         props.item.category !== ItemCategory.HeistBlueprint &&
+        props.item.category !== ItemCategory.MavenInvitation &&
         !props.item.isUnidentified
     })
 
