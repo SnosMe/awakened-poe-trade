@@ -94,19 +94,7 @@ export interface StatFilter {
   max: number | '' | undefined
 }
 
-export type INTERNAL_TRADE_ID =
-  'armour.armour' |
-  'armour.evasion_rating' |
-  'armour.energy_shield' |
-  'armour.block' |
-  'weapon.total_dps' |
-  'weapon.physical_dps' |
-  'weapon.elemental_dps' |
-  'weapon.crit' |
-  'weapon.aps' |
-  'map.no_elder_guardian'
-
-export const INTERNAL_TRADE_ID = [
+export const INTERNAL_TRADE_IDS = [
   'armour.armour',
   'armour.evasion_rating',
   'armour.energy_shield',
@@ -117,4 +105,6 @@ export const INTERNAL_TRADE_ID = [
   'weapon.crit',
   'weapon.aps',
   'map.no_elder_guardian'
-]
+] as const
+
+export type InternalTradeId = typeof INTERNAL_TRADE_IDS[number]

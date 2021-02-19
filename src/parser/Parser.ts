@@ -20,9 +20,7 @@ type SectionParseResult =
   typeof SECTION_SKIPPED |
   typeof PARSER_SKIPPED
 
-interface ParserFn {
-  (section: string[], item: ParsedItem): SectionParseResult
-}
+type ParserFn = (section: string[], item: ParsedItem) => SectionParseResult
 
 const parsers: ParserFn[] = [
   parseUnidentified,

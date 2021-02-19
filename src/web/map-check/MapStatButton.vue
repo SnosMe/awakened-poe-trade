@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, ref } from 'vue'
+import { defineComponent, PropType, computed } from 'vue'
 import ItemModifierText from '../ui/ItemModifierText.vue'
 import { Config } from '@/web/Config'
 import { PreparedStat } from './prepare-map-stats'

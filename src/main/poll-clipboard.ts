@@ -13,7 +13,7 @@ export async function pollClipboard (): Promise<string> {
   isPollingClipboard = true
   elapsed = 0
   if (clipboardPromise) {
-    return clipboardPromise
+    return await clipboardPromise
   }
 
   let textBefore = clipboard.readText()

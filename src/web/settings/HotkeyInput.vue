@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { KeyToCode, forbidden } from '@/ipc/KeyToCode'
 
@@ -36,16 +36,16 @@ export default defineComponent({
       handleKeyup (e: KeyboardEvent) {
         e.preventDefault()
         e.stopPropagation()
-  
+
         if (e.code === 'Backspace') {
           if (!props.required) {
             ctx.emit('update:modelValue', null)
           }
           return
         }
-  
+
         let { code, ctrlKey, shiftKey, altKey } = e
-  
+
         if (code.startsWith('Key')) {
           code = code.substr('Key'.length)
         } else if (code.startsWith('Digit')) {
@@ -53,7 +53,7 @@ export default defineComponent({
         } else if (e.key === 'Cancel' && code === 'Pause') {
           code = 'Cancel'
         }
-  
+
         if (
           (KeyToCode as Record<string, number>)[code] &&
           (ctrlKey ? !props.forbidden.includes('Ctrl') : true) &&
@@ -66,7 +66,7 @@ export default defineComponent({
           else if (altKey) code = `Alt + ${code}`
           else if (ctrlKey) code = `Ctrl + ${code}`
           else if (shiftKey) code = `Shift + ${code}`
-  
+
           if (!props.forbidden.includes(code)) {
             ctx.emit('update:modelValue', code)
           }

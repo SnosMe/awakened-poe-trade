@@ -170,7 +170,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
       value: 'nonunique'
     }
   }
-  
+
   if (item.isMirrored) {
     filters.mirrored = {
       value: true

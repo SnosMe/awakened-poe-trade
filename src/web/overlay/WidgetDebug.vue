@@ -16,7 +16,7 @@ import Widget from './Widget.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { parseClipboard } from '@/parser'
 
-export default {
+export default defineComponent({
   components: { Widget },
   setup () {
     const wm = inject<WidgetManager>('wm')!
@@ -46,5 +46,5 @@ export default {
       }
     }
   }
-}
+})
 </script>

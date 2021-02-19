@@ -79,12 +79,12 @@ async function requestTradeResultList (body: TradeRequest): Promise<SearchResult
 }
 
 export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
-  type ResponseT = { result: FetchResult[], error: SearchResult['error'] }
+  interface ResponseT { result: FetchResult[], error: SearchResult['error'] }
   let data = cache.get<ResponseT>(resultIds)
 
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
-  
+
     const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
@@ -98,20 +98,20 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
 
   return data.result
     .filter(result => result != null) // { gone: true }
-    .map(result => {
-      return {
-        id: result.id,
-        listedAt: result.listing.indexed,
-        exchangeAmount: result.listing.price.exchange.amount,
-        itemAmount: result.listing.price.item.amount,
-        stock: result.listing.price.item.stock,
-        ign: result.listing.account.lastCharacterName,
-        accountName: result.listing.account.name,
-        accountStatus: result.listing.account.online
-          ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
-          : 'offline'
-      } as PricingResult
-    })
+    .map<PricingResult>(result => {
+    return {
+      id: result.id,
+      listedAt: result.listing.indexed,
+      exchangeAmount: result.listing.price.exchange.amount,
+      itemAmount: result.listing.price.item.amount,
+      stock: result.listing.price.item.stock,
+      ign: result.listing.account.lastCharacterName,
+      accountName: result.listing.account.name,
+      accountStatus: result.listing.account.online
+        ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
+        : 'offline'
+    }
+  })
 }
 
 export interface BulkSearch {

@@ -184,7 +184,7 @@ export function setupShortcuts () {
     logger.debug('Keyup', { source: 'shortcuts', key: UiohookToName[e.keycode] || 'unknown' })
   })
 
-  uIOhook.on('wheel', async (e) => {
+  uIOhook.on('wheel', (e) => {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
     const stashCheckX = PoeWindow.bounds.x + PoeWindow.uiSidebarWidth

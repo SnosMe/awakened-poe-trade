@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import type { TranslationDict } from '@/assets/data/en/client_strings'
 import type { ClientLogDict } from '@/assets/data/en/client_log'
 import type { BaseType, DropEntry, Stat, StatMatcher, UniqueItem } from './interfaces'
@@ -28,7 +30,7 @@ export let MAP_IMGS: Map<string, { img: string }>
 
 export const ITEM_DROP = new Map<string, DropEntry>()
 
-;(async function initData () { /* eslint-disable no-lone-blocks */
+;(function initData () { /* eslint-disable no-lone-blocks */
   {
     CLIENT_STRINGS = (require(`./${Config.store.language}/client_strings`).default)
     CLIENTLOG_STRINGS = (require(`./${Config.store.language}/client_log`).default)

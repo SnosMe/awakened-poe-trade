@@ -28,7 +28,7 @@ export function showWidget (opts: {
 
   const poeBounds = PoeWindow.bounds!
   activeAreaRect = {
-    x: getOffsetX(checkPressPosition!, poeBounds),
+    x: getOffsetX(checkPressPosition, poeBounds),
     y: poeBounds.y,
     width: Math.floor(WIDTH_96DPI * DPR * config.get('fontSize')),
     height: poeBounds.height

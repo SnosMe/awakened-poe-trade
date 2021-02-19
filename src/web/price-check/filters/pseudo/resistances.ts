@@ -114,7 +114,7 @@ export function filterResists (ctx: FiltersCreationContext) {
       ...CHAOS_RES.pseudo,
       disabled: true, // NOTE: unlike EleRes it is disabled
       hidden: hasBaseChaosRes ? undefined : 'Crafted Chaos Resistance without Explicit mod has no value',
-      ...rollToFilter(chaosTotal!, { neverNegated: true })
+      ...rollToFilter(chaosTotal, { neverNegated: true })
     })
   }
 

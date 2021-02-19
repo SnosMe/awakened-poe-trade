@@ -11,6 +11,7 @@ const COMMON_PATH = [
   'D:/Program Files (x86)/Steam/steamapps/common/Path of Exile/logs/Client.txt'
 ]
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class LogWatcher {
   static offset = 0
   static filePath?: string

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/promise-function-async */
+
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 export default createRouter({

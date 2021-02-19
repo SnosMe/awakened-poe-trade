@@ -10,7 +10,7 @@ import { filterUniqueItemProp } from './pseudo/item-property-unique'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
-  filters: Writeable<StatFilter>[]
+  filters: Array<Writeable<StatFilter>>
   modifiers: ParsedItem['modifiers']
 }
 

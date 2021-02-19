@@ -11,9 +11,9 @@ export enum ModifierType {
   Fractured = 'fractured'
 }
 
-export interface ItemModifier extends Stat,
-  Pick<StatMatcher, 'string' | 'negate'>
-{
+export interface ItemModifier extends
+  Stat,
+  Pick<StatMatcher, 'string' | 'negate'> {
   values?: number[]
   type: ModifierType
 }

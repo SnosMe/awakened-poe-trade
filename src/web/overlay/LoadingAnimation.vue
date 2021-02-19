@@ -17,7 +17,7 @@
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-export default {
+export default defineComponent({
   setup () {
     const show = ref(false)
 
@@ -34,7 +34,7 @@ export default {
       show
     }
   }
-}
+})
 </script>
 
 <style lang="postcss" module>

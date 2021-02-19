@@ -6,7 +6,7 @@ export function artificialSlowdown (ms: number) {
   let datakey: unknown = null
 
   return {
-    reset (value: unknown = Symbol()) {
+    reset (value: unknown = Symbol('unique value')) {
       if (datakey !== value) {
         datakey = value
         if (tmid !== null) {

@@ -47,7 +47,7 @@ interface Widget {
   wmTitle: string
   wmWants: 'show' | 'hide'
   wmZorder: number | 'exclusive' | null
-  wmFlags: (WidgetWellKnownFlag | string)[]
+  wmFlags: Array<WidgetWellKnownFlag | string>
   // ---------------
   [key: string]: any
 }

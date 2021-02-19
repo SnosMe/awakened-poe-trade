@@ -154,8 +154,8 @@ export default {
         isVisible:
           this.hideUI ? false
             : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
-              : showExclusive ? w === showExclusive
-                : w.wmWants === 'show'
+                : showExclusive ? w === showExclusive
+                  : w.wmWants === 'show'
       }))
     },
     topmostWidget () {

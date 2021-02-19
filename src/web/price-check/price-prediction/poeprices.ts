@@ -84,6 +84,7 @@ export async function sendFeedback (
     method: 'POST',
     body
   })
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const text = await response.text()
   // console.assert(text === `"${feedback.option}"`)
 }

@@ -38,7 +38,7 @@ interface NinjaItemInfo {
   artFilename: null
   links: number
   itemClass: number
-  sparkline: { data: number[], totalChange: number }
+  sparkline: { data: Array<number | null>, totalChange: number }
   lowConfidenceSparkline: { data: number[], totalChange: number[] }
   implicitModifiers: []
   explicitModifiers: Array<{ text: string, optional: boolean }>
@@ -131,10 +131,10 @@ async function load (force: boolean = false) {
             name: currency.currencyTypeName,
             receive: {
               chaosValue: currency.receive.value,
-              graphPoints: currency.receiveSparkLine.data.filter(d => d != null),
+              graphPoints: currency.receiveSparkLine.data.filter((point): point is number => point != null),
               totalChange: currency.receiveSparkLine.totalChange
             }
-          } as ItemInfo)
+          })
 
           if (currency.detailsId === 'exalted-orb') {
             chaosExaRate.value = currency.receive.value
@@ -155,10 +155,10 @@ async function load (force: boolean = false) {
             name: item.name,
             receive: {
               chaosValue: item.chaosValue,
-              graphPoints: item.sparkline.data.filter(d => d != null),
+              graphPoints: item.sparkline.data.filter((point): point is number => point != null),
               totalChange: item.sparkline.totalChange
             }
-          } as ItemInfo)
+          })
         }
       }
 

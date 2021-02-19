@@ -1,5 +1,5 @@
 import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
-import { ItemFilters, StatFilter, INTERNAL_TRADE_ID } from '../filters/interfaces'
+import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
@@ -48,8 +48,8 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Trinket, 'accessory.trinket']
 ])
 
-type FilterBoolean = { option?: 'true' | 'false' }
-type FilterRange = { min?: number, max?: number }
+interface FilterBoolean { option?: 'true' | 'false' }
+interface FilterRange { min?: number, max?: number }
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
@@ -57,7 +57,7 @@ interface TradeRequest { /* eslint-disable camelcase */
     name?: string | { discriminator: string, option: string }
     type?: string | { discriminator: string, option: string }
     stats: Array<{
-      type: 'and' | 'if' | 'count' | 'not',
+      type: 'and' | 'if' | 'count' | 'not'
       value?: FilterRange
       filters: Array<{
         id: string
@@ -167,9 +167,9 @@ interface FetchResult {
     properties?: Array<{
       values: [[string, number]]
       type:
-        30 | // Spawns a Level %0 Monster when Harvested
-        6 | // Quality
-        5 // Level
+      30 | // Spawns a Level %0 Monster when Harvested
+      6 | // Quality
+      5 // Level
     }>
   }
   listing: {
@@ -399,7 +399,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
     if (stat.disabled) continue
 
-    switch (stat.tradeId[0] as INTERNAL_TRADE_ID) {
+    switch (stat.tradeId[0] as InternalTradeId) {
       case 'armour.armour':
         prop.set(query.filters, 'armour_filters.filters.ar.min', typeof stat.min === 'number' ? stat.min : undefined)
         prop.set(query.filters, 'armour_filters.filters.ar.max', typeof stat.max === 'number' ? stat.max : undefined)
@@ -439,7 +439,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  stats = stats.filter(stat => !INTERNAL_TRADE_ID.includes(stat.tradeId[0]))
+  stats = stats.filter(stat => !INTERNAL_TRADE_IDS.includes(stat.tradeId[0] as any))
   if (filters.veiled) {
     const refs = filters.veiled.stat.split('<<and>>')
     for (const statRef of refs) {
@@ -484,7 +484,7 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
     ])
 
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
-  
+
     const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
       method: 'POST',
       headers: {
@@ -507,12 +507,12 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
 }
 
 export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
-  type ResponseT = { result: FetchResult[], error: SearchResult['error'] }
+  interface ResponseT { result: FetchResult[], error: SearchResult['error'] }
   let data = cache.get<ResponseT>(resultIds)
 
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
-  
+
     const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
@@ -524,12 +524,12 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
     cache.set<ResponseT>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
   }
 
-  return data.result.map(result => {
+  return data.result.map<PricingResult>(result => {
     return {
       id: result.id,
       itemLevel:
         result.item.ilvl ||
-        result.item.properties?.find(prop => prop.type === 30)?.values[0][0],
+        Number(result.item.properties?.find(prop => prop.type === 30)?.values[0][0]),
       stackSize: result.item.stackSize,
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
@@ -542,7 +542,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       accountStatus: result.listing.account.online
         ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
         : 'offline'
-    } as PricingResult
+    }
   })
 }
 

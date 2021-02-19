@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, inject, ref } from 'vue'
+import { defineComponent, PropType, computed, inject } from 'vue'
 import { Widget as IWidget, WidgetManager, WidgetMenu } from './interfaces'
 import Widget from './Widget.vue'
 import { useI18n } from 'vue-i18n'
@@ -55,7 +55,7 @@ export default defineComponent({
         (props.config.alwaysShow || (widget.wmWants === 'hide'))
       )
     })
-    
+
     const { t } = useI18n()
 
     return {

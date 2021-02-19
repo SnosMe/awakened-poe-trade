@@ -60,11 +60,11 @@ export default defineComponent({
           modifiers: [
             ...(props.boundary
               ? [{
-                name: 'preventOverflow',
-                options: {
-                  boundary: document.querySelector(props.boundary)
-                }
-              }]
+                  name: 'preventOverflow',
+                  options: {
+                    boundary: document.querySelector(props.boundary)
+                  }
+                }]
               : [])
           ]
         }

@@ -4,8 +4,8 @@ module.exports = {
     node: true
   },
   plugins: [
-    '@typescript-eslint',
-    'only-warn'
+    '@typescript-eslint'
+    // 'only-warn'
   ],
   extends: [
     'plugin:vue/base',
@@ -14,25 +14,36 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'quote-props': ['error', 'consistent-as-needed'],
+    'no-labels': ['error', { allowLoop: true }],
+    'multiline-ternary': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
-    // 'spaced-comment': ['error', 'always', { markers: ['#region'], exceptions: ['#endregion'] }],
-    'quote-props': ['error', 'consistent-as-needed'],
     '@typescript-eslint/strict-boolean-expressions': 'off',
-    // '@typescript-eslint/no-use-before-define': 'off',
-    // 'vue/no-mutating-props': 'off',
-    // '@typescript-eslint/member-delimiter-style': 'off',
-    // '@typescript-eslint/camelcase': 'off',
-    // '@typescript-eslint/no-inferrable-types': 'off',
-    // 'vue/no-deprecated-v-on-native-modifier': 'off',
-    // 'vue/no-deprecated-filter': 'off',
-    // 'vue/no-deprecated-slot-attribute': 'off',
-    // 'no-unused-vars': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/prefer-optional-chain': 'off',
+    '@typescript-eslint/prefer-readonly': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    // TODO: refactor IPC and enable
+    '@typescript-eslint/consistent-type-assertions': 'off'
   },
+  overrides: [{
+    files: ['src/main/**/*'],
+    env: {
+      node: true
+    }
+  }, {
+    files: ['*.ts'],
+    parserOptions: {
+      project: './tsconfig.json'
+    }
+  }],
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    extraFileExtensions: ['.vue'],
-    project: './tsconfig.json'
+    extraFileExtensions: ['.vue']
   }
 }

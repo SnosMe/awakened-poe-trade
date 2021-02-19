@@ -29,12 +29,12 @@ function leaguesMenuItem () {
 
   const menuItem = new MenuItem({
     label: 'League',
-    submenu: leagues.map(league => ({
+    submenu: leagues.map<MenuItemConstructorOptions>(league => ({
       label: league.id,
       type: 'checkbox',
       checked: league.selected,
       click: () => { selectLeague(league) }
-    } as MenuItemConstructorOptions))
+    }))
   })
 
   return [menuItem]

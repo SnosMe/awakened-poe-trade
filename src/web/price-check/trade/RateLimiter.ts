@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-floating-promises,
+                  @typescript-eslint/promise-function-async,
+                  @typescript-eslint/return-await */
+
 import { shallowReactive, shallowRef } from 'vue'
 
 export class RateLimiter {
@@ -6,7 +10,6 @@ export class RateLimiter {
 
   private _destroyed = false
 
-  // eslint-disable-next-line no-useless-constructor
   constructor (
     public max: number,
     public window: number
@@ -55,7 +58,7 @@ export class RateLimiter {
     }
 
     if (_limiters.every(rl => !rl.isFullyUtilized)) {
-      _limiters.forEach(rl => rl.wait())
+      _limiters.forEach(rl => { rl.wait() })
     } else {
       return this.waitMulti(limiters)
     }
@@ -143,9 +146,9 @@ class ResourceHandle {
     this.borrowedAt = Date.now()
     this.releasedAt = this.borrowedAt + millis
     this._cb = cb
-    this.promise = new Promise((_resolve, _reject) => {
-      this._resolve = _resolve
-      this._reject = _reject
+    this.promise = new Promise((resolve, reject) => {
+      this._resolve = resolve
+      this._reject = reject
 
       this._tmid = setTimeout(() => {
         this._cb()

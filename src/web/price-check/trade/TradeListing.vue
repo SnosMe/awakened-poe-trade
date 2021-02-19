@@ -132,7 +132,7 @@ function useTradeApi () {
   let searchId = 0
   const error = shallowRef<string | null>(null)
   const searchResult = shallowRef<SearchResult | null>(null)
-  let fetchResults = shallowRef<PricingResult[]>([])
+  const fetchResults = shallowRef<PricingResult[]>([])
 
   const groupedResults = computed(() => {
     const out: Array<PricingResult & { listedTimes: number }> = []

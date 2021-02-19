@@ -1,6 +1,6 @@
 import { STAT_BY_REF } from '@/assets/data'
 import { ItemModifier, ModifierType } from '@/parser/modifiers'
-import { INTERNAL_TRADE_ID } from '../interfaces'
+import { InternalTradeId } from '../interfaces'
 
 export function pseudoStat (ref: string) {
   const stat = STAT_BY_REF.get(ref)!
@@ -13,7 +13,7 @@ export function pseudoStat (ref: string) {
   }
 }
 
-export function internalPropStat (tradeId: INTERNAL_TRADE_ID, text: string, type: 'armour' | 'weapon') {
+export function internalPropStat (tradeId: InternalTradeId, text: string, type: 'armour' | 'weapon') {
   return {
     text,
     statRef: text,
@@ -22,8 +22,8 @@ export function internalPropStat (tradeId: INTERNAL_TRADE_ID, text: string, type
   }
 }
 
-export function sumPseudoStats (modifiers: ItemModifier[], stats: string[]): number | undefined {
-  return modifiers.reduce((res, mod) => stats.includes(mod.stat.ref)
+export function sumPseudoStats (modifiers: ItemModifier[], stats: string[]) {
+  return modifiers.reduce<number | undefined>((res, mod) => stats.includes(mod.stat.ref)
     ? (res || 0) + mod.values![0]
-    : res, undefined as number | undefined)
+    : res, undefined)
 }

@@ -40,10 +40,10 @@ export async function load () {
       }
     }
 
-    MainProcess.sendLeaguesReady(tradeLeagues.value.map(league => ({
+    MainProcess.sendLeaguesReady(tradeLeagues.value.map<League>(league => ({
       id: league.id,
       selected: league.id === selected.value
-    } as League)))
+    })))
   } catch (e) {
     error.value = e.message
   } finally {
