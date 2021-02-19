@@ -4,7 +4,10 @@
       <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
       <fullscreen-image v-if="image" :src="image" />
       <div v-if="!item" class="px-8 py-2">
-        {{ t('Item under cursor is not a map.') }}
+        {{ t('Item under cursor is not a craftable map-like item.') }}
+      </div>
+      <div v-else-if="!mapStats.length" class="px-8 py-2">
+        {{ t('Item has no modifiers.') }}
       </div>
       <div v-else class="py-2 flex flex-col">
         <map-stat-button v-for="stat in mapStats" :key="stat.text"
@@ -54,7 +57,10 @@ export default defineComponent({
       }
       item.value = null
       const item_ = parseClipboard(_e.clipboard)
-      if (item_?.category === ItemCategory.Map) {
+      if (item_?.category === ItemCategory.Map ||
+          item_?.category === ItemCategory.HeistContract ||
+          item_?.category === ItemCategory.HeistBlueprint ||
+          item_?.category === ItemCategory.MavenInvitation) {
         item.value = item_
       }
     })
@@ -111,8 +117,9 @@ export default defineComponent({
 <i18n>
 {
   "ru": {
-    "Item under cursor is not a map.": "Предмет под курсором не является картой.",
-    "Invalid item": "Неверный предмет"
+    "Item under cursor is not a craftable map-like item.": "Предмет под курсором не является крафтовым предметом, таким как карта.",
+    "Invalid item": "Неверный предмет",
+    "Item has no modifiers.": "На предмете нету модов."
   }
 }
 </i18n>
