@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, PropType, provide, shallowRef, watch, computed, getCurrentInstance } from 'vue'
+import { defineComponent, inject, PropType, provide, shallowRef, watch, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
@@ -79,7 +79,6 @@ import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.v
 import CheckPositionCircle from './CheckPositionCircle.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
-import { nextTick } from 'process'
 
 export default defineComponent({
   components: {

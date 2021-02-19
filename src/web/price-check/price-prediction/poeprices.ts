@@ -1,4 +1,3 @@
-import { stringify } from 'querystring'
 import { ParsedItem } from '@/parser'
 import { selected as league } from '@/web/background/Leagues'
 import { MainProcess } from '@/ipc/main-process-bindings'
@@ -26,8 +25,8 @@ export interface RareItemPrice {
 }
 
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
-  const query = stringify({
-    i: Buffer.from(item.rawText).toString('base64'),
+  const query = querystring({
+    i: utf8ToBase64(item.rawText),
     l: league.value,
     s: 'awakened-poe-trade'
   })
@@ -56,8 +55,8 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
 }
 
 export function getExternalLink (item: ParsedItem): string {
-  const query = stringify({
-    i: Buffer.from(item.rawText).toString('base64'),
+  const query = querystring({
+    i: utf8ToBase64(item.rawText),
     l: league.value,
     s: 'awakened-poe-trade',
     w: 1
@@ -73,7 +72,7 @@ export async function sendFeedback (
   const body = new FormData()
   body.append('selector', feedback.option)
   body.append('feedbacktxt', feedback.text)
-  body.append('qitem_txt', Buffer.from(item.rawText).toString('base64'))
+  body.append('qitem_txt', utf8ToBase64(item.rawText))
   body.append('source', 'awakened-poe-trade')
   body.append('min', String(prediction.min))
   body.append('max', String(prediction.max))
@@ -87,4 +86,14 @@ export async function sendFeedback (
   })
   const text = await response.text()
   // console.assert(text === `"${feedback.option}"`)
+}
+
+function utf8ToBase64 (value: string) {
+  return btoa(unescape(encodeURIComponent(value)))
+}
+
+function querystring (q: Record<string, any>) {
+  return Object.entries(q)
+    .map(pair => pair.map(encodeURIComponent).join('='))
+    .join('&')
 }
