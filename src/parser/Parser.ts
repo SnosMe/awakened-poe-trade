@@ -496,7 +496,17 @@ function parseModifiers (section: string[], item: ParsedItem) {
       item.modifiers.push(mod)
       stat = statIterator.next(true)
     } else {
-      if (modType !== ModifierType.Explicit || mod) {
+      if (
+        mod != null || // not found on trade, but successfully parsed
+        modType === ModifierType.Enchant || // has separate section
+        modType === ModifierType.Implicit || // has separate section
+        modType === ModifierType.Fractured || // always comes first in section
+        (modType === ModifierType.Crafted && (
+          !stat.value.includes('\n') || // not multiline, on section transition from explicit to crafted mods
+          item.modifiers.some(m => m.type === ModifierType.Crafted) ||
+          item.unknownModifiers.some(m => m.type === ModifierType.Crafted)
+        ))
+      ) {
         item.unknownModifiers.push({
           text: stat.value,
           type: modType
