@@ -8,6 +8,7 @@
       :item="item" />
     <price-trend
       :item="item"
+      :filters="itemFilters"
       @filter-item-base="applyItemBaseFilter" />
     <filters-block
       ref="filtersBlock"

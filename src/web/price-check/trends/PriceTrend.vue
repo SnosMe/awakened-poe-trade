@@ -8,7 +8,7 @@
       <item-quick-price class="flex-1"
         :min="trend.price.val"
         :max="trend.price.val"
-        fraction
+        :fraction="filters.stackSize != null"
         :item-img="trend.icon"
         :currency="trend.price.curr === 'e' ? 'exa' : 'chaos'"
       >
@@ -59,6 +59,7 @@ import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import VueApexcharts from 'vue3-apexcharts'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from '../trade/artificial-slowdown'
+import { ItemFilters } from '../filters/interfaces'
 
 export default defineComponent({
   components: {
@@ -68,6 +69,10 @@ export default defineComponent({
   props: {
     item: {
       type: Object as PropType<ParsedItem>,
+      required: true
+    },
+    filters: {
+      type: Object as PropType<ItemFilters>,
       required: true
     }
   },
