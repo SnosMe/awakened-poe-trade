@@ -2,11 +2,12 @@ import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ItemModifier, ModifierType } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
 import { rollToFilter } from './util'
-import { StatFilter } from './interfaces'
+import { ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { getRollAsSingleNumber } from '@/parser/utils'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
+import { ARMOUR, WEAPON } from '@/parser/meta'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -217,6 +218,21 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     }
   }
 
+  if (showHasEmptyModifier(ctx)) {
+    ctx.filters.push({
+      tradeId: ['item.has_empty_modifier'],
+      text: '1 Empty or Crafted Modifier',
+      statRef: '1 Empty or Crafted Modifier',
+      disabled: true,
+      hidden: 'Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers',
+      type: 'pseudo',
+      roll: ItemHasEmptyModifier.Any,
+      option: 'num',
+      min: undefined,
+      max: undefined
+    })
+  }
+
   if (item.category === ItemCategory.Amulet) {
     const anointment = ctx.filters.find(filter => filter.statRef === 'Allocates #')
     if (anointment) {
@@ -232,8 +248,48 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     if (filter.type === ModifierType.Fractured) {
       const mod = ctx.item.modifiers.find(mod => mod.stat.ref === filter.statRef)!
       if (mod.trade.ids[ModifierType.Explicit]) {
+        // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'Select only if price-checking as base item for crafting'
       }
     }
   }
+}
+
+function showHasEmptyModifier (ctx: FiltersCreationContext): boolean {
+  const { item } = ctx
+
+  if (
+    item.rarity !== ItemRarity.Rare ||
+    !item.category ||
+    item.isCorrupted ||
+    item.isMirrored
+  ) return false
+
+  let totalUsed: number = item.modifiers.filter(mod =>
+    mod.type === ModifierType.Explicit ||
+    mod.type === ModifierType.Fractured ||
+    mod.type === ModifierType.Crafted).length
+
+  let hasCrafted = item.modifiers.some(mod => mod.type === ModifierType.Crafted)
+
+  if (item.extra.veiled) {
+    totalUsed += (item.extra.veiled === 'prefix-suffix' ? 2 : 1)
+    hasCrafted = true
+  }
+
+  if (
+    (totalUsed === 5 && !hasCrafted) ||
+    (totalUsed >= 6 /* && hasCrafted */) // don't force player to craft mod (proving that item has empty slot)
+  ) {
+    return (
+      ARMOUR.has(item.category) ||
+      WEAPON.has(item.category) ||
+      item.category === ItemCategory.Amulet ||
+      item.category === ItemCategory.Belt ||
+      item.category === ItemCategory.Ring ||
+      item.category === ItemCategory.Quiver
+    )
+  }
+
+  return false
 }

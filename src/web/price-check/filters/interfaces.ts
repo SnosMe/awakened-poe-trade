@@ -104,7 +104,14 @@ export const INTERNAL_TRADE_IDS = [
   'weapon.elemental_dps',
   'weapon.crit',
   'weapon.aps',
-  'map.no_elder_guardian'
+  'map.no_elder_guardian',
+  'item.has_empty_modifier'
 ] as const
 
 export type InternalTradeId = typeof INTERNAL_TRADE_IDS[number]
+
+export enum ItemHasEmptyModifier {
+  Any = 0,
+  Prefix = 1,
+  Suffix = 2
+}

@@ -48,6 +48,24 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Trinket, 'accessory.trinket']
 ])
 
+const TOTAL_MODS_TEXT = {
+  CRAFTED_MODIFIERS: [
+    '# Crafted Modifiers',
+    '# Crafted Prefix Modifiers',
+    '# Crafted Suffix Modifiers'
+  ],
+  EMPTY_MODIFIERS: [
+    '# Empty Modifiers',
+    '# Empty Prefix Modifiers',
+    '# Empty Suffix Modifiers'
+  ],
+  TOTAL_MODIFIERS: [
+    '# Modifiers',
+    '# Prefix Modifiers',
+    '# Suffix Modifiers'
+  ]
+}
+
 interface FilterBoolean { option?: 'true' | 'false' }
 interface FilterRange { min?: number, max?: number }
 
@@ -393,6 +411,34 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         disabled: stat.disabled,
         filters: [
           tradeIdToQuery(STAT_BY_REF.get('Map is occupied by #')!.trade.ids[ModifierType.Implicit][0], stat)
+        ]
+      })
+    }
+
+    if (stat.tradeId[0] === 'item.has_empty_modifier') {
+      const TARGET_ID = {
+        CRAFTED_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.roll!])!.trade.ids[ModifierType.Pseudo][0],
+        EMPTY_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.roll!])!.trade.ids[ModifierType.Pseudo][0],
+        TOTAL_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.TOTAL_MODIFIERS[0])!.trade.ids[ModifierType.Pseudo][0]
+      }
+
+      query.stats.push({
+        type: 'count',
+        value: { min: 1, max: 1 },
+        disabled: stat.disabled,
+        filters: [
+          { id: TARGET_ID.EMPTY_MODIFIERS, value: { min: 1, max: 1 }, disabled: stat.disabled },
+          { id: TARGET_ID.CRAFTED_MODIFIERS, value: { min: 1, max: undefined }, disabled: stat.disabled }
+        ]
+      })
+
+      query.stats.push({
+        type: 'count',
+        value: { min: 1, max: 1 },
+        disabled: stat.disabled,
+        filters: [
+          { id: TARGET_ID.EMPTY_MODIFIERS, value: { min: 1, max: 1 }, disabled: stat.disabled },
+          { id: TARGET_ID.TOTAL_MODIFIERS, value: { min: 6, max: undefined }, disabled: stat.disabled }
         ]
       })
     }

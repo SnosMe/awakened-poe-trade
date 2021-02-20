@@ -39,6 +39,7 @@
             class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ t(filter.type) }}</span>
           <span v-if="filter.variant"
             class="text-xs leading-none px-1 rounded mod-type-variant">{{ t('variant') }}</span>
+          <filter-modifier-item-has-empty :filter="filter" />
         </div>
         <div v-if="filter.boundMin !== undefined"
           class="mr-4" style="width: 12.5rem;">
@@ -82,12 +83,13 @@ import { defineComponent, PropType, computed, ref, nextTick, ComponentPublicInst
 import { useI18n } from 'vue-i18n'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
+import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
 import { Config } from '@/web/Config'
 import { ParsedItem } from '@/parser'
 import { StatFilter } from './interfaces'
 
 export default defineComponent({
-  components: { ItemModifierText, ModifierAnointment },
+  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty },
   emits: ['submit'],
   props: {
     filter: {
@@ -114,7 +116,8 @@ export default defineComponent({
         return false
       }
       return props.filter.type !== 'armour' &&
-        props.filter.type !== 'weapon'
+        props.filter.type !== 'weapon' &&
+        props.filter.tradeId[0] !== 'item.has_empty_modifier'
     })
 
     const showQ20Notice = computed(() => {
@@ -326,7 +329,9 @@ export default defineComponent({
     "Contributes to the item property": "Вносит вклад в параметр предмета",
     "Hidden for sake of familiar view of item stats": "Скрыт ради привычного просмотра свойств предмета",
     "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование",
-    "Select only if price-checking as base item for crafting": "Отмечайте, если проверяете цену в качестве базового предмета для крафта"
+    "Select only if price-checking as base item for crafting": "Отмечайте, если проверяете цену в качестве базового предмета для крафта",
+    "1 Empty or Crafted Modifier": "1 свободное или ремесленное свойство",
+    "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств"
   }
 }
 </i18n>
