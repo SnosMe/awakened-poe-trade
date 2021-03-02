@@ -21,6 +21,13 @@ export interface Config {
   mapCheckKey: string | null
   delveGridKey: string | null
   restoreClipboard: boolean
+  bottleKey: string | null
+  useBottle: Array<{
+    id: number
+    text: string
+    enabled: boolean
+    hotkey: string
+  }>
   commands: Array<{
     text: string
     hotkey: string | null
@@ -75,6 +82,35 @@ export const defaultConfig: Config = {
   priceCheckShowCursor: true,
   mapCheckKey: null,
   delveGridKey: null,
+  bottleKey: null,
+  useBottle: [
+    {
+      id: 1,
+      text: 'Bottle1',
+      enabled: false,
+      hotkey: '1'
+    }, {
+      id: 2,
+      text: 'Bottle2',
+      enabled: false,
+      hotkey: '2'
+    }, {
+      id: 3,
+      text: 'Bottle3',
+      enabled: false,
+      hotkey: '3'
+    }, {
+      id: 4,
+      text: 'Bottle4',
+      enabled: false,
+      hotkey: '4'
+    }, {
+      id: 5,
+      text: 'Bottle5',
+      enabled: false,
+      hotkey: '5'
+    }
+  ],
   restoreClipboard: true,
   commands: [{
     text: '/hideout',

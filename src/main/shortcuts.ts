@@ -87,6 +87,10 @@ function registerGlobal () {
       mapCheck
     ),
     shortcutCallback(
+      config.get('bottleKey'),
+      toggleBottleKey
+    ),
+    shortcutCallback(
       config.get('delveGridKey'),
       toggleDelveGrid,
       { doNotResetModKey: true }
@@ -168,6 +172,8 @@ export function setupShortcuts () {
       }).cb()
     } else if (pressed === config.get('mapCheckKey')) {
       shortcutCallback(pressed, mapCheck).cb()
+    } else if (pressed === config.get('bottleKey')) {
+      shortcutCallback(pressed, toggleBottleKey).cb()
     } else if (pressed === config.get('delveGridKey')) {
       shortcutCallback(pressed, toggleDelveGrid, { doNotResetModKey: true }).cb()
     } else {
@@ -227,6 +233,16 @@ function openCraftOfExile (clipboard: string) {
 
 function toggleDelveGrid () {
   overlayWindow!.webContents.send(ipc.TOGGLE_DELVE_GRID)
+}
+
+function toggleBottleKey () {
+  const BOTTLES = config.get('useBottle')
+
+  BOTTLES.forEach(bottle => {
+    if (bottle.enabled) {
+      robotjs.keyTap(bottle.hotkey)
+    }
+  })
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {

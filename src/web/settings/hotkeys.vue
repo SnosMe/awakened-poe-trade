@@ -57,6 +57,24 @@
         </div>
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex">
+        <div class="flex-1">{{ t("Drink Botle") }}</div>
+        <div class="flex">
+          <hotkey-input v-model="config.bottleKey" class="w-48" />
+        </div>
+      </div>
+    </div>
+    <div class="mb-8">
+      <div class="flex">
+          <div v-for="bottle in config.useBottle" :key="bottle.id">
+            <div class="inline-block border mr-2 h-15 text-center">
+              <hotkey-input v-model="bottle.hotkey" class="w-20 h-10"></hotkey-input>
+              <ui-checkbox v-model="bottle.enabled" :value="false">{{ t(bottle.text) }}</ui-checkbox>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -65,7 +83,6 @@ import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import HotkeyInput from './HotkeyInput.vue'
-
 export default defineComponent({
   components: { HotkeyInput },
   setup () {
@@ -90,7 +107,13 @@ export default defineComponent({
     "Open item on wiki": "Открыть предмет в вики",
     "Map check": "Проверка карты",
     "Stash tab scrolling": "Прокрутка вкладок тайника",
-    "Delve grid": "Сетка \"Спуска\""
+    "Delve grid": "Сетка \"Спуска\"",
+    "Drink Botle": "Выпить банки",
+    "Bottle1":"Банка 1",
+    "Bottle2":"Банка 2",
+    "Bottle3":"Банка 3",
+    "Bottle4":"Банка 4",
+    "Bottle5":"Банка 5",
   }
 }
 </i18n>
