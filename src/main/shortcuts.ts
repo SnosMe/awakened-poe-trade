@@ -1,6 +1,6 @@
 import { screen, Point, clipboard, globalShortcut, Notification, ipcMain } from 'electron'
 import robotjs from 'robotjs'
-import { uIOhook, UiohookKey } from 'uiohook-napi'
+import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
 import { showWidget as showPriceCheck } from './price-check'
 import { KeyToElectron } from '@/ipc/KeyToCode'
@@ -187,9 +187,7 @@ export function setupShortcuts () {
   uIOhook.on('wheel', (e) => {
     if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
-    const stashCheckX = PoeWindow.bounds.x + PoeWindow.uiSidebarWidth
-    const mouseX = e.x
-    if (mouseX > stashCheckX) {
+    if (!isGameScrolling(e)) {
       if (e.rotation > 0) {
         robotjs.keyTap('ArrowRight')
       } else if (e.rotation < 0) {
@@ -199,6 +197,14 @@ export function setupShortcuts () {
   })
 
   uIOhook.start()
+}
+
+function isGameScrolling (mouse: UiohookWheelEvent): boolean {
+  if (!PoeWindow.bounds ||
+      mouse.x > (PoeWindow.bounds.x + PoeWindow.uiSidebarWidth)) return false
+
+  return (mouse.y > (PoeWindow.bounds.y + PoeWindow.bounds.height * 154 / 1600) &&
+          mouse.y < (PoeWindow.bounds.y + PoeWindow.bounds.height * 1192 / 1600))
 }
 
 function stashSearch (text: string) {
