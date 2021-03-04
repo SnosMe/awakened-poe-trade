@@ -360,13 +360,6 @@
   },
   {
     "stat": {
-      "ref": "#% additional chance for Slain monsters to drop Scrolls of Wisdom",
-      "matchers": [{"string": "#% additional chance for Slain monsters to drop Scrolls of Wisdom"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2920230984"]}}
-  },
-  {
-    "stat": {
       "ref": "#% additional Elemental Resistances during Flask effect",
       "matchers": [{"string": "#% additional Elemental Resistances during Flask effect"}]
     },
@@ -461,7 +454,7 @@
       "ref": "#% additional Physical Damage Reduction while Focussed",
       "matchers": [{"string": "#% additional Physical Damage Reduction while Focussed"}]
     },
-    "trade": {"ids": {"fractured": ["fractured.stat_3753650187"], "crafted": ["crafted.stat_3753650187"]}}
+    "trade": {"ids": {"crafted": ["crafted.stat_3753650187"]}}
   },
   {
     "stat": {
@@ -612,6 +605,13 @@
       "matchers": [{"string": "#% chance for Rewards from Metamorphs in Areas to be Doubled"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4270449170"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance for Slain monsters to drop an additional Scroll of Wisdom",
+      "matchers": [{"string": "#% chance for Slain monsters to drop an additional Scroll of Wisdom"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2920230984"]}}
   },
   {
     "stat": {
@@ -1310,6 +1310,16 @@
   },
   {
     "stat": {
+      "ref": "#% chance to avoid Interruption from Stuns while using Socketed Attack Skills",
+      "matchers": [
+        {"string": "#% chance to avoid Interruption from Stuns while using Socketed Attack Skills"},
+        {"string": "Avoid Interruption from Stuns while using Socketed Attack Skills", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1439818705"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance to Avoid Lightning Damage from Hits",
       "matchers": [
         {"string": "#% chance to Avoid Lightning Damage from Hits"},
@@ -1334,6 +1344,13 @@
       "matchers": [{"string": "#% chance to avoid Projectiles"}, {"string": "Avoid Projectiles", "value": 100}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3452269808"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance to avoid Projectiles if you've taken Projectile Damage Recently",
+      "matchers": [{"string": "#% chance to avoid Projectiles if you've taken Projectile Damage Recently"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3114696875"]}}
   },
   {
     "stat": {
@@ -1664,7 +1681,13 @@
       "ref": "#% chance to Defend with Double Armour",
       "matchers": [{"string": "#% chance to Defend with Double Armour"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_327253797"], "implicit": ["implicit.stat_327253797"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_327253797"],
+        "implicit": ["implicit.stat_327253797"],
+        "fractured": ["fractured.stat_327253797"]
+      }
+    }
   },
   {
     "stat": {
@@ -1914,7 +1937,13 @@
         {"string": "Gain a Frenzy Charge on Critical Strike", "value": 100}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_398702949"], "crafted": ["crafted.stat_3032585258"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3032585258", "explicit.stat_398702949"],
+        "fractured": ["fractured.stat_3032585258"],
+        "crafted": ["crafted.stat_3032585258"]
+      }
+    }
   },
   {
     "stat": {
@@ -2136,7 +2165,13 @@
       "ref": "#% chance to gain an additional Vaal Soul on Kill",
       "matchers": [{"string": "#% chance to gain an additional Vaal Soul on Kill"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1962922582"], "implicit": ["implicit.stat_1962922582"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1962922582"],
+        "implicit": ["implicit.stat_1962922582"],
+        "fractured": ["fractured.stat_1962922582"]
+      }
+    }
   },
   {
     "stat": {
@@ -4201,6 +4236,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Area of Effect if you've dealt a Culling Strike Recently",
+      "matchers": [
+        {"string": "#% increased Area of Effect if you've dealt a Culling Strike Recently"},
+        {"string": "#% reduced Area of Effect if you've dealt a Culling Strike Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1785568076"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Area of Effect if you've Killed Recently",
       "matchers": [
         {"string": "#% increased Area of Effect if you've Killed Recently"},
@@ -4233,7 +4278,7 @@
         {"string": "#% reduced Area of Effect of Hex Skills", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_153777645"], "fractured": ["fractured.stat_153777645"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_153777645"]}}
   },
   {
     "stat": {
@@ -4534,6 +4579,16 @@
       ]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_26867112"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Attack and Cast Speed if you haven't been Hit Recently",
+      "matchers": [
+        {"string": "#% increased Attack and Cast Speed if you haven't been Hit Recently"},
+        {"string": "#% reduced Attack and Cast Speed if you haven't been Hit Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_223937937"]}}
   },
   {
     "stat": {
@@ -5032,6 +5087,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Attack Speed while not on Low Mana",
+      "matchers": [
+        {"string": "#% increased Attack Speed while not on Low Mana"},
+        {"string": "#% reduced Attack Speed while not on Low Mana", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_779663446"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Attack Speed while Phasing",
       "matchers": [
         {"string": "#% increased Attack Speed while Phasing"},
@@ -5217,6 +5282,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3476327198"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Attack, Cast and Movement Speed while you have Onslaught",
+      "matchers": [
+        {"string": "#% increased Attack, Cast and Movement Speed while you have Onslaught"},
+        {"string": "#% reduced Attack, Cast and Movement Speed while you have Onslaught", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_879520319"]}}
   },
   {
     "stat": {
@@ -6508,6 +6583,26 @@
   },
   {
     "stat": {
+      "ref": "#% increased Critical Strike Chance if you've been Shocked Recently",
+      "matchers": [
+        {"string": "#% increased Critical Strike Chance if you've been Shocked Recently"},
+        {"string": "#% reduced Critical Strike Chance if you've been Shocked Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1434381067"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Critical Strike Chance per 10 Strength",
+      "matchers": [
+        {"string": "#% increased Critical Strike Chance per 10 Strength"},
+        {"string": "#% reduced Critical Strike Chance per 10 Strength", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2511370818"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Critical Strike Chance per 4% Quality",
       "matchers": [{"string": "#% increased Critical Strike Chance per 4% Quality"}]
     },
@@ -6667,6 +6762,19 @@
   },
   {
     "stat": {
+      "ref": "#% increased Critical Strike Chance with Spells which remove the maximum number of Seals",
+      "matchers": [
+        {"string": "#% increased Critical Strike Chance with Spells which remove the maximum number of Seals"},
+        {
+          "string": "#% reduced Critical Strike Chance with Spells which remove the maximum number of Seals",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2897207025"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Critical Strike Chance with Traps",
       "matchers": [
         {"string": "#% increased Critical Strike Chance with Traps"},
@@ -6821,6 +6929,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Damage if you've been Ignited Recently",
+      "matchers": [
+        {"string": "#% increased Damage if you've been Ignited Recently"},
+        {"string": "#% reduced Damage if you've been Ignited Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_430821956"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Damage if you've Frozen an Enemy Recently",
       "matchers": [
         {"string": "#% increased Damage if you've Frozen an Enemy Recently"},
@@ -6964,6 +7082,7 @@
       "ids": {
         "explicit": ["explicit.stat_3515686789"],
         "implicit": ["implicit.stat_3515686789"],
+        "fractured": ["fractured.stat_3515686789"],
         "crafted": ["crafted.stat_3515686789"]
       }
     }
@@ -7048,6 +7167,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_705686721"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Damage taken if you've been Frozen Recently",
+      "matchers": [
+        {"string": "#% increased Damage taken if you've been Frozen Recently"},
+        {"string": "#% reduced Damage taken if you've been Frozen Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3616645755"]}}
   },
   {
     "stat": {
@@ -7869,7 +7998,7 @@
         {"string": "#% reduced Duration of Ailments you inflict while Focussed", "negate": true}
       ]
     },
-    "trade": {"ids": {"fractured": ["fractured.stat_1840751341"], "crafted": ["crafted.stat_1840751341"]}}
+    "trade": {"ids": {"crafted": ["crafted.stat_1840751341"]}}
   },
   {
     "stat": {
@@ -8274,6 +8403,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Effect of Tailwind on you",
+      "matchers": [
+        {"string": "#% increased Effect of Tailwind on you"},
+        {"string": "#% reduced Effect of Tailwind on you", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2172944497"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Effect of the Buff granted by your Carrion Golems",
       "matchers": [
         {"string": "#% increased Effect of the Buff granted by your Carrion Golems"},
@@ -8603,7 +8742,7 @@
       "ref": "#% increased Energy Shield from Body Armour",
       "matchers": [{"string": "#% increased Energy Shield from Body Armour"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1195319608"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1195319608"], "fractured": ["fractured.stat_1195319608"]}}
   },
   {
     "stat": {
@@ -8655,6 +8794,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_988575597"], "implicit": ["implicit.stat_988575597"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Energy Shield Recovery Rate if you haven't Killed Recently",
+      "matchers": [
+        {"string": "#% increased Energy Shield Recovery Rate if you haven't Killed Recently"},
+        {"string": "#% reduced Energy Shield Recovery Rate if you haven't Killed Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2698606393"]}}
   },
   {
     "stat": {
@@ -10178,6 +10327,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Life Recovery Rate if you haven't Killed Recently",
+      "matchers": [
+        {"string": "#% increased Life Recovery Rate if you haven't Killed Recently"},
+        {"string": "#% reduced Life Recovery Rate if you haven't Killed Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3353368340"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Life Recovery Rate per 10 Strength on Allocated Passives in Radius",
       "matchers": [
         {"string": "#% increased Life Recovery Rate per 10 Strength on Allocated Passives in Radius"},
@@ -10518,6 +10677,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Mana Recovery Rate if you haven't Killed Recently",
+      "matchers": [
+        {"string": "#% increased Mana Recovery Rate if you haven't Killed Recently"},
+        {"string": "#% reduced Mana Recovery Rate if you haven't Killed Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_630994130"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Mana Recovery Rate per 10 Intelligence on Allocated Passives in Radius",
       "matchers": [
         {"string": "#% increased Mana Recovery Rate per 10 Intelligence on Allocated Passives in Radius"},
@@ -10626,6 +10795,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3308030688"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Mana Reservation of Curse Aura Skills",
+      "matchers": [
+        {"string": "#% increased Mana Reservation of Curse Aura Skills"},
+        {"string": "#% reduced Mana Reservation of Curse Aura Skills", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3292930705"]}}
   },
   {
     "stat": {
@@ -10840,7 +11019,7 @@
         {"string": "#% reduced Maximum total Recovery per second from Mana Leech", "negate": true}
       ]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_96977651"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_96977651"], "implicit": ["implicit.stat_96977651"]}}
   },
   {
     "stat": {
@@ -11173,8 +11352,8 @@
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_1177358866", "explicit.stat_308396001"],
-        "fractured": ["fractured.stat_1177358866", "fractured.stat_308396001"],
+        "explicit": ["explicit.stat_308396001"],
+        "fractured": ["fractured.stat_308396001"],
         "enchant": ["enchant.stat_308396001"],
         "crafted": ["crafted.stat_1177358866"]
       }
@@ -11208,7 +11387,7 @@
         {"string": "#% reduced Movement Speed if you've Hit an Enemy Recently", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3178542354"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3178542354"], "fractured": ["fractured.stat_3178542354"]}}
   },
   {
     "stat": {
@@ -12275,7 +12454,13 @@
         {"string": "#% reduced Rarity of Items Dropped by Slain Rare or Unique Enemies", "negate": true}
       ]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_2161689853"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2161689853"],
+        "fractured": ["fractured.stat_2161689853"],
+        "crafted": ["crafted.stat_2161689853"]
+      }
+    }
   },
   {
     "stat": {
@@ -13369,6 +13554,7 @@
       "ids": {
         "explicit": ["explicit.stat_3374165039"],
         "implicit": ["implicit.stat_3374165039"],
+        "fractured": ["fractured.stat_3374165039"],
         "enchant": ["enchant.stat_3374165039"],
         "crafted": ["crafted.stat_3374165039"]
       }
@@ -14099,6 +14285,13 @@
   },
   {
     "stat": {
+      "ref": "#% of Cold Damage taken Recouped as Life",
+      "matchers": [{"string": "#% of Cold Damage taken Recouped as Life"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3679418014"]}}
+  },
+  {
+    "stat": {
       "ref": "#% of Damage against Frozen Enemies Leeched as Life",
       "matchers": [{"string": "#% of Damage against Frozen Enemies Leeched as Life"}]
     },
@@ -14207,13 +14400,7 @@
       "ref": "#% of Damage Leeched as Life while Focussed",
       "matchers": [{"string": "#% of Damage Leeched as Life while Focussed"}]
     },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3324747104"],
-        "fractured": ["fractured.stat_3324747104"],
-        "crafted": ["crafted.stat_3324747104"]
-      }
-    }
+    "trade": {"ids": {"crafted": ["crafted.stat_3324747104"]}}
   },
   {
     "stat": {
@@ -14371,6 +14558,13 @@
   },
   {
     "stat": {
+      "ref": "#% of Fire Damage taken Recouped as Life",
+      "matchers": [{"string": "#% of Fire Damage taken Recouped as Life"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1742651309"]}}
+  },
+  {
+    "stat": {
       "ref": "#% of Galvanic Arrow Physical Damage gained as extra Lightning Damage",
       "matchers": [{"string": "#% of Galvanic Arrow Physical Damage gained as extra Lightning Damage"}]
     },
@@ -14514,6 +14708,13 @@
       "matchers": [{"string": "#% of Lightning Damage Leeched as Mana during Flask effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1454377049"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% of Lightning Damage taken Recouped as Life",
+      "matchers": [{"string": "#% of Lightning Damage taken Recouped as Life"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2970621759"]}}
   },
   {
     "stat": {
@@ -14875,11 +15076,7 @@
       ]
     },
     "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_2960683632"],
-        "implicit": ["implicit.stat_2960683632"],
-        "fractured": ["fractured.stat_2960683632"]
-      },
+      "ids": {"explicit": ["explicit.stat_2960683632"], "implicit": ["implicit.stat_2960683632"]},
       "inverted": true
     }
   },
@@ -15023,13 +15220,7 @@
         {"string": "#% reduced Elemental Damage Taken while stationary", "negate": true}
       ]
     },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3859593448", "explicit.stat_983989924"],
-        "fractured": ["fractured.stat_3859593448"]
-      },
-      "inverted": true
-    }
+    "trade": {"ids": {"explicit": ["explicit.stat_3859593448", "explicit.stat_983989924"]}, "inverted": true}
   },
   {
     "stat": {
@@ -16374,7 +16565,14 @@
       "ref": "+# to Level of Socketed Projectile Gems",
       "matchers": [{"string": "# to Level of Socketed Projectile Gems"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_2176571093"], "crafted": ["crafted.stat_2176571093"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2176571093"],
+        "implicit": ["implicit.stat_2176571093"],
+        "fractured": ["fractured.stat_2176571093"],
+        "crafted": ["crafted.stat_2176571093"]
+      }
+    }
   },
   {
     "stat": {
@@ -17440,7 +17638,7 @@
       "ref": "+#% Player Cold Resistance per 25% Alert Level",
       "matchers": [{"string": "#% Player Cold Resistance per 25% Alert Level"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2916448124"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2916448124"], "fractured": ["fractured.stat_2916448124"]}}
   },
   {
     "stat": {
@@ -17523,13 +17721,6 @@
   },
   {
     "stat": {
-      "ref": "+#% to all Elemental Resistances per Endurance Charge",
-      "matchers": [{"string": "#% to all Elemental Resistances per Endurance Charge"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1852896268"]}}
-  },
-  {
-    "stat": {
       "ref": "+#% to all Elemental Resistances per Grand Spectrum",
       "matchers": [{"string": "#% to all Elemental Resistances per Grand Spectrum"}]
     },
@@ -17548,6 +17739,13 @@
       "matchers": [{"string": "#% to all Elemental Resistances while you have at least 200 Strength"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2415398184"]}}
+  },
+  {
+    "stat": {
+      "ref": "+#% to all maximum Elemental Resistances",
+      "matchers": [{"string": "#% to all maximum Elemental Resistances"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1978899297"]}}
   },
   {
     "stat": {
@@ -18295,13 +18493,7 @@
   },
   {
     "stat": {"ref": "+#% to maximum Cold Resistance", "matchers": [{"string": "#% to maximum Cold Resistance"}]},
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3676141501"],
-        "implicit": ["implicit.stat_3676141501"],
-        "fractured": ["fractured.stat_3676141501"]
-      }
-    }
+    "trade": {"ids": {"explicit": ["explicit.stat_3676141501"], "implicit": ["implicit.stat_3676141501"]}}
   },
   {
     "stat": {
@@ -18312,7 +18504,13 @@
   },
   {
     "stat": {"ref": "+#% to maximum Fire Resistance", "matchers": [{"string": "#% to maximum Fire Resistance"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_4095671657"], "implicit": ["implicit.stat_4095671657"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_4095671657"],
+        "implicit": ["implicit.stat_4095671657"],
+        "fractured": ["fractured.stat_4095671657"]
+      }
+    }
   },
   {
     "stat": {
@@ -18386,6 +18584,13 @@
   },
   {
     "stat": {
+      "ref": "+#% to Quality of Socketed Active Skill Gems",
+      "matchers": [{"string": "#% to Quality of Socketed Active Skill Gems"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1325783255"]}}
+  },
+  {
+    "stat": {
       "ref": "+#% to Quality of Socketed AoE Gems",
       "matchers": [{"string": "#% to Quality of Socketed AoE Gems"}]
     },
@@ -18456,7 +18661,7 @@
       "ref": "+#% to Quality of Socketed Lightning Gems",
       "matchers": [{"string": "#% to Quality of Socketed Lightning Gems"}]
     },
-    "trade": {"ids": {"implicit": ["implicit.stat_1065580342"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1065580342"], "implicit": ["implicit.stat_1065580342"]}}
   },
   {
     "stat": {
@@ -20596,13 +20801,7 @@
       "ref": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
       "matchers": [{"string": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill"}]
     },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1468606528"],
-        "fractured": ["fractured.stat_1468606528"],
-        "crafted": ["crafted.stat_1468606528"]
-      }
-    }
+    "trade": {"ids": {"explicit": ["explicit.stat_1468606528"], "crafted": ["crafted.stat_1468606528"]}}
   },
   {
     "stat": {
@@ -21167,7 +21366,13 @@
       "ref": "Adds # to # Chaos Damage if you've dealt a Critical Strike Recently",
       "matchers": [{"string": "Adds # to # Chaos Damage if you've dealt a Critical Strike Recently"}]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_2523334466"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2523334466"],
+        "fractured": ["fractured.stat_2523334466"],
+        "crafted": ["crafted.stat_2523334466"]
+      }
+    }
   },
   {
     "stat": {
@@ -21513,7 +21718,7 @@
       "ref": "Adds # to # Fire Damage if you've Blocked Recently",
       "matchers": [{"string": "Adds # to # Fire Damage if you've Blocked Recently"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3623716321"], "fractured": ["fractured.stat_3623716321"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3623716321"]}}
   },
   {
     "stat": {
@@ -21950,6 +22155,13 @@
       "matchers": [{"string": "Adds # to # Physical Damage against Poisoned Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_424026624"]}}
+  },
+  {
+    "stat": {
+      "ref": "Adds # to # Physical Damage for each Impale on Enemy",
+      "matchers": [{"string": "Adds # to # Physical Damage for each Impale on Enemy"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1455766505"]}}
   },
   {
     "stat": {
@@ -23704,6 +23916,30 @@
   },
   {
     "stat": {
+      "ref": "Areas contain an additional Gloom Shrine",
+      "matchers": [
+        {"string": "Area contains # additional Gloom Shrines"},
+        {"string": "Areas contain # additional Gloom Shrines"},
+        {"string": "Area contains an additional Gloom Shrine", "value": 1},
+        {"string": "Areas contain an additional Gloom Shrine", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1992047981"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas contain an additional Harbinger",
+      "matchers": [
+        {"string": "Area contains # additional Harbingers"},
+        {"string": "Areas contain # additional Harbingers"},
+        {"string": "Area contains an additional Harbinger", "value": 1},
+        {"string": "Areas contain an additional Harbinger", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_504850499"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas contain an additional Legion Encounter",
       "matchers": [
         {"string": "Area contains # additional Legion Encounters"},
@@ -23737,6 +23973,42 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2810286377"], "implicit": ["implicit.stat_2810286377"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas contain an additional Resonating Shrine",
+      "matchers": [
+        {"string": "Area contains # additional Resonating Shrines"},
+        {"string": "Areas contain # additional Resonating Shrines"},
+        {"string": "Area contains an additional Resonating Shrine", "value": 1},
+        {"string": "Areas contain an additional Resonating Shrine", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1274634881"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas contain an additional Shrine",
+      "matchers": [
+        {"string": "Area contains # additional Shrines"},
+        {"string": "Areas contain # additional Shrines"},
+        {"string": "Area contains an additional Shrine", "value": 1},
+        {"string": "Areas contain an additional Shrine", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1468737867"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas contain an additional Strongbox",
+      "matchers": [
+        {"string": "Area contains # additional Strongboxes"},
+        {"string": "Areas contain # additional Strongboxes"},
+        {"string": "Area contains an additional Strongbox", "value": 1},
+        {"string": "Areas contain an additional Strongbox", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_3240183538"]}}
   },
   {
     "stat": {
@@ -23776,66 +24048,6 @@
   },
   {
     "stat": {
-      "ref": "Areas contain an extra Gloom Shrine",
-      "matchers": [
-        {"string": "Area contains # extra Gloom Shrines"},
-        {"string": "Areas contain # extra Gloom Shrines"},
-        {"string": "Area contains an extra Gloom Shrine", "value": 1},
-        {"string": "Areas contain an extra Gloom Shrine", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_1992047981"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas contain an extra Harbinger",
-      "matchers": [
-        {"string": "Area contains # extra Harbingers"},
-        {"string": "Areas contain # extra Harbingers"},
-        {"string": "Area contains an extra Harbinger", "value": 1},
-        {"string": "Areas contain an extra Harbinger", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_504850499"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas contain an extra Resonating Shrine",
-      "matchers": [
-        {"string": "Area contains # extra Resonating Shrines"},
-        {"string": "Areas contain # extra Resonating Shrines"},
-        {"string": "Area contains an extra Resonating Shrine", "value": 1},
-        {"string": "Areas contain an extra Resonating Shrine", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_1274634881"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas contain an extra Shrine",
-      "matchers": [
-        {"string": "Area contains # extra Shrines"},
-        {"string": "Areas contain # extra Shrines"},
-        {"string": "Area contains an extra Shrine", "value": 1},
-        {"string": "Areas contain an extra Shrine", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_1468737867"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas contain an extra Strongbox",
-      "matchers": [
-        {"string": "Area contains # extra Strongboxes"},
-        {"string": "Areas contain # extra Strongboxes"},
-        {"string": "Area contains an extra Strongbox", "value": 1},
-        {"string": "Areas contain an extra Strongbox", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_3240183538"]}}
-  },
-  {
-    "stat": {
       "ref": "Areas contain hunted traitors",
       "matchers": [{"string": "Area contains hunted traitors"}, {"string": "Areas contain hunted traitors"}]
     },
@@ -23852,13 +24064,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3788235244"], "implicit": ["implicit.stat_3788235244"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas have #% chance to grant an additional Mission on Completion",
-      "matchers": [{"string": "Areas have #% chance to grant an additional Mission on Completion"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_416299653"]}}
   },
   {
     "stat": {
@@ -23883,6 +24088,13 @@
       "matchers": [{"string": "Areas have #% chance to contain a Vaal Side Area"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2156201537"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have +#% chance to grant an Atlas Mission on Completion",
+      "matchers": [{"string": "Areas have #% chance to grant an Atlas Mission on Completion"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_416299653"]}}
   },
   {
     "stat": {
@@ -25567,7 +25779,7 @@
       "ref": "Chill Nearby Enemies when you Block",
       "matchers": [{"string": "Chill Nearby Enemies when you Block"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_583277599"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_583277599"], "fractured": ["fractured.stat_583277599"]}}
   },
   {
     "stat": {
@@ -26391,13 +26603,7 @@
         {"string": "Your Hits treat Cold Resistance as #% higher than actual value", "negate": true}
       ]
     },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3417711605"],
-        "implicit": ["implicit.stat_3417711605"],
-        "fractured": ["fractured.stat_3417711605"]
-      }
-    }
+    "trade": {"ids": {"explicit": ["explicit.stat_3417711605"], "implicit": ["implicit.stat_3417711605"]}}
   },
   {
     "stat": {
@@ -26494,6 +26700,13 @@
       "matchers": [{"string": "Damage Penetrates #% Lightning Resistance while affected by Wrath"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1077131949"]}}
+  },
+  {
+    "stat": {
+      "ref": "Damage Penetrates #% of Enemy Elemental Resistances",
+      "matchers": [{"string": "Damage Penetrates #% of Enemy Elemental Resistances"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_697807915"]}}
   },
   {
     "stat": {
@@ -26984,6 +27197,16 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3469056056"]}}
+  },
+  {
+    "stat": {
+      "ref": "Effects of Consecrated Ground you create Linger for 1 second",
+      "matchers": [
+        {"string": "Effects of Consecrated Ground you create Linger for # seconds"},
+        {"string": "Effects of Consecrated Ground you create Linger for 1 second", "value": 1}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4113372195"]}}
   },
   {
     "stat": {
@@ -27953,6 +28176,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4272678430"]}}
+  },
+  {
+    "stat": {
+      "ref": "Freeze Enemies as though dealing #% more Damage",
+      "matchers": [{"string": "Freeze Enemies as though dealing #% more Damage"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1302208736"]}}
   },
   {
     "stat": {
@@ -30405,8 +30635,8 @@
   },
   {
     "stat": {
-      "ref": "Ignited Enemies you hit are destroyed on Kill",
-      "matchers": [{"string": "Ignited Enemies you hit are destroyed on Kill"}]
+      "ref": "Ignited Enemies Killed by your Hits are destroyed",
+      "matchers": [{"string": "Ignited Enemies Killed by your Hits are destroyed"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3173052379"]}}
   },
@@ -30983,14 +31213,7 @@
       "ref": "Item drops on Death if Equipped by an Animated Guardian",
       "matchers": [{"string": "Item drops on Death if Equipped by an Animated Guardian"}]
     },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3909846940"],
-        "implicit": ["implicit.stat_3909846940"],
-        "fractured": ["fractured.stat_3909846940"],
-        "crafted": ["crafted.stat_3909846940"]
-      }
-    }
+    "trade": {"ids": {"implicit": ["implicit.stat_3909846940"], "crafted": ["crafted.stat_3909846940"]}}
   },
   {
     "stat": {
@@ -31747,6 +31970,16 @@
   {
     "stat": {"ref": "Malevolence Reserves no Mana", "matchers": [{"string": "Malevolence Reserves no Mana"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_585622486"]}}
+  },
+  {
+    "stat": {
+      "ref": "Mana Flasks gain # Charge every 3 seconds",
+      "matchers": [
+        {"string": "Mana Flasks gain # Charge every 3 seconds"},
+        {"string": "Mana Flasks gain # Charges every 3 seconds"}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1193925814"]}}
   },
   {
     "stat": {
@@ -32822,7 +33055,7 @@
   },
   {
     "stat": {"ref": "Monsters Fracture", "matchers": [{"string": "Monsters Fracture"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_637101875"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_637101875"], "fractured": ["fractured.stat_637101875"]}}
   },
   {
     "stat": {
@@ -33347,14 +33580,14 @@
       "ref": "Nearby Enemies have +#% to Chaos Resistance",
       "matchers": [{"string": "Nearby Enemies have #% to Chaos Resistance"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1902595112"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1902595112"], "fractured": ["fractured.stat_1902595112"]}}
   },
   {
     "stat": {
       "ref": "Nearby Enemies have +#% to Cold Resistance",
       "matchers": [{"string": "Nearby Enemies have #% to Cold Resistance"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2674336304"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2674336304"], "fractured": ["fractured.stat_2674336304"]}}
   },
   {
     "stat": {
@@ -34420,7 +34653,7 @@
         {"string": "Players have #% less Mana Recovery Rate per 25% Alert Level", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_953449033"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_953449033"], "fractured": ["fractured.stat_953449033"]}}
   },
   {
     "stat": {
@@ -34755,6 +34988,7 @@
       "ids": {
         "explicit": ["explicit.stat_2067062068"],
         "implicit": ["implicit.stat_2067062068", "implicit.stat_2902845638"],
+        "fractured": ["fractured.stat_2067062068"],
         "crafted": ["crafted.stat_2067062068"]
       }
     }
@@ -35840,7 +36074,13 @@
       "ref": "Regenerate #% of Life per second during any Flask Effect",
       "matchers": [{"string": "Regenerate #% of Life per second during any Flask Effect"}]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_3500911418"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3500911418"],
+        "fractured": ["fractured.stat_3500911418"],
+        "crafted": ["crafted.stat_3500911418"]
+      }
+    }
   },
   {
     "stat": {
@@ -36106,7 +36346,7 @@
         {"string": "Reward Rooms have #% reduced Monsters", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_4056408881"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_4056408881"], "fractured": ["fractured.stat_4056408881"]}}
   },
   {
     "stat": {
@@ -36118,7 +36358,7 @@
         {"string": "Thaumaturgical Lure", "value": 4}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3360430812"], "fractured": ["fractured.stat_3360430812"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3360430812"]}}
   },
   {
     "stat": {
@@ -36459,7 +36699,7 @@
         {"string": "Shock Enemies as though dealing #% less Damage", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_451866048"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2206792089", "explicit.stat_451866048"]}}
   },
   {
     "stat": {
@@ -36705,7 +36945,7 @@
       "ref": "Skills Cost no Mana while Focussed",
       "matchers": [{"string": "Skills Cost no Mana while Focussed"}]
     },
-    "trade": {"ids": {"fractured": ["fractured.stat_849152640"], "crafted": ["crafted.stat_849152640"]}}
+    "trade": {"ids": {"crafted": ["crafted.stat_849152640"]}}
   },
   {
     "stat": {
@@ -37026,38 +37266,10 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Added Chaos Damage",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Added Chaos Damage"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2722592119"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Added Cold Damage",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Added Cold Damage"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2509486489"]}}
-  },
-  {
-    "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Added Fire Damage",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Added Fire Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_339131601"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Added Lightning Damage"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3429304534"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Blasphemy",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Blasphemy"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1046449631"]}}
   },
   {
     "stat": {
@@ -37075,24 +37287,10 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Cold Penetration",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Cold Penetration"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1889095429"]}}
-  },
-  {
-    "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Elemental Damage With Attacks",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Elemental Damage With Attacks"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1786672841"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Fire Penetration",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Fire Penetration"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_170274897"]}}
   },
   {
     "stat": {
@@ -37107,13 +37305,6 @@
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Greater Multiple Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1980028507"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Awakened Increased Area Of Effect",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Increased Area Of Effect"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2333301609"]}}
   },
   {
     "stat": {
@@ -37198,13 +37389,6 @@
       "matchers": [{"string": "Socketed Gems are supported by Level # Blind"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2223640518"], "implicit": ["implicit.stat_2223640518"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Block Chance Reduction",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Block Chance Reduction"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1966051190"]}}
   },
   {
     "stat": {
@@ -37318,7 +37502,7 @@
       "ref": "Socketed Gems are Supported by Level # Charged Mines",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Charged Mines"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_103", "explicit.stat_1365328494"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_103"]}}
   },
   {
     "stat": {
@@ -37636,7 +37820,7 @@
       "ref": "Socketed Gems are Supported by Level # Impending Doom",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Impending Doom"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_133"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_133", "explicit.stat_3227145554"]}}
   },
   {
     "stat": {
@@ -37880,7 +38064,7 @@
       "ref": "Socketed Gems are Supported by Level # Multiple Traps",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Multiple Traps"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_39", "explicit.stat_3016436615"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_39"]}}
   },
   {
     "stat": {
@@ -37894,7 +38078,7 @@
       "ref": "Socketed Gems are Supported by Level # Nightblade",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Nightblade"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_38", "explicit.stat_2861649515"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_38"]}}
   },
   {
     "stat": {
@@ -38081,7 +38265,7 @@
       "ref": "Socketed Gems are Supported by Level # Trinity",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Trinity"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_134"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_134", "explicit.stat_3111091501"]}}
   },
   {
     "stat": {
@@ -39513,12 +39697,8 @@
   },
   {
     "stat": {
-      "ref": "Timeless Splinters dropped by Legion Monsters in Areas have #% chance to drop as Timeless Emblems instead",
-      "matchers": [
-        {
-          "string": "Timeless Splinters dropped by Legion Monsters in Areas have #% chance to drop as Timeless Emblems instead"
-        }
-      ]
+      "ref": "Timeless Splinters dropped in Areas have #% chance to drop as Timeless Emblems instead",
+      "matchers": [{"string": "Timeless Splinters dropped in Areas have #% chance to drop as Timeless Emblems instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_407036985"]}}
   },
@@ -40045,6 +40225,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3308185931"]}}
   },
   {
+    "stat": {"ref": "Unaffected by Chill", "matchers": [{"string": "Unaffected by Chill"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_937372143"]}}
+  },
+  {
     "stat": {"ref": "Unaffected by Chilled Ground", "matchers": [{"string": "Unaffected by Chilled Ground"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3653191834"], "implicit": ["implicit.stat_3653191834"]}}
   },
@@ -40097,6 +40281,10 @@
       "matchers": [{"string": "Unaffected by Frostbite while affected by Purity of Ice"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4012281889"]}}
+  },
+  {
+    "stat": {"ref": "Unaffected by Ignite", "matchers": [{"string": "Unaffected by Ignite"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_2635869389"]}}
   },
   {
     "stat": {"ref": "Unaffected by Poison", "matchers": [{"string": "Unaffected by Poison"}]},
@@ -42353,14 +42541,14 @@
   },
   {
     "stat": {
-      "ref": "You have Chilling Conflux for 3 seconds every 8 seconds",
+      "ref": "You have # Conflux for 3 seconds every 8 seconds",
       "matchers": [
         {"string": "You have Chilling Conflux for 3 seconds every 8 seconds", "value": 1},
         {"string": "You have Shocking Conflux for 3 seconds every 8 seconds", "value": 2},
         {"string": "You have Igniting Conflux for 3 seconds every 8 seconds", "value": 3}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1190121450"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1190121450"]}, "option": "str"}
   },
   {
     "stat": {
@@ -42599,13 +42787,7 @@
   },
   {
     "stat": {"ref": "You have Vaal Pact while Focussed", "matchers": [{"string": "You have Vaal Pact while Focussed"}]},
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_2022851697"],
-        "fractured": ["fractured.stat_2022851697"],
-        "crafted": ["crafted.stat_2022851697"]
-      }
-    }
+    "trade": {"ids": {"crafted": ["crafted.stat_2022851697"]}}
   },
   {
     "stat": {
@@ -42852,13 +43034,7 @@
         {"string": "Your Critical Strike Chance is Lucky while Focussed", "value": 1}
       ]
     },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1349659520"],
-        "fractured": ["fractured.stat_1349659520"],
-        "crafted": ["crafted.stat_1349659520"]
-      }
-    }
+    "trade": {"ids": {"crafted": ["crafted.stat_1349659520"]}}
   },
   {
     "stat": {
