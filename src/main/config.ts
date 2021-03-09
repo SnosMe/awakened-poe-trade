@@ -7,6 +7,7 @@ import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
 import { overlayWindow } from './overlay-window'
 import { logger } from './logger'
 import { LogWatcher } from './LogWatcher'
+import { ItemCheckWidget } from '@/web/overlay/interfaces'
 
 export function setupConfigEvents () {
   ipcMain.on(GET_CONFIG, (e) => {
@@ -33,7 +34,7 @@ export const config = (() => {
   if (forbidden.includes(config.priceCheckLocked as string)) { config.priceCheckLocked = null }
   if (forbidden.includes(config.wikiKey as string)) { config.wikiKey = null }
   if (forbidden.includes(config.craftOfExileKey as string)) { config.craftOfExileKey = null }
-  if (forbidden.includes(config.mapCheckKey as string)) { config.mapCheckKey = null }
+  if (forbidden.includes(config.itemCheckKey as string)) { config.itemCheckKey = null }
   if (config.priceCheckKeyHold === 'Ctrl' && forbiddenCtrl.includes(config.priceCheckKey as string)) {
     config.priceCheckKey = null
   }
@@ -115,6 +116,18 @@ export const config = (() => {
       .apiLatencySeconds = 2
 
     config.configVersion = 6
+  }
+
+  if (config.configVersion < 7) {
+    const mapCheck = config.widgets.find(w => w.wmType === 'map-check')!
+    mapCheck.wmType = 'item-check'
+    ;(mapCheck as ItemCheckWidget).maps = { selectedStats: mapCheck.selectedStats }
+    mapCheck.selectedStats = undefined
+
+    config.itemCheckKey = (config as any).mapCheckKey || null
+    ;(config as any).mapCheckKey = undefined
+
+    config.configVersion = 7
   }
 
   store.store = config

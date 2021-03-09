@@ -48,7 +48,7 @@ import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import { STATS } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
-import { MapCheckWidget } from '../overlay/interfaces'
+import { ItemCheckWidget } from '../overlay/interfaces'
 import VirtualScroll from '../ui/VirtualScroll.vue'
 
 const statList = computed(() => {
@@ -67,7 +67,7 @@ export default defineComponent({
     const onlySelected = ref(true)
 
     const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'map-check') as MapCheckWidget
+      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
     })
 
     const { t } = useI18n()
@@ -82,7 +82,7 @@ export default defineComponent({
         return statList.value.filter(stat =>
           q.every(part => stat.searchStr.includes(part)) &&
           (onlySelected.value
-            ? (config.value.selectedStats.some(selected => selected.matcher === stat.matchStr))
+            ? (config.value.maps.selectedStats.some(selected => selected.matcher === stat.matchStr))
             : true)
         )
       }),

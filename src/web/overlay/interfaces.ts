@@ -51,14 +51,16 @@ export interface PriceCheckWidget extends Widget {
   apiLatencySeconds: number
 }
 
-export interface MapCheckWidget extends Widget {
-  selectedStats: Array<{
-    matcher: string
-    invert: boolean
-    valueWarning: string
-    valueDanger: string
-    valueDesirable: string
-  }>
+export interface ItemCheckWidget extends Widget {
+  maps: {
+    selectedStats: Array<{
+      matcher: string
+      invert: boolean
+      valueWarning: string
+      valueDanger: string
+      valueDesirable: string
+    }>
+  }
 }
 
 export interface StopwatchWidget extends Widget {

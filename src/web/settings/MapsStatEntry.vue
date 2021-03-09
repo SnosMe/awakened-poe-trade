@@ -19,7 +19,7 @@
 import { defineComponent, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
-import { MapCheckWidget } from '../overlay/interfaces'
+import { ItemCheckWidget } from '../overlay/interfaces'
 
 export default defineComponent({
   emits: [],
@@ -35,10 +35,10 @@ export default defineComponent({
   },
   setup (props) {
     const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'map-check') as MapCheckWidget
+      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
     })
     const entryInSelected = computed(() => {
-      return config.value.selectedStats.find(_ => _.matcher === props.matcher)
+      return config.value.maps.selectedStats.find(_ => _.matcher === props.matcher)
     })
 
     const invert = computed<boolean>({
@@ -58,9 +58,9 @@ export default defineComponent({
       set (value) { setProp('valueDesirable', value) }
     })
 
-    function setProp<T extends keyof MapCheckWidget['selectedStats'][number]> (
+    function setProp<T extends keyof ItemCheckWidget['maps']['selectedStats'][number]> (
       key: T,
-      value: MapCheckWidget['selectedStats'][number][T]
+      value: ItemCheckWidget['maps']['selectedStats'][number][T]
     ) {
       if (entryInSelected.value) {
         entryInSelected.value[key] = value
@@ -68,7 +68,7 @@ export default defineComponent({
           removeIfNotUsed()
         }
       } else {
-        config.value.selectedStats.push({
+        config.value.maps.selectedStats.push({
           matcher: props.matcher,
           invert: false,
           valueWarning: '',
@@ -94,7 +94,7 @@ export default defineComponent({
     function remove () {
       if (!entryInSelected.value) return
 
-      config.value.selectedStats = config.value.selectedStats
+      config.value.maps.selectedStats = config.value.maps.selectedStats
         .filter(selected => selected !== entryInSelected.value)
     }
 

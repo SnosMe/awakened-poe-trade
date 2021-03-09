@@ -30,8 +30,8 @@ export interface IpcPriceCheck {
   position: { x: number, y: number }
 }
 
-export const MAP_CHECK = 'MAIN->OVERLAY::map-check'
-export interface IpcMapCheck {
+export const ITEM_CHECK = 'MAIN->OVERLAY::item-check'
+export interface IpcItemCheck {
   clipboard: string
   position: { x: number, y: number }
 }

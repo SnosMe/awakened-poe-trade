@@ -39,12 +39,12 @@ function priceCheck (lockedMode: boolean) {
   }
 }
 
-function mapCheck () {
-  logger.info('Map check', { source: 'shortcuts' })
+function itemCheck () {
+  logger.info('Item check', { source: 'shortcuts' })
 
   pollClipboard()
     .then(clipboard => {
-      overlayWindow!.webContents.send(ipc.MAP_CHECK, { clipboard, position: hotkeyPressPosition! } as ipc.IpcMapCheck)
+      overlayWindow!.webContents.send(ipc.ITEM_CHECK, { clipboard, position: hotkeyPressPosition! } as ipc.IpcItemCheck)
       assertOverlayActive()
     })
     .catch(() => {})
@@ -83,8 +83,8 @@ function registerGlobal () {
       }
     ),
     shortcutCallback(
-      config.get('mapCheckKey'),
-      mapCheck
+      config.get('itemCheckKey'),
+      itemCheck
     ),
     shortcutCallback(
       config.get('delveGridKey'),
@@ -166,8 +166,8 @@ export function setupShortcuts () {
         pollClipboard().then(openCraftOfExile).catch(() => {})
         robotjs.keyTap('C', ['Ctrl'])
       }).cb()
-    } else if (pressed === config.get('mapCheckKey')) {
-      shortcutCallback(pressed, mapCheck).cb()
+    } else if (pressed === config.get('itemCheckKey')) {
+      shortcutCallback(pressed, itemCheck).cb()
     } else if (pressed === config.get('delveGridKey')) {
       shortcutCallback(pressed, toggleDelveGrid, { doNotResetModKey: true }).cb()
     } else {

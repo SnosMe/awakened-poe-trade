@@ -28,7 +28,7 @@ import { defineComponent, PropType, computed } from 'vue'
 import ItemModifierText from '../ui/ItemModifierText.vue'
 import { Config } from '@/web/Config'
 import { PreparedStat } from './prepare-map-stats'
-import { MapCheckWidget } from '../overlay/interfaces'
+import { ItemCheckWidget } from '../overlay/interfaces'
 
 export default defineComponent({
   components: { ItemModifierText },
@@ -40,11 +40,11 @@ export default defineComponent({
   },
   setup (props) {
     const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'map-check') as MapCheckWidget
+      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
     })
 
     const entryInSelected = computed(() => {
-      return config.value.selectedStats.find(_ => _.matcher === props.stat.matcher)
+      return config.value.maps.selectedStats.find(_ => _.matcher === props.stat.matcher)
     })
 
     const state = computed(() => {
@@ -105,7 +105,7 @@ export default defineComponent({
       state,
       handleClick () {
         if (!entryInSelected.value) {
-          config.value.selectedStats.push({
+          config.value.maps.selectedStats.push({
             matcher: props.stat.matcher,
             invert: false,
             valueDanger: '+',
@@ -124,7 +124,7 @@ export default defineComponent({
           entryInSelected.value.valueWarning = ''
           entryInSelected.value.valueDesirable = '+'
         } else if (entryInSelected.value.valueDesirable === '+') {
-          config.value.selectedStats = config.value.selectedStats.filter(selected => selected !== entryInSelected.value)
+          config.value.maps.selectedStats = config.value.maps.selectedStats.filter(selected => selected !== entryInSelected.value)
         }
       }
     }

@@ -26,7 +26,7 @@ import WidgetStashSearch from './WidgetStashSearch'
 import WidgetMenu from './WidgetMenu'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
 import WidgetDebug from './WidgetDebug'
-import WidgetMapCheck from '@/web/map-check/WidgetMapCheck'
+import WidgetItemCheck from '@/web/item-check/WidgetItemCheck'
 import WidgetImageStrip from './WidgetImageStrip'
 import WidgetDelveGrid from './WidgetDelveGrid'
 import { registerOtherServices } from '../other-services'
@@ -45,7 +45,7 @@ export default {
     WidgetMenu,
     WidgetPriceCheck: PriceCheckWindow,
     WidgetDebug,
-    WidgetMapCheck,
+    WidgetItemCheck,
     WidgetImageStrip,
     WidgetDelveGrid,
     LoadingAnimation

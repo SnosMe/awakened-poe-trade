@@ -1,4 +1,4 @@
-import { MapCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
+import { ItemCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export interface League {
   id: string
@@ -18,7 +18,7 @@ export interface Config {
   overlayBackgroundExclusive: boolean
   overlayBackgroundClose: boolean
   priceCheckShowCursor: boolean
-  mapCheckKey: string | null
+  itemCheckKey: string | null
   delveGridKey: string | null
   restoreClipboard: boolean
   commands: Array<{
@@ -62,7 +62,7 @@ type WidgetWellKnownFlag =
   'hide-on-focus'
 
 export const defaultConfig: Config = {
-  configVersion: 6,
+  configVersion: 7,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -73,7 +73,7 @@ export const defaultConfig: Config = {
   overlayBackgroundExclusive: true,
   overlayBackgroundClose: true,
   priceCheckShowCursor: true,
-  mapCheckKey: null,
+  itemCheckKey: null,
   delveGridKey: null,
   restoreClipboard: true,
   commands: [{
@@ -142,49 +142,51 @@ export const defaultConfig: Config = {
     } as PriceCheckWidget,
     {
       wmId: 3,
-      wmType: 'map-check',
+      wmType: 'item-check',
       wmTitle: '',
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
-      selectedStats: [
-        {
-          matcher: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
-          invert: false,
-          valueWarning: '',
-          valueDanger: '',
-          valueDesirable: '+'
-        },
-        {
-          matcher: '#% maximum Player Resistances',
-          invert: true,
-          valueWarning: '-10',
-          valueDanger: '',
-          valueDesirable: ''
-        },
-        {
-          matcher: 'Monsters reflect #% of Physical Damage',
-          invert: false,
-          valueWarning: '',
-          valueDanger: '+',
-          valueDesirable: ''
-        },
-        {
-          matcher: 'Monsters reflect #% of Elemental Damage',
-          invert: false,
-          valueWarning: '',
-          valueDanger: '+',
-          valueDesirable: ''
-        },
-        {
-          matcher: 'Area contains two Unique Bosses',
-          invert: false,
-          valueWarning: '',
-          valueDanger: '',
-          valueDesirable: '+'
-        }
-      ]
-    } as MapCheckWidget,
+      maps: {
+        selectedStats: [
+          {
+            matcher: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
+            invert: false,
+            valueWarning: '',
+            valueDanger: '',
+            valueDesirable: '+'
+          },
+          {
+            matcher: '#% maximum Player Resistances',
+            invert: true,
+            valueWarning: '-10',
+            valueDanger: '',
+            valueDesirable: ''
+          },
+          {
+            matcher: 'Monsters reflect #% of Physical Damage',
+            invert: false,
+            valueWarning: '',
+            valueDanger: '+',
+            valueDesirable: ''
+          },
+          {
+            matcher: 'Monsters reflect #% of Elemental Damage',
+            invert: false,
+            valueWarning: '',
+            valueDanger: '+',
+            valueDesirable: ''
+          },
+          {
+            matcher: 'Area contains two Unique Bosses',
+            invert: false,
+            valueWarning: '',
+            valueDanger: '',
+            valueDesirable: '+'
+          }
+        ]
+      }
+    } as ItemCheckWidget,
     {
       wmId: 4,
       wmType: 'delve-grid',
