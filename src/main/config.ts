@@ -46,20 +46,6 @@ export const config = (() => {
     config.fontSize = defaultConfig.fontSize
   }
 
-  { // config.configVersion < 2 (undefined)
-    const mapWidget = config.widgets.find(w => w.wmType === 'map-check')!
-    if (mapWidget.wmZorder !== 'exclusive') {
-      mapWidget.wmZorder = 'exclusive'
-      mapWidget.selectedStats = mapWidget.selectedStats.map((legacy: { text: string, markedAs: string }) => ({
-        matchRef: legacy.text,
-        invert: false,
-        valueWarning: legacy.markedAs === 'warning' ? '+' : '',
-        valueDanger: legacy.markedAs === 'danger' ? '+' : '',
-        valueDesirable: legacy.markedAs === 'desirable' ? '+' : ''
-      }))
-    }
-  }
-
   if (config.configVersion < 3) {
     config.widgets.push({
       ...defaultConfig.widgets.find(w => w.wmType === 'image-strip')!,
