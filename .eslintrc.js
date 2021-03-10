@@ -18,6 +18,7 @@ module.exports = {
     'no-labels': ['error', { allowLoop: true }],
     'multiline-ternary': 'off',
     'no-unused-vars': 'off',
+    'no-undef': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
