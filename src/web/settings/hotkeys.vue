@@ -52,8 +52,9 @@
       <div class="flex">
         <div class="flex-1">{{ t('Stash tab scrolling') }}</div>
         <div class="flex">
-          <ui-radio v-model="config.stashScroll" :value="true" class="mr-4 font-fontin-regular">Ctrl + MouseWheel</ui-radio>
-          <ui-radio v-model="config.stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
+          <ui-radio v-model="config.stashScroll" :value="2" class="mr-4 font-fontin-regular">Ctrl + MouseWheel</ui-radio>
+          <ui-radio v-model="config.stashScroll" :value="1" class="mr-4 font-fontin-regular">MouseWheel</ui-radio>
+          <ui-radio v-model="config.stashScroll" :value="0">{{ t('Disabled') }}</ui-radio>
         </div>
       </div>
     </div>
