@@ -185,7 +185,10 @@ export function setupShortcuts () {
   })
 
   uIOhook.on('wheel', (e) => {
-    if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
+    if (!PoeWindow.bounds || !PoeWindow.isActive) return
+    // stash scrolling modes: 0 = disabled, 1 = mousewheel with Ctrl, 2 = mousewheel without ctrl
+    if (config.get('stashScroll') == 0) return
+    if (config.get('stashScroll') == 1 && !e.ctrlKey) return
 
     if (!isGameScrolling(e)) {
       if (e.rotation > 0) {
