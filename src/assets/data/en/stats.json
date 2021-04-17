@@ -74,6 +74,10 @@
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_abyssal_incubator_kills"]}}
   },
   {
+    "stat": {"ref": "# Incubator Kills (Blighted)", "matchers": [{"string": "# Incubator Kills (Blighted)"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_blighted_incubator_kills"]}}
+  },
+  {
     "stat": {
       "ref": "# Incubator Kills (Cartographer's)",
       "matchers": [{"string": "# Incubator Kills (Cartographer's)"}]
@@ -148,6 +152,14 @@
   {
     "stat": {"ref": "# Incubator Kills (Infused)", "matchers": [{"string": "# Incubator Kills (Infused)"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_infused_incubator_kills"]}}
+  },
+  {
+    "stat": {"ref": "# Incubator Kills (Maddening)", "matchers": [{"string": "# Incubator Kills (Maddening)"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_maddening_incubator_kills"]}}
+  },
+  {
+    "stat": {"ref": "# Incubator Kills (Morphing)", "matchers": [{"string": "# Incubator Kills (Morphing)"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_morphing_incubator_kills"]}}
   },
   {
     "stat": {"ref": "# Incubator Kills (Mysterious)", "matchers": [{"string": "# Incubator Kills (Mysterious)"}]},
@@ -289,6 +301,81 @@
   },
   {
     "stat": {
+      "ref": "# to # Added Cold Damage per Frenzy Charge",
+      "matchers": [{"string": "# to # Added Cold Damage per Frenzy Charge"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3648858570"],
+        "implicit": ["implicit.stat_3648858570"],
+        "fractured": ["fractured.stat_3648858570"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Axe Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Axe Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1782176131"], "fractured": ["fractured.stat_1782176131"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Bow Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Bow Attacks"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_215124030"],
+        "implicit": ["implicit.stat_215124030"],
+        "fractured": ["fractured.stat_215124030"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Claw Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Claw Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2848646243"], "fractured": ["fractured.stat_2848646243"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Dagger Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Dagger Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1263342750"], "fractured": ["fractured.stat_1263342750"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Mace or Sceptre Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_187418672"], "fractured": ["fractured.stat_187418672"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Staff Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Staff Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1261958804"], "fractured": ["fractured.stat_1261958804"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Sword Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Sword Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_972201717"], "fractured": ["fractured.stat_972201717"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Wand Attacks",
+      "matchers": [{"string": "# to # Added Cold Damage with Wand Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2383797932"], "fractured": ["fractured.stat_2383797932"]}}
+  },
+  {
+    "stat": {
       "ref": "# to # added Fire Damage\nPlayers and their Minions have # to # added Fire Damage",
       "matchers": [{"string": "# to # added Fire Damage\nPlayers and their Minions have # to # added Fire Damage"}]
     },
@@ -303,12 +390,136 @@
   },
   {
     "stat": {
+      "ref": "# to # Added Fire Damage with Axe Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Axe Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2461965653"], "fractured": ["fractured.stat_2461965653"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Bow Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Bow Attacks"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3120164895"],
+        "implicit": ["implicit.stat_3120164895"],
+        "fractured": ["fractured.stat_3120164895"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Claw Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Claw Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2154290807"], "fractured": ["fractured.stat_2154290807"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Dagger Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Dagger Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1910361436"], "fractured": ["fractured.stat_1910361436"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Mace or Sceptre Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3146788701"], "fractured": ["fractured.stat_3146788701"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Staff Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Staff Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3220927448"], "fractured": ["fractured.stat_3220927448"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Sword Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Sword Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_601249293"], "fractured": ["fractured.stat_601249293"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Wand Attacks",
+      "matchers": [{"string": "# to # Added Fire Damage with Wand Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_87098247"], "fractured": ["fractured.stat_87098247"]}}
+  },
+  {
+    "stat": {
       "ref": "# to # added Lightning Damage\nPlayers and their Minions have # to # added Lightning Damage",
       "matchers": [
         {"string": "# to # added Lightning Damage\nPlayers and their Minions have # to # added Lightning Damage"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2697534676"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Axe Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Axe Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1582068183"], "fractured": ["fractured.stat_1582068183"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Bow Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Bow Attacks"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1040269876"],
+        "implicit": ["implicit.stat_1040269876"],
+        "fractured": ["fractured.stat_1040269876"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Claw Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Claw Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4231842891"], "fractured": ["fractured.stat_4231842891"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Dagger Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Dagger Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3479683016"], "fractured": ["fractured.stat_3479683016"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Mace or Sceptre Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2096159630"], "fractured": ["fractured.stat_2096159630"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Staff Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Staff Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3212481075"], "fractured": ["fractured.stat_3212481075"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Sword Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Sword Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1237708713"], "fractured": ["fractured.stat_1237708713"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Wand Attacks",
+      "matchers": [{"string": "# to # Added Lightning Damage with Wand Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2787733863"], "fractured": ["fractured.stat_2787733863"]}}
   },
   {
     "stat": {
@@ -321,16 +532,170 @@
   },
   {
     "stat": {
-      "ref": "# to # Cold Damage per Frenzy Charge",
-      "matchers": [{"string": "# to # Cold Damage per Frenzy Charge"}]
+      "ref": "# to # Added Physical Damage with Axe Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Axe Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_311030839"], "fractured": ["fractured.stat_311030839"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Bow Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Bow Attacks"}]
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_3648858570"],
-        "implicit": ["implicit.stat_3648858570"],
-        "fractured": ["fractured.stat_3648858570"]
+        "explicit": ["explicit.stat_1760576992"],
+        "implicit": ["implicit.stat_1760576992"],
+        "fractured": ["fractured.stat_1760576992"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Claw Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Claw Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3303015"], "fractured": ["fractured.stat_3303015"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Dagger Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Dagger Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1298238534"], "fractured": ["fractured.stat_1298238534"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Mace or Sceptre Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3882662078"], "fractured": ["fractured.stat_3882662078"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Staff Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Staff Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_69898010"], "fractured": ["fractured.stat_69898010"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Sword Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Sword Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1040189894"], "fractured": ["fractured.stat_1040189894"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Wand Attacks",
+      "matchers": [{"string": "# to # Added Physical Damage with Wand Attacks"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_133683091"], "fractured": ["fractured.stat_133683091"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Chaos Damage while Dual Wielding",
+      "matchers": [{"string": "# to # Added Spell Chaos Damage while Dual Wielding"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1865428306"], "fractured": ["fractured.stat_1865428306"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Chaos Damage while holding a Shield",
+      "matchers": [{"string": "# to # Added Spell Chaos Damage while holding a Shield"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1181129483"], "fractured": ["fractured.stat_1181129483"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Chaos Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "# to # Added Spell Chaos Damage while wielding a Two Handed Weapon"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1743759111"], "fractured": ["fractured.stat_1743759111"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Cold Damage while Dual Wielding",
+      "matchers": [{"string": "# to # Added Spell Cold Damage while Dual Wielding"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3376452528"], "fractured": ["fractured.stat_3376452528"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Cold Damage while holding a Shield",
+      "matchers": [{"string": "# to # Added Spell Cold Damage while holding a Shield"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2671663397"], "fractured": ["fractured.stat_2671663397"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Cold Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "# to # Added Spell Cold Damage while wielding a Two Handed Weapon"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2464689927"], "fractured": ["fractured.stat_2464689927"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Fire Damage while Dual Wielding",
+      "matchers": [{"string": "# to # Added Spell Fire Damage while Dual Wielding"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_662691280"], "fractured": ["fractured.stat_662691280"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Fire Damage while holding a Shield",
+      "matchers": [{"string": "# to # Added Spell Fire Damage while holding a Shield"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_44182350"], "fractured": ["fractured.stat_44182350"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Fire Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "# to # Added Spell Fire Damage while wielding a Two Handed Weapon"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2135335407"], "fractured": ["fractured.stat_2135335407"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Lightning Damage while Dual Wielding",
+      "matchers": [{"string": "# to # Added Spell Lightning Damage while Dual Wielding"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3352373076"], "fractured": ["fractured.stat_3352373076"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Lightning Damage while holding a Shield",
+      "matchers": [{"string": "# to # Added Spell Lightning Damage while holding a Shield"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1801889979"], "fractured": ["fractured.stat_1801889979"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Lightning Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "# to # Added Spell Lightning Damage while wielding a Two Handed Weapon"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2398198236"], "fractured": ["fractured.stat_2398198236"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Physical Damage while Dual Wielding",
+      "matchers": [{"string": "# to # Added Spell Physical Damage while Dual Wielding"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4255924189"], "fractured": ["fractured.stat_4255924189"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Physical Damage while holding a Shield",
+      "matchers": [{"string": "# to # Added Spell Physical Damage while holding a Shield"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3954157711"], "fractured": ["fractured.stat_3954157711"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Physical Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "# to # Added Spell Physical Damage while wielding a Two Handed Weapon"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2921084940"], "fractured": ["fractured.stat_2921084940"]}}
   },
   {
     "stat": {
@@ -454,7 +819,13 @@
       "ref": "#% additional Physical Damage Reduction while Focussed",
       "matchers": [{"string": "#% additional Physical Damage Reduction while Focussed"}]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_3753650187"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3753650187"],
+        "fractured": ["fractured.stat_3753650187"],
+        "crafted": ["crafted.stat_3753650187"]
+      }
+    }
   },
   {
     "stat": {
@@ -1007,10 +1378,10 @@
   },
   {
     "stat": {
-      "ref": "#% chance that if you would gain Endurance Charges, you instead gain up to your maximum number of Endurance Charges",
+      "ref": "#% chance that if you would gain Endurance Charges, you instead gain up to maximum Endurance Charges",
       "matchers": [
         {
-          "string": "#% chance that if you would gain Endurance Charges, you instead gain up to your maximum number of Endurance Charges"
+          "string": "#% chance that if you would gain Endurance Charges, you instead gain up to maximum Endurance Charges"
         }
       ]
     },
@@ -1439,13 +1810,6 @@
         "crafted": ["crafted.stat_561307714"]
       }
     }
-  },
-  {
-    "stat": {
-      "ref": "#% chance to Cast Level 20 Fire Burst on Hit",
-      "matchers": [{"string": "#% chance to Cast Level 20 Fire Burst on Hit"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1621470436"], "fractured": ["fractured.stat_1621470436"]}}
   },
   {
     "stat": {
@@ -3064,66 +3428,65 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow",
+      "ref": "#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow, with a 1 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow"},
-        {"string": "Trigger a Socketed Bow Skill when you Attack with a Bow", "value": 100}
+        {"string": "#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow, with a 1 second Cooldown"},
+        {"string": "Trigger a Socketed Bow Skill when you Attack with a Bow, with a 1 second Cooldown", "value": 100}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3171958921"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow",
+      "ref": "#% chance to Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow, with a 1 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow"},
-        {"string": "Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow", "value": 100}
+        {
+          "string": "#% chance to Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow, with a 1 second Cooldown"
+        },
+        {
+          "string": "Trigger a Socketed Bow Skill when you Cast a Spell while\nwielding a Bow, with a 1 second Cooldown",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1378815167"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Spell when you Attack with a Bow",
+      "ref": "#% chance to Trigger a Socketed Spell when you Attack with a Bow, with a 0.3 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger a Socketed Spell when you Attack with a Bow"},
-        {"string": "Trigger a Socketed Spell when you Attack with a Bow", "value": 100}
+        {"string": "#% chance to Trigger a Socketed Spell when you Attack with a Bow, with a 0.3 second Cooldown"},
+        {"string": "Trigger a Socketed Spell when you Attack with a Bow, with a 0.3 second Cooldown", "value": 100}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3302736916"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Spell when you Attack with this Weapon",
+      "ref": "#% chance to Trigger a Socketed Spell when you Attack with this Weapon, with a 0.15 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger a Socketed Spell when you Attack with this Weapon"},
-        {"string": "Trigger a Socketed Spell when you Attack with this Weapon", "value": 100}
+        {
+          "string": "#% chance to Trigger a Socketed Spell when you Attack with this Weapon, with a 0.15 second Cooldown"
+        },
+        {
+          "string": "Trigger a Socketed Spell when you Attack with this Weapon, with a 0.15 second Cooldown",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_209056835"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Spell when you Use a Skill",
+      "ref": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges, with a 0.25 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger a Socketed Spell when you Use a Skill"},
-        {"string": "Trigger a Socketed Spell when you Use a Skill", "value": 100}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3079007202"],
-        "fractured": ["fractured.stat_3079007202"],
-        "crafted": ["crafted.stat_3079007202"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges",
-      "matchers": [
-        {"string": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges"},
-        {"string": "Trigger a Socketed Warcry Skill when you lose Endurance Charges", "value": 100}
+        {
+          "string": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges, with a 0.25 second Cooldown"
+        },
+        {
+          "string": "Trigger a Socketed Warcry Skill on losing Endurance Charges, with a 0.25 second Cooldown",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1112135314"]}}
@@ -3596,7 +3959,13 @@
         {"string": "Trigger Level 1 Blood Rage when you Kill an Enemy", "value": 100}
       ]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_205619502"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_205619502"],
+        "fractured": ["fractured.stat_205619502"],
+        "crafted": ["crafted.stat_205619502"]
+      }
+    }
   },
   {
     "stat": {
@@ -3678,16 +4047,6 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
-      "matchers": [
-        {"string": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon"},
-        {"string": "Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon", "value": 100}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4221489692"]}}
-  },
-  {
-    "stat": {
       "ref": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill",
       "matchers": [{"string": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill"}]
     },
@@ -3702,6 +4061,16 @@
   },
   {
     "stat": {
+      "ref": "#% chance to Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon",
+      "matchers": [
+        {"string": "#% chance to Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon"},
+        {"string": "Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4221489692"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill",
       "matchers": [
         {"string": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill"},
@@ -3712,30 +4081,25 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill",
+      "ref": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill, with a 0.25 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill"},
-        {"string": "Trigger Socketed Curse Skill when you cast a Curse Skill", "value": 100}
+        {
+          "string": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill, with a 0.25 second Cooldown"
+        },
+        {
+          "string": "Trigger Socketed Curse Skill when you cast a Curse Skill, with a 0.25 second Cooldown",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3657377047"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger Socketed Spells when\nyou Spend at least # Mana to Use a Skill",
+      "ref": "#% chance to Trigger Socketed Spells when you Focus, with a 0.25 second Cooldown",
       "matchers": [
-        {"string": "#% chance to Trigger Socketed Spells when\nyou Spend at least # Mana to Use a Skill"},
-        {"string": "Trigger Socketed Spells when\nyou Spend at least # Mana to Use a Skill"}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_723388324"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% chance to Trigger Socketed Spells when you Focus",
-      "matchers": [
-        {"string": "#% chance to Trigger Socketed Spells when you Focus"},
-        {"string": "Trigger Socketed Spells when you Focus", "value": 100}
+        {"string": "#% chance to Trigger Socketed Spells when you Focus, with a 0.25 second Cooldown"},
+        {"string": "Trigger Socketed Spells when you Focus, with a 0.25 second Cooldown", "value": 100}
       ]
     },
     "trade": {
@@ -3919,8 +4283,8 @@
   },
   {
     "stat": {
-      "ref": "#% chance when you pay a Skill's Mana Cost to gain that much Mana",
-      "matchers": [{"string": "#% chance when you pay a Skill's Mana Cost to gain that much Mana"}]
+      "ref": "#% chance when you pay a Skill's Cost to gain that much Mana",
+      "matchers": [{"string": "#% chance when you pay a Skill's Cost to gain that much Mana"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1915414884"]}}
   },
@@ -4278,7 +4642,7 @@
         {"string": "#% reduced Area of Effect of Hex Skills", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_153777645"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_153777645"], "fractured": ["fractured.stat_153777645"]}}
   },
   {
     "stat": {
@@ -4598,7 +4962,7 @@
         {"string": "#% reduced Attack and Cast Speed if you've Hit an Enemy Recently", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1483753325"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1483753325"], "fractured": ["fractured.stat_1483753325"]}}
   },
   {
     "stat": {
@@ -6290,6 +6654,26 @@
   },
   {
     "stat": {
+      "ref": "#% increased Cost of Skills for each 200 total Mana Spent Recently",
+      "matchers": [
+        {"string": "#% increased Cost of Skills for each 200 total Mana Spent Recently"},
+        {"string": "#% reduced Cost of Skills for each 200 total Mana Spent Recently", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2650053239"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Cost of Skills per 10 Devotion",
+      "matchers": [
+        {"string": "#% increased Cost of Skills per 10 Devotion"},
+        {"string": "#% reduced Cost of Skills per 10 Devotion", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3293275880"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Counter-Thaumaturgy Experience gained",
       "matchers": [
         {"string": "#% increased Counter-Thaumaturgy Experience gained"},
@@ -7365,7 +7749,13 @@
         {"string": "#% reduced Damage with Ailments", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_690707482"], "implicit": ["implicit.stat_690707482"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_690707482"],
+        "implicit": ["implicit.stat_690707482"],
+        "fractured": ["fractured.stat_690707482"]
+      }
+    }
   },
   {
     "stat": {
@@ -7635,6 +8025,22 @@
   },
   {
     "stat": {
+      "ref": "#% increased Damage with Non-Vaal Skills during Soul Gain Prevention",
+      "matchers": [
+        {"string": "#% increased Damage with Non-Vaal Skills during Soul Gain Prevention"},
+        {"string": "#% reduced Damage with Non-Vaal Skills during Soul Gain Prevention", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1583385065"],
+        "fractured": ["fractured.stat_1583385065"],
+        "crafted": ["crafted.stat_1583385065"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% increased Damage with One Handed Weapons",
       "matchers": [
         {"string": "#% increased Damage with One Handed Weapons"},
@@ -7718,6 +8124,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1836374041"], "fractured": ["fractured.stat_1836374041"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Damage with Vaal Skills",
+      "matchers": [
+        {"string": "#% increased Damage with Vaal Skills"},
+        {"string": "#% reduced Damage with Vaal Skills", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2257141320"], "implicit": ["implicit.stat_2257141320"]}}
   },
   {
     "stat": {
@@ -10633,26 +11049,6 @@
   },
   {
     "stat": {
-      "ref": "#% increased Mana Cost of Skills for each 200 total Mana you have Spent Recently",
-      "matchers": [
-        {"string": "#% increased Mana Cost of Skills for each 200 total Mana you have Spent Recently"},
-        {"string": "#% reduced Mana Cost of Skills for each 200 total Mana you have Spent Recently", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2650053239"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Cost of Skills per 10 Devotion",
-      "matchers": [
-        {"string": "#% increased Mana Cost of Skills per 10 Devotion"},
-        {"string": "#% reduced Mana Cost of Skills per 10 Devotion", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3293275880"]}}
-  },
-  {
-    "stat": {
       "ref": "#% increased Mana Recovered",
       "matchers": [{"string": "#% increased Mana Recovered"}, {"string": "#% reduced Mana Recovered", "negate": true}]
     },
@@ -10798,39 +11194,6 @@
   },
   {
     "stat": {
-      "ref": "#% increased Mana Reservation of Curse Aura Skills",
-      "matchers": [
-        {"string": "#% increased Mana Reservation of Curse Aura Skills"},
-        {"string": "#% reduced Mana Reservation of Curse Aura Skills", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3292930705"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Reserved",
-      "matchers": [{"string": "#% increased Mana Reserved"}, {"string": "#% reduced Mana Reserved", "negate": true}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_2227180465"],
-        "implicit": ["implicit.stat_2227180465"],
-        "fractured": ["fractured.stat_2227180465"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Reserved per 250 total Attributes",
-      "matchers": [
-        {"string": "#% increased Mana Reserved per 250 total Attributes"},
-        {"string": "#% reduced Mana Reserved per 250 total Attributes", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3229976559"]}}
-  },
-  {
-    "stat": {
       "ref": "#% increased maximum Energy Shield",
       "matchers": [
         {"string": "#% increased maximum Energy Shield"},
@@ -10973,23 +11336,23 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Energy Shield Leech",
+      "ref": "#% increased Maximum total Energy Shield Recovery per second from Leech",
       "matchers": [
-        {"string": "#% increased Maximum total Recovery per second from Energy Shield Leech"},
-        {"string": "#% reduced Maximum total Recovery per second from Energy Shield Leech", "negate": true}
+        {"string": "#% increased Maximum total Energy Shield Recovery per second from Leech"},
+        {"string": "#% reduced Maximum total Energy Shield Recovery per second from Leech", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2013799819"], "implicit": ["implicit.stat_2013799819"]}}
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry",
+      "ref": "#% increased Maximum total Energy Shield Recovery per second from Leech while affected by Zealotry",
       "matchers": [
         {
-          "string": "#% increased Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry"
+          "string": "#% increased Maximum total Energy Shield Recovery per second from Leech while affected by Zealotry"
         },
         {
-          "string": "#% reduced Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry",
+          "string": "#% reduced Maximum total Energy Shield Recovery per second from Leech while affected by Zealotry",
           "negate": true
         }
       ]
@@ -10998,10 +11361,10 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Life Leech",
+      "ref": "#% increased Maximum total Life Recovery per second from Leech",
       "matchers": [
-        {"string": "#% increased Maximum total Recovery per second from Life Leech"},
-        {"string": "#% reduced Maximum total Recovery per second from Life Leech", "negate": true}
+        {"string": "#% increased Maximum total Life Recovery per second from Leech"},
+        {"string": "#% reduced Maximum total Life Recovery per second from Leech", "negate": true}
       ]
     },
     "trade": {
@@ -11013,10 +11376,10 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Mana Leech",
+      "ref": "#% increased Maximum total Mana Recovery per second from Leech",
       "matchers": [
-        {"string": "#% increased Maximum total Recovery per second from Mana Leech"},
-        {"string": "#% reduced Maximum total Recovery per second from Mana Leech", "negate": true}
+        {"string": "#% increased Maximum total Mana Recovery per second from Leech"},
+        {"string": "#% reduced Maximum total Mana Recovery per second from Leech", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_96977651"], "implicit": ["implicit.stat_96977651"]}}
@@ -11352,8 +11715,8 @@
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_308396001"],
-        "fractured": ["fractured.stat_308396001"],
+        "explicit": ["explicit.stat_1177358866", "explicit.stat_308396001"],
+        "fractured": ["fractured.stat_1177358866", "fractured.stat_308396001"],
         "enchant": ["enchant.stat_308396001"],
         "crafted": ["crafted.stat_1177358866"]
       }
@@ -12579,6 +12942,23 @@
   },
   {
     "stat": {
+      "ref": "#% increased Recovery per second from Life Leech",
+      "matchers": [
+        {"string": "#% increased Recovery per second from Life Leech"},
+        {"string": "#% reduced Recovery per second from Life Leech", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2633745731"],
+        "implicit": ["implicit.stat_2633745731"],
+        "fractured": ["fractured.stat_2633745731"],
+        "enchant": ["enchant.stat_2633745731"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% increased Recovery rate",
       "matchers": [{"string": "#% increased Recovery rate"}, {"string": "#% reduced Recovery rate", "negate": true}]
     },
@@ -12630,6 +13010,26 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1588572574"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Reservation of Curse Aura Skills",
+      "matchers": [
+        {"string": "#% increased Reservation of Curse Aura Skills"},
+        {"string": "#% reduced Reservation of Curse Aura Skills", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3292930705"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Reservation of Skills per 250 total Attributes",
+      "matchers": [
+        {"string": "#% increased Reservation of Skills per 250 total Attributes"},
+        {"string": "#% reduced Reservation of Skills per 250 total Attributes", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3229976559"]}}
   },
   {
     "stat": {
@@ -13467,23 +13867,6 @@
       "matchers": [{"string": "#% increased Total Heist Fee"}, {"string": "#% reduced Total Heist Fee", "negate": true}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_553402472"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased total Recovery per second from Life Leech",
-      "matchers": [
-        {"string": "#% increased total Recovery per second from Life Leech"},
-        {"string": "#% reduced total Recovery per second from Life Leech", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_2633745731"],
-        "implicit": ["implicit.stat_2633745731"],
-        "fractured": ["fractured.stat_2633745731"],
-        "enchant": ["enchant.stat_2633745731"]
-      }
-    }
   },
   {
     "stat": {
@@ -15118,6 +15501,16 @@
   },
   {
     "stat": {
+      "ref": "#% reduced Cost of Aura Skills that summon Totems",
+      "matchers": [
+        {"string": "#% increased Cost of Aura Skills that summon Totems"},
+        {"string": "#% reduced Cost of Aura Skills that summon Totems", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2701327257"]}, "inverted": true}
+  },
+  {
+    "stat": {
       "ref": "#% reduced Critical Strike Chance per Power Charge",
       "matchers": [
         {"string": "#% increased Critical Strike Chance per Power Charge"},
@@ -15416,16 +15809,6 @@
   },
   {
     "stat": {
-      "ref": "#% reduced Mana Cost of Totem Skills that cast an Aura",
-      "matchers": [
-        {"string": "#% increased Mana Cost of Totem Skills that cast an Aura"},
-        {"string": "#% reduced Mana Cost of Totem Skills that cast an Aura", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2701327257"]}, "inverted": true}
-  },
-  {
-    "stat": {
       "ref": "#% reduced Mana Cost per Endurance Charge",
       "matchers": [{"string": "#% reduced Mana Cost per Endurance Charge"}]
     },
@@ -15524,19 +15907,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_99927264"], "implicit": ["implicit.stat_99927264"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% reduced Soul Cost of Vaal Skills",
-      "matchers": [
-        {"string": "#% increased Soul Cost of Vaal Skills"},
-        {"string": "#% reduced Soul Cost of Vaal Skills", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {"explicit": ["explicit.stat_678245679"], "fractured": ["fractured.stat_678245679"]},
-      "inverted": true
-    }
   },
   {
     "stat": {
@@ -17635,6 +18005,13 @@
   },
   {
     "stat": {
+      "ref": "+#% Physical and Chaos Damage Modifiers",
+      "matchers": [{"string": "+#% Physical and Chaos Damage Modifiers"}]
+    },
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_physical_chaos_quality"]}}
+  },
+  {
+    "stat": {
       "ref": "+#% Player Cold Resistance per 25% Alert Level",
       "matchers": [{"string": "#% Player Cold Resistance per 25% Alert Level"}]
     },
@@ -17670,6 +18047,10 @@
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_caster_quality"]}}
   },
   {
+    "stat": {"ref": "+#% Quality to Critical Modifiers", "matchers": [{"string": "+#% Quality to Critical Modifiers"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_critical_quality"]}}
+  },
+  {
     "stat": {"ref": "+#% Quality to Defence Modifiers", "matchers": [{"string": "+#% Quality to Defence Modifiers"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_defense_quality"]}}
   },
@@ -17693,6 +18074,10 @@
       "matchers": [{"string": "+#% Quality to Resistance Modifiers"}]
     },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_resistance_quality"]}}
+  },
+  {
+    "stat": {"ref": "+#% Quality to Speed Modifiers", "matchers": [{"string": "+#% Quality to Speed Modifiers"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_speed_quality"]}}
   },
   {
     "stat": {"ref": "+#% to all Elemental Resistances", "matchers": [{"string": "#% to all Elemental Resistances"}]},
@@ -20801,7 +21186,13 @@
       "ref": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
       "matchers": [{"string": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1468606528"], "crafted": ["crafted.stat_1468606528"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1468606528"],
+        "fractured": ["fractured.stat_1468606528"],
+        "crafted": ["crafted.stat_1468606528"]
+      }
+    }
   },
   {
     "stat": {
@@ -20868,6 +21259,8 @@
     "stat": {
       "ref": "Abysses in Areas have #% increased chance to lead to an Abyssal Depths",
       "matchers": [
+        {"string": "Abysses in Area have #% increased chance to lead to an Abyssal Depths"},
+        {"string": "Abysses in Area have #% reduced chance to lead to an Abyssal Depths"},
         {"string": "Abysses in Areas have #% increased chance to lead to an Abyssal Depths"},
         {"string": "Abysses in Areas have #% reduced chance to lead to an Abyssal Depths"}
       ]
@@ -21431,27 +21824,6 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3519268108"]}}
   },
   {
-    "stat": {
-      "ref": "Adds # to # Chaos Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Adds # to # Chaos Damage to Spells while Dual Wielding"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1865428306"], "fractured": ["fractured.stat_1865428306"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Chaos Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Adds # to # Chaos Damage to Spells while holding a Shield"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1181129483"], "fractured": ["fractured.stat_1181129483"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Chaos Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Adds # to # Chaos Damage to Spells while wielding a Two Handed Weapon"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1743759111"], "fractured": ["fractured.stat_1743759111"]}}
-  },
-  {
     "stat": {"ref": "Adds # to # Cold Damage", "matchers": [{"string": "Adds # to # Cold Damage"}]},
     "trade": {
       "ids": {
@@ -21529,51 +21901,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Cold Damage to Axe Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Axe Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1782176131"], "fractured": ["fractured.stat_1782176131"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Bow Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Bow Attacks"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_215124030"],
-        "implicit": ["implicit.stat_215124030"],
-        "fractured": ["fractured.stat_215124030"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Claw Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Claw Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2848646243"], "fractured": ["fractured.stat_2848646243"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Cold Damage to Counterattacks",
       "matchers": [{"string": "Adds # to # Cold Damage to Counterattacks"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1109700751"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Dagger Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Dagger Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1263342750"], "fractured": ["fractured.stat_1263342750"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Mace or Sceptre Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_187418672"], "fractured": ["fractured.stat_187418672"]}}
   },
   {
     "stat": {"ref": "Adds # to # Cold Damage to Spells", "matchers": [{"string": "Adds # to # Cold Damage to Spells"}]},
@@ -21596,52 +21927,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Cold Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Adds # to # Cold Damage to Spells while Dual Wielding"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3376452528"], "fractured": ["fractured.stat_3376452528"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Adds # to # Cold Damage to Spells while holding a Shield"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2671663397"], "fractured": ["fractured.stat_2671663397"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Cold Damage to Spells while no Life is Reserved",
       "matchers": [{"string": "Adds # to # Cold Damage to Spells while no Life is Reserved"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_897996059"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Adds # to # Cold Damage to Spells while wielding a Two Handed Weapon"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2464689927"], "fractured": ["fractured.stat_2464689927"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Staff Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Staff Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1261958804"], "fractured": ["fractured.stat_1261958804"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Sword Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Sword Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_972201717"], "fractured": ["fractured.stat_972201717"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Wand Attacks",
-      "matchers": [{"string": "Adds # to # Cold Damage to Wand Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2383797932"], "fractured": ["fractured.stat_2383797932"]}}
   },
   {
     "stat": {
@@ -21779,51 +22068,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Fire Damage to Axe Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Axe Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2461965653"], "fractured": ["fractured.stat_2461965653"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Bow Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Bow Attacks"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3120164895"],
-        "implicit": ["implicit.stat_3120164895"],
-        "fractured": ["fractured.stat_3120164895"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Claw Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Claw Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2154290807"], "fractured": ["fractured.stat_2154290807"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Dagger Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Dagger Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1910361436"], "fractured": ["fractured.stat_1910361436"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Fire Damage to Hits with this Weapon against Blinded Enemies",
       "matchers": [{"string": "Adds # to # Fire Damage to Hits with this Weapon against Blinded Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3977907993"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Mace or Sceptre Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3146788701"], "fractured": ["fractured.stat_3146788701"]}}
   },
   {
     "stat": {"ref": "Adds # to # Fire Damage to Spells", "matchers": [{"string": "Adds # to # Fire Damage to Spells"}]},
@@ -21846,52 +22094,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Fire Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Adds # to # Fire Damage to Spells while Dual Wielding"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_662691280"], "fractured": ["fractured.stat_662691280"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Adds # to # Fire Damage to Spells while holding a Shield"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_44182350"], "fractured": ["fractured.stat_44182350"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Fire Damage to Spells while no Life is Reserved",
       "matchers": [{"string": "Adds # to # Fire Damage to Spells while no Life is Reserved"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_833719670"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Adds # to # Fire Damage to Spells while wielding a Two Handed Weapon"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2135335407"], "fractured": ["fractured.stat_2135335407"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Staff Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Staff Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3220927448"], "fractured": ["fractured.stat_3220927448"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Sword Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Sword Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_601249293"], "fractured": ["fractured.stat_601249293"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Wand Attacks",
-      "matchers": [{"string": "Adds # to # Fire Damage to Wand Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_87098247"], "fractured": ["fractured.stat_87098247"]}}
   },
   {
     "stat": {
@@ -21978,51 +22184,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Lightning Damage to Axe Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Axe Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1582068183"], "fractured": ["fractured.stat_1582068183"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Bow Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Bow Attacks"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1040269876"],
-        "implicit": ["implicit.stat_1040269876"],
-        "fractured": ["fractured.stat_1040269876"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Claw Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Claw Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4231842891"], "fractured": ["fractured.stat_4231842891"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Dagger Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Dagger Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3479683016"], "fractured": ["fractured.stat_3479683016"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Lightning Damage to Hits against Ignited Enemies",
       "matchers": [{"string": "Adds # to # Lightning Damage to Hits against Ignited Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2870108850"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Mace or Sceptre Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2096159630"], "fractured": ["fractured.stat_2096159630"]}}
   },
   {
     "stat": {
@@ -22062,20 +22227,6 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Lightning Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Spells while Dual Wielding"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3352373076"], "fractured": ["fractured.stat_3352373076"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Spells while holding a Shield"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1801889979"], "fractured": ["fractured.stat_1801889979"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Lightning Damage to Spells while no Life is Reserved",
       "matchers": [{"string": "Adds # to # Lightning Damage to Spells while no Life is Reserved"}]
     },
@@ -22090,38 +22241,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Lightning Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Spells while wielding a Two Handed Weapon"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2398198236"], "fractured": ["fractured.stat_2398198236"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Staff Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Staff Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3212481075"], "fractured": ["fractured.stat_3212481075"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Sword Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Sword Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1237708713"], "fractured": ["fractured.stat_1237708713"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Lightning Damage to Unarmed Attacks",
       "matchers": [{"string": "Adds # to # Lightning Damage to Unarmed Attacks"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_458002333"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Wand Attacks",
-      "matchers": [{"string": "Adds # to # Lightning Damage to Wand Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2787733863"], "fractured": ["fractured.stat_2787733863"]}}
   },
   {
     "stat": {
@@ -22236,47 +22359,6 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Physical Damage to Axe Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Axe Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_311030839"], "fractured": ["fractured.stat_311030839"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Bow Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Bow Attacks"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1760576992"],
-        "implicit": ["implicit.stat_1760576992"],
-        "fractured": ["fractured.stat_1760576992"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Claw Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Claw Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3303015"], "fractured": ["fractured.stat_3303015"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Dagger Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Dagger Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1298238534"], "fractured": ["fractured.stat_1298238534"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Mace or Sceptre Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3882662078"], "fractured": ["fractured.stat_3882662078"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Physical Damage to Spells",
       "matchers": [{"string": "Adds # to # Physical Damage to Spells"}]
     },
@@ -22287,48 +22369,6 @@
         "fractured": ["fractured.stat_2435536961"]
       }
     }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Adds # to # Physical Damage to Spells while Dual Wielding"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4255924189"], "fractured": ["fractured.stat_4255924189"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Adds # to # Physical Damage to Spells while holding a Shield"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3954157711"], "fractured": ["fractured.stat_3954157711"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Adds # to # Physical Damage to Spells while wielding a Two Handed Weapon"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2921084940"], "fractured": ["fractured.stat_2921084940"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Staff Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Staff Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_69898010"], "fractured": ["fractured.stat_69898010"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Sword Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Sword Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1040189894"], "fractured": ["fractured.stat_1040189894"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Wand Attacks",
-      "matchers": [{"string": "Adds # to # Physical Damage to Wand Attacks"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_133683091"], "fractured": ["fractured.stat_133683091"]}}
   },
   {
     "stat": {
@@ -22412,16 +22452,6 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3086446674"]}}
-  },
-  {
-    "stat": {
-      "ref": "Alert Level increases every ten seconds",
-      "matchers": [
-        {"string": "Alert Level reduces every ten seconds", "value": -1},
-        {"string": "Alert Level increases every ten seconds", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3138486617"]}}
   },
   {
     "stat": {
@@ -23013,10 +23043,10 @@
   },
   {
     "stat": {
-      "ref": "Anger has #% reduced Mana Reservation",
+      "ref": "Anger has #% reduced Reservation",
       "matchers": [
-        {"string": "Anger has #% increased Mana Reservation"},
-        {"string": "Anger has #% reduced Mana Reservation", "negate": true}
+        {"string": "Anger has #% increased Reservation"},
+        {"string": "Anger has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -23025,7 +23055,7 @@
     }
   },
   {
-    "stat": {"ref": "Anger Reserves no Mana", "matchers": [{"string": "Anger Reserves no Mana"}]},
+    "stat": {"ref": "Anger has no Reservation", "matchers": [{"string": "Anger has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2189891129"]}}
   },
   {
@@ -23125,10 +23155,10 @@
   },
   {
     "stat": {
-      "ref": "Arctic Armour has #% reduced Mana Reservation",
+      "ref": "Arctic Armour has #% reduced Reservation",
       "matchers": [
-        {"string": "Arctic Armour has #% increased Mana Reservation"},
-        {"string": "Arctic Armour has #% reduced Mana Reservation", "negate": true}
+        {"string": "Arctic Armour has #% increased Reservation"},
+        {"string": "Arctic Armour has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -23574,8 +23604,12 @@
   },
   {
     "stat": {
-      "ref": "Area is infested with Fungal Growths",
-      "matchers": [{"string": "Area is infested with Fungal Growths"}]
+      "ref": "Area is infested with Fungal Growths\nMap's Item Quantity Modifiers also affect Blight Chest count at 20% value",
+      "matchers": [
+        {
+          "string": "Area is infested with Fungal Growths\nMap's Item Quantity Modifiers also affect Blight Chest count at 20% value"
+        }
+      ]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_299373046"]}}
   },
@@ -23848,16 +23882,6 @@
   },
   {
     "stat": {
-      "ref": "Areas contain # additional packs of Poisonous Monsters",
-      "matchers": [
-        {"string": "Area contains # additional packs of Poisonous Monsters"},
-        {"string": "Areas contain # additional packs of Poisonous Monsters"}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_3094365680"]}}
-  },
-  {
-    "stat": {
       "ref": "Areas contain # additional Packs with Mirrored Rare Monsters",
       "matchers": [
         {"string": "Area contains # additional Packs with Mirrored Rare Monsters"},
@@ -24067,10 +24091,10 @@
   },
   {
     "stat": {
-      "ref": "Areas have #% increased chance to contain a Smuggler’s Cache",
+      "ref": "Areas have #% increased chance to contain a Smuggler's Cache",
       "matchers": [
-        {"string": "Areas have #% increased chance to contain a Smuggler’s Cache"},
-        {"string": "Areas have #% reduced chance to contain a Smuggler’s Cache"}
+        {"string": "Areas have #% increased chance to contain a Smuggler's Cache"},
+        {"string": "Areas have #% reduced chance to contain a Smuggler's Cache"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4069523014"]}}
@@ -24313,8 +24337,8 @@
   },
   {
     "stat": {
-      "ref": "Aspect of the Cat Reserves no Mana",
-      "matchers": [{"string": "Aspect of the Cat Reserves no Mana"}]
+      "ref": "Aspect of the Cat has no Reservation",
+      "matchers": [{"string": "Aspect of the Cat has no Reservation"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3850409117"]}}
   },
@@ -24386,6 +24410,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2466604008"]}}
+  },
+  {
+    "stat": {
+      "ref": "Attacks Cost Life instead of Mana",
+      "matchers": [{"string": "Attacks Cost Life instead of Mana", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3358745905"]}}
   },
   {
     "stat": {
@@ -24471,10 +24502,6 @@
       "matchers": [{"string": "Attacks have 25% chance to inflict Bleeding when Hitting Cursed Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2591028853"]}}
-  },
-  {
-    "stat": {"ref": "Attacks have Blood Magic", "matchers": [{"string": "Attacks have Blood Magic", "value": 1}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_3358745905"]}}
   },
   {
     "stat": {
@@ -24602,7 +24629,7 @@
       "ref": "Auras from your Skills grant #% increased Damage to you and Allies",
       "matchers": [{"string": "Auras from your Skills grant #% increased Damage to you and Allies"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3729445224"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3729445224"], "fractured": ["fractured.stat_3729445224"]}}
   },
   {
     "stat": {"ref": "Avatar of Fire", "matchers": [{"string": "Avatar of Fire"}]},
@@ -25017,14 +25044,7 @@
   },
   {
     "stat": {
-      "ref": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
-      "matchers": [{"string": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2482927318"]}}
-  },
-  {
-    "stat": {
-      "ref": "Bow Attacks fire an additional Arrow",
+      "ref": "Bow Attacks fire # additional Arrows",
       "matchers": [
         {"string": "Bow Attacks fire # additional Arrows"},
         {"string": "Bow Attacks fire an additional Arrow", "value": 1}
@@ -25037,6 +25057,13 @@
         "fractured": ["fractured.stat_742529963"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
+      "matchers": [{"string": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2482927318"]}}
   },
   {
     "stat": {"ref": "Bow Knockback at Close Range", "matchers": [{"string": "Bow Knockback at Close Range"}]},
@@ -25530,6 +25557,13 @@
   },
   {
     "stat": {
+      "ref": "Cast Level 20 Fire Burst on Hit",
+      "matchers": [{"string": "Cast Level 20 Fire Burst on Hit", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1621470436"], "fractured": ["fractured.stat_1621470436"]}}
+  },
+  {
+    "stat": {
       "ref": "Caster Damage Modifiers have #% increased Effect",
       "matchers": [
         {"string": "Caster Damage Modifiers have #% increased Effect"},
@@ -25614,8 +25648,8 @@
   },
   {
     "stat": {
-      "ref": "Channelling Skills have +# to Total Mana Cost",
-      "matchers": [{"string": "Channelling Skills have # to Total Mana Cost"}]
+      "ref": "Channelling Skills have +# to Total Cost",
+      "matchers": [{"string": "Channelling Skills have # to Total Cost"}]
     },
     "trade": {
       "ids": {
@@ -25804,16 +25838,16 @@
   },
   {
     "stat": {
-      "ref": "Clarity has #% reduced Mana Reservation",
+      "ref": "Clarity has #% reduced Reservation",
       "matchers": [
-        {"string": "Clarity has #% increased Mana Reservation"},
-        {"string": "Clarity has #% reduced Mana Reservation", "negate": true}
+        {"string": "Clarity has #% increased Reservation"},
+        {"string": "Clarity has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3738398726"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Clarity Reserves no Mana", "matchers": [{"string": "Clarity Reserves no Mana"}]},
+    "stat": {"ref": "Clarity has no Reservation", "matchers": [{"string": "Clarity has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2250543633"]}}
   },
   {
@@ -25944,10 +25978,10 @@
   },
   {
     "stat": {
-      "ref": "Conductivity has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Conductivity has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "Conductivity has #% increased Mana Reservation if Cast as an Aura"},
-        {"string": "Conductivity has #% reduced Mana Reservation if Cast as an Aura", "negate": true}
+        {"string": "Conductivity has #% increased Reservation if Cast as an Aura"},
+        {"string": "Conductivity has #% reduced Reservation if Cast as an Aura", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_622203853"]}, "inverted": true}
@@ -26519,6 +26553,7 @@
       "ids": {
         "explicit": ["explicit.stat_1435748744"],
         "implicit": ["implicit.stat_1435748744"],
+        "fractured": ["fractured.stat_1435748744"],
         "crafted": ["crafted.stat_1435748744"]
       }
     }
@@ -26908,10 +26943,10 @@
   },
   {
     "stat": {
-      "ref": "Despair has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Despair has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "Despair has #% increased Mana Reservation if Cast as an Aura"},
-        {"string": "Despair has #% reduced Mana Reservation if Cast as an Aura", "negate": true}
+        {"string": "Despair has #% increased Reservation if Cast as an Aura"},
+        {"string": "Despair has #% reduced Reservation if Cast as an Aura", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2562564343"]}, "inverted": true}
@@ -26928,10 +26963,10 @@
   },
   {
     "stat": {
-      "ref": "Determination has #% reduced Mana Reservation",
+      "ref": "Determination has #% reduced Reservation",
       "matchers": [
-        {"string": "Determination has #% increased Mana Reservation"},
-        {"string": "Determination has #% reduced Mana Reservation", "negate": true}
+        {"string": "Determination has #% increased Reservation"},
+        {"string": "Determination has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -26944,7 +26979,7 @@
     }
   },
   {
-    "stat": {"ref": "Determination Reserves no Mana", "matchers": [{"string": "Determination Reserves no Mana"}]},
+    "stat": {"ref": "Determination has no Reservation", "matchers": [{"string": "Determination has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1358697130"]}}
   },
   {
@@ -27000,10 +27035,10 @@
   },
   {
     "stat": {
-      "ref": "Discipline has #% reduced Mana Reservation",
+      "ref": "Discipline has #% reduced Reservation",
       "matchers": [
-        {"string": "Discipline has #% increased Mana Reservation"},
-        {"string": "Discipline has #% reduced Mana Reservation", "negate": true}
+        {"string": "Discipline has #% increased Reservation"},
+        {"string": "Discipline has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -27016,7 +27051,7 @@
     }
   },
   {
-    "stat": {"ref": "Discipline Reserves no Mana", "matchers": [{"string": "Discipline Reserves no Mana"}]},
+    "stat": {"ref": "Discipline has no Reservation", "matchers": [{"string": "Discipline has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3708588508"]}}
   },
   {
@@ -27762,7 +27797,7 @@
     "trade": {"ids": {"enchant": ["enchant.stat_1405738574"]}}
   },
   {
-    "stat": {"ref": "Envy Reserves no Mana", "matchers": [{"string": "Envy Reserves no Mana"}]},
+    "stat": {"ref": "Envy has no Reservation", "matchers": [{"string": "Envy has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2503479316"]}}
   },
   {
@@ -28040,10 +28075,10 @@
   },
   {
     "stat": {
-      "ref": "Flammability has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Flammability has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "Flammability has #% increased Mana Reservation if Cast as an Aura"},
-        {"string": "Flammability has #% reduced Mana Reservation if Cast as an Aura", "negate": true}
+        {"string": "Flammability has #% increased Reservation if Cast as an Aura"},
+        {"string": "Flammability has #% reduced Reservation if Cast as an Aura", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3152149523"]}, "inverted": true}
@@ -28092,10 +28127,10 @@
   },
   {
     "stat": {
-      "ref": "Flesh and Stone has #% reduced Mana Reservation",
+      "ref": "Flesh and Stone has #% reduced Reservation",
       "matchers": [
-        {"string": "Flesh and Stone has #% increased Mana Reservation"},
-        {"string": "Flesh and Stone has #% reduced Mana Reservation", "negate": true}
+        {"string": "Flesh and Stone has #% increased Reservation"},
+        {"string": "Flesh and Stone has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -28230,10 +28265,10 @@
   },
   {
     "stat": {
-      "ref": "Frostbite has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Frostbite has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "Frostbite has #% increased Mana Reservation if Cast as an Aura"},
-        {"string": "Frostbite has #% reduced Mana Reservation if Cast as an Aura", "negate": true}
+        {"string": "Frostbite has #% increased Reservation if Cast as an Aura"},
+        {"string": "Frostbite has #% reduced Reservation if Cast as an Aura", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4272260340"]}, "inverted": true}
@@ -29206,10 +29241,10 @@
   },
   {
     "stat": {
-      "ref": "Grace has #% reduced Mana Reservation",
+      "ref": "Grace has #% reduced Reservation",
       "matchers": [
-        {"string": "Grace has #% increased Mana Reservation"},
-        {"string": "Grace has #% reduced Mana Reservation", "negate": true}
+        {"string": "Grace has #% increased Reservation"},
+        {"string": "Grace has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -29222,7 +29257,7 @@
     }
   },
   {
-    "stat": {"ref": "Grace Reserves no Mana", "matchers": [{"string": "Grace Reserves no Mana"}]},
+    "stat": {"ref": "Grace has no Reservation", "matchers": [{"string": "Grace has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2930404958"]}}
   },
   {
@@ -29723,7 +29758,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2410613176"], "implicit": ["implicit.stat_2410613176"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Wintertide Brand", "matchers": [{"string": "Grants Level # Wintertide Brand"}]},
+    "stat": {
+      "ref": "Grants Level # Wintertide Brand Skill",
+      "matchers": [{"string": "Grants Level # Wintertide Brand Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1826753218"]}}
   },
   {
@@ -29885,6 +29923,10 @@
     }
   },
   {
+    "stat": {"ref": "Has # Influences", "matchers": [{"string": "Has # Influences"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_influence_count"]}}
+  },
+  {
     "stat": {
       "ref": "Has # White Sockets",
       "matchers": [{"string": "Has # White Sockets"}, {"string": "Has 1 White Socket", "value": 1}]
@@ -29900,11 +29942,23 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2489070122"]}}
   },
   {
+    "stat": {"ref": "Has Crusader Influence", "matchers": [{"string": "Has Crusader Influence"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_crusader_influence"]}}
+  },
+  {
+    "stat": {"ref": "Has Elder Influence", "matchers": [{"string": "Has Elder Influence"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_elder_influence"]}}
+  },
+  {
     "stat": {
       "ref": "Has Elder, Shaper and all Conqueror Influences",
       "matchers": [{"string": "Has Elder, Shaper and all Conqueror Influences"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1795443614"]}}
+  },
+  {
+    "stat": {"ref": "Has Hunter Influence", "matchers": [{"string": "Has Hunter Influence"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_hunter_influence"]}}
   },
   {
     "stat": {"ref": "Has no Attribute Requirements", "matchers": [{"string": "Has no Attribute Requirements"}]},
@@ -29927,17 +29981,29 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1493091477"]}}
   },
   {
+    "stat": {"ref": "Has Redeemer Influence", "matchers": [{"string": "Has Redeemer Influence"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_redeemer_influence"]}}
+  },
+  {
+    "stat": {"ref": "Has Shaper Influence", "matchers": [{"string": "Has Shaper Influence"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_shaper_influence"]}}
+  },
+  {
+    "stat": {"ref": "Has Warlord Influence", "matchers": [{"string": "Has Warlord Influence"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_warlord_influence"]}}
+  },
+  {
     "stat": {
-      "ref": "Haste has #% reduced Mana Reservation",
+      "ref": "Haste has #% reduced Reservation",
       "matchers": [
-        {"string": "Haste has #% increased Mana Reservation"},
-        {"string": "Haste has #% reduced Mana Reservation", "negate": true}
+        {"string": "Haste has #% increased Reservation"},
+        {"string": "Haste has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_91821600"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Haste Reserves no Mana", "matchers": [{"string": "Haste Reserves no Mana"}]},
+    "stat": {"ref": "Haste has no Reservation", "matchers": [{"string": "Haste has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_751322171"]}}
   },
   {
@@ -29952,20 +30018,20 @@
   },
   {
     "stat": {
-      "ref": "Hatred has #% more Mana Reservation",
+      "ref": "Hatred has #% more Reservation",
       "matchers": [
-        {"string": "Hatred has #% more Mana Reservation"},
-        {"string": "Hatred has #% less Mana Reservation", "negate": true}
+        {"string": "Hatred has #% more Reservation"},
+        {"string": "Hatred has #% less Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_47734694"]}}
   },
   {
     "stat": {
-      "ref": "Hatred has #% reduced Mana Reservation",
+      "ref": "Hatred has #% reduced Reservation",
       "matchers": [
-        {"string": "Hatred has #% increased Mana Reservation"},
-        {"string": "Hatred has #% reduced Mana Reservation", "negate": true}
+        {"string": "Hatred has #% increased Reservation"},
+        {"string": "Hatred has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -29974,7 +30040,7 @@
     }
   },
   {
-    "stat": {"ref": "Hatred Reserves no Mana", "matchers": [{"string": "Hatred Reserves no Mana"}]},
+    "stat": {"ref": "Hatred has no Reservation", "matchers": [{"string": "Hatred has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1391583476"]}}
   },
   {
@@ -30146,10 +30212,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Agony has #% reduced Mana Reservation",
+      "ref": "Herald of Agony has #% reduced Reservation",
       "matchers": [
-        {"string": "Herald of Agony has #% increased Mana Reservation"},
-        {"string": "Herald of Agony has #% reduced Mana Reservation", "negate": true}
+        {"string": "Herald of Agony has #% increased Reservation"},
+        {"string": "Herald of Agony has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -30169,10 +30235,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Ash has #% reduced Mana Reservation",
+      "ref": "Herald of Ash has #% reduced Reservation",
       "matchers": [
-        {"string": "Herald of Ash has #% increased Mana Reservation"},
-        {"string": "Herald of Ash has #% reduced Mana Reservation", "negate": true}
+        {"string": "Herald of Ash has #% increased Reservation"},
+        {"string": "Herald of Ash has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -30192,10 +30258,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Ice has #% reduced Mana Reservation",
+      "ref": "Herald of Ice has #% reduced Reservation",
       "matchers": [
-        {"string": "Herald of Ice has #% increased Mana Reservation"},
-        {"string": "Herald of Ice has #% reduced Mana Reservation", "negate": true}
+        {"string": "Herald of Ice has #% increased Reservation"},
+        {"string": "Herald of Ice has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -30215,10 +30281,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Purity has #% reduced Mana Reservation",
+      "ref": "Herald of Purity has #% reduced Reservation",
       "matchers": [
-        {"string": "Herald of Purity has #% increased Mana Reservation"},
-        {"string": "Herald of Purity has #% reduced Mana Reservation", "negate": true}
+        {"string": "Herald of Purity has #% increased Reservation"},
+        {"string": "Herald of Purity has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -30245,10 +30311,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Thunder has #% reduced Mana Reservation",
+      "ref": "Herald of Thunder has #% reduced Reservation",
       "matchers": [
-        {"string": "Herald of Thunder has #% increased Mana Reservation"},
-        {"string": "Herald of Thunder has #% reduced Mana Reservation", "negate": true}
+        {"string": "Herald of Thunder has #% increased Reservation"},
+        {"string": "Herald of Thunder has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_966400988"], "enchant": ["enchant.stat_966400988"]}, "inverted": true}
@@ -30789,8 +30855,13 @@
   },
   {
     "stat": {
-      "ref": "Immunity to Bleeding during Flask effect\nRemoves Bleeding on use",
-      "matchers": [{"string": "Immunity to Bleeding during Flask effect\nRemoves Bleeding on use", "value": 1}]
+      "ref": "Immunity to Bleeding and Corrupted Blood during Flask effect\nRemoves Bleeding and Corrupted Blood on use",
+      "matchers": [
+        {
+          "string": "Immunity to Bleeding and Corrupted Blood during Flask effect\nRemoves Bleeding and Corrupted Blood on use",
+          "value": 1
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_122525378"]}}
   },
@@ -30930,8 +31001,8 @@
   },
   {
     "stat": {
-      "ref": "Increases and Reductions to Damage of Vaal Skills also apply to Non-Vaal Skills",
-      "matchers": [{"string": "Increases and Reductions to Damage of Vaal Skills also apply to Non-Vaal Skills"}]
+      "ref": "Increases and Reductions to Damage with Vaal Skills also apply to Non-Vaal Skills",
+      "matchers": [{"string": "Increases and Reductions to Damage with Vaal Skills also apply to Non-Vaal Skills"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_3871212304"]}}
   },
@@ -31423,8 +31494,8 @@
   },
   {
     "stat": {
-      "ref": "Lancing Steel has #% chance count as consuming Steel Shards without Consuming them",
-      "matchers": [{"string": "Lancing Steel has #% chance count as consuming Steel Shards without Consuming them"}]
+      "ref": "Lancing Steel has #% chance to count as consuming Steel Shards without Consuming them",
+      "matchers": [{"string": "Lancing Steel has #% chance to count as consuming Steel Shards without Consuming them"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2891251105"]}}
   },
@@ -31956,10 +32027,10 @@
   },
   {
     "stat": {
-      "ref": "Malevolence has #% reduced Mana Reservation",
+      "ref": "Malevolence has #% reduced Reservation",
       "matchers": [
-        {"string": "Malevolence has #% increased Mana Reservation"},
-        {"string": "Malevolence has #% reduced Mana Reservation", "negate": true}
+        {"string": "Malevolence has #% increased Reservation"},
+        {"string": "Malevolence has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -31968,7 +32039,7 @@
     }
   },
   {
-    "stat": {"ref": "Malevolence Reserves no Mana", "matchers": [{"string": "Malevolence Reserves no Mana"}]},
+    "stat": {"ref": "Malevolence has no Reservation", "matchers": [{"string": "Malevolence has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_585622486"]}}
   },
   {
@@ -32305,17 +32376,10 @@
   },
   {
     "stat": {
-      "ref": "Minions deal # to # Added Attack Physical Damage",
-      "matchers": [{"string": "Minions deal # to # Added Attack Physical Damage"}]
+      "ref": "Minions deal # to # additional Attack Physical Damage",
+      "matchers": [{"string": "Minions deal # to # additional Attack Physical Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_797833282"]}}
-  },
-  {
-    "stat": {
-      "ref": "Minions deal # to # Added Lightning Damage",
-      "matchers": [{"string": "Minions deal # to # Added Lightning Damage"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2930653471"], "fractured": ["fractured.stat_2930653471"]}}
   },
   {
     "stat": {
@@ -32337,6 +32401,13 @@
       "matchers": [{"string": "Minions deal # to # additional Fire Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3351784991"], "fractured": ["fractured.stat_3351784991"]}}
+  },
+  {
+    "stat": {
+      "ref": "Minions deal # to # additional Lightning Damage",
+      "matchers": [{"string": "Minions deal # to # additional Lightning Damage"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2930653471"], "fractured": ["fractured.stat_2930653471"]}}
   },
   {
     "stat": {
@@ -32391,16 +32462,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_412745376"], "fractured": ["fractured.stat_412745376"]}}
-  },
-  {
-    "stat": {
-      "ref": "Minions deal #% increased Damage per 10 Dexterity",
-      "matchers": [
-        {"string": "Minions deal #% increased Damage per 10 Dexterity"},
-        {"string": "Minions deal #% reduced Damage per 10 Dexterity", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2238471448"]}}
   },
   {
     "stat": {
@@ -33648,7 +33709,7 @@
   },
   {
     "stat": {"ref": "No Travel Cost", "matchers": [{"string": "No Travel Cost"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_2946222246"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2946222246"], "fractured": ["fractured.stat_2946222246"]}}
   },
   {
     "stat": {
@@ -33707,22 +33768,6 @@
       "matchers": [{"string": "Non-instant Mana Recovery from Flasks is also Recovered as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2262007777"]}}
-  },
-  {
-    "stat": {
-      "ref": "Non-Vaal Skills deal #% increased Damage during Soul Gain Prevention",
-      "matchers": [
-        {"string": "Non-Vaal Skills deal #% increased Damage during Soul Gain Prevention"},
-        {"string": "Non-Vaal Skills deal #% reduced Damage during Soul Gain Prevention", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1583385065"],
-        "fractured": ["fractured.stat_1583385065"],
-        "crafted": ["crafted.stat_1583385065"]
-      }
-    }
   },
   {
     "stat": {
@@ -34466,16 +34511,6 @@
   },
   {
     "stat": {
-      "ref": "Players deal #% increased Damage for each Poison on them",
-      "matchers": [
-        {"string": "Players deal #% increased Damage for each Poison on them"},
-        {"string": "Players deal #% reduced Damage for each Poison on them", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_1520798835"]}}
-  },
-  {
-    "stat": {
       "ref": "Players deal #% increased Damage with Hits to Breach Monsters",
       "matchers": [{"string": "Players deal #% increased Damage with Hits to Breach Monsters"}]
     },
@@ -34548,16 +34583,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1416455556"]}}
-  },
-  {
-    "stat": {
-      "ref": "Players have #% increased Movement Speed for each Poison on them",
-      "matchers": [
-        {"string": "Players have #% increased Movement Speed for each Poison on them"},
-        {"string": "Players have #% reduced Movement Speed for each Poison on them", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_453789911"]}}
   },
   {
     "stat": {
@@ -34817,18 +34842,18 @@
   },
   {
     "stat": {
-      "ref": "Precision has #% increased Mana Reservation",
+      "ref": "Precision has #% increased Reservation",
       "matchers": [
-        {"string": "Precision has #% increased Mana Reservation"},
-        {"string": "Precision has #% reduced Mana Reservation", "negate": true}
+        {"string": "Precision has #% increased Reservation"},
+        {"string": "Precision has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3468905159"]}}
   },
   {
     "stat": {
-      "ref": "Precision has 50% less Mana Reservation",
-      "matchers": [{"string": "Precision has 50% less Mana Reservation"}]
+      "ref": "Precision has 50% less Reservation",
+      "matchers": [{"string": "Precision has 50% less Reservation"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3736628755"]}}
   },
@@ -34854,16 +34879,16 @@
   },
   {
     "stat": {
-      "ref": "Pride has #% reduced Mana Reservation",
+      "ref": "Pride has #% reduced Reservation",
       "matchers": [
-        {"string": "Pride has #% increased Mana Reservation"},
-        {"string": "Pride has #% reduced Mana Reservation", "negate": true}
+        {"string": "Pride has #% increased Reservation"},
+        {"string": "Pride has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_250961191"], "enchant": ["enchant.stat_250961191"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Pride Reserves no Mana", "matchers": [{"string": "Pride Reserves no Mana"}]},
+    "stat": {"ref": "Pride has no Reservation", "matchers": [{"string": "Pride has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3554614456"]}}
   },
   {
@@ -34907,10 +34932,6 @@
       "matchers": [{"string": "Projectiles deal #% increased Damage for each time they have Chained"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1923210508"]}}
-  },
-  {
-    "stat": {"ref": "Projectiles Fork", "matchers": [{"string": "Projectiles Fork"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_942938211"]}}
   },
   {
     "stat": {"ref": "Projectiles from Attacks Fork", "matchers": [{"string": "Projectiles from Attacks Fork"}]},
@@ -35046,27 +35067,27 @@
   },
   {
     "stat": {
-      "ref": "Purity of Elements has #% reduced Mana Reservation",
+      "ref": "Purity of Elements has #% reduced Reservation",
       "matchers": [
-        {"string": "Purity of Elements has #% increased Mana Reservation"},
-        {"string": "Purity of Elements has #% reduced Mana Reservation", "negate": true}
+        {"string": "Purity of Elements has #% increased Reservation"},
+        {"string": "Purity of Elements has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1849664701"]}, "inverted": true}
   },
   {
     "stat": {
-      "ref": "Purity of Elements Reserves no Mana",
-      "matchers": [{"string": "Purity of Elements Reserves no Mana"}]
+      "ref": "Purity of Elements has no Reservation",
+      "matchers": [{"string": "Purity of Elements has no Reservation"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1826480903"]}}
   },
   {
     "stat": {
-      "ref": "Purity of Fire has #% reduced Mana Reservation",
+      "ref": "Purity of Fire has #% reduced Reservation",
       "matchers": [
-        {"string": "Purity of Fire has #% increased Mana Reservation"},
-        {"string": "Purity of Fire has #% reduced Mana Reservation", "negate": true}
+        {"string": "Purity of Fire has #% increased Reservation"},
+        {"string": "Purity of Fire has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -35079,15 +35100,15 @@
     }
   },
   {
-    "stat": {"ref": "Purity of Fire Reserves no Mana", "matchers": [{"string": "Purity of Fire Reserves no Mana"}]},
+    "stat": {"ref": "Purity of Fire has no Reservation", "matchers": [{"string": "Purity of Fire has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2278589942"]}}
   },
   {
     "stat": {
-      "ref": "Purity of Ice has #% reduced Mana Reservation",
+      "ref": "Purity of Ice has #% reduced Reservation",
       "matchers": [
-        {"string": "Purity of Ice has #% increased Mana Reservation"},
-        {"string": "Purity of Ice has #% reduced Mana Reservation", "negate": true}
+        {"string": "Purity of Ice has #% increased Reservation"},
+        {"string": "Purity of Ice has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -35100,15 +35121,15 @@
     }
   },
   {
-    "stat": {"ref": "Purity of Ice Reserves no Mana", "matchers": [{"string": "Purity of Ice Reserves no Mana"}]},
+    "stat": {"ref": "Purity of Ice has no Reservation", "matchers": [{"string": "Purity of Ice has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1622979279"]}}
   },
   {
     "stat": {
-      "ref": "Purity of Lightning has #% reduced Mana Reservation",
+      "ref": "Purity of Lightning has #% reduced Reservation",
       "matchers": [
-        {"string": "Purity of Lightning has #% increased Mana Reservation"},
-        {"string": "Purity of Lightning has #% reduced Mana Reservation", "negate": true}
+        {"string": "Purity of Lightning has #% increased Reservation"},
+        {"string": "Purity of Lightning has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -35122,8 +35143,8 @@
   },
   {
     "stat": {
-      "ref": "Purity of Lightning Reserves no Mana",
-      "matchers": [{"string": "Purity of Lightning Reserves no Mana"}]
+      "ref": "Purity of Lightning has no Reservation",
+      "matchers": [{"string": "Purity of Lightning has no Reservation"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2308225900"]}}
   },
@@ -35814,8 +35835,8 @@
   },
   {
     "stat": {
-      "ref": "Regenerate # Energy Shield per Second per Poison on you, up to 250 per second",
-      "matchers": [{"string": "Regenerate # Energy Shield per Second per Poison on you, up to 250 per second"}]
+      "ref": "Regenerate # Energy Shield per Second per Poison on you, up to 400 per second",
+      "matchers": [{"string": "Regenerate # Energy Shield per Second per Poison on you, up to 400 per second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_948687156"]}}
   },
@@ -36358,7 +36379,7 @@
         {"string": "Thaumaturgical Lure", "value": 4}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3360430812"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3360430812"], "fractured": ["fractured.stat_3360430812"]}}
   },
   {
     "stat": {
@@ -36486,16 +36507,6 @@
   },
   {
     "stat": {
-      "ref": "Rogue Exiles have #% increased Maximum Life",
-      "matchers": [
-        {"string": "Rogue Exiles have #% increased Maximum Life"},
-        {"string": "Rogue Exiles have #% reduced Maximum Life", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_471027242"]}}
-  },
-  {
-    "stat": {
       "ref": "Rogue Exiles have #% more Rarity of Items Dropped",
       "matchers": [{"string": "Rogue Exiles have #% more Rarity of Items Dropped"}]
     },
@@ -36503,10 +36514,15 @@
   },
   {
     "stat": {
-      "ref": "Rogue Exiles in Areas have #% chance to be Possessed by a Tormented Spirit",
-      "matchers": [{"string": "Rogue Exiles in Areas have #% chance to be Possessed by a Tormented Spirit"}]
+      "ref": "Rogue Exiles in Areas have #% increased Maximum Life",
+      "matchers": [
+        {"string": "Rogue Exiles have #% increased Maximum Life"},
+        {"string": "Rogue Exiles in Areas have #% increased Maximum Life"},
+        {"string": "Rogue Exiles have #% reduced Maximum Life", "negate": true},
+        {"string": "Rogue Exiles in Areas have #% reduced Maximum Life", "negate": true}
+      ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1065203140"]}}
+    "trade": {"ids": {"enchant": ["enchant.stat_471027242"]}}
   },
   {
     "stat": {
@@ -36942,13 +36958,6 @@
   },
   {
     "stat": {
-      "ref": "Skills Cost no Mana while Focussed",
-      "matchers": [{"string": "Skills Cost no Mana while Focussed"}]
-    },
-    "trade": {"ids": {"crafted": ["crafted.stat_849152640"]}}
-  },
-  {
-    "stat": {
       "ref": "Skills fire an additional Projectile",
       "matchers": [
         {"string": "Skills fire # additional Projectiles"},
@@ -36986,6 +36995,19 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2809802678"]}}
+  },
+  {
+    "stat": {
+      "ref": "Skills have no Cost while Focussed",
+      "matchers": [{"string": "Skills have no Cost while Focussed"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_849152640"],
+        "fractured": ["fractured.stat_849152640"],
+        "crafted": ["crafted.stat_849152640"]
+      }
+    }
   },
   {
     "stat": {
@@ -37062,8 +37084,8 @@
   },
   {
     "stat": {
-      "ref": "Skills which throw Traps have Blood Magic",
-      "matchers": [{"string": "Skills which throw Traps have Blood Magic"}]
+      "ref": "Skills which throw Traps Cost Life instead of Mana",
+      "matchers": [{"string": "Skills which throw Traps Cost Life instead of Mana"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2420786978"]}}
   },
@@ -37181,10 +37203,10 @@
   },
   {
     "stat": {
-      "ref": "Socketed Curse Gems have #% reduced Mana Reservation",
+      "ref": "Socketed Curse Gems have #% reduced Reservation",
       "matchers": [
-        {"string": "Socketed Curse Gems have #% increased Mana Reservation"},
-        {"string": "Socketed Curse Gems have #% reduced Mana Reservation", "negate": true}
+        {"string": "Socketed Curse Gems have #% increased Reservation"},
+        {"string": "Socketed Curse Gems have #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1471600638"]}, "inverted": true}
@@ -37256,6 +37278,19 @@
       "matchers": [{"string": "Socketed Gems are Supported by Level # Archmage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_122", "explicit.stat_3652278215"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems are Supported by Level # Arrogance",
+      "matchers": [{"string": "Socketed Gems are Supported by Level # Arrogance"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.indexable_support_116", "explicit.stat_3922006600"],
+        "implicit": ["implicit.stat_3922006600"],
+        "crafted": ["crafted.stat_3922006600"]
+      }
+    }
   },
   {
     "stat": {
@@ -37389,19 +37424,6 @@
       "matchers": [{"string": "Socketed Gems are supported by Level # Blind"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2223640518"], "implicit": ["implicit.stat_2223640518"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Blood Magic",
-      "matchers": [{"string": "Socketed Gems are Supported by Level # Blood Magic"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.indexable_support_116", "explicit.stat_3922006600"],
-        "implicit": ["implicit.stat_3922006600"],
-        "crafted": ["crafted.stat_3922006600"]
-      }
-    }
   },
   {
     "stat": {
@@ -38339,8 +38361,15 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems deal # to # additional Fire Damage",
-      "matchers": [{"string": "Socketed Gems deal # to # additional Fire Damage"}]
+      "ref": "Socketed Gems Cost and Reserve Life instead of Mana",
+      "matchers": [{"string": "Socketed Gems Cost and Reserve Life instead of Mana"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1104246401"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems deal # to # Added Fire Damage",
+      "matchers": [{"string": "Socketed Gems deal # to # Added Fire Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1289910726"], "fractured": ["fractured.stat_1289910726"]}}
   },
@@ -38421,10 +38450,10 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems have #% reduced Mana Reservation",
+      "ref": "Socketed Gems have #% reduced Reservation",
       "matchers": [
-        {"string": "Socketed Gems have #% increased Mana Reservation"},
-        {"string": "Socketed Gems have #% reduced Mana Reservation", "negate": true}
+        {"string": "Socketed Gems have #% increased Reservation"},
+        {"string": "Socketed Gems have #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -38440,10 +38469,6 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1681904129"], "fractured": ["fractured.stat_1681904129"]}}
   },
   {
-    "stat": {"ref": "Socketed Gems have Blood Magic", "matchers": [{"string": "Socketed Gems have Blood Magic"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_1104246401"]}}
-  },
-  {
     "stat": {
       "ref": "Socketed Gems have Elemental Equilibrium",
       "matchers": [{"string": "Socketed Gems have Elemental Equilibrium"}]
@@ -38452,17 +38477,17 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems have no Reservation",
+      "matchers": [{"string": "Socketed Gems have no Reservation", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1237038225"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems have Secrets of Suffering",
       "matchers": [{"string": "Socketed Gems have Secrets of Suffering"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4051493629"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems Reserve No Mana",
-      "matchers": [{"string": "Socketed Gems Reserve No Mana", "value": 1}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1237038225"]}}
   },
   {
     "stat": {
@@ -38511,15 +38536,19 @@
   },
   {
     "stat": {
-      "ref": "Socketed Movement Skills have no Mana Cost",
-      "matchers": [{"string": "Socketed Movement Skills have no Mana Cost"}]
+      "ref": "Socketed Movement Skills Cost no Mana",
+      "matchers": [{"string": "Socketed Movement Skills Cost no Mana"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3263216405"]}}
   },
   {
     "stat": {
-      "ref": "Socketed Non-Channelling Bow Skills are Triggered by Snipe",
-      "matchers": [{"string": "Socketed Non-Channelling Bow Skills are Triggered by Snipe"}]
+      "ref": "Socketed Non-Channelling Bow Skills are Triggered by Snipe\nSocketed Triggered Bow Skills gain a 0.05 second Cooldown",
+      "matchers": [
+        {
+          "string": "Socketed Non-Channelling Bow Skills are Triggered by Snipe\nSocketed Triggered Bow Skills gain a 0.05 second Cooldown"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3282302743"]}}
   },
@@ -38532,8 +38561,8 @@
   },
   {
     "stat": {
-      "ref": "Socketed Skill Gems get a #% Mana Multiplier",
-      "matchers": [{"string": "Socketed Skill Gems get a #% Mana Multiplier"}]
+      "ref": "Socketed Skill Gems get a #% Cost & Reservation Multiplier",
+      "matchers": [{"string": "Socketed Skill Gems get a #% Cost & Reservation Multiplier"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_2865550257"]}}
   },
@@ -38562,7 +38591,7 @@
         {"string": "Socketed Skills deal #% less Spell Damage", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2964800094"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2964800094"], "fractured": ["fractured.stat_2964800094"]}}
   },
   {
     "stat": {
@@ -39166,10 +39195,10 @@
   },
   {
     "stat": {
-      "ref": "Summon Skitterbots has #% reduced Mana Reservation",
+      "ref": "Summon Skitterbots has #% reduced Reservation",
       "matchers": [
-        {"string": "Summon Skitterbots has #% increased Mana Reservation"},
-        {"string": "Summon Skitterbots has #% reduced Mana Reservation", "negate": true}
+        {"string": "Summon Skitterbots has #% increased Reservation"},
+        {"string": "Summon Skitterbots has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3798244977"]}, "inverted": true}
@@ -39557,10 +39586,10 @@
   },
   {
     "stat": {
-      "ref": "Temporal Chains has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Temporal Chains has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "Temporal Chains has #% increased Mana Reservation if Cast as an Aura"},
-        {"string": "Temporal Chains has #% reduced Mana Reservation if Cast as an Aura", "negate": true}
+        {"string": "Temporal Chains has #% increased Reservation if Cast as an Aura"},
+        {"string": "Temporal Chains has #% reduced Reservation if Cast as an Aura", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3779771090"]}, "inverted": true}
@@ -39858,20 +39887,20 @@
   },
   {
     "stat": {
-      "ref": "Trigger a Socketed Cold Spell on Melee Critical Strike",
-      "matchers": [{"string": "Trigger a Socketed Cold Spell on Melee Critical Strike"}]
+      "ref": "Trigger a Socketed Cold Spell on Melee Critical Strike, with a 0.15 second Cooldown",
+      "matchers": [{"string": "Trigger a Socketed Cold Spell on Melee Critical Strike, with a 0.15 second Cooldown"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2295303426"]}}
   },
   {
     "stat": {
-      "ref": "Trigger a Socketed Lightning Spell on Hit\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered",
+      "ref": "Trigger a Socketed Lightning Spell on Hit, with a 0.15 second Cooldown\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered",
       "matchers": [
         {
-          "string": "#% chance to Trigger a Socketed Lightning Spell on Hit\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered"
+          "string": "#% chance to Trigger a Socketed Lightning Spell on Hit, with a 0.15 second Cooldown\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered"
         },
         {
-          "string": "Trigger a Socketed Lightning Spell on Hit\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered",
+          "string": "Trigger a Socketed Lightning Spell on Hit, with a 0.15 second Cooldown\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered",
           "value": 100
         }
       ]
@@ -40104,10 +40133,15 @@
   },
   {
     "stat": {
-      "ref": "Trigger Socketed Minion Spells on Kill with this Weapon",
+      "ref": "Trigger Socketed Minion Spells on Kill with this Weapon\nMinion Spells Triggered by this Item have a 0.25 second Cooldown with 5 Uses",
       "matchers": [
-        {"string": "#% chance to Trigger Socketed Minion Spells on Kill with this Weapon"},
-        {"string": "Trigger Socketed Minion Spells on Kill with this Weapon", "value": 100}
+        {
+          "string": "#% chance to Trigger Socketed Minion Spells on Kill with this Weapon\nMinion Spells Triggered by this Item have a 0.25 second Cooldown with 5 Uses"
+        },
+        {
+          "string": "Trigger Socketed Minion Spells on Kill with this Weapon\nMinion Spells Triggered by this Item have a 0.25 second Cooldown with 5 Uses",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2816098341"]}}
@@ -40615,26 +40649,6 @@
   },
   {
     "stat": {
-      "ref": "Vaal Skills deal #% increased Damage",
-      "matchers": [
-        {"string": "Vaal Skills deal #% increased Damage"},
-        {"string": "Vaal Skills deal #% reduced Damage", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2257141320"], "implicit": ["implicit.stat_2257141320"]}}
-  },
-  {
-    "stat": {
-      "ref": "Vaal Skills deal #% increased Damage during effect",
-      "matchers": [
-        {"string": "Vaal Skills deal #% increased Damage during effect"},
-        {"string": "Vaal Skills deal #% reduced Damage during effect", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4067144129"]}}
-  },
-  {
-    "stat": {
       "ref": "Vaal Skills deal #% more Damage during Effect",
       "matchers": [
         {"string": "Vaal Skills deal #% more Damage during Effect"},
@@ -40655,10 +40669,23 @@
   },
   {
     "stat": {
-      "ref": "Vaal Skills have #% reduced Soul Cost during effect",
+      "ref": "Vaal Skills require #% reduced Souls Per Use",
       "matchers": [
-        {"string": "Vaal Skills have #% increased Soul Cost during effect"},
-        {"string": "Vaal Skills have #% reduced Soul Cost during effect", "negate": true}
+        {"string": "Vaal Skills require #% increased Souls Per Use"},
+        {"string": "Vaal Skills require #% reduced Souls Per Use", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {"explicit": ["explicit.stat_678245679"], "fractured": ["fractured.stat_678245679"]},
+      "inverted": true
+    }
+  },
+  {
+    "stat": {
+      "ref": "Vaal Skills require #% reduced Souls Per Use during effect",
+      "matchers": [
+        {"string": "Vaal Skills require #% increased Souls Per Use during effect"},
+        {"string": "Vaal Skills require #% reduced Souls Per Use during effect", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1274125114"]}, "inverted": true}
@@ -40735,10 +40762,10 @@
   },
   {
     "stat": {
-      "ref": "Vitality has #% reduced Mana Reservation",
+      "ref": "Vitality has #% reduced Reservation",
       "matchers": [
-        {"string": "Vitality has #% increased Mana Reservation"},
-        {"string": "Vitality has #% reduced Mana Reservation", "negate": true}
+        {"string": "Vitality has #% increased Reservation"},
+        {"string": "Vitality has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -40747,7 +40774,7 @@
     }
   },
   {
-    "stat": {"ref": "Vitality Reserves no Mana", "matchers": [{"string": "Vitality Reserves no Mana"}]},
+    "stat": {"ref": "Vitality has no Reservation", "matchers": [{"string": "Vitality has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_438083873"]}}
   },
   {
@@ -40810,10 +40837,10 @@
   },
   {
     "stat": {
-      "ref": "Vulnerability has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Vulnerability has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "Vulnerability has #% increased Mana Reservation if Cast as an Aura"},
-        {"string": "Vulnerability has #% reduced Mana Reservation if Cast as an Aura", "negate": true}
+        {"string": "Vulnerability has #% increased Reservation if Cast as an Aura"},
+        {"string": "Vulnerability has #% reduced Reservation if Cast as an Aura", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1798031916"]}, "inverted": true}
@@ -40856,7 +40883,7 @@
     "stat": {
       "ref": "Warbands in the Area have an additional Elite Member",
       "matchers": [
-        {"string": "Warbands in the Area have # additional Elites Members"},
+        {"string": "Warbands in the Area have # additional Elite Members"},
         {"string": "Warbands in the Area have an additional Elite Member", "value": 1}
       ]
     },
@@ -42070,10 +42097,10 @@
   },
   {
     "stat": {
-      "ref": "Wrath has #% reduced Mana Reservation",
+      "ref": "Wrath has #% reduced Reservation",
       "matchers": [
-        {"string": "Wrath has #% increased Mana Reservation"},
-        {"string": "Wrath has #% reduced Mana Reservation", "negate": true}
+        {"string": "Wrath has #% increased Reservation"},
+        {"string": "Wrath has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {
@@ -42082,7 +42109,7 @@
     }
   },
   {
-    "stat": {"ref": "Wrath Reserves no Mana", "matchers": [{"string": "Wrath Reserves no Mana"}]},
+    "stat": {"ref": "Wrath has no Reservation", "matchers": [{"string": "Wrath has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1865987277"]}}
   },
   {
@@ -43337,8 +43364,8 @@
   },
   {
     "stat": {
-      "ref": "Your Hits inflict Decay, dealing 500 Chaos Damage per second for 8 seconds",
-      "matchers": [{"string": "Your Hits inflict Decay, dealing 500 Chaos Damage per second for 8 seconds"}]
+      "ref": "Your Hits inflict Decay, dealing 700 Chaos Damage per second for 8 seconds",
+      "matchers": [{"string": "Your Hits inflict Decay, dealing 700 Chaos Damage per second for 8 seconds"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3322709337"], "fractured": ["fractured.stat_3322709337"]}}
   },
@@ -43732,17 +43759,17 @@
   },
   {
     "stat": {
+      "ref": "Your Skills Cost no Mana during Flask effect",
+      "matchers": [{"string": "Your Skills Cost no Mana during Flask effect"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1669220541"]}}
+  },
+  {
+    "stat": {
       "ref": "Your Skills deal you #% of Mana Spent on Skill Mana Costs as Physical Damage",
       "matchers": [{"string": "Your Skills deal you #% of Mana Spent on Skill Mana Costs as Physical Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_99487834"]}}
-  },
-  {
-    "stat": {
-      "ref": "Your Skills have no Mana Cost during Flask effect",
-      "matchers": [{"string": "Your Skills have no Mana Cost during Flask effect"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1669220541"]}}
   },
   {
     "stat": {
@@ -43947,16 +43974,16 @@
   },
   {
     "stat": {
-      "ref": "Zealotry has #% reduced Mana Reservation",
+      "ref": "Zealotry has #% reduced Reservation",
       "matchers": [
-        {"string": "Zealotry has #% increased Mana Reservation"},
-        {"string": "Zealotry has #% reduced Mana Reservation", "negate": true}
+        {"string": "Zealotry has #% increased Reservation"},
+        {"string": "Zealotry has #% reduced Reservation", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_478612089"], "enchant": ["enchant.stat_478612089"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Zealotry Reserves no Mana", "matchers": [{"string": "Zealotry Reserves no Mana"}]},
+    "stat": {"ref": "Zealotry has no Reservation", "matchers": [{"string": "Zealotry has no Reservation"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1741242318"]}}
   }
 ]

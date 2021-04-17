@@ -273,6 +273,13 @@
     }
   ],
   [
+    "Seaglass Amulet",
+    {
+      "category": "Amulet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Amulets/CrescentAmulet.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
     "Simplex Amulet",
     {
       "category": "Amulet",
@@ -770,6 +777,13 @@
     }
   ],
   [
+    "Grasping Mail",
+    {
+      "category": "Body Armour",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/GraspingMail.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Holy Chainmail",
     {
       "category": "Body Armour",
@@ -1201,6 +1215,13 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Blessed Boots",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/HalfTonedBoots.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2422,6 +2443,13 @@
     {
       "category": "Gloves",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Apothecary's Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/ChemistGloves.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -6096,6 +6124,13 @@
     }
   ],
   [
+    "Artillery Quiver",
+    {
+      "category": "Quiver",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Quivers/ChiselQuiver.png?scale=1&w=2&h=3"
+    }
+  ],
+  [
     "Blunt Arrow Quiver",
     {
       "category": "Quiver",
@@ -6254,6 +6289,13 @@
     {
       "category": "Ring",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/DemigodsBand.png?scale=1&w=1&h=1"
+    }
+  ],
+  [
+    "Iolite Ring",
+    {
+      "category": "Ring",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Rings/ChaosDmgRing.png?scale=1&w=1&h=1"
     }
   ],
   [
@@ -7712,7 +7754,7 @@
     }
   ],
   [
-    "Impact Force Propagator ",
+    "Impact Force Propagator",
     {
       "category": "Two-Handed Mace",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png?scale=1&w=2&h=4"

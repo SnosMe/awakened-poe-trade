@@ -76,6 +76,10 @@
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_abyssal_incubator_kills"]}}
   },
   {
+    "stat": {"ref": "# Incubator Kills (Blighted)", "matchers": [{"string": "# Убийств с инкубатором (заражённым)"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_blighted_incubator_kills"]}}
+  },
+  {
     "stat": {
       "ref": "# Incubator Kills (Cartographer's)",
       "matchers": [{"string": "# Убийств с инкубатором (картографа)"}]
@@ -165,6 +169,14 @@
   {
     "stat": {"ref": "# Incubator Kills (Infused)", "matchers": [{"string": "# Убийств с инкубатором (заряженным)"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_infused_incubator_kills"]}}
+  },
+  {
+    "stat": {"ref": "# Incubator Kills (Maddening)", "matchers": [{"string": "# Убийств с инкубатором (одержимым)"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_maddening_incubator_kills"]}}
+  },
+  {
+    "stat": {"ref": "# Incubator Kills (Morphing)", "matchers": [{"string": "# Убийств с инкубатором (меняющимся)"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_morphing_incubator_kills"]}}
   },
   {
     "stat": {"ref": "# Incubator Kills (Mysterious)", "matchers": [{"string": "# Убийств с инкубатором (загадочным)"}]},
@@ -322,6 +334,81 @@
   },
   {
     "stat": {
+      "ref": "# to # Added Cold Damage per Frenzy Charge",
+      "matchers": [{"string": "Добавляет от # до # урона от холода за заряд ярости"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3648858570"],
+        "implicit": ["implicit.stat_3648858570"],
+        "fractured": ["fractured.stat_3648858570"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Axe Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам топорами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1782176131"], "fractured": ["fractured.stat_1782176131"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Bow Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам луками"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_215124030"],
+        "implicit": ["implicit.stat_215124030"],
+        "fractured": ["fractured.stat_215124030"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Claw Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам когтями"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2848646243"], "fractured": ["fractured.stat_2848646243"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Dagger Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам кинжалами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1263342750"], "fractured": ["fractured.stat_1263342750"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам булавами и скипетрами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_187418672"], "fractured": ["fractured.stat_187418672"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Staff Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам посохами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1261958804"], "fractured": ["fractured.stat_1261958804"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Sword Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам мечами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_972201717"], "fractured": ["fractured.stat_972201717"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Cold Damage with Wand Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам жезлами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2383797932"], "fractured": ["fractured.stat_2383797932"]}}
+  },
+  {
+    "stat": {
       "ref": "# to # added Fire Damage\nPlayers and their Minions have # to # added Fire Damage",
       "matchers": [
         {
@@ -340,6 +427,68 @@
   },
   {
     "stat": {
+      "ref": "# to # Added Fire Damage with Axe Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам топорами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2461965653"], "fractured": ["fractured.stat_2461965653"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Bow Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам луками"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3120164895"],
+        "implicit": ["implicit.stat_3120164895"],
+        "fractured": ["fractured.stat_3120164895"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Claw Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам когтями"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2154290807"], "fractured": ["fractured.stat_2154290807"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Dagger Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам кинжалами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1910361436"], "fractured": ["fractured.stat_1910361436"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам булавами и скипетрами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3146788701"], "fractured": ["fractured.stat_3146788701"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Staff Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам посохами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3220927448"], "fractured": ["fractured.stat_3220927448"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Sword Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам мечами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_601249293"], "fractured": ["fractured.stat_601249293"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Fire Damage with Wand Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам жезлами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_87098247"], "fractured": ["fractured.stat_87098247"]}}
+  },
+  {
+    "stat": {
       "ref": "# to # added Lightning Damage\nPlayers and their Minions have # to # added Lightning Damage",
       "matchers": [
         {
@@ -348,6 +497,68 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2697534676"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Axe Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам топорами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1582068183"], "fractured": ["fractured.stat_1582068183"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Bow Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам луками"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1040269876"],
+        "implicit": ["implicit.stat_1040269876"],
+        "fractured": ["fractured.stat_1040269876"]
+      }
+    }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Claw Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам когтями"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4231842891"], "fractured": ["fractured.stat_4231842891"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Dagger Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам кинжалами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3479683016"], "fractured": ["fractured.stat_3479683016"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам булавами и скипетрами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2096159630"], "fractured": ["fractured.stat_2096159630"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Staff Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам посохами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3212481075"], "fractured": ["fractured.stat_3212481075"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Sword Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам мечами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1237708713"], "fractured": ["fractured.stat_1237708713"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Lightning Damage with Wand Attacks",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам жезлами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2787733863"], "fractured": ["fractured.stat_2787733863"]}}
   },
   {
     "stat": {
@@ -362,16 +573,170 @@
   },
   {
     "stat": {
-      "ref": "# to # Cold Damage per Frenzy Charge",
-      "matchers": [{"string": "От # до # урона от холода за заряд ярости"}]
+      "ref": "# to # Added Physical Damage with Axe Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам топорами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_311030839"], "fractured": ["fractured.stat_311030839"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Bow Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам луками"}]
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_3648858570"],
-        "implicit": ["implicit.stat_3648858570"],
-        "fractured": ["fractured.stat_3648858570"]
+        "explicit": ["explicit.stat_1760576992"],
+        "implicit": ["implicit.stat_1760576992"],
+        "fractured": ["fractured.stat_1760576992"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Claw Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам когтями"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3303015"], "fractured": ["fractured.stat_3303015"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Dagger Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам кинжалами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1298238534"], "fractured": ["fractured.stat_1298238534"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Mace or Sceptre Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам булавами и скипетрами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3882662078"], "fractured": ["fractured.stat_3882662078"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Staff Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам посохами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_69898010"], "fractured": ["fractured.stat_69898010"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Sword Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам мечами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1040189894"], "fractured": ["fractured.stat_1040189894"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Physical Damage with Wand Attacks",
+      "matchers": [{"string": "Добавляет от # до # физического урона к атакам жезлами"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_133683091"], "fractured": ["fractured.stat_133683091"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Chaos Damage while Dual Wielding",
+      "matchers": [{"string": "Добавляет от # до # урона хаосом к чарам с парным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1865428306"], "fractured": ["fractured.stat_1865428306"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Chaos Damage while holding a Shield",
+      "matchers": [{"string": "Добавляет от # до # урона хаосом к чарам со щитом в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1181129483"], "fractured": ["fractured.stat_1181129483"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Chaos Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "Добавляет от # до # урона хаосом к чарам с двуручным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1743759111"], "fractured": ["fractured.stat_1743759111"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Cold Damage while Dual Wielding",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к чарам с парным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3376452528"], "fractured": ["fractured.stat_3376452528"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Cold Damage while holding a Shield",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к чарам со щитом в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2671663397"], "fractured": ["fractured.stat_2671663397"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Cold Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "Добавляет от # до # урона от холода к чарам с двуручным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2464689927"], "fractured": ["fractured.stat_2464689927"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Fire Damage while Dual Wielding",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к чарам с парным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_662691280"], "fractured": ["fractured.stat_662691280"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Fire Damage while holding a Shield",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к чарам со щитом в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_44182350"], "fractured": ["fractured.stat_44182350"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Fire Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "Добавляет от # до # урона от огня к чарам с двуручным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2135335407"], "fractured": ["fractured.stat_2135335407"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Lightning Damage while Dual Wielding",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам с парным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3352373076"], "fractured": ["fractured.stat_3352373076"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Lightning Damage while holding a Shield",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам со щитом в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1801889979"], "fractured": ["fractured.stat_1801889979"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Lightning Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам с двуручным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2398198236"], "fractured": ["fractured.stat_2398198236"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Physical Damage while Dual Wielding",
+      "matchers": [{"string": "Добавляет от # до # физического урона к чарам с парным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4255924189"], "fractured": ["fractured.stat_4255924189"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Physical Damage while holding a Shield",
+      "matchers": [{"string": "Добавляет от # до # физического урона к чарам со щитом в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3954157711"], "fractured": ["fractured.stat_3954157711"]}}
+  },
+  {
+    "stat": {
+      "ref": "# to # Added Spell Physical Damage while wielding a Two Handed Weapon",
+      "matchers": [{"string": "Добавляет от # до # физического урона к чарам с двуручным оружием в руках"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2921084940"], "fractured": ["fractured.stat_2921084940"]}}
   },
   {
     "stat": {
@@ -509,7 +874,13 @@
       "ref": "#% additional Physical Damage Reduction while Focussed",
       "matchers": [{"string": "#% дополнительного уменьшения получаемого физического урона, пока вы сфокусированы"}]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_3753650187"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3753650187"],
+        "fractured": ["fractured.stat_3753650187"],
+        "crafted": ["crafted.stat_3753650187"]
+      }
+    }
   },
   {
     "stat": {
@@ -662,7 +1033,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_4270449170"]}}
   },
   {
-    "stat": {"ref": "#% chance for Slain monsters to drop an additional Scroll of Wisdom", "matchers": []},
+    "stat": {
+      "ref": "#% chance for Slain monsters to drop an additional Scroll of Wisdom",
+      "matchers": [{"string": "Из поверженных врагов с #% шансом может выпасть дополнительный свиток мудрости"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2920230984"]}}
   },
   {
@@ -1055,7 +1429,7 @@
   },
   {
     "stat": {
-      "ref": "#% chance that if you would gain Endurance Charges, you instead gain up to your maximum number of Endurance Charges",
+      "ref": "#% chance that if you would gain Endurance Charges, you instead gain up to maximum Endurance Charges",
       "matchers": [
         {"string": "#% шанс, что при получении зарядов выносливости, вы получите максимум зарядов выносливости"}
       ]
@@ -1478,13 +1852,6 @@
         "crafted": ["crafted.stat_561307714"]
       }
     }
-  },
-  {
-    "stat": {
-      "ref": "#% chance to Cast Level 20 Fire Burst on Hit",
-      "matchers": [{"string": "#% шанс сотворить Огненный взрыв 20 уровня при нанесении удара"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1621470436"], "fractured": ["fractured.stat_1621470436"]}}
   },
   {
     "stat": {
@@ -3153,21 +3520,28 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow",
+      "ref": "#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow, with a 1 second Cooldown",
       "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещенного умения лука при атаке луком"},
-        {"string": "Вызывает срабатывание размещенного умения лука при атаке луком", "value": 100}
+        {
+          "string": "#% шанс вызывать срабатывание размещенных умений лука при атаке луком, время перезарядки - 1 секунда"
+        },
+        {
+          "string": "Вызывает срабатывание размещенных умений лука при атаке луком, время перезарядки - 1 секунда",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3171958921"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow",
+      "ref": "#% chance to Trigger a Socketed Bow Skill when you Cast a Spell while wielding a Bow, with a 1 second Cooldown",
       "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещенного умения лука, когда вы сотворяете чары с луком в руках"},
         {
-          "string": "Вызывает срабатывание размещенного умения лука, когда вы сотворяете чары с луком в руках",
+          "string": "#% шанс вызвать срабатывание размещенных умений лука, когда вы сотворяете чары с луком в руках, время перезарядки - 1 секунда"
+        },
+        {
+          "string": "Вызывает срабатывание размещенных умений лука, когда вы сотворяете чары с луком в руках, время перезарядки - 1 секунда",
           "value": 100
         }
       ]
@@ -3176,49 +3550,41 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Spell when you Attack with a Bow",
+      "ref": "#% chance to Trigger a Socketed Spell when you Attack with a Bow, with a 0.3 second Cooldown",
       "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещенных чар при атаке луком"},
-        {"string": "Вызывает срабатывание размещенных чар при атаке луком", "value": 100}
+        {"string": "#% шанс вызвать срабатывание размещенных чар при атаке луком, время перезарядки - 0.3 секунды"},
+        {
+          "string": "Вызывает срабатывание размещенных чар при атаке луком, время перезарядки - 0.3 секунды",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3302736916"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Spell when you Attack with this Weapon",
+      "ref": "#% chance to Trigger a Socketed Spell when you Attack with this Weapon, with a 0.15 second Cooldown",
       "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещенных чар при атаке этим оружием"},
-        {"string": "Вызывает срабатывание размещенных чар при атаке этим оружием", "value": 100}
+        {
+          "string": "#% шанс вызвать срабатывание размещенных чар при атаке этим оружием, время перезарядки - 0.15 секунды"
+        },
+        {
+          "string": "Вызывает срабатывание размещенных чар при атаке этим оружием, время перезарядки - 0.15 секунды",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_209056835"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger a Socketed Spell when you Use a Skill",
-      "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещённых чар, когда вы используете умение"},
-        {"string": "Вызывает срабатывание размещённых чар, когда вы используете умение", "value": 100}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3079007202"],
-        "fractured": ["fractured.stat_3079007202"],
-        "crafted": ["crafted.stat_3079007202"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges",
+      "ref": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges, with a 0.25 second Cooldown",
       "matchers": [
         {
-          "string": "#% шанс вызвать срабатывание размещённого умения боевого клича, когда вы теряете заряды выносливости"
+          "string": "#% шанс вызвать срабатывание размещенного умения боевого клича при потере зарядов выносливости, время перезарядки - 0.25 секунды"
         },
         {
-          "string": "Вызывает срабатывание размещённого умения боевого клича, когда вы теряете заряды выносливости",
+          "string": "Вызывает срабатывание размещенного умения боевого клича при потере зарядов выносливости, время перезарядки - 0.25 секунды",
           "value": 100
         }
       ]
@@ -3693,7 +4059,13 @@
         {"string": "Вызывает срабатывание Кровавого угара 1 уровня, когда вы убиваете врага", "value": 100}
       ]
     },
-    "trade": {"ids": {"crafted": ["crafted.stat_205619502"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_205619502"],
+        "fractured": ["fractured.stat_205619502"],
+        "crafted": ["crafted.stat_205619502"]
+      }
+    }
   },
   {
     "stat": {
@@ -3785,21 +4157,6 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger Level 20 Summon Spectral Wolf on Critical Strike with this Weapon",
-      "matchers": [
-        {
-          "string": "#% шанс вызвать срабатывание Призыва призрачного волка 20 уровня при нанесении критического удара этим оружием"
-        },
-        {
-          "string": "Вызывает срабатывание Призыва призрачного волка 20 уровня при нанесении критического удара этим оружием",
-          "value": 100
-        }
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4221489692"]}}
-  },
-  {
-    "stat": {
       "ref": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill",
       "matchers": [
         {"string": "#% шанс вызвать срабатывание умения Призыв Нестабильной аномалии при убийстве 20 уровня"}
@@ -3816,6 +4173,21 @@
   },
   {
     "stat": {
+      "ref": "#% chance to Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon",
+      "matchers": [
+        {
+          "string": "#% шанс вызвать срабатывание Призыва призрачного волка 25 уровня при нанесении критического удара этим оружием"
+        },
+        {
+          "string": "Вызывает срабатывание Призыва призрачного волка 25 уровня при нанесении критического удара этим оружием",
+          "value": 100
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4221489692"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill",
       "matchers": [
         {"string": "#% шанс вызвать срабатывание Призыва неистового духа 8 уровня при убийстве"},
@@ -3826,32 +4198,30 @@
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill",
+      "ref": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill, with a 0.25 second Cooldown",
       "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещенных умений проклятий при сотворении умения проклятий"},
-        {"string": "Вызывает срабатывание размещенных умений проклятий при сотворении умения проклятий", "value": 100}
+        {
+          "string": "#% шанс вызвать срабатывание размещенных умений проклятий при сотворении умения проклятий, время перезарядки - 0.25 секунды"
+        },
+        {
+          "string": "Вызывает срабатывание размещенных умений проклятий при сотворении умения проклятий, время перезарядки - 0.25 секунды",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3657377047"]}}
   },
   {
     "stat": {
-      "ref": "#% chance to Trigger Socketed Spells when\nyou Spend at least # Mana to Use a Skill",
+      "ref": "#% chance to Trigger Socketed Spells when you Focus, with a 0.25 second Cooldown",
       "matchers": [
         {
-          "string": "#% шанс вызывать срабатывание размещённых чар,\nкогда вы тратите минимум # маны на использование умения"
+          "string": "#%шанс вызвать срабатывание размещенных чар в момент получения Фокуса, время перезарядки - 0.25 секунды"
         },
-        {"string": "Вызывает срабатывание размещённых чар,\nкогда вы тратите минимум # маны на использование умения"}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_723388324"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% chance to Trigger Socketed Spells when you Focus",
-      "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещённых умений в момент получения Фокуса"},
-        {"string": "Вызывает срабатывание размещённых умений в момент получения Фокуса", "value": 100}
+        {
+          "string": "Вызывает срабатывание размещенных чар в момент получения Фокуса, время перезарядки - 0.25 секунды",
+          "value": 100
+        }
       ]
     },
     "trade": {
@@ -4035,8 +4405,8 @@
   },
   {
     "stat": {
-      "ref": "#% chance when you pay a Skill's Mana Cost to gain that much Mana",
-      "matchers": [{"string": "#% шанс при трате маны на умение получить такое же количество маны"}]
+      "ref": "#% chance when you pay a Skill's Cost to gain that much Mana",
+      "matchers": [{"string": "#% шанс при расходе вами ресурсов на умение получить такое же количество маны"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1915414884"]}}
   },
@@ -4406,7 +4776,7 @@
         {"string": "#% уменьшение области действия умений порчи", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_153777645"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_153777645"], "fractured": ["fractured.stat_153777645"]}}
   },
   {
     "stat": {
@@ -4729,7 +5099,7 @@
         }
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1483753325"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1483753325"], "fractured": ["fractured.stat_1483753325"]}}
   },
   {
     "stat": {
@@ -6476,6 +6846,26 @@
   },
   {
     "stat": {
+      "ref": "#% increased Cost of Skills for each 200 total Mana Spent Recently",
+      "matchers": [
+        {"string": "#% повышение стоимости умений за каждые недавно потраченные 200 маны"},
+        {"string": "#% снижение стоимости умений за каждые недавно потраченные 200 маны", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2650053239"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Cost of Skills per 10 Devotion",
+      "matchers": [
+        {"string": "#% повышение стоимости умений за каждые 10 набожности"},
+        {"string": "#% снижение стоимости умений за каждые 10 набожности", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3293275880"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Counter-Thaumaturgy Experience gained",
       "matchers": [
         {"string": "#% увеличение получаемого Контрмагией опыта"},
@@ -7561,7 +7951,13 @@
         {"string": "#% уменьшение урона от состояний", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_690707482"], "implicit": ["implicit.stat_690707482"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_690707482"],
+        "implicit": ["implicit.stat_690707482"],
+        "fractured": ["fractured.stat_690707482"]
+      }
+    }
   },
   {
     "stat": {
@@ -7828,6 +8224,22 @@
   },
   {
     "stat": {
+      "ref": "#% increased Damage with Non-Vaal Skills during Soul Gain Prevention",
+      "matchers": [
+        {"string": "#% увеличение урона умениями не-ваал во время предотвращения получения душ"},
+        {"string": "#% уменьшение урона умениями не-ваал во время предотвращения получения душ", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1583385065"],
+        "fractured": ["fractured.stat_1583385065"],
+        "crafted": ["crafted.stat_1583385065"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% increased Damage with One Handed Weapons",
       "matchers": [
         {"string": "#% увеличение урона одноручным оружием"},
@@ -7905,6 +8317,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1836374041"], "fractured": ["fractured.stat_1836374041"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Damage with Vaal Skills",
+      "matchers": [
+        {"string": "#% увеличение урона умениями ваал"},
+        {"string": "#% уменьшение урона умениями ваал", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2257141320"], "implicit": ["implicit.stat_2257141320"]}}
   },
   {
     "stat": {
@@ -10891,26 +11313,6 @@
   },
   {
     "stat": {
-      "ref": "#% increased Mana Cost of Skills for each 200 total Mana you have Spent Recently",
-      "matchers": [
-        {"string": "#% повышение затрат маны умениями за каждые недавно потраченные 200 маны"},
-        {"string": "#% снижение затрат маны умениями за каждые недавно потраченные 200 маны", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2650053239"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Cost of Skills per 10 Devotion",
-      "matchers": [
-        {"string": "#% повышение затрат маны умениями за каждые 10 набожности"},
-        {"string": "#% снижение затрат маны умениями за каждые 10 набожности", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3293275880"]}}
-  },
-  {
-    "stat": {
       "ref": "#% increased Mana Recovered",
       "matchers": [
         {"string": "#% увеличение восстанавливаемой маны"},
@@ -11063,42 +11465,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3308030688"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Reservation of Curse Aura Skills",
-      "matchers": [
-        {"string": "#% увеличение количества удержанной маны для умений проклятий-аур"},
-        {"string": "#% уменьшение количества удержанной маны для умений проклятий-аур", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3292930705"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Reserved",
-      "matchers": [
-        {"string": "#% увеличение количества удержанной маны"},
-        {"string": "#% уменьшение количества удержанной маны", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_2227180465"],
-        "implicit": ["implicit.stat_2227180465"],
-        "fractured": ["fractured.stat_2227180465"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "#% increased Mana Reserved per 250 total Attributes",
-      "matchers": [
-        {"string": "#% увеличение количества удержанной маны за каждые 250 очков характеристик"},
-        {"string": "#% уменьшение количества удержанной маны за каждые 250 очков характеристик", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3229976559"]}}
   },
   {
     "stat": {
@@ -11256,11 +11622,11 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Energy Shield Leech",
+      "ref": "#% increased Maximum total Energy Shield Recovery per second from Leech",
       "matchers": [
-        {"string": "#% увеличение максимального итогового восстановления в секунду от похищения энергетического щита"},
+        {"string": "#% увеличение максимального итогового восстановления энергетического щита в секунду от похищения"},
         {
-          "string": "#% уменьшение максимального итогового восстановления в секунду от похищения энергетического щита",
+          "string": "#% уменьшение максимального итогового восстановления энергетического щита в секунду от похищения",
           "negate": true
         }
       ]
@@ -11269,13 +11635,13 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Energy Shield Leech while affected by Zealotry",
+      "ref": "#% increased Maximum total Energy Shield Recovery per second from Leech while affected by Zealotry",
       "matchers": [
         {
-          "string": "#% увеличение максимального итогового восстановления в секунду от похищения энергетического щита под действием Фанатизма"
+          "string": "#% увеличение максимального итогового восстановления энергетического щита в секунду от похищения под действием Фанатизма"
         },
         {
-          "string": "#% уменьшение максимального итогового восстановления в секунду от похищения энергетического щита под действием Фанатизма",
+          "string": "#% уменьшение максимального итогового восстановления энергетического щита в секунду от похищения под действием Фанатизма",
           "negate": true
         }
       ]
@@ -11284,11 +11650,11 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Life Leech",
+      "ref": "#% increased Maximum total Life Recovery per second from Leech",
       "matchers": [
-        {"string": "#% увеличение максимального итогового восстановления в секунду от похищения здоровья"},
+        {"string": "#% увеличение максимального итогового восстановления здоровья в секунду от похищения"},
         {
-          "string": "#% уменьшение максимального итогового восстановления в секунду от похищения здоровья",
+          "string": "#% уменьшение максимального итогового восстановления здоровья в секунду от похищения",
           "negate": true
         }
       ]
@@ -11302,10 +11668,10 @@
   },
   {
     "stat": {
-      "ref": "#% increased Maximum total Recovery per second from Mana Leech",
+      "ref": "#% increased Maximum total Mana Recovery per second from Leech",
       "matchers": [
-        {"string": "#% увеличение максимального итогового восстановления в секунду от похищения маны"},
-        {"string": "#% уменьшение максимального итогового восстановления в секунду от похищения маны", "negate": true}
+        {"string": "#% увеличение максимального итогового восстановления маны в секунду от похищения"},
+        {"string": "#% уменьшение максимального итогового восстановления маны в секунду от похищения", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_96977651"], "implicit": ["implicit.stat_96977651"]}}
@@ -11658,8 +12024,8 @@
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_308396001"],
-        "fractured": ["fractured.stat_308396001"],
+        "explicit": ["explicit.stat_1177358866", "explicit.stat_308396001"],
+        "fractured": ["fractured.stat_1177358866", "fractured.stat_308396001"],
         "enchant": ["enchant.stat_308396001"],
         "crafted": ["crafted.stat_1177358866"]
       }
@@ -12900,6 +13266,23 @@
   },
   {
     "stat": {
+      "ref": "#% increased Recovery per second from Life Leech",
+      "matchers": [
+        {"string": "#% увеличение восстановления здоровья в секунду от похищения"},
+        {"string": "#% уменьшение восстановления здоровья в секунду от похищения", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2633745731"],
+        "implicit": ["implicit.stat_2633745731"],
+        "fractured": ["fractured.stat_2633745731"],
+        "enchant": ["enchant.stat_2633745731"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% increased Recovery rate",
       "matchers": [
         {"string": "#% повышение скорости восстановления"},
@@ -12960,6 +13343,29 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1588572574"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Reservation of Curse Aura Skills",
+      "matchers": [
+        {"string": "#% увеличение количества ресурсов, удержанных умениями проклятий-аур"},
+        {"string": "#% уменьшение количества ресурсов, удержанных умениями проклятий-аур", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3292930705"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Reservation of Skills per 250 total Attributes",
+      "matchers": [
+        {"string": "#% увеличение количества удержанных умениями ресурсов за каждые 250 суммы характеристик"},
+        {
+          "string": "#% уменьшение количества удержанных умениями ресурсов за каждые 250 суммы характеристик",
+          "negate": true
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3229976559"]}}
   },
   {
     "stat": {
@@ -13815,23 +14221,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_553402472"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% increased total Recovery per second from Life Leech",
-      "matchers": [
-        {"string": "#% увеличение итогового восстановления в секунду от похищения здоровья"},
-        {"string": "#% уменьшение итогового восстановления в секунду от похищения здоровья", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_2633745731"],
-        "implicit": ["implicit.stat_2633745731"],
-        "fractured": ["fractured.stat_2633745731"],
-        "enchant": ["enchant.stat_2633745731"]
-      }
-    }
   },
   {
     "stat": {
@@ -15543,6 +15932,16 @@
   },
   {
     "stat": {
+      "ref": "#% reduced Cost of Aura Skills that summon Totems",
+      "matchers": [
+        {"string": "#% повышение стоимости умений аур, которые призывают тотемы"},
+        {"string": "#% снижение стоимости умений аур, которые призывают тотемы", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2701327257"]}, "inverted": true}
+  },
+  {
+    "stat": {
       "ref": "#% reduced Critical Strike Chance per Power Charge",
       "matchers": [
         {"string": "#% повышение шанса критического удара за заряд энергии"},
@@ -15845,16 +16244,6 @@
   },
   {
     "stat": {
-      "ref": "#% reduced Mana Cost of Totem Skills that cast an Aura",
-      "matchers": [
-        {"string": "#% повышение затрат маны умениями тотемов, которые сотворяют ауры"},
-        {"string": "#% снижение затрат маны умениями тотемов, которые сотворяют ауры", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2701327257"]}, "inverted": true}
-  },
-  {
-    "stat": {
       "ref": "#% reduced Mana Cost per Endurance Charge",
       "matchers": [{"string": "#% снижение затрат маны за заряд выносливости"}]
     },
@@ -15956,19 +16345,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_99927264"], "implicit": ["implicit.stat_99927264"]}}
-  },
-  {
-    "stat": {
-      "ref": "#% reduced Soul Cost of Vaal Skills",
-      "matchers": [
-        {"string": "#% повышение затрат душ умениями ваал"},
-        {"string": "#% снижение затрат душ умениями ваал", "negate": true}
-      ]
-    },
-    "trade": {
-      "ids": {"explicit": ["explicit.stat_678245679"], "fractured": ["fractured.stat_678245679"]},
-      "inverted": true
-    }
   },
   {
     "stat": {
@@ -18096,6 +18472,13 @@
   },
   {
     "stat": {
+      "ref": "+#% Physical and Chaos Damage Modifiers",
+      "matchers": [{"string": "+#% к качеству свойств физического урона и урона хаосом"}]
+    },
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_physical_chaos_quality"]}}
+  },
+  {
+    "stat": {
       "ref": "+#% Player Cold Resistance per 25% Alert Level",
       "matchers": [{"string": "#% к сопротивлению холоду игрока за каждые 25% уровня тревоги"}]
     },
@@ -18134,6 +18517,13 @@
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_caster_quality"]}}
   },
   {
+    "stat": {
+      "ref": "+#% Quality to Critical Modifiers",
+      "matchers": [{"string": "+#% к качеству свойств критического удара"}]
+    },
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_critical_quality"]}}
+  },
+  {
     "stat": {"ref": "+#% Quality to Defence Modifiers", "matchers": [{"string": "+#% к качеству свойств защиты"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_defense_quality"]}}
   },
@@ -18157,6 +18547,10 @@
       "matchers": [{"string": "+#% к качеству свойств сопротивлений"}]
     },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_resistance_quality"]}}
+  },
+  {
+    "stat": {"ref": "+#% Quality to Speed Modifiers", "matchers": [{"string": "+#% к качеству свойств скорости"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_jewellery_speed_quality"]}}
   },
   {
     "stat": {"ref": "+#% to all Elemental Resistances", "matchers": [{"string": "#% к сопротивлению всем стихиям"}]},
@@ -21332,7 +21726,13 @@
       "ref": "10% Chance to Trigger Level 10 Summon Spectral Wolf on Kill",
       "matchers": [{"string": "10% шанс вызвать срабатывание Призыва призрачного волка 18 уровня при убийстве"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1468606528"], "crafted": ["crafted.stat_1468606528"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1468606528"],
+        "fractured": ["fractured.stat_1468606528"],
+        "crafted": ["crafted.stat_1468606528"]
+      }
+    }
   },
   {
     "stat": {
@@ -21405,7 +21805,9 @@
       "ref": "Abysses in Areas have #% increased chance to lead to an Abyssal Depths",
       "matchers": [
         {"string": "Бездны имеют увеличенный на #% шанс привести в Глубины Бездны"},
-        {"string": "Бездны имеют уменьшенный на #% шанс привести в Глубины Бездны"}
+        {"string": "Бездны имеют уменьшенный на #% шанс привести в Глубины Бездны"},
+        {"string": "Бездны с увеличенным на #% шансом могут привести к Глубинам Бездны"},
+        {"string": "Бездны с уменьшенным на #% шансом могут привести к Глубинам Бездны"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2722831300"]}}
@@ -22045,27 +22447,6 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3519268108"]}}
   },
   {
-    "stat": {
-      "ref": "Adds # to # Chaos Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Добавляет от # до # урона хаосом к чарам с парным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1865428306"], "fractured": ["fractured.stat_1865428306"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Chaos Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Добавляет от # до # урона хаосом к чарам со щитом в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1181129483"], "fractured": ["fractured.stat_1181129483"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Chaos Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Добавляет от # до # урона хаосом к чарам с двуручным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1743759111"], "fractured": ["fractured.stat_1743759111"]}}
-  },
-  {
     "stat": {"ref": "Adds # to # Cold Damage", "matchers": [{"string": "Добавляет от # до # урона от холода"}]},
     "trade": {
       "ids": {
@@ -22143,51 +22524,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Cold Damage to Axe Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам топорами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1782176131"], "fractured": ["fractured.stat_1782176131"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Bow Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам луками"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_215124030"],
-        "implicit": ["implicit.stat_215124030"],
-        "fractured": ["fractured.stat_215124030"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Claw Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам когтями"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2848646243"], "fractured": ["fractured.stat_2848646243"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Cold Damage to Counterattacks",
       "matchers": [{"string": "Добавляет от # до # урона от холода к контратакам"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1109700751"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Dagger Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам кинжалами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1263342750"], "fractured": ["fractured.stat_1263342750"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам булавами и скипетрами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_187418672"], "fractured": ["fractured.stat_187418672"]}}
   },
   {
     "stat": {
@@ -22213,52 +22553,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Cold Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к чарам с парным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3376452528"], "fractured": ["fractured.stat_3376452528"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к чарам со щитом в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2671663397"], "fractured": ["fractured.stat_2671663397"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Cold Damage to Spells while no Life is Reserved",
       "matchers": [{"string": "Добавляет от # до # урона от холода к чарам, если не удержано здоровье"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_897996059"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к чарам с двуручным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2464689927"], "fractured": ["fractured.stat_2464689927"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Staff Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам посохами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1261958804"], "fractured": ["fractured.stat_1261958804"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Sword Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам мечами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_972201717"], "fractured": ["fractured.stat_972201717"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Cold Damage to Wand Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от холода к атакам жезлами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2383797932"], "fractured": ["fractured.stat_2383797932"]}}
   },
   {
     "stat": {
@@ -22396,51 +22694,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Fire Damage to Axe Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам топорами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2461965653"], "fractured": ["fractured.stat_2461965653"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Bow Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам луками"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_3120164895"],
-        "implicit": ["implicit.stat_3120164895"],
-        "fractured": ["fractured.stat_3120164895"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Claw Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам когтями"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2154290807"], "fractured": ["fractured.stat_2154290807"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Dagger Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам кинжалами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1910361436"], "fractured": ["fractured.stat_1910361436"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Fire Damage to Hits with this Weapon against Blinded Enemies",
       "matchers": [{"string": "Добавляет от # до # урона от огня к ударам этим оружием по ослепленным врагам"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3977907993"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам булавами и скипетрами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3146788701"], "fractured": ["fractured.stat_3146788701"]}}
   },
   {
     "stat": {
@@ -22466,52 +22723,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Fire Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к чарам с парным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_662691280"], "fractured": ["fractured.stat_662691280"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к чарам со щитом в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_44182350"], "fractured": ["fractured.stat_44182350"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Fire Damage to Spells while no Life is Reserved",
       "matchers": [{"string": "Добавляет от # до # урона от огня к чарам, если не удержано здоровье"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_833719670"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к чарам с двуручным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2135335407"], "fractured": ["fractured.stat_2135335407"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Staff Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам посохами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3220927448"], "fractured": ["fractured.stat_3220927448"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Sword Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам мечами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_601249293"], "fractured": ["fractured.stat_601249293"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Fire Damage to Wand Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от огня к атакам жезлами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_87098247"], "fractured": ["fractured.stat_87098247"]}}
   },
   {
     "stat": {
@@ -22598,51 +22813,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Lightning Damage to Axe Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам топорами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1582068183"], "fractured": ["fractured.stat_1582068183"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Bow Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам луками"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1040269876"],
-        "implicit": ["implicit.stat_1040269876"],
-        "fractured": ["fractured.stat_1040269876"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Claw Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам когтями"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4231842891"], "fractured": ["fractured.stat_4231842891"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Dagger Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам кинжалами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3479683016"], "fractured": ["fractured.stat_3479683016"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Lightning Damage to Hits against Ignited Enemies",
       "matchers": [{"string": "Добавляет от # до # урона от молнии к ударам по подожжённым врагам"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2870108850"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам булавами и скипетрами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2096159630"], "fractured": ["fractured.stat_2096159630"]}}
   },
   {
     "stat": {
@@ -22682,20 +22856,6 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Lightning Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам с парным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3352373076"], "fractured": ["fractured.stat_3352373076"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам со щитом в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1801889979"], "fractured": ["fractured.stat_1801889979"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Lightning Damage to Spells while no Life is Reserved",
       "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам, если не удержано здоровье"}]
     },
@@ -22710,38 +22870,10 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Lightning Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к чарам с двуручным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2398198236"], "fractured": ["fractured.stat_2398198236"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Staff Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам посохами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3212481075"], "fractured": ["fractured.stat_3212481075"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Sword Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам мечами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1237708713"], "fractured": ["fractured.stat_1237708713"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Lightning Damage to Unarmed Attacks",
       "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам без оружия"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_458002333"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Lightning Damage to Wand Attacks",
-      "matchers": [{"string": "Добавляет от # до # урона от молнии к атакам жезлами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2787733863"], "fractured": ["fractured.stat_2787733863"]}}
   },
   {
     "stat": {
@@ -22856,47 +22988,6 @@
   },
   {
     "stat": {
-      "ref": "Adds # to # Physical Damage to Axe Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам топорами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_311030839"], "fractured": ["fractured.stat_311030839"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Bow Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам луками"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1760576992"],
-        "implicit": ["implicit.stat_1760576992"],
-        "fractured": ["fractured.stat_1760576992"]
-      }
-    }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Claw Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам когтями"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3303015"], "fractured": ["fractured.stat_3303015"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Dagger Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам кинжалами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1298238534"], "fractured": ["fractured.stat_1298238534"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Mace or Sceptre Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам булавами и скипетрами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3882662078"], "fractured": ["fractured.stat_3882662078"]}}
-  },
-  {
-    "stat": {
       "ref": "Adds # to # Physical Damage to Spells",
       "matchers": [{"string": "Добавляет от # до # физического урона к чарам"}]
     },
@@ -22907,48 +22998,6 @@
         "fractured": ["fractured.stat_2435536961"]
       }
     }
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Spells while Dual Wielding",
-      "matchers": [{"string": "Добавляет от # до # физического урона к чарам с парным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4255924189"], "fractured": ["fractured.stat_4255924189"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Spells while holding a Shield",
-      "matchers": [{"string": "Добавляет от # до # физического урона к чарам со щитом в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3954157711"], "fractured": ["fractured.stat_3954157711"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Spells while wielding a Two Handed Weapon",
-      "matchers": [{"string": "Добавляет от # до # физического урона к чарам с двуручным оружием в руках"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2921084940"], "fractured": ["fractured.stat_2921084940"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Staff Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам посохами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_69898010"], "fractured": ["fractured.stat_69898010"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Sword Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам мечами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1040189894"], "fractured": ["fractured.stat_1040189894"]}}
-  },
-  {
-    "stat": {
-      "ref": "Adds # to # Physical Damage to Wand Attacks",
-      "matchers": [{"string": "Добавляет от # до # физического урона к атакам жезлами"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_133683091"], "fractured": ["fractured.stat_133683091"]}}
   },
   {
     "stat": {
@@ -23046,16 +23095,6 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3086446674"]}}
-  },
-  {
-    "stat": {
-      "ref": "Alert Level increases every ten seconds",
-      "matchers": [
-        {"string": "Уровень тревоги снижается каждые 10 секунд", "value": -1},
-        {"string": "Уровень тревоги повышается каждые 10 секунд", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3138486617"]}}
   },
   {
     "stat": {
@@ -23650,10 +23689,10 @@
   },
   {
     "stat": {
-      "ref": "Anger has #% reduced Mana Reservation",
+      "ref": "Anger has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Жгучей злобой"},
-        {"string": "#% уменьшение количества маны, удержанной Жгучей злобой", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Жгучей злобой"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Жгучей злобой", "negate": true}
       ]
     },
     "trade": {
@@ -23662,7 +23701,7 @@
     }
   },
   {
-    "stat": {"ref": "Anger Reserves no Mana", "matchers": [{"string": "Жгучая злоба не удерживает ману"}]},
+    "stat": {"ref": "Anger has no Reservation", "matchers": [{"string": "Жгучая злоба не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2189891129"]}}
   },
   {
@@ -23767,10 +23806,10 @@
   },
   {
     "stat": {
-      "ref": "Arctic Armour has #% reduced Mana Reservation",
+      "ref": "Arctic Armour has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Северной бронёй"},
-        {"string": "#% уменьшение количества маны, удержанной Северной бронёй", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Северной броней"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Северной броней", "negate": true}
       ]
     },
     "trade": {
@@ -24246,8 +24285,12 @@
   },
   {
     "stat": {
-      "ref": "Area is infested with Fungal Growths",
-      "matchers": [{"string": "Область заражена грибными наростами"}]
+      "ref": "Area is infested with Fungal Growths\nMap's Item Quantity Modifiers also affect Blight Chest count at 20% value",
+      "matchers": [
+        {
+          "string": "Область заражена грибными насаждениями\nСвойства, влияющие на количество выпадающих на карте предметов,\nтакже влияют на количество сундуков Скверны в размере 20% от их значения"
+        }
+      ]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_299373046"]}}
   },
@@ -24510,16 +24553,6 @@
   },
   {
     "stat": {
-      "ref": "Areas contain # additional packs of Poisonous Monsters",
-      "matchers": [
-        {"string": "В области можно встретить дополнительных групп ядовитых монстров: #"},
-        {"string": "В областях можно встретить дополнительных групп ядовитых монстров: #"}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_3094365680"]}}
-  },
-  {
-    "stat": {
       "ref": "Areas contain # additional Packs with Mirrored Rare Monsters",
       "matchers": [
         {"string": "В области можно встретить дополнительных групп с отражёнными редкими монстрами: #"},
@@ -24725,7 +24758,7 @@
   },
   {
     "stat": {
-      "ref": "Areas have #% increased chance to contain a Smuggler’s Cache",
+      "ref": "Areas have #% increased chance to contain a Smuggler's Cache",
       "matchers": [
         {"string": "Область с увеличенным на #% шансом может содержать тайник контрабандиста"},
         {"string": "Область с уменьшенным на #% шансом может содержать тайник контрабандиста"}
@@ -24748,7 +24781,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2156201537"]}}
   },
   {
-    "stat": {"ref": "Areas have +#% chance to grant an Atlas Mission on Completion", "matchers": []},
+    "stat": {
+      "ref": "Areas have +#% chance to grant an Atlas Mission on Completion",
+      "matchers": [{"string": "#% шанс получить задание Атласа при завершении областей"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_416299653"]}}
   },
   {
@@ -24970,7 +25006,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2544408546"]}}
   },
   {
-    "stat": {"ref": "Aspect of the Cat Reserves no Mana", "matchers": [{"string": "Дух кошки не удерживает ману"}]},
+    "stat": {
+      "ref": "Aspect of the Cat has no Reservation",
+      "matchers": [{"string": "Дух кошки не удерживает ресурсы"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3850409117"]}}
   },
   {
@@ -25045,6 +25084,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2466604008"]}}
+  },
+  {
+    "stat": {
+      "ref": "Attacks Cost Life instead of Mana",
+      "matchers": [{"string": "Атаки расходуют здоровье вместо маны", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3358745905"]}}
   },
   {
     "stat": {
@@ -25130,10 +25176,6 @@
       "matchers": [{"string": "Атаки имеют 25% шанс наложить кровотечение при нанесении удара проклятым врагам"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2591028853"]}}
-  },
-  {
-    "stat": {"ref": "Attacks have Blood Magic", "matchers": [{"string": "Атаки имеют эффект Магия крови", "value": 1}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_3358745905"]}}
   },
   {
     "stat": {
@@ -25263,7 +25305,7 @@
       "ref": "Auras from your Skills grant #% increased Damage to you and Allies",
       "matchers": [{"string": "Ауры от ваших умений даруют вам и вашим союзникам #% увеличение урона"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3729445224"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3729445224"], "fractured": ["fractured.stat_3729445224"]}}
   },
   {
     "stat": {"ref": "Avatar of Fire", "matchers": [{"string": "Воплощение огня"}]},
@@ -25558,7 +25600,7 @@
     "stat": {
       "ref": "Blight Chests in Areas have #% increased chance to contain Blighted Maps or Oils",
       "matchers": [
-        {"string": "Сундуки Скверны с увеличенным на #% шанс могут содержать в себе зараженные карты или масла"}
+        {"string": "Сундуки Скверны с увеличенным на #% шансом могут содержать в себе заражённые карты или масла"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2233120145"]}}
@@ -25674,14 +25716,7 @@
   },
   {
     "stat": {
-      "ref": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
-      "matchers": [{"string": "Атаки луками выпускают дополнительных стрел, если вы недавно не использовали Рывок: #"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2482927318"]}}
-  },
-  {
-    "stat": {
-      "ref": "Bow Attacks fire an additional Arrow",
+      "ref": "Bow Attacks fire # additional Arrows",
       "matchers": [
         {"string": "Атаки луками выпускают дополнительных стрел: #"},
         {"string": "Атаки луками выпускают дополнительную стрелу", "value": 1}
@@ -25694,6 +25729,13 @@
         "fractured": ["fractured.stat_742529963"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "Bow Attacks fire # additional Arrows if you haven't Cast Dash recently",
+      "matchers": [{"string": "Атаки луками выпускают дополнительных стрел, если вы недавно не использовали Рывок: #"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2482927318"]}}
   },
   {
     "stat": {
@@ -26204,6 +26246,13 @@
   },
   {
     "stat": {
+      "ref": "Cast Level 20 Fire Burst on Hit",
+      "matchers": [{"string": "Сотворяет Огненный взрыв 20 уровня при получении удара", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1621470436"], "fractured": ["fractured.stat_1621470436"]}}
+  },
+  {
+    "stat": {
       "ref": "Caster Damage Modifiers have #% increased Effect",
       "matchers": [
         {"string": "#% усиление эффекта свойств урона от чар"},
@@ -26295,8 +26344,8 @@
   },
   {
     "stat": {
-      "ref": "Channelling Skills have +# to Total Mana Cost",
-      "matchers": [{"string": "# к итоговому расходу маны поддерживаемыми умениями"}]
+      "ref": "Channelling Skills have +# to Total Cost",
+      "matchers": [{"string": "# к итоговой стоимости поддерживаемых умений"}]
     },
     "trade": {
       "ids": {
@@ -26489,16 +26538,16 @@
   },
   {
     "stat": {
-      "ref": "Clarity has #% reduced Mana Reservation",
+      "ref": "Clarity has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Ясностью ума"},
-        {"string": "#% уменьшение количества маны, удержанной Ясностью ума", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Ясностью ума"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Ясностью ума", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3738398726"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Clarity Reserves no Mana", "matchers": [{"string": "Ясность ума не удерживает ману"}]},
+    "stat": {"ref": "Clarity has no Reservation", "matchers": [{"string": "Ясность ума не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2250543633"]}}
   },
   {
@@ -26619,10 +26668,10 @@
   },
   {
     "stat": {
-      "ref": "Conductivity has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Conductivity has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Проводимостью в виде ауры"},
-        {"string": "#% уменьшение количества маны, удержанной Проводимостью в виде ауры", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Проводимостью в виде ауры"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Проводимостью в виде ауры", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_622203853"]}, "inverted": true}
@@ -27202,6 +27251,7 @@
       "ids": {
         "explicit": ["explicit.stat_1435748744"],
         "implicit": ["implicit.stat_1435748744"],
+        "fractured": ["fractured.stat_1435748744"],
         "crafted": ["crafted.stat_1435748744"]
       }
     }
@@ -27592,10 +27642,10 @@
   },
   {
     "stat": {
-      "ref": "Despair has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Despair has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Отчаянием в виде ауры"},
-        {"string": "#% уменьшение количества маны, удержанной Отчаянием в виде ауры", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Отчаянием в виде ауры"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Отчаянием в виде ауры", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2562564343"]}, "inverted": true}
@@ -27612,10 +27662,10 @@
   },
   {
     "stat": {
-      "ref": "Determination has #% reduced Mana Reservation",
+      "ref": "Determination has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Решимостью"},
-        {"string": "#% уменьшение количества маны, удержанной Решимостью", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Решимостью"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Решимостью", "negate": true}
       ]
     },
     "trade": {
@@ -27628,7 +27678,7 @@
     }
   },
   {
-    "stat": {"ref": "Determination Reserves no Mana", "matchers": [{"string": "Решимость не удерживает ману"}]},
+    "stat": {"ref": "Determination has no Reservation", "matchers": [{"string": "Решимость не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1358697130"]}}
   },
   {
@@ -27682,10 +27732,10 @@
   },
   {
     "stat": {
-      "ref": "Discipline has #% reduced Mana Reservation",
+      "ref": "Discipline has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Дисциплиной"},
-        {"string": "#% уменьшение количества маны, удержанной Дисциплиной", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Дисциплиной"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Дисциплиной", "negate": true}
       ]
     },
     "trade": {
@@ -27698,7 +27748,7 @@
     }
   },
   {
-    "stat": {"ref": "Discipline Reserves no Mana", "matchers": [{"string": "Дисциплина не удерживает ману"}]},
+    "stat": {"ref": "Discipline has no Reservation", "matchers": [{"string": "Дисциплина не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3708588508"]}}
   },
   {
@@ -28493,7 +28543,7 @@
     "trade": {"ids": {"enchant": ["enchant.stat_1405738574"]}}
   },
   {
-    "stat": {"ref": "Envy Reserves no Mana", "matchers": [{"string": "Зависть не удерживает ману"}]},
+    "stat": {"ref": "Envy has no Reservation", "matchers": [{"string": "Зависть не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2503479316"]}}
   },
   {
@@ -28774,10 +28824,10 @@
   },
   {
     "stat": {
-      "ref": "Flammability has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Flammability has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Горючестью в виде ауры"},
-        {"string": "#% уменьшение количества маны, удержанной Горючестью в виде ауры", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Горючестью в виде ауры"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Горючестью в виде ауры", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3152149523"]}, "inverted": true}
@@ -28829,10 +28879,10 @@
   },
   {
     "stat": {
-      "ref": "Flesh and Stone has #% reduced Mana Reservation",
+      "ref": "Flesh and Stone has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Камнем и плотью"},
-        {"string": "#% уменьшение количества маны, удержанной Камнем и плотью", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Камнем и плотью"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Камнем и плотью", "negate": true}
       ]
     },
     "trade": {
@@ -28967,10 +29017,10 @@
   },
   {
     "stat": {
-      "ref": "Frostbite has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Frostbite has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Обморожением в виде ауры"},
-        {"string": "#% уменьшение количества маны, удержанной Обморожением в виде ауры", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Укусом стужи в виде ауры"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Укусом стужи в виде ауры", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4272260340"]}, "inverted": true}
@@ -29974,10 +30024,10 @@
   },
   {
     "stat": {
-      "ref": "Grace has #% reduced Mana Reservation",
+      "ref": "Grace has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Грацией"},
-        {"string": "#% уменьшение количества маны, удержанной Грацией", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Грацией"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Грацией", "negate": true}
       ]
     },
     "trade": {
@@ -29990,7 +30040,7 @@
     }
   },
   {
-    "stat": {"ref": "Grace Reserves no Mana", "matchers": [{"string": "Грация не удерживает ману"}]},
+    "stat": {"ref": "Grace has no Reservation", "matchers": [{"string": "Грация не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2930404958"]}}
   },
   {
@@ -30522,7 +30572,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2410613176"], "implicit": ["implicit.stat_2410613176"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Wintertide Brand", "matchers": [{"string": "Дарует Клеймо зимы # уровня"}]},
+    "stat": {
+      "ref": "Grants Level # Wintertide Brand Skill",
+      "matchers": [{"string": "Дарует умение Клеймо зимы # уровня"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1826753218"]}}
   },
   {
@@ -30705,6 +30758,10 @@
     }
   },
   {
+    "stat": {"ref": "Has # Influences", "matchers": [{"string": "Имеет # влияний"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_influence_count"]}}
+  },
+  {
     "stat": {
       "ref": "Has # White Sockets",
       "matchers": [{"string": "Имеет белых гнезд: #"}, {"string": "Имеет 1 белое гнездо", "value": 1}]
@@ -30726,11 +30783,23 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2489070122"]}}
   },
   {
+    "stat": {"ref": "Has Crusader Influence", "matchers": [{"string": "Имеет влияние Крестоносца"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_crusader_influence"]}}
+  },
+  {
+    "stat": {"ref": "Has Elder Influence", "matchers": [{"string": "Имеет влияние Древнего"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_elder_influence"]}}
+  },
+  {
     "stat": {
       "ref": "Has Elder, Shaper and all Conqueror Influences",
       "matchers": [{"string": "Имеет влияние Древнего, Создателя и всех Завоевателей"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1795443614"]}}
+  },
+  {
+    "stat": {"ref": "Has Hunter Influence", "matchers": [{"string": "Имеет влияние Охотика"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_hunter_influence"]}}
   },
   {
     "stat": {
@@ -30756,17 +30825,29 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1493091477"]}}
   },
   {
+    "stat": {"ref": "Has Redeemer Influence", "matchers": [{"string": "Имеет влияние Избавительницы"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_redeemer_influence"]}}
+  },
+  {
+    "stat": {"ref": "Has Shaper Influence", "matchers": [{"string": "Имеет влияние Создателя"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_shaper_influence"]}}
+  },
+  {
+    "stat": {"ref": "Has Warlord Influence", "matchers": [{"string": "Имеет влияние Вождя"}]},
+    "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_warlord_influence"]}}
+  },
+  {
     "stat": {
-      "ref": "Haste has #% reduced Mana Reservation",
+      "ref": "Haste has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Спешкой"},
-        {"string": "#% уменьшение количества маны, удержанной Спешкой", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Спешкой"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Спешкой", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_91821600"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Haste Reserves no Mana", "matchers": [{"string": "Спешка не удерживает ману"}]},
+    "stat": {"ref": "Haste has no Reservation", "matchers": [{"string": "Спешка не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_751322171"]}}
   },
   {
@@ -30781,20 +30862,20 @@
   },
   {
     "stat": {
-      "ref": "Hatred has #% more Mana Reservation",
+      "ref": "Hatred has #% more Reservation",
       "matchers": [
-        {"string": "Холодная ненависть имеет на #% больше количества удержанной маны"},
-        {"string": "Холодная ненависть имеет на #% меньше количества удержанной маны", "negate": true}
+        {"string": "Холодная ненависть удерживает на #% больше количества ресурсов"},
+        {"string": "Холодная ненависть удерживает на #% меньше количества ресурсов", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_47734694"]}}
   },
   {
     "stat": {
-      "ref": "Hatred has #% reduced Mana Reservation",
+      "ref": "Hatred has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Холодной ненавистью"},
-        {"string": "#% уменьшение количества маны, удержанной Холодной ненавистью", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Холодной ненавистью"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Холодной ненавистью", "negate": true}
       ]
     },
     "trade": {
@@ -30803,7 +30884,7 @@
     }
   },
   {
-    "stat": {"ref": "Hatred Reserves no Mana", "matchers": [{"string": "Холодная ненависть не удерживает ману"}]},
+    "stat": {"ref": "Hatred has no Reservation", "matchers": [{"string": "Холодная ненависть не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1391583476"]}}
   },
   {
@@ -30975,10 +31056,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Agony has #% reduced Mana Reservation",
+      "ref": "Herald of Agony has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Вестником агонии"},
-        {"string": "#% уменьшение количества маны, удержанной Вестником агонии", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Вестником агонии"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Вестником агонии", "negate": true}
       ]
     },
     "trade": {
@@ -30998,10 +31079,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Ash has #% reduced Mana Reservation",
+      "ref": "Herald of Ash has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Вестником пепла"},
-        {"string": "#% уменьшение количества маны, удержанной Вестником пепла", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Вестником пепла"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Вестником пепла", "negate": true}
       ]
     },
     "trade": {
@@ -31021,10 +31102,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Ice has #% reduced Mana Reservation",
+      "ref": "Herald of Ice has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Вестником льда"},
-        {"string": "#% уменьшение количества маны, удержанной Вестником льда", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Вестником льда"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Вестником льда", "negate": true}
       ]
     },
     "trade": {
@@ -31044,10 +31125,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Purity has #% reduced Mana Reservation",
+      "ref": "Herald of Purity has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Вестником чистоты"},
-        {"string": "#% уменьшение количества маны, удержанной Вестником чистоты", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Вестником чистоты"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Вестником чистоты", "negate": true}
       ]
     },
     "trade": {
@@ -31074,10 +31155,10 @@
   },
   {
     "stat": {
-      "ref": "Herald of Thunder has #% reduced Mana Reservation",
+      "ref": "Herald of Thunder has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Вестником грома"},
-        {"string": "#% уменьшение количества маны, удержанной Вестником грома", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Вестником грома"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Вестником грома", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_966400988"], "enchant": ["enchant.stat_966400988"]}, "inverted": true}
@@ -31484,7 +31565,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1619549198"]}}
   },
   {
-    "stat": {"ref": "Ignited Enemies Killed by your Hits are destroyed", "matchers": []},
+    "stat": {
+      "ref": "Ignited Enemies Killed by your Hits are destroyed",
+      "matchers": [{"string": "Убитые вашими ударами подожжённые враги уничтожаются "}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3173052379"]}}
   },
   {
@@ -31647,10 +31731,10 @@
   },
   {
     "stat": {
-      "ref": "Immunity to Bleeding during Flask effect\nRemoves Bleeding on use",
+      "ref": "Immunity to Bleeding and Corrupted Blood during Flask effect\nRemoves Bleeding and Corrupted Blood on use",
       "matchers": [
         {
-          "string": "Иммунитет к кровотечению во время действия эффекта флакона\nПри использовании снимает кровотечение",
+          "string": "Иммунитет к кровотечению и оскверненной крови во время действия эффекта флакона\nПри использовании снимает кровотечение и оскверненную кровь",
           "value": 1
         }
       ]
@@ -31807,7 +31891,7 @@
   },
   {
     "stat": {
-      "ref": "Increases and Reductions to Damage of Vaal Skills also apply to Non-Vaal Skills",
+      "ref": "Increases and Reductions to Damage with Vaal Skills also apply to Non-Vaal Skills",
       "matchers": [{"string": "Увеличение и уменьшение урона умений ваал также распространяется на не-ваал умения"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_3871212304"]}}
@@ -32330,7 +32414,7 @@
   },
   {
     "stat": {
-      "ref": "Lancing Steel has #% chance count as consuming Steel Shards without Consuming them",
+      "ref": "Lancing Steel has #% chance to count as consuming Steel Shards without Consuming them",
       "matchers": [
         {"string": "Пронзающая сталь имеет #% шанс считаться поглотившим стальные осколки без их полглощения"}
       ]
@@ -32885,10 +32969,10 @@
   },
   {
     "stat": {
-      "ref": "Malevolence has #% reduced Mana Reservation",
+      "ref": "Malevolence has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Злорадством"},
-        {"string": "#% уменьшение количества маны, удержанной Злорадством", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Злорадством"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Злорадством", "negate": true}
       ]
     },
     "trade": {
@@ -32897,7 +32981,7 @@
     }
   },
   {
-    "stat": {"ref": "Malevolence Reserves no Mana", "matchers": [{"string": "Злорадство не удерживает ману"}]},
+    "stat": {"ref": "Malevolence has no Reservation", "matchers": [{"string": "Злорадство не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_585622486"]}}
   },
   {
@@ -33245,17 +33329,10 @@
   },
   {
     "stat": {
-      "ref": "Minions deal # to # Added Attack Physical Damage",
+      "ref": "Minions deal # to # additional Attack Physical Damage",
       "matchers": [{"string": "Приспешники наносят от # до # дополнительного физического урона от атак"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_797833282"]}}
-  },
-  {
-    "stat": {
-      "ref": "Minions deal # to # Added Lightning Damage",
-      "matchers": [{"string": "Приспешники наносят от # до # дополнительного урона от молнии"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2930653471"], "fractured": ["fractured.stat_2930653471"]}}
   },
   {
     "stat": {
@@ -33277,6 +33354,13 @@
       "matchers": [{"string": "Приспешники наносят от # до # дополнительного урона от огня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3351784991"], "fractured": ["fractured.stat_3351784991"]}}
+  },
+  {
+    "stat": {
+      "ref": "Minions deal # to # additional Lightning Damage",
+      "matchers": [{"string": "Приспешники наносят от # до # дополнительного урона от молнии"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2930653471"], "fractured": ["fractured.stat_2930653471"]}}
   },
   {
     "stat": {
@@ -33331,16 +33415,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_412745376"], "fractured": ["fractured.stat_412745376"]}}
-  },
-  {
-    "stat": {
-      "ref": "Minions deal #% increased Damage per 10 Dexterity",
-      "matchers": [
-        {"string": "Приспешники имеют #% увеличение урона за каждые 10 ловкости"},
-        {"string": "Приспешники имеют #% уменьшение урона за каждые 10 ловкости", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2238471448"]}}
   },
   {
     "stat": {
@@ -34634,7 +34708,7 @@
   },
   {
     "stat": {"ref": "No Travel Cost", "matchers": [{"string": "Без расходов на перемещение"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_2946222246"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2946222246"], "fractured": ["fractured.stat_2946222246"]}}
   },
   {
     "stat": {
@@ -34695,25 +34769,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2262007777"]}}
-  },
-  {
-    "stat": {
-      "ref": "Non-Vaal Skills deal #% increased Damage during Soul Gain Prevention",
-      "matchers": [
-        {"string": "Не-ваал умения наносят увеличенный на #% урон во время действия предотвращения получения душ"},
-        {
-          "string": "Не-ваал умения наносят уменьшенный на #% урон во время действия предотвращения получения душ",
-          "negate": true
-        }
-      ]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_1583385065"],
-        "fractured": ["fractured.stat_1583385065"],
-        "crafted": ["crafted.stat_1583385065"]
-      }
-    }
   },
   {
     "stat": {
@@ -35471,16 +35526,6 @@
   },
   {
     "stat": {
-      "ref": "Players deal #% increased Damage for each Poison on them",
-      "matchers": [
-        {"string": "Игроки наносят увеличенный на #% урон за каждый эффект яда на них"},
-        {"string": "Игроки наносят уменьшенный на #% урон за каждый эффект яда на них", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_1520798835"]}}
-  },
-  {
-    "stat": {
       "ref": "Players deal #% increased Damage with Hits to Breach Monsters",
       "matchers": [{"string": "Игроки наносят увеличенный на #% урон от ударов по монстрам Разлома"}]
     },
@@ -35558,16 +35603,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1416455556"]}}
-  },
-  {
-    "stat": {
-      "ref": "Players have #% increased Movement Speed for each Poison on them",
-      "matchers": [
-        {"string": "Скорость игроков повышается на #% за каждый эффект яда на них"},
-        {"string": "Скорость игроков снижается на #% за каждый эффект яда на них", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_453789911"]}}
   },
   {
     "stat": {
@@ -35847,18 +35882,15 @@
   },
   {
     "stat": {
-      "ref": "Precision has #% increased Mana Reservation",
-      "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Точностью"},
-        {"string": "#% уменьшение количества маны, удержанной Точностью", "negate": true}
-      ]
+      "ref": "Precision has #% increased Reservation",
+      "matchers": [{"string": "#% увеличение количества ресурсов, удержанных Точностью"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3468905159"]}}
   },
   {
     "stat": {
-      "ref": "Precision has 50% less Mana Reservation",
-      "matchers": [{"string": "Точность удерживает на 50% меньше маны"}]
+      "ref": "Precision has 50% less Reservation",
+      "matchers": [{"string": "Точность удерживает на 50% меньше количества ресурсов"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3736628755"]}}
   },
@@ -35884,16 +35916,16 @@
   },
   {
     "stat": {
-      "ref": "Pride has #% reduced Mana Reservation",
+      "ref": "Pride has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Гордостью"},
-        {"string": "#% уменьшение количества маны, удержанной Гордостью", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Гордостью"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Гордостью", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_250961191"], "enchant": ["enchant.stat_250961191"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Pride Reserves no Mana", "matchers": [{"string": "Гордость не удерживает ману"}]},
+    "stat": {"ref": "Pride has no Reservation", "matchers": [{"string": "Гордость не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3554614456"]}}
   },
   {
@@ -35937,10 +35969,6 @@
       "matchers": [{"string": "Снаряды наносят увеличенный на #% урон за каждый удар по цепи"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1923210508"]}}
-  },
-  {
-    "stat": {"ref": "Projectiles Fork", "matchers": [{"string": "Снаряды разветвляются"}]},
-    "trade": {"ids": {"explicit": ["explicit.stat_942938211"]}}
   },
   {
     "stat": {"ref": "Projectiles from Attacks Fork", "matchers": [{"string": "Снаряды от атак разветвляются"}]},
@@ -36083,27 +36111,27 @@
   },
   {
     "stat": {
-      "ref": "Purity of Elements has #% reduced Mana Reservation",
+      "ref": "Purity of Elements has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Спасением от стихий"},
-        {"string": "#% уменьшение количества маны, удержанной Спасением от стихий", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Спасением от стихий"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Спасением от стихий", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1849664701"]}, "inverted": true}
   },
   {
     "stat": {
-      "ref": "Purity of Elements Reserves no Mana",
-      "matchers": [{"string": "Спасение от стихий не удерживает ману"}]
+      "ref": "Purity of Elements has no Reservation",
+      "matchers": [{"string": "Спасение от стихий не удерживает ресурсы"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1826480903"]}}
   },
   {
     "stat": {
-      "ref": "Purity of Fire has #% reduced Mana Reservation",
+      "ref": "Purity of Fire has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Спасением от огня"},
-        {"string": "#% уменьшение количества маны, удержанной Спасением от огня", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Спасением от огня"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Спасением от огня", "negate": true}
       ]
     },
     "trade": {
@@ -36116,15 +36144,18 @@
     }
   },
   {
-    "stat": {"ref": "Purity of Fire Reserves no Mana", "matchers": [{"string": "Спасение от огня не удерживает ману"}]},
+    "stat": {
+      "ref": "Purity of Fire has no Reservation",
+      "matchers": [{"string": "Спасение от огня не удерживает ресурсы"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2278589942"]}}
   },
   {
     "stat": {
-      "ref": "Purity of Ice has #% reduced Mana Reservation",
+      "ref": "Purity of Ice has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Спасением от холода"},
-        {"string": "#% уменьшение количества маны, удержанной Спасением от холода", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Спасением от холода"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Спасением от холода", "negate": true}
       ]
     },
     "trade": {
@@ -36138,17 +36169,17 @@
   },
   {
     "stat": {
-      "ref": "Purity of Ice Reserves no Mana",
-      "matchers": [{"string": "Спасение от холода не удерживает ману"}]
+      "ref": "Purity of Ice has no Reservation",
+      "matchers": [{"string": "Спасение от холода не удерживает ресурсы"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1622979279"]}}
   },
   {
     "stat": {
-      "ref": "Purity of Lightning has #% reduced Mana Reservation",
+      "ref": "Purity of Lightning has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Спасением от молний"},
-        {"string": "#% уменьшение количества маны, удержанной Спасением от молний", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Спасением от молний"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Спасением от молний", "negate": true}
       ]
     },
     "trade": {
@@ -36162,8 +36193,8 @@
   },
   {
     "stat": {
-      "ref": "Purity of Lightning Reserves no Mana",
-      "matchers": [{"string": "Спасение от молнии не удерживает ману"}]
+      "ref": "Purity of Lightning has no Reservation",
+      "matchers": [{"string": "Спасение от молний не удерживает ресурсы"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2308225900"]}}
   },
@@ -36859,8 +36890,8 @@
   },
   {
     "stat": {
-      "ref": "Regenerate # Energy Shield per Second per Poison on you, up to 250 per second",
-      "matchers": [{"string": "Регенерация # энергетического щита за каждый заряд яда на вас, вплоть до 250 в секунду"}]
+      "ref": "Regenerate # Energy Shield per Second per Poison on you, up to 400 per second",
+      "matchers": [{"string": "Регенерация # энергетического щита за каждый заряд яда на вас, вплоть до 400 в секунду"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_948687156"]}}
   },
@@ -37415,7 +37446,7 @@
         {"string": "Волшебная приманка", "value": 4}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3360430812"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3360430812"], "fractured": ["fractured.stat_3360430812"]}}
   },
   {
     "stat": {
@@ -37559,16 +37590,6 @@
   },
   {
     "stat": {
-      "ref": "Rogue Exiles have #% increased Maximum Life",
-      "matchers": [
-        {"string": "Максимум здоровья бродячих изгнанников повышен на #%"},
-        {"string": "Максимум здоровья бродячих изгнанников снижен на #%", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_471027242"]}}
-  },
-  {
-    "stat": {
       "ref": "Rogue Exiles have #% more Rarity of Items Dropped",
       "matchers": [{"string": "#% повышение редкости выпадающих предметов из бродячих изгнанников"}]
     },
@@ -37576,10 +37597,15 @@
   },
   {
     "stat": {
-      "ref": "Rogue Exiles in Areas have #% chance to be Possessed by a Tormented Spirit",
-      "matchers": [{"string": "Бродячие изгнанники с #% шансом могут быть одержимыми Страдающим духом"}]
+      "ref": "Rogue Exiles in Areas have #% increased Maximum Life",
+      "matchers": [
+        {"string": "Бродячие изгнанники имеют #% увеличение максимума здоровья"},
+        {"string": "Максимум здоровья бродячих изгнанников повышен на #%"},
+        {"string": "Бродячие изгнанники имеют #% уменьшение максимума здоровья", "negate": true},
+        {"string": "Максимум здоровья бродячих изгнанников снижен на #%", "negate": true}
+      ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1065203140"]}}
+    "trade": {"ids": {"enchant": ["enchant.stat_471027242"]}}
   },
   {
     "stat": {
@@ -38031,13 +38057,6 @@
   },
   {
     "stat": {
-      "ref": "Skills Cost no Mana while Focussed",
-      "matchers": [{"string": "Пока вы сфокусированы, умения не расходуют ману"}]
-    },
-    "trade": {"ids": {"crafted": ["crafted.stat_849152640"]}}
-  },
-  {
-    "stat": {
       "ref": "Skills fire an additional Projectile",
       "matchers": [
         {"string": "Умения выпускают дополнительных снарядов: #"},
@@ -38078,6 +38097,19 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2809802678"]}}
+  },
+  {
+    "stat": {
+      "ref": "Skills have no Cost while Focussed",
+      "matchers": [{"string": "Умения не расходую ресурсы во время Фокуса"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_849152640"],
+        "fractured": ["fractured.stat_849152640"],
+        "crafted": ["crafted.stat_849152640"]
+      }
+    }
   },
   {
     "stat": {
@@ -38154,8 +38186,8 @@
   },
   {
     "stat": {
-      "ref": "Skills which throw Traps have Blood Magic",
-      "matchers": [{"string": "Умения, бросающие ловушки, имеют Магию крови"}]
+      "ref": "Skills which throw Traps Cost Life instead of Mana",
+      "matchers": [{"string": "Бросающие ловушки умения расходуют здоровье вместо маны"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2420786978"]}}
   },
@@ -38268,10 +38300,10 @@
   },
   {
     "stat": {
-      "ref": "Socketed Curse Gems have #% reduced Mana Reservation",
+      "ref": "Socketed Curse Gems have #% reduced Reservation",
       "matchers": [
-        {"string": "Размещённые камни проклятий имеют #% увеличение количества удержанной маны"},
-        {"string": "Размещённые камни проклятий имеют #% уменьшение количества удержанной маны", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных размещенными камнями проклятий"},
+        {"string": "#% уменьшение количества ресурсов, удержанных размещенными камнями проклятий", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1471600638"]}, "inverted": true}
@@ -38343,6 +38375,19 @@
       "matchers": [{"string": "Размещённые камни усилены Архимагом # уровня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_122", "explicit.stat_3652278215"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems are Supported by Level # Arrogance",
+      "matchers": [{"string": "Размещенные камни усилены Заносчивостью # уровня"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.indexable_support_116", "explicit.stat_3922006600"],
+        "implicit": ["implicit.stat_3922006600"],
+        "crafted": ["crafted.stat_3922006600"]
+      }
+    }
   },
   {
     "stat": {
@@ -38476,19 +38521,6 @@
       "matchers": [{"string": "Размещённые камни усилены Ослеплением # уровня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2223640518"], "implicit": ["implicit.stat_2223640518"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems are Supported by Level # Blood Magic",
-      "matchers": [{"string": "Размещённые камни усилены Магией крови # уровня"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.indexable_support_116", "explicit.stat_3922006600"],
-        "implicit": ["implicit.stat_3922006600"],
-        "crafted": ["crafted.stat_3922006600"]
-      }
-    }
   },
   {
     "stat": {
@@ -39417,7 +39449,14 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems deal # to # additional Fire Damage",
+      "ref": "Socketed Gems Cost and Reserve Life instead of Mana",
+      "matchers": [{"string": "Размещенные камни расходуют и удерживают здоровье вместо маны"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1104246401"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems deal # to # Added Fire Damage",
       "matchers": [{"string": "Размещённые камни добавляют от # до # дополнительного урона от огня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1289910726"], "fractured": ["fractured.stat_1289910726"]}}
@@ -39499,10 +39538,10 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems have #% reduced Mana Reservation",
+      "ref": "Socketed Gems have #% reduced Reservation",
       "matchers": [
-        {"string": "Размещённые камни имеют #% увеличение количества удержанной маны"},
-        {"string": "Размещённые камни имеют #% уменьшение количества удержанной маны", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных размещенными камнями"},
+        {"string": "#% уменьшение количества ресурсов, удержанных размещенными камнями", "negate": true}
       ]
     },
     "trade": {
@@ -39519,13 +39558,6 @@
   },
   {
     "stat": {
-      "ref": "Socketed Gems have Blood Magic",
-      "matchers": [{"string": "Размещённые камни имеют Магию крови", "value": 1}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1104246401"]}}
-  },
-  {
-    "stat": {
       "ref": "Socketed Gems have Elemental Equilibrium",
       "matchers": [{"string": "Размещённые камни имеют эффект Равновесие стихий"}]
     },
@@ -39533,17 +39565,17 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems have no Reservation",
+      "matchers": [{"string": "Размещенные камни не удерживают ресурсы", "value": 1}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1237038225"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems have Secrets of Suffering",
       "matchers": [{"string": "Размещенные камни имеют эффект Секреты страдания"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4051493629"]}}
-  },
-  {
-    "stat": {
-      "ref": "Socketed Gems Reserve No Mana",
-      "matchers": [{"string": "Размещённые камни не удерживают ману", "value": 1}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1237038225"]}}
   },
   {
     "stat": {
@@ -39596,15 +39628,19 @@
   },
   {
     "stat": {
-      "ref": "Socketed Movement Skills have no Mana Cost",
-      "matchers": [{"string": "Размещённые умения передвижения не расходуют ману"}]
+      "ref": "Socketed Movement Skills Cost no Mana",
+      "matchers": [{"string": "Размещенные умения движения не расходуют ману"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3263216405"]}}
   },
   {
     "stat": {
-      "ref": "Socketed Non-Channelling Bow Skills are Triggered by Snipe",
-      "matchers": [{"string": "Прицельный выстрел вызывает срабатывание размещенных неподдерживаемых умений лука"}]
+      "ref": "Socketed Non-Channelling Bow Skills are Triggered by Snipe\nSocketed Triggered Bow Skills gain a 0.05 second Cooldown",
+      "matchers": [
+        {
+          "string": "Прицельный выстрел вызывает срабатывание размещенных неподдерживаемых умений лука\n Размещенные сработавшие умения лука получают время перезарядки, равное 0.05 секунды."
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3282302743"]}}
   },
@@ -39619,8 +39655,8 @@
   },
   {
     "stat": {
-      "ref": "Socketed Skill Gems get a #% Mana Multiplier",
-      "matchers": [{"string": "Размещённые камни умений получают #% множитель маны"}]
+      "ref": "Socketed Skill Gems get a #% Cost & Reservation Multiplier",
+      "matchers": [{"string": "Размещенные камни умений получают #% множитель стоимости и удержания ресурсов"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_2865550257"]}}
   },
@@ -39651,7 +39687,7 @@
         {"string": "Размещённые умения наносят на #% меньше урона от чар", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2964800094"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2964800094"], "fractured": ["fractured.stat_2964800094"]}}
   },
   {
     "stat": {
@@ -40271,10 +40307,10 @@
   },
   {
     "stat": {
-      "ref": "Summon Skitterbots has #% reduced Mana Reservation",
+      "ref": "Summon Skitterbots has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Призывом мехаботов"},
-        {"string": "#% уменьшение количества маны, удержанной Призывом мехаботов", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Призывом мехаботов"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Призывом мехаботов", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3798244977"]}, "inverted": true}
@@ -40684,10 +40720,10 @@
   },
   {
     "stat": {
-      "ref": "Temporal Chains has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Temporal Chains has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Путами времени в виде ауры"},
-        {"string": "#% уменьшение количества маны, удержанной Путами времени в виде ауры", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Путами времени в виде ауры"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Путами времени в виде ауры", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3779771090"]}, "inverted": true}
@@ -41003,22 +41039,24 @@
   },
   {
     "stat": {
-      "ref": "Trigger a Socketed Cold Spell on Melee Critical Strike",
+      "ref": "Trigger a Socketed Cold Spell on Melee Critical Strike, with a 0.15 second Cooldown",
       "matchers": [
-        {"string": "Вызывает срабатывание размещённых чар холода при нанесении критического удара в ближнем бою"}
+        {
+          "string": "Вызывает срабатывание размещённых чар холода при нанесении критического удара в ближнем бою, время перезарядки - 0.15 секунды"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2295303426"]}}
   },
   {
     "stat": {
-      "ref": "Trigger a Socketed Lightning Spell on Hit\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered",
+      "ref": "Trigger a Socketed Lightning Spell on Hit, with a 0.15 second Cooldown\nSocketed Lightning Spells deal 100% increased Spell Damage if Triggered",
       "matchers": [
         {
-          "string": "#% шанс вызвать срабатывание размещённых чар молнии при нанесении удара\nРазмещённые чары молнии наносят увеличенный на 100% урон от чар при срабатывании"
+          "string": "#% шанс вызывать срабатывание размещённых чар молнии при нанесении удара, время перезарядки - 0.15 секунды\nРазмещённые чары молнии наносят увеличенный на 100% урон от чар при срабатывании"
         },
         {
-          "string": "Вызывает срабатывание размещённых чар молнии при нанесении удара\nРазмещённые чары молнии наносят увеличенный на 100% урон от чар при срабатывании",
+          "string": "Вызывает срабатывание размещённых чар молнии при нанесении удара, время перезарядки - 0.15 секунды\nРазмещённые чары молнии наносят увеличенный на 100% урон от чар при срабатывании",
           "value": 100
         }
       ]
@@ -41281,10 +41319,15 @@
   },
   {
     "stat": {
-      "ref": "Trigger Socketed Minion Spells on Kill with this Weapon",
+      "ref": "Trigger Socketed Minion Spells on Kill with this Weapon\nMinion Spells Triggered by this Item have a 0.25 second Cooldown with 5 Uses",
       "matchers": [
-        {"string": "#% шанс вызвать срабатывание размещённых чар приспешников при убийстве этим оружием"},
-        {"string": "Вызывает срабатывание размещённых чар приспешников при убийстве этим оружием", "value": 100}
+        {
+          "string": "#% шанс вызывть срабатывание размещенных чар приспешников при убийстве этим оружием\nСработавшие от этого предмета чары приспешников имеют 5 зарядов со временем перезарядки, равным 0.25 секунды."
+        },
+        {
+          "string": "Вызывает срабатывание размещенных чар приспешников при убийстве этим оружием\nСработавшие от этого предмета чары приспешников имеют 5 зарядов со временем перезарядки, равным 0.25 секунды.",
+          "value": 100
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2816098341"]}}
@@ -41795,26 +41838,6 @@
   },
   {
     "stat": {
-      "ref": "Vaal Skills deal #% increased Damage",
-      "matchers": [
-        {"string": "Умения ваал наносят увеличенный на #% урон"},
-        {"string": "Умения ваал наносят уменьшенный на #% урон", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2257141320"], "implicit": ["implicit.stat_2257141320"]}}
-  },
-  {
-    "stat": {
-      "ref": "Vaal Skills deal #% increased Damage during effect",
-      "matchers": [
-        {"string": "Умения ваал наносят увеличенный на #% урон во время действия эффекта"},
-        {"string": "Умения ваал наносят уменьшенный на #% урон во время действия эффекта", "negate": true}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_4067144129"]}}
-  },
-  {
-    "stat": {
       "ref": "Vaal Skills deal #% more Damage during Effect",
       "matchers": [
         {"string": "Умения ваал наносят на #% больше урона во время действия эффекта"},
@@ -41835,10 +41858,26 @@
   },
   {
     "stat": {
-      "ref": "Vaal Skills have #% reduced Soul Cost during effect",
+      "ref": "Vaal Skills require #% reduced Souls Per Use",
       "matchers": [
-        {"string": "#% повышение затрат душ умениями ваал во время действия эффекта"},
-        {"string": "#% снижение затрат душ умениями ваал во время действия эффекта", "negate": true}
+        {"string": "Умения ваал требуют увеличенное на #% количество душ для использования"},
+        {"string": "Умения ваал требуют уменьшенное на #% количество душ для использования", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {"explicit": ["explicit.stat_678245679"], "fractured": ["fractured.stat_678245679"]},
+      "inverted": true
+    }
+  },
+  {
+    "stat": {
+      "ref": "Vaal Skills require #% reduced Souls Per Use during effect",
+      "matchers": [
+        {"string": "Умения ваал требуют увеличенное на #% количество душ для использования во время эффекта"},
+        {
+          "string": "Умения ваал требуют уменьшенное на #% количество душ для использования во время эффекта",
+          "negate": true
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1274125114"]}, "inverted": true}
@@ -41937,10 +41976,10 @@
   },
   {
     "stat": {
-      "ref": "Vitality has #% reduced Mana Reservation",
+      "ref": "Vitality has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Живучестью"},
-        {"string": "#% уменьшение количества маны, удержанной Живучестью", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Живучестью"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Живучестью", "negate": true}
       ]
     },
     "trade": {
@@ -41949,7 +41988,7 @@
     }
   },
   {
-    "stat": {"ref": "Vitality Reserves no Mana", "matchers": [{"string": "Живучесть не удерживает ману"}]},
+    "stat": {"ref": "Vitality has no Reservation", "matchers": [{"string": "Живучесть не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_438083873"]}}
   },
   {
@@ -42019,10 +42058,10 @@
   },
   {
     "stat": {
-      "ref": "Vulnerability has #% reduced Mana Reservation if Cast as an Aura",
+      "ref": "Vulnerability has #% reduced Reservation if Cast as an Aura",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Беззащитностью в виде ауры"},
-        {"string": "#% уменьшение количества маны, удержанной Беззащитностью в виде ауры", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Беззащитностью в виде ауры"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Беззащитностью в виде ауры", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1798031916"]}, "inverted": true}
@@ -43334,10 +43373,10 @@
   },
   {
     "stat": {
-      "ref": "Wrath has #% reduced Mana Reservation",
+      "ref": "Wrath has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Грозным гневом"},
-        {"string": "#% уменьшение количества маны, удержанной Грозным гневом", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Грозным гневом"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Грозным гневом", "negate": true}
       ]
     },
     "trade": {
@@ -43346,7 +43385,7 @@
     }
   },
   {
-    "stat": {"ref": "Wrath Reserves no Mana", "matchers": [{"string": "Грозный гнев не удерживает ману"}]},
+    "stat": {"ref": "Wrath has no Reservation", "matchers": [{"string": "Грозный гнев не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1865987277"]}}
   },
   {
@@ -44617,9 +44656,9 @@
   },
   {
     "stat": {
-      "ref": "Your Hits inflict Decay, dealing 500 Chaos Damage per second for 8 seconds",
+      "ref": "Your Hits inflict Decay, dealing 700 Chaos Damage per second for 8 seconds",
       "matchers": [
-        {"string": "Ваши удары накладывают Разложение, наносящее 500 урона хаосом в секунду в течение 8 секунд"}
+        {"string": "Ваши удары накладывают Разложение, наносящее 700 урона хаосом в секунду в течение 8 секунд"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3322709337"], "fractured": ["fractured.stat_3322709337"]}}
@@ -45023,19 +45062,19 @@
   },
   {
     "stat": {
+      "ref": "Your Skills Cost no Mana during Flask effect",
+      "matchers": [{"string": "Ваши умения не расходуют ману во время действия эффекта флакона"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1669220541"]}}
+  },
+  {
+    "stat": {
       "ref": "Your Skills deal you #% of Mana Spent on Skill Mana Costs as Physical Damage",
       "matchers": [
         {"string": "Ваши умения наносят вам #% маны, израсходованной на сотворение умений, в виде физического урона"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_99487834"]}}
-  },
-  {
-    "stat": {
-      "ref": "Your Skills have no Mana Cost during Flask effect",
-      "matchers": [{"string": "Ваши умения не расходуют ману во время действия эффекта флакона"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1669220541"]}}
   },
   {
     "stat": {
@@ -45242,16 +45281,16 @@
   },
   {
     "stat": {
-      "ref": "Zealotry has #% reduced Mana Reservation",
+      "ref": "Zealotry has #% reduced Reservation",
       "matchers": [
-        {"string": "#% увеличение количества маны, удержанной Фанатизмом"},
-        {"string": "#% уменьшение количества маны, удержанной Фанатизмом", "negate": true}
+        {"string": "#% увеличение количества ресурсов, удержанных Фанатизмом"},
+        {"string": "#% уменьшение количества ресурсов, удержанных Фанатизмом", "negate": true}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_478612089"], "enchant": ["enchant.stat_478612089"]}, "inverted": true}
   },
   {
-    "stat": {"ref": "Zealotry Reserves no Mana", "matchers": [{"string": "Фанатизм не удерживает ману"}]},
+    "stat": {"ref": "Zealotry has no Reservation", "matchers": [{"string": "Фанатизм не удерживает ресурсы"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1741242318"]}}
   }
 ]
