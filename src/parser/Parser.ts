@@ -66,9 +66,10 @@ export function parseClipboard (clipboard: string) {
   }, sections[0])
   sections = sections.filter(section => section.length)
 
-  if (sections[0][1] === _$[C.CANNOT_USE_ITEM]) {
-    sections[1].unshift(sections[0][0]) // `Rarity: xxx`
-    sections.shift()
+  if (sections[0][2] === _$[C.CANNOT_USE_ITEM]) {
+    sections[0].pop() // remove CANNOT_USE_ITEM line
+    sections[1].unshift(...sections[0]) // prepend item class & rarity into second section
+    sections.shift() // remove first section where CANNOT_USE_ITEM line was
   }
   const parsed = parseNamePlate(sections[0])
   if (!parsed) {
@@ -153,11 +154,13 @@ function parseMap (section: string[], item: ParsedItem) {
 }
 
 function parseNamePlate (section: string[]) {
-  if (!section[0].startsWith(_$[C.TAG_RARITY])) {
+  if (section.length < 3 ||
+      !section[0].startsWith(_$[C.TAG_ITEM_CLASS]) ||
+      !section[1].startsWith(_$[C.TAG_RARITY])) {
     return null
   }
 
-  const rarityText = section[0].substr(_$[C.TAG_RARITY].length)
+  const rarityText = section[1].substr(_$[C.TAG_RARITY].length)
   let rarity: ItemRarity
   switch (rarityText) {
     case _$[ItemRarity.Currency]:
@@ -187,8 +190,8 @@ function parseNamePlate (section: string[]) {
 
   const item: ParsedItem = {
     rarity,
-    name: markupConditionParser(section[1]),
-    baseType: (section.length >= 3) ? markupConditionParser(section[2]) : undefined,
+    name: markupConditionParser(section[2]),
+    baseType: (section.length >= 4) ? markupConditionParser(section[3]) : undefined,
     props: {},
     isUnidentified: false,
     isCorrupted: false,

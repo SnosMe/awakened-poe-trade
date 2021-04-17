@@ -8,6 +8,7 @@ const dict = {
   'Divination Card': 'Divination Card',
   'Map Tier: ': 'Map Tier: ',
   'Rarity: ': 'Rarity: ',
+  'Item Class: ': 'Item Class: ',
   'Item Level: ': 'Item Level: ',
   'Talisman Tier: ': 'Talisman Tier: ',
   'Level: ': 'Level: ',

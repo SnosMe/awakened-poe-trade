@@ -10,6 +10,7 @@ const dict: TranslationDict = {
   'Divination Card': 'Гадальная карта',
   'Map Tier: ': 'Уровень карты: ',
   'Rarity: ': 'Редкость: ',
+  'Item Class: ': 'Класс предмета: ',
   'Item Level: ': 'Уровень предмета: ',
   'Talisman Tier: ': 'Уровень талисмана: ',
   'Level: ': 'Уровень: ',

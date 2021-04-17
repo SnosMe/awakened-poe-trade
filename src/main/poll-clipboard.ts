@@ -17,7 +17,7 @@ export async function pollClipboard (): Promise<string> {
   }
 
   let textBefore = clipboard.readText()
-  if (textBefore.startsWith(getTranslatedRarity())) {
+  if (textBefore.startsWith(getTranslatedFirstLine())) {
     textBefore = ''
     clipboard.writeText('')
   }
@@ -26,7 +26,7 @@ export async function pollClipboard (): Promise<string> {
     function poll () {
       const textAfter = clipboard.readText()
 
-      if (textAfter.startsWith(getTranslatedRarity())) {
+      if (textAfter.startsWith(getTranslatedFirstLine())) {
         clipboard.writeText(textBefore)
         isPollingClipboard = false
         clipboardPromise = undefined
@@ -50,11 +50,11 @@ export async function pollClipboard (): Promise<string> {
   return clipboardPromise
 }
 
-function getTranslatedRarity () {
-  return TAG_RARITY[config.get('language')]
+function getTranslatedFirstLine () {
+  return TAG_ITEM_CLASS[config.get('language')]
 }
 
-const TAG_RARITY = {
-  en: 'Rarity: ',
-  ru: 'Редкость: '
+const TAG_ITEM_CLASS = {
+  en: 'Item Class: ',
+  ru: 'Класс предмета: '
 }
