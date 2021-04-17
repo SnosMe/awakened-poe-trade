@@ -1,7 +1,6 @@
 'use strict'
 
 import { app, protocol, ipcMain, screen } from 'electron'
-import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import { setupShortcuts } from './main/shortcuts'
 import { createTray } from './main/tray'
@@ -54,7 +53,6 @@ app.on('ready', async () => {
     }
   }
 
-  createProtocol('app')
   createFileProtocol()
 
   setupConfigEvents()
