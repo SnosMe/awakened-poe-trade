@@ -66,6 +66,15 @@ const TOTAL_MODS_TEXT = {
   ]
 }
 
+const INFLUENCE_PSEUDO_TEXT = {
+  [ItemInfluence.Shaper]: 'Has Shaper Influence',
+  [ItemInfluence.Crusader]: 'Has Crusader Influence',
+  [ItemInfluence.Hunter]: 'Has Hunter Influence',
+  [ItemInfluence.Elder]: 'Has Elder Influence',
+  [ItemInfluence.Redeemer]: 'Has Redeemer Influence',
+  [ItemInfluence.Warlord]: 'Has Warlord Influence'
+}
+
 interface FilterBoolean { option?: 'true' | 'false' }
 interface FilterRange { min?: number, max?: number }
 
@@ -115,12 +124,6 @@ interface TradeRequest { /* eslint-disable camelcase */
           corrupted?: FilterBoolean
           mirrored?: FilterBoolean
           identified?: FilterBoolean
-          shaper_item?: FilterBoolean
-          crusader_item?: FilterBoolean
-          hunter_item?: FilterBoolean
-          elder_item?: FilterBoolean
-          redeemer_item?: FilterBoolean
-          warlord_item?: FilterBoolean
           stack_size?: FilterRange
           gem_alternate_quality?: { option: '0' | '1' | '2' | '3' }
         }
@@ -377,33 +380,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  if (filters.influences) {
-    for (const influence of filters.influences) {
-      if (influence.disabled) continue
-
-      switch (influence.value) {
-        case ItemInfluence.Shaper:
-          prop.set(query.filters, 'misc_filters.filters.shaper_item.option', String(true))
-          break
-        case ItemInfluence.Elder:
-          prop.set(query.filters, 'misc_filters.filters.elder_item.option', String(true))
-          break
-        case ItemInfluence.Crusader:
-          prop.set(query.filters, 'misc_filters.filters.crusader_item.option', String(true))
-          break
-        case ItemInfluence.Hunter:
-          prop.set(query.filters, 'misc_filters.filters.hunter_item.option', String(true))
-          break
-        case ItemInfluence.Redeemer:
-          prop.set(query.filters, 'misc_filters.filters.redeemer_item.option', String(true))
-          break
-        case ItemInfluence.Warlord:
-          prop.set(query.filters, 'misc_filters.filters.warlord_item.option', String(true))
-          break
-      }
-    }
-  }
-
   for (const stat of stats) {
     if (stat.tradeId[0] === 'map.no_elder_guardian') {
       query.stats.push({
@@ -497,6 +473,20 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         min: undefined,
         max: undefined,
         tradeId: STAT_BY_REF.get(statRef)!.trade.ids[ModifierType.Veiled]
+      })
+    }
+  }
+
+  if (filters.influences) {
+    for (const influence of filters.influences) {
+      stats.push({
+        disabled: influence.disabled,
+        statRef: undefined!,
+        text: undefined!,
+        type: undefined!,
+        min: undefined,
+        max: undefined,
+        tradeId: STAT_BY_REF.get(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[ModifierType.Pseudo]
       })
     }
   }
