@@ -86,7 +86,7 @@ function registerGlobal () {
       config.get('craftOfExileKey'),
       () => {
         pollClipboard().then(openCraftOfExile).catch(() => {})
-        robotjs.keyTap('C', ['Ctrl'])
+        robotjs.keyTap('C', ['Ctrl', 'Alt'])
       }
     ),
     shortcutCallback(
@@ -171,7 +171,7 @@ export function setupShortcuts () {
     } else if (pressed === config.get('craftOfExileKey')) {
       shortcutCallback(pressed, () => {
         pollClipboard().then(openCraftOfExile).catch(() => {})
-        robotjs.keyTap('C', ['Ctrl'])
+        robotjs.keyTap('C', ['Ctrl', 'Alt'])
       }).cb()
     } else if (pressed === config.get('itemCheckKey')) {
       shortcutCallback(pressed, itemCheck).cb()
