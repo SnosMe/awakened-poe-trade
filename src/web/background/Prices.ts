@@ -6,12 +6,12 @@ import { nameToDetailsId } from '../price-check/trends/getDetailsId'
 interface NinjaCurrencyInfo { /* eslint-disable camelcase */
   currencyTypeName: string
   receive?: {
-    league_id: number
-    pay_currency_id: number
     get_currency_id: number
-    count: number
     value: number
-    includes_secondary: boolean
+  }
+  pay?: {
+    get_currency_id: number
+    value: number
   }
   receiveSparkLine: {
     data: Array<number | null>
@@ -142,7 +142,12 @@ async function load (force: boolean = false) {
             if (currency.receive.value >= 15) {
               chaosExaRate.value = currency.receive.value
             } else {
-              chaosExaRate.value = undefined
+              // fallback to sell price
+              if (currency.pay?.value && (1 / currency.pay.value) >= 15) {
+                chaosExaRate.value = (1 / currency.pay.value)
+              } else {
+                chaosExaRate.value = undefined
+              }
             }
           }
         }

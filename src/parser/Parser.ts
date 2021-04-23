@@ -75,7 +75,10 @@ export function parseClipboard (clipboard: string) {
   if (!parsed) {
     return null
   }
+
   sections.shift()
+  parsed.rawText = clipboard
+  parsed.isAdvancedDesc = isAdvancedDescription(lines)
 
   // each section can be parsed at most by one parser
   for (const parser of parsers) {
@@ -89,8 +92,6 @@ export function parseClipboard (clipboard: string) {
       }
     }
   }
-
-  parsed.rawText = clipboard
 
   return Object.freeze(parsed)
 }
@@ -200,7 +201,8 @@ function parseNamePlate (section: string[]) {
     influences: [],
     sockets: {},
     extra: {},
-    rawText: undefined!
+    rawText: undefined!,
+    isAdvancedDesc: false
   }
   return item
 }
@@ -682,4 +684,8 @@ function markupConditionParser (text: string) {
   })
 
   return text
+}
+
+function isAdvancedDescription (lines: string[]): boolean {
+  return lines.some(line => line.startsWith('{') && line.endsWith('}'))
 }
