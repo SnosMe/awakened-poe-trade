@@ -138,7 +138,12 @@ async function load (force: boolean = false) {
           })
 
           if (currency.detailsId === 'exalted-orb') {
-            chaosExaRate.value = currency.receive.value
+            // sanity check, better poe.ninja to implement this on its own end
+            if (currency.receive.value >= 15) {
+              chaosExaRate.value = currency.receive.value
+            } else {
+              chaosExaRate.value = undefined
+            }
           }
         }
       } else if (dataType.overview === 'item') {
