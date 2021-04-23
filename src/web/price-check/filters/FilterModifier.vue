@@ -12,11 +12,13 @@
             <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
           </div>
         </button>
-        <div class="flex">
-          <ui-input-debounced class="search-num-input rounded-tl mr-px" :placeholder="t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-bl': !showQ20Notice }"
+        <div class="flex items-baseline">
+          <div v-if="showQ20Notice"
+            class="border border-gray-700 text-gray-500 text-center rounded px-2 mr-1">{{ t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
+          <ui-input-debounced class="search-num-input rounded-l mr-px" :placeholder="t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number"
             v-if="showMinmaxInput" ref="inputMin"
             v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
-          <ui-input-debounced class="search-num-input rounded-tr" :placeholder="t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number" :class="{ 'rounded-br': !showQ20Notice }"
+          <ui-input-debounced class="search-num-input rounded-r" :placeholder="t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number"
             v-if="showMinmaxInput" ref="inputMax"
             v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
         </div>
@@ -67,9 +69,7 @@
           </template>
           </ui-slider>
         </div>
-        <div v-if="showQ20Notice"
-          class="bg-gray-700 text-gray-500 text-center rounded-b" style="width: calc(2*3rem + 1px)">{{ t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
-        <div v-else style="width: calc(2*3rem + 1px)"></div>
+        <div style="width: calc(2*3rem + 1px)"></div>
       </div>
     </div>
     <div class="flex flex-col">
