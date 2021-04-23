@@ -7,6 +7,6 @@ export function openCOE (clipboard: string) {
   const item = parseClipboard(clipboard)
   if (!item) return
 
-  const encodedClipboard = encodeURI(clipboard)
+  const encodedClipboard = encodeURIComponent(clipboard)
   MainProcess.openSystemBrowser(`${COE_URL}?eimport=${encodedClipboard}`)
 }
