@@ -47,8 +47,8 @@ class PoeWindowClass extends EventEmitter {
     OW.attachTo(window, config.get('windowTitle'))
   }
 
-  onceAttached (cb: (hasAccess: boolean | undefined) => void) {
-    OW.once('attach', (e: AttachEvent) => {
+  onAttach (cb: (hasAccess: boolean | undefined) => void) {
+    OW.on('attach', (e: AttachEvent) => {
       cb(e.hasAccess)
     })
   }

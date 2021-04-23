@@ -16,11 +16,20 @@ export const overlayReady = new Promise<void>((resolve) => {
 })
 
 export async function createOverlayWindow () {
+  if (process.platform === 'win32' && !systemPreferences.isAeroGlassEnabled()) {
+    dialog.showErrorBox(
+      'Windows 7 - Aero',
+      // ----------------------
+      'You must enable Windows Aero in "Appearance and Personalization".\n' +
+      'It is required to create a transparent overlay window.'
+    )
+  }
+
   ipcMain.once(ipc.OVERLAY_READY, _resolveOverlayReady)
   ipcMain.on(ipc.DPR_CHANGE, (_: any, dpr: number) => handleDprChange(dpr))
   ipcMain.on(ipc.CLOSE_OVERLAY, assertPoEActive)
   PoeWindow.on('active-change', handlePoeWindowActiveChange)
-  PoeWindow.onceAttached(handleOverlayAttached)
+  PoeWindow.onAttach(handleOverlayAttached)
 
   overlayWindow = new BrowserWindow({
     icon: path.join(__static, 'icon.png'),
@@ -118,22 +127,14 @@ function focusPoE () {
 
 function handleOverlayAttached (hasAccess?: boolean) {
   if (hasAccess === false) {
+    logger.error('PoE is running with administrator rights', { source: 'overlay' })
+
     dialog.showErrorBox(
       'PoE window - No access',
       // ----------------------
       'Path of Exile is running with administrator rights.\n' +
       '\n' +
       'You need to restart Awakened PoE Trade with administrator rights.'
-    )
-    return
-  }
-
-  if (process.platform === 'win32' && !systemPreferences.isAeroGlassEnabled()) {
-    dialog.showErrorBox(
-      'Windows 7 - Aero',
-      // ----------------------
-      'You must enable Windows Aero in "Appearance and Personalization".\n' +
-      'It is required to create a transparent overlay window.'
     )
   }
 }
