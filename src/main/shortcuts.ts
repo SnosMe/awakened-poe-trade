@@ -107,6 +107,8 @@ function registerGlobal () {
   register.forEach(a => {
     const success = globalShortcut.register(shortcutToElectron(a.shortcut!), a.cb)
     if (!success) {
+      logger.error('Cannot register shortcut, because it is already registered by another application.', { source: 'shortcuts', shortcut: a.shortcut })
+
       new Notification({
         title: 'Awakened PoE Trade',
         body: `Cannot register shortcut ${a.shortcut}, because it is already registered by another application.`
@@ -149,7 +151,7 @@ export function setupShortcuts () {
 
   uIOhook.on('keydown', (e) => {
     const pressed = eventToString(e)
-    logger.debug('Keydown', { source: 'shortcuts', keys: pressed })
+    // logger.debug('Keydown', { source: 'shortcuts', keys: pressed })
 
     if (!PoeWindow.isActive || config.get('useOsGlobalShortcut')) return
 
@@ -188,24 +190,23 @@ export function setupShortcuts () {
   })
 
   uIOhook.on('keyup', (e) => {
-    logger.debug('Keyup', { source: 'shortcuts', key: UiohookToName[e.keycode] || 'unknown' })
+    // logger.debug('Keyup', { source: 'shortcuts', key: UiohookToName[e.keycode] || 'unknown' })
   })
 
   uIOhook.on('wheel', (e) => {
-    if (!e.ctrlKey || !PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
+    if (!PoeWindow.bounds || !PoeWindow.isActive || !config.get('stashScroll')) return
 
-    if (!isGameScrolling(e)) {
       if (e.rotation > 0) {
         robotjs.keyTap('ArrowRight')
       } else if (e.rotation < 0) {
         robotjs.keyTap('ArrowLeft')
       }
-    }
   })
 
   uIOhook.start()
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isGameScrolling (mouse: UiohookWheelEvent): boolean {
   if (!PoeWindow.bounds ||
       mouse.x > (PoeWindow.bounds.x + PoeWindow.uiSidebarWidth)) return false

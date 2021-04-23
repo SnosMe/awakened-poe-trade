@@ -138,16 +138,19 @@ async function load (force: boolean = false) {
           })
 
           if (currency.detailsId === 'exalted-orb') {
+            const receive = currency.receive.value
+            const pay = currency.pay?.value ? (1 / currency.pay.value) : undefined
             // sanity check, better poe.ninja to implement this on its own end
-            if (currency.receive.value >= 15) {
-              chaosExaRate.value = currency.receive.value
-            } else {
-              // fallback to sell price
-              if (currency.pay?.value && (1 / currency.pay.value) >= 15) {
-                chaosExaRate.value = (1 / currency.pay.value)
+            if (pay) {
+              if (pay >= 15 && receive >= 15 &&
+                  (Math.min(receive, pay) / Math.max(receive, pay)) >= 0.75) {
+                chaosExaRate.value = receive
               } else {
-                chaosExaRate.value = undefined
+                // fallback to sell price
+                chaosExaRate.value = (pay >= 15) ? pay : undefined
               }
+            } else {
+              chaosExaRate.value = (receive >= 15) ? receive : undefined
             }
           }
         }
