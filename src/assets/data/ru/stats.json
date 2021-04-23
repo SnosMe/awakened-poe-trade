@@ -941,7 +941,7 @@
       "ref": "#% chance for Bleeding inflicted with this Weapon to deal 100% more Damage",
       "matchers": [{"string": "#% шанс, что кровотечение, наложенное этим оружием, нанесет на 100% больше урона"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1560880986"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1560880986"], "fractured": ["fractured.stat_1560880986"]}}
   },
   {
     "stat": {
@@ -1032,7 +1032,7 @@
       "ref": "#% chance for Poisons inflicted with this Weapon to deal 100% more Damage",
       "matchers": [{"string": "#% шанс, что яд, наложенный этим оружием, нанесет на 100% больше урона"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2523146878"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2523146878"], "fractured": ["fractured.stat_2523146878"]}}
   },
   {
     "stat": {
@@ -6823,6 +6823,7 @@
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_1004011302"],
+        "implicit": ["implicit.stat_1004011302"],
         "fractured": ["fractured.stat_1004011302"],
         "crafted": ["crafted.stat_1004011302"]
       }
@@ -9088,6 +9089,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Effect of Shocks you inflict during Flask effect",
+      "matchers": [
+        {"string": "#% усиление эффекта накладываемого вами шока во время действия эффекта флакона"},
+        {"string": "#% ослабление эффекта накладываемого вами шока во время действия эффекта флакона", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3338065776"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Effect of Shrine Buffs on you",
       "matchers": [
         {"string": "#% усиление эффектов алтарей на вас"},
@@ -10918,7 +10929,7 @@
         {"string": "#% ослабление эффекта Прокола", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_298173317"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_298173317"], "fractured": ["fractured.stat_298173317"]}}
   },
   {
     "stat": {
@@ -11601,6 +11612,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1327522346"], "fractured": ["fractured.stat_1327522346"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Mana Regeneration Rate while Shocked",
+      "matchers": [
+        {"string": "#% повышение скорости регенерации маны под действием шока"},
+        {"string": "#% снижение скорости регенерации маны под действием шока", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2076519255"]}}
   },
   {
     "stat": {
@@ -13195,6 +13216,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Rage Cost of Skills",
+      "matchers": [
+        {"string": "#% увеличение затрат свирепости умениями"},
+        {"string": "#% уменьшение затрат свирепости умениями", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3415234440"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Rain of Arrows Area of Effect",
       "matchers": [
         {"string": "#% увеличение области действия Ливня стрел"},
@@ -13860,6 +13891,16 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3719728947"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Soul Gain Prevention Duration",
+      "matchers": [
+        {"string": "#% увеличение длительности предотвращения получения душ"},
+        {"string": "#% уменьшение длительности предотвращения получения душ", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1980613100"]}}
   },
   {
     "stat": {
@@ -15752,10 +15793,10 @@
     "trade": {
       "ids": {
         "pseudo": ["pseudo.pseudo_physical_attack_damage_leeched_as_life"],
-        "explicit": ["explicit.stat_3593843976"],
-        "implicit": ["implicit.stat_3593843976"],
-        "fractured": ["fractured.stat_3593843976"],
-        "crafted": ["crafted.stat_3593843976"]
+        "explicit": ["explicit.stat_3593843976", "explicit.stat_55876295"],
+        "implicit": ["implicit.stat_3593843976", "implicit.stat_55876295"],
+        "fractured": ["fractured.stat_3593843976", "fractured.stat_55876295"],
+        "crafted": ["crafted.stat_3593843976", "crafted.stat_55876295"]
       }
     }
   },
@@ -15774,10 +15815,10 @@
     "trade": {
       "ids": {
         "pseudo": ["pseudo.pseudo_physical_attack_damage_leeched_as_mana"],
-        "explicit": ["explicit.stat_3237948413"],
-        "implicit": ["implicit.stat_3237948413"],
-        "fractured": ["fractured.stat_3237948413"],
-        "crafted": ["crafted.stat_3237948413"]
+        "explicit": ["explicit.stat_3237948413", "explicit.stat_669069897"],
+        "implicit": ["implicit.stat_3237948413", "implicit.stat_669069897"],
+        "fractured": ["fractured.stat_3237948413", "fractured.stat_669069897"],
+        "crafted": ["crafted.stat_3237948413", "crafted.stat_669069897"]
       }
     }
   },
@@ -17980,6 +18021,13 @@
         "crafted": ["crafted.stat_3706959521"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "+# to Minimum Endurance, Frenzy and Power Charges",
+      "matchers": [{"string": "# к минимуму зарядов выносливости, ярости и энергии"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_66303477"]}}
   },
   {
     "stat": {"ref": "+# to Minimum Frenzy Charges", "matchers": [{"string": "# к минимуму зарядов ярости"}]},
@@ -25070,6 +25118,13 @@
   },
   {
     "stat": {
+      "ref": "Areas contain Ritual Altars",
+      "matchers": [{"string": "В областях можно встретить алтари Ритуала"}]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1671749203"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas have #% chance to contain Cadiro Perandus",
       "matchers": [
         {"string": "В областях с #% шансом можно встретить Кадиро Перандуса"},
@@ -25103,6 +25158,17 @@
       "matchers": [{"string": "Области имеют #% шанс содержать побочные области ваал"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2156201537"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have +#% chance to contain The Sacred Grove",
+      "matchers": [
+        {"string": "В областях с #% шансом можно встретить Священную рощу"},
+        {"string": "В области можно встретить Священную рощу", "value": 100},
+        {"string": "В областях можно встретить Священную рощу", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1145451936"]}}
   },
   {
     "stat": {
@@ -28528,7 +28594,13 @@
         {"string": "Ослепленные вами враги имеют #% снижение шанса критического удара", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_4216282855"], "enchant": ["enchant.stat_4216282855"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_4216282855"],
+        "fractured": ["fractured.stat_4216282855"],
+        "enchant": ["enchant.stat_4216282855"]
+      }
+    }
   },
   {
     "stat": {
@@ -28723,7 +28795,13 @@
         {"string": "Изувеченные вами враги получают уменьшенный на #% постепенный урон", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2745149002"], "enchant": ["enchant.stat_2745149002"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2745149002"],
+        "fractured": ["fractured.stat_2745149002"],
+        "enchant": ["enchant.stat_2745149002"]
+      }
+    }
   },
   {
     "stat": {
@@ -30098,6 +30176,13 @@
       "matchers": [{"string": "Заряд выносливости при получении вами критического удара", "value": 1}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2609824731"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain an Endurance Charge, Frenzy Charge, and Power Charge when you use a Vaal Skill",
+      "matchers": [{"string": "Дарует заряд выносливости, ярости и энергии, когда вы используете умение ваал"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1258100102"]}}
   },
   {
     "stat": {
@@ -31716,6 +31801,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_986616727"]}}
+  },
+  {
+    "stat": {
+      "ref": "Hexes you inflict have +# to maximum Doom",
+      "matchers": [{"string": "Накладываемые вами порчи имеют # к максимуму зарядов Рока"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_90649542"]}}
   },
   {
     "stat": {
@@ -35140,6 +35232,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2159555743"]}}
   },
   {
+    "stat": {"ref": "Nearby Enemies are Crushed", "matchers": [{"string": "Ближайшие враги сокрушены"}]},
+    "trade": {"ids": {"implicit": ["implicit.stat_3608782127"]}}
+  },
+  {
     "stat": {
       "ref": "Nearby Enemies are Crushed while you have at least # Rage",
       "matchers": [{"string": "Ближайшие враги сокрушены пока у вас есть минимум # свирепости"}]
@@ -35245,6 +35341,13 @@
       "matchers": [{"string": "Сопротивление молнии ближайших врагов равно вашему"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3549734978"]}}
+  },
+  {
+    "stat": {
+      "ref": "Nearby Enemies have Malediction",
+      "matchers": [{"string": "На ближайших врагов действует Злословие"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_2774148053"]}}
   },
   {
     "stat": {
@@ -38430,6 +38533,10 @@
     "trade": {"ids": {"enchant": ["enchant.stat_4072657110"]}}
   },
   {
+    "stat": {"ref": "Shepherd of Souls", "matchers": [{"string": "Пастырь душ"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_2038577923"]}}
+  },
+  {
     "stat": {
       "ref": "Shock Enemies as though dealing #% more Damage",
       "matchers": [
@@ -38492,6 +38599,17 @@
       "matchers": [{"string": "Шок, наложенный вами, отражается обратно в вас"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_807955413"]}}
+  },
+  {
+    "stat": {
+      "ref": "Shocks you inflict during Flask effect spread to other Enemies in a radius of #",
+      "matchers": [
+        {
+          "string": "Накладываемый вами во время действия эффекта флакона шок распространяется на других врагов в радиусе #"
+        }
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_911839512"]}}
   },
   {
     "stat": {
@@ -38693,6 +38811,16 @@
     "trade": {"ids": {"explicit": ["explicit.stat_285624304"]}}
   },
   {
+    "stat": {"ref": "Skills Cost no Mana or Life while Focussed", "matchers": []},
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_849152640"],
+        "fractured": ["fractured.stat_849152640"],
+        "crafted": ["crafted.stat_849152640"]
+      }
+    }
+  },
+  {
     "stat": {
       "ref": "Skills Fire # additional Projectile for 4 seconds after\nyou consume a total of 12 Steel Shards",
       "matchers": [
@@ -38748,19 +38876,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2809802678"]}}
-  },
-  {
-    "stat": {
-      "ref": "Skills have no Cost while Focussed",
-      "matchers": [{"string": "Умения не расходую ресурсы во время Фокуса"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_849152640"],
-        "fractured": ["fractured.stat_849152640"],
-        "crafted": ["crafted.stat_849152640"]
-      }
-    }
   },
   {
     "stat": {
@@ -39182,6 +39297,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Bloodthirst",
+      "matchers": [{"string": "Размещенные камни усилены Кровавым зверством # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_135"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Bonechill",
       "matchers": [{"string": "Размещённые камни усилены Леденящим охлаждением # уровня"}]
     },
@@ -39326,6 +39448,13 @@
       "matchers": [{"string": "Размещённые камни усилены Контролируемым разрушением # уровня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_97", "explicit.stat_3718597497"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems are Supported by Level # Cruelty",
+      "matchers": [{"string": "Размещенные камни усилены Злостью # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_136"]}}
   },
   {
     "stat": {
@@ -39746,7 +39875,7 @@
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_1079239905"],
+        "explicit": ["explicit.indexable_support_137", "explicit.stat_1079239905"],
         "implicit": ["implicit.stat_1079239905"],
         "crafted": ["crafted.stat_1079239905"]
       }
@@ -41828,7 +41957,7 @@
         {"string": "Вызывает срабатывание размещенных чар, когда вы используете умение, время перезарядки - # секунды"}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1582781759"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1582781759"], "fractured": ["fractured.stat_1582781759"]}}
   },
   {
     "stat": {
@@ -42609,6 +42738,13 @@
   {
     "stat": {"ref": "Uses both hand slots", "matchers": [{"string": "Использует обе руки"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2846730569"]}}
+  },
+  {
+    "stat": {
+      "ref": "Vaal Attack Skills Cost Rage instead of requiring Souls to Use",
+      "matchers": [{"string": "Умения атак ваал при использовании расходуют свирепость вместо душ"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1103075489"]}}
   },
   {
     "stat": {"ref": "Vaal Pact", "matchers": [{"string": "Соглашение с ваал"}]},
@@ -44489,6 +44625,13 @@
       "matchers": [{"string": "Вас нельзя оглушить при максимуме зарядов выносливости"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3780437763"]}}
+  },
+  {
+    "stat": {
+      "ref": "You cannot gain Rage during Soul Gain Prevention",
+      "matchers": [{"string": "Вы не можете получать свирепость во время предотвращения получения душ"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_683365179"]}}
   },
   {
     "stat": {

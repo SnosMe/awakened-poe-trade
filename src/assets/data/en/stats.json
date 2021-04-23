@@ -884,7 +884,7 @@
       "ref": "#% chance for Bleeding inflicted with this Weapon to deal 100% more Damage",
       "matchers": [{"string": "#% chance for Bleeding inflicted with this Weapon to deal 100% more Damage"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1560880986"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1560880986"], "fractured": ["fractured.stat_1560880986"]}}
   },
   {
     "stat": {
@@ -975,7 +975,7 @@
       "ref": "#% chance for Poisons inflicted with this Weapon to deal 100% more Damage",
       "matchers": [{"string": "#% chance for Poisons inflicted with this Weapon to deal 100% more Damage"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2523146878"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2523146878"], "fractured": ["fractured.stat_2523146878"]}}
   },
   {
     "stat": {
@@ -6632,6 +6632,7 @@
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_1004011302"],
+        "implicit": ["implicit.stat_1004011302"],
         "fractured": ["fractured.stat_1004011302"],
         "crafted": ["crafted.stat_1004011302"]
       }
@@ -8884,6 +8885,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Effect of Shocks you inflict during Flask effect",
+      "matchers": [
+        {"string": "#% increased Effect of Shocks you inflict during Flask effect"},
+        {"string": "#% reduced Effect of Shocks you inflict during Flask effect", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3338065776"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Effect of Shrine Buffs on you",
       "matchers": [
         {"string": "#% increased Effect of Shrine Buffs on you"},
@@ -10666,7 +10677,7 @@
       "ref": "#% increased Impale Effect",
       "matchers": [{"string": "#% increased Impale Effect"}, {"string": "#% reduced Impale Effect", "negate": true}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_298173317"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_298173317"], "fractured": ["fractured.stat_298173317"]}}
   },
   {
     "stat": {
@@ -11320,6 +11331,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1327522346"], "fractured": ["fractured.stat_1327522346"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Mana Regeneration Rate while Shocked",
+      "matchers": [
+        {"string": "#% increased Mana Regeneration Rate while Shocked"},
+        {"string": "#% reduced Mana Regeneration Rate while Shocked", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2076519255"]}}
   },
   {
     "stat": {
@@ -12867,6 +12888,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Rage Cost of Skills",
+      "matchers": [
+        {"string": "#% increased Rage Cost of Skills"},
+        {"string": "#% reduced Rage Cost of Skills", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3415234440"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Rain of Arrows Area of Effect",
       "matchers": [
         {"string": "#% increased Rain of Arrows Area of Effect"},
@@ -13514,6 +13545,16 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_3719728947"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Soul Gain Prevention Duration",
+      "matchers": [
+        {"string": "#% increased Soul Gain Prevention Duration"},
+        {"string": "#% reduced Soul Gain Prevention Duration", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1980613100"]}}
   },
   {
     "stat": {
@@ -15345,10 +15386,10 @@
     "trade": {
       "ids": {
         "pseudo": ["pseudo.pseudo_physical_attack_damage_leeched_as_life"],
-        "explicit": ["explicit.stat_3593843976"],
-        "implicit": ["implicit.stat_3593843976"],
-        "fractured": ["fractured.stat_3593843976"],
-        "crafted": ["crafted.stat_3593843976"]
+        "explicit": ["explicit.stat_3593843976", "explicit.stat_55876295"],
+        "implicit": ["implicit.stat_3593843976", "implicit.stat_55876295"],
+        "fractured": ["fractured.stat_3593843976", "fractured.stat_55876295"],
+        "crafted": ["crafted.stat_3593843976", "crafted.stat_55876295"]
       }
     }
   },
@@ -15367,10 +15408,10 @@
     "trade": {
       "ids": {
         "pseudo": ["pseudo.pseudo_physical_attack_damage_leeched_as_mana"],
-        "explicit": ["explicit.stat_3237948413"],
-        "implicit": ["implicit.stat_3237948413"],
-        "fractured": ["fractured.stat_3237948413"],
-        "crafted": ["crafted.stat_3237948413"]
+        "explicit": ["explicit.stat_3237948413", "explicit.stat_669069897"],
+        "implicit": ["implicit.stat_3237948413", "implicit.stat_669069897"],
+        "fractured": ["fractured.stat_3237948413", "fractured.stat_669069897"],
+        "crafted": ["crafted.stat_3237948413", "crafted.stat_669069897"]
       }
     }
   },
@@ -17524,6 +17565,13 @@
         "crafted": ["crafted.stat_3706959521"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "+# to Minimum Endurance, Frenzy and Power Charges",
+      "matchers": [{"string": "# to Minimum Endurance, Frenzy and Power Charges"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_66303477"]}}
   },
   {
     "stat": {"ref": "+# to Minimum Frenzy Charges", "matchers": [{"string": "# to Minimum Frenzy Charges"}]},
@@ -24389,6 +24437,10 @@
     "trade": {"ids": {"enchant": ["enchant.stat_3747734818"]}}
   },
   {
+    "stat": {"ref": "Areas contain Ritual Altars", "matchers": [{"string": "Areas contain Ritual Altars"}]},
+    "trade": {"ids": {"enchant": ["enchant.stat_1671749203"]}}
+  },
+  {
     "stat": {
       "ref": "Areas have #% chance to contain Cadiro Perandus",
       "matchers": [
@@ -24423,6 +24475,17 @@
       "matchers": [{"string": "Areas have #% chance to contain a Vaal Side Area"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2156201537"]}}
+  },
+  {
+    "stat": {
+      "ref": "Areas have +#% chance to contain The Sacred Grove",
+      "matchers": [
+        {"string": "Areas have #% chance to contain The Sacred Grove"},
+        {"string": "Area contains The Sacred Grove", "value": 100},
+        {"string": "Areas contain The Sacred Grove", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_1145451936"]}}
   },
   {
     "stat": {
@@ -27788,7 +27851,13 @@
         {"string": "Enemies Blinded by you have #% reduced Critical Strike Chance", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_4216282855"], "enchant": ["enchant.stat_4216282855"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_4216282855"],
+        "fractured": ["fractured.stat_4216282855"],
+        "enchant": ["enchant.stat_4216282855"]
+      }
+    }
   },
   {
     "stat": {
@@ -27975,7 +28044,13 @@
         {"string": "Enemies Maimed by you take #% reduced Damage Over Time", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2745149002"], "enchant": ["enchant.stat_2745149002"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2745149002"],
+        "fractured": ["fractured.stat_2745149002"],
+        "enchant": ["enchant.stat_2745149002"]
+      }
+    }
   },
   {
     "stat": {
@@ -29305,6 +29380,13 @@
       "matchers": [{"string": "Gain an Endurance Charge when you take a Critical Strike", "value": 1}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2609824731"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain an Endurance Charge, Frenzy Charge, and Power Charge when you use a Vaal Skill",
+      "matchers": [{"string": "Gain an Endurance Charge, Frenzy Charge, and Power Charge when you use a Vaal Skill"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1258100102"]}}
   },
   {
     "stat": {
@@ -30857,6 +30939,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_986616727"]}}
+  },
+  {
+    "stat": {
+      "ref": "Hexes you inflict have +# to maximum Doom",
+      "matchers": [{"string": "Hexes you inflict have # to maximum Doom"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_90649542"]}}
   },
   {
     "stat": {
@@ -34111,6 +34200,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2159555743"]}}
   },
   {
+    "stat": {"ref": "Nearby Enemies are Crushed", "matchers": [{"string": "Nearby Enemies are Crushed"}]},
+    "trade": {"ids": {"implicit": ["implicit.stat_3608782127"]}}
+  },
+  {
     "stat": {
       "ref": "Nearby Enemies are Crushed while you have at least # Rage",
       "matchers": [{"string": "Nearby Enemies are Crushed while you have at least # Rage"}]
@@ -34216,6 +34309,10 @@
       "matchers": [{"string": "Nearby Enemies have Lightning Resistance equal to yours"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3549734978"]}}
+  },
+  {
+    "stat": {"ref": "Nearby Enemies have Malediction", "matchers": [{"string": "Nearby Enemies have Malediction"}]},
+    "trade": {"ids": {"implicit": ["implicit.stat_2774148053"]}}
   },
   {
     "stat": {
@@ -37318,6 +37415,10 @@
     "trade": {"ids": {"enchant": ["enchant.stat_4072657110"]}}
   },
   {
+    "stat": {"ref": "Shepherd of Souls", "matchers": [{"string": "Shepherd of Souls"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_2038577923"]}}
+  },
+  {
     "stat": {
       "ref": "Shock Enemies as though dealing #% more Damage",
       "matchers": [
@@ -37376,6 +37477,13 @@
       "matchers": [{"string": "Shocks you cause are reflected back to you"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_807955413"]}}
+  },
+  {
+    "stat": {
+      "ref": "Shocks you inflict during Flask effect spread to other Enemies in a radius of #",
+      "matchers": [{"string": "Shocks you inflict during Flask effect spread to other Enemies in a radius of #"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_911839512"]}}
   },
   {
     "stat": {
@@ -37568,6 +37676,19 @@
   },
   {
     "stat": {
+      "ref": "Skills Cost no Mana or Life while Focussed",
+      "matchers": [{"string": "Skills Cost no Mana or Life while Focussed"}]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_849152640"],
+        "fractured": ["fractured.stat_849152640"],
+        "crafted": ["crafted.stat_849152640"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "Skills Fire # additional Projectile for 4 seconds after\nyou consume a total of 12 Steel Shards",
       "matchers": [
         {"string": "Skills Fire # additional Projectile for 4 seconds after\nyou consume a total of 12 Steel Shards"},
@@ -37615,19 +37736,6 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2809802678"]}}
-  },
-  {
-    "stat": {
-      "ref": "Skills have no Cost while Focussed",
-      "matchers": [{"string": "Skills have no Cost while Focussed"}]
-    },
-    "trade": {
-      "ids": {
-        "explicit": ["explicit.stat_849152640"],
-        "fractured": ["fractured.stat_849152640"],
-        "crafted": ["crafted.stat_849152640"]
-      }
-    }
   },
   {
     "stat": {
@@ -38054,6 +38162,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Bloodthirst",
+      "matchers": [{"string": "Socketed Gems are Supported by Level # Bloodthirst"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_135"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Bonechill",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Bonechill"}]
     },
@@ -38201,6 +38316,13 @@
       "matchers": [{"string": "Socketed Gems are Supported by Level # Controlled Destruction"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_97", "explicit.stat_3718597497"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems are Supported by Level # Cruelty",
+      "matchers": [{"string": "Socketed Gems are Supported by Level # Cruelty"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_136"]}}
   },
   {
     "stat": {
@@ -38624,7 +38746,7 @@
     },
     "trade": {
       "ids": {
-        "explicit": ["explicit.stat_1079239905"],
+        "explicit": ["explicit.indexable_support_137", "explicit.stat_1079239905"],
         "implicit": ["implicit.stat_1079239905"],
         "crafted": ["crafted.stat_1079239905"]
       }
@@ -40639,7 +40761,7 @@
       "ref": "Trigger a Socketed Spell when you Use a Skill, with a # second Cooldown",
       "matchers": [{"string": "Trigger a Socketed Spell when you Use a Skill, with a # second Cooldown"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1582781759"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_1582781759"], "fractured": ["fractured.stat_1582781759"]}}
   },
   {
     "stat": {
@@ -41383,6 +41505,13 @@
   {
     "stat": {"ref": "Uses both hand slots", "matchers": [{"string": "Uses both hand slots"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2846730569"]}}
+  },
+  {
+    "stat": {
+      "ref": "Vaal Attack Skills Cost Rage instead of requiring Souls to Use",
+      "matchers": [{"string": "Vaal Attack Skills Cost Rage instead of requiring Souls to Use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1103075489"]}}
   },
   {
     "stat": {"ref": "Vaal Pact", "matchers": [{"string": "Vaal Pact"}]},
@@ -43181,6 +43310,13 @@
       "matchers": [{"string": "You cannot be Stunned while at maximum Endurance Charges"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3780437763"]}}
+  },
+  {
+    "stat": {
+      "ref": "You cannot gain Rage during Soul Gain Prevention",
+      "matchers": [{"string": "You cannot gain Rage during Soul Gain Prevention"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_683365179"]}}
   },
   {
     "stat": {
