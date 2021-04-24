@@ -249,7 +249,7 @@ export const defaultConfig: Config = {
         y: 10
       },
       images: [
-        { id: 1, url: 'syndicate.jpg' }
+        { id: 1, url: 'syndicate.png' }
       ]
     }
   ]

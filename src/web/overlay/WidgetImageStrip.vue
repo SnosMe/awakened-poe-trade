@@ -62,7 +62,7 @@ export default defineComponent({
         y: 10
       }
       props.config.images = [{
-        id: 1, url: 'syndicate.jpg'
+        id: 1, url: 'syndicate.png'
       }]
       nextTick(() => {
         wm.show(props.config.wmId)
