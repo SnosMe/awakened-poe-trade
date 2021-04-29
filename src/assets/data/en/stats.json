@@ -3513,6 +3513,22 @@
   },
   {
     "stat": {
+      "ref": "#% chance to Trigger a Socketed Spell when you Use a Skill, with a 8 second Cooldown",
+      "matchers": [
+        {"string": "#% chance to Trigger a Socketed Spell when you Use a Skill, with a 8 second Cooldown"},
+        {"string": "Trigger a Socketed Spell when you Use a Skill, with a 8 second Cooldown", "value": 100}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3079007202"],
+        "fractured": ["fractured.stat_3079007202"],
+        "crafted": ["crafted.stat_3079007202"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges, with a 0.25 second Cooldown",
       "matchers": [
         {
@@ -28154,7 +28170,13 @@
       "ref": "Enemies Withered by you have +#% to all Resistances",
       "matchers": [{"string": "Enemies Withered by you have #% to all Resistances"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1032614900"], "enchant": ["enchant.stat_1032614900"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1032614900"],
+        "fractured": ["fractured.stat_1032614900"],
+        "enchant": ["enchant.stat_1032614900"]
+      }
+    }
   },
   {
     "stat": {
@@ -28676,7 +28698,7 @@
         {"string": "Focus has #% reduced Cooldown Recovery Rate", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3610263531"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3610263531"], "crafted": ["crafted.stat_3610263531"]}}
   },
   {
     "stat": {

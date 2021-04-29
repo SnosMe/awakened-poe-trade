@@ -3615,6 +3615,27 @@
   },
   {
     "stat": {
+      "ref": "#% chance to Trigger a Socketed Spell when you Use a Skill, with a 8 second Cooldown",
+      "matchers": [
+        {
+          "string": "#% шанс вызвать срабатывание размещенных чар, когда вы используете умение, время перезарядки - 8 секунд"
+        },
+        {
+          "string": "Вызывает срабатывание размещенных чар, когда вы используете умение, время перезарядки - 8 секунд",
+          "value": 100
+        }
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_3079007202"],
+        "fractured": ["fractured.stat_3079007202"],
+        "crafted": ["crafted.stat_3079007202"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% chance to Trigger a Socketed Warcry Skill when you lose Endurance Charges, with a 0.25 second Cooldown",
       "matchers": [
         {
@@ -8786,10 +8807,10 @@
       "ref": "#% increased Effect of Arcane Surge on you per\nHypnotic Eye Jewel affecting you, up to a maximum of 40%",
       "matchers": [
         {
-          "string": "#% усиление эффекта Колдовского потока на вас за каждый\nвлияющий на вас самоцвет гипнотического глаза, вплоть до максимума в 40%"
+          "string": "#% усиление эффекта Колдовского выброса на вас за каждый\nвлияющий на вас самоцвет гипнотического глаза, вплоть до максимума в 40%"
         },
         {
-          "string": "#% ослабление эффекта Колдовского потока на вас за каждый\nвлияющий на вас самоцвет гипнотического глаза, вплоть до максимума в 40%",
+          "string": "#% ослабление эффекта Колдовского выброса на вас за каждый\nвлияющий на вас самоцвет гипнотического глаза, вплоть до максимума в 40%",
           "negate": true
         }
       ]
@@ -21796,7 +21817,7 @@
   {
     "stat": {
       "ref": "1 Added Passive Skill is Towering Threat",
-      "matchers": [{"string": "1 добавленное пассивное умение - Растущая угроза"}]
+      "matchers": [{"string": "1 добавленное пассивное умение - Возрастающая угроза"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3536778624"]}}
   },
@@ -28915,7 +28936,13 @@
       "ref": "Enemies Withered by you have +#% to all Resistances",
       "matchers": [{"string": "Истощенные вами враги имеют #% ко всем сопротивлениям"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_1032614900"], "enchant": ["enchant.stat_1032614900"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_1032614900"],
+        "fractured": ["fractured.stat_1032614900"],
+        "enchant": ["enchant.stat_1032614900"]
+      }
+    }
   },
   {
     "stat": {
@@ -29446,7 +29473,7 @@
         {"string": "#% снижение скорости перезарядки Фокуса", "negate": true}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_3610263531"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_3610263531"], "crafted": ["crafted.stat_3610263531"]}}
   },
   {
     "stat": {
@@ -29970,14 +29997,16 @@
   {
     "stat": {
       "ref": "Gain #% of Weapon Physical Damage as Extra Damage of a random Element",
-      "matchers": [{"string": "Дарует #% от физического урона оружием в виде дополнительного урона от стихии"}]
+      "matchers": [
+        {"string": "Дарует #% от физического урона оружием в виде дополнительного урона от случайной стихии"}
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1038949719"]}}
   },
   {
     "stat": {
       "ref": "Gain #% of Weapon Physical Damage as Extra Damage of each Element",
-      "matchers": [{"string": "Наносит #% от физического урона оружием в виде дополнительного урона от каждой стихии"}]
+      "matchers": [{"string": "Дарует #% от физического урона оружием в виде дополнительного урона от каждой стихии"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3913265126"]}}
   },
@@ -31358,7 +31387,7 @@
     "trade": {"ids": {"implicit": ["implicit.stat_1795443614"]}}
   },
   {
-    "stat": {"ref": "Has Hunter Influence", "matchers": [{"string": "Имеет влияние Охотика"}]},
+    "stat": {"ref": "Has Hunter Influence", "matchers": [{"string": "Имеет влияние Охотника"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_hunter_influence"]}}
   },
   {
@@ -38811,7 +38840,10 @@
     "trade": {"ids": {"explicit": ["explicit.stat_285624304"]}}
   },
   {
-    "stat": {"ref": "Skills Cost no Mana or Life while Focussed", "matchers": []},
+    "stat": {
+      "ref": "Skills Cost no Mana or Life while Focussed",
+      "matchers": [{"string": "Умения не расходуют ману или здоровье, пока вы сфокусированы"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_849152640"],
@@ -40166,7 +40198,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Trinity",
-      "matchers": [{"string": "Размещенные камни усилены Триумвиратом стихий # уровня"}]
+      "matchers": [{"string": "Размещенные камни усилены Триединством # уровня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_134", "explicit.stat_3111091501"]}}
   },
