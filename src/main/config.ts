@@ -1,5 +1,5 @@
 import Store from 'electron-store'
-import { ipcMain } from 'electron'
+import { dialog, ipcMain, app } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
 import { forbidden, forbiddenCtrl } from '@/ipc/KeyToCode'
@@ -30,6 +30,17 @@ export const config = (() => {
     defaults: defaultConfig
   })
   const config = store.store
+
+  if (config.configVersion > defaultConfig.configVersion) {
+    logger.error('Incompatible configuration', { source: 'config', expected: defaultConfig.configVersion, actual: config.configVersion })
+    dialog.showErrorBox(
+      'Awakened PoE Trade - Incompatible configuration',
+      // ----------------------
+      'You are trying to use an older version of Awakened PoE Trade with a newer incompatible configuration file.\n' +
+      'You need to install the latest version to continue using it.'
+    )
+    app.exit(1)
+  }
 
   if (forbidden.includes(config.priceCheckLocked as string)) { config.priceCheckLocked = null }
   if (forbidden.includes(config.wikiKey as string)) { config.wikiKey = null }
