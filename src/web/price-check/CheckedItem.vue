@@ -108,7 +108,7 @@ export default defineComponent({
     watch(() => [props.item, interactedOnce.value], () => {
       if (interactedOnce.value === false) return
 
-      tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value)
+      tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value, itemFilters.value)
 
       // NOTE: child `trade-xxx` component renders/receives props on nextTick
       nextTick(() => {

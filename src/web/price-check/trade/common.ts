@@ -1,4 +1,4 @@
-import { StatFilter } from '../filters/interfaces'
+import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { Config } from '@/web/Config'
 import { RateLimiter } from './RateLimiter'
@@ -25,24 +25,34 @@ export interface SearchResult {
   }
 }
 
-export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[]): 'trade' | 'bulk' {
+export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filters: ItemFilters): 'trade' | 'bulk' {
   if (stats.some(s => !s.disabled)) {
     return 'trade'
+  }
+
+  if (filters.stackSize) {
+    if (
+      item.rarity === ItemRarity.DivinationCard ||
+      item.category === ItemCategory.Prophecy ||
+      item.category === ItemCategory.MavenInvitation ||
+      item.category === ItemCategory.Map
+    ) {
+      return filters.stackSize.disabled ? 'trade' : 'bulk'
+    }
   }
 
   return tradeTag(item) != null ? 'bulk' : 'trade'
 }
 
 export function tradeTag (item: ParsedItem): string | undefined {
-  if (
-    (item.rarity === ItemRarity.DivinationCard) ||
-    (item.category === ItemCategory.Map && item.rarity === ItemRarity.Unique)
-  ) return
-
   let name = item.baseType || item.name
+  if (item.category === ItemCategory.Map && item.rarity === ItemRarity.Unique) {
+    name = item.name
+  }
+
   if (name) {
     if (item.props.mapBlighted) {
-      name = `Blighted ${name}`
+      name = `Blighted ${name} (Tier ${item.props.mapTier})`
     } else if (item.props.mapTier) {
       name = `${name} (Tier ${item.props.mapTier})`
     }
