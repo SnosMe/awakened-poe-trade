@@ -202,6 +202,7 @@ function isPdpsImportant (item: ParsedItem) {
     case ItemCategory.OneHandedSword:
     case ItemCategory.TwoHandedSword:
     case ItemCategory.Bow:
+    case ItemCategory.Warstaff:
       return true
     default:
       return false
