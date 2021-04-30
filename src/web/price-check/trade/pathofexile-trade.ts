@@ -168,7 +168,7 @@ interface TradeRequest { /* eslint-disable camelcase */
       }
       trade_filters: {
         filters: {
-          sale_type: { option: 'priced' }
+          collapse?: FilterBoolean
           indexed?: { option?: string }
           price?: FilterRange | { option?: string }
         }
@@ -230,7 +230,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       filters: {
         trade_filters: {
           filters: {
-            sale_type: { option: 'priced' }
+            collapse: { option: 'true' }
           }
         }
       }
