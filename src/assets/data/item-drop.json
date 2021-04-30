@@ -192,6 +192,7 @@
   },
   {
     "query": [
+      "tainted-oil",
       "golden-oil",
       "silver-oil",
       "opalescent-oil",
@@ -216,7 +217,10 @@
       "Intrinsic Catalyst",
       "Prismatic Catalyst",
       "Tempering Catalyst",
-      "Turbulent Catalyst"
+      "Turbulent Catalyst",
+      "Unstable Catalyst",
+      "Accelerating Catalyst",
+      "Noxious Catalyst"
     ],
     "items": []
   },
