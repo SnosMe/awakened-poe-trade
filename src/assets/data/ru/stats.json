@@ -11656,6 +11656,22 @@
   },
   {
     "stat": {
+      "ref": "#% increased Mana Reservation of Skills",
+      "matchers": [
+        {"string": "#% увеличение количества удержанной умениями маны"},
+        {"string": "#% уменьшение количества удержанной умениями маны", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2227180465"],
+        "implicit": ["implicit.stat_2227180465"],
+        "fractured": ["fractured.stat_2227180465"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% increased maximum Energy Shield",
       "matchers": [
         {"string": "#% увеличение максимума энергетического щита"},
@@ -11983,6 +11999,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Mine Duration",
+      "matchers": [
+        {"string": "#% увеличение времени существования мины"},
+        {"string": "#% снижение времени существования мины", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_117667746"], "fractured": ["fractured.stat_117667746"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Mine Throwing Speed",
       "matchers": [
         {"string": "#% повышение скорости броска мины"},
@@ -12056,6 +12082,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3191537057"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Minion Duration",
+      "matchers": [
+        {"string": "#% увеличение времени существования приспешников"},
+        {"string": "#% уменьшение времени существования приспешников", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_999511066"], "fractured": ["fractured.stat_999511066"]}}
   },
   {
     "stat": {
@@ -17720,6 +17756,13 @@
         "crafted": ["crafted.stat_4154259475"]
       }
     }
+  },
+  {
+    "stat": {
+      "ref": "+# to Level of Socketed Trap Gems",
+      "matchers": [{"string": "# к уровню размещённых камней ловушек"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_407139870"]}}
   },
   {
     "stat": {
@@ -34136,6 +34179,13 @@
   },
   {
     "stat": {
+      "ref": "Minions have #% chance to deal Double Damage",
+      "matchers": [{"string": "Приспешники имеют #% шанс нанести двойной урон"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_755922799"], "fractured": ["fractured.stat_755922799"]}}
+  },
+  {
+    "stat": {
       "ref": "Minions have #% chance to Dodge Attack Hits",
       "matchers": [{"string": "Приспешники имеют #% шанс уворота от ударов атаками"}]
     },
@@ -38945,6 +38995,16 @@
       "matchers": [{"string": "Усиленные Высвобождением умения имеют # к максимуму Печатей"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1264919148"]}}
+  },
+  {
+    "stat": {
+      "ref": "Skills used by Mines have #% increased Area of Effect",
+      "matchers": [
+        {"string": "Используемые минами умения имеют #% увеличение области действия"},
+        {"string": "Используемые минами умения имеют #% уменьшение области действия", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2228913626"], "fractured": ["fractured.stat_2228913626"]}}
   },
   {
     "stat": {

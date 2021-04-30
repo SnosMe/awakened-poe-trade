@@ -11370,6 +11370,22 @@
   },
   {
     "stat": {
+      "ref": "#% increased Mana Reservation of Skills",
+      "matchers": [
+        {"string": "#% increased Mana Reservation of Skills"},
+        {"string": "#% reduced Mana Reservation of Skills", "negate": true}
+      ]
+    },
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_2227180465"],
+        "implicit": ["implicit.stat_2227180465"],
+        "fractured": ["fractured.stat_2227180465"]
+      }
+    }
+  },
+  {
+    "stat": {
       "ref": "#% increased maximum Energy Shield",
       "matchers": [
         {"string": "#% increased maximum Energy Shield"},
@@ -11676,6 +11692,13 @@
   },
   {
     "stat": {
+      "ref": "#% increased Mine Duration",
+      "matchers": [{"string": "#% increased Mine Duration"}, {"string": "#% reduced Mine Duration", "negate": true}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_117667746"], "fractured": ["fractured.stat_117667746"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Mine Throwing Speed",
       "matchers": [
         {"string": "#% increased Mine Throwing Speed"},
@@ -11746,6 +11769,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3191537057"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% increased Minion Duration",
+      "matchers": [{"string": "#% increased Minion Duration"}, {"string": "#% reduced Minion Duration", "negate": true}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_999511066"], "fractured": ["fractured.stat_999511066"]}}
   },
   {
     "stat": {
@@ -17258,6 +17288,10 @@
         "crafted": ["crafted.stat_4154259475"]
       }
     }
+  },
+  {
+    "stat": {"ref": "+# to Level of Socketed Trap Gems", "matchers": [{"string": "# to Level of Socketed Trap Gems"}]},
+    "trade": {"ids": {"explicit": ["explicit.stat_407139870"]}}
   },
   {
     "stat": {
@@ -33146,6 +33180,13 @@
   },
   {
     "stat": {
+      "ref": "Minions have #% chance to deal Double Damage",
+      "matchers": [{"string": "Minions have #% chance to deal Double Damage"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_755922799"], "fractured": ["fractured.stat_755922799"]}}
+  },
+  {
+    "stat": {
       "ref": "Minions have #% chance to Dodge Attack Hits",
       "matchers": [{"string": "Minions have #% chance to Dodge Attack Hits"}]
     },
@@ -37795,6 +37836,16 @@
       "matchers": [{"string": "Skills supported by Unleash have # to maximum number of Seals"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1264919148"]}}
+  },
+  {
+    "stat": {
+      "ref": "Skills used by Mines have #% increased Area of Effect",
+      "matchers": [
+        {"string": "Skills used by Mines have #% increased Area of Effect"},
+        {"string": "Skills used by Mines have #% reduced Area of Effect", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2228913626"], "fractured": ["fractured.stat_2228913626"]}}
   },
   {
     "stat": {
