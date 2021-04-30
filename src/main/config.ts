@@ -118,13 +118,28 @@ export const config = (() => {
   if (config.configVersion < 7) {
     const mapCheck = config.widgets.find(w => w.wmType === 'map-check')!
     mapCheck.wmType = 'item-check'
-    ;(mapCheck as ItemCheckWidget).maps = { selectedStats: mapCheck.selectedStats }
+    mapCheck.maps = { selectedStats: mapCheck.selectedStats }
     mapCheck.selectedStats = undefined
 
     config.itemCheckKey = (config as any).mapCheckKey || null
     ;(config as any).mapCheckKey = undefined
 
     config.configVersion = 7
+  }
+
+  if (config.configVersion < 8) {
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check')!
+    ;(itemCheck as ItemCheckWidget).maps.showNewStats = false
+    itemCheck.maps.selectedStats = (itemCheck as ItemCheckWidget).maps.selectedStats.map(entry => ({
+      matcher: entry.matcher,
+      decision:
+        (entry as any).valueDanger ? 'danger'
+          : (entry as any).valueWarning ? 'warning'
+              : (entry as any).valueDesirable ? 'desirable'
+                  : 'seen'
+    }))
+
+    config.configVersion = 8
   }
 
   store.store = config

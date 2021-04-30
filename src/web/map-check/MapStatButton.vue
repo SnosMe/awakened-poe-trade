@@ -2,24 +2,24 @@
   <div class="flex">
     <button @click="handleClick"
       class="px-2 leading-none py-2 m-0 text-left flex-1 flex items-center overflow-hidden"
-      :class="state === 'danger' ? 'bg-red-700'
-            : state === 'warning' ? 'bg-orange-600'
-            : state === 'desirable' ? 'bg-green-700'
+      :class="decision === 'danger' ? 'bg-red-700'
+            : decision === 'warning' ? 'bg-orange-600'
+            : decision === 'desirable' ? 'bg-green-700'
             : 'hover:bg-gray-700'">
       <template v-if="true">
-        <i v-if="!state || state === 'not-matched'"
+        <i v-if="!decision || decision === 'seen'"
           class="inline-block mr-2" style="min-width: 1rem;">{{ '\u2009' }}</i>
         <i v-else
           class="fas mr-2 text-center" style="min-width: 1rem;"
-          :class="state === 'danger' ? 'fa-skull-crossbones'
-            : state === 'warning' ? 'fa-exclamation-triangle'
+          :class="decision === 'danger' ? 'fa-skull-crossbones'
+            : decision === 'warning' ? 'fa-exclamation-triangle'
             : 'fa-check'"></i>
       </template>
       <item-modifier-text :text="stat.matcher" :roll="stat.roll" class="truncate" />
     </button>
-    <div class="flex leading-none items-center text-gray-600 w-8 text-center justify-center">
-      <i v-if="state === 'not-matched'" class="fas fa-eye-slash"></i>
-    </div>
+    <button @click="toggleSeenStatus" class="flex leading-none items-center text-gray-600 w-8 text-center justify-center">
+      <i v-if="showNewStatIcon" class="fas fa-eye-slash"></i>
+    </button>
   </div>
 </template>
 
@@ -42,89 +42,47 @@ export default defineComponent({
     const config = computed(() => {
       return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
     })
-
-    const entryInSelected = computed(() => {
+    const entry = computed(() => {
       return config.value.maps.selectedStats.find(_ => _.matcher === props.stat.matcher)
     })
 
-    const state = computed(() => {
-      if (!entryInSelected.value) return undefined
-
-      const valueDanger = Number(entryInSelected.value.valueDanger || 'NaN')
-      const valueWarning = Number(entryInSelected.value.valueWarning || 'NaN')
-      const valueDesirable = Number(entryInSelected.value.valueDesirable || 'NaN')
-
-      if (entryInSelected.value.valueDanger !== '' && Number.isNaN(valueDanger)) {
-        return 'danger'
-      }
-      if (entryInSelected.value.valueWarning !== '' && Number.isNaN(valueWarning)) {
-        return 'warning'
-      }
-      if (entryInSelected.value.valueDesirable !== '' && Number.isNaN(valueDesirable)) {
-        return 'desirable'
-      }
-
-      if (!entryInSelected.value.invert) {
-        if (!Number.isNaN(valueDanger) && props.stat.roll! >= valueDanger) {
-          return 'danger'
-        }
-        if (!Number.isNaN(valueWarning) && props.stat.roll! >= valueWarning) {
-          return 'warning'
-        }
-        if (!Number.isNaN(valueDesirable) && props.stat.roll! >= valueDesirable) {
-          return 'desirable'
-        }
-      } else {
-        if (!Number.isNaN(valueDanger) && props.stat.roll! <= valueDanger) {
-          return 'danger'
-        }
-        if (!Number.isNaN(valueWarning) && props.stat.roll! <= valueWarning) {
-          return 'warning'
-        }
-        if (!Number.isNaN(valueDesirable) && props.stat.roll! <= valueDesirable) {
-          return 'desirable'
-        }
-      }
-
-      return 'not-matched'
+    const showNewStatIcon = computed(() => {
+      return config.value.maps.showNewStats && !entry.value
     })
 
-    const canCycle = computed(() => {
-      const values = [
-        entryInSelected.value!.valueDanger,
-        entryInSelected.value!.valueWarning,
-        entryInSelected.value!.valueDesirable
-      ]
-      return (
-        values.filter(_ => _ === '+').length === 1 &&
-        values.filter(_ => _ === '').length === 2
-      )
-    })
+    function toggleSeenStatus () {
+      if (!config.value.maps.showNewStats) return
+
+      if (!entry.value) {
+        config.value.maps.selectedStats.push({
+          matcher: props.stat.matcher,
+          decision: 'seen'
+        })
+      } else if (entry.value.decision === 'seen') {
+        config.value.maps.selectedStats = config.value.maps.selectedStats.filter(selected => selected !== entry.value)
+      }
+    }
 
     return {
-      state,
+      decision: computed(() => entry.value?.decision),
+      showNewStatIcon,
+      toggleSeenStatus,
       handleClick () {
-        if (!entryInSelected.value) {
+        if (!entry.value) {
           config.value.maps.selectedStats.push({
             matcher: props.stat.matcher,
-            invert: false,
-            valueDanger: '+',
-            valueWarning: '',
-            valueDesirable: ''
+            decision: 'danger'
           })
-          return
-        }
-
-        if (!canCycle.value) return
-
-        if (entryInSelected.value.valueDanger === '+') {
-          entryInSelected.value.valueDanger = ''
-          entryInSelected.value.valueWarning = '+'
-        } else if (entryInSelected.value.valueWarning === '+') {
-          entryInSelected.value.valueWarning = ''
-          entryInSelected.value.valueDesirable = '+'
-        } else if (entryInSelected.value.valueDesirable === '+') {
-          config.value.maps.selectedStats = config.value.maps.selectedStats.filter(selected => selected !== entryInSelected.value)
+        } else {
+          if (entry.value.decision === 'danger') {
+            entry.value.decision = 'warning'
+          } else if (entry.value.decision === 'warning') {
+            entry.value.decision = 'desirable'
+          } else if (entry.value.decision === 'desirable') {
+            entry.value.decision = 'seen'
+          } else if (entry.value.decision === 'seen') {
+            entry.value.decision = 'danger'
+          }
         }
       }
     }

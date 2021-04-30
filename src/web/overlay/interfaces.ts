@@ -53,12 +53,10 @@ export interface PriceCheckWidget extends Widget {
 
 export interface ItemCheckWidget extends Widget {
   maps: {
+    showNewStats: boolean
     selectedStats: Array<{
       matcher: string
-      invert: boolean
-      valueWarning: string
-      valueDanger: string
-      valueDesirable: string
+      decision: string
     }>
   }
 }

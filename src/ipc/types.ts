@@ -62,7 +62,7 @@ type WidgetWellKnownFlag =
   'hide-on-focus'
 
 export const defaultConfig: Config = {
-  configVersion: 7,
+  configVersion: 8,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -148,41 +148,27 @@ export const defaultConfig: Config = {
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
       maps: {
+        showNewStats: false,
         selectedStats: [
           {
             matcher: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
-            invert: false,
-            valueWarning: '',
-            valueDanger: '',
-            valueDesirable: '+'
+            decision: 'desirable'
           },
           {
             matcher: '#% maximum Player Resistances',
-            invert: true,
-            valueWarning: '-10',
-            valueDanger: '',
-            valueDesirable: ''
+            decision: 'warning'
           },
           {
             matcher: 'Monsters reflect #% of Physical Damage',
-            invert: false,
-            valueWarning: '',
-            valueDanger: '+',
-            valueDesirable: ''
+            decision: 'danger'
           },
           {
             matcher: 'Monsters reflect #% of Elemental Damage',
-            invert: false,
-            valueWarning: '',
-            valueDanger: '+',
-            valueDesirable: ''
+            decision: 'danger'
           },
           {
             matcher: 'Area contains two Unique Bosses',
-            invert: false,
-            valueWarning: '',
-            valueDanger: '',
-            valueDesirable: '+'
+            decision: 'desirable'
           }
         ]
       }

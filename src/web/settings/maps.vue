@@ -3,27 +3,16 @@
     <div class="p-1 flex">
       <input :placeholder="t('Search') + '...'" v-model="search" class="bg-gray-900 rounded px-1">
       <ui-toggle v-model="onlySelected" class="mx-2">{{ t('Only selected') }}</ui-toggle>
-      <ui-popover>
-        <template #target>
-          <div class="flex items-center justify-center">
-            <i class="fas fa-question-circle leading-none mr-1"></i>{{ t('help') }}</div>
-        </template>
-        <template #content>
-          <div class="flex flex-col justify-center text-base"
-            v-html="t('help-text')">
-          </div>
-        </template>
-      </ui-popover>
+      <ui-toggle v-model="showNewStats" class="ml-12">{{ t('Show new stats') }}</ui-toggle>
     </div>
     <div class="flex font-bold py-1 shadow">
       <div class="flex-1 px-2">{{ t('Stat (found: {0})', [filteredStats.length]) }}</div>
       <div class="flex" style="padding-right: calc(0.875rem + 1.5rem);">
-        <div class="px-2">{{ t('Invert') }}</div>
-        <div class="w-12 bg-orange-600 rounded-l leading-none flex items-center justify-center">
+        <div class="w-8 mx-1 leading-none flex items-center justify-center bg-orange-600">
           <i class="fas fa-exclamation-triangle"></i></div>
-        <div class="w-12 bg-red-700 mx-px leading-none flex items-center justify-center">
+        <div class="w-8 mx-0 leading-none flex items-center justify-center bg-red-700">
           <i class="fas fa-skull-crossbones"></i></div>
-        <div class="w-12 bg-green-700 rounded-r leading-none flex items-center justify-center">
+        <div class="w-8 mx-1 leading-none flex items-center justify-center bg-green-700">
           <i class="fas fa-check"></i></div>
       </div>
     </div>
@@ -36,8 +25,7 @@
     >
       <maps-stat-entry
         :style="{ position: 'absolute', top: `${props.top}px` }"
-        :matcher="props.item.matchStr"
-        :auto-remove="!onlySelected" />
+        :matcher="props.item.matchStr" />
     </virtual-scroll>
   </div>
 </template>
@@ -70,19 +58,32 @@ export default defineComponent({
       return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
     })
 
+    const selectedMatchers = computed(() => {
+      return new Set(
+        config.value.maps.selectedStats
+          .filter(entry => entry.decision !== 'seen')
+          .map(entry => entry.matcher))
+    })
+
+    const showNewStats = computed<boolean>({
+      get () { return config.value.maps.showNewStats },
+      set (value) { config.value.maps.showNewStats = value }
+    })
+
     const { t } = useI18n()
 
     return {
       t,
       search,
       onlySelected,
+      showNewStats,
       filteredStats: computed(() => {
         const q = search.value.toLowerCase().split(' ')
 
         return statList.value.filter(stat =>
           q.every(part => stat.searchStr.includes(part)) &&
           (onlySelected.value
-            ? (config.value.maps.selectedStats.some(selected => selected.matcher === stat.matchStr))
+            ? selectedMatchers.value.has(stat.matchStr)
             : true)
         )
       }),
@@ -96,15 +97,10 @@ export default defineComponent({
 
 <i18n>
 {
-  "en": {
-    "help-text": "- Use \"Invert\" toggle on stats like \"-7% maximum Player Resistances\".<br>- Non-numeric values are valid (for example, \"+\"), it just means<br>highlight stat without taking into account rolled value."
-  },
   "ru": {
     "Only selected": "Только выбранные",
-    "help": "справка",
     "Stat (found: {0})": "Свойства (найдено: {0})",
-    "Invert": "Инвертировать",
-    "help-text": "- Используйте переключатель \"Инвертировать\" на таких свойствах как \"-7% максимум сопротивлений игроков\".<br>- Нечисловые значения действительны (например, \"+\"), это просто означает<br>подсветить свойство не обращая внимание на ролл."
+    "Show new stats": "Показывать новые статы"
   }
 }
 </i18n>
