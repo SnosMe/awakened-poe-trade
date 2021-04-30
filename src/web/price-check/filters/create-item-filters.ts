@@ -74,8 +74,14 @@ export function createFilters (item: ParsedItem): ItemFilters {
   }
 
   if (item.category === ItemCategory.Map) {
-    filters.baseType = {
-      value: item.baseType || item.name
+    if (item.modifiers.some(mod => mod.stat.ref === 'Map is occupied by #')) {
+      filters.category = {
+        value: item.category
+      }
+    } else {
+      filters.baseType = {
+        value: item.baseType || item.name
+      }
     }
 
     if (item.props.mapBlighted) {
@@ -89,8 +95,6 @@ export function createFilters (item: ParsedItem): ItemFilters {
     filters.mapTier = {
       value: item.props.mapTier!
     }
-
-    // @TODO: juicy corrupted maps
   } else if (
     item.category === ItemCategory.HeistContract ||
     item.category === ItemCategory.HeistBlueprint

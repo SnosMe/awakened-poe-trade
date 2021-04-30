@@ -61,6 +61,10 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     ctx.filters.forEach(filter => { filter.disabled = true })
   }
 
+  if (item.category === ItemCategory.Map) {
+    ctx.filters = ctx.filters.filter(f => f.type !== 'explicit')
+  }
+
   finalFilterTweaks(ctx)
 
   return ctx.filters

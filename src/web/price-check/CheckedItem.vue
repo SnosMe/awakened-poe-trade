@@ -98,6 +98,7 @@ export default defineComponent({
       itemStats.value = initUiModFilters(item)
       interactedOnce.value = Boolean(
         (item.rarity === ItemRarity.Unique) ||
+        (item.category === ItemCategory.Map) ||
         (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
         (item.isUnidentified) ||
         (item.extra.veiled)

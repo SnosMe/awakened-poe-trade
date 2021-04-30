@@ -11,6 +11,7 @@ import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
+  [ItemCategory.Map, 'map'],
   [ItemCategory.AbyssJewel, 'jewel.abyss'],
   [ItemCategory.Amulet, 'accessory.amulet'],
   [ItemCategory.Belt, 'accessory.belt'],
