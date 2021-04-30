@@ -32,7 +32,8 @@
     </div>
     <div class="mb-4">
       <div class="flex">
-        <div class="flex-1">{{ t('Item info') }}</div>
+        <div class="flex-1">{{ t('Map check') }}</div>
+        <!-- <div class="flex-1">{{ t('Item info') }}</div> -->
         <hotkey-input v-model="config.itemCheckKey" class="w-48" />
       </div>
     </div>
@@ -88,6 +89,7 @@ export default defineComponent({
     "Open without auto-hide": "Открыть без авто-скрытия",
     "Overlay": "Оверлей",
     "Open item on wiki": "Открыть предмет в вики",
+    "Map check": "Проверка карты",
     "Item info": "Проверка предмета",
     "Stash tab scrolling": "Прокрутка вкладок тайника",
     "Delve grid": "Сетка \"Спуска\""
