@@ -148,11 +148,11 @@ function useTradeApi () {
       searchResult.value = _searchResult
 
       {
-        const r1 = (_searchResult.total > 0)
+        const r1 = (_searchResult.result.length > 0)
           ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10))
             .then(results => { _fetchResults.push(...results) })
           : Promise.resolve()
-        const r2 = (_searchResult.total > 10)
+        const r2 = (_searchResult.result.length > 10)
           ? requestResults(_searchResult.id, _searchResult.result.slice(10, 20))
             .then(results => r1
               .then(() => { _fetchResults.push(...results) }))
