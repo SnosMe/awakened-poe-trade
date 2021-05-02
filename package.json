@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "2.10.3",
+  "version": "2.10.4",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -27,7 +27,7 @@
     "animate.css": "^4.1.1",
     "apexcharts": "^3.23.1",
     "dot-prop": "6.x.x",
-    "electron-overlay-window": "1.0.x",
+    "electron-overlay-window": "2.0.x",
     "electron-store": "7.0.x",
     "electron-updater": "^4.2.0",
     "fast-deep-equal": "3.1.x",

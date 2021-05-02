@@ -3560,13 +3560,13 @@ electron-devtools-installer@^3.1.1:
     semver "^7.2.1"
     unzip-crx-3 "^0.2.0"
 
-electron-overlay-window@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-1.0.4.tgz#58faccaa5aa2dc6effaf522fadc6baa69e7218e3"
-  integrity sha512-kKXuh5Sq3aFHETkYCVM882/WTtTHV8JbOdXoyc6lg9t+u/cFyvABrt1bMk5f1D/ExAPrmJktPpW6Vj4YhhN6YQ==
+electron-overlay-window@2.0.x:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-2.0.0.tgz#11328b350cf1e98d111ca3f67879cfcd1ff64059"
+  integrity sha512-1UXZ2LtqzIoBreZZSWv1j5zjTdzmd+tKOQ51wuKQep3iTxUTn1ESiK4jb79Nm44k3JktS1OAIb6IqQ2bu+C/gQ==
   dependencies:
     node-gyp-build "4.x.x"
-    throttle-debounce "2.x.x"
+    throttle-debounce "3.x.x"
 
 electron-publish@22.10.5:
   version "22.10.5"
@@ -9369,12 +9369,7 @@ thread-loader@^3.0.0:
     loader-utils "^2.0.0"
     neo-async "^2.6.2"
 
-throttle-debounce@2.x.x:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-2.3.0.tgz#fd31865e66502071e411817e241465b3e9c372e2"
-  integrity sha512-H7oLPV0P7+jgvrk+6mwwwBDmxTaxnu9HMXmloNLXwnNO0ZxZ31Orah2n8lU1eMPvsaowP2CX+USCgyovXfdOFQ==
-
-throttle-debounce@3.0.x:
+throttle-debounce@3.0.x, throttle-debounce@3.x.x:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-3.0.1.tgz#32f94d84dfa894f786c9a1f290e7a645b6a19abb"
   integrity sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==
