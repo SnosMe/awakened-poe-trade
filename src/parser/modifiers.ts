@@ -1,4 +1,4 @@
-import { STAT_BY_MATCH_STR, Stat, StatMatcher } from '@/assets/data'
+import { STAT_BY_MATCH_STR, Stat, StatMatcher, CLIENT_STRINGS as _$ } from '@/assets/data'
 import * as C from './constants'
 
 export enum ModifierType {
@@ -25,18 +25,25 @@ export function * sectionToStatStrings (section: string[]): Generator<string, st
   let multi = (idx + 1) < section.length
 
   while (idx < section.length) {
-    if (multi && (
-      section[idx].endsWith(C.IMPLICIT_SUFFIX) ||
-      section[idx].endsWith(C.CRAFTED_SUFFIX) ||
-      section[idx].endsWith(C.ENCHANT_SUFFIX) ||
-      section[idx].endsWith(C.FRACTURED_SUFFIX))
-    ) {
-      multi = false
-    }
-
     let str: string
+
     if (multi) {
-      str = `${section[idx]}\n${section[idx + 1]}`
+      if (
+        section[idx].startsWith(_$[C.CLUSTER_JEWEL_GRANT]) &&
+        section[idx + 1].startsWith(_$[C.CLUSTER_JEWEL_GRANT])
+      ) {
+        str = `${section[idx].slice(0, -C.ENCHANT_SUFFIX.length)}\n${section[idx + 1]}`
+      } else if (
+        section[idx].endsWith(C.IMPLICIT_SUFFIX) ||
+        section[idx].endsWith(C.CRAFTED_SUFFIX) ||
+        section[idx].endsWith(C.ENCHANT_SUFFIX) ||
+        section[idx].endsWith(C.FRACTURED_SUFFIX)
+      ) {
+        multi = false
+        str = section[idx]
+      } else {
+        str = `${section[idx]}\n${section[idx + 1]}`
+      }
     } else {
       str = section[idx]
     }

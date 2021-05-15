@@ -46,6 +46,7 @@ const dict: TranslationDict = {
   "Combine this with four other different samples in Tane's Laboratory.": 'Объедините эту часть с четырьмя другими в Лаборатории Танэ.',
   'Right-click to add this to your bestiary.': 'Нажмите ПКМ, чтобы добавить это в ваш Бестиарий.',
   'Right-click to add this prophecy to your character.': 'Нажмите ПКМ, чтобы добавить это пророчество вашему персонажу.',
+  'Added Small Passive Skills grant: ': 'Добавленные малые пассивные умения даруют: ',
   '/^.* Brain$/': /^Мозг: .*$/,
   '/^.* Eye$/': /^Глаз: .*$/,
   '/^.* Lung$/': /^Лёгкое: .*$/,
