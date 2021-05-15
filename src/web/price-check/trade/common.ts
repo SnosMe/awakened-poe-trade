@@ -55,6 +55,8 @@ export function tradeTag (item: ParsedItem): string | undefined {
       name = `Blighted ${name} (Tier ${item.props.mapTier})`
     } else if (item.props.mapTier) {
       name = `${name} (Tier ${item.props.mapTier})`
+    } else if (item.extra.prophecyMaster) {
+      name = `${name} (${item.extra.prophecyMaster})`
     }
 
     return TRADE_TAG_BY_NAME.get(name)
