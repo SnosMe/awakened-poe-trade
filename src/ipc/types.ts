@@ -62,7 +62,7 @@ type WidgetWellKnownFlag =
   'hide-on-focus'
 
 export const defaultConfig: Config = {
-  configVersion: 8,
+  configVersion: 9,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -138,7 +138,8 @@ export const defaultConfig: Config = {
       wmFlags: ['hide-on-blur', 'skip-menu'],
       chaosPriceThreshold: 0.05,
       showRateLimitState: false,
-      apiLatencySeconds: 2
+      apiLatencySeconds: 2,
+      collapseListings: 'api'
     } as PriceCheckWidget,
     {
       wmId: 3,

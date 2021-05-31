@@ -13,7 +13,7 @@
         <ui-radio v-model="config.showSeller" value="account" class="mr-4">{{ t('Account name') }}</ui-radio>
         <ui-radio v-model="config.showSeller" value="ign">{{ t('Last character name') }}</ui-radio>
       </div>
-      <div class="mb-4 italic text-gray-500">{{ t('Your items will be highlighted even if it is turned off') }}</div>
+      <div class="mb-4 italic text-gray-500">{{ t('Your items will be highlighted even if this setting is off') }}</div>
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Fill stat values') }}</div>
@@ -42,9 +42,17 @@
         <ui-radio v-model="config.priceCheckShowCursor" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
+    <div class="mb-2 bg-orange-800 p-2">{{ t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.') }}</div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
+      <div class="flex-1 mb-1">{{ t('Show indication on collapsed listings') }}</div>
       <div class="mb-4 flex">
+        <ui-radio v-model="configWidget.collapseListings" value="api" class="mr-4">{{ t('No') }}</ui-radio>
+        <ui-radio v-model="configWidget.collapseListings" value="app">{{ t('Yes') }}</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2 border p-2 border-gray-600 border-dashed">
+      <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
+      <div class="flex">
         <div class="flex mr-6">
           <input v-model.number="apiLatencySeconds" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
           <span class="ml-2">{{ t('seconds') }}</span>
@@ -71,6 +79,7 @@ export default defineComponent({
     return {
       t,
       config: computed(() => Config.store),
+      configWidget,
       searchStatRange: computed<number>({
         get () {
           return Config.store.searchStatRange
@@ -114,14 +123,16 @@ export default defineComponent({
     "Account name": "Имя учетной записи",
     "Show seller": "Показывать продавца",
     "Last character name": "Имя последнего персонажа",
-    "Your items will be highlighted even if it is turned off": "Ваши предметы будут подсвечены, даже если это отключено",
+    "Your items will be highlighted even if this setting is off": "Ваши предметы будут подсвечены, даже если эта настройка выключена",
     "Fill stat values": "Заполнять значения свойств",
     "Exact roll": "Точное значение",
     "Show memorized cursor position": "Показывать запомненную позицию курсора",
     "Minimum buyout price": "Минимальная цена выкупа",
     "Chaos Orbs": "Сфер хаоса",
     "Extra time to prevent spurious Rate limiting": "Добавочное время для предотвращения ложного срабатывания ограничения на запросы",
-    "seconds": "секунды"
+    "seconds": "секунды",
+    "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "Настройки ниже являются компромиссом между увеличенной нагрузкой на сайт PoE и удобством проверки цен / более точным поиском.",
+    "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах"
   }
 }
 </i18n>

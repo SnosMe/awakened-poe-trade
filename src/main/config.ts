@@ -142,6 +142,13 @@ export const config = (() => {
     config.configVersion = 8
   }
 
+  if (config.configVersion < 9) {
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .collapseListings = 'api'
+
+    config.configVersion = 9
+  }
+
   store.store = config
   return store
 })()

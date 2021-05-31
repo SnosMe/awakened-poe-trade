@@ -49,6 +49,7 @@ export interface PriceCheckWidget extends Widget {
   chaosPriceThreshold: number
   showRateLimitState: boolean
   apiLatencySeconds: number
+  collapseListings: 'api' | 'app'
 }
 
 export interface ItemCheckWidget extends Widget {

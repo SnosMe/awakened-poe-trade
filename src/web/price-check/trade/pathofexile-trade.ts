@@ -166,7 +166,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           heist_trap_disarmament?: FilterRange
         }
       }
-      trade_filters: {
+      trade_filters?: {
         filters: {
           collapse?: FilterBoolean
           indexed?: { option?: string }
@@ -227,13 +227,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       stats: [
         { type: 'and', filters: [] }
       ],
-      filters: {
-        trade_filters: {
-          filters: {
-            collapse: { option: 'true' }
-          }
-        }
-      }
+      filters: {}
     },
     sort: {
       price: 'asc'
@@ -245,6 +239,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     const cfg = Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
     if (cfg.chaosPriceThreshold !== 0) {
       prop.set(query.filters, 'trade_filters.filters.price.min', cfg.chaosPriceThreshold)
+    }
+    if (cfg.collapseListings === 'api') {
+      prop.set(query.filters, 'trade_filters.filters.collapse.option', String(true))
     }
   }
 

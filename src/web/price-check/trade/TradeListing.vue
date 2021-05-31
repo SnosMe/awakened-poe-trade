@@ -75,7 +75,7 @@
               <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
-              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }}</td>
+              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.rarity === 'Gem'" class="pl-2 whitespace-no-wrap">{{ result.level }}</td>
@@ -124,12 +124,47 @@ import { artificialSlowdown } from './artificial-slowdown'
 const slowdown = artificialSlowdown(900)
 
 const SHOW_RESULTS = 20
+const API_FETCH_LIMIT = 100
+const MIN_NOT_GROUPED = 7
+const MIN_GROUPED = 10
 
 function useTradeApi () {
   let searchId = 0
   const error = shallowRef<string | null>(null)
   const searchResult = shallowRef<SearchResult | null>(null)
   const fetchResults = shallowRef<PricingResult[]>([])
+
+  const groupedResults = computed(() => {
+    const out: Array<PricingResult & { listedTimes: number }> = []
+    for (const result of fetchResults.value) {
+      if (result == null) break
+      if (out.length === 0) {
+        out.push({ listedTimes: 1, ...result })
+        continue
+      }
+      const existingRes = out.find((added, idx) =>
+        (
+          added.accountName === result.accountName &&
+          added.priceCurrency === result.priceCurrency &&
+          added.priceAmount === result.priceAmount
+        ) ||
+        (
+          added.accountName === result.accountName &&
+          (out.length - idx) <= 2 // last or prev
+        )
+      )
+      if (existingRes) {
+        if (existingRes.stackSize) {
+          existingRes.stackSize += result.stackSize!
+        } else {
+          existingRes.listedTimes += 1
+        }
+      } else {
+        out.push({ listedTimes: 1, ...result })
+      }
+    }
+    return out
+  })
 
   async function search (filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
     try {
@@ -147,6 +182,7 @@ function useTradeApi () {
       }
       searchResult.value = _searchResult
 
+      // first two req are parallel, then sequential on demand
       {
         const r1 = (_searchResult.result.length > 0)
           ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10))
@@ -159,12 +195,31 @@ function useTradeApi () {
           : Promise.resolve()
         await Promise.all([r1, r2])
       }
+
+      let fetched = 20
+      async function fetchMore (): Promise<void> {
+        if (_searchId !== searchId) return
+        const totalGrouped = groupedResults.value.length
+        const totalNotGrouped = groupedResults.value.reduce((len, res) =>
+          res.listedTimes <= 2 ? len + 1 : len, 0)
+        if (
+          (totalNotGrouped < MIN_NOT_GROUPED || totalGrouped < MIN_GROUPED) &&
+          fetched < _searchResult.total &&
+          fetched < API_FETCH_LIMIT
+        ) {
+          await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10))
+            .then(results => { _fetchResults.push(...results) })
+          fetched += 10
+          return fetchMore()
+        }
+      }
+      return fetchMore()
     } catch (err) {
       error.value = err.message
     }
   }
 
-  return { error, searchResult, groupedResults: fetchResults, search }
+  return { error, searchResult, groupedResults, search }
 }
 
 export default defineComponent({
