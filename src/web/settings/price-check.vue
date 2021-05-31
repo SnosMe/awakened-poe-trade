@@ -50,6 +50,19 @@
         <ui-radio v-model="configWidget.collapseListings" value="app">{{ t('Yes') }}</ui-radio>
       </div>
     </div>
+    <div class="mb-2" >
+      <div class="flex-1 mb-1">{{ t('Perform an auto search, when pressing') }}</div>
+      <div class="mb-4 flex">
+        <ui-toggle v-if="config.priceCheckKey"
+          v-model="configWidget.smartInitialSearch" class="mr-6">
+          <span class="bg-gray-900 text-gray-500 rounded px-2">{{ `${config.priceCheckKeyHold} + ${config.priceCheckKey}` }}</span>
+        </ui-toggle>
+        <ui-toggle v-if="config.priceCheckLocked"
+          v-model="configWidget.lockedInitialSearch">
+          <span class="bg-gray-900 text-gray-500 rounded px-2">{{ config.priceCheckLocked }}</span>
+        </ui-toggle>
+      </div>
+    </div>
     <div class="mb-2 border p-2 border-gray-600 border-dashed">
       <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
       <div class="flex">
@@ -132,7 +145,8 @@ export default defineComponent({
     "Extra time to prevent spurious Rate limiting": "Добавочное время для предотвращения ложного срабатывания ограничения на запросы",
     "seconds": "секунды",
     "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "Настройки ниже являются компромиссом между увеличенной нагрузкой на сайт PoE и удобством проверки цен / более точным поиском.",
-    "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах"
+    "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах",
+    "Perform an auto search, when pressing": "Выполнять автоматический поиск при нажатии"
   }
 }
 </i18n>

@@ -28,6 +28,7 @@ export const PRICE_CHECK_CANCELED = 'MAIN->OVERLAY::price-check-canceled'
 export interface IpcPriceCheck {
   clipboard: string
   position: { x: number, y: number }
+  lockedMode: boolean
 }
 
 export const ITEM_CHECK = 'MAIN->OVERLAY::item-check'

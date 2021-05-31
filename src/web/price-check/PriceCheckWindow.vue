@@ -40,7 +40,7 @@
               :position="checkPosition" style="z-index: -1;" />
             <unidentified-resolver :item="item" @identify="item = $event" />
             <checked-item v-if="isLeagueSelected && item"
-              :item="item" />
+              :item="item" :advanced-check="advancedCheck" />
             <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
               <i18n-t keypath="Press {0} to switch between browser and game." tag="div">
                 <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
@@ -105,6 +105,7 @@ export default defineComponent({
     })
 
     const item = shallowRef<ParsedItem | null>(null)
+    const advancedCheck = shallowRef(false)
     const checkPosition = shallowRef({ x: 1, y: 1 })
 
     MainProcess.addEventListener(PRICE_CHECK, (e) => {
@@ -116,6 +117,7 @@ export default defineComponent({
         y: _e.position.y - window.screenY
       }
       item.value = parseClipboard(_e.clipboard)
+      advancedCheck.value = _e.lockedMode
     })
     MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
       wm.hide(props.config.wmId)
@@ -178,6 +180,7 @@ export default defineComponent({
       showCheckPos,
       checkPosition,
       item,
+      advancedCheck,
       overlayKey,
       isLeagueSelected
     }

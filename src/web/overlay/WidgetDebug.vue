@@ -37,7 +37,7 @@ export default defineComponent({
       handleItemPaste (e: InputEvent) {
         const target = e.target as HTMLInputElement
         const text = target.value
-        MainProcess.selfEmitPriceCheck({ clipboard: text, position: { x: window.screenX + 100, y: window.screenY + 100 } })
+        MainProcess.selfEmitPriceCheck({ clipboard: text, position: { x: window.screenX + 100, y: window.screenY + 100 }, lockedMode: false })
         target.value = ''
         // eslint-disable-next-line no-console
         console.log(

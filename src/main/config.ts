@@ -146,6 +146,11 @@ export const config = (() => {
     config.widgets.find(w => w.wmType === 'price-check')!
       .collapseListings = 'api'
 
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .smartInitialSearch = true
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .lockedInitialSearch = true
+
     config.configVersion = 9
   }
 

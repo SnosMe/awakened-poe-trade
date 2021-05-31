@@ -24,7 +24,7 @@ export function showWidget (opts: {
 }) {
   checkPressPosition = opts.hotkeyPressPosition
 
-  overlayWindow!.webContents.send(ipc.PRICE_CHECK, { clipboard: opts.clipboard, position: checkPressPosition } as ipc.IpcPriceCheck)
+  overlayWindow!.webContents.send(ipc.PRICE_CHECK, { clipboard: opts.clipboard, position: checkPressPosition, lockedMode: opts.lockedMode } as ipc.IpcPriceCheck)
 
   const poeBounds = PoeWindow.bounds!
   activeAreaRect = {

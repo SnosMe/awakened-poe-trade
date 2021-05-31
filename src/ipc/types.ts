@@ -139,7 +139,9 @@ export const defaultConfig: Config = {
       chaosPriceThreshold: 0.05,
       showRateLimitState: false,
       apiLatencySeconds: 2,
-      collapseListings: 'api'
+      collapseListings: 'api',
+      smartInitialSearch: true,
+      lockedInitialSearch: true
     } as PriceCheckWidget,
     {
       wmId: 3,

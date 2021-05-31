@@ -60,6 +60,7 @@ import { Config } from '@/web/Config'
 import { ItemFilters, StatFilter } from './filters/interfaces'
 import { ModifierType } from '@/parser/modifiers'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import { PriceCheckWidget } from '../overlay/interfaces'
 
 let _showSupportLinksCounter = 0
 
@@ -78,9 +79,17 @@ export default defineComponent({
     item: {
       type: Object as PropType<ParsedItem>,
       required: true
+    },
+    advancedCheck: {
+      type: Boolean,
+      required: true
     }
   },
   setup (props) {
+    const widgetCfg = computed(() => {
+      return Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
+    })
+
     const itemFilters = ref<ItemFilters>(null!)
     const itemStats = ref<StatFilter[]>(null!)
     const interactedOnce = ref(false)
@@ -96,13 +105,19 @@ export default defineComponent({
     watch(() => props.item, (item) => {
       itemFilters.value = createFilters(item)
       itemStats.value = initUiModFilters(item)
-      interactedOnce.value = Boolean(
-        (item.rarity === ItemRarity.Unique) ||
-        (item.category === ItemCategory.Map) ||
-        (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
-        (item.isUnidentified) ||
-        (item.extra.veiled)
-      )
+
+      if ((!props.advancedCheck && !widgetCfg.smartInitialSearch) ||
+          (props.advancedCheck && !widgetCfg.lockedInitialSearch)) {
+        interactedOnce.value = false
+      } else {
+        interactedOnce.value = Boolean(
+          (item.rarity === ItemRarity.Unique) ||
+          (item.category === ItemCategory.Map) ||
+          (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
+          (item.isUnidentified) ||
+          (item.extra.veiled)
+        )
+      }
     }, { immediate: true })
 
     watch(() => [props.item, interactedOnce.value], () => {

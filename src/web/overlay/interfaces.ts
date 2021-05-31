@@ -50,6 +50,8 @@ export interface PriceCheckWidget extends Widget {
   showRateLimitState: boolean
   apiLatencySeconds: number
   collapseListings: 'api' | 'app'
+  smartInitialSearch: boolean
+  lockedInitialSearch: boolean
 }
 
 export interface ItemCheckWidget extends Widget {
