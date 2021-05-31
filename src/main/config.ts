@@ -151,6 +151,9 @@ export const config = (() => {
     config.widgets.find(w => w.wmType === 'price-check')!
       .lockedInitialSearch = true
 
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .activateStockFilter = false
+
     config.configVersion = 9
   }
 

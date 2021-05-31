@@ -52,6 +52,7 @@ export interface PriceCheckWidget extends Widget {
   collapseListings: 'api' | 'app'
   smartInitialSearch: boolean
   lockedInitialSearch: boolean
+  activateStockFilter: boolean
 }
 
 export interface ItemCheckWidget extends Widget {

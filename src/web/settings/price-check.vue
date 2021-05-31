@@ -36,6 +36,13 @@
       </div>
     </div>
     <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Always select "Stock" filter') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="configWidget.activateStockFilter" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="configWidget.activateStockFilter" :value="false">{{ t('No') }}</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show memorized cursor position') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="config.priceCheckShowCursor" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
@@ -146,7 +153,8 @@ export default defineComponent({
     "seconds": "секунды",
     "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "Настройки ниже являются компромиссом между увеличенной нагрузкой на сайт PoE и удобством проверки цен / более точным поиском.",
     "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах",
-    "Perform an auto search, when pressing": "Выполнять автоматический поиск при нажатии"
+    "Perform an auto search, when pressing": "Выполнять автоматический поиск при нажатии",
+    "Always select \"Stock\" filter": "Всегда активировать фильтр \"Запас\""
   }
 }
 </i18n>

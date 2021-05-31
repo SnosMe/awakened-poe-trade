@@ -3,10 +3,14 @@ import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { VEILED_STAT } from './veiled'
 import { selected as league } from '@/web/background/Leagues'
 import { tradeTag } from '../trade/common'
+import { Config } from '@/web/Config'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
 export function createFilters (item: ParsedItem): ItemFilters {
+  const cfg = Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
+
   const filters: ItemFilters = {
     trade: {
       offline: false,
@@ -27,7 +31,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
   if (item.stackSize || tradeTag(item)) {
     filters.stackSize = {
       value: item.stackSize?.value || 1,
-      disabled: true
+      disabled: !(item.stackSize && item.stackSize.value > 1 && cfg.activateStockFilter)
     }
   }
   if (item.category === ItemCategory.MavenInvitation) {

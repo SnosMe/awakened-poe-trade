@@ -106,8 +106,8 @@ export default defineComponent({
       itemFilters.value = createFilters(item)
       itemStats.value = initUiModFilters(item)
 
-      if ((!props.advancedCheck && !widgetCfg.smartInitialSearch) ||
-          (props.advancedCheck && !widgetCfg.lockedInitialSearch)) {
+      if ((!props.advancedCheck && !widgetCfg.value.smartInitialSearch) ||
+          (props.advancedCheck && !widgetCfg.value.lockedInitialSearch)) {
         interactedOnce.value = false
       } else {
         interactedOnce.value = Boolean(

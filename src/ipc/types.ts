@@ -141,7 +141,8 @@ export const defaultConfig: Config = {
       apiLatencySeconds: 2,
       collapseListings: 'api',
       smartInitialSearch: true,
-      lockedInitialSearch: true
+      lockedInitialSearch: true,
+      activateStockFilter: false
     } as PriceCheckWidget,
     {
       wmId: 3,
