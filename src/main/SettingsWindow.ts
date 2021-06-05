@@ -35,7 +35,8 @@ export function createWindow () {
     frame: false,
     backgroundColor: '#2d3748', // gray-800
     webPreferences: {
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
+      nodeIntegration: true,
+      contextIsolation: false,
       defaultFontSize: config.get('fontSize')
     }
   })

@@ -38,7 +38,8 @@ export async function createOverlayWindow () {
     height: 600,
     // backgroundColor: '#00000008',
     webPreferences: {
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION as any,
+      nodeIntegration: true,
+      contextIsolation: false,
       webSecurity: false,
       defaultFontSize: config.get('fontSize')
     }
