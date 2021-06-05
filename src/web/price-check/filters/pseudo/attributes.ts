@@ -46,26 +46,21 @@ const TO_MAXIMUM_LIFE = stat('+# to maximum Life')
 const TO_MAXIMUM_MANA = stat('+# to maximum Mana')
 
 export function filterAttributes (ctx: FiltersCreationContext) {
-  const attrs: Array<{ pseudo: ReturnType<typeof pseudoStat>, total: number, hasFlat: boolean }> = []
+  const attrs: Array<{
+    pseudo: ReturnType<typeof pseudoStat>
+    total: number
+    hasFlat: boolean
+    countToAll: number
+  }> = []
 
   for (const attr of ATTRS) {
-    const hasFlat = ctx.modifiers.some(m =>
-      attr.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_ATTRS)
-
     const total = sumPseudoStats(ctx.modifiers, attr.stats)
     if (total !== undefined) {
-      attrs.push({ pseudo: attr.pseudo, total, hasFlat })
+      const hasNotToAll = ctx.modifiers.some(m => attr.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_ATTRS)
+      const countToAll = ctx.modifiers.filter(m => m.stat.ref === TO_ALL_ATTRS).length
+
+      attrs.push({ pseudo: attr.pseudo, total, hasFlat: hasNotToAll, countToAll })
     }
-  }
-
-  for (const attr of attrs) {
-    if (!attr.hasFlat) continue
-
-    ctx.filters.push({
-      ...attr.pseudo,
-      disabled: true,
-      ...rollToFilter(attr.total, { neverNegated: true })
-    })
   }
 
   const isOnlyToTotal = (attrs.length && attrs.every(a => !a.hasFlat))
@@ -77,6 +72,15 @@ export function filterAttributes (ctx: FiltersCreationContext) {
       disabled: true,
       ...rollToFilter(totalToAllAttrs, { neverNegated: true })
     })
+  } else {
+    for (const attr of attrs) {
+      ctx.filters.push({
+        ...attr.pseudo,
+        disabled: true,
+        hidden: (attr.hasFlat || attr.countToAll >= 2) ? undefined : 'Stat has a relatively small value',
+        ...rollToFilter(attr.total, { neverNegated: true })
+      })
+    }
   }
 
   for (const attr of attrs) {
