@@ -570,6 +570,7 @@ function parseFlask (section: string[], item: ParsedItem) {
 function parseSynthesised (section: string[], item: ParsedItem) {
   if (section.length === 1) {
     if (section[0] === _$[C.SECTION_SYNTHESISED]) {
+      item.isSynthesised = true
       if (item.baseType) {
         item.baseType = _$[C.ITEM_SYNTHESISED].exec(item.baseType)![1]
       } else {

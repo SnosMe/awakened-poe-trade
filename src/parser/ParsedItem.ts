@@ -32,6 +32,7 @@ export interface ParsedItem {
   isCorrupted: boolean
   isMirrored?: boolean
   influences: ItemInfluence[]
+  isSynthesised?: boolean
   modifiers: ItemModifier[]
   unknownModifiers: Array<{
     text: string

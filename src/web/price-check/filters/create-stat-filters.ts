@@ -53,6 +53,18 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     ...ctx.modifiers.map(mod => itemModToFilter(mod, item))
   )
 
+  if (!item.isCorrupted && !item.isMirrored && item.isSynthesised) {
+    const transformedImplicits = item.modifiers.filter(mod =>
+      mod.type === ModifierType.Implicit &&
+      !ctx.modifiers.includes(mod))
+
+    const synthImplicitFilters = transformedImplicits.map(mod => itemModToFilter(mod, item))
+    for (const filter of synthImplicitFilters) {
+      filter.hidden = 'Select only if price-checking as base item for crafting'
+    }
+    ctx.filters.push(...synthImplicitFilters)
+  }
+
   if (item.isUnidentified && item.rarity === ItemRarity.Unique) {
     ctx.filters = ctx.filters.filter(f => !f.hidden)
   }
