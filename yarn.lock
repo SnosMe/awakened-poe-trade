@@ -3560,10 +3560,9 @@ electron-devtools-installer@^3.1.1:
     semver "^7.2.1"
     unzip-crx-3 "^0.2.0"
 
-electron-overlay-window@2.0.x:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-2.0.1.tgz#c549d5436c7a10ceb4884f5eabcf0901c1880aea"
-  integrity sha512-ULweUF7N4i6GFTO6sEA32U/iMJFAAcM33j8mScqDvRriWbW8CGKhYwu0AYOuZLhVmzg869KPnThJiI9e4FcdjA==
+electron-overlay-window@hsource/electron-overlay-window#v2.0.1-macos.3:
+  version "2.0.1-macos.3"
+  resolved "https://codeload.github.com/hsource/electron-overlay-window/tar.gz/f546c84f7a599ccfcbfea80a6271ff78551930ad"
   dependencies:
     node-gyp-build "4.x.x"
     throttle-debounce "3.x.x"
@@ -9629,9 +9628,9 @@ typescript@4.2.x:
   integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
 
 uiohook-napi@1.0.x:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/uiohook-napi/-/uiohook-napi-1.0.7.tgz#a9e870a164107d0240f67a247b612354e88067aa"
-  integrity sha512-CO8fVvK/YZm6vNvU86DozYX1X0g99zgY7cvzuGDHDgqW3dPNj+hpswW1ssrKgCUkdmrRoUhNDVpX/zUhk5ycnQ==
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/uiohook-napi/-/uiohook-napi-1.0.8.tgz#31cd346fdbc7d073c51f14b98c965f14643eb158"
+  integrity sha512-kIydr9nz4CBkTh7t92L4xT9xrHBaGbSNAd3ZZUnBKvOcQvulW6XuUqFzmvHDIC+EkIjslADsmCgMPucKZQtMRw==
   dependencies:
     node-gyp-build "4.x.x"
 

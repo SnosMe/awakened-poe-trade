@@ -27,7 +27,7 @@
     "animate.css": "^4.1.1",
     "apexcharts": "^3.23.1",
     "dot-prop": "6.x.x",
-    "electron-overlay-window": "2.0.x",
+    "electron-overlay-window": "hsource/electron-overlay-window#v2.0.1-macos.3",
     "electron-store": "7.0.x",
     "electron-updater": "^4.2.0",
     "fast-deep-equal": "3.1.x",

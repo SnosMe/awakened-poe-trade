@@ -44,7 +44,7 @@ class PoeWindowClass extends EventEmitter {
       this.bounds = e
     })
 
-    OW.attachTo(window, config.get('windowTitle'))
+    OW.attachTo(window, config.get('windowTitle'), { hasTitleBarOnMac: true })
   }
 
   onAttach (cb: (hasAccess: boolean | undefined) => void) {

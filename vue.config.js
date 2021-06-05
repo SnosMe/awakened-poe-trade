@@ -16,6 +16,13 @@ module.exports = {
         },
         linux: {
           target: ['AppImage']
+        },
+        mac: {
+          // Disable code signing. While we could release with an official
+          // developer identity, we haven't set it up yet. Disabled based on
+          // instructions here:
+          // https://www.electron.build/code-signing#how-to-disable-code-signing-during-the-build-process-on-macos
+          identity: null
         }
       }
     }

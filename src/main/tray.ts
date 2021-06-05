@@ -41,9 +41,13 @@ function leaguesMenuItem () {
 }
 
 export function createTray () {
-  tray = new Tray(
-    nativeImage.createFromPath(path.join(__static, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
-  )
+  let trayImage = nativeImage.createFromPath(path.join(__static, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
+  if (process.platform === 'darwin') {
+    // Mac image size needs to be smaller, or else it looks huge. Size
+    // guideline is from https://iconhandbook.co.uk/reference/chart/osx/
+    trayImage = trayImage.resize({ width: 22, height: 22 })
+  }
+  tray = new Tray(trayImage)
 
   ipcMain.on(LEAGUES_READY, (e, leagues_: League[]) => {
     leagues = leagues_
