@@ -2,6 +2,7 @@ import { pseudoStat, sumPseudoStats } from './util'
 import { FiltersCreationContext } from '../create-stat-filters'
 import { rollToFilter } from '../util'
 import { stat } from '@/assets/data'
+import { ModifierType } from '@/parser/modifiers'
 
 const TO_ALL_RES = stat('+#% to all Elemental Resistances')
 
@@ -40,7 +41,6 @@ const ELEMENTAL_RES = [
 
 const CHAOS_RES = {
   pseudo: pseudoStat('+#% total to Chaos Resistance'),
-  base: stat('+#% to Chaos Resistance'),
   stats: [
     stat('+#% to Chaos Resistance'),
     stat('+#% to Fire and Chaos Resistances'),
@@ -108,12 +108,14 @@ export function filterResists (ctx: FiltersCreationContext) {
 
   const chaosTotal = sumPseudoStats(ctx.modifiers, CHAOS_RES.stats)
   if (chaosTotal != null) {
-    const hasBaseChaosRes = ctx.modifiers.some(m => m.stat.ref === CHAOS_RES.base)
+    const hasNotCrafted = ctx.modifiers.some(mod =>
+      mod.type !== ModifierType.Crafted &&
+      CHAOS_RES.stats.includes(mod.stat.ref))
 
     ctx.filters.push({
       ...CHAOS_RES.pseudo,
       disabled: true, // NOTE: unlike EleRes it is disabled
-      hidden: hasBaseChaosRes ? undefined : 'Crafted Chaos Resistance without Explicit mod has no value',
+      hidden: hasNotCrafted ? undefined : 'Crafted Chaos Resistance without Explicit mod has no value',
       ...rollToFilter(chaosTotal, { neverNegated: true })
     })
   }
