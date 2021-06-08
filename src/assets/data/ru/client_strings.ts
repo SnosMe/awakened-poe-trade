@@ -73,7 +73,12 @@ const dict: TranslationDict = {
   'Trap Disarmament': 'разминирование',
   'Demolition': 'взрывное дело',
   'Brute Force': 'грубая сила',
-  'Mirrored': 'Отражено'
+  'Mirrored': 'Отражено',
+  'MODIFIER_LINE': /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Уровень: (?<tier>\d+)\))?(?:\s+\(Ранг: (?<rank>\d+)\))?$/,
+  'PREFIX_MODIFIER': 'Префикс',
+  'SUFFIX_MODIFIER': 'Суффикс',
+  'CRAFTED_PREFIX': 'Мастерский префикс',
+  'CRAFTED_SUFFIX': 'Мастерский суффикс'
 }
 
 export default dict

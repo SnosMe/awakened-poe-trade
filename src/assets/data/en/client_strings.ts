@@ -71,7 +71,12 @@ const dict = {
   'Trap Disarmament': 'Trap Disarmament',
   'Demolition': 'Demolition',
   'Brute Force': 'Brute Force',
-  'Mirrored': 'Mirrored'
+  'Mirrored': 'Mirrored',
+  'MODIFIER_LINE': /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,
+  'PREFIX_MODIFIER': 'Prefix Modifier',
+  'SUFFIX_MODIFIER': 'Suffix Modifier',
+  'CRAFTED_PREFIX': 'Master Crafted Prefix Modifier',
+  'CRAFTED_SUFFIX': 'Master Crafted Suffix Modifier'
 }
 
 export default dict
