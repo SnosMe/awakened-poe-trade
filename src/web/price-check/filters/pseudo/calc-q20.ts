@@ -57,35 +57,8 @@ export function propAt20Quality (
   return calcQ20(base, incr, flat, item.quality)
 }
 
-export function variablePropAt20Quality (
-  total: number[],
-  stats: { flat: string, incr: string[] },
-  item: ParsedItem
-): number[] {
-  let incr = 0
-  let flat = [0, 0]
-
-  for (const mod of item.modifiers) {
-    if (mod.stat.ref === stats.flat) {
-      flat = mod.values!
-    } else if (stats.incr.includes(mod.stat.ref)) {
-      incr += mod.values![0]
-    }
-  }
-
-  const base = [
-    calcBase(total[0], incr, flat[0], item.quality),
-    calcBase(total[1], incr, flat[1], item.quality)
-  ]
-
-  return [
-    Math.round(calcQ20(base[0], incr, flat[0], item.quality)),
-    Math.round(calcQ20(base[1], incr, flat[1], item.quality))
-  ]
-}
-
 function calcBase (total: number, incr: number, flat: number, quality: number | undefined) {
-  return Math.round((total / (1 + incr / 100 + (quality || 0) / 100)) - flat)
+  return (total / (1 + incr / 100 + (quality || 0) / 100)) - flat
 }
 
 function calcQ20 (base: number, incr: number, flat: number, quality: number | undefined) {

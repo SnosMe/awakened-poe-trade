@@ -430,10 +430,10 @@ function parseWeapon (section: string[], item: ParsedItem) {
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$[C.TAG_PHYSICAL_DAMAGE])) {
-      item.props.physicalDamage = (
-        line.substr(_$[C.TAG_PHYSICAL_DAMAGE].length)
-          .split('-').map(str => parseInt(str, 10))
-      )
+      const [min, max] = line
+        .substr(_$[C.TAG_PHYSICAL_DAMAGE].length)
+        .split('-').map(str => parseInt(str, 10))
+      item.props.physicalDamage = (min + max) / 2
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$[C.TAG_ELEMENTAL_DAMAGE])) {

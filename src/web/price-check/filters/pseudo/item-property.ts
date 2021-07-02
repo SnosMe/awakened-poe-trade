@@ -1,6 +1,6 @@
 import { rollToFilter } from '../util'
 import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
-import { propAt20Quality, variablePropAt20Quality, QUALITY_STATS } from './calc-q20'
+import { propAt20Quality, QUALITY_STATS } from './calc-q20'
 import { stat } from '@/assets/data'
 import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
 import { ParsedItem } from '@/parser'
@@ -107,8 +107,8 @@ export const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const physQ20 = variablePropAt20Quality(item.props.physicalDamage!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
-  const pdpsQ20 = Math.floor((physQ20[0] + physQ20[1]) / 2 * item.props.attackSpeed!)
+  const physQ20 = propAt20Quality(item.props.physicalDamage!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
+  const pdpsQ20 = Math.floor(physQ20 * item.props.attackSpeed!)
 
   const edps = Math.floor((item.props.elementalDamage || 0) * item.props.attackSpeed!)
   const dps = pdpsQ20 + edps
