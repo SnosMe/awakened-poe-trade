@@ -111,7 +111,7 @@ function getUniqueDetailsId (item: ParsedItem) {
     id += `-${item.sockets.linked}l`
   }
   if (item.baseType === 'Ivory Watchstone') {
-    const uses = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!.values![0]
+    const uses = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!.value
     id += `-${uses}`
   }
 
@@ -155,9 +155,9 @@ function getUniqueVariant (item: ParsedItem) {
     }
   } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
     const sockets = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!
-    if (sockets.values?.[0] === 2) {
+    if (sockets.value === 2) {
       return '-2-jewels'
-    } else if (sockets.values?.[0] === 1) {
+    } else if (sockets.value === 1) {
       return '-1-jewel'
     }
   } else if (item.name === "Volkuur's Guidance") {
@@ -201,11 +201,11 @@ function getUniqueVariant (item: ParsedItem) {
   } else if (item.name === 'Voices') {
     const passives = item.modifiers.find(m => m.stat.ref === 'Adds # Small Passive Skills which grant nothing')!
 
-    if (passives.values![0] === 7) {
+    if (passives.value === 7) {
       return '-7-passives'
-    } else if (passives.values![0] === 5) {
+    } else if (passives.value === 5) {
       return '-5-passives'
-    } else if (passives.values![0] === 3) {
+    } else if (passives.value === 3) {
       return '-3-passives'
     }
   }

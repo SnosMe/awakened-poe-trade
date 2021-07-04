@@ -47,9 +47,9 @@ export function propAt20Quality (
 
   for (const mod of item.modifiers) {
     if (mod.stat.ref === stats.flat) {
-      flat = mod.values![0]
+      flat = mod.value!
     } else if (stats.incr.includes(mod.stat.ref)) {
-      incr += mod.values![0]
+      incr += mod.value!
     }
   }
 

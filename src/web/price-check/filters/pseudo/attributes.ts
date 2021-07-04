@@ -89,7 +89,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
         ...STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
         string: 'N/A',
         type: ModifierType.Explicit,
-        values: [Math.floor(attr.total * (5 / 10))]
+        value: attr.total * (5 / 10)
       })
     }
     if (attr.pseudo.text === INT_ATTR.pseudo.text) {
@@ -97,7 +97,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
         ...STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
         string: 'N/A',
         type: ModifierType.Explicit,
-        values: [Math.floor(attr.total * (5 / 10))]
+        value: attr.total * (5 / 10)
       })
     }
   }

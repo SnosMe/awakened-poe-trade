@@ -1,11 +1,10 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ItemModifier, ModifierType } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
-import { rollToFilter } from './util'
+import { rollToFilter, percentRoll } from './util'
 import { ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
-import { getRollAsSingleNumber } from '@/parser/utils'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
 import { ARMOUR, WEAPON } from '@/parser/meta'
 
@@ -95,7 +94,7 @@ export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
     max: undefined
   }
   if (mod.trade.option) {
-    filter.roll = mod.values![0]
+    filter.roll = mod.value!
     return filter
   }
 
@@ -117,15 +116,15 @@ function itemModFilterPartial (
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ) {
-  if (mod.values) {
+  if (mod.value) {
     if (mod.type === 'enchant') {
-      filter.roll = getRollAsSingleNumber(mod.values)
+      filter.roll = percentRoll(mod.value, 0, Math.floor, mod.stat.dp)
       filter.min = filter.roll
       filter.max = filter.roll
       filter.defaultMin = filter.roll
       filter.defaultMax = filter.roll
     } else {
-      Object.assign(filter, rollToFilter(getRollAsSingleNumber(mod.values)))
+      Object.assign(filter, rollToFilter(mod.value, { dp: mod.stat.dp }))
     }
   }
 }

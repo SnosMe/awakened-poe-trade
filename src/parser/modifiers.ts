@@ -14,7 +14,7 @@ export enum ModifierType {
 export interface ItemModifier extends
   Stat,
   Pick<StatMatcher, 'string' | 'negate'> {
-  values?: number[]
+  value?: number
   type: ModifierType
 }
 
@@ -117,9 +117,17 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
         trade: found.stat.trade,
         string: found.matcher.string,
         negate: found.matcher.negate,
-        values: values.length ? values : undefined,
+        value: values.length ? getRollOrMinmaxAvg(values) : undefined,
         type: undefined!
       }
     }
+  }
+}
+
+export function getRollOrMinmaxAvg (values: number[]): number {
+  if (values.length === 2) {
+    return (values[0] + values[1]) / 2
+  } else {
+    return values[0]
   }
 }

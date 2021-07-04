@@ -3,7 +3,7 @@ import { rollToFilter } from '../util'
 import { pseudoStat, sumPseudoStats } from './util'
 import { filterResists } from './resistances'
 import { filterAttributes } from './attributes'
-import { stat } from '@/assets/data'
+import { stat, STAT_BY_REF } from '@/assets/data'
 
 export function filterPseudo (ctx: FiltersCreationContext) {
   filterResists(ctx)
@@ -19,7 +19,10 @@ function filterRemainingPseudo (ctx: FiltersCreationContext) {
       ctx.filters.push({
         ...pseudoMod.pseudo,
         disabled: true,
-        ...rollToFilter(total, { neverNegated: true })
+        ...rollToFilter(total, {
+          neverNegated: true,
+          dp: pseudoMod.stats.some((ref) => STAT_BY_REF.get(ref)!.stat.dp)
+        })
       })
     }
   }

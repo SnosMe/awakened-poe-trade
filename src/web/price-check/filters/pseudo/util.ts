@@ -24,6 +24,6 @@ export function internalPropStat (tradeId: InternalTradeId, text: string, type: 
 
 export function sumPseudoStats (modifiers: ItemModifier[], stats: string[]) {
   return modifiers.reduce<number | undefined>((res, mod) => stats.includes(mod.stat.ref)
-    ? (res || 0) + mod.values![0]
+    ? (res || 0) + mod.value!
     : res, undefined)
 }

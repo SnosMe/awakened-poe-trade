@@ -154,7 +154,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       'weapon'
     ),
     disabled: true,
-    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, decimals: 2 })
+    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, dp: 2 })
   })
 
   ctx.filters.push({
@@ -164,7 +164,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       'weapon'
     ),
     disabled: true,
-    ...rollToFilter(item.props.critChance!, { neverNegated: true, decimals: 2 })
+    ...rollToFilter(item.props.critChance!, { neverNegated: true, dp: 1 })
   })
 
   if (

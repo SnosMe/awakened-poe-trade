@@ -9,6 +9,7 @@ export interface StatMatcher {
 export interface Stat {
   stat: {
     ref: string
+    dp?: true
     matchers: StatMatcher[]
   }
   trade: {

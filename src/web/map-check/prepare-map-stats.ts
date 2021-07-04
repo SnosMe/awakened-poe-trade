@@ -1,5 +1,5 @@
 import { ParsedItem } from '@/parser/ParsedItem'
-import { getRollAsSingleNumber } from '@/parser/utils'
+import { percentRoll } from '../price-check/filters/util'
 
 export interface PreparedStat {
   matcher: string
@@ -10,7 +10,7 @@ export function prepareMapStats (item: ParsedItem): PreparedStat[] {
   return item.modifiers.map(mod => {
     const prepared = {
       matcher: mod.string,
-      roll: mod.values && getRollAsSingleNumber(mod.values)
+      roll: mod.value && percentRoll(mod.value, 0, Math.floor, mod.stat.dp)
     }
 
     if (mod.negate) {

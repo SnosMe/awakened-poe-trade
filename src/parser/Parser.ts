@@ -5,11 +5,10 @@ import {
   CLIENT_STRINGS as _$,
   ITEM_NAME_REF_BY_TRANSLATED
 } from '@/assets/data'
-import { ModifierType, sectionToStatStrings, tryFindModifier } from './modifiers'
+import { ModifierType, sectionToStatStrings, tryFindModifier, getRollOrMinmaxAvg } from './modifiers'
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { getRollAsSingleNumber } from './utils'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -440,7 +439,7 @@ function parseWeapon (section: string[], item: ParsedItem) {
       item.props.elementalDamage =
         line.substr(_$[C.TAG_ELEMENTAL_DAMAGE].length)
           .split(', ')
-          .map(element => getRollAsSingleNumber(element.split('-').map(str => parseInt(str, 10))))
+          .map(element => getRollOrMinmaxAvg(element.split('-').map(str => parseInt(str, 10))))
           .reduce((sum, x) => sum + x, 0)
 
       isParsed = SECTION_PARSED; continue

@@ -57,6 +57,7 @@
   {
     "stat": {
       "ref": "# Flask Charges recovered every 3 seconds",
+      "dp": true,
       "matchers": [{"string": "# Flask Charges recovered every 3 seconds"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3228973398"]}}
@@ -1044,6 +1045,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Amulets to drop as Anointed Talismans instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Amulets to drop as Anointed Talismans instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3897649208"]}}
@@ -1051,6 +1053,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Blessed Orbs to drop as 8 Blessed Orbs instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Blessed Orbs to drop as 8 Blessed Orbs instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2317489660"]}}
@@ -1058,6 +1061,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Divine Orbs to drop as 4 Divine Orbs instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Divine Orbs to drop as 4 Divine Orbs instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_721643763"]}}
@@ -1072,6 +1076,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Gemcutter's Prisms to drop as 6 Gemcutter's Prisms instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Gemcutter's Prisms to drop as 6 Gemcutter's Prisms instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1604751261"]}}
@@ -1079,6 +1084,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Mirrors of Kalandra to drop as 2 Mirrors of Kalandra instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Mirrors of Kalandra to drop as 2 Mirrors of Kalandra instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1634426651"]}}
@@ -1086,6 +1092,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Orbs of Annulment to drop as 3 Orbs of Annulment instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Orbs of Annulment to drop as 3 Orbs of Annulment instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3856820324"]}}
@@ -1093,6 +1100,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Orbs of Regret to drop as 20 Orbs of Regret instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Orbs of Regret to drop as 20 Orbs of Regret instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2188554989"]}}
@@ -1100,6 +1108,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Regal Orbs to drop as 5 Regal Orbs instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Regal Orbs to drop as 5 Regal Orbs instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3063495090"]}}
@@ -1107,6 +1116,7 @@
   {
     "stat": {
       "ref": "#% chance in Areas for Vaal Orbs to drop as 7 Vaal Orbs instead",
+      "dp": true,
       "matchers": [{"string": "#% chance in Areas for Vaal Orbs to drop as 7 Vaal Orbs instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_697969593"]}}
@@ -14813,6 +14823,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_141810208"], "implicit": ["implicit.stat_141810208"]}}
@@ -14820,6 +14831,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life against Bleeding Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life against Bleeding Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1625933063"]}}
@@ -14827,6 +14839,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life against Chilled Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life against Chilled Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_748813744"]}}
@@ -14834,6 +14847,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life against Maimed Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life against Maimed Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_447636597"]}}
@@ -14841,6 +14855,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life against Taunted Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life against Taunted Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3750917270"]}}
@@ -14848,6 +14863,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life during Flask effect",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life during Flask effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1173558568"]}}
@@ -14855,6 +14871,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life on Critical Strike",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life on Critical Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2100196861"]}}
@@ -14862,6 +14879,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Life per Frenzy Charge",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Life per Frenzy Charge"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3243062554"]}}
@@ -14869,6 +14887,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Mana",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Mana"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_350069479"], "implicit": ["implicit.stat_350069479"]}}
@@ -14876,6 +14895,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Mana against Poisoned Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Mana against Poisoned Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3067409450"]}}
@@ -14883,6 +14903,7 @@
   {
     "stat": {
       "ref": "#% of Attack Damage Leeched as Mana per Power Charge",
+      "dp": true,
       "matchers": [{"string": "#% of Attack Damage Leeched as Mana per Power Charge"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2628721358"]}}
@@ -14907,6 +14928,7 @@
   {
     "stat": {
       "ref": "#% of Chaos Damage Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Chaos Damage Leeched as Life"}]
     },
     "trade": {
@@ -14920,6 +14942,7 @@
   {
     "stat": {
       "ref": "#% of Chaos Damage Leeched as Life during Flask effect",
+      "dp": true,
       "matchers": [{"string": "#% of Chaos Damage Leeched as Life during Flask effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1341148741"]}}
@@ -14948,12 +14971,17 @@
   {
     "stat": {
       "ref": "#% of Cold Damage Leeched as Energy Shield",
+      "dp": true,
       "matchers": [{"string": "#% of Cold Damage Leeched as Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1939452467"]}}
   },
   {
-    "stat": {"ref": "#% of Cold Damage Leeched as Life", "matchers": [{"string": "#% of Cold Damage Leeched as Life"}]},
+    "stat": {
+      "ref": "#% of Cold Damage Leeched as Life",
+      "dp": true,
+      "matchers": [{"string": "#% of Cold Damage Leeched as Life"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_3999401129"],
@@ -14980,6 +15008,7 @@
   {
     "stat": {
       "ref": "#% of Damage against Frozen Enemies Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Damage against Frozen Enemies Leeched as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_593279674"]}}
@@ -14987,6 +15016,7 @@
   {
     "stat": {
       "ref": "#% of Damage dealt by your Mines is Leeched to you as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Damage dealt by your Mines is Leeched to you as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_807450540"]}}
@@ -14994,6 +15024,7 @@
   {
     "stat": {
       "ref": "#% of Damage dealt by your Totems is Leeched to you as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Damage dealt by your Totems is Leeched to you as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3812562802"]}}
@@ -15029,6 +15060,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Energy Shield against Frozen Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Energy Shield against Frozen Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4091709362"]}}
@@ -15036,6 +15068,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life against Cursed Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life against Cursed Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3861913659"]}}
@@ -15043,6 +15076,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life against Shocked Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life against Shocked Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2614321687"]}}
@@ -15050,6 +15084,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life for Skills used by Totems",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life for Skills used by Totems"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2449723897"]}}
@@ -15057,6 +15092,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life if you've Killed Recently",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life if you've Killed Recently"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_4291115328"]}}
@@ -15064,6 +15100,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life on Critical Strike",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life on Critical Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_958088871"]}}
@@ -15071,6 +15108,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life per Siphoning Charge",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life per Siphoning Charge"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1587137379"]}}
@@ -15078,6 +15116,7 @@
   {
     "stat": {
       "ref": "#% of Damage leeched as Life while affected by Vitality",
+      "dp": true,
       "matchers": [{"string": "#% of Damage leeched as Life while affected by Vitality"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3656959867"]}}
@@ -15085,6 +15124,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life while Focussed",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Life while Focussed"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3324747104"], "crafted": ["crafted.stat_3324747104"]}}
@@ -15092,6 +15132,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Life while you have at least 5 total Endurance, Frenzy and Power Charges",
+      "dp": true,
       "matchers": [
         {"string": "#% of Damage Leeched as Life while you have at least 5 total Endurance, Frenzy and Power Charges"}
       ]
@@ -15101,6 +15142,7 @@
   {
     "stat": {
       "ref": "#% of Damage Leeched as Mana against Frozen Enemies",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Leeched as Mana against Frozen Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2908111053"]}}
@@ -15108,6 +15150,7 @@
   {
     "stat": {
       "ref": "#% of Damage Taken from Hits is Leeched as Life during Flask Effect",
+      "dp": true,
       "matchers": [{"string": "#% of Damage Taken from Hits is Leeched as Life during Flask Effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3824033729"], "crafted": ["crafted.stat_3824033729"]}}
@@ -15165,6 +15208,7 @@
   {
     "stat": {
       "ref": "#% of Elemental Damage Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Elemental Damage Leeched as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_720395808"], "implicit": ["implicit.stat_720395808"]}}
@@ -15207,12 +15251,17 @@
   {
     "stat": {
       "ref": "#% of Fire Damage Leeched as Energy Shield",
+      "dp": true,
       "matchers": [{"string": "#% of Fire Damage Leeched as Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3885409671"]}}
   },
   {
-    "stat": {"ref": "#% of Fire Damage Leeched as Life", "matchers": [{"string": "#% of Fire Damage Leeched as Life"}]},
+    "stat": {
+      "ref": "#% of Fire Damage Leeched as Life",
+      "dp": true,
+      "matchers": [{"string": "#% of Fire Damage Leeched as Life"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_3848282610"],
@@ -15225,6 +15274,7 @@
   {
     "stat": {
       "ref": "#% of Fire Damage Leeched as Life while affected by Anger",
+      "dp": true,
       "matchers": [{"string": "#% of Fire Damage Leeched as Life while affected by Anger"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2312747856"]}}
@@ -15232,6 +15282,7 @@
   {
     "stat": {
       "ref": "#% of Fire Damage Leeched as Life while Ignited",
+      "dp": true,
       "matchers": [{"string": "#% of Fire Damage Leeched as Life while Ignited"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3633399302"]}}
@@ -15308,6 +15359,7 @@
   {
     "stat": {
       "ref": "#% of Life Regenerated per second per Fragile Regrowth",
+      "dp": true,
       "matchers": [{"string": "#% of Life Regenerated per second per Fragile Regrowth"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3175722882"]}}
@@ -15343,6 +15395,7 @@
   {
     "stat": {
       "ref": "#% of Lightning Damage is Leeched as Energy Shield while affected by Wrath",
+      "dp": true,
       "matchers": [{"string": "#% of Lightning Damage is Leeched as Energy Shield while affected by Wrath"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_121436064"]}}
@@ -15350,6 +15403,7 @@
   {
     "stat": {
       "ref": "#% of Lightning Damage is Leeched as Mana while affected by Wrath",
+      "dp": true,
       "matchers": [{"string": "#% of Lightning Damage is Leeched as Mana while affected by Wrath"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2889601846"]}}
@@ -15364,6 +15418,7 @@
   {
     "stat": {
       "ref": "#% of Lightning Damage Leeched as Energy Shield",
+      "dp": true,
       "matchers": [{"string": "#% of Lightning Damage Leeched as Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_308127151"]}}
@@ -15371,6 +15426,7 @@
   {
     "stat": {
       "ref": "#% of Lightning Damage Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Lightning Damage Leeched as Life"}]
     },
     "trade": {
@@ -15385,6 +15441,7 @@
   {
     "stat": {
       "ref": "#% of Lightning Damage Leeched as Life during Flask effect",
+      "dp": true,
       "matchers": [{"string": "#% of Lightning Damage Leeched as Life during Flask effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2687254633"]}}
@@ -15392,6 +15449,7 @@
   {
     "stat": {
       "ref": "#% of Lightning Damage Leeched as Mana during Flask effect",
+      "dp": true,
       "matchers": [{"string": "#% of Lightning Damage Leeched as Mana during Flask effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1454377049"]}}
@@ -15427,6 +15485,7 @@
   {
     "stat": {
       "ref": "#% of Physical Attack Damage Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Physical Attack Damage Leeched as Life"}]
     },
     "trade": {
@@ -15442,6 +15501,7 @@
   {
     "stat": {
       "ref": "#% of Physical Attack Damage Leeched as Life per Red Socket",
+      "dp": true,
       "matchers": [{"string": "#% of Physical Attack Damage Leeched as Life per Red Socket"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3025389409"]}}
@@ -15449,6 +15509,7 @@
   {
     "stat": {
       "ref": "#% of Physical Attack Damage Leeched as Mana",
+      "dp": true,
       "matchers": [{"string": "#% of Physical Attack Damage Leeched as Mana"}]
     },
     "trade": {
@@ -15464,6 +15525,7 @@
   {
     "stat": {
       "ref": "#% of Physical Attack Damage Leeched as Mana per Blue Socket",
+      "dp": true,
       "matchers": [{"string": "#% of Physical Attack Damage Leeched as Mana per Blue Socket"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_172852114"]}}
@@ -15679,6 +15741,7 @@
   {
     "stat": {
       "ref": "#% of Physical Damage Leeched as Life",
+      "dp": true,
       "matchers": [{"string": "#% of Physical Damage Leeched as Life"}]
     },
     "trade": {
@@ -15699,6 +15762,7 @@
   {
     "stat": {
       "ref": "#% of Spell Damage Leeched as Energy Shield",
+      "dp": true,
       "matchers": [{"string": "#% of Spell Damage Leeched as Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_11106713"], "implicit": ["implicit.stat_11106713"]}}
@@ -15706,6 +15770,7 @@
   {
     "stat": {
       "ref": "#% of Spell Damage Leeched as Energy Shield during Flask effect",
+      "dp": true,
       "matchers": [{"string": "#% of Spell Damage Leeched as Energy Shield during Flask effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1456464057"]}}
@@ -15713,6 +15778,7 @@
   {
     "stat": {
       "ref": "#% of Spell Damage Leeched as Energy Shield for each Curse on Enemy",
+      "dp": true,
       "matchers": [{"string": "#% of Spell Damage Leeched as Energy Shield for each Curse on Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3734213780"]}}
@@ -15720,6 +15786,7 @@
   {
     "stat": {
       "ref": "#% of Spell Damage Leeched as Life if Equipped Shield has at least 30% Chance to Block",
+      "dp": true,
       "matchers": [{"string": "#% of Spell Damage Leeched as Life if Equipped Shield has at least 30% Chance to Block"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3893109186"]}}
@@ -16600,6 +16667,7 @@
   {
     "stat": {
       "ref": "+# seconds to Avian's Flight Duration",
+      "dp": true,
       "matchers": [{"string": "# seconds to Avian's Flight Duration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1251731548"]}}
@@ -16607,6 +16675,7 @@
   {
     "stat": {
       "ref": "+# seconds to Avian's Might Duration",
+      "dp": true,
       "matchers": [{"string": "# seconds to Avian's Might Duration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1251945210"]}}
@@ -16614,6 +16683,7 @@
   {
     "stat": {
       "ref": "+# seconds to Cat's Agility Duration",
+      "dp": true,
       "matchers": [{"string": "# seconds to Cat's Agility Duration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3686519528"]}}
@@ -16621,6 +16691,7 @@
   {
     "stat": {
       "ref": "+# seconds to Cat's Stealth Duration",
+      "dp": true,
       "matchers": [{"string": "# seconds to Cat's Stealth Duration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_387596329"]}}
@@ -18250,6 +18321,7 @@
   {
     "stat": {
       "ref": "+#% Critical Strike Chance per Power Charge",
+      "dp": true,
       "matchers": [{"string": "#% Critical Strike Chance per Power Charge"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1818900806"]}}
@@ -18657,6 +18729,7 @@
   {
     "stat": {
       "ref": "+#% to Critical Strike Chance against Enemies on Consecrated Ground during Effect",
+      "dp": true,
       "matchers": [{"string": "#% to Critical Strike Chance against Enemies on Consecrated Ground during Effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1535051459"]}}
@@ -18664,6 +18737,7 @@
   {
     "stat": {
       "ref": "+#% to Critical Strike Chance while affected by Aspect of the Cat",
+      "dp": true,
       "matchers": [{"string": "#% to Critical Strike Chance while affected by Aspect of the Cat"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3992636701"]}}
@@ -18671,6 +18745,7 @@
   {
     "stat": {
       "ref": "+#% to Critical Strike Chance while affected by Hatred",
+      "dp": true,
       "matchers": [{"string": "#% to Critical Strike Chance while affected by Hatred"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2753985507"]}}
@@ -19299,6 +19374,7 @@
   {
     "stat": {
       "ref": "+#% to Off Hand Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "#% to Off Hand Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1757389331"]}}
@@ -19470,6 +19546,7 @@
   {
     "stat": {
       "ref": "+#% to Spell Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "#% to Spell Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_791835907"], "implicit": ["implicit.stat_791835907"]}}
@@ -19484,6 +19561,7 @@
   {
     "stat": {
       "ref": "+#% to Unarmed Attack Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "#% to Unarmed Attack Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_512074347"]}}
@@ -21983,6 +22061,7 @@
   {
     "stat": {
       "ref": "Added Small Passive Skills also grant: Minions Regenerate #% of Life per Second",
+      "dp": true,
       "matchers": [{"string": "Added Small Passive Skills also grant: Minions Regenerate #% of Life per Second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_542238572"]}}
@@ -21990,6 +22069,7 @@
   {
     "stat": {
       "ref": "Added Small Passive Skills also grant: Regenerate #% of Life per Second",
+      "dp": true,
       "matchers": [{"string": "Added Small Passive Skills also grant: Regenerate #% of Life per Second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3721672021"]}}
@@ -24644,6 +24724,7 @@
   {
     "stat": {
       "ref": "Armourer's Scraps found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Armourer's Scraps found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3515781151"]}}
@@ -24931,6 +25012,7 @@
   {
     "stat": {
       "ref": "Attacks have +#% to Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "Attacks have #% to Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2572042788"], "implicit": ["implicit.stat_2572042788"]}}
@@ -25220,6 +25302,7 @@
   {
     "stat": {
       "ref": "Blacksmith's Whetstones found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Blacksmith's Whetstones found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3425389359"]}}
@@ -25371,6 +25454,7 @@
   {
     "stat": {
       "ref": "Blight Chests in Areas have #% chance to Duplicate contained Items",
+      "dp": true,
       "matchers": [{"string": "Blight Chests in Areas have #% chance to Duplicate contained Items"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2101592167"]}}
@@ -25555,6 +25639,7 @@
   {
     "stat": {
       "ref": "Breach Splinters have #% chance to drop as Breachstones instead in Areas",
+      "dp": true,
       "matchers": [{"string": "Breach Splinters have #% chance to drop as Breachstones instead in Areas"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3394339562"]}}
@@ -25984,6 +26069,7 @@
   {
     "stat": {
       "ref": "Cartographer's Chisels found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Cartographer's Chisels found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_553616540"]}}
@@ -26183,6 +26269,7 @@
   {
     "stat": {
       "ref": "Chaos Orbs found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Chaos Orbs found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3586007174"]}}
@@ -26302,6 +26389,7 @@
   {
     "stat": {
       "ref": "Chromatic Orbs found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Chromatic Orbs found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2469861066"]}}
@@ -27396,6 +27484,7 @@
   {
     "stat": {
       "ref": "Delirium Monsters in Areas have #% increased chance to drop Cluster Jewels",
+      "dp": true,
       "matchers": [
         {"string": "Delirium Monsters in Areas have #% increased chance to drop Cluster Jewels"},
         {"string": "Delirium Monsters in Areas have #% reduced chance to drop Cluster Jewels"}
@@ -28737,6 +28826,7 @@
   {
     "stat": {
       "ref": "For each nearby corpse, Regenerate #% Life per second, up to 3%",
+      "dp": true,
       "matchers": [{"string": "For each nearby corpse, Regenerate #% Life per second, up to 3%"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3845048660"]}}
@@ -29264,6 +29354,7 @@
   {
     "stat": {
       "ref": "Gain +#% to Critical Strike Chance for 2 seconds after Spending a total of 800 Mana",
+      "dp": true,
       "matchers": [{"string": "Gain #% to Critical Strike Chance for 2 seconds after Spending a total of 800 Mana"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2864779809"]}}
@@ -32009,6 +32100,7 @@
   {
     "stat": {
       "ref": "Items found in Areas have #% chance to have a White Socket",
+      "dp": true,
       "matchers": [{"string": "Items found in Areas have #% chance to have a White Socket"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3060454102"]}}
@@ -32016,6 +32108,7 @@
   {
     "stat": {
       "ref": "Items found in Areas have #% chance to have the maximum number of Sockets",
+      "dp": true,
       "matchers": [{"string": "Items found in Areas have #% chance to have the maximum number of Sockets"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4092986415"]}}
@@ -32033,6 +32126,7 @@
   {
     "stat": {
       "ref": "Items have #% chance to drop fully Linked in Areas",
+      "dp": true,
       "matchers": [{"string": "Items have #% chance to drop fully Linked in Areas"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2356069535"]}}
@@ -32040,6 +32134,7 @@
   {
     "stat": {
       "ref": "Jeweller's Orbs found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Jeweller's Orbs found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_10358266"]}}
@@ -32633,6 +32728,7 @@
   {
     "stat": {
       "ref": "Magic Monsters in Areas have #% chance to drop an additional Basic Currency Item",
+      "dp": true,
       "matchers": [{"string": "Magic Monsters in Areas have #% chance to drop an additional Basic Currency Item"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_481710678"]}}
@@ -32640,6 +32736,7 @@
   {
     "stat": {
       "ref": "Magic Monsters in Areas have #% chance to drop an additional Gem with Quality",
+      "dp": true,
       "matchers": [{"string": "Magic Monsters in Areas have #% chance to drop an additional Gem with Quality"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2731946686"]}}
@@ -32647,6 +32744,7 @@
   {
     "stat": {
       "ref": "Magic Monsters in Areas have #% chance to drop an additional Rare Armour Item",
+      "dp": true,
       "matchers": [{"string": "Magic Monsters in Areas have #% chance to drop an additional Rare Armour Item"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3457217894"]}}
@@ -32654,6 +32752,7 @@
   {
     "stat": {
       "ref": "Magic Monsters in Areas have #% chance to drop an additional Rare Jewellery Item",
+      "dp": true,
       "matchers": [{"string": "Magic Monsters in Areas have #% chance to drop an additional Rare Jewellery Item"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4265306219"]}}
@@ -32661,6 +32760,7 @@
   {
     "stat": {
       "ref": "Magic Monsters in Areas have #% chance to drop an additional Rare Weapon",
+      "dp": true,
       "matchers": [{"string": "Magic Monsters in Areas have #% chance to drop an additional Rare Weapon"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1818703431"]}}
@@ -32817,6 +32917,7 @@
   {
     "stat": {
       "ref": "Map Items have a #% chance to drop as a random Unique Map instead in Areas",
+      "dp": true,
       "matchers": [{"string": "Map Items have a #% chance to drop as a random Unique Map instead in Areas"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1750700932"]}}
@@ -33462,6 +33563,7 @@
   {
     "stat": {
       "ref": "Minions Leech #% of Damage as Life",
+      "dp": true,
       "matchers": [{"string": "Minions Leech #% of Damage as Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2770782267"], "fractured": ["fractured.stat_2770782267"]}}
@@ -33469,6 +33571,7 @@
   {
     "stat": {
       "ref": "Minions Leech #% of Damage as Life against Poisoned Enemies",
+      "dp": true,
       "matchers": [{"string": "Minions Leech #% of Damage as Life against Poisoned Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_548721233"]}}
@@ -33584,6 +33687,7 @@
   {
     "stat": {
       "ref": "Minions summoned by Your Sentinel Towers Leech #% of Damage as Life",
+      "dp": true,
       "matchers": [{"string": "Minions summoned by Your Sentinel Towers Leech #% of Damage as Life"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_4148328809"]}}
@@ -34229,6 +34333,7 @@
   {
     "stat": {
       "ref": "Nearby allies Recover #% of your Maximum Life when you Die",
+      "dp": true,
       "matchers": [{"string": "Nearby allies Recover #% of your Maximum Life when you Die"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3484267929"]}}
@@ -34636,6 +34741,7 @@
   {
     "stat": {
       "ref": "Orbs of Alchemy found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Orbs of Alchemy found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_262769816"]}}
@@ -34643,6 +34749,7 @@
   {
     "stat": {
       "ref": "Orbs of Alteration found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Orbs of Alteration found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1857447509"]}}
@@ -34650,6 +34757,7 @@
   {
     "stat": {
       "ref": "Orbs of Chance found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Orbs of Chance found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3559931431"]}}
@@ -34657,6 +34765,7 @@
   {
     "stat": {
       "ref": "Orbs of Fusing found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Orbs of Fusing found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1552965282"]}}
@@ -34664,6 +34773,7 @@
   {
     "stat": {
       "ref": "Orbs of Scouring found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Orbs of Scouring found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4252890057"]}}
@@ -34671,6 +34781,7 @@
   {
     "stat": {
       "ref": "Orbs of Transmutation found in Areas have #% chance to drop as a full stack",
+      "dp": true,
       "matchers": [{"string": "Orbs of Transmutation found in Areas have #% chance to drop as a full stack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2888521660"]}}
@@ -35067,6 +35178,7 @@
   {
     "stat": {
       "ref": "Plants Harvested in Areas have #% chance to give an additional Crafting option",
+      "dp": true,
       "matchers": [{"string": "Plants Harvested in Areas have #% chance to give an additional Crafting option"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1042687374"]}}
@@ -35158,6 +35270,7 @@
   {
     "stat": {
       "ref": "Players and their Minions Regenerate #% of Life per second",
+      "dp": true,
       "matchers": [{"string": "Players and their Minions Regenerate #% of Life per second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_430044247"]}}
@@ -36820,6 +36933,7 @@
   {
     "stat": {
       "ref": "Regenerate #% of Energy Shield per Second while affected by Discipline",
+      "dp": true,
       "matchers": [{"string": "Regenerate #% of Energy Shield per Second while affected by Discipline"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_991194404"], "implicit": ["implicit.stat_991194404"]}}
@@ -36839,7 +36953,11 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1700808530"]}}
   },
   {
-    "stat": {"ref": "Regenerate #% of Life per second", "matchers": [{"string": "Regenerate #% of Life per second"}]},
+    "stat": {
+      "ref": "Regenerate #% of Life per second",
+      "dp": true,
+      "matchers": [{"string": "Regenerate #% of Life per second"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_836936635"],
@@ -36873,6 +36991,7 @@
   {
     "stat": {
       "ref": "Regenerate #% of Life per second for each Raised Zombie",
+      "dp": true,
       "matchers": [{"string": "Regenerate #% of Life per second for each Raised Zombie"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2841618445"]}}
@@ -36925,6 +37044,7 @@
   {
     "stat": {
       "ref": "Regenerate #% of Life per second while affected by Vitality",
+      "dp": true,
       "matchers": [{"string": "Regenerate #% of Life per second while affected by Vitality"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1165583295"]}}
@@ -37991,6 +38111,7 @@
   {
     "stat": {
       "ref": "Socketed Attacks have +#% to Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "Socketed Attacks have #% to Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2867348718"]}}
@@ -39299,6 +39420,7 @@
   {
     "stat": {
       "ref": "Socketed Gems have +#% Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "Socketed Gems have #% Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1681904129"], "fractured": ["fractured.stat_1681904129"]}}
@@ -39468,6 +39590,7 @@
   {
     "stat": {
       "ref": "Socketed Spells have +#% to Critical Strike Chance",
+      "dp": true,
       "matchers": [{"string": "Socketed Spells have #% to Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_135378852"]}}
@@ -39752,6 +39875,7 @@
   {
     "stat": {
       "ref": "Spells which have gained Intensity Recently gain 1 Intensity every # Seconds",
+      "dp": true,
       "matchers": [{"string": "Spells which have gained Intensity Recently gain 1 Intensity every # Seconds"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2540626225"]}}
@@ -39759,6 +39883,7 @@
   {
     "stat": {
       "ref": "Spells which have gained Intensity Recently lose 1 Intensity every # Seconds",
+      "dp": true,
       "matchers": [{"string": "Spells which have gained Intensity Recently lose 1 Intensity every # Seconds"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2122561670"]}}
@@ -40649,6 +40774,7 @@
   {
     "stat": {
       "ref": "Timeless Splinters dropped in Areas have #% chance to drop as Timeless Emblems instead",
+      "dp": true,
       "matchers": [{"string": "Timeless Splinters dropped in Areas have #% chance to drop as Timeless Emblems instead"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_407036985"]}}
@@ -41447,6 +41573,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Divination Card",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Divination Card"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1123167602"]}}
@@ -41454,6 +41581,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Essence",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Essence"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1503311893"]}}
@@ -41468,6 +41596,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Map Item",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Map Item"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1946193520"]}}
@@ -41475,6 +41604,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Sacrifice Fragment",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Sacrifice Fragment"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1384053575"]}}
@@ -41482,6 +41612,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Scarab",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Scarab"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4086926366"]}}
@@ -41489,6 +41620,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Silver Coin",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Silver Coin"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_364425699"]}}
@@ -41496,6 +41628,7 @@
   {
     "stat": {
       "ref": "Unique Bosses have #% chance to drop an additional Talisman",
+      "dp": true,
       "matchers": [{"string": "Unique Bosses have #% chance to drop an additional Talisman"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3546420819"]}}
@@ -42325,6 +42458,7 @@
   {
     "stat": {
       "ref": "With at least 1000 Strength, #% of Damage dealt by your Raised Zombies is Leeched to you as Life",
+      "dp": true,
       "matchers": [
         {"string": "With at least 1000 Strength, #% of Damage dealt by your Raised Zombies is Leeched to you as Life"}
       ]
