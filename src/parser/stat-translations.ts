@@ -1,12 +1,13 @@
-import { STAT_BY_MATCH_STR } from '@/assets/data'
+import { STAT_BY_MATCH_STR, CLIENT_STRINGS as _$ } from '@/assets/data'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
 
 export interface ParsedStat {
   translation: string
-  roll: {
+  roll?: {
     negate: boolean
+    dp: boolean
     value: number
     min: number
     max: number
@@ -83,13 +84,15 @@ function * _statPlaceholderGenerator (stat: string) {
     const matches: Array<{
       roll: number
       rollStr: string
+      decimal: boolean
       bounds?: { min: number, max: number }
     }> = []
     const withPlaceholders = stat
-      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)-(?<max>[^)]+)\))?/gm, (_, roll, min, max) => {
+      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)-(?<max>[^)]+)\))?/gm, (_, roll: string, min?: string, max?: string) => {
         const captured: typeof matches[number] = {
           roll: Number(roll),
           rollStr: roll,
+          decimal: roll.includes('.') || min?.includes('.') || max?.includes('.') || false,
           bounds: { min: Number(min), max: Number(max) }
         }
         matches.push(captured)
@@ -116,7 +119,7 @@ function * _statPlaceholderGenerator (stat: string) {
           stat: replaced,
           values: matches
             .filter((_, idx) => !replacements.includes(idx)) as
-              Array<Pick<typeof matches[number], 'roll' | 'bounds'>>
+              Array<Pick<typeof matches[number], 'roll' | 'bounds' | 'decimal'>>
         }
       }
     }
@@ -142,6 +145,7 @@ export function tryFindModifier (stat: string): ParsedStat | undefined {
     if (!combination.values.length && found.matcher.value) {
       combination.values = [{
         roll: found.matcher.value,
+        decimal: false,
         bounds: {
           min: found.matcher.value,
           max: found.matcher.value
@@ -153,17 +157,13 @@ export function tryFindModifier (stat: string): ParsedStat | undefined {
       translation: found.matcher.string,
       roll: combination.values.length
         ? {
-            negate: Boolean(found.matcher.negate),
+            negate: found.matcher.negate ?? false,
+            dp: found.stat.stat.dp || combination.values.some(stat => stat.decimal),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
             min: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.min ?? stat.roll)),
             max: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.max ?? stat.roll))
           }
-        : {
-            negate: false,
-            value: 1,
-            min: 1,
-            max: 1
-          }
+        : undefined
     }
   }
 }

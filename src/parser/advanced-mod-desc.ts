@@ -1,4 +1,5 @@
 import { CLIENT_STRINGS as _$ } from '@/assets/data'
+import { ParsedStat } from './stat-translations'
 
 interface ModifierInfo {
   generation?: 'suffix' | 'prefix'
@@ -63,4 +64,18 @@ export function * groupLinesByMod (lines: string[]): Generator<GroupedModLines, 
     }
   }
   yield last!
+}
+
+function applyIncr (mod: ModifierInfo, stat: ParsedStat): void {
+  if (!mod.rollIncr) return
+
+  // TODO if (stat.unscalable) return
+
+  stat.roll.value *= 1
+  stat.roll.min *= 1
+  stat.roll.max *= 1
+
+  if (!stat.roll.dp) {
+    // TODO always floor?
+  }
 }

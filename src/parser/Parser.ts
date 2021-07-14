@@ -5,10 +5,11 @@ import {
   CLIENT_STRINGS as _$,
   ITEM_NAME_REF_BY_TRANSLATED
 } from '@/assets/data'
-import { ModifierType, sectionToStatStrings, tryFindModifier, getRollOrMinmaxAvg } from './modifiers'
+import { ModifierType, linesToStatStrings, tryFindModifier, getRollOrMinmaxAvg } from './modifiers'
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
+import { isModInfoLine, groupLinesByMod } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -451,7 +452,7 @@ function parseWeapon (section: string[], item: ParsedItem) {
   return isParsed
 }
 
-function parseModifiers (section: string[], item: ParsedItem) {
+export /* TODO temp test */ function parseModifiers (section: string[], item: ParsedItem) {
   if (
     item.rarity !== ItemRarity.Normal &&
     item.rarity !== ItemRarity.Magic &&
@@ -461,72 +462,21 @@ function parseModifiers (section: string[], item: ParsedItem) {
     return PARSER_SKIPPED
   }
 
-  const countBefore = (item.modifiers.length + item.unknownModifiers.length)
+  if (!section.some(line =>
+    line.endsWith(C.ENCHANT_LINE) || isModInfoLine(line)
+  )) {
+    return SECTION_SKIPPED
+  }
 
-  const statIterator = sectionToStatStrings(section)
-  let stat = statIterator.next()
-  while (!stat.done) {
-    if (parseVeiledNested(stat.value, item)) {
-      stat = statIterator.next(true)
-      continue
-    }
-
-    let modType: ModifierType | undefined
-
-    // cleanup suffix
-    if (stat.value.endsWith(C.IMPLICIT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.IMPLICIT_SUFFIX.length)
-      modType = ModifierType.Implicit
-    } else if (stat.value.endsWith(C.CRAFTED_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.CRAFTED_SUFFIX.length)
-      modType = ModifierType.Crafted
-    } else if (stat.value.endsWith(C.ENCHANT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.ENCHANT_SUFFIX.length)
-      modType = ModifierType.Enchant
-    } else if (stat.value.endsWith(C.FRACTURED_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.FRACTURED_SUFFIX.length)
-      modType = ModifierType.Fractured
-    } else {
-      modType = ModifierType.Explicit
-    }
-
-    const mod = tryFindModifier(stat.value)
-    if (mod && mod.trade.ids[modType]) {
-      mod.type = modType
-      item.modifiers.push(mod)
-      stat = statIterator.next(true)
-    } else {
-      if (
-        mod != null || // not found on trade, but successfully parsed
-        modType === ModifierType.Enchant || // has separate section
-        modType === ModifierType.Implicit || // has separate section
-        modType === ModifierType.Fractured || // always comes first in section
-        (modType === ModifierType.Crafted && (
-          !stat.value.includes('\n') || // not multiline, on section transition from explicit to crafted mods
-          item.modifiers.some(m => m.type === ModifierType.Crafted) ||
-          item.unknownModifiers.some(m => m.type === ModifierType.Crafted)
-        ))
-      ) {
-        item.unknownModifiers.push({
-          text: stat.value,
-          type: modType
-        })
-        stat = statIterator.next(true)
-      } else {
-        stat = statIterator.next(false)
-      }
+  if (section.some(line => line.endsWith(C.ENCHANT_LINE))) {
+    parseStatsFromMod(section, item)
+  } else {
+    for (const { lines } of groupLinesByMod(section)) {
+      parseStatsFromMod(lines, item)
     }
   }
 
-  if (countBefore < (item.modifiers.length + item.unknownModifiers.length)) {
-    item.unknownModifiers.push(...stat.value.map(line => ({
-      text: line,
-      type: ModifierType.Explicit
-    })))
-
-    return SECTION_PARSED
-  }
-  return SECTION_SKIPPED
+  return SECTION_PARSED
 }
 
 function parseVeiledNested (text: string, item: ParsedItem) {
@@ -684,6 +634,68 @@ function markupConditionParser (text: string) {
   return text
 }
 
-function isAdvancedDescription (lines: string[]): boolean {
-  return lines.some(line => line.startsWith('{') && line.endsWith('}'))
+function removeLineEnding (
+  lines: readonly string[], ending: string
+): string[] {
+  return lines.map(line =>
+    line.endsWith(ending)
+      ? line.slice(0, -ending.length)
+      : line
+  )
+}
+
+function parseStatsFromMod (lines: string[], item: ParsedItem) {
+  let modType: ModifierType
+  if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
+    modType = ModifierType.Enchant
+    lines = removeLineEnding(lines, C.ENCHANT_LINE)
+  } else if (lines.some(line => line.endsWith(C.IMPLICIT_LINE))) {
+    modType = ModifierType.Implicit
+    lines = removeLineEnding(lines, C.IMPLICIT_LINE)
+  } else if (lines.some(line => line.endsWith(C.FRACTURED_LINE))) {
+    modType = ModifierType.Fractured
+    lines = removeLineEnding(lines, C.FRACTURED_LINE)
+  } else if (lines.some(line => line.endsWith(C.CRAFTED_LINE))) {
+    modType = ModifierType.Crafted
+    lines = removeLineEnding(lines, C.CRAFTED_LINE)
+  } else {
+    modType = ModifierType.Explicit
+  }
+
+  const statIterator = linesToStatStrings(lines)
+  let stat = statIterator.next()
+  while (!stat.done) {
+    if (parseVeiledNested(stat.value, item)) {
+      stat = statIterator.next(true)
+      continue
+    }
+
+    const mod = tryFindModifier(stat.value)
+    if (mod && mod.trade.ids[modType]) {
+      mod.type = modType
+      item.modifiers.push(mod)
+      stat = statIterator.next(true)
+    } else {
+      if (
+        mod != null // not found on trade, but successfully parsed
+      ) {
+        // TODO: removeLineEnding UNSCALABLE_VALUE ?
+        item.unknownModifiers.push({
+          text: stat.value,
+          type: modType
+        })
+        stat = statIterator.next(true)
+      } else {
+        stat = statIterator.next(false)
+      }
+    }
+  }
+
+  item.unknownModifiers.push(
+    ...removeLineEnding(stat.value, _$.UNSCALABLE_VALUE)
+      .map(line => ({
+        text: line,
+        type: modType
+      }))
+  )
 }
