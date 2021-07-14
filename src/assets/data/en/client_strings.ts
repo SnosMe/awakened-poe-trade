@@ -44,7 +44,6 @@ const dict = {
   "Combine this with four other different samples in Tane's Laboratory.": "Combine this with four other different samples in Tane's Laboratory.",
   'Right-click to add this to your bestiary.': 'Right-click to add this to your bestiary.',
   'Right-click to add this prophecy to your character.': 'Right-click to add this prophecy to your character.',
-  'Added Small Passive Skills grant: ': 'Added Small Passive Skills grant: ',
   '/^.* Brain$/': /^.* Brain$/,
   '/^.* Eye$/': /^.* Eye$/,
   '/^.* Lung$/': /^.* Lung$/,
@@ -76,7 +75,8 @@ const dict = {
   'PREFIX_MODIFIER': 'Prefix Modifier',
   'SUFFIX_MODIFIER': 'Suffix Modifier',
   'CRAFTED_PREFIX': 'Master Crafted Prefix Modifier',
-  'CRAFTED_SUFFIX': 'Master Crafted Suffix Modifier'
+  'CRAFTED_SUFFIX': 'Master Crafted Suffix Modifier',
+  'UNSCALABLE_VALUE': ' — Unscalable Value'
 }
 
 export default dict

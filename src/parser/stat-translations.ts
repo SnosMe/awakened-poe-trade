@@ -1,31 +1,16 @@
-import { STAT_BY_MATCH_STR, Stat, StatMatcher } from '@/assets/data'
+import { STAT_BY_MATCH_STR } from '@/assets/data'
 
 // This file is a little messy and scary,
-// but that's how stat translations are parsed :-D
+// but that's how stats translations are parsed :-D
 
-export enum ModifierType {
-  Pseudo = 'pseudo',
-  Explicit = 'explicit',
-  Implicit = 'implicit',
-  Crafted = 'crafted',
-  Enchant = 'enchant',
-  Veiled = 'veiled',
-  Fractured = 'fractured'
-}
-
-export interface ItemModifier extends
-  Stat,
-  Pick<StatMatcher, 'string' | 'negate'> {
-  /**
-   * @deprecated TODO remove after finishing mod changes
-   */
-  value?: number
-  roll?: {
+export interface ParsedStat {
+  translation: string
+  roll: {
+    negate: boolean
     value: number
     min: number
     max: number
   }
-  type: ModifierType
 }
 
 export function * linesToStatStrings (lines: string[]): Generator<string, string[], boolean> {
@@ -138,7 +123,7 @@ function * _statPlaceholderGenerator (stat: string) {
   }
 }
 
-export function tryFindModifier (stat: string): ItemModifier | undefined {
+export function tryFindModifier (stat: string): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat)) {
     const found = STAT_BY_MATCH_STR.get(combination.stat)
     if (!found) continue
@@ -165,18 +150,20 @@ export function tryFindModifier (stat: string): ItemModifier | undefined {
     }
 
     return {
-      stat: found.stat.stat,
-      trade: found.stat.trade,
-      string: found.matcher.string,
-      negate: found.matcher.negate,
+      translation: found.matcher.string,
       roll: combination.values.length
         ? {
+            negate: Boolean(found.matcher.negate),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
             min: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.min ?? stat.roll)),
             max: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.max ?? stat.roll))
           }
-        : undefined,
-      type: undefined!
+        : {
+            negate: false,
+            value: 1,
+            min: 1,
+            max: 1
+          }
     }
   }
 }

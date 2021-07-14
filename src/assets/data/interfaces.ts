@@ -10,6 +10,7 @@ export interface Stat {
   stat: {
     ref: string
     dp?: true
+    unscalable?: true
     matchers: StatMatcher[]
   }
   trade: {

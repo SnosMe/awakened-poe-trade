@@ -1562,6 +1562,7 @@
   {
     "stat": {
       "ref": "#% chance to Avoid being Poisoned",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Avoid being Poisoned"}, {"string": "Cannot be Poisoned", "value": 100}]
     },
     "trade": {
@@ -1601,6 +1602,7 @@
   {
     "stat": {
       "ref": "#% chance to Avoid being Stunned",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Avoid being Stunned"}, {"string": "Cannot be Stunned", "value": 100}]
     },
     "trade": {
@@ -1616,6 +1618,7 @@
   {
     "stat": {
       "ref": "#% Chance to avoid being Stunned during Flask Effect",
+      "unscalable": true,
       "matchers": [
         {"string": "#% Chance to avoid being Stunned during Flask Effect"},
         {"string": "Cannot be Stunned during Flask Effect", "value": 100}
@@ -1633,6 +1636,7 @@
   {
     "stat": {
       "ref": "#% chance to avoid Bleeding",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to avoid Bleeding"},
         {"string": "Bleeding cannot be inflicted on you", "value": 100}
@@ -1859,6 +1863,7 @@
   {
     "stat": {
       "ref": "#% chance to Cause Bleeding on Critical Strike",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Cause Bleeding on Critical Strike"},
         {"string": "Cause Bleeding on Critical Strike", "value": 100},
@@ -2006,6 +2011,7 @@
   {
     "stat": {
       "ref": "#% chance to Curse Enemies with Socketed Hex Curse Gem on Hit",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Curse Enemies with Socketed Hex Curse Gem on Hit"},
         {"string": "Curse Enemies with Socketed Hex Curse Gem on Hit", "value": 100}
@@ -2255,6 +2261,7 @@
   {
     "stat": {
       "ref": "#% chance to Freeze",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Freeze"},
         {"string": "Always Freeze", "value": 100},
@@ -2334,6 +2341,7 @@
   {
     "stat": {
       "ref": "#% chance to gain a Frenzy Charge on Critical Strike",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to gain a Frenzy Charge on Critical Strike"},
         {"string": "Gain a Frenzy Charge on Critical Strike", "value": 100}
@@ -2595,6 +2603,7 @@
   {
     "stat": {
       "ref": "#% chance to gain an Endurance Charge on Kill",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to gain an Endurance Charge on Kill"},
         {"string": "Gain an Endurance Charge on Kill", "value": 100},
@@ -3605,6 +3614,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Commandment of Inferno on Critical Strike",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Commandment of Inferno on Critical Strike"},
         {"string": "Trigger Commandment of Inferno on Critical Strike", "value": 100}
@@ -4015,6 +4025,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 1 Blood Rage when you Kill an Enemy",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 1 Blood Rage when you Kill an Enemy"},
         {"string": "Trigger Level 1 Blood Rage when you Kill an Enemy", "value": 100}
@@ -4031,6 +4042,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 1 Create Lesser Shrine when you Kill an Enemy",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 1 Create Lesser Shrine when you Kill an Enemy"},
         {"string": "Trigger Level 1 Create Lesser Shrine when you Kill an Enemy", "value": 100}
@@ -4041,6 +4053,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 1 Raise Spiders on Kill",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Trigger Level 1 Raise Spiders on Kill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3844016207"]}}
@@ -4048,6 +4061,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 16 Molten Burst on Melee Hit",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Trigger Level 16 Molten Burst on Melee Hit"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4125471110"]}}
@@ -4055,6 +4069,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 18 Animate Guardian's Weapon when Animated Weapon Kills an Enemy",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 18 Animate Guardian's Weapon when Animated Weapon Kills an Enemy"},
         {"string": "Trigger Level 18 Animate Guardian's Weapon when Animated Weapon Kills an Enemy", "value": 100}
@@ -4065,6 +4080,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 20 Animate Guardian's Weapon when Animated Guardian Kills an Enemy",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 20 Animate Guardian's Weapon when Animated Guardian Kills an Enemy"},
         {"string": "Trigger Level 20 Animate Guardian's Weapon when Animated Guardian Kills an Enemy", "value": 100}
@@ -4075,6 +4091,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 20 Animate Weapon on Kill",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Trigger Level 20 Animate Weapon on Kill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1973890509"]}}
@@ -4092,6 +4109,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 20 Glimpse of Eternity when Hit",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 20 Glimpse of Eternity when Hit"},
         {"string": "Trigger Level 20 Glimpse of Eternity when Hit", "value": 100}
@@ -4102,6 +4120,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 20 Shade Form when you Use a Socketed Skill",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Trigger Level 20 Shade Form when you Use a Socketed Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3308936917"]}}
@@ -4109,6 +4128,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Trigger Level 20 Summon Volatile Anomaly on Kill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2143990571"]}}
@@ -4116,6 +4136,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 20 Tentacle Whip on Kill",
+      "unscalable": true,
       "matchers": [{"string": "#% chance to Trigger Level 20 Tentacle Whip on Kill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1350938937"]}}
@@ -4123,6 +4144,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon"},
         {"string": "Trigger Level 25 Summon Spectral Wolf on Critical Strike with this Weapon", "value": 100}
@@ -4133,6 +4155,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 8 Summon Raging Spirit on Kill"},
         {"string": "Trigger Level 8 Summon Raging Spirit on Kill", "value": 100}
@@ -4143,6 +4166,7 @@
   {
     "stat": {
       "ref": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill, with a 0.25 second Cooldown",
+      "unscalable": true,
       "matchers": [
         {
           "string": "#% chance to Trigger Socketed Curse Skill when you cast a Curse Skill, with a 0.25 second Cooldown"
@@ -6381,6 +6405,7 @@
   {
     "stat": {
       "ref": "#% increased Charges used",
+      "unscalable": true,
       "matchers": [{"string": "#% increased Charges used"}, {"string": "#% reduced Charges used", "negate": true}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_388617051"], "enchant": ["enchant.stat_388617051"]}}
@@ -7022,6 +7047,7 @@
   {
     "stat": {
       "ref": "#% increased Critical Strike Chance if you haven't dealt a Critical Strike Recently",
+      "unscalable": true,
       "matchers": [
         {"string": "#% increased Critical Strike Chance if you haven't Crit Recently"},
         {"string": "#% increased Critical Strike Chance if you haven't dealt a Critical Strike Recently"},
@@ -8494,6 +8520,7 @@
   {
     "stat": {
       "ref": "#% increased Duration",
+      "unscalable": true,
       "matchers": [{"string": "#% increased Duration"}, {"string": "#% reduced Duration", "negate": true}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1256719186"], "enchant": ["enchant.stat_1256719186"]}}
@@ -8608,6 +8635,7 @@
   {
     "stat": {
       "ref": "#% increased effect",
+      "unscalable": true,
       "matchers": [{"string": "#% increased effect"}, {"string": "#% reduced effect", "negate": true}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2448920197"], "enchant": ["enchant.stat_2448920197"]}}
@@ -8627,6 +8655,7 @@
   {
     "stat": {
       "ref": "#% increased Effect of Buffs granted by Socketed Golem Skills",
+      "unscalable": true,
       "matchers": [{"string": "#% increased Effect of Buffs granted by Socketed Golem Skills"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2813516522"]}}
@@ -11924,6 +11953,7 @@
   {
     "stat": {
       "ref": "#% increased Movement Speed for you and nearby Allies",
+      "unscalable": true,
       "matchers": [
         {"string": "#% increased Movement Speed for you and nearby Allies"},
         {"string": "#% reduced Movement Speed for you and nearby Allies", "negate": true}
@@ -12304,6 +12334,7 @@
   {
     "stat": {
       "ref": "#% increased Physical Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "No Physical Damage", "value": -1},
         {"string": "#% increased Physical Damage"},
@@ -12352,6 +12383,7 @@
   {
     "stat": {
       "ref": "#% increased Physical Damage per Endurance Charge",
+      "unscalable": true,
       "matchers": [
         {"string": "#% increased Physical Damage per Endurance Charge"},
         {"string": "#% reduced Physical Damage per Endurance Charge", "negate": true}
@@ -13278,6 +13310,7 @@
   {
     "stat": {
       "ref": "#% increased Recovery when on Low Life",
+      "unscalable": true,
       "matchers": [{"string": "#% increased Recovery when on Low Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_886931978"]}}
@@ -15755,6 +15788,7 @@
   {
     "stat": {
       "ref": "#% of Recovery applied Instantly",
+      "unscalable": true,
       "matchers": [{"string": "#% of Recovery applied Instantly"}, {"string": "Instant Recovery", "value": 100}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1526933524", "explicit.stat_2503377690"]}}
@@ -15977,6 +16011,7 @@
   {
     "stat": {
       "ref": "#% reduced Elemental Damage taken while stationary",
+      "unscalable": true,
       "matchers": [
         {"string": "#% increased Elemental Damage taken while stationary"},
         {"string": "#% increased Elemental Damage Taken while stationary"},
@@ -16365,6 +16400,7 @@
   {
     "stat": {
       "ref": "+# Armour while you do not have Avatar of Fire",
+      "unscalable": true,
       "matchers": [{"string": "# Armour while you do not have Avatar of Fire"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4078952782"]}}
@@ -17400,7 +17436,7 @@
     "trade": {"ids": {"enchant": ["enchant.stat_4218649240"]}}
   },
   {
-    "stat": {"ref": "+# to Maximum Charges", "matchers": [{"string": "# to Maximum Charges"}]},
+    "stat": {"ref": "+# to Maximum Charges", "unscalable": true, "matchers": [{"string": "# to Maximum Charges"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1437957544"], "enchant": ["enchant.stat_1437957544"]}}
   },
   {
@@ -24418,6 +24454,7 @@
   {
     "stat": {
       "ref": "Areas contain an additional Essence",
+      "unscalable": true,
       "matchers": [
         {"string": "Area contains # additional Essences"},
         {"string": "Areas contain # additional Essences"},
@@ -24975,6 +25012,7 @@
   {
     "stat": {
       "ref": "Attacks have #% chance to cause Bleeding",
+      "unscalable": true,
       "matchers": [
         {"string": "Attacks cannot cause Bleeding", "value": -1},
         {"string": "Attacks have #% chance to cause Bleeding"},
@@ -26341,6 +26379,7 @@
   {
     "stat": {
       "ref": "Chill Effect and Freeze Duration on you are based on #% of Energy Shield",
+      "unscalable": true,
       "matchers": [{"string": "Chill Effect and Freeze Duration on you are based on #% of Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1194648995"]}}
@@ -26449,7 +26488,7 @@
     "trade": {"ids": {"enchant": ["enchant.stat_3206904707"]}}
   },
   {
-    "stat": {"ref": "Cold Resistance is #%", "matchers": [{"string": "Cold Resistance is #%"}]},
+    "stat": {"ref": "Cold Resistance is #%", "unscalable": true, "matchers": [{"string": "Cold Resistance is #%"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_496075050"]}}
   },
   {
@@ -26592,6 +26631,7 @@
   {
     "stat": {
       "ref": "Consecrated Ground you create while affected by Zealotry causes enemies to take #% increased Damage",
+      "unscalable": true,
       "matchers": [
         {
           "string": "Consecrated Ground you create while affected by Zealotry causes enemies to take #% increased Damage"
@@ -26645,6 +26685,7 @@
   {
     "stat": {
       "ref": "Consumes a Void Charge to Trigger Level # Void Shot when you fire Arrows with a Non-Triggered Skill",
+      "unscalable": true,
       "matchers": [
         {
           "string": "Consumes a Void Charge to Trigger Level # Void Shot when you fire Arrows with a Non-Triggered Skill"
@@ -27436,6 +27477,7 @@
   {
     "stat": {
       "ref": "Deals # Chaos Damage per second to nearby Enemies",
+      "unscalable": true,
       "matchers": [{"string": "Deals # Chaos Damage per second to nearby Enemies"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2280313599"]}}
@@ -27834,6 +27876,7 @@
   {
     "stat": {
       "ref": "Effects of Consecrated Ground you create Linger for 1 second",
+      "unscalable": true,
       "matchers": [
         {"string": "Effects of Consecrated Ground you create Linger for # seconds"},
         {"string": "Effects of Consecrated Ground you create Linger for 1 second", "value": 1}
@@ -27844,6 +27887,7 @@
   {
     "stat": {
       "ref": "Effects of Consecrated Ground you create while affected by Zealotry Linger for # seconds",
+      "unscalable": true,
       "matchers": [
         {"string": "Effects of Consecrated Ground you create while affected by Zealotry Linger for # seconds"}
       ]
@@ -28624,7 +28668,7 @@
     "trade": {"ids": {"enchant": ["enchant.stat_3574578302"]}}
   },
   {
-    "stat": {"ref": "Fire Resistance is #%", "matchers": [{"string": "Fire Resistance is #%"}]},
+    "stat": {"ref": "Fire Resistance is #%", "unscalable": true, "matchers": [{"string": "Fire Resistance is #%"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_763311546"]}}
   },
   {
@@ -28986,6 +29030,7 @@
   {
     "stat": {
       "ref": "Gain # Endurance Charge every second if you've been Hit Recently",
+      "unscalable": true,
       "matchers": [
         {"string": "Gain # Endurance Charge every second if you've been Hit Recently"},
         {"string": "Gain # Endurance Charges every second if you've been Hit Recently"}
@@ -29151,6 +29196,7 @@
   {
     "stat": {
       "ref": "Gain #% of Maximum Mana as Extra Maximum Energy Shield",
+      "unscalable": true,
       "matchers": [{"string": "Gain #% of Maximum Mana as Extra Maximum Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2663376056"]}}
@@ -29469,6 +29515,7 @@
   {
     "stat": {
       "ref": "Gain a Void Charge every # seconds",
+      "unscalable": true,
       "matchers": [
         {"string": "Gain a Void Charge every # seconds"},
         {"string": "Gain a Void Charge every second", "value": 1}
@@ -29612,6 +29659,7 @@
   {
     "stat": {
       "ref": "Gain Onslaught for # seconds when you Cast Socketed Golem Skill",
+      "unscalable": true,
       "matchers": [{"string": "Gain Onslaught for # seconds when you Cast Socketed Golem Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1693676706"]}}
@@ -30064,7 +30112,11 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3686711832"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Anger Skill", "matchers": [{"string": "Grants Level # Anger Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Anger Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Anger Skill"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_449494711", "explicit.stat_484879947"],
@@ -30075,6 +30127,7 @@
   {
     "stat": {
       "ref": "Grants Level # Aspect of the Avian Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Aspect of the Avian Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3914740665"], "fractured": ["fractured.stat_3914740665"]}}
@@ -30082,6 +30135,7 @@
   {
     "stat": {
       "ref": "Grants Level # Aspect of the Cat Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Aspect of the Cat Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1265282021"], "fractured": ["fractured.stat_1265282021"]}}
@@ -30089,6 +30143,7 @@
   {
     "stat": {
       "ref": "Grants Level # Aspect of the Crab Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Aspect of the Crab Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4102318278"], "fractured": ["fractured.stat_4102318278"]}}
@@ -30096,21 +30151,31 @@
   {
     "stat": {
       "ref": "Grants Level # Aspect of the Spider Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Aspect of the Spider Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_956546305"], "fractured": ["fractured.stat_956546305"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Bear Trap Skill", "matchers": [{"string": "Grants Level # Bear Trap Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Bear Trap Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Bear Trap Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3541114083"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Blight Skill", "matchers": [{"string": "Grants Level # Blight Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Blight Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Blight Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1198418726"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Blood Offering Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Blood Offering Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3985468650"]}}
@@ -30118,36 +30183,65 @@
   {
     "stat": {
       "ref": "Grants Level # Blood Sacrament Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Blood Sacrament Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_738386056"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Brandsurge Skill", "matchers": [{"string": "Grants Level # Brandsurge Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Brandsurge Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Brandsurge Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2859437049"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Clarity Skill", "matchers": [{"string": "Grants Level # Clarity Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Clarity Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Clarity Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3511815065"], "implicit": ["implicit.stat_3511815065"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Conductivity Skill", "matchers": [{"string": "Grants Level # Conductivity Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Conductivity Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Conductivity Skill"}]
+    },
     "trade": {"ids": {"implicit": ["implicit.stat_461472247"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Dash Skill", "matchers": [{"string": "Grants Level # Dash Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Dash Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Dash Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3883691934"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Death Aura Skill", "matchers": [{"string": "Grants Level # Death Aura Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Death Aura Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Death Aura Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_825352061"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Death Wish Skill", "matchers": [{"string": "Grants Level # Death Wish Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Death Wish Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Death Wish Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1965393792"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Decoy Totem Skill", "matchers": [{"string": "Grants Level # Decoy Totem Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Decoy Totem Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Decoy Totem Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3566242751"]}}
   },
   {
@@ -30158,12 +30252,17 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1604995720"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Despair Skill", "matchers": [{"string": "Grants Level # Despair Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Despair Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Despair Skill"}]
+    },
     "trade": {"ids": {"implicit": ["implicit.stat_2044547677"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Determination Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Determination Skill"}]
     },
     "trade": {
@@ -30174,7 +30273,11 @@
     }
   },
   {
-    "stat": {"ref": "Grants Level # Discipline Skill", "matchers": [{"string": "Grants Level # Discipline Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Discipline Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Discipline Skill"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_2341269061", "explicit.stat_2578176147"],
@@ -30185,6 +30288,7 @@
   {
     "stat": {
       "ref": "Grants Level # Doryani's Touch Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Doryani's Touch Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2498303876"]}}
@@ -30192,39 +30296,65 @@
   {
     "stat": {
       "ref": "Grants Level # Embrace Madness Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Embrace Madness Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1749783861"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Enduring Cry Skill", "matchers": [{"string": "Grants Level # Enduring Cry Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Enduring Cry Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Enduring Cry Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1031644844"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Envy Skill", "matchers": [{"string": "Grants Level # Envy Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Envy Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Envy Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_52953650"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Flammability Skill", "matchers": [{"string": "Grants Level # Flammability Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Flammability Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Flammability Skill"}]
+    },
     "trade": {"ids": {"implicit": ["implicit.stat_2209668839"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Frostbite Skill", "matchers": [{"string": "Grants Level # Frostbite Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Frostbite Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Frostbite Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1169502663"], "implicit": ["implicit.stat_1169502663"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Frostblink Skill", "matchers": [{"string": "Grants Level # Frostblink Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Frostblink Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Frostblink Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2911866787"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Gluttony of Elements Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Gluttony of Elements Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3321235265"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Grace Skill", "matchers": [{"string": "Grants Level # Grace Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Grace Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Grace Skill"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_2867050084", "explicit.stat_3914774028"],
@@ -30233,7 +30363,11 @@
     }
   },
   {
-    "stat": {"ref": "Grants Level # Haste Skill", "matchers": [{"string": "Grants Level # Haste Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Haste Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Haste Skill"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_1188846263", "explicit.stat_2923442950"],
@@ -30242,7 +30376,11 @@
     }
   },
   {
-    "stat": {"ref": "Grants Level # Hatred Skill", "matchers": [{"string": "Grants Level # Hatred Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Hatred Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Hatred Skill"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_178394804", "explicit.stat_2429546158"],
@@ -30253,6 +30391,7 @@
   {
     "stat": {
       "ref": "Grants Level # Herald of Ash Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Herald of Ash Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3880462354"]}}
@@ -30260,6 +30399,7 @@
   {
     "stat": {
       "ref": "Grants Level # Herald of Ice Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Herald of Ice Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3846248551"]}}
@@ -30267,17 +30407,23 @@
   {
     "stat": {
       "ref": "Grants Level # Herald of Thunder Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Herald of Thunder Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1665492921"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Icestorm Skill", "matchers": [{"string": "Grants Level # Icestorm Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Icestorm Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Icestorm Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2103009393"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Illusory Warp Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Illusory Warp Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3279574030"]}}
@@ -30285,6 +30431,7 @@
   {
     "stat": {
       "ref": "Grants Level # Intimidating Cry Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Intimidating Cry Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1271338211"]}}
@@ -30292,32 +30439,47 @@
   {
     "stat": {
       "ref": "Grants Level # Lightning Warp Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Lightning Warp Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_243713911"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Malevolence Skill", "matchers": [{"string": "Grants Level # Malevolence Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Malevolence Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Malevolence Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3086585712"], "implicit": ["implicit.stat_2148556029"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Petrification Statue Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Petrification Statue Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1904419785"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Precision Skill", "matchers": [{"string": "Grants Level # Precision Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Precision Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Precision Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2721815210"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Pride Skill", "matchers": [{"string": "Grants Level # Pride Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Pride Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Pride Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3612470379"], "implicit": ["implicit.stat_4184565463"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Purity of Elements Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Purity of Elements Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_105466375"], "implicit": ["implicit.stat_105466375"]}}
@@ -30325,6 +30487,7 @@
   {
     "stat": {
       "ref": "Grants Level # Purity of Fire Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Purity of Fire Skill"}]
     },
     "trade": {
@@ -30337,6 +30500,7 @@
   {
     "stat": {
       "ref": "Grants Level # Purity of Ice Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Purity of Ice Skill"}]
     },
     "trade": {
@@ -30349,6 +30513,7 @@
   {
     "stat": {
       "ref": "Grants Level # Purity of Lightning Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Purity of Lightning Skill"}]
     },
     "trade": {
@@ -30366,31 +30531,49 @@
     "trade": {"ids": {"explicit": ["explicit.stat_509572644"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Rallying Cry Skill", "matchers": [{"string": "Grants Level # Rallying Cry Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Rallying Cry Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Rallying Cry Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2007746338"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Reckoning Skill", "matchers": [{"string": "Grants Level # Reckoning Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Reckoning Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Reckoning Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2434330144"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Scorching Ray Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Scorching Ray Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1540840"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Smite Skill", "matchers": [{"string": "Grants Level # Smite Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Smite Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Smite Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_979973117"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Snipe Skill", "matchers": [{"string": "Grants Level # Snipe Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Snipe Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Snipe Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2343098806"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Summon Doedre's Effigy Skill\nSocketed Hex Curse Skills are Triggered by Doedre's Effigy when Summoned\nHexes from Socketed Skills ignore Curse Limit",
+      "unscalable": true,
       "matchers": [
         {
           "string": "Grants Level # Summon Doedre's Effigy Skill\nSocketed Hex Curse Skills are Triggered by Doedre's Effigy when Summoned\nHexes from Socketed Skills ignore Curse Limit"
@@ -30402,6 +30585,7 @@
   {
     "stat": {
       "ref": "Grants Level # Summon Stone Golem Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Summon Stone Golem Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3056188914"]}}
@@ -30409,17 +30593,23 @@
   {
     "stat": {
       "ref": "Grants Level # Thirst for Blood Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Thirst for Blood Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1209807941"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Unhinge Skill", "matchers": [{"string": "Grants Level # Unhinge Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Unhinge Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Unhinge Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3239991868"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Vaal Impurity of Fire Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Vaal Impurity of Fire Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2700934265"]}}
@@ -30427,6 +30617,7 @@
   {
     "stat": {
       "ref": "Grants Level # Vaal Impurity of Ice Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Vaal Impurity of Ice Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1300125165"]}}
@@ -30434,27 +30625,41 @@
   {
     "stat": {
       "ref": "Grants Level # Vaal Impurity of Lightning Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Vaal Impurity of Lightning Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2959369472"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Vengeance Skill", "matchers": [{"string": "Grants Level # Vengeance Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Vengeance Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Vengeance Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_4122367945"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Vitality Skill", "matchers": [{"string": "Grants Level # Vitality Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Vitality Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Vitality Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2410613176"], "implicit": ["implicit.stat_2410613176"]}}
   },
   {
     "stat": {
       "ref": "Grants Level # Wintertide Brand Skill",
+      "unscalable": true,
       "matchers": [{"string": "Grants Level # Wintertide Brand Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1826753218"]}}
   },
   {
-    "stat": {"ref": "Grants Level # Wrath Skill", "matchers": [{"string": "Grants Level # Wrath Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Wrath Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Wrath Skill"}]
+    },
     "trade": {
       "ids": {
         "explicit": ["explicit.stat_1568319697", "explicit.stat_2265307453"],
@@ -30463,7 +30668,11 @@
     }
   },
   {
-    "stat": {"ref": "Grants Level # Zealotry Skill", "matchers": [{"string": "Grants Level # Zealotry Skill"}]},
+    "stat": {
+      "ref": "Grants Level # Zealotry Skill",
+      "unscalable": true,
+      "matchers": [{"string": "Grants Level # Zealotry Skill"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_3734675602"], "implicit": ["implicit.stat_3224664127"]}}
   },
   {
@@ -31118,6 +31327,7 @@
   {
     "stat": {
       "ref": "Hits against Nearby Enemies have #% increased Critical Strike Chance",
+      "unscalable": true,
       "matchers": [
         {"string": "Hits against Nearby Enemies have #% increased Critical Strike Chance"},
         {"string": "Hits against Nearby Enemies have #% reduced Critical Strike Chance", "negate": true}
@@ -32490,7 +32700,11 @@
     "trade": {"ids": {"explicit": ["explicit.stat_3999959974"]}}
   },
   {
-    "stat": {"ref": "Lightning Resistance is #%", "matchers": [{"string": "Lightning Resistance is #%"}]},
+    "stat": {
+      "ref": "Lightning Resistance is #%",
+      "unscalable": true,
+      "matchers": [{"string": "Lightning Resistance is #%"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1942151132"]}}
   },
   {
@@ -32870,6 +33084,7 @@
   {
     "stat": {
       "ref": "Map has # additional random Prefix",
+      "unscalable": true,
       "matchers": [{"string": "Map has # additional random Prefix"}, {"string": "Map has # additional random Prefixes"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_23537505"]}}
@@ -32877,6 +33092,7 @@
   {
     "stat": {
       "ref": "Map has # additional random Suffix",
+      "unscalable": true,
       "matchers": [{"string": "Map has # additional random Suffix"}, {"string": "Map has # additional random Suffixes"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1153966848"]}}
@@ -33845,7 +34061,7 @@
     "trade": {"ids": {"enchant": ["enchant.stat_995860222"]}}
   },
   {
-    "stat": {"ref": "Monster Level: #", "matchers": [{"string": "Monster Level: #"}]},
+    "stat": {"ref": "Monster Level: #", "unscalable": true, "matchers": [{"string": "Monster Level: #"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_284496119"]}}
   },
   {
@@ -34211,6 +34427,7 @@
   {
     "stat": {
       "ref": "Monsters with Silver Coins drop an additional Silver Coin",
+      "unscalable": true,
       "matchers": [
         {"string": "Monsters with Silver Coins drop # additional Silver Coins"},
         {"string": "Monsters with Silver Coins drop an additional Silver Coin", "value": 1}
@@ -34260,6 +34477,7 @@
   {
     "stat": {
       "ref": "Nearby allies gain #% increased Damage",
+      "unscalable": true,
       "matchers": [{"string": "Nearby allies gain #% increased Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3175679225"]}}
@@ -34267,6 +34485,7 @@
   {
     "stat": {
       "ref": "Nearby Allies gain #% increased Mana Regeneration Rate",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Allies gain #% increased Mana Regeneration Rate"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1370753114"]}}
@@ -34274,6 +34493,7 @@
   {
     "stat": {
       "ref": "Nearby Allies gain #% of Life Regenerated per second",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Allies gain #% of Life Regenerated per second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1688975080"]}}
@@ -34301,6 +34521,7 @@
   {
     "stat": {
       "ref": "Nearby Allies have #% increased Item Rarity",
+      "unscalable": true,
       "matchers": [
         {"string": "Nearby Allies have #% increased Item Rarity"},
         {"string": "Nearby Allies have #% reduced Item Rarity", "negate": true}
@@ -34311,6 +34532,7 @@
   {
     "stat": {
       "ref": "Nearby Allies have +#% to Critical Strike Multiplier",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Allies have #% to Critical Strike Multiplier"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3152714748"]}}
@@ -34381,6 +34603,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies are Hindered, with #% reduced Movement Speed",
+      "unscalable": true,
       "matchers": [
         {"string": "Nearby Enemies are Hindered, with #% increased Movement Speed"},
         {"string": "Nearby Enemies are Hindered, with #% reduced Movement Speed", "negate": true}
@@ -34402,6 +34625,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies grant #% increased Flask Charges",
+      "unscalable": true,
       "matchers": [
         {"string": "Nearby Enemies grant #% increased Flask Charges"},
         {"string": "Nearby Enemies grant #% reduced Flask Charges", "negate": true}
@@ -34412,6 +34636,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have #% increased Effect of Curses on them",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies have #% increased Effect of Curses on them"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_443525707"]}}
@@ -34419,6 +34644,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have #% increased Fire and Cold Resistances",
+      "unscalable": true,
       "matchers": [
         {"string": "Nearby Enemies have #% increased Fire and Cold Resistances"},
         {"string": "Nearby Enemies have #% reduced Fire and Cold Resistances", "negate": true}
@@ -34429,6 +34655,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have #% reduced Stun and Block Recovery",
+      "unscalable": true,
       "matchers": [
         {"string": "Nearby Enemies have #% increased Stun and Block Recovery"},
         {"string": "Nearby Enemies have #% reduced Stun and Block Recovery", "negate": true}
@@ -34439,6 +34666,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have #% to all Resistances",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies have #% to all Resistances"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_668145148"]}}
@@ -34446,6 +34674,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have +#% to Chaos Resistance",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies have #% to Chaos Resistance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1902595112"], "fractured": ["fractured.stat_1902595112"]}}
@@ -34453,6 +34682,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have +#% to Cold Resistance",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies have #% to Cold Resistance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2674336304"], "fractured": ["fractured.stat_2674336304"]}}
@@ -34460,6 +34690,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have +#% to Fire Resistance",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies have #% to Fire Resistance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3914021960"], "fractured": ["fractured.stat_3914021960"]}}
@@ -34467,6 +34698,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies have +#% to Lightning Resistance",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies have #% to Lightning Resistance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1849749435"]}}
@@ -34485,6 +34717,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies take #% increased Elemental Damage",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies take #% increased Elemental Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_639595152"]}}
@@ -34492,6 +34725,7 @@
   {
     "stat": {
       "ref": "Nearby Enemies take #% increased Physical Damage",
+      "unscalable": true,
       "matchers": [{"string": "Nearby Enemies take #% increased Physical Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_415837237"]}}
@@ -34566,6 +34800,7 @@
   {
     "stat": {
       "ref": "Non-critical strikes deal #% more Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "Non-critical strikes deal #% more Damage"},
         {"string": "Non-critical strikes deal #% less Damage", "negate": true}
@@ -35562,7 +35797,11 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2835888248"], "fractured": ["fractured.stat_2835888248"]}}
   },
   {
-    "stat": {"ref": "Players in Area are #% Delirious", "matchers": [{"string": "Players in Area are #% Delirious"}]},
+    "stat": {
+      "ref": "Players in Area are #% Delirious",
+      "unscalable": true,
+      "matchers": [{"string": "Players in Area are #% Delirious"}]
+    },
     "trade": {"ids": {"enchant": ["enchant.stat_1715784068"]}}
   },
   {
@@ -36054,6 +36293,7 @@
   {
     "stat": {
       "ref": "Queen's Demand can Trigger Level # Flames of Judgement",
+      "unscalable": true,
       "matchers": [{"string": "Queen's Demand can Trigger Level # Flames of Judgement"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2766423342"]}}
@@ -36061,6 +36301,7 @@
   {
     "stat": {
       "ref": "Queen's Demand can Trigger Level # Storm of Judgement",
+      "unscalable": true,
       "matchers": [{"string": "Queen's Demand can Trigger Level # Storm of Judgement"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_758006884"]}}
@@ -37170,6 +37411,7 @@
   {
     "stat": {
       "ref": "Removes all but one Life on use\nRemoved life is Regenerated as Energy Shield over # seconds",
+      "unscalable": true,
       "matchers": [
         {"string": "Removes all but one Life on use\nRemoved life is Regenerated as Energy Shield over # seconds"}
       ]
@@ -38013,6 +38255,7 @@
   {
     "stat": {
       "ref": "Slaying Enemies close together in Areas has a #% chance to attract monsters from Beyond",
+      "unscalable": true,
       "matchers": [
         {"string": "Slaying Enemies close together has a #% chance to attract monsters from Beyond"},
         {"string": "Slaying Enemies close together in Areas has a #% chance to attract monsters from Beyond"},
@@ -38104,6 +38347,7 @@
   {
     "stat": {
       "ref": "Socketed Attacks have +# to Total Mana Cost",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Attacks have # to Total Mana Cost"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2264586521"], "fractured": ["fractured.stat_2264586521"]}}
@@ -38112,6 +38356,7 @@
     "stat": {
       "ref": "Socketed Attacks have +#% to Critical Strike Chance",
       "dp": true,
+      "unscalable": true,
       "matchers": [{"string": "Socketed Attacks have #% to Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2867348718"]}}
@@ -38119,6 +38364,7 @@
   {
     "stat": {
       "ref": "Socketed Attacks have +#% to Critical Strike Multiplier",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Attacks have #% to Critical Strike Multiplier"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_356456977"]}}
@@ -38126,6 +38372,7 @@
   {
     "stat": {
       "ref": "Socketed Curse Gems have #% reduced Reservation",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Curse Gems have #% increased Reservation"},
         {"string": "Socketed Curse Gems have #% reduced Reservation", "negate": true}
@@ -38136,6 +38383,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Added Chaos Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Added Chaos Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_128", "explicit.stat_411460446"]}}
@@ -38143,6 +38391,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Added Cold Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Added Cold Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_127", "explicit.stat_4020144606"]}}
@@ -38150,6 +38399,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Added Fire Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Added Fire Damage"}]
     },
     "trade": {
@@ -38162,6 +38412,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Added Lightning Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Added Lightning Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_125", "explicit.stat_1647529598"]}}
@@ -38169,6 +38420,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Additional Accuracy",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Additional Accuracy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1567462963"], "implicit": ["implicit.stat_1567462963"]}}
@@ -38176,6 +38428,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Advanced Traps",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Advanced Traps"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_6", "explicit.stat_3839163699"]}}
@@ -38183,6 +38436,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Ancestral Call",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Ancestral Call"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_14", "explicit.stat_696805682"]}}
@@ -38190,6 +38444,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Arcane Surge",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Arcane Surge"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_123", "explicit.stat_2287264161"]}}
@@ -38197,6 +38452,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Archmage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Archmage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_122", "explicit.stat_3652278215"]}}
@@ -38204,6 +38460,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Arrogance",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Arrogance"}]
     },
     "trade": {
@@ -38217,6 +38474,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Arrow Nova",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Arrow Nova"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_121", "explicit.stat_1331336999"]}}
@@ -38224,6 +38482,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Added Fire Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Added Fire Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_339131601"]}}
@@ -38231,6 +38490,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Brutality",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Brutality"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3610200044"]}}
@@ -38238,6 +38498,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Chain",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Chain"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2249251344"]}}
@@ -38245,6 +38506,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Elemental Damage With Attacks",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Elemental Damage With Attacks"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1786672841"]}}
@@ -38252,6 +38514,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Fork",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Fork"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1803865171"]}}
@@ -38259,6 +38522,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Greater Multiple Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Greater Multiple Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1980028507"]}}
@@ -38266,6 +38530,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Melee Physical Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Melee Physical Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2173069393"]}}
@@ -38273,6 +38538,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Melee Splash",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Melee Splash"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2253550081"]}}
@@ -38280,6 +38546,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Minion Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Minion Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2100048639"]}}
@@ -38287,6 +38554,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Multistrike",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Multistrike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_511417258"]}}
@@ -38294,6 +38562,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Swift Affliction",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Swift Affliction"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4089933397"]}}
@@ -38301,6 +38570,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Vicious Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Vicious Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2647355055"]}}
@@ -38308,6 +38578,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Ballista Totem",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Ballista Totem"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_27", "explicit.stat_3030692053"]}}
@@ -38315,6 +38586,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Barrage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Barrage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_120", "explicit.stat_3827538724"]}}
@@ -38322,6 +38594,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Blasphemy",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Blasphemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_119", "explicit.stat_539747809"]}}
@@ -38329,6 +38602,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Blastchain Mine",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Blastchain Mine"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_23", "explicit.stat_1710508327"]}}
@@ -38336,6 +38610,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Blessing",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Blessing"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3274973940"]}}
@@ -38343,6 +38618,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Blind",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Blind"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2223640518"], "implicit": ["implicit.stat_2223640518"]}}
@@ -38350,6 +38626,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Bloodlust",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Bloodlust"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_117", "explicit.stat_804508379"]}}
@@ -38357,6 +38634,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Bloodthirst",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Bloodthirst"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_135"]}}
@@ -38364,6 +38642,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Bonechill",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Bonechill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_115", "explicit.stat_1859244771"]}}
@@ -38371,6 +38650,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Brutality",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Brutality"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_114", "explicit.stat_715256302"]}}
@@ -38378,6 +38658,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Burning Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Burning Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_68", "explicit.stat_2680613507"]}}
@@ -38385,6 +38666,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Cast On Critical Strike",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Cast On Critical Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2325632050"], "implicit": ["implicit.stat_2325632050"]}}
@@ -38392,6 +38674,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Cast on Death",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Cast on Death"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3878987051"]}}
@@ -38399,6 +38682,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cast On Melee Kill",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cast On Melee Kill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3312593243"]}}
@@ -38406,6 +38690,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cast when Damage Taken",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cast when Damage Taken"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_112", "explicit.stat_3036440332"]}}
@@ -38413,6 +38698,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Cast when Stunned",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Cast when Stunned"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1079148723"], "implicit": ["implicit.stat_1079148723"]}}
@@ -38420,6 +38706,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cast While Channelling",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cast While Channelling"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1316646496"]}}
@@ -38427,6 +38714,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Chain",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Chain"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_107", "explicit.stat_2643665787"]}}
@@ -38434,6 +38722,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Chance To Bleed",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems are supported by Level # Chance to Bleed"},
         {"string": "Socketed Gems are Supported by Level # Chance To Bleed"}
@@ -38444,6 +38733,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Chance to Flee",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Chance to Flee"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_952060721"]}}
@@ -38451,6 +38741,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Charged Mines",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Charged Mines"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_103"]}}
@@ -38458,6 +38749,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Charged Traps",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Charged Traps"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_78", "explicit.stat_479453859"]}}
@@ -38465,6 +38757,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Close Combat",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Close Combat"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_102", "explicit.stat_694651314"]}}
@@ -38472,6 +38765,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cluster Trap",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cluster Trap"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2854183975"]}}
@@ -38479,6 +38773,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cold Penetration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cold Penetration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_100", "explicit.stat_1991958615"]}}
@@ -38486,6 +38781,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cold to Fire",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cold to Fire"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_99", "explicit.stat_550444281"]}}
@@ -38493,6 +38789,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Combustion",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Combustion"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_105", "explicit.stat_1828254451"]}}
@@ -38500,6 +38797,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Concentrated Effect",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Concentrated Effect"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_98", "explicit.stat_2388360415"]}}
@@ -38507,6 +38805,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Controlled Destruction",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Controlled Destruction"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_97", "explicit.stat_3718597497"]}}
@@ -38514,6 +38813,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Cruelty",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Cruelty"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_136"]}}
@@ -38521,6 +38821,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Culling Strike",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Culling Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_96", "explicit.stat_1135493957"]}}
@@ -38528,6 +38829,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Damage On Full Life",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Damage On Full Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2126431157"]}}
@@ -38535,6 +38837,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Deadly Ailments",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Deadly Ailments"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_94", "explicit.stat_103909236"]}}
@@ -38542,6 +38845,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Decay",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Decay"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_92", "explicit.stat_388696990"]}}
@@ -38549,6 +38853,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Efficacy",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Efficacy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_91", "explicit.stat_3924539382"]}}
@@ -38556,6 +38861,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Elemental Army Support",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Elemental Army Support"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_514705332"]}}
@@ -38563,6 +38869,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Elemental Damage with Attacks",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Elemental Damage with Attacks"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2532625478"], "implicit": ["implicit.stat_2532625478"]}}
@@ -38570,6 +38877,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Elemental Focus",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Elemental Focus"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_90", "explicit.stat_1169422227"]}}
@@ -38577,6 +38885,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Elemental Penetration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Elemental Penetration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1994143317"]}}
@@ -38584,6 +38893,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Elemental Proliferation",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Elemental Proliferation"}]
     },
     "trade": {
@@ -38596,6 +38906,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Empower",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Empower"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3581578643"]}}
@@ -38603,6 +38914,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Endurance Charge on Melee Stun",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Endurance Charge on Melee Stun"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_88", "explicit.stat_3375208082"]}}
@@ -38610,6 +38922,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Energy Leech",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Energy Leech"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_87", "explicit.stat_799443127"]}}
@@ -38617,6 +38930,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Enhance",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Enhance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2556436882"]}}
@@ -38624,6 +38938,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Enlighten",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Enlighten"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2065361612"]}}
@@ -38631,6 +38946,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Faster Attacks",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Faster Attacks"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_86", "explicit.stat_928701213"]}}
@@ -38638,6 +38954,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Faster Casting",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Faster Casting"}]
     },
     "trade": {
@@ -38650,6 +38967,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Faster Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Faster Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_99089516"], "implicit": ["implicit.stat_99089516"]}}
@@ -38657,6 +38975,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Feeding Frenzy",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Feeding Frenzy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_83", "explicit.stat_2269282877"]}}
@@ -38664,6 +38983,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Fire Penetration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Fire Penetration"}]
     },
     "trade": {
@@ -38673,6 +38993,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Fist of War",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Fist of War"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_129"]}}
@@ -38680,6 +39001,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Fork",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Fork"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2062753054"], "implicit": ["implicit.stat_2062753054"]}}
@@ -38687,6 +39009,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Fortify",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Fortify"}]
     },
     "trade": {
@@ -38699,6 +39022,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Generosity",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Generosity"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_77", "explicit.stat_2593773031"]}}
@@ -38706,6 +39030,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Greater Multiple Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Greater Multiple Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_1", "explicit.stat_359450079"]}}
@@ -38713,6 +39038,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Greater Spell Echo",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Greater Spell Echo"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3388448323"]}}
@@ -38720,6 +39046,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Greater Volley",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Greater Volley"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_75", "explicit.stat_2223565123"]}}
@@ -38727,6 +39054,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Hextouch",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Hextouch"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_95", "explicit.stat_2697741965"]}}
@@ -38734,6 +39062,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # High-Impact Mine",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # High-Impact Mine"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_22", "explicit.stat_2116100988"]}}
@@ -38741,6 +39070,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Hypothermia",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Hypothermia"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_74", "explicit.stat_13669281"]}}
@@ -38748,6 +39078,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Ice Bite",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Ice Bite"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_73", "explicit.stat_1384629003"]}}
@@ -38755,6 +39086,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Ignite Proliferation",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Ignite Proliferation"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_72", "explicit.stat_3593797653"]}}
@@ -38762,6 +39094,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Immolate",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Immolate"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_71", "explicit.stat_2420410470"]}}
@@ -38769,6 +39102,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Impale",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Impale"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_70", "explicit.stat_1900098804"]}}
@@ -38776,6 +39110,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Impending Doom",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Impending Doom"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_133", "explicit.stat_3227145554"]}}
@@ -38783,6 +39118,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Increased Area of Effect",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Increased Area of Effect"}]
     },
     "trade": {
@@ -38795,6 +39131,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Increased Critical Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems are supported by Level # Increased Critical Damage"},
         {"string": "Socketed Gems are Supported by Level # Increased Critical Damage"}
@@ -38810,6 +39147,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Increased Critical Strikes",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Increased Critical Strikes"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_66", "explicit.stat_2259700079"]}}
@@ -38817,6 +39155,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Increased Duration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Increased Duration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_65", "explicit.stat_407317553"]}}
@@ -38824,6 +39163,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Infernal Legion",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Infernal Legion"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_61", "explicit.stat_2201102274"]}}
@@ -38831,6 +39171,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Infused Channelling",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Infused Channelling"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_13", "explicit.stat_4048257027"]}}
@@ -38838,6 +39179,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Innervate",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Innervate"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_60", "explicit.stat_1106668565"]}}
@@ -38845,6 +39187,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Inspiration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Inspiration"}]
     },
     "trade": {
@@ -38857,6 +39200,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Intensify",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Intensify"}]
     },
     "trade": {
@@ -38866,6 +39210,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Iron Grip",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Iron Grip"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_59", "explicit.stat_251446805"]}}
@@ -38873,6 +39218,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Iron Will",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Iron Will"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_58", "explicit.stat_906997920"]}}
@@ -38880,6 +39226,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Item Quantity",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Item Quantity"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_248646071"]}}
@@ -38887,6 +39234,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Item Rarity",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Item Rarity"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_57", "explicit.stat_3587013273"]}}
@@ -38894,6 +39242,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Knockback",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Knockback"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_56", "explicit.stat_4066711249"]}}
@@ -38901,6 +39250,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Less Duration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Less Duration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_25", "explicit.stat_2487643588"]}}
@@ -38908,6 +39258,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Lesser Multiple Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Lesser Multiple Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_55", "explicit.stat_584144941"]}}
@@ -38915,6 +39266,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Lesser Poison",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Lesser Poison"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_54", "explicit.stat_228165595"]}}
@@ -38922,6 +39274,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Life Gain On Hit",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Life Gain On Hit"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2032386732"], "implicit": ["implicit.stat_2032386732"]}}
@@ -38929,6 +39282,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Life Leech",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Life Leech"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_891277550"], "implicit": ["implicit.stat_891277550"]}}
@@ -38936,6 +39290,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Lifetap",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Lifetap"}]
     },
     "trade": {
@@ -38949,6 +39304,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Lightning Penetration",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Lightning Penetration"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_51", "explicit.stat_3354027870"]}}
@@ -38956,6 +39312,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Maim",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Maim"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_50", "explicit.stat_3826977109"]}}
@@ -38963,6 +39320,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Mana Leech",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Mana Leech"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_49", "explicit.stat_2608615082"]}}
@@ -38970,6 +39328,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Meat Shield",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Meat Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_48", "explicit.stat_858460086"]}}
@@ -38977,6 +39336,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Melee Physical Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Melee Physical Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_46", "explicit.stat_2985291457"]}}
@@ -38984,6 +39344,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Melee Splash",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Melee Splash"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1811422871"], "implicit": ["implicit.stat_1811422871"]}}
@@ -38991,6 +39352,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Minefield",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Minefield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_44", "explicit.stat_2805586447"]}}
@@ -38998,6 +39360,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Minion Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Minion Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_64", "explicit.stat_808939569"]}}
@@ -39005,6 +39368,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Minion Life",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Minion Life"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_63", "explicit.stat_1337327984"]}}
@@ -39012,6 +39376,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Minion Speed",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Minion Speed"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_62", "explicit.stat_995332031"]}}
@@ -39019,6 +39384,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Mirage Archer",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Mirage Archer"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_43", "explicit.stat_3239503729"]}}
@@ -39026,6 +39392,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Multiple Totems",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Multiple Totems"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_40", "explicit.stat_807186595"]}}
@@ -39033,6 +39400,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Multiple Traps",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Multiple Traps"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_39"]}}
@@ -39040,6 +39408,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Multistrike",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Multistrike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2501237765"], "implicit": ["implicit.stat_2501237765"]}}
@@ -39047,6 +39416,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Nightblade",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Nightblade"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_38"]}}
@@ -39054,6 +39424,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Onslaught",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Onslaught"}]
     },
     "trade": {
@@ -39066,6 +39437,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Physical To Lightning",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Physical To Lightning"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3327487371"]}}
@@ -39073,6 +39445,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Pierce",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems are supported by Level # Pierce"},
         {"string": "Socketed Gems are Supported by Level # Pierce"}
@@ -39085,6 +39458,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Pinpoint",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Pinpoint"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_132", "explicit.stat_1609369521"]}}
@@ -39092,6 +39466,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Point Blank",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Point Blank"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_32", "explicit.stat_3754129682"]}}
@@ -39099,6 +39474,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Poison",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Poison"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_31", "explicit.stat_2228279620"]}}
@@ -39106,6 +39482,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Power Charge On Critical Strike",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Power Charge On Critical Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_4015918489"]}}
@@ -39113,6 +39490,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Predator",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Predator"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_93", "explicit.stat_4082662318"]}}
@@ -39120,6 +39498,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Pulverise",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Pulverise"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_29", "explicit.stat_282757414"]}}
@@ -39127,6 +39506,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Rage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Rage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_28", "explicit.stat_369650395"]}}
@@ -39134,6 +39514,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Ruthless",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Ruthless"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_21", "explicit.stat_3796013729"]}}
@@ -39141,6 +39522,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Second Wind",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Second Wind"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_20", "explicit.stat_402499111"]}}
@@ -39148,6 +39530,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Shockwave",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Shockwave"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_19", "explicit.stat_1344789934"]}}
@@ -39155,6 +39538,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Slower Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Slower Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_18", "explicit.stat_1390285657"]}}
@@ -39162,6 +39546,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Spell Cascade",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Spell Cascade"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_17", "explicit.stat_503990161"]}}
@@ -39169,6 +39554,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Spell Echo",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Spell Echo"}]
     },
     "trade": {
@@ -39178,6 +39564,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Spell Totem",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Spell Totem"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_15", "explicit.stat_2962840349"]}}
@@ -39185,6 +39572,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are supported by Level # Stun",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are supported by Level # Stun"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_689720069"], "implicit": ["implicit.stat_689720069"]}}
@@ -39192,6 +39580,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Summon Phantasm",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Summon Phantasm"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_10", "explicit.stat_3155072742"]}}
@@ -39199,6 +39588,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Swift Affliction",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Swift Affliction"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_26", "explicit.stat_1636220212"]}}
@@ -39206,6 +39596,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Swift Assembly",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Swift Assembly"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_9", "explicit.stat_4021476585"]}}
@@ -39213,6 +39604,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Swiftbrand",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Swiftbrand"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_130", "explicit.stat_2127532091"]}}
@@ -39220,6 +39612,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Trap",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Trap"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_8", "explicit.stat_1122134690"]}}
@@ -39227,6 +39620,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Trap And Mine Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Trap And Mine Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3814066599"]}}
@@ -39241,6 +39635,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Unbound Ailments",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Unbound Ailments"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_5", "explicit.stat_3699494172"]}}
@@ -39248,6 +39643,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Unleash",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Unleash"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_4", "explicit.stat_3356013982"]}}
@@ -39255,6 +39651,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Urgent Orders",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Urgent Orders"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_131", "explicit.stat_1485525812"]}}
@@ -39262,6 +39659,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Vicious Projectiles",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Vicious Projectiles"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_35", "explicit.stat_2513293614"]}}
@@ -39269,6 +39667,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Vile Toxins",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Vile Toxins"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_3", "explicit.stat_1002855537"]}}
@@ -39276,6 +39675,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Void Manipulation",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Void Manipulation"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_2", "explicit.stat_1866583932"]}}
@@ -39283,6 +39683,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Volley",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Volley"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_36", "explicit.stat_2696557965"]}}
@@ -39290,6 +39691,7 @@
   {
     "stat": {
       "ref": "Socketed Gems are Supported by Level # Withering Touch",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems are Supported by Level # Withering Touch"}]
     },
     "trade": {"ids": {"explicit": ["explicit.indexable_support_104", "explicit.stat_3287477747"]}}
@@ -39304,6 +39706,7 @@
   {
     "stat": {
       "ref": "Socketed Gems Chain # additional times",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems Chain # additional times"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2788729902"]}}
@@ -39318,6 +39721,7 @@
   {
     "stat": {
       "ref": "Socketed Gems deal # to # Added Fire Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems deal # to # Added Fire Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1289910726"], "fractured": ["fractured.stat_1289910726"]}}
@@ -39325,6 +39729,7 @@
   {
     "stat": {
       "ref": "Socketed Gems deal #% more Damage over Time",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems deal #% more Damage over Time"},
         {"string": "Socketed Gems deal #% less Damage over Time", "negate": true}
@@ -39342,6 +39747,7 @@
   {
     "stat": {
       "ref": "Socketed Gems deal #% more Elemental Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems deal #% more Elemental Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3835899275"], "fractured": ["fractured.stat_3835899275"]}}
@@ -39349,6 +39755,7 @@
   {
     "stat": {
       "ref": "Socketed Gems fire an additional Projectile",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems fire # additional Projectiles"},
         {"string": "Socketed Gems fire an additional Projectile", "value": 1}
@@ -39366,6 +39773,7 @@
   {
     "stat": {
       "ref": "Socketed Gems gain #% of Physical Damage as extra Lightning Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems gain #% of Physical Damage as extra Lightning Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1859937391"], "fractured": ["fractured.stat_1859937391"]}}
@@ -39373,6 +39781,7 @@
   {
     "stat": {
       "ref": "Socketed Gems have #% chance to cause Enemies to Flee on Hit",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems have #% chance to cause Enemies to Flee on Hit"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3418772"]}}
@@ -39380,6 +39789,7 @@
   {
     "stat": {
       "ref": "Socketed Gems have #% chance to Ignite",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems have #% chance to Ignite"},
         {"string": "Socketed Gems always Ignite", "value": 100}
@@ -39390,6 +39800,7 @@
   {
     "stat": {
       "ref": "Socketed Gems have #% more Attack and Cast Speed",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems have #% more Attack and Cast Speed"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_346351023"], "fractured": ["fractured.stat_346351023"]}}
@@ -39397,6 +39808,7 @@
   {
     "stat": {
       "ref": "Socketed Gems have #% reduced Mana Cost",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems have #% reduced Mana Cost"},
         {"string": "Socketed Gems have #% increased Mana Cost", "negate": true}
@@ -39407,6 +39819,7 @@
   {
     "stat": {
       "ref": "Socketed Gems have #% reduced Reservation",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Gems have #% increased Reservation"},
         {"string": "Socketed Gems have #% reduced Reservation", "negate": true}
@@ -39421,6 +39834,7 @@
     "stat": {
       "ref": "Socketed Gems have +#% Critical Strike Chance",
       "dp": true,
+      "unscalable": true,
       "matchers": [{"string": "Socketed Gems have #% Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1681904129"], "fractured": ["fractured.stat_1681904129"]}}
@@ -39449,6 +39863,7 @@
   {
     "stat": {
       "ref": "Socketed Golem Skills gain #% of Maximum Life as Extra Maximum Energy Shield",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Golem Skills gain #% of Maximum Life as Extra Maximum Energy Shield"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1199118714"]}}
@@ -39456,6 +39871,7 @@
   {
     "stat": {
       "ref": "Socketed Golem Skills have #% chance to Taunt on Hit",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Golem Skills have #% chance to Taunt on Hit"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_178057093"]}}
@@ -39463,6 +39879,7 @@
   {
     "stat": {
       "ref": "Socketed Golem Skills have #% increased Attack and Cast Speed",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Golem Skills have #% increased Attack and Cast Speed"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_706212417"]}}
@@ -39470,6 +39887,7 @@
   {
     "stat": {
       "ref": "Socketed Golem Skills have Minions Regenerate #% of Life per second",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Golem Skills have Minions Regenerate #% of Life per second"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_693460617"]}}
@@ -39477,6 +39895,7 @@
   {
     "stat": {
       "ref": "Socketed Melee Gems have #% increased Area of Effect",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Melee Gems have #% increased Area of Effect"},
         {"string": "Socketed Melee Gems have #% reduced Area of Effect", "negate": true}
@@ -39512,6 +39931,7 @@
   {
     "stat": {
       "ref": "Socketed Red Gems get #% Physical Damage as Extra Fire Damage",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Red Gems get #% Physical Damage as Extra Fire Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2629366488"]}}
@@ -39519,6 +39939,7 @@
   {
     "stat": {
       "ref": "Socketed Skill Gems get a #% Cost & Reservation Multiplier",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Skill Gems get a #% Cost & Reservation Multiplier"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_2865550257"]}}
@@ -39533,6 +39954,7 @@
   {
     "stat": {
       "ref": "Socketed Skills deal #% more Attack Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Skills deal #% more Attack Damage"},
         {"string": "Socketed Skills deal #% less Attack Damage", "negate": true}
@@ -39543,6 +39965,7 @@
   {
     "stat": {
       "ref": "Socketed Skills deal #% more Spell Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Skills deal #% more Spell Damage"},
         {"string": "Socketed Skills deal #% less Spell Damage", "negate": true}
@@ -39560,6 +39983,7 @@
   {
     "stat": {
       "ref": "Socketed Skills have #% increased Attack Speed",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Skills have #% increased Attack Speed"},
         {"string": "Socketed Skills have #% reduced Attack Speed", "negate": true}
@@ -39570,6 +39994,7 @@
   {
     "stat": {
       "ref": "Socketed Skills have #% increased Cast Speed",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Skills have #% increased Cast Speed"},
         {"string": "Socketed Skills have #% reduced Cast Speed", "negate": true}
@@ -39580,6 +40005,7 @@
   {
     "stat": {
       "ref": "Socketed Spells have #% reduced Mana Cost",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Spells have #% increased Mana Cost"},
         {"string": "Socketed Spells have #% reduced Mana Cost", "negate": true}
@@ -39591,6 +40017,7 @@
     "stat": {
       "ref": "Socketed Spells have +#% to Critical Strike Chance",
       "dp": true,
+      "unscalable": true,
       "matchers": [{"string": "Socketed Spells have #% to Critical Strike Chance"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_135378852"]}}
@@ -39598,6 +40025,7 @@
   {
     "stat": {
       "ref": "Socketed Spells have +#% to Critical Strike Multiplier",
+      "unscalable": true,
       "matchers": [{"string": "Socketed Spells have #% to Critical Strike Multiplier"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2828710986"]}}
@@ -39605,6 +40033,7 @@
   {
     "stat": {
       "ref": "Socketed Travel Skills deal #% more Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Travel Skills deal #% more Damage"},
         {"string": "Socketed Travel Skills deal #% less Damage", "negate": true}
@@ -39615,6 +40044,7 @@
   {
     "stat": {
       "ref": "Socketed Triggered Bow Skills deal #% more Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "Socketed Triggered Bow Skills deal #% more Damage"},
         {"string": "Socketed Triggered Bow Skills deal #% less Damage", "negate": true}
@@ -40560,6 +40990,7 @@
   {
     "stat": {
       "ref": "Talismans found in this Area are 1 Tier higher",
+      "unscalable": true,
       "matchers": [
         {"string": "Talismans found in this Area are # Tiers higher"},
         {"string": "Talismans found in this Area are 1 Tier higher", "value": 1}
@@ -40958,6 +41389,7 @@
   {
     "stat": {
       "ref": "Trigger a Socketed Spell when you Use a Skill, with a # second Cooldown",
+      "unscalable": true,
       "matchers": [{"string": "Trigger a Socketed Spell when you Use a Skill, with a # second Cooldown"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1582781759"], "fractured": ["fractured.stat_1582781759"]}}
@@ -40965,6 +41397,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Assassin's Mark when you Hit a Rare or Unique Enemy",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Assassin's Mark when you Hit a Rare or Unique Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3382957283", "explicit.stat_3924520095"]}}
@@ -40972,6 +41405,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Bone Nova when you Hit a Bleeding Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2634885412"]}}
@@ -40979,6 +41413,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Bone Offering, Flesh Offering or Spirit Offering every 5 seconds\nOffering Skills Triggered this way also affect you",
+      "unscalable": true,
       "matchers": [
         {
           "string": "Trigger Level # Bone Offering, Flesh Offering or Spirit Offering every 5 seconds\nOffering Skills Triggered this way also affect you"
@@ -40990,6 +41425,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Consecrate when you deal a Critical Strike",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Consecrate when you deal a Critical Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_899293871"]}}
@@ -40997,6 +41433,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Contaminate when you Kill an Enemy",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Contaminate when you Kill an Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3159312340"]}}
@@ -41004,6 +41441,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Elemental Warding on Melee Hit while Cursed",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Elemental Warding on Melee Hit while Cursed"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_810166817"]}}
@@ -41011,6 +41449,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Feast of Flesh every 5 seconds",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Feast of Flesh every 5 seconds"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1024189516"]}}
@@ -41018,6 +41457,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Fiery Impact on Melee Hit with this Weapon",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Fiery Impact on Melee Hit with this Weapon"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1523888729"]}}
@@ -41025,6 +41465,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Flame Dash when you use a Socketed Skill",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Flame Dash when you use a Socketed Skill"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1633778432"]}}
@@ -41032,6 +41473,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Fog of War when your Trap is triggered",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Fog of War when your Trap is triggered"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_208447205"]}}
@@ -41039,6 +41481,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Gore Shockwave on Melee Hit if you have at least 150 Strength"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_252427115"]}}
@@ -41046,6 +41489,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Icicle Burst when you Hit a Frozen Enemy",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Icicle Burst when you Hit a Frozen Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1357672429"]}}
@@ -41053,6 +41497,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Intimidating Cry on Hit",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Intimidating Cry on Hit"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1795756125"]}}
@@ -41060,6 +41505,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Intimidating Cry when you lose Cat's Stealth",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Intimidating Cry when you lose Cat's Stealth"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3892608176"]}}
@@ -41067,6 +41513,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Lightning Bolt when you deal a Critical Strike",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Lightning Bolt when you deal a Critical Strike"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3241494164"]}}
@@ -41074,6 +41521,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Lightning Warp on Hit with this Weapon",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Lightning Warp on Hit with this Weapon"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1527893390"]}}
@@ -41081,6 +41529,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Poacher's Mark when you Hit a Rare or Unique Enemy",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Poacher's Mark when you Hit a Rare or Unique Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2659463225", "explicit.stat_364728407", "explicit.stat_3904501306"]}}
@@ -41088,6 +41537,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Rain of Arrows when you Attack with a Bow",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Rain of Arrows when you Attack with a Bow"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2935409762"]}}
@@ -41095,6 +41545,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Shield Shatter when you Block",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Shield Shatter when you Block"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_401685616"]}}
@@ -41102,6 +41553,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Shock Ground when Hit",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Shock Ground when Hit"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2668070396"]}}
@@ -41109,6 +41561,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Spirit Burst when you Use a Skill while you have a Spirit Charge",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Spirit Burst when you Use a Skill while you have a Spirit Charge"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1992516007"]}}
@@ -41116,6 +41569,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Stalking Pustule on Kill",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Stalking Pustule on Kill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1662669872"]}}
@@ -41123,6 +41577,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Storm Cascade when you Attack",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Storm Cascade when you Attack"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_818329660"]}}
@@ -41130,6 +41585,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Summon Phantasm Skill when you Consume a corpse",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Summon Phantasm Skill when you Consume a corpse"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3252082366"]}}
@@ -41137,6 +41593,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Summon Taunting Contraption when you use a Flask",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Summon Taunting Contraption when you use a Flask"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_1774370437"]}}
@@ -41144,6 +41601,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Toxic Rain when you Attack with a Bow",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Toxic Rain when you Attack with a Bow"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_767464019"]}}
@@ -41151,6 +41609,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Unseen Strike every 0.5 seconds while Phasing",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Unseen Strike every 0.5 seconds while Phasing"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3165215973"]}}
@@ -41158,6 +41617,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Void Gaze when you use a Skill",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Void Gaze when you use a Skill"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1869144397"]}}
@@ -41165,6 +41625,7 @@
   {
     "stat": {
       "ref": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy",
+      "unscalable": true,
       "matchers": [{"string": "Trigger Level # Warlord's Mark when you Hit a Rare or Unique Enemy"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2049471530"]}}
@@ -41172,6 +41633,7 @@
   {
     "stat": {
       "ref": "Trigger Level 20 Shade Form when Hit",
+      "unscalable": true,
       "matchers": [
         {"string": "#% chance to Trigger Level 20 Shade Form when Hit"},
         {"string": "Trigger Level 20 Shade Form when Hit", "value": 100}
@@ -41221,6 +41683,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Blinding Aura when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Blinding Aura when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_125312907"]}}
@@ -41228,6 +41691,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Cold Aegis when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Cold Aegis when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3918947537"]}}
@@ -41235,6 +41699,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Corpse Walk when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Corpse Walk when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_779168081"]}}
@@ -41242,6 +41707,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Death Walk when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Death Walk when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_651875072"]}}
@@ -41249,6 +41715,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Elemental Aegis when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Elemental Aegis when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2602585351"]}}
@@ -41256,6 +41723,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Fire Aegis when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Fire Aegis when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1128763150"]}}
@@ -41263,6 +41731,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Lightning Aegis when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Lightning Aegis when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_850729424"]}}
@@ -41270,6 +41739,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Manifest Dancing Dervish on Rampage",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Manifest Dancing Dervish on Rampage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_974757096"]}}
@@ -41277,6 +41747,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Physical Aegis when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Physical Aegis when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1892084828"]}}
@@ -41284,6 +41755,7 @@
   {
     "stat": {
       "ref": "Triggers Level # Reflection when Equipped",
+      "unscalable": true,
       "matchers": [{"string": "Triggers Level # Reflection when Equipped"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3451043685"]}}
@@ -42665,6 +43137,7 @@
   {
     "stat": {
       "ref": "With at least 40 Dexterity in Radius, Galvanic Arrow deals #% increased Area Damage",
+      "unscalable": true,
       "matchers": [
         {"string": "With at least 40 Dexterity in Radius, Galvanic Arrow deals #% increased Area Damage"},
         {
@@ -43213,6 +43686,7 @@
   {
     "stat": {
       "ref": "You and nearby allies gain #% increased Damage",
+      "unscalable": true,
       "matchers": [{"string": "You and nearby allies gain #% increased Damage"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_637766438"]}}
@@ -43248,6 +43722,7 @@
   {
     "stat": {
       "ref": "You and Nearby Allies have #% increased Item Rarity",
+      "unscalable": true,
       "matchers": [
         {"string": "You and Nearby Allies have #% increased Item Rarity"},
         {"string": "You and Nearby Allies have #% reduced Item Rarity", "negate": true}
@@ -44090,6 +44565,7 @@
   {
     "stat": {
       "ref": "Your Chaos Damage has #% chance to Poison Enemies",
+      "unscalable": true,
       "matchers": [
         {"string": "Your Chaos Damage has #% chance to Poison Enemies"},
         {"string": "Your Chaos Damage Poisons Enemies", "value": 100}
@@ -44625,7 +45101,11 @@
     "trade": {"ids": {"explicit": ["explicit.stat_2238831336"]}}
   },
   {
-    "stat": {"ref": "Your Maximum Resistances are #%", "matchers": [{"string": "Your Maximum Resistances are #%"}]},
+    "stat": {
+      "ref": "Your Maximum Resistances are #%",
+      "unscalable": true,
+      "matchers": [{"string": "Your Maximum Resistances are #%"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_798767971"]}}
   },
   {

@@ -47,7 +47,6 @@ export interface ParsedItem {
   category?: ItemCategory
   icon?: string
   rawText: string
-  isAdvancedDesc: boolean
 }
 
 export type HeistJob =

@@ -77,7 +77,6 @@ export function parseClipboard (clipboard: string) {
 
   sections.shift()
   parsed.rawText = clipboard
-  parsed.isAdvancedDesc = isAdvancedDescription(lines)
 
   // each section can be parsed at most by one parser
   for (const parser of parsers) {
@@ -200,8 +199,7 @@ function parseNamePlate (section: string[]) {
     influences: [],
     sockets: {},
     extra: {},
-    rawText: undefined!,
-    isAdvancedDesc: false
+    rawText: undefined!
   }
   return item
 }
@@ -429,10 +427,10 @@ function parseWeapon (section: string[], item: ParsedItem) {
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$[C.TAG_PHYSICAL_DAMAGE])) {
-      const [min, max] = line
+      item.props.physicalDamage = getRollOrMinmaxAvg(line
         .substr(_$[C.TAG_PHYSICAL_DAMAGE].length)
         .split('-').map(str => parseInt(str, 10))
-      item.props.physicalDamage = (min + max) / 2
+      )
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$[C.TAG_ELEMENTAL_DAMAGE])) {
