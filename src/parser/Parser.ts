@@ -5,11 +5,12 @@ import {
   CLIENT_STRINGS as _$,
   ITEM_NAME_REF_BY_TRANSLATED
 } from '@/assets/data'
-import { ModifierType, linesToStatStrings, tryFindModifier, getRollOrMinmaxAvg } from './modifiers'
+import { ModifierType } from './modifiers'
+import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { isModInfoLine, groupLinesByMod } from './advanced-mod-desc'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -196,6 +197,7 @@ function parseNamePlate (section: string[]) {
     isUnidentified: false,
     isCorrupted: false,
     modifiers: [],
+    mods: [],
     unknownModifiers: [],
     influences: [],
     sockets: {},
@@ -452,7 +454,7 @@ function parseWeapon (section: string[], item: ParsedItem) {
   return isParsed
 }
 
-export /* TODO temp test */ function parseModifiers (section: string[], item: ParsedItem) {
+function parseModifiers (section: string[], item: ParsedItem) {
   if (
     item.rarity !== ItemRarity.Normal &&
     item.rarity !== ItemRarity.Magic &&
@@ -469,16 +471,25 @@ export /* TODO temp test */ function parseModifiers (section: string[], item: Pa
   }
 
   if (section.some(line => line.endsWith(C.ENCHANT_LINE))) {
-    parseStatsFromMod(section, item)
+    const { lines } = parseModType(section)
+    const modInfo: ModifierInfo = {
+      type: ModifierType.Enchant,
+      tags: []
+    }
+    parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
   } else {
-    for (const { lines } of groupLinesByMod(section)) {
-      parseStatsFromMod(lines, item)
+    for (const { modLine, statLines } of groupLinesByMod(section)) {
+      const { modType, lines } = parseModType(statLines)
+      const modInfo = parseModInfoLine(modLine, modType)
+      parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
     }
   }
 
   return SECTION_PARSED
 }
 
+// TODO blocked by https://www.pathofexile.com/forum/view-thread/3148119
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function parseVeiledNested (text: string, item: ParsedItem) {
   if (text === _$[C.VEILED_SUFFIX]) {
     item.extra.veiled = (item.extra.veiled == null ? 'suffix' : 'prefix-suffix')
@@ -634,68 +645,29 @@ function markupConditionParser (text: string) {
   return text
 }
 
-function removeLineEnding (
-  lines: readonly string[], ending: string
-): string[] {
-  return lines.map(line =>
-    line.endsWith(ending)
-      ? line.slice(0, -ending.length)
-      : line
-  )
-}
-
-function parseStatsFromMod (lines: string[], item: ParsedItem) {
-  let modType: ModifierType
-  if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
-    modType = ModifierType.Enchant
-    lines = removeLineEnding(lines, C.ENCHANT_LINE)
-  } else if (lines.some(line => line.endsWith(C.IMPLICIT_LINE))) {
-    modType = ModifierType.Implicit
-    lines = removeLineEnding(lines, C.IMPLICIT_LINE)
-  } else if (lines.some(line => line.endsWith(C.FRACTURED_LINE))) {
-    modType = ModifierType.Fractured
-    lines = removeLineEnding(lines, C.FRACTURED_LINE)
-  } else if (lines.some(line => line.endsWith(C.CRAFTED_LINE))) {
-    modType = ModifierType.Crafted
-    lines = removeLineEnding(lines, C.CRAFTED_LINE)
-  } else {
-    modType = ModifierType.Explicit
-  }
-
+function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedModifier) {
   const statIterator = linesToStatStrings(lines)
   let stat = statIterator.next()
   while (!stat.done) {
-    if (parseVeiledNested(stat.value, item)) {
-      stat = statIterator.next(true)
-      continue
-    }
+    // todo
+    // if (parseVeiledNested(stat.value, item)) {
+    //   stat = statIterator.next(true)
+    //   continue
+    // }
 
-    const mod = tryFindModifier(stat.value)
-    if (mod && mod.trade.ids[modType]) {
-      mod.type = modType
-      item.modifiers.push(mod)
+    const parsedStat = tryParseTranslation(stat.value, modifier.info.type)
+    if (parsedStat) {
+      modifier.stats.push(parsedStat)
       stat = statIterator.next(true)
     } else {
-      if (
-        mod != null // not found on trade, but successfully parsed
-      ) {
-        // TODO: removeLineEnding UNSCALABLE_VALUE ?
-        item.unknownModifiers.push({
-          text: stat.value,
-          type: modType
-        })
-        stat = statIterator.next(true)
-      } else {
-        stat = statIterator.next(false)
-      }
+      stat = statIterator.next(false)
     }
   }
 
-  item.unknownModifiers.push(
-    ...removeLineEnding(stat.value, _$.UNSCALABLE_VALUE)
-      .map(line => ({
-        text: line,
-        type: modType
-      }))
-  )
+  item.mods.push(modifier)
+
+  item.unknownModifiers.push(...stat.value.map(line => ({
+    text: line,
+    type: modifier.info.type
+  })))
 }

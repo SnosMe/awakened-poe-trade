@@ -1,6 +1,7 @@
 import { ItemRarity, ItemInfluence } from './constants'
 import { ItemModifier, ModifierType } from './modifiers'
 import { ItemCategory } from './meta'
+import type { ParsedModifier } from './advanced-mod-desc'
 
 export interface ParsedItem {
   rarity: ItemRarity
@@ -34,6 +35,7 @@ export interface ParsedItem {
   influences: ItemInfluence[]
   isSynthesised?: boolean
   modifiers: ItemModifier[]
+  mods: ParsedModifier[]
   unknownModifiers: Array<{
     text: string
     type: ModifierType

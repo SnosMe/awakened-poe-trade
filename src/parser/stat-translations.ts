@@ -1,4 +1,5 @@
-import { STAT_BY_MATCH_STR, CLIENT_STRINGS as _$ } from '@/assets/data'
+import { STAT_BY_MATCH_STR } from '@/assets/data'
+import type { ModifierType } from './modifiers'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
@@ -6,6 +7,7 @@ import { STAT_BY_MATCH_STR, CLIENT_STRINGS as _$ } from '@/assets/data'
 export interface ParsedStat {
   translation: string
   roll?: {
+    unscalable: boolean
     negate: boolean
     dp: boolean
     value: number
@@ -126,10 +128,12 @@ function * _statPlaceholderGenerator (stat: string) {
   }
 }
 
-export function tryFindModifier (stat: string): ParsedStat | undefined {
+export function tryParseTranslation (stat: string, modType: ModifierType): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat)) {
     const found = STAT_BY_MATCH_STR.get(combination.stat)
-    if (!found) continue
+    if (!found || !found.stat.trade.ids[modType]) {
+      continue
+    }
 
     if (found.matcher.negate) {
       for (const stat of combination.values) {
@@ -157,6 +161,7 @@ export function tryFindModifier (stat: string): ParsedStat | undefined {
       translation: found.matcher.string,
       roll: combination.values.length
         ? {
+            unscalable: found.stat.stat.unscalable ?? false,
             negate: found.matcher.negate ?? false,
             dp: found.stat.stat.dp || combination.values.some(stat => stat.decimal),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
