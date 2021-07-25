@@ -465,7 +465,9 @@ function parseModifiers (section: string[], item: ParsedItem) {
   }
 
   if (!section.some(line =>
-    line.endsWith(C.ENCHANT_LINE) || isModInfoLine(line)
+    line.endsWith(C.ENCHANT_LINE) ||
+    isModInfoLine(line) ||
+    (line === _$.VEILED_PREFIX || line === _$.VEILED_SUFFIX)
   )) {
     return SECTION_SKIPPED
   }
@@ -478,6 +480,8 @@ function parseModifiers (section: string[], item: ParsedItem) {
     }
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
   } else {
+    section = section.filter(line => !parseVeiledNested(line, item))
+
     for (const { modLine, statLines } of groupLinesByMod(section)) {
       const { modType, lines } = parseModType(statLines)
       const modInfo = parseModInfoLine(modLine, modType)
@@ -489,13 +493,12 @@ function parseModifiers (section: string[], item: ParsedItem) {
 }
 
 // TODO blocked by https://www.pathofexile.com/forum/view-thread/3148119
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function parseVeiledNested (text: string, item: ParsedItem) {
-  if (text === _$[C.VEILED_SUFFIX]) {
+  if (text === _$.VEILED_SUFFIX) {
     item.extra.veiled = (item.extra.veiled == null ? 'suffix' : 'prefix-suffix')
     return true
   }
-  if (text === _$[C.VEILED_PREFIX]) {
+  if (text === _$.VEILED_PREFIX) {
     item.extra.veiled = (item.extra.veiled == null ? 'prefix' : 'prefix-suffix')
     return true
   }

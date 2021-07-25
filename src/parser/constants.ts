@@ -71,9 +71,6 @@ export const METAMORPH_LUNG = '/^.* Lung$/'
 export const METAMORPH_HEART = '/^.* Heart$/'
 export const METAMORPH_LIVER = '/^.* Liver$/'
 
-export const VEILED_PREFIX = 'Veiled Prefix'
-export const VEILED_SUFFIX = 'Veiled Suffix'
-
 export const PROPHECY_ALVA = 'You will find Alva and complete her mission.'
 export const PROPHECY_EINHAR = 'You will find Einhar and complete his mission.'
 export const PROPHECY_NIKO = 'You will find Niko and complete his mission.'
