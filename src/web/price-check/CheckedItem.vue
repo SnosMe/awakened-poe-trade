@@ -167,7 +167,7 @@ export default defineComponent({
     })
 
     const show = computed(() => {
-      return !(props.item.rarity === ItemRarity.Unique &&
+      return !((props.item.rarity === ItemRarity.Unique || props.item.rarity === ItemRarity.Normal) &&
         props.item.isUnidentified &&
         props.item.baseType == null)
     })

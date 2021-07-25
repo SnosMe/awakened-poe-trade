@@ -1,9 +1,20 @@
 <template>
   <div v-if="show" class="layout-column">
-    <div class="m-4 py-1 px-2 bg-gray-900 rounded">
+    <div class="m-4 py-1 px-2 bg-gray-900 rounded" v-if="showUnique">
       {{ t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
     </div>
+    <div class="m-4 py-1 px-2 bg-gray-900 rounded" v-if="showNormal">
+      {{ t('You are trying to price check unidentified Normal item with base type "{0}". Do you wish to price check the base or one of its Unique variants?', [baseType]) }}
+    </div>
     <div class="overflow-auto pb-4 px-4">
+      <div v-if="showNormal" class="flex flex-wrap">
+        <button @click="selectNormal()" class="bg-gray-700 rounded flex items-center p-2 w-full base-item">
+          <img :src="item.icon" class="w-12" />
+          <div class="pl-3 leading-tight">
+            {{ item.name }}
+          </div>
+        </button>
+      </div>
       <div class="flex flex-wrap -m-1">
         <div v-for="item in identifiedVariants" :key="item.name" class="p-1 flex w-1/2">
           <button @click="select(item.refName)" class="bg-gray-700 rounded flex items-center p-2 w-full">
@@ -15,6 +26,12 @@
     </div>
   </div>
 </template>
+
+<style lang="postcss">
+  .base-item {
+    margin-bottom: 1.4em;
+  }
+</style>
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
@@ -41,19 +58,36 @@ export default defineComponent({
           name: TRANSLATED_ITEM_NAME_BY_REF.get(unique.name) || unique.name
         }))
 
-      if (possible.length === 1) {
+      // Automatically select unique version for bases that only have one
+      // possible outcome. For normal items we also display a button to price
+      // check the base, and therefore do not redirect.
+      if (showUnique.value && possible.length === 1) {
         select(possible[0].refName)
       }
 
       return possible
     })
 
-    const show = computed(() => {
+    const showUnique = computed(() => {
       if (!props.item) return false
 
       return props.item.rarity === ItemRarity.Unique &&
         props.item.isUnidentified &&
         props.item.baseType == null
+    })
+
+    const showNormal = computed(() => {
+      if (!props.item) return false
+
+      return props.item.rarity === ItemRarity.Normal &&
+        props.item.isUnidentified &&
+        props.item.baseType == null
+    })
+
+    const show = computed(() => {
+      if (!props.item) return false
+
+      return showUnique.value || showNormal.value
     })
 
     const baseType = computed(() => {
@@ -71,8 +105,18 @@ export default defineComponent({
       const newItem: ParsedItem = {
         ...props.item!,
         name: name,
-        baseType: props.item!.name
+        baseType: props.item!.name,
+        rarity: ItemRarity.Unique
       }
+      ctx.emit('identify', newItem)
+    }
+
+    function selectNormal () {
+      const newItem: ParsedItem = {
+        ...props.item!,
+        isUnidentified: false
+      }
+
       ctx.emit('identify', newItem)
     }
 
@@ -82,8 +126,11 @@ export default defineComponent({
       t,
       identifiedVariants,
       show,
+      showNormal,
+      showUnique,
       baseType,
-      select
+      select,
+      selectNormal
     }
   }
 })
