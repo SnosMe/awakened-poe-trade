@@ -90,7 +90,7 @@ function * _statPlaceholderGenerator (stat: string) {
       bounds?: { min: number, max: number }
     }> = []
     const withPlaceholders = stat
-      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)(-(?<max>[^)]+))?\))?/gm, (_, roll: string, min?: string, max?: string) => {
+      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)(?:-(?<max>[^)]+))?\))?/gm, (_, roll: string, min?: string, max?: string) => {
         if (min != null && max == null) {
           // example: Watchstone "# uses remaining"
           max = min
