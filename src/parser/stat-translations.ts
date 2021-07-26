@@ -90,7 +90,12 @@ function * _statPlaceholderGenerator (stat: string) {
       bounds?: { min: number, max: number }
     }> = []
     const withPlaceholders = stat
-      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)-(?<max>[^)]+)\))?/gm, (_, roll: string, min?: string, max?: string) => {
+      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)(-(?<max>[^)]+))?\))?/gm, (_, roll: string, min?: string, max?: string) => {
+        if (min != null && max == null) {
+          // example: Watchstone "# uses remaining"
+          max = min
+        }
+
         const captured: typeof matches[number] = {
           roll: Number(roll),
           rollStr: roll,
@@ -139,7 +144,7 @@ export function tryParseTranslation (stat: string, modType: ModifierType): Parse
       for (const stat of combination.values) {
         stat.roll *= -1
         if (stat.bounds) {
-          // do not swap
+          // do not swap (TODO: or do? can't say from Ventor's Gamble)
           stat.bounds.min *= -1
           stat.bounds.max *= -1
         }

@@ -1,4 +1,4 @@
-import { CLIENT_STRINGS as _$ } from '@/assets/data'
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from '@/assets/data'
 import * as C from './constants'
 import { percentRoll } from '@/web/price-check/filters/util'
 import type { ParsedStat } from './stat-translations'
@@ -112,7 +112,7 @@ function removeLineEnding (
 // this is the most common formatter
 const DIV_BY_100 = 2
 
-export function applyIncr (mod: ModifierInfo, stat: ParsedStat): ParsedStat | null {
+function applyIncr (mod: ModifierInfo, stat: ParsedStat): ParsedStat | null {
   const { rollIncr } = mod
   const { roll } = stat
 
@@ -136,12 +136,65 @@ export function applyIncr (mod: ModifierInfo, stat: ParsedStat): ParsedStat | nu
 export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemModifier[] {
   const out: LegacyItemModifier[] = []
 
-  for (const mod of mods) {
-    for (const stat of mod.stats) {
-      // if (out.some(merged => merged.stat.ref === stat)) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      stat
-      // }
+  const merged: ParsedStat[] = []
+
+  mods = mods.map(mod => ({
+    ...mod,
+    stats: mod.stats.map(stat =>
+      applyIncr(mod.info, stat) ?? stat
+    )
+  }))
+
+  for (const modA of mods) {
+    for (const statA of modA.stats) {
+      if (merged.includes(statA)) {
+        continue
+      }
+
+      const dbStatA = STAT_BY_MATCH_STR.get(statA.translation)!.stat
+
+      const toMerge = mods
+        .reduce((filtered, modB) => {
+          if (modB.info.type === modA.info.type) {
+            const targetStat = modB.stats.find(statB =>
+              dbStatA.stat.matchers.some(matcher => matcher.string === statB.translation)
+            )
+            if (targetStat) {
+              filtered.push({
+                info: modB.info,
+                stat: targetStat
+              })
+            }
+          }
+          return filtered
+        }, [] as Array<{ info: ModifierInfo, stat: ParsedStat }>)
+
+      if (toMerge.length === 1) {
+        out.push({
+          stat: dbStatA.stat,
+          trade: dbStatA.trade,
+          string: statA.translation,
+          type: modA.info.type,
+          negate: statA.roll?.negate || undefined,
+          value: statA.roll?.value
+        })
+      } else {
+        const rollValue = toMerge.reduce((sum, { stat }) => sum + stat.roll!.value, 0)
+
+        out.push({
+          stat: dbStatA.stat,
+          trade: dbStatA.trade,
+          string:
+            dbStatA.stat.matchers.find(m => m.value === rollValue)?.string ??
+            dbStatA.stat.matchers.find(m => m.value == null && Boolean(m.negate) === statA.roll!.negate)?.string ??
+            statA.translation,
+          type: modA.info.type,
+          negate: statA.roll!.negate || undefined,
+          value: rollValue
+        })
+      }
+
+      merged.push(...toMerge.map(mod => mod.stat))
     }
   }
 

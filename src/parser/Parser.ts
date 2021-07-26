@@ -10,7 +10,7 @@ import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './s
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier } from './advanced-mod-desc'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, sumStatsFromMods } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -47,7 +47,8 @@ const parsers: ParserFn[] = [
   parseMirrored,
   parseModifiers,
   parseModifiers,
-  parseModifiers
+  parseModifiers,
+  transformToLegacyModifiers
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -197,7 +198,7 @@ function parseNamePlate (section: string[]) {
     isUnidentified: false,
     isCorrupted: false,
     modifiers: [],
-    mods: [],
+    newMods: [],
     unknownModifiers: [],
     influences: [],
     sockets: {},
@@ -652,12 +653,6 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
   const statIterator = linesToStatStrings(lines)
   let stat = statIterator.next()
   while (!stat.done) {
-    // todo
-    // if (parseVeiledNested(stat.value, item)) {
-    //   stat = statIterator.next(true)
-    //   continue
-    // }
-
     const parsedStat = tryParseTranslation(stat.value, modifier.info.type)
     if (parsedStat) {
       modifier.stats.push(parsedStat)
@@ -667,10 +662,18 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
     }
   }
 
-  item.mods.push(modifier)
+  item.newMods.push(modifier)
 
   item.unknownModifiers.push(...stat.value.map(line => ({
     text: line,
     type: modifier.info.type
   })))
+}
+
+/**
+ * @deprecated
+ */
+function transformToLegacyModifiers (_: string[], item: ParsedItem) {
+  item.modifiers = sumStatsFromMods(item.newMods)
+  return PARSER_SKIPPED as SectionParseResult // fake parser
 }

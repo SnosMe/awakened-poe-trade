@@ -34,8 +34,11 @@ export interface ParsedItem {
   isMirrored?: boolean
   influences: ItemInfluence[]
   isSynthesised?: boolean
+  /**
+   * @deprecated
+   */
   modifiers: ItemModifier[]
-  mods: ParsedModifier[]
+  newMods: ParsedModifier[]
   unknownModifiers: Array<{
     text: string
     type: ModifierType
