@@ -26,7 +26,7 @@ export interface RareItemPrice {
 
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
   const query = querystring({
-    i: utf8ToBase64(item.rawText),
+    i: utf8ToBase64(transformItemText(item.rawText)),
     l: league.value,
     s: 'awakened-poe-trade'
   })
@@ -56,7 +56,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
 
 export function getExternalLink (item: ParsedItem): string {
   const query = querystring({
-    i: utf8ToBase64(item.rawText),
+    i: utf8ToBase64(transformItemText(item.rawText)),
     l: league.value,
     s: 'awakened-poe-trade',
     w: 1
@@ -72,7 +72,7 @@ export async function sendFeedback (
   const body = new FormData()
   body.append('selector', feedback.option)
   body.append('feedbacktxt', feedback.text)
-  body.append('qitem_txt', utf8ToBase64(item.rawText))
+  body.append('qitem_txt', utf8ToBase64(transformItemText(item.rawText)))
   body.append('source', 'awakened-poe-trade')
   body.append('min', String(prediction.min))
   body.append('max', String(prediction.max))
@@ -97,4 +97,12 @@ function querystring (q: Record<string, any>) {
   return Object.entries(q)
     .map(pair => pair.map(encodeURIComponent).join('='))
     .join('&')
+}
+
+/**
+ * @deprecated TODO blocked by poeprices.info not supporting advanced text
+ */
+function transformItemText (rawText: string) {
+  // this may not account for all cases
+  return rawText.replace(/(?<=\d)(\([^)]+\))/gm, '')
 }

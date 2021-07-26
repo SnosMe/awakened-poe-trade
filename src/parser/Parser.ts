@@ -5,10 +5,12 @@ import {
   CLIENT_STRINGS as _$,
   ITEM_NAME_REF_BY_TRANSLATED
 } from '@/assets/data'
-import { ModifierType, sectionToStatStrings, tryFindModifier, getRollOrMinmaxAvg } from './modifiers'
+import { ModifierType } from './modifiers'
+import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, sumStatsFromMods } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -45,7 +47,8 @@ const parsers: ParserFn[] = [
   parseMirrored,
   parseModifiers,
   parseModifiers,
-  parseModifiers
+  parseModifiers,
+  transformToLegacyModifiers
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -77,7 +80,6 @@ export function parseClipboard (clipboard: string) {
 
   sections.shift()
   parsed.rawText = clipboard
-  parsed.isAdvancedDesc = isAdvancedDescription(lines)
 
   // each section can be parsed at most by one parser
   for (const parser of parsers) {
@@ -196,12 +198,12 @@ function parseNamePlate (section: string[]) {
     isUnidentified: false,
     isCorrupted: false,
     modifiers: [],
+    newMods: [],
     unknownModifiers: [],
     influences: [],
     sockets: {},
     extra: {},
-    rawText: undefined!,
-    isAdvancedDesc: false
+    rawText: undefined!
   }
   return item
 }
@@ -429,10 +431,10 @@ function parseWeapon (section: string[], item: ParsedItem) {
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$[C.TAG_PHYSICAL_DAMAGE])) {
-      const [min, max] = line
+      item.props.physicalDamage = getRollOrMinmaxAvg(line
         .substr(_$[C.TAG_PHYSICAL_DAMAGE].length)
         .split('-').map(str => parseInt(str, 10))
-      item.props.physicalDamage = (min + max) / 2
+      )
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$[C.TAG_ELEMENTAL_DAMAGE])) {
@@ -463,80 +465,41 @@ function parseModifiers (section: string[], item: ParsedItem) {
     return PARSER_SKIPPED
   }
 
-  const countBefore = (item.modifiers.length + item.unknownModifiers.length)
+  if (!section.some(line =>
+    line.endsWith(C.ENCHANT_LINE) ||
+    isModInfoLine(line) ||
+    (line === _$.VEILED_PREFIX || line === _$.VEILED_SUFFIX)
+  )) {
+    return SECTION_SKIPPED
+  }
 
-  const statIterator = sectionToStatStrings(section)
-  let stat = statIterator.next()
-  while (!stat.done) {
-    if (parseVeiledNested(stat.value, item)) {
-      stat = statIterator.next(true)
-      continue
+  if (section.some(line => line.endsWith(C.ENCHANT_LINE))) {
+    const { lines } = parseModType(section)
+    const modInfo: ModifierInfo = {
+      type: ModifierType.Enchant,
+      tags: []
     }
+    parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
+  } else {
+    section = section.filter(line => !parseVeiledNested(line, item))
 
-    let modType: ModifierType | undefined
-
-    // cleanup suffix
-    if (stat.value.endsWith(C.IMPLICIT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.IMPLICIT_SUFFIX.length)
-      modType = ModifierType.Implicit
-    } else if (stat.value.endsWith(C.CRAFTED_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.CRAFTED_SUFFIX.length)
-      modType = ModifierType.Crafted
-    } else if (stat.value.endsWith(C.ENCHANT_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.ENCHANT_SUFFIX.length)
-      modType = ModifierType.Enchant
-    } else if (stat.value.endsWith(C.FRACTURED_SUFFIX)) {
-      stat.value = stat.value.slice(0, -C.FRACTURED_SUFFIX.length)
-      modType = ModifierType.Fractured
-    } else {
-      modType = ModifierType.Explicit
-    }
-
-    const mod = tryFindModifier(stat.value)
-    if (mod && mod.trade.ids[modType]) {
-      mod.type = modType
-      item.modifiers.push(mod)
-      stat = statIterator.next(true)
-    } else {
-      if (
-        mod != null || // not found on trade, but successfully parsed
-        modType === ModifierType.Enchant || // has separate section
-        modType === ModifierType.Implicit || // has separate section
-        modType === ModifierType.Fractured || // always comes first in section
-        (modType === ModifierType.Crafted && (
-          !stat.value.includes('\n') || // not multiline, on section transition from explicit to crafted mods
-          item.modifiers.some(m => m.type === ModifierType.Crafted) ||
-          item.unknownModifiers.some(m => m.type === ModifierType.Crafted)
-        ))
-      ) {
-        item.unknownModifiers.push({
-          text: stat.value,
-          type: modType
-        })
-        stat = statIterator.next(true)
-      } else {
-        stat = statIterator.next(false)
-      }
+    for (const { modLine, statLines } of groupLinesByMod(section)) {
+      const { modType, lines } = parseModType(statLines)
+      const modInfo = parseModInfoLine(modLine, modType)
+      parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
     }
   }
 
-  if (countBefore < (item.modifiers.length + item.unknownModifiers.length)) {
-    item.unknownModifiers.push(...stat.value.map(line => ({
-      text: line,
-      type: ModifierType.Explicit
-    })))
-
-    return SECTION_PARSED
-  }
-  return SECTION_SKIPPED
+  return SECTION_PARSED
 }
 
+// TODO blocked by https://www.pathofexile.com/forum/view-thread/3148119
 function parseVeiledNested (text: string, item: ParsedItem) {
-  if (text === _$[C.VEILED_SUFFIX]) {
+  if (text === _$.VEILED_SUFFIX) {
     item.extra.veiled = (item.extra.veiled == null ? 'suffix' : 'prefix-suffix')
     return true
   }
-  if (text === _$[C.VEILED_PREFIX]) {
+  if (text === _$.VEILED_PREFIX) {
     item.extra.veiled = (item.extra.veiled == null ? 'prefix' : 'prefix-suffix')
     return true
   }
@@ -686,6 +649,41 @@ function markupConditionParser (text: string) {
   return text
 }
 
-function isAdvancedDescription (lines: string[]): boolean {
-  return lines.some(line => line.startsWith('{') && line.endsWith('}'))
+function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedModifier) {
+  const statIterator = linesToStatStrings(lines)
+  let stat = statIterator.next()
+  while (!stat.done) {
+    const parsedStat = tryParseTranslation(stat.value, modifier.info.type)
+    if (parsedStat) {
+      modifier.stats.push(parsedStat)
+      stat = statIterator.next(true)
+    } else {
+      stat = statIterator.next(false)
+    }
+  }
+
+  item.newMods.push(modifier)
+
+  item.unknownModifiers.push(...stat.value.map(line => ({
+    text: line,
+    type: modifier.info.type
+  })))
+}
+
+/**
+ * @deprecated
+ */
+function transformToLegacyModifiers (_: string[], item: ParsedItem) {
+  item.modifiers = sumStatsFromMods(item.newMods)
+  return PARSER_SKIPPED as SectionParseResult // fake parser
+}
+
+export function removeLinesEnding (
+  lines: readonly string[], ending: string
+): string[] {
+  return lines.map(line =>
+    line.endsWith(ending)
+      ? line.slice(0, -ending.length)
+      : line
+  )
 }

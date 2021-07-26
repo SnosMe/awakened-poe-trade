@@ -45,10 +45,10 @@ export const TAG_EVASION = 'Evasion Rating: '
 export const TAG_ENERGY_SHIELD = 'Energy Shield: '
 export const TAG_BLOCK_CHANCE = 'Chance to Block: '
 
-export const IMPLICIT_SUFFIX = ' (implicit)'
-export const CRAFTED_SUFFIX = ' (crafted)'
-export const ENCHANT_SUFFIX = ' (enchant)'
-export const FRACTURED_SUFFIX = ' (fractured)'
+export const IMPLICIT_LINE = ' (implicit)'
+export const CRAFTED_LINE = ' (crafted)'
+export const ENCHANT_LINE = ' (enchant)'
+export const FRACTURED_LINE = ' (fractured)'
 
 export const CORRUPTED = 'Corrupted'
 export const UNIDENTIFIED = 'Unidentified'
@@ -60,8 +60,6 @@ export const MAP_BLIGHTED = '/^Blighted (.*)$/'
 export const ITEM_SUPERIOR = '/^Superior (.*)$/'
 export const VAAL_GEM = '/^Vaal .*$/'
 
-export const CLUSTER_JEWEL_GRANT = 'Added Small Passive Skills grant: '
-
 export const PROPHECY_HELP = 'Right-click to add this prophecy to your character.'
 export const BEAST_HELP = 'Right-click to add this to your bestiary.'
 export const METAMORPH_HELP = "Combine this with four other different samples in Tane's Laboratory."
@@ -72,9 +70,6 @@ export const METAMORPH_EYE = '/^.* Eye$/'
 export const METAMORPH_LUNG = '/^.* Lung$/'
 export const METAMORPH_HEART = '/^.* Heart$/'
 export const METAMORPH_LIVER = '/^.* Liver$/'
-
-export const VEILED_PREFIX = 'Veiled Prefix'
-export const VEILED_SUFFIX = 'Veiled Suffix'
 
 export const PROPHECY_ALVA = 'You will find Alva and complete her mission.'
 export const PROPHECY_EINHAR = 'You will find Einhar and complete his mission.'

@@ -1,6 +1,7 @@
 import { ItemRarity, ItemInfluence } from './constants'
 import { ItemModifier, ModifierType } from './modifiers'
 import { ItemCategory } from './meta'
+import type { ParsedModifier } from './advanced-mod-desc'
 
 export interface ParsedItem {
   rarity: ItemRarity
@@ -33,7 +34,11 @@ export interface ParsedItem {
   isMirrored?: boolean
   influences: ItemInfluence[]
   isSynthesised?: boolean
+  /**
+   * @deprecated
+   */
   modifiers: ItemModifier[]
+  newMods: ParsedModifier[]
   unknownModifiers: Array<{
     text: string
     type: ModifierType
@@ -47,7 +52,6 @@ export interface ParsedItem {
   category?: ItemCategory
   icon?: string
   rawText: string
-  isAdvancedDesc: boolean
 }
 
 export type HeistJob =

@@ -1,18 +1,27 @@
-import { CLIENT_STRINGS as _$ } from '@/assets/data'
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from '@/assets/data'
+import * as C from './constants'
+import { percentRoll } from '@/web/price-check/filters/util'
+import type { ParsedStat } from './stat-translations'
+import { LegacyItemModifier, ModifierType } from './modifiers'
+import { removeLinesEnding } from './Parser'
 
-// TODO "— Unscalable Value"
+export interface ParsedModifier {
+  info: ModifierInfo
+  stats: ParsedStat[]
+}
 
-interface ModifierInfo {
+export interface ModifierInfo {
+  type: ModifierType
   generation?: 'suffix' | 'prefix'
   name?: string
   tier?: number
   rank?: number
-  tags?: string[]
-  catalystIncr?: number
+  tags: string[]
+  rollIncr?: number
 }
 
-export function parseModInfoLine (line: string): ModifierInfo {
-  const [modText, tagsText, catalystText] = line
+export function parseModInfoLine (line: string, type: ModifierType): ModifierInfo {
+  const [modText, tagsText, incrText] = line
     .slice(1, -1)
     .split('\u2014')
     .map(_ => _.trim())
@@ -36,7 +45,149 @@ export function parseModInfoLine (line: string): ModifierInfo {
   const tier = Number(match.groups!.tier) || undefined
   const rank = Number(match.groups!.rank) || undefined
   const tags = tagsText ? tagsText.split(', ') : []
-  const catalystIncr = parseInt(catalystText, 10) || undefined
+  const rollIncr = parseInt(incrText, 10) || undefined
 
-  return { generation, name, tier, rank, tags, catalystIncr }
+  return { type, generation, name, tier, rank, tags, rollIncr }
+}
+
+export function isModInfoLine (line: string): boolean {
+  return line.startsWith('{') && line.endsWith('}')
+}
+
+interface GroupedModLines {
+  modLine: string
+  statLines: string[]
+}
+
+export function * groupLinesByMod (lines: string[]): Generator<GroupedModLines, void> {
+  if (!lines.length || !isModInfoLine(lines[0])) {
+    return
+  }
+
+  let last: GroupedModLines | undefined
+  for (const line of lines) {
+    if (!isModInfoLine(line)) {
+      last!.statLines.push(line)
+    } else {
+      if (last) { yield last }
+      last = { modLine: line, statLines: [] }
+    }
+  }
+  yield last!
+}
+
+export function parseModType (lines: string[]): { modType: ModifierType, lines: string[] } {
+  let modType: ModifierType
+  if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
+    modType = ModifierType.Enchant
+    lines = removeLinesEnding(lines, C.ENCHANT_LINE)
+  } else if (lines.some(line => line.endsWith(C.IMPLICIT_LINE))) {
+    modType = ModifierType.Implicit
+    lines = removeLinesEnding(lines, C.IMPLICIT_LINE)
+  } else if (lines.some(line => line.endsWith(C.FRACTURED_LINE))) {
+    modType = ModifierType.Fractured
+    lines = removeLinesEnding(lines, C.FRACTURED_LINE)
+  } else if (lines.some(line => line.endsWith(C.CRAFTED_LINE))) {
+    modType = ModifierType.Crafted
+    lines = removeLinesEnding(lines, C.CRAFTED_LINE)
+  } else {
+    modType = ModifierType.Explicit
+  }
+
+  return { modType, lines }
+}
+
+// stat values internally stored as ints,
+// this is the most common formatter
+const DIV_BY_100 = 2
+
+function applyIncr (mod: ModifierInfo, stat: ParsedStat): ParsedStat | null {
+  const { rollIncr } = mod
+  const { roll } = stat
+
+  if (!rollIncr || !roll || roll.unscalable) {
+    return null
+  }
+
+  return {
+    translation: stat.translation,
+    roll: {
+      unscalable: roll.unscalable,
+      dp: roll.dp,
+      value: percentRoll(roll.value, rollIncr, (roll.value > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100),
+      min: percentRoll(roll.min, rollIncr, (roll.min > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100),
+      max: percentRoll(roll.max, rollIncr, (roll.max > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100)
+    }
+  }
+}
+
+export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemModifier[] {
+  const out: LegacyItemModifier[] = []
+
+  const merged: ParsedStat[] = []
+
+  mods = mods.map(mod => ({
+    ...mod,
+    stats: mod.stats.map(stat =>
+      applyIncr(mod.info, stat) ?? stat
+    )
+  }))
+
+  for (const modA of mods) {
+    for (const statA of modA.stats) {
+      if (merged.includes(statA)) {
+        continue
+      }
+
+      const dbStatA = STAT_BY_MATCH_STR.get(statA.translation.string)!.stat
+
+      const toMerge = mods
+        .reduce((filtered, modB) => {
+          if (modB.info.type === modA.info.type) {
+            const targetStat = modB.stats.find(statB =>
+              dbStatA.stat.matchers.some(matcher => matcher.string === statB.translation.string)
+            )
+            if (targetStat) {
+              filtered.push({
+                info: modB.info,
+                stat: targetStat
+              })
+            }
+          }
+          return filtered
+        }, [] as Array<{ info: ModifierInfo, stat: ParsedStat }>)
+
+      if (toMerge.length === 1) {
+        out.push({
+          stat: dbStatA.stat,
+          trade: dbStatA.trade,
+          string: statA.translation.string,
+          type: modA.info.type,
+          negate: statA.translation.negate,
+          value: statA.roll?.value
+        })
+      } else {
+        const rollValue = toMerge.reduce((sum, { stat }) => sum + stat.roll!.value, 0)
+        const translation =
+          (dbStatA.stat.matchers.find(m => m.value === rollValue)) ??
+          ((statA.translation.value == null)
+            ? statA.translation
+            : dbStatA.stat.matchers.find(m => m.value == null && !m.negate)) ??
+          ({ string: `Report bug if you see this text (${statA.translation.string})` })
+
+        out.push({
+          stat: dbStatA.stat,
+          trade: dbStatA.trade,
+          string: translation.string,
+          type: modA.info.type,
+          negate: translation.negate,
+          value: rollValue
+        })
+      }
+
+      merged.push(...toMerge.map(mod => mod.stat))
+    }
+  }
+
+  return out
 }
