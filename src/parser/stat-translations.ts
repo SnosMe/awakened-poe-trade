@@ -1,4 +1,4 @@
-import { STAT_BY_MATCH_STR, StatMatcher } from '@/assets/data'
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR, StatMatcher } from '@/assets/data'
 import type { ModifierType } from './modifiers'
 
 // This file is a little messy and scary,
@@ -15,14 +15,38 @@ export interface ParsedStat {
   }
 }
 
-export function * linesToStatStrings (lines: string[]): Generator<string, string[], boolean> {
+interface StatString {
+  string: string
+  unscalable: boolean
+}
+
+export function * linesToStatStrings (lines: string[]): Generator<StatString, string[], boolean> {
   const notParsedLines: string[] = []
+
+  let reminderString = false
 
   outer:
   for (let start = 0; start < lines.length; start += 1) {
+    if ((lines[start].trim()).startsWith('(')) {
+      reminderString = true
+    }
+    if (reminderString && (lines[start].trim()).endsWith(')')) {
+      reminderString = false
+      continue
+    }
+    if (reminderString) {
+      continue
+    }
+
     for (let end = start; end < lines.length; end += 1) {
-      const str = lines.slice(start, end + 1).join('\n')
-      const isParsed: boolean = yield str
+      let str = lines.slice(start, end + 1).join('\n')
+
+      const unscalable = str.endsWith(_$.UNSCALABLE_VALUE)
+      if (unscalable) {
+        str = str.slice(0, -_$.UNSCALABLE_VALUE.length)
+      }
+
+      const isParsed: boolean = yield { string: str, unscalable }
       if (isParsed) {
         continue outer
       }
@@ -132,8 +156,8 @@ function * _statPlaceholderGenerator (stat: string) {
   }
 }
 
-export function tryParseTranslation (stat: string, modType: ModifierType): ParsedStat | undefined {
-  for (const combination of _statPlaceholderGenerator(stat)) {
+export function tryParseTranslation (stat: StatString, modType: ModifierType): ParsedStat | undefined {
+  for (const combination of _statPlaceholderGenerator(stat.string)) {
     const found = STAT_BY_MATCH_STR.get(combination.stat)
     if (!found || !found.stat.trade.ids[modType]) {
       continue
@@ -165,7 +189,7 @@ export function tryParseTranslation (stat: string, modType: ModifierType): Parse
       translation: found.matcher,
       roll: combination.values.length
         ? {
-            unscalable: found.stat.stat.unscalable ?? false,
+            unscalable: stat.unscalable,
             dp: found.stat.stat.dp || combination.values.some(stat => stat.decimal),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
             min: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.min ?? stat.roll)),

@@ -677,3 +677,13 @@ function transformToLegacyModifiers (_: string[], item: ParsedItem) {
   item.modifiers = sumStatsFromMods(item.newMods)
   return PARSER_SKIPPED as SectionParseResult // fake parser
 }
+
+export function removeLinesEnding (
+  lines: readonly string[], ending: string
+): string[] {
+  return lines.map(line =>
+    line.endsWith(ending)
+      ? line.slice(0, -ending.length)
+      : line
+  )
+}

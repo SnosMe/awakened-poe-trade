@@ -3,6 +3,7 @@ import * as C from './constants'
 import { percentRoll } from '@/web/price-check/filters/util'
 import type { ParsedStat } from './stat-translations'
 import { LegacyItemModifier, ModifierType } from './modifiers'
+import { removeLinesEnding } from './Parser'
 
 export interface ParsedModifier {
   info: ModifierInfo
@@ -79,33 +80,21 @@ export function parseModType (lines: string[]): { modType: ModifierType, lines: 
   let modType: ModifierType
   if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
     modType = ModifierType.Enchant
-    lines = removeLineEnding(lines, C.ENCHANT_LINE)
+    lines = removeLinesEnding(lines, C.ENCHANT_LINE)
   } else if (lines.some(line => line.endsWith(C.IMPLICIT_LINE))) {
     modType = ModifierType.Implicit
-    lines = removeLineEnding(lines, C.IMPLICIT_LINE)
+    lines = removeLinesEnding(lines, C.IMPLICIT_LINE)
   } else if (lines.some(line => line.endsWith(C.FRACTURED_LINE))) {
     modType = ModifierType.Fractured
-    lines = removeLineEnding(lines, C.FRACTURED_LINE)
+    lines = removeLinesEnding(lines, C.FRACTURED_LINE)
   } else if (lines.some(line => line.endsWith(C.CRAFTED_LINE))) {
     modType = ModifierType.Crafted
-    lines = removeLineEnding(lines, C.CRAFTED_LINE)
+    lines = removeLinesEnding(lines, C.CRAFTED_LINE)
   } else {
     modType = ModifierType.Explicit
   }
 
-  lines = removeLineEnding(lines, _$.UNSCALABLE_VALUE)
-
   return { modType, lines }
-}
-
-function removeLineEnding (
-  lines: readonly string[], ending: string
-): string[] {
-  return lines.map(line =>
-    line.endsWith(ending)
-      ? line.slice(0, -ending.length)
-      : line
-  )
 }
 
 // stat values internally stored as ints,
