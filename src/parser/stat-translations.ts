@@ -1,14 +1,13 @@
-import { STAT_BY_MATCH_STR } from '@/assets/data'
+import { STAT_BY_MATCH_STR, StatMatcher } from '@/assets/data'
 import type { ModifierType } from './modifiers'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
 
 export interface ParsedStat {
-  translation: string
+  readonly translation: StatMatcher
   roll?: {
     unscalable: boolean
-    negate: boolean
     dp: boolean
     value: number
     min: number
@@ -163,11 +162,10 @@ export function tryParseTranslation (stat: string, modType: ModifierType): Parse
     }
 
     return {
-      translation: found.matcher.string,
+      translation: found.matcher,
       roll: combination.values.length
         ? {
             unscalable: found.stat.stat.unscalable ?? false,
-            negate: found.matcher.negate ?? false,
             dp: found.stat.stat.dp || combination.values.some(stat => stat.decimal),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
             min: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.min ?? stat.roll)),

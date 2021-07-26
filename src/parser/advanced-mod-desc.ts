@@ -124,7 +124,6 @@ function applyIncr (mod: ModifierInfo, stat: ParsedStat): ParsedStat | null {
     translation: stat.translation,
     roll: {
       unscalable: roll.unscalable,
-      negate: roll.negate,
       dp: roll.dp,
       value: percentRoll(roll.value, rollIncr, (roll.value > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100),
       min: percentRoll(roll.min, rollIncr, (roll.min > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100),
@@ -151,13 +150,13 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
         continue
       }
 
-      const dbStatA = STAT_BY_MATCH_STR.get(statA.translation)!.stat
+      const dbStatA = STAT_BY_MATCH_STR.get(statA.translation.string)!.stat
 
       const toMerge = mods
         .reduce((filtered, modB) => {
           if (modB.info.type === modA.info.type) {
             const targetStat = modB.stats.find(statB =>
-              dbStatA.stat.matchers.some(matcher => matcher.string === statB.translation)
+              dbStatA.stat.matchers.some(matcher => matcher.string === statB.translation.string)
             )
             if (targetStat) {
               filtered.push({
@@ -173,23 +172,26 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
         out.push({
           stat: dbStatA.stat,
           trade: dbStatA.trade,
-          string: statA.translation,
+          string: statA.translation.string,
           type: modA.info.type,
-          negate: statA.roll?.negate || undefined,
+          negate: statA.translation.negate,
           value: statA.roll?.value
         })
       } else {
         const rollValue = toMerge.reduce((sum, { stat }) => sum + stat.roll!.value, 0)
+        const translation =
+          (dbStatA.stat.matchers.find(m => m.value === rollValue)) ??
+          ((statA.translation.value == null)
+            ? statA.translation
+            : dbStatA.stat.matchers.find(m => m.value == null && !m.negate)) ??
+          ({ string: `Report bug if you see this text (${statA.translation.string})` })
 
         out.push({
           stat: dbStatA.stat,
           trade: dbStatA.trade,
-          string:
-            dbStatA.stat.matchers.find(m => m.value === rollValue)?.string ??
-            dbStatA.stat.matchers.find(m => m.value == null && Boolean(m.negate) === statA.roll!.negate)?.string ??
-            statA.translation,
+          string: translation.string,
           type: modA.info.type,
-          negate: statA.roll!.negate || undefined,
+          negate: translation.negate,
           value: rollValue
         })
       }
