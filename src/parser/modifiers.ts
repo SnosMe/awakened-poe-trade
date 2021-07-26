@@ -14,6 +14,10 @@ export interface LegacyItemModifier extends
   Stat,
   Pick<StatMatcher, 'string' | 'negate'> {
   value?: number
+  bounds?: {
+    min: number
+    max: number
+  }
   type: ModifierType
 }
 

@@ -133,24 +133,7 @@ function filterAdjustmentForNegate (
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ) {
-  let negateFilter = false
-
-  if (filter.boundMin != null && filter.boundMax != null) { // unique
-    const sameSign = (Math.sign(filter.boundMin) === Math.sign(filter.boundMax))
-    const isNegated = mod.negate
-    const positiveMatcher = mod.stat.matchers.find(matcher => !matcher.negate)
-    if (!sameSign && isNegated && positiveMatcher) {
-      filter.text = positiveMatcher.string
-    } else {
-      filter.text = mod.string
-      negateFilter = Boolean(mod.negate)
-    }
-  } else {
-    filter.text = mod.string
-    negateFilter = Boolean(mod.negate)
-  }
-
-  if (negateFilter) {
+  if (mod.negate) {
     filter.invert = true
     const raw = { ...filter }
 

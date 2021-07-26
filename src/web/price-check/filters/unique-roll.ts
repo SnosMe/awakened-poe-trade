@@ -1,72 +1,37 @@
-import { /* UniqueItem, */ UNIQUES } from '@/assets/data'
+// import { UniqueItem, UNIQUES } from '@/assets/data'
 import { ParsedItem } from '@/parser'
 import { ItemModifier } from '@/parser/modifiers'
-// import { percentRollDelta } from './util'
+import { percentRollDelta } from './util'
 import { StatFilter } from './interfaces'
-import { percentRoll } from './util'
-// import { Config } from '@/web/Config'
-
-// function isConstantMod (mod: UniqueItem['stats'][0]): boolean {
-//   return mod.bounds.every(b => b.min === b.max)
-// }
-
-// function isWithinBounds (mod: ItemModifier, { bounds }: UniqueItem['stats'][0]): boolean {
-//   return mod.values!.every((value, idx) => (
-//     bounds[idx] !== undefined &&
-//     value >= bounds[idx].min &&
-//     value <= bounds[idx].max
-//   ))
-// }
+import { Config } from '@/web/Config'
 
 export function uniqueModFilterPartial (
-  item: ParsedItem,
+  _item: ParsedItem,
   mod: ItemModifier,
   filter: Writeable<StatFilter>
 ): void {
-  const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType!}`)
-  if (!uniqueInfo) return fallbackToExact(mod, filter)
+  // const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType!}`)
 
-  const modInfo = uniqueInfo.stats.find(stat =>
-    stat.text === mod.stat.ref &&
-    stat.implicit === (mod.type === 'implicit' ? true : undefined)
-  )
-  if (!modInfo) return fallbackToExact(mod, filter)
+  // TODO set this info again: filter.variant = modInfo.variant
 
-  filter.variant = modInfo.variant
+  if (!mod.bounds || (mod.bounds.min === mod.bounds.max)) {
+    // TODO: add exceptions to (!mod.bounds) for items like sythesized rings, watcher's eye, unqiues with variants, etc.
 
-  // trick: mod.values = modInfo.bounds
-  // if (!mod.values) {
-  //   mod.values = modInfo.bounds.map(b => getRollAsSingleNumber([b.min, b.max]))
-  // }
+    filter.defaultMin = mod.value
+    filter.defaultMax = mod.value
+    filter.min = filter.defaultMin
+    filter.max = filter.defaultMax
+    filter.roll = mod.value
+    if (!filter.variant) {
+      filter.hidden = 'Roll is not variable'
+    }
+  } else {
+    filter.boundMin = mod.bounds.min
+    filter.boundMax = mod.bounds.max
 
-  // it may be catalysts or stale data after patch
-  /* if (!isWithinBounds(mod, modInfo)) */ return fallbackToExact(mod, filter)
-
-  // if (isConstantMod(modInfo)) {
-  //   filter.defaultMin = getRollAsSingleNumber(mod.values)
-  //   filter.defaultMax = getRollAsSingleNumber(mod.values)
-  //   filter.min = filter.defaultMin
-  //   filter.max = filter.defaultMax
-  //   filter.roll = getRollAsSingleNumber(mod.values)
-  //   if (!filter.variant) {
-  //     filter.hidden = 'Roll is not variable'
-  //   }
-  // } else {
-  //   filter.boundMin = getRollAsSingleNumber(modInfo.bounds.map(b => b.min))
-  //   filter.boundMax = getRollAsSingleNumber(modInfo.bounds.map(b => b.max))
-
-  //   const roll = getRollAsSingleNumber(mod.values)
-  //   filter.roll = roll
-  //   const percent = Config.store.searchStatRange * 2
-  //   filter.defaultMin = Math.max(percentRollDelta(roll, (filter.boundMax - filter.boundMin), -percent, Math.floor), filter.boundMin)
-  //   filter.defaultMax = Math.min(percentRollDelta(roll, (filter.boundMax - filter.boundMin), +percent, Math.ceil), filter.boundMax)
-  // }
-}
-
-function fallbackToExact (mod: ItemModifier, filter: Writeable<StatFilter>): void {
-  if (mod.value) {
-    filter.roll = percentRoll(mod.value, 0, Math.floor, mod.stat.dp)
-    filter.defaultMin = filter.roll
-    filter.defaultMax = filter.roll
+    filter.roll = mod.value!
+    const percent = Config.store.searchStatRange * 2
+    filter.defaultMin = Math.max(percentRollDelta(mod.value!, (filter.boundMax - filter.boundMin), -percent, Math.floor), filter.boundMin)
+    filter.defaultMax = Math.min(percentRollDelta(mod.value!, (filter.boundMax - filter.boundMin), +percent, Math.ceil), filter.boundMax)
   }
 }

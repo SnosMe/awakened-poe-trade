@@ -158,19 +158,34 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
         }, [] as Array<{ info: ModifierInfo, stat: ParsedStat }>)
 
       if (toMerge.length === 1) {
+        // TODO: for some stats reduced is better (m.negate === true)
+        const translation = (statA.roll && Math.sign(statA.roll.min) !== Math.sign(statA.roll.max))
+          ? dbStatA.stat.matchers.find(m => m.value == null && !m.negate)!
+          : statA.translation
+
         out.push({
           stat: dbStatA.stat,
           trade: dbStatA.trade,
-          string: statA.translation.string,
+          string: translation.string,
           type: modA.info.type,
-          negate: statA.translation.negate,
-          value: statA.roll?.value
+          negate: translation.negate,
+          value: statA.roll?.value,
+          bounds: statA.roll && { min: statA.roll.min, max: statA.roll.max }
         })
       } else {
-        const rollValue = toMerge.reduce((sum, { stat }) => sum + stat.roll!.value, 0)
+        const roll = toMerge.reduce((sum, { stat }) => {
+          sum.value += stat.roll!.value
+          sum.min += stat.roll!.min
+          sum.max += stat.roll!.max
+          return sum
+        }, { value: 0, min: 0, max: 0 })
+
+        const sameSign = (Math.sign(roll.min) === Math.sign(roll.max))
+
+        // TODO: for some stats reduced is better (m.negate === true)
         const translation =
-          (dbStatA.stat.matchers.find(m => m.value === rollValue)) ??
-          ((statA.translation.value == null)
+          (dbStatA.stat.matchers.find(m => m.value === roll.value)) ??
+          ((sameSign && statA.translation.value == null)
             ? statA.translation
             : dbStatA.stat.matchers.find(m => m.value == null && !m.negate)) ??
           ({ string: `Report bug if you see this text (${statA.translation.string})` })
@@ -181,7 +196,11 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
           string: translation.string,
           type: modA.info.type,
           negate: translation.negate,
-          value: rollValue
+          value: roll.value,
+          bounds: {
+            min: roll.min,
+            max: roll.max
+          }
         })
       }
 
