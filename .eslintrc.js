@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/prefer-readonly': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/prefer-reduce-type-parameter': 'off',
     // TODO: refactor IPC and enable
     '@typescript-eslint/consistent-type-assertions': 'off'
   },
