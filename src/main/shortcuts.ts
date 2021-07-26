@@ -30,19 +30,12 @@ function priceCheck (lockedMode: boolean) {
 
   if (!lockedMode) {
     if (config.get('priceCheckKeyHold') === 'Ctrl') {
-      robotjs.keyTap('C')
+      robotjs.keyTap('C', ['Alt'])
     } else /* Alt */ {
-      // not interested in advanced item text (Ctrl + Alt + C)
-      robotjs.keyToggle('Alt', 'up')
       robotjs.keyTap('C', ['Ctrl'])
-      // restore Alt
-      robotjs.keyToggle('Alt', 'down')
-      // cancel alt-visibility
-      // (using Ctrl key (Alt + Ctrl), to ensure nothing triggers on the user's system)
-      robotjs.keyTap('Ctrl')
     }
   } else {
-    robotjs.keyTap('C', ['Ctrl'])
+    robotjs.keyTap('C', ['Ctrl', 'Alt'])
   }
 }
 
@@ -56,7 +49,7 @@ function itemCheck () {
     })
     .catch(() => {})
   hotkeyPressPosition = screen.getCursorScreenPoint()
-  robotjs.keyTap('C', ['Ctrl'])
+  robotjs.keyTap('C', ['Ctrl', 'Alt'])
 }
 
 function registerGlobal () {
