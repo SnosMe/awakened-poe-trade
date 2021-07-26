@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <slot name="item">
+    <slot v-if="!hideItem" name="item">
       <div class="w-8 h-8 flex items-center justify-center">
         <img :src="itemImg" class="max-w-full max-h-full overflow-hidden">
       </div>
@@ -50,6 +50,10 @@ export default defineComponent({
     itemImg: {
       type: String,
       default: require('@/assets/images/wisdom.png').default
+    },
+    hideItem: {
+      type: Boolean,
+      default: false
     }
   },
   setup (props) {
