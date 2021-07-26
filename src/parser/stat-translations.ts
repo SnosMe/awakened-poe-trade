@@ -48,6 +48,7 @@ export function * linesToStatStrings (lines: string[]): Generator<StatString, st
 
       const isParsed: boolean = yield { string: str, unscalable }
       if (isParsed) {
+        start += (end - start)
         continue outer
       }
     }
