@@ -56,8 +56,9 @@ export default defineComponent({
 
       const r = ITEM_DROP.get(detailsId.value)!
       return {
-        related: r.query.map(id => findByDetailsId(id)),
-        items: r.items.map(id => findByDetailsId(id))
+        // TODO: show at least icon when price is not available on poe.ninja yet
+        related: r.query.map(id => findByDetailsId(id)).filter(_ => Boolean(_)),
+        items: r.items.map(id => findByDetailsId(id)).filter(_ => Boolean(_))
       }
     })
 
