@@ -1218,13 +1218,6 @@
     }
   ],
   [
-    "Blessed Boots",
-    {
-      "category": "Boots",
-      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/HalfTonedBoots.png?scale=1&w=2&h=2"
-    }
-  ],
-  [
     "Brimstone Treads",
     {
       "category": "Boots",
@@ -1320,6 +1313,13 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex2.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Fugitive Boots",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/HalfTonedBoots.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -1446,6 +1446,27 @@
     {
       "category": "Boots",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt1.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Greaves",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/SpiritBootsBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Sabatons",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/SpiritBootsBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Sollerets",
+    {
+      "category": "Boots",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/SpiritBootsBaseType.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -2141,6 +2162,12 @@
     }
   ],
   [
+    "Expedition Logbook",
+    {
+      "category": "Expedition Logbook"
+    }
+  ],
+  [
     "Fishing Rod",
     {
       "category": "Fishing Rod",
@@ -2190,6 +2217,12 @@
     }
   ],
   [
+    "Corundum Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
     "Diamond Flask",
     {
       "category": "Flask"
@@ -2227,6 +2260,12 @@
   ],
   [
     "Giant Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Gold Flask",
     {
       "category": "Flask"
     }
@@ -2275,6 +2314,12 @@
   ],
   [
     "Hallowed Mana Flask",
+    {
+      "category": "Flask"
+    }
+  ],
+  [
+    "Iron Flask",
     {
       "category": "Flask"
     }
@@ -2695,6 +2740,27 @@
     {
       "category": "Gloves",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt1.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Gages",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpiritGlovesBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Gauntlets",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpiritGlovesBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Gloves",
+    {
+      "category": "Gloves",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpiritGlovesBaseType.png?scale=1&w=2&h=2"
     }
   ],
   [
@@ -3745,6 +3811,27 @@
     {
       "category": "Helmet",
       "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr10.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Crest",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/SpiritHelmetBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Crown",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/SpiritHelmetBaseType.png?scale=1&w=2&h=2"
+    }
+  ],
+  [
+    "Runic Helm",
+    {
+      "category": "Helmet",
+      "icon": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/SpiritHelmetBaseType.png?scale=1&w=2&h=2"
     }
   ],
   [

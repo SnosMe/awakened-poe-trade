@@ -35,12 +35,6 @@ export interface UniqueItem {
   name: string
   basetype: string
   icon: string
-  stats: Array<{
-    text: string
-    implicit?: true
-    variant?: true
-    bounds: Array<{ min: number, max: number }>
-  }>
 }
 
 export interface BlightRecipes {

@@ -16,7 +16,7 @@ export function isValuableBasetype (item: ParsedItem): boolean {
   )
 }
 
-const LATEST_MAP_VARIANT = 'Ritual'
+const LATEST_MAP_VARIANT = 'Gen-11'
 
 export function getDetailsId (item: ParsedItem) {
   if (item.rarity === ItemRarity.Gem) {
