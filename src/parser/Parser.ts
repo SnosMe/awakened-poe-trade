@@ -22,13 +22,14 @@ type SectionParseResult =
   typeof PARSER_SKIPPED
 
 type ParserFn = (section: string[], item: ParsedItem) => SectionParseResult
+type VirtualParserFn = (item: ParsedItem) => void
 
-const parsers: ParserFn[] = [
+const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseUnidentified,
-  parseSuperior,
+  { virtual: parseSuperior },
   parseSynthesised,
   parseCategoryByHelpText,
-  normalizeName,
+  { virtual: normalizeName },
   // -----------
   parseItemLevel,
   parseTalismanTier,
@@ -48,7 +49,7 @@ const parsers: ParserFn[] = [
   parseModifiers,
   parseModifiers,
   parseModifiers,
-  transformToLegacyModifiers
+  { virtual: transformToLegacyModifiers }
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -83,6 +84,11 @@ export function parseClipboard (clipboard: string) {
 
   // each section can be parsed at most by one parser
   for (const parser of parsers) {
+    if (typeof parser === 'object') {
+      parser.virtual(parsed)
+      continue
+    }
+
     for (const section of sections) {
       const result = parser(section, parsed)
       if (result === SECTION_PARSED) {
@@ -97,7 +103,7 @@ export function parseClipboard (clipboard: string) {
   return Object.freeze(parsed)
 }
 
-function normalizeName (_: string[], item: ParsedItem) {
+function normalizeName (item: ParsedItem) {
   if (item.rarity === ItemRarity.Magic) {
     const baseType = magicBasetype(item.name)
     if (baseType) {
@@ -129,8 +135,6 @@ function normalizeName (_: string[], item: ParsedItem) {
     item.category = baseType?.category
     item.icon = baseType?.icon
   }
-
-  return PARSER_SKIPPED as SectionParseResult // fake parser
 }
 
 function parseMap (section: string[], item: ParsedItem) {
@@ -545,7 +549,7 @@ function parseSynthesised (section: string[], item: ParsedItem) {
   return SECTION_SKIPPED
 }
 
-function parseSuperior (_: string[], item: ParsedItem) {
+function parseSuperior (item: ParsedItem) {
   if (
     (item.rarity === ItemRarity.Normal) ||
     (item.rarity === ItemRarity.Magic && item.isUnidentified) ||
@@ -556,8 +560,6 @@ function parseSuperior (_: string[], item: ParsedItem) {
       item.name = _$[C.ITEM_SUPERIOR].exec(item.name)![1]
     }
   }
-
-  return PARSER_SKIPPED as SectionParseResult // fake parser
 }
 
 function parseCategoryByHelpText (section: string[], item: ParsedItem) {
@@ -673,9 +675,8 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
 /**
  * @deprecated
  */
-function transformToLegacyModifiers (_: string[], item: ParsedItem) {
+function transformToLegacyModifiers (item: ParsedItem) {
   item.modifiers = sumStatsFromMods(item.newMods)
-  return PARSER_SKIPPED as SectionParseResult // fake parser
 }
 
 export function removeLinesEnding (
