@@ -58,6 +58,39 @@
         </div>
       </div>
     </div>
+    <div class="bg-gray-700 rounded px-2 py-1 mb-2 leading-none">{{ t('Keys reserved by the game') }}</div>
+    <div class="mb-4">
+      <div class="flex">
+        <div class="flex-1">{{ t('Advanced Mod Descriptions') }}</div>
+        <hotkey-input :model-value="advancedModKey || 'Alt'" class="w-48" />
+      </div>
+      <div v-if="!advancedModKey"
+        class="text-red-400 mt-1 mr-2 ml-auto text-right">
+        <i class="fas fa-exclamation-triangle"></i> {{ t('Failed to detect key') }}</div>
+    </div>
+    <div class="mb-4">
+      <div class="flex">
+        <div class="flex-1">{{ t('Copy item text') }}</div>
+        <span class="text-gray-500 mr-2">{{ t('Normal') }}</span>
+        <hotkey-input :model-value="copyTextNormal" class="w-48" />
+      </div>
+      <div class="text-right mt-2">
+        <span class="text-gray-500 mr-2">{{ t('Advanced') }}</span>
+        <hotkey-input :model-value="copyTextAdvanced" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="flex">
+        <div class="flex-1">{{ t('Text editing') }}</div>
+        <hotkey-input model-value="Ctrl+C, Ctrl+V, Ctrl+A" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-8">
+      <div class="flex">
+        <div class="flex-1">{{ t('Search in Stash') }}</div>
+        <hotkey-input model-value="Ctrl + F" class="w-48" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -66,6 +99,7 @@ import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import HotkeyInput from './HotkeyInput.vue'
+import { mergeTwoHotkeys } from '@/ipc/KeyToCode'
 
 export default defineComponent({
   components: { HotkeyInput },
@@ -74,7 +108,15 @@ export default defineComponent({
 
     return {
       t,
-      config: computed(() => Config.store)
+      config: computed(() => Config.store),
+      advancedModKey: computed(() => Config.gameConfig?.highlightKey),
+      copyTextNormal: computed(() => {
+        const keys = (Config.gameConfig?.highlightKey || 'Alt').split(' + ')
+        return (keys.includes('Ctrl') || keys.includes('C')) ? null : 'Ctrl + C'
+      }),
+      copyTextAdvanced: computed(() => {
+        return mergeTwoHotkeys(Config.gameConfig?.highlightKey || 'Alt', 'Ctrl + C')
+      })
     }
   }
 })
@@ -92,7 +134,15 @@ export default defineComponent({
     "Map check": "Проверка карты",
     "Item info": "Проверка предмета",
     "Stash tab scrolling": "Прокрутка вкладок тайника",
-    "Delve grid": "Сетка \"Спуска\""
+    "Delve grid": "Сетка \"Спуска\"",
+    "Keys reserved by the game": "Клавиши зарезервированные игрой",
+    "Copy item text": "Копировать текст предмета",
+    "Advanced Mod Descriptions": "Расширенные описания свойств",
+    "Normal": "Обычный",
+    "Advanced": "Расширенный",
+    "Failed to detect key": "Не удалось определить клавишу",
+    "Text editing": "Редактирование текста",
+    "Search in Stash": "Поиск в тайнике"
   }
 }
 </i18n>

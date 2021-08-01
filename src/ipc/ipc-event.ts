@@ -1,5 +1,12 @@
+import type { Config as AppConfig } from '@/ipc/types'
+import type { GameConfig } from '@/main/game-config'
+
 export const GET_CONFIG = 'get-config'
 export const PUSH_CONFIG = 'push-config'
+export interface IpcConfigs {
+  app: AppConfig
+  game: GameConfig | null
+}
 
 export const LEAGUES_READY = 'leagues-ready'
 export const LEAGUE_SELECTED = 'league-selected'

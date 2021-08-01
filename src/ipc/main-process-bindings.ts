@@ -104,11 +104,16 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  getConfig (): Config {
+  getConfig (): ipcEvent.IpcConfigs {
     if (electron) {
       return electron.ipcRenderer.sendSync(ipcEvent.GET_CONFIG)
     } else {
-      return defaultConfig
+      return {
+        app: defaultConfig,
+        game: {
+          highlightKey: 'Alt'
+        }
+      }
     }
   }
 

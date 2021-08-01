@@ -1,8 +1,8 @@
-import fs from 'fs/promises'
+import fs from 'fs'
 import path from 'path'
 import ini from 'ini'
 import { app } from 'electron'
-import { config } from './config'
+import { config as appConfig } from './config'
 import { logger } from './logger'
 import { hotkeyToString, CodeToKey } from '@/ipc/KeyToCode'
 
@@ -10,28 +10,27 @@ export interface GameConfig {
   highlightKey: string | null
 }
 
-export async function readConfig (): Promise<GameConfig | null> {
-  let filePath = config.get('gameConfig')
+export let gameConfig: GameConfig | null = null
+export function loadAndCache () {
+  gameConfig = readConfig()
+  return gameConfig
+}
+
+export function readConfig (): GameConfig | null {
+  let filePath = appConfig.get('gameConfig')
 
   if (!filePath) {
     filePath = path.join(app.getPath('documents'), 'My Games', 'Path of Exile', 'production_Config.ini')
     try {
-      await fs.access(filePath)
-      config.set('gameConfig', filePath)
+      fs.accessSync(filePath)
+      appConfig.set('gameConfig', filePath)
     } catch {
       return null
     }
   }
 
   try {
-    await fs.access(filePath)
-    config.set('gameConfig', filePath)
-  } catch {
-    return null
-  }
-
-  try {
-    let contents = await fs.readFile(filePath, { encoding: 'utf-8', flag: 'r' })
+    let contents = fs.readFileSync(filePath, { encoding: 'utf-8', flag: 'r' })
     contents = contents.trimStart() // remove BOM
     const parsed = ini.parse(contents)
 
@@ -68,7 +67,7 @@ function parseConfigHotkey (cgfKey: string): string | null {
   }
 
   return hotkeyToString(
-    key1,
+    [key1],
     key2 === 'Ctrl',
     key2 === 'Shift',
     key2 === 'Alt'

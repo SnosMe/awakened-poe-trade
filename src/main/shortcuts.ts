@@ -3,13 +3,14 @@ import robotjs from 'robotjs'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
 import { showWidget as showPriceCheck } from './price-check'
-import { KeyToElectron } from '@/ipc/KeyToCode'
+import { KeyToElectron, mergeTwoHotkeys } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive } from './overlay-window'
 import * as ipc from '@/ipc/ipc-event'
 import { typeInChat } from './game-chat'
+import { gameConfig } from './game-config'
 
 export let hotkeyPressPosition: Point | undefined
 
@@ -29,13 +30,29 @@ function priceCheck (lockedMode: boolean) {
   // }
 
   if (!lockedMode) {
-    if (config.get('priceCheckKeyHold') === 'Ctrl') {
-      robotjs.keyTap('C', ['Alt'])
-    } else /* Alt */ {
-      robotjs.keyTap('C', ['Ctrl'])
-    }
+    pressKeysToCopyItemText(config.get('priceCheckKeyHold'))
   } else {
-    robotjs.keyTap('C', ['Ctrl', 'Alt'])
+    pressKeysToCopyItemText()
+    }
+}
+
+function pressKeysToCopyItemText (skipModKey?: string) {
+  let keys = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt').split(' + ')
+  keys = keys.filter(key => key !== 'C')
+  if (skipModKey) {
+    keys = keys.filter(key => key !== skipModKey)
+  }
+
+  for (const key of keys) {
+    robotjs.keyToggle(key, 'down')
+  }
+
+  // finally press `C` to copy text
+  robotjs.keyTap('C')
+
+  keys.reverse()
+  for (const key of keys) {
+    robotjs.keyToggle(key, 'up')
   }
 }
 
@@ -49,7 +66,7 @@ function itemCheck () {
     })
     .catch(() => {})
   hotkeyPressPosition = screen.getCursorScreenPoint()
-  robotjs.keyTap('C', ['Ctrl', 'Alt'])
+  pressKeysToCopyItemText()
 }
 
 function registerGlobal () {
@@ -72,14 +89,14 @@ function registerGlobal () {
       config.get('wikiKey'),
       () => {
         pollClipboard().then(openWiki).catch(() => {})
-        robotjs.keyTap('C', ['Ctrl'])
+        pressKeysToCopyItemText()
       }
     ),
     shortcutCallback(
       config.get('craftOfExileKey'),
       () => {
         pollClipboard().then(openCraftOfExile).catch(() => {})
-        robotjs.keyTap('C', ['Ctrl', 'Alt'])
+        pressKeysToCopyItemText()
       }
     ),
     shortcutCallback(
@@ -161,12 +178,12 @@ export function setupShortcuts () {
     } else if (pressed === config.get('wikiKey')) {
       shortcutCallback(pressed, () => {
         pollClipboard().then(openWiki).catch(() => {})
-        robotjs.keyTap('C', ['Ctrl'])
+        pressKeysToCopyItemText()
       }).cb()
     } else if (pressed === config.get('craftOfExileKey')) {
       shortcutCallback(pressed, () => {
         pollClipboard().then(openCraftOfExile).catch(() => {})
-        robotjs.keyTap('C', ['Ctrl', 'Alt'])
+        pressKeysToCopyItemText()
       }).cb()
     } else if (pressed === config.get('itemCheckKey')) {
       shortcutCallback(pressed, itemCheck).cb()

@@ -17,6 +17,7 @@ import { setupAltVisibility } from './main/alt-visibility'
 import { setupBuiltinBrowser } from './main/builtin-browser'
 import { createFileProtocol } from './main/app-file-protocol'
 import { LogWatcher } from './main/LogWatcher'
+import { loadAndCache as loadAndCacheGameCfg } from './main/game-config'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 if (!app.requestSingleInstanceLock()) {
@@ -59,6 +60,7 @@ app.on('ready', async () => {
   createTray()
   setupShowHide()
   setupBuiltinBrowser()
+  loadAndCacheGameCfg()
 
   setTimeout(
     async () => {

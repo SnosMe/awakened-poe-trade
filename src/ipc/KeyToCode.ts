@@ -229,7 +229,12 @@ export const forbidden = [
 ]
 export const forbiddenCtrl = ['C', 'V', 'A', 'F', 'Enter']
 
-export function hotkeyToString (key: string | null, ctrl: boolean, shift: boolean, alt: boolean) {
+export function hotkeyToString (keys: string[], ctrl = false, shift = false, alt = false): string {
+  if (keys.includes('Ctrl')) ctrl = true
+  if (keys.includes('Shift')) shift = true
+  if (keys.includes('Alt')) alt = true
+  keys = keys.filter(key => !isModKey(key))
+
   let mod = ''
   if (shift && alt) mod = 'Shift + Alt'
   else if (ctrl && shift) mod = 'Ctrl + Shift'
@@ -238,9 +243,16 @@ export function hotkeyToString (key: string | null, ctrl: boolean, shift: boolea
   else if (ctrl) mod = 'Ctrl'
   else if (shift) mod = 'Shift'
 
-  return (mod && key)
-    ? `${mod} + ${key}`
-    : (key || mod)
+  return (mod && keys.length)
+    ? `${mod} + ${keys.join(' + ')}`
+    : (keys.join(' + ') || mod)
+}
+
+export function mergeTwoHotkeys (str1: string, str2: string): string {
+  return hotkeyToString(Array.from(new Set([
+    ...str1.split(' + '),
+    ...str2.split(' + ')
+  ])))
 }
 
 export function isModKey (key: string) {

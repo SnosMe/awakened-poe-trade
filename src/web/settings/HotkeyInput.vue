@@ -3,7 +3,7 @@
     @keyup="handleKeyup"
     @keydown.prevent
     :placeholder="modelValue || t('Not Set')"
-    :class="{ 'placeholder-red-500': !modelValue }"
+    :class="{ 'placeholder-red-400': !modelValue }"
     class="rounded bg-gray-900 px-1 text-center font-fontin-regular" />
 </template>
 
@@ -60,7 +60,7 @@ export default defineComponent({
           (shiftKey ? !props.forbidden.includes('Shift') : true) &&
           (altKey ? !props.forbidden.includes('Alt') : true)
         ) {
-          code = hotkeyToString(code, ctrlKey, shiftKey, altKey)
+          code = hotkeyToString([code], ctrlKey, shiftKey, altKey)
 
           if (!props.forbidden.includes(code)) {
             ctx.emit('update:modelValue', code)
