@@ -3,6 +3,9 @@ export const KeyToCode = {
   Backspace: 8,
   Tab: 9,
   Enter: 13,
+  Shift: 16,
+  Ctrl: 17,
+  Alt: 18,
   // Pause: 19,
   CapsLock: 20,
   Escape: 27,
@@ -104,6 +107,10 @@ export const KeyToCode = {
   BracketRight: 221,
   Quote: 222
 }
+
+export const CodeToKey = Object.fromEntries(
+  Object.entries(KeyToCode).map(([key, code]) => [code, key])
+)
 
 export const KeyToElectron = {
   // Cancel,
@@ -221,3 +228,25 @@ export const forbidden = [
   'ArrowUp', 'ArrowRight', 'ArrowLeft'
 ]
 export const forbiddenCtrl = ['C', 'V', 'A', 'F', 'Enter']
+
+export function hotkeyToString (key: string | null, ctrl: boolean, shift: boolean, alt: boolean) {
+  let mod = ''
+  if (shift && alt) mod = 'Shift + Alt'
+  else if (ctrl && shift) mod = 'Ctrl + Shift'
+  else if (ctrl && alt) mod = 'Ctrl + Alt'
+  else if (alt) mod = 'Alt'
+  else if (ctrl) mod = 'Ctrl'
+  else if (shift) mod = 'Shift'
+
+  return (mod && key)
+    ? `${mod} + ${key}`
+    : (key || mod)
+}
+
+export function isModKey (key: string) {
+  return (
+    key === 'Ctrl' ||
+    key === 'Shift' ||
+    key === 'Alt'
+  )
+}

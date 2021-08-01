@@ -5,10 +5,8 @@ import { config } from './config'
 import { logger } from './logger'
 
 const COMMON_PATH = [
-  'C:/Program Files (x86)/Grinding Gear Games/Path of Exile/logs/Client.txt',
-  'D:/Program Files (x86)/Grinding Gear Games/Path of Exile/logs/Client.txt',
-  'C:/Program Files (x86)/Steam/steamapps/common/Path of Exile/logs/Client.txt',
-  'D:/Program Files (x86)/Steam/steamapps/common/Path of Exile/logs/Client.txt'
+  'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
+  'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
 ]
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class

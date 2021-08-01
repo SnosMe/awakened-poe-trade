@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { KeyToCode, forbidden } from '@/ipc/KeyToCode'
+import { KeyToCode, forbidden, hotkeyToString } from '@/ipc/KeyToCode'
 
 export default defineComponent({
   emits: ['update:modelValue'],
@@ -60,12 +60,7 @@ export default defineComponent({
           (shiftKey ? !props.forbidden.includes('Shift') : true) &&
           (altKey ? !props.forbidden.includes('Alt') : true)
         ) {
-          if (shiftKey && altKey) code = `Shift + Alt + ${code}`
-          else if (ctrlKey && shiftKey) code = `Ctrl + Shift + ${code}`
-          else if (ctrlKey && altKey) code = `Ctrl + Alt + ${code}`
-          else if (altKey) code = `Alt + ${code}`
-          else if (ctrlKey) code = `Ctrl + ${code}`
-          else if (shiftKey) code = `Shift + ${code}`
+          code = hotkeyToString(code, ctrlKey, shiftKey, altKey)
 
           if (!props.forbidden.includes(code)) {
             ctx.emit('update:modelValue', code)

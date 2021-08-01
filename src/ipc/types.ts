@@ -27,6 +27,7 @@ export interface Config {
     send: boolean
   }>
   clientLog: string | null
+  gameConfig: string | null
   useOsGlobalShortcut: boolean
   windowTitle: string
   logLevel: string
@@ -102,6 +103,7 @@ export const defaultConfig: Config = {
     send: true
   }],
   clientLog: null,
+  gameConfig: null,
   useOsGlobalShortcut: true,
   windowTitle: 'Path of Exile',
   logLevel: 'warn',

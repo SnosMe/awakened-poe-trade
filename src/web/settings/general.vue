@@ -30,8 +30,17 @@
       <div class="mb-4 flex">
         <input v-model.trim="config.clientLog"
           class="rounded-l bg-gray-900 px-1 block w-full font-sans" placeholder="???/Grinding Gear Games/Path of Exile/logs/Client.txt">
-        <input type="file" id="file" class="hidden" accept=".txt" @input="handleLogFile">
-        <label class="text-gray-400 bg-gray-900 px-2 rounded-r ml-px cursor-pointer" for="file">{{ t('Browse') }}</label>
+        <input type="file" id="file-client-log" class="hidden" accept=".txt" @input="handleLogFile">
+        <label class="text-gray-400 bg-gray-900 px-2 rounded-r ml-px cursor-pointer" for="file-client-log">{{ t('Browse') }}</label>
+      </div>
+    </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('PoE config file') }}</div>
+      <div class="mb-4 flex">
+        <input v-model.trim="config.gameConfig"
+          class="rounded-l bg-gray-900 px-1 block w-full font-sans" placeholder="???/My Games/Path of Exile/production_Config.ini">
+        <input type="file" id="file-client-config" class="hidden" accept=".ini" @input="handleGameConfigFile">
+        <label class="text-gray-400 bg-gray-900 px-2 rounded-r ml-px cursor-pointer" for="file-client-config">{{ t('Browse') }}</label>
       </div>
     </div>
     <div class="mb-2">
@@ -65,6 +74,9 @@ export default defineComponent({
       config: computed(() => Config.store),
       handleLogFile (e: InputEvent) {
         Config.store.clientLog = (e.target as HTMLInputElement).files![0].path
+      },
+      handleGameConfigFile (e: InputEvent) {
+        Config.store.gameConfig = (e.target as HTMLInputElement).files![0].path
       }
     }
   }
@@ -81,7 +93,8 @@ export default defineComponent({
     "Show only for Overlay": "Показывать только для оверлея",
     "Clicking on background focuses game": "Нажатие по фону активирует окно игры",
     "Language": "Язык",
-    "PoE log file": "PoE лог файл",
+    "PoE log file": "Файл логов PoE",
+    "PoE config file": "Файл настроек PoE",
     "Browse": "Выбрать",
     "Auto-download updates": "Автозагрузка обновлений"
   }
