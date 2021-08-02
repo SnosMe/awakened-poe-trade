@@ -20,5 +20,6 @@
   "explicit": "свойство",
   "enchant": "зачарование",
   "crafted": "мастер",
-  "fractured": "расколотый"
+  "fractured": "расколотый",
+  "Not recognized modifier": "Нераспознанное свойство"
 }

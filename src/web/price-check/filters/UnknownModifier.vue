@@ -37,11 +37,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Not recognized modifier": "Нераспознанное свойство"
-  }
-}
-</i18n>

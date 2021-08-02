@@ -25,6 +25,7 @@
     >
       <maps-stat-entry
         :style="{ position: 'absolute', top: `${props.top}px` }"
+        :class="{ 'text-red-400': props.item.outdated }"
         :matcher="props.item.matchStr" />
     </virtual-scroll>
   </div>
@@ -34,7 +35,7 @@
 import { computed, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
-import { STATS } from '@/assets/data'
+import { STATS, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
 import { ItemCheckWidget } from '../overlay/interfaces'
 import VirtualScroll from '../ui/VirtualScroll.vue'
@@ -70,6 +71,14 @@ export default defineComponent({
       set (value) { config.value.maps.showNewStats = value }
     })
 
+    const hasOutdatedTranslation = computed<string[]>(() => {
+      return config.value.maps.selectedStats
+        .filter(entry =>
+          entry.decision !== 'seen' &&
+          !STAT_BY_MATCH_STR.has(entry.matcher))
+        .map(entry => entry.matcher)
+    })
+
     const { t } = useI18n()
 
     return {
@@ -80,12 +89,20 @@ export default defineComponent({
       filteredStats: computed(() => {
         const q = search.value.toLowerCase().split(' ')
 
-        return statList.value.filter(stat =>
-          q.every(part => stat.searchStr.includes(part)) &&
-          (onlySelected.value
-            ? selectedMatchers.value.has(stat.matchStr)
-            : true)
-        )
+        const filtered = statList.value
+          .filter(stat =>
+            q.every(part => stat.searchStr.includes(part)) &&
+            (onlySelected.value
+              ? selectedMatchers.value.has(stat.matchStr)
+              : true)
+          )
+          .map(({ matchStr }) => ({ matchStr, outdated: false }))
+
+        return [
+          ...hasOutdatedTranslation.value
+            .map((matchStr) => ({ matchStr, outdated: true })),
+          ...filtered
+        ]
       }),
       fontSize: computed(() => {
         return Config.store.fontSize
