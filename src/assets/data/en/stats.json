@@ -2362,6 +2362,13 @@
   },
   {
     "stat": {
+      "ref": "#% chance to gain a Frenzy Charge on Critical Strike at Close Range",
+      "matchers": [{"string": "#% chance to gain a Frenzy Charge on Critical Strike at Close Range"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_911695185"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance to gain a Frenzy Charge on Hit",
       "matchers": [{"string": "#% chance to gain a Frenzy Charge on Hit"}]
     },
@@ -19451,6 +19458,13 @@
   },
   {
     "stat": {
+      "ref": "+#% to Damage over Time Multiplier for Bleeding per Frenzy Charge",
+      "matchers": [{"string": "#% to Damage over Time Multiplier for Bleeding per Frenzy Charge"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2583415204"]}}
+  },
+  {
+    "stat": {
       "ref": "+#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe",
       "matchers": [{"string": "#% to Damage over Time Multiplier for Bleeding per Rage while wielding an Axe"}]
     },
@@ -25954,6 +25968,13 @@
   },
   {
     "stat": {
+      "ref": "Bleeding you inflict deals Damage #% faster per Frenzy Charge",
+      "matchers": [{"string": "Bleeding you inflict deals Damage #% faster per Frenzy Charge"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1670470989"]}}
+  },
+  {
+    "stat": {
       "ref": "Bleeding you inflict is Reflected to you",
       "matchers": [{"string": "Bleeding you inflict is Reflected to you"}]
     },
@@ -30696,19 +30717,21 @@
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Bleeding for 1 second if used while Bleeding\nRemoves Corrupted Blood when used",
+      "ref": "Grants Immunity to Bleeding for 4 seconds if used while Bleeding\nGrants Immunity to Corrupted Blood for 4 seconds if used while affected by Corrupted Blood",
       "matchers": [
-        {"string": "Grants Immunity to Bleeding for 1 second if used while Bleeding\nRemoves Corrupted Blood when used"}
+        {
+          "string": "Grants Immunity to Bleeding for 4 seconds if used while Bleeding\nGrants Immunity to Corrupted Blood for 4 seconds if used while affected by Corrupted Blood"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3233646242"]}}
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Chill for 1 second if used while Chilled\nGrants Immunity to Freeze for 1 second if used while Frozen",
+      "ref": "Grants Immunity to Chill for 4 seconds if used while Chilled\nGrants Immunity to Freeze for 4 seconds if used while Frozen",
       "matchers": [
         {
-          "string": "Grants Immunity to Chill for 1 second if used while Chilled\nGrants Immunity to Freeze for 1 second if used while Frozen"
+          "string": "Grants Immunity to Chill for 4 seconds if used while Chilled\nGrants Immunity to Freeze for 4 seconds if used while Frozen"
         }
       ]
     },
@@ -30716,24 +30739,24 @@
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Ignite for 1 second if used while Ignited\nRemoves all Burning when used",
+      "ref": "Grants Immunity to Ignite for 4 seconds if used while Ignited\nRemoves all Burning when used",
       "matchers": [
-        {"string": "Grants Immunity to Ignite for 1 second if used while Ignited\nRemoves all Burning when used"}
+        {"string": "Grants Immunity to Ignite for 4 seconds if used while Ignited\nRemoves all Burning when used"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2695527599"]}}
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Poison for 1 second if used while Poisoned",
-      "matchers": [{"string": "Grants Immunity to Poison for 1 second if used while Poisoned"}]
+      "ref": "Grants Immunity to Poison for 4 seconds if used while Poisoned",
+      "matchers": [{"string": "Grants Immunity to Poison for 4 seconds if used while Poisoned"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3596333054"]}}
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Shock for 1 second if used while Shocked",
-      "matchers": [{"string": "Grants Immunity to Shock for 1 second if used while Shocked"}]
+      "ref": "Grants Immunity to Shock for 4 seconds if used while Shocked",
+      "matchers": [{"string": "Grants Immunity to Shock for 4 seconds if used while Shocked"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1823903967"]}}
   },
@@ -36013,59 +36036,43 @@
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Conductivity, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Conductivity, with #% increased Effect"}]
+      "ref": "Players are Cursed with Conductivity",
+      "matchers": [{"string": "Players are Cursed with Conductivity"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_376158712"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Despair, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Despair, with #% increased Effect"}]
-    },
+    "stat": {"ref": "Players are Cursed with Despair", "matchers": [{"string": "Players are Cursed with Despair"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1551563177"]}}
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Elemental Weakness, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Elemental Weakness, with #% increased Effect"}]
+      "ref": "Players are Cursed with Elemental Weakness",
+      "matchers": [{"string": "Players are Cursed with Elemental Weakness"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_558910024"], "fractured": ["fractured.stat_558910024"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Enfeeble, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Enfeeble, with #% increased Effect"}]
-    },
+    "stat": {"ref": "Players are Cursed with Enfeeble", "matchers": [{"string": "Players are Cursed with Enfeeble"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_4103440490"], "fractured": ["fractured.stat_4103440490"]}}
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Flammability, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Flammability, with #% increased Effect"}]
+      "ref": "Players are Cursed with Flammability",
+      "matchers": [{"string": "Players are Cursed with Flammability"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_989228672"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Frostbite, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Frostbite, with #% increased Effect"}]
-    },
+    "stat": {"ref": "Players are Cursed with Frostbite", "matchers": [{"string": "Players are Cursed with Frostbite"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3442976749"]}}
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Temporal Chains, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Temporal Chains, with #% increased Effect"}]
+      "ref": "Players are Cursed with Temporal Chains",
+      "matchers": [{"string": "Players are Cursed with Temporal Chains"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2326202293"], "fractured": ["fractured.stat_2326202293"]}}
-  },
-  {
-    "stat": {
-      "ref": "Players are Cursed with Vulnerability, with #% increased Effect",
-      "matchers": [{"string": "Players are Cursed with Vulnerability, with #% increased Effect"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1366534040"], "fractured": ["fractured.stat_1366534040"]}}
   },
   {
     "stat": {

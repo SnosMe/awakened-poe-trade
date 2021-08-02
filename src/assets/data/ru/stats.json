@@ -2417,6 +2417,13 @@
   },
   {
     "stat": {
+      "ref": "#% chance to gain a Frenzy Charge on Critical Strike at Close Range",
+      "matchers": [{"string": "#% шанс получить заряд ярости при нанесении критического удара с близкого расстояния"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_911695185"]}}
+  },
+  {
+    "stat": {
       "ref": "#% chance to gain a Frenzy Charge on Hit",
       "matchers": [{"string": "#% шанс получить заряд ярости при нанесении удара"}]
     },
@@ -14268,7 +14275,13 @@
     "trade": {"ids": {"enchant": ["enchant.stat_103922739"]}}
   },
   {
-    "stat": {"ref": "#% increased Spectral Helix Damage", "matchers": []},
+    "stat": {
+      "ref": "#% increased Spectral Helix Damage",
+      "matchers": [
+        {"string": "#% increased Spectral Helix Damage"},
+        {"string": "#% reduced Spectral Helix Damage", "negate": true}
+      ]
+    },
     "trade": {"ids": {"enchant": ["enchant.stat_183131376"]}}
   },
   {
@@ -15353,7 +15366,13 @@
     "trade": {"ids": {"enchant": ["enchant.stat_1666713639"]}}
   },
   {
-    "stat": {"ref": "#% less Animate Weapon Duration", "matchers": []},
+    "stat": {
+      "ref": "#% less Animate Weapon Duration",
+      "matchers": [
+        {"string": "#% more Animate Weapon Duration"},
+        {"string": "#% less Animate Weapon Duration", "negate": true}
+      ]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_414991155"]}, "inverted": true}
   },
   {
@@ -19942,6 +19961,13 @@
       "matchers": [{"string": "#% к множителю постепенного урона от кровотечения, наложенного ударами этим оружием"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_951608773"]}}
+  },
+  {
+    "stat": {
+      "ref": "+#% to Damage over Time Multiplier for Bleeding per Frenzy Charge",
+      "matchers": [{"string": "#% к множителю постепенного урона от кровотечения за заряд ярости"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2583415204"]}}
   },
   {
     "stat": {
@@ -26645,6 +26671,13 @@
   },
   {
     "stat": {
+      "ref": "Bleeding you inflict deals Damage #% faster per Frenzy Charge",
+      "matchers": [{"string": "Наложенное вами кровотечение наносит урон на #% быстрее за каждый заряд ярости"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1670470989"]}}
+  },
+  {
+    "stat": {
       "ref": "Bleeding you inflict is Reflected to you",
       "matchers": [{"string": "Наложенные вами кровотечения отражаются в вас"}]
     },
@@ -28235,7 +28268,10 @@
     "trade": {"ids": {"implicit": ["implicit.stat_1625819882"]}}
   },
   {
-    "stat": {"ref": "Curse Enemies with Flammability on Block, with 20% increased Effect", "matchers": []},
+    "stat": {
+      "ref": "Curse Enemies with Flammability on Block, with 20% increased Effect",
+      "matchers": [{"string": "Curse Enemies with Flammability on Block, with 20% increased Effect"}]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_2776399916"]}}
   },
   {
@@ -29882,7 +29918,13 @@
     "trade": {"ids": {"enchant": ["enchant.stat_3590425794"]}}
   },
   {
-    "stat": {"ref": "Explosive Concoction uses #% increased Flask Charges", "matchers": []},
+    "stat": {
+      "ref": "Explosive Concoction uses #% increased Flask Charges",
+      "matchers": [
+        {"string": "Explosive Concoction uses #% increased Flask Charges"},
+        {"string": "Explosive Concoction uses #% reduced Flask Charges", "negate": true}
+      ]
+    },
     "trade": {"ids": {"enchant": ["enchant.stat_1907051864"]}}
   },
   {
@@ -31505,10 +31547,10 @@
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Bleeding for 1 second if used while Bleeding\nRemoves Corrupted Blood when used",
+      "ref": "Grants Immunity to Bleeding for 4 seconds if used while Bleeding\nGrants Immunity to Corrupted Blood for 4 seconds if used while affected by Corrupted Blood",
       "matchers": [
         {
-          "string": "Дарует иммунитет к кровотечению на 1 секунду при использовании, если на вас наложено кровотечение\nПри использовании снимает Осквернённую кровь"
+          "string": "Grants Immunity to Bleeding for 4 seconds if used while Bleeding\nGrants Immunity to Corrupted Blood for 4 seconds if used while affected by Corrupted Blood"
         }
       ]
     },
@@ -31516,10 +31558,10 @@
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Chill for 1 second if used while Chilled\nGrants Immunity to Freeze for 1 second if used while Frozen",
+      "ref": "Grants Immunity to Chill for 4 seconds if used while Chilled\nGrants Immunity to Freeze for 4 seconds if used while Frozen",
       "matchers": [
         {
-          "string": "Дарует иммунитет к охлаждению на 1 секунду при использовании, если вы охлаждены\nДарует иммунитет к заморозке на 1 секунду при использовании, если вы заморожены"
+          "string": "Grants Immunity to Chill for 4 seconds if used while Chilled\nGrants Immunity to Freeze for 4 seconds if used while Frozen"
         }
       ]
     },
@@ -31527,26 +31569,24 @@
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Ignite for 1 second if used while Ignited\nRemoves all Burning when used",
+      "ref": "Grants Immunity to Ignite for 4 seconds if used while Ignited\nRemoves all Burning when used",
       "matchers": [
-        {
-          "string": "Дарует иммунитет к поджогу на 1 секунду при использовании, если вы подожжены\nПри использовании снимает все эффекты горения"
-        }
+        {"string": "Grants Immunity to Ignite for 4 seconds if used while Ignited\nRemoves all Burning when used"}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2695527599"]}}
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Poison for 1 second if used while Poisoned",
-      "matchers": [{"string": "Дарует иммунитет к отравлению на 1 секунду при использовании, если вы отравлены"}]
+      "ref": "Grants Immunity to Poison for 4 seconds if used while Poisoned",
+      "matchers": [{"string": "Grants Immunity to Poison for 4 seconds if used while Poisoned"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3596333054"]}}
   },
   {
     "stat": {
-      "ref": "Grants Immunity to Shock for 1 second if used while Shocked",
-      "matchers": [{"string": "Дарует иммунитет к шоку на 1 секунду при использовании, если на вас наложен шок"}]
+      "ref": "Grants Immunity to Shock for 4 seconds if used while Shocked",
+      "matchers": [{"string": "Grants Immunity to Shock for 4 seconds if used while Shocked"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1823903967"]}}
   },
@@ -37072,59 +37112,43 @@
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Conductivity, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Проводимостью с усиленным на #% эффектом"}]
+      "ref": "Players are Cursed with Conductivity",
+      "matchers": [{"string": "Players are Cursed with Conductivity"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_376158712"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Despair, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Отчаянием с усиленным на #% эффектом"}]
-    },
+    "stat": {"ref": "Players are Cursed with Despair", "matchers": [{"string": "Players are Cursed with Despair"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1551563177"]}}
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Elemental Weakness, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Уязвимостью к стихиям с усиленным на #% эффектом"}]
+      "ref": "Players are Cursed with Elemental Weakness",
+      "matchers": [{"string": "Players are Cursed with Elemental Weakness"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_558910024"], "fractured": ["fractured.stat_558910024"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Enfeeble, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Слабостью с усиленным на #% эффектом"}]
-    },
+    "stat": {"ref": "Players are Cursed with Enfeeble", "matchers": [{"string": "Players are Cursed with Enfeeble"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_4103440490"], "fractured": ["fractured.stat_4103440490"]}}
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Flammability, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Горючестью с усиленным на #% эффектом"}]
+      "ref": "Players are Cursed with Flammability",
+      "matchers": [{"string": "Players are Cursed with Flammability"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_989228672"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Frostbite, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Обморожением с усиленным на #% эффектом"}]
-    },
+    "stat": {"ref": "Players are Cursed with Frostbite", "matchers": [{"string": "Players are Cursed with Frostbite"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3442976749"]}}
   },
   {
     "stat": {
-      "ref": "Players are Cursed with Temporal Chains, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Путами времени с усиленным на #% эффектом"}]
+      "ref": "Players are Cursed with Temporal Chains",
+      "matchers": [{"string": "Players are Cursed with Temporal Chains"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2326202293"], "fractured": ["fractured.stat_2326202293"]}}
-  },
-  {
-    "stat": {
-      "ref": "Players are Cursed with Vulnerability, with #% increased Effect",
-      "matchers": [{"string": "Игроки прокляты Беззащитностью с усиленным на #% эффектом"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_1366534040"], "fractured": ["fractured.stat_1366534040"]}}
   },
   {
     "stat": {
@@ -39541,7 +39565,13 @@
     }
   },
   {
-    "stat": {"ref": "Shock Nova ring deals #% increased Damage", "matchers": []},
+    "stat": {
+      "ref": "Shock Nova ring deals #% increased Damage",
+      "matchers": [
+        {"string": "Shock Nova ring deals #% increased Damage"},
+        {"string": "Shock Nova ring deals #% reduced Damage", "negate": true}
+      ]
+    },
     "trade": {"ids": {"enchant": ["enchant.stat_3652051346"]}}
   },
   {
@@ -43758,7 +43788,13 @@
     "trade": {"ids": {"explicit": ["explicit.stat_1646760085"]}}
   },
   {
-    "stat": {"ref": "Unique Boss drops # additional Currency Items", "matchers": []},
+    "stat": {
+      "ref": "Unique Boss drops # additional Currency Items",
+      "matchers": [
+        {"string": "Unique Boss drops # additional Currency Items"},
+        {"string": "Unique Boss drops an additional Currency Item", "value": 1}
+      ]
+    },
     "trade": {"ids": {"explicit": ["explicit.stat_1733969225"]}}
   },
   {
