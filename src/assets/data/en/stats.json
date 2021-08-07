@@ -8360,6 +8360,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Damage with Vaal Skills during effect",
+      "matchers": [
+        {"string": "#% increased Damage with Vaal Skills during effect"},
+        {"string": "#% reduced Damage with Vaal Skills during effect", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4067144129"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Damage with Wands",
       "matchers": [
         {"string": "#% increased Damage with Wands"},
@@ -23378,6 +23388,17 @@
   },
   {
     "stat": {
+      "ref": "Alert Level increases by #% per second",
+      "dp": true,
+      "matchers": [
+        {"string": "Alert Level increases by #% per second"},
+        {"string": "Alert Level reduces by #% per second", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3138486617"]}}
+  },
+  {
+    "stat": {
       "ref": "All Attack Damage Chills when you Stun",
       "matchers": [{"string": "All Attack Damage Chills when you Stun"}]
     },
@@ -23570,6 +23591,7 @@
         {"string": "Allocates Hatchet Master", "value": 26096},
         {"string": "Allocates Bloodletting", "value": 26294},
         {"string": "Allocates Static Blows", "value": 26557},
+        {"string": "Allocates Vanquisher", "value": 26564},
         {"string": "Allocates Corruption", "value": 26620},
         {"string": "Allocates Sanctity", "value": 26866},
         {"string": "Allocates Forethought", "value": 26960},
@@ -23586,12 +23608,14 @@
         {"string": "Allocates Deep Wisdom", "value": 27929},
         {"string": "Allocates Soul Raker", "value": 28503},
         {"string": "Allocates Assassination", "value": 28754},
+        {"string": "Allocates Relentless", "value": 28878},
         {"string": "Allocates Holy Fire", "value": 29049},
         {"string": "Allocates Ravenous Horde", "value": 29381},
         {"string": "Allocates Unpredictable Offensive", "value": 2959},
         {"string": "Allocates Explosive Runes", "value": 29861},
         {"string": "Allocates Fending", "value": 30160},
         {"string": "Allocates Lightning Walker", "value": 30225},
+        {"string": "Allocates Blade Sovereign", "value": 30302},
         {"string": "Allocates Lava Lash", "value": 30439},
         {"string": "Allocates True Strike", "value": 30471},
         {"string": "Allocates Divine Fervour", "value": 30693},
@@ -23600,6 +23624,7 @@
         {"string": "Allocates Fatal Toxins", "value": 31359},
         {"string": "Allocates Aspect of the Lynx", "value": 31508},
         {"string": "Allocates Adjacent Animosity", "value": 31513},
+        {"string": "Allocates Careful Conservationist", "value": 31585},
         {"string": "Allocates Titanic Impacts", "value": 32059},
         {"string": "Allocates Soul Thief", "value": 32176},
         {"string": "Allocates Adder's Touch", "value": 32227},
@@ -23661,6 +23686,7 @@
         {"string": "Allocates Lethality", "value": 41119},
         {"string": "Allocates Aqueous Accelerant", "value": 41137},
         {"string": "Allocates Deadly Inclinations", "value": 41307},
+        {"string": "Allocates Natural Remedies", "value": 41420},
         {"string": "Allocates Discipline and Training", "value": 41472},
         {"string": "Allocates Elder Power", "value": 41476},
         {"string": "Allocates Marked for Death", "value": 41595},
@@ -23692,6 +23718,7 @@
         {"string": "Allocates Ash, Frost and Storm", "value": 45317},
         {"string": "Allocates Trick Shot", "value": 45329},
         {"string": "Allocates Successive Detonations", "value": 45608},
+        {"string": "Allocates Veteran Soldier", "value": 45803},
         {"string": "Allocates Fangs of the Viper", "value": 46408},
         {"string": "Allocates Shocking Strikes", "value": 46471},
         {"string": "Allocates Arcane Potency", "value": 46842},
@@ -23705,6 +23732,7 @@
         {"string": "Allocates Insightfulness", "value": 48298},
         {"string": "Allocates Vigour", "value": 4833},
         {"string": "Allocates Bravery", "value": 48438},
+        {"string": "Allocates Asylum", "value": 4854},
         {"string": "Allocates Thunderous Salvos", "value": 48556},
         {"string": "Allocates Fervour", "value": 48614},
         {"string": "Allocates Void Barrier", "value": 48698},
@@ -23769,7 +23797,7 @@
         {"string": "Allocates Hardened Scars", "value": 56207},
         {"string": "Allocates Crusader", "value": 5624},
         {"string": "Allocates Nightstalker", "value": 56276},
-        {"string": "Allocates Red Storm", "value": 56359},
+        {"string": "Allocates Cannibalistic Rite", "value": 56359},
         {"string": "Allocates Claws of the Falcon", "value": 56648},
         {"string": "Allocates Heart of Thunder", "value": 56716},
         {"string": "Allocates Dazzling Strikes", "value": 570},
@@ -25726,7 +25754,8 @@
       "ref": "Bathed in the blood of # sacrificed in the name of Ahuana",
       "matchers": [
         {
-          "string": "Bathed in the blood of # sacrificed in the name of Ahuana\nPassives in radius are Conquered by the Vaal"
+          "string": "Bathed in the blood of # sacrificed in the name of Ahuana\nPassives in radius are Conquered by the Vaal",
+          "advanced": "Bathed in the blood of # sacrificed in the name of Ahuana(Ahuana-Xibaqua)\nPassives in radius are Conquered by the Vaal"
         }
       ]
     },
@@ -25737,7 +25766,8 @@
       "ref": "Bathed in the blood of # sacrificed in the name of Doryani",
       "matchers": [
         {
-          "string": "Bathed in the blood of # sacrificed in the name of Doryani\nPassives in radius are Conquered by the Vaal"
+          "string": "Bathed in the blood of # sacrificed in the name of Doryani\nPassives in radius are Conquered by the Vaal",
+          "advanced": "Bathed in the blood of # sacrificed in the name of Doryani(Ahuana-Xibaqua)\nPassives in radius are Conquered by the Vaal"
         }
       ]
     },
@@ -25748,7 +25778,8 @@
       "ref": "Bathed in the blood of # sacrificed in the name of Xibaqua",
       "matchers": [
         {
-          "string": "Bathed in the blood of # sacrificed in the name of Xibaqua\nPassives in radius are Conquered by the Vaal"
+          "string": "Bathed in the blood of # sacrificed in the name of Xibaqua\nPassives in radius are Conquered by the Vaal",
+          "advanced": "Bathed in the blood of # sacrificed in the name of Xibaqua(Ahuana-Xibaqua)\nPassives in radius are Conquered by the Vaal"
         }
       ]
     },
@@ -26615,7 +26646,8 @@
       "ref": "Carved to glorify # new faithful converted by High Templar Avarius",
       "matchers": [
         {
-          "string": "Carved to glorify # new faithful converted by High Templar Avarius\nPassives in radius are Conquered by the Templars"
+          "string": "Carved to glorify # new faithful converted by High Templar Avarius\nPassives in radius are Conquered by the Templars",
+          "advanced": "Carved to glorify # new faithful converted by High Templar Avarius(Avarius-Maxarius)\nPassives in radius are Conquered by the Templars"
         }
       ]
     },
@@ -26626,7 +26658,8 @@
       "ref": "Carved to glorify # new faithful converted by High Templar Dominus",
       "matchers": [
         {
-          "string": "Carved to glorify # new faithful converted by High Templar Dominus\nPassives in radius are Conquered by the Templars"
+          "string": "Carved to glorify # new faithful converted by High Templar Dominus\nPassives in radius are Conquered by the Templars",
+          "advanced": "Carved to glorify # new faithful converted by High Templar Dominus(Avarius-Maxarius)\nPassives in radius are Conquered by the Templars"
         }
       ]
     },
@@ -26637,7 +26670,8 @@
       "ref": "Carved to glorify # new faithful converted by High Templar Maxarius",
       "matchers": [
         {
-          "string": "Carved to glorify # new faithful converted by High Templar Maxarius\nPassives in radius are Conquered by the Templars"
+          "string": "Carved to glorify # new faithful converted by High Templar Maxarius\nPassives in radius are Conquered by the Templars",
+          "advanced": "Carved to glorify # new faithful converted by High Templar Maxarius(Avarius-Maxarius)\nPassives in radius are Conquered by the Templars"
         }
       ]
     },
@@ -27013,7 +27047,10 @@
     "stat": {
       "ref": "Commanded leadership over # warriors under Akoya",
       "matchers": [
-        {"string": "Commanded leadership over # warriors under Akoya\nPassives in radius are Conquered by the Karui"}
+        {
+          "string": "Commanded leadership over # warriors under Akoya\nPassives in radius are Conquered by the Karui",
+          "advanced": "Commanded leadership over # warriors under Akoya(Akoya-Rakiata)\nPassives in radius are Conquered by the Karui"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_akoya"]}}
@@ -27022,7 +27059,10 @@
     "stat": {
       "ref": "Commanded leadership over # warriors under Kaom",
       "matchers": [
-        {"string": "Commanded leadership over # warriors under Kaom\nPassives in radius are Conquered by the Karui"}
+        {
+          "string": "Commanded leadership over # warriors under Kaom\nPassives in radius are Conquered by the Karui",
+          "advanced": "Commanded leadership over # warriors under Kaom(Akoya-Rakiata)\nPassives in radius are Conquered by the Karui"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_kaom"]}}
@@ -27031,7 +27071,10 @@
     "stat": {
       "ref": "Commanded leadership over # warriors under Rakiata",
       "matchers": [
-        {"string": "Commanded leadership over # warriors under Rakiata\nPassives in radius are Conquered by the Karui"}
+        {
+          "string": "Commanded leadership over # warriors under Rakiata\nPassives in radius are Conquered by the Karui",
+          "advanced": "Commanded leadership over # warriors under Rakiata(Akoya-Rakiata)\nPassives in radius are Conquered by the Karui"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_rakiata"]}}
@@ -27040,7 +27083,10 @@
     "stat": {
       "ref": "Commissioned # coins to commemorate Cadiro",
       "matchers": [
-        {"string": "Commissioned # coins to commemorate Cadiro\nPassives in radius are Conquered by the Eternal Empire"}
+        {
+          "string": "Commissioned # coins to commemorate Cadiro\nPassives in radius are Conquered by the Eternal Empire",
+          "advanced": "Commissioned # coins to commemorate Cadiro(Cadiro-Victario)\nPassives in radius are Conquered by the Eternal Empire"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_cadiro"]}}
@@ -27050,7 +27096,8 @@
       "ref": "Commissioned # coins to commemorate Caspiro",
       "matchers": [
         {
-          "string": "Commissioned # coins to commemorate Caspiro\nPassives in radius are Conquered by the Eternal Empire"
+          "string": "Commissioned # coins to commemorate Caspiro\nPassives in radius are Conquered by the Eternal Empire",
+          "advanced": "Commissioned # coins to commemorate Caspiro(Cadiro-Victario)\nPassives in radius are Conquered by the Eternal Empire"
         }
       ]
     },
@@ -27061,7 +27108,8 @@
       "ref": "Commissioned # coins to commemorate Victario",
       "matchers": [
         {
-          "string": "Commissioned # coins to commemorate Victario\nPassives in radius are Conquered by the Eternal Empire"
+          "string": "Commissioned # coins to commemorate Victario\nPassives in radius are Conquered by the Eternal Empire",
+          "advanced": "Commissioned # coins to commemorate Victario(Cadiro-Victario)\nPassives in radius are Conquered by the Eternal Empire"
         }
       ]
     },
@@ -28054,7 +28102,8 @@
       "ref": "Denoted service of # dekhara in the akhara of Asenath",
       "matchers": [
         {
-          "string": "Denoted service of # dekhara in the akhara of Asenath\nPassives in radius are Conquered by the Maraketh"
+          "string": "Denoted service of # dekhara in the akhara of Asenath\nPassives in radius are Conquered by the Maraketh",
+          "advanced": "Denoted service of # dekhara in the akhara of Asenath(Asenath-Nasima)\nPassives in radius are Conquered by the Maraketh"
         }
       ]
     },
@@ -28065,7 +28114,8 @@
       "ref": "Denoted service of # dekhara in the akhara of Balbala",
       "matchers": [
         {
-          "string": "Denoted service of # dekhara in the akhara of Balbala\nPassives in radius are Conquered by the Maraketh"
+          "string": "Denoted service of # dekhara in the akhara of Balbala\nPassives in radius are Conquered by the Maraketh",
+          "advanced": "Denoted service of # dekhara in the akhara of Balbala(Asenath-Nasima)\nPassives in radius are Conquered by the Maraketh"
         }
       ]
     },
@@ -28076,7 +28126,8 @@
       "ref": "Denoted service of # dekhara in the akhara of Nasima",
       "matchers": [
         {
-          "string": "Denoted service of # dekhara in the akhara of Nasima\nPassives in radius are Conquered by the Maraketh"
+          "string": "Denoted service of # dekhara in the akhara of Nasima\nPassives in radius are Conquered by the Maraketh",
+          "advanced": "Denoted service of # dekhara in the akhara of Nasima(Asenath-Nasima)\nPassives in radius are Conquered by the Maraketh"
         }
       ]
     },
@@ -35483,10 +35534,26 @@
     "stat": {
       "ref": "Only affects Passives in # Ring",
       "matchers": [
-        {"string": "Only affects Passives in Small Ring", "value": 1},
-        {"string": "Only affects Passives in Medium Ring", "value": 2},
-        {"string": "Only affects Passives in Large Ring", "value": 3},
-        {"string": "Only affects Passives in Very Large Ring", "value": 4}
+        {
+          "string": "Only affects Passives in Small Ring",
+          "advanced": "Only affects Passives in Small Ring(Small Ring-Very Large Ring)",
+          "value": 1
+        },
+        {
+          "string": "Only affects Passives in Medium Ring",
+          "advanced": "Only affects Passives in Medium Ring(Small Ring-Very Large Ring)",
+          "value": 2
+        },
+        {
+          "string": "Only affects Passives in Large Ring",
+          "advanced": "Only affects Passives in Large Ring(Small Ring-Very Large Ring)",
+          "value": 3
+        },
+        {
+          "string": "Only affects Passives in Very Large Ring",
+          "advanced": "Only affects Passives in Very Large Ring(Small Ring-Very Large Ring)",
+          "value": 4
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3642528642"]}, "option": "str"}
@@ -36073,6 +36140,13 @@
       "matchers": [{"string": "Players are Cursed with Temporal Chains"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2326202293"], "fractured": ["fractured.stat_2326202293"]}}
+  },
+  {
+    "stat": {
+      "ref": "Players are Cursed with Vulnerability",
+      "matchers": [{"string": "Players are Cursed with Vulnerability"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1366534040"], "fractured": ["fractured.stat_1366534040"]}}
   },
   {
     "stat": {
@@ -39131,7 +39205,7 @@
       "ref": "Socketed Gems are Supported by Level # Behead",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Behead"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_140"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_140", "explicit.stat_1019145105"]}}
   },
   {
     "stat": {
@@ -43761,7 +43835,7 @@
   },
   {
     "stat": {
-      "ref": "With at least 40 Dexterity in Radius, Ice Shot Pierces # additional Targets",
+      "ref": "With at least 40 Dexterity in Radius, Ice Shot Pierces an additional Target",
       "matchers": [
         {"string": "With at least 40 Dexterity in Radius, Ice Shot Pierces # additional Targets"},
         {"string": "With at least 40 Dexterity in Radius, Ice Shot Pierces an additional Target", "value": 1}

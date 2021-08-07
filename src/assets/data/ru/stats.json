@@ -8560,6 +8560,16 @@
   },
   {
     "stat": {
+      "ref": "#% increased Damage with Vaal Skills during effect",
+      "matchers": [
+        {"string": "#% увеличение урона умениями ваал во время действия эффекта"},
+        {"string": "#% уменьшение урона умениями ваал во время действия эффекта", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_4067144129"]}}
+  },
+  {
+    "stat": {
       "ref": "#% increased Damage with Wands",
       "matchers": [{"string": "#% увеличение урона жезлами"}, {"string": "#% уменьшение урона жезлами", "negate": true}]
     },
@@ -14288,8 +14298,8 @@
     "stat": {
       "ref": "#% increased Spectral Helix Projectile Speed",
       "matchers": [
-        {"string": "#% повышение скорости снаряда Свирепого вихря"},
-        {"string": "#% снижение скорости снаряда Свирепого вихря", "negate": true}
+        {"string": "#% повышение скорости снаряда Призрачной спирали"},
+        {"string": "#% снижение скорости снаряда Призрачной спирали", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1952647315"]}}
@@ -24050,6 +24060,17 @@
   },
   {
     "stat": {
+      "ref": "Alert Level increases by #% per second",
+      "dp": true,
+      "matchers": [
+        {"string": "Уровень угрозы каждую секунду увеличивается на #%"},
+        {"string": "Уровень угрозы каждую секунду уменьшается на #%", "negate": true}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3138486617"]}}
+  },
+  {
+    "stat": {
       "ref": "All Attack Damage Chills when you Stun",
       "matchers": [{"string": "Урон от атак, оглушающий врагов, также охлаждает их"}]
     },
@@ -24221,7 +24242,7 @@
         {"string": "Активирует Резня", "value": 23038},
         {"string": "Активирует Свирепость", "value": 23066},
         {"string": "Активирует Тайное видение", "value": 23690},
-        {"string": "Активирует Холодный расчет", "value": 24050},
+        {"string": "Активирует Холодный расчёт", "value": 24050},
         {"string": "Активирует Без свидетелей", "value": 24067},
         {"string": "Активирует Остаться в живых", "value": 24133},
         {"string": "Активирует Внутренняя энергия", "value": 24256},
@@ -24244,6 +24265,7 @@
         {"string": "Активирует Мастер топориков", "value": 26096},
         {"string": "Активирует Кровопускание", "value": 26294},
         {"string": "Активирует Громовые удары", "value": 26557},
+        {"string": "Активирует Победитель", "value": 26564},
         {"string": "Активирует Порча", "value": 26620},
         {"string": "Активирует Святость", "value": 26866},
         {"string": "Активирует Предусмотрительность", "value": 26960},
@@ -24266,6 +24288,7 @@
         {"string": "Активирует Взрывные руны", "value": 29861},
         {"string": "Активирует Парирование", "value": 30160},
         {"string": "Активирует Грозоход", "value": 30225},
+        {"string": "Активирует Владыка клинков", "value": 30302},
         {"string": "Активирует Всплеск лавы", "value": 30439},
         {"string": "Активирует Верный удар", "value": 30471},
         {"string": "Активирует Божественное рвение", "value": 30693},
@@ -24274,6 +24297,7 @@
         {"string": "Активирует Смертельные токсины", "value": 31359},
         {"string": "Активирует Дух рыси", "value": 31508},
         {"string": "Активирует Соседская вражда", "value": 31513},
+        {"string": "Активирует Тщательная консервация", "value": 31585},
         {"string": "Активирует Титаническое воздействие", "value": 32059},
         {"string": "Активирует Крадущий душу", "value": 32176},
         {"string": "Активирует Касание аспида", "value": 32227},
@@ -24313,7 +24337,7 @@
         {"string": "Активирует Мудрость лет", "value": 36874},
         {"string": "Активирует Жертва", "value": 36915},
         {"string": "Активирует Упорство", "value": 36949},
-        {"string": "Активирует Путь ученого", "value": 37078},
+        {"string": "Активирует Путь учёного", "value": 37078},
         {"string": "Активирует Стойкость", "value": 37326},
         {"string": "Активирует Интенсивность", "value": 37403},
         {"string": "Активирует Когти прайда", "value": 37504},
@@ -24334,6 +24358,7 @@
         {"string": "Активирует Смертоносность", "value": 41119},
         {"string": "Активирует Сжиженный катализатор", "value": 41137},
         {"string": "Активирует Смертельные наклонности", "value": 41307},
+        {"string": "Активирует Природные лекарства", "value": 41420},
         {"string": "Активирует Дисциплина и подготовка", "value": 41472},
         {"string": "Активирует Древняя сила", "value": 41476},
         {"string": "Активирует Знак смерти", "value": 41595},
@@ -24365,6 +24390,7 @@
         {"string": "Активирует Пепел, мороз и буря", "value": 45317},
         {"string": "Активирует Ловкий выстрел", "value": 45329},
         {"string": "Активирует Последовательный подрыв", "value": 45608},
+        {"string": "Активирует Опытный солдат", "value": 45803},
         {"string": "Активирует Клыки гадюки", "value": 46408},
         {"string": "Активирует Шокирующие удары", "value": 46471},
         {"string": "Активирует Могущество чар", "value": 46842},
@@ -24378,6 +24404,7 @@
         {"string": "Активирует Вдохновение", "value": 48298},
         {"string": "Активирует Напор", "value": 4833},
         {"string": "Активирует Храбрость", "value": 48438},
+        {"string": "Активирует Убежище", "value": 4854},
         {"string": "Активирует Громовой шквал", "value": 48556},
         {"string": "Активирует Рвение", "value": 48614},
         {"string": "Активирует Барьер пустоты", "value": 48698},
@@ -24428,7 +24455,6 @@
         {"string": "Активирует Магматические удары", "value": 5430},
         {"string": "Активирует Надзор", "value": 544},
         {"string": "Активирует Мощь", "value": 5456},
-        {"string": "Активирует Безжалостный", "value": 54629},
         {"string": "Активирует Божественный свет", "value": 54694},
         {"string": "Активирует Повелитель силы", "value": 54713},
         {"string": "Активирует Потоки маны", "value": 54776},
@@ -24442,7 +24468,7 @@
         {"string": "Активирует Загрубевшие шрамы", "value": 56207},
         {"string": "Активирует Крестоносец", "value": 5624},
         {"string": "Активирует Ночной преследователь", "value": 56276},
-        {"string": "Активирует Красный шторм", "value": 56359},
+        {"string": "Активирует Каннибалистический обряд", "value": 56359},
         {"string": "Активирует Когти сокола", "value": 56648},
         {"string": "Активирует Громовое сердце", "value": 56716},
         {"string": "Активирует Слепящие удары", "value": 570},
@@ -24454,7 +24480,7 @@
         {"string": "Активирует Ледяные пальцы", "value": 58198},
         {"string": "Активирует Чистота плоти", "value": 58218},
         {"string": "Активирует Координация", "value": 5823},
-        {"string": "Активирует Рожденный для битвы", "value": 58449},
+        {"string": "Активирует Рождённый для битвы", "value": 58449},
         {"string": "Активирует Потрошение", "value": 58831},
         {"string": "Активирует Апостол резни", "value": 58921},
         {"string": "Активирует Жестокий клинок", "value": 59151},
@@ -24519,7 +24545,7 @@
         {"string": "Активирует Прочная связь", "value": 7688},
         {"string": "Активирует Загадочная защита", "value": 7918},
         {"string": "Активирует Убийственное наступление", "value": 8001},
-        {"string": "Активирует Боевой маг", "value": 8135},
+        {"string": "Активирует Практическое применение", "value": 8135},
         {"string": "Активирует Запредельный выстрел", "value": 8458},
         {"string": "Активирует Воинственный оплот", "value": 861},
         {"string": "Активирует Ледяное сердце", "value": 8833},
@@ -26436,21 +26462,36 @@
   {
     "stat": {
       "ref": "Bathed in the blood of # sacrificed in the name of Ahuana",
-      "matchers": [{"string": "Омыт в крови # жертв во имя Ахваны\nПассивные умения в радиусе завоеваны ваал"}]
+      "matchers": [
+        {
+          "string": "Омыт в крови # жертв во имя Ахваны\nПассивные умения в радиусе завоеваны ваал",
+          "advanced": "Омыт в крови # жертв во имя Ахваны(Ахваны-Шибаквы)\nПассивные умения в радиусе завоеваны ваал"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_ahuana"]}}
   },
   {
     "stat": {
       "ref": "Bathed in the blood of # sacrificed in the name of Doryani",
-      "matchers": [{"string": "Омыт в крови # жертв во имя Дориани\nПассивные умения в радиусе завоеваны ваал"}]
+      "matchers": [
+        {
+          "string": "Омыт в крови # жертв во имя Дориани\nПассивные умения в радиусе завоеваны ваал",
+          "advanced": "Омыт в крови # жертв во имя Дориани(Ахваны-Шибаквы)\nПассивные умения в радиусе завоеваны ваал"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_doryani"]}}
   },
   {
     "stat": {
       "ref": "Bathed in the blood of # sacrificed in the name of Xibaqua",
-      "matchers": [{"string": "Омыт в крови # жертв во имя Шибаквы\nПассивные умения в радиусе завоеваны ваал"}]
+      "matchers": [
+        {
+          "string": "Омыт в крови # жертв во имя Шибаквы\nПассивные умения в радиусе завоеваны ваал",
+          "advanced": "Омыт в крови # жертв во имя Шибаквы(Ахваны-Шибаквы)\nПассивные умения в радиусе завоеваны ваал"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_xibaqua"]}}
   },
@@ -27337,7 +27378,8 @@
       "ref": "Carved to glorify # new faithful converted by High Templar Avarius",
       "matchers": [
         {
-          "string": "Выточен во славу # послушников, обращённых Верховным жрецом Аварием\nПассивные умения в радиусе завоеваны храмовниками"
+          "string": "Выточен во славу # послушников, обращённых Верховным жрецом Аварием\nПассивные умения в радиусе завоеваны храмовниками",
+          "advanced": "Выточен во славу # послушников, обращённых Верховным жрецом Аварием(Аварием-Макерием)\nПассивные умения в радиусе завоеваны храмовниками"
         }
       ]
     },
@@ -27348,7 +27390,8 @@
       "ref": "Carved to glorify # new faithful converted by High Templar Dominus",
       "matchers": [
         {
-          "string": "Выточен во славу # послушников, обращённых Верховным жрецом Владыкой\nПассивные умения в радиусе завоеваны храмовниками"
+          "string": "Выточен во славу # послушников, обращённых Верховным жрецом Владыкой\nПассивные умения в радиусе завоеваны храмовниками",
+          "advanced": "Выточен во славу # послушников, обращённых Верховным жрецом Владыкой(Аварием-Макерием)\nПассивные умения в радиусе завоеваны храмовниками"
         }
       ]
     },
@@ -27359,7 +27402,8 @@
       "ref": "Carved to glorify # new faithful converted by High Templar Maxarius",
       "matchers": [
         {
-          "string": "Выточен во славу # послушников, обращённых Верховным жрецом Макерием\nПассивные умения в радиусе завоеваны храмовниками"
+          "string": "Выточен во славу # послушников, обращённых Верховным жрецом Макерием\nПассивные умения в радиусе завоеваны храмовниками",
+          "advanced": "Выточен во славу # послушников, обращённых Верховным жрецом Макерием(Аварием-Макерием)\nПассивные умения в радиусе завоеваны храмовниками"
         }
       ]
     },
@@ -27748,21 +27792,36 @@
   {
     "stat": {
       "ref": "Commanded leadership over # warriors under Akoya",
-      "matchers": [{"string": "Повелевает # воинами Акойи\nПассивные умения в радиусе завоеваны каруи"}]
+      "matchers": [
+        {
+          "string": "Повелевает # воинами Акойи\nПассивные умения в радиусе завоеваны каруи",
+          "advanced": "Повелевает # воинами Акойи(Акойи-Ракиаты)\nПассивные умения в радиусе завоеваны каруи"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_akoya"]}}
   },
   {
     "stat": {
       "ref": "Commanded leadership over # warriors under Kaom",
-      "matchers": [{"string": "Повелевает # воинами Каома\nПассивные умения в радиусе завоеваны каруи"}]
+      "matchers": [
+        {
+          "string": "Повелевает # воинами Каома\nПассивные умения в радиусе завоеваны каруи",
+          "advanced": "Повелевает # воинами Каома(Акойи-Ракиаты)\nПассивные умения в радиусе завоеваны каруи"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_kaom"]}}
   },
   {
     "stat": {
       "ref": "Commanded leadership over # warriors under Rakiata",
-      "matchers": [{"string": "Повелевает # воинами Ракиаты\nПассивные умения в радиусе завоеваны каруи"}]
+      "matchers": [
+        {
+          "string": "Повелевает # воинами Ракиаты\nПассивные умения в радиусе завоеваны каруи",
+          "advanced": "Повелевает # воинами Ракиаты(Акойи-Ракиаты)\nПассивные умения в радиусе завоеваны каруи"
+        }
+      ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_rakiata"]}}
   },
@@ -27770,7 +27829,10 @@
     "stat": {
       "ref": "Commissioned # coins to commemorate Cadiro",
       "matchers": [
-        {"string": "Выделено # монет в память о Кадиро\nПассивные умения в радиусе завоеваны Вечной империей"}
+        {
+          "string": "Выделено # монет в память о Кадиро\nПассивные умения в радиусе завоеваны Вечной империей",
+          "advanced": "Выделено # монет в память о Кадиро(Кадиро-Виктарио)\nПассивные умения в радиусе завоеваны Вечной империей"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_cadiro"]}}
@@ -27779,7 +27841,10 @@
     "stat": {
       "ref": "Commissioned # coins to commemorate Caspiro",
       "matchers": [
-        {"string": "Выделено # монет в память о Каспиро\nПассивные умения в радиусе завоеваны Вечной империей"}
+        {
+          "string": "Выделено # монет в память о Каспиро\nПассивные умения в радиусе завоеваны Вечной империей",
+          "advanced": "Выделено # монет в память о Каспиро(Кадиро-Виктарио)\nПассивные умения в радиусе завоеваны Вечной империей"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_caspiro"]}}
@@ -27788,7 +27853,10 @@
     "stat": {
       "ref": "Commissioned # coins to commemorate Victario",
       "matchers": [
-        {"string": "Выделено # монет в память о Виктарио\nПассивные умения в радиусе завоеваны Вечной империей"}
+        {
+          "string": "Выделено # монет в память о Виктарио\nПассивные умения в радиусе завоеваны Вечной империей",
+          "advanced": "Выделено # монет в память о Виктарио(Кадиро-Виктарио)\nПассивные умения в радиусе завоеваны Вечной империей"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_victario"]}}
@@ -28805,7 +28873,10 @@
     "stat": {
       "ref": "Denoted service of # dekhara in the akhara of Asenath",
       "matchers": [
-        {"string": "Символизирует служение # дехара в ахаре Азенат\nПассивные умения в радиусе завоеваны маракетами"}
+        {
+          "string": "Символизирует служение # дехара в ахаре Азенат\nПассивные умения в радиусе завоеваны маракетами",
+          "advanced": "Символизирует служение # дехара в ахаре Азенат(Азенат-Насимы)\nПассивные умения в радиусе завоеваны маракетами"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_asenath"]}}
@@ -28814,7 +28885,10 @@
     "stat": {
       "ref": "Denoted service of # dekhara in the akhara of Balbala",
       "matchers": [
-        {"string": "Символизирует служение # дехара в ахаре Балбалы\nПассивные умения в радиусе завоеваны маракетами"}
+        {
+          "string": "Символизирует служение # дехара в ахаре Балбалы\nПассивные умения в радиусе завоеваны маракетами",
+          "advanced": "Символизирует служение # дехара в ахаре Балбалы(Азенат-Насимы)\nПассивные умения в радиусе завоеваны маракетами"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_balbala"]}}
@@ -28823,7 +28897,10 @@
     "stat": {
       "ref": "Denoted service of # dekhara in the akhara of Nasima",
       "matchers": [
-        {"string": "Символизирует служение # дехара в ахаре Насимы\nПассивные умения в радиусе завоеваны маракетами"}
+        {
+          "string": "Символизирует служение # дехара в ахаре Насимы\nПассивные умения в радиусе завоеваны маракетами",
+          "advanced": "Символизирует служение # дехара в ахаре Насимы(Азенат-Насимы)\nПассивные умения в радиусе завоеваны маракетами"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.pseudo_timeless_jewel_nasima"]}}
@@ -29921,8 +29998,8 @@
     "stat": {
       "ref": "Explosive Concoction uses #% increased Flask Charges",
       "matchers": [
-        {"string": "Explosive Concoction uses #% increased Flask Charges"},
-        {"string": "Explosive Concoction uses #% reduced Flask Charges", "negate": true}
+        {"string": "#% увеличение количества зарядов флакона, поглощаемых Взрывной смесью"},
+        {"string": "#% уменьшение количества зарядов флакона, поглощаемых Взрывной смесью", "negate": true}
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1907051864"]}}
@@ -31550,7 +31627,7 @@
       "ref": "Grants Immunity to Bleeding for 4 seconds if used while Bleeding\nGrants Immunity to Corrupted Blood for 4 seconds if used while affected by Corrupted Blood",
       "matchers": [
         {
-          "string": "Grants Immunity to Bleeding for 4 seconds if used while Bleeding\nGrants Immunity to Corrupted Blood for 4 seconds if used while affected by Corrupted Blood"
+          "string": "Дарует иммунитет к кровотечению на 4 секунды при использовании, если на вас наложено кровотечение\nДарует иммунитет к Оскверненной крови на 4 секунды при использовании, если на вас наложена Оскверненная кровь"
         }
       ]
     },
@@ -31561,7 +31638,7 @@
       "ref": "Grants Immunity to Chill for 4 seconds if used while Chilled\nGrants Immunity to Freeze for 4 seconds if used while Frozen",
       "matchers": [
         {
-          "string": "Grants Immunity to Chill for 4 seconds if used while Chilled\nGrants Immunity to Freeze for 4 seconds if used while Frozen"
+          "string": "Дарует иммунитет к охлаждению на 4 секунды при использовании, если вы охлаждены\nДарует иммунитет к заморозке на 4 секунды при использовании, если вы заморожены"
         }
       ]
     },
@@ -31571,7 +31648,9 @@
     "stat": {
       "ref": "Grants Immunity to Ignite for 4 seconds if used while Ignited\nRemoves all Burning when used",
       "matchers": [
-        {"string": "Grants Immunity to Ignite for 4 seconds if used while Ignited\nRemoves all Burning when used"}
+        {
+          "string": "Дарует иммунитет к поджогу на 4 секунды при использовании, если вы подожжены\nПри использовании снимает все эффекты горения"
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2695527599"]}}
@@ -31579,14 +31658,14 @@
   {
     "stat": {
       "ref": "Grants Immunity to Poison for 4 seconds if used while Poisoned",
-      "matchers": [{"string": "Grants Immunity to Poison for 4 seconds if used while Poisoned"}]
+      "matchers": [{"string": "Дарует иммунитет к отравлению на 4 секунды при использовании, если вы отравлены"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3596333054"]}}
   },
   {
     "stat": {
       "ref": "Grants Immunity to Shock for 4 seconds if used while Shocked",
-      "matchers": [{"string": "Grants Immunity to Shock for 4 seconds if used while Shocked"}]
+      "matchers": [{"string": "Дарует иммунитет к шоку на 4 секунды при использовании, если на вас наложен шок"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1823903967"]}}
   },
@@ -32247,67 +32326,97 @@
   {
     "stat": {
       "ref": "Has Logbook Area: Battleground Graves",
-      "matchers": [{"string": "Has Logbook Area: Battleground Graves"}]
+      "matchers": [{"string": "Содержит область журнала: Захоронение на поле боя"}]
     },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_battleground_graves"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Bluffs", "matchers": [{"string": "Has Logbook Area: Bluffs"}]},
+    "stat": {"ref": "Has Logbook Area: Bluffs", "matchers": [{"string": "Содержит область журнала: Откосы"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_bluffs"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Cemetery", "matchers": [{"string": "Has Logbook Area: Cemetery"}]},
+    "stat": {"ref": "Has Logbook Area: Cemetery", "matchers": [{"string": "Содержит область журнала: Погост"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_cemetery"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Desert Ruins", "matchers": [{"string": "Has Logbook Area: Desert Ruins"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Desert Ruins",
+      "matchers": [{"string": "Содержит область журнала: Пустынные руины"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_desert_ruins"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Dried Riverbed", "matchers": [{"string": "Has Logbook Area: Dried Riverbed"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Dried Riverbed",
+      "matchers": [{"string": "Содержит область журнала: Высохшее русло"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_dried_riverbed"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Forest Ruins", "matchers": [{"string": "Has Logbook Area: Forest Ruins"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Forest Ruins",
+      "matchers": [{"string": "Содержит область журнала: Развалины в лесу"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_forest_ruins"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Karui Wargraves", "matchers": [{"string": "Has Logbook Area: Karui Wargraves"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Karui Wargraves",
+      "matchers": [{"string": "Содержит область журнала: Могилы воинов каруи"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_karui_wargraves"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Mountainside", "matchers": [{"string": "Has Logbook Area: Mountainside"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Mountainside",
+      "matchers": [{"string": "Содержит область журнала: Горный склон"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_mountainside"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Rotting Temple", "matchers": [{"string": "Has Logbook Area: Rotting Temple"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Rotting Temple",
+      "matchers": [{"string": "Содержит область журнала: Гниющий храм"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_rotting_temple"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Sarn Slums", "matchers": [{"string": "Has Logbook Area: Sarn Slums"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Sarn Slums",
+      "matchers": [{"string": "Содержит область журнала: Трущобы Сарна"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_sarn_slums"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Scrublands", "matchers": [{"string": "Has Logbook Area: Scrublands"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Scrublands",
+      "matchers": [{"string": "Содержит область журнала: Заросли кустарника"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_scrublands"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Shipwreck Reef", "matchers": [{"string": "Has Logbook Area: Shipwreck Reef"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Shipwreck Reef",
+      "matchers": [{"string": "Содержит область журнала: Риф разбитых кораблей"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_shipwreck_reef"]}}
   },
   {
     "stat": {
       "ref": "Has Logbook Area: Utzaal Outskirts",
-      "matchers": [{"string": "Has Logbook Area: Utzaal Outskirts"}]
+      "matchers": [{"string": "Содержит область журнала: Окраины Утцааля"}]
     },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_utzaal_outskirts"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Vaal Temple", "matchers": [{"string": "Has Logbook Area: Vaal Temple"}]},
+    "stat": {"ref": "Has Logbook Area: Vaal Temple", "matchers": [{"string": "Содержит область журнала: Храм ваал"}]},
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_vaal_temple"]}}
   },
   {
-    "stat": {"ref": "Has Logbook Area: Volcanic Island", "matchers": [{"string": "Has Logbook Area: Volcanic Island"}]},
+    "stat": {
+      "ref": "Has Logbook Area: Volcanic Island",
+      "matchers": [{"string": "Содержит область журнала: Вулканический остров"}]
+    },
     "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_volcano"]}}
   },
   {
@@ -32803,7 +32912,7 @@
       "matchers": [
         {"string": "Удары по обескураженным вами врагам имеют #% повышение шанса критического удара чарами"},
         {
-          "string": "Удары по обескураженным вами врагам имеют #% уменьшение шанса критического удара чарами",
+          "string": "Удары по обескураженным вами врагам имеют #% снижение шанса критического удара чарами",
           "negate": true
         }
       ]
@@ -36542,10 +36651,26 @@
     "stat": {
       "ref": "Only affects Passives in # Ring",
       "matchers": [
-        {"string": "Влияет только на пассивные умения внутри малого кольца", "value": 1},
-        {"string": "Влияет только на пассивные умения внутри среднего кольца", "value": 2},
-        {"string": "Влияет только на пассивные умения внутри большого кольца", "value": 3},
-        {"string": "Влияет только на пассивные умения внутри очень большого кольца", "value": 4}
+        {
+          "string": "Влияет только на пассивные умения внутри малого кольца",
+          "advanced": "Влияет только на пассивные умения внутри малого кольца (малое кольцо - очень большое кольцо)",
+          "value": 1
+        },
+        {
+          "string": "Влияет только на пассивные умения внутри среднего кольца",
+          "advanced": "Влияет только на пассивные умения внутри среднего кольца (малое кольцо - очень большое кольцо)",
+          "value": 2
+        },
+        {
+          "string": "Влияет только на пассивные умения внутри большого кольца",
+          "advanced": "Влияет только на пассивные умения внутри большого кольца (малое кольцо - очень большое кольцо)",
+          "value": 3
+        },
+        {
+          "string": "Влияет только на пассивные умения внутри очень большого кольца",
+          "advanced": "Влияет только на пассивные умения внутри очень большого кольца (малое кольцо - очень большое кольцо)",
+          "value": 4
+        }
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3642528642"]}, "option": "str"}
@@ -37111,44 +37236,45 @@
     "trade": {"ids": {"explicit": ["explicit.stat_430044247"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Conductivity",
-      "matchers": [{"string": "Players are Cursed with Conductivity"}]
-    },
+    "stat": {"ref": "Players are Cursed with Conductivity", "matchers": [{"string": "Игроки прокляты Проводимостью"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_376158712"]}}
   },
   {
-    "stat": {"ref": "Players are Cursed with Despair", "matchers": [{"string": "Players are Cursed with Despair"}]},
+    "stat": {"ref": "Players are Cursed with Despair", "matchers": [{"string": "Игроки прокляты Отчаянием"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1551563177"]}}
   },
   {
     "stat": {
       "ref": "Players are Cursed with Elemental Weakness",
-      "matchers": [{"string": "Players are Cursed with Elemental Weakness"}]
+      "matchers": [{"string": "Игроки прокляты Уязвимостью к стихиям"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_558910024"], "fractured": ["fractured.stat_558910024"]}}
   },
   {
-    "stat": {"ref": "Players are Cursed with Enfeeble", "matchers": [{"string": "Players are Cursed with Enfeeble"}]},
+    "stat": {"ref": "Players are Cursed with Enfeeble", "matchers": [{"string": "Игроки прокляты Слабостью"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_4103440490"], "fractured": ["fractured.stat_4103440490"]}}
   },
   {
-    "stat": {
-      "ref": "Players are Cursed with Flammability",
-      "matchers": [{"string": "Players are Cursed with Flammability"}]
-    },
+    "stat": {"ref": "Players are Cursed with Flammability", "matchers": [{"string": "Игроки прокляты Горючестью"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_989228672"]}}
   },
   {
-    "stat": {"ref": "Players are Cursed with Frostbite", "matchers": [{"string": "Players are Cursed with Frostbite"}]},
+    "stat": {"ref": "Players are Cursed with Frostbite", "matchers": [{"string": "Игроки прокляты Обморожением"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_3442976749"]}}
   },
   {
     "stat": {
       "ref": "Players are Cursed with Temporal Chains",
-      "matchers": [{"string": "Players are Cursed with Temporal Chains"}]
+      "matchers": [{"string": "Игроки прокляты Путами времени"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2326202293"], "fractured": ["fractured.stat_2326202293"]}}
+  },
+  {
+    "stat": {
+      "ref": "Players are Cursed with Vulnerability",
+      "matchers": [{"string": "Игроки прокляты Беззащитностью"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1366534040"], "fractured": ["fractured.stat_1366534040"]}}
   },
   {
     "stat": {
@@ -40307,7 +40433,7 @@
       "ref": "Socketed Gems are Supported by Level # Behead",
       "matchers": [{"string": "Размещенные камни усилены Обезглавливанием # уровня"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_140"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_140", "explicit.stat_1019145105"]}}
   },
   {
     "stat": {
@@ -45164,7 +45290,7 @@
   },
   {
     "stat": {
-      "ref": "With at least 40 Dexterity in Radius, Ice Shot Pierces # additional Targets",
+      "ref": "With at least 40 Dexterity in Radius, Ice Shot Pierces an additional Target",
       "matchers": [
         {"string": "Если в радиусе есть минимум 40 ловкости, Ледяной выстрел пронзает # дополнительных цели(-ей)"},
         {"string": "Если в радиусе есть минимум 40 ловкости, Ледяной выстрел пронзает дополнительную цель", "value": 1}
