@@ -18,6 +18,8 @@ import { defineComponent, PropType, inject, ref, onUnmounted, computed } from 'v
 import Widget from './Widget.vue'
 import { Duration } from 'luxon'
 import { WidgetManager, StopwatchWidget } from './interfaces'
+import { MainProcess } from '@/ipc/main-process-bindings'
+import { TIMER_START, TIMER_STOP, TIMER_RESTART } from '@/ipc/ipc-event'
 
 export default defineComponent({
   components: { Widget },
@@ -29,6 +31,10 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
+
+    MainProcess.addEventListener(TIMER_START, start)
+    MainProcess.addEventListener(TIMER_STOP, stop)
+    MainProcess.addEventListener(TIMER_RESTART, restart)
 
     if (props.config.wmFlags[0] === 'uninitialized') {
       props.config.wmFlags = []

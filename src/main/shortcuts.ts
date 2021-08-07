@@ -11,6 +11,7 @@ import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive
 import * as ipc from '@/ipc/ipc-event'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
+import { TimerAction } from './timer-action'
 
 export let hotkeyPressPosition: Point | undefined
 
@@ -108,6 +109,18 @@ function registerGlobal () {
       toggleDelveGrid,
       { doNotResetModKey: true }
     ),
+    shortcutCallback(
+      config.get('timerStart'),
+      () => handleTimer(TimerAction.start)
+    ),
+    shortcutCallback(
+      config.get('timerStop'),
+      () => handleTimer(TimerAction.stop)
+    ),
+    shortcutCallback(
+      config.get('timerRestart'),
+      () => handleTimer(TimerAction.restart)
+    ),
     ...config.get('commands')
       .map(command =>
         shortcutCallback(command.hotkey, () => typeInChat(command.text, command.send))
@@ -189,6 +202,12 @@ export function setupShortcuts () {
       shortcutCallback(pressed, itemCheck).cb()
     } else if (pressed === config.get('delveGridKey')) {
       shortcutCallback(pressed, toggleDelveGrid, { doNotResetModKey: true }).cb()
+    } else if (pressed === config.get('timerStart')) {
+      handleTimer(TimerAction.start)
+    } else if (pressed === config.get('timerStop')) {
+      handleTimer(TimerAction.stop)
+    } else if (pressed === config.get('timerRestart')) {
+      handleTimer(TimerAction.restart)
     } else {
       const command = config.get('commands').find(c => c.hotkey === pressed)
       if (command) {
@@ -252,6 +271,20 @@ function openCraftOfExile (clipboard: string) {
 
 function toggleDelveGrid () {
   overlayWindow!.webContents.send(ipc.TOGGLE_DELVE_GRID)
+}
+
+function handleTimer (action: TimerAction) {
+  switch (action) {
+    case TimerAction.start:
+      overlayWindow!.webContents.send(ipc.TIMER_START)
+      break;
+    case TimerAction.stop:
+      overlayWindow!.webContents.send(ipc.TIMER_STOP)
+      break;
+    case TimerAction.restart:
+      overlayWindow!.webContents.send(ipc.TIMER_RESTART)
+      break;
+  }
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {

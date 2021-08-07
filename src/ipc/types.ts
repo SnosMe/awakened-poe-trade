@@ -20,6 +20,9 @@ export interface Config {
   priceCheckShowCursor: boolean
   itemCheckKey: string | null
   delveGridKey: string | null
+  timerStart: string | null
+  timerStop: string | null
+  timerRestart: string | null
   restoreClipboard: boolean
   commands: Array<{
     text: string
@@ -76,6 +79,9 @@ export const defaultConfig: Config = {
   priceCheckShowCursor: true,
   itemCheckKey: null,
   delveGridKey: null,
+  timerStart: null,
+  timerStop: null,
+  timerRestart: null,
   restoreClipboard: true,
   commands: [{
     text: '/hideout',

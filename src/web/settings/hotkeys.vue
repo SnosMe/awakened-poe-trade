@@ -43,10 +43,28 @@
         <hotkey-input v-model="config.craftOfExileKey" class="w-48" />
       </div>
     </div>
-    <div class="mb-8">
+    <div class="mb-4">
       <div class="flex">
         <div class="flex-1">{{ t('Delve grid') }}</div>
         <hotkey-input v-model="config.delveGridKey" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="flex">
+        <div class="flex-1">{{ t('Start timer') }}</div>
+        <hotkey-input v-model="config.timerStart" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="flex">
+        <div class="flex-1">{{ t('Stop timer') }}</div>
+        <hotkey-input v-model="config.timerStop" class="w-48" />
+      </div>
+    </div>
+    <div class="mb-8">
+      <div class="flex">
+        <div class="flex-1">{{ t('Restart timer') }}</div>
+        <hotkey-input v-model="config.timerRestart" class="w-48" />
       </div>
     </div>
     <div class="mb-8">

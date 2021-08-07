@@ -79,6 +79,10 @@ export const IMPORT_FILE = 'OVERLAY->MAIN::import-file'
 
 export const TOGGLE_DELVE_GRID = 'MAIN->OVERLAY::delve-grid'
 
+export const TIMER_START = 'MAIN->OVERLAY::timer-start'
+export const TIMER_STOP = 'MAIN->OVERLAY::timer-stop'
+export const TIMER_RESTART = 'MAIN->OVERLAY::timer-restart'
+
 export const CLIENT_LOG_UPDATE = 'MAIN->OVERLAY::client-log'
 export interface IpcClientLog {
   lines: string[]
