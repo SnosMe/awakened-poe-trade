@@ -71,87 +71,50 @@ const PLACEHOLDER_MAP = [
 ]
 
 function * _statPlaceholderGenerator (stat: string) {
-  // combinations to detect stat text range "Victario(Cadiro-Victario)"
-  //                                                  ^^^^^^ ^^^^^^^^
-  // but ignore (dashed-text) literal inside translation string
-  function * _firstPass (stat: string): Generator<string, void> {
-    const matches = [] as string[]
-    const withPlaceholders = stat
-      .replace(/(?:(?<!\x20|\d)\((?<min>.[^)-]*)-(?<max>[^)]+)\))/gm, (match, min, max) => {
-        if (Number.isNaN(Number(min)) || Number.isNaN(Number(max))) {
-          matches.push(match)
-          return '#'
-        } else {
-          return match
-        }
-      })
-
-    for (let j = 0; j < 2 ** matches.length; j += 1) {
-      const replacements: number[] = []
-      for (let idx = 0; idx < matches.length; idx += 1) {
-        if ((j & (2 ** idx))) {
-          replacements.push(idx)
-        }
+  const matches: Array<{
+    roll: number
+    rollStr: string
+    decimal: boolean
+    bounds?: { min: number, max: number }
+  }> = []
+  const withPlaceholders = stat
+    .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)(?:-(?<max>[^)]+))?\))?/gm, (_, roll: string, min?: string, max?: string) => {
+      if (min != null && max == null) {
+        // example: Watchstone "# uses remaining"
+        max = min
       }
 
-      {
-        let idx = -1
-        yield withPlaceholders.replace(/#/gm, () => {
-          idx += 1
-          return replacements.includes(idx)
-            ? matches[idx]
-            : ''
-        })
+      const captured: typeof matches[number] = {
+        roll: Number(roll),
+        rollStr: roll,
+        decimal: roll.includes('.') || min?.includes('.') || max?.includes('.') || false,
+        bounds: { min: Number(min), max: Number(max) }
       }
-    }
-  }
+      matches.push(captured)
 
-  for (stat of _firstPass(stat)) {
-    const matches: Array<{
-      roll: number
-      rollStr: string
-      decimal: boolean
-      bounds?: { min: number, max: number }
-    }> = []
-    const withPlaceholders = stat
-      .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)(?:-(?<max>[^)]+))?\))?/gm, (_, roll: string, min?: string, max?: string) => {
-        if (min != null && max == null) {
-          // example: Watchstone "# uses remaining"
-          max = min
-        }
+      if (Number.isNaN(captured.bounds!.min) || Number.isNaN(captured.bounds!.max)) {
+        captured.bounds = undefined
+        return (min != null) ? `#(${min}-${max})` : '#'
+      } else {
+        return '#'
+      }
+    })
 
-        const captured: typeof matches[number] = {
-          roll: Number(roll),
-          rollStr: roll,
-          decimal: roll.includes('.') || min?.includes('.') || max?.includes('.') || false,
-          bounds: { min: Number(min), max: Number(max) }
-        }
-        matches.push(captured)
-
-        if (Number.isNaN(captured.bounds!.min) || Number.isNaN(captured.bounds!.max)) {
-          captured.bounds = undefined
-          return (min != null) ? `#(${min}-${max})` : '#'
-        } else {
-          return '#'
-        }
+  if (matches.length < PLACEHOLDER_MAP.length) {
+    for (const replacements of PLACEHOLDER_MAP[matches.length]) {
+      let idx = -1
+      const replaced = withPlaceholders.replace(/#/gm, () => {
+        idx += 1
+        return replacements.includes(idx)
+          ? matches[idx].rollStr
+          : '#'
       })
 
-    if (matches.length < PLACEHOLDER_MAP.length) {
-      for (const replacements of PLACEHOLDER_MAP[matches.length]) {
-        let idx = -1
-        const replaced = withPlaceholders.replace(/#/gm, () => {
-          idx += 1
-          return replacements.includes(idx)
-            ? matches[idx].rollStr
-            : '#'
-        })
-
-        yield {
-          stat: replaced,
-          values: matches
-            .filter((_, idx) => !replacements.includes(idx)) as
-              Array<Pick<typeof matches[number], 'roll' | 'bounds' | 'decimal'>>
-        }
+      yield {
+        stat: replaced,
+        values: matches
+          .filter((_, idx) => !replacements.includes(idx)) as
+            Array<Pick<typeof matches[number], 'roll' | 'bounds' | 'decimal'>>
       }
     }
   }

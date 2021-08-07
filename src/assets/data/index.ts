@@ -44,10 +44,10 @@ export const ITEM_DROP = new Map<string, DropEntry>()
     STATS = (require(`./${Config.store.language}/stats.json`))
     for (const entry of STATS) {
       for (const condition of entry.stat.matchers) {
-        STAT_BY_MATCH_STR.set(condition.string, {
-          matcher: condition,
-          stat: entry
-        })
+        STAT_BY_MATCH_STR.set(condition.string, { matcher: condition, stat: entry })
+        if (condition.advanced) {
+          STAT_BY_MATCH_STR.set(condition.advanced, { matcher: condition, stat: entry })
+        }
       }
       STAT_BY_REF.set(entry.stat.ref, entry)
     }
