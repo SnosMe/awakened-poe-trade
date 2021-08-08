@@ -6,7 +6,6 @@ import { ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
-import { ARMOUR, WEAPON } from '@/parser/meta'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -217,7 +216,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     }
   }
 
-  if (showHasEmptyModifier(ctx)) {
+  const hasEmptyModifier = showHasEmptyModifier(ctx)
+  if (hasEmptyModifier !== false) {
     ctx.filters.push({
       tradeId: ['item.has_empty_modifier'],
       text: '1 Empty or Crafted Modifier',
@@ -225,7 +225,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       disabled: true,
       hidden: 'Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers',
       type: 'pseudo',
-      roll: ItemHasEmptyModifier.Any,
+      roll: hasEmptyModifier,
       option: 'num',
       min: undefined,
       max: undefined
@@ -254,40 +254,43 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   }
 }
 
-function showHasEmptyModifier (ctx: FiltersCreationContext): boolean {
+// TODO
+// +1 Prefix Modifier allowed
+// -1 Suffix Modifier allowed
+function showHasEmptyModifier (ctx: FiltersCreationContext): ItemHasEmptyModifier | false {
   const { item } = ctx
 
   if (
     item.rarity !== ItemRarity.Rare ||
-    !item.category ||
     item.isCorrupted ||
     item.isMirrored
   ) return false
 
-  let totalUsed: number = item.modifiers.filter(mod =>
-    mod.type === ModifierType.Explicit ||
-    mod.type === ModifierType.Fractured ||
-    mod.type === ModifierType.Crafted).length
+  const randomMods = item.newMods.filter(mod =>
+    mod.info.type === ModifierType.Explicit ||
+    mod.info.type === ModifierType.Fractured ||
+    mod.info.type === ModifierType.Veiled ||
+    mod.info.type === ModifierType.Crafted)
 
-  let hasCrafted = item.modifiers.some(mod => mod.type === ModifierType.Crafted)
-
-  if (item.extra.veiled) {
-    totalUsed += (item.extra.veiled === 'prefix-suffix' ? 2 : 1)
-    hasCrafted = true
-  }
+  const craftedMod = randomMods.find(mod => mod.info.type === ModifierType.Crafted)
 
   if (
-    (totalUsed === 5 && !hasCrafted) ||
-    (totalUsed >= 6 /* && hasCrafted */) // don't force player to craft mod (proving that item has empty slot)
+    (randomMods.length === 5 && !craftedMod) ||
+    (randomMods.length === 6 && craftedMod)
   ) {
-    return (
-      ARMOUR.has(item.category) ||
-      WEAPON.has(item.category) ||
-      item.category === ItemCategory.Amulet ||
-      item.category === ItemCategory.Belt ||
-      item.category === ItemCategory.Ring ||
-      item.category === ItemCategory.Quiver
-    )
+    let prefixes = randomMods.filter(mod => mod.info.generation === 'prefix').length
+    let suffixes = randomMods.filter(mod => mod.info.generation === 'suffix').length
+
+    if (craftedMod) {
+      if (craftedMod.info.generation === 'prefix') {
+        prefixes -= 1
+      } else {
+        suffixes -= 1
+      }
+    }
+
+    if (prefixes === 2) return ItemHasEmptyModifier.Prefix
+    if (suffixes === 2) return ItemHasEmptyModifier.Suffix
   }
 
   return false
