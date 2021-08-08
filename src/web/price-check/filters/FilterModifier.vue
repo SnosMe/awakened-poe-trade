@@ -41,6 +41,8 @@
             class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ t(filter.type) }}</span>
           <span v-if="filter.variant"
             class="text-xs leading-none px-1 rounded mod-type-variant">{{ t('variant') }}</span>
+          <span v-if="filter.corrupted"
+            class="text-xs leading-none px-1 rounded mod-type-corrupted">{{ t('corrupted') }}</span>
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
         <div v-if="filter.boundMin !== undefined"
@@ -112,7 +114,7 @@ export default defineComponent({
     })
 
     const showTypeTags = computed(() => {
-      if (props.filter.boundMin !== undefined || props.filter.variant) {
+      if (props.filter.boundMin !== undefined || props.filter.variant || props.filter.corrupted) {
         return false
       }
       return props.filter.type !== 'armour' &&
@@ -202,6 +204,10 @@ export default defineComponent({
 <style lang="postcss">
 .mod-type-implicit, .mod-type-variant {
   @apply bg-yellow-700 text-yellow-100
+}
+
+.mod-type-corrupted {
+  @apply bg-red-700 text-red-100
 }
 
 .mod-type-fractured {
@@ -320,6 +326,7 @@ export default defineComponent({
     "Map is not occupied by Elder Guardian": "Карта не захвачена Хранителем Древнего",
     "Block: #%": "Блок: #%",
     "variant": "вариант",
+    "corrupted": "осквернено",
     "pseudo": "псевдо",
     "Roll is not variable": "Ролл не варьируется",
     "Elemental damage is not the main source of DPS": "Стихийный урон не основной источник ДПСа",

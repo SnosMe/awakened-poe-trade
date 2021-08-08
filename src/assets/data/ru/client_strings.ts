@@ -78,7 +78,8 @@ const dict: TranslationDict = {
   'SUFFIX_MODIFIER': 'Суффикс',
   'CRAFTED_PREFIX': 'Мастерский префикс',
   'CRAFTED_SUFFIX': 'Мастерский суффикс',
-  'UNSCALABLE_VALUE': ' — Неизменяемое значение'
+  'UNSCALABLE_VALUE': ' — Неизменяемое значение',
+  'CORRUPTED_IMPLICIT': 'Осквернённое собственное свойство'
 }
 
 export default dict

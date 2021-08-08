@@ -12,7 +12,7 @@ export interface ParsedModifier {
 
 export interface ModifierInfo {
   type: ModifierType
-  generation?: 'suffix' | 'prefix'
+  generation?: 'suffix' | 'prefix' | 'corrupted'
   name?: string
   tier?: number
   rank?: number
@@ -39,6 +39,8 @@ export function parseModInfoLine (line: string, type: ModifierType): ModifierInf
     case _$.SUFFIX_MODIFIER:
     case _$.CRAFTED_SUFFIX:
       generation = 'suffix'; break
+    case _$.CORRUPTED_IMPLICIT:
+      generation = 'corrupted'; break
   }
 
   const name = match.groups!.name || undefined
@@ -168,6 +170,7 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
           trade: dbStatA.trade,
           string: translation.string,
           type: modA.info.type,
+          corrupted: (modA.info.generation === 'corrupted') || undefined,
           negate: translation.negate,
           value: statA.roll?.value,
           bounds: statA.roll && { min: statA.roll.min, max: statA.roll.max }
@@ -195,6 +198,7 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
           trade: dbStatA.trade,
           string: translation.string,
           type: modA.info.type,
+          corrupted: (modA.info.generation === 'corrupted') || undefined,
           negate: translation.negate,
           value: roll.value,
           bounds: {

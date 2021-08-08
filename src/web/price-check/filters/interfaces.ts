@@ -87,6 +87,7 @@ export interface StatFilter {
   readonly boundMin?: number
   readonly boundMax?: number
   readonly variant?: true
+  readonly corrupted?: true
   readonly hidden?: string
   readonly invert?: boolean
   disabled: boolean

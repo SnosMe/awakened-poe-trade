@@ -22,7 +22,7 @@ export function uniqueModFilterPartial (
     filter.min = filter.defaultMin
     filter.max = filter.defaultMax
     filter.roll = mod.value
-    if (!filter.variant) {
+    if (!filter.variant && !filter.corrupted) {
       filter.hidden = 'Roll is not variable'
     }
   } else {

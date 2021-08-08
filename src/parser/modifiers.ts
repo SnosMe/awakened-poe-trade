@@ -19,6 +19,7 @@ export interface LegacyItemModifier extends
     max: number
   }
   type: ModifierType
+  corrupted?: true
 }
 
 export { LegacyItemModifier as ItemModifier }

@@ -88,6 +88,7 @@ export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
     text: mod.string,
     type: mod.type,
     option: mod.trade.option,
+    corrupted: mod.corrupted,
     roll: undefined,
     disabled: true,
     min: undefined,
