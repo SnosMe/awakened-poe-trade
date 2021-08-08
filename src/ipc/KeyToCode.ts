@@ -236,7 +236,8 @@ export function hotkeyToString (keys: string[], ctrl = false, shift = false, alt
   keys = keys.filter(key => !isModKey(key))
 
   let mod = ''
-  if (shift && alt) mod = 'Shift + Alt'
+  if (ctrl && shift && alt) mod = 'Ctrl + Shift + Alt'
+  else if (shift && alt) mod = 'Shift + Alt'
   else if (ctrl && shift) mod = 'Ctrl + Shift'
   else if (ctrl && alt) mod = 'Ctrl + Alt'
   else if (alt) mod = 'Alt'
