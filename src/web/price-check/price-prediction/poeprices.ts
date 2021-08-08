@@ -104,5 +104,7 @@ function querystring (q: Record<string, any>) {
  */
 function transformItemText (rawText: string) {
   // this may not account for all cases
-  return rawText.replace(/(?<=\d)(\([^)]+\))/gm, '')
+  return rawText
+    .replace(/(?<=\d)(\([^)]+\))/gm, '')
+    .replace(/^\{.+\}$\n/gm, '')
 }
