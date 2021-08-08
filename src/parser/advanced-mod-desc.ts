@@ -21,33 +21,53 @@ export interface ModifierInfo {
 }
 
 export function parseModInfoLine (line: string, type: ModifierType): ModifierInfo {
-  const [modText, tagsText, incrText] = line
+  const [modText, xText2, xText3] = line
     .slice(1, -1)
     .split('\u2014')
     .map(_ => _.trim())
 
-  const match = modText.match(_$.MODIFIER_LINE)
-  if (!match) {
-    throw new Error('Invalid regex for mod info line')
-  }
-
   let generation: ModifierInfo['generation']
-  switch (match.groups!.type) {
-    case _$.PREFIX_MODIFIER:
-    case _$.CRAFTED_PREFIX:
-      generation = 'prefix'; break
-    case _$.SUFFIX_MODIFIER:
-    case _$.CRAFTED_SUFFIX:
-      generation = 'suffix'; break
-    case _$.CORRUPTED_IMPLICIT:
-      generation = 'corrupted'; break
+  let name: ModifierInfo['name']
+  let tier: ModifierInfo['tier']
+  let rank: ModifierInfo['rank']
+  {
+    const match = modText.match(_$.MODIFIER_LINE)
+    if (!match) {
+      throw new Error('Invalid regex for mod info line')
+    }
+
+    switch (match.groups!.type) {
+      case _$.PREFIX_MODIFIER:
+      case _$.CRAFTED_PREFIX:
+        generation = 'prefix'; break
+      case _$.SUFFIX_MODIFIER:
+      case _$.CRAFTED_SUFFIX:
+        generation = 'suffix'; break
+      case _$.CORRUPTED_IMPLICIT:
+        generation = 'corrupted'; break
+    }
+
+    name = match.groups!.name || undefined
+    tier = Number(match.groups!.tier) || undefined
+    rank = Number(match.groups!.rank) || undefined
   }
 
-  const name = match.groups!.name || undefined
-  const tier = Number(match.groups!.tier) || undefined
-  const rank = Number(match.groups!.rank) || undefined
-  const tags = tagsText ? tagsText.split(', ') : []
-  const rollIncr = parseInt(incrText, 10) || undefined
+  let tags: ModifierInfo['tags']
+  let rollIncr: ModifierInfo['rollIncr']
+  {
+    const incrText = (xText3 !== undefined)
+      ? xText3
+      : (xText2 !== undefined && _$.MODIFIER_INCREASED.test(xText2))
+          ? xText2
+          : undefined
+
+    const tagsText = (xText2 !== undefined && incrText !== xText2)
+      ? xText2
+      : undefined
+
+    tags = tagsText ? tagsText.split(', ') : []
+    rollIncr = incrText ? Number(_$.MODIFIER_INCREASED.exec(incrText)![1]) : undefined
+  }
 
   return { type, generation, name, tier, rank, tags, rollIncr }
 }

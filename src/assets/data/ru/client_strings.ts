@@ -79,7 +79,8 @@ const dict: TranslationDict = {
   'CRAFTED_PREFIX': 'Мастерский префикс',
   'CRAFTED_SUFFIX': 'Мастерский суффикс',
   'UNSCALABLE_VALUE': ' — Неизменяемое значение',
-  'CORRUPTED_IMPLICIT': 'Осквернённое собственное свойство'
+  'CORRUPTED_IMPLICIT': 'Осквернённое собственное свойство',
+  'MODIFIER_INCREASED': /^(.+?)% увеличение$/
 }
 
 export default dict
