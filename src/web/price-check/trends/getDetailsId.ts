@@ -46,7 +46,11 @@ export function getDetailsId (item: ParsedItem) {
     return nameToDetailsId(`${item.name} ${item.itemLevel! >= 76 ? '76' : '1-75'}`)
   }
 
-  return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
+  return nameToDetailsId(item.baseType
+    ? item.name
+      ? `${item.name} ${item.baseType}`
+      : item.baseType
+    : item.name)
 }
 
 const BRAND_RECALL_GEM = 'Brand Recall'

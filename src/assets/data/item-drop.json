@@ -1,6 +1,46 @@
 [
   {
     "query": [
+      "lesser-broken-circle-artifact",
+      "common-broken-circle-artifact",
+      "greater-broken-circle-artifact",
+      "grand-broken-circle-artifact",
+      "astragali"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "lesser-black-scythe-artifact",
+      "common-black-scythe-artifact",
+      "greater-black-scythe-artifact",
+      "grand-black-scythe-artifact",
+      "exotic-coinage"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "lesser-order-artifact",
+      "common-order-artifact",
+      "greater-order-artifact",
+      "grand-order-artifact",
+      "scrap-metal"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "lesser-sun-artifact",
+      "common-sun-artifact",
+      "greater-sun-artifact",
+      "grand-sun-artifact",
+      "burial-medallion"
+    ],
+    "items": []
+  },
+  {
+    "query": [
       "splinter-of-uul-netol",
       "uul-netols-breachstone",
       "uul-netols-charged-breachstone",
