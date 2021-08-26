@@ -4,7 +4,7 @@ import { Config } from '@/web/Config'
 import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 const ENDPOINT_BY_LANG = {
-  en: 'pathofexile.gamepedia.com',
+  en: 'www.poewiki.net/wiki/',
   ru: 'pathofexile-ru.gamepedia.com'
 }
 
