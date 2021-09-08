@@ -3,7 +3,7 @@ import { BrowserWindow, ipcMain, dialog, Menu, systemPreferences } from 'electro
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
-import { overlayWindow as OW } from 'electron-overlay-window'
+import { OverlayWindow as OW } from 'electron-overlay-window'
 import { config } from './config'
 
 export let overlayWindow: BrowserWindow | undefined

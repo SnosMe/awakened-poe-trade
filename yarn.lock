@@ -3782,10 +3782,10 @@ electron-osx-sign@^0.5.0:
     minimist "^1.2.0"
     plist "^3.0.1"
 
-electron-overlay-window@2.0.x:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-2.0.1.tgz#c549d5436c7a10ceb4884f5eabcf0901c1880aea"
-  integrity sha512-ULweUF7N4i6GFTO6sEA32U/iMJFAAcM33j8mScqDvRriWbW8CGKhYwu0AYOuZLhVmzg869KPnThJiI9e4FcdjA==
+electron-overlay-window@3.0.0-beta.1:
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-3.0.0-beta.1.tgz#94072bb8527c45d7c15db555279044077d04ee0f"
+  integrity sha512-59+Zw3e8ou/9fuX22gEHCbItbp2HQBEjHi7vNO5fbYe/r7niU3wEAhqMvYrWPcw/T1bhqTWsmnBjMy7yjLlRmw==
   dependencies:
     node-gyp-build "4.x.x"
     throttle-debounce "3.x.x"

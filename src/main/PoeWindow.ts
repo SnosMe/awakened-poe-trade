@@ -1,19 +1,18 @@
-import type { Rectangle, BrowserWindow } from 'electron'
+import type { BrowserWindow } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { config } from './config'
-import { overlayWindow as OW, AttachEvent } from 'electron-overlay-window'
+import { OverlayWindow as OW, AttachEvent } from 'electron-overlay-window'
 
 interface PoeWindowClass {
   on: (event: 'active-change', listener: (isActive: boolean) => void) => this
 }
 class PoeWindowClass extends EventEmitter {
   private _isActive: boolean = false
-  bounds: Rectangle | undefined
 
-  get isActive () {
-    return this._isActive
-  }
+  get bounds () { return OW.bounds }
+
+  get isActive () { return this._isActive }
 
   set isActive (active: boolean) {
     if (this.isActive !== active) {
@@ -30,25 +29,18 @@ class PoeWindowClass extends EventEmitter {
   get uiSidebarWidth () {
     // sidebar is 370px at 800x600
     const ratio = 370 / 600
-    return Math.round(this.bounds!.height * ratio)
+    return Math.round(this.bounds.height * ratio)
   }
 
   attach (window: BrowserWindow) {
-    OW.on('focus', () => { this.isActive = true })
-    OW.on('blur', () => { this.isActive = false })
-
-    OW.on('moveresize', (e) => {
-      this.bounds = e
-    })
-    OW.on('attach', (e) => {
-      this.bounds = e
-    })
+    OW.events.on('focus', () => { this.isActive = true })
+    OW.events.on('blur', () => { this.isActive = false })
 
     OW.attachTo(window, config.get('windowTitle'))
   }
 
   onAttach (cb: (hasAccess: boolean | undefined) => void) {
-    OW.on('attach', (e: AttachEvent) => {
+    OW.events.on('attach', (e: AttachEvent) => {
       cb(e.hasAccess)
     })
   }
