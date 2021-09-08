@@ -28,7 +28,6 @@ export interface Config {
   }>
   clientLog: string | null
   gameConfig: string | null
-  useOsGlobalShortcut: boolean
   windowTitle: string
   logLevel: string
   showSeller: false | 'account' | 'ign'
@@ -104,7 +103,6 @@ export const defaultConfig: Config = {
   }],
   clientLog: null,
   gameConfig: null,
-  useOsGlobalShortcut: true,
   windowTitle: 'Path of Exile',
   logLevel: 'warn',
   showSeller: false,

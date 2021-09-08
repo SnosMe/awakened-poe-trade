@@ -33,7 +33,7 @@ function priceCheck (lockedMode: boolean) {
     pressKeysToCopyItemText(config.get('priceCheckKeyHold'))
   } else {
     pressKeysToCopyItemText()
-    }
+  }
 }
 
 function pressKeysToCopyItemText (skipModKey?: string) {
@@ -140,21 +140,19 @@ export function setupShortcuts () {
   // threads ready to run, the function returns immediately
   robotjs.setKeyboardDelay(0)
 
-  if (PoeWindow.isActive && config.get('useOsGlobalShortcut')) {
+  if (PoeWindow.isActive) {
     registerGlobal()
   }
   PoeWindow.on('active-change', (isActive) => {
-    if (config.get('useOsGlobalShortcut')) {
-      process.nextTick(() => {
-        if (isActive === PoeWindow.isActive) {
-          if (isActive) {
-            registerGlobal()
-          } else {
-            unregisterGlobal()
-          }
+    process.nextTick(() => {
+      if (isActive === PoeWindow.isActive) {
+        if (isActive) {
+          registerGlobal()
+        } else {
+          unregisterGlobal()
         }
-      })
-    }
+      }
+    })
   })
 
   ipcMain.on(ipc.STASH_SEARCH, (e, opts: ipc.IpcStashSearch) => { stashSearch(opts.text) })
@@ -162,41 +160,6 @@ export function setupShortcuts () {
   uIOhook.on('keydown', (e) => {
     const pressed = eventToString(e)
     logger.debug('Keydown', { source: 'shortcuts', keys: pressed })
-
-    if (!PoeWindow.isActive || config.get('useOsGlobalShortcut')) return
-
-    if (pressed === `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`) {
-      shortcutCallback(pressed, () => {
-        priceCheck(false)
-      }, { doNotResetModKey: true }).cb()
-    } else if (pressed === config.get('priceCheckLocked')) {
-      shortcutCallback(pressed, () => {
-        priceCheck(true)
-      }).cb()
-    } else if (pressed === config.get('overlayKey')) {
-      shortcutCallback(pressed, toggleOverlayState, { doNotResetModKey: true }).cb()
-    } else if (pressed === config.get('wikiKey')) {
-      shortcutCallback(pressed, () => {
-        pollClipboard().then(openWiki).catch(() => {})
-        pressKeysToCopyItemText()
-      }).cb()
-    } else if (pressed === config.get('craftOfExileKey')) {
-      shortcutCallback(pressed, () => {
-        pollClipboard().then(openCraftOfExile).catch(() => {})
-        pressKeysToCopyItemText()
-      }).cb()
-    } else if (pressed === config.get('itemCheckKey')) {
-      shortcutCallback(pressed, itemCheck).cb()
-    } else if (pressed === config.get('delveGridKey')) {
-      shortcutCallback(pressed, toggleDelveGrid, { doNotResetModKey: true }).cb()
-    } else {
-      const command = config.get('commands').find(c => c.hotkey === pressed)
-      if (command) {
-        shortcutCallback(pressed, () => {
-          typeInChat(command.text, command.send)
-        }).cb()
-      }
-    }
   })
 
   uIOhook.on('keyup', (e) => {
