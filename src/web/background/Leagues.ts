@@ -1,7 +1,4 @@
 import { computed, ref } from 'vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
-import { LEAGUE_SELECTED } from '@/ipc/ipc-event'
-import { League } from '@/ipc/types'
 import { Config } from '@/web/Config'
 
 export const isLoading = ref(false)
@@ -39,19 +36,9 @@ export async function load () {
         selected.value = tradeLeagues.value[STANDARD].id
       }
     }
-
-    MainProcess.sendLeaguesReady(tradeLeagues.value.map<League>(league => ({
-      id: league.id,
-      selected: league.id === selected.value
-    })))
   } catch (e) {
     error.value = e.message
   } finally {
     isLoading.value = false
   }
 }
-
-MainProcess.addEventListener(LEAGUE_SELECTED, (e) => {
-  const leagueId = (e as CustomEvent<string>).detail
-  selected.value = leagueId
-})

@@ -1,6 +1,6 @@
 import { Renderer } from 'electron'
 import * as ipcEvent from '@/ipc/ipc-event'
-import { Config, League, defaultConfig } from '@/ipc/types'
+import { Config, defaultConfig } from '@/ipc/types'
 
 let electron: typeof Renderer | undefined
 try {
@@ -19,12 +19,6 @@ class MainProcessBinding extends EventTarget {
       electron.ipcRenderer.on(ipcEvent.ITEM_CHECK, (e, data) => {
         this.dispatchEvent(new CustomEvent(ipcEvent.ITEM_CHECK, {
           detail: data
-        }))
-      })
-
-      electron.ipcRenderer.on(ipcEvent.LEAGUE_SELECTED, (e, leagueId) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.LEAGUE_SELECTED, {
-          detail: leagueId
         }))
       })
 
@@ -114,12 +108,6 @@ class MainProcessBinding extends EventTarget {
           highlightKey: 'Alt'
         }
       }
-    }
-  }
-
-  sendLeaguesReady (leagues: League[]) {
-    if (electron) {
-      electron.ipcRenderer.send(ipcEvent.LEAGUES_READY, leagues)
     }
   }
 

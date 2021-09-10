@@ -1,6 +1,19 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('League') }}</div>
+      <div v-if="leagues.isLoading.value" class="mb-4">
+        <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
+      <div v-if="leagues.trade.value.length"
+        class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
+        style="grid-template-columns: repeat(2, min-content);">
+        <div v-for="league of leagues.trade.value" :key="league.id">
+          <ui-radio v-model="config.leagueId" :value="league.id">{{ league.id }}</ui-radio>
+        </div>
+      </div>
+      <!-- TODO show errors -->
+    </div>
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Account name') }}</div>
       <div class="mb-4">
         <input v-model="config.accountName" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
@@ -87,6 +100,7 @@ import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import { PriceCheckWidget } from '../overlay/interfaces'
+import * as Leagues from '../background/Leagues'
 
 export default defineComponent({
   setup () {
@@ -131,7 +145,12 @@ export default defineComponent({
 
           configWidget.value.apiLatencySeconds = Math.min(Math.max(value, 0.5), 10)
         }
-      })
+      }),
+      leagues: {
+        trade: Leagues.tradeLeagues,
+        isLoading: Leagues.isLoading,
+        error: Leagues.error
+      }
     }
   }
 })
@@ -154,7 +173,8 @@ export default defineComponent({
     "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "Настройки ниже являются компромиссом между увеличенной нагрузкой на сайт PoE и удобством проверки цен / более точным поиском.",
     "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах",
     "Perform an auto search, when pressing": "Выполнять автоматический поиск при нажатии",
-    "Always select \"Stock\" filter": "Всегда активировать фильтр \"Запас\""
+    "Always select \"Stock\" filter": "Всегда активировать фильтр \"Запас\"",
+    "League": "Лига"
   }
 }
 </i18n>

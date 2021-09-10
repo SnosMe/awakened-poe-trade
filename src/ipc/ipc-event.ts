@@ -8,9 +8,6 @@ export interface IpcConfigs {
   game: GameConfig | null
 }
 
-export const LEAGUES_READY = 'leagues-ready'
-export const LEAGUE_SELECTED = 'league-selected'
-
 export const PRICE_CHECK_HIDE = 'OVERLAY->MAIN::price-check-hide'
 
 export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'

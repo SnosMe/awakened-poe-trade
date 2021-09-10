@@ -29,6 +29,7 @@ import WidgetDebug from './WidgetDebug'
 import WidgetItemCheck from '@/web/item-check/WidgetItemCheck'
 import WidgetImageStrip from './WidgetImageStrip'
 import WidgetDelveGrid from './WidgetDelveGrid'
+import WidgetSettings from '../settings/SettingsWindow'
 import { registerOtherServices } from '../other-services'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 import { Config } from '@/web/Config'
@@ -48,6 +49,7 @@ export default {
     WidgetItemCheck,
     WidgetImageStrip,
     WidgetDelveGrid,
+    WidgetSettings,
     LoadingAnimation
   },
   provide () {

@@ -59,7 +59,6 @@ export default defineComponent({
     "Update available: {0}": "Доступно обновление: {0}",
     "It will be installed automatically on exit": "Оно будет установлено автоматически при выходе",
     "You can download it from GitHub": "Вы можете загрузить его с GitHub",
-    "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
     "Verify that the realm is not under maintenance and pathofexile.com is loading.": "Убедитесь, что сервера не находятся на обслуживании и pathofexile.com загружается."
   }

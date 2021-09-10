@@ -1,6 +1,6 @@
 import { autoUpdater } from 'electron-updater'
 import { logger } from './logger'
-import { rebuildContextMenu } from './tray'
+import { rebuildTrayMenu } from './tray'
 import { UPDATE_AVAILABLE } from '@/ipc/ipc-event'
 import { overlayWindow, overlayReady } from './overlay-window'
 import { config } from './config'
@@ -19,25 +19,25 @@ autoUpdater.on('update-available', async (info: { version: string }) => {
     await overlayReady
     overlayWindow!.webContents.send(UPDATE_AVAILABLE, { auto: false, version: info.version })
   }
-  rebuildContextMenu()
+  rebuildTrayMenu()
 })
 
 autoUpdater.on('update-not-available', () => {
   UpdateState.canCheck = true
   UpdateState.status = 'No updates available'
-  rebuildContextMenu()
+  rebuildTrayMenu()
 })
 
 autoUpdater.on('error', () => {
   UpdateState.canCheck = true
   UpdateState.status = 'Something went wrong, check logs'
-  rebuildContextMenu()
+  rebuildTrayMenu()
 })
 
 autoUpdater.on('update-downloaded', async (info: { version: string }) => {
   UpdateState.canCheck = false
   UpdateState.status = `v${info.version} will be installed on exit`
-  rebuildContextMenu()
+  rebuildTrayMenu()
   await overlayReady
   overlayWindow!.webContents.send(UPDATE_AVAILABLE, { auto: true, version: info.version })
 })
@@ -53,7 +53,7 @@ export async function checkForUpdates () {
 
   UpdateState.canCheck = false
   UpdateState.status = 'Checking for update...'
-  rebuildContextMenu()
+  rebuildTrayMenu()
 
   try {
     await autoUpdater.checkForUpdates()

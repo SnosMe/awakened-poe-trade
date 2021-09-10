@@ -1,8 +1,17 @@
 <template>
   <div id="app" class="text-sm font-fontin-small-caps">
-    <router-view />
+    <OverlayWindow />
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import OverlayWindow from './overlay/OverlayWindow.vue'
+
+export default defineComponent({
+  components: { OverlayWindow }
+})
+</script>
 
 <style lang="postcss">
 @import url('~@fortawesome/fontawesome-free/css/all.min.css');

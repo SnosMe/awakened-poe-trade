@@ -2,7 +2,6 @@ import Store from 'electron-store'
 import { dialog, ipcMain, app } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
-import { forbidden, forbiddenCtrl } from '@/ipc/KeyToCode'
 import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW, IpcConfigs } from '@/ipc/ipc-event'
 import { overlayWindow } from './overlay-window'
 import { logger } from './logger'
@@ -34,10 +33,9 @@ export const config = (() => {
     cwd: 'apt-data',
     defaults: defaultConfig
   })
-  const config = store.store
 
-  if (config.configVersion > defaultConfig.configVersion) {
-    logger.error('Incompatible configuration', { source: 'config', expected: defaultConfig.configVersion, actual: config.configVersion })
+  if (store.get('configVersion') > defaultConfig.configVersion) {
+    logger.error('Incompatible configuration', { source: 'config', expected: defaultConfig.configVersion, actual: store.get('configVersion') })
     dialog.showErrorBox(
       'Awakened PoE Trade - Incompatible configuration',
       // ----------------------
@@ -47,21 +45,26 @@ export const config = (() => {
     app.exit(1)
   }
 
-  if (forbidden.includes(config.priceCheckLocked as string)) { config.priceCheckLocked = null }
-  if (forbidden.includes(config.wikiKey as string)) { config.wikiKey = null }
-  if (forbidden.includes(config.craftOfExileKey as string)) { config.craftOfExileKey = null }
-  if (forbidden.includes(config.itemCheckKey as string)) { config.itemCheckKey = null }
-  if (config.priceCheckKeyHold === 'Ctrl' && forbiddenCtrl.includes(config.priceCheckKey as string)) {
-    config.priceCheckKey = null
-  }
-  for (const c of config.commands) {
-    if (forbidden.includes(c.hotkey as string)) { c.hotkey = null }
-  }
+  store.store = upgradeConfig(store.store)
+  return store
+})()
 
-  if (typeof config.fontSize !== 'number') {
-    config.fontSize = defaultConfig.fontSize
+export function batchUpdateConfig (newCfg: Config, push = true) {
+  const oldCfg = config.store
+  Object.setPrototypeOf(oldCfg, Object.prototype)
+  if (!isDeepEq(newCfg, oldCfg)) {
+    config.store = newCfg
+    logger.verbose('Saved', { source: 'config', push })
+    if (push) {
+      overlayWindow!.webContents.send(PUSH_CONFIG, newCfg)
+    }
+    if (oldCfg.clientLog !== newCfg.clientLog) {
+      LogWatcher.start()
+    }
   }
+}
 
+function upgradeConfig (config: Config): Config {
   if (config.configVersion < 3) {
     config.widgets.push({
       ...defaultConfig.widgets.find(w => w.wmType === 'image-strip')!,
@@ -162,21 +165,14 @@ export const config = (() => {
     config.configVersion = 9
   }
 
-  store.store = config
-  return store
-})()
+  if (config.configVersion < 10) {
+    config.widgets.push({
+      ...defaultConfig.widgets.find(w => w.wmType === 'settings')!,
+      wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
+    })
 
-export function batchUpdateConfig (newCfg: Config, push = true) {
-  const oldCfg = config.store
-  Object.setPrototypeOf(oldCfg, Object.prototype)
-  if (!isDeepEq(newCfg, oldCfg)) {
-    config.store = newCfg
-    logger.verbose('Saved', { source: 'config', push })
-    if (push) {
-      overlayWindow!.webContents.send(PUSH_CONFIG, newCfg)
-    }
-    if (oldCfg.clientLog !== newCfg.clientLog) {
-      LogWatcher.start()
-    }
+    config.configVersion = 10
   }
+
+  return config
 }

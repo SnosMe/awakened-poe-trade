@@ -1,13 +1,11 @@
 'use strict'
 
-import { app, protocol, ipcMain, screen } from 'electron'
+import { app, protocol, screen } from 'electron'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import { setupShortcuts } from './main/shortcuts'
 import { createTray } from './main/tray'
 import { setupShowHide } from './main/price-check'
 import { setupConfigEvents, config } from './main/config'
-import { CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
-import { closeWindow as closeSettings } from './main/SettingsWindow'
 import { logger } from './main/logger'
 import { checkForUpdates } from './main/updates'
 import os from 'os'
@@ -77,8 +75,6 @@ app.on('ready', async () => {
   if (!isDevelopment) {
     checkForUpdates()
   }
-
-  ipcMain.on(CLOSE_SETTINGS_WINDOW, closeSettings)
 })
 
 // Exit cleanly on request from parent process in development mode.

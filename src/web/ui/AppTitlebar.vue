@@ -1,5 +1,5 @@
 <template>
-  <div class="titlebar" :class="{ 'native': native }">
+  <div class="titlebar">
     <slot />
     <div class="text-gray-600 truncate leading-none px-4">{{ title }}</div>
     <div class="flex">
@@ -18,10 +18,6 @@ export default defineComponent({
     title: {
       type: String,
       default: ''
-    },
-    native: {
-      type: Boolean,
-      default: false
     }
   }
 })
@@ -34,12 +30,6 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
   height: 1.5rem;
-
-  /* https://electronjs.org/docs/api/frameless-window */
-  &.native {
-    -webkit-app-region: drag;
-    user-select: none;
-  }
 }
 
 .titlebar-btn {

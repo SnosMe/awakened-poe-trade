@@ -1,25 +1,24 @@
 <template>
-  <div class="flex-grow layout-column bg-gray-800">
-    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" native />
+  <div
+    style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: 0 auto; max-width: 50rem; max-height: 38rem;"
+    class="flex-grow layout-column bg-gray-800 rounded-b overflow-hidden animate__animated animate__slideInDown"
+  >
+    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
     <div class="flex flex-grow min-h-0">
-      <div class="px-2 pb-10 bg-gray-900 flex flex-col">
-        <router-link :to="{ name: 'settings.hotkeys' }" class="menu-item">{{ t('Hotkeys') }}</router-link>
-        <router-link :to="{ name: 'settings.chat' }" class="menu-item">{{ t('Chat') }}</router-link>
-        <div class="border-b m-1 border-gray-800"></div>
-        <router-link :to="{ name: 'settings.general' }" class="menu-item">{{ t('General') }}</router-link>
-        <div class="border-b m-1 border-gray-800"></div>
-        <router-link :to="{ name: 'settings.price-check' }" class="menu-item">{{ t('Price check') }}</router-link>
-        <router-link :to="{ name: 'settings.maps' }" class="menu-item">{{ t('Maps') }}</router-link>
-        <div class="border-b m-1 border-gray-800"></div>
-        <router-link :to="{ name: 'settings.debug' }" class="menu-item">{{ t('Debug') }}</router-link>
-        <div style="min-width: 9.5rem;"></div>
+      <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
+        <template v-for="(item, itemIdx) of menusItems" :key="itemIdx">
+          <button v-if="!item.isSeparator"
+            @click="item.select" :class="['menu-item', { 'active': item.isSelected }]">{{ item.name }}</button>
+          <div v-else
+            class="border-b mx-2 border-gray-800" />
+        </template>
       </div>
-      <div class="text-gray-100 flex-grow layout-column">
-        <div class="flex-grow overflow-y-auto">
-          <router-view />
+      <div class="text-gray-100 flex-grow layout-column bg-gray-900">
+        <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">
+          <component :is="selectedComponent" />
         </div>
-        <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end">
-          <button @click="save" class="px-3 bg-gray-800 rounded mr-2">{{ t('Save') }}</button>
+        <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end gap-x-2">
+          <button @click="save" class="px-3 bg-gray-800 rounded">{{ t('Save') }}</button>
           <button @click="cancel" class="px-3">{{ t('Cancel') }}</button>
         </div>
       </div>
@@ -28,16 +27,69 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, shallowRef, computed, Component, PropType, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
+import { Widget } from '../overlay/interfaces'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import SettingsHotkeys from './hotkeys.vue'
+import SettingsChat from './chat.vue'
+import SettingsGeneral from './general.vue'
+import SettingsPricecheck from './price-check.vue'
+import SettingsDebug from './debug.vue'
+import SettingsMaps from './maps.vue'
 
 export default defineComponent({
-  setup () {
+  props: {
+    config: {
+      type: Object as PropType<Widget>,
+      required: true
+    }
+  },
+  setup (props) {
     const { t } = useI18n()
 
-    document.title = t('Settings - Awakened PoE Trade')
+    nextTick(() => {
+      props.config.wmWants = 'hide'
+    })
+
+    const selectedComponent = shallowRef<Component>(SettingsHotkeys)
+
+    const menusItems = computed(() => [
+      {
+        name: t('Hotkeys'),
+        select () { selectedComponent.value = SettingsHotkeys },
+        isSelected: (selectedComponent.value === SettingsHotkeys)
+      },
+      {
+        name: t('Chat'),
+        select () { selectedComponent.value = SettingsChat },
+        isSelected: (selectedComponent.value === SettingsChat)
+      },
+      { isSeparator: true },
+      {
+        name: t('General'),
+        select () { selectedComponent.value = SettingsGeneral },
+        isSelected: (selectedComponent.value === SettingsGeneral)
+      },
+      { isSeparator: true },
+      {
+        name: t('Price check'),
+        select () { selectedComponent.value = SettingsPricecheck },
+        isSelected: (selectedComponent.value === SettingsPricecheck)
+      },
+      {
+        name: t('Maps'),
+        select () { selectedComponent.value = SettingsMaps },
+        isSelected: (selectedComponent.value === SettingsMaps)
+      },
+      { isSeparator: true },
+      {
+        name: t('Debug'),
+        select () { selectedComponent.value = SettingsDebug },
+        isSelected: (selectedComponent.value === SettingsDebug)
+      }
+    ])
 
     return {
       t,
@@ -46,7 +98,9 @@ export default defineComponent({
       },
       cancel () {
         MainProcess.closeSettingsWindow()
-      }
+      },
+      menusItems,
+      selectedComponent
     }
   }
 })
@@ -58,15 +112,13 @@ export default defineComponent({
   @apply p-2;
   line-height: 1;
   @apply text-gray-600;
-  @apply rounded;
-  margin-bottom: 0.125rem;
+  @apply rounded-l;
 
   &:hover {
     @apply text-gray-100;
   }
 
   &.active {
-    @apply font-fontin-bold;
     @apply text-gray-400;
     @apply bg-gray-800;
   }

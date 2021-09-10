@@ -62,7 +62,7 @@ type WidgetWellKnownFlag =
   'hide-on-focus'
 
 export const defaultConfig: Config = {
-  configVersion: 9,
+  configVersion: 10,
   priceCheckKey: 'D',
   priceCheckKeyHold: 'Ctrl',
   priceCheckLocked: 'Ctrl + Alt + D',
@@ -184,6 +184,14 @@ export const defaultConfig: Config = {
       wmWants: 'hide',
       wmZorder: 4,
       wmFlags: ['hide-on-focus', 'skip-menu']
+    },
+    {
+      wmId: 5,
+      wmType: 'settings',
+      wmTitle: '',
+      wmWants: 'hide',
+      wmZorder: 'exclusive',
+      wmFlags: ['invisible-on-blur']
     },
     // --- DEFAULT ---
     {

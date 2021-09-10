@@ -5,7 +5,11 @@
         <template v-for="widget in widgets" :key="widget.wmId">
           <button @click="toggle(widget)"
             :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-900'"
-            class="bg-gray-800 rounded text-gray-100 ml-1 p-2 leading-none whitespace-no-wrap border">{{ widget.wmTitle || `#${widget.wmId}` }}</button>
+            class="bg-gray-800 rounded text-gray-100 ml-1 p-2 leading-none whitespace-no-wrap border"
+          >
+            <i v-if="widget.wmType === 'settings'" class="fas fa-cog" />
+            <template v-else>{{ widget.wmTitle || `#${widget.wmId}` }}</template>
+          </button>
         </template>
         <ui-popover>
           <template #target>
@@ -50,7 +54,10 @@ export default defineComponent({
     const wm = inject<WidgetManager>('wm')!
 
     const widgets = computed(() => {
-      return wm.widgets.filter(widget =>
+      return [
+        wm.widgets.find(widget => widget.wmType === 'settings')!,
+        ...wm.widgets.filter(widget => widget.wmType !== 'settings')
+      ].filter(widget =>
         !widget.wmFlags.includes('skip-menu') &&
         (props.config.alwaysShow || (widget.wmWants === 'hide'))
       )
