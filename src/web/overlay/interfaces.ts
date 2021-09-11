@@ -46,6 +46,11 @@ export interface WidgetMenu extends Widget {
 }
 
 export interface PriceCheckWidget extends Widget {
+  hotkey: string | null
+  hotkeyHold: string
+  hotkeyLocked: string | null
+  showSeller: false | 'account' | 'ign'
+  searchStatRange: number
   chaosPriceThreshold: number
   showRateLimitState: boolean
   apiLatencySeconds: number
@@ -53,6 +58,7 @@ export interface PriceCheckWidget extends Widget {
   smartInitialSearch: boolean
   lockedInitialSearch: boolean
   activateStockFilter: boolean
+  showCursor: boolean
 }
 
 export interface ItemCheckWidget extends Widget {

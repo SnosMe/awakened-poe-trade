@@ -30,7 +30,7 @@ export function uniqueModFilterPartial (
     filter.boundMax = mod.bounds.max
 
     filter.roll = mod.value!
-    const percent = Config.store.searchStatRange * 2
+    const percent = Config.priceCheck.searchStatRange * 2
     filter.defaultMin = Math.max(percentRollDelta(mod.value!, (filter.boundMax - filter.boundMin), -percent, Math.floor), filter.boundMin)
     filter.defaultMax = Math.min(percentRollDelta(mod.value!, (filter.boundMax - filter.boundMin), +percent, Math.ceil), filter.boundMax)
   }

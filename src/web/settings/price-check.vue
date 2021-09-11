@@ -22,9 +22,9 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show seller') }}</div>
       <div class="mb-1 flex">
-        <ui-radio v-model="config.showSeller" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
-        <ui-radio v-model="config.showSeller" value="account" class="mr-4">{{ t('Account name') }}</ui-radio>
-        <ui-radio v-model="config.showSeller" value="ign">{{ t('Last character name') }}</ui-radio>
+        <ui-radio v-model="configWidget.showSeller" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
+        <ui-radio v-model="configWidget.showSeller" value="account" class="mr-4">{{ t('Account name') }}</ui-radio>
+        <ui-radio v-model="configWidget.showSeller" value="ign">{{ t('Last character name') }}</ui-radio>
       </div>
       <div class="mb-4 italic text-gray-500">{{ t('Your items will be highlighted even if this setting is off') }}</div>
     </div>
@@ -58,8 +58,8 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show memorized cursor position') }}</div>
       <div class="mb-4 flex">
-        <ui-radio v-model="config.priceCheckShowCursor" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
-        <ui-radio v-model="config.priceCheckShowCursor" :value="false">{{ t('No') }}</ui-radio>
+        <ui-radio v-model="configWidget.showCursor" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="configWidget.showCursor" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2 bg-orange-800 p-2">{{ t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.') }}</div>
@@ -73,13 +73,13 @@
     <div class="mb-2" >
       <div class="flex-1 mb-1">{{ t('Perform an auto search, when pressing') }}</div>
       <div class="mb-4 flex">
-        <ui-toggle v-if="config.priceCheckKey"
+        <ui-toggle v-if="configWidget.hotkey"
           v-model="configWidget.smartInitialSearch" class="mr-6">
-          <span class="bg-gray-900 text-gray-500 rounded px-2">{{ `${config.priceCheckKeyHold} + ${config.priceCheckKey}` }}</span>
+          <span class="bg-gray-900 text-gray-500 rounded px-2">{{ `${configWidget.hotkeyHold} + ${configWidget.hotkey}` }}</span>
         </ui-toggle>
-        <ui-toggle v-if="config.priceCheckLocked"
+        <ui-toggle v-if="configWidget.hotkeyLocked"
           v-model="configWidget.lockedInitialSearch">
-          <span class="bg-gray-900 text-gray-500 rounded px-2">{{ config.priceCheckLocked }}</span>
+          <span class="bg-gray-900 text-gray-500 rounded px-2">{{ configWidget.hotkeyLocked }}</span>
         </ui-toggle>
       </div>
     </div>
@@ -116,13 +116,13 @@ export default defineComponent({
       configWidget,
       searchStatRange: computed<number>({
         get () {
-          return Config.store.searchStatRange
+          return Config.priceCheck.searchStatRange
         },
         set (value) {
           if (typeof value !== 'number') return
 
           if (value >= 0 && value <= 50) {
-            Config.store.searchStatRange = value
+            Config.priceCheck.searchStatRange = value
           }
         }
       }),

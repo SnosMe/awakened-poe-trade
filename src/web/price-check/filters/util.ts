@@ -29,7 +29,7 @@ export function rollToFilter (
   roll: number,
   opts?: { neverNegated?: true, dp?: boolean | number }
 ): Pick<StatFilter, 'roll' | 'min' | 'max' | 'defaultMin' | 'defaultMax'> {
-  const percent = Config.store.searchStatRange
+  const percent = Config.priceCheck.searchStatRange
 
   // opts.neverNegated is false only in one case, but keep it
   // disabled by default, so opts.neverNegated acts more like

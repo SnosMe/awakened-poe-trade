@@ -59,12 +59,12 @@
             <th v-if="filters.quality || item.rarity === 'Gem'" class="trade-table-heading">
               <div class="px-2">{{ t('Quality') }}</div>
             </th>
-            <th class="trade-table-heading" :class="{ 'w-full': !config.showSeller }">
+            <th class="trade-table-heading" :class="{ 'w-full': !showSeller }">
               <div class="pr-2 pl-4">
                 <span class="ml-1" style="padding-left: 0.375rem;">{{ t('Listed') }}</span>
               </div>
             </th>
-            <th v-if="config.showSeller" class="trade-table-heading w-full">
+            <th v-if="showSeller" class="trade-table-heading w-full">
               <div class="px-2">{{ t('Seller') }}</div>
             </th>
           </tr>
@@ -85,11 +85,11 @@
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
                 </div>
-                <span v-if="!config.showSeller && (config.accountName === result.accountName)" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
+                <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
               </td>
-              <td v-if="config.showSeller" class="px-2 whitespace-no-wrap">
-                <span v-if="config.accountName === result.accountName" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
-                <span v-else class="font-sans text-xs">{{ config.showSeller === 'ign' ? result.ign : result.accountName }}</span>
+              <td v-if="showSeller" class="px-2 whitespace-no-wrap">
+                <span v-if="result.isMine" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
+                <span v-else class="font-sans text-xs">{{ showSeller === 'ign' ? result.ign : result.accountName }}</span>
               </td>
             </tr>
           </template>
@@ -266,7 +266,7 @@ export default defineComponent({
       }),
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
-      config: computed(() => Config.store),
+      showSeller: computed(() => Config.priceCheck.showSeller),
       defaultLeague,
       tradeLeagues,
       getRelativeTime (iso: string) {

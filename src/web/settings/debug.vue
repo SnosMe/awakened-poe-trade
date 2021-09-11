@@ -2,10 +2,9 @@
   <div class="max-w-md p-2">
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Log level') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
-      <div class="mb-4 flex">
-        <ui-radio v-model="config.logLevel" value="warn" class="mr-4">Warn</ui-radio>
-        <ui-radio v-model="config.logLevel" value="debug" class="mr-4">Debug</ui-radio>
-        <ui-radio v-model="config.logLevel" value="silly">Silly</ui-radio>
+      <div class="mb-4 flex gap-x-4">
+        <ui-radio v-model="config.logLevel" value="warn">Warn</ui-radio>
+        <ui-radio v-model="config.logLevel" value="silly">Debug</ui-radio>
       </div>
     </div>
     <div class="mb-2">

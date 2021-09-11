@@ -8,16 +8,12 @@ export interface League {
 export interface Config {
   configVersion: number
   leagueId?: string
-  priceCheckKey: string | null
-  priceCheckKeyHold: string
-  priceCheckLocked: string | null
   wikiKey: string | null
   craftOfExileKey: string | null
   overlayKey: string
   overlayBackground: string
   overlayBackgroundExclusive: boolean
   overlayBackgroundClose: boolean
-  priceCheckShowCursor: boolean
   itemCheckKey: string | null
   delveGridKey: string | null
   restoreClipboard: boolean
@@ -30,10 +26,8 @@ export interface Config {
   gameConfig: string | null
   windowTitle: string
   logLevel: string
-  showSeller: false | 'account' | 'ign'
   hardwareAcceleration: boolean
   accountName: string
-  searchStatRange: number
   stashScroll: boolean
   language: 'en' | 'ru'
   widgets: Widget[]
@@ -63,16 +57,12 @@ type WidgetWellKnownFlag =
 
 export const defaultConfig: Config = {
   configVersion: 10,
-  priceCheckKey: 'D',
-  priceCheckKeyHold: 'Ctrl',
-  priceCheckLocked: 'Ctrl + Alt + D',
   wikiKey: 'Alt + W',
   craftOfExileKey: null,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
   overlayBackgroundClose: true,
-  priceCheckShowCursor: true,
   itemCheckKey: null,
   delveGridKey: null,
   restoreClipboard: true,
@@ -105,10 +95,8 @@ export const defaultConfig: Config = {
   gameConfig: null,
   windowTitle: 'Path of Exile',
   logLevel: 'warn',
-  showSeller: false,
   hardwareAcceleration: false,
   accountName: '',
-  searchStatRange: 10,
   stashScroll: true,
   language: 'en',
   fontSize: 16,
@@ -142,7 +130,13 @@ export const defaultConfig: Config = {
       collapseListings: 'api',
       smartInitialSearch: true,
       lockedInitialSearch: true,
-      activateStockFilter: false
+      activateStockFilter: false,
+      hotkey: 'D',
+      hotkeyHold: 'Ctrl',
+      hotkeyLocked: 'Ctrl + Alt + D',
+      showSeller: false,
+      searchStatRange: 10,
+      showCursor: true
     } as PriceCheckWidget,
     {
       wmId: 3,

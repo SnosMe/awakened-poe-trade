@@ -2,7 +2,7 @@ import { screen, Point, clipboard, globalShortcut, Notification, ipcMain } from 
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
-import { showWidget as showPriceCheck } from './price-check'
+import { priceCheckConfig, showWidget as showPriceCheck } from './price-check'
 import { KeyToElectron, mergeTwoHotkeys } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
@@ -30,7 +30,7 @@ function priceCheck (lockedMode: boolean) {
   // }
 
   if (!lockedMode) {
-    pressKeysToCopyItemText(config.get('priceCheckKeyHold'))
+    pressKeysToCopyItemText(priceCheckConfig().hotkeyHold)
   } else {
     pressKeysToCopyItemText()
   }
@@ -70,14 +70,16 @@ function itemCheck () {
 }
 
 function registerGlobal () {
+  const priceCheckCfg = priceCheckConfig()
+
   const register = [
     shortcutCallback(
-      config.get('priceCheckKey') && `${config.get('priceCheckKeyHold')} + ${config.get('priceCheckKey')}`,
+      priceCheckCfg.hotkey && `${priceCheckCfg.hotkeyHold} + ${priceCheckCfg.hotkey}`,
       () => priceCheck(false),
       { doNotResetModKey: true }
     ),
     shortcutCallback(
-      config.get('priceCheckLocked'),
+      priceCheckCfg.hotkeyLocked,
       () => priceCheck(true)
     ),
     shortcutCallback(

@@ -6,6 +6,7 @@ import * as ipc from '@/ipc/ipc-event'
 import { config } from './config'
 import { logger } from './logger'
 import { overlayWindow, isInteractable, assertOverlayActive, assertPoEActive, DPR } from './overlay-window'
+import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 const WIDTH_96DPI = 460 / 16
 const CLOSE_THRESHOLD_96DPI = 40 / 16
@@ -61,7 +62,7 @@ export function setupShowHide () {
     if (!isPriceCheckShown || isClickedAfterLock) return
 
     const modifier = e.ctrlKey ? 'Ctrl' : e.altKey ? 'Alt' : undefined
-    if (!isPollingClipboard && !isInteractable && modifier !== config.get('priceCheckKeyHold')) {
+    if (!isPollingClipboard && !isInteractable && modifier !== priceCheckConfig().hotkeyHold) {
       const distance = Math.hypot(e.x - checkPressPosition!.x, e.y - checkPressPosition!.y)
 
       if (distance > (CLOSE_THRESHOLD_96DPI * DPR * config.get('fontSize'))) {
@@ -104,7 +105,7 @@ function handleMouseEvent (name: string, modifier?: string) {
 
     if (isInteractable) return
 
-    if (modifier === config.get('priceCheckKeyHold')) {
+    if (modifier === priceCheckConfig().hotkeyHold) {
       lockWindow()
     } else {
       logger.debug('Not locking window, the key is not held', { source: 'price-check' })
@@ -129,4 +130,9 @@ function getOffsetX (mousePos: Point, poePos: Rectangle): number {
     // stash or chat
     return poePos.x + PoeWindow.uiSidebarWidth
   }
+}
+
+export function priceCheckConfig () {
+  return config.get('widgets')
+    .find(widget => widget.wmType === 'price-check') as PriceCheckWidget
 }

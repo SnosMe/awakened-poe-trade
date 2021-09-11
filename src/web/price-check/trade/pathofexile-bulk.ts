@@ -5,6 +5,7 @@ import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
+import { Config } from '@/web/Config'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
@@ -40,6 +41,7 @@ export interface PricingResult {
   itemAmount: number
   stock: number
   accountStatus: 'offline' | 'online' | 'afk'
+  isMine: boolean
   accountName: string
   ign: string
 }
@@ -105,6 +107,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       exchangeAmount: result.listing.price.exchange.amount,
       itemAmount: result.listing.price.item.amount,
       stock: result.listing.price.item.stock,
+      isMine: (result.listing.account.name === Config.store.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online

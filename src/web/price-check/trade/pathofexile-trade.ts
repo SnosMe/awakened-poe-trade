@@ -215,6 +215,7 @@ export interface PricingResult {
   listedAt: string
   priceAmount: number
   priceCurrency: string
+  isMine: boolean
   accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
   ign: string
@@ -571,6 +572,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
+      isMine: (result.listing.account.name === Config.store.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online

@@ -171,6 +171,14 @@ function upgradeConfig (config: Config): Config {
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
     })
 
+    const priceCheck = config.widgets.find(w => w.wmType === 'price-check')!
+    priceCheck.hotkey = (config as any).priceCheckKey
+    priceCheck.hotkeyHold = (config as any).priceCheckKeyHold
+    priceCheck.hotkeyLocked = (config as any).priceCheckLocked
+    priceCheck.showSeller = (config as any).showSeller
+    priceCheck.searchStatRange = (config as any).searchStatRange
+    priceCheck.showCursor = (config as any).priceCheckShowCursor
+
     config.configVersion = 10
   }
 

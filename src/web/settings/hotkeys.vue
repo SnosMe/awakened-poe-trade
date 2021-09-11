@@ -7,15 +7,15 @@
         <div class="flex-1">{{ t('Price check') }}</div>
         <div class="flex">
           <span class="text-gray-500 mr-2">{{ t('Auto-hide Mode') }}</span>
-          <button :class="{ border: config.priceCheckKeyHold === 'Ctrl', 'line-through': config.priceCheckKey === null }" @click="config.priceCheckKeyHold = 'Ctrl'; config.priceCheckKey = null" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
-          <button :class="{ border: config.priceCheckKeyHold === 'Alt', 'line-through': config.priceCheckKey === null }" @click="config.priceCheckKeyHold = 'Alt'; config.priceCheckKey = null" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
+          <button :class="{ border: configPriceCheck.hotkeyHold === 'Ctrl', 'line-through': configPriceCheck.hotkey === null }" @click="configPriceCheck.hotkeyHold = 'Ctrl'; configPriceCheck.hotkey = null" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
+          <button :class="{ border: configPriceCheck.hotkeyHold === 'Alt', 'line-through': configPriceCheck.hotkey === null }" @click="configPriceCheck.hotkeyHold = 'Alt'; configPriceCheck.hotkey = null" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
           <span class="mx-4">+</span>
-          <hotkey-input v-model="config.priceCheckKey" :forbidden="['Ctrl','Shift','Alt', ...(config.priceCheckKeyHold === 'Ctrl' ? ['C','V','A','F','Enter'] : [])]" class="w-20" />
+          <hotkey-input v-model="configPriceCheck.hotkey" :forbidden="['Ctrl','Shift','Alt', ...(configPriceCheck.hotkeyHold === 'Ctrl' ? ['C','V','A','F','Enter'] : [])]" class="w-20" />
         </div>
       </div>
       <div class="text-right mt-2">
         <span class="text-gray-500 mr-2">{{ t('Open without auto-hide') }}</span>
-        <hotkey-input v-model="config.priceCheckLocked" class="w-48" />
+        <hotkey-input v-model="configPriceCheck.hotkeyLocked" class="w-48" />
       </div>
     </div>
     <div class="mb-4">
@@ -109,6 +109,7 @@ export default defineComponent({
     return {
       t,
       config: computed(() => Config.store),
+      configPriceCheck: computed(() => Config.priceCheck),
       advancedModKey: computed(() => Config.gameConfig?.highlightKey),
       copyTextNormal: computed(() => {
         const keys = (Config.gameConfig?.highlightKey || 'Alt').split(' + ')
