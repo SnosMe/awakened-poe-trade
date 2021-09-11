@@ -179,6 +179,10 @@ function upgradeConfig (config: Config): Config {
     priceCheck.searchStatRange = (config as any).searchStatRange
     priceCheck.showCursor = (config as any).priceCheckShowCursor
 
+    if (priceCheck.chaosPriceThreshold === 0.05) {
+      priceCheck.chaosPriceThreshold = 0
+    }
+
     config.configVersion = 10
   }
 

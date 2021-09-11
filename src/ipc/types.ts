@@ -124,7 +124,7 @@ export const defaultConfig: Config = {
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
-      chaosPriceThreshold: 0.05,
+      chaosPriceThreshold: 0,
       showRateLimitState: false,
       apiLatencySeconds: 2,
       collapseListings: 'api',
