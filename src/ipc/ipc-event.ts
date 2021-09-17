@@ -1,5 +1,5 @@
 export const GET_CONFIG = 'get-config'
-export const PUSH_CONFIG = 'push-config'
+export const SAVE_CONFIG = 'OVERLAY->MAIN::save-config'
 
 export const PRICE_CHECK_HIDE = 'OVERLAY->MAIN::price-check-hide'
 

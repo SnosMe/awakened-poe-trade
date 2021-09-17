@@ -22,8 +22,8 @@ class MainProcessBinding extends EventTarget {
         }))
       })
 
-      electron.ipcRenderer.on(ipcEvent.PUSH_CONFIG, (e, cfg) => {
-        this.dispatchEvent(new CustomEvent(ipcEvent.PUSH_CONFIG, {
+      electron.ipcRenderer.on(ipcEvent.SAVE_CONFIG, (e, cfg) => {
+        this.dispatchEvent(new CustomEvent(ipcEvent.SAVE_CONFIG, {
           detail: cfg
         }))
       })
@@ -134,7 +134,7 @@ class MainProcessBinding extends EventTarget {
 
   saveConfig (config: Config) {
     if (electron) {
-      electron.ipcRenderer.send(ipcEvent.PUSH_CONFIG, config)
+      electron.ipcRenderer.send(ipcEvent.SAVE_CONFIG, config)
     }
   }
 

@@ -2,7 +2,7 @@ import Store from 'electron-store'
 import { dialog, ipcMain, app } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
-import { GET_CONFIG, PUSH_CONFIG } from '@/ipc/ipc-event'
+import { GET_CONFIG, SAVE_CONFIG } from '@/ipc/ipc-event'
 import { logger } from './logger'
 import { LogWatcher } from './LogWatcher'
 import { ItemCheckWidget } from '@/web/overlay/interfaces'
@@ -12,7 +12,7 @@ export function setupConfigEvents () {
   ipcMain.on(GET_CONFIG, (e) => {
     e.returnValue = config.store
   })
-  ipcMain.on(PUSH_CONFIG, (e, cfg: Config) => {
+  ipcMain.on(SAVE_CONFIG, (e, cfg: Config) => {
     batchUpdateConfig(cfg)
   })
 }

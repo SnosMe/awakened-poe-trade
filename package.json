@@ -48,7 +48,6 @@
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^2.0.3",
-    "@types/electron-devtools-installer": "^2.2.0",
     "@types/ini": "^1.3.30",
     "@types/luxon": "^1.25.0",
     "@types/node": "^14.0.0",
@@ -61,7 +60,6 @@
     "@vue/cli-service": "~5.0.0-beta.1",
     "@vue/compiler-sfc": "^3.0.0",
     "electron": "13.1.8",
-    "electron-devtools-installer": "^3.1.1",
     "eslint": "^7.15.0",
     "eslint-config-standard-with-typescript": "^20.0.0",
     "eslint-plugin-import": "^2.20.2",

@@ -45,8 +45,6 @@ export async function createOverlayWindow () {
     }
   })
 
-  overlayWindow.setIgnoreMouseEvents(true)
-
   overlayWindow.setMenu(Menu.buildFromTemplate([
     { role: 'editMenu' },
     { role: 'reload' },
@@ -54,11 +52,13 @@ export async function createOverlayWindow () {
   ]))
   overlayWindow.webContents.on('before-input-event', handleExtraCommands)
 
+  setupCfProtection()
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
-    overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + '#overlay')
+    overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
     overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
   } else {
-    overlayWindow.loadURL('app://./index.html#overlay')
+    overlayWindow.loadURL('app://./index.html')
   }
 
   const electronReadyToShow = new Promise<void>(resolve =>
@@ -85,7 +85,6 @@ export function toggleOverlayState () {
 function handlePoeWindowActiveChange (isActive: boolean) {
   if (isActive && isInteractable) {
     isInteractable = false
-    overlayWindow!.setIgnoreMouseEvents(true)
   }
   overlayWindow!.webContents.send(ipc.FOCUS_CHANGE, {
     game: isActive,
@@ -111,7 +110,6 @@ export function assertPoEActive () {
 function focusOverlay () {
   if (!overlayWindow) return
 
-  overlayWindow.setIgnoreMouseEvents(false)
   isInteractable = true
   OW.activateOverlay()
   PoeWindow.isActive = false
@@ -120,7 +118,6 @@ function focusOverlay () {
 function focusPoE () {
   if (!overlayWindow) return
 
-  overlayWindow.setIgnoreMouseEvents(true)
   isInteractable = false
   OW.focusTarget()
   PoeWindow.isActive = true
@@ -177,4 +174,27 @@ export function handleExtraCommands (event: Electron.Event, input: Electron.Inpu
       break
     }
   }
+}
+
+function setupCfProtection () {
+  overlayWindow!.webContents.session.webRequest.onHeadersReceived({
+    urls: ['https://*.pathofexile.com/*']
+  }, (details, next) => {
+    const cookies = details.responseHeaders?.['set-cookie']
+    if (cookies) {
+      details.responseHeaders!['set-cookie'] = cookies.map(cookie => {
+        cookie = cookie
+          .split(';')
+          .map(_ => _.trim())
+          .filter(_ =>
+            !_.toLowerCase().startsWith('samesite') &&
+            !_.toLowerCase().startsWith('secure'))
+          .join('; ')
+
+        return `${cookie}; SameSite=None; Secure`
+      })
+    }
+
+    next({ responseHeaders: details.responseHeaders })
+  })
 }
