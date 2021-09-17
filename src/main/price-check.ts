@@ -20,14 +20,15 @@ let isMouseInside = false
 
 export function showWidget (opts: {
   clipboard: string
-  hotkeyPressPosition: Point
-  lockedMode: boolean
+  pressPosition: Point
+  eventName: string
 }) {
-  checkPressPosition = opts.hotkeyPressPosition
+  checkPressPosition = opts.pressPosition
+  const isLokedMode = (opts.eventName === 'price-check-locked')
 
-  overlayWindow!.webContents.send(ipc.PRICE_CHECK, { clipboard: opts.clipboard, position: checkPressPosition, lockedMode: opts.lockedMode } as ipc.IpcPriceCheck)
+  overlayWindow!.webContents.send(ipc.PRICE_CHECK, { clipboard: opts.clipboard, position: checkPressPosition, lockedMode: isLokedMode } as ipc.IpcPriceCheck)
 
-  const poeBounds = PoeWindow.bounds!
+  const poeBounds = PoeWindow.bounds
   activeAreaRect = {
     x: getOffsetX(checkPressPosition, poeBounds),
     y: poeBounds.y,
@@ -39,7 +40,7 @@ export function showWidget (opts: {
   isClickedAfterLock = false
   isMouseInside = false
 
-  if (opts.lockedMode) {
+  if (isLokedMode) {
     lockWindow(true)
   }
 }

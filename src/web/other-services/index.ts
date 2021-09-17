@@ -6,7 +6,7 @@ import { handleLine } from '../client-log/client-log'
 
 export function registerOtherServices () {
   MainProcess.addEventListener(ipc.OPEN_WIKI, (e) => {
-    openWiki((e as CustomEvent<string>).detail)
+    openWiki((e as CustomEvent<{ clipboard: string }>).detail.clipboard)
   })
 
   MainProcess.addEventListener(ipc.CLIENT_LOG_UPDATE, (e) => {
@@ -14,6 +14,6 @@ export function registerOtherServices () {
   })
 
   MainProcess.addEventListener(ipc.OPEN_COE, (e) => {
-    openCOE((e as CustomEvent<string>).detail)
+    openCOE((e as CustomEvent<{ clipboard: string }>).detail.clipboard)
   })
 }

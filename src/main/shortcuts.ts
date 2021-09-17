@@ -1,9 +1,9 @@
-import { screen, Point, clipboard, globalShortcut, Notification, ipcMain } from 'electron'
+import { screen, clipboard, globalShortcut, Notification, ipcMain } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
 import { priceCheckConfig, showWidget as showPriceCheck } from './price-check'
-import { KeyToElectron, mergeTwoHotkeys } from '@/ipc/KeyToCode'
+import { isModKey, KeyToElectron, mergeTwoHotkeys } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
@@ -12,36 +12,158 @@ import * as ipc from '@/ipc/ipc-event'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
 
-export let hotkeyPressPosition: Point | undefined
-
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
-function priceCheck (lockedMode: boolean) {
-  logger.info('Price check', { source: 'shortcuts', lockedMode })
-
-  pollClipboard()
-    .then(clipboard =>
-      showPriceCheck({ clipboard, hotkeyPressPosition: hotkeyPressPosition!, lockedMode })
-    )
-    .catch(() => { /* nothing bad */ })
-  hotkeyPressPosition = screen.getCursorScreenPoint()
-  // if (process.platform === 'win32') {
-  //   hotkeyPressPosition = screen.dipToScreenPoint(hotkeyPressPosition)
-  // }
-
-  if (!lockedMode) {
-    pressKeysToCopyItemText(priceCheckConfig().hotkeyHold)
-  } else {
-    pressKeysToCopyItemText()
+export interface ShortcutAction {
+  shortcut: string
+  keepModKeys?: true
+  action: {
+    type: 'copy-item'
+    eventName: string
+    focusOverlay?: boolean
+  } | {
+    type: 'trigger-event'
+    eventName: string
+  } | {
+    type: 'toggle-overlay'
+  } | {
+    type: 'paste-in-chat'
+    text: string
+    send: boolean
+  } | {
+    type: 'test-only'
   }
 }
 
-function pressKeysToCopyItemText (skipModKey?: string) {
-  let keys = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt').split(' + ')
-  keys = keys.filter(key => key !== 'C')
-  if (skipModKey) {
-    keys = keys.filter(key => key !== skipModKey)
+function shortcutsfromConfig () {
+  const actions: ShortcutAction[] = []
+
+  const priceCheckCfg = priceCheckConfig()
+  if (priceCheckCfg.hotkey) {
+    actions.push({
+      shortcut: `${priceCheckCfg.hotkeyHold} + ${priceCheckCfg.hotkey}`,
+      action: { type: 'copy-item', eventName: 'price-check-quick' },
+      keepModKeys: true
+    })
   }
+  if (priceCheckCfg.hotkeyLocked) {
+    actions.push({
+      shortcut: priceCheckCfg.hotkeyLocked,
+      action: { type: 'copy-item', eventName: 'price-check-locked' }
+    })
+  }
+  actions.push({
+    shortcut: config.get('overlayKey'),
+    action: { type: 'toggle-overlay' },
+    keepModKeys: true
+  })
+  if (config.get('wikiKey')) {
+    actions.push({
+      shortcut: config.get('wikiKey')!,
+      action: { type: 'copy-item', eventName: ipc.OPEN_WIKI }
+    })
+  }
+  if (config.get('craftOfExileKey')) {
+    actions.push({
+      shortcut: config.get('craftOfExileKey')!,
+      action: { type: 'copy-item', eventName: ipc.OPEN_COE }
+    })
+  }
+  if (config.get('itemCheckKey')) {
+    actions.push({
+      shortcut: config.get('itemCheckKey')!,
+      action: { type: 'copy-item', eventName: ipc.ITEM_CHECK, focusOverlay: true }
+    })
+  }
+  if (config.get('delveGridKey')) {
+    actions.push({
+      shortcut: config.get('delveGridKey')!,
+      action: { type: 'trigger-event', eventName: ipc.TOGGLE_DELVE_GRID },
+      keepModKeys: true
+    })
+  }
+  for (const command of config.get('commands')) {
+    if (command.hotkey) {
+      actions.push({
+        shortcut: command.hotkey,
+        action: { type: 'paste-in-chat', text: command.text, send: command.send }
+      })
+    }
+  }
+
+  return actions
+}
+
+function registerGlobal () {
+  const toRegister = shortcutsfromConfig()
+  for (const entry of toRegister) {
+    const isOk = globalShortcut.register(shortcutToElectron(entry.shortcut), () => {
+      if (entry.keepModKeys) {
+        const nonModKey = entry.shortcut.split(' + ').filter(key => !isModKey(key))[0]
+        robotjs.keyToggle(nonModKey, 'up')
+      } else {
+        entry.shortcut.split(' + ').reverse().forEach(key => { robotjs.keyToggle(key, 'up') })
+      }
+
+      if (entry.action.type === 'toggle-overlay') {
+        toggleOverlayState()
+      } else if (entry.action.type === 'paste-in-chat') {
+        typeInChat(entry.action.text, entry.action.send)
+      } else if (entry.action.type === 'trigger-event') {
+        overlayWindow!.webContents.send(entry.action.eventName)
+      } else if (entry.action.type === 'copy-item') {
+        const { action } = entry
+
+        const pressPosition = screen.getCursorScreenPoint()
+        // if (process.platform === 'win32') {
+        //   pressPosition = screen.dipToScreenPoint(pressPosition)
+        // }
+
+        pollClipboard()
+          .then(clipboard => {
+            if (action.eventName.startsWith('price-check')) {
+              showPriceCheck({ clipboard, pressPosition, eventName: action.eventName })
+            } else {
+              overlayWindow!.webContents.send(action.eventName, { clipboard, position: pressPosition })
+              if (action.focusOverlay) {
+                assertOverlayActive()
+              }
+            }
+          }).catch(() => {})
+
+        if (!entry.keepModKeys) {
+          pressKeysToCopyItemText()
+        } else {
+          pressKeysToCopyItemText(entry.shortcut.split(' + ').filter(key => isModKey(key)))
+        }
+      }
+    })
+
+    if (!isOk) {
+      logger.error('Cannot register shortcut, because it is already registered by another application.', { source: 'shortcuts', shortcut: entry.shortcut })
+
+      new Notification({
+        title: 'Awakened PoE Trade',
+        body: `Cannot register shortcut ${entry.shortcut}, because it is already registered by another application.`
+      }).show()
+    }
+
+    if (entry.action.type === 'test-only') {
+      globalShortcut.unregister(shortcutToElectron(entry.shortcut))
+    }
+  }
+
+  logger.verbose('Registered Global', { source: 'shortcuts', total: toRegister.length })
+}
+
+function unregisterGlobal () {
+  globalShortcut.unregisterAll()
+  logger.verbose('Unregistered Global', { source: 'shortcuts' })
+}
+
+function pressKeysToCopyItemText (pressedModKeys: string[] = []) {
+  let keys = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt').split(' + ')
+  keys = keys.filter(key => key !== 'C' && !pressedModKeys.includes(key))
 
   for (const key of keys) {
     robotjs.keyToggle(key, 'down')
@@ -54,86 +176,6 @@ function pressKeysToCopyItemText (skipModKey?: string) {
   for (const key of keys) {
     robotjs.keyToggle(key, 'up')
   }
-}
-
-function itemCheck () {
-  logger.info('Item check', { source: 'shortcuts' })
-
-  pollClipboard()
-    .then(clipboard => {
-      overlayWindow!.webContents.send(ipc.ITEM_CHECK, { clipboard, position: hotkeyPressPosition! } as ipc.IpcItemCheck)
-      assertOverlayActive()
-    })
-    .catch(() => {})
-  hotkeyPressPosition = screen.getCursorScreenPoint()
-  pressKeysToCopyItemText()
-}
-
-function registerGlobal () {
-  const priceCheckCfg = priceCheckConfig()
-
-  const register = [
-    shortcutCallback(
-      priceCheckCfg.hotkey && `${priceCheckCfg.hotkeyHold} + ${priceCheckCfg.hotkey}`,
-      () => priceCheck(false),
-      { doNotResetModKey: true }
-    ),
-    shortcutCallback(
-      priceCheckCfg.hotkeyLocked,
-      () => priceCheck(true)
-    ),
-    shortcutCallback(
-      config.get('overlayKey'),
-      toggleOverlayState,
-      { doNotResetModKey: true }
-    ),
-    shortcutCallback(
-      config.get('wikiKey'),
-      () => {
-        pollClipboard().then(openWiki).catch(() => {})
-        pressKeysToCopyItemText()
-      }
-    ),
-    shortcutCallback(
-      config.get('craftOfExileKey'),
-      () => {
-        pollClipboard().then(openCraftOfExile).catch(() => {})
-        pressKeysToCopyItemText()
-      }
-    ),
-    shortcutCallback(
-      config.get('itemCheckKey'),
-      itemCheck
-    ),
-    shortcutCallback(
-      config.get('delveGridKey'),
-      toggleDelveGrid,
-      { doNotResetModKey: true }
-    ),
-    ...config.get('commands')
-      .map(command =>
-        shortcutCallback(command.hotkey, () => typeInChat(command.text, command.send))
-      )
-  ].filter(a => Boolean(a.shortcut))
-
-  register.forEach(a => {
-    const success = globalShortcut.register(shortcutToElectron(a.shortcut!), a.cb)
-    if (!success) {
-      logger.error('Cannot register shortcut, because it is already registered by another application.', { source: 'shortcuts', shortcut: a.shortcut })
-
-      new Notification({
-        title: 'Awakened PoE Trade',
-        body: `Cannot register shortcut ${a.shortcut}, because it is already registered by another application.`
-      }).show()
-    }
-  })
-
-  logger.verbose('Registered Global', { source: 'shortcuts', total: register.length })
-}
-
-function unregisterGlobal () {
-  globalShortcut.unregisterAll()
-  logger.verbose('Unregistered Global', { source: 'shortcuts' })
 }
 
 export function setupShortcuts () {
@@ -207,18 +249,6 @@ function stashSearch (text: string) {
   }
 }
 
-function openWiki (clipboard: string) {
-  overlayWindow!.webContents.send(ipc.OPEN_WIKI, clipboard)
-}
-
-function openCraftOfExile (clipboard: string) {
-  overlayWindow!.webContents.send(ipc.OPEN_COE, clipboard)
-}
-
-function toggleDelveGrid () {
-  overlayWindow!.webContents.send(ipc.TOGGLE_DELVE_GRID)
-}
-
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
   const { ctrlKey, shiftKey, altKey } = e
 
@@ -227,7 +257,8 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
 
   if (code === 'Shift' || code === 'Alt' || code === 'Ctrl') return code
 
-  if (shiftKey && altKey) code = `Shift + Alt + ${code}`
+  if (ctrlKey && shiftKey && altKey) code = `Ctrl + Shift + Alt + ${code}`
+  else if (shiftKey && altKey) code = `Shift + Alt + ${code}`
   else if (ctrlKey && shiftKey) code = `Ctrl + Shift + ${code}`
   else if (ctrlKey && altKey) code = `Ctrl + Alt + ${code}`
   else if (altKey) code = `Alt + ${code}`
@@ -235,23 +266,6 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
   else if (shiftKey) code = `Shift + ${code}`
 
   return code
-}
-
-function shortcutCallback<T extends Function> (shortcut: string | null, cb: T, opts?: { doNotResetModKey?: boolean }) {
-  return {
-    shortcut,
-    cb: function () {
-      if (!shortcut) throw new Error('Never: callback called on null shortcut')
-
-      if (opts?.doNotResetModKey) {
-        const nonModKey = shortcut.split(' + ').reverse()[0]
-        robotjs.keyToggle(nonModKey, 'up')
-      } else {
-        shortcut.split(' + ').reverse().forEach(key => { robotjs.keyToggle(key, 'up') })
-      }
-      cb()
-    }
-  }
 }
 
 function shortcutToElectron (shortcut: string) {

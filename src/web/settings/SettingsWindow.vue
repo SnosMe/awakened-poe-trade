@@ -27,10 +27,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, shallowRef, computed, Component, PropType, nextTick } from 'vue'
+import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
-import { Widget } from '../overlay/interfaces'
+import type { Widget, WidgetManager } from '../overlay/interfaces'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
@@ -47,6 +47,7 @@ export default defineComponent({
     }
   },
   setup (props) {
+    const wm = inject<WidgetManager>('wm')!
     const { t } = useI18n()
 
     nextTick(() => {
@@ -94,9 +95,11 @@ export default defineComponent({
     return {
       t,
       save () {
+        wm.hide(props.config.wmId)
         MainProcess.closeSettingsWindow(JSON.parse(JSON.stringify(Config.store)))
       },
       cancel () {
+        wm.hide(props.config.wmId)
         MainProcess.closeSettingsWindow()
       },
       menusItems,
