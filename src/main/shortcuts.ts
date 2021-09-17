@@ -35,8 +35,8 @@ export interface ShortcutAction {
   }
 }
 
-function shortcutsfromConfig () {
-  const actions: ShortcutAction[] = []
+function shortcutsFromConfig () {
+  let actions: ShortcutAction[] = []
 
   const priceCheckCfg = priceCheckConfig()
   if (priceCheckCfg.hotkey) {
@@ -90,21 +90,48 @@ function shortcutsfromConfig () {
       })
     }
   }
+  const copyItemShortcut = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt')
+  if (copyItemShortcut !== 'Ctrl + C') {
+    actions.push({
+      shortcut: copyItemShortcut,
+      action: { type: 'test-only' }
+    })
+  }
+
   {
-    const copyItemShortcut = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt')
-    if (copyItemShortcut !== 'Ctrl + C') {
-      actions.push({
-        shortcut: copyItemShortcut,
-        action: { type: 'test-only' }
-      })
+    const allShortcuts = new Set([
+      'Ctrl + C', 'Ctrl + V', 'Ctrl + A',
+      'Ctrl + F',
+      'Ctrl + Enter',
+      'Home', 'Delete', 'Enter',
+      'ArrowUp', 'ArrowRight', 'ArrowLeft',
+      copyItemShortcut
+    ])
+
+    for (const action of actions) {
+      if (allShortcuts.has(action.shortcut) && action.action.type !== 'test-only') {
+        logger.error('Hotkey reserved by the game will not be registered.', { source: 'shortcuts', shortcut: action.shortcut })
+      }
     }
+    actions = actions.filter(action => !allShortcuts.has(action.shortcut))
+
+    const duplicates = new Set<string>()
+    for (const action of actions) {
+      if (allShortcuts.has(action.shortcut)) {
+        logger.error('It is not possible to use the same hotkey for multiple actions.', { source: 'shortcuts', shortcut: action.shortcut })
+        duplicates.add(action.shortcut)
+      } else {
+        allShortcuts.add(action.shortcut)
+      }
+    }
+    actions = actions.filter(action => !duplicates.has(action.shortcut))
   }
 
   return actions
 }
 
 function registerGlobal () {
-  const toRegister = shortcutsfromConfig()
+  const toRegister = shortcutsFromConfig()
   for (const entry of toRegister) {
     const isOk = globalShortcut.register(shortcutToElectron(entry.shortcut), () => {
       if (entry.keepModKeys) {
@@ -149,7 +176,7 @@ function registerGlobal () {
     })
 
     if (!isOk) {
-      logger.error('Cannot register shortcut, because it is already registered by another application.', { source: 'shortcuts', shortcut: entry.shortcut })
+      logger.error('Failed to register a shortcut. It is already registered by another application.', { source: 'shortcuts', shortcut: entry.shortcut })
     }
 
     if (entry.action.type === 'test-only') {

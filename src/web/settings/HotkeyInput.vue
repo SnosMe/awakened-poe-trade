@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { KeyToCode, forbidden, hotkeyToString } from '@/ipc/KeyToCode'
+import { KeyToCode, hotkeyToString } from '@/ipc/KeyToCode'
 
 export default defineComponent({
   emits: ['update:modelValue'],
@@ -19,9 +19,9 @@ export default defineComponent({
       type: String,
       default: undefined
     },
-    forbidden: {
-      type: Array,
-      default: () => forbidden
+    noModKeys: {
+      type: Boolean,
+      default: false
     },
     required: {
       type: Boolean,
@@ -54,17 +54,12 @@ export default defineComponent({
           code = 'Cancel'
         }
 
-        if (
-          (KeyToCode as Record<string, number>)[code] &&
-          (ctrlKey ? !props.forbidden.includes('Ctrl') : true) &&
-          (shiftKey ? !props.forbidden.includes('Shift') : true) &&
-          (altKey ? !props.forbidden.includes('Alt') : true)
-        ) {
+        if ((KeyToCode as Record<string, number>)[code]) {
           code = hotkeyToString([code], ctrlKey, shiftKey, altKey)
-
-          if (!props.forbidden.includes(code)) {
-            ctx.emit('update:modelValue', code)
+          if (props.noModKeys && code.includes('+')) {
+            return
           }
+          ctx.emit('update:modelValue', code)
         }
       }
     }

@@ -2,19 +2,16 @@ import Store from 'electron-store'
 import { dialog, ipcMain, app } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
-import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW, IpcConfigs } from '@/ipc/ipc-event'
+import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
 import { overlayWindow } from './overlay-window'
 import { logger } from './logger'
 import { LogWatcher } from './LogWatcher'
 import { ItemCheckWidget } from '@/web/overlay/interfaces'
-import { readConfig as readGameConfig, loadAndCache as loadAndCacheGameCfg } from './game-config'
+import { loadAndCache as loadAndCacheGameCfg } from './game-config'
 
 export function setupConfigEvents () {
   ipcMain.on(GET_CONFIG, (e) => {
-    e.returnValue = {
-      app: config.store,
-      game: readGameConfig()
-    } as IpcConfigs
+    e.returnValue = config.store
   })
   ipcMain.on(PUSH_CONFIG, (e, cfg: Config) => {
     batchUpdateConfig(cfg, false)
