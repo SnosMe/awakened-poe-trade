@@ -3,8 +3,6 @@ export const PUSH_CONFIG = 'push-config'
 
 export const PRICE_CHECK_HIDE = 'OVERLAY->MAIN::price-check-hide'
 
-export const CLOSE_SETTINGS_WINDOW = 'close-settings-window'
-
 export const UPDATE_AVAILABLE = 'update-available'
 export interface IpcUpdateInfo {
   auto: boolean

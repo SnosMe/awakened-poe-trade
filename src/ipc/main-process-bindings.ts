@@ -126,12 +126,6 @@ class MainProcessBinding extends EventTarget {
     }
   }
 
-  closeSettingsWindow (config?: Config) {
-    if (electron) {
-      electron.ipcRenderer.send(ipcEvent.CLOSE_SETTINGS_WINDOW, config)
-    }
-  }
-
   stashSearch (text: string) {
     if (electron) {
       electron.ipcRenderer.send(ipcEvent.STASH_SEARCH, { text })

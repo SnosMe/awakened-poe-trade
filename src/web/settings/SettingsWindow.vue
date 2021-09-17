@@ -31,7 +31,6 @@ import { defineComponent, shallowRef, computed, Component, PropType, nextTick, i
 import { useI18n } from 'vue-i18n'
 import { Config } from '@/web/Config'
 import type { Widget, WidgetManager } from '../overlay/interfaces'
-import { MainProcess } from '@/ipc/main-process-bindings'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
@@ -96,11 +95,10 @@ export default defineComponent({
       t,
       save () {
         wm.hide(props.config.wmId)
-        MainProcess.closeSettingsWindow(JSON.parse(JSON.stringify(Config.store)))
+        Config.saveConfig()
       },
       cancel () {
         wm.hide(props.config.wmId)
-        MainProcess.closeSettingsWindow()
       },
       menusItems,
       selectedComponent

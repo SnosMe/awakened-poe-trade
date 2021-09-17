@@ -10,13 +10,17 @@ export interface GameConfig {
   highlightKey: string | null
 }
 
+const defaultConfig = (): GameConfig => ({
+  highlightKey: 'Alt'
+})
+
 export let gameConfig: GameConfig | null = null
 export function loadAndCache () {
   gameConfig = readConfig()
   return gameConfig
 }
 
-export function readConfig (): GameConfig | null {
+export function readConfig (): GameConfig {
   let filePath = appConfig.get('gameConfig')
 
   if (!filePath) {
@@ -25,7 +29,8 @@ export function readConfig (): GameConfig | null {
       fs.accessSync(filePath)
       appConfig.set('gameConfig', filePath)
     } catch {
-      return null
+      logger.error('Failed to find game configuration file in the default location. Default values will be used instead.', { source: 'game-config', file: filePath })
+      return defaultConfig()
     }
   }
 
@@ -35,21 +40,24 @@ export function readConfig (): GameConfig | null {
     const parsed = ini.parse(contents)
 
     return {
-      highlightKey: parseConfigHotkey(parsed.ACTION_KEYS?.highlight || '')
+      highlightKey: parseConfigHotkey(parsed.ACTION_KEYS?.highlight)
     }
   } catch {
-    logger.error('Failed to read file', { source: 'game-config', file: filePath })
-    return null
+    logger.error('Failed to read game configuration file. Default values will be used instead.', { source: 'game-config', file: filePath })
+    return defaultConfig()
   }
 }
 
-function parseConfigHotkey (cgfKey: string): string | null {
-  const [keyMain, keyMod] = cgfKey.split(' ')
+function parseConfigHotkey (cfgKey?: string): string | null {
+  if (!cfgKey) return null
+
+  const [keyMain, keyMod] = cfgKey.split(' ')
 
   let key1: string
   if (CodeToKey[keyMain]) {
     key1 = CodeToKey[keyMain]
   } else {
+    logger.error('Failed to read key.', { source: 'game-config', key: cfgKey })
     return null
   }
 
@@ -62,6 +70,7 @@ function parseConfigHotkey (cgfKey: string): string | null {
     } else if (keyMod === '3') {
       key2 = 'Alt'
     } else {
+      logger.error('Failed to read modifier key.', { source: 'game-config', key: cfgKey })
       return null
     }
   }

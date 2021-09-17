@@ -2,8 +2,7 @@ import Store from 'electron-store'
 import { dialog, ipcMain, app } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
-import { GET_CONFIG, PUSH_CONFIG, CLOSE_SETTINGS_WINDOW } from '@/ipc/ipc-event'
-import { overlayWindow } from './overlay-window'
+import { GET_CONFIG, PUSH_CONFIG } from '@/ipc/ipc-event'
 import { logger } from './logger'
 import { LogWatcher } from './LogWatcher'
 import { ItemCheckWidget } from '@/web/overlay/interfaces'
@@ -14,13 +13,7 @@ export function setupConfigEvents () {
     e.returnValue = config.store
   })
   ipcMain.on(PUSH_CONFIG, (e, cfg: Config) => {
-    batchUpdateConfig(cfg, false)
-  })
-  ipcMain.on(CLOSE_SETTINGS_WINDOW, (e, cfg: Config | undefined) => {
-    if (cfg != null) {
-      loadAndCacheGameCfg()
-      batchUpdateConfig(cfg, true)
-    }
+    batchUpdateConfig(cfg)
   })
 }
 
@@ -46,17 +39,17 @@ export const config = (() => {
   return store
 })()
 
-export function batchUpdateConfig (newCfg: Config, push = true) {
+export function batchUpdateConfig (newCfg: Config) {
   const oldCfg = config.store
   Object.setPrototypeOf(oldCfg, Object.prototype)
   if (!isDeepEq(newCfg, oldCfg)) {
     config.store = newCfg
-    logger.verbose('Saved', { source: 'config', push })
-    if (push) {
-      overlayWindow!.webContents.send(PUSH_CONFIG, newCfg)
-    }
+    logger.verbose('Saved.', { source: 'config' })
     if (oldCfg.clientLog !== newCfg.clientLog) {
       LogWatcher.start()
+    }
+    if (oldCfg.gameConfig !== newCfg.gameConfig) {
+      loadAndCacheGameCfg()
     }
   }
 }
