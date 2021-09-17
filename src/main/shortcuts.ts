@@ -1,4 +1,4 @@
-import { screen, clipboard, globalShortcut, Notification, ipcMain } from 'electron'
+import { screen, clipboard, globalShortcut, ipcMain } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
@@ -90,6 +90,15 @@ function shortcutsfromConfig () {
       })
     }
   }
+  {
+    const copyItemShortcut = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt')
+    if (copyItemShortcut !== 'Ctrl + C') {
+      actions.push({
+        shortcut: copyItemShortcut,
+        action: { type: 'test-only' }
+      })
+    }
+  }
 
   return actions
 }
@@ -141,11 +150,6 @@ function registerGlobal () {
 
     if (!isOk) {
       logger.error('Cannot register shortcut, because it is already registered by another application.', { source: 'shortcuts', shortcut: entry.shortcut })
-
-      new Notification({
-        title: 'Awakened PoE Trade',
-        body: `Cannot register shortcut ${entry.shortcut}, because it is already registered by another application.`
-      }).show()
     }
 
     if (entry.action.type === 'test-only') {
