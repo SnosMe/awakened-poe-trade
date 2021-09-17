@@ -93,7 +93,7 @@ export default defineComponent({
         feedbackSent.value = false
         price.value = await requestPoeprices(props.item)
       } catch (err) {
-        error.value = err.message
+        error.value = (err as Error).message
       } finally {
         loading.value = false
       }

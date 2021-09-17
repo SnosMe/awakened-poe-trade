@@ -37,7 +37,7 @@ export async function load () {
       }
     }
   } catch (e) {
-    error.value = e.message
+    error.value = (e as Error).message
   } finally {
     isLoading.value = false
   }

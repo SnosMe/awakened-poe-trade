@@ -215,7 +215,7 @@ function useTradeApi () {
       }
       return fetchMore()
     } catch (err) {
-      error.value = err.message
+      error.value = (err as Error).message
     }
   }
 

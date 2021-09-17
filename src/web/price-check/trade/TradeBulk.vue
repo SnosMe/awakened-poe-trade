@@ -134,7 +134,7 @@ function useBulkApi () {
         }
       }
     } catch (err) {
-      error.value = err.message
+      error.value = (err as Error).message
     }
   }
 
@@ -149,7 +149,7 @@ function useBulkApi () {
             requested = true
             items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20))
           } catch (err) {
-            error.value = err.message
+            error.value = (err as Error).message
           }
         })()
       }
