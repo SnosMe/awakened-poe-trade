@@ -21,11 +21,11 @@ export const config = (() => {
   const store = new Store<Config>({
     name: 'config',
     cwd: 'apt-data',
-    defaults: defaultConfig
+    defaults: defaultConfig()
   })
 
-  if (store.get('configVersion') > defaultConfig.configVersion) {
-    logger.error('Incompatible configuration', { source: 'config', expected: defaultConfig.configVersion, actual: store.get('configVersion') })
+  if (store.get('configVersion') > defaultConfig().configVersion) {
+    logger.error('Incompatible configuration', { source: 'config', expected: defaultConfig().configVersion, actual: store.get('configVersion') })
     dialog.showErrorBox(
       'Awakened PoE Trade - Incompatible configuration',
       // ----------------------
@@ -57,13 +57,13 @@ export function batchUpdateConfig (newCfg: Config) {
 function upgradeConfig (config: Config): Config {
   if (config.configVersion < 3) {
     config.widgets.push({
-      ...defaultConfig.widgets.find(w => w.wmType === 'image-strip')!,
+      ...defaultConfig().widgets.find(w => w.wmType === 'image-strip')!,
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1,
       wmZorder: null
     })
 
     config.widgets.push({
-      ...defaultConfig.widgets.find(w => w.wmType === 'delve-grid')!,
+      ...defaultConfig().widgets.find(w => w.wmType === 'delve-grid')!,
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1,
       wmZorder: null
     })
@@ -157,7 +157,7 @@ function upgradeConfig (config: Config): Config {
 
   if (config.configVersion < 10) {
     config.widgets.push({
-      ...defaultConfig.widgets.find(w => w.wmType === 'settings')!,
+      ...defaultConfig().widgets.find(w => w.wmType === 'settings')!,
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
     })
 

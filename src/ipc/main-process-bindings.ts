@@ -102,7 +102,7 @@ class MainProcessBinding extends EventTarget {
     if (electron) {
       return electron.ipcRenderer.sendSync(ipcEvent.GET_CONFIG)
     } else {
-      return defaultConfig
+      return defaultConfig()
     }
   }
 

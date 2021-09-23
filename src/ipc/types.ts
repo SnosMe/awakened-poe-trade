@@ -1,10 +1,5 @@
 import { ItemCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
 
-export interface League {
-  id: string
-  selected: boolean
-}
-
 export interface Config {
   configVersion: number
   leagueId?: string
@@ -55,7 +50,7 @@ type WidgetWellKnownFlag =
   'hide-on-blur(close)' |
   'hide-on-focus'
 
-export const defaultConfig: Config = {
+export const defaultConfig = (): Config => ({
   configVersion: 10,
   wikiKey: 'Alt + W',
   craftOfExileKey: null,
@@ -245,4 +240,4 @@ export const defaultConfig: Config = {
       ]
     }
   ]
-}
+})
