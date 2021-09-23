@@ -5,7 +5,6 @@ import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
-import { Config } from '@/web/Config'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
@@ -80,7 +79,11 @@ async function requestTradeResultList (body: TradeRequest): Promise<SearchResult
   return data
 }
 
-export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
+export async function requestResults (
+  queryId: string,
+  resultIds: string[],
+  opts: { accountName: string }
+): Promise<PricingResult[]> {
   interface ResponseT { result: FetchResult[], error: SearchResult['error'] }
   let data = cache.get<ResponseT>(resultIds)
 
@@ -107,7 +110,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       exchangeAmount: result.listing.price.exchange.amount,
       itemAmount: result.listing.price.item.amount,
       stock: result.listing.price.item.stock,
-      isMine: (result.listing.account.name === Config.store.accountName),
+      isMine: (result.listing.account.name === opts.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online

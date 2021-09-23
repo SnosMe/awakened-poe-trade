@@ -15,7 +15,9 @@ export function createFilters (item: ParsedItem): ItemFilters {
     trade: {
       offline: false,
       listed: undefined,
-      league: league.value!
+      league: league.value!,
+      chaosPriceThreshold: cfg.chaosPriceThreshold,
+      collapseListings: cfg.collapseListings
     }
   }
 

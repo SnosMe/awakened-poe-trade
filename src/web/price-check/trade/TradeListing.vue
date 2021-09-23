@@ -185,11 +185,11 @@ function useTradeApi () {
       // first two req are parallel, then sequential on demand
       {
         const r1 = (_searchResult.result.length > 0)
-          ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10))
+          ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10), { accountName: Config.store.accountName })
             .then(results => { _fetchResults.push(...results) })
           : Promise.resolve()
         const r2 = (_searchResult.result.length > 10)
-          ? requestResults(_searchResult.id, _searchResult.result.slice(10, 20))
+          ? requestResults(_searchResult.id, _searchResult.result.slice(10, 20), { accountName: Config.store.accountName })
             .then(results => r1
               .then(() => { _fetchResults.push(...results) }))
           : Promise.resolve()
@@ -207,7 +207,7 @@ function useTradeApi () {
           fetched < _searchResult.total &&
           fetched < API_FETCH_LIMIT
         ) {
-          await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10))
+          await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10), { accountName: Config.store.accountName })
             .then(results => { _fetchResults.push(...results) })
           fetched += 10
           return fetchMore()

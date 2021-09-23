@@ -67,6 +67,8 @@ export interface ItemFilters {
     offline: boolean
     listed: string | undefined
     league: string
+    chaosPriceThreshold: number
+    collapseListings: 'api' | 'app'
   }
 }
 

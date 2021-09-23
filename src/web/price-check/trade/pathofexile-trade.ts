@@ -5,8 +5,6 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
-import { Config } from '@/web/Config'
-import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
 
@@ -236,14 +234,12 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
   const { query } = body
 
-  {
-    const cfg = Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
-    if (cfg.chaosPriceThreshold !== 0) {
-      prop.set(query.filters, 'trade_filters.filters.price.min', cfg.chaosPriceThreshold)
-    }
-    if (cfg.collapseListings === 'api') {
-      prop.set(query.filters, 'trade_filters.filters.collapse.option', String(true))
-    }
+  if (filters.trade.chaosPriceThreshold !== 0) {
+    prop.set(query.filters, 'trade_filters.filters.price.min', filters.trade.chaosPriceThreshold)
+  }
+
+  if (filters.trade.collapseListings === 'api') {
+    prop.set(query.filters, 'trade_filters.filters.collapse.option', String(true))
   }
 
   if (filters.trade.listed) {
@@ -541,7 +537,11 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
   return data
 }
 
-export async function requestResults (queryId: string, resultIds: string[]): Promise<PricingResult[]> {
+export async function requestResults (
+  queryId: string,
+  resultIds: string[],
+  opts: { accountName: string }
+): Promise<PricingResult[]> {
   interface ResponseT { result: FetchResult[], error: SearchResult['error'] }
   let data = cache.get<ResponseT>(resultIds)
 
@@ -572,7 +572,7 @@ export async function requestResults (queryId: string, resultIds: string[]): Pro
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
-      isMine: (result.listing.account.name === Config.store.accountName),
+      isMine: (result.listing.account.name === opts.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online

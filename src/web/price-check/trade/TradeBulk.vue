@@ -147,7 +147,7 @@ function useBulkApi () {
         ;(async function () {
           try {
             requested = true
-            items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20))
+            items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20), { accountName: Config.store.accountName })
           } catch (err) {
             error.value = (err as Error).message
           }
