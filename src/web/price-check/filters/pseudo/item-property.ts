@@ -38,7 +38,7 @@ function armourProps (ctx: FiltersCreationContext) {
         'armour'
       ),
       disabled: !isSingleAttrArmour(item),
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -52,7 +52,7 @@ function armourProps (ctx: FiltersCreationContext) {
         'armour'
       ),
       disabled: !isSingleAttrArmour(item),
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -66,7 +66,7 @@ function armourProps (ctx: FiltersCreationContext) {
         'armour'
       ),
       disabled: !isSingleAttrArmour(item),
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -78,7 +78,7 @@ function armourProps (ctx: FiltersCreationContext) {
         'armour'
       ),
       disabled: true,
-      ...rollToFilter(item.props.blockChance, { neverNegated: true })
+      ...rollToFilter(item.props.blockChance, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -121,7 +121,7 @@ function weaponProps (ctx: FiltersCreationContext) {
         'weapon'
       ),
       disabled: false,
-      ...rollToFilter(dps, { neverNegated: true })
+      ...rollToFilter(dps, { neverNegated: true, percent: ctx.searchInRange })
     })
 
     ctx.filters.push({
@@ -132,7 +132,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       ),
       disabled: (edps / dps < 0.67),
       hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
-      ...rollToFilter(edps, { neverNegated: true })
+      ...rollToFilter(edps, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -144,7 +144,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     ),
     disabled: !isPdpsImportant(item) || (pdpsQ20 / dps < 0.67),
     hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
-    ...rollToFilter(pdpsQ20, { neverNegated: true })
+    ...rollToFilter(pdpsQ20, { neverNegated: true, percent: ctx.searchInRange })
   })
 
   ctx.filters.push({
@@ -154,7 +154,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       'weapon'
     ),
     disabled: true,
-    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, dp: 2 })
+    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, dp: 2, percent: ctx.searchInRange })
   })
 
   ctx.filters.push({
@@ -164,7 +164,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       'weapon'
     ),
     disabled: true,
-    ...rollToFilter(item.props.critChance!, { neverNegated: true, dp: 1 })
+    ...rollToFilter(item.props.critChance!, { neverNegated: true, dp: 1, percent: ctx.searchInRange })
   })
 
   if (
@@ -180,7 +180,7 @@ function weaponProps (ctx: FiltersCreationContext) {
 function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
   for (const m of ctx.modifiers) {
     if (stats.has(m.stat.ref)) {
-      const filter = itemModToFilter(m, ctx.item)
+      const filter = itemModToFilter(m, ctx.item, { percent: ctx.searchInRange })
       filter.hidden = 'Contributes to the item property'
       ctx.filters.push(filter)
     }

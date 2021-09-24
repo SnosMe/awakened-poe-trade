@@ -21,7 +21,8 @@ function filterRemainingPseudo (ctx: FiltersCreationContext) {
         disabled: true,
         ...rollToFilter(total, {
           neverNegated: true,
-          dp: pseudoMod.stats.some((ref) => STAT_BY_REF.get(ref)!.stat.dp)
+          dp: pseudoMod.stats.some((ref) => STAT_BY_REF.get(ref)!.stat.dp),
+          percent: ctx.searchInRange
         })
       })
     }

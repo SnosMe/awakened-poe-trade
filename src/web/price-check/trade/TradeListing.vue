@@ -108,14 +108,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef, ComputedRef } from 'vue'
+import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
 import { selected as defaultLeague, tradeLeagues } from '../../background/Leagues'
-import { Config } from '@/web/Config'
+import { Config, getWidgetConfig } from '@/web/Config'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -239,7 +239,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
+    const widget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
 
     watch(() => props.item, (item) => {
       slowdown.reset(item)
@@ -266,7 +266,7 @@ export default defineComponent({
       }),
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
-      showSeller: computed(() => Config.priceCheck.showSeller),
+      showSeller: computed(() => widget.value.showSeller),
       defaultLeague,
       tradeLeagues,
       getRelativeTime (iso: string) {
@@ -280,7 +280,7 @@ export default defineComponent({
         if (isExternal) {
           MainProcess.openSystemBrowser(link)
         } else {
-          wm.showBrowser(widget.config.value.wmId, link)
+          wm.showBrowser(widget.value.wmId, link)
         }
       }
     }

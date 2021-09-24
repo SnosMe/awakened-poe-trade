@@ -95,7 +95,7 @@ import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pat
 import { tradeTag, getTradeEndpoint } from './common'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { selected as league } from '../../background/Leagues'
-import { Config } from '@/web/Config'
+import { Config, getWidgetConfig } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
@@ -174,7 +174,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
+    const widget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
     const selectedCurr = ref<'chaos' | 'exa'>('chaos')
@@ -214,13 +214,13 @@ export default defineComponent({
       selectedResults,
       selectedCurr,
       execSearch: () => { search(props.item, props.filters) },
-      showSeller: computed(() => Config.priceCheck.showSeller),
+      showSeller: computed(() => widget.value.showSeller),
       openTradeLink (isExternal: boolean) {
         const link = `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].queryId}`
         if (isExternal) {
           MainProcess.openSystemBrowser(link)
         } else {
-          wm.showBrowser(widget.config.value.wmId, link)
+          wm.showBrowser(widget.value.wmId, link)
         }
       },
       getRelativeTime (iso: string) {

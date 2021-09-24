@@ -64,7 +64,8 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Config } from '@/web/Config'
+import { Config, getWidgetConfig } from '@/web/Config'
+import { PriceCheckWidget } from '../overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
@@ -75,7 +76,7 @@ export default defineComponent({
     return {
       t,
       config: computed(() => Config.store),
-      configPriceCheck: computed(() => Config.priceCheck)
+      configPriceCheck: computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
     }
   }
 })

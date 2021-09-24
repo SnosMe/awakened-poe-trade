@@ -6,9 +6,12 @@ import { ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
+import { getWidgetConfig } from '@/web/Config'
+import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
+  readonly searchInRange: number
   filters: Array<Writeable<StatFilter>>
   modifiers: ParsedItem['modifiers']
 }
@@ -21,9 +24,12 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     return []
   }
 
+  const { searchStatRange } = getWidgetConfig<PriceCheckWidget>('price-check')!
+
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
+    searchInRange: searchStatRange,
     modifiers: item.modifiers.map(mod => {
       if (mod.type === ModifierType.Fractured && mod.trade.ids[ModifierType.Explicit]) {
         return { ...mod, type: ModifierType.Explicit }
@@ -48,7 +54,7 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
   }
 
   ctx.filters.push(
-    ...ctx.modifiers.map(mod => itemModToFilter(mod, item))
+    ...ctx.modifiers.map(mod => itemModToFilter(mod, item, { percent: ctx.searchInRange }))
   )
 
   if (!item.isCorrupted && !item.isMirrored && item.isSynthesised) {
@@ -56,7 +62,7 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
       mod.type === ModifierType.Implicit &&
       !ctx.modifiers.includes(mod))
 
-    const synthImplicitFilters = transformedImplicits.map(mod => itemModToFilter(mod, item))
+    const synthImplicitFilters = transformedImplicits.map(mod => itemModToFilter(mod, item, { percent: ctx.searchInRange }))
     for (const filter of synthImplicitFilters) {
       filter.hidden = 'Select only if price-checking as base item for crafting'
     }
@@ -80,7 +86,11 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
   return ctx.filters
 }
 
-export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
+export function itemModToFilter (
+  mod: ItemModifier,
+  item: ParsedItem,
+  opts: { percent: number }
+) {
   const filter: Writeable<StatFilter> = {
     tradeId: mod.trade.ids[mod.type],
     statRef: mod.stat.ref,
@@ -102,9 +112,9 @@ export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
     item.rarity === ItemRarity.Unique &&
     mod.type !== ModifierType.Enchant
   ) {
-    uniqueModFilterPartial(item, mod, filter)
+    uniqueModFilterPartial(item, mod, filter, (opts.percent * 2))
   } else {
-    itemModFilterPartial(mod, filter)
+    itemModFilterPartial(mod, filter, opts.percent)
   }
 
   filterAdjustmentForNegate(mod, filter)
@@ -114,7 +124,8 @@ export function itemModToFilter (mod: ItemModifier, item: ParsedItem) {
 
 function itemModFilterPartial (
   mod: ItemModifier,
-  filter: Writeable<StatFilter>
+  filter: Writeable<StatFilter>,
+  percent: number
 ) {
   if (mod.value) {
     if (mod.type === 'enchant') {
@@ -124,7 +135,7 @@ function itemModFilterPartial (
       filter.defaultMin = filter.roll
       filter.defaultMax = filter.roll
     } else {
-      Object.assign(filter, rollToFilter(mod.value, { dp: mod.stat.dp }))
+      Object.assign(filter, rollToFilter(mod.value, { dp: mod.stat.dp, percent }))
     }
   }
 }

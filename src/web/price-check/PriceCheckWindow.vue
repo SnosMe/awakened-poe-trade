@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, PropType, provide, shallowRef, watch, computed, nextTick } from 'vue'
+import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
@@ -133,7 +133,7 @@ export default defineComponent({
     const exaltedCost = computed(() => (chaosExaRate.value) ? Math.round(chaosExaRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => Config.store.overlayKey)
-    const showCheckPos = computed(() => wm.active && Config.priceCheck.showCursor)
+    const showCheckPos = computed(() => wm.active && props.config.showCursor)
     const poeUiWidth = computed(() => wm.poeUiWidth)
     const isLeagueSelected = computed(() => Boolean(league.value))
     const clickPosition = computed(() => {
@@ -162,10 +162,6 @@ export default defineComponent({
     function closePriceCheck () {
       MainProcess.closeOverlay()
     }
-
-    provide('widget', {
-      config: computed(() => props.config)
-    })
 
     const { t } = useI18n()
 

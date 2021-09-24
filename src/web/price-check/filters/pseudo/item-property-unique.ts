@@ -36,7 +36,7 @@ function armourProps (ctx: FiltersCreationContext) {
       ),
       disabled: true,
       hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -51,7 +51,7 @@ function armourProps (ctx: FiltersCreationContext) {
       ),
       disabled: true,
       hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -66,7 +66,7 @@ function armourProps (ctx: FiltersCreationContext) {
       ),
       disabled: true,
       hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
-      ...rollToFilter(totalQ20, { neverNegated: true })
+      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -93,7 +93,7 @@ function weaponProps (ctx: FiltersCreationContext) {
       ),
       disabled: true,
       hidden: (item.isCorrupted) ? undefined : 'Hidden for sake of familiar view of item stats',
-      ...rollToFilter(pdpsQ20, { neverNegated: true })
+      ...rollToFilter(pdpsQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -104,7 +104,7 @@ function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
   if (ctx.item.isCorrupted) {
     for (const m of ctx.modifiers) {
       if (stats.has(m.stat.ref)) {
-        const filter = itemModToFilter(m, ctx.item)
+        const filter = itemModToFilter(m, ctx.item, { percent: ctx.searchInRange })
         filter.hidden = 'Contributes to the item property'
         ctx.filters.push(filter)
       }

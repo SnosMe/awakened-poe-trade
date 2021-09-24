@@ -98,15 +98,13 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Config } from '@/web/Config'
+import { Config, getWidgetConfig } from '@/web/Config'
 import { PriceCheckWidget } from '../overlay/interfaces'
 import * as Leagues from '../background/Leagues'
 
 export default defineComponent({
   setup () {
-    const configWidget = computed(() => {
-      return Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
-    })
+    const configWidget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
 
     const { t } = useI18n()
 
@@ -116,13 +114,13 @@ export default defineComponent({
       configWidget,
       searchStatRange: computed<number>({
         get () {
-          return Config.priceCheck.searchStatRange
+          return configWidget.value.searchStatRange
         },
         set (value) {
           if (typeof value !== 'number') return
 
           if (value >= 0 && value <= 50) {
-            Config.priceCheck.searchStatRange = value
+            configWidget.value.searchStatRange = value
           }
         }
       }),

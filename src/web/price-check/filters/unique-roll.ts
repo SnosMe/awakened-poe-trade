@@ -1,14 +1,14 @@
 // import { UniqueItem, UNIQUES } from '@/assets/data'
-import { ParsedItem } from '@/parser'
-import { ItemModifier } from '@/parser/modifiers'
+import type { ParsedItem } from '@/parser'
+import type { ItemModifier } from '@/parser/modifiers'
+import type { StatFilter } from './interfaces'
 import { percentRollDelta } from './util'
-import { StatFilter } from './interfaces'
-import { Config } from '@/web/Config'
 
 export function uniqueModFilterPartial (
   _item: ParsedItem,
   mod: ItemModifier,
-  filter: Writeable<StatFilter>
+  filter: Writeable<StatFilter>,
+  percent: number
 ): void {
   // const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType!}`)
 
@@ -30,7 +30,6 @@ export function uniqueModFilterPartial (
     filter.boundMax = mod.bounds.max
 
     filter.roll = mod.value!
-    const percent = Config.priceCheck.searchStatRange * 2
     filter.defaultMin = Math.max(percentRollDelta(mod.value!, (filter.boundMax - filter.boundMin), -percent, Math.floor), filter.boundMin)
     filter.defaultMax = Math.min(percentRollDelta(mod.value!, (filter.boundMax - filter.boundMin), +percent, Math.ceil), filter.boundMax)
   }

@@ -70,7 +70,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
     ctx.filters.push({
       ...pseudoStat('+# total to all Attributes'),
       disabled: true,
-      ...rollToFilter(totalToAllAttrs, { neverNegated: true })
+      ...rollToFilter(totalToAllAttrs, { neverNegated: true, percent: ctx.searchInRange })
     })
   } else {
     for (const attr of attrs) {
@@ -78,7 +78,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
         ...attr.pseudo,
         disabled: true,
         hidden: (attr.hasFlat || attr.countToAll >= 2) ? undefined : 'Stat has a relatively small value',
-        ...rollToFilter(attr.total, { neverNegated: true })
+        ...rollToFilter(attr.total, { neverNegated: true, percent: ctx.searchInRange })
       })
     }
   }

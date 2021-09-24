@@ -17,14 +17,15 @@
 </template>
 
 <script lang="ts">
-import { computed, ComputedRef, defineComponent, inject } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { RATE_LIMIT_RULES } from './common'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
+import { getWidgetConfig } from '@/web/Config'
 
 export default defineComponent({
   inheritAttrs: false,
   setup () {
-    const widget = inject<{ config: ComputedRef<PriceCheckWidget> }>('widget')!
+    const widget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
 
     const limits = computed(() => {
       const LIMITS = [
@@ -49,10 +50,10 @@ export default defineComponent({
 
     const showRateLimitState = computed<boolean>({
       get () {
-        return widget.config.value.showRateLimitState
+        return widget.value.showRateLimitState
       },
       set (value) {
-        widget.config.value.showRateLimitState = value
+        widget.value.showRateLimitState = value
       }
     })
 
