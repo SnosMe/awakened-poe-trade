@@ -1,17 +1,21 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('League') }}</div>
+      <div class="flex-1 mb-1">{{ t('League') }}
+        <button v-if="!leagues.isLoading.value" class="btn" @click="leagues.load">{{ t(leagues.error.value ? 'Retry' : 'Refresh') }}</button>
+      </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
-      <div v-if="leagues.trade.value.length"
+      <div v-else-if="leagues.trade.value.length"
         class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
         style="grid-template-columns: repeat(2, min-content);">
         <div v-for="league of leagues.trade.value" :key="league.id">
           <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
         </div>
       </div>
-      <!-- TODO show errors -->
+      <div v-else-if="leagues.error.value || true" class="mb-4">
+        <span class="text-red-400">{{ t('Failed to load leagues') }}</span>
+      </div>
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Account name') }}</div>
@@ -158,7 +162,8 @@ export default defineComponent({
       leagues: {
         trade: Leagues.tradeLeagues,
         isLoading: Leagues.isLoading,
-        error: Leagues.error
+        error: Leagues.error,
+        load: Leagues.load
       }
     }
   }
@@ -183,7 +188,9 @@ export default defineComponent({
     "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах",
     "Perform an auto search, when pressing": "Выполнять автоматический поиск при нажатии",
     "Always select \"Stock\" filter": "Всегда активировать фильтр \"Запас\"",
-    "League": "Лига"
+    "League": "Лига",
+    "Loading leagues...": "Загрузка лиг...",
+    "Failed to load leagues": "Не удалось загрузить лиги"
   }
 }
 </i18n>

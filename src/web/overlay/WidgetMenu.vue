@@ -7,7 +7,7 @@
             :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-900'"
             class="bg-gray-800 rounded text-gray-100 ml-1 p-2 leading-none whitespace-no-wrap border"
           >
-            <i v-if="widget.wmType === 'settings'" class="fas fa-cog" />
+            <i v-if="widget.wmType === 'settings'" class="fas fa-cog align-bottom" />
             <template v-else>{{ widget.wmTitle || `#${widget.wmId}` }}</template>
           </button>
         </template>
