@@ -154,7 +154,7 @@ export default {
       return this.widgets.map(w => ({
         wmId: w.wmId,
         isVisible:
-          this.hideUI ? false
+          this.hideUI ? (w.wmWants === 'show' && w.wmFlags.includes('ignore-ui-visibility'))
             : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
                 : showExclusive ? w === showExclusive
                   : w.wmWants === 'show'

@@ -48,7 +48,8 @@ type WidgetWellKnownFlag =
   'invisible-on-blur' |
   'hide-on-blur' |
   'hide-on-blur(close)' |
-  'hide-on-focus'
+  'hide-on-focus' |
+  'ignore-ui-visibility'
 
 export const defaultConfig = (): Config => ({
   configVersion: 10,
@@ -180,7 +181,7 @@ export const defaultConfig = (): Config => ({
       wmTitle: '',
       wmWants: 'hide',
       wmZorder: 'exclusive',
-      wmFlags: ['invisible-on-blur']
+      wmFlags: ['invisible-on-blur', 'ignore-ui-visibility']
     },
     // --- DEFAULT ---
     {
