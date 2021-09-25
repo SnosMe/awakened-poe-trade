@@ -26,7 +26,8 @@
       <maps-stat-entry
         :style="{ position: 'absolute', top: `${props.top}px` }"
         :class="{ 'text-red-400': props.item.outdated }"
-        :matcher="props.item.matchStr" />
+        :matcher="props.item.matchStr"
+        :selected-stats="selectedStats" />
     </virtual-scroll>
   </div>
 </template>
@@ -34,10 +35,10 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Config } from '@/web/Config'
+import { configProp, getWidgetConfig } from './utils'
+import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { STATS, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
-import { ItemCheckWidget } from '../overlay/interfaces'
 import VirtualScroll from '../ui/VirtualScroll.vue'
 
 const statList = computed(() => {
@@ -51,28 +52,28 @@ const statList = computed(() => {
 
 export default defineComponent({
   components: { MapsStatEntry, VirtualScroll },
-  setup () {
+  props: configProp(),
+  setup (props) {
     const search = ref('')
     const onlySelected = ref(true)
 
-    const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
-    })
+    const widget = computed(() => getWidgetConfig<ItemCheckWidget>('item-check', props.config)!)
 
     const selectedMatchers = computed(() => {
       return new Set(
-        config.value.maps.selectedStats
+        widget.value.maps.selectedStats
           .filter(entry => entry.decision !== 'seen')
           .map(entry => entry.matcher))
     })
 
     const showNewStats = computed<boolean>({
-      get () { return config.value.maps.showNewStats },
-      set (value) { config.value.maps.showNewStats = value }
+      get () { return widget.value.maps.showNewStats },
+      set (value) { widget.value.maps.showNewStats = value }
     })
 
     const hasOutdatedTranslation = computed<string[]>(() => {
-      return config.value.maps.selectedStats
+      return widget.value.maps
+        .selectedStats
         .filter(entry =>
           entry.decision !== 'seen' &&
           !STAT_BY_MATCH_STR.has(entry.matcher))
@@ -104,9 +105,8 @@ export default defineComponent({
           ...filtered
         ]
       }),
-      fontSize: computed(() => {
-        return Config.store.fontSize
-      })
+      selectedStats: computed(() => widget.value.maps.selectedStats),
+      fontSize: computed(() => props.config.fontSize)
     }
   }
 })

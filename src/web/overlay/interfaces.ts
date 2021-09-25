@@ -5,8 +5,6 @@ export interface Widget {
   wmWants: 'show' | 'hide'
   wmZorder: number | 'exclusive' | null
   wmFlags: Array<WellKnownFlag | string>
-  // ---------------
-  [key: string]: unknown
 }
 
 export type WellKnownFlag =

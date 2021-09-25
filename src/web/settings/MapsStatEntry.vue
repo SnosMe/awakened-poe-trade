@@ -15,9 +15,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { Config } from '@/web/Config'
-import { ItemCheckWidget } from '../overlay/interfaces'
+import { defineComponent, computed, PropType } from 'vue'
+import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 
 export default defineComponent({
   emits: [],
@@ -25,14 +24,15 @@ export default defineComponent({
     matcher: {
       type: String,
       required: true
+    },
+    selectedStats: {
+      type: Array as PropType<ItemCheckWidget['maps']['selectedStats']>,
+      required: true
     }
   },
   setup (props) {
-    const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
-    })
     const entry = computed(() => {
-      return config.value.maps.selectedStats.find(_ => _.matcher === props.matcher)
+      return props.selectedStats.find(entry => entry.matcher === props.matcher)
     })
 
     const decision = computed<undefined | string>({
@@ -43,7 +43,7 @@ export default defineComponent({
         if (entry.value) {
           entry.value.decision = value!
         } else {
-          config.value.maps.selectedStats.push({
+          props.selectedStats.push({
             matcher: props.matcher,
             decision: value!
           })

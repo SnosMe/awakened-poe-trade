@@ -6,7 +6,7 @@
     <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
     <div class="flex flex-grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
-        <template v-for="(item, itemIdx) of menusItems" :key="itemIdx">
+        <template v-for="(item, itemIdx) of menuItems" :key="itemIdx">
           <button v-if="!item.isSeparator"
             @click="item.select" :class="['menu-item', { 'active': item.isSelected }]">{{ item.name }}</button>
           <div v-else
@@ -15,7 +15,8 @@
       </div>
       <div class="text-gray-100 flex-grow layout-column bg-gray-900">
         <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">
-          <component :is="selectedComponent" />
+          <component v-if="configClone"
+            :is="selectedComponent" :config="configClone" />
         </div>
         <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end gap-x-2">
           <button @click="save" class="px-3 bg-gray-800 rounded">{{ t('Save') }}</button>
@@ -27,10 +28,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject } from 'vue'
+import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Config } from '@/web/Config'
-import type { Widget, WidgetManager } from '../overlay/interfaces'
+import { getGlobalConfig, updateConfig, saveConfig } from '@/web/Config'
+import type { Config } from '@/ipc/types'
+import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
@@ -55,7 +57,16 @@ export default defineComponent({
 
     const selectedComponent = shallowRef<Component>(SettingsHotkeys)
 
-    const menusItems = computed(() => [
+    const configClone = shallowRef<Config | null>(null)
+    watch(() => props.config.wmWants, (wmWants) => {
+      if (wmWants === 'show') {
+        configClone.value = reactive(JSON.parse(JSON.stringify(getGlobalConfig())))
+      } else {
+        configClone.value = null
+      }
+    })
+
+    const menuItems = computed(() => [
       {
         name: t('Hotkeys'),
         select () { selectedComponent.value = SettingsHotkeys },
@@ -94,14 +105,16 @@ export default defineComponent({
     return {
       t,
       save () {
+        updateConfig(configClone.value!)
+        saveConfig()
         wm.hide(props.config.wmId)
-        Config.saveConfig()
       },
       cancel () {
         wm.hide(props.config.wmId)
       },
-      menusItems,
-      selectedComponent
+      menuItems,
+      selectedComponent,
+      configClone
     }
   }
 })

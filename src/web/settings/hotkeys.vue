@@ -7,54 +7,54 @@
         <div class="flex-1">{{ t('Price check') }}</div>
         <div class="flex">
           <span class="text-gray-500 mr-2">{{ t('Auto-hide Mode') }}</span>
-          <button :class="{ border: configPriceCheck.hotkeyHold === 'Ctrl', 'line-through': configPriceCheck.hotkey === null }" @click="configPriceCheck.hotkeyHold = 'Ctrl'; configPriceCheck.hotkey = null" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
-          <button :class="{ border: configPriceCheck.hotkeyHold === 'Alt', 'line-through': configPriceCheck.hotkey === null }" @click="configPriceCheck.hotkeyHold = 'Alt'; configPriceCheck.hotkey = null" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
+          <button :class="{ border: priceCheckHotkeyHold === 'Ctrl', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Ctrl'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
+          <button :class="{ border: priceCheckHotkeyHold === 'Alt', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Alt'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
           <span class="mx-4">+</span>
-          <hotkey-input v-model="configPriceCheck.hotkey" class="w-20" no-mod-keys />
+          <hotkey-input v-model="priceCheckHotkey" class="w-20" no-mod-keys />
         </div>
       </div>
       <div class="text-right mt-2">
         <span class="text-gray-500 mr-2">{{ t('Open without auto-hide') }}</span>
-        <hotkey-input v-model="configPriceCheck.hotkeyLocked" class="w-48" />
+        <hotkey-input v-model="priceCheckHotkeyLocked" class="w-48" />
       </div>
     </div>
     <div class="mb-4">
       <div class="flex">
         <div class="flex-1">{{ t('Overlay') }} <span class="text-red-500 text-lg leading-none">*</span></div>
-        <hotkey-input required v-model="config.overlayKey" class="w-48" />
+        <hotkey-input required v-model="overlayKey" class="w-48" />
       </div>
     </div>
     <div class="mb-4">
       <div class="flex">
         <div class="flex-1">{{ t('Open item on wiki') }}</div>
-        <hotkey-input v-model="config.wikiKey" class="w-48" />
+        <hotkey-input v-model="wikiKey" class="w-48" />
       </div>
     </div>
     <div class="mb-4">
       <div class="flex">
         <div class="flex-1">{{ t('Map check') }}</div>
         <!-- <div class="flex-1">{{ t('Item info') }}</div> -->
-        <hotkey-input v-model="config.itemCheckKey" class="w-48" />
+        <hotkey-input v-model="itemCheckKey" class="w-48" />
       </div>
     </div>
-    <div v-if="config.language === 'en'" class="mb-4">
+    <div v-if="isEnglish" class="mb-4">
       <div class="flex">
         <div class="flex-1">Open base item on Craft of Exile</div>
-        <hotkey-input v-model="config.craftOfExileKey" class="w-48" />
+        <hotkey-input v-model="craftOfExileKey" class="w-48" />
       </div>
     </div>
     <div class="mb-8">
       <div class="flex">
         <div class="flex-1">{{ t('Delve grid') }}</div>
-        <hotkey-input v-model="config.delveGridKey" class="w-48" />
+        <hotkey-input v-model="delveGridKey" class="w-48" />
       </div>
     </div>
     <div class="mb-8">
       <div class="flex">
         <div class="flex-1">{{ t('Stash tab scrolling') }}</div>
         <div class="flex">
-          <ui-radio v-model="config.stashScroll" :value="true" class="mr-4 font-fontin-regular">Ctrl + MouseWheel</ui-radio>
-          <ui-radio v-model="config.stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
+          <ui-radio v-model="stashScroll" :value="true" class="mr-4 font-fontin-regular">Ctrl + MouseWheel</ui-radio>
+          <ui-radio v-model="stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
         </div>
       </div>
     </div>
@@ -64,19 +64,28 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Config, getWidgetConfig } from '@/web/Config'
-import { PriceCheckWidget } from '../overlay/interfaces'
+import { configProp, configModelValue, getWidgetConfig } from './utils'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
   components: { HotkeyInput },
-  setup () {
+  props: configProp(),
+  setup (props) {
     const { t } = useI18n()
 
     return {
       t,
-      config: computed(() => Config.store),
-      configPriceCheck: computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
+      isEnglish: computed(() => props.config.language === 'en'),
+      stashScroll: configModelValue(() => props.config, 'stashScroll'),
+      delveGridKey: configModelValue(() => props.config, 'delveGridKey'),
+      craftOfExileKey: configModelValue(() => props.config, 'craftOfExileKey'),
+      itemCheckKey: configModelValue(() => props.config, 'itemCheckKey'),
+      wikiKey: configModelValue(() => props.config, 'wikiKey'),
+      overlayKey: configModelValue(() => props.config, 'overlayKey'),
+      priceCheckHotkeyHold: configModelValue(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),
+      priceCheckHotkey: configModelValue(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!, 'hotkey'),
+      priceCheckHotkeyLocked: configModelValue(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!, 'hotkeyLocked')
     }
   }
 })

@@ -3,45 +3,49 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Log level') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4 flex gap-x-4">
-        <ui-radio v-model="config.logLevel" value="warn">Warn</ui-radio>
-        <ui-radio v-model="config.logLevel" value="silly">Debug</ui-radio>
+        <ui-radio v-model="logLevel" value="warn">Warn</ui-radio>
+        <ui-radio v-model="logLevel" value="silly">Debug</ui-radio>
       </div>
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Hardware Acceleration') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4 flex">
-        <ui-radio v-model="config.hardwareAcceleration" :value="true" class="mr-4">{{ t('Enabled') }}</ui-radio>
-        <ui-radio v-model="config.hardwareAcceleration" :value="false" class="mr-4">{{ t('Disabled (render on CPU)') }}</ui-radio>
+        <ui-radio v-model="hardwareAcceleration" :value="true" class="mr-4">{{ t('Enabled') }}</ui-radio>
+        <ui-radio v-model="hardwareAcceleration" :value="false" class="mr-4">{{ t('Disabled (render on CPU)') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('PoE window title') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4">
-        <input v-model="config.windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
+        <input v-model="windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
       </div>
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Restore clipboard') }}</div>
       <div class="mb-4 flex">
-        <ui-radio v-model="config.restoreClipboard" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
-        <ui-radio v-model="config.restoreClipboard" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
+        <ui-radio v-model="restoreClipboard" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="restoreClipboard" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Config } from '@/web/Config'
+import { configProp, configModelValue } from './utils'
 
 export default defineComponent({
-  setup () {
+  props: configProp(),
+  setup (props) {
     const { t } = useI18n()
 
     return {
       t,
-      config: computed(() => Config.store)
+      logLevel: configModelValue(() => props.config, 'logLevel'),
+      hardwareAcceleration: configModelValue(() => props.config, 'hardwareAcceleration'),
+      windowTitle: configModelValue(() => props.config, 'windowTitle'),
+      restoreClipboard: configModelValue(() => props.config, 'restoreClipboard')
     }
   }
 })
