@@ -86,7 +86,7 @@ import { useI18n } from 'vue-i18n'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
 import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { ParsedItem } from '@/parser'
 import { StatFilter } from './interfaces'
 
@@ -193,7 +193,7 @@ export default defineComponent({
       inputMin,
       inputMax,
       sliderValue,
-      fontSize: computed(() => Config.store.fontSize),
+      fontSize: computed(() => AppConfig().fontSize),
       inputFocus,
       toggleFilter
     }

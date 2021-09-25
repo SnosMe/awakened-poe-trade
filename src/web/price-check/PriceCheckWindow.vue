@@ -71,7 +71,7 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 import { IpcPriceCheck, PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { chaosExaRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { parseClipboard, ParsedItem } from '@/parser'
 import RelatedItems from './related-items/RelatedItems.vue'
 import RateLimiterState from './trade/RateLimiterState.vue'
@@ -132,7 +132,7 @@ export default defineComponent({
     const title = computed(() => league.value || 'Awakened PoE Trade')
     const exaltedCost = computed(() => (chaosExaRate.value) ? Math.round(chaosExaRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
-    const overlayKey = computed(() => Config.store.overlayKey)
+    const overlayKey = computed(() => AppConfig().overlayKey)
     const showCheckPos = computed(() => wm.active && props.config.showCursor)
     const poeUiWidth = computed(() => wm.poeUiWidth)
     const isLeagueSelected = computed(() => Boolean(league.value))

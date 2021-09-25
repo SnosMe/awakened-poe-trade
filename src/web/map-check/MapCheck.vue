@@ -25,7 +25,7 @@ import MapStatButton from './MapStatButton.vue'
 import { prepareMapStats } from './prepare-map-stats'
 import { TRANSLATED_ITEM_NAME_BY_REF, MAP_IMGS, STAT_BY_MATCH_STR } from '@/assets/data'
 import { WidgetManager, ItemCheckWidget } from '../overlay/interfaces'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   components: {
@@ -41,9 +41,7 @@ export default defineComponent({
     const wm = inject<WidgetManager>('wm')!
     const { t } = useI18n()
 
-    const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
-    })
+    const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!)
 
     const mapName = computed(() => {
       const { item } = props

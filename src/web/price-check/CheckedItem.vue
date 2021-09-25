@@ -56,11 +56,12 @@ import PricePrediction from './price-prediction/PricePrediction.vue'
 import StackValue from './stack-value/StackValue.vue'
 import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { ItemFilters, StatFilter } from './filters/interfaces'
 import { ModifierType } from '@/parser/modifiers'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PriceCheckWidget } from '../overlay/interfaces'
+import { selected as selectedLeague } from '@/web/background/Leagues'
 
 let _showSupportLinksCounter = 0
 
@@ -86,9 +87,7 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const widgetCfg = computed(() => {
-      return Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
-    })
+    const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
     const itemFilters = ref<ItemFilters>(null!)
     const itemStats = ref<StatFilter[]>(null!)
@@ -103,11 +102,18 @@ export default defineComponent({
     const filtersBlock = ref<ComponentPublicInstance<{}, { showHidden: Ref<boolean> }>>(null!)
 
     watch(() => props.item, (item) => {
-      itemFilters.value = createFilters(item)
-      itemStats.value = initUiModFilters(item)
+      itemFilters.value = createFilters(item, {
+        league: selectedLeague.value!,
+        chaosPriceThreshold: widget.value.chaosPriceThreshold,
+        collapseListings: widget.value.collapseListings,
+        activateStockFilter: widget.value.activateStockFilter
+      })
+      itemStats.value = initUiModFilters(item, {
+        searchStatRange: widget.value.searchStatRange
+      })
 
-      if ((!props.advancedCheck && !widgetCfg.value.smartInitialSearch) ||
-          (props.advancedCheck && !widgetCfg.value.lockedInitialSearch)) {
+      if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||
+          (props.advancedCheck && !widget.value.lockedInitialSearch)) {
         interactedOnce.value = false
       } else {
         interactedOnce.value = Boolean(
@@ -155,7 +161,7 @@ export default defineComponent({
     }, { deep: false })
 
     const showPredictedPrice = computed(() => {
-      if (Config.store.language !== 'en') return false
+      if (AppConfig().language !== 'en') return false
 
       return props.item.rarity === ItemRarity.Rare &&
         props.item.category !== ItemCategory.Map &&

@@ -32,7 +32,7 @@ import WidgetDelveGrid from './WidgetDelveGrid'
 import WidgetSettings from '../settings/SettingsWindow'
 import { registerOtherServices } from '../other-services'
 import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
-import { Config } from '@/web/Config'
+import { AppConfig, saveConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
 import '@/web/background/AutoUpdates'
@@ -90,7 +90,7 @@ export default {
     active (active) {
       if (!active) {
         this.$nextTick(() => {
-          Config.saveConfig()
+          saveConfig()
         })
       }
     }
@@ -139,10 +139,10 @@ export default {
   computed: {
     widgets: {
       get () {
-        return Config.store.widgets
+        return AppConfig().widgets
       },
       set (value) {
-        Config.store.widgets = value
+        AppConfig().widgets = value
       }
     },
     visibilityState () {
@@ -180,11 +180,11 @@ export default {
       if (!this.active) return undefined
 
       if (this.topmostOrExclusiveWidget.wmZorder === 'exclusive') {
-        if (!Config.store.overlayBackgroundExclusive) {
+        if (!AppConfig().overlayBackgroundExclusive) {
           return undefined
         }
       }
-      return Config.store.overlayBackground
+      return AppConfig().overlayBackground
     }
   },
   methods: {
@@ -255,7 +255,7 @@ export default {
       })
     },
     handleBackgroundClick () {
-      if (Config.store.overlayBackgroundClose) {
+      if (AppConfig().overlayBackgroundClose) {
         MainProcess.closeOverlay()
       }
     }

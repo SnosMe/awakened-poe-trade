@@ -64,7 +64,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { configProp, configModelValue, getWidgetConfig } from './utils'
+import { configProp, configModelValue, findWidget } from './utils'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
@@ -83,9 +83,9 @@ export default defineComponent({
       itemCheckKey: configModelValue(() => props.config, 'itemCheckKey'),
       wikiKey: configModelValue(() => props.config, 'wikiKey'),
       overlayKey: configModelValue(() => props.config, 'overlayKey'),
-      priceCheckHotkeyHold: configModelValue(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),
-      priceCheckHotkey: configModelValue(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!, 'hotkey'),
-      priceCheckHotkeyLocked: configModelValue(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!, 'hotkeyLocked')
+      priceCheckHotkeyHold: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),
+      priceCheckHotkey: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkey'),
+      priceCheckHotkeyLocked: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyLocked')
     }
   }
 })

@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { CLIENTLOG_STRINGS as _$, ITEM_NAME_REF_BY_TRANSLATED, TRADE_TAGS } from '@/assets/data'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 
 const enum MessageChannel {
   SYSTEM = 'system',
@@ -64,7 +64,7 @@ export function handleLine (line: string) {
   entry.body = match.groups!.body
 
   if (entry.сhannel === MessageChannel.WHISPER_FROM) {
-    if ((match = entry.body.match(TRADE_WHISPER[Config.store.language]))) {
+    if ((match = entry.body.match(TRADE_WHISPER[AppConfig().language]))) {
       const [pAmount, pTag] = [
         match.groups!.price.split(' ', 1).toString(),
         match.groups!.price.split(' ').slice(1).join(' ')
@@ -98,7 +98,7 @@ export function handleLine (line: string) {
       }
 
       // console.log(entry)
-    } else if ((match = entry.body.match(TRADE_BULK_WHISPER[Config.store.language]))) {
+    } else if ((match = entry.body.match(TRADE_BULK_WHISPER[AppConfig().language]))) {
       const [pAmount, pName] = [
         match.groups!.price.split(' ', 1).toString(),
         match.groups!.price.split(' ').slice(1).join(' ')

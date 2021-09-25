@@ -6,8 +6,6 @@ import { ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
-import { getWidgetConfig } from '@/web/Config'
-import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -16,7 +14,12 @@ export interface FiltersCreationContext {
   modifiers: ParsedItem['modifiers']
 }
 
-export function initUiModFilters (item: ParsedItem): StatFilter[] {
+export function initUiModFilters (
+  item: ParsedItem,
+  opts: {
+    searchStatRange: number
+  }
+): StatFilter[] {
   if (
     (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) ||
     item.category === ItemCategory.MavenInvitation
@@ -24,12 +27,10 @@ export function initUiModFilters (item: ParsedItem): StatFilter[] {
     return []
   }
 
-  const { searchStatRange } = getWidgetConfig<PriceCheckWidget>('price-check')!
-
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
-    searchInRange: searchStatRange,
+    searchInRange: opts.searchStatRange,
     modifiers: item.modifiers.map(mod => {
       if (mod.type === ModifierType.Fractured && mod.trade.ids[ModifierType.Explicit]) {
         return { ...mod, type: ModifierType.Explicit }

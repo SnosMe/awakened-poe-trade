@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { getGlobalConfig, updateConfig, saveConfig } from '@/web/Config'
+import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
 import type { Config } from '@/ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
@@ -60,7 +60,7 @@ export default defineComponent({
     const configClone = shallowRef<Config | null>(null)
     watch(() => props.config.wmWants, (wmWants) => {
       if (wmWants === 'show') {
-        configClone.value = reactive(JSON.parse(JSON.stringify(getGlobalConfig())))
+        configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
       } else {
         configClone.value = null
       }

@@ -29,12 +29,12 @@ import { useI18n } from 'vue-i18n'
 import { Widget, WidgetManager } from '../overlay/interfaces'
 import * as Leagues from '@/web/background/Leagues'
 import { updateInfo } from '@/web/background/AutoUpdates'
-import { getWidgetConfig } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   setup () {
     const wm = inject<WidgetManager>('wm')!
-    const widget = computed(() => getWidgetConfig<Widget>('price-check')!)
+    const widget = computed(() => AppConfig<Widget>('price-check')!)
 
     const { t } = useI18n()
 

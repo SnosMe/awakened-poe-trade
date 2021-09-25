@@ -35,7 +35,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { configProp, getWidgetConfig } from './utils'
+import { configProp, findWidget } from './utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { STATS, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
@@ -57,7 +57,7 @@ export default defineComponent({
     const search = ref('')
     const onlySelected = ref(true)
 
-    const widget = computed(() => getWidgetConfig<ItemCheckWidget>('item-check', props.config)!)
+    const widget = computed(() => findWidget<ItemCheckWidget>('item-check', props.config)!)
 
     const selectedMatchers = computed(() => {
       return new Set(

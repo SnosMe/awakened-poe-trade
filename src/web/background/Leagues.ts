@@ -1,5 +1,5 @@
 import { computed, ref } from 'vue'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 
 export const isLoading = ref(false)
 export const error = ref<string | null>(null)
@@ -8,11 +8,11 @@ export const tradeLeagues = ref<Array<{ id: string }>>([])
 export const selected = computed<string | undefined>({
   get () {
     return (tradeLeagues.value.length)
-      ? Config.store.leagueId
+      ? AppConfig().leagueId
       : undefined
   },
   set (id) {
-    Config.store.leagueId = id
+    AppConfig().leagueId = id
   }
 })
 

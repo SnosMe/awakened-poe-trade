@@ -1,6 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { parseClipboard, ItemRarity } from '@/parser'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 const ENDPOINT_BY_LANG = {
@@ -18,5 +18,5 @@ export function openWiki (clipboard: string) {
 
   pageName = TRANSLATED_ITEM_NAME_BY_REF.get(pageName) || pageName
 
-  MainProcess.openSystemBrowser(`https://${ENDPOINT_BY_LANG[Config.store.language]}/${pageName}`)
+  MainProcess.openSystemBrowser(`https://${ENDPOINT_BY_LANG[AppConfig().language]}/${pageName}`)
 }

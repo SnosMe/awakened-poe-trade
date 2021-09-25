@@ -115,7 +115,7 @@ import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
 import { selected as defaultLeague, tradeLeagues } from '../../background/Leagues'
-import { Config, getWidgetConfig } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -185,11 +185,11 @@ function useTradeApi () {
       // first two req are parallel, then sequential on demand
       {
         const r1 = (_searchResult.result.length > 0)
-          ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10), { accountName: Config.store.accountName })
+          ? requestResults(_searchResult.id, _searchResult.result.slice(0, 10), { accountName: AppConfig().accountName })
             .then(results => { _fetchResults.push(...results) })
           : Promise.resolve()
         const r2 = (_searchResult.result.length > 10)
-          ? requestResults(_searchResult.id, _searchResult.result.slice(10, 20), { accountName: Config.store.accountName })
+          ? requestResults(_searchResult.id, _searchResult.result.slice(10, 20), { accountName: AppConfig().accountName })
             .then(results => r1
               .then(() => { _fetchResults.push(...results) }))
           : Promise.resolve()
@@ -207,7 +207,7 @@ function useTradeApi () {
           fetched < _searchResult.total &&
           fetched < API_FETCH_LIMIT
         ) {
-          await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10), { accountName: Config.store.accountName })
+          await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10), { accountName: AppConfig().accountName })
             .then(results => { _fetchResults.push(...results) })
           fetched += 10
           return fetchMore()
@@ -239,7 +239,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const widget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
+    const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
     watch(() => props.item, (item) => {
       slowdown.reset(item)

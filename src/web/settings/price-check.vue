@@ -98,14 +98,14 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { configModelValue, configProp, getWidgetConfig } from './utils'
+import { configModelValue, configProp, findWidget } from './utils'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import * as Leagues from '../background/Leagues'
 
 export default defineComponent({
   props: configProp(),
   setup (props) {
-    const configWidget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check', props.config)!)
+    const configWidget = computed(() => findWidget<PriceCheckWidget>('price-check', props.config)!)
 
     const { t } = useI18n()
 

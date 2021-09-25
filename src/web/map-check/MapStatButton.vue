@@ -26,7 +26,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import ItemModifierText from '../ui/ItemModifierText.vue'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { PreparedStat } from './prepare-map-stats'
 import { ItemCheckWidget } from '../overlay/interfaces'
 
@@ -39,9 +39,7 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const config = computed(() => {
-      return Config.store.widgets.find(widget => widget.wmType === 'item-check') as ItemCheckWidget
-    })
+    const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!)
     const entry = computed(() => {
       return config.value.maps.selectedStats.find(_ => _.matcher === props.stat.matcher)
     })

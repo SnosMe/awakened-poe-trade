@@ -1,23 +1,26 @@
-import { ItemFilters } from './interfaces'
+import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { VEILED_STAT } from './veiled'
-import { selected as league } from '@/web/background/Leagues'
 import { tradeTag } from '../trade/common'
-import { Config } from '@/web/Config'
-import { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
-export function createFilters (item: ParsedItem): ItemFilters {
-  const cfg = Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget
-
+export function createFilters (
+  item: ParsedItem,
+  opts: {
+    league: string
+    chaosPriceThreshold: number
+    collapseListings: 'app' | 'api'
+    activateStockFilter: boolean
+  }
+): ItemFilters {
   const filters: ItemFilters = {
     trade: {
       offline: false,
       listed: undefined,
-      league: league.value!,
-      chaosPriceThreshold: cfg.chaosPriceThreshold,
-      collapseListings: cfg.collapseListings
+      league: opts.league,
+      chaosPriceThreshold: opts.chaosPriceThreshold,
+      collapseListings: opts.collapseListings
     }
   }
 
@@ -33,7 +36,7 @@ export function createFilters (item: ParsedItem): ItemFilters {
   if (item.stackSize || tradeTag(item)) {
     filters.stackSize = {
       value: item.stackSize?.value || 1,
-      disabled: !(item.stackSize && item.stackSize.value > 1 && cfg.activateStockFilter)
+      disabled: !(item.stackSize && item.stackSize.value > 1 && opts.activateStockFilter)
     }
   }
   if (item.category === ItemCategory.MavenInvitation) {

@@ -20,12 +20,12 @@
 import { computed, defineComponent } from 'vue'
 import { RATE_LIMIT_RULES } from './common'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
-import { getWidgetConfig } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   inheritAttrs: false,
   setup () {
-    const widget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
+    const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
     const limits = computed(() => {
       const LIMITS = [

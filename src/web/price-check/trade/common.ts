@@ -1,10 +1,10 @@
-import { ItemFilters, StatFilter } from '../filters/interfaces'
+import { shallowReactive } from 'vue'
+import type { ItemFilters, StatFilter } from '../filters/interfaces'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
+import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
-import { PriceCheckWidget } from '@/web/overlay/interfaces'
-import { shallowReactive } from 'vue'
 
 export interface Account {
   name: string
@@ -69,7 +69,7 @@ const ENDPOINT_BY_LANG = {
 }
 
 export function getTradeEndpoint (): string {
-  return ENDPOINT_BY_LANG[Config.store.language]
+  return ENDPOINT_BY_LANG[AppConfig().language]
 }
 
 export const RATE_LIMIT_RULES = {
@@ -98,7 +98,7 @@ export function adjustRateLimits (clientLimits: Set<RateLimiter>, headers: Heade
 
 function _adjustRateLimits (clientLimits: Set<RateLimiter>, limitStr: string, stateStr: string): void { /* eslint-disable no-console */
   const DEBUG = false
-  const DESYNC_FIX = (Config.store.widgets.find(w => w.wmType === 'price-check') as PriceCheckWidget).apiLatencySeconds
+  const DESYNC_FIX = AppConfig<PriceCheckWidget>('price-check')!.apiLatencySeconds
 
   const limitRuleState = stateStr
     .split(',')

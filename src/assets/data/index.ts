@@ -3,7 +3,7 @@
 import type { TranslationDict } from '@/assets/data/en/client_strings'
 import type { ClientLogDict } from '@/assets/data/en/client_log'
 import type { BaseType, DropEntry, Stat, StatMatcher, UniqueItem } from './interfaces'
-import { Config } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { nameToDetailsId } from '@/web/price-check/trends/getDetailsId'
 
 export * from './interfaces'
@@ -31,17 +31,19 @@ export let MAP_IMGS: Map<string, { img: string }>
 export const ITEM_DROP = new Map<string, DropEntry>()
 
 ;(function initData () { /* eslint-disable no-lone-blocks */
-  {
-    CLIENT_STRINGS = (require(`./${Config.store.language}/client_strings`).default)
-    CLIENTLOG_STRINGS = (require(`./${Config.store.language}/client_log`).default)
+  const { language } = AppConfig()
 
-    const itemNames: Array<[string, string]> = (require(`./${Config.store.language}/item-names.json`))
+  {
+    CLIENT_STRINGS = (require(`./${language}/client_strings`).default)
+    CLIENTLOG_STRINGS = (require(`./${language}/client_log`).default)
+
+    const itemNames: Array<[string, string]> = (require(`./${language}/item-names.json`))
     TRANSLATED_ITEM_NAME_BY_REF = new Map(itemNames)
     ITEM_NAME_REF_BY_TRANSLATED = new Map(itemNames.map(_ => [_[1], _[0]]))
   }
 
   {
-    STATS = (require(`./${Config.store.language}/stats.json`))
+    STATS = (require(`./${language}/stats.json`))
     for (const entry of STATS) {
       for (const condition of entry.stat.matchers) {
         STAT_BY_MATCH_STR.set(condition.string, { matcher: condition, stat: entry })

@@ -1,22 +1,30 @@
-import { reactive } from 'vue'
+import { reactive as deepReactive, shallowRef } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import type { Config as ConfigType } from '@/ipc/types'
+import type { Config } from '@/ipc/types'
 import type { Widget } from './overlay/interfaces'
 
-export function getWidgetConfig<T extends Widget> (type: string) {
-  return Config.store.widgets.find(w => w.wmType === type) as T | undefined
-}
+const _config = shallowRef<Config | null>(null)
 
-class ConfigService {
-  store: ConfigType
-
-  constructor () {
-    this.store = reactive(MainProcess.getConfig())
+export function AppConfig (): Config
+export function AppConfig<T extends Widget> (type: string): T | undefined
+export function AppConfig (type?: string) {
+  if (!_config.value) {
+    _config.value = deepReactive(MainProcess.getConfig())
   }
 
-  saveConfig () {
-    MainProcess.saveConfig(JSON.parse(JSON.stringify(this.store)))
+  if (!type) {
+    return _config.value
+  } else {
+    return _config.value.widgets.find(w => w.wmType === type)
   }
 }
 
-export const Config = new ConfigService()
+export function updateConfig (updates: Config) {
+  if (_config.value) {
+    _config.value = deepReactive(JSON.parse(JSON.stringify(updates)))
+  }
+}
+
+export function saveConfig () {
+  MainProcess.saveConfig(JSON.parse(JSON.stringify(AppConfig())))
+}

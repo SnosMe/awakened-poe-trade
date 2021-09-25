@@ -95,7 +95,7 @@ import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pat
 import { tradeTag, getTradeEndpoint } from './common'
 import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { selected as league } from '../../background/Leagues'
-import { Config, getWidgetConfig } from '@/web/Config'
+import { AppConfig } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
@@ -147,7 +147,7 @@ function useBulkApi () {
         ;(async function () {
           try {
             requested = true
-            items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20), { accountName: Config.store.accountName })
+            items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20), { accountName: AppConfig().accountName })
           } catch (err) {
             error.value = (err as Error).message
           }
@@ -174,7 +174,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const widget = computed(() => getWidgetConfig<PriceCheckWidget>('price-check')!)
+    const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
     const selectedCurr = ref<'chaos' | 'exa'>('chaos')
