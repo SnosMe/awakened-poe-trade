@@ -1,6 +1,7 @@
 import path from 'path'
-import { app, Tray, Menu, shell, nativeImage } from 'electron'
+import { app, Tray, Menu, shell, nativeImage, dialog } from 'electron'
 import { checkForUpdates, UpdateState } from './updates'
+import { config } from './config'
 
 let tray: Tray
 
@@ -15,6 +16,13 @@ export function createTray () {
 
 export function rebuildTrayMenu () {
   const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Settings',
+      click: () => {
+        dialog.showMessageBox({ title: 'Settings', message: `Open Path of Exile and press "${config.get('overlayKey')}". Click on the button with gear icon there.` })
+      }
+    },
+    { type: 'separator' },
     {
       label: `APT v${app.getVersion()}`,
       click: () => {
