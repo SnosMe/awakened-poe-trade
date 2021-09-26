@@ -2,7 +2,7 @@ import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
+import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation, PERMANENT_LEAGUES } from './common'
 import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
@@ -79,7 +79,7 @@ interface FilterRange { min?: number, max?: number }
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
-    status: { option: 'online' | 'any' }
+    status: { option: 'online' | 'onlineleague' | 'any' }
     name?: string | { discriminator: string, option: string }
     type?: string | { discriminator: string, option: string }
     stats: Array<{
@@ -222,7 +222,11 @@ export interface PricingResult {
 export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
   const body: TradeRequest = {
     query: {
-      status: { option: filters.trade.offline ? 'any' : 'online' },
+      status: {
+        option: filters.trade.offline
+          ? 'any'
+          : (PERMANENT_LEAGUES.includes(filters.trade.league) ? 'onlineleague' : 'online')
+      },
       stats: [
         { type: 'and', filters: [] }
       ],

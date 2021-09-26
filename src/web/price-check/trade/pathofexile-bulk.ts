@@ -1,6 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { selected as league } from '@/web/background/Leagues'
-import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
+import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation, PERMANENT_LEAGUES } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -8,7 +8,7 @@ import { Cache } from './Cache'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
-    status: { option: 'online' }
+    status: { option: 'online' | 'onlineleague' }
     have: string[]
     want: string[]
     minimum?: number
@@ -141,7 +141,9 @@ export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): P
       exchange: {
         have: [have],
         want: [tradeTag(item)!],
-        status: { option: 'online' },
+        status: {
+          option: (PERMANENT_LEAGUES.includes(filters.trade.league) ? 'onlineleague' : 'online')
+        },
         minimum: (filters.stackSize && !filters.stackSize.disabled) ? filters.stackSize.value : undefined
         // fulfillable: null
       }

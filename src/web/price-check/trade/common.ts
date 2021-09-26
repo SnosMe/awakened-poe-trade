@@ -6,6 +6,8 @@ import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 
+export const PERMANENT_LEAGUES = ['Standard', 'Hardcore']
+
 export interface Account {
   name: string
   lastCharacterName: string
