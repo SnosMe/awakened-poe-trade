@@ -19,7 +19,7 @@ export function rebuildTrayMenu () {
     {
       label: 'Settings',
       click: () => {
-        dialog.showMessageBox({ title: 'Settings', message: `Open Path of Exile and press "${config.get('overlayKey')}". Click on the button with gear icon there.` })
+        dialog.showMessageBox({ title: 'Settings', message: `Open Path of Exile and press "${config.get('overlayKey')}". Click on the button with cog icon there.` })
       }
     },
     { type: 'separator' },
@@ -36,7 +36,7 @@ export function rebuildTrayMenu () {
       click: checkForUpdates
     },
     {
-      label: 'Open data folder',
+      label: 'Open logs folder',
       click: () => {
         shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
       }
