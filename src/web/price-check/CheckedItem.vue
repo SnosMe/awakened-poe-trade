@@ -173,7 +173,6 @@ export default defineComponent({
     }, { deep: false })
 
     const showPredictedPrice = computed(() => {
-      console.log(AppConfig().isPrivateLeague)
       if (AppConfig().language !== 'en') return false
       if (AppConfig().isPrivateLeague) return false
       return props.item.rarity === ItemRarity.Rare &&
