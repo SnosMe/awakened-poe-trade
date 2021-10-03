@@ -21,7 +21,6 @@ export function configModelValue<ObjectT extends object, KeyT extends keyof Obje
       return getObj()[key]
     },
     set (value) {
-      console.log(`Setting ${key} to ${value}`)
       getObj()[key] = value
     }
   })
