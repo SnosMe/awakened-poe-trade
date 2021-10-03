@@ -3,7 +3,9 @@ import { AppConfig } from '@/web/Config'
 
 export const isLoading = ref(false)
 export const error = ref<string | null>(null)
+export const privateError = ref<string | null>(null)
 export const tradeLeagues = ref<Array<{ id: string }>>([])
+export const privateLeague = ref<{ id: string }| null>(null)
 
 export const selected = computed<string | undefined>({
   get () {
@@ -38,6 +40,26 @@ export async function load () {
     }
   } catch (e) {
     error.value = (e as Error).message
+  } finally {
+    isLoading.value = false
+  }
+}
+
+export async function loadPrivateLeague (privateLeagueName?: string) {
+  isLoading.value = true
+  if (!privateLeagueName) {
+    throw new Error('No Private League Name ?')
+  }
+  // TODO Validate Private League Name?
+  try {
+    const response = await fetch(`https://www.pathofexile.com/api/leagues/${privateLeagueName}`, {
+      credentials: 'include'
+    })
+    if (!response.ok) throw new Error(JSON.stringify(response.headers))
+    privateLeague.value = await response.json()
+  } catch (e) {
+    privateError.value = (e as Error).message
+    console.error(privateError.value)
   } finally {
     isLoading.value = false
   }

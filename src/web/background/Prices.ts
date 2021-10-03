@@ -2,6 +2,7 @@ import { ref, watch } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { selected as selectedLeague } from './Leagues'
 import { nameToDetailsId } from '../price-check/trends/getDetailsId'
+import { AppConfig } from '@/web/Config'
 
 interface NinjaCurrencyInfo { /* eslint-disable camelcase */
   currencyTypeName: string
@@ -103,6 +104,7 @@ const priceQueue = [
 
 async function load (force: boolean = false) {
   if (!selectedLeague.value) return
+  if (selectedLeague.value === AppConfig().privateLeagueName) return false
   const leagueAtStartOfLoad = selectedLeague.value
 
   for (const dataType of priceQueue) {

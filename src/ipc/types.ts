@@ -3,6 +3,7 @@ import { ItemCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
 export interface Config {
   configVersion: number
   leagueId?: string
+  privateLeagueName?: string
   wikiKey: string | null
   craftOfExileKey: string | null
   overlayKey: string
