@@ -1313,16 +1313,6 @@
   },
   {
     "stat": {
-      "ref": "#% chance in Heists for Orbs of Scouring  to drop as Orbs of Annulment instead",
-      "matchers": [
-        {"string": "#% chance in Heists for Orbs of Scouring  to drop as Orbs of Annulment instead"},
-        {"string": "In Heists Orbs of Scouring drop as Orbs of Annulment instead", "value": 100}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2845459668"]}}
-  },
-  {
-    "stat": {
       "ref": "#% chance in Heists for Orbs of Scouring  to drop as Orbs of Regret instead",
       "matchers": [
         {"string": "#% chance in Heists for Orbs of Scouring  to drop as Orbs of Regret instead"},
@@ -1330,6 +1320,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1824085933"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Heists for Orbs of Scouring to drop as Orbs of Annulment instead",
+      "matchers": [
+        {"string": "#% chance in Heists for Orbs of Scouring to drop as Orbs of Annulment instead"},
+        {"string": "In Heists Orbs of Scouring drop as Orbs of Annulment instead", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2845459668"]}}
   },
   {
     "stat": {
@@ -1714,7 +1714,13 @@
         {"string": "Avoid Fire Damage from Hits", "value": 100}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_42242677"], "implicit": ["implicit.stat_42242677"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_42242677"],
+        "implicit": ["implicit.stat_42242677"],
+        "fractured": ["fractured.stat_42242677"]
+      }
+    }
   },
   {
     "stat": {
@@ -2264,6 +2270,14 @@
   {
     "stat": {"ref": "#% chance to double Stun Duration", "matchers": [{"string": "#% chance to double Stun Duration"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2622251413"], "implicit": ["implicit.stat_2622251413"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance to Duplicate Blight Chests in Areas",
+      "dp": true,
+      "matchers": [{"string": "#% chance to Duplicate Blight Chests in Areas"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2101592167"]}}
   },
   {
     "stat": {
@@ -14898,7 +14912,7 @@
       "ref": "#% increased Ward",
       "matchers": [{"string": "#% increased Ward"}, {"string": "#% reduced Ward", "negate": true}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_830161081"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_830161081"], "fractured": ["fractured.stat_830161081"]}}
   },
   {
     "stat": {
@@ -16890,7 +16904,7 @@
       "ref": "+# Life gained for each Ignited Enemy hit by your Attacks",
       "matchers": [{"string": "# Life gained for each Ignited Enemy hit by your Attacks"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_120895749"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_120895749"], "fractured": ["fractured.stat_120895749"]}}
   },
   {
     "stat": {"ref": "+# Life gained on Kill", "matchers": [{"string": "# Life gained on Kill"}]},
@@ -24906,6 +24920,13 @@
   },
   {
     "stat": {
+      "ref": "Areas contain a Blight Encounter",
+      "matchers": [{"string": "Area contains a Blight Encounter"}, {"string": "Areas contain a Blight Encounter"}]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_2459443694"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas contain a mirror of Delirium",
       "matchers": [{"string": "Areas contain a mirror of Delirium"}]
     },
@@ -24922,18 +24943,6 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1070816711"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas contain an additional Blight Encounter",
-      "matchers": [
-        {"string": "Area contains # additional Blight Encounters"},
-        {"string": "Areas contain # additional Blight Encounters"},
-        {"string": "Area contains an additional Blight Encounter", "value": 1},
-        {"string": "Areas contain an additional Blight Encounter", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_2459443694"]}}
   },
   {
     "stat": {
@@ -26013,14 +26022,6 @@
   },
   {
     "stat": {
-      "ref": "Blight Chests in Areas have #% chance to Duplicate contained Items",
-      "dp": true,
-      "matchers": [{"string": "Blight Chests in Areas have #% chance to Duplicate contained Items"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2101592167"]}}
-  },
-  {
-    "stat": {
       "ref": "Blight Chests in Areas have #% increased chance to contain Blighted Maps or Oils",
       "matchers": [{"string": "Blight Chests in Areas have #% increased chance to contain Blighted Maps or Oils"}]
     },
@@ -26930,7 +26931,7 @@
         {"string": "Chill Enemy for # seconds when Hit, reducing their Action Speed by 30%"}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2459809121"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2459809121"], "fractured": ["fractured.stat_2459809121"]}}
   },
   {
     "stat": {
@@ -27447,7 +27448,7 @@
       "ref": "Critical Strike Chance is increased by Lightning Resistance",
       "matchers": [{"string": "Critical Strike Chance is increased by Lightning Resistance"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2155513095"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2155513095"], "fractured": ["fractured.stat_2155513095"]}}
   },
   {
     "stat": {"ref": "Critical Strikes deal no Damage", "matchers": [{"string": "Critical Strikes deal no Damage"}]},
@@ -29393,6 +29394,13 @@
   },
   {
     "stat": {
+      "ref": "Flask effect is removed when Hit by a Player",
+      "matchers": [{"string": "Flask effect is removed when Hit by a Player"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_3399320226"]}}
+  },
+  {
+    "stat": {
       "ref": "Flask Effect is removed when Ward Breaks",
       "matchers": [{"string": "Flask Effect is removed when Ward Breaks"}]
     },
@@ -29674,6 +29682,13 @@
   },
   {
     "stat": {
+      "ref": "Gain # Endurance Charge on use",
+      "matchers": [{"string": "Gain # Endurance Charge on use"}, {"string": "Gain # Endurance Charges on use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3986030307"]}}
+  },
+  {
+    "stat": {
       "ref": "Gain # Energy Shield for each Enemy you Hit which is affected by a Spider's Web",
       "matchers": [{"string": "Gain # Energy Shield for each Enemy you Hit which is affected by a Spider's Web"}]
     },
@@ -29688,6 +29703,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3841984913"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain # Frenzy Charge on use",
+      "matchers": [{"string": "Gain # Frenzy Charge on use"}, {"string": "Gain # Frenzy Charges on use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3230795453"]}}
   },
   {
     "stat": {"ref": "Gain # Life on Culling Strike", "matchers": [{"string": "Gain # Life on Culling Strike"}]},
@@ -29714,6 +29736,13 @@
   {
     "stat": {"ref": "Gain # Mana per Grand Spectrum", "matchers": [{"string": "Gain # Mana per Grand Spectrum"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2592799343"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain # Power Charge on use",
+      "matchers": [{"string": "Gain # Power Charge on use"}, {"string": "Gain # Power Charges on use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2697049014"]}}
   },
   {
     "stat": {
@@ -37295,7 +37324,7 @@
   {
     "stat": {
       "ref": "Recover #% of Life on use",
-      "matchers": [{"string": "Recover #% of Life on use"}, {"string": "Recover Full Life on use", "value": 100}]
+      "matchers": [{"string": "Recover #% of Life on use"}, {"string": "Recover Full Life on use", "value": 101}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2629106530"]}}
   },
@@ -38074,8 +38103,8 @@
   },
   {
     "stat": {
-      "ref": "Reused at the end of the Flask effect",
-      "matchers": [{"string": "Reused at the end of the Flask effect"}]
+      "ref": "Reused at the end of this Flask's effect",
+      "matchers": [{"string": "Reused at the end of this Flask's effect"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1932727102"]}}
   },
@@ -39118,6 +39147,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Awakened Elemental Focus",
+      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Elemental Focus"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2111661233"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Fire Penetration",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Fire Penetration"}]
     },
@@ -39181,6 +39217,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Awakened Unbound Ailments",
+      "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Unbound Ailments"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2116002108"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Vicious Projectiles",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Awakened Vicious Projectiles"}]
     },
@@ -39234,6 +39277,13 @@
       "matchers": [{"string": "Socketed Gems are supported by Level # Blind"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2223640518"], "implicit": ["implicit.stat_2223640518"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems are Supported by Level # Block Chance Reduction",
+      "matchers": [{"string": "Socketed Gems are Supported by Level # Block Chance Reduction"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1966051190"]}}
   },
   {
     "stat": {
@@ -39453,7 +39503,7 @@
       "ref": "Socketed Gems are Supported by Level # Earthbreaker",
       "matchers": [{"string": "Socketed Gems are Supported by Level # Earthbreaker"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_139"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_139", "explicit.stat_940684417"]}}
   },
   {
     "stat": {
@@ -44699,36 +44749,6 @@
       "matchers": [{"string": "You count as on Low Life while you are Cursed with Vulnerability"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2304300603"]}}
-  },
-  {
-    "stat": {
-      "ref": "You gain a Frenzy Charge on use",
-      "matchers": [
-        {"string": "You gain # Frenzy Charges on use"},
-        {"string": "You gain a Frenzy Charge on use", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3230795453"]}}
-  },
-  {
-    "stat": {
-      "ref": "You gain a Power Charge on use",
-      "matchers": [
-        {"string": "You gain # Power Charges on use"},
-        {"string": "You gain a Power Charge on use", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2697049014"]}}
-  },
-  {
-    "stat": {
-      "ref": "You gain an Endurance Charge on use",
-      "matchers": [
-        {"string": "You gain # Endurance Charges on use"},
-        {"string": "You gain an Endurance Charge on use", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3986030307"]}}
   },
   {
     "stat": {

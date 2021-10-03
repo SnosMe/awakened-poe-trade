@@ -1368,16 +1368,6 @@
   },
   {
     "stat": {
-      "ref": "#% chance in Heists for Orbs of Scouring  to drop as Orbs of Annulment instead",
-      "matchers": [
-        {"string": "Выпадающие во время краж сферы очищения имеют #% шанс стать сферами отмены"},
-        {"string": "Выпадающие во время краж сферы очищения становятся сферами отмены", "value": 100}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2845459668"]}}
-  },
-  {
-    "stat": {
       "ref": "#% chance in Heists for Orbs of Scouring  to drop as Orbs of Regret instead",
       "matchers": [
         {"string": "Выпадающие во время краж сферы очищения имеют #% шанс стать сферами раскаяния"},
@@ -1385,6 +1375,16 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1824085933"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance in Heists for Orbs of Scouring to drop as Orbs of Annulment instead",
+      "matchers": [
+        {"string": "Выпадающие во время краж сферы очищения имеют #% шанс стать сферами отмены"},
+        {"string": "Выпадающие во время краж сферы очищения становятся сферами отмены", "value": 100}
+      ]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2845459668"]}}
   },
   {
     "stat": {
@@ -1755,7 +1755,13 @@
         {"string": "Избегает получения урона от огня от ударов", "value": 100}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_42242677"], "implicit": ["implicit.stat_42242677"]}}
+    "trade": {
+      "ids": {
+        "explicit": ["explicit.stat_42242677"],
+        "implicit": ["implicit.stat_42242677"],
+        "fractured": ["fractured.stat_42242677"]
+      }
+    }
   },
   {
     "stat": {
@@ -2313,6 +2319,14 @@
       "matchers": [{"string": "#% шанс удвоить длительность оглушения"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2622251413"], "implicit": ["implicit.stat_2622251413"]}}
+  },
+  {
+    "stat": {
+      "ref": "#% chance to Duplicate Blight Chests in Areas",
+      "dp": true,
+      "matchers": [{"string": "#% шанс удвоить сундуки Скверны в областях"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2101592167"]}}
   },
   {
     "stat": {
@@ -15303,7 +15317,7 @@
       "ref": "#% increased Ward",
       "matchers": [{"string": "#% увеличение барьера"}, {"string": "#% уменьшение барьера", "negate": true}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_830161081"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_830161081"], "fractured": ["fractured.stat_830161081"]}}
   },
   {
     "stat": {
@@ -17365,7 +17379,7 @@
       "ref": "+# Life gained for each Ignited Enemy hit by your Attacks",
       "matchers": [{"string": "# здоровья за каждого задетого вашими атаками подожжённого врага"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_120895749"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_120895749"], "fractured": ["fractured.stat_120895749"]}}
   },
   {
     "stat": {"ref": "+# Life gained on Kill", "matchers": [{"string": "# здоровья за убийство"}]},
@@ -19277,26 +19291,26 @@
     "trade": {"ids": {"explicit": ["explicit.stat_652638686"]}}
   },
   {
-    "stat": {"ref": "+#% Monster Chaos Resistance", "matchers": [{"string": "#% к сопротивлению хаосу монстров"}]},
+    "stat": {"ref": "+#% Monster Chaos Resistance", "matchers": [{"string": "#% к сопротивлению монстров хаосу"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_365540634"], "fractured": ["fractured.stat_365540634"]}}
   },
   {
-    "stat": {"ref": "+#% Monster Cold Resistance", "matchers": [{"string": "#% к сопротивлению холоду монстров"}]},
+    "stat": {"ref": "+#% Monster Cold Resistance", "matchers": [{"string": "#% к сопротивлению монстров холоду"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_1430380429"]}}
   },
   {
     "stat": {
       "ref": "+#% Monster Elemental Resistance",
-      "matchers": [{"string": "#% к сопротивлению стихиям монстров"}]
+      "matchers": [{"string": "#% к сопротивлению монстров стихиям"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_1054098949"], "fractured": ["fractured.stat_1054098949"]}}
   },
   {
-    "stat": {"ref": "+#% Monster Fire Resistance", "matchers": [{"string": "#% к сопротивлению огню монстров"}]},
+    "stat": {"ref": "+#% Monster Fire Resistance", "matchers": [{"string": "#% к сопротивлению монстров огню"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2319127046"]}}
   },
   {
-    "stat": {"ref": "+#% Monster Lightning Resistance", "matchers": [{"string": "#% к сопротивлению молнии монстров"}]},
+    "stat": {"ref": "+#% Monster Lightning Resistance", "matchers": [{"string": "#% к сопротивлению монстров молнии"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_162742068"]}}
   },
   {
@@ -19312,7 +19326,7 @@
   {
     "stat": {
       "ref": "+#% Monster Physical Damage Reduction",
-      "matchers": [{"string": "#% к сопротивлению физическому урону монстров"}]
+      "matchers": [{"string": "#% к сопротивлению монстров физическому урону"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_839186746"], "fractured": ["fractured.stat_839186746"]}}
   },
@@ -19486,14 +19500,14 @@
   {
     "stat": {
       "ref": "+#% to Ancestral Protector Totem Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению стихиям Защитника предков"}]
+      "matchers": [{"string": "#% к сопротивлению Защитника предков стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1220207954"]}}
   },
   {
     "stat": {
       "ref": "+#% to Animated Guardian Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям Аниматрона"}]
+      "matchers": [{"string": "#% к сопротивлению Аниматрона стихиям"}]
     },
     "trade": {"ids": {"implicit": ["implicit.stat_2094281311"], "enchant": ["enchant.stat_2094281311"]}}
   },
@@ -19521,7 +19535,7 @@
   {
     "stat": {
       "ref": "+#% to Chaos Golem Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям голема хаоса"}]
+      "matchers": [{"string": "#% к сопротивлению голема хаоса стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1946386823"]}}
   },
@@ -20161,14 +20175,14 @@
   {
     "stat": {
       "ref": "+#% to Ice Golem Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям голема льда"}]
+      "matchers": [{"string": "#% к сопротивлению голема льда стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2520825974"]}}
   },
   {
     "stat": {
       "ref": "+#% to increased Flame Golem Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям голема огня"}]
+      "matchers": [{"string": "#% к сопротивлению голема огня стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1298820272"]}}
   },
@@ -20188,7 +20202,7 @@
   {
     "stat": {
       "ref": "+#% to Lightning Golem Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям голема молнии"}]
+      "matchers": [{"string": "#% к сопротивлению голема молнии стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_2338484156"]}}
   },
@@ -20517,7 +20531,7 @@
   {
     "stat": {
       "ref": "+#% to Raised Spectre Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям призванных призраков"}]
+      "matchers": [{"string": "#% к сопротивлению сотворённых призраков стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_27640220"]}}
   },
@@ -20532,7 +20546,7 @@
   {
     "stat": {
       "ref": "+#% to Stone Golem Elemental Resistances",
-      "matchers": [{"string": "#% к сопротивлению всем стихиям каменного голема"}]
+      "matchers": [{"string": "#% к сопротивлению каменного голема стихиям"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1601558321"]}}
   },
@@ -25598,6 +25612,13 @@
   },
   {
     "stat": {
+      "ref": "Areas contain a Blight Encounter",
+      "matchers": [{"string": "В области можно встретить схватку со Скверной"}]
+    },
+    "trade": {"ids": {"enchant": ["enchant.stat_2459443694"]}}
+  },
+  {
+    "stat": {
       "ref": "Areas contain a mirror of Delirium",
       "matchers": [
         {"string": "В области можно найти зеркало Делириума"},
@@ -25617,18 +25638,6 @@
       ]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1070816711"]}}
-  },
-  {
-    "stat": {
-      "ref": "Areas contain an additional Blight Encounter",
-      "matchers": [
-        {"string": "В области можно встретить дополнительных схваток со Скверной: #"},
-        {"string": "В областях можно встретить дополнительных схваток со Скверной: #"},
-        {"string": "В области можно встретить дополнительную схватку со Скверной", "value": 1},
-        {"string": "В областях можно встретить дополнительную схватку со Скверной", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"enchant": ["enchant.stat_2459443694"]}}
   },
   {
     "stat": {
@@ -26726,14 +26735,6 @@
   },
   {
     "stat": {
-      "ref": "Blight Chests in Areas have #% chance to Duplicate contained Items",
-      "dp": true,
-      "matchers": [{"string": "Сундуки Скверны с #% шансом могут продублировать содержащиеся предметы"}]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2101592167"]}}
-  },
-  {
-    "stat": {
       "ref": "Blight Chests in Areas have #% increased chance to contain Blighted Maps or Oils",
       "matchers": [
         {"string": "Сундуки Скверны с увеличенным на #% шансом могут содержать в себе заражённые карты или масла"}
@@ -27674,7 +27675,7 @@
         {"string": "При получении удара охлаждает врага на # секунду, снижая скорость его действий на 30%"}
       ]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2459809121"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2459809121"], "fractured": ["fractured.stat_2459809121"]}}
   },
   {
     "stat": {
@@ -28210,7 +28211,7 @@
       "ref": "Critical Strike Chance is increased by Lightning Resistance",
       "matchers": [{"string": "Шанс критического удара повышается от сопротивления молнии"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.stat_2155513095"]}}
+    "trade": {"ids": {"explicit": ["explicit.stat_2155513095"], "fractured": ["fractured.stat_2155513095"]}}
   },
   {
     "stat": {"ref": "Critical Strikes deal no Damage", "matchers": [{"string": "Критические удары не наносят урона"}]},
@@ -30217,6 +30218,13 @@
   },
   {
     "stat": {
+      "ref": "Flask effect is removed when Hit by a Player",
+      "matchers": [{"string": "Эффект флакона прекращается при получении удара от игрока"}]
+    },
+    "trade": {"ids": {"implicit": ["implicit.stat_3399320226"]}}
+  },
+  {
+    "stat": {
       "ref": "Flask Effect is removed when Ward Breaks",
       "matchers": [{"string": "Эффект флакона снимается при разрушении барьера"}]
     },
@@ -30494,6 +30502,13 @@
   },
   {
     "stat": {
+      "ref": "Gain # Endurance Charge on use",
+      "matchers": [{"string": "Gain # Endurance Charge on use"}, {"string": "Gain # Endurance Charges on use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3986030307"]}}
+  },
+  {
+    "stat": {
       "ref": "Gain # Energy Shield for each Enemy you Hit which is affected by a Spider's Web",
       "matchers": [
         {"string": "Дарует # энергетического щита за каждый удар по врагу, на которого действует Паучья паутина"}
@@ -30510,6 +30525,13 @@
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_3841984913"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain # Frenzy Charge on use",
+      "matchers": [{"string": "Gain # Frenzy Charge on use"}, {"string": "Gain # Frenzy Charges on use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_3230795453"]}}
   },
   {
     "stat": {"ref": "Gain # Life on Culling Strike", "matchers": [{"string": "Дает # здоровья при добивании"}]},
@@ -30536,6 +30558,13 @@
   {
     "stat": {"ref": "Gain # Mana per Grand Spectrum", "matchers": [{"string": "Дарует # маны за Великий образ"}]},
     "trade": {"ids": {"explicit": ["explicit.stat_2592799343"]}}
+  },
+  {
+    "stat": {
+      "ref": "Gain # Power Charge on use",
+      "matchers": [{"string": "Gain # Power Charge on use"}, {"string": "Gain # Power Charges on use"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2697049014"]}}
   },
   {
     "stat": {
@@ -38456,7 +38485,7 @@
       "ref": "Recover #% of Life on use",
       "matchers": [
         {"string": "Восстанавливает #% здоровья при использовании"},
-        {"string": "Полностью восстанавливает здоровье при использовании", "value": 100}
+        {"string": "Полностью восстанавливает здоровье при использовании", "value": 101}
       ]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2629106530"]}}
@@ -39258,8 +39287,8 @@
   },
   {
     "stat": {
-      "ref": "Reused at the end of the Flask effect",
-      "matchers": [{"string": "Используется повторно по окончании действия эффекта флакона"}]
+      "ref": "Reused at the end of this Flask's effect",
+      "matchers": [{"string": "Reused at the end of this Flask's effect"}]
     },
     "trade": {"ids": {"enchant": ["enchant.stat_1932727102"]}}
   },
@@ -40346,6 +40375,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Awakened Elemental Focus",
+      "matchers": [{"string": "Размещённые камни усилены пробуждённой Концентрацией стихий # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2111661233"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Fire Penetration",
       "matchers": [{"string": "Размещённые камни усилены пробуждённым Пронизывающим жаром # уровня"}]
     },
@@ -40409,6 +40445,13 @@
   },
   {
     "stat": {
+      "ref": "Socketed Gems are Supported by Level # Awakened Unbound Ailments",
+      "matchers": [{"string": "Размещённые камни усилены пробуждёнными Безграничными состояниями # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_2116002108"]}}
+  },
+  {
+    "stat": {
       "ref": "Socketed Gems are Supported by Level # Awakened Vicious Projectiles",
       "matchers": [{"string": "Размещённые камни усилены пробуждёнными Яростными снарядами # уровня"}]
     },
@@ -40462,6 +40505,13 @@
       "matchers": [{"string": "Размещённые камни усилены Ослеплением # уровня"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2223640518"], "implicit": ["implicit.stat_2223640518"]}}
+  },
+  {
+    "stat": {
+      "ref": "Socketed Gems are Supported by Level # Block Chance Reduction",
+      "matchers": [{"string": "Размещённые камни усилены Затруднением блока # уровня"}]
+    },
+    "trade": {"ids": {"explicit": ["explicit.stat_1966051190"]}}
   },
   {
     "stat": {
@@ -40678,7 +40728,7 @@
       "ref": "Socketed Gems are Supported by Level # Earthbreaker",
       "matchers": [{"string": "Размещенные камни усилены Камнеломом # уровня"}]
     },
-    "trade": {"ids": {"explicit": ["explicit.indexable_support_139"]}}
+    "trade": {"ids": {"explicit": ["explicit.indexable_support_139", "explicit.stat_940684417"]}}
   },
   {
     "stat": {
@@ -46170,36 +46220,6 @@
       "matchers": [{"string": "Пока вы прокляты Беззащитностью, ваше здоровье считается за малое количество здоровья"}]
     },
     "trade": {"ids": {"explicit": ["explicit.stat_2304300603"]}}
-  },
-  {
-    "stat": {
-      "ref": "You gain a Frenzy Charge on use",
-      "matchers": [
-        {"string": "Зарядов ярости при использовании: #"},
-        {"string": "Заряд ярости при использовании", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3230795453"]}}
-  },
-  {
-    "stat": {
-      "ref": "You gain a Power Charge on use",
-      "matchers": [
-        {"string": "Зарядов энергии при использовании: #"},
-        {"string": "Заряд энергии при использовании", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_2697049014"]}}
-  },
-  {
-    "stat": {
-      "ref": "You gain an Endurance Charge on use",
-      "matchers": [
-        {"string": "Зарядов выносливости при использовании: #"},
-        {"string": "Заряд выносливости при использовании", "value": 1}
-      ]
-    },
-    "trade": {"ids": {"explicit": ["explicit.stat_3986030307"]}}
   },
   {
     "stat": {
