@@ -13,7 +13,7 @@
          class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
          style="grid-template-columns: repeat(2, min-content);">
       <div v-for="league of leagues.trade.value" :key="league.id">
-        <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
+        <ui-radio v-model="leagueId" @click="isPrivateLeague = false" :value="league.id">{{ league.id }}</ui-radio>
       </div>
     </div>
     <div v-else-if="leagues.error.value || true" class="mb-4">
@@ -27,7 +27,7 @@
           {{ t(leagues.error.value ? 'Retry' : 'Refresh Private League') }}
         </button>
         <div v-if="leagues.private.value">
-          <ui-radio v-model="leagueId" :value="leagues.private.value.id">{{ leagues.private.value.id }}</ui-radio>
+          <ui-radio v-model="leagueId" @click="isPrivateLeague = true" :value="leagues.private.value.id">{{ leagues.private.value.id }}</ui-radio>
         </div>
       </template>
     </div>
@@ -139,6 +139,7 @@ export default defineComponent({
       t,
       leagueId: configModelValue(() => props.config, 'leagueId'),
       privateLeagueName,
+      isPrivateLeague: configModelValue(() => props.config, 'isPrivateLeague'),
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),

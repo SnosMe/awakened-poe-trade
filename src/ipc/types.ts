@@ -4,6 +4,7 @@ export interface Config {
   configVersion: number
   leagueId?: string
   privateLeagueName?: string
+  isPrivateLeague?: boolean
   wikiKey: string | null
   craftOfExileKey: string | null
   overlayKey: string

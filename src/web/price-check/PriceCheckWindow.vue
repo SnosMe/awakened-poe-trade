@@ -11,7 +11,7 @@
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
-          <ui-popover v-if="exaltedCost" trigger="click" boundary="#price-window">
+          <ui-popover v-if="exaltedCost && !isPrivateLeague" trigger="click" boundary="#price-window">
             <template #target>
               <button class="titlebar-btn">
                 <i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}
@@ -167,6 +167,7 @@ export default defineComponent({
 
     return {
       t,
+      isPrivateLeague: AppConfig().isPrivateLeague,
       clickPosition,
       isBrowserShown,
       poeUiWidth,
