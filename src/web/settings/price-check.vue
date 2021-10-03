@@ -200,7 +200,7 @@ export default defineComponent({
 {
   "ru": {
     "Account name": "Имя учетной записи",
-    "Private League Name": "TODO MAKE THIS RUSSIAN",
+    "Private League Name": "Название частной лиги",
     "Show seller": "Показывать продавца",
     "Last character name": "Имя последнего персонажа",
     "Your items will be highlighted even if this setting is off": "Ваши предметы будут подсвечены, даже если эта настройка выключена",
