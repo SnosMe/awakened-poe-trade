@@ -10,7 +10,7 @@ import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './s
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, sumStatsFromMods } from './advanced-mod-desc'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, modsToLegacy } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -676,7 +676,7 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
  * @deprecated
  */
 function transformToLegacyModifiers (item: ParsedItem) {
-  item.modifiers = sumStatsFromMods(item.newMods)
+  item.modifiers = modsToLegacy(item.newMods)
 }
 
 export function removeLinesEnding (

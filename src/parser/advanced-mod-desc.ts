@@ -1,8 +1,8 @@
-import { CLIENT_STRINGS as _$ } from '@/assets/data'
+import { CLIENT_STRINGS as _$, StatMatcher } from '@/assets/data'
 import * as C from './constants'
 import { percentRoll } from '@/web/price-check/filters/util'
 import type { ParsedStat } from './stat-translations'
-import { LegacyItemModifier, ModifierType } from './modifiers'
+import { LegacyItemModifier, ModifierType, sumStatsByModType } from './modifiers'
 import { removeLinesEnding } from './Parser'
 
 export interface ParsedModifier {
@@ -123,7 +123,7 @@ export function parseModType (lines: string[]): { modType: ModifierType, lines: 
 // this is the most common formatter
 const DIV_BY_100 = 2
 
-function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | null {
+export function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | null {
   const { rollIncr } = mod
   const { roll } = parsed
 
@@ -144,91 +144,49 @@ function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | null {
   }
 }
 
-export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemModifier[] {
+/**
+ * @deprecated
+ */
+export function modsToLegacy (mods: readonly ParsedModifier[]): LegacyItemModifier[] {
   const out: LegacyItemModifier[] = []
 
-  const merged: ParsedStat[] = []
-
-  mods = mods.map(mod => ({
-    ...mod,
-    stats: mod.stats.map(stat =>
-      applyIncr(mod.info, stat) ?? stat
-    )
-  }))
-
-  for (const modA of mods) {
-    for (const statA of modA.stats) {
-      if (merged.includes(statA)) {
-        continue
-      }
-
-      const dbStatA = statA.stat
-
-      const toMerge = mods
-        .reduce((filtered, modB) => {
-          if (modB.info.type === modA.info.type) {
-            const targetStat = modB.stats.find(statB =>
-              dbStatA.matchers.some(matcher => matcher.string === statB.translation.string)
-            )
-            if (targetStat) {
-              filtered.push({
-                info: modB.info,
-                stat: targetStat
-              })
-            }
-          }
-          return filtered
-        }, [] as Array<{ info: ModifierInfo, stat: ParsedStat }>)
-
-      if (toMerge.length === 1) {
-        // TODO: for some stats reduced is better (m.negate === true)
-        const translation = (statA.roll && Math.sign(statA.roll.min) !== Math.sign(statA.roll.max))
-          ? dbStatA.matchers.find(m => m.value == null && !m.negate)!
-          : statA.translation
-
-        out.push({
-          stat: dbStatA,
-          string: translation.string,
-          type: modA.info.type,
-          corrupted: (modA.info.generation === 'corrupted') || undefined,
-          negate: translation.negate,
-          value: statA.roll?.value,
-          bounds: statA.roll && { min: statA.roll.min, max: statA.roll.max }
-        })
-      } else {
-        const roll = toMerge.reduce((sum, { stat }) => {
-          sum.value += stat.roll!.value
-          sum.min += stat.roll!.min
-          sum.max += stat.roll!.max
+  for (const merged of sumStatsByModType(mods)) {
+    const roll = (merged.sources.length === 1)
+      ? (merged.sources[0].contributes)
+      : (merged.sources.reduce((sum, { contributes }) => {
+          sum.value += contributes!.value
+          sum.min += contributes!.min
+          sum.max += contributes!.max
           return sum
-        }, { value: 0, min: 0, max: 0 })
+        }, { value: 0, min: 0, max: 0 }))
 
-        const sameSign = (Math.sign(roll.min) === Math.sign(roll.max))
+    const sameSign = roll && (Math.sign(roll.min) === Math.sign(roll.max))
 
-        // TODO: for some stats reduced is better (m.negate === true)
-        const translation =
-          (dbStatA.matchers.find(m => m.value === roll.value)) ??
-          ((sameSign && statA.translation.value == null)
-            ? statA.translation
-            : dbStatA.matchers.find(m => m.value == null && !m.negate)) ??
-          ({ string: `Report bug if you see this text (${statA.translation.string})` })
-
-        out.push({
-          stat: dbStatA,
-          string: translation.string,
-          type: modA.info.type,
-          corrupted: (modA.info.generation === 'corrupted') || undefined,
-          negate: translation.negate,
-          value: roll.value,
-          bounds: {
-            min: roll.min,
-            max: roll.max
-          }
-        })
-      }
-
-      merged.push(...toMerge.map(mod => mod.stat))
+    let translation: Pick<StatMatcher, 'string' | 'negate'>
+    if (!roll) {
+      translation = merged.sources[0].stat.translation
+    } else {
+      translation =
+        (merged.stat.matchers.find(m => m.value === roll.value)) ??
+        ((sameSign && merged.sources[0].stat.translation.value == null)
+          ? merged.sources[0].stat.translation
+          // TODO: for some stats reduced is better (m.negate === true)
+          : merged.stat.matchers.find(m => m.value == null && !m.negate)) ??
+        ({ string: `Report bug if you see this text (${merged.stat.ref})` })
     }
+
+    out.push({
+      stat: merged.stat,
+      string: translation.string,
+      type: merged.type,
+      corrupted: merged.sources.some(s => s.modifier.info.generation === 'corrupted') || undefined,
+      negate: translation.negate,
+      value: roll?.value,
+      bounds: roll && {
+        min: roll.min,
+        max: roll.max
+      }
+    })
   }
 
   return out
