@@ -36,5 +36,11 @@ module.exports = {
       .use('i18n')
       .loader('@intlify/vue-i18n-loader')
       .end()
+
+    config.module
+      .rule('raw')
+      .resourceQuery(/raw/)
+      .type('asset/source')
+      .end()
   }
 }

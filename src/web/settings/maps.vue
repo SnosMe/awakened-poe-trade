@@ -37,18 +37,9 @@ import { computed, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, findWidget } from './utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
-import { STATS, STAT_BY_MATCH_STR } from '@/assets/data'
+import { STAT_BY_REF, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
 import VirtualScroll from '../ui/VirtualScroll.vue'
-
-const statList = computed(() => {
-  return STATS.flatMap(({ stat }) =>
-    stat.matchers.map(c => ({
-      matchStr: c.string,
-      searchStr: c.string.toLowerCase()
-    }))
-  )
-})
 
 export default defineComponent({
   components: { MapsStatEntry, VirtualScroll },
@@ -58,6 +49,20 @@ export default defineComponent({
     const onlySelected = ref(true)
 
     const widget = computed(() => findWidget<ItemCheckWidget>('item-check', props.config)!)
+
+    const statList = computed(() => {
+      const out: Array<{ matchStr: string, searchStr: string }> = []
+      for (const statRef of STAT_BY_REF.keys()) {
+        const { stat } = STAT_BY_REF.get(statRef)!
+        for (const c of stat.matchers) {
+          out.push({
+            matchStr: c.string,
+            searchStr: c.string.toLowerCase()
+          })
+        }
+      }
+      return out
+    })
 
     const selectedMatchers = computed(() => {
       return new Set(

@@ -1,4 +1,4 @@
-import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from '@/assets/data'
+import { CLIENT_STRINGS as _$ } from '@/assets/data'
 import * as C from './constants'
 import { percentRoll } from '@/web/price-check/filters/util'
 import type { ParsedStat } from './stat-translations'
@@ -123,16 +123,17 @@ export function parseModType (lines: string[]): { modType: ModifierType, lines: 
 // this is the most common formatter
 const DIV_BY_100 = 2
 
-function applyIncr (mod: ModifierInfo, stat: ParsedStat): ParsedStat | null {
+function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | null {
   const { rollIncr } = mod
-  const { roll } = stat
+  const { roll } = parsed
 
   if (!rollIncr || !roll || roll.unscalable) {
     return null
   }
 
   return {
-    translation: stat.translation,
+    stat: parsed.stat,
+    translation: parsed.translation,
     roll: {
       unscalable: roll.unscalable,
       dp: roll.dp,
@@ -161,7 +162,7 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
         continue
       }
 
-      const dbStatA = STAT_BY_MATCH_STR.get(statA.translation.string)!.stat
+      const dbStatA = statA.stat
 
       const toMerge = mods
         .reduce((filtered, modB) => {

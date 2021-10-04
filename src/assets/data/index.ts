@@ -13,10 +13,47 @@ export let CLIENTLOG_STRINGS: ClientLogDict
 export let ITEM_NAME_REF_BY_TRANSLATED: Map<string | undefined, string>
 export let TRANSLATED_ITEM_NAME_BY_REF: Map<string | undefined, string>
 
-export let STATS: Stat[]
+class MapNDJSON<K, V> {
+  #data: string
+  #mapFn?: (key: K, value: unknown) => V
+  #map = new Map<K, number>()
 
-export const STAT_BY_MATCH_STR = new Map<string, { matcher: StatMatcher, stat: Stat }>()
-export const STAT_BY_REF = new Map<string, Stat>()
+  constructor (
+    data: string,
+    mapFn?: (key: K, value: unknown) => V
+  ) {
+    this.#data = data
+    this.#mapFn = mapFn
+  }
+
+  set (key: K, line: number): void {
+    this.#map.set(key, line)
+  }
+
+  get (key: K): V | undefined {
+    const start = this.#map.get(key)
+    if (start !== undefined) {
+      const end = this.#data.indexOf('\n', start)
+      const entry = JSON.parse(this.#data.slice(start, end))
+      if (this.#mapFn) {
+        return this.#mapFn(key, entry)
+      } else {
+        return entry
+      }
+    }
+  }
+
+  has (key: K): boolean {
+    return this.#map.has(key)
+  }
+
+  keys () {
+    return this.#map.keys()
+  }
+}
+
+export let STAT_BY_MATCH_STR: MapNDJSON<string, { matcher: StatMatcher, stat: Stat }>
+export let STAT_BY_REF: MapNDJSON<string, Stat>
 
 export let BASE_TYPES: Map<string, BaseType>
 
@@ -43,15 +80,31 @@ export const ITEM_DROP = new Map<string, DropEntry>()
   }
 
   {
-    STATS = (require(`./${language}/stats.json`))
-    for (const entry of STATS) {
+    const STATS_RAW: string = (require(`./${language}/stats.ndjson?raw`))
+    STAT_BY_REF = new MapNDJSON(STATS_RAW)
+    STAT_BY_MATCH_STR = new MapNDJSON(STATS_RAW, (matchStr, stat) => {
+      return {
+        stat: (stat as Stat),
+        matcher: (stat as Stat).stat.matchers.find(m =>
+          m.string === matchStr ||
+          m.advanced === matchStr)!
+      }
+    })
+
+    let start = 0
+    while (start !== STATS_RAW.length) {
+      const end = STATS_RAW.indexOf('\n', start)
+      const entry: Stat = JSON.parse(STATS_RAW.slice(start, end))
+
       for (const condition of entry.stat.matchers) {
-        STAT_BY_MATCH_STR.set(condition.string, { matcher: condition, stat: entry })
+        STAT_BY_MATCH_STR.set(condition.string, start)
         if (condition.advanced) {
-          STAT_BY_MATCH_STR.set(condition.advanced, { matcher: condition, stat: entry })
+          STAT_BY_MATCH_STR.set(condition.advanced, start)
         }
       }
-      STAT_BY_REF.set(entry.stat.ref, entry)
+      STAT_BY_REF.set(entry.stat.ref, start)
+
+      start = end + 1
     }
   }
 

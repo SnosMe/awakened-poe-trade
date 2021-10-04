@@ -1,10 +1,12 @@
-import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR, StatMatcher } from '@/assets/data'
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from '@/assets/data'
+import type { StatMatcher, Stat } from '@/assets/data'
 import type { ModifierType } from './modifiers'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
 
 export interface ParsedStat {
+  readonly stat: Stat
   readonly translation: StatMatcher
   roll?: {
     unscalable: boolean
@@ -150,6 +152,7 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
     }
 
     return {
+      stat: found.stat,
       translation: found.matcher,
       roll: combination.values.length
         ? {
