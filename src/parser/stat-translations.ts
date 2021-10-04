@@ -157,7 +157,7 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       roll: combination.values.length
         ? {
             unscalable: stat.unscalable,
-            dp: found.stat.stat.dp || combination.values.some(stat => stat.decimal),
+            dp: found.stat.dp || combination.values.some(stat => stat.decimal),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
             min: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.min ?? stat.roll)),
             max: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.max ?? stat.roll))

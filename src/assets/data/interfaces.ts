@@ -8,11 +8,9 @@ export interface StatMatcher {
 }
 
 export interface Stat {
-  stat: {
-    ref: string
-    dp?: true
-    matchers: StatMatcher[]
-  }
+  ref: string
+  dp?: true
+  matchers: StatMatcher[]
   trade: {
     inverted?: true
     option?: 'num' | 'str'

@@ -168,7 +168,7 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
         .reduce((filtered, modB) => {
           if (modB.info.type === modA.info.type) {
             const targetStat = modB.stats.find(statB =>
-              dbStatA.stat.matchers.some(matcher => matcher.string === statB.translation.string)
+              dbStatA.matchers.some(matcher => matcher.string === statB.translation.string)
             )
             if (targetStat) {
               filtered.push({
@@ -183,12 +183,11 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
       if (toMerge.length === 1) {
         // TODO: for some stats reduced is better (m.negate === true)
         const translation = (statA.roll && Math.sign(statA.roll.min) !== Math.sign(statA.roll.max))
-          ? dbStatA.stat.matchers.find(m => m.value == null && !m.negate)!
+          ? dbStatA.matchers.find(m => m.value == null && !m.negate)!
           : statA.translation
 
         out.push({
-          stat: dbStatA.stat,
-          trade: dbStatA.trade,
+          stat: dbStatA,
           string: translation.string,
           type: modA.info.type,
           corrupted: (modA.info.generation === 'corrupted') || undefined,
@@ -208,15 +207,14 @@ export function sumStatsFromMods (mods: readonly ParsedModifier[]): LegacyItemMo
 
         // TODO: for some stats reduced is better (m.negate === true)
         const translation =
-          (dbStatA.stat.matchers.find(m => m.value === roll.value)) ??
+          (dbStatA.matchers.find(m => m.value === roll.value)) ??
           ((sameSign && statA.translation.value == null)
             ? statA.translation
-            : dbStatA.stat.matchers.find(m => m.value == null && !m.negate)) ??
+            : dbStatA.matchers.find(m => m.value == null && !m.negate)) ??
           ({ string: `Report bug if you see this text (${statA.translation.string})` })
 
         out.push({
-          stat: dbStatA.stat,
-          trade: dbStatA.trade,
+          stat: dbStatA,
           string: translation.string,
           type: modA.info.type,
           corrupted: (modA.info.generation === 'corrupted') || undefined,

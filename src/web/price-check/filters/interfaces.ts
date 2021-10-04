@@ -83,7 +83,7 @@ export interface StatFilter {
   readonly text: string
   readonly roll?: number
   readonly type: string
-  readonly option?: ItemModifier['trade']['option']
+  readonly option?: ItemModifier['stat']['trade']['option']
   readonly defaultMin?: number
   readonly defaultMax?: number
   readonly boundMin?: number

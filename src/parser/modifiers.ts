@@ -11,8 +11,8 @@ export enum ModifierType {
 }
 
 export interface LegacyItemModifier extends
-  Stat,
   Pick<StatMatcher, 'string' | 'negate'> {
+  stat: Pick<Stat, 'ref' | 'trade' | 'dp' /* TODO remove `dp` */>
   value?: number
   bounds?: {
     min: number

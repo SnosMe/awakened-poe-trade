@@ -53,7 +53,7 @@ export default defineComponent({
     const statList = computed(() => {
       const out: Array<{ matchStr: string, searchStr: string }> = []
       for (const statRef of STAT_BY_REF.keys()) {
-        const { stat } = STAT_BY_REF.get(statRef)!
+        const stat = STAT_BY_REF.get(statRef)!
         for (const c of stat.matchers) {
           out.push({
             matchStr: c.string,

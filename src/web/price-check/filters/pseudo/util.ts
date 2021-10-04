@@ -6,8 +6,8 @@ export function pseudoStat (ref: string) {
   const stat = STAT_BY_REF.get(ref)!
 
   return {
-    text: (stat.stat.matchers.find(m => !m.negate) || stat.stat.matchers[0]).string,
-    statRef: stat.stat.ref,
+    text: (stat.matchers.find(m => !m.negate) || stat.matchers[0]).string,
+    statRef: stat.ref,
     type: 'pseudo',
     tradeId: stat.trade.ids[ModifierType.Pseudo]
   }

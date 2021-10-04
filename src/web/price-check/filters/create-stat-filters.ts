@@ -32,7 +32,7 @@ export function initUiModFilters (
     filters: [],
     searchInRange: opts.searchStatRange,
     modifiers: item.modifiers.map(mod => {
-      if (mod.type === ModifierType.Fractured && mod.trade.ids[ModifierType.Explicit]) {
+      if (mod.type === ModifierType.Fractured && mod.stat.trade.ids[ModifierType.Explicit]) {
         return { ...mod, type: ModifierType.Explicit }
       } else {
         return mod
@@ -93,18 +93,18 @@ export function itemModToFilter (
   opts: { percent: number }
 ) {
   const filter: Writeable<StatFilter> = {
-    tradeId: mod.trade.ids[mod.type],
+    tradeId: mod.stat.trade.ids[mod.type],
     statRef: mod.stat.ref,
     text: mod.string,
     type: mod.type,
-    option: mod.trade.option,
+    option: mod.stat.trade.option,
     corrupted: mod.corrupted,
     roll: undefined,
     disabled: true,
     min: undefined,
     max: undefined
   }
-  if (mod.trade.option) {
+  if (mod.stat.trade.option) {
     filter.roll = mod.value!
     return filter
   }
@@ -176,7 +176,7 @@ function filterAdjustmentForNegate (
     }
   }
 
-  if (mod.trade.inverted) {
+  if (mod.stat.trade.inverted) {
     filter.invert = !filter.invert
   }
 }
@@ -258,7 +258,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   for (const filter of ctx.filters) {
     if (filter.type === ModifierType.Fractured) {
       const mod = ctx.item.modifiers.find(mod => mod.stat.ref === filter.statRef)!
-      if (mod.trade.ids[ModifierType.Explicit]) {
+      if (mod.stat.trade.ids[ModifierType.Explicit]) {
         // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'Select only if price-checking as base item for crafting'
       }

@@ -85,7 +85,7 @@ export const ITEM_DROP = new Map<string, DropEntry>()
     STAT_BY_MATCH_STR = new MapNDJSON(STATS_RAW, (matchStr, stat) => {
       return {
         stat: (stat as Stat),
-        matcher: (stat as Stat).stat.matchers.find(m =>
+        matcher: (stat as Stat).matchers.find(m =>
           m.string === matchStr ||
           m.advanced === matchStr)!
       }
@@ -94,15 +94,15 @@ export const ITEM_DROP = new Map<string, DropEntry>()
     let start = 0
     while (start !== STATS_RAW.length) {
       const end = STATS_RAW.indexOf('\n', start)
-      const entry: Stat = JSON.parse(STATS_RAW.slice(start, end))
+      const stat: Stat = JSON.parse(STATS_RAW.slice(start, end))
 
-      for (const condition of entry.stat.matchers) {
+      for (const condition of stat.matchers) {
         STAT_BY_MATCH_STR.set(condition.string, start)
         if (condition.advanced) {
           STAT_BY_MATCH_STR.set(condition.advanced, start)
         }
       }
-      STAT_BY_REF.set(entry.stat.ref, start)
+      STAT_BY_REF.set(stat.ref, start)
 
       start = end + 1
     }

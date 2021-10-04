@@ -86,7 +86,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
   for (const attr of attrs) {
     if (attr.pseudo.text === STR_ATTR.pseudo.text) {
       ctx.modifiers.push({
-        ...STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
+        stat: STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
         string: 'N/A',
         type: ModifierType.Explicit,
         value: attr.total * (5 / 10)
@@ -94,7 +94,7 @@ export function filterAttributes (ctx: FiltersCreationContext) {
     }
     if (attr.pseudo.text === INT_ATTR.pseudo.text) {
       ctx.modifiers.push({
-        ...STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
+        stat: STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
         string: 'N/A',
         type: ModifierType.Explicit,
         value: attr.total * (5 / 10)
