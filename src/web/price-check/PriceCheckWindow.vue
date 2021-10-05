@@ -11,7 +11,7 @@
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" :title="title">
         <div class="flex">
-          <ui-popover v-if="exaltedCost && !isPrivateLeague" trigger="click" boundary="#price-window">
+          <ui-popover v-if="exaltedCost && !isPrivateLeague.value" trigger="click" boundary="#price-window">
             <template #target>
               <button class="titlebar-btn">
                 <i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}
@@ -70,7 +70,7 @@ import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { IpcPriceCheck, PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
 import { chaosExaRate } from '../background/Prices'
-import { selected as league } from '@/web/background/Leagues'
+import { selected as league, isPrivateLeague } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { parseClipboard, ParsedItem } from '@/parser'
 import RelatedItems from './related-items/RelatedItems.vue'
@@ -167,7 +167,7 @@ export default defineComponent({
 
     return {
       t,
-      isPrivateLeague: AppConfig().isPrivateLeague,
+      isPrivateLeague,
       clickPosition,
       isBrowserShown,
       poeUiWidth,

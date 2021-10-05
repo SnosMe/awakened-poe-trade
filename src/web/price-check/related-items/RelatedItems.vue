@@ -8,7 +8,7 @@
           <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
-          <template v-if="!isPrivateLeague">
+          <template v-if="!isPrivateLeague.value">
             <i class="fas fa-arrow-right text-gray-600 px-2"></i>
             <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{
                 price(item).val
@@ -24,7 +24,7 @@
           <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
-          <template v-if="!isPrivateLeague">
+          <template v-if="!isPrivateLeague.value">
             <i class="fas fa-arrow-right text-gray-600 px-2"></i>
             <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{
                 price(item).val
@@ -43,7 +43,7 @@ import { ITEM_DROP } from '@/assets/data'
 import { displayRounding, ItemInfo, findByDetailsId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
-import { AppConfig } from '@/web/Config'
+import { isPrivateLeague } from '@/web/background/Leagues'
 
 export default defineComponent({
   props: {
@@ -73,7 +73,7 @@ export default defineComponent({
     })
 
     return {
-      isPrivateLeague: AppConfig().isPrivateLeague,
+      isPrivateLeague,
       result,
       detailsId,
       price (item: ItemInfo) {

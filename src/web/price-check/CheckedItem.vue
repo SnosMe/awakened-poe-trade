@@ -67,7 +67,7 @@ import { ItemFilters, StatFilter } from './filters/interfaces'
 import { ModifierType } from '@/parser/modifiers'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PriceCheckWidget } from '../overlay/interfaces'
-import { selected as selectedLeague } from '@/web/background/Leagues'
+import { selected as selectedLeague, isPrivateLeague } from '@/web/background/Leagues'
 
 let _showSupportLinksCounter = 0
 
@@ -175,7 +175,7 @@ export default defineComponent({
 
     const showPredictedPrice = computed(() => {
       if (AppConfig().language !== 'en') return false
-      if (AppConfig().isPrivateLeague) return false
+      if (isPrivateLeague.value) return false
       return props.item.rarity === ItemRarity.Rare &&
         props.item.category !== ItemCategory.Map &&
         props.item.category !== ItemCategory.CapturedBeast &&
@@ -239,7 +239,7 @@ export default defineComponent({
     const { t } = useI18n()
     return {
       t,
-      isPrivateLeague: AppConfig().isPrivateLeague,
+      isPrivateLeague,
       itemFilters,
       itemStats,
       interactedOnce,
