@@ -1,49 +1,50 @@
 <template>
-<div v-if="show" class="p-4 layout-column min-h-0">
-  <filter-name
-    ref="nameFilter"
-    :filters="itemFilters"
-    :item="item"/>
-  <price-prediction v-if="showPredictedPrice" class="mb-4"
-                    :item="item"/>
-  <price-trend
-    v-if="!isPrivateLeague"
-    :item="item"
-    :filters="itemFilters"
-    @filter-item-base="applyItemBaseFilter"/>
-  <filters-block
-    ref="filtersBlock"
-    :filters="itemFilters"
-    :stats="itemStats"
-    :item="item"
-    @submit="interactedOnce = true"/>
-  <trade-listing
-    v-if="tradeAPI === 'trade' && interactedOnce"
-    ref="tradeService"
-    :filters="itemFilters"
-    :stats="itemStats"
-    :item="item"/>
-  <trade-bulk
-    v-if="tradeAPI === 'bulk' && interactedOnce"
-    ref="tradeService"
-    :filters="itemFilters"
-    :item="item"/>
-  <div v-if="!interactedOnce" @mouseenter="handleSearchMouseenter">
-    <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
-  </div>
-  <stack-value :filters="itemFilters" :item="item"/>
-  <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
-    <div class="mb-1">{{ t('Support development on') }} <img @click="openLink('https://patreon.com/awakened_poe_trade')"
-                                                             class="inline h-5 cursor-pointer animate__animated animate__fadeInRight"
-                                                             src="@/assets/images/Patreon.svg"></div>
-    <i18n-t keypath="This tool relies on {0} and {1}, consider support them as well" tag="div">
+  <div v-if="show" class="p-4 layout-column min-h-0">
+    <filter-name
+      ref="nameFilter"
+      :filters="itemFilters"
+      :item="item"/>
+    <price-prediction v-if="showPredictedPrice" class="mb-4"
+                      :item="item"/>
+    <price-trend
+      v-if="!isPrivateLeague"
+      :item="item"
+      :filters="itemFilters"
+      @filter-item-base="applyItemBaseFilter"/>
+    <filters-block
+      ref="filtersBlock"
+      :filters="itemFilters"
+      :stats="itemStats"
+      :item="item"
+      @submit="interactedOnce = true"/>
+    <trade-listing
+      v-if="tradeAPI === 'trade' && interactedOnce"
+      ref="tradeService"
+      :filters="itemFilters"
+      :stats="itemStats"
+      :item="item"/>
+    <trade-bulk
+      v-if="tradeAPI === 'bulk' && interactedOnce"
+      ref="tradeService"
+      :filters="itemFilters"
+      :item="item"/>
+    <div v-if="!interactedOnce" @mouseenter="handleSearchMouseenter">
+      <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
+    </div>
+    <stack-value :filters="itemFilters" :item="item"/>
+    <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
+      <div class="mb-1">{{ t('Support development on') }} <img
+        @click="openLink('https://patreon.com/awakened_poe_trade')"
+        class="inline h-5 cursor-pointer animate__animated animate__fadeInRight"
+        src="@/assets/images/Patreon.svg"></div>
+      <i18n-t keypath="This tool relies on {0} and {1}, consider support them as well" tag="div">
       <span @click="openLink('https://poeprices.info')"
             class="bg-gray-900 px-1 rounded cursor-pointer">poeprices.info</span>
-      <span @click="openLink('https://poe.ninja/support')"
-            class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>
-    </i18n-t>
+        <span @click="openLink('https://poe.ninja/support')"
+              class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>
+      </i18n-t>
+    </div>
   </div>
-</div>
 </template>
 
 <script lang="ts">
