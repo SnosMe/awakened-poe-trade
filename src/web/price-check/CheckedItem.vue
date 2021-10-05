@@ -47,9 +47,9 @@
 </template>
 
 <script lang="ts">
-import { ComponentPublicInstance, computed, defineComponent, nextTick, PropType, Ref, ref, watch } from 'vue'
+import { defineComponent, PropType, watch, ref, nextTick, computed, Ref, ComponentPublicInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
+import { ItemRarity, ItemCategory, ParsedItem } from '@/parser'
 import TradeListing from './trade/TradeListing.vue'
 import TradeBulk from './trade/TradeBulk.vue'
 import { apiToSatisfySearch } from './trade/common'
