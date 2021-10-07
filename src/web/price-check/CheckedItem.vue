@@ -180,7 +180,8 @@ export default defineComponent({
 
     async function applyItemBaseFilter () {
       for (const stat of itemStats.value) {
-        if (stat.type === ModifierType.Fractured && stat.hidden) {
+        // TODO or 'Syntesized'
+        if (stat.tag === ModifierType.Fractured && stat.hidden) {
           stat.disabled = false
           filtersBlock.value.showHidden = true
         } else {

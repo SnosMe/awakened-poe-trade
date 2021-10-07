@@ -111,8 +111,9 @@ function getUniqueDetailsId (item: ParsedItem) {
     id += `-${item.sockets.linked}l`
   }
   if (item.baseType === 'Ivory Watchstone') {
-    const uses = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!.value
-    id += `-${uses}`
+    const uses = item.statsByType.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!
+    const roll = uses.sources[0].contributes!.value
+    id += `-${roll}`
   }
 
   return id
@@ -120,7 +121,7 @@ function getUniqueDetailsId (item: ParsedItem) {
 
 function getUniqueVariant (item: ParsedItem) {
   function hasStat (item: ParsedItem, stat: string) {
-    return item.modifiers.some(m => m.stat.ref === stat)
+    return item.statsByType.some(m => m.stat.ref === stat)
   }
 
   if (item.name === 'Vessel of Vinktar') {
@@ -154,10 +155,11 @@ function getUniqueVariant (item: ParsedItem) {
       return '-armour'
     }
   } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
-    const sockets = item.modifiers.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!
-    if (sockets.value === 2) {
+    const sockets = item.statsByType.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!
+    const roll = sockets.sources[0].contributes!.value
+    if (roll === 2) {
       return '-2-jewels'
-    } else if (sockets.value === 1) {
+    } else if (roll === 1) {
       return '-1-jewel'
     }
   } else if (item.name === "Volkuur's Guidance") {
@@ -199,13 +201,13 @@ function getUniqueVariant (item: ParsedItem) {
       return '-physical'
     }
   } else if (item.name === 'Voices') {
-    const passives = item.modifiers.find(m => m.stat.ref === 'Adds # Small Passive Skills which grant nothing')!
-
-    if (passives.value === 7) {
+    const passives = item.statsByType.find(m => m.stat.ref === 'Adds # Small Passive Skills which grant nothing')!
+    const roll = passives.sources[0].contributes!.value
+    if (roll === 7) {
       return '-7-passives'
-    } else if (passives.value === 5) {
+    } else if (roll === 5) {
       return '-5-passives'
-    } else if (passives.value === 3) {
+    } else if (roll === 3) {
       return '-3-passives'
     }
   }

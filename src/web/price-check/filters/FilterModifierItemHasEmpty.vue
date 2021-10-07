@@ -1,10 +1,10 @@
 <template>
   <div v-if="show" class="flex">
-    <button :class="[$style.button, { [$style.selected]: filter.roll === 0 }]"
+    <button :class="[$style.button, { [$style.selected]: filter.option.value === 0 }]"
       @click="select(0)" type="button">{{ t('Any') }}</button>
-    <button :class="[$style.button, { [$style.selected]: filter.roll === 1 }]" class="mx-1"
+    <button :class="[$style.button, { [$style.selected]: filter.option.value === 1 }]" class="mx-1"
       @click="select(1)" type="button">{{ t('Prefix') }}</button>
-    <button :class="[$style.button, { [$style.selected]: filter.roll === 2 }]"
+    <button :class="[$style.button, { [$style.selected]: filter.option.value === 2 }]"
       @click="select(2)" type="button">{{ t('Suffix') }}</button>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default defineComponent({
       t,
       show,
       select (value: number) {
-        (props.filter as Writeable<StatFilter>).roll = value
+        props.filter.option!.value = value
         props.filter.disabled = false
       }
     }

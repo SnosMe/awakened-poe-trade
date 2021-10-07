@@ -54,10 +54,10 @@ export function filterAttributes (ctx: FiltersCreationContext) {
   }> = []
 
   for (const attr of ATTRS) {
-    const total = sumPseudoStats(ctx.modifiers, attr.stats)
+    const total = sumPseudoStats(ctx.statsByType, attr.stats)
     if (total !== undefined) {
-      const hasNotToAll = ctx.modifiers.some(m => attr.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_ATTRS)
-      const countToAll = ctx.modifiers.filter(m => m.stat.ref === TO_ALL_ATTRS).length
+      const hasNotToAll = ctx.statsByType.some(m => attr.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_ATTRS)
+      const countToAll = ctx.statsByType.filter(m => m.stat.ref === TO_ALL_ATTRS).length
 
       attrs.push({ pseudo: attr.pseudo, total, hasFlat: hasNotToAll, countToAll })
     }
@@ -65,20 +65,22 @@ export function filterAttributes (ctx: FiltersCreationContext) {
 
   const isOnlyToTotal = (attrs.length && attrs.every(a => !a.hasFlat))
   if (isOnlyToTotal) {
-    const totalToAllAttrs = sumPseudoStats(ctx.modifiers, [TO_ALL_ATTRS])!
+    const totalToAllAttrs = sumPseudoStats(ctx.statsByType, [TO_ALL_ATTRS])!
 
     ctx.filters.push({
       ...pseudoStat('+# total to all Attributes'),
       disabled: true,
-      ...rollToFilter(totalToAllAttrs, { neverNegated: true, percent: ctx.searchInRange })
+      sources: [],
+      roll: rollToFilter(totalToAllAttrs, { neverNegated: true, percent: ctx.searchInRange })
     })
   } else {
     for (const attr of attrs) {
       ctx.filters.push({
         ...attr.pseudo,
         disabled: true,
+        sources: [],
         hidden: (attr.hasFlat || attr.countToAll >= 2) ? undefined : 'Stat has a relatively small value',
-        ...rollToFilter(attr.total, { neverNegated: true, percent: ctx.searchInRange })
+        roll: rollToFilter(attr.total, { neverNegated: true, percent: ctx.searchInRange })
       })
     }
   }
@@ -103,5 +105,5 @@ export function filterAttributes (ctx: FiltersCreationContext) {
   }
 
   const statsToRemove = new Set(ATTRS.flatMap(a => a.stats))
-  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.stat.ref))
+  ctx.statsByType = ctx.statsByType.filter(m => !statsToRemove.has(m.stat.ref))
 }

@@ -3,6 +3,7 @@ import { FiltersCreationContext } from '../create-stat-filters'
 import { rollToFilter } from '../util'
 import { stat } from '@/assets/data'
 import { ModifierType } from '@/parser/modifiers'
+import { FilterTag } from '../interfaces'
 
 const TO_ALL_RES = stat('+#% to all Elemental Resistances')
 
@@ -53,10 +54,10 @@ export function filterResists (ctx: FiltersCreationContext) {
   const resists: Array<{ pseudo: ReturnType<typeof pseudoStat>, total: number, hasFlat: boolean }> = []
 
   for (const eleRes of ELEMENTAL_RES) {
-    const hasFlat = ctx.modifiers.some(m =>
+    const hasFlat = ctx.statsByType.some(m =>
       eleRes.stats.includes(m.stat.ref) && m.stat.ref !== TO_ALL_RES)
 
-    const total = sumPseudoStats(ctx.modifiers, eleRes.stats)
+    const total = sumPseudoStats(ctx.statsByType, eleRes.stats)
     if (total !== undefined) {
       resists.push({ pseudo: eleRes.pseudo, total, hasFlat })
     }
@@ -68,7 +69,8 @@ export function filterResists (ctx: FiltersCreationContext) {
     ctx.filters.push({
       ...pseudoStat('+#% total Elemental Resistance'),
       disabled: (resists.length === 1),
-      ...rollToFilter(totalRes, { neverNegated: true, percent: ctx.searchInRange })
+      sources: [],
+      roll: rollToFilter(totalRes, { neverNegated: true, percent: ctx.searchInRange })
     })
 
     const maxRes = Math.max(...resists.map(r => r.total))
@@ -78,9 +80,10 @@ export function filterResists (ctx: FiltersCreationContext) {
         text: '+#% total to one of Elemental Resistances',
         statRef: '+#% total to one of Elemental Resistances',
         tradeId: ELEMENTAL_RES.flatMap(r => r.pseudo.tradeId),
-        type: 'pseudo',
+        tag: FilterTag.Pseudo,
         disabled: false,
-        ...rollToFilter(maxRes, { neverNegated: true, percent: ctx.searchInRange })
+        sources: [],
+        roll: rollToFilter(maxRes, { neverNegated: true, percent: ctx.searchInRange })
       })
     }
   }
@@ -92,7 +95,8 @@ export function filterResists (ctx: FiltersCreationContext) {
       ctx.filters.push({
         ...pseudoStat('+#% total to all Elemental Resistances'),
         disabled: false,
-        ...rollToFilter(totalToAllRes, { neverNegated: true, percent: ctx.searchInRange })
+        sources: [],
+        roll: rollToFilter(totalToAllRes, { neverNegated: true, percent: ctx.searchInRange })
       })
     }
   }
@@ -102,13 +106,14 @@ export function filterResists (ctx: FiltersCreationContext) {
       ...resist.pseudo,
       disabled: true,
       hidden: 'Filtering by exact Elemental Resistance unreasonably increases the price',
-      ...rollToFilter(resist.total, { neverNegated: true, percent: ctx.searchInRange })
+      sources: [],
+      roll: rollToFilter(resist.total, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
-  const chaosTotal = sumPseudoStats(ctx.modifiers, CHAOS_RES.stats)
+  const chaosTotal = sumPseudoStats(ctx.statsByType, CHAOS_RES.stats)
   if (chaosTotal != null) {
-    const hasNotCrafted = ctx.modifiers.some(mod =>
+    const hasNotCrafted = ctx.statsByType.some(mod =>
       mod.type !== ModifierType.Crafted &&
       CHAOS_RES.stats.includes(mod.stat.ref))
 
@@ -116,10 +121,11 @@ export function filterResists (ctx: FiltersCreationContext) {
       ...CHAOS_RES.pseudo,
       disabled: true, // NOTE: unlike EleRes it is disabled
       hidden: hasNotCrafted ? undefined : 'Crafted Chaos Resistance without Explicit mod has no value',
-      ...rollToFilter(chaosTotal, { neverNegated: true, percent: ctx.searchInRange })
+      sources: [],
+      roll: rollToFilter(chaosTotal, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
   const statsToRemove = new Set([...ELEMENTAL_RES.flatMap(r => r.stats), ...CHAOS_RES.stats])
-  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.stat.ref))
+  ctx.statsByType = ctx.statsByType.filter(m => !statsToRemove.has(m.stat.ref))
 }

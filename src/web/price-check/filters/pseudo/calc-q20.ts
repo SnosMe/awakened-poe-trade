@@ -1,5 +1,6 @@
 import { ParsedItem } from '@/parser'
 import { stat } from '@/assets/data'
+import { statSourcesTotal } from '@/parser/modifiers'
 
 export const QUALITY_STATS = {
   ARMOUR: {
@@ -39,17 +40,18 @@ export const QUALITY_STATS = {
 
 export function propAt20Quality (
   total: number,
-  stats: { flat: string, incr: string[] },
+  statRefs: { flat: string, incr: string[] },
   item: ParsedItem
 ): number {
   let incr = 0
   let flat = 0
 
-  for (const mod of item.modifiers) {
-    if (mod.stat.ref === stats.flat) {
-      flat = mod.value!
-    } else if (stats.incr.includes(mod.stat.ref)) {
-      incr += mod.value!
+  for (const calc of item.statsByType) {
+    const roll = statSourcesTotal(calc)!
+    if (calc.stat.ref === statRefs.flat) {
+      flat = roll.value
+    } else if (statRefs.incr.includes(calc.stat.ref)) {
+      incr += roll.value
     }
   }
 

@@ -1,6 +1,7 @@
 import type { ItemInfluence, ItemCategory } from '@/parser'
-import type { ItemModifier } from '@/parser/modifiers'
+import type { StatCalculated } from '@/parser/modifiers'
 import type { HeistJob, ParsedItem } from '@/parser/ParsedItem'
+import type { Stat } from '@/assets/data'
 
 export interface ItemFilters {
   name?: {
@@ -78,23 +79,25 @@ export interface FilterNumeric {
 }
 
 export interface StatFilter {
-  readonly tradeId: string[]
-  readonly statRef: string
-  readonly text: string
-  readonly roll?: number
-  readonly type: string
-  readonly option?: ItemModifier['stat']['trade']['option']
-  readonly defaultMin?: number
-  readonly defaultMax?: number
-  readonly boundMin?: number
-  readonly boundMax?: number
-  readonly variant?: true
-  readonly corrupted?: true
-  readonly hidden?: string
-  readonly invert?: boolean
-  disabled: boolean
-  min: number | '' | undefined
-  max: number | '' | undefined
+  tradeId: string[]
+  statRef: string
+  text: string
+  tag: FilterTag
+  sources: StatCalculated['sources']
+  roll?: {
+    value: number
+    min: number | '' | undefined // NOTE: mutable in UI
+    max: number | '' | undefined // NOTE: mutable in UI
+    default: { min: number, max: number }
+    bounds?: { min: number, max: number, step: number }
+    invert?: boolean
+  }
+  option?: {
+    value: number // NOTE: mutable in UI
+    tradeValue: NonNullable<Stat['trade']['option']>
+  }
+  hidden?: string
+  disabled: boolean // NOTE: mutable in UI
 }
 
 export const INTERNAL_TRADE_IDS = [
@@ -117,4 +120,18 @@ export enum ItemHasEmptyModifier {
   Any = 0,
   Prefix = 1,
   Suffix = 2
+}
+
+export enum FilterTag {
+  Pseudo = 'pseudo',
+  Explicit = 'explicit',
+  Implicit = 'implicit',
+  Crafted = 'crafted',
+  Enchant = 'enchant',
+  Fractured = 'fractured',
+  Corrupted = 'corrupted',
+  Synthesised = 'synthesised',
+  Variant = 'variant',
+  Influence = 'influence',
+  Property = 'property',
 }

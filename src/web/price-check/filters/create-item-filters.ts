@@ -83,7 +83,7 @@ export function createFilters (
   }
 
   if (item.category === ItemCategory.Map) {
-    if (item.modifiers.some(mod => mod.stat.ref === 'Map is occupied by #')) {
+    if (item.statsByType.some(calc => calc.stat.ref === 'Map is occupied by #')) {
       filters.category = {
         value: item.category
       }

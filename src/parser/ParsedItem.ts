@@ -1,6 +1,6 @@
-import { ItemRarity, ItemInfluence } from './constants'
-import { ItemModifier, ModifierType } from './modifiers'
-import { ItemCategory } from './meta'
+import type { ItemRarity, ItemInfluence } from './constants'
+import type { ModifierType, StatCalculated } from './modifiers'
+import type { ItemCategory } from './meta'
 import type { ParsedModifier } from './advanced-mod-desc'
 
 export interface ParsedItem {
@@ -34,10 +34,7 @@ export interface ParsedItem {
   isMirrored?: boolean
   influences: ItemInfluence[]
   isSynthesised?: boolean
-  /**
-   * @deprecated
-   */
-  modifiers: ItemModifier[]
+  statsByType: StatCalculated[]
   newMods: ParsedModifier[]
   unknownModifiers: Array<{
     text: string

@@ -5,12 +5,12 @@ import {
   CLIENT_STRINGS as _$,
   ITEM_NAME_REF_BY_TRANSLATED
 } from '@/assets/data'
-import { ModifierType } from './modifiers'
+import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory } from './meta'
 import { HeistJob, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, modsToLegacy } from './advanced-mod-desc'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -201,8 +201,8 @@ function parseNamePlate (section: string[]) {
     props: {},
     isUnidentified: false,
     isCorrupted: false,
-    modifiers: [],
     newMods: [],
+    statsByType: [],
     unknownModifiers: [],
     influences: [],
     sockets: {},
@@ -676,7 +676,7 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
  * @deprecated
  */
 function transformToLegacyModifiers (item: ParsedItem) {
-  item.modifiers = modsToLegacy(item.newMods)
+  item.statsByType = sumStatsByModType(item.newMods)
 }
 
 export function removeLinesEnding (

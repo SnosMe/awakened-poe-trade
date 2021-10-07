@@ -1,3 +1,4 @@
+import { statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { ParsedItem } from '@/parser/ParsedItem'
 import { percentRoll } from '../price-check/filters/util'
 
@@ -7,13 +8,16 @@ export interface PreparedStat {
 }
 
 export function prepareMapStats (item: ParsedItem): PreparedStat[] {
-  return item.modifiers.map(mod => {
+  return item.statsByType.map(calc => {
+    const roll = statSourcesTotal(calc)
+    const translation = translateStatWithRoll(calc, roll)
+
     const prepared = {
-      matcher: mod.string,
-      roll: mod.value && percentRoll(mod.value, 0, Math.floor, mod.stat.dp)
+      matcher: translation.string,
+      roll: roll && percentRoll(roll.value, 0, Math.floor, translation.dp)
     }
 
-    if (mod.negate) {
+    if (translation.negate) {
       if (prepared.roll != null) {
         prepared.roll = -1 * prepared.roll
       }

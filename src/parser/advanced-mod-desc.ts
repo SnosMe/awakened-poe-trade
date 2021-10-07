@@ -1,8 +1,8 @@
-import { CLIENT_STRINGS as _$, StatMatcher } from '@/assets/data'
+import { CLIENT_STRINGS as _$ } from '@/assets/data'
 import * as C from './constants'
 import { percentRoll } from '@/web/price-check/filters/util'
 import type { ParsedStat } from './stat-translations'
-import { LegacyItemModifier, ModifierType, sumStatsByModType } from './modifiers'
+import { ModifierType } from './modifiers'
 import { removeLinesEnding } from './Parser'
 
 export interface ParsedModifier {
@@ -142,52 +142,4 @@ export function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | 
       max: percentRoll(roll.max, rollIncr, (roll.max > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100)
     }
   }
-}
-
-/**
- * @deprecated
- */
-export function modsToLegacy (mods: readonly ParsedModifier[]): LegacyItemModifier[] {
-  const out: LegacyItemModifier[] = []
-
-  for (const merged of sumStatsByModType(mods)) {
-    const roll = (merged.sources.length === 1)
-      ? (merged.sources[0].contributes)
-      : (merged.sources.reduce((sum, { contributes }) => {
-          sum.value += contributes!.value
-          sum.min += contributes!.min
-          sum.max += contributes!.max
-          return sum
-        }, { value: 0, min: 0, max: 0 }))
-
-    const sameSign = roll && (Math.sign(roll.min) === Math.sign(roll.max))
-
-    let translation: Pick<StatMatcher, 'string' | 'negate'>
-    if (!roll) {
-      translation = merged.sources[0].stat.translation
-    } else {
-      translation =
-        (merged.stat.matchers.find(m => m.value === roll.value)) ??
-        ((sameSign && merged.sources[0].stat.translation.value == null)
-          ? merged.sources[0].stat.translation
-          // TODO: for some stats reduced is better (m.negate === true)
-          : merged.stat.matchers.find(m => m.value == null && !m.negate)) ??
-        ({ string: `Report bug if you see this text (${merged.stat.ref})` })
-    }
-
-    out.push({
-      stat: merged.stat,
-      string: translation.string,
-      type: merged.type,
-      corrupted: merged.sources.some(s => s.modifier.info.generation === 'corrupted') || undefined,
-      negate: translation.negate,
-      value: roll?.value,
-      bounds: roll && {
-        min: roll.min,
-        max: roll.max
-      }
-    })
-  }
-
-  return out
 }

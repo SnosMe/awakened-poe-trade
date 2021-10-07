@@ -1,8 +1,8 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
-import { ItemModifier, ModifierType } from '@/parser/modifiers'
+import { ModifierType, StatCalculated, StatRoll, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
 import { rollToFilter, percentRoll } from './util'
-import { ItemHasEmptyModifier, StatFilter } from './interfaces'
+import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
@@ -10,8 +10,8 @@ import { filterUniqueItemProp } from './pseudo/item-property-unique'
 export interface FiltersCreationContext {
   readonly item: ParsedItem
   readonly searchInRange: number
-  filters: Array<Writeable<StatFilter>>
-  modifiers: ParsedItem['modifiers']
+  filters: StatFilter[]
+  statsByType: StatCalculated[]
 }
 
 export function initUiModFilters (
@@ -31,11 +31,11 @@ export function initUiModFilters (
     item,
     filters: [],
     searchInRange: opts.searchStatRange,
-    modifiers: item.modifiers.map(mod => {
-      if (mod.type === ModifierType.Fractured && mod.stat.trade.ids[ModifierType.Explicit]) {
-        return { ...mod, type: ModifierType.Explicit }
+    statsByType: item.statsByType.map(calc => {
+      if (calc.type === ModifierType.Fractured && calc.stat.trade.ids[ModifierType.Explicit]) {
+        return { ...calc, type: ModifierType.Explicit }
       } else {
-        return mod
+        return calc
       }
     })
   }
@@ -50,20 +50,20 @@ export function initUiModFilters (
   }
 
   if (!item.isCorrupted && !item.isMirrored) {
-    ctx.modifiers = ctx.modifiers.filter(mod => mod.type !== ModifierType.Fractured)
-    ctx.modifiers.push(...item.modifiers.filter(mod => mod.type === ModifierType.Fractured))
+    ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Fractured)
+    ctx.statsByType.push(...item.statsByType.filter(mod => mod.type === ModifierType.Fractured))
   }
 
   ctx.filters.push(
-    ...ctx.modifiers.map(mod => itemModToFilter(mod, item, { percent: ctx.searchInRange }))
+    ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, item, { percent: ctx.searchInRange }))
   )
 
   if (!item.isCorrupted && !item.isMirrored && item.isSynthesised) {
-    const transformedImplicits = item.modifiers.filter(mod =>
+    const transformedImplicits = item.statsByType.filter(mod =>
       mod.type === ModifierType.Implicit &&
-      !ctx.modifiers.includes(mod))
+      !ctx.statsByType.includes(mod))
 
-    const synthImplicitFilters = transformedImplicits.map(mod => itemModToFilter(mod, item, { percent: ctx.searchInRange }))
+    const synthImplicitFilters = transformedImplicits.map(mod => calculatedStatToFilter(mod, item, { percent: ctx.searchInRange }))
     for (const filter of synthImplicitFilters) {
       filter.hidden = 'Select only if price-checking as base item for crafting'
     }
@@ -79,7 +79,7 @@ export function initUiModFilters (
   }
 
   if (item.category === ItemCategory.Map) {
-    ctx.filters = ctx.filters.filter(f => f.type !== 'explicit')
+    ctx.filters = ctx.filters.filter(f => f.tag !== 'explicit')
   }
 
   finalFilterTweaks(ctx)
@@ -87,97 +87,129 @@ export function initUiModFilters (
   return ctx.filters
 }
 
-export function itemModToFilter (
-  mod: ItemModifier,
+export function calculatedStatToFilter (
+  calc: StatCalculated,
   item: ParsedItem,
   opts: { percent: number }
-) {
-  const filter: Writeable<StatFilter> = {
-    tradeId: mod.stat.trade.ids[mod.type],
-    statRef: mod.stat.ref,
-    text: mod.string,
-    type: mod.type,
-    option: mod.stat.trade.option,
-    corrupted: mod.corrupted,
+): StatFilter {
+  const { stat, sources, type } = calc
+
+  if (stat.trade.option) {
+    return {
+      tradeId: stat.trade.ids[type],
+      statRef: stat.ref,
+      text: sources[0].stat.translation.string,
+      tag: type as unknown as FilterTag,
+      sources: sources,
+      option: {
+        value: sources[0].contributes!.value,
+        tradeValue: stat.trade.option
+      },
+      disabled: true
+    }
+  }
+
+  const roll = statSourcesTotal(calc)
+  const translation = translateStatWithRoll(calc, roll)
+
+  const filter: StatFilter = {
+    tradeId: stat.trade.ids[type],
+    statRef: stat.ref,
+    text: translation.string,
+    tag: type as unknown as FilterTag,
+    sources: sources,
     roll: undefined,
-    disabled: true,
-    min: undefined,
-    max: undefined
-  }
-  if (mod.stat.trade.option) {
-    filter.roll = mod.value!
-    return filter
+    disabled: true
   }
 
-  if (
-    item.rarity === ItemRarity.Unique &&
-    mod.type !== ModifierType.Enchant
-  ) {
-    uniqueModFilterPartial(item, mod, filter, (opts.percent * 2))
-  } else {
-    itemModFilterPartial(mod, filter, opts.percent)
+  if (roll) {
+    const dp =
+      calc.stat.dp ||
+      calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
+
+    if (
+      item.rarity === ItemRarity.Unique &&
+      calc.type !== ModifierType.Enchant
+    ) {
+      uniqueModFilterPartial(item, roll, filter, (opts.percent * 2), dp)
+    } else {
+      itemModFilterPartial(calc, roll, filter, opts.percent, dp)
+    }
   }
 
-  filterAdjustmentForNegate(mod, filter)
+  filterAdjustmentForNegate(calc, translation.negate, filter)
 
   return filter
 }
 
 function itemModFilterPartial (
-  mod: ItemModifier,
-  filter: Writeable<StatFilter>,
-  percent: number
+  calc: StatCalculated,
+  roll: StatRoll,
+  filter: StatFilter,
+  percent: number,
+  dp: boolean
 ) {
-  if (mod.value) {
-    if (mod.type === 'enchant') {
-      filter.roll = percentRoll(mod.value, 0, Math.floor, mod.stat.dp)
-      filter.min = filter.roll
-      filter.max = filter.roll
-      filter.defaultMin = filter.roll
-      filter.defaultMax = filter.roll
+  if (roll) {
+    if (calc.type === ModifierType.Enchant) {
+      filter.roll = {
+        value: percentRoll(roll.value, 0, Math.floor, dp),
+        min: percentRoll(roll.value, 0, Math.floor, dp),
+        max: percentRoll(roll.value, 0, Math.ceil, dp),
+        default: {
+          min: percentRoll(roll.value, 0, Math.floor, dp),
+          max: percentRoll(roll.value, 0, Math.ceil, dp)
+        }
+      }
     } else {
-      Object.assign(filter, rollToFilter(mod.value, { dp: mod.stat.dp, percent }))
+      filter.roll = rollToFilter(roll.value, { dp: dp, percent })
     }
   }
 }
 
 function filterAdjustmentForNegate (
-  mod: ItemModifier,
-  filter: Writeable<StatFilter>
+  calc: StatCalculated,
+  negate: boolean,
+  filter: StatFilter
 ) {
-  if (mod.negate) {
-    filter.invert = true
-    const raw = { ...filter }
+  if (!filter.roll) return
 
-    if (filter.boundMin != null && filter.boundMax != null) {
-      filter.boundMin = -1 * raw.boundMax!
-      filter.boundMax = -1 * raw.boundMin!
+  const { roll } = filter
+
+  if (negate) {
+    roll.invert = true
+    const swap = JSON.parse(JSON.stringify(roll)) as typeof roll
+
+    if (roll.bounds) {
+      roll.bounds.min = -1 * swap.bounds!.max
+      roll.bounds.max = -1 * swap.bounds!.min
     }
-    if (filter.defaultMin != null && filter.defaultMax != null) {
-      filter.defaultMin = -1 * raw.defaultMax!
-      filter.defaultMax = -1 * raw.defaultMin!
-    }
-    if (filter.min == null && filter.max == null && filter.defaultMax != null) {
-      filter.min = -1 * (raw.defaultMax as number)
+
+    roll.default.min = -1 * swap.default.max
+    roll.default.max = -1 * swap.default.min
+
+    if (roll.min == null && roll.max == null) {
+      // TODO: for some stats reduced is better
+      roll.min = -1 * swap.default.max
     } else {
-      if (filter.max != null) {
-        filter.min = -1 * (raw.max as number)
+      if (roll.max != null) {
+        roll.min = -1 * (swap.max as number)
       }
-      if (filter.min != null) {
-        filter.max = -1 * (raw.min as number)
+      if (roll.min != null) {
+        roll.max = -1 * (swap.min as number)
       }
     }
-    if (filter.roll != null) {
-      filter.roll = -1 * raw.roll!
+    if (roll.value != null) {
+      roll.value = -1 * swap.value
     }
   } else {
-    if (filter.min == null && filter.max == null && filter.defaultMin != null) {
-      filter.min = filter.defaultMin
+    if (roll.min == null && roll.max == null) {
+      // TODO: for some stats reduced is better
+      roll.min = roll.default.min
     }
   }
 
-  if (mod.stat.trade.inverted) {
-    filter.invert = !filter.invert
+  if (calc.stat.trade.inverted) {
+    roll.invert = !roll.invert
   }
 }
 
@@ -186,7 +218,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
 
   if (item.category === ItemCategory.ClusterJewel && item.rarity !== ItemRarity.Unique) {
     for (const filter of ctx.filters) {
-      if (filter.type === 'enchant') {
+      if (filter.tag === 'enchant') {
         if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
           filter.hidden = 'Roll is not variable'
         }
@@ -196,9 +228,9 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         if (filter.statRef === 'Adds # Passive Skills') {
           // https://pathofexile.gamepedia.com/Cluster_Jewel#Optimal_passive_skill_amounts
           filter.disabled = false
-          filter.min = undefined
-          if (filter.max === 4) {
-            filter.max = 5
+          filter.roll!.min = undefined
+          if (filter.roll!.max === 4) {
+            filter.roll!.max = 5
           }
         }
       }
@@ -208,16 +240,15 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   if (item.category === ItemCategory.Map) {
     const isInfluenced = ctx.filters.find(filter => filter.statRef === 'Area is influenced by #')
     const isElderGuardian = ctx.filters.find(filter => filter.statRef === 'Map is occupied by #')
-    if (isInfluenced && !isElderGuardian && isInfluenced.roll === 2 /* TODO: hardcoded */) {
+    if (isInfluenced && !isElderGuardian && isInfluenced.roll!.value === 2 /* TODO: hardcoded */) {
       const idx = ctx.filters.indexOf(isInfluenced)
       ctx.filters.splice(idx + 1, 0, {
         tradeId: ['map.no_elder_guardian'],
         text: 'Map is not occupied by Elder Guardian',
         statRef: 'Map is not occupied by Elder Guardian',
         disabled: false,
-        type: 'implicit',
-        min: undefined,
-        max: undefined
+        tag: FilterTag.Implicit,
+        sources: []
       })
     }
     if (isInfluenced) {
@@ -236,11 +267,12 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       statRef: '1 Empty or Crafted Modifier',
       disabled: true,
       hidden: 'Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers',
-      type: 'pseudo',
-      roll: hasEmptyModifier,
-      option: 'num',
-      min: undefined,
-      max: undefined
+      tag: FilterTag.Pseudo,
+      sources: [],
+      option: {
+        value: hasEmptyModifier,
+        tradeValue: 'num'
+      }
     })
   }
 
@@ -256,8 +288,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   }
 
   for (const filter of ctx.filters) {
-    if (filter.type === ModifierType.Fractured) {
-      const mod = ctx.item.modifiers.find(mod => mod.stat.ref === filter.statRef)!
+    if (filter.tag === FilterTag.Fractured) {
+      const mod = ctx.item.statsByType.find(mod => mod.stat.ref === filter.statRef)!
       if (mod.stat.trade.ids[ModifierType.Explicit]) {
         // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'Select only if price-checking as base item for crafting'

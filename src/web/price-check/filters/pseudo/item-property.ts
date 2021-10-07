@@ -1,5 +1,5 @@
 import { rollToFilter } from '../util'
-import { FiltersCreationContext, itemModToFilter } from '../create-stat-filters'
+import { FiltersCreationContext, calculatedStatToFilter } from '../create-stat-filters'
 import { propAt20Quality, QUALITY_STATS } from './calc-q20'
 import { stat } from '@/assets/data'
 import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
@@ -37,8 +37,9 @@ function armourProps (ctx: FiltersCreationContext) {
         'Armour: #',
         'armour'
       ),
+      sources: [],
       disabled: !isSingleAttrArmour(item),
-      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -51,8 +52,9 @@ function armourProps (ctx: FiltersCreationContext) {
         'Evasion Rating: #',
         'armour'
       ),
+      sources: [],
       disabled: !isSingleAttrArmour(item),
-      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -65,8 +67,9 @@ function armourProps (ctx: FiltersCreationContext) {
         'Energy Shield: #',
         'armour'
       ),
+      sources: [],
       disabled: !isSingleAttrArmour(item),
-      ...rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -77,8 +80,9 @@ function armourProps (ctx: FiltersCreationContext) {
         'Block: #%',
         'armour'
       ),
+      sources: [],
       disabled: true,
-      ...rollToFilter(item.props.blockChance, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(item.props.blockChance, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -120,8 +124,9 @@ function weaponProps (ctx: FiltersCreationContext) {
         'DPS: #',
         'weapon'
       ),
+      sources: [],
       disabled: false,
-      ...rollToFilter(dps, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(dps, { neverNegated: true, percent: ctx.searchInRange })
     })
 
     ctx.filters.push({
@@ -130,9 +135,10 @@ function weaponProps (ctx: FiltersCreationContext) {
         'Elemental DPS: #',
         'weapon'
       ),
+      sources: [],
       disabled: (edps / dps < 0.67),
       hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
-      ...rollToFilter(edps, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(edps, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
@@ -142,9 +148,10 @@ function weaponProps (ctx: FiltersCreationContext) {
       'Physical DPS: #',
       'weapon'
     ),
+    sources: [],
     disabled: !isPdpsImportant(item) || (pdpsQ20 / dps < 0.67),
     hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
-    ...rollToFilter(pdpsQ20, { neverNegated: true, percent: ctx.searchInRange })
+    roll: rollToFilter(pdpsQ20, { neverNegated: true, percent: ctx.searchInRange })
   })
 
   ctx.filters.push({
@@ -153,8 +160,9 @@ function weaponProps (ctx: FiltersCreationContext) {
       'Attacks per Second: #',
       'weapon'
     ),
+    sources: [],
     disabled: true,
-    ...rollToFilter(item.props.attackSpeed!, { neverNegated: true, dp: 2, percent: ctx.searchInRange })
+    roll: rollToFilter(item.props.attackSpeed!, { neverNegated: true, dp: 2, percent: ctx.searchInRange })
   })
 
   ctx.filters.push({
@@ -163,8 +171,9 @@ function weaponProps (ctx: FiltersCreationContext) {
       'Critical Strike Chance: #%',
       'weapon'
     ),
+    sources: [],
     disabled: true,
-    ...rollToFilter(item.props.critChance!, { neverNegated: true, dp: 1, percent: ctx.searchInRange })
+    roll: rollToFilter(item.props.critChance!, { neverNegated: true, dp: 1, percent: ctx.searchInRange })
   })
 
   if (
@@ -178,15 +187,15 @@ function weaponProps (ctx: FiltersCreationContext) {
 }
 
 function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
-  for (const m of ctx.modifiers) {
+  for (const m of ctx.statsByType) {
     if (stats.has(m.stat.ref)) {
-      const filter = itemModToFilter(m, ctx.item, { percent: ctx.searchInRange })
+      const filter = calculatedStatToFilter(m, ctx.item, { percent: ctx.searchInRange })
       filter.hidden = 'Contributes to the item property'
       ctx.filters.push(filter)
     }
   }
 
-  ctx.modifiers = ctx.modifiers.filter(m => !stats.has(m.stat.ref))
+  ctx.statsByType = ctx.statsByType.filter(m => !stats.has(m.stat.ref))
 }
 
 function isSingleAttrArmour (item: ParsedItem) {

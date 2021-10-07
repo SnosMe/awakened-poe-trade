@@ -1,6 +1,6 @@
 import { STAT_BY_REF } from '@/assets/data'
-import { ItemModifier, ModifierType } from '@/parser/modifiers'
-import { InternalTradeId } from '../interfaces'
+import { StatCalculated, ModifierType } from '@/parser/modifiers'
+import { FilterTag, InternalTradeId } from '../interfaces'
 
 export function pseudoStat (ref: string) {
   const stat = STAT_BY_REF.get(ref)!
@@ -8,7 +8,7 @@ export function pseudoStat (ref: string) {
   return {
     text: (stat.matchers.find(m => !m.negate) || stat.matchers[0]).string,
     statRef: stat.ref,
-    type: 'pseudo',
+    tag: FilterTag.Pseudo,
     tradeId: stat.trade.ids[ModifierType.Pseudo]
   }
 }
@@ -17,13 +17,16 @@ export function internalPropStat (tradeId: InternalTradeId, text: string, type: 
   return {
     text,
     statRef: text,
-    type,
+    tag: FilterTag.Property,
     tradeId: [tradeId]
   }
 }
 
-export function sumPseudoStats (modifiers: ItemModifier[], stats: string[]) {
-  return modifiers.reduce<number | undefined>((res, mod) => stats.includes(mod.stat.ref)
-    ? (res || 0) + mod.value!
-    : res, undefined)
+export function sumPseudoStats (stats: StatCalculated[], pseudoRefs: string[]) {
+  return stats.reduce<number | undefined>(
+    (total, { stat, sources }) =>
+      pseudoRefs.includes(stat.ref)
+        ? (total ?? 0) + sources.reduce((total, source) => total + source.contributes!.value, 0)
+        : total,
+    undefined)
 }

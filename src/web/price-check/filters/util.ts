@@ -27,16 +27,18 @@ export function percentRollDelta (value: number, delta: number, p: number, metho
 export function rollToFilter (
   roll: number,
   opts: { percent: number, neverNegated?: true, dp?: boolean | number }
-): Pick<StatFilter, 'roll' | 'min' | 'max' | 'defaultMin' | 'defaultMax'> {
+): StatFilter['roll'] {
   const { percent, neverNegated, dp } = opts
 
   // opts.neverNegated is false only in one case, but keep it
   // disabled by default, so opts.neverNegated acts more like
   // acknowledgment of what you are doing
   return {
-    roll: percentRoll(roll, 0, Math.floor, dp),
-    defaultMin: percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp),
-    defaultMax: percentRoll(roll, +percent * Math.sign(roll), Math.ceil, dp),
+    value: percentRoll(roll, 0, Math.floor, dp),
+    default: {
+      min: percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp),
+      max: percentRoll(roll, +percent * Math.sign(roll), Math.ceil, dp)
+    },
     min: neverNegated ? percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp) : undefined,
     max: undefined
   }

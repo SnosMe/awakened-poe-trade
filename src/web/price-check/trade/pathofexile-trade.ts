@@ -392,8 +392,8 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
       const TARGET_ID = {
-        CRAFTED_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.roll!])!.trade.ids[ModifierType.Pseudo][0],
-        EMPTY_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.roll!])!.trade.ids[ModifierType.Pseudo][0],
+        CRAFTED_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
+        EMPTY_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
         TOTAL_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.TOTAL_MODIFIERS[0])!.trade.ids[ModifierType.Pseudo][0]
       }
 
@@ -420,42 +420,43 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
     if (stat.disabled) continue
 
+    const input = stat.roll!
     switch (stat.tradeId[0] as InternalTradeId) {
       case 'armour.armour':
-        prop.set(query.filters, 'armour_filters.filters.ar.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.ar.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ar.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ar.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.evasion_rating':
-        prop.set(query.filters, 'armour_filters.filters.ev.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.ev.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ev.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ev.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.energy_shield':
-        prop.set(query.filters, 'armour_filters.filters.es.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.es.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'armour_filters.filters.es.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.es.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.block':
-        prop.set(query.filters, 'armour_filters.filters.block.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.block.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'armour_filters.filters.block.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.block.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.total_dps':
-        prop.set(query.filters, 'weapon_filters.filters.dps.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.dps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.dps.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.dps.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.physical_dps':
-        prop.set(query.filters, 'weapon_filters.filters.pdps.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.pdps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.pdps.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.pdps.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.elemental_dps':
-        prop.set(query.filters, 'weapon_filters.filters.edps.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.edps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.edps.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.edps.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.crit':
-        prop.set(query.filters, 'weapon_filters.filters.crit.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.crit.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.crit.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.crit.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.aps':
-        prop.set(query.filters, 'weapon_filters.filters.aps.min', typeof stat.min === 'number' ? stat.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.aps.max', typeof stat.max === 'number' ? stat.max : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.aps.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'weapon_filters.filters.aps.max', typeof input.max === 'number' ? input.max : undefined)
         break
     }
   }
@@ -468,9 +469,8 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         disabled: filters.veiled.disabled,
         statRef: undefined!,
         text: undefined!,
-        type: undefined!,
-        min: undefined,
-        max: undefined,
+        tag: undefined!,
+        sources: undefined!,
         tradeId: STAT_BY_REF.get(statRef)!.trade.ids[ModifierType.Veiled]
       })
     }
@@ -482,9 +482,8 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         disabled: influence.disabled,
         statRef: undefined!,
         text: undefined!,
-        type: undefined!,
-        min: undefined,
-        max: undefined,
+        tag: undefined!,
+        sources: undefined!,
         tradeId: STAT_BY_REF.get(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[ModifierType.Pseudo]
       })
     }
@@ -586,21 +585,25 @@ export async function requestResults (
   })
 }
 
-function getMinMax (stat: StatFilter) {
-  const sign = stat.invert ? -1 : 1
-  const a = typeof stat.min === 'number' ? stat.min * sign : undefined
-  const b = typeof stat.max === 'number' ? stat.max * sign : undefined
+function getMinMax (roll: StatFilter['roll']) {
+  if (!roll) {
+    return { min: undefined, max: undefined }
+  }
 
-  return !stat.invert ? { min: a, max: b } : { min: b, max: a }
+  const sign = roll.invert ? -1 : 1
+  const a = typeof roll.min === 'number' ? roll.min * sign : undefined
+  const b = typeof roll.max === 'number' ? roll.max * sign : undefined
+
+  return !roll.invert ? { min: a, max: b } : { min: b, max: a }
 }
 
 function tradeIdToQuery (id: string, stat: StatFilter) {
   return {
     id,
     value: {
-      ...getMinMax(stat),
+      ...getMinMax(stat.roll),
       option: stat.option != null
-        ? (stat.option === 'str' ? String : Number)(stat.roll!)
+        ? (stat.option.tradeValue === 'str' ? String : Number)(stat.option.value)
         : undefined
     },
     disabled: stat.disabled

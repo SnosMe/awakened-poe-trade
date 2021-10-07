@@ -61,7 +61,7 @@
     </div>
     <div v-if="showStatsBlock && stats.length" class="my-4">
       <form @submit.prevent="handleStatsSubmit">
-        <filter-modifier v-for="filter of shownStats" :key="filter.type + '/' + filter.text"
+        <filter-modifier v-for="filter of shownStats" :key="filter.tag + '/' + filter.text"
           :filter="filter"
           :item="item"
           @submit="handleStatsSubmit" />

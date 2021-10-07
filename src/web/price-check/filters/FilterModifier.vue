@@ -4,48 +4,48 @@
       <div class="pb-px flex items-baseline justify-between">
         <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
           <i class="w-5" :class="{
-            'far fa-square text-gray-500': filter.disabled,
-            'fas fa-check-square': !filter.disabled
+            'far fa-square text-gray-500': isDisabled,
+            'fas fa-check-square': !isDisabled
           }"></i>
           <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-            <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
-            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="t(filter.text)" :roll="filter.roll" /></span>
+            <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="text" :roll="rollValue" /></span>
+            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="rollValue" /></span>
           </div>
         </button>
         <div class="flex items-baseline">
           <div v-if="showQ20Notice"
-            class="border border-gray-700 text-gray-500 text-center rounded px-2 mr-1">{{ t('Q {0}%', [Math.max(20, item.quality || 0)]) }}</div>
-          <ui-input-debounced class="search-num-input rounded-l mr-px" :placeholder="t('min')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number"
-            v-if="showMinmaxInput" ref="inputMin"
-            v-model.number="filter.min" @focus="inputFocus($event, 'min')" :delay="0" />
-          <ui-input-debounced class="search-num-input rounded-r" :placeholder="t('max')" :min="filter.boundMin" :max="filter.boundMax" step="any" type="number"
-            v-if="showMinmaxInput" ref="inputMax"
-            v-model.number="filter.max" @focus="inputFocus($event, 'max')" :delay="0" />
+            class="border border-gray-700 text-gray-500 text-center rounded px-2 mr-1">{{ t('Q {0}%', [calcQuality]) }}</div>
+          <ui-input-debounced class="search-num-input rounded-l mr-px" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" step="any" type="number"
+            v-if="showInputs" ref="inputMinEl"
+            v-model="inputMin" @focus="inputFocus($event, 'min')" :delay="0" />
+          <ui-input-debounced class="search-num-input rounded-r" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" step="any" type="number"
+            v-if="showInputs" ref="inputMaxEl"
+            v-model="inputMax" @focus="inputFocus($event, 'max')" :delay="0" />
         </div>
       </div>
       <div class="flex">
         <div class="w-5 flex items-start">
-          <ui-popover v-if="filter.hidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
+          <ui-popover v-if="isHidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
             <template #target>
               <span class="text-xs leading-none text-gray-600 cursor-pointer">
-                <i class="fas fa-eye-slash" :class="{ 'faa-ring': !filter.disabled }"></i>
+                <i class="fas fa-eye-slash" :class="{ 'faa-ring': !isDisabled }"></i>
               </span>
             </template>
             <template #content>
-              <div style="max-width: 18.5rem;">{{ t(filter.hidden) }}</div>
+              <div style="max-width: 18.5rem;">{{ hiddenReason }}</div>
             </template>
           </ui-popover>
         </div>
         <div class="flex-1 flex items-start">
           <span v-if="showTypeTags"
-            class="text-xs leading-none px-1 rounded" :class="`mod-type-${filter.type}`">{{ t(filter.type) }}</span>
+            class="text-xs leading-none px-1 rounded" :class="`filter-tag-${tag}`">{{ t(tag) }}</span>
           <span v-if="filter.variant"
-            class="text-xs leading-none px-1 rounded mod-type-variant">{{ t('variant') }}</span>
+            class="text-xs leading-none px-1 rounded filter-tag-variant">{{ t('variant') }}</span>
           <span v-if="filter.corrupted"
-            class="text-xs leading-none px-1 rounded mod-type-corrupted">{{ t('corrupted') }}</span>
+            class="text-xs leading-none px-1 rounded filter-tag-corrupted">{{ t('corrupted') }}</span>
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
-        <div v-if="filter.boundMin !== undefined"
+        <div v-if="showRollBounds"
           class="mr-4" style="width: 12.5rem;">
           <ui-slider
             class="search-slider-rail" style="padding: 0;" :dotSize="[0, 1.25*fontSize]" :height="1.25*fontSize"
@@ -54,19 +54,19 @@
 
             v-model="sliderValue"
             :marks="{
-              [filter.boundMin]: { label: 'min' },
-              [filter.boundMax]: { label: 'max' },
-              [filter.roll]: { label: 'roll' }
+              [rollBounds.min]: { label: 'min' },
+              [rollBounds.max]: { label: 'max' },
+              [rollValue]: { label: 'roll' }
             }"
-            :min="filter.boundMin"
-            :max="filter.boundMax"
-            :interval="(filter.boundMax - filter.boundMin) < 1 ? 0.01 : 1"
+            :min="rollBounds.min"
+            :max="rollBounds.max"
+            :interval="rollBounds.step"
           >
           <template v-slot:mark="{ pos, label, active }">
             <div class="custom-mark" :class="{ active, [label]: true }" :style="{ flex: pos }">
               <div class="custom-mark-tick" :style="{ 'left': `calc(${pos}% - 1px)` }"></div>
-              {{ label === 'min' ? filter.boundMin : label === 'max' ? filter.boundMax
-                : (filter.roll === filter.boundMin || filter.roll === filter.boundMax ? filter.roll : '') }}
+              {{ label === 'min' ? rollBounds.min : label === 'max' ? rollBounds.max
+                : (rollValue === rollBounds.min || rollValue === rollBounds.max ? rollValue : '') }}
             </div>
           </template>
           </ui-slider>
@@ -88,7 +88,7 @@ import ModifierAnointment from './FilterModifierAnointment.vue'
 import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
 import { AppConfig } from '@/web/Config'
 import { ParsedItem } from '@/parser'
-import { StatFilter } from './interfaces'
+import { FilterTag, StatFilter } from './interfaces'
 
 export default defineComponent({
   components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty },
@@ -104,21 +104,11 @@ export default defineComponent({
     }
   },
   setup (props, ctx) {
-    const showMinmaxInput = computed(() => {
-      if (
-        props.filter.option != null ||
-        (props.filter.roll == null && props.filter.min == null && props.filter.max == null)
-      ) return false
-
-      return true
-    })
-
     const showTypeTags = computed(() => {
-      if (props.filter.boundMin !== undefined || props.filter.variant || props.filter.corrupted) {
+      if (props.filter.roll?.bounds || props.filter.variant || props.filter.corrupted) {
         return false
       }
-      return props.filter.type !== 'armour' &&
-        props.filter.type !== 'weapon' &&
+      return props.filter.tag !== FilterTag.Property &&
         props.filter.tradeId[0] !== 'item.has_empty_modifier'
     })
 
@@ -132,26 +122,29 @@ export default defineComponent({
       ].includes(props.filter.tradeId[0])
     })
 
-    const inputMin = ref<ComponentPublicInstance | null>(null)
-    const inputMax = ref<ComponentPublicInstance | null>(null)
+    const calcQuality = computed(() => Math.max(20, props.item.quality || 0))
+
+    const inputMinEl = ref<ComponentPublicInstance | null>(null)
+    const inputMaxEl = ref<ComponentPublicInstance | null>(null)
 
     const sliderValue = computed<Array<number>>({
       get () {
+        const roll = props.filter.roll!
         return [
-          typeof props.filter.min === 'number' ? props.filter.min : props.filter.boundMin!,
-          typeof props.filter.max === 'number' ? props.filter.max : props.filter.boundMax!
+          typeof roll.min === 'number' ? roll.min : roll.bounds!.min,
+          typeof roll.max === 'number' ? roll.max : roll.bounds!.max
         ]
       },
       set (value) {
-        if (props.filter.min !== value[0]) {
-          props.filter.min = value[0]
+        if (props.filter.roll!.min !== value[0]) {
+          props.filter.roll!.min = value[0]
           nextTick(() => {
-            (inputMin.value!.$el as HTMLInputElement).focus()
+            (inputMinEl.value!.$el as HTMLInputElement).focus()
           })
-        } else if (props.filter.max !== value[1]) {
-          props.filter.max = value[1]
+        } else if (props.filter.roll!.max !== value[1]) {
+          props.filter.roll!.max = value[1]
           nextTick(() => {
-            (inputMax.value!.$el as HTMLInputElement).focus()
+            (inputMaxEl.value!.$el as HTMLInputElement).focus()
           })
         }
         props.filter.disabled = false
@@ -162,9 +155,9 @@ export default defineComponent({
       const target = e.target as HTMLInputElement
       if (target.value === '') {
         if (type === 'max') {
-          props.filter.max = props.filter.defaultMax
+          props.filter.roll!.max = props.filter.roll!.default.max
         } else if (type === 'min') {
-          props.filter.min = props.filter.defaultMin
+          props.filter.roll!.min = props.filter.roll!.default.min
         }
         nextTick(() => {
           target.select()
@@ -187,13 +180,30 @@ export default defineComponent({
 
     return {
       t,
-      showMinmaxInput,
       showTypeTags,
       showQ20Notice,
-      inputMin,
-      inputMax,
+      calcQuality,
+      inputMinEl,
+      inputMaxEl,
       sliderValue,
+      inputMin: computed({
+        get (): any { return props.filter.roll!.min },
+        set (value: string) { props.filter.roll!.min = Number(value) }
+      }),
+      inputMax: computed({
+        get (): any { return props.filter.roll!.max },
+        set (value: string) { props.filter.roll!.max = Number(value) }
+      }),
+      tag: computed(() => props.filter.tag),
+      showInputs: computed(() => props.filter.roll != null),
       fontSize: computed(() => AppConfig().fontSize),
+      isDisabled: computed(() => props.filter.disabled),
+      text: computed(() => t(props.filter.text)),
+      rollValue: computed(() => props.filter.roll?.value),
+      rollBounds: computed(() => props.filter.roll?.bounds),
+      showRollBounds: computed(() => props.filter.roll?.bounds != null),
+      isHidden: computed(() => props.filter.hidden != null),
+      hiddenReason: computed(() => t(props.filter.hidden!)),
       inputFocus,
       toggleFilter
     }
@@ -202,31 +212,31 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-.mod-type-implicit, .mod-type-variant {
+.filter-tag-implicit, .filter-tag-variant {
   @apply bg-yellow-700 text-yellow-100
 }
 
-.mod-type-corrupted {
+.filter-tag-corrupted {
   @apply bg-red-700 text-red-100
 }
 
-.mod-type-fractured {
+.filter-tag-fractured {
   @apply bg-yellow-400 text-black
 }
 
-.mod-type-crafted {
+.filter-tag-crafted {
   @apply bg-blue-600 text-blue-100
 }
 
-.mod-type-explicit {
+.filter-tag-explicit {
   @apply -mx-1 text-gray-600
 }
 
-.mod-type-enchant {
+.filter-tag-enchant {
   @apply bg-purple-600 text-purple-100
 }
 
-.mod-type-pseudo {
+.filter-tag-pseudo {
   @apply bg-gray-700 text-gray-900
 }
 

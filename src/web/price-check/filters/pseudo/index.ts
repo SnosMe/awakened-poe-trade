@@ -13,13 +13,14 @@ export function filterPseudo (ctx: FiltersCreationContext) {
 
 function filterRemainingPseudo (ctx: FiltersCreationContext) {
   for (const pseudoMod of REST_PSEUDO) {
-    const total = sumPseudoStats(ctx.modifiers, pseudoMod.stats)
+    const total = sumPseudoStats(ctx.statsByType, pseudoMod.stats)
 
     if (total !== undefined) {
       ctx.filters.push({
         ...pseudoMod.pseudo,
         disabled: true,
-        ...rollToFilter(total, {
+        sources: [],
+        roll: rollToFilter(total, {
           neverNegated: true,
           dp: pseudoMod.stats.some((ref) => STAT_BY_REF.get(ref)!.dp),
           percent: ctx.searchInRange
@@ -29,7 +30,7 @@ function filterRemainingPseudo (ctx: FiltersCreationContext) {
   }
 
   const statsToRemove = new Set(REST_PSEUDO.flatMap(a => a.stats))
-  ctx.modifiers = ctx.modifiers.filter(m => !statsToRemove.has(m.stat.ref))
+  ctx.statsByType = ctx.statsByType.filter(m => !statsToRemove.has(m.stat.ref))
 }
 
 const REST_PSEUDO = [
