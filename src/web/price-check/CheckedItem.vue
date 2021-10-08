@@ -5,24 +5,24 @@
       :filters="itemFilters"
       :item="item"/>
     <price-prediction v-if="showPredictedPrice" class="mb-4"
-                      :item="item"/>
+      :item="item"/>
     <price-trend
       v-if="!isPrivateLeague"
       :item="item"
       :filters="itemFilters"
-      @filter-item-base="applyItemBaseFilter"/>
+      @filter-item-base="applyItemBaseFilter" />
     <filters-block
       ref="filtersBlock"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
-      @submit="interactedOnce = true"/>
+      @submit="interactedOnce = true" />
     <trade-listing
       v-if="tradeAPI === 'trade' && interactedOnce"
       ref="tradeService"
       :filters="itemFilters"
       :stats="itemStats"
-      :item="item"/>
+      :item="item" />
     <trade-bulk
       v-if="tradeAPI === 'bulk' && interactedOnce"
       ref="tradeService"
@@ -33,15 +33,10 @@
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
-      <div class="mb-1">{{ t('Support development on') }} <img
-        @click="openLink('https://patreon.com/awakened_poe_trade')"
-        class="inline h-5 cursor-pointer animate__animated animate__fadeInRight"
-        src="@/assets/images/Patreon.svg"></div>
+      <div class="mb-1">{{ t('Support development on') }} <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer animate__animated animate__fadeInRight" src="@/assets/images/Patreon.svg"></div>
       <i18n-t keypath="This tool relies on {0} and {1}, consider support them as well" tag="div">
-      <span @click="openLink('https://poeprices.info')"
-            class="bg-gray-900 px-1 rounded cursor-pointer">poeprices.info</span>
-        <span @click="openLink('https://poe.ninja/support')"
-              class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>
+        <span @click="openLink('https://poeprices.info')" class="bg-gray-900 px-1 rounded cursor-pointer">poeprices.info</span>
+        <span @click="openLink('https://poe.ninja/support')" class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>
       </i18n-t>
     </div>
   </div>
@@ -119,7 +114,7 @@ export default defineComponent({
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||
-        (props.advancedCheck && !widget.value.lockedInitialSearch)) {
+          (props.advancedCheck && !widget.value.lockedInitialSearch)) {
         interactedOnce.value = false
       } else {
         interactedOnce.value = Boolean(
@@ -143,16 +138,11 @@ export default defineComponent({
           tradeService.value.execSearch()
         }
       })
-    }, {
-      deep: false,
-      immediate: true
-    })
+    }, { deep: false, immediate: true })
 
     watch(() => [props.item, interactedOnce.value, itemStats.value, itemFilters.value], (curr, prev) => {
-      const cItem = curr[0]
-      const pItem = prev[0]
-      const cIntaracted = curr[1]
-      const pIntaracted = prev[1]
+      const cItem = curr[0]; const pItem = prev[0]
+      const cIntaracted = curr[1]; const pIntaracted = prev[1]
 
       if (cItem === pItem && cIntaracted === true && pIntaracted === true) {
         // force user to press Search button on change
@@ -161,10 +151,8 @@ export default defineComponent({
     }, { deep: true })
 
     watch(() => [props.item, JSON.stringify(itemFilters.value.trade)], (curr, prev) => {
-      const cItem = curr[0]
-      const pItem = prev[0]
-      const cTrade = curr[1]
-      const pTrade = prev[1]
+      const cItem = curr[0]; const pItem = prev[0]
+      const cTrade = curr[1]; const pTrade = prev[1]
 
       if (cItem === pItem && cTrade !== pTrade) {
         nextTick(() => {

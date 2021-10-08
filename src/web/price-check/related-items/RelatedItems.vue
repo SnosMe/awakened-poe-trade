@@ -3,7 +3,7 @@
        style="border-width: 0.25rem;">
     <div class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.detailsId"
-           :class="{ 'bg-gray-700 -mx-1 px-1': item.detailsId === detailsId }" class="rounded">
+        :class="{ 'bg-gray-700 -mx-1 px-1': item.detailsId === detailsId }" class="rounded">
         <div class="flex items-center flex-1 px-2">
           <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">

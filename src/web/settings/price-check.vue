@@ -2,16 +2,13 @@
   <div class="max-w-md p-2">
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('League') }}
-        <button v-if="!leagues.isLoading.value" class="btn" @click="leagues.load">
-          {{ t(leagues.error.value ? 'Retry' : 'Refresh') }}
-        </button>
+        <button v-if="!leagues.isLoading.value" class="btn" @click="leagues.load">{{ t(leagues.error.value ? 'Retry' : 'Refresh') }}</button>
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
-        <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}
-      </div>
+        <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
       <div v-else-if="leagues.trade.value.length"
-           class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
-           style="grid-template-columns: repeat(2, min-content);">
+        class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
+        style="grid-template-columns: repeat(2, min-content);">
         <div v-for="league of leagues.trade.value" :key="league.id">
           <ui-radio v-model="leagueId" @click="isPrivateLeague = false" :value="league.id">{{ league.id }}</ui-radio>
         </div>
@@ -58,8 +55,7 @@
       <div class="mb-4 flex">
         <div class="flex mr-6">
           <span class="mr-1">+-</span>
-          <input v-model.number="searchStatRange"
-                 class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center"/>
+          <input v-model.number="searchStatRange" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
           <span class="ml-1">%</span>
         </div>
         <ui-radio v-model="searchStatRange" :value="0">{{ t('Exact roll') }}</ui-radio>
@@ -89,10 +85,7 @@
         <ui-radio v-model="showCursor" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
-    <div class="mb-2 bg-orange-800 p-2">{{
-        t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.')
-      }}
-    </div>
+    <div class="mb-2 bg-orange-800 p-2">{{ t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.') }}</div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show indication on collapsed listings') }}</div>
       <div class="mb-4 flex">
@@ -104,11 +97,11 @@
       <div class="flex-1 mb-1">{{ t('Perform an auto search, when pressing') }}</div>
       <div class="mb-4 flex">
         <ui-toggle v-if="hotkeyQuick"
-                   v-model="smartInitialSearch" class="mr-6">
+          v-model="smartInitialSearch" class="mr-6">
           <span class="bg-gray-900 text-gray-500 rounded px-2">{{ hotkeyQuick }}</span>
         </ui-toggle>
         <ui-toggle v-if="hotkeyLocked"
-                   v-model="lockedInitialSearch">
+          v-model="lockedInitialSearch">
           <span class="bg-gray-900 text-gray-500 rounded px-2">{{ hotkeyLocked }}</span>
         </ui-toggle>
       </div>
@@ -117,8 +110,7 @@
       <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
       <div class="flex">
         <div class="flex mr-6">
-          <input v-model.number="apiLatencySeconds"
-                 class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center"/>
+          <input v-model.number="apiLatencySeconds" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
           <span class="ml-2">{{ t('seconds') }}</span>
         </div>
       </div>
