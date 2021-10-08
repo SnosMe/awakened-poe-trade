@@ -70,7 +70,7 @@
         </div>
       </div>
     </div>
-    <div class="mb-2" >
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Always select "Stock" filter') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="activateStockFilter" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
@@ -92,7 +92,7 @@
         <ui-radio v-model="collapseListings" value="app">{{ t('Yes') }}</ui-radio>
       </div>
     </div>
-    <div class="mb-2">
+    <div class="mb-2" >
       <div class="flex-1 mb-1">{{ t('Perform an auto search, when pressing') }}</div>
       <div class="mb-4 flex">
         <ui-toggle v-if="hotkeyQuick"
