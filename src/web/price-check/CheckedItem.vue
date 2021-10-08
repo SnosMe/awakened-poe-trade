@@ -3,9 +3,9 @@
     <filter-name
       ref="nameFilter"
       :filters="itemFilters"
-      :item="item"/>
+      :item="item" />
     <price-prediction v-if="showPredictedPrice" class="mb-4"
-      :item="item"/>
+      :item="item" />
     <price-trend
       v-if="!isPrivateLeague"
       :item="item"
@@ -27,7 +27,7 @@
       v-if="tradeAPI === 'bulk' && interactedOnce"
       ref="tradeService"
       :filters="itemFilters"
-      :item="item"/>
+      :item="item" />
     <div v-if="!interactedOnce" @mouseenter="handleSearchMouseenter">
       <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
     </div>

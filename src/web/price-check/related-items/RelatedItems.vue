@@ -1,6 +1,5 @@
 <template>
-  <div v-if="result" class="flex max-w-full bg-gray-800 text-gray-400 mt-6 border border-gray-900"
-       style="border-width: 0.25rem;">
+  <div v-if="result" class="flex max-w-full bg-gray-800 text-gray-400 mt-6 border border-gray-900" style="border-width: 0.25rem;">
     <div class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.detailsId"
         :class="{ 'bg-gray-700 -mx-1 px-1': item.detailsId === detailsId }" class="rounded">
