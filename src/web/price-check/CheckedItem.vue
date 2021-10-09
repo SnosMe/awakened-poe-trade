@@ -57,8 +57,7 @@ import StackValue from './stack-value/StackValue.vue'
 import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { AppConfig } from '@/web/Config'
-import { ItemFilters, StatFilter } from './filters/interfaces'
-import { ModifierType } from '@/parser/modifiers'
+import { FilterTag, ItemFilters, StatFilter } from './filters/interfaces'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PriceCheckWidget } from '../overlay/interfaces'
 import { selected as selectedLeague } from '@/web/background/Leagues'
@@ -181,7 +180,7 @@ export default defineComponent({
     async function applyItemBaseFilter () {
       for (const stat of itemStats.value) {
         // TODO or 'Syntesized'
-        if (stat.tag === ModifierType.Fractured && stat.hidden) {
+        if (stat.tag === FilterTag.Fractured && stat.hidden) {
           stat.disabled = false
           filtersBlock.value.showHidden = true
         } else {

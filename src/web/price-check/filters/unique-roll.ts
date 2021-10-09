@@ -26,7 +26,8 @@ export function uniqueModFilterPartial (
       default: {
         min: statRoll.value,
         max: statRoll.value
-      }
+      },
+      step: dp ? 0.01 : 1
     }
 
     if (filter.tag !== FilterTag.Variant && filter.tag !== FilterTag.Corrupted) {
@@ -43,9 +44,9 @@ export function uniqueModFilterPartial (
       },
       bounds: {
         min: statRoll.min,
-        max: statRoll.max,
-        step: dp ? 0.01 : 1
-      }
+        max: statRoll.max
+      },
+      step: dp ? 0.01 : 1
     }
   }
 }

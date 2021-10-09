@@ -56,6 +56,7 @@ export default defineComponent({
         placement: props.placement,
         arrow: props.arrow,
         delay: props.delay,
+        maxWidth: 'none',
         popperOptions: {
           modifiers: [
             ...(props.boundary

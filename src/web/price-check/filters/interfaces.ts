@@ -89,8 +89,9 @@ export interface StatFilter {
     min: number | '' | undefined // NOTE: mutable in UI
     max: number | '' | undefined // NOTE: mutable in UI
     default: { min: number, max: number }
-    bounds?: { min: number, max: number, step: number }
+    bounds?: { min: number, max: number }
     invert?: boolean
+    step: number
   }
   option?: {
     value: number // NOTE: mutable in UI

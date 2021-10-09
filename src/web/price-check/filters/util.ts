@@ -40,6 +40,7 @@ export function rollToFilter (
       max: percentRoll(roll, +percent * Math.sign(roll), Math.ceil, dp)
     },
     min: neverNegated ? percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp) : undefined,
-    max: undefined
+    max: undefined,
+    step: dp ? 0.01 : 1
   }
 }

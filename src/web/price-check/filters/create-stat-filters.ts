@@ -158,7 +158,8 @@ function itemModFilterPartial (
         default: {
           min: percentRoll(roll.value, 0, Math.floor, dp),
           max: percentRoll(roll.value, 0, Math.ceil, dp)
-        }
+        },
+        step: dp ? 0.01 : 1
       }
     } else {
       filter.roll = rollToFilter(roll.value, { dp: dp, percent })

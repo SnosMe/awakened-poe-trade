@@ -1,5 +1,10 @@
 <template>
-  <div class="py-2 border-b border-gray-700 flex">
+  <div :class="$style['filter']">
+    <div :class="$style['mods']">
+      <div class="pl-5 pr-3 py-1" v-for="(source, idx) of filter.sources" :key="idx">
+        <source-info :source="source" />
+      </div>
+    </div>
     <div class="flex flex-col min-w-0 flex-1">
       <div class="pb-px flex items-baseline justify-between">
         <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
@@ -12,15 +17,16 @@
             <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="rollValue" /></span>
           </div>
         </button>
-        <div class="flex items-baseline">
-          <div v-if="showQ20Notice"
-            class="border border-gray-700 text-gray-500 text-center rounded px-2 mr-1">{{ t('Q {0}%', [calcQuality]) }}</div>
-          <ui-input-debounced class="search-num-input rounded-l mr-px" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" step="any" type="number"
-            v-if="showInputs" ref="inputMinEl"
-            v-model="inputMin" @focus="inputFocus($event, 'min')" :delay="0" />
-          <ui-input-debounced class="search-num-input rounded-r" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" step="any" type="number"
-            v-if="showInputs" ref="inputMaxEl"
-            v-model="inputMax" @focus="inputFocus($event, 'max')" :delay="0" />
+        <div class="flex items-baseline gap-x-1">
+          <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('Q {0}%', [calcQuality]) }}</div>
+          <div class="flex gap-x-px">
+            <ui-input-debounced :class="$style['rollInput']" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
+              v-if="showInputs" ref="inputMinEl"
+              v-model="inputMin" @focus="inputFocus($event, 'min')" :delay="0" />
+            <ui-input-debounced :class="$style['rollInput']" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
+              v-if="showInputs" ref="inputMaxEl"
+              v-model="inputMax" @focus="inputFocus($event, 'max')" :delay="0" />
+          </div>
         </div>
       </div>
       <div class="flex">
@@ -37,12 +43,8 @@
           </ui-popover>
         </div>
         <div class="flex-1 flex items-start">
-          <span v-if="showTypeTags"
-            class="text-xs leading-none px-1 rounded" :class="`filter-tag-${tag}`">{{ t(tag) }}</span>
-          <span v-if="filter.variant"
-            class="text-xs leading-none px-1 rounded filter-tag-variant">{{ t('variant') }}</span>
-          <span v-if="filter.corrupted"
-            class="text-xs leading-none px-1 rounded filter-tag-corrupted">{{ t('corrupted') }}</span>
+          <span v-if="showTag"
+            :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(tag) }}</span>
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
         <div v-if="showRollBounds"
@@ -60,7 +62,7 @@
             }"
             :min="rollBounds.min"
             :max="rollBounds.max"
-            :interval="rollBounds.step"
+            :interval="changeStep"
           >
           <template v-slot:mark="{ pos, label, active }">
             <div class="custom-mark" :class="{ active, [label]: true }" :style="{ flex: pos }">
@@ -89,9 +91,10 @@ import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
 import { AppConfig } from '@/web/Config'
 import { ParsedItem } from '@/parser'
 import { FilterTag, StatFilter } from './interfaces'
+import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
-  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty },
+  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, SourceInfo },
   emits: ['submit'],
   props: {
     filter: {
@@ -104,13 +107,10 @@ export default defineComponent({
     }
   },
   setup (props, ctx) {
-    const showTypeTags = computed(() => {
-      if (props.filter.roll?.bounds || props.filter.variant || props.filter.corrupted) {
-        return false
-      }
-      return props.filter.tag !== FilterTag.Property &&
-        props.filter.tradeId[0] !== 'item.has_empty_modifier'
-    })
+    const showTag = computed(() =>
+      props.filter.tag !== FilterTag.Property &&
+      props.filter.tradeId[0] !== 'item.has_empty_modifier'
+    )
 
     const showQ20Notice = computed(() => {
       return [
@@ -180,7 +180,7 @@ export default defineComponent({
 
     return {
       t,
-      showTypeTags,
+      showTag,
       showQ20Notice,
       calcQuality,
       inputMinEl,
@@ -195,6 +195,7 @@ export default defineComponent({
         set (value: string) { props.filter.roll!.max = Number(value) }
       }),
       tag: computed(() => props.filter.tag),
+      changeStep: computed(() => props.filter.roll!.step),
       showInputs: computed(() => props.filter.roll != null),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
@@ -211,42 +212,24 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss">
-.filter-tag-implicit, .filter-tag-variant {
-  @apply bg-yellow-700 text-yellow-100
+<style lang="postcss" module>
+.filter {
+  @apply py-2;
+  @apply border-b border-gray-700;
+  display: flex;
+  position: relative;
 }
 
-.filter-tag-corrupted {
-  @apply bg-red-700 text-red-100
-}
-
-.filter-tag-fractured {
-  @apply bg-yellow-400 text-black
-}
-
-.filter-tag-crafted {
-  @apply bg-blue-600 text-blue-100
-}
-
-.filter-tag-explicit {
-  @apply -mx-1 text-gray-600
-}
-
-.filter-tag-enchant {
-  @apply bg-purple-600 text-purple-100
-}
-
-.filter-tag-pseudo {
-  @apply bg-gray-700 text-gray-900
-}
-
-.search-num-input {
+.rollInput {
   @apply bg-gray-900;
   @apply text-gray-300;
   @apply text-center;
   @apply w-12;
   @apply px-1;
   @apply border border-transparent;
+
+  &:first-child { @apply rounded-l; }
+  &:last-child { @apply rounded-r; }
 
   &::placeholder {
     @apply text-gray-700;
@@ -261,6 +244,58 @@ export default defineComponent({
   }
 }
 
+.qualityLabel {
+  @apply text-gray-500;
+  @apply border border-gray-700;
+  @apply rounded;
+  @apply px-2;
+  text-align: center;
+}
+
+.mods {
+  @apply border-b-4 border-gray-500;
+  background: linear-gradient(to bottom, theme('colors.gray.800') , theme('colors.gray.900') );
+  @apply -mx-4 px-4;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.filter:not(:hover) > .mods {
+  display: none;
+}
+
+.filter:nth-child(4) > .mods {
+  display: block;
+}
+
+.tag {
+  @apply px-1;
+  @apply rounded;
+  @apply text-xs;
+  line-height: 1;
+}
+.tag-implicit,
+.tag-variant {
+  @apply bg-yellow-700 text-yellow-100; }
+.tag-corrupted {
+  @apply bg-red-700 text-red-100; }
+.tag-fractured {
+  @apply bg-yellow-400 text-black; }
+.tag-crafted {
+  @apply bg-blue-600 text-blue-100; }
+.tag-explicit {
+  @apply -mx-1 text-gray-600; }
+.tag-enchant {
+  @apply bg-purple-600 text-purple-100; }
+.tag-pseudo {
+  @apply bg-gray-700 text-gray-900; }
+</style>
+
+<style lang="postcss">
 .search-text-full {
   position: absolute;
   left: 0px;

@@ -26,7 +26,7 @@ export default defineComponent({
     const result = computed(() => {
       if (props.filter.statRef !== 'Allocates #') return null
 
-      const roll = props.filter.roll!.value
+      const roll = props.filter.option!.value
 
       const oils = (RECIPES.recipes[roll] ?? []).map(idx => RECIPES.oils[idx])
       if (!oils.length) return null

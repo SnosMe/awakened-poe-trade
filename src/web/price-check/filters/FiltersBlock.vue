@@ -78,6 +78,7 @@
           <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
           <span class="text-gray-400">{{ t('Hidden') }}</span>
         </button>
+        <ui-toggle :modelValue="false" class="ml-auto text-gray-400 pt-2">{{ t('Mods') }}</ui-toggle>
       </div>
     </div>
   </div>

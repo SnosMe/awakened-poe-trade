@@ -87,19 +87,31 @@ export function filterAttributes (ctx: FiltersCreationContext) {
 
   for (const attr of attrs) {
     if (attr.pseudo.text === STR_ATTR.pseudo.text) {
-      ctx.modifiers.push({
+      ctx.statsByType.push({
         stat: STAT_BY_REF.get(TO_MAXIMUM_LIFE)!,
-        string: 'N/A',
         type: ModifierType.Explicit,
-        value: attr.total * (5 / 10)
+        sources: [
+          // TODO
+          // {
+          //   modifier: undefined,
+          //   stat: undefined,
+          //   contributes: attr.total * (5 / 10)
+          // }
+        ]
       })
     }
     if (attr.pseudo.text === INT_ATTR.pseudo.text) {
-      ctx.modifiers.push({
+      ctx.statsByType.push({
         stat: STAT_BY_REF.get(TO_MAXIMUM_MANA)!,
-        string: 'N/A',
         type: ModifierType.Explicit,
-        value: attr.total * (5 / 10)
+        sources: [
+          // TODO
+          // {
+          //   modifier: undefined,
+          //   stat: undefined,
+          //   contributes: attr.total * (5 / 10)
+          // }
+        ]
       })
     }
   }
