@@ -1,7 +1,7 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ModifierType, StatCalculated, StatRoll, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
-import { rollToFilter, percentRoll } from './util'
+import { rollToFilter, percentRoll, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
@@ -152,7 +152,7 @@ function itemModFilterPartial (
   if (roll) {
     if (calc.type === ModifierType.Enchant) {
       filter.roll = {
-        value: percentRoll(roll.value, 0, Math.floor, dp),
+        value: roundRoll(roll.value, dp),
         min: percentRoll(roll.value, 0, Math.floor, dp),
         max: percentRoll(roll.value, 0, Math.ceil, dp),
         default: {

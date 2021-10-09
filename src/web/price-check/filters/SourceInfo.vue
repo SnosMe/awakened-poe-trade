@@ -13,7 +13,7 @@ import { computed, defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { StatCalculated } from '@/parser/modifiers'
 import { applyIncr } from '@/parser/advanced-mod-desc'
-import { percentRoll } from './util'
+import { roundRoll } from './util'
 import ItemModifierText from '@/web/ui/ItemModifierText.vue'
 
 export default defineComponent({
@@ -69,7 +69,7 @@ export default defineComponent({
         const rollValue = parsed.roll.value * (parsed.translation.negate ? -1 : 1)
         return {
           text: parsed.translation.string,
-          roll: percentRoll(rollValue, 0, Math.floor, parsed.roll.dp),
+          roll: roundRoll(rollValue, parsed.roll.dp),
           contribution: contribution!,
           contributes: true
         }

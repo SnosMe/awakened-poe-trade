@@ -1,26 +1,32 @@
 import type { StatFilter } from './interfaces'
 
-function showDecimals (value: number, dp: number | boolean): number {
+function decimalPlaces (value: number, dp: number | boolean): number {
   if (typeof dp === 'number') {
     return dp
-  } else if (!dp || Math.abs(value) > 2) {
+  } else if (!dp || Math.abs(value) >= 10) {
     return 0
   } else {
-    return Math.abs(value) < 1 ? 2 : 1
+    return Math.abs(value) < 2 ? 2 : 1
   }
+}
+
+export function roundRoll (value: number, dp: number | boolean) {
+  const round = Math.pow(10, decimalPlaces(value, dp))
+  // round value down (toward zero)
+  return Math.trunc(value * round) / round
 }
 
 export function percentRoll (value: number, p: number, method: Math['floor'] | Math['ceil'], dp: number | boolean = false): number {
   const res = value + value * p / 100
 
-  const rounding = Math.pow(10, showDecimals(value, dp))
+  const rounding = Math.pow(10, decimalPlaces(value, dp))
   return method((res + Number.EPSILON) * rounding) / rounding
 }
 
 export function percentRollDelta (value: number, delta: number, p: number, method: Math['floor'] | Math['ceil'], dp = false): number {
   const res = value + delta * p / 100
 
-  const rounding = Math.pow(10, showDecimals(value, dp))
+  const rounding = Math.pow(10, decimalPlaces(value, dp))
   return method((res + Number.EPSILON) * rounding) / rounding
 }
 
@@ -34,7 +40,7 @@ export function rollToFilter (
   // disabled by default, so opts.neverNegated acts more like
   // acknowledgment of what you are doing
   return {
-    value: percentRoll(roll, 0, Math.floor, dp),
+    value: roundRoll(roll, dp ?? false),
     default: {
       min: percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp),
       max: percentRoll(roll, +percent * Math.sign(roll), Math.ceil, dp)
