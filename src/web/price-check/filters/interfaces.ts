@@ -90,7 +90,7 @@ export interface StatFilter {
     max: number | '' | undefined // NOTE: mutable in UI
     default: { min: number, max: number }
     bounds?: { min: number, max: number }
-    invert?: boolean
+    tradeInvert?: boolean
     step: number
   }
   option?: {

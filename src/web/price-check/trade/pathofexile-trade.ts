@@ -590,11 +590,11 @@ function getMinMax (roll: StatFilter['roll']) {
     return { min: undefined, max: undefined }
   }
 
-  const sign = roll.invert ? -1 : 1
+  const sign = roll.tradeInvert ? -1 : 1
   const a = typeof roll.min === 'number' ? roll.min * sign : undefined
   const b = typeof roll.max === 'number' ? roll.max * sign : undefined
 
-  return !roll.invert ? { min: a, max: b } : { min: b, max: a }
+  return !roll.tradeInvert ? { min: a, max: b } : { min: b, max: a }
 }
 
 function tradeIdToQuery (id: string, stat: StatFilter) {

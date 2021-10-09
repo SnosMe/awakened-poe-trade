@@ -177,7 +177,7 @@ function filterAdjustmentForNegate (
   const { roll } = filter
 
   if (negate) {
-    roll.invert = true
+    roll.tradeInvert = true
     const swap = JSON.parse(JSON.stringify(roll)) as typeof roll
 
     if (roll.bounds) {
@@ -210,7 +210,7 @@ function filterAdjustmentForNegate (
   }
 
   if (calc.stat.trade.inverted) {
-    roll.invert = !roll.invert
+    roll.tradeInvert = !roll.tradeInvert
   }
 }
 
