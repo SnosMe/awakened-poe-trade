@@ -1,11 +1,12 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
-import { ModifierType, StatCalculated, StatRoll, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
+import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { uniqueModFilterPartial } from './unique-roll'
-import { rollToFilter, percentRoll, roundRoll } from './util'
+import { percentRoll, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { filterItemProp } from './pseudo/item-property'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
+import { StatBetter } from '@/assets/data'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -133,38 +134,27 @@ export function calculatedStatToFilter (
     ) {
       uniqueModFilterPartial(item, roll, filter, (opts.percent * 2), dp)
     } else {
-      itemModFilterPartial(calc, roll, filter, opts.percent, dp)
+      const percent = (calc.type === ModifierType.Enchant)
+        ? 0
+        : opts.percent
+
+      filter.roll = {
+        value: roundRoll(roll.value, dp),
+        min: undefined,
+        max: undefined,
+        default: {
+          min: percentRoll(roll.value, -percent, Math.floor, dp),
+          max: percentRoll(roll.value, +percent, Math.ceil, dp)
+        },
+        dp: dp,
+        isNegated: false
+      }
     }
   }
 
   filterAdjustmentForNegate(calc, translation.negate, filter)
 
   return filter
-}
-
-function itemModFilterPartial (
-  calc: StatCalculated,
-  roll: StatRoll,
-  filter: StatFilter,
-  percent: number,
-  dp: boolean
-) {
-  if (roll) {
-    if (calc.type === ModifierType.Enchant) {
-      filter.roll = {
-        value: roundRoll(roll.value, dp),
-        min: percentRoll(roll.value, 0, Math.floor, dp),
-        max: percentRoll(roll.value, 0, Math.ceil, dp),
-        default: {
-          min: percentRoll(roll.value, 0, Math.floor, dp),
-          max: percentRoll(roll.value, 0, Math.ceil, dp)
-        },
-        step: dp ? 0.01 : 1
-      }
-    } else {
-      filter.roll = rollToFilter(roll.value, { dp: dp, percent })
-    }
-  }
 }
 
 function filterAdjustmentForNegate (
@@ -176,37 +166,41 @@ function filterAdjustmentForNegate (
 
   const { roll } = filter
 
+  if (roll.min == null && roll.max == null) {
+    switch (calc.stat.better) {
+      case StatBetter.PositiveRoll:
+        roll.min = roll.default.min
+        break
+      case StatBetter.NegativeRoll:
+        roll.max = roll.default.max
+        break
+      case StatBetter.NotComparable:
+        roll.min = roll.default.min
+        roll.max = roll.default.max
+        break
+    }
+  }
+
   if (negate) {
     roll.tradeInvert = true
+    roll.isNegated = true
     const swap = JSON.parse(JSON.stringify(roll)) as typeof roll
 
-    if (roll.bounds) {
-      roll.bounds.min = -1 * swap.bounds!.max
-      roll.bounds.max = -1 * swap.bounds!.min
+    if (swap.bounds) {
+      roll.bounds!.min = -1 * swap.bounds.max
+      roll.bounds!.max = -1 * swap.bounds.min
     }
 
     roll.default.min = -1 * swap.default.max
     roll.default.max = -1 * swap.default.min
 
-    if (roll.min == null && roll.max == null) {
-      // TODO: for some stats reduced is better
-      roll.min = -1 * swap.default.max
-    } else {
-      if (roll.max != null) {
-        roll.min = -1 * (swap.max as number)
-      }
-      if (roll.min != null) {
-        roll.max = -1 * (swap.min as number)
-      }
-    }
-    if (roll.value != null) {
-      roll.value = -1 * swap.value
-    }
-  } else {
-    if (roll.min == null && roll.max == null) {
-      // TODO: for some stats reduced is better
-      roll.min = roll.default.min
-    }
+    roll.value = -1 * swap.value
+    roll.min = (typeof swap.max === 'number')
+      ? -1 * swap.max
+      : undefined
+    roll.max = (typeof swap.min === 'number')
+      ? -1 * swap.min
+      : undefined
   }
 
   if (calc.stat.trade.inverted) {

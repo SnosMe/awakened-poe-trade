@@ -7,10 +7,17 @@ export interface StatMatcher {
   value?: number
 }
 
+export enum StatBetter {
+  NegativeRoll = -1,
+  PositiveRoll = 1,
+  NotComparable = 0
+}
+
 export interface Stat {
   ref: string
   dp?: true
   matchers: StatMatcher[]
+  better: StatBetter
   trade: {
     inverted?: true
     option?: 'num' | 'str'

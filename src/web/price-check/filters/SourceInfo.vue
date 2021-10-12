@@ -3,7 +3,7 @@
     <div :class="$style['modinfo']">{{ modText }}</div>
     <div v-for="stat of stats" :key="stat.text" class="flex">
       <item-modifier-text :text="stat.text" :roll="stat.roll" :class="{ 'line-through': !stat.contributes }" />
-      <div v-if="stat.contributes && stat.contribution" class="ml-auto">{{ stat.contribution }}</div>
+      <div v-if="stat.contributes && stat.contribution" :class="$style['contribution']">{{ stat.contribution }}</div>
     </div>
   </div>
 </template>
@@ -11,16 +11,21 @@
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
-import type { StatCalculated } from '@/parser/modifiers'
 import { applyIncr } from '@/parser/advanced-mod-desc'
 import { roundRoll } from './util'
 import ItemModifierText from '@/web/ui/ItemModifierText.vue'
+import type { StatCalculated } from '@/parser/modifiers'
+import type { StatFilter } from './interfaces'
 
 export default defineComponent({
   components: { ItemModifierText },
   props: {
     source: {
       type: Object as PropType<StatCalculated['sources'][number]>,
+      required: true
+    },
+    filter: {
+      type: Object as PropType<StatFilter>,
       required: true
     }
   },
@@ -47,8 +52,12 @@ export default defineComponent({
       const { stats } = props.source.modifier
       const { stat: contribStat } = props.source.stat
 
-      // TODO: percentRoll, isNegated
-      const contribution = props.source.contributes?.value
+      let contribution = props.source.contributes?.value
+      if (contribution != null) {
+        const filter = props.filter.roll!
+        contribution *= (filter.isNegated) ? -1 : 1
+        contribution = roundRoll(contribution, filter.dp)
+      }
 
       return stats.map((parsed) => {
         if (parsed.stat.ref !== contribStat.ref) {
@@ -88,6 +97,14 @@ export default defineComponent({
 .modinfo {
   @apply text-gray-500;
   font-style: italic;
+}
+
+.contribution {
+  margin-left: auto;
+  @apply w-12;
+  @apply rounded;
+  @apply border border-gray-700;
+  text-align: center;
 }
 </style>
 

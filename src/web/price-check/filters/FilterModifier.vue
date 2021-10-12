@@ -1,8 +1,8 @@
 <template>
   <div :class="$style['filter']">
-    <div :class="$style['mods']">
-      <div class="pl-5 pr-3 py-1" v-for="(source, idx) of filter.sources" :key="idx">
-        <source-info :source="source" />
+    <div v-if="showSourceInfo" :class="$style['mods']">
+      <div class="pl-5 py-1" v-for="(source, idx) of filter.sources" :key="idx">
+        <source-info :source="source" :filter="filter" />
       </div>
     </div>
     <div class="flex flex-col min-w-0 flex-1">
@@ -195,7 +195,7 @@ export default defineComponent({
         set (value: string) { props.filter.roll!.max = Number(value) }
       }),
       tag: computed(() => props.filter.tag),
-      changeStep: computed(() => props.filter.roll!.step),
+      changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
       showInputs: computed(() => props.filter.roll != null),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
@@ -205,6 +205,15 @@ export default defineComponent({
       showRollBounds: computed(() => props.filter.roll?.bounds != null),
       isHidden: computed(() => props.filter.hidden != null),
       hiddenReason: computed(() => t(props.filter.hidden!)),
+      showSourceInfo: computed(() =>
+        props.filter.sources.length &&
+        props.filter.option == null && (
+          props.filter.sources.length >= 2 ||
+          props.filter.sources[0].modifier.info.name != null ||
+          props.filter.sources[0].modifier.info.tier != null ||
+          props.filter.sources[0].modifier.info.rank != null
+        )
+      ),
       inputFocus,
       toggleFilter
     }

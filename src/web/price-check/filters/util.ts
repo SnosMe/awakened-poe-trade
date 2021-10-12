@@ -10,14 +10,16 @@ function decimalPlaces (value: number, dp: number | boolean): number {
   }
 }
 
-export function roundRoll (value: number, dp: number | boolean) {
-  const round = Math.pow(10, decimalPlaces(value, dp))
-  // round value down (toward zero)
-  return Math.trunc(value * round) / round
-}
+export const roundRoll = (value: number, dp: number | boolean) =>
+  percentRoll(value, 0, Math.trunc, dp)
 
-export function percentRoll (value: number, p: number, method: Math['floor'] | Math['ceil'], dp: number | boolean = false): number {
-  const res = value + value * p / 100
+export function percentRoll (
+  value: number,
+  p: number,
+  method: Math['floor'] | Math['ceil'] | Math['trunc'],
+  dp: number | boolean = false
+): number {
+  const res = value + Math.abs(value) * p / 100
 
   const rounding = Math.pow(10, decimalPlaces(value, dp))
   return method((res + Number.EPSILON) * rounding) / rounding
@@ -32,21 +34,19 @@ export function percentRollDelta (value: number, delta: number, p: number, metho
 
 export function rollToFilter (
   roll: number,
-  opts: { percent: number, neverNegated?: true, dp?: boolean | number }
+  opts: { percent: number, neverNegated: true, dp?: boolean | number }
 ): StatFilter['roll'] {
-  const { percent, neverNegated, dp } = opts
+  const { percent, dp } = opts
 
-  // opts.neverNegated is false only in one case, but keep it
-  // disabled by default, so opts.neverNegated acts more like
-  // acknowledgment of what you are doing
   return {
     value: roundRoll(roll, dp ?? false),
-    default: {
-      min: percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp),
-      max: percentRoll(roll, +percent * Math.sign(roll), Math.ceil, dp)
-    },
-    min: neverNegated ? percentRoll(roll, -percent * Math.sign(roll), Math.floor, dp) : undefined,
+    min: percentRoll(roll, -percent, Math.floor, dp),
     max: undefined,
-    step: dp ? 0.01 : 1
+    default: {
+      min: percentRoll(roll, -percent, Math.floor, dp),
+      max: percentRoll(roll, +percent, Math.ceil, dp)
+    },
+    dp: dp ?? false,
+    isNegated: false
   }
 }

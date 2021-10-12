@@ -137,9 +137,9 @@ export function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | 
     roll: {
       unscalable: roll.unscalable,
       dp: roll.dp,
-      value: percentRoll(roll.value, rollIncr, (roll.value > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100),
-      min: percentRoll(roll.min, rollIncr, (roll.min > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100),
-      max: percentRoll(roll.max, rollIncr, (roll.max > 0) ? Math.floor : Math.ceil, roll.dp && DIV_BY_100)
+      value: percentRoll(roll.value, rollIncr, Math.trunc, roll.dp && DIV_BY_100),
+      min: percentRoll(roll.min, rollIncr, Math.trunc, roll.dp && DIV_BY_100),
+      max: percentRoll(roll.max, rollIncr, Math.trunc, roll.dp && DIV_BY_100)
     }
   }
 }
