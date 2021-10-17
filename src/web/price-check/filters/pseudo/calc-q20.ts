@@ -47,7 +47,7 @@ export function propAt20Quality (
   let flat = 0
 
   for (const calc of item.statsByType) {
-    const roll = statSourcesTotal(calc)!
+    const roll = statSourcesTotal(calc.sources)!
     if (calc.stat.ref === statRefs.flat) {
       flat = roll.value
     } else if (statRefs.incr.includes(calc.stat.ref)) {

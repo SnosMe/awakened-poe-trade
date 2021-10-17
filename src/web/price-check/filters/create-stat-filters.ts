@@ -110,7 +110,7 @@ export function calculatedStatToFilter (
     }
   }
 
-  const roll = statSourcesTotal(calc)
+  const roll = statSourcesTotal(calc.sources)
   const translation = translateStatWithRoll(calc, roll)
 
   const filter: StatFilter = {

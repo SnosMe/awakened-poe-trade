@@ -208,12 +208,14 @@ export default defineComponent({
       showSourceInfo: computed(() =>
         props.filter.sources.length &&
         props.filter.option == null && (
+          props.filter.tag === FilterTag.Pseudo ||
+          (
           props.filter.sources.length >= 2 ||
           props.filter.sources[0].modifier.info.name != null ||
           props.filter.sources[0].modifier.info.tier != null ||
           props.filter.sources[0].modifier.info.rank != null
         )
-      ),
+        )),
       inputFocus,
       toggleFilter
     }
@@ -376,7 +378,6 @@ export default defineComponent({
     "Armour: #": "Броня: #",
     "Evasion Rating: #": "Уклонение: #",
     "Energy Shield: #": "Энерг. щит: #",
-    "+#% total to one of Elemental Resistances": "Всего +#% к сопротивлению одной из стихий",
     "Map is not occupied by Elder Guardian": "Карта не захвачена Хранителем Древнего",
     "Block: #%": "Блок: #%",
     "variant": "вариант",
@@ -392,8 +393,7 @@ export default defineComponent({
     "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование",
     "Select only if price-checking as base item for crafting": "Отмечайте, если проверяете цену в качестве базового предмета для крафта",
     "1 Empty or Crafted Modifier": "1 свободное или ремесленное свойство",
-    "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств",
-    "Stat has a relatively small value": "Относительно небольшое значение у мода"
+    "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств"
   }
 }
 </i18n>

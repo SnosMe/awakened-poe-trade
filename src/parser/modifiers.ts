@@ -6,11 +6,13 @@ import type { ParsedStat } from './stat-translations'
 export interface StatCalculated {
   stat: Stat
   type: ModifierType
-  sources: Array<{
-    modifier: ParsedModifier
-    stat: ParsedStat
-    contributes?: StatRoll
-  }>
+  sources: StatSource[]
+}
+
+export interface StatSource {
+  modifier: ParsedModifier
+  stat: ParsedStat
+  contributes?: StatRoll
 }
 
 export interface StatRoll {
@@ -61,11 +63,11 @@ export function sumStatsByModType (mods: readonly ParsedModifier[]): StatCalcula
 }
 
 export function statSourcesTotal (
-  calc: StatCalculated
+  sources: StatSource[]
 ): StatRoll | undefined {
-  return (calc.sources.length === 1)
-    ? (calc.sources[0].contributes)
-    : (calc.sources.reduce((sum, { contributes }) => {
+  return (sources.length === 1)
+    ? (sources[0].contributes)
+    : (sources.reduce((sum, { contributes }) => {
         sum.value += contributes!.value
         sum.min += contributes!.min
         sum.max += contributes!.max

@@ -9,7 +9,7 @@ export interface PreparedStat {
 
 export function prepareMapStats (item: ParsedItem): PreparedStat[] {
   return item.statsByType.map(calc => {
-    const roll = statSourcesTotal(calc)
+    const roll = statSourcesTotal(calc.sources)
     const translation = translateStatWithRoll(calc, roll)
 
     const prepared = {

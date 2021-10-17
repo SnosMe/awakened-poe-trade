@@ -1,5 +1,5 @@
 import { STAT_BY_REF } from '@/assets/data'
-import { StatCalculated, ModifierType } from '@/parser/modifiers'
+import { StatCalculated, ModifierType, StatSource } from '@/parser/modifiers'
 import { FilterTag, InternalTradeId } from '../interfaces'
 
 export function pseudoStat (ref: string) {
@@ -29,4 +29,20 @@ export function sumPseudoStats (stats: StatCalculated[], pseudoRefs: string[]) {
         ? (total ?? 0) + sources.reduce((total, source) => total + source.contributes!.value, 0)
         : total,
     undefined)
+}
+
+export function filterPseudoSources (
+  stats: StatCalculated[],
+  mapFn: (calc: StatCalculated, source: StatSource) => StatSource | null
+): StatSource[] {
+  const out: StatSource[] = []
+  for (const calc of stats) {
+    for (const source of calc.sources) {
+      const result = mapFn(calc, source)
+      if (result) {
+        out.push(result)
+      }
+    }
+  }
+  return out
 }

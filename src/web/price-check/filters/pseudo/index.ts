@@ -1,175 +1,410 @@
-import { FiltersCreationContext } from '../create-stat-filters'
-import { rollToFilter } from '../util'
-import { pseudoStat, sumPseudoStats } from './util'
-import { filterResists } from './resistances'
-import { filterAttributes } from './attributes'
 import { stat, STAT_BY_REF } from '@/assets/data'
+import { ModifierType, statSourcesTotal } from '@/parser/modifiers'
+import { rollToFilter } from '../util'
+import { filterPseudoSources, pseudoStat } from './util'
+import type { FiltersCreationContext } from '../create-stat-filters'
+import type { StatFilter } from '../interfaces'
 
-export function filterPseudo (ctx: FiltersCreationContext) {
-  filterResists(ctx)
-  filterAttributes(ctx)
-  filterRemainingPseudo(ctx)
+const RESISTANCES_INFO = [
+  { ref: stat('+#% to all Elemental Resistances'), elements: ['fire', 'cold', 'lightning'] },
+  { ref: stat('+#% to Fire Resistance'), elements: ['fire'] },
+  { ref: stat('+#% to Cold Resistance'), elements: ['cold'] },
+  { ref: stat('+#% to Lightning Resistance'), elements: ['lightning'] },
+  { ref: stat('+#% to Fire and Lightning Resistances'), elements: ['fire', 'lightning'] },
+  { ref: stat('+#% to Fire and Cold Resistances'), elements: ['fire', 'cold'] },
+  { ref: stat('+#% to Cold and Lightning Resistances'), elements: ['cold', 'lightning'] },
+  { ref: stat('+#% to Chaos Resistance'), elements: [], chaos: true },
+  { ref: stat('+#% to Fire and Chaos Resistances'), elements: ['fire'], chaos: true },
+  { ref: stat('+#% to Cold and Chaos Resistances'), elements: ['cold'], chaos: true },
+  { ref: stat('+#% to Lightning and Chaos Resistances'), elements: ['lightning'], chaos: true }
+]
+
+const ATTRIBUTES_INFO = [
+  { ref: stat('+# to all Attributes'), attributes: ['str', 'dex', 'int'] },
+  { ref: stat('+# to Strength'), attributes: ['str'] },
+  { ref: stat('+# to Dexterity'), attributes: ['dex'] },
+  { ref: stat('+# to Intelligence'), attributes: ['int'] },
+  { ref: stat('+# to Strength and Intelligence'), attributes: ['str', 'int'] },
+  { ref: stat('+# to Strength and Dexterity'), attributes: ['str', 'dex'] },
+  { ref: stat('+# to Dexterity and Intelligence'), attributes: ['dex', 'int'] }
+]
+
+interface PseudoRule {
+  group?: string
+  pseudo: string
+  disabled?: boolean
+  replaces?: string
+  stats: Array<{
+    ref: string
+    multiplier?: number
+    required?: boolean
+  }>
+  mutate?: (filter: StatFilter) => void
 }
 
-function filterRemainingPseudo (ctx: FiltersCreationContext) {
-  for (const pseudoMod of REST_PSEUDO) {
-    const total = sumPseudoStats(ctx.statsByType, pseudoMod.stats)
-
-    if (total !== undefined) {
-      ctx.filters.push({
-        ...pseudoMod.pseudo,
-        disabled: true,
-        sources: [],
-        roll: rollToFilter(total, {
-          neverNegated: true,
-          dp: pseudoMod.stats.some((ref) => STAT_BY_REF.get(ref)!.dp),
-          percent: ctx.searchInRange
-        })
-      })
+const PSEUDO_RULES: PseudoRule[] = [
+  {
+    pseudo: stat('+#% total Elemental Resistance'),
+    disabled: false,
+    stats:
+      RESISTANCES_INFO.filter(info => info.elements.length)
+        .map(info => ({ ref: info.ref, multiplier: info.elements.length }))
+  },
+  {
+    pseudo: stat('+#% total to Fire Resistance'),
+    group: 'to_x_ele_res',
+    stats:
+      RESISTANCES_INFO.filter(info => info.elements.includes('fire'))
+        .map(info => ({ ref: info.ref }))
+  },
+  {
+    pseudo: stat('+#% total to Cold Resistance'),
+    group: 'to_x_ele_res',
+    stats:
+      RESISTANCES_INFO.filter(info => info.elements.includes('cold'))
+        .map(info => ({ ref: info.ref }))
+  },
+  {
+    pseudo: stat('+#% total to Lightning Resistance'),
+    group: 'to_x_ele_res',
+    stats:
+      RESISTANCES_INFO.filter(info => info.elements.includes('lightning'))
+        .map(info => ({ ref: info.ref }))
+  },
+  {
+    pseudo: stat('+#% total to Chaos Resistance'),
+    stats:
+      RESISTANCES_INFO.filter(info => info.chaos === true)
+        .map(info => ({ ref: info.ref })),
+    mutate (filter) {
+      if (filter.sources.length === 1 &&
+          filter.sources[0].modifier.info.type === ModifierType.Crafted
+      ) {
+        filter.hidden = 'Crafted Chaos Resistance without Explicit mod has no value'
+      } else {
+        filter.disabled = false
+      }
     }
-  }
-
-  const statsToRemove = new Set(REST_PSEUDO.flatMap(a => a.stats))
-  ctx.statsByType = ctx.statsByType.filter(m => !statsToRemove.has(m.stat.ref))
-}
-
-const REST_PSEUDO = [
+  },
   {
-    pseudo: pseudoStat('+# total maximum Life'),
+    pseudo: stat('+# total to all Attributes'),
+    group: 'to_all_attrs',
     stats: [
-      stat('+# to maximum Life')
+      { ref: stat('+# to all Attributes') }
+      // NOTE: not including other sources from `ATTRIBUTES_INFO`
     ]
   },
   {
-    pseudo: pseudoStat('+# total maximum Mana'),
+    pseudo: stat('+# total to Strength'),
+    group: 'to_x_attr',
+    stats:
+      ATTRIBUTES_INFO.filter(info => info.attributes.includes('str'))
+        .map(info => ({ ref: info.ref }))
+  },
+  {
+    pseudo: stat('+# total to Dexterity'),
+    group: 'to_x_attr',
+    stats:
+      ATTRIBUTES_INFO.filter(info => info.attributes.includes('dex'))
+        .map(info => ({ ref: info.ref }))
+  },
+  {
+    pseudo: stat('+# total to Intelligence'),
+    group: 'to_x_attr',
+    stats:
+      ATTRIBUTES_INFO.filter(info => info.attributes.includes('int'))
+        .map(info => ({ ref: info.ref }))
+  },
+  {
+    pseudo: stat('+# total maximum Life'),
+    disabled: false,
     stats: [
-      stat('+# to maximum Mana')
+      { ref: stat('+# to maximum Life'), required: true },
+      ...ATTRIBUTES_INFO.filter(info => info.attributes.includes('str'))
+        .map(info => ({ ref: info.ref, multiplier: 5 / 10 }))
     ]
   },
   {
-    pseudo: pseudoStat('#% total increased maximum Energy Shield'),
+    pseudo: stat('+# total maximum Mana'),
     stats: [
-      stat('#% increased maximum Energy Shield')
+      { ref: stat('+# to maximum Mana'), required: true },
+      ...ATTRIBUTES_INFO.filter(info => info.attributes.includes('int'))
+        .map(info => ({ ref: info.ref, multiplier: 5 / 10 }))
     ]
   },
   {
-    pseudo: pseudoStat('+# total maximum Energy Shield'),
+    pseudo: stat('#% total increased maximum Energy Shield'),
     stats: [
-      stat('+# to maximum Energy Shield') // global
+      { ref: stat('#% increased maximum Energy Shield') }
     ]
   },
   {
-    pseudo: pseudoStat('+#% total Attack Speed'),
+    pseudo: stat('+# total maximum Energy Shield'),
     stats: [
-      stat('#% increased Attack Speed') // global
-      // stat('#% increased Attack and Cast Speed')
+      { ref: stat('+# to maximum Energy Shield') } // global
     ]
   },
   {
-    pseudo: pseudoStat('+#% total Cast Speed'),
+    pseudo: stat('+#% total Attack Speed'),
     stats: [
-      stat('#% increased Cast Speed')
-      // stat('#% increased Attack and Cast Speed')
+      { ref: stat('#% increased Attack Speed') } // global
+      // { ref: stat('#% increased Attack and Cast Speed') }
     ]
   },
   {
-    pseudo: pseudoStat('#% total increased Physical Damage'),
+    pseudo: stat('+#% total Cast Speed'),
     stats: [
-      stat('#% increased Physical Damage')
+      { ref: stat('#% increased Cast Speed') }
+      // { ref: stat('#% increased Attack and Cast Speed') }
     ]
   },
   {
-    pseudo: pseudoStat('+#% total Critical Strike Chance for Spells'),
+    pseudo: stat('#% increased Movement Speed'),
     stats: [
-      stat('#% increased Critical Strike Chance for Spells'),
-      stat('#% increased Global Critical Strike Chance')
+      { ref: stat('#% increased Movement Speed') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Movement Speed'),
+    pseudo: stat('#% total increased Physical Damage'),
     stats: [
-      stat('#% increased Movement Speed')
+      { ref: stat('#% increased Global Physical Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('+#% Global Critical Strike Chance'),
+    pseudo: stat('+#% Global Critical Strike Chance'),
+    group: 'global_crit_chance',
     stats: [
-      stat('#% increased Global Critical Strike Chance')
+      { ref: stat('#% increased Global Critical Strike Chance') }
     ]
   },
   {
-    pseudo: pseudoStat('+#% Global Critical Strike Multiplier'),
+    pseudo: stat('+#% total Critical Strike Chance for Spells'),
+    replaces: 'global_crit_chance',
     stats: [
-      stat('+#% to Global Critical Strike Multiplier')
+      { ref: stat('#% increased Critical Strike Chance for Spells'), required: true },
+      { ref: stat('#% increased Global Critical Strike Chance') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Lightning Damage'),
+    pseudo: stat('+#% Global Critical Strike Multiplier'),
     stats: [
-      stat('#% increased Lightning Damage'),
-      stat('#% increased Elemental Damage')
+      { ref: stat('+#% to Global Critical Strike Multiplier') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Cold Damage'),
+    pseudo: stat('#% increased Elemental Damage'),
+    group: 'incr_ele_dmg',
     stats: [
-      stat('#% increased Cold Damage'),
-      stat('#% increased Elemental Damage')
+      { ref: stat('#% increased Elemental Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Fire Damage'),
+    pseudo: stat('#% increased Lightning Damage'),
+    replaces: 'incr_ele_dmg',
     stats: [
-      stat('#% increased Fire Damage'),
-      stat('#% increased Elemental Damage')
+      { ref: stat('#% increased Lightning Damage'), required: true },
+      { ref: stat('#% increased Elemental Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Elemental Damage with Attack Skills'),
+    pseudo: stat('#% increased Cold Damage'),
+    replaces: 'incr_ele_dmg',
     stats: [
-      stat('#% increased Elemental Damage with Attack Skills')
+      { ref: stat('#% increased Cold Damage'), required: true },
+      { ref: stat('#% increased Elemental Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Spell Damage'),
+    pseudo: stat('#% increased Fire Damage'),
+    group: 'incr_fire_dmg',
+    replaces: 'incr_ele_dmg',
     stats: [
-      stat('#% increased Spell Damage')
+      { ref: stat('#% increased Fire Damage'), required: true },
+      { ref: stat('#% increased Elemental Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Burning Damage'),
+    pseudo: stat('#% increased Spell Damage'),
+    group: 'incr_spell_dmg',
     stats: [
-      stat('#% increased Burning Damage')
+      { ref: stat('#% increased Spell Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('# Life Regenerated per Second'),
+    pseudo: stat('#% increased Lightning Spell Damage'),
+    replaces: 'incr_spell_dmg',
     stats: [
-      stat('Regenerate # Life per second')
+      { ref: stat('#% increased Lightning Spell Damage'), required: true },
+      { ref: stat('#% increased Spell Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% of Life Regenerated per Second'),
+    pseudo: stat('#% increased Cold Spell Damage'),
+    replaces: 'incr_spell_dmg',
     stats: [
-      stat('Regenerate #% of Life per second')
+      { ref: stat('#% increased Cold Spell Damage'), required: true },
+      { ref: stat('#% increased Spell Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% of Physical Attack Damage Leeched as Life'),
+    pseudo: stat('#% increased Fire Spell Damage'),
+    replaces: 'incr_spell_dmg',
     stats: [
-      stat('#% of Physical Attack Damage Leeched as Life')
+      { ref: stat('#% increased Fire Spell Damage'), required: true },
+      { ref: stat('#% increased Spell Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% of Physical Attack Damage Leeched as Mana'),
+    pseudo: stat('#% increased Elemental Damage with Attack Skills'),
+    replaces: 'incr_ele_dmg',
     stats: [
-      stat('#% of Physical Attack Damage Leeched as Mana')
+      { ref: stat('#% increased Elemental Damage with Attack Skills'), required: true },
+      { ref: stat('#% increased Elemental Damage') }
     ]
   },
   {
-    pseudo: pseudoStat('#% increased Mana Regeneration Rate'),
+    pseudo: stat('#% increased Burning Damage'),
+    replaces: 'incr_fire_dmg',
     stats: [
-      stat('#% increased Mana Regeneration Rate')
+      { ref: stat('#% increased Burning Damage'), required: true },
+      { ref: stat('#% increased Fire Damage') },
+      { ref: stat('#% increased Elemental Damage') }
+    ]
+  },
+  {
+    pseudo: stat('# Life Regenerated per Second'),
+    stats: [
+      { ref: stat('Regenerate # Life per second') }
+    ]
+  },
+  {
+    pseudo: stat('#% of Life Regenerated per Second'),
+    stats: [
+      { ref: stat('Regenerate #% of Life per second') }
+    ]
+  },
+  {
+    pseudo: stat('#% of Physical Attack Damage Leeched as Life'),
+    stats: [
+      { ref: stat('#% of Physical Attack Damage Leeched as Life') }
+    ]
+  },
+  {
+    pseudo: stat('#% of Physical Attack Damage Leeched as Mana'),
+    stats: [
+      { ref: stat('#% of Physical Attack Damage Leeched as Mana') }
+    ]
+  },
+  {
+    pseudo: stat('#% increased Mana Regeneration Rate'),
+    stats: [
+      { ref: stat('#% increased Mana Regeneration Rate') }
     ]
   }
 ]
+
+export function filterPseudo (ctx: FiltersCreationContext) {
+  const filterByGroup = new Map<string, StatFilter[]>()
+
+  rulesLoop:
+  for (const rule of PSEUDO_RULES) {
+    const sources = filterPseudoSources(ctx.statsByType, ({ stat }, source) => {
+      const info = rule.stats.find(info => info.ref === stat.ref)
+      if (!info) return null
+
+      const multi = info.multiplier ?? 1
+      return {
+        ...source,
+        contributes: {
+          value: source.contributes!.value * multi,
+          min: source.contributes!.min * multi,
+          max: source.contributes!.max * multi
+        }
+      }
+    })
+    if (!sources.length) continue
+
+    if (rule.stats.some(s => s.required)) {
+      for (const stat of rule.stats) {
+        if (stat.required && !sources.some(source =>
+          source.stat.stat.ref === stat.ref)) {
+          continue rulesLoop
+        }
+      }
+    }
+
+    const total = statSourcesTotal(sources)!
+
+    const filter = {
+      ...pseudoStat(rule.pseudo),
+      disabled: rule.disabled ?? true,
+      sources: sources,
+      roll: rollToFilter(total.value, {
+        neverNegated: true,
+        // TODO: is this correct/can be improved
+        dp: rule.stats.some(({ ref }) => STAT_BY_REF.get(ref)!.dp),
+        percent: ctx.searchInRange
+      })
+    }
+
+    if (rule.mutate) {
+      rule.mutate(filter)
+    }
+
+    ctx.filters.push(filter)
+
+    if (rule.replaces && filterByGroup.has(rule.replaces)) {
+      const replacedFilters = filterByGroup.get(rule.replaces)!
+      ctx.filters = ctx.filters.filter(filter => !replacedFilters.includes(filter))
+    }
+
+    if (rule.group) {
+      if (filterByGroup.has(rule.group)) {
+        filterByGroup.get(rule.group)!.push(filter)
+      } else {
+        filterByGroup.set(rule.group, [filter])
+      }
+    }
+  }
+
+  ctx.statsByType = ctx.statsByType.filter(m =>
+    !PSEUDO_RULES.some(rule => rule.stats.some(({ ref }) => m.stat.ref === ref)))
+
+  if (filterByGroup.has('to_x_ele_res')) {
+    const resFilters = filterByGroup.get('to_x_ele_res')!
+
+    resFilters.sort((a, b) => b.roll!.value - a.roll!.value)
+    const maxFilter = (resFilters[0]?.roll?.value === resFilters[1]?.roll?.value)
+      ? undefined
+      : resFilters[0]
+
+    if (maxFilter) {
+      maxFilter.hidden = 'Filtering by exact Elemental Resistance unreasonably increases the price'
+    }
+
+    ctx.filters = ctx.filters.filter(filter => !resFilters.includes(filter) || filter === maxFilter)
+  }
+
+  if (filterByGroup.has('to_x_attr')) {
+    const attrFilters = filterByGroup.get('to_x_attr')!
+    attrFilters.sort((a, b) => b.roll!.value - a.roll!.value)
+    if (attrFilters.length === 3) {
+      if (attrFilters.every(f => f.roll!.value === attrFilters[0].roll!.value)) {
+        // Here `to_all_attrs` filter may or may not (very rare event) exist.
+        // Anyway we are removing all attribute filters.
+        ctx.filters = ctx.filters.filter(filter => !attrFilters.includes(filter))
+      } else {
+        if (filterByGroup.has('to_all_attrs')) {
+          const toAll = filterByGroup.get('to_all_attrs')!
+          ctx.filters = ctx.filters.filter(filter => !toAll.includes(filter))
+        }
+
+        if (attrFilters[1].roll!.value === attrFilters[2].roll!.value) {
+          ctx.filters = ctx.filters.filter(filter => filter !== attrFilters[1] && filter !== attrFilters[2])
+        } else {
+          ctx.filters = ctx.filters.filter(filter => filter !== attrFilters[2])
+        }
+      }
+    }
+  }
+}
