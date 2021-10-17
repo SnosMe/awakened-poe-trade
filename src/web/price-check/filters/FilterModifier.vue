@@ -104,6 +104,10 @@ export default defineComponent({
     item: {
       type: Object as PropType<ParsedItem>,
       required: true
+    },
+    showSources: {
+      type: Boolean,
+      required: true
     }
   },
   setup (props, ctx) {
@@ -195,6 +199,7 @@ export default defineComponent({
         set (value: string) { props.filter.roll!.max = Number(value) }
       }),
       tag: computed(() => props.filter.tag),
+      // TODO: change
       changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
       showInputs: computed(() => props.filter.roll != null),
       fontSize: computed(() => AppConfig().fontSize),
@@ -206,6 +211,7 @@ export default defineComponent({
       isHidden: computed(() => props.filter.hidden != null),
       hiddenReason: computed(() => t(props.filter.hidden!)),
       showSourceInfo: computed(() =>
+        props.showSources &&
         props.filter.sources.length &&
         props.filter.option == null && (
           props.filter.tag === FilterTag.Pseudo ||

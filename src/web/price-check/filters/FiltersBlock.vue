@@ -64,21 +64,19 @@
         <filter-modifier v-for="filter of shownStats" :key="filter.tag + '/' + filter.text"
           :filter="filter"
           :item="item"
+          :show-sources="showFilterSources"
           @submit="handleStatsSubmit" />
         <unknown-modifier v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
           :stat="stat" />
         <input type="submit" class="hidden" />
       </form>
-      <div class="flex">
+      <div class="flex gap-x-4">
         <button @click="toggleStatsBlock" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
           >{{ t('Collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
-        <button v-if="shownStats.length != stats.length"
-          @click="showHidden = !showHidden" class="ml-2 px-2 pt-2 flex items-center leading-none">
-          <i v-if="showHidden" class="fas fa-toggle-on pr-1 text-gray-300"></i>
-          <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
-          <span class="text-gray-400">{{ t('Hidden') }}</span>
-        </button>
-        <ui-toggle :modelValue="false" class="ml-auto text-gray-400 pt-2">{{ t('Mods') }}</ui-toggle>
+        <ui-toggle v-if="shownStats.length != stats.length"
+          v-model="showHidden" class="text-gray-400 pt-2">{{ t('Hidden') }}</ui-toggle>
+        <ui-toggle
+          v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('Mods') }}</ui-toggle>
       </div>
     </div>
   </div>
@@ -120,9 +118,11 @@ export default defineComponent({
   setup (props, ctx) {
     const showStatsBlock = ref(true)
     const showHidden = ref(false)
+    const showFilterSources = ref(false)
 
     watch(() => props.item, () => {
       showHidden.value = false
+      showStatsBlock.value = true
     })
 
     const { t } = useI18n()
@@ -131,6 +131,7 @@ export default defineComponent({
       t,
       showStatsBlock,
       showHidden,
+      showFilterSources,
       totalSelectedMods: computed(() => {
         return props.stats.filter(stat => !stat.disabled).length
       }),
@@ -208,7 +209,8 @@ export default defineComponent({
     "Demolition (lvl {0})": "Взрывное дело ({0} ур.)",
     "Brute Force (lvl {0})": "Грубая сила ({0} ур.)",
     "Mirrored": "Отражено",
-    "Not Mirrored": "Не отражено"
+    "Not Mirrored": "Не отражено",
+    "Mods": "Моды"
   }
 }
 </i18n>
