@@ -249,7 +249,6 @@ export default defineComponent({
 <i18n>
 {
   "ru": {
-    "Support development on": "Поддержите разработку на",
     "This tool relies on {0} and {1}, consider support them as well": "Это приложение полагается на сайт {1}, можете поддержать и его"
   }
 }

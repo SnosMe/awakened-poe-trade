@@ -8,10 +8,11 @@
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
         <template v-for="(item, itemIdx) of menuItems" :key="itemIdx">
           <button v-if="!item.isSeparator"
-            @click="item.select" :class="['menu-item', { 'active': item.isSelected }]">{{ item.name }}</button>
+            @click="item.select" :class="[$style['menu-item'], { [$style['active']]: item.isSelected }]">{{ item.name }}</button>
           <div v-else
             class="border-b mx-2 border-gray-800" />
         </template>
+        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content;">{{ t('Support development on') }}<br> <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer mt-1" src="@/assets/images/Patreon.svg"></div>
       </div>
       <div class="text-gray-100 flex-grow layout-column bg-gray-900">
         <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">
@@ -30,6 +31,7 @@
 <script lang="ts">
 import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { MainProcess } from '@/ipc/main-process-bindings'
 import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
 import type { Config } from '@/ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
@@ -114,13 +116,14 @@ export default defineComponent({
       },
       menuItems,
       selectedComponent,
-      configClone
+      configClone,
+      openLink: MainProcess.openSystemBrowser
     }
   }
 })
 </script>
 
-<style lang="postcss">
+<style lang="postcss" module>
 .menu-item {
   text-align: left;
   @apply p-2;
