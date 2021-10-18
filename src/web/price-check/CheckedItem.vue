@@ -60,7 +60,7 @@ import { AppConfig } from '@/web/Config'
 import { FilterTag, ItemFilters, StatFilter } from './filters/interfaces'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PriceCheckWidget } from '../overlay/interfaces'
-import { selected as selectedLeague } from '@/web/background/Leagues'
+import { selected as selectedLeague, isPublic as isPublicLeague } from '@/web/background/Leagues'
 
 let _showSupportLinksCounter = 0
 
@@ -160,7 +160,8 @@ export default defineComponent({
     }, { deep: false })
 
     const showPredictedPrice = computed(() => {
-      if (AppConfig().language !== 'en') return false
+      if (AppConfig().language !== 'en' ||
+          !isPublicLeague.value) return false
 
       return props.item.rarity === ItemRarity.Rare &&
         props.item.category !== ItemCategory.Map &&

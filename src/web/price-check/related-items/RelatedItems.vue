@@ -50,16 +50,15 @@ export default defineComponent({
     })
 
     const result = computed(() => {
-      if (!detailsId.value) return
-
-      if (!ITEM_DROP.has(detailsId.value)) return null
+      if (!detailsId.value || !ITEM_DROP.has(detailsId.value)) return null
 
       const r = ITEM_DROP.get(detailsId.value)!
-      return {
+      const out = {
         // TODO: show at least icon when price is not available on poe.ninja yet
         related: r.query.map(id => findByDetailsId(id)).filter(_ => Boolean(_)),
         items: r.items.map(id => findByDetailsId(id)).filter(_ => Boolean(_))
       }
+      return (out.related.length) ? out : null
     })
 
     return {
