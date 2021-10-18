@@ -6,13 +6,19 @@
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
-      <div v-else-if="leagues.trade.value.length"
-        class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
-        style="grid-template-columns: repeat(2, min-content);">
-        <div v-for="league of leagues.trade.value" :key="league.id">
-          <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
+      <template v-else-if="leagues.trade.value.length">
+        <div
+          class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
+          style="grid-template-columns: repeat(2, min-content);">
+          <div v-for="league of leagues.trade.value" :key="league.id">
+            <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
+          </div>
         </div>
-      </div>
+        <div class="flex gap-x-2 mb-4">
+          <div class="text-gray-500">{{ t('or Private League') }}</div>
+          <input v-model="customLeagueId" placeholder="My League (PL12345)" class="rounded bg-gray-900 px-1 mb-1 flex-1" />
+        </div>
+      </template>
       <div v-else-if="leagues.error.value || true" class="mb-4">
         <span class="text-red-400">{{ t('Failed to load leagues') }}</span>
       </div>
@@ -116,6 +122,12 @@ export default defineComponent({
     return {
       t,
       leagueId: configModelValue(() => props.config, 'leagueId'),
+      customLeagueId: computed<string>({
+        get: () => !Leagues.isPublicLeague(props.config.leagueId ?? '')
+          ? props.config.leagueId ?? ''
+          : '',
+        set: (value) => { props.config.leagueId = value }
+      }),
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
@@ -174,6 +186,7 @@ export default defineComponent({
 {
   "ru": {
     "Account name": "Имя учетной записи",
+    "or Private League": "или Приватная лига",
     "Show seller": "Показывать продавца",
     "Last character name": "Имя последнего персонажа",
     "Your items will be highlighted even if this setting is off": "Ваши предметы будут подсвечены, даже если эта настройка выключена",

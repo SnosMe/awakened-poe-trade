@@ -16,6 +16,13 @@ export const selected = computed<string | undefined>({
   }
 })
 
+export const isPublic = computed<boolean | undefined>(() =>
+  selected.value ? isPublicLeague(selected.value) : undefined)
+
+export function isPublicLeague (id: string) {
+  return tradeLeagues.value.some(league => id === league.id)
+}
+
 export async function load () {
   isLoading.value = true
   error.value = null
@@ -27,7 +34,7 @@ export async function load () {
     tradeLeagues.value = leagues.filter(league => !league.rules.some(rule => rule.id === 'NoParties'))
 
     const leagueIsAlive = tradeLeagues.value.some(league => league.id === selected.value)
-    if (!leagueIsAlive) {
+    if (!leagueIsAlive && isRegularLeague(selected.value!)) {
       if (tradeLeagues.value.length > 2) {
         const TMP_CHALLENGE = 2
         selected.value = tradeLeagues.value[TMP_CHALLENGE].id
@@ -41,4 +48,10 @@ export async function load () {
   } finally {
     isLoading.value = false
   }
+}
+
+function isRegularLeague (id: string) {
+  // not a Private League (PL01)
+  // not a Race Event (.RE01)
+  return /^[A-Za-z ]+$/.test(id)
 }
