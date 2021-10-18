@@ -3,32 +3,24 @@
     <div class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.detailsId"
         :class="{ 'bg-gray-700 -mx-1 px-1': item.detailsId === detailsId }" class="rounded">
-        <div class="flex items-center flex-1 px-2">
+        <div class="flex items-center flex-1">
           <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
-          <template v-if="!isPrivateLeague.value">
-            <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-            <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{
-                price(item).val
-              }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
-          </template>
+          <i class="fas fa-arrow-right text-gray-600 px-2"></i>
+          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
         </div>
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
     <div class="flex-1 p-2 w-1/2" v-if="result.items.length">
       <div v-for="item in result.items" :key="item.detailsId">
-        <div class="flex items-center flex-1 px-2">
+        <div class="flex items-center flex-1">
           <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
           </div>
-          <template v-if="!isPrivateLeague.value">
-            <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-            <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{
-                price(item).val
-              }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
-          </template>
+          <i class="fas fa-arrow-right text-gray-600 px-2"></i>
+          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ price(item).val }} {{ price(item).curr === 'e' ? 'exa' : 'chaos' }}</span>
         </div>
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
@@ -42,7 +34,6 @@ import { ITEM_DROP } from '@/assets/data'
 import { displayRounding, ItemInfo, findByDetailsId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
-import { isPrivateLeague } from '@/web/background/Leagues'
 
 export default defineComponent({
   props: {
@@ -59,20 +50,18 @@ export default defineComponent({
     })
 
     const result = computed(() => {
-      if (!detailsId.value) return
-
-      if (!ITEM_DROP.has(detailsId.value)) return null
+      if (!detailsId.value || !ITEM_DROP.has(detailsId.value)) return null
 
       const r = ITEM_DROP.get(detailsId.value)!
-      return {
+      const out = {
         // TODO: show at least icon when price is not available on poe.ninja yet
         related: r.query.map(id => findByDetailsId(id)).filter(_ => Boolean(_)),
         items: r.items.map(id => findByDetailsId(id)).filter(_ => Boolean(_))
       }
+      return (out.related.length) ? out : null
     })
 
     return {
-      isPrivateLeague,
       result,
       detailsId,
       price (item: ItemInfo) {

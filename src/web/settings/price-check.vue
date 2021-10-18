@@ -6,33 +6,21 @@
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
-      <div v-else-if="leagues.trade.value.length"
-        class="mb-4 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
-        style="grid-template-columns: repeat(2, min-content);">
-        <div v-for="league of leagues.trade.value" :key="league.id">
-          <ui-radio v-model="leagueId" @click="isPrivateLeague = false" :value="league.id">{{ league.id }}</ui-radio>
+      <template v-else-if="leagues.trade.value.length">
+        <div
+          class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
+          style="grid-template-columns: repeat(2, min-content);">
+          <div v-for="league of leagues.trade.value" :key="league.id">
+            <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
+          </div>
         </div>
-      </div>
+        <div class="flex gap-x-2 mb-4">
+          <div class="text-gray-500">{{ t('or Private League') }}</div>
+          <input v-model="customLeagueId" placeholder="My League (PL12345)" class="rounded bg-gray-900 px-1 mb-1 flex-1" />
+        </div>
+      </template>
       <div v-else-if="leagues.error.value || true" class="mb-4">
         <span class="text-red-400">{{ t('Failed to load leagues') }}</span>
-      </div>
-      <div v-if="!leagues.isLoading.value">
-        <div class="flex-1 mb-1">{{ t('Private League Name') }}</div>
-        <input v-model="privateLeagueName" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular"/>
-        <button class="btn  mb-1" @click="leagues.loadPrivate">
-          {{ t(leagues.error.value ? 'Retry' : 'Refresh Private League') }}
-        </button>
-        <div v-if="leagues.private.value">
-          <ui-radio v-model="leagueId" @click="isPrivateLeague = true" :value="leagues.private.value.id">
-            {{ leagues.private.value.id }}
-          </ui-radio>
-        </div>
-        <div v-else-if="leagues.privateLoaded.value && !leagues.privateError.value" class="mb-4">
-          <span class="text-red-400">{{ t('No Private League Found') }}</span>
-        </div>
-        <div v-if="leagues.privateError.value" class="mb-4">
-          <span class="text-red-400">{{ t(leagues.privateError.value) }}</span>
-        </div>
       </div>
     </div>
     <div class="mb-2">
@@ -118,12 +106,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configModelValue, configProp, findWidget } from './utils'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import * as Leagues from '../background/Leagues'
-import { isPrivateLeague } from '../background/Leagues'
 
 export default defineComponent({
   props: configProp(),
@@ -131,13 +118,16 @@ export default defineComponent({
     const configWidget = computed(() => findWidget<PriceCheckWidget>('price-check', props.config)!)
 
     const { t } = useI18n()
-    const privateLeagueName = ref<string>('')
 
     return {
       t,
       leagueId: configModelValue(() => props.config, 'leagueId'),
-      privateLeagueName,
-      isPrivateLeague,
+      customLeagueId: computed<string>({
+        get: () => !Leagues.isPublicLeague(props.config.leagueId ?? '')
+          ? props.config.leagueId ?? ''
+          : '',
+        set: (value) => { props.config.leagueId = value }
+      }),
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
@@ -183,13 +173,9 @@ export default defineComponent({
       }),
       leagues: {
         trade: Leagues.tradeLeagues,
-        private: Leagues.privateLeague,
-        privateLoaded: Leagues.privateLoaded,
         isLoading: Leagues.isLoading,
         error: Leagues.error,
-        privateError: Leagues.privateError,
-        load: Leagues.load,
-        loadPrivate: () => Leagues.loadPrivateLeague(privateLeagueName.value)
+        load: Leagues.load
       }
     }
   }
@@ -200,7 +186,7 @@ export default defineComponent({
 {
   "ru": {
     "Account name": "Имя учетной записи",
-    "Private League Name": "Название частной лиги",
+    "or Private League": "или Приватная лига",
     "Show seller": "Показывать продавца",
     "Last character name": "Имя последнего персонажа",
     "Your items will be highlighted even if this setting is off": "Ваши предметы будут подсвечены, даже если эта настройка выключена",

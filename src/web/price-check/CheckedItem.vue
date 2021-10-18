@@ -7,7 +7,6 @@
     <price-prediction v-if="showPredictedPrice" class="mb-4"
       :item="item" />
     <price-trend
-      v-if="!isPrivateLeague"
       :item="item"
       :filters="itemFilters"
       @filter-item-base="applyItemBaseFilter" />
@@ -62,7 +61,7 @@ import { ItemFilters, StatFilter } from './filters/interfaces'
 import { ModifierType } from '@/parser/modifiers'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { PriceCheckWidget } from '../overlay/interfaces'
-import { selected as selectedLeague, isPrivateLeague } from '@/web/background/Leagues'
+import { selected as selectedLeague, isPublic as isPublicLeague } from '@/web/background/Leagues'
 
 let _showSupportLinksCounter = 0
 
@@ -162,8 +161,9 @@ export default defineComponent({
     }, { deep: false })
 
     const showPredictedPrice = computed(() => {
-      if (AppConfig().language !== 'en') return false
-      if (isPrivateLeague.value) return false
+      if (AppConfig().language !== 'en' ||
+          !isPublicLeague.value) return false
+
       return props.item.rarity === ItemRarity.Rare &&
         props.item.category !== ItemCategory.Map &&
         props.item.category !== ItemCategory.CapturedBeast &&
@@ -225,9 +225,9 @@ export default defineComponent({
     }
 
     const { t } = useI18n()
+
     return {
       t,
-      isPrivateLeague,
       itemFilters,
       itemStats,
       interactedOnce,

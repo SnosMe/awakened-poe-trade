@@ -1,6 +1,6 @@
 import { ref, watch } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { selected as selectedLeague, isPrivateLeague } from './Leagues'
+import { selected as selectedLeague, isPublic as isPublicLeague } from './Leagues'
 import { nameToDetailsId } from '../price-check/trends/getDetailsId'
 
 interface NinjaCurrencyInfo { /* eslint-disable camelcase */
@@ -64,7 +64,7 @@ export interface ItemInfo {
   detailsId: string
 }
 
-const PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
+let PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
 
 const RETRY_TIME = 60 * 1000
 const UPDATE_TIME = 10 * 60 * 1000
@@ -102,8 +102,7 @@ const priceQueue = [
 ]
 
 async function load (force: boolean = false) {
-  if (!selectedLeague.value) return
-  if (isPrivateLeague.value) return false
+  if (!selectedLeague.value || !isPublicLeague.value) return
   const leagueAtStartOfLoad = selectedLeague.value
 
   for (const dataType of priceQueue) {
@@ -232,5 +231,7 @@ setInterval(() => {
 }, RETRY_TIME)
 
 watch(selectedLeague, () => {
+  chaosExaRate.value = undefined
+  PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
   load(true)
 })
