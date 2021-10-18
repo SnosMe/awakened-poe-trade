@@ -216,11 +216,11 @@ export default defineComponent({
         props.filter.option == null && (
           props.filter.tag === FilterTag.Pseudo ||
           (
-          props.filter.sources.length >= 2 ||
-          props.filter.sources[0].modifier.info.name != null ||
-          props.filter.sources[0].modifier.info.tier != null ||
-          props.filter.sources[0].modifier.info.rank != null
-        )
+            props.filter.sources.length >= 2 ||
+            props.filter.sources[0].modifier.info.name != null ||
+            props.filter.sources[0].modifier.info.tier != null ||
+            props.filter.sources[0].modifier.info.rank != null
+          )
         )),
       inputFocus,
       toggleFilter
