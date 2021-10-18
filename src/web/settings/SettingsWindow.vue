@@ -38,7 +38,7 @@ import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
 import SettingsPricecheck from './price-check.vue'
 import SettingsDebug from './debug.vue'
-import SettingsMaps from './maps.vue'
+import SettingsMaps from './maps/maps.vue'
 
 export default defineComponent({
   props: {

@@ -1,9 +1,9 @@
 <template>
   <button
     @click="updateInput"
-    class="ui-radio">
-    <i v-if="!isChecked" class="far fa-circle mr-1"></i>
-    <i v-else class="fas fa-check-circle mr-1"></i>
+    :class="$style['radio']">
+    <i v-if="!isChecked" class="far fa-circle"></i>
+    <i v-else class="fas fa-check-circle"></i>
     <slot />
   </button>
 </template>
@@ -36,3 +36,12 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="postcss" module>
+.radio {
+  display: flex;
+  @apply gap-x-1;
+  align-items: baseline;
+  text-align: left;
+}
+</style>

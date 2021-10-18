@@ -18,6 +18,8 @@ export interface Stat {
   dp?: true
   matchers: StatMatcher[]
   better: StatBetter
+  fromAreaMods?: true
+  fromHeistAreaMods?: true
   trade: {
     inverted?: true
     option?: 'num' | 'str'

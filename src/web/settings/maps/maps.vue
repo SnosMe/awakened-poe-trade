@@ -5,28 +5,24 @@
       <ui-toggle v-model="onlySelected" class="mx-2">{{ t('Only selected') }}</ui-toggle>
       <ui-toggle v-model="showNewStats" class="ml-12">{{ t('Show new stats') }}</ui-toggle>
     </div>
-    <div class="flex font-bold py-1 shadow">
-      <div class="flex-1 px-2">{{ t('Stat (found: {0})', [filteredStats.length]) }}</div>
-      <div class="flex" style="padding-right: calc(0.875rem + 1.5rem);">
-        <div class="w-8 mx-1 leading-none flex items-center justify-center bg-orange-600">
-          <i class="fas fa-exclamation-triangle"></i></div>
-        <div class="w-8 mx-0 leading-none flex items-center justify-center bg-red-700">
-          <i class="fas fa-skull-crossbones"></i></div>
-        <div class="w-8 mx-1 leading-none flex items-center justify-center bg-green-700">
-          <i class="fas fa-check"></i></div>
+    <div class="flex items-baseline py-1 shadow">
+      <div class="flex-1 px-2 leading-none">{{ t('Stat (found: {0})', [filteredStats.length]) }}</div>
+      <div class="flex gap-x-1 text-center items-center" style="padding-right: calc(0.875rem + 2.350rem);">
+        <i class="w-8 py-1 bg-orange-600 fas fa-exclamation-triangle"></i>
+        <i class="w-8 py-1 bg-red-700 fas fa-skull-crossbones"></i>
+        <i class="w-8 py-1 bg-green-700 fas fa-check"></i>
       </div>
     </div>
     <virtual-scroll
       class="flex-1"
       style="overflow-y: scroll;"
       :items="filteredStats"
-      :item-height="1.875 * fontSize"
+      :item-height="2 * fontSize"
       v-slot="props"
     >
       <maps-stat-entry
         :style="{ position: 'absolute', top: `${props.top}px` }"
-        :class="{ 'text-red-400': props.item.outdated }"
-        :matcher="props.item.matchStr"
+        :matcher="props.item"
         :selected-stats="selectedStats" />
     </virtual-scroll>
   </div>
@@ -35,32 +31,47 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { configProp, findWidget } from './utils'
+import { configProp, findWidget } from '../utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { STAT_BY_REF, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
-import VirtualScroll from '../ui/VirtualScroll.vue'
+import VirtualScroll from '../../ui/VirtualScroll.vue'
+import type { MapStatMatcher } from './interfaces'
+
+function statToShowOrder (stat: Omit<MapStatMatcher, 'outdated'>) {
+  if (stat.heist) {
+    return 1
+  } else {
+    return 0
+  }
+}
 
 export default defineComponent({
   components: { MapsStatEntry, VirtualScroll },
   props: configProp(),
   setup (props) {
     const search = ref('')
-    const onlySelected = ref(true)
+    const onlySelected = ref(false)
 
     const widget = computed(() => findWidget<ItemCheckWidget>('item-check', props.config)!)
 
     const statList = computed(() => {
-      const out: Array<{ matchStr: string, searchStr: string }> = []
+      const out: Array<{ str: string, searchStr: string, heist: boolean }> = []
       for (const statRef of STAT_BY_REF.keys()) {
         const stat = STAT_BY_REF.get(statRef)!
+        if (!stat.fromAreaMods && !stat.fromHeistAreaMods) continue
+
         for (const c of stat.matchers) {
           out.push({
-            matchStr: c.string,
-            searchStr: c.string.toLowerCase()
+            str: c.string,
+            searchStr: c.string.toLowerCase(),
+            heist: (stat.fromHeistAreaMods && !stat.fromAreaMods) || false
           })
         }
       }
+      out.sort((a, b) => {
+        return (statToShowOrder(a) - statToShowOrder(b)) || a.str.localeCompare(b.str)
+      })
       return out
     })
 
@@ -76,13 +87,13 @@ export default defineComponent({
       set (value) { widget.value.maps.showNewStats = value }
     })
 
-    const hasOutdatedTranslation = computed<string[]>(() => {
+    const hasOutdatedTranslation = computed<MapStatMatcher[]>(() => {
       return widget.value.maps
         .selectedStats
         .filter(entry =>
           entry.decision !== 'seen' &&
           !STAT_BY_MATCH_STR.has(entry.matcher))
-        .map(entry => entry.matcher)
+        .map(entry => ({ str: entry.matcher, heist: undefined, outdated: true }))
     })
 
     const { t } = useI18n()
@@ -92,21 +103,20 @@ export default defineComponent({
       search,
       onlySelected,
       showNewStats,
-      filteredStats: computed(() => {
+      filteredStats: computed<MapStatMatcher[]>(() => {
         const q = search.value.toLowerCase().split(' ')
 
         const filtered = statList.value
           .filter(stat =>
             q.every(part => stat.searchStr.includes(part)) &&
             (onlySelected.value
-              ? selectedMatchers.value.has(stat.matchStr)
+              ? selectedMatchers.value.has(stat.str)
               : true)
           )
-          .map(({ matchStr }) => ({ matchStr, outdated: false }))
+          .map(({ str, heist }) => ({ str, heist, outdated: false }))
 
         return [
-          ...hasOutdatedTranslation.value
-            .map((matchStr) => ({ matchStr, outdated: true })),
+          ...hasOutdatedTranslation.value,
           ...filtered
         ]
       }),

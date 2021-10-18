@@ -22,5 +22,7 @@
   "crafted": "мастер",
   "fractured": "расколотый",
   "Not recognized modifier": "Нераспознанное свойство",
-  "Refresh": "Обновить"
+  "Refresh": "Обновить",
+  "map.mods.heist": "кража",
+  "map.mods.outdated": "устарело"
 }
