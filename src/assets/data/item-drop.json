@@ -257,26 +257,7 @@
       "potent-chaotic-resonator",
       "primitive-chaotic-resonator"
     ],
-    "items": [
-      "prime-alchemical-resonator",
-      "powerful-alchemical-resonator",
-      "potent-alchemical-resonator",
-      "primitive-alchemical-resonator"
-    ]
-  },
-  {
-    "query": [
-      "prime-alchemical-resonator",
-      "powerful-alchemical-resonator",
-      "potent-alchemical-resonator",
-      "primitive-alchemical-resonator"
-    ],
-    "items": [
-      "prime-chaotic-resonator",
-      "powerful-chaotic-resonator",
-      "potent-chaotic-resonator",
-      "primitive-chaotic-resonator"
-    ]
+    "items": []
   },
   {
     "query": [
