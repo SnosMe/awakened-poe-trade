@@ -106,6 +106,7 @@ export const INTERNAL_TRADE_IDS = [
   'armour.armour',
   'armour.evasion_rating',
   'armour.energy_shield',
+  'armour.ward',
   'armour.block',
   'weapon.total_dps',
   'weapon.physical_dps',

@@ -22,6 +22,7 @@ const dict = {
   'Armour: ': 'Armour: ',
   'Evasion Rating: ': 'Evasion Rating: ',
   'Energy Shield: ': 'Energy Shield: ',
+  'TAG_WARD': 'Ward: ',
   'Chance to Block: ': 'Chance to Block: ',
   'Corrupted': 'Corrupted',
   'Unidentified': 'Unidentified',

@@ -121,6 +121,7 @@ export default defineComponent({
         'armour.armour',
         'armour.evasion_rating',
         'armour.energy_shield',
+        'armour.ward',
         'weapon.total_dps',
         'weapon.physical_dps'
       ].includes(props.filter.tradeId[0])
@@ -384,6 +385,7 @@ export default defineComponent({
     "Armour: #": "Броня: #",
     "Evasion Rating: #": "Уклонение: #",
     "Energy Shield: #": "Энерг. щит: #",
+    "Ward: #": "Барьер: #",
     "Map is not occupied by Elder Guardian": "Карта не захвачена Хранителем Древнего",
     "Block: #%": "Блок: #%",
     "variant": "вариант",

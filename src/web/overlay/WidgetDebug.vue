@@ -102,41 +102,36 @@ Corrupted
 --------
 Shaper Item
 `,
-`Item Class: Bows
+`Item Class: Helmets
 Rarity: Rare
-Phoenix Branch
-Citadel Bow
+Bramble Visor
+Runic Crest
 --------
-Bow
-Quality: +5% (augmented)
-Physical Damage: 114-356 (augmented)
-Critical Strike Chance: 6.00%
-Attacks per Second: 1.25
+Ward: 220 (augmented)
 --------
 Requirements:
-Level: 58
-Dex: 125 (augmented)
+Level: 49
+Str: 55
+Dex: 55
+Int: 55
 --------
-Sockets: G-G-G-G
+Sockets: B
 --------
-Item Level: 63
+Item Level: 73
 --------
-Physical Modifiers have 8% increased Effect (enchant)
+{ Prefix Modifier "Coppersmith's" (Tier: 6) — Defences }
++23(16-23) to Ward
+{ Prefix Modifier "Inscribed" (Tier: 3) — Defences }
+79(68-79)% increased Ward
+{ Prefix Modifier "Annest's" (Tier: 3) — Life, Defences }
++19(15-20) to Ward
++23(18-23) to maximum Life
+{ Suffix Modifier "of the Tempest" (Tier: 4) — Elemental, Lightning, Resistance }
++32(30-35)% to Lightning Resistance
+{ Suffix Modifier "of the Walrus" (Tier: 4) — Elemental, Cold, Resistance }
++34(30-35)% to Cold Resistance
 --------
-{ Prefix Modifier "Gleaming" (Tier: 5) — Damage, Physical, Attack  — 8% Increased }
-Adds 18(14-21) to 35(32-38) Physical Damage
-{ Prefix Modifier "Champion's" (Tier: 4) — Damage, Physical, Attack  — 8% Increased }
-48(45-54)% increased Physical Damage
-+103(98-123) to Accuracy Rating
-{ Prefix Modifier "Vicious" (Tier: 5) — Damage, Physical, Attack  — 8% Increased }
-97(85-109)% increased Physical Damage
-{ Suffix Modifier "of the Apt" (Tier: 1) }
-32% reduced Attribute Requirements
-(Attributes are Strength, Dexterity, and Intelligence)
-{ Suffix Modifier "of Staggering" (Tier: 1) }
-35(31-35)% increased Stun Duration on Enemies
-{ Suffix Modifier "of the Dex" (Tier: 8) — Attribute }
-+15(13-17) to all Attributes
+Note: ~price 10 chaos
 `,
 `Item Class: Jewels
 Rarity: Rare

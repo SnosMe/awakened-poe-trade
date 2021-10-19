@@ -132,6 +132,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           ar?: FilterRange
           es?: FilterRange
           ev?: FilterRange
+          ward?: FilterRange
           block?: FilterRange
         }
       }
@@ -433,6 +434,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       case 'armour.energy_shield':
         prop.set(query.filters, 'armour_filters.filters.es.min', typeof input.min === 'number' ? input.min : undefined)
         prop.set(query.filters, 'armour_filters.filters.es.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'armour.ward':
+        prop.set(query.filters, 'armour_filters.filters.ward.min', typeof input.min === 'number' ? input.min : undefined)
+        prop.set(query.filters, 'armour_filters.filters.ward.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.block':
         prop.set(query.filters, 'armour_filters.filters.block.min', typeof input.min === 'number' ? input.min : undefined)

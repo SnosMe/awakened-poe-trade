@@ -12,6 +12,7 @@ export interface ParsedItem {
     armour?: number
     evasion?: number
     energyShield?: number
+    ward?: number
     blockChance?: number
     critChance?: number
     attackSpeed?: number

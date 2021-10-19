@@ -19,9 +19,11 @@ export const ARMOUR_STATS = new Set<string>([
   QUALITY_STATS.ARMOUR.flat,
   QUALITY_STATS.EVASION.flat,
   QUALITY_STATS.ENERGY_SHIELD.flat,
+  QUALITY_STATS.WARD.flat,
   ...QUALITY_STATS.ARMOUR.incr,
   ...QUALITY_STATS.EVASION.incr,
   ...QUALITY_STATS.ENERGY_SHIELD.incr,
+  ...QUALITY_STATS.WARD.incr,
   stat('+#% Chance to Block')
 ])
 
@@ -73,6 +75,21 @@ function armourProps (ctx: FiltersCreationContext) {
     })
   }
 
+  if (item.props.ward) {
+    const totalQ20 = Math.floor(propAt20Quality(item.props.ward, QUALITY_STATS.WARD, item))
+
+    ctx.filters.push({
+      ...internalPropStat(
+        'armour.ward',
+        'Ward: #',
+        'armour'
+      ),
+      sources: [],
+      disabled: !isSingleAttrArmour(item),
+      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
+    })
+  }
+
   if (item.props.blockChance) {
     ctx.filters.push({
       ...internalPropStat(
@@ -90,6 +107,7 @@ function armourProps (ctx: FiltersCreationContext) {
     item.props.armour ||
     item.props.evasion ||
     item.props.energyShield ||
+    item.props.ward ||
     item.props.blockChance
   ) {
     createHiddenFilters(ctx, ARMOUR_STATS)
@@ -199,9 +217,12 @@ function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
 }
 
 function isSingleAttrArmour (item: ParsedItem) {
-  return (item.props.armour != null && item.props.energyShield == null && item.props.evasion == null) ||
-    (item.props.armour == null && item.props.energyShield != null && item.props.evasion == null) ||
-    (item.props.armour == null && item.props.energyShield == null && item.props.evasion != null)
+  return [
+    item.props.armour,
+    item.props.evasion,
+    item.props.energyShield,
+    item.props.ward
+  ].filter(value => value != null).length === 1
 }
 
 function isPdpsImportant (item: ParsedItem) {

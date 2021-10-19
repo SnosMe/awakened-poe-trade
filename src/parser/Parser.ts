@@ -409,6 +409,10 @@ function parseArmour (section: string[], item: ParsedItem) {
       item.props.energyShield = parseInt(line.substr(_$[C.TAG_ENERGY_SHIELD].length), 10)
       isParsed = SECTION_PARSED; continue
     }
+    if (line.startsWith(_$.TAG_WARD)) {
+      item.props.ward = parseInt(line.substr(_$.TAG_WARD.length), 10)
+      isParsed = SECTION_PARSED; continue
+    }
     if (line.startsWith(_$[C.TAG_BLOCK_CHANCE])) {
       item.props.blockChance = parseInt(line.substr(_$[C.TAG_BLOCK_CHANCE].length), 10)
       isParsed = SECTION_PARSED; continue

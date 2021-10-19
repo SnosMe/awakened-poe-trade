@@ -24,6 +24,7 @@ const dict: TranslationDict = {
   'Armour: ': 'Броня: ',
   'Evasion Rating: ': 'Уклонение: ',
   'Energy Shield: ': 'Энерг. щит: ',
+  'TAG_WARD': 'Барьер: ',
   'Chance to Block: ': 'Шанс заблокировать удар: ',
   'Corrupted': 'Осквернено',
   'Unidentified': 'Неопознано',
