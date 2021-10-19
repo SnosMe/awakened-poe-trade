@@ -10,7 +10,11 @@ export const logger = winston.createLogger({
   transports: [
     new winston.transports.File({
       filename: path.join(app.getPath('userData'), 'apt-data', 'logs.txt'),
-      options: { flags: 'w' }
+      options: { flags: 'w' },
+      format: winston.format.printf((info) => {
+        const { source, level, message, ...meta } = info
+        return `${level} [${source}]: ${message} ${JSON.stringify(meta)}`
+      })
     })
   ]
 })

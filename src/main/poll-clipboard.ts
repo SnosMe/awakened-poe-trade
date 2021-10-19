@@ -17,7 +17,7 @@ export async function pollClipboard (): Promise<string> {
   }
 
   let textBefore = clipboard.readText()
-  if (textBefore.startsWith(getTranslatedFirstLine())) {
+  if (isActiveLangItem(textBefore)) {
     textBefore = ''
     clipboard.writeText('')
   }
@@ -26,7 +26,7 @@ export async function pollClipboard (): Promise<string> {
     function poll () {
       const textAfter = clipboard.readText()
 
-      if (textAfter.startsWith(getTranslatedFirstLine())) {
+      if (isActiveLangItem(textAfter)) {
         clipboard.writeText(textBefore)
         isPollingClipboard = false
         clipboardPromise = undefined
@@ -36,10 +36,17 @@ export async function pollClipboard (): Promise<string> {
         if (elapsed < LIMIT) {
           setTimeout(poll, DELAY)
         } else {
-          logger.warn('No changes found', { source: 'clipboard', timeout: LIMIT })
+          clipboard.writeText(textBefore)
           isPollingClipboard = false
           clipboardPromise = undefined
-          reject(new Error('Clipboard was not changed'))
+
+          const otherLang = isInactiveLangItem(textAfter)
+          if (otherLang) {
+            logger.warn('Detected item in inactive or unsupported language.', { source: 'clipboard', language: otherLang.lang })
+          } else {
+            logger.warn('No item text found.', { source: 'clipboard', text: textAfter.slice(0, 40) })
+          }
+          reject(new Error('Reading clipboard timed out'))
         }
       }
     }
@@ -50,11 +57,37 @@ export async function pollClipboard (): Promise<string> {
   return clipboardPromise
 }
 
-function getTranslatedFirstLine () {
-  return TAG_ITEM_CLASS[config.get('language')]
+function isActiveLangItem (text: string) {
+  const line = LANGUAGE_DETECTOR.find(({ lang }) => lang === config.get('language'))!.firstLine
+  return text.startsWith(line)
 }
 
-const TAG_ITEM_CLASS = {
-  en: 'Item Class: ',
-  ru: 'Класс предмета: '
+function isInactiveLangItem (text: string) {
+  return LANGUAGE_DETECTOR.find(({ firstLine }) => text.startsWith(firstLine))
 }
+
+export const LANGUAGE_DETECTOR = [{
+  lang: 'en',
+  firstLine: 'Item Class: '
+}, {
+  lang: 'ru',
+  firstLine: 'Класс предмета: '
+}, {
+  lang: 'fr',
+  firstLine: 'Classe d\'objet: '
+}, {
+  lang: 'de',
+  firstLine: 'Gegenstandsklasse: '
+}, {
+  lang: 'pt',
+  firstLine: 'Classe do Item: '
+}, {
+  lang: 'es',
+  firstLine: 'Clase de objeto: '
+}, {
+  lang: 'th',
+  firstLine: 'คลาสของไอเทม: '
+}, {
+  lang: 'ko',
+  firstLine: '아이템 종류: '
+}]
