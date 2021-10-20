@@ -68,9 +68,10 @@ export function statSourcesTotal (
   return (sources.length === 1)
     ? (sources[0].contributes)
     : (sources.reduce((sum, { contributes }) => {
-        sum.value += contributes!.value
-        sum.min += contributes!.min
-        sum.max += contributes!.max
+        contributes = contributes ?? { value: 1, min: 1, max: 1 }
+        sum.value += contributes.value
+        sum.min += contributes.min
+        sum.max += contributes.max
         return sum
       }, { value: 0, min: 0, max: 0 }))
 }

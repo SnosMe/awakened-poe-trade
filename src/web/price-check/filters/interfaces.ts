@@ -50,7 +50,7 @@ export interface ItemFilters {
     disabled: boolean
   }
   veiled?: {
-    stat: string
+    statRefs: string[]
     disabled: boolean
   }
   altQuality?: {

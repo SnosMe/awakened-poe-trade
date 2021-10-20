@@ -1,7 +1,7 @@
 import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
-import { VEILED_STAT } from './veiled'
 import { tradeTag } from '../trade/common'
+import { ModifierType } from '@/parser/modifiers'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -281,9 +281,11 @@ export function createFilters (
     }
   }
 
-  if (item.extra.veiled) {
+  if (item.isVeiled) {
     filters.veiled = {
-      stat: VEILED_STAT.filter(s => s.test(item))[0].stat,
+      statRefs: item.statsByType
+        .filter(calc => calc.type === ModifierType.Veiled)
+        .map(calc => calc.stat.ref),
       disabled: false
     }
 

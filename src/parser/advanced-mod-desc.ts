@@ -100,7 +100,9 @@ export function * groupLinesByMod (lines: string[]): Generator<GroupedModLines, 
 
 export function parseModType (lines: string[]): { modType: ModifierType, lines: string[] } {
   let modType: ModifierType
-  if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
+  if (lines[0] === _$.VEILED_PREFIX || lines[0] === _$.VEILED_SUFFIX) {
+    modType = ModifierType.Veiled
+  } else if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
     modType = ModifierType.Enchant
     lines = removeLinesEnding(lines, C.ENCHANT_LINE)
   } else if (lines.some(line => line.endsWith(C.IMPLICIT_LINE))) {

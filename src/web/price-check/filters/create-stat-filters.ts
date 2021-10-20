@@ -55,6 +55,10 @@ export function initUiModFilters (
     ctx.statsByType.push(...item.statsByType.filter(mod => mod.type === ModifierType.Fractured))
   }
 
+  if (item.isVeiled) {
+    ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Veiled)
+  }
+
   ctx.filters.push(
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, item, { percent: ctx.searchInRange }))
   )
@@ -75,7 +79,7 @@ export function initUiModFilters (
     ctx.filters = ctx.filters.filter(f => !f.hidden)
   }
 
-  if (item.extra.veiled) {
+  if (item.isVeiled) {
     ctx.filters.forEach(filter => { filter.disabled = true })
   }
 

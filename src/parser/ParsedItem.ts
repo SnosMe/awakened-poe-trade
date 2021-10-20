@@ -35,6 +35,7 @@ export interface ParsedItem {
   isMirrored?: boolean
   influences: ItemInfluence[]
   isSynthesised?: boolean
+  isVeiled?: boolean
   statsByType: StatCalculated[]
   newMods: ParsedModifier[]
   unknownModifiers: Array<{
@@ -42,7 +43,6 @@ export interface ParsedItem {
     type: ModifierType
   }>
   extra: {
-    veiled?: 'prefix' | 'suffix' | 'prefix-suffix'
     prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
     altQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
   }

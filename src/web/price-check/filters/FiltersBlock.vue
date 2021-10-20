@@ -50,7 +50,8 @@
       </template>
       <button v-if="filters.unidentified" class="trade-tag" :class="{ disabled: filters.unidentified.disabled }"
         @click="filters.unidentified.disabled = !filters.unidentified.disabled">{{ t('Unidentified') }}</button>
-      <filter-veiled :item="item" :filters="filters" />
+      <button v-if="filters.veiled" class="trade-tag" :class="{ disabled: filters.veiled.disabled }"
+        @click="filters.veiled.disabled = !filters.veiled.disabled">{{ t('Veiled') }}</button>
       <button v-if="filters.mirrored" class="trade-tag"
         @click="filters.mirrored.value = !filters.mirrored.value">{{ t(filters.mirrored.value ? 'Mirrored' : 'Not Mirrored') }}</button>
       <button v-if="stats.length" class="trade-tag" :class="{ disabled: totalSelectedMods === 0 }" @click="toggleStatsBlock">
@@ -86,7 +87,6 @@
 import { defineComponent, watch, ref, computed, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FilterModifier from './FilterModifier.vue'
-import FilterVeiled from './FilterVeiled.vue'
 import FilterNumericEditable from './FilterNumericEditable.vue'
 import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
@@ -97,7 +97,6 @@ export default defineComponent({
   emits: ['submit'],
   components: {
     FilterModifier,
-    FilterVeiled,
     FilterNumericEditable,
     UnknownModifier
   },
@@ -210,7 +209,8 @@ export default defineComponent({
     "Brute Force (lvl {0})": "Грубая сила ({0} ур.)",
     "Mirrored": "Отражено",
     "Not Mirrored": "Не отражено",
-    "Mods": "Моды"
+    "Mods": "Моды",
+    "Veiled": "Завуалирован"
   }
 }
 </i18n>

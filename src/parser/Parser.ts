@@ -3,7 +3,8 @@ import * as C from './constants'
 import {
   BASE_TYPES,
   CLIENT_STRINGS as _$,
-  ITEM_NAME_REF_BY_TRANSLATED
+  ITEM_NAME_REF_BY_TRANSLATED,
+  STAT_BY_MATCH_STR
 } from '@/assets/data'
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
@@ -475,8 +476,7 @@ function parseModifiers (section: string[], item: ParsedItem) {
 
   if (!section.some(line =>
     line.endsWith(C.ENCHANT_LINE) ||
-    isModInfoLine(line) ||
-    (line === _$.VEILED_PREFIX || line === _$.VEILED_SUFFIX)
+    isModInfoLine(line)
   )) {
     return SECTION_SKIPPED
   }
@@ -489,29 +489,18 @@ function parseModifiers (section: string[], item: ParsedItem) {
     }
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
   } else {
-    section = section.filter(line => !parseVeiledNested(line, item))
-
     for (const { modLine, statLines } of groupLinesByMod(section)) {
       const { modType, lines } = parseModType(statLines)
       const modInfo = parseModInfoLine(modLine, modType)
       parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
+
+      if (modType === ModifierType.Veiled) {
+        item.isVeiled = true
+      }
     }
   }
 
   return SECTION_PARSED
-}
-
-// TODO blocked by https://www.pathofexile.com/forum/view-thread/3148119
-function parseVeiledNested (text: string, item: ParsedItem) {
-  if (text === _$.VEILED_SUFFIX) {
-    item.extra.veiled = (item.extra.veiled == null ? 'suffix' : 'prefix-suffix')
-    return true
-  }
-  if (text === _$.VEILED_PREFIX) {
-    item.extra.veiled = (item.extra.veiled == null ? 'prefix' : 'prefix-suffix')
-    return true
-  }
-  return false
 }
 
 function parseMirrored (section: string[], item: ParsedItem) {
@@ -656,6 +645,24 @@ function markupConditionParser (text: string) {
 }
 
 function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedModifier) {
+  item.newMods.push(modifier)
+
+  if (modifier.info.type === ModifierType.Veiled) {
+    const found = STAT_BY_MATCH_STR.get(modifier.info.name!)
+    if (found) {
+      modifier.stats.push({
+        stat: found.stat,
+        translation: found.matcher
+      })
+    } else {
+      item.unknownModifiers.push({
+        text: modifier.info.name!,
+        type: modifier.info.type
+      })
+    }
+    return
+  }
+
   const statIterator = linesToStatStrings(lines)
   let stat = statIterator.next()
   while (!stat.done) {
@@ -667,8 +674,6 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
       stat = statIterator.next(false)
     }
   }
-
-  item.newMods.push(modifier)
 
   item.unknownModifiers.push(...stat.value.map(line => ({
     text: line,

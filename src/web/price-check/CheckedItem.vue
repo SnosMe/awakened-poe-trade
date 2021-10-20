@@ -120,7 +120,7 @@ export default defineComponent({
           (item.category === ItemCategory.Map) ||
           (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
           (item.isUnidentified) ||
-          (item.extra.veiled)
+          (item.isVeiled)
         )
       }
     }, { immediate: true })

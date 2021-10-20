@@ -468,8 +468,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   stats = stats.filter(stat => !INTERNAL_TRADE_IDS.includes(stat.tradeId[0] as any))
   if (filters.veiled) {
-    const refs = filters.veiled.stat.split('<<and>>')
-    for (const statRef of refs) {
+    for (const statRef of filters.veiled.statRefs) {
       stats.push({
         disabled: filters.veiled.disabled,
         statRef: undefined!,
