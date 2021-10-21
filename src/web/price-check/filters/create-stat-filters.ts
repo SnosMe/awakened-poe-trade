@@ -4,6 +4,7 @@ import { uniqueModFilterPartial } from './unique-roll'
 import { percentRoll, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
+import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
 import { filterUniqueItemProp } from './pseudo/item-property-unique'
 import { StatBetter } from '@/assets/data'
@@ -294,6 +295,10 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         filter.hidden = 'Select only if price-checking as base item for crafting'
       }
     }
+  }
+
+  if (item.name === 'Chronicle of Atzoatl') {
+    applyAtzoatlRules(ctx.filters)
   }
 }
 

@@ -9,7 +9,7 @@ import {
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory } from './meta'
-import { HeistJob, ParsedItem } from './ParsedItem'
+import { HeistJob, IncursionRoom, ParsedItem } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier } from './advanced-mod-desc'
 
@@ -46,6 +46,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSockets,
   parseProphecyMaster,
   parseHeistMission,
+  parseAtzoatlAreaLevel,
+  parseAtzoatlRooms,
   parseMirrored,
   parseModifiers,
   parseModifiers,
@@ -600,12 +602,7 @@ function parseHeistMission (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.HeistBlueprint &&
       item.category !== ItemCategory.HeistContract) return PARSER_SKIPPED
 
-  for (const line of section) {
-    if (line.startsWith(_$[C.TAG_AREA_LEVEL])) {
-      item.props.areaLevel = Number(line.substr(_$[C.TAG_AREA_LEVEL].length))
-      break
-    }
-  }
+  parseAreaLevelNested(section, item)
   if (!item.props.areaLevel) {
     return SECTION_SKIPPED
   }
@@ -623,6 +620,61 @@ function parseHeistMission (section: string[], item: ParsedItem) {
       name: Object.entries(_$)
         .find(([_, tr]) => tr === match!.groups!.job)![0] as HeistJob,
       level: Number(match.groups!.level)
+    }
+  }
+
+  return SECTION_PARSED
+}
+
+function parseAreaLevelNested (section: string[], item: ParsedItem) {
+  for (const line of section) {
+    if (line.startsWith(_$[C.TAG_AREA_LEVEL])) {
+      item.props.areaLevel = Number(line.substr(_$[C.TAG_AREA_LEVEL].length))
+      break
+    }
+  }
+}
+
+function parseAtzoatlAreaLevel (section: string[], item: ParsedItem) {
+  if (item.name !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
+
+  parseAreaLevelNested(section, item)
+
+  return (item.props.areaLevel)
+    ? SECTION_PARSED
+    : SECTION_SKIPPED
+}
+
+function parseAtzoatlRooms (section: string[], item: ParsedItem) {
+  if (item.name !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
+  if (section[0] !== _$.INCURSION_OPEN) return SECTION_SKIPPED
+
+  let state = IncursionRoom.Open
+  for (const line of section.slice(1)) {
+    if (line === _$.INCURSION_OBSTRUCTED) {
+      state = IncursionRoom.Obstructed
+      continue
+    }
+
+    const found = STAT_BY_MATCH_STR.get(line)
+    if (found) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Pseudo },
+        stats: [{
+          stat: found.stat,
+          translation: {
+            string: (state === IncursionRoom.Open)
+              ? found.matcher.string
+              : `${_$.INCURSION_OBSTRUCTED} ${found.matcher.string}`
+          },
+          roll: { value: state, min: state, max: state, dp: false, unscalable: true }
+        }]
+      })
+    } else {
+      item.unknownModifiers.push({
+        text: line,
+        type: ModifierType.Pseudo
+      })
     }
   }
 

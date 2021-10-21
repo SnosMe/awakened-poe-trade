@@ -3589,6 +3589,92 @@
 {"ref":"Has no Red Sockets","better":1,"matchers":[{"string":"Has no Red Sockets"}],"trade":{"ids":{"enchant":["enchant.stat_320043039"]}}}
 {"ref":"Has no Sockets","better":1,"matchers":[{"string":"Has no Sockets"}],"trade":{"ids":{"explicit":["explicit.stat_1493091477"]}}}
 {"ref":"Has Redeemer Influence","better":1,"matchers":[{"string":"Has Redeemer Influence"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_has_redeemer_influence"]}}}
+{"ref":"Has Room: Antechamber","better":0,"matchers":[{"string":"Antechamber"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_antechamber"]},"option":"str"}}
+{"ref":"Has Room: Apex of Ascension (Tier 3)","better":0,"matchers":[{"string":"Apex of Ascension (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_sacrifice_room_3"]},"option":"str"}}
+{"ref":"Has Room: Apex of Atzoatl","better":0,"matchers":[{"string":"Apex of Atzoatl"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_apex"]},"option":"str"}}
+{"ref":"Has Room: Arena of Valour (Tier 2)","better":0,"matchers":[{"string":"Arena of Valour (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_weapon_room_2"]},"option":"str"}}
+{"ref":"Has Room: Armourer's Workshop (Tier 1)","better":0,"matchers":[{"string":"Armourer's Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_armour_room_1"]},"option":"str"}}
+{"ref":"Has Room: Armoury (Tier 2)","better":0,"matchers":[{"string":"Armoury (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_armour_room_2"]},"option":"str"}}
+{"ref":"Has Room: Atlas of Worlds (Tier 3)","better":0,"matchers":[{"string":"Atlas of Worlds (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_cartography_room_3"]},"option":"str"}}
+{"ref":"Has Room: Automaton Lab (Tier 2)","better":0,"matchers":[{"string":"Automaton Lab (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_minions_2"]},"option":"str"}}
+{"ref":"Has Room: Banquet Hall","better":0,"matchers":[{"string":"Banquet Hall"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_banquet_hall"]},"option":"str"}}
+{"ref":"Has Room: Barracks (Tier 2)","better":0,"matchers":[{"string":"Barracks (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_breeding_room_2"]},"option":"str"}}
+{"ref":"Has Room: Breach Containment Chamber (Tier 2)","better":0,"matchers":[{"string":"Breach Containment Chamber (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_breach_room_2"]},"option":"str"}}
+{"ref":"Has Room: Catalyst of Corruption (Tier 2)","better":0,"matchers":[{"string":"Catalyst of Corruption (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_corruption_room_2"]},"option":"str"}}
+{"ref":"Has Room: Cellar","better":0,"matchers":[{"string":"Cellar"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_cellar"]},"option":"str"}}
+{"ref":"Has Room: Chamber of Iron (Tier 3)","better":0,"matchers":[{"string":"Chamber of Iron (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_armour_room_3"]},"option":"str"}}
+{"ref":"Has Room: Chasm","better":0,"matchers":[{"string":"Chasm"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_chasm_room"]},"option":"str"}}
+{"ref":"Has Room: Cloister","better":0,"matchers":[{"string":"Cloister"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_cloister"]},"option":"str"}}
+{"ref":"Has Room: Conduit of Lightning (Tier 3)","better":0,"matchers":[{"string":"Conduit of Lightning (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_lightning_3"]},"option":"str"}}
+{"ref":"Has Room: Corruption Chamber (Tier 1)","better":0,"matchers":[{"string":"Corruption Chamber (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_corruption_room_1"]},"option":"str"}}
+{"ref":"Has Room: Court of Sealed Death (Tier 3)","better":0,"matchers":[{"string":"Court of Sealed Death (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_strongbox_3"]},"option":"str"}}
+{"ref":"Has Room: Crucible of Flame (Tier 3)","better":0,"matchers":[{"string":"Crucible of Flame (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_fire_3"]},"option":"str"}}
+{"ref":"Has Room: Cultivar Chamber (Tier 2)","better":0,"matchers":[{"string":"Cultivar Chamber (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_poison_room_2"]},"option":"str"}}
+{"ref":"Has Room: Defense Research Lab (Tier 3)","better":0,"matchers":[{"string":"Defense Research Lab (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_trap_room_3"]},"option":"str"}}
+{"ref":"Has Room: Demolition Lab (Tier 2)","better":0,"matchers":[{"string":"Demolition Lab (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_explosives_room_2"]},"option":"str"}}
+{"ref":"Has Room: Department of Thaumaturgy (Tier 2)","better":0,"matchers":[{"string":"Department of Thaumaturgy (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_gem_room_2"]},"option":"str"}}
+{"ref":"Has Room: Doryani's Institute (Tier 3)","better":0,"matchers":[{"string":"Doryani's Institute (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_gem_room_3"]},"option":"str"}}
+{"ref":"Has Room: Engineering Department (Tier 2)","better":0,"matchers":[{"string":"Engineering Department (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_workshop_2"]},"option":"str"}}
+{"ref":"Has Room: Explosives Room (Tier 1)","better":0,"matchers":[{"string":"Explosives Room (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_explosives_room_1"]},"option":"str"}}
+{"ref":"Has Room: Factory (Tier 3)","better":0,"matchers":[{"string":"Factory (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_workshop_3"]},"option":"str"}}
+{"ref":"Has Room: Flame Workshop (Tier 1)","better":0,"matchers":[{"string":"Flame Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_fire_1"]},"option":"str"}}
+{"ref":"Has Room: Gemcutter's Workshop (Tier 1)","better":0,"matchers":[{"string":"Gemcutter's Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_gem_room_1"]},"option":"str"}}
+{"ref":"Has Room: Glittering Halls (Tier 3)","better":0,"matchers":[{"string":"Glittering Halls (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_trinket_room_3"]},"option":"str"}}
+{"ref":"Has Room: Guardhouse (Tier 1)","better":0,"matchers":[{"string":"Guardhouse (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_breeding_room_1"]},"option":"str"}}
+{"ref":"Has Room: Hall of Champions (Tier 3)","better":0,"matchers":[{"string":"Hall of Champions (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_weapon_room_3"]},"option":"str"}}
+{"ref":"Has Room: Hall of Heroes (Tier 2)","better":0,"matchers":[{"string":"Hall of Heroes (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_legion_2"]},"option":"str"}}
+{"ref":"Has Room: Hall of Legends (Tier 3)","better":0,"matchers":[{"string":"Hall of Legends (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_legion_3"]},"option":"str"}}
+{"ref":"Has Room: Hall of Locks (Tier 2)","better":0,"matchers":[{"string":"Hall of Locks (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_strongbox_2"]},"option":"str"}}
+{"ref":"Has Room: Hall of Lords (Tier 2)","better":0,"matchers":[{"string":"Hall of Lords (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_queens_chambers_2"]},"option":"str"}}
+{"ref":"Has Room: Hall of Mettle (Tier 1)","better":0,"matchers":[{"string":"Hall of Mettle (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_legion_1"]},"option":"str"}}
+{"ref":"Has Room: Hall of Offerings (Tier 2)","better":0,"matchers":[{"string":"Hall of Offerings (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_sacrifice_room_2"]},"option":"str"}}
+{"ref":"Has Room: Hall of War (Tier 3)","better":0,"matchers":[{"string":"Hall of War (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_breeding_room_3"]},"option":"str"}}
+{"ref":"Has Room: Halls","better":0,"matchers":[{"string":"Halls"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_halls"]},"option":"str"}}
+{"ref":"Has Room: Hatchery (Tier 1)","better":0,"matchers":[{"string":"Hatchery (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_minions_1"]},"option":"str"}}
+{"ref":"Has Room: House of the Others (Tier 3)","better":0,"matchers":[{"string":"House of the Others (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_breach_room_3"]},"option":"str"}}
+{"ref":"Has Room: Hurricane Engine (Tier 2)","better":0,"matchers":[{"string":"Hurricane Engine (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_storm_room_2"]},"option":"str"}}
+{"ref":"Has Room: Hybridisation Chamber (Tier 3)","better":0,"matchers":[{"string":"Hybridisation Chamber (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_minions_3"]},"option":"str"}}
+{"ref":"Has Room: Jeweller's Workshop (Tier 1)","better":0,"matchers":[{"string":"Jeweller's Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_trinket_room_1"]},"option":"str"}}
+{"ref":"Has Room: Jewellery Forge (Tier 2)","better":0,"matchers":[{"string":"Jewellery Forge (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_trinket_room_2"]},"option":"str"}}
+{"ref":"Has Room: Lightning Workshop (Tier 1)","better":0,"matchers":[{"string":"Lightning Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_lightning_1"]},"option":"str"}}
+{"ref":"Has Room: Locus of Corruption (Tier 3)","better":0,"matchers":[{"string":"Locus of Corruption (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_corruption_room_3"]},"option":"str"}}
+{"ref":"Has Room: Museum of Artefacts (Tier 3)","better":0,"matchers":[{"string":"Museum of Artefacts (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_chests_3"]},"option":"str"}}
+{"ref":"Has Room: Office of Cartography (Tier 2)","better":0,"matchers":[{"string":"Office of Cartography (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_cartography_room_2"]},"option":"str"}}
+{"ref":"Has Room: Omnitect Forge (Tier 2)","better":0,"matchers":[{"string":"Omnitect Forge (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_fire_2"]},"option":"str"}}
+{"ref":"Has Room: Omnitect Reactor Plant (Tier 2)","better":0,"matchers":[{"string":"Omnitect Reactor Plant (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_boss_lightning_2"]},"option":"str"}}
+{"ref":"Has Room: Passageways","better":0,"matchers":[{"string":"Passageways"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_passageways"]},"option":"str"}}
+{"ref":"Has Room: Pits","better":0,"matchers":[{"string":"Pits"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_the_pits"]},"option":"str"}}
+{"ref":"Has Room: Poison Garden (Tier 1)","better":0,"matchers":[{"string":"Poison Garden (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_poison_room_1"]},"option":"str"}}
+{"ref":"Has Room: Pools of Restoration (Tier 1)","better":0,"matchers":[{"string":"Pools of Restoration (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_healing_room_1"]},"option":"str"}}
+{"ref":"Has Room: Royal Meeting Room (Tier 1)","better":0,"matchers":[{"string":"Royal Meeting Room (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_queens_chambers_1"]},"option":"str"}}
+{"ref":"Has Room: Sacrificial Chamber (Tier 1)","better":0,"matchers":[{"string":"Sacrificial Chamber (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_sacrifice_room_1"]},"option":"str"}}
+{"ref":"Has Room: Sadist's Den (Tier 3)","better":0,"matchers":[{"string":"Sadist's Den (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_torment_3"]},"option":"str"}}
+{"ref":"Has Room: Sanctum of Immortality (Tier 3)","better":0,"matchers":[{"string":"Sanctum of Immortality (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_healing_room_3"]},"option":"str"}}
+{"ref":"Has Room: Sanctum of Unity (Tier 2)","better":0,"matchers":[{"string":"Sanctum of Unity (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_empowering_room_2"]},"option":"str"}}
+{"ref":"Has Room: Sanctum of Vitality (Tier 2)","better":0,"matchers":[{"string":"Sanctum of Vitality (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_healing_room_2"]},"option":"str"}}
+{"ref":"Has Room: Shrine of Empowerment (Tier 1)","better":0,"matchers":[{"string":"Shrine of Empowerment (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_empowering_room_1"]},"option":"str"}}
+{"ref":"Has Room: Shrine of Unmaking (Tier 3)","better":0,"matchers":[{"string":"Shrine of Unmaking (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_explosives_room_3"]},"option":"str"}}
+{"ref":"Has Room: Sparring Room (Tier 1)","better":0,"matchers":[{"string":"Sparring Room (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_weapon_room_1"]},"option":"str"}}
+{"ref":"Has Room: Splinter Research Lab (Tier 1)","better":0,"matchers":[{"string":"Splinter Research Lab (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_breach_room_1"]},"option":"str"}}
+{"ref":"Has Room: Storage Room (Tier 1)","better":0,"matchers":[{"string":"Storage Room (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_chests_1"]},"option":"str"}}
+{"ref":"Has Room: Storm of Corruption (Tier 3)","better":0,"matchers":[{"string":"Storm of Corruption (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_storm_room_3"]},"option":"str"}}
+{"ref":"Has Room: Strongbox Chamber (Tier 1)","better":0,"matchers":[{"string":"Strongbox Chamber (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_strongbox_1"]},"option":"str"}}
+{"ref":"Has Room: Surveyor's Study (Tier 1)","better":0,"matchers":[{"string":"Surveyor's Study (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_cartography_room_1"]},"option":"str"}}
+{"ref":"Has Room: Tempest Generator (Tier 1)","better":0,"matchers":[{"string":"Tempest Generator (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_storm_room_1"]},"option":"str"}}
+{"ref":"Has Room: Temple Defense Workshop (Tier 2)","better":0,"matchers":[{"string":"Temple Defense Workshop (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_trap_room_2"]},"option":"str"}}
+{"ref":"Has Room: Temple Nexus (Tier 3)","better":0,"matchers":[{"string":"Temple Nexus (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_empowering_room_3"]},"option":"str"}}
+{"ref":"Has Room: Throne of Atziri (Tier 3)","better":0,"matchers":[{"string":"Throne of Atziri (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_queens_chambers_3"]},"option":"str"}}
+{"ref":"Has Room: Tombs","better":0,"matchers":[{"string":"Tombs"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_tombs"]},"option":"str"}}
+{"ref":"Has Room: Torment Cells (Tier 1)","better":0,"matchers":[{"string":"Torment Cells (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_torment_1"]},"option":"str"}}
+{"ref":"Has Room: Torture Cages (Tier 2)","better":0,"matchers":[{"string":"Torture Cages (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_torment_2"]},"option":"str"}}
+{"ref":"Has Room: Toxic Grove (Tier 3)","better":0,"matchers":[{"string":"Toxic Grove (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_poison_room_3"]},"option":"str"}}
+{"ref":"Has Room: Trap Workshop (Tier 1)","better":0,"matchers":[{"string":"Trap Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_trap_room_1"]},"option":"str"}}
+{"ref":"Has Room: Treasury (Tier 2)","better":0,"matchers":[{"string":"Treasury (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_currency_vault_2"]},"option":"str"}}
+{"ref":"Has Room: Tunnels","better":0,"matchers":[{"string":"Tunnels"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_tunnels"]},"option":"str"}}
+{"ref":"Has Room: Vault (Tier 1)","better":0,"matchers":[{"string":"Vault (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_currency_vault_1"]},"option":"str"}}
+{"ref":"Has Room: Warehouses (Tier 2)","better":0,"matchers":[{"string":"Warehouses (Tier 2)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_chests_2"]},"option":"str"}}
+{"ref":"Has Room: Wealth of the Vaal (Tier 3)","better":0,"matchers":[{"string":"Wealth of the Vaal (Tier 3)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_currency_vault_3"]},"option":"str"}}
+{"ref":"Has Room: Workshop (Tier 1)","better":0,"matchers":[{"string":"Workshop (Tier 1)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_workshop_1"]},"option":"str"}}
 {"ref":"Has Shaper Influence","better":1,"matchers":[{"string":"Has Shaper Influence"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_has_shaper_influence"]}}}
 {"ref":"Has Warlord Influence","better":1,"matchers":[{"string":"Has Warlord Influence"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_has_warlord_influence"]}}}
 {"ref":"Haste has #% reduced Reservation","better":-1,"matchers":[{"string":"Haste has #% increased Reservation"},{"string":"Haste has #% reduced Reservation","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_91821600"]},"inverted":true}}

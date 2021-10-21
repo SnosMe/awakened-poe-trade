@@ -81,7 +81,9 @@ const dict: TranslationDict = {
   'CRAFTED_SUFFIX': 'Мастерский суффикс',
   'UNSCALABLE_VALUE': ' — Неизменяемое значение',
   'CORRUPTED_IMPLICIT': 'Осквернённое собственное свойство',
-  'MODIFIER_INCREASED': /^(.+?)% увеличение$/
+  'MODIFIER_INCREASED': /^(.+?)% увеличение$/,
+  'INCURSION_OPEN': 'Открытые комнаты:',
+  'INCURSION_OBSTRUCTED': 'Отделённые комнаты:'
 }
 
 export default dict

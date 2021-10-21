@@ -113,7 +113,8 @@ export default defineComponent({
   setup (props, ctx) {
     const showTag = computed(() =>
       props.filter.tag !== FilterTag.Property &&
-      props.filter.tradeId[0] !== 'item.has_empty_modifier'
+      props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
+      props.item.name !== 'Chronicle of Atzoatl'
     )
 
     const showQ20Notice = computed(() => {
@@ -401,7 +402,8 @@ export default defineComponent({
     "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование",
     "Select only if price-checking as base item for crafting": "Отмечайте, если проверяете цену в качестве базового предмета для крафта",
     "1 Empty or Crafted Modifier": "1 свободное или ремесленное свойство",
-    "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств"
+    "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств",
+    "First ask yourself: would you buy an item with this stat?": "Сначала спросите себя: купили бы вы предмет с этим модом?"
   }
 }
 </i18n>

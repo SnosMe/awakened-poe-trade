@@ -65,6 +65,11 @@ export function createFilters (
     filters.baseType = {
       value: item.name
     }
+    if (item.name === 'Chronicle of Atzoatl') {
+      filters.areaLevel = {
+        value: floorToBracket(item.props.areaLevel!, [1, 68, 73, 75, 78, 80])
+      }
+    }
     return filters
   }
   if (item.category === ItemCategory.Prophecy) {
@@ -334,4 +339,16 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
   }
 
   return filters
+}
+
+function floorToBracket (value: number, brackets: readonly number[]) {
+  let prev = brackets[0]
+  for (const num of brackets) {
+    if (num > value) {
+      return prev
+    } else {
+      prev = num
+    }
+  }
+  return prev
 }

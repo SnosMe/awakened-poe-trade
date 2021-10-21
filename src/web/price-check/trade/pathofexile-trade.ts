@@ -149,11 +149,11 @@ interface TradeRequest { /* eslint-disable camelcase */
         filters: {
           map_tier?: FilterRange
           map_blighted?: FilterBoolean
+          area_level?: FilterRange
         }
       }
       heist_filters?: {
         filters: {
-          area_level?: FilterRange
           heist_agility?: FilterRange
           heist_brute_force?: FilterRange
           heist_counter_thaumaturgy?: FilterRange
@@ -345,7 +345,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.areaLevel) {
-    prop.set(query.filters, 'heist_filters.filters.area_level.min', filters.areaLevel.value)
+    prop.set(query.filters, 'map_filters.filters.area_level.min', filters.areaLevel.value)
   }
 
   if (filters.heistJob) {

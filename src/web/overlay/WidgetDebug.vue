@@ -133,67 +133,54 @@ Item Level: 73
 --------
 Note: ~price 10 chaos
 `,
-`Item Class: Jewels
+`Item Class: Rings
 Rarity: Rare
-Pandemonium Ember
-Crimson Jewel
---------
-Item Level: 25
---------
-{ Corruption Implicit Modifier — Damage, Minion }
-Minions deal 5(4-5)% increased Damage (implicit)
---------
-{ Prefix Modifier "Vicious" (Tier: 1) — Damage, Attack }
-20% increased Fire Damage
-{ Suffix Modifier "of Combat" (Tier: 1) — Damage, Attack }
-8% increased Elemental Damage
-{ Suffix Modifier "of Bleeding" (Tier: 1) — Physical, Attack, Ailment }
-Attacks have 5(3-5)% chance to cause Bleeding
-(Bleeding deals Physical Damage over time, based on the base Physical Damage of the Skill. Damage is higher while moving)
-16(12-16)% increased Bleeding Duration
---------
-Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.
---------
-Corrupted
---------
-Note: ~price 3 chaos
-`,
-`Item Class: Amulets
-Rarity: Rare
-Blood Heart
-Breakrib Talisman
+Rapture Twirl
+Ruby Ring
 --------
 Requirements:
-Level: 54
+Level: 28
 --------
-Item Level: 72
+Item Level: 84
 --------
-Talisman Tier: 1
+{ Implicit Modifier — Elemental, Fire, Resistance }
++29(20-30)% to Fire Resistance (implicit)
 --------
-Adds 45 to 68 Fire Damage if you've Killed Recently (enchant)
-Allocates Mind Drinker (enchant)
+{ Prefix Modifier "Radiating" (Tier: 7) — Defences }
++18(16-19) to maximum Energy Shield
+{ Prefix Modifier "Stalwart" (Tier: 5) — Life }
++33(30-39) to maximum Life
+{ Suffix Modifier "of the Newt" (Tier: 7) — Life }
+Regenerate 1.3(1-2) Life per second
+{ Suffix Modifier "of the Kaleidoscope" (Tier: 3) — Elemental, Resistance }
++10(9-11)% to all Elemental Resistances
+{ Suffix Modifier "of Riker's Veil" }
+Veiled Suffix
+`,
+`Item Class: Misc Map Items
+Rarity: Currency
+Chronicle of Atzoatl
 --------
-{ Implicit Modifier — Damage, Physical }
-25(20-30)% increased Global Physical Damage (implicit)
+Area Level: 71
 --------
-{ Prefix Modifier "Incandescent" (Tier: 3) — Defences }
-+42(38-43) to maximum Energy Shield
-{ Prefix Modifier "Blurred" (Tier: 3) — Defences }
-16(14-16)% increased Evasion Rating
-{ Suffix Modifier "of the Marksman" (Tier: 2) — Attack }
-+289(251-350) to Accuracy Rating
-{ Suffix Modifier "of the Maelstrom" (Tier: 3) — Elemental, Lightning, Resistance }
-+41(36-41)% to Lightning Resistance
-{ Suffix Modifier "of the Kaleidoscope" (Tier: 4) — Elemental, Resistance }
-+11(9-11)% to all Elemental Resistances
+Open Rooms:
+Lightning Workshop (Tier 1)
+Guardhouse (Tier 1)
+Poison Garden (Tier 1)
+Treasury (Tier 2)
+Jeweller's Workshop (Tier 1)
+Trap Workshop (Tier 1)
+Royal Meeting Room (Tier 1)
+Sacrificial Chamber (Tier 1)
+Omnitect Forge (Tier 2)
+Museum of Artefacts (Tier 3)
+Breach Containment Chamber (Tier 2)
+Obstructed Rooms:
+Apex of Atzoatl
 --------
-I stood among the stones
-And called out to the First Ones;
-That with tooth and mighty claw,
-They should tear our enemies asunder.
-- The Wolven King
+"Much could be learned from the relics said to be kept in Atzoatl. We consider the Vaal ancient, so what did they consider ancient in turn?" - Icius Perandus, Antiquities Collection, Vaal Mural
 --------
-Corrupted
+Can be used in a personal Map Device to open portals to the Temple of Atzoatl in the present day.
 `
 ]
 
@@ -206,9 +193,8 @@ export default defineComponent({
       anchor: { pos: 'bl', x: 1, y: 98.5 } as Anchor
     })
 
-    function priceCheck (text: string) {
+    function priceCheck (text: string) { /* eslint-disable no-console */
       MainProcess.selfEmitPriceCheck({ clipboard: text, position: { x: window.screenX + 100, y: window.screenY + 100 }, lockedMode: false })
-      // eslint-disable-next-line no-console
       console.time('parsing item')
       const parsed = parseClipboard(text)
       console.timeEnd('parsing item')

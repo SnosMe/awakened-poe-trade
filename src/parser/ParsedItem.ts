@@ -62,3 +62,9 @@ export type HeistJob =
   'Trap Disarmament' |
   'Demolition' |
   'Brute Force'
+
+// NOTE: should match option values on trade
+export enum IncursionRoom {
+  Open = 1,
+  Obstructed = 2
+}

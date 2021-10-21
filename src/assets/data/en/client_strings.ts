@@ -79,7 +79,9 @@ const dict = {
   'CRAFTED_SUFFIX': 'Master Crafted Suffix Modifier',
   'UNSCALABLE_VALUE': ' — Unscalable Value',
   'CORRUPTED_IMPLICIT': 'Corruption Implicit Modifier',
-  'MODIFIER_INCREASED': /^(.+?)% Increased$/
+  'MODIFIER_INCREASED': /^(.+?)% Increased$/,
+  'INCURSION_OPEN': 'Open Rooms:',
+  'INCURSION_OBSTRUCTED': 'Obstructed Rooms:'
 }
 
 export default dict
