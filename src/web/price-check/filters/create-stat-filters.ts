@@ -122,7 +122,9 @@ export function calculatedStatToFilter (
     tradeId: stat.trade.ids[type],
     statRef: stat.ref,
     text: translation.string,
-    tag: type as unknown as FilterTag,
+    tag: sources.some(s => s.modifier.info.generation === 'corrupted') // TODO
+      ? FilterTag.Corrupted
+      : type as unknown as FilterTag,
     sources: sources,
     roll: undefined,
     disabled: true

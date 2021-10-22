@@ -17,7 +17,7 @@ export function createTray () {
 export function rebuildTrayMenu () {
   const contextMenu = Menu.buildFromTemplate([
     {
-      label: 'Settings',
+      label: 'Settings/League',
       click: () => {
         dialog.showMessageBox({ title: 'Settings', message: `Open Path of Exile and press "${config.get('overlayKey')}". Click on the button with cog icon there.` })
       }

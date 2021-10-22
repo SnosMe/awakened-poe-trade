@@ -76,8 +76,8 @@
           >{{ t('Collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
         <ui-toggle v-if="shownStats.length != stats.length"
           v-model="showHidden" class="text-gray-400 pt-2">{{ t('Hidden') }}</ui-toggle>
-        <ui-toggle
-          v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('Mods') }}</ui-toggle>
+        <!-- <ui-toggle
+          v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('Mods') }}</ui-toggle> -->
       </div>
     </div>
   </div>
