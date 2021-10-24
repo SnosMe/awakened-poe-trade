@@ -22,10 +22,10 @@
           <div class="flex gap-x-px">
             <ui-input-debounced :class="$style['rollInput']" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
               v-if="showInputs" ref="inputMinEl"
-              v-model="inputMin" @focus="inputFocus($event, 'min')" :delay="0" />
+              v-model.number="inputMin" @focus="inputFocus($event, 'min')" :delay="0" />
             <ui-input-debounced :class="$style['rollInput']" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
               v-if="showInputs" ref="inputMaxEl"
-              v-model="inputMax" @focus="inputFocus($event, 'max')" :delay="0" />
+              v-model.number="inputMax" @focus="inputFocus($event, 'max')" :delay="0" />
           </div>
         </div>
       </div>
@@ -195,11 +195,11 @@ export default defineComponent({
       sliderValue,
       inputMin: computed({
         get (): any { return props.filter.roll!.min },
-        set (value: string) { props.filter.roll!.min = Number(value) }
+        set (value: '' | number) { props.filter.roll!.min = value }
       }),
       inputMax: computed({
         get (): any { return props.filter.roll!.max },
-        set (value: string) { props.filter.roll!.max = Number(value) }
+        set (value: '' | number) { props.filter.roll!.max = value }
       }),
       tag: computed(() => props.filter.tag),
       // TODO: change
