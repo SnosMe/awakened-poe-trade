@@ -131,6 +131,7 @@ export enum FilterTag {
   Implicit = 'implicit',
   Crafted = 'crafted',
   Enchant = 'enchant',
+  Scourge = 'scourge',
   Fractured = 'fractured',
   Corrupted = 'corrupted',
   Synthesised = 'synthesised',

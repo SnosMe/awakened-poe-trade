@@ -476,21 +476,17 @@ function parseModifiers (section: string[], item: ParsedItem) {
     return PARSER_SKIPPED
   }
 
-  if (!section.some(line =>
+  const recognizedLine = section.find(line =>
     line.endsWith(C.ENCHANT_LINE) ||
+    line.endsWith(C.SCOURGE_LINE) ||
     isModInfoLine(line)
-  )) {
+  )
+
+  if (!recognizedLine) {
     return SECTION_SKIPPED
   }
 
-  if (section.some(line => line.endsWith(C.ENCHANT_LINE))) {
-    const { lines } = parseModType(section)
-    const modInfo: ModifierInfo = {
-      type: ModifierType.Enchant,
-      tags: []
-    }
-    parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
-  } else {
+  if (isModInfoLine(recognizedLine)) {
     for (const { modLine, statLines } of groupLinesByMod(section)) {
       const { modType, lines } = parseModType(statLines)
       const modInfo = parseModInfoLine(modLine, modType)
@@ -500,6 +496,15 @@ function parseModifiers (section: string[], item: ParsedItem) {
         item.isVeiled = true
       }
     }
+  } else {
+    const { lines } = parseModType(section)
+    const modInfo: ModifierInfo = {
+      type: recognizedLine.endsWith(C.ENCHANT_LINE)
+        ? ModifierType.Enchant
+        : ModifierType.Scourge,
+      tags: []
+    }
+    parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
   }
 
   return SECTION_PARSED

@@ -114,13 +114,15 @@ export default defineComponent({
     "implicit": "Implicit",
     "fractured": "Fractured",
     "explicit": "Explicit",
-    "crafted": "Crafted"
+    "crafted": "Crafted",
+    "scourge": "Scourge"
   },
   "ru": {
     "implicit": "Собственное",
     "fractured": "Расколотый",
     "explicit": "Свойство",
     "crafted": "Мастерский",
+    "scourge": "Преображённое",
     "Tier: {0}": "Уровень: {0}",
     "Rank: {0}": "Ранг: {0}"
   }

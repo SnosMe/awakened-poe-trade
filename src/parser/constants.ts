@@ -45,6 +45,7 @@ export const TAG_EVASION = 'Evasion Rating: '
 export const TAG_ENERGY_SHIELD = 'Energy Shield: '
 export const TAG_BLOCK_CHANCE = 'Chance to Block: '
 
+export const SCOURGE_LINE = ' (scourge)'
 export const IMPLICIT_LINE = ' (implicit)'
 export const CRAFTED_LINE = ' (crafted)'
 export const ENCHANT_LINE = ' (enchant)'

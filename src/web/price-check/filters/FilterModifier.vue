@@ -309,6 +309,8 @@ export default defineComponent({
   @apply bg-blue-600 text-blue-100; }
 .tag-explicit {
   @apply -mx-1 text-gray-600; }
+.tag-scourge {
+  @apply bg-orange-600 text-white; }
 .tag-enchant {
   @apply bg-purple-600 text-purple-100; }
 .tag-pseudo {

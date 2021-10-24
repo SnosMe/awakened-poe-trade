@@ -102,6 +102,9 @@ export function parseModType (lines: string[]): { modType: ModifierType, lines: 
   let modType: ModifierType
   if (lines[0] === _$.VEILED_PREFIX || lines[0] === _$.VEILED_SUFFIX) {
     modType = ModifierType.Veiled
+  } else if (lines.some(line => line.endsWith(C.SCOURGE_LINE))) {
+    modType = ModifierType.Scourge
+    lines = removeLinesEnding(lines, C.SCOURGE_LINE)
   } else if (lines.some(line => line.endsWith(C.ENCHANT_LINE))) {
     modType = ModifierType.Enchant
     lines = removeLinesEnding(lines, C.ENCHANT_LINE)
