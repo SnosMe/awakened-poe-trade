@@ -157,6 +157,14 @@ export function calculatedStatToFilter (
         isNegated: false
       }
     }
+  } else if (
+    item.rarity === ItemRarity.Unique &&
+    calc.type !== ModifierType.Enchant
+  ) {
+    // TODO: add exceptions to (!mod.bounds) for items like sythesized rings, watcher's eye, unqiues with variants, etc.
+    if (filter.tag !== FilterTag.Variant && filter.tag !== FilterTag.Corrupted) {
+      filter.hidden = 'Roll is not variable'
+    }
   }
 
   filterAdjustmentForNegate(calc, translation.negate, filter)
