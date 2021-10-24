@@ -89,7 +89,7 @@ import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
 import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
 import { AppConfig } from '@/web/Config'
-import { ParsedItem } from '@/parser'
+import { ItemRarity, ParsedItem } from '@/parser'
 import { FilterTag, StatFilter } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
 
@@ -114,7 +114,8 @@ export default defineComponent({
     const showTag = computed(() =>
       props.filter.tag !== FilterTag.Property &&
       props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
-      props.item.name !== 'Chronicle of Atzoatl'
+      props.item.name !== 'Chronicle of Atzoatl' &&
+      !(props.item.rarity === ItemRarity.Unique && props.filter.tag === FilterTag.Explicit)
     )
 
     const showQ20Notice = computed(() => {
