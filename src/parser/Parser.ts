@@ -49,9 +49,10 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseAtzoatlAreaLevel,
   parseAtzoatlRooms,
   parseMirrored,
-  parseModifiers,
-  parseModifiers,
-  parseModifiers,
+  parseModifiers, // enchant
+  parseModifiers, // scourge
+  parseModifiers, // implicit
+  parseModifiers, // explicit
   { virtual: transformToLegacyModifiers }
 ]
 
