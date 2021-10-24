@@ -338,7 +338,9 @@ function parseGem (section: string[], item: ParsedItem) {
 }
 
 function parseStackSize (section: string[], item: ParsedItem) {
-  if (item.rarity !== ItemRarity.Currency && item.rarity !== ItemRarity.DivinationCard) {
+  if (item.rarity !== ItemRarity.Normal &&
+      item.rarity !== ItemRarity.Currency &&
+      item.rarity !== ItemRarity.DivinationCard) {
     return PARSER_SKIPPED
   }
   if (section[0].startsWith(_$[C.TAG_STACK_SIZE])) {
