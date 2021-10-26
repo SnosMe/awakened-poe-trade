@@ -6,8 +6,13 @@ permalink: /faq
 
 - **Where can I change settings, league?**
 
-  Find app icon in the tray
-  ![](https://imgur.com/dHM1WeQ.png)
+  Open Path of Exile and press overlay key `Shift + Space`. Click on the button with cog icon there.
+  ![](https://i.imgur.com/81L9Cp0.png)
+
+- **Where can I find log file?**
+
+  Find app icon in the tray.
+  ![](https://i.imgur.com/zhi2iBH.png)
 
 - **Is this app approved by GGG? Can I get banned for using it?**
 

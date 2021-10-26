@@ -29,4 +29,4 @@ All that remains is to parse text in Awakened PoE Trade and show to you in a fan
 ---
 
 Some functions don't have hotkeys assigned by default to avoid conflicts on your system.
-You can set them and change default hotkeys in menu under tray icon.
+You can set them and change default hotkeys in the [Settings]({{ "/faq" | relative_url }}).

@@ -9,25 +9,28 @@ permalink: /issues
     Please do it. Did you know that updating Geforce Experience can reset game
     video settings to "optimized profile" and silently enable Fullscreen mode?
 
-2. Are you playing with Vulkan renderer? Update GPU drivers.
+2. [Check the log file]({{ "/faq" | relative_url }}).
+
+3. Are you playing with Vulkan renderer? Update GPU drivers.
 
     If Awakened works for you with DirectX11 renderer,
     then problem is old Vulkan drivers for sure.
 
-3. Delete `%appdata%\awakened-poe-trade`
+4. Delete `%appdata%\awakened-poe-trade`
   
     If needed, backup `apt-data` folder with your configuration inside.\
-    *(also try to restart app without restoring the backup fisrt).*{:.text-sm}
 
-4. **Close all applications** that you can in tray and task manager.
+5. **Close all applications** that you can in tray and task manager.
 
     Launch them later one at a time to identify **conflict**.
 
-5. Restart Awakened PoE Trade.
+6. Restart Awakened PoE Trade.
 
     *(don't forget to quit first, otherwise launching second instance will do nothing).*
 
-6. As last resort, go to Discord. But if you don't describe something specific about
+7. Enable detailed logs (Settings>Debug), restart tool, try to price check item, open the log file again.
+
+8. As last resort, go to Discord. But if you don't describe something specific about
     your problem, **you will most likely be directed to this page**.
 
     If you've resolved your issue, feel free to share it on Discord and
@@ -40,6 +43,7 @@ permalink: /issues
 
 ## Windows
 
+- [Nothing happens when I try to price check]({{ "/nothing-happens" | relative_url }})
 - [Can't open settings via tray icon when game is active](https://github.com/SnosMe/awakened-poe-trade/issues/265)
 - [Installation stuck at ~50%](https://github.com/SnosMe/awakened-poe-trade/issues/205)
 - [Says the update will be installed after restart, but never does](https://github.com/SnosMe/awakened-poe-trade/issues/278)

@@ -7,7 +7,7 @@ permalink: /chat-commands
 Allows you to send arbitrary text to the chat.
 
 #### List of available commands ####
-[https://pathofexile.gamepedia.com/Chat_console](https://pathofexile.gamepedia.com/Chat_console)
+[https://www.poewiki.net/wiki/Chat_console](https://www.poewiki.net/wiki/Chat_console)
 
 #### Special rules ####
 - Text that starts with `@last`, will be sent to the character of the last whisper received/sent.
