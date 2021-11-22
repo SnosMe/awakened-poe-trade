@@ -34,7 +34,7 @@ export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filte
 
   if (filters.stackSize) {
     if (
-      item.rarity === ItemRarity.DivinationCard ||
+      item.category === ItemCategory.DivinationCard ||
       item.category === ItemCategory.Prophecy ||
       item.category === ItemCategory.MavenInvitation ||
       item.category === ItemCategory.Map

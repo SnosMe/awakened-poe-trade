@@ -24,7 +24,7 @@ export function createFilters (
     }
   }
 
-  if (item.rarity === ItemRarity.Gem) {
+  if (item.category === ItemCategory.Gem) {
     return createGemFilters(item, filters)
   }
   if (item.category === ItemCategory.CapturedBeast) {
@@ -59,8 +59,8 @@ export function createFilters (
     return filters
   }
   if (
-    item.rarity === ItemRarity.DivinationCard ||
-    item.rarity === ItemRarity.Currency
+    item.category === ItemCategory.DivinationCard ||
+    item.category === ItemCategory.Currency
   ) {
     filters.baseType = {
       value: item.name

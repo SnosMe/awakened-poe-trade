@@ -4,7 +4,7 @@ import type { ItemCategory } from './meta'
 import type { ParsedModifier } from './advanced-mod-desc'
 
 export interface ParsedItem {
-  rarity: ItemRarity
+  rarity?: ItemRarity
   name: string
   baseType: string | undefined
   itemLevel?: number

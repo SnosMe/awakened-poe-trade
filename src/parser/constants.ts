@@ -2,10 +2,7 @@ export enum ItemRarity {
   Normal = 'Normal',
   Magic = 'Magic',
   Rare = 'Rare',
-  Unique = 'Unique',
-  Gem = 'Gem',
-  Currency = 'Currency',
-  DivinationCard = 'Divination Card'
+  Unique = 'Unique'
 }
 
 export enum ItemInfluence {
@@ -25,8 +22,6 @@ export const SHAPER_ITEM = 'Shaper Item'
 export const WARLORD_ITEM = 'Warlord Item'
 
 export const TAG_MAP_TIER = 'Map Tier: '
-export const TAG_RARITY = 'Rarity: '
-export const TAG_ITEM_CLASS = 'Item Class: '
 export const TAG_ITEM_LEVEL = 'Item Level: '
 export const TAG_TALISMAN_TIER = 'Talisman Tier: '
 export const TAG_GEM_LEVEL = 'Level: '

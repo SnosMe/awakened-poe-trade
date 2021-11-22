@@ -40,7 +40,10 @@ export enum ItemCategory {
   HeistGear = 'Heist Gear',
   HeistCloak = 'Heist Cloak',
   Trinket = 'Trinket',
-  MavenInvitation = 'Maven\'s Invitation'
+  MavenInvitation = 'Maven\'s Invitation',
+  Gem = 'Gem',
+  Currency = 'Currency',
+  DivinationCard = 'Divination Card'
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([

@@ -165,41 +165,14 @@ function parseMap (section: string[], item: ParsedItem) {
 
 function parseNamePlate (section: string[]) {
   if (section.length < 3 ||
-      !section[0].startsWith(_$[C.TAG_ITEM_CLASS]) ||
-      !section[1].startsWith(_$[C.TAG_RARITY])) {
+      !section[0].startsWith(_$.ITEM_CLASS) ||
+      !section[1].startsWith(_$.RARITY)) {
     return null
   }
 
-  const rarityText = section[1].substr(_$[C.TAG_RARITY].length)
-  let rarity: ItemRarity
-  switch (rarityText) {
-    case _$[ItemRarity.Currency]:
-      rarity = ItemRarity.Currency
-      break
-    case _$[ItemRarity.DivinationCard]:
-      rarity = ItemRarity.DivinationCard
-      break
-    case _$[ItemRarity.Gem]:
-      rarity = ItemRarity.Gem
-      break
-    case _$[ItemRarity.Normal]:
-      rarity = ItemRarity.Normal
-      break
-    case _$[ItemRarity.Magic]:
-      rarity = ItemRarity.Magic
-      break
-    case _$[ItemRarity.Rare]:
-      rarity = ItemRarity.Rare
-      break
-    case _$[ItemRarity.Unique]:
-      rarity = ItemRarity.Unique
-      break
-    default:
-      return null
-  }
-
   const item: ParsedItem = {
-    rarity,
+    rarity: undefined,
+    category: undefined,
     name: markupConditionParser(section[2]),
     baseType: (section.length >= 4) ? markupConditionParser(section[3]) : undefined,
     props: {},
@@ -213,6 +186,34 @@ function parseNamePlate (section: string[]) {
     extra: {},
     rawText: undefined!
   }
+
+  const rarityText = section[1].substr(_$.RARITY.length)
+  switch (rarityText) {
+    case _$.RARITY_CURRENCY:
+      item.category = ItemCategory.Currency
+      break
+    case _$.RARITY_DIVCARD:
+      item.category = ItemCategory.DivinationCard
+      break
+    case _$.RARITY_GEM:
+      item.category = ItemCategory.Gem
+      break
+    case _$.RARITY_NORMAL:
+      item.rarity = ItemRarity.Normal
+      break
+    case _$.RARITY_MAGIC:
+      item.rarity = ItemRarity.Magic
+      break
+    case _$.RARITY_RARE:
+      item.rarity = ItemRarity.Rare
+      break
+    case _$.RARITY_UNIQUE:
+      item.rarity = ItemRarity.Unique
+      break
+    default:
+      return null
+  }
+
   return item
 }
 
@@ -283,7 +284,7 @@ function parseTalismanTier (section: string[], item: ParsedItem) {
 }
 
 function parseVaalGem (section: string[], item: ParsedItem) {
-  if (item.rarity !== ItemRarity.Gem) return PARSER_SKIPPED
+  if (item.category !== ItemCategory.Gem) return PARSER_SKIPPED
 
   if (section.length === 1) {
     let gemName: string | undefined
@@ -307,7 +308,7 @@ function parseVaalGem (section: string[], item: ParsedItem) {
 }
 
 function parseGem (section: string[], item: ParsedItem) {
-  if (item.rarity !== ItemRarity.Gem) {
+  if (item.category !== ItemCategory.Gem) {
     return PARSER_SKIPPED
   }
   if (section[1]?.startsWith(_$[C.TAG_GEM_LEVEL])) {
@@ -340,8 +341,8 @@ function parseGem (section: string[], item: ParsedItem) {
 
 function parseStackSize (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Normal &&
-      item.rarity !== ItemRarity.Currency &&
-      item.rarity !== ItemRarity.DivinationCard) {
+      item.category !== ItemCategory.Currency &&
+      item.category !== ItemCategory.DivinationCard) {
     return PARSER_SKIPPED
   }
   if (section[0].startsWith(_$[C.TAG_STACK_SIZE])) {
