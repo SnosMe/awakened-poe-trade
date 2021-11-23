@@ -149,6 +149,7 @@ interface TradeRequest { /* eslint-disable camelcase */
         filters: {
           map_tier?: FilterRange
           map_blighted?: FilterBoolean
+          map_uberblighted?: FilterBoolean
           area_level?: FilterRange
         }
       }
@@ -320,7 +321,11 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.mapBlighted) {
-    prop.set(query.filters, 'map_filters.filters.map_blighted.option', String(true))
+    if (filters.mapBlighted.value === 'Blighted') {
+      prop.set(query.filters, 'map_filters.filters.map_blighted.option', String(true))
+    } else if (filters.mapBlighted.value === 'Blight-ravaged') {
+      prop.set(query.filters, 'map_filters.filters.map_uberblighted.option', String(true))
+    }
   }
 
   if (filters.unidentified && !filters.unidentified.disabled) {

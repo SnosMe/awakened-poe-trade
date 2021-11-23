@@ -6,7 +6,7 @@
       <div v-if="filters.mapTier" class="trade-tag">{{ t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
       <div v-if="filters.areaLevel" class="trade-tag">{{ t('Area Level: {0}', [filters.areaLevel.value]) }}</div>
       <div v-if="filters.heistJob" class="trade-tag">{{ t(`${filters.heistJob.name} (lvl {0})`, [filters.heistJob.level]) }}</div>
-      <div v-if="filters.mapBlighted" class="trade-tag">{{ t('Blighted') }}</div>
+      <div v-if="filters.mapBlighted" class="trade-tag">{{ t(filters.mapBlighted.value) }}</div>
       <div v-if="filters.discriminator" class="trade-tag">{{ t(filters.discriminator.value) }}</div>
       <filter-numeric-editable :filter="filters.itemLevel" name="Item Level:" />
       <filter-numeric-editable :filter="filters.stackSize" name="Stock:" />
@@ -176,6 +176,7 @@ export default defineComponent({
     "Links: {0}": "Связи: {0}",
     "Map Tier: {0}": "Ур. карты: {0}",
     "Blighted": "Заражённая",
+    "Blight-ravaged": "Разорённая Скверной",
     "White: {0}": "Белые: {0}",
     "Level: {0}": "Уровень: {0}",
     "Quality: {0}%": "Качество: {0}%",

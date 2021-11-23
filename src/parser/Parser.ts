@@ -120,10 +120,14 @@ function normalizeName (item: ParsedItem) {
     if (item.baseType) {
       if (_$.MAP_BLIGHTED.test(item.baseType)) {
         item.baseType = _$.MAP_BLIGHTED.exec(item.baseType)![1]
+      } else if (_$.MAP_BLIGHT_RAVAGED.test(item.baseType)) {
+        item.baseType = _$.MAP_BLIGHT_RAVAGED.exec(item.baseType)![1]
       }
     } else {
       if (_$.MAP_BLIGHTED.test(item.name)) {
         item.name = _$.MAP_BLIGHTED.exec(item.name)![1]
+      } else if (_$.MAP_BLIGHT_RAVAGED.test(item.name)) {
+        item.name = _$.MAP_BLIGHT_RAVAGED.exec(item.name)![1]
       }
     }
   }
@@ -165,11 +169,13 @@ function parseMap (section: string[], item: ParsedItem) {
 function parseBlightedMap (item: ParsedItem) {
   if (item.category !== ItemCategory.Map) return
 
-  const stat = item.statsByType.find(calc =>
+  const calc = item.statsByType.find(calc =>
     calc.type === ModifierType.Implicit &&
     calc.stat.ref.startsWith('Area is infested with Fungal Growths'))
-  if (stat !== undefined) {
-    item.mapBlighted = true
+  if (calc !== undefined) {
+    item.mapBlighted = (calc.sources[0].contributes!.value === 9)
+      ? 'Blight-ravaged'
+      : 'Blighted'
   }
 }
 

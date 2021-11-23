@@ -30,6 +30,7 @@ const dict: TranslationDict = { /* eslint-disable quote-props */
   'UNIDENTIFIED': 'Неопознано',
   'ITEM_SUPERIOR': /^(.*) высокого качества$/,
   'MAP_BLIGHTED': /^Заражённая (.*)$/,
+  'MAP_BLIGHT_RAVAGED': /^Разорённая Скверной (.*)$/,
   'INFLUENCE_SHAPER': 'Предмет Создателя',
   'INFLUENCE_ELDER': 'Древний предмет',
   'INFLUENCE_CRUSADER': 'Предмет Крестоносца',

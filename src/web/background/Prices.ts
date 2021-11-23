@@ -87,6 +87,7 @@ const priceQueue = [
   { overview: 'item', type: 'BaseType', loaded: 0 },
   // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
   { overview: 'item', type: 'BlightedMap', loaded: 0 },
+  { overview: 'item', type: 'BlightRavagedMap', loaded: 0 },
   { overview: 'item', type: 'UniqueMap', loaded: 0 },
   { overview: 'item', type: 'Map', loaded: 0 },
   { overview: 'item', type: 'UniqueJewel', loaded: 0 },

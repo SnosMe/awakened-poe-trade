@@ -99,7 +99,7 @@ export function createFilters (
     }
 
     if (item.mapBlighted) {
-      filters.mapBlighted = { value: true }
+      filters.mapBlighted = { value: item.mapBlighted }
     }
 
     if (item.rarity === ItemRarity.Unique) {

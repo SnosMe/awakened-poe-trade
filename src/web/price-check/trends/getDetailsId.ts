@@ -16,7 +16,7 @@ export function isValuableBasetype (item: ParsedItem): boolean {
   )
 }
 
-const LATEST_MAP_VARIANT = 'Gen-11'
+const LATEST_MAP_VARIANT = 'Gen-12'
 
 export function getDetailsId (item: ParsedItem) {
   if (item.category === ItemCategory.Gem) {
@@ -26,7 +26,7 @@ export function getDetailsId (item: ParsedItem) {
     if (item.rarity === ItemRarity.Unique) {
       return nameToDetailsId(`${item.name} t${item.mapTier}`)
     } else {
-      return nameToDetailsId(`${item.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
+      return nameToDetailsId(`${item.mapBlighted ? `${item.mapBlighted} ` : ''}${item.baseType || item.name} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
   if (item.category === ItemCategory.CapturedBeast ||

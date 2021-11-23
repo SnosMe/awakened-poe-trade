@@ -28,6 +28,7 @@ const dict = { /* eslint-disable quote-props */
   'UNIDENTIFIED': 'Unidentified',
   'ITEM_SUPERIOR': /^Superior (.*)$/,
   'MAP_BLIGHTED': /^Blighted (.*)$/,
+  'MAP_BLIGHT_RAVAGED': /^Blight-ravaged (.*)$/,
   'INFLUENCE_SHAPER': 'Shaper Item',
   'INFLUENCE_ELDER': 'Elder Item',
   'INFLUENCE_CRUSADER': 'Crusader Item',

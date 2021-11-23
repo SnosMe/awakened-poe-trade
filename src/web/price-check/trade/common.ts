@@ -53,7 +53,7 @@ export function tradeTag (item: ParsedItem): string | undefined {
   }
 
   if (name) {
-    if (item.mapBlighted) {
+    if (item.mapBlighted === 'Blighted') {
       name = `Blighted ${name} (Tier ${item.mapTier})`
     } else if (item.mapTier) {
       name = `${name} (Tier ${item.mapTier})`

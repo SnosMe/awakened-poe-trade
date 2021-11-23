@@ -32,7 +32,7 @@ export interface ParsedItem {
   weaponAS?: number
   weaponPHYSICAL?: number
   weaponELEMENTAL?: number
-  mapBlighted?: true
+  mapBlighted?: 'Blighted' | 'Blight-ravaged'
   mapTier?: number
   gemLevel?: number
   gemAltQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
