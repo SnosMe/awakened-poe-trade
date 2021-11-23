@@ -55,6 +55,8 @@ export function tradeTag (item: ParsedItem): string | undefined {
   if (name) {
     if (item.mapBlighted === 'Blighted') {
       name = `Blighted ${name} (Tier ${item.mapTier})`
+    } else if (item.mapBlighted === 'Blight-ravaged') {
+      // TODO
     } else if (item.mapTier) {
       name = `${name} (Tier ${item.mapTier})`
     } else if (item.extra.prophecyMaster) {
