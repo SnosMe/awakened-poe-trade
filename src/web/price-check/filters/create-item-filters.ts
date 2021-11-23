@@ -67,7 +67,7 @@ export function createFilters (
     }
     if (item.name === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
-        value: floorToBracket(item.props.areaLevel!, [1, 68, 73, 75, 78, 80])
+        value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80])
       }
     }
     return filters
@@ -98,7 +98,7 @@ export function createFilters (
       }
     }
 
-    if (item.props.mapBlighted) {
+    if (item.mapBlighted) {
       filters.mapBlighted = { value: true }
     }
 
@@ -107,7 +107,7 @@ export function createFilters (
     }
 
     filters.mapTier = {
-      value: item.props.mapTier!
+      value: item.mapTier!
     }
   } else if (
     item.category === ItemCategory.HeistContract ||
@@ -122,7 +122,7 @@ export function createFilters (
       }
 
       filters.areaLevel = {
-        value: item.props.areaLevel!
+        value: item.areaLevel!
       }
 
       if (item.heistJob) {
@@ -160,14 +160,14 @@ export function createFilters (
     }
   }
 
-  if (item.sockets.linked) {
+  if (item.sockets?.linked) {
     filters.linkedSockets = {
       value: item.sockets.linked,
       disabled: false
     }
   }
 
-  if (item.sockets.white) {
+  if (item.sockets?.white) {
     filters.whiteSockets = {
       value: item.sockets.white,
       disabled: false
@@ -322,19 +322,19 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
 
   if (SPECIAL_SUPPORT_GEM.includes(item.name)) {
     filters.gemLevel = {
-      min: item.props.gemLevel!,
-      max: item.props.gemLevel!,
+      min: item.gemLevel!,
+      max: item.gemLevel!,
       disabled: false
     }
   } else {
     filters.gemLevel = {
-      min: item.props.gemLevel!,
-      disabled: item.props.gemLevel! < 16
+      min: item.gemLevel!,
+      disabled: item.gemLevel! < 16
     }
   }
 
   filters.altQuality = {
-    value: item.extra.altQuality!,
+    value: item.gemAltQuality!,
     disabled: false
   }
 

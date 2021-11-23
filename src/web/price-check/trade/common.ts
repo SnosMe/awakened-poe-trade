@@ -53,10 +53,10 @@ export function tradeTag (item: ParsedItem): string | undefined {
   }
 
   if (name) {
-    if (item.props.mapBlighted) {
-      name = `Blighted ${name} (Tier ${item.props.mapTier})`
-    } else if (item.props.mapTier) {
-      name = `${name} (Tier ${item.props.mapTier})`
+    if (item.mapBlighted) {
+      name = `Blighted ${name} (Tier ${item.mapTier})`
+    } else if (item.mapTier) {
+      name = `${name} (Tier ${item.mapTier})`
     } else if (item.extra.prophecyMaster) {
       name = `${name} (${item.extra.prophecyMaster})`
     }

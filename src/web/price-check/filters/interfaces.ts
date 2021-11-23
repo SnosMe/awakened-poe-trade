@@ -54,7 +54,7 @@ export interface ItemFilters {
     disabled: boolean
   }
   altQuality?: {
-    value: NonNullable<ParsedItem['extra']['altQuality']>
+    value: NonNullable<ParsedItem['gemAltQuality']>
     disabled: boolean
   }
   areaLevel?: {

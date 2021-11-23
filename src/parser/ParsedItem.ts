@@ -23,26 +23,25 @@ export interface ParsedItem {
   name: string
   baseType: string | undefined
   itemLevel?: number
-  props: {
-    armour?: number
-    evasion?: number
-    energyShield?: number
-    ward?: number
-    blockChance?: number
-    critChance?: number
-    attackSpeed?: number
-    physicalDamage?: number
-    elementalDamage?: number
-    mapBlighted?: true
-    mapTier?: number
-    gemLevel?: number
-    areaLevel?: number
-    talismanTier?: number
-  }
+  armourAR?: number
+  armourEV?: number
+  armourES?: number
+  armourWARD?: number
+  armourBLOCK?: number
+  weaponCRIT?: number
+  weaponAS?: number
+  weaponPHYSICAL?: number
+  weaponELEMENTAL?: number
+  mapBlighted?: true
+  mapTier?: number
+  gemLevel?: number
+  gemAltQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
+  areaLevel?: number
+  talismanTier?: number
   quality?: number
-  sockets: {
+  sockets?: {
     linked?: number // only 5 or 6
-    white?: number
+    white: number
   }
   stackSize?: { value: number, max: number }
   isUnidentified: boolean
@@ -59,7 +58,6 @@ export interface ParsedItem {
   }>
   extra: {
     prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
-    altQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
   }
   heistJob?: { name: HeistJob, level: number }
   category?: ItemCategory

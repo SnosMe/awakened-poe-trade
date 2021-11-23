@@ -24,9 +24,9 @@ export function getDetailsId (item: ParsedItem) {
   }
   if (item.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique) {
-      return nameToDetailsId(`${item.name} t${item.props.mapTier}`)
+      return nameToDetailsId(`${item.name} t${item.mapTier}`)
     } else {
-      return nameToDetailsId(`${item.props.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.props.mapTier} ${LATEST_MAP_VARIANT}`)
+      return nameToDetailsId(`${item.mapBlighted ? 'Blighted ' : ''}${item.baseType || item.name} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
   if (item.category === ItemCategory.CapturedBeast ||
@@ -58,17 +58,17 @@ function getGemDetailsId (item: ParsedItem) {
     return 'portal-1'
   }
 
-  let id = item.extra.altQuality === 'Superior'
+  let id = item.gemAltQuality === 'Superior'
     ? nameToDetailsId(item.name)
-    : nameToDetailsId(`${item.extra.altQuality} ${item.name}`)
+    : nameToDetailsId(`${item.gemAltQuality} ${item.name}`)
 
   if (
     SPECIAL_SUPPORT_GEM.includes(item.name) ||
     item.name === BRAND_RECALL_GEM ||
     item.name === BLOOD_AND_SAND_GEM ||
-    item.props.gemLevel! >= 20
+    item.gemLevel! >= 20
   ) {
-    id += `-${item.props.gemLevel}`
+    id += `-${item.gemLevel}`
   } else {
     id += '-1'
   }
@@ -107,7 +107,7 @@ function getBaseTypeDetailsId (item: ParsedItem) {
 function getUniqueDetailsId (item: ParsedItem) {
   let id = nameToDetailsId(`${item.name}${getUniqueVariant(item) || ''} ${item.baseType}`)
 
-  if (item.sockets.linked) {
+  if (item.sockets?.linked) {
     id += `-${item.sockets.linked}l`
   }
   if (item.baseType === 'Ivory Watchstone') {

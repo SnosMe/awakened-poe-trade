@@ -30,8 +30,8 @@ export const ARMOUR_STATS = new Set<string>([
 function armourProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  if (item.props.armour) {
-    const totalQ20 = Math.floor(propAt20Quality(item.props.armour, QUALITY_STATS.ARMOUR, item))
+  if (item.armourAR) {
+    const totalQ20 = Math.floor(propAt20Quality(item.armourAR, QUALITY_STATS.ARMOUR, item))
 
     ctx.filters.push({
       ...internalPropStat(
@@ -45,8 +45,8 @@ function armourProps (ctx: FiltersCreationContext) {
     })
   }
 
-  if (item.props.evasion) {
-    const totalQ20 = Math.floor(propAt20Quality(item.props.evasion, QUALITY_STATS.EVASION, item))
+  if (item.armourEV) {
+    const totalQ20 = Math.floor(propAt20Quality(item.armourEV, QUALITY_STATS.EVASION, item))
 
     ctx.filters.push({
       ...internalPropStat(
@@ -60,8 +60,8 @@ function armourProps (ctx: FiltersCreationContext) {
     })
   }
 
-  if (item.props.energyShield) {
-    const totalQ20 = Math.floor(propAt20Quality(item.props.energyShield, QUALITY_STATS.ENERGY_SHIELD, item))
+  if (item.armourES) {
+    const totalQ20 = Math.floor(propAt20Quality(item.armourES, QUALITY_STATS.ENERGY_SHIELD, item))
 
     ctx.filters.push({
       ...internalPropStat(
@@ -75,8 +75,8 @@ function armourProps (ctx: FiltersCreationContext) {
     })
   }
 
-  if (item.props.ward) {
-    const totalQ20 = Math.floor(propAt20Quality(item.props.ward, QUALITY_STATS.WARD, item))
+  if (item.armourWARD) {
+    const totalQ20 = Math.floor(propAt20Quality(item.armourWARD, QUALITY_STATS.WARD, item))
 
     ctx.filters.push({
       ...internalPropStat(
@@ -90,7 +90,7 @@ function armourProps (ctx: FiltersCreationContext) {
     })
   }
 
-  if (item.props.blockChance) {
+  if (item.armourBLOCK) {
     ctx.filters.push({
       ...internalPropStat(
         'armour.block',
@@ -99,16 +99,16 @@ function armourProps (ctx: FiltersCreationContext) {
       ),
       sources: [],
       disabled: true,
-      roll: rollToFilter(item.props.blockChance, { neverNegated: true, percent: ctx.searchInRange })
+      roll: rollToFilter(item.armourBLOCK, { neverNegated: true, percent: ctx.searchInRange })
     })
   }
 
   if (
-    item.props.armour ||
-    item.props.evasion ||
-    item.props.energyShield ||
-    item.props.ward ||
-    item.props.blockChance
+    item.armourAR ||
+    item.armourEV ||
+    item.armourES ||
+    item.armourWARD ||
+    item.armourBLOCK
   ) {
     createHiddenFilters(ctx, ARMOUR_STATS)
   }
@@ -129,13 +129,13 @@ export const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const physQ20 = propAt20Quality(item.props.physicalDamage!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
-  const pdpsQ20 = Math.floor(physQ20 * item.props.attackSpeed!)
+  const physQ20 = propAt20Quality(item.weaponPHYSICAL!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
+  const pdpsQ20 = Math.floor(physQ20 * item.weaponAS!)
 
-  const edps = Math.floor((item.props.elementalDamage || 0) * item.props.attackSpeed!)
+  const edps = Math.floor((item.weaponELEMENTAL || 0) * item.weaponAS!)
   const dps = pdpsQ20 + edps
 
-  if (item.props.elementalDamage) {
+  if (item.weaponELEMENTAL) {
     ctx.filters.push({
       ...internalPropStat(
         'weapon.total_dps',
@@ -180,7 +180,7 @@ function weaponProps (ctx: FiltersCreationContext) {
     ),
     sources: [],
     disabled: true,
-    roll: rollToFilter(item.props.attackSpeed!, { neverNegated: true, dp: 2, percent: ctx.searchInRange })
+    roll: rollToFilter(item.weaponAS!, { neverNegated: true, dp: 2, percent: ctx.searchInRange })
   })
 
   ctx.filters.push({
@@ -191,14 +191,14 @@ function weaponProps (ctx: FiltersCreationContext) {
     ),
     sources: [],
     disabled: true,
-    roll: rollToFilter(item.props.critChance!, { neverNegated: true, dp: 1, percent: ctx.searchInRange })
+    roll: rollToFilter(item.weaponCRIT!, { neverNegated: true, dp: 1, percent: ctx.searchInRange })
   })
 
   if (
-    item.props.attackSpeed ||
-    item.props.critChance ||
-    item.props.elementalDamage ||
-    item.props.physicalDamage
+    item.weaponAS ||
+    item.weaponCRIT ||
+    item.weaponELEMENTAL ||
+    item.weaponPHYSICAL
   ) {
     createHiddenFilters(ctx, WEAPON_STATS)
   }
@@ -218,10 +218,10 @@ function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
 
 function isSingleAttrArmour (item: ParsedItem) {
   return [
-    item.props.armour,
-    item.props.evasion,
-    item.props.energyShield,
-    item.props.ward
+    item.armourAR,
+    item.armourEV,
+    item.armourES,
+    item.armourWARD
   ].filter(value => value != null).length === 1
 }
 

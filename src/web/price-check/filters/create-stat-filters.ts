@@ -289,7 +289,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   if (item.category === ItemCategory.Amulet) {
     const anointment = ctx.filters.find(filter => filter.statRef === 'Allocates #')
     if (anointment) {
-      if (item.props.talismanTier) {
+      if (item.talismanTier) {
         anointment.disabled = false
       } else if (!item.isCorrupted && !item.isMirrored) {
         anointment.hidden = 'Buyer will likely change anointment'

@@ -141,7 +141,7 @@ function normalizeName (item: ParsedItem) {
 
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.MAP_TIER)) {
-    item.props.mapTier = Number(section[0].substr(_$.MAP_TIER.length))
+    item.mapTier = Number(section[0].substr(_$.MAP_TIER.length))
 
     let name = item.baseType || item.name
     if (_$.MAP_BLIGHTED.test(name)) {
@@ -153,7 +153,7 @@ function parseMap (section: string[], item: ParsedItem) {
         item.name = name
       }
       item.category = ItemCategory.Map
-      item.props.mapBlighted = true
+      item.mapBlighted = true
     }
 
     return SECTION_PARSED
@@ -173,14 +173,12 @@ function parseNamePlate (section: string[]) {
     category: undefined,
     name: markupConditionParser(section[2]),
     baseType: (section.length >= 4) ? markupConditionParser(section[3]) : undefined,
-    props: {},
     isUnidentified: false,
     isCorrupted: false,
     newMods: [],
     statsByType: [],
     unknownModifiers: [],
     influences: [],
-    sockets: {},
     extra: {},
     rawText: undefined!
   }
@@ -275,7 +273,7 @@ function parseItemLevel (section: string[], item: ParsedItem) {
 
 function parseTalismanTier (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.TALISMAN_TIER)) {
-    item.props.talismanTier = Number(section[0].substr(_$.TALISMAN_TIER.length))
+    item.talismanTier = Number(section[0].substr(_$.TALISMAN_TIER.length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -287,14 +285,14 @@ function parseVaalGem (section: string[], item: ParsedItem) {
   if (section.length === 1) {
     let gemName: string | undefined
     if ((gemName = _$.QUALITY_ANOMALOUS.exec(section[0])?.[1])) {
-      item.extra.altQuality = 'Anomalous'
+      item.gemAltQuality = 'Anomalous'
     } else if ((gemName = _$.QUALITY_DIVERGENT.exec(section[0])?.[1])) {
-      item.extra.altQuality = 'Divergent'
+      item.gemAltQuality = 'Divergent'
     } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(section[0])?.[1])) {
-      item.extra.altQuality = 'Phantasmal'
+      item.gemAltQuality = 'Phantasmal'
     } else if (_$.VAAL_GEM.test(section[0])) {
       gemName = section[0]
-      item.extra.altQuality = 'Superior'
+      item.gemAltQuality = 'Superior'
     }
 
     if (gemName) {
@@ -311,21 +309,21 @@ function parseGem (section: string[], item: ParsedItem) {
   }
   if (section[1]?.startsWith(_$.GEM_LEVEL)) {
     // "Level: 20 (Max)"
-    item.props.gemLevel = parseInt(section[1].substr(_$.GEM_LEVEL.length), 10)
+    item.gemLevel = parseInt(section[1].substr(_$.GEM_LEVEL.length), 10)
 
     parseQualityNested(section, item)
 
     // don't override if parsed in Vaal name section
-    if (!item.extra.altQuality) {
+    if (!item.gemAltQuality) {
       let gemName: string | undefined
       if ((gemName = _$.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
-        item.extra.altQuality = 'Anomalous'
+        item.gemAltQuality = 'Anomalous'
       } else if ((gemName = _$.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
-        item.extra.altQuality = 'Divergent'
+        item.gemAltQuality = 'Divergent'
       } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
-        item.extra.altQuality = 'Phantasmal'
+        item.gemAltQuality = 'Phantasmal'
       } else {
-        item.extra.altQuality = 'Superior'
+        item.gemAltQuality = 'Superior'
       }
       if (gemName) {
         item.name = ITEM_NAME_REF_BY_TRANSLATED.get(gemName) || gemName
@@ -371,7 +369,10 @@ function parseSockets (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.SOCKETS)) {
     let sockets = section[0].substr(_$.SOCKETS.length).trimEnd()
 
-    item.sockets.white = (sockets.split('W').length - 1)
+    item.sockets = {
+      white: (sockets.split('W').length - 1),
+      linked: undefined
+    }
 
     sockets = sockets.replace(/[^ -]/g, '#')
     if (sockets === '#-#-#-#-#-#') {
@@ -403,23 +404,23 @@ function parseArmour (section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (line.startsWith(_$.ARMOUR)) {
-      item.props.armour = parseInt(line.substr(_$.ARMOUR.length), 10)
+      item.armourAR = parseInt(line.substr(_$.ARMOUR.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.EVASION)) {
-      item.props.evasion = parseInt(line.substr(_$.EVASION.length), 10)
+      item.armourEV = parseInt(line.substr(_$.EVASION.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.ENERGY_SHIELD)) {
-      item.props.energyShield = parseInt(line.substr(_$.ENERGY_SHIELD.length), 10)
+      item.armourES = parseInt(line.substr(_$.ENERGY_SHIELD.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.TAG_WARD)) {
-      item.props.ward = parseInt(line.substr(_$.TAG_WARD.length), 10)
+      item.armourWARD = parseInt(line.substr(_$.TAG_WARD.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.BLOCK_CHANCE)) {
-      item.props.blockChance = parseInt(line.substr(_$.BLOCK_CHANCE.length), 10)
+      item.armourBLOCK = parseInt(line.substr(_$.BLOCK_CHANCE.length), 10)
       isParsed = SECTION_PARSED; continue
     }
   }
@@ -436,22 +437,22 @@ function parseWeapon (section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (line.startsWith(_$.CRIT_CHANCE)) {
-      item.props.critChance = parseFloat(line.substr(_$.CRIT_CHANCE.length))
+      item.weaponCRIT = parseFloat(line.substr(_$.CRIT_CHANCE.length))
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.ATTACK_SPEED)) {
-      item.props.attackSpeed = parseFloat(line.substr(_$.ATTACK_SPEED.length))
+      item.weaponAS = parseFloat(line.substr(_$.ATTACK_SPEED.length))
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.PHYSICAL_DAMAGE)) {
-      item.props.physicalDamage = getRollOrMinmaxAvg(line
+      item.weaponPHYSICAL = getRollOrMinmaxAvg(line
         .substr(_$.PHYSICAL_DAMAGE.length)
         .split('-').map(str => parseInt(str, 10))
       )
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.ELEMENTAL_DAMAGE)) {
-      item.props.elementalDamage =
+      item.weaponELEMENTAL =
         line.substr(_$.ELEMENTAL_DAMAGE.length)
           .split(', ')
           .map(element => getRollOrMinmaxAvg(element.split('-').map(str => parseInt(str, 10))))
@@ -610,7 +611,7 @@ function parseHeistMission (section: string[], item: ParsedItem) {
       item.category !== ItemCategory.HeistContract) return PARSER_SKIPPED
 
   parseAreaLevelNested(section, item)
-  if (!item.props.areaLevel) {
+  if (!item.areaLevel) {
     return SECTION_SKIPPED
   }
 
@@ -636,7 +637,7 @@ function parseHeistMission (section: string[], item: ParsedItem) {
 function parseAreaLevelNested (section: string[], item: ParsedItem) {
   for (const line of section) {
     if (line.startsWith(_$.AREA_LEVEL)) {
-      item.props.areaLevel = Number(line.substr(_$.AREA_LEVEL.length))
+      item.areaLevel = Number(line.substr(_$.AREA_LEVEL.length))
       break
     }
   }
@@ -647,7 +648,7 @@ function parseAtzoatlAreaLevel (section: string[], item: ParsedItem) {
 
   parseAreaLevelNested(section, item)
 
-  return (item.props.areaLevel)
+  return (item.areaLevel)
     ? SECTION_PARSED
     : SECTION_SKIPPED
 }
