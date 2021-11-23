@@ -51,7 +51,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseModifiers, // scourge
   parseModifiers, // implicit
   parseModifiers, // explicit
-  { virtual: transformToLegacyModifiers }
+  { virtual: transformToLegacyModifiers },
+  { virtual: parseBlightedMap }
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -113,6 +114,20 @@ function normalizeName (item: ParsedItem) {
     }
   }
 
+  if (item.rarity === ItemRarity.Normal ||
+      item.rarity === ItemRarity.Rare
+  ) {
+    if (item.baseType) {
+      if (_$.MAP_BLIGHTED.test(item.baseType)) {
+        item.baseType = _$.MAP_BLIGHTED.exec(item.baseType)![1]
+      }
+    } else {
+      if (_$.MAP_BLIGHTED.test(item.name)) {
+        item.name = _$.MAP_BLIGHTED.exec(item.name)![1]
+      }
+    }
+  }
+
   if (item.category === ItemCategory.MetamorphSample) {
     if (_$.METAMORPH_BRAIN.test(item.name)) {
       item.name = 'Metamorph Brain'
@@ -142,23 +157,20 @@ function normalizeName (item: ParsedItem) {
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.MAP_TIER)) {
     item.mapTier = Number(section[0].substr(_$.MAP_TIER.length))
-
-    let name = item.baseType || item.name
-    if (_$.MAP_BLIGHTED.test(name)) {
-      name = _$.MAP_BLIGHTED.exec(name)![1]
-      name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
-      if (item.baseType) {
-        item.baseType = name
-      } else {
-        item.name = name
-      }
-      item.category = ItemCategory.Map
-      item.mapBlighted = true
-    }
-
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
+}
+
+function parseBlightedMap (item: ParsedItem) {
+  if (item.category !== ItemCategory.Map) return
+
+  const stat = item.statsByType.find(calc =>
+    calc.type === ModifierType.Implicit &&
+    calc.stat.ref.startsWith('Area is infested with Fungal Growths'))
+  if (stat !== undefined) {
+    item.mapBlighted = true
+  }
 }
 
 function parseNamePlate (section: string[]) {

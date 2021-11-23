@@ -1,6 +1,6 @@
 import type { TranslationDict } from '../en/client_strings'
 
-const dict: TranslationDict = {
+const dict: TranslationDict = { /* eslint-disable quote-props */
   'RARITY_NORMAL': 'Обычный',
   'RARITY_MAGIC': 'Волшебный',
   'RARITY_RARE': 'Редкий',
@@ -57,7 +57,6 @@ const dict: TranslationDict = {
   'PROPHECY_NIKO': 'Ты встретишь Нико и выполнишь его задание.',
   'PROPHECY_JUN': 'Ты встретишь Джун и выполнишь её задание.',
   'PROPHECY_ZANA': 'Ты встретишь Зану и выполнишь её задание.',
-  'Blighted {0}': 'Заражённая {0}',
   'CANNOT_USE_ITEM': 'Вы не можете использовать этот предмет, его параметры не будут учтены',
   'QUALITY_ANOMALOUS': /^Аномальный: (.*)$/,
   'QUALITY_DIVERGENT': /^Искривлённый: (.*)$/,

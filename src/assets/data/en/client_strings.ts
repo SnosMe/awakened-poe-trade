@@ -1,4 +1,4 @@
-const dict = {
+const dict = { /* eslint-disable quote-props */
   'RARITY_NORMAL': 'Normal',
   'RARITY_MAGIC': 'Magic',
   'RARITY_RARE': 'Rare',
@@ -55,7 +55,6 @@ const dict = {
   'PROPHECY_NIKO': 'You will find Niko and complete his mission.',
   'PROPHECY_JUN': 'You will find Jun and complete her mission.',
   'PROPHECY_ZANA': 'You will find Zana and complete her mission.',
-  'Blighted {0}': 'Blighted {0}',
   'CANNOT_USE_ITEM': 'You cannot use this item. Its stats will be ignored',
   'QUALITY_ANOMALOUS': /^Anomalous (.*)$/,
   'QUALITY_DIVERGENT': /^Divergent (.*)$/,
