@@ -1,5 +1,3 @@
-import { ItemRarity, ItemInfluence } from './constants'
-import * as C from './constants'
 import {
   BASE_TYPES,
   CLIENT_STRINGS as _$,
@@ -9,9 +7,9 @@ import {
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory } from './meta'
-import { HeistJob, IncursionRoom, ParsedItem } from './ParsedItem'
+import { HeistJob, IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier } from './advanced-mod-desc'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE } from './advanced-mod-desc'
 
 const SECTION_PARSED = 1
 const SECTION_SKIPPED = 0
@@ -73,7 +71,7 @@ export function parseClipboard (clipboard: string) {
   }, sections[0])
   sections = sections.filter(section => section.length)
 
-  if (sections[0][2] === _$[C.CANNOT_USE_ITEM]) {
+  if (sections[0][2] === _$.CANNOT_USE_ITEM) {
     sections[0].pop() // remove CANNOT_USE_ITEM line
     sections[1].unshift(...sections[0]) // prepend item class & rarity into second section
     sections.shift() // remove first section where CANNOT_USE_ITEM line was
@@ -116,15 +114,15 @@ function normalizeName (item: ParsedItem) {
   }
 
   if (item.category === ItemCategory.MetamorphSample) {
-    if (_$[C.METAMORPH_BRAIN].test(item.name)) {
+    if (_$.METAMORPH_BRAIN.test(item.name)) {
       item.name = 'Metamorph Brain'
-    } else if (_$[C.METAMORPH_EYE].test(item.name)) {
+    } else if (_$.METAMORPH_EYE.test(item.name)) {
       item.name = 'Metamorph Eye'
-    } else if (_$[C.METAMORPH_LUNG].test(item.name)) {
+    } else if (_$.METAMORPH_LUNG.test(item.name)) {
       item.name = 'Metamorph Lung'
-    } else if (_$[C.METAMORPH_HEART].test(item.name)) {
+    } else if (_$.METAMORPH_HEART.test(item.name)) {
       item.name = 'Metamorph Heart'
-    } else if (_$[C.METAMORPH_LIVER].test(item.name)) {
+    } else if (_$.METAMORPH_LIVER.test(item.name)) {
       item.name = 'Metamorph Liver'
     }
   }
@@ -142,12 +140,12 @@ function normalizeName (item: ParsedItem) {
 }
 
 function parseMap (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$[C.TAG_MAP_TIER])) {
-    item.props.mapTier = Number(section[0].substr(_$[C.TAG_MAP_TIER].length))
+  if (section[0].startsWith(_$.MAP_TIER)) {
+    item.props.mapTier = Number(section[0].substr(_$.MAP_TIER.length))
 
     let name = item.baseType || item.name
-    if (_$[C.MAP_BLIGHTED].test(name)) {
-      name = _$[C.MAP_BLIGHTED].exec(name)![1]
+    if (_$.MAP_BLIGHTED.test(name)) {
+      name = _$.MAP_BLIGHTED.exec(name)![1]
       name = ITEM_NAME_REF_BY_TRANSLATED.get(name) || name
       if (item.baseType) {
         item.baseType = name
@@ -223,22 +221,22 @@ function parseInfluence (section: string[], item: ParsedItem) {
 
     for (const line of section) {
       switch (line) {
-        case _$[C.CRUSADER_ITEM]:
+        case _$.INFLUENCE_CRUSADER:
           item.influences.push(ItemInfluence.Crusader)
           break
-        case _$[C.ELDER_ITEM]:
+        case _$.INFLUENCE_ELDER:
           item.influences.push(ItemInfluence.Elder)
           break
-        case _$[C.SHAPER_ITEM]:
+        case _$.INFLUENCE_SHAPER:
           item.influences.push(ItemInfluence.Shaper)
           break
-        case _$[C.HUNTER_ITEM]:
+        case _$.INFLUENCE_HUNTER:
           item.influences.push(ItemInfluence.Hunter)
           break
-        case _$[C.REDEEMER_ITEM]:
+        case _$.INFLUENCE_REDEEMER:
           item.influences.push(ItemInfluence.Redeemer)
           break
-        case _$[C.WARLORD_ITEM]:
+        case _$.INFLUENCE_WARLORD:
           item.influences.push(ItemInfluence.Warlord)
           break
       }
@@ -252,7 +250,7 @@ function parseInfluence (section: string[], item: ParsedItem) {
 }
 
 function parseCorrupted (section: string[], item: ParsedItem) {
-  if (section[0] === _$[C.CORRUPTED]) {
+  if (section[0] === _$.CORRUPTED) {
     item.isCorrupted = true
     return SECTION_PARSED
   }
@@ -260,7 +258,7 @@ function parseCorrupted (section: string[], item: ParsedItem) {
 }
 
 function parseUnidentified (section: string[], item: ParsedItem) {
-  if (section[0] === _$[C.UNIDENTIFIED]) {
+  if (section[0] === _$.UNIDENTIFIED) {
     item.isUnidentified = true
     return SECTION_PARSED
   }
@@ -268,16 +266,16 @@ function parseUnidentified (section: string[], item: ParsedItem) {
 }
 
 function parseItemLevel (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$[C.TAG_ITEM_LEVEL])) {
-    item.itemLevel = Number(section[0].substr(_$[C.TAG_ITEM_LEVEL].length))
+  if (section[0].startsWith(_$.ITEM_LEVEL)) {
+    item.itemLevel = Number(section[0].substr(_$.ITEM_LEVEL.length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
 }
 
 function parseTalismanTier (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$[C.TAG_TALISMAN_TIER])) {
-    item.props.talismanTier = Number(section[0].substr(_$[C.TAG_TALISMAN_TIER].length))
+  if (section[0].startsWith(_$.TALISMAN_TIER)) {
+    item.props.talismanTier = Number(section[0].substr(_$.TALISMAN_TIER.length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -288,13 +286,13 @@ function parseVaalGem (section: string[], item: ParsedItem) {
 
   if (section.length === 1) {
     let gemName: string | undefined
-    if ((gemName = _$[C.QUALITY_ANOMALOUS].exec(section[0])?.[1])) {
+    if ((gemName = _$.QUALITY_ANOMALOUS.exec(section[0])?.[1])) {
       item.extra.altQuality = 'Anomalous'
-    } else if ((gemName = _$[C.QUALITY_DIVERGENT].exec(section[0])?.[1])) {
+    } else if ((gemName = _$.QUALITY_DIVERGENT.exec(section[0])?.[1])) {
       item.extra.altQuality = 'Divergent'
-    } else if ((gemName = _$[C.QUALITY_PHANTASMAL].exec(section[0])?.[1])) {
+    } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(section[0])?.[1])) {
       item.extra.altQuality = 'Phantasmal'
-    } else if (_$[C.VAAL_GEM].test(section[0])) {
+    } else if (_$.VAAL_GEM.test(section[0])) {
       gemName = section[0]
       item.extra.altQuality = 'Superior'
     }
@@ -311,20 +309,20 @@ function parseGem (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.Gem) {
     return PARSER_SKIPPED
   }
-  if (section[1]?.startsWith(_$[C.TAG_GEM_LEVEL])) {
+  if (section[1]?.startsWith(_$.GEM_LEVEL)) {
     // "Level: 20 (Max)"
-    item.props.gemLevel = parseInt(section[1].substr(_$[C.TAG_GEM_LEVEL].length), 10)
+    item.props.gemLevel = parseInt(section[1].substr(_$.GEM_LEVEL.length), 10)
 
     parseQualityNested(section, item)
 
     // don't override if parsed in Vaal name section
     if (!item.extra.altQuality) {
       let gemName: string | undefined
-      if ((gemName = _$[C.QUALITY_ANOMALOUS].exec(item.name)?.[1])) {
+      if ((gemName = _$.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
         item.extra.altQuality = 'Anomalous'
-      } else if ((gemName = _$[C.QUALITY_DIVERGENT].exec(item.name)?.[1])) {
+      } else if ((gemName = _$.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
         item.extra.altQuality = 'Divergent'
-      } else if ((gemName = _$[C.QUALITY_PHANTASMAL].exec(item.name)?.[1])) {
+      } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
         item.extra.altQuality = 'Phantasmal'
       } else {
         item.extra.altQuality = 'Superior'
@@ -345,9 +343,9 @@ function parseStackSize (section: string[], item: ParsedItem) {
       item.category !== ItemCategory.DivinationCard) {
     return PARSER_SKIPPED
   }
-  if (section[0].startsWith(_$[C.TAG_STACK_SIZE])) {
+  if (section[0].startsWith(_$.STACK_SIZE)) {
     // Portal Scroll "Stack Size: 2[localized separator]448/40"
-    const [value, max] = section[0].substr(_$[C.TAG_STACK_SIZE].length).replace(/[^\d/]/g, '').split('/').map(Number)
+    const [value, max] = section[0].substr(_$.STACK_SIZE.length).replace(/[^\d/]/g, '').split('/').map(Number)
     item.stackSize = { value, max }
 
     if (item.category === ItemCategory.Seed) {
@@ -361,7 +359,7 @@ function parseStackSize (section: string[], item: ParsedItem) {
 
 function parseSeedLevelNested (section: string[], item: ParsedItem) {
   for (const line of section) {
-    const match = line.match(_$[C.SEED_MONSTER_LEVEL])
+    const match = line.match(_$.SEED_MONSTER_LEVEL)
     if (match != null) {
       item.itemLevel = Number(match[1])
       break
@@ -370,8 +368,8 @@ function parseSeedLevelNested (section: string[], item: ParsedItem) {
 }
 
 function parseSockets (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$[C.TAG_SOCKETS])) {
-    let sockets = section[0].substr(_$[C.TAG_SOCKETS].length).trimEnd()
+  if (section[0].startsWith(_$.SOCKETS)) {
+    let sockets = section[0].substr(_$.SOCKETS.length).trimEnd()
 
     item.sockets.white = (sockets.split('W').length - 1)
 
@@ -392,9 +390,9 @@ function parseSockets (section: string[], item: ParsedItem) {
 
 function parseQualityNested (section: string[], item: ParsedItem) {
   for (const line of section) {
-    if (line.startsWith(_$[C.TAG_QUALITY])) {
+    if (line.startsWith(_$.QUALITY)) {
       // "Quality: +20% (augmented)"
-      item.quality = parseInt(line.substr(_$[C.TAG_QUALITY].length), 10)
+      item.quality = parseInt(line.substr(_$.QUALITY.length), 10)
       break
     }
   }
@@ -404,24 +402,24 @@ function parseArmour (section: string[], item: ParsedItem) {
   let isParsed = SECTION_SKIPPED as SectionParseResult
 
   for (const line of section) {
-    if (line.startsWith(_$[C.TAG_ARMOUR])) {
-      item.props.armour = parseInt(line.substr(_$[C.TAG_ARMOUR].length), 10)
+    if (line.startsWith(_$.ARMOUR)) {
+      item.props.armour = parseInt(line.substr(_$.ARMOUR.length), 10)
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(_$[C.TAG_EVASION])) {
-      item.props.evasion = parseInt(line.substr(_$[C.TAG_EVASION].length), 10)
+    if (line.startsWith(_$.EVASION)) {
+      item.props.evasion = parseInt(line.substr(_$.EVASION.length), 10)
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(_$[C.TAG_ENERGY_SHIELD])) {
-      item.props.energyShield = parseInt(line.substr(_$[C.TAG_ENERGY_SHIELD].length), 10)
+    if (line.startsWith(_$.ENERGY_SHIELD)) {
+      item.props.energyShield = parseInt(line.substr(_$.ENERGY_SHIELD.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.TAG_WARD)) {
       item.props.ward = parseInt(line.substr(_$.TAG_WARD.length), 10)
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(_$[C.TAG_BLOCK_CHANCE])) {
-      item.props.blockChance = parseInt(line.substr(_$[C.TAG_BLOCK_CHANCE].length), 10)
+    if (line.startsWith(_$.BLOCK_CHANCE)) {
+      item.props.blockChance = parseInt(line.substr(_$.BLOCK_CHANCE.length), 10)
       isParsed = SECTION_PARSED; continue
     }
   }
@@ -437,24 +435,24 @@ function parseWeapon (section: string[], item: ParsedItem) {
   let isParsed = SECTION_SKIPPED as SectionParseResult
 
   for (const line of section) {
-    if (line.startsWith(_$[C.TAG_CRIT_CHANCE])) {
-      item.props.critChance = parseFloat(line.substr(_$[C.TAG_CRIT_CHANCE].length))
+    if (line.startsWith(_$.CRIT_CHANCE)) {
+      item.props.critChance = parseFloat(line.substr(_$.CRIT_CHANCE.length))
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(_$[C.TAG_ATTACK_SPEED])) {
-      item.props.attackSpeed = parseFloat(line.substr(_$[C.TAG_ATTACK_SPEED].length))
+    if (line.startsWith(_$.ATTACK_SPEED)) {
+      item.props.attackSpeed = parseFloat(line.substr(_$.ATTACK_SPEED.length))
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(_$[C.TAG_PHYSICAL_DAMAGE])) {
+    if (line.startsWith(_$.PHYSICAL_DAMAGE)) {
       item.props.physicalDamage = getRollOrMinmaxAvg(line
-        .substr(_$[C.TAG_PHYSICAL_DAMAGE].length)
+        .substr(_$.PHYSICAL_DAMAGE.length)
         .split('-').map(str => parseInt(str, 10))
       )
       isParsed = SECTION_PARSED; continue
     }
-    if (line.startsWith(_$[C.TAG_ELEMENTAL_DAMAGE])) {
+    if (line.startsWith(_$.ELEMENTAL_DAMAGE)) {
       item.props.elementalDamage =
-        line.substr(_$[C.TAG_ELEMENTAL_DAMAGE].length)
+        line.substr(_$.ELEMENTAL_DAMAGE.length)
           .split(', ')
           .map(element => getRollOrMinmaxAvg(element.split('-').map(str => parseInt(str, 10))))
           .reduce((sum, x) => sum + x, 0)
@@ -481,8 +479,8 @@ function parseModifiers (section: string[], item: ParsedItem) {
   }
 
   const recognizedLine = section.find(line =>
-    line.endsWith(C.ENCHANT_LINE) ||
-    line.endsWith(C.SCOURGE_LINE) ||
+    line.endsWith(ENCHANT_LINE) ||
+    line.endsWith(SCOURGE_LINE) ||
     isModInfoLine(line)
   )
 
@@ -503,7 +501,7 @@ function parseModifiers (section: string[], item: ParsedItem) {
   } else {
     const { lines } = parseModType(section)
     const modInfo: ModifierInfo = {
-      type: recognizedLine.endsWith(C.ENCHANT_LINE)
+      type: recognizedLine.endsWith(ENCHANT_LINE)
         ? ModifierType.Enchant
         : ModifierType.Scourge,
       tags: []
@@ -516,7 +514,7 @@ function parseModifiers (section: string[], item: ParsedItem) {
 
 function parseMirrored (section: string[], item: ParsedItem) {
   if (section.length === 1) {
-    if (section[0] === _$[C.MIRRORED]) {
+    if (section[0] === _$.MIRRORED) {
       item.isMirrored = true
       return SECTION_PARSED
     }
@@ -529,7 +527,7 @@ function parseFlask (section: string[], item: ParsedItem) {
   // so they are not recognized as modifiers
 
   for (const line of section) {
-    if (_$[C.FLASK_CHARGES].test(line)) {
+    if (_$.FLASK_CHARGES.test(line)) {
       return SECTION_PARSED
     }
   }
@@ -539,12 +537,12 @@ function parseFlask (section: string[], item: ParsedItem) {
 
 function parseSynthesised (section: string[], item: ParsedItem) {
   if (section.length === 1) {
-    if (section[0] === _$[C.SECTION_SYNTHESISED]) {
+    if (section[0] === _$.SECTION_SYNTHESISED) {
       item.isSynthesised = true
       if (item.baseType) {
-        item.baseType = _$[C.ITEM_SYNTHESISED].exec(item.baseType)![1]
+        item.baseType = _$.ITEM_SYNTHESISED.exec(item.baseType)![1]
       } else {
-        item.name = _$[C.ITEM_SYNTHESISED].exec(item.name)![1]
+        item.name = _$.ITEM_SYNTHESISED.exec(item.name)![1]
       }
       return SECTION_PARSED
     }
@@ -560,23 +558,23 @@ function parseSuperior (item: ParsedItem) {
     (item.rarity === ItemRarity.Rare && item.isUnidentified) ||
     (item.rarity === ItemRarity.Unique && item.isUnidentified)
   ) {
-    if (_$[C.ITEM_SUPERIOR].test(item.name)) {
-      item.name = _$[C.ITEM_SUPERIOR].exec(item.name)![1]
+    if (_$.ITEM_SUPERIOR.test(item.name)) {
+      item.name = _$.ITEM_SUPERIOR.exec(item.name)![1]
     }
   }
 }
 
 function parseCategoryByHelpText (section: string[], item: ParsedItem) {
-  if (section[0] === _$[C.PROPHECY_HELP]) {
+  if (section[0] === _$.PROPHECY_HELP) {
     item.category = ItemCategory.Prophecy
     return SECTION_PARSED
-  } else if (section[0] === _$[C.BEAST_HELP]) {
+  } else if (section[0] === _$.BEAST_HELP) {
     item.category = ItemCategory.CapturedBeast
     return SECTION_PARSED
-  } else if (section[0] === _$[C.METAMORPH_HELP]) {
+  } else if (section[0] === _$.METAMORPH_HELP) {
     item.category = ItemCategory.MetamorphSample
     return SECTION_PARSED
-  } else if (section[0].startsWith(_$[C.SEED_HELP])) {
+  } else if (section[0].startsWith(_$.SEED_HELP)) {
     item.category = ItemCategory.Seed
     return SECTION_PARSED
   }
@@ -587,19 +585,19 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
 function parseProphecyMaster (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.Prophecy) return PARSER_SKIPPED
 
-  if (section[0] === _$[C.PROPHECY_ALVA]) {
+  if (section[0] === _$.PROPHECY_ALVA) {
     item.extra.prophecyMaster = 'Alva'
     return SECTION_PARSED
-  } else if (section[0] === _$[C.PROPHECY_EINHAR]) {
+  } else if (section[0] === _$.PROPHECY_EINHAR) {
     item.extra.prophecyMaster = 'Einhar'
     return SECTION_PARSED
-  } else if (section[0] === _$[C.PROPHECY_JUN]) {
+  } else if (section[0] === _$.PROPHECY_JUN) {
     item.extra.prophecyMaster = 'Jun'
     return SECTION_PARSED
-  } else if (section[0] === _$[C.PROPHECY_NIKO]) {
+  } else if (section[0] === _$.PROPHECY_NIKO) {
     item.extra.prophecyMaster = 'Niko'
     return SECTION_PARSED
-  } else if (section[0] === _$[C.PROPHECY_ZANA]) {
+  } else if (section[0] === _$.PROPHECY_ZANA) {
     item.extra.prophecyMaster = 'Zana'
     return SECTION_PARSED
   }
@@ -619,14 +617,14 @@ function parseHeistMission (section: string[], item: ParsedItem) {
   if (item.category === ItemCategory.HeistContract) {
     let match = null as RegExpMatchArray | null
     for (const line of section) {
-      if ((match = line.match(_$[C.HEIST_JOB]))) {
+      if ((match = line.match(_$.HEIST_REQUIRED_JOB))) {
         break
       }
     }
     if (!match) throw new Error('never')
 
     item.heistJob = {
-      name: Object.entries(_$)
+      name: Object.entries(_$.HEIST_JOB)
         .find(([_, tr]) => tr === match!.groups!.job)![0] as HeistJob,
       level: Number(match.groups!.level)
     }
@@ -637,8 +635,8 @@ function parseHeistMission (section: string[], item: ParsedItem) {
 
 function parseAreaLevelNested (section: string[], item: ParsedItem) {
   for (const line of section) {
-    if (line.startsWith(_$[C.TAG_AREA_LEVEL])) {
-      item.props.areaLevel = Number(line.substr(_$[C.TAG_AREA_LEVEL].length))
+    if (line.startsWith(_$.AREA_LEVEL)) {
+      item.props.areaLevel = Number(line.substr(_$.AREA_LEVEL.length))
       break
     }
   }

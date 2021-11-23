@@ -1,7 +1,22 @@
-import type { ItemRarity, ItemInfluence } from './constants'
 import type { ModifierType, StatCalculated } from './modifiers'
 import type { ItemCategory } from './meta'
 import type { ParsedModifier } from './advanced-mod-desc'
+
+export enum ItemRarity {
+  Normal = 'Normal',
+  Magic = 'Magic',
+  Rare = 'Rare',
+  Unique = 'Unique'
+}
+
+export enum ItemInfluence {
+  Crusader = 'Crusader',
+  Elder = 'Elder',
+  Hunter = 'Hunter',
+  Redeemer = 'Redeemer',
+  Shaper = 'Shaper',
+  Warlord = 'Warlord'
+}
 
 export interface ParsedItem {
   rarity?: ItemRarity
