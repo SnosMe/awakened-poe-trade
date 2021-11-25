@@ -29,25 +29,60 @@ export interface Stat {
   }
 }
 
-export interface BaseType {
-  category: ItemCategory
-  icon?: string
-}
-
 export interface DropEntry {
   query: string[]
   items: string[]
-}
-
-export interface UniqueItem {
-  name: string
-  basetype: string
-  icon: string
 }
 
 export interface BlightRecipes {
   oils: string[]
   recipes: {
     [statValue: number]: number[]
+  }
+}
+
+export interface BaseType {
+  name: string
+  refName: string
+  namespace: (
+    'DIVINATION_CARD' |
+    'CAPTURED_BEAST' |
+    'PROPHECY' |
+    'UNIQUE' |
+    'ITEM' |
+    'GEM'
+  )
+  icon: string
+  tradeTag?: string
+  tradeDisc?: string
+  disc?: {
+    propAR?: true
+    propEV?: true
+    propES?: true
+    hasImplicit?: { ref: string }
+    hasExplicit?: { ref: string, roll?: number }
+    sectionText?: string
+    mapTier?: 'W' | 'Y' | 'R'
+  }
+  // extra info
+  craftable?: {
+    category: ItemCategory
+    corrupted?: true
+    uniqueOnly?: true
+  }
+  unique?: {
+    base: string
+  }
+  map?: {
+    normalVariant?: string
+  }
+  prophecy?: {
+    masterName?: string
+  }
+  gem?: {
+    vaal?: true
+    awakened?: true
+    altQuality?: string
+    normalVariant?: string
   }
 }

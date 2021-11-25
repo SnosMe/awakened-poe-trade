@@ -20,10 +20,10 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ItemRarity, ParsedItem } from '@/parser'
+import { ParsedItem } from '@/parser'
 import MapStatButton from './MapStatButton.vue'
 import { prepareMapStats } from './prepare-map-stats'
-import { TRANSLATED_ITEM_NAME_BY_REF, MAP_IMGS, STAT_BY_MATCH_STR } from '@/assets/data'
+import { MAP_IMGS, STAT_BY_MATCH_STR } from '@/assets/data'
 import { WidgetManager, ItemCheckWidget } from '../overlay/interfaces'
 import { AppConfig } from '@/web/Config'
 
@@ -43,19 +43,8 @@ export default defineComponent({
 
     const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!)
 
-    const mapName = computed(() => {
-      const { item } = props
-      if (item.rarity === ItemRarity.Unique) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(item.name || item.baseType)
-      } else {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(item.baseType || item.name)
-      }
-    })
-    const mapStats = computed(() => {
-      return prepareMapStats(props.item)
-    })
     const image = computed(() => {
-      const entry = mapName.value && MAP_IMGS.get(mapName.value)
+      const entry = MAP_IMGS.get(props.item.info.refName)
       return entry && entry.img
     })
     const hasOutdatedTranslation = computed<boolean>(() => {
@@ -68,9 +57,9 @@ export default defineComponent({
     return {
       t,
       wm,
-      mapName,
+      mapName: computed(() => props.item.info.name),
       image,
-      mapStats,
+      mapStats: computed(() => prepareMapStats(props.item)),
       hasOutdatedTranslation
     }
   }

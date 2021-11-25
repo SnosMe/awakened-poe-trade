@@ -92,8 +92,7 @@ import { useI18n } from 'vue-i18n'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pathofexile-bulk'
-import { tradeTag, getTradeEndpoint } from './common'
-import { TRADE_TAG_BY_NAME } from '@/assets/data'
+import { getTradeEndpoint } from './common'
 import { selected as league } from '../../background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
@@ -197,9 +196,9 @@ export default defineComponent({
         const { exa, chaos } = result.value
         selectedCurr.value = (exa.total > chaos.total) ? 'exa' : 'chaos'
         // override, because at league start many players set wrong price, and this breaks auto-detection
-        if (tradeTag(props.item) === TRADE_TAG_BY_NAME.get('Chaos Orb')) {
+        if (props.item.info.refName === 'Chaos Orb') {
           selectedCurr.value = 'exa'
-        } else if (tradeTag(props.item) === TRADE_TAG_BY_NAME.get('Exalted Orb')) {
+        } else if (props.item.info.refName === 'Exalted Orb') {
           selectedCurr.value = 'chaos'
         }
       }

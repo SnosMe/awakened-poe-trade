@@ -3,7 +3,7 @@ import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '..
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation, PERMANENT_LEAGUES } from './common'
-import { STAT_BY_REF, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
+import { STAT_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
@@ -253,15 +253,11 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.name) {
-    query.name = nameToQuery(filters.name.value, filters, true)
+    query.name = nameToQuery(filters.name.value, filters)
   }
 
   if (filters.baseType) {
-    if (item.category === ItemCategory.CapturedBeast) {
-      query.type = nameToQuery(filters.baseType.value, filters, false)
-    } else {
-      query.type = nameToQuery(filters.baseType.value, filters, true)
-    }
+    query.type = nameToQuery(filters.baseType.trade ?? filters.baseType.value, filters)
   }
 
   if (filters.rarity) {
@@ -619,16 +615,12 @@ function tradeIdToQuery (id: string, stat: StatFilter) {
   }
 }
 
-function nameToQuery (name: string, filters: ItemFilters, translate: boolean) {
-  if (translate) {
-    name = TRANSLATED_ITEM_NAME_BY_REF.get(name) || name
-  }
-
+function nameToQuery (name: string, filters: ItemFilters) {
   if (!filters.discriminator) {
     return name
   } else {
     return {
-      discriminator: filters.discriminator.value.toLowerCase(),
+      discriminator: filters.discriminator.trade,
       option: name
     }
   }

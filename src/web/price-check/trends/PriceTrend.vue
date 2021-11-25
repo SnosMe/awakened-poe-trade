@@ -87,7 +87,7 @@ export default defineComponent({
       const trend = detailsId && findByDetailsId(detailsId)
       if (!trend) return
 
-      const price = (props.item.name === 'Exalted Orb')
+      const price = (props.item.info.refName === 'Exalted Orb')
         ? { val: trend.receive.chaosValue, curr: 'c' }
         : autoCurrency(trend.receive.chaosValue, 'c')
 

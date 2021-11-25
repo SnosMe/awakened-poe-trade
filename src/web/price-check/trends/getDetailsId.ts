@@ -24,14 +24,14 @@ export function getDetailsId (item: ParsedItem) {
   }
   if (item.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique) {
-      return nameToDetailsId(`${item.name} t${item.mapTier}`)
+      return nameToDetailsId(`${item.info.refName} t${item.mapTier}`)
     } else {
-      return nameToDetailsId(`${item.mapBlighted ? `${item.mapBlighted} ` : ''}${item.baseType || item.name} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
+      return nameToDetailsId(`${item.mapBlighted ? `${item.mapBlighted} ` : ''}${item.info.refName} t${item.mapTier} ${LATEST_MAP_VARIANT}`)
     }
   }
   if (item.category === ItemCategory.CapturedBeast ||
       item.category === ItemCategory.MavenInvitation) {
-    return nameToDetailsId(item.baseType || item.name)
+    return nameToDetailsId(item.info.refName)
   }
   if (item.rarity === ItemRarity.Unique) {
     return getUniqueDetailsId(item)
@@ -39,14 +39,14 @@ export function getDetailsId (item: ParsedItem) {
   if (isValuableBasetype(item)) {
     return getBaseTypeDetailsId(item)
   }
-  if (item.extra.prophecyMaster) {
-    return nameToDetailsId(`${item.name} ${item.extra.prophecyMaster}`)
+  if (item.info.prophecy?.masterName) {
+    return nameToDetailsId(`${item.info.refName} ${item.info.prophecy.masterName}`)
   }
   if (item.category === ItemCategory.Seed) {
-    return nameToDetailsId(`${item.name} ${item.itemLevel! >= 76 ? '76' : '1-75'}`)
+    return nameToDetailsId(`${item.info.refName} ${item.itemLevel! >= 76 ? '76' : '1-75'}`)
   }
 
-  return nameToDetailsId(item.baseType ? `${item.name} ${item.baseType}` : item.name)
+  return nameToDetailsId(item.info.name)
 }
 
 const BRAND_RECALL_GEM = 'Brand Recall'
@@ -54,18 +54,18 @@ const BLOOD_AND_SAND_GEM = 'Blood and Sand'
 const PORTAL_GEM = 'Portal'
 
 function getGemDetailsId (item: ParsedItem) {
-  if (item.name === PORTAL_GEM) {
+  if (item.info.refName === PORTAL_GEM) {
     return 'portal-1'
   }
 
   let id = item.gemAltQuality === 'Superior'
-    ? nameToDetailsId(item.name)
-    : nameToDetailsId(`${item.gemAltQuality} ${item.name}`)
+    ? nameToDetailsId(item.info.refName)
+    : nameToDetailsId(`${item.gemAltQuality} ${item.info.refName}`)
 
   if (
-    SPECIAL_SUPPORT_GEM.includes(item.name) ||
-    item.name === BRAND_RECALL_GEM ||
-    item.name === BLOOD_AND_SAND_GEM ||
+    SPECIAL_SUPPORT_GEM.includes(item.info.refName) ||
+    item.info.refName === BRAND_RECALL_GEM ||
+    item.info.refName === BLOOD_AND_SAND_GEM ||
     item.gemLevel! >= 20
   ) {
     id += `-${item.gemLevel}`
@@ -74,9 +74,9 @@ function getGemDetailsId (item: ParsedItem) {
   }
   if (item.quality) {
     if (
-      !SPECIAL_SUPPORT_GEM.includes(item.name) &&
-      !(item.name === BRAND_RECALL_GEM && item.isCorrupted)
-      // @TODO(poe.ninja blocking): !(item.name === BLOOD_AND_SAND_GEM && item.isCorrupted)
+      !SPECIAL_SUPPORT_GEM.includes(item.info.refName) &&
+      !(item.info.refName === BRAND_RECALL_GEM && item.isCorrupted)
+      // @TODO(poe.ninja blocking): !(item.info.refName === BLOOD_AND_SAND_GEM && item.isCorrupted)
     ) {
       // Gem Q20 with up to 4xGCP (TODO: should this rule apply to corrupted gems?)
       const q = (item.quality >= 16 && item.quality <= 20) ? 20 : item.quality
@@ -91,7 +91,7 @@ function getGemDetailsId (item: ParsedItem) {
 }
 
 function getBaseTypeDetailsId (item: ParsedItem) {
-  let id = nameToDetailsId(`${item.baseType || item.name}`)
+  let id = nameToDetailsId(item.info.refName)
 
   id += `-${Math.min(item.itemLevel!, 86)}`
 
@@ -105,12 +105,14 @@ function getBaseTypeDetailsId (item: ParsedItem) {
 }
 
 function getUniqueDetailsId (item: ParsedItem) {
-  let id = nameToDetailsId(`${item.name}${getUniqueVariant(item) || ''} ${item.baseType}`)
+  if (!item.info.unique) return
+
+  let id = nameToDetailsId(`${item.info.refName}${getUniqueVariant(item) || ''} ${item.info.unique.base}`)
 
   if (item.sockets?.linked) {
     id += `-${item.sockets.linked}l`
   }
-  if (item.baseType === 'Ivory Watchstone') {
+  if (item.info.unique.base === 'Ivory Watchstone') {
     const uses = item.statsByType.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!
     const roll = uses.sources[0].contributes!.value
     id += `-${roll}`
@@ -124,7 +126,9 @@ function getUniqueVariant (item: ParsedItem) {
     return item.statsByType.some(m => m.stat.ref === stat)
   }
 
-  if (item.name === 'Vessel of Vinktar') {
+  const uniqueName = item.info.refName
+
+  if (uniqueName === 'Vessel of Vinktar') {
     if (hasStat(item, 'Adds # to # Lightning Damage to Attacks during Flask effect')) {
       return '-added-attacks'
     } else if (hasStat(item, 'Adds # to # Lightning Damage to Spells during Flask effect')) {
@@ -134,7 +138,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, '#% of Physical Damage Converted to Lightning during Flask effect')) {
       return '-conversion'
     }
-  } else if (item.name === "Atziri's Splendour") {
+  } else if (uniqueName === "Atziri's Splendour") {
     if (hasStat(item, '#% increased Armour, Evasion and Energy Shield')) {
       return '-armour-evasion-es'
     } else if (hasStat(item, '#% increased Evasion and Energy Shield') && hasStat(item, '+# to maximum Energy Shield')) {
@@ -154,7 +158,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, '#% increased Armour') && hasStat(item, '+# to maximum Life')) {
       return '-armour'
     }
-  } else if (item.name === 'Bubonic Trail' || item.name === 'Lightpoacher' || item.name === 'Shroud of the Lightless' || item.name === 'Tombfist') {
+  } else if (uniqueName === 'Bubonic Trail' || uniqueName === 'Lightpoacher' || uniqueName === 'Shroud of the Lightless' || uniqueName === 'Tombfist') {
     const sockets = item.statsByType.find(m => m.type === 'explicit' && m.stat.ref === 'Has # Abyssal Sockets')!
     const roll = sockets.sources[0].contributes!.value
     if (roll === 2) {
@@ -162,7 +166,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (roll === 1) {
       return '-1-jewel'
     }
-  } else if (item.name === "Volkuur's Guidance") {
+  } else if (uniqueName === "Volkuur's Guidance") {
     if (hasStat(item, 'Adds # to # Cold Damage to Spells and Attacks')) {
       return '-cold'
     } else if (hasStat(item, 'Adds # to # Fire Damage to Spells and Attacks')) {
@@ -170,7 +174,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, 'Adds # to # Lightning Damage to Spells and Attacks')) {
       return '-lightning'
     }
-  } else if (item.name === "Yriel's Fostering") {
+  } else if (uniqueName === "Yriel's Fostering") {
     if (hasStat(item, 'Projectiles from Attacks have #% chance to Maim on Hit while\nyou have a Bestial Minion')) {
       return '-maim'
     } else if (hasStat(item, 'Projectiles from Attacks have #% chance to Poison on Hit while\nyou have a Bestial Minion')) {
@@ -178,7 +182,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, 'Projectiles from Attacks have #% chance to inflict Bleeding on Hit while\nyou have a Bestial Minion')) {
       return '-bleeding'
     }
-  } else if (item.name === "Doryani's Invitation") {
+  } else if (uniqueName === "Doryani's Invitation") {
     if (hasStat(item, '#% increased Global Physical Damage')) {
       return '-physical'
     } else if (hasStat(item, '#% increased Fire Damage')) {
@@ -188,7 +192,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, '#% increased Lightning Damage')) {
       return '-lightning'
     }
-  } else if (item.name === 'Impresence') {
+  } else if (uniqueName === 'Impresence') {
     if (hasStat(item, 'Adds # to # Cold Damage')) {
       return '-cold'
     } else if (hasStat(item, 'Adds # to # Chaos Damage')) {
@@ -200,7 +204,7 @@ function getUniqueVariant (item: ParsedItem) {
     } else if (hasStat(item, 'Adds # to # Physical Damage')) {
       return '-physical'
     }
-  } else if (item.name === 'Voices') {
+  } else if (uniqueName === 'Voices') {
     const passives = item.statsByType.find(m => m.stat.ref === 'Adds # Small Passive Skills which grant nothing')!
     const roll = passives.sources[0].contributes!.value
     if (roll === 7) {

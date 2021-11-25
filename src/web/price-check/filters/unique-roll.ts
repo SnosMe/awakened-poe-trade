@@ -11,7 +11,7 @@ export function uniqueModFilterPartial (
   percent: number,
   dp: boolean
 ): void {
-  // const uniqueInfo = UNIQUES.get(`${item.name} ${item.baseType!}`)
+  // const uniqueInfo = UNIQUES.get(`${item.info.refName} ${item.info.unique!.base}`)
 
   // TODO set this info again and uncomment line
   // filter.variant = modInfo.variant

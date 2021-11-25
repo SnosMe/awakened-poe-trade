@@ -9,9 +9,11 @@ export interface ItemFilters {
   }
   baseType?: {
     value: string
+    trade?: string
   }
   discriminator?: {
     value: string
+    trade: string
   }
   category?: {
     value: ItemCategory

@@ -16,7 +16,6 @@ import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { ItemFilters } from './interfaces'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
-import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 export default defineComponent({
   name: 'FilterName',
@@ -35,12 +34,10 @@ export default defineComponent({
 
     const label = computed(() => {
       if (props.filters.name) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(props.filters.name.value) ||
-          props.filters.name.value
+        return props.filters.name.value
       }
       if (props.filters.baseType) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(props.filters.baseType.value) ||
-          props.filters.baseType.value
+        return props.filters.baseType.value
       }
       if (props.filters.category) {
         return t(`Category: ${props.filters.category.value}`)
@@ -66,7 +63,7 @@ export default defineComponent({
       if (props.filters.category) {
         props.filters.category = undefined
         props.filters.baseType = {
-          value: props.item.baseType || props.item.name
+          value: props.item.info.name
         }
       } else {
         props.filters.baseType = undefined

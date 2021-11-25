@@ -2,6 +2,7 @@ import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
+import { ITEM_BY_REF } from '@/assets/data'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -29,7 +30,8 @@ export function createFilters (
   }
   if (item.category === ItemCategory.CapturedBeast) {
     filters.baseType = {
-      value: item.baseType || item.name
+      value: item.info.name,
+      trade: item.info.refName
     }
     return filters
   }
@@ -41,7 +43,7 @@ export function createFilters (
   }
   if (item.category === ItemCategory.MavenInvitation) {
     filters.baseType = {
-      value: item.baseType || item.name
+      value: item.info.name
     }
     return filters
   }
@@ -50,7 +52,7 @@ export function createFilters (
     item.category === ItemCategory.Seed
   ) {
     filters.baseType = {
-      value: item.name
+      value: item.info.name
     }
     filters.itemLevel = {
       value: item.itemLevel!,
@@ -63,9 +65,9 @@ export function createFilters (
     item.category === ItemCategory.Currency
   ) {
     filters.baseType = {
-      value: item.name
+      value: item.info.name
     }
-    if (item.name === 'Chronicle of Atzoatl') {
+    if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
         value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80])
       }
@@ -74,14 +76,15 @@ export function createFilters (
   }
   if (item.category === ItemCategory.Prophecy) {
     filters.name = {
-      value: item.name
+      value: item.info.name
     }
     filters.baseType = {
-      value: 'Prophecy'
+      value: ITEM_BY_REF('ITEM', 'Prophecy')![0].name
     }
-    if (item.extra.prophecyMaster) {
+    if (item.info.prophecy?.masterName) {
       filters.discriminator = {
-        value: item.extra.prophecyMaster
+        value: item.info.prophecy.masterName,
+        trade: item.info.tradeDisc!
       }
     }
     return filters
@@ -94,7 +97,9 @@ export function createFilters (
       }
     } else {
       filters.baseType = {
-        value: item.baseType || item.name
+        value: (item.info.unique)
+          ? ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
+          : item.info.name
       }
     }
 
@@ -103,33 +108,29 @@ export function createFilters (
     }
 
     if (item.rarity === ItemRarity.Unique) {
-      filters.name = { value: item.name }
+      filters.name = { value: item.info.name }
     }
 
     filters.mapTier = {
       value: item.mapTier!
     }
   } else if (
-    item.category === ItemCategory.HeistContract ||
-    item.category === ItemCategory.HeistBlueprint
+    item.rarity !== ItemRarity.Unique && (
+      item.category === ItemCategory.HeistContract ||
+      item.category === ItemCategory.HeistBlueprint)
   ) {
-    if (item.rarity === ItemRarity.Unique) {
-      filters.name = { value: item.name }
-      filters.baseType = { value: item.baseType! }
-    } else {
-      filters.category = {
-        value: item.category
-      }
+    filters.category = {
+      value: item.category
+    }
 
-      filters.areaLevel = {
-        value: item.areaLevel!
-      }
+    filters.areaLevel = {
+      value: item.areaLevel!
+    }
 
-      if (item.heistJob) {
-        filters.heistJob = {
-          name: item.heistJob.name,
-          level: item.heistJob.level
-        }
+    if (item.heistJob) {
+      filters.heistJob = {
+        name: item.heistJob.name,
+        level: item.heistJob.level
       }
     }
   } else if (
@@ -137,15 +138,11 @@ export function createFilters (
     item.rarity !== ItemRarity.Unique
   ) {
     filters.baseType = {
-      value: item.baseType || item.name
+      value: item.info.name
     }
-  } else if (item.rarity === ItemRarity.Unique) {
-    filters.name = {
-      value: item.name
-    }
-    filters.baseType = {
-      value: item.baseType!
-    }
+  } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
+    filters.name = { value: item.info.name }
+    filters.baseType = { value: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name }
   } else if (item.rarity === ItemRarity.Rare) {
     if (item.category) {
       filters.category = {
@@ -156,7 +153,7 @@ export function createFilters (
   } else {
     // @TODO
     filters.baseType = {
-      value: item.baseType || item.name
+      value: item.info.name
     }
   }
 
@@ -241,7 +238,7 @@ export function createFilters (
     }
 
     if (item.rarity === ItemRarity.Unique) {
-      if (item.isUnidentified && item.name === "Watcher's Eye") {
+      if (item.isUnidentified && item.info.refName === "Watcher's Eye") {
         filters.itemLevel = {
           value: item.itemLevel,
           disabled: false
@@ -250,7 +247,7 @@ export function createFilters (
 
       if (item.itemLevel >= 75 && [
         'Agnerod', 'Agnerod East', 'Agnerod North', 'Agnerod South', 'Agnerod West'
-      ].includes(item.name)) {
+      ].includes(item.info.refName)) {
         // https://pathofexile.gamepedia.com/The_Vinktar_Square
         const normalizedLvl =
           item.itemLevel >= 82 ? 82
@@ -281,7 +278,7 @@ export function createFilters (
       }
       filters.category = undefined
       filters.baseType = {
-        value: item.baseType || item.name
+        value: item.info.name
       }
     }
   }
@@ -306,7 +303,7 @@ export function createFilters (
 
 function createGemFilters (item: ParsedItem, filters: ItemFilters) {
   filters.baseType = {
-    value: item.name
+    value: item.info.name
   }
 
   filters.corrupted = {
@@ -320,7 +317,7 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
     }
   }
 
-  if (SPECIAL_SUPPORT_GEM.includes(item.name)) {
+  if (SPECIAL_SUPPORT_GEM.includes(item.info.refName)) {
     filters.gemLevel = {
       min: item.gemLevel!,
       max: item.gemLevel!,

@@ -175,7 +175,7 @@ export default defineComponent({
     const show = computed(() => {
       return !(props.item.rarity === ItemRarity.Unique &&
         props.item.isUnidentified &&
-        props.item.baseType == null)
+        props.item.info.unique == null)
     })
 
     async function applyItemBaseFilter () {

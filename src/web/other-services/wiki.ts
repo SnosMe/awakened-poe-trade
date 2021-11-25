@@ -1,7 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { parseClipboard, ItemRarity } from '@/parser'
+import { parseClipboard } from '@/parser'
 import { AppConfig } from '@/web/Config'
-import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
 
 const ENDPOINT_BY_LANG = {
   en: 'www.poewiki.net/wiki',
@@ -12,11 +11,5 @@ export function openWiki (clipboard: string) {
   const item = parseClipboard(clipboard)
   if (!item) return
 
-  let pageName = (item.rarity === ItemRarity.Unique)
-    ? item.name
-    : item.baseType || item.name
-
-  pageName = TRANSLATED_ITEM_NAME_BY_REF.get(pageName) || pageName
-
-  MainProcess.openSystemBrowser(`https://${ENDPOINT_BY_LANG[AppConfig().language]}/${pageName}`)
+  MainProcess.openSystemBrowser(`https://${ENDPOINT_BY_LANG[AppConfig().language]}/${item.info.name}`)
 }

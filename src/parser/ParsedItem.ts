@@ -1,6 +1,7 @@
 import type { ModifierType, StatCalculated } from './modifiers'
 import type { ItemCategory } from './meta'
 import type { ParsedModifier } from './advanced-mod-desc'
+import type { BaseType } from '@/assets/data'
 
 export enum ItemRarity {
   Normal = 'Normal',
@@ -20,8 +21,6 @@ export enum ItemInfluence {
 
 export interface ParsedItem {
   rarity?: ItemRarity
-  name: string
-  baseType: string | undefined
   itemLevel?: number
   armourAR?: number
   armourEV?: number

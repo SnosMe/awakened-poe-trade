@@ -307,7 +307,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     }
   }
 
-  if (item.name === 'Chronicle of Atzoatl') {
+  if (item.info.refName === 'Chronicle of Atzoatl') {
     applyAtzoatlRules(ctx.filters)
   }
 }

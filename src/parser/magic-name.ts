@@ -1,16 +1,6 @@
-import { BASE_TYPES, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
-
-let baseTypes: Set<string>
+import { ITEM_BY_TRANSLATED } from '@/assets/data'
 
 export function magicBasetype (name: string) {
-  if (!baseTypes) {
-    baseTypes = new Set<string>()
-    for (let name of BASE_TYPES.keys()) {
-      name = TRANSLATED_ITEM_NAME_BY_REF.get(name)!
-      baseTypes.add(name)
-    }
-  }
-
   const words = name.split(' ')
 
   const perm: string[] = words.flatMap((_, start) =>
@@ -22,7 +12,10 @@ export function magicBasetype (name: string) {
   )
 
   const result = perm
-    .map(name => ({ name, found: baseTypes.has(name) }))
+    .map(name => {
+      const result = ITEM_BY_TRANSLATED('ITEM', name)
+      return { name, found: (result && result[0].craftable) }
+    })
     .filter(res => res.found)
     .sort((a, b) => b.name.length - a.name.length)
 

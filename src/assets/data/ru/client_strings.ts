@@ -39,7 +39,6 @@ const dict: TranslationDict = { /* eslint-disable quote-props */
   'INFLUENCE_WARLORD': 'Предмет Вождя',
   'SECTION_SYNTHESISED': 'Синтезированный предмет',
   'ITEM_SYNTHESISED': /^(?:Синтезированный|Синтезированная|Синтезированное|Синтезированные) (.*?)\u00a0*$/,
-  'VAAL_GEM': /^.* ваал$/,
   'VEILED_PREFIX': 'Завуалированный префикс',
   'VEILED_SUFFIX': 'Завуалированный суффикс',
   'FLASK_CHARGES': /^Содержит зарядов: \d+$/,

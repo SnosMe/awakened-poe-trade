@@ -15,7 +15,7 @@
           :min="price.min"
           :max="price.max"
           approx
-          :item-img="item.icon"
+          :item-img="item.info.icon"
           :currency="price.currency === 'exalt' ? 'exa' : 'chaos'"
         />
         <div class="text-center">

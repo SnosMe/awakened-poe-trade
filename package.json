@@ -24,6 +24,7 @@
   "main": "background.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.x",
+    "@sindresorhus/fnv1a": "^3.0.0",
     "animate.css": "^4.1.1",
     "apexcharts": "^3.23.1",
     "dot-prop": "6.x.x",

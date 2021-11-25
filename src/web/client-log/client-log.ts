@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { CLIENTLOG_STRINGS as _$, ITEM_NAME_REF_BY_TRANSLATED, TRADE_TAGS } from '@/assets/data'
+import { CLIENTLOG_STRINGS as _$ } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 
 const enum MessageChannel {
@@ -76,12 +76,11 @@ export function handleLine (line: string) {
 
       entry.trade = {
         item: {
-          name: ITEM_NAME_REF_BY_TRANSLATED.get(match.groups!.item) ||
-            match.groups!.item
+          name: match.groups!.item
         },
         price: {
           amount: Number(pAmount),
-          name: TRADE_TAGS.find(pair => pair[1] === pTag)?.[0] || pTag
+          name: pTag
         },
         tab: {
           name: match.groups!.tab_name,
@@ -111,11 +110,11 @@ export function handleLine (line: string) {
       entry.trade = {
         item: {
           amount: Number(iAmount),
-          name: ITEM_NAME_REF_BY_TRANSLATED.get(iName) || iName
+          name: iName
         },
         price: {
           amount: Number(pAmount),
-          name: ITEM_NAME_REF_BY_TRANSLATED.get(pName) || pName
+          name: pName
         }
       }
 

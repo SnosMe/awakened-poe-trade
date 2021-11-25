@@ -7,9 +7,8 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ItemRarity, ParsedItem } from '@/parser'
-import { TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
-import { WidgetManager } from '../overlay/interfaces'
+import type { ParsedItem } from '@/parser'
+import type { WidgetManager } from '../overlay/interfaces'
 
 export default defineComponent({
   props: {
@@ -22,19 +21,10 @@ export default defineComponent({
     const wm = inject<WidgetManager>('wm')!
     const { t } = useI18n()
 
-    const itemName = computed(() => {
-      const { item } = props
-      if (item.rarity === ItemRarity.Unique) {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(item.name || item.baseType)
-      } else {
-        return TRANSLATED_ITEM_NAME_BY_REF.get(item.baseType || item.name)
-      }
-    })
-
     return {
       t,
       wm,
-      itemName
+      itemName: computed(() => props.item.info.name)
     }
   }
 })

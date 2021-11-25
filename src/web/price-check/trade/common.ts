@@ -1,10 +1,9 @@
 import { shallowReactive } from 'vue'
 import type { ItemFilters, StatFilter } from '../filters/interfaces'
-import { TRADE_TAG_BY_NAME } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
-import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { ParsedItem, ItemCategory } from '@/parser'
 
 export const PERMANENT_LEAGUES = ['Standard', 'Hardcore']
 
@@ -47,24 +46,7 @@ export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filte
 }
 
 export function tradeTag (item: ParsedItem): string | undefined {
-  let name = item.baseType || item.name
-  if (item.category === ItemCategory.Map && item.rarity === ItemRarity.Unique) {
-    name = item.name
-  }
-
-  if (name) {
-    if (item.mapBlighted === 'Blighted') {
-      name = `Blighted ${name} (Tier ${item.mapTier})`
-    } else if (item.mapBlighted === 'Blight-ravaged') {
-      // TODO
-    } else if (item.mapTier) {
-      name = `${name} (Tier ${item.mapTier})`
-    } else if (item.extra.prophecyMaster) {
-      name = `${name} (${item.extra.prophecyMaster})`
-    }
-
-    return TRADE_TAG_BY_NAME.get(name)
-  }
+  return item.info.tradeTag
 }
 
 const ENDPOINT_BY_LANG = {

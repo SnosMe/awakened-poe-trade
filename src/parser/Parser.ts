@@ -1,8 +1,9 @@
 import {
-  BASE_TYPES,
   CLIENT_STRINGS as _$,
-  ITEM_NAME_REF_BY_TRANSLATED,
-  STAT_BY_MATCH_STR
+  ITEM_BY_TRANSLATED,
+  ITEM_BY_REF,
+  STAT_BY_MATCH_STR,
+  BaseType
 } from '@/assets/data'
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
@@ -20,8 +21,13 @@ type SectionParseResult =
   typeof SECTION_SKIPPED |
   typeof PARSER_SKIPPED
 
-type ParserFn = (section: string[], item: ParsedItem) => SectionParseResult
-type VirtualParserFn = (item: ParsedItem) => void
+type ParserFn = (section: string[], item: ParserState) => SectionParseResult
+type VirtualParserFn = (item: ParserState) => void
+
+export interface ParserState extends ParsedItem {
+  name: string
+  baseType: string | undefined
+}
 
 const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseUnidentified,
@@ -29,10 +35,12 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSynthesised,
   parseCategoryByHelpText,
   { virtual: normalizeName },
+  { virtual: parseGemAltQuality },
+  parseVaalGemName,
+  { virtual: findInDatabase },
   // -----------
   parseItemLevel,
   parseTalismanTier,
-  parseVaalGem,
   parseGem,
   parseArmour,
   parseWeapon,
@@ -93,7 +101,13 @@ export function parseClipboard (clipboard: string) {
     }
 
     for (const section of sections) {
-      const result = parser(section, parsed)
+      let result: SectionParseResult
+      try {
+        result = parser(section, parsed)
+      } catch (e) {
+        console.error(e)
+        return null
+      }
       if (result === SECTION_PARSED) {
         sections = sections.filter(s => s !== section)
         break
@@ -106,7 +120,7 @@ export function parseClipboard (clipboard: string) {
   return Object.freeze(parsed)
 }
 
-function normalizeName (item: ParsedItem) {
+function normalizeName (item: ParserState) {
   if (item.rarity === ItemRarity.Magic) {
     const baseType = magicBasetype(item.name)
     if (baseType) {
@@ -145,16 +159,39 @@ function normalizeName (item: ParsedItem) {
       item.name = 'Metamorph Liver'
     }
   }
+}
 
-  item.name = ITEM_NAME_REF_BY_TRANSLATED.get(item.name) || item.name
-  if (item.baseType) {
-    item.baseType = ITEM_NAME_REF_BY_TRANSLATED.get(item.baseType) || item.baseType
+function findInDatabase (item: ParserState) {
+  let info: BaseType[] | undefined
+  if (item.category === ItemCategory.Prophecy) {
+    info = ITEM_BY_TRANSLATED('PROPHECY', item.name)
+  } else if (item.category === ItemCategory.DivinationCard) {
+    info = ITEM_BY_TRANSLATED('DIVINATION_CARD', item.name)
+  } else if (item.category === ItemCategory.CapturedBeast) {
+    info = ITEM_BY_TRANSLATED('CAPTURED_BEAST', item.baseType ?? item.name)
+  } else if (item.category === ItemCategory.Gem) {
+    info = ITEM_BY_TRANSLATED('GEM', item.name)
+  } else if (item.category === ItemCategory.MetamorphSample) {
+    info = ITEM_BY_REF('ITEM', item.name)
+  } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
+    info = ITEM_BY_TRANSLATED('UNIQUE', item.name)
+  } else {
+    info = ITEM_BY_TRANSLATED('ITEM', item.baseType ?? item.name)
   }
-
+  if (!info?.length) {
+    throw new Error('Unsupported item')
+  }
+  item.infoVariants = info
+  // choose 1st variant, correct one will be picked at the end of parsing
+  item.info = info[0]
+  // same for every variant
   if (!item.category) {
-    const baseType = BASE_TYPES.get(item.baseType || item.name)
-    item.category = baseType?.category
-    item.icon = baseType?.icon
+    if (item.info.craftable) {
+      item.category = item.info.craftable.category
+    } else if (item.info.unique) {
+      item.category = ITEM_BY_REF('ITEM',
+        item.info.unique.base)![0].craftable!.category
+    }
   }
 }
 
@@ -186,7 +223,7 @@ function parseNamePlate (section: string[]) {
     return null
   }
 
-  const item: ParsedItem = {
+  const item: ParserState = {
     rarity: undefined,
     category: undefined,
     name: markupConditionParser(section[2]),
@@ -198,6 +235,8 @@ function parseNamePlate (section: string[]) {
     unknownModifiers: [],
     influences: [],
     extra: {},
+    info: undefined!,
+    infoVariants: undefined!,
     rawText: undefined!
   }
 
@@ -297,7 +336,7 @@ function parseTalismanTier (section: string[], item: ParsedItem) {
   return SECTION_SKIPPED
 }
 
-function parseVaalGem (section: string[], item: ParsedItem) {
+function parseVaalGemName (section: string[], item: ParserState) {
   if (item.category !== ItemCategory.Gem) return PARSER_SKIPPED
 
   if (section.length === 1) {
@@ -308,13 +347,12 @@ function parseVaalGem (section: string[], item: ParsedItem) {
       item.gemAltQuality = 'Divergent'
     } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(section[0])?.[1])) {
       item.gemAltQuality = 'Phantasmal'
-    } else if (_$.VAAL_GEM.test(section[0])) {
+    } else if (ITEM_BY_TRANSLATED('GEM', section[0])) {
       gemName = section[0]
       item.gemAltQuality = 'Superior'
     }
-
     if (gemName) {
-      item.name = ITEM_NAME_REF_BY_TRANSLATED.get(gemName) || gemName
+      item.name = gemName
       return SECTION_PARSED
     }
   }
@@ -331,26 +369,27 @@ function parseGem (section: string[], item: ParsedItem) {
 
     parseQualityNested(section, item)
 
-    // don't override if parsed in Vaal name section
-    if (!item.gemAltQuality) {
-      let gemName: string | undefined
-      if ((gemName = _$.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
-        item.gemAltQuality = 'Anomalous'
-      } else if ((gemName = _$.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
-        item.gemAltQuality = 'Divergent'
-      } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
-        item.gemAltQuality = 'Phantasmal'
-      } else {
-        item.gemAltQuality = 'Superior'
-      }
-      if (gemName) {
-        item.name = ITEM_NAME_REF_BY_TRANSLATED.get(gemName) || gemName
-      }
-    }
-
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
+}
+
+function parseGemAltQuality (item: ParserState) {
+  if (item.category !== ItemCategory.Gem) return
+
+  let gemName: string | undefined
+  if ((gemName = _$.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
+    item.gemAltQuality = 'Anomalous'
+  } else if ((gemName = _$.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
+    item.gemAltQuality = 'Divergent'
+  } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
+    item.gemAltQuality = 'Phantasmal'
+  } else {
+    item.gemAltQuality = 'Superior'
+  }
+  if (gemName) {
+    item.name = gemName
+  }
 }
 
 function parseStackSize (section: string[], item: ParsedItem) {
@@ -554,7 +593,7 @@ function parseFlask (section: string[], item: ParsedItem) {
   return SECTION_SKIPPED
 }
 
-function parseSynthesised (section: string[], item: ParsedItem) {
+function parseSynthesised (section: string[], item: ParserState) {
   if (section.length === 1) {
     if (section[0] === _$.SECTION_SYNTHESISED) {
       item.isSynthesised = true
@@ -570,7 +609,7 @@ function parseSynthesised (section: string[], item: ParsedItem) {
   return SECTION_SKIPPED
 }
 
-function parseSuperior (item: ParsedItem) {
+function parseSuperior (item: ParserState) {
   if (
     (item.rarity === ItemRarity.Normal) ||
     (item.rarity === ItemRarity.Magic && item.isUnidentified) ||
@@ -662,7 +701,7 @@ function parseAreaLevelNested (section: string[], item: ParsedItem) {
 }
 
 function parseAtzoatlAreaLevel (section: string[], item: ParsedItem) {
-  if (item.name !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
+  if (item.info.refName !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
 
   parseAreaLevelNested(section, item)
 
@@ -672,7 +711,7 @@ function parseAtzoatlAreaLevel (section: string[], item: ParsedItem) {
 }
 
 function parseAtzoatlRooms (section: string[], item: ParsedItem) {
-  if (item.name !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
+  if (item.info.refName !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
   if (section[0] !== _$.INCURSION_OPEN) return SECTION_SKIPPED
 
   let state = IncursionRoom.Open

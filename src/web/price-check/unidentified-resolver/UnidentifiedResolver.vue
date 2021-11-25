@@ -6,7 +6,7 @@
     <div class="overflow-auto pb-4 px-4">
       <div class="flex flex-wrap -m-1">
         <div v-for="item in identifiedVariants" :key="item.name" class="p-1 flex w-1/2">
-          <button @click="select(item.refName)" class="bg-gray-700 rounded flex items-center p-2 w-full">
+          <button @click="select(item)" class="bg-gray-700 rounded flex items-center p-2 w-full">
             <img :src="item.icon" class="w-12" />
             <div class="pl-3 leading-tight">{{ item.name }}</div>
           </button>
@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { UNIQUES_LIST, TRANSLATED_ITEM_NAME_BY_REF } from '@/assets/data'
+import { BaseType2, ITEMS_ITERATOR } from '@/assets/data'
 import { ItemRarity, ParsedItem } from '@/parser'
 
 export default defineComponent({
@@ -32,17 +32,18 @@ export default defineComponent({
   },
   setup (props, ctx) {
     const identifiedVariants = computed(() => {
-      const name = props.item!.name
-      const possible = UNIQUES_LIST
-        .filter(unique => unique.basetype === name)
-        .map(unique => ({
-          refName: unique.name,
-          icon: unique.icon,
-          name: TRANSLATED_ITEM_NAME_BY_REF.get(unique.name) || unique.name
-        }))
-
+      const baseType = props.item!.info.refName
+      const possible: BaseType2[] = []
+      for (const match of ITEMS_ITERATOR(baseType)) {
+        if (match.namespace === 'UNIQUE' && match.unique!.base === baseType) {
+          // TODO currently ignoring variants
+          if (!possible.some(unique => unique.refName === match.refName)) {
+            possible.push(match)
+          }
+        }
+      }
       if (possible.length === 1) {
-        select(possible[0].refName)
+        select(possible[0])
       }
 
       return possible
@@ -53,25 +54,13 @@ export default defineComponent({
 
       return props.item.rarity === ItemRarity.Unique &&
         props.item.isUnidentified &&
-        props.item.baseType == null
+        !props.item.info.unique
     })
 
-    const baseType = computed(() => {
-      return TRANSLATED_ITEM_NAME_BY_REF.get(props.item!.name) ||
-        props.item!.name
-    })
-
-    function select (name: string) {
-      if ([
-        'Agnerod East', 'Agnerod North', 'Agnerod South', 'Agnerod West'
-      ].includes(name)) {
-        name = 'Agnerod'
-      }
-
+    function select (info: BaseType2) {
       const newItem: ParsedItem = {
         ...props.item!,
-        name: name,
-        baseType: props.item!.name
+        info: info
       }
       ctx.emit('identify', newItem)
     }
@@ -82,7 +71,7 @@ export default defineComponent({
       t,
       identifiedVariants,
       show,
-      baseType,
+      baseType: computed(() => props.item!.info.name),
       select
     }
   }

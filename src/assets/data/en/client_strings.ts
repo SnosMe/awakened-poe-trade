@@ -37,7 +37,6 @@ const dict = { /* eslint-disable quote-props */
   'INFLUENCE_WARLORD': 'Warlord Item',
   'SECTION_SYNTHESISED': 'Synthesised Item',
   'ITEM_SYNTHESISED': /^Synthesised (.*)$/,
-  'VAAL_GEM': /^Vaal .*$/,
   'VEILED_PREFIX': 'Veiled Prefix',
   'VEILED_SUFFIX': 'Veiled Suffix',
   'FLASK_CHARGES': /^Currently has \d+ Charges$/,
