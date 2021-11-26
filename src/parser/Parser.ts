@@ -27,6 +27,7 @@ type VirtualParserFn = (item: ParserState) => void
 export interface ParserState extends ParsedItem {
   name: string
   baseType: string | undefined
+  infoVariants: BaseType[]
 }
 
 const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
@@ -60,7 +61,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseModifiers, // implicit
   parseModifiers, // explicit
   { virtual: transformToLegacyModifiers },
-  { virtual: parseBlightedMap }
+  { virtual: parseBlightedMap },
+  { virtual: pickCorrectVariant }
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -210,10 +212,47 @@ function parseBlightedMap (item: ParsedItem) {
     calc.type === ModifierType.Implicit &&
     calc.stat.ref.startsWith('Area is infested with Fungal Growths'))
   if (calc !== undefined) {
-    item.mapBlighted = (calc.sources[0].contributes!.value === 9)
-      ? 'Blight-ravaged'
-      : 'Blighted'
+    if (calc.sources[0].contributes!.value === 9) {
+      item.mapBlighted = 'Blight-ravaged'
+      item.info.icon = ITEM_BY_REF('ITEM', 'Blight-ravaged Map')![0].icon
+    } else {
+      item.mapBlighted = 'Blighted'
+      item.info.icon = ITEM_BY_REF('ITEM', 'Blighted Map')![0].icon
+    }
   }
+}
+
+function pickCorrectVariant (item: ParserState) {
+  if (!item.info.disc) return
+
+  for (const variant of item.infoVariants) {
+    const cond = variant.disc!
+
+    if (cond.propAR && !item.armourAR) continue
+    if (cond.propEV && !item.armourEV) continue
+    if (cond.propES && !item.armourES) continue
+
+    if (cond.mapTier === 'W' && !(item.mapTier! <= 5)) continue
+    if (cond.mapTier === 'Y' && !(item.mapTier! >= 6 && item.mapTier! <= 10)) continue
+    if (cond.mapTier === 'R' && !(item.mapTier! >= 11)) continue
+
+    if (cond.hasImplicit && !item.statsByType.some(calc =>
+      calc.type === ModifierType.Implicit &&
+      calc.stat.ref === cond.hasImplicit!.ref)
+    ) continue
+
+    if (cond.hasExplicit && !item.statsByType.some(calc =>
+      calc.type === ModifierType.Explicit &&
+      calc.stat.ref === cond.hasExplicit!.ref)
+    ) continue
+
+    if (cond.sectionText && !item.rawText.includes(cond.sectionText)) continue
+
+    item.info = variant
+  }
+
+  // it may happen that we don't find correct variant
+  // i.e. corrupted implicit on Two-Stone Ring
 }
 
 function parseNamePlate (section: string[]) {

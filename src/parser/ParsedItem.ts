@@ -60,7 +60,7 @@ export interface ParsedItem {
   }
   heistJob?: { name: HeistJob, level: number }
   category?: ItemCategory
-  icon?: string
+  info: BaseType
   rawText: string
 }
 

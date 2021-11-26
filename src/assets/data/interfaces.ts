@@ -60,7 +60,7 @@ export interface BaseType {
     propEV?: true
     propES?: true
     hasImplicit?: { ref: string }
-    hasExplicit?: { ref: string, roll?: number }
+    hasExplicit?: { ref: string }
     sectionText?: string
     mapTier?: 'W' | 'Y' | 'R'
   }
