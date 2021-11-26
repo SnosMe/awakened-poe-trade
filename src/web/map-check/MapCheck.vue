@@ -23,7 +23,7 @@ import { useI18n } from 'vue-i18n'
 import { ParsedItem } from '@/parser'
 import MapStatButton from './MapStatButton.vue'
 import { prepareMapStats } from './prepare-map-stats'
-import { MAP_IMGS, STAT_BY_MATCH_STR } from '@/assets/data'
+import { STAT_BY_MATCH_STR } from '@/assets/data'
 import { WidgetManager, ItemCheckWidget } from '../overlay/interfaces'
 import { AppConfig } from '@/web/Config'
 
@@ -43,10 +43,6 @@ export default defineComponent({
 
     const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!)
 
-    const image = computed(() => {
-      const entry = MAP_IMGS.get(props.item.info.refName)
-      return entry && entry.img
-    })
     const hasOutdatedTranslation = computed<boolean>(() => {
       return config.value.maps.selectedStats
         .some(entry =>
@@ -58,7 +54,7 @@ export default defineComponent({
       t,
       wm,
       mapName: computed(() => props.item.info.name),
-      image,
+      image: computed(() => props.item.info.map?.screenshot),
       mapStats: computed(() => prepareMapStats(props.item)),
       hasOutdatedTranslation
     }

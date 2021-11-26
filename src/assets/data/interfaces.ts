@@ -74,7 +74,7 @@ export interface BaseType {
     base: string
   }
   map?: {
-    normalVariant?: string
+    screenshot?: string
   }
   prophecy?: {
     masterName?: string
@@ -82,7 +82,7 @@ export interface BaseType {
   gem?: {
     vaal?: true
     awakened?: true
-    altQuality?: string
+    altQuality?: string[]
     normalVariant?: string
   }
 }
