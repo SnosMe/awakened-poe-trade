@@ -82,7 +82,16 @@ const dict = { /* eslint-disable quote-props */
   'CORRUPTED_IMPLICIT': 'Corruption Implicit Modifier',
   'MODIFIER_INCREASED': /^(.+?)% Increased$/,
   'INCURSION_OPEN': 'Open Rooms:',
-  'INCURSION_OBSTRUCTED': 'Obstructed Rooms:'
+  'INCURSION_OBSTRUCTED': 'Obstructed Rooms:',
+  // ---
+  'CHAT_SYSTEM': /^: (?<body>.+)$/,
+  'CHAT_TRADE': /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_GLOBAL': /^#(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_PARTY': /^%(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_GUILD': /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_WHISPER_TO': /^@To (?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_WHISPER_FROM': /^@From (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_WEBTRADE_GEM': /^level (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/
 }
 
 export default dict

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+import fnv1a from '@sindresorhus/fnv1a'
 import type { TranslationDict } from '@/assets/data/en/client_strings'
-import type { ClientLogDict } from '@/assets/data/en/client_log'
-import type { BaseType, DropEntry, Stat, StatMatcher, UniqueItem } from './interfaces'
+import type { BaseType, DropEntry, Stat, StatMatcher } from './interfaces'
 import { AppConfig } from '@/web/Config'
 import { nameToDetailsId } from '@/web/price-check/trends/getDetailsId'
 
@@ -55,28 +55,19 @@ class MapNDJSON<K, V> {
 export let STAT_BY_MATCH_STR: MapNDJSON<string, { matcher: StatMatcher, stat: Stat }>
 export let STAT_BY_REF: MapNDJSON<string, Stat>
 
-export let BASE_TYPES: Map<string, BaseType>
-
-export let TRADE_TAGS: Array<[string, string]>
-export let TRADE_TAG_BY_NAME: Map<string, string>
-
-export let UNIQUES_LIST: UniqueItem[]
-export let UNIQUES: Map<string, UniqueItem>
-
-export let MAP_IMGS: Map<string, { img: string }>
+const DELAYED_STAT_VALIDATION = new Set<string>()
 
 export const ITEM_DROP = new Map<string, DropEntry>()
 
-;(function initData () { /* eslint-disable no-lone-blocks */
+;(async function initData () { /* eslint-disable no-lone-blocks */
   const { language } = AppConfig()
 
   {
-    CLIENT_STRINGS = (require(`./${language}/client_strings`).default)
-    CLIENTLOG_STRINGS = (require(`./${language}/client_log`).default)
+    await loadItems(language)
+  }
 
-    const itemNames: Array<[string, string]> = (require(`./${language}/item-names.json`))
-    TRANSLATED_ITEM_NAME_BY_REF = new Map(itemNames)
-    ITEM_NAME_REF_BY_TRANSLATED = new Map(itemNames.map(_ => [_[1], _[0]]))
+  {
+    CLIENT_STRINGS = (await import(`./${language}/client_strings.ts`)).default
   }
 
   {
@@ -106,25 +97,13 @@ export const ITEM_DROP = new Map<string, DropEntry>()
 
       start = end + 1
     }
-  }
 
-  {
-    const baseTypes: Array<[string, BaseType]> = (require('./base-types.json'))
-    BASE_TYPES = new Map(baseTypes)
-  }
-
-  {
-    const tradeTags: Array<[string, string]> = (require('./trade-tags.json'))
-    TRADE_TAGS = tradeTags
-    TRADE_TAG_BY_NAME = new Map(tradeTags)
-  }
-
-  {
-    const uniques: UniqueItem[] = (require('./uniques.json'))
-    UNIQUES_LIST = uniques
-    UNIQUES = new Map(
-      uniques.map(item => [`${item.name} ${item.basetype}`, item])
-    )
+    for (const text of DELAYED_STAT_VALIDATION) {
+      if (!STAT_BY_REF.has(text)) {
+        throw new Error(`Cannot find stat: ${text}`)
+      }
+    }
+    DELAYED_STAT_VALIDATION.clear()
   }
 
   {
@@ -138,17 +117,10 @@ export const ITEM_DROP = new Map<string, DropEntry>()
       }
     }
   }
-
-  {
-    const maps: Array<[string, { img: string }]> = (require('./maps.json'))
-    MAP_IMGS = new Map(maps)
-  }
 })()
 
 // assertion, to avoid regressions in stats.json
 export function stat (text: string) {
-  if (!STAT_BY_REF.has(text)) {
-    throw new Error(`Cannot find stat: ${text}`)
-  }
+  DELAYED_STAT_VALIDATION.add(text)
   return text
 }

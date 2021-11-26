@@ -84,7 +84,16 @@ const dict: TranslationDict = { /* eslint-disable quote-props */
   'CORRUPTED_IMPLICIT': 'Осквернённое собственное свойство',
   'MODIFIER_INCREASED': /^(.+?)% увеличение$/,
   'INCURSION_OPEN': 'Открытые комнаты:',
-  'INCURSION_OBSTRUCTED': 'Отделённые комнаты:'
+  'INCURSION_OBSTRUCTED': 'Отделённые комнаты:',
+  // ---
+  'CHAT_SYSTEM': /^: (?<body>.+)$/,
+  'CHAT_TRADE': /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_GLOBAL': /^#(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_PARTY': /^%(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_GUILD': /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_WHISPER_TO': /^@Кому (?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_WHISPER_FROM': /^@От кого (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  'CHAT_WEBTRADE_GEM': /^уровень (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/
 }
 
 export default dict

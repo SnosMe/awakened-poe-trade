@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { CLIENTLOG_STRINGS as _$ } from '@/assets/data'
+import { CLIENT_STRINGS as _$ } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 
 const enum MessageChannel {
@@ -41,19 +41,19 @@ export function handleLine (line: string) {
 
   const entry = {} as LogEntry
   let match: RegExpMatchArray | null
-  if ((match = text.match(_$['channel.global']))) {
+  if ((match = text.match(_$.CHAT_GLOBAL))) {
     entry.сhannel = MessageChannel.GLOBAL
-  } else if ((match = text.match(_$['channel.trade']))) {
+  } else if ((match = text.match(_$.CHAT_TRADE))) {
     entry.сhannel = MessageChannel.TRADE
-  } else if ((match = text.match(_$['channel.system']))) {
+  } else if ((match = text.match(_$.CHAT_SYSTEM))) {
     entry.сhannel = MessageChannel.SYSTEM
-  } else if ((match = text.match(_$['channel.whisper.to']))) {
+  } else if ((match = text.match(_$.CHAT_WHISPER_TO))) {
     entry.сhannel = MessageChannel.WHISPER_TO
-  } else if ((match = text.match(_$['channel.whisper.from']))) {
+  } else if ((match = text.match(_$.CHAT_WHISPER_FROM))) {
     entry.сhannel = MessageChannel.WHISPER_FROM
-  } else if ((match = text.match(_$['channel.party']))) {
+  } else if ((match = text.match(_$.CHAT_PARTY))) {
     entry.сhannel = MessageChannel.PARTY
-  } else if ((match = text.match(_$['channel.guild']))) {
+  } else if ((match = text.match(_$.CHAT_GUILD))) {
     entry.сhannel = MessageChannel.GUILD
   } else {
     return
@@ -69,7 +69,7 @@ export function handleLine (line: string) {
         match.groups!.price.split(' ', 1).toString(),
         match.groups!.price.split(' ').slice(1).join(' ')
       ]
-      const gemMatch = match.groups!.item.match(_$['trade.gem'])
+      const gemMatch = match.groups!.item.match(_$.CHAT_WEBTRADE_GEM)
       if (gemMatch) {
         match.groups!.item = gemMatch.groups!.gem_name
       }
