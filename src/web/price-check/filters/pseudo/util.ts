@@ -3,7 +3,7 @@ import { StatCalculated, ModifierType, StatSource } from '@/parser/modifiers'
 import { FilterTag, InternalTradeId } from '../interfaces'
 
 export function pseudoStat (ref: string) {
-  const stat = STAT_BY_REF.get(ref)!
+  const stat = STAT_BY_REF(ref)!
 
   return {
     text: (stat.matchers.find(m => !m.negate) || stat.matchers[0]).string,

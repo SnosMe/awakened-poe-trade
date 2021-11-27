@@ -760,7 +760,7 @@ function parseAtzoatlRooms (section: string[], item: ParsedItem) {
       continue
     }
 
-    const found = STAT_BY_MATCH_STR.get(line)
+    const found = STAT_BY_MATCH_STR(line)
     if (found) {
       item.newMods.push({
         info: { tags: [], type: ModifierType.Pseudo },
@@ -804,7 +804,7 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
   item.newMods.push(modifier)
 
   if (modifier.info.type === ModifierType.Veiled) {
-    const found = STAT_BY_MATCH_STR.get(modifier.info.name!)
+    const found = STAT_BY_MATCH_STR(modifier.info.name!)
     if (found) {
       modifier.stats.push({
         stat: found.stat,

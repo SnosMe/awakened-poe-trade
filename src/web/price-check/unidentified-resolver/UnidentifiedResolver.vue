@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { BaseType2, ITEMS_ITERATOR } from '@/assets/data'
+import { BaseType, ITEMS_ITERATOR } from '@/assets/data'
 import { ItemRarity, ParsedItem } from '@/parser'
 
 export default defineComponent({
@@ -33,7 +33,7 @@ export default defineComponent({
   setup (props, ctx) {
     const identifiedVariants = computed(() => {
       const baseType = props.item!.info.refName
-      const possible: BaseType2[] = []
+      const possible: BaseType[] = []
       for (const match of ITEMS_ITERATOR(baseType)) {
         if (match.namespace === 'UNIQUE' && match.unique!.base === baseType) {
           // TODO currently ignoring variants
@@ -57,7 +57,7 @@ export default defineComponent({
         !props.item.info.unique
     })
 
-    function select (info: BaseType2) {
+    function select (info: BaseType) {
       const newItem: ParsedItem = {
         ...props.item!,
         info: info

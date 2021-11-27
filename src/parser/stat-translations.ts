@@ -124,7 +124,7 @@ function * _statPlaceholderGenerator (stat: string) {
 
 export function tryParseTranslation (stat: StatString, modType: ModifierType): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
-    const found = STAT_BY_MATCH_STR.get(combination.stat)
+    const found = STAT_BY_MATCH_STR(combination.stat)
     if (!found || !found.stat.trade.ids[modType]) {
       continue
     }

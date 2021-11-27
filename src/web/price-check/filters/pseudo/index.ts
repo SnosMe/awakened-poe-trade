@@ -342,7 +342,7 @@ export function filterPseudo (ctx: FiltersCreationContext) {
       roll: rollToFilter(total.value, {
         neverNegated: true,
         // TODO: is this correct/can be improved
-        dp: rule.stats.some(({ ref }) => STAT_BY_REF.get(ref)!.dp),
+        dp: rule.stats.some(({ ref }) => STAT_BY_REF(ref)!.dp),
         percent: ctx.searchInRange
       })
     }

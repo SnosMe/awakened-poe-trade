@@ -47,7 +47,7 @@ export default defineComponent({
       return config.value.maps.selectedStats
         .some(entry =>
           entry.decision !== 'seen' &&
-          !STAT_BY_MATCH_STR.has(entry.matcher))
+          STAT_BY_MATCH_STR(entry.matcher) == null)
     })
 
     return {

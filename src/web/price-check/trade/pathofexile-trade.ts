@@ -387,16 +387,16 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         type: 'not',
         disabled: stat.disabled,
         filters: [
-          tradeIdToQuery(STAT_BY_REF.get('Map is occupied by #')!.trade.ids[ModifierType.Implicit][0], stat)
+          tradeIdToQuery(STAT_BY_REF('Map is occupied by #')!.trade.ids[ModifierType.Implicit][0], stat)
         ]
       })
     }
 
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
       const TARGET_ID = {
-        CRAFTED_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
-        EMPTY_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
-        TOTAL_MODIFIERS: STAT_BY_REF.get(TOTAL_MODS_TEXT.TOTAL_MODIFIERS[0])!.trade.ids[ModifierType.Pseudo][0]
+        CRAFTED_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
+        EMPTY_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
+        TOTAL_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.TOTAL_MODIFIERS[0])!.trade.ids[ModifierType.Pseudo][0]
       }
 
       query.stats.push({
@@ -476,7 +476,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         text: undefined!,
         tag: undefined!,
         sources: undefined!,
-        tradeId: STAT_BY_REF.get(statRef)!.trade.ids[ModifierType.Veiled]
+        tradeId: STAT_BY_REF(statRef)!.trade.ids[ModifierType.Veiled]
       })
     }
   }
@@ -489,7 +489,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         text: undefined!,
         tag: undefined!,
         sources: undefined!,
-        tradeId: STAT_BY_REF.get(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[ModifierType.Pseudo]
+        tradeId: STAT_BY_REF(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[ModifierType.Pseudo]
       })
     }
   }

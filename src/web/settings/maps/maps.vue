@@ -33,7 +33,7 @@ import { computed, defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, findWidget } from '../utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
-import { STAT_BY_REF, STAT_BY_MATCH_STR } from '@/assets/data'
+import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
 import VirtualScroll from '../../ui/VirtualScroll.vue'
 import type { MapStatMatcher } from './interfaces'
@@ -57,8 +57,7 @@ export default defineComponent({
 
     const statList = computed(() => {
       const out: Array<{ str: string, searchStr: string, heist: boolean }> = []
-      for (const statRef of STAT_BY_REF.keys()) {
-        const stat = STAT_BY_REF.get(statRef)!
+      for (const stat of STATS_ITERATOR('AreaMods')) {
         if (!stat.fromAreaMods && !stat.fromHeistAreaMods) continue
 
         for (const c of stat.matchers) {
@@ -92,7 +91,7 @@ export default defineComponent({
         .selectedStats
         .filter(entry =>
           entry.decision !== 'seen' &&
-          !STAT_BY_MATCH_STR.has(entry.matcher))
+          STAT_BY_MATCH_STR(entry.matcher) == null)
         .map(entry => ({ str: entry.matcher, heist: undefined, outdated: true }))
     })
 
