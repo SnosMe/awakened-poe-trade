@@ -25,6 +25,7 @@ jobs:
         key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn --frozen-lockfile
       if: steps.yarn-cache.outputs.cache-hit != 'true'
+    - run: yarn make-index-files
     - run: yarn electron:publish
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -48,6 +49,7 @@ jobs:
         sudo apt-get install -y libxtst-dev libpng++-dev
     - run: yarn --frozen-lockfile
       if: steps.yarn-cache.outputs.cache-hit != 'true'
+    - run: yarn make-index-files
     - run: yarn electron:publish
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,6 +64,7 @@ jobs:
   #     with:
   #       node-version: 12
   #   - run: yarn --frozen-lockfile
+  #   - run: yarn make-index-files
   #   - run: yarn electron:publish
   #     env:
   #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
