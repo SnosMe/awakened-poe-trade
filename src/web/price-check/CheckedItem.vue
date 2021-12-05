@@ -32,7 +32,7 @@
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
-      <div class="mb-1">{{ t('Support development on') }} <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer animate__animated animate__fadeInRight" src="@/assets/images/Patreon.svg"></div>
+      <div class="mb-1">{{ t('Support development on') }} <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer animate__animated animate__fadeInRight" src="/images/Patreon.svg"></div>
       <i18n-t keypath="This tool relies on {0} and {1}, consider support them as well" tag="div">
         <span @click="openLink('https://poeprices.info')" class="bg-gray-900 px-1 rounded cursor-pointer">poeprices.info</span>
         <span @click="openLink('https://poe.ninja/support')" class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>

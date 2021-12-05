@@ -12,7 +12,7 @@
           <div v-else
             class="border-b mx-2 border-gray-800" />
         </template>
-        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content;">{{ t('Support development on') }}<br> <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer mt-1" src="@/assets/images/Patreon.svg"></div>
+        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content;">{{ t('Support development on') }}<br> <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer mt-1" src="/images/Patreon.svg"></div>
       </div>
       <div class="text-gray-100 flex-grow layout-column bg-gray-900">
         <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">

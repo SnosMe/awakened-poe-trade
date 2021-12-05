@@ -21,31 +21,10 @@
       <template v-if="filters.influences">
         <button v-for="influence of filters.influences" :key="influence.value" class="trade-tag flex items-center"
           :class="{ disabled: influence.disabled }"
-          @click="influence.disabled = !influence.disabled">
-          <template v-if="influence.value === 'Shaper'">
-            <img class="w-5 h-5 -m-1" src="@/assets/influence/Shaper.png">
-            <span class="ml-2">{{ t('Shaper') }}</span>
-          </template>
-          <template v-if="influence.value === 'Elder'">
-            <img class="w-5 h-5 -m-1" src="@/assets/influence/Elder.png">
-            <span class="ml-2">{{ t('Elder') }}</span>
-          </template>
-          <template v-if="influence.value === 'Crusader'">
-            <img class="w-5 h-5 -m-1" src="@/assets/influence/Crusader.png">
-            <span class="ml-2">{{ t('Crusader') }}</span>
-          </template>
-          <template v-if="influence.value === 'Hunter'">
-            <img class="w-5 h-5 -m-1" src="@/assets/influence/Hunter.png">
-            <span class="ml-2">{{ t('Hunter') }}</span>
-          </template>
-          <template v-if="influence.value === 'Redeemer'">
-            <img class="w-5 h-5 -m-1" src="@/assets/influence/Redeemer.png">
-            <span class="ml-2">{{ t('Redeemer') }}</span>
-          </template>
-          <template v-if="influence.value === 'Warlord'">
-            <img class="w-5 h-5 -m-1" src="@/assets/influence/Warlord.png">
-            <span class="ml-2">{{ t('Warlord') }}</span>
-          </template>
+          @click="influence.disabled = !influence.disabled"
+        >
+          <img class="w-5 h-5 -m-1" :src="`/images/influence-${influence.value}.png`">
+          <span class="ml-2">{{ t(influence.value) }}</span>
         </button>
       </template>
       <button v-if="filters.unidentified" class="trade-tag" :class="{ disabled: filters.unidentified.disabled }"

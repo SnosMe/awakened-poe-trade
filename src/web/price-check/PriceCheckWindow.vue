@@ -21,7 +21,7 @@
               <item-quick-price
                 :min="exaltedCost"
                 :max="exaltedCost"
-                :item-img="require('@/assets/images/exa.png').default"
+                item-img="/images/exa.png"
                 currency="chaos"
               />
               <div v-for="i in 9" :key="i">

@@ -2,10 +2,10 @@
   <div class="w-full h-full"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false">
-    <img :class="$style.img" :src="isBundled ? require(`@/assets/images/${src}`).default : src">
+    <img :class="$style.img" :src="isBundled ? `/images/${src}` : src">
     <teleport v-if="isHovered && !disabled" to="body">
       <div :class="$style.imgFullscreenWrapper">
-        <img :class="$style.imgFullscreen" :src="isBundled ? require(`@/assets/images/${src}`).default : src">
+        <img :class="$style.imgFullscreen" :src="isBundled ? `/images/${src}` : src">
       </div>
     </teleport>
   </div>

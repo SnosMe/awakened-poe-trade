@@ -15,8 +15,8 @@
       <span class="font-sans" :class="{ [$style.exalted]: isExa }"> ×</span>
     </div>
     <div class="w-8 h-8 flex items-center justify-center">
-      <img v-if="isExa" src="@/assets/images/exa.png" class="max-w-full max-h-full">
-      <img v-else src="@/assets/images/chaos.png" class="max-w-full max-h-full">
+      <img v-if="isExa" src="/images/exa.png" class="max-w-full max-h-full">
+      <img v-else src="/images/chaos.png" class="max-w-full max-h-full">
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default defineComponent({
     },
     itemImg: {
       type: String,
-      default: require('@/assets/images/wisdom.png').default
+      default: '/images/wisdom.png'
     }
   },
   setup (props) {
