@@ -10,7 +10,6 @@
     "electron:publish": "vue-cli-service electron:build -p onTagOrDraft",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
-    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/web/locales/**/*.json'",
     "postinstall": "patch-package && electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "make-index-files": "node src/assets/make-index-files.mjs"

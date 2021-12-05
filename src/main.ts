@@ -6,11 +6,13 @@ import 'vue-slider-component/theme/default.css'
 import uiComponents from './web/ui'
 import 'animate.css/animate.css'
 
-createApp(App)
-  .use(i18n)
-  .component('UiSlider', VueSlider)
-  .use(uiComponents)
-  .mount('#app')
+;(async function () {
+  createApp(App)
+    .use(await i18n())
+    .component('UiSlider', VueSlider)
+    .use(uiComponents)
+    .mount('#app')
+})()
 
 process.on('unhandledRejection', error => {
   // TODO: log to Sentry

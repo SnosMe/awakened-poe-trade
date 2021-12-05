@@ -11,9 +11,7 @@ import { defineComponent, PropType, computed } from 'vue'
 import { StatFilter } from './interfaces'
 import { autoCurrency, displayRounding, findByDetailsId, ItemInfo } from '@/web/background/Prices'
 import { nameToDetailsId } from '../trends/getDetailsId'
-import { BlightRecipes } from '@/assets/data/interfaces'
-
-const RECIPES = require('@/assets/data/blight-recipes.json') as BlightRecipes
+import { BLIGHT_RECIPES } from '@/assets/data'
 
 export default defineComponent({
   props: {
@@ -28,7 +26,7 @@ export default defineComponent({
 
       const roll = props.filter.option!.value
 
-      const oils = (RECIPES.recipes[roll] ?? []).map(idx => RECIPES.oils[idx])
+      const oils = (BLIGHT_RECIPES.recipes[roll] ?? []).map(idx => BLIGHT_RECIPES.oils[idx])
       if (!oils.length) return null
 
       const prices = oils

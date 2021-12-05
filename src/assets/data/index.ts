@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 import fnv1a from '@sindresorhus/fnv1a'
-import type { TranslationDict } from '@/assets/data/en/client_strings'
-import type { BaseType, DropEntry, Stat, StatMatcher } from './interfaces'
+import type { BaseType, BlightRecipes, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
 import { AppConfig } from '@/web/Config'
 import { nameToDetailsId } from '@/web/price-check/trends/getDetailsId'
 
 export * from './interfaces'
 
+export const ITEM_DROP = new Map<string, DropEntry>()
+export let BLIGHT_RECIPES: BlightRecipes
 export let CLIENT_STRINGS: TranslationDict
 
 export let ITEM_BY_TRANSLATED = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
@@ -111,9 +110,12 @@ async function loadStats (language: string) {
   STATS_ITERATOR = ndjsonFindLines<Stat>(ndjson)
 }
 
+// assertion, to avoid regressions in stats.ndjson
 const DELAYED_STAT_VALIDATION = new Set<string>()
-
-export const ITEM_DROP = new Map<string, DropEntry>()
+export function stat (text: string) {
+  DELAYED_STAT_VALIDATION.add(text)
+  return text
+}
 
 ;(async function initData () { /* eslint-disable no-lone-blocks */
   const { language } = AppConfig()
@@ -131,11 +133,13 @@ export const ITEM_DROP = new Map<string, DropEntry>()
   }
 
   {
-    CLIENT_STRINGS = (await import(`./${language}/client_strings.ts`)).default
+    // eslint-disable-next-line no-eval
+    CLIENT_STRINGS = (await eval(`import('/data/${language}/client_strings.js')`)).default
+    BLIGHT_RECIPES = await (await fetch('/data/blight-recipes.json')).json()
   }
 
   {
-    const itemDrop: DropEntry[] = (require('./item-drop.json'))
+    const itemDrop: DropEntry[] = await (await fetch('/data/item-drop.json')).json()
     for (const entry of itemDrop) {
       for (const query of entry.query) {
         ITEM_DROP.set(nameToDetailsId(query), {
@@ -146,9 +150,3 @@ export const ITEM_DROP = new Map<string, DropEntry>()
     }
   }
 })()
-
-// assertion, to avoid regressions in stats.ndjson
-export function stat (text: string) {
-  DELAYED_STAT_VALIDATION.add(text)
-  return text
-}

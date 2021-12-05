@@ -1,1 +1,0 @@
-# PoE scrapped data files
