@@ -20,7 +20,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ParsedItem } from '@/parser'
+import { ItemRarity, ParsedItem } from '@/parser'
 import MapStatButton from './MapStatButton.vue'
 import { prepareMapStats } from './prepare-map-stats'
 import { STAT_BY_MATCH_STR } from '@/assets/data'
@@ -54,7 +54,11 @@ export default defineComponent({
       t,
       wm,
       mapName: computed(() => props.item.info.name),
-      image: computed(() => props.item.info.map?.screenshot),
+      image: computed(() =>
+        (props.item.rarity === ItemRarity.Unique && props.item.isUnidentified)
+          ? undefined
+          : props.item.info.map?.screenshot
+      ),
       mapStats: computed(() => prepareMapStats(props.item)),
       hasOutdatedTranslation
     }
