@@ -3,7 +3,7 @@
     <div class="p-1 flex">
       <input :placeholder="t('Search') + '...'" v-model="search" class="bg-gray-900 rounded px-1">
       <ui-toggle v-model="onlySelected" class="mx-2">{{ t('Only selected') }}</ui-toggle>
-      <ui-toggle v-model="showNewStats" class="ml-12">{{ t('Show new stats') }}</ui-toggle>
+      <ui-toggle v-model="showNewStats" class="ml-12">{{ t('Show icon for new mods') }}</ui-toggle>
     </div>
     <div class="flex items-baseline py-1 shadow">
       <div class="flex-1 px-2 leading-none">{{ t('Stat (found: {0})', [filteredStats.length]) }}</div>
@@ -131,7 +131,7 @@ export default defineComponent({
   "ru": {
     "Only selected": "Только выбранные",
     "Stat (found: {0})": "Свойства (найдено: {0})",
-    "Show new stats": "Показывать новые статы"
+    "Show icon for new mods": "Иконка у новых модов"
   }
 }
 </i18n>
