@@ -36,7 +36,7 @@ export default defineComponent({
 
       if (prices.length !== oils.length) return null
 
-      const totalChaos = prices.reduce((t, p) => t + p.receive.chaosValue, 0)
+      const totalChaos = prices.reduce((t, p) => t + p.chaosValue, 0)
       const total = autoCurrency(totalChaos, 'c')
 
       return {

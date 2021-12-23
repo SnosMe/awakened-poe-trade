@@ -56,11 +56,8 @@ interface NinjaItemInfo {
 export interface ItemInfo {
   name: string
   icon: string
-  receive: {
-    chaosValue: number
-    graphPoints: number[]
-    totalChange: number
-  }
+  chaosValue: number
+  graphPoints: number[]
   detailsId: string
 }
 
@@ -133,11 +130,8 @@ async function load (force: boolean = false) {
             detailsId: currency.detailsId,
             icon: priceData.currencyDetails.find(detail => detail.id === currency.receive!.get_currency_id)!.icon,
             name: currency.currencyTypeName,
-            receive: {
-              chaosValue: currency.receive.value,
-              graphPoints: currency.receiveSparkLine.data.filter((point): point is number => point != null),
-              totalChange: currency.receiveSparkLine.totalChange
-            }
+            chaosValue: currency.receive.value,
+            graphPoints: currency.receiveSparkLine.data.filter((point): point is number => point != null)
           })
 
           if (currency.detailsId === 'exalted-orb') {
@@ -170,11 +164,8 @@ async function load (force: boolean = false) {
             detailsId,
             icon: item.icon,
             name: item.name,
-            receive: {
-              chaosValue: item.chaosValue,
-              graphPoints: item.sparkline.data.filter((point): point is number => point != null),
-              totalChange: item.sparkline.totalChange
-            }
+            chaosValue: item.chaosValue,
+            graphPoints: item.sparkline.data.filter((point): point is number => point != null)
           })
         }
       }

@@ -65,7 +65,7 @@ export default defineComponent({
       result,
       detailsId,
       price (item: ItemInfo) {
-        const _ = autoCurrency(item.receive.chaosValue, 'c')
+        const _ = autoCurrency(item.chaosValue, 'c')
         return {
           val: displayRounding(_.val, true),
           curr: _.curr

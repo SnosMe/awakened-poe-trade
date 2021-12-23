@@ -37,12 +37,12 @@
             plotOptions: { area: { fillTo: 'end' } },
             yaxis: {
               show: false,
-              min: Math.min(...trend.receive.graphPoints) - (trend.changeVal || 1),
-              max: Math.max(...trend.receive.graphPoints) + (trend.changeVal || 1)
+              min: Math.min(...trend.graphPoints) - (trend.changeVal || 1),
+              max: Math.max(...trend.graphPoints) + (trend.changeVal || 1)
             }
           }"
           :series="[{
-            data: trend.receive.graphPoints
+            data: trend.graphPoints
           }]"
         />
       </div>
@@ -88,28 +88,28 @@ export default defineComponent({
       if (!trend) return
 
       const price = (props.item.info.refName === 'Exalted Orb')
-        ? { val: trend.receive.chaosValue, curr: 'c' }
-        : autoCurrency(trend.receive.chaosValue, 'c')
+        ? { val: trend.chaosValue, curr: 'c' }
+        : autoCurrency(trend.chaosValue, 'c')
 
-      if (trend.receive.graphPoints.length >= 2) {
+      if (trend.graphPoints.length >= 2) {
         let changeStr = 'const'
-        if (trend.receive.graphPoints.length === 7) {
+        if (trend.graphPoints.length === 7) {
           if (
-            trend.receive.graphPoints.filter(p => p > 0).length >= 4 ||
-            trend.receive.graphPoints.slice(4).every(p => p > 0)
+            trend.graphPoints.filter(p => p > 0).length >= 4 ||
+            trend.graphPoints.slice(4).every(p => p > 0)
           ) {
             changeStr = 'up'
           } else if (
-            trend.receive.graphPoints.filter(p => p < 0).length >= 4 ||
-            trend.receive.graphPoints.slice(4).every(p => p < 0)
+            trend.graphPoints.filter(p => p < 0).length >= 4 ||
+            trend.graphPoints.slice(4).every(p => p < 0)
           ) {
             changeStr = 'down'
           }
         }
 
-        const n = trend.receive.graphPoints.length
-        const mean = trend.receive.graphPoints.reduce((a, b) => a + b) / n
-        const changeVal = Math.sqrt(trend.receive.graphPoints.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (n - 1))
+        const n = trend.graphPoints.length
+        const mean = trend.graphPoints.reduce((a, b) => a + b) / n
+        const changeVal = Math.sqrt(trend.graphPoints.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (n - 1))
 
         return { price, ...trend, changeStr, changeVal }
       } else {

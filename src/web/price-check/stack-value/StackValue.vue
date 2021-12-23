@@ -34,8 +34,8 @@ export default defineComponent({
       const one = findByDetailsId(getDetailsId(props.item)!)!
 
       const price = (props.item.info.refName === 'Exalted Orb')
-        ? { val: n * one.receive.chaosValue, curr: 'c' }
-        : autoCurrency(n * one.receive.chaosValue, 'c')
+        ? { val: n * one.chaosValue, curr: 'c' }
+        : autoCurrency(n * one.chaosValue, 'c')
 
       return `${displayRounding(price.val, true)} ${price.curr === 'c' ? 'chaos' : 'exa'}`
     }
