@@ -45,6 +45,12 @@ export function getDetailsId (item: ParsedItem) {
   if (item.category === ItemCategory.Seed) {
     return nameToDetailsId(`${item.info.refName} ${item.itemLevel! >= 76 ? '76' : '1-75'}`)
   }
+  if (item.category === ItemCategory.DivinationCard && item.info.refName === 'The Scout') {
+    return 'the-scout-divcard'
+  }
+  if (item.category === ItemCategory.Prophecy && item.info.refName === 'The Twins') {
+    return 'the-twins-prophecy'
+  }
 
   return nameToDetailsId(item.info.name)
 }
