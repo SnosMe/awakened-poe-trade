@@ -1,7 +1,6 @@
 import { ref, watch } from 'vue'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { selected as selectedLeague, isPublic as isPublicLeague } from './Leagues'
-import { nameToDetailsId } from '../price-check/trends/getDetailsId'
 
 interface NinjaCurrencyInfo { /* eslint-disable camelcase */
   currencyTypeName: string
@@ -68,36 +67,45 @@ const UPDATE_TIME = 10 * 60 * 1000
 
 export const chaosExaRate = ref<number | undefined>(undefined)
 
-const priceQueue = [
-  { overview: 'currency', type: 'Currency', loaded: 0 },
-  { overview: 'currency', type: 'Fragment', loaded: 0 },
-  { overview: 'item', type: 'Watchstone', loaded: 0 },
-  { overview: 'item', type: 'Oil', loaded: 0 },
-  { overview: 'item', type: 'Incubator', loaded: 0 },
-  { overview: 'item', type: 'Scarab', loaded: 0 },
-  { overview: 'item', type: 'Fossil', loaded: 0 },
-  { overview: 'item', type: 'Resonator', loaded: 0 },
-  { overview: 'item', type: 'Essence', loaded: 0 },
-  { overview: 'item', type: 'DivinationCard', loaded: 0 },
-  { overview: 'item', type: 'Prophecy', loaded: 0 },
-  { overview: 'item', type: 'SkillGem', loaded: 0 },
-  { overview: 'item', type: 'BaseType', loaded: 0 },
-  // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
-  { overview: 'item', type: 'BlightedMap', loaded: 0 },
-  { overview: 'item', type: 'BlightRavagedMap', loaded: 0 },
-  { overview: 'item', type: 'UniqueMap', loaded: 0 },
-  { overview: 'item', type: 'Map', loaded: 0 },
-  { overview: 'item', type: 'UniqueJewel', loaded: 0 },
-  { overview: 'item', type: 'UniqueFlask', loaded: 0 },
-  { overview: 'item', type: 'UniqueWeapon', loaded: 0 },
-  { overview: 'item', type: 'UniqueArmour', loaded: 0 },
-  { overview: 'item', type: 'UniqueAccessory', loaded: 0 },
-  { overview: 'item', type: 'Beast', loaded: 0 },
-  { overview: 'item', type: 'Vial', loaded: 0 },
-  { overview: 'item', type: 'DeliriumOrb', loaded: 0 },
-  { overview: 'item', type: 'Invitation', loaded: 0 },
-  { overview: 'item', type: 'Artifact', loaded: 0 }
-]
+const priceQueue = (() => {
+  function uniqueItemKey (item: NinjaItemInfo, extra = '') {
+    let key = `UNIQUE::${item.name} // ${item.baseType}`
+    if (item.variant) key += ` // ${item.variant}`
+    if (extra) key += ` // ${extra}`
+    return key
+  }
+
+  return [
+    { overview: 'currency', type: 'Currency', loaded: 0 },
+    { overview: 'currency', type: 'Fragment', loaded: 0 },
+    { overview: 'item', type: 'Watchstone', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // ${item.variant}` },
+    { overview: 'item', type: 'Oil', loaded: 0 },
+    { overview: 'item', type: 'Incubator', loaded: 0 },
+    { overview: 'item', type: 'Scarab', loaded: 0 },
+    { overview: 'item', type: 'Fossil', loaded: 0 },
+    { overview: 'item', type: 'Resonator', loaded: 0 },
+    { overview: 'item', type: 'Essence', loaded: 0 },
+    { overview: 'item', type: 'DivinationCard', loaded: 0, key: (item: NinjaItemInfo) => `DIVINATION_CARD::${item.name}` },
+    { overview: 'item', type: 'Prophecy', loaded: 0, key: (item: NinjaItemInfo) => `PROPHECY::${item.name}` + ((item.variant) ? ` // ${item.variant}` : '') },
+    { overview: 'item', type: 'SkillGem', loaded: 0, key: (item: NinjaItemInfo) => `GEM::${item.name} // ${item.gemLevel} // ${item.gemQuality ?? 0}%` + ((item.corrupted) ? ' // Corrupted' : '') },
+    { overview: 'item', type: 'BaseType', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // ${item.levelRequired}` + ((item.variant) ? ` // ${item.variant}` : '') },
+    // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
+    { overview: 'item', type: 'BlightedMap', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // T${item.mapTier}` },
+    { overview: 'item', type: 'BlightRavagedMap', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // T${item.mapTier}` },
+    { overview: 'item', type: 'UniqueMap', loaded: 0, key: (item: NinjaItemInfo) => `UNIQUE::${item.name} // T${item.mapTier}` },
+    { overview: 'item', type: 'Map', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // T${item.mapTier}` },
+    { overview: 'item', type: 'UniqueJewel', loaded: 0, key: uniqueItemKey },
+    { overview: 'item', type: 'UniqueFlask', loaded: 0, key: uniqueItemKey },
+    { overview: 'item', type: 'UniqueWeapon', loaded: 0, key: (item: NinjaItemInfo) => uniqueItemKey(item, (item.links) ? `${item.links}L` : '') },
+    { overview: 'item', type: 'UniqueArmour', loaded: 0, key: (item: NinjaItemInfo) => uniqueItemKey(item, (item.links) ? `${item.links}L` : '') },
+    { overview: 'item', type: 'UniqueAccessory', loaded: 0, key: uniqueItemKey },
+    { overview: 'item', type: 'Beast', loaded: 0, key: (item: NinjaItemInfo) => `CAPTURED_BEAST::${item.name}` },
+    { overview: 'item', type: 'Vial', loaded: 0 },
+    { overview: 'item', type: 'DeliriumOrb', loaded: 0 },
+    { overview: 'item', type: 'Invitation', loaded: 0 },
+    { overview: 'item', type: 'Artifact', loaded: 0 }
+  ]
+})()
 
 async function load (force: boolean = false) {
   if (!selectedLeague.value || !isPublicLeague.value) return
@@ -126,7 +134,7 @@ async function load (force: boolean = false) {
             continue
           }
 
-          PRICE_BY_DETAILS_ID.set(currency.detailsId, {
+          PRICE_BY_DETAILS_ID.set(`ITEM::${currency.currencyTypeName}`, {
             detailsId: currency.detailsId,
             icon: priceData.currencyDetails.find(detail => detail.id === currency.receive!.get_currency_id)!.icon,
             name: currency.currencyTypeName,
@@ -156,12 +164,8 @@ async function load (force: boolean = false) {
           lines: NinjaItemInfo[]
         } = await response.json()
         for (const item of priceData.lines) {
-          const detailsId = dataType.type === 'UniqueFlask' // seems poe.ninja keeps this for compatability
-            ? nameToDetailsId(`${item.detailsId} ${item.baseType}`)
-            : item.detailsId
-
-          PRICE_BY_DETAILS_ID.set(detailsId, {
-            detailsId,
+          PRICE_BY_DETAILS_ID.set(dataType.key?.(item) ?? `ITEM::${item.name}`, {
+            detailsId: item.detailsId,
             icon: item.icon,
             name: item.name,
             chaosValue: item.chaosValue,

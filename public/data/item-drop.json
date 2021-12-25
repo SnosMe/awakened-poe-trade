@@ -1,1280 +1,1280 @@
 [
   {
     "query": [
-      "splinter-of-uul-netol",
-      "uul-netols-breachstone",
-      "uul-netols-charged-breachstone",
-      "uul-netols-enriched-breachstone",
-      "uul-netols-pure-breachstone"
+      "ITEM::Splinter of Uul-Netol",
+      "ITEM::Uul-Netol's Breachstone",
+      "ITEM::Uul-Netol's Charged Breachstone",
+      "ITEM::Uul-Netol's Enriched Breachstone",
+      "ITEM::Uul-Netol's Pure Breachstone"
     ],
     "items": [
-      "blessing-of-uul-netol",
-      "the-infinite-pursuit-goliath-greaves",
-      "uul-netols-kiss-labrys",
-      "the-anticipation-ezomyte-tower-shield"
+      "ITEM::Blessing of Uul-Netol",
+      "UNIQUE::The Infinite Pursuit // Goliath Greaves",
+      "UNIQUE::Uul-Netol's Kiss // Labrys",
+      "UNIQUE::The Anticipation // Ezomyte Tower Shield"
     ]
   },
   {
     "query": [
-      "splinter-of-xoph",
-      "xophs-breachstone",
-      "xophs-charged-breachstone",
-      "xophs-enriched-breachstone",
-      "xophs-pure-breachstone"
+      "ITEM::Splinter of Xoph",
+      "ITEM::Xoph's Breachstone",
+      "ITEM::Xoph's Charged Breachstone",
+      "ITEM::Xoph's Enriched Breachstone",
+      "ITEM::Xoph's Pure Breachstone"
     ],
     "items": [
-      "blessing-of-xoph",
-      "the-formless-flame-siege-helmet",
-      "xophs-heart-amber-amulet",
-      "xophs-inception-bone-bow",
-      "the-escape"
+      "ITEM::Blessing of Xoph",
+      "UNIQUE::The Formless Flame // Siege Helmet",
+      "UNIQUE::Xoph's Heart // Amber Amulet",
+      "UNIQUE::Xoph's Inception // Bone Bow",
+      "DIVINATION_CARD::The Escape"
     ]
   },
   {
     "query": [
-      "splinter-of-tul",
-      "tuls-breachstone",
-      "tuls-charged-breachstone",
-      "tuls-enriched-breachstone",
-      "tuls-pure-breachstone"
+      "ITEM::Splinter of Tul",
+      "ITEM::Tul's Breachstone",
+      "ITEM::Tul's Charged Breachstone",
+      "ITEM::Tul's Enriched Breachstone",
+      "ITEM::Tul's Pure Breachstone"
     ],
     "items": [
-      "blessing-of-tul",
-      "tulborn-spiraled-wand",
-      "the-halcyon-jade-amulet",
-      "the-snowblind-grace-coronal-leather",
-      "the-escape"
+      "ITEM::Blessing of Tul",
+      "UNIQUE::Tulborn // Spiraled Wand",
+      "UNIQUE::The Halcyon // Jade Amulet",
+      "UNIQUE::The Snowblind Grace // Coronal Leather",
+      "DIVINATION_CARD::The Escape"
     ]
   },
   {
     "query": [
-      "splinter-of-esh",
-      "eshs-breachstone",
-      "eshs-charged-breachstone",
-      "eshs-enriched-breachstone",
-      "eshs-pure-breachstone"
+      "ITEM::Splinter of Esh",
+      "ITEM::Esh's Breachstone",
+      "ITEM::Esh's Charged Breachstone",
+      "ITEM::Esh's Enriched Breachstone",
+      "ITEM::Esh's Pure Breachstone"
     ],
     "items": [
-      "blessing-of-esh",
-      "voice-of-the-storm-lapis-amulet",
-      "hand-of-thought-and-motion-blinder",
-      "eshs-mirror-thorium-spirit-shield",
-      "the-escape"
+      "ITEM::Blessing of Esh",
+      "UNIQUE::Voice of the Storm // Lapis Amulet",
+      "UNIQUE::Hand of Thought and Motion // Blinder",
+      "UNIQUE::Esh's Mirror // Thorium Spirit Shield",
+      "DIVINATION_CARD::The Escape"
     ]
   },
   {
     "query": [
-      "splinter-of-chayula",
-      "chayulas-breachstone",
-      "chayulas-charged-breachstone",
-      "chayulas-enriched-breachstone",
-      "chayulas-pure-breachstone"
+      "ITEM::Splinter of Chayula",
+      "ITEM::Chayula's Breachstone",
+      "ITEM::Chayula's Charged Breachstone",
+      "ITEM::Chayula's Enriched Breachstone",
+      "ITEM::Chayula's Pure Breachstone"
     ],
     "items": [
-      "blessing-of-chayula",
-      "skin-of-the-loyal-simple-robe-6l",
-      "severed-in-sleep-cutlass",
-      "the-blue-dream-cobalt-jewel",
-      "the-green-dream-viridian-jewel",
-      "the-red-dream-crimson-jewel"
+      "ITEM::Blessing of Chayula",
+      "UNIQUE::Skin of the Loyal // Simple Robe // 6L",
+      "UNIQUE::Severed in Sleep // Cutlass",
+      "UNIQUE::The Blue Dream // Cobalt Jewel",
+      "UNIQUE::The Green Dream // Viridian Jewel",
+      "UNIQUE::The Red Dream // Crimson Jewel"
     ]
   },
   {
     "query": [
-      "sacrifice-at-dawn",
-      "sacrifice-at-midnight",
-      "sacrifice-at-noon",
-      "sacrifice-at-dusk"
+      "ITEM::Sacrifice at Dawn",
+      "ITEM::Sacrifice at Midnight",
+      "ITEM::Sacrifice at Noon",
+      "ITEM::Sacrifice at Dusk"
     ],
     "items": [
-      "atziris-promise-amethyst-flask",
-      "doryanis-catalyst-vaal-sceptre",
-      "mortal-ignorance",
-      "mortal-hope",
-      "mortal-rage",
-      "mortal-grief",
-      "alluring-bounty",
-      "the-ethereal"
+      "UNIQUE::Atziri's Promise // Amethyst Flask",
+      "UNIQUE::Doryani's Catalyst // Vaal Sceptre",
+      "ITEM::Mortal Ignorance",
+      "ITEM::Mortal Hope",
+      "ITEM::Mortal Rage",
+      "ITEM::Mortal Grief",
+      "DIVINATION_CARD::Alluring Bounty",
+      "DIVINATION_CARD::The Ethereal"
     ]
   },
   {
     "query": [
-      "mortal-ignorance",
-      "mortal-hope",
-      "mortal-rage",
-      "mortal-grief"
+      "ITEM::Mortal Ignorance",
+      "ITEM::Mortal Hope",
+      "ITEM::Mortal Rage",
+      "ITEM::Mortal Grief"
     ],
     "items": [
-      "atziris-acuity-vaal-gauntlets",
-      "atziris-disfavour-vaal-axe",
-      "the-vertex-vaal-mask",
-      "atziris-splendour-es-sacrificial-garb",
-      "atziris-splendour-evasion-es-life-sacrificial-garb",
-      "alluring-bounty",
-      "house-of-mirrors"
+      "UNIQUE::Atziri's Acuity // Vaal Gauntlets",
+      "UNIQUE::Atziri's Disfavour // Vaal Axe",
+      "UNIQUE::The Vertex // Vaal Mask",
+      "UNIQUE::Atziri's Splendour // Sacrificial Garb // ES",
+      "UNIQUE::Atziri's Splendour // Sacrificial Garb // Evasion/ES/Life",
+      "DIVINATION_CARD::Alluring Bounty",
+      "DIVINATION_CARD::House of Mirrors"
     ]
   },
   {
     "query": [
-      "volkuurs-key",
-      "yriels-key",
-      "inyas-key",
-      "ebers-key"
+      "ITEM::Volkuur's Key",
+      "ITEM::Yriel's Key",
+      "ITEM::Inya's Key",
+      "ITEM::Eber's Key"
     ],
     "items": [
-      "ebers-unification-hubris-circlet",
-      "inyas-epiphany-arcanist-slippers",
-      "yriels-fostering-poison-exquisite-leather",
-      "yriels-fostering-bleeding-exquisite-leather",
-      "yriels-fostering-maim-exquisite-leather",
-      "volkuurs-guidance-cold-zealot-gloves",
-      "volkuurs-guidance-fire-zealot-gloves",
-      "volkuurs-guidance-lightning-zealot-gloves"
+      "UNIQUE::Eber's Unification // Hubris Circlet",
+      "UNIQUE::Inya's Epiphany // Arcanist Slippers",
+      "UNIQUE::Yriel's Fostering // Exquisite Leather // Poison",
+      "UNIQUE::Yriel's Fostering // Exquisite Leather // Bleeding",
+      "UNIQUE::Yriel's Fostering // Exquisite Leather // Maim",
+      "UNIQUE::Volkuur's Guidance // Zealot Gloves // Cold",
+      "UNIQUE::Volkuur's Guidance // Zealot Gloves // Fire",
+      "UNIQUE::Volkuur's Guidance // Zealot Gloves // Lightning"
     ]
   },
   {
     "query": [
-      "fragment-of-the-minotaur",
-      "fragment-of-the-chimera",
-      "fragment-of-the-phoenix",
-      "fragment-of-the-hydra"
+      "ITEM::Fragment of the Minotaur",
+      "ITEM::Fragment of the Chimera",
+      "ITEM::Fragment of the Phoenix",
+      "ITEM::Fragment of the Hydra"
     ],
     "items": [
-      "starforge-infernal-sword",
-      "dying-sun-ruby-flask",
-      "shapers-touch-crusader-gloves",
-      "solstice-vigil-onyx-amulet",
-      "voidwalker-murder-boots",
-      "fragment-of-knowledge",
-      "fragment-of-shape"
+      "UNIQUE::Starforge // Infernal Sword",
+      "UNIQUE::Dying Sun // Ruby Flask",
+      "UNIQUE::Shaper's Touch // Crusader Gloves",
+      "UNIQUE::Solstice Vigil // Onyx Amulet",
+      "UNIQUE::Voidwalker // Murder Boots",
+      "ITEM::Fragment of Knowledge",
+      "ITEM::Fragment of Shape"
     ]
   },
   {
     "query": [
-      "fragment-of-eradication",
-      "fragment-of-enslavement",
-      "fragment-of-purification",
-      "fragment-of-constriction"
+      "ITEM::Fragment of Eradication",
+      "ITEM::Fragment of Enslavement",
+      "ITEM::Fragment of Purification",
+      "ITEM::Fragment of Constriction"
     ],
     "items": [
-      "blasphemers-grasp-assassins-mitts",
-      "cyclopean-coil-leather-belt",
-      "nebuloch-nightmare-mace",
-      "shimmeron-tornado-wand",
-      "hopeshredder-ranger-bow",
-      "watchers-eye-prismatic-jewel",
-      "impresence-cold-onyx-amulet",
-      "impresence-lightning-onyx-amulet",
-      "impresence-fire-onyx-amulet",
-      "impresence-chaos-onyx-amulet",
-      "impresence-physical-onyx-amulet",
-      "fragment-of-terror",
-      "fragment-of-emptiness"
+      "UNIQUE::Blasphemer's Grasp // Assassin's Mitts",
+      "UNIQUE::Cyclopean Coil // Leather Belt",
+      "UNIQUE::Nebuloch // Nightmare Mace",
+      "UNIQUE::Shimmeron // Tornado Wand",
+      "UNIQUE::Hopeshredder // Ranger Bow",
+      "UNIQUE::Watcher's Eye // Prismatic Jewel",
+      "UNIQUE::Impresence // Onyx Amulet // Cold",
+      "UNIQUE::Impresence // Onyx Amulet // Lightning",
+      "UNIQUE::Impresence // Onyx Amulet // Fire",
+      "UNIQUE::Impresence // Onyx Amulet // Chaos",
+      "UNIQUE::Impresence // Onyx Amulet // Physical",
+      "ITEM::Fragment of Terror",
+      "ITEM::Fragment of Emptiness"
     ]
   },
   {
     "query": [
-      "fragment-of-knowledge",
-      "fragment-of-shape",
-      "fragment-of-terror",
-      "fragment-of-emptiness"
+      "ITEM::Fragment of Knowledge",
+      "ITEM::Fragment of Shape",
+      "ITEM::Fragment of Terror",
+      "ITEM::Fragment of Emptiness"
     ],
     "items": [
-      "watchers-eye-prismatic-jewel",
-      "disintegrator-maelstrom-staff",
-      "voidfletcher-penetrating-arrow-quiver",
-      "mark-of-the-elder-steel-ring",
-      "mark-of-the-shaper-opal-ring",
-      "indigon-hubris-circlet",
-      "voidforge-infernal-sword",
-      "the-eternity-shroud-blood-raiment"
+      "UNIQUE::Watcher's Eye // Prismatic Jewel",
+      "UNIQUE::Disintegrator // Maelström Staff",
+      "UNIQUE::Voidfletcher // Penetrating Arrow Quiver",
+      "UNIQUE::Mark of the Elder // Steel Ring",
+      "UNIQUE::Mark of the Shaper // Opal Ring",
+      "UNIQUE::Indigon // Hubris Circlet",
+      "UNIQUE::Voidforge // Infernal Sword",
+      "UNIQUE::The Eternity Shroud // Blood Raiment"
     ]
   },
   {
     "query": [
-      "tainted-oil",
-      "golden-oil",
-      "silver-oil",
-      "opalescent-oil",
-      "black-oil",
-      "crimson-oil",
-      "violet-oil",
-      "indigo-oil",
-      "azure-oil",
-      "teal-oil",
-      "verdant-oil",
-      "amber-oil",
-      "sepia-oil",
-      "clear-oil"
-    ],
-    "items": []
-  },
-  {
-    "query": [
-      "Abrasive Catalyst",
-      "Fertile Catalyst",
-      "Imbued Catalyst",
-      "Intrinsic Catalyst",
-      "Prismatic Catalyst",
-      "Tempering Catalyst",
-      "Turbulent Catalyst",
-      "Unstable Catalyst",
-      "Accelerating Catalyst",
-      "Noxious Catalyst"
+      "ITEM::Tainted Oil",
+      "ITEM::Golden Oil",
+      "ITEM::Silver Oil",
+      "ITEM::Opalescent Oil",
+      "ITEM::Black Oil",
+      "ITEM::Crimson Oil",
+      "ITEM::Violet Oil",
+      "ITEM::Indigo Oil",
+      "ITEM::Azure Oil",
+      "ITEM::Teal Oil",
+      "ITEM::Verdant Oil",
+      "ITEM::Amber Oil",
+      "ITEM::Sepia Oil",
+      "ITEM::Clear Oil"
     ],
     "items": []
   },
   {
     "query": [
-      "timeless-eternal-empire-splinter",
-      "timeless-karui-splinter",
-      "timeless-maraketh-splinter",
-      "timeless-templar-splinter",
-      "timeless-vaal-splinter"
-    ],
-    "items": [
-      "timeless-eternal-emblem",
-      "timeless-karui-emblem",
-      "timeless-maraketh-emblem",
-      "timeless-templar-emblem",
-      "timeless-vaal-emblem"
-    ]
-  },
-  {
-    "query": [
-      "timeless-eternal-emblem",
-      "timeless-karui-emblem",
-      "timeless-maraketh-emblem",
-      "timeless-templar-emblem",
-      "timeless-vaal-emblem"
+      "ITEM::Abrasive Catalyst",
+      "ITEM::Fertile Catalyst",
+      "ITEM::Imbued Catalyst",
+      "ITEM::Intrinsic Catalyst",
+      "ITEM::Prismatic Catalyst",
+      "ITEM::Tempering Catalyst",
+      "ITEM::Turbulent Catalyst",
+      "ITEM::Unstable Catalyst",
+      "ITEM::Accelerating Catalyst",
+      "ITEM::Noxious Catalyst"
     ],
     "items": []
   },
   {
     "query": [
-      "prime-chaotic-resonator",
-      "powerful-chaotic-resonator",
-      "potent-chaotic-resonator",
-      "primitive-chaotic-resonator"
+      "ITEM::Timeless Eternal Empire Splinter",
+      "ITEM::Timeless Karui Splinter",
+      "ITEM::Timeless Maraketh Splinter",
+      "ITEM::Timeless Templar Splinter",
+      "ITEM::Timeless Vaal Splinter"
+    ],
+    "items": [
+      "ITEM::Timeless Eternal Emblem",
+      "ITEM::Timeless Karui Emblem",
+      "ITEM::Timeless Maraketh Emblem",
+      "ITEM::Timeless Templar Emblem",
+      "ITEM::Timeless Vaal Emblem"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Timeless Eternal Emblem",
+      "ITEM::Timeless Karui Emblem",
+      "ITEM::Timeless Maraketh Emblem",
+      "ITEM::Timeless Templar Emblem",
+      "ITEM::Timeless Vaal Emblem"
     ],
     "items": []
   },
   {
     "query": [
-      "simulacrum-splinter",
-      "simulacrum"
-    ],
-    "items": [
-      "split-personality-crimson-jewel",
-      "Megalomaniac Medium Cluster Jewel",
-      "voices-5-passives-large-cluster-jewel",
-      "voices-7-passives-large-cluster-jewel"
-    ]
-  },
-
-
-
-
-
-
-
-
-  {
-    "query": [
-      "Primordial Might Crimson Jewel",
-      "Primordial Harmony Cobalt Jewel",
-      "Primordial Eminence Viridian Jewel"
-    ],
-    "items": [
-      "The Anima Stone Prismatic Jewel"
-    ]
-  },
-  {
-    "query": [
-      "Grelwood Shank Eternal Sword",
-      "Beltimber Blade Eternal Sword"
-    ],
-    "items": [
-      "Arborix Assassin Bow"
-    ]
-  },
-  {
-    "query": [
-      "Shade of Solaris Sage Wand",
-      "Light of Lunaris Jingling Spirit Shield"
-    ],
-    "items": [
-      "Duskdawn Maelström Staff"
-    ]
-  },
-  {
-    "query": [
-      "The Goddess Bound Whalebone Rapier"
-    ],
-    "items": [
-      "The Goddess Scorned Elegant Sword"
-    ]
-  },
-  {
-    "query": [
-      "Soul Taker Siege Axe",
-      "Heartbreaker Royal Skean"
-    ],
-    "items": [
-      "Kingmaker Despot Axe"
-    ]
-  },
-  {
-    "query": [
-      "Invictus Solaris Archon Kite Shield",
-      "Vix Lunaris Cardinal Round Shield"
-    ],
-    "items": [
-      "Magna Eclipsis Pinnacle Tower Shield"
-    ]
-  },
-  {
-    "query": [
-      "Feastbind Rustic Sash",
-      "Faminebind Rustic Sash"
-    ],
-    "items": [
-      "The Retch Rustic Sash"
-    ]
-  },
-  {
-    "query": [
-      "Berek's Grip Two-Stone Ring",
-      "Berek's Pass Two-Stone Ring",
-      "Berek's Respite Two-Stone Ring"
-    ],
-    "items": [
-      "The Taming Prismatic Ring"
-    ]
-  },
-  {
-    "query": [
-      "First Piece of Brutality Imperial Staff Piece",
-      "Second Piece of Brutality Imperial Staff Piece",
-      "Third Piece of Brutality Imperial Staff Piece"
-    ],
-    "items": [
-      "The Enmity Divine Imperial Staff"
-    ]
-  },
-  {
-    "query": [
-      "The Enmity Divine Imperial Staff",
-      "Haemocombustion Scroll"
-    ],
-    "items": [
-      "The Yielding Mortality Imperial Staff"
-    ]
-  },
-  {
-    "query": [
-      "First Piece of Directions Blunt Arrow Quiver Piece",
-      "Second Piece of Directions Blunt Arrow Quiver Piece",
-      "Third Piece of Directions Blunt Arrow Quiver Piece"
-    ],
-    "items": [
-      "The Fracturing Spinner Blunt Arrow Quiver"
-    ]
-  },
-  {
-    "query": [
-      "The Fracturing Spinner Blunt Arrow Quiver",
-      "Fragmentation Scroll"
-    ],
-    "items": [
-      "The Shattered Divinity Blunt Arrow Quiver"
-    ]
-  },
-  {
-    "query": [
-      "First Piece of Focus Archon Kite Shield Piece",
-      "Second Piece of Focus Archon Kite Shield Piece",
-      "Third Piece of Focus Archon Kite Shield Piece",
-      "Fourth Piece of Focus Archon Kite Shield Piece"
-    ],
-    "items": [
-      "The Unshattered Will Archon Kite Shield"
-    ]
-  },
-  {
-    "query": [
-      "The Unshattered Will Archon Kite Shield",
-      "Specularity Scroll"
-    ],
-    "items": [
-      "The Immortal Will Archon Kite Shield"
-    ]
-  },
-  {
-    "query": [
-      "First Piece of Storms Callous Mask Piece",
-      "Second Piece of Storms Callous Mask Piece",
-      "Third Piece of Storms Callous Mask Piece"
-    ],
-    "items": [
-      "The Tempest's Binding Callous Mask"
-    ]
-  },
-  {
-    "query": [
-      "The Tempest's Binding Callous Mask",
-      "Deregulation Scroll"
-    ],
-    "items": [
-      "The Tempest's Liberation Callous Mask"
-    ]
-  },
-  {
-    "query": [
-      "First Piece of the Arcane Legion Sword Piece",
-      "Second Piece of the Arcane Legion Sword Piece",
-      "Third Piece of the Arcane Legion Sword Piece"
-    ],
-    "items": [
-      "The Rippling Thoughts Legion Sword"
-    ]
-  },
-  {
-    "query": [
-      "The Rippling Thoughts Legion Sword",
-      "Electroshock Scroll"
-    ],
-    "items": [
-      "The Surging Thoughts Legion Sword"
-    ]
-  },
-  {
-    "query": [
-      "First Piece of Time Cloth Belt Piece",
-      "Second Piece of Time Cloth Belt Piece"
-    ],
-    "items": [
-      "The Flow Untethered Cloth Belt"
-    ]
-  },
-  {
-    "query": [
-      "The Flow Untethered Cloth Belt",
-      "Time-light Scroll"
-    ],
-    "items": [
-      "The Torrent's Reclamation Cloth Belt"
-    ]
-  },
-  {
-    "query": [
-      "The Blue Dream Cobalt Jewel",
-      "Skin of the Loyal Simple Robe",
-      "The Red Dream Crimson Jewel",
-      "Severed in Sleep Cutlass",
-      "Eye of Chayula Onyx Amulet",
-      "The Green Dream Viridian Jewel",
-      "Blessing of Chayula"
-    ],
-    "items": [
-      "The Blue Nightmare Cobalt Jewel",
-      "Skin of the Lords Simple Robe",
-      "The Red Nightmare Crimson Jewel",
-      "United in Dream Cutlass",
-      "Presence of Chayula Onyx Amulet",
-      "The Green Nightmare Viridian Jewel"
-    ]
-  },
-  {
-    "query": [
-      "Esh's Mirror Thorium Spirit Shield",
-      "Voice of the Storm Lapis Amulet",
-      "Hand of Thought and Motion Blinder",
-      "Blessing of Esh"
-    ],
-    "items": [
-      "Esh's Visage Vaal Spirit Shield",
-      "Choir of the Storm Lapis Amulet",
-      "Hand of Wisdom and Action Imperial Claw"
-    ]
-  },
-  {
-    "query": [
-      "Tulborn Spiraled Wand",
-      "The Snowblind Grace Coronal Leather",
-      "The Halcyon Jade Amulet",
-      "Blessing of Tul"
-    ],
-    "items": [
-      "Tulfall Tornado Wand",
-      "The Perfect Form Zodiac Leather",
-      "The Pandemonius Jade Amulet"
-    ]
-  },
-  {
-    "query": [
-      "The Infinite Pursuit Goliath Greaves",
-      "The Anticipation Ezomyte Tower Shield",
-      "Uul-Netol's Kiss Labrys",
-      "Blessing of Uul-Netol"
-    ],
-    "items": [
-      "The Red Trail Titan Greaves",
-      "The Surrender Ezomyte Tower Shield",
-      "Uul-Netol's Embrace Vaal Axe"
-    ]
-  },
-  {
-    "query": [
-      "The Formless Flame Siege Helmet",
-      "Xoph's Inception Bone Bow",
-      "Xoph's Heart Amber Amulet",
-      "Blessing of Xoph"
-    ],
-    "items": [
-      "The Formless Inferno Royal Burgonet",
-      "Xoph's Nurture Citadel Bow",
-      "Xoph's Blood Amber Amulet"
-    ]
-  },
-  {
-    "query": [
-      "Vial of Awakening",
-      "Apep's Slumber Ancient Spirit Shield"
-    ],
-    "items": [
-      "Apep's Supremacy Vaal Spirit Shield"
-    ]
-  },
-  {
-    "query": [
-      "Vial of Consequence",
-      "Coward's Chains Chain Belt"
-    ],
-    "items": [
-      "Coward's Legacy Chain Belt"
-    ]
-  },
-  {
-    "query": [
-      "Vial of Dominance",
-      "Architect's Hand Strapped Mitts"
-    ],
-    "items": [
-      "Slavedriver's Hand Ambush Mitts"
-    ]
-  },
-  {
-    "query": [
-      "Vial of Fate",
-      "Story of the Vaal Variscite Blade"
-    ],
-    "items": [
-      "Fate of the Vaal Gemstone Sword"
-    ]
-  },
-  {
-    "query": [
-      "Vial of Summoning",
-      "Mask of the Spirit Drinker Crusader Helmet"
-    ],
-    "items": [
-      "Mask of the Stitched Demon Magistrate Crown"
-    ]
-  },
-  {
-    "query": [
-      "Vial of the Ritual",
-      "Dance of the Offered Shackled Boots"
-    ],
-    "items": [
-      "Omeyocan Carnal Boots"
-    ]
-  },
-  {
-    "query": [
-      "Tempered Flesh Crimson Jewel",
-      "Tempered Spirit Viridian Jewel",
-      "Tempered Mind Cobalt Jewel",
-      "Vial of Transcendence"
-    ],
-    "items": [
-      "Transcendent Flesh Crimson Jewel",
-      "Transcendent Spirit Viridian Jewel",
-      "Transcendent Mind Cobalt Jewel"
-    ]
-  },
-  {
-    "query": [
-      "Vial of Sacrifice",
-      "Sacrificial Heart Paua Amulet"
-    ],
-    "items": [
-      "Zerphi's Heart Paua Amulet"
-    ]
-  },
-  {
-    "query": [
-      "Vial of the Ghost",
-      "Soul Catcher Quartz Flask"
-    ],
-    "items": [
-      "Soul Ripper Quartz Flask"
-    ]
-  },
-
-
-
-
-
-
-
-
-  {
-    "query": [
-      "Power Magnified",
-      "Reverberation Rod Spiraled Wand"
-    ],
-    "items": [
-      "Amplification Rod Spiraled Wand"
-    ]
-  },
-  {
-    "query": [
-      "Song of the Sekhema",
-      "Asenath's Mark Iron Circlet"
-    ],
-    "items": [
-      "Asenath's Chant Iron Circlet"
-    ]
-  },
-  {
-    "query": [
-      "The Queen's Sacrifice",
-      "Atziri's Mirror Golden Buckler"
-    ],
-    "items": [
-      "Atziri's Reflection Golden Buckler"
-    ]
-  },
-  {
-    "query": [
-      "Cold Greed",
-      "Cameria's Maul Gavel"
-    ],
-    "items": [
-      "Cameria's Avarice Gavel"
-    ]
-  },
-  {
-    "query": [
-      "Faith Exhumed",
-      "Chober Chaber Great Mallet"
-    ],
-    "items": [
-      "Chaber Cairn Great Mallet"
-    ]
-  },
-  {
-    "query": [
-      "Blinding Light",
-      "Eclipse Solaris Crystal Wand"
-    ],
-    "items": [
-      "Corona Solaris Crystal Wand"
-    ]
-  },
-  {
-    "query": [
-      "Heavy Blows",
-      "Craghead Serrated Arrow Quiver"
-    ],
-    "items": [
-      "Cragfall Serrated Arrow Quiver"
-    ]
-  },
-  {
-    "query": [
-      "End of the Light",
-      "Icetomb Latticed Ringmail"
-    ],
-    "items": [
-      "Crystal Vault Latticed Ringmail"
-    ]
-  },
-  {
-    "query": [
-      "The Bowstring's Music",
-      "Death's Harp Death Bow"
-    ],
-    "items": [
-      "Death's Opus Death Bow"
-    ]
-  },
-  {
-    "query": [
-      "Dying Cry",
-      "Deidbell Gilded Sallet"
-    ],
-    "items": [
-      "Deidbellow Gilded Sallet"
-    ]
-  },
-  {
-    "query": [
-      "The Malevolent Witch",
-      "Doedre's Tenure Velvet Gloves"
-    ],
-    "items": [
-      "Doedre's Malevolence Velvet Gloves"
-    ]
-  },
-  {
-    "query": [
-      "Ancient Doom",
-      "Doomfletch Royal Bow"
-    ],
-    "items": [
-      "Doomfletch's Prism Royal Bow"
-    ]
-  },
-  {
-    "query": [
-      "The Dreaded Rhoa",
-      "Redbeak Rusted Sword"
-    ],
-    "items": [
-      "Dreadbeak Rusted Sword"
-    ]
-  },
-  {
-    "query": [
-      "Burning Dread",
-      "Dreadarc Cleaver"
-    ],
-    "items": [
-      "Dreadsurge Cleaver"
-    ]
-  },
-  {
-    "query": [
-      "Agony at Dusk",
-      "Dusktoe Ironscale Boots"
-    ],
-    "items": [
-      "Duskblight Ironscale Boots"
-    ]
-  },
-  {
-    "query": [
-      "The Bloody Flowers Redux",
-      "Ezomyte Peak Iron Hat"
-    ],
-    "items": [
-      "Ezomyte Hold Iron Hat"
-    ]
-  },
-  {
-    "query": [
-      "Dark Instincts",
-      "Foxshade Wild Leather"
-    ],
-    "items": [
-      "Fox's Fortune Wild Leather"
-    ]
-  },
-  {
-    "query": [
-      "A Vision of Ice and Fire",
-      "Heatshiver Leather Hood"
-    ],
-    "items": [
-      "Frostferno Leather Hood"
-    ]
-  },
-  {
-    "query": [
-      "Black Devotion",
-      "Geofri's Baptism Brass Maul"
-    ],
-    "items": [
-      "Geofri's Devotion Brass Maul"
-    ]
-  },
-  {
-    "query": [
-      "The Bishop's Legacy",
-      "Geofri's Crest Great Crown"
-    ],
-    "items": [
-      "Geofri's Legacy Great Crown"
-    ]
-  },
-  {
-    "query": [
-      "Greed's Folly",
-      "Wondertrap Velvet Slippers"
-    ],
-    "items": [
-      "Greedtrap Velvet Slippers"
-    ]
-  },
-  {
-    "query": [
-      "Fire and Ice",
-      "Hrimsorrow Goathide Gloves"
-    ],
-    "items": [
-      "Hrimburn Goathide Gloves"
-    ]
-  },
-  {
-    "query": [
-      "Winter's Mournful Melodies",
-      "Hrimnor's Hymn Sledgehammer"
-    ],
-    "items": [
-      "Hrimnor's Dirge Sledgehammer"
-    ]
-  },
-  {
-    "query": [
-      "A Dishonourable Death",
-      "Hyrri's Bite Sharktooth Arrow Quiver"
-    ],
-    "items": [
-      "Hyrri's Demise Sharktooth Arrow Quiver"
-    ]
-  },
-  {
-    "query": [
-      "The Snuffed Flame",
-      "Kaltenhalt Painted Buckler"
-    ],
-    "items": [
-      "Kaltensoul Painted Buckler"
-    ]
-  },
-  {
-    "query": [
-      "The King's Path",
-      "Kaom's Sign Coral Ring"
-    ],
-    "items": [
-      "Kaom's Way Coral Ring"
-    ]
-  },
-  {
-    "query": [
-      "The Karui Rebellion",
-      "Karui Ward Jade Amulet"
-    ],
-    "items": [
-      "Karui Charge Jade Amulet"
-    ]
-  },
-  {
-    "query": [
-      "The Nightmare Awakens",
-      "Malachai's Simula Iron Mask"
-    ],
-    "items": [
-      "Malachai's Awakening Iron Mask"
-    ]
-  },
-  {
-    "query": [
-      "Pleasure and Pain",
-      "Crown of Thorns Vine Circlet"
-    ],
-    "items": [
-      "Martyr's Crown Vine Circlet"
-    ]
-  },
-  {
-    "query": [
-      "Trapped in the Tower",
-      "Fencoil Gnarled Branch"
-    ],
-    "items": [
-      "Mirebough Gnarled Branch"
-    ]
-  },
-  {
-    "query": [
-      "A Forest of False Idols",
-      "Araku Tiki Coral Amulet"
-    ],
-    "items": [
-      "Ngamahu Tiki Coral Amulet"
-    ]
-  },
-  {
-    "query": [
-      "The Fall of an Empire",
-      "Quecholli Jagged Maul"
-    ],
-    "items": [
-      "Panquetzaliztli Jagged Maul"
-    ]
-  },
-  {
-    "query": [
-      "The Misunderstood Queen",
-      "Queen's Decree Ornate Sword"
-    ],
-    "items": [
-      "Queen's Escape Ornate Sword"
-    ]
-  },
-  {
-    "query": [
-      "The Beginning and the End",
-      "Realmshaper Iron Staff"
-    ],
-    "items": [
-      "Realm Ender Iron Staff"
-    ]
-  },
-  {
-    "query": [
-      "Crimson Hues",
-      "Goredrill Skinning Knife"
-    ],
-    "items": [
-      "Sanguine Gambol Skinning Knife"
-    ]
-  },
-  {
-    "query": [
-      "The Flow of Energy",
-      "Shavronne's Pace Scholar Boots"
-    ],
-    "items": [
-      "Shavronne's Gambit Scholar Boots"
-    ]
-  },
-  {
-    "query": [
-      "The Silverwood",
-      "Silverbranch Crude Bow"
-    ],
-    "items": [
-      "Silverbough Crude Bow"
-    ]
-  },
-  {
-    "query": [
-      "Sun's Punishment",
-      "Sundance Clasped Boots"
-    ],
-    "items": [
-      "Sunspite Clasped Boots"
-    ]
-  },
-  {
-    "query": [
-      "Severed Limbs",
-      "Limbsplit Woodsplitter"
-    ],
-    "items": [
-      "The Cauteriser Woodsplitter"
-    ]
-  },
-  {
-    "query": [
-      "Dance of Steel",
-      "The Dancing Dervish Reaver Sword"
-    ],
-    "items": [
-      "The Dancing Duo Reaver Sword"
-    ]
-  },
-  {
-    "query": [
-      "Blind Faith",
-      "The Ignomon Gold Amulet"
-    ],
-    "items": [
-      "The Effigon Gold Amulet"
-    ]
-  },
-  {
-    "query": [
-      "The Apex Predator",
-      "The Screaming Eagle Jade Hatchet"
-    ],
-    "items": [
-      "The Gryphon Jade Hatchet"
-    ]
-  },
-  {
-    "query": [
-      "Battle Hardened",
-      "Iron Heart Crusader Plate"
-    ],
-    "items": [
-      "The Iron Fortress Crusader Plate"
-    ]
-  },
-  {
-    "query": [
-      "The Great Leader of the North",
-      "The Great Mind of the North",
-      "The Magnate Studded Belt"
-    ],
-    "items": [
-      "The Nomad Studded Belt",
-      "The Tactician Studded Belt"
-    ]
-  },
-  {
-    "query": [
-      "Nature's Resilience",
-      "Springleaf Plank Kite Shield"
-    ],
-    "items": [
-      "The Oak Plank Kite Shield"
-    ]
-  },
-  {
-    "query": [
-      "Fire and Brimstone",
-      "Blackgleam Fire Arrow Quiver"
-    ],
-    "items": [
-      "The Signal Fire Fire Arrow Quiver"
-    ]
-  },
-  {
-    "query": [
-      "The Storm Spire",
-      "The Stormheart Royal Staff"
-    ],
-    "items": [
-      "The Stormwall Royal Staff"
-    ]
-  },
-  {
-    "query": [
-      "The Servant's Heart",
-      "Storm Cloud Long Bow"
-    ],
-    "items": [
-      "The Tempest Long Bow"
-    ]
-  },
-  {
-    "query": [
-      "Mouth of Horrors",
-      "Chalice of Horrors War Buckler"
-    ],
-    "items": [
-      "Thirst for Horrors War Buckler"
-    ]
-  },
-  {
-    "query": [
-      "A Rift in Time",
-      "Timeclasp Moonstone Ring"
-    ],
-    "items": [
-      "Timetwist Moonstone Ring"
-    ]
-  },
-  {
-    "query": [
-      "From The Void",
-      "Blackheart Iron Ring"
-    ],
-    "items": [
-      "Voidheart Iron Ring"
-    ]
-  },
-  {
-    "query": [
-      "The King and the Brambles",
-      "Bramblejack Plate Vest"
-    ],
-    "items": [
-      "Wall of Brambles Plate Vest"
-    ]
-  },
-  {
-    "query": [
-      "The Mentor",
-      "Matua Tupuna Tarnished Spirit Shield"
-    ],
-    "items": [
-      "Whakatutuki o Matua Tarnished Spirit Shield"
-    ]
-  },
-  {
-    "query": [
-      "Last of the Wildmen",
-      "Briskwrap Strapped Leather"
-    ],
-    "items": [
-      "Wildwrap Strapped Leather"
-    ]
-  },
-  {
-    "query": [
-      "Darktongue's Shriek",
-      "Windscream Reinforced Greaves"
-    ],
-    "items": [
-      "Windshriek Reinforced Greaves"
-    ]
-  },
-  {
-    "query": [
-      "Cold Blooded Fury",
-      "Bloodboil Coral Ring"
-    ],
-    "items": [
-      "Winterweave Coral Ring"
-    ]
-  },
-  {
-    "query": [
-      "Anarchy's End I",
-      "Anarchy's End II",
-      "Anarchy's End III",
-      "Anarchy's End IV"
-    ],
-    "items": [
-      "Voltaxic Rift Spine Bow"
-    ]
-  },
-  {
-    "query": [
-      "Beyond Sight I",
-      "Beyond Sight II",
-      "Beyond Sight III",
-      "Beyond Sight IV"
+      "ITEM::Prime Chaotic Resonator",
+      "ITEM::Powerful Chaotic Resonator",
+      "ITEM::Potent Chaotic Resonator",
+      "ITEM::Primitive Chaotic Resonator"
     ],
     "items": []
   },
   {
     "query": [
-      "Day of Sacrifice I",
-      "Day of Sacrifice II",
-      "Day of Sacrifice III",
-      "Day of Sacrifice IV"
+      "ITEM::Simulacrum Splinter",
+      "ITEM::Simulacrum"
     ],
     "items": [
-      "Sacrifice at Dawn",
-      "Sacrifice at Noon",
-      "Sacrifice at Dusk",
-      "Sacrifice at Midnight"
+      "UNIQUE::Split Personality // Crimson Jewel",
+      "UNIQUE::Megalomaniac // Medium Cluster Jewel",
+      "UNIQUE::Voices // Large Cluster Jewel // 5 passives",
+      "UNIQUE::Voices // Large Cluster Jewel // 7 passives"
+    ]
+  },
+
+
+
+
+
+
+
+
+  {
+    "query": [
+      "UNIQUE::Primordial Might // Crimson Jewel",
+      "UNIQUE::Primordial Harmony // Cobalt Jewel",
+      "UNIQUE::Primordial Eminence // Viridian Jewel"
+    ],
+    "items": [
+      "UNIQUE::The Anima Stone // Prismatic Jewel"
     ]
   },
   {
     "query": [
-      "Deadly Rivalry I",
-      "Deadly Rivalry II",
-      "Deadly Rivalry III",
-      "Deadly Rivalry IV",
-      "Deadly Rivalry V"
+      "UNIQUE::Grelwood Shank // Eternal Sword",
+      "UNIQUE::Beltimber Blade // Eternal Sword"
     ],
     "items": [
-      "Kintsugi Exquisite Leather"
+      "UNIQUE::Arborix // Assassin Bow"
     ]
   },
   {
     "query": [
-      "The Feral Lord I",
-      "The Feral Lord II",
-      "The Feral Lord III",
-      "The Feral Lord IV",
-      "The Feral Lord V"
+      "UNIQUE::Shade of Solaris // Sage Wand",
+      "UNIQUE::Light of Lunaris // Jingling Spirit Shield"
     ],
     "items": [
-      "Yriel's Key",
-      "Reach of the Council Spine Bow"
+      "UNIQUE::Duskdawn // Maelström Staff"
     ]
   },
   {
     "query": [
-      "The Plaguemaw I",
-      "The Plaguemaw II",
-      "The Plaguemaw III",
-      "The Plaguemaw IV",
-      "The Plaguemaw V"
+      "UNIQUE::The Goddess Bound // Whalebone Rapier"
     ],
     "items": [
-      "Eber's Key",
-      "Breath of the Council Carnal Sceptre"
+      "UNIQUE::The Goddess Scorned // Elegant Sword"
     ]
   },
   {
     "query": [
-      "Thaumaturgical History I",
-      "Thaumaturgical History II",
-      "Thaumaturgical History III",
-      "Thaumaturgical History IV"
+      "UNIQUE::Soul Taker // Siege Axe",
+      "UNIQUE::Heartbreaker // Royal Skean"
     ],
     "items": [
-      "Ascent From Flesh Chain Belt"
+      "UNIQUE::Kingmaker // Despot Axe"
     ]
   },
   {
     "query": [
-      "The Ambitious Bandit I",
-      "The Ambitious Bandit II",
-      "The Ambitious Bandit III"
+      "UNIQUE::Invictus Solaris // Archon Kite Shield",
+      "UNIQUE::Vix Lunaris // Cardinal Round Shield"
     ],
     "items": [
-      "The Ascetic Gold Amulet"
+      "UNIQUE::Magna Eclipsis // Pinnacle Tower Shield"
     ]
   },
   {
     "query": [
-      "Unbearable Whispers I",
-      "Unbearable Whispers II",
-      "Unbearable Whispers III",
-      "Unbearable Whispers IV",
-      "Unbearable Whispers V"
+      "UNIQUE::Feastbind // Rustic Sash",
+      "UNIQUE::Faminebind // Rustic Sash"
     ],
     "items": [
-      "Inya's Key",
-      "Mind of the Council Harlequin Mask"
+      "UNIQUE::The Retch // Rustic Sash"
     ]
   },
   {
     "query": [
-      "The Unbreathing Queen I",
-      "The Unbreathing Queen II",
-      "The Unbreathing Queen III",
-      "The Unbreathing Queen IV",
-      "The Unbreathing Queen V"
+      "UNIQUE::Berek's Grip // Two-Stone Ring",
+      "UNIQUE::Berek's Pass // Two-Stone Ring",
+      "UNIQUE::Berek's Respite // Two-Stone Ring"
     ],
     "items": [
-      "Volkuur's Key",
-      "Grip of the Council Arcanist Gloves"
+      "UNIQUE::The Taming // Prismatic Ring"
     ]
   },
   {
     "query": [
-      "The Warmongers I",
-      "The Warmongers II",
-      "The Warmongers III",
-      "The Warmongers IV"
+      "UNIQUE::First Piece of Brutality // Imperial Staff Piece",
+      "UNIQUE::Second Piece of Brutality // Imperial Staff Piece",
+      "UNIQUE::Third Piece of Brutality // Imperial Staff Piece"
     ],
     "items": [
-      "Brinerot Flag Tarnished Spirit Shield",
-      "Redblade Banner Painted Tower Shield",
-      "Brinerot Whalers Trapper Boots",
-      "Mutewind Pennant Enameled Buckler",
-      "Mutewind Whispersteps Serpentscale Boots",
-      "Brinerot Mark Unset Ring",
-      "Mutewind Seal Unset Ring",
-      "Redblade Band Unset Ring",
-      "Redblade Tramplers Ancient Greaves",
-      "The Pariah Unset Ring",
-      "Steppan Eard Sorcerer Boots",
-      "Broken Faith Archon Kite Shield"
+      "UNIQUE::The Enmity Divine // Imperial Staff"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Enmity Divine // Imperial Staff",
+      "ITEM::Haemocombustion Scroll"
+    ],
+    "items": [
+      "UNIQUE::The Yielding Mortality // Imperial Staff"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::First Piece of Directions // Blunt Arrow Quiver Piece",
+      "UNIQUE::Second Piece of Directions // Blunt Arrow Quiver Piece",
+      "UNIQUE::Third Piece of Directions // Blunt Arrow Quiver Piece"
+    ],
+    "items": [
+      "UNIQUE::The Fracturing Spinner // Blunt Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Fracturing Spinner // Blunt Arrow Quiver",
+      "ITEM::Fragmentation Scroll"
+    ],
+    "items": [
+      "UNIQUE::The Shattered Divinity // Blunt Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::First Piece of Focus // Archon Kite Shield Piece",
+      "UNIQUE::Second Piece of Focus // Archon Kite Shield Piece",
+      "UNIQUE::Third Piece of Focus // Archon Kite Shield Piece",
+      "UNIQUE::Fourth Piece of Focus // Archon Kite Shield Piece"
+    ],
+    "items": [
+      "UNIQUE::The Unshattered Will // Archon Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Unshattered Will // Archon Kite Shield",
+      "ITEM::Specularity Scroll"
+    ],
+    "items": [
+      "UNIQUE::The Immortal Will // Archon Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::First Piece of Storms // Callous Mask Piece",
+      "UNIQUE::Second Piece of Storms // Callous Mask Piece",
+      "UNIQUE::Third Piece of Storms // Callous Mask Piece"
+    ],
+    "items": [
+      "UNIQUE::The Tempest's Binding // Callous Mask"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Tempest's Binding // Callous Mask",
+      "ITEM::Deregulation Scroll"
+    ],
+    "items": [
+      "UNIQUE::The Tempest's Liberation // Callous Mask"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::First Piece of the Arcane // Legion Sword Piece",
+      "UNIQUE::Second Piece of the Arcane // Legion Sword Piece",
+      "UNIQUE::Third Piece of the Arcane // Legion Sword Piece"
+    ],
+    "items": [
+      "UNIQUE::The Rippling Thoughts // Legion Sword"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Rippling Thoughts // Legion Sword",
+      "ITEM::Electroshock Scroll"
+    ],
+    "items": [
+      "UNIQUE::The Surging Thoughts // Legion Sword"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::First Piece of Time // Cloth Belt Piece",
+      "UNIQUE::Second Piece of Time // Cloth Belt Piece"
+    ],
+    "items": [
+      "UNIQUE::The Flow Untethered // Cloth Belt"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Flow Untethered // Cloth Belt",
+      "ITEM::Time-light Scroll"
+    ],
+    "items": [
+      "UNIQUE::The Torrent's Reclamation // Cloth Belt"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Blue Dream // Cobalt Jewel",
+      "UNIQUE::Skin of the Loyal // Simple Robe // 6L",
+      "UNIQUE::The Red Dream // Crimson Jewel",
+      "UNIQUE::Severed in Sleep // Cutlass",
+      "UNIQUE::Eye of Chayula // Onyx Amulet",
+      "UNIQUE::The Green Dream // Viridian Jewel",
+      "ITEM::Blessing of Chayula"
+    ],
+    "items": [
+      "UNIQUE::The Blue Nightmare // Cobalt Jewel",
+      "UNIQUE::Skin of the Lords // Simple Robe",
+      "UNIQUE::The Red Nightmare // Crimson Jewel",
+      "UNIQUE::United in Dream // Cutlass",
+      "UNIQUE::Presence of Chayula // Onyx Amulet",
+      "UNIQUE::The Green Nightmare // Viridian Jewel"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Esh's Mirror // Thorium Spirit Shield",
+      "UNIQUE::Voice of the Storm // Lapis Amulet",
+      "UNIQUE::Hand of Thought and Motion // Blinder",
+      "ITEM::Blessing of Esh"
+    ],
+    "items": [
+      "UNIQUE::Esh's Visage // Vaal Spirit Shield",
+      "UNIQUE::Choir of the Storm // Lapis Amulet",
+      "UNIQUE::Hand of Wisdom and Action // Imperial Claw"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Tulborn // Spiraled Wand",
+      "UNIQUE::The Snowblind Grace // Coronal Leather",
+      "UNIQUE::The Halcyon // Jade Amulet",
+      "ITEM::Blessing of Tul"
+    ],
+    "items": [
+      "UNIQUE::Tulfall // Tornado Wand",
+      "UNIQUE::The Perfect Form // Zodiac Leather",
+      "UNIQUE::The Pandemonius // Jade Amulet"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Infinite Pursuit // Goliath Greaves",
+      "UNIQUE::The Anticipation // Ezomyte Tower Shield",
+      "UNIQUE::Uul-Netol's Kiss // Labrys",
+      "ITEM::Blessing of Uul-Netol"
+    ],
+    "items": [
+      "UNIQUE::The Red Trail // Titan Greaves",
+      "UNIQUE::The Surrender // Ezomyte Tower Shield",
+      "UNIQUE::Uul-Netol's Embrace // Vaal Axe"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Formless Flame // Siege Helmet",
+      "UNIQUE::Xoph's Inception // Bone Bow",
+      "UNIQUE::Xoph's Heart // Amber Amulet",
+      "ITEM::Blessing of Xoph"
+    ],
+    "items": [
+      "UNIQUE::The Formless Inferno // Royal Burgonet",
+      "UNIQUE::Xoph's Nurture // Citadel Bow",
+      "UNIQUE::Xoph's Blood // Amber Amulet"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of Awakening",
+      "UNIQUE::Apep's Slumber // Vaal Spirit Shield"
+    ],
+    "items": [
+      "UNIQUE::Apep's Supremacy // Vaal Spirit Shield"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of Consequence",
+      "UNIQUE::Coward's Chains // Chain Belt"
+    ],
+    "items": [
+      "UNIQUE::Coward's Legacy // Chain Belt"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of Dominance",
+      "UNIQUE::Architect's Hand // Ambush Mitts"
+    ],
+    "items": [
+      "UNIQUE::Slavedriver's Hand // Ambush Mitts"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of Fate",
+      "UNIQUE::Story of the Vaal // Gemstone Sword"
+    ],
+    "items": [
+      "UNIQUE::Fate of the Vaal // Gemstone Sword"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of Summoning",
+      "UNIQUE::Mask of the Spirit Drinker // Magistrate Crown"
+    ],
+    "items": [
+      "UNIQUE::Mask of the Stitched Demon // Magistrate Crown"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of the Ritual",
+      "UNIQUE::Dance of the Offered // Carnal Boots"
+    ],
+    "items": [
+      "UNIQUE::Omeyocan // Carnal Boots"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Tempered Flesh // Crimson Jewel",
+      "UNIQUE::Tempered Spirit // Viridian Jewel",
+      "UNIQUE::Tempered Mind // Cobalt Jewel",
+      "ITEM::Vial of Transcendence"
+    ],
+    "items": [
+      "UNIQUE::Transcendent Flesh // Crimson Jewel",
+      "UNIQUE::Transcendent Spirit // Viridian Jewel",
+      "UNIQUE::Transcendent Mind // Cobalt Jewel"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of Sacrifice",
+      "UNIQUE::Sacrificial Heart // Paua Amulet"
+    ],
+    "items": [
+      "UNIQUE::Zerphi's Heart // Paua Amulet"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Vial of the Ghost",
+      "UNIQUE::Soul Catcher // Quartz Flask"
+    ],
+    "items": [
+      "UNIQUE::Soul Ripper // Quartz Flask"
+    ]
+  },
+
+
+
+
+
+
+
+
+  {
+    "query": [
+      "PROPHECY::Power Magnified",
+      "UNIQUE::Reverberation Rod // Spiraled Wand"
+    ],
+    "items": [
+      "UNIQUE::Amplification Rod // Spiraled Wand"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Song of the Sekhema",
+      "UNIQUE::Asenath's Mark // Iron Circlet"
+    ],
+    "items": [
+      "UNIQUE::Asenath's Chant // Iron Circlet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Queen's Sacrifice",
+      "UNIQUE::Atziri's Mirror // Golden Buckler"
+    ],
+    "items": [
+      "UNIQUE::Atziri's Reflection // Golden Buckler"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Cold Greed",
+      "UNIQUE::Cameria's Maul // Gavel"
+    ],
+    "items": [
+      "UNIQUE::Cameria's Avarice // Gavel"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Faith Exhumed",
+      "UNIQUE::Chober Chaber // Great Mallet"
+    ],
+    "items": [
+      "UNIQUE::Chaber Cairn // Great Mallet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Blinding Light",
+      "UNIQUE::Eclipse Solaris // Crystal Wand"
+    ],
+    "items": [
+      "UNIQUE::Corona Solaris // Crystal Wand"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Heavy Blows",
+      "UNIQUE::Craghead // Serrated Arrow Quiver"
+    ],
+    "items": [
+      "UNIQUE::Cragfall // Serrated Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::End of the Light",
+      "UNIQUE::Icetomb // Latticed Ringmail"
+    ],
+    "items": [
+      "UNIQUE::Crystal Vault // Latticed Ringmail"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Bowstring's Music",
+      "UNIQUE::Death's Harp // Death Bow"
+    ],
+    "items": [
+      "UNIQUE::Death's Opus // Death Bow"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Dying Cry",
+      "UNIQUE::Deidbell // Gilded Sallet"
+    ],
+    "items": [
+      "UNIQUE::Deidbellow // Gilded Sallet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Malevolent Witch",
+      "UNIQUE::Doedre's Tenure // Velvet Gloves"
+    ],
+    "items": [
+      "UNIQUE::Doedre's Malevolence // Velvet Gloves"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Ancient Doom",
+      "UNIQUE::Doomfletch // Royal Bow"
+    ],
+    "items": [
+      "UNIQUE::Doomfletch's Prism // Royal Bow"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Dreaded Rhoa",
+      "UNIQUE::Redbeak // Rusted Sword"
+    ],
+    "items": [
+      "UNIQUE::Dreadbeak // Rusted Sword"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Burning Dread",
+      "UNIQUE::Dreadarc // Cleaver"
+    ],
+    "items": [
+      "UNIQUE::Dreadsurge // Cleaver"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Agony at Dusk",
+      "UNIQUE::Dusktoe // Ironscale Boots"
+    ],
+    "items": [
+      "UNIQUE::Duskblight // Ironscale Boots"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Bloody Flowers Redux",
+      "UNIQUE::Ezomyte Peak // Iron Hat"
+    ],
+    "items": [
+      "UNIQUE::Ezomyte Hold // Iron Hat"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Dark Instincts",
+      "UNIQUE::Foxshade // Wild Leather"
+    ],
+    "items": [
+      "UNIQUE::Fox's Fortune // Wild Leather"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::A Vision of Ice and Fire",
+      "UNIQUE::Heatshiver // Leather Hood"
+    ],
+    "items": [
+      "UNIQUE::Frostferno // Leather Hood"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Black Devotion",
+      "UNIQUE::Geofri's Baptism // Brass Maul"
+    ],
+    "items": [
+      "UNIQUE::Geofri's Devotion // Brass Maul"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Bishop's Legacy",
+      "UNIQUE::Geofri's Crest // Great Crown"
+    ],
+    "items": [
+      "UNIQUE::Geofri's Legacy // Great Crown"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Greed's Folly",
+      "UNIQUE::Wondertrap // Velvet Slippers"
+    ],
+    "items": [
+      "UNIQUE::Greedtrap // Velvet Slippers"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Fire and Ice",
+      "UNIQUE::Hrimsorrow // Goathide Gloves"
+    ],
+    "items": [
+      "UNIQUE::Hrimburn // Goathide Gloves"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Winter's Mournful Melodies",
+      "UNIQUE::Hrimnor's Hymn // Sledgehammer"
+    ],
+    "items": [
+      "UNIQUE::Hrimnor's Dirge // Sledgehammer"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::A Dishonourable Death",
+      "UNIQUE::Hyrri's Bite // Sharktooth Arrow Quiver"
+    ],
+    "items": [
+      "UNIQUE::Hyrri's Demise // Sharktooth Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Snuffed Flame",
+      "UNIQUE::Kaltenhalt // Painted Buckler"
+    ],
+    "items": [
+      "UNIQUE::Kaltensoul // Painted Buckler"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The King's Path",
+      "UNIQUE::Kaom's Sign // Coral Ring"
+    ],
+    "items": [
+      "UNIQUE::Kaom's Way // Coral Ring"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Karui Rebellion",
+      "UNIQUE::Karui Ward // Jade Amulet"
+    ],
+    "items": [
+      "UNIQUE::Karui Charge // Jade Amulet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Nightmare Awakens",
+      "UNIQUE::Malachai's Simula // Iron Mask"
+    ],
+    "items": [
+      "UNIQUE::Malachai's Awakening // Iron Mask"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Pleasure and Pain",
+      "UNIQUE::Crown of Thorns // Vine Circlet"
+    ],
+    "items": [
+      "UNIQUE::Martyr's Crown // Vine Circlet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Trapped in the Tower",
+      "UNIQUE::Fencoil // Gnarled Branch"
+    ],
+    "items": [
+      "UNIQUE::Mirebough // Gnarled Branch"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::A Forest of False Idols",
+      "UNIQUE::Araku Tiki // Coral Amulet"
+    ],
+    "items": [
+      "UNIQUE::Ngamahu Tiki // Coral Amulet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Fall of an Empire",
+      "UNIQUE::Quecholli // Jagged Maul"
+    ],
+    "items": [
+      "UNIQUE::Panquetzaliztli // Jagged Maul"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Misunderstood Queen",
+      "UNIQUE::Queen's Decree // Ornate Sword"
+    ],
+    "items": [
+      "UNIQUE::Queen's Escape // Ornate Sword"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Beginning and the End",
+      "UNIQUE::Realmshaper // Iron Staff"
+    ],
+    "items": [
+      "UNIQUE::Realm Ender // Iron Staff"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Crimson Hues",
+      "UNIQUE::Goredrill // Skinning Knife"
+    ],
+    "items": [
+      "UNIQUE::Sanguine Gambol // Skinning Knife"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Flow of Energy",
+      "UNIQUE::Shavronne's Pace // Scholar Boots"
+    ],
+    "items": [
+      "UNIQUE::Shavronne's Gambit // Scholar Boots"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Silverwood",
+      "UNIQUE::Silverbranch // Crude Bow"
+    ],
+    "items": [
+      "UNIQUE::Silverbough // Crude Bow"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Sun's Punishment",
+      "UNIQUE::Sundance // Clasped Boots"
+    ],
+    "items": [
+      "UNIQUE::Sunspite // Clasped Boots"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Severed Limbs",
+      "UNIQUE::Limbsplit // Woodsplitter"
+    ],
+    "items": [
+      "UNIQUE::The Cauteriser // Woodsplitter"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Dance of Steel",
+      "UNIQUE::The Dancing Dervish // Reaver Sword"
+    ],
+    "items": [
+      "UNIQUE::The Dancing Duo // Reaver Sword"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Blind Faith",
+      "UNIQUE::The Ignomon // Gold Amulet"
+    ],
+    "items": [
+      "UNIQUE::The Effigon // Gold Amulet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Apex Predator",
+      "UNIQUE::The Screaming Eagle // Jade Hatchet"
+    ],
+    "items": [
+      "UNIQUE::The Gryphon // Jade Hatchet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Battle Hardened",
+      "UNIQUE::Iron Heart // Crusader Plate"
+    ],
+    "items": [
+      "UNIQUE::The Iron Fortress // Crusader Plate"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Great Leader of the North",
+      "PROPHECY::The Great Mind of the North",
+      "UNIQUE::The Magnate // Studded Belt"
+    ],
+    "items": [
+      "UNIQUE::The Nomad // Studded Belt",
+      "UNIQUE::The Tactician // Studded Belt"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Nature's Resilience",
+      "UNIQUE::Springleaf // Plank Kite Shield"
+    ],
+    "items": [
+      "UNIQUE::The Oak // Plank Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Fire and Brimstone",
+      "UNIQUE::Blackgleam // Fire Arrow Quiver"
+    ],
+    "items": [
+      "UNIQUE::The Signal Fire // Fire Arrow Quiver"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Storm Spire",
+      "UNIQUE::The Stormheart // Royal Staff"
+    ],
+    "items": [
+      "UNIQUE::The Stormwall // Royal Staff"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Servant's Heart",
+      "UNIQUE::Storm Cloud // Long Bow"
+    ],
+    "items": [
+      "UNIQUE::The Tempest // Long Bow"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Mouth of Horrors",
+      "UNIQUE::Chalice of Horrors // War Buckler"
+    ],
+    "items": [
+      "UNIQUE::Thirst for Horrors // War Buckler"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::A Rift in Time",
+      "UNIQUE::Timeclasp // Moonstone Ring"
+    ],
+    "items": [
+      "UNIQUE::Timetwist // Moonstone Ring"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::From The Void",
+      "UNIQUE::Blackheart // Iron Ring"
+    ],
+    "items": [
+      "UNIQUE::Voidheart // Iron Ring"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The King and the Brambles",
+      "UNIQUE::Bramblejack // Plate Vest"
+    ],
+    "items": [
+      "UNIQUE::Wall of Brambles // Plate Vest"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Mentor",
+      "UNIQUE::Matua Tupuna // Tarnished Spirit Shield"
+    ],
+    "items": [
+      "UNIQUE::Whakatutuki o Matua // Tarnished Spirit Shield"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Last of the Wildmen",
+      "UNIQUE::Briskwrap // Strapped Leather"
+    ],
+    "items": [
+      "UNIQUE::Wildwrap // Strapped Leather"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Darktongue's Shriek",
+      "UNIQUE::Windscream // Reinforced Greaves"
+    ],
+    "items": [
+      "UNIQUE::Windshriek // Reinforced Greaves"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Cold Blooded Fury",
+      "UNIQUE::Bloodboil // Coral Ring"
+    ],
+    "items": [
+      "UNIQUE::Winterweave // Coral Ring"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Anarchy's End I",
+      "PROPHECY::Anarchy's End II",
+      "PROPHECY::Anarchy's End III",
+      "PROPHECY::Anarchy's End IV"
+    ],
+    "items": [
+      "UNIQUE::Voltaxic Rift // Spine Bow"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Beyond Sight I",
+      "PROPHECY::Beyond Sight II",
+      "PROPHECY::Beyond Sight III",
+      "PROPHECY::Beyond Sight IV"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "PROPHECY::Day of Sacrifice I",
+      "PROPHECY::Day of Sacrifice II",
+      "PROPHECY::Day of Sacrifice III",
+      "PROPHECY::Day of Sacrifice IV"
+    ],
+    "items": [
+      "ITEM::Sacrifice at Dawn",
+      "ITEM::Sacrifice at Noon",
+      "ITEM::Sacrifice at Dusk",
+      "ITEM::Sacrifice at Midnight"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Deadly Rivalry I",
+      "PROPHECY::Deadly Rivalry II",
+      "PROPHECY::Deadly Rivalry III",
+      "PROPHECY::Deadly Rivalry IV",
+      "PROPHECY::Deadly Rivalry V"
+    ],
+    "items": [
+      "UNIQUE::Kintsugi // Exquisite Leather"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Feral Lord I",
+      "PROPHECY::The Feral Lord II",
+      "PROPHECY::The Feral Lord III",
+      "PROPHECY::The Feral Lord IV",
+      "PROPHECY::The Feral Lord V"
+    ],
+    "items": [
+      "ITEM::Yriel's Key",
+      "UNIQUE::Reach of the Council // Spine Bow"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Plaguemaw I",
+      "PROPHECY::The Plaguemaw II",
+      "PROPHECY::The Plaguemaw III",
+      "PROPHECY::The Plaguemaw IV",
+      "PROPHECY::The Plaguemaw V"
+    ],
+    "items": [
+      "ITEM::Eber's Key",
+      "UNIQUE::Breath of the Council // Carnal Sceptre"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Thaumaturgical History I",
+      "PROPHECY::Thaumaturgical History II",
+      "PROPHECY::Thaumaturgical History III",
+      "PROPHECY::Thaumaturgical History IV"
+    ],
+    "items": [
+      "UNIQUE::Ascent From Flesh // Chain Belt"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Ambitious Bandit I",
+      "PROPHECY::The Ambitious Bandit II",
+      "PROPHECY::The Ambitious Bandit III"
+    ],
+    "items": [
+      "UNIQUE::The Ascetic // Gold Amulet"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::Unbearable Whispers I",
+      "PROPHECY::Unbearable Whispers II",
+      "PROPHECY::Unbearable Whispers III",
+      "PROPHECY::Unbearable Whispers IV",
+      "PROPHECY::Unbearable Whispers V"
+    ],
+    "items": [
+      "ITEM::Inya's Key",
+      "UNIQUE::Mind of the Council // Harlequin Mask"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Unbreathing Queen I",
+      "PROPHECY::The Unbreathing Queen II",
+      "PROPHECY::The Unbreathing Queen III",
+      "PROPHECY::The Unbreathing Queen IV",
+      "PROPHECY::The Unbreathing Queen V"
+    ],
+    "items": [
+      "ITEM::Volkuur's Key",
+      "UNIQUE::Grip of the Council // Arcanist Gloves"
+    ]
+  },
+  {
+    "query": [
+      "PROPHECY::The Warmongers I",
+      "PROPHECY::The Warmongers II",
+      "PROPHECY::The Warmongers III",
+      "PROPHECY::The Warmongers IV"
+    ],
+    "items": [
+      "UNIQUE::Brinerot Flag // Tarnished Spirit Shield",
+      "UNIQUE::Redblade Banner // Painted Tower Shield",
+      "UNIQUE::Brinerot Whalers // Trapper Boots",
+      "UNIQUE::Mutewind Pennant // Enameled Buckler",
+      "UNIQUE::Mutewind Whispersteps // Serpentscale Boots",
+      "UNIQUE::Brinerot Mark // Unset Ring",
+      "UNIQUE::Mutewind Seal // Unset Ring",
+      "UNIQUE::Redblade Band // Unset Ring",
+      "UNIQUE::Redblade Tramplers // Ancient Greaves",
+      "UNIQUE::The Pariah // Unset Ring",
+      "UNIQUE::Steppan Eard // Sorcerer Boots",
+      "UNIQUE::Broken Faith // Archon Kite Shield"
     ]
   }
 ]

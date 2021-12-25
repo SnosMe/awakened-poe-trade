@@ -10,7 +10,6 @@
 import { defineComponent, PropType, computed } from 'vue'
 import { StatFilter } from './interfaces'
 import { autoCurrency, displayRounding, findByDetailsId, ItemInfo } from '@/web/background/Prices'
-import { nameToDetailsId } from '../trends/getDetailsId'
 import { BLIGHT_RECIPES } from '@/assets/data'
 
 export default defineComponent({
@@ -30,8 +29,7 @@ export default defineComponent({
       if (!oils.length) return null
 
       const prices = oils
-        .map(nameToDetailsId)
-        .map(findByDetailsId)
+        .map(oil => findByDetailsId(`ITEM::${oil}`))
         .filter(Boolean) as ItemInfo[]
 
       if (prices.length !== oils.length) return null

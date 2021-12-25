@@ -1,11 +1,10 @@
 import fnv1a from '@bensjoberg/fnv1a'
 import type { BaseType, BlightRecipes, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
 import { AppConfig } from '@/web/Config'
-import { nameToDetailsId } from '@/web/price-check/trends/getDetailsId'
 
 export * from './interfaces'
 
-export const ITEM_DROP = new Map<string, DropEntry>()
+export let ITEM_DROP: DropEntry[]
 export let BLIGHT_RECIPES: BlightRecipes
 export let CLIENT_STRINGS: TranslationDict
 
@@ -136,17 +135,6 @@ export function stat (text: string) {
     // eslint-disable-next-line no-eval
     CLIENT_STRINGS = (await eval(`import('/data/${language}/client_strings.js')`)).default
     BLIGHT_RECIPES = await (await fetch('/data/blight-recipes.json')).json()
-  }
-
-  {
-    const itemDrop: DropEntry[] = await (await fetch('/data/item-drop.json')).json()
-    for (const entry of itemDrop) {
-      for (const query of entry.query) {
-        ITEM_DROP.set(nameToDetailsId(query), {
-          items: entry.items.map(nameToDetailsId),
-          query: entry.query.map(nameToDetailsId)
-        })
-      }
-    }
+    ITEM_DROP = await (await fetch('/data/item-drop.json')).json()
   }
 })()
