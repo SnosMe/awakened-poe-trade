@@ -27,7 +27,9 @@ export async function pollClipboard (): Promise<string> {
       const textAfter = clipboard.readText()
 
       if (isActiveLangItem(textAfter)) {
-        clipboard.writeText(textBefore)
+        if (config.get('restoreClipboard')) {
+          clipboard.writeText(textBefore)
+        }
         isPollingClipboard = false
         clipboardPromise = undefined
         resolve(textAfter)
@@ -36,7 +38,9 @@ export async function pollClipboard (): Promise<string> {
         if (elapsed < LIMIT) {
           setTimeout(poll, DELAY)
         } else {
-          clipboard.writeText(textBefore)
+          if (config.get('restoreClipboard')) {
+            clipboard.writeText(textBefore)
+          }
           isPollingClipboard = false
           clipboardPromise = undefined
 
