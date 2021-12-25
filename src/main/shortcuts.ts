@@ -1,4 +1,4 @@
-import { screen, clipboard, globalShortcut, ipcMain } from 'electron'
+import { screen, globalShortcut, ipcMain } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
@@ -11,6 +11,7 @@ import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive
 import * as ipc from '@/ipc/ipc-event'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
+import { restoreClipboard } from './clipboard-saver'
 
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
@@ -265,19 +266,13 @@ function isGameScrolling (mouse: UiohookWheelEvent): boolean {
 }
 
 function stashSearch (text: string) {
-  const saved = clipboard.readText()
-
-  assertPoEActive()
-  clipboard.writeText(text)
-  robotjs.keyTap('F', ['Ctrl'])
-  robotjs.keyTap('V', ['Ctrl'])
-  robotjs.keyTap('Enter')
-
-  if (config.get('restoreClipboard')) {
-    setTimeout(() => {
-      clipboard.writeText(saved)
-    }, 120)
-  }
+  restoreClipboard((clipboard) => {
+    assertPoEActive()
+    clipboard.writeText(text)
+    robotjs.keyTap('F', ['Ctrl'])
+    robotjs.keyTap('V', ['Ctrl'])
+    robotjs.keyTap('Enter')
+  })
 }
 
 function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean, shiftKey: boolean }) {
