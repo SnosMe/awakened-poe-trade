@@ -21,7 +21,8 @@
                 <div class="leading-4 py-2 px-2 whitespace-no-wrap">{{ entry.text }}{{ '\u2009' }}</div>
                 <input v-model="entry.text"
                   :placeholder="t('search text')"
-                  class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1 bg-gray-700">
+                  class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1"
+                  :class="(entry.text.length > 50) ? 'bg-red-800' : 'bg-gray-700'">
               </div>
               <button class="p-2 leading-none" @click="removeEntry(entry.id)">
                 <i class="fas fa-times text-gray-600"></i>
