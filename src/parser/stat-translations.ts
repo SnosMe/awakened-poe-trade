@@ -140,6 +140,14 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       }
     }
 
+    if (combination.values.some(stat =>
+      (stat.bounds != null) &&
+      (stat.roll < stat.bounds.min || stat.roll > stat.bounds.max)
+    )) {
+      // Modifiers must be upgraded to the new values with a Divine Orb
+      return undefined
+    }
+
     if (!combination.values.length && found.matcher.value) {
       combination.values = [{
         roll: found.matcher.value,
