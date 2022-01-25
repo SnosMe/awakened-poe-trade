@@ -93,13 +93,16 @@ export function calculatedStatToFilter (
   item: ParsedItem
 ): StatFilter {
   const { stat, sources, type } = calc
+  let filter: StatFilter
 
   if (stat.trade.option) {
-    return {
+    filter = {
       tradeId: stat.trade.ids[type],
       statRef: stat.ref,
       text: sources[0].stat.translation.string,
-      tag: type as unknown as FilterTag,
+      tag: (type === ModifierType.Enchant)
+        ? FilterTag.Enchant
+        : FilterTag.Variant,
       sources: sources,
       option: {
         value: sources[0].contributes!.value,
@@ -112,7 +115,7 @@ export function calculatedStatToFilter (
   const roll = statSourcesTotal(calc.sources)
   const translation = translateStatWithRoll(calc, roll)
 
-  const filter: StatFilter = {
+  filter ??= {
     tradeId: stat.trade.ids[type],
     statRef: stat.ref,
     text: translation.string,
@@ -137,7 +140,7 @@ export function calculatedStatToFilter (
     }
   }
 
-  if (roll) {
+  if (roll && !filter.option) {
     const dp =
     calc.stat.dp ||
     calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
@@ -195,8 +198,8 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
   if (!filter.roll) {
     filter.hidden = 'Roll is not variable'
   } else if (!filter.roll.bounds) {
-    filter.roll.min = filter.roll.value
-    filter.roll.max = filter.roll.value
+    filter.roll.min = undefined
+    filter.roll.max = undefined
     filter.hidden = 'Roll is not variable'
   }
 }

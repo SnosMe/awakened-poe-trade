@@ -93,7 +93,7 @@ export interface StatFilter {
     default: { min: number, max: number }
     bounds?: { min: number, max: number }
     tradeInvert?: boolean
-    dp: boolean | number
+    dp: boolean
     isNegated: boolean
   }
   option?: {
