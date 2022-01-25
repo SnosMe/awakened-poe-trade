@@ -1,10 +1,10 @@
-import { rollToFilter } from '../util'
-import { FiltersCreationContext, calculatedStatToFilter } from '../create-stat-filters'
-import { propAt20Quality, QUALITY_STATS } from './calc-q20'
-import { stat } from '@/assets/data'
+import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-filters'
+import { calcPropBounds, propAt20Quality, QUALITY_STATS } from './calc-q20'
+import { stat, StatBetter } from '@/assets/data'
 import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
 import { ParsedItem } from '@/parser'
-import { internalPropStat } from './util'
+import { ModifierType, StatRoll } from '@/parser/modifiers'
+import { FilterTag, InternalTradeId, StatFilter } from '../interfaces'
 
 export function filterItemProp (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
@@ -16,10 +16,10 @@ export function filterItemProp (ctx: FiltersCreationContext) {
 }
 
 export const ARMOUR_STATS = new Set<string>([
-  QUALITY_STATS.ARMOUR.flat,
-  QUALITY_STATS.EVASION.flat,
-  QUALITY_STATS.ENERGY_SHIELD.flat,
-  QUALITY_STATS.WARD.flat,
+  ...QUALITY_STATS.ARMOUR.flat,
+  ...QUALITY_STATS.EVASION.flat,
+  ...QUALITY_STATS.ENERGY_SHIELD.flat,
+  ...QUALITY_STATS.WARD.flat,
   ...QUALITY_STATS.ARMOUR.incr,
   ...QUALITY_STATS.EVASION.incr,
   ...QUALITY_STATS.ENERGY_SHIELD.incr,
@@ -31,76 +31,58 @@ function armourProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
   if (item.armourAR) {
-    const totalQ20 = Math.floor(propAt20Quality(item.armourAR, QUALITY_STATS.ARMOUR, item))
+    const totalQ20 = propAt20Quality(item.armourAR, QUALITY_STATS.ARMOUR, item)
 
-    ctx.filters.push({
-      ...internalPropStat(
-        'armour.armour',
-        'Armour: #',
-        'armour'
-      ),
-      sources: [],
-      disabled: !isSingleAttrArmour(item),
-      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
-    })
+    ctx.filters.push(propToFilter({
+      ref: 'Armour: #',
+      tradeId: 'armour.armour',
+      roll: totalQ20,
+      disabled: !isSingleAttrArmour(item)
+    }, ctx))
   }
 
   if (item.armourEV) {
-    const totalQ20 = Math.floor(propAt20Quality(item.armourEV, QUALITY_STATS.EVASION, item))
+    const totalQ20 = propAt20Quality(item.armourEV, QUALITY_STATS.EVASION, item)
 
-    ctx.filters.push({
-      ...internalPropStat(
-        'armour.evasion_rating',
-        'Evasion Rating: #',
-        'armour'
-      ),
-      sources: [],
-      disabled: !isSingleAttrArmour(item),
-      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
-    })
+    ctx.filters.push(propToFilter({
+      ref: 'Evasion Rating: #',
+      tradeId: 'armour.evasion_rating',
+      roll: totalQ20,
+      disabled: !isSingleAttrArmour(item)
+    }, ctx))
   }
 
   if (item.armourES) {
-    const totalQ20 = Math.floor(propAt20Quality(item.armourES, QUALITY_STATS.ENERGY_SHIELD, item))
+    const totalQ20 = propAt20Quality(item.armourES, QUALITY_STATS.ENERGY_SHIELD, item)
 
-    ctx.filters.push({
-      ...internalPropStat(
-        'armour.energy_shield',
-        'Energy Shield: #',
-        'armour'
-      ),
-      sources: [],
-      disabled: !isSingleAttrArmour(item),
-      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
-    })
+    ctx.filters.push(propToFilter({
+      ref: 'Energy Shield: #',
+      tradeId: 'armour.energy_shield',
+      roll: totalQ20,
+      disabled: !isSingleAttrArmour(item)
+    }, ctx))
   }
 
   if (item.armourWARD) {
-    const totalQ20 = Math.floor(propAt20Quality(item.armourWARD, QUALITY_STATS.WARD, item))
+    const totalQ20 = propAt20Quality(item.armourWARD, QUALITY_STATS.WARD, item)
 
-    ctx.filters.push({
-      ...internalPropStat(
-        'armour.ward',
-        'Ward: #',
-        'armour'
-      ),
-      sources: [],
-      disabled: !isSingleAttrArmour(item),
-      roll: rollToFilter(totalQ20, { neverNegated: true, percent: ctx.searchInRange })
-    })
+    ctx.filters.push(propToFilter({
+      ref: 'Ward: #',
+      tradeId: 'armour.ward',
+      roll: totalQ20,
+      disabled: !isSingleAttrArmour(item)
+    }, ctx))
   }
 
   if (item.armourBLOCK) {
-    ctx.filters.push({
-      ...internalPropStat(
-        'armour.block',
-        'Block: #%',
-        'armour'
-      ),
-      sources: [],
-      disabled: true,
-      roll: rollToFilter(item.armourBLOCK, { neverNegated: true, percent: ctx.searchInRange })
-    })
+    const block = calcPropBounds(item.armourBLOCK, { flat: ['+#% Chance to Block'], incr: [] }, item)
+
+    ctx.filters.push(propToFilter({
+      ref: 'Block: #%',
+      tradeId: 'armour.block',
+      roll: block,
+      disabled: true
+    }, ctx))
   }
 
   if (
@@ -110,12 +92,12 @@ function armourProps (ctx: FiltersCreationContext) {
     item.armourWARD ||
     item.armourBLOCK
   ) {
-    createHiddenFilters(ctx, ARMOUR_STATS)
+    removeUsedStats(ctx, ARMOUR_STATS)
   }
 }
 
 export const WEAPON_STATS = new Set<string>([
-  QUALITY_STATS.PHYSICAL_DAMAGE.flat,
+  ...QUALITY_STATS.PHYSICAL_DAMAGE.flat,
   ...QUALITY_STATS.PHYSICAL_DAMAGE.incr,
   stat('#% increased Attack Speed'),
   stat('#% increased Critical Strike Chance'),
@@ -129,70 +111,72 @@ export const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
+  const attackSpeed = calcPropBounds(item.weaponAS!, { incr: ['#% increased Attack Speed'], flat: [] }, item)
   const physQ20 = propAt20Quality(item.weaponPHYSICAL!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
-  const pdpsQ20 = Math.floor(physQ20 * item.weaponAS!)
-
-  const edps = Math.floor((item.weaponELEMENTAL || 0) * item.weaponAS!)
-  const dps = pdpsQ20 + edps
-
-  if (item.weaponELEMENTAL) {
-    ctx.filters.push({
-      ...internalPropStat(
-        'weapon.total_dps',
-        'DPS: #',
-        'weapon'
-      ),
-      sources: [],
-      disabled: false,
-      roll: rollToFilter(dps, { neverNegated: true, percent: ctx.searchInRange })
-    })
-
-    ctx.filters.push({
-      ...internalPropStat(
-        'weapon.elemental_dps',
-        'Elemental DPS: #',
-        'weapon'
-      ),
-      sources: [],
-      disabled: (edps / dps < 0.67),
-      hidden: (edps / dps < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined,
-      roll: rollToFilter(edps, { neverNegated: true, percent: ctx.searchInRange })
-    })
+  const pdpsQ20: StatRoll = {
+    value: physQ20.value * attackSpeed.value,
+    min: physQ20.min * attackSpeed.min,
+    max: physQ20.max * attackSpeed.max
   }
 
-  ctx.filters.push({
-    ...internalPropStat(
-      'weapon.physical_dps',
-      'Physical DPS: #',
-      'weapon'
-    ),
-    sources: [],
-    disabled: !isPdpsImportant(item) || (pdpsQ20 / dps < 0.67),
-    hidden: (pdpsQ20 / dps < 0.67) ? 'Physical damage is not the main source of DPS' : undefined,
-    roll: rollToFilter(pdpsQ20, { neverNegated: true, percent: ctx.searchInRange })
-  })
+  const eleDmg = calcPropBounds(item.weaponELEMENTAL!, {
+    flat: ['Adds # to # Lightning Damage', 'Adds # to # Cold Damage', 'Adds # to # Fire Damage'],
+    incr: []
+  }, item)
 
-  ctx.filters.push({
-    ...internalPropStat(
-      'weapon.aps',
-      'Attacks per Second: #',
-      'weapon'
-    ),
-    sources: [],
-    disabled: true,
-    roll: rollToFilter(item.weaponAS!, { neverNegated: true, dp: 2, percent: ctx.searchInRange })
-  })
+  const edps: StatRoll = {
+    value: eleDmg.value * attackSpeed.value,
+    min: eleDmg.min * attackSpeed.min,
+    max: eleDmg.max * attackSpeed.max
+  }
+  const dps: StatRoll = {
+    value: pdpsQ20.value + edps.value,
+    min: pdpsQ20.min + edps.min,
+    max: pdpsQ20.max + edps.max
+  }
 
-  ctx.filters.push({
-    ...internalPropStat(
-      'weapon.crit',
-      'Critical Strike Chance: #%',
-      'weapon'
-    ),
-    sources: [],
-    disabled: true,
-    roll: rollToFilter(item.weaponCRIT!, { neverNegated: true, dp: 1, percent: ctx.searchInRange })
-  })
+  if (item.weaponELEMENTAL) {
+    ctx.filters.push(propToFilter({
+      ref: 'DPS: #',
+      tradeId: 'weapon.total_dps',
+      roll: dps,
+      disabled: false
+    }, ctx))
+
+    ctx.filters.push(propToFilter({
+      ref: 'Elemental DPS: #',
+      tradeId: 'weapon.elemental_dps',
+      roll: edps,
+      disabled: (edps.value / dps.value < 0.67),
+      hidden: (edps.value / dps.value < 0.67) ? 'Elemental damage is not the main source of DPS' : undefined
+    }, ctx))
+  }
+
+  ctx.filters.push(propToFilter({
+    ref: 'Physical DPS: #',
+    tradeId: 'weapon.physical_dps',
+    roll: pdpsQ20,
+    disabled: !isPdpsImportant(item) || (pdpsQ20.value / dps.value < 0.67),
+    hidden: (pdpsQ20.value / dps.value < 0.67) ? 'Physical damage is not the main source of DPS' : undefined
+  }, ctx))
+
+  ctx.filters.push(propToFilter({
+    ref: 'Attacks per Second: #',
+    tradeId: 'weapon.aps',
+    roll: attackSpeed,
+    dp: true,
+    disabled: true
+  }, ctx))
+
+  const critChance = calcPropBounds(item.weaponCRIT!, { incr: ['#% increased Critical Strike Chance'], flat: [] }, item)
+
+  ctx.filters.push(propToFilter({
+    ref: 'Critical Strike Chance: #%',
+    tradeId: 'weapon.crit',
+    roll: critChance,
+    dp: true,
+    disabled: true
+  }, ctx))
 
   if (
     item.weaponAS ||
@@ -200,19 +184,11 @@ function weaponProps (ctx: FiltersCreationContext) {
     item.weaponELEMENTAL ||
     item.weaponPHYSICAL
   ) {
-    createHiddenFilters(ctx, WEAPON_STATS)
+    removeUsedStats(ctx, WEAPON_STATS)
   }
 }
 
-function createHiddenFilters (ctx: FiltersCreationContext, stats: Set<string>) {
-  for (const m of ctx.statsByType) {
-    if (stats.has(m.stat.ref)) {
-      const filter = calculatedStatToFilter(m, ctx.item, { percent: ctx.searchInRange })
-      filter.hidden = 'Contributes to the item property'
-      ctx.filters.push(filter)
-    }
-  }
-
+function removeUsedStats (ctx: FiltersCreationContext, stats: Set<string>) {
   ctx.statsByType = ctx.statsByType.filter(m => !stats.has(m.stat.ref))
 }
 
@@ -237,4 +213,47 @@ function isPdpsImportant (item: ParsedItem) {
     default:
       return false
   }
+}
+
+function propToFilter (opts: {
+  ref: string
+  tradeId: InternalTradeId
+  roll: StatRoll
+  dp?: boolean
+  disabled?: StatFilter['disabled']
+  hidden?: StatFilter['hidden']
+}, ctx: FiltersCreationContext): StatFilter {
+  const stat = {
+    ref: opts.ref,
+    matchers: [{ string: opts.ref }],
+    trade: { ids: { pseudo: [opts.tradeId] } },
+    better: StatBetter.PositiveRoll
+  }
+  const filter = calculatedStatToFilter({
+    stat: stat,
+    type: ModifierType.Pseudo,
+    sources: [{
+      modifier: {
+        info: { type: ModifierType.Pseudo, tags: [] },
+        stats: []
+      },
+      stat: {
+        stat: stat,
+        translation: stat.matchers[0],
+        roll: {
+          dp: opts.dp ?? false,
+          unscalable: false,
+          ...opts.roll
+        }
+      },
+      contributes: opts.roll
+    }]
+  }, ctx.searchInRange, ctx.item)
+
+  filter.tag = FilterTag.Property
+  filter.sources = []
+  if (opts.disabled != null) filter.disabled = opts.disabled
+  if (opts.hidden != null) filter.hidden = opts.hidden
+
+  return filter
 }

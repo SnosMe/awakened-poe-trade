@@ -59,8 +59,8 @@ export interface BaseType {
     propAR?: true
     propEV?: true
     propES?: true
-    hasImplicit?: { ref: string }
-    hasExplicit?: { ref: string }
+    hasImplicit?: { ref: Stat['ref'] }
+    hasExplicit?: { ref: Stat['ref'] }
     sectionText?: string
     mapTier?: 'W' | 'Y' | 'R'
   }
@@ -71,7 +71,8 @@ export interface BaseType {
     uniqueOnly?: true
   }
   unique?: {
-    base: string
+    base: BaseType['refName']
+    fixedStats?: Array<Stat['ref']>
   }
   map?: {
     screenshot?: string
@@ -83,7 +84,7 @@ export interface BaseType {
     vaal?: true
     awakened?: true
     altQuality?: string[]
-    normalVariant?: string
+    normalVariant?: BaseType['refName']
   }
 }
 

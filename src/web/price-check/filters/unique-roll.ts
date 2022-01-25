@@ -1,24 +1,15 @@
-// import { UniqueItem, UNIQUES } from '@/assets/data'
 import type { ParsedItem } from '@/parser'
 import type { StatRoll } from '@/parser/modifiers'
 import { FilterTag, StatFilter } from './interfaces'
 import { percentRollDelta } from './util'
 
 export function uniqueModFilterPartial (
-  _item: ParsedItem,
   statRoll: StatRoll,
   filter: StatFilter,
   percent: number,
   dp: boolean
 ): void {
-  // const uniqueInfo = UNIQUES.get(`${item.info.refName} ${item.info.unique!.base}`)
-
-  // TODO set this info again and uncomment line
-  // filter.variant = modInfo.variant
-
   if (statRoll.min === statRoll.max) {
-    // TODO: add exceptions to (!mod.bounds) for items like sythesized rings, watcher's eye, unqiues with variants, etc.
-
     filter.roll = {
       value: statRoll.value,
       min: statRoll.value,
@@ -29,10 +20,6 @@ export function uniqueModFilterPartial (
       },
       dp: dp,
       isNegated: false
-    }
-
-    if (filter.tag !== FilterTag.Variant && filter.tag !== FilterTag.Corrupted) {
-      filter.hidden = 'Roll is not variable'
     }
   } else {
     filter.roll = {
@@ -50,5 +37,25 @@ export function uniqueModFilterPartial (
       dp: dp,
       isNegated: false
     }
+  }
+}
+
+export function uniqueModFilterTweaks (
+  item: ParsedItem,
+  filter: StatFilter
+): void {
+  if (item.info.unique!.fixedStats) {
+    const fixedStats = item.info.unique!.fixedStats
+    if (!fixedStats.includes(filter.statRef)) {
+      filter.tag = FilterTag.Variant
+    }
+  }
+
+  if (
+    !filter.roll?.bounds &&
+    filter.tag !== FilterTag.Variant &&
+    filter.tag !== FilterTag.Corrupted
+  ) {
+    filter.hidden = 'Roll is not variable'
   }
 }

@@ -1,8 +1,6 @@
 import { stat, STAT_BY_REF } from '@/assets/data'
-import { ModifierType, statSourcesTotal } from '@/parser/modifiers'
-import { rollToFilter } from '../util'
-import { filterPseudoSources, pseudoStat } from './util'
-import type { FiltersCreationContext } from '../create-stat-filters'
+import { ModifierType, StatCalculated, StatSource } from '@/parser/modifiers'
+import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-filters'
 import type { StatFilter } from '../interfaces'
 
 const RESISTANCES_INFO = [
@@ -333,19 +331,13 @@ export function filterPseudo (ctx: FiltersCreationContext) {
       }
     }
 
-    const total = statSourcesTotal(sources)!
+    const filter = calculatedStatToFilter({
+      stat: STAT_BY_REF(rule.pseudo)!,
+      type: ModifierType.Pseudo,
+      sources: sources
+    }, ctx.searchInRange, ctx.item)
 
-    const filter = {
-      ...pseudoStat(rule.pseudo),
-      disabled: rule.disabled ?? true,
-      sources: sources,
-      roll: rollToFilter(total.value, {
-        neverNegated: true,
-        // TODO: is this correct/can be improved
-        dp: rule.stats.some(({ ref }) => STAT_BY_REF(ref)!.dp),
-        percent: ctx.searchInRange
-      })
-    }
+    filter.disabled = rule.disabled ?? true
 
     if (rule.mutate) {
       rule.mutate(filter)
@@ -407,4 +399,20 @@ export function filterPseudo (ctx: FiltersCreationContext) {
       }
     }
   }
+}
+
+function filterPseudoSources (
+  stats: StatCalculated[],
+  mapFn: (calc: StatCalculated, source: StatSource) => StatSource | null
+): StatSource[] {
+  const out: StatSource[] = []
+  for (const calc of stats) {
+    for (const source of calc.sources) {
+      const result = mapFn(calc, source)
+      if (result) {
+        out.push(result)
+      }
+    }
+  }
+  return out
 }

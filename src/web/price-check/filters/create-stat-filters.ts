@@ -1,12 +1,10 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
-import { uniqueModFilterPartial } from './unique-roll'
-import { percentRoll, roundRoll } from './util'
+import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
-import { filterUniqueItemProp } from './pseudo/item-property-unique'
 import { StatBetter } from '@/assets/data'
 
 export interface FiltersCreationContext {
@@ -43,12 +41,8 @@ export function initUiModFilters (
   }
 
   if (!item.isUnidentified) {
-    if (item.rarity === ItemRarity.Unique) {
-      filterUniqueItemProp(ctx)
-    } else {
-      filterItemProp(ctx)
-      filterPseudo(ctx)
-    }
+    filterItemProp(ctx)
+    filterPseudo(ctx)
   }
 
   if (!item.isCorrupted && !item.isMirrored) {
@@ -61,7 +55,7 @@ export function initUiModFilters (
   }
 
   ctx.filters.push(
-    ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, item, { percent: ctx.searchInRange }))
+    ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
   )
 
   if (!item.isCorrupted && !item.isMirrored && item.isSynthesised) {
@@ -69,7 +63,7 @@ export function initUiModFilters (
       mod.type === ModifierType.Implicit &&
       !ctx.statsByType.includes(mod))
 
-    const synthImplicitFilters = transformedImplicits.map(mod => calculatedStatToFilter(mod, item, { percent: ctx.searchInRange }))
+    const synthImplicitFilters = transformedImplicits.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
     for (const filter of synthImplicitFilters) {
       filter.hidden = 'Select only if price-checking as base item for crafting'
     }
@@ -95,8 +89,8 @@ export function initUiModFilters (
 
 export function calculatedStatToFilter (
   calc: StatCalculated,
-  item: ParsedItem,
-  opts: { percent: number }
+  percent: number,
+  item: ParsedItem
 ): StatFilter {
   const { stat, sources, type } = calc
 
@@ -122,105 +116,112 @@ export function calculatedStatToFilter (
     tradeId: stat.trade.ids[type],
     statRef: stat.ref,
     text: translation.string,
-    tag: sources.some(s => s.modifier.info.generation === 'corrupted') // TODO
-      ? FilterTag.Corrupted
-      : type as unknown as FilterTag,
+    tag: (type as unknown) as FilterTag,
     sources: sources,
     roll: undefined,
     disabled: true
   }
 
-  if (roll) {
-    const dp =
-      calc.stat.dp ||
-      calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
-
-    if (
-      item.rarity === ItemRarity.Unique &&
-      calc.type !== ModifierType.Enchant
-    ) {
-      uniqueModFilterPartial(item, roll, filter, (opts.percent * 2), dp)
-    } else {
-      const percent = (calc.type === ModifierType.Enchant)
-        ? 0
-        : opts.percent
-
-      filter.roll = {
-        value: roundRoll(roll.value, dp),
-        min: undefined,
-        max: undefined,
-        default: {
-          min: percentRoll(roll.value, -percent, Math.floor, dp),
-          max: percentRoll(roll.value, +percent, Math.ceil, dp)
-        },
-        dp: dp,
-        isNegated: false
-      }
+  if (type === ModifierType.Implicit) {
+    if (sources.some(s => s.modifier.info.generation === 'corrupted')) {
+      filter.tag = FilterTag.Corrupted
+    } else if (item.isSynthesised) {
+      filter.tag = FilterTag.Synthesised
     }
-  } else if (
-    item.rarity === ItemRarity.Unique &&
-    calc.type !== ModifierType.Enchant
-  ) {
-    // TODO: add exceptions to (!mod.bounds) for items like sythesized rings, watcher's eye, unqiues with variants, etc.
-    if (filter.tag !== FilterTag.Variant && filter.tag !== FilterTag.Corrupted) {
-      filter.hidden = 'Roll is not variable'
+  } else if (type === ModifierType.Explicit) {
+    if (item.info.unique?.fixedStats) {
+      const fixedStats = item.info.unique.fixedStats
+      if (!fixedStats.includes(filter.statRef)) {
+        filter.tag = FilterTag.Variant
+      }
     }
   }
 
-  filterAdjustmentForNegate(calc, translation.negate, filter)
+  if (!roll) return filter
+
+  const dp =
+    calc.stat.dp ||
+    calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
+
+  const filterBounds = {
+    min: percentRoll(roll.min, -0, Math.floor, dp),
+    max: percentRoll(roll.max, +0, Math.ceil, dp)
+  }
+
+  const filterDefault = (item.rarity === ItemRarity.Unique)
+    ? {
+        min: percentRollDelta(roll.value, (roll.max - roll.min), -(percent * 2), Math.floor, dp),
+        max: percentRollDelta(roll.value, (roll.max - roll.min), +(percent * 2), Math.ceil, dp)
+      }
+    : {
+        min: percentRoll(roll.value, -percent, Math.floor, dp),
+        max: percentRoll(roll.value, +percent, Math.ceil, dp)
+      }
+  filterDefault.min = Math.max(filterDefault.min, filterBounds.min)
+  filterDefault.max = Math.min(filterDefault.max, filterBounds.max)
+
+  filter.roll = {
+    value: roundRoll(roll.value, dp),
+    min: undefined,
+    max: undefined,
+    default: filterDefault,
+    bounds: (roll.min !== roll.max && item.rarity === ItemRarity.Unique)
+      ? filterBounds
+      : undefined,
+    dp: dp,
+    isNegated: false,
+    tradeInvert: calc.stat.trade.inverted
+  }
+
+  filterFillMinMax(filter.roll, calc.stat.better)
+
+  if (translation.negate) {
+    filterAdjustmentForNegate(filter.roll)
+  }
 
   return filter
 }
 
-function filterAdjustmentForNegate (
-  calc: StatCalculated,
-  negate: boolean,
-  filter: StatFilter
+function filterFillMinMax (
+  roll: NonNullable<StatFilter['roll']>,
+  better: StatBetter
 ) {
-  if (!filter.roll) return
+  switch (better) {
+    case StatBetter.PositiveRoll:
+      roll.min = roll.default.min
+      break
+    case StatBetter.NegativeRoll:
+      roll.max = roll.default.max
+      break
+    case StatBetter.NotComparable:
+      roll.min = roll.default.min
+      roll.max = roll.default.max
+      break
+  }
+}
 
-  const { roll } = filter
+function filterAdjustmentForNegate (
+  roll: NonNullable<StatFilter['roll']>
+) {
+  roll.tradeInvert = !roll.tradeInvert
+  roll.isNegated = true
+  const swap = JSON.parse(JSON.stringify(roll)) as typeof roll
 
-  if (roll.min == null && roll.max == null) {
-    switch (calc.stat.better) {
-      case StatBetter.PositiveRoll:
-        roll.min = roll.default.min
-        break
-      case StatBetter.NegativeRoll:
-        roll.max = roll.default.max
-        break
-      case StatBetter.NotComparable:
-        roll.min = roll.default.min
-        roll.max = roll.default.max
-        break
-    }
+  if (swap.bounds && roll.bounds) {
+    roll.bounds.min = -1 * swap.bounds.max
+    roll.bounds.max = -1 * swap.bounds.min
   }
 
-  if (negate) {
-    roll.tradeInvert = true
-    roll.isNegated = true
-    const swap = JSON.parse(JSON.stringify(roll)) as typeof roll
+  roll.default.min = -1 * swap.default.max
+  roll.default.max = -1 * swap.default.min
 
-    if (swap.bounds) {
-      roll.bounds!.min = -1 * swap.bounds.max
-      roll.bounds!.max = -1 * swap.bounds.min
-    }
-
-    roll.default.min = -1 * swap.default.max
-    roll.default.max = -1 * swap.default.min
-
-    roll.value = -1 * swap.value
-    roll.min = (typeof swap.max === 'number')
-      ? -1 * swap.max
-      : undefined
-    roll.max = (typeof swap.min === 'number')
-      ? -1 * swap.min
-      : undefined
-  }
-
-  if (calc.stat.trade.inverted) {
-    roll.tradeInvert = !roll.tradeInvert
-  }
+  roll.value = -1 * swap.value
+  roll.min = (typeof swap.max === 'number')
+    ? -1 * swap.max
+    : undefined
+  roll.max = (typeof swap.min === 'number')
+    ? -1 * swap.min
+    : undefined
 }
 
 function finalFilterTweaks (ctx: FiltersCreationContext) {

@@ -115,7 +115,9 @@ export default defineComponent({
       props.filter.tag !== FilterTag.Property &&
       props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
       props.item.info.refName !== 'Chronicle of Atzoatl' &&
-      !(props.item.rarity === ItemRarity.Unique && props.filter.tag === FilterTag.Explicit)
+      !(props.item.rarity === ItemRarity.Unique && (
+        props.filter.tag === FilterTag.Explicit ||
+        props.filter.tag === FilterTag.Pseudo))
     )
 
     const showQ20Notice = computed(() => {
@@ -298,16 +300,15 @@ export default defineComponent({
   @apply text-xs;
   line-height: 1;
 }
-.tag-implicit,
 .tag-variant {
   @apply bg-yellow-700 text-yellow-100; }
 .tag-corrupted {
   @apply bg-red-700 text-red-100; }
 .tag-fractured {
   @apply bg-yellow-400 text-black; }
-.tag-crafted {
+.tag-crafted, .tag-synthesised {
   @apply bg-blue-600 text-blue-100; }
-.tag-explicit {
+.tag-implicit, .tag-explicit {
   @apply -mx-1 text-gray-600; }
 .tag-scourge {
   @apply bg-orange-600 text-white; }
@@ -400,8 +401,6 @@ export default defineComponent({
     "Physical damage is not the main source of DPS": "Физический урон не основной источник ДПСа",
     "Filtering by exact Elemental Resistance unreasonably increases the price": "Поиск по точному виду сопротивления необоснованно увеличивает цену",
     "Crafted Chaos Resistance without Explicit mod has no value": "Крафтовое сопротивление хаосу без \"родного\" свойства не имеет ценности",
-    "Contributes to the item property": "Вносит вклад в параметр предмета",
-    "Hidden for sake of familiar view of item stats": "Скрыт ради привычного просмотра свойств предмета",
     "Buyer will likely change anointment": "Покупатель, скорее всего, поменяет зачарование",
     "Select only if price-checking as base item for crafting": "Отмечайте, если проверяете цену в качестве базового предмета для крафта",
     "1 Empty or Crafted Modifier": "1 свободное или ремесленное свойство",
