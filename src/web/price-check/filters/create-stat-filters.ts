@@ -137,49 +137,68 @@ export function calculatedStatToFilter (
     }
   }
 
-  if (!roll) return filter
-
-  const dp =
+  if (roll) {
+    const dp =
     calc.stat.dp ||
     calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
 
-  const filterBounds = {
-    min: percentRoll(roll.min, -0, Math.floor, dp),
-    max: percentRoll(roll.max, +0, Math.ceil, dp)
+    const filterBounds = {
+      min: percentRoll(roll.min, -0, Math.floor, dp),
+      max: percentRoll(roll.max, +0, Math.ceil, dp)
+    }
+
+    const filterDefault = (item.rarity === ItemRarity.Unique)
+      ? {
+          min: percentRollDelta(roll.value, (roll.max - roll.min), -(percent * 2), Math.floor, dp),
+          max: percentRollDelta(roll.value, (roll.max - roll.min), +(percent * 2), Math.ceil, dp)
+        }
+      : {
+          min: percentRoll(roll.value, -percent, Math.floor, dp),
+          max: percentRoll(roll.value, +percent, Math.ceil, dp)
+        }
+    filterDefault.min = Math.max(filterDefault.min, filterBounds.min)
+    filterDefault.max = Math.min(filterDefault.max, filterBounds.max)
+
+    filter.roll = {
+      value: roundRoll(roll.value, dp),
+      min: undefined,
+      max: undefined,
+      default: filterDefault,
+      bounds: (roll.min !== roll.max && item.rarity === ItemRarity.Unique)
+        ? filterBounds
+        : undefined,
+      dp: dp,
+      isNegated: false,
+      tradeInvert: calc.stat.trade.inverted
+    }
+
+    filterFillMinMax(filter.roll, calc.stat.better)
+
+    if (translation.negate) {
+      filterAdjustmentForNegate(filter.roll)
+    }
   }
 
-  const filterDefault = (item.rarity === ItemRarity.Unique)
-    ? {
-        min: percentRollDelta(roll.value, (roll.max - roll.min), -(percent * 2), Math.floor, dp),
-        max: percentRollDelta(roll.value, (roll.max - roll.min), +(percent * 2), Math.ceil, dp)
-      }
-    : {
-        min: percentRoll(roll.value, -percent, Math.floor, dp),
-        max: percentRoll(roll.value, +percent, Math.ceil, dp)
-      }
-  filterDefault.min = Math.max(filterDefault.min, filterBounds.min)
-  filterDefault.max = Math.min(filterDefault.max, filterBounds.max)
-
-  filter.roll = {
-    value: roundRoll(roll.value, dp),
-    min: undefined,
-    max: undefined,
-    default: filterDefault,
-    bounds: (roll.min !== roll.max && item.rarity === ItemRarity.Unique)
-      ? filterBounds
-      : undefined,
-    dp: dp,
-    isNegated: false,
-    tradeInvert: calc.stat.trade.inverted
-  }
-
-  filterFillMinMax(filter.roll, calc.stat.better)
-
-  if (translation.negate) {
-    filterAdjustmentForNegate(filter.roll)
-  }
+  hideNotVariableStat(filter, item)
 
   return filter
+}
+
+function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
+  if (item.rarity !== ItemRarity.Unique) return
+  if (
+    filter.tag !== FilterTag.Implicit &&
+    filter.tag !== FilterTag.Explicit &&
+    filter.tag !== FilterTag.Pseudo
+  ) return
+
+  if (!filter.roll) {
+    filter.hidden = 'Roll is not variable'
+  } else if (!filter.roll.bounds) {
+    filter.roll.min = filter.roll.value
+    filter.roll.max = filter.roll.value
+    filter.hidden = 'Roll is not variable'
+  }
 }
 
 function filterFillMinMax (
