@@ -140,6 +140,10 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       }
     }
 
+    if (found.stat.ref === '# uses remaining') {
+      combination.values[0].bounds!.min = 1
+    }
+
     if (combination.values.some(stat =>
       (stat.bounds != null) &&
       (stat.roll < stat.bounds.min || stat.roll > stat.bounds.max)
