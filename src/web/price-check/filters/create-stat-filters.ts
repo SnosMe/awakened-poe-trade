@@ -261,7 +261,6 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         if (filter.statRef === 'Adds # Passive Skills') {
           // https://pathofexile.gamepedia.com/Cluster_Jewel#Optimal_passive_skill_amounts
           filter.disabled = false
-          filter.roll!.min = undefined
           if (filter.roll!.max === 4) {
             filter.roll!.max = 5
           }
