@@ -1,6 +1,6 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { selected as league } from '@/web/background/Leagues'
-import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation, PERMANENT_LEAGUES } from './common'
+import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -142,7 +142,7 @@ export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): P
         have: [have],
         want: [tradeTag(item)!],
         status: {
-          option: (PERMANENT_LEAGUES.includes(filters.trade.league) ? 'onlineleague' : 'online')
+          option: (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
         },
         minimum: (filters.stackSize && !filters.stackSize.disabled) ? filters.stackSize.value : undefined
         // fulfillable: null

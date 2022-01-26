@@ -2,7 +2,7 @@ import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import prop from 'dot-prop'
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation, PERMANENT_LEAGUES } from './common'
+import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { STAT_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
@@ -227,7 +227,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       status: {
         option: filters.trade.offline
           ? 'any'
-          : (PERMANENT_LEAGUES.includes(filters.trade.league) ? 'onlineleague' : 'online')
+          : (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
       },
       stats: [
         { type: 'and', filters: [] }

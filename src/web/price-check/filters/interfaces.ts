@@ -68,6 +68,7 @@ export interface ItemFilters {
   }
   trade: {
     offline: boolean
+    onlineInLeague: boolean
     listed: string | undefined
     league: string
     chaosPriceThreshold: number

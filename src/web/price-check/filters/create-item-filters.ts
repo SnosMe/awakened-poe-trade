@@ -1,6 +1,6 @@
 import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
-import { tradeTag } from '../trade/common'
+import { tradeTag, PERMANENT_LEAGUES } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { ITEM_BY_REF } from '@/assets/data'
 
@@ -18,6 +18,7 @@ export function createFilters (
   const filters: ItemFilters = {
     trade: {
       offline: false,
+      onlineInLeague: PERMANENT_LEAGUES.includes(opts.league),
       listed: undefined,
       league: opts.league,
       chaosPriceThreshold: opts.chaosPriceThreshold,

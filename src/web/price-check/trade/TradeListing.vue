@@ -14,22 +14,25 @@
           </button>
         </template>
         <template #content>
-          <div class="p-2 bg-gray-800 text-gray-400">
-            <ui-toggle v-model="filters.trade.offline" class="mb-2">{{ t('Offline & Online') }}</ui-toggle>
-            <div class="flex">
-              <div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" :value="undefined">{{ t('Listed: Any Time') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1day">{{ t('1 Day Ago') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="3days">{{ t('3 Days Ago') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="1week">{{ t('1 Week Ago') }}</ui-radio></div>
-                <div class="mb-1"><ui-radio v-model="filters.trade.listed" value="2weeks">{{ t('2 Weeks Ago') }}</ui-radio></div>
-                <div class="mb"><ui-radio v-model="filters.trade.listed" value="1month">{{ t('1 Month Ago') }}</ui-radio></div>
+          <div class="flex gap-x-8 p-2 bg-gray-800 text-gray-400">
+            <div class="flex flex-col gap-y-1">
+              <div class="mb-1">
+                <ui-toggle v-model="filters.trade.offline">{{ t('Offline & Online') }}</ui-toggle>
               </div>
-              <div class="ml-8">
-                <div class="mb-1" v-for="league of tradeLeagues" :key="league.id">
-                  <ui-radio v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
-                </div>
+              <ui-radio v-model="filters.trade.listed" :value="undefined">{{ t('Listed: Any Time') }}</ui-radio>
+              <ui-radio v-model="filters.trade.listed" value="1day">{{ t('1 Day Ago') }}</ui-radio>
+              <ui-radio v-model="filters.trade.listed" value="3days">{{ t('3 Days Ago') }}</ui-radio>
+              <ui-radio v-model="filters.trade.listed" value="1week">{{ t('1 Week Ago') }}</ui-radio>
+              <ui-radio v-model="filters.trade.listed" value="2weeks">{{ t('2 Weeks Ago') }}</ui-radio>
+              <ui-radio v-model="filters.trade.listed" value="1month">{{ t('1 Month Ago') }}</ui-radio>
+            </div>
+            <div class="flex flex-col gap-y-1">
+              <div class="mb-1 h-6">
+                <ui-toggle v-if="!filters.trade.offline"
+                  v-model="filters.trade.onlineInLeague">{{ t('In League') }}</ui-toggle>
               </div>
+              <ui-radio v-for="league of tradeLeagues" :key="league.id"
+                v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
             </div>
           </div>
         </template>
@@ -319,6 +322,7 @@ export default defineComponent({
   "ru": {
     "Matched:": "Найдено:",
     "Offline & Online": "Офлайн и Онлайн",
+    "In League": "В лиге",
     "Listed: Any Time": "Любое время",
     "1 Day Ago": "До 1-го дня",
     "3 Days Ago": "До 3-х дней",
