@@ -47,18 +47,17 @@ export default defineComponent({
         let { code, ctrlKey, shiftKey, altKey } = e
 
         if (code.startsWith('Key')) {
-          code = code.substr('Key'.length)
+          code = code.substring('Key'.length)
         } else if (code.startsWith('Digit')) {
-          code = code.substr('Digit'.length)
+          code = code.substring('Digit'.length)
         } else if (e.key === 'Cancel' && code === 'Pause') {
           code = 'Cancel'
         }
 
         if ((KeyToCode as Record<string, number>)[code]) {
           code = hotkeyToString([code], ctrlKey, shiftKey, altKey)
-          if (props.noModKeys && code.includes('+')) {
-            return
-          }
+          if (code.includes('F12')) return
+          if (props.noModKeys && code.includes('+')) return
           ctx.emit('update:modelValue', code)
         }
       }
