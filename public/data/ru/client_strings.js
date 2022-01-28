@@ -1,3 +1,5 @@
+// @ts-check
+/** @type{import('../../../src/assets/data/interfaces').TranslationDict} */
 export default {
   RARITY_NORMAL: 'Обычный',
   RARITY_MAGIC: 'Волшебный',
@@ -59,19 +61,13 @@ export default {
   QUALITY_ANOMALOUS: /^Аномальный: (.*)$/,
   QUALITY_DIVERGENT: /^Искривлённый: (.*)$/,
   QUALITY_PHANTASMAL: /^Фантомный: (.*)$/,
-  HEIST_REQUIRED_JOB: /^Требуется (?<job>.+) \((?<level>\d+) уровень\)$/,
   AREA_LEVEL: 'Уровень области: ',
-  HEIST_JOB: {
-    'Lockpicking': 'взлом',
-    'Counter-Thaumaturgy': 'контрмагия',
-    'Perception': 'восприятие',
-    'Deception': 'маскировка',
-    'Agility': 'проворство',
-    'Engineering': 'инженерное дело',
-    'Trap Disarmament': 'разминирование',
-    'Demolition': 'взрывное дело',
-    'Brute Force': 'грубая сила'
-  },
+  HEIST_WINGS_REVEALED: 'Крыльев обнаружено: ',
+  HEIST_TARGET: 'Предмет кражи: ',
+  HEIST_BLUEPRINT_ENCHANTS: 'Зачарованное вооружение',
+  HEIST_BLUEPRINT_TRINKETS: 'Воровские украшения или валюта',
+  HEIST_BLUEPRINT_GEMS: 'Необычные камни',
+  HEIST_BLUEPRINT_REPLICAS: 'Копии или экспериментальные предметы',
   MIRRORED: 'Отражено',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Уровень: (?<tier>\d+)\))?(?:\s+\(Ранг: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: 'Префикс',

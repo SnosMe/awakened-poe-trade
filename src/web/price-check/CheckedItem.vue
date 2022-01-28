@@ -118,6 +118,7 @@ export default defineComponent({
         interactedOnce.value = Boolean(
           (item.rarity === ItemRarity.Unique) ||
           (item.category === ItemCategory.Map) ||
+          (item.category === ItemCategory.HeistBlueprint) ||
           (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
           (item.isUnidentified) ||
           (item.isVeiled)

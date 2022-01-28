@@ -114,14 +114,14 @@ export function createFilters (
     filters.mapTier = {
       value: item.mapTier!
     }
-  } else if (
-    item.rarity !== ItemRarity.Unique && (
-      item.category === ItemCategory.HeistContract ||
-      item.category === ItemCategory.HeistBlueprint)
-  ) {
+  } else if (item.category === ItemCategory.HeistContract) {
+    filters.searchExact = {
+      baseType: item.info.name
+    }
+  } else if (item.category === ItemCategory.HeistBlueprint) {
     filters.searchRelaxed = {
       category: item.category,
-      disabled: false
+      disabled: true // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3109852
     }
     filters.searchExact = {
       baseType: item.info.name
@@ -131,10 +131,9 @@ export function createFilters (
       value: item.areaLevel!
     }
 
-    if (item.heistJob) {
-      filters.heistJob = {
-        name: item.heistJob.name,
-        level: item.heistJob.level
+    if (item.heist?.wingsRevealed && item.heist.wingsRevealed > 1) {
+      filters.heistWingsRevealed = {
+        value: item.heist.wingsRevealed
       }
     }
   } else if (

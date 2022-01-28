@@ -155,6 +155,7 @@ interface TradeRequest { /* eslint-disable camelcase */
       }
       heist_filters?: {
         filters: {
+          heist_wings?: FilterRange
           heist_agility?: FilterRange
           heist_brute_force?: FilterRange
           heist_counter_thaumaturgy?: FilterRange
@@ -353,36 +354,8 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     prop.set(query.filters, 'map_filters.filters.area_level.min', filters.areaLevel.value)
   }
 
-  if (filters.heistJob) {
-    switch (filters.heistJob.name) {
-      case 'Agility':
-        prop.set(query.filters, 'heist_filters.filters.heist_agility.min', filters.heistJob.level)
-        break
-      case 'Brute Force':
-        prop.set(query.filters, 'heist_filters.filters.heist_brute_force.min', filters.heistJob.level)
-        break
-      case 'Counter-Thaumaturgy':
-        prop.set(query.filters, 'heist_filters.filters.heist_counter_thaumaturgy.min', filters.heistJob.level)
-        break
-      case 'Deception':
-        prop.set(query.filters, 'heist_filters.filters.heist_deception.min', filters.heistJob.level)
-        break
-      case 'Demolition':
-        prop.set(query.filters, 'heist_filters.filters.heist_demolition.min', filters.heistJob.level)
-        break
-      case 'Engineering':
-        prop.set(query.filters, 'heist_filters.filters.heist_engineering.min', filters.heistJob.level)
-        break
-      case 'Lockpicking':
-        prop.set(query.filters, 'heist_filters.filters.heist_lockpicking.min', filters.heistJob.level)
-        break
-      case 'Perception':
-        prop.set(query.filters, 'heist_filters.filters.heist_perception.min', filters.heistJob.level)
-        break
-      case 'Trap Disarmament':
-        prop.set(query.filters, 'heist_filters.filters.heist_trap_disarmament.min', filters.heistJob.level)
-        break
-    }
+  if (filters.heistWingsRevealed) {
+    prop.set(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }
 
   for (const stat of stats) {

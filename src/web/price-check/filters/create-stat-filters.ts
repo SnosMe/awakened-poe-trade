@@ -22,7 +22,9 @@ export function initUiModFilters (
 ): StatFilter[] {
   if (
     (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) ||
-    item.category === ItemCategory.MavenInvitation
+    item.category === ItemCategory.MavenInvitation ||
+    item.category === ItemCategory.HeistContract ||
+    item.category === ItemCategory.HeistBlueprint
   ) {
     return []
   }
@@ -79,7 +81,7 @@ export function initUiModFilters (
   }
 
   if (item.category === ItemCategory.Map) {
-    ctx.filters = ctx.filters.filter(f => f.tag !== 'explicit')
+    ctx.filters = ctx.filters.filter(f => f.tag !== FilterTag.Explicit)
   }
 
   finalFilterTweaks(ctx)

@@ -8,7 +8,7 @@ import {
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory } from './meta'
-import { HeistJob, IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
+import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE } from './advanced-mod-desc'
 
@@ -52,7 +52,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMap,
   parseSockets,
   parseProphecyMaster,
-  parseHeistMission,
+  parseHeistBlueprint,
   parseAtzoatlAreaLevel,
   parseAtzoatlRooms,
   parseMirrored,
@@ -702,28 +702,31 @@ function parseProphecyMaster (section: string[], item: ParsedItem) {
   return SECTION_SKIPPED
 }
 
-function parseHeistMission (section: string[], item: ParsedItem) {
-  if (item.category !== ItemCategory.HeistBlueprint &&
-      item.category !== ItemCategory.HeistContract) return PARSER_SKIPPED
+function parseHeistBlueprint (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.HeistBlueprint) return PARSER_SKIPPED
 
   parseAreaLevelNested(section, item)
   if (!item.areaLevel) {
     return SECTION_SKIPPED
   }
 
-  if (item.category === ItemCategory.HeistContract) {
-    let match = null as RegExpMatchArray | null
-    for (const line of section) {
-      if ((match = line.match(_$.HEIST_REQUIRED_JOB))) {
-        break
-      }
-    }
-    if (!match) throw new Error('never')
+  item.heist = {}
 
-    item.heistJob = {
-      name: Object.entries(_$.HEIST_JOB)
-        .find(([_, tr]) => tr === match!.groups!.job)![0] as HeistJob,
-      level: Number(match.groups!.level)
+  for (const line of section) {
+    if (line.startsWith(_$.HEIST_TARGET)) {
+      const targetText = line.substr(_$.HEIST_TARGET.length)
+      switch (targetText) {
+        case _$.HEIST_BLUEPRINT_ENCHANTS:
+          item.heist.target = 'Enchants'; break
+        case _$.HEIST_BLUEPRINT_GEMS:
+          item.heist.target = 'Gems'; break
+        case _$.HEIST_BLUEPRINT_REPLICAS:
+          item.heist.target = 'Replicas'; break
+        case _$.HEIST_BLUEPRINT_TRINKETS:
+          item.heist.target = 'Trinkets'; break
+      }
+    } else if (line.startsWith(_$.HEIST_WINGS_REVEALED)) {
+      item.heist.wingsRevealed = parseInt(line.substr(_$.HEIST_WINGS_REVEALED.length), 10)
     }
   }
 

@@ -1,3 +1,5 @@
+// @ts-check
+/** @type{import('../../../src/assets/data/interfaces').TranslationDict} */
 export default {
   RARITY_NORMAL: 'Normal',
   RARITY_MAGIC: 'Magic',
@@ -59,19 +61,13 @@ export default {
   QUALITY_ANOMALOUS: /^Anomalous (.*)$/,
   QUALITY_DIVERGENT: /^Divergent (.*)$/,
   QUALITY_PHANTASMAL: /^Phantasmal (.*)$/,
-  HEIST_REQUIRED_JOB: /^Requires (?<job>.+) \(Level (?<level>\d+)\)$/,
   AREA_LEVEL: 'Area Level: ',
-  HEIST_JOB: {
-    'Lockpicking': 'Lockpicking',
-    'Counter-Thaumaturgy': 'Counter-Thaumaturgy',
-    'Perception': 'Perception',
-    'Deception': 'Deception',
-    'Agility': 'Agility',
-    'Engineering': 'Engineering',
-    'Trap Disarmament': 'Trap Disarmament',
-    'Demolition': 'Demolition',
-    'Brute Force': 'Brute Force'
-  },
+  HEIST_WINGS_REVEALED: 'Wings Revealed: ',
+  HEIST_TARGET: 'Heist Target: ',
+  HEIST_BLUEPRINT_ENCHANTS: 'Enchanted Armaments',
+  HEIST_BLUEPRINT_TRINKETS: 'Thieves\' Trinkets or Currency',
+  HEIST_BLUEPRINT_GEMS: 'Unusual Gems',
+  HEIST_BLUEPRINT_REPLICAS: 'Replicas or Experimented Items',
   MIRRORED: 'Mirrored',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: 'Prefix Modifier',

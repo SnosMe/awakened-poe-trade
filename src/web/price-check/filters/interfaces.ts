@@ -1,6 +1,6 @@
 import type { ItemInfluence, ItemCategory } from '@/parser'
 import type { StatCalculated } from '@/parser/modifiers'
-import type { HeistJob, ParsedItem } from '@/parser/ParsedItem'
+import type { ParsedItem } from '@/parser/ParsedItem'
 import type { Stat } from '@/assets/data'
 
 interface SearchFilter {
@@ -61,9 +61,8 @@ export interface ItemFilters {
   areaLevel?: {
     value: number
   }
-  heistJob?: {
-    name: HeistJob
-    level: number
+  heistWingsRevealed?: {
+    value: number
   }
   trade: {
     offline: boolean

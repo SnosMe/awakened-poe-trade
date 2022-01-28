@@ -58,22 +58,14 @@ export interface ParsedItem {
   extra: {
     prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
   }
-  heistJob?: { name: HeistJob, level: number }
+  heist?: {
+    wingsRevealed?: number
+    target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
+  }
   category?: ItemCategory
   info: BaseType
   rawText: string
 }
-
-export type HeistJob =
-  'Lockpicking' |
-  'Counter-Thaumaturgy' |
-  'Perception' |
-  'Deception' |
-  'Agility' |
-  'Engineering' |
-  'Trap Disarmament' |
-  'Demolition' |
-  'Brute Force'
 
 // NOTE: should match option values on trade
 export enum IncursionRoom {
