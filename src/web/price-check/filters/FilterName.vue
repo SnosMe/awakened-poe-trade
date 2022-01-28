@@ -13,9 +13,8 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ItemRarity, ParsedItem } from '@/parser'
-import { ItemFilters } from './interfaces'
-import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import type { ParsedItem } from '@/parser'
+import type { ItemFilters } from './interfaces'
 
 export default defineComponent({
   name: 'FilterName',
@@ -33,43 +32,33 @@ export default defineComponent({
     const { t } = useI18n()
 
     const label = computed(() => {
-      if (props.filters.name) {
-        return props.filters.name.value
+      const { filters } = props
+      const activeSearch = (filters.searchRelaxed && !filters.searchRelaxed.disabled)
+        ? filters.searchRelaxed
+        : filters.searchExact
+
+      if (activeSearch.name) {
+        return activeSearch.name
       }
-      if (props.filters.baseType) {
-        return props.filters.baseType.value
+      if (activeSearch.baseType) {
+        return activeSearch.baseType
       }
-      if (props.filters.category) {
-        return t(`Category: ${props.filters.category.value}`)
+      if (activeSearch.category) {
+        return t(`Category: ${activeSearch.category}`)
       }
 
       return '??? Report if you see this text'
     })
 
-    const canFilterByCategory = computed(() => {
-      return props.item.rarity !== ItemRarity.Unique &&
-        props.item.category != null &&
-        CATEGORY_TO_TRADE_ID.has(props.item.category)
-    })
-
     const showAsActive = computed(() => {
-      return canFilterByCategory.value &&
-        (props.filters.name || props.filters.baseType)
+      const { filters } = props
+      return filters.searchRelaxed?.disabled
     })
 
     function toggleAccuracy () {
-      if (!canFilterByCategory.value) return
-
-      if (props.filters.category) {
-        props.filters.category = undefined
-        props.filters.baseType = {
-          value: props.item.info.name
-        }
-      } else {
-        props.filters.baseType = undefined
-        props.filters.category = {
-          value: props.item.category!
-        }
+      const { filters } = props
+      if (filters.searchRelaxed) {
+        filters.searchRelaxed.disabled = !filters.searchRelaxed.disabled
       }
     }
 

@@ -16,6 +16,7 @@ export function createFilters (
   }
 ): ItemFilters {
   const filters: ItemFilters = {
+    searchExact: {},
     trade: {
       offline: false,
       onlineInLeague: PERMANENT_LEAGUES.includes(opts.league),
@@ -30,9 +31,9 @@ export function createFilters (
     return createGemFilters(item, filters)
   }
   if (item.category === ItemCategory.CapturedBeast) {
-    filters.baseType = {
-      value: item.info.name,
-      trade: item.info.refName
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: item.info.refName
     }
     return filters
   }
@@ -43,8 +44,8 @@ export function createFilters (
     }
   }
   if (item.category === ItemCategory.MavenInvitation) {
-    filters.baseType = {
-      value: item.info.name
+    filters.searchExact = {
+      baseType: item.info.name
     }
     return filters
   }
@@ -52,8 +53,8 @@ export function createFilters (
     item.category === ItemCategory.MetamorphSample ||
     item.category === ItemCategory.Seed
   ) {
-    filters.baseType = {
-      value: item.info.name
+    filters.searchExact = {
+      baseType: item.info.name
     }
     filters.itemLevel = {
       value: item.itemLevel!,
@@ -65,8 +66,8 @@ export function createFilters (
     item.category === ItemCategory.DivinationCard ||
     item.category === ItemCategory.Currency
   ) {
-    filters.baseType = {
-      value: item.info.name
+    filters.searchExact = {
+      baseType: item.info.name
     }
     if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
@@ -76,11 +77,9 @@ export function createFilters (
     return filters
   }
   if (item.category === ItemCategory.Prophecy) {
-    filters.name = {
-      value: item.info.name
-    }
-    filters.baseType = {
-      value: ITEM_BY_REF('ITEM', 'Prophecy')![0].name
+    filters.searchExact = {
+      name: item.info.name,
+      baseType: ITEM_BY_REF('ITEM', 'Prophecy')![0].name
     }
     if (item.info.prophecy?.masterName) {
       filters.discriminator = {
@@ -92,24 +91,24 @@ export function createFilters (
   }
 
   if (item.category === ItemCategory.Map) {
-    if (item.statsByType.some(calc => calc.stat.ref === 'Map is occupied by #')) {
-      filters.category = {
-        value: item.category
+    if (item.rarity === ItemRarity.Unique && item.info.unique) {
+      filters.searchExact = {
+        name: item.info.name,
+        baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
       }
     } else {
-      filters.baseType = {
-        value: (item.info.unique)
-          ? ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
-          : item.info.name
+      const isOccupiedBy = item.statsByType.some(calc => calc.stat.ref === 'Map is occupied by #')
+      filters.searchExact = {
+        baseType: item.info.name
+      }
+      filters.searchRelaxed = {
+        category: item.category,
+        disabled: !isOccupiedBy
       }
     }
 
     if (item.mapBlighted) {
       filters.mapBlighted = { value: item.mapBlighted }
-    }
-
-    if (item.rarity === ItemRarity.Unique) {
-      filters.name = { value: item.info.name }
     }
 
     filters.mapTier = {
@@ -120,8 +119,12 @@ export function createFilters (
       item.category === ItemCategory.HeistContract ||
       item.category === ItemCategory.HeistBlueprint)
   ) {
-    filters.category = {
-      value: item.category
+    filters.searchRelaxed = {
+      category: item.category,
+      disabled: false
+    }
+    filters.searchExact = {
+      baseType: item.info.name
     }
 
     filters.areaLevel = {
@@ -138,23 +141,33 @@ export function createFilters (
     item.category === ItemCategory.ClusterJewel &&
     item.rarity !== ItemRarity.Unique
   ) {
-    filters.baseType = {
-      value: item.info.name
+    filters.searchExact = {
+      baseType: item.info.name
+    }
+    filters.searchRelaxed = {
+      category: item.category,
+      disabled: true
     }
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
-    filters.name = { value: item.info.name }
-    filters.baseType = { value: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name }
+    filters.searchExact = {
+      name: item.info.name,
+      baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
+    }
   } else if (item.rarity === ItemRarity.Rare) {
     if (item.category) {
-      filters.category = {
-        value: item.category
+      filters.searchRelaxed = {
+        category: item.category,
+        disabled: false
       }
+    }
+    filters.searchExact = {
+      baseType: item.info.name
     }
     // else { never? }
   } else {
     // @TODO
-    filters.baseType = {
-      value: item.info.name
+    filters.searchExact = {
+      baseType: item.info.name
     }
   }
 
@@ -277,9 +290,8 @@ export function createFilters (
       if (filters.influences) {
         filters.influences[0].disabled = false
       }
-      filters.category = undefined
-      filters.baseType = {
-        value: item.info.name
+      if (filters.searchRelaxed) {
+        filters.searchRelaxed.disabled = true
       }
     }
   }
@@ -303,8 +315,8 @@ export function createFilters (
 }
 
 function createGemFilters (item: ParsedItem, filters: ItemFilters) {
-  filters.baseType = {
-    value: item.info.name
+  filters.searchExact = {
+    baseType: item.info.name
   }
 
   filters.corrupted = {

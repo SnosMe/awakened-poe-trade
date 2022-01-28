@@ -252,24 +252,28 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     prop.set(query.filters, 'trade_filters.filters.indexed.option', filters.trade.listed)
   }
 
-  if (filters.name) {
-    query.name = nameToQuery(filters.name.value, filters)
+  const activeSearch = (filters.searchRelaxed && !filters.searchRelaxed.disabled)
+    ? filters.searchRelaxed
+    : filters.searchExact
+
+  if (activeSearch.name) {
+    query.name = nameToQuery(activeSearch.name, filters)
   }
 
-  if (filters.baseType) {
-    query.type = nameToQuery(filters.baseType.trade ?? filters.baseType.value, filters)
+  if (activeSearch.baseType) {
+    query.type = nameToQuery(activeSearch.baseTypeTrade ?? activeSearch.baseType, filters)
   }
 
   if (filters.rarity) {
     prop.set(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
   }
 
-  if (filters.category) {
-    const id = CATEGORY_TO_TRADE_ID.get(filters.category.value)
+  if (activeSearch.category) {
+    const id = CATEGORY_TO_TRADE_ID.get(activeSearch.category)
     if (id) {
       prop.set(query.filters, 'type_filters.filters.category.option', id)
     } else {
-      throw new Error(`Invalid category: ${filters.category.value}`)
+      throw new Error(`Invalid category: ${activeSearch.category}`)
     }
   }
 

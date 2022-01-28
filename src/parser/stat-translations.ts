@@ -141,7 +141,11 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
     }
 
     if (found.stat.ref === '# uses remaining') {
-      combination.values[0].bounds!.min = 1
+      const uses = combination.values[0]
+      uses.bounds = {
+        min: 1,
+        max: uses.bounds?.max ?? uses.roll
+      }
     }
 
     if (combination.values.some(stat =>

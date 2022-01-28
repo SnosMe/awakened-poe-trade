@@ -3,20 +3,19 @@ import type { StatCalculated } from '@/parser/modifiers'
 import type { HeistJob, ParsedItem } from '@/parser/ParsedItem'
 import type { Stat } from '@/assets/data'
 
+interface SearchFilter {
+  name?: string
+  baseType?: string
+  baseTypeTrade?: string
+  category?: ItemCategory
+}
+
 export interface ItemFilters {
-  name?: {
-    value: string
-  }
-  baseType?: {
-    value: string
-    trade?: string
-  }
+  searchExact: SearchFilter
+  searchRelaxed?: SearchFilter & { disabled: boolean }
   discriminator?: {
     value: string
     trade: string
-  }
-  category?: {
-    value: ItemCategory
   }
   rarity?: {
     value: string
