@@ -34,8 +34,8 @@ export default defineComponent({
       props.config.wmFlags = []
       props.config.anchor = {
         pos: 'cc',
-        x: 50,
-        y: 50
+        x: (Math.random() * (60 - 40) + 40),
+        y: (Math.random() * (60 - 40) + 40)
       }
       wm.show(props.config.wmId)
     }

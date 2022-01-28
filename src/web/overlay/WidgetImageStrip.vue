@@ -58,8 +58,8 @@ export default defineComponent({
       props.config.wmFlags = ['invisible-on-blur']
       props.config.anchor = {
         pos: 'tc',
-        x: 50,
-        y: 10
+        x: (Math.random() * (60 - 40) + 40),
+        y: (Math.random() * (15 - 5) + 5)
       }
       props.config.images = [{
         id: 1, url: 'syndicate.jpg'

@@ -64,8 +64,8 @@ export default defineComponent({
       props.config.wmFlags = ['invisible-on-blur']
       props.config.anchor = {
         pos: 'tl',
-        x: 30,
-        y: 30
+        x: (Math.random() * (40 - 20) + 20),
+        y: (Math.random() * (40 - 20) + 20)
       }
       props.config.entries = [{
         id: 1, text: 'Currency'
