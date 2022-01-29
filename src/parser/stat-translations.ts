@@ -133,7 +133,6 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       for (const stat of combination.values) {
         stat.roll *= -1
         if (stat.bounds) {
-          // do not swap (TODO: or do? can't say from Ventor's Gamble)
           stat.bounds.min *= -1
           stat.bounds.max *= -1
         }

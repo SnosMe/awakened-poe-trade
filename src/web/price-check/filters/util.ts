@@ -9,17 +9,18 @@ function decimalPlaces (value: number, dp: number | boolean): number {
   }
 }
 
-export const roundRoll = (value: number, dp: boolean) =>
-  percentRoll(value, 0, Math.trunc, dp)
+export function roundRoll (value: number, dp: boolean) {
+  const rounding = Math.pow(10, decimalPlaces(value, dp))
+  return Math.trunc(value * rounding) / rounding
+}
 
 export function percentRoll (
   value: number,
   p: number,
-  method: Math['floor'] | Math['ceil'] | Math['trunc'],
+  method: Math['floor'] | Math['ceil'],
   dp: number | boolean = false
 ): number {
   const res = value + Math.abs(value) * p / 100
-
   const rounding = Math.pow(10, decimalPlaces(value, dp))
   return method((res + Number.EPSILON) * rounding) / rounding
 }
@@ -32,7 +33,6 @@ export function percentRollDelta (
   dp = false
 ): number {
   const res = value + delta * p / 100
-
   const rounding = Math.pow(10, decimalPlaces(value, dp))
   return method((res + Number.EPSILON) * rounding) / rounding
 }

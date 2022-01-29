@@ -1,5 +1,4 @@
 import { CLIENT_STRINGS as _$ } from '@/assets/data'
-import { percentRoll } from '@/web/price-check/filters/util'
 import type { ParsedStat } from './stat-translations'
 import { ModifierType } from './modifiers'
 import { removeLinesEnding } from './Parser'
@@ -147,9 +146,19 @@ export function applyIncr (mod: ModifierInfo, parsed: ParsedStat): ParsedStat | 
     roll: {
       unscalable: roll.unscalable,
       dp: roll.dp,
-      value: percentRoll(roll.value, rollIncr, Math.trunc, roll.dp && DIV_BY_100),
-      min: percentRoll(roll.min, rollIncr, Math.trunc, roll.dp && DIV_BY_100),
-      max: percentRoll(roll.max, rollIncr, Math.trunc, roll.dp && DIV_BY_100)
+      value: incrRoll(roll.value, rollIncr, (roll.dp) ? DIV_BY_100 : 0),
+      min: incrRoll(roll.min, rollIncr, (roll.dp) ? DIV_BY_100 : 0),
+      max: incrRoll(roll.max, rollIncr, (roll.dp) ? DIV_BY_100 : 0)
     }
   }
+}
+
+export function incrRoll (
+  value: number,
+  p: number,
+  dp: number
+): number {
+  const res = value + (value * p / 100)
+  const rounding = Math.pow(10, dp)
+  return Math.trunc((res + Number.EPSILON) * rounding) / rounding
 }
