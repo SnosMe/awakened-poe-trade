@@ -125,7 +125,9 @@ function shortcutsFromConfig () {
         allShortcuts.add(action.shortcut)
       }
     }
-    actions = actions.filter(action => !duplicates.has(action.shortcut))
+    actions = actions.filter(action =>
+      !duplicates.has(action.shortcut) ||
+      action.action.type === 'toggle-overlay')
   }
 
   return actions
