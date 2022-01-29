@@ -3,6 +3,7 @@ import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { tradeTag, PERMANENT_LEAGUES } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { ITEM_BY_REF } from '@/assets/data'
+import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -152,21 +153,15 @@ export function createFilters (
       name: item.info.name,
       baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
     }
-  } else if (item.rarity === ItemRarity.Rare) {
-    if (item.category) {
+  } else {
+    filters.searchExact = {
+      baseType: item.info.name
+    }
+    if (item.category && CATEGORY_TO_TRADE_ID.has(item.category)) {
       filters.searchRelaxed = {
         category: item.category,
-        disabled: false
+        disabled: (item.rarity !== ItemRarity.Rare)
       }
-    }
-    filters.searchExact = {
-      baseType: item.info.name
-    }
-    // else { never? }
-  } else {
-    // @TODO
-    filters.searchExact = {
-      baseType: item.info.name
     }
   }
 
