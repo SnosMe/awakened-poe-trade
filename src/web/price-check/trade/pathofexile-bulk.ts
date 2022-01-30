@@ -1,5 +1,4 @@
 import { MainProcess } from '@/ipc/main-process-bindings'
-import { selected as league } from '@/web/background/Leagues'
 import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
@@ -8,7 +7,7 @@ import { Cache } from './Cache'
 
 interface TradeRequest { /* eslint-disable camelcase */
   exchange: {
-    status: { option: 'online' | 'onlineleague' }
+    status: { option: 'online' | 'onlineleague' | 'any' }
     have: string[]
     want: string[]
     minimum?: number
@@ -47,8 +46,8 @@ export interface PricingResult {
 
 const cache = new Cache()
 
-async function requestTradeResultList (body: TradeRequest): Promise<SearchResult> {
-  let data = cache.get<SearchResult>([body, league.value])
+async function requestTradeResultList (body: TradeRequest, leagueId: string): Promise<SearchResult> {
+  let data = cache.get<SearchResult>([body, leagueId])
 
   if (!data) {
     preventQueueCreation([
@@ -58,7 +57,7 @@ async function requestTradeResultList (body: TradeRequest): Promise<SearchResult
 
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.EXCHANGE)
 
-    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${league.value}`, {
+    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${leagueId}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -73,7 +72,7 @@ async function requestTradeResultList (body: TradeRequest): Promise<SearchResult
       throw new Error(data.error.message)
     }
 
-    cache.set<SearchResult>([body, league.value], data, Cache.deriveTtl(...RATE_LIMIT_RULES.EXCHANGE, ...RATE_LIMIT_RULES.FETCH))
+    cache.set<SearchResult>([body, leagueId], data, Cache.deriveTtl(...RATE_LIMIT_RULES.EXCHANGE, ...RATE_LIMIT_RULES.FETCH))
   }
 
   return data
@@ -142,12 +141,14 @@ export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): P
         have: [have],
         want: [tradeTag(item)!],
         status: {
-          option: (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
+          option: filters.trade.offline
+            ? 'any'
+            : (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
         },
         minimum: (filters.stackSize && !filters.stackSize.disabled) ? filters.stackSize.value : undefined
         // fulfillable: null
       }
-    })
+    }, filters.trade.league)
 
     return {
       queryId: query.id,

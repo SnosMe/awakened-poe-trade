@@ -16,7 +16,7 @@
             <img src="/images/exa.png" class="trade-bulk-currency-icon">
             <span>{{ result.exa.total }}</span>
           </button>
-          <span class="ml-1">[{{ t('Online') }}]</span>
+          <span class="ml-1"><online-filter :filters="filters" /></span>
         </div>
       </div>
       <div v-if="result" class="flex">
@@ -99,6 +99,7 @@ import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 import { artificialSlowdown } from './artificial-slowdown'
+import OnlineFilter from './OnlineFilter.vue'
 
 const slowdown = artificialSlowdown(900)
 
@@ -161,6 +162,7 @@ function useBulkApi () {
 }
 
 export default defineComponent({
+  components: { OnlineFilter },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,

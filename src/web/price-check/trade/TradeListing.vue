@@ -6,37 +6,7 @@
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
-      <ui-popover v-if="list" :delay="[80, null]" placement="bottom-start" boundary="#price-window">
-        <template #target>
-          <button class="text-gray-500 rounded mr-1 px-2 truncate">
-            <span><i class="fas fa-history"></i> {{ t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
-            <span v-if="defaultLeague !== filters.trade.league">, {{ filters.trade.league }}</span>
-          </button>
-        </template>
-        <template #content>
-          <div class="flex gap-x-8 p-2 bg-gray-800 text-gray-400">
-            <div class="flex flex-col gap-y-1">
-              <div class="mb-1">
-                <ui-toggle v-model="filters.trade.offline">{{ t('Offline & Online') }}</ui-toggle>
-              </div>
-              <ui-radio v-model="filters.trade.listed" :value="undefined">{{ t('Listed: Any Time') }}</ui-radio>
-              <ui-radio v-model="filters.trade.listed" value="1day">{{ t('1 Day Ago') }}</ui-radio>
-              <ui-radio v-model="filters.trade.listed" value="3days">{{ t('3 Days Ago') }}</ui-radio>
-              <ui-radio v-model="filters.trade.listed" value="1week">{{ t('1 Week Ago') }}</ui-radio>
-              <ui-radio v-model="filters.trade.listed" value="2weeks">{{ t('2 Weeks Ago') }}</ui-radio>
-              <ui-radio v-model="filters.trade.listed" value="1month">{{ t('1 Month Ago') }}</ui-radio>
-            </div>
-            <div class="flex flex-col gap-y-1">
-              <div class="mb-1 h-6">
-                <ui-toggle v-if="!filters.trade.offline"
-                  v-model="filters.trade.onlineInLeague">{{ t('In League') }}</ui-toggle>
-              </div>
-              <ui-radio v-for="league of tradeLeagues" :key="league.id"
-                v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
-            </div>
-          </div>
-        </template>
-      </ui-popover>
+      <online-filter v-if="list" :by-time="true" :filters="filters" />
       <div class="flex-1"></div>
       <div v-if="list" class="flex">
         <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ t('Trade') }}</button>
@@ -117,12 +87,12 @@ import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
-import { selected as defaultLeague, tradeLeagues } from '../../background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from './artificial-slowdown'
+import OnlineFilter from './OnlineFilter.vue'
 
 const slowdown = artificialSlowdown(900)
 
@@ -226,6 +196,7 @@ function useTradeApi () {
 }
 
 export default defineComponent({
+  components: { OnlineFilter },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -270,8 +241,6 @@ export default defineComponent({
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
       showSeller: computed(() => widget.value.showSeller),
-      defaultLeague,
-      tradeLeagues,
       getRelativeTime (iso: string) {
         return DateTime.fromISO(iso).toRelative({ style: 'short' })
       },
@@ -321,14 +290,6 @@ export default defineComponent({
 {
   "ru": {
     "Matched:": "Найдено:",
-    "Offline & Online": "Офлайн и Онлайн",
-    "In League": "В лиге",
-    "Listed: Any Time": "Любое время",
-    "1 Day Ago": "До 1-го дня",
-    "3 Days Ago": "До 3-х дней",
-    "1 Week Ago": "До 1-й недели",
-    "2 Weeks Ago": "До 2-х недель",
-    "1 Month Ago": "До 1-го месяца",
     "Trade": "Трейд",
     "Price": "Цена",
     "Stock": "Запас",
