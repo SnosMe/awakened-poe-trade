@@ -278,7 +278,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  if (filters.corrupted) {
+  if (filters.corrupted?.value === false) {
     prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
   }
   if (filters.mirrored) {
