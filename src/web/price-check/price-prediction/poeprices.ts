@@ -1,6 +1,9 @@
 import { ParsedItem } from '@/parser'
 import { selected as league } from '@/web/background/Leagues'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import { Cache } from '../trade/Cache'
+
+const cache = new Cache()
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */
   currency: 'chaos' | 'exalt'
@@ -24,22 +27,27 @@ export interface RareItemPrice {
   }>
 }
 
-export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice | null> {
+export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice> {
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
     l: league.value,
     s: 'awakened-poe-trade'
   })
-  const response = await fetch(`${MainProcess.CORS}https://www.poeprices.info/api?${query}`)
-  let data: PoepricesApiResponse
-  try {
-    data = await response.json()
-  } catch (e) {
-    throw new Error(`${response.status}, poeprices.info API is under load or down.`)
-  }
 
-  if (data.error !== 0) {
-    throw new Error(data.error_msg)
+  let data = cache.get<PoepricesApiResponse>(query)
+  if (!data) {
+    const response = await fetch(`${MainProcess.CORS}https://www.poeprices.info/api?${query}`)
+    try {
+      data = await response.json() as PoepricesApiResponse
+    } catch (e) {
+      throw new Error(`${response.status}, poeprices.info API is under load or down.`)
+    }
+
+    if (data.error !== 0) {
+      throw new Error(data.error_msg)
+    }
+
+    cache.set<PoepricesApiResponse>(query, data, 300)
   }
 
   return {

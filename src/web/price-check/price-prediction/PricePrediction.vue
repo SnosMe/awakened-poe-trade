@@ -61,12 +61,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, ref, PropType } from 'vue'
+import { defineComponent, watch, ref, PropType, computed } from 'vue'
 import { getExternalLink, RareItemPrice, requestPoeprices } from './poeprices'
 import FeedbackOption from './FeedbackOption.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { ParsedItem } from '@/parser'
 import { MainProcess } from '@/ipc/main-process-bindings'
+import { artificialSlowdown } from '../trade/artificial-slowdown'
 
 export default defineComponent({
   name: 'PricePrediction',
@@ -78,6 +79,11 @@ export default defineComponent({
     }
   },
   setup (props) {
+    const slowdown = artificialSlowdown(800)
+    watch(() => props.item, (item) => {
+      slowdown.reset(item)
+    })
+
     const price = ref<RareItemPrice | null>(null)
     const error = ref<string | null>(null)
     const loading = ref(false)
@@ -108,7 +114,7 @@ export default defineComponent({
     return {
       price,
       error,
-      loading,
+      loading: computed(() => loading.value || !slowdown.isReady.value),
       showContrib,
       feedbackSent,
       openWebsite
