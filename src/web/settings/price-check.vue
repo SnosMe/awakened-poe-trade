@@ -66,6 +66,13 @@
       </div>
     </div>
     <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Show price prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="requestPricePrediction" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="requestPricePrediction" :value="false">{{ t('No') }}</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show memorized cursor position') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="showCursor" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
@@ -132,6 +139,7 @@ export default defineComponent({
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
+      requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),
       collapseListings: configModelValue(() => configWidget.value, 'collapseListings'),
       hotkeyQuick: computed(() => configWidget.value.hotkey
         ? `${configWidget.value.hotkeyHold} + ${configWidget.value.hotkey}`
@@ -203,7 +211,8 @@ export default defineComponent({
     "Always select \"Stock\" filter": "Всегда активировать фильтр \"Запас\"",
     "League": "Лига",
     "Loading leagues...": "Загрузка лиг...",
-    "Failed to load leagues": "Не удалось загрузить лиги"
+    "Failed to load leagues": "Не удалось загрузить лиги",
+    "Show price prediction": "Показывать приблизительную цену"
   }
 }
 </i18n>

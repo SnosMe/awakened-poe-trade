@@ -52,7 +52,7 @@ type WidgetWellKnownFlag =
   'ignore-ui-visibility'
 
 export const defaultConfig = (): Config => ({
-  configVersion: 10,
+  configVersion: 11,
   wikiKey: 'Alt + W',
   craftOfExileKey: null,
   overlayKey: 'Shift + Space',
@@ -132,7 +132,8 @@ export const defaultConfig = (): Config => ({
       hotkeyLocked: 'Ctrl + Alt + D',
       showSeller: false,
       searchStatRange: 10,
-      showCursor: true
+      showCursor: true,
+      requestPricePrediction: false
     } as PriceCheckWidget,
     {
       wmId: 3,

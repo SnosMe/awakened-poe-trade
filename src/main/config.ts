@@ -176,5 +176,12 @@ function upgradeConfig (config: Config): Config {
     config.configVersion = 10
   }
 
+  if (config.configVersion < 11) {
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .requestPricePrediction = false
+
+    config.configVersion = 11
+  }
+
   return config
 }

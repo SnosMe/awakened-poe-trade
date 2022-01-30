@@ -161,7 +161,8 @@ export default defineComponent({
     }, { deep: false })
 
     const showPredictedPrice = computed(() => {
-      if (AppConfig().language !== 'en' ||
+      if (!widget.value.requestPricePrediction ||
+          AppConfig().language !== 'en' ||
           !isPublicLeague.value) return false
 
       return props.item.rarity === ItemRarity.Rare &&

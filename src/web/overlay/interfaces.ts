@@ -57,6 +57,7 @@ export interface PriceCheckWidget extends Widget {
   lockedInitialSearch: boolean
   activateStockFilter: boolean
   showCursor: boolean
+  requestPricePrediction: boolean
 }
 
 export interface ItemCheckWidget extends Widget {
