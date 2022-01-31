@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
@@ -34,7 +35,7 @@ interface FetchResult {
 
 export interface PricingResult {
   id: string
-  listedAt: string
+  relativeDate: string
   exchangeAmount: number
   itemAmount: number
   stock: number
@@ -105,7 +106,7 @@ export async function requestResults (
     .map<PricingResult>(result => {
     return {
       id: result.id,
-      listedAt: result.listing.indexed,
+      relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
       exchangeAmount: result.listing.price.exchange.amount,
       itemAmount: result.listing.price.item.amount,
       stock: result.listing.price.item.stock,

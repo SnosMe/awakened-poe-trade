@@ -56,7 +56,7 @@
               <td class="pr-2 pl-4 whitespace-no-wrap">
                 <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
-                  <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
+                  <div class="ml-1 font-sans text-xs">{{ result.relativeDate }}</div>
                 </div>
                 <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
               </td>
@@ -83,7 +83,6 @@
 <script lang="ts">
 import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
@@ -241,9 +240,6 @@ export default defineComponent({
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
       showSeller: computed(() => widget.value.showSeller),
-      getRelativeTime (iso: string) {
-        return DateTime.fromISO(iso).toRelative({ style: 'short' })
-      },
       openTradeLink (isExternal: boolean) {
         const link = searchResult.value
           ? `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}/${searchResult.value.id}`

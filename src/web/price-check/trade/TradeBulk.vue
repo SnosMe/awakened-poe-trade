@@ -63,7 +63,7 @@
               <td class="pr-2 pl-4 whitespace-no-wrap">
                 <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
-                  <div class="ml-1 font-sans text-xs">{{ getRelativeTime(result.listedAt) }}</div>
+                  <div class="ml-1 font-sans text-xs">{{ result.relativeDate }}</div>
                 </div>
                 <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
               </td>
@@ -89,7 +89,6 @@
 <script lang="ts">
 import { defineComponent, PropType, inject, ref, computed, watch, ComputedRef, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
@@ -223,9 +222,6 @@ export default defineComponent({
         } else {
           wm.showBrowser(widget.value.wmId, link)
         }
-      },
-      getRelativeTime (iso: string) {
-        return DateTime.fromISO(iso).toRelative({ style: 'short' })
       }
     }
   }

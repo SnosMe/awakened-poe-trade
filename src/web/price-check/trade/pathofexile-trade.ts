@@ -1,6 +1,7 @@
 import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import prop from 'dot-prop'
+import { DateTime } from 'luxon'
 import { MainProcess } from '@/ipc/main-process-bindings'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { STAT_BY_REF } from '@/assets/data'
@@ -214,7 +215,7 @@ export interface PricingResult {
   corrupted?: boolean
   quality?: string
   level?: string
-  listedAt: string
+  relativeDate: string
   priceAmount: number
   priceCurrency: string
   isMine: boolean
@@ -556,7 +557,7 @@ export async function requestResults (
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
       level: result.item.properties?.find(prop => prop.type === 5)?.values[0][0],
-      listedAt: result.listing.indexed,
+      relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
       hasNote: result.item.note != null,
