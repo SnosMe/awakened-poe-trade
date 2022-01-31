@@ -26,10 +26,10 @@
             <th v-if="filters.itemLevel" class="trade-table-heading">
               <div class="px-2">{{ t('iLvl') }}</div>
             </th>
-            <th v-if="item.rarity === 'Gem'" class="trade-table-heading">
+            <th v-if="item.category === 'Gem'" class="trade-table-heading">
               <div class="px-2">{{ t('Level') }}</div>
             </th>
-            <th v-if="filters.quality || item.rarity === 'Gem'" class="trade-table-heading">
+            <th v-if="filters.quality || item.category === 'Gem'" class="trade-table-heading">
               <div class="px-2">{{ t('Quality') }}</div>
             </th>
             <th class="trade-table-heading" :class="{ 'w-full': !showSeller }">
@@ -48,11 +48,11 @@
               <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
-              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span></td>
+              <td class="px-2 whitespace-no-wrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span><i v-else-if="!result.hasNote" class="fas fa-question" /></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-no-wrap text-right">{{ result.itemLevel }}</td>
-              <td v-if="item.rarity === 'Gem'" class="pl-2 whitespace-no-wrap">{{ result.level }}</td>
-              <td v-if="filters.quality || item.rarity === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
+              <td v-if="item.category === 'Gem'" class="pl-2 whitespace-no-wrap">{{ result.level }}</td>
+              <td v-if="filters.quality || item.category === 'Gem'" class="px-2 whitespace-no-wrap text-blue-400 text-right">{{ result.quality }}</td>
               <td class="pr-2 pl-4 whitespace-no-wrap">
                 <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>

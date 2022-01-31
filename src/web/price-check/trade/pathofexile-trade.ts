@@ -194,6 +194,7 @@ interface FetchResult {
       6 | // Quality
       5 // Level
     }>
+    note?: string
   }
   listing: {
     indexed: string
@@ -217,6 +218,7 @@ export interface PricingResult {
   priceAmount: number
   priceCurrency: string
   isMine: boolean
+  hasNote: boolean
   accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
   ign: string
@@ -533,7 +535,7 @@ export async function requestResults (
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
-    const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
+    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
     data = await response.json() as ResponseT
@@ -557,6 +559,7 @@ export async function requestResults (
       listedAt: result.listing.indexed,
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
+      hasNote: result.item.note != null,
       isMine: (result.listing.account.name === opts.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
