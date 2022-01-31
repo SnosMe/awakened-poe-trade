@@ -32,7 +32,9 @@ export function initUiModFilters (
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
-    searchInRange: opts.searchStatRange,
+    searchInRange: (item.rarity === ItemRarity.Normal || item.rarity === ItemRarity.Magic)
+      ? 100 // only care about Tier
+      : opts.searchStatRange,
     statsByType: item.statsByType.map(calc => {
       if (calc.type === ModifierType.Fractured && calc.stat.trade.ids[ModifierType.Explicit]) {
         return { ...calc, type: ModifierType.Explicit }
@@ -154,8 +156,8 @@ export function calculatedStatToFilter (
 
     const filterDefault = (item.rarity === ItemRarity.Unique)
       ? {
-          min: percentRollDelta(roll.value, (roll.max - roll.min), -(percent * 2), Math.floor, dp),
-          max: percentRollDelta(roll.value, (roll.max - roll.min), +(percent * 2), Math.ceil, dp)
+          min: percentRollDelta(roll.value, (roll.max - roll.min), -percent, Math.floor, dp),
+          max: percentRollDelta(roll.value, (roll.max - roll.min), +percent, Math.ceil, dp)
         }
       : {
           min: percentRoll(roll.value, -percent, Math.floor, dp),
