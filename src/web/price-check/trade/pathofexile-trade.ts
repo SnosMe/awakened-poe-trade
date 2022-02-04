@@ -550,9 +550,7 @@ export async function requestResults (
   return data.result.map<PricingResult>(result => {
     return {
       id: result.id,
-      itemLevel:
-        result.item.ilvl ||
-        Number(result.item.properties?.find(prop => prop.type === 30)?.values[0][0]),
+      itemLevel: result.item.ilvl,
       stackSize: result.item.stackSize,
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],

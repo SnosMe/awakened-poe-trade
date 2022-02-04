@@ -42,8 +42,6 @@ export default {
   VEILED_PREFIX: 'Veiled Prefix',
   VEILED_SUFFIX: 'Veiled Suffix',
   FLASK_CHARGES: /^Currently has \d+ Charges$/,
-  SEED_MONSTER_LEVEL: /^Spawns a Level (\d+) Monster when Harvested$/,
-  SEED_HELP: 'Right-click this item then left-click the ground to plant it in the Sacred Grove.',
   METAMORPH_HELP: "Combine this with four other different samples in Tane's Laboratory.",
   BEAST_HELP: 'Right-click to add this to your bestiary.',
   METAMORPH_BRAIN: /^.* Brain$/,

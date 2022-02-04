@@ -2,7 +2,6 @@ export enum ItemCategory {
   Map = 'Map',
   CapturedBeast = 'Captured Beast',
   MetamorphSample = 'Metamorph Sample',
-  Seed = 'Seed',
   Helmet = 'Helmet',
   BodyArmour = 'Body Armour',
   Gloves = 'Gloves',

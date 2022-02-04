@@ -438,23 +438,9 @@ function parseStackSize (section: string[], item: ParsedItem) {
     const [value, max] = section[0].substr(_$.STACK_SIZE.length).replace(/[^\d/]/g, '').split('/').map(Number)
     item.stackSize = { value, max }
 
-    if (item.category === ItemCategory.Seed) {
-      parseSeedLevelNested(section, item)
-    }
-
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
-}
-
-function parseSeedLevelNested (section: string[], item: ParsedItem) {
-  for (const line of section) {
-    const match = line.match(_$.SEED_MONSTER_LEVEL)
-    if (match != null) {
-      item.itemLevel = Number(match[1])
-      break
-    }
-  }
 }
 
 function parseSockets (section: string[], item: ParsedItem) {
@@ -663,9 +649,6 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
     return SECTION_PARSED
   } else if (section[0] === _$.METAMORPH_HELP) {
     item.category = ItemCategory.MetamorphSample
-    return SECTION_PARSED
-  } else if (section[0].startsWith(_$.SEED_HELP)) {
-    item.category = ItemCategory.Seed
     return SECTION_PARSED
   }
 

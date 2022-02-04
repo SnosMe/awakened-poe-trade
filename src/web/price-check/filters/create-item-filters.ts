@@ -50,10 +50,7 @@ export function createFilters (
     }
     return filters
   }
-  if (
-    item.category === ItemCategory.MetamorphSample ||
-    item.category === ItemCategory.Seed
-  ) {
+  if (item.category === ItemCategory.MetamorphSample) {
     filters.searchExact = {
       baseType: item.info.name
     }

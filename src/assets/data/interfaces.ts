@@ -126,8 +126,6 @@ export interface TranslationDict {
   VEILED_PREFIX: string
   VEILED_SUFFIX: string
   FLASK_CHARGES: RegExp
-  SEED_MONSTER_LEVEL: RegExp
-  SEED_HELP: string
   METAMORPH_HELP: string
   BEAST_HELP: string
   METAMORPH_BRAIN: RegExp
