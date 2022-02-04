@@ -33,7 +33,6 @@ interface NinjaItemInfo {
   baseType: string | null
   stackSize: number
   variant: null
-  prophecyText: null
   artFilename: null
   links: number
   itemClass: number
@@ -86,7 +85,6 @@ const priceQueue = (() => {
     { overview: 'item', type: 'Resonator', loaded: 0 },
     { overview: 'item', type: 'Essence', loaded: 0 },
     { overview: 'item', type: 'DivinationCard', loaded: 0, key: (item: NinjaItemInfo) => `DIVINATION_CARD::${item.name}` },
-    { overview: 'item', type: 'Prophecy', loaded: 0, key: (item: NinjaItemInfo) => `PROPHECY::${item.name}` + ((item.variant) ? ` // ${item.variant}` : '') },
     { overview: 'item', type: 'SkillGem', loaded: 0, key: (item: NinjaItemInfo) => `GEM::${item.name} // ${item.gemLevel} // ${item.gemQuality ?? 0}%` + ((item.corrupted) ? ' // Corrupted' : '') },
     { overview: 'item', type: 'BaseType', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // ${item.levelRequired}` + ((item.variant) ? ` // ${item.variant}` : '') },
     // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },

@@ -47,7 +47,6 @@ export interface BaseType {
   namespace: (
     'DIVINATION_CARD' |
     'CAPTURED_BEAST' |
-    'PROPHECY' |
     'UNIQUE' |
     'ITEM' |
     'GEM'
@@ -76,9 +75,6 @@ export interface BaseType {
   }
   map?: {
     screenshot?: string
-  }
-  prophecy?: {
-    masterName?: string
   }
   gem?: {
     vaal?: true
@@ -134,17 +130,11 @@ export interface TranslationDict {
   SEED_HELP: string
   METAMORPH_HELP: string
   BEAST_HELP: string
-  PROPHECY_HELP: string
   METAMORPH_BRAIN: RegExp
   METAMORPH_EYE: RegExp
   METAMORPH_LUNG: RegExp
   METAMORPH_HEART: RegExp
   METAMORPH_LIVER: RegExp
-  PROPHECY_ALVA: string
-  PROPHECY_EINHAR: string
-  PROPHECY_NIKO: string
-  PROPHECY_JUN: string
-  PROPHECY_ZANA: string
   CANNOT_USE_ITEM: string
   QUALITY_ANOMALOUS: RegExp
   QUALITY_DIVERGENT: RegExp

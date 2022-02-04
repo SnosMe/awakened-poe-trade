@@ -34,9 +34,6 @@ export function getDetailsId (item: ParsedItem) {
   if (isValuableBasetype(item)) {
     return forBasetype(item)
   }
-  if (item.info.prophecy?.masterName) {
-    return `${ns}::${item.info.refName} // ${item.info.prophecy.masterName}`
-  }
   return `${ns}::${item.info.name}`
 }
 

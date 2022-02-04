@@ -77,19 +77,6 @@ export function createFilters (
     }
     return filters
   }
-  if (item.category === ItemCategory.Prophecy) {
-    filters.searchExact = {
-      name: item.info.name,
-      baseType: ITEM_BY_REF('ITEM', 'Prophecy')![0].name
-    }
-    if (item.info.prophecy?.masterName) {
-      filters.discriminator = {
-        value: item.info.prophecy.masterName,
-        trade: item.info.tradeDisc!
-      }
-    }
-    return filters
-  }
 
   if (item.category === ItemCategory.Map) {
     if (item.rarity === ItemRarity.Unique && item.info.unique) {

@@ -55,9 +55,6 @@ export interface ParsedItem {
     text: string
     type: ModifierType
   }>
-  extra: {
-    prophecyMaster?: 'Alva' | 'Einhar' | 'Niko' | 'Jun' | 'Zana'
-  }
   heist?: {
     wingsRevealed?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'

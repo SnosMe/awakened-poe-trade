@@ -51,7 +51,6 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseInfluence,
   parseMap,
   parseSockets,
-  parseProphecyMaster,
   parseHeistBlueprint,
   parseAtzoatlAreaLevel,
   parseAtzoatlRooms,
@@ -165,9 +164,7 @@ function normalizeName (item: ParserState) {
 
 function findInDatabase (item: ParserState) {
   let info: BaseType[] | undefined
-  if (item.category === ItemCategory.Prophecy) {
-    info = ITEM_BY_TRANSLATED('PROPHECY', item.name)
-  } else if (item.category === ItemCategory.DivinationCard) {
+  if (item.category === ItemCategory.DivinationCard) {
     info = ITEM_BY_TRANSLATED('DIVINATION_CARD', item.name)
   } else if (item.category === ItemCategory.CapturedBeast) {
     info = ITEM_BY_TRANSLATED('CAPTURED_BEAST', item.baseType ?? item.name)
@@ -273,7 +270,6 @@ function parseNamePlate (section: string[]) {
     statsByType: [],
     unknownModifiers: [],
     influences: [],
-    extra: {},
     info: undefined!,
     infoVariants: undefined!,
     rawText: undefined!
@@ -662,10 +658,7 @@ function parseSuperior (item: ParserState) {
 }
 
 function parseCategoryByHelpText (section: string[], item: ParsedItem) {
-  if (section[0] === _$.PROPHECY_HELP) {
-    item.category = ItemCategory.Prophecy
-    return SECTION_PARSED
-  } else if (section[0] === _$.BEAST_HELP) {
+  if (section[0] === _$.BEAST_HELP) {
     item.category = ItemCategory.CapturedBeast
     return SECTION_PARSED
   } else if (section[0] === _$.METAMORPH_HELP) {
@@ -673,29 +666,6 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
     return SECTION_PARSED
   } else if (section[0].startsWith(_$.SEED_HELP)) {
     item.category = ItemCategory.Seed
-    return SECTION_PARSED
-  }
-
-  return SECTION_SKIPPED
-}
-
-function parseProphecyMaster (section: string[], item: ParsedItem) {
-  if (item.category !== ItemCategory.Prophecy) return PARSER_SKIPPED
-
-  if (section[0] === _$.PROPHECY_ALVA) {
-    item.extra.prophecyMaster = 'Alva'
-    return SECTION_PARSED
-  } else if (section[0] === _$.PROPHECY_EINHAR) {
-    item.extra.prophecyMaster = 'Einhar'
-    return SECTION_PARSED
-  } else if (section[0] === _$.PROPHECY_JUN) {
-    item.extra.prophecyMaster = 'Jun'
-    return SECTION_PARSED
-  } else if (section[0] === _$.PROPHECY_NIKO) {
-    item.extra.prophecyMaster = 'Niko'
-    return SECTION_PARSED
-  } else if (section[0] === _$.PROPHECY_ZANA) {
-    item.extra.prophecyMaster = 'Zana'
     return SECTION_PARSED
   }
 
