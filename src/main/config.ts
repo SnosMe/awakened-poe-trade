@@ -25,7 +25,6 @@ export const config = (() => {
   })
 
   if (store.get('configVersion') > defaultConfig().configVersion) {
-    logger.error('Incompatible configuration', { source: 'config', expected: defaultConfig().configVersion, actual: store.get('configVersion') })
     dialog.showErrorBox(
       'Awakened PoE Trade - Incompatible configuration',
       // ----------------------
