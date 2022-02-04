@@ -34,7 +34,7 @@ export default defineComponent({
     const identifiedVariants = computed(() => {
       const baseType = props.item!.info.refName
       const possible: BaseType[] = []
-      for (const match of ITEMS_ITERATOR(baseType)) {
+      for (const match of ITEMS_ITERATOR(JSON.stringify(baseType))) {
         if (match.namespace === 'UNIQUE' && match.unique!.base === baseType) {
           // TODO currently ignoring variants
           if (!possible.some(unique => unique.refName === match.refName)) {

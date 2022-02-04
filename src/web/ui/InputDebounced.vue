@@ -25,7 +25,7 @@ export default defineComponent({
         ctx.emit('update:modelValue', (e.target as HTMLInputElement).value)
       }),
       noop () {
-        // fix not working mouseScroll
+        // fixes not working mouseScroll
       }
     }
   }

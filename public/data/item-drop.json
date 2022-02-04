@@ -116,24 +116,6 @@
   },
   {
     "query": [
-      "ITEM::Volkuur's Key",
-      "ITEM::Yriel's Key",
-      "ITEM::Inya's Key",
-      "ITEM::Eber's Key"
-    ],
-    "items": [
-      "UNIQUE::Eber's Unification // Hubris Circlet",
-      "UNIQUE::Inya's Epiphany // Arcanist Slippers",
-      "UNIQUE::Yriel's Fostering // Exquisite Leather // Poison",
-      "UNIQUE::Yriel's Fostering // Exquisite Leather // Bleeding",
-      "UNIQUE::Yriel's Fostering // Exquisite Leather // Maim",
-      "UNIQUE::Volkuur's Guidance // Zealot Gloves // Cold",
-      "UNIQUE::Volkuur's Guidance // Zealot Gloves // Fire",
-      "UNIQUE::Volkuur's Guidance // Zealot Gloves // Lightning"
-    ]
-  },
-  {
-    "query": [
       "ITEM::Fragment of the Minotaur",
       "ITEM::Fragment of the Chimera",
       "ITEM::Fragment of the Phoenix",
