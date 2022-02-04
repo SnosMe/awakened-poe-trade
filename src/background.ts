@@ -19,7 +19,7 @@ if (!app.requestSingleInstanceLock()) {
   app.exit()
 }
 
-protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
+protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true, supportFetchAPI: true } }])
 if (!config.get('hardwareAcceleration')) {
   app.disableHardwareAcceleration()
 }

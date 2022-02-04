@@ -9,6 +9,6 @@ export default async () => createI18n<I18nAdditionalOptions & ComposerOptions>({
   fallbackWarn: false,
   missingWarn: false,
   messages: {
-    [AppConfig().language]: await (await fetch(`/data/${AppConfig().language}/app_i18n.json`)).json()
+    [AppConfig().language]: await (await fetch(`${process.env.BASE_URL}data/${AppConfig().language}/app_i18n.json`)).json()
   }
 })
