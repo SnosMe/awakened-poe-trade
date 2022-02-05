@@ -24,4 +24,5 @@ As you may have noticed, compared to other third-party PoE tools APT uses "Highl
 As a starting point, common programs reported by players were:
 - ASUS GPU Tweak II
 - Radeon™ Software
+- Display Pilot (BenQ)
 - AHK scripts
