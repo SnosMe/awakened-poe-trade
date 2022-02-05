@@ -1,5 +1,6 @@
 import {
   CLIENT_STRINGS as _$,
+  CLIENT_STRINGS_REF as _$REF,
   ITEM_BY_TRANSLATED,
   ITEM_BY_REF,
   STAT_BY_MATCH_STR,
@@ -133,30 +134,30 @@ function normalizeName (item: ParserState) {
       item.rarity === ItemRarity.Rare
   ) {
     if (item.baseType) {
-      if (_$.MAP_BLIGHTED.test(item.baseType)) {
-        item.baseType = _$.MAP_BLIGHTED.exec(item.baseType)![1]
-      } else if (_$.MAP_BLIGHT_RAVAGED.test(item.baseType)) {
-        item.baseType = _$.MAP_BLIGHT_RAVAGED.exec(item.baseType)![1]
+      if (_$REF.MAP_BLIGHTED.test(item.baseType)) {
+        item.baseType = _$REF.MAP_BLIGHTED.exec(item.baseType)![1]
+      } else if (_$REF.MAP_BLIGHT_RAVAGED.test(item.baseType)) {
+        item.baseType = _$REF.MAP_BLIGHT_RAVAGED.exec(item.baseType)![1]
       }
     } else {
-      if (_$.MAP_BLIGHTED.test(item.name)) {
-        item.name = _$.MAP_BLIGHTED.exec(item.name)![1]
-      } else if (_$.MAP_BLIGHT_RAVAGED.test(item.name)) {
-        item.name = _$.MAP_BLIGHT_RAVAGED.exec(item.name)![1]
+      if (_$REF.MAP_BLIGHTED.test(item.name)) {
+        item.name = _$REF.MAP_BLIGHTED.exec(item.name)![1]
+      } else if (_$REF.MAP_BLIGHT_RAVAGED.test(item.name)) {
+        item.name = _$REF.MAP_BLIGHT_RAVAGED.exec(item.name)![1]
       }
     }
   }
 
   if (item.category === ItemCategory.MetamorphSample) {
-    if (_$.METAMORPH_BRAIN.test(item.name)) {
+    if (_$REF.METAMORPH_BRAIN.test(item.name)) {
       item.name = 'Metamorph Brain'
-    } else if (_$.METAMORPH_EYE.test(item.name)) {
+    } else if (_$REF.METAMORPH_EYE.test(item.name)) {
       item.name = 'Metamorph Eye'
-    } else if (_$.METAMORPH_LUNG.test(item.name)) {
+    } else if (_$REF.METAMORPH_LUNG.test(item.name)) {
       item.name = 'Metamorph Lung'
-    } else if (_$.METAMORPH_HEART.test(item.name)) {
+    } else if (_$REF.METAMORPH_HEART.test(item.name)) {
       item.name = 'Metamorph Heart'
-    } else if (_$.METAMORPH_LIVER.test(item.name)) {
+    } else if (_$REF.METAMORPH_LIVER.test(item.name)) {
       item.name = 'Metamorph Liver'
     }
   }
@@ -165,17 +166,17 @@ function normalizeName (item: ParserState) {
 function findInDatabase (item: ParserState) {
   let info: BaseType[] | undefined
   if (item.category === ItemCategory.DivinationCard) {
-    info = ITEM_BY_TRANSLATED('DIVINATION_CARD', item.name)
+    info = ITEM_BY_REF('DIVINATION_CARD', item.name)
   } else if (item.category === ItemCategory.CapturedBeast) {
-    info = ITEM_BY_TRANSLATED('CAPTURED_BEAST', item.baseType ?? item.name)
+    info = ITEM_BY_REF('CAPTURED_BEAST', item.baseType ?? item.name)
   } else if (item.category === ItemCategory.Gem) {
-    info = ITEM_BY_TRANSLATED('GEM', item.name)
+    info = ITEM_BY_REF('GEM', item.name)
   } else if (item.category === ItemCategory.MetamorphSample) {
     info = ITEM_BY_REF('ITEM', item.name)
   } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
-    info = ITEM_BY_TRANSLATED('UNIQUE', item.name)
+    info = ITEM_BY_REF('UNIQUE', item.name)
   } else {
-    info = ITEM_BY_TRANSLATED('ITEM', item.baseType ?? item.name)
+    info = ITEM_BY_REF('ITEM', item.baseType ?? item.name)
   }
   if (!info?.length) {
     throw new Error('Unsupported item')
@@ -387,7 +388,7 @@ function parseVaalGemName (section: string[], item: ParserState) {
       item.gemAltQuality = 'Superior'
     }
     if (gemName) {
-      item.name = gemName
+      item.name = ITEM_BY_TRANSLATED('GEM', gemName)![0].refName
       return SECTION_PARSED
     }
   }
@@ -413,11 +414,11 @@ function parseGemAltQuality (item: ParserState) {
   if (item.category !== ItemCategory.Gem) return
 
   let gemName: string | undefined
-  if ((gemName = _$.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
+  if ((gemName = _$REF.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
     item.gemAltQuality = 'Anomalous'
-  } else if ((gemName = _$.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
+  } else if ((gemName = _$REF.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
     item.gemAltQuality = 'Divergent'
-  } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
+  } else if ((gemName = _$REF.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
     item.gemAltQuality = 'Phantasmal'
   } else {
     item.gemAltQuality = 'Superior'
@@ -619,9 +620,9 @@ function parseSynthesised (section: string[], item: ParserState) {
     if (section[0] === _$.SECTION_SYNTHESISED) {
       item.isSynthesised = true
       if (item.baseType) {
-        item.baseType = _$.ITEM_SYNTHESISED.exec(item.baseType)![1]
+        item.baseType = _$REF.ITEM_SYNTHESISED.exec(item.baseType)![1]
       } else {
-        item.name = _$.ITEM_SYNTHESISED.exec(item.name)![1]
+        item.name = _$REF.ITEM_SYNTHESISED.exec(item.name)![1]
       }
       return SECTION_PARSED
     }
@@ -637,8 +638,8 @@ function parseSuperior (item: ParserState) {
     (item.rarity === ItemRarity.Rare && item.isUnidentified) ||
     (item.rarity === ItemRarity.Unique && item.isUnidentified)
   ) {
-    if (_$.ITEM_SUPERIOR.test(item.name)) {
-      item.name = _$.ITEM_SUPERIOR.exec(item.name)![1]
+    if (_$REF.ITEM_SUPERIOR.test(item.name)) {
+      item.name = _$REF.ITEM_SUPERIOR.exec(item.name)![1]
     }
   }
 }

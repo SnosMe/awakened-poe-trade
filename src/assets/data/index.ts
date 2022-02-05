@@ -7,6 +7,7 @@ export * from './interfaces'
 export let ITEM_DROP: DropEntry[]
 export let BLIGHT_RECIPES: BlightRecipes
 export let CLIENT_STRINGS: TranslationDict
+export let CLIENT_STRINGS_REF: TranslationDict
 
 export let ITEM_BY_TRANSLATED = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
 export let ITEM_BY_REF = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
@@ -131,9 +132,9 @@ export function stat (text: string) {
     DELAYED_STAT_VALIDATION.clear()
   }
 
-  {
-    // eslint-disable-next-line no-eval
+  { /* eslint-disable no-eval */
     CLIENT_STRINGS = (await eval(`import('${process.env.BASE_URL}data/${language}/client_strings.js')`)).default
+    CLIENT_STRINGS_REF = (await eval(`import('${process.env.BASE_URL}data/en/client_strings.js')`)).default
     BLIGHT_RECIPES = await (await fetch(`${process.env.BASE_URL}data/blight-recipes.json`)).json()
     ITEM_DROP = await (await fetch(`${process.env.BASE_URL}data/item-drop.json`)).json()
   }
