@@ -112,7 +112,7 @@ export function calculatedStatToFilter (
         value: sources[0].contributes!.value,
         tradeValue: stat.trade.option
       },
-      disabled: true
+      disabled: false
     }
   }
 
@@ -259,9 +259,6 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
           filter.hidden = 'Roll is not variable'
         }
-        if (filter.statRef === 'Added Small Passive Skills grant: #') {
-          filter.disabled = false
-        }
         if (filter.statRef === 'Adds # Passive Skills') {
           // https://pathofexile.gamepedia.com/Cluster_Jewel#Optimal_passive_skill_amounts
           filter.disabled = false
@@ -270,17 +267,6 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
           }
         }
       }
-    }
-  }
-
-  if (item.category === ItemCategory.Map) {
-    const isInfluenced = ctx.filters.find(filter => filter.statRef === 'Area is influenced by #')
-    if (isInfluenced) {
-      isInfluenced.disabled = false
-    }
-    const isElderGuardian = ctx.filters.find(filter => filter.statRef === 'Map is occupied by #')
-    if (isElderGuardian) {
-      isElderGuardian.disabled = false
     }
   }
 
@@ -308,6 +294,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         anointment.disabled = false
       } else if (!item.isCorrupted && !item.isMirrored) {
         anointment.hidden = 'Buyer will likely change anointment'
+        anointment.disabled = true
       }
     }
   }
