@@ -82,7 +82,7 @@ function * _statPlaceholderGenerator (stat: string) {
   const withPlaceholders = stat
     .replace(/(?<value>(?<!\d|\))[+-]?\d+(?:\.\d+)?)(?:\((?<min>.[^)-]*)(?:-(?<max>[^)]+))?\))?/gm, (_, roll: string, min?: string, max?: string) => {
       if (min != null && max == null) {
-        // example: Watchstone "# uses remaining"
+        // example: Sextant "# uses remaining"
         max = min
       }
 
@@ -139,7 +139,7 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       }
     }
 
-    if (found.stat.ref === '# uses remaining') {
+    if (found.stat.ref === '# uses remaining' || found.stat.ref === '# use remaining') {
       const uses = combination.values[0]
       uses.bounds = {
         min: 1,

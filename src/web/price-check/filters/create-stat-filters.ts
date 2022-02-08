@@ -22,7 +22,7 @@ export function initUiModFilters (
 ): StatFilter[] {
   if (
     (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) ||
-    item.category === ItemCategory.MavenInvitation ||
+    item.category === ItemCategory.Invitation ||
     item.category === ItemCategory.HeistContract ||
     item.category === ItemCategory.HeistBlueprint
   ) {

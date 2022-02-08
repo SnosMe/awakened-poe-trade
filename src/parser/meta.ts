@@ -30,7 +30,6 @@ export enum ItemCategory {
   OneHandedSword = 'One-Handed Sword',
   TwoHandedSword = 'Two-Handed Sword',
   ClusterJewel = 'Cluster Jewel',
-  Watchstone = 'Watchstone',
   HeistBlueprint = 'Heist Blueprint',
   HeistContract = 'Heist Contract',
   HeistTool = 'Heist Tool',
@@ -38,7 +37,7 @@ export enum ItemCategory {
   HeistGear = 'Heist Gear',
   HeistCloak = 'Heist Cloak',
   Trinket = 'Trinket',
-  MavenInvitation = 'Maven\'s Invitation',
+  Invitation = 'Invitation',
   Gem = 'Gem',
   Currency = 'Currency',
   DivinationCard = 'Divination Card'

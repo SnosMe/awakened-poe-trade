@@ -95,11 +95,6 @@ function forUniqueItem (item: ParsedItem) {
   if (item.sockets?.linked) {
     id += ` // ${item.sockets.linked}L`
   }
-  if (item.info.unique.base === 'Ivory Watchstone') {
-    const uses = item.statsByType.find(m => m.type === 'explicit' && m.stat.ref === '# uses remaining')!
-    const roll = uses.sources[0].contributes!.value
-    id += ` // ${roll}`
-  }
 
   return id
 }

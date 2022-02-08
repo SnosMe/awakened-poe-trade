@@ -44,7 +44,7 @@ export function createFilters (
       disabled: !(item.stackSize && item.stackSize.value > 1 && opts.activateStockFilter)
     }
   }
-  if (item.category === ItemCategory.MavenInvitation) {
+  if (item.category === ItemCategory.Invitation) {
     filters.searchExact = {
       baseType: item.info.name
     }

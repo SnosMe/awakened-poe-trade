@@ -77,7 +77,6 @@ const priceQueue = (() => {
   return [
     { overview: 'currency', type: 'Currency', loaded: 0 },
     { overview: 'currency', type: 'Fragment', loaded: 0 },
-    { overview: 'item', type: 'Watchstone', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // ${item.variant}` },
     { overview: 'item', type: 'Oil', loaded: 0 },
     { overview: 'item', type: 'Incubator', loaded: 0 },
     { overview: 'item', type: 'Scarab', loaded: 0 },

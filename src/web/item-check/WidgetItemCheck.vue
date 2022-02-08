@@ -73,7 +73,7 @@ export default defineComponent({
         category === ItemCategory.Map ||
         category === ItemCategory.HeistContract ||
         category === ItemCategory.HeistBlueprint ||
-        category === ItemCategory.MavenInvitation)
+        category === ItemCategory.Invitation)
     })
 
     return {
