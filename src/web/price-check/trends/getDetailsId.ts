@@ -34,7 +34,7 @@ export function getDetailsId (item: ParsedItem) {
   if (isValuableBasetype(item)) {
     return forBasetype(item)
   }
-  return `${ns}::${item.info.name}`
+  return `${ns}::${item.info.refName}`
 }
 
 function forSkillGem (item: ParsedItem) {
