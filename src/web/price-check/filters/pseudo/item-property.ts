@@ -111,15 +111,15 @@ export const WEAPON_STATS = new Set<string>([
 function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
-  const attackSpeed = calcPropBounds(item.weaponAS!, { incr: ['#% increased Attack Speed'], flat: [] }, item)
-  const physQ20 = propAt20Quality(item.weaponPHYSICAL!, QUALITY_STATS.PHYSICAL_DAMAGE, item)
+  const attackSpeed = calcPropBounds(item.weaponAS ?? 0, { incr: ['#% increased Attack Speed'], flat: [] }, item)
+  const physQ20 = propAt20Quality(item.weaponPHYSICAL ?? 0, QUALITY_STATS.PHYSICAL_DAMAGE, item)
   const pdpsQ20: StatRoll = {
     value: physQ20.value * attackSpeed.value,
     min: physQ20.min * attackSpeed.min,
     max: physQ20.max * attackSpeed.max
   }
 
-  const eleDmg = calcPropBounds(item.weaponELEMENTAL!, {
+  const eleDmg = calcPropBounds(item.weaponELEMENTAL ?? 0, {
     flat: ['Adds # to # Lightning Damage', 'Adds # to # Cold Damage', 'Adds # to # Fire Damage'],
     incr: []
   }, item)
@@ -152,13 +152,15 @@ function weaponProps (ctx: FiltersCreationContext) {
     }, ctx))
   }
 
-  ctx.filters.push(propToFilter({
-    ref: 'Physical DPS: #',
-    tradeId: 'weapon.physical_dps',
-    roll: pdpsQ20,
-    disabled: !isPdpsImportant(item) || (pdpsQ20.value / dps.value < 0.67),
-    hidden: (pdpsQ20.value / dps.value < 0.67) ? 'Physical damage is not the main source of DPS' : undefined
-  }, ctx))
+  if (item.weaponPHYSICAL) {
+    ctx.filters.push(propToFilter({
+      ref: 'Physical DPS: #',
+      tradeId: 'weapon.physical_dps',
+      roll: pdpsQ20,
+      disabled: !isPdpsImportant(item) || (pdpsQ20.value / dps.value < 0.67),
+      hidden: (pdpsQ20.value / dps.value < 0.67) ? 'Physical damage is not the main source of DPS' : undefined
+    }, ctx))
+  }
 
   ctx.filters.push(propToFilter({
     ref: 'Attacks per Second: #',
@@ -168,15 +170,17 @@ function weaponProps (ctx: FiltersCreationContext) {
     disabled: true
   }, ctx))
 
-  const critChance = calcPropBounds(item.weaponCRIT!, { incr: ['#% increased Critical Strike Chance'], flat: [] }, item)
+  if (item.weaponCRIT) {
+    const critChance = calcPropBounds(item.weaponCRIT, { incr: ['#% increased Critical Strike Chance'], flat: [] }, item)
 
-  ctx.filters.push(propToFilter({
-    ref: 'Critical Strike Chance: #%',
-    tradeId: 'weapon.crit',
-    roll: critChance,
-    dp: true,
-    disabled: true
-  }, ctx))
+    ctx.filters.push(propToFilter({
+      ref: 'Critical Strike Chance: #%',
+      tradeId: 'weapon.crit',
+      roll: critChance,
+      dp: true,
+      disabled: true
+    }, ctx))
+  }
 
   if (
     item.weaponAS ||
