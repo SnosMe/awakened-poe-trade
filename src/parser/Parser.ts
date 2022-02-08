@@ -375,6 +375,7 @@ function parseTalismanTier (section: string[], item: ParsedItem) {
 function parseVaalGemName (section: string[], item: ParserState) {
   if (item.category !== ItemCategory.Gem) return PARSER_SKIPPED
 
+  // TODO blocked by https://www.pathofexile.com/forum/view-thread/3231236
   if (section.length === 1) {
     let gemName: string | undefined
     if ((gemName = _$.QUALITY_ANOMALOUS.exec(section[0])?.[1])) {
