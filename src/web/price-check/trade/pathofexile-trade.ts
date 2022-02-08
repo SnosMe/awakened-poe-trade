@@ -362,16 +362,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   for (const stat of stats) {
-    if (stat.tradeId[0] === 'map.no_elder_guardian') {
-      query.stats.push({
-        type: 'not',
-        disabled: stat.disabled,
-        filters: [
-          tradeIdToQuery(STAT_BY_REF('Map is occupied by #')!.trade.ids[ModifierType.Implicit][0], stat)
-        ]
-      })
-    }
-
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
       const TARGET_ID = {
         CRAFTED_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],

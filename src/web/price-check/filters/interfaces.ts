@@ -114,7 +114,6 @@ export const INTERNAL_TRADE_IDS = [
   'weapon.elemental_dps',
   'weapon.crit',
   'weapon.aps',
-  'map.no_elder_guardian',
   'item.has_empty_modifier'
 ] as const
 

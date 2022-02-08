@@ -391,7 +391,6 @@ export default defineComponent({
     "Evasion Rating: #": "Уклонение: #",
     "Energy Shield: #": "Энерг. щит: #",
     "Ward: #": "Барьер: #",
-    "Map is not occupied by Elder Guardian": "Карта не захвачена Хранителем Древнего",
     "Block: #%": "Блок: #%",
     "variant": "вариант",
     "corrupted": "осквернено",
