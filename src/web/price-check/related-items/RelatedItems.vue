@@ -2,7 +2,7 @@
   <div v-if="result" class="flex max-w-full bg-gray-800 text-gray-400 mt-6 border border-gray-900" style="border-width: 0.25rem;">
     <div class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.detailsId"
-        :class="{ 'bg-gray-700 -mx-1 px-1': item.detailsId === detailsId }" class="rounded">
+        :class="{ 'bg-gray-700 -mx-1 px-1': item.highlight }" class="rounded">
         <div class="flex items-center flex-1">
           <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
             <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
@@ -43,21 +43,28 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const detailsId = computed(() => {
+    const queryId = computed(() => {
       if (props.item) {
         return getDetailsId(props.item)
       }
     })
 
     const result = computed(() => {
-      if (!detailsId.value) return null
+      if (!queryId.value) return null
 
-      const r = ITEM_DROP.find(entry => entry.query.includes(detailsId.value!))
+      const r = ITEM_DROP.find(entry => entry.query.includes(queryId.value!))
       if (!r) return null
 
       const out = {
         // TODO: show at least icon when price is not available on poe.ninja yet
-        related: r.query.map(id => findByDetailsId(id)).filter(_ => Boolean(_)),
+        related: r.query.map(id => {
+          const found = findByDetailsId(id)
+          if (!found) return undefined
+          return {
+            ...found,
+            highlight: (id === queryId.value)
+          }
+        }).filter(_ => Boolean(_)),
         items: r.items.map(id => findByDetailsId(id)).filter(_ => Boolean(_))
       }
       return (out.related.length) ? out : null
@@ -65,7 +72,6 @@ export default defineComponent({
 
     return {
       result,
-      detailsId,
       price (item: ItemInfo) {
         const _ = autoCurrency(item.chaosValue, 'c')
         return {

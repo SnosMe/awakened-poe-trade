@@ -59,7 +59,7 @@ export interface ItemInfo {
   detailsId: string
 }
 
-let PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
+let PRICE_BY_QUERY_ID = new Map<string, ItemInfo>()
 
 const RETRY_TIME = 60 * 1000
 const UPDATE_TIME = 10 * 60 * 1000
@@ -131,7 +131,7 @@ async function load (force: boolean = false) {
             continue
           }
 
-          PRICE_BY_DETAILS_ID.set(`ITEM::${currency.currencyTypeName}`, {
+          PRICE_BY_QUERY_ID.set(`ITEM::${currency.currencyTypeName}`, {
             detailsId: currency.detailsId,
             icon: priceData.currencyDetails.find(detail => detail.id === currency.receive!.get_currency_id)!.icon,
             name: currency.currencyTypeName,
@@ -161,7 +161,7 @@ async function load (force: boolean = false) {
           lines: NinjaItemInfo[]
         } = await response.json()
         for (const item of priceData.lines) {
-          PRICE_BY_DETAILS_ID.set(dataType.key?.(item) ?? `ITEM::${item.name}`, {
+          PRICE_BY_QUERY_ID.set(dataType.key?.(item) ?? `ITEM::${item.name}`, {
             detailsId: item.detailsId,
             icon: item.icon,
             name: item.name,
@@ -177,7 +177,7 @@ async function load (force: boolean = false) {
 }
 
 export function findByDetailsId (id: string) {
-  return PRICE_BY_DETAILS_ID.get(id)
+  return PRICE_BY_QUERY_ID.get(id)
 }
 
 export function autoCurrency (value: number, currency: string) {
@@ -225,6 +225,6 @@ setInterval(() => {
 
 watch(selectedLeague, () => {
   chaosExaRate.value = undefined
-  PRICE_BY_DETAILS_ID = new Map<string, ItemInfo>()
+  PRICE_BY_QUERY_ID = new Map<string, ItemInfo>()
   load(true)
 })
