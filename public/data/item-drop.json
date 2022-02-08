@@ -174,7 +174,6 @@
   },
   {
     "query": [
-      "ITEM::Tainted Oil",
       "ITEM::Golden Oil",
       "ITEM::Silver Oil",
       "ITEM::Opalescent Oil",
@@ -189,7 +188,72 @@
       "ITEM::Sepia Oil",
       "ITEM::Clear Oil"
     ],
-    "items": []
+    "items": [
+      "ITEM::Tainted Oil",
+      "ITEM::Oil Extractor"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Lesser Eldritch Ember",
+      "ITEM::Greater Eldritch Ember",
+      "ITEM::Grand Eldritch Ember",
+      "ITEM::Exceptional Eldritch Ember"
+    ],
+    "items": [
+      "ITEM::Lesser Eldritch Ichor",
+      "ITEM::Greater Eldritch Ichor",
+      "ITEM::Grand Eldritch Ichor",
+      "ITEM::Exceptional Eldritch Ichor",
+      "ITEM::Orb of Conflict"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Lesser Eldritch Ichor",
+      "ITEM::Greater Eldritch Ichor",
+      "ITEM::Grand Eldritch Ichor",
+      "ITEM::Exceptional Eldritch Ichor"
+    ],
+    "items": [
+      "ITEM::Lesser Eldritch Ember",
+      "ITEM::Greater Eldritch Ember",
+      "ITEM::Grand Eldritch Ember",
+      "ITEM::Exceptional Eldritch Ember",
+      "ITEM::Orb of Conflict"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Al-Hezmin's Crest",
+      "ITEM::Baran's Crest",
+      "ITEM::Drox's Crest",
+      "ITEM::Veritania's Crest"
+    ],
+    "items": [
+      "ITEM::Awakener's Orb",
+      "UNIQUE::Crown of the Inward Eye // Prophet Crown",
+      "UNIQUE::Hands of the High Templar // Crusader Gloves",
+      "UNIQUE::Thread of Hope // Crimson Jewel",
+      "UNIQUE::The Saviour // Legion Sword"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Crescent Splinter",
+      "ITEM::The Maven's Writ"
+    ],
+    "items": [
+      "ITEM::Orb of Dominance",
+      "ITEM::Orb of Conflict",
+      "ITEM::Elevated Sextant",
+      "UNIQUE::Doppelgänger Guise // Sadist Garb",
+      "UNIQUE::Arn's Anguish // Cloth Belt",
+      "UNIQUE::Graven's Secret // Cloth Belt",
+      "UNIQUE::Olesya's Delight // Cloth Belt",
+      "UNIQUE::Legacy of Fury // Wyrmscale Boots",
+      "UNIQUE::Viridi's Veil // Praetor Crown"
+    ]
   },
   {
     "query": [
