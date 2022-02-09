@@ -155,6 +155,14 @@ export interface TranslationDict {
   MODIFIER_INCREASED: RegExp
   INCURSION_OPEN: string
   INCURSION_OBSTRUCTED: string
+  EATER_IMPLICIT: RegExp
+  EXARCH_IMPLICIT: RegExp
+  ELDRITCH_MOD_R1: string
+  ELDRITCH_MOD_R2: string
+  ELDRITCH_MOD_R3: string
+  ELDRITCH_MOD_R4: string
+  ELDRITCH_MOD_R5: string
+  ELDRITCH_MOD_R6: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

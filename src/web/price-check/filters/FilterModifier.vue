@@ -302,6 +302,9 @@ export default defineComponent({
 }
 .tag-variant {
   @apply bg-yellow-700 text-yellow-100; }
+.tag-eldritch {
+  background: linear-gradient(to right, theme('colors.red.700'), theme('colors.blue.700'));
+}
 .tag-corrupted {
   @apply bg-red-700 text-red-100; }
 .tag-fractured {
@@ -394,6 +397,8 @@ export default defineComponent({
     "Block: #%": "Блок: #%",
     "variant": "вариант",
     "corrupted": "осквернено",
+    "synthesised": "синтезирован",
+    "eldritch": "зловещий",
     "pseudo": "псевдо",
     "Roll is not variable": "Ролл не варьируется",
     "Elemental damage is not the main source of DPS": "Стихийный урон не основной источник ДПСа",

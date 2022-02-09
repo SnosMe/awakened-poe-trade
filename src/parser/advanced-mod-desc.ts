@@ -16,7 +16,7 @@ export interface ParsedModifier {
 
 export interface ModifierInfo {
   type: ModifierType
-  generation?: 'suffix' | 'prefix' | 'corrupted'
+  generation?: 'suffix' | 'prefix' | 'corrupted' | 'eldritch'
   name?: string
   tier?: number
   rank?: number
@@ -34,7 +34,19 @@ export function parseModInfoLine (line: string, type: ModifierType): ModifierInf
   let name: ModifierInfo['name']
   let tier: ModifierInfo['tier']
   let rank: ModifierInfo['rank']
-  {
+
+  if (_$.EATER_IMPLICIT.test(modText) || _$.EXARCH_IMPLICIT.test(modText)) {
+    const match = modText.match(_$.EATER_IMPLICIT) ?? modText.match(_$.EXARCH_IMPLICIT)!
+    generation = 'eldritch'
+    switch (match.groups!.rank) {
+      case _$.ELDRITCH_MOD_R1: rank = 1; break
+      case _$.ELDRITCH_MOD_R2: rank = 2; break
+      case _$.ELDRITCH_MOD_R3: rank = 3; break
+      case _$.ELDRITCH_MOD_R4: rank = 4; break
+      case _$.ELDRITCH_MOD_R5: rank = 5; break
+      case _$.ELDRITCH_MOD_R6: rank = 6; break
+    }
+  } else {
     const match = modText.match(_$.MODIFIER_LINE)
     if (!match) {
       throw new Error('Invalid regex for mod info line')

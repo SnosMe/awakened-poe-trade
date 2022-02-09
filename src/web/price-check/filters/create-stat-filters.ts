@@ -132,6 +132,8 @@ export function calculatedStatToFilter (
   if (type === ModifierType.Implicit) {
     if (sources.some(s => s.modifier.info.generation === 'corrupted')) {
       filter.tag = FilterTag.Corrupted
+    } else if (sources.some(s => s.modifier.info.generation === 'eldritch')) {
+      filter.tag = FilterTag.Eldritch
     } else if (item.isSynthesised) {
       filter.tag = FilterTag.Synthesised
     }
