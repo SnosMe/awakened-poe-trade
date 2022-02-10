@@ -667,5 +667,188 @@
     "items": [
       "UNIQUE::Soul Ripper // Quartz Flask"
     ]
+  },
+
+  {
+    "query": [
+      "ITEM::Deafening Essence of Greed",
+      "ITEM::Shrieking Essence of Greed",
+      "ITEM::Screaming Essence of Greed"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Contempt",
+      "ITEM::Shrieking Essence of Contempt",
+      "ITEM::Screaming Essence of Contempt"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Hatred",
+      "ITEM::Shrieking Essence of Hatred",
+      "ITEM::Screaming Essence of Hatred"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Woe",
+      "ITEM::Shrieking Essence of Woe",
+      "ITEM::Screaming Essence of Woe"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Fear",
+      "ITEM::Shrieking Essence of Fear",
+      "ITEM::Screaming Essence of Fear"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Anger",
+      "ITEM::Shrieking Essence of Anger",
+      "ITEM::Screaming Essence of Anger"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Torment",
+      "ITEM::Shrieking Essence of Torment",
+      "ITEM::Screaming Essence of Torment"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Sorrow",
+      "ITEM::Shrieking Essence of Sorrow",
+      "ITEM::Screaming Essence of Sorrow"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Rage",
+      "ITEM::Shrieking Essence of Rage",
+      "ITEM::Screaming Essence of Rage"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Suffering",
+      "ITEM::Shrieking Essence of Suffering",
+      "ITEM::Screaming Essence of Suffering"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Wrath",
+      "ITEM::Shrieking Essence of Wrath",
+      "ITEM::Screaming Essence of Wrath"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Doubt",
+      "ITEM::Shrieking Essence of Doubt",
+      "ITEM::Screaming Essence of Doubt"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Loathing",
+      "ITEM::Shrieking Essence of Loathing",
+      "ITEM::Screaming Essence of Loathing"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Zeal",
+      "ITEM::Shrieking Essence of Zeal",
+      "ITEM::Screaming Essence of Zeal"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Anguish",
+      "ITEM::Shrieking Essence of Anguish",
+      "ITEM::Screaming Essence of Anguish"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Spite",
+      "ITEM::Shrieking Essence of Spite",
+      "ITEM::Screaming Essence of Spite"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Scorn",
+      "ITEM::Shrieking Essence of Scorn",
+      "ITEM::Screaming Essence of Scorn"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Envy",
+      "ITEM::Shrieking Essence of Envy",
+      "ITEM::Screaming Essence of Envy"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Misery",
+      "ITEM::Shrieking Essence of Misery",
+      "ITEM::Screaming Essence of Misery"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Deafening Essence of Dread",
+      "ITEM::Shrieking Essence of Dread",
+      "ITEM::Screaming Essence of Dread"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Remnant of Corruption"
+    ],
+    "items": [
+      "ITEM::Essence of Insanity",
+      "ITEM::Essence of Horror",
+      "ITEM::Essence of Delirium",
+      "ITEM::Essence of Hysteria"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Essence of Insanity",
+      "ITEM::Essence of Horror",
+      "ITEM::Essence of Delirium",
+      "ITEM::Essence of Hysteria"
+    ],
+    "items": [
+      "ITEM::Remnant of Corruption"
+    ]
   }
 ]
