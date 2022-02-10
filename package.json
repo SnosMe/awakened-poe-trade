@@ -76,6 +76,13 @@
   "resolutions": {
     "vue-cli-plugin-electron-builder/electron-builder": "22.14.5"
   },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "postcss-nested": {},
+      "autoprefixer": {}
+    }
+  },
   "engines": {
     "node": ">=14"
   }
