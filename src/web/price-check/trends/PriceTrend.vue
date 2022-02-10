@@ -8,7 +8,7 @@
       <item-quick-price class="flex-1 text-base justify-center"
         :price="trend.price"
         :fraction="filters.stackSize != null"
-        :item-img="trend.icon"
+        :item-img="item.info.icon"
       >
         <template #item v-if="isValuableBasetype">
           <button class="text-gray-400 hover:bg-gray-700 rounded px-1 -mx-1"

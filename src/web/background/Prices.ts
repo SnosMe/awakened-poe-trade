@@ -16,7 +16,6 @@ interface NinjaCurrencyInfo { /* eslint-disable camelcase */
     data: Array<number | null>
     totalChange: number
   }
-  chaosEquivalent: number
   lowConfidenceReceiveSparkLine: {
     data: number[]
     totalChange: number
@@ -25,41 +24,34 @@ interface NinjaCurrencyInfo { /* eslint-disable camelcase */
 }
 
 interface NinjaItemInfo {
-  id: number
   name: string
-  icon: string
   mapTier: number
   levelRequired: number
   baseType: string | null
   stackSize: number
   variant: null
-  artFilename: null
   links: number
   itemClass: number
   sparkline: { data: Array<number | null>, totalChange: number }
   lowConfidenceSparkline: { data: number[], totalChange: number[] }
   implicitModifiers: []
   explicitModifiers: Array<{ text: string, optional: boolean }>
-  flavourText: string
   corrupted: false
   gemLevel: number
   gemQuality: number
   itemType: string
   chaosValue: number
-  exaltedValue: number
   count: number
   detailsId: string
 }
 
-export interface ItemInfo {
-  name: string
-  icon: string
+interface NinjaPrice {
   chaosValue: number
   graphPoints: number[]
   detailsId: string
 }
 
-let PRICE_BY_QUERY_ID = new Map<string, ItemInfo>()
+let PRICE_BY_QUERY_ID = new Map<string, NinjaPrice>()
 
 const RETRY_TIME = 60 * 1000
 const UPDATE_TIME = 10 * 60 * 1000
@@ -114,17 +106,11 @@ async function load (force: boolean = false) {
     }
 
     try {
-      const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/${dataType.overview}overview?league=${leagueAtStartOfLoad}&type=${dataType.type}`)
+      const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/${dataType.overview}overview?league=${leagueAtStartOfLoad}&type=${dataType.type}&language=en`)
       if (leagueAtStartOfLoad !== selectedLeague.value) return
 
       if (dataType.overview === 'currency') {
-        const priceData: {
-          lines: NinjaCurrencyInfo[]
-          currencyDetails: Array<{
-            id: number
-            icon: string
-          }>
-        } = await response.json()
+        const priceData: { lines: NinjaCurrencyInfo[] } = await response.json()
 
         for (const currency of priceData.lines) {
           if (!currency.receive) {
@@ -133,8 +119,6 @@ async function load (force: boolean = false) {
 
           PRICE_BY_QUERY_ID.set(`ITEM::${currency.currencyTypeName}`, {
             detailsId: currency.detailsId,
-            icon: priceData.currencyDetails.find(detail => detail.id === currency.receive!.get_currency_id)!.icon,
-            name: currency.currencyTypeName,
             chaosValue: currency.receive.value,
             graphPoints: currency.receiveSparkLine.data.filter((point): point is number => point != null)
           })
@@ -157,14 +141,11 @@ async function load (force: boolean = false) {
           }
         }
       } else if (dataType.overview === 'item') {
-        const priceData: {
-          lines: NinjaItemInfo[]
-        } = await response.json()
+        const priceData: { lines: NinjaItemInfo[] } = await response.json()
+
         for (const item of priceData.lines) {
           PRICE_BY_QUERY_ID.set(dataType.key?.(item) ?? `ITEM::${item.name}`, {
             detailsId: item.detailsId,
-            icon: item.icon,
-            name: item.name,
             chaosValue: item.chaosValue,
             graphPoints: item.sparkline.data.filter((point): point is number => point != null)
           })
@@ -225,6 +206,6 @@ setInterval(() => {
 
 watch(selectedLeague, () => {
   chaosExaRate.value = undefined
-  PRICE_BY_QUERY_ID = new Map<string, ItemInfo>()
+  PRICE_BY_QUERY_ID = new Map<string, NinjaPrice>()
   load(true)
 })
