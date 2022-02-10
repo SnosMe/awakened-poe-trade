@@ -6,25 +6,17 @@
     <div v-if="'related' in result" class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.name"
         :class="{ 'bg-gray-700 -mx-1 px-1': item.highlight }" class="rounded">
-        <div class="flex items-center flex-1">
-          <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
-            <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
-          </div>
-          <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ item.price }}</span>
-        </div>
+        <item-quick-price currency-text fraction class="text-base"
+          :price="item.price"
+          :item-img="item.icon" />
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
     <div v-if="'items' in result && result.items.length" class="flex-1 p-2 w-1/2">
       <div v-for="item in result.items" :key="item.name">
-        <div class="flex items-center flex-1">
-          <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
-            <img :src="item.icon" :alt="item.name" class="max-w-full max-h-full">
-          </div>
-          <i class="fas fa-arrow-right text-gray-600 px-2"></i>
-          <span class="px-1 text-base whitespace-no-wrap overflow-hidden">{{ item.price }}</span>
-        </div>
+        <item-quick-price currency-text fraction class="text-base"
+          :price="item.price"
+          :item-img="item.icon" />
         <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
@@ -34,9 +26,10 @@
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue'
 import { BaseType, ITEM_BY_REF, ITEM_DROP } from '@/assets/data'
-import { displayRounding, findByDetailsId, autoCurrency } from '../../background/Prices'
+import { findPriceByQueryId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 
 function findItemByQueryId (queryId: string): BaseType | undefined {
   const [ns, encodedName] = queryId.split('::')
@@ -49,14 +42,11 @@ function findItemByQueryId (queryId: string): BaseType | undefined {
   if (found && found.length) return found[0]
 }
 
-function findPriceByQueryId (queryId: string) {
-  let price = '?'
-  const priceEntry = findByDetailsId(queryId)
+function _findPriceByQueryId (queryId: string) {
+  const priceEntry = findPriceByQueryId(queryId)
   if (priceEntry) {
-    const _ = autoCurrency(priceEntry.chaosValue, 'c')
-    price = `${displayRounding(_.val, true)} ${_.curr === 'e' ? 'exa' : 'chaos'}`
+    return autoCurrency(priceEntry.chaosValue, 'chaos')
   }
-  return price
 }
 
 function getItemPrices (queryId: string) {
@@ -64,8 +54,8 @@ function getItemPrices (queryId: string) {
   if (!dropEntry) return null
 
   const out = {
-    related: [] as Array<{ name: string, icon: string, price: string, highlight: boolean }>,
-    items: [] as Array<{ name: string, icon: string, price: string }>
+    related: [] as Array<{ name: string, icon: string, price: ReturnType<typeof _findPriceByQueryId>, highlight: boolean }>,
+    items: [] as Array<{ name: string, icon: string, price: ReturnType<typeof _findPriceByQueryId> }>
   }
   for (const itemId of dropEntry.query) {
     const dbItem = findItemByQueryId(itemId)
@@ -74,7 +64,7 @@ function getItemPrices (queryId: string) {
     out.related.push({
       icon: dbItem.icon,
       name: dbItem.name,
-      price: findPriceByQueryId(itemId),
+      price: _findPriceByQueryId(itemId),
       highlight: (itemId === queryId)
     })
   }
@@ -85,7 +75,7 @@ function getItemPrices (queryId: string) {
     out.items.push({
       icon: dbItem.icon,
       name: dbItem.name,
-      price: findPriceByQueryId(itemId)
+      price: _findPriceByQueryId(itemId)
     })
   }
 
@@ -93,6 +83,7 @@ function getItemPrices (queryId: string) {
 }
 
 export default defineComponent({
+  components: { ItemQuickPrice },
   props: {
     item: {
       type: Object as PropType<ParsedItem | null>,

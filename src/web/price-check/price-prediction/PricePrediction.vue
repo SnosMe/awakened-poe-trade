@@ -11,12 +11,10 @@
     </div>
     <div v-else-if="price">
       <div class="flex items-center pb-4">
-        <item-quick-price class="flex-1"
-          :min="price.min"
-          :max="price.max"
-          approx
+        <item-quick-price class="flex-1 text-base justify-center"
+          :price="price"
           :item-img="item.info.icon"
-          :currency="price.currency === 'exalt' ? 'exa' : 'chaos'"
+          approx
         />
         <div class="text-center">
           <div class="leading-tight">

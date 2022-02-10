@@ -5,12 +5,10 @@
       <div class="pl-2">{{ t('Getting price') }} <span class="text-gray-600">{{ t('from poe.ninja ...') }}</span></div>
     </div>
     <template v-else>
-      <item-quick-price class="flex-1"
-        :min="trend.price.val"
-        :max="trend.price.val"
+      <item-quick-price class="flex-1 text-base justify-center"
+        :price="trend.price"
         :fraction="filters.stackSize != null"
         :item-img="trend.icon"
-        :currency="trend.price.curr === 'e' ? 'exa' : 'chaos'"
       >
         <template #item v-if="isValuableBasetype">
           <button class="text-gray-400 hover:bg-gray-700 rounded px-1 -mx-1"
@@ -53,7 +51,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { findByDetailsId, autoCurrency } from '../../background/Prices'
+import { findPriceByQueryId, autoCurrency } from '../../background/Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import VueApexcharts from 'vue3-apexcharts'
@@ -84,12 +82,12 @@ export default defineComponent({
 
     const trend = computed(() => {
       const detailsId = getDetailsId(props.item)
-      const trend = detailsId && findByDetailsId(detailsId)
+      const trend = detailsId && findPriceByQueryId(detailsId)
       if (!trend) return
 
       const price = (props.item.info.refName === 'Exalted Orb')
-        ? { val: trend.chaosValue, curr: 'c' }
-        : autoCurrency(trend.chaosValue, 'c')
+        ? { min: trend.chaosValue, max: trend.chaosValue, currency: 'chaos' as const }
+        : autoCurrency(trend.chaosValue, 'chaos')
 
       if (trend.graphPoints.length >= 2) {
         let changeStr = 'const'

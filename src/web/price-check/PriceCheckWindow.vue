@@ -18,11 +18,9 @@
               </button>
             </template>
             <template #content>
-              <item-quick-price
-                :min="exaltedCost"
-                :max="exaltedCost"
+              <item-quick-price class="text-base"
+                :price="{ min: exaltedCost, max: exaltedCost, currency: 'chaos' }"
                 item-img="/images/exa.png"
-                currency="chaos"
               />
               <div v-for="i in 9" :key="i">
                 <div class="pl-1">{{ i / 10 }} exa ⇒ {{ Math.round(exaltedCost * i / 10) }} c</div>

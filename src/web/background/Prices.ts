@@ -176,25 +176,25 @@ async function load (force: boolean = false) {
   }
 }
 
-export function findByDetailsId (id: string) {
+export function findPriceByQueryId (id: string) {
   return PRICE_BY_QUERY_ID.get(id)
 }
 
-export function autoCurrency (value: number, currency: string) {
-  if (currency === 'c') {
+export function autoCurrency (value: number, currency: 'chaos' | 'exa'): { min: number, max: number, currency: 'chaos' | 'exa' } {
+  if (currency === 'chaos') {
     if (value > ((chaosExaRate.value || 9999) * 0.94)) {
       if (value < ((chaosExaRate.value || 9999) * 1.06)) {
-        return { val: 1, curr: 'e' }
+        return { min: 1, max: 1, currency: 'exa' }
       } else {
-        return { val: chaosToExa(value), curr: 'e' }
+        return { min: chaosToExa(value), max: chaosToExa(value), currency: 'exa' }
       }
     }
-  } else if (currency === 'e') {
+  } else if (currency === 'exa') {
     if (value < 1) {
-      return { val: exaToChaos(value), curr: 'c' }
+      return { min: exaToChaos(value), max: exaToChaos(value), currency: 'chaos' }
     }
   }
-  return { val: value, curr: currency }
+  return { min: value, max: value, currency }
 }
 
 function chaosToExa (count: number) {

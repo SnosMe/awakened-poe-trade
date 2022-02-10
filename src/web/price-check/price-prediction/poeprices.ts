@@ -20,7 +20,7 @@ export interface RareItemPrice {
   max: number
   min: number
   confidence: number
-  currency: string
+  currency: 'chaos' | 'exa'
   explanation: Array<{
     name: string
     contrib: number
@@ -51,7 +51,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   }
 
   return {
-    currency: data.currency,
+    currency: (data.currency === 'exalt') ? 'exa' : 'chaos',
     min: data.min,
     max: data.max,
     confidence: Math.round(data.pred_confidence_score),

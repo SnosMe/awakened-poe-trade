@@ -1,18 +1,25 @@
 <template>
-  <div v-if="result"
-    class="flex items-center">
-    <img v-for="icon in result.icons" class="w-8 h-8" :src="icon">
-    <span><i class="fas fa-arrow-right text-gray-600 px-2"></i>{{ result.price }}</span>
-  </div>
+  <item-quick-price v-if="result"
+    :price="result.price"
+    currency-text
+  >
+    <template #item>
+      <div class="flex">
+        <img v-for="icon in result.icons" class="w-8 h-8" :src="icon">
+      </div>
+    </template>
+  </item-quick-price>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { StatFilter } from './interfaces'
-import { autoCurrency, displayRounding, findByDetailsId, ItemInfo } from '@/web/background/Prices'
-import { BLIGHT_RECIPES } from '@/assets/data'
+import { autoCurrency, findPriceByQueryId } from '@/web/background/Prices'
+import { BLIGHT_RECIPES, ITEM_BY_REF } from '@/assets/data'
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 
 export default defineComponent({
+  components: { ItemQuickPrice },
   props: {
     filter: {
       type: Object as PropType<StatFilter>,
@@ -25,27 +32,32 @@ export default defineComponent({
 
       const roll = props.filter.option!.value
 
-      const oils = (BLIGHT_RECIPES.recipes[roll] ?? []).map(idx => BLIGHT_RECIPES.oils[idx])
+      const oils = (BLIGHT_RECIPES.recipes[roll] ?? [])
+        .map(idx => BLIGHT_RECIPES.oils[idx])
+        .map(oilName => ITEM_BY_REF('ITEM', oilName)?.[0])
       if (!oils.length) return null
 
-      const prices = oils
-        .map(oil => findByDetailsId(`ITEM::${oil}`))
-        .filter(Boolean) as ItemInfo[]
-
-      if (prices.length !== oils.length) return null
-
-      const totalChaos = prices.reduce((t, p) => t + p.chaosValue, 0)
-      const total = autoCurrency(totalChaos, 'c')
+      let totalChaos: number | undefined = 0
+      for (const oil of oils) {
+        if (!oil) return null
+        const price = findPriceByQueryId(`ITEM::${oil.refName}`)
+        if (price) {
+          totalChaos += price.chaosValue
+        } else {
+          totalChaos = undefined
+          break
+        }
+      }
 
       return {
-        icons: prices.map(p => p.icon),
-        price: `${displayRounding(total.val)} ${total.curr === 'c' ? 'chaos' : 'exa'}`
+        icons: oils.map(item => item!.icon),
+        price: (totalChaos != null)
+          ? autoCurrency(totalChaos, 'chaos')
+          : undefined
       }
     })
 
-    return {
-      result
-    }
+    return { result }
   }
 })
 </script>

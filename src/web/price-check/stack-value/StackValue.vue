@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { displayRounding, findByDetailsId, autoCurrency } from '../../background/Prices'
+import { displayRounding, findPriceByQueryId, autoCurrency } from '../../background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
 import { ItemFilters } from '../filters/interfaces'
@@ -31,13 +31,13 @@ export default defineComponent({
   },
   setup (props) {
     function getPriceFor (n: number) {
-      const one = findByDetailsId(getDetailsId(props.item)!)!
+      const one = findPriceByQueryId(getDetailsId(props.item)!)!
 
       const price = (props.item.info.refName === 'Exalted Orb')
-        ? { val: n * one.chaosValue, curr: 'c' }
-        : autoCurrency(n * one.chaosValue, 'c')
+        ? { min: n * one.chaosValue, max: n * one.chaosValue, currency: 'chaos' as const }
+        : autoCurrency(n * one.chaosValue, 'chaos')
 
-      return `${displayRounding(price.val, true)} ${price.curr === 'c' ? 'chaos' : 'exa'}`
+      return `${displayRounding(price.min)} ${price.currency}`
     }
 
     const { t } = useI18n()
@@ -46,7 +46,7 @@ export default defineComponent({
       t,
       show: computed(() => {
         const id = getDetailsId(props.item)
-        return Boolean(props.filters.stackSize && id && findByDetailsId(id))
+        return Boolean(props.filters.stackSize && id && findPriceByQueryId(id))
       }),
       value: computed(() => {
         return {
