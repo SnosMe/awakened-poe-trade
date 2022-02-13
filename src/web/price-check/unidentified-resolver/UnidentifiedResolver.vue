@@ -26,8 +26,8 @@ export default defineComponent({
   emits: ['identify'],
   props: {
     item: {
-      type: Object as PropType<ParsedItem | undefined>,
-      default: undefined
+      type: Object as PropType<ParsedItem | null>,
+      default: null
     }
   },
   setup (props, ctx) {

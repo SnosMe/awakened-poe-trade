@@ -1,18 +1,15 @@
 <template>
-  <div v-if="show" class="flex">
-    <button :class="[$style.button, { [$style.selected]: filter.option.value === 0 }]"
-      @click="select(0)" type="button">{{ t('Any') }}</button>
-    <button :class="[$style.button, { [$style.selected]: filter.option.value === 1 }]" class="mx-1"
-      @click="select(1)" type="button">{{ t('Prefix') }}</button>
-    <button :class="[$style.button, { [$style.selected]: filter.option.value === 2 }]"
-      @click="select(2)" type="button">{{ t('Suffix') }}</button>
+  <div v-if="options" class="flex gap-x-1">
+    <button v-for="option in options"
+      :class="[$style.button, { [$style.selected]: option.isSelected }]"
+      @click="option.select" type="button">{{ t(option.text) }}</button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { StatFilter } from './interfaces'
+import { StatFilter, ItemHasEmptyModifier } from './interfaces'
 
 export default defineComponent({
   props: {
@@ -22,20 +19,29 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const show = computed(() => {
-      return props.filter.tradeId[0] === 'item.has_empty_modifier'
+    function select (value: ItemHasEmptyModifier) {
+      const { filter } = props
+      filter.option!.value = value
+      filter.disabled = false
+    }
+
+    const options = computed(() => {
+      const { filter } = props
+      if (filter.tradeId[0] !== 'item.has_empty_modifier') return null
+
+      return ([
+        [ItemHasEmptyModifier.Any, 'Any'],
+        [ItemHasEmptyModifier.Prefix, 'Prefix'],
+        [ItemHasEmptyModifier.Suffix, 'Suffix']
+      ] as const).map(([value, text]) => ({
+        text,
+        select: () => select(value),
+        isSelected: (filter.option!.value === value)
+      }))
     })
 
     const { t } = useI18n()
-
-    return {
-      t,
-      show,
-      select (value: number) {
-        props.filter.option!.value = value
-        props.filter.disabled = false
-      }
-    }
+    return { t, options }
   }
 })
 </script>

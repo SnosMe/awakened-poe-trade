@@ -74,7 +74,7 @@ export function getExternalLink (item: ParsedItem): string {
 
 export async function sendFeedback (
   feedback: { text: string, option: 'fair' | 'low' | 'high' },
-  prediction: { min: number, max: number, currency: 'chaos' | 'exalt' },
+  prediction: Pick<PoepricesApiResponse, 'min' | 'max' | 'currency'>,
   item: ParsedItem
 ): Promise<void> {
   const body = new FormData()

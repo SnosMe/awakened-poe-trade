@@ -6,7 +6,7 @@
       {{ t('Item has no modifiers.') }}
     </div>
     <div v-else class="py-2 flex flex-col">
-      <map-stat-button v-for="stat in mapStats" :key="stat.text"
+      <map-stat-button v-for="stat in mapStats" :key="stat.matcher"
         :stat="stat" />
       <div v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
         class="py-1 px-8">
