@@ -1,61 +1,52 @@
 <template>
   <div class="max-w-md p-2">
-    <div class="bg-gray-700 rounded px-2 py-1 mb-2 leading-none">
-      <i class="fas fa-info-circle"></i> {{ t('You can clear hotkey by pressing Backspace') }}</div>
-    <div class="mb-8">
-      <div class="flex">
-        <div class="flex-1">{{ t('Price check') }}</div>
-        <div class="flex">
-          <span class="text-gray-500 mr-2">{{ t('Auto-hide Mode') }}</span>
-          <button :class="{ border: priceCheckHotkeyHold === 'Ctrl', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Ctrl'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 leading-none mr-1">Ctrl</button>
-          <button :class="{ border: priceCheckHotkeyHold === 'Alt', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Alt'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 leading-none">Alt</button>
-          <span class="mx-4">+</span>
-          <hotkey-input v-model="priceCheckHotkey" class="w-20" no-mod-keys />
+    <div class="mb-2 bg-gray-700 rounded px-2 py-1 leading-none">
+      <i class="fas fa-info-circle"></i> {{ t('You can clear hotkey by pressing Backspace') }}
+    </div>
+    <div class="mb-8 flex flex-col">
+      <label class="mb-1">{{ t('Price check') }}</label>
+      <div class="flex flex-col gap-y-2 pl-4">
+        <div class="flex gap-x-2">
+          <label class="flex-1 text-gray-500">{{ t('Auto-hide Mode') }}</label>
+          <div class="flex w-48 gap-x-1">
+            <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Ctrl', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Ctrl'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Ctrl</button>
+            <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Alt', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Alt'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Alt</button>
+            <span class="flex-1 text-center">+</span>
+            <hotkey-input v-model="priceCheckHotkey" class="w-20" no-mod-keys />
+          </div>
+        </div>
+        <div class="flex gap-x-2">
+          <label class="flex-1 text-gray-500">{{ t('Open without auto-hide') }}</label>
+          <hotkey-input v-model="priceCheckHotkeyLocked" class="w-48" />
         </div>
       </div>
-      <div class="text-right mt-2">
-        <span class="text-gray-500 mr-2">{{ t('Open without auto-hide') }}</span>
-        <hotkey-input v-model="priceCheckHotkeyLocked" class="w-48" />
-      </div>
     </div>
-    <div class="mb-4">
-      <div class="flex">
-        <div class="flex-1">{{ t('Overlay') }} <span class="text-red-500 text-lg leading-none">*</span></div>
-        <hotkey-input required v-model="overlayKey" class="w-48" />
-      </div>
+    <div class="mb-4 flex">
+      <label class="flex-1">{{ t('Overlay') }} <span class="text-red-500 text-lg leading-none">*</span></label>
+      <hotkey-input required v-model="overlayKey" class="w-48" />
     </div>
-    <div class="mb-4">
-      <div class="flex">
-        <div class="flex-1">{{ t('Open item on wiki') }}</div>
-        <hotkey-input v-model="wikiKey" class="w-48" />
-      </div>
+    <div class="mb-4 flex">
+      <label class="flex-1">{{ t('Open item on wiki') }}</label>
+      <hotkey-input v-model="wikiKey" class="w-48" />
     </div>
-    <div class="mb-4">
-      <div class="flex">
-        <div class="flex-1">{{ t('Map check') }}</div>
-        <!-- <div class="flex-1">{{ t('Item info') }}</div> -->
-        <hotkey-input v-model="itemCheckKey" class="w-48" />
-      </div>
+    <div class="mb-4 flex">
+      <label class="flex-1">{{ t('Map check') }}</label>
+      <!-- <label class="flex-1">{{ t('Item info') }}</label> -->
+      <hotkey-input v-model="itemCheckKey" class="w-48" />
     </div>
-    <div v-if="isEnglish" class="mb-4">
-      <div class="flex">
-        <div class="flex-1">Open base item on Craft of Exile</div>
-        <hotkey-input v-model="craftOfExileKey" class="w-48" />
-      </div>
+    <div v-if="isEnglish" class="mb-4 flex">
+      <label class="flex-1">Open base item on Craft of Exile</label>
+      <hotkey-input v-model="craftOfExileKey" class="w-48" />
     </div>
-    <div class="mb-8">
-      <div class="flex">
-        <div class="flex-1">{{ t('Delve grid') }}</div>
-        <hotkey-input v-model="delveGridKey" class="w-48" />
-      </div>
+    <div class="mb-8 flex">
+      <label class="flex-1">{{ t('Delve grid') }}</label>
+      <hotkey-input v-model="delveGridKey" class="w-48" />
     </div>
-    <div class="mb-8">
-      <div class="flex">
-        <div class="flex-1">{{ t('Stash tab scrolling') }}</div>
-        <div class="flex">
-          <ui-radio v-model="stashScroll" :value="true" class="mr-4 font-fontin-regular">Ctrl + MouseWheel</ui-radio>
-          <ui-radio v-model="stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
-        </div>
+    <div class="mb-8 flex">
+      <label class="flex-1">{{ t('Stash tab scrolling') }}</label>
+      <div class="flex gap-x-4">
+        <ui-radio v-model="stashScroll" :value="true" class="font-fontin-regular">Ctrl + MouseWheel</ui-radio>
+        <ui-radio v-model="stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
       </div>
     </div>
   </div>
