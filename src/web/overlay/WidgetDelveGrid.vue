@@ -1,5 +1,5 @@
 <template>
-  <widget :config="{ anchor }" move-handles="none" readonly :removable="false">
+  <widget :config="config" move-handles="none" readonly :removable="false">
     <div class="relative overflow-hidden"
       :style="{
         width: `${anchor.width}px`,
@@ -73,6 +73,7 @@ export default defineComponent({
 
     return {
       anchor,
+      config: computed(() => ({ ...props.config, anchor: anchor.value })),
       cellSize
     }
   }

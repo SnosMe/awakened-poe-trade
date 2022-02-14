@@ -36,7 +36,7 @@
     "luxon": "2.x.x",
     "object-hash": "^2.1.1",
     "robotjs": "^0.6.0",
-    "tailwindcss": "1.x.x",
+    "tailwindcss": "2.x.x",
     "throttle-debounce": "3.0.x",
     "tippy.js": "^6.2.7",
     "uiohook-napi": "1.0.x",

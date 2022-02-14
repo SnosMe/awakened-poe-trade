@@ -3,7 +3,7 @@
     <div class="pb-1 flex items-baseline">
       <i class="w-5 flex-shrink-0 fas fa-exclamation-triangle text-orange-400"></i>
       <div class="search-text mr-1 relative flex min-w-0" style="line-height: 1rem;">
-        <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="stat.text" /></span>
+        <span class="truncate"><item-modifier-text :text="stat.text" /></span>
         <span class="search-text-full whitespace-pre-wrap cursor-default"><item-modifier-text :text="stat.text" /></span>
       </div>
     </div>

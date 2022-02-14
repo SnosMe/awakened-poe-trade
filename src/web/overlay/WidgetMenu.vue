@@ -5,7 +5,7 @@
         <template v-for="widget in widgets" :key="widget.wmId">
           <button @click="toggle(widget)"
             :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-900'"
-            class="bg-gray-800 rounded text-gray-100 ml-1 p-2 leading-none whitespace-no-wrap border"
+            class="bg-gray-800 rounded text-gray-100 ml-1 p-2 leading-none whitespace-nowrap border"
           >
             <i v-if="widget.wmType === 'settings'" class="fas fa-cog align-bottom" />
             <template v-else>{{ widget.wmTitle || `#${widget.wmId}` }}</template>
@@ -17,19 +17,19 @@
           </template>
           <template #content>
             <div class="flex flex-col justify-center text-base">
-              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap">Chromatic calculator</button> -->
-              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap">Screen saver</button> -->
+              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Chromatic calculator</button> -->
+              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Screen saver</button> -->
               <!-- add widget -->
-              <div class="text-gray-600 text-sm px-1 select-none whitespace-no-wrap">{{ t('add widget') }}</div>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('timer')">{{ t('Stopwatch') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('stash-search')">{{ t('Stash search') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('image-strip')">{{ t('Image strip') }}</button>
-              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-no-wrap" @click="createOfType('TODO')">Image</button> -->
+              <div class="text-gray-600 text-sm px-1 select-none whitespace-nowrap">{{ t('add widget') }}</div>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('timer')">{{ t('Stopwatch') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('stash-search')">{{ t('Stash search') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('image-strip')">{{ t('Image strip') }}</button>
+              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('TODO')">Image</button> -->
             </div>
           </template>
         </ui-popover>
       </div>
-      <div v-if="isEditing" class="text-gray-100 px-2 pb-1 whitespace-no-wrap">
+      <div v-if="isEditing" class="text-gray-100 px-2 pb-1 whitespace-nowrap">
         <ui-toggle v-model="config.alwaysShow">{{ t('Show button for active widgets') }}</ui-toggle>
       </div>
     </div>

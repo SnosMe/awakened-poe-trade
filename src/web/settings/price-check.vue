@@ -8,7 +8,7 @@
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
       <template v-else-if="leagues.trade.value.length">
         <div
-          class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-no-wrap"
+          class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-nowrap"
           style="grid-template-columns: repeat(2, min-content);">
           <div v-for="league of leagues.trade.value" :key="league.id">
             <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>

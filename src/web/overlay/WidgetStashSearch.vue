@@ -18,7 +18,7 @@
                 <i class="fas fa-grip-vertical text-gray-400"></i>
               </button>
               <div class="relative flex-1" style="min-width: 15rem;">
-                <div class="leading-4 py-2 px-2 whitespace-no-wrap">{{ entry.text }}{{ '\u2009' }}</div>
+                <div class="leading-4 py-2 px-2 whitespace-nowrap">{{ entry.text }}{{ '\u2009' }}</div>
                 <input v-model="entry.text"
                   :placeholder="t('search text')"
                   class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1"
@@ -32,7 +32,7 @@
         </dnd-container>
         <template v-else>
           <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
-            class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 mb-1 whitespace-no-wrap">{{ entry.text }}</button>
+            class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 mb-1 whitespace-nowrap">{{ entry.text }}</button>
         </template>
         <button v-if="isEditing" @click="addEntry"
           class="leading-none text-gray-100 p-2 rounded text-left bg-gray-800 mb-1"><i class="fas fa-plus mr-2"></i>{{ t('Add') }}</button>

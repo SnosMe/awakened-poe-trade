@@ -9,7 +9,7 @@
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
           :item-img="item.icon" />
-        <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
+        <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
     <div v-if="'items' in result && result.items.length" class="flex-1 p-2 w-1/2">
@@ -17,7 +17,7 @@
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
           :item-img="item.icon" />
-        <div class="text-left text-gray-600 mb-1 whitespace-no-wrap overflow-hidden">{{ item.name }}</div>
+        <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
   </div>

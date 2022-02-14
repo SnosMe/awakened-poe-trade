@@ -190,6 +190,11 @@ export default defineComponent({
     const wm = inject<WidgetManager>('wm')!
 
     const config = reactive({
+      wmId: -1,
+      wmType: 'debug',
+      wmTitle: '',
+      wmWants: 'show',
+      wmZorder: 7777777,
       anchor: { pos: 'bl', x: 1, y: 98.5 } as Anchor
     })
 
@@ -213,7 +218,7 @@ export default defineComponent({
       pick (index: number) {
         priceCheck(ITEMS[index])
       },
-      handleItemPaste (e: InputEvent) {
+      handleItemPaste (e: Event) {
         const target = e.target as HTMLInputElement
         priceCheck(target.value)
         target.value = ''

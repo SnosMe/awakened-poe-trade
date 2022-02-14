@@ -13,7 +13,7 @@
             'fas fa-check-square': !isDisabled
           }"></i>
           <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-            <span class="truncate whitespace-pre-wrap"><item-modifier-text :text="text" :roll="rollValue" /></span>
+            <span class="truncate"><item-modifier-text :text="text" :roll="rollValue" /></span>
             <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="rollValue" /></span>
           </div>
         </button>
