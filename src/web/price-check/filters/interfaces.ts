@@ -33,14 +33,8 @@ export interface ItemFilters {
     disabled: boolean
   }>
   quality?: FilterNumeric
-  gemLevel?: {
-    min: number
-    max?: number
-    disabled: boolean
-  }
-  mapTier?: {
-    value: number
-  }
+  gemLevel?: FilterNumeric
+  mapTier?: FilterNumeric
   mapBlighted?: {
     value: NonNullable<ParsedItem['mapBlighted']>
   }
@@ -58,12 +52,8 @@ export interface ItemFilters {
     value: NonNullable<ParsedItem['gemAltQuality']>
     disabled: boolean
   }
-  areaLevel?: {
-    value: number
-  }
-  heistWingsRevealed?: {
-    value: number
-  }
+  areaLevel?: FilterNumeric
+  heistWingsRevealed?: FilterNumeric
   trade: {
     offline: boolean
     onlineInLeague: boolean

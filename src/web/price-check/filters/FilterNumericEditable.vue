@@ -104,7 +104,14 @@ export default defineComponent({
 {
   "ru": {
     "Item Level:": "Ур. предмета:",
-    "Stock:": "Запаc:"
+    "Stock:": "Запаc:",
+    "Map Tier:": "Ур. карты:",
+    "Area Level:": "Ур. области:",
+    "Wings Revealed:": "Крыльев обнаружено:",
+    "Links:": "Связи:",
+    "White:": "Белые:",
+    "Quality:": "Качество:",
+    "Level:": "Уровень:"
   }
 }
 </i18n>

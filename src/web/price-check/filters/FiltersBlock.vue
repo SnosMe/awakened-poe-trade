@@ -1,23 +1,26 @@
 <template>
   <div>
     <div class="flex flex-wrap items-center pb-3 gap-2">
-      <button v-if="filters.linkedSockets" class="trade-tag" :class="{ disabled: filters.linkedSockets.disabled }"
-        @click="filters.linkedSockets.disabled = !filters.linkedSockets.disabled">{{ t('Links: {0}', [filters.linkedSockets.value]) }}</button>
-      <div v-if="filters.mapTier" class="trade-tag">{{ t('Map Tier: {0}', [filters.mapTier.value]) }}</div>
-      <div v-if="filters.areaLevel" class="trade-tag">{{ t('Area Level: {0}', [filters.areaLevel.value]) }}</div>
-      <div v-if="filters.heistWingsRevealed" class="trade-tag">{{ t('Wings Revealed: {0}', [filters.heistWingsRevealed.value]) }}</div>
+      <filter-numeric-editable v-if="filters.linkedSockets"
+        :filter="filters.linkedSockets" name="Links:" />
+      <filter-numeric-editable v-if="filters.mapTier"
+        :filter="filters.mapTier" name="Map Tier:" />
+      <filter-numeric-editable v-if="filters.areaLevel"
+        :filter="filters.areaLevel" name="Area Level:" />
+      <filter-numeric-editable v-if="filters.heistWingsRevealed"
+        :filter="filters.heistWingsRevealed" name="Wings Revealed:" />
       <div v-if="filters.mapBlighted" class="trade-tag">{{ t(filters.mapBlighted.value) }}</div>
       <div v-if="filters.discriminator" class="trade-tag">{{ t(filters.discriminator.value) }}</div>
       <filter-numeric-editable v-if="filters.itemLevel"
         :filter="filters.itemLevel" name="Item Level:" />
       <filter-numeric-editable v-if="filters.stackSize"
         :filter="filters.stackSize" name="Stock:" />
-      <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
-        @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ t('White: {0}', [filters.whiteSockets.value]) }}</button>
-      <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
-        @click="filters.gemLevel.disabled = !filters.gemLevel.disabled">{{ t('Level: {0}', [filters.gemLevel.min]) }}</button>
-      <button v-if="filters.quality" class="trade-tag" :class="{ disabled: filters.quality.disabled }"
-        @click="filters.quality.disabled = !filters.quality.disabled">{{ t('Quality: {0}%', [filters.quality.value]) }}</button>
+      <filter-numeric-editable v-if="filters.whiteSockets"
+        :filter="filters.whiteSockets" name="White:" />
+      <filter-numeric-editable v-if="filters.gemLevel"
+        :filter="filters.gemLevel" name="Level:" />
+      <filter-numeric-editable v-if="filters.quality"
+        :filter="filters.quality" name="Quality:" />
       <button v-if="filters.altQuality" class="trade-tag" :class="{ disabled: filters.altQuality.disabled }"
         @click="filters.altQuality.disabled = !filters.altQuality.disabled">{{ t(filters.altQuality.value) }}</button>
       <template v-if="filters.influences">
@@ -150,13 +153,8 @@ export default defineComponent({
   "ru": {
     "Hidden": "Скрытые",
     "Collapse": "Свернуть",
-    "Links: {0}": "Связи: {0}",
-    "Map Tier: {0}": "Ур. карты: {0}",
     "Blighted": "Заражённая",
     "Blight-ravaged": "Разорённая Скверной",
-    "White: {0}": "Белые: {0}",
-    "Level: {0}": "Уровень: {0}",
-    "Quality: {0}%": "Качество: {0}%",
     "Shaper": "Создатель",
     "Elder": "Древний",
     "Crusader": "Крестоносец",
@@ -175,8 +173,6 @@ export default defineComponent({
     "Anomalous": "Аномальный",
     "Divergent": "Искривлённый",
     "Phantasmal": "Фантомный",
-    "Area Level: {0}": "Ур. области: {0}",
-    "Wings Revealed: {0}": "Крыльев обнаружено: {0}",
     "Mirrored": "Отражено",
     "Not Mirrored": "Не отражено",
     "Mods": "Моды",

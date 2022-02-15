@@ -295,8 +295,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.gemLevel && !filters.gemLevel.disabled) {
-    prop.set(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.min)
-    prop.set(query.filters, 'misc_filters.filters.gem_level.max', filters.gemLevel.max)
+    prop.set(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.value)
   }
 
   if (filters.quality && !filters.quality.disabled) {
@@ -319,7 +318,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     prop.set(query.filters, 'socket_filters.filters.sockets.w', filters.whiteSockets.value)
   }
 
-  if (filters.mapTier) {
+  if (filters.mapTier && !filters.mapTier.disabled) {
     prop.set(query.filters, 'map_filters.filters.map_tier.min', filters.mapTier.value)
     prop.set(query.filters, 'map_filters.filters.map_tier.max', filters.mapTier.value)
   }
@@ -353,11 +352,11 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  if (filters.areaLevel) {
+  if (filters.areaLevel && !filters.areaLevel.disabled) {
     prop.set(query.filters, 'map_filters.filters.area_level.min', filters.areaLevel.value)
   }
 
-  if (filters.heistWingsRevealed) {
+  if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     prop.set(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }
 

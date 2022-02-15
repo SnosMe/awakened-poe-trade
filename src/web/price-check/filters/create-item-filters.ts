@@ -69,7 +69,8 @@ export function createFilters (
     }
     if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
-        value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80])
+        value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80]),
+        disabled: false
       }
     }
     return filters
@@ -97,7 +98,8 @@ export function createFilters (
     }
 
     filters.mapTier = {
-      value: item.mapTier!
+      value: item.mapTier!,
+      disabled: false
     }
   } else if (item.category === ItemCategory.HeistContract) {
     filters.searchExact = {
@@ -113,12 +115,14 @@ export function createFilters (
     }
 
     filters.areaLevel = {
-      value: item.areaLevel!
+      value: item.areaLevel!,
+      disabled: false
     }
 
     if (item.heist?.wingsRevealed && item.heist.wingsRevealed > 1) {
       filters.heistWingsRevealed = {
-        value: item.heist.wingsRevealed
+        value: item.heist.wingsRevealed,
+        disabled: false
       }
     }
   } else if (
@@ -310,14 +314,13 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
 
   if (SPECIAL_SUPPORT_GEM.includes(item.info.refName)) {
     filters.gemLevel = {
-      min: item.gemLevel!,
-      max: item.gemLevel!,
+      value: item.gemLevel!,
       disabled: false
     }
   } else {
     filters.gemLevel = {
-      min: item.gemLevel!,
-      disabled: item.gemLevel! < 16
+      value: item.gemLevel!,
+      disabled: (item.gemLevel! < 16)
     }
   }
 
