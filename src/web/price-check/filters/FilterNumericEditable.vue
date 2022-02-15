@@ -1,19 +1,22 @@
 <template>
-  <div v-if="filter"
-    class="trade-tag trade-tag--box flex" :class="{ disabled: filter.disabled }">
+  <div :class="[$style.btn, { [$style.active]: !filter.disabled }]">
     <button @click="filter.disabled = !filter.disabled" class="pl-2">{{ t(name) }}</button>
-    <ui-input-debounced class="trade-tag__input" step="any" type="number"
-      v-model.number="filterValue"
-      :placeholder="filter.value"
-      :delay="0"
+    <input :class="$style.input" step="any" type="number"
+      v-model.number="inputMin"
       @focus="inputFocus"
-      :style="{ width: `${1.2 + String(filterValue).length}ch` }"
+      @blur="inputMinBlur"
+      @mousewheel.stop
+      :style="{ width: `${1.2 + Math.max(String(inputMin).length, 2)}ch` }"
     />
+    <!-- <template v-if="">
+      <span>–</span>
+      <input input :class="$style.input" step="any" type="number">
+    </template> -->
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from 'vue'
+import { defineComponent, PropType, computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { FilterNumeric } from './interfaces'
 
@@ -21,8 +24,8 @@ export default defineComponent({
   emits: [], // mutates filter
   props: {
     filter: {
-      type: Object as PropType<FilterNumeric | undefined>,
-      default: undefined
+      type: Object as PropType<FilterNumeric>,
+      required: true
     },
     name: {
       type: String,
@@ -30,45 +33,55 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const filterValue = computed({
-      get () {
-        return props.filter!.value
-      },
-      set (value) {
-        if (typeof value === 'number') {
-          props.filter!.value = value
-          props.filter!.disabled = false
-        } else {
-          props.filter!.disabled = true
-        }
-      }
-    })
-
-    function inputFocus (e: InputEvent) {
-      const target = e.target as HTMLInputElement
-
-      if (target.value === '') {
-        target.value = String(props.filter!.value)
-      }
-      target.select()
-      props.filter!.disabled = false
-    }
+    const _inputMin = ref<number | ''>('')
+    watch(() => props.filter, (filter) => {
+      _inputMin.value = filter.value
+    }, { immediate: true })
 
     const { t } = useI18n()
 
     return {
       t,
-      filterValue,
-      inputFocus
+      inputMin: computed<number | ''>({
+        get () { return _inputMin.value },
+        set (value) {
+          _inputMin.value = value
+          if (typeof value === 'number') {
+            props.filter.value = value
+          } else {
+            props.filter.value = 0
+          }
+        }
+      }),
+      inputFocus (e: InputEvent) {
+        const target = e.target as HTMLInputElement
+        target.select()
+        props.filter.disabled = false
+      },
+      inputMinBlur () {
+        if (typeof _inputMin.value !== 'number') {
+          _inputMin.value = 0
+        }
+      }
     }
   }
 })
 </script>
 
-<style lang="postcss">
-.trade-tag__input {
+<style lang="postcss" module>
+.btn {
+  @apply bg-gray-900 rounded;
+  @apply border border-transparent;
+  @apply pr-1;
+  line-height: 1.25rem;
+
+  &.active {
+    @apply border-gray-500;
+  }
+}
+
+.input {
   @apply text-center;
-  @apply mr-1;
   @apply bg-transparent;
   @apply text-gray-300;
   @apply select-all;
@@ -76,16 +89,11 @@ export default defineComponent({
   &:hover,
   &:focus {
     @apply bg-gray-700;
-    @apply -my-px;
-    @apply border-t border-b border-gray-500;
+    @apply -my-px border-t border-b border-gray-500;
   }
 
   &::placeholder {
-    @apply text-gray-300;
-  }
-
-  &:focus::placeholder {
-    color: transparent;
+    @apply text-gray-400;
   }
 
   &:focus { cursor: none; }

@@ -8,8 +8,10 @@
       <div v-if="filters.heistWingsRevealed" class="trade-tag">{{ t('Wings Revealed: {0}', [filters.heistWingsRevealed.value]) }}</div>
       <div v-if="filters.mapBlighted" class="trade-tag">{{ t(filters.mapBlighted.value) }}</div>
       <div v-if="filters.discriminator" class="trade-tag">{{ t(filters.discriminator.value) }}</div>
-      <filter-numeric-editable :filter="filters.itemLevel" name="Item Level:" />
-      <filter-numeric-editable :filter="filters.stackSize" name="Stock:" />
+      <filter-numeric-editable v-if="filters.itemLevel"
+        :filter="filters.itemLevel" name="Item Level:" />
+      <filter-numeric-editable v-if="filters.stackSize"
+        :filter="filters.stackSize" name="Stock:" />
       <button v-if="filters.whiteSockets" class="trade-tag" :class="{ disabled: filters.whiteSockets.disabled }"
         @click="filters.whiteSockets.disabled = !filters.whiteSockets.disabled">{{ t('White: {0}', [filters.whiteSockets.value]) }}</button>
       <button v-if="filters.gemLevel" class="trade-tag" :class="{ disabled: filters.gemLevel.disabled }"
@@ -140,10 +142,6 @@ export default defineComponent({
   &.disabled {
     @apply border-gray-900;
   }
-}
-
-.trade-tag--box {
-  padding: 0;
 }
 </style>
 
