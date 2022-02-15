@@ -8,12 +8,12 @@
           :placeholder="t('widget title')"
           v-model="config.wmTitle">
       </template>
-      <div class="flex flex-col -mb-1 mt-2">
-        <dnd-container v-if="isEditing" tag="div"
+      <template v-if="isEditing">
+        <dnd-container tag="div" class="flex flex-col gap-y-1 mt-1"
           v-model="config.entries" item-key="id"
           handle="[data-qa=drag-handle]" :animation="200" :force-fallback="true">
           <template #item="{ element: entry }">
-            <div class="rounded bg-gray-800 mb-1 flex items-center">
+            <div class="rounded bg-gray-800 flex items-center">
               <button class="p-2 leading-none cursor-move" data-qa="drag-handle">
                 <i class="fas fa-grip-vertical text-gray-400"></i>
               </button>
@@ -30,12 +30,12 @@
             </div>
           </template>
         </dnd-container>
-        <template v-else>
-          <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
-            class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 mb-1 whitespace-nowrap">{{ entry.text }}</button>
-        </template>
-        <button v-if="isEditing" @click="addEntry"
-          class="leading-none text-gray-100 p-2 rounded text-left bg-gray-800 mb-1"><i class="fas fa-plus mr-2"></i>{{ t('Add') }}</button>
+        <button @click="addEntry"
+          class="leading-none text-gray-100 p-2 rounded text-left bg-gray-800 mt-1 w-full"><i class="fas fa-plus mr-2"></i>{{ t('Add') }}</button>
+      </template>
+      <div v-else class="flex flex-col gap-y-1 mt-2">
+        <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
+          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">{{ entry.text }}</button>
       </div>
     </div>
   </widget>

@@ -5,7 +5,7 @@
     </div>
     <div v-if="'related' in result" class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.name"
-        :class="{ 'bg-gray-700 -mx-1 px-1': item.highlight }" class="rounded">
+        :class="{ 'bg-gray-700': item.highlight }" class="rounded px-1">
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
           :item-img="item.icon" />

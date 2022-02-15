@@ -8,29 +8,28 @@
           :placeholder="t('widget title')"
           v-model="config.wmTitle">
       </template>
-      <div class="flex -ml-1">
-        <dnd-container tag="div" class="flex"
-          v-model="config.images" item-key="id"
-          handle="[data-qa=drag-handle]" :animation="200" :force-fallback="true">
-          <template #item="{ element: img }">
-            <div :class="$style.card">
-              <fullscreen-image
-                :src="img.url"
-                :disabled="isEditing || isMoving"
-                class="rounded overflow-hidden" />
-              <button v-if="isEditing" @click="remove(img.id)"
-                class="bg-gray-800 absolute top-0 right-0 rounded-bl text-red-500 leading-none px-2 py-1 flex"><i class="fas fa-times"></i></button>
-              <button v-if="isEditing" data-qa="drag-handle"
-                class="bg-gray-900 absolute rounded text-gray-400 leading-none w-8 h-8 flex justify-center items-center cursor-move" style="top: calc(50% - 1rem); left: calc(50% - 1rem);"><i class="fas fa-arrows-alt"></i></button>
-            </div>
-          </template>
-        </dnd-container>
-        <div v-if="isEditing"
-          :class="$style.card" class="flex justify-center items-center">
-          <input type="file" id="file" class="hidden" accept="image/*" @input="handleFile">
-          <label class="text-gray-400 hover:bg-gray-700 py-1 px-2 rounded cursor-pointer" for="file"><i class="fas fa-file-import"></i> {{ t('Choose File') }}</label>
-        </div>
-      </div>
+      <dnd-container tag="div" class="flex gap-x-1"
+        v-model="config.images" item-key="id"
+        handle="[data-qa=drag-handle]" :animation="200" :force-fallback="true">
+        <template #item="{ element: img }">
+          <div :class="$style.card">
+            <fullscreen-image
+              :src="img.url"
+              :disabled="isEditing || isMoving"
+              class="rounded overflow-hidden" />
+            <button v-if="isEditing" @click="remove(img.id)"
+              class="bg-gray-800 absolute top-0 right-0 rounded-bl text-red-500 leading-none px-2 py-1 flex"><i class="fas fa-times"></i></button>
+            <button v-if="isEditing" data-qa="drag-handle"
+              class="bg-gray-900 absolute rounded text-gray-400 leading-none w-8 h-8 flex justify-center items-center cursor-move" style="top: calc(50% - 1rem); left: calc(50% - 1rem);"><i class="fas fa-arrows-alt"></i></button>
+          </div>
+        </template>
+        <template #footer v-if="isEditing">
+          <div :class="$style.card" class="flex justify-center items-center">
+            <input type="file" id="file" class="hidden" accept="image/*" @input="handleFile">
+            <label class="text-gray-400 hover:bg-gray-700 py-1 px-2 rounded cursor-pointer" for="file"><i class="fas fa-file-import"></i> {{ t('Choose File') }}</label>
+          </div>
+        </template>
+      </dnd-container>
     </div>
   </widget>
 </template>
@@ -93,7 +92,7 @@ export default defineComponent({
 .card {
   width: 12rem;
   height: 6.5rem;
-  @apply ml-1 p-1;
+  @apply p-1;
   @apply bg-gray-800;
   @apply rounded;
   position: relative;

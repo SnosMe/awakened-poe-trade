@@ -6,7 +6,7 @@
       </div>
     </slot>
     <i class="fas fa-arrow-right text-gray-600 px-1 text-sm"></i>
-    <div>
+    <div class="whitespace-nowrap">
       <span v-if="approx && !isRange" class="text-gray-600 font-sans">~ </span>
       <span :class="{ [$style.exalted]: isExa }">{{ minText }}</span>
       <span v-if="isRange" class="text-gray-600 font-sans"> ~ </span>
