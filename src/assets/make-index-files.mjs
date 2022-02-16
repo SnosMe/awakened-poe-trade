@@ -65,7 +65,7 @@ for (const lang of LANGUAGES) {
   {
     const ndjson = fs.readFileSync(`./public/data/${lang}/items.ndjson`, { encoding: 'utf-8' })
     let start = 0
-    /** @type{Map<string, typeof lineStarts[number]} */
+    /** @type{Map<string, typeof lineStarts[number]>} */
     const startsByName = new Map()
     while (start !== ndjson.length) {
       const end = ndjson.indexOf('\n', start)

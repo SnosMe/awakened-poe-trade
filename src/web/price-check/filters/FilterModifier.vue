@@ -20,12 +20,12 @@
         <div class="flex items-baseline gap-x-1">
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('Q {0}%', [calcQuality]) }}</div>
           <div class="flex gap-x-px">
-            <ui-input-debounced :class="$style['rollInput']" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
+            <input :class="$style['rollInput']" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
               v-if="showInputs" ref="inputMinEl"
-              v-model.number="inputMin" @focus="inputFocus($event, 'min')" :delay="0" />
-            <ui-input-debounced :class="$style['rollInput']" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
+              v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
+            <input :class="$style['rollInput']" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
               v-if="showInputs" ref="inputMaxEl"
-              v-model.number="inputMax" @focus="inputFocus($event, 'max')" :delay="0" />
+              v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
           </div>
         </div>
       </div>
