@@ -189,9 +189,7 @@ export function createFilters (
   }
 
   if (item.isMirrored) {
-    filters.mirrored = {
-      value: true
-    }
+    filters.mirrored = { disabled: false }
   }
 
   if (item.influences.length) {

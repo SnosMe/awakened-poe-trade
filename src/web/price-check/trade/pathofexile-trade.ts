@@ -282,10 +282,12 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.corrupted?.value === false) {
-    prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
+    prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(false))
   }
   if (filters.mirrored) {
-    prop.set(query.filters, 'misc_filters.filters.mirrored.option', String(filters.mirrored.value))
+    if (filters.mirrored.disabled) {
+      prop.set(query.filters, 'misc_filters.filters.mirrored.option', String(false))
+    }
   } else if (
     item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||

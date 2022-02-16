@@ -26,7 +26,7 @@ export interface ItemFilters {
     value: boolean
   }
   mirrored?: {
-    value: boolean
+    disabled: boolean
   }
   influences?: Array<{
     value: ItemInfluence
