@@ -1,27 +1,27 @@
 <template>
   <div>
     <div class="flex flex-wrap items-center pb-3 gap-2">
-      <filter-numeric-editable v-if="filters.linkedSockets"
+      <filter-btn-numeric v-if="filters.linkedSockets"
         :filter="filters.linkedSockets" name="Links:" />
-      <filter-numeric-editable v-if="filters.mapTier"
+      <filter-btn-numeric v-if="filters.mapTier"
         :filter="filters.mapTier" name="Map Tier:" />
-      <filter-numeric-editable v-if="filters.areaLevel"
+      <filter-btn-numeric v-if="filters.areaLevel"
         :filter="filters.areaLevel" name="Area Level:" />
-      <filter-numeric-editable v-if="filters.heistWingsRevealed"
+      <filter-btn-numeric v-if="filters.heistWingsRevealed"
         :filter="filters.heistWingsRevealed" name="Wings Revealed:" />
       <filter-btn-logical v-if="filters.mapBlighted" readonly
         :filter="{ disabled: false }" :text="filters.mapBlighted.value" />
       <filter-btn-logical v-if="filters.discriminator" readonly
         :filter="{ disabled: false }" :text="filters.discriminator.value" />
-      <filter-numeric-editable v-if="filters.itemLevel"
+      <filter-btn-numeric v-if="filters.itemLevel"
         :filter="filters.itemLevel" name="Item Level:" />
-      <filter-numeric-editable v-if="filters.stackSize"
+      <filter-btn-numeric v-if="filters.stackSize"
         :filter="filters.stackSize" name="Stock:" />
-      <filter-numeric-editable v-if="filters.whiteSockets"
+      <filter-btn-numeric v-if="filters.whiteSockets"
         :filter="filters.whiteSockets" name="White:" />
-      <filter-numeric-editable v-if="filters.gemLevel"
+      <filter-btn-numeric v-if="filters.gemLevel"
         :filter="filters.gemLevel" name="Level:" />
-      <filter-numeric-editable v-if="filters.quality"
+      <filter-btn-numeric v-if="filters.quality"
         :filter="filters.quality" name="Quality:" />
       <filter-btn-logical v-if="filters.altQuality"
         :filter="filters.altQuality" :text="filters.altQuality.value" />
@@ -71,7 +71,7 @@
 import { defineComponent, watch, shallowRef, shallowReactive, computed, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FilterModifier from './FilterModifier.vue'
-import FilterNumericEditable from './FilterNumericEditable.vue'
+import FilterBtnNumeric from './FilterBtnNumeric.vue'
 import FilterBtnLogical from './FilterBtnLogical.vue'
 import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
@@ -82,7 +82,7 @@ export default defineComponent({
   emits: ['submit'],
   components: {
     FilterModifier,
-    FilterNumericEditable,
+    FilterBtnNumeric,
     FilterBtnLogical,
     UnknownModifier
   },
