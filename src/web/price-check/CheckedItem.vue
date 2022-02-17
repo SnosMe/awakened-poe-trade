@@ -32,10 +32,10 @@
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
-      <div class="mb-1">{{ t('Support development on') }} <img @click="openLink('https://patreon.com/awakened_poe_trade')" class="inline h-5 cursor-pointer animate__animated animate__fadeInRight" src="/images/Patreon.svg"></div>
+      <div class="mb-1">{{ t('Support development on') }} <a href="https://patreon.com/awakened_poe_trade" class="inline-flex align-middle animate__animated animate__fadeInRight" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
       <i18n-t keypath="This tool relies on {0} and {1}, consider support them as well" tag="div">
-        <span @click="openLink('https://poeprices.info')" class="bg-gray-900 px-1 rounded cursor-pointer">poeprices.info</span>
-        <span @click="openLink('https://poe.ninja/support')" class="bg-gray-900 px-1 rounded cursor-pointer">poe.ninja</span>
+        <a href="https://poeprices.info" target="_blank" class="bg-gray-900 px-1 rounded">poeprices.info</a>
+        <a href="https://poe.ninja/support" target="_blank" class="bg-gray-900 px-1 rounded">poe.ninja</a>
       </i18n-t>
     </div>
   </div>
@@ -58,7 +58,6 @@ import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { AppConfig } from '@/web/Config'
 import { FilterTag, ItemFilters, StatFilter } from './filters/interfaces'
-import { MainProcess } from '@/web/background/IPC'
 import { PriceCheckWidget } from '../overlay/interfaces'
 import { selected as selectedLeague, isPublic as isPublicLeague } from '@/web/background/Leagues'
 
@@ -222,10 +221,6 @@ export default defineComponent({
       }
     })
 
-    function openLink (link: string) {
-      MainProcess.openSystemBrowser(link)
-    }
-
     const { t } = useI18n()
 
     return {
@@ -241,7 +236,6 @@ export default defineComponent({
       show,
       applyItemBaseFilter,
       handleSearchMouseenter,
-      openLink,
       showSupportLinks
     }
   }

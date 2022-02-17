@@ -51,14 +51,6 @@ class MainProcessBinding {
     }
   }
 
-  openSystemBrowser (url: string) {
-    if (window.electronAPI) {
-      this.sendEvent({ name: 'OVERLAY->MAIN::system-browser', payload: url })
-    } else {
-      window.open(url)
-    }
-  }
-
   saveConfig (config: Config) {
     this.sendEvent({ name: 'OVERLAY->MAIN::save-config', payload: config })
   }

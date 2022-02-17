@@ -49,8 +49,4 @@ export function setupBuiltinBrowser () {
       }
     }
   })
-
-  overlayOnEvent('OVERLAY->MAIN::system-browser', (_, url) => {
-    shell.openExternal(url)
-  })
 }

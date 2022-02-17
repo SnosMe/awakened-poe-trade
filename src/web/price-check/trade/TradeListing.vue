@@ -83,7 +83,6 @@
 <script lang="ts">
 import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/web/background/IPC'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
 import { AppConfig } from '@/web/Config'
@@ -246,7 +245,7 @@ export default defineComponent({
           : `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
 
         if (isExternal) {
-          MainProcess.openSystemBrowser(link)
+          window.open(link)
         } else {
           wm.showBrowser(widget.value.wmId, link)
         }

@@ -1,4 +1,3 @@
-import { MainProcess } from '@/web/background/IPC'
 import { parseClipboard } from '@/parser'
 import { AppConfig } from '@/web/Config'
 
@@ -11,5 +10,5 @@ export function openWiki (clipboard: string) {
   const item = parseClipboard(clipboard)
   if (!item) return
 
-  MainProcess.openSystemBrowser(`https://${ENDPOINT_BY_LANG[AppConfig().language]}/${item.info.name}`)
+  window.open(`https://${ENDPOINT_BY_LANG[AppConfig().language]}/${item.info.name}`)
 }

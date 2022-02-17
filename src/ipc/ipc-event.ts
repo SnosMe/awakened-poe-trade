@@ -16,7 +16,6 @@ export type IpcEvent =
   IpcShowBrowser |
   IpcHideBrowser |
   IpcVisibility |
-  IpcOpenSystemBrowser |
   IpcOpenWiki |
   IpcOpenCraftOfExile |
   IpcImportFile |
@@ -92,9 +91,6 @@ export type IpcVisibility =
   Event<'MAIN->OVERLAY::visibility', {
     isVisible: boolean
   }>
-
-export type IpcOpenSystemBrowser =
-  Event<'OVERLAY->MAIN::system-browser', string>
 
 export type IpcOpenWiki =
   Event<'MAIN->OVERLAY::open-wiki', {

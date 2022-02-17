@@ -64,7 +64,6 @@ import { getExternalLink, RareItemPrice, requestPoeprices } from './poeprices'
 import FeedbackOption from './FeedbackOption.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { ParsedItem } from '@/parser'
-import { MainProcess } from '@/web/background/IPC'
 import { artificialSlowdown } from '../trade/artificial-slowdown'
 
 export default defineComponent({
@@ -104,9 +103,7 @@ export default defineComponent({
     }, { immediate: true })
 
     function openWebsite () {
-      MainProcess.openSystemBrowser(
-        getExternalLink(props.item)
-      )
+      window.open(getExternalLink(props.item))
     }
 
     return {
