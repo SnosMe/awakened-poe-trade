@@ -51,10 +51,9 @@ export async function createOverlayWindow () {
     height: 600,
     // backgroundColor: '#00000008',
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
       webSecurity: false,
-      defaultFontSize: config.get('fontSize')
+      defaultFontSize: config.get('fontSize'),
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 

@@ -1,4 +1,12 @@
-import { ItemCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
+import type { ItemCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
+import type { IpcEvent } from './ipc-event'
+
+export interface PreloadExposed {
+  sendEvent: (event: IpcEvent) => void
+  onEvent: (cb: (data: IpcEvent) => void) => void
+  getConfig: () => Config
+  importFile: (filePath: string) => string
+}
 
 export interface Config {
   configVersion: number
