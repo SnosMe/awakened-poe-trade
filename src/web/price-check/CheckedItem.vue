@@ -58,7 +58,7 @@ import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { AppConfig } from '@/web/Config'
 import { FilterTag, ItemFilters, StatFilter } from './filters/interfaces'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { PriceCheckWidget } from '../overlay/interfaces'
 import { selected as selectedLeague, isPublic as isPublicLeague } from '@/web/background/Leagues'
 

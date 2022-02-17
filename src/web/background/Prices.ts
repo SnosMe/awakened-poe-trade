@@ -1,5 +1,5 @@
 import { ref, watch } from 'vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { selected as selectedLeague, isPublic as isPublicLeague } from './Leagues'
 
 interface NinjaCurrencyInfo { /* eslint-disable camelcase */

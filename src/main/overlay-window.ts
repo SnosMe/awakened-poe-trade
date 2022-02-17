@@ -1,5 +1,6 @@
 import path from 'path'
-import { BrowserWindow, ipcMain, dialog, Menu, systemPreferences } from 'electron'
+import assert from 'assert'
+import { BrowserWindow, ipcMain, dialog, Menu, systemPreferences, IpcMainEvent } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
@@ -15,6 +16,18 @@ export const overlayReady = new Promise<void>((resolve) => {
   _resolveOverlayReady = resolve
 })
 
+export function overlaySendEvent (event: ipc.IpcEvent) {
+  assert.ok(overlayWindow)
+  overlayWindow.webContents.send('named-event', event)
+}
+
+export function overlayOnEvent<Name extends ipc.IpcEvent['name']> (
+  name: Name,
+  cb: (e: IpcMainEvent, payload: ipc.IpcEventPayload<Name>) => void
+) {
+  ipcMain.on(name, cb)
+}
+
 export async function createOverlayWindow () {
   if (process.platform === 'win32' && !systemPreferences.isAeroGlassEnabled()) {
     dialog.showErrorBox(
@@ -25,9 +38,9 @@ export async function createOverlayWindow () {
     )
   }
 
-  ipcMain.once(ipc.OVERLAY_READY, _resolveOverlayReady)
-  ipcMain.on(ipc.DPR_CHANGE, (_: any, dpr: number) => handleDprChange(dpr))
-  ipcMain.on(ipc.CLOSE_OVERLAY, assertPoEActive)
+  overlayOnEvent('OVERLAY->MAIN::ready', _resolveOverlayReady)
+  overlayOnEvent('OVERLAY->MAIN::devicePixelRatio-change', (_, dpr) => handleDprChange(dpr))
+  overlayOnEvent('OVERLAY->MAIN::close-overlay', assertPoEActive)
   PoeWindow.on('active-change', handlePoeWindowActiveChange)
   PoeWindow.onAttach(handleOverlayAttached)
 
@@ -86,11 +99,14 @@ function handlePoeWindowActiveChange (isActive: boolean) {
   if (isActive && isInteractable) {
     isInteractable = false
   }
-  overlayWindow!.webContents.send(ipc.FOCUS_CHANGE, {
-    game: isActive,
-    overlay: isInteractable,
-    usingHotkey: _isOverlayKeyUsed
-  } as ipc.IpcFocusChange)
+  overlaySendEvent({
+    name: 'MAIN->OVERLAY::focus-change',
+    payload: {
+      game: isActive,
+      overlay: isInteractable,
+      usingHotkey: _isOverlayKeyUsed
+    }
+  })
 
   _isOverlayKeyUsed = false
 }

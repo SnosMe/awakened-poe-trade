@@ -1,11 +1,10 @@
-import { ipcMain, Rectangle, Point } from 'electron'
+import { Rectangle, Point } from 'electron'
 import { uIOhook } from 'uiohook-napi'
 import { isPollingClipboard } from './poll-clipboard'
 import { PoeWindow } from './PoeWindow'
-import * as ipc from '@/ipc/ipc-event'
 import { config } from './config'
 import { logger } from './logger'
-import { overlayWindow, isInteractable, assertOverlayActive, assertPoEActive, DPR } from './overlay-window'
+import { isInteractable, assertOverlayActive, assertPoEActive, DPR, overlayOnEvent, overlaySendEvent } from './overlay-window'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 const WIDTH_96DPI = 460 / 16
@@ -26,7 +25,10 @@ export function showWidget (opts: {
   checkPressPosition = opts.pressPosition
   const isLokedMode = (opts.eventName === 'price-check-locked')
 
-  overlayWindow!.webContents.send(ipc.PRICE_CHECK, { clipboard: opts.clipboard, position: checkPressPosition, lockedMode: isLokedMode } as ipc.IpcPriceCheck)
+  overlaySendEvent({
+    name: 'MAIN->OVERLAY::price-check',
+    payload: { clipboard: opts.clipboard, position: checkPressPosition, lockedMode: isLokedMode }
+  })
 
   const poeBounds = PoeWindow.bounds
   activeAreaRect = {
@@ -52,7 +54,7 @@ export function lockWindow (syntheticClick = false) {
 }
 
 export function setupShowHide () {
-  ipcMain.on(ipc.PRICE_CHECK_HIDE, () => {
+  overlayOnEvent('OVERLAY->MAIN::price-check-hide', () => {
     if (isPriceCheckShown) {
       logger.debug('Closing', { source: 'price-check', reason: 'Event from widget' })
       isPriceCheckShown = false
@@ -68,7 +70,7 @@ export function setupShowHide () {
 
       if (distance > (CLOSE_THRESHOLD_96DPI * DPR * config.get('fontSize'))) {
         logger.debug('Closing', { source: 'price-check', reason: 'Auto-hide on mouse move', distance, threshold: CLOSE_THRESHOLD_96DPI })
-        overlayWindow!.webContents.send(ipc.PRICE_CHECK_CANCELED)
+        overlaySendEvent({ name: 'MAIN->OVERLAY::price-check-canceled', payload: undefined })
         isPriceCheckShown = false
       }
     } else if (!isMouseInside) {

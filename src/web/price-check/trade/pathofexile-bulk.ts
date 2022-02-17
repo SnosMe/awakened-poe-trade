@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'

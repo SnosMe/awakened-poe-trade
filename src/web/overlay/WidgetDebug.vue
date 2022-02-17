@@ -20,7 +20,7 @@
 import { defineComponent, inject, reactive, computed } from 'vue'
 import { WidgetManager, Anchor } from './interfaces'
 import Widget from './Widget.vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { parseClipboard } from '@/parser'
 
 const ITEMS = [
@@ -199,7 +199,10 @@ export default defineComponent({
     })
 
     function priceCheck (text: string) { /* eslint-disable no-console */
-      MainProcess.selfEmitPriceCheck({ clipboard: text, position: { x: window.screenX + 100, y: window.screenY + 100 }, lockedMode: false })
+      MainProcess.selfDispatch({
+        name: 'MAIN->OVERLAY::price-check',
+        payload: { clipboard: text, position: { x: window.screenX + 100, y: window.screenY + 100 }, lockedMode: false }
+      })
       console.time('parsing item')
       const parsed = parseClipboard(text)
       console.timeEnd('parsing item')

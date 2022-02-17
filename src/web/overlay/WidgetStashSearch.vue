@@ -46,7 +46,7 @@ import { defineComponent, inject, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Widget from './Widget.vue'
 import DndContainer from 'vuedraggable'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { WidgetManager, StashSearchWidget } from './interfaces'
 
 export default defineComponent({
@@ -87,7 +87,10 @@ export default defineComponent({
         })
       },
       stashSearch (text: string) {
-        MainProcess.stashSearch(text)
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::stash-search',
+          payload: { text }
+        })
       }
     }
   }

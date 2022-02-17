@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import WidgetTimer from './WidgetTimer'
 import WidgetStashSearch from './WidgetStashSearch'
 import WidgetMenu from './WidgetMenu'
@@ -31,7 +31,6 @@ import WidgetImageStrip from './WidgetImageStrip'
 import WidgetDelveGrid from './WidgetDelveGrid'
 import WidgetSettings from '../settings/SettingsWindow'
 import { registerOtherServices } from '../other-services'
-import { FOCUS_CHANGE, VISIBILITY } from '@/ipc/ipc-event'
 import { AppConfig, saveConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
@@ -69,7 +68,10 @@ export default {
     devicePixelRatio: {
       immediate: false,
       handler (dpr) {
-        MainProcess.dprChanged(dpr)
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::devicePixelRatio-change',
+          payload: dpr
+        })
       }
     },
     visibilityState (stateNow, stateOld) {
@@ -98,7 +100,7 @@ export default {
   created () {
     loadLeagues()
 
-    MainProcess.addEventListener(FOCUS_CHANGE, ({ detail: state }) => {
+    MainProcess.onEvent('MAIN->OVERLAY::focus-change', (state) => {
       this.active = state.overlay
       this.gameFocused = state.game
 
@@ -120,7 +122,7 @@ export default {
         }
       }
     })
-    MainProcess.addEventListener(VISIBILITY, ({ detail: e }) => {
+    MainProcess.onEvent('MAIN->OVERLAY::visibility', (e) => {
       this.hideUI = !e.isVisible
     })
     window.addEventListener('resize', () => {
@@ -133,7 +135,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      MainProcess.readyReceiveEvents()
+      MainProcess.sendEvent({ name: 'OVERLAY->MAIN::ready', payload: undefined })
     })
   },
   computed: {
@@ -208,19 +210,28 @@ export default {
     },
     showBrowser (wmId, url) {
       this.setFlag(wmId, 'has-browser', true)
-      MainProcess.openAppBrowser({ url })
+      MainProcess.sendEvent({
+        name: 'OVERLAY->MAIN::show-browser',
+        payload: { url }
+      })
     },
     closeBrowser (wmId) {
       const widget = this.widgets.find(_ => _.wmId === wmId)
       if (widget.wmFlags.includes('has-browser')) {
         this.setFlag(wmId, 'has-browser', false)
-        MainProcess.hideAppBrowser({ close: true })
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::hide-browser',
+          payload: { close: true }
+        })
       }
     },
     hideBrowser (wmId) {
       const widget = this.widgets.find(_ => _.wmId === wmId)
       if (widget.wmFlags.includes('has-browser')) {
-        MainProcess.hideAppBrowser({ close: false })
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::hide-browser',
+          payload: { close: false }
+        })
       }
     },
     setFlag (wmId, flag, state) {

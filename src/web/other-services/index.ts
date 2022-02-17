@@ -1,19 +1,20 @@
-import { MainProcess } from '@/ipc/main-process-bindings'
-import * as ipc from '@/ipc/ipc-event'
+import { MainProcess } from '@/web/background/IPC'
 import { openWiki } from './wiki'
 import { openCOE } from './craft-of-exile'
 import { handleLine } from '../client-log/client-log'
 
 export function registerOtherServices () {
-  MainProcess.addEventListener(ipc.OPEN_WIKI, (e) => {
-    openWiki((e as CustomEvent<{ clipboard: string }>).detail.clipboard)
+  MainProcess.onEvent('MAIN->OVERLAY::open-wiki', (e) => {
+    openWiki(e.clipboard)
   })
 
-  MainProcess.addEventListener(ipc.CLIENT_LOG_UPDATE, (e) => {
-    handleLine((e as CustomEvent<string>).detail)
+  MainProcess.onEvent('MAIN->OVERLAY::client-log', (e) => {
+    for (const line of e.lines) {
+      handleLine(line)
+    }
   })
 
-  MainProcess.addEventListener(ipc.OPEN_COE, (e) => {
-    openCOE((e as CustomEvent<{ clipboard: string }>).detail.clipboard)
+  MainProcess.onEvent('MAIN->OVERLAY::open-craft-of-exile', (e) => {
+    openCOE(e.clipboard)
   })
 }

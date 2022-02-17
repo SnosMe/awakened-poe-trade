@@ -1,4 +1,4 @@
-import { screen, globalShortcut, ipcMain } from 'electron'
+import { screen, globalShortcut } from 'electron'
 import robotjs from 'robotjs'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { pollClipboard } from './poll-clipboard'
@@ -7,7 +7,7 @@ import { isModKey, KeyToElectron, mergeTwoHotkeys } from '@/ipc/KeyToCode'
 import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
-import { toggleOverlayState, overlayWindow, assertOverlayActive, assertPoEActive } from './overlay-window'
+import { toggleOverlayState, assertOverlayActive, assertPoEActive, overlayOnEvent, overlaySendEvent } from './overlay-window'
 import * as ipc from '@/ipc/ipc-event'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
@@ -20,11 +20,17 @@ export interface ShortcutAction {
   keepModKeys?: true
   action: {
     type: 'copy-item'
-    eventName: string
+    eventName: (
+      ipc.IpcOpenWiki['name'] |
+      ipc.IpcOpenCraftOfExile['name'] |
+      ipc.IpcItemCheck['name'] |
+      'price-check-quick' |
+      'price-check-locked'
+    )
     focusOverlay?: boolean
   } | {
     type: 'trigger-event'
-    eventName: string
+    eventName: ipc.IpcToggleDelveGrid['name']
   } | {
     type: 'toggle-overlay'
   } | {
@@ -61,25 +67,25 @@ function shortcutsFromConfig () {
   if (config.get('wikiKey')) {
     actions.push({
       shortcut: config.get('wikiKey')!,
-      action: { type: 'copy-item', eventName: ipc.OPEN_WIKI }
+      action: { type: 'copy-item', eventName: 'MAIN->OVERLAY::open-wiki' }
     })
   }
   if (config.get('craftOfExileKey')) {
     actions.push({
       shortcut: config.get('craftOfExileKey')!,
-      action: { type: 'copy-item', eventName: ipc.OPEN_COE }
+      action: { type: 'copy-item', eventName: 'MAIN->OVERLAY::open-craft-of-exile' }
     })
   }
   if (config.get('itemCheckKey')) {
     actions.push({
       shortcut: config.get('itemCheckKey')!,
-      action: { type: 'copy-item', eventName: ipc.ITEM_CHECK, focusOverlay: true }
+      action: { type: 'copy-item', eventName: 'MAIN->OVERLAY::item-check', focusOverlay: true }
     })
   }
   if (config.get('delveGridKey')) {
     actions.push({
       shortcut: config.get('delveGridKey')!,
-      action: { type: 'trigger-event', eventName: ipc.TOGGLE_DELVE_GRID },
+      action: { type: 'trigger-event', eventName: 'MAIN->OVERLAY::delve-grid' },
       keepModKeys: true
     })
   }
@@ -149,7 +155,7 @@ function registerGlobal () {
       } else if (entry.action.type === 'paste-in-chat') {
         typeInChat(entry.action.text, entry.action.send)
       } else if (entry.action.type === 'trigger-event') {
-        overlayWindow!.webContents.send(entry.action.eventName)
+        overlaySendEvent({ name: entry.action.eventName, payload: undefined })
       } else if (entry.action.type === 'copy-item') {
         const { action } = entry
 
@@ -160,10 +166,13 @@ function registerGlobal () {
 
         pollClipboard()
           .then(clipboard => {
-            if (action.eventName.startsWith('price-check')) {
+            if (action.eventName === 'price-check-quick' || action.eventName === 'price-check-locked') {
               showPriceCheck({ clipboard, pressPosition, eventName: action.eventName })
             } else {
-              overlayWindow!.webContents.send(action.eventName, { clipboard, position: pressPosition })
+              overlaySendEvent({
+                name: action.eventName,
+                payload: { clipboard, position: pressPosition }
+              })
               if (action.focusOverlay) {
                 assertOverlayActive()
               }
@@ -233,7 +242,7 @@ export function setupShortcuts () {
     })
   })
 
-  ipcMain.on(ipc.STASH_SEARCH, (e, opts: ipc.IpcStashSearch) => { stashSearch(opts.text) })
+  overlayOnEvent('OVERLAY->MAIN::stash-search', (_, { text }) => { stashSearch(text) })
 
   uIOhook.on('keydown', (e) => {
     const pressed = eventToString(e)

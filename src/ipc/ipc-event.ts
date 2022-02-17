@@ -1,73 +1,125 @@
-export const GET_CONFIG = 'get-config'
-export const SAVE_CONFIG = 'OVERLAY->MAIN::save-config'
+import type { Config } from '@/ipc/types'
 
-export const PRICE_CHECK_HIDE = 'OVERLAY->MAIN::price-check-hide'
+export type IpcEvent =
+  IpcGetConfig |
+  IpcSaveConfig |
+  IpcPriceCheckHide |
+  IpcUpdateInfo |
+  IpcFocusChange |
+  IpcDPRChange |
+  IpcPriceCheck |
+  IpcPriceCheckCanceled |
+  IpcItemCheck |
+  IpcStashSearch |
+  IpcOverlayReady |
+  IpcCloseOverlay |
+  IpcShowBrowser |
+  IpcHideBrowser |
+  IpcVisibility |
+  IpcOpenSystemBrowser |
+  IpcOpenWiki |
+  IpcOpenCraftOfExile |
+  IpcImportFile |
+  IpcToggleDelveGrid |
+  IpcClientLog
 
-export const UPDATE_AVAILABLE = 'update-available'
-export interface IpcUpdateInfo {
-  auto: boolean
-  version: string
-}
+export type IpcEventPayload<Name extends IpcEvent['name'], T extends IpcEvent = IpcEvent> =
+  T extends { name: Name } ? T['payload'] : never
 
-export const FOCUS_CHANGE = 'MAIN->OVERLAY::focus-change'
-export interface IpcFocusChange {
-  game: boolean
-  overlay: boolean
-  usingHotkey: boolean
-}
+export type IpcGetConfig =
+  Event<'OVERLAY->MAIN::get-config', Config>
 
-export const DPR_CHANGE = 'OVERLAY->MAIN::devicePixelRatio-change'
+export type IpcSaveConfig =
+  Event<'OVERLAY->MAIN::save-config', Config>
 
-export const PRICE_CHECK = 'MAIN->OVERLAY::price-check'
-export const PRICE_CHECK_CANCELED = 'MAIN->OVERLAY::price-check-canceled'
-export interface IpcPriceCheck {
-  clipboard: string
-  position: { x: number, y: number }
-  lockedMode: boolean
-}
+export type IpcPriceCheckHide =
+  Event<'OVERLAY->MAIN::price-check-hide'>
 
-export const ITEM_CHECK = 'MAIN->OVERLAY::item-check'
-export interface IpcItemCheck {
-  clipboard: string
-  position: { x: number, y: number }
-}
+export type IpcUpdateInfo =
+  Event<'MAIN->OVERLAY::update-available', {
+    auto: boolean
+    version: string
+  }>
 
-export const STASH_SEARCH = 'OVERLAY->MAIN::stash-search'
-export interface IpcStashSearch {
-  text: string
-}
+export type IpcFocusChange =
+  Event<'MAIN->OVERLAY::focus-change', {
+    game: boolean
+    overlay: boolean
+    usingHotkey: boolean
+  }>
 
-export const OVERLAY_READY = 'OVERLAY->MAIN::ready'
+export type IpcDPRChange =
+  Event<'OVERLAY->MAIN::devicePixelRatio-change', number>
 
-export const CLOSE_OVERLAY = 'OVERLAY->MAIN::close-overlay'
+export type IpcPriceCheck =
+  Event<'MAIN->OVERLAY::price-check', {
+    clipboard: string
+    position: { x: number, y: number }
+    lockedMode: boolean
+  }>
 
-export const SHOW_BROWSER = 'OVERLAY->MAIN::show-browser'
-export interface IpcShowBrowser {
-  url?: string
-}
+export type IpcPriceCheckCanceled =
+  Event<'MAIN->OVERLAY::price-check-canceled'>
 
-export const HIDE_BROWSER = 'OVERLAY->MAIN::hide-browser'
-export interface IpcHideBrowser {
-  close?: boolean
-}
+export type IpcItemCheck =
+  Event<'MAIN->OVERLAY::item-check', {
+    clipboard: string
+    position: { x: number, y: number }
+  }>
 
-export const VISIBILITY = 'MAIN->OVERLAY::visibility'
-export interface IpcVisibility {
-  isVisible: boolean
-}
+export type IpcStashSearch =
+  Event<'OVERLAY->MAIN::stash-search', {
+    text: string
+  }>
 
-export const OPEN_SYSTEM_BROWSER = 'OVERLAY->MAIN::system-browser'
-export interface IpcOpenSystemBrowser {
-  url: string
-}
+export type IpcOverlayReady =
+  Event<'OVERLAY->MAIN::ready'>
 
-export const OPEN_WIKI = 'MAIN->OVERLAY::open-wiki'
-export const OPEN_COE = 'MAIN->OVERLAY::open-craft-of-exile'
-export const IMPORT_FILE = 'OVERLAY->MAIN::import-file'
+export type IpcCloseOverlay =
+  Event<'OVERLAY->MAIN::close-overlay'>
 
-export const TOGGLE_DELVE_GRID = 'MAIN->OVERLAY::delve-grid'
+export type IpcShowBrowser =
+  Event<'OVERLAY->MAIN::show-browser', {
+    url?: string
+  }>
 
-export const CLIENT_LOG_UPDATE = 'MAIN->OVERLAY::client-log'
-export interface IpcClientLog {
-  lines: string[]
+export type IpcHideBrowser =
+  Event<'OVERLAY->MAIN::hide-browser', {
+    close?: boolean
+  }>
+
+export type IpcVisibility =
+  Event<'MAIN->OVERLAY::visibility', {
+    isVisible: boolean
+  }>
+
+export type IpcOpenSystemBrowser =
+  Event<'OVERLAY->MAIN::system-browser', string>
+
+export type IpcOpenWiki =
+  Event<'MAIN->OVERLAY::open-wiki', {
+    clipboard: string
+    position: { x: number, y: number }
+  }>
+
+export type IpcOpenCraftOfExile =
+  Event<'MAIN->OVERLAY::open-craft-of-exile', {
+    clipboard: string
+    position: { x: number, y: number }
+  }>
+
+export type IpcImportFile =
+  Event<'OVERLAY->MAIN::import-file', string>
+
+export type IpcToggleDelveGrid =
+  Event<'MAIN->OVERLAY::delve-grid'>
+
+export type IpcClientLog =
+  Event<'MAIN->OVERLAY::client-log', {
+    lines: string[]
+  }>
+
+interface Event<TName extends string, TPayload = undefined> {
+  name: TName
+  payload: TPayload
 }

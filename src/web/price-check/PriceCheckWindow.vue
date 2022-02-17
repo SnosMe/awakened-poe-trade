@@ -65,8 +65,7 @@ import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTic
 import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
-import { IpcPriceCheck, PRICE_CHECK, PRICE_CHECK_CANCELED } from '@/ipc/ipc-event'
+import { MainProcess } from '@/web/background/IPC'
 import { chaosExaRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
@@ -106,24 +105,26 @@ export default defineComponent({
     const advancedCheck = shallowRef(false)
     const checkPosition = shallowRef({ x: 1, y: 1 })
 
-    MainProcess.addEventListener(PRICE_CHECK, (e) => {
-      const _e = (e as CustomEvent<IpcPriceCheck>).detail
+    MainProcess.onEvent('MAIN->OVERLAY::price-check', (e) => {
       wm.closeBrowser(props.config.wmId)
       wm.show(props.config.wmId)
       checkPosition.value = {
-        x: _e.position.x - window.screenX,
-        y: _e.position.y - window.screenY
+        x: e.position.x - window.screenX,
+        y: e.position.y - window.screenY
       }
-      item.value = parseClipboard(_e.clipboard)
-      advancedCheck.value = _e.lockedMode
+      item.value = parseClipboard(e.clipboard)
+      advancedCheck.value = e.lockedMode
     })
-    MainProcess.addEventListener(PRICE_CHECK_CANCELED, () => {
+    MainProcess.onEvent('MAIN->OVERLAY::price-check-canceled', () => {
       wm.hide(props.config.wmId)
     })
 
     watch(() => props.config.wmWants, (state) => {
       if (state === 'hide') {
-        MainProcess.priceCheckWidgetIsHidden()
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::price-check-hide',
+          payload: undefined
+        })
       }
     })
 

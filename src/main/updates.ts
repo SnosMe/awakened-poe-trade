@@ -1,8 +1,7 @@
 import { autoUpdater } from 'electron-updater'
 import { logger } from './logger'
 import { rebuildTrayMenu } from './tray'
-import { UPDATE_AVAILABLE } from '@/ipc/ipc-event'
-import { overlayWindow, overlayReady } from './overlay-window'
+import { overlayReady, overlaySendEvent } from './overlay-window'
 import { config } from './config'
 
 export const UpdateState = {
@@ -17,7 +16,10 @@ autoUpdater.on('update-available', async (info: { version: string }) => {
   } else {
     UpdateState.status = `Update v${info.version} available on GitHub`
     await overlayReady
-    overlayWindow!.webContents.send(UPDATE_AVAILABLE, { auto: false, version: info.version })
+    overlaySendEvent({
+      name: 'MAIN->OVERLAY::update-available',
+      payload: { auto: false, version: info.version }
+    })
   }
   rebuildTrayMenu()
 })
@@ -39,7 +41,10 @@ autoUpdater.on('update-downloaded', async (info: { version: string }) => {
   UpdateState.status = `v${info.version} will be installed on exit`
   rebuildTrayMenu()
   await overlayReady
-  overlayWindow!.webContents.send(UPDATE_AVAILABLE, { auto: true, version: info.version })
+  overlaySendEvent({
+    name: 'MAIN->OVERLAY::update-available',
+    payload: { auto: true, version: info.version }
+  })
 })
 
 // on('download-progress') https://github.com/electron-userland/electron-builder/issues/2521

@@ -1,4 +1,4 @@
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { parseClipboard } from '@/parser'
 import { AppConfig } from '@/web/Config'
 

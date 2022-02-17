@@ -1,5 +1,4 @@
-import { overlayWindow, isInteractable } from './overlay-window'
-import { VISIBILITY, IpcVisibility } from '@/ipc/ipc-event'
+import { isInteractable, overlaySendEvent } from './overlay-window'
 import { uIOhook, UiohookKey } from 'uiohook-napi'
 import { logger } from './logger'
 
@@ -34,7 +33,10 @@ function makeVisible () {
   } else {
     logger.debug('Making visible again', { source: 'alt-visibility' })
     isOverlayVisible = true
-    overlayWindow!.webContents.send(VISIBILITY, { isVisible: isOverlayVisible } as IpcVisibility)
+    overlaySendEvent({
+      name: 'MAIN->OVERLAY::visibility',
+      payload: { isVisible: isOverlayVisible }
+    })
   }
 }
 
@@ -46,6 +48,9 @@ function makeInvisible () {
     logger.debug('Delay passed, overlay is invisible', { source: 'alt-visibility' })
     timerId = undefined
     isOverlayVisible = false
-    overlayWindow!.webContents.send(VISIBILITY, { isVisible: isOverlayVisible } as IpcVisibility)
+    overlaySendEvent({
+      name: 'MAIN->OVERLAY::visibility',
+      payload: { isVisible: isOverlayVisible }
+    })
   }, isInteractable ? 85 : 275)
 }

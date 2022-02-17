@@ -1,9 +1,9 @@
-import { protocol, app, ipcMain } from 'electron'
-import { IMPORT_FILE } from '@/ipc/ipc-event'
+import { protocol, app } from 'electron'
 import { URL } from 'url'
 import path from 'path'
 import crypto from 'crypto'
 import fs from 'fs'
+import { overlayOnEvent } from './overlay-window'
 
 export function createFileProtocol () {
   protocol.registerFileProtocol('app', (req, resp) => {
@@ -16,7 +16,7 @@ export function createFileProtocol () {
     resp({ path: path.join(app.getPath('userData'), 'apt-data/files', req.url.substr('app-file://'.length)) })
   })
 
-  ipcMain.on(IMPORT_FILE, (e, filePath: string) => {
+  overlayOnEvent('OVERLAY->MAIN::import-file', (e, filePath) => {
     const file = fs.readFileSync(filePath)
     const hash = crypto.createHash('md5').update(file).digest('hex')
     const filename = `${hash}${path.extname(filePath)}`

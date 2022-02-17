@@ -83,7 +83,7 @@
 <script lang="ts">
 import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
 import { AppConfig } from '@/web/Config'

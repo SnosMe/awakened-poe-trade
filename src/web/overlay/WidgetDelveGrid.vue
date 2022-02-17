@@ -25,8 +25,7 @@
 <script lang="ts">
 import { computed, defineComponent, inject, PropType } from 'vue'
 import Widget from './Widget.vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
-import { TOGGLE_DELVE_GRID } from '@/ipc/ipc-event'
+import { MainProcess } from '@/web/background/IPC'
 import { Widget as IWidget, WidgetManager } from './interfaces'
 
 export default defineComponent({
@@ -40,7 +39,7 @@ export default defineComponent({
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
 
-    MainProcess.addEventListener(TOGGLE_DELVE_GRID, () => {
+    MainProcess.onEvent('MAIN->OVERLAY::delve-grid', () => {
       if (props.config.wmWants === 'hide') {
         wm.show(props.config.wmId)
       } else {

@@ -31,7 +31,7 @@
 <script lang="ts">
 import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
 import type { Config } from '@/ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'

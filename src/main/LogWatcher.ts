@@ -1,6 +1,5 @@
 import { promises as fs, watchFile, unwatchFile } from 'fs'
-import { overlayWindow } from './overlay-window'
-import * as ipc from '@/ipc/ipc-event'
+import { overlaySendEvent } from './overlay-window'
 import { config } from './config'
 import { logger } from './logger'
 
@@ -76,7 +75,10 @@ export class LogWatcher {
     if (bytesRead) {
       const str = this.readBuff.toString('utf8', 0, bytesRead)
       const lines = str.split('\n').map(line => line.trim()).filter(line => line.length)
-      overlayWindow!.webContents.send(ipc.CLIENT_LOG_UPDATE, { lines } as ipc.IpcClientLog)
+      overlaySendEvent({
+        name: 'MAIN->OVERLAY::client-log',
+        payload: { lines }
+      })
     }
 
     if (bytesRead) {

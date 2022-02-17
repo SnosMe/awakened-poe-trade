@@ -1,18 +1,18 @@
 import Store from 'electron-store'
-import { dialog, ipcMain, app } from 'electron'
+import { dialog, app } from 'electron'
 import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
-import { GET_CONFIG, SAVE_CONFIG } from '@/ipc/ipc-event'
 import { logger } from './logger'
 import { LogWatcher } from './LogWatcher'
 import { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { loadAndCache as loadAndCacheGameCfg } from './game-config'
+import { overlayOnEvent } from './overlay-window'
 
 export function setupConfigEvents () {
-  ipcMain.on(GET_CONFIG, (e) => {
+  overlayOnEvent('OVERLAY->MAIN::get-config', (e) => {
     e.returnValue = config.store
   })
-  ipcMain.on(SAVE_CONFIG, (e, cfg: Config) => {
+  overlayOnEvent('OVERLAY->MAIN::save-config', (_, cfg) => {
     batchUpdateConfig(cfg)
   })
 }

@@ -64,7 +64,7 @@ import { getExternalLink, RareItemPrice, requestPoeprices } from './poeprices'
 import FeedbackOption from './FeedbackOption.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { ParsedItem } from '@/parser'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { artificialSlowdown } from '../trade/artificial-slowdown'
 
 export default defineComponent({

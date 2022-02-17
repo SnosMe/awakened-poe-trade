@@ -1,5 +1,5 @@
 import { reactive as deepReactive, shallowRef } from 'vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import type { Config } from '@/ipc/types'
 import type { Widget } from './overlay/interfaces'
 

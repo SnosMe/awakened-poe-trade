@@ -13,11 +13,9 @@ import { useI18n } from 'vue-i18n'
 import Widget from '../overlay/Widget.vue'
 import MapCheck from '../map-check/MapCheck.vue'
 import ItemInfo from './ItemInfo.vue'
-import { MainProcess } from '@/ipc/main-process-bindings'
-import { ITEM_CHECK } from '@/ipc/ipc-event'
+import { MainProcess } from '@/web/background/IPC'
 import { ItemCategory, parseClipboard, ParsedItem } from '@/parser'
 import { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
-import * as ipc from '@/ipc/ipc-event'
 
 export default defineComponent({
   components: {
@@ -38,13 +36,12 @@ export default defineComponent({
     const checkPosition = ref({ x: 1, y: 1 })
     const item = ref<ParsedItem | null>(null)
 
-    MainProcess.addEventListener(ITEM_CHECK, (e) => {
-      const _e = (e as CustomEvent<ipc.IpcItemCheck>).detail
+    MainProcess.onEvent('MAIN->OVERLAY::item-check', (e) => {
       checkPosition.value = {
-        x: _e.position.x - window.screenX,
-        y: _e.position.y - window.screenY
+        x: e.position.x - window.screenX,
+        y: e.position.y - window.screenY
       }
-      item.value = parseClipboard(_e.clipboard)
+      item.value = parseClipboard(e.clipboard)
       if (item.value) {
         wm.show(props.config.wmId)
       }

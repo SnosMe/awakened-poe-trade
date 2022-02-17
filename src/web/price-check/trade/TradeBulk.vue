@@ -89,7 +89,7 @@
 <script lang="ts">
 import { defineComponent, PropType, inject, ref, computed, watch, ComputedRef, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
 import { selected as league } from '../../background/Leagues'

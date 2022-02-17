@@ -1,6 +1,6 @@
 import { ParsedItem } from '@/parser'
 import { selected as league } from '@/web/background/Leagues'
-import { MainProcess } from '@/ipc/main-process-bindings'
+import { MainProcess } from '@/web/background/IPC'
 import { Cache } from '../trade/Cache'
 
 const cache = new Cache()
