@@ -132,8 +132,7 @@ export default defineComponent({
     const exaltedCost = computed(() => (chaosExaRate.value) ? Math.round(chaosExaRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)
-    const showCheckPos = computed(() => wm.active && props.config.showCursor)
-    const poeUiWidth = computed(() => wm.poeUiWidth)
+    const showCheckPos = computed(() => wm.active.value && props.config.showCursor)
     const isLeagueSelected = computed(() => Boolean(league.value))
     const clickPosition = computed(() => {
       if (isBrowserShown.value) {
@@ -168,7 +167,7 @@ export default defineComponent({
       t,
       clickPosition,
       isBrowserShown,
-      poeUiWidth,
+      poeUiWidth: wm.poePanelWidth,
       closePriceCheck,
       title,
       exaltedCost,

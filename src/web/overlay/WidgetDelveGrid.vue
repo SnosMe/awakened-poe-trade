@@ -48,14 +48,16 @@ export default defineComponent({
     })
 
     const anchor = computed(() => {
-      const height = Math.round(wm.height * 808 / 1080)
+      const wmHeight = wm.size.value.height
+
+      const height = Math.round(wmHeight * 808 / 1080)
       const width = Math.round(height * 1030 / 808)
-      const top = Math.round(wm.height * 67 / 1080)
-      const cell = Math.round(wm.height * 97 / 1080)
+      const top = Math.round(wmHeight * 67 / 1080)
+      const cell = Math.round(wmHeight * 97 / 1080)
 
       return {
         pos: 'tc',
-        y: (top / wm.height) * 100,
+        y: (top / wmHeight) * 100,
         x: 50,
         height,
         width,

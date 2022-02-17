@@ -13,9 +13,3 @@ import 'animate.css/animate.css'
     .use(uiComponents)
     .mount('#app')
 })()
-
-process.on('unhandledRejection', error => {
-  // TODO: log to Sentry
-  // eslint-disable-next-line no-console
-  console.error(error)
-})

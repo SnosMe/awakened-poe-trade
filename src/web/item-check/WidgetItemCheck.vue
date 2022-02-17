@@ -50,7 +50,10 @@ export default defineComponent({
     props.config.wmWants = 'hide'
 
     const anchor = computed(() => {
-      const side = checkPosition.value.x > (wm.width / 2)
+      const width = wm.size.value.width
+      const poePanelWidth = wm.poePanelWidth.value
+
+      const side = checkPosition.value.x > (width / 2)
         ? 'inventory'
         : 'stash'
 
@@ -58,8 +61,8 @@ export default defineComponent({
         pos: side === 'stash' ? 'cl' : 'cr',
         y: 50,
         x: side === 'stash'
-          ? (wm.poeUiWidth / wm.width) * 100
-          : ((wm.width - wm.poeUiWidth) / wm.width) * 100
+          ? (poePanelWidth / width) * 100
+          : ((width - poePanelWidth) / width) * 100
       }
     })
 

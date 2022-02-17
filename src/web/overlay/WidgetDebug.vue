@@ -215,8 +215,8 @@ export default defineComponent({
         return !MainProcess.isElectron
       }),
       active: computed<boolean>({
-        get () { return wm.active },
-        set (value) { wm.active = value }
+        get () { return wm.active.value },
+        set (value) { wm.active.value = value }
       }),
       pick (index: number) {
         priceCheck(ITEMS[index])

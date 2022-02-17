@@ -19,26 +19,30 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, provide, shallowRef, watch, readonly, computed, onMounted, nextTick } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
-import WidgetTimer from './WidgetTimer'
-import WidgetStashSearch from './WidgetStashSearch'
-import WidgetMenu from './WidgetMenu'
-import PriceCheckWindow from '@/web/price-check/PriceCheckWindow'
-import WidgetDebug from './WidgetDebug'
-import WidgetItemCheck from '@/web/item-check/WidgetItemCheck'
-import WidgetImageStrip from './WidgetImageStrip'
-import WidgetDelveGrid from './WidgetDelveGrid'
-import WidgetSettings from '../settings/SettingsWindow'
-import { registerOtherServices } from '../other-services'
+import { Widget, WidgetManager } from './interfaces'
+import WidgetTimer from './WidgetTimer.vue'
+import WidgetStashSearch from './WidgetStashSearch.vue'
+import WidgetMenu from './WidgetMenu.vue'
+import PriceCheckWindow from '@/web/price-check/PriceCheckWindow.vue'
+import WidgetDebug from './WidgetDebug.vue'
+import WidgetItemCheck from '@/web/item-check/WidgetItemCheck.vue'
+import WidgetImageStrip from './WidgetImageStrip.vue'
+import WidgetDelveGrid from './WidgetDelveGrid.vue'
+import WidgetSettings from '../settings/SettingsWindow.vue'
 import { AppConfig, saveConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
 import '@/web/background/AutoUpdates'
 import '@/web/background/Prices'
 import { load as loadLeagues } from '@/web/background/Leagues'
+import { registerOtherServices } from '../other-services'
 
-export default {
+type WMID = Widget['wmId']
+
+export default defineComponent({
   components: {
     WidgetTimer,
     WidgetStashSearch,
@@ -51,191 +55,133 @@ export default {
     WidgetSettings,
     LoadingAnimation
   },
-  provide () {
-    return { wm: this }
-  },
-  data () {
-    return {
-      active: false,
-      gameFocused: false,
-      hideUI: false,
-      devicePixelRatio: null,
-      width: window.innerWidth,
-      height: window.innerHeight
-    }
-  },
-  watch: {
-    devicePixelRatio: {
-      immediate: false,
-      handler (dpr) {
-        MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::devicePixelRatio-change',
-          payload: dpr
-        })
-      }
-    },
-    visibilityState (stateNow, stateOld) {
-      for (const w of this.widgets) {
-        if (w.wmFlags.includes('has-browser')) {
-          const vNow = stateNow.find(_ => _.wmId === w.wmId)
-          const vOld = stateOld.find(_ => _.wmId === w.wmId)
-          if (vNow.isVisible === (vOld && vOld.isVisible)) return
-
-          if (vNow.isVisible) {
-            this.showBrowser(w.wmId)
-          } else {
-            this.hideBrowser(w.wmId)
-          }
-        }
-      }
-    },
-    active (active) {
-      if (!active) {
-        this.$nextTick(() => {
-          saveConfig()
-        })
-      }
-    }
-  },
-  created () {
+  setup () {
     loadLeagues()
 
-    MainProcess.onEvent('MAIN->OVERLAY::focus-change', (state) => {
-      this.active = state.overlay
-      this.gameFocused = state.game
+    const active = shallowRef(false)
+    const gameFocused = shallowRef(false)
+    const hideUI = shallowRef(false)
 
-      if (this.active === false) {
-        for (const w of this.widgets) {
-          if (w.wmFlags.includes('hide-on-blur')) {
-            this.hide(w.wmId)
-          } else if (w.wmFlags.includes('hide-on-blur(close)')) {
-            if (!state.usingHotkey) {
-              this.hide(w.wmId)
-            }
-          }
-        }
-      } else {
-        for (const w of this.widgets) {
-          if (w.wmFlags.includes('hide-on-focus')) {
-            this.hide(w.wmId)
-          }
-        }
+    watch(active, (active) => {
+      if (!active) {
+        nextTick(() => { saveConfig() })
       }
     })
-    MainProcess.onEvent('MAIN->OVERLAY::visibility', (e) => {
-      this.hideUI = !e.isVisible
-    })
-    window.addEventListener('resize', () => {
-      this.devicePixelRatio = window.devicePixelRatio
-      this.width = window.innerWidth
-      this.height = window.innerHeight
-    })
-    this.devicePixelRatio = window.devicePixelRatio // trigger watcher
-    registerOtherServices()
-  },
-  mounted () {
-    this.$nextTick(() => {
-      MainProcess.sendEvent({ name: 'OVERLAY->MAIN::ready', payload: undefined })
-    })
-  },
-  computed: {
-    widgets: {
+
+    const widgets = computed<Widget[]>({
       get () {
         return AppConfig().widgets
       },
       set (value) {
         AppConfig().widgets = value
       }
-    },
-    visibilityState () {
-      let showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
-      if (!this.active && showExclusive && showExclusive.wmFlags.includes('invisible-on-blur')) {
-        showExclusive = undefined
-      }
+    })
 
-      return this.widgets.map(w => ({
-        wmId: w.wmId,
-        isVisible:
-          this.hideUI ? (this.active && w.wmWants === 'show' && w.wmFlags.includes('ignore-ui-visibility'))
-            : !this.active && w.wmFlags.includes('invisible-on-blur') ? false
-                : showExclusive ? w === showExclusive
-                  : w.wmWants === 'show'
-      }))
-    },
-    topmostWidget () {
-      // guaranteed to always exist because of the 'widget-menu'
-      return this.widgets
-        .filter(w => w.wmZorder !== 'exclusive' && w.wmZorder != null)
-        .sort((a, b) => b.wmZorder - a.wmZorder)[0]
-    },
-    topmostOrExclusiveWidget () {
-      const showExclusive = this.widgets.find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
+    MainProcess.onEvent('MAIN->OVERLAY::focus-change', (state) => {
+      active.value = state.overlay
+      gameFocused.value = state.game
 
-      return showExclusive || this.topmostWidget
-    },
-    poeUiWidth () {
-      // sidebar is 370px at 800x600
-      const ratio = 370 / 600
-      return Math.round(this.height * ratio)
-    },
-    overlayBackground () {
-      if (!this.active) return undefined
-
-      if (this.topmostOrExclusiveWidget.wmZorder === 'exclusive') {
-        if (!AppConfig().overlayBackgroundExclusive) {
-          return undefined
+      if (active.value === false) {
+        for (const w of widgets.value) {
+          if (w.wmFlags.includes('hide-on-blur')) {
+            hide(w.wmId)
+          } else if (w.wmFlags.includes('hide-on-blur(close)')) {
+            if (!state.usingHotkey) {
+              hide(w.wmId)
+            }
+          }
+        }
+      } else {
+        for (const w of widgets.value) {
+          if (w.wmFlags.includes('hide-on-focus')) {
+            hide(w.wmId)
+          }
         }
       }
-      return AppConfig().overlayBackground
-    }
-  },
-  methods: {
-    isVisible (wmId) {
-      return this.visibilityState
-        .find(_ => _.wmId === wmId)
-        .isVisible
-    },
-    show (wmId) {
-      this.bringToTop(wmId)
-      if (this.topmostOrExclusiveWidget.wmZorder === 'exclusive') {
-        this.hide(this.topmostOrExclusiveWidget.wmId)
+    })
+    MainProcess.onEvent('MAIN->OVERLAY::visibility', (e) => {
+      hideUI.value = !e.isVisible
+    })
+    registerOtherServices()
+
+    onMounted(() => {
+      nextTick(() => {
+        MainProcess.sendEvent({ name: 'OVERLAY->MAIN::ready', payload: undefined })
+      })
+    })
+
+    const size = (() => {
+      const size = shallowRef({
+        devicePixelRatio: window.devicePixelRatio,
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+      window.addEventListener('resize', () => {
+        size.value = {
+          devicePixelRatio: window.devicePixelRatio,
+          width: window.innerWidth,
+          height: window.innerHeight
+        }
+      })
+      watch(size, (size, prev) => {
+        if (size.devicePixelRatio !== prev.devicePixelRatio) {
+          MainProcess.sendEvent({
+            name: 'OVERLAY->MAIN::devicePixelRatio-change',
+            payload: size.devicePixelRatio
+          })
+        }
+      })
+      return readonly(size)
+    })()
+
+    function show (wmId: WMID) {
+      bringToTop(wmId)
+      const topmostWidget = topmostOrExclusiveWidget.value
+      if (topmostWidget.wmZorder === 'exclusive') {
+        hide(topmostWidget.wmId)
       }
-      this.widgets.find(_ => _.wmId === wmId).wmWants = 'show'
-    },
-    hide (wmId) {
-      this.widgets.find(_ => _.wmId === wmId).wmWants = 'hide'
-    },
-    remove (wmId) {
-      this.widgets = this.widgets.filter(_ => _.wmId !== wmId)
-    },
-    showBrowser (wmId, url) {
-      this.setFlag(wmId, 'has-browser', true)
+      widgets.value.find(_ => _.wmId === wmId)!.wmWants = 'show'
+    }
+
+    function hide (wmId: WMID) {
+      widgets.value.find(_ => _.wmId === wmId)!.wmWants = 'hide'
+    }
+
+    function remove (wmId: WMID) {
+      widgets.value = widgets.value.filter(_ => _.wmId !== wmId)
+    }
+
+    function showBrowser (wmId: WMID, url?: string) {
+      setFlag(wmId, 'has-browser', true)
       MainProcess.sendEvent({
         name: 'OVERLAY->MAIN::show-browser',
         payload: { url }
       })
-    },
-    closeBrowser (wmId) {
-      const widget = this.widgets.find(_ => _.wmId === wmId)
+    }
+
+    function closeBrowser (wmId: WMID) {
+      const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
       if (widget.wmFlags.includes('has-browser')) {
-        this.setFlag(wmId, 'has-browser', false)
+        setFlag(wmId, 'has-browser', false)
         MainProcess.sendEvent({
           name: 'OVERLAY->MAIN::hide-browser',
           payload: { close: true }
         })
       }
-    },
-    hideBrowser (wmId) {
-      const widget = this.widgets.find(_ => _.wmId === wmId)
+    }
+
+    function hideBrowser (wmId: WMID) {
+      const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
       if (widget.wmFlags.includes('has-browser')) {
         MainProcess.sendEvent({
           name: 'OVERLAY->MAIN::hide-browser',
           payload: { close: false }
         })
       }
-    },
-    setFlag (wmId, flag, state) {
-      const widget = this.widgets.find(_ => _.wmId === wmId)
+    }
+
+    function setFlag (wmId: WMID, flag: Widget['wmFlags'][number], state: boolean) {
+      const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
       const hasFlag = widget.wmFlags.includes(flag)
       if (state === false && hasFlag === true) {
         widget.wmFlags = widget.wmFlags.filter(_ => _ !== flag)
@@ -246,30 +192,125 @@ export default {
         return true
       }
       return false
-    },
-    bringToTop (wmId) {
-      if (wmId === this.topmostWidget.wmId) return
+    }
 
-      const widget = this.widgets.find(_ => _.wmId === wmId)
+    function bringToTop (wmId: WMID) {
+      if (wmId === topmostWidget.value.wmId) return
+
+      const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
       if (widget.wmZorder !== 'exclusive') {
-        widget.wmZorder = this.topmostWidget.wmZorder + 1
+        widget.wmZorder = (topmostWidget.value.wmZorder as number) + 1
       }
-    },
-    create (wmType) {
-      this.widgets.push({
-        wmId: Math.max(0, ...this.widgets.map(_ => _.wmId)) + 1,
+    }
+
+    function create (wmType: Widget['wmType']) {
+      AppConfig().widgets.push({
+        wmId: Math.max(0, ...AppConfig().widgets.map(_ => _.wmId)) + 1,
         wmType,
         wmTitle: '',
         wmWants: 'hide',
         wmZorder: null,
         wmFlags: ['uninitialized']
       })
-    },
-    handleBackgroundClick () {
+    }
+
+    const visibilityState = computed(() => {
+      let showExclusive = AppConfig().widgets
+        .find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
+      if (!active.value && showExclusive && showExclusive.wmFlags.includes('invisible-on-blur')) {
+        showExclusive = undefined
+      }
+
+      return AppConfig().widgets.map(w => ({
+        wmId: w.wmId,
+        isVisible:
+          hideUI.value ? (active.value && w.wmWants === 'show' && w.wmFlags.includes('ignore-ui-visibility'))
+            : !active.value && w.wmFlags.includes('invisible-on-blur') ? false
+                : showExclusive ? w === showExclusive
+                  : w.wmWants === 'show'
+      }))
+    })
+
+    watch(visibilityState, (stateNow, stateOld) => {
+      for (const w of AppConfig().widgets) {
+        if (w.wmFlags.includes('has-browser')) {
+          const vNow = stateNow.find(_ => _.wmId === w.wmId)!
+          const vOld = stateOld.find(_ => _.wmId === w.wmId)!
+          if (vNow.isVisible === (vOld && vOld.isVisible)) return
+
+          if (vNow.isVisible) {
+            showBrowser(w.wmId)
+          } else {
+            hideBrowser(w.wmId)
+          }
+        }
+      }
+    })
+
+    const topmostWidget = computed<Widget>(() => {
+      // guaranteed to always exist because of the 'widget-menu'
+      return AppConfig().widgets
+        .filter(w => w.wmZorder !== 'exclusive' && w.wmZorder != null)
+        .sort((a, b) => (b.wmZorder as number) - (a.wmZorder as number))[0]
+    })
+
+    const topmostOrExclusiveWidget = computed<Widget>(() => {
+      const showExclusive = AppConfig().widgets
+        .find(w => w.wmZorder === 'exclusive' && w.wmWants === 'show')
+
+      return showExclusive || topmostWidget.value
+    })
+
+    const poePanelWidth = computed(() => {
+      // sidebar is 986px at Wx1600H
+      const ratio = 986 / 1600
+      return Math.round(size.value.height * ratio)
+    })
+
+    provide<WidgetManager>('wm', {
+      poePanelWidth,
+      size,
+      active,
+      widgets: computed(() => AppConfig().widgets),
+      show,
+      hide,
+      remove,
+      bringToTop,
+      create,
+      showBrowser,
+      closeBrowser,
+      setFlag
+    })
+
+    function handleBackgroundClick () {
       if (AppConfig().overlayBackgroundClose) {
         MainProcess.closeOverlay()
       }
     }
+
+    const overlayBackground = computed<string | undefined>(() => {
+      if (!active.value) return undefined
+
+      if (topmostOrExclusiveWidget.value.wmZorder === 'exclusive') {
+        if (!AppConfig().overlayBackgroundExclusive) {
+          return undefined
+        }
+      }
+      return AppConfig().overlayBackground
+    })
+
+    function isVisible (wmId: Widget['wmId']): boolean {
+      return visibilityState.value
+        .find(_ => _.wmId === wmId)!
+        .isVisible
+    }
+
+    return {
+      overlayBackground,
+      widgets: computed(() => AppConfig().widgets),
+      handleBackgroundClick,
+      isVisible
+    }
   }
-}
+})
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4" style="min-width: 20rem;" :style="{ 'max-width': `min(${wm.width - wm.poeUiWidth}px, 30rem)` }">
+  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4" style="min-width: 20rem;" :style="{ 'max-width': maxWidth }">
     <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
     <fullscreen-image v-if="image" :src="image" />
     <div v-if="!mapStats.length" class="px-8 py-2">
@@ -52,7 +52,7 @@ export default defineComponent({
 
     return {
       t,
-      wm,
+      maxWidth: computed(() => `min(${wm.size.value.width - wm.poePanelWidth.value}px, 30rem)`),
       mapName: computed(() => props.item.info.name),
       image: computed(() =>
         (props.item.rarity === ItemRarity.Unique && props.item.isUnidentified)

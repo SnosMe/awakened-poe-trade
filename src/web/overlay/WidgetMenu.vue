@@ -55,8 +55,8 @@ export default defineComponent({
 
     const widgets = computed(() => {
       return [
-        wm.widgets.find(widget => widget.wmType === 'settings')!,
-        ...wm.widgets.filter(widget => widget.wmType !== 'settings')
+        wm.widgets.value.find(widget => widget.wmType === 'settings')!,
+        ...wm.widgets.value.filter(widget => widget.wmType !== 'settings')
       ].filter(widget =>
         !widget.wmFlags.includes('skip-menu') &&
         (props.config.alwaysShow || (widget.wmWants === 'hide'))

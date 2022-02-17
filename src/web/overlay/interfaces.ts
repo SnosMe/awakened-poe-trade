@@ -1,3 +1,5 @@
+import type { ComputedRef, Ref } from 'vue'
+
 export interface Widget {
   wmId: number
   wmType: string
@@ -23,11 +25,10 @@ export interface Anchor {
 }
 
 export interface WidgetManager {
-  poeUiWidth: number
-  width: number
-  height: number
-  active: boolean
-  widgets: Widget[]
+  poePanelWidth: ComputedRef<number>
+  size: Ref<{ width: number, height: number }>
+  active: Ref<boolean>
+  widgets: ComputedRef<Widget[]>
   show: (wmId: number) => void
   hide: (wmId: number) => void
   remove: (wmId: number) => void
