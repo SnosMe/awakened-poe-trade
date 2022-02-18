@@ -62,6 +62,11 @@ export function initUiModFilters (
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
   )
 
+  if (item.info.refName === 'Chronicle of Atzoatl') {
+    applyAtzoatlRules(ctx.filters)
+    return ctx.filters
+  }
+
   if (!item.isCorrupted && !item.isMirrored && item.isSynthesised) {
     const transformedImplicits = item.statsByType.filter(mod =>
       mod.type === ModifierType.Implicit &&
@@ -309,10 +314,6 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         filter.hidden = 'Select only if price-checking as base item for crafting'
       }
     }
-  }
-
-  if (item.info.refName === 'Chronicle of Atzoatl') {
-    applyAtzoatlRules(ctx.filters)
   }
 }
 

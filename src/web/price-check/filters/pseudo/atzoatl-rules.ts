@@ -150,6 +150,10 @@ const RULES: FilterRule[] = [
 ]
 
 export function applyRules (filters: StatFilter[]) {
+  for (const filter of filters) {
+    filter.disabled = true
+  }
+
   const hasExplosives = RULES
     .filter(rule => rule.explosivesRoom)
     .some(rule => filters.some(filter =>
