@@ -1,13 +1,13 @@
 import path from 'path'
 import assert from 'assert'
-import { BrowserWindow, ipcMain, dialog, shell, Menu, systemPreferences, IpcMainEvent } from 'electron'
+import { BrowserWindow, ipcMain, dialog, shell, Menu, systemPreferences, IpcMainEvent, WebContents } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '@/ipc/ipc-event'
 import { OverlayWindow as OW } from 'electron-overlay-window'
 import { config } from './config'
 
-export let overlayWindow: BrowserWindow | undefined
+let overlayWindow: BrowserWindow | undefined
 export let isInteractable = false
 export let DPR = 1
 
@@ -64,7 +64,7 @@ export async function createOverlayWindow () {
   ]))
   overlayWindow.webContents.on('before-input-event', handleExtraCommands)
 
-  setupCfProtection()
+  modifyResponseHeaders(overlayWindow.webContents)
 
   overlayWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
@@ -163,7 +163,7 @@ function handleDprChange (devicePixelRatio: number) {
   }
 }
 
-export function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
+function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
   if (input.type !== 'keyDown') return
 
   let { code, control: ctrlKey, shift: shiftKey, alt: altKey } = input
@@ -196,10 +196,16 @@ export function handleExtraCommands (event: Electron.Event, input: Electron.Inpu
   }
 }
 
-function setupCfProtection () {
-  overlayWindow!.webContents.session.webRequest.onHeadersReceived({
+function modifyResponseHeaders (webContents: WebContents) {
+  webContents.session.webRequest.onHeadersReceived({
     urls: ['https://*.pathofexile.com/*']
   }, (details, next) => {
+    // 1) allow embedding in iframe
+    if (details.responseHeaders) {
+      delete details.responseHeaders['x-frame-options']
+    }
+
+    // 2) store cookies from Cloudflare
     const cookies = details.responseHeaders?.['set-cookie']
     if (cookies) {
       details.responseHeaders!['set-cookie'] = cookies.map(cookie => {

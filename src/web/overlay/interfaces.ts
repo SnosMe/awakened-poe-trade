@@ -16,7 +16,8 @@ export type WellKnownFlag =
   'invisible-on-blur' |
   'hide-on-blur' |
   'hide-on-blur(close)' |
-  'hide-on-focus'
+  'hide-on-focus' |
+  'ignore-ui-visibility'
 
 export interface Anchor {
   pos: string
@@ -34,8 +35,6 @@ export interface WidgetManager {
   remove: (wmId: number) => void
   bringToTop: (wmId: number) => void
   create: (wmType: string) => void
-  showBrowser: (wmId: number, url: string) => void
-  closeBrowser: (wmId: number) => void
   setFlag: (wmId: number, flag: string, state: boolean) => void
 }
 

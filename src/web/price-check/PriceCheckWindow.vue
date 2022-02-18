@@ -48,7 +48,11 @@
         </div>
       </div>
     </div>
-    <div class="layout-column flex-1 min-w-0">
+    <iframe v-if="isBrowserShown" ref="iframeEl"
+      class="pointer-events-auto"
+      sandbox="allow-scripts allow-same-origin"
+      width="100%" height="100%" />
+    <div v-else class="layout-column flex-1 min-w-0">
       <div class="flex" :class="{
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
@@ -61,7 +65,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTick } from 'vue'
+import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTick, provide } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
@@ -106,7 +110,7 @@ export default defineComponent({
     const checkPosition = shallowRef({ x: 1, y: 1 })
 
     MainProcess.onEvent('MAIN->OVERLAY::price-check', (e) => {
-      wm.closeBrowser(props.config.wmId)
+      closeBrowser()
       wm.show(props.config.wmId)
       checkPosition.value = {
         x: e.position.x - window.screenX,
@@ -161,12 +165,28 @@ export default defineComponent({
       MainProcess.closeOverlay()
     }
 
+    const iframeEl = shallowRef<HTMLIFrameElement | null>(null)
+
+    function showBrowser (url: string) {
+      wm.setFlag(props.config.wmId, 'has-browser', true)
+      nextTick(() => {
+        iframeEl.value!.src = url
+      })
+    }
+
+    function closeBrowser () {
+      wm.setFlag(props.config.wmId, 'has-browser', false)
+    }
+
+    provide<(url: string) => void>('builtin-browser', showBrowser)
+
     const { t } = useI18n()
 
     return {
       t,
       clickPosition,
       isBrowserShown,
+      iframeEl,
       poeUiWidth: wm.poePanelWidth,
       closePriceCheck,
       title,

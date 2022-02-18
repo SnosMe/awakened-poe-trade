@@ -10,7 +10,6 @@ import { checkForUpdates } from './main/updates'
 import os from 'os'
 import { createOverlayWindow } from './main/overlay-window'
 import { setupAltVisibility } from './main/alt-visibility'
-import { setupBuiltinBrowser } from './main/builtin-browser'
 import { createFileProtocol } from './main/app-file-protocol'
 import { LogWatcher } from './main/LogWatcher'
 import { loadAndCache as loadAndCacheGameCfg } from './main/game-config'
@@ -38,7 +37,6 @@ app.on('ready', async () => {
   setupConfigEvents()
   createTray()
   setupShowHide()
-  setupBuiltinBrowser()
   loadAndCacheGameCfg()
 
   setTimeout(

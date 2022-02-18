@@ -1,4 +1,4 @@
-import type { ItemCheckWidget, PriceCheckWidget } from '@/web/overlay/interfaces'
+import * as widget from '@/web/overlay/interfaces'
 import type { IpcEvent } from './ipc-event'
 
 export interface PreloadExposed {
@@ -33,31 +33,10 @@ export interface Config {
   accountName: string
   stashScroll: boolean
   language: 'en' | 'ru'
-  widgets: Widget[]
+  widgets: widget.Widget[]
   fontSize: number
   disableUpdateDownload: boolean
 }
-
-interface Widget {
-  wmId: number
-  wmType: string
-  wmTitle: string
-  wmWants: 'show' | 'hide'
-  wmZorder: number | 'exclusive' | null
-  wmFlags: Array<WidgetWellKnownFlag | string>
-  // ---------------
-  [key: string]: any
-}
-
-type WidgetWellKnownFlag =
-  'uninitialized' |
-  'skip-menu' |
-  'has-browser' |
-  'invisible-on-blur' |
-  'hide-on-blur' |
-  'hide-on-blur(close)' |
-  'hide-on-focus' |
-  'ignore-ui-visibility'
 
 export const defaultConfig = (): Config => ({
   configVersion: 11,
@@ -120,7 +99,7 @@ export const defaultConfig = (): Config => ({
         y: 5
       },
       alwaysShow: false
-    },
+    } as widget.WidgetMenu,
     {
       wmId: 2,
       wmType: 'price-check',
@@ -142,7 +121,7 @@ export const defaultConfig = (): Config => ({
       searchStatRange: 10,
       showCursor: true,
       requestPricePrediction: false
-    } as PriceCheckWidget,
+    } as widget.PriceCheckWidget,
     {
       wmId: 3,
       wmType: 'item-check',
@@ -175,7 +154,7 @@ export const defaultConfig = (): Config => ({
           }
         ]
       }
-    } as ItemCheckWidget,
+    } as widget.ItemCheckWidget,
     {
       wmId: 4,
       wmType: 'delve-grid',
@@ -211,7 +190,7 @@ export const defaultConfig = (): Config => ({
         { id: 3, text: '"Cannot Leech Life"' },
         { id: 4, text: '"Cannot Leech Mana"' }
       ]
-    },
+    } as widget.StashSearchWidget,
     {
       wmId: 102,
       wmType: 'stash-search',
@@ -232,7 +211,7 @@ export const defaultConfig = (): Config => ({
         { id: 5, text: '"Map Device" "Rarity: Normal"' },
         { id: 6, text: 'Tane Laboratory' }
       ]
-    },
+    } as widget.StashSearchWidget,
     {
       wmId: 103,
       wmType: 'image-strip',
@@ -248,6 +227,6 @@ export const defaultConfig = (): Config => ({
       images: [
         { id: 1, url: 'syndicate.jpg' }
       ]
-    }
+    } as widget.ImageStripWidget
   ]
 })

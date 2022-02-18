@@ -53,7 +53,9 @@ export function batchUpdateConfig (newCfg: Config) {
   }
 }
 
-function upgradeConfig (config: Config): Config {
+function upgradeConfig (_config: Config): Config {
+  const config = _config as Omit<Config, 'widgets'> & { widgets: Array<Record<string, any>> }
+
   if (config.configVersion < 3) {
     config.widgets.push({
       ...defaultConfig().widgets.find(w => w.wmType === 'image-strip')!,
@@ -182,5 +184,5 @@ function upgradeConfig (config: Config): Config {
     config.configVersion = 11
   }
 
-  return config
+  return config as unknown as Config
 }
