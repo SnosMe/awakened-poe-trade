@@ -85,10 +85,6 @@ export default defineComponent({
         for (const w of widgets.value) {
           if (w.wmFlags.includes('hide-on-blur')) {
             hide(w.wmId)
-          } else if (w.wmFlags.includes('hide-on-blur(close)')) {
-            if (!state.usingHotkey) {
-              hide(w.wmId)
-            }
           }
         }
       } else {

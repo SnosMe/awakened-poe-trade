@@ -15,7 +15,6 @@ export type WellKnownFlag =
   'has-browser' |
   'invisible-on-blur' |
   'hide-on-blur' |
-  'hide-on-blur(close)' |
   'hide-on-focus' |
   'ignore-ui-visibility'
 

@@ -125,6 +125,7 @@ export default defineComponent({
 
     watch(() => props.config.wmWants, (state) => {
       if (state === 'hide') {
+        closeBrowser()
         MainProcess.sendEvent({
           name: 'OVERLAY->MAIN::price-check-hide',
           payload: undefined
@@ -152,17 +153,19 @@ export default defineComponent({
     watch(isBrowserShown, (isShown) => {
       if (isShown) {
         wm.setFlag(props.config.wmId, 'hide-on-blur', false)
-        wm.setFlag(props.config.wmId, 'hide-on-blur(close)', true)
         wm.setFlag(props.config.wmId, 'invisible-on-blur', true)
       } else {
-        wm.setFlag(props.config.wmId, 'hide-on-blur(close)', false)
         wm.setFlag(props.config.wmId, 'invisible-on-blur', false)
         wm.setFlag(props.config.wmId, 'hide-on-blur', true)
       }
     })
 
     function closePriceCheck () {
-      MainProcess.closeOverlay()
+      if (isBrowserShown.value) {
+        wm.hide(props.config.wmId)
+      } else {
+        MainProcess.closeOverlay()
+      }
     }
 
     const iframeEl = shallowRef<HTMLIFrameElement | null>(null)
