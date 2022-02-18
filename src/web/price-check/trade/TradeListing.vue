@@ -86,7 +86,7 @@ import { useI18n } from 'vue-i18n'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
 import { getTradeEndpoint, SearchResult } from './common'
 import { AppConfig } from '@/web/Config'
-import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from './artificial-slowdown'
@@ -210,7 +210,6 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const wm = inject<WidgetManager>('wm')!
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
     watch(() => props.item, (item) => {
@@ -218,6 +217,8 @@ export default defineComponent({
     }, { immediate: true })
 
     const { error, searchResult, groupedResults, search } = useTradeApi()
+
+    const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
     const { t } = useI18n()
 
@@ -247,7 +248,7 @@ export default defineComponent({
         if (isExternal) {
           window.open(link)
         } else {
-          wm.showBrowser(widget.value.wmId, link)
+          showBrowser(link)
         }
       }
     }

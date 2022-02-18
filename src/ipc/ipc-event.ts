@@ -13,8 +13,6 @@ export type IpcEvent =
   IpcStashSearch |
   IpcOverlayReady |
   IpcCloseOverlay |
-  IpcShowBrowser |
-  IpcHideBrowser |
   IpcVisibility |
   IpcOpenWiki |
   IpcOpenCraftOfExile |
@@ -76,16 +74,6 @@ export type IpcOverlayReady =
 
 export type IpcCloseOverlay =
   Event<'OVERLAY->MAIN::close-overlay'>
-
-export type IpcShowBrowser =
-  Event<'OVERLAY->MAIN::show-browser', {
-    url?: string
-  }>
-
-export type IpcHideBrowser =
-  Event<'OVERLAY->MAIN::hide-browser', {
-    close?: boolean
-  }>
 
 export type IpcVisibility =
   Event<'MAIN->OVERLAY::visibility', {

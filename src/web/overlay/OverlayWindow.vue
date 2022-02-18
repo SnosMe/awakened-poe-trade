@@ -85,10 +85,6 @@ export default defineComponent({
         for (const w of widgets.value) {
           if (w.wmFlags.includes('hide-on-blur')) {
             hide(w.wmId)
-          } else if (w.wmFlags.includes('hide-on-blur(close)')) {
-            if (!state.usingHotkey) {
-              hide(w.wmId)
-            }
           }
         }
       } else {
@@ -151,35 +147,6 @@ export default defineComponent({
       widgets.value = widgets.value.filter(_ => _.wmId !== wmId)
     }
 
-    function showBrowser (wmId: WMID, url?: string) {
-      setFlag(wmId, 'has-browser', true)
-      MainProcess.sendEvent({
-        name: 'OVERLAY->MAIN::show-browser',
-        payload: { url }
-      })
-    }
-
-    function closeBrowser (wmId: WMID) {
-      const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
-      if (widget.wmFlags.includes('has-browser')) {
-        setFlag(wmId, 'has-browser', false)
-        MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::hide-browser',
-          payload: { close: true }
-        })
-      }
-    }
-
-    function hideBrowser (wmId: WMID) {
-      const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
-      if (widget.wmFlags.includes('has-browser')) {
-        MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::hide-browser',
-          payload: { close: false }
-        })
-      }
-    }
-
     function setFlag (wmId: WMID, flag: Widget['wmFlags'][number], state: boolean) {
       const widget = AppConfig().widgets.find(_ => _.wmId === wmId)!
       const hasFlag = widget.wmFlags.includes(flag)
@@ -231,22 +198,6 @@ export default defineComponent({
       }))
     })
 
-    watch(visibilityState, (stateNow, stateOld) => {
-      for (const w of AppConfig().widgets) {
-        if (w.wmFlags.includes('has-browser')) {
-          const vNow = stateNow.find(_ => _.wmId === w.wmId)!
-          const vOld = stateOld.find(_ => _.wmId === w.wmId)!
-          if (vNow.isVisible === (vOld && vOld.isVisible)) return
-
-          if (vNow.isVisible) {
-            showBrowser(w.wmId)
-          } else {
-            hideBrowser(w.wmId)
-          }
-        }
-      }
-    })
-
     const topmostWidget = computed<Widget>(() => {
       // guaranteed to always exist because of the 'widget-menu'
       return AppConfig().widgets
@@ -277,8 +228,6 @@ export default defineComponent({
       remove,
       bringToTop,
       create,
-      showBrowser,
-      closeBrowser,
       setFlag
     })
 

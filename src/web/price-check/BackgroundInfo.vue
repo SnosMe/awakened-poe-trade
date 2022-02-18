@@ -24,17 +24,14 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, inject } from 'vue'
+import { defineComponent, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Widget, WidgetManager } from '../overlay/interfaces'
 import * as Leagues from '@/web/background/Leagues'
 import { updateInfo } from '@/web/background/AutoUpdates'
-import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   setup () {
-    const wm = inject<WidgetManager>('wm')!
-    const widget = computed(() => AppConfig<Widget>('price-check')!)
+    const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
     const { t } = useI18n()
 
@@ -47,7 +44,7 @@ export default defineComponent({
         Leagues.load()
       },
       openCaptcha () {
-        wm.showBrowser(widget.value.wmId, 'https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
+        showBrowser('https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
       }
     }
   }

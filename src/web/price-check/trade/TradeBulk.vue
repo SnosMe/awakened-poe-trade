@@ -95,7 +95,7 @@ import { selected as league } from '../../background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
-import { PriceCheckWidget, WidgetManager } from '@/web/overlay/interfaces'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { artificialSlowdown } from './artificial-slowdown'
 import OnlineFilter from './OnlineFilter.vue'
 
@@ -172,7 +172,6 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const wm = inject<WidgetManager>('wm')!
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
@@ -204,6 +203,8 @@ export default defineComponent({
       }
     })
 
+    const showBrowser = inject<(url: string) => void>('builtin-browser')!
+
     const { t } = useI18n()
 
     return {
@@ -219,7 +220,7 @@ export default defineComponent({
         if (isExternal) {
           window.open(link)
         } else {
-          wm.showBrowser(widget.value.wmId, link)
+          showBrowser(link)
         }
       }
     }
