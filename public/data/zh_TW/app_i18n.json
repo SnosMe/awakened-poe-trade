@@ -1,0 +1,32 @@
+{
+  
+    "Add": "添加",
+    "Retry": "重试",
+    "Offline": "离线",
+    "Online": "在线",
+    "You": "你",
+    "Browser": "浏览器",
+    "Search": "搜索",
+    "min": "分钟",
+    "max": " 最大",
+    "Restart required": "需要重启",
+    "Save": "保存",
+    "Cancel": "取消",
+    "Enabled": "启用",
+    "Disabled": "禁用",
+    "No": "没有",
+    "Yes": "是",
+    "Remove": "移除",
+    "implicit": "隐式",
+    "explicit": "显式",
+    "enchant": "附魔",
+    "crafted": "制造",
+    "fractured": "破碎",
+    "scourge": "天灾",
+    "Not recognized modifier": "不识别的修饰器",
+    "Refresh": "刷新",
+    "map.mods.heist": "劫案",
+    "map.mods.outdated": "过时",
+    "Support development on": "支持开发"
+  
+}

@@ -44,7 +44,9 @@
     "vue-slider-component": "4.0.0-beta.3",
     "vue3-apexcharts": "^1.1.1",
     "vuedraggable": "4.0.1",
-    "winston": "3.x.x"
+    "webpack": "^5.55.1",
+    "winston": "^3.6.0",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^3.0.0",

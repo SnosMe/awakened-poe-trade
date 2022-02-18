@@ -4,7 +4,7 @@ import winston from 'winston'
 import { config } from './config'
 
 export const logger = winston.createLogger({
-  level: config.get('logLevel') as winston.level,
+  level: "info",
   format: winston.format.json(),
   defaultMeta: { source: 'etc' },
   transports: [
