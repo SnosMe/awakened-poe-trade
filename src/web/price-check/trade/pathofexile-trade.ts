@@ -243,7 +243,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
   const { query } = body
-
   if (filters.trade.chaosPriceThreshold !== 0) {
     prop.set(query.filters, 'trade_filters.filters.price.min', filters.trade.chaosPriceThreshold)
   }

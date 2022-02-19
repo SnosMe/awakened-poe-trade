@@ -34,7 +34,7 @@ export interface Config {
   stashScroll: boolean
 
   language: 'en' | 'ru' | 'zh_TW'
-  widgets: Widget[]
+  widgets: widget.Widget[]
 
   fontSize: number
   disableUpdateDownload: boolean
@@ -83,7 +83,7 @@ export const defaultConfig = (): Config => ({
   hardwareAcceleration: false,
   accountName: '',
   stashScroll: true,
-  language: 'zh_TW',
+  language: 'en',
   fontSize: 16,
   disableUpdateDownload: false,
   widgets: [
