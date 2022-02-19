@@ -578,7 +578,7 @@ function tradeIdToQuery (id: string, stat: StatFilter) {
     value: {
       ...getMinMax(stat.roll),
       option: stat.option != null
-        ? (stat.option.tradeValue === 'str' ? String : Number)(stat.option.value)
+        ? stat.option.value
         : undefined
     },
     disabled: stat.disabled

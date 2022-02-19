@@ -114,8 +114,7 @@ export function calculatedStatToFilter (
         : FilterTag.Variant,
       sources: sources,
       option: {
-        value: sources[0].contributes!.value,
-        tradeValue: stat.trade.option
+        value: sources[0].contributes!.value
       },
       disabled: false
     }
@@ -288,8 +287,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       tag: FilterTag.Pseudo,
       sources: [],
       option: {
-        value: hasEmptyModifier,
-        tradeValue: 'num'
+        value: hasEmptyModifier
       }
     })
   }

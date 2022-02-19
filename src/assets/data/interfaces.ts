@@ -22,7 +22,7 @@ export interface Stat {
   fromHeistAreaMods?: true
   trade: {
     inverted?: true
-    option?: 'num' | 'str'
+    option?: true
     ids: {
       [type: string]: string[]
     }
