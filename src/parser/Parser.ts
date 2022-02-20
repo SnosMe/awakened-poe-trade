@@ -53,9 +53,12 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMap,
   parseSockets,
   parseHeistBlueprint,
-  parseAtzoatlAreaLevel,
+  parseAreaLevel,
   parseAtzoatlRooms,
   parseMirrored,
+  parseLogbookArea,
+  parseLogbookArea,
+  parseLogbookArea,
   parseModifiers, // enchant
   parseModifiers, // scourge
   parseModifiers, // implicit
@@ -549,6 +552,47 @@ function parseWeapon (section: string[], item: ParsedItem) {
   return isParsed
 }
 
+function parseLogbookArea (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Expedition Logbook') return PARSER_SKIPPED
+  if (section.length < 3) return SECTION_SKIPPED
+
+  // skip Area, parse Faction
+  const faction = STAT_BY_MATCH_STR(section[1])
+  if (!faction) return SECTION_SKIPPED
+
+  const areaMods: ParsedModifier[] = [{
+    info: { tags: [], type: ModifierType.Pseudo },
+    stats: [{
+      stat: faction.stat,
+      translation: faction.matcher
+    }]
+  }]
+
+  const { modType, lines } = parseModType(section.slice(2))
+  for (const line of lines) {
+    const found = STAT_BY_MATCH_STR(line)
+    if (found && found.stat.ref === 'Area contains an Expedition Boss (#)') {
+      const roll = found.matcher.value!
+      areaMods.push({
+        info: { tags: [], type: modType },
+        stats: [{
+          stat: found.stat,
+          translation: found.matcher,
+          roll: { value: roll, min: roll, max: roll, dp: false, unscalable: true }
+        }]
+      })
+    }
+  }
+
+  if (!item.logbookAreaMods) {
+    item.logbookAreaMods = [areaMods]
+  } else {
+    item.logbookAreaMods.push(areaMods)
+  }
+
+  return SECTION_PARSED
+}
+
 function parseModifiers (section: string[], item: ParsedItem) {
   if (
     item.rarity !== ItemRarity.Normal &&
@@ -697,8 +741,11 @@ function parseAreaLevelNested (section: string[], item: ParsedItem) {
   }
 }
 
-function parseAtzoatlAreaLevel (section: string[], item: ParsedItem) {
-  if (item.info.refName !== 'Chronicle of Atzoatl') return PARSER_SKIPPED
+function parseAreaLevel (section: string[], item: ParsedItem) {
+  if (
+    item.info.refName !== 'Chronicle of Atzoatl' &&
+    item.info.refName !== 'Expedition Logbook'
+  ) return PARSER_SKIPPED
 
   parseAreaLevelNested(section, item)
 

@@ -62,7 +62,8 @@ export function createFilters (
   }
   if (
     item.category === ItemCategory.DivinationCard ||
-    item.category === ItemCategory.Currency
+    item.category === ItemCategory.Currency ||
+    item.info.refName === 'Expedition Logbook'
   ) {
     filters.searchExact = {
       baseType: item.info.name
@@ -70,6 +71,11 @@ export function createFilters (
     if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
         value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80]),
+        disabled: false
+      }
+    } else if (item.info.refName === 'Expedition Logbook') {
+      filters.areaLevel = {
+        value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81]),
         disabled: false
       }
     }
