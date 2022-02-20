@@ -33,7 +33,7 @@ export function createFilters (
   }
   if (item.category === ItemCategory.CapturedBeast) {
     filters.searchExact = {
-      baseType: item.info.name,
+      baseType: item.info.refName,
       baseTypeTrade: item.info.refName
     }
     return filters
@@ -46,13 +46,13 @@ export function createFilters (
   }
   if (item.category === ItemCategory.Invitation) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
     return filters
   }
   if (item.category === ItemCategory.MetamorphSample) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
     filters.itemLevel = {
       value: item.itemLevel!,
@@ -65,7 +65,7 @@ export function createFilters (
     item.category === ItemCategory.Currency
   ) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
     if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
@@ -85,7 +85,7 @@ export function createFilters (
     } else {
       const isOccupiedBy = item.statsByType.some(calc => calc.stat.ref === 'Map is occupied by #')
       filters.searchExact = {
-        baseType: item.info.name
+        baseType: item.info.refName
       }
       filters.searchRelaxed = {
         category: item.category,
@@ -103,7 +103,7 @@ export function createFilters (
     }
   } else if (item.category === ItemCategory.HeistContract) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
   } else if (item.category === ItemCategory.HeistBlueprint) {
     filters.searchRelaxed = {
@@ -111,7 +111,7 @@ export function createFilters (
       disabled: true // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3109852
     }
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
 
     filters.areaLevel = {
@@ -130,7 +130,7 @@ export function createFilters (
     item.rarity !== ItemRarity.Unique
   ) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
     filters.searchRelaxed = {
       category: item.category,
@@ -139,11 +139,11 @@ export function createFilters (
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
     filters.searchExact = {
       name: item.info.name,
-      baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
+      baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].refName
     }
   } else {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.refName
     }
     if (item.category && CATEGORY_TO_TRADE_ID.has(item.category)) {
       filters.searchRelaxed = {
@@ -296,7 +296,7 @@ export function createFilters (
 
 function createGemFilters (item: ParsedItem, filters: ItemFilters) {
   filters.searchExact = {
-    baseType: item.info.name
+    baseType: item.info.refName
   }
 
   filters.corrupted = {

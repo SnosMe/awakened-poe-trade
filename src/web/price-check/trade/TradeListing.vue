@@ -211,7 +211,6 @@ export default defineComponent({
   },
   setup (props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
-
     watch(() => props.item, (item) => {
       slowdown.reset(item)
     }, { immediate: true })

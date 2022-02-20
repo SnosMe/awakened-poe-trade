@@ -68,7 +68,6 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
 export function parseClipboard (clipboard: string) {
   const lines = clipboard.split(/\r?\n/)
   lines.pop()
-
   let sections: string[][] = [[]]
   lines.reduce((section, line) => {
     if (line !== '--------') {
@@ -81,6 +80,7 @@ export function parseClipboard (clipboard: string) {
     }
   }, sections[0])
   sections = sections.filter(section => section.length)
+
   if (sections[0][2] === _$.CANNOT_USE_ITEM) {
     sections[0].pop() // remove CANNOT_USE_ITEM line
     sections[1].unshift(...sections[0]) // prepend item class & rarity into second section
@@ -90,7 +90,6 @@ export function parseClipboard (clipboard: string) {
   if (!parsed) {
     return null
   }
-
   sections.shift()
   parsed.rawText = clipboard
 
@@ -258,7 +257,6 @@ function parseNamePlate (section: string[]) {
       !section[1].startsWith(_$.RARITY)) {
     return null
   }
-
   const item: ParserState = {
     rarity: undefined,
     category: undefined,
@@ -301,7 +299,7 @@ function parseNamePlate (section: string[]) {
     default:
       return null
   }
-
+  console.log(item)
   return item
 }
 

@@ -24,38 +24,16 @@ import { MainProcess } from '@/web/background/IPC'
 import { parseClipboard } from '@/parser'
 
 const ITEMS = [
-`Item Class: Body Armours
-Rarity: Rare
-Kraken Suit
-Crusader Plate
+`物品種類: 可堆疊通貨
+稀有度: 通貨
+神聖石
 --------
-Quality: +28% (augmented)
-Armour: 871 (augmented)
+堆疊數量: 4 / 10
 --------
-Requirements:
-Level: 72
-Str: 160
-Dex: 100
-Int: 114
+重置一件物品上隨機詞綴的數值
 --------
-Sockets: R-G-G-R-B-R
---------
-Item Level: 68
---------
-{ Prefix Modifier "Athlete's" (Tier: 5) — Life }
-+86(80-89) to maximum Life
-{ Prefix Modifier "Thorny" (Tier: 4) — Damage, Physical }
-Reflects 3(1-4) Physical Damage to Melee Attackers
-{ Master Crafted Prefix Modifier "Chosen" — Life, Defences }
-17(15-17)% increased Armour, Evasion and Energy Shield (crafted)
-+15(15-16) to maximum Life (crafted)
-{ Suffix Modifier "of the Underground" (Tier: 1) — Mana, Attack, Gem }
-Socketed Attacks have -15 to Total Mana Cost — Unscalable Value
-{ Suffix Modifier "of the Lion" (Tier: 6) — Attribute }
-+23(23-27) to Strength
-{ Suffix Modifier "of Dampening" (Tier: 2) — Physical }
-2% additional Physical Damage Reduction
-3(1-5)% increased Physical Damage taken
+右鍵點擊此物品，再左鍵點擊一件魔法、稀有或傳奇物品來使用。
+按住 Shift 點擊以分開堆疊
 `,
 `Item Class: Two Hand Swords
 Rarity: Unique
