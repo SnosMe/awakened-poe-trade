@@ -64,6 +64,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseModifiers, // implicit
   parseModifiers, // explicit
   { virtual: transformToLegacyModifiers },
+  { virtual: parseFractured },
   { virtual: parseBlightedMap },
   { virtual: pickCorrectVariant }
 ]
@@ -220,6 +221,12 @@ function parseBlightedMap (item: ParsedItem) {
       item.mapBlighted = 'Blighted'
       item.info.icon = ITEM_BY_REF('ITEM', 'Blighted Map')![0].icon
     }
+  }
+}
+
+function parseFractured (item: ParserState) {
+  if (item.newMods.some(mod => mod.info.type === ModifierType.Fractured)) {
+    item.isFractured = true
   }
 }
 

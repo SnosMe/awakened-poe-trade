@@ -35,7 +35,7 @@
         :filter="filters.veiled" text="Veiled" />
       <filter-btn-logical v-if="filters.mirrored" active
         :filter="filters.mirrored" :text="filters.mirrored.disabled ? 'Not Mirrored' : 'Mirrored'" />
-      <filter-btn-logical v-if="stats.length"
+      <filter-btn-logical v-if="hasStats"
         :collapse="statsVisibility.disabled"
         :filter="statsVisibility"
         :active="totalSelectedMods > 0"
@@ -44,13 +44,25 @@
           : t('Stats ignored')"
       />
     </div>
-    <div v-if="!statsVisibility.disabled && stats.length" class="my-4">
+    <div v-if="!statsVisibility.disabled && hasStats" class="mb-4" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'">
+      <div class="flex" v-if="presets.length > 1">
+        <div class="w-5 border-b border-gray-700" />
+        <div class="flex divide-x border-gray-700 border-t border-l border-r rounded-t overflow-hidden">
+          <button v-for="preset in presets"
+            :class="[$style.presetBtn, { [$style.active]: preset.active }]"
+            @click="selectPreset(preset.id)"
+          >{{ t(preset.id) }}</button>
+        </div>
+        <div class="flex-1 border-b border-gray-700" />
+      </div>
       <form @submit.prevent="handleStatsSubmit">
-        <filter-modifier v-for="filter of shownStats" :key="filter.tag + '/' + filter.text"
+        <filter-modifier v-for="filter of filteredStats" :key="filter.tag + '/' + filter.text"
           :filter="filter"
           :item="item"
           :show-sources="showFilterSources"
           @submit="handleStatsSubmit" />
+        <div v-if="!filteredStats.length && !item.unknownModifiers.length"
+          class="border-b border-gray-700 py-2">{{ t('No relevant stats were found') }}</div>
         <unknown-modifier v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
           :stat="stat" />
         <input type="submit" class="hidden" />
@@ -58,7 +70,7 @@
       <div class="flex gap-x-4">
         <button @click="statsVisibility.disabled = !statsVisibility.disabled" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
           >{{ t('Collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
-        <ui-toggle v-if="shownStats.length != stats.length"
+        <ui-toggle v-if="filteredStats.length != stats.length"
           v-model="showHidden" class="text-gray-400 pt-2">{{ t('Hidden') }}</ui-toggle>
         <!-- <ui-toggle
           v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('Mods') }}</ui-toggle> -->
@@ -75,11 +87,11 @@ import FilterBtnNumeric from './FilterBtnNumeric.vue'
 import FilterBtnLogical from './FilterBtnLogical.vue'
 import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
-import { ParsedItem } from '@/parser'
+import { ParsedItem, ItemRarity } from '@/parser'
 
 export default defineComponent({
   name: 'FiltersBlock',
-  emits: ['submit'],
+  emits: ['submit', 'preset'],
   components: {
     FilterModifier,
     FilterBtnNumeric,
@@ -87,6 +99,10 @@ export default defineComponent({
     UnknownModifier
   },
   props: {
+    presets: {
+      type: Array as PropType<Array<{ id: string, active: boolean }>>,
+      required: true
+    },
     filters: {
       type: Object as PropType<ItemFilters>,
       required: true
@@ -120,20 +136,43 @@ export default defineComponent({
       totalSelectedMods: computed(() => {
         return props.stats.filter(stat => !stat.disabled).length
       }),
-      shownStats: computed(() => {
+      filteredStats: computed(() => {
         if (showHidden.value) {
           return props.stats.filter(s => s.hidden)
         } else {
           return props.stats.filter(s => !s.hidden)
         }
       }),
+      hasStats: computed(() =>
+        props.stats.length ||
+        (props.item.unknownModifiers.length && props.item.rarity === ItemRarity.Unique) ||
+        props.presets.length > 1),
       handleStatsSubmit () {
         ctx.emit('submit')
+      },
+      selectPreset (id: string) {
+        ctx.emit('preset', id)
       }
     }
   }
 })
 </script>
+
+<style lang="postcss" module>
+.presetBtn {
+  @apply border-gray-700 bg-gray-800;
+  @apply px-2;
+  min-width: 3rem;
+
+  &:hover {
+    @apply bg-gray-700;
+  }
+
+  &.active {
+    background: linear-gradient(to bottom, theme('colors.gray.900'), theme('colors.gray.800'));
+  }
+}
+</style>
 
 <i18n>
 {
@@ -142,7 +181,11 @@ export default defineComponent({
     "Collapse": "Свернуть",
     "Stats ignored": "Св-ва не важны",
     "{0} of {1}, stats": "Св-ва: {0} из {1}",
-    "Mods": "Моды"
+    "Mods": "Моды",
+    "No relevant stats were found": "Подходящие свойства не найдены",
+
+    "Pseudo": "Псевдо",
+    "Base item": "База предмета"
   }
 }
 </i18n>

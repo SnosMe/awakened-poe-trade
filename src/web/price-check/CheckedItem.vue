@@ -1,34 +1,34 @@
 <template>
   <div v-if="show" class="p-4 layout-column min-h-0">
     <filter-name
-      ref="nameFilter"
       :filters="itemFilters"
       :item="item" />
     <price-prediction v-if="showPredictedPrice" class="mb-4"
       :item="item" />
-    <price-trend
+    <price-trend v-else
       :item="item"
-      :filters="itemFilters"
-      @filter-item-base="applyItemBaseFilter" />
+      :filters="itemFilters" />
     <filters-block
       ref="filtersBlock"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
-      @submit="interactedOnce = true" />
+      :presets="presets"
+      @preset="selectPreset"
+      @submit="doSearch = true" />
     <trade-listing
-      v-if="tradeAPI === 'trade' && interactedOnce"
+      v-if="tradeAPI === 'trade' && doSearch"
       ref="tradeService"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item" />
     <trade-bulk
-      v-if="tradeAPI === 'bulk' && interactedOnce"
+      v-if="tradeAPI === 'bulk' && doSearch"
       ref="tradeService"
       :filters="itemFilters"
       :item="item" />
-    <div v-if="!interactedOnce" @mouseenter="handleSearchMouseenter">
-      <button class="btn" @click="interactedOnce = true">{{ t('Search') }}</button>
+    <div v-if="!doSearch" @mouseenter="handleSearchMouseenter">
+      <button class="btn" @click="doSearch = true">{{ t('Search') }}</button>
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, watch, ref, nextTick, computed, Ref, ComponentPublicInstance } from 'vue'
+import { defineComponent, PropType, watch, ref, nextTick, computed, ComponentPublicInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, ItemCategory, ParsedItem } from '@/parser'
 import TradeListing from './trade/TradeListing.vue'
@@ -50,14 +50,13 @@ import TradeBulk from './trade/TradeBulk.vue'
 import { apiToSatisfySearch } from './trade/common'
 import PriceTrend from './trends/PriceTrend.vue'
 import FiltersBlock from './filters/FiltersBlock.vue'
-import { createFilters } from './filters/create-item-filters'
-import { initUiModFilters } from './filters/create-stat-filters'
+import { createPresets } from './filters/create-presets'
 import PricePrediction from './price-prediction/PricePrediction.vue'
 import StackValue from './stack-value/StackValue.vue'
 import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID } from './trade/pathofexile-trade'
 import { AppConfig } from '@/web/Config'
-import { FilterTag, ItemFilters, StatFilter } from './filters/interfaces'
+import { FilterPreset } from './filters/interfaces'
 import { PriceCheckWidget } from '../overlay/interfaces'
 import { selected as selectedLeague, isPublic as isPublicLeague } from '@/web/background/Leagues'
 
@@ -87,34 +86,31 @@ export default defineComponent({
   setup (props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
-    const itemFilters = ref<ItemFilters>(null!)
-    const itemStats = ref<StatFilter[]>(null!)
-    const interactedOnce = ref(false)
+    const presets = ref<{ active: string, presets: FilterPreset[] }>(null!)
+    const itemFilters = computed(() => presets.value.presets.find(preset => preset.id === presets.value.active)!.filters)
+    const itemStats = computed(() => presets.value.presets.find(preset => preset.id === presets.value.active)!.stats)
+    const doSearch = ref(false)
     const tradeAPI = ref<'trade' | 'bulk'>('bulk')
 
     // TradeListing.vue OR TradeBulk.vue
     const tradeService = ref<{ execSearch(): void } | null>(null)
-    // FilterName.vue
-    const nameFilter = ref<{ toggleAccuracy(): void }>(null!)
     // FiltersBlock.vue
-    const filtersBlock = ref<ComponentPublicInstance<{}, { showHidden: Ref<boolean> }>>(null!)
+    const filtersBlock = ref<ComponentPublicInstance<{}, {}>>(null!)
 
     watch(() => props.item, (item) => {
-      itemFilters.value = createFilters(item, {
+      presets.value = createPresets(item, {
         league: selectedLeague.value!,
         chaosPriceThreshold: widget.value.chaosPriceThreshold,
         collapseListings: widget.value.collapseListings,
-        activateStockFilter: widget.value.activateStockFilter
-      })
-      itemStats.value = initUiModFilters(item, {
+        activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||
           (props.advancedCheck && !widget.value.lockedInitialSearch)) {
-        interactedOnce.value = false
+        doSearch.value = false
       } else {
-        interactedOnce.value = Boolean(
+        doSearch.value = Boolean(
           (item.rarity === ItemRarity.Unique) ||
           (item.category === ItemCategory.Map) ||
           (item.category === ItemCategory.HeistBlueprint) ||
@@ -125,8 +121,8 @@ export default defineComponent({
       }
     }, { immediate: true })
 
-    watch(() => [props.item, interactedOnce.value], () => {
-      if (interactedOnce.value === false) return
+    watch(() => [props.item, doSearch.value], () => {
+      if (doSearch.value === false) return
 
       tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value, itemFilters.value)
 
@@ -138,13 +134,13 @@ export default defineComponent({
       })
     }, { deep: false, immediate: true })
 
-    watch(() => [props.item, interactedOnce.value, itemStats.value, itemFilters.value], (curr, prev) => {
+    watch(() => [props.item, doSearch.value, itemStats.value, itemFilters.value], (curr, prev) => {
       const cItem = curr[0]; const pItem = prev[0]
       const cIntaracted = curr[1]; const pIntaracted = prev[1]
 
       if (cItem === pItem && cIntaracted === true && pIntaracted === true) {
         // force user to press Search button on change
-        interactedOnce.value = false
+        doSearch.value = false
       }
     }, { deep: true })
 
@@ -154,7 +150,7 @@ export default defineComponent({
 
       if (cItem === pItem && cTrade !== pTrade) {
         nextTick(() => {
-          interactedOnce.value = true
+          doSearch.value = true
         })
       }
     }, { deep: false })
@@ -164,12 +160,15 @@ export default defineComponent({
           AppConfig().language !== 'en' ||
           !isPublicLeague.value) return false
 
+      if (presets.value.active === 'Base item') return false
+
       return props.item.rarity === ItemRarity.Rare &&
         props.item.category !== ItemCategory.Map &&
         props.item.category !== ItemCategory.CapturedBeast &&
         props.item.category !== ItemCategory.HeistContract &&
         props.item.category !== ItemCategory.HeistBlueprint &&
         props.item.category !== ItemCategory.Invitation &&
+        props.item.info.refName !== 'Expedition Logbook' &&
         !props.item.isUnidentified
     })
 
@@ -179,28 +178,9 @@ export default defineComponent({
         props.item.info.unique == null)
     })
 
-    async function applyItemBaseFilter () {
-      for (const stat of itemStats.value) {
-        // TODO or 'Syntesized'
-        if (stat.tag === FilterTag.Fractured && stat.hidden) {
-          stat.disabled = false
-          filtersBlock.value.showHidden = true
-        } else {
-          stat.disabled = true
-        }
-      }
-      await nextTick()
-
-      itemFilters.value.itemLevel!.disabled = false
-      if (itemFilters.value.influences) {
-        itemFilters.value.influences[0].disabled = false
-      }
-      nameFilter.value.toggleAccuracy()
-    }
-
     function handleSearchMouseenter (e: MouseEvent) {
       if ((filtersBlock.value.$el as HTMLElement).contains(e.relatedTarget as HTMLElement)) {
-        interactedOnce.value = true
+        doSearch.value = true
 
         if (document.activeElement instanceof HTMLElement) {
           document.activeElement.blur()
@@ -209,7 +189,7 @@ export default defineComponent({
     }
 
     const showSupportLinks = ref(false)
-    watch(() => [props.item, interactedOnce.value], ([cItem, cInteracted], [pItem]) => {
+    watch(() => [props.item, doSearch.value], ([cItem, cInteracted], [pItem]) => {
       if (_showSupportLinksCounter >= 13 && (!cInteracted || tradeAPI.value === 'bulk')) {
         showSupportLinks.value = true
         _showSupportLinksCounter = 0
@@ -227,16 +207,19 @@ export default defineComponent({
       t,
       itemFilters,
       itemStats,
-      interactedOnce,
+      doSearch,
       tradeAPI,
       tradeService,
-      nameFilter,
       filtersBlock,
       showPredictedPrice,
       show,
-      applyItemBaseFilter,
       handleSearchMouseenter,
-      showSupportLinks
+      showSupportLinks,
+      presets: computed(() => presets.value.presets.map(preset =>
+        ({ id: preset.id, active: (preset.id === presets.value.active) }))),
+      selectPreset (id: string) {
+        presets.value.active = id
+      }
     }
   }
 })

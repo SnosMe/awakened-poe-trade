@@ -14,21 +14,90 @@ export interface FiltersCreationContext {
   statsByType: StatCalculated[]
 }
 
+export function createExactStatFilters (
+  item: ParsedItem,
+  statsByType: StatCalculated[],
+  _opts: {}
+): StatFilter[] {
+  if (item.mapBlighted) return []
+  if (
+    item.isUnidentified &&
+    item.rarity === ItemRarity.Unique &&
+    !item.isSynthesised
+  ) return []
+
+  const keepByType = [ModifierType.Pseudo, ModifierType.Implicit, ModifierType.Fractured]
+  if (
+    item.category !== ItemCategory.Amulet &&
+    item.category !== ItemCategory.Ring &&
+    item.category !== ItemCategory.Flask
+  ) {
+    keepByType.push(ModifierType.Enchant)
+  }
+
+  if (item.rarity === ItemRarity.Magic && (
+    item.category !== ItemCategory.Flask &&
+    item.category !== ItemCategory.ClusterJewel &&
+    item.category !== ItemCategory.Map &&
+    item.category !== ItemCategory.Invitation &&
+    item.category !== ItemCategory.HeistContract &&
+    item.category !== ItemCategory.HeistBlueprint
+  )) {
+    keepByType.push(ModifierType.Explicit)
+  }
+
+  const ctx: FiltersCreationContext = {
+    item,
+    searchInRange: 100,
+    filters: [],
+    statsByType: statsByType.filter(calc => keepByType.includes(calc.type))
+  }
+
+  ctx.filters.push(
+    ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
+  )
+
+  if (item.info.refName === 'Chronicle of Atzoatl') {
+    applyAtzoatlRules(ctx.filters)
+    return ctx.filters
+  }
+
+  for (const filter of ctx.filters) {
+    filter.hidden = undefined
+
+    if (filter.tag === FilterTag.Explicit) {
+      filter.disabled = !filter.sources.some(source =>
+        source.modifier.info.tier != null &&
+        source.modifier.info.tier <= 2
+      )
+    } else {
+      filter.disabled = false
+    }
+
+    if (item.category === ItemCategory.ClusterJewel) {
+      if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
+        filter.hidden = 'Roll is not variable'
+        filter.disabled = true
+      }
+      if (filter.statRef === 'Adds # Passive Skills') {
+        filter.roll!.min = filter.roll!.default.min
+        // https://www.poewiki.net/wiki/Cluster_Jewel#Optimal_passive_skill_amounts
+        if (filter.roll!.max === 4) {
+          filter.roll!.max = 5
+        }
+      }
+    }
+  }
+
+  return ctx.filters
+}
+
 export function initUiModFilters (
   item: ParsedItem,
   opts: {
     searchStatRange: number
   }
 ): StatFilter[] {
-  if (
-    (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Map) ||
-    item.category === ItemCategory.Invitation ||
-    item.category === ItemCategory.HeistContract ||
-    item.category === ItemCategory.HeistBlueprint
-  ) {
-    return []
-  }
-
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
@@ -44,15 +113,8 @@ export function initUiModFilters (
     })
   }
 
-  if (!item.isUnidentified) {
-    filterItemProp(ctx)
-    filterPseudo(ctx)
-  }
-
-  if (!item.isCorrupted && !item.isMirrored) {
-    ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Fractured)
-    ctx.statsByType.push(...item.statsByType.filter(mod => mod.type === ModifierType.Fractured))
-  }
+  filterItemProp(ctx)
+  filterPseudo(ctx)
 
   if (item.isVeiled) {
     ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Veiled)
@@ -62,33 +124,8 @@ export function initUiModFilters (
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
   )
 
-  if (item.info.refName === 'Chronicle of Atzoatl') {
-    applyAtzoatlRules(ctx.filters)
-    return ctx.filters
-  }
-
-  if (!item.isCorrupted && !item.isMirrored && item.isSynthesised) {
-    const transformedImplicits = item.statsByType.filter(mod =>
-      mod.type === ModifierType.Implicit &&
-      !ctx.statsByType.includes(mod))
-
-    const synthImplicitFilters = transformedImplicits.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
-    for (const filter of synthImplicitFilters) {
-      filter.hidden = 'Select only if price-checking as base item for crafting'
-    }
-    ctx.filters.push(...synthImplicitFilters)
-  }
-
-  if (item.isUnidentified && item.rarity === ItemRarity.Unique) {
-    ctx.filters = ctx.filters.filter(f => !f.hidden)
-  }
-
   if (item.isVeiled) {
     ctx.filters.forEach(filter => { filter.disabled = true })
-  }
-
-  if (item.category === ItemCategory.Map) {
-    ctx.filters = ctx.filters.filter(f => f.tag !== FilterTag.Explicit)
   }
 
   finalFilterTweaks(ctx)
@@ -266,11 +303,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
           filter.hidden = 'Roll is not variable'
         }
         if (filter.statRef === 'Adds # Passive Skills') {
-          // https://pathofexile.gamepedia.com/Cluster_Jewel#Optimal_passive_skill_amounts
-          filter.disabled = false
-          if (filter.roll!.max === 4) {
-            filter.roll!.max = 5
-          }
+          filter.disabled = true
+          filter.roll!.max = undefined
         }
       }
     }

@@ -2,6 +2,12 @@ import type { ItemInfluence, ItemCategory } from '@/parser'
 import type { StatCalculated } from '@/parser/modifiers'
 import type { ParsedItem } from '@/parser/ParsedItem'
 
+export interface FilterPreset {
+  id: 'Pseudo' | 'Base' | string
+  filters: ItemFilters
+  stats: StatFilter[]
+}
+
 interface SearchFilter {
   name?: string
   baseType?: string

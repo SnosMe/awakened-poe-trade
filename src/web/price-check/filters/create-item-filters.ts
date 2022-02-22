@@ -1,5 +1,5 @@
 import type { ItemFilters } from './interfaces'
-import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { ParsedItem, ItemCategory, ItemRarity, ItemInfluence } from '@/parser'
 import { tradeTag, PERMANENT_LEAGUES } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { ITEM_BY_REF } from '@/assets/data'
@@ -14,6 +14,7 @@ export function createFilters (
     chaosPriceThreshold: number
     collapseListings: 'app' | 'api'
     activateStockFilter: boolean
+    exact: boolean
   }
 ): ItemFilters {
   const filters: ItemFilters = {
@@ -154,7 +155,7 @@ export function createFilters (
     if (item.category && CATEGORY_TO_TRADE_ID.has(item.category)) {
       filters.searchRelaxed = {
         category: item.category,
-        disabled: (item.rarity !== ItemRarity.Rare)
+        disabled: opts.exact
       }
     }
   }
@@ -198,11 +199,21 @@ export function createFilters (
     filters.mirrored = { disabled: false }
   }
 
-  if (item.influences.length) {
-    filters.influences = item.influences.map(influecne => ({
-      value: influecne,
-      disabled: true
-    }))
+  if (item.influences.length && item.influences.length <= 2) {
+    if (opts.exact) {
+      filters.influences = item.influences.map(influecne => ({
+        value: influecne,
+        disabled: false
+      }))
+    } else if (item.influences.length === 1 && (
+      item.influences[0] === ItemInfluence.Shaper ||
+      item.influences[0] === ItemInfluence.Elder
+    )) {
+      filters.influences = [{
+        value: item.influences[0],
+        disabled: true
+      }]
+    }
   }
 
   if (item.itemLevel) {
@@ -216,7 +227,7 @@ export function createFilters (
       if (item.itemLevel > 86) {
         filters.itemLevel = {
           value: 86,
-          disabled: true
+          disabled: !opts.exact
         }
         // @TODO limit by item type
         // If (RegExMatch(subtype, "i)Helmet|Gloves|Boots|Body Armour|Shield|Quiver")) {
@@ -232,7 +243,7 @@ export function createFilters (
       } else {
         filters.itemLevel = {
           value: item.itemLevel,
-          disabled: true
+          disabled: !opts.exact
         }
       }
     }
@@ -267,18 +278,6 @@ export function createFilters (
     filters.unidentified = {
       value: true,
       disabled: (item.rarity !== ItemRarity.Unique)
-    }
-
-    if (item.rarity !== ItemRarity.Unique) {
-      if (filters.itemLevel) {
-        filters.itemLevel.disabled = false
-      }
-      if (filters.influences) {
-        filters.influences[0].disabled = false
-      }
-      if (filters.searchRelaxed) {
-        filters.searchRelaxed.disabled = true
-      }
     }
   }
 

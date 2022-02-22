@@ -78,10 +78,11 @@ function forBasetype (item: ParsedItem) {
 
   if (item.influences.length === 1) {
     id += ` // ${item.influences[0]}`
-    return id
   } else if (item.influences.length > 1) {
     return undefined
   }
+
+  return id
 }
 
 function forUniqueItem (item: ParsedItem) {

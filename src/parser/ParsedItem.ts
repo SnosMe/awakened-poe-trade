@@ -49,6 +49,7 @@ export interface ParsedItem {
   influences: ItemInfluence[]
   logbookAreaMods?: ParsedModifier[][]
   isSynthesised?: boolean
+  isFractured?: boolean
   isVeiled?: boolean
   statsByType: StatCalculated[]
   newMods: ParsedModifier[]
