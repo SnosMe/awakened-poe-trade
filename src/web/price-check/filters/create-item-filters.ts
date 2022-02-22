@@ -63,8 +63,7 @@ export function createFilters (
   }
   if (
     item.category === ItemCategory.DivinationCard ||
-    item.category === ItemCategory.Currency ||
-    item.info.refName === 'Expedition Logbook'
+    item.category === ItemCategory.Currency
   ) {
     filters.searchExact = {
       baseType: item.info.name
@@ -72,11 +71,6 @@ export function createFilters (
     if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
         value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80]),
-        disabled: false
-      }
-    } else if (item.info.refName === 'Expedition Logbook') {
-      filters.areaLevel = {
-        value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81]),
         disabled: false
       }
     }
@@ -106,6 +100,14 @@ export function createFilters (
 
     filters.mapTier = {
       value: item.mapTier!,
+      disabled: false
+    }
+  } else if (item.info.refName === 'Expedition Logbook') {
+    filters.searchExact = {
+      baseType: item.info.name
+    }
+    filters.areaLevel = {
+      value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81]),
       disabled: false
     }
   } else if (item.category === ItemCategory.HeistContract) {
@@ -222,7 +224,8 @@ export function createFilters (
       item.category !== ItemCategory.Map &&
       item.category !== ItemCategory.Jewel && /* https://pathofexile.gamepedia.com/Jewel#Affixes */
       item.category !== ItemCategory.HeistBlueprint &&
-      item.category !== ItemCategory.HeistContract
+      item.category !== ItemCategory.HeistContract &&
+      item.info.refName !== 'Expedition Logbook'
     ) {
       if (item.itemLevel > 86) {
         filters.itemLevel = {
