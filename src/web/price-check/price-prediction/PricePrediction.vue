@@ -66,6 +66,8 @@ import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from '../trade/artificial-slowdown'
 
+const slowdown = artificialSlowdown(800)
+
 export default defineComponent({
   name: 'PricePrediction',
   components: { FeedbackOption, ItemQuickPrice },
@@ -76,10 +78,9 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const slowdown = artificialSlowdown(800)
     watch(() => props.item, (item) => {
       slowdown.reset(item)
-    })
+    }, { immediate: true })
 
     const price = ref<RareItemPrice | null>(null)
     const error = ref<string | null>(null)

@@ -58,6 +58,8 @@ import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from '../trade/artificial-slowdown'
 import { ItemFilters } from '../filters/interfaces'
 
+const slowdown = artificialSlowdown(800)
+
 export default defineComponent({
   components: {
     ItemQuickPrice,
@@ -74,10 +76,9 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const slowdown = artificialSlowdown(800)
     watch(() => props.item, (item) => {
       slowdown.reset(item)
-    })
+    }, { immediate: true })
 
     const trend = computed(() => {
       const detailsId = getDetailsId(props.item)
