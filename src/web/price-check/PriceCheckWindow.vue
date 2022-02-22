@@ -50,7 +50,6 @@
     </div>
     <iframe v-if="isBrowserShown" ref="iframeEl"
       class="pointer-events-auto"
-      sandbox="allow-scripts allow-same-origin"
       width="100%" height="100%" />
     <div v-else class="layout-column flex-1 min-w-0">
       <div class="flex" :class="{
