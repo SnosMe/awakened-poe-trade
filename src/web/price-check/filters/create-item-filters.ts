@@ -227,25 +227,16 @@ export function createFilters (
       item.category !== ItemCategory.HeistContract &&
       item.info.refName !== 'Expedition Logbook'
     ) {
-      if (item.itemLevel > 86) {
+      if (item.category === ItemCategory.ClusterJewel) {
         filters.itemLevel = {
-          value: 86,
+          value: floorToBracket(item.itemLevel, [1, 50, 68, 75, 84]),
+          max: ceilToBracket(item.itemLevel, [100, 74, 67, 49]),
           disabled: !opts.exact
         }
-        // @TODO limit by item type
-        // If (RegExMatch(subtype, "i)Helmet|Gloves|Boots|Body Armour|Shield|Quiver")) {
-        //   Return (iLvl >= 84) ? 84 : false
-        // }
-        // Else If (RegExMatch(subtype, "i)Weapon")) {
-        //   Return (iLvl >= 83) ? 83 : false
-        // }
-        // Else If (RegExMatch(subtype, "i)Belt|Amulet|Ring")) {
-        //   Return (iLvl >= 83) ? 83 : false
-        // }
-        // Return false
       } else {
+        // TODO limit level by item type
         filters.itemLevel = {
-          value: item.itemLevel,
+          value: Math.min(item.itemLevel, 86),
           disabled: !opts.exact
         }
       }
@@ -342,6 +333,18 @@ function floorToBracket (value: number, brackets: readonly number[]) {
   let prev = brackets[0]
   for (const num of brackets) {
     if (num > value) {
+      return prev
+    } else {
+      prev = num
+    }
+  }
+  return prev
+}
+
+function ceilToBracket (value: number, brackets: readonly number[]) {
+  let prev = brackets[0]
+  for (const num of brackets) {
+    if (num < value) {
       return prev
     } else {
       prev = num

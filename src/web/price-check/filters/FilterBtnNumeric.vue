@@ -7,11 +7,17 @@
       @blur="inputMinBlur"
       @mousewheel.stop
       :style="{ width: `${1.2 + Math.max(String(inputMin).length, 2)}ch` }"
-    />
-    <!-- <template v-if="">
+    >
+    <template v-if="'max' in filter">
       <span>–</span>
-      <input input :class="$style.input" step="any" type="number">
-    </template> -->
+      <input :class="$style.input" step="any" type="number"
+        v-model.number="inputMax"
+        @focus="inputFocus"
+        @mousewheel.stop
+        :style="{ width: `${1.2 + Math.max(String(inputMax).length, 2)}ch` }"
+        placeholder="…"
+      >
+    </template>
   </div>
 </template>
 
@@ -38,6 +44,11 @@ export default defineComponent({
       _inputMin.value = filter.value
     }, { immediate: true })
 
+    const _inputMax = ref<number | ''>('')
+    watch(() => props.filter, (filter) => {
+      _inputMax.value = filter.max ?? ''
+    }, { immediate: true })
+
     const { t } = useI18n()
 
     return {
@@ -53,6 +64,17 @@ export default defineComponent({
           }
         }
       }),
+      inputMax: computed<number | ''>({
+        get () { return _inputMax.value },
+        set (value) {
+          _inputMax.value = value
+          if (typeof value === 'number') {
+            props.filter.max = value
+          } else {
+            props.filter.max = undefined
+          }
+        }
+      }),
       inputFocus (e: InputEvent) {
         const target = e.target as HTMLInputElement
         target.select()
@@ -61,6 +83,7 @@ export default defineComponent({
       inputMinBlur () {
         if (typeof _inputMin.value !== 'number') {
           _inputMin.value = 0
+          props.filter.disabled = true
         }
       }
     }
