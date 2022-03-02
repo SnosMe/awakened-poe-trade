@@ -63,7 +63,8 @@ export function createFilters (
   }
   if (
     item.category === ItemCategory.DivinationCard ||
-    item.category === ItemCategory.Currency
+    item.category === ItemCategory.Currency ||
+    item.info.refName === 'Charged Compass'
   ) {
     filters.searchExact = {
       baseType: item.info.name

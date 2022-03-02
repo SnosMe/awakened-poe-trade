@@ -94,6 +94,12 @@ export function createExactStatFilters (
         }
       }
     }
+
+    if (filter.statRef === '# use remaining') {
+      filter.roll!.min = filter.roll!.value
+      filter.roll!.default.min = filter.roll!.value
+      filter.roll!.default.max = filter.roll!.value
+    }
   }
 
   return ctx.filters
@@ -305,7 +311,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
 
   if (item.category === ItemCategory.ClusterJewel && item.rarity !== ItemRarity.Unique) {
     for (const filter of ctx.filters) {
-      if (filter.tag === 'enchant') {
+      if (filter.tag === FilterTag.Enchant) {
         if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
           filter.hidden = 'Roll is not variable'
         }
