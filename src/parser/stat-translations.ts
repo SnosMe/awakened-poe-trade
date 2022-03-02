@@ -10,6 +10,7 @@ export interface ParsedStat {
   readonly translation: StatMatcher
   roll?: {
     unscalable: boolean
+    legacy?: true
     dp: boolean
     value: number
     min: number
@@ -129,6 +130,9 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       continue
     }
 
+    // Modifiers must be upgraded to the new values with a Divine Orb
+    let legacyStatRolls = false
+
     if (found.matcher.negate) {
       for (const stat of combination.values) {
         stat.roll *= -1
@@ -147,12 +151,28 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       }
     }
 
-    if (combination.values.some(stat =>
-      (stat.bounds != null) &&
-      (stat.roll < stat.bounds.min || stat.roll > stat.bounds.max)
-    )) {
-      // Modifiers must be upgraded to the new values with a Divine Orb
-      return undefined
+    for (const stat of combination.values) {
+      if (!stat.bounds) continue
+
+      if (stat.bounds.min > stat.bounds.max) {
+        // some stats granted by legacy Modifiers (not legacy rolls)
+        // can have same stat translations as granted by new Modifiers
+        // but swapped translation strings for positive and negative rolls
+        stat.bounds = {
+          max: stat.bounds.min,
+          min: stat.bounds.max
+        }
+        // don't consider them as a legacy rolls
+      }
+
+      if (stat.roll > stat.bounds.max) {
+        stat.bounds.max = stat.roll
+        legacyStatRolls = true
+      }
+      if (stat.roll < stat.bounds.min) {
+        stat.bounds.min = stat.roll
+        legacyStatRolls = true
+      }
     }
 
     if (!combination.values.length && found.matcher.value) {
@@ -172,6 +192,7 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       roll: combination.values.length
         ? {
             unscalable: stat.unscalable,
+            legacy: legacyStatRolls || undefined,
             dp: found.stat.dp || combination.values.some(stat => stat.decimal),
             value: getRollOrMinmaxAvg(combination.values.map(stat => stat.roll)),
             min: getRollOrMinmaxAvg(combination.values.map(stat => stat.bounds?.min ?? stat.roll)),
