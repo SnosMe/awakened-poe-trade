@@ -128,6 +128,7 @@ export interface TranslationDict {
   FLASK_CHARGES: RegExp
   METAMORPH_HELP: string
   BEAST_HELP: string
+  VOIDSTONE_HELP: string
   METAMORPH_BRAIN: RegExp
   METAMORPH_EYE: RegExp
   METAMORPH_LUNG: RegExp

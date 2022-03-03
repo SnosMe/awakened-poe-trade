@@ -177,6 +177,8 @@ function findInDatabase (item: ParserState) {
     info = ITEM_BY_REF('GEM', item.name)
   } else if (item.category === ItemCategory.MetamorphSample) {
     info = ITEM_BY_REF('ITEM', item.name)
+  } else if (item.category === ItemCategory.Voidstone) {
+    info = ITEM_BY_REF('ITEM', 'Charged Compass')
   } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
     info = ITEM_BY_REF('UNIQUE', item.name)
   } else {
@@ -702,6 +704,9 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
     return SECTION_PARSED
   } else if (section[0] === _$.METAMORPH_HELP) {
     item.category = ItemCategory.MetamorphSample
+    return SECTION_PARSED
+  } else if (section[0] === _$.VOIDSTONE_HELP) {
+    item.category = ItemCategory.Voidstone
     return SECTION_PARSED
   }
 
