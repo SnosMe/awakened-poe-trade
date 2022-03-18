@@ -81,25 +81,15 @@ export function createExactStatFilters (
       filter.disabled = false
     }
 
-    if (item.category === ItemCategory.ClusterJewel) {
-      if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
-        filter.hidden = 'Roll is not variable'
-        filter.disabled = true
-      }
-      if (filter.statRef === 'Adds # Passive Skills') {
-        filter.roll!.min = filter.roll!.default.min
-        // https://www.poewiki.net/wiki/Cluster_Jewel#Optimal_passive_skill_amounts
-        if (filter.roll!.max === 4) {
-          filter.roll!.max = 5
-        }
-      }
-    }
-
     if (filter.statRef === '# use remaining') {
       filter.roll!.min = filter.roll!.value
       filter.roll!.default.min = filter.roll!.value
       filter.roll!.default.max = filter.roll!.value
     }
+  }
+
+  if (item.category === ItemCategory.ClusterJewel) {
+    applyClusterJewelRules(ctx.filters)
   }
 
   return ctx.filters
@@ -310,17 +300,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   const { item } = ctx
 
   if (item.category === ItemCategory.ClusterJewel && item.rarity !== ItemRarity.Unique) {
-    for (const filter of ctx.filters) {
-      if (filter.tag === FilterTag.Enchant) {
-        if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
-          filter.hidden = 'Roll is not variable'
-        }
-        if (filter.statRef === 'Adds # Passive Skills') {
-          filter.disabled = true
-          filter.roll!.max = undefined
-        }
-      }
-    }
+    applyClusterJewelRules(ctx.filters)
   }
 
   const hasEmptyModifier = showHasEmptyModifier(ctx)
@@ -358,6 +338,39 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'Select only if price-checking as base item for crafting'
       }
+    }
+  }
+}
+
+function applyClusterJewelRules (filters: StatFilter[]) {
+  for (const filter of filters) {
+    if (filter.statRef === '# Added Passive Skills are Jewel Sockets') {
+      filter.hidden = 'Roll is not variable'
+      filter.disabled = true
+    }
+
+    // https://www.poewiki.net/wiki/Cluster_Jewel#Optimal_passive_skill_amounts
+    if (filter.statRef === 'Adds # Passive Skills') {
+      filter.disabled = false
+
+      // 4 is [_, 5]
+      if (filter.roll!.value === 4) {
+        filter.roll!.max = 5
+      // 5 is [5, 5]
+      } else if (filter.roll!.value === 5) {
+        filter.roll!.min = filter.roll!.default.min
+      // 3, 6, 10, 11, 12 are [n, _]
+      } else if (
+        filter.roll!.value === 3 ||
+        filter.roll!.value === 6 ||
+        filter.roll!.value === 10 ||
+        filter.roll!.value === 11 ||
+        filter.roll!.value === 12
+      ) {
+        filter.roll!.min = filter.roll!.default.min
+        filter.roll!.max = undefined
+      }
+      // else 2, 8, 9 are [_ , n]
     }
   }
 }
