@@ -67,6 +67,13 @@ export default defineComponent({
       }
     })
 
+    watch(() => props.config.wmFlags, (wmFlags) => {
+      if (wmFlags.includes('settings:price-check')) {
+        selectedComponent.value = SettingsPricecheck
+        wm.setFlag(props.config.wmId, 'settings:price-check', false)
+      }
+    }, { deep: true })
+
     const menuItems = computed(() => [
       {
         name: t('Hotkeys'),

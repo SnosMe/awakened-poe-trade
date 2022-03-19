@@ -9,13 +9,11 @@
       :style="{ width: `${poeUiWidth}px` }">
     </div>
     <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
-      <app-titlebar @close="closePriceCheck" :title="title">
+      <app-titlebar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
         <div class="flex">
           <ui-popover v-if="exaltedCost" trigger="click" boundary="#price-window">
             <template #target>
-              <button class="titlebar-btn">
-                <i class="fas fa-exchange-alt mt-px"></i> {{ exaltedCost }}
-              </button>
+              <button><i class="fas fa-exchange-alt"></i> {{ exaltedCost }}</button>
             </template>
             <template #content>
               <item-quick-price class="text-base"
@@ -167,6 +165,12 @@ export default defineComponent({
       }
     }
 
+    function openLeagueSelection () {
+      const settings = wm.widgets.value.find(w => w.wmType === 'settings')!
+      wm.setFlag(settings.wmId, 'settings:price-check', true)
+      wm.show(settings.wmId)
+    }
+
     const iframeEl = shallowRef<HTMLIFrameElement | null>(null)
 
     function showBrowser (url: string) {
@@ -198,7 +202,8 @@ export default defineComponent({
       item,
       advancedCheck,
       overlayKey,
-      isLeagueSelected
+      isLeagueSelected,
+      openLeagueSelection
     }
   }
 })
