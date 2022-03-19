@@ -198,11 +198,16 @@ function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
 
 function modifyResponseHeaders (webContents: WebContents) {
   webContents.session.webRequest.onHeadersReceived({
-    urls: ['https://*.pathofexile.com/*']
+    urls: ['https://*/*']
   }, (details, next) => {
     // 1) allow embedding in iframe
     if (details.responseHeaders) {
-      delete details.responseHeaders['x-frame-options']
+      for (const key in details.responseHeaders) {
+        if (key.toLowerCase() === 'x-frame-options' || key.toLowerCase() === 'content-security-policy') {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+          delete details.responseHeaders[key]
+        }
+      }
     }
 
     // 2) store cookies from Cloudflare
