@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from 'electron'
-import type { IpcGetConfig, IpcImportFile } from '@/ipc/ipc-event'
-import type { PreloadExposed } from '@/ipc/types'
+import type { IpcGetConfig, IpcImportFile } from './ipc-event'
+import type { PreloadExposed } from './types'
 
 const api: PreloadExposed = {
   sendEvent (event) {

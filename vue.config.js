@@ -1,7 +1,7 @@
 module.exports = {
   pluginOptions: {
     electronBuilder: {
-      preload: 'src/preload.ts',
+      preload: 'src/ipc/preload.ts',
       nodeIntegration: false,
       externals: ['electron-overlay-window', 'uiohook-napi'],
       builderOptions: {

@@ -4,7 +4,7 @@ import isDeepEq from 'fast-deep-equal'
 import { Config, defaultConfig } from '@/ipc/types'
 import { logger } from './logger'
 import { LogWatcher } from './LogWatcher'
-import { ItemCheckWidget } from '@/web/overlay/interfaces'
+import { ItemCheckWidget } from '@/ipc/widgets'
 import { loadAndCache as loadAndCacheGameCfg } from './game-config'
 import { overlayOnEvent } from './overlay-window'
 

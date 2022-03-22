@@ -1,4 +1,4 @@
-import * as widget from '@/web/overlay/interfaces'
+import * as widget from './widgets'
 import type { IpcEvent } from './ipc-event'
 
 export interface PreloadExposed {

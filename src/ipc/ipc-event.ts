@@ -1,4 +1,4 @@
-import type { Config } from '@/ipc/types'
+import type { Config } from './types'
 
 export type IpcEvent =
   IpcGetConfig |

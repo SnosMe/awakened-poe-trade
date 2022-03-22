@@ -5,7 +5,7 @@ import { PoeWindow } from './PoeWindow'
 import { config } from './config'
 import { logger } from './logger'
 import { isInteractable, assertOverlayActive, assertPoEActive, DPR, overlayOnEvent, overlaySendEvent } from './overlay-window'
-import type { PriceCheckWidget } from '@/web/overlay/interfaces'
+import type { PriceCheckWidget } from '@/ipc/widgets'
 
 const WIDTH_96DPI = 460 / 16
 const CLOSE_THRESHOLD_96DPI = 40 / 16
