@@ -14,16 +14,16 @@
           <span class="text-gray-400">{{ t('Base item') }}</span>
         </template>
       </item-quick-price>
-      <div v-if="trend.changeStr" class="px-2 text-center">
+      <div v-if="trend.change" class="px-2 text-center">
         <div class="leading-tight">
-          <i v-if="trend.changeStr === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
-          <i v-if="trend.changeStr === 'up'" class="fas fa-angle-double-up pr-1 text-green-500"></i>
-          <span v-if="trend.changeStr === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
-          <span>{{ Math.round(trend.changeVal * 2) }}{{ '\u2009' }}%</span>
+          <i v-if="trend.change.forecast === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
+          <i v-if="trend.change.forecast === 'up'" class="fas fa-angle-double-up pr-1 text-green-500"></i>
+          <span v-if="trend.change.forecast === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
+          <span>{{ trend.change.text }}</span>
         </div>
         <div class="text-xs text-gray-500 leading-none">{{ t('Last 7 days') }}</div>
       </div>
-      <div v-if="trend.changeStr" class="w-12 h-8">
+      <div v-if="trend.change" class="w-12 h-8">
         <vue-apexcharts
           type="area"
           :options="{
@@ -34,12 +34,12 @@
             plotOptions: { area: { fillTo: 'end' } },
             yaxis: {
               show: false,
-              min: Math.min(...trend.graphPoints) - (trend.changeVal || 1),
-              max: Math.max(...trend.graphPoints) + (trend.changeVal || 1)
+              min: trend.change.graph.drawMin,
+              max: trend.change.graph.drawMax
             }
           }"
           :series="[{
-            data: trend.graphPoints
+            data: trend.change.graph.points
           }]"
         />
       </div>
@@ -89,29 +89,9 @@ export default defineComponent({
         ? { min: trend.chaosValue, max: trend.chaosValue, currency: 'chaos' as const }
         : autoCurrency(trend.chaosValue, 'chaos')
 
-      if (trend.graphPoints.length >= 2) {
-        let changeStr = 'const'
-        if (trend.graphPoints.length === 7) {
-          if (
-            trend.graphPoints.filter(p => p > 0).length >= 4 ||
-            trend.graphPoints.slice(4).every(p => p > 0)
-          ) {
-            changeStr = 'up'
-          } else if (
-            trend.graphPoints.filter(p => p < 0).length >= 4 ||
-            trend.graphPoints.slice(4).every(p => p < 0)
-          ) {
-            changeStr = 'down'
-          }
-        }
-
-        const n = trend.graphPoints.length
-        const mean = trend.graphPoints.reduce((a, b) => a + b) / n
-        const changeVal = Math.sqrt(trend.graphPoints.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (n - 1))
-
-        return { price, ...trend, changeStr, changeVal }
-      } else {
-        return { price, ...trend }
+      return {
+        price: price,
+        change: deltaFromGraph(trend.graphPoints)
       }
     })
 
@@ -127,6 +107,39 @@ export default defineComponent({
     }
   }
 })
+
+function deltaFromGraph (graphPoints: Array<number | null>) {
+  const points = graphPoints.filter(p => p != null) as number[]
+  if (points.length < 2) return null
+
+  let forecast = 'const'
+  if (points.length === 7) {
+    if (
+      points.filter(p => p > 0).length >= 4 ||
+      points.slice(4).every(p => p > 0)
+    ) {
+      forecast = 'up'
+    } else if (
+      points.filter(p => p < 0).length >= 4 ||
+      points.slice(4).every(p => p < 0)
+    ) {
+      forecast = 'down'
+    }
+  }
+
+  const mean = points.reduce((a, b) => a + b) / points.length
+  const changeVal = Math.sqrt(points.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (points.length - 1))
+
+  return {
+    graph: {
+      points,
+      drawMin: Math.min(...points) - (changeVal || 1),
+      drawMax: Math.max(...points) + (changeVal || 1)
+    },
+    forecast,
+    text: `${Math.round(changeVal * 2)}\u2009%`
+  }
+}
 </script>
 
 <i18n>

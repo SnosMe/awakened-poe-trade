@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { KeyToCode, hotkeyToString } from '@/ipc/KeyToCode'
 
@@ -16,8 +16,8 @@ export default defineComponent({
   emits: ['update:modelValue'],
   props: {
     modelValue: {
-      type: String,
-      default: undefined
+      type: String as PropType<string | null>,
+      default: null
     },
     noModKeys: {
       type: Boolean,

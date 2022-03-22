@@ -13,17 +13,17 @@
             'fas fa-check-square': !isDisabled
           }"></i>
           <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-            <span class="truncate"><item-modifier-text :text="text" :roll="rollValue" /></span>
-            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="rollValue" /></span>
+            <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
+            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
           </div>
         </button>
         <div class="flex items-baseline gap-x-1">
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('Q {0}%', [calcQuality]) }}</div>
           <div class="flex gap-x-px">
-            <input :class="$style['rollInput']" :placeholder="t('min')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
+            <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
               v-if="showInputs" ref="inputMinEl"
               v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
-            <input :class="$style['rollInput']" :placeholder="t('max')" :min="rollBounds?.min" :max="rollBounds?.max" :step="changeStep" type="number"
+            <input :class="$style['rollInput']" :placeholder="t('max')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
               v-if="showInputs" ref="inputMaxEl"
               v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
           </div>
@@ -47,7 +47,7 @@
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(tag) }}</span>
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
-        <div v-if="showRollBounds"
+        <div v-if="roll && roll.bounds"
           class="mr-4" style="width: 12.5rem;">
           <ui-slider
             class="search-slider-rail" style="padding: 0;" :dotSize="[0, 1.25*fontSize]" :height="1.25*fontSize"
@@ -56,19 +56,19 @@
 
             v-model="sliderValue"
             :marks="{
-              [rollBounds.min]: { label: 'min' },
-              [rollBounds.max]: { label: 'max' },
-              [rollValue]: { label: 'roll' }
+              [roll.bounds.min]: { label: 'min' },
+              [roll.bounds.max]: { label: 'max' },
+              [roll.value]: { label: 'roll' }
             }"
-            :min="rollBounds.min"
-            :max="rollBounds.max"
+            :min="roll.bounds.min"
+            :max="roll.bounds.max"
             :interval="changeStep"
           >
           <template v-slot:mark="{ pos, label, active }">
             <div class="custom-mark" :class="{ active, [label]: true }" :style="{ flex: pos }">
               <div class="custom-mark-tick" :style="{ 'left': `calc(${pos}% - 1px)` }"></div>
-              {{ label === 'min' ? rollBounds.min : label === 'max' ? rollBounds.max
-                : (rollValue === rollBounds.min || rollValue === rollBounds.max ? rollValue : '') }}
+              {{ label === 'min' ? roll.bounds.min : label === 'max' ? roll.bounds.max
+                : (roll.value === roll.bounds.min || roll.value === roll.bounds.max ? roll.value : '') }}
             </div>
           </template>
           </ui-slider>
@@ -210,9 +210,7 @@ export default defineComponent({
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
       text: computed(() => t(props.filter.text)),
-      rollValue: computed(() => props.filter.roll?.value),
-      rollBounds: computed(() => props.filter.roll?.bounds),
-      showRollBounds: computed(() => props.filter.roll?.bounds != null),
+      roll: computed(() => props.filter.roll),
       isHidden: computed(() => props.filter.hidden != null),
       hiddenReason: computed(() => t(props.filter.hidden!)),
       showSourceInfo: computed(() =>

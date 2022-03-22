@@ -1,24 +1,21 @@
 <template>
-  <widget v-if="show"
-    :config="config" :removable="false" readonly :hideable="false">
-    <div class="widget-default-style p-1 text-gray-100">
-      <ui-toggle v-model="active" class="mb-1">Overlay active</ui-toggle>
-      <div class="mb-1 flex gap-x-1">
-        <button @click="pick(0)" class="btn">0</button>
-        <button @click="pick(1)" class="btn">1</button>
-        <button @click="pick(2)" class="btn">2</button>
-        <button @click="pick(3)" class="btn">3</button>
-        <button @click="pick(4)" class="btn">4</button>
-      </div>
-      <textarea class="px-2 py-1 bg-gray-700 rounded resize-none block" rows="1"
-        placeholder="Price check (Ctrl+V)" @input="handleItemPaste"></textarea>
+  <div v-if="show" class="widget-default-style p-1 text-gray-100 absolute left-4 bottom-4">
+    <ui-toggle v-model="active" class="mb-1">Overlay active</ui-toggle>
+    <div class="mb-1 flex gap-x-1">
+      <button @click="pick(0)" class="btn">0</button>
+      <button @click="pick(1)" class="btn">1</button>
+      <button @click="pick(2)" class="btn">2</button>
+      <button @click="pick(3)" class="btn">3</button>
+      <button @click="pick(4)" class="btn">4</button>
     </div>
-  </widget>
+    <textarea class="px-2 py-1 bg-gray-700 rounded resize-none block" rows="1"
+      placeholder="Price check (Ctrl+V)" @input="handleItemPaste"></textarea>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, reactive, computed } from 'vue'
-import { WidgetManager, Anchor } from './interfaces'
+import { defineComponent, inject, computed } from 'vue'
+import { WidgetManager } from './interfaces'
 import Widget from './Widget.vue'
 import { MainProcess } from '@/web/background/IPC'
 import { parseClipboard } from '@/parser'
@@ -189,15 +186,6 @@ export default defineComponent({
   setup () {
     const wm = inject<WidgetManager>('wm')!
 
-    const config = reactive({
-      wmId: -1,
-      wmType: 'debug',
-      wmTitle: '',
-      wmWants: 'show',
-      wmZorder: 7777777,
-      anchor: { pos: 'bl', x: 1, y: 98.5 } as Anchor
-    })
-
     function priceCheck (text: string) { /* eslint-disable no-console */
       MainProcess.selfDispatch({
         name: 'MAIN->OVERLAY::price-check',
@@ -210,10 +198,7 @@ export default defineComponent({
     }
 
     return {
-      config,
-      show: computed(() => {
-        return !MainProcess.isElectron
-      }),
+      show: computed(() => !MainProcess.isElectron),
       active: computed<boolean>({
         get () { return wm.active.value },
         set (value) { wm.active.value = value }

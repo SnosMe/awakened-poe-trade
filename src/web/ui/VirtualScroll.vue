@@ -11,12 +11,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, triggerRef } from 'vue'
+import { defineComponent, computed, ref, triggerRef, PropType } from 'vue'
 
-export default defineComponent({
+function defineGenericComponent<T> () { /* eslint-disable indent */
+return defineComponent({
   props: {
     items: {
-      type: Array,
+      type: Array as PropType<T[]>,
       required: true
     },
     itemHeight: {
@@ -56,4 +57,11 @@ export default defineComponent({
     }
   }
 })
+}
+export default defineGenericComponent<unknown>()
+
+class VirtualScrollGeneric<T> {
+  define () { return defineGenericComponent<T>() }
+}
+export type VirtualScrollT<T> = ReturnType<VirtualScrollGeneric<T>['define']>
 </script>
