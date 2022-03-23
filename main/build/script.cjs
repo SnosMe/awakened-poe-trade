@@ -36,7 +36,7 @@ const mainBuild = esbuild.build({
   external: ['electron', 'uiohook-napi', 'robotjs', 'electron-overlay-window'],
   outfile: 'dist/main.js',
   define: {
-    'process.env.STATIC': (isDev) ? JSON.stringify(path.join(__dirname, './icons')) : '"."',
+    'process.env.STATIC': (isDev) ? '"../build/icons"' : '"."',
     'process.env.VITE_DEV_SERVER_URL': (isDev) ? '"http://localhost:3000"' : 'null'
   },
   watch: (isDev)

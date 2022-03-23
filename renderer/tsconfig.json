@@ -1,40 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es2019",
+    "target": "esnext",
     "module": "esnext",
     "strict": true,
-    "strictNullChecks": true,
     "jsx": "preserve",
-    "importHelpers": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "webpack-env"
-    ],
+    "types": ["webpack-env"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+    "lib": ["esnext", "dom", "dom.iterable"]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "src/**/*.vue"
   ],
   "exclude": [
     "node_modules"

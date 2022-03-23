@@ -45,7 +45,7 @@ export async function createOverlayWindow () {
   PoeWindow.onAttach(handleOverlayAttached)
 
   overlayWindow = new BrowserWindow({
-    icon: path.join(process.env.STATIC!, 'icon.png'),
+    icon: path.join(__dirname, process.env.STATIC!, 'icon.png'),
     ...OW.WINDOW_OPTS,
     width: 800,
     height: 600,
