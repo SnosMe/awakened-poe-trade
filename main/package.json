@@ -1,0 +1,42 @@
+{
+  "name": "awakened-poe-trade",
+  "version": "3.17.10005",
+  "private": true,
+  "scripts": {
+    "dev": "node build/script.cjs",
+    "build": "tsc --noEmit && node build/script.cjs --prod",
+    "package": "electron-builder build",
+    "postinstall": "patch-package && electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
+  },
+  "author": {
+    "name": "Alexander Drozdov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SnosMe/awakened-poe-trade.git"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "electron-overlay-window": "3.0.0-beta.1",
+    "robotjs": "^0.6.0",
+    "uiohook-napi": "1.0.x"
+  },
+  "devDependencies": {
+    "@types/ini": "^1.3.30",
+    "@types/node": "^14.0.0",
+    "electron-store": "8.0.x",
+    "electron-updater": "^4.2.0",
+    "fast-deep-equal": "3.1.x",
+    "esbuild": "^0.14.27",
+    "ini": "^2.0.0",
+    "winston": "3.x.x",
+    "electron": "14.0.1",
+    "patch-package": "^6.2.0",
+    "typescript": "4.4.x",
+    "electron-builder": "22.14.5"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

@@ -1,0 +1,21 @@
+publish:
+  - "github"
+productName: "Awakened PoE Trade"
+npmRebuild: false
+files:
+  - "package.json"
+  - from: "dist"
+    to: "."
+    filter: ["main.js", "preload.js"]
+  - from: "../renderer/dist"
+    to: "."
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+win:
+  target:
+  - "nsis"
+  - "portable"
+linux:
+  target:
+  - "AppImage"

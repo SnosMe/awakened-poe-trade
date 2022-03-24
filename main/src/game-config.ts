@@ -4,7 +4,7 @@ import ini from 'ini'
 import { app } from 'electron'
 import { config as appConfig } from './config'
 import { logger } from './logger'
-import { hotkeyToString, CodeToKey } from '@/ipc/KeyToCode'
+import { hotkeyToString, CodeToKey } from '../../ipc/KeyToCode'
 
 export interface GameConfig {
   highlightKey: string | null

@@ -7,7 +7,7 @@ let tray: Tray
 
 export function createTray () {
   tray = new Tray(
-    nativeImage.createFromPath(path.join(__static, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
+    nativeImage.createFromPath(path.join(__dirname, process.env.STATIC!, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
   )
 
   tray.setToolTip('Awakened PoE Trade')

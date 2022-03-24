@@ -3,7 +3,7 @@ import assert from 'assert'
 import { BrowserWindow, ipcMain, dialog, shell, Menu, systemPreferences, IpcMainEvent, WebContents } from 'electron'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
-import * as ipc from '@/ipc/ipc-event'
+import * as ipc from '../../ipc/ipc-event'
 import { OverlayWindow as OW } from 'electron-overlay-window'
 import { config } from './config'
 
@@ -45,7 +45,7 @@ export async function createOverlayWindow () {
   PoeWindow.onAttach(handleOverlayAttached)
 
   overlayWindow = new BrowserWindow({
-    icon: path.join(__static, 'icon.png'),
+    icon: path.join(__dirname, process.env.STATIC!, 'icon.png'),
     ...OW.WINDOW_OPTS,
     width: 800,
     height: 600,
@@ -71,8 +71,8 @@ export async function createOverlayWindow () {
     return { action: 'deny' }
   })
 
-  if (process.env.WEBPACK_DEV_SERVER_URL) {
-    overlayWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
+  if (process.env.VITE_DEV_SERVER_URL) {
+    overlayWindow.loadURL(process.env.VITE_DEV_SERVER_URL)
     overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
   } else {
     overlayWindow.loadURL('app://./index.html')
