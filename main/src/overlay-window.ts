@@ -52,6 +52,8 @@ export async function createOverlayWindow () {
     // backgroundColor: '#00000008',
     webPreferences: {
       webSecurity: false,
+      allowRunningInsecureContent: false,
+      webviewTag: true,
       defaultFontSize: config.get('fontSize'),
       preload: path.join(__dirname, 'preload.js')
     }
@@ -200,30 +202,22 @@ function modifyResponseHeaders (webContents: WebContents) {
   webContents.session.webRequest.onHeadersReceived({
     urls: ['https://*/*']
   }, (details, next) => {
-    // 1) allow embedding in iframe
-    if (details.responseHeaders) {
-      for (const key in details.responseHeaders) {
-        if (key.toLowerCase() === 'x-frame-options' || key.toLowerCase() === 'content-security-policy') {
-          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-          delete details.responseHeaders[key]
-        }
+    if (!details.responseHeaders) return next({})
+
+    for (const key in details.responseHeaders) {
+      if (key.toLowerCase() === 'set-cookie') {
+        details.responseHeaders[key] = details.responseHeaders[key].map(cookie => {
+          cookie = cookie
+            .split(';')
+            .map(_ => _.trim())
+            .filter(_ =>
+              !_.toLowerCase().startsWith('samesite') &&
+              !_.toLowerCase().startsWith('secure'))
+            .join('; ')
+
+          return `${cookie}; SameSite=None; Secure`
+        })
       }
-    }
-
-    // 2) store cookies from Cloudflare
-    const cookies = details.responseHeaders?.['set-cookie']
-    if (cookies) {
-      details.responseHeaders!['set-cookie'] = cookies.map(cookie => {
-        cookie = cookie
-          .split(';')
-          .map(_ => _.trim())
-          .filter(_ =>
-            !_.toLowerCase().startsWith('samesite') &&
-            !_.toLowerCase().startsWith('secure'))
-          .join('; ')
-
-        return `${cookie}; SameSite=None; Secure`
-      })
     }
 
     next({ responseHeaders: details.responseHeaders })
