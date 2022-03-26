@@ -14,7 +14,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { StatFilter } from './interfaces'
-import { autoCurrency, findPriceByQueryId } from '@/web/background/Prices'
+import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
 import { BLIGHT_RECIPES, ITEM_BY_REF } from '@/assets/data'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 
@@ -40,9 +40,9 @@ export default defineComponent({
       let totalChaos: number | undefined = 0
       for (const oil of oils) {
         if (!oil) return null
-        const price = findPriceByQueryId(`ITEM::${oil.refName}`)
+        const price = findPriceByQuery({ ns: 'ITEM', name: oil.refName, variant: undefined })
         if (price) {
-          totalChaos += price.chaosValue
+          totalChaos += price.chaos
         } else {
           totalChaos = undefined
           break

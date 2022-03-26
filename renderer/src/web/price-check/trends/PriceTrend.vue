@@ -50,7 +50,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { findPriceByQueryId, autoCurrency } from '../../background/Prices'
+import { findPriceByQuery, autoCurrency } from '../../background/Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import VueApexcharts from 'vue3-apexcharts'
@@ -82,16 +82,16 @@ export default defineComponent({
 
     const trend = computed(() => {
       const detailsId = getDetailsId(props.item)
-      const trend = detailsId && findPriceByQueryId(detailsId)
+      const trend = detailsId && findPriceByQuery(detailsId)
       if (!trend) return
 
       const price = (props.item.info.refName === 'Exalted Orb')
-        ? { min: trend.chaosValue, max: trend.chaosValue, currency: 'chaos' as const }
-        : autoCurrency(trend.chaosValue, 'chaos')
+        ? { min: trend.chaos, max: trend.chaos, currency: 'chaos' as const }
+        : autoCurrency(trend.chaos, 'chaos')
 
       return {
         price: price,
-        change: deltaFromGraph(trend.graphPoints)
+        change: deltaFromGraph(trend.graph)
       }
     })
 

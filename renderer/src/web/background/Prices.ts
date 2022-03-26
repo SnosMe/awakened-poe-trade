@@ -1,164 +1,105 @@
-import { ref, watch } from 'vue'
+import { shallowRef, watch } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
 import { selected as selectedLeague, isPublic as isPublicLeague } from './Leagues'
 
-interface NinjaCurrencyInfo { /* eslint-disable camelcase */
-  currencyTypeName: string
-  receive?: {
-    get_currency_id: number
-    value: number
-  }
-  pay?: {
-    get_currency_id: number
-    value: number
-  }
-  receiveSparkLine: {
-    data: Array<number | null>
-    totalChange: number
-  }
-  lowConfidenceReceiveSparkLine: {
-    data: number[]
-    totalChange: number
-  }
-  detailsId: string
-}
-
-interface NinjaItemInfo {
+interface NinjaDenseInfo {
+  chaos: number
+  graph: Array<number | null>
   name: string
-  mapTier: number
-  levelRequired: number
-  baseType: string | null
-  stackSize: number
-  variant: null
-  links: number
-  itemClass: number
-  sparkline: { data: Array<number | null>, totalChange: number }
-  lowConfidenceSparkline: { data: number[], totalChange: number[] }
-  implicitModifiers: []
-  explicitModifiers: Array<{ text: string, optional: boolean }>
-  corrupted: false
-  gemLevel: number
-  gemQuality: number
-  itemType: string
-  chaosValue: number
-  count: number
-  detailsId: string
+  variant?: string
 }
 
-interface NinjaPrice {
-  chaosValue: number
-  graphPoints: number[]
-  detailsId: string
-}
+export const chaosExaRate = shallowRef<number | undefined>(undefined)
 
-let PRICE_BY_QUERY_ID = new Map<string, NinjaPrice>()
+type PriceDatabase = Array<{ ns: string, lines: string }>
+let PRICES_DB: PriceDatabase = []
+let lastUpdateTime = 0
 
-const RETRY_TIME = 60 * 1000
-const UPDATE_TIME = 10 * 60 * 1000
-
-export const chaosExaRate = ref<number | undefined>(undefined)
-
-const priceQueue = (() => {
-  function uniqueItemKey (item: NinjaItemInfo, extra = '') {
-    let key = `UNIQUE::${item.name} // ${item.baseType}`
-    if (item.variant) key += ` // ${item.variant}`
-    if (extra) key += ` // ${extra}`
-    return key
-  }
-
-  return [
-    { overview: 'currency', type: 'Currency', loaded: 0 },
-    { overview: 'currency', type: 'Fragment', loaded: 0 },
-    { overview: 'item', type: 'Oil', loaded: 0 },
-    { overview: 'item', type: 'Incubator', loaded: 0 },
-    { overview: 'item', type: 'Scarab', loaded: 0 },
-    { overview: 'item', type: 'Fossil', loaded: 0 },
-    { overview: 'item', type: 'Resonator', loaded: 0 },
-    { overview: 'item', type: 'Essence', loaded: 0 },
-    { overview: 'item', type: 'DivinationCard', loaded: 0, key: (item: NinjaItemInfo) => `DIVINATION_CARD::${item.name}` },
-    { overview: 'item', type: 'SkillGem', loaded: 0, key: (item: NinjaItemInfo) => `GEM::${item.name} // ${item.gemLevel} // ${item.gemQuality ?? 0}%` + ((item.corrupted) ? ' // Corrupted' : '') },
-    { overview: 'item', type: 'BaseType', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // ${item.levelRequired}` + ((item.variant) ? ` // ${item.variant}` : '') },
-    // { overview: 'item', type: 'HelmetEnchant', loaded: 0 },
-    { overview: 'item', type: 'BlightedMap', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // T${item.mapTier}` },
-    { overview: 'item', type: 'BlightRavagedMap', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // T${item.mapTier}` },
-    { overview: 'item', type: 'UniqueMap', loaded: 0, key: (item: NinjaItemInfo) => `UNIQUE::${item.name} // T${item.mapTier}` },
-    { overview: 'item', type: 'Map', loaded: 0, key: (item: NinjaItemInfo) => `ITEM::${item.name} // T${item.mapTier}` },
-    { overview: 'item', type: 'UniqueJewel', loaded: 0, key: uniqueItemKey },
-    { overview: 'item', type: 'UniqueFlask', loaded: 0, key: uniqueItemKey },
-    { overview: 'item', type: 'UniqueWeapon', loaded: 0, key: (item: NinjaItemInfo) => uniqueItemKey(item, (item.links) ? `${item.links}L` : '') },
-    { overview: 'item', type: 'UniqueArmour', loaded: 0, key: (item: NinjaItemInfo) => uniqueItemKey(item, (item.links) ? `${item.links}L` : '') },
-    { overview: 'item', type: 'UniqueAccessory', loaded: 0, key: uniqueItemKey },
-    { overview: 'item', type: 'Beast', loaded: 0, key: (item: NinjaItemInfo) => `CAPTURED_BEAST::${item.name}` },
-    { overview: 'item', type: 'Vial', loaded: 0 },
-    { overview: 'item', type: 'DeliriumOrb', loaded: 0 },
-    { overview: 'item', type: 'Invitation', loaded: 0 },
-    { overview: 'item', type: 'Artifact', loaded: 0 }
-  ]
-})()
+const RETRY_TIME = 2 * 60 * 1000
+const UPDATE_TIME = 16 * 60 * 1000
 
 async function load (force: boolean = false) {
   if (!selectedLeague.value || !isPublicLeague.value) return
   const leagueAtStartOfLoad = selectedLeague.value
 
-  for (const dataType of priceQueue) {
-    if (!force) {
-      if ((Date.now() - dataType.loaded) < UPDATE_TIME) continue
+  if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
+
+  const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/DenseOverviews?league=${leagueAtStartOfLoad}&language=en`)
+  const jsonBlob = await response.text()
+
+  if (leagueAtStartOfLoad === selectedLeague.value) {
+    PRICES_DB = splitJsonBlob(jsonBlob)
+
+    const exalted = findPriceByQuery({ ns: 'ITEM', name: 'Exalted Orb', variant: undefined })
+    if (exalted && exalted.chaos >= 15) {
+      chaosExaRate.value = exalted.chaos
     }
 
-    try {
-      const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/${dataType.overview}overview?league=${leagueAtStartOfLoad}&type=${dataType.type}&language=en`)
-      if (leagueAtStartOfLoad !== selectedLeague.value) return
-
-      if (dataType.overview === 'currency') {
-        const priceData: { lines: NinjaCurrencyInfo[] } = await response.json()
-
-        for (const currency of priceData.lines) {
-          if (!currency.receive) {
-            continue
-          }
-
-          PRICE_BY_QUERY_ID.set(`ITEM::${currency.currencyTypeName}`, {
-            detailsId: currency.detailsId,
-            chaosValue: currency.receive.value,
-            graphPoints: currency.receiveSparkLine.data.filter((point): point is number => point != null)
-          })
-
-          if (currency.detailsId === 'exalted-orb') {
-            const receive = currency.receive.value
-            const pay = currency.pay?.value ? (1 / currency.pay.value) : undefined
-            // sanity check, better poe.ninja to implement this on its own end
-            if (pay) {
-              if (pay >= 15 && receive >= 15 &&
-                  (Math.min(receive, pay) / Math.max(receive, pay)) >= 0.75) {
-                chaosExaRate.value = receive
-              } else {
-                // fallback to sell price
-                chaosExaRate.value = (pay >= 15) ? pay : undefined
-              }
-            } else {
-              chaosExaRate.value = (receive >= 15) ? receive : undefined
-            }
-          }
-        }
-      } else if (dataType.overview === 'item') {
-        const priceData: { lines: NinjaItemInfo[] } = await response.json()
-
-        for (const item of priceData.lines) {
-          PRICE_BY_QUERY_ID.set(dataType.key?.(item) ?? `ITEM::${item.name}`, {
-            detailsId: item.detailsId,
-            chaosValue: item.chaosValue,
-            graphPoints: item.sparkline.data.filter((point): point is number => point != null)
-          })
-        }
-      }
-
-      dataType.loaded = Date.now()
-    } catch (e) {}
+    lastUpdateTime = Date.now()
   }
 }
 
-export function findPriceByQueryId (id: string) {
-  return PRICE_BY_QUERY_ID.get(id)
+function splitJsonBlob (jsonBlob: string): PriceDatabase {
+  const NINJA_OVERVIEW = '{"type":"'
+  const NAMESPACE_MAP: Array<[string, string[]]> = [
+    ['ITEM', ['Currency', 'Fragment', 'DeliriumOrb', 'Scarab', 'Artifact', 'BaseType', 'Fossil', 'Resonator', 'Incubator', 'Oil', 'Vial', 'Invitation', 'BlightedMap', 'BlightRavagedMap', 'Essence', 'Map']],
+    ['DIVINATION_CARD', ['DivinationCard']],
+    ['CAPTURED_BEAST', ['Beast']],
+    ['UNIQUE', ['UniqueJewel', 'UniqueFlask', 'UniqueWeapon', 'UniqueArmour', 'UniqueAccessory', 'UniqueMap']],
+    ['GEM', ['SkillGem']]
+  ]
+
+  const byNamespace: PriceDatabase = []
+  let startPos = jsonBlob.indexOf(NINJA_OVERVIEW)
+  if (startPos === -1) return []
+
+  while (true) {
+    const endPos = jsonBlob.indexOf(NINJA_OVERVIEW, startPos + 1)
+
+    const type = jsonBlob.slice(
+      startPos + NINJA_OVERVIEW.length,
+      jsonBlob.indexOf('"', startPos + NINJA_OVERVIEW.length)
+    )
+    const lines = jsonBlob.slice(startPos, (endPos === -1) ? jsonBlob.length : endPos)
+
+    const isSupported = NAMESPACE_MAP.find(([_, types]) => types.includes(type))
+    if (isSupported) {
+      const found = byNamespace.find(({ ns }) => ns === isSupported[0])
+      if (found) {
+        found.lines += lines
+      } else {
+        byNamespace.push({ ns: isSupported[0], lines })
+      }
+    }
+
+    if (endPos === -1) break
+    startPos = endPos
+  }
+  return byNamespace
+}
+
+interface DbQuery {
+  ns: string
+  name: string
+  variant: string | undefined
+}
+
+export function findPriceByQuery (query: DbQuery): NinjaDenseInfo | null {
+  const lines = PRICES_DB.find(({ ns }) => ns === query.ns)?.lines
+  if (!lines) return null
+
+  // NOTE: order of keys is important
+  const searchString = JSON.stringify({
+    name: query.name,
+    variant: query.variant,
+    chaos: 0
+  }).replace(':0}', ':')
+
+  const startPos = lines.indexOf(searchString)
+  if (startPos === -1) return null
+  const endPos = lines.indexOf('}', startPos)
+
+  return JSON.parse(lines.slice(startPos, endPos + 1))
 }
 
 export function autoCurrency (value: number, currency: 'chaos' | 'exa'): { min: number, max: number, currency: 'chaos' | 'exa' } {
@@ -206,6 +147,6 @@ setInterval(() => {
 
 watch(selectedLeague, () => {
   chaosExaRate.value = undefined
-  PRICE_BY_QUERY_ID = new Map<string, NinjaPrice>()
+  PRICES_DB = []
   load(true)
 })

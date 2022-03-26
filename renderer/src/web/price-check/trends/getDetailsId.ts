@@ -17,15 +17,19 @@ export function isValuableBasetype (item: ParsedItem): boolean {
 }
 
 export function getDetailsId (item: ParsedItem) {
-  const ns = item.info.namespace
   if (item.category === ItemCategory.Gem) {
     return forSkillGem(item)
   }
   if (item.category === ItemCategory.Map) {
-    if (item.rarity === ItemRarity.Unique) {
-      return `${ns}::${item.info.refName} // T${item.mapTier}`
-    } else {
-      return `${ns}::${item.mapBlighted ? `${item.mapBlighted} ` : ''}${item.info.refName} // T${item.mapTier}`
+    return {
+      ns: item.info.namespace,
+      name: (item.mapBlighted)
+        ? `${item.mapBlighted} ${item.info.refName}`
+        : item.info.refName,
+      variant: variant([
+        `T${item.mapTier}`,
+        (item.rarity !== ItemRarity.Unique) ? 'Gen-13' : null
+      ])
     }
   }
   if (item.rarity === ItemRarity.Unique) {
@@ -34,14 +38,15 @@ export function getDetailsId (item: ParsedItem) {
   if (isValuableBasetype(item)) {
     return forBasetype(item)
   }
-  return `${ns}::${item.info.refName}`
+  return {
+    ns: item.info.namespace,
+    name: item.info.refName,
+    variant: undefined
+  }
 }
 
 function forSkillGem (item: ParsedItem) {
-  let id = item.gemAltQuality === 'Superior'
-    ? `${item.info.namespace}::${item.info.refName}`
-    : `${item.info.namespace}::${item.gemAltQuality} ${item.info.refName}`
-
+  let variant = ''
   if (
     SPECIAL_SUPPORT_GEM.includes(item.info.refName) ||
     item.info.refName === 'Portal' ||
@@ -49,9 +54,9 @@ function forSkillGem (item: ParsedItem) {
     item.info.refName === 'Blood and Sand' ||
     item.gemLevel! >= 20
   ) {
-    id += ` // ${item.gemLevel}`
+    variant += `${item.gemLevel}`
   } else {
-    id += ' // 1'
+    variant += '1'
   }
   if (
     item.quality &&
@@ -61,43 +66,52 @@ function forSkillGem (item: ParsedItem) {
   ) {
     // Gem Q20 with up to 4xGCP (TODO: should this rule apply to corrupted gems?)
     const q = (item.quality >= 16 && item.quality <= 20) ? 20 : item.quality
-    id += ` // ${q}%`
-  } else {
-    id += ' // 0%'
+    variant += `/${q}`
   }
   if (item.isCorrupted && item.info.refName !== 'Portal') {
-    id += ' // Corrupted'
+    variant += 'c'
   }
-  return id
+
+  return {
+    ns: item.info.namespace,
+    name: (item.gemAltQuality === 'Superior')
+      ? item.info.refName
+      : `${item.gemAltQuality} ${item.info.refName}`,
+    variant
+  }
 }
 
 function forBasetype (item: ParsedItem) {
-  let id = `${item.info.namespace}::${item.info.refName}`
+  if (item.influences.length > 1) return
 
-  id += ` // ${Math.min(item.itemLevel!, 86)}`
-
-  if (item.influences.length === 1) {
-    id += ` // ${item.influences[0]}`
-  } else if (item.influences.length > 1) {
-    return undefined
+  return {
+    ns: item.info.namespace,
+    name: item.info.refName,
+    variant: variant([
+      (item.itemLevel! >= 86) ? '86+' : String(item.itemLevel!),
+      (item.influences.length) ? item.influences[0] : null
+    ])
   }
-
-  return id
 }
 
 function forUniqueItem (item: ParsedItem) {
   if (!item.info.unique) return
 
-  let id = `${item.info.namespace}::${item.info.refName} // ${item.info.unique.base}`
-  const variant = getUniqueVariant(item)
-  if (variant) {
-    id += ` // ${variant}`
+  return {
+    ns: item.info.namespace,
+    name: item.info.refName,
+    variant: variant([
+      getUniqueVariant(item),
+      (item.category !== ItemCategory.Flask) ? item.info.unique.base : null,
+      (item.sockets?.linked) ? `${item.sockets.linked}L` : null
+    ])
   }
-  if (item.sockets?.linked) {
-    id += ` // ${item.sockets.linked}L`
-  }
+}
 
-  return id
+function variant (props: Array<string | null>): string | undefined {
+  props = props.filter(p => p != null)
+  if (!props.length) return undefined
+  return props.join(', ')
 }
 
 function getUniqueVariant (item: ParsedItem) {
@@ -194,4 +208,5 @@ function getUniqueVariant (item: ParsedItem) {
       return '3 passives'
     }
   }
+  return null
 }

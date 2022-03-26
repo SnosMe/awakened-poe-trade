@@ -72,7 +72,7 @@
     ],
     "items": [
       "ITEM::Blessing of Chayula",
-      "UNIQUE::Skin of the Loyal // Simple Robe // 6L",
+      "UNIQUE::Skin of the Loyal // Simple Robe, 6L",
       "UNIQUE::Severed in Sleep // Cutlass",
       "UNIQUE::The Blue Dream // Cobalt Jewel",
       "UNIQUE::The Green Dream // Viridian Jewel",
@@ -87,7 +87,7 @@
       "ITEM::Sacrifice at Dusk"
     ],
     "items": [
-      "UNIQUE::Atziri's Promise // Amethyst Flask",
+      "UNIQUE::Atziri's Promise",
       "UNIQUE::Doryani's Catalyst // Vaal Sceptre",
       "ITEM::Mortal Ignorance",
       "ITEM::Mortal Hope",
@@ -108,8 +108,8 @@
       "UNIQUE::Atziri's Acuity // Vaal Gauntlets",
       "UNIQUE::Atziri's Disfavour // Vaal Axe",
       "UNIQUE::The Vertex // Vaal Mask",
-      "UNIQUE::Atziri's Splendour // Sacrificial Garb // ES",
-      "UNIQUE::Atziri's Splendour // Sacrificial Garb // Evasion/ES/Life",
+      "UNIQUE::Atziri's Splendour // ES, Sacrificial Garb",
+      "UNIQUE::Atziri's Splendour // Evasion/ES/Life, Sacrificial Garb",
       "DIVINATION_CARD::Alluring Bounty",
       "DIVINATION_CARD::House of Mirrors"
     ]
@@ -123,7 +123,7 @@
     ],
     "items": [
       "ITEM::Orb of Dominance",
-      "UNIQUE::Dying Sun // Ruby Flask",
+      "UNIQUE::Dying Sun",
       "ITEM::Fragment of Knowledge",
       "ITEM::Fragment of Shape",
       "UNIQUE::Starforge // Infernal Sword",
@@ -144,7 +144,7 @@
       "UNIQUE::Watcher's Eye // Prismatic Jewel",
       "ITEM::Fragment of Terror",
       "ITEM::Fragment of Emptiness",
-      "UNIQUE::Impresence // Onyx Amulet // Chaos",
+      "UNIQUE::Impresence // Chaos, Onyx Amulet",
       "UNIQUE::Cyclopean Coil // Leather Belt",
       "UNIQUE::Hopeshredder // Ranger Bow",
       "UNIQUE::Blasphemer's Grasp // Assassin's Mitts",
@@ -312,8 +312,8 @@
     "items": [
       "UNIQUE::Split Personality // Crimson Jewel",
       "UNIQUE::Megalomaniac // Medium Cluster Jewel",
-      "UNIQUE::Voices // Large Cluster Jewel // 5 passives",
-      "UNIQUE::Voices // Large Cluster Jewel // 7 passives"
+      "UNIQUE::Voices // 5 passives, Large Cluster Jewel",
+      "UNIQUE::Voices // 7 passives, Large Cluster Jewel"
     ]
   },
   {
@@ -338,7 +338,7 @@
   },
   {
     "query": [
-      "UNIQUE::Tabula Rasa // Simple Robe // 6L"
+      "UNIQUE::Tabula Rasa // Simple Robe, 6L"
     ],
     "items": [
       "ITEM::Divine Orb"
@@ -564,7 +564,7 @@
   {
     "query": [
       "UNIQUE::The Blue Dream // Cobalt Jewel",
-      "UNIQUE::Skin of the Loyal // Simple Robe // 6L",
+      "UNIQUE::Skin of the Loyal // Simple Robe, 6L",
       "UNIQUE::The Red Dream // Crimson Jewel",
       "UNIQUE::Severed in Sleep // Cutlass",
       "UNIQUE::Eye of Chayula // Onyx Amulet",
@@ -711,10 +711,10 @@
   {
     "query": [
       "ITEM::Vial of the Ghost",
-      "UNIQUE::Soul Catcher // Quartz Flask"
+      "UNIQUE::Soul Catcher"
     ],
     "items": [
-      "UNIQUE::Soul Ripper // Quartz Flask"
+      "UNIQUE::Soul Ripper"
     ]
   },
 
