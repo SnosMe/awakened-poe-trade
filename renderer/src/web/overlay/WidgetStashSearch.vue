@@ -29,12 +29,13 @@
                 <input v-model="entry.text"
                   :placeholder="t('search text')"
                   class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1"
-                  :class="(entry.text.length > 50) ? 'bg-red-800' : 'bg-gray-700'">
+                  :class="(entry.text.length > 50) ? 'bg-red-800' : 'bg-gray-700'"
+                  @blur="handleDataChanged">
               </div>
               <div class="relative flex ml-2 text-gray-100" style="min-width: 5rem;">
                 <label class="flex mr-1">Key:</label>
                 <hotkey-input v-model="entry.hotkey"
-                  v-on:update:model-value="handleKeyChanged" class="w-24"/>
+                  v-on:update:model-value="handleDataChanged" class="w-24"/>
               </div>
               <button class="p-2 leading-none" @click="removeEntry(entry.id)">
                 <i class="fas fa-times text-gray-600"></i>
@@ -105,7 +106,7 @@ export default defineComponent({
           hotkey: null
         })
       },
-      handleKeyChanged () {
+      handleDataChanged () {
         // This manual save is necessary because of update order.
         // Normally config save happens automatically by OverlayWindow when it goes from
         // Overlay active to PoE active. But the new hotkey bindings are loaded before
