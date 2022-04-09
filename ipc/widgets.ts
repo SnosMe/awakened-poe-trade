@@ -65,6 +65,7 @@ export interface StashSearchWidget extends Widget {
     id: number
     name: string
     text: string
+    hotkey: string | null
   }>
 }
 

@@ -12,6 +12,7 @@ import * as ipc from '../../ipc/ipc-event'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
 import { restoreClipboard } from './clipboard-saver'
+import { StashSearchWidget } from '../../ipc/widgets'
 
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
@@ -32,6 +33,9 @@ export interface ShortcutAction {
     type: 'trigger-event'
     eventName: ipc.IpcToggleDelveGrid['name']
   } | {
+    type: 'stash-search'
+    text: string
+  } | {
     type: 'toggle-overlay'
   } | {
     type: 'paste-in-chat'
@@ -44,7 +48,6 @@ export interface ShortcutAction {
 
 function shortcutsFromConfig () {
   let actions: ShortcutAction[] = []
-
   const priceCheckCfg = priceCheckConfig()
   if (priceCheckCfg.hotkey) {
     actions.push({
@@ -104,6 +107,19 @@ function shortcutsFromConfig () {
       action: { type: 'test-only' }
     })
   }
+  for (const widget of config.get('widgets')) {
+    if (widget.wmType == "stash-search") {
+      const stashSearch = widget as StashSearchWidget;
+      for (const entry of stashSearch.entries) {
+        if (entry.hotkey) {
+          actions.push({
+            shortcut: entry.hotkey,
+            action: { type: 'stash-search', text: entry.text }
+          })
+        }
+      }
+    }
+  }
 
   {
     const allShortcuts = new Set([
@@ -156,6 +172,8 @@ function registerGlobal () {
         typeInChat(entry.action.text, entry.action.send)
       } else if (entry.action.type === 'trigger-event') {
         overlaySendEvent({ name: entry.action.eventName, payload: undefined })
+      } else if (entry.action.type === 'stash-search') {
+        stashSearch(entry.action.text)
       } else if (entry.action.type === 'copy-item') {
         const { action } = entry
 

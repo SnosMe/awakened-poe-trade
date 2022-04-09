@@ -22,7 +22,7 @@
                 <input v-model="entry.name"
                   :placeholder="t('entry name')"
                   class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1"
-                  :class="(entry?.name?.length > 50) ? 'bg-red-800' : 'bg-gray-700'">
+                  :class="(entry.name?.length > 50) ? 'bg-red-800' : 'bg-gray-700'">
               </div>
               <div class="relative flex-1" style="min-width: 15rem;">
                 <div class="leading-4 py-2 px-2 whitespace-nowrap">{{ entry.text }}{{ '\u2009' }}</div>
@@ -30,6 +30,10 @@
                   :placeholder="t('search text')"
                   class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1"
                   :class="(entry.text.length > 50) ? 'bg-red-800' : 'bg-gray-700'">
+              </div>
+              <div class="relative flex ml-2 text-gray-100" style="min-width: 5rem;">
+                <label class="flex mr-1">Key:</label>
+                <hotkey-input v-model="entry.hotkey" class="w-24" />
               </div>
               <button class="p-2 leading-none" @click="removeEntry(entry.id)">
                 <i class="fas fa-times text-gray-600"></i>
@@ -42,7 +46,10 @@
       </template>
       <div v-else class="flex flex-col gap-y-1 mt-2">
         <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
-          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">{{!!entry.name ? entry.name + ': ' : ''}}{{ entry.text }}</button>
+          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">
+            {{!!entry.name ? entry.name : entry.text}}
+            <span class="text-gray-500">{{!!entry.hotkey ? `(${entry.hotkey})` : ''}}</span>
+        </button>
       </div>
     </div>
   </widget>
@@ -55,9 +62,10 @@ import Widget from './Widget.vue'
 import DndContainer from 'vuedraggable'
 import { MainProcess } from '@/web/background/IPC'
 import { WidgetManager, StashSearchWidget } from './interfaces'
+import HotkeyInput from '../settings/HotkeyInput.vue'
 
 export default defineComponent({
-  components: { Widget, DndContainer },
+  components: { Widget, DndContainer, HotkeyInput },
   props: {
     config: {
       type: Object as PropType<StashSearchWidget>,
@@ -75,7 +83,7 @@ export default defineComponent({
         y: (Math.random() * (40 - 20) + 20)
       }
       props.config.entries = [{
-        id: 1, name: 'Currency', text: 'Currency'
+        id: 1, name: 'Currency', text: 'Currency', hotkey: null
       }]
       wm.show(props.config.wmId)
     }
@@ -91,7 +99,8 @@ export default defineComponent({
         props.config.entries.push({
           id: Math.max(0, ...props.config.entries.map(_ => _.id)) + 1,
           name: '',
-          text: ''
+          text: '',
+          hotkey: null
         })
       },
       stashSearch (text: string) {
@@ -110,7 +119,8 @@ export default defineComponent({
   "ru": {
     "entry name": "имя записи",
     "widget title": "заголовок виджета",
-    "search text": "текст поиска"
+    "search text": "текст поиска",
+    "hotkey": "Быстрые клавиши"
   }
 }
 </i18n>
