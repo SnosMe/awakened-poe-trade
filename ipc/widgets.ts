@@ -63,6 +63,7 @@ export interface StashSearchWidget extends Widget {
   anchor: Anchor
   entries: Array<{
     id: number
+    name: string
     text: string
   }>
 }

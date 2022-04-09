@@ -17,6 +17,13 @@
               <button class="p-2 leading-none cursor-move" data-qa="drag-handle">
                 <i class="fas fa-grip-vertical text-gray-400"></i>
               </button>
+              <div class="relative flex-1 mr-2" style="min-width: 15rem;">
+                <div class="leading-4 py-2 px-2 whitespace-nowrap">{{ entry.name }}{{ '\u2009' }}</div>
+                <input v-model="entry.name"
+                  :placeholder="t('entry name')"
+                  class="absolute top-0 w-full leading-4 text-gray-100 py-2 px-1"
+                  :class="(entry?.name?.length > 50) ? 'bg-red-800' : 'bg-gray-700'">
+              </div>
               <div class="relative flex-1" style="min-width: 15rem;">
                 <div class="leading-4 py-2 px-2 whitespace-nowrap">{{ entry.text }}{{ '\u2009' }}</div>
                 <input v-model="entry.text"
@@ -35,7 +42,7 @@
       </template>
       <div v-else class="flex flex-col gap-y-1 mt-2">
         <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
-          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">{{ entry.text }}</button>
+          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">{{!!entry.name ? entry.name + ': ' : ''}}{{ entry.text }}</button>
       </div>
     </div>
   </widget>
@@ -68,7 +75,7 @@ export default defineComponent({
         y: (Math.random() * (40 - 20) + 20)
       }
       props.config.entries = [{
-        id: 1, text: 'Currency'
+        id: 1, name: 'Currency', text: 'Currency'
       }]
       wm.show(props.config.wmId)
     }
@@ -83,6 +90,7 @@ export default defineComponent({
       addEntry () {
         props.config.entries.push({
           id: Math.max(0, ...props.config.entries.map(_ => _.id)) + 1,
+          name: '',
           text: ''
         })
       },
@@ -100,6 +108,7 @@ export default defineComponent({
 <i18n>
 {
   "ru": {
+    "entry name": "имя записи",
     "widget title": "заголовок виджета",
     "search text": "текст поиска"
   }
