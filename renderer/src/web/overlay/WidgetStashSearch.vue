@@ -33,7 +33,8 @@
               </div>
               <div class="relative flex ml-2 text-gray-100" style="min-width: 5rem;">
                 <label class="flex mr-1">Key:</label>
-                <hotkey-input v-model="entry.hotkey" class="w-24" />
+                <hotkey-input v-model="entry.hotkey"
+                  v-on:update:model-value="handleKeyChanged" class="w-24"/>
               </div>
               <button class="p-2 leading-none" @click="removeEntry(entry.id)">
                 <i class="fas fa-times text-gray-600"></i>
@@ -63,6 +64,7 @@ import DndContainer from 'vuedraggable'
 import { MainProcess } from '@/web/background/IPC'
 import { WidgetManager, StashSearchWidget } from './interfaces'
 import HotkeyInput from '../settings/HotkeyInput.vue'
+import { saveConfig } from '../Config'
 
 export default defineComponent({
   components: { Widget, DndContainer, HotkeyInput },
@@ -102,6 +104,15 @@ export default defineComponent({
           text: '',
           hotkey: null
         })
+      },
+      handleKeyChanged () {
+        // This manual save is necessary because of update order.
+        // Normally config save happens automatically by OverlayWindow when it goes from
+        // Overlay active to PoE active. But the new hotkey bindings are loaded before
+        // OverlayWindow has the settings saved.
+        // This means is always a delay of one "opening" between changing hotkeys and
+        // useable hotkeys.
+        saveConfig()
       },
       stashSearch (text: string) {
         MainProcess.sendEvent({
