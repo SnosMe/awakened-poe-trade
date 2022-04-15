@@ -49,7 +49,6 @@ export async function createOverlayWindow () {
     ...OW.WINDOW_OPTS,
     width: 800,
     height: 600,
-    // backgroundColor: '#00000008',
     webPreferences: {
       webSecurity: false,
       allowRunningInsecureContent: false,

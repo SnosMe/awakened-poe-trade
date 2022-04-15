@@ -12,7 +12,7 @@ const electronRunner = (() => {
       console.info('Restarting Electron process.')
 
       if (handle) handle.kill()
-      handle = child_process.spawn(electron, ['./dist/main.js'], {
+      handle = child_process.spawn(electron, ['.'], {
         stdio: 'inherit'
       })
     }
