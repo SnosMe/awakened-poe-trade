@@ -299,6 +299,13 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
     baseType: item.info.name
   }
 
+  if (item.info.gem!.vaal) {
+    filters.searchRelaxed = {
+      baseType: ITEM_BY_REF('GEM', item.info.gem!.normalVariant!)![0].name,
+      disabled: true
+    }
+  }
+
   filters.corrupted = {
     value: item.isCorrupted
   }
