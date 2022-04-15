@@ -303,28 +303,53 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
     value: item.isCorrupted
   }
 
-  if (item.quality) {
-    filters.quality = {
-      value: item.quality,
-      disabled: false
+  if (item.info.gem!.awakened) {
+    filters.gemLevel = {
+      value: item.gemLevel!,
+      disabled: (item.gemLevel! < 5)
     }
-  }
 
-  if (SPECIAL_SUPPORT_GEM.includes(item.info.refName)) {
-    filters.gemLevel = {
-      value: item.gemLevel!,
-      disabled: false
+    if (item.isCorrupted && item.quality) {
+      filters.quality = {
+        value: item.quality,
+        disabled: (item.quality < 20)
+      }
     }
-  } else {
-    filters.gemLevel = {
-      value: item.gemLevel!,
-      disabled: (item.gemLevel! < 16)
-    }
+
+    return filters
   }
 
   filters.altQuality = {
     value: item.gemAltQuality!,
     disabled: false
+  }
+
+  if (SPECIAL_SUPPORT_GEM.includes(item.info.refName)) {
+    filters.gemLevel = {
+      value: item.gemLevel!,
+      disabled: (item.gemLevel! < 3)
+    }
+
+    if (item.gemAltQuality !== 'Superior' && item.isCorrupted && item.quality) {
+      filters.quality = {
+        value: item.quality,
+        disabled: true
+      }
+    }
+
+    return filters
+  }
+
+  if (item.quality) {
+    filters.quality = {
+      value: item.quality,
+      disabled: (item.quality < 16)
+    }
+  }
+
+  filters.gemLevel = {
+    value: item.gemLevel!,
+    disabled: (item.gemLevel! < 19)
   }
 
   return filters
