@@ -14,7 +14,7 @@ const AUTO_CLEAR = [
 export function typeInChat (text: string, send: boolean) {
   restoreClipboard((clipboard) => {
     if (text.startsWith(PLACEHOLDER_LAST)) {
-      text = text.substr(`${PLACEHOLDER_LAST} `.length)
+      text = text.slice(`${PLACEHOLDER_LAST} `.length)
       clipboard.writeText(text)
       robotjs.keyTap('Enter', ['Ctrl'])
     } else if (text.endsWith(PLACEHOLDER_LAST)) {
