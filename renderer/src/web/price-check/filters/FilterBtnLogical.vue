@@ -92,6 +92,26 @@ export default defineComponent({
     "Anomalous": "Аномальный",
     "Divergent": "Искривлённый",
     "Phantasmal": "Фантомный"
+  },
+  "zh_TW": {
+    "Unidentified": "未鑑定",
+    "Veiled": "隱匿",
+    "Blighted": "凋落",
+    "Blight-ravaged": "凋落蔓延的",
+    "Mirrored": "已複製",
+    "Not Mirrored": "未複製",
+
+    "Shaper": "塑界者",
+    "Elder": "尊師",
+    "Crusader": "聖戰軍王",
+    "Hunter": "狩獵者",
+    "Redeemer": "救贖者",
+    "Warlord": "總督軍",
+
+    "Superior": "精良",
+    "Anomalous": "異常",
+    "Divergent": "相異",
+    "Phantasmal": "幻影"
   }
 }
 </i18n>

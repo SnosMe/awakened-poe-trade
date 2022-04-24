@@ -48,6 +48,7 @@
       <div class="mb-4 flex">
         <ui-radio v-model="language" value="en" class="mr-4">English</ui-radio>
         <ui-radio v-model="language" value="ru" class="mr-4">Русский</ui-radio>
+        <ui-radio v-model="language" value="zh_TW" class="mr-4">zh-TW</ui-radio>
       </div>
     </div>
     <div class="mb-2">

@@ -408,6 +408,34 @@ export default defineComponent({
     "1 Empty or Crafted Modifier": "1 свободное или ремесленное свойство",
     "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств",
     "First ask yourself: would you buy an item with this stat?": "Сначала спросите себя: купили бы вы предмет с этим модом?"
+  },
+  "zh_TW": {
+    "Q {0}%": "品質: {0}%",
+    "DPS: #": "DPS: #",
+    "Elemental DPS: #": "元素 DPS: #",
+    "Physical DPS: #": "物理 DPS: #",
+    "Attacks per Second: #": "攻擊次數/秒: #",
+    "Critical Strike Chance: #%": "暴擊率: #%",
+    "Armour: #": "護甲: #",
+    "Evasion Rating: #": "閃避: #",
+    "Energy Shield: #": "能量護盾: #",
+    "Ward: #": "保護: #",
+    "Block: #%": "格檔: #%",
+    "variant": "種類",
+    "corrupted": "已汙染",
+    "synthesised": "追憶",
+    "eldritch": "異能",
+    "pseudo": "偽屬性",
+    "Roll is not variable": "數值不可變",
+    "Elemental damage is not the main source of DPS": "元素傷害不是主要DPS來源",
+    "Physical damage is not the main source of DPS": "物理傷害不是主要DPS來源",
+    "Filtering by exact Elemental Resistance unreasonably increases the price": "若是精確的使用各元素抗性查詢價格，查詢結果會過高",
+    "Crafted Chaos Resistance without Explicit mod has no value": "單獨的工藝混沌抗性是沒有價值的",
+    "Buyer will likely change anointment": "買家可能會更改塗油",
+    "Select only if price-checking as base item for crafting": "當你只想查詢基底價格的時候才選取",
+    "1 Empty or Crafted Modifier": "1個空詞綴或是工藝詞綴",
+    "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "當物品有6個詞綴(其中1個是工藝詞綴)，或是5個詞綴才選取",
+    "First ask yourself: would you buy an item with this stat?": "你會買有這樣屬性的物品嗎？"
   }
 }
 </i18n>

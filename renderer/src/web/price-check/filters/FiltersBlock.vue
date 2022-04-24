@@ -186,6 +186,17 @@ export default defineComponent({
 
     "Pseudo": "Псевдо",
     "Base item": "База предмета"
+  },
+  "zh_TW": {
+    "Hidden": "被隱藏",
+    "Collapse": "折疊",
+    "Stats ignored": "忽略詞綴",
+    "{0} of {1}, stats": "詞綴: {0}/{1}",
+    "Mods": "Mods",
+    "No relevant stats were found": "找不到詞綴",
+
+    "Pseudo": "偽屬性",
+    "Base item": "物品基底"
   }
 }
 </i18n>

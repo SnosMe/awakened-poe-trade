@@ -4,7 +4,7 @@ import fnv1a from '@bensjoberg/fnv1a'
 import fs from 'fs'
 import path from 'path'
 
-const LANGUAGES = ['en', 'ru']
+const LANGUAGES = ['en', 'ru', 'zh_TW']
 
 for (const lang of LANGUAGES) {
   const lineStarts = {
