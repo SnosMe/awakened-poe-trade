@@ -88,10 +88,7 @@ export default defineComponent({
     "Redeemer": "Избавительница",
     "Warlord": "Вождь",
 
-    "Superior": "Высокого к-ва",
-    "Anomalous": "Аномальный",
-    "Divergent": "Искривлённый",
-    "Phantasmal": "Фантомный"
+    "Superior": "Высокого к-ва"
   }
 }
 </i18n>

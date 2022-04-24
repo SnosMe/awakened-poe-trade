@@ -184,5 +184,15 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 11
   }
 
+  if (config.configVersion < 12) {
+    config.widgets.push({
+      ...defaultConfig().widgets.find(w => w.wmType === 'item-search')!,
+      wmWants: 'show',
+      wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
+    })
+
+    config.configVersion = 12
+  }
+
   return config as unknown as Config
 }

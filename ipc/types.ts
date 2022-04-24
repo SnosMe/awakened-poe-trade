@@ -39,7 +39,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 11,
+  configVersion: 12,
   wikiKey: 'Alt + W',
   craftOfExileKey: null,
   overlayKey: 'Shift + Space',
@@ -171,6 +171,19 @@ export const defaultConfig = (): Config => ({
       wmZorder: 'exclusive',
       wmFlags: ['invisible-on-blur', 'ignore-ui-visibility']
     },
+    {
+      wmId: 6,
+      wmType: 'item-search',
+      wmTitle: '',
+      wmWants: 'hide',
+      wmZorder: 6,
+      wmFlags: ['invisible-on-blur'],
+      anchor: {
+        pos: 'tl',
+        x: 10,
+        y: 20
+      }
+    } as widget.ItemSearchWidget,
     // --- DEFAULT ---
     {
       wmId: 101,

@@ -26,5 +26,9 @@
   "Refresh": "Обновить",
   "map.mods.heist": "кража",
   "map.mods.outdated": "устарело",
-  "Support development on": "Поддержите разработку\u00A0на"
+  "Support development on": "Поддержите разработку\u00A0на",
+
+  "Anomalous": "Аномальный",
+  "Divergent": "Искривлённый",
+  "Phantasmal": "Фантомный"
 }
