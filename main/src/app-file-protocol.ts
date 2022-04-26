@@ -13,7 +13,7 @@ export function createFileProtocol () {
   })
 
   protocol.registerFileProtocol('app-file', (req, resp) => {
-    resp({ path: path.join(app.getPath('userData'), 'apt-data/files', req.url.substr('app-file://'.length)) })
+    resp({ path: path.join(app.getPath('userData'), 'apt-data/files', req.url.slice('app-file://'.length)) })
   })
 
   overlayOnEvent('OVERLAY->MAIN::import-file', (e, filePath) => {

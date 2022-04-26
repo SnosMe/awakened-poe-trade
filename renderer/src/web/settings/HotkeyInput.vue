@@ -47,9 +47,9 @@ export default defineComponent({
         let { code, ctrlKey, shiftKey, altKey } = e
 
         if (code.startsWith('Key')) {
-          code = code.substring('Key'.length)
+          code = code.slice('Key'.length)
         } else if (code.startsWith('Digit')) {
-          code = code.substring('Digit'.length)
+          code = code.slice('Digit'.length)
         } else if (e.key === 'Cancel' && code === 'Pause') {
           code = 'Cancel'
         }

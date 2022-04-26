@@ -74,3 +74,7 @@ export interface ImageStripWidget extends Widget {
     url: string
   }>
 }
+
+export interface ItemSearchWidget extends Widget {
+  anchor: Anchor
+}

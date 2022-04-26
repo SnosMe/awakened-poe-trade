@@ -203,7 +203,7 @@ function findInDatabase (item: ParserState) {
 
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.MAP_TIER)) {
-    item.mapTier = Number(section[0].substr(_$.MAP_TIER.length))
+    item.mapTier = Number(section[0].slice(_$.MAP_TIER.length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -288,7 +288,7 @@ function parseNamePlate (section: string[]) {
     rawText: undefined!
   }
 
-  const rarityText = section[1].substr(_$.RARITY.length)
+  const rarityText = section[1].slice(_$.RARITY.length)
   switch (rarityText) {
     case _$.RARITY_CURRENCY:
       item.category = ItemCategory.Currency
@@ -370,7 +370,7 @@ function parseUnidentified (section: string[], item: ParsedItem) {
 
 function parseItemLevel (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.ITEM_LEVEL)) {
-    item.itemLevel = Number(section[0].substr(_$.ITEM_LEVEL.length))
+    item.itemLevel = Number(section[0].slice(_$.ITEM_LEVEL.length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -378,7 +378,7 @@ function parseItemLevel (section: string[], item: ParsedItem) {
 
 function parseTalismanTier (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.TALISMAN_TIER)) {
-    item.talismanTier = Number(section[0].substr(_$.TALISMAN_TIER.length))
+    item.talismanTier = Number(section[0].slice(_$.TALISMAN_TIER.length))
     return SECTION_PARSED
   }
   return SECTION_SKIPPED
@@ -414,7 +414,7 @@ function parseGem (section: string[], item: ParsedItem) {
   }
   if (section[1]?.startsWith(_$.GEM_LEVEL)) {
     // "Level: 20 (Max)"
-    item.gemLevel = parseInt(section[1].substr(_$.GEM_LEVEL.length), 10)
+    item.gemLevel = parseInt(section[1].slice(_$.GEM_LEVEL.length), 10)
 
     parseQualityNested(section, item)
 
@@ -449,7 +449,7 @@ function parseStackSize (section: string[], item: ParsedItem) {
   }
   if (section[0].startsWith(_$.STACK_SIZE)) {
     // Portal Scroll "Stack Size: 2[localized separator]448/40"
-    const [value, max] = section[0].substr(_$.STACK_SIZE.length).replace(/[^\d/]/g, '').split('/').map(Number)
+    const [value, max] = section[0].slice(_$.STACK_SIZE.length).replace(/[^\d/]/g, '').split('/').map(Number)
     item.stackSize = { value, max }
 
     return SECTION_PARSED
@@ -459,7 +459,7 @@ function parseStackSize (section: string[], item: ParsedItem) {
 
 function parseSockets (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.SOCKETS)) {
-    let sockets = section[0].substr(_$.SOCKETS.length).trimEnd()
+    let sockets = section[0].slice(_$.SOCKETS.length).trimEnd()
 
     item.sockets = {
       white: (sockets.split('W').length - 1),
@@ -485,7 +485,7 @@ function parseQualityNested (section: string[], item: ParsedItem) {
   for (const line of section) {
     if (line.startsWith(_$.QUALITY)) {
       // "Quality: +20% (augmented)"
-      item.quality = parseInt(line.substr(_$.QUALITY.length), 10)
+      item.quality = parseInt(line.slice(_$.QUALITY.length), 10)
       break
     }
   }
@@ -496,23 +496,23 @@ function parseArmour (section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (line.startsWith(_$.ARMOUR)) {
-      item.armourAR = parseInt(line.substr(_$.ARMOUR.length), 10)
+      item.armourAR = parseInt(line.slice(_$.ARMOUR.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.EVASION)) {
-      item.armourEV = parseInt(line.substr(_$.EVASION.length), 10)
+      item.armourEV = parseInt(line.slice(_$.EVASION.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.ENERGY_SHIELD)) {
-      item.armourES = parseInt(line.substr(_$.ENERGY_SHIELD.length), 10)
+      item.armourES = parseInt(line.slice(_$.ENERGY_SHIELD.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.TAG_WARD)) {
-      item.armourWARD = parseInt(line.substr(_$.TAG_WARD.length), 10)
+      item.armourWARD = parseInt(line.slice(_$.TAG_WARD.length), 10)
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.BLOCK_CHANCE)) {
-      item.armourBLOCK = parseInt(line.substr(_$.BLOCK_CHANCE.length), 10)
+      item.armourBLOCK = parseInt(line.slice(_$.BLOCK_CHANCE.length), 10)
       isParsed = SECTION_PARSED; continue
     }
   }
@@ -529,23 +529,23 @@ function parseWeapon (section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (line.startsWith(_$.CRIT_CHANCE)) {
-      item.weaponCRIT = parseFloat(line.substr(_$.CRIT_CHANCE.length))
+      item.weaponCRIT = parseFloat(line.slice(_$.CRIT_CHANCE.length))
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.ATTACK_SPEED)) {
-      item.weaponAS = parseFloat(line.substr(_$.ATTACK_SPEED.length))
+      item.weaponAS = parseFloat(line.slice(_$.ATTACK_SPEED.length))
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.PHYSICAL_DAMAGE)) {
       item.weaponPHYSICAL = getRollOrMinmaxAvg(line
-        .substr(_$.PHYSICAL_DAMAGE.length)
+        .slice(_$.PHYSICAL_DAMAGE.length)
         .split('-').map(str => parseInt(str, 10))
       )
       isParsed = SECTION_PARSED; continue
     }
     if (line.startsWith(_$.ELEMENTAL_DAMAGE)) {
       item.weaponELEMENTAL =
-        line.substr(_$.ELEMENTAL_DAMAGE.length)
+        line.slice(_$.ELEMENTAL_DAMAGE.length)
           .split(', ')
           .map(element => getRollOrMinmaxAvg(element.split('-').map(str => parseInt(str, 10))))
           .reduce((sum, x) => sum + x, 0)
@@ -725,7 +725,7 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (line.startsWith(_$.HEIST_TARGET)) {
-      const targetText = line.substr(_$.HEIST_TARGET.length)
+      const targetText = line.slice(_$.HEIST_TARGET.length)
       switch (targetText) {
         case _$.HEIST_BLUEPRINT_ENCHANTS:
           item.heist.target = 'Enchants'; break
@@ -737,7 +737,7 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
           item.heist.target = 'Trinkets'; break
       }
     } else if (line.startsWith(_$.HEIST_WINGS_REVEALED)) {
-      item.heist.wingsRevealed = parseInt(line.substr(_$.HEIST_WINGS_REVEALED.length), 10)
+      item.heist.wingsRevealed = parseInt(line.slice(_$.HEIST_WINGS_REVEALED.length), 10)
     }
   }
 
@@ -747,7 +747,7 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
 function parseAreaLevelNested (section: string[], item: ParsedItem) {
   for (const line of section) {
     if (line.startsWith(_$.AREA_LEVEL)) {
-      item.areaLevel = Number(line.substr(_$.AREA_LEVEL.length))
+      item.areaLevel = Number(line.slice(_$.AREA_LEVEL.length))
       break
     }
   }

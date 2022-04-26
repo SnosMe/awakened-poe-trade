@@ -170,9 +170,9 @@ function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
   let { code, control: ctrlKey, shift: shiftKey, alt: altKey } = input
 
   if (code.startsWith('Key')) {
-    code = code.substr('Key'.length)
+    code = code.slice('Key'.length)
   } else if (code.startsWith('Digit')) {
-    code = code.substr('Digit'.length)
+    code = code.slice('Digit'.length)
   }
 
   if (shiftKey && altKey) code = `Shift + Alt + ${code}`
