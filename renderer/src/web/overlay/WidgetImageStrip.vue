@@ -61,7 +61,12 @@ export default defineComponent({
         y: (Math.random() * (15 - 5) + 5)
       }
       props.config.images = [{
-        id: 1, url: 'syndicate.jpg'
+        id: 1, url: 'syndicate.jpg',
+        id: 2, url: 'temple.png',
+        id: 3, url: 'heist_rogues.png',
+        id: 4, url: 'currency.png',
+        id: 5, url: 'essences.png',
+        id: 6, url: 'towers.png',
       }]
       nextTick(() => {
         wm.show(props.config.wmId)
