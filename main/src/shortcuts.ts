@@ -9,6 +9,7 @@ import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import { toggleOverlayState, assertOverlayActive, assertPoEActive, overlayOnEvent, overlaySendEvent } from './overlay-window'
 import * as ipc from '../../ipc/ipc-event'
+import { StashSearchWidget } from '../../ipc/widgets'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
 import { restoreClipboard } from './clipboard-saver'
@@ -31,6 +32,9 @@ export interface ShortcutAction {
   } | {
     type: 'trigger-event'
     eventName: ipc.IpcToggleDelveGrid['name']
+  } | {
+    type: 'stash-search'
+    text: string
   } | {
     type: 'toggle-overlay'
   } | {
@@ -104,6 +108,19 @@ function shortcutsFromConfig () {
       action: { type: 'test-only' }
     })
   }
+  for (const widget of config.get('widgets')) {
+    if (widget.wmType === 'stash-search') {
+      const stashSearch = widget as StashSearchWidget
+      for (const entry of stashSearch.entries) {
+        if (entry.hotkey) {
+          actions.push({
+            shortcut: entry.hotkey,
+            action: { type: 'stash-search', text: entry.text }
+          })
+        }
+      }
+    }
+  }
 
   {
     const allShortcuts = new Set([
@@ -156,6 +173,8 @@ function registerGlobal () {
         typeInChat(entry.action.text, entry.action.send)
       } else if (entry.action.type === 'trigger-event') {
         overlaySendEvent({ name: entry.action.eventName, payload: undefined })
+      } else if (entry.action.type === 'stash-search') {
+        stashSearch(entry.action.text)
       } else if (entry.action.type === 'copy-item') {
         const { action } = entry
 
