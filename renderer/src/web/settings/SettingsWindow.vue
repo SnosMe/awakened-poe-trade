@@ -38,6 +38,7 @@ import SettingsPricecheck from './price-check.vue'
 import SettingsDebug from './debug.vue'
 import SettingsMaps from './maps/maps.vue'
 import SettingsStashSearch from './stash-search.vue'
+import SettingsStopwatch from './stopwatch.vue'
 
 export default defineComponent({
   props: {
@@ -121,6 +122,8 @@ function menuByType (type?: string) {
   switch (type) {
     case 'stash-search':
       return [[SettingsStashSearch]]
+    case 'timer':
+      return [[SettingsStopwatch]]
     default:
       return [
         [SettingsHotkeys, SettingsChat],
@@ -185,7 +188,8 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Maps": "Карты",
     "Debug": "Debug",
     "Chat": "Чат",
-    "Stash search": "Поиск в тайнике"
+    "Stash search": "Поиск в тайнике",
+    "Stopwatch": "Секундомер"
   }
 }
 </i18n>
