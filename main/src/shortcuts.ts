@@ -9,10 +9,10 @@ import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import { toggleOverlayState, assertOverlayActive, assertPoEActive, overlayOnEvent, overlaySendEvent } from './overlay-window'
 import * as ipc from '../../ipc/ipc-event'
+import { StashSearchWidget } from '../../ipc/widgets'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
 import { restoreClipboard } from './clipboard-saver'
-import { StashSearchWidget } from '../../ipc/widgets'
 
 export const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
 
@@ -48,6 +48,7 @@ export interface ShortcutAction {
 
 function shortcutsFromConfig () {
   let actions: ShortcutAction[] = []
+
   const priceCheckCfg = priceCheckConfig()
   if (priceCheckCfg.hotkey) {
     actions.push({
@@ -108,8 +109,8 @@ function shortcutsFromConfig () {
     })
   }
   for (const widget of config.get('widgets')) {
-    if (widget.wmType == "stash-search") {
-      const stashSearch = widget as StashSearchWidget;
+    if (widget.wmType === 'stash-search') {
+      const stashSearch = widget as StashSearchWidget
       for (const entry of stashSearch.entries) {
         if (entry.hotkey) {
           actions.push({

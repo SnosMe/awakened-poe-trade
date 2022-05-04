@@ -5,8 +5,9 @@
       <div class="flex flex-col gap-y-1 mt-2">
         <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
           class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">
-            {{!!entry.name ? entry.name : entry.text}}
-            <span class="text-gray-500">{{!!entry.hotkey ? `(${entry.hotkey})` : ''}}</span>
+            {{ entry.name || entry.text }}
+            <span v-if="entry.hotkey"
+              class="text-center inline-block text-black bg-gray-400 rounded px-1">{{ entry.hotkey }}</span>
         </button>
       </div>
     </div>
