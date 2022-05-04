@@ -3,11 +3,15 @@ import type { PropType } from 'vue'
 import type { Config } from '@/../../ipc/types'
 import type { Widget } from '@/web/overlay/interfaces'
 
-export function configProp () {
+export function configProp<T = undefined> () {
   return {
     config: {
       type: Object as PropType<Config>,
       required: true as const
+    },
+    configWidget: {
+      type: Object as PropType<T>,
+      default: undefined as unknown as T
     }
   }
 }

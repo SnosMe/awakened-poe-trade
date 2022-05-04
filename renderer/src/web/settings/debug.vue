@@ -36,6 +36,7 @@ import { useI18n } from 'vue-i18n'
 import { configProp, configModelValue } from './utils'
 
 export default defineComponent({
+  name: 'Debug',
   props: configProp(),
   setup (props) {
     const { t } = useI18n()

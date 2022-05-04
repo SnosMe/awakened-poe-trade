@@ -77,6 +77,10 @@ export default defineComponent({
     hideable: {
       type: Boolean,
       default: true
+    },
+    inlineEdit: {
+      type: Boolean,
+      default: true
     }
   },
   setup (props) {
@@ -213,8 +217,14 @@ export default defineComponent({
         wm.hide(props.config.wmId)
       },
       toggleEdit () {
-        isEditing.value = !isEditing.value
         isMoving.value = false
+        if (props.inlineEdit) {
+          isEditing.value = !isEditing.value
+        } else {
+          const settings = wm.widgets.value.find(w => w.wmType === 'settings')!
+          wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true)
+          wm.show(settings.wmId)
+        }
       },
       toggleMove () {
         isMoving.value = !isMoving.value
