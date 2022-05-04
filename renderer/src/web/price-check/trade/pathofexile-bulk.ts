@@ -90,7 +90,7 @@ export async function requestResults (
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
-    const response = await fetch(`https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
+    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
     data = await response.json() as ResponseT

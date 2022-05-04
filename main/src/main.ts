@@ -23,6 +23,8 @@ if (!config.get('hardwareAcceleration')) {
   app.disableHardwareAcceleration()
 }
 
+app.enableSandbox()
+
 app.on('ready', async () => {
   logger.info('App is running', {
     source: 'init',

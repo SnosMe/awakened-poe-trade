@@ -9,6 +9,8 @@ files:
     filter: ["main.js", "preload.js"]
   - from: "../renderer/dist"
     to: "."
+extraMetadata:
+  main: "main.js"
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true

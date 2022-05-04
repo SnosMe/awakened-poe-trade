@@ -49,11 +49,11 @@ export async function createOverlayWindow () {
     ...OW.WINDOW_OPTS,
     width: 800,
     height: 600,
-    // backgroundColor: '#00000008',
     webPreferences: {
       webSecurity: false,
       allowRunningInsecureContent: false,
       webviewTag: true,
+      spellcheck: false,
       defaultFontSize: config.get('fontSize'),
       preload: path.join(__dirname, 'preload.js')
     }
@@ -171,9 +171,9 @@ function handleExtraCommands (event: Electron.Event, input: Electron.Input) {
   let { code, control: ctrlKey, shift: shiftKey, alt: altKey } = input
 
   if (code.startsWith('Key')) {
-    code = code.substr('Key'.length)
+    code = code.slice('Key'.length)
   } else if (code.startsWith('Digit')) {
-    code = code.substr('Digit'.length)
+    code = code.slice('Digit'.length)
   }
 
   if (shiftKey && altKey) code = `Shift + Alt + ${code}`

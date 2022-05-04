@@ -1,13 +1,10 @@
 <template>
-  <div
-    style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: 0 auto; max-width: 50rem; max-height: 38rem;"
-    class="flex-grow layout-column bg-gray-800 rounded-b overflow-hidden animate__animated animate__slideInDown"
-  >
+  <div :class="$style.window" class="flex-grow layout-column">
     <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
     <div class="flex flex-grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
-        <template v-for="(item, itemIdx) of menuItems" :key="itemIdx">
-          <button v-if="!item.isSeparator"
+        <template v-for="item of menuItems">
+          <button v-if="item.type === 'menu-item'"
             @click="item.select" :class="[$style['menu-item'], { [$style['active']]: item.isSelected }]">{{ item.name }}</button>
           <div v-else
             class="border-b mx-2 border-gray-800" />
@@ -17,7 +14,7 @@
       <div class="text-gray-100 flex-grow layout-column bg-gray-900">
         <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">
           <component v-if="configClone"
-            :is="selectedComponent" :config="configClone" />
+            :is="selectedComponent" :config="configClone" :configWidget="configWidget" />
         </div>
         <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end gap-x-2">
           <button @click="save" class="px-3 bg-gray-800 rounded">{{ t('Save') }}</button>
@@ -40,6 +37,7 @@ import SettingsGeneral from './general.vue'
 import SettingsPricecheck from './price-check.vue'
 import SettingsDebug from './debug.vue'
 import SettingsMaps from './maps/maps.vue'
+import SettingsStashSearch from './stash-search.vue'
 
 export default defineComponent({
   props: {
@@ -64,51 +62,42 @@ export default defineComponent({
         configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
       } else {
         configClone.value = null
+        if (selectedWmId.value != null) {
+          selectedWmId.value = null
+          selectedComponent.value = SettingsHotkeys
+        }
       }
     })
+
+    const selectedWmId = shallowRef<number | null>(null)
+    const configWidget = computed(() => configClone.value?.widgets.find(w => w.wmId === selectedWmId.value))
 
     watch(() => props.config.wmFlags, (wmFlags) => {
       if (wmFlags.includes('settings:price-check')) {
         selectedComponent.value = SettingsPricecheck
         wm.setFlag(props.config.wmId, 'settings:price-check', false)
+        return
+      }
+      const flagStr = wmFlags.find(flag => flag.startsWith('settings:widget:'))
+      if (flagStr) {
+        const _wmId = Number(flagStr.split(':')[2])
+        const _widget = wm.widgets.value.find(w => w.wmId === _wmId)!
+        selectedWmId.value = _wmId
+        selectedComponent.value = menuByType(_widget.wmType)[0][0]
+        wm.setFlag(props.config.wmId, flagStr, false)
       }
     }, { deep: true })
 
-    const menuItems = computed(() => [
-      {
-        name: t('Hotkeys'),
-        select () { selectedComponent.value = SettingsHotkeys },
-        isSelected: (selectedComponent.value === SettingsHotkeys)
-      },
-      {
-        name: t('Chat'),
-        select () { selectedComponent.value = SettingsChat },
-        isSelected: (selectedComponent.value === SettingsChat)
-      },
-      { isSeparator: true },
-      {
-        name: t('General'),
-        select () { selectedComponent.value = SettingsGeneral },
-        isSelected: (selectedComponent.value === SettingsGeneral)
-      },
-      { isSeparator: true },
-      {
-        name: t('Price check'),
-        select () { selectedComponent.value = SettingsPricecheck },
-        isSelected: (selectedComponent.value === SettingsPricecheck)
-      },
-      {
-        name: t('Maps'),
-        select () { selectedComponent.value = SettingsMaps },
-        isSelected: (selectedComponent.value === SettingsMaps)
-      },
-      { isSeparator: true },
-      {
-        name: t('Debug'),
-        select () { selectedComponent.value = SettingsDebug },
-        isSelected: (selectedComponent.value === SettingsDebug)
-      }
-    ])
+    const menuItems = computed(() => flatJoin(
+      menuByType(configWidget.value?.wmType)
+        .map(group => group.map(component => ({
+          name: t(component.name),
+          select () { selectedComponent.value = component },
+          isSelected: (selectedComponent.value === component),
+          type: 'menu-item' as const
+        }))),
+      () => ({ type: 'separator' as const })
+    ))
 
     return {
       t,
@@ -122,13 +111,52 @@ export default defineComponent({
       },
       menuItems,
       selectedComponent,
-      configClone
+      configClone,
+      configWidget
     }
   }
 })
+
+function menuByType (type?: string) {
+  switch (type) {
+    case 'stash-search':
+      return [[SettingsStashSearch]]
+    default:
+      return [
+        [SettingsHotkeys, SettingsChat],
+        [SettingsGeneral],
+        [SettingsPricecheck, SettingsMaps],
+        [SettingsDebug]
+      ]
+  }
+}
+
+function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
+  const out: Array<T | J> = []
+  for (const nested of arr) {
+    out.push(...nested)
+    out.push(joinEl())
+  }
+  return out.slice(0, -1)
+}
 </script>
 
 <style lang="postcss" module>
+.window {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: 0 auto;
+  max-width: 50rem;
+  max-height: 38rem;
+  overflow: hidden;
+  @apply bg-gray-800;
+  @apply rounded-b;
+  &:global {
+    animation-name: slideInDown;
+    animation-duration: 1s;
+  }
+}
+
 .menu-item {
   text-align: left;
   @apply p-2;
@@ -155,8 +183,9 @@ export default defineComponent({
     "General": "Общие",
     "Price check": "Прайс-чек",
     "Maps": "Карты",
-    "Debug": "Debug (Отладка)",
-    "Chat": "Чат"
+    "Debug": "Debug",
+    "Chat": "Чат",
+    "Stash search": "Поиск в тайнике"
   }
 }
 </i18n>

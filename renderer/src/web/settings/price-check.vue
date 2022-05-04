@@ -120,6 +120,7 @@ import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import * as Leagues from '../background/Leagues'
 
 export default defineComponent({
+  name: 'Price check',
   props: configProp(),
   setup (props) {
     const configWidget = computed(() => findWidget<PriceCheckWidget>('price-check', props.config)!)
