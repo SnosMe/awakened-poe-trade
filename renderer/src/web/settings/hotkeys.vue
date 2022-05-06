@@ -60,6 +60,7 @@ import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
+  name: 'Hotkeys',
   components: { HotkeyInput },
   props: configProp(),
   setup (props) {

@@ -57,13 +57,17 @@ export interface ItemCheckWidget extends Widget {
 
 export interface StopwatchWidget extends Widget {
   anchor: Anchor
+  toggleKey: string | null
+  resetKey: string | null
 }
 
 export interface StashSearchWidget extends Widget {
   anchor: Anchor
   entries: Array<{
     id: number
+    name: string
     text: string
+    hotkey: string | null
   }>
 }
 

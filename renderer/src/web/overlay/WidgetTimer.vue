@@ -1,5 +1,5 @@
 <template>
-  <widget :config="config" move-handles="center" v-slot="{ isMoving }" readonly :hideable="false">
+  <widget :config="config" move-handles="center" v-slot="{ isMoving }" :inline-edit="false" :hideable="false">
     <div :class="$style.wrapper">
       <div :class="$style.timer">
         <span>{{ formatted.h }}:{{ formatted.m }}:</span><span>{{ formatted.s }}</span>
@@ -8,7 +8,7 @@
       <div v-if="!isMoving" :class="$style.controls">
         <button v-if="!isRunning" @click="start" :class="$style.button"><i class="fas fa-play"></i></button>
         <button v-else @click="stop" :class="$style.button"><i class="fas fa-pause"></i></button>
-        <button @click="restart" :class="$style.button"><i class="fas fa-redo"></i></button>
+        <button @click="reset" :class="$style.button"><i class="fas fa-redo"></i></button>
       </div>
     </div>
   </widget>
@@ -18,6 +18,7 @@
 import { defineComponent, PropType, inject, ref, onUnmounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Widget from './Widget.vue'
+import { MainProcess } from '@/web/background/IPC'
 import { Duration } from 'luxon'
 import { WidgetManager, StopwatchWidget } from './interfaces'
 
@@ -38,9 +39,24 @@ export default defineComponent({
         x: (Math.random() * (60 - 40) + 40),
         y: (Math.random() * (60 - 40) + 40)
       }
+      props.config.toggleKey = null
+      props.config.resetKey = null
       wm.show(props.config.wmId)
     }
     props.config.wmFlags = ['invisible-on-blur']
+
+    const hotkeyController = MainProcess.onEvent('MAIN->OVERLAY::stopwatch', (action) => {
+      if (action.wmId !== props.config.wmId) return
+
+      if (action.type === 'start-stop') {
+        isRunning.value ? stop() : start()
+      } else if (action.type === 'reset') {
+        reset()
+      }
+    })
+    onUnmounted(() => {
+      hotkeyController.abort()
+    })
 
     const isRunning = ref(false)
     const millis = ref(0)
@@ -73,7 +89,7 @@ export default defineComponent({
         wm.setFlag(props.config.wmId, 'invisible-on-blur', true)
       }
     }
-    function restart () {
+    function reset () {
       prevTick.value = Date.now()
       millis.value = (isRunning.value) ? 1000 : 0
       if (!isRunning.value) {
@@ -96,7 +112,7 @@ export default defineComponent({
       isRunning,
       start,
       stop,
-      restart
+      reset
     }
   }
 })

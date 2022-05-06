@@ -21,6 +21,7 @@ import { configProp } from './utils'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
+  name: 'Chat',
   components: { HotkeyInput },
   props: configProp(),
   setup (props) {

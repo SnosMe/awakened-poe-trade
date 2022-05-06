@@ -33,10 +33,12 @@ class MainProcessBinding {
   onEvent<Name extends IpcEvent['name']> (
     name: Name,
     cb: (payload: IpcEventPayload<Name>) => void
-  ) {
+  ): AbortController {
+    const controller = new AbortController()
     this.evBus.addEventListener(name, (e) => {
       cb((e as CustomEvent<IpcEventPayload<Name>>).detail)
-    })
+    }, { signal: controller.signal })
+    return controller
   }
 
   closeOverlay () {

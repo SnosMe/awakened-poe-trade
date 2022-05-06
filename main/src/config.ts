@@ -185,7 +185,8 @@ function upgradeConfig (_config: Config): Config {
   }
 
   if (config.configVersion < 12) {
-    config.widgets.push({
+    const afterSettings = config.widgets.findIndex(w => w.wmType === 'settings')
+    config.widgets.splice(afterSettings + 1, 0, {
       ...defaultConfig().widgets.find(w => w.wmType === 'item-search')!,
       wmWants: 'show',
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1

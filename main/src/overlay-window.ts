@@ -53,6 +53,7 @@ export async function createOverlayWindow () {
       webSecurity: false,
       allowRunningInsecureContent: false,
       webviewTag: true,
+      spellcheck: false,
       defaultFontSize: config.get('fontSize'),
       preload: path.join(__dirname, 'preload.js')
     }

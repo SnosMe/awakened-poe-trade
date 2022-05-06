@@ -198,10 +198,10 @@ export const defaultConfig = (): Config => ({
         y: 46
       },
       entries: [
-        { id: 1, text: '"Pack Size: +3"' },
-        { id: 2, text: 'Reflect' },
-        { id: 3, text: '"Cannot Leech Life"' },
-        { id: 4, text: '"Cannot Leech Mana"' }
+        { id: 1, name: '', text: '"Pack Size: +3"', hotkey: null },
+        { id: 2, name: '', text: 'Reflect', hotkey: null },
+        { id: 3, name: '', text: '"Cannot Leech Life"', hotkey: null },
+        { id: 4, name: '', text: '"Cannot Leech Mana"', hotkey: null }
       ]
     } as widget.StashSearchWidget,
     {
@@ -217,12 +217,12 @@ export const defaultConfig = (): Config => ({
         y: 56
       },
       entries: [
-        { id: 1, text: 'Currency' },
-        { id: 2, text: '"Divination Card"' },
-        { id: 3, text: 'Fossil' },
-        { id: 4, text: '"Map Tier"' },
-        { id: 5, text: '"Map Device" "Rarity: Normal"' },
-        { id: 6, text: 'Tane Laboratory' }
+        { id: 1, name: '', text: 'Currency', hotkey: null },
+        { id: 2, name: '', text: '"Divination Card"', hotkey: null },
+        { id: 3, name: '', text: 'Fossil', hotkey: null },
+        { id: 4, name: '', text: '"Map Tier"', hotkey: null },
+        { id: 5, name: '', text: '"Map Device" "Rarity: Normal"', hotkey: null },
+        { id: 6, name: '', text: 'Tane Laboratory', hotkey: null }
       ]
     } as widget.StashSearchWidget,
     {

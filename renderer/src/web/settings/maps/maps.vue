@@ -47,6 +47,7 @@ function statToShowOrder (stat: Omit<MapStatMatcher, 'outdated'>) {
 }
 
 export default defineComponent({
+  name: 'Maps',
   components: {
     MapsStatEntry,
     VirtualScroll: VirtualScroll as VirtualScrollT<MapStatMatcher>

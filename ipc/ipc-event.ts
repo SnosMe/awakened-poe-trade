@@ -18,7 +18,8 @@ export type IpcEvent =
   IpcOpenCraftOfExile |
   IpcImportFile |
   IpcToggleDelveGrid |
-  IpcClientLog
+  IpcClientLog |
+  IpcStopwatchAction
 
 export type IpcEventPayload<Name extends IpcEvent['name'], T extends IpcEvent = IpcEvent> =
   T extends { name: Name } ? T['payload'] : never
@@ -101,6 +102,12 @@ export type IpcToggleDelveGrid =
 export type IpcClientLog =
   Event<'MAIN->OVERLAY::client-log', {
     lines: string[]
+  }>
+
+export type IpcStopwatchAction =
+  Event<'MAIN->OVERLAY::stopwatch', {
+    wmId: number
+    type: 'start-stop' | 'reset'
   }>
 
 interface Event<TName extends string, TPayload = undefined> {

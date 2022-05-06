@@ -8,7 +8,8 @@ import { config } from './config'
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import { toggleOverlayState, assertOverlayActive, assertPoEActive, overlayOnEvent, overlaySendEvent } from './overlay-window'
-import * as ipc from '../../ipc/ipc-event'
+import type * as ipc from '../../ipc/ipc-event'
+import type * as widget from '../../ipc/widgets'
 import { typeInChat } from './game-chat'
 import { gameConfig } from './game-config'
 import { restoreClipboard } from './clipboard-saver'
@@ -28,9 +29,14 @@ export interface ShortcutAction {
       'price-check-locked'
     )
     focusOverlay?: boolean
-  } | {
+  } | ({
     type: 'trigger-event'
-    eventName: ipc.IpcToggleDelveGrid['name']
+  } & (
+    ShortcutActionTriggerEvent<ipc.IpcToggleDelveGrid['name']> |
+    ShortcutActionTriggerEvent<ipc.IpcStopwatchAction['name']>
+  )) | {
+    type: 'stash-search'
+    text: string
   } | {
     type: 'toggle-overlay'
   } | {
@@ -40,6 +46,11 @@ export interface ShortcutAction {
   } | {
     type: 'test-only'
   }
+}
+
+interface ShortcutActionTriggerEvent<Name extends ipc.IpcEvent['name']> {
+  eventName: Name
+  payload: ipc.IpcEventPayload<Name>
 }
 
 function shortcutsFromConfig () {
@@ -85,7 +96,7 @@ function shortcutsFromConfig () {
   if (config.get('delveGridKey')) {
     actions.push({
       shortcut: config.get('delveGridKey')!,
-      action: { type: 'trigger-event', eventName: 'MAIN->OVERLAY::delve-grid' },
+      action: { type: 'trigger-event', eventName: 'MAIN->OVERLAY::delve-grid', payload: undefined },
       keepModKeys: true
     })
   }
@@ -103,6 +114,43 @@ function shortcutsFromConfig () {
       shortcut: copyItemShortcut,
       action: { type: 'test-only' }
     })
+  }
+  for (const widget of config.get('widgets')) {
+    if (widget.wmType === 'stash-search') {
+      const stashSearch = widget as widget.StashSearchWidget
+      for (const entry of stashSearch.entries) {
+        if (entry.hotkey) {
+          actions.push({
+            shortcut: entry.hotkey,
+            action: { type: 'stash-search', text: entry.text }
+          })
+        }
+      }
+    } else if (widget.wmType === 'timer') {
+      const stopwatch = widget as widget.StopwatchWidget
+      if (stopwatch.toggleKey) {
+        actions.push({
+          shortcut: stopwatch.toggleKey,
+          keepModKeys: true,
+          action: {
+            type: 'trigger-event',
+            eventName: 'MAIN->OVERLAY::stopwatch',
+            payload: { wmId: widget.wmId, type: 'start-stop' }
+          }
+        })
+      }
+      if (stopwatch.resetKey) {
+        actions.push({
+          shortcut: stopwatch.resetKey,
+          keepModKeys: true,
+          action: {
+            type: 'trigger-event',
+            eventName: 'MAIN->OVERLAY::stopwatch',
+            payload: { wmId: widget.wmId, type: 'reset' }
+          }
+        })
+      }
+    }
   }
 
   {
@@ -155,7 +203,9 @@ function registerGlobal () {
       } else if (entry.action.type === 'paste-in-chat') {
         typeInChat(entry.action.text, entry.action.send)
       } else if (entry.action.type === 'trigger-event') {
-        overlaySendEvent({ name: entry.action.eventName, payload: undefined })
+        overlaySendEvent({ name: entry.action.eventName, payload: entry.action.payload } as ipc.IpcEvent)
+      } else if (entry.action.type === 'stash-search') {
+        stashSearch(entry.action.text)
       } else if (entry.action.type === 'copy-item') {
         const { action } = entry
 
