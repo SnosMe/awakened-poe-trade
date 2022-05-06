@@ -32,7 +32,7 @@ export interface Config {
   hardwareAcceleration: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'zh_TW'
+  language: 'en' | 'ru' | 'cmn-Hant'
   widgets: widget.Widget[]
   fontSize: number
   disableUpdateDownload: boolean

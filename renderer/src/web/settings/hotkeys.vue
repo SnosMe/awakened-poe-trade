@@ -97,7 +97,7 @@ export default defineComponent({
     "Stash tab scrolling": "Прокрутка вкладок тайника",
     "Delve grid": "Сетка \"Спуска\""
   },
-  "zh_TW": {
+  "cmn-Hant": {
     "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(倒退鍵) 來清除快捷鍵。",
     "Price check": "查詢價格",
     "Auto-hide Mode": "自動隱藏模式",

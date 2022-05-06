@@ -187,7 +187,7 @@ export default defineComponent({
     "Pseudo": "Псевдо",
     "Base item": "База предмета"
   },
-  "zh_TW": {
+  "cmn-Hant": {
     "Hidden": "被隱藏",
     "Collapse": "折疊",
     "Stats ignored": "忽略詞綴",

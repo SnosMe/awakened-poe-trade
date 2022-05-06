@@ -93,7 +93,7 @@ export default defineComponent({
     "Divergent": "Искривлённый",
     "Phantasmal": "Фантомный"
   },
-  "zh_TW": {
+  "cmn-Hant": {
     "Unidentified": "未鑑定",
     "Veiled": "隱匿",
     "Blighted": "凋落",

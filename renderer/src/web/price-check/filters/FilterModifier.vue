@@ -409,7 +409,7 @@ export default defineComponent({
     "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers": "Выбирайте, только если у предмета 6 свойств (1 из которых ремесленное) или если у него 5 свойств",
     "First ask yourself: would you buy an item with this stat?": "Сначала спросите себя: купили бы вы предмет с этим модом?"
   },
-  "zh_TW": {
+  "cmn-Hant": {
     "Q {0}%": "品質: {0}%",
     "DPS: #": "DPS: #",
     "Elemental DPS: #": "元素 DPS: #",

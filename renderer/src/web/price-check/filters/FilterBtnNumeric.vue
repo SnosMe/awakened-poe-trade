@@ -136,7 +136,7 @@ export default defineComponent({
     "Quality:": "Качество:",
     "Level:": "Уровень:"
   },
-  "zh_TW": {
+  "cmn-Hant": {
     "Item Level:": "物品等級:",
     "Stock:": "堆疊數量:",
     "Map Tier:": "地圖階級:",
