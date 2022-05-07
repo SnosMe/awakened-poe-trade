@@ -192,6 +192,11 @@ function upgradeConfig (_config: Config): Config {
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
     })
 
+    config.realm = 'pc-ggg'
+    if (config.language === 'zh_TW' as string) {
+      config.language = 'cmn-Hant'
+    }
+
     config.configVersion = 12
   }
 

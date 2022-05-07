@@ -214,6 +214,9 @@ export default defineComponent({
     "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
     "Show price prediction": "Показывать приблизительную цену"
+  },
+  "cmn-Hant": {
+    "League": "聯盟"
   }
 }
 </i18n>

@@ -1,5 +1,13 @@
 import { computed, ref } from 'vue'
-import { AppConfig } from '@/web/Config'
+import { AppConfig, poeWebApi } from '@/web/Config'
+import { MainProcess } from './IPC'
+
+export const PERMANENT_LEAGUE_IDS = [
+  // pc-ggg
+  'Standard', 'Hardcore',
+  // pc-garena
+  '標準模式', '專家模式'
+]
 
 export const isLoading = ref(false)
 export const error = ref<string | null>(null)
@@ -28,7 +36,7 @@ export async function load () {
   error.value = null
 
   try {
-    const response = await fetch('https://api.pathofexile.com/leagues?type=main&realm=pc')
+    const response = await fetch(`${MainProcess.CORS}https://${poeWebApi()}/api/leagues?type=main&realm=pc`)
     if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
     const leagues: Array<{ id: string, rules: Array<{ id: string }> }> = await response.json()
     tradeLeagues.value = leagues.filter(league => !league.rules.some(rule => rule.id === 'NoParties'))

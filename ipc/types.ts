@@ -33,6 +33,7 @@ export interface Config {
   accountName: string
   stashScroll: boolean
   language: 'en' | 'ru' | 'cmn-Hant'
+  realm: 'pc-ggg' | 'pc-garena'
   widgets: widget.Widget[]
   fontSize: number
   disableUpdateDownload: boolean
@@ -82,6 +83,7 @@ export const defaultConfig = (): Config => ({
   accountName: '',
   stashScroll: true,
   language: 'en',
+  realm: 'pc-ggg',
   fontSize: 16,
   disableUpdateDownload: false,
   widgets: [

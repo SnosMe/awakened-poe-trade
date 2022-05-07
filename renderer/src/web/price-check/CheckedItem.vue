@@ -103,7 +103,8 @@ export default defineComponent({
         chaosPriceThreshold: widget.value.chaosPriceThreshold,
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
-        searchStatRange: widget.value.searchStatRange
+        searchStatRange: widget.value.searchStatRange,
+        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg')
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||
