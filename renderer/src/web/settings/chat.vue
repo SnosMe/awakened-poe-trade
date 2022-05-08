@@ -2,7 +2,7 @@
   <div class="max-w-md p-2">
     <div class="flex flex-col gap-y-4 mb-4">
       <div class="flex flex-col gap-y-1" v-for="(command, idx) in commands" :key="idx">
-        <input v-model.trim="command.text" class="rounded bg-gray-900 px-1 block w-full font-fontin-regular" />
+        <input v-model.trim="command.text" class="rounded bg-gray-900 px-1 block w-full font-poe" />
         <div class="flex gap-x-2">
           <ui-toggle v-model="command.send" class="ml-1">{{ t('press Enter') }}</ui-toggle>
           <button @click="removeCommand(idx)" class="ml-auto text-gray-500">{{ t('Remove') }}</button>
