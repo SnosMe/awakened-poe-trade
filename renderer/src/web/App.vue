@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="text-sm font-fontin-small-caps">
+  <div id="app" class="text-sm font-poe-sc">
     <OverlayWindow />
   </div>
 </template>

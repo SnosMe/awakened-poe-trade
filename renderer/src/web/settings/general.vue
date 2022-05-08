@@ -18,7 +18,7 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Font size') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4 flex">
-        <input v-model.number="fontSize" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+        <input v-model.number="fontSize" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
         <span class="ml-1">px</span>
       </div>
     </div>
@@ -50,7 +50,7 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Background, when APT window is clickable') }}</div>
       <div class="mb-1 flex">
-        <input v-model="overlayBackground" class="rounded bg-gray-900 px-1 block w-48 mb-1 mr-4 font-fontin-regular text-center" />
+        <input v-model="overlayBackground" class="rounded bg-gray-900 px-1 block w-48 mb-1 mr-4 font-poe text-center" />
         <ui-radio v-model="overlayBackground" value="rgba(255, 255, 255, 0)">{{ t('Transparent') }}</ui-radio>
       </div>
       <div class="mb-4" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'">

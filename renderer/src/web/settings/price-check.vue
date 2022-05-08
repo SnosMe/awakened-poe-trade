@@ -26,7 +26,7 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Account name') }}</div>
       <div class="mb-4">
-        <input v-model="accountName" class="rounded bg-gray-900 px-1 block w-full mb-1 font-fontin-regular" />
+        <input v-model="accountName" class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe" />
       </div>
     </div>
     <div class="mb-2">
@@ -43,7 +43,7 @@
       <div class="mb-4 flex">
         <div class="flex mr-6">
           <span class="mr-1">+-</span>
-          <input v-model.number="searchStatRange" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+          <input v-model.number="searchStatRange" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
           <span class="ml-1">%</span>
         </div>
         <ui-radio v-model="searchStatRange" :value="0">{{ t('Exact roll') }}</ui-radio>
@@ -53,7 +53,7 @@
       <div class="flex-1 mb-1">{{ t('Minimum buyout price') }}</div>
       <div class="mb-4 flex">
         <div class="flex mr-6">
-          <input v-model.number="chaosPriceThreshold" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+          <input v-model.number="chaosPriceThreshold" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
           <span class="ml-2">{{ t('Chaos Orbs') }}</span>
         </div>
       </div>
@@ -104,7 +104,7 @@
       <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
       <div class="flex">
         <div class="flex mr-6">
-          <input v-model.number="apiLatencySeconds" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-fontin-regular text-center" />
+          <input v-model.number="apiLatencySeconds" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
           <span class="ml-2">{{ t('seconds') }}</span>
         </div>
       </div>

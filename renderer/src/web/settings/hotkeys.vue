@@ -45,7 +45,7 @@
     <div class="mb-8 flex">
       <label class="flex-1">{{ t('Stash tab scrolling') }}</label>
       <div class="flex gap-x-4">
-        <ui-radio v-model="stashScroll" :value="true" class="font-fontin-regular">Ctrl + MouseWheel</ui-radio>
+        <ui-radio v-model="stashScroll" :value="true" class="font-poe">Ctrl + MouseWheel</ui-radio>
         <ui-radio v-model="stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
       </div>
     </div>

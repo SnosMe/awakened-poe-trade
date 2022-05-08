@@ -18,7 +18,7 @@
         <button class="btn ml-2" @click="retry">{{ t('Retry') }}</button>
         <button class="btn ml-1" @click="openCaptcha">{{ t('Browser') }}</button>
       </div>
-      <div class="font-fontin-bold">{{ t('Verify that the realm is not under maintenance and pathofexile.com is loading.') }}</div>
+      <div class="font-bold">{{ t('Verify that the realm is not under maintenance and pathofexile.com is loading.') }}</div>
     </div>
   </div>
 </template>

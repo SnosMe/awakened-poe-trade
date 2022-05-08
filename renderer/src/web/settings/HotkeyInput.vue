@@ -4,7 +4,7 @@
     @keydown.prevent
     :placeholder="modelValue || t('Not Set')"
     :class="{ 'placeholder-red-400': !modelValue }"
-    class="rounded bg-gray-900 px-1 text-center font-fontin-regular" />
+    class="rounded bg-gray-900 px-1 text-center font-poe" />
 </template>
 
 <script lang="ts">
