@@ -1,5 +1,20 @@
 <template>
   <div class="max-w-md p-2">
+    <div class="mb-4">
+      <div class="flex-1 mb-1">{{ t('Language') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
+      <div class="flex gap-x-4">
+        <ui-radio v-model="language" value="en">English</ui-radio>
+        <ui-radio v-model="language" value="ru">Русский</ui-radio>
+        <ui-radio v-model="language" value="cmn-Hant">正體中文</ui-radio>
+      </div>
+    </div>
+    <div class="mb-4" v-if="language === 'cmn-Hant'">
+      <div class="flex-1 mb-1">{{ t('Realm') }}</div>
+      <div class="flex gap-x-4">
+        <ui-radio v-model="realm" value="pc-ggg">{{ t('International') }}</ui-radio>
+        <ui-radio v-model="realm" value="pc-garena">{{ t('Garena') }}</ui-radio>
+      </div>
+    </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Font size') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4 flex">
@@ -8,21 +23,10 @@
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Clicking on background focuses game') }}</div>
+      <div class="flex-1 mb-1">{{ t('Auto-download updates') }}</div>
       <div class="mb-4 flex">
-        <ui-radio v-model="overlayBackgroundClose" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
-        <ui-radio v-model="overlayBackgroundClose" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
-      </div>
-    </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Background, when APT window is clickable') }}</div>
-      <div class="mb-1 flex">
-        <input v-model="overlayBackground" class="rounded bg-gray-900 px-1 block w-48 mb-1 mr-4 font-poe text-center" />
-        <ui-radio v-model="overlayBackground" value="rgba(255, 255, 255, 0)">{{ t('Transparent') }}</ui-radio>
-      </div>
-      <div class="mb-4" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'">
-        <ui-radio v-model="overlayBackgroundExclusive" :value="true" class="mr-4">{{ t('Show for Overlay and Price Check') }}</ui-radio><br>
-        <ui-radio v-model="overlayBackgroundExclusive" :value="false">{{ t('Show only for Overlay') }}</ui-radio>
+        <ui-radio v-model="disableUpdateDownload" :value="false" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="disableUpdateDownload" :value="true" class="mr-4">{{ t('No') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
@@ -44,24 +48,28 @@
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Language') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
-      <div class="mb-4 flex">
-        <ui-radio v-model="language" value="en" class="mr-4">English</ui-radio>
-        <ui-radio v-model="language" value="ru" class="mr-4">Русский</ui-radio>
+      <div class="flex-1 mb-1">{{ t('Background, when APT window is clickable') }}</div>
+      <div class="mb-1 flex">
+        <input v-model="overlayBackground" class="rounded bg-gray-900 px-1 block w-48 mb-1 mr-4 font-poe text-center" />
+        <ui-radio v-model="overlayBackground" value="rgba(255, 255, 255, 0)">{{ t('Transparent') }}</ui-radio>
+      </div>
+      <div class="mb-4" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'">
+        <ui-radio v-model="overlayBackgroundExclusive" :value="true" class="mr-4">{{ t('Show for Overlay and Price Check') }}</ui-radio><br>
+        <ui-radio v-model="overlayBackgroundExclusive" :value="false">{{ t('Show only for Overlay') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Auto-download updates') }}</div>
+      <div class="flex-1 mb-1">{{ t('Clicking on background focuses game') }}</div>
       <div class="mb-4 flex">
-        <ui-radio v-model="disableUpdateDownload" :value="false" class="mr-4">{{ t('Yes') }}</ui-radio>
-        <ui-radio v-model="disableUpdateDownload" :value="true" class="mr-4">{{ t('No') }}</ui-radio>
+        <ui-radio v-model="overlayBackgroundClose" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
+        <ui-radio v-model="overlayBackgroundClose" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configModelValue, configProp } from './utils'
 
@@ -79,7 +87,16 @@ export default defineComponent({
       overlayBackgroundExclusive: configModelValue(() => props.config, 'overlayBackgroundExclusive'),
       clientLog: configModelValue(() => props.config, 'clientLog'),
       gameConfig: configModelValue(() => props.config, 'gameConfig'),
-      language: configModelValue(() => props.config, 'language'),
+      language: computed<typeof props.config.language>({
+        get () { return props.config.language },
+        set (value) {
+          props.config.language = value
+          if (value !== 'cmn-Hant') {
+            props.config.realm = 'pc-ggg'
+          }
+        }
+      }),
+      realm: configModelValue(() => props.config, 'realm'),
       disableUpdateDownload: configModelValue(() => props.config, 'disableUpdateDownload'),
       handleLogFile (e: InputEvent) {
         props.config.clientLog = (e.target as HTMLInputElement).files![0].path
@@ -106,6 +123,11 @@ export default defineComponent({
     "PoE config file": "Файл настроек PoE",
     "Browse": "Выбрать",
     "Auto-download updates": "Автозагрузка обновлений"
+  },
+  "cmn-Hant": {
+    "Language": "語言",
+    "Realm": "分流",
+    "International": "國際"
   }
 }
 </i18n>

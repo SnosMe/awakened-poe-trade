@@ -28,3 +28,14 @@ export function updateConfig (updates: Config) {
 export function saveConfig () {
   MainProcess.saveConfig(JSON.parse(JSON.stringify(AppConfig())))
 }
+
+export function poeWebApi () {
+  const { language, realm } = AppConfig()
+  switch (language) {
+    case 'en': return 'www.pathofexile.com'
+    case 'ru': return 'ru.pathofexile.com'
+    case 'cmn-Hant': return (realm === 'pc-garena')
+      ? 'web.poe.garena.tw'
+      : 'www.pathofexile.com'
+  }
+}

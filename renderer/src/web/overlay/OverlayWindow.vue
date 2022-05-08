@@ -60,6 +60,8 @@ export default defineComponent({
   setup () {
     loadLeagues()
 
+    document.documentElement.lang = AppConfig().language
+
     const active = shallowRef(false)
     const gameFocused = shallowRef(false)
     const hideUI = shallowRef(false)

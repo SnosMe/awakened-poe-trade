@@ -260,12 +260,16 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     ? filters.searchRelaxed
     : filters.searchExact
 
-  if (activeSearch.name) {
+  if (activeSearch.nameTrade) {
+    query.name = nameToQuery(activeSearch.nameTrade, filters)
+  } else if (activeSearch.name) {
     query.name = nameToQuery(activeSearch.name, filters)
   }
 
-  if (activeSearch.baseType) {
-    query.type = nameToQuery(activeSearch.baseTypeTrade ?? activeSearch.baseType, filters)
+  if (activeSearch.baseTypeTrade) {
+    query.type = nameToQuery(activeSearch.baseTypeTrade, filters)
+  } else if (activeSearch.baseType) {
+    query.type = nameToQuery(activeSearch.baseType, filters)
   }
 
   if (filters.rarity) {

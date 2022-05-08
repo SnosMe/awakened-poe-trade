@@ -94,4 +94,7 @@ export const LANGUAGE_DETECTOR = [{
 }, {
   lang: 'ko',
   firstLine: '아이템 종류: '
+}, {
+  lang: 'cmn-Hant',
+  firstLine: '物品種類: '
 }]

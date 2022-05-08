@@ -135,6 +135,17 @@ export default defineComponent({
     "White:": "Белые:",
     "Quality:": "Качество:",
     "Level:": "Уровень:"
+  },
+  "cmn-Hant": {
+    "Item Level:": "物品等級:",
+    "Stock:": "堆疊數量:",
+    "Map Tier:": "地圖階級:",
+    "Area Level:": "地區等級:",
+    "Wings Revealed:": "展翅:",
+    "Links:": "連線:",
+    "White:": "白:",
+    "Quality:": "品質:",
+    "Level:": "等級:"
   }
 }
 </i18n>

@@ -1,4 +1,5 @@
 import { shallowRef, watch } from 'vue'
+import { AppConfig } from '@/web/Config'
 import { MainProcess } from '@/web/background/IPC'
 import { selected as selectedLeague, isPublic as isPublicLeague } from './Leagues'
 
@@ -19,7 +20,7 @@ const RETRY_TIME = 2 * 60 * 1000
 const UPDATE_TIME = 16 * 60 * 1000
 
 async function load (force: boolean = false) {
-  if (!selectedLeague.value || !isPublicLeague.value) return
+  if (!selectedLeague.value || !isPublicLeague.value || AppConfig().realm !== 'pc-ggg') return
   const leagueAtStartOfLoad = selectedLeague.value
 
   if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return

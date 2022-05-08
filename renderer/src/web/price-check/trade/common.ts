@@ -4,8 +4,8 @@ import { AppConfig } from '@/web/Config'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
 import { ParsedItem, ItemCategory } from '@/parser'
-
-export const PERMANENT_LEAGUES = ['Standard', 'Hardcore']
+export { poeWebApi as getTradeEndpoint } from '@/web/Config'
+export { PERMANENT_LEAGUE_IDS as PERMANENT_LEAGUES } from '@/web/background/Leagues'
 
 export interface Account {
   name: string
@@ -46,15 +46,6 @@ export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filte
 
 export function tradeTag (item: ParsedItem): string | undefined {
   return item.info.tradeTag
-}
-
-const ENDPOINT_BY_LANG = {
-  en: 'www.pathofexile.com',
-  ru: 'ru.pathofexile.com'
-}
-
-export function getTradeEndpoint (): string {
-  return ENDPOINT_BY_LANG[AppConfig().language]
 }
 
 export const RATE_LIMIT_RULES = {

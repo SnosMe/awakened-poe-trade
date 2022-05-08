@@ -14,6 +14,7 @@ export function createPresets (
     collapseListings: 'app' | 'api'
     activateStockFilter: boolean
     searchStatRange: number
+    useEn: boolean
   }
 ): { presets: FilterPreset[], active: string } {
   if (item.info.refName === 'Expedition Logbook') {

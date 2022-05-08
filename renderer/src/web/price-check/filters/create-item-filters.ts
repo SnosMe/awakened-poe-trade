@@ -2,20 +2,23 @@ import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity, ItemInfluence } from '@/parser'
 import { tradeTag, PERMANENT_LEAGUES } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
-import { ITEM_BY_REF } from '@/assets/data'
+import { BaseType, ITEM_BY_REF } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
+interface CreateOptions {
+  league: string
+  chaosPriceThreshold: number
+  collapseListings: 'app' | 'api'
+  activateStockFilter: boolean
+  exact: boolean
+  useEn: boolean
+}
+
 export function createFilters (
   item: ParsedItem,
-  opts: {
-    league: string
-    chaosPriceThreshold: number
-    collapseListings: 'app' | 'api'
-    activateStockFilter: boolean
-    exact: boolean
-  }
+  opts: CreateOptions
 ): ItemFilters {
   const filters: ItemFilters = {
     searchExact: {},
@@ -30,12 +33,12 @@ export function createFilters (
   }
 
   if (item.category === ItemCategory.Gem) {
-    return createGemFilters(item, filters)
+    return createGemFilters(item, filters, opts)
   }
   if (item.category === ItemCategory.CapturedBeast) {
     filters.searchExact = {
       baseType: item.info.name,
-      baseTypeTrade: item.info.refName
+      baseTypeTrade: item.info.refName // NOTE: always English on trade
     }
     return filters
   }
@@ -47,13 +50,15 @@ export function createFilters (
   }
   if (item.category === ItemCategory.Invitation) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
     return filters
   }
   if (item.category === ItemCategory.MetamorphSample) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
     filters.itemLevel = {
       value: item.itemLevel!,
@@ -67,7 +72,8 @@ export function createFilters (
     item.info.refName === 'Charged Compass'
   ) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
     if (item.info.refName === 'Chronicle of Atzoatl') {
       filters.areaLevel = {
@@ -82,12 +88,14 @@ export function createFilters (
     if (item.rarity === ItemRarity.Unique && item.info.unique) {
       filters.searchExact = {
         name: item.info.name,
-        baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
+        nameTrade: t(opts, item.info),
+        baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
       }
     } else {
       const isOccupiedBy = item.statsByType.some(calc => calc.stat.ref === 'Map is occupied by #')
       filters.searchExact = {
-        baseType: item.info.name
+        baseType: item.info.name,
+        baseTypeTrade: t(opts, item.info)
       }
       filters.searchRelaxed = {
         category: item.category,
@@ -105,7 +113,8 @@ export function createFilters (
     }
   } else if (item.info.refName === 'Expedition Logbook') {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
     filters.areaLevel = {
       value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81]),
@@ -113,7 +122,8 @@ export function createFilters (
     }
   } else if (item.category === ItemCategory.HeistContract) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
   } else if (item.category === ItemCategory.HeistBlueprint) {
     filters.searchRelaxed = {
@@ -121,7 +131,8 @@ export function createFilters (
       disabled: true // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3109852
     }
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
 
     filters.areaLevel = {
@@ -140,7 +151,8 @@ export function createFilters (
     item.rarity !== ItemRarity.Unique
   ) {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
     filters.searchRelaxed = {
       category: item.category,
@@ -149,11 +161,13 @@ export function createFilters (
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
     filters.searchExact = {
       name: item.info.name,
-      baseType: ITEM_BY_REF('ITEM', item.info.unique.base)![0].name
+      nameTrade: t(opts, item.info),
+      baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
     }
   } else {
     filters.searchExact = {
-      baseType: item.info.name
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
     }
     if (item.category && CATEGORY_TO_TRADE_ID.has(item.category)) {
       filters.searchRelaxed = {
@@ -294,14 +308,21 @@ export function createFilters (
   return filters
 }
 
-function createGemFilters (item: ParsedItem, filters: ItemFilters) {
+function createGemFilters (
+  item: ParsedItem,
+  filters: ItemFilters,
+  opts: CreateOptions
+) {
   filters.searchExact = {
-    baseType: item.info.name
+    baseType: item.info.name,
+    baseTypeTrade: t(opts, item.info)
   }
 
   if (item.info.gem!.vaal) {
+    const normalGem = ITEM_BY_REF('GEM', item.info.gem!.normalVariant!)![0]
     filters.searchRelaxed = {
-      baseType: ITEM_BY_REF('GEM', item.info.gem!.normalVariant!)![0].name,
+      baseType: normalGem.name,
+      baseTypeTrade: t(opts, normalGem),
       disabled: true
     }
   }
@@ -360,6 +381,10 @@ function createGemFilters (item: ParsedItem, filters: ItemFilters) {
   }
 
   return filters
+}
+
+function t (opts: CreateOptions, info: BaseType) {
+  return (opts.useEn) ? info.refName : info.name
 }
 
 function floorToBracket (value: number, brackets: readonly number[]) {

@@ -10,6 +10,7 @@ export interface FilterPreset {
 
 interface SearchFilter {
   name?: string
+  nameTrade?: string
   baseType?: string
   baseTypeTrade?: string
   category?: ItemCategory
