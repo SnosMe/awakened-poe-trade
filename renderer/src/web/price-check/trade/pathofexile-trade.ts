@@ -1,6 +1,6 @@
 import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
-import prop from 'dot-prop'
+import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/web/background/IPC'
 import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
@@ -245,15 +245,15 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   const { query } = body
 
   if (filters.trade.chaosPriceThreshold !== 0) {
-    prop.set(query.filters, 'trade_filters.filters.price.min', filters.trade.chaosPriceThreshold)
+    propSet(query.filters, 'trade_filters.filters.price.min', filters.trade.chaosPriceThreshold)
   }
 
   if (filters.trade.collapseListings === 'api') {
-    prop.set(query.filters, 'trade_filters.filters.collapse.option', String(true))
+    propSet(query.filters, 'trade_filters.filters.collapse.option', String(true))
   }
 
   if (filters.trade.listed) {
-    prop.set(query.filters, 'trade_filters.filters.indexed.option', filters.trade.listed)
+    propSet(query.filters, 'trade_filters.filters.indexed.option', filters.trade.listed)
   }
 
   const activeSearch = (filters.searchRelaxed && !filters.searchRelaxed.disabled)
@@ -273,100 +273,100 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.rarity) {
-    prop.set(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
+    propSet(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
   }
 
   if (activeSearch.category) {
     const id = CATEGORY_TO_TRADE_ID.get(activeSearch.category)
     if (id) {
-      prop.set(query.filters, 'type_filters.filters.category.option', id)
+      propSet(query.filters, 'type_filters.filters.category.option', id)
     } else {
       throw new Error(`Invalid category: ${activeSearch.category}`)
     }
   }
 
   if (filters.corrupted?.value === false) {
-    prop.set(query.filters, 'misc_filters.filters.corrupted.option', String(false))
+    propSet(query.filters, 'misc_filters.filters.corrupted.option', String(false))
   }
   if (filters.mirrored) {
     if (filters.mirrored.disabled) {
-      prop.set(query.filters, 'misc_filters.filters.mirrored.option', String(false))
+      propSet(query.filters, 'misc_filters.filters.mirrored.option', String(false))
     }
   } else if (
     item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||
     item.rarity === ItemRarity.Rare
   ) {
-    prop.set(query.filters, 'misc_filters.filters.mirrored.option', String(false))
+    propSet(query.filters, 'misc_filters.filters.mirrored.option', String(false))
   }
 
   if (filters.gemLevel && !filters.gemLevel.disabled) {
-    prop.set(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.value)
+    propSet(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.value)
   }
 
   if (filters.quality && !filters.quality.disabled) {
-    prop.set(query.filters, 'misc_filters.filters.quality.min', filters.quality.value)
+    propSet(query.filters, 'misc_filters.filters.quality.min', filters.quality.value)
   }
 
   if (filters.itemLevel && !filters.itemLevel.disabled) {
-    prop.set(query.filters, 'misc_filters.filters.ilvl.min', filters.itemLevel.value)
+    propSet(query.filters, 'misc_filters.filters.ilvl.min', filters.itemLevel.value)
     if (filters.itemLevel.max) {
-      prop.set(query.filters, 'misc_filters.filters.ilvl.max', filters.itemLevel.max)
+      propSet(query.filters, 'misc_filters.filters.ilvl.max', filters.itemLevel.max)
     }
   }
 
   if (filters.stackSize && !filters.stackSize.disabled) {
-    prop.set(query.filters, 'misc_filters.filters.stack_size.min', filters.stackSize.value)
+    propSet(query.filters, 'misc_filters.filters.stack_size.min', filters.stackSize.value)
   }
 
   if (filters.linkedSockets && !filters.linkedSockets.disabled) {
-    prop.set(query.filters, 'socket_filters.filters.links.min', filters.linkedSockets.value)
+    propSet(query.filters, 'socket_filters.filters.links.min', filters.linkedSockets.value)
   }
 
   if (filters.whiteSockets && !filters.whiteSockets.disabled) {
-    prop.set(query.filters, 'socket_filters.filters.sockets.w', filters.whiteSockets.value)
+    propSet(query.filters, 'socket_filters.filters.sockets.w', filters.whiteSockets.value)
   }
 
   if (filters.mapTier && !filters.mapTier.disabled) {
-    prop.set(query.filters, 'map_filters.filters.map_tier.min', filters.mapTier.value)
-    prop.set(query.filters, 'map_filters.filters.map_tier.max', filters.mapTier.value)
+    propSet(query.filters, 'map_filters.filters.map_tier.min', filters.mapTier.value)
+    propSet(query.filters, 'map_filters.filters.map_tier.max', filters.mapTier.value)
   }
 
   if (filters.mapBlighted) {
     if (filters.mapBlighted.value === 'Blighted') {
-      prop.set(query.filters, 'map_filters.filters.map_blighted.option', String(true))
+      propSet(query.filters, 'map_filters.filters.map_blighted.option', String(true))
     } else if (filters.mapBlighted.value === 'Blight-ravaged') {
-      prop.set(query.filters, 'map_filters.filters.map_uberblighted.option', String(true))
+      propSet(query.filters, 'map_filters.filters.map_uberblighted.option', String(true))
     }
   }
 
   if (filters.unidentified && !filters.unidentified.disabled) {
-    prop.set(query.filters, 'misc_filters.filters.identified.option', String(false))
+    propSet(query.filters, 'misc_filters.filters.identified.option', String(false))
   }
 
   if (filters.altQuality && !filters.altQuality.disabled) {
     switch (filters.altQuality.value) {
       case 'Superior':
-        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '0')
+        propSet(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '0')
         break
       case 'Anomalous':
-        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '1')
+        propSet(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '1')
         break
       case 'Divergent':
-        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '2')
+        propSet(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '2')
         break
       case 'Phantasmal':
-        prop.set(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '3')
+        propSet(query.filters, 'misc_filters.filters.gem_alternate_quality.option', '3')
         break
     }
   }
 
   if (filters.areaLevel && !filters.areaLevel.disabled) {
-    prop.set(query.filters, 'map_filters.filters.area_level.min', filters.areaLevel.value)
+    propSet(query.filters, 'map_filters.filters.area_level.min', filters.areaLevel.value)
   }
 
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
-    prop.set(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
+    propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }
 
   for (const stat of stats) {
@@ -403,44 +403,44 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     const input = stat.roll!
     switch (stat.tradeId[0] as InternalTradeId) {
       case 'armour.armour':
-        prop.set(query.filters, 'armour_filters.filters.ar.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.ar.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'armour_filters.filters.ar.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'armour_filters.filters.ar.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.evasion_rating':
-        prop.set(query.filters, 'armour_filters.filters.ev.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.ev.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'armour_filters.filters.ev.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'armour_filters.filters.ev.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.energy_shield':
-        prop.set(query.filters, 'armour_filters.filters.es.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.es.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'armour_filters.filters.es.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'armour_filters.filters.es.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.ward':
-        prop.set(query.filters, 'armour_filters.filters.ward.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.ward.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'armour_filters.filters.ward.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'armour_filters.filters.ward.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'armour.block':
-        prop.set(query.filters, 'armour_filters.filters.block.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'armour_filters.filters.block.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'armour_filters.filters.block.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'armour_filters.filters.block.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.total_dps':
-        prop.set(query.filters, 'weapon_filters.filters.dps.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.dps.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'weapon_filters.filters.dps.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'weapon_filters.filters.dps.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.physical_dps':
-        prop.set(query.filters, 'weapon_filters.filters.pdps.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.pdps.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'weapon_filters.filters.pdps.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'weapon_filters.filters.pdps.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.elemental_dps':
-        prop.set(query.filters, 'weapon_filters.filters.edps.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.edps.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'weapon_filters.filters.edps.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'weapon_filters.filters.edps.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.crit':
-        prop.set(query.filters, 'weapon_filters.filters.crit.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.crit.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'weapon_filters.filters.crit.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'weapon_filters.filters.crit.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'weapon.aps':
-        prop.set(query.filters, 'weapon_filters.filters.aps.min', typeof input.min === 'number' ? input.min : undefined)
-        prop.set(query.filters, 'weapon_filters.filters.aps.max', typeof input.max === 'number' ? input.max : undefined)
+        propSet(query.filters, 'weapon_filters.filters.aps.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'weapon_filters.filters.aps.max', typeof input.max === 'number' ? input.max : undefined)
         break
     }
   }
