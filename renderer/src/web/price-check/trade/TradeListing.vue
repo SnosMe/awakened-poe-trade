@@ -70,14 +70,14 @@
       </table>
     </div>
   </div>
-  <div v-else>
-    <div>
-      <span class="text-red-400">{{ t('Trade site request failed') }}</span>
-      <button class="btn ml-2" @click="execSearch">{{ t('Retry') }}</button>
-      <button class="btn ml-1" @click="openTradeLink(false)">{{ t('Browser') }}</button>
-    </div>
-    <div>Error: {{ error }}</div>
-  </div>
+  <ui-error-box v-else>
+    <template #name>{{ t('Trade site request failed') }}</template>
+    <p>Error: {{ error }}</p>
+    <template #actions>
+      <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
+      <button class="btn" @click="openTradeLink(false)">{{ t('Browser') }}</button>
+    </template>
+  </ui-error-box>
 </template>
 
 <script lang="ts">

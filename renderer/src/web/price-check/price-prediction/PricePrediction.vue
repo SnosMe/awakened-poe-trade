@@ -51,10 +51,10 @@
         </tbody>
       </table>
     </div>
-    <div v-else-if="error">
-      <div class="text-red-400">Failed to get price prediction</div>
-      <div>Error: {{ error }}</div>
-    </div>
+    <ui-error-box v-else-if="error">
+      <template #name>Failed to get price prediction</template>
+      <p>Error: {{ error }}</p>
+    </ui-error-box>
   </div>
 </template>
 

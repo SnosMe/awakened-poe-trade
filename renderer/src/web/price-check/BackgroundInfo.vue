@@ -10,17 +10,14 @@
   </div>
   <div v-if="loadingLeagues" class="pt-2 px-4">
     <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
-  <div class="pt-2 px-4 flex items-baseline" v-else-if="leaguesError">
-    <i class="fas fa-exclamation-circle pr-1 text-red-400"></i>
-    <div>
-      <div>
-        <span class="text-red-400">{{ t('Failed to load leagues') }}</span>
-        <button class="btn ml-2" @click="retry">{{ t('Retry') }}</button>
-        <button class="btn ml-1" @click="openCaptcha">{{ t('Browser') }}</button>
-      </div>
-      <div class="font-bold">{{ t('Verify that the realm is not under maintenance and pathofexile.com is loading.') }}</div>
-    </div>
-  </div>
+  <ui-error-box class="mx-4 mt-4" v-else-if="leaguesError">
+    <template #name>{{ t('Failed to load leagues') }}</template>
+    <p>{{ t('leagues_failed') }}</p>
+    <template #actions>
+      <button class="btn" @click="retry">{{ t('Retry') }}</button>
+      <button class="btn" @click="openCaptcha">{{ t('Browser') }}</button>
+    </template>
+  </ui-error-box>
 </template>
 
 <script lang="ts">
@@ -53,13 +50,16 @@ export default defineComponent({
 
 <i18n>
 {
+  "en": {
+    "leagues_failed": "Make sure the realm is not under maintenance. Also try clicking on the \"Browser\" button, you may need to complete a CAPTCHA there."
+  },
   "ru": {
     "Update available: {0}": "Доступно обновление: {0}",
     "It will be installed automatically on exit": "Оно будет установлено автоматически при выходе",
     "You can download it from GitHub": "Вы можете загрузить его с GitHub",
     "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
-    "Verify that the realm is not under maintenance and pathofexile.com is loading.": "Убедитесь, что сервера не находятся на обслуживании и pathofexile.com загружается."
+    "leagues_failed": "Убедитесь, что сервера не находятся на обслуживании. Попробуйте нажать на кнопку \"Браузер\", возможно, там будет CAPTCHA."
   }
 }
 </i18n>

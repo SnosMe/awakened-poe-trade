@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-md p-2">
-    <div class="mb-2">
+    <div class="mb-2" v-if="!leagues.error.value">
       <div class="flex-1 mb-1">{{ t('League') }}
-        <button v-if="!leagues.isLoading.value" class="btn" @click="leagues.load">{{ t(leagues.error.value ? 'Retry' : 'Refresh') }}</button>
+        <button class="btn" @click="leagues.load" :disabled="leagues.isLoading.value">{{ t('Refresh') }}</button>
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
@@ -19,10 +19,14 @@
           <input v-model="customLeagueId" placeholder="My League (PL12345)" class="rounded bg-gray-900 px-1 mb-1 flex-1" />
         </div>
       </template>
-      <div v-else-if="leagues.error.value || true" class="mb-4">
-        <span class="text-red-400">{{ t('Failed to load leagues') }}</span>
-      </div>
     </div>
+    <ui-error-box v-else class="mb-4">
+      <template #name>{{ t('Failed to load leagues') }}</template>
+      <p>{{ t('Price check Item, and follow the instructions in the error description.') }}</p>
+      <template #actions>
+        <button class="btn" @click="leagues.load">{{ t('Retry') }}</button>
+      </template>
+    </ui-error-box>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Account name') }}</div>
       <div class="mb-4">
@@ -213,6 +217,7 @@ export default defineComponent({
     "League": "Лига",
     "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
+    "Price check Item, and follow the instructions in the error description.": "Прайс-чекните предмет, и следуйте инструкции в описании ошибки.",
     "Show price prediction": "Показывать приблизительную цену"
   },
   "cmn-Hant": {
