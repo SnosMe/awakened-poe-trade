@@ -28,21 +28,25 @@
         </div>
       </app-titlebar>
       <div class="flex-grow layout-column min-h-0 bg-gray-800">
-        <div id="home" class="flex-grow layout-column">
-          <div class="flex-1"></div>
-          <div class="flex-grow layout-column">
-            <background-info />
-            <check-position-circle v-if="showCheckPos"
-              :position="checkPosition" style="z-index: -1;" />
-            <unidentified-resolver :item="item" @identify="item = $event" />
-            <checked-item v-if="isLeagueSelected && item"
-              :item="item" :advanced-check="advancedCheck" />
-            <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
-              <i18n-t keypath="Press {0} to switch between browser and game." tag="div">
-                <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
-              </i18n-t>
-            </div>
-          </div>
+        <background-info />
+        <check-position-circle v-if="showCheckPos"
+          :position="checkPosition" style="z-index: -1;" />
+        <template v-if="item && ('error' in item)">
+          <ui-error-box class="m-4">
+            <template #name>{{ t(item.error.name) }}</template>
+            <p>{{ t(item.error.message) }}</p>
+          </ui-error-box>
+          <pre class="bg-gray-900 rounded m-4 overflow-x-hidden p-2">{{ item.rawText }}</pre>
+        </template>
+        <template v-else>
+          <unidentified-resolver :item="item" @identify="item = $event" />
+          <checked-item v-if="isLeagueSelected && item"
+            :item="item" :advanced-check="advancedCheck" />
+        </template>
+        <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
+          <i18n-t keypath="Press {0} to switch between browser and game." tag="div">
+            <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
+          </i18n-t>
         </div>
       </div>
     </div>
@@ -54,7 +58,7 @@
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
-        <related-items :item="item" class="pointer-events-auto" />
+        <related-items v-if="item && !('error' in item)" :item="item" class="pointer-events-auto" />
         <rate-limiter-state class="pointer-events-auto" />
       </div>
     </div>
@@ -77,6 +81,14 @@ import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.v
 import CheckPositionCircle from './CheckPositionCircle.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
+
+interface ParseError {
+  error: {
+    name: string
+    message: string
+  }
+  rawText: ParsedItem['rawText']
+}
 
 export default defineComponent({
   components: {
@@ -102,7 +114,7 @@ export default defineComponent({
       props.config.wmFlags = ['hide-on-blur', 'skip-menu']
     })
 
-    const item = shallowRef<ParsedItem | null>(null)
+    const item = shallowRef<ParsedItem | ParseError | null>(null)
     const advancedCheck = shallowRef(false)
     const checkPosition = shallowRef({ x: 1, y: 1 })
 
@@ -113,8 +125,19 @@ export default defineComponent({
         x: e.position.x - window.screenX,
         y: e.position.y - window.screenY
       }
-      item.value = parseClipboard(e.clipboard)
       advancedCheck.value = e.lockedMode
+      try {
+        item.value = parseClipboard(e.clipboard)
+      } catch (err: unknown) {
+        const strings = (err instanceof Error && err.message === 'UNKNOWN_ITEM')
+          ? 'unknown_item'
+          : 'parse_error'
+
+        item.value = {
+          error: { name: `${strings}`, message: `${strings}_msg` },
+          rawText: e.clipboard
+        }
+      }
     })
     MainProcess.onEvent('MAIN->OVERLAY::price-check-canceled', () => {
       wm.hide(props.config.wmId)
@@ -211,7 +234,17 @@ export default defineComponent({
 
 <i18n>
 {
+  "en": {
+    "unknown_item": "Unknown Item",
+    "unknown_item_msg": "If this Item was introduced in this League, it will likely be supported in the next app update.",
+    "parse_error": "An error occurred while parsing the item",
+    "parse_error_msg": "This is probably a bug and you can report it on GitHub."
+  },
   "ru": {
+    "unknown_item": "Неизвестный предмет",
+    "unknown_item_msg": "Если это новый предмет в этой лиге, скорее всего, он будет добавлен в следующем обновлении.",
+    "parse_error": "Произошла ошибка при парсинге предмета",
+    "parse_error_msg": "Скорее всего, это ошибка, и вы можете сообщить о ней на GitHub.",
     "Press {0} to switch between browser and game.": "Нажмите {0} для перехода между браузером/игрой."
   }
 }
