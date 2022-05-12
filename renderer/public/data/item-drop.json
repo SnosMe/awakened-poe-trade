@@ -240,6 +240,50 @@
   },
   {
     "query": [
+      "ITEM::Polaric Invitation"
+    ],
+    "items": [
+      "UNIQUE::Polaric Devastation // Opal Ring",
+      "UNIQUE::Sudden Dawn // Steel Circlet"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Incandescent Invitation"
+    ],
+    "items": [
+      "UNIQUE::Forbidden Flame // Crimson Jewel",
+      "UNIQUE::Crystallised Omniscience // Onyx Amulet",
+      "UNIQUE::Dissolution of the Flesh // Crimson Jewel",
+      "UNIQUE::The Annihilating Light // Quarterstaff",
+      "UNIQUE::Dawnbreaker // Colossal Tower Shield",
+      "ITEM::Exceptional Eldritch Ember"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Writhing Invitation"
+    ],
+    "items": [
+      "UNIQUE::Ceaseless Feast // Spiked Gloves",
+      "UNIQUE::Black Zenith // Fingerless Silk Gloves"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Screaming Invitation"
+    ],
+    "items": [
+      "UNIQUE::Forbidden Flesh // Cobalt Jewel",
+      "UNIQUE::Ashes of the Stars // Onyx Amulet",
+      "UNIQUE::Melding of the Flesh // Cobalt Jewel",
+      "UNIQUE::The Gluttonous Tide // Citadel Bow",
+      "UNIQUE::Inextricable Fate // Fugitive Boots",
+      "ITEM::Exceptional Eldritch Ichor"
+    ]
+  },
+  {
+    "query": [
       "ITEM::Crescent Splinter",
       "ITEM::The Maven's Writ"
     ],
@@ -365,6 +409,37 @@
       "ITEM::Veiled Chaos Orb"
     ],
     "items": []
+  },
+  {
+    "query": [
+      "UNIQUE::Cortex // T10"
+    ],
+    "items": [
+      "UNIQUE::Bottled Faith",
+      "UNIQUE::Garb of the Ephemeral // Savant's Robe",
+      "UNIQUE::Nebulis // Void Sceptre",
+      "UNIQUE::Offering to the Serpent // Legion Gloves",
+      "DIVINATION_CARD::Dementophobia",
+      "DIVINATION_CARD::Imperfect Memories"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Rewritten Distant Memory // T10",
+      "UNIQUE::Augmented Distant Memory // T10",
+      "UNIQUE::Altered Distant Memory // T10",
+      "UNIQUE::Twisted Distant Memory // T10"
+    ],
+    "items": [
+      "UNIQUE::Circle of Anguish // Ruby Ring",
+      "UNIQUE::Circle of Fear // Sapphire Ring",
+      "UNIQUE::Circle of Guilt // Iron Ring",
+      "UNIQUE::Circle of Nostalgia // Amethyst Ring",
+      "UNIQUE::Circle of Regret // Topaz Ring",
+      "UNIQUE::Mask of the Tribunal // Magistrate Crown",
+      "UNIQUE::Perepiteia // Ezomyte Spiked Shield",
+      "UNIQUE::Storm's Gift // Assassin's Mitts"
+    ]
   },
 
 

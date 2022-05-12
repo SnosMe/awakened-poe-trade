@@ -1,5 +1,5 @@
 <template>
-  <div v-if="result" class="flex max-w-full bg-gray-800 text-gray-400 mt-6 border border-gray-900" style="border-width: 0.25rem;">
+  <div v-if="result" class="flex bg-gray-800 text-gray-400 mt-6 border border-gray-900" style="border-width: 0.25rem; max-width: min(100%, 24rem);">
     <div v-if="'error' in result" class="p-2">
       {{ result.error }}
     </div>
