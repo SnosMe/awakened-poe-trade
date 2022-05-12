@@ -9,7 +9,7 @@
           <div v-else
             class="border-b mx-2 border-gray-800" />
         </template>
-        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content;">{{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
+        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content; min-width: 100%;">{{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
       </div>
       <div class="text-gray-100 flex-grow layout-column bg-gray-900">
         <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">

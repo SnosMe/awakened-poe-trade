@@ -1,6 +1,6 @@
 <template>
   <div :class="$style['row']" >
-    <div class="flex-1 flex items-center px-2 overflow-hidden gap-x-1">
+    <div class="flex-1 flex items-center px-2 overflow-hidden gap-x-1 whitespace-nowrap">
       <span v-if="matcher.outdated" :class="[$style['tag'], $style['tag-outdated']]">{{ t('map.mods.outdated') }}</span>
       <span v-if="matcher.heist" :class="[$style['tag'], $style['tag-heist']]">{{ t('map.mods.heist') }}</span>
       <span class="truncate">{{ matcher.str }}</span>

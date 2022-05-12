@@ -7,7 +7,8 @@ import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
 
 interface TradeRequest { /* eslint-disable camelcase */
-  exchange: {
+  engine: 'legacy' // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3265663
+  query: {
     status: { option: 'online' | 'onlineleague' | 'any' }
     have: string[]
     want: string[]
@@ -19,7 +20,7 @@ interface TradeRequest { /* eslint-disable camelcase */
 interface FetchResult {
   id: string
   listing: {
-    indexed: string
+    // indexed: string // not available in legacy engine now
     price: {
       exchange: {
         amount: number
@@ -106,7 +107,7 @@ export async function requestResults (
     .map<PricingResult>(result => {
     return {
       id: result.id,
-      relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
+      relativeDate: DateTime.fromISO('').toRelative({ style: 'short' }) ?? '',
       exchangeAmount: result.listing.price.exchange.amount,
       itemAmount: result.listing.price.item.amount,
       stock: result.listing.price.item.stock,
@@ -138,7 +139,8 @@ const HAVE_CURRENCY = ['exalted', 'chaos']
 export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): Promise<BulkSearch> {
   const resultByHave = await Promise.all(HAVE_CURRENCY.map(async (have) => {
     const query = await requestTradeResultList({
-      exchange: {
+      engine: 'legacy',
+      query: {
         have: [have],
         want: [tradeTag(item)!],
         status: {
