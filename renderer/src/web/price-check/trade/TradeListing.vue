@@ -175,7 +175,7 @@ function useTradeApi () {
           res.listedTimes <= 2 ? len + 1 : len, 0)
         if (
           (totalNotGrouped < MIN_NOT_GROUPED || totalGrouped < MIN_GROUPED) &&
-          fetched < _searchResult.total &&
+          fetched < _searchResult.result.length &&
           fetched < API_FETCH_LIMIT
         ) {
           await requestResults(_searchResult.id, _searchResult.result.slice(fetched, fetched + 10), { accountName: AppConfig().accountName })
