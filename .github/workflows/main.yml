@@ -7,61 +7,67 @@ on:
     tags-ignore:
       - '**'
     paths-ignore:
-      - 'showcase/**'
       - README.md
 
 jobs:
+  renderer:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - run: yarn --frozen-lockfile
+      working-directory: ./renderer
+    - run: yarn make-index-files
+      working-directory: ./renderer
+    - run: yarn build
+      working-directory: ./renderer
+    - uses: actions/upload-artifact@v3
+      with:
+        name: renderer-dist
+        path: ./renderer/dist
+        retention-days: 1
+
   windows:
+    needs: renderer
     runs-on: windows-2019
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - uses: actions/download-artifact@v3
       with:
-        node-version: 14
-    - uses: actions/cache@v2
-      id: yarn-cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+        name: renderer-dist
+        path: ./renderer/dist
     - run: yarn --frozen-lockfile
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
-    - run: yarn electron:publish
+      working-directory: ./main
+    - run: yarn build
+      working-directory: ./main
+    - run: yarn package -p onTagOrDraft
+      working-directory: ./main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Hash
-      run: type .\dist_electron\latest.yml
+      run: type .\main\dist\latest.yml
 
   linux:
+    needs: renderer
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - uses: actions/download-artifact@v3
       with:
-        node-version: 14
-    - uses: actions/cache@v2
-      id: yarn-cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+        name: renderer-dist
+        path: ./renderer/dist
     - run: |
         sudo apt-get update
         sudo apt-get install -y libxtst-dev libpng++-dev
     - run: yarn --frozen-lockfile
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
-    - run: yarn electron:publish
+      working-directory: ./main
+    - run: yarn build
+      working-directory: ./main
+    - run: yarn package -p onTagOrDraft
+      working-directory: ./main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Hash
-      run: cat ./dist_electron/latest-linux.yml
-
-  # darwin:
-  #   runs-on: macos-10.15
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - uses: actions/setup-node@v2
-  #     with:
-  #       node-version: 12
-  #   - run: yarn --frozen-lockfile
-  #   - run: yarn electron:publish
-  #     env:
-  #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: cat ./main/dist/latest-linux.yml
