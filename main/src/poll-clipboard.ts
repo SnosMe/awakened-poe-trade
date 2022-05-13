@@ -97,4 +97,7 @@ export const LANGUAGE_DETECTOR = [{
 }, {
   lang: 'cmn-Hant',
   firstLine: '物品種類: '
+}, {
+  lang: 'cmn-Hans',
+  firstLine: '物品类别: '
 }]

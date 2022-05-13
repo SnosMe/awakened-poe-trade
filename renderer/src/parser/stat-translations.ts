@@ -5,6 +5,9 @@ import type { ModifierType } from './modifiers'
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
 
+const LOCALIZED_PAREN_LEFT = /^\s*(?:\(|（)/
+const LOCALIZED_PAREN_RIGHT = /(?:\)|）)\s*$/
+
 export interface ParsedStat {
   readonly stat: Stat
   readonly translation: StatMatcher
@@ -30,10 +33,10 @@ export function * linesToStatStrings (lines: string[]): Generator<StatString, st
 
   outer:
   for (let start = 0; start < lines.length; start += 1) {
-    if ((lines[start].trim()).startsWith('(')) {
+    if (lines[start].match(LOCALIZED_PAREN_LEFT)) {
       reminderString = true
     }
-    if (reminderString && (lines[start].trim()).endsWith(')')) {
+    if (reminderString && lines[start].match(LOCALIZED_PAREN_RIGHT)) {
       reminderString = false
       continue
     }
