@@ -129,7 +129,8 @@
       "UNIQUE::Starforge // Infernal Sword",
       "UNIQUE::Shaper's Touch // Crusader Gloves",
       "UNIQUE::Solstice Vigil // Onyx Amulet",
-      "UNIQUE::Voidwalker // Murder Boots"
+      "UNIQUE::Voidwalker // Murder Boots",
+      "UNIQUE::Echoes of Creation // Royal Burgonet"
     ]
   },
   {
@@ -168,7 +169,8 @@
       "UNIQUE::Mark of the Shaper // Opal Ring",
       "UNIQUE::Indigon // Hubris Circlet",
       "UNIQUE::Voidforge // Infernal Sword",
-      "UNIQUE::The Eternity Shroud // Blood Raiment"
+      "UNIQUE::The Eternity Shroud // Blood Raiment",
+      "UNIQUE::Call of the Void // Sapphire Ring"
     ]
   },
   {
@@ -235,7 +237,8 @@
       "UNIQUE::Crown of the Inward Eye // Prophet Crown",
       "UNIQUE::Hands of the High Templar // Crusader Gloves",
       "UNIQUE::Thread of Hope // Crimson Jewel",
-      "UNIQUE::The Saviour // Legion Sword"
+      "UNIQUE::The Saviour // Legion Sword",
+      "UNIQUE::The Burden of Truth // Crystal Belt"
     ]
   },
   {
@@ -244,7 +247,8 @@
     ],
     "items": [
       "UNIQUE::Polaric Devastation // Opal Ring",
-      "UNIQUE::Sudden Dawn // Steel Circlet"
+      "UNIQUE::Sudden Dawn // Steel Circlet",
+      "UNIQUE::The Eternal Struggle // Onyx Amulet"
     ]
   },
   {
@@ -266,7 +270,8 @@
     ],
     "items": [
       "UNIQUE::Ceaseless Feast // Spiked Gloves",
-      "UNIQUE::Black Zenith // Fingerless Silk Gloves"
+      "UNIQUE::Black Zenith // Fingerless Silk Gloves",
+      "UNIQUE::The Eternal Struggle // Onyx Amulet"
     ]
   },
   {
@@ -290,6 +295,7 @@
     "items": [
       "ITEM::Orb of Conflict",
       "ITEM::Elevated Sextant",
+      "UNIQUE::Impossible Escape // Viridian Jewel",
       "UNIQUE::Doppelgänger Guise // Sadist Garb",
       "UNIQUE::Arn's Anguish // Cloth Belt",
       "UNIQUE::Graven's Secret // Cloth Belt",

@@ -81,7 +81,7 @@ export function createExactStatFilters (
       filter.disabled = false
     }
 
-    if (filter.statRef === '# use remaining') {
+    if (filter.statRef === '# uses remaining') {
       filter.roll!.min = filter.roll!.value
       filter.roll!.default.min = filter.roll!.value
       filter.roll!.default.max = filter.roll!.value

@@ -146,7 +146,7 @@ export function tryParseTranslation (stat: StatString, modType: ModifierType): P
       }
     }
 
-    if (found.stat.ref === '# use remaining') {
+    if (found.stat.ref === '# uses remaining') {
       const uses = combination.values[0]
       uses.bounds = {
         min: 1,
