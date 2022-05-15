@@ -90,7 +90,7 @@ export const LANGUAGE_DETECTOR = [{
   firstLine: 'Clase de objeto: '
 }, {
   lang: 'th',
-  firstLine: 'คลาสของไอเทม: '
+  firstLine: 'ชนิดไอเทม: '
 }, {
   lang: 'ko',
   firstLine: '아이템 종류: '
