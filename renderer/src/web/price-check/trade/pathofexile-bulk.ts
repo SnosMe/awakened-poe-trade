@@ -7,7 +7,7 @@ import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
 
 interface TradeRequest { /* eslint-disable camelcase */
-  engine: 'legacy' // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3265663
+  engine: 'new' // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3265663
   query: {
     status: { option: 'online' | 'onlineleague' | 'any' }
     have: string[]
@@ -139,7 +139,7 @@ const HAVE_CURRENCY = ['exalted', 'chaos']
 export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): Promise<BulkSearch> {
   const resultByHave = await Promise.all(HAVE_CURRENCY.map(async (have) => {
     const query = await requestTradeResultList({
-      engine: 'legacy',
+      engine: 'new',
       query: {
         have: [have],
         want: [tradeTag(item)!],
@@ -156,7 +156,7 @@ export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): P
     return {
       queryId: query.id,
       total: query.total,
-      listedIds: query.result
+      listedIds: Object.keys(query.result)
     }
   }))
 

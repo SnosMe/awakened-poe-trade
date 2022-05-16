@@ -17,7 +17,9 @@ export interface Account {
 
 export interface SearchResult {
   id: string
-  result: string[]
+  result: {
+    [key: string]: any
+  }
   total: number
   inexact?: boolean
   error?: {
