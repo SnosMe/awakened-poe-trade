@@ -3,7 +3,7 @@ import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '..
 import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/web/background/IPC'
-import { SearchResult, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
+import { TradeResponse, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { STAT_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
@@ -180,6 +180,13 @@ interface TradeRequest { /* eslint-disable camelcase */
   sort: {
     price: 'asc'
   }
+}
+
+export interface SearchResult {
+  id: string
+  result: string[]
+  total: number
+  inexact?: boolean
 }
 
 interface FetchResult {
@@ -512,9 +519,11 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
     })
     adjustRateLimits(RATE_LIMIT_RULES.SEARCH, response.headers)
 
-    data = await response.json() as SearchResult
-    if (data.error) {
-      throw new Error(data.error.message)
+    const _data = await response.json() as TradeResponse<SearchResult>
+    if (_data.error) {
+      throw new Error(_data.error.message)
+    } else {
+      data = _data
     }
 
     cache.set<SearchResult>([body, leagueId], data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
@@ -528,8 +537,7 @@ export async function requestResults (
   resultIds: string[],
   opts: { accountName: string }
 ): Promise<PricingResult[]> {
-  interface ResponseT { result: FetchResult[], error: SearchResult['error'] }
-  let data = cache.get<ResponseT>(resultIds)
+  let data = cache.get<FetchResult[]>(resultIds)
 
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
@@ -537,15 +545,17 @@ export async function requestResults (
     const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
-    data = await response.json() as ResponseT
-    if (data.error) {
-      throw new Error(data.error.message)
+    const _data = await response.json() as TradeResponse<{ result: FetchResult[] }>
+    if (_data.error) {
+      throw new Error(_data.error.message)
+    } else {
+      data = _data.result
     }
 
-    cache.set<ResponseT>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
+    cache.set<FetchResult[]>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
   }
 
-  return data.result.map<PricingResult>(result => {
+  return data.map<PricingResult>(result => {
     return {
       id: result.id,
       itemLevel: result.item.ilvl,

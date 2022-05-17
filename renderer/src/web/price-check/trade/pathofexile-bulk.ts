@@ -1,13 +1,13 @@
 import { DateTime } from 'luxon'
 import { MainProcess } from '@/web/background/IPC'
-import { SearchResult, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
+import { TradeResponse, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
 
 interface TradeRequest { /* eslint-disable camelcase */
-  engine: 'new' // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3265663
+  engine: 'new'
   query: {
     status: { option: 'online' | 'onlineleague' | 'any' }
     have: string[]
@@ -15,21 +15,29 @@ interface TradeRequest { /* eslint-disable camelcase */
     minimum?: number
     fulfillable?: null
   }
+  sort: { have: 'asc' }
+}
+
+interface SearchResult {
+  id: string
+  result: Record<string, FetchResult>
+  total: number
 }
 
 interface FetchResult {
   id: string
   listing: {
-    // indexed: string // not available in legacy engine now
-    price: {
+    indexed: string
+    offers: Array<{
       exchange: {
+        currency: string
         amount: number
       }
       item: {
         amount: number
         stock: number
       }
-    }
+    }>
     account: Account
   }
 }
@@ -53,8 +61,7 @@ async function requestTradeResultList (body: TradeRequest, leagueId: string): Pr
 
   if (!data) {
     preventQueueCreation([
-      { count: 2, limiters: RATE_LIMIT_RULES.EXCHANGE },
-      { count: 1, limiters: RATE_LIMIT_RULES.FETCH }
+      { count: 1, limiters: RATE_LIMIT_RULES.EXCHANGE }
     ])
 
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.EXCHANGE)
@@ -69,105 +76,115 @@ async function requestTradeResultList (body: TradeRequest, leagueId: string): Pr
     })
     adjustRateLimits(RATE_LIMIT_RULES.EXCHANGE, response.headers)
 
-    data = await response.json() as SearchResult
-    if (data.error) {
-      throw new Error(data.error.message)
+    const _data = await response.json() as TradeResponse<SearchResult>
+    if (_data.error) {
+      throw new Error(_data.error.message)
+    } else {
+      data = _data
     }
 
-    cache.set<SearchResult>([body, leagueId], data, Cache.deriveTtl(...RATE_LIMIT_RULES.EXCHANGE, ...RATE_LIMIT_RULES.FETCH))
+    cache.set<SearchResult>([body, leagueId], data, Cache.deriveTtl(...RATE_LIMIT_RULES.EXCHANGE))
   }
 
   return data
 }
 
-export async function requestResults (
-  queryId: string,
-  resultIds: string[],
-  opts: { accountName: string }
-): Promise<PricingResult[]> {
-  interface ResponseT { result: FetchResult[], error: SearchResult['error'] }
-  let data = cache.get<ResponseT>(resultIds)
-
-  if (!data) {
-    await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
-
-    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}&exchange`)
-    adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
-
-    data = await response.json() as ResponseT
-    if (data.error) {
-      throw new Error(data.error.message)
-    }
-
-    cache.set<ResponseT>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.EXCHANGE, ...RATE_LIMIT_RULES.FETCH))
+function toPricingResult (
+  result: FetchResult,
+  opts: { accountName: string },
+  offer: number
+): PricingResult {
+  return {
+    id: result.id,
+    relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
+    exchangeAmount: result.listing.offers[offer].exchange.amount,
+    itemAmount: result.listing.offers[offer].item.amount,
+    stock: result.listing.offers[offer].item.stock,
+    isMine: (result.listing.account.name === opts.accountName),
+    ign: result.listing.account.lastCharacterName,
+    accountName: result.listing.account.name,
+    accountStatus: result.listing.account.online
+      ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
+      : 'offline'
   }
-
-  return data.result
-    .filter(result => result != null) // { gone: true }
-    .map<PricingResult>(result => {
-    return {
-      id: result.id,
-      relativeDate: DateTime.fromISO('').toRelative({ style: 'short' }) ?? '',
-      exchangeAmount: result.listing.price.exchange.amount,
-      itemAmount: result.listing.price.item.amount,
-      stock: result.listing.price.item.stock,
-      isMine: (result.listing.account.name === opts.accountName),
-      ign: result.listing.account.lastCharacterName,
-      accountName: result.listing.account.name,
-      accountStatus: result.listing.account.online
-        ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
-        : 'offline'
-    }
-  })
 }
 
 export interface BulkSearch {
-  exa: {
-    queryId: string
-    total: number
-    listedIds: string[]
-  }
-  chaos: {
-    queryId: string
-    total: number
-    listedIds: string[]
+  queryId: string
+  haveTag: string
+  total: number
+  listed: PricingResult[]
+}
+
+function createTradeRequest (filters: ItemFilters, item: ParsedItem, have: string[]): TradeRequest {
+  return {
+    engine: 'new',
+    query: {
+      have: have,
+      want: [tradeTag(item)!],
+      status: {
+        option: filters.trade.offline
+          ? 'any'
+          : (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
+      },
+      minimum: (filters.stackSize && !filters.stackSize.disabled) ? filters.stackSize.value : undefined
+      // fulfillable: null
+    },
+    sort: { have: 'asc' }
   }
 }
 
-const HAVE_CURRENCY = ['exalted', 'chaos']
+const SHOW_RESULTS = 20
+const API_FETCH_LIMIT = 100
 
-export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): Promise<BulkSearch> {
-  const resultByHave = await Promise.all(HAVE_CURRENCY.map(async (have) => {
-    const query = await requestTradeResultList({
-      engine: 'new',
-      query: {
-        have: [have],
-        want: [tradeTag(item)!],
-        status: {
-          option: filters.trade.offline
-            ? 'any'
-            : (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
-        },
-        minimum: (filters.stackSize && !filters.stackSize.disabled) ? filters.stackSize.value : undefined
-        // fulfillable: null
-      }
-    }, filters.trade.league)
+export async function execBulkSearch (
+  item: ParsedItem,
+  filters: ItemFilters,
+  have: string[],
+  opts: { accountName: string }
+): Promise<Array<BulkSearch | null>> {
+  const query = await requestTradeResultList(
+    createTradeRequest(filters, item, have),
+    filters.trade.league
+  )
+
+  const offer = 0
+  const results = Object.values(query.result)
+    .filter(result => result.listing.offers.length === 1)
+
+  const resultByHave = have.map(tradeTag => {
+    const resultsTag = results.filter(result => result.listing.offers[offer].exchange.currency === tradeTag)
+
+    const loadedOnDemand = (
+      tradeTag === 'chaos' &&
+      resultsTag.length < SHOW_RESULTS &&
+      query.total > API_FETCH_LIMIT
+    )
+    if (loadedOnDemand) return null
+
+    const listed = resultsTag
+      .sort((a, b) =>
+        (a.listing.offers[offer].exchange.amount / a.listing.offers[offer].item.amount) -
+        (b.listing.offers[offer].exchange.amount / b.listing.offers[offer].item.amount))
+      .slice(0, SHOW_RESULTS)
+      .map(result => toPricingResult(result, opts, offer))
+
+    const chaosIsLoaded = (
+      tradeTag === 'exalted' &&
+      resultsTag.length < results.length &&
+      ((results.length - resultsTag.length) >= SHOW_RESULTS || query.total <= API_FETCH_LIMIT)
+    )
 
     return {
       queryId: query.id,
-      total: query.total,
-      listedIds:
-        Object.entries(query.result).sort(
-          (a, b) =>
-            ((a[1].listing.offers[0].exchange.amount / a[1].listing.offers[0].item.amount) > (b[1].listing.offers[0].exchange.amount / b[1].listing.offers[0].item.amount)) ? 1 : 0
-        ).map(item => {
-          return item[0]
-        })
+      haveTag: tradeTag,
+      // this is a best guess when making request with multiple `have` currencies
+      total: (chaosIsLoaded)
+        ? resultsTag.length
+        : (query.total - (results.length - resultsTag.length)),
+      listed: listed
     }
-  }))
+  })
 
-  return {
-    exa: resultByHave[0],
-    chaos: resultByHave[1]
-  }
+  return resultByHave
 }

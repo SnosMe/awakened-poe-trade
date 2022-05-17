@@ -83,8 +83,8 @@
 <script lang="ts">
 import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { requestTradeResultList, requestResults, createTradeRequest, PricingResult } from './pathofexile-trade'
-import { getTradeEndpoint, SearchResult } from './common'
+import { requestTradeResultList, requestResults, createTradeRequest, PricingResult, SearchResult } from './pathofexile-trade'
+import { getTradeEndpoint } from './common'
 import { AppConfig } from '@/web/Config'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
