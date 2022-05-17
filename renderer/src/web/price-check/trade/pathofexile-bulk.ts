@@ -156,7 +156,13 @@ export async function execBulkSearch (item: ParsedItem, filters: ItemFilters): P
     return {
       queryId: query.id,
       total: query.total,
-      listedIds: Object.keys(query.result)
+      listedIds:
+        Object.entries(query.result).sort(
+          (a, b) =>
+            ((a[1].listing.offers[0].exchange.amount / a[1].listing.offers[0].item.amount) > (b[1].listing.offers[0].exchange.amount / b[1].listing.offers[0].item.amount)) ? 1 : 0
+        ).map(item => {
+          return item[0]
+        })
     }
   }))
 
