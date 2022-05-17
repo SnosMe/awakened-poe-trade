@@ -15,12 +15,8 @@ export interface Account {
   }
 }
 
-export interface SearchResult {
-  id: string
-  result: string[]
-  total: number
-  inexact?: boolean
-  error?: {
+export type TradeResponse<T> = (T & { error?: null }) | {
+  error: {
     code: number
     message: string
   }

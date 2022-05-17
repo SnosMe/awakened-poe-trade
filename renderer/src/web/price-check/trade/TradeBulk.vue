@@ -9,12 +9,12 @@
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'chaos' ? 'transparent' : undefined }"
             @click="selectedCurr = 'chaos'">
             <img src="/images/chaos.png" class="trade-bulk-currency-icon">
-            <span>{{ result.chaos.total }}</span>
+            <span>{{ result.chaos.listed.value?.total ?? '?' }}</span>
           </button>
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'exa' ? 'transparent' : undefined }"
             @click="selectedCurr = 'exa'">
             <img src="/images/exa.png" class="trade-bulk-currency-icon">
-            <span>{{ result.exa.total }}</span>
+            <span>{{ result.exa.listed.value?.total ?? '?' }}</span>
           </button>
           <span class="ml-1"><online-filter :filters="filters" /></span>
         </div>
@@ -87,9 +87,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, inject, ref, computed, watch, ComputedRef, shallowRef } from 'vue'
+import { defineComponent, PropType, inject, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { BulkSearch, execBulkSearch, PricingResult, requestResults } from './pathofexile-bulk'
+import { BulkSearch, execBulkSearch, PricingResult } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
 import { selected as league } from '../../background/Leagues'
 import { AppConfig } from '@/web/Config'
@@ -102,13 +102,13 @@ import OnlineFilter from './OnlineFilter.vue'
 const slowdown = artificialSlowdown(900)
 
 function useBulkApi () {
-  type BulkSearchExtended = BulkSearch & {
-    exa: { listed: ComputedRef<PricingResult[]> }
-    chaos: { listed: ComputedRef<PricingResult[]> }
-  }
+  type BulkSearchExtended = Record<'exa' | 'chaos', {
+    listed: Ref<BulkSearch | null>
+    listedLazy: ComputedRef<PricingResult[]>
+  }>
 
   let searchId = 0
-  const error = ref<string | null>(null)
+  const error = shallowRef<string | null>(null)
   const result = shallowRef<BulkSearchExtended | null>(null)
 
   async function search (item: ParsedItem, filters: ItemFilters) {
@@ -118,17 +118,20 @@ function useBulkApi () {
       result.value = null
 
       const _searchId = searchId
-      const _result = await execBulkSearch(item, filters)
+
+      // override, because at league start many players set wrong price, and this breaks optimistic search
+      const have = (item.info.refName === 'Chaos Orb')
+        ? ['exalted']
+        : (item.info.refName === 'Exalted Orb')
+            ? ['chaos']
+            : ['exalted', 'chaos']
+
+      const optimisticSearch = await execBulkSearch(
+        item, filters, have, { accountName: AppConfig().accountName })
       if (_searchId === searchId) {
         result.value = {
-          exa: {
-            ..._result.exa,
-            listed: getResultsByQuery(_result.exa)
-          },
-          chaos: {
-            ..._result.chaos,
-            listed: getResultsByQuery(_result.chaos)
-          }
+          exa: getResultsByHave(item, filters, optimisticSearch, 'exalted'),
+          chaos: getResultsByHave(item, filters, optimisticSearch, 'chaos')
         }
       }
     } catch (err) {
@@ -136,16 +139,33 @@ function useBulkApi () {
     }
   }
 
-  function getResultsByQuery (query: BulkSearch['exa' | 'chaos']) {
-    const items = shallowRef<PricingResult[]>([])
-    let requested = false
+  function getResultsByHave (
+    item: ParsedItem,
+    filters: ItemFilters,
+    preloaded: Array<BulkSearch | null>,
+    have: 'exalted' | 'chaos'
+  ) {
+    const _result = shallowRef(
+      preloaded.some(res => res?.haveTag === have)
+        ? shallowReactive(preloaded.find(res => res?.haveTag === have)!)
+        : null)
+    const items = shallowRef<PricingResult[]>(_result.value?.listed ?? [])
+    let requested: boolean = (_result.value != null)
 
-    return computed(() => {
-      if (query.total && !requested) {
+    const listedLazy = computed(() => {
+      if (!requested) {
         ;(async function () {
           try {
             requested = true
-            items.value = await requestResults(query.queryId, query.listedIds.slice(0, 20), { accountName: AppConfig().accountName })
+            _result.value = shallowReactive((await execBulkSearch(
+              item, filters, [have], { accountName: AppConfig().accountName }))[0]!
+            )
+            items.value = _result.value.listed
+            const otherHave = (have === 'exalted')
+              ? result.value?.chaos?.listed.value!
+              : result.value?.exa?.listed.value!
+            // fix best guess we did while making optimistic search
+            otherHave.total -= _result.value.total
           } catch (err) {
             error.value = (err as Error).message
           }
@@ -154,6 +174,8 @@ function useBulkApi () {
 
       return items.value
     })
+
+    return { listed: _result, listedLazy }
   }
 
   return { error, result, search }
@@ -175,7 +197,7 @@ export default defineComponent({
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
-    const selectedCurr = ref<'chaos' | 'exa'>('chaos')
+    const selectedCurr = shallowRef<'chaos' | 'exa'>('chaos')
 
     watch(() => props.item, (item) => {
       slowdown.reset(item)
@@ -185,21 +207,20 @@ export default defineComponent({
       const arr = Array(20)
       if (!slowdown.isReady.value || !result.value) return arr
 
-      const listed = result.value[selectedCurr.value].listed.value
+      const listed = result.value[selectedCurr.value].listedLazy.value
       arr.splice(0, listed.length, ...listed)
       return arr
     })
 
     watch(result, () => {
-      if (result.value) {
-        const { exa, chaos } = result.value
-        selectedCurr.value = (exa.total > chaos.total) ? 'exa' : 'chaos'
-        // override, because at league start many players set wrong price, and this breaks auto-detection
-        if (props.item.info.refName === 'Chaos Orb') {
-          selectedCurr.value = 'exa'
-        } else if (props.item.info.refName === 'Exalted Orb') {
-          selectedCurr.value = 'chaos'
-        }
+      const exaTotal = result.value?.exa.listed.value?.total
+      const chaosTotal = result.value?.chaos.listed.value?.total
+      if (exaTotal == null) {
+        selectedCurr.value = 'chaos'
+      } else if (chaosTotal == null) {
+        selectedCurr.value = 'exa'
+      } else {
+        selectedCurr.value = (exaTotal > chaosTotal) ? 'exa' : 'chaos'
       }
     })
 
@@ -216,7 +237,7 @@ export default defineComponent({
       execSearch: () => { search(props.item, props.filters) },
       showSeller: computed(() => widget.value.showSeller),
       openTradeLink (isExternal: boolean) {
-        const link = `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].queryId}`
+        const link = `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].listed.value!.queryId}`
         if (isExternal) {
           window.open(link)
         } else {
