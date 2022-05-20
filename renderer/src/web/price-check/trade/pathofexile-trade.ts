@@ -545,11 +545,11 @@ export async function requestResults (
     const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
-    const _data = await response.json() as TradeResponse<{ result: FetchResult[] }>
+    const _data = await response.json() as TradeResponse<{ result: Array<FetchResult | null> }>
     if (_data.error) {
       throw new Error(_data.error.message)
     } else {
-      data = _data.result
+      data = _data.result.filter(res => res != null) as FetchResult[]
     }
 
     cache.set<FetchResult[]>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
