@@ -210,9 +210,6 @@ function registerGlobal () {
         const { action } = entry
 
         const pressPosition = screen.getCursorScreenPoint()
-        // if (process.platform === 'win32') {
-        //   pressPosition = screen.dipToScreenPoint(pressPosition)
-        // }
 
         pollClipboard()
           .then(clipboard => {

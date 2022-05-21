@@ -1,4 +1,4 @@
-import { Rectangle, Point } from 'electron'
+import { Rectangle, Point, screen } from 'electron'
 import { uIOhook } from 'uiohook-napi'
 import { isPollingClipboard } from './poll-clipboard'
 import { PoeWindow } from './PoeWindow'
@@ -22,12 +22,14 @@ export function showWidget (opts: {
   pressPosition: Point
   eventName: string
 }) {
-  checkPressPosition = opts.pressPosition
+  checkPressPosition = (process.platform === 'win32')
+    ? screen.dipToScreenPoint(opts.pressPosition)
+    : opts.pressPosition
   const isLokedMode = (opts.eventName === 'price-check-locked')
 
   overlaySendEvent({
     name: 'MAIN->OVERLAY::price-check',
-    payload: { clipboard: opts.clipboard, position: checkPressPosition, lockedMode: isLokedMode }
+    payload: { clipboard: opts.clipboard, position: opts.pressPosition, lockedMode: isLokedMode }
   })
 
   const poeBounds = PoeWindow.bounds
