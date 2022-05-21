@@ -101,7 +101,8 @@ function findItems (search: string): BaseType[] | false {
     : search.split(' ', 1)[0]
 
   const MAX_HITS = 70 // NOTE: based on first word only, so don't be too strict
-  const MAX_RESULTS = 5 // NOTE: don't want to pick from too many results
+  const MAX_RESULTS_VISIBLE = 5 // NOTE: don't want to pick from too many results
+  const MAX_RESULTS = 10
   let hits = 0
   for (const match of ITEMS_ITERATOR(jsonSearch)) {
     hits += 1
@@ -117,7 +118,7 @@ function findItems (search: string): BaseType[] | false {
     }
     if (hits >= MAX_HITS) return false
   }
-  return out
+  return out.slice(0, MAX_RESULTS_VISIBLE)
 }
 
 export default defineComponent({
