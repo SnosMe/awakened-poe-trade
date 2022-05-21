@@ -392,9 +392,10 @@ export function filterPseudo (ctx: FiltersCreationContext) {
         }
 
         if (attrFilters[1].roll!.value === attrFilters[2].roll!.value) {
-          ctx.filters = ctx.filters.filter(filter => filter !== attrFilters[1] && filter !== attrFilters[2])
+          attrFilters[1].hidden = 'hide_attr_same_2nd_n_3rd'
+          attrFilters[2].hidden = 'hide_attr_same_2nd_n_3rd'
         } else {
-          ctx.filters = ctx.filters.filter(filter => filter !== attrFilters[2])
+          attrFilters[2].hidden = 'hide_attr_smallest_total'
         }
       }
     }
