@@ -25,6 +25,7 @@ import { defineComponent, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 import * as Leagues from '@/web/background/Leagues'
 import { updateInfo } from '@/web/background/AutoUpdates'
+import { poeWebApi } from '@/web/Config'
 
 export default defineComponent({
   setup () {
@@ -41,7 +42,7 @@ export default defineComponent({
         Leagues.load()
       },
       openCaptcha () {
-        showBrowser('https://api.pathofexile.com/leagues?type=main&realm=pc&compact=1')
+        showBrowser(`https://${poeWebApi()}/api/leagues?type=main&realm=pc&compact=1`)
       }
     }
   }
