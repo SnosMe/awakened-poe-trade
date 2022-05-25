@@ -3,6 +3,7 @@
     <button class="px-2 rounded border"
       :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
       @click="toggleAccuracy">{{ label }}</button>
+    <anointments-composition :item="item" />
     <button v-if="filters.corrupted" class="px-2" @click="corrupted = !corrupted">
       <span v-if="corrupted" class="text-red-500">{{ t('Corrupted') }}</span>
       <span v-else class="text-gray-600">{{ t('Not Corrupted') }}</span>
@@ -15,8 +16,10 @@ import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { ParsedItem } from '@/parser'
 import type { ItemFilters } from './interfaces'
+import AnointmentsComposition from '../anointments-composition/AnointmentsComposition.vue'
 
 export default defineComponent({
+  components: { AnointmentsComposition },
   name: 'FilterName',
   props: {
     filters: {
