@@ -37,7 +37,12 @@ export interface DropEntry {
 export interface BlightRecipes {
   oils: string[]
   recipes: {
-    [statValue: number]: number[]
+    passive: {
+      [statValue: number]: number[]
+    }
+    tower: {
+      [enchantValue: number]: number[]
+    }
   }
 }
 

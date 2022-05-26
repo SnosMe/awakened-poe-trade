@@ -13,32 +13,23 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
-import { StatFilter } from './interfaces'
 import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
-import { BLIGHT_RECIPES, ITEM_BY_REF } from '@/assets/data'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+import { BaseType } from '@/assets/data'
 
 export default defineComponent({
   components: { ItemQuickPrice },
   props: {
-    filter: {
-      type: Object as PropType<StatFilter>,
-      required: true
+    oils: {
+      type: Object as PropType<BaseType[]>
     }
   },
   setup (props) {
     const result = computed(() => {
-      if (props.filter.statRef !== 'Allocates #') return null
-
-      const roll = props.filter.option!.value
-
-      const oils = (BLIGHT_RECIPES.recipes[roll] ?? [])
-        .map(idx => BLIGHT_RECIPES.oils[idx])
-        .map(oilName => ITEM_BY_REF('ITEM', oilName)?.[0])
-      if (!oils.length) return null
+      if (!props.oils) return null
 
       let totalChaos: number | undefined = 0
-      for (const oil of oils) {
+      for (const oil of props.oils) {
         if (!oil) return null
         const price = findPriceByQuery({ ns: 'ITEM', name: oil.refName, variant: undefined })
         if (price) {
@@ -50,7 +41,7 @@ export default defineComponent({
       }
 
       return {
-        icons: oils.map(item => item!.icon),
+        icons: props.oils.map(item => item!.icon),
         price: (totalChaos != null)
           ? autoCurrency(totalChaos, 'chaos')
           : undefined

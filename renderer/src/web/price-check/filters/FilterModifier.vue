@@ -77,7 +77,7 @@
       </div>
     </div>
     <div class="flex flex-col">
-      <modifier-anointment :filter="filter" />
+      <modifier-anointment :oils="filter.oils" />
     </div>
   </div>
 </template>

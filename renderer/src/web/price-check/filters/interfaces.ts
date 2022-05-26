@@ -1,6 +1,7 @@
 import type { ItemInfluence, ItemCategory } from '@/parser'
 import type { StatCalculated } from '@/parser/modifiers'
 import type { ParsedItem } from '@/parser/ParsedItem'
+import { BaseType } from '@/assets/data'
 
 export interface FilterPreset {
   id: 'Pseudo' | 'Base' | string
@@ -81,6 +82,7 @@ export interface StatFilter {
   statRef: string
   text: string
   tag: FilterTag
+  oils?: Array<(BaseType | undefined)>
   sources: StatCalculated['sources']
   roll?: {
     value: number
