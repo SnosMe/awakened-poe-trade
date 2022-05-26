@@ -1,12 +1,11 @@
 import fnv1a from '@bensjoberg/fnv1a'
-import type { BaseType, BlightRecipes, Anointment, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, BlightRecipes, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
 import { AppConfig } from '@/web/Config'
 
 export * from './interfaces'
 
 export let ITEM_DROP: DropEntry[]
 export let BLIGHT_RECIPES: BlightRecipes
-export let ANOINTMENTS: Anointment[]
 export let CLIENT_STRINGS: TranslationDict
 export let CLIENT_STRINGS_REF: TranslationDict
 
@@ -137,7 +136,6 @@ export function stat (text: string) {
     CLIENT_STRINGS = (await eval(`import('${process.env.BASE_URL}data/${language}/client_strings.js')`)).default
     CLIENT_STRINGS_REF = (await eval(`import('${process.env.BASE_URL}data/en/client_strings.js')`)).default
     BLIGHT_RECIPES = await (await fetch(`${process.env.BASE_URL}data/blight-recipes.json`)).json()
-    ANOINTMENTS = await (await fetch(`${process.env.BASE_URL}data/anointments.json`)).json()
     ITEM_DROP = await (await fetch(`${process.env.BASE_URL}data/item-drop.json`)).json()
   }
 })()

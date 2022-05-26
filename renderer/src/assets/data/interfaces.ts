@@ -46,12 +46,6 @@ export interface BlightRecipes {
   }
 }
 
-export interface Anointment {
-  name: string
-  additionalName?: string
-  oils: string[]
-}
-
 export interface BaseType {
   name: string
   refName: string
