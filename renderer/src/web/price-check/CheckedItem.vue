@@ -27,8 +27,16 @@
       ref="tradeService"
       :filters="itemFilters"
       :item="item" />
-    <div v-if="!doSearch" @mouseenter="handleSearchMouseenter">
-      <button class="btn" @click="doSearch = true">{{ t('Search') }}</button>
+    <div v-if="!doSearch" class="flex">
+      <button class="btn" @mouseenter="handleSearchMouseenter" @click="doSearch = true">{{ t('Search') }}</button>
+      <div class="flex-1"></div>
+      <trade-links
+        :filters="itemFilters"
+        :stats="itemStats"
+        :item="item"
+        :league="itemFilters.trade.league"
+        :tradeAPI="tradeAPI"
+      />
     </div>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
@@ -47,6 +55,7 @@ import { useI18n } from 'vue-i18n'
 import { ItemRarity, ItemCategory, ParsedItem } from '@/parser'
 import TradeListing from './trade/TradeListing.vue'
 import TradeBulk from './trade/TradeBulk.vue'
+import TradeLinks from './trade/TradeLinks.vue'
 import { apiToSatisfySearch } from './trade/common'
 import PriceTrend from './trends/PriceTrend.vue'
 import FiltersBlock from './filters/FiltersBlock.vue'
@@ -68,6 +77,7 @@ export default defineComponent({
     PricePrediction,
     TradeListing,
     TradeBulk,
+    TradeLinks,
     PriceTrend,
     FiltersBlock,
     FilterName,
@@ -120,12 +130,12 @@ export default defineComponent({
           (item.isVeiled)
         )
       }
+
+      tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value, itemFilters.value)
     }, { immediate: true })
 
     watch(() => [props.item, doSearch.value], () => {
       if (doSearch.value === false) return
-
-      tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value, itemFilters.value)
 
       // NOTE: child `trade-xxx` component renders/receives props on nextTick
       nextTick(() => {

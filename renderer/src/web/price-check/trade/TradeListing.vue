@@ -8,10 +8,11 @@
       </div>
       <online-filter v-if="list" :by-time="true" :filters="filters" />
       <div class="flex-1"></div>
-      <div v-if="list" class="flex">
-        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ t('Trade') }}</button>
-        <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2 leading-none"><i class="fas fa-external-link-alt text-xs"></i></button>
-      </div>
+      <trade-links v-if="list"
+        tradeAPI="trade"
+        :searchResult="list"
+        :league="filters.trade.league"
+      />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -81,16 +82,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
+import { defineComponent, computed, watch, PropType, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult, SearchResult } from './pathofexile-trade'
-import { getTradeEndpoint } from './common'
 import { AppConfig } from '@/web/Config'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from './artificial-slowdown'
 import OnlineFilter from './OnlineFilter.vue'
+import TradeLinks from './TradeLinks.vue'
 
 const slowdown = artificialSlowdown(900)
 
@@ -194,7 +195,10 @@ function useTradeApi () {
 }
 
 export default defineComponent({
-  components: { OnlineFilter },
+  components: {
+    OnlineFilter,
+    TradeLinks
+  },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -218,8 +222,6 @@ export default defineComponent({
 
     const { error, searchResult, groupedResults, search } = useTradeApi()
 
-    const showBrowser = inject<(url: string) => void>('builtin-browser')!
-
     const { t } = useI18n()
 
     return {
@@ -239,18 +241,7 @@ export default defineComponent({
       }),
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
-      showSeller: computed(() => widget.value.showSeller),
-      openTradeLink (isExternal: boolean) {
-        const link = searchResult.value
-          ? `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}/${searchResult.value.id}`
-          : `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
-
-        if (isExternal) {
-          window.open(link)
-        } else {
-          showBrowser(link)
-        }
-      }
+      showSeller: computed(() => widget.value.showSeller)
     }
   }
 })
