@@ -80,6 +80,7 @@ export default {
   ELDRITCH_MOD_R4: 'Превосходный',
   ELDRITCH_MOD_R5: 'Первоклассный',
   ELDRITCH_MOD_R6: 'Безупречный',
+  SENTINEL_CHARGE: 'Заряд: ',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

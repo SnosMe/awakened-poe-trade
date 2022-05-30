@@ -177,6 +177,13 @@ export function createFilters (
     }
   }
 
+  if (item.sentinelCharge != null) {
+    filters.sentinelCharge = {
+      value: item.sentinelCharge,
+      disabled: false
+    }
+  }
+
   if (item.sockets?.linked) {
     filters.linkedSockets = {
       value: item.sockets.linked,

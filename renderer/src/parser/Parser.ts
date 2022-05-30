@@ -52,6 +52,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirrored,
+  parseSentinelCharge,
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
@@ -346,6 +347,10 @@ function parseCorrupted (section: string[], item: ParsedItem) {
   if (section[0] === _$.CORRUPTED) {
     item.isCorrupted = true
     return 'SECTION_PARSED'
+  }
+  if (item.category === ItemCategory.Sentinel) {
+    item.isCorrupted = true
+    return 'PARSER_SKIPPED'
   }
   return 'SECTION_SKIPPED'
 }
@@ -656,6 +661,18 @@ function parseFlask (section: string[], item: ParsedItem) {
     }
   }
 
+  return 'SECTION_SKIPPED'
+}
+
+function parseSentinelCharge (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Sentinel) return 'PARSER_SKIPPED'
+
+  if (section.length === 1) {
+    if (section[0].startsWith(_$.SENTINEL_CHARGE)) {
+      item.sentinelCharge = parseInt(section[0].slice(_$.SENTINEL_CHARGE.length), 10)
+      return 'SECTION_PARSED'
+    }
+  }
   return 'SECTION_SKIPPED'
 }
 

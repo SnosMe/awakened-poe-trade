@@ -60,6 +60,7 @@ export interface ItemFilters {
   }
   areaLevel?: FilterNumeric
   heistWingsRevealed?: FilterNumeric
+  sentinelCharge?: FilterNumeric
   trade: {
     offline: boolean
     onlineInLeague: boolean

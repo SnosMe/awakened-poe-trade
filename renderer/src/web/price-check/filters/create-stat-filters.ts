@@ -48,7 +48,8 @@ export function createExactStatFilters (
     item.category !== ItemCategory.Map &&
     item.category !== ItemCategory.Invitation &&
     item.category !== ItemCategory.HeistContract &&
-    item.category !== ItemCategory.HeistBlueprint
+    item.category !== ItemCategory.HeistBlueprint &&
+    item.category !== ItemCategory.Sentinel
   )) {
     keepByType.push(ModifierType.Explicit)
   }
