@@ -23,6 +23,7 @@ export interface ShortcutAction {
     type: 'copy-item'
     eventName: (
       ipc.IpcOpenWiki['name'] |
+      ipc.IpcOpenNinja['name'] |
       ipc.IpcOpenCraftOfExile['name'] |
       ipc.IpcItemCheck['name'] |
       'price-check-quick' |
@@ -79,6 +80,12 @@ function shortcutsFromConfig () {
     actions.push({
       shortcut: config.get('wikiKey')!,
       action: { type: 'copy-item', eventName: 'MAIN->OVERLAY::open-wiki' }
+    })
+  }
+  if (config.get('ninjaKey')) {
+    actions.push({
+      shortcut: config.get('ninjaKey')!,
+      action: { type: 'copy-item', eventName: 'MAIN->OVERLAY::open-ninja' }
     })
   }
   if (config.get('craftOfExileKey')) {

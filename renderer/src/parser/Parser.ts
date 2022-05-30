@@ -279,6 +279,10 @@ function parseNamePlate (section: string[]) {
     rawText: undefined!
   }
 
+  if (section[0].includes(_$.FRAGMENT_HELP)) {
+    item.category = ItemCategory.Fragment
+  }
+
   const rarityText = section[1].slice(_$.RARITY.length)
   switch (rarityText) {
     case _$.RARITY_CURRENCY:

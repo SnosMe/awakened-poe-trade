@@ -12,6 +12,7 @@ export interface Config {
   configVersion: number
   leagueId?: string
   wikiKey: string | null
+  ninjaKey: string | null
   craftOfExileKey: string | null
   overlayKey: string
   overlayBackground: string
@@ -42,6 +43,7 @@ export interface Config {
 export const defaultConfig = (): Config => ({
   configVersion: 12,
   wikiKey: 'Alt + W',
+  ninjaKey: 'Alt + V',
   craftOfExileKey: null,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
