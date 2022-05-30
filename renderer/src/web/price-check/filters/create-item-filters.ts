@@ -259,7 +259,7 @@ export function createFilters (
         // TODO limit level by item type
         filters.itemLevel = {
           value: Math.min(item.itemLevel, 86),
-          disabled: !opts.exact
+          disabled: (!opts.exact || item.category === ItemCategory.Flask)
         }
       }
     }

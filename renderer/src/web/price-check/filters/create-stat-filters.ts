@@ -43,7 +43,6 @@ export function createExactStatFilters (
   }
 
   if (item.rarity === ItemRarity.Magic && (
-    item.category !== ItemCategory.Flask &&
     item.category !== ItemCategory.ClusterJewel &&
     item.category !== ItemCategory.Map &&
     item.category !== ItemCategory.Invitation &&
