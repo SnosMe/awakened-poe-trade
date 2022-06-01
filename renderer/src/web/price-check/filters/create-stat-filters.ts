@@ -29,8 +29,7 @@ export function createExactStatFilters (
   const keepByType = [ModifierType.Pseudo, ModifierType.Fractured]
   if (
     item.category !== ItemCategory.Amulet &&
-    item.category !== ItemCategory.Ring &&
-    item.category !== ItemCategory.Flask
+    item.category !== ItemCategory.Ring
   ) {
     keepByType.push(ModifierType.Enchant)
   }
@@ -51,6 +50,10 @@ export function createExactStatFilters (
     item.category !== ItemCategory.Sentinel
   )) {
     keepByType.push(ModifierType.Explicit)
+  }
+
+  if (item.category === ItemCategory.Flask) {
+    keepByType.push(ModifierType.Crafted)
   }
 
   const ctx: FiltersCreationContext = {
@@ -90,6 +93,8 @@ export function createExactStatFilters (
 
   if (item.category === ItemCategory.ClusterJewel) {
     applyClusterJewelRules(ctx.filters)
+  } else if (item.category === ItemCategory.Flask) {
+    applyFlaskRules(ctx.filters)
   }
 
   return ctx.filters
@@ -301,6 +306,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
 
   if (item.category === ItemCategory.ClusterJewel && item.rarity !== ItemRarity.Unique) {
     applyClusterJewelRules(ctx.filters)
+  } else if (item.category === ItemCategory.Flask) {
+    applyFlaskRules(ctx.filters)
   }
 
   const hasEmptyModifier = showHasEmptyModifier(ctx)
@@ -371,6 +378,16 @@ function applyClusterJewelRules (filters: StatFilter[]) {
         filter.roll!.max = undefined
       }
       // else 2, 8, 9 are [_ , n]
+    }
+  }
+}
+
+function applyFlaskRules (filters: StatFilter[]) {
+  const usedEnkindling = filters.find(filter => filter.statRef === 'Gains no Charges during Flask Effect')
+  for (const filter of filters) {
+    if (filter.tag === FilterTag.Enchant && !usedEnkindling) {
+      filter.hidden = 'hide_harvest_and_instilling'
+      filter.disabled = true
     }
   }
 }

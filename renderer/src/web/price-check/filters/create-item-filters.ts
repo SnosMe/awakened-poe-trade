@@ -184,6 +184,15 @@ export function createFilters (
     }
   }
 
+  if (item.quality && item.quality >= 20) {
+    if (item.category === ItemCategory.Flask) {
+      filters.quality = {
+        value: item.quality,
+        disabled: (item.quality <= 20)
+      }
+    }
+  }
+
   if (item.sockets?.linked) {
     filters.linkedSockets = {
       value: item.sockets.linked,

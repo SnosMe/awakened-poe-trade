@@ -655,13 +655,19 @@ function parseFlask (section: string[], item: ParsedItem) {
   // the purpose of this parser is to "consume" flask buffs
   // so they are not recognized as modifiers
 
+  let isParsed: SectionParseResult = 'SECTION_SKIPPED'
+
   for (const line of section) {
     if (_$.FLASK_CHARGES.test(line)) {
-      return 'SECTION_PARSED'
+      isParsed = 'SECTION_PARSED'; break
     }
   }
 
-  return 'SECTION_SKIPPED'
+  if (isParsed) {
+    parseQualityNested(section, item)
+  }
+
+  return isParsed
 }
 
 function parseSentinelCharge (section: string[], item: ParsedItem) {
