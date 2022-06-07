@@ -93,21 +93,24 @@ function useSelectedItems () {
 }
 
 function findItems (search: string): BaseType[] | false {
+  search = search.trim()
   if (search.length < 2) return false
 
   const out = []
+
+  const firstWord = search.split(/\s+/, 1)[0]
   const jsonSearch = (AppConfig().language === 'en')
-    ? capitalize(search.split(' ', 1)[0])
-    : search.split(' ', 1)[0]
+    ? capitalize(firstWord)
+    : firstWord
 
   const MAX_HITS = 70 // NOTE: based on first word only, so don't be too strict
   const MAX_RESULTS_VISIBLE = 5 // NOTE: don't want to pick from too many results
   const MAX_RESULTS = 10
   let hits = 0
-  for (const match of ITEMS_ITERATOR(jsonSearch)) {
+  for (const match of ITEMS_ITERATOR(jsonSearch, ['GEM'])) {
     hits += 1
     const lcName = match.name.toLowerCase()
-    const lcSearch = search.toLowerCase().split(' ')
+    const lcSearch = search.toLowerCase().split(/\s+/)
     if (
       match.namespace === 'GEM' &&
       match.gem!.altQuality?.length &&
