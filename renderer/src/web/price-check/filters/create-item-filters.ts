@@ -1,5 +1,5 @@
 import type { ItemFilters } from './interfaces'
-import { ParsedItem, ItemCategory, ItemRarity, ItemInfluence } from '@/parser'
+import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { tradeTag, PERMANENT_LEAGUES } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF } from '@/assets/data'
@@ -228,20 +228,10 @@ export function createFilters (
   }
 
   if (item.influences.length && item.influences.length <= 2) {
-    if (opts.exact) {
-      filters.influences = item.influences.map(influecne => ({
-        value: influecne,
-        disabled: false
-      }))
-    } else if (item.influences.length === 1 && (
-      item.influences[0] === ItemInfluence.Shaper ||
-      item.influences[0] === ItemInfluence.Elder
-    )) {
-      filters.influences = [{
-        value: item.influences[0],
-        disabled: true
-      }]
-    }
+    filters.influences = item.influences.map(influence => ({
+      value: influence,
+      disabled: !opts.exact
+    }))
   }
 
   if (item.itemLevel) {

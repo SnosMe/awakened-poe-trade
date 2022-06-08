@@ -124,6 +124,11 @@ export function initUiModFilters (
   filterItemProp(ctx)
   filterPseudo(ctx)
 
+  if (!item.isCorrupted && !item.isMirrored) {
+    ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Fractured)
+    ctx.statsByType.push(...item.statsByType.filter(mod => mod.type === ModifierType.Fractured))
+  }
+
   if (item.isVeiled) {
     ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Veiled)
   }
