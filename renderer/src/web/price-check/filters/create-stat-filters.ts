@@ -121,8 +121,10 @@ export function initUiModFilters (
     })
   }
 
-  filterItemProp(ctx)
-  filterPseudo(ctx)
+  if (item.info.refName !== 'Split Personality') {
+    filterItemProp(ctx)
+    filterPseudo(ctx)
+  }
 
   if (!item.isCorrupted && !item.isMirrored) {
     ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Fractured)
