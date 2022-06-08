@@ -70,7 +70,7 @@ async function loadItems (language: string) {
         const record = JSON.parse(ndjson.slice(start, end)) as BaseType
         if (record.namespace === ns && record[prop] === name) {
           out.push(record)
-          if (!record.disc) break
+          if (!record.disc && !record.unique) break
         } else { break }
         start = end + 1
       }

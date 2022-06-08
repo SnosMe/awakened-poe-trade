@@ -178,6 +178,9 @@ function findInDatabase (item: ParserState) {
   if (!info?.length) {
     throw new Error('UNKNOWN_ITEM')
   }
+  if (info[0].unique) {
+    info = info.filter(info => info.unique!.base === item.baseType)
+  }
   item.infoVariants = info
   // choose 1st variant, correct one will be picked at the end of parsing
   item.info = info[0]
