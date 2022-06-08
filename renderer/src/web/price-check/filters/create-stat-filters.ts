@@ -249,6 +249,8 @@ export function calculatedStatToFilter (
 
 function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
   if (item.rarity !== ItemRarity.Unique) return
+  if (filter.tag === FilterTag.Implicit &&
+    item.category === ItemCategory.Jewel) return
   if (
     filter.tag !== FilterTag.Implicit &&
     filter.tag !== FilterTag.Explicit &&
