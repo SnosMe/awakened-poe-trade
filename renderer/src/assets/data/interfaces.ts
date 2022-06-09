@@ -165,7 +165,6 @@ export interface TranslationDict {
   ELDRITCH_MOD_R5: string
   ELDRITCH_MOD_R6: string
   SENTINEL_CHARGE: string
-  FRAGMENT_HELP: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

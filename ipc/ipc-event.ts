@@ -15,7 +15,6 @@ export type IpcEvent =
   IpcCloseOverlay |
   IpcVisibility |
   IpcOpenWiki |
-  IpcOpenNinja |
   IpcOpenCraftOfExile |
   IpcImportFile |
   IpcToggleDelveGrid |
@@ -84,12 +83,6 @@ export type IpcVisibility =
 
 export type IpcOpenWiki =
   Event<'MAIN->OVERLAY::open-wiki', {
-    clipboard: string
-    position: { x: number, y: number }
-  }>
-
-export type IpcOpenNinja =
-  Event<'MAIN->OVERLAY::open-ninja', {
     clipboard: string
     position: { x: number, y: number }
   }>

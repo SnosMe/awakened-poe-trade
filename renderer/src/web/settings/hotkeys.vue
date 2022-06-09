@@ -30,10 +30,6 @@
       <hotkey-input v-model="wikiKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Open item on poe.ninja') }}</label>
-      <hotkey-input v-model="ninjaKey" class="w-48" />
-    </div>
-    <div class="mb-4 flex">
       <label class="flex-1">{{ t('Map check') }}</label>
       <!-- <label class="flex-1">{{ t('Item info') }}</label> -->
       <hotkey-input v-model="itemCheckKey" class="w-48" />
@@ -78,7 +74,6 @@ export default defineComponent({
       craftOfExileKey: configModelValue(() => props.config, 'craftOfExileKey'),
       itemCheckKey: configModelValue(() => props.config, 'itemCheckKey'),
       wikiKey: configModelValue(() => props.config, 'wikiKey'),
-      ninjaKey: configModelValue(() => props.config, 'ninjaKey'),
       overlayKey: configModelValue(() => props.config, 'overlayKey'),
       priceCheckHotkeyHold: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),
       priceCheckHotkey: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkey'),
