@@ -13,16 +13,17 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
+import { StatFilter } from './interfaces'
 import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
 import { ITEM_BY_REF } from '@/assets/data'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
-import { BaseType } from '@/assets/data'
 
 export default defineComponent({
   components: { ItemQuickPrice },
   props: {
-    oils: {
-      type: Object as PropType<BaseType[]>
+    filter: {
+      type: Object as PropType<StatFilter>,
+      required: true
     }
   },
   setup (props) {
@@ -33,7 +34,7 @@ export default defineComponent({
         .map(oilName => ITEM_BY_REF('ITEM', oilName)![0])
 
       let totalChaos: number | undefined = 0
-      for (const oil of props.oils) {
+      for (const oil of oils) {
         if (!oil) return null
         const price = findPriceByQuery({ ns: 'ITEM', name: oil.refName, variant: undefined })
         if (price) {
@@ -45,7 +46,7 @@ export default defineComponent({
       }
 
       return {
-        icons: props.oils.map(item => item!.icon),
+        icons: oils.map(item => item!.icon),
         price: (totalChaos != null)
           ? autoCurrency(totalChaos, 'chaos')
           : undefined

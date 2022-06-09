@@ -1,7 +1,6 @@
 import type { ItemInfluence, ItemCategory } from '@/parser'
 import type { StatCalculated } from '@/parser/modifiers'
 import type { ParsedItem } from '@/parser/ParsedItem'
-import { BaseType } from '@/assets/data'
 
 export interface FilterPreset {
   id: 'Pseudo' | 'Base' | string
