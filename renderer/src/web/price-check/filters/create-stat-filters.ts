@@ -27,13 +27,7 @@ export function createExactStatFilters (
     !item.isSynthesised
   ) return []
 
-  const keepByType = [ModifierType.Pseudo, ModifierType.Fractured]
-  if (
-    item.category !== ItemCategory.Amulet &&
-    item.category !== ItemCategory.Ring
-  ) {
-    keepByType.push(ModifierType.Enchant)
-  }
+  const keepByType = [ModifierType.Pseudo, ModifierType.Fractured, ModifierType.Enchant]
 
   if (
     !item.influences.length &&
