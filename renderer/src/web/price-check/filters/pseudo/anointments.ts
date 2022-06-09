@@ -1,4 +1,6 @@
 import { ModifierType, StatCalculated } from '@/parser/modifiers'
+import type { ParsedItem } from '@/parser'
+import type { StatFilter } from '../interfaces'
 
 const OILS = [
   'Clear Oil',
@@ -39,4 +41,19 @@ export function decodeOils (calc: StatCalculated): string[] | undefined {
     .map(idx => OILS[idx])
 
   return decoded
+}
+
+export function applyAnointmentRules (filters: StatFilter[], item: ParsedItem) {
+  const anointment = filters.find(filter => filter.oils)
+  if (!anointment) return
+
+  if (item.talismanTier) {
+    anointment.disabled = false
+  } else if (!item.isCorrupted && !item.isMirrored) {
+    const oils = anointment.oils!
+    if (oils[0] !== 'Golden Oil' && oils[0] !== 'Silver Oil') {
+      anointment.hidden = 'Buyer will likely change anointment'
+      anointment.disabled = true
+    }
+  }
 }

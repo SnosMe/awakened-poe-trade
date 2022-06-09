@@ -5,7 +5,7 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
-import { decodeOils } from './pseudo/anointments'
+import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter } from '@/assets/data'
 
 export interface FiltersCreationContext {
@@ -27,13 +27,7 @@ export function createExactStatFilters (
     !item.isSynthesised
   ) return []
 
-  const keepByType = [ModifierType.Pseudo, ModifierType.Fractured]
-  if (
-    item.category !== ItemCategory.Amulet &&
-    item.category !== ItemCategory.Ring
-  ) {
-    keepByType.push(ModifierType.Enchant)
-  }
+  const keepByType = [ModifierType.Pseudo, ModifierType.Fractured, ModifierType.Enchant]
 
   if (
     !item.influences.length &&
@@ -338,16 +332,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     })
   }
 
-  if (item.category === ItemCategory.Amulet) {
-    const anointment = ctx.filters.find(filter => filter.statRef === 'Allocates #')
-    if (anointment) {
-      if (item.talismanTier) {
-        anointment.disabled = false
-      } else if (!item.isCorrupted && !item.isMirrored) {
-        anointment.hidden = 'Buyer will likely change anointment'
-        anointment.disabled = true
-      }
-    }
+  if (item.category === ItemCategory.Amulet || item.category === ItemCategory.Ring) {
+    applyAnointmentRules(ctx.filters, ctx.item)
   }
 
   for (const filter of ctx.filters) {
