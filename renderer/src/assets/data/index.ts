@@ -1,21 +1,20 @@
 import fnv1a from '@bensjoberg/fnv1a'
-import type { BaseType, BlightRecipes, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
 import { AppConfig } from '@/web/Config'
 
 export * from './interfaces'
 
 export let ITEM_DROP: DropEntry[]
-export let BLIGHT_RECIPES: BlightRecipes
 export let CLIENT_STRINGS: TranslationDict
 export let CLIENT_STRINGS_REF: TranslationDict
 
 export let ITEM_BY_TRANSLATED = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
 export let ITEM_BY_REF = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
-export let ITEMS_ITERATOR = function * (includes: string): Generator<BaseType> {}
+export let ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<BaseType> {}
 
 export let STAT_BY_MATCH_STR = (name: string): { matcher: StatMatcher, stat: Stat } | undefined => undefined
 export let STAT_BY_REF = (name: string): Stat | undefined => undefined
-export let STATS_ITERATOR = function * (includes: string): Generator<Stat> {}
+export let STATS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<Stat> {}
 
 function dataBinarySearch (data: Uint32Array, value: number, rowOffset: number, rowSize: number) {
   let left = 0
@@ -35,7 +34,8 @@ function dataBinarySearch (data: Uint32Array, value: number, rowOffset: number, 
 }
 
 function ndjsonFindLines<T> (ndjson: string) {
-  return function * (searchString: string): Generator<T> {
+  // it's preferable that passed `searchString` has good entropy
+  return function * (searchString: string, andIncludes: string[] = []): Generator<T> {
     let start = 0
     while (start !== ndjson.length) {
       const matchPos = ndjson.indexOf(searchString, start)
@@ -43,7 +43,10 @@ function ndjsonFindLines<T> (ndjson: string) {
       // works for first line too (-1 + 1 = 0)
       start = ndjson.lastIndexOf('\n', matchPos) + 1
       const end = ndjson.indexOf('\n', matchPos)
-      yield JSON.parse(ndjson.slice(start, end)) as T
+      const jsonLine = ndjson.slice(start, end)
+      if (andIncludes.every(str => jsonLine.includes(str))) {
+        yield JSON.parse(jsonLine) as T
+      }
       start = end + 1
     }
   }
@@ -66,7 +69,7 @@ async function loadItems (language: string) {
         const record = JSON.parse(ndjson.slice(start, end)) as BaseType
         if (record.namespace === ns && record[prop] === name) {
           out.push(record)
-          if (!record.disc) break
+          if (!record.disc && !record.unique) break
         } else { break }
         start = end + 1
       }
@@ -135,7 +138,6 @@ export function stat (text: string) {
   { /* eslint-disable no-eval */
     CLIENT_STRINGS = (await eval(`import('${process.env.BASE_URL}data/${language}/client_strings.js')`)).default
     CLIENT_STRINGS_REF = (await eval(`import('${process.env.BASE_URL}data/en/client_strings.js')`)).default
-    BLIGHT_RECIPES = await (await fetch(`${process.env.BASE_URL}data/blight-recipes.json`)).json()
     ITEM_DROP = await (await fetch(`${process.env.BASE_URL}data/item-drop.json`)).json()
   }
 })()

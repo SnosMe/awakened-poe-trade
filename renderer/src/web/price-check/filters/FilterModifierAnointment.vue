@@ -14,6 +14,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
+import { ITEM_BY_REF } from '@/assets/data'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { BaseType } from '@/assets/data'
 
@@ -26,7 +27,10 @@ export default defineComponent({
   },
   setup (props) {
     const result = computed(() => {
-      if (!props.oils) return null
+      if (!props.filter.oils) return null
+
+      const oils = props.filter.oils
+        .map(oilName => ITEM_BY_REF('ITEM', oilName)![0])
 
       let totalChaos: number | undefined = 0
       for (const oil of props.oils) {

@@ -74,7 +74,7 @@ import { MainProcess } from '@/web/background/IPC'
 import { chaosExaRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
-import { parseClipboard, ParsedItem } from '@/parser'
+import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
 import RelatedItems from './related-items/RelatedItems.vue'
 import RateLimiterState from './trade/RateLimiterState.vue'
 import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.vue'
@@ -127,7 +127,15 @@ export default defineComponent({
       }
       advancedCheck.value = e.lockedMode
       try {
-        item.value = parseClipboard(e.clipboard)
+        const parsed = parseClipboard(e.clipboard)
+        if (parsed != null && (
+          (parsed.category === ItemCategory.HeistContract && parsed.rarity !== ItemRarity.Unique) ||
+          (parsed.category === ItemCategory.Sentinel && parsed.rarity !== ItemRarity.Unique)
+        )) {
+          throw new Error('UNKNOWN_ITEM')
+        } else {
+          item.value = parsed
+        }
       } catch (err: unknown) {
         const strings = (err instanceof Error && err.message === 'UNKNOWN_ITEM')
           ? 'unknown_item'

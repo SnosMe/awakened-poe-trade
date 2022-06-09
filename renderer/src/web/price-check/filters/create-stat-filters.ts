@@ -5,6 +5,7 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
+import { decodeOils } from './pseudo/anointments'
 import { StatBetter } from '@/assets/data'
 import { createAnointmentComposition } from './create-anoinment-composition'
 
@@ -29,7 +30,8 @@ export function createExactStatFilters (
 
   const keepByType = [ModifierType.Pseudo, ModifierType.Fractured]
   if (
-    item.category !== ItemCategory.Flask
+    item.category !== ItemCategory.Amulet &&
+    item.category !== ItemCategory.Ring
   ) {
     keepByType.push(ModifierType.Enchant)
   }
@@ -42,14 +44,18 @@ export function createExactStatFilters (
   }
 
   if (item.rarity === ItemRarity.Magic && (
-    item.category !== ItemCategory.Flask &&
     item.category !== ItemCategory.ClusterJewel &&
     item.category !== ItemCategory.Map &&
     item.category !== ItemCategory.Invitation &&
     item.category !== ItemCategory.HeistContract &&
-    item.category !== ItemCategory.HeistBlueprint
+    item.category !== ItemCategory.HeistBlueprint &&
+    item.category !== ItemCategory.Sentinel
   )) {
     keepByType.push(ModifierType.Explicit)
+  }
+
+  if (item.category === ItemCategory.Flask) {
+    keepByType.push(ModifierType.Crafted)
   }
 
   const ctx: FiltersCreationContext = {
@@ -91,6 +97,8 @@ export function createExactStatFilters (
 
   if (item.category === ItemCategory.ClusterJewel) {
     applyClusterJewelRules(ctx.filters)
+  } else if (item.category === ItemCategory.Flask) {
+    applyFlaskRules(ctx.filters)
   }
 
   if (item.category === ItemCategory.Amulet || item.category === ItemCategory.Ring) {
@@ -121,8 +129,15 @@ export function initUiModFilters (
     })
   }
 
-  filterItemProp(ctx)
-  filterPseudo(ctx)
+  if (item.info.refName !== 'Split Personality') {
+    filterItemProp(ctx)
+    filterPseudo(ctx)
+  }
+
+  if (!item.isCorrupted && !item.isMirrored) {
+    ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Fractured)
+    ctx.statsByType.push(...item.statsByType.filter(mod => mod.type === ModifierType.Fractured))
+  }
 
   if (item.isVeiled) {
     ctx.statsByType = ctx.statsByType.filter(mod => mod.type !== ModifierType.Veiled)
@@ -157,6 +172,7 @@ export function calculatedStatToFilter (
       tag: (type === ModifierType.Enchant)
         ? FilterTag.Enchant
         : FilterTag.Variant,
+      oils: decodeOils(calc),
       sources: sources,
       option: {
         value: sources[0].contributes!.value
@@ -173,6 +189,7 @@ export function calculatedStatToFilter (
     statRef: stat.ref,
     text: translation.string,
     tag: (type as unknown) as FilterTag,
+    oils: decodeOils(calc),
     sources: sources,
     roll: undefined,
     disabled: true
@@ -244,6 +261,8 @@ export function calculatedStatToFilter (
 
 function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
   if (item.rarity !== ItemRarity.Unique) return
+  if (filter.tag === FilterTag.Implicit &&
+    item.category === ItemCategory.Jewel) return
   if (
     filter.tag !== FilterTag.Implicit &&
     filter.tag !== FilterTag.Explicit &&
@@ -306,6 +325,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
 
   if (item.category === ItemCategory.ClusterJewel && item.rarity !== ItemRarity.Unique) {
     applyClusterJewelRules(ctx.filters)
+  } else if (item.category === ItemCategory.Flask) {
+    applyFlaskRules(ctx.filters)
   }
 
   const hasEmptyModifier = showHasEmptyModifier(ctx)
@@ -395,6 +416,16 @@ function applyClusterJewelRules (filters: StatFilter[]) {
         filter.roll!.max = undefined
       }
       // else 2, 8, 9 are [_ , n]
+    }
+  }
+}
+
+function applyFlaskRules (filters: StatFilter[]) {
+  const usedEnkindling = filters.find(filter => filter.statRef === 'Gains no Charges during Flask Effect')
+  for (const filter of filters) {
+    if (filter.tag === FilterTag.Enchant && !usedEnkindling) {
+      filter.hidden = 'hide_harvest_and_instilling'
+      filter.disabled = true
     }
   }
 }

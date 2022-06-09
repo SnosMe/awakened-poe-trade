@@ -168,6 +168,11 @@ interface TradeRequest { /* eslint-disable camelcase */
           heist_trap_disarmament?: FilterRange
         }
       }
+      sentinel_filters?: {
+        filters: {
+          sentinel_durability?: FilterRange
+        }
+      }
       trade_filters?: {
         filters: {
           collapse?: FilterBoolean
@@ -374,6 +379,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
+  }
+
+  if (filters.sentinelCharge && !filters.sentinelCharge.disabled) {
+    propSet(query.filters, 'sentinel_filters.filters.sentinel_durability.min', filters.sentinelCharge.value)
   }
 
   for (const stat of stats) {

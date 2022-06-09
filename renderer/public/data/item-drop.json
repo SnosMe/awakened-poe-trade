@@ -356,6 +356,64 @@
   },
   {
     "query": [
+      "ITEM::Sacred Blossom"
+    ],
+    "items": [
+      "UNIQUE::Forbidden Shako // Great Crown",
+      "UNIQUE::Abhorrent Interrogation // Ambush Mitts",
+      "UNIQUE::Infused Beachhead // T16",
+      "UNIQUE::Law of the Wilds // Hellion's Paw",
+      "UNIQUE::Witchhunter's Judgment // Highborn Staff",
+      "ITEM::Craicic Lure",
+      "ITEM::Farric Lure",
+      "ITEM::Fenumal Lure",
+      "ITEM::Saqawine Lure",
+      "DIVINATION_CARD::The Bitter Blossom",
+      "DIVINATION_CARD::The Aspirant"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Farric Lure",
+      "UNIQUE::Farrul's Bite // Harlequin Mask",
+      "UNIQUE::Farrul's Pounce // Hydrascale Gauntlets",
+      "UNIQUE::Farrul's Fur // Triumphant Lamellar",
+      "UNIQUE::Farrul's Chase // Slink Boots"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Craicic Lure",
+      "UNIQUE::Craiceann's Chitin // Magistrate Crown",
+      "UNIQUE::Craiceann's Carapace // Golden Plate",
+      "UNIQUE::Craiceann's Pincers // Titan Gauntlets",
+      "UNIQUE::Craiceann's Tracks // Goliath Greaves"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Fenumal Lure",
+      "UNIQUE::Fenumus' Toxins // Necromancer Circlet",
+      "UNIQUE::Fenumus' Shroud // Widowsilk Robe",
+      "UNIQUE::Fenumus' Weave // Carnal Mitts",
+      "UNIQUE::Fenumus' Spinnerets // Assassin's Boots"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Saqawine Lure",
+      "UNIQUE::Saqawal's Flock // Silken Hood",
+      "UNIQUE::Saqawal's Nest // Blood Raiment",
+      "UNIQUE::Saqawal's Winds // Soldier Gloves",
+      "UNIQUE::Saqawal's Talons // Hydrascale Boots"
+    ],
+    "items": []
+  },
+  {
+    "query": [
       "ITEM::Simulacrum Splinter",
       "ITEM::Simulacrum"
     ],
