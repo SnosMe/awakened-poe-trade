@@ -5,9 +5,8 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
-import { decodeOils } from './pseudo/anointments'
+import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter } from '@/assets/data'
-import { createAnointmentComposition } from './create-anoinment-composition'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -91,18 +90,12 @@ export function createExactStatFilters (
       filter.roll!.default.min = filter.roll!.value
       filter.roll!.default.max = filter.roll!.value
     }
-
-    filter.disabled = false
   }
 
   if (item.category === ItemCategory.ClusterJewel) {
     applyClusterJewelRules(ctx.filters)
   } else if (item.category === ItemCategory.Flask) {
     applyFlaskRules(ctx.filters)
-  }
-
-  if (item.category === ItemCategory.Amulet || item.category === ItemCategory.Ring) {
-    applyAnointmentRules(ctx.filters)
   }
 
   return ctx.filters
@@ -345,20 +338,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     })
   }
 
-  if (item.category === ItemCategory.Amulet) {
-    const anointment = ctx.filters.find(filter => filter.statRef === 'Allocates #')
-    if (anointment) {
-      if (item.talismanTier) {
-        anointment.disabled = false
-      } else if (!item.isCorrupted && !item.isMirrored) {
-        anointment.hidden = 'Buyer will likely change anointment'
-        anointment.disabled = true
-      }
-    }
-  }
-
   if (item.category === ItemCategory.Amulet || item.category === ItemCategory.Ring) {
-    applyAnointmentRules(ctx.filters)
+    applyAnointmentRules(ctx.filters, ctx.item)
   }
 
   for (const filter of ctx.filters) {
@@ -368,21 +349,6 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'Select only if price-checking as base item for crafting'
       }
-    }
-  }
-}
-
-function applyAnointmentRules (filters: StatFilter[]) {
-  for (const filter of filters) {
-    if (filter.tag !== FilterTag.Enchant) continue
-
-    const composition = createAnointmentComposition(filter)
-    if (composition) {
-      filter.oils = composition
-      const showComposition = !!composition.find(oil => oil && (oil.name === 'Golden Oil' || oil.name === 'Silver Oil'))
-      filter.disabled = showComposition
-      filter.hidden = showComposition ? undefined : 'Buyer will likely change anointment'
-      break
     }
   }
 }
