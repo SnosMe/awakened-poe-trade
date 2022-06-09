@@ -5,6 +5,7 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
+import { decodeOils } from './pseudo/anointments'
 import { StatBetter } from '@/assets/data'
 
 export interface FiltersCreationContext {
@@ -164,6 +165,7 @@ export function calculatedStatToFilter (
       tag: (type === ModifierType.Enchant)
         ? FilterTag.Enchant
         : FilterTag.Variant,
+      oils: decodeOils(calc),
       sources: sources,
       option: {
         value: sources[0].contributes!.value
@@ -180,6 +182,7 @@ export function calculatedStatToFilter (
     statRef: stat.ref,
     text: translation.string,
     tag: (type as unknown) as FilterTag,
+    oils: decodeOils(calc),
     sources: sources,
     roll: undefined,
     disabled: true

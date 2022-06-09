@@ -82,6 +82,7 @@ export interface StatFilter {
   statRef: string
   text: string
   tag: FilterTag
+  oils?: string[]
   sources: StatCalculated['sources']
   roll?: {
     value: number

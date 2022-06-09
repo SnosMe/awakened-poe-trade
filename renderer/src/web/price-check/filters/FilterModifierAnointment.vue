@@ -15,7 +15,7 @@
 import { defineComponent, PropType, computed } from 'vue'
 import { StatFilter } from './interfaces'
 import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
-import { BLIGHT_RECIPES, ITEM_BY_REF } from '@/assets/data'
+import { ITEM_BY_REF } from '@/assets/data'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 
 export default defineComponent({
@@ -28,14 +28,10 @@ export default defineComponent({
   },
   setup (props) {
     const result = computed(() => {
-      if (props.filter.statRef !== 'Allocates #') return null
+      if (!props.filter.oils) return null
 
-      const roll = props.filter.option!.value
-
-      const oils = (BLIGHT_RECIPES.recipes[roll] ?? [])
-        .map(idx => BLIGHT_RECIPES.oils[idx])
-        .map(oilName => ITEM_BY_REF('ITEM', oilName)?.[0])
-      if (!oils.length) return null
+      const oils = props.filter.oils
+        .map(oilName => ITEM_BY_REF('ITEM', oilName)![0])
 
       let totalChaos: number | undefined = 0
       for (const oil of oils) {

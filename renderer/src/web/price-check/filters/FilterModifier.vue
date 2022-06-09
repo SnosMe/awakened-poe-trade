@@ -206,7 +206,7 @@ export default defineComponent({
       tag: computed(() => props.filter.tag),
       // TODO: change
       changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
-      showInputs: computed(() => props.filter.roll != null),
+      showInputs: computed(() => props.filter.roll != null && !props.filter.oils),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
       text: computed(() => t(props.filter.text)),
