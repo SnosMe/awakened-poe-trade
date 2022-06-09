@@ -12,7 +12,7 @@ interface NinjaDenseInfo {
 
 export const chaosExaRate = shallowRef<number | undefined>(undefined)
 
-type PriceDatabase = Array<{ ns: string, lines: string }>
+type PriceDatabase = Array<{ ns: string, url: string, lines: string }>
 let PRICES_DB: PriceDatabase = []
 let lastUpdateTime = 0
 
@@ -40,17 +40,55 @@ async function load (force: boolean = false) {
   }
 }
 
+function selectedLeagueToUrl (): string {
+  const league = selectedLeague.value!
+  switch (league) {
+    case 'Standard': return 'standard'
+    case 'Hardcore': return 'hardcore'
+    default:
+      return (league.startsWith('Hardcore ')) ? 'challengehc' : 'challenge'
+  }
+}
+
+function denseInfoToDetailsId (info: NinjaDenseInfo): string {
+  return ((info.variant) ? `${info.name}, ${info.variant}` : info.name)
+    .normalize('NFKD')
+    .replace(/[^a-zA-Z0-9:\- ]/g, '')
+    .toLowerCase()
+    .replace(/ /g, '-')
+}
+
 function splitJsonBlob (jsonBlob: string): PriceDatabase {
   const NINJA_OVERVIEW = '{"type":"'
-  const NAMESPACE_MAP: Array<[string, string[]]> = [
-    ['ITEM', ['Currency', 'Fragment', 'DeliriumOrb', 'Scarab', 'Artifact', 'BaseType', 'Fossil', 'Resonator', 'Incubator', 'Oil', 'Vial', 'Invitation', 'BlightedMap', 'BlightRavagedMap', 'Essence', 'Map']],
-    ['DIVINATION_CARD', ['DivinationCard']],
-    ['CAPTURED_BEAST', ['Beast']],
-    ['UNIQUE', ['UniqueJewel', 'UniqueFlask', 'UniqueWeapon', 'UniqueArmour', 'UniqueAccessory', 'UniqueMap']],
-    ['GEM', ['SkillGem']]
+  const NAMESPACE_MAP: Array<{ ns: string, url: string, type: string }> = [
+    { ns: 'ITEM', url: 'currency', type: 'Currency' },
+    { ns: 'ITEM', url: 'fragments', type: 'Fragment' },
+    { ns: 'ITEM', url: 'delirium-orbs', type: 'DeliriumOrb' },
+    { ns: 'ITEM', url: 'scarabs', type: 'Scarab' },
+    { ns: 'ITEM', url: 'artifacts', type: 'Artifact' },
+    { ns: 'ITEM', url: 'base-types', type: 'BaseType' },
+    { ns: 'ITEM', url: 'fossils', type: 'Fossil' },
+    { ns: 'ITEM', url: 'resonators', type: 'Resonator' },
+    { ns: 'ITEM', url: 'incubators', type: 'Incubator' },
+    { ns: 'ITEM', url: 'oils', type: 'Oil' },
+    { ns: 'ITEM', url: 'vials', type: 'Vial' },
+    { ns: 'ITEM', url: 'invitations', type: 'Invitation' },
+    { ns: 'ITEM', url: 'blighted-maps', type: 'BlightedMap' },
+    { ns: 'ITEM', url: 'blight-ravaged-maps', type: 'BlightRavagedMap' },
+    { ns: 'ITEM', url: 'essences', type: 'Essence' },
+    { ns: 'ITEM', url: 'maps', type: 'Map' },
+    { ns: 'DIVINATION_CARD', url: 'divination-cards', type: 'DivinationCard' },
+    { ns: 'CAPTURED_BEAST', url: 'beasts', type: 'Beast' },
+    { ns: 'UNIQUE', url: 'unique-jewels', type: 'UniqueJewel' },
+    { ns: 'UNIQUE', url: 'unique-flasks', type: 'UniqueFlask' },
+    { ns: 'UNIQUE', url: 'unique-weapons', type: 'UniqueWeapon' },
+    { ns: 'UNIQUE', url: 'unique-armours', type: 'UniqueArmour' },
+    { ns: 'UNIQUE', url: 'unique-accessories', type: 'UniqueAccessory' },
+    { ns: 'UNIQUE', url: 'unique-maps', type: 'UniqueMap' },
+    { ns: 'GEM', url: 'skill-gems', type: 'SkillGem' }
   ]
 
-  const byNamespace: PriceDatabase = []
+  const database: PriceDatabase = []
   let startPos = jsonBlob.indexOf(NINJA_OVERVIEW)
   if (startPos === -1) return []
 
@@ -63,20 +101,15 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
     )
     const lines = jsonBlob.slice(startPos, (endPos === -1) ? jsonBlob.length : endPos)
 
-    const isSupported = NAMESPACE_MAP.find(([_, types]) => types.includes(type))
+    const isSupported = NAMESPACE_MAP.find(entry => entry.type === type)
     if (isSupported) {
-      const found = byNamespace.find(({ ns }) => ns === isSupported[0])
-      if (found) {
-        found.lines += lines
-      } else {
-        byNamespace.push({ ns: isSupported[0], lines })
-      }
+      database.push({ ns: isSupported.ns, url: isSupported.url, lines })
     }
 
     if (endPos === -1) break
     startPos = endPos
   }
-  return byNamespace
+  return database
 }
 
 interface DbQuery {
@@ -85,10 +118,7 @@ interface DbQuery {
   variant: string | undefined
 }
 
-export function findPriceByQuery (query: DbQuery): NinjaDenseInfo | null {
-  const lines = PRICES_DB.find(({ ns }) => ns === query.ns)?.lines
-  if (!lines) return null
-
+export function findPriceByQuery (query: DbQuery) {
   // NOTE: order of keys is important
   const searchString = JSON.stringify({
     name: query.name,
@@ -96,11 +126,21 @@ export function findPriceByQuery (query: DbQuery): NinjaDenseInfo | null {
     chaos: 0
   }).replace(':0}', ':')
 
-  const startPos = lines.indexOf(searchString)
-  if (startPos === -1) return null
-  const endPos = lines.indexOf('}', startPos)
+  for (const { ns, url, lines } of PRICES_DB) {
+    if (ns !== query.ns) continue
 
-  return JSON.parse(lines.slice(startPos, endPos + 1))
+    const startPos = lines.indexOf(searchString)
+    if (startPos === -1) continue
+    const endPos = lines.indexOf('}', startPos)
+
+    const info: NinjaDenseInfo = JSON.parse(lines.slice(startPos, endPos + 1))
+
+    return {
+      ...info,
+      url: `https://poe.ninja/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`
+    }
+  }
+  return null
 }
 
 export function autoCurrency (value: number, currency: 'chaos' | 'exa'): { min: number, max: number, currency: 'chaos' | 'exa' } {
