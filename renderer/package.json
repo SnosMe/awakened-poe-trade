@@ -19,7 +19,6 @@
     "tippy.js": "^6.2.7",
     "vue": "3.2.x",
     "vue-i18n": "^9.1.0",
-    "vue-slider-component": "4.0.0-beta.3",
     "vue3-apexcharts": "^1.1.1",
     "vuedraggable": "4.0.1"
   },
