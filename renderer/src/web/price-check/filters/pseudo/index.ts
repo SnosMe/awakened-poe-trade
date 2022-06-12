@@ -389,13 +389,13 @@ export function filterPseudo (ctx: FiltersCreationContext) {
         if (filterByGroup.has('to_all_attrs')) {
           const toAll = filterByGroup.get('to_all_attrs')!
           ctx.filters = ctx.filters.filter(filter => !toAll.includes(filter))
-        }
 
-        if (attrFilters[1].roll!.value === attrFilters[2].roll!.value) {
-          attrFilters[1].hidden = 'hide_attr_same_2nd_n_3rd'
-          attrFilters[2].hidden = 'hide_attr_same_2nd_n_3rd'
-        } else {
-          attrFilters[2].hidden = 'hide_attr_smallest_total'
+          if (attrFilters[1].roll!.value === attrFilters[2].roll!.value) {
+            attrFilters[1].hidden = 'hide_attr_same_2nd_n_3rd'
+            attrFilters[2].hidden = 'hide_attr_same_2nd_n_3rd'
+          } else {
+            attrFilters[2].hidden = 'hide_attr_smallest_total'
+          }
         }
       }
     }
