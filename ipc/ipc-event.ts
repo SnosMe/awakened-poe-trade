@@ -22,7 +22,7 @@ export type IpcEvent =
   IpcStopwatchAction
 
 export type IpcEventPayload<Name extends IpcEvent['name'], T extends IpcEvent = IpcEvent> =
-  T extends { name: Name } ? T['payload'] : never
+  T extends { name: Name, payload: infer P } ? P : never
 
 export type IpcGetConfig =
   Event<'OVERLAY->MAIN::get-config', Config>
