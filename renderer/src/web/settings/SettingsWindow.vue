@@ -29,7 +29,7 @@
 import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
-import type { Config } from '@/../../ipc/types'
+import type { Config } from '@ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'

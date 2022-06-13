@@ -1,4 +1,4 @@
-import type { IpcUpdateInfo } from '@/../../ipc/ipc-event'
+import type { IpcUpdateInfo } from '@ipc/ipc-event'
 import { MainProcess } from '@/web/background/IPC'
 import { shallowRef } from 'vue'
 
