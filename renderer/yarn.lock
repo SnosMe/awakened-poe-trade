@@ -28,11 +28,6 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.5.tgz#337062363436a893a2d22faa60be5bb37091c83c"
   integrity sha512-YZWVaglMiplo7v8f1oMQ5ZPQr0vn7HPeZXxXWsxXJRjGVrzUFn9OxFQl1sb5wzfootjA/yChhW84BV+383FSOw==
 
-"@bensjoberg/fnv1a@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@bensjoberg/fnv1a/-/fnv1a-3.0.0.tgz#d5300c58c95b708bf669ae6224509e0f6ec1f9c3"
-  integrity sha512-uENnsvSKGAKIsDcKBzLszB2JemGDVuZE3v8lF4Bf+vDNnxLjN+OCaVNQcz5CZGw8FsJ8ddp897rFz66QtCKphA==
-
 "@fortawesome/fontawesome-free@6.x.x":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-6.1.1.tgz#bf5d45611ab74890be386712a0e5d998c65ee2a1"
@@ -150,6 +145,11 @@
   dependencies:
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
+
+"@sindresorhus/fnv1a@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/fnv1a/-/fnv1a-3.0.0.tgz#e8ce2e7c7738ec8c354867d38e3bfcde622b87ca"
+  integrity sha512-M6pmbdZqAryzjZ4ELAzrdCMoMZk5lH/fshKrapfSeXdf2W+GDqZvPmfXaNTZp43//FVbSwkTPwpEMnehSyskkQ==
 
 "@types/luxon@^2.0.0":
   version "2.3.2"

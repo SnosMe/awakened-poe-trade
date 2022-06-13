@@ -1,4 +1,4 @@
-import fnv1a from '@bensjoberg/fnv1a'
+import fnv1a from '@sindresorhus/fnv1a'
 import type { BaseType, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
 import { AppConfig } from '@/web/Config'
 

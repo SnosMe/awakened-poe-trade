@@ -1,6 +1,6 @@
 // @ts-check
 
-import fnv1a from '@bensjoberg/fnv1a'
+import fnv1a from '@sindresorhus/fnv1a'
 import fs from 'fs'
 import path from 'path'
 

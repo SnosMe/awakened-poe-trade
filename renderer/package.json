@@ -8,8 +8,8 @@
     "make-index-files": "node src/assets/make-index-files.mjs"
   },
   "dependencies": {
-    "@bensjoberg/fnv1a": "3.0.0",
     "@fortawesome/fontawesome-free": "6.x.x",
+    "@sindresorhus/fnv1a": "^3.0.0",
     "animate.css": "^4.1.1",
     "apexcharts": "^3.23.1",
     "dot-prop": "7.x.x",
@@ -41,5 +41,8 @@
       "postcss-nested": {},
       "autoprefixer": {}
     }
-  }
+  },
+  "browserslist": [
+    "chrome >= 101"
+  ]
 }
