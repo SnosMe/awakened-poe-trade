@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { KeyToCode, hotkeyToString } from '@/../../ipc/KeyToCode'
+import { KeyToCode, hotkeyToString } from '@ipc/KeyToCode'
 
 export default defineComponent({
   emits: ['update:modelValue'],

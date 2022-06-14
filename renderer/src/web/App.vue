@@ -14,7 +14,8 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-@import url('~@fortawesome/fontawesome-free/css/all.min.css');
+@import url('@fortawesome/fontawesome-free/css/all.min.css');
+@import url('animate.css/animate.css');
 @import url('../assets/font.css');
 @tailwind base;
 @tailwind components;

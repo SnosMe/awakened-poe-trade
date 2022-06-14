@@ -6,22 +6,18 @@
     "jsx": "preserve",
     "moduleResolution": "node",
     "skipLibCheck": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "allowJs": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
-    "types": ["webpack-env"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@ipc/*": ["../ipc/*"]
     },
+    "types": ["vite/client"],
     "lib": ["esnext", "dom", "dom.iterable"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

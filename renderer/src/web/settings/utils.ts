@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 import type { PropType } from 'vue'
-import type { Config } from '@/../../ipc/types'
+import type { Config } from '@ipc/types'
 import type { Widget } from '@/web/overlay/interfaces'
 
 export function configProp<T = undefined> () {

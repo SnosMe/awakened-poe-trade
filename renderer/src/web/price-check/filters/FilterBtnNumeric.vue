@@ -75,7 +75,7 @@ export default defineComponent({
           }
         }
       }),
-      inputFocus (e: InputEvent) {
+      inputFocus (e: FocusEvent) {
         const target = e.target as HTMLInputElement
         target.select()
         props.filter.disabled = false
