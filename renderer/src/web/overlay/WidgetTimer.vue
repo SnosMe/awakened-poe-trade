@@ -149,7 +149,7 @@ export default defineComponent({
 .wrapper {
   @apply px-2 py-1;
   @apply rounded text-white;
-  @apply bg-gray-300 bg-opacity-30;
+  @apply bg-gray-300/30;
 
   &:not(:hover) {
     .controls {

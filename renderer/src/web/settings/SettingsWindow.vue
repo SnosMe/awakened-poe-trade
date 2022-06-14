@@ -1,7 +1,7 @@
 <template>
-  <div :class="$style.window" class="flex-grow layout-column">
+  <div :class="$style.window" class="grow layout-column">
     <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
-    <div class="flex flex-grow min-h-0">
+    <div class="flex grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
         <template v-for="item of menuItems">
           <button v-if="item.type === 'menu-item'"
@@ -11,8 +11,8 @@
         </template>
         <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content; min-width: 100%;">{{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
       </div>
-      <div class="text-gray-100 flex-grow layout-column bg-gray-900">
-        <div class="flex-grow overflow-y-auto bg-gray-800 rounded-tl">
+      <div class="text-gray-100 grow layout-column bg-gray-900">
+        <div class="grow overflow-y-auto bg-gray-800 rounded-tl">
           <component v-if="configClone"
             :is="selectedComponent" :config="configClone" :configWidget="configWidget" />
         </div>
