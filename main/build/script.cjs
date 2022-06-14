@@ -37,7 +37,7 @@ const mainBuild = esbuild.build({
   outfile: 'dist/main.js',
   define: {
     'process.env.STATIC': (isDev) ? '"../build/icons"' : '"."',
-    'process.env.VITE_DEV_SERVER_URL': (isDev) ? '"http://localhost:8080"' : 'null'
+    'process.env.VITE_DEV_SERVER_URL': (isDev) ? '"http://localhost:3000"' : 'null'
   },
   watch: (isDev)
     ? { onRebuild (error) { if (!error) electronRunner.restart() } }
