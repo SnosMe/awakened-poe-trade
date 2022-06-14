@@ -17,7 +17,9 @@ export default defineConfig({
         }
       }
     }),
-    vueI18n()
+    vueI18n({
+      runtimeOnly: false // https://github.com/intlify/vue-i18n-next/issues/938
+    })
   ],
   resolve: {
     alias: {
