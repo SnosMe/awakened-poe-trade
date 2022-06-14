@@ -15,6 +15,7 @@
       "@/*": ["./src/*"],
       "@ipc/*": ["../ipc/*"]
     },
+    "types": ["vite/client"],
     "lib": ["esnext", "dom", "dom.iterable"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
