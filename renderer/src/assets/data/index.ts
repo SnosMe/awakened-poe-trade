@@ -136,8 +136,8 @@ export function stat (text: string) {
   }
 
   { /* eslint-disable no-eval */
-    CLIENT_STRINGS = (await eval(`import('${import.meta.env.BASE_URL}data/${language}/client_strings.js')`)).default
-    CLIENT_STRINGS_REF = (await eval(`import('${import.meta.env.BASE_URL}data/en/client_strings.js')`)).default
+    CLIENT_STRINGS = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/${language}/client_strings.js`)).default
+    CLIENT_STRINGS_REF = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/en/client_strings.js`)).default
     ITEM_DROP = await (await fetch(`${import.meta.env.BASE_URL}data/item-drop.json`)).json()
   }
 })()
