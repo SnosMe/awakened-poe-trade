@@ -599,10 +599,22 @@ function getMinMax (roll: StatFilter['roll']) {
 }
 
 function tradeIdToQuery (id: string, stat: StatFilter) {
+  // NOTE: if there will be too many overrides in the future,
+  //       consider moving them to stats.ndjson
+
+  let roll = stat.roll
+
+  // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
+  if (id.endsWith('stat_1901158930')) {
+    if (stat.roll?.value === 100) {
+      roll = undefined // stat semantic type is flag
+    }
+  }
+
   return {
     id,
     value: {
-      ...getMinMax(stat.roll),
+      ...getMinMax(roll),
       option: stat.option != null
         ? stat.option.value
         : undefined
