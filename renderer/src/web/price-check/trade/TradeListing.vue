@@ -9,10 +9,7 @@
       <online-filter v-if="list" :by-time="true" :filters="filters" />
       <div class="flex-1"></div>
       <trade-links v-if="list"
-        tradeAPI="trade"
-        :searchResult="list"
-        :league="filters.trade.league"
-      />
+        :get-link="makeTradeLink" />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -76,15 +73,16 @@
     <p>Error: {{ error }}</p>
     <template #actions>
       <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
-      <button class="btn" @click="openTradeLink(false)">{{ t('Browser') }}</button>
+      <button class="btn" @click="openTradeLink">{{ t('Browser') }}</button>
     </template>
   </ui-error-box>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, watch, PropType, shallowReactive, shallowRef } from 'vue'
+import { defineComponent, computed, watch, PropType, inject, shallowReactive, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { requestTradeResultList, requestResults, createTradeRequest, PricingResult, SearchResult } from './pathofexile-trade'
+import { getTradeEndpoint } from './common'
 import { AppConfig } from '@/web/Config'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { ItemFilters, StatFilter } from '../filters/interfaces'
@@ -195,10 +193,7 @@ function useTradeApi () {
 }
 
 export default defineComponent({
-  components: {
-    OnlineFilter,
-    TradeLinks
-  },
+  components: { OnlineFilter, TradeLinks },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -222,6 +217,14 @@ export default defineComponent({
 
     const { error, searchResult, groupedResults, search } = useTradeApi()
 
+    const showBrowser = inject<(url: string) => void>('builtin-browser')!
+
+    function makeTradeLink () {
+      return (searchResult.value)
+        ? `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}/${searchResult.value.id}`
+        : `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
+    }
+
     const { t } = useI18n()
 
     return {
@@ -241,7 +244,11 @@ export default defineComponent({
       }),
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
-      showSeller: computed(() => widget.value.showSeller)
+      showSeller: computed(() => widget.value.showSeller),
+      makeTradeLink,
+      openTradeLink () {
+        showBrowser(makeTradeLink())
+      }
     }
   }
 })

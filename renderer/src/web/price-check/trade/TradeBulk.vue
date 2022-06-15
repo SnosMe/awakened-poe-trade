@@ -20,11 +20,7 @@
         </div>
       </div>
       <trade-links v-if="result"
-        tradeAPI="bulk"
-        :searchBulkResult="result"
-        :league="filters.trade.league"
-        :selectedCurr="selectedCurr"
-      />
+        :get-link="makeTradeLink" />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -92,6 +88,8 @@
 import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { BulkSearch, execBulkSearch, PricingResult } from './pathofexile-bulk'
+import { getTradeEndpoint } from './common'
+import { selected as league } from '../../background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -183,10 +181,7 @@ function useBulkApi () {
 }
 
 export default defineComponent({
-  components: {
-    OnlineFilter,
-    TradeLinks
-  },
+  components: { OnlineFilter, TradeLinks },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -237,7 +232,10 @@ export default defineComponent({
       selectedResults,
       selectedCurr,
       execSearch: () => { search(props.item, props.filters) },
-      showSeller: computed(() => widget.value.showSeller)
+      showSeller: computed(() => widget.value.showSeller),
+      makeTradeLink () {
+        return `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].listed.value!.queryId}`
+      }
     }
   }
 })

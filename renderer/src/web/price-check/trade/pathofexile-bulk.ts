@@ -56,7 +56,7 @@ export interface PricingResult {
 
 const cache = new Cache()
 
-export async function requestTradeResultList (body: TradeRequest, leagueId: string): Promise<SearchResult> {
+async function requestTradeResultList (body: TradeRequest, leagueId: string): Promise<SearchResult> {
   let data = cache.get<SearchResult>([body, leagueId])
 
   if (!data) {
@@ -116,7 +116,7 @@ export interface BulkSearch {
   listed: PricingResult[]
 }
 
-export function createTradeRequest (filters: ItemFilters, item: ParsedItem, have: string[]): TradeRequest {
+function createTradeRequest (filters: ItemFilters, item: ParsedItem, have: string[]): TradeRequest {
   return {
     engine: 'new',
     query: {
