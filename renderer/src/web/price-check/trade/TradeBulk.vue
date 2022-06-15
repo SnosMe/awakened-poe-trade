@@ -19,10 +19,8 @@
           <span class="ml-1"><online-filter :filters="filters" /></span>
         </div>
       </div>
-      <div v-if="result" class="flex">
-        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2">{{ t('Trade') }}</button>
-        <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2"><i class="fas fa-external-link-alt text-xs"></i></button>
-      </div>
+      <trade-links v-if="result"
+        :get-link="makeTradeLink" />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -87,7 +85,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, inject, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
+import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { BulkSearch, execBulkSearch, PricingResult } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
@@ -98,6 +96,7 @@ import { ParsedItem } from '@/parser'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { artificialSlowdown } from './artificial-slowdown'
 import OnlineFilter from './OnlineFilter.vue'
+import TradeLinks from './TradeLinks.vue'
 
 const slowdown = artificialSlowdown(900)
 
@@ -182,7 +181,7 @@ function useBulkApi () {
 }
 
 export default defineComponent({
-  components: { OnlineFilter },
+  components: { OnlineFilter, TradeLinks },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -224,8 +223,6 @@ export default defineComponent({
       }
     })
 
-    const showBrowser = inject<(url: string) => void>('builtin-browser')!
-
     const { t } = useI18n()
 
     return {
@@ -236,13 +233,8 @@ export default defineComponent({
       selectedCurr,
       execSearch: () => { search(props.item, props.filters) },
       showSeller: computed(() => widget.value.showSeller),
-      openTradeLink (isExternal: boolean) {
-        const link = `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].listed.value!.queryId}`
-        if (isExternal) {
-          window.open(link)
-        } else {
-          showBrowser(link)
-        }
+      makeTradeLink () {
+        return `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].listed.value!.queryId}`
       }
     }
   }

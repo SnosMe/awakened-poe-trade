@@ -8,10 +8,8 @@
       </div>
       <online-filter v-if="list" :by-time="true" :filters="filters" />
       <div class="flex-1"></div>
-      <div v-if="list" class="flex">
-        <button @click="openTradeLink(false)" class="bg-gray-700 text-gray-400 rounded-l mr-px px-2 leading-none">{{ t('Trade') }}</button>
-        <button @click="openTradeLink(true)" class="bg-gray-700 text-gray-400 rounded-r px-2 leading-none"><i class="fas fa-external-link-alt text-xs"></i></button>
-      </div>
+      <trade-links v-if="list"
+        :get-link="makeTradeLink" />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -75,7 +73,7 @@
     <p>Error: {{ error }}</p>
     <template #actions>
       <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
-      <button class="btn" @click="openTradeLink(false)">{{ t('Browser') }}</button>
+      <button class="btn" @click="openTradeLink">{{ t('Browser') }}</button>
     </template>
   </ui-error-box>
 </template>
@@ -91,6 +89,7 @@ import { ItemFilters, StatFilter } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { artificialSlowdown } from './artificial-slowdown'
 import OnlineFilter from './OnlineFilter.vue'
+import TradeLinks from './TradeLinks.vue'
 
 const slowdown = artificialSlowdown(900)
 
@@ -194,7 +193,7 @@ function useTradeApi () {
 }
 
 export default defineComponent({
-  components: { OnlineFilter },
+  components: { OnlineFilter, TradeLinks },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -220,6 +219,12 @@ export default defineComponent({
 
     const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
+    function makeTradeLink () {
+      return (searchResult.value)
+        ? `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}/${searchResult.value.id}`
+        : `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
+    }
+
     const { t } = useI18n()
 
     return {
@@ -240,16 +245,9 @@ export default defineComponent({
       execSearch: () => { search(props.filters, props.stats, props.item) },
       error,
       showSeller: computed(() => widget.value.showSeller),
-      openTradeLink (isExternal: boolean) {
-        const link = searchResult.value
-          ? `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}/${searchResult.value.id}`
-          : `https://${getTradeEndpoint()}/trade/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
-
-        if (isExternal) {
-          window.open(link)
-        } else {
-          showBrowser(link)
-        }
+      makeTradeLink,
+      openTradeLink () {
+        showBrowser(makeTradeLink())
       }
     }
   }
