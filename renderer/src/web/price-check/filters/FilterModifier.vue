@@ -47,33 +47,14 @@
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(tag) }}</span>
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
-        <div v-if="roll && roll.bounds"
-          class="mr-4" style="width: 12.5rem;">
-          <ui-slider
-            class="search-slider-rail" style="padding: 0;" :dotSize="[0, 1.25*fontSize]" :height="1.25*fontSize"
-            :railStyle="{ background: 'transparent' }" :processStyle="{ background: '#cbd5e0', borderRadius: 0 }"
-            drag-on-click lazy adsorb :enable-cross="false"
-
-            v-model="sliderValue"
-            :marks="{
-              [roll.bounds.min]: { label: 'min' },
-              [roll.bounds.max]: { label: 'max' },
-              [roll.value]: { label: 'roll' }
-            }"
-            :min="roll.bounds.min"
-            :max="roll.bounds.max"
-            :interval="changeStep"
-          >
-          <template v-slot:mark="{ pos, label, active }">
-            <div class="custom-mark" :class="{ active, [label]: true }" :style="{ flex: pos }">
-              <div class="custom-mark-tick" :style="{ 'left': `calc(${pos}% - 1px)` }"></div>
-              {{ label === 'min' ? roll.bounds.min : label === 'max' ? roll.bounds.max
-                : (roll.value === roll.bounds.min || roll.value === roll.bounds.max ? roll.value : '') }}
-            </div>
-          </template>
-          </ui-slider>
-        </div>
-        <div style="width: calc(2*3rem + 1px)"></div>
+        <stat-roll-slider v-if="roll && roll.bounds"
+          class="mr-4" style="width: 12.5rem;"
+          v-model="sliderValue"
+          :roll="roll.value"
+          :dp="roll.dp"
+          :bounds="roll.bounds"
+        />
+        <div style="width: calc(2*3rem + 1px)" />
       </div>
     </div>
     <div class="flex flex-col">
@@ -83,8 +64,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, ref, nextTick, ComponentPublicInstance } from 'vue'
+import { defineComponent, PropType, computed, ref, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
+import StatRollSlider from '../../ui/StatRollSlider.vue'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
 import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
@@ -94,7 +76,7 @@ import { FilterTag, StatFilter } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
-  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, SourceInfo },
+  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, SourceInfo, StatRollSlider },
   emits: ['submit'],
   props: {
     filter: {
@@ -133,27 +115,24 @@ export default defineComponent({
 
     const calcQuality = computed(() => Math.max(20, props.item.quality || 0))
 
-    const inputMinEl = ref<ComponentPublicInstance | null>(null)
-    const inputMaxEl = ref<ComponentPublicInstance | null>(null)
+    const inputMinEl = ref<HTMLInputElement | null>(null)
+    const inputMaxEl = ref<HTMLInputElement | null>(null)
 
-    const sliderValue = computed<Array<number>>({
+    const sliderValue = computed<Array<number | '' | undefined>>({
       get () {
         const roll = props.filter.roll!
-        return [
-          typeof roll.min === 'number' ? roll.min : roll.bounds!.min,
-          typeof roll.max === 'number' ? roll.max : roll.bounds!.max
-        ]
+        return [roll.min, roll.max]
       },
       set (value) {
-        if (props.filter.roll!.min !== value[0]) {
+        if (typeof value[0] === 'number') {
           props.filter.roll!.min = value[0]
           nextTick(() => {
-            (inputMinEl.value!.$el as HTMLInputElement).focus()
+            inputMinEl.value!.focus()
           })
-        } else if (props.filter.roll!.max !== value[1]) {
+        } else if (typeof value[1] === 'number') {
           props.filter.roll!.max = value[1]
           nextTick(() => {
-            (inputMaxEl.value!.$el as HTMLInputElement).focus()
+            inputMaxEl.value!.focus()
           })
         }
         props.filter.disabled = false
@@ -206,7 +185,7 @@ export default defineComponent({
       tag: computed(() => props.filter.tag),
       // TODO: change
       changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
-      showInputs: computed(() => props.filter.roll != null),
+      showInputs: computed(() => props.filter.roll != null && !props.filter.oils),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
       text: computed(() => t(props.filter.text)),
@@ -334,47 +313,6 @@ export default defineComponent({
 
   .search-text:hover & {
     @apply bg-gray-700;
-  }
-}
-
-.search-slider-rail { @apply rounded bg-gray-700; }
-.vue-slider-marks { display: flex; }
-.vue-slider-dot-tooltip-inner {
-  font-size: 0.875rem;
-  padding: 0.125rem 0.3125rem;
-  min-width: 1.25rem;
-  border-radius: 0.25rem;
-
-  &::after {
-    border-width: 0.3125rem;
-  }
-}
-.custom-mark {
-  text-align: right;
-  white-space: nowrap;
-  @apply px-1;
-  @apply text-gray-500;
-
-  &.active {
-    z-index: 1;
-    @apply text-gray-900;
-  }
-
-  &.roll .custom-mark-tick {
-    position: absolute;
-    height: 100%;
-
-    &::before, &::after {
-      content: ' ';
-      display: block;
-      position: absolute;
-      height: 0.25rem;
-      width: 0.125rem;
-      @apply bg-gray-900;
-    }
-
-    &::before { top: 0; }
-    &::after { bottom: 0; }
   }
 }
 </style>

@@ -65,6 +65,9 @@ export async function createOverlayWindow () {
     { role: 'toggleDevTools' }
   ]))
   overlayWindow.webContents.on('before-input-event', handleExtraCommands)
+  overlayWindow.webContents.on('did-attach-webview', (_, webviewWebContents) => {
+    webviewWebContents.on('before-input-event', handleExtraCommands)
+  })
 
   modifyResponseHeaders(overlayWindow.webContents)
 

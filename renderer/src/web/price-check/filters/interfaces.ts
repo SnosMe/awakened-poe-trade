@@ -60,6 +60,7 @@ export interface ItemFilters {
   }
   areaLevel?: FilterNumeric
   heistWingsRevealed?: FilterNumeric
+  sentinelCharge?: FilterNumeric
   trade: {
     offline: boolean
     onlineInLeague: boolean
@@ -81,6 +82,7 @@ export interface StatFilter {
   statRef: string
   text: string
   tag: FilterTag
+  oils?: string[]
   sources: StatCalculated['sources']
   roll?: {
     value: number

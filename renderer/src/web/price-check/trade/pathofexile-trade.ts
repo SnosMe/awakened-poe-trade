@@ -168,6 +168,11 @@ interface TradeRequest { /* eslint-disable camelcase */
           heist_trap_disarmament?: FilterRange
         }
       }
+      sentinel_filters?: {
+        filters: {
+          sentinel_durability?: FilterRange
+        }
+      }
       trade_filters?: {
         filters: {
           collapse?: FilterBoolean
@@ -374,6 +379,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
+  }
+
+  if (filters.sentinelCharge && !filters.sentinelCharge.disabled) {
+    propSet(query.filters, 'sentinel_filters.filters.sentinel_durability.min', filters.sentinelCharge.value)
   }
 
   for (const stat of stats) {
@@ -590,10 +599,25 @@ function getMinMax (roll: StatFilter['roll']) {
 }
 
 function tradeIdToQuery (id: string, stat: StatFilter) {
+  // NOTE: if there will be too many overrides in the future,
+  //       consider moving them to stats.ndjson
+
+  let roll = stat.roll
+
+  // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
+  if (id.endsWith('stat_1901158930')) {
+    if (stat.roll?.value === 100) {
+      roll = undefined // stat semantic type is flag
+    }
+  // fixes Delve "Reservation Efficiency of Skills"
+  } else if (id.endsWith('stat_1269219558')) {
+    roll = { ...roll!, tradeInvert: !(roll!.tradeInvert) }
+  }
+
   return {
     id,
     value: {
-      ...getMinMax(stat.roll),
+      ...getMinMax(roll),
       option: stat.option != null
         ? stat.option.value
         : undefined

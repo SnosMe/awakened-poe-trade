@@ -1,14 +1,14 @@
 <template>
   <div
     style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
-    class="flex-grow flex h-full pointer-events-none" :class="{
+    class="flex grow h-full pointer-events-none" :class="{
     'flex-row': clickPosition === 'stash',
     'flex-row-reverse': clickPosition === 'inventory',
   }">
-    <div v-if="!isBrowserShown" class="layout-column flex-shrink-0"
+    <div v-if="!isBrowserShown" class="layout-column shrink-0"
       :style="{ width: `${poeUiWidth}px` }">
     </div>
-    <div id="price-window" class="layout-column flex-shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
+    <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
         <div class="flex">
           <ui-popover v-if="exaltedCost" trigger="click" boundary="#price-window">
@@ -27,7 +27,7 @@
           </ui-popover>
         </div>
       </app-titlebar>
-      <div class="flex-grow layout-column min-h-0 bg-gray-800">
+      <div class="grow layout-column min-h-0 bg-gray-800">
         <background-info />
         <check-position-circle v-if="showCheckPos"
           :position="checkPosition" style="z-index: -1;" />
@@ -74,7 +74,7 @@ import { MainProcess } from '@/web/background/IPC'
 import { chaosExaRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
-import { parseClipboard, ParsedItem } from '@/parser'
+import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
 import RelatedItems from './related-items/RelatedItems.vue'
 import RateLimiterState from './trade/RateLimiterState.vue'
 import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.vue'
@@ -127,7 +127,15 @@ export default defineComponent({
       }
       advancedCheck.value = e.lockedMode
       try {
-        item.value = parseClipboard(e.clipboard)
+        const parsed = parseClipboard(e.clipboard)
+        if (parsed != null && (
+          (parsed.category === ItemCategory.HeistContract && parsed.rarity !== ItemRarity.Unique) ||
+          (parsed.category === ItemCategory.Sentinel && parsed.rarity !== ItemRarity.Unique)
+        )) {
+          throw new Error('UNKNOWN_ITEM')
+        } else {
+          item.value = parsed
+        }
       } catch (err: unknown) {
         const strings = (err instanceof Error && err.message === 'UNKNOWN_ITEM')
           ? 'unknown_item'

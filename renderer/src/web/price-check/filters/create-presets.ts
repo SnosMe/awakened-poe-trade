@@ -32,10 +32,12 @@ export function createPresets (
     (!item.info.craftable && item.rarity !== ItemRarity.Unique) ||
     item.isUnidentified ||
     item.rarity === ItemRarity.Normal ||
+    (item.category === ItemCategory.Flask && item.rarity !== ItemRarity.Unique) ||
     item.category === ItemCategory.Map ||
     item.category === ItemCategory.Invitation ||
     item.category === ItemCategory.HeistContract ||
-    item.category === ItemCategory.HeistBlueprint
+    item.category === ItemCategory.HeistBlueprint ||
+    item.category === ItemCategory.Sentinel
   ) {
     return {
       active: 'Exact',

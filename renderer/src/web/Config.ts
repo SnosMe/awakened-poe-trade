@@ -1,6 +1,6 @@
 import { reactive as deepReactive, shallowRef } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
-import type { Config } from '@/../../ipc/types'
+import type { Config } from '@ipc/types'
 import type { Widget } from './overlay/interfaces'
 
 const _config = shallowRef<Config | null>(null)

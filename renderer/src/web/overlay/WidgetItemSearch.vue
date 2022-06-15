@@ -21,22 +21,28 @@
       <div class="flex bg-gray-800 gap-x-2 px-2 mb-px1 py-1">
         <span>{{ t('Heist target:') }}</span>
         <div class="flex gap-x-1">
-          <button class="rounded px-2 bg-gray-900 border">{{ t('Skill Gem') }}</button>
-          <button class="rounded px-2 bg-gray-900">Replica, Base item <span class="text-xs bg-orange-700 px-1 rounded">WIP</span></button>
+          <button :class="{ 'border': (typeFilter === 'gem') }" class="rounded px-2 bg-gray-900"
+            @click="typeFilter = 'gem'">{{ t('Skill Gem') }}</button>
+          <button :class="{ 'border': (typeFilter === 'replica') }" class="rounded px-2 bg-gray-900"
+            @click="typeFilter = 'replica'">{{ t('Replicas') }}, <span class="line-through text-gray-600">Base items</span></button>
         </div>
       </div>
       <div class="flex flex-col bg-gray-800 rounded-b">
         <div v-for="item in (results || [])" :key="item.name">
           <div class="flex" :class="$style.itemWrapper">
-            <div class="w-8 h-8 flex">
+            <div class="w-8 h-8 flex items-center justify-center">
               <img :src="item.icon" class="max-w-full max-h-full overflow-hidden">
             </div>
             <div>
               <div class="h-8 flex items-center px-1">{{ item.name }}</div>
-              <div class="flex gap-x-1">
-                <button v-for="altQuality in item.gem!.altQuality" :key="altQuality"
-                  @click="selectGem(item, altQuality)"
+              <div v-if="item.gem" class="flex gap-x-1">
+                <button v-for="altQuality in item.gem.altQuality" :key="altQuality"
+                  @click="selectItem(item, { altQuality })"
                   >{{ t(altQuality) }}</button>
+              </div>
+              <div v-else-if="item.unique" class="flex gap-x-1">
+                <button  @click="selectItem(item, { unique: true })"
+                  >{{ t('Select') }}</button>
               </div>
             </div>
           </div>
@@ -92,25 +98,31 @@ function useSelectedItems () {
   return { items, addItem, clearItems }
 }
 
-function findItems (search: string): BaseType[] | false {
+function findItems (opts: {
+  search: string
+  jsonIncludes: string[]
+  matchFn: (item: BaseType) => boolean
+}): BaseType[] | false {
+  const search = opts.search.trim()
   if (search.length < 2) return false
 
   const out = []
+
+  const firstWord = search.split(/\s+/, 1)[0]
   const jsonSearch = (AppConfig().language === 'en')
-    ? capitalize(search.split(' ', 1)[0])
-    : search.split(' ', 1)[0]
+    ? capitalize(firstWord)
+    : firstWord
 
   const MAX_HITS = 70 // NOTE: based on first word only, so don't be too strict
   const MAX_RESULTS_VISIBLE = 5 // NOTE: don't want to pick from too many results
   const MAX_RESULTS = 10
   let hits = 0
-  for (const match of ITEMS_ITERATOR(jsonSearch)) {
+  for (const match of ITEMS_ITERATOR(jsonSearch, opts.jsonIncludes)) {
     hits += 1
     const lcName = match.name.toLowerCase()
-    const lcSearch = search.toLowerCase().split(' ')
+    const lcSearch = search.toLowerCase().split(/\s+/)
     if (
-      match.namespace === 'GEM' &&
-      match.gem!.altQuality?.length &&
+      opts.matchFn(match) &&
       lcSearch.every(part => lcName.includes(part))
     ) {
       out.push(match)
@@ -133,12 +145,23 @@ export default defineComponent({
     const searchValue = shallowRef('')
     const { items: starred, addItem, clearItems } = useSelectedItems()
 
-    function selectGem (item: BaseType, altQuality: string) {
-      const price = findPriceByQuery({
-        ns: item.namespace,
-        name: `${altQuality} ${item.refName}`,
-        variant: '1'
-      })
+    const typeFilter = shallowRef<'gem' | 'replica'>('gem')
+
+    function selectItem (item: BaseType, opts: { altQuality?: string, unique?: true }) {
+      let price: ReturnType<typeof findPriceByQuery>
+      if (opts.altQuality) {
+        price = findPriceByQuery({
+          ns: item.namespace,
+          name: `${opts.altQuality} ${item.refName}`,
+          variant: '1'
+        })
+      } else {
+        price = findPriceByQuery({
+          ns: item.namespace,
+          name: item.refName,
+          variant: item.unique!.base
+        })
+      }
       addItem({
         name: item.name,
         icon: item.icon,
@@ -153,8 +176,27 @@ export default defineComponent({
     return {
       t,
       searchValue,
-      results: computed(() => findItems(searchValue.value)),
-      selectGem,
+      typeFilter,
+      results: computed(() => {
+        if (typeFilter.value === 'gem') {
+          return findItems({
+            search: searchValue.value,
+            jsonIncludes: ['GEM'],
+            matchFn: (item) => Boolean(
+              item.namespace === 'GEM' &&
+              item.gem!.altQuality?.length)
+          })
+        } else {
+          return findItems({
+            search: searchValue.value,
+            jsonIncludes: ['UNIQUE', 'Replica '],
+            matchFn: (item) => Boolean(
+              item.namespace === 'UNIQUE' &&
+              item.refName.startsWith('Replica '))
+          })
+        }
+      }),
+      selectItem,
       clearItems,
       starred
     }
@@ -196,7 +238,8 @@ export default defineComponent({
     "Heist target:": "Цель Кражи:",
     "Skill Gem": "Камни умений",
     "too_many": "Найдено слишком много предметов, уточните название.",
-    "not_found": "Не найдено ни одного предмета."
+    "not_found": "Не найдено ни одного предмета.",
+    "Replicas": "Копии"
   }
 }
 </i18n>

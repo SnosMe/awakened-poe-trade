@@ -1,5 +1,5 @@
-import type { IpcEvent, IpcEventPayload } from '@/../../ipc/ipc-event'
-import { Config, defaultConfig, PreloadExposed } from '@/../../ipc/types'
+import type { IpcEvent, IpcEventPayload } from '@ipc/ipc-event'
+import { Config, defaultConfig, PreloadExposed } from '@ipc/types'
 
 declare global {
   interface Window {

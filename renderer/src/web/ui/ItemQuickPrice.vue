@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center overflow-hidden gap-x-1">
     <slot name="item">
-      <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
+      <div class="w-8 h-8 flex items-center justify-center shrink-0">
         <img :src="itemImg" class="max-w-full max-h-full overflow-hidden">
       </div>
     </slot>
@@ -14,7 +14,7 @@
       <span v-if="!currencyText" class="font-sans" :class="{ [$style.exalted]: isExa }"> ×</span>
       <span v-else-if="price" :class="{ [$style.exalted]: isExa }">&nbsp;{{ price.currency }}</span>
     </div>
-    <div class="w-8 h-8 flex items-center justify-center flex-shrink-0" v-if="!currencyText">
+    <div class="w-8 h-8 flex items-center justify-center shrink-0" v-if="!currencyText">
       <img v-if="isExa" src="/images/exa.png" class="max-w-full max-h-full">
       <img v-else src="/images/chaos.png" class="max-w-full max-h-full">
     </div>

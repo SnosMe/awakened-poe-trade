@@ -72,8 +72,8 @@ export default defineComponent({
 
     return {
       t,
-      handleFile (e: InputEvent) {
-        const target = e.target as HTMLInputElement
+      handleFile (e: Event) {
+        const target = (e as InputEvent).target as HTMLInputElement
         props.config.images.push({
           id: Math.max(0, ...props.config.images.map(_ => _.id)) + 1,
           url: MainProcess.importFile(target.files![0].path)!

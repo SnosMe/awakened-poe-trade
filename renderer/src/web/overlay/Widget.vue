@@ -91,7 +91,7 @@ export default defineComponent({
       return {
         'top': `max(0%, min(calc(${anchor.y}% - (1rem/2)), calc(100% - 1rem)))`,
         'left': `max(0%, min(calc(${anchor.x}% - (1rem/2)), calc(100% - 1rem)))`,
-        'z-index': wmZorder
+        'z-index': (typeof wmZorder === 'number') ? wmZorder : undefined
       }
     })
 
@@ -124,7 +124,7 @@ export default defineComponent({
         'top': `${anchor.y}%`,
         'left': `${anchor.x}%`,
         'transform': translate,
-        'z-index': wmZorder
+        'z-index': (typeof wmZorder === 'number') ? wmZorder : undefined
       }
     })
 

@@ -14,34 +14,36 @@
           <span class="text-gray-400">{{ t('Base item') }}</span>
         </template>
       </item-quick-price>
-      <div v-if="trend.change" class="px-2 text-center">
-        <div class="leading-tight">
-          <i v-if="trend.change.forecast === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
-          <i v-if="trend.change.forecast === 'up'" class="fas fa-angle-double-up pr-1 text-green-500"></i>
-          <span v-if="trend.change.forecast === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
-          <span>{{ trend.change.text }}</span>
+      <div v-if="trend.change" @click="openNinja" :class="$style['trend-btn']">
+        <div class="text-center">
+          <div class="leading-tight">
+            <i v-if="trend.change.forecast === 'down'" class="fas fa-angle-double-down pr-1 text-red-600"></i>
+            <i v-if="trend.change.forecast === 'up'" class="fas fa-angle-double-up pr-1 text-green-500"></i>
+            <span v-if="trend.change.forecast === 'const'" class="pr-1 text-gray-600 font-sans leading-none">±</span>
+            <span>{{ trend.change.text }}</span>
+          </div>
+          <div class="text-xs text-gray-500 leading-none">{{ t('Last 7 days') }}</div>
         </div>
-        <div class="text-xs text-gray-500 leading-none">{{ t('Last 7 days') }}</div>
-      </div>
-      <div v-if="trend.change" class="w-12 h-8">
-        <vue-apexcharts
-          type="area"
-          :options="{
-            chart: { sparkline: { enabled: true }, animations: { enabled: false } },
-            stroke: { curve: 'smooth', width: 1, colors: ['#a0aec0' /* gray.500 */] },
-            fill: { colors: ['#4a5568' /* gray.700 */], type: 'solid' },
-            tooltip: { enabled: false },
-            plotOptions: { area: { fillTo: 'end' } },
-            yaxis: {
-              show: false,
-              min: trend.change.graph.drawMin,
-              max: trend.change.graph.drawMax
-            }
-          }"
-          :series="[{
-            data: trend.change.graph.points
-          }]"
-        />
+        <div v-if="trend.change" class="w-12 h-8">
+          <vue-apexcharts
+            type="area"
+            :options="{
+              chart: { sparkline: { enabled: true }, animations: { enabled: false } },
+              stroke: { curve: 'smooth', width: 1, colors: ['#a0aec0' /* gray.500 */] },
+              fill: { colors: ['#4a5568' /* gray.700 */], type: 'solid' },
+              tooltip: { enabled: false },
+              plotOptions: { area: { fillTo: 'end' } },
+              yaxis: {
+                show: false,
+                min: trend.change.graph.drawMin,
+                max: trend.change.graph.drawMax
+              }
+            }"
+            :series="[{
+              data: trend.change.graph.points
+            }]"
+          />
+        </div>
       </div>
     </template>
   </div>
@@ -91,7 +93,8 @@ export default defineComponent({
 
       return {
         price: price,
-        change: deltaFromGraph(trend.graph)
+        change: deltaFromGraph(trend.graph),
+        url: trend.url
       }
     })
 
@@ -100,6 +103,9 @@ export default defineComponent({
     return {
       t,
       trend,
+      openNinja () {
+        window.open(trend.value!.url)
+      },
       isValuableBasetype: computed(() => {
         return isValuableBasetype(props.item)
       }),
@@ -141,6 +147,22 @@ function deltaFromGraph (graphPoints: Array<number | null>) {
   }
 }
 </script>
+
+<style lang="postcss" module>
+.trend-btn {
+  display: flex;
+  align-items: center;
+  @apply gap-x-2;
+  cursor: pointer;
+  @apply rounded;
+  @apply -my-0.5 py-0.5;
+  @apply px-1;
+
+  &:hover {
+    @apply bg-gray-700;
+  }
+}
+</style>
 
 <i18n>
 {

@@ -48,6 +48,7 @@ export interface ParsedItem {
   isMirrored?: boolean
   influences: ItemInfluence[]
   logbookAreaMods?: ParsedModifier[][]
+  sentinelCharge?: number
   isSynthesised?: boolean
   isFractured?: boolean
   isVeiled?: boolean

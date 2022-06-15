@@ -98,11 +98,11 @@ export default defineComponent({
       }),
       realm: configModelValue(() => props.config, 'realm'),
       disableUpdateDownload: configModelValue(() => props.config, 'disableUpdateDownload'),
-      handleLogFile (e: InputEvent) {
-        props.config.clientLog = (e.target as HTMLInputElement).files![0].path
+      handleLogFile (e: Event) {
+        props.config.clientLog = ((e as InputEvent).target as HTMLInputElement).files![0].path
       },
-      handleGameConfigFile (e: InputEvent) {
-        props.config.gameConfig = (e.target as HTMLInputElement).files![0].path
+      handleGameConfigFile (e: Event) {
+        props.config.gameConfig = ((e as InputEvent).target as HTMLInputElement).files![0].path
       }
     }
   }
