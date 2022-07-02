@@ -6,7 +6,7 @@ import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
-import { StatBetter } from '@/assets/data'
+import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -196,6 +196,25 @@ export function calculatedStatToFilter (
       if (!fixedStats.includes(filter.statRef)) {
         filter.tag = FilterTag.Variant
       }
+    } else if (sources.some(s => CLIENT_STRINGS.SHAPER_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Shaper
+    } else if (sources.some(s => CLIENT_STRINGS.ELDER_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Elder
+    } else if (sources.some(s => CLIENT_STRINGS.HUNTER_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Hunter
+    } else if (sources.some(s => CLIENT_STRINGS.WARLORD_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Warlord
+    } else if (sources.some(s => CLIENT_STRINGS.REDEEMER_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Redeemer
+    } else if (sources.some(s => CLIENT_STRINGS.CRUSADER_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Crusader
+    } else if (sources.some(s => CLIENT_STRINGS.DELVE_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Delve
+    } else if (sources.some(s => CLIENT_STRINGS.VEILED_MODS.includes(s.modifier.info.name!))) {
+      // can't drop from ground, so don't show
+      // filter.tag = FilterTag.Unveiled
+    } else if (sources.some(s => CLIENT_STRINGS.INCURSION_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Incursion
     }
   }
 

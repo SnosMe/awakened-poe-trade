@@ -137,4 +137,13 @@ export enum FilterTag {
   Variant = 'variant',
   Influence = 'influence',
   Property = 'property',
+  Shaper = 'explicit-shaper',
+  Elder = 'explicit-elder',
+  Crusader = 'explicit-crusader',
+  Hunter = 'explicit-hunter',
+  Redeemer = 'explicit-redeemer',
+  Warlord = 'explicit-warlord',
+  Delve = 'explicit-delve',
+  Unveiled = 'explicit-veiled',
+  Incursion = 'explicit-incursion'
 }

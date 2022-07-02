@@ -282,6 +282,45 @@ export default defineComponent({
 .tag-eldritch {
   background: linear-gradient(to right, theme('colors.red.700'), theme('colors.blue.700'));
 }
+.tag-explicit-shaper,
+.tag-explicit-elder,
+.tag-explicit-crusader,
+.tag-explicit-hunter,
+.tag-explicit-redeemer,
+.tag-explicit-warlord,
+.tag-explicit-delve,
+.tag-explicit-veiled,
+.tag-explicit-incursion {
+  display: flex;
+  align-items: center;
+  @apply -mx-1 pl-0.5 gap-x-0.5 text-gray-600;
+  text-shadow: 0 0 4px theme('colors.gray.900');
+
+  &::before {
+    background-size: contain;
+    @apply w-5 h-5 -my-5;
+    content: '';
+  }
+}
+.tag-explicit-shaper::before {
+  background-image: url('/images/influence-Shaper.png'); }
+.tag-explicit-elder::before {
+  background-image: url('/images/influence-Elder.png'); }
+.tag-explicit-crusader::before {
+  background-image: url('/images/influence-Crusader.png'); }
+.tag-explicit-hunter::before {
+  background-image: url('/images/influence-Hunter.png'); }
+.tag-explicit-redeemer::before {
+  background-image: url('/images/influence-Redeemer.png'); }
+.tag-explicit-warlord::before {
+  background-image: url('/images/influence-Warlord.png'); }
+.tag-explicit-delve::before {
+  background-image: url('/images/delve.png'); }
+.tag-explicit-veiled::before {
+  background-image: url('/images/veiled.png'); }
+.tag-explicit-incursion::before {
+  background-image: url('/images/incursion.png'); }
+
 .tag-corrupted {
   @apply bg-red-700 text-red-100; }
 .tag-fractured {
@@ -289,13 +328,15 @@ export default defineComponent({
 .tag-crafted, .tag-synthesised {
   @apply bg-blue-600 text-blue-100; }
 .tag-implicit, .tag-explicit {
-  @apply -mx-1 text-gray-600; }
+  @apply -mx-1 text-gray-600;
+  text-shadow: 0 0 4px theme('colors.gray.900');
+}
 .tag-scourge {
   @apply bg-orange-600 text-white; }
 .tag-enchant {
   @apply bg-purple-600 text-purple-100; }
 .tag-pseudo {
-  @apply bg-gray-700 text-gray-900; }
+  @apply bg-gray-700 text-black; }
 </style>
 
 <style lang="postcss">
@@ -319,6 +360,17 @@ export default defineComponent({
 
 <i18n>
 {
+  "en": {
+    "explicit-shaper": "Shaper",
+    "explicit-elder": "Elder",
+    "explicit-crusader": "Crusader",
+    "explicit-hunter": "Hunter",
+    "explicit-redeemer": "Redeemer",
+    "explicit-warlord": "Warlord",
+    "explicit-delve": "Delve",
+    "explicit-veiled": "Veiled",
+    "explicit-incursion": "Incursion"
+  },
   "ru": {
     "Q {0}%": "К-во: {0}%",
     "DPS: #": "ДПС: #",

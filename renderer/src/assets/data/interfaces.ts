@@ -160,6 +160,15 @@ export interface TranslationDict {
   ELDRITCH_MOD_R5: string
   ELDRITCH_MOD_R6: string
   SENTINEL_CHARGE: string
+  SHAPER_MODS: string[]
+  ELDER_MODS: string[]
+  CRUSADER_MODS: string[]
+  HUNTER_MODS: string[]
+  REDEEMER_MODS: string[]
+  WARLORD_MODS: string[]
+  DELVE_MODS: string[]
+  VEILED_MODS: string[]
+  INCURSION_MODS: string[]
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp
