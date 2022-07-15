@@ -102,12 +102,14 @@ async function loadStats (language: string) {
     start = indexMatcher[start * INDEX_WIDTH + 1]
     const end = ndjson.indexOf('\n', start)
     const stat = JSON.parse(ndjson.slice(start, end)) as Stat
-    return {
-      stat,
-      matcher: stat.matchers.find(m =>
-        m.string === matchStr ||
-        m.advanced === matchStr)!
+
+    const matcher = stat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)
+    if (!matcher) {
+      // console.log('fnv1a32 collision')
+      return undefined
     }
+    return { stat, matcher }
   }
 
   STATS_ITERATOR = ndjsonFindLines<Stat>(ndjson)
