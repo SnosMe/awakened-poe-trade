@@ -42,9 +42,10 @@
             </template>
           </ui-popover>
         </div>
-        <div class="flex-1 flex items-start">
+        <div class="flex-1 flex items-start gap-x-2">
           <span v-if="showTag"
-            :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(tag) }}</span>
+            :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(tag) }}{{ (filter.sources.length > 1) ? ` x ${filter.sources.length}` : null }}</span>
+          <filter-modifier-tiers :filter="filter" :item="item" />
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
         <stat-roll-slider v-if="roll && roll.bounds"
@@ -70,13 +71,14 @@ import StatRollSlider from '../../ui/StatRollSlider.vue'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
 import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
+import FilterModifierTiers from './FilterModifierTiers.vue'
 import { AppConfig } from '@/web/Config'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { FilterTag, StatFilter } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
-  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, SourceInfo, StatRollSlider },
+  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider },
   emits: ['submit'],
   props: {
     filter: {
@@ -265,10 +267,6 @@ export default defineComponent({
 
 .filter:not(:hover) > .mods {
   display: none;
-}
-
-.filter:nth-child(4) > .mods {
-  display: block;
 }
 
 .tag {

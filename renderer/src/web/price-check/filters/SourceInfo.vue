@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :class="$style['modinfo']">{{ modText }}</div>
-    <div v-for="stat of stats" :key="stat.text" class="flex">
+    <div v-for="stat of stats" :key="stat.text" class="flex items-baseline">
       <item-modifier-text :text="stat.text" :roll="stat.roll" :class="{ 'line-through': !stat.contributes }" />
       <div v-if="stat.contributes && stat.contribution" :class="$style['contribution']">{{ stat.contribution }}</div>
     </div>

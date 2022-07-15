@@ -135,7 +135,6 @@ export enum FilterTag {
   Synthesised = 'synthesised',
   Eldritch = 'eldritch',
   Variant = 'variant',
-  Influence = 'influence',
   Property = 'property',
   Shaper = 'explicit-shaper',
   Elder = 'explicit-elder',
