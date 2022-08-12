@@ -60,9 +60,6 @@ jobs:
       with:
         name: renderer-dist
         path: ./renderer/dist
-    - run: |
-        sudo apt-get update
-        sudo apt-get install -y libxtst-dev libpng++-dev
     - run: yarn --frozen-lockfile
       working-directory: ./main
     - run: yarn build

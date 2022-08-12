@@ -1,7 +1,7 @@
-import { createI18n, I18nAdditionalOptions, ComposerOptions } from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 import { AppConfig } from './Config'
 
-export default async () => createI18n<I18nAdditionalOptions & ComposerOptions>({
+export default async () => createI18n<false>({
   legacy: false,
   locale: AppConfig().language,
   fallbackLocale: 'en',
