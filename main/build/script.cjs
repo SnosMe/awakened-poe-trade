@@ -33,7 +33,7 @@ const mainBuild = esbuild.build({
   bundle: true,
   minify: !isDev,
   platform: 'node',
-  external: ['electron', 'uiohook-napi', 'robotjs', 'electron-overlay-window'],
+  external: ['electron', 'uiohook-napi', 'electron-overlay-window'],
   outfile: 'dist/main.js',
   define: {
     'process.env.STATIC': (isDev) ? '"../build/icons"' : '"."',

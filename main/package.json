@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "node build/script.cjs",
     "build": "tsc --noEmit && node build/script.cjs --prod",
-    "package": "electron-builder build",
-    "postinstall": "patch-package && electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps"
+    "package": "electron-builder build"
   },
   "author": {
     "name": "Alexander Drozdov"
@@ -19,8 +17,7 @@
   "main": "dist/main.js",
   "dependencies": {
     "electron-overlay-window": "3.0.0-beta.1",
-    "robotjs": "^0.6.0",
-    "uiohook-napi": "1.2.x"
+    "uiohook-napi": "1.3.x"
   },
   "devDependencies": {
     "@types/ini": "^1.3.30",
@@ -32,7 +29,6 @@
     "esbuild": "^0.14.27",
     "fast-deep-equal": "3.1.x",
     "ini": "^3.0.0",
-    "patch-package": "^6.2.0",
     "typescript": "4.7.x",
     "winston": "3.x.x"
   },

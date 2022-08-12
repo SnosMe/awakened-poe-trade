@@ -19,9 +19,7 @@ Follow instructions similar to CI [.github/workflows/main.yml](https://github.co
 
 ### Acknowledgments
 
-- [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)
 - [libuiohook](https://github.com/kwhat/libuiohook)
-- [robotjs](https://github.com/octalmage/robotjs)
 - [RePoE](https://github.com/brather1ng/RePoE)
 - [poeprices.info](https://www.poeprices.info/)
 - [poe.ninja](https://poe.ninja/)
