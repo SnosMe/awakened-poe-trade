@@ -228,15 +228,17 @@ export function calculatedStatToFilter (
       max: percentRoll(roll.max, +0, Math.ceil, dp)
     }
 
-    const filterDefault = (item.rarity === ItemRarity.Unique)
-      ? {
-          min: percentRollDelta(roll.value, (roll.max - roll.min), -percent, Math.floor, dp),
-          max: percentRollDelta(roll.value, (roll.max - roll.min), +percent, Math.ceil, dp)
-        }
-      : {
-          min: percentRoll(roll.value, -percent, Math.floor, dp),
-          max: percentRoll(roll.value, +percent, Math.ceil, dp)
-        }
+    const filterDefault = (calc.stat.better === StatBetter.NotComparable)
+      ? { min: roll.value, max: roll.value }
+      : (item.rarity === ItemRarity.Unique)
+          ? {
+              min: percentRollDelta(roll.value, (roll.max - roll.min), -percent, Math.floor, dp),
+              max: percentRollDelta(roll.value, (roll.max - roll.min), +percent, Math.ceil, dp)
+            }
+          : {
+              min: percentRoll(roll.value, -percent, Math.floor, dp),
+              max: percentRoll(roll.value, +percent, Math.ceil, dp)
+            }
     filterDefault.min = Math.max(filterDefault.min, filterBounds.min)
     filterDefault.max = Math.min(filterDefault.max, filterBounds.max)
 
@@ -245,7 +247,7 @@ export function calculatedStatToFilter (
       min: undefined,
       max: undefined,
       default: filterDefault,
-      bounds: (roll.min !== roll.max && item.rarity === ItemRarity.Unique)
+      bounds: (item.rarity === ItemRarity.Unique && roll.min !== roll.max && calc.stat.better !== StatBetter.NotComparable)
         ? filterBounds
         : undefined,
       dp: dp,
