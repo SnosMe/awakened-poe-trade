@@ -609,6 +609,11 @@ function tradeIdToQuery (id: string, stat: StatFilter) {
     if (stat.roll?.value === 100) {
       roll = undefined // stat semantic type is flag
     }
+  // fixes "Instant Recovery" on Flasks
+  } else if (id.endsWith('stat_1526933524')) {
+    if (stat.roll?.value === 100) {
+      roll = undefined // stat semantic type is flag
+    }
   // fixes Delve "Reservation Efficiency of Skills"
   } else if (id.endsWith('stat_1269219558')) {
     roll = { ...roll!, tradeInvert: !(roll!.tradeInvert) }
