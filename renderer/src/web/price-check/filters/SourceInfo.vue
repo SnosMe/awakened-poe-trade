@@ -105,6 +105,7 @@ export default defineComponent({
   @apply rounded;
   @apply border border-gray-700;
   text-align: center;
+  flex-shrink: 0;
 }
 </style>
 
