@@ -35,7 +35,7 @@
                 item-img="/images/divine.png"
               />
               <div v-for="i in 9" :key="i">
-                <div class="pl-1">{{ i / 10 }} exa ⇒ {{ Math.round(divCost * i / 10) }} c</div>
+                <div class="pl-1">{{ i / 10 }} div ⇒ {{ Math.round(divCost * i / 10) }} c</div>
               </div>
             </template>
           </ui-popover>
