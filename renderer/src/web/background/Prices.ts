@@ -11,6 +11,7 @@ interface NinjaDenseInfo {
 }
 
 export const chaosExaRate = shallowRef<number | undefined>(undefined)
+export const chaosDivRate = shallowRef<number | undefined>(undefined)
 
 type PriceDatabase = Array<{ ns: string, url: string, lines: string }>
 let PRICES_DB: PriceDatabase = []
@@ -32,8 +33,13 @@ async function load (force: boolean = false) {
     PRICES_DB = splitJsonBlob(jsonBlob)
 
     const exalted = findPriceByQuery({ ns: 'ITEM', name: 'Exalted Orb', variant: undefined })
-    if (exalted && exalted.chaos >= 15) {
+    if (exalted && exalted.chaos >= 1) {
       chaosExaRate.value = exalted.chaos
+    }
+
+    const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
+    if (divine && divine.chaos >= 15) {
+      chaosDivRate.value = divine.chaos
     }
 
     lastUpdateTime = Date.now()

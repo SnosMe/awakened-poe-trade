@@ -13,7 +13,7 @@
         <div class="flex">
           <ui-popover v-if="exaltedCost" trigger="click" boundary="#price-window">
             <template #target>
-              <button><i class="fas fa-exchange-alt"></i> {{ exaltedCost }}</button>
+              <button><i class="fas fa-exchange-alt"></i> Exa: {{ exaltedCost }}</button>
             </template>
             <template #content>
               <item-quick-price class="text-base"
@@ -22,6 +22,20 @@
               />
               <div v-for="i in 9" :key="i">
                 <div class="pl-1">{{ i / 10 }} exa ⇒ {{ Math.round(exaltedCost * i / 10) }} c</div>
+              </div>
+            </template>
+          </ui-popover>
+          <ui-popover v-if="divCost" trigger="click" boundary="#price-window">
+            <template #target>
+              <button><i class="fas fa-exchange-alt"></i> Div: {{ divCost }}</button>
+            </template>
+            <template #content>
+              <item-quick-price class="text-base"
+                :price="{ min: divCost, max: divCost, currency: 'chaos' }"
+                item-img="/images/divine.png"
+              />
+              <div v-for="i in 9" :key="i">
+                <div class="pl-1">{{ i / 10 }} exa ⇒ {{ Math.round(divCost * i / 10) }} c</div>
               </div>
             </template>
           </ui-popover>
@@ -71,7 +85,7 @@ import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess } from '@/web/background/IPC'
-import { chaosExaRate } from '../background/Prices'
+import { chaosExaRate, chaosDivRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
@@ -163,6 +177,7 @@ export default defineComponent({
 
     const title = computed(() => league.value || 'Awakened PoE Trade')
     const exaltedCost = computed(() => (chaosExaRate.value) ? Math.round(chaosExaRate.value) : null)
+    const divCost = computed(() => (chaosDivRate.value) ? Math.round(chaosDivRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)
     const showCheckPos = computed(() => wm.active.value && props.config.showCursor)
@@ -228,6 +243,7 @@ export default defineComponent({
       closePriceCheck,
       title,
       exaltedCost,
+      divCost,
       showCheckPos,
       checkPosition,
       item,
