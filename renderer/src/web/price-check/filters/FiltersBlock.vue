@@ -35,6 +35,8 @@
         :filter="filters.unidentified" text="Unidentified" />
       <filter-btn-logical v-if="filters.veiled"
         :filter="filters.veiled" text="Veiled" />
+      <filter-btn-logical v-if="filters.relic"
+        :filter="filters.relic" text="Relic Unique" />
       <filter-btn-logical v-if="filters.mirrored" active
         :filter="filters.mirrored" :text="filters.mirrored.disabled ? 'Not Mirrored' : 'Mirrored'" />
       <filter-btn-logical v-if="hasStats"

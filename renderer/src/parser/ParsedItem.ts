@@ -52,6 +52,7 @@ export interface ParsedItem {
   isSynthesised?: boolean
   isFractured?: boolean
   isVeiled?: boolean
+  isRelic?: boolean
   statsByType: StatCalculated[]
   newMods: ParsedModifier[]
   unknownModifiers: Array<{

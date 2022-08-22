@@ -101,7 +101,7 @@ interface TradeRequest { /* eslint-disable camelcase */
       type_filters?: {
         filters: {
           rarity?: {
-            option?: 'unique'
+            option?: 'nonunique' | 'uniquefoil'
           }
           category?: {
             option?: string
@@ -284,7 +284,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     query.type = nameToQuery(activeSearch.baseType, filters)
   }
 
-  if (filters.rarity) {
+  if (filters.relic && !filters.relic.disabled) {
+    propSet(query.filters, 'type_filters.filters.rarity.option', 'uniquefoil')
+  } else if (filters.rarity) {
     propSet(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
   }
 

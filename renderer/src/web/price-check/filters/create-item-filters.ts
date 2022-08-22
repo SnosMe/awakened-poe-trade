@@ -227,6 +227,10 @@ export function createFilters (
     filters.mirrored = { disabled: false }
   }
 
+  if (item.isRelic) {
+    filters.relic = { disabled: false }
+  }
+
   if (item.influences.length && item.influences.length <= 2) {
     filters.influences = item.influences.map(influence => ({
       value: influence,

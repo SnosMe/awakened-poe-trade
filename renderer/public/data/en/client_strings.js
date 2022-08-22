@@ -90,6 +90,7 @@ export default {
   DELVE_MODS: ['Subterranean', 'of the Underground'],
   VEILED_MODS: ['Chosen', 'of the Order'],
   INCURSION_MODS: ["Guatelitzi's", "Xopec's", "Topotante's", "Tacati's", "Matatl's", 'of Matatl', "Citaqualotl's", 'of Citaqualotl', 'of Tacati', 'of Guatelitzi', 'of Puhuarte'],
+  RELIC_UNIQUE: 'Relic Unique',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

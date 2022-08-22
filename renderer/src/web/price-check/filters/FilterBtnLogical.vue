@@ -80,6 +80,7 @@ export default defineComponent({
     "Blight-ravaged": "Разорённая Скверной",
     "Mirrored": "Отражено",
     "Not Mirrored": "Не отражено",
+    "Relic Unique": "Реликвия",
 
     "Shaper": "Создатель",
     "Elder": "Древний",
@@ -100,6 +101,7 @@ export default defineComponent({
     "Blight-ravaged": "凋落蔓延的",
     "Mirrored": "已複製",
     "Not Mirrored": "未複製",
+    "Relic Unique": "古典傳奇",
 
     "Shaper": "塑界者",
     "Elder": "尊師",
