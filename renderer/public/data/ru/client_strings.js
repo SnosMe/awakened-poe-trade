@@ -125,6 +125,7 @@ export default {
     'Ситаквалотля', 'Мататля', 'Такати', 'Гвателитзи', 'Пухварте'
   ],
   RELIC_UNIQUE: 'Уникальная Реликвия',
+  UNMODIFIABLE: 'Неизменяемый',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

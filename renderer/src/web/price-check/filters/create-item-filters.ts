@@ -202,12 +202,12 @@ export function createFilters (
     }
   }
 
-  if (
+  if (!item.isUnmodifiable && (
     item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||
     item.rarity === ItemRarity.Rare ||
     item.rarity === ItemRarity.Unique
-  ) {
+  )) {
     filters.corrupted = {
       value: item.isCorrupted
     }
@@ -245,6 +245,7 @@ export function createFilters (
       item.category !== ItemCategory.Jewel && /* https://pathofexile.gamepedia.com/Jewel#Affixes */
       item.category !== ItemCategory.HeistBlueprint &&
       item.category !== ItemCategory.HeistContract &&
+      item.category !== ItemCategory.MemoryLine &&
       item.info.refName !== 'Expedition Logbook'
     ) {
       if (item.category === ItemCategory.ClusterJewel) {

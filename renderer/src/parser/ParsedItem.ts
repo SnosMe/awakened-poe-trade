@@ -45,6 +45,7 @@ export interface ParsedItem {
   stackSize?: { value: number, max: number }
   isUnidentified: boolean
   isCorrupted: boolean
+  isUnmodifiable: boolean
   isMirrored?: boolean
   influences: ItemInfluence[]
   logbookAreaMods?: ParsedModifier[][]

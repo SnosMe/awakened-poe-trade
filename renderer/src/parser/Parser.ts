@@ -351,10 +351,10 @@ function parseCorrupted (section: string[], item: ParsedItem) {
   if (section[0] === _$.CORRUPTED) {
     item.isCorrupted = true
     return 'SECTION_PARSED'
-  }
-  if (item.category === ItemCategory.Sentinel) {
+  } else if (section[0] === _$.UNMODIFIABLE) {
     item.isCorrupted = true
-    return 'PARSER_SKIPPED'
+    item.isUnmodifiable = true
+    return 'SECTION_PARSED'
   }
   return 'SECTION_SKIPPED'
 }

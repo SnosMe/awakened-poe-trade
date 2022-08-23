@@ -170,6 +170,7 @@ export interface TranslationDict {
   VEILED_MODS: string[]
   INCURSION_MODS: string[]
   RELIC_UNIQUE: string
+  UNMODIFIABLE: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp
