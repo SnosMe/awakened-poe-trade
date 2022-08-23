@@ -87,7 +87,7 @@ export default defineComponent({
       const trend = detailsId && findPriceByQuery(detailsId)
       if (!trend) return
 
-      const price = (props.item.info.refName === 'Exalted Orb')
+      const price = (props.item.info.refName === 'Divine Orb')
         ? { min: trend.chaos, max: trend.chaos, currency: 'chaos' as const }
         : autoCurrency(trend.chaos, 'chaos')
 

@@ -10,7 +10,7 @@ interface NinjaDenseInfo {
   variant?: string
 }
 
-export const chaosExaRate = shallowRef<number | undefined>(undefined)
+export const xchgRate = shallowRef<number | undefined>(undefined)
 
 type PriceDatabase = Array<{ ns: string, url: string, lines: string }>
 let PRICES_DB: PriceDatabase = []
@@ -31,9 +31,9 @@ async function load (force: boolean = false) {
   if (leagueAtStartOfLoad === selectedLeague.value) {
     PRICES_DB = splitJsonBlob(jsonBlob)
 
-    const exalted = findPriceByQuery({ ns: 'ITEM', name: 'Exalted Orb', variant: undefined })
-    if (exalted && exalted.chaos >= 15) {
-      chaosExaRate.value = exalted.chaos
+    const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
+    if (divine && divine.chaos >= 30) {
+      xchgRate.value = divine.chaos
     }
 
     lastUpdateTime = Date.now()
@@ -143,29 +143,29 @@ export function findPriceByQuery (query: DbQuery) {
   return null
 }
 
-export function autoCurrency (value: number, currency: 'chaos' | 'exa'): { min: number, max: number, currency: 'chaos' | 'exa' } {
+export function autoCurrency (value: number, currency: 'chaos' | 'div'): { min: number, max: number, currency: 'chaos' | 'div' } {
   if (currency === 'chaos') {
-    if (value > ((chaosExaRate.value || 9999) * 0.94)) {
-      if (value < ((chaosExaRate.value || 9999) * 1.06)) {
-        return { min: 1, max: 1, currency: 'exa' }
+    if (value > ((xchgRate.value || 9999) * 0.94)) {
+      if (value < ((xchgRate.value || 9999) * 1.06)) {
+        return { min: 1, max: 1, currency: 'div' }
       } else {
-        return { min: chaosToExa(value), max: chaosToExa(value), currency: 'exa' }
+        return { min: chaosToStable(value), max: chaosToStable(value), currency: 'div' }
       }
     }
-  } else if (currency === 'exa') {
+  } else if (currency === 'div') {
     if (value < 1) {
-      return { min: exaToChaos(value), max: exaToChaos(value), currency: 'chaos' }
+      return { min: stableToChaos(value), max: stableToChaos(value), currency: 'chaos' }
     }
   }
   return { min: value, max: value, currency }
 }
 
-function chaosToExa (count: number) {
-  return count / (chaosExaRate.value || 9999)
+function chaosToStable (count: number) {
+  return count / (xchgRate.value || 9999)
 }
 
-function exaToChaos (count: number) {
-  return count * (chaosExaRate.value || 9999)
+function stableToChaos (count: number) {
+  return count * (xchgRate.value || 9999)
 }
 
 export function displayRounding (value: number, fraction: boolean = false): string {
@@ -187,7 +187,7 @@ setInterval(() => {
 }, RETRY_TIME)
 
 watch(selectedLeague, () => {
-  chaosExaRate.value = undefined
+  xchgRate.value = undefined
   PRICES_DB = []
   load(true)
 })
