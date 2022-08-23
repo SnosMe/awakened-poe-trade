@@ -6,7 +6,7 @@ import { Cache } from '../trade/Cache'
 const cache = new Cache()
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */
-  currency: 'chaos' | 'exalt'
+  currency: 'chaos' | 'divine'
   error: number
   error_msg: string
   warning_msg: string
@@ -20,7 +20,7 @@ export interface RareItemPrice {
   max: number
   min: number
   confidence: number
-  currency: 'chaos' | 'exa'
+  currency: 'chaos' | 'div'
   explanation: Array<{
     name: string
     contrib: number
@@ -50,8 +50,12 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
     cache.set<PoepricesApiResponse>(query, data, 300)
   }
 
+  if (data.currency !== 'divine' && data.currency !== 'chaos') {
+    throw new Error('poeprices.info gave the price in Exalted Orbs.')
+  }
+
   return {
-    currency: (data.currency === 'exalt') ? 'exa' : 'chaos',
+    currency: (data.currency === 'divine') ? 'div' : 'chaos',
     min: data.min,
     max: data.max,
     confidence: Math.round(data.pred_confidence_score),

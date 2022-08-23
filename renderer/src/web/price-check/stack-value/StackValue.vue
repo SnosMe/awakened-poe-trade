@@ -33,7 +33,7 @@ export default defineComponent({
     function getPriceFor (n: number) {
       const one = findPriceByQuery(getDetailsId(props.item)!)!
 
-      const price = (props.item.info.refName === 'Exalted Orb')
+      const price = (props.item.info.refName === 'Divine Orb')
         ? { min: n * one.chaos, max: n * one.chaos, currency: 'chaos' as const }
         : autoCurrency(n * one.chaos, 'chaos')
 
