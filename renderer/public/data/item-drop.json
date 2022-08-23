@@ -190,6 +190,7 @@
       "ITEM::Clear Oil"
     ],
     "items": [
+      "ITEM::Reflective Oil",
       "ITEM::Tainted Oil",
       "ITEM::Oil Extractor"
     ]
@@ -356,25 +357,28 @@
   },
   {
     "query": [
+      "UNIQUE::The Beachhead // T15"
+    ],
+    "items": [
+      "UNIQUE::Infused Beachhead // T16"
+    ]
+  },
+  {
+    "query": [
       "ITEM::Sacred Blossom"
     ],
     "items": [
+      "ITEM::Sacred Crystallised Lifeforce",
       "UNIQUE::Forbidden Shako // Great Crown",
       "UNIQUE::Abhorrent Interrogation // Ambush Mitts",
-      "UNIQUE::Infused Beachhead // T16",
       "UNIQUE::Law of the Wilds // Hellion's Paw",
       "UNIQUE::Witchhunter's Judgment // Highborn Staff",
-      "ITEM::Craicic Lure",
-      "ITEM::Farric Lure",
-      "ITEM::Fenumal Lure",
-      "ITEM::Saqawine Lure",
       "DIVINATION_CARD::The Bitter Blossom",
       "DIVINATION_CARD::The Aspirant"
     ]
   },
   {
     "query": [
-      "ITEM::Farric Lure",
       "UNIQUE::Farrul's Bite // Harlequin Mask",
       "UNIQUE::Farrul's Pounce // Hydrascale Gauntlets",
       "UNIQUE::Farrul's Fur // Triumphant Lamellar",
@@ -384,7 +388,6 @@
   },
   {
     "query": [
-      "ITEM::Craicic Lure",
       "UNIQUE::Craiceann's Chitin // Magistrate Crown",
       "UNIQUE::Craiceann's Carapace // Golden Plate",
       "UNIQUE::Craiceann's Pincers // Titan Gauntlets",
@@ -394,7 +397,6 @@
   },
   {
     "query": [
-      "ITEM::Fenumal Lure",
       "UNIQUE::Fenumus' Toxins // Necromancer Circlet",
       "UNIQUE::Fenumus' Shroud // Widowsilk Robe",
       "UNIQUE::Fenumus' Weave // Carnal Mitts",
@@ -404,7 +406,6 @@
   },
   {
     "query": [
-      "ITEM::Saqawine Lure",
       "UNIQUE::Saqawal's Flock // Silken Hood",
       "UNIQUE::Saqawal's Nest // Blood Raiment",
       "UNIQUE::Saqawal's Winds // Soldier Gloves",
@@ -447,19 +448,9 @@
   },
   {
     "query": [
-      "UNIQUE::Tabula Rasa // Simple Robe, 6L"
-    ],
-    "items": [
-      "ITEM::Divine Orb"
-    ]
-  },
-  {
-    "query": [
-      "ITEM::Engineer's Orb",
       "ITEM::Offering to the Goddess"
     ],
     "items": [
-      "ITEM::Infused Engineer's Orb",
       "ITEM::Gift to the Goddess",
       "ITEM::Dedication to the Goddess",
       "ITEM::Tribute to the Goddess"
@@ -585,6 +576,30 @@
     ],
     "items": [
       "UNIQUE::The Taming // Prismatic Ring"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Victorious Fate // Ultimatum Aspect",
+      "UNIQUE::Ignominious Fate // Ultimatum Aspect",
+      "UNIQUE::Deadly End // Ultimatum Aspect",
+      "UNIQUE::Will of Chaos // Ultimatum Aspect"
+    ],
+    "items": [
+      "UNIQUE::The Tower of Ordeals // T16"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Tower of Ordeals // T16"
+    ],
+    "items": [
+      "UNIQUE::Relic of the Pact // Spiraled Wand",
+      "UNIQUE::Mahuxotl's Machination // Steel Kite Shield",
+      "UNIQUE::Temptation Step // Shagreen Boots",
+      "UNIQUE::Glimpse of Chaos // Vaal Mask",
+      "UNIQUE::Yaomac's Accord // Vaal Sceptre",
+      "UNIQUE::Hateforge // Ancient Gauntlets"
     ]
   },
   {
