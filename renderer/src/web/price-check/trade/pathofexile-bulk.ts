@@ -170,7 +170,7 @@ export async function execBulkSearch (
       .map(result => toPricingResult(result, opts, offer))
 
     const chaosIsLoaded = (
-      tradeTag === 'exalted' &&
+      tradeTag === 'divine' &&
       resultsTag.length < results.length &&
       ((results.length - resultsTag.length) >= SHOW_RESULTS || query.total <= API_FETCH_LIMIT)
     )
