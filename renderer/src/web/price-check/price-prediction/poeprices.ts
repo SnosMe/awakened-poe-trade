@@ -2,11 +2,12 @@ import { ParsedItem } from '@/parser'
 import { selected as league } from '@/web/background/Leagues'
 import { MainProcess } from '@/web/background/IPC'
 import { Cache } from '../trade/Cache'
+import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
 
 const cache = new Cache()
 
 interface PoepricesApiResponse { /* eslint-disable camelcase */
-  currency: 'chaos' | 'divine'
+  currency: 'chaos' | 'divine' | 'exalt'
   error: number
   error_msg: string
   warning_msg: string
@@ -50,8 +51,17 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
     cache.set<PoepricesApiResponse>(query, data, 300)
   }
 
-  if (data.currency !== 'divine' && data.currency !== 'chaos') {
-    throw new Error('poeprices.info gave the price in Exalted Orbs.')
+  if (data.currency === 'exalt') {
+    const xchgExalted = findPriceByQuery({ ns: 'ITEM', name: 'Exalted Orb', variant: undefined })
+    if (!xchgExalted) {
+      throw new Error('poeprices.info gave the price in Exalted Orbs.')
+    }
+    const converted = autoCurrency([data.min * xchgExalted.chaos, data.max * xchgExalted.chaos])
+    data.min = converted.min
+    data.max = converted.max
+    data.currency = (converted.currency === 'div') ? 'divine' : 'chaos'
+  } else if (data.currency !== 'divine' && data.currency !== 'chaos') {
+    throw new Error('poeprices.info gave the price in unknown currency.')
   }
 
   return {

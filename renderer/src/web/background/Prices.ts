@@ -143,29 +143,25 @@ export function findPriceByQuery (query: DbQuery) {
   return null
 }
 
-export function autoCurrency (value: number, currency: 'chaos' | 'div'): { min: number, max: number, currency: 'chaos' | 'div' } {
-  if (currency === 'chaos') {
-    if (value > ((xchgRate.value || 9999) * 0.94)) {
-      if (value < ((xchgRate.value || 9999) * 1.06)) {
-        return { min: 1, max: 1, currency: 'div' }
-      } else {
-        return { min: chaosToStable(value), max: chaosToStable(value), currency: 'div' }
-      }
+export function autoCurrency (value: number | [number, number]): { min: number, max: number, currency: 'chaos' | 'div' } {
+  if (Array.isArray(value)) {
+    if (value[1] > (xchgRate.value || 9999)) {
+      return { min: chaosToStable(value[0]), max: chaosToStable(value[1]), currency: 'div' }
     }
-  } else if (currency === 'div') {
-    if (value < 1) {
-      return { min: stableToChaos(value), max: stableToChaos(value), currency: 'chaos' }
+    return { min: value[0], max: value[1], currency: 'chaos' }
+  }
+  if (value > ((xchgRate.value || 9999) * 0.94)) {
+    if (value < ((xchgRate.value || 9999) * 1.06)) {
+      return { min: 1, max: 1, currency: 'div' }
+    } else {
+      return { min: chaosToStable(value), max: chaosToStable(value), currency: 'div' }
     }
   }
-  return { min: value, max: value, currency }
+  return { min: value, max: value, currency: 'chaos' }
 }
 
 function chaosToStable (count: number) {
   return count / (xchgRate.value || 9999)
-}
-
-function stableToChaos (count: number) {
-  return count * (xchgRate.value || 9999)
 }
 
 export function displayRounding (value: number, fraction: boolean = false): string {

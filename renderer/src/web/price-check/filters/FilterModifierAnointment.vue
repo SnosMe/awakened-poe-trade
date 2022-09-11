@@ -48,7 +48,7 @@ export default defineComponent({
       return {
         icons: oils.map(item => item!.icon),
         price: (totalChaos != null)
-          ? autoCurrency(totalChaos, 'chaos')
+          ? autoCurrency(totalChaos)
           : undefined
       }
     })

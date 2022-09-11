@@ -166,7 +166,7 @@ export default defineComponent({
         name: item.name,
         icon: item.icon,
         chaos: price?.chaos,
-        price: (price != null) ? autoCurrency(price.chaos, 'chaos') : undefined
+        price: (price != null) ? autoCurrency(price.chaos) : undefined
       })
       searchValue.value = ''
     }

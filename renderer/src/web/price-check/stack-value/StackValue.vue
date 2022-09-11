@@ -35,7 +35,7 @@ export default defineComponent({
 
       const price = (props.item.info.refName === 'Divine Orb')
         ? { min: n * one.chaos, max: n * one.chaos, currency: 'chaos' as const }
-        : autoCurrency(n * one.chaos, 'chaos')
+        : autoCurrency(n * one.chaos)
 
       return `${displayRounding(price.min)} ${price.currency}`
     }
