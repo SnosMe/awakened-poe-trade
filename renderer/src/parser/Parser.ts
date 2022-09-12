@@ -52,6 +52,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseHeistBlueprint,
   parseAreaLevel,
   parseAtzoatlRooms,
+  parseReflectionArea,
   parseMirrored,
   parseSentinelCharge,
   parseLogbookArea,
@@ -817,6 +818,30 @@ function parseAtzoatlRooms (section: string[], item: ParsedItem) {
               : `${_$.INCURSION_OBSTRUCTED} ${found.matcher.string}`
           },
           roll: { value: state, min: state, max: state, dp: false, unscalable: true }
+        }]
+      })
+    } else {
+      item.unknownModifiers.push({
+        text: line,
+        type: ModifierType.Pseudo
+      })
+    }
+  }
+
+  return 'SECTION_PARSED'
+}
+
+function parseReflectionArea (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Mirrored Tablet') return 'PARSER_SKIPPED'
+
+  for (const line of section) {
+    const found = STAT_BY_MATCH_STR(line)
+    if (found) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Pseudo },
+        stats: [{
+          stat: found.stat,
+          translation: found.matcher
         }]
       })
     } else {

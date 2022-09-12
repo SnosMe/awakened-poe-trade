@@ -99,6 +99,7 @@ export default defineComponent({
       props.filter.tag !== FilterTag.Property &&
       props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
       props.item.info.refName !== 'Chronicle of Atzoatl' &&
+      props.item.info.refName !== 'Mirrored Tablet' &&
       !(props.item.rarity === ItemRarity.Unique && (
         props.filter.tag === FilterTag.Explicit ||
         props.filter.tag === FilterTag.Pseudo))

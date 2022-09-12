@@ -7,6 +7,7 @@ import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { filterItemProp } from './pseudo/item-property'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
+import { applyRules as applyReflectionRules } from './pseudo/reflection-rules'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -64,6 +65,11 @@ export function createExactStatFilters (
 
   if (item.info.refName === 'Chronicle of Atzoatl') {
     applyAtzoatlRules(ctx.filters)
+    return ctx.filters
+  }
+
+  if (item.info.refName === 'Mirrored Tablet') {
+    applyReflectionRules(ctx.filters)
     return ctx.filters
   }
 

@@ -81,6 +81,12 @@ export function createFilters (
         disabled: false
       }
     }
+    if (item.info.refName === 'Mirrored Tablet') {
+      filters.areaLevel = {
+        value: item.areaLevel!,
+        disabled: false
+      }
+    }
     return filters
   }
 

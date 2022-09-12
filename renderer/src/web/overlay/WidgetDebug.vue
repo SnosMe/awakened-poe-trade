@@ -178,6 +178,36 @@ Apex of Atzoatl
 "Much could be learned from the relics said to be kept in Atzoatl. We consider the Vaal ancient, so what did they consider ancient in turn?" - Icius Perandus, Antiquities Collection, Vaal Mural
 --------
 Can be used in a personal Map Device to open portals to the Temple of Atzoatl in the present day.
+`,
+`
+Item Class: Misc Map Items
+Rarity: Currency
+Mirrored Tablet
+--------
+Area Level: 83
+--------
+Reflection of Chaos (Difficulty 1)
+Reflection of Brutality (Difficulty 2)
+Reflection of Domination (Difficulty 2)
+Reflection of Brutality (Difficulty 3)
+Reflection of Conflict (Difficulty 3)
+Reflection of Flame (Difficulty 4)
+Reflection of Chaos (Difficulty 4)
+Reflection of Power (Difficulty 4)
+Reflection of Chaos (Difficulty 5)
+Reflection of Conflict (Difficulty 5)
+Reflection of Conflict (Difficulty 5)
+Reflection of Scourge (Difficulty 6)
+Reflection of Possession (Difficulty 6)
+Reflection of Power (Difficulty 6)
+Reflection of Conflict (Difficulty 7)
+Reflection of Conflict (Difficulty 7)
+Reflection of Fractured Dimensions (Difficulty 7)
+Reflection of Tyranny (Difficulty 7)
+Reflection of Power (Difficulty 8)
+Reflection of Paradise (Difficulty 8)
+--------
+Right click this item to view the Lake map. Open portals to the Lake of Kalandra by using this item in a personal Map Device.
 `
 ]
 

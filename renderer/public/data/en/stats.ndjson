@@ -6289,3 +6289,56 @@
 {"ref":"Zealotry has #% increased Aura Effect","better":1,"matchers":[{"string":"Zealotry has #% increased Aura Effect"},{"string":"Zealotry has #% reduced Aura Effect","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4096052153"],"implicit":["implicit.stat_4096052153"]}}}
 {"ref":"Zealotry has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"Zealotry has #% increased Mana Reservation Efficiency"},{"string":"Zealotry has #% reduced Mana Reservation Efficiency","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_168308685","explicit.stat_4216444167"],"enchant":["enchant.stat_168308685","enchant.stat_4216444167"]}}}
 {"ref":"Zealotry has no Reservation","better":1,"matchers":[{"string":"Zealotry has no Reservation"}],"trade":{"ids":{"explicit":["explicit.stat_1741242318"]}}}
+{"ref":"Reflection of Breach (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Breach (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_62572"]}}}
+{"ref":"Reflection of the Dream (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Dream (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_27117"]}}}
+{"ref":"Reflection of the Breachlord (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Breachlord(Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_62935"]}}}
+{"ref":"Reflection of Delirium (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Delirium (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_22138"]}}}
+{"ref":"Reflection of Flame (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Flame (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_42468"]}}}
+{"ref":"Reflection of Camaraderie (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Camaraderie (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_35395"]}}}
+{"ref":"Reflection of Conflict (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Conflict (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_1931"]}}}
+{"ref":"Reflection of Power (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Power (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_35950"]}}}
+{"ref":"Reflection of Tyranny (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Tyranny (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_60981"]}}}
+{"ref":"Reflection of Frost (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Frost (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_38110"]}}}
+{"ref":"Reflection of the Storm (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Storm (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_2745"]}}}
+{"ref":"Reflection of Brutality (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Brutality (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_29096"]}}}
+{"ref":"Reflection of Chaos (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Chaos (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_50834"]}}}
+{"ref":"Reflection of Ambush (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Ambush (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_48307"]}}}
+{"ref":"Reflection of Entrapment (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Entrapment (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_44399"]}}}
+{"ref":"Reflection of the Trove (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Trove (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_46772"]}}}
+{"ref":"Reflection of Essence (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Essence (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_49862"]}}}
+{"ref":"Reflection of Imprisonment (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Imprisonment (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_10363"]}}}
+{"ref":"Reflection of Thralldom (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Thralldom (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_26813"]}}}
+{"ref":"Reflection of the Harbingers (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Harbingers (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_37203"]}}}
+{"ref":"Reflection of Fractured Dimensions (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Fractured Dimensions (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_49488"]}}}
+{"ref":"Reflection of Phaaryl (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Phaaryl (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_7674"]}}}
+{"ref":"Reflection of Domination (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Domination (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_63412"]}}}
+{"ref":"Reflection of Occultism (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Occultism (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_24451"]}}}
+{"ref":"Reflection of Perverted Faith (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Perverted Faith (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_27678"]}}}
+{"ref":"Reflection of Kalandra (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Kalandra (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_36591"]}}}
+{"ref":"Reflection of Metamorph (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Metamorph (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_3699"]}}}
+{"ref":"Reflection of Catalysis (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Catalysis (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_57850"]}}}
+{"ref":"Reflection of Experimentation (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Experimentation (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_55676"]}}}
+{"ref":"Reflection of Abyss (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Abyss (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_38892"]}}}
+{"ref":"Reflection of the Chasm (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Chasm (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_57101"]}}}
+{"ref":"Reflection of Darkness (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Darkness (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_34457"]}}}
+{"ref":"Reflection of Bestiary (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Bestiary (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_55569"]}}}
+{"ref":"Reflection of the Hunter (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Hunter (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_18816"]}}}
+{"ref":"Reflection of the Wilderness (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Wilderness (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_29224"]}}}
+{"ref":"Reflection of the Broken Circle (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Broken Circle (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_43128"]}}}
+{"ref":"Reflection of the Black Scythe (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Black Scythe (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_9662"]}}}
+{"ref":"Reflection of the Chalice (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Chalice (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_64561"]}}}
+{"ref":"Reflection of the Sun (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Sun (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_60034"]}}}
+{"ref":"Reflection of Legion (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Legion (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_403"]}}}
+{"ref":"Reflection of Stasis (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Stasis (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_32968"]}}}
+{"ref":"Reflection of the Monolith (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Monolith (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_34796"]}}}
+{"ref":"Reflection of Scourge (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Scourge (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_62360"]}}}
+{"ref":"Reflection of Demonfire (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Demonfire (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_28500"]}}}
+{"ref":"Reflection of the Nightmare (Difficulty #)","better":1,"matchers":[{"string":"Reflection of the Nightmare (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_24232"]}}}
+{"ref":"Reflection of Torment (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Torment (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_53950"]}}}
+{"ref":"Reflection of Possession (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Possession (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_25049"]}}}
+{"ref":"Reflection of Guilt (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Guilt (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_25480"]}}}
+{"ref":"Reflection of Delve (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Delve (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_18737"]}}}
+{"ref":"Reflection of Sulphite (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Sulphite (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_45086"]}}}
+{"ref":"Reflection of Azurite (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Azurite (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_40031"]}}}
+{"ref":"Reflection of Paradise (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Paradise (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_50846"]}}}
+{"ref":"Reflection of Angling (Difficulty #)","better":1,"matchers":[{"string":"Reflection of Angling (Difficulty #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_40794"]}}}
