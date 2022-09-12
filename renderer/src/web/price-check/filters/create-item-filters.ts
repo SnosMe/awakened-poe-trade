@@ -123,7 +123,7 @@ export function createFilters (
       baseTypeTrade: t(opts, item.info)
     }
     filters.areaLevel = {
-      value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81]),
+      value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81, 83]),
       disabled: false
     }
   } else if (item.category === ItemCategory.HeistBlueprint) {

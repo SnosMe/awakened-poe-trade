@@ -19,7 +19,7 @@ export interface FiltersCreationContext {
 export function createExactStatFilters (
   item: ParsedItem,
   statsByType: StatCalculated[],
-  _opts: {}
+  opts: { searchStatRange: number }
 ): StatFilter[] {
   if (item.mapBlighted) return []
   if (
@@ -54,7 +54,7 @@ export function createExactStatFilters (
 
   const ctx: FiltersCreationContext = {
     item,
-    searchInRange: 100,
+    searchInRange: Math.min(2, opts.searchStatRange),
     filters: [],
     statsByType: statsByType.filter(calc => keepByType.includes(calc.type))
   }

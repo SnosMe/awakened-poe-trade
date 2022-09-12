@@ -89,7 +89,7 @@ export default defineComponent({
 
       const price = (props.item.info.refName === 'Divine Orb')
         ? { min: trend.chaos, max: trend.chaos, currency: 'chaos' as const }
-        : autoCurrency(trend.chaos, 'chaos')
+        : autoCurrency(trend.chaos)
 
       return {
         price: price,

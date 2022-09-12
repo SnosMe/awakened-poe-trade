@@ -48,7 +48,7 @@ function findPriceByQueryId (queryId: string) {
   const [name, variant] = encodedName.split(' // ')
   const priceEntry = findPriceByQuery({ ns, name, variant })
   if (priceEntry) {
-    return autoCurrency(priceEntry.chaos, 'chaos')
+    return autoCurrency(priceEntry.chaos)
   }
 }
 
