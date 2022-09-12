@@ -66,10 +66,6 @@ import { BaseType, ITEMS_ITERATOR } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 import { findPriceByQuery, autoCurrency } from '@/web/background/Prices'
 
-function capitalize (str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
-
 interface SelectedItem {
   name: string
   icon: string
@@ -104,14 +100,15 @@ function findItems (opts: {
   matchFn: (item: BaseType) => boolean
 }): BaseType[] | false {
   const search = opts.search.trim()
-  if (search.length < 2) return false
+  const lcSearch = search.toLowerCase().split(/\s+/).sort((a, b) => b.length - a.length)
+  if (search.length < 3) return false
 
   const out = []
 
-  const firstWord = search.split(/\s+/, 1)[0]
-  const jsonSearch = (AppConfig().language === 'en')
-    ? capitalize(firstWord)
-    : firstWord
+  const lcLongestWord = lcSearch[0]
+  const jsonSearch = (AppConfig().language !== 'cmn-Hant')
+    ? lcLongestWord.slice(1) // in non-CJK first letter should be in first utf16 code unit
+    : lcLongestWord
 
   const MAX_HITS = 70 // NOTE: based on first word only, so don't be too strict
   const MAX_RESULTS_VISIBLE = 5 // NOTE: don't want to pick from too many results
@@ -120,10 +117,10 @@ function findItems (opts: {
   for (const match of ITEMS_ITERATOR(jsonSearch, opts.jsonIncludes)) {
     hits += 1
     const lcName = match.name.toLowerCase()
-    const lcSearch = search.toLowerCase().split(/\s+/)
     if (
       opts.matchFn(match) &&
-      lcSearch.every(part => lcName.includes(part))
+      lcSearch.every(part => lcName.includes(part)) &&
+      ((AppConfig().language === 'cmn-Hant') || lcName.split(/\s+/).some(part => part.startsWith(lcLongestWord)))
     ) {
       out.push(match)
       if (out.length > MAX_RESULTS) return false
