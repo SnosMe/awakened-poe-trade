@@ -141,7 +141,7 @@ export function createFilters (
       disabled: false
     }
 
-    if (item.heist?.wingsRevealed && item.heist.wingsRevealed > 1) {
+    if (item.heist?.wingsRevealed) {
       filters.heistWingsRevealed = {
         value: item.heist.wingsRevealed,
         disabled: false

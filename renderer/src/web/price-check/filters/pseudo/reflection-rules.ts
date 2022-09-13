@@ -22,7 +22,7 @@ const RULES: FilterRule[] = [
   { ref: stat('Reflection of the Nightmare (Difficulty #)') },
   { ref: stat('Reflection of Azurite (Difficulty #)') },
   { ref: stat('Reflection of Paradise (Difficulty #)'), disabled: false },
-  { ref: stat('Reflection of Angling (Difficulty #)'), disabled: false },
+  { ref: stat('Reflection of Angling (Difficulty #)'), disabled: false }
 ]
 
 export function applyRules (filters: StatFilter[]) {
