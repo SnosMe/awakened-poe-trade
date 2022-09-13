@@ -22,4 +22,5 @@ linux:
   target:
   - "AppImage"
 appImage:
-  executableArgs: "--sandbox"
+  executableArgs:
+  - "--sandbox"
