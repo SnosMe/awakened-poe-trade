@@ -4,6 +4,7 @@ import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
+import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rules'
 import { filterItemProp } from './pseudo/item-property'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
@@ -64,6 +65,10 @@ export function createExactStatFilters (
 
   if (item.info.refName === 'Chronicle of Atzoatl') {
     applyAtzoatlRules(ctx.filters)
+    return ctx.filters
+  }
+  if (item.info.refName === 'Mirrored Tablet') {
+    applyMirroredTabletRules(ctx.filters)
     return ctx.filters
   }
 
@@ -168,7 +173,10 @@ export function calculatedStatToFilter (
     }
   }
 
-  const roll = statSourcesTotal(calc.sources)
+  const roll = statSourcesTotal(
+    calc.sources,
+    (item.info.refName === 'Mirrored Tablet') ? 'max' : 'sum'
+  )
   const translation = translateStatWithRoll(calc, roll)
 
   filter ??= {

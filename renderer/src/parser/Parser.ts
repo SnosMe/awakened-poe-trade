@@ -52,6 +52,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseHeistBlueprint,
   parseAreaLevel,
   parseAtzoatlRooms,
+  parseMirroredTablet,
   parseMirrored,
   parseSentinelCharge,
   parseLogbookArea,
@@ -784,7 +785,8 @@ function parseAreaLevelNested (section: string[], item: ParsedItem) {
 function parseAreaLevel (section: string[], item: ParsedItem) {
   if (
     item.info.refName !== 'Chronicle of Atzoatl' &&
-    item.info.refName !== 'Expedition Logbook'
+    item.info.refName !== 'Expedition Logbook' &&
+    item.info.refName !== 'Mirrored Tablet'
   ) return 'PARSER_SKIPPED'
 
   parseAreaLevelNested(section, item)
@@ -818,6 +820,28 @@ function parseAtzoatlRooms (section: string[], item: ParsedItem) {
           },
           roll: { value: state, min: state, max: state, dp: false, unscalable: true }
         }]
+      })
+    } else {
+      item.unknownModifiers.push({
+        text: line,
+        type: ModifierType.Pseudo
+      })
+    }
+  }
+
+  return 'SECTION_PARSED'
+}
+
+function parseMirroredTablet (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Mirrored Tablet') return 'PARSER_SKIPPED'
+  if (section.length < 8) return 'SECTION_SKIPPED'
+
+  for (const line of section) {
+    const found = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Pseudo)
+    if (found) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Pseudo },
+        stats: [found]
       })
     } else {
       item.unknownModifiers.push({

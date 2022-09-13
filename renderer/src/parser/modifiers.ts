@@ -63,15 +63,19 @@ export function sumStatsByModType (mods: readonly ParsedModifier[]): StatCalcula
 }
 
 export function statSourcesTotal (
-  sources: StatSource[]
+  sources: StatSource[],
+  mode: 'sum' | 'max' = 'sum'
 ): StatRoll | undefined {
+  const fn = (mode === 'sum')
+    ? ((a: number, b: number) => a + b)
+    : ((a: number, b: number) => Math.max(a, b))
   return (sources.length === 1)
     ? (sources[0].contributes)
     : (sources.reduce((sum, { contributes }) => {
         contributes = contributes ?? { value: 1, min: 1, max: 1 }
-        sum.value += contributes.value
-        sum.min += contributes.min
-        sum.max += contributes.max
+        sum.value = fn(sum.value, contributes.value)
+        sum.min = fn(sum.min, contributes.min)
+        sum.max = fn(sum.max, contributes.max)
         return sum
       }, { value: 0, min: 0, max: 0 }))
 }
