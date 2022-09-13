@@ -20,13 +20,6 @@
         <input v-model="windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe" />
       </div>
     </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Restore clipboard') }}</div>
-      <div class="mb-4 flex">
-        <ui-radio v-model="restoreClipboard" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
-        <ui-radio v-model="restoreClipboard" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -45,8 +38,7 @@ export default defineComponent({
       t,
       logLevel: configModelValue(() => props.config, 'logLevel'),
       hardwareAcceleration: configModelValue(() => props.config, 'hardwareAcceleration'),
-      windowTitle: configModelValue(() => props.config, 'windowTitle'),
-      restoreClipboard: configModelValue(() => props.config, 'restoreClipboard')
+      windowTitle: configModelValue(() => props.config, 'windowTitle')
     }
   }
 })
@@ -58,8 +50,7 @@ export default defineComponent({
     "Log level": "Уровень логов",
     "Hardware Acceleration": "Аппаратное ускорение",
     "Disabled (render on CPU)": "Отключено (рендерить на CPU)",
-    "PoE window title": "Заголовок окна игры",
-    "Restore clipboard": "Восстанавливать буфер обмена"
+    "PoE window title": "Заголовок окна игры"
   }
 }
 </i18n>

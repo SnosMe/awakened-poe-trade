@@ -49,7 +49,7 @@ export const defaultConfig = (): Config => ({
   overlayBackgroundClose: true,
   itemCheckKey: null,
   delveGridKey: null,
-  restoreClipboard: true,
+  restoreClipboard: false,
   commands: [{
     text: '/hideout',
     hotkey: 'F5',

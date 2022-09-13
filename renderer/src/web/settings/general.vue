@@ -54,7 +54,7 @@
         <ui-radio v-model="overlayBackground" value="rgba(255, 255, 255, 0)">{{ t('Transparent') }}</ui-radio>
       </div>
       <div class="mb-4" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'">
-        <ui-radio v-model="overlayBackgroundExclusive" :value="true" class="mr-4">{{ t('Show for Overlay and Price Check') }}</ui-radio><br>
+        <ui-radio v-model="overlayBackgroundExclusive" :value="true" class="mr-4">{{ t('Show for Overlay and Price Check') }}</ui-radio>
         <ui-radio v-model="overlayBackgroundExclusive" :value="false">{{ t('Show only for Overlay') }}</ui-radio>
       </div>
     </div>
@@ -63,6 +63,13 @@
       <div class="mb-4 flex">
         <ui-radio v-model="overlayBackgroundClose" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
         <ui-radio v-model="overlayBackgroundClose" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Restore clipboard') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="restoreClipboard" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="restoreClipboard" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
       </div>
     </div>
   </div>
@@ -103,7 +110,8 @@ export default defineComponent({
       },
       handleGameConfigFile (e: Event) {
         props.config.gameConfig = ((e as InputEvent).target as HTMLInputElement).files![0].path
-      }
+      },
+      restoreClipboard: configModelValue(() => props.config, 'restoreClipboard')
     }
   }
 })
@@ -122,7 +130,8 @@ export default defineComponent({
     "PoE log file": "Файл логов PoE",
     "PoE config file": "Файл настроек PoE",
     "Browse": "Выбрать",
-    "Auto-download updates": "Автозагрузка обновлений"
+    "Auto-download updates": "Автозагрузка обновлений",
+    "Restore clipboard": "Восстанавливать буфер обмена"
   },
   "cmn-Hant": {
     "Language": "語言",
