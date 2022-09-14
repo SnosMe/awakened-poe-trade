@@ -123,14 +123,12 @@ export default defineComponent({
           height: window.innerHeight
         }
       })
-      watch(size, (size, prev) => {
-        if (size.devicePixelRatio !== prev.devicePixelRatio) {
-          MainProcess.sendEvent({
-            name: 'OVERLAY->MAIN::devicePixelRatio-change',
-            payload: size.devicePixelRatio
-          })
-        }
-      })
+      watch(() => size.value.devicePixelRatio, (dpr) => {
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::devicePixelRatio-change',
+          payload: dpr
+        })
+      }, { immediate: true })
       return readonly(size)
     })()
 
