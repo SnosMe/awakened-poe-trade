@@ -132,11 +132,13 @@ const TRADE_WHISPER = {
   'es': /^Hola, quisiera comprar tu (?<item>.+) listado por (?<price>.+) en (?<league>.+) \(pestaña de alijo "(?<tab_name>.*)"; posición: izquierda(?<tab_left>\d+), arriba (?<tab_top>\d+)\)(?<message>.+)?$/,
   'pt': /^Olá, eu gostaria de comprar o seu item (?<item>.+) listado por (?<price>.+) na (?<league>.+) \(aba do baú: "(?<tab_name>.*)"; posição: esquerda (?<tab_left>\d+), topo (?<tab_top>\d+)\)(?<message>.+)?$/,
   'th': /^สวัสดี, เราต้องการจะชื้อของคุณ (?<item>.+) ใน ราคา (?<price>.+) ใน (?<league>.+) \(stash tab "(?<tab_name>.*)"; ตำแหน่ง: ซ้าย (?<tab_left>\d+), บน (?<tab_top>\d+)\)(?<message>.+)?$/,
-  'cmn-Hant': /^你好，我想購買 (?<item>.+) 標價 (?<price>.+) 在 (?<league>.+) \(倉庫頁 "(?<tab_name>.*)"; 位置: 左 (?<tab_left>\d+), 上 (?<tab_top>\d+)\)(?<message>.+)?$/
+  'cmn-Hant': /^你好，我想購買 (?<item>.+) 標價 (?<price>.+) 在 (?<league>.+) \(倉庫頁 "(?<tab_name>.*)"; 位置: 左 (?<tab_left>\d+), 上 (?<tab_top>\d+)\)(?<message>.+)?$/,
+  'zh_CN': /^你好，我想購買 (?<item>.+) 標價 (?<price>.+) 在 (?<league>.+) \(倉庫頁 "(?<tab_name>.*)"; 位置: 左 (?<tab_left>\d+), 上 (?<tab_top>\d+)\)(?<message>.+)?$/
 }
 
 const TRADE_BULK_WHISPER = {
   'en': /^Hi, I'd like to buy your (?<item>.+) for my (?<price>.+) in (?<league>.+)\.(?<message>.+)?$/,
   'ru': /^Здравствуйте, хочу купить у вас (?<item>.+) за (?<price>.+) в лиге (?<league>.+)\.(?<message>.+)?$/,
-  'cmn-Hant': /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/
+  'cmn-Hant': /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/,
+  'zh_CN': /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/
 }

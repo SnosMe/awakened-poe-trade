@@ -110,7 +110,7 @@ export default defineComponent({
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
-        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg')
+        useEn: ((AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN') && AppConfig().realm === 'pc-ggg')
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||

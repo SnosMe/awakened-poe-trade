@@ -104,9 +104,9 @@ function findItems (opts: {
   if (search.length < 3) return false
 
   const out = []
-
+  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN')
   const lcLongestWord = lcSearch[0]
-  const jsonSearch = (AppConfig().language !== 'cmn-Hant')
+  const jsonSearch = !isCJK
     ? lcLongestWord.slice(1) // in non-CJK first letter should be in first utf16 code unit
     : lcLongestWord
 
@@ -120,7 +120,7 @@ function findItems (opts: {
     if (
       opts.matchFn(match) &&
       lcSearch.every(part => lcName.includes(part)) &&
-      ((AppConfig().language === 'cmn-Hant') || lcName.split(/\s+/).some(part => part.startsWith(lcLongestWord)))
+      (isCJK || lcName.split(/\s+/).some(part => part.startsWith(lcLongestWord)))
     ) {
       out.push(match)
       if (out.length > MAX_RESULTS) return false
