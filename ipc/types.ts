@@ -83,7 +83,7 @@ export const defaultConfig = (): Config => ({
   hardwareAcceleration: false,
   accountName: '',
   stashScroll: true,
-  language: 'en',
+  language: 'zh_CN',
   realm: 'pc-ggg',
   poesessid:'',
   fontSize: 16,

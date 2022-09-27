@@ -175,7 +175,7 @@ function findInDatabase (item: ParserState) {
   } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
     info = ITEM_BY_REF('UNIQUE', item.name)
   } else {
-    info = ITEM_BY_REF('ITEM', item.baseType ?? item.name)
+    info = ITEM_BY_TRANSLATED('ITEM', item.baseType ?? item.name)
   }
   if (!info?.length) {
     throw new Error('UNKNOWN_ITEM')
