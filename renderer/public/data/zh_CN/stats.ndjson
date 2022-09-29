@@ -1816,7 +1816,7 @@
 {"ref": "+# Suffix Modifier allowed", "better": 1, "matchers": [{"string": "允许的后缀 #"}, {"string": "允许的后缀 #"}], "trade": {"ids": {"implicit": ["implicit.stat_718638445"]}}}
 {"ref": "+# to Accuracy against Bleeding Enemies", "better": 1, "matchers": [{"string": "对流血敌人的命中值 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2269396414"]}}}
 {"ref": "+# to Accuracy Rating", "better": 1, "matchers": [{"string": "# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_691932474", "explicit.stat_803737631"], "implicit": ["implicit.stat_691932474", "implicit.stat_803737631"], "fractured": ["fractured.stat_691932474", "fractured.stat_803737631"], "crafted": ["crafted.stat_691932474", "crafted.stat_803737631"]}}}
-{"ref": "+# to Accuracy Rating per 10 Dexterity on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "范围内每有 10 点未配置的敏捷，便 +# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_100820057"]}}}
+{"ref": "+# to Accuracy Rating per 10 Dexterity on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "范围内每有 10 点未配置的敏捷，便 -# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_100820057"]}}}
 {"ref": "+# to Accuracy Rating per 10 Intelligence on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "命中值按照范围内未配置的天赋上每 10 点智慧 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3996149330"]}}}
 {"ref": "+# to Accuracy Rating per Frenzy Charge", "better": 1, "matchers": [{"string": "命中值按照每个狂怒球 #"}], "trade": {"ids": {"implicit": ["implicit.stat_3126680545"]}}}
 {"ref": "+# to Accuracy Rating while at Maximum Frenzy Charges", "better": 1, "matchers": [{"string": "狂怒球达到上限时，# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_3213407110"]}}}
@@ -1844,10 +1844,10 @@
 {"ref": "+# to Evasion Rating and Energy Shield", "better": 1, "matchers": [{"string": "# 点闪避值和能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_1549868759"]}}}
 {"ref": "+# to Evasion Rating if Hit an Enemy Recently", "better": 1, "matchers": [{"string": "若你近期内击中敌人，则 # 闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_2935548106"]}}}
 {"ref": "+# to Evasion Rating per 5 Maximum Energy Shield on Equipped Shield", "better": 1, "matchers": [{"string": "闪避值按照已装备的盾牌上每 5 点能量护盾上限 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1115914670"]}}}
-{"ref": "+# to Evasion Rating while in Sand Stance", "better": 1, "matchers": [{"string": "沙姿态下 +# 闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_1922061483"]}}}
+{"ref": "+# to Evasion Rating while in Sand Stance", "better": 1, "matchers": [{"string": "沙姿态下 -# 闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_1922061483"]}}}
 {"ref": "+# to Evasion Rating while on Full Life", "better": 1, "matchers": [{"string": "满血时闪避值提高 #"}], "trade": {"ids": {"explicit": ["explicit.stat_4082111882"]}}}
 {"ref": "+# to Evasion Rating while on Low Life", "better": 1, "matchers": [{"string": "低血时闪避值提高 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3470876581"]}}}
-{"ref": "+# to Evasion Rating while you have Phasing", "better": 1, "matchers": [{"string": "你在【迷踪】状态下 +# 闪避值"}], "trade": {"ids": {"enchant": ["enchant.stat_3169671355"]}}}
+{"ref": "+# to Evasion Rating while you have Phasing", "better": 1, "matchers": [{"string": "你在【迷踪】状态下-# 闪避值"}], "trade": {"ids": {"enchant": ["enchant.stat_3169671355"]}}}
 {"ref": "+# to Global Evasion Rating while moving", "better": 1, "matchers": [{"string": "移动时 # 点最大闪避值"}], "trade": {"ids": {"implicit": ["implicit.stat_3825877290"]}}}
 {"ref": "+# to Intelligence", "better": 1, "matchers": [{"string": "# 智慧"}], "trade": {"ids": {"explicit": ["explicit.stat_328541901"], "implicit": ["implicit.stat_328541901"], "fractured": ["fractured.stat_328541901"], "scourge": ["scourge.stat_328541901"], "crafted": ["crafted.stat_328541901"]}}}
 {"ref": "+# to Level of all Chaos Skill Gems", "better": 1, "matchers": [{"string": "所有混沌技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_67169579"], "fractured": ["fractured.stat_67169579"]}}}
@@ -3062,7 +3062,7 @@
 {"ref": "Caustic Arrow has #% chance to inflict Withered on Hit for # second base Duration", "better": 1, "matchers": [{"string": "【腐蚀箭矢】击中后有 #% 的几率造成死亡凋零，持续 # 秒"}, {"string": "【腐蚀箭矢】击中后有 #% 的几率造成死亡凋零，持续 # 秒"}, {"string": "【腐蚀箭矢】击中后造成死亡凋零，持续 # 秒"}, {"string": "【腐蚀箭矢】击中后造成死亡凋零，持续 # 秒"}], "trade": {"ids": {"enchant": ["enchant.stat_1993913925"]}}}
 {"ref": "Celestial Footprints", "better": 1, "matchers": [{"string": "绚丽众星行走特效"}], "trade": {"ids": {"explicit": ["explicit.stat_50381303"]}}}
 {"ref": "Chain Hook deals #% increased Damage", "better": 1, "matchers": [{"string": "【钩链攻击】的伤害提高 #%"}, {"string": "【钩链攻击】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_289027663"]}}}
-{"ref": "Chain Hook has +# Radius per 12 Rage", "better": 1, "matchers": [{"string": "Chain Hook has # Radius per 12 Rage"}], "trade": {"ids": {"enchant": ["enchant.stat_3269147016"]}}}
+{"ref": "Chain Hook has +# Radius per 12 Rage", "better": 1, "matchers": [{"string": "每有 12 点怒火，钩链攻击范围 +#"}], "trade": {"ids": {"enchant": ["enchant.stat_3269147016"]}}}
 {"ref": "Chain Hook has a #% chance to grant +1 Rage if it Hits Enemies", "better": 1, "matchers": [{"string": "钩链攻击有 #% 的几率在击中敌人后获得怒火 +1"}], "trade": {"ids": {"enchant": ["enchant.stat_2588242810"]}}}
 {"ref": "Chance to Block Spell Damage is Unlucky", "better": 1, "matchers": [{"string": "格挡法术伤害的几率会特别不幸", "value": -1}, {"string": "格挡法术伤害的几率会特别幸运", "value": 1}], "trade": {"ids": {"explicit": ["explicit.stat_3551025193"]}}}
 {"ref": "Channelling Skills deal #% increased Damage", "better": 1, "matchers": [{"string": "持续吟唱技能伤害提高 #%"}, {"string": "持续吟唱技能伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_2733285506"]}}}
@@ -3266,7 +3266,7 @@
 {"ref": "Dominating Blow can summon an additional Rare Sentinel of Dominance", "better": 1, "matchers": [{"string": "【霸气之击】可以召唤 # 个【稀有统御哨兵】"}, {"string": "【霸气之击】可以召唤 1 个【稀有统御哨兵】", "value": 1}], "trade": {"ids": {"enchant": ["enchant.stat_2337005967"]}}}
 {"ref": "Doomsday", "better": 1, "matchers": [{"string": "灭亡之日"}], "trade": {"ids": {"explicit": ["explicit.stat_3341855070"], "scourge": ["scourge.stat_3341855070"]}}}
 {"ref": "Double Strike has a #% chance to deal Double Damage to Bleeding Enemies", "better": 1, "matchers": [{"string": "【双重打击】有 #% 的几率对流血敌人造成双倍伤害"}], "trade": {"ids": {"enchant": ["enchant.stat_3125201823"]}}}
-{"ref": "Dread Banner grants an additional +# to maximum Fortification when placing the Banner", "better": 1, "matchers": [{"string": "Dread Banner grants an additional # to maximum Fortification when placing the Banner"}], "trade": {"ids": {"explicit": ["explicit.stat_3430523735", "explicit.stat_740728913"]}}}
+{"ref": "Dread Banner grants an additional +# to maximum Fortification when placing the Banner", "better": 1, "matchers": [{"string": "恐怖之旗在放置时使护身上限额外 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_3430523735", "explicit.stat_740728913"]}}}
 {"ref": "Dread Banner has #% increased Aura Effect", "better": 1, "matchers": [{"string": "【恐怖之旗】的光环效果提高 #%"}, {"string": "【恐怖之旗】的光环效果降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_287319069"]}}}
 {"ref": "Drops Brittle Ground while moving, lasting # seconds", "better": 1, "matchers": [{"string": "移动时留下脆弱地面，持续 # 秒"}], "trade": {"ids": {"implicit": ["implicit.stat_984148407"]}}}
 {"ref": "Drops Burning Ground while moving, dealing # Fire Damage per second for # second", "better": 1, "matchers": [{"string": "移动时留下【燃烧地面】，在 # 秒内每秒造成 # 点火焰伤害"}, {"string": "移动时留下【燃烧地面】，在 # 秒内每秒造成 # 点火焰伤害"}], "trade": {"ids": {"explicit": ["explicit.stat_3595254837"], "fractured": ["fractured.stat_3595254837"]}}}
@@ -4238,7 +4238,7 @@
 {"ref": "Minions have #% increased Movement Speed", "better": 1, "matchers": [{"string": "召唤生物的移动速度提高 #%"}, {"string": "召唤生物的移动速度降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_174664100"], "implicit": ["implicit.stat_174664100"], "fractured": ["fractured.stat_174664100"], "crafted": ["crafted.stat_174664100"]}}}
 {"ref": "Minions have #% reduced Flask Charges used", "better": -1, "matchers": [{"string": "召唤生物的药剂使用次数增加 #%"}, {"string": "召唤生物的药剂使用次数减少 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_180240697"]}, "inverted": true}}
 {"ref": "Minions have +# to Accuracy Rating", "better": 1, "matchers": [{"string": "召唤生物 # 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_1661151735"], "fractured": ["fractured.stat_1661151735"]}}}
-{"ref": "Minions have +# to Accuracy Rating per 10 Devotion", "better": 1, "matchers": [{"string": "Minions have # to Accuracy Rating per 10 Devotion"}], "trade": {"ids": {"explicit": ["explicit.stat_2830135449"]}}}
+{"ref": "Minions have +# to Accuracy Rating per 10 Devotion", "better": 1, "matchers": [{"string": "每 10 点奉献使召唤生物的命中值 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2830135449"]}}}
 {"ref": "Minions have +# to Armour", "better": 1, "matchers": [{"string": "召唤生物有 # 点护甲"}], "trade": {"ids": {"explicit": ["explicit.stat_2048970144"]}}}
 {"ref": "Minions have +#% Chance to Block Attack Damage", "better": 1, "matchers": [{"string": "召唤生物有#% 攻击伤害格挡几率"}], "trade": {"ids": {"explicit": ["explicit.stat_3374054207"], "fractured": ["fractured.stat_3374054207"], "scourge": ["scourge.stat_3374054207"]}}}
 {"ref": "Minions have +#% Chance to Block Spell Damage", "better": 1, "matchers": [{"string": "召唤生物获得 #% 格挡法术伤害率"}], "trade": {"ids": {"explicit": ["explicit.stat_2762046953"], "scourge": ["scourge.stat_2762046953"]}}}
@@ -4809,7 +4809,7 @@
 {"ref": "Right Ring slot: Cover Enemies in Frost for # seconds when you Freeze them", "better": 1, "matchers": [{"string": "右戒指栏位：你冻结敌人时在接下来 # 秒使其被冰霜附体"}], "trade": {"ids": {"explicit": ["explicit.stat_3536082205"]}}}
 {"ref": "Right ring slot: Minions take #% increased Damage", "better": 1, "matchers": [{"string": "右边的戒指栏位：召唤生物受到的伤害提高#%"}, {"string": "右边的戒指栏位：召唤生物受到的伤害降低#%", "negate": true}], "trade": {"ids": {"implicit": ["implicit.stat_1069618951"]}}}
 {"ref": "Right ring slot: Projectiles from Spells cannot Fork", "better": 1, "matchers": [{"string": "右戒指栏位：法术的投射物无法分裂"}], "trade": {"ids": {"explicit": ["explicit.stat_2933024469"]}}}
-{"ref": "Right ring slot: Projectiles from Spells Chain +# times", "better": 1, "matchers": [{"string": "Right ring slot: Projectiles from Spells Chain # times"}], "trade": {"ids": {"explicit": ["explicit.stat_1555918911"]}}}
+{"ref": "Right ring slot: Projectiles from Spells Chain +# times", "better": 1, "matchers": [{"string": "右戒指栏位：法术的投射物会额外弹射 # 次"}], "trade": {"ids": {"explicit": ["explicit.stat_1555918911"]}}}
 {"ref": "Right ring slot: Regenerate #% of Energy Shield per second", "better": 1, "matchers": [{"string": "右戒指栏位：每秒回复 #% 能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_3676958605"]}}}
 {"ref": "Right ring slot: You and your Minions take #% reduced Reflected Physical Damage", "better": -1, "matchers": [{"string": "右戒指栏位：你和你的召唤生物受到的反射物理伤害提高 #%"}, {"string": "右戒指栏位：反射物理伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1357244124"]}, "inverted": true}}
 {"ref": "Right ring slot: You cannot Regenerate Mana", "better": 1, "matchers": [{"string": "右戒指栏位：不能再生魔力"}], "trade": {"ids": {"explicit": ["explicit.stat_783864527"]}}}
@@ -4863,7 +4863,7 @@
 {"ref": "Shocks you when you reach Maximum Power Charges", "better": 1, "matchers": [{"string": "暴击球达到最大数量时，你被感电"}], "trade": {"ids": {"explicit": ["explicit.stat_4256314560"]}}}
 {"ref": "Shrapnel Ballista fires an additional Arrow", "better": 1, "matchers": [{"string": "【散射弩炮】发射# 支额外的箭矢"}, {"string": "【散射弩炮】发射一支额外的箭矢", "value": 1}], "trade": {"ids": {"enchant": ["enchant.stat_959534996"]}}}
 {"ref": "Shrapnel Ballista has #% increased Projectile Speed", "better": 1, "matchers": [{"string": "【散射弩炮】的投射物速度提高 #%"}, {"string": "【散射弩炮】的投射物速度降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1213017413"]}}}
-{"ref": "Shrapnel Ballista has +# to maximum number of Summoned Totems per 200 Strength", "better": 1, "matchers": [{"string": "Shrapnel Ballista has # to maximum number of Summoned Totems per 200 Strength"}], "trade": {"ids": {"explicit": ["explicit.stat_1124661381"]}}}
+{"ref": "Shrapnel Ballista has +# to maximum number of Summoned Totems per 200 Strength", "better": 1, "matchers": [{"string": "每 200 点力量都使散射弩炮的召唤图腾上限 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_1124661381"]}}}
 {"ref": "Shrapnel Ballista Pierces an additional Target", "better": 1, "matchers": [{"string": "【散射弩炮】穿透 # 个额外的额外的目标"}, {"string": "【散射弩炮】穿透一个额外的目标", "value": 1}], "trade": {"ids": {"enchant": ["enchant.stat_1494168614"]}}}
 {"ref": "Shrines drop a Basic Currency Item when used", "better": 1, "matchers": [{"string": "使用神龛时掉落 # 个基础通货物品"}, {"string": "使用神龛时掉落一个基础通货物品", "value": 1}], "trade": {"ids": {"explicit": ["explicit.stat_2305944553"]}}}
 {"ref": "Shrines in your Maps grant a random additional Shrine Effect", "better": 1, "matchers": [{"string": "该区域的神殿将随机提供额外 1 个神殿效果"}, {"string": "地图内的神龛随机提供一个额外的神龛效果"}], "trade": {"ids": {"explicit": ["explicit.stat_1594755360"]}}}
@@ -5941,7 +5941,7 @@
 {"ref": "Wind Dancer", "better": 1, "matchers": [{"string": "风舞者"}], "trade": {"ids": {"explicit": ["explicit.stat_4170338365"], "scourge": ["scourge.stat_4170338365"]}}}
 {"ref": "Winter Orb deals #% increased Damage", "better": 1, "matchers": [{"string": "【寒冬宝珠】的伤害提高 #%"}, {"string": "【寒冬宝珠】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2200744772"]}}}
 {"ref": "Winter Orb has #% increased Area of Effect per Stage", "better": 1, "matchers": [{"string": "寒冬宝珠每阶可使效果区域扩大 #%"}, {"string": "寒冬宝珠每阶可使效果区域缩小 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1017161280"]}}}
-{"ref": "Winter Orb has +# Maximum Stages", "better": 1, "matchers": [{"string": "Winter Orb has # Maximum Stages"}], "trade": {"ids": {"enchant": ["enchant.stat_3734339018"]}}}
+{"ref": "Winter Orb has +# Maximum Stages", "better": 1, "matchers": [{"string": "寒冬宝珠的最大等阶 +#"}], "trade": {"ids": {"enchant": ["enchant.stat_3734339018"]}}}
 {"ref": "Wintertide Brand deals #% increased Damage", "better": 1, "matchers": [{"string": "【冬潮烙印】的伤害提高 #%"}, {"string": "【冬潮烙印】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_770334536"]}}}
 {"ref": "Wintertide Brand has #% increased Chill Effect", "better": 1, "matchers": [{"string": "【冬潮烙印】的冰缓效果提高 #%"}, {"string": "【冬潮烙印】的冰缓效果降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1831757355"], "enchant": ["enchant.stat_1831757355"]}}}
 {"ref": "Wintertide Brand has +# to maximum Stages", "better": 1, "matchers": [{"string": "冬潮烙印 # 最大层数"}], "trade": {"ids": {"enchant": ["enchant.stat_35081783"]}}}
@@ -5956,7 +5956,7 @@
 {"ref": "With 40 total Intelligence and Dexterity in Radius, Prismatic Skills deal 50% less Fire Damage", "better": 1, "matchers": [{"string": "范围内配置的智慧和敏捷总计 40 点时，虹光技能的火焰伤害总降 50%"}], "trade": {"ids": {"explicit": ["explicit.stat_1813069390"]}}}
 {"ref": "With 40 total Strength and Intelligence in Radius, Prismatic Skills cannot choose Cold", "better": 1, "matchers": [{"string": "范围内配置的力量和智慧总计 40 点时，虹光技能不能选择冰霜效果"}], "trade": {"ids": {"explicit": ["explicit.stat_2864618930"]}}}
 {"ref": "With 40 total Strength and Intelligence in Radius, Prismatic Skills deal 50% less Cold Damage", "better": 1, "matchers": [{"string": "范围内配置的智慧和力量总计 40 点时，虹光技能的冰霜伤害总降 50%"}], "trade": {"ids": {"explicit": ["explicit.stat_3286480398"]}}}
-{"ref": "With a Ghastly Eye Jewel Socketed, Minions have +# to Accuracy Rating", "better": 1, "matchers": [{"string": "With a Ghastly Eye Jewel Socketed, Minions have # to Accuracy Rating"}], "trade": {"ids": {"explicit": ["explicit.stat_2388362438"]}}}
+{"ref": "With a Ghastly Eye Jewel Socketed, Minions have +# to Accuracy Rating", "better": 1, "matchers": [{"string": "插入苍白之凝珠宝时，召唤生物的命中值 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2388362438"]}}}
 {"ref": "With a Hypnotic Eye Jewel Socketed, gain Arcane Surge on Hit with Spells", "better": 1, "matchers": [{"string": "插入安睡之凝珠宝时，法术击中获得【秘术增强】"}], "trade": {"ids": {"explicit": ["explicit.stat_3153744598"]}}}
 {"ref": "With a Murderous Eye Jewel Socketed, Intimidate Enemies for 4 seconds on Hit with Attacks", "better": 1, "matchers": [{"string": "当插槽内有 1 个【凶残之凝】珠宝时，攻击击中敌人会恐吓它们 4 秒"}], "trade": {"ids": {"explicit": ["explicit.stat_642457541"]}}}
 {"ref": "With a Searching Eye Jewel Socketed, Maim Enemies for 4 seconds on Hit with Attacks", "better": 1, "matchers": [{"string": "当插槽内有 1 个【锐利之凝】珠宝时，攻击击中敌人会瘫痪它们 4 秒"}], "trade": {"ids": {"explicit": ["explicit.stat_2750004091"]}}}
@@ -6273,7 +6273,7 @@
 {"ref": "Your Maps have +#% chance to contain a Vaal Side Area", "better": 1, "matchers": [{"string": "地图内有腐化地图的几率 +#%"}], "trade": {"ids": {"explicit": ["explicit.stat_2156201537"]}}}
 {"ref": "Your Maps have +#% chance to contain an Expedition Encounter", "better": 1, "matchers": [{"string": "有#%的几率包含一场祖秘藏遭遇战"}, {"string": "你的地图有#%几率包含一场先祖秘藏遭遇战"}, {"string": "额外有一场先祖秘藏遭遇战", "value": 100}, {"string": "你的地图包含一场先祖秘藏遭遇战", "value": 100}], "trade": {"ids": {"implicit": ["implicit.stat_4154778375"]}}}
 {"ref": "Your Maps have +#% chance to contain The Sacred Grove", "better": 1, "matchers": [{"string": "你的地图有#%几率包含古灵庄园"}, {"string": "区域内有古灵庄园", "value": 100}, {"string": "你的地图包含古灵庄园", "value": 100}], "trade": {"ids": {"implicit": ["implicit.stat_1145451936"], "enchant": ["enchant.stat_1145451936"]}}}
-{"ref": "Your Maps have +#% chance to grant an Atlas Mission on Completion", "better": 1, "matchers": [{"string": "Your Maps have #% chance to grant an Atlas Mission on Completion"}], "trade": {"ids": {"explicit": ["explicit.stat_416299653"]}}}
+{"ref": "Your Maps have +#% chance to grant an Atlas Mission on Completion", "better": 1, "matchers": [{"string": "地图完成时提供异界图鉴任务的几率 +#%"}], "trade": {"ids": {"explicit": ["explicit.stat_416299653"]}}}
 {"ref": "Your Maps have a #% chance to contain an additional Harbinger", "better": 1, "matchers": [{"string": "地图内有 #% 的几率有一个额外先驱者"}], "trade": {"ids": {"explicit": ["explicit.stat_266448395"]}}}
 {"ref": "Your Maps have a #% chance to contain an additional Invasion Boss", "better": 1, "matchers": [{"string": "地图内有 #% 的几率有一个额外侵略首领"}], "trade": {"ids": {"explicit": ["explicit.stat_2059168182"]}}}
 {"ref": "Your Maps have a #% chance to contain an additional Rogue Exile", "better": 1, "matchers": [{"string": "地图内有 #% 的几率有一个额外盗贼流放者"}], "trade": {"ids": {"explicit": ["explicit.stat_1123357133"]}}}
