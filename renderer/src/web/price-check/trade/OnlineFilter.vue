@@ -74,6 +74,26 @@ export default defineComponent({
     "1 Week Ago": "До 1-й недели",
     "2 Weeks Ago": "До 2-х недель",
     "1 Month Ago": "До 1-го месяца"
+  },
+  "zh_CN": {
+    "Offline & Online": "在线 & 离线",
+    "In League": "赛季",
+    "Listed: Any Time": "列出: 任意时间",
+    "1 Day Ago": "1 天前",
+    "3 Days Ago": "3 天前",
+    "1 Week Ago": "1 周前",
+    "2 Weeks Ago": "2 周前",
+    "1 Month Ago": "1 月前"
+  },
+  "cmn-Hant": {
+    "Offline & Online": "在線 & 離線",
+    "In League": "聯盟",
+    "Listed: Any Time": "列出: 任意時間",
+    "1 Day Ago": "1 天前",
+    "3 Days Ago": "3 天前",
+    "1 Week Ago": "1 周前",
+    "2 Weeks Ago": "2 周前",
+    "1 Month Ago": "1 月前"
   }
 }
 </i18n>

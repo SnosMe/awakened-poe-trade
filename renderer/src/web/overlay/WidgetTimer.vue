@@ -172,6 +172,12 @@ export default defineComponent({
 {
   "ru": {
     "paused:": "остановлен"
+  },
+  "zh_CN": {
+    "paused:": "已暂停"
+  },
+  "cmn-Hant": {
+    "paused:": "已暫停"
   }
 }
 </i18n>

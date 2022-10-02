@@ -104,6 +104,14 @@ export default defineComponent({
   "ru": {
     "widget title": "заголовок виджета",
     "Choose File": "Выберите файл"
+  },
+  "cmn-Hant": {
+    "widget title": "組件標題",
+    "Choose File": "選擇文件"
+  },
+  "zh_CN": {
+    "widget title": "组件标题",
+    "Choose File": "选择文件"
   }
 }
 </i18n>

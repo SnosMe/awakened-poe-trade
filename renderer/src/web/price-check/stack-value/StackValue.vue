@@ -70,6 +70,14 @@ export default defineComponent({
   "ru": {
     "You have": "В наличии",
     "Stack": "Стак"
+  },
+  "zh_CN": {
+    "You have": "你拥有",
+    "Stack": "堆叠"
+  },
+  "cmn-Hant": {
+    "You have": "你擁有",
+    "Stack": "堆疊"
   }
 }
 </i18n>

@@ -70,6 +70,16 @@ export default defineComponent({
     "widget title": "заголовок виджета",
     "search text or regex": "текст или регекс",
     "friendly name": "нормальное название"
+  },
+  "zh_CN": {
+    "widget title": "组件标题",
+    "search text or regex": "搜索文本或正则",
+    "friendly name": "易记名称"
+  },
+  "cmn-Hant": {
+    "widget title": "組件標題",
+    "search text or regex": "搜索文本或正則",
+    "friendly name": "易記名稱"
   }
 }
 </i18n>

@@ -293,6 +293,30 @@ export default defineComponent({
     "Listed": "Выставлен",
     "Seller": "Продавец",
     "Trade site request failed": "Запрос к сайту не удался"
+  },
+  "zh_CN": {
+    "Matched:": "已匹配:",
+    "Trade": "交易",
+    "Price": "价格",
+    "Stock": "存量",
+    "iLvl": "物等",
+    "Level": "等级",
+    "Quality": "品质",
+    "Listed": "已列出",
+    "Seller": "卖家",
+    "Trade site request failed": "交易站点请求失败"
+  },
+  "cmn-Hant": {
+    "Matched:": "已匹配:",
+    "Trade": "交易",
+    "Price": "價格",
+    "Stock": "存量",
+    "iLvl": "物等",
+    "Level": "等級",
+    "Quality": "品質",
+    "Listed": "已列出",
+    "Seller": "賣家",
+    "Trade site request failed": "交易站點請求失敗"
   }
 }
 </i18n>

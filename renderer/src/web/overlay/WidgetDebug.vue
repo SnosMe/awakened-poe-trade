@@ -131,30 +131,6 @@ Item Level: 73
 --------
 Note: ~price 10 chaos
 `,
-`Item Class: Rings
-Rarity: Rare
-Rapture Twirl
-Ruby Ring
---------
-Requirements:
-Level: 28
---------
-Item Level: 84
---------
-{ Implicit Modifier — Elemental, Fire, Resistance }
-+29(20-30)% to Fire Resistance (implicit)
---------
-{ Prefix Modifier "Radiating" (Tier: 7) — Defences }
-+18(16-19) to maximum Energy Shield
-{ Prefix Modifier "Stalwart" (Tier: 5) — Life }
-+33(30-39) to maximum Life
-{ Suffix Modifier "of the Newt" (Tier: 7) — Life }
-Regenerate 1.3(1-2) Life per second
-{ Suffix Modifier "of the Kaleidoscope" (Tier: 3) — Elemental, Resistance }
-+10(9-11)% to all Elemental Resistances
-{ Suffix Modifier "of Riker's Veil" }
-Veiled Suffix
-`,
 `Item Class: Misc Map Items
 Rarity: Currency
 Chronicle of Atzoatl
@@ -256,7 +232,7 @@ Can be used in a personal Map Device to open portals to the Temple of Atzoatl in
 `物品类别: 鞋子
 稀 有 度: 稀有
 种裔 疾影
-巨灵胫甲
+忆境 巨灵胫甲
 --------
 护甲: 291 (augmented)
 --------
@@ -277,7 +253,7 @@ Can be used in a personal Map Device to open portals to the Temple of Atzoatl in
 { 后缀属性 "窑炉之" (等阶：5) — 元素, 火焰, 抗性 }
 +24(24-29)% 火焰抗性
 --------
-出售获得通货:非绑定
+忆境物品
 `,
 `物品类别: 项链
 稀 有 度: 传奇
@@ -358,6 +334,31 @@ Can be used in a personal Map Device to open portals to the Temple of Atzoatl in
 裂界之器
 --------
 出售获得通货:非绑定
+`,
+`物品类别: 胸甲
+稀 有 度: 稀有
+蛇牙 殿堂
+忆境 暗影之装
+--------
+闪避值: 1289 (augmented)
+--------
+需求:
+等级: 68
+敏捷: 183
+--------
+插槽: B-G G 
+--------
+物品等级: 69
+--------
++1% 混沌抗性上限 (implicit)
+--------
++144 点闪避值
+闪避值提高 38%
+生命每秒再生 6.4%
+晕眩回复和格挡回复提高 24%
+反射 4 物理伤害给近战攻击者
+--------
+忆境物品
 `
   ]
 }

@@ -254,6 +254,20 @@ export default defineComponent({
     "parse_error": "Произошла ошибка при парсинге предмета",
     "parse_error_msg": "Скорее всего, это ошибка, и вы можете сообщить о ней на GitHub.",
     "Press {0} to switch between browser and game.": "Нажмите {0} для перехода между браузером/игрой."
+  },
+  "zh_CN": {
+    "unknown_item": "未知物品",
+    "unknown_item_msg": "若此为赛季物品，或将在下一版本更新中支持。",
+    "parse_error": "分析物品错误",
+    "parse_error_msg": "有可能是一个BUG，请至GitHub提交错误。",
+    "Press {0} to switch between browser and game.": "请按 {0} 在浏览器和游戏之间切换。"
+  },
+  "cmn-Hant": {
+    "unknown_item": "未知物品",
+    "unknown_item_msg": "若此為賽季物品，或將在下一版本更新中支持。",
+    "parse_error": "分析物品錯誤",
+    "parse_error_msg": "有可能是一個BUG，請至GitHub提交錯誤。",
+    "Press {0} to switch between browser and game.": "請按 {0} 在瀏覽器和遊戲之間切換。"
   }
 }
 </i18n>

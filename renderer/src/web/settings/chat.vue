@@ -50,6 +50,14 @@ export default defineComponent({
   "ru": {
     "Add command": "Добавить команду",
     "press Enter": "нажимать Enter"
+  },
+  "zh_CN": {
+    "Add command": "增加命令",
+    "press Enter": "按回车(Enter)"
+  },
+  "cmn-Hant": {
+    "Add command": "增加命令",
+    "press Enter": "按回車(Enter)"
   }
 }
 </i18n>

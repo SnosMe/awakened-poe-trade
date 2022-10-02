@@ -255,6 +255,7 @@ export default defineComponent({
   background: rgba(0,0,0, 0.3);
   display: flex;
   flex-direction: column;
+  white-space:nowrap;
   @apply rounded;
 }
 
@@ -319,6 +320,18 @@ export default defineComponent({
     "edit": "редактировать",
     "move": "переместить",
     "delete": "удалить"
+  },
+  "cmn-Hant": {
+    "hide": "隱藏",
+    "edit": "編輯",
+    "move": "移動",
+    "delete": "刪除"
+  },
+  "zh_CN": {
+    "hide": "隐藏",
+    "edit": "编辑",
+    "move": "移动",
+    "delete": "删除"
   }
 }
 </i18n>

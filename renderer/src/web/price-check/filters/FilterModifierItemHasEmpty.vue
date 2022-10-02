@@ -66,6 +66,11 @@ export default defineComponent({
     "Any": "Любое",
     "Prefix": "Префикс",
     "Suffix": "Суффикс"
+  },
+  "zh_CN": {
+    "Any": "任意",
+    "Prefix": "前缀",
+    "Suffix": "后缀"
   }
 }
 </i18n>

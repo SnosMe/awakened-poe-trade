@@ -61,6 +61,22 @@ export default defineComponent({
     "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
     "leagues_failed": "Убедитесь, что сервера не находятся на обслуживании. Попробуйте нажать на кнопку \"Браузер\", возможно, там будет CAPTCHA."
+  },
+  "zh_CN": {
+    "Update available: {0}": "有更新: {0}",
+    "It will be installed automatically on exit": "将在退出时自动安装",
+    "You can download it from GitHub": "可至 GitHub 下载",
+    "Loading leagues...": "正在载入赛季",
+    "Failed to load leagues": "载入赛季失败",
+    "leagues_failed": "请确认服务器是否维护中。同时点击 \"浏览器\" 按钮前往人机验证。"
+  },
+  "cmn-Hant": {
+    "Update available: {0}": "有更新: {0}",
+    "It will be installed automatically on exit": "將在退出時自動安裝",
+    "You can download it from GitHub": "可至 GitHub 下載",
+    "Loading leagues...": "正在載入聯盟",
+    "Failed to load leagues": "載入聯盟失敗",
+    "leagues_failed": "請確認服務器是否維護中。同時點擊 \"瀏覽器\" 按鈕前往人機驗證。"
   }
 }
 </i18n>

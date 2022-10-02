@@ -51,6 +51,18 @@ export default defineComponent({
     "Hardware Acceleration": "Аппаратное ускорение",
     "Disabled (render on CPU)": "Отключено (рендерить на CPU)",
     "PoE window title": "Заголовок окна игры"
+  },
+  "zh_CN": {
+    "Log level": "日志级别",
+    "Hardware Acceleration": "硬件加速",
+    "Disabled (render on CPU)": "禁用 ( 由CPU渲染 )",
+    "PoE window title": "PoE窗口标题"
+  },
+  "cmn-Hant": {
+    "Log level": "日誌級別",
+    "Hardware Acceleration": "硬件加速",
+    "Disabled (render on CPU)": "禁用 ( CPU渲染 )",
+    "PoE window title": "PoE窗口標題"
   }
 }
 </i18n>

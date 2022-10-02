@@ -80,6 +80,12 @@ export default defineComponent({
 {
   "ru": {
     "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "Вы пытаетесь сделать прайс-чек неопознанного Уникального предмета с базой \"{0}\". Какого именно?"
+  },
+  "zh_CN": {
+    "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "正在查询未鉴定的传奇物品, 基础类型为: \"{0}\". 请确定是哪一个?"
+  },
+  "cmn-Hant": {
+    "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "正在查詢未鑒定的傳奇物品, 基礎類型為: \"{0}\". 請確定是哪一個?"
   }
 }
 </i18n>

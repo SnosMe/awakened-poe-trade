@@ -84,7 +84,7 @@ export const defaultConfig = (): Config => ({
   accountName: '',
   stashScroll: true,
   language: 'zh_CN',
-  realm: 'pc-ggg',
+  realm: 'pc-tencent',
   poesessid:'',
   fontSize: 16,
   disableUpdateDownload: false,
