@@ -414,6 +414,19 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
           { id: TARGET_ID.TOTAL_MODIFIERS, value: { min: 6, max: undefined }, disabled: stat.disabled }
         ]
       })
+    } else if ( // https://github.com/SnosMe/awakened-poe-trade/issues/758
+      item.category === ItemCategory.Flask &&
+      stat.statRef === '#% increased Charge Recovery' &&
+      !stats.some(s => s.statRef === '#% increased effect')
+    ) {
+      const reducedEffectId = STAT_BY_REF('#% increased effect')!.trade.ids[ModifierType.Explicit][0]
+      query.stats.push({
+        type: 'not',
+        disabled: stat.disabled,
+        filters: [
+          { id: reducedEffectId, disabled: stat.disabled }
+        ]
+      })
     }
 
     if (stat.disabled) continue
