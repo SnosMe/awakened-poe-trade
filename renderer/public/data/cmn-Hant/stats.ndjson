@@ -4641,6 +4641,59 @@
 {"ref":"Red Beasts in your Maps have #% increased chance to be from The Deep","better":1,"matchers":[{"string":"你地圖中的紅色野獸增加 #% 機率來自深潭"},{"string":"你地圖中的紅色野獸減少 #% 機率來自深潭"}],"trade":{"ids":{"explicit":["explicit.stat_59091266"]}}}
 {"ref":"Red Beasts in your Maps have #% increased chance to be from The Sands","better":1,"matchers":[{"string":"你地圖中的紅色野獸增加 #% 機率來自飛沙"},{"string":"你地圖中的紅色野獸減少 #% 機率來自飛沙"}],"trade":{"ids":{"explicit":["explicit.stat_2436491720"]}}}
 {"ref":"Red Beasts in your Maps have #% increased chance to be from The Wilds","better":1,"matchers":[{"string":"你地圖中的紅色野獸增加 #% 機率來自獸性"},{"string":"你地圖中的紅色野獸減少 #% 機率來自獸性"}],"trade":{"ids":{"explicit":["explicit.stat_3090817208"]}}}
+{"ref":"Reflection of Abyss (Difficulty #)","better":1,"matchers":[{"string":"深淵映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_38892"]}}}
+{"ref":"Reflection of Ambush (Difficulty #)","better":1,"matchers":[{"string":"伏擊映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_48307"]}}}
+{"ref":"Reflection of Angling (Difficulty #)","better":1,"matchers":[{"string":"釣魚映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_40794"]}}}
+{"ref":"Reflection of Azurite (Difficulty #)","better":1,"matchers":[{"string":"碧藍映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_40031"]}}}
+{"ref":"Reflection of Bestiary (Difficulty #)","better":1,"matchers":[{"string":"獸獵映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_55569"]}}}
+{"ref":"Reflection of Breach (Difficulty #)","better":1,"matchers":[{"string":"裂痕映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_62572"]}}}
+{"ref":"Reflection of Brutality (Difficulty #)","better":1,"matchers":[{"string":"殘暴映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_29096"]}}}
+{"ref":"Reflection of Camaraderie (Difficulty #)","better":1,"matchers":[{"string":"友誼映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_35395"]}}}
+{"ref":"Reflection of Catalysis (Difficulty #)","better":1,"matchers":[{"string":"催化映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_57850"]}}}
+{"ref":"Reflection of Chaos (Difficulty #)","better":1,"matchers":[{"string":"混沌映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_50834"]}}}
+{"ref":"Reflection of Conflict (Difficulty #)","better":1,"matchers":[{"string":"衝突映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_1931"]}}}
+{"ref":"Reflection of Darkness (Difficulty #)","better":1,"matchers":[{"string":"黑暗映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_34457"]}}}
+{"ref":"Reflection of Delirium (Difficulty #)","better":1,"matchers":[{"string":"譫妄映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_22138"]}}}
+{"ref":"Reflection of Delve (Difficulty #)","better":1,"matchers":[{"string":"掘獄映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_18737"]}}}
+{"ref":"Reflection of Demonfire (Difficulty #)","better":1,"matchers":[{"string":"業火映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_28500"]}}}
+{"ref":"Reflection of Domination (Difficulty #)","better":1,"matchers":[{"string":"支配映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_63412"]}}}
+{"ref":"Reflection of Entrapment (Difficulty #)","better":1,"matchers":[{"string":"誘捕映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_44399"]}}}
+{"ref":"Reflection of Essence (Difficulty #)","better":1,"matchers":[{"string":"精髓映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_49862"]}}}
+{"ref":"Reflection of Experimentation (Difficulty #)","better":1,"matchers":[{"string":"實驗映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_55676"]}}}
+{"ref":"Reflection of Flame (Difficulty #)","better":1,"matchers":[{"string":"烈焰映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_42468"]}}}
+{"ref":"Reflection of Fractured Dimensions (Difficulty #)","better":1,"matchers":[{"string":"破裂次元映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_49488"]}}}
+{"ref":"Reflection of Frost (Difficulty #)","better":1,"matchers":[{"string":"寒霜映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_38110"]}}}
+{"ref":"Reflection of Guilt (Difficulty #)","better":1,"matchers":[{"string":"責難映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_25480"]}}}
+{"ref":"Reflection of Imprisonment (Difficulty #)","better":1,"matchers":[{"string":"監禁映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_10363"]}}}
+{"ref":"Reflection of Kalandra (Difficulty #)","better":1,"matchers":[{"string":"卡蘭德映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_36591"]}}}
+{"ref":"Reflection of Legion (Difficulty #)","better":1,"matchers":[{"string":"戰亂映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_403"]}}}
+{"ref":"Reflection of Metamorph (Difficulty #)","better":1,"matchers":[{"string":"鍊魔映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_3699"]}}}
+{"ref":"Reflection of Occultism (Difficulty #)","better":1,"matchers":[{"string":"神秘映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_24451"]}}}
+{"ref":"Reflection of Paradise (Difficulty #)","better":1,"matchers":[{"string":"天堂映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_50846"]}}}
+{"ref":"Reflection of Perverted Faith (Difficulty #)","better":1,"matchers":[{"string":"怪其信仰映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_27678"]}}}
+{"ref":"Reflection of Phaaryl (Difficulty #)","better":1,"matchers":[{"string":"法瑞爾映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_7674"]}}}
+{"ref":"Reflection of Possession (Difficulty #)","better":1,"matchers":[{"string":"附身映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_25049"]}}}
+{"ref":"Reflection of Power (Difficulty #)","better":1,"matchers":[{"string":"權力映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_35950"]}}}
+{"ref":"Reflection of Scourge (Difficulty #)","better":1,"matchers":[{"string":"災魘映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_62360"]}}}
+{"ref":"Reflection of Stasis (Difficulty #)","better":1,"matchers":[{"string":"靜止映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_32968"]}}}
+{"ref":"Reflection of Sulphite (Difficulty #)","better":1,"matchers":[{"string":"硫酸映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_45086"]}}}
+{"ref":"Reflection of the Black Scythe (Difficulty #)","better":1,"matchers":[{"string":"黑暗血鐮映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_9662"]}}}
+{"ref":"Reflection of the Breachlord (Difficulty #)","better":1,"matchers":[{"string":"裂痕君主映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_62935"]}}}
+{"ref":"Reflection of the Broken Circle (Difficulty #)","better":1,"matchers":[{"string":"破碎環映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_43128"]}}}
+{"ref":"Reflection of the Chalice (Difficulty #)","better":1,"matchers":[{"string":"聖杯映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_64561"]}}}
+{"ref":"Reflection of the Chasm (Difficulty #)","better":1,"matchers":[{"string":"裂口映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_57101"]}}}
+{"ref":"Reflection of the Dream (Difficulty #)","better":1,"matchers":[{"string":"夢想映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_27117"]}}}
+{"ref":"Reflection of the Harbingers (Difficulty #)","better":1,"matchers":[{"string":"神諭映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_37203"]}}}
+{"ref":"Reflection of the Hunter (Difficulty #)","better":1,"matchers":[{"string":"獵人映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_18816"]}}}
+{"ref":"Reflection of the Monolith (Difficulty #)","better":1,"matchers":[{"string":"石陣映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_34796"]}}}
+{"ref":"Reflection of the Nightmare (Difficulty #)","better":1,"matchers":[{"string":"噩夢映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_24232"]}}}
+{"ref":"Reflection of the Storm (Difficulty #)","better":1,"matchers":[{"string":"風暴映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_2745"]}}}
+{"ref":"Reflection of the Sun (Difficulty #)","better":1,"matchers":[{"string":"豔陽映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_60034"]}}}
+{"ref":"Reflection of the Trove (Difficulty #)","better":1,"matchers":[{"string":"寶庫映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_46772"]}}}
+{"ref":"Reflection of the Wilderness (Difficulty #)","better":1,"matchers":[{"string":"荒野映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_29224"]}}}
+{"ref":"Reflection of Thralldom (Difficulty #)","better":1,"matchers":[{"string":"奴役映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_26813"]}}}
+{"ref":"Reflection of Torment (Difficulty #)","better":1,"matchers":[{"string":"磨難映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_53950"]}}}
+{"ref":"Reflection of Tyranny (Difficulty #)","better":1,"matchers":[{"string":"暴政映像 (難度 #)"}],"trade":{"ids":{"pseudo":["pseudo.lake_60981"]}}}
 {"ref":"Reflect Shocks applied to you to all Nearby Enemies","better":1,"matchers":[{"string":"反射感電狀態將同時對周圍敵人產生效果"}],"trade":{"ids":{"explicit":["explicit.stat_615884286"]}}}
 {"ref":"Reflects # Chaos Damage to Melee Attackers","better":1,"matchers":[{"string":"反射 # 混沌傷害給近戰攻擊者"}],"trade":{"ids":{"explicit":["explicit.stat_189451991"]}}}
 {"ref":"Reflects # Cold Damage to Melee Attackers","better":1,"matchers":[{"string":"反射 # 冰冷傷害給近戰攻擊者"}],"trade":{"ids":{"explicit":["explicit.stat_4235886357"]}}}
