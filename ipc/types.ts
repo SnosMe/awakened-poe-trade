@@ -137,10 +137,6 @@ export const defaultConfig = (): Config => ({
         showNewStats: false,
         selectedStats: [
           {
-            matcher: 'Slaying Enemies close together has a #% chance to attract monsters from Beyond',
-            decision: 'desirable'
-          },
-          {
             matcher: '#% maximum Player Resistances',
             decision: 'warning'
           },

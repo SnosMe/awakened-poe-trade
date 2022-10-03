@@ -13,6 +13,13 @@
     </template>
     <widget-debug id="widget-debug" />
     <loading-animation />
+    <div v-if="showEditingNotification"
+      class="widget-default-style p-6 bg-blue-600 mx-auto text-center text-base mt-6"
+      style="min-width: 30rem; z-index: 999; width: fit-content; position: absolute; left: 0; right: 0;">
+      <i18n-t keypath="Press {0} to continue editing.">
+        <span class="bg-blue-800 rounded px-1">{{ overlayKey }}</span>
+      </i18n-t>
+    </div>
     <!-- <div v-show="!gameFocused && !active">
       <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
     </div> -->
@@ -21,6 +28,7 @@
 
 <script lang="ts">
 import { defineComponent, provide, shallowRef, watch, readonly, computed, onMounted, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { MainProcess } from '@/web/background/IPC'
 import { Widget, WidgetManager } from './interfaces'
 import WidgetTimer from './WidgetTimer.vue'
@@ -65,10 +73,13 @@ export default defineComponent({
     const active = shallowRef(false)
     const gameFocused = shallowRef(false)
     const hideUI = shallowRef(false)
+    const didOpenFilepicker = shallowRef(false)
 
     watch(active, (active) => {
       if (!active) {
         nextTick(() => { saveConfig() })
+      } else {
+        didOpenFilepicker.value = false
       }
     })
 
@@ -256,12 +267,34 @@ export default defineComponent({
         .isVisible
     }
 
+    document.addEventListener('click', (e) => {
+      if (e.target instanceof HTMLInputElement && e.target.type === 'file') {
+        didOpenFilepicker.value = true
+      }
+    })
+
+    const { t } = useI18n()
+
     return {
+      t,
       overlayBackground,
       widgets: computed(() => AppConfig().widgets),
       handleBackgroundClick,
-      isVisible
+      isVisible,
+      overlayKey: computed(() => AppConfig().overlayKey),
+      showEditingNotification: computed(() => !active.value && (
+        topmostOrExclusiveWidget.value.wmType === 'settings' ||
+        didOpenFilepicker.value
+      ))
     }
   }
 })
 </script>
+
+<i18n>
+  {
+    "ru": {
+      "Press {0} to continue editing.": "Нажмите {0} чтобы продолжить редактирование."
+    }
+  }
+</i18n>
