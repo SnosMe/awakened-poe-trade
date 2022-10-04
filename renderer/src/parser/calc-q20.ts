@@ -1,6 +1,6 @@
-import { ParsedItem } from '@/parser'
+import { ParsedItem } from './ParsedItem'
 import { stat } from '@/assets/data'
-import { StatRoll, StatSource, statSourcesTotal } from '@/parser/modifiers'
+import { StatRoll, StatSource, statSourcesTotal } from './modifiers'
 
 export const QUALITY_STATS = {
   ARMOUR: {
@@ -88,6 +88,19 @@ export function calcPropBounds (
           }))
           : sources
   }
+}
+
+export function calcPropPercentile (
+  total: number,
+  bounds: [min: number, max: number],
+  statRefs: { flat: string[], incr: string[] },
+  item: ParsedItem
+): number {
+  const { incr, flat } = calcPropBase(statRefs, item)
+  const roll = calcBase(total, incr.value + (item.quality ?? 0), flat.value)
+  const [min, max] = bounds
+  const result = Math.round(((roll - min) / (max - min)) * 100)
+  return Math.min(Math.max(result, 0), 100)
 }
 
 function calcPropBase (

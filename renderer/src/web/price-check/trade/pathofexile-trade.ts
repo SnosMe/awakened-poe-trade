@@ -135,6 +135,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           ev?: FilterRange
           ward?: FilterRange
           block?: FilterRange
+          base_defence_percentile?: FilterRange
         }
       }
       weapon_filters?: {
@@ -433,6 +434,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
     const input = stat.roll!
     switch (stat.tradeId[0] as InternalTradeId) {
+      case 'armour.base_percentile':
+        propSet(query.filters, 'armour_filters.filters.base_defence_percentile.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'armour_filters.filters.base_defence_percentile.max', typeof input.max === 'number' ? input.max : undefined)
+        break
       case 'armour.armour':
         propSet(query.filters, 'armour_filters.filters.ar.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'armour_filters.filters.ar.max', typeof input.max === 'number' ? input.max : undefined)

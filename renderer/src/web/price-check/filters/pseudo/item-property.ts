@@ -1,5 +1,5 @@
 import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-filters'
-import { calcPropBounds, propAt20Quality, QUALITY_STATS } from './calc-q20'
+import { calcPropBounds, propAt20Quality, QUALITY_STATS } from '@/parser/calc-q20'
 import { stat, StatBetter } from '@/assets/data'
 import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
 import { ParsedItem } from '@/parser'
@@ -12,6 +12,18 @@ export function filterItemProp (ctx: FiltersCreationContext) {
   }
   if (WEAPON.has(ctx.item.category!)) {
     weaponProps(ctx)
+  }
+}
+
+export function filterBasePercentile (ctx: FiltersCreationContext) {
+  if (ctx.item.basePercentile != null) {
+    ctx.filters.push(propToFilter({
+      ref: 'Base Percentile: #%',
+      tradeId: 'armour.base_percentile',
+      roll: { min: 0, max: 100, value: ctx.item.basePercentile },
+      sources: [],
+      disabled: (ctx.item.basePercentile < 50)
+    }, ctx))
   }
 }
 

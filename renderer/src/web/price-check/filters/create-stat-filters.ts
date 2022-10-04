@@ -5,7 +5,7 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rules'
-import { filterItemProp } from './pseudo/item-property'
+import { filterItemProp, filterBasePercentile } from './pseudo/item-property'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
 
@@ -59,6 +59,8 @@ export function createExactStatFilters (
     statsByType: statsByType.filter(calc => keepByType.includes(calc.type))
   }
 
+  filterBasePercentile(ctx)
+
   ctx.filters.push(
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
   )
@@ -80,7 +82,7 @@ export function createExactStatFilters (
         source.modifier.info.tier != null &&
         source.modifier.info.tier <= 2
       )
-    } else {
+    } else if (filter.tag !== FilterTag.Property) {
       filter.disabled = false
     }
 

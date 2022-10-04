@@ -77,6 +77,12 @@ export interface BaseType {
     altQuality?: string[]
     normalVariant?: BaseType['refName']
   }
+  armour?: {
+    ar?: [min: number, max: number]
+    ev?: [min: number, max: number]
+    es?: [min: number, max: number]
+    ward?: [min: number, max: number]
+  }
 }
 
 export interface TranslationDict {

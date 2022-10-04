@@ -372,6 +372,7 @@ export default defineComponent({
   },
   "ru": {
     "Q {0}%": "К-во: {0}%",
+    "Base Percentile: #%": "Ролл значений базы: #%",
     "DPS: #": "ДПС: #",
     "Elemental DPS: #": "Стихийный ДПС: #",
     "Physical DPS: #": "Физический ДПС: #",

@@ -12,6 +12,7 @@ import { ItemCategory } from './meta'
 import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE } from './advanced-mod-desc'
+import { calcPropPercentile, QUALITY_STATS } from './calc-q20'
 
 type SectionParseResult =
   | 'SECTION_PARSED'
@@ -65,7 +66,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
-  { virtual: pickCorrectVariant }
+  { virtual: pickCorrectVariant },
+  { virtual: calcBasePercentile }
 ]
 
 export function parseClipboard (clipboard: string) {
@@ -911,6 +913,23 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
  */
 function transformToLegacyModifiers (item: ParsedItem) {
   item.statsByType = sumStatsByModType(item.newMods)
+}
+
+function calcBasePercentile (item: ParsedItem) {
+  if (!item.info.armour) return
+  // Base percentile is the same for all defences.
+  // Using `AR/EV -> ES -> WARD` order to improve accuracy
+  // of calculation (larger rolls = more precise).
+  const info = item.info.armour
+  if (item.armourAR) {
+    item.basePercentile = calcPropPercentile(item.armourAR, info.ar!, QUALITY_STATS.ARMOUR, item)
+  } else if (item.armourEV) {
+    item.basePercentile = calcPropPercentile(item.armourEV, info.ev!, QUALITY_STATS.EVASION, item)
+  } else if (item.armourES) {
+    item.basePercentile = calcPropPercentile(item.armourES, info.es!, QUALITY_STATS.ENERGY_SHIELD, item)
+  } else if (item.armourWARD) {
+    item.basePercentile = calcPropPercentile(item.armourWARD, info.ward!, QUALITY_STATS.WARD, item)
+  }
 }
 
 export function removeLinesEnding (

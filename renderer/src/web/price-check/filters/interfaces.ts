@@ -105,6 +105,7 @@ export interface StatFilter {
 }
 
 export const INTERNAL_TRADE_IDS = [
+  'armour.base_percentile',
   'armour.armour',
   'armour.evasion_rating',
   'armour.energy_shield',
