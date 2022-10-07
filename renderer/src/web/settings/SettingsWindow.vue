@@ -1,4 +1,11 @@
 <template>
+<div>
+  <div class="absolute animate__animated animate__fadeIn w-full h-full" @click="handlePatronsClick">
+    <button v-for="patron in patrons" :key="patron.from"
+      :class="[$style.rating, $style[`rating-${patron.style}`]]"
+      :style="{ left: `${patron.left * 100}%`, top: `${patron.top * 100}%`, zIndex: patron.style }"
+      >{{ patron.from }}{{ (patron.months > 1) ? ` x${patron.months}` : null }}</button>
+  </div>
   <div :class="$style.window" class="grow layout-column">
     <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
     <div class="flex grow min-h-0">
@@ -23,12 +30,14 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
+import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch, triggerRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
+import { APP_PATRONS } from '@/assets/data'
 import type { Config } from '@ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
@@ -57,10 +66,15 @@ export default defineComponent({
 
     const selectedComponent = shallowRef<Component>(SettingsHotkeys)
 
+    const patrons = shallowRef<Array<typeof APP_PATRONS[number] & { top: number, left: number }>>([])
+
     const configClone = shallowRef<Config | null>(null)
     watch(() => props.config.wmWants, (wmWants) => {
       if (wmWants === 'show') {
         configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
+        patrons.value = APP_PATRONS.map(row => ({
+          ...row, left: Math.random(), top: Math.random()
+        }))
       } else {
         configClone.value = null
         if (selectedWmId.value != null) {
@@ -113,7 +127,17 @@ export default defineComponent({
       menuItems,
       selectedComponent,
       configClone,
-      configWidget
+      configWidget,
+      patrons,
+      handlePatronsClick () {
+        for (const box of patrons.value) {
+          box.top += (Math.random() - 0.5) * 0.2
+          box.left += (Math.random() - 0.5) * 0.1
+          box.top = Math.min(Math.max(box.top, 0), 1)
+          box.left = Math.min(Math.max(box.left, 0), 1)
+        }
+        triggerRef(patrons)
+      }
     }
   }
 })
@@ -175,6 +199,48 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     @apply text-gray-400;
     @apply bg-gray-800;
   }
+}
+
+.rating {
+  position: absolute;
+  min-width: 3rem;
+  text-align: center;
+  white-space: nowrap;
+  @apply px-1 border;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  transition: top 0.2s linear, left 0.2s linear;
+}
+
+.rating-1 {
+  background-color: rgb(0, 0, 0);
+  color: rgb(190, 178, 135);
+  border-color: currentColor;
+  @apply text-base;
+}
+.rating-2 {
+  background-color: rgb(210, 178, 135);
+  color: rgb(0, 0, 0);
+  border-color: currentColor;
+  @apply text-lg;
+}
+.rating-3 {
+  background-color: rgb(213, 159, 0);
+  color: rgb(0, 0, 0);
+  border-color: currentColor;
+  @apply text-lg;
+}
+.rating-4 {
+  background-color: rgb(240, 90, 35);
+  color: rgb(255, 255, 255);
+  border-color: currentColor;
+  @apply text-xl;
+}
+.rating-5 {
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+  border-color: currentColor;
+  @apply text-2xl;
 }
 </style>
 
