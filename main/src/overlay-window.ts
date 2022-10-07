@@ -159,6 +159,11 @@ function handleOverlayAttached (hasAccess?: boolean) {
       '\n' +
       'You need to restart Awakened PoE Trade with administrator rights.'
     )
+  } else {
+    overlaySendEvent({
+      name: 'MAIN->OVERLAY::overlay-attached',
+      payload: undefined
+    })
   }
 }
 

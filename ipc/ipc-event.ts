@@ -19,7 +19,8 @@ export type IpcEvent =
   IpcImportFile |
   IpcToggleDelveGrid |
   IpcClientLog |
-  IpcStopwatchAction
+  IpcStopwatchAction |
+  IpcOverlayAttached
 
 export type IpcEventPayload<Name extends IpcEvent['name'], T extends IpcEvent = IpcEvent> =
   T extends { name: Name, payload: infer P } ? P : never
@@ -32,6 +33,9 @@ export type IpcSaveConfig =
 
 export type IpcPriceCheckHide =
   Event<'OVERLAY->MAIN::price-check-hide'>
+
+export type IpcOverlayAttached =
+  Event<'MAIN->OVERLAY::overlay-attached'>
 
 export type IpcUpdateInfo =
   Event<'MAIN->OVERLAY::update-available', {

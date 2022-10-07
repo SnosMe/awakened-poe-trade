@@ -14,25 +14,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { MainProcess } from '@/web/background/IPC'
 
 export default defineComponent({
   setup () {
-    const show = ref(false)
+    const show = shallowRef(false)
 
-    // @TODO
-    // setTimeout(() => {
-    //   show.value = true
-    //   setTimeout(() => { show.value = false }, 2500)
-    // }, 1000)
+    MainProcess.onEvent('MAIN->OVERLAY::overlay-attached', () => {
+      if (!show.value) {
+        show.value = true
+        setTimeout(() => { show.value = false }, 2500)
+      }
+    })
 
     const { t } = useI18n()
 
-    return {
-      t,
-      show
-    }
+    return { t, show }
   }
 })
 </script>
@@ -58,7 +57,7 @@ export default defineComponent({
 .box::before {
   position: absolute;
   content: '';
-  /* @TODO background: url('/images/TransferOrb.png') no-repeat top right/contain; */
+  background: url('/images/TransferOrb.png') no-repeat top right/contain;
   right: 100%;
   width: 100%;
   height: 100%;
