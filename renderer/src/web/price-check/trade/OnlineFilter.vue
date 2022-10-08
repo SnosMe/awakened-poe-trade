@@ -22,12 +22,17 @@
           </template>
         </div>
         <div class="flex flex-col gap-y-1">
-          <div class="mb-1 h-6">
-            <ui-toggle v-if="!filters.trade.offline"
+          <div class="mb-1">
+            <ui-toggle :class="{ 'invisible': filters.trade.offline }"
               v-model="filters.trade.onlineInLeague">{{ t('In League') }}</ui-toggle>
           </div>
           <ui-radio v-for="league of tradeLeagues" :key="league.id"
             v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
+          <template v-if="byTime">
+            <ui-radio class="mt-3" v-model="filters.trade.currency" :value="undefined">{{ t('Any Currency') }}</ui-radio>
+            <ui-radio v-model="filters.trade.currency" value="chaos">{{ t('Chaos Orb') }}</ui-radio>
+            <ui-radio v-model="filters.trade.currency" value="divine">{{ t('Divine Orb') }}</ui-radio>
+          </template>
         </div>
       </div>
     </template>
@@ -73,7 +78,10 @@ export default defineComponent({
     "3 Days Ago": "До 3-х дней",
     "1 Week Ago": "До 1-й недели",
     "2 Weeks Ago": "До 2-х недель",
-    "1 Month Ago": "До 1-го месяца"
+    "1 Month Ago": "До 1-го месяца",
+    "Any Currency": "Любая валюта",
+    "Chaos Orb": "Сфера хаоса",
+    "Divine Orb": "Божествен. сфера"
   }
 }
 </i18n>

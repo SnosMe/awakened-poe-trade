@@ -11,6 +11,7 @@ export function createPresets (
   opts: {
     league: string
     chaosPriceThreshold: number
+    currency: string | undefined
     collapseListings: 'app' | 'api'
     activateStockFilter: boolean
     searchStatRange: number

@@ -257,7 +257,11 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
   const { query } = body
 
-  if (filters.trade.chaosPriceThreshold !== 0) {
+  if (filters.trade.currency) {
+    propSet(query.filters, 'trade_filters.filters.price.option', filters.trade.currency)
+  }
+
+  if (filters.trade.chaosPriceThreshold !== 0 && filters.trade.currency !== 'divine') {
     propSet(query.filters, 'trade_filters.filters.price.min', filters.trade.chaosPriceThreshold)
   }
 

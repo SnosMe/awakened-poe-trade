@@ -103,14 +103,20 @@ export default defineComponent({
     // FiltersBlock.vue
     const filtersBlock = ref<ComponentPublicInstance<{}, {}>>(null!)
 
-    watch(() => props.item, (item) => {
+    watch(() => props.item, (item, prevItem) => {
       presets.value = createPresets(item, {
         league: selectedLeague.value!,
         chaosPriceThreshold: widget.value.chaosPriceThreshold,
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
-        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg')
+        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg'),
+        currency: (prevItem &&
+          item.info.namespace === prevItem.info.namespace &&
+          item.info.refName === prevItem.info.refName &&
+          presets.value.presets.length === 1)
+          ? presets.value.presets[0].filters.trade.currency
+          : undefined
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||
