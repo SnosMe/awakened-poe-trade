@@ -1,6 +1,6 @@
 import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
-import { tradeTag, PERMANENT_LEAGUES } from '../trade/common'
+import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
@@ -25,7 +25,7 @@ export function createFilters (
     searchExact: {},
     trade: {
       offline: false,
-      onlineInLeague: PERMANENT_LEAGUES.includes(opts.league),
+      onlineInLeague: false,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
