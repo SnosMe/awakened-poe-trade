@@ -127,7 +127,7 @@ export default defineComponent({
           (item.rarity === ItemRarity.Unique) ||
           (item.category === ItemCategory.Map) ||
           (item.category === ItemCategory.HeistBlueprint) ||
-          (!CATEGORY_TO_TRADE_ID.has(item.category!) && item.category !== ItemCategory.MemoryLine) ||
+          (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
           (item.isUnidentified) ||
           (item.isVeiled)
         )

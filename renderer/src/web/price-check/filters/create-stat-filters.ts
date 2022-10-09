@@ -97,6 +97,10 @@ export function createExactStatFilters (
     applyClusterJewelRules(ctx.filters)
   } else if (item.category === ItemCategory.Flask) {
     applyFlaskRules(ctx.filters)
+  } else if (item.category === ItemCategory.MemoryLine) {
+    for (const filter of ctx.filters) {
+      filter.disabled = false
+    }
   }
 
   return ctx.filters
