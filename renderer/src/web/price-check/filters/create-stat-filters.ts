@@ -98,9 +98,7 @@ export function createExactStatFilters (
   } else if (item.category === ItemCategory.Flask) {
     applyFlaskRules(ctx.filters)
   } else if (item.category === ItemCategory.MemoryLine) {
-    for (const filter of ctx.filters) {
-      filter.disabled = false
-    }
+    enableAllFilters(ctx.filters)
   }
 
   return ctx.filters
@@ -380,6 +378,13 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       }
     }
   }
+
+  if (item.rarity === ItemRarity.Unique) {
+    const countVisible = ctx.filters.reduce((cnt, filter) => filter.hidden ? cnt : cnt + 1, 0)
+    if (countVisible <= 3) {
+      enableAllFilters(ctx.filters)
+    }
+  }
 }
 
 function applyClusterJewelRules (filters: StatFilter[]) {
@@ -465,4 +470,12 @@ function showHasEmptyModifier (ctx: FiltersCreationContext): ItemHasEmptyModifie
   }
 
   return false
+}
+
+function enableAllFilters (filters: StatFilter[]) {
+  for (const filter of filters) {
+    if (!filter.hidden) {
+      filter.disabled = false
+    }
+  }
 }
