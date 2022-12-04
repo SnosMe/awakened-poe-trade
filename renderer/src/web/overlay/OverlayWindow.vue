@@ -73,13 +73,13 @@ export default defineComponent({
     const active = shallowRef(false)
     const gameFocused = shallowRef(false)
     const hideUI = shallowRef(false)
-    const didOpenFilepicker = shallowRef(false)
+    const showEditingNotification = shallowRef(false)
 
     watch(active, (active) => {
       if (!active) {
         nextTick(() => { saveConfig() })
       } else {
-        didOpenFilepicker.value = false
+        showEditingNotification.value = false
       }
     })
 
@@ -225,6 +225,10 @@ export default defineComponent({
       return showExclusive || topmostWidget.value
     })
 
+    watch(topmostOrExclusiveWidget, (widget) => {
+      showEditingNotification.value = (widget.wmType === 'settings')
+    })
+
     const poePanelWidth = computed(() => {
       // sidebar is 986px at Wx1600H
       const ratio = 986 / 1600
@@ -269,7 +273,7 @@ export default defineComponent({
 
     document.addEventListener('click', (e) => {
       if (e.target instanceof HTMLInputElement && e.target.type === 'file') {
-        didOpenFilepicker.value = true
+        showEditingNotification.value = true
       }
     })
 
@@ -282,10 +286,7 @@ export default defineComponent({
       handleBackgroundClick,
       isVisible,
       overlayKey: computed(() => AppConfig().overlayKey),
-      showEditingNotification: computed(() => !active.value && (
-        topmostOrExclusiveWidget.value.wmType === 'settings' ||
-        didOpenFilepicker.value
-      ))
+      showEditingNotification: computed(() => !active.value && showEditingNotification.value)
     }
   }
 })
