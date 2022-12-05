@@ -1,10 +1,11 @@
 <template>
 <div>
-  <div class="absolute animate__animated animate__fadeIn w-full h-full" @click="handlePatronsClick">
-    <button v-for="patron in patrons" :key="patron.from"
-      :class="[$style.rating, $style[`rating-${patron.style}`]]"
-      :style="{ left: `${patron.left * 100}%`, top: `${patron.top * 100}%`, zIndex: patron.style }"
-      >{{ patron.from }}{{ (patron.months > 1) ? ` x${patron.months}` : null }}</button>
+  <div :class="$style.podium" v-if="patrons.length">
+    <div v-for="i in [2, 4, 5, 3, 1]">
+      <div v-for="patron in patrons[i - 1]" :key="patron.from"
+        :class="[$style.rating, $style[`rating-${patron.style}`]]"
+        >{{ patron.from }}{{ (patron.months > 1) ? ` x${patron.months}` : null }}</div>
+    </div>
   </div>
   <div :class="$style.window" class="grow layout-column">
     <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
@@ -34,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch, triggerRef } from 'vue'
+import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
 import { APP_PATRONS } from '@/assets/data'
@@ -48,6 +49,17 @@ import SettingsDebug from './debug.vue'
 import SettingsMaps from './maps/maps.vue'
 import SettingsStashSearch from './stash-search.vue'
 import SettingsStopwatch from './stopwatch.vue'
+
+function shuffle<T> (array: T[]): T[] {
+  let currentIndex = array.length
+  while (currentIndex !== 0) {
+    const randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] =
+      [array[randomIndex], array[currentIndex]]
+  }
+  return array
+}
 
 export default defineComponent({
   props: {
@@ -66,21 +78,34 @@ export default defineComponent({
 
     const selectedComponent = shallowRef<Component>(SettingsHotkeys)
 
-    const patrons = shallowRef<Array<typeof APP_PATRONS[number] & { top: number, left: number }>>([])
+    const patrons = shallowRef<Array<typeof APP_PATRONS>>([])
+    let showedPatronsOnce = false
+    watch(wm.active, (isActive) => {
+      if (isActive) return
+      if (props.config.wmWants === 'hide') {
+        showedPatronsOnce = false
+      } else {
+        patrons.value = []
+      }
+    })
 
     const configClone = shallowRef<Config | null>(null)
     watch(() => props.config.wmWants, (wmWants) => {
       if (wmWants === 'show') {
         configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
-        patrons.value = APP_PATRONS.map(row => ({
-          ...row, left: Math.random(), top: Math.random()
-        }))
+        if (!showedPatronsOnce) {
+          showedPatronsOnce = true
+          patrons.value = [1, 2, 3, 4, 5].map(i =>
+            shuffle(APP_PATRONS.filter(row => row.style === i))
+          )
+        }
       } else {
         configClone.value = null
         if (selectedWmId.value != null) {
           selectedWmId.value = null
           selectedComponent.value = SettingsHotkeys
         }
+        patrons.value = []
       }
     })
 
@@ -128,16 +153,7 @@ export default defineComponent({
       selectedComponent,
       configClone,
       configWidget,
-      patrons,
-      handlePatronsClick () {
-        for (const box of patrons.value) {
-          box.top += (Math.random() - 0.5) * 0.2
-          box.left += (Math.random() - 0.5) * 0.1
-          box.top = Math.min(Math.max(box.top, 0), 1)
-          box.left = Math.min(Math.max(box.left, 0), 1)
-        }
-        triggerRef(patrons)
-      }
+      patrons
     }
   }
 })
@@ -201,17 +217,38 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   }
 }
 
-.rating {
+.podium {
+  display: flex;
   position: absolute;
+  top: auto;
+  bottom: max(0px, calc((100% - 38rem) / 2 - 10rem));
+  align-items: flex-end;
+  width: 100%;
+  justify-content: center;
+  @apply gap-4 p-4;
+  &:global {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+  }
+}
+.podium > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: min-content;
+}
+.podium > div:nth-child(1) { max-width: 18rem; }
+.podium > div:nth-child(2) { max-width: 16rem; }
+.podium > div:nth-child(3) { flex-direction: column; align-items: center; }
+.podium > div:nth-child(4) { max-width: 24rem; }
+.podium > div:nth-child(5) { max-width: 18rem; }
+
+.rating {
   min-width: 3rem;
   text-align: center;
   white-space: nowrap;
   @apply px-1 border;
-  transform-origin: center;
-  transform: translate(-50%, -50%);
-  transition: top 0.2s linear, left 0.2s linear;
 }
-
 .rating-1 {
   background-color: rgb(0, 0, 0);
   color: rgb(190, 178, 135);
