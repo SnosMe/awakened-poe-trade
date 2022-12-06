@@ -921,14 +921,14 @@ function calcBasePercentile (item: ParsedItem) {
   // Using `AR/EV -> ES -> WARD` order to improve accuracy
   // of calculation (larger rolls = more precise).
   const info = item.info.armour
-  if (item.armourAR) {
-    item.basePercentile = calcPropPercentile(item.armourAR, info.ar!, QUALITY_STATS.ARMOUR, item)
-  } else if (item.armourEV) {
-    item.basePercentile = calcPropPercentile(item.armourEV, info.ev!, QUALITY_STATS.EVASION, item)
-  } else if (item.armourES) {
-    item.basePercentile = calcPropPercentile(item.armourES, info.es!, QUALITY_STATS.ENERGY_SHIELD, item)
-  } else if (item.armourWARD) {
-    item.basePercentile = calcPropPercentile(item.armourWARD, info.ward!, QUALITY_STATS.WARD, item)
+  if (item.armourAR && info.ar) {
+    item.basePercentile = calcPropPercentile(item.armourAR, info.ar, QUALITY_STATS.ARMOUR, item)
+  } else if (item.armourEV && info.ev) {
+    item.basePercentile = calcPropPercentile(item.armourEV, info.ev, QUALITY_STATS.EVASION, item)
+  } else if (item.armourES && info.es) {
+    item.basePercentile = calcPropPercentile(item.armourES, info.es, QUALITY_STATS.ENERGY_SHIELD, item)
+  } else if (item.armourWARD && info.ward) {
+    item.basePercentile = calcPropPercentile(item.armourWARD, info.ward, QUALITY_STATS.WARD, item)
   }
 }
 
