@@ -87,9 +87,8 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { BulkSearch, execBulkSearch, PricingResult } from './pathofexile-bulk'
+import { BulkSearch, execBulkSearch, createTradeRequest, PricingResult } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
-import { selected as league } from '../../background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -234,7 +233,10 @@ export default defineComponent({
       execSearch: () => { search(props.item, props.filters) },
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink () {
-        return `https://${getTradeEndpoint()}/trade/exchange/${league.value}/${result.value![selectedCurr.value].listed.value!.queryId}`
+        const have = (selectedCurr.value === 'xchgStable') ? ['divine'] : ['chaos']
+        const httpPostBody = createTradeRequest(props.filters, props.item, have)
+        const httpGetQuery = { exchange: httpPostBody.query }
+        return `https://${getTradeEndpoint()}/trade/exchange/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
       }
     }
   }
