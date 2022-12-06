@@ -63,7 +63,7 @@ import { CATEGORY_TO_TRADE_ID, createTradeRequest } from './trade/pathofexile-tr
 import { AppConfig } from '@/web/Config'
 import { FilterPreset } from './filters/interfaces'
 import { PriceCheckWidget } from '../overlay/interfaces'
-import { selected as selectedLeague, isPublic as isPublicLeague } from '@/web/background/Leagues'
+import { selected as selectedLeague, isRegularLeague } from '@/web/background/Leagues'
 
 let _showSupportLinksCounter = 0
 
@@ -173,7 +173,7 @@ export default defineComponent({
     const showPredictedPrice = computed(() => {
       if (!widget.value.requestPricePrediction ||
           AppConfig().language !== 'en' ||
-          !isPublicLeague.value) return false
+          !isRegularLeague(selectedLeague.value!)) return false
 
       if (presets.value.active === 'Base item') return false
 
