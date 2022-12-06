@@ -2,7 +2,7 @@ import type { BrowserWindow } from 'electron'
 import { EventEmitter } from 'events'
 import { logger } from './logger'
 import { config } from './config'
-import { OverlayWindow as OW, AttachEvent } from 'electron-overlay-window'
+import { OverlayController, AttachEvent } from 'electron-overlay-window'
 
 interface PoeWindowClass {
   on: (event: 'active-change', listener: (isActive: boolean) => void) => this
@@ -10,7 +10,7 @@ interface PoeWindowClass {
 class PoeWindowClass extends EventEmitter {
   private _isActive: boolean = false
 
-  get bounds () { return OW.bounds }
+  get bounds () { return OverlayController.targetBounds }
 
   get isActive () { return this._isActive }
 
@@ -33,14 +33,14 @@ class PoeWindowClass extends EventEmitter {
   }
 
   attach (window: BrowserWindow) {
-    OW.events.on('focus', () => { this.isActive = true })
-    OW.events.on('blur', () => { this.isActive = false })
+    OverlayController.events.on('focus', () => { this.isActive = true })
+    OverlayController.events.on('blur', () => { this.isActive = false })
 
-    OW.attachTo(window, config.get('windowTitle'))
+    OverlayController.attachByTitle(window, config.get('windowTitle'))
   }
 
   onAttach (cb: (hasAccess: boolean | undefined) => void) {
-    OW.events.on('attach', (e: AttachEvent) => {
+    OverlayController.events.on('attach', (e: AttachEvent) => {
       cb(e.hasAccess)
     })
   }

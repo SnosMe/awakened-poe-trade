@@ -4,7 +4,7 @@ import { BrowserWindow, ipcMain, dialog, shell, Menu, systemPreferences, IpcMain
 import { PoeWindow } from './PoeWindow'
 import { logger } from './logger'
 import * as ipc from '../../ipc/ipc-event'
-import { OverlayWindow as OW } from 'electron-overlay-window'
+import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
 import { config } from './config'
 
 let overlayWindow: BrowserWindow | undefined
@@ -46,7 +46,7 @@ export async function createOverlayWindow () {
 
   overlayWindow = new BrowserWindow({
     icon: path.join(__dirname, process.env.STATIC!, 'icon.png'),
-    ...OW.WINDOW_OPTS,
+    ...OVERLAY_WINDOW_OPTS,
     width: 800,
     height: 600,
     webPreferences: {
@@ -136,7 +136,7 @@ function focusOverlay () {
   if (!overlayWindow) return
 
   isInteractable = true
-  OW.activateOverlay()
+  OverlayController.activateOverlay()
   PoeWindow.isActive = false
 }
 
@@ -144,7 +144,7 @@ function focusPoE () {
   if (!overlayWindow) return
 
   isInteractable = false
-  OW.focusTarget()
+  OverlayController.focusTarget()
   PoeWindow.isActive = true
 }
 
