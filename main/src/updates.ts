@@ -56,6 +56,7 @@ export async function checkForUpdates () {
     !config.get('disableUpdateDownload')
   )
 
+  if (!UpdateState.canCheck) return
   UpdateState.canCheck = false
   UpdateState.status = 'Checking for update...'
   rebuildTrayMenu()

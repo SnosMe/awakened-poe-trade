@@ -52,7 +52,6 @@ app.on('ready', async () => {
     process.platform === 'linux' ? 1000 : 0
   )
 
-  if (process.env.NODE_ENV === 'production') {
-    checkForUpdates()
-  }
+  checkForUpdates()
+  setInterval(checkForUpdates, 16 * 60 * 60 * 1000)
 })
