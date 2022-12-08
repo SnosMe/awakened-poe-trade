@@ -116,7 +116,7 @@ export interface BulkSearch {
   listed: PricingResult[]
 }
 
-function createTradeRequest (filters: ItemFilters, item: ParsedItem, have: string[]): TradeRequest {
+export function createTradeRequest (filters: ItemFilters, item: ParsedItem, have: string[]): TradeRequest {
   return {
     engine: 'new',
     query: {
