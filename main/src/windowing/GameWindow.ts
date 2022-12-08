@@ -34,7 +34,7 @@ export class GameWindow extends EventEmitter {
     if (!this._isTracking) {
       OverlayController.events.on('focus', () => { this.isActive = true })
       OverlayController.events.on('blur', () => { this.isActive = false })
-      OverlayController.attachByTitle(window, title)
+      OverlayController.attachByTitle(window, title, { hasTitleBarOnMac: true })
       this._isTracking = true
     }
   }

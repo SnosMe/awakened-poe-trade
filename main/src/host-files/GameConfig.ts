@@ -2,6 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import ini from 'ini'
 import { app } from 'electron'
+import process from 'process';
 import { hotkeyToString, CodeToKey } from '../../../ipc/KeyToCode'
 import type { Logger } from '../RemoteLogger'
 import type { ServerEvents } from '../server'
@@ -21,7 +22,12 @@ export class GameConfig {
     if (this.filePath === filePath) return
 
     if (!filePath) {
-      filePath = path.join(app.getPath('documents'), 'My Games', 'Path of Exile', 'production_Config.ini')
+      if (process.platform === 'darwin') {
+        filePath = path.join(app.getPath('appData'), 'Path of Exile', 'Preferences', 'production_Config.ini')
+      } else {
+        filePath = path.join(app.getPath('documents'), 'My Games', 'Path of Exile', 'production_Config.ini')
+      }
+
       try {
         await fs.access(filePath)
         // this.server.sendEventTo('any', {

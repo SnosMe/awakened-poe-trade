@@ -1,13 +1,13 @@
 export interface HostConfig {
-  shortcuts: ShortcutAction[]
-  restoreClipboard: boolean
-  clientLog: string | null
-  gameConfig: string | null
-  stashScroll: boolean
-  overlayKey: string
-  logKeys: boolean
-  windowTitle: string
-  language: string
+    shortcuts: ShortcutAction[]
+    restoreClipboard: boolean
+    clientLog: string | null
+    gameConfig: string | null
+    stashScroll: boolean
+    overlayKey: string
+    logKeys: boolean
+    windowTitle: string
+    language: string
 }
 
 export interface ShortcutAction {

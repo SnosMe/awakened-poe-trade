@@ -217,7 +217,9 @@ export const KeyToElectron = {
   Backslash: '\\',
   BracketRight: ']',
   Quote: "'",
-  Ctrl: 'CmdOrCtrl',
+  // Do not change Ctrl to CmdOrCtrl. It causes registered shortcuts to
+  // often not work on Mac for unknown reasons.
+  Ctrl: 'Ctrl',
   Alt: 'Alt',
   Shift: 'Shift'
 }
