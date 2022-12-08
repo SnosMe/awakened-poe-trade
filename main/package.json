@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SnosMe/awakened-poe-trade.git"
+    "url": "https://github.com/Traveller-hongchen/awakened-poe-trade.git"
   },
   "main": "dist/main.js",
   "dependencies": {

@@ -26,7 +26,7 @@ export function rebuildTrayMenu () {
     {
       label: `APT v${app.getVersion()}`,
       click: () => {
-        shell.openExternal('https://github.com/SnosMe/awakened-poe-trade/releases')
+        shell.openExternal('https://github.com/Traveller-hongchen/awakened-poe-trade/releases')
       }
     },
     {
