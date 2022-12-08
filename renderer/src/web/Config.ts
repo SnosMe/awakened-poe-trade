@@ -37,5 +37,8 @@ export function poeWebApi () {
     case 'cmn-Hant': return (realm === 'pc-garena')
       ? 'web.poe.garena.tw'
       : 'www.pathofexile.com'
+    case 'zh_CN': return (realm === 'pc-tencent')
+      ? 'poe.game.qq.com'
+      : 'www.pathofexile.com'
   }
 }

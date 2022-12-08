@@ -99,17 +99,16 @@ function findItems (opts: {
   jsonIncludes: string[]
   matchFn: (item: BaseType) => boolean
 }): BaseType[] | false {
+  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN')
+  const minSearchLimit = isCJK ? 1 : 3
   const search = opts.search.trim()
   const lcSearch = search.toLowerCase().split(/\s+/).sort((a, b) => b.length - a.length)
-  if (search.length < 3) return false
-
+  if (search.length < minSearchLimit) return false
   const out = []
-
   const lcLongestWord = lcSearch[0]
-  const jsonSearch = (AppConfig().language !== 'cmn-Hant')
+  const jsonSearch = !isCJK
     ? lcLongestWord.slice(1) // in non-CJK first letter should be in first utf16 code unit
     : lcLongestWord
-
   const MAX_HITS = 70 // NOTE: based on first word only, so don't be too strict
   const MAX_RESULTS_VISIBLE = 5 // NOTE: don't want to pick from too many results
   const MAX_RESULTS = 10
@@ -120,7 +119,7 @@ function findItems (opts: {
     if (
       opts.matchFn(match) &&
       lcSearch.every(part => lcName.includes(part)) &&
-      ((AppConfig().language === 'cmn-Hant') || lcName.split(/\s+/).some(part => part.startsWith(lcLongestWord)))
+      (isCJK || lcName.split(/\s+/).some(part => part.startsWith(lcLongestWord)))
     ) {
       out.push(match)
       if (out.length > MAX_RESULTS) return false
@@ -237,6 +236,24 @@ export default defineComponent({
     "too_many": "Найдено слишком много предметов, уточните название.",
     "not_found": "Не найдено ни одного предмета.",
     "Replicas": "Копии"
+  },
+  "cmn-Hant": {
+    "Search by name…": "搜索名稱…",
+    "Reset items": "重置物品",
+    "Heist target:": "奪寶目標:",
+    "Skill Gem": "技能寶石",
+    "too_many": "太多了，請輸入更多關鍵字。",
+    "not_found": "未找到物品.",
+    "Replicas": "仿品"
+  },
+  "zh_CN": {
+    "Search by name…": "搜索名称…",
+    "Reset items": "重置物品",
+    "Heist target:": "夺宝目标:",
+    "Skill Gem": "技能宝石",
+    "too_many": "太多了，请输入更多关键字。",
+    "not_found": "未找到物品.",
+    "Replicas": "仿品"
   }
 }
 </i18n>

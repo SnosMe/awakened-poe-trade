@@ -110,7 +110,7 @@ export default defineComponent({
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
-        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg'),
+        useEn: ((AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN') && AppConfig().realm === 'pc-ggg'),
         currency: (prevItem &&
           item.info.namespace === prevItem.info.namespace &&
           item.info.refName === prevItem.info.refName &&
@@ -247,6 +247,12 @@ export default defineComponent({
 {
   "ru": {
     "This tool relies on {0} and {1}, consider support them as well": "Это приложение полагается на сайт {1}, можете поддержать и его"
+  },
+  "zh_CN": {
+    "This tool relies on {0} and {1}, consider support them as well": "此工具基于 {0} 及 {1}, 请支持他们"
+  },
+  "chm-Hant": {
+    "This tool relies on {0} and {1}, consider support them as well": "此工具基於 {0} 及 {1}, 請支持他們"
   }
 }
 </i18n>

@@ -171,6 +171,18 @@ function deltaFromGraph (graphPoints: Array<number | null>) {
     "Last 7 days": "За неделю",
     "Getting price": "Получение цены",
     "from poe.ninja ...": "с poe.ninja ..."
+  },
+  "zh_CN": {
+    "Base item": "基础物品",
+    "Last 7 days": "最近 7 天",
+    "Getting price": "正在获取价格",
+    "from poe.ninja ...": "从 poe.ninja ..."
+  },
+  "cmn-Hant": {
+    "Base item": "基礎物品",
+    "Last 7 days": "最近 7 天",
+    "Getting price": "正在獲取價格",
+    "from poe.ninja ...": "從 poe.ninja ..."
   }
 }
 </i18n>

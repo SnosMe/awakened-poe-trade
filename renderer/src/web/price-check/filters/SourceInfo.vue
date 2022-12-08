@@ -126,6 +126,15 @@ export default defineComponent({
     "scourge": "Преображённое",
     "Tier: {0}": "Уровень: {0}",
     "Rank: {0}": "Ранг: {0}"
+  },
+  "zh_CN": {
+    "implicit": "基底",
+    "fractured": "分裂",
+    "explicit": "固定",
+    "crafted": "工艺",
+    "scourge": "天灾",
+    "Tier: {0}": "等阶: {0}",
+    "Rank: {0}": "级别: {0}"
   }
 }
 </i18n>

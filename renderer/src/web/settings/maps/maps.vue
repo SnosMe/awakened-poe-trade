@@ -136,6 +136,16 @@ export default defineComponent({
     "Only selected": "Только выбранные",
     "Stat (found: {0})": "Свойства (найдено: {0})",
     "Show icon for new mods": "Иконка у новых модов"
+  },
+  "zh_CN": {
+    "Only selected": "仅选中的",
+    "Stat (found: {0})": "词缀 (找到: {0})",
+    "Show icon for new mods": "显示新词缀图标"
+  },
+  "cmn-Hant": {
+    "Only selected": "僅選中的",
+    "Stat (found: {0})": "詞綴 (找到: {0})",
+    "Show icon for new mods": "顯示新詞綴圖標"
   }
 }
 </i18n>

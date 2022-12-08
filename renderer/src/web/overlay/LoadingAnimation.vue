@@ -72,6 +72,12 @@ export default defineComponent({
 {
   "ru": {
     "Is ready and running in background": "Запущен и работает в фоновом режиме"
+  },
+  "cmn-hant": {
+    "Is ready and running in background": "程序已運行"
+  },
+  "zh_CN": {
+    "Is ready and running in background": "程序已运行"
   }
 }
 </i18n>

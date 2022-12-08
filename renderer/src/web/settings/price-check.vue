@@ -220,8 +220,51 @@ export default defineComponent({
     "Price check Item, and follow the instructions in the error description.": "Прайс-чекните предмет, и следуйте инструкции в описании ошибки.",
     "Show price prediction": "Показывать приблизительную цену"
   },
+  "zh_CN": {
+    "Account name": "帐号",
+    "or Private League": "或私人赛季",
+    "Show seller": "显示卖家",
+    "Last character name": "最近角色名称",
+    "Your items will be highlighted even if this setting is off": "即使此设置关闭, 你的物品亦会高亮显示",
+    "Fill stat values": "填充词缀数值",
+    "Exact roll": "精确数值",
+    "Show memorized cursor position": "显示已记忆光标位置",
+    "Minimum buyout price": "最低一口价",
+    "Chaos Orbs": "混沌石",
+    "Extra time to prevent spurious Rate limiting": "搜索频率额外间隔时间以防触发搜索限制",
+    "seconds": "秒",
+    "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "以下设置将影响服务器负载与搜索价格精度之间的平衡.",
+    "Show indication on collapsed listings": "显示被折叠列表标记",
+    "Perform an auto search, when pressing": "按住则自动搜索",
+    "Always select \"Stock\" filter": "总是选择 \"存量\" 过滤",
+    "League": "赛季",
+    "Loading leagues...": "载入赛季...",
+    "Failed to load leagues": "赛季载入失败",
+    "Price check Item, and follow the instructions in the error description.": "物品价格搜索, 请按错误信息指示操作.",
+    "Show price prediction": "显示价格预测"
+  },
   "cmn-Hant": {
-    "League": "聯盟"
+    "Account name": "帳號",
+    "or Private League": "或私人賽季",
+    "Show seller": "顯示賣家",
+    "Last character name": "最近角色名稱",
+    "Your items will be highlighted even if this setting is off": "即使此設置關閉, 你的物品亦會高亮顯示",
+    "Fill stat values": "填充詞綴數值",
+    "Exact roll": "精確數值",
+    "Show memorized cursor position": "顯示已記憶光標位置",
+    "Minimum buyout price": "最低一口價",
+    "Chaos Orbs": "混沌石",
+    "Extra time to prevent spurious Rate limiting": "搜索頻率額外間隔時間以防觸發搜索限製",
+    "seconds": "秒",
+    "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "以下設置將影響服務器負載與搜索價格精度之間的平衡.",
+    "Show indication on collapsed listings": "顯示被折疊列表標記",
+    "Perform an auto search, when pressing": "按住則自動搜索",
+    "Always select \"Stock\" filter": "總是選擇 \"存量\" 過濾",
+    "League": "聯盟",
+    "Loading leagues...": "載入聯盟...",
+    "Failed to load leagues": "聯盟載入失敗",
+    "Price check Item, and follow the instructions in the error description.": "物品價格搜索, 請按錯誤信息指示操作.",
+    "Show price prediction": "顯示價格預測"
   }
 }
 </i18n>

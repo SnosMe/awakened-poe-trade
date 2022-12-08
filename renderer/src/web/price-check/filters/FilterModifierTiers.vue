@@ -79,6 +79,9 @@ export default defineComponent({
   },
   "cmn-Hant": {
     "Tier {0}": "階層 {0}"
+  },
+  "zh_CN": {
+    "Tier {0}": "等阶 {0}"
   }
 }
 </i18n>

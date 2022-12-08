@@ -70,6 +70,12 @@ export default defineComponent({
 {
   "ru": {
     "Not Set": "Не назначено"
+  },
+  "zh_CN": {
+    "Not Set": "未设置"
+  },
+  "cmn-Hant": {
+    "Not Set": "未設置"
   }
 }
 </i18n>

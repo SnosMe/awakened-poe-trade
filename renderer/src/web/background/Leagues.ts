@@ -6,7 +6,9 @@ export const PERMANENT_LEAGUE_IDS = [
   // pc-ggg
   'Standard', 'Hardcore',
   // pc-garena
-  '標準模式', '專家模式'
+  '標準模式', '專家模式',
+  // pc-tencent
+  '标准模式', '专家模式'
 ]
 
 export const isLoading = ref(false)

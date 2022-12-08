@@ -23,7 +23,7 @@ import { AppConfig } from '@/web/Config'
 import type { ParsedItem } from '@/parser'
 import type { WidgetManager } from '../overlay/interfaces'
 
-const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw' }
+const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw', 'zh_CN': 'cn' }
 
 export default defineComponent({
   props: {
@@ -74,6 +74,11 @@ export default defineComponent({
     "Total DPS:": "Общий ДПС:"
   },
   "cmn-Hant": {
+    "Physical DPS:": "物理 DPS: #",
+    "Elemental DPS:": "元素 DPS: #",
+    "Total DPS:": "DPS: #"
+  },
+  "zh_CN": {
     "Physical DPS:": "物理 DPS: #",
     "Elemental DPS:": "元素 DPS: #",
     "Total DPS:": "DPS: #"

@@ -95,6 +95,20 @@ export default defineComponent({
     "Image strip": "Лента изображений",
     "Show button for active widgets": "Показывать кнопку для активных виджетов",
     "add widget": "добавить виджет"
+  },
+  "zh_CN": {
+    "Stopwatch": "计时器",
+    "Stash search": "仓库页搜索",
+    "Image strip": "图示",
+    "Show button for active widgets": "显示激活组件按钮",
+    "add widget": "添加组件"
+  },
+  "cmn-Hant": {
+    "Stopwatch": "計時器",
+    "Stash search": "倉庫頁搜索",
+    "Image strip": "圖示",
+    "Show button for active widgets": "顯示激活組件按鈕",
+    "add widget": "添加組件"
   }
 }
 </i18n>

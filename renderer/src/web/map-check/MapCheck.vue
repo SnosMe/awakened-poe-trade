@@ -77,6 +77,9 @@ export default defineComponent({
   },
   "cmn-Hant" :{
     "has_outdataed" :"部份詞綴描述已變更，請檢查並更新地圖的危險詞綴。(當你刪除將所有舊版詞綴，此訊息會隱藏)"
+  },
+  "zh_CN" :{
+    "has_outdataed" :"部份词缀描述已变更，请检查并更新地图的危险词缀。(当你删除将所有旧版词缀，此讯息会隐藏)"
   }
 }
 </i18n>
