@@ -43,7 +43,7 @@ jobs:
       working-directory: ./main
     - run: yarn build
       working-directory: ./main
-    - run: yarn package -p onTagOrDraft
+    - run: yarn package -p always
       working-directory: ./main
       env:
         GH_TOKEN: ${{ secrets.APT_GITHUB_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
       working-directory: ./main
     - run: yarn build
       working-directory: ./main
-    - run: yarn package -p onTagOrDraft
+    - run: yarn package -p always
       working-directory: ./main
       env:
         GH_TOKEN: ${{ secrets.APT_GITHUB_TOKEN }}
