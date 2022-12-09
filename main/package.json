@@ -34,8 +34,5 @@
   },
   "engines": {
     "node": ">=16"
-  },
-  "Linux": {
-    "target": "AppImage"
   }
 }

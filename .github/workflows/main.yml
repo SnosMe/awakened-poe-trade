@@ -46,7 +46,7 @@ jobs:
     - run: yarn package -p onTagOrDraft
       working-directory: ./main
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.APT_GITHUB_TOKEN }}
     - name: Hash
       run: type .\main\dist\latest.yml
 
