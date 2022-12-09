@@ -41,7 +41,7 @@ export default {
   ITEM_SYNTHESISED: /^忆境 (.*)$/,
   VEILED_PREFIX: '影匿前缀',
   VEILED_SUFFIX: '影匿后缀',
-  FLASK_CHARGES: /^目前有 \d+ 充能次數$/,
+  FLASK_CHARGES: /^目前有 \d+ 充能次数$/,
   METAMORPH_HELP: '在丹恩的试验室里同其它四种样本调和。',
   BEAST_HELP: '右键点击后加入你的猎魔笔记。',
   VOIDSTONE_HELP: '將此放置于异界图鉴中，來增加地图等级和解锁隐藏地图。',
