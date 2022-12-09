@@ -8,7 +8,7 @@
     </div>
   </div>
   <div :class="$style.window" class="grow layout-column">
-    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
+    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade Simplified Chinese')" />
     <div class="flex grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
         <template v-for="item of menuItems">

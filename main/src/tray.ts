@@ -10,7 +10,7 @@ export function createTray () {
     nativeImage.createFromPath(path.join(__dirname, process.env.STATIC!, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
   )
 
-  tray.setToolTip('Awakened PoE Trade')
+  tray.setToolTip('Awakened PoE Trade Simplified Chinese')
   rebuildTrayMenu()
 }
 
