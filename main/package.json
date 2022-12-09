@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "3.19.10006",
+  "version": "3.19.10006.1",
   "private": true,
   "scripts": {
     "dev": "node build/script.cjs",
@@ -8,7 +8,7 @@
     "package": "electron-builder build"
   },
   "author": {
-    "name": "Alexander Drozdov"
+    "name": "Alexander Drozdov and HongChen"
   },
   "repository": {
     "type": "git",
@@ -34,5 +34,8 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "Linux": {
+    "target": "AppImage"
   }
 }
