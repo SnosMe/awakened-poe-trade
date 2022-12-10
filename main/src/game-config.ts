@@ -40,7 +40,7 @@ export function readConfig (): GameConfig {
     const parsed = ini.parse(contents)
 
     return {
-      highlightKey: parseConfigHotkey(parsed.ACTION_KEYS?.highlight)
+      highlightKey: parseConfigHotkey(parsed.ACTION_KEYS?.show_advanced_item_descriptions)
     }
   } catch {
     logger.error('Failed to read game configuration file. Default values will be used instead.', { source: 'game-config', file: filePath })
