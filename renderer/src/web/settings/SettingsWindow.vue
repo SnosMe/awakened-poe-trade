@@ -90,16 +90,8 @@ export default defineComponent({
 
     const selectedComponent = shallowRef<Component>(SettingsHotkeys)
 
+    const podiumVisible = shallowRef(false)
     const patrons = shallowRef<Array<typeof APP_PATRONS>>([])
-    let showedPatronsOnce = false
-    watch(wm.active, (isActive) => {
-      if (isActive) return
-      if (props.config.wmWants === 'hide') {
-        showedPatronsOnce = false
-      } else {
-        patrons.value = []
-      }
-    })
 
     const configClone = shallowRef<Config | null>(null)
     watch(() => props.config.wmWants, (wmWants) => {
