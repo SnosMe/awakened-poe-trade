@@ -1,13 +1,22 @@
 <template>
 <div>
-  <div :class="$style.podium" v-if="patrons.length">
+  <div :class="$style.podium" v-if="podiumVisible">
     <div v-for="i in [2, 4, 5, 3, 1]">
       <div v-for="patron in patrons[i - 1]" :key="patron.from"
         :class="[$style.rating, $style[`rating-${patron.style}`]]"
         >{{ patron.from }}{{ (patron.months > 1) ? ` x${patron.months}` : null }}</div>
     </div>
   </div>
-  <div :class="$style.window" class="grow layout-column">
+  <div :class="[$style.patronsHorizontal, { 'invisible': podiumVisible }]" :onMouseenter="showPodium">
+    <div class="bg-gray-800 rounded p-1 justify-center text-center w-44 shrink-0 flex items-center">
+      {{ t('App development continues thanks to:') }}
+    </div>
+    <div class="overflow-x-hidden whitespace-nowrap p-1 text-base">
+      <span :class="$style.patronsLine">{{ patronsString[0] }}</span><br>
+      <span :class="$style.patronsLine">{{ patronsString[1] }}</span>
+    </div>
+  </div>
+  <div :class="$style.window" class="grow layout-column" :onMouseenter="hidePodium">
     <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
     <div class="flex grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
@@ -81,34 +90,23 @@ export default defineComponent({
 
     const selectedComponent = shallowRef<Component>(SettingsHotkeys)
 
+    const podiumVisible = shallowRef(false)
     const patrons = shallowRef<Array<typeof APP_PATRONS>>([])
-    let showedPatronsOnce = false
-    watch(wm.active, (isActive) => {
-      if (isActive) return
-      if (props.config.wmWants === 'hide') {
-        showedPatronsOnce = false
-      } else {
-        patrons.value = []
-      }
-    })
 
     const configClone = shallowRef<Config | null>(null)
     watch(() => props.config.wmWants, (wmWants) => {
       if (wmWants === 'show') {
         configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
-        if (!showedPatronsOnce) {
-          showedPatronsOnce = true
-          patrons.value = [1, 2, 3, 4, 5].map(i =>
-            shuffle(APP_PATRONS.filter(row => row.style === i))
-          )
-        }
+        patrons.value = [1, 2, 3, 4, 5].map(i =>
+          shuffle(APP_PATRONS.filter(row => row.style === i))
+        )
       } else {
         configClone.value = null
         if (selectedWmId.value != null) {
           selectedWmId.value = null
           selectedComponent.value = SettingsHotkeys
         }
-        patrons.value = []
+        podiumVisible.value = false
       }
     })
 
@@ -156,7 +154,19 @@ export default defineComponent({
       selectedComponent,
       configClone,
       configWidget,
-      patrons
+      patrons,
+      patronsString: computed(() => {
+        return [true, false].map(firstHalf => {
+          return patrons.value.flatMap(tier => {
+            const half = Math.ceil(tier.length / 2)
+            tier = (firstHalf) ? tier.slice(0, half) : tier.slice(half)
+            return tier.map(e => e.from)
+          }).reverse().join(' • ')
+        })
+      }),
+      podiumVisible,
+      showPodium () { podiumVisible.value = true },
+      hidePodium () { podiumVisible.value = false }
     }
   }
 })
@@ -220,6 +230,29 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   }
 }
 
+.patronsHorizontal {
+  @apply bg-gray-900 p-1 rounded gap-1;
+  position: absolute;
+  top: 40rem; left: 0; right: 0;
+  margin: 0 auto;
+  max-width: 50rem;
+  display: flex;
+  &:global {
+    animation-name: slideInDown;
+    animation-duration: 1s;
+  }
+}
+
+@keyframes slide {
+  0% { transform: translate(0%, 0); }
+  4% { transform: translate(0%, 0); }
+  100% { transform: translate(-99%, 0); }
+}
+.patronsLine {
+  display: inline-block;
+  animation: slide 64s linear infinite;
+}
+
 .podium {
   display: flex;
   position: absolute;
@@ -231,7 +264,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   @apply gap-4 p-4;
   &:global {
     animation-name: fadeIn;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
   }
 }
 .podium > div {
@@ -295,7 +328,8 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Debug": "Debug",
     "Chat": "Чат",
     "Stash search": "Поиск в тайнике",
-    "Stopwatch": "Секундомер"
+    "Stopwatch": "Секундомер",
+    "App development continues thanks to:": "Разработка приложения продолжается благодаря:"
   }
 }
 </i18n>
