@@ -56,7 +56,7 @@ export default defineComponent({
       minText,
       maxText,
       isRange: computed(() => { return minText.value !== maxText.value }),
-      isValuable: computed(() => { return props.price?.currency !== 'chaos' })
+      isValuable: computed(() => { return props.price?.currency === 'div' })
     }
   }
 })
