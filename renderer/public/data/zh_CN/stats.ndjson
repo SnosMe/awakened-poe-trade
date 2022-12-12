@@ -3746,10 +3746,10 @@
 {"ref": "Has Logbook Area: Utzaal Outskirts", "better": 1, "matchers": [{"string": "有日志区域：乌扎尔郊野"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_utzaal_outskirts"]}}}
 {"ref": "Has Logbook Area: Vaal Temple", "better": 1, "matchers": [{"string": "有日志区域：瓦尔秘殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_vaal_temple"]}}}
 {"ref": "Has Logbook Area: Volcanic Island", "better": 1, "matchers": [{"string": "有日志区域：火山岛"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_volcano"]}}}
-{"ref": "Has Logbook Faction: Black Scythe Mercenaries", "better": 0, "matchers": [{"string": "有日志派系：黑镰佣兵"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_mercenaries"]}}}
-{"ref": "Has Logbook Faction: Druids of the Broken Circle", "better": 0, "matchers": [{"string": "有日志派系：裂环祭司"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_druids"]}}}
-{"ref": "Has Logbook Faction: Knights of the Sun", "better": 0, "matchers": [{"string": "有日志派系：烈日骑士"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_knights"]}}}
-{"ref": "Has Logbook Faction: Order of the Chalice", "better": 0, "matchers": [{"string": "有日志派系：圣杯教团"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_order"]}}}
+{"ref": "Has Logbook Faction: Black Scythe Mercenaries", "better": 0, "matchers": [{"string": "黑镰佣兵"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_mercenaries"]}}}
+{"ref": "Has Logbook Faction: Druids of the Broken Circle", "better": 0, "matchers": [{"string": "裂环祭司"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_druids"]}}}
+{"ref": "Has Logbook Faction: Knights of the Sun", "better": 0, "matchers": [{"string": "烈日骑士"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_knights"]}}}
+{"ref": "Has Logbook Faction: Order of the Chalice", "better": 0, "matchers": [{"string": "圣杯教团"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_order"]}}}
 {"ref": "Has no Attribute Requirements", "better": 1, "matchers": [{"string": "穿戴对人物属性无需求"}], "trade": {"ids": {"explicit": ["explicit.stat_2739148464"]}}}
 {"ref": "Has no Blue Sockets", "better": 1, "matchers": [{"string": "没有蓝色插槽"}], "trade": {"ids": {"enchant": ["enchant.stat_3837805260"]}}}
 {"ref": "Has no Energy Shield", "better": 1, "matchers": [{"string": "没有能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_3109875952"]}}}
