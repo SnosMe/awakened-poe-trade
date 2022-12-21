@@ -3731,21 +3731,21 @@
 {"ref": "Has Elder Influence", "better": 1, "matchers": [{"string": "有裂界者影响效果"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_elder_influence"]}}}
 {"ref": "Has Elder, Shaper and all Conqueror Influences", "better": 1, "matchers": [{"string": "具有裂界者、塑界者和所有征服者影响效果"}], "trade": {"ids": {"implicit": ["implicit.stat_1795443614"]}}}
 {"ref": "Has Hunter Influence", "better": 1, "matchers": [{"string": "有狩猎者影响效果"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_hunter_influence"]}}}
-{"ref": "Has Logbook Area: Battleground Graves", "better": 1, "matchers": [{"string": "有日志区域：战地坟茔"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_battleground_graves"]}}}
-{"ref": "Has Logbook Area: Bluffs", "better": 1, "matchers": [{"string": "有日志区域：峭壁"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_bluffs"]}}}
-{"ref": "Has Logbook Area: Cemetery", "better": 1, "matchers": [{"string": "有日志区域：晨曦墓地"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_cemetery"]}}}
-{"ref": "Has Logbook Area: Desert Ruins", "better": 1, "matchers": [{"string": "有日志区域：沙漠废墟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_desert_ruins"]}}}
-{"ref": "Has Logbook Area: Dried Riverbed", "better": 1, "matchers": [{"string": "有日志区域：干枯河床"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_dried_riverbed"]}}}
-{"ref": "Has Logbook Area: Forest Ruins", "better": 1, "matchers": [{"string": "有日志区域：森林废墟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_forest_ruins"]}}}
-{"ref": "Has Logbook Area: Karui Wargraves", "better": 1, "matchers": [{"string": "有日志区域：卡鲁荒坟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_karui_wargraves"]}}}
-{"ref": "Has Logbook Area: Mountainside", "better": 1, "matchers": [{"string": "有日志区域：山坡"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_mountainside"]}}}
-{"ref": "Has Logbook Area: Rotting Temple", "better": 1, "matchers": [{"string": "有日志区域：腐坏神殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_rotting_temple"]}}}
-{"ref": "Has Logbook Area: Sarn Slums", "better": 1, "matchers": [{"string": "有日志区域：贫民窟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_sarn_slums"]}}}
-{"ref": "Has Logbook Area: Scrublands", "better": 1, "matchers": [{"string": "有日志区域：灌木之地"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_scrublands"]}}}
-{"ref": "Has Logbook Area: Shipwreck Reef", "better": 1, "matchers": [{"string": "有日志区域：船骸礁岩"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_shipwreck_reef"]}}}
-{"ref": "Has Logbook Area: Utzaal Outskirts", "better": 1, "matchers": [{"string": "有日志区域：乌扎尔郊野"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_utzaal_outskirts"]}}}
-{"ref": "Has Logbook Area: Vaal Temple", "better": 1, "matchers": [{"string": "有日志区域：瓦尔秘殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_vaal_temple"]}}}
-{"ref": "Has Logbook Area: Volcanic Island", "better": 1, "matchers": [{"string": "有日志区域：火山岛"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_volcano"]}}}
+{"ref": "Has Logbook Area: Battleground Graves", "better": 1, "matchers": [{"string": "战地坟茔"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_battleground_graves"]}}}
+{"ref": "Has Logbook Area: Bluffs", "better": 1, "matchers": [{"string": "峭壁"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_bluffs"]}}}
+{"ref": "Has Logbook Area: Cemetery", "better": 1, "matchers": [{"string": "晨曦墓地"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_cemetery"]}}}
+{"ref": "Has Logbook Area: Desert Ruins", "better": 1, "matchers": [{"string": "沙漠废墟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_desert_ruins"]}}}
+{"ref": "Has Logbook Area: Dried Riverbed", "better": 1, "matchers": [{"string": "干枯河床"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_dried_riverbed"]}}}
+{"ref": "Has Logbook Area: Forest Ruins", "better": 1, "matchers": [{"string": "森林废墟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_forest_ruins"]}}}
+{"ref": "Has Logbook Area: Karui Wargraves", "better": 1, "matchers": [{"string": "卡鲁荒坟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_karui_wargraves"]}}}
+{"ref": "Has Logbook Area: Mountainside", "better": 1, "matchers": [{"string": "山坡"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_mountainside"]}}}
+{"ref": "Has Logbook Area: Rotting Temple", "better": 1, "matchers": [{"string": "腐坏神殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_rotting_temple"]}}}
+{"ref": "Has Logbook Area: Sarn Slums", "better": 1, "matchers": [{"string": "贫民窟"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_sarn_slums"]}}}
+{"ref": "Has Logbook Area: Scrublands", "better": 1, "matchers": [{"string": "灌木之地"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_scrublands"]}}}
+{"ref": "Has Logbook Area: Shipwreck Reef", "better": 1, "matchers": [{"string": "船骸礁岩"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_shipwreck_reef"]}}}
+{"ref": "Has Logbook Area: Utzaal Outskirts", "better": 1, "matchers": [{"string": "乌扎尔郊野"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_utzaal_outskirts"]}}}
+{"ref": "Has Logbook Area: Vaal Temple", "better": 1, "matchers": [{"string": "瓦尔秘殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_vaal_temple"]}}}
+{"ref": "Has Logbook Area: Volcanic Island", "better": 1, "matchers": [{"string": "火山岛"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_area_volcano"]}}}
 {"ref": "Has Logbook Faction: Black Scythe Mercenaries", "better": 0, "matchers": [{"string": "黑镰佣兵"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_mercenaries"]}}}
 {"ref": "Has Logbook Faction: Druids of the Broken Circle", "better": 0, "matchers": [{"string": "裂环祭司"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_druids"]}}}
 {"ref": "Has Logbook Faction: Knights of the Sun", "better": 0, "matchers": [{"string": "烈日骑士"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_logbook_faction_knights"]}}}
