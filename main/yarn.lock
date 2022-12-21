@@ -856,10 +856,10 @@ electron-osx-sign@^0.6.0:
     minimist "^1.2.0"
     plist "^3.0.1"
 
-electron-overlay-window@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-3.0.0.tgz#d34c4d97190f26a99d46271a61031faefdf10fa3"
-  integrity sha512-7mexgNUEgAJaxorG3aa1k9YIr1V9LkMjt7ZhPfG4Eq1AfQEgWyfHUrndQDw75/JohnyNFPzG/fVaCimDi4mcVA==
+electron-overlay-window@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-3.1.0.tgz#1e67df4a08924d96f036551bbd9a73e1e114f4d9"
+  integrity sha512-/j+CrqnniEhAyWaqwIQu7ZDaIJc/O90IucbFojKYMG3iW7tsjMfu2UyWlxOfXKW8Ryv/ZA+lX6b1Klh8NQACRA==
   dependencies:
     node-gyp-build "4.x.x"
     throttle-debounce "5.x.x"

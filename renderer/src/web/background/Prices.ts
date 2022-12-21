@@ -134,7 +134,7 @@ export function findPriceByQuery (query: DbQuery) {
     const endPos = lines.indexOf('}', startPos)
 
     const info: NinjaDenseInfo = JSON.parse(lines.slice(startPos, endPos + 1))
-
+    
     return {
       ...info,
       url: `https://poe.ninja/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`

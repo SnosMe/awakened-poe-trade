@@ -117,7 +117,7 @@ export function parseClipboard (clipboard: string) {
       }
     }
   }
-
+  
   return Object.freeze(parsed)
 }
 
@@ -479,7 +479,6 @@ function parseSockets (section: string[], item: ParsedItem) {
       white: (sockets.split('W').length - 1),
       linked: undefined
     }
-
     sockets = sockets.replace(/[^ -]/g, '#')
     if (sockets === '#-#-#-#-#-#') {
       item.sockets.linked = 6

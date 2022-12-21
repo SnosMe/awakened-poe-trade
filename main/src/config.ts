@@ -114,6 +114,8 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 6
   }
 
+  // config.logLevel = 'debug'
+
   if (config.configVersion < 7) {
     const mapCheck = config.widgets.find(w => w.wmType === 'map-check')!
     mapCheck.wmType = 'item-check'

@@ -108,8 +108,8 @@ function shortcutsFromConfig () {
       })
     }
   }
-  const copyItemShortcut = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt')
-  if (copyItemShortcut !== 'Ctrl + C') {
+  const copyItemShortcut = mergeTwoHotkeys('Meta + C', gameConfig?.highlightKey || 'Alt')
+  if (copyItemShortcut !== 'Meta + C') {
     actions.push({
       shortcut: copyItemShortcut,
       action: { type: 'test-only' }
@@ -155,9 +155,9 @@ function shortcutsFromConfig () {
 
   {
     const allShortcuts = new Set([
-      'Ctrl + C', 'Ctrl + V', 'Ctrl + A',
-      'Ctrl + F',
-      'Ctrl + Enter',
+      'Meta + C', 'Meta + V', 'Meta + A',
+      'Meta + F',
+      'Meta + Enter',
       'Home', 'Delete', 'Enter',
       'ArrowUp', 'ArrowRight', 'ArrowLeft',
       copyItemShortcut
@@ -212,7 +212,7 @@ function registerGlobal () {
         const pressPosition = screen.getCursorScreenPoint()
 
         pollClipboard()
-          .then(clipboard => {
+          .then(clipboard => {            
             if (action.eventName === 'price-check-quick' || action.eventName === 'price-check-locked') {
               showPriceCheck({ clipboard, pressPosition, eventName: action.eventName })
             } else {
@@ -242,7 +242,7 @@ function registerGlobal () {
       globalShortcut.unregister(shortcutToElectron(entry.shortcut))
     }
   }
-
+  
   logger.verbose('Registered Global', { source: 'shortcuts', total: toRegister.length })
 }
 
@@ -252,9 +252,8 @@ function unregisterGlobal () {
 }
 
 function pressKeysToCopyItemText (pressedModKeys: string[] = []) {
-  let keys = mergeTwoHotkeys('Ctrl + C', gameConfig?.highlightKey || 'Alt').split(' + ')
+  let keys = mergeTwoHotkeys('Meta + C', gameConfig?.highlightKey || 'Alt').split(' + ')
   keys = keys.filter(key => key !== 'C' && !pressedModKeys.includes(key))
-
   for (const key of keys) {
     uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'down')
   }
