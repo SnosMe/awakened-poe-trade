@@ -91,7 +91,7 @@ export default {
   DELVE_MODS: ['地下的', '地下之', '地底之'],
   VEILED_MODS: ['被選召的', '教團之'],
   INCURSION_MODS: ['瓜特利斯的', '柔派克的', '塔普塔特的', '特卡蒂的', '麥塔爾的', '麥塔爾之', '希特克拉多的', '希特克拉多之', '特卡蒂之', '瓜特利斯之', '普希瓦爾之'],
-  RELIC_UNIQUE: '古典傳奇',
+  FOIL_UNIQUE: '貼模傳奇',
   UNMODIFIABLE: '不可調整的',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,

@@ -289,7 +289,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     query.type = nameToQuery(activeSearch.baseType, filters)
   }
 
-  if (filters.relic && !filters.relic.disabled) {
+  if (filters.foil && !filters.foil.disabled) {
     propSet(query.filters, 'type_filters.filters.rarity.option', 'uniquefoil')
   } else if (filters.rarity) {
     propSet(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
