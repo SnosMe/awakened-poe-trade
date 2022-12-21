@@ -80,9 +80,6 @@ export function createPresets (
     return { active: pseudoPreset.id, presets: [pseudoPreset] }
   }
 
-  console.log(item.statsByType);
-  
-
   const baseItemPreset: FilterPreset = {
     id: 'Base item',
     filters: createFilters(item, { ...opts, exact: true }),

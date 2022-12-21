@@ -109,12 +109,12 @@ function shortcutsFromConfig () {
     }
   }
   const copyItemShortcut = mergeTwoHotkeys('Meta + C', gameConfig?.highlightKey || 'Alt')
-  // if (copyItemShortcut !== 'Meta + C') {
-  //   actions.push({
-  //     shortcut: copyItemShortcut,
-  //     action: { type: 'test-only' }
-  //   })
-  // }
+  if (copyItemShortcut !== 'Meta + C') {
+    actions.push({
+      shortcut: copyItemShortcut,
+      action: { type: 'test-only' }
+    })
+  }
   for (const widget of config.get('widgets')) {
     if (widget.wmType === 'stash-search') {
       const stashSearch = widget as widget.StashSearchWidget
@@ -189,7 +189,7 @@ function shortcutsFromConfig () {
 
 function registerGlobal () {
   const toRegister = shortcutsFromConfig()
-  for (const entry of toRegister) {    
+  for (const entry of toRegister) {
     const isOk = globalShortcut.register(shortcutToElectron(entry.shortcut), () => {
       if (entry.keepModKeys) {
         const nonModKey = entry.shortcut.split(' + ').filter(key => !isModKey(key))[0]
@@ -209,15 +209,10 @@ function registerGlobal () {
       } else if (entry.action.type === 'copy-item') {
         const { action } = entry
 
-        console.log('--------');
-        
-
         const pressPosition = screen.getCursorScreenPoint()
 
         pollClipboard()
           .then(clipboard => {            
-            console.log(clipboard);
-            
             if (action.eventName === 'price-check-quick' || action.eventName === 'price-check-locked') {
               showPriceCheck({ clipboard, pressPosition, eventName: action.eventName })
             } else {

@@ -117,6 +117,7 @@ export function parseClipboard (clipboard: string) {
       }
     }
   }
+  
   return Object.freeze(parsed)
 }
 
@@ -874,7 +875,7 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
   item.newMods.push(modifier)
 
   if (modifier.info.type === ModifierType.Veiled) {
-    const found = STAT_BY_MATCH_STR(modifier.info.name!)    
+    const found = STAT_BY_MATCH_STR(modifier.info.name!)
     if (found) {
       modifier.stats.push({
         stat: found.stat,

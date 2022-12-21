@@ -8,8 +8,6 @@ let isOverlayVisible = true
 export function setupAltVisibility () {
   uIOhook.on('keydown', (e) => {
     if (e.altKey && !e.shiftKey && e.keycode === UiohookKey.Alt) {
-      console.log('qweq');
-      
       makeInvisible()
     } else {
       makeVisible()
