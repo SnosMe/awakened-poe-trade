@@ -194,7 +194,6 @@ export default defineComponent({
       console.time('parsing item')
       const parsed = parseClipboard(text)
       console.timeEnd('parsing item')
-      console.log(parsed)
     }
 
     return {

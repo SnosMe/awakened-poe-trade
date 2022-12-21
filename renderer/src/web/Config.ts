@@ -7,7 +7,7 @@ const _config = shallowRef<Config | null>(null)
 
 export function AppConfig (): Config
 export function AppConfig<T extends Widget> (type: string): T | undefined
-export function AppConfig (type?: string) {
+export function AppConfig (type?: string) {  
   if (!_config.value) {
     _config.value = deepReactive(MainProcess.getConfig())
   }

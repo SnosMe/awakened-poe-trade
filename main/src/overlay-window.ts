@@ -78,7 +78,7 @@ export async function createOverlayWindow () {
 
   if (process.env.VITE_DEV_SERVER_URL) {
     overlayWindow.loadURL(process.env.VITE_DEV_SERVER_URL)
-    overlayWindow.webContents.openDevTools({ mode: 'detach', activate: false })
+    overlayWindow.webContents.openDevTools({ mode: 'undocked', activate: false })
   } else {
     overlayWindow.loadURL('app://./index.html')
   }
