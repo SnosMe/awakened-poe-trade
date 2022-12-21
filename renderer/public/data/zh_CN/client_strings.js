@@ -8,6 +8,7 @@ export default {
   RARITY_GEM: '宝石',
   RARITY_CURRENCY: '通货',
   RARITY_DIVCARD: '命运卡',
+  RARITY_QUEST: 'Quest',
   MAP_TIER: '地图阶级: ',
   RARITY: '稀 有 度: ',
   ITEM_CLASS: '物品类别: ',
