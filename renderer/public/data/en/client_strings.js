@@ -8,6 +8,7 @@ export default {
   RARITY_GEM: 'Gem',
   RARITY_CURRENCY: 'Currency',
   RARITY_DIVCARD: 'Divination Card',
+  RARITY_QUEST: 'Quest',
   MAP_TIER: 'Map Tier: ',
   RARITY: 'Rarity: ',
   ITEM_CLASS: 'Item Class: ',

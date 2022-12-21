@@ -304,6 +304,7 @@ function parseNamePlate (section: string[]) {
       item.category = ItemCategory.Gem
       break
     case _$.RARITY_NORMAL:
+    case _$.RARITY_QUEST:
       item.rarity = ItemRarity.Normal
       break
     case _$.RARITY_MAGIC:

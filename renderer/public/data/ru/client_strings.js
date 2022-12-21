@@ -8,6 +8,7 @@ export default {
   RARITY_GEM: 'Камень',
   RARITY_CURRENCY: 'Валюта',
   RARITY_DIVCARD: 'Гадальная карта',
+  RARITY_QUEST: 'Quest',
   MAP_TIER: 'Уровень карты: ',
   RARITY: 'Редкость: ',
   ITEM_CLASS: 'Класс предмета: ',

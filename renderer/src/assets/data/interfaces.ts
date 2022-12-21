@@ -93,6 +93,7 @@ export interface TranslationDict {
   RARITY_GEM: string
   RARITY_CURRENCY: string
   RARITY_DIVCARD: string
+  RARITY_QUEST: string
   MAP_TIER: string
   RARITY: string
   ITEM_CLASS: string
