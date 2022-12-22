@@ -72,6 +72,13 @@
         <ui-radio v-model="restoreClipboard" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Show a notification when opening PoE') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="showAttachNotification" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="showAttachNotification" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -111,7 +118,8 @@ export default defineComponent({
       handleGameConfigFile (e: Event) {
         props.config.gameConfig = ((e as InputEvent).target as HTMLInputElement).files![0].path
       },
-      restoreClipboard: configModelValue(() => props.config, 'restoreClipboard')
+      restoreClipboard: configModelValue(() => props.config, 'restoreClipboard'),
+      showAttachNotification: configModelValue(() => props.config, 'showAttachNotification')
     }
   }
 })
@@ -131,7 +139,8 @@ export default defineComponent({
     "PoE config file": "Файл настроек PoE",
     "Browse": "Выбрать",
     "Auto-download updates": "Автозагрузка обновлений",
-    "Restore clipboard": "Восстанавливать буфер обмена"
+    "Restore clipboard": "Восстанавливать буфер обмена",
+    "Show a notification when opening PoE": "Показывать уведомление при открытии PoE"
   },
   "cmn-Hant": {
     "Language": "語言",
