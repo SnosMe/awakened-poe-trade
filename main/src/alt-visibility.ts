@@ -27,11 +27,11 @@ function makeVisible () {
   if (isOverlayVisible && timerId === undefined) return
 
   if (timerId !== undefined) {
-    logger.debug('Invisibility delay canceled', { source: 'alt-visibility' })
+    logger.debug('取消隐形延迟', { source: 'alt-visibility' })
     clearTimeout(timerId)
     timerId = undefined
   } else {
-    logger.debug('Making visible again', { source: 'alt-visibility' })
+    logger.debug('使其再次可见', { source: 'alt-visibility' })
     isOverlayVisible = true
     overlaySendEvent({
       name: 'MAIN->OVERLAY::visibility',
@@ -43,9 +43,9 @@ function makeVisible () {
 function makeInvisible () {
   if (!isOverlayVisible || timerId !== undefined) return
 
-  logger.debug('Starting delay before invisible UI', { source: 'alt-visibility' })
+  logger.debug('不可见UI之前的启动延迟', { source: 'alt-visibility' })
   timerId = setTimeout(() => {
-    logger.debug('Delay passed, overlay is invisible', { source: 'alt-visibility' })
+    logger.debug('延迟已过，覆盖不可见', { source: 'alt-visibility' })
     timerId = undefined
     isOverlayVisible = false
     overlaySendEvent({

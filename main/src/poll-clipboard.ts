@@ -46,11 +46,11 @@ export async function pollClipboard (): Promise<string> {
 
           const otherLang = isInactiveLangItem(textAfter)
           if (otherLang) {
-            logger.warn('Detected item in inactive or unsupported language.', { source: 'clipboard', language: otherLang.lang })
+            logger.warn('检测到非活动或不支持语言的项目。', { source: 'clipboard', language: otherLang.lang })
           } else {
-            logger.warn('No item text found.', { source: 'clipboard', text: textAfter.slice(0, 40) })
+            logger.warn('未找到项目文本。', { source: 'clipboard', text: textAfter.slice(0, 40) })
           }
-          reject(new Error('Reading clipboard timed out'))
+          reject(new Error('读取剪贴板超时'))
         }
       }
     }

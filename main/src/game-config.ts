@@ -29,7 +29,7 @@ export function readConfig (): GameConfig {
       fs.accessSync(filePath)
       appConfig.set('gameConfig', filePath)
     } catch {
-      logger.error('Failed to find game configuration file in the default location. Default values will be used instead.', { source: 'game-config', file: filePath })
+      logger.error('在默认位置找不到游戏配置文件。将改用默认值。', { source: 'game-config', file: filePath })
       return defaultConfig()
     }
   }
@@ -43,7 +43,7 @@ export function readConfig (): GameConfig {
       highlightKey: parseConfigHotkey(parsed.ACTION_KEYS?.show_advanced_item_descriptions)
     }
   } catch {
-    logger.error('Failed to read game configuration file. Default values will be used instead.', { source: 'game-config', file: filePath })
+    logger.error('无法读取游戏配置文件。将改用默认值。', { source: 'game-config', file: filePath })
     return defaultConfig()
   }
 }
@@ -57,7 +57,7 @@ function parseConfigHotkey (cfgKey?: string): string | null {
   if (CodeToKey[keyMain]) {
     key1 = CodeToKey[keyMain]
   } else {
-    logger.error('Failed to read key.', { source: 'game-config', key: cfgKey })
+    logger.error('无法读取密钥。', { source: 'game-config', key: cfgKey })
     return null
   }
 
@@ -70,7 +70,7 @@ function parseConfigHotkey (cfgKey?: string): string | null {
     } else if (keyMod === '3') {
       key2 = 'Alt'
     } else {
-      logger.error('Failed to read modifier key.', { source: 'game-config', key: cfgKey })
+      logger.error('无法读取 modifier key.', { source: 'game-config', key: cfgKey })
       return null
     }
   }

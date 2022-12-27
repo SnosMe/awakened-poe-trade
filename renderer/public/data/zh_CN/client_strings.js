@@ -8,7 +8,7 @@ export default {
   RARITY_GEM: '宝石',
   RARITY_CURRENCY: '通货',
   RARITY_DIVCARD: '命运卡',
-  RARITY_QUEST: 'Quest',
+  RARITY_QUEST: '任务',
   MAP_TIER: '地图阶级: ',
   RARITY: '稀 有 度: ',
   ITEM_CLASS: '物品类别: ',
@@ -91,7 +91,7 @@ export default {
   DELVE_MODS: ['地心的', '地下之', '地下的'],
   VEILED_MODS: ['天选的', '次序之'],
   INCURSION_MODS: ['古铁雷兹的', '肖佩克的', '托钵塔特的', '塔卡提的', '马塔特尔的', '马塔特尔之', '奇塔夸雷特的', '奇塔夸雷特之', '塔卡提之', '古铁雷兹之', '普华特之'],
-  RELIC_UNIQUE: '古藏传奇',
+  FOIL_UNIQUE: '古藏传奇',
   UNMODIFIABLE: '基底词缀不能改变',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,

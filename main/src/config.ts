@@ -26,10 +26,10 @@ export const config = (() => {
 
   if (store.get('configVersion') > defaultConfig().configVersion) {
     dialog.showErrorBox(
-      'Awakened PoE Trade - Incompatible configuration',
+      '配置不兼容',
       // ----------------------
-      'You are trying to use an older version of Awakened PoE Trade with a newer incompatible configuration file.\n' +
-      'You need to install the latest version to continue using it.'
+      '您正在尝试使用旧版本的Awakend PoE Trade和更新版本的不兼容配置文件.\n' +
+      '请更新APT到最新版本.'
     )
     app.exit(1)
   }

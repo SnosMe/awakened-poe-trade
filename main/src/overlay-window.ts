@@ -150,14 +150,14 @@ function focusPoE () {
 
 function handleOverlayAttached (hasAccess?: boolean) {
   if (hasAccess === false) {
-    logger.error('PoE is running with administrator rights', { source: 'overlay' })
+    logger.error('流放之路客户端正以管理员权限运行', { source: 'overlay' })
 
     dialog.showErrorBox(
-      'PoE window - No access',
+      '打开窗口失败',
       // ----------------------
-      'Path of Exile is running with administrator rights.\n' +
+      '流放之路客户端正以管理员权限运行\n' +
       '\n' +
-      'You need to restart Awakened PoE Trade with administrator rights.'
+      '请重新以管理员权限打开本程序'
     )
   } else {
     overlaySendEvent({

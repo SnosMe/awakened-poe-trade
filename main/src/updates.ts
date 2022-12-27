@@ -12,9 +12,9 @@ export const UpdateState = {
 autoUpdater.on('update-available', async (info: { version: string }) => {
   UpdateState.canCheck = false
   if (autoUpdater.autoDownload) {
-    UpdateState.status = `Downloading v${info.version} ...`
+    UpdateState.status = `下载 v${info.version} 版本`
   } else {
-    UpdateState.status = `Update v${info.version} available on GitHub`
+    UpdateState.status = `从Github更新到 v${info.version} 版本`
     await overlayReady
     overlaySendEvent({
       name: 'MAIN->OVERLAY::update-available',
@@ -26,19 +26,19 @@ autoUpdater.on('update-available', async (info: { version: string }) => {
 
 autoUpdater.on('update-not-available', () => {
   UpdateState.canCheck = true
-  UpdateState.status = 'No updates available'
+  UpdateState.status = '无可用更新'
   rebuildTrayMenu()
 })
 
 autoUpdater.on('error', () => {
   UpdateState.canCheck = true
-  UpdateState.status = 'Something went wrong, check logs'
+  UpdateState.status = '出错了,请检查日志'
   rebuildTrayMenu()
 })
 
 autoUpdater.on('update-downloaded', async (info: { version: string }) => {
   UpdateState.canCheck = false
-  UpdateState.status = `v${info.version} will be installed on exit`
+  UpdateState.status = `v${info.version} 版本将在退出后安装`
   rebuildTrayMenu()
   await overlayReady
   overlaySendEvent({
@@ -58,7 +58,7 @@ export async function checkForUpdates () {
 
   if (!UpdateState.canCheck) return
   UpdateState.canCheck = false
-  UpdateState.status = 'Checking for update...'
+  UpdateState.status = '检查更新'
   rebuildTrayMenu()
 
   try {
