@@ -38,10 +38,11 @@ export interface Config {
   widgets: widget.Widget[]
   fontSize: number
   disableUpdateDownload: boolean
+  showAttachNotification: boolean
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 12,
+  configVersion: 13,
   wikiKey: 'Alt + W',
   craftOfExileKey: null,
   overlayKey: 'Shift + Space',
@@ -51,6 +52,7 @@ export const defaultConfig = (): Config => ({
   itemCheckKey: null,
   delveGridKey: null,
   restoreClipboard: false,
+  showAttachNotification: true,
   commands: [{
     text: '/hideout',
     hotkey: 'F5',

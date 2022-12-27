@@ -47,7 +47,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseFlask,
   parseStackSize,
   parseCorrupted,
-  parseRelic,
+  parseFoil,
   parseInfluence,
   parseMap,
   parseSockets,
@@ -369,12 +369,12 @@ function parseCorrupted (section: string[], item: ParsedItem) {
   return 'SECTION_SKIPPED'
 }
 
-function parseRelic (section: string[], item: ParsedItem) {
+function parseFoil (section: string[], item: ParsedItem) {
   if (item.rarity !== ItemRarity.Unique) {
     return 'PARSER_SKIPPED'
   }
-  if (section[0] === _$.RELIC_UNIQUE) {
-    item.isRelic = true
+  if (section[0] === _$.FOIL_UNIQUE) {
+    item.isFoil = true
     return 'SECTION_PARSED'
   }
   return 'SECTION_SKIPPED'

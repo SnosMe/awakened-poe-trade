@@ -200,5 +200,11 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 12
   }
 
+  if (config.configVersion < 13) {
+    config.showAttachNotification = true
+
+    config.configVersion = 13
+  }
+
   return config as unknown as Config
 }
