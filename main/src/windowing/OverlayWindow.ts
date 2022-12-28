@@ -7,6 +7,7 @@ import type { GameWindow } from './GameWindow'
 
 export class OverlayWindow {
   public isInteractable = false
+  public wasUsedRecently = true
   private window: BrowserWindow
   private overlayKey: string = 'Shift + Space'
   private isOverlayKeyUsed = false
@@ -58,6 +59,10 @@ export class OverlayWindow {
     this.window.webContents.setWindowOpenHandler((details) => {
       shell.openExternal(details.url)
       return { action: 'deny' }
+    })
+
+    this.server.onEventAnyClient('CLIENT->MAIN::used-recently', (e) => {
+      this.wasUsedRecently = e.isOverlay
     })
   }
 

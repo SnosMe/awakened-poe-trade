@@ -143,7 +143,7 @@ export class Shortcuts {
                 name: 'MAIN->CLIENT::item-text',
                 payload: { target: action.target, clipboard, position: pressPosition, focusOverlay: Boolean(action.focusOverlay) }
               })
-              if (action.focusOverlay) {
+              if (action.focusOverlay && this.overlay.wasUsedRecently) {
                 this.overlay.assertOverlayActive()
               }
             }).catch(() => {})

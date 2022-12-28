@@ -90,7 +90,9 @@ type IpcHostConfig =
   Event<'CLIENT->MAIN::update-host-config', HostConfig>
 
 type IpcClientIsActive =
-  Event<'CLIENT->MAIN::used-recently'>
+  Event<'CLIENT->MAIN::used-recently', {
+    isOverlay: boolean
+  }>
 
 type IpcSaveConfig =
   Event<'CLIENT->MAIN::save-config', {

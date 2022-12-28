@@ -82,7 +82,7 @@ export class GameLogWatcher {
       const str = this.readBuff.toString('utf8', 0, bytesRead)
       const lines = str.split('\n').map(line => line.trim()).filter(line => line.length)
       this.server.sendEventTo('broadcast', {
-        name: 'MAIN->OVERLAY::client-log',
+        name: 'MAIN->CLIENT::game-log',
         payload: { lines }
       })
     }

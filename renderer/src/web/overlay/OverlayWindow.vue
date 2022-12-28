@@ -94,7 +94,10 @@ export default defineComponent({
       nextTick(() => { saveConfig() })
     })
     window.addEventListener('focus', () => {
-      MainProcess.sendEvent({ name: 'CLIENT->MAIN::used-recently', payload: undefined })
+      MainProcess.sendEvent({
+        name: 'CLIENT->MAIN::used-recently',
+        payload: { isOverlay: MainProcess.isElectron }
+      })
     })
 
     MainProcess.onEvent('MAIN->CLIENT::config-changed', () => {

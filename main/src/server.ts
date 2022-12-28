@@ -84,9 +84,8 @@ server.register(async (instance) => {
       const event = JSON.parse(bytes.toString('utf-8')) as IpcEvent
       if (event.name === 'CLIENT->MAIN::used-recently') {
         lastActiveClient = connection.socket
-      } else {
-        evBus.emit(event.name, event.payload)
       }
+      evBus.emit(event.name, event.payload)
     })
   })
 })

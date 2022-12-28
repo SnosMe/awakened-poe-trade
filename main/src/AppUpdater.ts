@@ -17,7 +17,7 @@ export class AppUpdater {
       } else {
         // this.status = `Update v${info.version} available on GitHub`
         this.server.sendEventTo('broadcast', {
-          name: 'MAIN->OVERLAY::update-available',
+          name: 'MAIN->CLIENT::update-available',
           payload: { auto: false, version: info.version }
         })
       }
@@ -37,7 +37,7 @@ export class AppUpdater {
       this.canCheck = false
       // this.status = `v${info.version} will be installed on exit`
       this.server.sendEventTo('broadcast', {
-        name: 'MAIN->OVERLAY::update-available',
+        name: 'MAIN->CLIENT::update-available',
         payload: { auto: true, version: info.version }
       })
     })
