@@ -94,8 +94,6 @@ export function poeWebApi () {
 export interface Config {
   configVersion: number
   leagueId?: string
-  wikiKey: string | null
-  craftOfExileKey: string | null
   overlayKey: string
   overlayBackground: string
   overlayBackgroundExclusive: boolean
@@ -124,8 +122,6 @@ export interface Config {
 
 export const defaultConfig = (): Config => ({
   configVersion: 14,
-  wikiKey: 'Alt + W',
-  craftOfExileKey: null,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
@@ -214,6 +210,10 @@ export const defaultConfig = (): Config => ({
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
+      wikiKey: null,
+      poedbKey: null,
+      craftOfExileKey: null,
+      stashSearchKey: null,
       maps: {
         showNewStats: false,
         selectedStats: [
@@ -479,14 +479,20 @@ function upgradeConfig (_config: Config): Config {
   }
 
   if (config.configVersion < 14) {
-    const widgets = config.widgets.filter(w => w.wmType === 'image-strip') as widget.ImageStripWidget[]
-    widgets.forEach((imgStrip) => {
+    const imgWidgets = config.widgets.filter(w => w.wmType === 'image-strip') as widget.ImageStripWidget[]
+    imgWidgets.forEach((imgStrip) => {
       imgStrip.images.forEach((e) => {
         e.url = e.url.startsWith('app-file://')
           ? e.url.slice('app-file://'.length)
           : e.url
       })
     })
+
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
+    itemCheck.wikiKey = (config as any).wikiKey
+    itemCheck.poedbKey = null
+    itemCheck.craftOfExileKey = (config as any).craftOfExileKey
+    itemCheck.stashSearchKey = null
 
     config.configVersion = 14
   }
@@ -517,16 +523,29 @@ function getConfigForHost (): HostConfig {
     action: { type: 'toggle-overlay' },
     keepModKeys: true
   })
-  if (config.wikiKey) {
+  const itemCheck = AppConfig('item-check') as widget.ItemCheckWidget
+  if (itemCheck.wikiKey) {
     actions.push({
-      shortcut: config.wikiKey,
+      shortcut: itemCheck.wikiKey,
       action: { type: 'copy-item', target: 'open-wiki' }
     })
   }
-  if (config.craftOfExileKey) {
+  if (itemCheck.craftOfExileKey) {
     actions.push({
-      shortcut: config.craftOfExileKey,
+      shortcut: itemCheck.craftOfExileKey,
       action: { type: 'copy-item', target: 'open-craft-of-exile' }
+    })
+  }
+  if (itemCheck.poedbKey) {
+    actions.push({
+      shortcut: itemCheck.poedbKey,
+      action: { type: 'copy-item', target: 'open-poedb' }
+    })
+  }
+  if (itemCheck.stashSearchKey) {
+    actions.push({
+      shortcut: itemCheck.stashSearchKey,
+      action: { type: 'copy-item', target: 'search-similar' }
     })
   }
   if (config.itemCheckKey) {

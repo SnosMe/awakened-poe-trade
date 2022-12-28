@@ -4,9 +4,9 @@ import { ParsedItem, parseClipboard } from '@/parser'
 
 const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw' }
 
-export function registerCommunitySites () {
+export function registerActions () {
   Host.onEvent('MAIN->CLIENT::item-text', (e) => {
-    if (!['open-wiki', 'open-craft-of-exile', 'open-poedb'].includes(e.target)) return
+    if (!['open-wiki', 'open-craft-of-exile', 'open-poedb', 'search-similar'].includes(e.target)) return
     const item = parseClipboard(e.clipboard)
     if (!item) return
 
@@ -16,6 +16,8 @@ export function registerCommunitySites () {
       openCoE(item)
     } else if (e.target === 'open-poedb') {
       openPoedb(item)
+    } else if (e.target === 'search-similar') {
+      findSimilarItems(item)
     }
   })
 }
@@ -29,4 +31,12 @@ export function openPoedb (item: ParsedItem) {
 export function openCoE (item: ParsedItem) {
   const encodedClipboard = encodeURIComponent(item.rawText)
   window.open(`https://craftofexile.com/?eimport=${encodedClipboard}`)
+}
+
+export function findSimilarItems (item: ParsedItem) {
+  const text = JSON.stringify(item.info.name)
+  Host.sendEvent({
+    name: 'CLIENT->MAIN::stash-search',
+    payload: { text }
+  })
 }

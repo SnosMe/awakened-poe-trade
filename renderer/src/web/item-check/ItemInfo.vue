@@ -19,10 +19,9 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Host } from '@/web/background/IPC'
 import type { ParsedItem } from '@/parser'
 import type { WidgetManager } from '../overlay/interfaces'
-import * as CommunitySites from './community-sites'
+import * as actions from './hotkeyable-actions'
 
 export default defineComponent({
   props: {
@@ -37,16 +36,10 @@ export default defineComponent({
 
     return {
       t,
-      stashSearch () {
-        const text = JSON.stringify(props.item.info.name)
-        Host.sendEvent({
-          name: 'CLIENT->MAIN::stash-search',
-          payload: { text }
-        })
-      },
-      openWiki () { CommunitySites.openWiki(props.item) },
-      openPoedb () { CommunitySites.openPoedb(props.item) },
-      openCoE () { CommunitySites.openCoE(props.item) },
+      stashSearch () { actions.findSimilarItems(props.item) },
+      openWiki () { actions.openWiki(props.item) },
+      openPoedb () { actions.openPoedb(props.item) },
+      openCoE () { actions.openCoE(props.item) },
       showCoE: computed(() => {
         const { item } = props
         return item.info.craftable && !item.isCorrupted && !item.isMirrored
