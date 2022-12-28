@@ -38,8 +38,7 @@ export class OverlayWindow {
       webPreferences: {
         allowRunningInsecureContent: false,
         webviewTag: true,
-        spellcheck: false,
-        // TODO defaultFontSize: config.get('fontSize'),
+        spellcheck: false
       }
     })
 

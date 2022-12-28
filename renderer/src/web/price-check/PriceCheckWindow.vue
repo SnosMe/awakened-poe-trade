@@ -122,7 +122,8 @@ export default defineComponent({
       if (e.target !== 'price-check') return
 
       if (Host.isElectron && !e.focusOverlay) {
-        const width = Math.floor(window.devicePixelRatio * AppConfig().fontSize * 28.75)
+        // everything in CSS pixels
+        const width = 28.75 * AppConfig().fontSize
         const screenX = ((e.position.x - window.screenX) > window.innerWidth / 2)
           ? (window.screenX + window.innerWidth) - wm.poePanelWidth.value - width
           : window.screenX + wm.poePanelWidth.value
@@ -137,7 +138,8 @@ export default defineComponent({
               y: window.screenY,
               width,
               height: window.innerHeight
-            }
+            },
+            dpr: window.devicePixelRatio
           }
         })
       }

@@ -189,7 +189,7 @@ export default defineComponent({
     function priceCheck (text: string) { /* eslint-disable no-console */
       MainProcess.selfDispatch({
         name: 'MAIN->CLIENT::item-text',
-        payload: { clipboard: text, position: { x: Infinity, y: Infinity }, focusOverlay: false, target: 'price-check' }
+        payload: { clipboard: text, position: { x: 9999, y: 9999 }, focusOverlay: false, target: 'price-check' }
       })
       console.time('parsing item')
       const parsed = parseClipboard(text)

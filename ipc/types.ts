@@ -84,6 +84,7 @@ type IpcTrackArea =
     closeThreshold: number
     from: { x: number, y: number }
     area: { x: number, y: number, width: number, height: number }
+    dpr: number
   }>
 
 type IpcHostConfig =

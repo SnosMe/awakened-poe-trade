@@ -15,9 +15,15 @@ export class WidgetAreaTracker {
   ) {
     this.server.onEventAnyClient('OVERLAY->MAIN::track-area', (opts) => {
       this.holdKey = opts.holdKey
-      this.closeThreshold = opts.closeThreshold
-      this.from = opts.from
-      this.area = opts.area
+      if (process.platform === 'win32') {
+        this.closeThreshold = opts.closeThreshold * opts.dpr
+        this.from = screen.dipToScreenPoint(opts.from)
+        this.area = screen.dipToScreenRect(null, opts.area)
+      } else {
+        this.closeThreshold = opts.closeThreshold
+        this.from = opts.from
+        this.area = opts.area
+      }
 
       this.removeListeners()
       uIOhook.addListener('mousemove', this.handleMouseMove)

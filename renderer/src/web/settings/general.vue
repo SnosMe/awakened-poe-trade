@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Font size') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
+      <div class="flex-1 mb-1">{{ t('Font size') }}</div>
       <div class="mb-4 flex">
         <input v-model.number="fontSize" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
         <span class="ml-1">px</span>
