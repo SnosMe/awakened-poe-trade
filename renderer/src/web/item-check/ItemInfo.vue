@@ -5,8 +5,8 @@
       <button class="btn flex-1" @click="openWiki">wiki</button>
       <button class="btn flex-1" @click="openPoedb">poedb</button>
       <button v-if="showCoE" class="btn flex-1" @click="openCoE">CoE</button>
-      <!-- <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
-      <button class="btn flex-1 whitespace-nowrap">Find in Stash</button> -->
+      <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
+      <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('Find in Stash') }}</button>
     </div>
     <div v-if="weaponDPS" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
       <div>{{ t('Physical DPS:') }}</div><div class="text-right">{{ weaponDPS.phys }}</div>
@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { AppConfig } from '@/web/Config'
+import { Host } from '@/web/background/IPC'
 import type { ParsedItem } from '@/parser'
 import type { WidgetManager } from '../overlay/interfaces'
 import * as CommunitySites from './community-sites'
@@ -37,8 +37,12 @@ export default defineComponent({
 
     return {
       t,
-      openWiki () {
-        window.open(`https://www.poewiki.net/wiki/${props.item.info.refName}`)
+      stashSearch () {
+        const text = JSON.stringify(props.item.info.name)
+        Host.sendEvent({
+          name: 'CLIENT->MAIN::stash-search',
+          payload: { text }
+        })
       },
       openWiki () { CommunitySites.openWiki(props.item) },
       openPoedb () { CommunitySites.openPoedb(props.item) },
@@ -66,7 +70,8 @@ export default defineComponent({
   "ru": {
     "Physical DPS:": "Физический ДПС:",
     "Elemental DPS:": "Стихийный ДПС:",
-    "Total DPS:": "Общий ДПС:"
+    "Total DPS:": "Общий ДПС:",
+    "Find in Stash": "Найти в тайнике"
   },
   "cmn-Hant": {
     "Physical DPS:": "物理 DPS: #",
