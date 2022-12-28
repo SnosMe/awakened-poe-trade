@@ -49,14 +49,14 @@
 <script lang="ts">
 import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
+import { AppConfig, updateConfig, saveConfig, pushHostConfig, Config } from '@/web/Config'
 import { APP_PATRONS } from '@/assets/data'
-import type { Config } from '@ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
 import SettingsPricecheck from './price-check.vue'
+import SettingsItemcheck from './item-check.vue'
 import SettingsDebug from './debug.vue'
 import SettingsMaps from './maps/maps.vue'
 import SettingsStashSearch from './stash-search.vue'
@@ -114,11 +114,6 @@ export default defineComponent({
     const configWidget = computed(() => configClone.value?.widgets.find(w => w.wmId === selectedWmId.value))
 
     watch(() => props.config.wmFlags, (wmFlags) => {
-      if (wmFlags.includes('settings:price-check')) {
-        selectedComponent.value = SettingsPricecheck
-        wm.setFlag(props.config.wmId, 'settings:price-check', false)
-        return
-      }
       const flagStr = wmFlags.find(flag => flag.startsWith('settings:widget:'))
       if (flagStr) {
         const _wmId = Number(flagStr.split(':')[2])
@@ -145,6 +140,8 @@ export default defineComponent({
       save () {
         updateConfig(configClone.value!)
         saveConfig()
+        pushHostConfig()
+
         wm.hide(props.config.wmId)
       },
       cancel () {
@@ -177,11 +174,15 @@ function menuByType (type?: string) {
       return [[SettingsStashSearch]]
     case 'timer':
       return [[SettingsStopwatch]]
+    case 'item-check':
+      return [[SettingsItemcheck, SettingsMaps]]
+    case 'price-check':
+      return [[SettingsPricecheck]]
     default:
       return [
         [SettingsHotkeys, SettingsChat],
         [SettingsGeneral],
-        [SettingsPricecheck, SettingsMaps],
+        [SettingsPricecheck, SettingsMaps, SettingsItemcheck],
         [SettingsDebug]
       ]
   }
@@ -325,6 +326,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "General": "Общие",
     "Price check": "Прайс-чек",
     "Maps": "Карты",
+    "Item info": "Проверка предмета",
     "Debug": "Debug",
     "Chat": "Чат",
     "Stash search": "Поиск в тайнике",

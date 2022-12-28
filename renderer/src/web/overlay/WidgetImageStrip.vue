@@ -39,7 +39,7 @@ import { defineComponent, inject, PropType, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Widget from './Widget.vue'
 import DndContainer from 'vuedraggable'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { WidgetManager, ImageStripWidget } from './interfaces'
 
 export default defineComponent({
@@ -72,13 +72,17 @@ export default defineComponent({
 
     return {
       t,
-      handleFile (e: Event) {
+      async handleFile (e: Event) {
         const target = (e as InputEvent).target as HTMLInputElement
-        props.config.images.push({
-          id: Math.max(0, ...props.config.images.map(_ => _.id)) + 1,
-          url: MainProcess.importFile(target.files![0].path)!
-        })
-        target.value = ''
+        try {
+          const name = await Host.importFile(target.files![0])
+          props.config.images.push({
+            id: Math.max(0, ...props.config.images.map(_ => _.id)) + 1,
+            url: name
+          })
+        } finally {
+          target.value = ''
+        }
       },
       remove (id: number) {
         props.config.images = props.config.images.filter(_ => _.id !== id)

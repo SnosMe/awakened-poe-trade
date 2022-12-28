@@ -19,15 +19,6 @@ const electronRunner = (() => {
   }
 })()
 
-const preloadBuild = esbuild.build({
-  entryPoints: ['../ipc/preload.ts'],
-  bundle: true,
-  platform: 'node',
-  external: ['electron'],
-  outfile: 'dist/preload.js',
-  watch: isDev
-})
-
 const mainBuild = esbuild.build({
   entryPoints: ['src/main.ts'],
   bundle: true,
@@ -45,7 +36,6 @@ const mainBuild = esbuild.build({
 })
 
 Promise.all([
-  preloadBuild,
   mainBuild
 ])
 .then(() => { if (isDev) electronRunner.restart() })

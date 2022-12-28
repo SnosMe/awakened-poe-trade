@@ -1,4 +1,3 @@
-
 export interface Widget {
   wmId: number
   wmType: string
@@ -46,6 +45,10 @@ export interface PriceCheckWidget extends Widget {
 }
 
 export interface ItemCheckWidget extends Widget {
+  wikiKey: string | null
+  poedbKey: string | null
+  craftOfExileKey: string | null
+  stashSearchKey: string | null
   maps: {
     showNewStats: boolean
     selectedStats: Array<{

@@ -25,7 +25,7 @@
 <script lang="ts">
 import { computed, defineComponent, inject, PropType } from 'vue'
 import Widget from './Widget.vue'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { Widget as IWidget, WidgetManager } from './interfaces'
 
 export default defineComponent({
@@ -39,7 +39,9 @@ export default defineComponent({
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
 
-    MainProcess.onEvent('MAIN->OVERLAY::delve-grid', () => {
+    Host.onEvent('MAIN->CLIENT::widget-action', (e) => {
+      if (e.target !== 'delve-grid' || !Host.isElectron) return
+
       if (props.config.wmWants === 'hide') {
         wm.show(props.config.wmId)
       } else {
