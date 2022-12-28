@@ -1,57 +1,52 @@
 'use strict'
 
-import { app, protocol } from 'electron'
-import { setupShortcuts } from './shortcuts'
-import { createTray } from './tray'
-import { setupShowHide } from './price-check'
-import { setupConfigEvents, config } from './config'
-import { logger } from './logger'
-import { checkForUpdates } from './updates'
-import os from 'os'
-import { createOverlayWindow } from './overlay-window'
-import { setupAltVisibility } from './alt-visibility'
-import { createFileProtocol } from './app-file-protocol'
-import { LogWatcher } from './LogWatcher'
-import { loadAndCache as loadAndCacheGameCfg } from './game-config'
+import { app } from 'electron'
+import { uIOhook } from 'uiohook-napi'
+import { startServer, eventPipe } from './server'
+import { Logger } from './RemoteLogger'
+import { GameWindow } from './windowing/GameWindow'
+import { OverlayWindow } from './windowing/OverlayWindow'
+import { GameConfig } from './host-files/GameConfig'
+import { Shortcuts } from './shortcuts/Shortcuts'
+import { AppUpdater } from './AppUpdater'
+import { AppTray } from './AppTray'
+import { OverlayVisibility } from './windowing/OverlayVisibility'
+import { GameLogWatcher } from './host-files/GameLogWatcher'
 
 if (!app.requestSingleInstanceLock()) {
   app.exit()
 }
 
-protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true, supportFetchAPI: true } }])
-if (!config.get('hardwareAcceleration')) {
-  app.disableHardwareAcceleration()
-}
-
 app.enableSandbox()
 
+let tray: AppTray
+
 app.on('ready', async () => {
-  logger.info('App is running', {
-    source: 'init',
-    version: app.getVersion(),
-    osName: os.type(),
-    osRelease: os.release(),
-    logLevel: logger.level
-  })
-
-  createFileProtocol()
-
-  setupConfigEvents()
-  createTray()
-  setupShowHide()
-  loadAndCacheGameCfg()
+  tray = new AppTray()
+  const logger = new Logger(eventPipe)
+  const gameLogWatcher = new GameLogWatcher(eventPipe, logger)
+  const gameConfig = new GameConfig(eventPipe, logger)
+  const poeWindow = new GameWindow()
+  const appUpdater = new AppUpdater(eventPipe)
 
   setTimeout(
     async () => {
-      await createOverlayWindow()
-      setupShortcuts()
-      setupAltVisibility()
-      LogWatcher.start()
+      const overlay = new OverlayWindow(eventPipe, logger, poeWindow)
+      new OverlayVisibility(eventPipe, overlay, gameConfig)
+      const shortcuts = new Shortcuts(logger, overlay, poeWindow, gameConfig, eventPipe)
+      eventPipe.onEventAnyClient('CLIENT->MAIN::update-host-config', (cfg) => {
+        overlay.updateOpts(cfg.overlayKey, cfg.windowTitle)
+        shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.restoreClipboard)
+        gameLogWatcher.restart(cfg.clientLog)
+        gameConfig.readConfig(cfg.gameConfig)
+        appUpdater.updateOps(!cfg.disableUpdateDownload)
+        tray.overlayKey = cfg.overlayKey
+      })
+      uIOhook.start()
+      startServer()
+      overlay.loadAppPage()
     },
     // fixes(linux): window is black instead of transparent
     process.platform === 'linux' ? 1000 : 0
   )
-
-  checkForUpdates()
-  setInterval(checkForUpdates, 16 * 60 * 60 * 1000)
 })

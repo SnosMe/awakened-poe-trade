@@ -29,7 +29,7 @@
 <script lang="ts">
 import { defineComponent, provide, shallowRef, watch, readonly, computed, onMounted, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/web/background/IPC'
+import { MainProcess, Host } from '@/web/background/IPC'
 import { Widget, WidgetManager } from './interfaces'
 import WidgetTimer from './WidgetTimer.vue'
 import WidgetStashSearch from './WidgetStashSearch.vue'
@@ -41,13 +41,13 @@ import WidgetImageStrip from './WidgetImageStrip.vue'
 import WidgetDelveGrid from './WidgetDelveGrid.vue'
 import WidgetItemSearch from './WidgetItemSearch.vue'
 import WidgetSettings from '../settings/SettingsWindow.vue'
-import { AppConfig, saveConfig } from '@/web/Config'
+import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
 import '@/web/background/AutoUpdates'
 import '@/web/background/Prices'
 import { load as loadLeagues } from '@/web/background/Leagues'
-import { registerOtherServices } from '../other-services'
+import { handleLine } from '@/web/client-log/client-log'
 
 type WMID = Widget['wmId']
 
@@ -70,15 +70,13 @@ export default defineComponent({
 
     document.documentElement.lang = AppConfig().language
 
-    const active = shallowRef(false)
+    const active = shallowRef(!Host.isElectron)
     const gameFocused = shallowRef(false)
     const hideUI = shallowRef(false)
     const showEditingNotification = shallowRef(false)
 
     watch(active, (active) => {
-      if (!active) {
-        nextTick(() => { saveConfig() })
-      } else {
+      if (active) {
         showEditingNotification.value = false
       }
     })
@@ -89,6 +87,20 @@ export default defineComponent({
       },
       set (value) {
         AppConfig().widgets = value
+      }
+    })
+
+    window.addEventListener('blur', () => {
+      nextTick(() => { saveConfig() })
+    })
+    window.addEventListener('focus', () => {
+      MainProcess.sendEvent({ name: 'CLIENT->MAIN::used-recently', payload: undefined })
+    })
+
+    MainProcess.onEvent('MAIN->CLIENT::config-changed', () => {
+      const widget = topmostOrExclusiveWidget.value
+      if (widget.wmZorder === 'exclusive') {
+        hide(widget.wmId)
       }
     })
 
@@ -113,33 +125,30 @@ export default defineComponent({
     MainProcess.onEvent('MAIN->OVERLAY::visibility', (e) => {
       hideUI.value = !e.isVisible
     })
-    registerOtherServices()
+
+    MainProcess.onEvent('MAIN->CLIENT::game-log', (e) => {
+      for (const line of e.lines) {
+        handleLine(line)
+      }
+    })
 
     onMounted(() => {
       nextTick(() => {
-        MainProcess.sendEvent({ name: 'OVERLAY->MAIN::ready', payload: undefined })
+        pushHostConfig()
       })
     })
 
     const size = (() => {
       const size = shallowRef({
-        devicePixelRatio: window.devicePixelRatio,
         width: window.innerWidth,
         height: window.innerHeight
       })
       window.addEventListener('resize', () => {
         size.value = {
-          devicePixelRatio: window.devicePixelRatio,
           width: window.innerWidth,
           height: window.innerHeight
         }
       })
-      watch(() => size.value.devicePixelRatio, (dpr) => {
-        MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::devicePixelRatio-change',
-          payload: dpr
-        })
-      }, { immediate: true })
       return readonly(size)
     })()
 
@@ -249,8 +258,13 @@ export default defineComponent({
     })
 
     function handleBackgroundClick () {
-      if (AppConfig().overlayBackgroundClose) {
-        MainProcess.closeOverlay()
+      if (!Host.isElectron) {
+        const widget = topmostOrExclusiveWidget.value
+        if (widget.wmZorder === 'exclusive') {
+          hide(widget.wmId)
+        }
+      } else if (AppConfig().overlayBackgroundClose) {
+        Host.sendEvent({ name: 'OVERLAY->MAIN::focus-game', payload: undefined })
       }
     }
 

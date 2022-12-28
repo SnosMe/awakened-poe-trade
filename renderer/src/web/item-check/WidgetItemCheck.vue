@@ -17,7 +17,8 @@ import MapCheck from '../map-check/MapCheck.vue'
 import ItemInfo from './ItemInfo.vue'
 import { MainProcess } from '@/web/background/IPC'
 import { ItemCategory, parseClipboard, ParsedItem } from '@/parser'
-import { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
+import { registerCommunitySites } from './community-sites'
+import type { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
 
 export default defineComponent({
   components: {
@@ -38,7 +39,11 @@ export default defineComponent({
     const checkPosition = ref({ x: 1, y: 1 })
     const item = ref<ParsedItem | null>(null)
 
-    MainProcess.onEvent('MAIN->OVERLAY::item-check', (e) => {
+    registerCommunitySites()
+
+    MainProcess.onEvent('MAIN->CLIENT::item-text', (e) => {
+      if (e.target !== 'item-check') return
+
       checkPosition.value = {
         x: e.position.x - window.screenX,
         y: e.position.y - window.screenY

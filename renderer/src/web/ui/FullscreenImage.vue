@@ -2,10 +2,10 @@
   <div class="w-full h-full"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false">
-    <img :class="$style.img" :src="isBundled ? `/images/${src}` : src">
+    <img :class="$style.img" :src="resolvedSrc">
     <teleport v-if="isHovered && !disabled" to="body">
       <div :class="$style.imgFullscreenWrapper">
-        <img :class="$style.imgFullscreen" :src="isBundled ? `/images/${src}` : src">
+        <img :class="$style.imgFullscreen" :src="resolvedSrc">
       </div>
     </teleport>
   </div>
@@ -28,10 +28,17 @@ export default defineComponent({
   },
   setup (props) {
     const isHovered = ref(false)
-    const isBundled = computed(() => !props.src.includes('://'))
     return {
       isHovered,
-      isBundled
+      resolvedSrc: computed(() => {
+        if (props.src.includes('://')) {
+          return props.src
+        } else {
+          return (props.src.length < 32)
+            ? `${import.meta.env.BASE_URL}images/${props.src}`
+            : `/uploads/${props.src}`
+        }
+      })
     }
   }
 })

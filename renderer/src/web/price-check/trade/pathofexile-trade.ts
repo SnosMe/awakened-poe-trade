@@ -2,7 +2,7 @@ import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { TradeResponse, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { STAT_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
@@ -542,7 +542,7 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
 
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
 
-    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
+    const response = await Host.proxy(`${getTradeEndpoint()}/api/trade/search/${leagueId}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -575,7 +575,7 @@ export async function requestResults (
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
-    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
+    const response = await Host.proxy(`${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
     const _data = await response.json() as TradeResponse<{ result: Array<FetchResult | null> }>

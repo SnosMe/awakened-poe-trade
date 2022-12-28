@@ -1,6 +1,6 @@
 import { ParsedItem } from '@/parser'
 import { selected as league } from '@/web/background/Leagues'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { Cache } from '../trade/Cache'
 import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
 
@@ -37,7 +37,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
 
   let data = cache.get<PoepricesApiResponse>(query)
   if (!data) {
-    const response = await fetch(`${MainProcess.CORS}https://www.poeprices.info/api?${query}`)
+    const response = await Host.proxy(`www.poeprices.info/api?${query}`)
     try {
       data = await response.json() as PoepricesApiResponse
     } catch (e) {
@@ -102,7 +102,7 @@ export async function sendFeedback (
   body.append('league', league.value!)
   // body.append('debug', String(1))
 
-  const response = await fetch('https://www.poeprices.info/send_feedback', {
+  const response = await Host.proxy('www.poeprices.info/send_feedback', {
     method: 'POST',
     body
   })

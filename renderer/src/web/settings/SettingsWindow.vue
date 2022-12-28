@@ -49,7 +49,7 @@
 <script lang="ts">
 import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { AppConfig, updateConfig, saveConfig } from '@/web/Config'
+import { AppConfig, updateConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import { APP_PATRONS } from '@/assets/data'
 import type { Config } from '@ipc/types'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
@@ -145,6 +145,8 @@ export default defineComponent({
       save () {
         updateConfig(configClone.value!)
         saveConfig()
+        pushHostConfig()
+
         wm.hide(props.config.wmId)
       },
       cancel () {

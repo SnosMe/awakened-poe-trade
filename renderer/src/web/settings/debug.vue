@@ -8,25 +8,23 @@
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Hardware Acceleration') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
-      <div class="mb-4 flex">
-        <ui-radio v-model="hardwareAcceleration" :value="true" class="mr-4">{{ t('Enabled') }}</ui-radio>
-        <ui-radio v-model="hardwareAcceleration" :value="false" class="mr-4">{{ t('Disabled (render on CPU)') }}</ui-radio>
-      </div>
-    </div>
-    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('PoE window title') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4">
         <input v-model="windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe" />
       </div>
     </div>
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Log') }}</div>
+      <pre class="mb-4 bg-gray-900 rounded">{{ logs }}</pre>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, configModelValue } from './utils'
+import { Host } from '@/web/background/IPC'
 
 export default defineComponent({
   name: 'Debug',
@@ -34,10 +32,16 @@ export default defineComponent({
   setup (props) {
     const { t } = useI18n()
 
+    const logs = shallowRef('')
+
+    Host.onEvent('MAIN->CLIENT::log-entry', (entry) => {
+      logs.value += entry.message + '\n'
+    })
+
     return {
       t,
+      logs,
       logLevel: configModelValue(() => props.config, 'logLevel'),
-      hardwareAcceleration: configModelValue(() => props.config, 'hardwareAcceleration'),
       windowTitle: configModelValue(() => props.config, 'windowTitle')
     }
   }
@@ -48,7 +52,6 @@ export default defineComponent({
 {
   "ru": {
     "Log level": "Уровень логов",
-    "Hardware Acceleration": "Аппаратное ускорение",
     "Disabled (render on CPU)": "Отключено (рендерить на CPU)",
     "PoE window title": "Заголовок окна игры"
   }

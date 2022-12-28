@@ -22,8 +22,7 @@ import { useI18n } from 'vue-i18n'
 import { AppConfig } from '@/web/Config'
 import type { ParsedItem } from '@/parser'
 import type { WidgetManager } from '../overlay/interfaces'
-
-const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw' }
+import * as CommunitySites from './community-sites'
 
 export default defineComponent({
   props: {
@@ -41,13 +40,9 @@ export default defineComponent({
       openWiki () {
         window.open(`https://www.poewiki.net/wiki/${props.item.info.refName}`)
       },
-      openPoedb () {
-        window.open(`https://poedb.tw/${POEDB_LANGS[AppConfig().language]}/search?q=${props.item.info.refName}`)
-      },
-      openCoE () {
-        const encodedClipboard = encodeURIComponent(props.item.rawText)
-        window.open(`https://craftofexile.com/?eimport=${encodedClipboard}`)
-      },
+      openWiki () { CommunitySites.openWiki(props.item) },
+      openPoedb () { CommunitySites.openPoedb(props.item) },
+      openCoE () { CommunitySites.openCoE(props.item) },
       showCoE: computed(() => {
         const { item } = props
         return item.info.craftable && !item.isCorrupted && !item.isMirrored
