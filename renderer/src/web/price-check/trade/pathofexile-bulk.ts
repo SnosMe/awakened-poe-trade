@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { TradeResponse, Account, getTradeEndpoint, RATE_LIMIT_RULES, adjustRateLimits, tradeTag, preventQueueCreation } from './common'
 import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
@@ -66,7 +66,7 @@ async function requestTradeResultList (body: TradeRequest, leagueId: string): Pr
 
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.EXCHANGE)
 
-    const response = await fetch(`${MainProcess.CORS}https://${getTradeEndpoint()}/api/trade/exchange/${leagueId}`, {
+    const response = await Host.proxy(`${getTradeEndpoint()}/api/trade/exchange/${leagueId}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
