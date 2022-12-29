@@ -32,6 +32,7 @@ addFileUploadRoutes(server)
   'web.poe.garena.tw',
   'poe.ninja',
   'www.poeprices.info',
+  'poe.game.qq.com',
 ].map(host => {
   server.register(fastifyProxy, {
     upstream: `https://${host}`,

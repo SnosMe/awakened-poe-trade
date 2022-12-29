@@ -13,9 +13,9 @@ export class AppUpdater {
     autoUpdater.on('update-available', async (info: { version: string }) => {
       this.canCheck = false
       if (autoUpdater.autoDownload) {
-        // this.status = `Downloading v${info.version} ...`
+        // this.status = `下载 v${info.version} 版本`
       } else {
-        // this.status = `Update v${info.version} available on GitHub`
+        // this.status = `从Github更新到 v${info.version} 版本`
         this.server.sendEventTo('broadcast', {
           name: 'MAIN->CLIENT::update-available',
           payload: { auto: false, version: info.version }
@@ -25,17 +25,17 @@ export class AppUpdater {
 
     autoUpdater.on('update-not-available', () => {
       this.canCheck = true
-      // this.status = 'No updates available'
+      // this.status = '无可用更新'
     })
 
     autoUpdater.on('error', () => {
       this.canCheck = true
-      // this.status = 'Something went wrong, check logs'
+      // this.status = '出错了,请检查日志'
     })
 
     autoUpdater.on('update-downloaded', async (info: { version: string }) => {
       this.canCheck = false
-      // this.status = `v${info.version} will be installed on exit`
+      // this.status = `v${info.version} 版本将在退出后安装`
       this.server.sendEventTo('broadcast', {
         name: 'MAIN->CLIENT::update-available',
         payload: { auto: true, version: info.version }
@@ -59,7 +59,7 @@ export class AppUpdater {
   private check = async () => {
     if (!this.canCheck) return
     this.canCheck = false
-    // this.status = 'Checking for update...'
+    // this.status = '检查更新'
 
     try {
       await autoUpdater.checkForUpdates()

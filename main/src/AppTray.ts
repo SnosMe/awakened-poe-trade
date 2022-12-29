@@ -16,36 +16,42 @@ export class AppTray {
   rebuildMenu () {
     const contextMenu = Menu.buildFromTemplate([
       {
-        label: 'Settings/League',
+        label: '设置',
         click: () => {
           dialog.showMessageBox({
             title: 'Settings',
-            message: `Open Path of Exile and press "${this.overlayKey}". Click on the button with cog icon there.`
+            message: `打开流放之路客户端并且按下 "${this.overlayKey}" 点击齿轮图标.`
           })
         }
       },
       { type: 'separator' },
       {
-        label: `APT v${app.getVersion()}`,
+        label: `APT简中版本: v${app.getVersion()}`,
         click: () => {
-          shell.openExternal('https://github.com/SnosMe/awakened-poe-trade/releases')
+          shell.openExternal('https://github.com/Traveller-hongchen/awakened-poe-trade/releases')
         }
       },
       {
-        label: 'Open logs folder',
+        label: '打开日志目录',
         click: () => {
           shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
         }
       },
       { type: 'separator' },
       {
-        label: 'Patreon (Donate)',
+        label: '支持原作者',
         click: () => {
           shell.openExternal('https://patreon.com/awakened_poe_trade')
         }
       },
       {
-        label: 'Discord',
+        label: '支持简中作者',
+        click: () => {
+          shell.openExternal('https://afdian.net/a/APTSimplifiedChinese/plan')
+        }
+      },
+      {
+        label: 'Discord (需要翻墙)',
         submenu: [
           {
             label: 'The Forbidden Trove',
@@ -58,7 +64,7 @@ export class AppTray {
         ]
       },
       {
-        label: 'Quit',
+        label: '退出',
         click: () => {
           app.quit()
         }

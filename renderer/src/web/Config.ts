@@ -115,8 +115,8 @@ export interface Config {
   logLevel: string
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant'
-  realm: 'pc-ggg' | 'pc-garena'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN'
+  realm: 'pc-ggg' | 'pc-garena' | 'pc-tencent'
   widgets: widget.Widget[]
   fontSize: number
   disableUpdateDownload: boolean

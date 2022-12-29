@@ -94,11 +94,10 @@ export default defineComponent({
     "Auto-hide Mode": "自动隐藏模式",
     "Open without auto-hide": "一般模式",
     "Overlay": "Overlay",
-    "Open item on wiki": "开启wiki页面",
     "Map check": "检查地图",
     "Item info": "物品资讯",
     "Stash tab scrolling": "切换仓库页",
-    "Delve grid": "矿坑网格"
+    "Grid for Delve Chart": "矿坑网格"
   },
   "cmn-Hant": {
     "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(倒退鍵) 來清除快捷鍵。",

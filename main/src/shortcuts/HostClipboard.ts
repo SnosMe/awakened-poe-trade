@@ -127,4 +127,7 @@ const LANGUAGE_DETECTOR = [{
 }, {
   lang: 'cmn-Hans',
   firstLine: '物品类别: '
+}, {
+  lang: 'zh_CN',
+  firstLine: '物品类别: '
 }]

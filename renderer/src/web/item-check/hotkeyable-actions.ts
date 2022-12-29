@@ -2,7 +2,7 @@ import { Host } from '@/web/background/IPC'
 import { AppConfig } from '@/web/Config'
 import { ParsedItem, parseClipboard } from '@/parser'
 
-const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw' }
+const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw', 'zh_CN': 'cn' }
 
 export function registerActions () {
   Host.onEvent('MAIN->CLIENT::item-text', (e) => {

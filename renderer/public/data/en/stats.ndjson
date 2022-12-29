@@ -12,36 +12,6 @@
 {"ref":"# Flask Charges recovered every 3 seconds","dp":true,"better":1,"matchers":[{"string":"# Flask Charges recovered every 3 seconds"}],"trade":{"ids":{"explicit":["explicit.stat_3228973398"]}}}
 {"ref":"# Fractured Modifiers","better":1,"matchers":[{"string":"# Fractured Modifiers "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_number_of_fractured_mods"]}}}
 {"ref":"# Implicit Modifiers","better":1,"matchers":[{"string":"# Implicit Modifiers "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_number_of_implicit_mods"]}}}
-{"ref":"# Incubator Kills (Abyssal)","better":1,"matchers":[{"string":"# Incubator Kills (Abyssal) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_abyssal_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Blighted)","better":1,"matchers":[{"string":"# Incubator Kills (Blighted) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_blighted_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Cartographer's)","better":1,"matchers":[{"string":"# Incubator Kills (Cartographer's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_cartographers_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Celestial Armoursmith's)","better":1,"matchers":[{"string":"# Incubator Kills (Celestial Armoursmith's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_celestial_armoursmiths_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Celestial Blacksmith's)","better":1,"matchers":[{"string":"# Incubator Kills (Celestial Blacksmith's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_celestial_blacksmiths_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Celestial Jeweller's)","better":1,"matchers":[{"string":"# Incubator Kills (Celestial Jeweller's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_celestial_jewellers_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Decadent)","better":1,"matchers":[{"string":"# Incubator Kills (Decadent) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_decadent_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Diviner's)","better":1,"matchers":[{"string":"# Incubator Kills (Diviner's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_diviners_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Eldritch)","better":1,"matchers":[{"string":"# Incubator Kills (Eldritch) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_eldritch_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Enchanted)","better":1,"matchers":[{"string":"# Incubator Kills (Enchanted) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_enchanted_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Feral)","better":1,"matchers":[{"string":"# Incubator Kills (Feral) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_feral_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Fine)","better":1,"matchers":[{"string":"# Incubator Kills (Fine) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_fine_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Foreboding)","better":1,"matchers":[{"string":"# Incubator Kills (Foreboding) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_foreboding_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Fossilised)","better":1,"matchers":[{"string":"# Incubator Kills (Fossilised) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_fossilised_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Fragmented)","better":1,"matchers":[{"string":"# Incubator Kills (Fragmented) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_fragmented_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Gemcutter's)","better":1,"matchers":[{"string":"# Incubator Kills (Gemcutter's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_gemcutters_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Geomancer's)","better":1,"matchers":[{"string":"# Incubator Kills (Geomancer's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_geomancers_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Infused)","better":1,"matchers":[{"string":"# Incubator Kills (Infused) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_infused_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Maddening)","better":1,"matchers":[{"string":"# Incubator Kills (Maddening) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_maddening_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Morphing)","better":1,"matchers":[{"string":"# Incubator Kills (Morphing) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_morphing_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Mysterious)","better":1,"matchers":[{"string":"# Incubator Kills (Mysterious) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_mysterious_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Obscured)","better":1,"matchers":[{"string":"# Incubator Kills (Obscured) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_obscured_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Ornate)","better":1,"matchers":[{"string":"# Incubator Kills (Ornate) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_ornate_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Otherwordly)","better":1,"matchers":[{"string":"# Incubator Kills (Otherwordly) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_otherworldly_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Primal)","better":1,"matchers":[{"string":"# Incubator Kills (Primal) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_primal_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Singular)","better":1,"matchers":[{"string":"# Incubator Kills (Singular) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_singular_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Skittering)","better":1,"matchers":[{"string":"# Incubator Kills (Skittering) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_skittering_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Thaumaturge's)","better":1,"matchers":[{"string":"# Incubator Kills (Thaumaturge's) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_thaumaturges_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Time-Lost)","better":1,"matchers":[{"string":"# Incubator Kills (Time-Lost) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_timelost_incubator_kills"]}}}
-{"ref":"# Incubator Kills (Whispering)","better":1,"matchers":[{"string":"# Incubator Kills (Whispering) "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_whispering_incubator_kills"]}}}
 {"ref":"# Intelligence per 1 Intelligence on Allocated Passives in Radius","better":1,"matchers":[{"string":"# Intelligence per 1 Intelligence on Allocated Passives in Radius"}],"trade":{"ids":{"explicit":["explicit.stat_1070347065"]}}}
 {"ref":"# Life gained on Kill per Frenzy Charge","better":1,"matchers":[{"string":"# Life gained on Kill per Frenzy Charge"}],"trade":{"ids":{"explicit":["explicit.stat_1269609669"]}}}
 {"ref":"# Life gained when you Block","better":1,"matchers":[{"string":"# Life gained when you Block"},{"string":"Lose # Life when you Block","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_762600725"],"implicit":["implicit.stat_762600725"],"fractured":["fractured.stat_762600725"],"scourge":["scourge.stat_762600725"]}}}

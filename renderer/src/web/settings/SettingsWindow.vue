@@ -326,7 +326,6 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "General": "Общие",
     "Price check": "Прайс-чек",
     "Maps": "Карты",
-    "Item info": "Проверка предмета",
     "Debug": "Debug",
     "Chat": "Чат",
     "Stash search": "Поиск в тайнике",
