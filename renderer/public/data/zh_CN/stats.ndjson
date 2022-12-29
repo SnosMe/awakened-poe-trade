@@ -86,8 +86,8 @@
 {"ref": "# to # Added Spell Physical Damage while wielding a Two Handed Weapon", "better": 1, "matchers": [{"string": "持双手武器时附加 # 到 # 点物理法术伤害"}], "trade": {"ids": {"explicit": ["explicit.stat_2921084940"], "fractured": ["fractured.stat_2921084940"]}}}
 {"ref": "# to # Fire Damage per Endurance Charge", "better": 1, "matchers": [{"string": "每个耐力球附加 # - # 基础火焰伤害"}], "trade": {"ids": {"explicit": ["explicit.stat_1073447019"]}}}
 {"ref": "# to # Lightning Damage per Power Charge", "better": 1, "matchers": [{"string": "每个暴击球造成 # - # 闪电伤害"}], "trade": {"ids": {"explicit": ["explicit.stat_1917107159"]}}}
-{"ref": "# total Elemental Resistances", "better": 1, "matchers": [{"string": "#%最大元素抗性"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_count_elemental_resistances"]}}}
-{"ref": "# total Resistances", "better": 1, "matchers": [{"string": "#%最大抗性"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_count_resistances"]}}}
+{"ref": "# total Elemental Resistances", "better": 1, "matchers": [{"string": "+#%最大元素抗性"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_count_elemental_resistances"]}}}
+{"ref": "# total Resistances", "better": 1, "matchers": [{"string": "+#%最大抗性"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_count_resistances"]}}}
 {"ref": "# uses remaining", "better": 1, "matchers": [{"string": "使用剩余 # 次"}, {"string": "使用剩余 # 次"}], "trade": {"ids": {"explicit": ["explicit.stat_1479533453"], "enchant": ["enchant.stat_290368246"]}}}
 {"ref": "#% additional Elemental Resistances during Effect", "better": 1, "matchers": [{"string": "生效期间，元素抗性额外提高 #%"}], "trade": {"ids": {"explicit": ["explicit.stat_962725504"], "fractured": ["fractured.stat_962725504"]}}}
 {"ref": "#% additional Physical Damage Reduction", "better": 1, "matchers": [{"string": "#% 额外物理伤害减伤"}], "trade": {"ids": {"explicit": ["explicit.stat_3771516363"], "implicit": ["implicit.stat_3771516363"], "fractured": ["fractured.stat_3771516363"], "crafted": ["crafted.stat_3771516363"]}}}
@@ -698,7 +698,7 @@
 {"ref": "#% increased Cold Resistance", "better": 1, "matchers": [{"string": "冰霜抗性提高 #%"}, {"string": "冰霜抗性降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_4252311791"]}}}
 {"ref": "#% increased Cold Snap Area of Effect", "better": 1, "matchers": [{"string": "【霜暴】范围扩大 #%"}, {"string": "【霜暴】范围缩小 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3371538704"]}}}
 {"ref": "#% increased Cold Snap Damage", "better": 1, "matchers": [{"string": "【霜暴】的伤害提高 #%"}, {"string": "【霜暴】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3729006707"]}}}
-{"ref": "#% increased Cold Spell Damage", "better": 1, "matchers": [{"string": "#% increased Cold Spell Damage "}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_cold_spell_damage"]}}}
+{"ref": "#% increased Cold Spell Damage", "better": 1, "matchers": [{"string": "#% 法术技能冰霜伤害提高"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_cold_spell_damage"]}}}
 {"ref": "#% increased Conductivity Curse Effect", "better": 1, "matchers": [{"string": "【导电】的诅咒效果提高 #%"}, {"string": "【导电】的诅咒效果降低 #%", "negate": true}], "trade": {"ids": {"implicit": ["implicit.stat_3395908304"], "enchant": ["enchant.stat_3395908304"]}}}
 {"ref": "#% increased Conductivity Duration", "better": 1, "matchers": [{"string": "【导电】持续时间延长 #%"}, {"string": "【导电】持续时间缩短 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_819890745"]}}}
 {"ref": "#% increased Contagion Area of Effect", "better": 1, "matchers": [{"string": "瘟疫的效果区域扩大 #%"}, {"string": "瘟疫的效果区域缩小 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1056396846"]}}}
@@ -1021,7 +1021,7 @@
 {"ref": "#% increased Fire Damage with Hits and Ailments against Blinded Enemies", "better": 1, "matchers": [{"string": "击中和异常状态对致盲敌人的火焰伤害提高 #%"}, {"string": "击中和异常状态对致盲敌人的火焰伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1601181226"]}}}
 {"ref": "#% increased Fire Damage with Spell Skills", "better": 1, "matchers": [{"string": "法术技能的火焰伤害提高 #%"}, {"string": "法术技能的火焰伤害降低 #%", "negate": true}], "trade": {"ids": {"implicit": ["implicit.stat_361162316"]}}}
 {"ref": "#% increased Fire Resistance", "better": 1, "matchers": [{"string": "火焰抗性提高 #%"}, {"string": "火焰抗性降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1680060098"]}}}
-{"ref": "#% increased Fire Spell Damage", "better": 1, "matchers": [{"string": "#% increased Fire Spell Damage "}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_fire_spell_damage"]}}}
+{"ref": "#% increased Fire Spell Damage", "better": 1, "matchers": [{"string": "#% 法术技能火焰伤害提高"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_fire_spell_damage"]}}}
 {"ref": "#% increased Fire Trap Burning Damage", "better": 1, "matchers": [{"string": "【火焰陷阱】燃烧伤害提高 #%"}, {"string": "【火焰陷阱】燃烧伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_345703394"]}}}
 {"ref": "#% increased Fire Trap Burning Ground Duration", "better": 1, "matchers": [{"string": "【火焰陷阱】造成的燃烧地面持续时间延长 #%"}, {"string": "【火焰陷阱】造成的燃烧地面持续时间缩短 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3279786746"]}}}
 {"ref": "#% increased Fire Trap Damage", "better": 1, "matchers": [{"string": "【火焰陷阱】的伤害提高 #%"}, {"string": "【火焰陷阱】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_181307038"]}}}
@@ -1165,7 +1165,7 @@
 {"ref": "#% increased Lightning Damage with Attack Skills", "better": 1, "matchers": [{"string": "攻击技能的闪电伤害提高 #%"}, {"string": "攻击技能的闪电伤害降低 #%", "negate": true}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_lightning_damage_with_attack_skills"], "explicit": ["explicit.stat_4208907162"], "implicit": ["implicit.stat_4208907162"]}}}
 {"ref": "#% increased Lightning Damage with Spell Skills", "better": 1, "matchers": [{"string": "法术技能的闪电伤害提高 #%"}, {"string": "法术技能的闪电伤害降低 #%", "negate": true}], "trade": {"ids": {"implicit": ["implicit.stat_3935031607"]}}}
 {"ref": "#% increased Lightning Resistance", "better": 1, "matchers": [{"string": "闪电抗性提高 #%"}, {"string": "闪电抗性降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_2249211872"]}}}
-{"ref": "#% increased Lightning Spell Damage", "better": 1, "matchers": [{"string": "#% increased Lightning Spell Damage "}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_lightning_spell_damage"]}}}
+{"ref": "#% increased Lightning Spell Damage", "better": 1, "matchers": [{"string": "#% 法术技能闪电伤害提高"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_lightning_spell_damage"]}}}
 {"ref": "#% increased Lightning Spire Trap Throwing Speed", "better": 1, "matchers": [{"string": "电塔陷阱的投掷速度加快 #%"}, {"string": "电塔陷阱的投掷速度减慢 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1978232370"]}}}
 {"ref": "#% increased Lightning Strike Damage", "better": 1, "matchers": [{"string": "【闪电打击】的伤害提高 #%"}, {"string": "【闪电打击】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3630274354"]}}}
 {"ref": "#% increased Lightning Tendrils Area of Effect", "better": 1, "matchers": [{"string": "【电能释放】范围扩大 #%"}, {"string": "【电能释放】范围缩小 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1230050013"]}}}
@@ -1635,7 +1635,7 @@
 {"ref": "#% of Infernal Blow Physical Damage gained as Extra Fire Damage", "better": 1, "matchers": [{"string": "【炼狱之击】提高等同 #% 物理伤害的火焰伤害"}], "trade": {"ids": {"enchant": ["enchant.stat_2484188706"]}}}
 {"ref": "#% of Life Leech applies to Enemies as Chaos Damage", "better": 1, "matchers": [{"string": "生命偷取造成伤害的 #% 转化为混沌伤害"}], "trade": {"ids": {"explicit": ["explicit.stat_768537671"]}}}
 {"ref": "#% of Life Recovery from Flasks is applied to nearby Allies instead of You", "better": 1, "matchers": [{"string": "药剂回复的 #% 生命改为给周围友军回复"}], "trade": {"ids": {"explicit": ["explicit.stat_2264655303"], "fractured": ["fractured.stat_2264655303"]}}}
-{"ref": "#% of Life Regenerated per Second", "better": 1, "matchers": [{"string": "#% of Life Regenerated per Second "}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_percent_life_regen"]}}}
+{"ref": "#% of Life Regenerated per Second", "better": 1, "matchers": [{"string": "#% 每秒生命回复"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_percent_life_regen"]}}}
 {"ref": "#% of Life Regenerated per Second if you've dealt a Critical Strike in the past 8 seconds", "better": 1, "matchers": [{"string": "若过去 8 秒内你造成过暴击，则每秒生命再生 #%"}], "trade": {"ids": {"explicit": ["explicit.stat_221532021"]}}}
 {"ref": "#% of Life Regenerated per second per Fragile Regrowth", "dp": true, "better": 1, "matchers": [{"string": "每次【脆弱重生】都每秒回复 #% 生命"}], "trade": {"ids": {"explicit": ["explicit.stat_3175722882"], "fractured": ["fractured.stat_3175722882"]}}}
 {"ref": "#% of Lightning Damage Converted to Chaos Damage", "better": 1, "matchers": [{"string": "#% 的闪电伤害转化为混沌伤害"}], "trade": {"ids": {"explicit": ["explicit.stat_4238266823"]}}}
@@ -1745,8 +1745,8 @@
 {"ref": "#% reduced Spell Damage taken from Blinded Enemies", "better": -1, "matchers": [{"string": "承受来自致盲敌人的法术伤害提高 #%"}, {"string": "承受来自致盲敌人的法术伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1165847826"]}, "inverted": true}}
 {"ref": "#% reduced Storm Call Duration", "better": -1, "matchers": [{"string": "【风暴呼唤】持续时间延长 #%"}, {"string": "【风暴呼唤】持续时间缩短 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1843506018"]}, "inverted": true}}
 {"ref": "#% slower start of Energy Shield Recharge during any Flask Effect", "better": -1, "matchers": [{"string": "能量护盾在任意药剂生效期间充能时间提前 #%"}, {"string": "能量护盾在任意药剂生效期间充能时间延后 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1912660783"]}, "inverted": true}}
-{"ref": "#% total increased maximum Energy Shield", "better": 1, "matchers": [{"string": "#% total increased maximum Energy Shield "}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_energy_shield"]}}}
-{"ref": "#% total increased Physical Damage", "better": 1, "matchers": [{"string": "#% total increased Physical Damage "}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_physical_damage"]}}}
+{"ref": "#% total increased maximum Energy Shield", "better": 1, "matchers": [{"string": "#% 最大能量护盾增加"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_energy_shield"]}}}
+{"ref": "#% total increased Physical Damage", "better": 1, "matchers": [{"string": "#% 物理伤害增加"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_increased_physical_damage"]}}}
 {"ref": "+# Accuracy Rating per 2 Intelligence", "better": 1, "matchers": [{"string": "每 2 点智慧 # 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_2196657026"]}}}
 {"ref": "+# Armour if you've Blocked Recently", "better": 1, "matchers": [{"string": "格挡后的短时间内 # 护甲"}], "trade": {"ids": {"explicit": ["explicit.stat_4091848539"]}}}
 {"ref": "+# Armour per Summoned Totem", "better": 1, "matchers": [{"string": "每个召唤的图腾 # 护甲"}], "trade": {"ids": {"explicit": ["explicit.stat_1429385513"]}}}
@@ -1784,11 +1784,11 @@
 {"ref": "+# Suffix Modifier allowed", "better": 1, "matchers": [{"string": "允许的后缀 #"}, {"string": "允许的后缀 #"}], "trade": {"ids": {"implicit": ["implicit.stat_718638445"]}}}
 {"ref": "+# to Accuracy against Bleeding Enemies", "better": 1, "matchers": [{"string": "对流血敌人的命中值 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2269396414"]}}}
 {"ref": "+# to Accuracy Rating", "better": 1, "matchers": [{"string": "# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_691932474", "explicit.stat_803737631"], "implicit": ["implicit.stat_691932474", "implicit.stat_803737631"], "fractured": ["fractured.stat_691932474", "fractured.stat_803737631"], "crafted": ["crafted.stat_691932474", "crafted.stat_803737631"]}}}
-{"ref": "+# to Accuracy Rating per 10 Dexterity on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "# to Accuracy Rating per 10 Dexterity on Unallocated Passives in Radius"}], "trade": {"ids": {"explicit": ["explicit.stat_100820057"]}}}
+{"ref": "+# to Accuracy Rating per 10 Dexterity on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "范围内每有 10 点未配置的敏捷，便 +# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_100820057"]}}}
 {"ref": "+# to Accuracy Rating per 10 Intelligence on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "命中值按照范围内未配置的天赋上每 10 点智慧 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3996149330"]}}}
 {"ref": "+# to Accuracy Rating per Frenzy Charge", "better": 1, "matchers": [{"string": "命中值按照每个狂怒球 #"}], "trade": {"ids": {"implicit": ["implicit.stat_3126680545"]}}}
 {"ref": "+# to Accuracy Rating while at Maximum Frenzy Charges", "better": 1, "matchers": [{"string": "狂怒球达到上限时，# 命中值"}], "trade": {"ids": {"explicit": ["explicit.stat_3213407110"]}}}
-{"ref": "+# to Agility Level for Heists", "better": 1, "matchers": [{"string": "# to Agility Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_2943725337"], "fractured": ["fractured.stat_2943725337"]}}}
+{"ref": "+# to Agility Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的灵敏等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2943725337"], "fractured": ["fractured.stat_2943725337"]}}}
 {"ref": "+# to all Attributes", "better": 1, "matchers": [{"string": "# 全属性"}], "trade": {"ids": {"explicit": ["explicit.stat_1379411836"], "implicit": ["implicit.stat_1379411836"], "fractured": ["fractured.stat_1379411836"], "crafted": ["crafted.stat_1379411836"]}}}
 {"ref": "+# to Armour", "better": 1, "matchers": [{"string": "# 护甲"}], "trade": {"ids": {"explicit": ["explicit.stat_3484657501", "explicit.stat_809229260"], "implicit": ["implicit.stat_3484657501"], "fractured": ["fractured.stat_3484657501", "fractured.stat_809229260"], "scourge": ["scourge.stat_3484657501"], "crafted": ["crafted.stat_3484657501", "crafted.stat_809229260"]}}}
 {"ref": "+# to Armour and Evasion Rating", "better": 1, "matchers": [{"string": "# 护甲和闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_2316658489"], "implicit": ["implicit.stat_2316658489"], "fractured": ["fractured.stat_2316658489"], "crafted": ["crafted.stat_2316658489"]}}}
@@ -1800,22 +1800,22 @@
 {"ref": "+# to Armour while affected by Determination", "better": 1, "matchers": [{"string": "受到【坚定】影响时，# 点护甲"}], "trade": {"ids": {"explicit": ["explicit.stat_3742808908"]}}}
 {"ref": "+# to Armour while Fortified", "better": 1, "matchers": [{"string": "护甲值在护体状态下 #"}], "trade": {"ids": {"explicit": ["explicit.stat_153004860"], "enchant": ["enchant.stat_153004860"]}}}
 {"ref": "+# to Armour while Frozen", "better": 1, "matchers": [{"string": "冰冻时 # 点护甲"}], "trade": {"ids": {"explicit": ["explicit.stat_504366827"]}}}
-{"ref": "+# to Brute Force Level for Heists", "better": 1, "matchers": [{"string": "# to Brute Force Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_1169552613"]}}}
+{"ref": "+# to Brute Force Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的凶蛮之力等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_1169552613"]}}}
 {"ref": "+# to Character Level", "better": 1, "matchers": [{"string": "角色等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1172162241"], "fractured": ["fractured.stat_1172162241"]}}}
-{"ref": "+# to Counter-Thaumaturgy Level for Heists", "better": 1, "matchers": [{"string": "# to Counter-Thaumaturgy Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_4207149030"], "fractured": ["fractured.stat_4207149030"]}}}
-{"ref": "+# to Deception Level for Heists", "better": 1, "matchers": [{"string": "# to Deception Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_828170926"], "fractured": ["fractured.stat_828170926"]}}}
-{"ref": "+# to Demolition Level for Heists", "better": 1, "matchers": [{"string": "# to Demolition Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_2359025380"]}}}
+{"ref": "+# to Counter-Thaumaturgy Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的逆向奇术等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_4207149030"], "fractured": ["fractured.stat_4207149030"]}}}
+{"ref": "+# to Deception Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的欺诈等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_828170926"], "fractured": ["fractured.stat_828170926"]}}}
+{"ref": "+# to Demolition Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的爆破等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2359025380"]}}}
 {"ref": "+# to Dexterity", "better": 1, "matchers": [{"string": "# 敏捷"}], "trade": {"ids": {"explicit": ["explicit.stat_3261801346"], "implicit": ["implicit.stat_3261801346"], "fractured": ["fractured.stat_3261801346"], "scourge": ["scourge.stat_3261801346"], "crafted": ["crafted.stat_3261801346"]}}}
 {"ref": "+# to Dexterity and Intelligence", "better": 1, "matchers": [{"string": "# 敏捷与智慧"}], "trade": {"ids": {"explicit": ["explicit.stat_2300185227"], "implicit": ["implicit.stat_2300185227"], "fractured": ["fractured.stat_2300185227"], "crafted": ["crafted.stat_2300185227"]}}}
-{"ref": "+# to Engineering Level for Heists", "better": 1, "matchers": [{"string": "# to Engineering Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_2978835006"], "fractured": ["fractured.stat_2978835006"]}}}
+{"ref": "+# to Engineering Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的工程学等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2978835006"], "fractured": ["fractured.stat_2978835006"]}}}
 {"ref": "+# to Evasion Rating", "better": 1, "matchers": [{"string": "# 点闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_2144192055", "explicit.stat_53045048"], "implicit": ["implicit.stat_53045048"], "fractured": ["fractured.stat_2144192055", "fractured.stat_53045048"], "scourge": ["scourge.stat_53045048"], "crafted": ["crafted.stat_2144192055", "crafted.stat_53045048"]}}}
 {"ref": "+# to Evasion Rating and Energy Shield", "better": 1, "matchers": [{"string": "# 点闪避值和能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_1549868759"]}}}
 {"ref": "+# to Evasion Rating if Hit an Enemy Recently", "better": 1, "matchers": [{"string": "若你近期内击中敌人，则 # 闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_2935548106"]}}}
 {"ref": "+# to Evasion Rating per 5 Maximum Energy Shield on Equipped Shield", "better": 1, "matchers": [{"string": "闪避值按照已装备的盾牌上每 5 点能量护盾上限 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1115914670"]}}}
-{"ref": "+# to Evasion Rating while in Sand Stance", "better": 1, "matchers": [{"string": "# to Evasion Rating while in Sand Stance"}], "trade": {"ids": {"explicit": ["explicit.stat_1922061483"]}}}
+{"ref": "+# to Evasion Rating while in Sand Stance", "better": 1, "matchers": [{"string": "沙姿态下 +# 闪避值"}], "trade": {"ids": {"explicit": ["explicit.stat_1922061483"]}}}
 {"ref": "+# to Evasion Rating while on Full Life", "better": 1, "matchers": [{"string": "满血时闪避值提高 #"}], "trade": {"ids": {"explicit": ["explicit.stat_4082111882"]}}}
 {"ref": "+# to Evasion Rating while on Low Life", "better": 1, "matchers": [{"string": "低血时闪避值提高 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3470876581"]}}}
-{"ref": "+# to Evasion Rating while you have Phasing", "better": 1, "matchers": [{"string": "# to Evasion Rating while you have Phasing"}], "trade": {"ids": {"enchant": ["enchant.stat_3169671355"]}}}
+{"ref": "+# to Evasion Rating while you have Phasing", "better": 1, "matchers": [{"string": "你在【迷踪】状态下 +# 闪避值"}], "trade": {"ids": {"enchant": ["enchant.stat_3169671355"]}}}
 {"ref": "+# to Global Evasion Rating while moving", "better": 1, "matchers": [{"string": "移动时 # 点最大闪避值"}], "trade": {"ids": {"implicit": ["implicit.stat_3825877290"]}}}
 {"ref": "+# to Intelligence", "better": 1, "matchers": [{"string": "# 智慧"}], "trade": {"ids": {"explicit": ["explicit.stat_328541901"], "implicit": ["implicit.stat_328541901"], "fractured": ["fractured.stat_328541901"], "scourge": ["scourge.stat_328541901"], "crafted": ["crafted.stat_328541901"]}}}
 {"ref": "+# to Level of all Chaos Skill Gems", "better": 1, "matchers": [{"string": "所有混沌技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_67169579"], "fractured": ["fractured.stat_67169579"]}}}
@@ -1824,7 +1824,7 @@
 {"ref": "+# to Level of all Cold Spell Skill Gems", "better": 1, "matchers": [{"string": "所有冰霜法术技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2254480358"], "fractured": ["fractured.stat_2254480358"], "scourge": ["scourge.stat_2254480358"]}}}
 {"ref": "+# to Level of all Fire Skill Gems", "better": 1, "matchers": [{"string": "所有火焰技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_599749213"], "fractured": ["fractured.stat_599749213"]}}}
 {"ref": "+# to Level of all Fire Spell Skill Gems", "better": 1, "matchers": [{"string": "所有火焰法术技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_591105508"], "fractured": ["fractured.stat_591105508"], "scourge": ["scourge.stat_591105508"]}}}
-{"ref": "+# to Level of all Jobs for Heists", "better": 1, "matchers": [{"string": "# to Level of all Jobs for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_2692578539"], "fractured": ["fractured.stat_2692578539"]}}}
+{"ref": "+# to Level of all Jobs for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的所有任务等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2692578539"], "fractured": ["fractured.stat_2692578539"]}}}
 {"ref": "+# to Level of all Lightning Skill Gems", "better": 1, "matchers": [{"string": "所有闪电技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1147690586"], "fractured": ["fractured.stat_1147690586"]}}}
 {"ref": "+# to Level of all Lightning Spell Skill Gems", "better": 1, "matchers": [{"string": "所有闪电法术技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1545858329"], "fractured": ["fractured.stat_1545858329"], "scourge": ["scourge.stat_1545858329"]}}}
 {"ref": "+# to Level of all Minion Skill Gems", "better": 1, "matchers": [{"string": "所有召唤生物技能石等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2162097452"], "fractured": ["fractured.stat_2162097452"]}}}
@@ -1863,7 +1863,7 @@
 {"ref": "+# to Level of Socketed Trap or Mine Gems", "better": 1, "matchers": [{"string": "此物品上装备的【陷阱技能石】或【地雷技能石】等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_150668988"], "implicit": ["implicit.stat_150668988"], "fractured": ["fractured.stat_150668988"], "scourge": ["scourge.stat_150668988"]}}}
 {"ref": "+# to Level of Socketed Vaal Gems", "better": 1, "matchers": [{"string": "此物品上装备的【瓦尔技能石】等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1170386874"], "implicit": ["implicit.stat_1170386874"]}}}
 {"ref": "+# to Level of Socketed Warcry Gems", "better": 1, "matchers": [{"string": "此物品上装备的【战吼技能石】等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1672793731"], "implicit": ["implicit.stat_1672793731"], "scourge": ["scourge.stat_1672793731"]}}}
-{"ref": "+# to Lockpicking Level for Heists", "better": 1, "matchers": [{"string": "# to Lockpicking Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_3031310169"]}}}
+{"ref": "+# to Lockpicking Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的解密术等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_3031310169"]}}}
 {"ref": "+# to Maximum Blood Charges", "better": 1, "matchers": [{"string": "赤炼球上限 #"}], "trade": {"ids": {"enchant": ["enchant.stat_4218649240"]}}}
 {"ref": "+# to Maximum Charges", "better": 1, "matchers": [{"string": "最大充能 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1437957544"], "fractured": ["fractured.stat_1437957544"], "enchant": ["enchant.stat_1437957544"]}}}
 {"ref": "+# to maximum Divine Charges", "better": 1, "matchers": [{"string": "# 最大神圣球"}], "trade": {"ids": {"explicit": ["explicit.stat_3997368968"]}}}
@@ -1872,7 +1872,7 @@
 {"ref": "+# to maximum Energy Shield", "better": 1, "matchers": [{"string": "# 最大能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_3489782002", "explicit.stat_4052037485"], "implicit": ["implicit.stat_3489782002", "implicit.stat_4052037485"], "fractured": ["fractured.stat_3489782002", "fractured.stat_4052037485"], "scourge": ["scourge.stat_4052037485"], "crafted": ["crafted.stat_3489782002", "crafted.stat_4052037485"]}}}
 {"ref": "+# to maximum Energy Shield per 100 Reserved Life", "better": 1, "matchers": [{"string": "每 100 点生命保留 # 最大能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_4270089231"]}}}
 {"ref": "+# to Maximum Energy Shield per 5 Armour on Equipped Shield", "better": 1, "matchers": [{"string": "能量护盾上限按照已装备的盾牌上每 5 点护甲值 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3636098185"]}}}
-{"ref": "+# to Maximum Energy Shield per Blue Socket", "better": 1, "matchers": [{"string": "# to Maximum Energy Shield per Blue Socket"}], "trade": {"ids": {"explicit": ["explicit.stat_2906522048"]}}}
+{"ref": "+# to Maximum Energy Shield per Blue Socket", "better": 1, "matchers": [{"string": "每个蓝色插槽 +# 最大能量护盾"}], "trade": {"ids": {"explicit": ["explicit.stat_2906522048"]}}}
 {"ref": "+# to maximum Fortification", "better": 1, "matchers": [{"string": "护身上限 #"}], "trade": {"ids": {"explicit": ["explicit.stat_335507772"], "implicit": ["implicit.stat_335507772"], "fractured": ["fractured.stat_335507772"]}}}
 {"ref": "+# to maximum Fortification while affected by Glorious Madness", "better": 1, "matchers": [{"string": "护身上限在受疯狂荣光影响时 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2611224062"]}}}
 {"ref": "+# to maximum Fortification while Focused", "better": 1, "matchers": [{"string": "护身上限在专注时 #"}], "trade": {"ids": {"explicit": ["explicit.stat_922014346"], "fractured": ["fractured.stat_922014346"], "crafted": ["crafted.stat_922014346"]}}}
@@ -1883,10 +1883,10 @@
 {"ref": "+# to Maximum Life per 10 Intelligence", "better": 1, "matchers": [{"string": "每 10 点智慧 # 最大生命"}], "trade": {"ids": {"explicit": ["explicit.stat_1114351662"]}}}
 {"ref": "+# to Maximum Life per 2 Intelligence", "better": 1, "matchers": [{"string": "每 2 点智慧 # 最大生命"}], "trade": {"ids": {"explicit": ["explicit.stat_4284915962"]}}}
 {"ref": "+# to Maximum Life per Elder Item Equipped", "better": 1, "matchers": [{"string": "每装备一个【裂界者物品】，最大生命提高 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3849523464"]}}}
-{"ref": "+# to Maximum Life per Red Socket", "better": 1, "matchers": [{"string": "# to Maximum Life per Red Socket"}], "trade": {"ids": {"explicit": ["explicit.stat_4210076836"]}}}
+{"ref": "+# to Maximum Life per Red Socket", "better": 1, "matchers": [{"string": "每个红色插槽 +# 最大生命"}], "trade": {"ids": {"explicit": ["explicit.stat_4210076836"]}}}
 {"ref": "+# to maximum Mana", "better": 1, "matchers": [{"string": "# 最大魔力"}], "trade": {"ids": {"explicit": ["explicit.stat_1050105434"], "implicit": ["implicit.stat_1050105434"], "fractured": ["fractured.stat_1050105434"], "scourge": ["scourge.stat_1050105434"], "crafted": ["crafted.stat_1050105434"]}}}
 {"ref": "+# to Maximum Mana per 10 Dexterity on Unallocated Passives in Radius", "better": 1, "matchers": [{"string": "范围内若未配置敏捷，则每 10 点 # 最大魔力"}], "trade": {"ids": {"explicit": ["explicit.stat_1276712564"]}}}
-{"ref": "+# to Maximum Mana per Green Socket", "better": 1, "matchers": [{"string": "# to Maximum Mana per Green Socket"}], "trade": {"ids": {"explicit": ["explicit.stat_896299992"]}}}
+{"ref": "+# to Maximum Mana per Green Socket", "better": 1, "matchers": [{"string": "每个绿色插槽 +# 最大魔力"}], "trade": {"ids": {"explicit": ["explicit.stat_896299992"]}}}
 {"ref": "+# to maximum number of Bladestorms", "better": 1, "matchers": [{"string": "# 剑刃风暴数量上限"}], "trade": {"ids": {"enchant": ["enchant.stat_1769497634"]}}}
 {"ref": "+# to Maximum number of Crab Barriers", "better": 1, "matchers": [{"string": "# 【深海屏障】数量上限"}], "trade": {"ids": {"explicit": ["explicit.stat_2894704558"]}}}
 {"ref": "+# to maximum number of Flame Walls", "better": 1, "matchers": [{"string": "烈焰之墙数量上限 #"}], "trade": {"ids": {"enchant": ["enchant.stat_882630096"]}}}
@@ -1920,7 +1920,7 @@
 {"ref": "+# to Minimum Power Charges per Grand Spectrum", "better": 1, "matchers": [{"string": "暴击球下限按照每个聚光之石 #"}], "trade": {"ids": {"explicit": ["explicit.stat_308799121"]}}}
 {"ref": "+# to Monster Level of Area", "better": 1, "matchers": [{"string": "该区域的怪物等级 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2629689891"]}}}
 {"ref": "+# to number of Summoned Arbalists", "better": 1, "matchers": [{"string": "召唤劲弩的数量 #"}], "trade": {"ids": {"explicit": ["explicit.stat_1886245216"]}}}
-{"ref": "+# to Perception Level for Heists", "better": 1, "matchers": [{"string": "# to Perception Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_2932532516"], "fractured": ["fractured.stat_2932532516"]}}}
+{"ref": "+# to Perception Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的洞察等级 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_2932532516"], "fractured": ["fractured.stat_2932532516"]}}}
 {"ref": "+# to Spectre maximum Life", "better": 1, "matchers": [{"string": "# 灵体最大生命"}], "trade": {"ids": {"explicit": ["explicit.stat_3111456397"]}}}
 {"ref": "+# to Strength", "better": 1, "matchers": [{"string": "# 力量"}], "trade": {"ids": {"explicit": ["explicit.stat_4080418644"], "implicit": ["implicit.stat_4080418644"], "fractured": ["fractured.stat_4080418644"], "scourge": ["scourge.stat_4080418644"], "crafted": ["crafted.stat_4080418644"]}}}
 {"ref": "+# to Strength and Dexterity", "better": 1, "matchers": [{"string": "# 力量和敏捷"}], "trade": {"ids": {"explicit": ["explicit.stat_538848803"], "implicit": ["implicit.stat_538848803"], "fractured": ["fractured.stat_538848803"], "crafted": ["crafted.stat_538848803"]}}}
@@ -1928,15 +1928,15 @@
 {"ref": "+# to Total Mana Cost of Skills", "better": 1, "matchers": [{"string": "技能的总魔力消耗 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3736589033"], "implicit": ["implicit.stat_3736589033"], "fractured": ["fractured.stat_3736589033"], "crafted": ["crafted.stat_3736589033"]}}}
 {"ref": "+# to Total Mana Cost of Skills for each Corrupted Item Equipped", "better": 1, "matchers": [{"string": "每装备一个【被腐化的物品】，技能的总魔力消耗 #"}], "trade": {"ids": {"explicit": ["explicit.stat_3750572810"]}}}
 {"ref": "+# to Total Mana Cost of Skills while affected by Clarity", "better": 1, "matchers": [{"string": "受到【清晰】影响时，技能的总魔力消耗 #"}], "trade": {"ids": {"explicit": ["explicit.stat_2445618239"]}}}
-{"ref": "+# to Trap Disarmament Level for Heists", "better": 1, "matchers": [{"string": "# to Trap Disarmament Level for Heists"}], "trade": {"ids": {"explicit": ["explicit.stat_555061211"], "fractured": ["fractured.stat_555061211"]}}}
+{"ref": "+# to Trap Disarmament Level for Heists", "better": 1, "matchers": [{"string": "夺宝奇兵的解除陷阱 +#"}], "trade": {"ids": {"explicit": ["explicit.stat_555061211"], "fractured": ["fractured.stat_555061211"]}}}
 {"ref": "+# to Ward", "better": 1, "matchers": [{"string": "结界 #"}], "trade": {"ids": {"explicit": ["explicit.stat_774059442"], "fractured": ["fractured.stat_774059442"]}}}
 {"ref": "+# to Weapon Range", "better": 1, "matchers": [{"string": "# 近战打击范围"}, {"string": "# 武器范围"}], "trade": {"ids": {"explicit": ["explicit.stat_2264295449", "explicit.stat_350598685"], "implicit": ["implicit.stat_2264295449", "implicit.stat_350598685"], "fractured": ["fractured.stat_2264295449", "fractured.stat_350598685"], "scourge": ["scourge.stat_350598685"], "crafted": ["crafted.stat_2264295449", "crafted.stat_350598685"]}}}
 {"ref": "+# total maximum Energy Shield", "better": 1, "matchers": [{"string": "+# 最大能量护盾"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_energy_shield"]}}}
 {"ref": "+# total maximum Life", "better": 1, "matchers": [{"string": "+# 最大生命值"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_life"]}}}
 {"ref": "+# total maximum Mana", "better": 1, "matchers": [{"string": "+# 最大魔力值"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_mana"]}}}
 {"ref": "+# total to all Attributes", "better": 1, "matchers": [{"string": "+# 全属性"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_all_attributes"]}}}
-{"ref": "+# total to Dexterity", "better": 1, "matchers": [{"string": "+#%敏捷"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_dexterity"]}}}
-{"ref": "+# total to Intelligence", "better": 1, "matchers": [{"string": "+#%智慧"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_intelligence"]}}}
+{"ref": "+# total to Dexterity", "better": 1, "matchers": [{"string": "+# 敏捷"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_dexterity"]}}}
+{"ref": "+# total to Intelligence", "better": 1, "matchers": [{"string": "+# 智慧"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_intelligence"]}}}
 {"ref": "+# total to Level of Socketed Aura Gems", "better": 1, "matchers": [{"string": "+#光环技能宝石等级"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_additional_aura_gem_levels"]}}}
 {"ref": "+# total to Level of Socketed Bow Gems", "better": 1, "matchers": [{"string": "+#弓技能宝石等级"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_additional_bow_gem_levels"]}}}
 {"ref": "+# total to Level of Socketed Chaos Gems", "better": 1, "matchers": [{"string": "+#混沌技能宝石等级"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_additional_chaos_gem_levels"]}}}
@@ -1959,7 +1959,7 @@
 {"ref": "+# total to Level of Socketed Support Gems", "better": 1, "matchers": [{"string": "+#辅助技能宝石等级"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_additional_support_gem_levels"]}}}
 {"ref": "+# total to Level of Socketed Vaal Gems", "better": 1, "matchers": [{"string": "+#瓦尔技能宝石等级"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_additional_vaal_gem_levels"]}}}
 {"ref": "+# total to Level of Socketed Warcry Gems", "better": 1, "matchers": [{"string": "+#战吼技能宝石等级"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_additional_warcry_gem_levels"]}}}
-{"ref": "+# total to Strength", "better": 1, "matchers": [{"string": "+#%力量"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_strength"]}}}
+{"ref": "+# total to Strength", "better": 1, "matchers": [{"string": "+# 力量"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_total_strength"]}}}
 {"ref": "+# Weapon Range per 10% Quality", "better": 1, "matchers": [{"string": "每 10% 品质 # 武器范围"}], "trade": {"ids": {"enchant": ["enchant.stat_2967267655"]}}}
 {"ref": "+#% chance to Avoid Elemental Damage from Hits while Phasing", "better": 1, "matchers": [{"string": "【迷踪】状态下，被击中时 #% 避免元素伤害几率"}], "trade": {"ids": {"explicit": ["explicit.stat_143510471"]}}}
 {"ref": "+#% chance to Avoid Physical Damage from Hits while Phasing", "better": 1, "matchers": [{"string": "迷踪状态下，被击中时避免物理伤害的几率 #%"}], "trade": {"ids": {"explicit": ["explicit.stat_2490633856"]}}}
@@ -2026,7 +2026,7 @@
 {"ref": "+#% maximum Player Resistances per 25% Alert Level", "better": 1, "fromHeistAreaMods": true, "matchers": [{"string": "每 25% 警报等级便使玩家的最大抗性 #%"}], "trade": {"ids": {"explicit": ["explicit.stat_652638686"], "fractured": ["fractured.stat_652638686"]}}}
 {"ref": "+#% Monster Chaos Resistance", "better": 1, "fromAreaMods": true, "fromHeistAreaMods": true, "matchers": [{"string": "+#% 怪物的混沌抗性"}], "trade": {"ids": {"explicit": ["explicit.stat_365540634"], "fractured": ["fractured.stat_365540634"]}}}
 {"ref": "+#% Monster Cold Resistance", "better": 1, "fromAreaMods": true, "matchers": [{"string": "+#% 怪物冰霜抗性"}], "trade": {"ids": {"explicit": ["explicit.stat_1430380429"]}}}
-{"ref": "+#% Monster Elemental Resistance", "better": 1, "fromAreaMods": true, "fromHeistAreaMods": true, "matchers": [{"string": "+#% 怪物的元素抗性"}], "trade": {"ids": {"explicit": ["explicit.stat_1054098949"], "fractured": ["fractured.stat_1054098949"]}}}
+{"ref": "+#% Monster Elemental Resistances", "better": 1, "fromAreaMods": true, "fromHeistAreaMods": true, "matchers": [{"string": "+#% 怪物的元素抗性"}], "trade": {"ids": {"explicit": ["explicit.stat_1054098949"], "fractured": ["fractured.stat_1054098949"]}}}
 {"ref": "+#% Monster Fire Resistance", "better": 1, "fromAreaMods": true, "matchers": [{"string": "+#% 怪物火焰抗性"}], "trade": {"ids": {"explicit": ["explicit.stat_2319127046"]}}}
 {"ref": "+#% Monster Lightning Resistance", "better": 1, "fromAreaMods": true, "matchers": [{"string": "+#% 怪物闪电抗性"}], "trade": {"ids": {"explicit": ["explicit.stat_162742068"]}}}
 {"ref": "+#% Monster Mana Leech Resistance", "better": 1, "matchers": [{"string": "怪物 #% 魔力偷取抗性"}, {"string": "无法偷取怪物魔力", "value": 100}], "trade": {"ids": {"explicit": ["explicit.stat_918170065"], "fractured": ["fractured.stat_918170065"]}}}
@@ -2092,7 +2092,7 @@
 {"ref": "+#% to Critical Strike Multiplier if Dexterity is higher than Intelligence", "better": 1, "matchers": [{"string": "如果敏捷高于智慧，则  #% 暴击伤害加成"}], "trade": {"ids": {"explicit": ["explicit.stat_2328588114"]}}}
 {"ref": "+#% to Critical Strike Multiplier if you have Blocked Recently", "better": 1, "matchers": [{"string": "若你近期内有过格挡，则获得 #% 暴击伤害加成"}], "trade": {"ids": {"explicit": ["explicit.stat_3527458221"]}}}
 {"ref": "+#% to Critical Strike Multiplier if you haven't dealt a Critical Strike Recently", "better": 1, "matchers": [{"string": "若你近期内没有打出过暴击，则获得 #% 暴击伤害加成"}], "trade": {"ids": {"explicit": ["explicit.stat_1478247313"]}}}
-{"ref": "+#% to Critical Strike Multiplier if you've cast Enfeeble in the past 10 seconds", "better": 1, "matchers": [{"string": "#% to Critical Strike Multiplier if you've cast Enfeeble in the past 10 seconds"}], "trade": {"ids": {"explicit": ["explicit.stat_2379274646"]}}}
+{"ref": "+#% to Critical Strike Multiplier if you've cast Enfeeble in the past 10 seconds", "better": 1, "matchers": [{"string": "如果你在过去10秒内施放过衰弱，则 +#% 攻击伤害暴击加成"}], "trade": {"ids": {"explicit": ["explicit.stat_2379274646"]}}}
 {"ref": "+#% to Critical Strike Multiplier if you've dealt a Non-Critical Strike Recently", "better": 1, "matchers": [{"string": "若你近期内造成非暴击伤害，则 #% 暴击伤害加成"}], "trade": {"ids": {"explicit": ["explicit.stat_1626712767"]}}}
 {"ref": "+#% to Critical Strike Multiplier if you've gained a Power Charge Recently", "better": 1, "matchers": [{"string": "若你近期内获得过暴击球，则暴击伤害加成 #%"}], "trade": {"ids": {"explicit": ["explicit.stat_2865731079"]}}}
 {"ref": "+#% to Critical Strike Multiplier if you've Killed Recently", "better": 1, "matchers": [{"string": "若你近期内有击败敌人，则 #% 暴击伤害加成"}], "trade": {"ids": {"explicit": ["explicit.stat_2937483991"], "fractured": ["fractured.stat_2937483991"]}}}
