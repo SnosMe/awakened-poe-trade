@@ -12,7 +12,6 @@
         :id="`widget-${widget.wmId}`"
         :is="`widget-${widget.wmType}`" />
     </template>
-    <widget-debug id="widget-debug" />
     <loading-animation />
     <div v-if="showEditingNotification"
       class="widget-default-style p-6 bg-blue-600 mx-auto text-center text-base mt-6"
@@ -36,7 +35,6 @@ import WidgetTimer from './WidgetTimer.vue'
 import WidgetStashSearch from './WidgetStashSearch.vue'
 import WidgetMenu from './WidgetMenu.vue'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow.vue'
-import WidgetDebug from './WidgetDebug.vue'
 import WidgetItemCheck from '@/web/item-check/WidgetItemCheck.vue'
 import WidgetImageStrip from './WidgetImageStrip.vue'
 import WidgetDelveGrid from './WidgetDelveGrid.vue'
@@ -58,7 +56,6 @@ export default defineComponent({
     WidgetStashSearch,
     WidgetMenu,
     WidgetPriceCheck: PriceCheckWindow,
-    WidgetDebug,
     WidgetItemCheck,
     WidgetImageStrip,
     WidgetDelveGrid,
