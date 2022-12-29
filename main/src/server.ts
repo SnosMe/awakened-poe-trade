@@ -2,7 +2,9 @@ import fastify from 'fastify'
 import fastifyWs from '@fastify/websocket'
 import fastifyCors from '@fastify/cors'
 import fastifyProxy from '@fastify/http-proxy'
+import fastifyStatic from '@fastify/static'
 import type { WebSocket } from 'ws'
+import type { AddressInfo } from 'net'
 import { EventEmitter } from 'events'
 import { IpcEvent, IpcEventPayload } from '../../ipc/types'
 import { ConfigStore } from './host-files/ConfigStore'
@@ -38,6 +40,14 @@ addFileUploadRoutes(server)
     prefix: `/proxy/${host}`
   })
 })
+
+if (!process.env.VITE_DEV_SERVER_URL) {
+  server.register(fastifyStatic, {
+    root: __dirname,
+    prefix: '/',
+    decorateReply: false
+  })
+}
 
 const evBus = new EventEmitter()
 
@@ -90,9 +100,9 @@ server.register(async (instance) => {
   })
 })
 
-export function startServer () {
-  server.listen({
-    port: (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0 + 8584
+export async function startServer (): Promise<number> {
+  await server.listen({
+    port: (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0
   })
-  console.log('Starting server...')
+  return (server.server.address() as AddressInfo).port
 }

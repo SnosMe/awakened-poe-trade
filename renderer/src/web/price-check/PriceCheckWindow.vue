@@ -6,7 +6,7 @@
     'flex-row-reverse': clickPosition === 'inventory',
   }">
     <div v-if="!isBrowserShown" class="layout-column shrink-0"
-      :style="{ width: `${poeUiWidth}px` }">
+      style="width: var(--game-panel);">
     </div>
     <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
@@ -145,10 +145,7 @@ export default defineComponent({
       }
       closeBrowser()
       wm.show(props.config.wmId)
-      checkPosition.value = {
-        x: e.position.x - window.screenX,
-        y: e.position.y - window.screenY
-      }
+      checkPosition.value = e.position
       advancedCheck.value = e.focusOverlay
       try {
         const parsed = parseClipboard(e.clipboard)
@@ -191,7 +188,7 @@ export default defineComponent({
       if (isBrowserShown.value) {
         return 'inventory'
       } else {
-        return checkPosition.value.x > (window.innerWidth / 2)
+        return checkPosition.value.x > (window.screenX + window.innerWidth / 2)
           ? 'inventory'
           : 'stash'
           // or {chat, vendor, center of screen}
@@ -244,7 +241,6 @@ export default defineComponent({
       clickPosition,
       isBrowserShown,
       iframeEl,
-      poeUiWidth: wm.poePanelWidth,
       closePriceCheck,
       title,
       stableOrbCost,

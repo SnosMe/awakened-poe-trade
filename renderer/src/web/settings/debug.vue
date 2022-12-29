@@ -15,13 +15,13 @@
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Log') }}</div>
-      <pre class="mb-4 bg-gray-900 rounded">{{ logs }}</pre>
+      <pre class="mb-4 bg-gray-900 rounded p-2">{{ logs }}</pre>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, shallowRef } from 'vue'
+import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, configModelValue } from './utils'
 import { Host } from '@/web/background/IPC'
@@ -32,15 +32,9 @@ export default defineComponent({
   setup (props) {
     const { t } = useI18n()
 
-    const logs = shallowRef('')
-
-    Host.onEvent('MAIN->CLIENT::log-entry', (entry) => {
-      logs.value += entry.message + '\n'
-    })
-
     return {
       t,
-      logs,
+      logs: Host.logs,
       logLevel: configModelValue(() => props.config, 'logLevel'),
       windowTitle: configModelValue(() => props.config, 'windowTitle')
     }

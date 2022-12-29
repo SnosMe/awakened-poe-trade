@@ -43,8 +43,9 @@ app.on('ready', async () => {
         tray.overlayKey = cfg.overlayKey
       })
       uIOhook.start()
-      startServer()
-      overlay.loadAppPage()
+      const port = await startServer()
+      overlay.loadAppPage(port)
+      tray.serverPort = port
     },
     // fixes(linux): window is black instead of transparent
     process.platform === 'linux' ? 1000 : 0

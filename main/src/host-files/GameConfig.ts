@@ -40,7 +40,7 @@ export class GameConfig {
       const parsed = ini.parse(contents)
 
       this._showModsKey = this.parseConfigHotkey(
-        parsed.ACTION_KEYS?.show_advanced_item_descriptions) ?? 'Alt'
+        parsed['ACTION_KEYS']?.['show_advanced_item_descriptions']) ?? 'Alt'
 
       this.filePath = filePath
     } catch {

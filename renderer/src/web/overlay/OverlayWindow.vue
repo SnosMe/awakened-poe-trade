@@ -1,5 +1,6 @@
 <template>
-  <div id="overlay-window" class="overflow-hidden relative w-full h-full">
+  <div id="overlay-window" class="overflow-hidden relative w-full h-full"
+    :style="{ '--game-panel': poePanelWidth.toFixed(4) + 'px' }">
     <!-- <div style="border: 4px solid red; top: 0; left: 0; height: 100%; width: 100%; position: absolute;"></div> -->
     <div style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
       :style="{ background: overlayBackground }"
@@ -29,7 +30,7 @@
 <script lang="ts">
 import { defineComponent, provide, shallowRef, watch, readonly, computed, onMounted, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess, Host } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { Widget, WidgetManager } from './interfaces'
 import WidgetTimer from './WidgetTimer.vue'
 import WidgetStashSearch from './WidgetStashSearch.vue'
@@ -94,20 +95,20 @@ export default defineComponent({
       nextTick(() => { saveConfig() })
     })
     window.addEventListener('focus', () => {
-      MainProcess.sendEvent({
+      Host.sendEvent({
         name: 'CLIENT->MAIN::used-recently',
-        payload: { isOverlay: MainProcess.isElectron }
+        payload: { isOverlay: Host.isElectron }
       })
     })
 
-    MainProcess.onEvent('MAIN->CLIENT::config-changed', () => {
+    Host.onEvent('MAIN->CLIENT::config-changed', () => {
       const widget = topmostOrExclusiveWidget.value
-      if (widget.wmZorder === 'exclusive') {
+      if (widget.wmType === 'settings') {
         hide(widget.wmId)
       }
     })
 
-    MainProcess.onEvent('MAIN->OVERLAY::focus-change', (state) => {
+    Host.onEvent('MAIN->OVERLAY::focus-change', (state) => {
       active.value = state.overlay
       gameFocused.value = state.game
 
@@ -125,11 +126,11 @@ export default defineComponent({
         }
       }
     })
-    MainProcess.onEvent('MAIN->OVERLAY::visibility', (e) => {
+    Host.onEvent('MAIN->OVERLAY::visibility', (e) => {
       hideUI.value = !e.isVisible
     })
 
-    MainProcess.onEvent('MAIN->CLIENT::game-log', (e) => {
+    Host.onEvent('MAIN->CLIENT::game-log', (e) => {
       for (const line of e.lines) {
         handleLine(line)
       }
@@ -242,9 +243,10 @@ export default defineComponent({
     })
 
     const poePanelWidth = computed(() => {
+      if (!Host.isElectron) return 0
       // sidebar is 986px at Wx1600H
       const ratio = 986 / 1600
-      return Math.round(size.value.height * ratio)
+      return size.value.height * ratio
     })
 
     provide<WidgetManager>('wm', {
@@ -298,6 +300,7 @@ export default defineComponent({
 
     return {
       t,
+      poePanelWidth,
       overlayBackground,
       widgets: computed(() => AppConfig().widgets),
       handleBackgroundClick,

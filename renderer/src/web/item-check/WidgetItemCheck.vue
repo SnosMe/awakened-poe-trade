@@ -44,10 +44,7 @@ export default defineComponent({
     MainProcess.onEvent('MAIN->CLIENT::item-text', (e) => {
       if (e.target !== 'item-check') return
 
-      checkPosition.value = {
-        x: e.position.x - window.screenX,
-        y: e.position.y - window.screenY
-      }
+      checkPosition.value = e.position
       item.value = parseClipboard(e.clipboard)
       if (item.value) {
         wm.show(props.config.wmId)
@@ -60,7 +57,7 @@ export default defineComponent({
       const width = wm.size.value.width
       const poePanelWidth = wm.poePanelWidth.value
 
-      const side = checkPosition.value.x > (width / 2)
+      const side = checkPosition.value.x > (window.screenX + width / 2)
         ? 'inventory'
         : 'stash'
 

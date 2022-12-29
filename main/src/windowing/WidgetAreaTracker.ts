@@ -18,7 +18,13 @@ export class WidgetAreaTracker {
       if (process.platform === 'win32') {
         this.closeThreshold = opts.closeThreshold * opts.dpr
         this.from = screen.dipToScreenPoint(opts.from)
-        this.area = screen.dipToScreenRect(null, opts.area)
+        // NOTE: bug in electron accepting only integers
+        this.area = screen.dipToScreenRect(null, {
+          x: Math.round(opts.area.x),
+          y: Math.round(opts.area.y),
+          width: Math.round(opts.area.width),
+          height: Math.round(opts.area.height)
+        })
       } else {
         this.closeThreshold = opts.closeThreshold
         this.from = opts.from

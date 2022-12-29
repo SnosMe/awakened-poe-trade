@@ -4,6 +4,7 @@ import { app, Tray, Menu, shell, nativeImage, dialog } from 'electron'
 export class AppTray {
   public overlayKey = 'Shift + Space'
   private tray: Tray
+  serverPort = 0
 
   constructor () {
     this.tray = new Tray(
@@ -22,6 +23,12 @@ export class AppTray {
             title: 'Settings',
             message: `Open Path of Exile and press "${this.overlayKey}". Click on the button with cog icon there.`
           })
+        }
+      },
+      {
+        label: 'Open in Browser',
+        click: () => {
+          shell.openExternal(`http://localhost:${this.serverPort}`)
         }
       },
       { type: 'separator' },

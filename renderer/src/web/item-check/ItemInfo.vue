@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4 flex flex-col" style="min-width: 20rem;" :style="{ 'max-width': maxWidth }">
+  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4 flex flex-col"
+    style="min-width: 20rem; max-width: min(100vw - var(--game-panel), 30rem);">
     <div class="bg-gray-900 py-1 px-4 text-center">{{ itemName }}</div>
     <div class="flex gap-1 py-1 bg-gray-900 items-center">
       <button class="btn flex-1" @click="openWiki">wiki</button>
@@ -17,10 +18,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, inject } from 'vue'
+import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { ParsedItem } from '@/parser'
-import type { WidgetManager } from '../overlay/interfaces'
 import * as actions from './hotkeyable-actions'
 
 export default defineComponent({
@@ -31,7 +31,6 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const wm = inject<WidgetManager>('wm')!
     const { t } = useI18n()
 
     return {
@@ -51,7 +50,6 @@ export default defineComponent({
         const edps = Math.round(item.weaponAS * (item.weaponELEMENTAL ?? 0))
         return { phys: pdps, elem: edps, total: pdps + edps }
       }),
-      maxWidth: computed(() => `min(${wm.size.value.width - wm.poePanelWidth.value}px, 30rem)`),
       itemName: computed(() => props.item.info.name)
     }
   }

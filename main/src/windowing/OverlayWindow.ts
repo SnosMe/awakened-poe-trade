@@ -65,12 +65,12 @@ export class OverlayWindow {
     })
   }
 
-  loadAppPage () {
+  loadAppPage (port: number) {
     if (process.env.VITE_DEV_SERVER_URL) {
       this.window.loadURL(process.env.VITE_DEV_SERVER_URL)
       this.window.webContents.openDevTools({ mode: 'detach', activate: false })
     } else {
-      this.window.loadURL('app://./index.html')
+      this.window.loadURL(`http://localhost:${port}/index.html`)
     }
   }
 
