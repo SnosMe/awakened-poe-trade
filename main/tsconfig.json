@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "ES2021",
-    "module": "esnext",
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
-  }
-}
