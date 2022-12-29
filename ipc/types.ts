@@ -5,6 +5,7 @@ export interface HostConfig {
   gameConfig: string | null
   stashScroll: boolean
   overlayKey: string
+  poesessid: string
   disableUpdateDownload: boolean
   logLevel: string
   windowTitle: string

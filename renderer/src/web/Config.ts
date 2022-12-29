@@ -116,6 +116,7 @@ export interface Config {
   stashScroll: boolean
   language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN'
   realm: 'pc-ggg' | 'pc-garena' | 'pc-tencent'
+  poesessid: string
   widgets: widget.Widget[]
   fontSize: number
   disableUpdateDownload: boolean
@@ -165,6 +166,7 @@ export const defaultConfig = (): Config => ({
   stashScroll: true,
   language: 'en',
   realm: 'pc-ggg',
+  poesessid: '',
   fontSize: 16,
   disableUpdateDownload: false,
   widgets: [
@@ -614,6 +616,7 @@ function getConfigForHost (): HostConfig {
     gameConfig: config.gameConfig,
     stashScroll: config.stashScroll,
     overlayKey: config.overlayKey,
+    poesessid: config.poesessid,
     disableUpdateDownload: config.disableUpdateDownload,
     logLevel: config.logLevel,
     windowTitle: config.windowTitle
