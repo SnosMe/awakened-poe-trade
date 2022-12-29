@@ -1,0 +1,56 @@
+{
+  "name": "awakened-poe-trade",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint --ext .ts,.vue src",
+    "build": "vue-tsc --noEmit && vite build",
+    "make-index-files": "node src/assets/make-index-files.mjs"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.x.x",
+    "@sindresorhus/fnv1a": "^3.0.0",
+    "animate.css": "^4.1.1",
+    "apexcharts": "^3.23.1",
+    "dot-prop": "7.x.x",
+    "luxon": "3.x.x",
+    "object-hash": "^3.0.0",
+    "tailwindcss": "3.x.x",
+    "tippy.js": "^6.2.7",
+    "vue": "3.2.x",
+    "vue-i18n": "^9.1.0",
+    "vue3-apexcharts": "^1.1.1",
+    "vuedraggable": "4.0.1"
+  },
+  "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^6.0.0",
+    "@types/luxon": "^3.0.0",
+    "@types/node": "^18.0.0",
+    "@types/object-hash": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "autoprefixer": "^10.0.2",
+    "eslint": "^8.21.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "postcss": "^8.2.14",
+    "typescript": "^4.5.4",
+    "vite": "^3.0.0",
+    "vue-tsc": "^0.40.0"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss/nesting": {},
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "chrome >= 101"
+  ]
+}

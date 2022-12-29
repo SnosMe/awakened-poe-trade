@@ -1,0 +1,32 @@
+{
+  
+    "Add": "添加",
+    "Retry": "重試",
+    "Offline": "離線",
+    "Online": "在線",
+    "You": "你",
+    "Browser": "瀏覧器",
+    "Search": "搜尋",
+    "min": "最小",
+    "max": " 最大",
+    "Restart required": "需要重啟",
+    "Save": "保存",
+    "Cancel": "取消",
+    "Enabled": "啟用",
+    "Disabled": "禁用",
+    "No": "否",
+    "Yes": "是",
+    "Remove": "移除",
+    "implicit": "固定",
+    "explicit": "隨機",
+    "enchant": "附魔",
+    "crafted": "工藝",
+    "fractured": "破裂",
+    "scourge": "天災",
+    "Not recognized modifier": "無法使用此詞綴",
+    "Refresh": "刷新",
+    "map.mods.heist": "劫盜",
+    "map.mods.outdated": "過時",
+    "Support development on": "支持開發"
+  
+}

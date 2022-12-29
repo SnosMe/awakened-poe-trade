@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@ipc/*": ["../ipc/*"]
+    },
+    "types": ["vite/client"],
+    "lib": ["esnext", "dom", "dom.iterable"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
