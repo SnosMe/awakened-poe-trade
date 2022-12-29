@@ -18,9 +18,8 @@ export function AppConfig (type?: string) {
 }
 
 export function updateConfig (updates: Config) {
-  if (_config.value) {
-    _config.value = deepReactive(JSON.parse(JSON.stringify(updates)))
-  }
+  _config.value = deepReactive(JSON.parse(JSON.stringify(updates)))
+  document.documentElement.style.fontSize = `${_config.value!.fontSize}px`
 }
 
 export function saveConfig (opts?: { isTemporary: boolean }) {
@@ -51,12 +50,12 @@ export function pushHostConfig () {
 export async function initConfig () {
   Host.onEvent('MAIN->CLIENT::config-changed', (e) => {
     _lastSavedConfig = JSON.parse(e.contents) // should be a deep copy
-    _config.value = deepReactive(JSON.parse(e.contents))
+    updateConfig(JSON.parse(e.contents))
   })
 
   const contents = await Host.getConfig()
   if (!contents) {
-    _config.value = deepReactive(defaultConfig())
+    updateConfig(defaultConfig())
     return
   }
 
@@ -64,7 +63,7 @@ export async function initConfig () {
   try {
     config = JSON.parse(contents)
   } catch {
-    _config.value = deepReactive(defaultConfig())
+    updateConfig(defaultConfig())
     saveConfig({ isTemporary: true })
     return
 
@@ -77,7 +76,7 @@ export async function initConfig () {
     // )
   }
 
-  _config.value = deepReactive(upgradeConfig(config))
+  updateConfig(upgradeConfig(config))
 }
 
 export function poeWebApi () {
