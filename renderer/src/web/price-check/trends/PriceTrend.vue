@@ -9,6 +9,7 @@
         :price="trend.price"
         :fraction="filters.stackSize != null"
         :item-img="item.info.icon"
+        :item-base="item.info"
       >
         <template #item v-if="isValuableBasetype">
           <span class="text-gray-400">{{ t('Base item') }}</span>
@@ -46,6 +47,12 @@
         </div>
       </div>
     </template>
+  </div>
+  <div v-else-if="!item.info.craftable" class="flex items-center pb-4" style="min-height: 3rem;">
+    <item-quick-price class="flex-1 text-base justify-center"
+      currency-text
+      :item-img="item.info.icon"
+      :item-base="item.info" />
   </div>
 </template>
 

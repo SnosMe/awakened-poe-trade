@@ -47,6 +47,8 @@ export interface BaseType {
     'GEM'
   )
   icon: string
+  w?: number
+  h?: number
   tradeTag?: string
   tradeDisc?: string
   disc?: {
