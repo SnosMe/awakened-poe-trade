@@ -58,7 +58,8 @@
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
-        <related-items v-if="item && !('error' in item)" :item="item" class="pointer-events-auto" />
+        <related-items v-if="item && !('error' in item)" class="pointer-events-auto"
+          :item="item" :click-position="clickPosition" />
         <rate-limiter-state class="pointer-events-auto" />
       </div>
     </div>
