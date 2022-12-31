@@ -39,7 +39,7 @@ export class AppTray {
         }
       },
       {
-        label: 'Open logs folder',
+        label: 'Open config folder',
         click: () => {
           shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
         }
