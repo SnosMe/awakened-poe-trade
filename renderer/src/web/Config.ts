@@ -40,5 +40,10 @@ export function poeWebApi () {
     case 'zh_CN': return (realm === 'pc-tencent')
       ? 'poe.game.qq.com'
       : 'www.pathofexile.com'
+    case 'zh_A_V1':
+    case 'zh_A_V2':
+      return 'poe.game.qq.com'
+    case 'zh_A_V2_GGG':
+      return 'www.pathofexile.com'
   }
 }

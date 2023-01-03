@@ -100,4 +100,13 @@ export const LANGUAGE_DETECTOR = [{
 }, {
   lang: 'zh_CN',
   firstLine: '物品类别: '
+}, {
+  lang: 'zh_A_V1',
+  firstLine: '物品类别: '
+}, {
+  lang: 'zh_A_V2',
+  firstLine: '物品类别: '
+}, {
+  lang: 'zh_A_V2_GGG  ',
+  firstLine: '物品类别: '
 }]

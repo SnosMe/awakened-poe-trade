@@ -32,7 +32,7 @@ export interface Config {
   hardwareAcceleration: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN' | 'zh_A_V1' | 'zh_A_V2'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN' | 'zh_A_V1' | 'zh_A_V2' |'zh_A_V2_GGG'
   realm: 'pc-ggg' | 'pc-garena' | 'pc-tencent'
   poesessid: string
   widgets: widget.Widget[]

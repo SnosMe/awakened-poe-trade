@@ -99,7 +99,7 @@ function findItems (opts: {
   jsonIncludes: string[]
   matchFn: (item: BaseType) => boolean
 }): BaseType[] | false {
-  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN')
+  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN' || AppConfig().language === 'zh_A_V1' || AppConfig().language === 'zh_A_V2')
   const minSearchLimit = isCJK ? 1 : 3
   const search = opts.search.trim()
   const lcSearch = search.toLowerCase().split(/\s+/).sort((a, b) => b.length - a.length)

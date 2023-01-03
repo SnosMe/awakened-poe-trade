@@ -7,6 +7,9 @@
         <ui-radio v-model="language" value="ru">Русский</ui-radio>
         <ui-radio v-model="language" value="cmn-Hant">正體中文</ui-radio>
         <ui-radio v-model="language" value="zh_CN">简体中文</ui-radio>
+        <ui-radio v-model="language" value="zh_A_V1">A大补丁简改V1(国服)</ui-radio>
+        <ui-radio v-model="language" value="zh_A_V2">A大补丁简改V2(改进版)(国服)</ui-radio>
+        <ui-radio v-model="language" value="zh_A_V2_GGG">A大补丁简改V2(国际服)</ui-radio>
       </div>
     </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">
@@ -27,6 +30,11 @@
         </div>
       </div>
     </div>
+    <div class="mb-4" v-if="language === 'zh_A_V1' || language === 'zh_A_V2' ">
+      <div :class="{ 'text-red-500': poesessid.length !== 32 }">{{ t('POESESSID') }}</div>
+      <span><input v-model="poesessid" class="rounded bg-gray-900 px-2 flex-1"></span>
+    </div>
+
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Font size') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
       <div class="mb-4 flex">
@@ -119,6 +127,9 @@ export default defineComponent({
           props.config.language = value
           if (value !== 'cmn-Hant' && value !== 'zh_CN') {
             props.config.realm = 'pc-ggg'
+          }
+          if (value === 'zh_A_V1' || value === 'zh_A_V2') {
+            props.config.realm = 'pc-tencent'
           }
         }
       }),
