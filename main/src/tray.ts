@@ -58,15 +58,35 @@ export function rebuildTrayMenu () {
       label: 'Discord (需要翻墙)',
       submenu: [
         {
-          label: 'The Forbidden Trove',
+          label: 'The Forbidden Trove (TFT,国际服常用)',
           click: () => { shell.openExternal('https://discord.gg/KNpmhvk') }
         },
         {
-          label: 'r/pathofexile',
+          label: 'r/pathofexile (流放之路频道)',
           click: () => { shell.openExternal('https://discord.gg/fSwfqN5') }
         }
       ]
     },
+    { type: 'separator' },
+    {
+      label: 'APT简中查价器交流群 (QQ群)',
+      click: () => {
+        shell.openExternal('https://qm.qq.com/cgi-bin/qm/qr?k=zfstHlU9Q-eZbJkI2flWgRa-92SC7h0_&jump_from=webapi&authKey=Sk6Jx9RoV3iFlAc2A9eKUJHTuYLpPJPu3//kRJe1TxujPLAztLuNDhhtpRAur2Uj')
+      }
+    },
+    {
+      label: 'POE流放之路综合社区 (QQ频道)',
+      click: () => {
+        shell.openExternal('https://qun.qq.com/qqweb/qunpro/share?_wv=3&inviteCode=1XW9B3zlwiq#/pc')
+      }
+    },
+    {
+      label: 'KOOK (原开黑啦) 流放之路频道',
+      click: () => {
+        shell.openExternal('https://www.kookapp.cn/app/channels/2724791411633812')
+      }
+    },
+    { type: 'separator' },
     {
       label: '退出',
       click: () => {
