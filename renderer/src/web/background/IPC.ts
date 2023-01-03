@@ -1,15 +1,17 @@
 import type { IpcEvent, IpcEventPayload } from '@ipc/types'
 import { shallowRef } from 'vue'
+import Sockette from 'sockette'
 
 class HostTransport {
   private evBus = new EventTarget()
-  private socket: WebSocket
+  private socket: Sockette
   logs = shallowRef('')
 
   constructor () {
-    this.socket = new WebSocket(`ws://${window.location.host}/events`)
-    this.socket.addEventListener('message', (e) => {
-      this.selfDispatch(JSON.parse(e.data))
+    this.socket = new Sockette(`ws://${window.location.host}/events`, {
+      onmessage: (e) => {
+        this.selfDispatch(JSON.parse(e.data))
+      }
     })
     this.onEvent('MAIN->CLIENT::log-entry', (entry) => {
       this.logs.value += (entry.message + '\n')
