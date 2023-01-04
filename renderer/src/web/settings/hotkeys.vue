@@ -9,7 +9,7 @@
         <div class="flex gap-x-2">
           <label class="flex-1 text-gray-500">{{ t('Auto-hide Mode') }}</label>
           <div class="flex w-48 gap-x-1">
-            <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Ctrl', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Ctrl'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Ctrl</button>
+            <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Ctrl', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Ctrl'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Cmd</button>
             <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Alt', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Alt'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Alt</button>
             <span class="flex-1 text-center">+</span>
             <hotkey-input v-model="priceCheckHotkey" class="w-20" no-mod-keys />
@@ -40,7 +40,7 @@
     <div class="mb-8 flex">
       <label class="flex-1">{{ t('Stash tab scrolling') }}</label>
       <div class="flex gap-x-4">
-        <ui-radio v-model="stashScroll" :value="true" class="font-poe">Ctrl + MouseWheel</ui-radio>
+        <ui-radio v-model="stashScroll" :value="true" class="font-poe">Cmd + MouseWheel</ui-radio>
         <ui-radio v-model="stashScroll" :value="false">{{ t('Disabled') }}</ui-radio>
       </div>
     </div>

@@ -195,8 +195,8 @@ export const defaultConfig = (): Config => ({
       lockedInitialSearch: true,
       activateStockFilter: false,
       hotkey: 'D',
-      hotkeyHold: 'Ctrl',
-      hotkeyLocked: 'Ctrl + Alt + D',
+      hotkeyHold: 'Meta',
+      hotkeyLocked: 'Meta + Alt + D',
       showSeller: false,
       searchStatRange: 10,
       showCursor: true,
@@ -603,6 +603,7 @@ function getConfigForHost (): HostConfig {
       }
     }
   }
+
 
   return {
     shortcuts: actions,

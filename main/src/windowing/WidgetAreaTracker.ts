@@ -14,7 +14,7 @@ export class WidgetAreaTracker {
     private overlay: OverlayWindow
   ) {
     this.server.onEventAnyClient('OVERLAY->MAIN::track-area', (opts) => {
-      this.holdKey = opts.holdKey
+      this.holdKey = opts.holdKey === 'Ctrl' ? 'Meta' : opts.holdKey
       if (process.platform === 'win32') {
         this.closeThreshold = opts.closeThreshold * opts.dpr
         this.from = screen.dipToScreenPoint(opts.from)
@@ -43,7 +43,7 @@ export class WidgetAreaTracker {
   }
 
   private readonly handleMouseMove = (e: UiohookMouseEvent) => {
-    const modifier = e.ctrlKey ? 'Ctrl' : (e.altKey ? 'Alt' : undefined)
+    const modifier = e.metaKey ? 'Meta' : (e.altKey ? 'Alt' : undefined)
     if (!this.overlay.isInteractable && modifier !== this.holdKey) {
       const distance = Math.hypot(e.x - this.from.x, e.y - this.from.y)
       if (distance > this.closeThreshold) {
