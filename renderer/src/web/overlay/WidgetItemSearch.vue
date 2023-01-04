@@ -99,7 +99,7 @@ function findItems (opts: {
   jsonIncludes: string[]
   matchFn: (item: BaseType) => boolean
 }): BaseType[] | false {
-  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN' || AppConfig().language === 'zh_A_V1' || AppConfig().language === 'zh_A_V2')
+  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN' || AppConfig().language === 'zh_A_V1' || AppConfig().language === 'zh_A_V2' || AppConfig().language === 'zh_A_V2_GGG')
   const minSearchLimit = isCJK ? 1 : 3
   const search = opts.search.trim()
   const lcSearch = search.toLowerCase().split(/\s+/).sort((a, b) => b.length - a.length)
@@ -247,6 +247,33 @@ export default defineComponent({
     "Replicas": "仿品"
   },
   "zh_CN": {
+    "Search by name…": "搜索名称…",
+    "Reset items": "重置物品",
+    "Heist target:": "夺宝目标:",
+    "Skill Gem": "技能宝石",
+    "too_many": "太多了，请输入更多关键字。",
+    "not_found": "未找到物品.",
+    "Replicas": "仿品"
+  },
+  "zh_A_V1": {
+    "Search by name…": "搜索名称…",
+    "Reset items": "重置物品",
+    "Heist target:": "夺宝目标:",
+    "Skill Gem": "技能宝石",
+    "too_many": "太多了，请输入更多关键字。",
+    "not_found": "未找到物品.",
+    "Replicas": "仿品"
+  },
+  "zh_A_V2": {
+    "Search by name…": "搜索名称…",
+    "Reset items": "重置物品",
+    "Heist target:": "夺宝目标:",
+    "Skill Gem": "技能宝石",
+    "too_many": "太多了，请输入更多关键字。",
+    "not_found": "未找到物品.",
+    "Replicas": "仿品"
+  },
+  "zh_A_V2_GGG": {
     "Search by name…": "搜索名称…",
     "Reset items": "重置物品",
     "Heist target:": "夺宝目标:",

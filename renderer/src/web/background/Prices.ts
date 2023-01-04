@@ -1,6 +1,6 @@
 import { shallowRef, watch } from 'vue'
 import { AppConfig } from '@/web/Config'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { selected as selectedLeague, isPublicLeague } from './Leagues'
 
 interface NinjaDenseInfo {
@@ -25,7 +25,7 @@ async function load (force: boolean = false) {
 
   if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
 
-  const response = await fetch(`${MainProcess.CORS}https://poe.ninja/api/data/DenseOverviews?league=${leagueAtStartOfLoad}&language=en`)
+  const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${leagueAtStartOfLoad}&language=en`)
   const jsonBlob = await response.text()
 
   if (leagueAtStartOfLoad === selectedLeague.value) {

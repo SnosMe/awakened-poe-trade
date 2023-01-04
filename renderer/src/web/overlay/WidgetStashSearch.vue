@@ -47,7 +47,7 @@ export default defineComponent({
     return {
       stashSearch (text: string) {
         MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::stash-search',
+          name: 'CLIENT->MAIN::stash-search',
           payload: { text }
         })
       }

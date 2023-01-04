@@ -17,7 +17,7 @@ export class AppTray {
   rebuildMenu () {
     const contextMenu = Menu.buildFromTemplate([
       {
-        label: 'Settings/League',
+        label: '设置',
         click: () => {
           dialog.showMessageBox({
             title: 'Settings',
@@ -26,46 +26,72 @@ export class AppTray {
         }
       },
       {
-        label: 'Open in Browser',
+        label: '浏览器打开界面',
         click: () => {
           shell.openExternal(`http://localhost:${this.serverPort}`)
         }
       },
       { type: 'separator' },
       {
-        label: `APT v${app.getVersion()}`,
+        label: `APT简中版本: v${app.getVersion()}`,
         click: () => {
-          shell.openExternal('https://github.com/SnosMe/awakened-poe-trade/releases')
+          shell.openExternal('https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/releases')
         }
       },
       {
-        label: 'Open config folder',
+        label: '打开日志及配置文件目录',
         click: () => {
           shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
         }
       },
       { type: 'separator' },
       {
-        label: 'Patreon (Donate)',
+        label: '支持原作者',
         click: () => {
           shell.openExternal('https://patreon.com/awakened_poe_trade')
         }
       },
       {
-        label: 'Discord',
+        label: '支持简中作者',
+        click: () => {
+          shell.openExternal('https://afdian.net/a/APTSimplifiedChinese/plan')
+        }
+      },
+      { type: 'separator' },
+      {
+        label: 'KOOK(原开黑啦)流放之路频道',
+        click: () => {
+          shell.openExternal('https://www.kookapp.cn/app/channels/2724791411633812')
+        }
+      },
+      {
+        label: 'QQ流放之路频道',
+        click: () => {
+          shell.openExternal('https://qun.qq.com/qqweb/qunpro/share?appChannel=share&inviteCode=1XW9B3zlwiq#/pc')
+        }
+      },
+      {
+        label: '简中查价器交流群(QQ群)',
+        click: () => {
+          shell.openExternal('https://qm.qq.com/cgi-bin/qm/qr?k=HAsp7gNOcQuaYNvzVYMtLUfd24JvBTSz')
+        }
+      },
+      { type: 'separator' },
+      {
+        label: 'Discord (需要翻墙)',
         submenu: [
           {
-            label: 'The Forbidden Trove',
+            label: 'TFT(国际服常用频道)',
             click: () => { shell.openExternal('https://discord.gg/KNpmhvk') }
           },
           {
-            label: 'r/pathofexile',
+            label: 'POE频道',
             click: () => { shell.openExternal('https://discord.gg/fSwfqN5') }
           }
         ]
       },
       {
-        label: 'Quit',
+        label: '退出',
         click: () => {
           app.quit()
         }

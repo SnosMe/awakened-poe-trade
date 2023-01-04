@@ -9,6 +9,7 @@ import { EventEmitter } from 'events'
 import { IpcEvent, IpcEventPayload } from '../../ipc/types'
 import { ConfigStore } from './host-files/ConfigStore'
 import { addFileUploadRoutes } from './host-files/file-uploads'
+import { poesessid, realm } from './main'
 
 const server = fastify()
 let lastActiveClient: WebSocket
@@ -34,10 +35,16 @@ addFileUploadRoutes(server)
   'web.poe.garena.tw',
   'poe.ninja',
   'www.poeprices.info',
+  'poe.game.qq.com',
 ].map(host => {
   server.register(fastifyProxy, {
     upstream: `https://${host}`,
-    prefix: `/proxy/${host}`
+    prefix: `/proxy/${host}`,
+    replyOptions: {
+      rewriteRequestHeaders: (originalReq, headers) => ({
+        ...headers, 'Cookie': (realm === 'pc-tencent') ? `POESESSID=${poesessid};` : ''
+      })
+    }
   })
 })
 
@@ -96,13 +103,6 @@ server.register(async (instance) => {
         lastActiveClient = connection.socket
       }
       evBus.emit(event.name, event.payload)
-    })
-    connection.socket.on('close', () => {
-      const clients = server.websocketServer.clients
-      if (clients.size === 1) {
-        lastActiveClient = clients.values().next().value
-        evBus.emit('CLIENT->MAIN::used-recently', { isOverlay: true })
-      }
     })
   })
 })

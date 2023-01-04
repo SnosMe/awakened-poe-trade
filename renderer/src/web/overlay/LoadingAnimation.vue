@@ -16,14 +16,14 @@
 <script lang="ts">
 import { defineComponent, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
 import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   setup () {
     const show = shallowRef(false)
 
-    MainProcess.onEvent('MAIN->OVERLAY::overlay-attached', () => {
+    Host.onEvent('MAIN->OVERLAY::overlay-attached', () => {
       if (!show.value && AppConfig().showAttachNotification) {
         show.value = true
         setTimeout(() => { show.value = false }, 2500)
@@ -78,6 +78,15 @@ export default defineComponent({
     "Is ready and running in background": "程序已運行"
   },
   "zh_CN": {
+    "Is ready and running in background": "程序已运行"
+  },
+  "zh_A_V1": {
+    "Is ready and running in background": "程序已运行"
+  },
+  "zh_A_V2": {
+    "Is ready and running in background": "程序已运行"
+  },
+  "zh_A_V2_GGG": {
     "Is ready and running in background": "程序已运行"
   }
 }

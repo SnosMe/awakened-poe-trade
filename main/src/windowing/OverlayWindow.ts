@@ -21,8 +21,8 @@ export class OverlayWindow {
       dialog.showErrorBox(
         'Windows 7 - Aero',
         // ----------------------
-        'You must enable Windows Aero in "Appearance and Personalization".\n' +
-        'It is required to create a transparent overlay window.'
+        '您必须在“外观和个性化”中启用Windows Aero (简中作者不知道这是啥).\n' +
+        '需要创建透明覆盖窗口.'
       )
     }
 
@@ -142,11 +142,11 @@ export class OverlayWindow {
       this.logger.write('error [Overlay] PoE is running with administrator rights')
 
       dialog.showErrorBox(
-        'PoE window - No access',
+        '打开窗口失败',
         // ----------------------
-        'Path of Exile is running with administrator rights.\n' +
+        '流放之路客户端正以管理员权限运行\n' +
         '\n' +
-        'You need to restart Awakened PoE Trade with administrator rights.'
+        '请重新以管理员权限打开本程序'
       )
     } else {
       this.server.sendEventTo('broadcast', {

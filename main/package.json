@@ -1,6 +1,6 @@
 {
-  "name": "awakened-poe-trade",
-  "version": "3.20.10005",
+  "name": "Awakened-PoE-Trade-Simplified-Chinese",
+  "version": "3.20.10009",
   "private": true,
   "scripts": {
     "dev": "node build/script.cjs",
@@ -8,11 +8,11 @@
     "package": "electron-builder build"
   },
   "author": {
-    "name": "Alexander Drozdov"
+    "name": "Alexander Drozdov and HongChen"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SnosMe/awakened-poe-trade.git"
+    "url": "https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese.git"
   },
   "main": "dist/main.js",
   "dependencies": {

@@ -1,5 +1,6 @@
 import { uIOhook, UiohookKey as Key } from 'uiohook-napi'
-import { restoreClipboard } from './clipboard-saver'
+import type { HostClipboard } from './HostClipboard'
+import type { OverlayWindow } from '../windowing/OverlayWindow'
 
 const PLACEHOLDER_LAST = '@last'
 const AUTO_CLEAR = [
@@ -11,8 +12,8 @@ const AUTO_CLEAR = [
   '/' // Command
 ]
 
-export function typeInChat (text: string, send: boolean) {
-  restoreClipboard((clipboard) => {
+export function typeInChat (text: string, send: boolean, clipboard: HostClipboard) {
+  clipboard.restoreShortly((clipboard) => {
     if (text.startsWith(PLACEHOLDER_LAST)) {
       text = text.slice(`${PLACEHOLDER_LAST} `.length)
       clipboard.writeText(text)
@@ -41,5 +42,19 @@ export function typeInChat (text: string, send: boolean) {
       uIOhook.keyTap(Key.ArrowUp)
       uIOhook.keyTap(Key.Escape)
     }
+  })
+}
+
+export function stashSearch (
+  text: string,
+  clipboard: HostClipboard,
+  overlay: OverlayWindow
+) {
+  clipboard.restoreShortly((clipboard) => {
+    overlay.assertGameActive()
+    clipboard.writeText(text)
+    uIOhook.keyTap(Key.F, [Key.Ctrl])
+    uIOhook.keyTap(Key.V, [Key.Ctrl])
+    uIOhook.keyTap(Key.Enter)
   })
 }

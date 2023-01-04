@@ -75,6 +75,18 @@ export default defineComponent({
     "You have": "你拥有",
     "Stack": "堆叠"
   },
+  "zh_A_V1": {
+    "You have": "你拥有",
+    "Stack": "堆叠"
+  },
+  "zh_A_V2": {
+    "You have": "你拥有",
+    "Stack": "堆叠"
+  },
+  "zh_A_V2_GGG": {
+    "You have": "你拥有",
+    "Stack": "堆叠"
+  },
   "cmn-Hant": {
     "You have": "你擁有",
     "Stack": "堆疊"

@@ -7,9 +7,9 @@
         <ui-radio v-model="language" value="ru">Русский</ui-radio>
         <ui-radio v-model="language" value="cmn-Hant">正體中文</ui-radio>
         <ui-radio v-model="language" value="zh_CN">简体中文</ui-radio>
-        <ui-radio v-model="language" value="zh_A_V1">A大补丁简改V1(国服)</ui-radio>
-        <ui-radio v-model="language" value="zh_A_V2">A大补丁简改V2(改进版)(国服)</ui-radio>
-        <ui-radio v-model="language" value="zh_A_V2_GGG">A大补丁简改V2(国际服)</ui-radio>
+<!--        <ui-radio v-model="language" value="zh_A_V1">A大补丁简改V1(国服)</ui-radio>-->
+<!--        <ui-radio v-model="language" value="zh_A_V2">A大补丁简改V2(改进版)(国服)</ui-radio>-->
+<!--        <ui-radio v-model="language" value="zh_A_V2_GGG">A大补丁简改V2(国际服)</ui-radio>-->
       </div>
     </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">
@@ -36,7 +36,7 @@
     </div>
 
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Font size') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
+      <div class="flex-1 mb-1">{{ t('Font size') }}</div>
       <div class="mb-4 flex">
         <input v-model.number="fontSize" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
         <span class="ml-1">px</span>
@@ -53,18 +53,14 @@
       <div class="flex-1 mb-1">{{ t('PoE log file') }}</div>
       <div class="mb-4 flex">
         <input v-model.trim="clientLog"
-          class="rounded-l bg-gray-900 px-1 block w-full font-sans" placeholder="???/Grinding Gear Games/Path of Exile/logs/Client.txt">
-        <input type="file" id="file-client-log" class="hidden" accept=".txt" @input="handleLogFile">
-        <label class="text-gray-400 bg-gray-900 px-2 rounded-r ml-px cursor-pointer" for="file-client-log">{{ t('Browse') }}</label>
+          class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/Grinding Gear Games/Path of Exile/logs/Client.txt">
       </div>
     </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('PoE config file') }}</div>
       <div class="mb-4 flex">
         <input v-model.trim="gameConfig"
-          class="rounded-l bg-gray-900 px-1 block w-full font-sans" placeholder="???/My Games/Path of Exile/production_Config.ini">
-        <input type="file" id="file-client-config" class="hidden" accept=".ini" @input="handleGameConfigFile">
-        <label class="text-gray-400 bg-gray-900 px-2 rounded-r ml-px cursor-pointer" for="file-client-config">{{ t('Browse') }}</label>
+          class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/My Games/Path of Exile/production_Config.ini">
       </div>
     </div>
     <div class="mb-2">
@@ -136,12 +132,6 @@ export default defineComponent({
       realm: configModelValue(() => props.config, 'realm'),
       poesessid: configModelValue(() => props.config, 'poesessid'),
       disableUpdateDownload: configModelValue(() => props.config, 'disableUpdateDownload'),
-      handleLogFile (e: Event) {
-        props.config.clientLog = ((e as InputEvent).target as HTMLInputElement).files![0].path
-      },
-      handleGameConfigFile (e: Event) {
-        props.config.gameConfig = ((e as InputEvent).target as HTMLInputElement).files![0].path
-      },
       restoreClipboard: configModelValue(() => props.config, 'restoreClipboard'),
       showAttachNotification: configModelValue(() => props.config, 'showAttachNotification')
     }
@@ -182,6 +172,57 @@ export default defineComponent({
     "Auto-download updates": "自动下载更新",
     "Restore clipboard": "恢复剪贴板"
   },
+  "zh_A_V1": {
+    "Font size": "字体大小",
+    "Background, when APT window is clickable": "背景, 当APT窗口可点击时",
+    "Transparent": "透明度",
+    "Show for Overlay and Price Check": "在浮动层及价格查询显示",
+    "Show only for Overlay": "仅在浮动层显示",
+    "Clicking on background focuses game": "点击背景回到游戏",
+    "Language": "语言",
+    "Realm": "服务器",
+    "International": "国际服",
+    "tencent": "国服",
+    "PoE log file": "PoE日志文件",
+    "PoE config file": "PoE配置文件",
+    "Browse": "浏览",
+    "Auto-download updates": "自动下载更新",
+    "Restore clipboard": "恢复剪贴板"
+  },
+  "zh_A_V2": {
+    "Font size": "字体大小",
+    "Background, when APT window is clickable": "背景, 当APT窗口可点击时",
+    "Transparent": "透明度",
+    "Show for Overlay and Price Check": "在浮动层及价格查询显示",
+    "Show only for Overlay": "仅在浮动层显示",
+    "Clicking on background focuses game": "点击背景回到游戏",
+    "Language": "语言",
+    "Realm": "服务器",
+    "International": "国际服",
+    "tencent": "国服",
+    "PoE log file": "PoE日志文件",
+    "PoE config file": "PoE配置文件",
+    "Browse": "浏览",
+    "Auto-download updates": "自动下载更新",
+    "Restore clipboard": "恢复剪贴板"
+  },
+  "zh_A_V2_GGG": {
+    "Font size": "字体大小",
+    "Background, when APT window is clickable": "背景, 当APT窗口可点击时",
+    "Transparent": "透明度",
+    "Show for Overlay and Price Check": "在浮动层及价格查询显示",
+    "Show only for Overlay": "仅在浮动层显示",
+    "Clicking on background focuses game": "点击背景回到游戏",
+    "Language": "语言",
+    "Realm": "服务器",
+    "International": "国际服",
+    "tencent": "国服",
+    "PoE log file": "PoE日志文件",
+    "PoE config file": "PoE配置文件",
+    "Browse": "浏览",
+    "Auto-download updates": "自动下载更新",
+    "Restore clipboard": "恢复剪贴板"
+  },
   "cmn-Hant": {
     "Font size": "字體大小",
     "Background, when APT window is clickable": "背景, 當APT窗口可點擊時",
@@ -192,6 +233,7 @@ export default defineComponent({
     "Language": "語言",
     "Realm": "分流",
     "International": "國際",
+    "tencent": "国服",
     "PoE log file": "PoE日誌文件",
     "PoE config file": "PoE配置文件",
     "Browse": "瀏覽",

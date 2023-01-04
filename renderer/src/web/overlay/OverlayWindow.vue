@@ -135,10 +135,6 @@ export default defineComponent({
 
     onMounted(() => {
       nextTick(() => {
-        Host.sendEvent({
-          name: 'CLIENT->MAIN::used-recently',
-          payload: { isOverlay: Host.isElectron }
-        })
         pushHostConfig()
       })
     })

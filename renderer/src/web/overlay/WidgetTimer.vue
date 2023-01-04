@@ -45,12 +45,10 @@ export default defineComponent({
     }
     props.config.wmFlags = ['invisible-on-blur']
 
-    const hotkeyController = MainProcess.onEvent('MAIN->OVERLAY::stopwatch', (action) => {
-      if (action.wmId !== props.config.wmId) return
-
-      if (action.type === 'start-stop') {
+    const hotkeyController = MainProcess.onEvent('MAIN->CLIENT::widget-action', (e) => {
+      if (e.target === `stopwatch-start-stop:${props.config.wmId}`) {
         isRunning.value ? stop() : start()
-      } else if (action.type === 'reset') {
+      } else if (e.target === `stopwatch-reset:${props.config.wmId}`) {
         reset()
       }
     })
@@ -174,6 +172,15 @@ export default defineComponent({
     "paused:": "остановлен"
   },
   "zh_CN": {
+    "paused:": "已暂停"
+  },
+  "zh_A_V1": {
+    "paused:": "已暂停"
+  },
+  "zh_A_V2": {
+    "paused:": "已暂停"
+  },
+  "zh_A_V2_GGG": {
     "paused:": "已暂停"
   },
   "cmn-Hant": {

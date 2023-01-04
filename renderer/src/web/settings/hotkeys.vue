@@ -26,10 +26,6 @@
       <hotkey-input required v-model="overlayKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Open item on wiki') }}</label>
-      <hotkey-input v-model="wikiKey" class="w-48" />
-    </div>
-    <div class="mb-4 flex">
       <label class="flex-1">{{ t('Map check') }}</label>
       <hotkey-input v-model="itemCheckKey" class="w-48" />
     </div>
@@ -37,12 +33,8 @@
       <label class="flex-1">{{ t('Item info') }}</label>
       <hotkey-input v-model="itemCheckKey" class="w-48" />
     </div>
-    <div v-if="isEnglish" class="mb-4 flex">
-      <label class="flex-1">Open base item on Craft of Exile</label>
-      <hotkey-input v-model="craftOfExileKey" class="w-48" />
-    </div>
     <div class="mb-8 flex">
-      <label class="flex-1">{{ t('Delve grid') }}</label>
+      <label class="flex-1">{{ t('Grid for Delve Chart') }}</label>
       <hotkey-input v-model="delveGridKey" class="w-48" />
     </div>
     <div class="mb-8 flex">
@@ -56,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, configModelValue, findWidget } from './utils'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
@@ -71,12 +63,9 @@ export default defineComponent({
 
     return {
       t,
-      isEnglish: computed(() => props.config.language === 'en'),
       stashScroll: configModelValue(() => props.config, 'stashScroll'),
       delveGridKey: configModelValue(() => props.config, 'delveGridKey'),
-      craftOfExileKey: configModelValue(() => props.config, 'craftOfExileKey'),
       itemCheckKey: configModelValue(() => props.config, 'itemCheckKey'),
-      wikiKey: configModelValue(() => props.config, 'wikiKey'),
       overlayKey: configModelValue(() => props.config, 'overlayKey'),
       priceCheckHotkeyHold: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),
       priceCheckHotkey: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkey'),
@@ -94,11 +83,10 @@ export default defineComponent({
     "Auto-hide Mode": "Режим авто-скрытия",
     "Open without auto-hide": "Открыть без авто-скрытия",
     "Overlay": "Оверлей",
-    "Open item on wiki": "Открыть предмет в вики",
     "Map check": "Проверка карты",
     "Item info": "Проверка предмета",
     "Stash tab scrolling": "Прокрутка вкладок тайника",
-    "Delve grid": "Сетка \"Спуска\""
+    "Grid for Delve Chart": "Сетка \"Спуска\""
   },
   "zh_CN": {
     "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(回退键) 来清除快捷键。",
@@ -106,11 +94,43 @@ export default defineComponent({
     "Auto-hide Mode": "自动隐藏模式",
     "Open without auto-hide": "一般模式",
     "Overlay": "Overlay",
-    "Open item on wiki": "开启wiki页面",
     "Map check": "检查地图",
     "Item info": "物品资讯",
     "Stash tab scrolling": "切换仓库页",
-    "Delve grid": "矿坑网格"
+    "Grid for Delve Chart": "矿坑网格"
+  },
+  "zh_A_V1": {
+    "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(回退键) 来清除快捷键。",
+    "Price check": "查询价格",
+    "Auto-hide Mode": "自动隐藏模式",
+    "Open without auto-hide": "一般模式",
+    "Overlay": "Overlay",
+    "Map check": "检查地图",
+    "Item info": "物品资讯",
+    "Stash tab scrolling": "切换仓库页",
+    "Grid for Delve Chart": "矿坑网格"
+  },
+  "zh_A_V2": {
+    "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(回退键) 来清除快捷键。",
+    "Price check": "查询价格",
+    "Auto-hide Mode": "自动隐藏模式",
+    "Open without auto-hide": "一般模式",
+    "Overlay": "Overlay",
+    "Map check": "检查地图",
+    "Item info": "物品资讯",
+    "Stash tab scrolling": "切换仓库页",
+    "Grid for Delve Chart": "矿坑网格"
+  },
+  "zh_A_V2_GGG": {
+    "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(回退键) 来清除快捷键。",
+    "Price check": "查询价格",
+    "Auto-hide Mode": "自动隐藏模式",
+    "Open without auto-hide": "一般模式",
+    "Overlay": "Overlay",
+    "Map check": "检查地图",
+    "Item info": "物品资讯",
+    "Stash tab scrolling": "切换仓库页",
+    "Grid for Delve Chart": "矿坑网格"
   },
   "cmn-Hant": {
     "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(倒退鍵) 來清除快捷鍵。",
@@ -118,11 +138,10 @@ export default defineComponent({
     "Auto-hide Mode": "自動隱藏模式",
     "Open without auto-hide": "一般模式",
     "Overlay": "Overlay",
-    "Open item on wiki": "開啟wiki頁面",
     "Map check": "檢查地圖",
     "Item info": "物品資訊",
     "Stash tab scrolling": "切換倉庫頁",
-    "Delve grid": "礦坑網格"
+    "Grid for Delve Chart": "礦坑網格"
   }
 }
 </i18n>

@@ -1,6 +1,6 @@
 import type { ComputedRef, Ref } from 'vue'
-import type { Widget } from '@ipc/widgets'
-export * from '@ipc/widgets'
+import type { Widget } from '@/web/overlay/widgets'
+export * from '@/web/overlay/widgets'
 
 export interface WidgetManager {
   poePanelWidth: ComputedRef<number>
