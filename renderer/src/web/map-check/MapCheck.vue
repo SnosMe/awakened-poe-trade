@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4" style="min-width: 20rem;" :style="{ 'max-width': maxWidth }">
+  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4"
+    style="min-width: 20rem; max-width: min(100vw - var(--game-panel), 30rem);">
     <div class="bg-gray-900 py-1 px-4 text-center">{{ mapName }}</div>
     <fullscreen-image v-if="image" :src="image" />
     <div v-if="!mapStats.length" class="px-8 py-2">
@@ -18,13 +19,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, inject } from 'vue'
+import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
 import MapStatButton from './MapStatButton.vue'
 import { prepareMapStats } from './prepare-map-stats'
 import { STAT_BY_MATCH_STR } from '@/assets/data'
-import { WidgetManager, ItemCheckWidget } from '../overlay/interfaces'
+import { ItemCheckWidget } from '../overlay/interfaces'
 import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
@@ -38,7 +39,6 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const wm = inject<WidgetManager>('wm')!
     const { t } = useI18n()
 
     const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!)
@@ -52,7 +52,6 @@ export default defineComponent({
 
     return {
       t,
-      maxWidth: computed(() => `min(${wm.size.value.width - wm.poePanelWidth.value}px, 30rem)`),
       mapName: computed(() => props.item.info.name),
       image: computed(() =>
         (props.item.rarity === ItemRarity.Unique && props.item.isUnidentified)

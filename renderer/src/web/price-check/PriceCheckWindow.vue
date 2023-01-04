@@ -6,7 +6,7 @@
     'flex-row-reverse': clickPosition === 'inventory',
   }">
     <div v-if="!isBrowserShown" class="layout-column shrink-0"
-      :style="{ width: `${poeUiWidth}px` }">
+      style="width: var(--game-panel);">
     </div>
     <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
@@ -58,7 +58,8 @@
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
-        <related-items v-if="item && !('error' in item)" :item="item" class="pointer-events-auto" />
+        <related-items v-if="item && !('error' in item)" class="pointer-events-auto"
+          :item="item" :click-position="clickPosition" />
         <rate-limiter-state class="pointer-events-auto" />
       </div>
     </div>
@@ -70,7 +71,7 @@ import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTic
 import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
-import { MainProcess } from '@/web/background/IPC'
+import { MainProcess, Host } from '@/web/background/IPC'
 import { xchgRate } from '../background/Prices'
 import { selected as league } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
@@ -118,14 +119,35 @@ export default defineComponent({
     const advancedCheck = shallowRef(false)
     const checkPosition = shallowRef({ x: 1, y: 1 })
 
-    MainProcess.onEvent('MAIN->OVERLAY::price-check', (e) => {
+    MainProcess.onEvent('MAIN->CLIENT::item-text', (e) => {
+      if (e.target !== 'price-check') return
+
+      if (Host.isElectron && !e.focusOverlay) {
+        // everything in CSS pixels
+        const width = 28.75 * AppConfig().fontSize
+        const screenX = ((e.position.x - window.screenX) > window.innerWidth / 2)
+          ? (window.screenX + window.innerWidth) - wm.poePanelWidth.value - width
+          : window.screenX + wm.poePanelWidth.value
+        MainProcess.sendEvent({
+          name: 'OVERLAY->MAIN::track-area',
+          payload: {
+            holdKey: props.config.hotkeyHold,
+            closeThreshold: 2.5 * AppConfig().fontSize,
+            from: e.position,
+            area: {
+              x: screenX,
+              y: window.screenY,
+              width,
+              height: window.innerHeight
+            },
+            dpr: window.devicePixelRatio
+          }
+        })
+      }
       closeBrowser()
       wm.show(props.config.wmId)
-      checkPosition.value = {
-        x: e.position.x - window.screenX,
-        y: e.position.y - window.screenY
-      }
-      advancedCheck.value = e.lockedMode
+      checkPosition.value = e.position
+      advancedCheck.value = e.focusOverlay
       try {
         const parsed = parseClipboard(e.clipboard)
         if (parsed != null && (
@@ -147,21 +169,17 @@ export default defineComponent({
         }
       }
     })
-    MainProcess.onEvent('MAIN->OVERLAY::price-check-canceled', () => {
+    MainProcess.onEvent('MAIN->OVERLAY::hide-exclusive-widget', () => {
       wm.hide(props.config.wmId)
     })
 
     watch(() => props.config.wmWants, (state) => {
       if (state === 'hide') {
         closeBrowser()
-        MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::price-check-hide',
-          payload: undefined
-        })
       }
     })
 
-    const title = computed(() => league.value || 'Awakened PoE Trade Simplified Chinese')
+    const title = computed(() => league.value || 'Awakened PoE Trade')
     const stableOrbCost = computed(() => (xchgRate.value) ? Math.round(xchgRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)
@@ -171,7 +189,7 @@ export default defineComponent({
       if (isBrowserShown.value) {
         return 'inventory'
       } else {
-        return checkPosition.value.x > (window.innerWidth / 2)
+        return checkPosition.value.x > (window.screenX + window.innerWidth / 2)
           ? 'inventory'
           : 'stash'
           // or {chat, vendor, center of screen}
@@ -189,16 +207,16 @@ export default defineComponent({
     })
 
     function closePriceCheck () {
-      if (isBrowserShown.value) {
+      if (isBrowserShown.value || !Host.isElectron) {
         wm.hide(props.config.wmId)
       } else {
-        MainProcess.closeOverlay()
+        Host.sendEvent({ name: 'OVERLAY->MAIN::focus-game', payload: undefined })
       }
     }
 
     function openLeagueSelection () {
       const settings = wm.widgets.value.find(w => w.wmType === 'settings')!
-      wm.setFlag(settings.wmId, 'settings:price-check', true)
+      wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true)
       wm.show(settings.wmId)
     }
 
@@ -224,7 +242,6 @@ export default defineComponent({
       clickPosition,
       isBrowserShown,
       iframeEl,
-      poeUiWidth: wm.poePanelWidth,
       closePriceCheck,
       title,
       stableOrbCost,
@@ -254,20 +271,6 @@ export default defineComponent({
     "parse_error": "Произошла ошибка при парсинге предмета",
     "parse_error_msg": "Скорее всего, это ошибка, и вы можете сообщить о ней на GitHub.",
     "Press {0} to switch between browser and game.": "Нажмите {0} для перехода между браузером/игрой."
-  },
-  "zh_CN": {
-    "unknown_item": "未知物品",
-    "unknown_item_msg": "若此为赛季物品，或将在下一版本更新中支持。",
-    "parse_error": "分析物品错误",
-    "parse_error_msg": "有可能是一个BUG，请至GitHub提交错误。",
-    "Press {0} to switch between browser and game.": "请按 {0} 在浏览器和游戏之间切换。"
-  },
-  "cmn-Hant": {
-    "unknown_item": "未知物品",
-    "unknown_item_msg": "若此為賽季物品，或將在下一版本更新中支持。",
-    "parse_error": "分析物品錯誤",
-    "parse_error_msg": "有可能是一個BUG，請至GitHub提交錯誤。",
-    "Press {0} to switch between browser and game.": "請按 {0} 在瀏覽器和遊戲之間切換。"
   }
 }
 </i18n>

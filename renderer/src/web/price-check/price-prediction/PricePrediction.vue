@@ -14,6 +14,7 @@
         <item-quick-price class="flex-1 text-base justify-center"
           :price="price"
           :item-img="item.info.icon"
+          :item-base="item.info"
           approx
         />
         <div class="text-center">

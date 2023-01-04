@@ -1,21 +1,19 @@
-import type { IpcEvent, IpcEventPayload } from '@ipc/ipc-event'
-import { Config, defaultConfig, PreloadExposed } from '@ipc/types'
+import type { IpcEvent, IpcEventPayload } from '@ipc/types'
+import { shallowRef } from 'vue'
 
-declare global {
-  interface Window {
-    electronAPI?: PreloadExposed
-  }
-}
-
-class MainProcessBinding {
+class HostTransport {
   private evBus = new EventTarget()
+  private socket: WebSocket
+  logs = shallowRef('')
 
   constructor () {
-    if (window.electronAPI) {
-      window.electronAPI.onEvent(data => {
-        this.selfDispatch(data)
-      })
-    }
+    this.socket = new WebSocket(`ws://${window.location.host}/events`)
+    this.socket.addEventListener('message', (e) => {
+      this.selfDispatch(JSON.parse(e.data))
+    })
+    this.onEvent('MAIN->CLIENT::log-entry', (entry) => {
+      this.logs.value += (entry.message + '\n')
+    })
   }
 
   selfDispatch (event: IpcEvent) {
@@ -25,9 +23,7 @@ class MainProcessBinding {
   }
 
   sendEvent (event: IpcEvent) {
-    if (window.electronAPI) {
-      window.electronAPI.sendEvent(event)
-    }
+    this.socket.send(JSON.stringify(event))
   }
 
   onEvent<Name extends IpcEvent['name']> (
@@ -35,43 +31,40 @@ class MainProcessBinding {
     cb: (payload: IpcEventPayload<Name>) => void
   ): AbortController {
     const controller = new AbortController()
+    if (!this.isElectron && name.startsWith('MAIN->OVERLAY')) {
+      return controller
+    }
+
     this.evBus.addEventListener(name, (e) => {
       cb((e as CustomEvent<IpcEventPayload<Name>>).detail)
     }, { signal: controller.signal })
     return controller
   }
 
-  closeOverlay () {
-    this.sendEvent({ name: 'OVERLAY->MAIN::close-overlay', payload: undefined })
+  async getConfig (): Promise<string | null> {
+    const response = await fetch('/config')
+    const config = await response.json() as { contents: string | null }
+    return config.contents
   }
 
-  getConfig (): Config {
-    if (window.electronAPI) {
-      return window.electronAPI.getConfig()
-    } else {
-      return defaultConfig()
-    }
+  async importFile (file: File): Promise<string> {
+    const response = await fetch(`/uploads/${file.name}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/octet-stream' },
+      body: file
+    })
+    const body = await response.json() as { name: string }
+    return body.name
   }
 
-  saveConfig (config: Config) {
-    this.sendEvent({ name: 'OVERLAY->MAIN::save-config', payload: config })
-  }
-
-  importFile (filePath: string) {
-    if (window.electronAPI) {
-      return window.electronAPI.importFile(filePath)
-    }
-  }
-
-  get CORS () {
-    return (!window.electronAPI)
-      ? 'https://apt-cors.snos.workers.dev/?'
-      : ''
+  proxy: typeof window['fetch'] = async (url, init) => {
+    return await window.fetch(`/proxy/${url as string}`, init)
   }
 
   get isElectron () {
-    return (window.electronAPI != null)
+    return navigator.userAgent.includes('Electron')
   }
 }
 
-export const MainProcess = new MainProcessBinding()
+export const MainProcess = new HostTransport()
+export const Host = MainProcess
