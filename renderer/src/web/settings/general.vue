@@ -9,7 +9,7 @@
         <ui-radio v-model="language" value="zh_CN">简体中文</ui-radio>
 <!--        <ui-radio v-model="language" value="zh_A_V1">A大补丁简改V1(国服)</ui-radio>-->
 <!--        <ui-radio v-model="language" value="zh_A_V2">A大补丁简改V2(改进版)(国服)</ui-radio>-->
-<!--        <ui-radio v-model="language" value="zh_A_V2_GGG">A大补丁简改V2(国际服)</ui-radio>-->
+<!--        <ui-radio v-model="language" value="zh_A_V2_GGG">A大补丁查价V2(国际服)</ui-radio>-->
       </div>
     </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">

@@ -66,8 +66,8 @@ export default {
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s*\(等阶：(?<tier>\d+)\))?(?:\s*\(等级：(?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: '▲ 前缀属性 ',
   SUFFIX_MODIFIER: '▽ 后缀属性 ',
-  CRAFTED_PREFIX: '大师工艺前缀',
-  CRAFTED_SUFFIX: '大师工艺后缀',
+  CRAFTED_PREFIX: '▲ 工艺前缀',
+  CRAFTED_SUFFIX: '▽ 工艺后缀',
   UNSCALABLE_VALUE: ' — 数值不可估量',
   CORRUPTED_IMPLICIT: '腐化基底属性',
   MODIFIER_INCREASED: /^提高 (.+?)%$/,
@@ -100,6 +100,6 @@ export default {
   CHAT_PARTY: /^%(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_GUILD: /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_TO: /^@向 (?<char_name>.+?): (?<body>.+)$/,
-  CHAT_WHISPER_FROM: /^@來自 (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  CHAT_WHISPER_FROM: /^@来自 (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_WEBTRADE_GEM: /^等级 (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/
 }

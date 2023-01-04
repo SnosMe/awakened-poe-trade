@@ -1,6 +1,6 @@
 {
   "name": "Awakened-PoE-Trade-Simplified-Chinese",
-  "version": "3.20.10009",
+  "version": "3.20.10010",
   "private": true,
   "scripts": {
     "dev": "node build/script.cjs",
