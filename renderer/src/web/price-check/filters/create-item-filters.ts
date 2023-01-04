@@ -235,8 +235,8 @@ export function createFilters (
     filters.mirrored = { disabled: false }
   }
 
-  if (item.isRelic) {
-    filters.relic = { disabled: false }
+  if (item.isFoil) {
+    filters.foil = { disabled: false }
   }
 
   if (item.influences.length && item.influences.length <= 2) {

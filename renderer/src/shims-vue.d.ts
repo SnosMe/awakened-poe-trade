@@ -14,8 +14,3 @@ declare module '*.json' {
   const value: any
   export default value
 }
-
-interface File {
-  // https://www.electronjs.org/docs/latest/api/file-object
-  path: string
-}

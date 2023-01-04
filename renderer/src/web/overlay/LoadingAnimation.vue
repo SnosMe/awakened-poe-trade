@@ -16,14 +16,15 @@
 <script lang="ts">
 import { defineComponent, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { MainProcess } from '@/web/background/IPC'
+import { Host } from '@/web/background/IPC'
+import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   setup () {
     const show = shallowRef(false)
 
-    MainProcess.onEvent('MAIN->OVERLAY::overlay-attached', () => {
-      if (!show.value) {
+    Host.onEvent('MAIN->OVERLAY::overlay-attached', () => {
+      if (!show.value && AppConfig().showAttachNotification) {
         show.value = true
         setTimeout(() => { show.value = false }, 2500)
       }

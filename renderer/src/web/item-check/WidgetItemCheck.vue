@@ -1,5 +1,5 @@
 <template>
-  <widget :config="{ ...config, anchor }" move-handles="none" readonly :removable="false">
+  <widget :config="{ ...config, anchor }" move-handles="none" :removable="false" :inline-edit="false">
     <template v-if="item">
       <map-check v-if="isMapLike"
         :item="item" />
@@ -17,7 +17,8 @@ import MapCheck from '../map-check/MapCheck.vue'
 import ItemInfo from './ItemInfo.vue'
 import { MainProcess } from '@/web/background/IPC'
 import { ItemCategory, parseClipboard, ParsedItem } from '@/parser'
-import { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
+import { registerActions } from './hotkeyable-actions'
+import type { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
 
 export default defineComponent({
   components: {
@@ -38,11 +39,12 @@ export default defineComponent({
     const checkPosition = ref({ x: 1, y: 1 })
     const item = ref<ParsedItem | null>(null)
 
-    MainProcess.onEvent('MAIN->OVERLAY::item-check', (e) => {
-      checkPosition.value = {
-        x: e.position.x - window.screenX,
-        y: e.position.y - window.screenY
-      }
+    registerActions()
+
+    MainProcess.onEvent('MAIN->CLIENT::item-text', (e) => {
+      if (e.target !== 'item-check') return
+
+      checkPosition.value = e.position
       item.value = parseClipboard(e.clipboard)
       if (item.value) {
         wm.show(props.config.wmId)
@@ -55,7 +57,7 @@ export default defineComponent({
       const width = wm.size.value.width
       const poePanelWidth = wm.poePanelWidth.value
 
-      const side = checkPosition.value.x > (width / 2)
+      const side = checkPosition.value.x > (window.screenX + width / 2)
         ? 'inventory'
         : 'stash'
 

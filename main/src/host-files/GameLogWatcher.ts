@@ -1,29 +1,35 @@
 import { promises as fs, watchFile, unwatchFile } from 'fs'
-import { overlaySendEvent } from './overlay-window'
-import { config } from './config'
-import { logger } from './logger'
+import { ServerEvents } from '../server'
+import { Logger } from '../RemoteLogger'
 
 const COMMON_PATH = [
   'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
   'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
 ]
 
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
-export class LogWatcher {
-  static offset = 0
-  static filePath?: string
-  static file?: fs.FileHandle
-  static isReading = false
-  static readBuff = Buffer.allocUnsafe(64 * 1024)
+export class GameLogWatcher {
+  private offset = 0
+  private filePath?: string
+  private file?: fs.FileHandle
+  private isReading = false
+  private readBuff = Buffer.allocUnsafe(64 * 1024)
 
-  static async start () {
-    let logFile = config.get('clientLog')
+  constructor (
+    private server: ServerEvents,
+    private logger: Logger,
+  ) {}
+
+  async restart (logFile: string | null) {
+    if (this.filePath === logFile) return
 
     if (!logFile && process.platform === 'win32') {
       for (const filePath of COMMON_PATH) {
         try {
           await fs.access(filePath)
-          config.set('clientLog', filePath)
+          // this.server.sendEventTo('any', {
+          //   name: 'MAIN->CLIENT::file-path-changed',
+          //   payload: { file: 'game-log', path: filePath }
+          // })
           logFile = filePath
           break
         } catch {}
@@ -32,14 +38,14 @@ export class LogWatcher {
 
     if (logFile) {
       try {
-        await LogWatcher.watch(logFile)
+        await this.watch(logFile)
       } catch {
-        logger.error('Failed to watch', { source: 'log-watcher', file: logFile })
+        this.logger.write('error [GameLogWatcher] Failed to watch file.')
       }
     }
   }
 
-  static async watch (path: string) {
+  private async watch (path: string) {
     if (this.file) {
       unwatchFile(this.filePath!)
       await this.file.close()
@@ -57,14 +63,14 @@ export class LogWatcher {
     this.offset = stats.size
   }
 
-  static handleFileChange () {
+  private handleFileChange () {
     if (!this.isReading) {
       this.isReading = true
       this.readToEOF()
     }
   }
 
-  static async readToEOF () {
+  private async readToEOF () {
     if (!this.file) {
       this.isReading = false
       return
@@ -75,8 +81,8 @@ export class LogWatcher {
     if (bytesRead) {
       const str = this.readBuff.toString('utf8', 0, bytesRead)
       const lines = str.split('\n').map(line => line.trim()).filter(line => line.length)
-      overlaySendEvent({
-        name: 'MAIN->OVERLAY::client-log',
+      this.server.sendEventTo('broadcast', {
+        name: 'MAIN->CLIENT::game-log',
         payload: { lines }
       })
     }

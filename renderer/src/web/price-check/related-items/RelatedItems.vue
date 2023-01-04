@@ -1,5 +1,5 @@
 <template>
-  <div v-if="result" class="flex bg-gray-800 text-gray-400 mt-6 border border-gray-900" style="border-width: 0.25rem; max-width: min(100%, 24rem);">
+  <div v-if="result" :class="[$style['wrapper'], $style[clickPosition]]">
     <div v-if="'error' in result" class="p-2">
       {{ result.error }}
     </div>
@@ -91,6 +91,10 @@ export default defineComponent({
     item: {
       type: Object as PropType<ParsedItem | null>,
       default: null
+    },
+    clickPosition: {
+      type: String,
+      required: true
     }
   },
   setup (props) {
@@ -107,3 +111,25 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="postcss" module>
+.wrapper {
+  display: flex;
+  @apply bg-gray-800 text-gray-400 mt-6;
+  @apply border border-gray-900;
+  border-width: 0.25rem;
+  max-width: min(100%, 24rem);
+}
+
+.inventory {
+  @apply rounded-l-lg;
+  box-shadow: inset -0.5rem 0 0.5rem -0.5rem rgb(0 0 0 / 70%);
+  border-right: none;
+}
+
+.stash {
+  @apply rounded-r-lg;
+  box-shadow: inset 0.5rem 0 0.5rem -0.5rem rgb(0 0 0 / 70%);
+  border-left: none;
+}
+</style>

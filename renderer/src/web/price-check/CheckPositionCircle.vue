@@ -1,7 +1,7 @@
 <template>
   <div class="absolute rounded-full" :style="{
-      top: `calc(${position.y}px - 2.5rem)`,
-      left: `calc(${position.x}px - 2.5rem)`,
+      top: relativePos.top,
+      left: relativePos.left,
       width: '5rem',
       height: '5rem',
       background: 'rgba(255,255,255,0.35)'
@@ -17,13 +17,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, computed } from 'vue'
 
 export default defineComponent({
   props: {
     position: {
       type: Object as PropType<{ x: number, y: number }>,
       required: true
+    }
+  },
+  setup (props) {
+    return {
+      relativePos: computed(() => {
+        return {
+          top: `calc(${props.position.y - window.screenY}px - 2.5rem)`,
+          left: `calc(${props.position.x - window.screenX}px - 2.5rem)`
+        }
+      })
     }
   }
 })

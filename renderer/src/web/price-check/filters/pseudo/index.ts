@@ -381,21 +381,21 @@ export function filterPseudo (ctx: FiltersCreationContext) {
     const attrFilters = filterByGroup.get('to_x_attr')!
     attrFilters.sort((a, b) => b.roll!.value - a.roll!.value)
     if (attrFilters.length === 3) {
-      if (attrFilters.every(f => f.roll!.value === attrFilters[0].roll!.value)) {
-        // Here `to_all_attrs` filter may or may not (very rare event) exist.
-        // Anyway we are removing all attribute filters.
+      const toAll = filterByGroup.get('to_all_attrs')
+      if (attrFilters.every(f => f.roll!.value === attrFilters[0].roll!.value) && toAll != null) {
         ctx.filters = ctx.filters.filter(filter => !attrFilters.includes(filter))
       } else {
-        if (filterByGroup.has('to_all_attrs')) {
-          const toAll = filterByGroup.get('to_all_attrs')!
+        if (toAll != null) {
           ctx.filters = ctx.filters.filter(filter => !toAll.includes(filter))
         }
 
-        if (attrFilters[1].roll!.value === attrFilters[2].roll!.value) {
-          attrFilters[1].hidden = 'hide_attr_same_2nd_n_3rd'
-          attrFilters[2].hidden = 'hide_attr_same_2nd_n_3rd'
-        } else {
-          attrFilters[2].hidden = 'hide_attr_smallest_total'
+        if (attrFilters[2].roll!.value / attrFilters[0].roll!.value < 0.3) {
+          if (attrFilters[1].roll!.value === attrFilters[2].roll!.value) {
+            attrFilters[1].hidden = 'hide_attr_same_2nd_n_3rd'
+            attrFilters[2].hidden = 'hide_attr_same_2nd_n_3rd'
+          } else {
+            attrFilters[2].hidden = 'hide_attr_smallest_total'
+          }
         }
       }
     }

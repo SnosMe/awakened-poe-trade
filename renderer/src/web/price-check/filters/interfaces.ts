@@ -34,7 +34,7 @@ export interface ItemFilters {
   mirrored?: {
     disabled: boolean
   }
-  relic?: {
+  foil?: {
     disabled: boolean
   }
   influences?: Array<{

@@ -123,7 +123,7 @@ export function stat (text: string) {
   return text
 }
 
-;(async function initData () { /* eslint-disable no-lone-blocks */
+export async function initData () { /* eslint-disable no-lone-blocks */
   const { language } = AppConfig()
 
   {
@@ -144,4 +144,4 @@ export function stat (text: string) {
     ITEM_DROP = await (await fetch(`${import.meta.env.BASE_URL}data/item-drop.json`)).json()
     APP_PATRONS = await (await fetch(`${import.meta.env.BASE_URL}data/patrons.json`)).json()
   }
-})()
+}

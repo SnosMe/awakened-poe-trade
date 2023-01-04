@@ -6,7 +6,7 @@ files:
   - "package.json"
   - from: "dist"
     to: "."
-    filter: ["main.js", "preload.js"]
+    filter: ["main.js"]
   - from: "../renderer/dist"
     to: "."
 extraMetadata:
