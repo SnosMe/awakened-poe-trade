@@ -4,7 +4,9 @@ import { Logger } from '../RemoteLogger'
 
 const COMMON_PATH = [
   'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
-  'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
+  'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt',
+  'C:\\Program Files (x86)\\Epic Games\\PathOfExile\\logs\\Client.txt',
+  'C:\\Program Files (x86)\\WeGameApps\\流放之路\\logs',
 ]
 
 export class GameLogWatcher {

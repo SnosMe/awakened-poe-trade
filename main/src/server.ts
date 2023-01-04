@@ -104,6 +104,13 @@ server.register(async (instance) => {
       }
       evBus.emit(event.name, event.payload)
     })
+    connection.socket.on('close', () => {
+      const clients = server.websocketServer.clients
+      if (clients.size === 1) {
+        lastActiveClient = clients.values().next().value
+        evBus.emit('CLIENT->MAIN::used-recently', { isOverlay: true })
+      }
+    })
   })
 })
 

@@ -33,6 +33,7 @@ export class ConfigStore {
       this.isTmpFile = true
     }
     try {
+      await fs.mkdir(path.dirname(this.cfgPath), { recursive: true })
       await fs.writeFile(this.cfgPath, contents)
     } catch {
       app.exit(1)
