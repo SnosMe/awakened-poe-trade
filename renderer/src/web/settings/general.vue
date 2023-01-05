@@ -9,7 +9,6 @@
         <ui-radio v-model="language" value="zh_CN">简体中文</ui-radio>
 <!--        <ui-radio v-model="language" value="zh_A_V1">A大补丁简改V1(国服)</ui-radio>-->
 <!--        <ui-radio v-model="language" value="zh_A_V2">A大补丁简改V2(改进版)(国服)</ui-radio>-->
-<!--        <ui-radio v-model="language" value="zh_A_V2_GGG">A大补丁查价V2(国际服)</ui-radio>-->
       </div>
     </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">
@@ -190,23 +189,6 @@ export default defineComponent({
     "Restore clipboard": "恢复剪贴板"
   },
   "zh_A_V2": {
-    "Font size": "字体大小",
-    "Background, when APT window is clickable": "背景, 当APT窗口可点击时",
-    "Transparent": "透明度",
-    "Show for Overlay and Price Check": "在浮动层及价格查询显示",
-    "Show only for Overlay": "仅在浮动层显示",
-    "Clicking on background focuses game": "点击背景回到游戏",
-    "Language": "语言",
-    "Realm": "服务器",
-    "International": "国际服",
-    "tencent": "国服",
-    "PoE log file": "PoE日志文件",
-    "PoE config file": "PoE配置文件",
-    "Browse": "浏览",
-    "Auto-download updates": "自动下载更新",
-    "Restore clipboard": "恢复剪贴板"
-  },
-  "zh_A_V2_GGG": {
     "Font size": "字体大小",
     "Background, when APT window is clickable": "背景, 当APT窗口可点击时",
     "Transparent": "透明度",

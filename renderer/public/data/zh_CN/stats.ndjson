@@ -3033,6 +3033,7 @@
 {"ref": "Caster Damage Modifiers have #% increased Effect", "better": 1, "matchers": [{"string": "施法伤害词缀的效果提高 #%"}, {"string": "施法伤害词缀的效果降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1498186316"]}}}
 {"ref": "Catalysts dropped by Metamorphs in your Maps are Duplicated", "better": 1, "matchers": [{"string": "灾变体掉落的催化剂会复制"}, {"string": "地图内灾变掉落的催化剂会复制"}], "trade": {"ids": {"enchant": ["enchant.stat_3011365432"]}}}
 {"ref": "Catarina's Veiled", "better": 0, "matchers": [{"string": "卡塔莉娜的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_63772"]}}}
+{"ref": "Catarina's Veiled", "better": 0, "matchers": [{"string": "Catarina's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_63772"]}}}
 {"ref": "Caustic Arrow has #% chance to inflict Withered on Hit for # second base Duration", "better": 1, "matchers": [{"string": "【腐蚀箭矢】击中后有 #% 的几率造成死亡凋零，持续 # 秒"}, {"string": "【腐蚀箭矢】击中后有 #% 的几率造成死亡凋零，持续 # 秒"}, {"string": "【腐蚀箭矢】击中后造成死亡凋零，持续 # 秒"}, {"string": "【腐蚀箭矢】击中后造成死亡凋零，持续 # 秒"}], "trade": {"ids": {"enchant": ["enchant.stat_1993913925"]}}}
 {"ref": "Celestial Footprints", "better": 1, "matchers": [{"string": "绚丽众星行走特效"}], "trade": {"ids": {"explicit": ["explicit.stat_50381303"]}}}
 {"ref": "Chain Hook deals #% increased Damage", "better": 1, "matchers": [{"string": "【钩链攻击】的伤害提高 #%"}, {"string": "【钩链攻击】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_289027663"]}}}
@@ -3274,6 +3275,7 @@
 {"ref": "Elemental Resistances are Zero", "better": 1, "matchers": [{"string": "元素抗性为零"}], "trade": {"ids": {"explicit": ["explicit.stat_85576425"]}}}
 {"ref": "Elemental Weakness has no Reservation if Cast as an Aura", "better": 1, "matchers": [{"string": "作为光环效果施放的元素要害不具有保留效果"}], "trade": {"ids": {"explicit": ["explicit.stat_3416664215"]}}}
 {"ref": "Elreon's Veiled", "better": 0, "matchers": [{"string": "艾尔雷恩的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_5769"]}}}
+{"ref": "Elreon's Veiled", "better": 0, "matchers": [{"string": "Elreon's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_5769"]}}}
 {"ref": "Encounter duration is # seconds shorter", "better": 1, "matchers": [{"string": "遭遇战持续时间缩短 # 秒"}], "trade": {"ids": {"enchant": ["enchant.stat_3122413716"]}}}
 {"ref": "Enduring Cry grants # additional Endurance Charge", "better": 1, "matchers": [{"string": "【坚决战吼】获得 # 个额外的耐力球"}, {"string": "【坚决战吼】获得 # 个额外的耐力球"}], "trade": {"ids": {"enchant": ["enchant.stat_2977067558"]}}}
 {"ref": "Enduring Cry has #% increased Cooldown Recovery Rate", "better": 1, "matchers": [{"string": "坚决战吼的冷却回复率提高 #%"}, {"string": "坚决战吼的冷却回复率降低 #%", "negate": true}], "trade": {"ids": {"implicit": ["implicit.stat_3617955571"], "enchant": ["enchant.stat_3617955571"]}}}
@@ -3688,11 +3690,14 @@
 {"ref": "Grants Perfect Agony during effect", "better": 1, "matchers": [{"string": "生效期间赋予完美苦痛"}], "trade": {"ids": {"explicit": ["explicit.stat_3741365813"]}}}
 {"ref": "Grants Summon Harbinger Skill", "better": 1, "matchers": [{"string": "获得【召唤秘法先驱者】", "value": 1}, {"string": "获得【召唤高等射术先驱者】", "value": 10}, {"string": "获得【召唤高等冰雷先驱者】", "value": 11}, {"string": "获得【召唤高等残暴先驱者】", "value": 12}, {"string": "获得【召唤时空先驱者】", "value": 2}, {"string": "获得【召唤不屈先驱者】", "value": 3}, {"string": "获得【召唤射术先驱者】", "value": 4}, {"string": "获得【召唤冰雷先驱者】", "value": 5}, {"string": "获得【召唤残暴先驱者】", "value": 6}, {"string": "获得【召唤高等秘法先驱者】", "value": 7}, {"string": "获得【召唤高等时空先驱者】", "value": 8}, {"string": "获得【召唤高等不屈先驱者】", "value": 9}], "trade": {"ids": {"explicit": ["explicit.stat_3872739249"]}, "option": true}}
 {"ref": "Gravicius' Veiled", "better": 0, "matchers": [{"string": "格拉维奇的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_38872"]}}}
+{"ref": "Gravicius' Veiled", "better": 0, "matchers": [{"string": "Gravicius' Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_38872"]}}}
 {"ref": "Ground Slam has a #% increased angle", "better": 1, "matchers": [{"string": "裂地之击的角度扩大 #%"}, {"string": "裂地之击的角度缩小 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_648647905"]}}}
 {"ref": "Guards deal #% increased Damage", "better": 1, "fromHeistAreaMods": true, "matchers": [{"string": "守卫的伤害提高 #%"}, {"string": "守卫的伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_2569717992"], "fractured": ["fractured.stat_2569717992"]}}}
 {"ref": "Guards take #% increased Damage", "better": 1, "fromHeistAreaMods": true, "matchers": [{"string": "守卫承受的伤害提高 #%"}, {"string": "守卫承受的伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_873692616"], "fractured": ["fractured.stat_873692616"]}}}
 {"ref": "Guff's Veiled", "better": 0, "matchers": [{"string": "古夫的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_6779"]}}}
+{"ref": "Guff's Veiled", "better": 0, "matchers": [{"string": "Guff's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_6779"]}}}
 {"ref": "Haku's Veiled", "better": 0, "matchers": [{"string": "哈库的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_39023"]}}}
+{"ref": "Haku's Veiled", "better": 0, "matchers": [{"string": "Haku's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_39023"]}}}
 {"ref": "Half of your Strength is added to your Minions", "better": 1, "matchers": [{"string": "你一半的力量属性将添加至你的召唤生物身上"}], "trade": {"ids": {"explicit": ["explicit.stat_2195137717"]}}}
 {"ref": "Harbingers in your Maps drop additional Currency Shards", "better": 1, "matchers": [{"string": "先驱者掉落额外的通货碎片"}, {"string": "你的地图中的先驱者掉落额外的通货碎片"}], "trade": {"ids": {"enchant": ["enchant.stat_906446422"]}}}
 {"ref": "Harbingers in your Maps drop rarer Currency Shards", "better": 1, "matchers": [{"string": "你的地图中的先驱者掉落更稀有的通货碎片"}], "trade": {"ids": {"explicit": ["explicit.stat_3448022820"]}}}
@@ -4004,6 +4009,7 @@
 {"ref": "Iron Reflexes while stationary", "better": 1, "matchers": [{"string": "静止时获得【霸体】"}], "trade": {"ids": {"explicit": ["explicit.stat_187998220"]}}}
 {"ref": "Iron Will", "better": 1, "matchers": [{"string": "钢铁意志"}], "trade": {"ids": {"explicit": ["explicit.stat_4092697134"], "fractured": ["fractured.stat_4092697134"], "scourge": ["scourge.stat_4092697134"]}}}
 {"ref": "It That Fled's Veiled", "better": 0, "matchers": [{"string": "逃逸怪的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_55787"]}}}
+{"ref": "It That Fled's Veiled", "better": 0, "matchers": [{"string": "It That Fled's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_55787"]}}}
 {"ref": "Item drops on Death if Equipped by an Animated Guardian", "better": 1, "matchers": [{"string": "【幻化守卫】装备的物品将在它死亡时掉落"}], "trade": {"ids": {"explicit": ["explicit.stat_3909846940"], "implicit": ["implicit.stat_3909846940"], "fractured": ["fractured.stat_3909846940"], "crafted": ["crafted.stat_3909846940"]}}}
 {"ref": "Item sells for much more to vendors", "better": 1, "matchers": [{"string": "物品卖的钱更多"}], "trade": {"ids": {"implicit": ["implicit.stat_3513534186"]}}}
 {"ref": "Items and Gems have #% increased Attribute Requirements", "better": 1, "matchers": [{"string": "装备和技能石的属性需求提高 #%"}, {"string": "装备和技能石的属性需求降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_752930724"]}}}
@@ -4029,6 +4035,7 @@
 {"ref": "Knockback direction is reversed", "better": 1, "matchers": [{"string": "击退方向颠倒"}], "trade": {"ids": {"explicit": ["explicit.stat_281201999"]}}}
 {"ref": "Knocks Back Enemies in an Area when you use a Flask", "better": 1, "matchers": [{"string": "你使用药剂时击退一片区域内的敌人"}], "trade": {"ids": {"explicit": ["explicit.stat_3591397930"]}}}
 {"ref": "Korell's Veiled", "better": 0, "matchers": [{"string": "克雷尔的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_44855"]}}}
+{"ref": "Korell's Veiled", "better": 0, "matchers": [{"string": "Korell's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_44855"]}}}
 {"ref": "Lacerate deals # to # added Physical Damage against Bleeding Enemies", "better": 1, "matchers": [{"string": "【破空斩】对流血敌人附加 # - # 基础物理伤害"}], "trade": {"ids": {"enchant": ["enchant.stat_732320584"]}}}
 {"ref": "Lancing Steel deals #% increased Damage", "better": 1, "matchers": [{"string": "【断金之刃】的伤害提高 #%"}, {"string": "【断金之刃】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2159486200"]}}}
 {"ref": "Lancing Steel fires an additional Projectile", "better": 1, "matchers": [{"string": "断金之刃发射 # 枚额外投射物"}, {"string": "断金之刃发射一枚额外投射物", "value": 1}], "trade": {"ids": {"enchant": ["enchant.stat_4081185348"]}}}
@@ -4059,6 +4066,7 @@
 {"ref": "Legion Encounters in your Maps have #% increased chance to include an Eternal Empire army", "better": 1, "matchers": [{"string": "地图内的战乱之殇遭遇战有一支永恒帝国军队的几率提高 #%"}, {"string": "地图内的战乱之殇遭遇战有一支永恒帝国军队的几率降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_3825355878"]}}}
 {"ref": "Legion Monsters in your Maps have #% more Life", "better": 1, "matchers": [{"string": "战乱之殇怪物的生命总增 #%"}, {"string": "地图内的战乱之殇怪物的生命总增 #%"}, {"string": "战乱之殇怪物的生命总降 #%", "negate": true}, {"string": "地图内的战乱之殇怪物的生命总降 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1829593182"]}}}
 {"ref": "Leo's Veiled", "better": 0, "matchers": [{"string": "里奥的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_3258"]}}}
+{"ref": "Leo's Veiled", "better": 0, "matchers": [{"string": "Leo's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_3258"]}}}
 {"ref": "Lethe Shade", "better": 1, "matchers": [{"string": "忘川之影"}], "trade": {"ids": {"explicit": ["explicit.stat_1678358883"], "fractured": ["fractured.stat_1678358883"], "scourge": ["scourge.stat_1678358883"]}}}
 {"ref": "Life and Mana Leech are instant during effect", "better": 1, "matchers": [{"string": "生效期间，立即获得生命和魔力偷取"}], "trade": {"ids": {"explicit": ["explicit.stat_1102362593"]}}}
 {"ref": "Life and Mana Leech from Critical Strikes are instant", "better": 1, "matchers": [{"string": "暴击时立即获得生命和魔力偷取"}], "trade": {"ids": {"explicit": ["explicit.stat_3389184522"]}}}
@@ -4806,6 +4814,7 @@
 {"ref": "Right Ring Slot: Your Shocking Skitterbot's Aura applies Socketed Hex Curse instead", "better": 1, "matchers": [{"string": "右戒指栏位：电震的飞掠者用插入的魔蛊替代光环"}], "trade": {"ids": {"explicit": ["explicit.stat_1809329372"]}}}
 {"ref": "Righteous Fire grants #% increased Spell Damage", "better": 1, "matchers": [{"string": "【正义之火】的法术伤害提高 #%"}, {"string": "【正义之火】的法术伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3316822388"]}}}
 {"ref": "Rin's Veiled", "better": 0, "matchers": [{"string": "麟的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_6131"]}}}
+{"ref": "Rin's Veiled", "better": 0, "matchers": [{"string": "Rin's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_6131"]}}}
 {"ref": "Riposte has #% increased Cooldown Recovery Rate", "better": 1, "matchers": [{"string": "【击刃】冷却回复速度提高 #%"}, {"string": "【击刃】冷却回复速度降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2287986752"]}}}
 {"ref": "Rogue Equipment cannot be found", "better": 1, "matchers": [{"string": "找不到赏金猎人装备"}], "trade": {"ids": {"enchant": ["enchant.stat_1045213941"]}}}
 {"ref": "Rogue Exiles deal #% increased Damage", "better": 1, "matchers": [{"string": "【盗贼流放者】的伤害提高 #%"}, {"string": "【盗贼流放者】的伤害降低 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_1080855680"], "enchant": ["enchant.stat_1080855680"]}}}
@@ -5311,6 +5320,7 @@
 {"ref": "This Jewel's Socket has #% increased effect per Allocated Passive Skill between\nit and your Class' starting location", "better": 1, "matchers": [{"string": "从你职业的出发位置到该珠宝槽之间\n每一点配置的天赋就使该珠宝插槽的效果提高 #%"}], "trade": {"ids": {"explicit": ["explicit.stat_372478711"]}}}
 {"ref": "This Weapon's Critical Strike Chance is 100%", "better": 1, "matchers": [{"string": "该武器的暴击率为 100%"}], "trade": {"ids": {"explicit": ["explicit.stat_1963540179"]}}}
 {"ref": "Tora's Veiled", "better": 0, "matchers": [{"string": "托拉的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_8541"]}}}
+{"ref": "Tora's Veiled", "better": 0, "matchers": [{"string": "Tora's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_8541"]}}}
 {"ref": "Tormented Spirits drop 1 additional Rare Item", "better": 1, "matchers": [{"string": "【罪魂】掉落额外 # 件物品"}, {"string": "【罪魂】掉落额外 1 件物品", "value": 1}], "trade": {"ids": {"explicit": ["explicit.stat_4268822436"]}}}
 {"ref": "Tormented Spirits in your Maps have #% increased Duration", "better": 1, "matchers": [{"string": "【罪魂】持续时间延长 #%"}, {"string": "地图内的罪魂持续时间延长 #%"}, {"string": "【罪魂】持续时间缩短 #%", "negate": true}, {"string": "地图内的罪魂持续时间缩短 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_663610248"]}}}
 {"ref": "Tornado has #% increased Movement Speed", "better": 1, "matchers": [{"string": "龙卷旋风的移动速度加快 #%"}, {"string": "龙卷旋风的移动速度减慢 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3713499406"]}}}
@@ -5445,8 +5455,10 @@
 {"ref": "Vaal Skills used during effect do not apply Soul Gain Prevention", "better": 1, "matchers": [{"string": "生效期间使用瓦尔技能不施加阻灵术"}], "trade": {"ids": {"explicit": ["explicit.stat_2344590267"]}}}
 {"ref": "Vaal Skills used during effect have #% reduced Soul Gain Prevention Duration", "better": -1, "matchers": [{"string": "若生效期间使用瓦尔技能，则阻灵术持续时间延长 #%"}, {"string": "若生效期间使用瓦尔技能，则阻灵术持续时间缩短 #%", "negate": true}], "trade": {"ids": {"explicit": ["explicit.stat_902947445"]}, "inverted": true}}
 {"ref": "Vagan's Veiled", "better": 0, "matchers": [{"string": "瓦甘的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_14269"]}}}
+{"ref": "Vagan's Veiled", "better": 0, "matchers": [{"string": "Vagan's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_14269"]}}}
 {"ref": "Varieties of Items contained in 1 Blight Chest in your Maps are Lucky", "better": 1, "matchers": [{"string": "# 个菌潮宝箱里的各类物品均有幸运属性"}, {"string": "地图内 # 个菌潮宝箱里的各种物品都有幸运属性"}, {"string": "地图内 1 个菌潮宝箱里的各种物品都有幸运属性", "value": 1}], "trade": {"ids": {"enchant": ["enchant.stat_1730598557"]}}}
 {"ref": "Veiled", "better": 0, "matchers": [{"string": "影匿的"}], "trade": {"ids": {"veiled": ["veiled.mod_65000"]}}}
+{"ref": "Veiled", "better": 0, "matchers": [{"string": "Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_65000"]}}}
 {"ref": "Vengeance has #% increased Cooldown Recovery Rate", "better": 1, "matchers": [{"string": "复仇的冷却回复率提高 #%"}, {"string": "复仇的冷却回复率降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1447427508"]}}}
 {"ref": "Venom Gyre deals #% increased Damage", "better": 1, "matchers": [{"string": "【剧毒旋风】的伤害提高 #%"}, {"string": "【剧毒旋风】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_1404787106"]}}}
 {"ref": "Venom Gyre has a #% chance to inflict Withered for 2 seconds on Hit", "better": 1, "matchers": [{"string": "【剧毒旋风】击中时有 #% 的几率施加死亡凋零，持续 2 秒"}, {"string": "【剧毒旋风】击中时施加死亡凋零，持续 2 秒", "value": 100}], "trade": {"ids": {"enchant": ["enchant.stat_2157671820"]}}}
@@ -5464,6 +5476,7 @@
 {"ref": "Voltaxic Burst deals #% increased Damage per 0.1 seconds of Duration", "better": 1, "matchers": [{"string": "电殛魔爆每有 0.1 秒持续时间就使它的伤害提高 #%"}, {"string": "电殛魔爆每有 0.1 秒持续时间就使它的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3472104870"]}}}
 {"ref": "Voltaxic Sulphite Veins and Chests in your Maps have #% chance to contain double Sulphite", "better": 1, "matchers": [{"string": "地图内的魔爆亚硫酸矿脉和宝箱有 #% 的几率有双倍亚硫酸"}], "trade": {"ids": {"explicit": ["explicit.stat_1174549622"]}}}
 {"ref": "Vorici's Veiled", "better": 0, "matchers": [{"string": "瓦里西的影匿"}], "trade": {"ids": {"veiled": ["veiled.mod_47933"]}}}
+{"ref": "Vorici's Veiled", "better": 0, "matchers": [{"string": "Vorici's Veiled"}], "trade": {"ids": {"veiled": ["veiled.mod_47933"]}}}
 {"ref": "Vortex has #% increased Area of Effect when Cast on Frostbolt", "better": 1, "matchers": [{"string": "在【寒冰弹】上施放时，【漩涡】的效果区域扩大 #%"}, {"string": "在【寒冰弹】上施放时，【漩涡】的效果区域缩小 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2295263113"]}}}
 {"ref": "Vortex has #% increased Cooldown Recovery Rate", "better": 1, "matchers": [{"string": "【漩涡】的冷却回复速度提高 #%"}, {"string": "【漩涡】的冷却回复速度降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2461424099"]}}}
 {"ref": "Vulnerability has no Reservation if Cast as an Aura", "better": 1, "matchers": [{"string": "脆弱以光环形式施放时没有保留效果"}], "trade": {"ids": {"explicit": ["explicit.stat_531868030"]}}}

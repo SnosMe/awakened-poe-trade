@@ -344,12 +344,6 @@ export default defineComponent({
     "edit": "编辑",
     "move": "移动",
     "delete": "删除"
-  },
-  "zh_A_V2_GGG": {
-    "hide": "隐藏",
-    "edit": "编辑",
-    "move": "移动",
-    "delete": "删除"
   }
 }
 </i18n>

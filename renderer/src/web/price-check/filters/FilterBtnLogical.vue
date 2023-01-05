@@ -177,27 +177,6 @@ export default defineComponent({
     "Anomalous": "异常",
     "Divergent": "分歧",
     "Phantasmal": "魅影"
-  },
-  "zh_A_V2_GGG": {
-    "Unidentified": "未鉴定",
-    "Veiled": "隐匿",
-    "Blighted": "菌潮",
-    "Blight-ravaged": "菌潮丛生",
-    "Mirrored": "已复制",
-    "Not Mirrored": "未复制",
-    "Foil Unique": "古藏传奇",
-
-    "Shaper": "塑界者",
-    "Elder": "裂界者",
-    "Crusader": "圣战者",
-    "Hunter": "狩猎者",
-    "Redeemer": "救赎者",
-    "Warlord": "督军",
-
-    "Superior": "精良",
-    "Anomalous": "异常",
-    "Divergent": "分歧",
-    "Phantasmal": "魅影"
   }
 }
 </i18n>

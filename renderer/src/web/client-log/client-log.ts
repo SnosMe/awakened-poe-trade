@@ -135,8 +135,7 @@ const TRADE_WHISPER = {
   'cmn-Hant': /^你好，我想購買 (?<item>.+) 標價 (?<price>.+) 在 (?<league>.+) \(倉庫頁 "(?<tab_name>.*)"; 位置: 左 (?<tab_left>\d+), 上 (?<tab_top>\d+)\)(?<message>.+)?$/,
   'zh_CN': /^你好，我希望购买你的(?<item>.+)，标价(?<price>.+)，在(?<league>.+) \(市集页 "(?<tab_name>.*)"; 位置: 左起 (?<tab_left>\d+), 上起 (?<tab_top>\d+)\)(?<message>.+)?$/,
   'zh_A_V1': /^你好，我希望购买你的(?<item>.+)，标价(?<price>.+)，在(?<league>.+) \(市集页 "(?<tab_name>.*)"; 位置: 左起 (?<tab_left>\d+), 上起 (?<tab_top>\d+)\)(?<message>.+)?$/,
-  'zh_A_V2': /^你好，我希望购买你的(?<item>.+)，标价(?<price>.+)，在(?<league>.+) \(市集页 "(?<tab_name>.*)"; 位置: 左起 (?<tab_left>\d+), 上起 (?<tab_top>\d+)\)(?<message>.+)?$/,
-  'zh_A_V2_GGG': /^你好，我希望购买你的(?<item>.+)，标价(?<price>.+)，在(?<league>.+) \(市集页 "(?<tab_name>.*)"; 位置: 左起 (?<tab_left>\d+), 上起 (?<tab_top>\d+)\)(?<message>.+)?$/
+  'zh_A_V2': /^你好，我希望购买你的(?<item>.+)，标价(?<price>.+)，在(?<league>.+) \(市集页 "(?<tab_name>.*)"; 位置: 左起 (?<tab_left>\d+), 上起 (?<tab_top>\d+)\)(?<message>.+)?$/
 }
 
 const TRADE_BULK_WHISPER = {
@@ -145,6 +144,5 @@ const TRADE_BULK_WHISPER = {
   'cmn-Hant': /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/,
   'zh_CN': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/,
   'zh_A_V1': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/,
-  'zh_A_V2': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/,
-  'zh_A_V2_GGG': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/
+  'zh_A_V2': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/
 }

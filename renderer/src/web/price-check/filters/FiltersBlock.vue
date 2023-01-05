@@ -242,17 +242,6 @@ export default defineComponent({
 
     "Pseudo": "伪属性",
     "Base item": "物品基底"
-  },
-  "zh_A_V2_GGG": {
-    "Hidden": "已隐藏",
-    "Collapse": "折叠",
-    "Stats ignored": "忽略词缀",
-    "{0} of {1}, stats": "词缀: {0}/{1}",
-    "Mods": "Mods",
-    "No relevant stats were found": "找不到词缀",
-
-    "Pseudo": "伪属性",
-    "Base item": "物品基底"
   }
 }
 </i18n>

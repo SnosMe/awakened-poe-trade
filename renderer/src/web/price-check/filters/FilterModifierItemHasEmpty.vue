@@ -81,11 +81,6 @@ export default defineComponent({
     "Any": "任意",
     "Prefix": "前缀",
     "Suffix": "后缀"
-  },
-  "zh_A_V2_GGG": {
-    "Any": "任意",
-    "Prefix": "前缀",
-    "Suffix": "后缀"
   }
 }
 </i18n>

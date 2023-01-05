@@ -184,18 +184,6 @@ export default defineComponent({
     "Quality:": "品质:",
     "Level:": "等级:",
     "Charge:": "充能:"
-  },
-  "zh_A_V2_GGG": {
-    "Item Level:": "物品等级:",
-    "Stock:": "堆叠数量:",
-    "Map Tier:": "地图等阶:",
-    "Area Level:": "地区等级:",
-    "Wings Revealed:": "侧厅解锁:",
-    "Links:": "链接:",
-    "White:": "白孔:",
-    "Quality:": "品质:",
-    "Level:": "等级:",
-    "Charge:": "充能:"
   }
 }
 </i18n>

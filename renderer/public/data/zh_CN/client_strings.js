@@ -63,7 +63,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: '不寻常的宝石',
   HEIST_BLUEPRINT_REPLICAS: '仿品或实验底子',
   MIRRORED: '已复制',
-  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s*\(等阶：(?<tier>\d+)\))?(?:\s*\(等级：(?<rank>\d+)\))?$/,
+  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s*\(等阶：(?<tier>\d+)\))?(?:\s*\((等级|阶级)：(?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: '前缀属性 ',
   SUFFIX_MODIFIER: '后缀属性 ',
   CRAFTED_PREFIX: '大师工艺前缀',

@@ -124,10 +124,6 @@ export default defineComponent({
   "zh_A_V2": {
     "widget title": "组件标题",
     "Choose File": "选择文件"
-  },
-  "zh_A_V2_GGG": {
-    "widget title": "组件标题",
-    "Choose File": "选择文件"
   }
 }
 </i18n>

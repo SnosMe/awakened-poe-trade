@@ -180,9 +180,6 @@ export default defineComponent({
   "zh_A_V2": {
     "paused:": "已暂停"
   },
-  "zh_A_V2_GGG": {
-    "paused:": "已暂停"
-  },
   "cmn-Hant": {
     "paused:": "已暫停"
   }

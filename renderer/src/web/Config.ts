@@ -93,8 +93,6 @@ export function poeWebApi () {
     case 'zh_A_V1':
     case 'zh_A_V2':
       return 'poe.game.qq.com'
-    case 'zh_A_V2_GGG':
-      return 'www.pathofexile.com'
   }
 }
 
@@ -120,7 +118,7 @@ export interface Config {
   logLevel: string
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN' | 'zh_A_V1' | 'zh_A_V2' | 'zh_A_V2_GGG'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN' | 'zh_A_V1' | 'zh_A_V2'
   realm: 'pc-ggg' | 'pc-garena' | 'pc-tencent'
   widgets: widget.Widget[]
   fontSize: number
