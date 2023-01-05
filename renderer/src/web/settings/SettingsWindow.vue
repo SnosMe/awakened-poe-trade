@@ -344,17 +344,6 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Stash search": "仓库页搜索",
     "Stopwatch": "计时器"
   },
-  "zh_A_V2": {
-    "Settings - Awakened PoE Trade": "设置 - Awakened PoE Trade",
-    "Hotkeys": "快捷键",
-    "General": "通用",
-    "Price check": "价格搜索",
-    "Maps": "地图",
-    "Debug": "Debug",
-    "Chat": "聊天",
-    "Stash search": "仓库页搜索",
-    "Stopwatch": "计时器"
-  },
   "cmn-Hant": {
     "Settings - Awakened PoE Trade": "設置 - Awakened PoE Trade",
     "Hotkeys": "快捷鍵",

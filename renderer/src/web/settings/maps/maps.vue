@@ -142,11 +142,6 @@ export default defineComponent({
     "Stat (found: {0})": "词缀 (找到: {0})",
     "Show icon for new mods": "显示新词缀图标"
   },
-  "zh_A_V2": {
-    "Only selected": "仅选中的",
-    "Stat (found: {0})": "词缀 (找到: {0})",
-    "Show icon for new mods": "显示新词缀图标"
-  },
   "cmn-Hant": {
     "Only selected": "僅選中的",
     "Stat (found: {0})": "詞綴 (找到: {0})",

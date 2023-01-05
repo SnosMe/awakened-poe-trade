@@ -82,9 +82,6 @@ export default defineComponent({
   },
   "zh_CN": {
     "Tier {0}": "等阶 {0}"
-  },
-  "zh_A_V2": {
-    "Tier {0}": "等阶 {0}"
   }
 }
 </i18n>

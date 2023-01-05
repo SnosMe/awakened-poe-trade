@@ -44,10 +44,6 @@ export default defineComponent({
     "Start and Pause": "开始与暂停",
     "Reset": "重置"
   },
-  "zh_A_V2": {
-    "Start and Pause": "开始与暂停",
-    "Reset": "重置"
-  },
   "cmn-Hant": {
     "Start and Pause": "開始與暫停",
     "Reset": "重置"

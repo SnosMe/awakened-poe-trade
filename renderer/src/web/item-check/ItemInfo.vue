@@ -74,12 +74,6 @@ export default defineComponent({
     "Physical DPS:": "物理 DPS: #",
     "Elemental DPS:": "元素 DPS: #",
     "Total DPS:": "DPS: #"
-  },
-  "zh_A_V2": {
-    "itemName": "物品名称",
-    "Physical DPS:": "物理 DPS: #",
-    "Elemental DPS:": "元素 DPS: #",
-    "Total DPS:": "DPS: #"
   }
 }
 </i18n>

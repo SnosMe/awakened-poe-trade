@@ -277,17 +277,6 @@ export default defineComponent({
     "Seller": "卖家",
     "Trade site request failed": "交易站点请求失败"
   },
-  "zh_A_V2": {
-    "Matched:": "已匹配:",
-    "Trade": "交易",
-    "Price": "价格",
-    "bulk": "批量",
-    "Stock": "存量",
-    "Fulfill": "完成",
-    "Listed": "已列出",
-    "Seller": "卖家",
-    "Trade site request failed": "交易站点请求失败"
-  },
   "cmn-Hant": {
     "Matched:": "已匹配:",
     "Trade": "交易",

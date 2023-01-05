@@ -99,17 +99,6 @@ export default defineComponent({
     "Stash tab scrolling": "切换仓库页",
     "Grid for Delve Chart": "矿坑网格"
   },
-  "zh_A_V2": {
-    "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(回退键) 来清除快捷键。",
-    "Price check": "查询价格",
-    "Auto-hide Mode": "自动隐藏模式",
-    "Open without auto-hide": "一般模式",
-    "Overlay": "Overlay",
-    "Map check": "检查地图",
-    "Item info": "物品资讯",
-    "Stash tab scrolling": "切换仓库页",
-    "Grid for Delve Chart": "矿坑网格"
-  },
   "cmn-Hant": {
     "You can clear hotkey by pressing Backspace": "你可以使用 Backspace(倒退鍵) 來清除快捷鍵。",
     "Price check": "查詢價格",
