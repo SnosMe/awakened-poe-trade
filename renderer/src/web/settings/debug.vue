@@ -56,12 +56,6 @@ export default defineComponent({
     "Disabled (render on CPU)": "禁用 ( 由CPU渲染 )",
     "PoE window title": "PoE窗口标题"
   },
-  "zh_A_V1": {
-    "Log level": "日志级别",
-    "Hardware Acceleration": "硬件加速",
-    "Disabled (render on CPU)": "禁用 ( 由CPU渲染 )",
-    "PoE window title": "PoE窗口标题"
-  },
   "zh_A_V2": {
     "Log level": "日志级别",
     "Hardware Acceleration": "硬件加速",

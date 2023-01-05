@@ -185,12 +185,6 @@ function deltaFromGraph (graphPoints: Array<number | null>) {
     "Getting price": "正在获取价格",
     "from poe.ninja ...": "从 poe.ninja ..."
   },
-  "zh_A_V1": {
-    "Base item": "基础物品",
-    "Last 7 days": "最近 7 天",
-    "Getting price": "正在获取价格",
-    "from poe.ninja ...": "从 poe.ninja ..."
-  },
   "zh_A_V2": {
     "Base item": "基础物品",
     "Last 7 days": "最近 7 天",

@@ -84,9 +84,6 @@ export default defineComponent({
   "zh_CN": {
     "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "正在查询未鉴定的传奇物品, 基础类型为: \"{0}\". 请确定是哪一个?"
   },
-  "zh_A_V1": {
-    "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "正在查询未鉴定的传奇物品, 基础类型为: \"{0}\". 请确定是哪一个?"
-  },
   "zh_A_V2": {
     "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "正在查询未鉴定的传奇物品, 基础类型为: \"{0}\". 请确定是哪一个?"
   },

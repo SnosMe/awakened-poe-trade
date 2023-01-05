@@ -82,11 +82,6 @@ export default defineComponent({
     "Not recognized modifier": "未知词缀",
     "has_outdataed" :"部份词缀描述已变更，请检查并更新地图的危险词缀。(当你删除将所有旧版词缀，此讯息会隐藏)"
   },
-  "zh_A_V1" :{
-    "Item has no modifiers.": "物品没有词缀",
-    "Not recognized modifier": "未知词缀",
-    "has_outdataed" :"部份词缀描述已变更，请检查并更新地图的危险词缀。(当你删除将所有旧版词缀，此讯息会隐藏)"
-  },
   "zh_A_V2" :{
     "Item has no modifiers.": "物品没有词缀",
     "Not recognized modifier": "未知词缀",

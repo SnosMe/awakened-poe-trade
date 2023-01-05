@@ -252,9 +252,6 @@ export default defineComponent({
   "zh_CN": {
     "This tool relies on {0} and {1}, consider support them as well": "此工具基于 {0} 及 {1}, 请支持他们"
   },
-  "zh_A_V1": {
-    "This tool relies on {0} and {1}, consider support them as well": "此工具基于 {0} 及 {1}, 请支持他们"
-  },
   "zh_A_V2": {
     "This tool relies on {0} and {1}, consider support them as well": "此工具基于 {0} 及 {1}, 请支持他们"
   },

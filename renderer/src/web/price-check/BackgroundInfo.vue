@@ -70,14 +70,6 @@ export default defineComponent({
     "Failed to load leagues": "载入赛季失败",
     "leagues_failed": "请确认服务器是否维护中。同时点击 \"浏览器\" 按钮前往人机验证。"
   },
-  "zh_A_V1": {
-    "Update available: {0}": "有更新: {0}",
-    "It will be installed automatically on exit": "将在退出时自动安装",
-    "You can download it from GitHub": "可至 GitHub 下载",
-    "Loading leagues...": "正在载入赛季",
-    "Failed to load leagues": "载入赛季失败",
-    "leagues_failed": "请确认服务器是否维护中。同时点击 \"浏览器\" 按钮前往人机验证。"
-  },
   "zh_A_V2": {
     "Update available: {0}": "有更新: {0}",
     "It will be installed automatically on exit": "将在退出时自动安装",

@@ -76,11 +76,6 @@ export default defineComponent({
     "search text or regex": "搜索文本或正则",
     "friendly name": "易记名称"
   },
-  "zh_A_V1": {
-    "widget title": "组件标题",
-    "search text or regex": "搜索文本或正则",
-    "friendly name": "易记名称"
-  },
   "zh_A_V2": {
     "widget title": "组件标题",
     "search text or regex": "搜索文本或正则",

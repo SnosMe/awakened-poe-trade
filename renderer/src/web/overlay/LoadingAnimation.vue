@@ -80,9 +80,6 @@ export default defineComponent({
   "zh_CN": {
     "Is ready and running in background": "程序已运行"
   },
-  "zh_A_V1": {
-    "Is ready and running in background": "程序已运行"
-  },
   "zh_A_V2": {
     "Is ready and running in background": "程序已运行"
   }

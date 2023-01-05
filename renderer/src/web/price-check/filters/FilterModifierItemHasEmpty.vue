@@ -72,11 +72,6 @@ export default defineComponent({
     "Prefix": "前缀",
     "Suffix": "后缀"
   },
-  "zh_A_V1": {
-    "Any": "任意",
-    "Prefix": "前缀",
-    "Suffix": "后缀"
-  },
   "zh_A_V2": {
     "Any": "任意",
     "Prefix": "前缀",

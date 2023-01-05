@@ -55,10 +55,6 @@ export default defineComponent({
     "Add command": "增加命令",
     "press Enter": "按回车(Enter)"
   },
-  "zh_A_V1": {
-    "Add command": "增加命令",
-    "press Enter": "按回车(Enter)"
-  },
   "zh_A_V2": {
     "Add command": "增加命令",
     "press Enter": "按回车(Enter)"
