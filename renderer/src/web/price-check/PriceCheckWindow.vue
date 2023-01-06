@@ -179,7 +179,7 @@ export default defineComponent({
       }
     })
 
-    const title = computed(() => league.value || 'Awakened PoE Trade')
+    const title = computed(() => league.value || 'Awakened PoE Trade Simplified Chinese')
     const stableOrbCost = computed(() => (xchgRate.value) ? Math.round(xchgRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)

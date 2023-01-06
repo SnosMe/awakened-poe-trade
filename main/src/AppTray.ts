@@ -10,7 +10,7 @@ export class AppTray {
     this.tray = new Tray(
       nativeImage.createFromPath(path.join(__dirname, process.env.STATIC!, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
     )
-    this.tray.setToolTip('Awakened PoE Trade')
+    this.tray.setToolTip('Awakened PoE Trade Simplified Chinese')
     this.rebuildMenu()
   }
 

@@ -32,7 +32,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
     l: league.value,
-    s: 'awakened-poe-trade'
+    s: 'Awakened-PoE-Trade-Simplified-Chinese'
   })
 
   let data = cache.get<PoepricesApiResponse>(query)
@@ -80,7 +80,7 @@ export function getExternalLink (item: ParsedItem): string {
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
     l: league.value,
-    s: 'awakened-poe-trade',
+    s: 'Awakened-PoE-Trade-Simplified-Chinese',
     w: 1
   })
   return `https://www.poeprices.info/api?${query}`
@@ -95,7 +95,7 @@ export async function sendFeedback (
   body.append('selector', feedback.option)
   body.append('feedbacktxt', feedback.text)
   body.append('qitem_txt', utf8ToBase64(transformItemText(item.rawText)))
-  body.append('source', 'awakened-poe-trade')
+  body.append('source', 'Awakened-PoE-Trade-Simplified-Chinese')
   body.append('min', String(prediction.min))
   body.append('max', String(prediction.max))
   body.append('currency', prediction.currency)

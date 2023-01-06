@@ -17,7 +17,7 @@
     </div>
   </div>
   <div :class="$style.window" class="grow layout-column" :onMouseenter="hidePodium">
-    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade')" />
+    <app-titlebar @close="cancel" :title="t('Settings - Awakened PoE Trade Simplified Chinese')" />
     <div class="flex grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
         <template v-for="item of menuItems">
@@ -324,7 +324,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
 <i18n>
 {
   "ru": {
-    "Settings - Awakened PoE Trade": "Настройки - Awakened PoE Trade",
+    "Settings - Awakened PoE Trade Simplified Chinese": "Настройки - Awakened PoE Trade Simplified Chinese",
     "Hotkeys": "Быстрые клавиши",
     "General": "Общие",
     "Price check": "Прайс-чек",
@@ -337,7 +337,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "App development continues thanks to:": "Разработка приложения продолжается благодаря:"
   },
   "zh_CN": {
-    "Settings - Awakened PoE Trade": "设置 - Awakened PoE Trade",
+    "Settings - Awakened PoE Trade Simplified Chinese": "设置 - Awakened PoE Trade Simplified Chinese",
     "Hotkeys": "快捷键",
     "General": "通用",
     "Price check": "价格搜索",
@@ -348,7 +348,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Stopwatch": "计时器"
   },
   "cmn-Hant": {
-    "Settings - Awakened PoE Trade": "設置 - Awakened PoE Trade",
+    "Settings - Awakened PoE Trade Simplified Chinese": "設置 - Awakened PoE Trade Simplified Chinese",
     "Hotkeys": "快捷鍵",
     "General": "通用",
     "Price check": "價格搜索",
