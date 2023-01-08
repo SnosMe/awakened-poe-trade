@@ -238,9 +238,13 @@ export default defineComponent({
       return showExclusive || topmostWidget.value
     })
 
-    watch(topmostOrExclusiveWidget, (widget) => {
+    watch(topmostOrExclusiveWidget, (widget, wasWidget) => {
       showEditingNotification.value = (widget.wmType === 'settings')
-    })
+      // TODO: hack, should find a better way to save config
+      if (wasWidget && wasWidget.wmZorder === 'exclusive' && wasWidget.wmType !== 'settings') {
+        saveConfig()
+      }
+    }, { immediate: false })
 
     const poePanelWidth = computed(() => {
       if (!Host.isElectron) return 0
