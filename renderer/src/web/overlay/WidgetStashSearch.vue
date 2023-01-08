@@ -47,8 +47,8 @@ export default defineComponent({
     return {
       stashSearch (text: string) {
         MainProcess.sendEvent({
-          name: 'CLIENT->MAIN::stash-search',
-          payload: { text }
+          name: 'CLIENT->MAIN::user-action',
+          payload: { action: 'stash-search', text }
         })
       }
     }

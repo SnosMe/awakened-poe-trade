@@ -63,7 +63,6 @@ export type IpcEvent =
   // events used by any type of Client:
   IpcSaveConfig |
   IpcUpdaterState |
-  IpcStashSearch |
   IpcGameLog |
   IpcClientIsActive |
   IpcLogEntry |
@@ -143,11 +142,6 @@ type IpcItemText =
     focusOverlay: boolean
   }>
 
-type IpcStashSearch =
-  Event<'CLIENT->MAIN::stash-search', {
-    text: string
-  }>
-
 type IpcGameLog =
   Event<'MAIN->CLIENT::game-log', {
     lines: string[]
@@ -160,7 +154,10 @@ type IpcUpdaterState =
 // Actions below are triggered by user interaction with the UI.
 type IpcUserAction =
   Event<'CLIENT->MAIN::user-action', {
-    action: 'check-for-update' | 'update-and-restart'
+    action: 'check-for-update' | 'update-and-restart' | 'quit'
+  } | {
+    action: 'stash-search'
+    text: string
   }>
 
 interface Event<TName extends string, TPayload = undefined> {

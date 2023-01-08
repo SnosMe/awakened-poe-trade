@@ -1,17 +1,24 @@
 import path from 'path'
 import { app, Tray, Menu, shell, nativeImage, dialog } from 'electron'
+import type { ServerEvents } from './server'
 
 export class AppTray {
   public overlayKey = 'Shift + Space'
   private tray: Tray
   serverPort = 0
 
-  constructor () {
+  constructor (server: ServerEvents) {
     this.tray = new Tray(
       nativeImage.createFromPath(path.join(__dirname, process.env.STATIC!, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
     )
     this.tray.setToolTip(`Awakened PoE Trade v${app.getVersion()}`)
     this.rebuildMenu()
+
+    server.onEventAnyClient('CLIENT->MAIN::user-action', ({ action }) => {
+      if (action === 'quit') {
+        app.quit()
+      }
+    })
   }
 
   rebuildMenu () {

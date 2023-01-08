@@ -36,7 +36,7 @@ export function openCoE (item: ParsedItem) {
 export function findSimilarItems (item: ParsedItem) {
   const text = JSON.stringify(item.info.name)
   Host.sendEvent({
-    name: 'CLIENT->MAIN::stash-search',
-    payload: { text }
+    name: 'CLIENT->MAIN::user-action',
+    payload: { action: 'stash-search', text }
   })
 }
