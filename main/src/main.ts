@@ -40,11 +40,11 @@ app.on('ready', async () => {
         shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.restoreClipboard)
         gameLogWatcher.restart(cfg.clientLog)
         gameConfig.readConfig(cfg.gameConfig)
-        appUpdater.updateOps(!cfg.disableUpdateDownload)
+        appUpdater.updateOpts(!cfg.disableUpdateDownload)
         tray.overlayKey = cfg.overlayKey
       })
       uIOhook.start()
-      const port = await startServer()
+      const port = await startServer(appUpdater)
       overlay.loadAppPage(port)
       tray.serverPort = port
     },

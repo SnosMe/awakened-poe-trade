@@ -6,9 +6,11 @@ import fastifyStatic from '@fastify/static'
 import type { WebSocket } from 'ws'
 import type { AddressInfo } from 'net'
 import { EventEmitter } from 'events'
-import { IpcEvent, IpcEventPayload } from '../../ipc/types'
+import { app } from 'electron'
+import { IpcEvent, IpcEventPayload, HostState } from '../../ipc/types'
 import { ConfigStore } from './host-files/ConfigStore'
 import { addFileUploadRoutes } from './host-files/file-uploads'
+import type { AppUpdater } from './AppUpdater'
 
 const server = fastify()
 let lastActiveClient: WebSocket
@@ -81,12 +83,6 @@ export const eventPipe = {
   sendEventTo
 }
 
-const configStore = new ConfigStore(eventPipe)
-
-server.get('/config', async (_req) => {
-  return { contents: await configStore.load() }
-})
-
 server.register(async (instance) => {
   instance.get('/events', { websocket: true }, (connection) => {
     lastActiveClient = connection.socket
@@ -107,7 +103,22 @@ server.register(async (instance) => {
   })
 })
 
-export async function startServer (): Promise<number> {
+export async function startServer (
+  appUpdater: AppUpdater
+): Promise<number> {
+  const configStore = new ConfigStore(eventPipe)
+
+  server.get<{
+    Reply: HostState
+  }>('/config', async (_req) => {
+    return {
+      version: app.getVersion(),
+      portable: Boolean(process.env.PORTABLE_EXECUTABLE_DIR),
+      updater: appUpdater.info,
+      contents: await configStore.load()
+    }
+  })
+
   await server.listen({
     port: (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0
   })

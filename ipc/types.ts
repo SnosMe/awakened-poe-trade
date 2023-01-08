@@ -34,6 +34,24 @@ export interface ShortcutAction {
   }
 }
 
+export type UpdateInfo =
+  {
+    state: 'initial' | 'checking-for-update'
+  } | {
+    state: 'update-available' | 'update-downloaded'
+    version: string
+  } | {
+    state: 'update-not-available' | 'error'
+    checkedAt: number
+  }
+
+export interface HostState {
+  contents: string | null
+  version: string
+  portable: boolean
+  updater: UpdateInfo
+}
+
 export type IpcEvent =
   // events that have meaning only in Overlay mode:
   IpcOverlayAttached |
@@ -44,7 +62,7 @@ export type IpcEvent =
   IpcTrackArea |
   // events used by any type of Client:
   IpcSaveConfig |
-  IpcUpdateInfo |
+  IpcUpdaterState |
   IpcStashSearch |
   IpcGameLog |
   IpcClientIsActive |
@@ -52,7 +70,8 @@ export type IpcEvent =
   IpcHostConfig |
   IpcWidgetAction |
   IpcItemText |
-  IpcConfigChanged
+  IpcConfigChanged |
+  IpcUserAction
 
 export type IpcEventPayload<Name extends IpcEvent['name'], T extends IpcEvent = IpcEvent> =
   T extends { name: Name, payload: infer P } ? P : never
@@ -134,10 +153,14 @@ type IpcGameLog =
     lines: string[]
   }>
 
-export type IpcUpdateInfo =
-  Event<'MAIN->CLIENT::update-available', {
-    auto: boolean
-    version: string
+type IpcUpdaterState =
+  Event<'MAIN->CLIENT::updater-state', UpdateInfo>
+
+// Hotkeyable actions are defined in `ShortcutAction`.
+// Actions below are triggered by user interaction with the UI.
+type IpcUserAction =
+  Event<'CLIENT->MAIN::user-action', {
+    action: 'check-for-update' | 'update-and-restart'
   }>
 
 interface Event<TName extends string, TPayload = undefined> {

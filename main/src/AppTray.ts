@@ -10,7 +10,7 @@ export class AppTray {
     this.tray = new Tray(
       nativeImage.createFromPath(path.join(__dirname, process.env.STATIC!, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
     )
-    this.tray.setToolTip('Awakened PoE Trade')
+    this.tray.setToolTip(`Awakened PoE Trade v${app.getVersion()}`)
     this.rebuildMenu()
   }
 
@@ -33,36 +33,10 @@ export class AppTray {
       },
       { type: 'separator' },
       {
-        label: `APT v${app.getVersion()}`,
-        click: () => {
-          shell.openExternal('https://github.com/SnosMe/awakened-poe-trade/releases')
-        }
-      },
-      {
         label: 'Open config folder',
         click: () => {
           shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
         }
-      },
-      { type: 'separator' },
-      {
-        label: 'Patreon (Donate)',
-        click: () => {
-          shell.openExternal('https://patreon.com/awakened_poe_trade')
-        }
-      },
-      {
-        label: 'Discord',
-        submenu: [
-          {
-            label: 'The Forbidden Trove',
-            click: () => { shell.openExternal('https://discord.gg/KNpmhvk') }
-          },
-          {
-            label: 'r/pathofexile',
-            click: () => { shell.openExternal('https://discord.gg/fSwfqN5') }
-          }
-        ]
       },
       {
         label: 'Quit',

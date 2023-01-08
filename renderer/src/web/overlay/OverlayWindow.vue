@@ -43,7 +43,6 @@ import WidgetSettings from '../settings/SettingsWindow.vue'
 import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
-import '@/web/background/AutoUpdates'
 import '@/web/background/Prices'
 import { load as loadLeagues } from '@/web/background/Leagues'
 import { handleLine } from '@/web/client-log/client-log'

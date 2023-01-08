@@ -55,6 +55,7 @@ import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
+import SettingsAbout from './about.vue'
 import SettingsPricecheck from './price-check.vue'
 import SettingsItemcheck from './item-check.vue'
 import SettingsDebug from './debug.vue'
@@ -183,7 +184,7 @@ function menuByType (type?: string) {
         [SettingsHotkeys, SettingsChat],
         [SettingsGeneral],
         [SettingsPricecheck, SettingsMaps, SettingsItemcheck],
-        [SettingsDebug]
+        [SettingsDebug, SettingsAbout]
       ]
   }
 }
@@ -324,6 +325,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Settings - Awakened PoE Trade": "Настройки - Awakened PoE Trade",
     "Hotkeys": "Быстрые клавиши",
     "General": "Общие",
+    "About": "О программе",
     "Price check": "Прайс-чек",
     "Maps": "Карты",
     "Item info": "Проверка предмета",
