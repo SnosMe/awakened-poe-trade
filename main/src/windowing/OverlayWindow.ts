@@ -175,24 +175,33 @@ export class OverlayWindow {
 }
 
 function spyOnPathofexileCookies (webContents: WebContents, map: Map<string, string>) {
-  webContents.session.webRequest.onHeadersReceived({
-    urls: ['https://*/*']
-  }, (details, next) => {
-    if (
-      !details.responseHeaders ||
-      !PROXY_HOSTS.some(({ host, official }) =>
-        official && details.url.startsWith(`https://${host}`))
-    ) return next({})
+  const urls = PROXY_HOSTS
+    .filter(({ official }) => official)
+    .map(({ host }) => `https://${host}/*`)
 
+  webContents.session.webRequest.onHeadersReceived({ urls }, (details, next) => {
     for (const key in details.responseHeaders) {
       if (key.toLowerCase() === 'set-cookie') {
         for (const cookie of details.responseHeaders[key]) {
           const [key, value] = cookie.split(';', 1)[0].split('=', 2)
           map.set(key, value)
         }
+        break
       }
     }
+    next({ responseHeaders: details?.responseHeaders })
+  })
 
-    next({ responseHeaders: details.responseHeaders })
+  webContents.session.webRequest.onBeforeSendHeaders({ urls }, (details, next) => {
+    for (const key in details.requestHeaders) {
+      if (key.toLowerCase() === 'cookie') {
+        for (const part of details.requestHeaders[key].split(';')) {
+          const [key, value] = part.trim().split('=', 2)
+          map.set(key, value)
+        }
+        break
+      }
+    }
+    next({ requestHeaders: details.requestHeaders })
   })
 }
