@@ -83,7 +83,15 @@
         <ui-radio v-model="showCursor" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
-    <div class="mb-2 bg-orange-800 p-2">{{ t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.') }}</div>
+    <div class="mb-6" :class="{ 'p-2 bg-orange-800 rounded': builtinBrowser }">
+      <div class="flex-1 mb-1">{{ t('Enable builtin browser') }}</div>
+      <div class="flex">
+        <ui-radio v-model="builtinBrowser" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="builtinBrowser" :value="false">{{ t('No') }}</ui-radio>
+      </div>
+      <div v-if="builtinBrowser" class="mt-1">{{ t('builtin_browser_warning') }}</div>
+    </div>
+    <div class="mb-2 bg-orange-800 p-2 rounded">{{ t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.') }}</div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show indication on collapsed listings') }}</div>
       <div class="mb-4 flex">
@@ -144,6 +152,7 @@ export default defineComponent({
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
+      builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),
       requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),
       collapseListings: configModelValue(() => configWidget.value, 'collapseListings'),
       hotkeyQuick: computed(() => configWidget.value.hotkey
@@ -197,6 +206,9 @@ export default defineComponent({
 
 <i18n>
 {
+  "en": {
+    "builtin_browser_warning": "I am aware that future releases can potentially contain malicious code that can steal my POESESSID."
+  },
   "ru": {
     "Account name": "Имя учетной записи",
     "or Private League": "или Приватная лига",
@@ -218,7 +230,10 @@ export default defineComponent({
     "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
     "Price check Item, and follow the instructions in the error description.": "Прайс-чекните предмет, и следуйте инструкции в описании ошибки.",
-    "Show price prediction": "Показывать приблизительную цену"
+    "Show price prediction": "Показывать приблизительную цену",
+    "Enable builtin browser": "Включить встроенный браузер",
+    "Show item level": "Показывать уровень предмета",
+    "builtin_browser_warning": "Я осознаю, что в будущие релизы могут потенциально содержать вредоносный код, который может украсть мой POESESSID."
   },
   "cmn-Hant": {
     "League": "聯盟"

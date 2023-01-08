@@ -10,18 +10,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, inject } from 'vue'
+import { defineComponent, PropType, inject, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { Host } from '@/web/background/IPC'
+import { AppConfig } from '@/web/Config'
+import { PriceCheckWidget } from '@/web/overlay/widgets'
 
 export default defineComponent({
   props: {
     getLink: {
       type: Function as PropType<() => string>,
       required: true
-    },
-    builtin: {
-      type: Boolean,
-      default: false
     }
   },
   setup (props) {
@@ -30,6 +29,11 @@ export default defineComponent({
 
     return {
       t,
+      builtin: computed(() => {
+        if (!Host.isElectron) return false
+        const priceCheck = AppConfig('price-check') as PriceCheckWidget
+        return priceCheck.builtinBrowser
+      }),
       open (isExternal: boolean) {
         const link = props.getLink()
         if (isExternal) {
