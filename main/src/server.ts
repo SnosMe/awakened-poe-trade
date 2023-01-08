@@ -1,7 +1,6 @@
 import fastify from 'fastify'
 import fastifyWs from '@fastify/websocket'
 import fastifyCors from '@fastify/cors'
-import fastifyProxy from '@fastify/http-proxy'
 import fastifyStatic from '@fastify/static'
 import type { WebSocket } from 'ws'
 import type { AddressInfo } from 'net'
@@ -12,7 +11,7 @@ import { ConfigStore } from './host-files/ConfigStore'
 import { addFileUploadRoutes } from './host-files/file-uploads'
 import type { AppUpdater } from './AppUpdater'
 
-const server = fastify()
+export const server = fastify()
 let lastActiveClient: WebSocket
 
 server.register(fastifyWs, {
@@ -29,19 +28,6 @@ server.addContentTypeParser(
 )
 
 addFileUploadRoutes(server)
-
-;[
-  'www.pathofexile.com',
-  'ru.pathofexile.com',
-  'web.poe.garena.tw',
-  'poe.ninja',
-  'www.poeprices.info',
-].map(host => {
-  server.register(fastifyProxy, {
-    upstream: `https://${host}`,
-    prefix: `/proxy/${host}`
-  })
-})
 
 if (!process.env.VITE_DEV_SERVER_URL) {
   server.register(fastifyStatic, {
