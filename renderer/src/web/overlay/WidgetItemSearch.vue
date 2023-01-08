@@ -11,6 +11,8 @@
             currency-text
           ></item-quick-price>
           <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.name }}</div>
+          <div v-if="item.discr"
+            class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
         </div>
       </div>
       <div class="flex gap-x-1 bg-gray-800 p-1 rounded-t">
@@ -69,6 +71,7 @@ import { findPriceByQuery, autoCurrency } from '@/web/background/Prices'
 interface SelectedItem {
   name: string
   icon: string
+  discr?: string
   chaos?: number
   price?: ReturnType<typeof autoCurrency>
 }
@@ -162,6 +165,7 @@ export default defineComponent({
       addItem({
         name: item.name,
         icon: item.icon,
+        discr: opts.altQuality,
         chaos: price?.chaos,
         price: (price != null) ? autoCurrency(price.chaos) : undefined
       })
