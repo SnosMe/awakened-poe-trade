@@ -156,6 +156,7 @@ export default defineComponent({
     "Language": "语言",
     "Realm": "服务器",
     "International": "国际服",
+    "tencent": "国服",
     "PoE log file": "PoE日志文件",
     "PoE config file": "PoE配置文件",
     "Browse": "浏览",

@@ -6,7 +6,7 @@
       <p class="">{{ t('Version {0}', [version]) }}</p>
       <div class="flex gap-2">
         <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/releases" target="_blank">{{ t('Release notes') }}</a>
-        <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/issues" target="_blank">{{ t('Report a bug on GitHub') }}</a>
+        <a class="border-b" href="https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/issues" target="_blank">{{ t('Report a bug on GitHub') }}</a>
       </div>
     </div>
     <div class="border border-gray-600 rounded p-2 whitespace-nowrap min-w-min w-72">
@@ -40,7 +40,7 @@ function checkForUpdates () {
 }
 
 function openDownloadPage () {
-  window.open('https://snosme.github.io/awakened-poe-trade/download')
+  window.open('https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/releases')
 }
 
 function quitAndInstall () {
@@ -104,7 +104,7 @@ export default defineComponent({
     "Version {0}": "版本 {0}",
     "Release notes": "版本发布页面",
     "Report a bug on GitHub": "在Github中反馈bug",
-    "contact_in_discord": "在Discord中联系"
+    "contact_in_discord": "在Discord中联系原作者"
   }
 }
 </i18n>

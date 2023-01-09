@@ -5,7 +5,6 @@
 [![](https://user-images.githubusercontent.com/4292308/153364565-7a545d26-e617-4a33-a919-ff90d8feda3d.svg)](https://github.com/SnosMe/awakened-poe-trade/issues/22)
 
 
-➡ [Download for Windows & Linux](https://snosme.github.io/awakened-poe-trade/download) ⬅
 
 ## Tool showcase
 

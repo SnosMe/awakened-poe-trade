@@ -32,9 +32,6 @@
           {{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a><br>
           {{ t('Support development CN on') }}<br> <a href="https://afdian.net/a/APTSimplifiedChinese/plan" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/aifadain.png"></a>
         </div>
-        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content; min-width: 100%;">
-          <a>简中作者: 红尘渡者</a>
-        </div>
       </div>
       <div class="text-gray-100 grow layout-column bg-gray-900">
         <div class="grow overflow-y-auto bg-gray-800 rounded-tl">
@@ -347,7 +344,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
 <i18n>
 {
   "ru": {
-    "Settings - Awakened PoE Trade Simplified Chinese": "Настройки - Awakened PoE Trade Simplified Chinese",
+    "Settings - Awakened PoE Trade Simplified Chinese": "Настройки - Awakened PoE Trade Simplified Chinese By 红尘渡者",
     "Hotkeys": "Быстрые клавиши",
     "General": "Общие",
     "About": "О программе",
@@ -362,7 +359,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "App development continues thanks to:": "Разработка приложения продолжается благодаря:"
   },
   "zh_CN": {
-    "Settings - Awakened PoE Trade Simplified Chinese": "设置 - Awakened PoE Trade Simplified Chinese",
+    "Settings - Awakened PoE Trade Simplified Chinese": "设置 - Awakened PoE Trade Simplified Chinese By 红尘渡者",
     "Hotkeys": "快捷键",
     "General": "通用",
     "Price check": "价格搜索",
@@ -371,10 +368,12 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Chat": "聊天",
     "Quit": "退出",
     "Stash search": "仓库页搜索",
-    "Stopwatch": "计时器"
+    "Stopwatch": "计时器",
+    "Item info": "项目信息",
+    "About": "关于"
   },
   "cmn-Hant": {
-    "Settings - Awakened PoE Trade Simplified Chinese": "設置 - Awakened PoE Trade Simplified Chinese",
+    "Settings - Awakened PoE Trade Simplified Chinese": "設置 - Awakened PoE Trade Simplified Chinese By 红尘渡者",
     "Hotkeys": "快捷鍵",
     "General": "通用",
     "Price check": "價格搜索",
@@ -383,7 +382,9 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Chat": "聊天",
     "Quit": "退出",
     "Stash search": "倉庫頁搜索",
-    "Stopwatch": "計時器"
+    "Stopwatch": "計時器",
+    "Item info": "项目信息",
+    "About": "关于"
   }
 }
 </i18n>
