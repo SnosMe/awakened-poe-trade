@@ -43,7 +43,6 @@ import WidgetSettings from '../settings/SettingsWindow.vue'
 import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
-import '@/web/background/AutoUpdates'
 import '@/web/background/Prices'
 import { load as loadLeagues } from '@/web/background/Leagues'
 import { handleLine } from '@/web/client-log/client-log'
@@ -239,9 +238,13 @@ export default defineComponent({
       return showExclusive || topmostWidget.value
     })
 
-    watch(topmostOrExclusiveWidget, (widget) => {
+    watch(topmostOrExclusiveWidget, (widget, wasWidget) => {
       showEditingNotification.value = (widget.wmType === 'settings')
-    })
+      // TODO: hack, should find a better way to save config
+      if (wasWidget && wasWidget.wmZorder === 'exclusive' && wasWidget.wmType !== 'settings') {
+        saveConfig()
+      }
+    }, { immediate: false })
 
     const poePanelWidth = computed(() => {
       if (!Host.isElectron) return 0

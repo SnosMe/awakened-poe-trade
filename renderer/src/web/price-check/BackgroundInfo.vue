@@ -1,12 +1,7 @@
 <template>
-  <div v-if="updateInfo" class="bg-gray-900 mt-2 mx-4 rounded flex items-baseline py-1 px-2">
-    <div class="flex-1 font-sans">
-      <div>{{ t('Update available: {0}', [updateInfo.version]) }}</div>
-      <p class="text-gray-500">{{ t(updateInfo.auto
-        ? 'It will be installed automatically on exit'
-        : 'You can download it from GitHub') }}</p>
-    </div>
-    <button @click="updateInfo = null"><i class="fas fa-times"></i></button>
+  <div v-if="updateInfo" class="bg-gray-900 mt-2 mx-4 rounded py-1 px-2">
+    <p>{{ updateInfo.str1 }}</p>
+    <p class="text-gray-500">{{ updateInfo.str2 }}</p>
   </div>
   <div v-if="loadingLeagues" class="pt-2 px-4">
     <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
@@ -21,17 +16,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from 'vue'
+import { defineComponent, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 import * as Leagues from '@/web/background/Leagues'
-import { updateInfo } from '@/web/background/AutoUpdates'
-import { poeWebApi } from '@/web/Config'
+import { Host } from '@/web/background/IPC'
+import { poeWebApi, AppConfig } from '@/web/Config'
 
 export default defineComponent({
   setup () {
     const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
     const { t } = useI18n()
+
+    const updateInfo = computed(() => {
+      const rawInfo = Host.updateInfo.value
+      switch (rawInfo.state) {
+        case 'update-downloaded':
+          return { str1: t('updates.available', [rawInfo.version]), str2: t('updates.installed_on_exit') }
+        case 'update-available':
+          return (Host.isPortable.value || AppConfig().disableUpdateDownload)
+            ? { str1: t('updates.available', [rawInfo.version]), str2: (Host.isPortable.value) ? t('updates.download_manually') : t('updates.download_disabled') }
+            : null
+        default:
+          return null
+      }
+    })
 
     return {
       t,
@@ -55,9 +64,6 @@ export default defineComponent({
     "leagues_failed": "Make sure the realm is not under maintenance. Also try clicking on the \"Browser\" button, you may need to complete a CAPTCHA there."
   },
   "ru": {
-    "Update available: {0}": "Доступно обновление: {0}",
-    "It will be installed automatically on exit": "Оно будет установлено автоматически при выходе",
-    "You can download it from GitHub": "Вы можете загрузить его с GitHub",
     "Loading leagues...": "Загрузка лиг...",
     "Failed to load leagues": "Не удалось загрузить лиги",
     "leagues_failed": "Убедитесь, что сервера не находятся на обслуживании. Попробуйте нажать на кнопку \"Браузер\", возможно, там будет CAPTCHA."

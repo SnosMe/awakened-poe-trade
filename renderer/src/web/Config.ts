@@ -124,7 +124,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 14,
+  configVersion: 15,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
@@ -199,6 +199,7 @@ export const defaultConfig = (): Config => ({
       smartInitialSearch: true,
       lockedInitialSearch: true,
       activateStockFilter: false,
+      builtinBrowser: false,
       hotkey: 'D',
       hotkeyHold: 'Ctrl',
       hotkeyLocked: 'Ctrl + Alt + D',
@@ -497,6 +498,14 @@ function upgradeConfig (_config: Config): Config {
     itemCheck.stashSearchKey = null
 
     config.configVersion = 14
+  }
+
+  if (config.configVersion < 15) {
+    const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
+
+    priceCheck.builtinBrowser = false
+
+    config.configVersion = 15
   }
 
   return config as unknown as Config

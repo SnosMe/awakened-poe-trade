@@ -26,6 +26,8 @@
           <div v-else
             class="border-b mx-2 border-gray-800" />
         </template>
+        <button v-if="menuItems.length >= 4"
+          :class="$style['quit-btn']" @click="quit">{{ t('Quit') }}</button>
         <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content; min-width: 100%;">
           {{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a><br>
           {{ t('Support development CN on') }}<br> <a href="https://afdian.net/a/APTSimplifiedChinese/plan" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/aifadain.png"></a>
@@ -54,10 +56,12 @@ import { defineComponent, shallowRef, computed, Component, PropType, nextTick, i
 import { useI18n } from 'vue-i18n'
 import { AppConfig, updateConfig, saveConfig, pushHostConfig, Config } from '@/web/Config'
 import { APP_PATRONS } from '@/assets/data'
+import { Host } from '@/web/background/IPC'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
+import SettingsAbout from './about.vue'
 import SettingsPricecheck from './price-check.vue'
 import SettingsItemcheck from './item-check.vue'
 import SettingsDebug from './debug.vue'
@@ -74,6 +78,13 @@ function shuffle<T> (array: T[]): T[] {
       [array[randomIndex], array[currentIndex]]
   }
   return array
+}
+
+function quit () {
+  Host.sendEvent({
+    name: 'CLIENT->MAIN::user-action',
+    payload: { action: 'quit' }
+  })
 }
 
 export default defineComponent({
@@ -150,6 +161,7 @@ export default defineComponent({
       cancel () {
         wm.hide(props.config.wmId)
       },
+      quit,
       menuItems,
       selectedComponent,
       configClone,
@@ -186,7 +198,7 @@ function menuByType (type?: string) {
         [SettingsHotkeys, SettingsChat],
         [SettingsGeneral],
         [SettingsPricecheck, SettingsMaps, SettingsItemcheck],
-        [SettingsDebug]
+        [SettingsDebug, SettingsAbout]
       ]
   }
 }
@@ -231,6 +243,17 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   &.active {
     @apply text-gray-400;
     @apply bg-gray-800;
+  }
+}
+
+.quit-btn {
+  @apply text-gray-600;
+  @apply border border-gray-800;
+  @apply p-1 mt-2 mr-2 rounded;
+
+  &:hover {
+    @apply text-red-400;
+    @apply border-red-400;
   }
 }
 
@@ -327,10 +350,12 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Settings - Awakened PoE Trade Simplified Chinese": "Настройки - Awakened PoE Trade Simplified Chinese",
     "Hotkeys": "Быстрые клавиши",
     "General": "Общие",
+    "About": "О программе",
     "Price check": "Прайс-чек",
     "Maps": "Карты",
     "Item info": "Проверка предмета",
     "Debug": "Debug",
+    "Quit": "Выход",
     "Chat": "Чат",
     "Stash search": "Поиск в тайнике",
     "Stopwatch": "Секундомер",

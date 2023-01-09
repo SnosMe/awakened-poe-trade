@@ -4,6 +4,7 @@ import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
 import type { ServerEvents } from '../server'
 import type { Logger } from '../RemoteLogger'
 import type { GameWindow } from './GameWindow'
+import { type HttpProxy, PROXY_HOSTS } from '../proxy'
 
 export class OverlayWindow {
   public isInteractable = false
@@ -15,7 +16,8 @@ export class OverlayWindow {
   constructor (
     private server: ServerEvents,
     private logger: Logger,
-    private poeWindow: GameWindow
+    private poeWindow: GameWindow,
+    proxy: HttpProxy
   ) {
     if (process.platform === 'win32' && !systemPreferences.isAeroGlassEnabled()) {
       dialog.showErrorBox(
@@ -53,7 +55,7 @@ export class OverlayWindow {
       webviewWebContents.on('before-input-event', this.handleExtraCommands)
     })
 
-    modifyResponseHeaders(this.window.webContents)
+    spyOnPathofexileCookies(this.window.webContents, proxy.cookiesForPoe)
 
     this.window.webContents.setWindowOpenHandler((details) => {
       shell.openExternal(details.url)
@@ -172,28 +174,34 @@ export class OverlayWindow {
   }
 }
 
-function modifyResponseHeaders (webContents: WebContents) {
-  webContents.session.webRequest.onHeadersReceived({
-    urls: ['https://*/*']
-  }, (details, next) => {
-    if (!details.responseHeaders) return next({})
+function spyOnPathofexileCookies (webContents: WebContents, map: Map<string, string>) {
+  const urls = PROXY_HOSTS
+    .filter(({ official }) => official)
+    .map(({ host }) => `https://${host}/*`)
 
+  webContents.session.webRequest.onHeadersReceived({ urls }, (details, next) => {
     for (const key in details.responseHeaders) {
       if (key.toLowerCase() === 'set-cookie') {
-        details.responseHeaders[key] = details.responseHeaders[key].map(cookie => {
-          cookie = cookie
-            .split(';')
-            .map(_ => _.trim())
-            .filter(_ =>
-              !_.toLowerCase().startsWith('samesite') &&
-              !_.toLowerCase().startsWith('secure'))
-            .join('; ')
-
-          return `${cookie}; SameSite=None; Secure`
-        })
+        for (const cookie of details.responseHeaders[key]) {
+          const [key, value] = cookie.split(';', 1)[0].split('=', 2)
+          map.set(key, value)
+        }
+        break
       }
     }
+    next({ responseHeaders: details?.responseHeaders })
+  })
 
-    next({ responseHeaders: details.responseHeaders })
+  webContents.session.webRequest.onBeforeSendHeaders({ urls }, (details, next) => {
+    for (const key in details.requestHeaders) {
+      if (key.toLowerCase() === 'cookie') {
+        for (const part of details.requestHeaders[key].split(';')) {
+          const [key, value] = part.trim().split('=', 2)
+          map.set(key, value)
+        }
+        break
+      }
+    }
+    next({ requestHeaders: details.requestHeaders })
   })
 }

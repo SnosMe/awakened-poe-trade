@@ -42,8 +42,10 @@ export class Shortcuts {
       })
     })
 
-    this.server.onEventAnyClient('CLIENT->MAIN::stash-search', ({ text }) => {
-      stashSearch(text, this.clipboard, this.overlay)
+    this.server.onEventAnyClient('CLIENT->MAIN::user-action', (e) => {
+      if (e.action === 'stash-search') {
+        stashSearch(e.text, this.clipboard, this.overlay)
+      }
     })
 
     // uIOhook.on('keydown', (e) => {

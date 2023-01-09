@@ -1,17 +1,24 @@
 import path from 'path'
 import { app, Tray, Menu, shell, nativeImage, dialog } from 'electron'
+import type { ServerEvents } from './server'
 
 export class AppTray {
   public overlayKey = 'Shift + Space'
   private tray: Tray
   serverPort = 0
 
-  constructor () {
+  constructor (server: ServerEvents) {
     this.tray = new Tray(
       nativeImage.createFromPath(path.join(__dirname, process.env.STATIC!, process.platform === 'win32' ? 'icon.ico' : 'icon.png'))
     )
-    this.tray.setToolTip('Awakened PoE Trade Simplified Chinese')
+    this.tray.setToolTip(`Awakened PoE Trade Simplified Chinese v${app.getVersion()}`)
     this.rebuildMenu()
+
+    server.onEventAnyClient('CLIENT->MAIN::user-action', ({ action }) => {
+      if (action === 'quit') {
+        app.quit()
+      }
+    })
   }
 
   rebuildMenu () {
@@ -33,13 +40,7 @@ export class AppTray {
       },
       { type: 'separator' },
       {
-        label: `APT简中版本: v${app.getVersion()}`,
-        click: () => {
-          shell.openExternal('https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/releases')
-        }
-      },
-      {
-        label: '打开日志及配置文件目录',
+        label: '打开配置文件目录',
         click: () => {
           shell.openPath(path.join(app.getPath('userData'), 'apt-data'))
         }
