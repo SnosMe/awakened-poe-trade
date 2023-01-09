@@ -99,6 +99,12 @@ export default defineComponent({
     "Release notes": "Список изменений",
     "Report a bug on GitHub": "Сообщить о баге на GitHub",
     "contact_in_discord": "Пишите мне в дискорде по PoE,"
+  },
+  "zh_CN": {
+    "Version {0}": "版本 {0}",
+    "Release notes": "版本发布页面",
+    "Report a bug on GitHub": "在Github中反馈bug",
+    "contact_in_discord": "在Discord中联系"
   }
 }
 </i18n>

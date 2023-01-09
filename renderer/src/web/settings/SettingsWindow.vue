@@ -369,6 +369,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Maps": "地图",
     "Debug": "Debug",
     "Chat": "聊天",
+    "Quit": "退出",
     "Stash search": "仓库页搜索",
     "Stopwatch": "计时器"
   },
@@ -380,6 +381,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Maps": "地圖",
     "Debug": "Debug",
     "Chat": "聊天",
+    "Quit": "退出",
     "Stash search": "倉庫頁搜索",
     "Stopwatch": "計時器"
   }

@@ -1,6 +1,7 @@
 import type { FastifyInstance } from 'fastify'
 import fastifyProxy from '@fastify/http-proxy'
 import { app } from 'electron'
+import { poesessid, realm } from "./main";
 
 export const PROXY_HOSTS = [
   { host: 'www.pathofexile.com', official: true },
@@ -8,6 +9,7 @@ export const PROXY_HOSTS = [
   { host: 'web.poe.garena.tw', official: true },
   { host: 'poe.ninja', official: false },
   { host: 'www.poeprices.info', official: false },
+  { host: 'poe.game.qq.com', official: true }
 ]
 
 export class HttpProxy {
@@ -22,6 +24,9 @@ export class HttpProxy {
         prefix: `/proxy/${host}`,
         replyOptions: {
           rewriteRequestHeaders: (_, headers) => {
+            if (realm === 'pc-tencent'){
+              this.cookiesForPoe.set('POESESSID', poesessid)
+            }
             const cookie = (official)
               ? Array.from(this.cookiesForPoe.entries())
                   .map(([key, value]) => `${key}=${value}`)

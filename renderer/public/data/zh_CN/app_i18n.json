@@ -1,4 +1,6 @@
 {
+    "please_wait": "请等待\u2026",
+
     "Add": "添加",
     "Retry": "重试",
     "Offline": "离线",
@@ -28,6 +30,21 @@
     "map.mods.outdated": "过时",
     "Support development on": "支持原作者开发",
     "Support development CN on": "支持简中作者开发",
+
+    "updates.maybe_outdated": "您或许正在使用一个过时的版本",
+    "updates.latest": "您正在使用最新版本",
+    "updates.error": "检查更新时出错",
+    "updates.checking": "正在检查更新",
+    "updates.downloading": "下载\u2026",
+    "updates.available": "有更新: {0}",
+    "updates.never_checked": "上次检查更新时间: never",
+    "updates.last_checked": "上次检查更新时间: {0}",
+    "updates.check_now": "检查更新",
+    "updates.install_now": "立即安装",
+    "updates.downloads_page": "打开下载页面",
+    "updates.installed_on_exit": "将在退出时自动安装",
+    "updates.download_manually": "您可以从Github下载",
+    "updates.download_disabled": "您已禁用自动更新",
 
     "Select": "选择",
     "Anomalous": "异常",

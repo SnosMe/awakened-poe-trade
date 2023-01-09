@@ -1,7 +1,6 @@
 import fastify from 'fastify'
 import fastifyWs from '@fastify/websocket'
 import fastifyCors from '@fastify/cors'
-import fastifyProxy from '@fastify/http-proxy'
 import fastifyStatic from '@fastify/static'
 import type { WebSocket } from 'ws'
 import type { AddressInfo } from 'net'
