@@ -5,14 +5,16 @@
         class="mb-1 flex gap-x-2 py-1 pl-1 pr-2 bg-gray-800 rounded">
         <div v-for="item in starred" :key="item.name"
           class="flex flex-col">
-          <item-quick-price
-            :item-img="item.icon"
-            :price="item.price"
-            currency-text
-          ></item-quick-price>
-          <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.name }}</div>
-          <div v-if="item.discr"
-            class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
+          <button @click="findItemInTrade(item)" class="btn">
+            <item-quick-price
+              :item-img="item.icon"
+              :price="item.price"
+              currency-text
+            ></item-quick-price>
+            <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.name }}</div>
+            <div v-if="item.discr"
+              class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
+          </button>
         </div>
       </div>
       <div class="flex gap-x-1 bg-gray-800 p-1 rounded-t">
@@ -67,6 +69,7 @@ import Widget from './Widget.vue'
 import { BaseType, ITEMS_ITERATOR } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 import { findPriceByQuery, autoCurrency } from '@/web/background/Prices'
+import { Host } from '@/web/background/IPC'
 
 interface SelectedItem {
   name: string
@@ -93,8 +96,56 @@ function useSelectedItems () {
   function clearItems () {
     items.value = []
   }
+  function findItemInTrade (item: SelectedItem) {
+    if (AppConfig().realm !== 'pc-tencent') { return null }
 
-  return { items, addItem, clearItems }
+    const Quality = item.discr === 'Anomalous' || item.discr === 'Divergent' || item.discr === 'Phantasmal'
+
+    if (!Quality) { return null }
+
+    let quality
+    if (item.discr === 'Anomalous') {
+      quality = '异常'
+    } else if (item.discr === 'Divergent') {
+      quality = '分歧'
+    } else if (item.discr === 'Phantasmal') {
+      quality = '魅影'
+    }
+
+    const Gem: string =
+`物品类别: 技能宝石
+稀 有 度: 宝石
+${quality} ${item.name}
+--------
+
+等级: 16
+品质: +12% (augmented)
+替换品质`
+
+    const unique: string =
+`物品类别: 装备
+稀 有 度: 传奇
+${item.name}
+胜利盔甲
+--------`
+
+    const ClipBoardTxt = Quality ? Gem : unique
+
+    Host.selfDispatch({
+      name: 'MAIN->CLIENT::item-text',
+      payload: {
+        clipboard: ClipBoardTxt,
+        position: {
+          x: window.screenX,
+          y: window.screenY
+        },
+        focusOverlay: true,
+        target: 'price-check'
+      }
+    })
+  }
+
+  return { items, addItem, clearItems, findItemInTrade }
 }
 
 function findItems (opts: {
@@ -142,7 +193,7 @@ export default defineComponent({
   },
   setup () {
     const searchValue = shallowRef('')
-    const { items: starred, addItem, clearItems } = useSelectedItems()
+    const { items: starred, addItem, clearItems, findItemInTrade } = useSelectedItems()
 
     const typeFilter = shallowRef<'gem' | 'replica'>('gem')
 
@@ -198,6 +249,7 @@ export default defineComponent({
       }),
       selectItem,
       clearItems,
+      findItemInTrade,
       starred
     }
   }
