@@ -74,7 +74,7 @@ export class AppTray {
       {
         label: '简中查价器交流群(QQ群)',
         click: () => {
-          shell.openExternal('https://qm.qq.com/cgi-bin/qm/qr?k=HAsp7gNOcQuaYNvzVYMtLUfd24JvBTSz')
+          shell.openExternal('https://jq.qq.com/?_wv=1027&k=kDLAex8W')
         }
       },
       { type: 'separator' },
