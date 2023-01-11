@@ -66,7 +66,7 @@ import { useI18n } from 'vue-i18n'
 import { ItemSearchWidget } from './interfaces'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import Widget from './Widget.vue'
-import { BaseType, ITEMS_ITERATOR } from '@/assets/data'
+import { BaseType, ITEM_BY_REF, ITEMS_ITERATOR } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 import { findPriceByQuery, autoCurrency } from '@/web/background/Prices'
 import { Host } from '@/web/background/IPC'
@@ -77,6 +77,7 @@ interface SelectedItem {
   discr?: string
   chaos?: number
   price?: ReturnType<typeof autoCurrency>
+  variant ?: string
 }
 
 function useSelectedItems () {
@@ -101,7 +102,7 @@ function useSelectedItems () {
 
     const Quality = item.discr === 'Anomalous' || item.discr === 'Divergent' || item.discr === 'Phantasmal'
 
-    if (!Quality) { return null }
+    // if (!Quality) { return null }
 
     let quality
     if (item.discr === 'Anomalous') {
@@ -126,7 +127,7 @@ ${quality} ${item.name}
 `物品类别: 装备
 稀 有 度: 传奇
 ${item.name}
-胜利盔甲
+${item.variant}
 --------`
 
     const ClipBoardTxt = Quality ? Gem : unique
@@ -217,7 +218,8 @@ export default defineComponent({
         icon: item.icon,
         discr: opts.altQuality,
         chaos: price?.chaos,
-        price: (price != null) ? autoCurrency(price.chaos) : undefined
+        price: (price != null) ? autoCurrency(price.chaos) : undefined,
+        variant: (opts.altQuality) ? '' : ITEM_BY_REF('ITEM', item.unique!.base)![0].name
       })
       searchValue.value = ''
     }
