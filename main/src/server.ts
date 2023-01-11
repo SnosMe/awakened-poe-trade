@@ -106,7 +106,8 @@ export async function startServer (
   })
 
   await server.listen({
-    port: (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0
+    port: (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0,
+    host: '0.0.0.0'
   })
   return (server.server.address() as AddressInfo).port
 }
