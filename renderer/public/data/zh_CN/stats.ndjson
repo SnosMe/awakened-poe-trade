@@ -3768,91 +3768,91 @@
 {"ref": "Has no Sockets", "better": 1, "matchers": [{"string": "没有插槽"}], "trade": {"ids": {"explicit": ["explicit.stat_1493091477"]}}}
 {"ref": "Has Redeemer Influence", "better": 1, "matchers": [{"string": "有救赎者影响效果"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_redeemer_influence"]}}}
 {"ref": "Has Room: Antechamber", "better": 0, "matchers": [{"string": "接待厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_antechamber"]}, "option": true}}
-{"ref": "Has Room: Apex of Ascension (Tier 3)", "better": 0, "matchers": [{"string": "晋升之巅（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_sacrifice_room_3"]}, "option": true}}
+{"ref": "Has Room: Apex of Ascension (Tier 3)", "better": 0, "matchers": [{"string": "晋升之巅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_sacrifice_room_3"]}, "option": true}}
 {"ref": "Has Room: Apex of Atzoatl", "better": 0, "matchers": [{"string": "阿佐亚特之巅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_apex"]}, "option": true}}
-{"ref": "Has Room: Arena of Valour (Tier 2)", "better": 0, "matchers": [{"string": "勇猛角斗场（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_weapon_room_2"]}, "option": true}}
-{"ref": "Has Room: Armourer's Workshop (Tier 1)", "better": 0, "matchers": [{"string": "铸甲师工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_armour_room_1"]}, "option": true}}
-{"ref": "Has Room: Armoury (Tier 2)", "better": 0, "matchers": [{"string": "装备库（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_armour_room_2"]}, "option": true}}
-{"ref": "Has Room: Atlas of Worlds (Tier 3)", "better": 0, "matchers": [{"string": "异界图鉴（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cartography_room_3"]}, "option": true}}
-{"ref": "Has Room: Automaton Lab (Tier 2)", "better": 0, "matchers": [{"string": "神兵实验室（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_minions_2"]}, "option": true}}
+{"ref": "Has Room: Arena of Valour (Tier 2)", "better": 0, "matchers": [{"string": "勇猛角斗场"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_weapon_room_2"]}, "option": true}}
+{"ref": "Has Room: Armourer's Workshop (Tier 1)", "better": 0, "matchers": [{"string": "护甲锻造师的工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_armour_room_1"]}, "option": true}}
+{"ref": "Has Room: Armoury (Tier 2)", "better": 0, "matchers": [{"string": "装备库"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_armour_room_2"]}, "option": true}}
+{"ref": "Has Room: Atlas of Worlds (Tier 3)", "better": 0, "matchers": [{"string": "异界图鉴"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cartography_room_3"]}, "option": true}}
+{"ref": "Has Room: Automaton Lab (Tier 2)", "better": 0, "matchers": [{"string": "神兵实验室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_minions_2"]}, "option": true}}
 {"ref": "Has Room: Banquet Hall", "better": 0, "matchers": [{"string": "宴会厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_banquet_hall"]}, "option": true}}
-{"ref": "Has Room: Barracks (Tier 2)", "better": 0, "matchers": [{"string": "军营（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breeding_room_2"]}, "option": true}}
-{"ref": "Has Room: Breach Containment Chamber (Tier 2)", "better": 0, "matchers": [{"string": "裂隙之间（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breach_room_2"]}, "option": true}}
-{"ref": "Has Room: Catalyst of Corruption (Tier 2)", "better": 0, "matchers": [{"string": "腐化演变室（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_corruption_room_2"]}, "option": true}}
+{"ref": "Has Room: Barracks (Tier 2)", "better": 0, "matchers": [{"string": "军营"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breeding_room_2"]}, "option": true}}
+{"ref": "Has Room: Breach Containment Chamber (Tier 2)", "better": 0, "matchers": [{"string": "裂隙之间"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breach_room_2"]}, "option": true}}
+{"ref": "Has Room: Catalyst of Corruption (Tier 2)", "better": 0, "matchers": [{"string": "腐化演变室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_corruption_room_2"]}, "option": true}}
 {"ref": "Has Room: Cellar", "better": 0, "matchers": [{"string": "地窖"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cellar"]}, "option": true}}
-{"ref": "Has Room: Chamber of Iron (Tier 3)", "better": 0, "matchers": [{"string": "钢铁之殿（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_armour_room_3"]}, "option": true}}
+{"ref": "Has Room: Chamber of Iron (Tier 3)", "better": 0, "matchers": [{"string": "钢铁之殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_armour_room_3"]}, "option": true}}
 {"ref": "Has Room: Chasm", "better": 0, "matchers": [{"string": "裂口"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chasm_room"]}, "option": true}}
 {"ref": "Has Room: Cloister", "better": 0, "matchers": [{"string": "隐居回廊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cloister"]}, "option": true}}
-{"ref": "Has Room: Conduit of Lightning (Tier 3)", "better": 0, "matchers": [{"string": "闪电环廊（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_lightning_3"]}, "option": true}}
-{"ref": "Has Room: Corruption Chamber (Tier 1)", "better": 0, "matchers": [{"string": "腐化之间（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_corruption_room_1"]}, "option": true}}
-{"ref": "Has Room: Court of Sealed Death (Tier 3)", "better": 0, "matchers": [{"string": "封印死亡之廷（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_strongbox_3"]}, "option": true}}
-{"ref": "Has Room: Crucible of Flame (Tier 3)", "better": 0, "matchers": [{"string": "烈焰坩埚（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_fire_3"]}, "option": true}}
-{"ref": "Has Room: Cultivar Chamber (Tier 2)", "better": 0, "matchers": [{"string": "变种植园（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_poison_room_2"]}, "option": true}}
-{"ref": "Has Room: Defense Research Lab (Tier 3)", "better": 0, "matchers": [{"string": "防御研究实验室（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trap_room_3"]}, "option": true}}
-{"ref": "Has Room: Demolition Lab (Tier 2)", "better": 0, "matchers": [{"string": "毁灭实验室（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_explosives_room_2"]}, "option": true}}
-{"ref": "Has Room: Department of Thaumaturgy (Tier 2)", "better": 0, "matchers": [{"string": "奇术科（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_gem_room_2"]}, "option": true}}
-{"ref": "Has Room: Doryani's Institute (Tier 3)", "better": 0, "matchers": [{"string": "多里亚尼多里亚尼学会（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_gem_room_3"]}, "option": true}}
-{"ref": "Has Room: Engineering Department (Tier 2)", "better": 0, "matchers": [{"string": "工程科（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_workshop_2"]}, "option": true}}
-{"ref": "Has Room: Explosives Room (Tier 1)", "better": 0, "matchers": [{"string": "爆炸物制造间（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_explosives_room_1"]}, "option": true}}
-{"ref": "Has Room: Factory (Tier 3)", "better": 0, "matchers": [{"string": "工厂（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_workshop_3"]}, "option": true}}
-{"ref": "Has Room: Flame Workshop (Tier 1)", "better": 0, "matchers": [{"string": "火焰工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_fire_1"]}, "option": true}}
-{"ref": "Has Room: Gemcutter's Workshop (Tier 1)", "better": 0, "matchers": [{"string": "宝石匠的工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_gem_room_1"]}, "option": true}}
-{"ref": "Has Room: Glittering Halls (Tier 3)", "better": 0, "matchers": [{"string": "闪光大厅（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trinket_room_3"]}, "option": true}}
-{"ref": "Has Room: Guardhouse (Tier 1)", "better": 0, "matchers": [{"string": "护卫间（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breeding_room_1"]}, "option": true}}
-{"ref": "Has Room: Hall of Champions (Tier 3)", "better": 0, "matchers": [{"string": "勇士大厅（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_weapon_room_3"]}, "option": true}}
-{"ref": "Has Room: Hall of Heroes (Tier 2)", "better": 0, "matchers": [{"string": "英雄大厅（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_legion_2"]}, "option": true}}
-{"ref": "Has Room: Hall of Legends (Tier 3)", "better": 0, "matchers": [{"string": "传奇大厅（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_legion_3"]}, "option": true}}
-{"ref": "Has Room: Hall of Locks (Tier 2)", "better": 0, "matchers": [{"string": "沉锁大厅（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_strongbox_2"]}, "option": true}}
-{"ref": "Has Room: Hall of Lords (Tier 2)", "better": 0, "matchers": [{"string": "领主大厅（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_queens_chambers_2"]}, "option": true}}
-{"ref": "Has Room: Hall of Mettle (Tier 1)", "better": 0, "matchers": [{"string": "勇毅大厅（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_legion_1"]}, "option": true}}
-{"ref": "Has Room: Hall of Offerings (Tier 2)", "better": 0, "matchers": [{"string": "祭品大厅（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_sacrifice_room_2"]}, "option": true}}
-{"ref": "Has Room: Hall of War (Tier 3)", "better": 0, "matchers": [{"string": "战争大厅（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breeding_room_3"]}, "option": true}}
+{"ref": "Has Room: Conduit of Lightning (Tier 3)", "better": 0, "matchers": [{"string": "闪电通道"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_lightning_3"]}, "option": true}}
+{"ref": "Has Room: Corruption Chamber (Tier 1)", "better": 0, "matchers": [{"string": "腐化之间"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_corruption_room_1"]}, "option": true}}
+{"ref": "Has Room: Court of Sealed Death (Tier 3)", "better": 0, "matchers": [{"string": "封印死亡之廷"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_strongbox_3"]}, "option": true}}
+{"ref": "Has Room: Crucible of Flame (Tier 3)", "better": 0, "matchers": [{"string": "烈焰坩埚"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_fire_3"]}, "option": true}}
+{"ref": "Has Room: Cultivar Chamber (Tier 2)", "better": 0, "matchers": [{"string": "变种植园"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_poison_room_2"]}, "option": true}}
+{"ref": "Has Room: Defense Research Lab (Tier 3)", "better": 0, "matchers": [{"string": "防御研究实验室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trap_room_3"]}, "option": true}}
+{"ref": "Has Room: Demolition Lab (Tier 2)", "better": 0, "matchers": [{"string": "毁灭实验室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_explosives_room_2"]}, "option": true}}
+{"ref": "Has Room: Department of Thaumaturgy (Tier 2)", "better": 0, "matchers": [{"string": "奇术科"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_gem_room_2"]}, "option": true}}
+{"ref": "Has Room: Doryani's Institute (Tier 3)", "better": 0, "matchers": [{"string": "多里亚尼学会"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_gem_room_3"]}, "option": true}}
+{"ref": "Has Room: Engineering Department (Tier 2)", "better": 0, "matchers": [{"string": "工程科"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_workshop_2"]}, "option": true}}
+{"ref": "Has Room: Explosives Room (Tier 1)", "better": 0, "matchers": [{"string": "爆炸物制造间"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_explosives_room_1"]}, "option": true}}
+{"ref": "Has Room: Factory (Tier 3)", "better": 0, "matchers": [{"string": "工厂"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_workshop_3"]}, "option": true}}
+{"ref": "Has Room: Flame Workshop (Tier 1)", "better": 0, "matchers": [{"string": "火焰工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_fire_1"]}, "option": true}}
+{"ref": "Has Room: Gemcutter's Workshop (Tier 1)", "better": 0, "matchers": [{"string": "宝石匠的工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_gem_room_1"]}, "option": true}}
+{"ref": "Has Room: Glittering Halls (Tier 3)", "better": 0, "matchers": [{"string": "闪光大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trinket_room_3"]}, "option": true}}
+{"ref": "Has Room: Guardhouse (Tier 1)", "better": 0, "matchers": [{"string": "护卫间"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breeding_room_1"]}, "option": true}}
+{"ref": "Has Room: Hall of Champions (Tier 3)", "better": 0, "matchers": [{"string": "勇士大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_weapon_room_3"]}, "option": true}}
+{"ref": "Has Room: Hall of Heroes (Tier 2)", "better": 0, "matchers": [{"string": "英雄大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_legion_2"]}, "option": true}}
+{"ref": "Has Room: Hall of Legends (Tier 3)", "better": 0, "matchers": [{"string": "传奇大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_legion_3"]}, "option": true}}
+{"ref": "Has Room: Hall of Locks (Tier 2)", "better": 0, "matchers": [{"string": "沉锁大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_strongbox_2"]}, "option": true}}
+{"ref": "Has Room: Hall of Lords (Tier 2)", "better": 0, "matchers": [{"string": "领主大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_queens_chambers_2"]}, "option": true}}
+{"ref": "Has Room: Hall of Mettle (Tier 1)", "better": 0, "matchers": [{"string": "勇毅大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_legion_1"]}, "option": true}}
+{"ref": "Has Room: Hall of Offerings (Tier 2)", "better": 0, "matchers": [{"string": "祭品大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_sacrifice_room_2"]}, "option": true}}
+{"ref": "Has Room: Hall of War (Tier 3)", "better": 0, "matchers": [{"string": "战争大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breeding_room_3"]}, "option": true}}
 {"ref": "Has Room: Halls", "better": 0, "matchers": [{"string": "大厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_halls"]}, "option": true}}
-{"ref": "Has Room: Hatchery (Tier 1)", "better": 0, "matchers": [{"string": "孵化场（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_minions_1"]}, "option": true}}
-{"ref": "Has Room: House of the Others (Tier 3)", "better": 0, "matchers": [{"string": "旁者之屋（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breach_room_3"]}, "option": true}}
-{"ref": "Has Room: Hurricane Engine (Tier 2)", "better": 0, "matchers": [{"string": "飓风引擎（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_storm_room_2"]}, "option": true}}
-{"ref": "Has Room: Hybridisation Chamber (Tier 3)", "better": 0, "matchers": [{"string": "混化之间（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_minions_3"]}, "option": true}}
-{"ref": "Has Room: Jeweller's Workshop (Tier 1)", "better": 0, "matchers": [{"string": "珠宝匠的工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trinket_room_1"]}, "option": true}}
-{"ref": "Has Room: Jewellery Forge (Tier 2)", "better": 0, "matchers": [{"string": "珠宝熔炉（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trinket_room_2"]}, "option": true}}
-{"ref": "Has Room: Lightning Workshop (Tier 1)", "better": 0, "matchers": [{"string": "闪电工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_lightning_1"]}, "option": true}}
-{"ref": "Has Room: Locus of Corruption (Tier 3)", "better": 0, "matchers": [{"string": "腐化蝗群（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_corruption_room_3"]}, "option": true}}
-{"ref": "Has Room: Museum of Artefacts (Tier 3)", "better": 0, "matchers": [{"string": "神器博物馆（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chests_3"]}, "option": true}}
-{"ref": "Has Room: Office of Cartography (Tier 2)", "better": 0, "matchers": [{"string": "绘图室（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cartography_room_2"]}, "option": true}}
-{"ref": "Has Room: Omnitect Forge (Tier 2)", "better": 0, "matchers": [{"string": "妖塔熔炉（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_fire_2"]}, "option": true}}
-{"ref": "Has Room: Omnitect Reactor Plant (Tier 2)", "better": 0, "matchers": [{"string": "妖塔反应堆（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_lightning_2"]}, "option": true}}
+{"ref": "Has Room: Hatchery (Tier 1)", "better": 0, "matchers": [{"string": "孵化场"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_minions_1"]}, "option": true}}
+{"ref": "Has Room: House of the Others (Tier 3)", "better": 0, "matchers": [{"string": "旁者之屋"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breach_room_3"]}, "option": true}}
+{"ref": "Has Room: Hurricane Engine (Tier 2)", "better": 0, "matchers": [{"string": "飓风引擎"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_storm_room_2"]}, "option": true}}
+{"ref": "Has Room: Hybridisation Chamber (Tier 3)", "better": 0, "matchers": [{"string": "混化之间"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_minions_3"]}, "option": true}}
+{"ref": "Has Room: Jeweller's Workshop (Tier 1)", "better": 0, "matchers": [{"string": "珠宝匠的工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trinket_room_1"]}, "option": true}}
+{"ref": "Has Room: Jewellery Forge (Tier 2)", "better": 0, "matchers": [{"string": "珠宝熔炉"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trinket_room_2"]}, "option": true}}
+{"ref": "Has Room: Lightning Workshop (Tier 1)", "better": 0, "matchers": [{"string": "雷霆工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_lightning_1"]}, "option": true}}
+{"ref": "Has Room: Locus of Corruption (Tier 3)", "better": 0, "matchers": [{"string": "腐化蝗群"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_corruption_room_3"]}, "option": true}}
+{"ref": "Has Room: Museum of Artefacts (Tier 3)", "better": 0, "matchers": [{"string": "神器博物馆"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chests_3"]}, "option": true}}
+{"ref": "Has Room: Office of Cartography (Tier 2)", "better": 0, "matchers": [{"string": "绘图室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cartography_room_2"]}, "option": true}}
+{"ref": "Has Room: Omnitect Forge (Tier 2)", "better": 0, "matchers": [{"string": "妖塔熔炉"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_fire_2"]}, "option": true}}
+{"ref": "Has Room: Omnitect Reactor Plant (Tier 2)", "better": 0, "matchers": [{"string": "妖塔反应堆"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_boss_lightning_2"]}, "option": true}}
 {"ref": "Has Room: Passageways", "better": 0, "matchers": [{"string": "通路"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_passageways"]}, "option": true}}
 {"ref": "Has Room: Pits", "better": 0, "matchers": [{"string": "深坑"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_the_pits"]}, "option": true}}
-{"ref": "Has Room: Poison Garden (Tier 1)", "better": 0, "matchers": [{"string": "烈毒花园（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_poison_room_1"]}, "option": true}}
-{"ref": "Has Room: Pools of Restoration (Tier 1)", "better": 0, "matchers": [{"string": "恢复之池（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_healing_room_1"]}, "option": true}}
-{"ref": "Has Room: Royal Meeting Room (Tier 1)", "better": 0, "matchers": [{"string": "皇家会议厅（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_queens_chambers_1"]}, "option": true}}
-{"ref": "Has Room: Sacrificial Chamber (Tier 1)", "better": 0, "matchers": [{"string": "祭仪之厅（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_sacrifice_room_1"]}, "option": true}}
-{"ref": "Has Room: Sadist's Den (Tier 3)", "better": 0, "matchers": [{"string": "残虐者之穴（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_torment_3"]}, "option": true}}
-{"ref": "Has Room: Sanctum of Immortality (Tier 3)", "better": 0, "matchers": [{"string": "不朽圣殿（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_healing_room_3"]}, "option": true}}
-{"ref": "Has Room: Sanctum of Unity (Tier 2)", "better": 0, "matchers": [{"string": "团结圣殿（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_empowering_room_2"]}, "option": true}}
-{"ref": "Has Room: Sanctum of Vitality (Tier 2)", "better": 0, "matchers": [{"string": "活力圣殿（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_healing_room_2"]}, "option": true}}
-{"ref": "Has Room: Shrine of Empowerment (Tier 1)", "better": 0, "matchers": [{"string": "强能神龛（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_empowering_room_1"]}, "option": true}}
-{"ref": "Has Room: Shrine of Unmaking (Tier 3)", "better": 0, "matchers": [{"string": "解构神殿（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_explosives_room_3"]}, "option": true}}
-{"ref": "Has Room: Sparring Room (Tier 1)", "better": 0, "matchers": [{"string": "练兵房（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_weapon_room_1"]}, "option": true}}
-{"ref": "Has Room: Splinter Research Lab (Tier 1)", "better": 0, "matchers": [{"string": "分裂研究实验室（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breach_room_1"]}, "option": true}}
-{"ref": "Has Room: Storage Room (Tier 1)", "better": 0, "matchers": [{"string": "储藏屋（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chests_1"]}, "option": true}}
-{"ref": "Has Room: Storm of Corruption (Tier 3)", "better": 0, "matchers": [{"string": "腐化风暴（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_storm_room_3"]}, "option": true}}
-{"ref": "Has Room: Strongbox Chamber (Tier 1)", "better": 0, "matchers": [{"string": "密箱储藏室（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_strongbox_1"]}, "option": true}}
-{"ref": "Has Room: Surveyor's Study (Tier 1)", "better": 0, "matchers": [{"string": "勘查员的学习室（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cartography_room_1"]}, "option": true}}
-{"ref": "Has Room: Tempest Generator (Tier 1)", "better": 0, "matchers": [{"string": "风雷之间（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_storm_room_1"]}, "option": true}}
-{"ref": "Has Room: Temple Defense Workshop (Tier 2)", "better": 0, "matchers": [{"string": "神庙防御工坊（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trap_room_2"]}, "option": true}}
-{"ref": "Has Room: Temple Nexus (Tier 3)", "better": 0, "matchers": [{"string": "神庙枢纽（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_empowering_room_3"]}, "option": true}}
-{"ref": "Has Room: Throne of Atziri (Tier 3)", "better": 0, "matchers": [{"string": "阿兹里的王座（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_queens_chambers_3"]}, "option": true}}
+{"ref": "Has Room: Poison Garden (Tier 1)", "better": 0, "matchers": [{"string": "烈毒花园"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_poison_room_1"]}, "option": true}}
+{"ref": "Has Room: Pools of Restoration (Tier 1)", "better": 0, "matchers": [{"string": "恢复之池"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_healing_room_1"]}, "option": true}}
+{"ref": "Has Room: Royal Meeting Room (Tier 1)", "better": 0, "matchers": [{"string": "皇家会议厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_queens_chambers_1"]}, "option": true}}
+{"ref": "Has Room: Sacrificial Chamber (Tier 1)", "better": 0, "matchers": [{"string": "祭仪之厅"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_sacrifice_room_1"]}, "option": true}}
+{"ref": "Has Room: Sadist's Den (Tier 3)", "better": 0, "matchers": [{"string": "残虐者之穴"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_torment_3"]}, "option": true}}
+{"ref": "Has Room: Sanctum of Immortality (Tier 3)", "better": 0, "matchers": [{"string": "不朽圣殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_healing_room_3"]}, "option": true}}
+{"ref": "Has Room: Sanctum of Unity (Tier 2)", "better": 0, "matchers": [{"string": "团结圣殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_empowering_room_2"]}, "option": true}}
+{"ref": "Has Room: Sanctum of Vitality (Tier 2)", "better": 0, "matchers": [{"string": "活力圣殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_healing_room_2"]}, "option": true}}
+{"ref": "Has Room: Shrine of Empowerment (Tier 1)", "better": 0, "matchers": [{"string": "强能神殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_empowering_room_1"]}, "option": true}}
+{"ref": "Has Room: Shrine of Unmaking (Tier 3)", "better": 0, "matchers": [{"string": "解构神殿"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_explosives_room_3"]}, "option": true}}
+{"ref": "Has Room: Sparring Room (Tier 1)", "better": 0, "matchers": [{"string": "练兵房"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_weapon_room_1"]}, "option": true}}
+{"ref": "Has Room: Splinter Research Lab (Tier 1)", "better": 0, "matchers": [{"string": "分裂研究实验室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_breach_room_1"]}, "option": true}}
+{"ref": "Has Room: Storage Room (Tier 1)", "better": 0, "matchers": [{"string": "储藏屋"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chests_1"]}, "option": true}}
+{"ref": "Has Room: Storm of Corruption (Tier 3)", "better": 0, "matchers": [{"string": "腐化风暴"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_storm_room_3"]}, "option": true}}
+{"ref": "Has Room: Strongbox Chamber (Tier 1)", "better": 0, "matchers": [{"string": "密箱储藏室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_strongbox_1"]}, "option": true}}
+{"ref": "Has Room: Surveyor's Study (Tier 1)", "better": 0, "matchers": [{"string": "勘查员的学习室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_cartography_room_1"]}, "option": true}}
+{"ref": "Has Room: Tempest Generator (Tier 1)", "better": 0, "matchers": [{"string": "风雷之间"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_storm_room_1"]}, "option": true}}
+{"ref": "Has Room: Temple Defense Workshop (Tier 2)", "better": 0, "matchers": [{"string": "神庙防御工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trap_room_2"]}, "option": true}}
+{"ref": "Has Room: Temple Nexus (Tier 3)", "better": 0, "matchers": [{"string": "神庙枢纽"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_empowering_room_3"]}, "option": true}}
+{"ref": "Has Room: Throne of Atziri (Tier 3)", "better": 0, "matchers": [{"string": "阿兹里的王座"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_queens_chambers_3"]}, "option": true}}
 {"ref": "Has Room: Tombs", "better": 0, "matchers": [{"string": "墓穴"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_tombs"]}, "option": true}}
-{"ref": "Has Room: Torment Cells (Tier 1)", "better": 0, "matchers": [{"string": "折磨牢狱（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_torment_1"]}, "option": true}}
-{"ref": "Has Room: Torture Cages (Tier 2)", "better": 0, "matchers": [{"string": "酷刑牢笼（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_torment_2"]}, "option": true}}
-{"ref": "Has Room: Toxic Grove (Tier 3)", "better": 0, "matchers": [{"string": "毒林（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_poison_room_3"]}, "option": true}}
-{"ref": "Has Room: Trap Workshop (Tier 1)", "better": 0, "matchers": [{"string": "陷阱工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trap_room_1"]}, "option": true}}
-{"ref": "Has Room: Treasury (Tier 2)", "better": 0, "matchers": [{"string": "藏宝室（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_currency_vault_2"]}, "option": true}}
+{"ref": "Has Room: Torment Cells (Tier 1)", "better": 0, "matchers": [{"string": "折磨牢狱"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_torment_1"]}, "option": true}}
+{"ref": "Has Room: Torture Cages (Tier 2)", "better": 0, "matchers": [{"string": "酷刑牢笼"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_torment_2"]}, "option": true}}
+{"ref": "Has Room: Toxic Grove (Tier 3)", "better": 0, "matchers": [{"string": "毒林"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_poison_room_3"]}, "option": true}}
+{"ref": "Has Room: Trap Workshop (Tier 1)", "better": 0, "matchers": [{"string": "陷阱工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_trap_room_1"]}, "option": true}}
+{"ref": "Has Room: Treasury (Tier 2)", "better": 0, "matchers": [{"string": "藏宝室"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_currency_vault_2"]}, "option": true}}
 {"ref": "Has Room: Tunnels", "better": 0, "matchers": [{"string": "隧道"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_tunnels"]}, "option": true}}
-{"ref": "Has Room: Vault (Tier 1)", "better": 0, "matchers": [{"string": "宝库（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_currency_vault_1"]}, "option": true}}
-{"ref": "Has Room: Warehouses (Tier 2)", "better": 0, "matchers": [{"string": "仓库（2 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chests_2"]}, "option": true}}
-{"ref": "Has Room: Wealth of the Vaal (Tier 3)", "better": 0, "matchers": [{"string": "瓦尔之宝（3 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_currency_vault_3"]}, "option": true}}
-{"ref": "Has Room: Workshop (Tier 1)", "better": 0, "matchers": [{"string": "工坊（1 阶）"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_workshop_1"]}, "option": true}}
+{"ref": "Has Room: Vault (Tier 1)", "better": 0, "matchers": [{"string": "宝库"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_currency_vault_1"]}, "option": true}}
+{"ref": "Has Room: Warehouses (Tier 2)", "better": 0, "matchers": [{"string": "仓库"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_chests_2"]}, "option": true}}
+{"ref": "Has Room: Wealth of the Vaal (Tier 3)", "better": 0, "matchers": [{"string": "瓦尔之宝"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_currency_vault_3"]}, "option": true}}
+{"ref": "Has Room: Workshop (Tier 1)", "better": 0, "matchers": [{"string": "工坊"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_temple_workshop_1"]}, "option": true}}
 {"ref": "Has Shaper Influence", "better": 1, "matchers": [{"string": "有塑界者影响效果"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_shaper_influence"]}}}
 {"ref": "Has Warlord Influence", "better": 1, "matchers": [{"string": "有督军影响效果"}], "trade": {"ids": {"pseudo": ["pseudo.pseudo_has_warlord_influence"]}}}
 {"ref": "Haste has #% increased Aura Effect", "better": 1, "matchers": [{"string": "迅捷的光环效果提高 #%"}, {"string": "迅捷的光环效果降低 #%", "negate": true}], "trade": {"ids": {"implicit": ["implicit.stat_1240056437"]}}}
@@ -4103,9 +4103,9 @@
 {"ref": "Lifeforce dropped by Harvest Monsters in your Maps is Duplicated", "better": 1, "matchers": [{"string": "你的地图中的古灵庄园怪物掉落的命能被复制"}, {"string": "古灵庄园怪物掉落的命能被复制"}], "trade": {"ids": {"enchant": ["enchant.stat_3250634678"]}}}
 {"ref": "Light Radius is based on Energy Shield instead of Life", "better": 1, "matchers": [{"string": "照亮范围将基于能量护盾的属性"}], "trade": {"ids": {"explicit": ["explicit.stat_3836017971"], "fractured": ["fractured.stat_3836017971"], "crafted": ["crafted.stat_3836017971"]}}}
 {"ref": "Lightning Arrow hits an additional Enemy", "better": 1, "matchers": [{"string": "【闪电箭矢】可以击中目标周围的 # 名额外敌人"}, {"string": "【闪电箭矢】可以击中目标周围的一名额外敌人", "value": 1}], "trade": {"ids": {"enchant": ["enchant.stat_1901955093"]}}}
-{"ref": "Lightning Conduit deals #% increased Damage", "better": 1, "matchers": [{"string": "闪电环廊造成的伤害增加#%"}, {"string": "闪电环廊造成的伤害降低#%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2511245659"]}}}
-{"ref": "Lightning Conduit has #% increased Area of Effect", "better": 1, "matchers": [{"string": "闪电环廊的效果区域增加#%"}, {"string": "闪电环廊的效果区域减少#%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2252888886"]}}}
-{"ref": "Lightning Conduit has #% increased Cast Speed", "better": 1, "matchers": [{"string": "闪电环廊的施法速度增加#%"}], "trade": {"ids": {"enchant": ["enchant.stat_2437571727"]}}}
+{"ref": "Lightning Conduit deals #% increased Damage", "better": 1, "matchers": [{"string": "闪电环廊造成的伤害增加#%"},{"string": "闪电通道造成的伤害增加#%"}, {"string": "闪电环廊造成的伤害降低#%", "negate": true}, {"string": "闪电通道造成的伤害降低#%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2511245659"]}}}
+{"ref": "Lightning Conduit has #% increased Area of Effect", "better": 1, "matchers": [{"string": "闪电环廊的效果区域增加#%"}, {"string": "闪电环廊的效果区域减少#%", "negate": true}, {"string": "闪电通道的效果区域增加#%"}, {"string": "闪电通道的效果区域减少#%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_2252888886"]}}}
+{"ref": "Lightning Conduit has #% increased Cast Speed", "better": 1, "matchers": [{"string": "闪电环廊的施法速度增加#%"}, {"string": "闪电通道的施法速度增加#%"}], "trade": {"ids": {"enchant": ["enchant.stat_2437571727"]}}}
 {"ref": "Lightning Damage of Enemies Hitting you is Lucky", "better": 1, "matchers": [{"string": "敌人击中你的闪电伤害会特别幸运"}], "trade": {"ids": {"explicit": ["explicit.stat_4224965099"]}}}
 {"ref": "Lightning Golems deal #% increased Damage", "better": 1, "matchers": [{"string": "【闪电魔像】的伤害提高 #%"}, {"string": "【闪电魔像】的伤害降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3280107027"]}}}
 {"ref": "Lightning Modifiers have #% increased Effect", "better": 1, "matchers": [{"string": "闪电词缀的效果提高 #%"}, {"string": "闪电词缀的效果降低 #%", "negate": true}], "trade": {"ids": {"enchant": ["enchant.stat_3624940721"]}}}

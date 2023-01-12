@@ -814,7 +814,9 @@ function parseAtzoatlRooms (section: string[], item: ParsedItem) {
   if (section[0] !== _$.INCURSION_OPEN) return 'SECTION_SKIPPED'
 
   let state = IncursionRoom.Open
-  for (const line of section.slice(1)) {
+  for (let line of section.slice(1)) {
+    line = line.replace(/\[.+?\]|\([a-z|A-Z|\s|']+?\)/g, '')
+    line = line.replace(/\(等阶: \d\)|\(等阶:\d\)/g, '').trim()
     if (line === _$.INCURSION_OBSTRUCTED) {
       state = IncursionRoom.Obstructed
       continue
