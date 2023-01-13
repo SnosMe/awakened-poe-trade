@@ -54,10 +54,14 @@ export function parseModInfoLine (line: string, type: ModifierType): ModifierInf
 
     switch (match.groups!.type) {
       case _$.PREFIX_MODIFIER:
+      case '▲ 前缀词缀':
       case _$.CRAFTED_PREFIX:
+      case '▲ 工艺前缀':
         generation = 'prefix'; break
       case _$.SUFFIX_MODIFIER:
+      case '▽ 后缀词缀':
       case _$.CRAFTED_SUFFIX:
+      case '▽ 工艺后缀':
         generation = 'suffix'; break
       case _$.CORRUPTED_IMPLICIT:
         generation = 'corrupted'; break
