@@ -917,11 +917,14 @@ function transformToLegacyModifiers (item: ParsedItem) {
 }
 
 function calcBasePercentile (item: ParsedItem) {
-  if (!item.info.armour) return
+  const info = item.info.unique
+    ? ITEM_BY_REF('ITEM', item.info.unique.base)![0].armour
+    : item.info.armour
+  if (!info) return
+
   // Base percentile is the same for all defences.
   // Using `AR/EV -> ES -> WARD` order to improve accuracy
   // of calculation (larger rolls = more precise).
-  const info = item.info.armour
   if (item.armourAR && info.ar) {
     item.basePercentile = calcPropPercentile(item.armourAR, info.ar, QUALITY_STATS.ARMOUR, item)
   } else if (item.armourEV && info.ev) {
