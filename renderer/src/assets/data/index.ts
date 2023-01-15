@@ -1,6 +1,5 @@
 import fnv1a from '@sindresorhus/fnv1a'
 import type { BaseType, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
-import { AppConfig } from '@/web/Config'
 
 export * from './interfaces'
 
@@ -123,25 +122,23 @@ export function stat (text: string) {
   return text
 }
 
-export async function initData () { /* eslint-disable no-lone-blocks */
-  const { language } = AppConfig()
+export async function init (lang: string) {
+  CLIENT_STRINGS_REF = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/en/client_strings.js`)).default
+  ITEM_DROP = await (await fetch(`${import.meta.env.BASE_URL}data/item-drop.json`)).json()
+  APP_PATRONS = await (await fetch(`${import.meta.env.BASE_URL}data/patrons.json`)).json()
 
-  {
-    await loadItems(language)
-    await loadStats(language)
+  await loadForLang(lang)
 
-    for (const text of DELAYED_STAT_VALIDATION) {
-      if (STAT_BY_REF(text) == null) {
-        throw new Error(`Cannot find stat: ${text}`)
-      }
+  for (const text of DELAYED_STAT_VALIDATION) {
+    if (STAT_BY_REF(text) == null) {
+      throw new Error(`Cannot find stat: ${text}`)
     }
-    DELAYED_STAT_VALIDATION.clear()
   }
+  DELAYED_STAT_VALIDATION.clear()
+}
 
-  { /* eslint-disable no-eval */
-    CLIENT_STRINGS = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/${language}/client_strings.js`)).default
-    CLIENT_STRINGS_REF = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/en/client_strings.js`)).default
-    ITEM_DROP = await (await fetch(`${import.meta.env.BASE_URL}data/item-drop.json`)).json()
-    APP_PATRONS = await (await fetch(`${import.meta.env.BASE_URL}data/patrons.json`)).json()
-  }
+export async function loadForLang (lang: string) {
+  CLIENT_STRINGS = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/${lang}/client_strings.js`)).default
+  await loadItems(lang)
+  await loadStats(lang)
 }
