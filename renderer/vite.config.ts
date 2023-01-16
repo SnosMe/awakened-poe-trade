@@ -32,8 +32,8 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '^/(config|uploads|proxy)': { target: 'http://localhost:8584' },
-      '/events': { ws: true, target: 'http://localhost:8584' }
+      '^/(config|uploads|proxy)': { target: 'http://127.0.0.1:8584' },
+      '/events': { ws: true, target: 'http://127.0.0.1:8584' }
     }
   }
 })

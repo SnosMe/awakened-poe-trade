@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-4">
-      <div class="flex-1 mb-1">{{ t('Language') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
+      <div class="flex-1 mb-1">{{ t('Language') }}</div>
       <div class="flex gap-x-4">
         <ui-radio v-model="language" value="en">English</ui-radio>
         <ui-radio v-model="language" value="ru">Русский</ui-radio>
@@ -95,6 +95,7 @@
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configModelValue, configProp } from './utils'
+import { AppConfig } from '@/web/Config'
 
 export default defineComponent({
   name: 'General',
@@ -114,6 +115,7 @@ export default defineComponent({
         get () { return props.config.language },
         set (value) {
           props.config.language = value
+          AppConfig().language = value
           if (value !== 'cmn-Hant' && value !== 'zh_CN') {
             props.config.realm = 'pc-ggg'
           }

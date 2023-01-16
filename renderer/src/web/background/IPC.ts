@@ -4,23 +4,26 @@ import Sockette from 'sockette'
 
 class HostTransport {
   private evBus = new EventTarget()
-  private socket: Sockette
+  private socket!: Sockette
   logs = shallowRef('')
   version = shallowRef('0.0.00000')
   isPortable = shallowRef(false)
   updateInfo = shallowRef<UpdateInfo>({ state: 'initial' })
 
-  constructor () {
-    this.socket = new Sockette(`ws://${window.location.host}/events`, {
-      onmessage: (e) => {
-        this.selfDispatch(JSON.parse(e.data))
-      }
-    })
+  async init () {
     this.onEvent('MAIN->CLIENT::log-entry', (entry) => {
       this.logs.value += (entry.message + '\n')
     })
     this.onEvent('MAIN->CLIENT::updater-state', (info) => {
       this.updateInfo.value = info
+    })
+    await new Promise((resolve) => {
+      this.socket = new Sockette(`ws://${window.location.host}/events`, {
+        onmessage: (e) => {
+          this.selfDispatch(JSON.parse(e.data))
+        },
+        onopen: resolve
+      })
     })
   }
 

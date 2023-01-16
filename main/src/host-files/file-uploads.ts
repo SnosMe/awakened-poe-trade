@@ -17,7 +17,7 @@ export function addFileUploadRoutes (server: FastifyInstance) {
   server.post<{
     Params: { file: string },
     Body: Buffer
-  }>('/uploads/:file', async (req) => {
+  }>('/uploads/:file', { bodyLimit: 16_000_000 }, async (req) => {
     const contents = req.body
     const hash = crypto.createHash('md5').update(contents).digest('hex')
     const filename = `${hash}${path.extname(req.params.file)}`

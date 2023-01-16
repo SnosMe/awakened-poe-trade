@@ -105,9 +105,16 @@ export async function startServer (
     }
   })
 
-  await server.listen({
-    port: (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0,
-    // host: '0.0.0.0'
-  })
+  let port = (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0
+  let host = 'localhost'
+  // --listen=[host][:port]
+  const listenOpt = process.argv.find(arg => arg.startsWith('--listen'))
+  if (listenOpt) {
+    const [hostArg, portArg] = listenOpt.split('=')[1].split(':')
+    if (hostArg) host = hostArg
+    if (portArg) port = parseInt(portArg, 10)
+  }
+
+  await server.listen({ port, host })
   return (server.server.address() as AddressInfo).port
 }
