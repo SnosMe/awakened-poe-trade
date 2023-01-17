@@ -282,9 +282,7 @@ function parseNamePlate (section: string[]) {
     rarity: undefined,
     category: undefined,
     name: markupConditionParser(section[2]).replace(regSetString, ''),
-    // name: markupConditionParser(section[2]),
-    // baseType: (section.length >= 4) ? markupConditionParser(section[3]).replace(regSetString, '') : undefined,
-    baseType: (section.length >= 4) ? markupConditionParser(section[3]) : undefined,
+    baseType: (section.length >= 4) ? markupConditionParser(section[3]).replace(regSetString, '') : undefined,
     isUnidentified: false,
     isCorrupted: false,
     newMods: [],
@@ -420,12 +418,16 @@ function parseVaalGemName (section: string[], item: ParserState) {
       item.gemAltQuality = 'Divergent'
     } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(section[0])?.[1])) {
       item.gemAltQuality = 'Phantasmal'
-    } else if (ITEM_BY_TRANSLATED('GEM', section[0])) {
-      gemName = section[0]
+    } else if (ITEM_BY_TRANSLATED('GEM', section[0].replace(/\([\w|\s|']+?\)/g, ''))) {
+      gemName = section[0].replace(/\([\w|\s|']+?\)/g, '')
       item.gemAltQuality = 'Superior'
     }
     if (gemName) {
-      item.name = ITEM_BY_TRANSLATED('GEM', gemName)![0].refName
+      if (AppConfig().realm === 'pc-tencent') {
+        item.name = gemName
+      } else {
+        item.name = ITEM_BY_TRANSLATED('GEM', gemName)![0].refName
+      }
       return 'SECTION_PARSED'
     }
   }
