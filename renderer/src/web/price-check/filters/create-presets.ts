@@ -23,7 +23,7 @@ export function createPresets (
       active: ROMAN_NUMERALS[0],
       presets: item.logbookAreaMods!.map<FilterPreset>((area, idx) => ({
         id: ROMAN_NUMERALS[idx],
-        filters: createFilters(item, { ...opts, exact: true }),
+        filters: createFilters(item, { ...opts, offline: false, exact: true }),
         stats: createExactStatFilters(item, sumStatsByModType(area), opts)
       }))
     }
@@ -45,7 +45,7 @@ export function createPresets (
       active: 'Exact',
       presets: [{
         id: 'Exact',
-        filters: createFilters(item, { ...opts, exact: true }),
+        filters: createFilters(item, { ...opts, offline: false, exact: true }),
         stats: createExactStatFilters(item, item.statsByType, opts)
       }]
     }
@@ -53,7 +53,7 @@ export function createPresets (
 
   const pseudoPreset: FilterPreset = {
     id: 'Pseudo',
-    filters: createFilters(item, { ...opts, exact: false }),
+    filters: createFilters(item, { ...opts, offline: false, exact: false }),
     stats: initUiModFilters(item, opts)
   }
 
@@ -82,7 +82,7 @@ export function createPresets (
 
   const baseItemPreset: FilterPreset = {
     id: 'Base item',
-    filters: createFilters(item, { ...opts, exact: true }),
+    filters: createFilters(item, { ...opts, offline: false, exact: true }),
     stats: createExactStatFilters(item, item.statsByType, opts)
   }
 
