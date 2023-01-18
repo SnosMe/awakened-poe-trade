@@ -158,7 +158,7 @@ export default defineComponent({
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
-      offline: configModelValue(() => props.config, 'offline'),
+      offline: configModelValue(() => configWidget.value, 'offline'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
       builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),
       requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),

@@ -104,7 +104,6 @@ export interface Config {
   delveGridKey: string | null
   restoreClipboard: boolean
   poesessid: string
-  offline: boolean
   commands: Array<{
     text: string
     hotkey: string | null
@@ -167,7 +166,6 @@ export const defaultConfig = (): Config => ({
   stashScroll: true,
   language: 'zh_CN',
   poesessid: '',
-  offline: false,
   realm: 'pc-ggg',
   fontSize: 16,
   disableUpdateDownload: false,
@@ -201,6 +199,7 @@ export const defaultConfig = (): Config => ({
       smartInitialSearch: true,
       lockedInitialSearch: true,
       activateStockFilter: false,
+      offline: false,
       builtinBrowser: false,
       hotkey: 'D',
       hotkeyHold: 'Ctrl',
@@ -510,7 +509,8 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 15
   }
   if (config.configVersion < 16) {
-    config.offline = false
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .offline = false
 
     config.configVersion = 16
   }

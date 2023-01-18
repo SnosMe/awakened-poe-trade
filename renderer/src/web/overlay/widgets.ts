@@ -40,6 +40,7 @@ export interface PriceCheckWidget extends Widget {
   smartInitialSearch: boolean
   lockedInitialSearch: boolean
   activateStockFilter: boolean
+  offline: boolean
   showCursor: boolean
   requestPricePrediction: boolean
   builtinBrowser: boolean
