@@ -70,6 +70,13 @@
       </div>
     </div>
     <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t('Always select "online"') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="offline" :value="false" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="offline" :value="true">{{ t('No') }}</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show price prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
       <div class="mb-4 flex">
         <ui-radio v-model="requestPricePrediction" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
@@ -151,6 +158,7 @@ export default defineComponent({
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
+      offline: configModelValue(() => props.config, 'offline'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
       builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),
       requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),
@@ -252,6 +260,7 @@ export default defineComponent({
     "Show indication on collapsed listings": "显示被折叠列表标记",
     "Perform an auto search, when pressing": "按住则自动搜索",
     "Always select \"Stock\" filter": "总是选择 \"存量\" 过滤",
+    "Always select \"online\"": "总是选择 \"在线\" 查询",
     "League": "赛季",
     "Loading leagues...": "载入赛季...",
     "Failed to load leagues": "赛季载入失败",
@@ -275,6 +284,7 @@ export default defineComponent({
     "Show indication on collapsed listings": "顯示被折疊列表標記",
     "Perform an auto search, when pressing": "按住則自動搜索",
     "Always select \"Stock\" filter": "總是選擇 \"存量\" 過濾",
+    "Always select \"online\"": "總是選擇 \"在线\" 查询",
     "League": "聯盟",
     "Loading leagues...": "載入聯盟...",
     "Failed to load leagues": "聯盟載入失敗",

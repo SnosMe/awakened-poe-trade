@@ -104,6 +104,7 @@ export interface Config {
   delveGridKey: string | null
   restoreClipboard: boolean
   poesessid: string
+  offline: boolean
   commands: Array<{
     text: string
     hotkey: string | null
@@ -124,7 +125,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 15,
+  configVersion: 16,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
@@ -166,6 +167,7 @@ export const defaultConfig = (): Config => ({
   stashScroll: true,
   language: 'zh_CN',
   poesessid: '',
+  offline: false,
   realm: 'pc-ggg',
   fontSize: 16,
   disableUpdateDownload: false,
@@ -506,6 +508,11 @@ function upgradeConfig (_config: Config): Config {
     priceCheck.builtinBrowser = false
 
     config.configVersion = 15
+  }
+  if (config.configVersion < 16) {
+    config.offline = false
+
+    config.configVersion = 16
   }
 
   return config as unknown as Config
