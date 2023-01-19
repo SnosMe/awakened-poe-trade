@@ -592,7 +592,7 @@ function parseLogbookArea (section: string[], item: ParsedItem) {
   if (section.length < 3) return 'SECTION_SKIPPED'
 
   // skip Area, parse Faction
-  const faction = STAT_BY_MATCH_STR(section[1])
+  const faction = STAT_BY_MATCH_STR(section[1].replace(/\([\w\s']+?\)/g, ''))
   if (!faction) return 'SECTION_SKIPPED'
 
   const areaMods: ParsedModifier[] = [{
