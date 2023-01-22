@@ -8,6 +8,7 @@ import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
 interface CreateOptions {
+  offline: boolean
   league: string
   chaosPriceThreshold: number
   currency: string | undefined
@@ -24,7 +25,7 @@ export function createFilters (
   const filters: ItemFilters = {
     searchExact: {},
     trade: {
-      offline: false,
+      offline: opts.offline,
       onlineInLeague: false,
       listed: undefined,
       currency: opts.currency,

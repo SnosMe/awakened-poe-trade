@@ -69,6 +69,13 @@
         <ui-radio v-model="activateStockFilter" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
+    <div class="flex-1 mb-1">{{ t('Always select "online"') }}</div>
+    <div class="mb-4 flex">
+      <ui-radio v-model="offline" :value="false" class="mr-4">{{ t('Yes') }}</ui-radio>
+      <ui-radio v-model="offline" :value="true">{{ t('No') }}</ui-radio>
+    </div>
+  </div>
+  <div class="mb-2">
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t('Show price prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
       <div class="mb-4 flex">
@@ -151,6 +158,7 @@ export default defineComponent({
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
+      offline: configModelValue(() => configWidget.value, 'offline'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
       builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),
       requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),
