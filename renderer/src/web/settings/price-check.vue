@@ -232,7 +232,6 @@ export default defineComponent({
     "Price check Item, and follow the instructions in the error description.": "Прайс-чекните предмет, и следуйте инструкции в описании ошибки.",
     "Show price prediction": "Показывать приблизительную цену",
     "Enable builtin browser": "Включить встроенный браузер",
-    "Show item level": "Показывать уровень предмета",
     "builtin_browser_warning": "Я осознаю, что в будущие релизы могут потенциально содержать вредоносный код, который может украсть мой POESESSID."
   },
   "cmn-Hant": {

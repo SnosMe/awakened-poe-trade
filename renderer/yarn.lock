@@ -189,6 +189,11 @@
   resolved "https://registry.yarnpkg.com/@types/object-hash/-/object-hash-2.2.1.tgz#67c169f8f033e0b62abbf81df2d00f4598d540b9"
   integrity sha512-i/rtaJFCsPljrZvP/akBqEwUP2y5cZLOmvO+JaYnz01aPknrQ+hB5MRcO7iqCUsFaYfTG8kGfKUyboA07xeDHQ==
 
+"@types/web-bluetooth@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@types/web-bluetooth/-/web-bluetooth-0.0.16.tgz#1d12873a8e49567371f2a75fe3e7f7edca6662d8"
+  integrity sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==
+
 "@typescript-eslint/eslint-plugin@^5.0.0":
   version "5.33.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.33.0.tgz#059798888720ec52ffa96c5f868e31a8f70fa3ec"
@@ -409,6 +414,28 @@
   version "3.2.37"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.37.tgz#8e6adc3f2759af52f0e85863dfb0b711ecc5c702"
   integrity sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==
+
+"@vueuse/core@^9.10.0":
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-9.10.0.tgz#2ef6e55ca773c5b2db1e3f13b8292af96dd32214"
+  integrity sha512-CxMewME07qeuzuT/AOIQGv0EhhDoojniqU6pC3F8m5VC76L47UT18DcX88kWlP3I7d3qMJ4u/PD8iSRsy3bmNA==
+  dependencies:
+    "@types/web-bluetooth" "^0.0.16"
+    "@vueuse/metadata" "9.10.0"
+    "@vueuse/shared" "9.10.0"
+    vue-demi "*"
+
+"@vueuse/metadata@9.10.0":
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-9.10.0.tgz#1a5eb94ca755bd8e666505f47da7d88969cffdc7"
+  integrity sha512-G5VZhgTCapzU9rv0Iq2HBrVOSGzOKb+OE668NxhXNcTjUjwYxULkEhAw70FtRLMZc+hxcFAzDZlKYA0xcwNMuw==
+
+"@vueuse/shared@9.10.0":
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-9.10.0.tgz#49874a0f9955d28689b3133de660367c63dbc030"
+  integrity sha512-vakHJ2ZRklAzqmcVBL38RS7BxdBA4+5poG9NsSyqJxrt9kz0zX3P5CXMy0Hm6LFbZXUgvKdqAS3pUH1zX/5qTQ==
+  dependencies:
+    vue-demi "*"
 
 acorn-jsx@^5.2.0, acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -2240,6 +2267,11 @@ vite@^3.0.0:
     rollup ">=2.75.6 <2.77.0 || ~2.77.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+vue-demi@*:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
+  integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
 
 vue-eslint-parser@^9.0.1:
   version "9.0.3"

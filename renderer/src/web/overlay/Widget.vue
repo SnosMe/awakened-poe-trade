@@ -158,6 +158,9 @@ export default defineComponent({
     })
 
     const shownHandles = computed(() => {
+      if (Array.isArray(props.moveHandles)) {
+        return props.moveHandles
+      }
       if (!props.moveHandles) {
         return ['tl', 'tc', 'tr', 'cr', 'br', 'bc', 'bl', 'cl', 'cc']
       }
