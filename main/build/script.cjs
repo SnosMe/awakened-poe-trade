@@ -19,6 +19,14 @@ const electronRunner = (() => {
   }
 })()
 
+const visionBuild = esbuild.build({
+  entryPoints: ['src/vision/link-worker.ts'],
+  bundle: true,
+  platform: 'node',
+  outfile: 'dist/vision.js',
+  watch: isDev
+})
+
 const mainBuild = esbuild.build({
   entryPoints: ['src/main.ts'],
   bundle: true,
@@ -36,6 +44,7 @@ const mainBuild = esbuild.build({
 })
 
 Promise.all([
+  visionBuild,
   mainBuild
 ])
 .then(() => { if (isDev) electronRunner.restart() })

@@ -85,4 +85,5 @@ export interface ImageStripWidget extends Widget {
 
 export interface ItemSearchWidget extends Widget {
   anchor: Anchor
+  ocrGemsKey: string | null
 }

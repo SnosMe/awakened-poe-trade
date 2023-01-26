@@ -16,6 +16,7 @@
     "apexcharts": "^3.23.1",
     "dot-prop": "7.x.x",
     "fast-deep-equal": "^3.1.3",
+    "fastest-levenshtein": "^1.0.16",
     "luxon": "3.x.x",
     "object-hash": "^3.0.0",
     "sockette": "^2.0.6",

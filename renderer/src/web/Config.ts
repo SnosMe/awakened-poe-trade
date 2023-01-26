@@ -499,8 +499,10 @@ function upgradeConfig (_config: Config): Config {
 
   if (config.configVersion < 15) {
     const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
-
     priceCheck.builtinBrowser = false
+
+    const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as widget.ItemSearchWidget
+    itemSearch.ocrGemsKey = null
 
     config.configVersion = 15
   }
@@ -610,6 +612,15 @@ function getConfigForHost (): HostConfig {
           }
         })
       }
+    } else if (widget.wmType === 'item-search') {
+      const itemSearch = widget as widget.ItemSearchWidget
+      if (itemSearch.ocrGemsKey) {
+        actions.push({
+          shortcut: itemSearch.ocrGemsKey,
+          keepModKeys: true,
+          action: { type: 'ocr-text', target: 'heist-gems' }
+        })
+      }
     }
   }
 
@@ -622,6 +633,7 @@ function getConfigForHost (): HostConfig {
     overlayKey: config.overlayKey,
     disableUpdateDownload: config.disableUpdateDownload,
     logLevel: config.logLevel,
-    windowTitle: config.windowTitle
+    windowTitle: config.windowTitle,
+    language: config.language
   }
 }

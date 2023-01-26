@@ -65,6 +65,7 @@ import SettingsDebug from './debug.vue'
 import SettingsMaps from './maps/maps.vue'
 import SettingsStashSearch from './stash-search.vue'
 import SettingsStopwatch from './stopwatch.vue'
+import SettingsItemSearch from './item-search.vue'
 
 function shuffle<T> (array: T[]): T[] {
   let currentIndex = array.length
@@ -190,6 +191,8 @@ function menuByType (type?: string) {
       return [[SettingsItemcheck, SettingsMaps]]
     case 'price-check':
       return [[SettingsPricecheck]]
+    case 'item-search':
+      return [[SettingsItemSearch]]
     default:
       return [
         [SettingsHotkeys, SettingsChat],
@@ -351,6 +354,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
     "Price check": "Прайс-чек",
     "Maps": "Карты",
     "Item info": "Проверка предмета",
+    "Item search": "Поиск предметов",
     "Debug": "Debug",
     "Quit": "Выход",
     "Chat": "Чат",

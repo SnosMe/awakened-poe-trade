@@ -12,6 +12,8 @@ export let ITEM_BY_TRANSLATED = (ns: BaseType['namespace'], name: string): BaseT
 export let ITEM_BY_REF = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
 export let ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<BaseType> {}
 
+export let ALTQ_GEM_NAMES = function * (): Generator<string> {}
+
 export let STAT_BY_MATCH_STR = (name: string): { matcher: StatMatcher, stat: Stat } | undefined => undefined
 export let STAT_BY_REF = (name: string): Stat | undefined => undefined
 export let STATS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<Stat> {}
@@ -52,6 +54,24 @@ function ndjsonFindLines<T> (ndjson: string) {
   }
 }
 
+function itemNamesFromLines (items: Generator<BaseType>) {
+  let cached = ''
+  return function * (): Generator<string> {
+    if (!cached.length) {
+      for (const item of items) {
+        cached += (item.name + '\n')
+      }
+    }
+
+    let start = 0
+    while (start !== cached.length) {
+      const end = cached.indexOf('\n', start)
+      yield cached.slice(start, end)
+      start = end + 1
+    }
+  }
+}
+
 async function loadItems (language: string) {
   const ndjson = await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items.ndjson`)).text()
   const INDEX_WIDTH = 2
@@ -80,6 +100,7 @@ async function loadItems (language: string) {
   ITEM_BY_TRANSLATED = commonFind(indexNames, 'name')
   ITEM_BY_REF = commonFind(indexRefNames, 'refName')
   ITEMS_ITERATOR = ndjsonFindLines<BaseType>(ndjson)
+  ALTQ_GEM_NAMES = itemNamesFromLines(ITEMS_ITERATOR('altQuality":["Anomalous'))
 }
 
 async function loadStats (language: string) {

@@ -44,4 +44,8 @@ export class GameWindow extends EventEmitter {
       cb(e.hasAccess)
     })
   }
+
+  screenshot () {
+    return OverlayController.screenshot()
+  }
 }

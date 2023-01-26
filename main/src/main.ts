@@ -36,10 +36,10 @@ app.on('ready', async () => {
     async () => {
       const overlay = new OverlayWindow(eventPipe, logger, poeWindow, httpProxy)
       new OverlayVisibility(eventPipe, overlay, gameConfig)
-      const shortcuts = new Shortcuts(logger, overlay, poeWindow, gameConfig, eventPipe)
+      const shortcuts = await Shortcuts.create(logger, overlay, poeWindow, gameConfig, eventPipe)
       eventPipe.onEventAnyClient('CLIENT->MAIN::update-host-config', (cfg) => {
         overlay.updateOpts(cfg.overlayKey, cfg.windowTitle)
-        shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.restoreClipboard)
+        shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.restoreClipboard, cfg.language)
         gameLogWatcher.restart(cfg.clientLog)
         gameConfig.readConfig(cfg.gameConfig)
         appUpdater.updateOpts(!cfg.disableUpdateDownload)

@@ -216,6 +216,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.6.tgz#87846192fd51b693368fad3e99123169225621d4"
   integrity sha512-vmYJF0REqDyyU0gviezF/KHq/fYaUbFhkcNbQCuPGFQj6VTbXuHZoxs/Y7mutWe73C8AC6l9fFu8mSYiBAqkGA==
 
+"@types/node@^10.11.7":
+  version "10.17.60"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.60.tgz#35f3d6213daed95da7f0f73e75bcc6980e90597b"
+  integrity sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==
+
 "@types/plist@^3.0.1":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@types/plist/-/plist-3.0.2.tgz#61b3727bba0f5c462fe333542534a0c3e19ccb01"
@@ -252,6 +257,13 @@
   integrity sha512-Mh3OP0oh8X7O7F9m5AplC+XHYLBWuPKNkGVD3gIZFLFebBnuFI2Nz5Sf8WLvwGxECJ8YjifQvFdh79ubODkdug==
   dependencies:
     "@types/yargs-parser" "*"
+
+"@wokwi/bmp-ts@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@wokwi/bmp-ts/-/bmp-ts-3.0.0.tgz#826b635268f32c69784089a1b56843ffc1dfb455"
+  integrity sha512-fBoRZQEd8RHdFq4gaS6eU69fYZjqGIz8myYPLm0gJSosxqHWpge8/3+6yCyc8b8afcb/ptjSlnEVP93t00fWDQ==
+  dependencies:
+    "@types/node" "^10.11.7"
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -676,6 +688,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+comlink@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/comlink/-/comlink-4.3.1.tgz#0c6b9d69bcd293715c907c33fe8fc45aecad13c5"
+  integrity sha512-+YbhUdNrpBZggBAHWcgQMLPLH1KDF3wJpeqrCKieWQ8RL7atmgsgTQko1XEBK6PsecfopWNntopJ+ByYG1lRaA==
+
 commander@2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
@@ -937,10 +954,10 @@ electron-osx-sign@^0.6.0:
     minimist "^1.2.0"
     plist "^3.0.1"
 
-electron-overlay-window@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-3.0.0.tgz#d34c4d97190f26a99d46271a61031faefdf10fa3"
-  integrity sha512-7mexgNUEgAJaxorG3aa1k9YIr1V9LkMjt7ZhPfG4Eq1AfQEgWyfHUrndQDw75/JohnyNFPzG/fVaCimDi4mcVA==
+electron-overlay-window@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/electron-overlay-window/-/electron-overlay-window-3.2.0.tgz#caedec2b9418e8260c9b9debdda4ab00e242f76d"
+  integrity sha512-EqUucgLJw3QnnMn0S2yEDC3MVcAEE7Aa87VSdhnepeCvKKKc7nwgo/Trfl6ritLXrbH3lSIdOGdMcS9g3M4jGA==
   dependencies:
     node-gyp-build "4.x.x"
     throttle-debounce "5.x.x"
