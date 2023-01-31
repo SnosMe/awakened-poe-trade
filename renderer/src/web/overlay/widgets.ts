@@ -51,6 +51,7 @@ export interface ItemCheckWidget extends Widget {
   craftOfExileKey: string | null
   stashSearchKey: string | null
   maps: {
+    profile: number
     showNewStats: boolean
     selectedStats: Array<{
       matcher: string

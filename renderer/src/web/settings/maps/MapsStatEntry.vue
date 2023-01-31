@@ -6,9 +6,9 @@
       <span class="truncate">{{ matcher.str }}</span>
     </div>
     <div class="flex items-baseline gap-x-4" :class="{ [$style['controls-auto-hide']]: !removable }">
-      <ui-radio v-model="decision" value="warning" class="p-1" />
-      <ui-radio v-model="decision" value="danger" class="p-1" />
-      <ui-radio v-model="decision" value="desirable" class="p-1" />
+      <ui-radio v-model="decision" value="w" class="p-1" />
+      <ui-radio v-model="decision" value="d" class="p-1" />
+      <ui-radio v-model="decision" value="g" class="p-1" />
       <button v-if="removable" @click="remove"
         class="flex items-center mx-1 py-1" :class="{ 'text-red-400': matcher.outdated }">
         <i class="w-4" :class="matcher.outdated ? 'fas fa-trash-alt' : 'fas fa-times'"></i>
@@ -34,39 +34,47 @@ export default defineComponent({
     selectedStats: {
       type: Array as PropType<ItemCheckWidget['maps']['selectedStats']>,
       required: true
+    },
+    profile: {
+      type: Number,
+      required: true
     }
   },
   setup (props) {
     const { t } = useI18n()
 
-    const entry = computed(() => {
-      return props.selectedStats.find(entry => entry.matcher === props.matcher.str)
-    })
+    const entry = computed(() => props.selectedStats
+      .find(({ matcher }) => matcher === props.matcher.str))
 
-    const decision = computed<undefined | string>({
+    const decision = computed<string>({
       get () {
-        return entry.value?.decision
+        if (!entry.value) return '-'
+        return entry.value.decision[props.profile - 1]
       },
       set (value) {
-        if (entry.value) {
-          entry.value.decision = value!
-        } else {
+        if (!entry.value) {
+          const decision = ['-', '-', '-']
+          decision[props.profile - 1] = value
           props.selectedStats.push({
             matcher: props.matcher.str,
-            decision: value!
+            decision: decision.join('')
           })
+        } else {
+          const decision = entry.value.decision.split('')
+          decision[props.profile - 1] = value
+          entry.value.decision = decision.join('')
         }
       }
     })
 
     function remove () {
       if (entry.value) {
-        decision.value = 'seen'
+        decision.value = '---'
       }
     }
 
     const removable = computed(() => {
-      return entry.value && decision.value !== 'seen'
+      return decision.value !== 's' && decision.value !== '-'
     })
 
     return {

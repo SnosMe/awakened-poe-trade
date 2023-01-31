@@ -23,7 +23,8 @@
       <maps-stat-entry
         :style="{ position: 'absolute', top: `${props.top}px` }"
         :matcher="props.item"
-        :selected-stats="selectedStats" />
+        :selected-stats="selectedStats"
+        :profile="profile" />
     </virtual-scroll>
   </div>
 </template>
@@ -79,9 +80,10 @@ export default defineComponent({
     })
 
     const selectedMatchers = computed(() => {
+      const idx = widget.value.maps.profile - 1
       return new Set(
         widget.value.maps.selectedStats
-          .filter(entry => entry.decision !== 'seen')
+          .filter(({ decision }) => decision[idx] !== '-' && decision[idx] !== 's')
           .map(entry => entry.matcher))
     })
 
@@ -91,10 +93,12 @@ export default defineComponent({
     })
 
     const hasOutdatedTranslation = computed<MapStatMatcher[]>(() => {
+      const idx = widget.value.maps.profile - 1
       return widget.value.maps
         .selectedStats
         .filter(entry =>
-          entry.decision !== 'seen' &&
+          entry.decision[idx] !== '-' &&
+          entry.decision[idx] !== 's' &&
           STAT_BY_MATCH_STR(entry.matcher) == null)
         .map(entry => ({ str: entry.matcher, heist: undefined, outdated: true }))
     })
@@ -124,6 +128,7 @@ export default defineComponent({
         ]
       }),
       selectedStats: computed(() => widget.value.maps.selectedStats),
+      profile: computed(() => widget.value.maps.profile),
       fontSize: computed(() => props.config.fontSize)
     }
   }

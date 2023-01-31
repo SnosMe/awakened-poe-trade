@@ -1,21 +1,12 @@
 <template>
   <div class="flex">
     <button @click="handleClick"
-      class="px-2 leading-none py-2 m-0 text-left flex-1 flex items-center overflow-hidden"
-      :class="decision === 'danger' ? 'bg-red-700'
-            : decision === 'warning' ? 'bg-orange-600'
-            : decision === 'desirable' ? 'bg-green-700'
-            : 'hover:bg-gray-700'">
-      <template v-if="true">
-        <i v-if="!decision || decision === 'seen'"
-          class="inline-block mr-2" style="min-width: 1rem;">{{ '\u2009' }}</i>
-        <i v-else
-          class="fas mr-2 text-center" style="min-width: 1rem;"
-          :class="decision === 'danger' ? 'fa-skull-crossbones'
-            : decision === 'warning' ? 'fa-exclamation-triangle'
-            : 'fa-check'"></i>
-      </template>
-      <item-modifier-text :text="stat.matcher" :roll="stat.roll" class="truncate" />
+      class="p-2 gap-x-2 leading-none text-left flex-1 flex items-center overflow-hidden"
+      :class="btnStyle?.bg ?? 'hover:bg-gray-700'">
+      <i class="fas text-center w-4 shrink-0"
+        :class="btnStyle?.icon" />
+      <item-modifier-text class="truncate"
+        :text="stat.matcher" :roll="stat.roll" />
     </button>
     <button @click="toggleSeenStatus" class="flex leading-none items-center text-gray-600 w-8 text-center justify-center">
       <i v-if="showNewStatIcon" class="fas fa-eye-slash"></i>
@@ -30,6 +21,12 @@ import { AppConfig } from '@/web/Config'
 import { PreparedStat } from './prepare-map-stats'
 import { ItemCheckWidget } from '../overlay/interfaces'
 
+const BTN_STYLES = new Map([
+  ['d', { bg: 'bg-red-700', icon: 'fa-skull-crossbones' }],
+  ['w', { bg: 'bg-orange-600', icon: 'fa-exclamation-triangle' }],
+  ['g', { bg: 'bg-green-700', icon: 'fa-check' }]
+])
+
 export default defineComponent({
   components: { ItemModifierText },
   props: {
@@ -39,48 +36,51 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!)
-    const entry = computed(() => {
-      return config.value.maps.selectedStats.find(_ => _.matcher === props.stat.matcher)
+    const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!.maps)
+    const entry = computed(() => config.value.selectedStats
+      .find(({ matcher }) => matcher === props.stat.matcher))
+
+    const decision = computed<string>({
+      get () {
+        if (!entry.value) return '-'
+        return entry.value.decision[config.value.profile - 1]
+      },
+      set (value) {
+        if (!entry.value) {
+          const decision = ['-', '-', '-']
+          decision[config.value.profile - 1] = value
+          config.value.selectedStats.push({
+            matcher: props.stat.matcher,
+            decision: decision.join('')
+          })
+        } else {
+          const decision = entry.value.decision.split('')
+          decision[config.value.profile - 1] = value
+          entry.value.decision = decision.join('')
+        }
+      }
     })
 
-    const showNewStatIcon = computed(() => {
-      return config.value.maps.showNewStats && !entry.value
-    })
+    const showNewStatIcon = computed(() =>
+      config.value.showNewStats && decision.value === '-')
 
     function toggleSeenStatus () {
-      if (!config.value.maps.showNewStats) return
-
-      if (!entry.value) {
-        config.value.maps.selectedStats.push({
-          matcher: props.stat.matcher,
-          decision: 'seen'
-        })
-      } else if (entry.value.decision === 'seen') {
-        config.value.maps.selectedStats = config.value.maps.selectedStats.filter(selected => selected !== entry.value)
+      if (config.value.showNewStats) {
+        decision.value = (decision.value === '-') ? 's' : '-'
       }
     }
 
     return {
-      decision: computed(() => entry.value?.decision),
+      btnStyle: computed(() => BTN_STYLES.get(decision.value)),
       showNewStatIcon,
       toggleSeenStatus,
       handleClick () {
-        if (!entry.value) {
-          config.value.maps.selectedStats.push({
-            matcher: props.stat.matcher,
-            decision: 'danger'
-          })
-        } else {
-          if (entry.value.decision === 'danger') {
-            entry.value.decision = 'warning'
-          } else if (entry.value.decision === 'warning') {
-            entry.value.decision = 'desirable'
-          } else if (entry.value.decision === 'desirable') {
-            entry.value.decision = 'seen'
-          } else if (entry.value.decision === 'seen') {
-            entry.value.decision = 'danger'
-          }
+        switch (decision.value) {
+          case '-': decision.value = 'd'; break
+          case 's': decision.value = 'd'; break
+          case 'd': decision.value = 'w'; break
+          case 'w': decision.value = 'g'; break
+          case 'g': decision.value = 's'; break
         }
       }
     }

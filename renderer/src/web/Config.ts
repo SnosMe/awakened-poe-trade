@@ -504,6 +504,17 @@ function upgradeConfig (_config: Config): Config {
     const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as widget.ItemSearchWidget
     itemSearch.ocrGemsKey = null
 
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
+    itemCheck.maps.profile = 1
+    for (const stat of itemCheck.maps.selectedStats) {
+      const p1decision =
+        (stat.decision === 'danger') ? 'd'
+          : (stat.decision === 'warning') ? 'w'
+              : (stat.decision === 'desirable') ? 'g' : 's'
+
+      stat.decision = `${p1decision}--`
+    }
+
     config.configVersion = 15
   }
 
