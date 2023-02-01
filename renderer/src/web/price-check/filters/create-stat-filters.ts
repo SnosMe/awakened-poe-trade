@@ -21,7 +21,10 @@ export function createExactStatFilters (
   statsByType: StatCalculated[],
   opts: { searchStatRange: number }
 ): StatFilter[] {
-  if (item.mapBlighted) return []
+  if (
+    item.mapBlighted ||
+    item.category === ItemCategory.Invitation
+  ) return []
   if (
     item.isUnidentified &&
     item.rarity === ItemRarity.Unique &&
@@ -40,7 +43,6 @@ export function createExactStatFilters (
   if (item.rarity === ItemRarity.Magic && (
     item.category !== ItemCategory.ClusterJewel &&
     item.category !== ItemCategory.Map &&
-    item.category !== ItemCategory.Invitation &&
     item.category !== ItemCategory.HeistContract &&
     item.category !== ItemCategory.HeistBlueprint &&
     item.category !== ItemCategory.Sentinel

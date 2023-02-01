@@ -30,7 +30,6 @@ export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filte
   if (filters.stackSize) {
     if (
       item.category === ItemCategory.DivinationCard ||
-      item.category === ItemCategory.Invitation ||
       item.category === ItemCategory.Map
     ) {
       return filters.stackSize.disabled ? 'trade' : 'bulk'

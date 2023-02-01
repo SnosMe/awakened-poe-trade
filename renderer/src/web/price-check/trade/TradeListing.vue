@@ -46,7 +46,7 @@
               <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
-              <td class="px-2 whitespace-nowrap">{{ result.priceAmount }} {{ result.priceCurrency }} <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span><i v-else-if="!result.hasNote" class="fas fa-question" /></td>
+              <td class="px-2 whitespace-nowrap"><span :class="{ 'line-through': result.priceCurrency === 'exalted' }">{{ result.priceAmount }} {{ result.priceCurrency }}</span> <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span><i v-else-if="!result.hasNote" class="fas fa-question" /></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-nowrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.category === 'Gem'" class="pl-2 whitespace-nowrap">{{ result.level }}</td>
