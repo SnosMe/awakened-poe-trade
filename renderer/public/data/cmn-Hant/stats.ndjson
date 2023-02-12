@@ -182,7 +182,7 @@
 {"ref":"#% chance in Heists for Orbs of Transmutation to drop as Orbs of Alchemy instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率蛻變石掉落為點金石"},{"string":"劫盜中蛻變石掉落為點金石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2532905418"]}}}
 {"ref":"#% chance in Heists for Regal Orbs to drop as Divine Orbs instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率富豪石掉落為神聖石"},{"string":"劫盜中富豪石掉落為神聖石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2766470009"]}}}
 {"ref":"#% chance in Heists for Regal Orbs to drop as Exalted Orbs instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率富豪石掉落為崇高石"},{"string":"劫盜中富豪石掉落為崇高石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_866391849"]}}}
-{"ref":"#% chance on completing a Heist to generate an additional Reveal with Whakano","better":1,"matchers":[{"string":"和華卡諾完成劫盜有 #% 機率產生額外的揭露"}],"trade":{"ids":{"explicit":["explicit.stat_3107439245"]}}}
+{"ref":"#% chance on completing a Heist to generate an additional Reveal with Whakano","better":1,"matchers":[{"string":"和華卡諾完成劫盜有 #% 機率產生額外的揭露"}],"trade":{"ids":{"explicit":["explicit.stat_3107439245"],"fractured":["fractured.stat_3107439245"]}}}
 {"ref":"#% chance on completing a Map influenced by a Conqueror of the Atlas\nto gain double progress towards locating their Citadel","better":1,"matchers":[{"string":"完成輿圖征服者勢力地圖，有 #% 機率獲得 2 倍定位他們壁壘位置的進度"}],"trade":{"ids":{"explicit":["explicit.stat_4162516667"]}}}
 {"ref":"#% Chance on Frenzy to gain an additional Frenzy Charge","better":1,"matchers":[{"string":"狂怒狀態時有 #% 獲得一個額外的狂怒球"}],"trade":{"ids":{"enchant":["enchant.stat_4243904146"]}}}
 {"ref":"#% chance on opening a Chest to not generate Alert Level","better":1,"matchers":[{"string":"開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_3844152269"]}}}
@@ -409,7 +409,7 @@
 {"ref":"#% chance to Shock Chilled Enemies","better":1,"matchers":[{"string":"#% 機率對被冰緩的敵人造成感電"}],"trade":{"ids":{"explicit":["explicit.stat_4069101408"]}}}
 {"ref":"#% chance to Shock during any Flask Effect","better":1,"matchers":[{"string":"任何藥劑效果持續時間內，有 #% 機率造成感電"}],"trade":{"ids":{"explicit":["explicit.stat_796406325"]}}}
 {"ref":"#% chance to Steal Power, Frenzy, and Endurance Charges on Hit","better":1,"matchers":[{"string":"擊中時有 #% 機率偷取暴擊、狂怒和耐力球"},{"string":"擊中時偷取暴擊、狂怒和耐力球。","value":100}],"trade":{"ids":{"explicit":["explicit.stat_875143443"]}}}
-{"ref":"#% chance to Summon an additional Skeleton Warrior with Summon Skeleton","better":1,"matchers":[{"string":"召喚骷髏有 #% 機率額外召喚一個骷髏戰士"}],"trade":{"ids":{"enchant":["enchant.stat_1040958896"]}}}
+{"ref":"#% chance to Summon an additional Skeleton with Summon Skeletons","better":1,"matchers":[{"string":"有 #% 機率使用召喚骷髏召喚 1 個額外骷髏"}],"trade":{"ids":{"enchant":["enchant.stat_1040958896"]}}}
 {"ref":"#% chance to Taunt Enemies on Hit with Attacks","better":1,"matchers":[{"string":"攻擊擊中時有 #% 機率嘲諷敵人"},{"string":"攻擊擊中時嘲諷敵人","value":100}],"trade":{"ids":{"explicit":["explicit.stat_280213220"],"implicit":["implicit.stat_280213220"],"fractured":["fractured.stat_280213220"],"scourge":["scourge.stat_280213220"]}}}
 {"ref":"#% chance to throw up to 4 additional Traps","better":1,"matchers":[{"string":"#% 機率投擲至多 4 個額外陷阱"}],"trade":{"ids":{"explicit":["explicit.stat_3132227798"]}}}
 {"ref":"#% chance to Trigger a Socketed Bow Skill when you Attack with a Bow, with a 1 second Cooldown","better":1,"matchers":[{"string":"當你使用弓攻擊時有 #% 機率觸發插槽中的 1 個弓技能，有 1 秒冷卻時間"},{"string":"當你使用弓攻擊時觸發插槽中的 1 個弓技能，有 1 秒冷卻時間","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3171958921"]}}}
@@ -668,7 +668,7 @@
 {"ref":"#% increased Bone Offering Duration","better":1,"matchers":[{"string":"增加 #% 骸骨奉獻持續時間"},{"string":"減少 #% 骸骨奉獻持續時間","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1607493537"]}}}
 {"ref":"#% increased Boneshatter Damage","better":1,"matchers":[{"string":"增加 #% 碎骨傷害"},{"string":"減少 #% 碎骨傷害e","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2384264970"]}}}
 {"ref":"#% increased Boneshatter Stun Duration","better":1,"matchers":[{"string":"增加 #% 碎骨暈眩持續時間"},{"string":"減少 #% 碎骨暈眩持續時間n","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2742093846"]}}}
-{"ref":"#% increased Brand Attachment range","better":1,"matchers":[{"string":"增加 #% 烙印附著距離"},{"string":"減少 #% 烙印附著距離","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4223377453"],"implicit":["implicit.stat_4223377453"],"scourge":["scourge.stat_4223377453"],"crafted":["crafted.stat_4223377453"]}}}
+{"ref":"#% increased Brand Attachment range","better":1,"matchers":[{"string":"增加 #% 烙印附著距離"},{"string":"減少 #% 烙印附著距離","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4223377453"],"implicit":["implicit.stat_4223377453"],"fractured":["fractured.stat_4223377453"],"scourge":["scourge.stat_4223377453"],"crafted":["crafted.stat_4223377453"]}}}
 {"ref":"#% increased Brand Damage","better":1,"matchers":[{"string":"增加 #% 烙印傷害"},{"string":"減少 #% 烙印傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1323465399"]}}}
 {"ref":"#% increased Brand Damage per 10 Devotion","better":1,"matchers":[{"string":"每 10 奉獻增加 #% 烙印傷害"},{"string":"每 10 奉獻減少 #% 烙印傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2697019412"]}}}
 {"ref":"#% increased Brute Force Experience gained","better":1,"matchers":[{"string":"增加 #% 獲得蠻力經驗值"},{"string":"減少 #% 獲得蠻力經驗值","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2377447058"]}}}
@@ -872,7 +872,7 @@
 {"ref":"#% increased Damage with Hits and Ailments against Bleeding Enemies","better":1,"matchers":[{"string":"對流血敵人增加 #% 擊中和異常狀態傷害"},{"string":"對流血敵人減少 #% 擊中和異常狀態傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1790172543"]}}}
 {"ref":"#% increased Damage with Hits and Ailments against Blinded Enemies","better":1,"matchers":[{"string":"對致盲的敵人增加 #% 擊中和異常狀態傷害"},{"string":"擊中和異常狀態對致盲敵人增加 #% 傷害"},{"string":"對致盲的敵人減少 #% 擊中和異常狀態傷害","negate":true},{"string":"擊中和異常狀態對致盲敵人減少 #% 傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3503466234","explicit.stat_3565956680"]}}}
 {"ref":"#% increased Damage with Hits and Ailments against Chilled Enemies","better":1,"matchers":[{"string":"對冰緩的敵人增加 #% 擊中和異常狀態的傷害"},{"string":"對冰緩的敵人減少 #% 擊中和異常狀態的傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3747189159"]}}}
-{"ref":"#% increased Damage with Hits and Ailments against Cursed Enemies","better":1,"matchers":[{"string":"對被詛咒的敵人增加 #% 擊中和異常狀態傷害"},{"string":"對被詛咒的敵人減少 #% 擊中和異常狀態傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_539970476"]}}}
+{"ref":"#% increased Damage with Hits and Ailments against Cursed Enemies","better":1,"matchers":[{"string":"對被詛咒的敵人增加 #% 擊中和異常狀態傷害"},{"string":"對被詛咒的敵人減少 #% 擊中和異常狀態傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_539970476"],"fractured":["fractured.stat_539970476"]}}}
 {"ref":"#% increased Damage with Hits and Ailments against Enemies affected by 3 Spider's Webs","better":1,"matchers":[{"string":"對被蛛網纏繞 3 層的敵人增加 #% 擊中和異常狀態傷害"},{"string":"對被蛛網纏繞 3 層的敵人減少 #% 擊中和異常狀態傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_103928310"]}}}
 {"ref":"#% increased Damage with Hits and Ailments against Hindered Enemies","better":1,"matchers":[{"string":"擊中和異常狀態對緩速敵人增加 #% 傷害"},{"string":"擊中和異常狀態對緩速敵人減少 #% 傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_528422616"]}}}
 {"ref":"#% increased Damage with Hits and Ailments against Ignited Enemies","better":1,"matchers":[{"string":"對點燃的敵人增加 #% 擊中和異常狀態傷害"},{"string":"對點燃的敵人減少 #% 擊中和異常狀態傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_485151258"]}}}
@@ -1031,7 +1031,22 @@
 {"ref":"#% increased Experience gain","better":1,"matchers":[{"string":"增加 #% 經驗獲得"},{"string":"減少 #% 經驗獲得","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3666934677","explicit.stat_57434274"],"implicit":["implicit.stat_3666934677"],"enchant":["enchant.stat_57434274"]}}}
 {"ref":"#% increased Experience Gain for Corrupted Gems","better":1,"matchers":[{"string":"增加 #% 被汙染寶石經驗獲得"},{"string":"減少 #% 被汙染寶石經驗獲得","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_47271484"]}}}
 {"ref":"#% increased Experience Gain of Gems","better":1,"matchers":[{"string":"增加 #% 寶石經驗獲得"},{"string":"減少 #% 寶石經驗獲得","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3808869043"]}}}
+{"ref":"#% increased Explicit Ailment Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動異常狀態詞綴的大小"},{"string":"減少 #% 變動異常狀態詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3086446674"]}}}
+{"ref":"#% increased Explicit Attribute Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動能力詞綴的大小"},{"string":"減少 #% 變動能力詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3243861579"]}}}
+{"ref":"#% increased Explicit Caster Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動法術詞綴的大小"},{"string":"減少 #% 變動法術詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1498186316"]}}}
+{"ref":"#% increased Explicit Chaos Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動混沌詞綴的大小"},{"string":"減少 #% 變動混沌詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3196512240"]}}}
+{"ref":"#% increased Explicit Cold Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動冰冷詞綴的大小"},{"string":"減少 #% 變動冰冷詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3206904707"]}}}
+{"ref":"#% increased Explicit Critical Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動暴擊詞綴的大小"},{"string":"減少 #% 變動暴擊詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2393315299"]}}}
+{"ref":"#% increased Explicit Damage Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動傷害詞綴的大小"},{"string":"減少 #% 變動傷害詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2979443822"]}}}
+{"ref":"#% increased Explicit Defence Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動防禦詞綴的大小"},{"string":"減少 #% 變動防禦詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3300369861"]}}}
+{"ref":"#% increased Explicit Fire Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動火焰詞綴的大小"},{"string":"減少 #% 變動火焰詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3574578302"]}}}
+{"ref":"#% increased Explicit Life Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動生命詞綴的大小"},{"string":"減少 #% 變動生命詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1308141466"]}}}
+{"ref":"#% increased Explicit Lightning Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動閃電詞綴的大小"},{"string":"減少 #% 變動閃電詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3624940721"]}}}
+{"ref":"#% increased Explicit Mana Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動魔力詞綴的大小"},{"string":"減少 #% 變動魔力詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3514984677"]}}}
 {"ref":"#% increased Explicit Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動詞綴大小"},{"string":"減少 #% 變動詞綴大小","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_1581907402"]}}}
+{"ref":"#% increased Explicit Physical Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動物理詞綴的大小"},{"string":"減少 #% 變動物理詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1335369947"]}}}
+{"ref":"#% increased Explicit Resistance Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動抗性詞綴的大小"},{"string":"減少 #% 變動抗性詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1972391381"]}}}
+{"ref":"#% increased Explicit Speed Modifier magnitudes","better":1,"matchers":[{"string":"增加 #% 變動速度詞綴的大小"},{"string":"減少 #% 變動速度詞綴的大小","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_363924732"]}}}
 {"ref":"#% increased Explosive Concoction Area of Effect","better":1,"matchers":[{"string":"增加 #% 爆裂物範圍效果"},{"string":"減少 #% 爆裂物範圍效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_4100281103"]}}}
 {"ref":"#% increased Explosive Concoction Damage","better":1,"matchers":[{"string":"增加 #% 爆裂物傷害"},{"string":"減少 #% 爆裂物傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_383710904"]}}}
 {"ref":"#% increased Explosive Placement Range in your Maps","better":1,"fromAreaMods":true,"matchers":[{"string":"增加 #% 你的地圖內爆裂物放置範圍"},{"string":"增加 #% 爆裂物放置範圍"},{"string":"減少 #% 你的地圖內爆裂物放置範圍"},{"string":"減少 #% 爆裂物放置範圍"}],"trade":{"ids":{"explicit":["explicit.stat_1539368271"],"implicit":["implicit.stat_1539368271"]}}}
@@ -1133,7 +1148,7 @@
 {"ref":"#% increased Hiring Fee for Brute Force Jobs","better":1,"matchers":[{"string":"蠻力職位增加 #% 僱用費"},{"string":"蠻力職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1018753640"]}}}
 {"ref":"#% increased Hiring Fee for Counter-Thaumaturgy Jobs","better":1,"matchers":[{"string":"解咒師職位增加 #% 僱用費"},{"string":"解咒師職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3063943261"]}}}
 {"ref":"#% increased Hiring Fee for Deception Jobs","better":1,"matchers":[{"string":"詐欺職位增加 #% 僱用費"},{"string":"詐欺職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2506681313"],"fractured":["fractured.stat_2506681313"]}}}
-{"ref":"#% increased Hiring Fee for Demolition Jobs","better":1,"matchers":[{"string":"拆除職位增加 #% 僱用費"},{"string":"拆除職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3680061663"]}}}
+{"ref":"#% increased Hiring Fee for Demolition Jobs","better":1,"matchers":[{"string":"拆除職位增加 #% 僱用費"},{"string":"拆除職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3680061663"],"fractured":["fractured.stat_3680061663"]}}}
 {"ref":"#% increased Hiring Fee for Engineering Jobs","better":1,"matchers":[{"string":"工程職位增加 #% 僱用費"},{"string":"工程職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2956083810"],"fractured":["fractured.stat_2956083810"]}}}
 {"ref":"#% increased Hiring Fee for Lockpicking Jobs","better":1,"matchers":[{"string":"開鎖職位增加 #% 僱用費"},{"string":"開鎖職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3391299828"],"fractured":["fractured.stat_3391299828"]}}}
 {"ref":"#% increased Hiring Fee for Perception Jobs","better":1,"matchers":[{"string":"洞察力職位增加 #% 僱用費"},{"string":"洞察力職位減少 #% 僱用費","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2885031631"]}}}
@@ -1903,7 +1918,7 @@
 {"ref":"+# to Maximum Energy Shield per Blue Socket","better":1,"matchers":[{"string":"每個藍色插槽 # 最大能量護盾"}],"trade":{"ids":{"explicit":["explicit.stat_2906522048"]}}}
 {"ref":"+# to maximum Fortification","better":1,"matchers":[{"string":"# 最大護體"}],"trade":{"ids":{"explicit":["explicit.stat_335507772"],"implicit":["implicit.stat_335507772"]}}}
 {"ref":"+# to maximum Fortification while affected by Glorious Madness","better":1,"matchers":[{"string":"被榮耀瘋癲影響時，# 最大護體"}],"trade":{"ids":{"explicit":["explicit.stat_2611224062"]}}}
-{"ref":"+# to maximum Fortification while Focused","better":1,"matchers":[{"string":"專注時 # 最大護體"}],"trade":{"ids":{"explicit":["explicit.stat_922014346"],"crafted":["crafted.stat_922014346"]}}}
+{"ref":"+# to maximum Fortification while Focused","better":1,"matchers":[{"string":"專注時 # 最大護體"}],"trade":{"ids":{"explicit":["explicit.stat_922014346"],"fractured":["fractured.stat_922014346"],"crafted":["crafted.stat_922014346"]}}}
 {"ref":"+# to Maximum Frenzy Charges","better":1,"matchers":[{"string":"# 最大狂怒球"}],"trade":{"ids":{"explicit":["explicit.stat_4078695"],"implicit":["implicit.stat_4078695"],"fractured":["fractured.stat_4078695"],"scourge":["scourge.stat_4078695"]}}}
 {"ref":"+# to Maximum Frenzy Charges while affected by Grace","better":1,"matchers":[{"string":"被優雅影響時，# 最大狂怒球"}],"trade":{"ids":{"explicit":["explicit.stat_3458080964"]}}}
 {"ref":"+# to maximum Life","better":1,"matchers":[{"string":"# 最大生命"}],"trade":{"ids":{"explicit":["explicit.stat_3299347043"],"implicit":["implicit.stat_3299347043"],"fractured":["fractured.stat_3299347043"],"scourge":["scourge.stat_3299347043"],"crafted":["crafted.stat_3299347043"]}}}
@@ -2233,7 +2248,7 @@
 {"ref":"+1 to maximum number of Raised Zombies per # Strength","better":1,"matchers":[{"string":"每 # 點力量額外增加 1 個殭屍上限"}],"trade":{"ids":{"explicit":["explicit.stat_4056985119"]}}}
 {"ref":"+40% to Maximum Effect of Shock","better":1,"matchers":[{"string":"+40% 最大感電效果"}],"trade":{"ids":{"explicit":["explicit.stat_4007740198"]}}}
 {"ref":"1 Added Passive Skill is Adrenaline","better":1,"matchers":[{"string":"1 個附加天賦為腎上腺素"}],"trade":{"ids":{"explicit":["explicit.stat_4022743870"]}}}
-{"ref":"1 Added Passive Skill is Advance Guard","better":1,"matchers":[{"string":"1 個附加天賦為進階守衛"}],"trade":{"ids":{"explicit":["explicit.stat_1625939562"]}}}
+{"ref":"1 Added Passive Skill is Advance Guard","better":1,"matchers":[{"string":"1 個附加天賦為進階守衛"}],"trade":{"ids":{"explicit":["explicit.stat_1625939562"],"fractured":["fractured.stat_1625939562"]}}}
 {"ref":"1 Added Passive Skill is Aerialist","better":1,"matchers":[{"string":"1 個附加天賦為高空特技"}],"trade":{"ids":{"explicit":["explicit.stat_3848677307"]}}}
 {"ref":"1 Added Passive Skill is Aerodynamics","better":1,"matchers":[{"string":"1 個附加天賦為氣動學"}],"trade":{"ids":{"explicit":["explicit.stat_4120556534"],"fractured":["fractured.stat_4120556534"]}}}
 {"ref":"1 Added Passive Skill is Agent of Destruction","better":1,"matchers":[{"string":"1 個附加天賦為破壞特工"}],"trade":{"ids":{"explicit":["explicit.stat_3122491961"],"fractured":["fractured.stat_3122491961"]}}}
@@ -2253,7 +2268,7 @@
 {"ref":"1 Added Passive Skill is Arcing Shot","better":1,"matchers":[{"string":"1 個附加天賦為弧射"}],"trade":{"ids":{"explicit":["explicit.stat_3212859169"],"fractured":["fractured.stat_3212859169"]}}}
 {"ref":"1 Added Passive Skill is Assert Dominance","better":1,"matchers":[{"string":"1 個附加天賦為維護地位"}],"trade":{"ids":{"explicit":["explicit.stat_4222265138"]}}}
 {"ref":"1 Added Passive Skill is Astonishing Affliction","better":1,"matchers":[{"string":"1 個附加天賦為驚奇痛楚"}],"trade":{"ids":{"explicit":["explicit.stat_2428334013"]}}}
-{"ref":"1 Added Passive Skill is Basics of Pain","better":1,"matchers":[{"string":"1 個附加天賦為苦痛之基"}],"trade":{"ids":{"explicit":["explicit.stat_3084359503"]}}}
+{"ref":"1 Added Passive Skill is Basics of Pain","better":1,"matchers":[{"string":"1 個附加天賦為苦痛之基"}],"trade":{"ids":{"explicit":["explicit.stat_3084359503"],"fractured":["fractured.stat_3084359503"]}}}
 {"ref":"1 Added Passive Skill is Battle-Hardened","better":1,"matchers":[{"string":"1 個附加天賦為固守戰場"}],"trade":{"ids":{"explicit":["explicit.stat_4188581520"]}}}
 {"ref":"1 Added Passive Skill is Battlefield Dominator","better":1,"matchers":[{"string":"1 個附加天賦為戰場統治者"}],"trade":{"ids":{"explicit":["explicit.stat_1499057234"]}}}
 {"ref":"1 Added Passive Skill is Blacksmith","better":1,"matchers":[{"string":"1 個附加天賦為鐵匠"}],"trade":{"ids":{"explicit":["explicit.stat_1127706436"]}}}
@@ -2269,7 +2284,7 @@
 {"ref":"1 Added Passive Skill is Born of Chaos","better":1,"matchers":[{"string":"1 個附加天賦為混沌之誕"}],"trade":{"ids":{"explicit":["explicit.stat_2449392400"]}}}
 {"ref":"1 Added Passive Skill is Brand Loyalty","better":1,"matchers":[{"string":"1 個附加天賦為品牌忠誠"}],"trade":{"ids":{"explicit":["explicit.stat_3198006994"]}}}
 {"ref":"1 Added Passive Skill is Brewed for Potency","better":1,"matchers":[{"string":"1 個附加天賦為釀造之力"}],"trade":{"ids":{"explicit":["explicit.stat_3250272113"],"fractured":["fractured.stat_3250272113"]}}}
-{"ref":"1 Added Passive Skill is Broadside","better":1,"matchers":[{"string":"1 個附加天賦為舷側砲"}],"trade":{"ids":{"explicit":["explicit.stat_2205982416"]}}}
+{"ref":"1 Added Passive Skill is Broadside","better":1,"matchers":[{"string":"1 個附加天賦為舷側砲"}],"trade":{"ids":{"explicit":["explicit.stat_2205982416"],"fractured":["fractured.stat_2205982416"]}}}
 {"ref":"1 Added Passive Skill is Brush with Death","better":1,"matchers":[{"string":"1 個附加天賦為死神之拂"}],"trade":{"ids":{"explicit":["explicit.stat_2900833792"]}}}
 {"ref":"1 Added Passive Skill is Brutal Infamy","better":1,"matchers":[{"string":"1 個附加天賦為殘暴惡名"}],"trade":{"ids":{"explicit":["explicit.stat_2068574831"]}}}
 {"ref":"1 Added Passive Skill is Burden Projection","better":1,"matchers":[{"string":"1 個附加天賦為重擔投射"}],"trade":{"ids":{"explicit":["explicit.stat_2008682345"],"fractured":["fractured.stat_2008682345"]}}}
@@ -2283,7 +2298,7 @@
 {"ref":"1 Added Passive Skill is Circling Oblivion","better":1,"matchers":[{"string":"1 個附加天賦為閉鎖遺忘"}],"trade":{"ids":{"explicit":["explicit.stat_2129392647"]}}}
 {"ref":"1 Added Passive Skill is Clarity of Purpose","better":1,"matchers":[{"string":"1 個附加天賦為明淨之志"}],"trade":{"ids":{"explicit":["explicit.stat_684087686"]}}}
 {"ref":"1 Added Passive Skill is Cold Conduction","better":1,"matchers":[{"string":"1 個附加天賦為冷傳導"}],"trade":{"ids":{"explicit":["explicit.stat_1274505521"]}}}
-{"ref":"1 Added Passive Skill is Cold to the Core","better":1,"matchers":[{"string":"1 個附加天賦為冰心"}],"trade":{"ids":{"explicit":["explicit.stat_744783843"]}}}
+{"ref":"1 Added Passive Skill is Cold to the Core","better":1,"matchers":[{"string":"1 個附加天賦為冰心"}],"trade":{"ids":{"explicit":["explicit.stat_744783843"],"fractured":["fractured.stat_744783843"]}}}
 {"ref":"1 Added Passive Skill is Cold-Blooded Killer","better":1,"matchers":[{"string":"1 個附加天賦為冷血殺手"}],"trade":{"ids":{"explicit":["explicit.stat_836566759"]}}}
 {"ref":"1 Added Passive Skill is Combat Rhythm","better":1,"matchers":[{"string":"1 個附加天賦為戰鬥韻律"}],"trade":{"ids":{"explicit":["explicit.stat_3122505794"]}}}
 {"ref":"1 Added Passive Skill is Compound Injury","better":1,"matchers":[{"string":"1 個附加天賦為複合傷害"}],"trade":{"ids":{"explicit":["explicit.stat_4018305528"]}}}
@@ -2299,7 +2314,7 @@
 {"ref":"1 Added Passive Skill is Dark Messenger","better":1,"matchers":[{"string":"1 個附加天賦為黑暗信使"}],"trade":{"ids":{"explicit":["explicit.stat_3784610129"]}}}
 {"ref":"1 Added Passive Skill is Darting Movements","better":1,"matchers":[{"string":"1 個附加天賦為猛突位移"}],"trade":{"ids":{"explicit":["explicit.stat_846491278"]}}}
 {"ref":"1 Added Passive Skill is Deadly Repartee","better":1,"matchers":[{"string":"1 個附加天賦為致命才能"}],"trade":{"ids":{"explicit":["explicit.stat_1013470938"]}}}
-{"ref":"1 Added Passive Skill is Deep Chill","better":1,"matchers":[{"string":"1 個附加天賦為深層冰緩"}],"trade":{"ids":{"explicit":["explicit.stat_1703766309"]}}}
+{"ref":"1 Added Passive Skill is Deep Chill","better":1,"matchers":[{"string":"1 個附加天賦為深層冰緩"}],"trade":{"ids":{"explicit":["explicit.stat_1703766309"],"fractured":["fractured.stat_1703766309"]}}}
 {"ref":"1 Added Passive Skill is Destructive Aspect","better":1,"matchers":[{"string":"1 個附加天賦為破壞面"}],"trade":{"ids":{"explicit":["explicit.stat_3860179422"]}}}
 {"ref":"1 Added Passive Skill is Devastator","better":1,"matchers":[{"string":"1 個附加的天賦為毀滅者"}],"trade":{"ids":{"explicit":["explicit.stat_3711553948"],"fractured":["fractured.stat_3711553948"]}}}
 {"ref":"1 Added Passive Skill is Disciples","better":1,"matchers":[{"string":"1 個附加的天賦為紀律"}],"trade":{"ids":{"explicit":["explicit.stat_3177526694"]}}}
@@ -2333,7 +2348,7 @@
 {"ref":"1 Added Passive Skill is Explosive Force","better":1,"matchers":[{"string":"1 個附加的天賦為爆破力"}],"trade":{"ids":{"explicit":["explicit.stat_2017927451"]}}}
 {"ref":"1 Added Passive Skill is Exposure Therapy","better":1,"matchers":[{"string":"1 個附加的天賦為曝曬療法"}],"trade":{"ids":{"explicit":["explicit.stat_131358113"]}}}
 {"ref":"1 Added Passive Skill is Eye of the Storm","better":1,"matchers":[{"string":"1 個附加的天賦為風暴之眼"}],"trade":{"ids":{"explicit":["explicit.stat_3818661553"],"fractured":["fractured.stat_3818661553"]}}}
-{"ref":"1 Added Passive Skill is Eye to Eye","better":1,"matchers":[{"string":"1 個附加的天賦為對視"}],"trade":{"ids":{"explicit":["explicit.stat_392942015"]}}}
+{"ref":"1 Added Passive Skill is Eye to Eye","better":1,"matchers":[{"string":"1 個附加的天賦為對視"}],"trade":{"ids":{"explicit":["explicit.stat_392942015"],"fractured":["fractured.stat_392942015"]}}}
 {"ref":"1 Added Passive Skill is Fan of Blades","better":1,"matchers":[{"string":"1 個附加的天賦為刀鋒狂熱"}],"trade":{"ids":{"explicit":["explicit.stat_2484082827"],"fractured":["fractured.stat_2484082827"]}}}
 {"ref":"1 Added Passive Skill is Fan the Flames","better":1,"matchers":[{"string":"1 個附加的天賦為搧風點火"}],"trade":{"ids":{"explicit":["explicit.stat_2918755450"]}}}
 {"ref":"1 Added Passive Skill is Fasting","better":1,"matchers":[{"string":"1 個附加的天賦為快速"}],"trade":{"ids":{"explicit":["explicit.stat_37078857"],"fractured":["fractured.stat_37078857"]}}}
@@ -2341,13 +2356,13 @@
 {"ref":"1 Added Passive Skill is Feast of Flesh","better":1,"matchers":[{"string":"1 個附加的天賦為血肉盛宴"}],"trade":{"ids":{"explicit":["explicit.stat_2396755365"]}}}
 {"ref":"1 Added Passive Skill is Feasting Fiends","better":1,"matchers":[{"string":"1 個附加的天賦為宴請邪魔"}],"trade":{"ids":{"explicit":["explicit.stat_383245807"],"fractured":["fractured.stat_383245807"]}}}
 {"ref":"1 Added Passive Skill is Feed the Fury","better":1,"matchers":[{"string":"1 個附加天賦為豢養狂怒"}],"trade":{"ids":{"explicit":["explicit.stat_3944525413"],"fractured":["fractured.stat_3944525413"]}}}
-{"ref":"1 Added Passive Skill is Fettle","better":1,"matchers":[{"string":"1 個附加的天賦為修補"}],"trade":{"ids":{"explicit":["explicit.stat_1353571444"]}}}
+{"ref":"1 Added Passive Skill is Fettle","better":1,"matchers":[{"string":"1 個附加的天賦為修補"}],"trade":{"ids":{"explicit":["explicit.stat_1353571444"],"fractured":["fractured.stat_1353571444"]}}}
 {"ref":"1 Added Passive Skill is Fire Attunement","better":1,"matchers":[{"string":"1 個附加的天賦為火焰曲調"}],"trade":{"ids":{"explicit":["explicit.stat_3188756614"]}}}
 {"ref":"1 Added Passive Skill is Flexible Sentry","better":1,"matchers":[{"string":"1 個附加的天賦為機動哨兵"}],"trade":{"ids":{"explicit":["explicit.stat_982290947"]}}}
 {"ref":"1 Added Passive Skill is Flow of Life","better":1,"matchers":[{"string":"1 個附加的天賦為生機流動"}],"trade":{"ids":{"explicit":["explicit.stat_2350430215"]}}}
 {"ref":"1 Added Passive Skill is Follow-Through","better":1,"matchers":[{"string":"1 個附加的天賦為貫徹始終"}],"trade":{"ids":{"explicit":["explicit.stat_3984980429"]}}}
 {"ref":"1 Added Passive Skill is Force Multiplier","better":1,"matchers":[{"string":"1 個附加的天賦為原力加成"}],"trade":{"ids":{"explicit":["explicit.stat_1904581068"],"fractured":["fractured.stat_1904581068"]}}}
-{"ref":"1 Added Passive Skill is Frantic Aspect","better":1,"matchers":[{"string":"1 個附加天賦為瘋狂面"}],"trade":{"ids":{"explicit":["explicit.stat_792262925"]}}}
+{"ref":"1 Added Passive Skill is Frantic Aspect","better":1,"matchers":[{"string":"1 個附加天賦為瘋狂面"}],"trade":{"ids":{"explicit":["explicit.stat_792262925"],"fractured":["fractured.stat_792262925"]}}}
 {"ref":"1 Added Passive Skill is Fuel the Fight","better":1,"matchers":[{"string":"1 個附加的天賦為刺激戰鬥"}],"trade":{"ids":{"explicit":["explicit.stat_3599340381"],"fractured":["fractured.stat_3599340381"]}}}
 {"ref":"1 Added Passive Skill is Furious Assault","better":1,"matchers":[{"string":"1 個附加的天賦為狂暴突襲"}],"trade":{"ids":{"explicit":["explicit.stat_3415827027"]}}}
 {"ref":"1 Added Passive Skill is Genius","better":1,"matchers":[{"string":"1 個附加的天賦為天才"}],"trade":{"ids":{"explicit":["explicit.stat_2763732093"]}}}
@@ -2359,7 +2374,7 @@
 {"ref":"1 Added Passive Skill is Haemorrhage","better":1,"matchers":[{"string":"1 個附加的天賦為滲血"}],"trade":{"ids":{"explicit":["explicit.stat_72129119"]}}}
 {"ref":"1 Added Passive Skill is Haunting Shout","better":1,"matchers":[{"string":"1 個附加的天賦為鬼魅呼嘯"}],"trade":{"ids":{"explicit":["explicit.stat_1080363357"]}}}
 {"ref":"1 Added Passive Skill is Heart of Iron","better":1,"matchers":[{"string":"1 個附加的天賦為鋼鐵之心"}],"trade":{"ids":{"explicit":["explicit.stat_1483358825"]}}}
-{"ref":"1 Added Passive Skill is Heavy Hitter","better":1,"matchers":[{"string":"1 個附加的天賦為沉重打手"}],"trade":{"ids":{"explicit":["explicit.stat_3640252904"]}}}
+{"ref":"1 Added Passive Skill is Heavy Hitter","better":1,"matchers":[{"string":"1 個附加的天賦為沉重打手"}],"trade":{"ids":{"explicit":["explicit.stat_3640252904"],"fractured":["fractured.stat_3640252904"]}}}
 {"ref":"1 Added Passive Skill is Heraldry","better":1,"matchers":[{"string":"1 個附加的天賦為符紋學"}],"trade":{"ids":{"explicit":["explicit.stat_3274270612"]}}}
 {"ref":"1 Added Passive Skill is Hex Breaker","better":1,"matchers":[{"string":"1 個附加的天賦為破魔者"}],"trade":{"ids":{"explicit":["explicit.stat_2341828832"]}}}
 {"ref":"1 Added Passive Skill is Hibernator","better":1,"matchers":[{"string":"1 個附加的天賦為冬眠"}],"trade":{"ids":{"explicit":["explicit.stat_2294919888"]}}}
@@ -2387,7 +2402,7 @@
 {"ref":"1 Added Passive Skill is Martial Mastery","better":1,"matchers":[{"string":"1 個附加的天賦為武術精通"}],"trade":{"ids":{"explicit":["explicit.stat_1015189426"]}}}
 {"ref":"1 Added Passive Skill is Martial Momentum","better":1,"matchers":[{"string":"1 個附加的天賦為武術氣勢"}],"trade":{"ids":{"explicit":["explicit.stat_2978494217"]}}}
 {"ref":"1 Added Passive Skill is Martial Prowess","better":1,"matchers":[{"string":"1 個附加的天賦為武術英勇"}],"trade":{"ids":{"explicit":["explicit.stat_1152182658"],"fractured":["fractured.stat_1152182658"]}}}
-{"ref":"1 Added Passive Skill is Master of Command","better":1,"matchers":[{"string":"1 個附加的天賦為引導大師"}],"trade":{"ids":{"explicit":["explicit.stat_3257074218"]}}}
+{"ref":"1 Added Passive Skill is Master of Command","better":1,"matchers":[{"string":"1 個附加的天賦為引導大師"}],"trade":{"ids":{"explicit":["explicit.stat_3257074218"],"fractured":["fractured.stat_3257074218"]}}}
 {"ref":"1 Added Passive Skill is Master of Fire","better":1,"matchers":[{"string":"1 個附加的天賦為火焰大師"}],"trade":{"ids":{"explicit":["explicit.stat_1462135249"],"fractured":["fractured.stat_1462135249"]}}}
 {"ref":"1 Added Passive Skill is Master of the Maelstrom","better":1,"matchers":[{"string":"1 個附加天賦為混亂大師"}],"trade":{"ids":{"explicit":["explicit.stat_185592058"]}}}
 {"ref":"1 Added Passive Skill is Master the Fundamentals","better":1,"matchers":[{"string":"1 個附加的天賦為精通基礎"}],"trade":{"ids":{"explicit":["explicit.stat_3585232432"]}}}
@@ -2430,7 +2445,7 @@
 {"ref":"1 Added Passive Skill is Pure Might","better":1,"matchers":[{"string":"1 個附加的天賦為純粹之力"}],"trade":{"ids":{"explicit":["explicit.stat_2372915005"]}}}
 {"ref":"1 Added Passive Skill is Purposeful Harbinger","better":1,"matchers":[{"string":"1 個附加的天賦為果斷的神諭"}],"trade":{"ids":{"explicit":["explicit.stat_507505131"],"fractured":["fractured.stat_507505131"]}}}
 {"ref":"1 Added Passive Skill is Quick and Deadly","better":1,"matchers":[{"string":"1 個附加的天賦為迅速與致命"}],"trade":{"ids":{"explicit":["explicit.stat_2169345147"]}}}
-{"ref":"1 Added Passive Skill is Quick Getaway","better":1,"matchers":[{"string":"1 個附加的天賦為迅速逃離"}],"trade":{"ids":{"explicit":["explicit.stat_1626818279"]}}}
+{"ref":"1 Added Passive Skill is Quick Getaway","better":1,"matchers":[{"string":"1 個附加的天賦為迅速逃離"}],"trade":{"ids":{"explicit":["explicit.stat_1626818279"],"fractured":["fractured.stat_1626818279"]}}}
 {"ref":"1 Added Passive Skill is Rapid Infusion","better":1,"matchers":[{"string":"1 個附加的天賦為極速注入"}],"trade":{"ids":{"explicit":["explicit.stat_1570474940"]}}}
 {"ref":"1 Added Passive Skill is Rattling Bellow","better":1,"matchers":[{"string":"1 個附加的天賦為慌亂吼叫"}],"trade":{"ids":{"explicit":["explicit.stat_4288473380"]}}}
 {"ref":"1 Added Passive Skill is Raze and Pillage","better":1,"matchers":[{"string":"1 個附加的天賦為抹除和掠奪"}],"trade":{"ids":{"explicit":["explicit.stat_1038897629"],"fractured":["fractured.stat_1038897629"]}}}
@@ -2446,7 +2461,7 @@
 {"ref":"1 Added Passive Skill is Rote Reinforcement","better":1,"matchers":[{"string":"1 個附加的天賦為加強記憶"}],"trade":{"ids":{"explicit":["explicit.stat_2478282326"]}}}
 {"ref":"1 Added Passive Skill is Rotten Claws","better":1,"matchers":[{"string":"1 個附加的天賦為腐鏽之爪"}],"trade":{"ids":{"explicit":["explicit.stat_2289610642"],"fractured":["fractured.stat_2289610642"]}}}
 {"ref":"1 Added Passive Skill is Run Through","better":1,"matchers":[{"string":"1 個附加的天賦為迅速略過"}],"trade":{"ids":{"explicit":["explicit.stat_1488030420"]}}}
-{"ref":"1 Added Passive Skill is Sadist","better":1,"matchers":[{"string":"1 個附加的天賦為施虐者"}],"trade":{"ids":{"explicit":["explicit.stat_3638731729"]}}}
+{"ref":"1 Added Passive Skill is Sadist","better":1,"matchers":[{"string":"1 個附加的天賦為施虐者"}],"trade":{"ids":{"explicit":["explicit.stat_3638731729"],"fractured":["fractured.stat_3638731729"]}}}
 {"ref":"1 Added Passive Skill is Sage","better":1,"matchers":[{"string":"1 個附加的天賦為哲人"}],"trade":{"ids":{"explicit":["explicit.stat_478147593"]}}}
 {"ref":"1 Added Passive Skill is Sap Psyche","better":1,"matchers":[{"string":"1 個附加的天賦為心靈乾枯"}],"trade":{"ids":{"explicit":["explicit.stat_715786975"],"fractured":["fractured.stat_715786975"]}}}
 {"ref":"1 Added Passive Skill is Savage Response","better":1,"matchers":[{"string":"1 個附加的天賦為殘暴應對"}],"trade":{"ids":{"explicit":["explicit.stat_4222635921"]}}}
@@ -2460,7 +2475,7 @@
 {"ref":"1 Added Passive Skill is Septic Spells","better":1,"matchers":[{"string":"1 個附加的天賦為腐爛法術"}],"trade":{"ids":{"explicit":["explicit.stat_4290522695"]}}}
 {"ref":"1 Added Passive Skill is Set and Forget","better":1,"matchers":[{"string":"1 個附加的天賦為設定和遺忘"}],"trade":{"ids":{"explicit":["explicit.stat_1101250813"]}}}
 {"ref":"1 Added Passive Skill is Shifting Shadow","better":1,"matchers":[{"string":"1 個附加的天賦為替換陰影"}],"trade":{"ids":{"explicit":["explicit.stat_1476913894"]}}}
-{"ref":"1 Added Passive Skill is Shrieking Bolts","better":1,"matchers":[{"string":"1 個附加的天賦為尖嘯音波"}],"trade":{"ids":{"explicit":["explicit.stat_2783012144"]}}}
+{"ref":"1 Added Passive Skill is Shrieking Bolts","better":1,"matchers":[{"string":"1 個附加的天賦為尖嘯音波"}],"trade":{"ids":{"explicit":["explicit.stat_2783012144"],"fractured":["fractured.stat_2783012144"]}}}
 {"ref":"1 Added Passive Skill is Skeletal Atrophy","better":1,"matchers":[{"string":"1 個附加的天賦為骷髏萎縮"}],"trade":{"ids":{"explicit":["explicit.stat_1290215329"]}}}
 {"ref":"1 Added Passive Skill is Skullbreaker","better":1,"matchers":[{"string":"1 個附加的天賦為碎骨者"}],"trade":{"ids":{"explicit":["explicit.stat_315697256"]}}}
 {"ref":"1 Added Passive Skill is Sleepless Sentries","better":1,"matchers":[{"string":"1 個附加的天賦為無眠哨兵"}],"trade":{"ids":{"explicit":["explicit.stat_3993957711"]}}}
@@ -2475,7 +2490,7 @@
 {"ref":"1 Added Passive Skill is Steady Torment","better":1,"matchers":[{"string":"1 個附加的天賦為持續折磨"}],"trade":{"ids":{"explicit":["explicit.stat_3500334379"]}}}
 {"ref":"1 Added Passive Skill is Stoic Focus","better":1,"matchers":[{"string":"1 個附加的天賦為專注禁慾"}],"trade":{"ids":{"explicit":["explicit.stat_1088949570"]}}}
 {"ref":"1 Added Passive Skill is Storm Drinker","better":1,"matchers":[{"string":"1 個附加的天賦為風暴狂飲"}],"trade":{"ids":{"explicit":["explicit.stat_2087561637"],"fractured":["fractured.stat_2087561637"]}}}
-{"ref":"1 Added Passive Skill is Storm's Hand","better":1,"matchers":[{"string":"1 個附加的天賦為風暴之手"}],"trade":{"ids":{"explicit":["explicit.stat_1122051203"]}}}
+{"ref":"1 Added Passive Skill is Storm's Hand","better":1,"matchers":[{"string":"1 個附加的天賦為風暴之手"}],"trade":{"ids":{"explicit":["explicit.stat_1122051203"],"fractured":["fractured.stat_1122051203"]}}}
 {"ref":"1 Added Passive Skill is Stormrider","better":1,"matchers":[{"string":"1 個附加的天賦為風暴馭者"}],"trade":{"ids":{"explicit":["explicit.stat_889728548"],"fractured":["fractured.stat_889728548"]}}}
 {"ref":"1 Added Passive Skill is Streamlined","better":1,"matchers":[{"string":"1 個附加的天賦為流線型"}],"trade":{"ids":{"explicit":["explicit.stat_1397498432"]}}}
 {"ref":"1 Added Passive Skill is Strike Leader","better":1,"matchers":[{"string":"1 個附加的天賦為罷工領袖"}],"trade":{"ids":{"explicit":["explicit.stat_282062371"],"fractured":["fractured.stat_282062371"]}}}
@@ -2486,7 +2501,7 @@
 {"ref":"1 Added Passive Skill is Surefooted Striker","better":1,"matchers":[{"string":"1 個附加的天賦為踏實打手"}],"trade":{"ids":{"explicit":["explicit.stat_3410752193"]}}}
 {"ref":"1 Added Passive Skill is Surging Vitality","better":1,"matchers":[{"string":"1 個附加的天賦為活力湧現"}],"trade":{"ids":{"explicit":["explicit.stat_2410501331"]}}}
 {"ref":"1 Added Passive Skill is Surprise Sabotage","better":1,"matchers":[{"string":"1 個附加的天賦為驚喜破壞"}],"trade":{"ids":{"explicit":["explicit.stat_3051562738"]}}}
-{"ref":"1 Added Passive Skill is Tempered Arrowheads","better":1,"matchers":[{"string":"1 個附加的天賦為鍛煉的箭頭"}],"trade":{"ids":{"explicit":["explicit.stat_2631806437"]}}}
+{"ref":"1 Added Passive Skill is Tempered Arrowheads","better":1,"matchers":[{"string":"1 個附加的天賦為鍛煉的箭頭"}],"trade":{"ids":{"explicit":["explicit.stat_2631806437"],"fractured":["fractured.stat_2631806437"]}}}
 {"ref":"1 Added Passive Skill is Tempt the Storm","better":1,"matchers":[{"string":"1 個附加天賦為誘惑風暴"}],"trade":{"ids":{"explicit":["explicit.stat_348883745"]}}}
 {"ref":"1 Added Passive Skill is Thaumophage","better":1,"matchers":[{"string":"1 個附加的天賦為噬菌體"}],"trade":{"ids":{"explicit":["explicit.stat_177215332"],"fractured":["fractured.stat_177215332"]}}}
 {"ref":"1 Added Passive Skill is Thunderstruck","better":1,"matchers":[{"string":"1 個附加的天賦為雷擊"}],"trade":{"ids":{"explicit":["explicit.stat_1741700339"],"fractured":["fractured.stat_1741700339"]}}}
@@ -2501,7 +2516,7 @@
 {"ref":"1 Added Passive Skill is Unwaveringly Evil","better":1,"matchers":[{"string":"1 個附加的天賦為堅定邪靈"}],"trade":{"ids":{"explicit":["explicit.stat_2788982914"]}}}
 {"ref":"1 Added Passive Skill is Vast Power","better":1,"matchers":[{"string":"1 個附加的天賦為投入力量"}],"trade":{"ids":{"explicit":["explicit.stat_1996576560"]}}}
 {"ref":"1 Added Passive Skill is Veteran Defender","better":1,"matchers":[{"string":"1 個附加的天賦為防禦老手"}],"trade":{"ids":{"explicit":["explicit.stat_664010431"],"fractured":["fractured.stat_664010431"]}}}
-{"ref":"1 Added Passive Skill is Vicious Bite","better":1,"matchers":[{"string":"1 個附加的天賦為惡毒之咬"}],"trade":{"ids":{"explicit":["explicit.stat_882876854"]}}}
+{"ref":"1 Added Passive Skill is Vicious Bite","better":1,"matchers":[{"string":"1 個附加的天賦為惡毒之咬"}],"trade":{"ids":{"explicit":["explicit.stat_882876854"],"fractured":["fractured.stat_882876854"]}}}
 {"ref":"1 Added Passive Skill is Vicious Guard","better":1,"matchers":[{"string":"1 個附加的天賦為惡毒護衛"}],"trade":{"ids":{"explicit":["explicit.stat_4054656914"]}}}
 {"ref":"1 Added Passive Skill is Vicious Skewering","better":1,"matchers":[{"string":"1 個附加的天賦為惡毒穿刺"}],"trade":{"ids":{"explicit":["explicit.stat_567971948"],"fractured":["fractured.stat_567971948"]}}}
 {"ref":"1 Added Passive Skill is Victim Maker","better":1,"matchers":[{"string":"1 個附加的天賦為加害人"}],"trade":{"ids":{"explicit":["explicit.stat_1936135020"]}}}
@@ -2549,7 +2564,7 @@
 {"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed while affected by a Herald","better":1,"matchers":[{"string":"附加的小型天賦給予：被捷光環影響時增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_3262895685"]}}}
 {"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Chaos Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：混沌技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_3692167527"],"fractured":["fractured.stat_3692167527"]}}}
 {"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Cold Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：冰冷技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_2054530657"],"fractured":["fractured.stat_2054530657"]}}}
-{"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Elemental Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：元素技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_2699118751"]}}}
+{"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Elemental Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：元素技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_2699118751"],"fractured":["fractured.stat_2699118751"]}}}
 {"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Fire Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：火焰技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_1849042097"]}}}
 {"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Lightning Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：閃電技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_201731102"],"fractured":["fractured.stat_201731102"]}}}
 {"ref":"Added Small Passive Skills also grant: #% increased Attack and Cast Speed with Physical Skills","better":1,"matchers":[{"string":"附加的小型天賦給予：物理技能增加 #% 攻擊和施放速度"}],"trade":{"ids":{"explicit":["explicit.stat_1903097619"],"fractured":["fractured.stat_1903097619"]}}}
@@ -2684,7 +2699,6 @@
 {"ref":"Adds Secrets of Suffering","better":1,"matchers":[{"string":"附加磨難秘辛"}],"trade":{"ids":{"explicit":["explicit.stat_56720831"]}}}
 {"ref":"Adds Veteran's Awareness","better":1,"matchers":[{"string":"附加老鳥意識"}],"trade":{"ids":{"explicit":["explicit.stat_1379205566"]}}}
 {"ref":"Agony Crawler deals #% increased Damage","better":1,"matchers":[{"string":"苦痛毒蛛蠍增加 #% 傷害"},{"string":"苦痛毒蛛蠍減少 #% 傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_786460697"]}}}
-{"ref":"Ailment Modifiers have #% increased Effect","better":1,"matchers":[{"string":"異常狀態詞綴增加 #% 效果"},{"string":"異常狀態詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3086446674"]}}}
 {"ref":"Alert Level increases by #% per second","dp":true,"better":1,"fromHeistAreaMods":true,"matchers":[{"string":"警戒等級每秒增加 #%"},{"string":"警戒等級每秒減少 #%","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3138486617"],"fractured":["fractured.stat_3138486617"]}}}
 {"ref":"All Attack Damage Chills when you Stun","better":1,"matchers":[{"string":"擊暈時所有攻擊傷害造成冰緩"}],"trade":{"ids":{"explicit":["explicit.stat_2437193018"]}}}
 {"ref":"All Damage from Hits with This Weapon can Poison","better":1,"matchers":[{"string":"使用此武器的全部擊中傷害會造成中毒"}],"trade":{"ids":{"implicit":["implicit.stat_264042990"]}}}
@@ -2890,7 +2904,6 @@
 {"ref":"Attacks with this Weapon Penetrate #% Elemental Resistances","better":1,"matchers":[{"string":"此武器進行的攻擊穿透 #% 元素抗性"}],"trade":{"ids":{"explicit":["explicit.stat_4064396395"],"implicit":["implicit.stat_4064396395"],"fractured":["fractured.stat_4064396395"],"crafted":["crafted.stat_4064396395"]}}}
 {"ref":"Attacks with this Weapon Penetrate #% Fire Resistance","better":1,"matchers":[{"string":"使用此武器攻擊穿透 #% 火焰抗性"}],"trade":{"ids":{"explicit":["explicit.stat_3398283493"],"fractured":["fractured.stat_3398283493"]}}}
 {"ref":"Attacks with this Weapon Penetrate #% Lightning Resistance","better":1,"matchers":[{"string":"使用此武器攻擊穿透 #% 閃電抗性"}],"trade":{"ids":{"explicit":["explicit.stat_2387539034"],"fractured":["fractured.stat_2387539034"]}}}
-{"ref":"Attribute Modifiers have #% increased Effect","better":1,"matchers":[{"string":"能力值詞綴增加 #% 效果"},{"string":"能力值詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3243861579"]}}}
 {"ref":"Attribute Requirements can be satisfied by #% of Omniscience","better":1,"matchers":[{"string":"#% 的全知能滿足能力需求"}],"trade":{"ids":{"explicit":["explicit.stat_3024338155"]}}}
 {"ref":"Aura Skills other than Anger are Disabled","better":1,"matchers":[{"string":"除了憤怒外的光環技能都失效"}],"trade":{"ids":{"explicit":["explicit.stat_2185337019"]}}}
 {"ref":"Aura Skills other than Clarity are Disabled","better":1,"matchers":[{"string":"除了清晰外的光環技能都失效"}],"trade":{"ids":{"explicit":["explicit.stat_2010835448"]}}}
@@ -2917,7 +2930,7 @@
 {"ref":"Bane has #% increased Area of Effect","better":1,"matchers":[{"string":"災厄增加 #% 範圍效果"},{"string":"災厄減少 #% 範圍效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_4224588066"]}}}
 {"ref":"Banners you are carrying gain 1 Stage on Melee Hit, up to 5 per second","better":1,"matchers":[{"string":"你背著的鬥旗在近戰擊中時獲得 1 層，每秒至多 5 層"}],"trade":{"ids":{"explicit":["explicit.stat_4173140569"]}}}
 {"ref":"Barrage fires an additional Projectile","better":1,"matchers":[{"string":"彈幕發射 # 個額外投射物"},{"string":"彈幕發射 1 個額外投射物","value":1}],"trade":{"ids":{"enchant":["enchant.stat_3009270704"]}}}
-{"ref":"Base Critical Strike Chance of Spells is the Critical Strike Chance of Main Hand Weapon","better":1,"matchers":[{"string":"法術的基礎暴擊率等於主手武器的暴擊率"}],"trade":{"ids":{"explicit":["explicit.stat_2560911401"]}}}
+{"ref":"Base Spell Critical Strike Chance of Spells is equal to that of Main Hand Weapon","better":1,"matchers":[{"string":"法術的基礎法術暴擊率等同於主手武器"}],"trade":{"ids":{"explicit":["explicit.stat_2560911401"]}}}
 {"ref":"Bathed in the blood of # sacrificed in the name of Ahuana","better":0,"matchers":[{"string":"浸泡在以阿呼阿娜之名獻祭的 # 條生命中\n範圍內的天賦臣服於瓦爾","advanced":"浸泡在以阿呼阿娜之名獻祭的 # 條生命中(阿呼阿娜-賽巴昆)\n範圍內的天賦臣服於瓦爾"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_ahuana"]}}}
 {"ref":"Bathed in the blood of # sacrificed in the name of Doryani","better":0,"matchers":[{"string":"浸泡在以多里亞尼之名獻祭的 # 條生命中\n範圍內的天賦臣服於瓦爾","advanced":"浸泡在以多里亞尼之名獻祭的 # 條生命中(阿呼阿娜-賽巴昆)\n範圍內的天賦臣服於瓦爾"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_doryani"]}}}
 {"ref":"Bathed in the blood of # sacrificed in the name of Xibaqua","better":0,"matchers":[{"string":"浸泡在以賽巴昆之名獻祭的 # 條生命中\n範圍內的天賦臣服於瓦爾","advanced":"浸泡在以賽巴昆之名獻祭的 # 條生命中(阿呼阿娜-賽巴昆)\n範圍內的天賦臣服於瓦爾"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_xibaqua"]}}}
@@ -3054,7 +3067,6 @@
 {"ref":"Carved to glorify # new faithful converted by High Templar Dominus","better":0,"matchers":[{"string":"為了禮讚 # 名受到神主感化的信眾所雕刻\n範圍內的天賦臣服於聖宗","advanced":"為了禮讚 # 名受到神主感化的信眾所雕刻(伊爾莉斯-瑪薩里歐斯)\n範圍內的天賦臣服於聖宗"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_dominus"]}}}
 {"ref":"Carved to glorify # new faithful converted by High Templar Maxarius","better":0,"matchers":[{"string":"為了禮讚 # 名受到聖宗瑪薩里歐斯感化的信眾所雕刻\n範圍內的天賦臣服於聖宗","advanced":"為了禮讚 # 名受到聖宗瑪薩里歐斯感化的信眾所雕刻(伊爾莉斯-瑪薩里歐斯)\n範圍內的天賦臣服於聖宗"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_maxarius"]}}}
 {"ref":"Cast Level 20 Fire Burst on Hit","better":1,"matchers":[{"string":"擊中時施放等級 20 的火焰爆破"}],"trade":{"ids":{"explicit":["explicit.stat_1621470436"],"fractured":["fractured.stat_1621470436"]}}}
-{"ref":"Caster Damage Modifiers have #% increased Effect","better":1,"matchers":[{"string":"法術傷害詞綴增加 #% 效果"},{"string":"法術傷害詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1498186316"]}}}
 {"ref":"Catalysts dropped by Metamorphs in your Maps are Duplicated","better":1,"matchers":[{"string":"你地圖中鍊魔掉落的催化劑被複製"},{"string":"鍊魔掉落的催化劑被複製"}],"trade":{"ids":{"enchant":["enchant.stat_3011365432"]}}}
 {"ref":"Catarina's Veiled","better":0,"matchers":[{"string":"卡塔莉娜的隱匿"}],"trade":{"ids":{"veiled":["veiled.mod_63772"]}}}
 {"ref":"Caustic Arrow has #% chance to inflict Withered on Hit for # second base Duration","better":1,"matchers":[{"string":"腐蝕箭矢擊中時有 #% 機率造成凋零，有 # 秒基礎持續時間"},{"string":"腐蝕箭矢擊中時造成凋零，有 # 秒基礎持續時間"}],"trade":{"ids":{"enchant":["enchant.stat_1993913925"]}}}
@@ -3072,7 +3084,6 @@
 {"ref":"Chaos Damage taken does not bypass Energy Shield while not on Low Life","better":1,"matchers":[{"string":"非貧血時，承受的混沌傷害不會無視能量護盾"}],"trade":{"ids":{"explicit":["explicit.stat_887556907"],"fractured":["fractured.stat_887556907"]}}}
 {"ref":"Chaos Damage taken does not bypass Minions' Energy Shield","better":1,"matchers":[{"string":"承受的混沌傷害不會無視召喚物的能量護盾"}],"trade":{"ids":{"explicit":["explicit.stat_3008104268"]}}}
 {"ref":"Chaos Golems deal #% increased Damage","better":1,"matchers":[{"string":"增加 #% 混沌魔像的傷害"},{"string":"減少 #% 混沌魔像的傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2505115650"]}}}
-{"ref":"Chaos Modifiers have #% increased Effect","better":1,"matchers":[{"string":"混沌詞綴增加 #% 效果"},{"string":"混沌詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3196512240"]}}}
 {"ref":"Chaos Orbs found in your Maps have #% chance to drop as a full stack","dp":true,"better":1,"matchers":[{"string":"你地圖中掉落的混沌石有 #% 機率掉落為滿疊層"}],"trade":{"ids":{"explicit":["explicit.stat_3586007174"]}}}
 {"ref":"Chaos Resistance is Zero","better":1,"matchers":[{"string":"混沌抗性為 0"}],"trade":{"ids":{"explicit":["explicit.stat_2439129490"],"fractured":["fractured.stat_2439129490"]}}}
 {"ref":"Chaos Skills have #% chance to Ignite","better":1,"matchers":[{"string":"混沌技能有 #% 機率點燃"}],"trade":{"ids":{"explicit":["explicit.stat_3573128085"]}}}
@@ -3094,7 +3105,6 @@
 {"ref":"Cobra Lash deals #% increased Damage","better":1,"matchers":[{"string":"毒蛇鞭笞增加 #% 傷害"},{"string":"毒蛇鞭笞減少 #% 傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2224580362"]}}}
 {"ref":"Cobra Lash has #% increased Projectile Speed","better":1,"matchers":[{"string":"毒蛇鞭笞增加 #% 投射物速度"},{"string":"毒蛇鞭笞減少 #% 投射物速度","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_732631533"]}}}
 {"ref":"Cold Exposure on Hit if you've cast Frostbite in the past 10 seconds","better":1,"matchers":[{"string":"若你過去 10 秒施放過凍傷，擊中時造成冰冷曝曬"}],"trade":{"ids":{"explicit":["explicit.stat_1168138239"]}}}
-{"ref":"Cold Modifiers have #% increased Effect","better":1,"matchers":[{"string":"冰冷詞綴增加 #% 效果"},{"string":"冰冷詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3206904707"]}}}
 {"ref":"Cold Resistance is #%","better":1,"matchers":[{"string":"冰冷抗性為 #%"}],"trade":{"ids":{"explicit":["explicit.stat_496075050"]}}}
 {"ref":"Cold Skills have #% chance to Poison on Hit","better":1,"matchers":[{"string":"冰冷技能擊中時有 #% 造成中毒"}],"trade":{"ids":{"explicit":["explicit.stat_2373079502"]}}}
 {"ref":"Cold Snap has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"霜暴增加 #% 冷卻時間恢復速度"},{"string":"霜暴減少 #% 冷卻時間恢復速度","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2289367813"]}}}
@@ -3145,7 +3155,6 @@
 {"ref":"Creeping Frost's Chilling Area has #% increased Movement Speed","better":1,"matchers":[{"string":"寒霜滲透的冰緩地區增加 #% 移動速度"},{"string":"寒霜滲透的冰緩地區減少 #% 移動速度","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2781179464"]}}}
 {"ref":"Cremation can have up to # additional Geyser at a time","better":1,"matchers":[{"string":"熔炎送葬同時至多可以有 # 個熔炎泉"}],"trade":{"ids":{"enchant":["enchant.stat_3503624267"]}}}
 {"ref":"Crimson Dance","better":1,"matchers":[{"string":"緋紅舞蹈"}],"trade":{"ids":{"explicit":["explicit.stat_300702212"],"fractured":["fractured.stat_300702212"],"scourge":["scourge.stat_300702212"]}}}
-{"ref":"Critical Modifiers have #% increased Effect","better":1,"matchers":[{"string":"暴擊詞綴增加 #% 效果"},{"string":"暴擊詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2393315299"]}}}
 {"ref":"Critical Strike Chance is #% for Hits with this Weapon","better":1,"matchers":[{"string":"使用此武器擊中的暴擊率為 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1672183492"]}}}
 {"ref":"Critical Strike Chance is increased by Overcapped Lightning Resistance","better":1,"matchers":[{"string":"超過上限的閃電抗性增加為暴擊率"}],"trade":{"ids":{"explicit":["explicit.stat_2478752719"],"fractured":["fractured.stat_2478752719"]}}}
 {"ref":"Critical Strikes deal no Damage","better":1,"matchers":[{"string":"暴擊無法造成傷害"}],"trade":{"ids":{"explicit":["explicit.stat_3245481061"]}}}
@@ -3180,7 +3189,6 @@
 {"ref":"Cursed Enemies cannot inflict Elemental Ailments on You","better":1,"matchers":[{"string":"被詛咒的敵人不能對你造成元素異常狀態"}],"trade":{"ids":{"explicit":["explicit.stat_2643613764"]}}}
 {"ref":"Curses have #% reduced effect on Monsters","better":-1,"matchers":[{"string":"對怪物施放的詛咒效果增加 #%"},{"string":"對怪物施放的詛咒效果減少 #%","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2999796964"]},"inverted":true}}
 {"ref":"Damage cannot be Reflected","better":1,"matchers":[{"string":"傷害無法被反射"}],"trade":{"ids":{"explicit":["explicit.stat_2670993553"]}}}
-{"ref":"Damage Modifiers have #% increased Effect","better":1,"matchers":[{"string":"傷害詞綴增加 #% 效果"},{"string":"傷害詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2979443822"]}}}
 {"ref":"Damage of Enemies Hitting you is Unlucky while you are Cursed with Vulnerability","better":1,"matchers":[{"string":"當你被脆弱詛咒時，來自敵人的傷害很不幸","value":-1},{"string":"當你被脆弱詛咒時，來自敵人的傷害很幸運","value":1}],"trade":{"ids":{"explicit":["explicit.stat_2758554648"]}}}
 {"ref":"Damage of Enemies Hitting you is Unlucky while you are on Full Life","better":1,"matchers":[{"string":"當你滿血時，來自敵人擊中你的傷害很不幸","value":-1},{"string":"當你滿血時，來自敵人擊中你的傷害很幸運","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3629143471"]}}}
 {"ref":"Damage of Enemies Hitting you is Unlucky while you are on Low Life","better":1,"matchers":[{"string":"當你貧血時，敵人造成的傷害很不幸","value":-1},{"string":"當你貧血時，敵人造成的傷害很幸運","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3753748365"]}}}
@@ -3229,7 +3237,6 @@
 {"ref":"Debilitate nearby Enemies for # Seconds when Effect ends","better":1,"matchers":[{"string":"當效果結束時虛弱附近敵人 # 秒"}],"trade":{"ids":{"explicit":["explicit.stat_545593248"]}}}
 {"ref":"Debuffs on you expire #% faster","better":1,"matchers":[{"string":"加速減益效果失效 #%"},{"string":"減緩減益效果失效 #%","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1238227257"]}}}
 {"ref":"Debuffs on you expire #% faster while affected by Haste","better":-1,"matchers":[{"string":"被迅捷影響時，你身上的減益效果消逝速度減慢 #%"},{"string":"被迅捷影響時，你身上的減益效果消逝速度提高 #%","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_207635700"]},"inverted":true}}
-{"ref":"Defence Modifiers have #% increased Effect","better":1,"matchers":[{"string":"防禦詞綴增加 #% 效果"},{"string":"防禦詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3300369861"]}}}
 {"ref":"Defences are Zero","better":1,"matchers":[{"string":"防禦為 0"}],"trade":{"ids":{"explicit":["explicit.stat_4271994824"]}}}
 {"ref":"Defiance Banner has #% increased Aura Effect","better":1,"matchers":[{"string":"反抗之旗增加 #% 光環效果"},{"string":"反抗之旗減少 #% 光環效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1105773670"]}}}
 {"ref":"Defiance Banner has #% increased Taunt duration","better":1,"matchers":[{"string":"反抗之旗增加 #% 嘲諷持續時間"},{"string":"反抗之旗減少 #% 嘲諷持續時間n","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3556656580"]}}}
@@ -3397,7 +3404,6 @@
 {"ref":"Final Map Boss in each Map has #% chance to drop an additional Talisman","dp":true,"better":1,"matchers":[{"string":"每張地圖的最終地圖頭目有 #% 機率掉落 1 個額外魔符"}],"trade":{"ids":{"explicit":["explicit.stat_3546420819"]}}}
 {"ref":"Final Map Boss in each Map has #% chance to drop an additional Unique Item","better":1,"matchers":[{"string":"每張地圖的最終地圖頭目有 #% 機率掉落 1 個額外傳奇物品"}],"trade":{"ids":{"explicit":["explicit.stat_3978557462"]}}}
 {"ref":"Final Map Boss in each Map have #% chance to drop an additional Map Item","dp":true,"better":1,"matchers":[{"string":"每張地圖的最終地圖頭目有 #% 機率掉落 1 張額外地圖"}],"trade":{"ids":{"explicit":["explicit.stat_1946193520"]}}}
-{"ref":"Fire Modifiers have #% increased Effect","better":1,"matchers":[{"string":"火焰詞綴增加 #% 效果"},{"string":"火焰詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3574578302"]}}}
 {"ref":"Fire Resistance is #%","better":1,"matchers":[{"string":"火焰抗性為 #%"}],"trade":{"ids":{"explicit":["explicit.stat_763311546"]}}}
 {"ref":"Fire Skills have #% chance to Poison on Hit","better":1,"matchers":[{"string":"火焰技能擊中時有 #% 機率造成中毒"}],"trade":{"ids":{"explicit":["explicit.stat_2424717327"]}}}
 {"ref":"Fireball Always Ignites","better":1,"matchers":[{"string":"火球有 #% 機率點燃"},{"string":"火球必定點燃","value":100}],"trade":{"ids":{"enchant":["enchant.stat_2098790581"]}}}
@@ -3680,7 +3686,7 @@
 {"ref":"Grants Level # Illusory Warp Skill","better":1,"matchers":[{"string":"獲得等級 # 的幻影傳送技能"}],"trade":{"ids":{"explicit":["explicit.stat_3279574030"]}}}
 {"ref":"Grants Level # Intimidating Cry Skill","better":1,"matchers":[{"string":"獲得等級 # 的威嚇戰吼技能"},{"string":"獲得等級 # 的恫嚇戰吼技能"}],"trade":{"ids":{"explicit":["explicit.stat_1271338211"]}}}
 {"ref":"Grants Level # Lightning Warp Skill","better":1,"matchers":[{"string":"獲得等級 # 的閃電傳送技能"}],"trade":{"ids":{"explicit":["explicit.stat_243713911"]}}}
-{"ref":"Grants Level # Malevolence Skill","better":1,"matchers":[{"string":"獲得等級 # 的惡意技能"}],"trade":{"ids":{"explicit":["explicit.stat_3086585712"],"implicit":["implicit.stat_2148556029"]}}}
+{"ref":"Grants Level # Malevolence Skill","better":1,"matchers":[{"string":"獲得等級 # 的惡意技能"}],"trade":{"ids":{"explicit":["explicit.stat_3086585712"],"implicit":["implicit.stat_2148556029"],"fractured":["fractured.stat_3086585712"]}}}
 {"ref":"Grants Level # Petrification Statue Skill","better":1,"matchers":[{"string":"獲得等級 # 的石化雕像技能"}],"trade":{"ids":{"explicit":["explicit.stat_1904419785"]}}}
 {"ref":"Grants Level # Precision Skill","better":1,"matchers":[{"string":"獲得等級 # 的精準技能"}],"trade":{"ids":{"explicit":["explicit.stat_2721815210"]}}}
 {"ref":"Grants Level # Pride Skill","better":1,"matchers":[{"string":"獲得等級 # 的驕傲技能"}],"trade":{"ids":{"explicit":["explicit.stat_3612470379"],"implicit":["implicit.stat_4184565463"]}}}
@@ -3856,13 +3862,13 @@
 {"ref":"Heavy Strike has a #% chance to deal Double Damage","better":1,"matchers":[{"string":"沉重之擊有 #% 機率造成 2 倍傷害"}],"trade":{"ids":{"enchant":["enchant.stat_3760588941"]}}}
 {"ref":"Heist Chests have #% chance to contain nothing","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率什麼都沒有"}],"trade":{"ids":{"enchant":["enchant.stat_3038236553"]}}}
 {"ref":"Heist Chests have a #% chance to contain more valuable Uniques","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率內含更多有價值的傳奇"},{"string":"劫盜保險箱內含更多有價值的傳奇","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3288016752"]}}}
-{"ref":"Heist Chests have a #% chance to Duplicate contained Basic Currency","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的基礎通貨"},{"string":"劫盜保險箱複製內含的基礎通貨","value":100}],"trade":{"ids":{"explicit":["explicit.stat_14664297"]}}}
+{"ref":"Heist Chests have a #% chance to Duplicate contained Basic Currency","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的基礎通貨"},{"string":"劫盜保險箱複製內含的基礎通貨","value":100}],"trade":{"ids":{"explicit":["explicit.stat_14664297"],"fractured":["fractured.stat_14664297"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Blighted Maps and Catalysts","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的凋落地圖和催化劑"},{"string":"劫盜保險箱複製內含的凋落地圖和催化劑","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2121053002"],"fractured":["fractured.stat_2121053002"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Breach Splinters","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的裂痕裂片"},{"string":"劫盜保險箱複製內含的裂痕裂片","value":100}],"trade":{"ids":{"explicit":["explicit.stat_668504404"],"fractured":["fractured.stat_668504404"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Catalysts","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的催化劑"},{"string":"劫盜保險箱複製內含的催化劑","value":100}],"trade":{"ids":{"explicit":["explicit.stat_746798754"],"fractured":["fractured.stat_746798754"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Delirium Orbs and Splinters","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的譫妄玉和裂片"},{"string":"劫盜保險箱複製內含的譫妄玉和裂片","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1870262721"],"fractured":["fractured.stat_1870262721"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Divination Cards","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的命運卡"},{"string":"劫盜保險箱複製內含的命運卡","value":100}],"trade":{"ids":{"explicit":["explicit.stat_63302094"],"fractured":["fractured.stat_63302094"]}}}
-{"ref":"Heist Chests have a #% chance to Duplicate contained Essences","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的精髓"},{"string":"劫盜保險箱複製內含的精髓","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2175178647"]}}}
+{"ref":"Heist Chests have a #% chance to Duplicate contained Essences","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的精髓"},{"string":"劫盜保險箱複製內含的精髓","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2175178647"],"fractured":["fractured.stat_2175178647"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Jewels","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的珠寶"},{"string":"劫盜保險箱複製內含的珠寶","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2462090973"],"fractured":["fractured.stat_2462090973"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Legion Splinters","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的戰亂裂片"},{"string":"劫盜保險箱複製內含的戰亂裂片","value":100}],"trade":{"ids":{"explicit":["explicit.stat_145701647"],"fractured":["fractured.stat_145701647"]}}}
 {"ref":"Heist Chests have a #% chance to Duplicate contained Map Fragments","better":1,"matchers":[{"string":"劫盜保險箱有 #% 機率複製內含的地圖碎片"},{"string":"劫盜保險箱複製內含的地圖碎片","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3967122169"]}}}
@@ -4088,7 +4094,6 @@
 {"ref":"Life Flasks gain # Charge every 3 seconds","better":1,"matchers":[{"string":"生命藥劑每 3 秒獲得 # 充能"}],"trade":{"ids":{"explicit":["explicit.stat_2592686757"],"scourge":["scourge.stat_2592686757"]}}}
 {"ref":"Life Leech effects are not removed when Unreserved Life is Filled","better":1,"matchers":[{"string":"當未保留生命滿時，生命偷取效果不會被移除"}],"trade":{"ids":{"explicit":["explicit.stat_2108380422"]}}}
 {"ref":"Life Leech from Hits with this Weapon is instant","better":1,"matchers":[{"string":"立即獲得此武器擊中的生命偷取"}],"trade":{"ids":{"explicit":["explicit.stat_1765389199"]}}}
-{"ref":"Life Modifiers have #% increased Effect","better":1,"matchers":[{"string":"生命詞綴增加 #% 效果"},{"string":"生命詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1308141466"]}}}
 {"ref":"Life Recovery from Flasks also applies to Energy Shield during Effect","better":1,"matchers":[{"string":"效果持續時間，透過藥劑恢復生命同時套用在能量護盾"}],"trade":{"ids":{"explicit":["explicit.stat_74462130"]}}}
 {"ref":"Life Recovery from Regeneration is not applied","better":1,"matchers":[{"string":"不會套用至來自恢復的生命恢復"}],"trade":{"ids":{"explicit":["explicit.stat_3947672598"]}}}
 {"ref":"Life that would be lost by taking Damage is instead Reserved\nuntil you take no Damage to Life for # second","better":1,"matchers":[{"string":"將承受傷害損失的生命改為保留，\n直到你 # 秒內沒受到傷害"}],"trade":{"ids":{"explicit":["explicit.stat_1777740627"]}}}
@@ -4100,7 +4105,6 @@
 {"ref":"Lightning Conduit has #% increased Cast Speed","better":1,"matchers":[{"string":"導雷增加 #% 施放速度"}],"trade":{"ids":{"enchant":["enchant.stat_2437571727"]}}}
 {"ref":"Lightning Damage of Enemies Hitting you is Lucky","better":1,"matchers":[{"string":"來自敵人擊中你的閃電傷害很幸運"}],"trade":{"ids":{"explicit":["explicit.stat_4224965099"]}}}
 {"ref":"Lightning Golems deal #% increased Damage","better":1,"matchers":[{"string":"增加 #% 雷電魔像的傷害"},{"string":"減少 #% 雷電魔像的傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3280107027"]}}}
-{"ref":"Lightning Modifiers have #% increased Effect","better":1,"matchers":[{"string":"閃電詞綴增加 #% 效果"},{"string":"閃電詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3624940721"]}}}
 {"ref":"Lightning Resistance does not affect Lightning Damage taken","better":1,"matchers":[{"string":"閃電抗性不影響承受閃電傷害"}],"trade":{"ids":{"explicit":["explicit.stat_3999959974"]}}}
 {"ref":"Lightning Resistance is #%","better":1,"matchers":[{"string":"閃電抗性為 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1942151132"]}}}
 {"ref":"Lightning Skills have #% chance to Poison on Hit","better":1,"matchers":[{"string":"閃電技能擊中有 #% 機率造成中毒"}],"trade":{"ids":{"explicit":["explicit.stat_949718413"]}}}
@@ -4147,7 +4151,6 @@
 {"ref":"Malevolence has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"惡意增加 #% 魔力保留效用"},{"string":"惡意減少 #% 魔力保留效用","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3266567165","explicit.stat_3383226338"],"enchant":["enchant.stat_3266567165","enchant.stat_3383226338"]}}}
 {"ref":"Malevolence has no Reservation","better":1,"matchers":[{"string":"惡意無保留"}],"trade":{"ids":{"explicit":["explicit.stat_585622486"]}}}
 {"ref":"Mana Flasks gain # Charge every 3 seconds","better":1,"matchers":[{"string":"魔力藥劑每 3 秒獲得 # 充能"}],"trade":{"ids":{"explicit":["explicit.stat_1193925814"],"scourge":["scourge.stat_1193925814"]}}}
-{"ref":"Mana Modifiers have #% increased Effect","better":1,"matchers":[{"string":"魔力詞綴增加 #% 效果"},{"string":"魔力詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3514984677"]}}}
 {"ref":"Mana Recovery occurs instantly at the end of Effect","better":1,"matchers":[{"string":"效果結束時，立即觸發魔力恢復"}],"trade":{"ids":{"explicit":["explicit.stat_4204954479"],"fractured":["fractured.stat_4204954479"]}}}
 {"ref":"Mana Reservation of Herald Skills is always 45%","better":1,"matchers":[{"string":"捷光環技能魔力保留維持 45%"}],"trade":{"ids":{"explicit":["explicit.stat_262773569"]}}}
 {"ref":"Manabond Penetrates #% Lightning Resistance while on Low Mana","better":1,"matchers":[{"string":"貧魔時魔能束縛穿透 #% 閃電抗性"}],"trade":{"ids":{"enchant":["enchant.stat_2052200782"]}}}
@@ -4479,7 +4482,6 @@
 {"ref":"Pestilent Strike has #% increased Duration","better":1,"matchers":[{"string":"瘟疫打擊增加 #% 持續時間"},{"string":"瘟疫打擊減少 #% 持續時間","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_64670441"]}}}
 {"ref":"Petrified Blood has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"石化之血增加 #% 魔力保留效用"},{"string":"石化之血減少 #% 魔力保留效用","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1779904215","enchant.stat_1829483269"]}}}
 {"ref":"Petrified during Effect","better":1,"matchers":[{"string":"效果持續時間被石化"}],"trade":{"ids":{"explicit":["explicit.stat_1935500672"]}}}
-{"ref":"Physical Modifiers have #% increased Effect","better":1,"matchers":[{"string":"物理詞綴增加 #% 效果"},{"string":"物理詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1335369947"]}}}
 {"ref":"Plague Bearer Buff grants +#% to Poison Damage over Time Multiplier while Infecting","better":1,"matchers":[{"string":"當感染時，病疫之難增益效果 #% 中毒持續傷害加成"}],"trade":{"ids":{"enchant":["enchant.stat_1967208066"]}}}
 {"ref":"Plague Bearer deals Damage based on an additional #% of Plague Value","better":1,"matchers":[{"string":"病疫之難根據額外 #% 瘟疫值造成傷害"}],"trade":{"ids":{"enchant":["enchant.stat_3672666316"]}}}
 {"ref":"Plants Harvested in your Maps have #% chance to give an additional Crafting option","dp":true,"better":1,"matchers":[{"string":"你地圖中收割的作物有 #% 機率給予 1 個額外工藝選項"}],"trade":{"ids":{"explicit":["explicit.stat_1042687374"]}}}
@@ -4800,7 +4802,6 @@
 {"ref":"Rerolling Favours at Ritual Altars in your Maps costs #% increased Tribute","better":1,"matchers":[{"string":"你地圖中在祭祀神壇重骰恩賜之物，增加 #% 貢禮消耗"},{"string":"你地圖中在祭祀神壇重骰恩賜之物，減少 #% 貢禮消耗","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2282052746"]}}}
 {"ref":"Rerolling Favours at Ritual Altars in your Maps has no Cost the first # time","better":1,"matchers":[{"string":"你地圖中在祭祀神壇重骰恩賜之物，前 # 次免費"},{"string":"祭祀神壇重骰恩賜之物前 # 次免費"}],"trade":{"ids":{"enchant":["enchant.stat_2425554673"]}}}
 {"ref":"Reserves #% of Life","better":1,"matchers":[{"string":"保留 #% 生命"}],"trade":{"ids":{"explicit":["explicit.stat_2492660287"]}}}
-{"ref":"Resistance Modifiers have #% increased Effect","better":1,"matchers":[{"string":"抗性詞綴增加 #% 效果"},{"string":"抗性詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1972391381"]}}}
 {"ref":"Resolute Technique","better":1,"matchers":[{"string":"堅毅之心"}],"trade":{"ids":{"explicit":["explicit.stat_3943945975"],"implicit":["implicit.stat_3943945975"],"scourge":["scourge.stat_3943945975"]}}}
 {"ref":"Restless Dead","better":1,"matchers":[{"string":"無限復生"}],"trade":{"ids":{"explicit":["explicit.stat_3303551725"]}}}
 {"ref":"Restores Ward on use","better":1,"matchers":[{"string":"使用時回復保護"}],"trade":{"ids":{"implicit":["implicit.stat_2451856207"]}}}
@@ -4916,7 +4917,7 @@
 {"ref":"Smoke Mine grants additional #% increased Movement Speed","better":1,"matchers":[{"string":"煙霧地雷額外增加 #% 移動速度"},{"string":"煙霧地雷額外減少 #% 移動速度","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3564777492"]}}}
 {"ref":"Smuggler's Caches have #% chance to Duplicate contained Rogue's Markers","better":1,"matchers":[{"string":"走私者的祕寶有 #% 機率複製內含的盜賊之印"},{"string":"走私者的祕寶複製內含的盜賊之印","value":100}],"trade":{"ids":{"explicit":["explicit.stat_833254006"]}}}
 {"ref":"Sniper's Mark has #% increased Curse Effect","better":1,"matchers":[{"string":"狙擊者印記增加 #% 詛咒效果"},{"string":"狙擊者印記減少 #% 詛咒效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2789561878"]}}}
-{"ref":"Socketed Attacks have +# to Total Mana Cost","better":-1,"matchers":[{"string":"插槽中的攻擊 # 總魔力消耗"}],"trade":{"ids":{"explicit":["explicit.stat_2264586521"]}}}
+{"ref":"Socketed Attacks have +# to Total Mana Cost","better":-1,"matchers":[{"string":"插槽中的攻擊 # 總魔力消耗"}],"trade":{"ids":{"explicit":["explicit.stat_2264586521"],"fractured":["fractured.stat_2264586521"]}}}
 {"ref":"Socketed Attacks have +#% to Critical Strike Chance","dp":true,"better":1,"matchers":[{"string":"插槽中的攻擊 #% 暴擊率"}],"trade":{"ids":{"explicit":["explicit.stat_2867348718"]}}}
 {"ref":"Socketed Attacks have +#% to Critical Strike Multiplier","better":1,"matchers":[{"string":"插槽中的攻擊 #% 暴擊加成"}],"trade":{"ids":{"explicit":["explicit.stat_356456977"]}}}
 {"ref":"Socketed Curse Gems have #% increased Reservation Efficiency","better":-1,"matchers":[{"string":"插槽中詛咒寶石減少 #% 保留效用"},{"string":"插槽中詛咒寶石增加 #% 保留效用","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1471600638"]},"inverted":true}}
@@ -4931,6 +4932,7 @@
 {"ref":"Socketed Gems are Supported by Level # Archmage","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的魔幻輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_122","explicit.stat_3652278215"]}}}
 {"ref":"Socketed Gems are Supported by Level # Arrogance","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的傲慢輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_116","explicit.stat_3922006600"],"implicit":["implicit.stat_3922006600"],"crafted":["crafted.stat_3922006600"]}}}
 {"ref":"Socketed Gems are Supported by Level # Arrow Nova","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的箭矢新星輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_121","explicit.stat_1331336999"]}}}
+{"ref":"Socketed Gems are Supported by Level # Awakened Added Cold Damage","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．附加冰冷傷害輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2509486489"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Added Fire Damage","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．附加火焰傷害輔助"}],"trade":{"ids":{"explicit":["explicit.stat_339131601"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Brutality","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．殘暴輔助"}],"trade":{"ids":{"explicit":["explicit.stat_3610200044"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Burning Damage","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．燃燒傷害輔助"}],"trade":{"ids":{"explicit":["explicit.stat_493707013"]}}}
@@ -5040,7 +5042,7 @@
 {"ref":"Socketed Gems are supported by Level # Life Leech","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的生命偷取輔助"}],"trade":{"ids":{"explicit":["explicit.stat_891277550"],"implicit":["implicit.stat_891277550"]}}}
 {"ref":"Socketed Gems are Supported by Level # Lifetap","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的活栓輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_137","explicit.stat_1079239905"],"implicit":["implicit.stat_1079239905"],"crafted":["crafted.stat_1079239905"]}}}
 {"ref":"Socketed Gems are Supported by Level # Lightning Penetration","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的閃電穿透輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_51","explicit.stat_3354027870"]}}}
-{"ref":"Socketed Gems are Supported by Level # Maim","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的癱瘓輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_50","explicit.stat_3826977109"]}}}
+{"ref":"Socketed Gems are Supported by Level # Maim","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的癱瘓輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_50","explicit.stat_3826977109"],"fractured":["fractured.stat_3826977109"]}}}
 {"ref":"Socketed Gems are Supported by Level # Mana Leech","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的魔力偷取輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_49","explicit.stat_2608615082"]}}}
 {"ref":"Socketed Gems are Supported by Level # Mark On Hit","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的擊中時標記輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_141"]}}}
 {"ref":"Socketed Gems are Supported by Level # Meat Shield","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的肉盾輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_48","explicit.stat_858460086"]}}}
@@ -5159,7 +5161,6 @@
 {"ref":"Spectres have #% increased Damage","better":1,"matchers":[{"string":"增加幽魂 #% 傷害"},{"string":"減少幽魂 #% 傷害","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_3645693773"],"enchant":["enchant.stat_3645693773"]}}}
 {"ref":"Spectres have #% increased maximum Life","better":1,"matchers":[{"string":"幽魂增加 #% 最大生命"},{"string":"幽魂減少 #% 最大生命","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3035514623"]}}}
 {"ref":"Spectres have a Base Duration of # seconds\nSpectres do not travel between Areas","better":1,"matchers":[{"string":"幽魂有基礎持續時間 # 秒\n幽魂無法跨越地區"}],"trade":{"ids":{"explicit":["explicit.stat_1210937073"]}}}
-{"ref":"Speed Modifiers have #% increased Effect","better":1,"matchers":[{"string":"速度詞綴增加 #% 效果"},{"string":"速度詞綴減少 #% 效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_363924732"]}}}
 {"ref":"Spell Hits have #% chance to Hinder you","better":1,"matchers":[{"string":"法術擊中有 #% 機率阻礙你"},{"string":"法術擊中阻礙你","value":100}],"trade":{"ids":{"scourge":["scourge.stat_1533511331"]}}}
 {"ref":"Spell Skills always deal Critical Strikes on final Repeat","better":1,"matchers":[{"string":"法術技能在最終重複時一定造成暴擊"}],"trade":{"ids":{"explicit":["explicit.stat_3738009328"]}}}
 {"ref":"Spell Skills cannot deal Critical Strikes except on final Repeat","better":1,"matchers":[{"string":"法術技能除了在最終重複外，不能造成暴擊"}],"trade":{"ids":{"explicit":["explicit.stat_2516869940"]}}}
@@ -5213,7 +5214,7 @@
 {"ref":"Stun Threshold is based on Energy Shield instead of Life","better":1,"matchers":[{"string":"你的暈眩門檻由生命改為以能量護盾作為基礎"}],"trade":{"ids":{"explicit":["explicit.stat_2562665460"]}}}
 {"ref":"Suffixes Cannot Be Changed","better":1,"matchers":[{"string":"後綴無法被變更"}],"trade":{"ids":{"explicit":["explicit.stat_3464137628"],"fractured":["fractured.stat_3464137628"],"crafted":["crafted.stat_3464137628"]}}}
 {"ref":"Sulphite Veins and Chests in your Maps have #% chance to be guarded by Sulphite-hoarding Monsters","better":1,"matchers":[{"string":"你地圖中的硫酸礦脈和保險箱有 #% 機率被硫酸堆積怪物守衛"}],"trade":{"ids":{"explicit":["explicit.stat_413137939"]}}}
-{"ref":"Summon an additional Skeleton Warrior with Summon Skeleton","better":1,"matchers":[{"string":"召喚骷髏召喚 # 個額外骷髏戰士"},{"string":"召喚骷髏召喚一個額外骷髏戰士","value":1}],"trade":{"ids":{"explicit":["explicit.stat_1589090910"]}}}
+{"ref":"Summon an additional Skeleton with Summon Skeletons","better":1,"matchers":[{"string":"使用召喚骷髏召喚 # 個額外骷髏"},{"string":"使用召喚骷髏召喚 1 個額外骷髏","value":1}],"trade":{"ids":{"explicit":["explicit.stat_1589090910"]}}}
 {"ref":"Summon Raging Spirit has #% chance to summon an extra Minion","better":1,"matchers":[{"string":"召喚憤怒狂靈時額外召喚一隻","value":-1},{"string":"召喚憤怒狂靈時有 #% 機率額外召喚一隻"}],"trade":{"ids":{"enchant":["enchant.stat_1381908541"]}}}
 {"ref":"Summon Raging Spirit has #% increased Duration","better":1,"matchers":[{"string":"召喚憤怒狂靈增加 #% 持續時間"},{"string":"召喚憤怒狂靈減少 #% 持續時間","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_38715141"],"enchant":["enchant.stat_38715141"]}}}
 {"ref":"Summon Skitterbots has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"S召喚探測機獸增加 #% 魔力保留效用"},{"string":"召喚探測機獸減少 #% 魔力保留效用","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1695754537","enchant.stat_3818053347"]}}}
@@ -5264,9 +5265,9 @@
 {"ref":"Summoned Reaper deals #% increased Damage","better":1,"matchers":[{"string":"召喚奪魂鐮增加 #% 傷害"},{"string":"召喚奪魂鐮減少 #% 傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2516903912"]}}}
 {"ref":"Summoned Reaper has +#% to Physical Damage over Time Multiplier","better":1,"matchers":[{"string":"召喚奪魂鐮 #% 物理持續傷害加成"}],"trade":{"ids":{"enchant":["enchant.stat_1975621585"]}}}
 {"ref":"Summoned Sentinels of Absolution have #% increased Area of Effect","better":1,"matchers":[{"string":"召喚的赦免哨兵增加 #% 範圍效果"},{"string":"召喚的赦免哨兵減少 #% 範圍效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_771292654"]}}}
+{"ref":"Summoned Skeleton Warriors and Soldiers deal Triple Damage with this\nWeapon if you've Hit with this Weapon Recently","better":1,"matchers":[{"string":"若你近期有使用此武器擊中，召喚的骷髏戰士和士兵使用此武器造成 3 倍傷害"}],"trade":{"ids":{"explicit":["explicit.stat_697059777"]}}}
+{"ref":"Summoned Skeleton Warriors and Soldiers wield this Weapon while in your Main Hand","better":1,"matchers":[{"string":"你主手為此武器時，召喚骷髏戰士和士兵持此武器"}],"trade":{"ids":{"explicit":["explicit.stat_2646007123"]}}}
 {"ref":"Summoned Skeleton Warriors are Permanent and Follow you","better":1,"matchers":[{"string":"召喚的骷髏戰視為永久並且跟隨你"}],"trade":{"ids":{"explicit":["explicit.stat_1021552211"]}}}
-{"ref":"Summoned Skeleton Warriors deal Triple Damage with this\nWeapon if you've Hit with this Weapon Recently","better":1,"matchers":[{"string":"若你近期有使用此武器擊中，\n召喚骷髏戰士使用此武器造成 3 倍傷害"}],"trade":{"ids":{"explicit":["explicit.stat_697059777"]}}}
-{"ref":"Summoned Skeleton Warriors wield a copy of this Weapon while in your Main Hand","better":1,"matchers":[{"string":"裝備你的主手時，召喚的骷髏戰士持此武器"}],"trade":{"ids":{"explicit":["explicit.stat_2646007123"]}}}
 {"ref":"Summoned Skeletons have a #% chance to Cover Enemies in Ash on Hit","better":1,"matchers":[{"string":"召喚骷髏擊中敵人時有 #% 機率使敵人餘燼纏身"},{"string":"召喚骷髏擊中敵人時使敵人餘燼纏身","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3074608753"]}}}
 {"ref":"Summoned Skeletons have Avatar of Fire","better":1,"matchers":[{"string":"召喚有火之化身的骷髏"}],"trade":{"ids":{"explicit":["explicit.stat_1958210928"]}}}
 {"ref":"Summoned Skeletons take #% of their Maximum Life per second as Fire Damage","better":1,"matchers":[{"string":"召喚骷髏每秒承受 #% 他們最大生命的火焰傷害"}],"trade":{"ids":{"explicit":["explicit.stat_2912438397"]}}}

@@ -8,7 +8,7 @@ export default {
   RARITY_GEM: 'Камень',
   RARITY_CURRENCY: 'Валюта',
   RARITY_DIVCARD: 'Гадальная карта',
-  RARITY_QUEST: 'Quest',
+  RARITY_QUEST: 'Задание',
   MAP_TIER: 'Уровень карты: ',
   RARITY: 'Редкость: ',
   ITEM_CLASS: 'Класс предмета: ',
@@ -125,7 +125,7 @@ export default {
     'Плодовитый', 'Плодовитая', 'Плодовитое', 'Плодовитые', 'Плодовитые', 'Плодовитые',
     'Ситаквалотля', 'Мататля', 'Такати', 'Гвателитзи', 'Пухварте'
   ],
-  FOIL_UNIQUE: 'Foil Unique',
+  FOIL_UNIQUE: 'Особый уникальный предмет',
   UNMODIFIABLE: 'Неизменяемый',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
