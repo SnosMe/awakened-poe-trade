@@ -66,6 +66,10 @@ export interface StopwatchWidget extends Widget {
   resetKey: string | null
 }
 
+export interface DelveGridWidget extends Widget {
+  toggleKey: string | null
+}
+
 export interface StashSearchWidget extends Widget {
   anchor: Anchor
   entries: Array<{

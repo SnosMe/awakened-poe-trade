@@ -51,7 +51,7 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, configModelValue, findWidget } from './utils'
-import { PriceCheckWidget } from '@/web/overlay/interfaces'
+import { PriceCheckWidget, DelveGridWidget } from '@/web/overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
@@ -64,7 +64,7 @@ export default defineComponent({
     return {
       t,
       stashScroll: configModelValue(() => props.config, 'stashScroll'),
-      delveGridKey: configModelValue(() => props.config, 'delveGridKey'),
+      delveGridKey: configModelValue(() => findWidget<DelveGridWidget>('delve-grid', props.config)!, 'toggleKey'),
       itemCheckKey: configModelValue(() => props.config, 'itemCheckKey'),
       overlayKey: configModelValue(() => props.config, 'overlayKey'),
       priceCheckHotkeyHold: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),

@@ -98,7 +98,6 @@ export interface Config {
   overlayBackgroundExclusive: boolean
   overlayBackgroundClose: boolean
   itemCheckKey: string | null
-  delveGridKey: string | null
   restoreClipboard: boolean
   commands: Array<{
     text: string
@@ -120,13 +119,12 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 15,
+  configVersion: 16,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
   overlayBackgroundClose: true,
   itemCheckKey: null,
-  delveGridKey: null,
   restoreClipboard: false,
   showAttachNotification: true,
   commands: [{
@@ -242,8 +240,9 @@ export const defaultConfig = (): Config => ({
       wmTitle: '',
       wmWants: 'hide',
       wmZorder: 4,
-      wmFlags: ['hide-on-focus', 'skip-menu']
-    },
+      wmFlags: ['hide-on-focus', 'skip-menu'],
+      toggleKey: null
+    } as widget.DelveGridWidget,
     {
       wmId: 5,
       wmType: 'settings',
@@ -518,6 +517,13 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 15
   }
 
+  if (config.configVersion < 16) {
+    const delve = config.widgets.find(w => w.wmType === 'delve-grid') as widget.DelveGridWidget
+    delve.toggleKey = (config as any).delveGridKey
+
+    config.configVersion = 16
+  }
+
   return config as unknown as Config
 }
 
@@ -575,9 +581,10 @@ function getConfigForHost (): HostConfig {
       action: { type: 'copy-item', target: 'item-check', focusOverlay: true }
     })
   }
-  if (config.delveGridKey) {
+  const delveGrid = AppConfig('delve-grid') as widget.DelveGridWidget
+  if (delveGrid.toggleKey) {
     actions.push({
-      shortcut: config.delveGridKey,
+      shortcut: delveGrid.toggleKey,
       action: { type: 'trigger-event', target: 'delve-grid' },
       keepModKeys: true
     })
