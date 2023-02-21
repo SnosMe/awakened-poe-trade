@@ -97,7 +97,6 @@ export interface Config {
   overlayBackground: string
   overlayBackgroundExclusive: boolean
   overlayBackgroundClose: boolean
-  itemCheckKey: string | null
   restoreClipboard: boolean
   commands: Array<{
     text: string
@@ -124,7 +123,6 @@ export const defaultConfig = (): Config => ({
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundExclusive: true,
   overlayBackgroundClose: true,
-  itemCheckKey: null,
   restoreClipboard: false,
   showAttachNotification: true,
   commands: [{
@@ -208,6 +206,7 @@ export const defaultConfig = (): Config => ({
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
+      hotkey: null,
       wikiKey: null,
       poedbKey: null,
       craftOfExileKey: null,
@@ -391,7 +390,7 @@ function upgradeConfig (_config: Config): Config {
     mapCheck.maps = { selectedStats: mapCheck.selectedStats }
     mapCheck.selectedStats = undefined
 
-    config.itemCheckKey = (config as any).mapCheckKey || null
+    ;(config as any).itemCheckKey = (config as any).mapCheckKey || null
     ;(config as any).mapCheckKey = undefined
 
     config.configVersion = 7
@@ -521,6 +520,9 @@ function upgradeConfig (_config: Config): Config {
     const delve = config.widgets.find(w => w.wmType === 'delve-grid') as widget.DelveGridWidget
     delve.toggleKey = (config as any).delveGridKey
 
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
+    itemCheck.hotkey = (config as any).itemCheckKey
+
     config.configVersion = 16
   }
 
@@ -575,9 +577,9 @@ function getConfigForHost (): HostConfig {
       action: { type: 'copy-item', target: 'search-similar' }
     })
   }
-  if (config.itemCheckKey) {
+  if (itemCheck.hotkey) {
     actions.push({
-      shortcut: config.itemCheckKey,
+      shortcut: itemCheck.hotkey,
       action: { type: 'copy-item', target: 'item-check', focusOverlay: true }
     })
   }

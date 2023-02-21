@@ -46,6 +46,7 @@ export interface PriceCheckWidget extends Widget {
 }
 
 export interface ItemCheckWidget extends Widget {
+  hotkey: string | null
   wikiKey: string | null
   poedbKey: string | null
   craftOfExileKey: string | null
