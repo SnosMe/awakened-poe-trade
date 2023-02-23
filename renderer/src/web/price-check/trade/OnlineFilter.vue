@@ -65,7 +65,13 @@ export default defineComponent({
 
     return {
       t,
-      tradeLeagues: leagues.list,
+      tradeLeagues: computed(() => {
+        const { isRuthless } = leagues.selected.value!
+        return leagues.list.value.filter(league => {
+          if (!isRuthless && league.isRuthless) return false
+          return true
+        })
+      }),
       showLeagueName: computed(() => leagues.selectedId.value !== props.filters.trade.league),
       onOfflineUpdate (offline: boolean) {
         const { filters } = props

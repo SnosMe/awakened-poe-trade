@@ -3,13 +3,6 @@ import { createGlobalState } from '@vueuse/core'
 import { AppConfig, poeWebApi } from '@/web/Config'
 import { Host } from './IPC'
 
-export const PERMANENT_LEAGUE_IDS = [
-  // pc-ggg
-  'Standard', 'Hardcore',
-  // pc-garena
-  '標準模式', '專家模式'
-]
-
 // pc-ggg, pc-garena
 const PERMANENT_SC = ['Standard', '標準模式']
 const PERMANENT_HC = ['Hardcore', '專家模式']
@@ -20,14 +13,16 @@ interface ApiLeague {
   rules: Array<{ id: string }>
 }
 
+interface League {
+  id: string
+  isRuthless: boolean
+  isPopular: boolean
+}
+
 export const useLeagues = createGlobalState(() => {
   const isLoading = shallowRef(false)
   const error = shallowRef<string | null>(null)
-  const tradeLeagues = shallowRef<Array<{
-    id: string
-    isRuthless: boolean
-    isPopular: boolean
-  }>>([])
+  const tradeLeagues = shallowRef<League[]>([])
 
   const selectedId = computed<string | undefined>({
     get () {
@@ -43,11 +38,12 @@ export const useLeagues = createGlobalState(() => {
   const selected = computed(() => {
     const { leagueId } = AppConfig()
     if (!tradeLeagues.value || !leagueId) return undefined
+    const listed = tradeLeagues.value.find(league => league.id === leagueId)
     return {
       id: leagueId,
       realm: AppConfig().realm,
-      isPopular: !isPrivateLeague(leagueId) &&
-        tradeLeagues.value.some(league => league.id === leagueId && league.isPopular)
+      isPopular: !isPrivateLeague(leagueId) && listed?.isPopular,
+      isRuthless: listed?.isRuthless
     }
   })
 

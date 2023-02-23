@@ -5,7 +5,6 @@ import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
 import { ParsedItem, ItemCategory } from '@/parser'
 export { poeWebApi as getTradeEndpoint } from '@/web/Config'
-export { PERMANENT_LEAGUE_IDS as PERMANENT_LEAGUES } from '@/web/background/Leagues'
 
 export interface Account {
   name: string
