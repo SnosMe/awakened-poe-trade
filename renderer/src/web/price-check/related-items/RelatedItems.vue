@@ -26,10 +26,12 @@
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue'
 import { BaseType, ITEM_BY_REF, ITEM_DROP } from '@/assets/data'
-import { findPriceByQuery, autoCurrency } from '../../background/Prices'
+import { usePoeninja, CurrencyValue } from '@/web/background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+
+const { findPriceByQuery, autoCurrency } = usePoeninja()
 
 function findItemByQueryId (queryId: string): BaseType | undefined {
   const [ns, encodedName] = queryId.split('::')
@@ -57,8 +59,8 @@ function getItemPrices (queryId: string) {
   if (!dropEntry) return null
 
   const out = {
-    related: [] as Array<{ name: string, icon: string, price: ReturnType<typeof findPriceByQueryId>, highlight: boolean }>,
-    items: [] as Array<{ name: string, icon: string, price: ReturnType<typeof findPriceByQueryId> }>
+    related: [] as Array<{ name: string, icon: string, price?: CurrencyValue, highlight: boolean }>,
+    items: [] as Array<{ name: string, icon: string, price?: CurrencyValue }>
   }
   for (const itemId of dropEntry.query) {
     const dbItem = findItemByQueryId(itemId)

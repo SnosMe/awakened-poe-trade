@@ -59,7 +59,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { findPriceByQuery, autoCurrency } from '../../background/Prices'
+import { usePoeninja } from '@/web/background/Prices'
 import { isValuableBasetype, getDetailsId } from './getDetailsId'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import VueApexcharts from 'vue3-apexcharts'
@@ -85,6 +85,9 @@ export default defineComponent({
     }
   },
   setup (props) {
+    const { t } = useI18n()
+    const { findPriceByQuery, autoCurrency } = usePoeninja()
+
     watch(() => props.item, (item) => {
       slowdown.reset(item)
     }, { immediate: true })
@@ -104,8 +107,6 @@ export default defineComponent({
         url: trend.url
       }
     })
-
-    const { t } = useI18n()
 
     return {
       t,

@@ -1,8 +1,7 @@
-import { shallowRef, watch } from 'vue'
+import { shallowRef, watch, readonly } from 'vue'
+import { createGlobalState } from '@vueuse/core'
 import { Host } from '@/web/background/IPC'
 import { useLeagues } from './Leagues'
-
-const leagues = useLeagues()
 
 interface NinjaDenseInfo {
   chaos: number
@@ -11,46 +10,124 @@ interface NinjaDenseInfo {
   variant?: string
 }
 
-export const xchgRate = shallowRef<number | undefined>(undefined)
-
 type PriceDatabase = Array<{ ns: string, url: string, lines: string }>
-let PRICES_DB: PriceDatabase = []
-let lastUpdateTime = 0
-let downloadController: AbortController | undefined
-
 const RETRY_TIME = 2 * 60 * 1000
 const UPDATE_TIME = 16 * 60 * 1000
 
-async function load (force: boolean = false) {
-  const league = leagues.selected.value
-  if (!league || !league.isPopular || league.realm !== 'pc-ggg') return
+interface DbQuery {
+  ns: string
+  name: string
+  variant: string | undefined
+}
 
-  if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
-  if (downloadController) downloadController.abort()
+export interface CurrencyValue {
+  min: number
+  max: number
+  currency: 'chaos' | 'div'
+}
 
-  downloadController = new AbortController()
-  const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${league.id}&language=en`, {
-    signal: downloadController.signal
+export const usePoeninja = createGlobalState(() => {
+  const leagues = useLeagues()
+
+  const xchgRate = shallowRef<number | undefined>(undefined)
+
+  let PRICES_DB: PriceDatabase = []
+  let lastUpdateTime = 0
+  let downloadController: AbortController | undefined
+
+  async function load (force: boolean = false) {
+    const league = leagues.selected.value
+    if (!league || !league.isPopular || league.realm !== 'pc-ggg') return
+
+    if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
+    if (downloadController) downloadController.abort()
+
+    downloadController = new AbortController()
+    const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${league.id}&language=en`, {
+      signal: downloadController.signal
+    })
+    const jsonBlob = await response.text()
+
+    PRICES_DB = splitJsonBlob(jsonBlob)
+    const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
+    if (divine && divine.chaos >= 30) {
+      xchgRate.value = divine.chaos
+    }
+    lastUpdateTime = Date.now()
+  }
+
+  function selectedLeagueToUrl (): string {
+    const league = leagues.selectedId.value!
+    switch (league) {
+      case 'Standard': return 'standard'
+      case 'Hardcore': return 'hardcore'
+      default:
+        return (league.startsWith('Hardcore ')) ? 'challengehc' : 'challenge'
+    }
+  }
+
+  function findPriceByQuery (query: DbQuery) {
+    // NOTE: order of keys is important
+    const searchString = JSON.stringify({
+      name: query.name,
+      variant: query.variant,
+      chaos: 0
+    }).replace(':0}', ':')
+
+    for (const { ns, url, lines } of PRICES_DB) {
+      if (ns !== query.ns) continue
+
+      const startPos = lines.indexOf(searchString)
+      if (startPos === -1) continue
+      const endPos = lines.indexOf('}', startPos)
+
+      const info: NinjaDenseInfo = JSON.parse(lines.slice(startPos, endPos + 1))
+
+      return {
+        ...info,
+        url: `https://poe.ninja/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`
+      }
+    }
+    return null
+  }
+
+  function autoCurrency (value: number | [number, number]): CurrencyValue {
+    if (Array.isArray(value)) {
+      if (value[1] > (xchgRate.value || 9999)) {
+        return { min: chaosToStable(value[0]), max: chaosToStable(value[1]), currency: 'div' }
+      }
+      return { min: value[0], max: value[1], currency: 'chaos' }
+    }
+    if (value > ((xchgRate.value || 9999) * 0.94)) {
+      if (value < ((xchgRate.value || 9999) * 1.06)) {
+        return { min: 1, max: 1, currency: 'div' }
+      } else {
+        return { min: chaosToStable(value), max: chaosToStable(value), currency: 'div' }
+      }
+    }
+    return { min: value, max: value, currency: 'chaos' }
+  }
+
+  function chaosToStable (count: number) {
+    return count / (xchgRate.value || 9999)
+  }
+
+  setInterval(() => {
+    load()
+  }, RETRY_TIME)
+
+  watch(leagues.selectedId, () => {
+    xchgRate.value = undefined
+    PRICES_DB = []
+    load(true)
   })
-  const jsonBlob = await response.text()
 
-  PRICES_DB = splitJsonBlob(jsonBlob)
-  const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
-  if (divine && divine.chaos >= 30) {
-    xchgRate.value = divine.chaos
+  return {
+    xchgRate: readonly(xchgRate),
+    findPriceByQuery,
+    autoCurrency
   }
-  lastUpdateTime = Date.now()
-}
-
-function selectedLeagueToUrl (): string {
-  const league = leagues.selectedId.value!
-  switch (league) {
-    case 'Standard': return 'standard'
-    case 'Hardcore': return 'hardcore'
-    default:
-      return (league.startsWith('Hardcore ')) ? 'challengehc' : 'challenge'
-  }
-}
+})
 
 function denseInfoToDetailsId (info: NinjaDenseInfo): string {
   return ((info.variant) ? `${info.name}, ${info.variant}` : info.name)
@@ -114,58 +191,6 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
   return database
 }
 
-interface DbQuery {
-  ns: string
-  name: string
-  variant: string | undefined
-}
-
-export function findPriceByQuery (query: DbQuery) {
-  // NOTE: order of keys is important
-  const searchString = JSON.stringify({
-    name: query.name,
-    variant: query.variant,
-    chaos: 0
-  }).replace(':0}', ':')
-
-  for (const { ns, url, lines } of PRICES_DB) {
-    if (ns !== query.ns) continue
-
-    const startPos = lines.indexOf(searchString)
-    if (startPos === -1) continue
-    const endPos = lines.indexOf('}', startPos)
-
-    const info: NinjaDenseInfo = JSON.parse(lines.slice(startPos, endPos + 1))
-
-    return {
-      ...info,
-      url: `https://poe.ninja/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`
-    }
-  }
-  return null
-}
-
-export function autoCurrency (value: number | [number, number]): { min: number, max: number, currency: 'chaos' | 'div' } {
-  if (Array.isArray(value)) {
-    if (value[1] > (xchgRate.value || 9999)) {
-      return { min: chaosToStable(value[0]), max: chaosToStable(value[1]), currency: 'div' }
-    }
-    return { min: value[0], max: value[1], currency: 'chaos' }
-  }
-  if (value > ((xchgRate.value || 9999) * 0.94)) {
-    if (value < ((xchgRate.value || 9999) * 1.06)) {
-      return { min: 1, max: 1, currency: 'div' }
-    } else {
-      return { min: chaosToStable(value), max: chaosToStable(value), currency: 'div' }
-    }
-  }
-  return { min: value, max: value, currency: 'chaos' }
-}
-
-function chaosToStable (count: number) {
-  return count / (xchgRate.value || 9999)
-}
-
 export function displayRounding (value: number, fraction: boolean = false): string {
   if (fraction && Math.abs(value) < 1) {
     if (value === 0) return '0'
@@ -177,15 +202,3 @@ export function displayRounding (value: number, fraction: boolean = false): stri
   }
   return Math.round(value).toString()
 }
-
-// ---
-
-setInterval(() => {
-  load()
-}, RETRY_TIME)
-
-watch(leagues.selectedId, () => {
-  xchgRate.value = undefined
-  PRICES_DB = []
-  load(true)
-})

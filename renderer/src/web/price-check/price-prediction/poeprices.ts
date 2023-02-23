@@ -2,7 +2,7 @@ import { ParsedItem } from '@/parser'
 import { useLeagues } from '@/web/background/Leagues'
 import { Host } from '@/web/background/IPC'
 import { Cache } from '../trade/Cache'
-import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
+import { usePoeninja } from '@/web/background/Prices'
 
 const cache = new Cache()
 
@@ -52,6 +52,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
   }
 
   if (data.currency === 'exalt') {
+    const { findPriceByQuery, autoCurrency } = usePoeninja()
     const xchgExalted = findPriceByQuery({ ns: 'ITEM', name: 'Exalted Orb', variant: undefined })
     if (!xchgExalted) {
       throw new Error('poeprices.info gave the price in Exalted Orbs.')

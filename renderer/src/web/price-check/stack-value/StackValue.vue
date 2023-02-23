@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { displayRounding, findPriceByQuery, autoCurrency } from '../../background/Prices'
+import { usePoeninja, displayRounding } from '@/web/background/Prices'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ParsedItem } from '@/parser'
 import { ItemFilters } from '../filters/interfaces'
@@ -30,6 +30,8 @@ export default defineComponent({
     }
   },
   setup (props) {
+    const { findPriceByQuery, autoCurrency } = usePoeninja()
+
     function getPriceFor (n: number) {
       const one = findPriceByQuery(getDetailsId(props.item)!)!
 

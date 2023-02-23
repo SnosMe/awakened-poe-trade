@@ -43,7 +43,7 @@ import WidgetSettings from '../settings/SettingsWindow.vue'
 import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
-import '@/web/background/Prices'
+import { usePoeninja } from '@/web/background/Prices'
 import { useLeagues } from '@/web/background/Leagues'
 import { handleLine } from '@/web/client-log/client-log'
 
@@ -63,6 +63,7 @@ export default defineComponent({
     LoadingAnimation
   },
   setup () {
+    usePoeninja()
     useLeagues().load()
 
     const active = shallowRef(!Host.isElectron)

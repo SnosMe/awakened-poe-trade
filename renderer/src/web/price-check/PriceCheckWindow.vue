@@ -72,7 +72,7 @@ import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess, Host } from '@/web/background/IPC'
-import { xchgRate } from '../background/Prices'
+import { usePoeninja } from '../background/Prices'
 import { useLeagues } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
@@ -109,6 +109,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
+    const { xchgRate } = usePoeninja()
 
     nextTick(() => {
       props.config.wmWants = 'hide'

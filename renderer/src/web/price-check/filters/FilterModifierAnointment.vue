@@ -14,7 +14,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { StatFilter } from './interfaces'
-import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
+import { usePoeninja } from '@/web/background/Prices'
 import { ITEM_BY_REF } from '@/assets/data'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 
@@ -27,6 +27,8 @@ export default defineComponent({
     }
   },
   setup (props) {
+    const { findPriceByQuery, autoCurrency } = usePoeninja()
+
     const result = computed(() => {
       if (!props.filter.oils) return null
 
