@@ -1,7 +1,8 @@
 import { shallowRef, watch } from 'vue'
-import { AppConfig } from '@/web/Config'
 import { Host } from '@/web/background/IPC'
-import { selected as selectedLeague, isPublicLeague } from './Leagues'
+import { useLeagues } from './Leagues'
+
+const leagues = useLeagues()
 
 interface NinjaDenseInfo {
   chaos: number
@@ -15,33 +16,34 @@ export const xchgRate = shallowRef<number | undefined>(undefined)
 type PriceDatabase = Array<{ ns: string, url: string, lines: string }>
 let PRICES_DB: PriceDatabase = []
 let lastUpdateTime = 0
+let downloadController: AbortController | undefined
 
 const RETRY_TIME = 2 * 60 * 1000
 const UPDATE_TIME = 16 * 60 * 1000
 
 async function load (force: boolean = false) {
-  if (!selectedLeague.value || !isPublicLeague(selectedLeague.value) || AppConfig().realm !== 'pc-ggg') return
-  const leagueAtStartOfLoad = selectedLeague.value
+  const league = leagues.selected.value
+  if (!league || !league.isPopular || league.realm !== 'pc-ggg') return
 
   if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
+  if (downloadController) downloadController.abort()
 
-  const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${leagueAtStartOfLoad}&language=en`)
+  downloadController = new AbortController()
+  const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${league.id}&language=en`, {
+    signal: downloadController.signal
+  })
   const jsonBlob = await response.text()
 
-  if (leagueAtStartOfLoad === selectedLeague.value) {
-    PRICES_DB = splitJsonBlob(jsonBlob)
-
-    const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
-    if (divine && divine.chaos >= 30) {
-      xchgRate.value = divine.chaos
-    }
-
-    lastUpdateTime = Date.now()
+  PRICES_DB = splitJsonBlob(jsonBlob)
+  const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
+  if (divine && divine.chaos >= 30) {
+    xchgRate.value = divine.chaos
   }
+  lastUpdateTime = Date.now()
 }
 
 function selectedLeagueToUrl (): string {
-  const league = selectedLeague.value!
+  const league = leagues.selectedId.value!
   switch (league) {
     case 'Standard': return 'standard'
     case 'Hardcore': return 'hardcore'
@@ -182,7 +184,7 @@ setInterval(() => {
   load()
 }, RETRY_TIME)
 
-watch(selectedLeague, () => {
+watch(leagues.selectedId, () => {
   xchgRate.value = undefined
   PRICES_DB = []
   load(true)

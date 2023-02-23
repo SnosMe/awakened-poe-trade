@@ -44,7 +44,7 @@ import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
 import '@/web/background/Prices'
-import { load as loadLeagues } from '@/web/background/Leagues'
+import { useLeagues } from '@/web/background/Leagues'
 import { handleLine } from '@/web/client-log/client-log'
 
 type WMID = Widget['wmId']
@@ -63,7 +63,7 @@ export default defineComponent({
     LoadingAnimation
   },
   setup () {
-    loadLeagues()
+    useLeagues().load()
 
     const active = shallowRef(!Host.isElectron)
     const gameFocused = shallowRef(false)

@@ -73,7 +73,7 @@ import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess, Host } from '@/web/background/IPC'
 import { xchgRate } from '../background/Prices'
-import { selected as league } from '@/web/background/Leagues'
+import { useLeagues } from '@/web/background/Leagues'
 import { AppConfig } from '@/web/Config'
 import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
 import RelatedItems from './related-items/RelatedItems.vue'
@@ -179,12 +179,13 @@ export default defineComponent({
       }
     })
 
-    const title = computed(() => league.value || 'Awakened PoE Trade')
+    const leagues = useLeagues()
+    const title = computed(() => leagues.selectedId.value || 'Awakened PoE Trade')
     const stableOrbCost = computed(() => (xchgRate.value) ? Math.round(xchgRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)
     const showCheckPos = computed(() => wm.active.value && props.config.showCursor)
-    const isLeagueSelected = computed(() => Boolean(league.value))
+    const isLeagueSelected = computed(() => Boolean(leagues.selectedId.value))
     const clickPosition = computed(() => {
       if (isBrowserShown.value) {
         return 'inventory'

@@ -1,5 +1,5 @@
 import { ParsedItem } from '@/parser'
-import { selected as league } from '@/web/background/Leagues'
+import { useLeagues } from '@/web/background/Leagues'
 import { Host } from '@/web/background/IPC'
 import { Cache } from '../trade/Cache'
 import { autoCurrency, findPriceByQuery } from '@/web/background/Prices'
@@ -31,7 +31,7 @@ export interface RareItemPrice {
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice> {
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
-    l: league.value,
+    l: useLeagues().selectedId.value,
     s: 'awakened-poe-trade'
   })
 
@@ -79,7 +79,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
 export function getExternalLink (item: ParsedItem): string {
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
-    l: league.value,
+    l: useLeagues().selectedId.value,
     s: 'awakened-poe-trade',
     w: 1
   })
@@ -99,7 +99,7 @@ export async function sendFeedback (
   body.append('min', String(prediction.min))
   body.append('max', String(prediction.max))
   body.append('currency', prediction.currency)
-  body.append('league', league.value!)
+  body.append('league', useLeagues().selectedId.value!)
   // body.append('debug', String(1))
 
   const response = await Host.proxy('www.poeprices.info/send_feedback', {

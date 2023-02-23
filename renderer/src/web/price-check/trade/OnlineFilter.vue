@@ -46,7 +46,7 @@
 import { computed, defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { ItemFilters } from '../filters/interfaces'
-import { selected as defaultLeague, tradeLeagues } from '../../background/Leagues'
+import { useLeagues } from '@/web/background/Leagues'
 
 export default defineComponent({
   props: {
@@ -60,12 +60,13 @@ export default defineComponent({
     }
   },
   setup (props) {
+    const leagues = useLeagues()
     const { t } = useI18n()
 
     return {
       t,
-      tradeLeagues,
-      showLeagueName: computed(() => defaultLeague.value !== props.filters.trade.league),
+      tradeLeagues: leagues.list,
+      showLeagueName: computed(() => leagues.selectedId.value !== props.filters.trade.league),
       onOfflineUpdate (offline: boolean) {
         const { filters } = props
         filters.trade.offline = offline

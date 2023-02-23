@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
-import * as Leagues from '@/web/background/Leagues'
+import { useLeagues } from '@/web/background/Leagues'
 import { Host } from '@/web/background/IPC'
 import { poeWebApi, AppConfig } from '@/web/Config'
 
@@ -42,13 +42,15 @@ export default defineComponent({
       }
     })
 
+    const leagues = useLeagues()
+
     return {
       t,
       updateInfo,
-      leaguesError: Leagues.error,
-      loadingLeagues: Leagues.isLoading,
+      leaguesError: leagues.error,
+      loadingLeagues: leagues.isLoading,
       retry () {
-        Leagues.load()
+        leagues.load()
       },
       openCaptcha () {
         showBrowser(`https://${poeWebApi()}/api/leagues?type=main&realm=pc&compact=1`)

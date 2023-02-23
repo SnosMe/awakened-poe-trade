@@ -6,11 +6,11 @@
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
-      <template v-else-if="leagues.trade.value.length">
+      <template v-else-if="leagues.list.value.length">
         <div
           class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-nowrap"
           style="grid-template-columns: repeat(2, min-content);">
-          <div v-for="league of leagues.trade.value" :key="league.id">
+          <div v-for="league of leagues.list.value" :key="league.id">
             <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
           </div>
         </div>
@@ -129,7 +129,7 @@ import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configModelValue, configProp, findWidget } from './utils'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
-import * as Leagues from '../background/Leagues'
+import { useLeagues } from '../background/Leagues'
 
 export default defineComponent({
   name: 'Price check',
@@ -137,13 +137,14 @@ export default defineComponent({
   setup (props) {
     const configWidget = computed(() => findWidget<PriceCheckWidget>('price-check', props.config)!)
 
+    const leagues = useLeagues()
     const { t } = useI18n()
 
     return {
       t,
       leagueId: configModelValue(() => props.config, 'leagueId'),
       customLeagueId: computed<string>({
-        get: () => !Leagues.isPublicLeague(props.config.leagueId ?? '')
+        get: () => !leagues.list.value.some(league => league.id === props.config.leagueId)
           ? props.config.leagueId ?? ''
           : '',
         set: (value) => { props.config.leagueId = value }
@@ -193,12 +194,7 @@ export default defineComponent({
           configWidget.value.apiLatencySeconds = Math.min(Math.max(value, 0.5), 10)
         }
       }),
-      leagues: {
-        trade: Leagues.tradeLeagues,
-        isLoading: Leagues.isLoading,
-        error: Leagues.error,
-        load: Leagues.load
-      }
+      leagues
     }
   }
 })
