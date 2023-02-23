@@ -212,23 +212,24 @@ export const defaultConfig = (): Config => ({
       craftOfExileKey: null,
       stashSearchKey: null,
       maps: {
+        profile: 1,
         showNewStats: false,
         selectedStats: [
           {
             matcher: '#% maximum Player Resistances',
-            decision: 'warning'
+            decision: 'w--'
           },
           {
             matcher: 'Monsters reflect #% of Physical Damage',
-            decision: 'danger'
+            decision: 'd--'
           },
           {
             matcher: 'Monsters reflect #% of Elemental Damage',
-            decision: 'danger'
+            decision: 'd--'
           },
           {
             matcher: 'Area contains two Unique Bosses',
-            decision: 'desirable'
+            decision: 'g--'
           }
         ]
       }
@@ -522,6 +523,11 @@ function upgradeConfig (_config: Config): Config {
 
     const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
     itemCheck.hotkey = (config as any).itemCheckKey
+
+    if (itemCheck.maps.profile === undefined) {
+      itemCheck.maps.profile = 1
+      itemCheck.maps.selectedStats = []
+    }
 
     config.configVersion = 16
   }
