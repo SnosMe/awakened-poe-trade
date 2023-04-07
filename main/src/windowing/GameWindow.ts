@@ -30,7 +30,7 @@ export class GameWindow extends EventEmitter {
     super()
   }
 
-  attach (window: BrowserWindow, title: string) {
+  attach (window: BrowserWindow | undefined, title: string) {
     if (!this._isTracking) {
       OverlayController.events.on('focus', () => { this.isActive = true })
       OverlayController.events.on('blur', () => { this.isActive = false })

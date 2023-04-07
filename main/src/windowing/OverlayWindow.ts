@@ -1,5 +1,5 @@
 import path from 'path'
-import { BrowserWindow, dialog, shell, Menu, systemPreferences, WebContents } from 'electron'
+import { BrowserWindow, dialog, shell, Menu, WebContents } from 'electron'
 import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
 import type { ServerEvents } from '../server'
 import type { Logger } from '../RemoteLogger'
@@ -9,7 +9,7 @@ import { type HttpProxy, PROXY_HOSTS } from '../proxy'
 export class OverlayWindow {
   public isInteractable = false
   public wasUsedRecently = true
-  private window: BrowserWindow
+  private window?: BrowserWindow
   private overlayKey: string = 'Shift + Space'
   private isOverlayKeyUsed = false
 
@@ -19,18 +19,15 @@ export class OverlayWindow {
     private poeWindow: GameWindow,
     proxy: HttpProxy
   ) {
-    if (process.platform === 'win32' && !systemPreferences.isAeroGlassEnabled()) {
-      dialog.showErrorBox(
-        'Windows 7 - Aero',
-        // ----------------------
-        'You must enable Windows Aero in "Appearance and Personalization".\n' +
-        'It is required to create a transparent overlay window.'
-      )
-    }
-
     this.server.onEventAnyClient('OVERLAY->MAIN::focus-game', this.assertGameActive)
     this.poeWindow.on('active-change', this.handlePoeWindowActiveChange)
     this.poeWindow.onAttach(this.handleOverlayAttached)
+
+    this.server.onEventAnyClient('CLIENT->MAIN::used-recently', (e) => {
+      this.wasUsedRecently = e.isOverlay
+    })
+
+    if (process.argv.includes('--no-overlay')) return
 
     this.window = new BrowserWindow({
       icon: path.join(__dirname, process.env.STATIC!, 'icon.png'),
@@ -61,18 +58,22 @@ export class OverlayWindow {
       shell.openExternal(details.url)
       return { action: 'deny' }
     })
-
-    this.server.onEventAnyClient('CLIENT->MAIN::used-recently', (e) => {
-      this.wasUsedRecently = e.isOverlay
-    })
   }
 
   loadAppPage (port: number) {
+    const url = process.env.VITE_DEV_SERVER_URL ||
+      `http://localhost:${port}/index.html`
+
+    if (!this.window) {
+      shell.openExternal(url)
+      return
+    }
+
     if (process.env.VITE_DEV_SERVER_URL) {
-      this.window.loadURL(process.env.VITE_DEV_SERVER_URL)
+      this.window.loadURL(url)
       this.window.webContents.openDevTools({ mode: 'detach', activate: false })
     } else {
-      this.window.loadURL(`http://localhost:${port}/index.html`)
+      this.window.loadURL(url)
     }
   }
 
