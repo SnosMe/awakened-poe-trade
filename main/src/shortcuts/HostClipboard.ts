@@ -66,7 +66,7 @@ export class HostClipboard {
           }
         }
       }
-      poll()
+      setTimeout(poll, POLL_DELAY)
     })
 
     return this.pollPromise

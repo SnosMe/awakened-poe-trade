@@ -68,7 +68,7 @@ export const useLeagues = createGlobalState(() => {
 
       const leagueIsAlive = tradeLeagues.value.some(league => league.id === selectedId.value)
       if (!leagueIsAlive && !isPrivateLeague(selectedId.value ?? '')) {
-        if (tradeLeagues.value.length > 2) {
+        if (tradeLeagues.value.length > 4) {
           const TMP_CHALLENGE = 2
           selectedId.value = tradeLeagues.value[TMP_CHALLENGE].id
         } else {

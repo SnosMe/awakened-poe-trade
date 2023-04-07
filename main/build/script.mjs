@@ -25,7 +25,7 @@ const visionBuild = await esbuild.build({
   outfile: 'dist/vision.js'
 })
 
-const mainBuild = await esbuild.context({
+const mainContext = await esbuild.context({
   entryPoints: ['src/main.ts'],
   bundle: true,
   minify: !isDev,
@@ -36,18 +36,19 @@ const mainBuild = await esbuild.context({
     'process.env.STATIC': (isDev) ? '"../build/icons"' : '"."',
     'process.env.VITE_DEV_SERVER_URL': (isDev) ? '"http://localhost:5173"' : 'null'
   },
-  plugins: [{
+  plugins: (isDev) ? [{
     name: 'electron-runner',
     setup (build) {
       build.onEnd((result) => {
         if (!result.errors.length) electronRunner.restart()
       })
     }
-  }]
+  }] : []
 })
 
-Promise.all([
-  visionBuild,
-  (isDev) ? mainBuild.watch() : mainBuild
-])
-.catch(() => process.exit(1))
+if (isDev) {
+  await mainContext.watch()
+} else {
+  await mainContext.rebuild()
+  mainContext.dispose()
+}
