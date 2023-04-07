@@ -1,7 +1,6 @@
-const path = require('path')
-const child_process = require('child_process')
-const electron = require('electron')
-const esbuild = require('esbuild')
+import child_process from 'child_process'
+import electron from 'electron'
+import esbuild from 'esbuild'
 
 const isDev = !process.argv.includes('--prod')
 
@@ -19,15 +18,14 @@ const electronRunner = (() => {
   }
 })()
 
-const visionBuild = esbuild.build({
+const visionBuild = await esbuild.build({
   entryPoints: ['src/vision/link-worker.ts'],
   bundle: true,
   platform: 'node',
-  outfile: 'dist/vision.js',
-  watch: isDev
+  outfile: 'dist/vision.js'
 })
 
-const mainBuild = esbuild.build({
+const mainBuild = await esbuild.context({
   entryPoints: ['src/main.ts'],
   bundle: true,
   minify: !isDev,
@@ -38,14 +36,18 @@ const mainBuild = esbuild.build({
     'process.env.STATIC': (isDev) ? '"../build/icons"' : '"."',
     'process.env.VITE_DEV_SERVER_URL': (isDev) ? '"http://localhost:5173"' : 'null'
   },
-  watch: (isDev)
-    ? { onRebuild (error) { if (!error) electronRunner.restart() } }
-    : false
+  plugins: [{
+    name: 'electron-runner',
+    setup (build) {
+      build.onEnd((result) => {
+        if (!result.errors.length) electronRunner.restart()
+      })
+    }
+  }]
 })
 
 Promise.all([
   visionBuild,
-  mainBuild
+  (isDev) ? mainBuild.watch() : mainBuild
 ])
-.then(() => { if (isDev) electronRunner.restart() })
 .catch(() => process.exit(1))
