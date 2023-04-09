@@ -2,13 +2,11 @@
   {
     "query": [
       "ITEM::Splinter of Uul-Netol",
-      "ITEM::Uul-Netol's Breachstone",
-      "ITEM::Uul-Netol's Charged Breachstone",
-      "ITEM::Uul-Netol's Enriched Breachstone",
-      "ITEM::Uul-Netol's Pure Breachstone"
+      "ITEM::Uul-Netol's Breachstone"
     ],
     "items": [
       "ITEM::Blessing of Uul-Netol",
+      "ITEM::Uul-Netol's Flawless Breachstone",
       "UNIQUE::The Infinite Pursuit // Goliath Greaves",
       "UNIQUE::Uul-Netol's Kiss // Labrys",
       "UNIQUE::The Anticipation // Ezomyte Tower Shield"
@@ -17,13 +15,11 @@
   {
     "query": [
       "ITEM::Splinter of Xoph",
-      "ITEM::Xoph's Breachstone",
-      "ITEM::Xoph's Charged Breachstone",
-      "ITEM::Xoph's Enriched Breachstone",
-      "ITEM::Xoph's Pure Breachstone"
+      "ITEM::Xoph's Breachstone"
     ],
     "items": [
       "ITEM::Blessing of Xoph",
+      "ITEM::Xoph's Flawless Breachstone",
       "UNIQUE::The Formless Flame // Siege Helmet",
       "UNIQUE::Xoph's Heart // Amber Amulet",
       "UNIQUE::Xoph's Inception // Bone Bow",
@@ -33,13 +29,11 @@
   {
     "query": [
       "ITEM::Splinter of Tul",
-      "ITEM::Tul's Breachstone",
-      "ITEM::Tul's Charged Breachstone",
-      "ITEM::Tul's Enriched Breachstone",
-      "ITEM::Tul's Pure Breachstone"
+      "ITEM::Tul's Breachstone"
     ],
     "items": [
       "ITEM::Blessing of Tul",
+      "ITEM::Tul's Flawless Breachstone",
       "UNIQUE::Tulborn // Spiraled Wand",
       "UNIQUE::The Halcyon // Jade Amulet",
       "UNIQUE::The Snowblind Grace // Coronal Leather",
@@ -49,13 +43,11 @@
   {
     "query": [
       "ITEM::Splinter of Esh",
-      "ITEM::Esh's Breachstone",
-      "ITEM::Esh's Charged Breachstone",
-      "ITEM::Esh's Enriched Breachstone",
-      "ITEM::Esh's Pure Breachstone"
+      "ITEM::Esh's Breachstone"
     ],
     "items": [
       "ITEM::Blessing of Esh",
+      "ITEM::Esh's Flawless Breachstone",
       "UNIQUE::Voice of the Storm // Lapis Amulet",
       "UNIQUE::Hand of Thought and Motion // Blinder",
       "UNIQUE::Esh's Mirror // Thorium Spirit Shield",
@@ -65,13 +57,11 @@
   {
     "query": [
       "ITEM::Splinter of Chayula",
-      "ITEM::Chayula's Breachstone",
-      "ITEM::Chayula's Charged Breachstone",
-      "ITEM::Chayula's Enriched Breachstone",
-      "ITEM::Chayula's Pure Breachstone"
+      "ITEM::Chayula's Breachstone"
     ],
     "items": [
       "ITEM::Blessing of Chayula",
+      "ITEM::Chayula's Flawless Breachstone",
       "UNIQUE::Skin of the Loyal // Simple Robe, 6L",
       "UNIQUE::Severed in Sleep // Cutlass",
       "UNIQUE::The Blue Dream // Cobalt Jewel",
