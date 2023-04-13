@@ -13,6 +13,7 @@ interface CreateOptions {
   currency: string | undefined
   collapseListings: 'app' | 'api'
   activateStockFilter: boolean
+  activateOfflineFilter: boolean
   exact: boolean
   useEn: boolean
 }
@@ -24,7 +25,7 @@ export function createFilters (
   const filters: ItemFilters = {
     searchExact: {},
     trade: {
-      offline: false,
+      offline: opts.activateOfflineFilter,
       onlineInLeague: false,
       listed: undefined,
       currency: opts.currency,
