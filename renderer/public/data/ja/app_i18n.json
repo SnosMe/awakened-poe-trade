@@ -1,0 +1,20 @@
+{
+  "please_wait": "Please wait…",
+  "map.mods.heist": "heist",
+  "map.mods.outdated": "outdated",
+  "Support development on": "Support development on",
+  "updates.maybe_outdated": "You may have an outdated version",
+  "updates.latest": "You have the latest version",
+  "updates.error": "Error while checking for updates",
+  "updates.checking": "Checking for updates",
+  "updates.downloading": "Downloading…",
+  "updates.available": "Update available: {0}",
+  "updates.never_checked": "Last checked: never",
+  "updates.last_checked": "Last checked: {0}",
+  "updates.check_now": "Check now",
+  "updates.install_now": "Install now",
+  "updates.downloads_page": "Open the Downloads page",
+  "updates.installed_on_exit": "It will be installed automatically on exit",
+  "updates.download_manually": "You can download it from GitHub",
+  "updates.download_disabled": "You have disabled automatic updates download"
+}
