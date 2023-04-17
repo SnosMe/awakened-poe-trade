@@ -10,7 +10,7 @@ interface FilterRule {
   explosivesRoom?: boolean
 }
 
-const HIDDEN_GREEDY = 'First ask yourself: would you buy an item with this stat?'
+const HIDDEN_GREEDY = 'filters.hide_greedy'
 
 const RULES: FilterRule[] = [
   { ref: stat('Has Room: Banquet Hall'), remove: true },

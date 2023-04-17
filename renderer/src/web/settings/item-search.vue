@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Perform an OCR for a Skill Gem') }}</label>
+      <label class="flex-1">{{ t('item_search.ocr_gems_key') }}</label>
       <hotkey-input v-model="ocrGemsKey" class="w-48" />
     </div>
   </div>
@@ -15,7 +15,7 @@ import { ItemSearchWidget } from '@/web/overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
-  name: 'Item search',
+  name: 'item_search.name',
   components: { HotkeyInput },
   props: configProp(),
   setup (props) {
@@ -28,11 +28,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Perform an OCR for a Skill Gem": "Выполнить OCR для гема"
-  }
-}
-</i18n>

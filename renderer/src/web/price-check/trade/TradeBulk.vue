@@ -3,7 +3,7 @@
     <!-- @TODO: fix "Matched" text jumping (min-height: 22px) -->
     <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 1.375rem;">
       <div class="flex items-center text-gray-500">
-        <span class="mr-1">{{ t('Matched:') }}</span>
+        <span class="mr-1">{{ t(':matched') }}</span>
         <span v-if="!result" class="text-gray-600">...</span>
         <div v-else class="flex items-center">
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'xchgChaos' ? 'transparent' : undefined }"
@@ -27,24 +27,24 @@
         <thead>
           <tr class="text-left">
             <th class="trade-table-heading">
-              <div class="px-2">{{ t('Price') }}</div>
+              <div class="px-2">{{ t(':price') }}</div>
             </th>
             <th class="trade-table-heading">
-              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ (selectedCurr === 'xchgChaos') ? 'chaos' : 'div' }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ t('bulk') }}</span></div>
+              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ (selectedCurr === 'xchgChaos') ? 'chaos' : 'div' }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ t(':bulk') }}</span></div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-1">{{ t('Stock') }}</div>
+              <div class="px-1">{{ t(':stock') }}</div>
             </th>
             <th class="trade-table-heading">
-              <div class="px-1">{{ t('Fulfill') }}</div>
+              <div class="px-1">{{ t(':fulfill') }}</div>
             </th>
             <th class="trade-table-heading" :class="{ 'w-full': !showSeller }">
               <div class="pr-2 pl-4">
-                <span class="ml-1" style="padding-left: 0.375rem;">{{ t('Listed') }}</span>
+                <span class="ml-1" style="padding-left: 0.375rem;">{{ t(':listed') }}</span>
               </div>
             </th>
             <th v-if="showSeller" class="trade-table-heading w-full">
-              <div class="px-2">{{ t('Seller') }}</div>
+              <div class="px-2">{{ t(':seller') }}</div>
             </th>
           </tr>
         </thead>
@@ -76,7 +76,7 @@
     </div>
   </div>
   <ui-error-box class="mb-4" v-else>
-    <template #name>{{ t('Trade site request failed') }}</template>
+    <template #name>{{ t(':error') }}</template>
     <p>Error: {{ error }}</p>
     <template #actions>
       <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
@@ -86,7 +86,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useI18nNs } from '@/web/i18n'
 import { BulkSearch, execBulkSearch, createTradeRequest, PricingResult } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
 import { AppConfig } from '@/web/Config'
@@ -222,7 +222,7 @@ export default defineComponent({
       }
     })
 
-    const { t } = useI18n()
+    const { t } = useI18nNs('trade_result')
 
     return {
       t,
@@ -252,19 +252,3 @@ export default defineComponent({
   filter: grayscale(1);
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "Matched:": "Найдено:",
-    "Trade": "Трейд",
-    "Price": "Цена",
-    "bulk": "опт",
-    "Stock": "Запас",
-    "Fulfill": "Сделки",
-    "Listed": "Выставлен",
-    "Seller": "Продавец",
-    "Trade site request failed": "Запрос к сайту не удался"
-  }
-}
-</i18n>

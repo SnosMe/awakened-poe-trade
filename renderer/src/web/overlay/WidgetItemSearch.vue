@@ -22,17 +22,17 @@
         class="self-center" :ms="4000" />
       <div v-else class="bg-gray-800 rounded">
         <div class="flex gap-x-1 p-1">
-          <input type="text" :placeholder="t('Search by name…')" class="rounded bg-gray-900 px-1 flex-1"
+          <input type="text" :placeholder="t(':input')" class="rounded bg-gray-900 px-1 flex-1"
             v-model="searchValue">
-          <button @click="clearItems" class="btn"><i class="fas fa-times" /> {{ t('Reset items') }}</button>
+          <button @click="clearItems" class="btn"><i class="fas fa-times" /> {{ t(':reset') }}</button>
         </div>
         <div class="flex gap-x-2 px-2 mb-px1 py-1">
-          <span>{{ t('Heist target:') }}</span>
+          <span>{{ t(':heist_target') }}</span>
           <div class="flex gap-x-1">
             <button :class="{ 'border': (typeFilter === 'gem') }" class="rounded px-2 bg-gray-900"
-              @click="typeFilter = 'gem'">{{ t('Skill Gem') }}</button>
+              @click="typeFilter = 'gem'">{{ t(':target_gem') }}</button>
             <button :class="{ 'border': (typeFilter === 'replica') }" class="rounded px-2 bg-gray-900"
-              @click="typeFilter = 'replica'">{{ t('Replicas') }}, <span class="line-through text-gray-600">Base items</span></button>
+              @click="typeFilter = 'replica'">{{ t(':target_replica') }}, <span class="line-through text-gray-600">Base items</span></button>
           </div>
         </div>
         <div class="flex flex-col">
@@ -56,9 +56,9 @@
             </div>
           </div>
           <div v-if="results === false"
-            class="text-center p-8 max-w-xs"><i class="fas fa-search" /> {{ t('too_many') }}</div>
+            class="text-center p-8 max-w-xs"><i class="fas fa-search" /> {{ t(':too_many') }}</div>
           <div v-else-if="!results.length"
-            class="text-center p-8 max-w-xs"><i class="fas fa-exclamation-triangle" /> {{ t('not_found') }}</div>
+            class="text-center p-8 max-w-xs"><i class="fas fa-exclamation-triangle" /> {{ t(':not_found') }}</div>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, shallowRef, ref, computed, nextTick, inject } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useI18nNs } from '@/web/i18n'
 import { distance } from 'fastest-levenshtein'
 import { ItemSearchWidget, WidgetManager } from './interfaces'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
@@ -187,7 +187,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const { t } = useI18n()
+    const { t } = useI18nNs('item_search')
     const { findPriceByQuery, autoCurrency } = usePoeninja()
 
     const showTimeout = shallowRef<{ reset:() => void } | null>(null)
@@ -317,21 +317,3 @@ export default defineComponent({
   animation: starredItemEnter 0.8s linear;
 }
 </style>
-
-<i18n>
-{
-  "en": {
-    "too_many": "Too many items found, enter the name more precisely.",
-    "not_found": "No items found."
-  },
-  "ru": {
-    "Search by name…": "Искать по имени…",
-    "Reset items": "Сбросить предметы",
-    "Heist target:": "Цель Кражи:",
-    "Skill Gem": "Камни умений",
-    "too_many": "Найдено слишком много предметов, уточните название.",
-    "not_found": "Не найдено ни одного предмета.",
-    "Replicas": "Копии"
-  }
-}
-</i18n>

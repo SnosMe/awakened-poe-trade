@@ -42,9 +42,9 @@ export function createPresets (
     item.category === ItemCategory.Sentinel
   ) {
     return {
-      active: 'Exact',
+      active: 'filters.preset_exact',
       presets: [{
-        id: 'Exact',
+        id: 'filters.preset_exact',
         filters: createFilters(item, { ...opts, exact: true }),
         stats: createExactStatFilters(item, item.statsByType, opts)
       }]
@@ -52,7 +52,7 @@ export function createPresets (
   }
 
   const pseudoPreset: FilterPreset = {
-    id: 'Pseudo',
+    id: 'filters.preset_pseudo',
     filters: createFilters(item, { ...opts, exact: false }),
     stats: initUiModFilters(item, opts)
   }
@@ -81,7 +81,7 @@ export function createPresets (
   }
 
   const baseItemPreset: FilterPreset = {
-    id: 'Base item',
+    id: 'filters.preset_base_item',
     filters: createFilters(item, { ...opts, exact: true }),
     stats: createExactStatFilters(item, item.statsByType, opts)
   }

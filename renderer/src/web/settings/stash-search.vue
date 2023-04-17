@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-md p-2">
-    <input class="bg-gray-900 rounded px-1 w-48 mb-2" :placeholder="t('widget title')"
+    <input class="bg-gray-900 rounded px-1 w-48 mb-2" :placeholder="t('widget.title')"
       v-model="title" />
     <dnd-container tag="div" class="flex flex-col gap-y-2"
       v-model="entries" item-key="id"
@@ -11,14 +11,14 @@
             <i class="fas fa-grip-vertical text-gray-400" />
           </button>
           <input v-model="entry.text"
-            :placeholder="t('search text or regex')"
+            :placeholder="t('stash_search.search_text')"
             class="px-1 col-span-2 leading-6"
             :class="(entry.text.length > 50) ? 'bg-red-800' : 'bg-gray-900'">
           <button class="leading-none rounded-r bg-gray-700 w-6 h-6" @click="removeEntry(entry.id)">
             <i class="fas fa-times text-gray-400" />
           </button>
           <input v-model="entry.name"
-            :placeholder="t('friendly name')"
+            :placeholder="t('stash_search.friendly_name')"
             class="bg-gray-900 px-1 col-start-2 leading-6 rounded">
           <hotkey-input v-model="entry.hotkey" />
         </div>
@@ -38,7 +38,7 @@ import { configProp, configModelValue } from './utils'
 import type { StashSearchWidget } from '@/web/overlay/interfaces'
 
 export default defineComponent({
-  name: 'Stash search',
+  name: 'stash_search.name',
   components: { DndContainer, HotkeyInput },
   props: configProp<StashSearchWidget>(),
   setup (props) {
@@ -63,13 +63,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "widget title": "заголовок виджета",
-    "search text or regex": "текст или регекс",
-    "friendly name": "нормальное название"
-  }
-}
-</i18n>

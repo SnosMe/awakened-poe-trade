@@ -4,10 +4,10 @@
     <p class="text-gray-500">{{ updateInfo.str2 }}</p>
   </div>
   <div v-if="loadingLeagues" class="pt-2 px-4">
-    <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
+    <i class="fas fa-info-circle text-gray-600"></i> {{ t('app.leagues_loading') }}</div>
   <ui-error-box class="mx-4 mt-4" v-else-if="leaguesError">
-    <template #name>{{ t('Failed to load leagues') }}</template>
-    <p>{{ t('leagues_failed') }}</p>
+    <template #name>{{ t('app.leagues_failed') }}</template>
+    <p>{{ t('leagues_failed_help') }}</p>
     <template #actions>
       <button class="btn" @click="retry">{{ t('Retry') }}</button>
       <button class="btn" @click="openCaptcha">{{ t('Browser') }}</button>
@@ -59,16 +59,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "en": {
-    "leagues_failed": "Make sure the realm is not under maintenance. Also try clicking on the \"Browser\" button, you may need to complete a CAPTCHA there."
-  },
-  "ru": {
-    "Loading leagues...": "Загрузка лиг...",
-    "Failed to load leagues": "Не удалось загрузить лиги",
-    "leagues_failed": "Убедитесь, что сервера не находятся на обслуживании. Попробуйте нажать на кнопку \"Браузер\", возможно, там будет CAPTCHA."
-  }
-}
-</i18n>

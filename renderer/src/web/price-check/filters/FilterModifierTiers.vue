@@ -1,7 +1,7 @@
 <template>
   <div v-if="tags.length" class="flex items-center text-xs leading-none gap-x-1">
     <span v-for="tag of tags"
-      :class="$style[tag.type]">{{ t('Tier {0}', [tag.tier]) }}</span>
+      :class="$style[tag.type]">{{ t('filters.tier', [tag.tier]) }}</span>
   </div>
 </template>
 
@@ -71,14 +71,3 @@ export default defineComponent({
   @apply bg-gray-700 text-black;
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "Tier {0}": "Ур {0}"
-  },
-  "cmn-Hant": {
-    "Tier {0}": "階層 {0}"
-  }
-}
-</i18n>

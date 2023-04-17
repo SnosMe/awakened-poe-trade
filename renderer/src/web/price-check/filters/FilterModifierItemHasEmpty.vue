@@ -30,9 +30,9 @@ export default defineComponent({
       if (filter.tradeId[0] !== 'item.has_empty_modifier') return null
 
       return ([
-        [ItemHasEmptyModifier.Any, 'Any'],
-        [ItemHasEmptyModifier.Prefix, 'Prefix'],
-        [ItemHasEmptyModifier.Suffix, 'Suffix']
+        [ItemHasEmptyModifier.Any, 'has_empty_affix'],
+        [ItemHasEmptyModifier.Prefix, 'has_empty_prefix'],
+        [ItemHasEmptyModifier.Suffix, 'has_empty_suffix']
       ] as const).map(([value, text]) => ({
         text,
         select: () => select(value),
@@ -59,13 +59,3 @@ export default defineComponent({
   @apply border-gray-500;
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "Any": "Любое",
-    "Prefix": "Префикс",
-    "Suffix": "Суффикс"
-  }
-}
-</i18n>

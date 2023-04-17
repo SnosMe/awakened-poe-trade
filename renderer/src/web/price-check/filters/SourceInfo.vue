@@ -35,15 +35,15 @@ export default defineComponent({
     const modText = computed(() => {
       const { info } = props.source.modifier
 
-      let text = t(info.type)
+      let text = t(`item.mod_${info.type}`)
       if (info.name) {
         text += ` "${info.name}"`
       }
       if (info.tier != null) {
-        text += ` (${t('Tier: {0}', [info.tier])})`
+        text += ` (${t('item.mod_tier', [info.tier])})`
       }
       if (info.rank != null) {
-        text += ` (${t('Rank: {0}', [info.rank])})`
+        text += ` (${t('item.mod_rank', [info.rank])})`
       }
       return text
     })
@@ -108,24 +108,3 @@ export default defineComponent({
   flex-shrink: 0;
 }
 </style>
-
-<i18n>
-{
-  "en": {
-    "implicit": "Implicit",
-    "fractured": "Fractured",
-    "explicit": "Explicit",
-    "crafted": "Crafted",
-    "scourge": "Scourge"
-  },
-  "ru": {
-    "implicit": "Собственное",
-    "fractured": "Расколотый",
-    "explicit": "Свойство",
-    "crafted": "Мастерский",
-    "scourge": "Преображённое",
-    "Tier: {0}": "Уровень: {0}",
-    "Rank: {0}": "Ранг: {0}"
-  }
-}
-</i18n>

@@ -1,11 +1,11 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Start and Pause') }}</label>
+      <label class="flex-1">{{ t('stopwatch.toggle_key') }}</label>
       <hotkey-input v-model="toggleKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Reset') }}</label>
+      <label class="flex-1">{{ t('stopwatch.reset_key') }}</label>
       <hotkey-input v-model="resetKey" class="w-48" />
     </div>
   </div>
@@ -19,7 +19,7 @@ import { configProp, configModelValue } from './utils'
 import type { StopwatchWidget } from '@/web/overlay/interfaces'
 
 export default defineComponent({
-  name: 'Stopwatch',
+  name: 'stopwatch.name',
   components: { HotkeyInput },
   props: configProp<StopwatchWidget>(),
   setup (props) {
@@ -33,12 +33,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Start and Pause": "Старт и пауза",
-    "Reset": "Сброс"
-  }
-}
-</i18n>

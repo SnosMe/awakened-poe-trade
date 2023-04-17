@@ -16,7 +16,7 @@
     <div v-if="showEditingNotification"
       class="widget-default-style p-6 bg-blue-600 mx-auto text-center text-base mt-6"
       style="min-width: 30rem; z-index: 999; width: fit-content; position: absolute; left: 0; right: 0;">
-      <i18n-t keypath="Press {0} to continue editing.">
+      <i18n-t keypath="reopen_settings">
         <span class="bg-blue-800 rounded px-1">{{ overlayKey }}</span>
       </i18n-t>
     </div>
@@ -314,11 +314,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-  {
-    "ru": {
-      "Press {0} to continue editing.": "Нажмите {0} чтобы продолжить редактирование."
-    }
-  }
-</i18n>

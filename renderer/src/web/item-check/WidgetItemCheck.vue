@@ -11,7 +11,6 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, inject, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 import Widget from '../overlay/Widget.vue'
 import MapCheck from '../map-check/MapCheck.vue'
 import ItemInfo from './ItemInfo.vue'
@@ -34,7 +33,6 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const { t } = useI18n()
 
     const checkPosition = ref({ x: 1, y: 1 })
     const item = ref<ParsedItem | null>(null)
@@ -82,7 +80,6 @@ export default defineComponent({
     })
 
     return {
-      t,
       anchor,
       item,
       isMapLike
@@ -90,10 +87,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-  }
-}
-</i18n>

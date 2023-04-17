@@ -2,7 +2,7 @@
   <input
     @keyup="handleKeyup"
     @keydown.prevent
-    :placeholder="modelValue || t('Not Set')"
+    :placeholder="modelValue || t('settings.no_key')"
     :class="{ 'placeholder-red-400': !modelValue }"
     class="rounded bg-gray-900 px-1 text-center font-poe" />
 </template>
@@ -65,11 +65,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Not Set": "Не назначено"
-  }
-}
-</i18n>

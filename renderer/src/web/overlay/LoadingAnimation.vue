@@ -6,7 +6,7 @@
       <div :class="$style.box">
         <div class="py-2 px-4">
           <div class="text-base">Awakened PoE Trade</div>
-          <p>{{ t('Is ready and running in background') }}</p>
+          <p>{{ t('app_is_ready') }}</p>
         </div>
       </div>
     </div>
@@ -68,11 +68,3 @@ export default defineComponent({
   filter: drop-shadow(2px 4px 6px #000);
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "Is ready and running in background": "Запущен и работает в фоновом режиме"
-  }
-}
-</i18n>

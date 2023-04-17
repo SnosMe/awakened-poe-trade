@@ -5,7 +5,7 @@
         <div v-if="!isEditing" class="text-gray-100 m-1 leading-4 text-center">{{ config.wmTitle || 'Untitled' }}</div>
         <input v-else
           class="leading-4 rounded text-gray-100 p-1 bg-gray-700 w-full mb-1"
-          :placeholder="t('widget title')"
+          :placeholder="t('widget.title')"
           v-model="config.wmTitle">
       </template>
       <dnd-container tag="div" class="flex gap-x-1"
@@ -26,7 +26,7 @@
         <template #footer v-if="isEditing">
           <div :class="$style.card" class="flex justify-center items-center">
             <input type="file" id="file" class="hidden" accept="image/*" @input="handleFile">
-            <label class="text-gray-400 hover:bg-gray-700 py-1 px-2 rounded cursor-pointer" for="file"><i class="fas fa-file-import"></i> {{ t('Choose File') }}</label>
+            <label class="text-gray-400 hover:bg-gray-700 py-1 px-2 rounded cursor-pointer" for="file"><i class="fas fa-file-import"></i> {{ t('choose_file') }}</label>
           </div>
         </template>
       </dnd-container>
@@ -102,12 +102,3 @@ export default defineComponent({
   position: relative;
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "widget title": "заголовок виджета",
-    "Choose File": "Выберите файл"
-  }
-}
-</i18n>

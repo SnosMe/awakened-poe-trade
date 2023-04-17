@@ -4,13 +4,13 @@
       <div class="flex flex-col gap-y-1" v-for="(command, idx) in commands" :key="idx">
         <input v-model.trim="command.text" class="rounded bg-gray-900 px-1 block w-full font-poe" />
         <div class="flex gap-x-2">
-          <ui-toggle v-model="command.send" class="ml-1">{{ t('press Enter') }}</ui-toggle>
+          <ui-toggle v-model="command.send" class="ml-1">{{ t('settings.chat_cmd_send') }}</ui-toggle>
           <button @click="removeCommand(idx)" class="ml-auto text-gray-500">{{ t('Remove') }}</button>
           <hotkey-input v-model="command.hotkey" class="w-48" />
         </div>
       </div>
     </div>
-    <button @click="addComand" class="bg-gray-900 rounded flex items-baseline px-2 py-1 leading-none"><i class="fas fa-plus mr-1"></i> {{ t('Add command') }}</button>
+    <button @click="addComand" class="bg-gray-900 rounded flex items-baseline px-2 py-1 leading-none"><i class="fas fa-plus mr-1"></i> {{ t('settings.chat_cmd_add') }}</button>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import { configProp } from './utils'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
-  name: 'Chat',
+  name: 'settings.chat',
   components: { HotkeyInput },
   props: configProp(),
   setup (props) {
@@ -44,12 +44,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Add command": "Добавить команду",
-    "press Enter": "нажимать Enter"
-  }
-}
-</i18n>

@@ -3,10 +3,10 @@
     <div class="flex flex-col items-center p-2 mb-4">
       <img class="w-12 h-12" src="/images/TransferOrb.png">
       <p class="text-base">Awakened PoE Trade</p>
-      <p class="">{{ t('Version {0}', [version]) }}</p>
+      <p class="">{{ t('app.version', [version]) }}</p>
       <div class="flex gap-2">
-        <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/releases" target="_blank">{{ t('Release notes') }}</a>
-        <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/issues" target="_blank">{{ t('Report a bug on GitHub') }}</a>
+        <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/releases" target="_blank">{{ t('app.release_notes') }}</a>
+        <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/issues" target="_blank">{{ t('app.report_bug') }}</a>
       </div>
     </div>
     <div class="border border-gray-600 rounded p-2 whitespace-nowrap min-w-min w-72">
@@ -16,7 +16,7 @@
         class="btn w-full mt-1">{{ info.actionText }}</button>
     </div>
     <div class="text-center mt-auto py-8">
-      <p>{{ t('contact_in_discord') }} <br><span class="font-sans text-gray-500 select-all">&lt;@295216259795124225&gt;</span></p>
+      <p>{{ t('app.contact_me') }} <br><span class="font-sans text-gray-500 select-all">&lt;@295216259795124225&gt;</span></p>
       <ul class="flex gap-4">
         <li><img class="rounded inline" src="https://cdn.discordapp.com/icons/645607528297922560/a_c177897c1751abde48b893844811a1a7.gif?size=32"> <a class="border-b" href="https://discord.gg/tftrove" target="_blank">The Forbidden Trove</a></li>
         <li><img class="rounded inline" src="https://cdn.discordapp.com/icons/174993814845521922/53a393aa8b4f386bad2b41878dc324b5.webp?size=32"> <a class="border-b" href="https://discord.gg/pathofexile" target="_blank">r/pathofexile</a></li>
@@ -55,7 +55,7 @@ function fmtTime (millis: number) {
 }
 
 export default defineComponent({
-  name: 'About',
+  name: 'settings.about',
   inheritAttrs: false,
   setup () {
     const { t } = useI18n()
@@ -88,17 +88,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "en": {
-    "contact_in_discord": "Contact me on one of the PoE Discords,"
-  },
-  "ru": {
-    "Version {0}": "Версия {0}",
-    "Release notes": "Список изменений",
-    "Report a bug on GitHub": "Сообщить о баге на GitHub",
-    "contact_in_discord": "Пишите мне в дискорде по PoE,"
-  }
-}
-</i18n>

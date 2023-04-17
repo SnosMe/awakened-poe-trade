@@ -1,4 +1,4 @@
-import { createI18n, Composer as I18n } from 'vue-i18n'
+import { createI18n, Composer as I18n, useI18n } from 'vue-i18n'
 import { nextTick } from 'vue'
 
 let _global: I18n
@@ -35,4 +35,17 @@ export async function loadLang (lang: string): Promise<void> {
   document.documentElement.lang = lang
 
   return await nextTick()
+}
+
+export function useI18nNs (name: string) {
+  const { t } = useI18n()
+  return {
+    t: ((path, ...args) => {
+      if (typeof path === 'string' && path.startsWith(':')) {
+        return (t as any)(path.replace(':', `${name}.`), ...args)
+      } else {
+        return (t as any)(path, ...args)
+      }
+    }) as typeof t
+  }
 }

@@ -1,11 +1,11 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-2" v-if="!leagues.error.value">
-      <div class="flex-1 mb-1">{{ t('League') }}
+      <div class="flex-1 mb-1">{{ t('league') }}
         <button class="btn" @click="leagues.load" :disabled="leagues.isLoading.value">{{ t('Refresh') }}</button>
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
-        <i class="fas fa-info-circle text-gray-600"></i> {{ t('Loading leagues...') }}</div>
+        <i class="fas fa-info-circle text-gray-600"></i> {{ t('app.leagues_loading') }}</div>
       <template v-else-if="leagues.list.value.length">
         <div
           class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-nowrap"
@@ -15,92 +15,92 @@
           </div>
         </div>
         <div class="flex gap-x-2 mb-4">
-          <div class="text-gray-500">{{ t('or Private League') }}</div>
+          <div class="text-gray-500">{{ t('settings.private_league') }}</div>
           <input v-model="customLeagueId" placeholder="My League (PL12345)" class="rounded bg-gray-900 px-1 mb-1 flex-1" />
         </div>
       </template>
     </div>
     <ui-error-box v-else class="mb-4">
-      <template #name>{{ t('Failed to load leagues') }}</template>
-      <p>{{ t('Price check Item, and follow the instructions in the error description.') }}</p>
+      <template #name>{{ t('app.leagues_failed') }}</template>
+      <p>{{ t('app.leagues_failed_help_alt') }}</p>
       <template #actions>
         <button class="btn" @click="leagues.load">{{ t('Retry') }}</button>
       </template>
     </ui-error-box>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Account name') }}</div>
+      <div class="flex-1 mb-1">{{ t('settings.account_name') }}</div>
       <div class="mb-4">
         <input v-model="accountName" class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe" />
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Show seller') }}</div>
+      <div class="flex-1 mb-1">{{ t(':show_seller') }}</div>
       <div class="mb-1 flex">
         <ui-radio v-model="showSeller" :value="false" class="mr-4">{{ t('No') }}</ui-radio>
-        <ui-radio v-model="showSeller" value="account" class="mr-4">{{ t('Account name') }}</ui-radio>
-        <ui-radio v-model="showSeller" value="ign">{{ t('Last character name') }}</ui-radio>
+        <ui-radio v-model="showSeller" value="account" class="mr-4">{{ t('settings.account_name') }}</ui-radio>
+        <ui-radio v-model="showSeller" value="ign">{{ t('settings.last_char_name') }}</ui-radio>
       </div>
-      <div class="mb-4 italic text-gray-500">{{ t('Your items will be highlighted even if this setting is off') }}</div>
+      <div class="mb-4 italic text-gray-500">{{ t(':highlight_hint') }}</div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Fill stat values') }}</div>
+      <div class="flex-1 mb-1">{{ t(':fill_rolls') }}</div>
       <div class="mb-4 flex">
         <div class="flex mr-6">
           <span class="mr-1">+-</span>
           <input v-model.number="searchStatRange" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
           <span class="ml-1">%</span>
         </div>
-        <ui-radio v-model="searchStatRange" :value="0">{{ t('Exact roll') }}</ui-radio>
+        <ui-radio v-model="searchStatRange" :value="0">{{ t(':fill_roll_exact') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Minimum buyout price') }}</div>
+      <div class="flex-1 mb-1">{{ t(':min_price') }}</div>
       <div class="mb-4 flex">
         <div class="flex mr-6">
           <input v-model.number="chaosPriceThreshold" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
-          <span class="ml-2">{{ t('Chaos Orbs') }}</span>
+          <span class="ml-2">{{ t(':min_price_in_chaos') }}</span>
         </div>
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Always select "Stock" filter') }}</div>
+      <div class="flex-1 mb-1">{{ t(':select_stock') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="activateStockFilter" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
         <ui-radio v-model="activateStockFilter" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Show price prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
+      <div class="flex-1 mb-1">{{ t(':show_prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
       <div class="mb-4 flex">
         <ui-radio v-model="requestPricePrediction" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
         <ui-radio v-model="requestPricePrediction" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Show memorized cursor position') }}</div>
+      <div class="flex-1 mb-1">{{ t(':cursor_pos') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="showCursor" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
         <ui-radio v-model="showCursor" :value="false">{{ t('No') }}</ui-radio>
       </div>
     </div>
     <div class="mb-6" :class="{ 'p-2 bg-orange-800 rounded': builtinBrowser }">
-      <div class="flex-1 mb-1">{{ t('Enable builtin browser') }}</div>
+      <div class="flex-1 mb-1">{{ t(':enable_browser') }}</div>
       <div class="flex">
         <ui-radio v-model="builtinBrowser" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
         <ui-radio v-model="builtinBrowser" :value="false">{{ t('No') }}</ui-radio>
       </div>
-      <div v-if="builtinBrowser" class="mt-1">{{ t('builtin_browser_warning') }}</div>
+      <div v-if="builtinBrowser" class="mt-1">{{ t(':builtin_browser_warning') }}</div>
     </div>
-    <div class="mb-2 bg-orange-800 p-2 rounded">{{ t('Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.') }}</div>
+    <div class="mb-2 bg-orange-800 p-2 rounded">{{ t(':warn_expensive') }}</div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Show indication on collapsed listings') }}</div>
+      <div class="flex-1 mb-1">{{ t(':accurate_collapsed') }}</div>
       <div class="mb-4 flex">
         <ui-radio v-model="collapseListings" value="api" class="mr-4">{{ t('No') }}</ui-radio>
         <ui-radio v-model="collapseListings" value="app">{{ t('Yes') }}</ui-radio>
       </div>
     </div>
     <div class="mb-2" >
-      <div class="flex-1 mb-1">{{ t('Perform an auto search, when pressing') }}</div>
+      <div class="flex-1 mb-1">{{ t(':auto_search') }}</div>
       <div class="mb-4 flex">
         <ui-toggle v-if="hotkeyQuick"
           v-model="smartInitialSearch" class="mr-6">
@@ -113,7 +113,7 @@
       </div>
     </div>
     <div class="mb-2 border p-2 border-gray-600 border-dashed">
-      <div class="flex-1 mb-1">{{ t('Extra time to prevent spurious Rate limiting') }}</div>
+      <div class="flex-1 mb-1">{{ t(':extra_delay') }}</div>
       <div class="flex">
         <div class="flex mr-6">
           <input v-model.number="apiLatencySeconds" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
@@ -126,19 +126,19 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useI18nNs } from '@/web/i18n'
 import { configModelValue, configProp, findWidget } from './utils'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { useLeagues } from '../background/Leagues'
 
 export default defineComponent({
-  name: 'Price check',
+  name: 'price_check.name',
   props: configProp(),
   setup (props) {
     const configWidget = computed(() => findWidget<PriceCheckWidget>('price-check', props.config)!)
 
     const leagues = useLeagues()
-    const { t } = useI18n()
+    const { t } = useI18nNs('price_check')
 
     return {
       t,
@@ -199,39 +199,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "en": {
-    "builtin_browser_warning": "I am aware that future releases can potentially contain malicious code that can steal my POESESSID."
-  },
-  "ru": {
-    "Account name": "Имя учетной записи",
-    "or Private League": "или Приватная лига",
-    "Show seller": "Показывать продавца",
-    "Last character name": "Имя последнего персонажа",
-    "Your items will be highlighted even if this setting is off": "Ваши предметы будут подсвечены, даже если эта настройка выключена",
-    "Fill stat values": "Заполнять значения свойств",
-    "Exact roll": "Точное значение",
-    "Show memorized cursor position": "Показывать запомненную позицию курсора",
-    "Minimum buyout price": "Минимальная цена выкупа",
-    "Chaos Orbs": "Сфер хаоса",
-    "Extra time to prevent spurious Rate limiting": "Добавочное время для предотвращения ложного срабатывания ограничения на запросы",
-    "seconds": "секунды",
-    "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.": "Настройки ниже являются компромиссом между увеличенной нагрузкой на сайт PoE и удобством проверки цен / более точным поиском.",
-    "Show indication on collapsed listings": "Показывать индикацию на сгруппированных результатах",
-    "Perform an auto search, when pressing": "Выполнять автоматический поиск при нажатии",
-    "Always select \"Stock\" filter": "Всегда активировать фильтр \"Запас\"",
-    "League": "Лига",
-    "Loading leagues...": "Загрузка лиг...",
-    "Failed to load leagues": "Не удалось загрузить лиги",
-    "Price check Item, and follow the instructions in the error description.": "Прайс-чекните предмет, и следуйте инструкции в описании ошибки.",
-    "Show price prediction": "Показывать приблизительную цену",
-    "Enable builtin browser": "Включить встроенный браузер",
-    "builtin_browser_warning": "Я осознаю, что в будущие релизы могут потенциально содержать вредоносный код, который может украсть мой POESESSID."
-  },
-  "cmn-Hant": {
-    "League": "聯盟"
-  }
-}
-</i18n>

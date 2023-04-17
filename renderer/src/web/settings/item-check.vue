@@ -1,11 +1,11 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Open item on wiki') }}</label>
+      <label class="flex-1">{{ t('item.open_on_wiki') }}</label>
       <hotkey-input v-model="wikiKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Open item on PoEDB') }}</label>
+      <label class="flex-1">{{ t('item.open_on_poedb') }}</label>
       <hotkey-input v-model="poedbKey" class="w-48" />
     </div>
     <div v-if="isEnglish" class="mb-4 flex">
@@ -13,7 +13,7 @@
       <hotkey-input v-model="craftOfExileKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('Stash search') }}</label>
+      <label class="flex-1">{{ t('item.find_in_stash') }}</label>
       <hotkey-input v-model="stashSearchKey" class="w-48" />
     </div>
   </div>
@@ -27,7 +27,7 @@ import { ItemCheckWidget } from '@/web/overlay/interfaces'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
-  name: 'Item info',
+  name: 'item.info',
   components: { HotkeyInput },
   props: configProp(),
   setup (props) {
@@ -44,16 +44,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Open item on wiki": "Открыть предмет в вики",
-    "Open item on PoEDB": "Открыть предмет в PoEDB",
-    "Stash search": "Поиск в тайнике"
-  },
-  "cmn-Hant": {
-    "Open item on wiki": "開啟wiki頁面"
-  }
-}
-</i18n>

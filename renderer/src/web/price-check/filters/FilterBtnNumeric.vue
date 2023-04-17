@@ -1,6 +1,6 @@
 <template>
   <div :class="[$style.btn, { [$style.active]: !filter.disabled }]">
-    <button @click="filter.disabled = !filter.disabled" class="pl-2">{{ t(name) }}</button>
+    <button @click="filter.disabled = !filter.disabled" class="pl-2">{{ name }}</button>
     <input :class="$style.input" step="any" type="number"
       v-model.number="inputMin"
       @focus="inputFocus"
@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, ref, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { FilterNumeric } from './interfaces'
 
 export default defineComponent({
@@ -49,10 +48,7 @@ export default defineComponent({
       _inputMax.value = filter.max ?? ''
     }, { immediate: true })
 
-    const { t } = useI18n()
-
     return {
-      t,
       inputMin: computed<number | ''>({
         get () { return _inputMin.value },
         set (value) {
@@ -122,32 +118,3 @@ export default defineComponent({
   &:focus { cursor: none; }
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "Item Level:": "Ур. предмета:",
-    "Stock:": "Запаc:",
-    "Map Tier:": "Ур. карты:",
-    "Area Level:": "Ур. области:",
-    "Wings Revealed:": "Крыльев обнаружено:",
-    "Links:": "Связи:",
-    "White:": "Белые:",
-    "Quality:": "Качество:",
-    "Level:": "Уровень:",
-    "Charge:": "Заряд:"
-  },
-  "cmn-Hant": {
-    "Item Level:": "物品等級:",
-    "Stock:": "堆疊數量:",
-    "Map Tier:": "地圖階級:",
-    "Area Level:": "地區等級:",
-    "Wings Revealed:": "展翅:",
-    "Links:": "連線:",
-    "White:": "白:",
-    "Quality:": "品質:",
-    "Level:": "等級:",
-    "Charge:": "充能:"
-  }
-}
-</i18n>

@@ -2,11 +2,11 @@
   <div class="flex flex-col overflow-hidden h-full">
     <div class="p-1 flex">
       <input :placeholder="t('Search') + '...'" v-model="search" class="bg-gray-900 rounded px-1">
-      <ui-toggle v-model="onlySelected" class="mx-2">{{ t('Only selected') }}</ui-toggle>
-      <ui-toggle v-model="showNewStats" class="ml-12">{{ t('Show icon for new mods') }}</ui-toggle>
+      <ui-toggle v-model="onlySelected" class="mx-2">{{ t(':search_selected') }}</ui-toggle>
+      <ui-toggle v-model="showNewStats" class="ml-12">{{ t(':new_mods_icon') }}</ui-toggle>
     </div>
     <div class="flex items-baseline py-1 shadow">
-      <div class="flex-1 px-2 leading-none">{{ t('Stat (found: {0})', [filteredStats.length]) }}</div>
+      <div class="flex-1 px-2 leading-none">{{ t(':search_stat_col', [filteredStats.length]) }}</div>
       <div class="flex gap-x-1 text-center items-center" style="padding-right: calc(0.875rem + 2.350rem);">
         <i class="w-8 py-1 bg-orange-600 fas fa-exclamation-triangle"></i>
         <i class="w-8 py-1 bg-red-700 fas fa-skull-crossbones"></i>
@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useI18nNs } from '@/web/i18n'
 import { configProp, findWidget } from '../utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
@@ -48,7 +48,7 @@ function statToShowOrder (stat: Omit<MapStatMatcher, 'outdated'>) {
 }
 
 export default defineComponent({
-  name: 'Maps',
+  name: 'map_check.name',
   components: {
     MapsStatEntry,
     VirtualScroll: VirtualScroll as VirtualScrollT<MapStatMatcher>
@@ -103,7 +103,7 @@ export default defineComponent({
         .map(entry => ({ str: entry.matcher, heist: undefined, outdated: true }))
     })
 
-    const { t } = useI18n()
+    const { t } = useI18nNs('map_check')
 
     return {
       t,
@@ -134,13 +134,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Only selected": "Только выбранные",
-    "Stat (found: {0})": "Свойства (найдено: {0})",
-    "Show icon for new mods": "Иконка у новых модов"
-  }
-}
-</i18n>

@@ -78,7 +78,7 @@ const PSEUDO_RULES: PseudoRule[] = [
       if (filter.sources.length === 1 &&
           filter.sources[0].modifier.info.type === ModifierType.Crafted
       ) {
-        filter.hidden = 'Crafted Chaos Resistance without Explicit mod has no value'
+        filter.hidden = 'filters.hide_crafted_chaos'
       } else {
         filter.disabled = false
       }
@@ -371,7 +371,7 @@ export function filterPseudo (ctx: FiltersCreationContext) {
       : resFilters[0]
 
     if (maxFilter) {
-      maxFilter.hidden = 'Filtering by exact Elemental Resistance unreasonably increases the price'
+      maxFilter.hidden = 'filters.hide_ele_res'
     }
 
     ctx.filters = ctx.filters.filter(filter => !resFilters.includes(filter) || filter === maxFilter)

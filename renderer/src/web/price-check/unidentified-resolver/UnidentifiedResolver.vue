@@ -1,7 +1,7 @@
 <template>
   <div v-if="show" class="layout-column">
     <div class="m-4 py-1 px-2 bg-gray-900 rounded">
-      {{ t('You are trying to price check unidentified Unique item with base type "{0}". Which one?', [baseType]) }}
+      {{ t('item.identification', [baseType]) }}
     </div>
     <div class="grid grid-cols-2 gap-2 overflow-auto pb-4 px-4">
       <div v-for="item in identifiedVariants" :key="item.name" class="flex">
@@ -75,11 +75,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "You are trying to price check unidentified Unique item with base type \"{0}\". Which one?": "Вы пытаетесь сделать прайс-чек неопознанного Уникального предмета с базой \"{0}\". Какого именно?"
-  }
-}
-</i18n>
