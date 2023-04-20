@@ -3,7 +3,7 @@ import type { StatCalculated } from '@/parser/modifiers'
 import type { ParsedItem } from '@/parser/ParsedItem'
 
 export interface FilterPreset {
-  id: 'Pseudo' | 'Base' | string
+  id: string
   filters: ItemFilters
   stats: StatFilter[]
 }
@@ -106,17 +106,17 @@ export interface StatFilter {
 }
 
 export const INTERNAL_TRADE_IDS = [
-  'armour.base_percentile',
-  'armour.armour',
-  'armour.evasion_rating',
-  'armour.energy_shield',
-  'armour.ward',
-  'armour.block',
-  'weapon.total_dps',
-  'weapon.physical_dps',
-  'weapon.elemental_dps',
-  'weapon.crit',
-  'weapon.aps',
+  'item.base_percentile',
+  'item.armour',
+  'item.evasion_rating',
+  'item.energy_shield',
+  'item.ward',
+  'item.block',
+  'item.total_dps',
+  'item.physical_dps',
+  'item.elemental_dps',
+  'item.crit',
+  'item.aps',
   'item.has_empty_modifier'
 ] as const
 

@@ -44,7 +44,7 @@
             :item="item" :advanced-check="advancedCheck" />
         </template>
         <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
-          <i18n-t keypath="Press {0} to switch between browser and game." tag="div">
+          <i18n-t keypath="app.toggle_browser_hint" tag="div">
             <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
           </i18n-t>
         </div>
@@ -161,11 +161,11 @@ export default defineComponent({
         }
       } catch (err: unknown) {
         const strings = (err instanceof Error && err.message === 'UNKNOWN_ITEM')
-          ? 'unknown_item'
-          : 'parse_error'
+          ? 'item.unknown'
+          : 'item.parse_error'
 
         item.value = {
-          error: { name: `${strings}`, message: `${strings}_msg` },
+          error: { name: `${strings}`, message: `${strings}_help` },
           rawText: e.clipboard
         }
       }
@@ -258,21 +258,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "en": {
-    "unknown_item": "Unknown Item",
-    "unknown_item_msg": "If this Item was introduced in this League, it will likely be supported in the next app update.",
-    "parse_error": "An error occurred while parsing the item",
-    "parse_error_msg": "This is probably a bug and you can report it on GitHub."
-  },
-  "ru": {
-    "unknown_item": "Неизвестный предмет",
-    "unknown_item_msg": "Если это новый предмет в этой лиге, скорее всего, он будет добавлен в следующем обновлении.",
-    "parse_error": "Произошла ошибка при парсинге предмета",
-    "parse_error_msg": "Скорее всего, это ошибка, и вы можете сообщить о ней на GitHub.",
-    "Press {0} to switch between browser and game.": "Нажмите {0} для перехода между браузером/игрой."
-  }
-}
-</i18n>

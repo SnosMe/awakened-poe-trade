@@ -1,0 +1,3 @@
+files:
+  - source: /renderer/public/data/en/app_i18n.json
+    translation: /renderer/public/data/%two_letters_code%/%original_file_name%

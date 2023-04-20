@@ -7,12 +7,12 @@
       <button class="btn flex-1" @click="openPoedb">poedb</button>
       <button v-if="showCoE" class="btn flex-1" @click="openCoE">CoE</button>
       <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
-      <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('Find in Stash') }}</button>
+      <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('item.find_in_stash') }}</button>
     </div>
     <div v-if="weaponDPS" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
-      <div>{{ t('Physical DPS:') }}</div><div class="text-right">{{ weaponDPS.phys }}</div>
-      <div>{{ t('Elemental DPS:') }}</div><div class="text-right">{{ weaponDPS.elem }}</div>
-      <div>{{ t('Total DPS:') }}</div><div class="text-right">{{ weaponDPS.total }}</div>
+      <div>{{ t('item.physical_dps') }}</div><div class="text-right">{{ weaponDPS.phys }}</div>
+      <div>{{ t('item.elemental_dps') }}</div><div class="text-right">{{ weaponDPS.elem }}</div>
+      <div>{{ t('item.total_dps') }}</div><div class="text-right">{{ weaponDPS.total }}</div>
     </div>
   </div>
 </template>
@@ -55,19 +55,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<i18n>
-{
-  "ru": {
-    "Physical DPS:": "Физический ДПС:",
-    "Elemental DPS:": "Стихийный ДПС:",
-    "Total DPS:": "Общий ДПС:",
-    "Find in Stash": "Найти в тайнике"
-  },
-  "cmn-Hant": {
-    "Physical DPS:": "物理 DPS: #",
-    "Elemental DPS:": "元素 DPS: #",
-    "Total DPS:": "DPS: #"
-  }
-}
-</i18n>

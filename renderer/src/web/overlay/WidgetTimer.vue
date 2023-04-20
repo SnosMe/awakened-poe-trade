@@ -4,7 +4,7 @@
       <div :class="$style.timer">
         <span>{{ formatted.h }}:{{ formatted.m }}:</span><span>{{ formatted.s }}</span>
       </div>
-      <div v-if="!isRunning" :class="$style.paused">{{ t('paused') }}</div>
+      <div v-if="!isRunning" :class="$style.paused">{{ t('stopwatch.paused') }}</div>
       <div v-if="!isMoving" :class="$style.controls">
         <button v-if="!isRunning" @click="start" :class="$style.button"><i class="fas fa-play"></i></button>
         <button v-else @click="stop" :class="$style.button"><i class="fas fa-pause"></i></button>
@@ -165,11 +165,3 @@ export default defineComponent({
   @apply bg-orange-700 text-white;
 }
 </style>
-
-<i18n>
-{
-  "ru": {
-    "paused:": "остановлен"
-  }
-}
-</i18n>

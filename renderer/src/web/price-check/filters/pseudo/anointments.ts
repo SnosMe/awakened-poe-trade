@@ -52,7 +52,7 @@ export function applyAnointmentRules (filters: StatFilter[], item: ParsedItem) {
   } else if (!item.isCorrupted && !item.isMirrored) {
     const oils = anointment.oils!
     if (oils[0] !== 'Golden Oil' && oils[0] !== 'Silver Oil') {
-      anointment.hidden = 'Buyer will likely change anointment'
+      anointment.hidden = 'filters.hide_anointment'
       anointment.disabled = true
     }
   }

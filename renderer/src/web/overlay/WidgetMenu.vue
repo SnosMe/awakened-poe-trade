@@ -21,22 +21,22 @@
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Chromatic calculator</button> -->
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Screen saver</button> -->
               <!-- add widget -->
-              <div class="text-gray-600 text-sm px-1 select-none whitespace-nowrap">{{ t('add widget...') }}</div>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('timer')">{{ t('Stopwatch') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('stash-search')">{{ t('Stash search') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('image-strip')">{{ t('Image strip') }}</button>
+              <div class="text-gray-600 text-sm px-1 select-none whitespace-nowrap">{{ t(':add') }}</div>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('timer')">{{ t('stopwatch.name') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('stash-search')">{{ t('stash_search.name') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('image-strip')">{{ t('image_strip.name') }}</button>
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('TODO')">Image</button> -->
             </div>
           </template>
         </ui-popover>
       </div>
       <div v-if="isEditing" class="text-gray-100 px-2 pb-1 whitespace-nowrap">
-        <ui-toggle v-model="config.alwaysShow">{{ t('Show button for active widgets') }}</ui-toggle>
+        <ui-toggle v-model="config.alwaysShow">{{ t(':always_show') }}</ui-toggle>
       </div>
       <div v-else class="px-1 pb-1">
         <textarea class="px-2 py-1.5 bg-gray-700 rounded resize-none block"
           rows="1" spellcheck="false"
-          :placeholder="t('Price check (Ctrl + V)')" @input="handleItemPaste"></textarea>
+          :placeholder="t(':price_check')" @input="handleItemPaste"></textarea>
       </div>
     </div>
   </widget>
@@ -47,7 +47,7 @@ import { defineComponent, PropType, computed, inject } from 'vue'
 import { Widget as IWidget, WidgetManager, WidgetMenu } from './interfaces'
 import { Host } from '@/web/background/IPC'
 import Widget from './Widget.vue'
-import { useI18n } from 'vue-i18n'
+import { useI18nNs } from '@/web/i18n'
 
 export default defineComponent({
   components: { Widget },
@@ -70,7 +70,7 @@ export default defineComponent({
       )
     })
 
-    const { t } = useI18n()
+    const { t } = useI18nNs('widget_menu')
 
     return {
       t,
@@ -106,19 +106,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style lang="postcss" module>
-</style>
-
-<i18n>
-{
-  "ru": {
-    "Stopwatch": "Секундомер",
-    "Stash search": "Поиск в тайнике",
-    "Image strip": "Лента изображений",
-    "Show button for active widgets": "Показывать кнопку для активных виджетов",
-    "add widget...": "добавить виджет...",
-    "Price check (Ctrl + V)": "Прайс-чек (Ctrl + V)"
-  }
-}
-</i18n>
