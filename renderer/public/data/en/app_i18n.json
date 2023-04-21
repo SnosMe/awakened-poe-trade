@@ -199,8 +199,7 @@
     "downloads_page": "Open the Downloads page",
     "installed_on_exit": "It will be installed automatically on exit",
     "download_manually": "You can download it from GitHub",
-    "download_disabled": "You have disabled automatic updates download",
-    "auto_download": "Automatic download of updates"
+    "download_disabled": "You have disabled automatic updates download"
   },
   "widget_menu": {
     "add": "add widget\u2026",

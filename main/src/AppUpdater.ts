@@ -6,6 +6,9 @@ export class AppUpdater {
   private _checkedAtStartup = false
   private _info: UpdateInfo = { state: 'initial' }
 
+  public readonly noAutoUpdatesReason:
+    Extract<UpdateInfo, { state: 'update-available' }>['noDownloadReason'] = null
+
   get info () { return this._info }
   set info (info: UpdateInfo) {
     this._info = info
@@ -28,11 +31,21 @@ export class AppUpdater {
       }
     })
 
+    // https://www.electron.build/configuration/nsis.html#portable
+    autoUpdater.autoDownload = !process.env.PORTABLE_EXECUTABLE_DIR
+
+    if (!autoUpdater.autoDownload) {
+      this.noAutoUpdatesReason = 'not-supported'
+    } else if (process.argv.includes('--no-updates')) {
+      autoUpdater.autoDownload = false
+      this.noAutoUpdatesReason = 'disabled-by-flag'
+    }
+
     autoUpdater.on('checking-for-update', () => {
       this.info = { state: 'checking-for-update' }
     })
     autoUpdater.on('update-available', (info: { version: string }) => {
-      this.info = { state: 'update-available', version: info.version }
+      this.info = { state: 'update-available', version: info.version, noDownloadReason: this.noAutoUpdatesReason }
     })
     autoUpdater.on('update-not-available', () => {
       this.info = { state: 'update-not-available', checkedAt: Date.now() }
@@ -46,11 +59,7 @@ export class AppUpdater {
     // on('download-progress') https://github.com/electron-userland/electron-builder/issues/2521
   }
 
-  updateOpts (autoDownload: boolean) {
-    autoUpdater.autoDownload = (
-      !process.env.PORTABLE_EXECUTABLE_DIR && // https://www.electron.build/configuration/nsis.html#portable
-      autoDownload
-    )
+  checkAtStartup () {
     if (!this._checkedAtStartup) {
       this._checkedAtStartup = true
       this.check()

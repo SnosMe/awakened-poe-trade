@@ -23,8 +23,6 @@
       </div>
     </div>
     <ui-checkbox class="mb-4"
-      v-model="disableUpdateDownload">{{ t('updates.auto_download') }}</ui-checkbox>
-    <ui-checkbox class="mb-4"
       v-model="restoreClipboard">{{ t(':restore_clipboard') }}</ui-checkbox>
     <div class="mb-4">
       <div class="flex-1 mb-1">{{ t(':poe_log_file') }}</div>
@@ -81,7 +79,6 @@ export default defineComponent({
         }
       }),
       realm: configModelValue(() => props.config, 'realm'),
-      disableUpdateDownload: configModelValue(() => props.config, 'disableUpdateDownload'),
       restoreClipboard: configModelValue(() => props.config, 'restoreClipboard'),
       showAttachNotification: configModelValue(() => props.config, 'showAttachNotification')
     }

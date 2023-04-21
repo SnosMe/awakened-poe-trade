@@ -42,7 +42,7 @@ app.on('ready', async () => {
         shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.restoreClipboard, cfg.language)
         gameLogWatcher.restart(cfg.clientLog)
         gameConfig.readConfig(cfg.gameConfig)
-        appUpdater.updateOpts(!cfg.disableUpdateDownload)
+        appUpdater.checkAtStartup()
         tray.overlayKey = cfg.overlayKey
       })
       uIOhook.start()

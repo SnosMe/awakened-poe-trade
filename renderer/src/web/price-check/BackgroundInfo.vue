@@ -20,7 +20,7 @@ import { defineComponent, computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLeagues } from '@/web/background/Leagues'
 import { Host } from '@/web/background/IPC'
-import { poeWebApi, AppConfig } from '@/web/Config'
+import { poeWebApi } from '@/web/Config'
 
 export default defineComponent({
   setup () {
@@ -34,8 +34,8 @@ export default defineComponent({
         case 'update-downloaded':
           return { str1: t('updates.available', [rawInfo.version]), str2: t('updates.installed_on_exit') }
         case 'update-available':
-          return (Host.isPortable.value || AppConfig().disableUpdateDownload)
-            ? { str1: t('updates.available', [rawInfo.version]), str2: (Host.isPortable.value) ? t('updates.download_manually') : t('updates.download_disabled') }
+          return (rawInfo.noDownloadReason)
+            ? { str1: t('updates.available', [rawInfo.version]), str2: (rawInfo.noDownloadReason === 'not-supported') ? t('updates.download_manually') : t('updates.download_disabled') }
             : null
         default:
           return null

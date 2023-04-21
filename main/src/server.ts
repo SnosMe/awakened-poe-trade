@@ -99,7 +99,6 @@ export async function startServer (
   }>('/config', async (_req) => {
     return {
       version: app.getVersion(),
-      portable: Boolean(process.env.PORTABLE_EXECUTABLE_DIR),
       updater: appUpdater.info,
       contents: await configStore.load()
     }
