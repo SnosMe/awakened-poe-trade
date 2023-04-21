@@ -80,6 +80,7 @@
     "not_corrupted": "Not Corrupted",
     "mod_tier": "Tier: {0}",
     "mod_rank": "Rank: {0}",
+    "mod_pseudo": "Pseudo",
     "mod_implicit": "Implicit",
     "mod_fractured": "Fractured",
     "mod_explicit": "Explicit",
@@ -199,7 +200,7 @@
     "installed_on_exit": "It will be installed automatically on exit",
     "download_manually": "You can download it from GitHub",
     "download_disabled": "You have disabled automatic updates download",
-    "auto_download": "Auto-download updates"
+    "auto_download": "Automatic download of updates"
   },
   "widget_menu": {
     "add": "add widget\u2026",
@@ -281,15 +282,13 @@
     "debug": "Debug",
     "about": "About",
     "font_size" :"Font size",
-    "overlay_bg" :"Background, when APT window is clickable",
+    "overlay_bg" :"Background when the Overlay is clickable",
     "overlay_bg_none" :"Transparent",
-    "overlay_bg_exclusive" :"Show for Overlay and Price Check",
-    "overlay_bg_itself" :"Show only for Overlay",
-    "overlay_bg_focus_game" :"Clicking on background focuses game",
+    "overlay_bg_focus_game" :"Clicking on the background focuses the game",
     "poe_log_file" :"PoE log file",
     "poe_cfg_file" :"PoE config file",
     "restore_clipboard" :"Restore clipboard",
-    "show_overlay_ready" :"Show a notification when opening PoE"
+    "show_overlay_ready" :"Show a notification when the Overlay detects a PoE window"
   },
   "price_check": {
     "name": "Price check",

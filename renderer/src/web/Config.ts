@@ -95,7 +95,6 @@ export interface Config {
   leagueId?: string
   overlayKey: string
   overlayBackground: string
-  overlayBackgroundExclusive: boolean
   overlayBackgroundClose: boolean
   restoreClipboard: boolean
   commands: Array<{
@@ -121,7 +120,6 @@ export const defaultConfig = (): Config => ({
   configVersion: 16,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
-  overlayBackgroundExclusive: true,
   overlayBackgroundClose: true,
   restoreClipboard: false,
   showAttachNotification: true,

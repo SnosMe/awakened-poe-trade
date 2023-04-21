@@ -278,12 +278,6 @@ export default defineComponent({
 
     const overlayBackground = computed<string | undefined>(() => {
       if (!active.value) return undefined
-
-      if (topmostOrExclusiveWidget.value.wmZorder === 'exclusive') {
-        if (!AppConfig().overlayBackgroundExclusive) {
-          return undefined
-        }
-      }
       return AppConfig().overlayBackground
     })
 
