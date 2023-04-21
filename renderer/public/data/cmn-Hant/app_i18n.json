@@ -76,6 +76,7 @@
     "not_corrupted": "Not Corrupted",
     "mod_tier": "Tier: {0}",
     "mod_rank": "Rank: {0}",
+    "mod_pseudo": "Pseudo",
     "mod_implicit": "Implicit",
     "mod_fractured": "Fractured",
     "mod_explicit": "Explicit",
@@ -144,6 +145,10 @@
     "hide_anointment": "Buyer will likely change anointment",
     "hide_for_crafting": "Select only if price-checking as base item for crafting",
     "hide_empty_mod": "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers",
+    "tag_implicit": "implicit",
+    "tag_fractured": "fractured",
+    "tag_crafted": "crafted",
+    "tag_scourge": "scourge",
     "tag_variant": "variant",
     "tag_corrupted": "corrupted",
     "tag_synthesised": "synthesised",
@@ -194,8 +199,7 @@
     "downloads_page": "Open the Downloads page",
     "installed_on_exit": "It will be installed automatically on exit",
     "download_manually": "You can download it from GitHub",
-    "download_disabled": "You have disabled automatic updates download",
-    "auto_download": "Auto-download updates"
+    "download_disabled": "You have disabled automatic updates download"
   },
   "widget_menu": {
     "add": "add widget…",
@@ -277,15 +281,13 @@
     "debug": "Debug",
     "about": "About",
     "font_size": "Font size",
-    "overlay_bg": "Background, when APT window is clickable",
+    "overlay_bg": "Background when the Overlay is clickable",
     "overlay_bg_none": "Transparent",
-    "overlay_bg_exclusive": "Show for Overlay and Price Check",
-    "overlay_bg_itself": "Show only for Overlay",
-    "overlay_bg_focus_game": "Clicking on background focuses game",
+    "overlay_bg_focus_game": "Clicking on the background focuses the game",
     "poe_log_file": "PoE log file",
     "poe_cfg_file": "PoE config file",
     "restore_clipboard": "Restore clipboard",
-    "show_overlay_ready": "Show a notification when opening PoE"
+    "show_overlay_ready": "Show a notification when the Overlay detects a PoE window"
   },
   "price_check": {
     "name": "Price check",
