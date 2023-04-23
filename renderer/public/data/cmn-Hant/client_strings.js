@@ -45,7 +45,7 @@ export default {
   FLASK_CHARGES: /^目前有 \d+ 充能次數$/,
   METAMORPH_HELP: '在塔恩的鍊金室將此與其他四個不同的樣本合成。',
   BEAST_HELP: '點擊右鍵將此加入你的獸獵寓言。',
-  VOIDSTONE_HELP: '將此放置於你輿圖上的壁壘，來增加地圖階級和揭露該壁壘地區隱藏的地圖。',
+  VOIDSTONE_HELP: '放置於此以提升你輿圖全部地圖的階級。',
   METAMORPH_BRAIN: /^.* 腦髓$/,
   METAMORPH_EYE: /^.* 眼睛$/,
   METAMORPH_LUNG: /^.* 肺臟$/,
