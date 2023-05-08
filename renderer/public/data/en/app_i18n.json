@@ -14,7 +14,7 @@
     "leagues_failed": "Failed to load leagues",
     "leagues_failed_help": "Make sure the realm is not under maintenance. Also try clicking on the \"Browser\" button, you may need to complete a CAPTCHA there.",
     "leagues_failed_help_alt": "Price check an Item, and follow the instructions in the error description there.",
-    "thanks_3rd_party": "This tool relies on {0} and {1}, consider support them as well",
+    "thanks_3rd_party": "This tool relies on {0} and {1}, consider supporting them as well",
     "toggle_browser_hint": "Press {0} to switch between browser and game.",
     "contact_me": "Contact me on one of the PoE Discords,",
     "version": "Version {0}",
