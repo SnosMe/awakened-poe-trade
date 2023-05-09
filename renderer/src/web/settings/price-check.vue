@@ -70,7 +70,14 @@
       </div>
     </div>
     <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t(':show_prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
+      <div class="flex-1 mb-1">{{ t('Always show offline transactions') }}</div>
+      <div class="mb-4 flex">
+        <ui-radio v-model="activateOfflineFilter" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
+        <ui-radio v-model="activateOfflineFilter" :value="false">{{ t('No') }}</ui-radio>
+      </div>
+    </div>
+    <div class="mb-2">
+    <div class="flex-1 mb-1">{{ t(':show_prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></div>
       <div class="mb-4 flex">
         <ui-radio v-model="requestPricePrediction" :value="true" class="mr-4">{{ t('Yes') }}</ui-radio>
         <ui-radio v-model="requestPricePrediction" :value="false">{{ t('No') }}</ui-radio>
@@ -152,6 +159,7 @@ export default defineComponent({
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
+      activateOfflineFilter: configModelValue(() => configWidget.value, 'activateOfflineFilter'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
       builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),
       requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),

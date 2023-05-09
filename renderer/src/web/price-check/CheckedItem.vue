@@ -110,6 +110,7 @@ export default defineComponent({
         chaosPriceThreshold: widget.value.chaosPriceThreshold,
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
+        activateOfflineFilter: widget.value.activateOfflineFilter,
         searchStatRange: widget.value.searchStatRange,
         useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg'),
         currency: (prevItem &&
