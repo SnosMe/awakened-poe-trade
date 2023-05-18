@@ -287,7 +287,8 @@
     "poe_log_file": "PoE log file",
     "poe_cfg_file": "PoE config file",
     "restore_clipboard": "Restore clipboard",
-    "show_overlay_ready": "Show a notification when the Overlay detects a PoE window"
+    "show_overlay_ready": "Show a notification when the Overlay detects a PoE window",
+    "debug_hotkeys": "Record all key presses"
   },
   "price_check": {
     "name": "Price check",
