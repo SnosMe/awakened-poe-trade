@@ -11,7 +11,7 @@ class HostTransport {
 
   async init () {
     this.onEvent('MAIN->CLIENT::log-entry', (entry) => {
-      this.logs.value += (entry.message + '\n')
+      this.logs.value += entry.message
     })
     this.onEvent('MAIN->CLIENT::updater-state', (info) => {
       this.updateInfo.value = info
@@ -54,7 +54,7 @@ class HostTransport {
   async getConfig (): Promise<string | null> {
     const response = await fetch('/config')
     const config = await response.json() as HostState
-    // TODO: 1) refactor this 2) add logs
+    // TODO: refactor this
     this.version.value = config.version
     this.updateInfo.value = config.updater
     return config.contents

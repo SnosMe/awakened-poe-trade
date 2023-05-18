@@ -1,5 +1,5 @@
 import fastify from 'fastify'
-import fastifyWs from '@fastify/websocket'
+import fastifyWs, { SocketStream } from '@fastify/websocket'
 import fastifyCors from '@fastify/cors'
 import fastifyStatic from '@fastify/static'
 import type { WebSocket } from 'ws'
@@ -10,6 +10,7 @@ import { IpcEvent, IpcEventPayload, HostState } from '../../ipc/types'
 import { ConfigStore } from './host-files/ConfigStore'
 import { addFileUploadRoutes } from './host-files/file-uploads'
 import type { AppUpdater } from './AppUpdater'
+import type { Logger } from './RemoteLogger'
 
 export const server = fastify()
 let lastActiveClient: WebSocket
@@ -69,8 +70,21 @@ export const eventPipe = {
   sendEventTo
 }
 
+let onConnection: (connection: SocketStream) => void
+
 server.register(async (instance) => {
   instance.get('/events', { websocket: true }, (connection) => {
+    onConnection(connection)
+  })
+})
+
+export async function startServer (
+  appUpdater: AppUpdater,
+  logger: Logger
+): Promise<number> {
+  const configStore = new ConfigStore(eventPipe)
+
+  onConnection = (connection) => {
     lastActiveClient = connection.socket
     connection.socket.on('message', (bytes) => {
       const event = JSON.parse(bytes.toString('utf-8')) as IpcEvent
@@ -86,13 +100,11 @@ server.register(async (instance) => {
         evBus.emit('CLIENT->MAIN::used-recently', { isOverlay: true })
       }
     })
-  })
-})
-
-export async function startServer (
-  appUpdater: AppUpdater
-): Promise<number> {
-  const configStore = new ConfigStore(eventPipe)
+    sendEventTo('last-active', {
+      name: 'MAIN->CLIENT::log-entry',
+      payload: { message: logger.history }
+    })
+  }
 
   server.get<{
     Reply: HostState

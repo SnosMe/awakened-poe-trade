@@ -24,7 +24,7 @@
     </div>
     <ui-checkbox class="mb-4"
       v-model="restoreClipboard">{{ t(':restore_clipboard') }}</ui-checkbox>
-    <div class="mb-4">
+    <div class="mb-2">
       <div class="flex-1 mb-1">{{ t(':poe_log_file') }}</div>
       <input v-model.trim="clientLog"
         class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/Grinding Gear Games/Path of Exile/logs/Client.txt">
@@ -35,17 +35,21 @@
         class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/My Games/Path of Exile/production_Config.ini">
     </div>
     <hr class="mb-4 mx-8 border-gray-700">
-    <div class="mb-4">
+    <div class="mb-2">
       <div class="mb-1">{{ t(':overlay_bg') }}</div>
       <div class="flex gap-4 items-baseline">
         <input v-model="overlayBackground" class="rounded bg-gray-900 px-1 block w-48 font-poe text-center" />
         <ui-radio v-model="overlayBackground" value="rgba(255, 255, 255, 0)">{{ t(':overlay_bg_none') }}</ui-radio>
       </div>
     </div>
-    <ui-checkbox class="mb-4" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'"
+    <ui-checkbox class="mb-2" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'"
       v-model="overlayBackgroundClose">{{ t(':overlay_bg_focus_game') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
       v-model="showAttachNotification">{{ t(':show_overlay_ready') }}</ui-checkbox>
+    <div class="mb-4">
+      <div class="flex-1 mb-1">{{ t(':window_title') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
+      <input v-model="windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe" />
+    </div>
   </div>
 </template>
 
@@ -80,7 +84,8 @@ export default defineComponent({
       }),
       realm: configModelValue(() => props.config, 'realm'),
       restoreClipboard: configModelValue(() => props.config, 'restoreClipboard'),
-      showAttachNotification: configModelValue(() => props.config, 'showAttachNotification')
+      showAttachNotification: configModelValue(() => props.config, 'showAttachNotification'),
+      windowTitle: configModelValue(() => props.config, 'windowTitle')
     }
   }
 })
