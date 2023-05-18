@@ -40,7 +40,7 @@ app.on('ready', async () => {
       const shortcuts = await Shortcuts.create(logger, overlay, poeWindow, gameConfig, eventPipe)
       eventPipe.onEventAnyClient('CLIENT->MAIN::update-host-config', (cfg) => {
         overlay.updateOpts(cfg.overlayKey, cfg.windowTitle)
-        shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.restoreClipboard, cfg.language)
+        shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.logKeys, cfg.restoreClipboard, cfg.language)
         gameLogWatcher.restart(cfg.clientLog)
         gameConfig.readConfig(cfg.gameConfig)
         appUpdater.checkAtStartup()

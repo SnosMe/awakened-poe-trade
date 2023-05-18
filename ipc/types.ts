@@ -5,7 +5,7 @@ export interface HostConfig {
   gameConfig: string | null
   stashScroll: boolean
   overlayKey: string
-  logLevel: string
+  logKeys: boolean
   windowTitle: string
   language: string
 }

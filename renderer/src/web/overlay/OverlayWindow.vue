@@ -12,10 +12,14 @@
         :id="`widget-${widget.wmId}`"
         :is="`widget-${widget.wmType}`" />
     </template>
+    <pre v-if="showLogs"
+      class="widget-default-style p-4 mx-auto mt-6 overflow-hidden"
+      style="max-width: 38rem; z-index: 999; position: absolute; left: 0; right: 0;"
+    >{{ logs }}</pre>
     <loading-animation />
     <div v-if="showEditingNotification"
       class="widget-default-style p-6 bg-blue-600 mx-auto text-center text-base mt-6"
-      style="min-width: 30rem; z-index: 999; width: fit-content; position: absolute; left: 0; right: 0;">
+      style="min-width: 30rem; z-index: 998; width: fit-content; position: absolute; left: 0; right: 0;">
       <i18n-t keypath="reopen_settings">
         <span class="bg-blue-800 rounded px-1">{{ overlayKey }}</span>
       </i18n-t>
@@ -293,6 +297,15 @@ export default defineComponent({
       }
     })
 
+    function sliceLastLines (text: string, numLines: number) {
+      let lfIndex = text.length - 1
+      for (let i = 0; i < numLines; i++) {
+        lfIndex = text.lastIndexOf('\n', lfIndex - 1)
+        if (lfIndex === -1) return text
+      }
+      return text.slice(lfIndex + 1)
+    }
+
     const { t } = useI18n()
 
     return {
@@ -303,6 +316,8 @@ export default defineComponent({
       handleBackgroundClick,
       isVisible,
       overlayKey: computed(() => AppConfig().overlayKey),
+      get showLogs () { return !active.value && AppConfig().logKeys },
+      logs: computed(() => sliceLastLines(Host.logs.value, 11)),
       showEditingNotification: computed(() => !active.value && showEditingNotification.value)
     }
   }

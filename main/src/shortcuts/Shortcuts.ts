@@ -18,6 +18,7 @@ const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v])
 export class Shortcuts {
   private actions: ShortcutAction[] = []
   private stashScroll = false
+  private logKeys = false
   private areaTracker: WidgetAreaTracker
   private clipboard: HostClipboard
 
@@ -62,13 +63,15 @@ export class Shortcuts {
       }
     })
 
-    // uIOhook.on('keydown', (e) => {
-    //   const pressed = eventToString(e)
-    //   this.logger.write(`debug [Shortcuts] Keydown ${pressed}`)
-    // })
-    // uIOhook.on('keyup', (e) => {
-    //   this.logger.write(`debug [Shortcuts] Keyup ${UiohookToName[e.keycode] || 'unknown'}`)
-    // })
+    uIOhook.on('keydown', (e) => {
+      if (!this.logKeys) return
+      const pressed = eventToString(e)
+      this.logger.write(`debug [Shortcuts] Keydown ${pressed}`)
+    })
+    uIOhook.on('keyup', (e) => {
+      if (!this.logKeys) return
+      this.logger.write(`debug [Shortcuts] Keyup ${UiohookToName[e.keycode] || 'not_supported_key'}`)
+    })
 
     uIOhook.on('wheel', (e) => {
       if (!e.ctrlKey || !this.poeWindow.isActive || !this.stashScroll) return
@@ -83,8 +86,15 @@ export class Shortcuts {
     })
   }
 
-  updateActions (actions: ShortcutAction[], stashScroll: boolean, restoreClipboard: boolean, language: string) {
+  updateActions (
+    actions: ShortcutAction[],
+    stashScroll: boolean,
+    logKeys: boolean,
+    restoreClipboard: boolean,
+    language: string
+  ) {
     this.stashScroll = stashScroll
+    this.logKeys = logKeys
     this.clipboard.updateOptions(restoreClipboard)
     this.ocrWorker.updateOptions(language)
 
@@ -237,7 +247,7 @@ function eventToString (e: { keycode: number, ctrlKey: boolean, altKey: boolean,
   const { ctrlKey, shiftKey, altKey } = e
 
   let code = UiohookToName[e.keycode]
-  if (!code) return 'unknown'
+  if (!code) return 'not_supported_key'
 
   if (code === 'Shift' || code === 'Alt' || code === 'Ctrl') return code
 

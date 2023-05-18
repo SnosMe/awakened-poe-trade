@@ -1,16 +1,9 @@
 <template>
-  <div class="max-w-md p-2">
-    <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Log level') }}</div>
-      <div class="mb-4 flex gap-x-4">
-        <ui-radio v-model="logLevel" value="warn">Warn</ui-radio>
-        <ui-radio v-model="logLevel" value="silly">Debug</ui-radio>
-      </div>
+  <div class="layout-column">
+    <div class="p-2 shadow">
+      <ui-checkbox v-model="logKeys">{{ t('settings.debug_hotkeys') }}</ui-checkbox>
     </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t('Log') }}</div>
-      <pre class="mb-4 bg-gray-900 rounded p-2">{{ logs }}</pre>
-    </div>
+    <pre class="p-2 overflow-y-scroll flex-1">{{ logs }}</pre>
   </div>
 </template>
 
@@ -29,7 +22,7 @@ export default defineComponent({
     return {
       t,
       logs: Host.logs,
-      logLevel: configModelValue(() => props.config, 'logLevel')
+      logKeys: configModelValue(() => props.config, 'logKeys')
     }
   }
 })

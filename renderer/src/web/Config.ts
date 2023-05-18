@@ -105,7 +105,7 @@ export interface Config {
   clientLog: string | null
   gameConfig: string | null
   windowTitle: string
-  logLevel: string
+  logKeys: boolean
   accountName: string
   stashScroll: boolean
   language: 'en' | 'ru' | 'cmn-Hant'
@@ -150,7 +150,7 @@ export const defaultConfig = (): Config => ({
   clientLog: null,
   gameConfig: null,
   windowTitle: 'Path of Exile',
-  logLevel: 'warn',
+  logKeys: false,
   accountName: '',
   stashScroll: true,
   language: 'en',
@@ -374,7 +374,7 @@ function upgradeConfig (_config: Config): Config {
 
   if (config.configVersion < 6) {
     config.widgets.find(w => w.wmType === 'price-check')!
-      .showRateLimitState = (config.logLevel === 'debug')
+      .showRateLimitState = ((config as any).logLevel === 'debug')
     config.widgets.find(w => w.wmType === 'price-check')!
       .apiLatencySeconds = 2
 
@@ -528,6 +528,10 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 16
   }
 
+  if (config.logKeys === undefined) {
+    config.logKeys = false
+  }
+
   return config as unknown as Config
 }
 
@@ -653,7 +657,7 @@ function getConfigForHost (): HostConfig {
     gameConfig: config.gameConfig,
     stashScroll: config.stashScroll,
     overlayKey: config.overlayKey,
-    logLevel: config.logLevel,
+    logKeys: config.logKeys,
     windowTitle: config.windowTitle,
     language: config.language
   }
