@@ -33,7 +33,6 @@ export interface PriceCheckWidget extends Widget {
   hotkeyLocked: string | null
   showSeller: false | 'account' | 'ign'
   searchStatRange: number
-  chaosPriceThreshold: number
   showRateLimitState: boolean
   apiLatencySeconds: number
   collapseListings: 'api' | 'app'
@@ -43,6 +42,7 @@ export interface PriceCheckWidget extends Widget {
   showCursor: boolean
   requestPricePrediction: boolean
   builtinBrowser: boolean
+  rememberCurrency: boolean
 }
 
 export interface ItemCheckWidget extends Widget {

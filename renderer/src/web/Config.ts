@@ -179,7 +179,6 @@ export const defaultConfig = (): Config => ({
       wmWants: 'hide',
       wmZorder: 'exclusive',
       wmFlags: ['hide-on-blur', 'skip-menu'],
-      chaosPriceThreshold: 0,
       showRateLimitState: false,
       apiLatencySeconds: 2,
       collapseListings: 'api',
@@ -193,7 +192,8 @@ export const defaultConfig = (): Config => ({
       showSeller: false,
       searchStatRange: 10,
       showCursor: true,
-      requestPricePrediction: false
+      requestPricePrediction: false,
+      rememberCurrency: false
     } as widget.PriceCheckWidget,
     {
       wmId: 3,
@@ -530,6 +530,11 @@ function upgradeConfig (_config: Config): Config {
 
   if (config.logKeys === undefined) {
     config.logKeys = false
+  }
+
+  const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
+  if (priceCheck.rememberCurrency === undefined) {
+    priceCheck.rememberCurrency = false
   }
 
   return config as unknown as Config

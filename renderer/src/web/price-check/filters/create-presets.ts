@@ -10,7 +10,6 @@ export function createPresets (
   item: ParsedItem,
   opts: {
     league: string
-    chaosPriceThreshold: number
     currency: string | undefined
     collapseListings: 'app' | 'api'
     activateStockFilter: boolean

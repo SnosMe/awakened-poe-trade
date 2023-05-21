@@ -1,9 +1,9 @@
 <template>
   <ui-popover :delay="[80, null]" placement="bottom-start" boundary="#price-window">
     <template #target>
-      <button class="text-gray-500 rounded mr-1 px-2 truncate">
+      <button class="rounded mr-1 px-2 truncate" :class="showWarning() ? 'text-orange-500' : 'text-gray-500'">
         <span><i class="fas fa-history"></i> {{ t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
-        <span v-if="showLeagueName">, {{ filters.trade.league }}</span>
+        <span v-if="showLeagueName()">, {{ filters.trade.league }}</span>
       </button>
     </template>
     <template #content>
@@ -72,7 +72,12 @@ export default defineComponent({
           return true
         })
       }),
-      showLeagueName: computed(() => leagues.selectedId.value !== props.filters.trade.league),
+      showLeagueName: () => leagues.selectedId.value !== props.filters.trade.league,
+      showWarning: () => Boolean(
+        (props.filters.trade.listed &&
+          ['1day', '3days', '1week'].includes(props.filters.trade.listed)) ||
+        props.filters.trade.currency
+      ),
       onOfflineUpdate (offline: boolean) {
         const { filters } = props
         filters.trade.offline = offline

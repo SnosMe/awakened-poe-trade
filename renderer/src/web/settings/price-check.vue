@@ -53,15 +53,8 @@
         <ui-radio v-model="searchStatRange" :value="0">{{ t(':fill_roll_exact') }}</ui-radio>
       </div>
     </div>
-    <div class="mb-2">
-      <div class="flex-1 mb-1">{{ t(':min_price') }}</div>
-      <div class="mb-4 flex">
-        <div class="flex mr-6">
-          <input v-model.number="chaosPriceThreshold" class="rounded bg-gray-900 px-1 block w-16 mb-1 font-poe text-center" />
-          <span class="ml-2">{{ t(':min_price_in_chaos') }}</span>
-        </div>
-      </div>
-    </div>
+    <ui-checkbox class="mb-4"
+      v-model="rememberCurrency">{{ t(':remember_currency') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
       v-model="activateStockFilter">{{ t(':select_stock') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
@@ -140,6 +133,7 @@ export default defineComponent({
       hotkeyLocked: computed(() => configWidget.value.hotkeyLocked),
       smartInitialSearch: configModelValue(() => configWidget.value, 'smartInitialSearch'),
       lockedInitialSearch: configModelValue(() => configWidget.value, 'lockedInitialSearch'),
+      rememberCurrency: configModelValue(() => configWidget.value, 'rememberCurrency'),
       searchStatRange: computed<number>({
         get () {
           return configWidget.value.searchStatRange
@@ -150,16 +144,6 @@ export default defineComponent({
           if (value >= 0 && value <= 50) {
             configWidget.value.searchStatRange = value
           }
-        }
-      }),
-      chaosPriceThreshold: computed<number>({
-        get () {
-          return configWidget.value.chaosPriceThreshold
-        },
-        set (value) {
-          if (typeof value !== 'number') return
-
-          configWidget.value.chaosPriceThreshold = value
         }
       }),
       apiLatencySeconds: computed<number>({

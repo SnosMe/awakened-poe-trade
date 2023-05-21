@@ -305,13 +305,12 @@
     "fill_rolls": "Fill stat values",
     "fill_roll_exact": "Exact value",
     "cursor_pos": "Show memorized cursor position",
-    "min_price": "Minimum buyout price",
-    "min_price_in_chaos": "Chaos Orbs",
     "extra_delay": "Extra time to prevent spurious Rate limiting",
     "warn_expensive": "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.",
     "accurate_collapsed": "Show indication on collapsed listings",
     "auto_search": "Perform an auto search, when pressing",
     "select_stock": "Always select \"Stock\" filter",
-    "show_prediction": "Show price prediction"
+    "show_prediction": "Show price prediction",
+    "remember_currency": "Remember the Buyout Currency filter"
   }
 }

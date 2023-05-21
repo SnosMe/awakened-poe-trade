@@ -261,10 +261,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     propSet(query.filters, 'trade_filters.filters.price.option', filters.trade.currency)
   }
 
-  if (filters.trade.chaosPriceThreshold !== 0 && filters.trade.currency !== 'divine') {
-    propSet(query.filters, 'trade_filters.filters.price.min', filters.trade.chaosPriceThreshold)
-  }
-
   if (filters.trade.collapseListings === 'api') {
     propSet(query.filters, 'trade_filters.filters.collapse.option', String(true))
   }
