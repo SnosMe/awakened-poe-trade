@@ -186,6 +186,7 @@ export const defaultConfig = (): Config => ({
       smartInitialSearch: true,
       lockedInitialSearch: true,
       activateStockFilter: false,
+      offline: false,
       builtinBrowser: false,
       hotkey: 'D',
       hotkeyHold: 'Ctrl',
@@ -511,6 +512,12 @@ function upgradeConfig (_config: Config): Config {
     }
 
     config.configVersion = 15
+  }
+  if (config.configVersion < 16) {
+    config.widgets.find(w => w.wmType === 'price-check')!
+        .offline = false
+
+    config.configVersion = 16
   }
 
   if (config.configVersion < 16) {
