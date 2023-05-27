@@ -9,6 +9,10 @@
 			"path": "main"
 		},
 		{
+			"name": "docs",
+			"path": "docs"
+		},
+		{
 			"name": "root",
 			"path": "."
 		}
@@ -17,6 +21,7 @@
 		"files.exclude": {
 			"main/": true,
 			"renderer/": true,
+			"docs/": true,
 			"dist/": true
 		}
 	}

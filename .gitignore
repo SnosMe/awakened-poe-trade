@@ -20,5 +20,9 @@ yarn-error.log*
 *.sln
 *.sw?
 
-#Electron-builder output
+# Electron-builder output
 /dist_electron
+
+# vitepress
+docs/.vitepress/dist
+docs/.vitepress/cache
