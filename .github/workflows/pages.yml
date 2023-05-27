@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
-      - run: npm ci
+      - run: npm install
         working-directory: ./docs
       - run: npx vitepress build
         working-directory: ./docs
