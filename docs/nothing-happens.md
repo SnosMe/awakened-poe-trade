@@ -28,3 +28,9 @@ As a starting point, common programs reported by players were:
 - Radeon™ Software
 - Display Pilot (BenQ)
 - AHK scripts
+
+Just for reference, this is what you should expect to see in the logs.
+I'll remind once again that your goal is not to make it look exactly like on the screenshot,
+but to make sure that **PoE copies the item to the clipboard with all mods**.
+
+![](https://i.imgur.com/LmDhl1O.png)

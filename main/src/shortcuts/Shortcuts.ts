@@ -139,6 +139,10 @@ export class Shortcuts {
   private register () {
     for (const entry of this.actions) {
       const isOk = globalShortcut.register(shortcutToElectron(entry.shortcut), () => {
+        if (this.logKeys) {
+          this.logger.write(`debug [Shortcuts] Action type: ${entry.action.type}`)
+        }
+
         if (entry.keepModKeys) {
           const nonModKey = entry.shortcut.split(' + ').filter(key => !isModKey(key))[0]
           uIOhook.keyToggle(UiohookKey[nonModKey as UiohookKeyT], 'up')

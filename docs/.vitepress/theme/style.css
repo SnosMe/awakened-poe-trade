@@ -3,7 +3,8 @@
   ul, ol, dl,
   table,
   pre,
-  details {
+  details,
+  video {
     margin-top: 0;
     margin-bottom: 1rem;
   }
