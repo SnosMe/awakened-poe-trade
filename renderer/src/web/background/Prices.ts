@@ -31,6 +31,7 @@ export const usePoeninja = createGlobalState(() => {
 
   const xchgRate = shallowRef<number | undefined>(undefined)
 
+  const isLoading = shallowRef(false)
   let PRICES_DB: PriceDatabase = []
   let lastUpdateTime = 0
   let downloadController: AbortController | undefined
@@ -42,18 +43,23 @@ export const usePoeninja = createGlobalState(() => {
     if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
     if (downloadController) downloadController.abort()
 
-    downloadController = new AbortController()
-    const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${league.id}&language=en`, {
-      signal: downloadController.signal
-    })
-    const jsonBlob = await response.text()
+    try {
+      isLoading.value = true
+      downloadController = new AbortController()
+      const response = await Host.proxy(`poe.ninja/api/data/DenseOverviews?league=${league.id}&language=en`, {
+        signal: downloadController.signal
+      })
+      const jsonBlob = await response.text()
 
-    PRICES_DB = splitJsonBlob(jsonBlob)
-    const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
-    if (divine && divine.chaos >= 30) {
-      xchgRate.value = divine.chaos
+      PRICES_DB = splitJsonBlob(jsonBlob)
+      const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
+      if (divine && divine.chaos >= 30) {
+        xchgRate.value = divine.chaos
+      }
+      lastUpdateTime = Date.now()
+    } finally {
+      isLoading.value = false
     }
-    lastUpdateTime = Date.now()
   }
 
   function selectedLeagueToUrl (): string {
@@ -125,7 +131,8 @@ export const usePoeninja = createGlobalState(() => {
   return {
     xchgRate: readonly(xchgRate),
     findPriceByQuery,
-    autoCurrency
+    autoCurrency,
+    initialLoading: () => isLoading.value && !PRICES_DB.length
   }
 })
 

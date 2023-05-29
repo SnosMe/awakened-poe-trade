@@ -10,22 +10,22 @@
     </div>
     <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <app-titlebar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
-        <div class="flex">
-          <ui-popover v-if="stableOrbCost" trigger="click" boundary="#price-window">
-            <template #target>
-              <button><i class="fas fa-exchange-alt"></i> {{ stableOrbCost }}</button>
-            </template>
-            <template #content>
-              <item-quick-price class="text-base"
-                :price="{ min: stableOrbCost, max: stableOrbCost, currency: 'chaos' }"
-                item-img="/images/divine.png"
-              />
-              <div v-for="i in 9" :key="i">
-                <div class="pl-1">{{ i / 10 }} div ⇒ {{ Math.round(stableOrbCost * i / 10) }} c</div>
-              </div>
-            </template>
-          </ui-popover>
-        </div>
+        <ui-popover v-if="stableOrbCost" trigger="click" boundary="#price-window">
+          <template #target>
+            <button><i class="fas fa-exchange-alt" /> {{ stableOrbCost }}</button>
+          </template>
+          <template #content>
+            <item-quick-price class="text-base"
+              :price="{ min: stableOrbCost, max: stableOrbCost, currency: 'chaos' }"
+              item-img="/images/divine.png"
+            />
+            <div v-for="i in 9" :key="i">
+              <div class="pl-1">{{ i / 10 }} div ⇒ {{ Math.round(stableOrbCost * i / 10) }} c</div>
+            </div>
+          </template>
+        </ui-popover>
+        <i v-else-if="xchgRateLoading()" class="fas fa-dna fa-spin px-2" />
+        <div v-else class="w-8" />
       </app-titlebar>
       <div class="grow layout-column min-h-0 bg-gray-800">
         <background-info />
@@ -109,7 +109,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const { xchgRate } = usePoeninja()
+    const { xchgRate, initialLoading: xchgRateLoading } = usePoeninja()
 
     nextTick(() => {
       props.config.wmWants = 'hide'
@@ -247,6 +247,7 @@ export default defineComponent({
       closePriceCheck,
       title,
       stableOrbCost,
+      xchgRateLoading,
       showCheckPos,
       checkPosition,
       item,
