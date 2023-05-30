@@ -1,5 +1,5 @@
 {
-  "please_wait": "Пожалуйста, подождите…",
+  "please_wait": "Please wait…",
   "choose_file": "Choose File",
   "browse": "Browse",
   "app_is_ready": "Is ready and running in background",
@@ -21,9 +21,9 @@
     "report_bug": "Report a bug on GitHub",
     "quit": "Quit"
   },
-  "map.mods.heist": "кража",
-  "map.mods.outdated": "устарело",
-  "Support development on": "Поддержите разработку на",
+  "map.mods.heist": "heist",
+  "map.mods.outdated": "outdated",
+  "Support development on": "Support development on",
   "Blighted": "Blighted",
   "Blight-ravaged": "Blight-ravaged",
   "Shaper": "Shaper",
