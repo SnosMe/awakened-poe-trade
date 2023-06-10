@@ -7,7 +7,7 @@ title: Common issues
     Please do it. Did you know that updating Geforce Experience can reset game
     video settings to "optimized profile" and silently enable Fullscreen mode?
 
-2. [Check the log file](/faq).
+2. [Check the logs](/faq).
 
 3. Are you playing with Vulkan renderer? Update GPU drivers.
 
@@ -16,7 +16,7 @@ title: Common issues
 
 4. Delete `%appdata%\awakened-poe-trade`
 
-    If needed, backup `apt-data` folder with your configuration inside.\
+    If needed, backup `apt-data` folder with your configuration inside.
 
 5. **Close all applications** that you can in tray and task manager.
 
@@ -26,7 +26,7 @@ title: Common issues
 
     *(don't forget to quit first, otherwise launching second instance will do nothing).*
 
-7. Enable detailed logs (Settings>Debug), restart tool, try to price check item, open the log file again.
+7. Enable detailed logs (Settings>Debug), restart tool, try to price check item, open the logs again.
 
 8. As last resort, go to Discord. But if you don't describe something specific about
     your problem, **you will most likely be directed to this page**.
