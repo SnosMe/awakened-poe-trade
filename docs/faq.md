@@ -53,7 +53,7 @@ title: FAQ
   app works based on text of item in clipboard.
 
   Regarding Divination Card stash tab, you can use another 3rd-party apps that
-  price check your stash tabs (e.g. [Exilence Next](https://github.com/viktorgullmark/exilence-next/#readme))
+  price check your stash tabs (e.g. [poestack](https://poestack.com/))
 
 - **What does the orange/red circle (next to the item's listed time) mean?**
 
