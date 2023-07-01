@@ -109,7 +109,7 @@ export default defineComponent({
   },
   setup (props) {
     const wm = inject<WidgetManager>('wm')!
-    const { xchgRate, initialLoading: xchgRateLoading } = usePoeninja()
+    const { xchgRate, initialLoading: xchgRateLoading, queuePricesFetch } = usePoeninja()
 
     nextTick(() => {
       props.config.wmWants = 'hide'
@@ -158,6 +158,7 @@ export default defineComponent({
           throw new Error('UNKNOWN_ITEM')
         } else {
           item.value = parsed
+          queuePricesFetch()
         }
       } catch (err: unknown) {
         const strings = (err instanceof Error && err.message === 'UNKNOWN_ITEM')

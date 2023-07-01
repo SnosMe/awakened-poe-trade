@@ -11,8 +11,9 @@ interface NinjaDenseInfo {
 }
 
 type PriceDatabase = Array<{ ns: string, url: string, lines: string }>
-const RETRY_TIME = 2 * 60 * 1000
-const UPDATE_TIME = 16 * 60 * 1000
+const RETRY_INTERVAL_MS = 4 * 60 * 1000
+const UPDATE_INTERVAL_MS = 31 * 60 * 1000
+const INTEREST_SPAN_MS = 20 * 60 * 1000
 
 interface DbQuery {
   ns: string
@@ -35,12 +36,16 @@ export const usePoeninja = createGlobalState(() => {
   let PRICES_DB: PriceDatabase = []
   let lastUpdateTime = 0
   let downloadController: AbortController | undefined
+  let lastInterestTime = 0
 
   async function load (force: boolean = false) {
     const league = leagues.selected.value
     if (!league || !league.isPopular || league.realm !== 'pc-ggg') return
 
-    if (!force && (Date.now() - lastUpdateTime) < UPDATE_TIME) return
+    if (!force && (
+      (Date.now() - lastUpdateTime) < UPDATE_INTERVAL_MS ||
+      (Date.now() - lastInterestTime) > INTEREST_SPAN_MS
+    )) return
     if (downloadController) downloadController.abort()
 
     try {
@@ -60,6 +65,11 @@ export const usePoeninja = createGlobalState(() => {
     } finally {
       isLoading.value = false
     }
+  }
+
+  function queuePricesFetch () {
+    lastInterestTime = Date.now()
+    load()
   }
 
   function selectedLeagueToUrl (): string {
@@ -120,7 +130,7 @@ export const usePoeninja = createGlobalState(() => {
 
   setInterval(() => {
     load()
-  }, RETRY_TIME)
+  }, RETRY_INTERVAL_MS)
 
   watch(leagues.selectedId, () => {
     xchgRate.value = undefined
@@ -132,6 +142,7 @@ export const usePoeninja = createGlobalState(() => {
     xchgRate: readonly(xchgRate),
     findPriceByQuery,
     autoCurrency,
+    queuePricesFetch,
     initialLoading: () => isLoading.value && !PRICES_DB.length
   }
 })
