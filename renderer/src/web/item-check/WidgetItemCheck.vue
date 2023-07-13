@@ -43,7 +43,7 @@ export default defineComponent({
       if (e.target !== 'item-check') return
 
       checkPosition.value = e.position
-      item.value = parseClipboard(e.clipboard)
+      item.value = parseClipboard(e.clipboard).unwrapOr(null)
       if (item.value) {
         wm.show(props.config.wmId)
       }

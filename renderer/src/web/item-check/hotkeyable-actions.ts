@@ -7,17 +7,17 @@ const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw' }
 export function registerActions () {
   Host.onEvent('MAIN->CLIENT::item-text', (e) => {
     if (!['open-wiki', 'open-craft-of-exile', 'open-poedb', 'search-similar'].includes(e.target)) return
-    const item = parseClipboard(e.clipboard)
-    if (!item) return
+    const parsed = parseClipboard(e.clipboard)
+    if (!parsed.isOk()) return
 
     if (e.target === 'open-wiki') {
-      openWiki(item)
+      openWiki(parsed.value)
     } else if (e.target === 'open-craft-of-exile') {
-      openCoE(item)
+      openCoE(parsed.value)
     } else if (e.target === 'open-poedb') {
-      openPoedb(item)
+      openPoedb(parsed.value)
     } else if (e.target === 'search-similar') {
-      findSimilarItems(item)
+      findSimilarItems(parsed.value)
     }
   })
 }

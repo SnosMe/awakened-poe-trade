@@ -31,17 +31,17 @@
         <background-info />
         <check-position-circle v-if="showCheckPos"
           :position="checkPosition" style="z-index: -1;" />
-        <template v-if="item && ('error' in item)">
+        <template v-if="item?.isErr()">
           <ui-error-box class="m-4">
             <template #name>{{ t(item.error.name) }}</template>
             <p>{{ t(item.error.message) }}</p>
           </ui-error-box>
-          <pre class="bg-gray-900 rounded m-4 overflow-x-hidden p-2">{{ item.rawText }}</pre>
+          <pre class="bg-gray-900 rounded m-4 overflow-x-hidden p-2">{{ item.error.rawText }}</pre>
         </template>
-        <template v-else>
-          <unidentified-resolver :item="item" @identify="item = $event" />
-          <checked-item v-if="isLeagueSelected && item"
-            :item="item" :advanced-check="advancedCheck" />
+        <template v-else-if="item?.isOk()">
+          <unidentified-resolver :item="item.value" @identify="handleIdentification($event)" />
+          <checked-item v-if="isLeagueSelected"
+            :item="item.value" :advanced-check="advancedCheck" />
         </template>
         <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
           <i18n-t keypath="app.toggle_browser_hint" tag="div">
@@ -58,8 +58,8 @@
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
-        <related-items v-if="item && !('error' in item)" class="pointer-events-auto"
-          :item="item" :click-position="clickPosition" />
+        <related-items v-if="item?.isOk()" class="pointer-events-auto"
+          :item="item.value" :click-position="clickPosition" />
         <rate-limiter-state class="pointer-events-auto" />
       </div>
     </div>
@@ -68,6 +68,7 @@
 
 <script lang="ts">
 import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTick, provide } from 'vue'
+import { Result, ok, err } from 'neverthrow'
 import { useI18n } from 'vue-i18n'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
@@ -83,13 +84,7 @@ import CheckPositionCircle from './CheckPositionCircle.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
 
-interface ParseError {
-  error: {
-    name: string
-    message: string
-  }
-  rawText: ParsedItem['rawText']
-}
+type ParseError = { name: string; message: string; rawText: ParsedItem['rawText'] }
 
 export default defineComponent({
   components: {
@@ -116,7 +111,7 @@ export default defineComponent({
       props.config.wmFlags = ['hide-on-blur', 'skip-menu']
     })
 
-    const item = shallowRef<ParsedItem | ParseError | null>(null)
+    const item = shallowRef<null | Result<ParsedItem, ParseError>>(null)
     const advancedCheck = shallowRef(false)
     const checkPosition = shallowRef({ x: 1, y: 1 })
 
@@ -149,28 +144,28 @@ export default defineComponent({
       wm.show(props.config.wmId)
       checkPosition.value = e.position
       advancedCheck.value = e.focusOverlay
-      try {
-        const parsed = parseClipboard(e.clipboard)
-        if (parsed != null && (
-          (parsed.category === ItemCategory.HeistContract && parsed.rarity !== ItemRarity.Unique) ||
-          (parsed.category === ItemCategory.Sentinel && parsed.rarity !== ItemRarity.Unique)
-        )) {
-          throw new Error('UNKNOWN_ITEM')
-        } else {
-          item.value = parsed
-          queuePricesFetch()
-        }
-      } catch (err: unknown) {
-        const strings = (err instanceof Error && err.message === 'UNKNOWN_ITEM')
-          ? 'item.unknown'
-          : 'item.parse_error'
 
-        item.value = {
-          error: { name: `${strings}`, message: `${strings}_help` },
+      item.value = parseClipboard(e.clipboard)
+        .andThen(item => (
+          (item.category === ItemCategory.HeistContract && item.rarity !== ItemRarity.Unique) ||
+          (item.category === ItemCategory.Sentinel && item.rarity !== ItemRarity.Unique))
+          ? err('item.unknown')
+          : ok(item))
+        .mapErr(err => ({
+          name: `${err}`,
+          message: `${err}_help`,
           rawText: e.clipboard
-        }
+        }))
+
+      if (item.value.isOk()) {
+        queuePricesFetch()
       }
     })
+
+    function handleIdentification (identified: ParsedItem) {
+      item.value = ok(identified)
+    }
+
     MainProcess.onEvent('MAIN->OVERLAY::hide-exclusive-widget', () => {
       wm.hide(props.config.wmId)
     })
@@ -253,6 +248,7 @@ export default defineComponent({
       checkPosition,
       item,
       advancedCheck,
+      handleIdentification,
       overlayKey,
       isLeagueSelected,
       openLeagueSelection
