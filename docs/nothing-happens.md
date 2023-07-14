@@ -1,6 +1,8 @@
 ---
-title: Nothing happens
+title: Nothing happens when I try to price check
 ---
+
+# Nothing happens when I try to price check
 
 To understand why nothing is happening, you need to open the logs.
 Most problems are easy to fix once you read them. But there is one that doesn't have a quick fix:

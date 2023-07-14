@@ -9,7 +9,7 @@ title: FAQ
 
 - **Where can I find the logs?**
 
-  In the settings under the Debug tab.
+  In the settings under the "Debug" tab.
   ![](https://i.imgur.com/0VPm9Cz.png)
 
 - **Is this app approved by GGG? Can I get banned for using it?**
