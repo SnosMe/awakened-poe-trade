@@ -34,7 +34,7 @@
     "items": [
       "ITEM::Blessing of Tul",
       "ITEM::Tul's Flawless Breachstone",
-      "UNIQUE::Tulborn // Spiraled Wand",
+      "UNIQUE::Tulborn // Opal Wand",
       "UNIQUE::The Halcyon // Jade Amulet",
       "UNIQUE::The Snowblind Grace // Coronal Leather",
       "DIVINATION_CARD::The Escape"
@@ -458,7 +458,7 @@
   },
   {
     "query": [
-      "UNIQUE::Cortex // T10"
+      "UNIQUE::Cortex // T11"
     ],
     "items": [
       "UNIQUE::Bottled Faith",
@@ -471,10 +471,10 @@
   },
   {
     "query": [
-      "UNIQUE::Rewritten Distant Memory // T10",
-      "UNIQUE::Augmented Distant Memory // T10",
-      "UNIQUE::Altered Distant Memory // T10",
-      "UNIQUE::Twisted Distant Memory // T10"
+      "UNIQUE::Rewritten Distant Memory // T11",
+      "UNIQUE::Augmented Distant Memory // T11",
+      "UNIQUE::Altered Distant Memory // T11",
+      "UNIQUE::Twisted Distant Memory // T11"
     ],
     "items": [
       "UNIQUE::Circle of Anguish // Ruby Ring",
@@ -584,7 +584,7 @@
       "UNIQUE::The Tower of Ordeals // T16"
     ],
     "items": [
-      "UNIQUE::Relic of the Pact // Spiraled Wand",
+      "UNIQUE::Relic of the Pact // Sage Wand",
       "UNIQUE::Mahuxotl's Machination // Steel Kite Shield",
       "UNIQUE::Temptation Step // Shagreen Boots",
       "UNIQUE::Glimpse of Chaos // Vaal Mask",
@@ -740,13 +740,13 @@
   },
   {
     "query": [
-      "UNIQUE::Tulborn // Spiraled Wand",
+      "UNIQUE::Tulborn // Opal Wand",
       "UNIQUE::The Snowblind Grace // Coronal Leather",
       "UNIQUE::The Halcyon // Jade Amulet",
       "ITEM::Blessing of Tul"
     ],
     "items": [
-      "UNIQUE::Tulfall // Tornado Wand",
+      "UNIQUE::Tulfall // Opal Wand",
       "UNIQUE::The Perfect Form // Zodiac Leather",
       "UNIQUE::The Pandemonius // Jade Amulet"
     ]
