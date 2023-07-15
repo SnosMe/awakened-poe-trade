@@ -58,3 +58,13 @@ title: FAQ
 - **What does the orange/red circle (next to the item's listed time) mean?**
 
   It shows player's status: AFK/Offline respectively.
+
+- **What does question mark (next to the item's price) mean?**
+
+  It's shown when item is priced using stash tab name instead of being individually priced.
+
+  The intention here is to make you aware that price is likely not real and is only so high because the item has been thrown in dump tab.
+
+- **How do I disable auto-updates?**
+
+  This is possible by using the [command line flag](/cmd-flags).
