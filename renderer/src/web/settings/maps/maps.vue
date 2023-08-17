@@ -13,7 +13,7 @@
         <i class="w-8 py-1 bg-green-700 fas fa-check"></i>
       </div>
     </div>
-    <virtual-scroll
+    <VirtualScroll
       class="flex-1"
       style="overflow-y: scroll;"
       :items="filteredStats"
@@ -25,7 +25,7 @@
         :matcher="props.item"
         :selected-stats="selectedStats"
         :profile="profile" />
-    </virtual-scroll>
+    </VirtualScroll>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ import { configProp, findWidget } from '../utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
 import MapsStatEntry from './MapsStatEntry.vue'
-import VirtualScroll, { VirtualScrollT } from '../../ui/VirtualScroll.vue'
+import VirtualScroll from '../../ui/VirtualScroll.vue'
 import type { MapStatMatcher } from './interfaces'
 
 function statToShowOrder (stat: Omit<MapStatMatcher, 'outdated'>) {
@@ -51,7 +51,7 @@ export default defineComponent({
   name: 'map_check.name',
   components: {
     MapsStatEntry,
-    VirtualScroll: VirtualScroll as VirtualScrollT<MapStatMatcher>
+    VirtualScroll
   },
   props: configProp(),
   setup (props) {

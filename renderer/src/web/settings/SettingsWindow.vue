@@ -17,7 +17,7 @@
     </div>
   </div>
   <div :class="$style.window" class="grow layout-column" :onMouseenter="hidePodium">
-    <app-titlebar @close="cancel" :title="t('settings.title')" />
+    <AppTitleBar @close="cancel" :title="t('settings.title')" />
     <div class="flex grow min-h-0">
       <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
         <template v-for="item of menuItems">
@@ -55,6 +55,7 @@ import { AppConfig, updateConfig, saveConfig, pushHostConfig, Config } from '@/w
 import { APP_PATRONS } from '@/assets/data'
 import { Host } from '@/web/background/IPC'
 import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
+import AppTitleBar from '@/web/ui/AppTitlebar.vue'
 import SettingsHotkeys from './hotkeys.vue'
 import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
@@ -86,6 +87,7 @@ function quit () {
 }
 
 export default defineComponent({
+  components: { AppTitleBar },
   props: {
     config: {
       type: Object as PropType<Widget>,

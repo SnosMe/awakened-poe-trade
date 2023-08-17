@@ -9,7 +9,7 @@
       style="width: var(--game-panel);">
     </div>
     <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
-      <app-titlebar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
+      <AppTitleBar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
         <ui-popover v-if="stableOrbCost" trigger="click" boundary="#price-window">
           <template #target>
             <button><i class="fas fa-exchange-alt" /> {{ stableOrbCost }}</button>
@@ -26,7 +26,7 @@
         </ui-popover>
         <i v-else-if="xchgRateLoading()" class="fas fa-dna fa-spin px-2" />
         <div v-else class="w-8" />
-      </app-titlebar>
+      </AppTitleBar>
       <div class="grow layout-column min-h-0 bg-gray-800">
         <background-info />
         <check-position-circle v-if="showCheckPos"
@@ -81,6 +81,7 @@ import RelatedItems from './related-items/RelatedItems.vue'
 import RateLimiterState from './trade/RateLimiterState.vue'
 import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.vue'
 import CheckPositionCircle from './CheckPositionCircle.vue'
+import AppTitleBar from '@/web/ui/AppTitlebar.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
 
@@ -88,6 +89,7 @@ type ParseError = { name: string; message: string; rawText: ParsedItem['rawText'
 
 export default defineComponent({
   components: {
+    AppTitleBar,
     CheckedItem,
     UnidentifiedResolver,
     BackgroundInfo,

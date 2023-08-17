@@ -4,13 +4,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import OverlayWindow from './overlay/OverlayWindow.vue'
-
-export default defineComponent({
-  components: { OverlayWindow }
-})
 </script>
 
 <style lang="postcss">

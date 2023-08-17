@@ -1,16 +1,16 @@
 <template>
-  <widget :config="config" :move-handles="['tl', 'bl']" :removable="false" :inline-edit="false">
+  <Widget :config="config" :move-handles="['tl', 'bl']" :removable="false" :inline-edit="false">
     <div class="widget-default-style flex flex-col p-1 gap-1" style="min-width: 24rem;">
       <transition-group v-if="starred.length" tag="div"
         :enter-active-class="$style.starredItemEnter"
         class="flex gap-x-1 py-1 pr-1 bg-gray-800 rounded">
         <div v-for="item in starred" :key="item.name + item.discr"
           :class="$style.starredItem">
-          <item-quick-price
+          <ItemQuickPrice
             :item-img="item.icon"
             :price="item.price"
             currency-text
-          ></item-quick-price>
+          ></ItemQuickPrice>
           <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.name }}</div>
           <div v-if="item.discr"
             class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
@@ -24,7 +24,7 @@
         <div class="flex gap-x-1 p-1">
           <input type="text" :placeholder="t(':input')" class="rounded bg-gray-900 px-1 flex-1"
             v-model="searchValue">
-          <button @click="clearItems" class="btn"><i class="fas fa-times" /> {{ t(':reset') }}</button>
+          <button @click="clearSelectedItems" class="btn"><i class="fas fa-times" /> {{ t(':reset') }}</button>
         </div>
         <div class="flex gap-x-2 px-2 mb-px1 py-1">
           <span>{{ t(':heist_target') }}</span>
@@ -62,20 +62,15 @@
         </div>
       </div>
     </div>
-  </widget>
+  </Widget>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, shallowRef, ref, computed, nextTick, inject } from 'vue'
-import { useI18nNs } from '@/web/i18n'
+import { ref } from 'vue'
 import { distance } from 'fastest-levenshtein'
-import { ItemSearchWidget, WidgetManager } from './interfaces'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
-import Widget from './Widget.vue'
-import { BaseType, ITEMS_ITERATOR, CLIENT_STRINGS as _$, ALTQ_GEM_NAMES, ITEM_BY_TRANSLATED } from '@/assets/data'
+import { BaseType, ITEMS_ITERATOR, CLIENT_STRINGS as _$, ALTQ_GEM_NAMES } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
-import { usePoeninja, CurrencyValue } from '@/web/background/Prices'
-import { Host } from '@/web/background/IPC'
+import { CurrencyValue } from '@/web/background/Prices'
 
 interface SelectedItem {
   name: string
@@ -176,111 +171,111 @@ function fuzzyFindHeistGem (badStr: string) {
   }
   return bestMatch!
 }
+</script>
 
-export default defineComponent({
-  components: { Widget, ItemQuickPrice },
-  props: {
-    config: {
-      type: Object as PropType<ItemSearchWidget>,
-      required: true
-    }
-  },
-  setup (props) {
-    const wm = inject<WidgetManager>('wm')!
-    const { t } = useI18nNs('item_search')
-    const { findPriceByQuery, autoCurrency, queuePricesFetch } = usePoeninja()
+<script setup lang="ts">
+import { shallowRef, computed, nextTick, inject } from 'vue'
+import { useI18nNs } from '@/web/i18n'
+import { ItemSearchWidget, WidgetManager } from './interfaces'
+import { ITEM_BY_TRANSLATED } from '@/assets/data'
+import { usePoeninja } from '@/web/background/Prices'
+import { Host } from '@/web/background/IPC'
 
-    const showTimeout = shallowRef<{ reset:() => void } | null>(null)
+import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+import Widget from './Widget.vue'
 
-    nextTick(() => {
-      props.config.wmFlags = ['invisible-on-blur']
-    })
+const props = defineProps<{
+  config: ItemSearchWidget
+}>()
 
-    const searchValue = shallowRef('')
-    const { items: starred, addItem, clearItems } = useSelectedItems()
+const wm = inject<WidgetManager>('wm')!
+const { t } = useI18nNs('item_search')
+const { findPriceByQuery, autoCurrency, queuePricesFetch } = usePoeninja()
 
-    const typeFilter = shallowRef<'gem' | 'replica'>('gem')
+const showTimeout = shallowRef<{ reset:() => void } | null>(null)
 
-    Host.onEvent('MAIN->CLIENT::ocr-text', (e) => {
-      if (e.target !== 'heist-gems') return
+nextTick(() => {
+  props.config.wmFlags = ['invisible-on-blur']
+})
 
-      for (const para of e.paragraphs) {
-        const res = fuzzyFindHeistGem(para)
-        selectItem(
-          ITEM_BY_TRANSLATED('GEM', res.name)![0],
-          { altQuality: res.altQuality, withTimeout: true }
-        )
-      }
-    })
+const searchValue = shallowRef('')
+const { items: starred, addItem, clearItems } = useSelectedItems()
 
-    function selectItem (item: BaseType, opts: { altQuality?: string, unique?: true, withTimeout?: true }) {
-      queuePricesFetch()
+const typeFilter = shallowRef<'gem' | 'replica'>('gem')
 
-      let price: ReturnType<typeof findPriceByQuery>
-      if (opts.altQuality) {
-        price = findPriceByQuery({
-          ns: item.namespace,
-          name: `${opts.altQuality} ${item.refName}`,
-          variant: '1'
-        })
-      } else {
-        price = findPriceByQuery({
-          ns: item.namespace,
-          name: item.refName,
-          variant: item.unique!.base
-        })
-      }
-      const isAdded = addItem({
-        name: item.name,
-        icon: item.icon,
-        discr: opts.altQuality,
-        chaos: price?.chaos,
-        price: (price != null) ? autoCurrency(price.chaos) : undefined
-      })
-      if (isAdded && opts.withTimeout) {
-        showTimeout.value?.reset()
-        props.config.wmFlags = []
-      }
-      searchValue.value = ''
-    }
+Host.onEvent('MAIN->CLIENT::ocr-text', (e) => {
+  if (e.target !== 'heist-gems') return
 
-    return {
-      t,
-      searchValue,
-      typeFilter,
-      results: computed(() => {
-        if (typeFilter.value === 'gem') {
-          return findItems({
-            search: searchValue.value,
-            jsonIncludes: ['GEM'],
-            matchFn: (item) => Boolean(
-              item.namespace === 'GEM' &&
-              item.gem!.altQuality?.length)
-          })
-        } else {
-          return findItems({
-            search: searchValue.value,
-            jsonIncludes: ['UNIQUE', 'Replica '],
-            matchFn: (item) => Boolean(
-              item.namespace === 'UNIQUE' &&
-              item.refName.startsWith('Replica '))
-          })
-        }
-      }),
-      selectItem,
-      clearItems () {
-        clearItems()
-        props.config.wmFlags = ['invisible-on-blur']
-      },
-      starred,
-      showSearch: wm.active,
-      showTimeout,
-      makeInvisible () {
-        props.config.wmFlags = ['invisible-on-blur']
-      }
-    }
+  for (const para of e.paragraphs) {
+    const res = fuzzyFindHeistGem(para)
+    selectItem(
+      ITEM_BY_TRANSLATED('GEM', res.name)![0],
+      { altQuality: res.altQuality, withTimeout: true }
+    )
   }
 })
+
+function selectItem (item: BaseType, opts: { altQuality?: string, unique?: true, withTimeout?: true }) {
+  queuePricesFetch()
+
+  let price: ReturnType<typeof findPriceByQuery>
+  if (opts.altQuality) {
+    price = findPriceByQuery({
+      ns: item.namespace,
+      name: `${opts.altQuality} ${item.refName}`,
+      variant: '1'
+    })
+  } else {
+    price = findPriceByQuery({
+      ns: item.namespace,
+      name: item.refName,
+      variant: item.unique!.base
+    })
+  }
+  const isAdded = addItem({
+    name: item.name,
+    icon: item.icon,
+    discr: opts.altQuality,
+    chaos: price?.chaos,
+    price: (price != null) ? autoCurrency(price.chaos) : undefined
+  })
+  if (isAdded && opts.withTimeout) {
+    showTimeout.value?.reset()
+    props.config.wmFlags = []
+  }
+  searchValue.value = ''
+}
+
+const results = computed(() => {
+  if (typeFilter.value === 'gem') {
+    return findItems({
+      search: searchValue.value,
+      jsonIncludes: ['GEM'],
+      matchFn: (item) => Boolean(
+        item.namespace === 'GEM' &&
+        item.gem!.altQuality?.length)
+    })
+  } else {
+    return findItems({
+      search: searchValue.value,
+      jsonIncludes: ['UNIQUE', 'Replica '],
+      matchFn: (item) => Boolean(
+        item.namespace === 'UNIQUE' &&
+        item.refName.startsWith('Replica '))
+    })
+  }
+})
+
+function clearSelectedItems () {
+  clearItems()
+  props.config.wmFlags = ['invisible-on-blur']
+}
+
+const showSearch = wm.active
+
+function makeInvisible () {
+  props.config.wmFlags = ['invisible-on-blur']
+}
 </script>
 
 <style lang="postcss" module>

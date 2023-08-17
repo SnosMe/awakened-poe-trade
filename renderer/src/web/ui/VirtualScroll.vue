@@ -10,58 +10,38 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, ref, triggerRef, PropType } from 'vue'
+<script setup lang="ts" generic="T">
+import { computed, ref, triggerRef } from 'vue'
 
-function defineGenericComponent<T> () { /* eslint-disable indent */
-return defineComponent({
-  props: {
-    items: {
-      type: Array as PropType<T[]>,
-      required: true
-    },
-    itemHeight: {
-      type: Number,
-      required: true
-    }
-  },
-  setup (props) {
-    const el = ref<HTMLElement>()
+const props = defineProps<{
+  items: T[]
+  itemHeight: number
+}>()
 
-    const renderItems = computed(() => {
-      if (!el.value) return []
+const el = ref<HTMLElement>()
 
-      const scrollTop = el.value.scrollTop
-      const count = Math.floor(el.value.offsetHeight / props.itemHeight) + 2
-      const startIdx = Math.floor(scrollTop / props.itemHeight)
+const renderItems = computed(() => {
+  if (!el.value) return []
 
-      const top = (startIdx * props.itemHeight)
+  const scrollTop = el.value.scrollTop
+  const count = Math.floor(el.value.offsetHeight / props.itemHeight) + 2
+  const startIdx = Math.floor(scrollTop / props.itemHeight)
 
-      return props.items
-        .slice(startIdx, startIdx + count)
-        .map((item, i) =>
-          ({
-            top: top + (i * props.itemHeight),
-            item
-          })
-        )
-    })
+  const top = (startIdx * props.itemHeight)
 
-    return {
-      el,
-      renderItems,
-      handleScroll () {
-        triggerRef(el)
-      },
-      fullHeight: computed(() => props.items.length * props.itemHeight)
-    }
-  }
+  return props.items
+    .slice(startIdx, startIdx + count)
+    .map((item, i) =>
+      ({
+        top: top + (i * props.itemHeight),
+        item
+      })
+    )
 })
-}
-export default defineGenericComponent<unknown>()
 
-class VirtualScrollGeneric<T> {
-  define () { return defineGenericComponent<T>() }
+const fullHeight = computed(() => props.items.length * props.itemHeight)
+
+function handleScroll () {
+  triggerRef(el)
 }
-export type VirtualScrollT<T> = ReturnType<VirtualScrollGeneric<T>['define']>
 </script>

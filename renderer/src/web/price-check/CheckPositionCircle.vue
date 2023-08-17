@@ -16,25 +16,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType, computed } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 
-export default defineComponent({
-  props: {
-    position: {
-      type: Object as PropType<{ x: number, y: number }>,
-      required: true
-    }
-  },
-  setup (props) {
-    return {
-      relativePos: computed(() => {
-        return {
-          top: `calc(${props.position.y - window.screenY}px - 2.5rem)`,
-          left: `calc(${props.position.x - window.screenX}px - 2.5rem)`
-        }
-      })
-    }
+const props = defineProps<{
+  position: { x: number, y: number }
+}>()
+
+const relativePos = computed(() => {
+  return {
+    top: `calc(${props.position.y - window.screenY}px - 2.5rem)`,
+    left: `calc(${props.position.x - window.screenX}px - 2.5rem)`
   }
 })
 </script>
