@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/prefer-reduce-type-parameter': 'off',
     '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/consistent-indexed-object-style': 'off',
     // TODO: refactor IPC and enable
     '@typescript-eslint/consistent-type-assertions': 'off'
   },

@@ -34,7 +34,7 @@ export async function loadLang (lang: string): Promise<void> {
 
   document.documentElement.lang = lang
 
-  return await nextTick()
+  await nextTick()
 }
 
 export function useI18nNs (name: string) {
