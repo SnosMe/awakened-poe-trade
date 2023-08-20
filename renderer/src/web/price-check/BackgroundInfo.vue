@@ -7,7 +7,7 @@
     <i class="fas fa-info-circle text-gray-600"></i> {{ t('app.leagues_loading') }}</div>
   <ui-error-box class="mx-4 mt-4" v-else-if="leaguesError">
     <template #name>{{ t('app.leagues_failed') }}</template>
-    <p>{{ t('leagues_failed_help') }}</p>
+    <p>{{ t('app.leagues_failed_help') }}</p>
     <template #actions>
       <button class="btn" @click="retry">{{ t('Retry') }}</button>
       <button class="btn" @click="openCaptcha">{{ t('Browser') }}</button>
