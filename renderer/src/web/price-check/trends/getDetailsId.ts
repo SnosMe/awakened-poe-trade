@@ -28,7 +28,7 @@ export function getDetailsId (item: ParsedItem) {
         : item.info.refName,
       variant: variant([
         `T${item.mapTier}`,
-        (item.rarity !== ItemRarity.Unique) ? 'Gen-16' : null
+        (item.rarity !== ItemRarity.Unique) ? 'Gen-18' : null
       ])
     }
   }

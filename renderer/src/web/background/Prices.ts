@@ -174,6 +174,8 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
     { ns: 'ITEM', url: 'blight-ravaged-maps', type: 'BlightRavagedMap' },
     { ns: 'ITEM', url: 'essences', type: 'Essence' },
     { ns: 'ITEM', url: 'maps', type: 'Map' },
+    { ns: 'ITEM', url: 'tattoos', type: 'Tattoo' },
+    { ns: 'ITEM', url: 'omens', type: 'Omen' },
     { ns: 'DIVINATION_CARD', url: 'divination-cards', type: 'DivinationCard' },
     { ns: 'CAPTURED_BEAST', url: 'beasts', type: 'Beast' },
     { ns: 'UNIQUE', url: 'unique-jewels', type: 'UniqueJewel' },
