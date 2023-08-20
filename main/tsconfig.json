@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "moduleResolution": "node"
   }
 }
