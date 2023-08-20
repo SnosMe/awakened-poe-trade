@@ -13,8 +13,8 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{
-  click: []
-  close: []
+  (e: 'click'): void
+  (e: 'close'): void
 }>()
 </script>
 

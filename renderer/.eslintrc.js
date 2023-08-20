@@ -34,6 +34,7 @@ module.exports = {
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     'import/first': 'off',
     'import/no-duplicates': 'off',
+    'func-call-spacing': 'off',
     // TODO: refactor IPC and enable
     '@typescript-eslint/consistent-type-assertions': 'off'
   },
