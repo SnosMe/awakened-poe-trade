@@ -10,16 +10,20 @@
 </template>
 
 <script setup lang="ts">
+import { type PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const props = defineProps<{
-  filter: { disabled: boolean } // will be mutated directly, instead of emit
-  text: string
-  img?: string
-  readonly?: boolean
-  active?: boolean
-  collapse?: boolean
-}>()
+const props = defineProps({
+  filter: {
+    type: Object as PropType<{ disabled: boolean }>, // will be mutated directly, instead of emit
+    required: true
+  },
+  text: { type: String, required: true },
+  img: { type: String, default: undefined },
+  readonly: { type: Boolean, default: undefined },
+  active: { type: Boolean, default: undefined },
+  collapse: { type: Boolean, default: undefined }
+})
 
 const { t } = useI18n()
 
