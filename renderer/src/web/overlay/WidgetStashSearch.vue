@@ -1,5 +1,5 @@
 <template>
-  <widget :config="config" move-handles="corners" :inline-edit="false">
+  <Widget :config="config" move-handles="corners" :inline-edit="false">
     <div class="widget-default-style p-1" style="min-width: 5rem;">
       <div class="text-gray-100 m-1 leading-4 truncate">{{ config.wmTitle || 'Untitled' }}</div>
       <div class="flex flex-col gap-y-1 mt-2">
@@ -11,47 +11,39 @@
         </button>
       </div>
     </div>
-  </widget>
+  </Widget>
 </template>
 
-<script lang="ts">
-import { defineComponent, inject, PropType } from 'vue'
-import Widget from './Widget.vue'
+<script setup lang="ts">
+import { inject } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
 import { WidgetManager, StashSearchWidget } from './interfaces'
 
-export default defineComponent({
-  components: { Widget },
-  props: {
-    config: {
-      type: Object as PropType<StashSearchWidget>,
-      required: true
-    }
-  },
-  setup (props) {
-    const wm = inject<WidgetManager>('wm')!
+import Widget from './Widget.vue'
 
-    if (props.config.wmFlags[0] === 'uninitialized') {
-      props.config.wmFlags = ['invisible-on-blur']
-      props.config.anchor = {
-        pos: 'tl',
-        x: (Math.random() * (40 - 20) + 20),
-        y: (Math.random() * (40 - 20) + 20)
-      }
-      props.config.entries = [{
-        id: 1, text: 'Currency', name: '', hotkey: null
-      }]
-      wm.show(props.config.wmId)
-    }
+const props = defineProps<{
+  config: StashSearchWidget
+}>()
 
-    return {
-      stashSearch (text: string) {
-        MainProcess.sendEvent({
-          name: 'CLIENT->MAIN::user-action',
-          payload: { action: 'stash-search', text }
-        })
-      }
-    }
+const wm = inject<WidgetManager>('wm')!
+
+if (props.config.wmFlags[0] === 'uninitialized') {
+  props.config.wmFlags = ['invisible-on-blur']
+  props.config.anchor = {
+    pos: 'tl',
+    x: (Math.random() * (40 - 20) + 20),
+    y: (Math.random() * (40 - 20) + 20)
   }
-})
+  props.config.entries = [{
+    id: 1, text: 'Currency', name: '', hotkey: null
+  }]
+  wm.show(props.config.wmId)
+}
+
+function stashSearch (text: string) {
+  MainProcess.sendEvent({
+    name: 'CLIENT->MAIN::user-action',
+    payload: { action: 'stash-search', text }
+  })
+}
 </script>

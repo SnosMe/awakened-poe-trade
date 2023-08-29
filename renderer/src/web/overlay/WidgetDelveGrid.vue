@@ -1,5 +1,5 @@
 <template>
-  <widget :config="config" move-handles="none" readonly :removable="false">
+  <Widget :config="config" move-handles="none" readonly :removable="false">
     <div class="relative overflow-hidden"
       :style="{
         width: `${anchor.width}px`,
@@ -19,66 +19,56 @@
           </div>
         </div>
     </div>
-  </widget>
+  </Widget>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, inject, PropType } from 'vue'
-import Widget from './Widget.vue'
+<script setup lang="ts">
+import { computed, inject } from 'vue'
 import { Host } from '@/web/background/IPC'
 import { Widget as IWidget, WidgetManager } from './interfaces'
 
-export default defineComponent({
-  components: { Widget },
-  props: {
-    config: {
-      type: Object as PropType<IWidget>,
-      required: true
-    }
-  },
-  setup (props) {
-    const wm = inject<WidgetManager>('wm')!
+import Widget from './Widget.vue'
 
-    Host.onEvent('MAIN->CLIENT::widget-action', (e) => {
-      if (e.target !== 'delve-grid' || !Host.isElectron) return
+const props = defineProps<{
+  config: IWidget
+}>()
 
-      if (props.config.wmWants === 'hide') {
-        wm.show(props.config.wmId)
-      } else {
-        wm.hide(props.config.wmId)
-      }
-    })
+const wm = inject<WidgetManager>('wm')!
 
-    const anchor = computed(() => {
-      const wmHeight = wm.size.value.height
+Host.onEvent('MAIN->CLIENT::widget-action', (e) => {
+  if (e.target !== 'delve-grid' || !Host.isElectron) return
 
-      const height = Math.round(wmHeight * 808 / 1080)
-      const width = Math.round(height * 1030 / 808)
-      const top = Math.round(wmHeight * 67 / 1080)
-      const cell = Math.round(wmHeight * 97 / 1080)
-
-      return {
-        pos: 'tc',
-        y: (top / wmHeight) * 100,
-        x: 50,
-        height,
-        width,
-        cell
-      }
-    })
-
-    const cellSize = computed(() => {
-      return {
-        width: `${anchor.value.cell}px`,
-        height: `${anchor.value.cell}px`
-      }
-    })
-
-    return {
-      anchor,
-      config: computed(() => ({ ...props.config, anchor: anchor.value })),
-      cellSize
-    }
+  if (props.config.wmWants === 'hide') {
+    wm.show(props.config.wmId)
+  } else {
+    wm.hide(props.config.wmId)
   }
 })
+
+const anchor = computed(() => {
+  const wmHeight = wm.size.value.height
+
+  const height = Math.round(wmHeight * 808 / 1080)
+  const width = Math.round(height * 1030 / 808)
+  const top = Math.round(wmHeight * 67 / 1080)
+  const cell = Math.round(wmHeight * 97 / 1080)
+
+  return {
+    pos: 'tc',
+    y: (top / wmHeight) * 100,
+    x: 50,
+    height,
+    width,
+    cell
+  }
+})
+
+const cellSize = computed(() => {
+  return {
+    width: `${anchor.value.cell}px`,
+    height: `${anchor.value.cell}px`
+  }
+})
+
+const config = computed(() => ({ ...props.config, anchor: anchor.value }))
 </script>
