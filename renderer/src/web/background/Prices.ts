@@ -184,6 +184,7 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
     { ns: 'UNIQUE', url: 'unique-armours', type: 'UniqueArmour' },
     { ns: 'UNIQUE', url: 'unique-accessories', type: 'UniqueAccessory' },
     { ns: 'UNIQUE', url: 'unique-maps', type: 'UniqueMap' },
+    { ns: 'UNIQUE', url: 'unique-relics', type: 'UniqueRelic' },
     { ns: 'GEM', url: 'skill-gems', type: 'SkillGem' }
   ]
 

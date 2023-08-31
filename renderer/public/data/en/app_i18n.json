@@ -128,7 +128,8 @@
     "heistequipment_heistreward": "Heist Brooch",
     "heistequipment_heistweapon": "Heist Gear",
     "heistequipment_heistutility": "Heist Cloak",
-    "accessory_trinket": "Trinket"
+    "accessory_trinket": "Trinket",
+    "sanctum_relic": "Sanctum Relic"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",

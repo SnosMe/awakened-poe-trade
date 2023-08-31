@@ -1143,25 +1143,24 @@
   },
   {
     "query": [
-      "UNIQUE::The Power and the Promise // Tome Relic",
-      "UNIQUE::The Original Scripture // Papyrus Relic",
-      "UNIQUE::The Blood of Innocence // Censer Relic",
-      "UNIQUE::The Chains of Castigation // Processional Relic",
-      "UNIQUE::The Second Sacrament // Candlestick Relic",
-      "UNIQUE::The Broken Censer // Tome Relic",
+      "UNIQUE::The Original Scripture // Relic",
+      "UNIQUE::The Power and the Promise // Relic",
+      "UNIQUE::The Blood of Innocence // Relic",
+      "UNIQUE::The Chains of Castigation // Relic",
+      "UNIQUE::The Second Sacrament // Relic",
       "ITEM::Forbidden Tome"
     ],
     "items": [
-      "UNIQUE::Eternal Damnation // Agate Amulet",
       "UNIQUE::Original Sin // Amethyst Ring",
+      "UNIQUE::Eternal Damnation // Agate Amulet",
       "UNIQUE::The Balance of Terror // Cobalt Jewel",
       "UNIQUE::Sandstorm Visage // Necromancer Circlet",
       "UNIQUE::The Winds of Fate // Foul Staff",
-      "ITEM::Forbidden Tome",
-      "UNIQUE::The First Crest // Coffer Relic",
-      "UNIQUE::The Gilded Chalice // Processional Relic",
-      "UNIQUE::The Hour of Divinity // Censer Relic",
-      "UNIQUE::The Night Lamp // Urn Relic"
+      "UNIQUE::The Gilded Chalice // Relic",
+      "UNIQUE::The Hour of Divinity // Relic",
+      "UNIQUE::The First Crest // Relics, Relic",
+      "UNIQUE::The Night Lamp // Relic",
+      "UNIQUE::The Broken Censer // Relic"
     ]
   }
 ]

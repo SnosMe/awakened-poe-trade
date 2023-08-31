@@ -147,7 +147,8 @@
     "heistequipment_heistreward": "Разбойничья брошь",
     "heistequipment_heistweapon": "Разбойничьи принадлежности",
     "heistequipment_heistutility": "Разбойничья накидка",
-    "accessory_trinket": "Украшение"
+    "accessory_trinket": "Украшение",
+    "sanctum_relic": "Реликвия Святилища"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",
