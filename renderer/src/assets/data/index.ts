@@ -13,6 +13,7 @@ export let ITEM_BY_REF = (ns: BaseType['namespace'], name: string): BaseType[] |
 export let ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<BaseType> {}
 
 export let ALTQ_GEM_NAMES = function * (): Generator<string> {}
+export let REPLICA_UNIQUE_NAMES = function * (): Generator<string> {}
 
 export let STAT_BY_MATCH_STR = (name: string): { matcher: StatMatcher, stat: Stat } | undefined => undefined
 export let STAT_BY_REF = (name: string): Stat | undefined => undefined
@@ -101,6 +102,7 @@ async function loadItems (language: string) {
   ITEM_BY_REF = commonFind(indexRefNames, 'refName')
   ITEMS_ITERATOR = ndjsonFindLines<BaseType>(ndjson)
   ALTQ_GEM_NAMES = itemNamesFromLines(ITEMS_ITERATOR('altQuality":["Anomalous'))
+  REPLICA_UNIQUE_NAMES = itemNamesFromLines(ITEMS_ITERATOR('refName":"Replica'))
 }
 
 async function loadStats (language: string) {

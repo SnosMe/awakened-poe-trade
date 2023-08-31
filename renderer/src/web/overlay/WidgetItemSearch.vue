@@ -68,7 +68,7 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { distance } from 'fastest-levenshtein'
-import { BaseType, ITEMS_ITERATOR, CLIENT_STRINGS as _$, ALTQ_GEM_NAMES } from '@/assets/data'
+import { BaseType, ITEM_BY_TRANSLATED, CLIENT_STRINGS as _$, ALTQ_GEM_NAMES, REPLICA_UNIQUE_NAMES } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 import { CurrencyValue } from '@/web/background/Prices'
 
@@ -109,38 +109,28 @@ function useSelectedItems () {
 
 function findItems (opts: {
   search: string
-  jsonIncludes: string[]
-  matchFn: (item: BaseType) => boolean
+  namespace: 'GEM' | 'UNIQUE'
+  itemNames: () => Generator<string>
 }): BaseType[] | false {
   const search = opts.search.trim()
   const lcSearch = search.toLowerCase().split(/\s+/).sort((a, b) => b.length - a.length)
+  const lcLongestWord = lcSearch[0]
   if (search.length < 3) return false
 
+  const MAX_RESULTS = 5 // NOTE: don't want to pick from too many results
   const out = []
-
-  const lcLongestWord = lcSearch[0]
-  const jsonSearch = (AppConfig().language !== 'cmn-Hant')
-    ? lcLongestWord.slice(1) // in non-CJK first letter should be in first utf16 code unit
-    : lcLongestWord
-
-  const MAX_HITS = 70 // NOTE: based on first word only, so don't be too strict
-  const MAX_RESULTS_VISIBLE = 5 // NOTE: don't want to pick from too many results
-  const MAX_RESULTS = 10
-  let hits = 0
-  for (const match of ITEMS_ITERATOR(jsonSearch, opts.jsonIncludes)) {
-    hits += 1
-    const lcName = match.name.toLowerCase()
+  for (const itemName of opts.itemNames()) {
+    const lcName = itemName.toLowerCase()
     if (
-      opts.matchFn(match) &&
       lcSearch.every(part => lcName.includes(part)) &&
       ((AppConfig().language === 'cmn-Hant') || lcName.split(/\s+/).some(part => part.startsWith(lcLongestWord)))
     ) {
-      out.push(match)
+      const match = ITEM_BY_TRANSLATED(opts.namespace, itemName)
+      out.push(...match ?? [])
       if (out.length > MAX_RESULTS) return false
     }
-    if (hits >= MAX_HITS) return false
   }
-  return out.slice(0, MAX_RESULTS_VISIBLE)
+  return out
 }
 
 function fuzzyFindHeistGem (badStr: string) {
@@ -177,7 +167,6 @@ function fuzzyFindHeistGem (badStr: string) {
 import { shallowRef, computed, nextTick, inject } from 'vue'
 import { useI18nNs } from '@/web/i18n'
 import { ItemSearchWidget, WidgetManager } from './interfaces'
-import { ITEM_BY_TRANSLATED } from '@/assets/data'
 import { usePoeninja } from '@/web/background/Prices'
 import { Host } from '@/web/background/IPC'
 
@@ -250,18 +239,14 @@ const results = computed(() => {
   if (typeFilter.value === 'gem') {
     return findItems({
       search: searchValue.value,
-      jsonIncludes: ['GEM'],
-      matchFn: (item) => Boolean(
-        item.namespace === 'GEM' &&
-        item.gem!.altQuality?.length)
+      namespace: 'GEM',
+      itemNames: ALTQ_GEM_NAMES
     })
   } else {
     return findItems({
       search: searchValue.value,
-      jsonIncludes: ['UNIQUE', 'Replica '],
-      matchFn: (item) => Boolean(
-        item.namespace === 'UNIQUE' &&
-        item.refName.startsWith('Replica '))
+      namespace: 'UNIQUE',
+      itemNames: REPLICA_UNIQUE_NAMES
     })
   }
 })
