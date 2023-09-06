@@ -93,3 +93,7 @@ export interface ItemSearchWidget extends Widget {
   anchor: Anchor
   ocrGemsKey: string | null
 }
+
+export interface CalculatorWidget extends Widget {
+  anchor: Anchor
+}
