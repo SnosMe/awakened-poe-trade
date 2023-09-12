@@ -23,6 +23,8 @@ export function typeInChat (text: string, send: boolean, clipboard: HostClipboar
       clipboard.writeText(text)
       uIOhook.keyTap(Key.Enter, [Key.Ctrl])
       uIOhook.keyTap(Key.Home)
+      // press twice to focus input when using controller
+      uIOhook.keyTap(Key.Home)
       uIOhook.keyTap(Key.Delete)
     } else {
       clipboard.writeText(text)
