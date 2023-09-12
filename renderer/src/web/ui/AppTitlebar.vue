@@ -1,25 +1,21 @@
 <template>
   <div :class="$style.titlebar">
     <slot />
-    <button @click="$emit('click')" class="truncate">{{ title }}</button>
-    <button @click.stop="$emit('close')" tabindex="-1"
+    <button @click="emit('click')" class="truncate">{{ title }}</button>
+    <button @click.stop="emit('close')" tabindex="-1"
       :class="[$style.button, $style.close]" title="Close"><i class="fas fa-window-close"></i></button>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+defineProps<{
+  title?: string
+}>()
 
-export default defineComponent({
-  emits: ['click', 'close'],
-  name: 'AppTitlebar',
-  props: {
-    title: {
-      type: String,
-      default: ''
-    }
-  }
-})
+const emit = defineEmits<{
+  (e: 'click'): void
+  (e: 'close'): void
+}>()
 </script>
 
 <style lang="postcss" module>

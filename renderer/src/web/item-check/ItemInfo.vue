@@ -17,41 +17,35 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType, computed } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { ParsedItem } from '@/parser'
 import * as actions from './hotkeyable-actions'
 
-export default defineComponent({
-  props: {
-    item: {
-      type: Object as PropType<ParsedItem>,
-      required: true
-    }
-  },
-  setup (props) {
-    const { t } = useI18n()
+const props = defineProps<{
+  item: ParsedItem
+}>()
 
-    return {
-      t,
-      stashSearch () { actions.findSimilarItems(props.item) },
-      openWiki () { actions.openWiki(props.item) },
-      openPoedb () { actions.openPoedb(props.item) },
-      openCoE () { actions.openCoE(props.item) },
-      showCoE: computed(() => {
-        const { item } = props
-        return item.info.craftable && !item.isCorrupted && !item.isMirrored
-      }),
-      weaponDPS: computed(() => {
-        const { item } = props
-        if (!item.weaponAS) return undefined
-        const pdps = Math.round(item.weaponAS * (item.weaponPHYSICAL ?? 0))
-        const edps = Math.round(item.weaponAS * (item.weaponELEMENTAL ?? 0))
-        return { phys: pdps, elem: edps, total: pdps + edps }
-      }),
-      itemName: computed(() => props.item.info.name)
-    }
-  }
+const { t } = useI18n()
+
+function stashSearch () { actions.findSimilarItems(props.item) }
+function openWiki () { actions.openWiki(props.item) }
+function openPoedb () { actions.openPoedb(props.item) }
+function openCoE () { actions.openCoE(props.item) }
+
+const showCoE = computed(() => {
+  const { item } = props
+  return item.info.craftable && !item.isCorrupted && !item.isMirrored
 })
+
+const weaponDPS = computed(() => {
+  const { item } = props
+  if (!item.weaponAS) return undefined
+  const pdps = Math.round(item.weaponAS * (item.weaponPHYSICAL ?? 0))
+  const edps = Math.round(item.weaponAS * (item.weaponELEMENTAL ?? 0))
+  return { phys: pdps, elem: edps, total: pdps + edps }
+})
+
+const itemName = computed(() => props.item.info.name)
 </script>

@@ -28,7 +28,7 @@ export function getDetailsId (item: ParsedItem) {
         : item.info.refName,
       variant: variant([
         `T${item.mapTier}`,
-        (item.rarity !== ItemRarity.Unique) ? 'Gen-16' : null
+        (item.rarity !== ItemRarity.Unique) ? 'Gen-18' : null
       ])
     }
   }
@@ -102,7 +102,9 @@ function forUniqueItem (item: ParsedItem) {
     name: item.info.refName,
     variant: variant([
       getUniqueVariant(item),
-      (item.category !== ItemCategory.Flask) ? item.info.unique.base : null,
+      (item.category === ItemCategory.Flask) ? null
+        : (item.category === ItemCategory.SanctumRelic) ? 'Relic'
+            : item.info.unique.base,
       (item.sockets?.linked) ? `${item.sockets.linked}L` : null
     ])
   }
@@ -206,6 +208,14 @@ function getUniqueVariant (item: ParsedItem) {
       return '5 passives'
     } else if (roll === 3) {
       return '3 passives'
+    }
+  } else if (uniqueName === 'The First Crest') {
+    if (hasStat(item, 'Aureus Coins are converted to Experience upon defeating the Herald of the Scourge')) {
+      return 'Experience'
+    } else if (hasStat(item, 'Aureus Coins are converted to Relics upon defeating the Herald of the Scourge')) {
+      return 'Relics'
+    } else if (hasStat(item, 'Aureus Coins are converted to Tainted Currency upon defeating the Herald of the Scourge')) {
+      return 'Tainted Currency'
     }
   }
   return null

@@ -252,6 +252,7 @@
       "UNIQUE::Dissolution of the Flesh // Crimson Jewel",
       "UNIQUE::The Annihilating Light // Quarterstaff",
       "UNIQUE::Dawnbreaker // Colossal Tower Shield",
+      "UNIQUE::Dawnstrider // Vaal Greaves",
       "ITEM::Exceptional Eldritch Ember"
     ]
   },
@@ -288,6 +289,7 @@
       "ITEM::Elevated Sextant",
       "UNIQUE::Impossible Escape // Viridian Jewel",
       "UNIQUE::Doppelgänger Guise // Sadist Garb",
+      "UNIQUE::Echoforge // Infernal Sword",
       "UNIQUE::Arn's Anguish // Cloth Belt",
       "UNIQUE::Graven's Secret // Cloth Belt",
       "UNIQUE::Olesya's Delight // Cloth Belt",
@@ -418,7 +420,8 @@
   {
     "query": [
       "ITEM::Ancient Orb",
-      "ITEM::Astragali"
+      "ITEM::Astragali",
+      "ITEM::Voidborn Reliquary Key"
     ],
     "items": [
       "UNIQUE::Headhunter // Leather Belt",
@@ -434,6 +437,24 @@
     ],
     "items": [
       "UNIQUE::Headhunter // Leather Belt"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Hall of Grandmasters // T6"
+    ],
+    "items": [
+      "DIVINATION_CARD::The Immortal"
+    ]
+  },
+  {
+    "query": [
+      "DIVINATION_CARD::House of Mirrors",
+      "DIVINATION_CARD::Seven Years Bad Luck"
+    ],
+    "items": [
+      "ITEM::Mirror of Kalandra",
+      "ITEM::Mirror Shard"
     ]
   },
   {
@@ -485,6 +506,47 @@
       "UNIQUE::Mask of the Tribunal // Magistrate Crown",
       "UNIQUE::Perepiteia // Ezomyte Spiked Shield",
       "UNIQUE::Storm's Gift // Assassin's Mitts"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Contract: Breaking the Unbreakable // Preventative Contract"
+    ],
+    "items": [
+      "UNIQUE::Apex Mode // Cobalt Jewel",
+      "UNIQUE::Nadir Mode // Cobalt Jewel"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Contract: Death to Darnaw // Naval Contract"
+    ],
+    "items": [
+      "UNIQUE::The Admiral // Varnished Coat"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Contract: Heart of Glory // Familial Contract"
+    ],
+    "items": [
+      "UNIQUE::The Fledgling // Lacquered Helmet"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Contract: The Slaver King // Vigilante Contract"
+    ],
+    "items": [
+      "UNIQUE::Chains of Emancipation // Chain Belt"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Contract: The Twins // Vengeful Contract"
+    ],
+    "items": [
+      "UNIQUE::Leadership's Price // Onyx Amulet"
     ]
   },
 
@@ -1043,6 +1105,62 @@
     ],
     "items": [
       "ITEM::Remnant of Corruption"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Sacred Crystallised Lifeforce",
+      "ITEM::Primal Crystallised Lifeforce",
+      "ITEM::Wild Crystallised Lifeforce",
+      "ITEM::Vivid Crystallised Lifeforce"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "UNIQUE::Ventor's Gamble // Gold Ring",
+      "UNIQUE::Sadima's Touch // Wool Gloves",
+      "UNIQUE::Bisco's Leash // Heavy Belt",
+      "UNIQUE::Goldwyrm // Nubuck Boots",
+      "UNIQUE::Divination Distillate",
+      "UNIQUE::The Ascetic // Gold Amulet",
+      "UNIQUE::Greed's Embrace // Golden Plate",
+      "UNIQUE::Sentari's Answer // Brass Spirit Shield"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "GEM::Cast on Death Support",
+      "UNIQUE::Goldrim // Leather Cap",
+      "UNIQUE::Tabula Rasa // Simple Robe, 6L",
+      "UNIQUE::Lochtonial Caress // Iron Gauntlets",
+      "UNIQUE::Wanderlust // Wool Shoes",
+      "UNIQUE::Lifesprig // Driftwood Wand",
+      "UNIQUE::Karui Ward // Jade Amulet"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "UNIQUE::The Original Scripture // Relic",
+      "UNIQUE::The Power and the Promise // Relic",
+      "UNIQUE::The Blood of Innocence // Relic",
+      "UNIQUE::The Chains of Castigation // Relic",
+      "UNIQUE::The Second Sacrament // Relic",
+      "ITEM::Forbidden Tome"
+    ],
+    "items": [
+      "UNIQUE::Original Sin // Amethyst Ring",
+      "UNIQUE::Eternal Damnation // Agate Amulet",
+      "UNIQUE::The Balance of Terror // Cobalt Jewel",
+      "UNIQUE::Sandstorm Visage // Necromancer Circlet",
+      "UNIQUE::The Winds of Fate // Foul Staff",
+      "UNIQUE::The Gilded Chalice // Relic",
+      "UNIQUE::The Hour of Divinity // Relic",
+      "UNIQUE::The First Crest // Relics, Relic",
+      "UNIQUE::The Night Lamp // Relic",
+      "UNIQUE::The Broken Censer // Relic"
     ]
   }
 ]

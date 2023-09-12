@@ -1,5 +1,4 @@
 import { App } from 'vue'
-import AppTitlebar from './AppTitlebar.vue'
 import UiRadio from './UiRadio.vue'
 import UiCheckbox from './UiCheckbox.vue'
 import UiToggle from './UiToggle.vue'
@@ -9,7 +8,6 @@ import FullscreenImage from './FullscreenImage.vue'
 import Popover from './Popover.vue'
 
 export default function (app: App) {
-  app.component(AppTitlebar.name, AppTitlebar)
   app.component(UiRadio.name, UiRadio)
   app.component(UiCheckbox.name, UiCheckbox)
   app.component(UiToggle.name, UiToggle)

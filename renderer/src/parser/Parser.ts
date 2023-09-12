@@ -797,7 +797,8 @@ function parseAreaLevel (section: string[], item: ParsedItem) {
   if (
     item.info.refName !== 'Chronicle of Atzoatl' &&
     item.info.refName !== 'Expedition Logbook' &&
-    item.info.refName !== 'Mirrored Tablet'
+    item.info.refName !== 'Mirrored Tablet' &&
+    item.info.refName !== 'Forbidden Tome'
   ) return 'PARSER_SKIPPED'
 
   parseAreaLevelNested(section, item)

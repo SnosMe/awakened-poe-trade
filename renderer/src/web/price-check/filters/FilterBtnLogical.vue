@@ -9,51 +9,30 @@
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
+import { type PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-export default defineComponent({
-  emits: [], // mutates filter
-  props: {
-    filter: {
-      type: Object as PropType<{ disabled: boolean }>,
-      required: true
-    },
-    text: {
-      type: String,
-      required: true
-    },
-    img: {
-      type: String,
-      default: undefined
-    },
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    active: {
-      type: Boolean,
-      default: undefined
-    },
-    collapse: {
-      type: Boolean,
-      default: false
-    }
+const props = defineProps({
+  filter: {
+    type: Object as PropType<{ disabled: boolean }>, // will be mutated directly, instead of emit
+    required: true
   },
-  setup (props) {
-    const { t } = useI18n()
-    return {
-      t,
-      toggle () {
-        const { filter, readonly } = props
-        if (!readonly) {
-          filter.disabled = !filter.disabled
-        }
-      }
-    }
-  }
+  text: { type: String, required: true },
+  img: { type: String, default: undefined },
+  readonly: { type: Boolean, default: undefined },
+  active: { type: Boolean, default: undefined },
+  collapse: { type: Boolean, default: undefined }
 })
+
+const { t } = useI18n()
+
+function toggle () {
+  const { filter, readonly } = props
+  if (!readonly) {
+    filter.disabled = !filter.disabled
+  }
+}
 </script>
 
 <style lang="postcss" module>

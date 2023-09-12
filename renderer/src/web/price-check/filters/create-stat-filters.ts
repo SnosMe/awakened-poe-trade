@@ -99,7 +99,10 @@ export function createExactStatFilters (
     applyClusterJewelRules(ctx.filters)
   } else if (item.category === ItemCategory.Flask) {
     applyFlaskRules(ctx.filters)
-  } else if (item.category === ItemCategory.MemoryLine) {
+  } else if (
+    item.category === ItemCategory.MemoryLine ||
+    item.category === ItemCategory.SanctumRelic
+  ) {
     enableAllFilters(ctx.filters)
   }
 

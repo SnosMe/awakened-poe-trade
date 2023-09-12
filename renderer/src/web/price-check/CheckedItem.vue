@@ -9,7 +9,7 @@
       :item="item"
       :filters="itemFilters" />
     <filters-block
-      ref="filtersBlock"
+      ref="filtersComponent"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
@@ -102,7 +102,7 @@ export default defineComponent({
     // TradeListing.vue OR TradeBulk.vue
     const tradeService = ref<{ execSearch(): void } | null>(null)
     // FiltersBlock.vue
-    const filtersBlock = ref<ComponentPublicInstance<{}, {}>>(null!)
+    const filtersComponent = ref<ComponentPublicInstance>(null!)
 
     watch(() => props.item, (item, prevItem) => {
       const prevCurrency = (presets.value != null) ? itemFilters.value.trade.currency : undefined
@@ -127,6 +127,7 @@ export default defineComponent({
           (item.rarity === ItemRarity.Unique) ||
           (item.category === ItemCategory.Map) ||
           (item.category === ItemCategory.HeistBlueprint) ||
+          (item.category === ItemCategory.SanctumRelic) ||
           (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
           (item.isUnidentified) ||
           (item.isVeiled)
@@ -194,7 +195,7 @@ export default defineComponent({
     })
 
     function handleSearchMouseenter (e: MouseEvent) {
-      if ((filtersBlock.value.$el as HTMLElement).contains(e.relatedTarget as HTMLElement)) {
+      if ((filtersComponent.value.$el as HTMLElement).contains(e.relatedTarget as HTMLElement)) {
         doSearch.value = true
 
         if (document.activeElement instanceof HTMLElement) {
@@ -225,7 +226,7 @@ export default defineComponent({
       doSearch,
       tradeAPI,
       tradeService,
-      filtersBlock,
+      filtersComponent,
       showPredictedPrice,
       show,
       handleSearchMouseenter,

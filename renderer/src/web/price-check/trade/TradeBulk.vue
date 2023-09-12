@@ -80,12 +80,13 @@
     <p>Error: {{ error }}</p>
     <template #actions>
       <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
+      <button class="btn" @click="openTradeLink">{{ t('Browser') }}</button>
     </template>
   </ui-error-box>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive } from 'vue'
+import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive, inject } from 'vue'
 import { useI18nNs } from '@/web/i18n'
 import { BulkSearch, execBulkSearch, createTradeRequest, PricingResult } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
@@ -195,6 +196,8 @@ export default defineComponent({
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
+    const showBrowser = inject<(url: string) => void>('builtin-browser')!
+
     const selectedCurr = shallowRef<'xchgChaos' | 'xchgStable'>('xchgChaos')
 
     watch(() => props.item, (item) => {
@@ -222,6 +225,13 @@ export default defineComponent({
       }
     })
 
+    function makeTradeLink (_have?: string[]) {
+      const have = _have ?? ((selectedCurr.value === 'xchgStable') ? ['divine'] : ['chaos'])
+      const httpPostBody = createTradeRequest(props.filters, props.item, have)
+      const httpGetQuery = { exchange: httpPostBody.query }
+      return `https://${getTradeEndpoint()}/trade/exchange/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
+    }
+
     const { t } = useI18nNs('trade_result')
 
     return {
@@ -232,11 +242,9 @@ export default defineComponent({
       selectedCurr,
       execSearch: () => { search(props.item, props.filters) },
       showSeller: computed(() => widget.value.showSeller),
-      makeTradeLink () {
-        const have = (selectedCurr.value === 'xchgStable') ? ['divine'] : ['chaos']
-        const httpPostBody = createTradeRequest(props.filters, props.item, have)
-        const httpGetQuery = { exchange: httpPostBody.query }
-        return `https://${getTradeEndpoint()}/trade/exchange/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
+      makeTradeLink,
+      openTradeLink () {
+        showBrowser(makeTradeLink(['mirror']))
       }
     }
   }
