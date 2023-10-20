@@ -183,7 +183,8 @@
     "listed_2months": "2 Months Ago",
     "currency_any": "Any Currency",
     "currency_only_chaos": "Chaos Orb",
-    "currency_only_div": "Divine Orb"
+    "currency_only_div": "Divine Orb",
+    "currency_chaos_div": "Both Orbs"
   },
   "widget": {
     "title": "widget title",

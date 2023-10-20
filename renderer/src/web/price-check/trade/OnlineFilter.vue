@@ -35,6 +35,7 @@
             <ui-radio class="mt-3" v-model="filters.trade.currency" :value="undefined">{{ t(':currency_any') }}</ui-radio>
             <ui-radio v-model="filters.trade.currency" value="chaos">{{ t(':currency_only_chaos') }}</ui-radio>
             <ui-radio v-model="filters.trade.currency" value="divine">{{ t(':currency_only_div') }}</ui-radio>
+            <ui-radio v-model="filters.trade.currency" value="chaos_divine">{{ t(':currency_chaos_div') }}</ui-radio>
           </template>
         </div>
       </div>

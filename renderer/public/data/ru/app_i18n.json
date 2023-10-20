@@ -202,7 +202,8 @@
     "listed_2months": "До 2-х месяцев",
     "currency_any": "Любая валюта",
     "currency_only_chaos": "Сфера хаоса",
-    "currency_only_div": "Божествен. сфера"
+    "currency_only_div": "Божествен. сфера",
+    "currency_chaos_div": "Обе сферы"
   },
   "widget": {
     "title": "заголовок виджета",
