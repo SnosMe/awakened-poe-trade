@@ -3,18 +3,19 @@
     <div class="widget-default-style flex flex-col p-1 gap-1" style="min-width: 24rem;">
       <transition-group v-if="starred.length" tag="div"
         :enter-active-class="$style.starredItemEnter"
-        class="flex gap-x-1 py-1 pr-1 bg-gray-800 rounded">
-        <div v-for="item in starred" :key="item.name + item.discr"
-          :class="$style.starredItem">
+        class="flex gap-x-1 bg-gray-800 rounded">
+        <button v-for="item in starred" :key="item.info.refName + item.discr"
+          :class="$style.starredItem"
+          @click="starredItemClick($event, item)">
           <ItemQuickPrice
-            :item-img="item.icon"
+            :item-img="item.info.icon"
             :price="item.price"
             currency-text
           ></ItemQuickPrice>
-          <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.name }}</div>
+          <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.info.name }}</div>
           <div v-if="item.discr"
             class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
-        </div>
+        </button>
       </transition-group>
       <ui-timeout v-if="!showSearch"
         ref="showTimeout"
@@ -73,8 +74,7 @@ import { AppConfig } from '@/web/Config'
 import { CurrencyValue } from '@/web/background/Prices'
 
 interface SelectedItem {
-  name: string
-  icon: string
+  info: BaseType
   discr?: string
   chaos?: number
   price?: CurrencyValue
@@ -85,7 +85,7 @@ function useSelectedItems () {
 
   function addItem (newItem: SelectedItem) {
     if (items.value.some(item =>
-      item.name === newItem.name &&
+      item.info.name === newItem.info.name &&
       item.discr === newItem.discr
     )) return false
 
@@ -169,6 +169,8 @@ import { useI18nNs } from '@/web/i18n'
 import { ItemSearchWidget, WidgetManager } from './interfaces'
 import { usePoeninja } from '@/web/background/Prices'
 import { Host } from '@/web/background/IPC'
+import { type ParsedItem, createVirtualItem, ItemRarity } from '@/parser/ParsedItem'
+import { ItemCategory } from '@/parser'
 
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import Widget from './Widget.vue'
@@ -222,8 +224,7 @@ function selectItem (item: BaseType, opts: { altQuality?: string, unique?: true,
     })
   }
   const isAdded = addItem({
-    name: item.name,
-    icon: item.icon,
+    info: item,
     discr: opts.altQuality,
     chaos: price?.chaos,
     price: (price != null) ? autoCurrency(price.chaos) : undefined
@@ -261,6 +262,31 @@ const showSearch = wm.active
 function makeInvisible () {
   props.config.wmFlags = ['invisible-on-blur']
 }
+
+function starredItemClick (e: MouseEvent, item: SelectedItem) {
+  const parsed = (item.info.namespace === 'GEM')
+    ? createVirtualItem({
+      category: ItemCategory.Gem,
+      info: item.info,
+      gemAltQuality: item.discr as ParsedItem['gemAltQuality'],
+      gemLevel: 1
+    })
+    : createVirtualItem({
+      rarity: ItemRarity.Unique,
+      info: item.info
+    })
+
+  Host.selfDispatch({
+    name: 'MAIN->CLIENT::item-text',
+    payload: {
+      clipboard: parsed.rawText,
+      item: parsed,
+      position: { x: e.clientX, y: e.clientY },
+      focusOverlay: true,
+      target: 'price-check'
+    }
+  })
+}
 </script>
 
 <style lang="postcss" module>
@@ -287,7 +313,11 @@ function makeInvisible () {
 .starredItem {
   display: flex;
   flex-direction: column;
-  @apply rounded px-1;
+  @apply rounded px-1 pb-1 pt-0.5;
+
+  &:hover {
+    @apply bg-gray-700;
+  }
 }
 
 @keyframes starredItemEnter {

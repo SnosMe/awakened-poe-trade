@@ -147,7 +147,7 @@ export default defineComponent({
       checkPosition.value = e.position
       advancedCheck.value = e.focusOverlay
 
-      item.value = parseClipboard(e.clipboard)
+      item.value = (e.item ? ok(e.item as ParsedItem) : parseClipboard(e.clipboard))
         .andThen(item => (
           (item.category === ItemCategory.HeistContract && item.rarity !== ItemRarity.Unique) ||
           (item.category === ItemCategory.Sentinel && item.rarity !== ItemRarity.Unique))
