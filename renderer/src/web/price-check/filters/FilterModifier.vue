@@ -1,4 +1,5 @@
 <template>
+  
   <div :class="$style['filter']">
     <div v-if="showSourceInfo" :class="$style['mods']">
       <div class="pl-5 py-1" v-for="(source, idx) of filter.sources" :key="idx">
@@ -18,6 +19,12 @@
           </div>
         </button>
         <div class="flex items-baseline gap-x-1">
+          <!-- 
+            Suggestions:
+              For maxed out stats, show "Perfect" instead of the actual value
+              <div :class="$style['qualityLabel']">Perfect</div>
+           -->
+           <div :class="$style['qualityLabel']">Perfect</div>
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
           <div class="flex gap-x-px">
             <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
