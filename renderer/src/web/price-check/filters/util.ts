@@ -1,4 +1,3 @@
-import { StatRoll } from "@/parser/modifiers"
 
 function decimalPlaces (value: number, dp: number | boolean): number {
   if (typeof dp === 'number') {
@@ -36,16 +35,4 @@ export function percentRollDelta (
   const res = value + delta * p / 100
   const rounding = Math.pow(10, decimalPlaces(value, dp))
   return method((res + Number.EPSILON) * rounding) / rounding
-}
-
-export function checkMaxedStatsPercent (roll:StatRoll, percent:number): number {
-  console.log(roll)
-  if(roll !== undefined || roll !== null){
-    if(roll.value === roll.max){
-      return 0
-    }else{
-      return percent
-    }
-  } 
-  return 0;
 }

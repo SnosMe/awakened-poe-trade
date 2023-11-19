@@ -1,6 +1,6 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
-import { ModifierType, StatCalculated, StatRoll, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
-import { checkMaxedStatsPercent, percentRoll, percentRollDelta, roundRoll } from './util'
+import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
+import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
@@ -188,10 +188,7 @@ export function calculatedStatToFilter (
   const roll = statSourcesTotal(
     calc.sources,
     (item.info.refName === 'Mirrored Tablet') ? 'max' : 'sum'
-  ) 
-  // Check if stat is max rolled, if yes then set percent to 0
-  percent = checkMaxedStatsPercent(roll as StatRoll, percent);
-
+  )
   const translation = translateStatWithRoll(calc, roll)
 
   filter ??= {
@@ -242,6 +239,19 @@ export function calculatedStatToFilter (
   }
 
   if (roll && !filter.option) {
+    if (
+      item.rarity === ItemRarity.Unique ||
+      calc.sources.some(({ modifier }) => modifier.info.tier === 1)
+    ) {
+      const perfectRoll = (
+        (calc.stat.better === StatBetter.PositiveRoll && roll.value >= roll.max) ||
+        (calc.stat.better === StatBetter.NegativeRoll && roll.value <= roll.min)
+      )
+      if (perfectRoll) {
+        percent = 0
+      }
+    }
+
     const dp =
     calc.stat.dp ||
     calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
