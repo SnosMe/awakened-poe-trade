@@ -7,12 +7,9 @@
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('app.leagues_loading') }}</div>
       <template v-else-if="leagues.list.value.length">
-        <div
-          class="mb-2 grid grid-cols-2 gap-x-2 gap-y-1 whitespace-nowrap"
-          style="grid-template-columns: repeat(2, min-content);">
-          <div v-for="league of leagues.list.value" :key="league.id">
-            <ui-radio v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
-          </div>
+        <div class="mb-2 flex flex-col gap-1 items-start whitespace-nowrap">
+          <ui-radio v-for="league of leagues.list.value" :key="league.id"
+            v-model="leagueId" :value="league.id">{{ league.id }}</ui-radio>
         </div>
         <div class="flex gap-x-2 mb-4">
           <div class="text-gray-500">{{ t('settings.private_league') }}</div>

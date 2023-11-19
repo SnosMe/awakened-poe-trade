@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { useI18nNs } from '@/web/i18n'
 import type { ItemFilters } from '../filters/interfaces'
 import { useLeagues } from '@/web/background/Leagues'
@@ -66,13 +66,7 @@ export default defineComponent({
 
     return {
       t,
-      tradeLeagues: computed(() => {
-        const { isRuthless } = leagues.selected.value!
-        return leagues.list.value.filter(league => {
-          if (!isRuthless && league.isRuthless) return false
-          return true
-        })
-      }),
+      tradeLeagues: leagues.list,
       showLeagueName: () => leagues.selectedId.value !== props.filters.trade.league,
       showWarning: () => Boolean(
         (props.filters.trade.listed &&

@@ -15,7 +15,6 @@ interface ApiLeague {
 
 interface League {
   id: string
-  isRuthless: boolean
   isPopular: boolean
 }
 
@@ -42,8 +41,7 @@ export const useLeagues = createGlobalState(() => {
     return {
       id: leagueId,
       realm: AppConfig().realm,
-      isPopular: !isPrivateLeague(leagueId) && listed?.isPopular,
-      isRuthless: listed?.isRuthless
+      isPopular: !isPrivateLeague(leagueId) && Boolean(listed?.isPopular)
     }
   })
 
@@ -56,20 +54,18 @@ export const useLeagues = createGlobalState(() => {
       if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
       const leagues: ApiLeague[] = await response.json()
       tradeLeagues.value = leagues
-        .filter(league => !league.rules.some(rule => rule.id === 'NoParties'))
+        .filter(league =>
+          !PERMANENT_HC.includes(league.id) &&
+          !league.rules.some(rule => rule.id === 'NoParties' ||
+            (rule.id === 'HardMode' && !league.event)))
         .map(league => {
-          const isRuthless = league.rules.some(rule => rule.id === 'HardMode')
-          const isPopular = league.event || (
-            !PERMANENT_HC.includes(league.id) &&
-            !isRuthless
-          )
-          return { id: league.id, isRuthless, isPopular }
+          return { id: league.id, isPopular: true }
         })
 
       const leagueIsAlive = tradeLeagues.value.some(league => league.id === selectedId.value)
       if (!leagueIsAlive && !isPrivateLeague(selectedId.value ?? '')) {
-        if (tradeLeagues.value.length > 4) {
-          const TMP_CHALLENGE = 2
+        if (tradeLeagues.value.length > 1) {
+          const TMP_CHALLENGE = 1
           selectedId.value = tradeLeagues.value[TMP_CHALLENGE].id
         } else {
           const STANDARD = 0
