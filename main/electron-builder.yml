@@ -21,6 +21,13 @@ win:
 linux:
   target:
   - "AppImage"
+mac:
+  target:
+    - target: default
+      arch:
+        - universal
+  # MacOS apps can only be run on other systems if signed
+  forceCodeSigning: true
 appImage:
   executableArgs:
   - "--sandbox"
