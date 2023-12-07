@@ -223,27 +223,24 @@ export class Shortcuts {
 }
 
 function pressKeysToCopyItemText (pressedModKeys: string[] = [], showModsKey: string) {
-  const isMac = process.platform === 'darwin';
-  const copyModifier = isMac ? 'Meta' : 'Ctrl';
-  let keys = mergeTwoHotkeys(`${copyModifier} + C`, showModsKey).split(' + ')
-  keys = keys.filter(key => key !== 'C' && !pressedModKeys.includes(key))
+  let keys = mergeTwoHotkeys('Ctrl + C', showModsKey).split(' + ')
+  keys = keys.filter(key => key !== 'C')
+  if (process.platform !== 'darwin') {
+    // On non-Mac platforms, don't toggle keys that are already being pressed.
+    //
+    // For unknown reasons, we need to toggle pressed keys on Mac for advanced
+    // mod descriptions to be copied. You can test this by setting the shortcut
+    // to "Alt + any letter". They'll work with this line, but not if it's
+    // commented out.
+    keys = keys.filter(key => !pressedModKeys.includes(key))
+  }
 
   for (const key of keys) {
     uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'down')
   }
 
-  const allowedModifierKeys: Set<UiohookKeyT> = new Set(["Ctrl", "Alt", "Meta", "Shift"]);
-  const modifierKeys: number[] = keys
-      .filter((key) => allowedModifierKeys.has(key as UiohookKeyT))
-      .map((key) => UiohookKey[key as UiohookKeyT])
-
   // finally press `C` to copy text
-  uIOhook.keyTap(
-    UiohookKey.C,
-    // On Mac, robotjs requires the modifiers to be specified in this way to
-    // register. See https://github.com/octalmage/robotjs/issues/208#issuecomment-223828356
-    isMac ? modifierKeys : undefined
-  )
+  uIOhook.keyTap(UiohookKey.C)
 
   keys.reverse()
   for (const key of keys) {
