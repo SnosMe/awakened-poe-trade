@@ -59,7 +59,7 @@ export function stashSearch (
     overlay.assertGameActive()
     clipboard.writeText(text)
     uIOhook.keyTap(Key.F, [Key.Ctrl])
-    uIOhook.keyTap(Key.V, [Key.Ctrl])
+    uIOhook.keyTap(Key.V, [process.platform === 'darwin' ? Key.Meta : Key.Ctrl])
     uIOhook.keyTap(Key.Enter)
   })
 }
