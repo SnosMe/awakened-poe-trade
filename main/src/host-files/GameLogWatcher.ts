@@ -1,7 +1,7 @@
 import { promises as fs, watchFile, unwatchFile } from 'fs'
+import { app } from 'electron';
 import { ServerEvents } from '../server'
 import { Logger } from '../RemoteLogger'
-import { app } from 'electron';
 
 export class GameLogWatcher {
   private offset = 0
@@ -27,7 +27,6 @@ export class GameLogWatcher {
         ]
       } else if (process.platform === 'darwin') {
         possiblePaths = [
-          // Path from https://www.pathofexile.com/forum/view-thread/3233960
           `${app.getPath('home')}/Library/Caches/com.GGG.PathOfExile/Logs/Client.txt`
         ]
       }
@@ -41,8 +40,7 @@ export class GameLogWatcher {
           // })
           logFile = filePath
           break
-        } catch {
-        }
+        } catch {}
       }
     }
 
