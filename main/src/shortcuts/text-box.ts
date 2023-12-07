@@ -1,4 +1,5 @@
 import { uIOhook, UiohookKey as Key } from 'uiohook-napi'
+import process from 'process';
 import type { HostClipboard } from './HostClipboard'
 import type { OverlayWindow } from '../windowing/OverlayWindow'
 
@@ -14,14 +15,16 @@ const AUTO_CLEAR = [
 
 export function typeInChat (text: string, send: boolean, clipboard: HostClipboard) {
   clipboard.restoreShortly((clipboard) => {
+    const modifiers = process.platform === 'darwin' ? [Key.Meta] : [Key.Ctrl]
+
     if (text.startsWith(PLACEHOLDER_LAST)) {
       text = text.slice(`${PLACEHOLDER_LAST} `.length)
       clipboard.writeText(text)
-      uIOhook.keyTap(Key.Enter, [Key.Ctrl])
+      uIOhook.keyTap(Key.Enter, modifiers)
     } else if (text.endsWith(PLACEHOLDER_LAST)) {
       text = text.slice(0, -PLACEHOLDER_LAST.length)
       clipboard.writeText(text)
-      uIOhook.keyTap(Key.Enter, [Key.Ctrl])
+      uIOhook.keyTap(Key.Enter, modifiers)
       uIOhook.keyTap(Key.Home)
       // press twice to focus input when using controller
       uIOhook.keyTap(Key.Home)
@@ -30,11 +33,11 @@ export function typeInChat (text: string, send: boolean, clipboard: HostClipboar
       clipboard.writeText(text)
       uIOhook.keyTap(Key.Enter)
       if (!AUTO_CLEAR.includes(text[0])) {
-        uIOhook.keyTap(Key.A, [Key.Ctrl])
+        uIOhook.keyTap(Key.A, modifiers)
       }
     }
 
-    uIOhook.keyTap(Key.V, [Key.Ctrl])
+    uIOhook.keyTap(Key.V, modifiers)
 
     if (send) {
       uIOhook.keyTap(Key.Enter)
@@ -56,7 +59,7 @@ export function stashSearch (
     overlay.assertGameActive()
     clipboard.writeText(text)
     uIOhook.keyTap(Key.F, [Key.Ctrl])
-    uIOhook.keyTap(Key.V, [Key.Ctrl])
+    uIOhook.keyTap(Key.V, [process.platform === 'darwin' ? Key.Meta : Key.Ctrl])
     uIOhook.keyTap(Key.Enter)
   })
 }

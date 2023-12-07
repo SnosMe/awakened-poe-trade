@@ -1,11 +1,7 @@
 import { promises as fs, watchFile, unwatchFile } from 'fs'
+import { app } from 'electron';
 import { ServerEvents } from '../server'
 import { Logger } from '../RemoteLogger'
-
-const COMMON_PATH = [
-  'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
-  'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
-]
 
 export class GameLogWatcher {
   private offset = 0
@@ -22,8 +18,20 @@ export class GameLogWatcher {
   async restart (logFile: string | null) {
     if (this.filePath === logFile) return
 
-    if (!logFile && process.platform === 'win32') {
-      for (const filePath of COMMON_PATH) {
+    if (!logFile) {
+      let possiblePaths: string[] = []
+      if (process.platform === 'win32') {
+        possiblePaths = [
+          'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
+          'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
+        ]
+      } else if (process.platform === 'darwin') {
+        possiblePaths = [
+          `${app.getPath('home')}/Library/Caches/com.GGG.PathOfExile/Logs/Client.txt`
+        ]
+      }
+
+      for (const filePath of possiblePaths) {
         try {
           await fs.access(filePath)
           // this.server.sendEventTo('any', {
