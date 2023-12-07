@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "3.22.10004",
+  "version": "3.22.10005",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",

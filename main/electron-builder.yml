@@ -23,11 +23,10 @@ linux:
   - "AppImage"
 mac:
   target:
-    - target: default
-      arch:
-        - universal
-  # MacOS apps can only be run on other systems if signed
-  forceCodeSigning: true
+  - target: "dmg"
+    arch:
+    - "universal"
+  identity: null
 appImage:
   executableArgs:
   - "--sandbox"

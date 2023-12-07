@@ -30,9 +30,12 @@ jobs:
         path: ./renderer/dist
         retention-days: 1
 
-  windows:
+  package:
     needs: renderer
-    runs-on: windows-2019
+    strategy:
+      matrix:
+        os: [windows-2019, ubuntu-20.04, macos-11]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -49,25 +52,11 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Hash
+      if: ${{ startsWith(matrix.os, 'windows') }}
       run: type .\main\dist\latest.yml
-
-  linux:
-    needs: renderer
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - uses: actions/download-artifact@v3
-      with:
-        name: renderer-dist
-        path: ./renderer/dist
-    - run: yarn --frozen-lockfile
-      working-directory: ./main
-    - run: yarn build
-      working-directory: ./main
-    - run: yarn package -p onTagOrDraft
-      working-directory: ./main
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Hash
+      if: ${{ startsWith(matrix.os, 'ubuntu') }}
       run: cat ./main/dist/latest-linux.yml
+    - name: Hash
+      if: ${{ startsWith(matrix.os, 'macos') }}
+      run: cat ./main/dist/latest-mac.yml
