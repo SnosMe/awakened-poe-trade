@@ -101,7 +101,9 @@ export function createExactStatFilters (
     applyFlaskRules(ctx.filters)
   } else if (
     item.category === ItemCategory.MemoryLine ||
-    item.category === ItemCategory.SanctumRelic
+    item.category === ItemCategory.SanctumRelic ||
+    item.category === ItemCategory.Charm ||
+    item.category === ItemCategory.Tincture
   ) {
     enableAllFilters(ctx.filters)
   }

@@ -129,7 +129,9 @@
     "heistequipment_heistweapon": "Heist Gear",
     "heistequipment_heistutility": "Heist Cloak",
     "accessory_trinket": "Trinket",
-    "sanctum_relic": "Sanctum Relic"
+    "sanctum_relic": "Sanctum Relic",
+    "azmeri_tincture": "Tincture",
+    "azmeri_charm": "Charm"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",

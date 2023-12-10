@@ -46,7 +46,9 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.HeistGear, 'heistequipment.heistweapon'],
   [ItemCategory.HeistCloak, 'heistequipment.heistutility'],
   [ItemCategory.Trinket, 'accessory.trinket'],
-  [ItemCategory.SanctumRelic, 'sanctum.relic']
+  [ItemCategory.SanctumRelic, 'sanctum.relic'],
+  [ItemCategory.Tincture, 'azmeri.tincture'],
+  [ItemCategory.Charm, 'azmeri.charm']
 ])
 
 const TOTAL_MODS_TEXT = {

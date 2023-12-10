@@ -162,7 +162,11 @@ export function createFilters (
       let disabled = opts.exact
       if (item.category === ItemCategory.ClusterJewel) {
         disabled = true
-      } else if (item.category === ItemCategory.SanctumRelic) {
+      } else if (
+        item.category === ItemCategory.SanctumRelic ||
+        item.category === ItemCategory.Charm ||
+        item.category === ItemCategory.Tincture
+      ) {
         disabled = false
       }
       filters.searchRelaxed = {
@@ -247,6 +251,8 @@ export function createFilters (
       item.category !== ItemCategory.HeistContract &&
       item.category !== ItemCategory.MemoryLine &&
       item.category !== ItemCategory.SanctumRelic &&
+      item.category !== ItemCategory.Tincture &&
+      item.category !== ItemCategory.Charm &&
       item.info.refName !== 'Expedition Logbook'
     ) {
       if (item.category === ItemCategory.ClusterJewel) {

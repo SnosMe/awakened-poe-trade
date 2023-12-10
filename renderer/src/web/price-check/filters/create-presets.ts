@@ -34,6 +34,8 @@ export function createPresets (
     item.rarity === ItemRarity.Normal ||
     (item.category === ItemCategory.Flask && item.rarity !== ItemRarity.Unique) ||
     (item.category === ItemCategory.SanctumRelic && item.rarity !== ItemRarity.Unique) ||
+    item.category === ItemCategory.Charm ||
+    item.category === ItemCategory.Tincture ||
     item.category === ItemCategory.Map ||
     item.category === ItemCategory.MemoryLine ||
     item.category === ItemCategory.Invitation ||
