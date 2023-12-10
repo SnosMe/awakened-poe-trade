@@ -76,7 +76,7 @@ export interface BaseType {
   gem?: {
     vaal?: true
     awakened?: true
-    altQuality?: string[]
+    transfigured?: true
     normalVariant?: BaseType['refName']
   }
   armour?: {

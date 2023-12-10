@@ -13,7 +13,7 @@
         :filter="filters.sentinelCharge" :name="t('item.sentinel_charge')" />
       <filter-btn-logical v-if="filters.mapBlighted" readonly
         :filter="{ disabled: false }" :text="filters.mapBlighted.value" />
-      <filter-btn-logical v-if="filters.discriminator" readonly
+      <filter-btn-logical v-if="filters.discriminator?.value" readonly
         :filter="{ disabled: false }" :text="filters.discriminator.value" />
       <filter-btn-numeric v-if="filters.itemLevel"
         :filter="filters.itemLevel" :name="t('item.item_level')" />
@@ -25,8 +25,6 @@
         :filter="filters.gemLevel" :name="t('item.gem_level')" />
       <filter-btn-numeric v-if="filters.quality"
         :filter="filters.quality" :name="t('item.quality')" />
-      <filter-btn-logical v-if="filters.altQuality"
-        :filter="filters.altQuality" :text="filters.altQuality.value" />
       <template v-if="filters.influences">
         <filter-btn-logical v-for="influence of filters.influences" :key="influence.value"
           :filter="influence" :text="influence.value" :img="`/images/influence-${influence.value}.png`" />

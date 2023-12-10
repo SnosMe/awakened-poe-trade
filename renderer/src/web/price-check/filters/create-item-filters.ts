@@ -320,17 +320,19 @@ function createGemFilters (
   filters: ItemFilters,
   opts: CreateOptions
 ) {
-  filters.searchExact = {
-    baseType: item.info.name,
-    baseTypeTrade: t(opts, item.info)
-  }
-
-  if (item.info.gem!.vaal) {
+  if (!item.info.gem!.transfigured) {
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
+    }
+  } else {
     const normalGem = ITEM_BY_REF('GEM', item.info.gem!.normalVariant!)![0]
-    filters.searchRelaxed = {
-      baseType: normalGem.name,
-      baseTypeTrade: t(opts, normalGem),
-      disabled: true
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, normalGem)
+    }
+    filters.discriminator = {
+      trade: item.info.tradeDisc!
     }
   }
 
@@ -354,18 +356,13 @@ function createGemFilters (
     return filters
   }
 
-  filters.altQuality = {
-    value: item.gemAltQuality!,
-    disabled: false
-  }
-
   if (SPECIAL_SUPPORT_GEM.includes(item.info.refName)) {
     filters.gemLevel = {
       value: item.gemLevel!,
       disabled: (item.gemLevel! < 3)
     }
 
-    if (item.gemAltQuality !== 'Superior' && item.isCorrupted && item.quality) {
+    if (item.isCorrupted && item.quality) {
       filters.quality = {
         value: item.quality,
         disabled: true

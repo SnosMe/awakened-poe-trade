@@ -45,7 +45,7 @@
               <div>
                 <div class="h-8 flex items-center px-1">{{ item.name }}</div>
                 <div v-if="item.gem" class="flex gap-x-1">
-                  <button v-for="altQuality in item.gem.altQuality" :key="altQuality"
+                  <button v-for="altQuality in []" :key="altQuality"
                     @click="selectItem(item, { altQuality })"
                     >{{ t(altQuality) }}</button>
                 </div>
@@ -169,7 +169,7 @@ import { useI18nNs } from '@/web/i18n'
 import { ItemSearchWidget, WidgetManager } from './interfaces'
 import { usePoeninja } from '@/web/background/Prices'
 import { Host } from '@/web/background/IPC'
-import { type ParsedItem, createVirtualItem, ItemRarity } from '@/parser/ParsedItem'
+import { createVirtualItem, ItemRarity } from '@/parser/ParsedItem'
 import { ItemCategory } from '@/parser'
 
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
@@ -268,7 +268,6 @@ function starredItemClick (e: MouseEvent, item: SelectedItem) {
     ? createVirtualItem({
       category: ItemCategory.Gem,
       info: item.info,
-      gemAltQuality: item.discr as ParsedItem['gemAltQuality'],
       gemLevel: 1
     })
     : createVirtualItem({

@@ -35,7 +35,6 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSynthesised,
   parseCategoryByHelpText,
   { virtual: normalizeName },
-  { virtual: parseGemAltQuality },
   parseVaalGemName,
   { virtual: findInDatabase },
   // -----------
@@ -412,15 +411,8 @@ function parseVaalGemName (section: string[], item: ParserState) {
   // TODO blocked by https://www.pathofexile.com/forum/view-thread/3231236
   if (section.length === 1) {
     let gemName: string | undefined
-    if ((gemName = _$.QUALITY_ANOMALOUS.exec(section[0])?.[1])) {
-      item.gemAltQuality = 'Anomalous'
-    } else if ((gemName = _$.QUALITY_DIVERGENT.exec(section[0])?.[1])) {
-      item.gemAltQuality = 'Divergent'
-    } else if ((gemName = _$.QUALITY_PHANTASMAL.exec(section[0])?.[1])) {
-      item.gemAltQuality = 'Phantasmal'
-    } else if (ITEM_BY_TRANSLATED('GEM', section[0])) {
+    if (ITEM_BY_TRANSLATED('GEM', section[0])) {
       gemName = section[0]
-      item.gemAltQuality = 'Superior'
     }
     if (gemName) {
       item.name = ITEM_BY_TRANSLATED('GEM', gemName)![0].refName
@@ -443,24 +435,6 @@ function parseGem (section: string[], item: ParsedItem) {
     return 'SECTION_PARSED'
   }
   return 'SECTION_SKIPPED'
-}
-
-function parseGemAltQuality (item: ParserState) {
-  if (item.category !== ItemCategory.Gem) return
-
-  let gemName: string | undefined
-  if ((gemName = _$REF.QUALITY_ANOMALOUS.exec(item.name)?.[1])) {
-    item.gemAltQuality = 'Anomalous'
-  } else if ((gemName = _$REF.QUALITY_DIVERGENT.exec(item.name)?.[1])) {
-    item.gemAltQuality = 'Divergent'
-  } else if ((gemName = _$REF.QUALITY_PHANTASMAL.exec(item.name)?.[1])) {
-    item.gemAltQuality = 'Phantasmal'
-  } else {
-    item.gemAltQuality = 'Superior'
-  }
-  if (gemName) {
-    item.name = gemName
-  }
 }
 
 function parseStackSize (section: string[], item: ParsedItem) {

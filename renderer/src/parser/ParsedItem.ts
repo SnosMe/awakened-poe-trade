@@ -35,7 +35,6 @@ export interface ParsedItem {
   mapBlighted?: 'Blighted' | 'Blight-ravaged'
   mapTier?: number
   gemLevel?: number
-  gemAltQuality?: 'Anomalous' | 'Divergent' | 'Phantasmal' | 'Superior'
   areaLevel?: number
   talismanTier?: number
   quality?: number

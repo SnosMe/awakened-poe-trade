@@ -74,9 +74,7 @@ function forSkillGem (item: ParsedItem) {
 
   return {
     ns: item.info.namespace,
-    name: (item.gemAltQuality === 'Superior')
-      ? item.info.refName
-      : `${item.gemAltQuality} ${item.info.refName}`,
+    name: item.info.refName,
     variant
   }
 }
