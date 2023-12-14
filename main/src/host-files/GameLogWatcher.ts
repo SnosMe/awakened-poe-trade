@@ -1,93 +1,87 @@
 import { promises as fs, watchFile, unwatchFile } from 'fs'
-import { app } from 'electron';
+import { app } from 'electron'
+import { guessFileLocation } from './utils'
 import { ServerEvents } from '../server'
 import { Logger } from '../RemoteLogger'
 
+const POSSIBLE_PATH =
+  (process.platform === 'win32') ? [
+    'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
+    'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
+  ] : (process.platform === 'linux') ? [
+    // TODO
+  ] : (process.platform === 'darwin') ? [
+    `${app.getPath('home')}/Library/Caches/com.GGG.PathOfExile/Logs/Client.txt`
+  ] : []
+
 export class GameLogWatcher {
-  private offset = 0
-  private filePath?: string
-  private file?: fs.FileHandle
-  private isReading = false
-  private readBuff = Buffer.allocUnsafe(64 * 1024)
+  private _wantedPath: string | null = null
+  get actualPath () { return this._state?.path ?? null }
+  private _state: {
+    offset: number
+    path: string
+    file: fs.FileHandle
+    isReading: boolean
+    readBuff: Buffer
+  } | null = null
 
   constructor (
     private server: ServerEvents,
     private logger: Logger,
   ) {}
 
-  async restart (logFile: string | null) {
-    if (this.filePath === logFile) return
-
-    if (!logFile) {
-      let possiblePaths: string[] = []
-      if (process.platform === 'win32') {
-        possiblePaths = [
-          'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
-          'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
-        ]
-      } else if (process.platform === 'darwin') {
-        possiblePaths = [
-          `${app.getPath('home')}/Library/Caches/com.GGG.PathOfExile/Logs/Client.txt`
-        ]
+  async restart (logFile: string) {
+    if (this._wantedPath !== logFile) {
+      this._wantedPath = logFile
+      if (this._state) {
+        unwatchFile(this._state.path)
+        await this._state.file.close()
+        this._state = null
       }
+    } else {
+      return
+    }
 
-      for (const filePath of possiblePaths) {
-        try {
-          await fs.access(filePath)
-          // this.server.sendEventTo('any', {
-          //   name: 'MAIN->CLIENT::file-path-changed',
-          //   payload: { file: 'game-log', path: filePath }
-          // })
-          logFile = filePath
-          break
-        } catch {}
+    if (!logFile.length) {
+      const guessedPath = await guessFileLocation(POSSIBLE_PATH)
+      if (guessedPath != null) {
+        logFile = guessedPath
+      } else {
+        return
       }
     }
 
-    if (logFile) {
-      try {
-        await this.watch(logFile)
-      } catch {
-        this.logger.write('error [GameLogWatcher] Failed to watch file.')
+    try {
+      const file = await fs.open(logFile, 'r')
+      const stats = await file.stat()
+      watchFile(logFile, { interval: 450 }, this.handleFileChange.bind(this))
+      this._state = {
+        path: logFile,
+        file: file,
+        offset: stats.size,
+        isReading: false,
+        readBuff: Buffer.allocUnsafe(64 * 1024),
       }
+    } catch {
+      this.logger.write('error [GameLogWatcher] Failed to watch file.')
     }
-  }
-
-  private async watch (path: string) {
-    if (this.file) {
-      unwatchFile(this.filePath!)
-      await this.file.close()
-      this.file = undefined
-      this.isReading = false
-    }
-
-    watchFile(path, { interval: 450 }, () => {
-      this.handleFileChange()
-    })
-    this.filePath = path
-
-    this.file = await fs.open(path, 'r')
-    const stats = await this.file.stat()
-    this.offset = stats.size
   }
 
   private handleFileChange () {
-    if (!this.isReading) {
-      this.isReading = true
+    if (this._state && !this._state.isReading) {
+      this._state.isReading = true
       this.readToEOF()
     }
   }
 
   private async readToEOF () {
-    if (!this.file) {
-      this.isReading = false
-      return
-    }
+    if (!this._state) return
 
-    const { bytesRead } = await this.file.read(this.readBuff, 0, this.readBuff.length, this.offset)
+    const { file, readBuff, offset } = this._state
+    const { bytesRead } = await file.read(readBuff, 0, readBuff.length, offset)
 
     if (bytesRead) {
-      const str = this.readBuff.toString('utf8', 0, bytesRead)
+      const str = readBuff.toString('utf8', 0, bytesRead)
       const lines = str.split('\n').map(line => line.trim()).filter(line => line.length)
       this.server.sendEventTo('broadcast', {
         name: 'MAIN->CLIENT::game-log',
@@ -96,10 +90,10 @@ export class GameLogWatcher {
     }
 
     if (bytesRead) {
-      this.offset += bytesRead
+      this._state.offset += bytesRead
       this.readToEOF()
     } else {
-      this.isReading = false
+      this._state.isReading = false
     }
   }
 }

@@ -2,39 +2,47 @@ import fs from 'fs/promises'
 import path from 'path'
 import ini from 'ini'
 import { app } from 'electron'
-import process from 'process';
 import { hotkeyToString, CodeToKey } from '../../../ipc/KeyToCode'
+import { guessFileLocation } from './utils'
 import type { Logger } from '../RemoteLogger'
 import type { ServerEvents } from '../server'
 
-export class GameConfig {
-  private filePath?: string | null
+const POSSIBLE_PATH =
+  (process.platform === 'win32') ? [
+    path.join(app.getPath('documents'), 'My Games', 'Path of Exile', 'production_Config.ini')
+  ] : (process.platform === 'linux') ? [
+    // TODO
+  ] : (process.platform === 'darwin') ? [
+    path.join(app.getPath('appData'), 'Path of Exile', 'Preferences', 'production_Config.ini')
+  ] : []
 
-  private _showModsKey: string = 'Alt'
-  get showModsKey () { return this._showModsKey }
+export class GameConfig {
+  private _wantedPath: string | null = null
+  private _actualPath: string | null = null
+  get actualPath () { return this._actualPath }
+
+  private _showModsKey: string | null = null
+  get showModsKeyNullable () { return this._showModsKey }
+  get showModsKey () { return this._showModsKey ?? 'Alt' }
 
   constructor (
     private server: ServerEvents,
     private logger: Logger
   ) {}
 
-  async readConfig (filePath: string | null) {
-    if (this.filePath === filePath) return
+  async readConfig (filePath: string) {
+    if (this._wantedPath !== filePath) {
+      this._wantedPath = filePath
+      this._actualPath = null
+    } else {
+      return
+    }
 
-    if (!filePath) {
-      if (process.platform === 'darwin') {
-        filePath = path.join(app.getPath('appData'), 'Path of Exile', 'Preferences', 'production_Config.ini')
+    if (!filePath.length) {
+      const guessedPath = await guessFileLocation(POSSIBLE_PATH)
+      if (guessedPath != null) {
+        filePath = guessedPath
       } else {
-        filePath = path.join(app.getPath('documents'), 'My Games', 'Path of Exile', 'production_Config.ini')
-      }
-
-      try {
-        await fs.access(filePath)
-        // this.server.sendEventTo('any', {
-        //   name: 'MAIN->CLIENT::file-path-changed',
-        //   payload: { file: 'game-config', path: filePath }
-        // })
-      } catch {
         this.logger.write('error [GameConfig] Failed to find game configuration file in the default location.')
         return
       }
@@ -46,9 +54,9 @@ export class GameConfig {
       const parsed = ini.parse(contents)
 
       this._showModsKey = this.parseConfigHotkey(
-        parsed['ACTION_KEYS']?.['show_advanced_item_descriptions']) ?? 'Alt'
+        parsed['ACTION_KEYS']?.['show_advanced_item_descriptions'])
 
-      this.filePath = filePath
+      this._actualPath = filePath
     } catch {
       this.logger.write('error [GameConfig] Failed to read game configuration file.')
     }
