@@ -8,7 +8,7 @@ import type { Logger } from '../RemoteLogger'
 import type { ServerEvents } from '../server'
 
 export class GameConfig {
-  private filePath: string | null = null
+  private filePath?: string | null
 
   private _showModsKey: string = 'Alt'
   get showModsKey () { return this._showModsKey }
