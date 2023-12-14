@@ -11,7 +11,7 @@ title: Common issues
 
 3. Are you playing with Vulkan renderer? Update GPU drivers.
 
-    If Awakened works for you with DirectX11 renderer,
+    If Awakened works for you with DirectX11/12 renderer,
     then problem is old Vulkan drivers for sure.
 
 4. Delete `%appdata%\awakened-poe-trade`
@@ -32,6 +32,7 @@ title: Common issues
 ---
 
 - 🔥[There are no stats to select from when price checking](/no-item-mods)
+- [Failed to load leagues](/failed-load-leagues)
 - [How to remove the stopwatch in center of screen?](https://github.com/SnosMe/awakened-poe-trade/issues/219)
 - [Sends a whisper when doing price-check](https://github.com/SnosMe/awakened-poe-trade/issues/178)
 
