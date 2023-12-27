@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { computed, inject, ref } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
-import { ItemCategory, parseClipboard, ParsedItem } from '@/parser'
+import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
 import { registerActions } from './hotkeyable-actions'
 import type { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
 
@@ -62,9 +62,9 @@ const anchor = computed(() => {
 
 const isMapLike = computed(() => {
   if (!item.value) return false
-  const { category, info: { refName } } = item.value
+  const { category, rarity, info: { refName } } = item.value
   return (
-    category === ItemCategory.Map ||
+    (category === ItemCategory.Map && rarity !== ItemRarity.Unique) ||
     category === ItemCategory.HeistContract ||
     category === ItemCategory.HeistBlueprint ||
     category === ItemCategory.Invitation ||

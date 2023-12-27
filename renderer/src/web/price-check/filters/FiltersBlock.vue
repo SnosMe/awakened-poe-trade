@@ -132,7 +132,8 @@ export default defineComponent({
 
     const showUnknownMods = computed(() =>
       props.item.unknownModifiers.length &&
-      props.item.category !== ItemCategory.Sentinel
+      props.item.category !== ItemCategory.Sentinel &&
+      !(props.item.category === ItemCategory.Map && props.item.rarity === ItemRarity.Unique)
     )
 
     const { t } = useI18n()
