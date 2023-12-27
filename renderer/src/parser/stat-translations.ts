@@ -125,6 +125,10 @@ function * _statPlaceholderGenerator (stat: string) {
       }
     }
   }
+
+  // fallback to exact stat text, without any placeholders
+  // N # -> max 0 #
+  yield { stat, values: [] }
 }
 
 export function tryParseTranslation (stat: StatString, modType: ModifierType): ParsedStat | undefined {
