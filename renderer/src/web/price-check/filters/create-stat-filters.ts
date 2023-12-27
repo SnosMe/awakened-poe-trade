@@ -243,7 +243,7 @@ export function calculatedStatToFilter (
   if (roll && !filter.option) {
     if (
       item.rarity === ItemRarity.Unique ||
-      calc.sources.some(({ modifier }) => modifier.info.tier === 1)
+      calc.sources.some(({ modifier }) => modifier.info.tier === 1 && modifier.info.type === ModifierType.Fractured)
     ) {
       const perfectRoll = (
         (calc.stat.better === StatBetter.PositiveRoll && roll.value >= roll.max) ||
