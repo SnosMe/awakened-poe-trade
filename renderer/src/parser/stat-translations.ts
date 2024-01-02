@@ -51,7 +51,7 @@ export function * linesToStatStrings (lines: string[]): Generator<StatString, st
       if (unscalable) {
         str = str.slice(0, -_$.UNSCALABLE_VALUE.length)
       }
-
+	  
       const isParsed: boolean = yield { string: str, unscalable }
       if (isParsed) {
         start += (end - start)
