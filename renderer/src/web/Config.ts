@@ -87,6 +87,7 @@ export function poeWebApi () {
     case 'cmn-Hant': return (realm === 'pc-garena')
       ? 'web.poe.garena.tw'
       : 'www.pathofexile.com'
+    case 'ko': return 'poe.game.daum.net'
   }
 }
 
@@ -108,7 +109,7 @@ export interface Config {
   logKeys: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'ko'
   realm: 'pc-ggg' | 'pc-garena'
   widgets: widget.Widget[]
   fontSize: number
