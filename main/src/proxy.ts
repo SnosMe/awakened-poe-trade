@@ -1,5 +1,5 @@
-import type { FastifyInstance } from 'fastify'
-import fastifyProxy from '@fastify/http-proxy'
+import type { Server } from 'http'
+import * as https from 'https'
 import { app } from 'electron'
 
 export const PROXY_HOSTS = [
@@ -15,28 +15,36 @@ export class HttpProxy {
   cookiesForPoe = new Map<string, string>()
 
   constructor (
-    server: FastifyInstance
+    server: Server
   ) {
-    for (const { host, official } of PROXY_HOSTS) {
-      server.register(fastifyProxy, {
-        upstream: `https://${host}`,
-        prefix: `/proxy/${host}`,
-        replyOptions: {
-          rewriteRequestHeaders: (_, headers) => {
-            const cookie = (official)
-              ? Array.from(this.cookiesForPoe.entries())
-                  .map(([key, value]) => `${key}=${value}`)
-                  .join('; ')
-              : undefined
+    server.addListener('request', (req, res) => {
+      if (!req.url?.startsWith('/proxy/')) return
+      const host = req.url.split('/', 3)[2]
 
-            return {
-              ...headers,
-              cookie,
-              'user-agent': app.userAgentFallback
-            }
+      const official = PROXY_HOSTS.find(entry => entry.host === host)?.official
+      if (official === undefined) return req.destroy()
+
+      const cookie = (official)
+        ? Array.from(this.cookiesForPoe.entries())
+            .map(([key, value]) => `${key}=${value}`)
+            .join('; ')
+        : ''
+
+      const proxyReq = https.request(
+        'https://' + req.url.slice('/proxy/'.length),
+        {
+          method: req.method,
+          headers: {
+            ...req.headers,
+            host: host,
+            cookie: cookie,
+            'user-agent': app.userAgentFallback
           }
-        }
-      })
-    }
+        }, (proxyRes) => {
+          res.writeHead(proxyRes.statusCode!, proxyRes.statusMessage!, proxyRes.rawHeaders)
+          proxyRes.pipe(res)
+        })
+      req.pipe(proxyReq)
+    })
   }
 }

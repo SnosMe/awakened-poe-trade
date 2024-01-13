@@ -1,10 +1,9 @@
-import fastify from 'fastify'
-import fastifyWs, { SocketStream } from '@fastify/websocket'
-import fastifyCors from '@fastify/cors'
-import fastifyStatic from '@fastify/static'
-import type { WebSocket } from 'ws'
-import type { AddressInfo } from 'net'
+import { WebSocketServer, type WebSocket } from 'ws'
+import { type AddressInfo } from 'net'
+import { createServer } from 'http'
 import { EventEmitter } from 'events'
+import * as fs from 'fs'
+import * as path from 'path'
 import { app } from 'electron'
 import { IpcEvent, IpcEventPayload, HostState } from '../../ipc/types'
 import { ConfigStore } from './host-files/ConfigStore'
@@ -12,29 +11,25 @@ import { addFileUploadRoutes } from './host-files/file-uploads'
 import type { AppUpdater } from './AppUpdater'
 import type { Logger } from './RemoteLogger'
 
-export const server = fastify()
+export const server = createServer()
+const websocketServer = new WebSocketServer({ noServer: true })
 let lastActiveClient: WebSocket
-
-server.register(fastifyWs, {
-  options: {}
-})
-server.register(fastifyCors, {
-  origin: '*'
-})
-
-server.addContentTypeParser(
-  'application/octet-stream',
-  { parseAs: 'buffer' },
-  (req, body, done) => { done(null, body) }
-)
 
 addFileUploadRoutes(server)
 
 if (!process.env.VITE_DEV_SERVER_URL) {
-  server.register(fastifyStatic, {
-    root: __dirname,
-    prefix: '/',
-    decorateReply: false
+  server.addListener('request', (req, res) => {
+    if (req.url?.startsWith('/config') || req.url?.startsWith('/uploads') || req.url?.startsWith('/proxy')) return
+
+    const filePath = (req.url === '/') ? '/index.html' : req.url!
+    switch (path.extname(filePath)) {
+      case '.html': res.setHeader('content-type', 'text/html'); break;
+      case '.js': res.setHeader('content-type', 'text/javascript'); break;
+      case '.json': res.setHeader('content-type', 'application/json'); break;
+    }
+
+    fs.createReadStream(path.join(__dirname, filePath))
+      .pipe(res)
   })
 }
 
@@ -53,7 +48,7 @@ export function sendEventTo (
 ) {
   const msg = JSON.stringify(event)
   if (target === 'broadcast') {
-    for (const client of server.websocketServer.clients) {
+    for (const client of websocketServer.clients) {
       client.send(msg)
     }
   } else {
@@ -70,11 +65,12 @@ export const eventPipe = {
   sendEventTo
 }
 
-let onConnection: (connection: SocketStream) => void
-
-server.register(async (instance) => {
-  instance.get('/events', { websocket: true }, (connection) => {
-    onConnection(connection)
+server.on('upgrade', (req, socket, head) => {
+  if (req.url !== '/events') {
+    return req.destroy()
+  }
+  websocketServer.handleUpgrade(req, socket, head, (ws) => {
+    websocketServer.emit('connection', ws, req)
   })
 })
 
@@ -84,17 +80,17 @@ export async function startServer (
 ): Promise<number> {
   const configStore = new ConfigStore(eventPipe)
 
-  onConnection = (connection) => {
-    lastActiveClient = connection.socket
-    connection.socket.on('message', (bytes) => {
+  websocketServer.on('connection', (socket) => {
+    lastActiveClient = socket
+    socket.on('message', (bytes) => {
       const event = JSON.parse(bytes.toString('utf-8')) as IpcEvent
       if (event.name === 'CLIENT->MAIN::used-recently') {
-        lastActiveClient = connection.socket
+        lastActiveClient = socket
       }
       evBus.emit(event.name, event.payload)
     })
-    connection.socket.on('close', () => {
-      const clients = server.websocketServer.clients
+    socket.on('close', () => {
+      const clients = websocketServer.clients
       if (clients.size === 1) {
         lastActiveClient = clients.values().next().value
         evBus.emit('CLIENT->MAIN::used-recently', { isOverlay: true })
@@ -104,20 +100,22 @@ export async function startServer (
       name: 'MAIN->CLIENT::log-entry',
       payload: { message: logger.history }
     })
-  }
+  })
 
-  server.get<{
-    Reply: HostState
-  }>('/config', async (_req) => {
-    return {
-      version: app.getVersion(),
-      updater: appUpdater.info,
-      contents: await configStore.load()
+  server.addListener('request', async (req, res) => {
+    if (req.url === '/config') {
+      res.setHeader('content-type', 'application/json')
+      const resBody: HostState = {
+        version: app.getVersion(),
+        updater: appUpdater.info,
+        contents: await configStore.load()
+      }
+      res.end(JSON.stringify(resBody))
     }
   })
 
   let port = (process.env.VITE_DEV_SERVER_URL) ? 8584 : 0
-  let host = 'localhost'
+  let host = '127.0.0.1'
   // --listen=[host][:port]
   const listenOpt = process.argv.find(arg => arg.startsWith('--listen'))
   if (listenOpt) {
@@ -126,6 +124,11 @@ export async function startServer (
     if (portArg) port = parseInt(portArg, 10)
   }
 
-  await server.listen({ port, host })
-  return (server.server.address() as AddressInfo).port
+  return new Promise((resolve, reject) => {
+    server.listen({ port, host })
+      .once('error', reject)
+      .once('listening', () => {
+        resolve((server.address() as AddressInfo).port)
+      })
+  })
 }
