@@ -632,13 +632,13 @@
   },
   {
     "query": [
-      "UNIQUE::Victorious Fate // Ultimatum Aspect",
-      "UNIQUE::Ignominious Fate // Ultimatum Aspect",
-      "UNIQUE::Deadly End // Ultimatum Aspect",
-      "UNIQUE::Will of Chaos // Ultimatum Aspect"
+      "UNIQUE::Beauty // Vaal Aspect",
+      "UNIQUE::Ambition // Vaal Aspect",
+      "UNIQUE::Cooperation // Vaal Aspect",
+      "UNIQUE::Curiosity // Vaal Aspect"
     ],
     "items": [
-      "UNIQUE::The Tower of Ordeals // T16"
+      "UNIQUE::The Adorned // Crimson Jewel"
     ]
   },
   {

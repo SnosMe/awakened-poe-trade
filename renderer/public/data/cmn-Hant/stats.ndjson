@@ -363,7 +363,7 @@
 {"ref":"#% chance to not generate Alert Level on opening a Chest using Brute Force","better":1,"matchers":[{"string":"使用蠻力開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_1195895224"]}}}
 {"ref":"#% chance to not generate Alert Level on opening a Chest using Counter-Thaumaturgy","better":1,"matchers":[{"string":"使用解咒師開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_2232609651"],"fractured":["fractured.stat_2232609651"]}}}
 {"ref":"#% chance to not generate Alert Level on opening a Chest using Deception","better":1,"matchers":[{"string":"使用詐欺開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_3146356577"]}}}
-{"ref":"#% chance to not generate Alert Level on opening a Chest using Demolition","better":1,"matchers":[{"string":"使用拆除開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_581152495"]}}}
+{"ref":"#% chance to not generate Alert Level on opening a Chest using Demolition","better":1,"matchers":[{"string":"使用拆除開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_581152495"],"fractured":["fractured.stat_581152495"]}}}
 {"ref":"#% chance to not generate Alert Level on opening a Chest using Engineering","better":1,"matchers":[{"string":"使用工程開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_316122366"]}}}
 {"ref":"#% chance to not generate Alert Level on opening a Chest using Lockpicking","better":1,"matchers":[{"string":"使用開鎖開啟保險箱時有 #% 機率不會產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_647064288"]}}}
 {"ref":"#% chance to not generate Alert Level on opening a Chest using Perception","better":1,"matchers":[{"string":"使用洞察力開啟保險箱時有 #% 機率不產生警戒等級"}],"trade":{"ids":{"explicit":["explicit.stat_397829245"]}}}
@@ -2235,7 +2235,7 @@
 {"ref":"+# to Level of Socketed Trap or Mine Gems","better":1,"matchers":[{"string":"插槽中陷阱或地雷寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_150668988"],"implicit":["implicit.stat_150668988"],"fractured":["fractured.stat_150668988"],"scourge":["scourge.stat_150668988"]}}}
 {"ref":"+# to Level of Socketed Vaal Gems","better":1,"matchers":[{"string":"此物品插槽中瓦爾寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_1170386874"],"implicit":["implicit.stat_1170386874"]}}}
 {"ref":"+# to Level of Socketed Warcry Gems","better":1,"matchers":[{"string":"此物品插槽中戰吼寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_1672793731"],"implicit":["implicit.stat_1672793731"],"scourge":["scourge.stat_1672793731"]}}}
-{"ref":"+# to Lockpicking Level for Heists","better":1,"matchers":[{"string":"為劫盜 # 開鎖等級"}],"trade":{"ids":{"explicit":["explicit.stat_3031310169"]}}}
+{"ref":"+# to Lockpicking Level for Heists","better":1,"matchers":[{"string":"為劫盜 # 開鎖等級"}],"trade":{"ids":{"explicit":["explicit.stat_3031310169"],"fractured":["fractured.stat_3031310169"]}}}
 {"ref":"+# to Maximum Blood Charges","better":1,"matchers":[{"string":"# 最大血腥球"}],"trade":{"ids":{"enchant":["enchant.stat_4218649240"]}}}
 {"ref":"+# to Maximum Charges","better":1,"matchers":[{"string":"# 最大充能"}],"trade":{"ids":{"explicit":["explicit.stat_1437957544"],"fractured":["fractured.stat_1437957544"],"enchant":["enchant.stat_1437957544"]}}}
 {"ref":"+# to maximum Divine Charges","better":1,"matchers":[{"string":"# 最大神聖充能"}],"trade":{"ids":{"explicit":["explicit.stat_3997368968"]}}}
@@ -2601,7 +2601,7 @@
 {"ref":"1 Added Passive Skill is Astonishing Affliction","better":1,"matchers":[{"string":"1 個附加天賦為驚奇痛楚"}],"trade":{"ids":{"explicit":["explicit.stat_2428334013"]}}}
 {"ref":"1 Added Passive Skill is Basics of Pain","better":1,"matchers":[{"string":"1 個附加天賦為苦痛之基"}],"trade":{"ids":{"explicit":["explicit.stat_3084359503"],"fractured":["fractured.stat_3084359503"]}}}
 {"ref":"1 Added Passive Skill is Battle-Hardened","better":1,"matchers":[{"string":"1 個附加天賦為固守戰場"}],"trade":{"ids":{"explicit":["explicit.stat_4188581520"],"fractured":["fractured.stat_4188581520"]}}}
-{"ref":"1 Added Passive Skill is Battlefield Dominator","better":1,"matchers":[{"string":"1 個附加天賦為戰場統治者"}],"trade":{"ids":{"explicit":["explicit.stat_1499057234"]}}}
+{"ref":"1 Added Passive Skill is Battlefield Dominator","better":1,"matchers":[{"string":"1 個附加天賦為戰場統治者"}],"trade":{"ids":{"explicit":["explicit.stat_1499057234"],"fractured":["fractured.stat_1499057234"]}}}
 {"ref":"1 Added Passive Skill is Blacksmith","better":1,"matchers":[{"string":"1 個附加天賦為鐵匠"}],"trade":{"ids":{"explicit":["explicit.stat_1127706436"]}}}
 {"ref":"1 Added Passive Skill is Blanketed Snow","better":1,"matchers":[{"string":"1 個附加天賦為拂雪"}],"trade":{"ids":{"explicit":["explicit.stat_1085167979"],"fractured":["fractured.stat_1085167979"]}}}
 {"ref":"1 Added Passive Skill is Blast-Freeze","better":1,"matchers":[{"string":"1 個附加天賦為爆凍"}],"trade":{"ids":{"explicit":["explicit.stat_693808153"],"fractured":["fractured.stat_693808153"]}}}
@@ -2658,7 +2658,7 @@
 {"ref":"1 Added Passive Skill is Doedre's Spite","better":1,"matchers":[{"string":"1 個附加天賦為德瑞的怨恨"}],"trade":{"ids":{"explicit":["explicit.stat_462115791"]}}}
 {"ref":"1 Added Passive Skill is Doryani's Lesson","better":1,"matchers":[{"string":"1 個附加的天賦為多里亞尼的教程"}],"trade":{"ids":{"explicit":["explicit.stat_228455793"],"fractured":["fractured.stat_228455793"]}}}
 {"ref":"1 Added Passive Skill is Dragon Hunter","better":1,"matchers":[{"string":"1 個附加的天賦為獵龍幻士"}],"trade":{"ids":{"explicit":["explicit.stat_1038955006"]}}}
-{"ref":"1 Added Passive Skill is Dread March","better":1,"matchers":[{"string":"1 個附加的天賦為驚懼遊行"}],"trade":{"ids":{"explicit":["explicit.stat_3087667389"]}}}
+{"ref":"1 Added Passive Skill is Dread March","better":1,"matchers":[{"string":"1 個附加的天賦為驚懼遊行"}],"trade":{"ids":{"explicit":["explicit.stat_3087667389"],"fractured":["fractured.stat_3087667389"]}}}
 {"ref":"1 Added Passive Skill is Drive the Destruction","better":1,"matchers":[{"string":"1 個附加的天賦為破壞之意"}],"trade":{"ids":{"explicit":["explicit.stat_1911162866"],"fractured":["fractured.stat_1911162866"]}}}
 {"ref":"1 Added Passive Skill is Eldritch Inspiration","better":1,"matchers":[{"string":"1 個附加的天賦為怪異靈感"}],"trade":{"ids":{"explicit":["explicit.stat_3737604164"]}}}
 {"ref":"1 Added Passive Skill is Electric Presence","better":1,"matchers":[{"string":"1 個附加天賦為電力光環"}],"trade":{"ids":{"explicit":["explicit.stat_3950683692"],"fractured":["fractured.stat_3950683692"]}}}
@@ -2758,7 +2758,7 @@
 {"ref":"1 Added Passive Skill is Peace Amidst Chaos","better":1,"matchers":[{"string":"1 個附加的天賦為混沌中的平靜"}],"trade":{"ids":{"explicit":["explicit.stat_1734275536"]}}}
 {"ref":"1 Added Passive Skill is Peak Vigour","better":1,"matchers":[{"string":"1 個附加的天賦為活力之巔"}],"trade":{"ids":{"explicit":["explicit.stat_1722821275"],"fractured":["fractured.stat_1722821275"]}}}
 {"ref":"1 Added Passive Skill is Phlebotomist","better":1,"matchers":[{"string":"1 個附加天賦為放血屍"}],"trade":{"ids":{"explicit":["explicit.stat_3057154383"]}}}
-{"ref":"1 Added Passive Skill is Powerful Assault","better":1,"matchers":[{"string":"1 個附加的天賦為猛烈襲擊"}],"trade":{"ids":{"explicit":["explicit.stat_1005475168"]}}}
+{"ref":"1 Added Passive Skill is Powerful Assault","better":1,"matchers":[{"string":"1 個附加的天賦為猛烈襲擊"}],"trade":{"ids":{"explicit":["explicit.stat_1005475168"],"fractured":["fractured.stat_1005475168"]}}}
 {"ref":"1 Added Passive Skill is Powerful Ward","better":1,"matchers":[{"string":"1 個附加的天賦為強力守衛"}],"trade":{"ids":{"explicit":["explicit.stat_164032122"]}}}
 {"ref":"1 Added Passive Skill is Practiced Caster","better":1,"matchers":[{"string":"1 個附加的天賦為見習術士"}],"trade":{"ids":{"explicit":["explicit.stat_3435403756"],"fractured":["fractured.stat_3435403756"]}}}
 {"ref":"1 Added Passive Skill is Precise Focus","better":1,"matchers":[{"string":"1 個附加的天賦為精確專注"}],"trade":{"ids":{"explicit":["explicit.stat_2913581789"]}}}
@@ -2829,7 +2829,7 @@
 {"ref":"1 Added Passive Skill is Student of Decay","better":1,"matchers":[{"string":"1 個附加的天賦為腐朽之徒"}],"trade":{"ids":{"explicit":["explicit.stat_3202667190"],"fractured":["fractured.stat_3202667190"]}}}
 {"ref":"1 Added Passive Skill is Sublime Form","better":1,"matchers":[{"string":"1 個附加天賦為昇華之型"}],"trade":{"ids":{"explicit":["explicit.stat_2251304016"],"fractured":["fractured.stat_2251304016"]}}}
 {"ref":"1 Added Passive Skill is Sublime Sensation","better":1,"matchers":[{"string":"1 個附加的天賦為崇高之覺"}],"trade":{"ids":{"explicit":["explicit.stat_1364858171"],"fractured":["fractured.stat_1364858171"]}}}
-{"ref":"1 Added Passive Skill is Surefooted Striker","better":1,"matchers":[{"string":"1 個附加的天賦為踏實打手"}],"trade":{"ids":{"explicit":["explicit.stat_3410752193"]}}}
+{"ref":"1 Added Passive Skill is Surefooted Striker","better":1,"matchers":[{"string":"1 個附加的天賦為踏實打手"}],"trade":{"ids":{"explicit":["explicit.stat_3410752193"],"fractured":["fractured.stat_3410752193"]}}}
 {"ref":"1 Added Passive Skill is Surging Vitality","better":1,"matchers":[{"string":"1 個附加的天賦為活力湧現"}],"trade":{"ids":{"explicit":["explicit.stat_2410501331"],"fractured":["fractured.stat_2410501331"]}}}
 {"ref":"1 Added Passive Skill is Surprise Sabotage","better":1,"matchers":[{"string":"1 個附加的天賦為驚喜破壞"}],"trade":{"ids":{"explicit":["explicit.stat_3051562738"],"fractured":["fractured.stat_3051562738"]}}}
 {"ref":"1 Added Passive Skill is Tempered Arrowheads","better":1,"matchers":[{"string":"1 個附加的天賦為鍛煉的箭頭"}],"trade":{"ids":{"explicit":["explicit.stat_2631806437"],"fractured":["fractured.stat_2631806437"]}}}
@@ -3150,6 +3150,7 @@
 {"ref":"Area has patches of Consecrated Ground","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"區域有數道奉獻地面"}],"trade":{"ids":{"explicit":["explicit.stat_1948962470"],"fractured":["fractured.stat_1948962470"]}}}
 {"ref":"Area has patches of desecrated ground","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"地圖含有腐化地面"}],"trade":{"ids":{"explicit":["explicit.stat_3577222856"],"fractured":["fractured.stat_3577222856"]}}}
 {"ref":"Area has patches of Shocked Ground which increase Damage taken by #%","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"區域內有數道增加 #% 承受傷害的感電地面"}],"trade":{"ids":{"explicit":["explicit.stat_3246076198"],"fractured":["fractured.stat_3246076198"]}}}
+{"ref":"Area is affected by a Corrupting Tempest","better":1,"fromAreaMods":true,"matchers":[{"string":"區域被腐化風暴影響"}],"trade":{"ids":{"explicit":["explicit.stat_2836394633"]}}}
 {"ref":"Area is controlled by a Warband Boss","better":1,"matchers":[{"string":"區域受到軍團首領的控制"}],"trade":{"ids":{"explicit":["explicit.stat_1415399260"]}}}
 {"ref":"Area is infested with Fungal Growths\nMap's Item Quantity Modifiers also affect Blight Chest count at 25% value\nCan be Anointed up to 3 times","better":1,"matchers":[{"string":"區域被毒菌滋長蔓延\n地圖物品數量詞綴同時以 40% 的值影響凋落保險箱\n最多可以抹油 # 次"},{"string":"區域被毒菌滋長蔓延\n地圖物品數量詞綴同時以 20% 的值影響凋落保險箱\n最多可以抹油 3 次","value":1}],"trade":{"ids":{"implicit":["implicit.stat_299373046"]}}}
 {"ref":"Area is influenced by #","better":1,"matchers":[{"string":"區域被塑界者控制","value":1},{"string":"區域被異界尊師控制","value":2}],"trade":{"ids":{"implicit":["implicit.stat_1792283443"]},"option":true}}
@@ -3465,7 +3466,7 @@
 {"ref":"Cobra Lash deals #% increased Damage","better":1,"matchers":[{"string":"毒蛇鞭笞增加 #% 傷害"},{"string":"毒蛇鞭笞減少 #% 傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2224580362"]}}}
 {"ref":"Cobra Lash has #% increased Projectile Speed","better":1,"matchers":[{"string":"毒蛇鞭笞增加 #% 投射物速度"},{"string":"毒蛇鞭笞減少 #% 投射物速度","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_732631533"]}}}
 {"ref":"Cold Exposure on Hit if you've cast Frostbite in the past 10 seconds","better":1,"matchers":[{"string":"若你過去 10 秒施放過凍傷，擊中時造成冰冷曝曬"}],"trade":{"ids":{"explicit":["explicit.stat_1168138239"]}}}
-{"ref":"Cold Exposure you inflict applies an extra +#% to Cold Resistance","better":1,"matchers":[{"string":"你造成的冰冷曝曬套用額外 #% 冰冷抗性"}],"trade":{"ids":{"explicit":["explicit.stat_600221736"]}}}
+{"ref":"Cold Exposure you inflict applies an extra +#% to Cold Resistance","better":-1,"matchers":[{"string":"你造成的冰冷曝曬套用額外 #% 冰冷抗性"}],"trade":{"ids":{"explicit":["explicit.stat_600221736"]}}}
 {"ref":"Cold Resistance is #%","better":1,"matchers":[{"string":"冰冷抗性為 #%"}],"trade":{"ids":{"explicit":["explicit.stat_496075050"]}}}
 {"ref":"Cold Skills have #% chance to Poison on Hit","better":1,"matchers":[{"string":"冰冷技能擊中時有 #% 造成中毒"}],"trade":{"ids":{"explicit":["explicit.stat_2373079502"]}}}
 {"ref":"Cold Snap has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"霜暴增加 #% 冷卻時間恢復速度"},{"string":"霜暴減少 #% 冷卻時間恢復速度","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2289367813"]}}}
@@ -3764,7 +3765,7 @@
 {"ref":"Explosive Trap causes an additional smaller explosion","better":1,"matchers":[{"string":"爆裂陷阱造成 # 次額外小爆炸"},{"string":"爆裂陷阱造成 1 次額外小爆炸","value":1}],"trade":{"ids":{"enchant":["enchant.stat_3078026860"]}}}
 {"ref":"Explosive Trap deals #% increased Damage","better":1,"matchers":[{"string":"爆裂陷阱增加 #% 傷害"},{"string":"爆裂陷阱減少 #% 傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_4207255685"]}}}
 {"ref":"Explosive Trap has #% increased Area of Effect","better":1,"matchers":[{"string":"爆裂陷阱增加 #% 範圍效果"},{"string":"爆裂陷阱減少 #% 範圍效果","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1694915226"]}}}
-{"ref":"Exposure you inflict applies an extra +#% to the affected Resistance","better":1,"matchers":[{"string":"你造成的曝曬額外 #% 至影響的抗性"}],"trade":{"ids":{"explicit":["explicit.stat_3306713700"]}}}
+{"ref":"Exposure you inflict applies an extra +#% to the affected Resistance","better":-1,"matchers":[{"string":"你造成的曝曬額外 #% 至影響的抗性"}],"trade":{"ids":{"explicit":["explicit.stat_3306713700"]}}}
 {"ref":"Exsanguinate deals #% increased Damage","better":1,"matchers":[{"string":"抽血增加 #% 傷害"},{"string":"抽血減少 #% 傷害","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2259734653"]}}}
 {"ref":"Exsanguinate has a #% chance to Chain an additional time","better":1,"matchers":[{"string":"抽血有 #% 機率連鎖額外1 次"}],"trade":{"ids":{"enchant":["enchant.stat_2304517189"]}}}
 {"ref":"Extra gore","better":1,"matchers":[{"string":"更多鮮血"}],"trade":{"ids":{"explicit":["explicit.stat_3403461239"]}}}
@@ -4410,13 +4411,13 @@
 {"ref":"Infernal Blow Debuff deals an additional #% of Damage per Charge","better":1,"matchers":[{"string":"煉獄之擊減益效果造成每個充能 1 次額外 #% 的傷害"}],"trade":{"ids":{"enchant":["enchant.stat_105839441"]}}}
 {"ref":"Infernal Cry has #% increased Area of Effect","better":1,"matchers":[{"string":"煉獄戰吼增加 #% 範圍效果"}],"trade":{"ids":{"implicit":["implicit.stat_631097842"]}}}
 {"ref":"Infernal Cry has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"煉獄戰吼增加 #% 冷卻時間恢復速度"}],"trade":{"ids":{"enchant":["enchant.stat_2702698464"]}}}
-{"ref":"Inflict Cold Exposure on Hit, applying #% to Cold Resistance","better":1,"matchers":[{"string":"擊中時造成冰冷曝曬，#% 冰冷抗性"}],"trade":{"ids":{"implicit":["implicit.stat_3005701891"]}}}
+{"ref":"Inflict Cold Exposure on Hit, applying #% to Cold Resistance","better":-1,"matchers":[{"string":"擊中時造成冰冷曝曬，#% 冰冷抗性"}],"trade":{"ids":{"implicit":["implicit.stat_3005701891"]}}}
 {"ref":"Inflict Decay on Enemies you Curse with Hex Skills, dealing # Chaos Damage per Second for 8 Seconds","better":1,"matchers":[{"string":"你使用咒術或印記技能詛咒敵人，對敵人造成腐敗，每秒造成 # 混沌傷害持續 8 秒"}],"trade":{"ids":{"explicit":["explicit.stat_773846741"]}}}
 {"ref":"Inflict Fire Exposure on Hit if you've cast Flammability in the past 10 seconds","better":1,"matchers":[{"string":"若你過去 10 秒施放過易燃，擊中時造成火焰曝曬"}],"trade":{"ids":{"explicit":["explicit.stat_3259812992"]}}}
-{"ref":"Inflict Fire Exposure on Hit, applying #% to Fire Resistance","better":1,"matchers":[{"string":"擊中時造成火焰曝曬，#% 火焰抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1309840354"]}}}
+{"ref":"Inflict Fire Exposure on Hit, applying #% to Fire Resistance","better":-1,"matchers":[{"string":"擊中時造成火焰曝曬，#% 火焰抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1309840354"]}}}
 {"ref":"Inflict Fire, Cold and Lightning Exposure on nearby Enemies when used","better":1,"matchers":[{"string":"使用時造成附近敵人火焰、冰冷和閃電曝曬"}],"trade":{"ids":{"explicit":["explicit.stat_3933226405"]}}}
 {"ref":"Inflict Lightning Exposure on Hit if you've cast Conductivity in the past 10 seconds","better":1,"matchers":[{"string":"若你過去 10 秒施放過導電，擊中時造成閃電曝曬"}],"trade":{"ids":{"explicit":["explicit.stat_3339663313"]}}}
-{"ref":"Inflict Lightning Exposure on Hit, applying #% to Lightning Resistance","better":1,"matchers":[{"string":"擊中時造成閃電曝曬，#% 閃電抗性"}],"trade":{"ids":{"implicit":["implicit.stat_981753179"]}}}
+{"ref":"Inflict Lightning Exposure on Hit, applying #% to Lightning Resistance","better":-1,"matchers":[{"string":"擊中時造成閃電曝曬，#% 閃電抗性"}],"trade":{"ids":{"implicit":["implicit.stat_981753179"]}}}
 {"ref":"Inflict non-Damaging Ailments as though dealing #% more Damage","better":1,"matchers":[{"string":"造成非傷害型異常狀態有如造成 #% 更多傷害"},{"string":"造成非傷害型異常狀態有如造成 #% 更少傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1345113611"]}}}
 {"ref":"Inflict Withered for 2 seconds on Hit if you've cast Despair in the past 10 seconds","better":1,"matchers":[{"string":"若你過去 10 秒施放過絕望，擊中時造成凋零 2 秒"}],"trade":{"ids":{"explicit":["explicit.stat_1904031052"]}}}
 {"ref":"Inflicts a random Hex on you when your Totems die","better":1,"matchers":[{"string":"當你圖騰死亡時，對你造成 1 個隨機咒術"}],"trade":{"ids":{"explicit":["explicit.stat_2918129907"]}}}
@@ -5418,6 +5419,7 @@
 {"ref":"Socketed Gems are Supported by Level # Awakened Controlled Destruction","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．精準破壞輔助"}],"trade":{"ids":{"explicit":["explicit.stat_271119551"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Elemental Damage With Attacks","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．元素攻擊傷害輔助"}],"trade":{"ids":{"explicit":["explicit.stat_1786672841"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Elemental Focus","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．元素集中輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2111661233"]}}}
+{"ref":"Socketed Gems are Supported by Level # Awakened Empower","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．賦予輔助"}],"trade":{"ids":{"explicit":["explicit.stat_3739157305"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Greater Multiple Projectiles","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．高階多重投射物輔助"}],"trade":{"ids":{"explicit":["explicit.stat_1980028507"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Increased Area Of Effect","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．增大範圍輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2333301609"]}}}
 {"ref":"Socketed Gems are Supported by Level # Awakened Lightning Penetration","better":1,"matchers":[{"string":"此物品插槽中寶石被等級 # 覺醒．閃電穿透輔助"}],"trade":{"ids":{"explicit":["explicit.stat_1544223714"]}}}
@@ -6219,9 +6221,9 @@
 {"ref":"While a Pinnacle Atlas Boss is in your Presence, Ignites you inflict deal Damage #% faster","better":1,"matchers":[{"string":"在巔峰頭目面前時，你造成的點燃傷害加速 #%"}],"trade":{"ids":{"implicit":["implicit.stat_1053495752"]}}}
 {"ref":"While a Pinnacle Atlas Boss is in your Presence, Ignites you inflict spread to other Enemies within # metre","better":1,"matchers":[{"string":"在巔峰頭目面前時，你造成的點燃擴散至 # 米內的其它敵人"}],"trade":{"ids":{"implicit":["implicit.stat_3343791355"]}}}
 {"ref":"While a Pinnacle Atlas Boss is in your Presence, Infernal Cry has #% increased Area of Effect","better":1,"matchers":[{"string":"在巔峰頭目面前時，煉獄戰吼增加 #% 範圍效果"}],"trade":{"ids":{"implicit":["implicit.stat_1774377226"]}}}
-{"ref":"While a Pinnacle Atlas Boss is in your Presence, Inflict Cold Exposure on Hit, applying #% to Cold Resistance","better":1,"matchers":[{"string":"在巔峰頭目面前時，擊中時造成冰冷曝曬，#% 冰冷抗性"}],"trade":{"ids":{"implicit":["implicit.stat_3658662726"]}}}
-{"ref":"While a Pinnacle Atlas Boss is in your Presence, Inflict Fire Exposure on Hit, applying #% to Fire Resistance","better":1,"matchers":[{"string":"在巔峰頭目面前時，擊中時造成火焰曝曬，#% 火焰抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1629531681"]}}}
-{"ref":"While a Pinnacle Atlas Boss is in your Presence, Inflict Lightning Exposure on Hit, applying #% to Lightning Resistance","better":1,"matchers":[{"string":"在巔峰頭目面前時，擊中時造成閃電曝曬，#% 閃電抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1762412317"]}}}
+{"ref":"While a Pinnacle Atlas Boss is in your Presence, Inflict Cold Exposure on Hit, applying #% to Cold Resistance","better":-1,"matchers":[{"string":"在巔峰頭目面前時，擊中時造成冰冷曝曬，#% 冰冷抗性"}],"trade":{"ids":{"implicit":["implicit.stat_3658662726"]}}}
+{"ref":"While a Pinnacle Atlas Boss is in your Presence, Inflict Fire Exposure on Hit, applying #% to Fire Resistance","better":-1,"matchers":[{"string":"在巔峰頭目面前時，擊中時造成火焰曝曬，#% 火焰抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1629531681"]}}}
+{"ref":"While a Pinnacle Atlas Boss is in your Presence, Inflict Lightning Exposure on Hit, applying #% to Lightning Resistance","better":-1,"matchers":[{"string":"在巔峰頭目面前時，擊中時造成閃電曝曬，#% 閃電抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1762412317"]}}}
 {"ref":"While a Pinnacle Atlas Boss is in your Presence, Intimidating Cry has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"在巔峰頭目面前時，威嚇戰吼增加 #% 冷卻時間恢復速度"}],"trade":{"ids":{"implicit":["implicit.stat_3945581778"]}}}
 {"ref":"While a Pinnacle Atlas Boss is in your Presence, Malevolence has #% increased Aura Effect","better":1,"matchers":[{"string":"在巔峰頭目面前時，惡意增加 #% 光環效果"},{"string":"在巔峰頭目面前時，惡意減少 #% 光環效果","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_1033279468"]}}}
 {"ref":"While a Pinnacle Atlas Boss is in your Presence, Melee Hits Fortify","better":1,"matchers":[{"string":"在巔峰頭目面前時，近戰擊中有 #% 機率護體"},{"string":"在巔峰頭目面前時，近戰擊中護體","value":100}],"trade":{"ids":{"implicit":["implicit.stat_298106626"]}}}
@@ -6436,9 +6438,9 @@
 {"ref":"While a Unique Enemy is in your Presence, Ignites you inflict deal Damage #% faster","better":1,"matchers":[{"string":"在傳奇頭目面前時，你造成的點燃傷害加速 #%"}],"trade":{"ids":{"implicit":["implicit.stat_2349328837"]}}}
 {"ref":"While a Unique Enemy is in your Presence, Ignites you inflict spread to other Enemies within # metre","better":1,"matchers":[{"string":"在傳奇頭目面前時，你造成的點燃擴散至 # 米內的其它敵人"}],"trade":{"ids":{"implicit":["implicit.stat_1698847655"]}}}
 {"ref":"While a Unique Enemy is in your Presence, Infernal Cry has #% increased Area of Effect","better":1,"matchers":[{"string":"在傳奇頭目面前時，煉獄戰吼增加 #% 範圍效果"}],"trade":{"ids":{"implicit":["implicit.stat_3199255605"]}}}
-{"ref":"While a Unique Enemy is in your Presence, Inflict Cold Exposure on Hit, applying #% to Cold Resistance","better":1,"matchers":[{"string":"在傳奇頭目面前時，擊中時造成冰冷曝曬，#% 冰冷抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1699220089"]}}}
-{"ref":"While a Unique Enemy is in your Presence, Inflict Fire Exposure on Hit, applying #% to Fire Resistance","better":1,"matchers":[{"string":"在傳奇頭目面前時，擊中時造成火焰曝曬，#% 火焰抗性"}],"trade":{"ids":{"implicit":["implicit.stat_732411542"]}}}
-{"ref":"While a Unique Enemy is in your Presence, Inflict Lightning Exposure on Hit, applying #% to Lightning Resistance","better":1,"matchers":[{"string":"在傳奇頭目面前時，擊中時造成閃電曝曬，#% 閃電抗性"}],"trade":{"ids":{"implicit":["implicit.stat_2876365933"]}}}
+{"ref":"While a Unique Enemy is in your Presence, Inflict Cold Exposure on Hit, applying #% to Cold Resistance","better":-1,"matchers":[{"string":"在傳奇頭目面前時，擊中時造成冰冷曝曬，#% 冰冷抗性"}],"trade":{"ids":{"implicit":["implicit.stat_1699220089"]}}}
+{"ref":"While a Unique Enemy is in your Presence, Inflict Fire Exposure on Hit, applying #% to Fire Resistance","better":-1,"matchers":[{"string":"在傳奇頭目面前時，擊中時造成火焰曝曬，#% 火焰抗性"}],"trade":{"ids":{"implicit":["implicit.stat_732411542"]}}}
+{"ref":"While a Unique Enemy is in your Presence, Inflict Lightning Exposure on Hit, applying #% to Lightning Resistance","better":-1,"matchers":[{"string":"在傳奇頭目面前時，擊中時造成閃電曝曬，#% 閃電抗性"}],"trade":{"ids":{"implicit":["implicit.stat_2876365933"]}}}
 {"ref":"While a Unique Enemy is in your Presence, Intimidating Cry has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"在傳奇頭目面前時，威嚇戰吼增加 #% 冷卻時間恢復速度"}],"trade":{"ids":{"implicit":["implicit.stat_3381588096"]}}}
 {"ref":"While a Unique Enemy is in your Presence, Malevolence has #% increased Aura Effect","better":1,"matchers":[{"string":"在傳奇頭目面前時，惡意增加 #% 光環效果"},{"string":"在傳奇頭目面前時，惡意減少 #% 光環效果","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_1327020319"]}}}
 {"ref":"While a Unique Enemy is in your Presence, Melee Hits Fortify","better":1,"matchers":[{"string":"在傳奇頭目面前時，近戰擊中有 #% 機率護體"},{"string":"在傳奇頭目面前時，近戰擊中護體","value":100}],"trade":{"ids":{"implicit":["implicit.stat_993223747"]}}}

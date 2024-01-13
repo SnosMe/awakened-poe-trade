@@ -85,7 +85,7 @@ export default {
   SHAPER_MODS: ['塑者之', '塑者的'],
   ELDER_MODS: ['尊師之', '尊師的'],
   CRUSADER_MODS: ['聖戰士的', '聖戰士之'],
-  HUNTER_MODS: ['狩獵者的', '狩獵者之'],
+  HUNTER_MODS: ['狩獵者的', '狩獵者之', '獵殺之'],
   REDEEMER_MODS: ['救贖者之', '救贖者的'],
   WARLORD_MODS: ['督軍的', '總督軍的', '征服之'],
   DELVE_MODS: ['地下的', '地下之', '地底之'],
