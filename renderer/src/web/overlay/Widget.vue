@@ -1,9 +1,7 @@
 <template>
   <div @mousedown="handleMouseDown">
-    <div :class="$style.widget" :style="widgetPosition">
-      <div :class="{ 'opacity-75': isMoving }">
-        <slot :isEditing="isEditing" :isMoving="isMoving" />
-      </div>
+    <div :class="[$style.widget, { 'opacity-75': isMoving }]" :style="widgetPosition">
+      <slot :isEditing="isEditing" :isMoving="isMoving" />
       <div class="absolute px-1" :style="actionsPosition" style="background: rgba(0,0,0,0.01);">
         <div :class="$style.actionsPanel">
           <button v-if="hideable" @click="hide"
@@ -99,30 +97,42 @@ export default defineComponent({
       const { anchor, wmZorder } = props.config
 
       // <top, center, bottom><left, center, right>
-      let translate
+      let translate: string | undefined
+      let max = { w: 100, h: 100 }
       if (anchor.pos === 'tl') {
         translate = undefined
+        max = { w: 100 - anchor.x, h: 100 - anchor.y }
       } else if (anchor.pos === 'tc') {
         translate = 'translate(-50%, 0%)'
+        max = { w: 2 * Math.min(100 - anchor.x, anchor.x), h: 100 - anchor.y }
       } else if (anchor.pos === 'tr') {
         translate = 'translate(-100%, 0%)'
+        max = { w: anchor.x, h: 100 - anchor.y }
       } else if (anchor.pos === 'cr') {
         translate = 'translate(-100%, -50%)'
+        max = { w: anchor.x, h: 2 * Math.min(100 - anchor.y, anchor.y) }
       } else if (anchor.pos === 'br') {
         translate = 'translate(-100%, -100%)'
+        max = { w: anchor.x, h: anchor.y }
       } else if (anchor.pos === 'bc') {
         translate = 'translate(-50%, -100%)'
+        max = { w: 2 * Math.min(100 - anchor.x, anchor.x), h: anchor.y }
       } else if (anchor.pos === 'bl') {
         translate = 'translate(0%, -100%)'
+        max = { w: 100 - anchor.x, h: anchor.y }
       } else if (anchor.pos === 'cl') {
         translate = 'translate(0%, -50%)'
+        max = { w: 100 - anchor.x, h: 2 * Math.min(100 - anchor.y, anchor.y) }
       } else if (anchor.pos === 'cc') {
         translate = 'translate(-50%, -50%)'
+        max = { w: 2 * Math.min(100 - anchor.x, anchor.x), h: 2 * Math.min(100 - anchor.y, anchor.y) }
       }
 
       return {
         'top': `${anchor.y}%`,
         'left': `${anchor.x}%`,
+        'max-width': `${max.w}%`,
+        'max-height': `${max.h}%`,
         'transform': translate,
         'z-index': (typeof wmZorder === 'number') ? wmZorder : undefined
       }
@@ -244,6 +254,7 @@ export default defineComponent({
 <style lang="postcss" module>
 .widget {
   position: absolute;
+  display: flex;
 
   &:not(:hover) {
     .actionsPanel {
@@ -255,7 +266,7 @@ export default defineComponent({
 .actionsPanel {
   @apply py-1;
   color: #fff;
-  background: rgba(0,0,0, 0.3);
+  background: rgba(0,0,0, 0.4);
   display: flex;
   flex-direction: column;
   @apply rounded;
@@ -266,11 +277,11 @@ export default defineComponent({
   text-align: left;
 
   &:hover {
-    background: rgba(255,255,255, 0.1);
+    background: rgba(255,255,255, 0.15);
   }
 
   &.active {
-    background: rgba(0,0,0, 0.5);
+    background: rgba(0,0,0, 0.6);
   }
 
   &.removable {
@@ -292,8 +303,8 @@ export default defineComponent({
   /* left: max(0%, min(calc(x% - (1rem/2)), calc(100% - 1rem))); */
   width: 1rem;
   height: 1rem;
-  border: 0.25rem solid rgba(0, 0, 0, 0.5);
-  background: rgba(0,0,0,0.01);
+  border: 0.25rem solid rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.2);
   cursor: move;
   user-select: none;
 

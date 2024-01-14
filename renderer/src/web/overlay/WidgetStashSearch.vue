@@ -1,10 +1,10 @@
 <template>
   <Widget :config="config" move-handles="corners" :inline-edit="false">
-    <div class="widget-default-style p-1" style="min-width: 5rem;">
-      <div class="text-gray-100 m-1 leading-4 truncate">{{ config.wmTitle || 'Untitled' }}</div>
-      <div class="flex flex-col gap-y-1 mt-2">
+    <div class="widget-default-style p-1 flex flex-col overflow-y-auto min-h-0" style="min-width: 5rem;">
+      <div class="text-gray-100 m-1 leading-4 truncate shrink-0">{{ config.wmTitle || 'Untitled' }}</div>
+      <div class="flex flex-col gap-y-1 mt-2 overflow-y-auto min-h-0">
         <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
-          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap">
+          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap truncate shrink-0 max-w-sm">
             {{ entry.name || entry.text }}
             <span v-if="entry.hotkey"
               class="text-center inline-block text-black bg-gray-400 rounded px-1">{{ entry.hotkey }}</span>
