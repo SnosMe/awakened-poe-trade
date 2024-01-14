@@ -13,7 +13,7 @@
         >{{ profile.text }}</button>
       </div>
     </div>
-    <fullscreen-image v-if="image" :src="image" />
+    <fullscreen-image v-if="image" :src="image" style="height: auto;" />
     <div v-if="!mapStats.length" class="px-8 py-2">
       {{ t('map_check.no_mods') }}
     </div>
