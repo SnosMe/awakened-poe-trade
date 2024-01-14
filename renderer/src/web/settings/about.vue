@@ -18,8 +18,8 @@
     <div class="text-center mt-auto py-8">
       <p>{{ t('app.contact_me') }} <br><span class="font-sans text-gray-500 select-all">&lt;@295216259795124225&gt;</span></p>
       <ul class="flex gap-4">
-        <li><img class="rounded inline" src="https://cdn.discordapp.com/icons/645607528297922560/a_c177897c1751abde48b893844811a1a7.gif?size=32"> <a class="border-b" href="https://discord.gg/tftrove" target="_blank">The Forbidden Trove</a></li>
-        <li><img class="rounded inline" src="https://cdn.discordapp.com/icons/174993814845521922/53a393aa8b4f386bad2b41878dc324b5.webp?size=32"> <a class="border-b" href="https://discord.gg/pathofexile" target="_blank">r/pathofexile</a></li>
+        <li><img class="rounded inline" src="/images/dc_tft.gif"> <a class="border-b" href="https://discord.gg/tftrove" target="_blank">The Forbidden Trove</a></li>
+        <li><img class="rounded inline" src="/images/dc_reddit.png"> <a class="border-b" href="https://discord.gg/pathofexile" target="_blank">r/pathofexile</a></li>
       </ul>
     </div>
   </div>
