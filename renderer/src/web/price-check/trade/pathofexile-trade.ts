@@ -125,6 +125,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           quality?: FilterRange
           gem_level?: FilterRange
           corrupted?: FilterBoolean
+          fractured_item?: FilterBoolean
           mirrored?: FilterBoolean
           identified?: FilterBoolean
           stack_size?: FilterRange
@@ -304,6 +305,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.corrupted?.value === false) {
     propSet(query.filters, 'misc_filters.filters.corrupted.option', String(false))
+  }
+  if (filters.fractured?.value === false) {
+    propSet(query.filters, 'misc_filters.filters.fractured_item.option', String(false))
   }
   if (filters.mirrored) {
     if (filters.mirrored.disabled) {

@@ -231,6 +231,10 @@ export function createFilters (
     filters.mirrored = { disabled: false }
   }
 
+  if (!item.isFractured && opts.exact) {
+    filters.fractured = { value: false }
+  }
+
   if (item.isFoil) {
     filters.foil = { disabled: false }
   }

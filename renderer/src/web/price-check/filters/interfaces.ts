@@ -31,6 +31,9 @@ export interface ItemFilters {
   corrupted?: {
     value: boolean
   }
+  fractured?: {
+    value: boolean
+  }
   mirrored?: {
     disabled: boolean
   }
