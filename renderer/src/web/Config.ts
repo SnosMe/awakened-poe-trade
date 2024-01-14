@@ -538,6 +538,12 @@ function upgradeConfig (_config: Config): Config {
     priceCheck.rememberCurrency = false
   }
 
+  for (const widget of config.widgets) {
+    if (widget.wmType === 'stash-search') {
+      (widget as widget.StashSearchWidget).enableHotkeys ??= true
+    }
+  }
+
   return config as unknown as Config
 }
 
@@ -614,6 +620,8 @@ function getConfigForHost (): HostConfig {
   for (const widget of config.widgets) {
     if (widget.wmType === 'stash-search') {
       const stashSearch = widget as widget.StashSearchWidget
+      if (!stashSearch.enableHotkeys) continue
+
       for (const entry of stashSearch.entries) {
         if (entry.hotkey) {
           actions.push({
