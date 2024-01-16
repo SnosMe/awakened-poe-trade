@@ -14,6 +14,7 @@ interface CreateOptions {
   activateStockFilter: boolean
   exact: boolean
   useEn: boolean
+  offline: boolean
 }
 
 export function createFilters (
@@ -23,7 +24,7 @@ export function createFilters (
   const filters: ItemFilters = {
     searchExact: {},
     trade: {
-      offline: false,
+      offline: opts.offline,
       onlineInLeague: false,
       listed: undefined,
       currency: opts.currency,
