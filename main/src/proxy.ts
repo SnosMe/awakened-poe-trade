@@ -47,7 +47,7 @@ export class HttpProxy {
           proxyRes.pipe(res)
         })
       proxyReq.addListener('error', (err) => {
-        logger.write(`error [cors-proxy] ${err.message}`)
+        logger.write(`error [cors-proxy] ${err.message} (${host})`)
         res.destroy(err)
       })
       req.pipe(proxyReq)
