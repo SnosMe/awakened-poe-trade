@@ -26,6 +26,7 @@ if (!process.env.VITE_DEV_SERVER_URL) {
       case '.html': res.setHeader('content-type', 'text/html'); break;
       case '.js': res.setHeader('content-type', 'text/javascript'); break;
       case '.json': res.setHeader('content-type', 'application/json'); break;
+      case '.svg': res.setHeader('content-type', 'image/svg+xml'); break;
     }
 
     fs.createReadStream(path.join(__dirname, filePath))
