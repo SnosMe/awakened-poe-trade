@@ -241,7 +241,11 @@ export function calculatedStatToFilter (
   }
 
   if (roll && !filter.option) {
-    if (
+    if (item.rarity === ItemRarity.Magic && (
+      item.isUnmodifiable || item.isCorrupted || item.isMirrored
+    )) {
+      percent = 0
+    } else if (
       item.rarity === ItemRarity.Unique ||
       calc.sources.some(({ modifier }) => modifier.info.tier === 1 && modifier.info.type === ModifierType.Fractured)
     ) {
