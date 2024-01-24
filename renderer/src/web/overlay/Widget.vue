@@ -275,6 +275,7 @@ export default defineComponent({
 .action {
   @apply px-1;
   text-align: left;
+  white-space: nowrap;
 
   &:hover {
     background: rgba(255,255,255, 0.15);
