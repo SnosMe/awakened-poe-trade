@@ -217,7 +217,10 @@ export function createFilters (
     }
   }
 
-  if (item.rarity === ItemRarity.Magic && item.category === ItemCategory.Jewel) {
+  if (item.rarity === ItemRarity.Magic && (
+    item.category === ItemCategory.Jewel ||
+    item.category === ItemCategory.AbyssJewel
+  )) {
     filters.rarity = {
       value: 'magic'
     }
