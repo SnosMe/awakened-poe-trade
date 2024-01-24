@@ -2582,11 +2582,11 @@
 {"ref":"+40% to Maximum Effect of Shock","better":1,"matchers":[{"string":"감전의 최대 효과 +40%"}],"trade":{"ids":{"explicit":["explicit.stat_4007740198"]}}}
 {"ref":"1 Added Passive Skill is Adrenaline","better":1,"matchers":[{"string":"아드레날린 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4022743870"],"fractured":["fractured.stat_4022743870"]}}}
 {"ref":"1 Added Passive Skill is Advance Guard","better":1,"matchers":[{"string":"선발대 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1625939562"],"fractured":["fractured.stat_1625939562"]}}}
-{"ref":"1 Added Passive Skill is Aerialist","better":1,"matchers":[{"string":"공중 곡예 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3848677307"]}}}
+{"ref":"1 Added Passive Skill is Aerialist","better":1,"matchers":[{"string":"공중 곡예 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3848677307"],"fractured":["fractured.stat_3848677307"]}}}
 {"ref":"1 Added Passive Skill is Aerodynamics","better":1,"matchers":[{"string":"공기 역학 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4120556534"],"fractured":["fractured.stat_4120556534"]}}}
 {"ref":"1 Added Passive Skill is Agent of Destruction","better":1,"matchers":[{"string":"파괴의 요원 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3122491961"],"fractured":["fractured.stat_3122491961"]}}}
 {"ref":"1 Added Passive Skill is Aggressive Defence","better":1,"matchers":[{"string":"공격적인 방어 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4154008618"],"fractured":["fractured.stat_4154008618"]}}}
-{"ref":"1 Added Passive Skill is Alchemist","better":1,"matchers":[{"string":"연금술사 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2912949210"]}}}
+{"ref":"1 Added Passive Skill is Alchemist","better":1,"matchers":[{"string":"연금술사 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2912949210"],"fractured":["fractured.stat_2912949210"]}}}
 {"ref":"1 Added Passive Skill is Ancestral Echo","better":1,"matchers":[{"string":"선대의 메아리 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_957679205"],"fractured":["fractured.stat_957679205"]}}}
 {"ref":"1 Added Passive Skill is Ancestral Guidance","better":1,"matchers":[{"string":"선대의 인도 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2387747995"],"fractured":["fractured.stat_2387747995"]}}}
 {"ref":"1 Added Passive Skill is Ancestral Inspiration","better":1,"matchers":[{"string":"선대의 영감 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_77045106"],"fractured":["fractured.stat_77045106"]}}}
@@ -2613,7 +2613,7 @@
 {"ref":"1 Added Passive Skill is Blood Artist","better":1,"matchers":[{"string":"피 예술가 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2284771334"]}}}
 {"ref":"1 Added Passive Skill is Bloodscent","better":1,"matchers":[{"string":"혈향 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3967765261"],"fractured":["fractured.stat_3967765261"]}}}
 {"ref":"1 Added Passive Skill is Blowback","better":1,"matchers":[{"string":"역류 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1612414696"],"fractured":["fractured.stat_1612414696"]}}}
-{"ref":"1 Added Passive Skill is Bodyguards","better":1,"matchers":[{"string":"호위병 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_791125124"]}}}
+{"ref":"1 Added Passive Skill is Bodyguards","better":1,"matchers":[{"string":"호위병 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_791125124"],"fractured":["fractured.stat_791125124"]}}}
 {"ref":"1 Added Passive Skill is Born of Chaos","better":1,"matchers":[{"string":"혼돈의 탄생 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2449392400"],"fractured":["fractured.stat_2449392400"]}}}
 {"ref":"1 Added Passive Skill is Brand Loyalty","better":1,"matchers":[{"string":"충성의 방향 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3198006994"],"fractured":["fractured.stat_3198006994"]}}}
 {"ref":"1 Added Passive Skill is Brewed for Potency","better":1,"matchers":[{"string":"잠재력 발산 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3250272113"],"fractured":["fractured.stat_3250272113"]}}}
@@ -2627,7 +2627,7 @@
 {"ref":"1 Added Passive Skill is Capacitor","better":1,"matchers":[{"string":"축전기 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4025536654"],"fractured":["fractured.stat_4025536654"]}}}
 {"ref":"1 Added Passive Skill is Careful Handling","better":1,"matchers":[{"string":"세심한 취급 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_456502758"],"fractured":["fractured.stat_456502758"]}}}
 {"ref":"1 Added Passive Skill is Chilling Presence","better":1,"matchers":[{"string":"차가운 존재 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2834490860"]}}}
-{"ref":"1 Added Passive Skill is Chip Away","better":1,"matchers":[{"string":"누그러짐 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_968069586"]}}}
+{"ref":"1 Added Passive Skill is Chip Away","better":1,"matchers":[{"string":"누그러짐 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_968069586"],"fractured":["fractured.stat_968069586"]}}}
 {"ref":"1 Added Passive Skill is Circling Oblivion","better":1,"matchers":[{"string":"돌고 도는 망각 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2129392647"],"fractured":["fractured.stat_2129392647"]}}}
 {"ref":"1 Added Passive Skill is Clarity of Purpose","better":1,"matchers":[{"string":"명료한 목적 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_684087686"],"fractured":["fractured.stat_684087686"]}}}
 {"ref":"1 Added Passive Skill is Cold Conduction","better":1,"matchers":[{"string":"냉기 전도 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1274505521"]}}}
@@ -2729,7 +2729,7 @@
 {"ref":"1 Added Passive Skill is Liquid Inspiration","better":1,"matchers":[{"string":"흐르는 영감 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1094635162"],"fractured":["fractured.stat_1094635162"]}}}
 {"ref":"1 Added Passive Skill is Lord of Drought","better":1,"matchers":[{"string":"가뭄의 군주 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2055715585"],"fractured":["fractured.stat_2055715585"]}}}
 {"ref":"1 Added Passive Skill is Low Tolerance","better":1,"matchers":[{"string":"낮은 역치 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3989400244"]}}}
-{"ref":"1 Added Passive Skill is Mage Bane","better":1,"matchers":[{"string":"마법사의 파멸 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_684155617"]}}}
+{"ref":"1 Added Passive Skill is Mage Bane","better":1,"matchers":[{"string":"마법사의 파멸 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_684155617"],"fractured":["fractured.stat_684155617"]}}}
 {"ref":"1 Added Passive Skill is Mage Hunter","better":1,"matchers":[{"string":"마법사 사냥꾼 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2118664144"],"fractured":["fractured.stat_2118664144"]}}}
 {"ref":"1 Added Passive Skill is Magnifier","better":1,"matchers":[{"string":"확대경 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2886441936"],"fractured":["fractured.stat_2886441936"]}}}
 {"ref":"1 Added Passive Skill is Martial Mastery","better":1,"matchers":[{"string":"무예 통달 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1015189426"],"fractured":["fractured.stat_1015189426"]}}}
@@ -2806,12 +2806,12 @@
 {"ref":"1 Added Passive Skill is Self-Control","better":1,"matchers":[{"string":"자기 절제 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3025453294"],"fractured":["fractured.stat_3025453294"]}}}
 {"ref":"1 Added Passive Skill is Self-Fulfilling Prophecy","better":1,"matchers":[{"string":"자기 실현적 예언 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2644533453"]}}}
 {"ref":"1 Added Passive Skill is Septic Spells","better":1,"matchers":[{"string":"부패성 주문 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4290522695"]}}}
-{"ref":"1 Added Passive Skill is Set and Forget","better":1,"matchers":[{"string":"자동 수행 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1101250813"]}}}
+{"ref":"1 Added Passive Skill is Set and Forget","better":1,"matchers":[{"string":"자동 수행 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1101250813"],"fractured":["fractured.stat_1101250813"]}}}
 {"ref":"1 Added Passive Skill is Shifting Shadow","better":1,"matchers":[{"string":"변화하는 그림자 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1476913894"]}}}
 {"ref":"1 Added Passive Skill is Shrieking Bolts","better":1,"matchers":[{"string":"효시 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2783012144"],"fractured":["fractured.stat_2783012144"]}}}
 {"ref":"1 Added Passive Skill is Skeletal Atrophy","better":1,"matchers":[{"string":"해골의 위축 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1290215329"],"fractured":["fractured.stat_1290215329"]}}}
 {"ref":"1 Added Passive Skill is Skullbreaker","better":1,"matchers":[{"string":"해골 분쇄자 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_315697256"],"fractured":["fractured.stat_315697256"]}}}
-{"ref":"1 Added Passive Skill is Sleepless Sentries","better":1,"matchers":[{"string":"쉬지 않는 보초 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3993957711"]}}}
+{"ref":"1 Added Passive Skill is Sleepless Sentries","better":1,"matchers":[{"string":"쉬지 않는 보초 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3993957711"],"fractured":["fractured.stat_3993957711"]}}}
 {"ref":"1 Added Passive Skill is Smite the Weak","better":1,"matchers":[{"string":"약자 징벌 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_540300548"],"fractured":["fractured.stat_540300548"]}}}
 {"ref":"1 Added Passive Skill is Smoking Remains","better":1,"matchers":[{"string":"그을린 유해 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2322980282"],"fractured":["fractured.stat_2322980282"]}}}
 {"ref":"1 Added Passive Skill is Snaring Spirits","better":1,"matchers":[{"string":"꾀어내는 혼 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3319205340"]}}}
@@ -2819,7 +2819,7 @@
 {"ref":"1 Added Passive Skill is Special Reserve","better":1,"matchers":[{"string":"특별한 점유 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4235300427"],"fractured":["fractured.stat_4235300427"]}}}
 {"ref":"1 Added Passive Skill is Spiked Concoction","better":1,"matchers":[{"string":"약을 탄 물약 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3372255769"],"fractured":["fractured.stat_3372255769"]}}}
 {"ref":"1 Added Passive Skill is Spiteful Presence","better":1,"matchers":[{"string":"악의에 찬 존재 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1134501245"],"fractured":["fractured.stat_1134501245"]}}}
-{"ref":"1 Added Passive Skill is Spring Back","better":1,"matchers":[{"string":"재주 넘기 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3603695769"]}}}
+{"ref":"1 Added Passive Skill is Spring Back","better":1,"matchers":[{"string":"재주 넘기 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3603695769"],"fractured":["fractured.stat_3603695769"]}}}
 {"ref":"1 Added Passive Skill is Steady Torment","better":1,"matchers":[{"string":"꾸준한 격통 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3500334379"],"fractured":["fractured.stat_3500334379"]}}}
 {"ref":"1 Added Passive Skill is Stoic Focus","better":1,"matchers":[{"string":"엄격한 집중 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1088949570"],"fractured":["fractured.stat_1088949570"]}}}
 {"ref":"1 Added Passive Skill is Storm Drinker","better":1,"matchers":[{"string":"태풍 흡수자 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2087561637"],"fractured":["fractured.stat_2087561637"]}}}
@@ -2847,7 +2847,7 @@
 {"ref":"1 Added Passive Skill is Untouchable","better":1,"matchers":[{"string":"최강 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2758966888"],"fractured":["fractured.stat_2758966888"]}}}
 {"ref":"1 Added Passive Skill is Unwavering Focus","better":1,"matchers":[{"string":"변함없는 집중 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_367638058"]}}}
 {"ref":"1 Added Passive Skill is Unwaveringly Evil","better":1,"matchers":[{"string":"변함없는 악 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_2788982914"],"fractured":["fractured.stat_2788982914"]}}}
-{"ref":"1 Added Passive Skill is Vast Power","better":1,"matchers":[{"string":"광대한 권능 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1996576560"]}}}
+{"ref":"1 Added Passive Skill is Vast Power","better":1,"matchers":[{"string":"광대한 권능 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_1996576560"],"fractured":["fractured.stat_1996576560"]}}}
 {"ref":"1 Added Passive Skill is Veteran Defender","better":1,"matchers":[{"string":"노련한 방어 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_664010431"],"fractured":["fractured.stat_664010431"]}}}
 {"ref":"1 Added Passive Skill is Vicious Bite","better":1,"matchers":[{"string":"포악한 이빨 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_882876854"],"fractured":["fractured.stat_882876854"]}}}
 {"ref":"1 Added Passive Skill is Vicious Guard","better":1,"matchers":[{"string":"포악한 방어 패시브 스킬 1개 추가"}],"trade":{"ids":{"explicit":["explicit.stat_4054656914"],"fractured":["fractured.stat_4054656914"]}}}
@@ -4298,6 +4298,7 @@
 {"ref":"Herald of Thunder also creates a storm when you Shock an Enemy","better":1,"matchers":[{"string":"천둥의 전령이 적 감전 시 태풍 추가 생성"}],"trade":{"ids":{"explicit":["explicit.stat_1964607303"]}}}
 {"ref":"Herald of Thunder has #% increased Buff Effect","better":1,"matchers":[{"string":"천둥의 전령 버프 효과 #% 증가"},{"string":"천둥의 전령 버프 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3814686091"],"implicit":["implicit.stat_3814686091"]}}}
 {"ref":"Herald of Thunder has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"천둥의 전령의 마나 점유 효율 #% 증가"},{"string":"천둥의 전령의 마나 점유 효율 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3817220109","explicit.stat_3959101898"],"enchant":["enchant.stat_3817220109","enchant.stat_3959101898"]}}}
+{"ref":"Herald of Thunder's Storms Hit Enemies with #% increased Frequency","better":1,"matchers":[{"string":"Herald of Thunder's Storms Hit Enemies with #% increased Frequency"},{"string":"Herald of Thunder's Storms Hit Enemies with #% reduced Frequency"}],"trade":{"ids":{"explicit":["explicit.stat_28299254"]}}}
 {"ref":"Hex Master","better":1,"matchers":[{"string":"사술의 대가"}],"trade":{"ids":{"explicit":["explicit.stat_3849554033"],"scourge":["scourge.stat_3849554033"]}}}
 {"ref":"Hex Reflection","better":1,"matchers":[{"string":"사술 반사"}],"trade":{"ids":{"explicit":["explicit.stat_1731672673"]}}}
 {"ref":"Hexblast deals #% increased Damage","better":1,"matchers":[{"string":"사술 폭발이 주는 피해 #% 증가"},{"string":"사술 폭발이 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2318562335"]}}}
@@ -4519,6 +4520,7 @@
 {"ref":"Life that would be lost by taking Damage is instead Reserved\nuntil you take no Damage to Life for # second","better":1,"matchers":[{"string":"생명력이 피해를 받아 상실되는 대신 점유됨, 해당 효과는 #초 동안 생명력 피해를 받지 않을 때까지 지속됨"}],"trade":{"ids":{"explicit":["explicit.stat_1777740627"]}}}
 {"ref":"Lifeforce dropped by Harvest Monsters in your Maps is Duplicated","better":1,"matchers":[{"string":"수확 몬스터가 떨어뜨리는 생기가 복제됨"},{"string":"지도 내 수확 몬스터가 떨어뜨리는 생기가 복제됨"}],"trade":{"ids":{"enchant":["enchant.stat_3250634678"]}}}
 {"ref":"Light Radius is based on Energy Shield instead of Life","better":1,"matchers":[{"string":"시야 반경이 생명력 대신 에너지 보호막에 비례함"}],"trade":{"ids":{"explicit":["explicit.stat_3836017971"],"fractured":["fractured.stat_3836017971"],"crafted":["crafted.stat_3836017971"]}}}
+{"ref":"Lightning Arrow hits # additional Enemy","better":1,"matchers":[{"string":"Lightning Arrow hits # additional Enemies"},{"string":"Lightning Arrow hits # additional Enemy"}],"trade":{"ids":{"enchant":["enchant.stat_1901955093"]}}}
 {"ref":"Lightning Conduit deals #% increased Damage","better":1,"matchers":[{"string":"번개 도관으로 주는 피해 #% 증가"},{"string":"번개 도관으로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2511245659"]}}}
 {"ref":"Lightning Conduit has #% increased Area of Effect","better":1,"matchers":[{"string":"번개 도관의 효과 범위 #% 증가"},{"string":"번개 도관의 효과 범위 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2252888886"]}}}
 {"ref":"Lightning Conduit has #% increased Cast Speed","better":1,"matchers":[{"string":"번개 도관의 시전 속도 #% 증가"}],"trade":{"ids":{"enchant":["enchant.stat_2437571727"]}}}
@@ -5676,7 +5678,7 @@
 {"ref":"Spectres have #% increased Critical Strike Chance","better":1,"matchers":[{"string":"망령의 치명타 확률 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_1862097882"]}}}
 {"ref":"Spectres have #% increased Damage","better":1,"matchers":[{"string":"망령의 피해 #% 증가"},{"string":"망령의 피해 #% 감소","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_3645693773"],"enchant":["enchant.stat_3645693773"]}}}
 {"ref":"Spectres have #% increased maximum Life","better":1,"matchers":[{"string":"망령의 최대 생명력 #% 증가"},{"string":"망령의 최대 생명력 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3035514623"]}}}
-{"ref":"Spectres have a Base Duration of # seconds","better":1,"matchers":[{"string":"망령의 기본 지속시간 #초"}],"trade":{"ids":{"explicit":["explicit.stat_1210937073"]}}}
+{"ref":"Spectres have a Base Duration of # seconds\nSpectres do not travel between Areas","better":1,"matchers":[{"string":"Spectres have a Base Duration of # seconds\nSpectres do not travel between Areas"}],"trade":{"ids":{"explicit":["explicit.stat_1210937073"]}}}
 {"ref":"Spell Hits have #% chance to Hinder you","better":1,"matchers":[{"string":"주문 명중 시 #%의 확률로 자신 이동 방해"},{"string":"주문 명중 시 자신 이동 방해","value":100}],"trade":{"ids":{"scourge":["scourge.stat_1533511331"]}}}
 {"ref":"Spell Skills always deal Critical Strikes on final Repeat","better":1,"matchers":[{"string":"주문 스킬이 마지막 반복 시 항상 치명타 피해를 줌"}],"trade":{"ids":{"explicit":["explicit.stat_3738009328"]}}}
 {"ref":"Spell Skills cannot deal Critical Strikes except on final Repeat","better":1,"matchers":[{"string":"주문 스킬이 마지막 반복 시를 제외하고 치명타 피해를 주지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2516869940"]}}}
