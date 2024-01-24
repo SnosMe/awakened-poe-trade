@@ -1,6 +1,7 @@
 import type { Server } from 'http'
 import * as https from 'https'
 import { app } from 'electron'
+import type { Logger } from './RemoteLogger'
 
 export const PROXY_HOSTS = [
   { host: 'www.pathofexile.com', official: true },
@@ -15,7 +16,8 @@ export class HttpProxy {
   cookiesForPoe = new Map<string, string>()
 
   constructor (
-    server: Server
+    server: Server,
+    logger: Logger
   ) {
     server.addListener('request', (req, res) => {
       if (!req.url?.startsWith('/proxy/')) return
@@ -44,6 +46,10 @@ export class HttpProxy {
           res.writeHead(proxyRes.statusCode!, proxyRes.statusMessage!, proxyRes.rawHeaders)
           proxyRes.pipe(res)
         })
+      proxyReq.addListener('error', (err) => {
+        logger.write(`error [cors-proxy] ${err.message}`)
+        res.destroy(err)
+      })
       req.pipe(proxyReq)
     })
   }
