@@ -13,7 +13,7 @@
       <div class="flex-1 mb-1">{{ t('realm') }}</div>
       <div class="flex gap-x-4">
         <ui-radio v-model="realm" value="pc-ggg">{{ t('realm_intl') }}</ui-radio>
-        <ui-radio v-model="realm" value="pc-garena">{{ t('Garena') }}</ui-radio>
+        <ui-radio v-model="realm" value="pc-garena">{{ t('Hotcool') }}</ui-radio>
       </div>
     </div>
     <div class="mb-4">
