@@ -313,6 +313,7 @@
     "fill_rolls": "Fill stat values",
     "fill_roll_exact": "Exact value",
     "cursor_pos": "Show memorized cursor position",
+    "show_offline": "Automatically filter for both online & offline trades",
     "extra_delay": "Extra time to prevent spurious Rate limiting",
     "warn_expensive": "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.",
     "accurate_collapsed": "Show indication on collapsed listings",
