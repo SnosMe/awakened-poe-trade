@@ -43,6 +43,7 @@ import WidgetItemCheck from '@/web/item-check/WidgetItemCheck.vue'
 import WidgetImageStrip from './WidgetImageStrip.vue'
 import WidgetDelveGrid from './WidgetDelveGrid.vue'
 import WidgetItemSearch from './WidgetItemSearch.vue'
+import WidgetCalculator from './WidgetCalculator.vue'
 import WidgetSettings from '../settings/SettingsWindow.vue'
 import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
@@ -63,6 +64,7 @@ export default defineComponent({
     WidgetImageStrip,
     WidgetDelveGrid,
     WidgetItemSearch,
+    WidgetCalculator,
     WidgetSettings,
     LoadingAnimation
   },

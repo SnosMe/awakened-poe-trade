@@ -261,6 +261,19 @@ export const defaultConfig = (): Config => ({
         y: 20
       }
     } as widget.ItemSearchWidget,
+    {
+      wmId: 7,
+      wmType: 'calculator',
+      wmTitle: '',
+      wmWants: 'hide',
+      wmZorder: 7,
+      wmFlags: ['invisible-on-blur'],
+      anchor: {
+        pos: 'tl',
+        x: 50,
+        y: 50
+      }
+    } as widget.CalculatorWidget,
     // --- DEFAULT ---
     {
       wmId: 101,
@@ -527,6 +540,17 @@ function upgradeConfig (_config: Config): Config {
     }
 
     config.configVersion = 16
+  }
+
+  if (config.configVersion < 17){
+    const afterItemSearch = config.widgets.findIndex(w => w.wmType === 'item-search')
+    config.widgets.splice(afterItemSearch + 1, 0, {
+      ...defaultConfig().widgets.find(w => w.wmType === 'calculator')!,
+      wmWants: 'show',
+      wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
+    })
+    
+    config.configVersion = 17
   }
 
   if (config.logKeys === undefined) {
