@@ -4,6 +4,7 @@ import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-f
 import type { StatFilter } from '../interfaces'
 
 const RESISTANCES_INFO = [
+  { ref: stat('+#% to All Resistances'), elements: ['fire', 'cold', 'lightning'], chaos: true },
   { ref: stat('+#% to all Elemental Resistances'), elements: ['fire', 'cold', 'lightning'] },
   { ref: stat('+#% to Fire Resistance'), elements: ['fire'] },
   { ref: stat('+#% to Cold Resistance'), elements: ['cold'] },
