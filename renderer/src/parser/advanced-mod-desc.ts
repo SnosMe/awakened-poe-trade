@@ -5,7 +5,7 @@ import { removeLinesEnding } from './Parser'
 
 export const SCOURGE_LINE = ' (scourge)'
 export const ENCHANT_LINE = ' (enchant)'
-const IMPLICIT_LINE = ' (implicit)'
+export const IMPLICIT_LINE = ' (implicit)'
 const CRAFTED_LINE = ' (crafted)'
 const FRACTURED_LINE = ' (fractured)'
 

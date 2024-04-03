@@ -31,7 +31,7 @@ export function createExactStatFilters (
     !item.isSynthesised
   ) return []
 
-  const keepByType = [ModifierType.Pseudo, ModifierType.Fractured, ModifierType.Enchant]
+  const keepByType = [ModifierType.Pseudo, ModifierType.Fractured, ModifierType.Enchant, ModifierType.Necropolis]
 
   if (
     !item.influences.length &&

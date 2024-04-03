@@ -87,6 +87,12 @@ export function createFilters (
         disabled: false
       }
     }
+    if (item.info.refName === 'Filled Coffin') {
+      filters.itemLevel = {
+        value: item.itemLevel!,
+        disabled: false
+      }
+    }
     return filters
   }
 

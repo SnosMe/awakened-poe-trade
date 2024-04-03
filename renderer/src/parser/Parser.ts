@@ -12,7 +12,7 @@ import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './s
 import { ItemCategory } from './meta'
 import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
-import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE } from './advanced-mod-desc'
+import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE, IMPLICIT_LINE } from './advanced-mod-desc'
 import { calcPropPercentile, QUALITY_STATS } from './calc-q20'
 
 type SectionParseResult =
@@ -54,6 +54,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirroredTablet,
+  parseFilledCoffin,
   parseMirrored,
   parseSentinelCharge,
   parseLogbookArea,
@@ -398,9 +399,16 @@ function parseUnidentified (section: string[], item: ParsedItem) {
 }
 
 function parseItemLevel (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$.ITEM_LEVEL)) {
-    item.itemLevel = Number(section[0].slice(_$.ITEM_LEVEL.length))
-    return 'SECTION_PARSED'
+  let prefix = _$.ITEM_LEVEL
+  if (item.info.refName === 'Filled Coffin') {
+    prefix = _$.CORPSE_LEVEL
+  }
+
+  for (const line of section) {
+    if (line.startsWith(prefix)) {
+      item.itemLevel = Number(line.slice(prefix.length))
+      return 'SECTION_PARSED'
+    }
   }
   return 'SECTION_SKIPPED'
 }
@@ -844,6 +852,20 @@ function parseMirroredTablet (section: string[], item: ParsedItem) {
       })
     }
   }
+
+  return 'SECTION_PARSED'
+}
+
+function parseFilledCoffin (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Filled Coffin') return 'PARSER_SKIPPED'
+  if (!section.some(line => line.endsWith(IMPLICIT_LINE))) return 'SECTION_SKIPPED'
+
+  const { lines } = parseModType(section)
+  const modInfo: ModifierInfo = {
+    type: ModifierType.Necropolis,
+    tags: []
+  }
+  parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
 
   return 'SECTION_PARSED'
 }
