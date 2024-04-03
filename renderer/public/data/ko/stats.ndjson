@@ -101,7 +101,10 @@
 {"ref":"#% additional Physical Damage Reduction while moving","better":1,"matchers":[{"string":"이동 중 받는 물리 피해 #% 추가 감소"}],"trade":{"ids":{"explicit":["explicit.stat_2713357573"]}}}
 {"ref":"#% additional Physical Damage Reduction while stationary","better":1,"matchers":[{"string":"정지 상태일 때 받는 물리 피해 #%"},{"string":"정지 상태일 때 받는 물리 피해 #% 추가 감소"}],"trade":{"ids":{"explicit":["explicit.stat_2181129193"],"implicit":["implicit.stat_2181129193"],"fractured":["fractured.stat_2181129193"]}}}
 {"ref":"#% Base Defence Percentile","better":1,"matchers":[{"string":"#% 기본 방어 백분위수 "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_base_defence_percentile"]}}}
+{"ref":"#% chance for Beast Corpses to not be consumed when Exorcising, up to 50%","better":1,"matchers":[{"string":"야수 시신이 소모되지 않을 확률 #%, 최대 50%"}],"trade":{"ids":{"necropolis":["necropolis.stat_1253918568"]}}}
 {"ref":"#% chance for Bleeding inflicted with this Weapon to deal 100% more Damage","better":1,"matchers":[{"string":"이 무기로 유발한 출혈 피해 #%의 확률로 100% 증폭"}],"trade":{"ids":{"explicit":["explicit.stat_1560880986"],"fractured":["fractured.stat_1560880986"]}}}
+{"ref":"#% chance for Construct Corpses to not be consumed when Exorcising, up to 50%","better":1,"matchers":[{"string":"구조물 시신이 소모되지 않을 확률 #%, 최대 50%"}],"trade":{"ids":{"necropolis":["necropolis.stat_3949502264"]}}}
+{"ref":"#% chance for Demon Corpses to not be consumed when Exorcising, up to 50%","better":1,"matchers":[{"string":"악마 시신이 소모되지 않을 확률 #%, 최대 50%"}],"trade":{"ids":{"necropolis":["necropolis.stat_124919958"]}}}
 {"ref":"#% chance for Discharge to deal Damage without removing Charges","better":1,"matchers":[{"string":"방출이 충전 제거 없이 #%의 확률로 피해를 줌"},{"string":"방출이 충전 제거 없이 피해를 줌","value":100}],"trade":{"ids":{"enchant":["enchant.stat_1833626118"]}}}
 {"ref":"#% chance for dropped Maps to convert to Atlas Memories","better":1,"matchers":[{"string":"떨어진 지도가 #%의 확률로 아틀라스 기억으로 변환 "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_map_conversion_memory_line"]}}}
 {"ref":"#% chance for dropped Maps to convert to Conqueror Maps","better":1,"matchers":[{"string":"떨어진 지도가 #%의 확률로 정복자 지도로 변환 "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_map_conversion_conqueror_map"]}}}
@@ -115,6 +118,7 @@
 {"ref":"#% chance for Energy Shield Recharge to start when you Kill an Enemy","better":1,"matchers":[{"string":"적 처치 시 #%의 확률로 에너지 보호막 재충전 시작"}],"trade":{"ids":{"explicit":["explicit.stat_1618482990"]}}}
 {"ref":"#% chance for Energy Shield Recharge to start when you Suppress Spell Damage","better":1,"matchers":[{"string":"주문 피해 억제 시 #%의 확률로 에너지 보호막 재충전 시작"},{"string":"주문 피해 억제 시 에너지 보호막 재충전 시작","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3410306164"]}}}
 {"ref":"#% chance for Energy Shield Recharge to start when you use a Skill","better":1,"matchers":[{"string":"스킬 사용 시 #%의 확률로 에너지 보호막 재충전 시작"}],"trade":{"ids":{"explicit":["explicit.stat_3853996752"]}}}
+{"ref":"#% chance for Humanoid Corpses to not be consumed when Exorcising, up to 50%","better":1,"matchers":[{"string":"인간형 시신이 소모되지 않을 확률 #%, 최대 50%"}],"trade":{"ids":{"necropolis":["necropolis.stat_2050525092"]}}}
 {"ref":"#% chance for Impales on Enemies you Kill to Reflect Damage to surrounding Enemies","better":1,"matchers":[{"string":"처치하는 적에게 부여된 꿰뚫기가 #%의 확률로 주변 적들에게 피해 반사"},{"string":"처치하는 적에게 부여된 꿰뚫기가 주변 적들에게 피해 반사","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3927388937"]}}}
 {"ref":"#% chance for Incursion Architects in your Maps to be Possessed by a Tormented Spirit","better":1,"matchers":[{"string":"기습 건축가가 #%의 확률로 고통받는 혼백에 사로잡혀 있음"},{"string":"지도 내 기습 건축가가 고통받는 혼백에 사로잡혀 있을 확률 #%"},{"string":"기습 건축가가 고통받는 혼백에 사로잡혀 있음","value":100}],"trade":{"ids":{"explicit":["explicit.stat_617548179"]}}}
 {"ref":"#% chance for Phase Run to increase Duration without removing Frenzy Charges","better":1,"matchers":[{"string":"#%의 확률로 격분 충전 제거 없이 위상 질주 지속시간 증가"},{"string":"격분 충전 제거 없이 위상 질주 지속시간 증가","value":100}],"trade":{"ids":{"enchant":["enchant.stat_4259029320"]}}}
@@ -125,6 +129,7 @@
 {"ref":"#% chance for Slain monsters to drop an additional Scroll of Wisdom","better":1,"matchers":[{"string":"처치한 몬스터가 감정 주문서 1개를 추가로 떨어뜨릴 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_2920230984"]}}}
 {"ref":"#% chance for Spell Hits against you to inflict Poison","better":1,"matchers":[{"string":"자신에게 주문 적중 시 #%의 확률로 중독 유발"},{"string":"자신에게 주문 적중 시 중독 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2043747322"]}}}
 {"ref":"#% Chance for Traps to Trigger an additional time","better":1,"matchers":[{"string":"#%의 확률로 덫이 1회 추가 발동"},{"string":"덫이 1회 추가 발동","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1087710344"]}}}
+{"ref":"#% chance for Undead Corpses to not be consumed when Exorcising, up to 50%","better":1,"matchers":[{"string":"언데드 시신이 소모되지 않을 확률 #%, 최대 50%"}],"trade":{"ids":{"necropolis":["necropolis.stat_1138782715"]}}}
 {"ref":"#% chance in Heists for Basic Currency drops to be Duplicated","better":1,"matchers":[{"string":"강탈에서 #%의 확률로 떨어지는 기본 화폐 복제"},{"string":"강탈에서 떨어지는 기본 화폐 복제","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2966079414"]}}}
 {"ref":"#% chance in Heists for Chaos Orbs to drop as Divine Orbs instead","better":1,"matchers":[{"string":"강탈에서 #% 확률로 카오스 오브가 신성한 오브로 떨어짐"},{"string":"강탈에서 카오스 오브가 신성한 오브로 떨어짐","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2106095595"]}}}
 {"ref":"#% chance in Heists for Chaos Orbs to drop as Exalted Orbs instead","better":1,"matchers":[{"string":"강탈에서 #% 확률로 카오스 오브가 엑잘티드 오브로 떨어짐"},{"string":"강탈에서 카오스 오브가 엑잘티드 오브로 떨어짐","value":100}],"trade":{"ids":{"explicit":["explicit.stat_779592324"]}}}
@@ -212,8 +217,11 @@
 {"ref":"#% chance to Cover Enemies in Ash on Hit","better":1,"matchers":[{"string":"명중 시 #%의 확률로 적을 재로 덮음"},{"string":"명중 시 적을 재로 덮음","value":100}],"trade":{"ids":{"explicit":["explicit.stat_324460247"]}}}
 {"ref":"#% chance to cover Enemies in Ash when they Hit you","better":1,"matchers":[{"string":"피격 시 #%의 확률로 적을 재로 덮음"},{"string":"피격 시 적을 재로 덮음","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3748879662"],"fractured":["fractured.stat_3748879662"]}}}
 {"ref":"#% chance to Cover Rare or Unique Enemies in Ash for 10 Seconds on Hit","better":1,"matchers":[{"string":"명중 시 #%의 확률로 10초 동안 희귀 또는 고유 적을 재로 덮음"},{"string":"명중 시 10초 동안 희귀 또는 고유 적을 재로 덮음","value":100}],"trade":{"ids":{"explicit":["explicit.stat_240642724"]}}}
+{"ref":"#% chance to craft an additional Item","better":1,"matchers":[{"string":"#%의 확률로 아이템 1개를 추가로 제작"}],"trade":{"ids":{"necropolis":["necropolis.stat_3584519362"]}}}
 {"ref":"#% chance to create a copy of Beasts Captured in your Maps","better":1,"matchers":[{"string":"#%의 확률로 지도 내에서 포획하는 야수의 복제본 생성"},{"string":"#%의 확률로 지역 내에서 포획하는 야수의 복제본 생성"},{"string":"지도 내에서 포획하는 야수의 복제본 생성","value":100},{"string":"지역 내에서 포획하는 야수의 복제본 생성","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2836003955"],"enchant":["enchant.stat_2836003955"]}}}
+{"ref":"#% chance to create a Mirrored Copy","better":1,"matchers":[{"string":"#%의 확률로 복제본 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_2814301168"]}}}
 {"ref":"#% chance to create a Smoke Cloud when Hit","better":1,"matchers":[{"string":"피격 시 #%의 확률로 연막 생성"},{"string":"피격 시 연막 생성","value":100}],"trade":{"ids":{"explicit":["explicit.stat_953314356"]}}}
+{"ref":"#% chance to create a Split Copy","better":1,"matchers":[{"string":"#%의 확률로 분할된 복제본 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_3213814073"]}}}
 {"ref":"#% chance to create an additional Animate Weapon copy","better":1,"matchers":[{"string":"#%의 확률로 무기 기동 복제본 1개 추가 생성"}],"trade":{"ids":{"enchant":["enchant.stat_3711386843"]}}}
 {"ref":"#% chance to create Chilled Ground when Hit with an Attack","better":1,"matchers":[{"string":"공격에 피격 시 #%의 확률로 얼음 지대 생성"},{"string":"공격에 피격 시 얼음 지대 생성","value":100}],"trade":{"ids":{"explicit":["explicit.stat_358040686"]}}}
 {"ref":"#% chance to create Chilled Ground when you Freeze an Enemy","better":1,"matchers":[{"string":"적을 동결시켰을 시 #%의 확률로 얼음 지대 생성"},{"string":"적을 동결시켰을 시 얼음 지대 생성","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2901262227"]}}}
@@ -240,6 +248,7 @@
 {"ref":"#% chance to Defend with 200% of Armour","better":1,"matchers":[{"string":"#% 확률로 200%의 방어도로 방어"}],"trade":{"ids":{"explicit":["explicit.stat_327253797"],"implicit":["implicit.stat_327253797"],"fractured":["fractured.stat_327253797"]}}}
 {"ref":"#% chance to double Stun Duration","better":1,"matchers":[{"string":"#%의 확률로 기절 지속시간 2배"}],"trade":{"ids":{"explicit":["explicit.stat_2622251413"],"implicit":["implicit.stat_2622251413"]}}}
 {"ref":"#% chance to Extinguish Enemies on Hit","better":1,"matchers":[{"string":"명중 시 #%의 확률로 적 소진 유발"}],"trade":{"ids":{"implicit":["implicit.stat_49183689"]}}}
+{"ref":"#% chance to Fracture an Explicit Modifier","better":1,"matchers":[{"string":"#%의 확률로 비고정 속성 분열"}],"trade":{"ids":{"necropolis":["necropolis.stat_1351211018"]}}}
 {"ref":"#% chance to Freeze","better":1,"matchers":[{"string":"#%의 확률로 동결 유발"},{"string":"명중 시 항상 동결 유발","value":100},{"string":"항상 동결 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2309614417"],"implicit":["implicit.stat_2309614417"],"fractured":["fractured.stat_2309614417"],"scourge":["scourge.stat_2309614417"],"crafted":["crafted.stat_2309614417"]}}}
 {"ref":"#% chance to Freeze during any Flask Effect","better":1,"matchers":[{"string":"아무 플라스크나 효과를 받는 동안 #%의 확률로 동결 유발"}],"trade":{"ids":{"explicit":["explicit.stat_2332726055"]}}}
 {"ref":"#% chance to Freeze Enemies for 1 second when they Hit you","better":1,"matchers":[{"string":"피격 시 #%의 확률로 해당 적이 1초 동안 동결"}],"trade":{"ids":{"explicit":["explicit.stat_2168861013"]}}}
@@ -686,7 +695,29 @@
 {"ref":"#% increased Caustic Arrow Area of Effect","better":1,"matchers":[{"string":"부식성 화살 효과 범위 #% 증가"},{"string":"부식성 화살 효과 범위 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3854556792"]}}}
 {"ref":"#% increased Caustic Arrow Damage","better":1,"matchers":[{"string":"부식성 화살 피해 #% 증가"},{"string":"부식성 화살 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1496334795"]}}}
 {"ref":"#% increased Caustic Arrow Duration","better":1,"matchers":[{"string":"부식성 화살 지속시간 #% 증가"},{"string":"부식성 화살 지속시간 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_387490713"]}}}
+{"ref":"#% increased chance for Corruption Implicit Modifiers","better":1,"matchers":[{"string":"타락 고정 속성 확률 #% 증가"},{"string":"타락 고정 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1159591191"]}}}
+{"ref":"#% increased chance for Prefix Modifiers","better":1,"matchers":[{"string":"접두어 속성 확률 #% 증가"},{"string":"접두어 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_2209675971"]}}}
 {"ref":"#% increased chance for Strongboxes in your Maps to be Unique","better":1,"matchers":[{"string":"지도에서 발견하는 금고가 고유 등급일 확률 #% 증가"},{"string":"지역에서 발견하는 금고가 고유 등급일 확률 #% 증가"},{"string":"지도에서 발견하는 금고가 고유 등급일 확률 #% 감소","negate":true},{"string":"지역에서 발견하는 금고가 고유 등급일 확률 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2731689292"]}}}
+{"ref":"#% increased chance of Attack Modifiers","better":1,"matchers":[{"string":"공격 속성 확률 #% 증가"},{"string":"공격 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_584391877"]}}}
+{"ref":"#% increased chance of Attribute Modifiers","better":1,"matchers":[{"string":"능력치 속성 확률 #% 증가"},{"string":"능력치 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_663914124"]}}}
+{"ref":"#% increased chance of Caster Modifiers","better":1,"matchers":[{"string":"시전 속성 확률 #% 증가"},{"string":"시전 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_3824746815"]}}}
+{"ref":"#% increased chance of Chaos Modifiers","better":1,"matchers":[{"string":"카오스 속성 확률 #% 증가"},{"string":"카오스 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1819445176"]}}}
+{"ref":"#% increased chance of Cold Modifiers","better":1,"matchers":[{"string":"냉기 속성 확률 #% 증가"},{"string":"냉기 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1119655256"]}}}
+{"ref":"#% increased chance of Critical Modifiers","better":1,"matchers":[{"string":"치명타 속성 확률 #% 증가"},{"string":"치명타 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_3463034098"]}}}
+{"ref":"#% increased chance of Defence Modifiers","better":1,"matchers":[{"string":"방어 속성 확률 #% 증가"},{"string":"방어 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1327587435"]}}}
+{"ref":"#% increased chance of Elemental Modifiers","better":1,"matchers":[{"string":"원소 속성 확률 #% 증가"},{"string":"원소 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_3084343890"]}}}
+{"ref":"#% increased chance of Fire Modifiers","better":1,"matchers":[{"string":"화염 속성 확률 #% 증가"},{"string":"화염 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_4224308712"]}}}
+{"ref":"#% increased chance of Gem Modifiers","better":1,"matchers":[{"string":"젬 속성 확률 #% 증가"},{"string":"젬 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1291773572"]}}}
+{"ref":"#% increased chance of Haunted Modifiers","better":1,"matchers":[{"string":"빙의 속성 확률 #% 증가"},{"string":"빙의 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_3049904051"]}}}
+{"ref":"#% increased chance of Influence Modifiers","better":1,"matchers":[{"string":"영향력 속성 확률 #% 증가"},{"string":"영향력 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_2423445205"]}}}
+{"ref":"#% increased chance of Life Modifiers","better":1,"matchers":[{"string":"생명력 속성 확률 #% 증가"},{"string":"생명력 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1991278263"]}}}
+{"ref":"#% increased chance of Lightning Modifiers","better":1,"matchers":[{"string":"번개 속성 확률 #% 증가"},{"string":"번개 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_4129421370"]}}}
+{"ref":"#% increased chance of Mana Modifiers","better":1,"matchers":[{"string":"마나 속성 확률 #% 증가"},{"string":"마나 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_951999125"]}}}
+{"ref":"#% increased chance of Minion Modifiers","better":1,"matchers":[{"string":"소환수 속성 확률 #% 증가"},{"string":"소환수 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_2194568236"]}}}
+{"ref":"#% increased chance of Physical Modifiers","better":1,"matchers":[{"string":"물리 속성 확률 #% 증가"},{"string":"물리 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_2170132760"]}}}
+{"ref":"#% increased chance of Resistance Modifiers","better":1,"matchers":[{"string":"저항 속성 확률 #% 증가"},{"string":"저항 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1041629979"]}}}
+{"ref":"#% increased chance of Speed Modifiers","better":1,"matchers":[{"string":"속도 속성 확률 #% 증가"},{"string":"속도 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_4030721122"]}}}
+{"ref":"#% increased chance of Suffix Modifiers","better":1,"matchers":[{"string":"접미어 속성 확률 #% 증가"},{"string":"접미어 속성 확률 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_3292535110"]}}}
 {"ref":"#% increased chance to Avoid Resolve Loss from Enemy Melee Hits","better":1,"matchers":[{"string":"적의 근접 명중으로 인한 투지 상실 긴급회피 확률 #% 증가"}],"trade":{"ids":{"explicit":["sanctum.stat_3134588943"]}}}
 {"ref":"#% increased chance to Avoid Resolve Loss from Enemy Projectile Hits","better":1,"matchers":[{"string":"적의 투사체 명중으로 인한 투지 상실 긴급회피 확률 #% 증가"}],"trade":{"ids":{"explicit":["sanctum.stat_1798691236"]}}}
 {"ref":"#% increased Chaos Damage","better":1,"matchers":[{"string":"카오스 피해 #% 증가"},{"string":"카오스 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_736967255"],"implicit":["implicit.stat_736967255"],"fractured":["fractured.stat_736967255"],"scourge":["scourge.stat_736967255"],"crafted":["crafted.stat_736967255"]}}}
@@ -884,7 +915,7 @@
 {"ref":"#% increased Damage with Staves","better":1,"matchers":[{"string":"지팡이 사용 시 피해 #% 증가"},{"string":"지팡이 사용 시 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4087089130"],"fractured":["fractured.stat_4087089130"]}}}
 {"ref":"#% increased Damage with Swords","better":1,"matchers":[{"string":"검 사용 시 피해 #% 증가"},{"string":"검 사용 시 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_83050999"],"fractured":["fractured.stat_83050999"]}}}
 {"ref":"#% increased Damage with Two Handed Weapons","better":1,"matchers":[{"string":"양손 무기 피해 #% 증가"},{"string":"양손 무기 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1836374041"],"fractured":["fractured.stat_1836374041"]}}}
-{"ref":"#% increased Damage with Vaal Skills","better":1,"matchers":[{"string":"바알 스킬로 주는 피해 #% 증가"},{"string":"바알 스킬로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2257141320"],"implicit":["implicit.stat_2257141320"],"fractured":["fractured.stat_2257141320"]}}}
+{"ref":"#% increased Damage with Vaal Skills","better":1,"matchers":[{"string":"바알 스킬로 주는 피해 #% 증가"},{"string":"바알 스킬로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2257141320"],"implicit":["implicit.stat_2257141320"],"fractured":["fractured.stat_2257141320"],"crafted":["crafted.stat_2257141320"]}}}
 {"ref":"#% increased Damage with Vaal Skills during effect","better":1,"matchers":[{"string":"효과를 받는 동안 바알 스킬로 주는 피해 #% 증가"},{"string":"효과를 받는 동안 바알 스킬로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4067144129"]}}}
 {"ref":"#% increased Damage with Wands","better":1,"matchers":[{"string":"마법봉 피해 #% 증가"},{"string":"마법봉 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_379328644"],"fractured":["fractured.stat_379328644"]}}}
 {"ref":"#% increased Dark Pact Area of Effect","better":1,"matchers":[{"string":"어둠의 서약 효과 범위 #% 증가"},{"string":"어둠의 서약 효과 범위 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_957864706"]}}}
@@ -932,6 +963,7 @@
 {"ref":"#% increased Effect of Arcane Surge on you per\nHypnotic Eye Jewel affecting you, up to a maximum of 40%","better":1,"matchers":[{"string":"자신에게 영향을 주는 최면 거는 눈 주얼 하나당\n자신에게 적용되는 비전 쇄도 효과 #% 증가, 최대 40%"},{"string":"자신에게 영향을 주는 최면 거는 눈 주얼 하나당\n자신에게 적용되는 비전 쇄도 효과 #%씩 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1012072406"]}}}
 {"ref":"#% increased Effect of Arcane Surge on you while affected by Clarity","better":1,"matchers":[{"string":"명상의 영향을 받는 동안 자신에게 적용되는 비전 쇄도의 효과 #% 증가"},{"string":"명상의 영향을 받는 동안 자신에게 적용되는 비전 쇄도의 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1808477254"]}}}
 {"ref":"#% increased Effect of Auras from Mines","better":1,"matchers":[{"string":"지뢰의 오라 효과 #% 증가"},{"string":"지뢰의 오라 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2121424530"]}}}
+{"ref":"#% increased Effect of Beast Corpses adjacent to this Corpse","better":1,"matchers":[{"string":"이 시신에 인접한 야수 시신들의 효과 #% 증가"},{"string":"이 시신에 인접한 야수 시신들의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_3933878974"]}}}
 {"ref":"#% increased Effect of Buffs granted by Socketed Golem Skills","better":1,"matchers":[{"string":"장착된 골렘 스킬로 얻는 버프 효과 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_2813516522"]}}}
 {"ref":"#% increased Effect of Buffs granted by your Golems","better":1,"matchers":[{"string":"골렘이 제공하는 버프 효과 #% 증가"},{"string":"골렘이 제공하는 버프 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2109043683"],"implicit":["implicit.stat_2109043683"]}}}
 {"ref":"#% increased Effect of Buffs on you","better":1,"matchers":[{"string":"플레이어에게 적용되는 버프 효과 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_306104305"]}}}
@@ -940,11 +972,16 @@
 {"ref":"#% increased Effect of Chilled Ground","better":1,"matchers":[{"string":"얼음 지대 효과 #% 증가"},{"string":"얼음 지대 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2134166669"]}}}
 {"ref":"#% increased Effect of Chills you inflict while Leeching Mana","better":1,"matchers":[{"string":"마나 흡수 중에 유발한 냉각 효과 #% 증가"},{"string":"마나 흡수 중에 유발한 냉각 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_898270877"]}}}
 {"ref":"#% increased Effect of Cold Ailments","better":1,"matchers":[{"string":"냉기 상태 이상 효과 #% 증가"},{"string":"냉기 상태 이상 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1793818220"],"implicit":["implicit.stat_1793818220"],"fractured":["fractured.stat_1793818220"]}}}
+{"ref":"#% increased Effect of Construct Corpses adjacent to this Corpse","better":1,"matchers":[{"string":"이 시신에 인접한 구조물 시신들의 효과 #% 증가"},{"string":"이 시신에 인접한 구조물 시신들의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_2432752898"]}}}
+{"ref":"#% increased Effect of Corpses in this Grave Column","better":1,"matchers":[{"string":"이 무덤 세로줄에 있는 시신의 효과 #% 증가"},{"string":"이 무덤 세로줄에 있는 시신의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1594497315"]}}}
+{"ref":"#% increased Effect of Corpses in this Grave Row","better":1,"matchers":[{"string":"이 무덤 가로줄에 있는 시신의 효과 #% 증가"},{"string":"이 무덤 가로줄에 있는 시신의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_4274651079"]}}}
 {"ref":"#% increased Effect of Curses applied by Bane","better":1,"matchers":[{"string":"파멸의 저주 효과 #% 증가"},{"string":"파멸의 저주 효과 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2843908086"]}}}
-{"ref":"#% increased Effect of Curses on Monsters","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터에게 걸리는 저주 효과 #% 증가"},{"string":"몬스터에게 걸리는 저주 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1661698405"]}}}
+{"ref":"#% increased Effect of Curses on Monsters","better":1,"matchers":[{"string":"몬스터에게 걸리는 저주 효과 #% 증가"},{"string":"몬스터에게 걸리는 저주 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1661698405"],"fractured":["fractured.stat_1661698405"]}}}
 {"ref":"#% increased Effect of Curses on you while on Consecrated Ground","better":-1,"matchers":[{"string":"신성화 지대에 있는 동안 플레이어에게 적용되는 저주 효과 #% 증가"},{"string":"신성화 지대에 있는 동안 플레이어에게 적용되는 저주 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3444629796"],"fractured":["fractured.stat_3444629796"],"enchant":["enchant.stat_3444629796"]}}}
+{"ref":"#% increased Effect of Demon Corpses adjacent to this Corpse","better":1,"matchers":[{"string":"이 시신에 인접한 악마 시신들의 효과 #% 증가"},{"string":"이 시신에 인접한 악마 시신들의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_168209069"]}}}
 {"ref":"#% increased Effect of Elusive on you per Power Charge","better":1,"matchers":[{"string":"권능 충전 하나당 자신의 도피 효과 #% 증가"},{"string":"권능 충전 하나당 자신의 도피 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3545269928"]}}}
 {"ref":"#% increased Effect of Freeze on you","better":-1,"matchers":[{"string":"플레이어에게 적용되는 동결 효과 #% 증가"},{"string":"플레이어에게 적용되는 동결 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2069161757"],"crafted":["crafted.stat_2069161757"]}}}
+{"ref":"#% increased Effect of Humanoid Corpses adjacent to this Corpse","better":1,"matchers":[{"string":"이 시신에 인접한 인간형 시신들의 효과 #% 증가"},{"string":"이 시신에 인접한 인간형 시신들의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_1084632603"]}}}
 {"ref":"#% increased Effect of Impales inflicted with Spells","better":1,"matchers":[{"string":"주문으로 유발되는 꿰뚫기의 효과 #% 증가"},{"string":"주문으로 유발되는 꿰뚫기의 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1480595847"]}}}
 {"ref":"#% increased Effect of Jewel Socket Passive Skills containing Corrupted Magic Jewels","better":1,"matchers":[{"string":"타락한 마법 주얼을 장착한 주얼 슬롯 패시브 스킬 효과 #% 증가"},{"string":"타락한 마법 주얼을 장착한 주얼 슬롯 패시브 스킬 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_461663422"]}}}
 {"ref":"#% increased Effect of Lightning Ailments","better":1,"matchers":[{"string":"번개 상태 이상 효과 #% 증가"},{"string":"번개 상태 이상 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3081816887"],"fractured":["fractured.stat_3081816887"]}}}
@@ -975,6 +1012,7 @@
 {"ref":"#% increased Effect of the Buff granted by your Ice Golems","better":1,"matchers":[{"string":"얼음 골렘이 제공하는 버프 효과 #% 증가"},{"string":"얼음 골렘이 제공하는 버프 효과 #% 감소","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_2250111474"],"enchant":["enchant.stat_2250111474"]}}}
 {"ref":"#% increased Effect of the Buff granted by your Lightning Golems","better":1,"matchers":[{"string":"번개 골렘이 제공하는 버프 효과 #% 증가"},{"string":"번개 골렘이 제공하는 버프 효과 #% 감소","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_2527931375"],"enchant":["enchant.stat_2527931375"]}}}
 {"ref":"#% increased Effect of the Buff granted by your Stone Golems","better":1,"matchers":[{"string":"돌 골렘이 제공하는 버프 효과 #% 증가"},{"string":"돌 골렘이 제공하는 버프 효과 #% 감소","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_2284801675"],"enchant":["enchant.stat_2284801675"]}}}
+{"ref":"#% increased Effect of Undead Corpses adjacent to this Corpse","better":1,"matchers":[{"string":"이 시신에 인접한 언데드 시신들의 효과 #% 증가"},{"string":"이 시신에 인접한 언데드 시신들의 효과 #% 감소","negate":true}],"trade":{"ids":{"necropolis":["necropolis.stat_624656460"]}}}
 {"ref":"#% increased Effect of Withered","better":1,"matchers":[{"string":"위축 효과 #% 증가"},{"string":"위축 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2545584555"]}}}
 {"ref":"#% increased Effect of your Curses","better":1,"matchers":[{"string":"플레이어가 시전하는 저주 효과 #% 증가"},{"string":"플레이어가 시전하는 저주 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2353576063"],"implicit":["implicit.stat_2353576063"],"fractured":["fractured.stat_2353576063"],"scourge":["scourge.stat_2353576063"],"crafted":["crafted.stat_2353576063"]}}}
 {"ref":"#% increased Effect of your Marks","better":1,"matchers":[{"string":"플레이어의 징표 효과 #% 증가"},{"string":"플레이어의 징표 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_803185500"],"implicit":["implicit.stat_803185500"],"fractured":["fractured.stat_803185500"]}}}
@@ -1657,7 +1695,7 @@
 {"ref":"#% of Damage Leeched as Life while Focused","dp":true,"better":1,"matchers":[{"string":"집중하는 동안 피해의 #%를 생명력으로 흡수"}],"trade":{"ids":{"explicit":["explicit.stat_3324747104"],"fractured":["fractured.stat_3324747104"],"crafted":["crafted.stat_3324747104"]}}}
 {"ref":"#% of Damage Leeched as Life while you have at least 5 total Endurance, Frenzy and Power Charges","dp":true,"better":1,"matchers":[{"string":"인내, 격분, 권능 충전이 총 5개 이상일 때 피해의 #%를 생명력으로 흡수"}],"trade":{"ids":{"explicit":["explicit.stat_1526625193"]}}}
 {"ref":"#% of Damage Leeched as Mana against Frozen Enemies","dp":true,"better":1,"matchers":[{"string":"동결된 적에게 주는 피해의 #%를 마나로 흡수"}],"trade":{"ids":{"explicit":["explicit.stat_2908111053"]}}}
-{"ref":"#% of Damage Players' Totems take from Hits is taken from their Summoner's Life instead","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들의 토템이 피격 시 받는 피해의 #%를 소환자의 생명력에 대신 적용"}],"trade":{"ids":{"explicit":["explicit.stat_297552946"]}}}
+{"ref":"#% of Damage Players' Totems take from Hits is taken from their Summoner's Life instead","better":1,"matchers":[{"string":"플레이어들의 토템이 피격 시 받는 피해의 #%를 소환자의 생명력에 대신 적용"}],"trade":{"ids":{"explicit":["explicit.stat_297552946"],"fractured":["fractured.stat_297552946"]}}}
 {"ref":"#% of Damage taken bypasses Ward","better":1,"matchers":[{"string":"받는 피해의 #%가 수호에 막히지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_3000966016"]}}}
 {"ref":"#% of Damage Taken from Hits is Leeched as Life during Effect","dp":true,"better":1,"matchers":[{"string":"효과를 받는 동안 피격 시 받는 피해의 #%를 생명력으로 흡수"}],"trade":{"ids":{"explicit":["explicit.stat_3824033729"],"crafted":["crafted.stat_3824033729"]}}}
 {"ref":"#% of Damage taken from Mana before Life while affected by Clarity","better":1,"matchers":[{"string":"명상의 영향을 받는 동안 받는 피해의 #%를 생명력 대신 마나 소모"}],"trade":{"ids":{"explicit":["explicit.stat_2383304564"]}}}
@@ -1814,6 +1852,7 @@
 {"ref":"+# Cold Damage taken from Hits","better":1,"matchers":[{"string":"피격 시 받는 냉기 피해 #"}],"trade":{"ids":{"implicit":["implicit.stat_261654754"]}}}
 {"ref":"+# Dexterity Requirement","better":1,"matchers":[{"string":"민첩 요구사항 #"}],"trade":{"ids":{"explicit":["explicit.stat_1133453872"],"scourge":["scourge.stat_1133453872"]}}}
 {"ref":"+# Energy Shield gained on Killing a Shocked Enemy","better":1,"matchers":[{"string":"감전된 적 처치 시 에너지 보호막 #"}],"trade":{"ids":{"explicit":["explicit.stat_347328113"]}}}
+{"ref":"+# Explicit Modifier","better":1,"matchers":[{"string":"비고정 속성 #개"}],"trade":{"ids":{"necropolis":["necropolis.stat_616298078"]}}}
 {"ref":"+# Fire Damage taken from Hits","better":1,"matchers":[{"string":"피격 시 받는 화염 피해 #"}],"trade":{"ids":{"explicit":["explicit.stat_614758785"],"implicit":["implicit.stat_614758785"]}}}
 {"ref":"+# Intelligence Requirement","better":1,"matchers":[{"string":"지능 요구사항 #"}],"trade":{"ids":{"explicit":["explicit.stat_2153364323"],"scourge":["scourge.stat_2153364323"]}}}
 {"ref":"+# Life per 4 Dexterity","better":1,"matchers":[{"string":"민첩 4당 생명력 #"}],"trade":{"ids":{"explicit":["explicit.stat_2042405614"]}}}
@@ -1865,13 +1904,21 @@
 {"ref":"+# to Armour while affected by Determination","better":1,"matchers":[{"string":"결의의 영향을 받는 동안 방어도 #"}],"trade":{"ids":{"explicit":["explicit.stat_3742808908"]}}}
 {"ref":"+# to Armour while Fortified","better":1,"matchers":[{"string":"방어 상승 상태에서 방어도 #"}],"trade":{"ids":{"explicit":["explicit.stat_153004860"],"enchant":["enchant.stat_153004860"]}}}
 {"ref":"+# to Armour while Frozen","better":1,"matchers":[{"string":"동결 상태에서 방어도 #"}],"trade":{"ids":{"explicit":["explicit.stat_504366827"]}}}
+{"ref":"+# to Attack Modifier Tier Rating","better":1,"matchers":[{"string":"공격 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_1673591315"]}}}
+{"ref":"+# to Attribute Modifier Tier Rating","better":1,"matchers":[{"string":"능력치 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_377418474"]}}}
 {"ref":"+# to Brute Force Level for Heists","better":1,"matchers":[{"string":"강탈의 완력 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_1169552613"]}}}
+{"ref":"+# to Caster Modifier Tier Rating","better":1,"matchers":[{"string":"시전 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2130747688"]}}}
+{"ref":"+# to Chaos Modifier Tier Rating","better":1,"matchers":[{"string":"카오스 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2878669881"]}}}
 {"ref":"+# to Character Level","better":1,"matchers":[{"string":"캐릭터 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_1172162241"],"fractured":["fractured.stat_1172162241"]}}}
+{"ref":"+# to Cold Modifier Tier Rating","better":1,"matchers":[{"string":"냉기 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_1841839309"]}}}
 {"ref":"+# to Counter-Thaumaturgy Level for Heists","better":1,"matchers":[{"string":"강탈의 반-마석학 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_4207149030"],"fractured":["fractured.stat_4207149030"]}}}
+{"ref":"+# to Critical Modifier Tier Rating","better":1,"matchers":[{"string":"치명타 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2028280928"]}}}
 {"ref":"+# to Deception Level for Heists","better":1,"matchers":[{"string":"강탈의 기만 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_828170926"],"fractured":["fractured.stat_828170926"]}}}
+{"ref":"+# to Defence Modifier Tier Rating","better":1,"matchers":[{"string":"방어 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_1580564843"]}}}
 {"ref":"+# to Demolition Level for Heists","better":1,"matchers":[{"string":"강탈의 파괴 공작 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_2359025380"],"fractured":["fractured.stat_2359025380"]}}}
 {"ref":"+# to Dexterity","better":1,"matchers":[{"string":"민첩 #"}],"trade":{"ids":{"explicit":["explicit.stat_3261801346"],"implicit":["implicit.stat_3261801346"],"fractured":["fractured.stat_3261801346"],"scourge":["scourge.stat_3261801346"],"crafted":["crafted.stat_3261801346"]}}}
 {"ref":"+# to Dexterity and Intelligence","better":1,"matchers":[{"string":"민첩 및 지능 #"}],"trade":{"ids":{"explicit":["explicit.stat_2300185227"],"implicit":["implicit.stat_2300185227"],"fractured":["fractured.stat_2300185227"],"crafted":["crafted.stat_2300185227"]}}}
+{"ref":"+# to Elemental Modifier Tier Rating","better":1,"matchers":[{"string":"원소 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2421661624"]}}}
 {"ref":"+# to Engineering Level for Heists","better":1,"matchers":[{"string":"강탈의 공학 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_2978835006"],"fractured":["fractured.stat_2978835006"]}}}
 {"ref":"+# to Evasion Rating","better":1,"matchers":[{"string":"회피 #"}],"trade":{"ids":{"explicit":["explicit.stat_2144192055","explicit.stat_53045048"],"implicit":["implicit.stat_53045048"],"fractured":["fractured.stat_2144192055","fractured.stat_53045048"],"scourge":["scourge.stat_53045048"],"crafted":["crafted.stat_2144192055","crafted.stat_53045048"]}}}
 {"ref":"+# to Evasion Rating and Energy Shield","better":1,"matchers":[{"string":"회피 및 에너지 보호막 #"}],"trade":{"ids":{"explicit":["explicit.stat_1549868759"]}}}
@@ -1882,8 +1929,11 @@
 {"ref":"+# to Evasion Rating while on Full Life","better":1,"matchers":[{"string":"생명력이 최대일 때 회피 #"}],"trade":{"ids":{"explicit":["explicit.stat_4082111882"]}}}
 {"ref":"+# to Evasion Rating while on Low Life","better":1,"matchers":[{"string":"낮은 생명력 상태일 때 회피 #"}],"trade":{"ids":{"explicit":["explicit.stat_3470876581"]}}}
 {"ref":"+# to Evasion Rating while you have Phasing","better":1,"matchers":[{"string":"차원 능력을 보유한 상태에서 회피 #"}],"trade":{"ids":{"enchant":["enchant.stat_3169671355"]}}}
+{"ref":"+# to Fire Modifier Tier Rating","better":1,"matchers":[{"string":"화염 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_1722370121"]}}}
+{"ref":"+# to Gem Modifier Tier Rating","better":1,"matchers":[{"string":"젬 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2817503515"]}}}
 {"ref":"+# to Global Evasion Rating while moving","better":1,"matchers":[{"string":"이동 중 일반 회피 #"}],"trade":{"ids":{"implicit":["implicit.stat_3825877290"]}}}
 {"ref":"+# to Intelligence","better":1,"matchers":[{"string":"지능 #"}],"trade":{"ids":{"explicit":["explicit.stat_328541901"],"implicit":["implicit.stat_328541901"],"fractured":["fractured.stat_328541901"],"scourge":["scourge.stat_328541901"],"crafted":["crafted.stat_328541901"]}}}
+{"ref":"+# to Item Level","better":1,"matchers":[{"string":"아이템 레벨 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_269200013"]}}}
 {"ref":"+# to Level of all Absolution Gems","better":1,"matchers":[{"string":"모든 면죄 젬 레벨 #","advanced":"모든 면죄(화염구-동원) 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.indexable_skill_251"]}}}
 {"ref":"+# to Level of all Alchemist's Mark Gems","better":1,"matchers":[{"string":"모든 연금술사의 징표 젬 레벨 #","advanced":"모든 연금술사의 징표(화염구-동원) 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.indexable_skill_270"]}}}
 {"ref":"+# to Level of all Ambush Gems","better":1,"matchers":[{"string":"모든 매복 젬 레벨 #","advanced":"모든 매복(화염구-동원) 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.indexable_skill_248"]}}}
@@ -2202,7 +2252,10 @@
 {"ref":"+# to Level of Socketed Trap or Mine Gems","better":1,"matchers":[{"string":"장착된 덫 또는 지뢰 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_150668988"],"implicit":["implicit.stat_150668988"],"fractured":["fractured.stat_150668988"],"scourge":["scourge.stat_150668988"]}}}
 {"ref":"+# to Level of Socketed Vaal Gems","better":1,"matchers":[{"string":"장착된 바알 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_1170386874"],"implicit":["implicit.stat_1170386874"]}}}
 {"ref":"+# to Level of Socketed Warcry Gems","better":1,"matchers":[{"string":"장착된 함성 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_1672793731"],"implicit":["implicit.stat_1672793731"],"scourge":["scourge.stat_1672793731"]}}}
+{"ref":"+# to Life Modifier Tier Rating","better":1,"matchers":[{"string":"생명력 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2387726103"]}}}
+{"ref":"+# to Lightning Modifier Tier Rating","better":1,"matchers":[{"string":"번개 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_1256121998"]}}}
 {"ref":"+# to Lockpicking Level for Heists","better":1,"matchers":[{"string":"강탈의 자물쇠 따기 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_3031310169"],"fractured":["fractured.stat_3031310169"]}}}
+{"ref":"+# to Mana Modifier Tier Rating","better":1,"matchers":[{"string":"마나 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2643353652"]}}}
 {"ref":"+# to Maximum Blood Charges","better":1,"matchers":[{"string":"피 충전 최대치 #"}],"trade":{"ids":{"enchant":["enchant.stat_4218649240"]}}}
 {"ref":"+# to Maximum Charges","better":1,"matchers":[{"string":"충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_1437957544"],"fractured":["fractured.stat_1437957544"],"enchant":["enchant.stat_1437957544"]}}}
 {"ref":"+# to maximum Divine Charges","better":1,"matchers":[{"string":"신성 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_3997368968"]}}}
@@ -2236,6 +2289,7 @@
 {"ref":"+# to maximum number of Flame Walls","better":1,"matchers":[{"string":"화염 벽 최대치 #"}],"trade":{"ids":{"enchant":["enchant.stat_1531456858"]}}}
 {"ref":"+# to maximum number of Raging Spirits","better":1,"matchers":[{"string":"격노의 유령 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_3143579606"]}}}
 {"ref":"+# to maximum number of Raised Zombies","better":1,"matchers":[{"string":"소환 가능한 좀비 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_966747987"],"implicit":["implicit.stat_966747987"],"fractured":["fractured.stat_966747987"],"scourge":["scourge.stat_966747987"],"crafted":["crafted.stat_966747987"]}}}
+{"ref":"+# to maximum number of Sacred Wisps\n+# to number of Sacred Wisps Summoned","better":1,"matchers":[{"string":"신성한 도깨비불의 최대 수 #\n소환되는 신성한 도깨비불의 수 #"}],"trade":{"ids":{"explicit":["explicit.stat_13590525"]}}}
 {"ref":"+# to maximum number of Sentinels of Purity","better":1,"matchers":[{"string":"정화의 파수꾼 최대치 #"}],"trade":{"ids":{"enchant":["enchant.stat_2836937264"]}}}
 {"ref":"+# to maximum number of Skeletons","better":1,"matchers":[{"string":"해골 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_1225383362"],"fractured":["fractured.stat_1225383362"],"scourge":["scourge.stat_1225383362"],"crafted":["crafted.stat_1225383362"]}}}
 {"ref":"+# to maximum number of Spectres","better":1,"matchers":[{"string":"망령 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_125218179"],"fractured":["fractured.stat_125218179"]}}}
@@ -2260,11 +2314,19 @@
 {"ref":"+# to Minimum Endurance, Frenzy and Power Charges","better":1,"matchers":[{"string":"최소 인내, 격분 및 권능 충전 #"}],"trade":{"ids":{"implicit":["implicit.stat_66303477"]}}}
 {"ref":"+# to Minimum Frenzy Charges","better":1,"matchers":[{"string":"최소 격분 충전 #"}],"trade":{"ids":{"explicit":["explicit.stat_658456881"],"implicit":["implicit.stat_658456881"],"fractured":["fractured.stat_658456881"],"scourge":["scourge.stat_658456881"],"crafted":["crafted.stat_658456881"]}}}
 {"ref":"+# to Minimum Frenzy Charges per Grand Spectrum","better":1,"matchers":[{"string":"장대한 파장 하나당 최소 격분 충전 #"}],"trade":{"ids":{"explicit":["explicit.stat_596758264"]}}}
+{"ref":"+# to minimum number of Linked Sockets, up to a maximum of 4","better":1,"matchers":[{"string":"연결된 홈의 최소 개수 #, 최대 4개"}],"trade":{"ids":{"necropolis":["necropolis.stat_3410425180"]}}}
+{"ref":"+# to minimum number of Linked Sockets, up to a maximum of 5","better":1,"matchers":[{"string":"연결된 홈의 최소 개수 #, 최대 5개"}],"trade":{"ids":{"necropolis":["necropolis.stat_910855371"]}}}
+{"ref":"+# to minimum number of Linked Sockets, up to a maximum of 6","better":1,"matchers":[{"string":"연결된 홈의 최소 개수 #, 최대 6개"}],"trade":{"ids":{"necropolis":["necropolis.stat_3635493351"]}}}
 {"ref":"+# to Minimum Power Charges","better":1,"matchers":[{"string":"최소 권능 충전 #"}],"trade":{"ids":{"explicit":["explicit.stat_1999711879"],"implicit":["implicit.stat_1999711879"],"fractured":["fractured.stat_1999711879"],"scourge":["scourge.stat_1999711879"],"crafted":["crafted.stat_1999711879"]}}}
 {"ref":"+# to Minimum Power Charges per Grand Spectrum","better":1,"matchers":[{"string":"장대한 파장 하나당 최소 권능 충전 #"}],"trade":{"ids":{"explicit":["explicit.stat_308799121"]}}}
+{"ref":"+# to Minion Modifier Tier Rating","better":1,"matchers":[{"string":"소환수 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_3576205192"]}}}
+{"ref":"+# to Modifier Tier Rating","better":1,"matchers":[{"string":"# to Modifier Tier Rating"}],"trade":{"ids":{"necropolis":["necropolis.stat_2438553541"]}}}
 {"ref":"+# to number of Summoned Arbalists","better":1,"matchers":[{"string":"소환된 석궁병 수 #"}],"trade":{"ids":{"explicit":["explicit.stat_1886245216"]}}}
 {"ref":"+# to Perception Level for Heists","better":1,"matchers":[{"string":"강탈의 통찰력 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_2932532516"],"fractured":["fractured.stat_2932532516"]}}}
+{"ref":"+# to Physical Modifier Tier Rating","better":1,"matchers":[{"string":"물리 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_1332060456"]}}}
+{"ref":"+# to Resistance Modifier Tier Rating","better":1,"matchers":[{"string":"저항 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_3377208156"]}}}
 {"ref":"+# to Spectre maximum Life","better":1,"matchers":[{"string":"망령 최대 생명력 #"}],"trade":{"ids":{"explicit":["explicit.stat_3111456397"]}}}
+{"ref":"+# to Speed Modifier Tier Rating","better":1,"matchers":[{"string":"속도 속성 등급 평점 #"}],"trade":{"ids":{"necropolis":["necropolis.stat_2409085729"]}}}
 {"ref":"+# to Strength","better":1,"matchers":[{"string":"힘 #"}],"trade":{"ids":{"explicit":["explicit.stat_4080418644"],"implicit":["implicit.stat_4080418644"],"fractured":["fractured.stat_4080418644"],"scourge":["scourge.stat_4080418644"],"crafted":["crafted.stat_4080418644"]}}}
 {"ref":"+# to Strength and Dexterity","better":1,"matchers":[{"string":"힘 및 민첩 #"}],"trade":{"ids":{"explicit":["explicit.stat_538848803"],"implicit":["implicit.stat_538848803"],"fractured":["fractured.stat_538848803"],"crafted":["crafted.stat_538848803"]}}}
 {"ref":"+# to Strength and Intelligence","better":1,"matchers":[{"string":"힘 및 지능 #"}],"trade":{"ids":{"explicit":["explicit.stat_1535626285","explicit.stat_2543977012"],"implicit":["implicit.stat_1535626285"],"fractured":["fractured.stat_1535626285"],"crafted":["crafted.stat_1535626285"]}}}
@@ -2531,6 +2593,7 @@
 {"ref":"+#% to Quality of Socketed Skill Gems","better":1,"matchers":[{"string":"장착된 스킬 젬의 퀄리티 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1325783255"]}}}
 {"ref":"+#% to Quality of Socketed Strength Gems","better":1,"matchers":[{"string":"장착된 힘 젬 퀄리티 #%"}],"trade":{"ids":{"implicit":["implicit.stat_122841557"]}}}
 {"ref":"+#% to Quality of Socketed Support Gems","better":1,"matchers":[{"string":"장착된 보조 젬 퀄리티 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1328548975"],"implicit":["implicit.stat_1328548975"],"fractured":["fractured.stat_1328548975"],"scourge":["scourge.stat_1328548975"]}}}
+{"ref":"+#% to Quality, up to 30%","better":1,"matchers":[{"string":"퀄리티 #%, 최대 30%"}],"trade":{"ids":{"necropolis":["necropolis.stat_3430024635"]}}}
 {"ref":"+#% to Raised Spectre Elemental Resistances","better":1,"matchers":[{"string":"소환한 망령 원소 저항 #%"}],"trade":{"ids":{"enchant":["enchant.stat_27640220"]}}}
 {"ref":"+#% to Spell Critical Strike Chance","dp":true,"better":1,"matchers":[{"string":"주문 치명타 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_791835907"],"implicit":["implicit.stat_791835907"]}}}
 {"ref":"+#% to Stone Golem Elemental Resistances","better":1,"matchers":[{"string":"돌 골렘 원소 저항 #%"}],"trade":{"ids":{"enchant":["enchant.stat_1601558321"]}}}
@@ -3001,7 +3064,7 @@
 {"ref":"All Damage from Hits with This Weapon can Poison","better":1,"matchers":[{"string":"이 무기로 주는 모든 명중 피해가 중독 유발 가능"}],"trade":{"ids":{"implicit":["implicit.stat_264042990"]}}}
 {"ref":"All Damage from Monsters' Hits can Freeze","better":1,"matchers":[{"string":"몬스터의 모든 명중 피해가 동결 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_3669353918"]}}}
 {"ref":"All Damage from Monsters' Hits can Ignite","better":1,"matchers":[{"string":"몬스터의 모든 명중 피해가 점화 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_891135228"]}}}
-{"ref":"All Damage from Monsters' Hits can Poison","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 모든 명중 피해가 중독 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_3555807120"]}}}
+{"ref":"All Damage from Monsters' Hits can Poison","better":1,"matchers":[{"string":"몬스터의 모든 명중 피해가 중독 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_3555807120"]}}}
 {"ref":"All Damage from Monsters' Hits inflicts Shock","better":1,"matchers":[{"string":"모든 몬스터의 적중 피해가 감전 유발"}],"trade":{"ids":{"explicit":["explicit.stat_165059239"]}}}
 {"ref":"All Damage inflicts Poison against Enemies affected by at least # Grasping Vine","better":1,"matchers":[{"string":"모든 피해가 탐욕스러운 덩굴이 #개 이상인 적에게 중독 유발"}],"trade":{"ids":{"explicit":["explicit.stat_3190526553"]}}}
 {"ref":"All Damage inflicts Poison while affected by Glorious Madness","better":1,"matchers":[{"string":"찬란한 광기의 영향을 받는 동안 모든 피해가 중독 유발"}],"trade":{"ids":{"explicit":["explicit.stat_3359218839"]}}}
@@ -3011,8 +3074,8 @@
 {"ref":"All Damage with Hits can Freeze","better":1,"matchers":[{"string":"모든 적중 피해가 동결 유발"},{"string":"모든 피해가 동결 유발"},{"string":"모든 피해가 동결 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_4052117756"]}}}
 {"ref":"All Damage with Hits can Ignite","better":1,"matchers":[{"string":"모든 적중 피해가 점화 유발"},{"string":"모든 피해가 점화 유발"},{"string":"모든 피해가 점화 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_1369840970"]}}}
 {"ref":"All Elemental Damage Converted to Chaos Damage","better":1,"matchers":[{"string":"모든 원소 피해를 카오스 피해로 전환"}],"trade":{"ids":{"explicit":["explicit.stat_2423544033"]}}}
-{"ref":"All Magic and Normal Monsters in Area are in a Union of Souls","better":1,"fromAreaMods":true,"matchers":[{"string":"지역 내 모든 마법 및 일반 몬스터가 영혼의 결합 소속"}],"trade":{"ids":{"explicit":["explicit.stat_3458622626"]}}}
-{"ref":"All Monster Damage can Ignite, Freeze and Shock","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 주는 모든 피해가 점화, 동결, 감전 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_2919181457"]}}}
+{"ref":"All Magic and Normal Monsters in Area are in a Union of Souls","better":1,"matchers":[{"string":"지역 내 모든 마법 및 일반 몬스터가 영혼의 결합 소속"}],"trade":{"ids":{"explicit":["explicit.stat_3458622626"]}}}
+{"ref":"All Monster Damage can Ignite, Freeze and Shock","better":1,"matchers":[{"string":"몬스터가 주는 모든 피해가 점화, 동결, 감전 유발 가능"}],"trade":{"ids":{"explicit":["explicit.stat_2919181457"]}}}
 {"ref":"All Monster Damage from Hits always Ignites","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"모든 몬스터의 적중 피해가 항상 점화 유발"}],"trade":{"ids":{"explicit":["explicit.stat_816367946"],"fractured":["fractured.stat_816367946"]}}}
 {"ref":"All Sockets are Blue","better":1,"matchers":[{"string":"파란 홈만 있음"}],"trade":{"ids":{"enchant":["enchant.stat_2803653753"]}}}
 {"ref":"All Sockets are Green","better":1,"matchers":[{"string":"초록 홈만 있음"}],"trade":{"ids":{"enchant":["enchant.stat_2849380136"]}}}
@@ -3066,16 +3129,16 @@
 {"ref":"Area contains an additional Underground Area","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 지하 지역 #개 추가 등장"},{"string":"지역에 지하 지역 1개 추가 등장","value":1}],"trade":{"ids":{"implicit":["implicit.stat_1160596338"]}}}
 {"ref":"Area contains an Expedition Boss (#)","better":1,"matchers":[{"string":"지역에 영웅을 쓰러뜨리는 자 메드베드 등장","value":1},{"string":"지역에 최후의 보루 보라나 등장","value":2},{"string":"지역에 갈망하는 배반자 우트레드 등장","value":3},{"string":"지역에 몰락의 기원 올로스 등장","value":4}],"trade":{"ids":{"implicit":["implicit.stat_3159649981"]},"option":true}}
 {"ref":"Area contains an Expedition Encounter","better":1,"matchers":[{"string":"지역에 탐험 인카운터 1개 등장"}],"trade":{"ids":{"explicit":["explicit.stat_3557750122"],"implicit":["implicit.stat_3557750122"]}}}
-{"ref":"Area contains Drowning Orbs","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 질식의 구체 등장"}],"trade":{"ids":{"explicit":["explicit.stat_25225034"]}}}
+{"ref":"Area contains Drowning Orbs","better":1,"matchers":[{"string":"지역에 질식의 구체 등장"}],"trade":{"ids":{"explicit":["explicit.stat_25225034"]}}}
 {"ref":"Area contains many Totems","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 다수의 토템 존재"}],"trade":{"ids":{"explicit":["explicit.stat_1000591322"],"fractured":["fractured.stat_1000591322"]}}}
 {"ref":"Area contains Metamorph Monsters","better":1,"matchers":[{"string":"지역에 변형 몬스터 등장"}],"trade":{"ids":{"implicit":["implicit.stat_1994562755"],"enchant":["enchant.stat_1994562755"]}}}
-{"ref":"Area contains Petrification Statues","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 석화의 조각상 등장"}],"trade":{"ids":{"explicit":["explicit.stat_3709982550"]}}}
-{"ref":"Area contains Runes of the Searing Exarch","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 작열의 총주교의 룬 등장"}],"trade":{"ids":{"explicit":["explicit.stat_2073168229"]}}}
+{"ref":"Area contains Petrification Statues","better":1,"matchers":[{"string":"지역에 석화의 조각상 등장"}],"trade":{"ids":{"explicit":["explicit.stat_3709982550"]}}}
+{"ref":"Area contains Runes of the Searing Exarch","better":1,"matchers":[{"string":"지역에 작열의 총주교의 룬 등장"}],"trade":{"ids":{"explicit":["explicit.stat_2073168229"],"fractured":["fractured.stat_2073168229"]}}}
 {"ref":"Area contains two Unique Bosses","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 고유 보스 2마리 등장"}],"trade":{"ids":{"explicit":["explicit.stat_799271621"],"fractured":["fractured.stat_799271621"]}}}
-{"ref":"Area contains Unstable Tentacle Fiends","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 불안정한 촉수 마귀 등장"}],"trade":{"ids":{"explicit":["explicit.stat_1943574423"]}}}
+{"ref":"Area contains Unstable Tentacle Fiends","better":1,"matchers":[{"string":"지역에 불안정한 촉수 마귀 등장"}],"trade":{"ids":{"explicit":["explicit.stat_1943574423"]}}}
 {"ref":"Area has an additional random Scarab effect","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 무작위 갑충석 효과 #개 추가"},{"string":"지역에 무작위 갑충석 효과 1개 추가","value":1}],"trade":{"ids":{"implicit":["implicit.stat_754268389"]}}}
 {"ref":"Area has increased monster variety","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 등장하는 몬스터 종류 증가"}],"trade":{"ids":{"explicit":["explicit.stat_3561450806"],"fractured":["fractured.stat_3561450806"]}}}
-{"ref":"Area has patches of Awakeners' Desolation","better":1,"fromAreaMods":true,"matchers":[{"string":"지역에 각성자의 비애 지대 존재"}],"trade":{"ids":{"explicit":["explicit.stat_563277852"]}}}
+{"ref":"Area has patches of Awakeners' Desolation","better":1,"matchers":[{"string":"지역에 각성자의 비애 지대 존재"}],"trade":{"ids":{"explicit":["explicit.stat_563277852"]}}}
 {"ref":"Area has patches of Burning Ground","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"지역에 용암 지대 존재"}],"trade":{"ids":{"explicit":["explicit.stat_133340941","explicit.stat_3665534869"],"fractured":["fractured.stat_133340941"]}}}
 {"ref":"Area has patches of Chilled Ground","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"지역에 얼음 지대 존재"}],"trade":{"ids":{"explicit":["explicit.stat_349586058","explicit.stat_389725673"],"fractured":["fractured.stat_349586058"]}}}
 {"ref":"Area has patches of Consecrated Ground","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"지역에 신성화 지대 존재"}],"trade":{"ids":{"explicit":["explicit.stat_1948962470"],"fractured":["fractured.stat_1948962470"]}}}
@@ -3113,7 +3176,14 @@
 {"ref":"Armageddon Brand has #% increased Activation Frequency","better":1,"matchers":[{"string":"종말의 낙인 활성화 빈도 #% 증가"},{"string":"종말의 낙인 활성화 빈도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2512194486"]}}}
 {"ref":"Armour also applies to Chaos Damage taken from Hits","better":1,"matchers":[{"string":"방어도가 피격 시 받는 카오스 피해에도 적용"}],"trade":{"ids":{"explicit":["explicit.stat_4186532642"]}}}
 {"ref":"Armour also applies to Lightning Damage taken from Hits","better":1,"matchers":[{"string":"방어도가 피격 시 받는 번개 피해에도 적용"}],"trade":{"ids":{"explicit":["explicit.stat_2134207902"]}}}
+{"ref":"Armour can roll Haunted Modifiers","better":1,"matchers":[{"string":"방어구에 빙의 속성 부여 가능"}],"trade":{"ids":{"necropolis":["necropolis.stat_3447579720"]}}}
 {"ref":"Armour is increased by Overcapped Fire Resistance","better":1,"matchers":[{"string":"제한 초과 화염 저항에 따라 방어도 증가"}],"trade":{"ids":{"explicit":["explicit.stat_2129352930"],"fractured":["fractured.stat_2129352930"]}}}
+{"ref":"Armour Items do not have a Dexterity Requirement","better":1,"matchers":[{"string":"방어구 아이템에 민첩 요구사항 없음"}],"trade":{"ids":{"necropolis":["necropolis.stat_4162329082"]}}}
+{"ref":"Armour Items do not have a Intelligence Requirement","better":1,"matchers":[{"string":"방어구 아이템에 지능 요구사항 없음"}],"trade":{"ids":{"necropolis":["necropolis.stat_2498568665"]}}}
+{"ref":"Armour Items do not have a Strength Requirement","better":1,"matchers":[{"string":"방어구 아이템에 힘 요구사항 없음"}],"trade":{"ids":{"necropolis":["necropolis.stat_1209127621"]}}}
+{"ref":"Armour Items have a Dexterity Requirement","better":1,"matchers":[{"string":"방어구 아이템이 민첩 요구사항 보유"}],"trade":{"ids":{"necropolis":["necropolis.stat_1976073394"]}}}
+{"ref":"Armour Items have a Intelligence Requirement","better":1,"matchers":[{"string":"방어구 아이템이 지능 요구사항 보유"}],"trade":{"ids":{"necropolis":["necropolis.stat_4257272583"]}}}
+{"ref":"Armour Items have a Strength Requirement","better":1,"matchers":[{"string":"방어구 아이템이 힘 요구사항 보유"}],"trade":{"ids":{"necropolis":["necropolis.stat_2171218303"]}}}
 {"ref":"Arrow Dancing","better":1,"matchers":[{"string":"춤추는 화살"}],"trade":{"ids":{"explicit":["explicit.stat_2606808909"],"scourge":["scourge.stat_2606808909"]}}}
 {"ref":"Arrows Chain +# times","better":1,"matchers":[{"string":"화살 연쇄 #회"}],"trade":{"ids":{"implicit":["implicit.stat_1001077145"]}}}
 {"ref":"Arrows deal # to # Added Fire Damage for each time they've Pierced","better":1,"matchers":[{"string":"화살이 관통할 때마다 화염 피해 #~# 추가"}],"trade":{"ids":{"explicit":["explicit.stat_3726936056"]}}}
@@ -3140,6 +3210,7 @@
 {"ref":"Attack Critical Strikes ignore Enemy Monster Elemental Resistances","better":1,"matchers":[{"string":"공격 치명타 시 적 몬스터의 원소 저항 무시"}],"trade":{"ids":{"implicit":["implicit.stat_2170876738"]}}}
 {"ref":"Attack Hits against Bleeding Enemies have #% chance to Blind","better":1,"matchers":[{"string":"출혈 중인 적에게 공격 명중 시 #% 확률로 실명 유발"}],"trade":{"ids":{"explicit":["explicit.stat_4204320922"]}}}
 {"ref":"Attack Hits against Blinded Enemies have #% chance to Maim","better":1,"matchers":[{"string":"실명 상태의 적에게 공격 명중 시 #% 확률로 힘줄 절단 유발"}],"trade":{"ids":{"explicit":["explicit.stat_1291726336"]}}}
+{"ref":"Attack Modifiers are #% scarcer","better":1,"matchers":[{"string":"공격 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_3923060556"]}}}
 {"ref":"Attack Skills gain #% of Physical Damage as Extra Fire Damage per Socketed Red Gem","better":1,"matchers":[{"string":"장착된 붉은 젬 하나당 공격 스킬이 물리 피해의 #%를 추가 화염 피해로 획득"}],"trade":{"ids":{"explicit":["explicit.stat_1302700515"]}}}
 {"ref":"Attack Skills have +# to maximum number of Summoned Totems","better":1,"matchers":[{"string":"공격 스킬의 소환 가능한 토템 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_3266394681"]}}}
 {"ref":"Attack Skills have Added Lightning Damage equal to #% of maximum Mana","better":1,"matchers":[{"string":"공격 스킬이 최대 마나의 #%와 동일한 추가 번개 피해 보유"}],"trade":{"ids":{"explicit":["explicit.stat_2778228111"]}}}
@@ -3173,6 +3244,7 @@
 {"ref":"Attacks with this Weapon Penetrate #% Elemental Resistances","better":1,"matchers":[{"string":"이 무기로 공격 시 #%의 원소 저항 관통"}],"trade":{"ids":{"explicit":["explicit.stat_4064396395"],"implicit":["implicit.stat_4064396395"],"fractured":["fractured.stat_4064396395"],"crafted":["crafted.stat_4064396395"]}}}
 {"ref":"Attacks with this Weapon Penetrate #% Fire Resistance","better":1,"matchers":[{"string":"이 무기로 공격 시 #%의 화염 저항 관통"}],"trade":{"ids":{"explicit":["explicit.stat_3398283493"],"fractured":["fractured.stat_3398283493"]}}}
 {"ref":"Attacks with this Weapon Penetrate #% Lightning Resistance","better":1,"matchers":[{"string":"이 무기로 공격 시 #%의 번개 저항 관통"}],"trade":{"ids":{"explicit":["explicit.stat_2387539034"],"fractured":["fractured.stat_2387539034"]}}}
+{"ref":"Attribute Modifiers are #% scarcer","better":1,"matchers":[{"string":"능력치 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_490739313"]}}}
 {"ref":"Attribute Requirements can be satisfied by #% of Omniscience","better":1,"matchers":[{"string":"능력치 요구사항을 전지력의 #%로 충족 가능"}],"trade":{"ids":{"explicit":["explicit.stat_3024338155"]}}}
 {"ref":"Aura Skills other than Anger are Disabled","better":1,"matchers":[{"string":"분노 외의 오라 스킬 사용 불가"}],"trade":{"ids":{"explicit":["explicit.stat_2185337019"]}}}
 {"ref":"Aura Skills other than Clarity are Disabled","better":1,"matchers":[{"string":"명상 외의 오라 스킬 사용 불가"}],"trade":{"ids":{"explicit":["explicit.stat_2010835448"]}}}
@@ -3210,6 +3282,7 @@
 {"ref":"Battlemage","better":1,"matchers":[{"string":"전투마법사"}],"trade":{"ids":{"explicit":["explicit.stat_448903047"]}}}
 {"ref":"Battlemage's Cry Exerts # additional Attack","better":1,"matchers":[{"string":"전투마법사의 함성 사용 시 전력 공격 #회 추가"}],"trade":{"ids":{"enchant":["enchant.stat_931713173"]}}}
 {"ref":"Bear Trap has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"곰 덫의 재사용 대기시간 회복 속도 #% 증가"},{"string":"곰 덫의 재사용 대기시간 회복 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_918308703"]}}}
+{"ref":"Belt is a Stygian Vise","better":1,"matchers":[{"string":"허리띠가 명계의 조임쇠임"}],"trade":{"ids":{"necropolis":["necropolis.stat_1800985330"]}}}
 {"ref":"Berserk has #% increased Buff Effect","better":1,"matchers":[{"string":"광폭의 버프 효과 #% 증가"},{"string":"광폭의 버프 효과 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1663783758"]}}}
 {"ref":"Berserk has #% reduced Rage loss per second","better":-1,"matchers":[{"string":"1초마다 광폭의 격노 상실 #% 증가"},{"string":"1초마다 광폭의 격노 상실 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1019790379"]},"inverted":true}}
 {"ref":"Beyond Portals in your Maps have #% chance to spawn an additional Beyond Demon","better":1,"matchers":[{"string":"#%의 확률로 이계 포탈이 이계 악마 1마리를 추가로 불러옴"},{"string":"지도 내 이계 포탈이 #%의 확률로 이계 악마 1마리를 추가로 불러옴"},{"string":"이계 포탈이 이계 악마 1마리를 추가로 불러옴","value":100},{"string":"지도 내 이계 포탈이 이계 악마 1마리를 추가로 불러옴","value":100}],"trade":{"ids":{"explicit":["explicit.stat_4008016019"],"enchant":["enchant.stat_4008016019"]}}}
@@ -3342,6 +3415,7 @@
 {"ref":"Carved to glorify # new faithful converted by High Templar Dominus","better":0,"matchers":[{"string":"고위 템플러 도미누스가 개종시킨 새로운 신도 #명을 찬미하기 위해 조각됨\n반경 내 패시브 스킬은 템플러의 지배를 받음","advanced":"고위 템플러 도미누스(아배리우스-막사리우스)가 개종시킨 새로운 신도 #명을 찬미하기 위해 조각됨\n반경 내 패시브 스킬은 템플러의 지배를 받음"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_dominus"]}}}
 {"ref":"Carved to glorify # new faithful converted by High Templar Maxarius","better":0,"matchers":[{"string":"고위 템플러 막사리우스가 개종시킨 새로운 신도 #명을 찬미하기 위해 조각됨\n반경 내 패시브 스킬은 템플러의 지배를 받음","advanced":"고위 템플러 막사리우스(아배리우스-막사리우스)가 개종시킨 새로운 신도 #명을 찬미하기 위해 조각됨\n반경 내 패시브 스킬은 템플러의 지배를 받음"}],"trade":{"ids":{"explicit":["explicit.pseudo_timeless_jewel_maxarius"]}}}
 {"ref":"Cast Level 20 Fire Burst on Hit","better":1,"matchers":[{"string":"명중 시 20레벨 화염 격발 시전"}],"trade":{"ids":{"explicit":["explicit.stat_1621470436"],"fractured":["fractured.stat_1621470436"]}}}
+{"ref":"Caster Modifiers are #% scarcer","better":1,"matchers":[{"string":"시전 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_2792647258"]}}}
 {"ref":"Catarina's Veiled","better":0,"matchers":[{"string":"카타리나의 장막의"}],"trade":{"ids":{"veiled":["veiled.mod_63772"]}}}
 {"ref":"Caustic Arrow has #% chance to inflict Withered on Hit for # second base Duration","better":1,"matchers":[{"string":"부식성 화살 명중 시 #%의 확률로 #초의 기본 지속시간 동안 위축 유발"},{"string":"부식성 화살 명중 시 #초의 기본 지속시간 동안 위축 유발"}],"trade":{"ids":{"enchant":["enchant.stat_1993913925"]}}}
 {"ref":"Celestial Footprints","better":1,"matchers":[{"string":"천공의 발자국"}],"trade":{"ids":{"explicit":["explicit.stat_50381303"]}}}
@@ -3358,6 +3432,7 @@
 {"ref":"Chaos Damage taken does not bypass Energy Shield while not on Low Life","better":1,"matchers":[{"string":"낮은 생명력 상태가 아닐 때 받는 카오스 피해가 에너지 보호막에 막힘"}],"trade":{"ids":{"explicit":["explicit.stat_887556907"],"fractured":["fractured.stat_887556907"]}}}
 {"ref":"Chaos Damage taken does not bypass Minions' Energy Shield","better":1,"matchers":[{"string":"받는 카오스 피해가 소환수의 에너지 보호막에 막힘"}],"trade":{"ids":{"explicit":["explicit.stat_3008104268"]}}}
 {"ref":"Chaos Golems deal #% increased Damage","better":1,"matchers":[{"string":"카오스 골렘이 주는 피해 #% 증가"},{"string":"카오스 골렘이 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2505115650"]}}}
+{"ref":"Chaos Modifiers are #% scarcer","better":1,"matchers":[{"string":"카오스 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_3320485076"]}}}
 {"ref":"Chaos Resistance is Zero","better":1,"matchers":[{"string":"카오스 저항 0"}],"trade":{"ids":{"explicit":["explicit.stat_2439129490"],"fractured":["fractured.stat_2439129490"]}}}
 {"ref":"Chaos Skills have #% chance to Ignite","better":1,"matchers":[{"string":"카오스 스킬이 #%의 확률로 점화 유발"}],"trade":{"ids":{"explicit":["explicit.stat_3573128085"]}}}
 {"ref":"Chaos Skills have #% increased Skill Effect Duration","better":1,"matchers":[{"string":"카오스 스킬의 스킬 효과 지속시간 #% 증가"},{"string":"카오스 스킬의 스킬 효과 지속시간 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_289885185"],"fractured":["fractured.stat_289885185"],"crafted":["crafted.stat_289885185"]}}}
@@ -3380,6 +3455,7 @@
 {"ref":"Cobra Lash has #% increased Projectile Speed","better":1,"matchers":[{"string":"코브라 채찍의 투사체 속도 #% 증가"},{"string":"코브라 채찍의 투사체 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_732631533"]}}}
 {"ref":"Cold Exposure on Hit if you've cast Frostbite in the past 10 seconds","better":1,"matchers":[{"string":"최근 10초 이내 동상을 시전한 경우 명중 시 냉기 노출 유발"}],"trade":{"ids":{"explicit":["explicit.stat_1168138239"]}}}
 {"ref":"Cold Exposure you inflict applies an extra +#% to Cold Resistance","better":-1,"matchers":[{"string":"플레이어가 유발하는 냉기 노출이 냉기 저항에 #% 추가"}],"trade":{"ids":{"explicit":["explicit.stat_600221736"]}}}
+{"ref":"Cold Modifiers are #% scarcer","better":1,"matchers":[{"string":"냉기 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_3230211641"]}}}
 {"ref":"Cold Resistance cannot be Penetrated","better":1,"matchers":[{"string":"냉기 저항이 관통되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_1864616755"]}}}
 {"ref":"Cold Resistance is #%","better":1,"matchers":[{"string":"Cold Resistance is #%"}],"trade":{"ids":{"explicit":["explicit.stat_496075050"]}}}
 {"ref":"Cold Skills have #% chance to Poison on Hit","better":1,"matchers":[{"string":"냉기 스킬 명중 시 #%의 확률로 중독 유발"}],"trade":{"ids":{"explicit":["explicit.stat_2373079502"]}}}
@@ -3413,6 +3489,7 @@
 {"ref":"Conversion Trap #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"전향 덫의 재사용 대기시간 회복 속도 #% 증가"},{"string":"전향 덫의 재사용 대기시간 회복 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2143519574"]}}}
 {"ref":"Converted Enemies have #% increased Damage","better":1,"matchers":[{"string":"전환된 적의 피해 #% 증가"},{"string":"전환된 적의 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_131320052"]}}}
 {"ref":"Convocation has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"소집의 재사용 대기시간 회복 속도 #% 증가"},{"string":"소집의 재사용 대기시간 회복 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2680060124"]}}}
+{"ref":"Corpses in adjacent Graves and this Corpse have their crafting outcomes randomised when this Corpse is buried","better":1,"matchers":[{"string":"이 시신이 매장되어 있을 때, 인접한 무덤에 있는 시신들과 이 시신의 제작 결과가 무작위로 결정"}],"trade":{"ids":{"necropolis":["necropolis.stat_2206100268"]}}}
 {"ref":"Corpses you Spawn have #% increased Maximum Life","better":1,"matchers":[{"string":"자신이 생성한 시체의 최대 생명력 #% 증가"},{"string":"자신이 생성한 시체의 최대 생명력 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_586568910"]}}}
 {"ref":"Corrupted Blood cannot be inflicted on you","better":1,"matchers":[{"string":"타락한 피가 플레이어에게 유발될 수 없음"}],"trade":{"ids":{"explicit":["explicit.stat_1658498488"],"implicit":["implicit.stat_1658498488"],"fractured":["fractured.stat_1658498488"]}}}
 {"ref":"Corrupted Soul","better":1,"matchers":[{"string":"타락한 영혼"}],"trade":{"ids":{"explicit":["explicit.stat_1911037487"]}}}
@@ -3427,14 +3504,31 @@
 {"ref":"Crackling Lance has #% increased Cast Speed","better":1,"matchers":[{"string":"치직대는 창의 시전 속도 #% 증가"},{"string":"치직대는 창의 시전 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_617228927"]}}}
 {"ref":"Create a Blighted Spore when your Skills or Minions Kill a Rare Monster","better":1,"matchers":[{"string":"스킬 또는 소환수로 희귀 몬스터 처치 시 역병 걸린 포자 생성"}],"trade":{"ids":{"explicit":["explicit.stat_2485187927"]}}}
 {"ref":"Create Profane Ground instead of Consecrated Ground","better":1,"matchers":[{"string":"신성화 지대 대신 부정 지대 생성"}],"trade":{"ids":{"explicit":["explicit.stat_1243613350"]}}}
+{"ref":"Creates a Belt","better":1,"matchers":[{"string":"허리띠 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_1241074775"]}}}
+{"ref":"Creates a Bone Ring","better":1,"matchers":[{"string":"뼈 반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_480698631"]}}}
+{"ref":"Creates a Cerulean Ring","better":1,"matchers":[{"string":"진청색 반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_2211551537"]}}}
+{"ref":"Creates a Grasping Mail","better":1,"matchers":[{"string":"Creates a Grasping Mail"}],"trade":{"ids":{"necropolis":["necropolis.stat_1347129246"]}}}
+{"ref":"Creates a Helmet, Gloves or Boots with Ward","better":1,"matchers":[{"string":"수호가 붙은 투구, 장갑 또는 장화 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_993789944"]}}}
+{"ref":"Creates a Minion Wand","better":1,"matchers":[{"string":"소환수 마법봉 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_1935938852"]}}}
+{"ref":"Creates a Ring","better":1,"matchers":[{"string":"반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_692790602"]}}}
+{"ref":"Creates a Ritual Helmet, Gloves or Boots","better":1,"matchers":[{"string":"의식 투구, 장갑 또는 장화 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_915145932"]}}}
+{"ref":"Creates a Sacrificial Garb","better":1,"matchers":[{"string":"Creates a Sacrificial Garb"}],"trade":{"ids":{"necropolis":["necropolis.stat_4271372391"]}}}
 {"ref":"Creates a Smoke Cloud on Rampage","better":1,"matchers":[{"string":"광란 시 연막 생성"}],"trade":{"ids":{"explicit":["explicit.stat_3321583955"]}}}
 {"ref":"Creates a Smoke Cloud on Use","better":1,"matchers":[{"string":"사용 시 연막 생성"}],"trade":{"ids":{"implicit":["implicit.stat_538730182"]}}}
+{"ref":"Creates a Steel Ring","better":1,"matchers":[{"string":"강철 반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_4137157908"]}}}
+{"ref":"Creates a Talisman","better":1,"matchers":[{"string":"부적 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_1808731370"]}}}
+{"ref":"Creates a Vermillion Ring","better":1,"matchers":[{"string":"주색 반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_3116208771"]}}}
+{"ref":"Creates an Amulet","better":1,"matchers":[{"string":"목걸이 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_3582033890"]}}}
+{"ref":"Creates an Experimented Weapon","better":1,"matchers":[{"string":"실험적 무기 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_1330203237"]}}}
+{"ref":"Creates an Iolite Ring","better":1,"matchers":[{"string":"근청석 반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_3775976516"]}}}
+{"ref":"Creates an Opal Ring","better":1,"matchers":[{"string":"오팔 반지 생성"}],"trade":{"ids":{"necropolis":["necropolis.stat_2373354899"]}}}
 {"ref":"Creates Chilled Ground on Use","better":1,"matchers":[{"string":"사용 시 얼음 지대 생성"}],"trade":{"ids":{"implicit":["implicit.stat_3311869501"]}}}
 {"ref":"Creates Consecrated Ground on Critical Strike","better":1,"matchers":[{"string":"치명타 명중 시 #%의 확률로 신성화 지대 생성"},{"string":"치명타 명중 시 신성화 지대 생성","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3195625581"]}}}
 {"ref":"Creates Consecrated Ground on Use","better":1,"matchers":[{"string":"사용 시 신성화 지대 생성"}],"trade":{"ids":{"implicit":["implicit.stat_2146730404"]}}}
 {"ref":"Creeping Frost's Chilling Area has #% increased Movement Speed","better":1,"matchers":[{"string":"엄습하는 서리의 냉각 지역 이동 속도 #% 증가"},{"string":"엄습하는 서리의 냉각 지역 이동 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2781179464"]}}}
 {"ref":"Cremation can have up to # additional Geyser at a time","better":1,"matchers":[{"string":"시체 소각이 1회에 유지할 수 있는 간헐천 최대 #개 추가"}],"trade":{"ids":{"enchant":["enchant.stat_3503624267"]}}}
 {"ref":"Crimson Dance","better":1,"matchers":[{"string":"진홍색 춤"}],"trade":{"ids":{"explicit":["explicit.stat_300702212"],"fractured":["fractured.stat_300702212"],"scourge":["scourge.stat_300702212"]}}}
+{"ref":"Critical Modifiers are #% scarcer","better":1,"matchers":[{"string":"치명타 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_2390026339"]}}}
 {"ref":"Critical Strike Chance is #% for Hits with this Weapon","better":1,"matchers":[{"string":"이 무기로 적 명중 시 치명타 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1672183492"]}}}
 {"ref":"Critical Strike Chance is increased by Overcapped Lightning Resistance","better":1,"matchers":[{"string":"제한 초과 번개 저항에 따라 치명타 확률 증가"}],"trade":{"ids":{"explicit":["explicit.stat_2478752719"],"fractured":["fractured.stat_2478752719"]}}}
 {"ref":"Critical Strikes deal no Damage","better":1,"matchers":[{"string":"치명타로 주는 피해 없음"}],"trade":{"ids":{"explicit":["explicit.stat_3245481061"]}}}
@@ -3521,9 +3615,10 @@
 {"ref":"Deals # Chaos Damage per second to nearby Enemies","better":1,"matchers":[{"string":"주변의 적에게 1초마다 #의 카오스 피해를 줌"}],"trade":{"ids":{"explicit":["explicit.stat_2280313599"]}}}
 {"ref":"Debilitate Enemies for # Seconds when you Suppress their Spell Damage","better":1,"matchers":[{"string":"적의 주문 피해 억제 시 #초 동안 해당 적에게 쇠잔 유발"}],"trade":{"ids":{"explicit":["explicit.stat_3019649166"]}}}
 {"ref":"Debilitate nearby Enemies for # Seconds when Effect ends","better":1,"matchers":[{"string":"효과 만료 시 #초 동안 주변의 적에게 쇠잔 유발"}],"trade":{"ids":{"explicit":["explicit.stat_545593248"]}}}
-{"ref":"Debuffs on Monsters expire #% faster","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터에게 적용되는 디버프가 #% 더 빠르게 만료됨"},{"string":"몬스터에게 적용되는 디버프가 #% 더 느리게 만료됨","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1200027417"]}}}
+{"ref":"Debuffs on Monsters expire #% faster","better":1,"matchers":[{"string":"몬스터에게 적용되는 디버프가 #% 더 빠르게 만료됨"},{"string":"몬스터에게 적용되는 디버프가 #% 더 느리게 만료됨","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1200027417"]}}}
 {"ref":"Debuffs on you expire #% faster","better":1,"matchers":[{"string":"플레이어에게 적용되는 디버프가 #% 더 빠르게 만료됨"},{"string":"플레이어에게 적용되는 디버프가 #% 더 느리게 만료됨","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1238227257"]}}}
 {"ref":"Debuffs on you expire #% faster while affected by Haste","better":-1,"matchers":[{"string":"가속의 영향을 받는 동안 플레이어에게 적용되는 디버프가 #% 더 느리게 만료됨"},{"string":"가속의 영향을 받는 동안 플레이어에게 적용되는 디버프가 #% 더 빠르게 만료됨","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_207635700"]},"inverted":true}}
+{"ref":"Defence Modifiers are #% scarcer","better":1,"matchers":[{"string":"방어 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_3215029992"]}}}
 {"ref":"Defences are Zero","better":1,"matchers":[{"string":"방어력 0"}],"trade":{"ids":{"explicit":["explicit.stat_4271994824"]}}}
 {"ref":"Defiance Banner has #% increased Aura Effect","better":1,"matchers":[{"string":"저항의 깃발의 오라 효과 #% 증가"},{"string":"저항의 깃발의 오라 효과 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1105773670"]}}}
 {"ref":"Defiance Banner has #% increased Taunt duration","better":1,"matchers":[{"string":"저항의 깃발의 도발 지속시간 #% 증가"},{"string":"저항의 깃발의 도발 지속시간 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3556656580"]}}}
@@ -3582,6 +3677,7 @@
 {"ref":"Elemental Equilibrium","better":1,"matchers":[{"string":"원소 균형"}],"trade":{"ids":{"explicit":["explicit.stat_1263158408"],"implicit":["implicit.stat_1263158408"],"fractured":["fractured.stat_1263158408"],"scourge":["scourge.stat_1263158408"]}}}
 {"ref":"Elemental Hit Always Freezes, Shocks and Ignites","better":1,"matchers":[{"string":"원소의 일격 동결, 감전 및 점화 확률 #%"},{"string":"원소의 일격이 항상 동결, 감전 및 점화 유발","value":100}],"trade":{"ids":{"enchant":["enchant.stat_3205997967"]}}}
 {"ref":"Elemental Hit deals #% increased Damage","better":1,"matchers":[{"string":"원소의 일격 피해 #% 증가"},{"string":"원소의 일격 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4109038270"],"enchant":["enchant.stat_4109038270"]}}}
+{"ref":"Elemental Modifiers are #% scarcer","better":1,"matchers":[{"string":"원소 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_1133811301"]}}}
 {"ref":"Elemental Overload","better":1,"matchers":[{"string":"원소 과부하"}],"trade":{"ids":{"explicit":["explicit.stat_3574189159"],"implicit":["implicit.stat_3574189159"],"fractured":["fractured.stat_3574189159"],"scourge":["scourge.stat_3574189159"]}}}
 {"ref":"Elemental Resistances are capped by your highest Maximum Elemental Resistance instead","better":1,"matchers":[{"string":"모든 원소 저항의 한도가 가장 높은 원소 저항 최대치에 따라 결정됨"}],"trade":{"ids":{"explicit":["explicit.stat_3082079953"]}}}
 {"ref":"Elemental Resistances are Zero","better":1,"matchers":[{"string":"원소 저항 0"}],"trade":{"ids":{"explicit":["explicit.stat_85576425"]}}}
@@ -3680,7 +3776,8 @@
 {"ref":"Extra gore","better":1,"matchers":[{"string":"잔인함"}],"trade":{"ids":{"explicit":["explicit.stat_3403461239"]}}}
 {"ref":"Eye of Winter fires Shard projectiles with #% increased Frequency during flight","better":1,"matchers":[{"string":"겨울의 눈이 비행하는 동안 발사하는 파편 투사체의 빈도 #% 증가"},{"string":"겨울의 눈이 비행하는 동안 발사하는 파편 투사체의 빈도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_173612563"]}}}
 {"ref":"Far Shot","better":1,"matchers":[{"string":"장거리 사격"}],"trade":{"ids":{"explicit":["explicit.stat_2483362276"]}}}
-{"ref":"Fire Resistance cannot be Penetrated","better":1,"matchers":[{"string":"화염 저항이 관통되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_1138860262"]}}}
+{"ref":"Fire Modifiers are #% scarcer","better":1,"matchers":[{"string":"화염 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_905301179"]}}}
+{"ref":"Fire Resistance cannot be Penetrated","better":1,"matchers":[{"string":"화염 저항이 관통되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_1138860262"],"fractured":["fractured.stat_1138860262"]}}}
 {"ref":"Fire Resistance is #%","better":1,"matchers":[{"string":"Fire Resistance is #%"}],"trade":{"ids":{"explicit":["explicit.stat_763311546"]}}}
 {"ref":"Fire Skills have #% chance to Poison on Hit","better":1,"matchers":[{"string":"화염 스킬 명중 시 #%의 확률로 중독 유발"}],"trade":{"ids":{"explicit":["explicit.stat_2424717327"]}}}
 {"ref":"Fireball Always Ignites","better":1,"matchers":[{"string":"화염구의 점화 확률 #%"},{"string":"화염구가 항상 점화 유발","value":100}],"trade":{"ids":{"enchant":["enchant.stat_2098790581"]}}}
@@ -3895,7 +3992,8 @@
 {"ref":"Galvanic Field Chains an additional time","better":1,"matchers":[{"string":"충격장이 #회 추가 연쇄"},{"string":"충격장이 1회 추가 연쇄","value":1}],"trade":{"ids":{"enchant":["enchant.stat_3893203185"]}}}
 {"ref":"Galvanic Field deals #% increased Damage","better":1,"matchers":[{"string":"충격장으로 주는 피해 #% 증가"},{"string":"충격장으로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3821213705"]}}}
 {"ref":"Galvanic Field has #% increased Cast Speed","better":1,"matchers":[{"string":"충격장의 시전 속도 #% 증가"}],"trade":{"ids":{"enchant":["enchant.stat_2364563825"]}}}
-{"ref":"Gems can be Socketed in this Item ignoring Socket Colour","better":1,"matchers":[{"string":"젬은 홈 색상을 무시하고 이 아이템에 장착될 수 있음"}],"trade":{"ids":{"explicit":["explicit.stat_899329924"]}}}
+{"ref":"Gem Modifiers are #% scarcer","better":1,"matchers":[{"string":"젬 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_1049448588"]}}}
+{"ref":"Gems can be Socketed in this Item ignoring Socket Colour","better":1,"matchers":[{"string":"젬은 홈 색상을 무시하고 이 아이템에 장착될 수 있음"}],"trade":{"ids":{"explicit":["explicit.stat_899329924"],"fractured":["fractured.stat_899329924"]}}}
 {"ref":"Gems Socketed in Blue Sockets gain #% increased Experience","better":1,"matchers":[{"string":"파란 홈에 장착된 젬 경험치 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_2236460050"]}}}
 {"ref":"Gems Socketed in Green Sockets have +#% to Quality","better":1,"matchers":[{"string":"초록 홈에 장착된 젬 퀄리티 #%"}],"trade":{"ids":{"explicit":["explicit.stat_3799930101"]}}}
 {"ref":"Gems Socketed in Red Sockets have +# to Level","better":1,"matchers":[{"string":"빨간 홈에 장착된 젬 레벨 #"}],"trade":{"ids":{"explicit":["explicit.stat_2886998024"]}}}
@@ -4039,6 +4137,7 @@
 {"ref":"Has 1 Socket","better":1,"matchers":[{"string":"홈 #개"},{"string":"홈 1개","value":1}],"trade":{"ids":{"explicit":["explicit.stat_4077843608"],"implicit":["implicit.stat_4077843608"]}}}
 {"ref":"Has a Crucible Passive Skill Tree\nCrucible Passive Skill Tree is removed if this Modifier is removed","better":1,"matchers":[{"string":"시련 패시브 스킬 트리 보유\n이 속성이 제거되면 시련 패시브 스킬 트리가 제거됨"}],"trade":{"ids":{"explicit":["explicit.stat_1827605890"]}}}
 {"ref":"Has a Crucible Passive Skill Tree with only Support Passive Skills\nCrucible Passive Skill Tree is removed if this Modifier is removed","better":1,"matchers":[{"string":"보조 패시브 스킬만 있는 시련 패시브 스킬 트리 보유\n이 속성이 제거되면 시련 패시브 스킬 트리가 제거됨"}],"trade":{"ids":{"explicit":["explicit.stat_3031897787"]}}}
+{"ref":"Has a random Conqueror Influence","better":1,"matchers":[{"string":"무작위 정복자 영향력 1개 보유"}],"trade":{"ids":{"necropolis":["necropolis.stat_2978770111"]}}}
 {"ref":"Has a Two Handed Sword Crucible Passive Skill Tree\nCrucible Passive Skill Tree is removed if this Modifier is removed","better":1,"matchers":[{"string":"양손 검 시련 패시브 스킬 트리 보유\n이 속성이 제거되면 시련 패시브 스킬 트리가 제거됨"}],"trade":{"ids":{"explicit":["explicit.stat_2141582975"]}}}
 {"ref":"Has an additional Implicit Mod","better":1,"matchers":[{"string":"추가 고정 속성 부여 보유"}],"trade":{"ids":{"explicit":["explicit.stat_2489070122"]}}}
 {"ref":"Has Crusader Influence","better":1,"matchers":[{"string":"십자군 영향력이 부여되어 있습니다 "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_has_crusader_influence"]}}}
@@ -4158,6 +4257,7 @@
 {"ref":"Has Room: Wealth of the Vaal (Tier 3)","better":0,"matchers":[{"string":"바알의 재물 (3등급)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_currency_vault_3"]},"option":true}}
 {"ref":"Has Room: Workshop (Tier 1)","better":0,"matchers":[{"string":"작업장 (1등급)"}],"trade":{"ids":{"pseudo":["pseudo.pseudo_temple_workshop_1"]},"option":true}}
 {"ref":"Has Shaper Influence","better":1,"matchers":[{"string":"쉐이퍼 영향력이 부여되어 있습니다 "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_has_shaper_influence"]}}}
+{"ref":"Has Shaper or Elder Influence","better":1,"matchers":[{"string":"쉐이퍼 혹은 엘더 영향력 보유"}],"trade":{"ids":{"necropolis":["necropolis.stat_2620957028"]}}}
 {"ref":"Has Warlord Influence","better":1,"matchers":[{"string":"전쟁군주 영향력이 부여되어 있습니다 "}],"trade":{"ids":{"pseudo":["pseudo.pseudo_has_warlord_influence"]}}}
 {"ref":"Haste has #% increased Aura Effect","better":1,"matchers":[{"string":"가속의 오라 효과 #% 증가"},{"string":"가속의 오라 효과 #% 감소","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_1240056437"]}}}
 {"ref":"Haste has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"가속의 마나 점유 효율 #% 증가"},{"string":"가속의 마나 점유 효율 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_804667127","enchant.stat_939320550"]}}}
@@ -4165,6 +4265,26 @@
 {"ref":"Hatred has #% increased Aura Effect","better":1,"matchers":[{"string":"증오의 오라 효과 #% 증가"},{"string":"증오의 오라 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3742945352"],"implicit":["implicit.stat_3742945352"]}}}
 {"ref":"Hatred has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"증오의 마나 점유 효율 #% 증가"},{"string":"증오의 마나 점유 효율 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1920370417","explicit.stat_2156140483"],"enchant":["enchant.stat_1920370417","enchant.stat_2156140483"]}}}
 {"ref":"Hatred has no Reservation","better":1,"matchers":[{"string":"증오로 인한 점유 없음"}],"trade":{"ids":{"explicit":["explicit.stat_1391583476"]}}}
+{"ref":"Haunted by Albanus Phrecia","better":1,"matchers":[{"string":"알바누스 프레시아에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_1080297314"]}}}
+{"ref":"Haunted by Asinia Grattus","better":1,"matchers":[{"string":"아시니아 그라투스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_2840862716"]}}}
+{"ref":"Haunted by Claudia Veruso","better":1,"matchers":[{"string":"클라우디아 베루소에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_3866121946"]}}}
+{"ref":"Haunted by Draven Grattus","better":1,"matchers":[{"string":"드라벤 그라투스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_534674490"]}}}
+{"ref":"Haunted by Drusia Perandus","better":1,"matchers":[{"string":"드루시아 페란두스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_76567331"]}}}
+{"ref":"Haunted by Fabricia Phrecia","better":1,"matchers":[{"string":"파브리시아 프레시아에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_203198242"]}}}
+{"ref":"Haunted by Fausta Veruso","better":1,"matchers":[{"string":"파우스타 베루소에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_2753790817"]}}}
+{"ref":"Haunted by Hadrius Veruso","better":1,"matchers":[{"string":"하드리우스 베루소에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_2883280108"]}}}
+{"ref":"Haunted by Iris Phrecia","better":1,"matchers":[{"string":"아이리스 프레시아에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_3950407937"]}}}
+{"ref":"Haunted by Julianis Nevalius","better":1,"matchers":[{"string":"줄리아니스 네발리우스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_3168281856"]}}}
+{"ref":"Haunted by Kostian Perandus","better":1,"matchers":[{"string":"코스티안 페란두스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_3069268022"]}}}
+{"ref":"Haunted by Legius Grattus","better":1,"matchers":[{"string":"레기우스 그라투스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_1819323807"]}}}
+{"ref":"Haunted by Lilius Nevalius","better":1,"matchers":[{"string":"릴리우스 네발리우스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_242305938"]}}}
+{"ref":"Haunted by Lucilius Perandus","better":1,"matchers":[{"string":"루실리우스 페란두스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_2167439212"]}}}
+{"ref":"Haunted by Marius Nevalius","better":1,"matchers":[{"string":"마리우스 네발리우스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_3888319670"]}}}
+{"ref":"Haunted by Octavius Nevalius","better":1,"matchers":[{"string":"옥타비우스 네발리우스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_2133615330"]}}}
+{"ref":"Haunted by Quintio Perandus","better":1,"matchers":[{"string":"퀸티오 페란두스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_2402537252"]}}}
+{"ref":"Haunted by Titiana Veruso","better":1,"matchers":[{"string":"티티아나 베루소에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_4262331449"]}}}
+{"ref":"Haunted by Tyche Grattus","better":1,"matchers":[{"string":"티케 그라투스에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_1700752787"]}}}
+{"ref":"Haunted by Valerius Phrecia","better":1,"matchers":[{"string":"발레리우스 프레시아에게 빙의됨"}],"trade":{"ids":{"necropolis":["necropolis.stat_3014227054"]}}}
 {"ref":"Heavy Strike has a #% chance to deal Double Damage","better":1,"matchers":[{"string":"묵직한 타격이 #%의 확률로 2배의 피해를 줌"}],"trade":{"ids":{"enchant":["enchant.stat_3760588941"]}}}
 {"ref":"Heist Chests have #% chance to contain nothing","better":1,"matchers":[{"string":"강탈 상자가 #%의 확률로 비어 있음"}],"trade":{"ids":{"enchant":["enchant.stat_3038236553"]}}}
 {"ref":"Heist Chests have a #% chance to contain more valuable Uniques","better":1,"matchers":[{"string":"#%의 확률로 강탈 상자에 들어 있는 고유 아이템의 가치 증가"},{"string":"강탈 상자에 들어 있는 고유 아이템의 가치 증가","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3288016752"]}}}
@@ -4325,7 +4445,8 @@
 {"ref":"Iron Will","better":1,"matchers":[{"string":"강철의 의지"}],"trade":{"ids":{"explicit":["explicit.stat_4092697134"],"fractured":["fractured.stat_4092697134"],"scourge":["scourge.stat_4092697134"]}}}
 {"ref":"It That Fled's Veiled","better":0,"matchers":[{"string":"달아난 그것의 장막의"}],"trade":{"ids":{"veiled":["veiled.mod_55787"]}}}
 {"ref":"Item drops on Death if Equipped by an Animated Guardian","better":1,"matchers":[{"string":"기동된 수호자에 장착된 아이템이 사망 시 떨어짐"}],"trade":{"ids":{"explicit":["explicit.stat_3909846940"],"implicit":["implicit.stat_3909846940"],"fractured":["fractured.stat_3909846940"],"crafted":["crafted.stat_3909846940"]}}}
-{"ref":"Item sells for much more to vendors","better":1,"matchers":[{"string":"상인에게 더 비싸게 아이템 판매"}],"trade":{"ids":{"implicit":["implicit.stat_3513534186"]}}}
+{"ref":"Item is Corrupted","better":1,"matchers":[{"string":"아이템이 타락함"}],"trade":{"ids":{"necropolis":["necropolis.stat_1606283544"]}}}
+{"ref":"Item sells for much more to vendors","better":1,"matchers":[{"string":"상인에게 더 비싸게 아이템 판매"},{"string":"아이템이 상인에게 더 비싸게 팔림"}],"trade":{"ids":{"implicit":["implicit.stat_3513534186"],"necropolis":["necropolis.stat_3872429222"]}}}
 {"ref":"Items and Gems have #% increased Attribute Requirements","better":1,"matchers":[{"string":"아이템 및 젬의 능력치 요구사항 #% 증가"},{"string":"아이템 및 젬의 능력치 요구사항 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_752930724"]}}}
 {"ref":"Items dropped by Corrupted Vaal Monsters in your Maps have #% chance to be Corrupted","better":1,"matchers":[{"string":"지도 내 타락한 바알 몬스터가 떨어뜨린 아이템이 타락한 아이템일 확률 #%"},{"string":"타락한 바알 몬스터가 아이템을 떨어뜨릴 때 #%의 확률로 타락한 아이템을 떨어뜨림"},{"string":"지도 내 타락한 바알 몬스터가 타락한 아이템을 떨어뜨림","value":100},{"string":"타락한 바알 몬스터가 타락한 아이템을 떨어뜨림","value":100}],"trade":{"ids":{"enchant":["enchant.stat_3045497140"]}}}
 {"ref":"Items found in your Maps have #% chance to be Corrupted","better":1,"fromAreaMods":true,"matchers":[{"string":"지도에서 발견하는 아이템이 #%의 확률로 타락한 아이템으로 떨어짐"},{"string":"지역에서 발견하는 아이템이 #% 확률로 타락"}],"trade":{"ids":{"explicit":["explicit.stat_728267040"],"fractured":["fractured.stat_728267040"],"enchant":["enchant.stat_728267040"]}}}
@@ -4371,6 +4492,7 @@
 {"ref":"Life Leech effects are not removed when Unreserved Life is Filled","better":1,"matchers":[{"string":"점유되지 않은 생명력이 찼을 때 생명력 흡수 효과가 제거되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2108380422"]}}}
 {"ref":"Life Leech from Exerted Attacks is instant","better":1,"matchers":[{"string":"전력 공격 시 생명력 흡수 즉시 적용"}],"trade":{"ids":{"explicit":["explicit.stat_272906215"]}}}
 {"ref":"Life Leech from Hits with this Weapon is instant","better":1,"matchers":[{"string":"이 무기로 적 명중 시 생명력 흡수 즉시 적용"}],"trade":{"ids":{"explicit":["explicit.stat_1765389199"]}}}
+{"ref":"Life Modifiers are #% scarcer","better":1,"matchers":[{"string":"생명력 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_143694410"]}}}
 {"ref":"Life Recovery from Flasks also applies to Energy Shield during Effect","better":1,"matchers":[{"string":"효과를 받는 동안 플라스크로 얻는 생명력 회복이 에너지 보호막에도 적용"}],"trade":{"ids":{"explicit":["explicit.stat_74462130"]}}}
 {"ref":"Life Recovery from Regeneration is not applied","better":1,"matchers":[{"string":"재생으로 인한 생명력 회복이 적용되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_3947672598"]}}}
 {"ref":"Life that would be lost by taking Damage is instead Reserved\nuntil you take no Damage to Life for # second","better":1,"matchers":[{"string":"생명력이 피해를 받아 상실되는 대신 점유됨, 해당 효과는 #초 동안 생명력 피해를 받지 않을 때까지 지속됨"}],"trade":{"ids":{"explicit":["explicit.stat_1777740627"]}}}
@@ -4383,6 +4505,7 @@
 {"ref":"Lightning Damage of Enemies Hitting you is Lucky","better":1,"matchers":[{"string":"적으로부터 피격되어 받는 번개 피해에 행운 적용"}],"trade":{"ids":{"explicit":["explicit.stat_4224965099"]}}}
 {"ref":"Lightning Damage with Non-Critical Strikes is Lucky","better":1,"matchers":[{"string":"비-치명타로 주는 번개 피해에 행운 적용"}],"trade":{"ids":{"explicit":["explicit.stat_1430928642"]}}}
 {"ref":"Lightning Golems deal #% increased Damage","better":1,"matchers":[{"string":"번개 골렘이 주는 피해 #% 증가"},{"string":"번개 골렘이 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3280107027"]}}}
+{"ref":"Lightning Modifiers are #% scarcer","better":1,"matchers":[{"string":"번개 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_1358703397"]}}}
 {"ref":"Lightning Resistance cannot be Penetrated","better":1,"matchers":[{"string":"번개 저항이 관통되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_3515979920"]}}}
 {"ref":"Lightning Resistance does not affect Lightning Damage taken","better":1,"matchers":[{"string":"번개 저항이 받는 번개 피해에 영향을 미치지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_3999959974"]}}}
 {"ref":"Lightning Resistance is #%","better":1,"matchers":[{"string":"Lightning Resistance is #%"}],"trade":{"ids":{"explicit":["explicit.stat_1942151132"]}}}
@@ -4431,12 +4554,13 @@
 {"ref":"Malevolence has no Reservation","better":1,"matchers":[{"string":"악의로 인한 점유 없음"}],"trade":{"ids":{"explicit":["explicit.stat_585622486"]}}}
 {"ref":"Mana Flasks gain # Charge every 3 seconds","better":1,"matchers":[{"string":"3초마다 마나 플라스크 # 충전"}],"trade":{"ids":{"explicit":["explicit.stat_1193925814"],"scourge":["scourge.stat_1193925814"]}}}
 {"ref":"Mana Flasks used while on Low Mana apply Recovery Instantly","better":1,"matchers":[{"string":"낮은 마나 상태일 때 마나 플라스크 사용 시 즉시 회복 적용"}],"trade":{"ids":{"explicit":["explicit.stat_1839832419"]}}}
+{"ref":"Mana Modifiers are #% scarcer","better":1,"matchers":[{"string":"마나 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_16148489"]}}}
 {"ref":"Mana Recovery occurs instantly at the end of Effect","better":1,"matchers":[{"string":"효과가 끝나면 마나 회복 즉시 발동"}],"trade":{"ids":{"explicit":["explicit.stat_4204954479"],"fractured":["fractured.stat_4204954479"]}}}
 {"ref":"Mana Reservation of Herald Skills is always 45%","better":1,"matchers":[{"string":"전령 스킬의 마나 점유가 45%로 고정"}],"trade":{"ids":{"explicit":["explicit.stat_262773569"]}}}
 {"ref":"Manabond Penetrates #% Lightning Resistance while on Low Mana","better":1,"matchers":[{"string":"마나 결속이 낮은 마나 상태에서 #%의 번개 저항 관통"}],"trade":{"ids":{"enchant":["enchant.stat_2052200782"]}}}
 {"ref":"Manifested Dancing Dervishes die when Rampage ends","better":1,"matchers":[{"string":"광란 종료 시 출현한 춤추는 수도승 사망"}],"trade":{"ids":{"explicit":["explicit.stat_422591144"]}}}
 {"ref":"Manifested Dancing Dervishes disables both weapon slots","better":1,"matchers":[{"string":"춤추는 수도승 출현 시 모든 무기 슬롯 비활성화"}],"trade":{"ids":{"explicit":["explicit.stat_1756125633"]}}}
-{"ref":"Map Boss is accompanied by a Synthesis Boss","better":1,"fromAreaMods":true,"matchers":[{"string":"지도 보스가 결합 보스 대동"}],"trade":{"ids":{"explicit":["explicit.stat_4150353141"]}}}
+{"ref":"Map Boss is accompanied by a Synthesis Boss","better":1,"matchers":[{"string":"지도 보스가 결합 보스 대동"}],"trade":{"ids":{"explicit":["explicit.stat_4150353141"]}}}
 {"ref":"Map Boss is surrounded by Tormented Spirits","better":1,"matchers":[{"string":"지도 보스가 고통받는 혼백에 둘러싸임"}],"trade":{"ids":{"enchant":["enchant.stat_3750528071"]}}}
 {"ref":"Map Bosses are accompanied by a mysterious Harbinger","better":1,"matchers":[{"string":"고유 보스가 신비로운 선구자 대동"},{"string":"지도 보스가 신비로운 선구자 대동"}],"trade":{"ids":{"enchant":["enchant.stat_397012377"]}}}
 {"ref":"Map Bosses are accompanied by Bodyguards","better":1,"matchers":[{"string":"고유 보스가 호위병 대동"},{"string":"지도 보스가 호위병 대동"}],"trade":{"ids":{"enchant":["enchant.stat_3481854423"]}}}
@@ -4477,6 +4601,7 @@
 {"ref":"Mind Over Matter","better":1,"matchers":[{"string":"물질보다 정신"}],"trade":{"ids":{"explicit":["explicit.stat_373964381"],"scourge":["scourge.stat_373964381"]}}}
 {"ref":"Mines can be Detonated an additional time","better":1,"matchers":[{"string":"지뢰 #회 추가 폭발"},{"string":"지뢰 1회 추가 폭발","value":1}],"trade":{"ids":{"explicit":["explicit.stat_325437053"]}}}
 {"ref":"Mines have #% increased Detonation Speed","better":1,"matchers":[{"string":"지뢰의 폭파 속도 #% 증가"},{"string":"지뢰의 폭파 속도 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3085465082"],"fractured":["fractured.stat_3085465082"]}}}
+{"ref":"Minimum # Linked Sockets","better":1,"matchers":[{"string":"연결된 홈 최소 #개"}],"trade":{"ids":{"necropolis":["necropolis.stat_1627970280"]}}}
 {"ref":"Minion Instability","better":1,"matchers":[{"string":"소환수 불안정"}],"trade":{"ids":{"explicit":["explicit.stat_433293234"],"scourge":["scourge.stat_433293234"]}}}
 {"ref":"Minion Life is increased by their Overcapped Fire Resistance","better":1,"matchers":[{"string":"소환수의 제한 초과 화염 저항에 따라 소환수 생명력 증가"}],"trade":{"ids":{"explicit":["explicit.stat_1586164348"]}}}
 {"ref":"Minions are Aggressive","better":1,"matchers":[{"string":"소환수가 공격적으로 행동"}],"trade":{"ids":{"explicit":["explicit.stat_128585622"],"fractured":["fractured.stat_128585622"]}}}
@@ -4585,7 +4710,7 @@
 {"ref":"Modifiers to number of Projectiles instead apply\nto the number of targets Projectiles Split towards","better":1,"matchers":[{"string":"속성 부여 효과를 투사체 수 대신\n투사체가 분할되는 대상 수에 적용"}],"trade":{"ids":{"explicit":["explicit.stat_2057712935"]}}}
 {"ref":"Molten Shell has #% increased Skill Effect Duration","better":1,"matchers":[{"string":"용암 방패의 스킬 효과 지속시간 #% 증가"},{"string":"용암 방패의 스킬 효과 지속시간 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_4255043252"]}}}
 {"ref":"Molten Strike fires an additional Projectile","better":1,"matchers":[{"string":"용암 타격이 투사체 #개 추가 발사"},{"string":"용암 타격이 투사체 1개 추가 발사","value":1}],"trade":{"ids":{"enchant":["enchant.stat_995860222"]}}}
-{"ref":"Monster Damage Penetrates #% Elemental Resistances","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터 피해가 #%의 원소 저항 관통"}],"trade":{"ids":{"explicit":["explicit.stat_1898978455"]}}}
+{"ref":"Monster Damage Penetrates #% Elemental Resistances","better":1,"matchers":[{"string":"몬스터 피해가 #%의 원소 저항 관통"}],"trade":{"ids":{"explicit":["explicit.stat_1898978455"]}}}
 {"ref":"Monsters are Hexproof","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 사술 방지 보유"}],"trade":{"ids":{"explicit":["explicit.stat_4154059009"],"fractured":["fractured.stat_4154059009"]}}}
 {"ref":"Monsters are Unaffected by Curses","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 저주의 영향을 받지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_1472832594"]}}}
 {"ref":"Monsters cannot be Leeched from","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터는 흡수 대상이 되지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_1140978125"],"fractured":["fractured.stat_1140978125"]}}}
@@ -4597,7 +4722,7 @@
 {"ref":"Monsters fire # additional Projectiles","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 투사체 #개 추가 발사"},{"string":"플레이어 및 몬스터가 투사체 #개 추가 발사"},{"string":"플레이어가 투사체 #개 추가 발사"}],"trade":{"ids":{"explicit":["explicit.stat_1309819744"],"fractured":["fractured.stat_1309819744"]}}}
 {"ref":"Monsters gain #% of Maximum Life as Extra Maximum Energy Shield","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 최대 생명력의 #%를 추가 에너지 보호막 최대치로 획득"}],"trade":{"ids":{"explicit":["explicit.stat_2887760183"],"fractured":["fractured.stat_2887760183"]}}}
 {"ref":"Monsters gain #% of their Physical Damage as Extra Chaos Damage","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 물리 피해의 #%를 추가 카오스 피해로 획득"}],"trade":{"ids":{"explicit":["explicit.stat_1840747977"],"fractured":["fractured.stat_1840747977"]}}}
-{"ref":"Monsters gain #% of their Physical Damage as Extra Damage of a random Element","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 물리 피해의 #%를 추가 무작위 원소 피해로 획득"}],"trade":{"ids":{"explicit":["explicit.stat_4062840317"]}}}
+{"ref":"Monsters gain #% of their Physical Damage as Extra Damage of a random Element","better":1,"matchers":[{"string":"몬스터가 물리 피해의 #%를 추가 무작위 원소 피해로 획득"}],"trade":{"ids":{"explicit":["explicit.stat_4062840317"],"fractured":["fractured.stat_4062840317"]}}}
 {"ref":"Monsters have #% chance to Avoid Ailments","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 #%의 확률로 상태 이상 긴급회피"}],"trade":{"ids":{"explicit":["explicit.stat_376585490"]}}}
 {"ref":"Monsters have #% chance to Avoid Elemental Ailments","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 #%의 확률로 원소 상태 이상 긴급회피"}],"trade":{"ids":{"explicit":["explicit.stat_322206271"],"fractured":["fractured.stat_322206271"]}}}
 {"ref":"Monsters have #% chance to Blind on Hit","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 명중 시 #%의 확률로 실명 유발"},{"string":"몬스터가 명중 시 실명 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1629869774"],"fractured":["fractured.stat_1629869774"]}}}
@@ -4618,21 +4743,21 @@
 {"ref":"Monsters have #% increased Effect of Shock","better":1,"matchers":[{"string":"몬스터의 감전 효과 #% 증가"},{"string":"몬스터의 감전 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2029018782"]}}}
 {"ref":"Monsters have #% increased Freeze Duration","better":1,"matchers":[{"string":"몬스터의 동결 지속시간 #% 증가"},{"string":"몬스터의 동결 지속시간 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3865186586"]}}}
 {"ref":"Monsters have #% increased Ignite Duration","better":1,"matchers":[{"string":"몬스터의 점화 지속시간 #% 증가"},{"string":"몬스터의 점화 지속시간 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2849040018"]}}}
-{"ref":"Monsters have #% increased Poison Duration","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 중독 지속시간 #% 증가"},{"string":"몬스터의 중독 지속시간 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_134839587"]}}}
-{"ref":"Monsters have +# to Maximum Endurance Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 인내 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_4067268731"]}}}
-{"ref":"Monsters have +# to Maximum Frenzy Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 격분 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_3900284865"]}}}
-{"ref":"Monsters have +# to Maximum Power Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 권능 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_1103106414"]}}}
+{"ref":"Monsters have #% increased Poison Duration","better":1,"matchers":[{"string":"몬스터의 중독 지속시간 #% 증가"},{"string":"몬스터의 중독 지속시간 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_134839587"]}}}
+{"ref":"Monsters have +# to Maximum Endurance Charges","better":1,"matchers":[{"string":"몬스터의 인내 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_4067268731"]}}}
+{"ref":"Monsters have +# to Maximum Frenzy Charges","better":1,"matchers":[{"string":"몬스터의 격분 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_3900284865"]}}}
+{"ref":"Monsters have +# to Maximum Power Charges","better":1,"matchers":[{"string":"몬스터의 권능 충전 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_1103106414"]}}}
 {"ref":"Monsters have +#% Chance to Block Attack Damage","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 공격 피해 막기 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_881836292"]}}}
 {"ref":"Monsters have +#% Chance to Block Spell Damage","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 주문 피해 막기 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_395617565"]}}}
 {"ref":"Monsters have +#% chance to Suppress Spell Damage","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터의 주문 피해 억제 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_2138205941"],"fractured":["fractured.stat_2138205941"]}}}
 {"ref":"Monsters have +#% to all maximum Elemental Resistances","better":1,"matchers":[{"string":"몬스터의 모든 원소 저항 최대치 #%"}],"trade":{"ids":{"explicit":["explicit.stat_3783555531"]}}}
 {"ref":"Monsters have a #% chance Ignite, Freeze and Shock on Hit","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 명중 시 #%의 확률로 점화, 동결, 감전 유발"},{"string":"몬스터가 명중 시 점화, 동결, 감전 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2553656203"],"fractured":["fractured.stat_2553656203"]}}}
 {"ref":"Monsters have a #% chance to avoid Poison, Impale, and Bleeding","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 #%의 확률로 중독, 꿰뚫기, 출혈 회피"}],"trade":{"ids":{"explicit":["explicit.stat_144665660"],"fractured":["fractured.stat_144665660"]}}}
-{"ref":"Monsters have a #% chance to gain an Endurance Charge when hit","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 피격 시 #%의 확률로 인내 충전 획득"},{"string":"몬스터가 피격 시 인내 충전 획득","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3707756896"]}}}
+{"ref":"Monsters have a #% chance to gain an Endurance Charge when hit","better":1,"matchers":[{"string":"몬스터가 피격 시 #%의 확률로 인내 충전 획득"},{"string":"몬스터가 피격 시 인내 충전 획득","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3707756896"]}}}
 {"ref":"Monsters have Onslaught","better":1,"matchers":[{"string":"몬스터가 맹공 보유"}],"trade":{"ids":{"implicit":["implicit.stat_1277237365"]}}}
 {"ref":"Monsters impact #% increased Resolve","better":1,"matchers":[{"string":"몬스터가 투지에 주는 영향 #% 증가"},{"string":"몬스터가 투지에 주는 영향 #% 감소","negate":true}],"trade":{"ids":{"explicit":["sanctum.stat_3554249693"]}}}
 {"ref":"Monsters Imprisoned by Essences have a #% chance to contain a Remnant of Corruption","better":1,"matchers":[{"string":"에센스에 갇힌 몬스터가 #%의 확률로 타락의 유물 보유"}],"trade":{"ids":{"enchant":["enchant.stat_1439991839"]}}}
-{"ref":"Monsters inflict # Grasping Vine on Hit","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 명중 시 탐욕스러운 덩굴 #개 유발"}],"trade":{"ids":{"explicit":["explicit.stat_1751584857"]}}}
+{"ref":"Monsters inflict # Grasping Vine on Hit","better":1,"matchers":[{"string":"몬스터가 명중 시 탐욕스러운 덩굴 #개 유발"}],"trade":{"ids":{"explicit":["explicit.stat_1751584857"],"fractured":["fractured.stat_1751584857"]}}}
 {"ref":"Monsters Overwhelm #% Physical Damage Reduction","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 물리 피해 감소 효과의 #% 압도"}],"trade":{"ids":{"explicit":["explicit.stat_1280322024"]}}}
 {"ref":"Monsters Poison on Hit","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 명중 시 중독 유발"},{"string":"몬스터의 공격 명중 시 중독"}],"trade":{"ids":{"explicit":["explicit.stat_3350803563","explicit.stat_394639761"],"fractured":["fractured.stat_3350803563"]}}}
 {"ref":"Monsters prevent +#% of Suppressed Spell Damage","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터가 방지하는 억제된 주문 피해 #%"},{"string":"몬스터가 억제된 주문 피해의 #% 방지"}],"trade":{"ids":{"explicit":["explicit.stat_1260060682"]}}}
@@ -4642,7 +4767,7 @@
 {"ref":"Monsters Sacrificed at Ritual Altars in your Maps grant #% increased Tribute","better":1,"matchers":[{"string":"지도 내 의식 제단에서 희생되는 몬스터가 주는 공물 점수 #% 증가"},{"string":"지역 내 의식 제단에서 희생되는 몬스터가 주는 공물 점수 #% 증가"},{"string":"지도 내 의식 제단에서 희생되는 몬스터가 주는 공물 점수 #% 감소","negate":true},{"string":"지역 내 의식 제단에서 희생되는 몬스터가 주는 공물 점수 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_159726667"]}}}
 {"ref":"Monsters take #% increased Damage","better":1,"matchers":[{"string":"몬스터가 받는 피해 #% 증가"},{"string":"몬스터가 받는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3007862517","sanctum.stat_2549512259"]}}}
 {"ref":"Monsters take #% reduced Extra Damage from Critical Strikes","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터가 치명타로 받는 추가 피해 #% 감소"},{"string":"몬스터가 치명타로 받는 추가 피해 #% 증가","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_337935900"],"fractured":["fractured.stat_337935900"]}}}
-{"ref":"Monsters' Action Speed cannot be modified to below Base Value","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 동작 속도가 기본 수치 밑으로 내려가지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2758454849"]}}}
+{"ref":"Monsters' Action Speed cannot be modified to below Base Value","better":1,"matchers":[{"string":"몬스터의 동작 속도가 기본 수치 밑으로 내려가지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2758454849"]}}}
 {"ref":"Monsters' Action Speed cannot be modified to below Base Value\nMonsters' Movement Speed cannot be modified to below Base Value","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터의 동작 속도가 기본 수치 밑으로 내려가지 않음\n몬스터의 이동 속도가 기본 수치 밑으로 내려가지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_798009319"],"fractured":["fractured.stat_798009319"]}}}
 {"ref":"Monsters' Attack Hits inflict Bleeding","better":1,"matchers":[{"string":"몬스터가 공격 명중 시 출혈 유발"}],"trade":{"ids":{"explicit":["explicit.stat_1091321491"]}}}
 {"ref":"Monsters' Attacks have #% chance to Impale on Hit","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터의 공격이 명중 시 #%의 확률로 꿰뚫음"},{"string":"몬스터의 공격이 명중 시 꿰뚫음","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1541224187"],"fractured":["fractured.stat_1541224187"]}}}
@@ -4651,8 +4776,8 @@
 {"ref":"Monsters' Hits have #% chance to Freeze","better":1,"matchers":[{"string":"몬스터가 명중 시 #%의 확률로 동결 유발"},{"string":"몬스터가 명중 시 항상 동결 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2227428689"]}}}
 {"ref":"Monsters' Hits have #% chance to Ignite","better":1,"matchers":[{"string":"몬스터가 명중 시 #%의 확률로 점화 유발"},{"string":"몬스터가 명중 시 항상 점화 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2130085756"]}}}
 {"ref":"Monsters' Hits have #% chance to Shock","better":1,"matchers":[{"string":"몬스터가 명중 시 #%의 확률로 감전 유발"},{"string":"몬스터가 명중 시 항상 감전 유발","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3428180555"]}}}
-{"ref":"Monsters' Movement Speed cannot be modified to below Base Value","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 이동 속도가 기본 수치 밑으로 내려가지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_777421120"]}}}
-{"ref":"Monsters' Projectiles have #% chance to be able to Chain when colliding with Terrain","better":1,"fromAreaMods":true,"matchers":[{"string":"몬스터의 투사체가 지형과 충돌 시 #%의 확률로 연쇄"},{"string":"몬스터의 투사체가 지형과 충돌 시 연쇄 가능","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2753403220"]}}}
+{"ref":"Monsters' Movement Speed cannot be modified to below Base Value","better":1,"matchers":[{"string":"몬스터의 이동 속도가 기본 수치 밑으로 내려가지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_777421120"]}}}
+{"ref":"Monsters' Projectiles have #% chance to be able to Chain when colliding with Terrain","better":1,"matchers":[{"string":"몬스터의 투사체가 지형과 충돌 시 #%의 확률로 연쇄"},{"string":"몬스터의 투사체가 지형과 충돌 시 연쇄 가능","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2753403220"]}}}
 {"ref":"Monsters' skills Chain # additional times","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"몬스터의 스킬 #회 추가 연쇄"}],"trade":{"ids":{"explicit":["explicit.stat_3183973644"],"fractured":["fractured.stat_3183973644"]}}}
 {"ref":"Movement Speed cannot be modified to below Base Value","better":1,"matchers":[{"string":"이동 속도가 기본 수치 밑으로 내려가지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_3875592188"]}}}
 {"ref":"Moving while Bleeding doesn't cause you to take extra Damage","better":1,"matchers":[{"string":"출혈 상태에서 이동해도 추가 피해를 받지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_935326447"],"fractured":["fractured.stat_935326447"],"crafted":["crafted.stat_935326447"]}}}
@@ -4747,9 +4872,17 @@
 {"ref":"Pain Attunement","better":1,"matchers":[{"string":"고통의 조율"}],"trade":{"ids":{"explicit":["explicit.stat_98977150"],"fractured":["fractured.stat_98977150"],"scourge":["scourge.stat_98977150"]}}}
 {"ref":"Passive Skills in Radius also grant #% increased Armour","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 방어도 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 방어도 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1647724040"]}}}
 {"ref":"Passive Skills in Radius also grant #% increased Chaos Damage","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 카오스 피해 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 카오스 피해 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1313763128"]}}}
+{"ref":"Passive Skills in Radius also grant #% increased Cold Damage","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 냉기 피해 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 냉기 피해 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2999571636"]}}}
+{"ref":"Passive Skills in Radius also grant #% increased Energy Shield","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 에너지 보호막 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 에너지 보호막 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4215928287"]}}}
 {"ref":"Passive Skills in Radius also grant #% increased Evasion Rating","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 회피 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 회피 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3761482453"]}}}
+{"ref":"Passive Skills in Radius also grant #% increased Fire Damage","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 화염 피해 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 화염 피해 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_719810173"]}}}
+{"ref":"Passive Skills in Radius also grant #% increased Global Critical Strike Chance","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 일반 치명타 확률 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 일반 치명타 확률 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3901726941"]}}}
+{"ref":"Passive Skills in Radius also grant #% increased Lightning Damage","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 번개 피해 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 번개 피해 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3556460433"]}}}
+{"ref":"Passive Skills in Radius also grant #% increased Physical Damage","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 물리 피해 #% 증가 부여"},{"string":"반경 내 패시브 스킬이 추가로 물리 피해 #% 감소 부여","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3252387974"]}}}
 {"ref":"Passive Skills in Radius also grant +# to all Attributes","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 모든 능력치 # 부여"}],"trade":{"ids":{"explicit":["explicit.stat_3587101704"]}}}
 {"ref":"Passive Skills in Radius also grant +# to maximum Life","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 최대 생명력 # 부여"}],"trade":{"ids":{"explicit":["explicit.stat_1223932609"]}}}
+{"ref":"Passive Skills in Radius also grant +# to maximum Mana","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 마나 최대치 # 부여"}],"trade":{"ids":{"explicit":["explicit.stat_3382199855"]}}}
+{"ref":"Passive Skills in Radius also grant +#% to Chaos Resistance","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 추가로 카오스 저항 #% 부여"}],"trade":{"ids":{"explicit":["explicit.stat_1812306107"]}}}
 {"ref":"Passive Skills in Radius also grant: #% increased Unarmed Attack Speed with Melee Skills","better":1,"matchers":[{"string":"반경 내 패시브 스킬이 제공: 근접 스킬의 비무장 공격 속도 #% 감소"},{"string":"반경 내 패시브 스킬이 제공: 근접 스킬의 비무장 공격 속도 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_3087912144"]}}}
 {"ref":"Passive Skills in Radius also grant: Traps and Mines deal # to # added Physical Damage","better":1,"matchers":[{"string":"반경 내의 패시브 스킬이 제공: 덫 및 지뢰가 주는 물리 피해 #~# 추가"}],"trade":{"ids":{"explicit":["explicit.stat_576760472"],"fractured":["fractured.stat_576760472"]}}}
 {"ref":"Passives granting Cold Resistance or all Elemental Resistances in Radius\nalso grant an equal chance to gain a Frenzy Charge on Kill","better":1,"matchers":[{"string":"처치 시 반경 내 패시브 스킬이 제공하는 냉기 저항 또는 모든 원소 저항 수치와\n동일한 확률로 격분 충전 획득"}],"trade":{"ids":{"explicit":["explicit.stat_509677462"]}}}
@@ -4783,10 +4916,11 @@
 {"ref":"Petrified Blood has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"피 석화의 마나 점유 효율 #% 증가"},{"string":"피 석화의 마나 점유 효율 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1779904215","enchant.stat_1829483269"]}}}
 {"ref":"Petrified during Effect","better":1,"matchers":[{"string":"효과를 받는 동안 석화 상태"}],"trade":{"ids":{"explicit":["explicit.stat_1935500672"]}}}
 {"ref":"Physical Damage taken bypasses Energy Shield","better":1,"matchers":[{"string":"받는 물리 피해의 #%가 에너지 보호막에 막히지 않음"},{"string":"받는 물리 피해가 에너지 보호막에 막히지 않음","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2649513539"]}}}
+{"ref":"Physical Modifiers are #% scarcer","better":1,"matchers":[{"string":"물리 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_426588631"]}}}
 {"ref":"Plague Bearer Buff grants +#% to Poison Damage over Time Multiplier while Infecting","better":1,"matchers":[{"string":"독성 운반자 버프에 감염된 동안 지속 중독 피해 배율 #% 적용"}],"trade":{"ids":{"enchant":["enchant.stat_1967208066"]}}}
 {"ref":"Plague Bearer deals Damage based on an additional #% of Plague Value","better":1,"matchers":[{"string":"독성 운반자가 주는 피해가 역병 수치의 #%에 비례"}],"trade":{"ids":{"enchant":["enchant.stat_2093796647"]}}}
-{"ref":"Player Skills which Throw Mines throw up to # fewer Mines","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어의 지뢰 투척 스킬이 지뢰를 1개 덜 투척","value":-1},{"string":"플레이어의 스킬이 지뢰 #개 추가 투척"},{"string":"플레이어의 지뢰 투척 스킬이 지뢰를 최대 #개 덜 투척"},{"string":"플레이어의 스킬이 지뢰 1개 추가 투척","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3633247582"]}}}
-{"ref":"Player Skills which Throw Traps throw up to # fewer Traps","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어의 덫 투척 스킬이 덫을 1개 덜 투척","value":-1},{"string":"플레이어의 덫 투척 스킬이 덫 최대 #개 추가 투척"},{"string":"플레이어의 덫 투척 스킬이 덫을 최대 #개 덜 투척"},{"string":"플레이어의 덫 투척 스킬이 덫 최대 1개 추가 투척","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3693062339"]}}}
+{"ref":"Player Skills which Throw Mines throw up to # fewer Mines","better":1,"matchers":[{"string":"플레이어의 지뢰 투척 스킬이 지뢰를 1개 덜 투척","value":-1},{"string":"플레이어의 스킬이 지뢰 #개 추가 투척"},{"string":"플레이어의 지뢰 투척 스킬이 지뢰를 최대 #개 덜 투척"},{"string":"플레이어의 스킬이 지뢰 1개 추가 투척","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3633247582"],"fractured":["fractured.stat_3633247582"]}}}
+{"ref":"Player Skills which Throw Traps throw up to # fewer Traps","better":1,"matchers":[{"string":"플레이어의 덫 투척 스킬이 덫을 1개 덜 투척","value":-1},{"string":"플레이어의 덫 투척 스킬이 덫 최대 #개 추가 투척"},{"string":"플레이어의 덫 투척 스킬이 덫을 최대 #개 덜 투척"},{"string":"플레이어의 덫 투척 스킬이 덫 최대 1개 추가 투척","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3693062339"],"fractured":["fractured.stat_3693062339"]}}}
 {"ref":"Player's Life and Mana Recovery from Flasks are instant","better":1,"matchers":[{"string":"플레이어의 생명력 및 마나가 플라스크로 즉시 회복"}],"trade":{"ids":{"enchant":["enchant.stat_3137138073"]}}}
 {"ref":"Players and Monsters take #% increased Chaos Damage","better":1,"matchers":[{"string":"플레이어와 몬스터가 받는 카오스 피해 #% 증가"},{"string":"플레이어와 몬스터가 받는 카오스 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1984484581"]}}}
 {"ref":"Players and Monsters take #% increased Cold Damage","better":1,"matchers":[{"string":"플레이어와 몬스터가 받는 냉기 피해 #% 증가"},{"string":"플레이어와 몬스터가 받는 냉기 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3207852985"]}}}
@@ -4794,30 +4928,30 @@
 {"ref":"Players and Monsters take #% increased Lightning Damage","better":1,"matchers":[{"string":"플레이어와 몬스터가 받는 번개 피해 #% 증가"},{"string":"플레이어와 몬스터가 받는 번개 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2400448724"]}}}
 {"ref":"Players and Monsters take #% increased Physical Damage","better":1,"matchers":[{"string":"플레이어와 몬스터가 받는 물리 피해 #% 증가"},{"string":"플레이어와 몬스터가 받는 물리 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3541635261"]}}}
 {"ref":"Players and their Minions cannot take Reflected Damage","better":1,"matchers":[{"string":"플레이어 및 소환수가 반사 피해를 받지 않음"}],"trade":{"ids":{"enchant":["enchant.stat_3151377452"]}}}
-{"ref":"Players and their Minions deal no damage for 4 out of every 10 seconds","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들과 그 소환수가 10초마다 4초 동안 피해를 주지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2408625104"]}}}
+{"ref":"Players and their Minions deal no damage for 4 out of every 10 seconds","better":1,"matchers":[{"string":"플레이어들과 그 소환수가 10초마다 4초 동안 피해를 주지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2408625104"],"fractured":["fractured.stat_2408625104"]}}}
 {"ref":"Players and their Minions have #% increased Mana Regeneration Rate","better":1,"matchers":[{"string":"플레이어 및 소환수의 마나 재생 속도 #% 증가"},{"string":"플레이어 및 소환수의 마나 재생 속도 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2513410880"],"fractured":["fractured.stat_2513410880"]}}}
 {"ref":"Players and their Minions Regenerate #% of Life per second","dp":true,"better":1,"matchers":[{"string":"플레이어 및 소환수가 1초마다 생명력의 #% 재생"}],"trade":{"ids":{"explicit":["explicit.stat_430044247"],"fractured":["fractured.stat_430044247"]}}}
-{"ref":"Players are assaulted by Bloodstained Sawblades","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들이 피얼룩 톱날에 습격당함"}],"trade":{"ids":{"explicit":["explicit.stat_3052102815"],"fractured":["fractured.stat_3052102815"]}}}
+{"ref":"Players are assaulted by Bloodstained Sawblades","better":1,"matchers":[{"string":"플레이어들이 피얼룩 톱날에 습격당함"}],"trade":{"ids":{"explicit":["explicit.stat_3052102815"],"fractured":["fractured.stat_3052102815"]}}}
 {"ref":"Players are Cursed with Elemental Weakness","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 원소 약화 저주에 걸림"}],"trade":{"ids":{"explicit":["explicit.stat_558910024"],"fractured":["fractured.stat_558910024"]}}}
 {"ref":"Players are Cursed with Enfeeble","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 쇠약화 저주에 걸림"}],"trade":{"ids":{"explicit":["explicit.stat_4103440490"],"fractured":["fractured.stat_4103440490"]}}}
 {"ref":"Players are Cursed with Temporal Chains","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 시간의 사슬 저주에 걸림"}],"trade":{"ids":{"explicit":["explicit.stat_2326202293"],"fractured":["fractured.stat_2326202293"]}}}
 {"ref":"Players are Cursed with Vulnerability","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 취약성 저주에 걸림"}],"trade":{"ids":{"explicit":["explicit.stat_1366534040"],"fractured":["fractured.stat_1366534040"]}}}
-{"ref":"Players are Marked for Death for # seconds\nafter killing a Rare or Unique monster","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들이 희귀 또는 고유 몬스터 처치 후\n#초 동안 죽음의 징표 획득"}],"trade":{"ids":{"explicit":["explicit.stat_436406826"],"fractured":["fractured.stat_436406826"]}}}
-{"ref":"Players cannot Block","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 막기 불가"}],"trade":{"ids":{"explicit":["explicit.stat_419810844"]}}}
+{"ref":"Players are Marked for Death for # seconds\nafter killing a Rare or Unique monster","better":1,"matchers":[{"string":"플레이어들이 희귀 또는 고유 몬스터 처치 후\n#초 동안 죽음의 징표 획득"}],"trade":{"ids":{"explicit":["explicit.stat_436406826"],"fractured":["fractured.stat_436406826"]}}}
+{"ref":"Players cannot Block","better":1,"matchers":[{"string":"플레이어가 막기 불가"}],"trade":{"ids":{"explicit":["explicit.stat_419810844"]}}}
 {"ref":"Players cannot Block Attack Damage","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 공격 피해 막기 불가"}],"trade":{"ids":{"explicit":["explicit.stat_2736953535"]}}}
 {"ref":"Players cannot Block Spell Damage","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 주문 피해 막기 불가"}],"trade":{"ids":{"explicit":["explicit.stat_4261179672"]}}}
-{"ref":"Players cannot gain Endurance Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 인내 충전 획득 불가"}],"trade":{"ids":{"explicit":["explicit.stat_3532144131"]}}}
+{"ref":"Players cannot gain Endurance Charges","better":1,"matchers":[{"string":"플레이어가 인내 충전 획득 불가"}],"trade":{"ids":{"explicit":["explicit.stat_3532144131"]}}}
 {"ref":"Players cannot gain Flask Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 플라스크 충전 불가"}],"trade":{"ids":{"explicit":["explicit.stat_36406748"]}}}
-{"ref":"Players cannot gain Frenzy Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 격분 충전 획득 불가"}],"trade":{"ids":{"explicit":["explicit.stat_620879593"]}}}
-{"ref":"Players cannot gain Power Charges","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 권능 충전 획득 불가"}],"trade":{"ids":{"explicit":["explicit.stat_1282233725"]}}}
+{"ref":"Players cannot gain Frenzy Charges","better":1,"matchers":[{"string":"플레이어가 격분 충전 획득 불가"}],"trade":{"ids":{"explicit":["explicit.stat_620879593"]}}}
+{"ref":"Players cannot gain Power Charges","better":1,"matchers":[{"string":"플레이어가 권능 충전 획득 불가"}],"trade":{"ids":{"explicit":["explicit.stat_1282233725"]}}}
 {"ref":"Players cannot inflict Exposure","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 노출 유발 불가"}],"trade":{"ids":{"explicit":["explicit.stat_1026390635"],"fractured":["fractured.stat_1026390635"]}}}
-{"ref":"Players cannot Recharge Energy Shield","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들이 에너지 보호막 재충전 불가"}],"trade":{"ids":{"explicit":["explicit.stat_1888489569"]}}}
+{"ref":"Players cannot Recharge Energy Shield","better":1,"matchers":[{"string":"플레이어들이 에너지 보호막 재충전 불가"}],"trade":{"ids":{"explicit":["explicit.stat_1888489569"]}}}
 {"ref":"Players cannot Regenerate Life, Mana or Energy Shield","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 생명력, 마나 또는 에너지 보호막 재생 불가"}],"trade":{"ids":{"explicit":["explicit.stat_1910157106"],"fractured":["fractured.stat_1910157106"]}}}
 {"ref":"Players cannot Suppress Spell Damage","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 주문 피해 억제 불가"}],"trade":{"ids":{"explicit":["explicit.stat_3203905334"]}}}
 {"ref":"Players gain #% increased Flask Charges per 25% Alert Level","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"경보 레벨 25%당 플레이어의 플라스크 충전량 #% 증가"},{"string":"경보 레벨 25%당 플레이어의 플라스크 충전량 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_816079058"],"fractured":["fractured.stat_816079058"]}}}
 {"ref":"Players gain #% reduced Flask Charges","better":-1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"Players gain #% increased Flask Charges"},{"string":"Players gain #% reduced Flask Charges","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2549889921"],"fractured":["fractured.stat_2549889921"]},"inverted":true}}
-{"ref":"Players have #% chance to be targeted by a Meteor when they use a Flask","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 플라스크 사용 시 #%의 확률로 유성의 대상이 됨"},{"string":"플레이어가 플라스크 사용 시 유성의 대상이 됨","value":100}],"trade":{"ids":{"explicit":["explicit.stat_4102870672"]}}}
-{"ref":"Players have #% increased Action Speed for each time they've used a Skill Recently","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 최근 4초 이내에 스킬을 사용한 횟수 1회당 해당 플레이어의 동작 속도 #% 증가"},{"string":"플레이어가 최근 4초 이내에 스킬을 사용한 횟수 1회당 해당 플레이어의 동작 속도 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3479892158"]}}}
+{"ref":"Players have #% chance to be targeted by a Meteor when they use a Flask","better":1,"matchers":[{"string":"플레이어가 플라스크 사용 시 #%의 확률로 유성의 대상이 됨"},{"string":"플레이어가 플라스크 사용 시 유성의 대상이 됨","value":100}],"trade":{"ids":{"explicit":["explicit.stat_4102870672"]}}}
+{"ref":"Players have #% increased Action Speed for each time they've used a Skill Recently","better":1,"matchers":[{"string":"플레이어가 최근 4초 이내에 스킬을 사용한 횟수 1회당 해당 플레이어의 동작 속도 #% 증가"},{"string":"플레이어가 최근 4초 이내에 스킬을 사용한 횟수 1회당 해당 플레이어의 동작 속도 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3479892158"]}}}
 {"ref":"Players have #% increased effect of Non-Curse Auras from Skills","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 비-저주 오라 스킬로 받는 효과 #% 증가"},{"string":"플레이어가 비-저주 오라 스킬로 받는 효과 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2450628570"],"fractured":["fractured.stat_2450628570"]}}}
 {"ref":"Players have #% less Area of Effect","better":-1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어의 효과 범위 #% 증폭"},{"string":"플레이어의 효과 범위 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2312028586"],"fractured":["fractured.stat_2312028586"]},"inverted":true}}
 {"ref":"Players have #% less Armour","better":-1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어의 방어도 #% 증폭"},{"string":"플레이어의 방어도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_272758639"],"fractured":["fractured.stat_272758639"]},"inverted":true}}
@@ -4825,21 +4959,21 @@
 {"ref":"Players have #% more Accuracy Rating","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어의 정확도 #% 증폭"},{"string":"플레이어의 정확도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3667574329"],"fractured":["fractured.stat_3667574329"]}}}
 {"ref":"Players have #% more Armour per 25% Alert Level","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"경보 레벨 25%당 플레이어의 방어도 #% 증폭"},{"string":"경보 레벨 25%당 플레이어의 방어도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2787931289"],"fractured":["fractured.stat_2787931289"]}}}
 {"ref":"Players have #% more Cooldown Recovery Rate","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어의 재사용 대기시간 회복 속도 #% 증폭"},{"string":"플레이어의 재사용 대기시간 회복 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_941368244"],"fractured":["fractured.stat_941368244"]}}}
-{"ref":"Players have #% more Defences","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어의 방어력 #% 증폭"},{"string":"플레이어의 방어력 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_943960754"]}}}
+{"ref":"Players have #% more Defences","better":1,"matchers":[{"string":"플레이어의 방어력 #% 증폭"},{"string":"플레이어의 방어력 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_943960754"]}}}
 {"ref":"Players have #% more Energy Shield Recovery Rate per 25% Alert Level","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"경보 레벨 25%당 플레이어의 에너지 보호막 회복 속도 #% 증폭"},{"string":"경보 레벨 25%당 플레이어의 에너지 보호막 회복 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_751773204"],"fractured":["fractured.stat_751773204"]}}}
 {"ref":"Players have #% more Evasion per 25% Alert Level","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"경보 레벨 25%당 플레이어의 회피 #% 증폭"},{"string":"경보 레벨 25%당 플레이어의 회피 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1238382441"],"fractured":["fractured.stat_1238382441"]}}}
 {"ref":"Players have #% more Life Recovery Rate per 25% Alert Level","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"경보 레벨 25%당 플레이어의 생명력 회복 속도 #% 증폭"},{"string":"경보 레벨 25%당 플레이어의 생명력 회복 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1466172118"],"fractured":["fractured.stat_1466172118"]}}}
 {"ref":"Players have #% more Mana Recovery Rate per 25% Alert Level","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"경보 레벨 25%당 플레이어의 마나 회복 속도 #% 증폭"},{"string":"경보 레벨 25%당 플레이어의 마나 회복 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_953449033"],"fractured":["fractured.stat_953449033"]}}}
 {"ref":"Players have #% reduced Chance to Block","better":-1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어의 막기 확률 #% 증가"},{"string":"플레이어의 막기 확률 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3729221884"],"fractured":["fractured.stat_3729221884"]},"inverted":true}}
 {"ref":"Players have #% to all maximum Resistances","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어의 모든 저항 최대치 #%"}],"trade":{"ids":{"explicit":["explicit.stat_3376488707"],"fractured":["fractured.stat_3376488707"]}}}
-{"ref":"Players have +# to maximum number of Summoned Totems","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들이 소환 가능한 토템 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_2912613786"]}}}
-{"ref":"Players in Area take #% increased Damage per nearby Ally","better":1,"fromAreaMods":true,"matchers":[{"string":"주변의 동료 1명당 지역 내 플레이어들이 받는 피해 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_4045850340"]}}}
+{"ref":"Players have +# to maximum number of Summoned Totems","better":1,"matchers":[{"string":"플레이어들이 소환 가능한 토템 최대치 #"}],"trade":{"ids":{"explicit":["explicit.stat_2912613786"]}}}
+{"ref":"Players in Area take #% increased Damage per nearby Ally","better":1,"matchers":[{"string":"주변의 동료 1명당 지역 내 플레이어들이 받는 피해 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_4045850340"],"fractured":["fractured.stat_4045850340"]}}}
 {"ref":"Players in Areas take on the form of Harbingers\nItems found in Areas are replaced by stacks of Currency Shards","better":1,"matchers":[{"string":"지역 내 플레이어들이 선구자의 형상을 띰\n지역에서 발견되는 아이템이 화폐 파편 중첩으로 변경되어 떨어짐"}],"trade":{"ids":{"explicit":["explicit.stat_2467500499"]}}}
 {"ref":"Players Prevent +#% of Suppressed Spell Damage","better":1,"fromAreaMods":true,"fromHeistAreaMods":true,"matchers":[{"string":"플레이어가 방지하는 억제된 주문 피해 #%"},{"string":"플레이어가 억제된 주문 피해의 #% 방지"}],"trade":{"ids":{"explicit":["explicit.stat_286947568"],"fractured":["fractured.stat_286947568"]}}}
 {"ref":"Players take #% reduced Damage from Monsters from Beyond","better":-1,"matchers":[{"string":"플레이어가 이계 몬스터에게 받는 피해 #% 증가"},{"string":"플레이어가 이계 몬스터에게 받는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3045897926"]},"inverted":true}}
-{"ref":"Players' Minions have #% more Attack Speed","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들의 소환수의 공격 속도 #% 증폭"},{"string":"플레이어들의 소환수의 공격 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1308016791"]}}}
-{"ref":"Players' Minions have #% more Cast Speed","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들의 소환수의 시전 속도 #% 증폭"},{"string":"플레이어들의 소환수의 시전 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1237051929"]}}}
-{"ref":"Players' Minions have #% more Movement Speed","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어들의 소환수의 이동 속도 #% 증폭"},{"string":"플레이어들의 소환수의 이동 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3991644188"]}}}
+{"ref":"Players' Minions have #% more Attack Speed","better":1,"matchers":[{"string":"플레이어들의 소환수의 공격 속도 #% 증폭"},{"string":"플레이어들의 소환수의 공격 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1308016791"]}}}
+{"ref":"Players' Minions have #% more Cast Speed","better":1,"matchers":[{"string":"플레이어들의 소환수의 시전 속도 #% 증폭"},{"string":"플레이어들의 소환수의 시전 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1237051929"]}}}
+{"ref":"Players' Minions have #% more Movement Speed","better":1,"matchers":[{"string":"플레이어들의 소환수의 이동 속도 #% 증폭"},{"string":"플레이어들의 소환수의 이동 속도 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3991644188"]}}}
 {"ref":"Players' Vaal Skills do not apply Soul Gain Prevention","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어가 사용하는 바알 스킬에 영혼 획득 방지가 적용되지 않음"}],"trade":{"ids":{"implicit":["implicit.stat_977063976"],"enchant":["enchant.stat_977063976"]}}}
 {"ref":"Point Blank","better":1,"matchers":[{"string":"근접 사격"}],"trade":{"ids":{"explicit":["explicit.stat_2896346114"],"implicit":["implicit.stat_2896346114"],"fractured":["fractured.stat_2896346114"],"scourge":["scourge.stat_2896346114"]}}}
 {"ref":"Poison Cursed Enemies on hit","better":1,"matchers":[{"string":"저주받은 적 명중 시 중독 유발"}],"trade":{"ids":{"explicit":["explicit.stat_4266201818"]}}}
@@ -4927,17 +5061,18 @@
 {"ref":"Raised Zombies take #% of their Maximum Life per second as Fire Damage","better":1,"matchers":[{"string":"소환한 좀비가 1초마다 자신의 최대 생명력의 #%를 화염 피해로 받음"}],"trade":{"ids":{"explicit":["explicit.stat_3733496041"]}}}
 {"ref":"Rallying Cry Exerts # additional Attack","better":1,"matchers":[{"string":"집결의 함성 사용 시 전력 공격 #회 추가"}],"trade":{"ids":{"enchant":["enchant.stat_2080441723"]}}}
 {"ref":"Rampage","better":1,"matchers":[{"string":"광란"}],"trade":{"ids":{"explicit":["explicit.stat_2397408229"]}}}
+{"ref":"Randomises the numeric values of base Defences on an Armour # times, keeping the best outcome","better":1,"matchers":[{"string":"방어구의 기본 방어력 수치를 #회 무작위 변경하고 최선의 결과를 적용합니다."}],"trade":{"ids":{"necropolis":["necropolis.stat_3846282039"]}}}
 {"ref":"Rare and Unique Crucible Monsters have #% chance to drop a Melee Weapon with\na Crucible Passive Skill Tree","better":1,"matchers":[{"string":"희귀 및 고유 시련 몬스터가 #%의 확률로 시련 패시브 스킬 트리를 보유한\n근접 무기를 떨어뜨림"},{"string":"희귀 및 고유 시련 몬스터가 시련 패시브 스킬 트리를 보유한 근접 무기를 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1745401062"]}}}
 {"ref":"Rare and Unique Crucible Monsters have #% chance to drop a Ranged Weapon with\na Crucible Passive Skill Tree","better":1,"matchers":[{"string":"희귀 및 고유 시련 몬스터가 #%의 확률로 시련 패시브 스킬 트리를 보유한\n원거리 무기를 떨어뜨림"},{"string":"희귀 및 고유 시련 몬스터가 시련 패시브 스킬 트리를 보유한 원거리 무기를 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3243514586"]}}}
 {"ref":"Rare and Unique Crucible Monsters have #% chance to drop a Shield with\na Crucible Passive Skill Tree","better":1,"matchers":[{"string":"희귀 및 고유 시련 몬스터가 #%의 확률로 시련 패시브 스킬 트리를 보유한\n방패를 떨어뜨림"},{"string":"희귀 및 고유 시련 몬스터가 시련 패시브 스킬 트리를 보유한 방패를 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1131820918"]}}}
 {"ref":"Rare and Unique Monsters found in Areas are Possessed and their Minions are Touched","better":1,"matchers":[{"string":"지역 내 발견되는 희귀 및 고유 몬스터가 사로잡히고 그 소환수들은 손길에 닿게 됨"}],"trade":{"ids":{"explicit":["explicit.stat_2168365746"]}}}
 {"ref":"Rare and Unique Monsters have #% chance to drop a Magmatic Ore","better":1,"matchers":[{"string":"희귀 및 고유 몬스터가 #%의 확률로 마그마 광석을 떨어뜨림"},{"string":"희귀 및 고유 몬스터가 마그마 광석을 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2779247747"]}}}
 {"ref":"Rare and Unique Monsters have #% chance to drop Divination Cards that grant Unique Weapons","better":1,"matchers":[{"string":"희귀 및 고유 몬스터가 #%의 확률로 고유 무기를 부여하는 점술 카드를 떨어뜨림"},{"string":"희귀 및 고유 몬스터가 고유 무기를 부여하는 점술 카드를 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1777881400"]}}}
-{"ref":"Rare and Unique Monsters remove #% of Life, Mana and Energy Shield on hit","better":1,"fromAreaMods":true,"matchers":[{"string":"희귀 및 고유 몬스터가 명중 시 생명력, 마나 및 에너지 보호막의 #% 제거"}],"trade":{"ids":{"explicit":["explicit.stat_3270788481"]}}}
-{"ref":"Rare and Unique monsters spawn a Tormented Spirit on reaching Low Life","better":1,"fromAreaMods":true,"matchers":[{"string":"희귀 및 고유 몬스터가 낮은 생명력 상태 도달 시 고통받는 혼백 생성"}],"trade":{"ids":{"explicit":["explicit.stat_1864874865"]}}}
-{"ref":"Rare Monsters have #% chance to have a Volatile Core","better":1,"fromAreaMods":true,"matchers":[{"string":"희귀 몬스터가 #%의 확률로 폭발성 중심부 보유"},{"string":"희귀 몬스터가 폭발성 중심부 보유","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1706239920"],"fractured":["fractured.stat_1706239920"]}}}
-{"ref":"Rare monsters in area are Shaper-Touched","better":1,"fromAreaMods":true,"matchers":[{"string":"지역 내 희귀 몬스터가 쉐이퍼의 손길에 닿음"}],"trade":{"ids":{"explicit":["explicit.stat_2931889194"]}}}
-{"ref":"Rare Monsters in your Maps have # additional Modifier","better":1,"fromAreaMods":true,"matchers":[{"string":"지도 내 희귀 몬스터가 속성 부여 #개 추가 보유"},{"string":"희귀 몬스터가 각각 속성 #개 추가 보유"}],"trade":{"ids":{"explicit":["explicit.stat_2550456553"]}}}
+{"ref":"Rare and Unique Monsters remove #% of Life, Mana and Energy Shield on hit","better":1,"matchers":[{"string":"희귀 및 고유 몬스터가 명중 시 생명력, 마나 및 에너지 보호막의 #% 제거"}],"trade":{"ids":{"explicit":["explicit.stat_3270788481"],"fractured":["fractured.stat_3270788481"]}}}
+{"ref":"Rare and Unique monsters spawn a Tormented Spirit on reaching Low Life","better":1,"matchers":[{"string":"희귀 및 고유 몬스터가 낮은 생명력 상태 도달 시 고통받는 혼백 생성"}],"trade":{"ids":{"explicit":["explicit.stat_1864874865"]}}}
+{"ref":"Rare Monsters have #% chance to have a Volatile Core","better":1,"matchers":[{"string":"희귀 몬스터가 #%의 확률로 폭발성 중심부 보유"},{"string":"희귀 몬스터가 폭발성 중심부 보유","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1706239920"],"fractured":["fractured.stat_1706239920"]}}}
+{"ref":"Rare monsters in area are Shaper-Touched","better":1,"matchers":[{"string":"지역 내 희귀 몬스터가 쉐이퍼의 손길에 닿음"}],"trade":{"ids":{"explicit":["explicit.stat_2931889194"]}}}
+{"ref":"Rare Monsters in your Maps have # additional Modifier","better":1,"fromAreaMods":true,"matchers":[{"string":"지도 내 희귀 몬스터가 속성 부여 #개 추가 보유"},{"string":"희귀 몬스터가 각각 속성 #개 추가 보유"}],"trade":{"ids":{"explicit":["explicit.stat_2550456553"],"fractured":["fractured.stat_2550456553"]}}}
 {"ref":"Reap deals #% increased Damage","better":1,"matchers":[{"string":"낫질로 주는 피해 #% 증가"},{"string":"낫질로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_1545524769"]}}}
 {"ref":"Recharges # Charge when you Consume an Ignited corpse","better":1,"matchers":[{"string":"점화된 시신 소모 시 충전 # 재충전"}],"trade":{"ids":{"explicit":["explicit.stat_2557247391"]}}}
 {"ref":"Reckoning has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"역습의 재사용 대기시간 회복 속도 #% 증가"},{"string":"역습의 재사용 대기시간 회복 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_804983774"]}}}
@@ -5036,6 +5171,8 @@
 {"ref":"Reflects # to # Physical Damage to Attackers on Block","better":1,"matchers":[{"string":"막아낼 시 공격자에게 #~#의 물리 피해 반사"},{"string":"막아낼 시 공격자에게 #의 물리 피해 반사"}],"trade":{"ids":{"explicit":["explicit.stat_1445684883"],"crafted":["crafted.stat_1445684883"]}}}
 {"ref":"Reflects # to # Physical Damage to Melee Attackers","better":1,"matchers":[{"string":"근접 공격자에게 #~#의 물리 피해 반사"}],"trade":{"ids":{"explicit":["explicit.stat_2970307386"]}}}
 {"ref":"Reflects your other Ring","better":1,"matchers":[{"string":"플레이어의 다른 반지 투영"}],"trade":{"ids":{"explicit":["explicit.stat_746505085"]}}}
+{"ref":"Reforge socket links # times, keeping the greatest number of links","better":1,"matchers":[{"string":"홈 연결부를 #회 재련하고 연결부 개수가 가장 많은 결과를 적용합니다."}],"trade":{"ids":{"necropolis":["necropolis.stat_2313200362"]}}}
+{"ref":"Reforge socket numbers # times, keeping the greatest number of sockets","better":1,"matchers":[{"string":"홈 개수를 #회 재련하고 홈 개수가 가장 많은 결과를 적용합니다."}],"trade":{"ids":{"necropolis":["necropolis.stat_3140088802"]}}}
 {"ref":"Regenerate # Energy Shield per second","better":1,"matchers":[{"string":"1초마다 에너지 보호막 # 재생"}],"trade":{"ids":{"explicit":["explicit.stat_1330109706","explicit.stat_2561836520"],"fractured":["fractured.stat_2561836520"]}}}
 {"ref":"Regenerate # Energy Shield per second if all Equipped items are Corrupted","better":1,"matchers":[{"string":"장착한 아이템이 모두 타락한 경우 1초마다 에너지 보호막 # 재생"}],"trade":{"ids":{"explicit":["explicit.stat_4156715241"]}}}
 {"ref":"Regenerate # Energy Shield per Second per Poison on you, up to 400 per second","better":1,"matchers":[{"string":"자신에게 중첩된 중독 하나당 1초마다 에너지 보호막 # 재생, 최대 400 재생"}],"trade":{"ids":{"explicit":["explicit.stat_948687156"]}}}
@@ -5110,13 +5247,19 @@
 {"ref":"Removes Bleeding when you use a Warcry","better":1,"matchers":[{"string":"함성 사용 시 출혈 제거"}],"trade":{"ids":{"explicit":["explicit.stat_3936926420"]}}}
 {"ref":"Removes Curses on use","better":1,"matchers":[{"string":"사용 시 저주 제거"}],"trade":{"ids":{"explicit":["explicit.stat_3895393544"],"fractured":["fractured.stat_3895393544"]}}}
 {"ref":"Removes Elemental Ailments on Rampage","better":1,"matchers":[{"string":"광란 시 원소 상태 이상 제거"}],"trade":{"ids":{"explicit":["explicit.stat_627889781"]}}}
+{"ref":"Requires at least # other Corpse of the same Monster Name","better":1,"matchers":[{"string":"몬스터 이름이 같은 다른 시신 #개 이상 필요"}],"trade":{"ids":{"necropolis":["necropolis.stat_3421947639"]}}}
+{"ref":"Reroll Base Type # times, keeping the Base Type with the highest Level Requirement","better":1,"matchers":[{"string":"기본 유형을 #회 무작위 변경하고 레벨 요구사항이 가장 높은 기본 유형을 적용합니다."}],"trade":{"ids":{"necropolis":["necropolis.stat_1863628975"]}}}
+{"ref":"Reroll Implicit Modifier Values # times, keeping the best outcome","better":1,"matchers":[{"string":"접두어의 고정 속성 수치를 #회 무작위 변경하여 최선의 결과를 적용합니다."}],"trade":{"ids":{"necropolis":["necropolis.stat_3767320538"]}}}
+{"ref":"Reroll Modifier Values of each Explicit Modifier # times, keeping the best outcome","better":1,"matchers":[{"string":"각 비고정 속성의 속성 수치를 #회 무작위 변경하여 최선의 결과를 적용합니다."}],"trade":{"ids":{"necropolis":["necropolis.stat_155723177"]}}}
 {"ref":"Rerolling Favours at Ritual Altars in your Maps has no Cost the first # time","better":1,"matchers":[{"string":"의식 제단에서 헌정품을 무작위 변경할 때 첫 #회는 비용 없음"},{"string":"지도 내 의식 제단에서 헌정품을 무작위 변경할 때 첫 #회는 비용 없음"}],"trade":{"ids":{"enchant":["enchant.stat_2425554673"]}}}
 {"ref":"Reserves #% of Life","better":1,"matchers":[{"string":"생명력 #% 점유"}],"trade":{"ids":{"explicit":["explicit.stat_2492660287"]}}}
+{"ref":"Resistance Modifiers are #% scarcer","better":1,"matchers":[{"string":"저항 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_3735181126"]}}}
 {"ref":"Resolute Technique","better":1,"matchers":[{"string":"확고한 기술"}],"trade":{"ids":{"explicit":["explicit.stat_3943945975"],"implicit":["implicit.stat_3943945975"],"fractured":["fractured.stat_3943945975"],"scourge":["scourge.stat_3943945975"]}}}
 {"ref":"Resolve Aegis Recovers #% faster while not losing Resolve","better":1,"matchers":[{"string":"투지를 상실하지 않는 동안 투지 비호가 #% 더 빠르게 회복"},{"string":"투지를 상실하지 않는 동안 투지 비호가 #% 더 느리게 회복","negate":true}],"trade":{"ids":{"explicit":["sanctum.stat_3889616543"]}}}
 {"ref":"Resolve Mitigation from Enemy Hits is based on +#% of Armour","better":1,"matchers":[{"string":"적에게 피격 시 투지 완화의 기준이 되는 방어도 #%"}],"trade":{"ids":{"explicit":["sanctum.stat_3621177126"]}}}
 {"ref":"Restores Ward on use","better":1,"matchers":[{"string":"사용 시 수호 회복"}],"trade":{"ids":{"implicit":["implicit.stat_2451856207"]}}}
 {"ref":"Reused at the end of this Flask's effect","better":1,"matchers":[{"string":"이 플라스크 효과가 끝나면 재사용"}],"trade":{"ids":{"enchant":["enchant.stat_1932727102"]}}}
+{"ref":"Reveals a Random Craft when Buried\nRarer Crafts are more common","better":1,"matchers":[{"string":"매장 시 무작위 제작 1개 드러냄\n희귀한 제작이 더 자주 등장"}],"trade":{"ids":{"necropolis":["necropolis.stat_2702573906"]}}}
 {"ref":"Reward Room Monsters deal #% increased Damage","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"보물 창고 몬스터가 주는 피해 #% 증가"},{"string":"보물 창고 몬스터가 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1390113017"],"fractured":["fractured.stat_1390113017"]}}}
 {"ref":"Reward Room Monsters take #% increased Damage","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"보물 창고 몬스터가 받는 피해 #% 증가"},{"string":"보물 창고 몬스터가 받는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_839556554"],"fractured":["fractured.stat_839556554"]}}}
 {"ref":"Reward Rooms have #% increased Monsters","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"보물 창고의 몬스터 #% 증가"},{"string":"보물 창고의 몬스터 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4056408881"],"fractured":["fractured.stat_4056408881"]}}}
@@ -5138,6 +5281,7 @@
 {"ref":"Right Ring Slot: Your Shocking Skitterbot's Aura applies Socketed Hex Curse instead","better":1,"matchers":[{"string":"오른쪽 반지 슬롯: 감전 원격 기폭 장치의 오라 대신 장착된 사술 저주 부여"}],"trade":{"ids":{"explicit":["explicit.stat_1809329372"]}}}
 {"ref":"Righteous Fire grants #% increased Spell Damage","better":1,"matchers":[{"string":"정의의 화염이 주문 피해 #% 증가 부여"},{"string":"정의의 화염이 주문 피해 #% 감소 부여","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_3316822388"]}}}
 {"ref":"Rin's Veiled","better":0,"matchers":[{"string":"린의 장막의"}],"trade":{"ids":{"veiled":["veiled.mod_6131"]}}}
+{"ref":"Ring is a Breach Ring","better":1,"matchers":[{"string":"반지가 균열 반지임"}],"trade":{"ids":{"necropolis":["necropolis.stat_2521746075"]}}}
 {"ref":"Riposte has #% increased Cooldown Recovery Rate","better":1,"matchers":[{"string":"반격 재사용 대기시간 회복 속도 #% 증가"},{"string":"반격 재사용 대기시간 회복 속도 #% 감소","negate":true}],"trade":{"ids":{"enchant":["enchant.stat_2287986752"]}}}
 {"ref":"Rogue Equipment cannot be found","better":1,"matchers":[{"string":"도둑 장비 발견 불가"}],"trade":{"ids":{"enchant":["enchant.stat_1045213941"]}}}
 {"ref":"Rogue Exiles deal #% increased Damage","better":1,"matchers":[{"string":"탈주 유배자가 주는 피해 #% 증가"},{"string":"탈주 유배자가 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1080855680"],"enchant":["enchant.stat_1080855680"]}}}
@@ -5502,6 +5646,7 @@
 {"ref":"Spectres have #% increased Damage","better":1,"matchers":[{"string":"망령의 피해 #% 증가"},{"string":"망령의 피해 #% 감소","negate":true}],"trade":{"ids":{"implicit":["implicit.stat_3645693773"],"enchant":["enchant.stat_3645693773"]}}}
 {"ref":"Spectres have #% increased maximum Life","better":1,"matchers":[{"string":"망령의 최대 생명력 #% 증가"},{"string":"망령의 최대 생명력 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3035514623"]}}}
 {"ref":"Spectres have a Base Duration of # seconds\nSpectres do not travel between Areas","better":1,"matchers":[{"string":"망령의 기본 지속시간 #초\n망령이 지역을 넘어 이동하지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_1210937073"]}}}
+{"ref":"Speed Modifiers are #% scarcer","better":1,"matchers":[{"string":"속도 속성이 #% 더 희귀함"}],"trade":{"ids":{"necropolis":["necropolis.stat_3589305647"]}}}
 {"ref":"Spell Hits have #% chance to Hinder you","better":1,"matchers":[{"string":"주문 명중 시 #%의 확률로 자신 이동 방해"},{"string":"주문 명중 시 자신 이동 방해","value":100}],"trade":{"ids":{"scourge":["scourge.stat_1533511331"]}}}
 {"ref":"Spell Skills always deal Critical Strikes on final Repeat","better":1,"matchers":[{"string":"주문 스킬이 마지막 반복 시 항상 치명타 피해를 줌"}],"trade":{"ids":{"explicit":["explicit.stat_3738009328"]}}}
 {"ref":"Spell Skills cannot deal Critical Strikes except on final Repeat","better":1,"matchers":[{"string":"주문 스킬이 마지막 반복 시를 제외하고 치명타 피해를 주지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2516869940"]}}}
@@ -5656,7 +5801,7 @@
 {"ref":"The Herald of the Scourge drops the Winds of Fate","better":1,"matchers":[{"string":"스컬지의 전령이 숙명의 바람을 떨어뜨림"}],"trade":{"ids":{"explicit":["sanctum.stat_4204412707"]}}}
 {"ref":"The Herald of the Scourge takes #% more Damage","better":1,"matchers":[{"string":"스컬지의 전령이 받는 피해 #% 증폭"},{"string":"스컬지의 전령이 받는 피해 #% 감폭","negate":true}],"trade":{"ids":{"explicit":["sanctum.stat_2226900052"]}}}
 {"ref":"The Impaler","better":1,"matchers":[{"string":"꿰뚫는 자"}],"trade":{"ids":{"explicit":["explicit.stat_1441799693"],"fractured":["fractured.stat_1441799693"],"scourge":["scourge.stat_1441799693"]}}}
-{"ref":"The Maven interferes with Players","better":1,"fromAreaMods":true,"matchers":[{"string":"메이븐이 플레이어를 방해함"}],"trade":{"ids":{"explicit":["explicit.stat_1594156261"]}}}
+{"ref":"The Maven interferes with Players","better":1,"matchers":[{"string":"메이븐이 플레이어를 방해함"}],"trade":{"ids":{"explicit":["explicit.stat_1594156261"]}}}
 {"ref":"The Merchant has an additional Choice","better":1,"matchers":[{"string":"상인이 선택지 #개 추가 보유"},{"string":"상인이 선택지 1개 추가 보유","value":1}],"trade":{"ids":{"explicit":["sanctum.stat_290775436"]}}}
 {"ref":"The Ring takes no Cut","better":1,"fromHeistAreaMods":true,"matchers":[{"string":"강탈단이 세금을 받지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_616993076"],"fractured":["fractured.stat_616993076"]}}}
 {"ref":"The Ring's Cut increased by #%","better":1,"matchers":[{"string":"강탈단 세금 #% 증가"},{"string":"강탈단 세금 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_293465345"],"fractured":["fractured.stat_293465345"]}}}
@@ -5774,7 +5919,7 @@
 {"ref":"Unique Crucible Monsters have #% chance to drop a Unique Ranged Weapon","better":1,"matchers":[{"string":"고유 시련 몬스터가 #%의 확률로 고유 원거리 무기를 떨어뜨림"},{"string":"고유 시련 몬스터가 고유 원거리 무기를 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_648161868"]}}}
 {"ref":"Unique Crucible Monsters have #% chance to drop a Unique Shield","better":1,"matchers":[{"string":"고유 시련 몬스터가 #%의 확률로 고유 방패를 떨어뜨림"},{"string":"고유 시련 몬스터가 고유 방패를 떨어뜨림","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1344329033"]}}}
 {"ref":"Unique Monsters drop Corrupted Items","better":1,"fromAreaMods":true,"matchers":[{"string":"고유 몬스터가 타락한 아이템을 떨어뜨림"}],"trade":{"ids":{"implicit":["implicit.stat_804187877"],"enchant":["enchant.stat_804187877"]}}}
-{"ref":"Unique Monsters have a random Shrine Buff","better":1,"fromAreaMods":true,"matchers":[{"string":"고유 몬스터가 무작위 성소 버프 #개 보유"},{"string":"고유 몬스터가 무작위 성소 버프 1개 보유","value":1}],"trade":{"ids":{"explicit":["explicit.stat_872972810"]}}}
+{"ref":"Unique Monsters have a random Shrine Buff","better":1,"matchers":[{"string":"고유 몬스터가 무작위 성소 버프 #개 보유"},{"string":"고유 몬스터가 무작위 성소 버프 1개 보유","value":1}],"trade":{"ids":{"explicit":["explicit.stat_872972810"]}}}
 {"ref":"Unwavering Stance","better":1,"matchers":[{"string":"변함없는 자세"}],"trade":{"ids":{"explicit":["explicit.stat_1683578560"],"implicit":["implicit.stat_1683578560"],"scourge":["scourge.stat_1683578560"]}}}
 {"ref":"Used when an adjacent Flask is used","better":1,"matchers":[{"string":"인접한 플라스크 사용 시 사용"}],"trade":{"ids":{"enchant":["enchant.stat_2219523244"]}}}
 {"ref":"Used when Charges reach full","better":1,"matchers":[{"string":"충전이 가득 차면 사용"}],"trade":{"ids":{"enchant":["enchant.stat_3287581721"]}}}
@@ -5837,7 +5982,7 @@
 {"ref":"Weapons and Shields found have #% chance to be fully Linked","better":1,"matchers":[{"string":"발견하는 무기 및 방패가 #%의 확률로 완전히 연결된 아이템"}],"trade":{"ids":{"explicit":["explicit.stat_375750705"]}}}
 {"ref":"Weapons and Shields found have #% chance to have the maximum number of Sockets","better":1,"matchers":[{"string":"발견하는 무기 및 방패가 #%의 확률로 최대 개수의 홈을 보유"}],"trade":{"ids":{"explicit":["explicit.stat_3785942492"]}}}
 {"ref":"Weapons you Animate create an additional copy","better":1,"matchers":[{"string":"플레이어가 기동한 무기가 복제본 #개 추가 생성"},{"string":"플레이어가 기동한 무기가 복제본 1개 추가 생성","value":1}],"trade":{"ids":{"explicit":["explicit.stat_1266553505"]}}}
-{"ref":"When a fifth Impale is inflicted on a Player, Impales are removed to Reflect thier Physical Damage multiplied by their remaining Hits to that Player and their Allies within 1.8 metres","better":1,"fromAreaMods":true,"matchers":[{"string":"플레이어에게 다섯 번째 꿰뚫기가 유발되면 꿰뚫기가 제거되고, 꿰뚫기의 물리 피해에 남은 명중 횟수를 곱한 만큼의 피해가 해당 플레이어 및 1.8미터 내의 동료들에게 반사됨"}],"trade":{"ids":{"explicit":["explicit.stat_1353527704"]}}}
+{"ref":"When a fifth Impale is inflicted on a Player, Impales are removed to Reflect thier Physical Damage multiplied by their remaining Hits to that Player and their Allies within 1.8 metres","better":1,"matchers":[{"string":"플레이어에게 다섯 번째 꿰뚫기가 유발되면 꿰뚫기가 제거되고, 꿰뚫기의 물리 피해에 남은 명중 횟수를 곱한 만큼의 피해가 해당 플레이어 및 1.8미터 내의 동료들에게 반사됨"}],"trade":{"ids":{"explicit":["explicit.stat_1353527704"],"fractured":["fractured.stat_1353527704"]}}}
 {"ref":"When an Enemy Hit deals Elemental Damage to you, their Resistance to those Elements becomes zero for 4 seconds","better":1,"matchers":[{"string":"적에게 피격되어 원소 피해를 받는 경우, 그 적의 해당 원소 저항이 4초 동안 0이 됨"}],"trade":{"ids":{"explicit":["explicit.stat_3714446071"]}}}
 {"ref":"When Hit during effect, #% of Life loss from Damage taken occurs over 4 seconds instead","better":1,"matchers":[{"string":"효과를 받는 동안 피격 시, 받은 피해로 인한 생명력 상실량의 #%가 4초에 걸쳐 상실됨"}],"trade":{"ids":{"explicit":["explicit.stat_41860024"]}}}
 {"ref":"When Hit, gain a random Movement Speed modifier from #% reduced to #% increased, until Hit again","better":-1,"matchers":[{"string":"피격 시 다시 피격당할 때까지 무작위 이동 속도 속성(#% 감소~#% 증가) 획득","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3281809492"]},"inverted":true}}
@@ -6608,7 +6753,7 @@
 {"ref":"Your Maps can contain Abysses","better":1,"matchers":[{"string":"지도에 심연 등장 가능"},{"string":"지역에 심연 등장 가능"}],"trade":{"ids":{"enchant":["enchant.stat_3564826949"]}}}
 {"ref":"Your Maps can contain Breaches","better":1,"matchers":[{"string":"지도에 균열 등장 가능"},{"string":"지역에 균열 등장 가능"}],"trade":{"ids":{"enchant":["enchant.stat_2180286756"]}}}
 {"ref":"Your Maps contain #","better":1,"matchers":[{"string":"지도에 아인하르 등장","value":2},{"string":"지역에 아인하르 등장","value":2},{"string":"지도에 알바 등장","value":3},{"string":"지역에 알바 등장","value":3},{"string":"지도에 니코 등장","value":5},{"string":"지역에 니코 등장","value":5},{"string":"지도에 준 등장","value":6},{"string":"지역에 준 등장","value":6},{"string":"지도에 자나 등장","value":7},{"string":"지역에 자나 등장","value":7}],"trade":{"ids":{"explicit":["explicit.stat_3187151138"],"enchant":["enchant.stat_3187151138"]},"option":true}}
-{"ref":"Your Maps contain # additional Clusters of Mysterious Barrels","better":1,"fromAreaMods":true,"matchers":[{"string":"지도에 수수께끼의 통 무더기 #개 추가 등장"},{"string":"지역에 수수께끼의 통 무더기 #개 추가 등장"}],"trade":{"ids":{"explicit":["explicit.stat_2343561786"],"enchant":["enchant.stat_1080470148","enchant.stat_1207515735","enchant.stat_1669553893","enchant.stat_4019701925"]}}}
+{"ref":"Your Maps contain # additional Clusters of Mysterious Barrels","better":1,"matchers":[{"string":"지도에 수수께끼의 통 무더기 #개 추가 등장"},{"string":"지역에 수수께끼의 통 무더기 #개 추가 등장"}],"trade":{"ids":{"explicit":["explicit.stat_2343561786"],"enchant":["enchant.stat_1080470148","enchant.stat_1207515735","enchant.stat_1669553893","enchant.stat_4019701925"]}}}
 {"ref":"Your Maps contain # additional pack of Corrupted Vaal Monsters","better":1,"fromAreaMods":true,"matchers":[{"string":"지도에 타락한 바알 몬스터 무리 #개 추가 등장"},{"string":"지역에 타락한 바알 몬스터 무리 #개 추가 등장"}],"trade":{"ids":{"enchant":["enchant.stat_1867024035"]}}}
 {"ref":"Your Maps contain # additional packs of Monsters that Convert when Killed","better":1,"matchers":[{"string":"지도에 처치 시 아군이 되는 몬스터 무리 #개 추가 등장"},{"string":"지역에 처치 시 아군이 되는 몬스터 무리 #개 추가 등장"}],"trade":{"ids":{"enchant":["enchant.stat_249139784"]}}}
 {"ref":"Your Maps contain # additional packs of Monsters that deal Chaos Damage","better":1,"matchers":[{"string":"지도에 카오스 피해를 주는 몬스터 무리 #개 추가 등장"},{"string":"지역에 카오스 피해를 주는 몬스터 무리 #개 추가 등장"}],"trade":{"ids":{"enchant":["enchant.stat_3728052911"]}}}

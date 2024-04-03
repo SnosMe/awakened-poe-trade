@@ -13,6 +13,7 @@ export default {
   RARITY: 'Rarity: ',
   ITEM_CLASS: 'Item Class: ',
   ITEM_LEVEL: 'Item Level: ',
+  CORPSE_LEVEL: 'Corpse Level: ',
   TALISMAN_TIER: 'Talisman Tier: ',
   GEM_LEVEL: 'Level: ',
   STACK_SIZE: 'Stack Size: ',
