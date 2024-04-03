@@ -273,17 +273,33 @@ function pickCorrectVariant (item: ParserState) {
 }
 
 function parseNamePlate (section: string[]) {
-  if (section.length < 3 ||
-      !section[0].startsWith(_$.ITEM_CLASS) ||
-      !section[1].startsWith(_$.RARITY)) {
+  let line = section.shift()
+  if (!line?.startsWith(_$.ITEM_CLASS)) {
     return err('item.parse_error')
   }
+
+  line = section.shift()
+  let rarityText: string | undefined
+  if (line?.startsWith(_$.RARITY)) {
+    rarityText = line.slice(_$.RARITY.length)
+    line = section.shift()
+  }
+
+  let name: string
+  if (line != null) {
+    name = markupConditionParser(line)
+  } else {
+    return err('item.parse_error')
+  }
+
+  line = section.shift()
+  const baseType = line && markupConditionParser(line)
 
   const item: ParserState = {
     rarity: undefined,
     category: undefined,
-    name: markupConditionParser(section[2]),
-    baseType: (section.length >= 4) ? markupConditionParser(section[3]) : undefined,
+    name: name,
+    baseType: baseType,
     isUnidentified: false,
     isCorrupted: false,
     newMods: [],
@@ -295,32 +311,22 @@ function parseNamePlate (section: string[]) {
     rawText: undefined!
   }
 
-  const rarityText = section[1].slice(_$.RARITY.length)
   switch (rarityText) {
     case _$.RARITY_CURRENCY:
-      item.category = ItemCategory.Currency
-      break
+      item.category = ItemCategory.Currency; break
     case _$.RARITY_DIVCARD:
-      item.category = ItemCategory.DivinationCard
-      break
+      item.category = ItemCategory.DivinationCard; break
     case _$.RARITY_GEM:
-      item.category = ItemCategory.Gem
-      break
+      item.category = ItemCategory.Gem; break
     case _$.RARITY_NORMAL:
     case _$.RARITY_QUEST:
-      item.rarity = ItemRarity.Normal
-      break
+      item.rarity = ItemRarity.Normal; break
     case _$.RARITY_MAGIC:
-      item.rarity = ItemRarity.Magic
-      break
+      item.rarity = ItemRarity.Magic; break
     case _$.RARITY_RARE:
-      item.rarity = ItemRarity.Rare
-      break
+      item.rarity = ItemRarity.Rare; break
     case _$.RARITY_UNIQUE:
-      item.rarity = ItemRarity.Unique
-      break
-    default:
-      return err('item.unknown')
+      item.rarity = ItemRarity.Unique; break
   }
 
   return ok(item)
