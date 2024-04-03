@@ -1,5 +1,5 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
-import { SPECIAL_SUPPORT_GEM } from '../filters/create-item-filters'
+import { SPECIAL_SUPPORT_GEM, floorToBracket } from '../filters/create-item-filters'
 import { ACCESSORY, ARMOUR, WEAPON } from '@/parser/meta'
 
 export function isValuableBasetype (item: ParsedItem): boolean {
@@ -37,6 +37,16 @@ export function getDetailsId (item: ParsedItem) {
   }
   if (isValuableBasetype(item)) {
     return forBasetype(item)
+  }
+  if (item.info.refName === 'Filled Coffin') {
+    const stat = item.statsByType[0]
+    const t = {
+      ns: item.info.namespace,
+      name: stat.stat.ref.replace('#', String(stat.sources[0].contributes?.value)),
+      variant: floorToBracket(item.itemLevel!, [1, 70, 80, 84]).toString()
+    }
+    console.log(t)
+    return t
   }
   return {
     ns: item.info.namespace,

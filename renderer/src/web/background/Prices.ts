@@ -176,6 +176,7 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
     { ns: 'ITEM', url: 'maps', type: 'Map' },
     { ns: 'ITEM', url: 'tattoos', type: 'Tattoo' },
     { ns: 'ITEM', url: 'omens', type: 'Omen' },
+    { ns: 'ITEM', url: 'coffins', type: 'Coffin' },
     { ns: 'DIVINATION_CARD', url: 'divination-cards', type: 'DivinationCard' },
     { ns: 'CAPTURED_BEAST', url: 'beasts', type: 'Beast' },
     { ns: 'UNIQUE', url: 'unique-jewels', type: 'UniqueJewel' },
