@@ -303,8 +303,8 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  if (filters.corrupted?.value === false) {
-    propSet(query.filters, 'misc_filters.filters.corrupted.option', String(false))
+  if (filters.corrupted?.value === false || filters.corrupted?.exact) {
+    propSet(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
   }
   if (filters.fractured?.value === false) {
     propSet(query.filters, 'misc_filters.filters.fractured_item.option', String(false))
