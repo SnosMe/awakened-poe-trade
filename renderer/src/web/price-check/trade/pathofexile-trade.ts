@@ -207,6 +207,7 @@ interface FetchResult {
     properties?: Array<{
       values: [[string, number]]
       type:
+      78 | // Corpse Level (Filled Coffin)
       30 | // Spawns a Level %0 Monster when Harvested
       6 | // Quality
       5 // Level
@@ -226,7 +227,7 @@ interface FetchResult {
 
 export interface PricingResult {
   id: string
-  itemLevel?: number
+  itemLevel?: string
   stackSize?: number
   corrupted?: boolean
   quality?: string
@@ -576,7 +577,7 @@ export async function requestResults (
   return data.map<PricingResult>(result => {
     return {
       id: result.id,
-      itemLevel: result.item.ilvl,
+      itemLevel: result.item.properties?.find(prop => prop.type === 78)?.values[0][0] ?? String(result.item.ilvl),
       stackSize: result.item.stackSize,
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
