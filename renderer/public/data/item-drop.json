@@ -658,6 +658,16 @@
 
   {
     "query": [
+      "ITEM::Orb of Fusing",
+      "ITEM::Omen of Connections",
+      "ITEM::Bestiary Scarab of the Shadowed Crow",
+      "CAPTURED_BEAST::The Black Mórrigan",
+      "CAPTURED_BEAST::Craicic Sand Spitter"
+    ],
+    "items": []
+  },
+  {
+    "query": [
       "UNIQUE::Curio of Absorption // Primordial Fragment",
       "UNIQUE::Curio of Consumption // Primordial Fragment",
       "UNIQUE::Curio of Decay // Primordial Fragment",
