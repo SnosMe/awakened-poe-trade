@@ -27,12 +27,12 @@ export class AppUpdater {
       if (action === 'check-for-update') {
         this.check()
       } else if (action === 'update-and-restart') {
-        // autoUpdater.quitAndInstall(false)
+        autoUpdater.quitAndInstall(false)
       }
     })
 
     // https://www.electron.build/configuration/nsis.html#portable
-    autoUpdater.autoDownload = false
+    autoUpdater.autoDownload = !process.env.PORTABLE_EXECUTABLE_DIR
 
     if (!autoUpdater.autoDownload || process.platform === 'darwin') {
       this.noAutoUpdatesReason = 'not-supported'

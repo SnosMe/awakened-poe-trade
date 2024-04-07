@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "3.24.10002",
+  "version": "3.24.10003",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SnosMe/awakened-poe-trade.git"
+    "url": "https://github.com/TesterNA/awakened-poe-trade.git"
   },
   "main": "dist/main.js",
   "dependencies": {
@@ -25,12 +25,12 @@
     "@types/ws": "^8.5.3",
     "@wokwi/bmp-ts": "^3.0.0",
     "comlink": "^4.3.1",
-    "electron": "19.1.9",
-    "electron-builder": "23.1.0",
+    "electron": "22.3.27",
+    "electron-builder": "24.9.1",
     "electron-updater": "^6.1.0",
     "esbuild": "^0.19.0",
     "ini": "^4.0.0",
-    "typescript": "4.9.x",
+    "typescript": "5.3.x",
     "ws": "^8.16.0"
   },
   "engines": {

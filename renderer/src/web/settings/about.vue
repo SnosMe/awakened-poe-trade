@@ -5,7 +5,7 @@
       <p class="text-base">Awakened PoE Trade</p>
       <p class="">{{ t('app.version', [version]) }}</p>
       <div class="flex gap-2">
-        <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/releases" target="_blank">{{ t('app.release_notes') }}</a>
+        <a class="border-b" href="https://github.com/TesterNA/awakened-poe-trade/releases" target="_blank">{{ t('app.release_notes') }}</a>
         <a class="border-b" href="https://github.com/SnosMe/awakened-poe-trade/issues" target="_blank">{{ t('app.report_bug') }}</a>
       </div>
     </div>
@@ -39,7 +39,7 @@ function checkForUpdates () {
 }
 
 function openDownloadPage () {
-  window.open('https://snosme.github.io/awakened-poe-trade/download')
+  window.open('https://github.com/TesterNA/awakened-poe-trade/releases/latest')
 }
 
 function quitAndInstall () {
