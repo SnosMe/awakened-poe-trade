@@ -1,62 +1,77 @@
-name: Build
+name: Build, Release, and Tag Management
 
 on:
   push:
     branches:
       - 'master'
-    tags-ignore:
-      - '**'
+    tags:
+      - 'v*'
     paths-ignore:
       - 'docs/**'
       - README.md
 
 jobs:
-  renderer:
+  tag-latest:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - run: yarn --frozen-lockfile
-      working-directory: ./renderer
-    - run: yarn make-index-files
-      working-directory: ./renderer
-    - run: yarn lint
-      working-directory: ./renderer
-    - run: yarn build
-      working-directory: ./renderer
-    - uses: actions/upload-artifact@v3
-      with:
-        name: renderer-dist
-        path: ./renderer/dist
-        retention-days: 1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Necessary to fetch all tags and history
 
-  package:
-    needs: renderer
-    strategy:
-      matrix:
-        os: [windows-2019, ubuntu-20.04, macos-11]
-    runs-on: ${{ matrix.os }}
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - uses: actions/download-artifact@v3
-      with:
-        name: renderer-dist
-        path: ./renderer/dist
-    - run: yarn --frozen-lockfile
-      working-directory: ./main
-    - run: yarn build
-      working-directory: ./main
-    - run: yarn package -p onTagOrDraft
-      working-directory: ./main
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Hash
-      if: ${{ startsWith(matrix.os, 'windows') }}
-      run: type .\main\dist\latest.yml
-    - name: Hash
-      if: ${{ startsWith(matrix.os, 'ubuntu') }}
-      run: cat ./main/dist/latest-linux.yml
-    - name: Hash
-      if: ${{ startsWith(matrix.os, 'macos') }}
-      run: cat ./main/dist/latest-mac.yml
+      - name: Fetch all tags
+        run: |
+          git remote add upstream https://github.com/SnosMe/awakened-poe-trade.git
+          git fetch --all --tags --force
+
+      - name: Get latest tag
+        id: latest-tag
+        run: |
+          LATEST_TAG=$(git tag --sort=-creatordate | head -n 1)
+          echo "Latest tag in the branch is $LATEST_TAG"
+          echo "::set-output name=tag::$LATEST_TAG"
+
+      - name: Get current commit tag
+        id: current-tag
+        run: |
+          CURRENT_TAG=$(git tag --points-at HEAD)
+          echo "Current commit tag is $CURRENT_TAG"
+          echo "::set-output name=current_tag::$CURRENT_TAG"
+
+      - name: Check commit message
+        if: steps.current-tag.outputs.current_tag == ''
+        id: check-message
+        run: |
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MESSAGE"
+          if [[ "$COMMIT_MESSAGE" == "Merge branch 'SnosMe:master' into master" ]]; then
+            echo "::set-output name=tag_required::true"
+          else
+            echo "::set-output name=tag_required::false"
+          fi
+
+      - name: Determine tag to use
+        if: steps.check-message.outputs.tag_required == 'true' || steps.current-tag.outputs.current_tag
+        id: tag-to-use
+        run: |
+          if [[ -n "${{ steps.current-tag.outputs.current_tag }}" ]]; then
+            TAG_TO_USE=${{ steps.current-tag.outputs.current_tag }}
+          else
+            TAG_TO_USE=${{ steps.latest-tag.outputs.tag }}
+          fi
+          echo "Tag to use is $TAG_TO_USE"
+          echo "::set-output name=tag_to_use::$TAG_TO_USE"
+
+      - name: Apply tag if required
+        if: steps.check-message.outputs.tag_required == 'true' || steps.current-tag.outputs.current_tag
+        run: |
+          git tag -f ${{ steps.tag-to-use.outputs.tag_to_use }} HEAD
+          git push origin ${{ steps.tag-to-use.outputs.tag_to_use }} --force
+
+      - name: Trigger downstream workflow
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/dispatches" \
+            -d '{"event_type": "tag-updated", "client_payload": {"tag": "${{ steps.tag-to-use.outputs.tag_to_use }}"}}'
+
