@@ -30,6 +30,7 @@ export interface ItemFilters {
   whiteSockets?: FilterNumeric
   corrupted?: {
     value: boolean
+    exact?: boolean
   }
   fractured?: {
     value: boolean

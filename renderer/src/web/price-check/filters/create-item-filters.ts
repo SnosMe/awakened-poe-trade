@@ -212,6 +212,11 @@ export function createFilters (
     }
   }
 
+  const forAdornedJewel = (
+    item.rarity === ItemRarity.Magic &&
+    item.isCorrupted &&
+    (item.category === ItemCategory.Jewel || item.category === ItemCategory.AbyssJewel))
+
   if (!item.isUnmodifiable && (
     item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||
@@ -219,14 +224,12 @@ export function createFilters (
     item.rarity === ItemRarity.Unique
   )) {
     filters.corrupted = {
-      value: item.isCorrupted
+      value: item.isCorrupted,
+      exact: forAdornedJewel
     }
   }
 
-  if (item.rarity === ItemRarity.Magic && (
-    item.category === ItemCategory.Jewel ||
-    item.category === ItemCategory.AbyssJewel
-  )) {
+  if (forAdornedJewel) {
     filters.rarity = {
       value: 'magic'
     }

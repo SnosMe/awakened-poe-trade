@@ -40,8 +40,10 @@ import VirtualScroll from '../../ui/VirtualScroll.vue'
 import type { MapStatMatcher } from './interfaces'
 
 function statToShowOrder (stat: Omit<MapStatMatcher, 'outdated'>) {
-  if (stat.heist) {
+  if (stat.uber) {
     return 1
+  } else if (stat.heist) {
+    return 2
   } else {
     return 0
   }
@@ -61,15 +63,16 @@ export default defineComponent({
     const widget = computed(() => findWidget<ItemCheckWidget>('item-check', props.config)!)
 
     const statList = computed(() => {
-      const out: Array<{ str: string, searchStr: string, heist: boolean }> = []
+      const out: Array<{ str: string, searchStr: string, heist: boolean, uber: boolean }> = []
       for (const stat of STATS_ITERATOR('AreaMods')) {
-        if (!stat.fromAreaMods && !stat.fromHeistAreaMods) continue
+        if (!stat.fromAreaMods && !stat.fromUberAreaMods && !stat.fromHeistAreaMods) continue
 
         for (const c of stat.matchers) {
           out.push({
             str: c.string,
             searchStr: c.string.toLowerCase(),
-            heist: (stat.fromHeistAreaMods && !stat.fromAreaMods) || false
+            heist: (stat.fromHeistAreaMods && !stat.fromAreaMods) || false,
+            uber: (stat.fromUberAreaMods && !stat.fromAreaMods) || false
           })
         }
       }
@@ -100,7 +103,7 @@ export default defineComponent({
           entry.decision[idx] !== '-' &&
           entry.decision[idx] !== 's' &&
           STAT_BY_MATCH_STR(entry.matcher) == null)
-        .map(entry => ({ str: entry.matcher, heist: undefined, outdated: true }))
+        .map(entry => ({ str: entry.matcher, heist: undefined, uber: undefined, outdated: true }))
     })
 
     const { t } = useI18nNs('map_check')
@@ -120,7 +123,7 @@ export default defineComponent({
               ? selectedMatchers.value.has(stat.str)
               : true)
           )
-          .map(({ str, heist }) => ({ str, heist, outdated: false }))
+          .map(({ str, heist, uber }) => ({ str, heist, uber, outdated: false }))
 
         return [
           ...hasOutdatedTranslation.value,

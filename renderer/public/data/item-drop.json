@@ -116,11 +116,22 @@
       "UNIQUE::Dying Sun",
       "ITEM::Fragment of Knowledge",
       "ITEM::Fragment of Shape",
-      "UNIQUE::Starforge // Infernal Sword",
       "UNIQUE::Shaper's Touch // Crusader Gloves",
       "UNIQUE::Solstice Vigil // Onyx Amulet",
-      "UNIQUE::Voidwalker // Murder Boots",
-      "UNIQUE::Echoes of Creation // Royal Burgonet"
+      "UNIQUE::Voidwalker // Murder Boots"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Cosmic Fragment"
+    ],
+    "items": [
+      "UNIQUE::Starforge // Infernal Sword",
+      "UNIQUE::Echoes of Creation // Royal Burgonet",
+      "UNIQUE::Entropic Devastation // Assassin's Mitts",
+      "UNIQUE::The Tides of Time // Vanguard Belt",
+      "UNIQUE::Sublime Vision // Prismatic Jewel",
+      "ITEM::Cosmic Reliquary Key"
     ]
   },
   {
@@ -155,12 +166,24 @@
       "UNIQUE::Watcher's Eye // Prismatic Jewel",
       "UNIQUE::Disintegrator // Maelström Staff",
       "UNIQUE::Voidfletcher // Primal Arrow Quiver",
-      "UNIQUE::Mark of the Elder // Steel Ring",
-      "UNIQUE::Mark of the Shaper // Opal Ring",
       "UNIQUE::Indigon // Hubris Circlet",
+      "UNIQUE::Mark of the Elder // Steel Ring",
+      "UNIQUE::Mark of the Shaper // Opal Ring"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Decaying Fragment"
+    ],
+    "items": [
       "UNIQUE::Voidforge // Infernal Sword",
       "UNIQUE::The Eternity Shroud // Blood Raiment",
-      "UNIQUE::Call of the Void // Sapphire Ring"
+      "UNIQUE::Call of the Void // Sapphire Ring",
+      "UNIQUE::Soul Ascension // Carnal Mitts",
+      "UNIQUE::The Devourer of Minds // Pig-Faced Bascinet",
+      "UNIQUE::Sublime Vision // Prismatic Jewel",
+      "UNIQUE::Curio of Decay // Primordial Fragment",
+      "ITEM::Decaying Reliquary Key"
     ]
   },
   {
@@ -184,6 +207,18 @@
       "ITEM::Tainted Oil",
       "ITEM::Oil Extractor"
     ]
+  },
+  {
+    "query": [
+      "ITEM::Tainted Divine Teardrop",
+      "ITEM::Tainted Orb of Fusing",
+      "ITEM::Tainted Mythic Orb",
+      "ITEM::Tainted Exalted Orb",
+      "ITEM::Tainted Chaos Orb",
+      "ITEM::Tainted Chromatic Orb",
+      "ITEM::Tainted Jeweller's Orb"
+    ],
+    "items": []
   },
   {
     "query": [
@@ -228,8 +263,18 @@
       "UNIQUE::Crown of the Inward Eye // Prophet Crown",
       "UNIQUE::Hands of the High Templar // Crusader Gloves",
       "UNIQUE::Thread of Hope // Crimson Jewel",
-      "UNIQUE::The Saviour // Legion Sword",
       "UNIQUE::The Burden of Truth // Crystal Belt"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Awakening Fragment"
+    ],
+    "items": [
+      "UNIQUE::The Saviour // Legion Sword",
+      "UNIQUE::Oriath's End",
+      "UNIQUE::The Tempest Rising // Goliath Greaves",
+      "ITEM::Oubliette Reliquary Key"
     ]
   },
   {
@@ -248,12 +293,23 @@
     ],
     "items": [
       "UNIQUE::Forbidden Flame // Crimson Jewel",
-      "UNIQUE::Crystallised Omniscience // Onyx Amulet",
       "UNIQUE::Dissolution of the Flesh // Crimson Jewel",
-      "UNIQUE::The Annihilating Light // Quarterstaff",
       "UNIQUE::Dawnbreaker // Colossal Tower Shield",
       "UNIQUE::Dawnstrider // Vaal Greaves",
       "ITEM::Exceptional Eldritch Ember"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Blazing Fragment"
+    ],
+    "items": [
+      "UNIQUE::Crystallised Omniscience // Onyx Amulet",
+      "UNIQUE::The Annihilating Light // Quarterstaff",
+      "UNIQUE::Annihilation's Approach // Dragonscale Boots",
+      "UNIQUE::The Celestial Brace // Goliath Gauntlets",
+      "UNIQUE::Curio of Absorption // Primordial Fragment",
+      "ITEM::Archive Reliquary Key"
     ]
   },
   {
@@ -263,7 +319,8 @@
     "items": [
       "UNIQUE::Ceaseless Feast // Spiked Gloves",
       "UNIQUE::Black Zenith // Fingerless Silk Gloves",
-      "UNIQUE::The Eternal Struggle // Onyx Amulet"
+      "UNIQUE::The Eternal Struggle // Onyx Amulet",
+      "DIVINATION_CARD::Choking Guilt"
     ]
   },
   {
@@ -272,11 +329,22 @@
     ],
     "items": [
       "UNIQUE::Forbidden Flesh // Cobalt Jewel",
-      "UNIQUE::Ashes of the Stars // Onyx Amulet",
       "UNIQUE::Melding of the Flesh // Cobalt Jewel",
       "UNIQUE::The Gluttonous Tide // Citadel Bow",
       "UNIQUE::Inextricable Fate // Fugitive Boots",
       "ITEM::Exceptional Eldritch Ichor"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Devouring Fragment"
+    ],
+    "items": [
+      "UNIQUE::Nimis // Topaz Ring",
+      "UNIQUE::Ashes of the Stars // Onyx Amulet",
+      "UNIQUE::Ravenous Passion // Zealot Helmet",
+      "UNIQUE::Curio of Consumption // Primordial Fragment",
+      "ITEM::Visceral Reliquary Key"
     ]
   },
   {
@@ -286,15 +354,25 @@
     ],
     "items": [
       "ITEM::Orb of Conflict",
-      "ITEM::Elevated Sextant",
-      "UNIQUE::Impossible Escape // Viridian Jewel",
       "UNIQUE::Doppelgänger Guise // Sadist Garb",
       "UNIQUE::Echoforge // Infernal Sword",
       "UNIQUE::Arn's Anguish // Cloth Belt",
       "UNIQUE::Graven's Secret // Cloth Belt",
       "UNIQUE::Olesya's Delight // Cloth Belt",
-      "UNIQUE::Legacy of Fury // Wyrmscale Boots",
-      "UNIQUE::Viridi's Veil // Praetor Crown"
+      "UNIQUE::Legacy of Fury // Wyrmscale Boots"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Reality Fragment"
+    ],
+    "items": [
+      "UNIQUE::Impossible Escape // Viridian Jewel",
+      "UNIQUE::Viridi's Veil // Praetor Crown",
+      "UNIQUE::Progenesis",
+      "UNIQUE::Grace of the Goddess // Prophecy Wand",
+      "UNIQUE::Curio of Potential // Primordial Fragment",
+      "ITEM::Shiny Reliquary Key"
     ]
   },
   {
@@ -459,13 +537,12 @@
   },
   {
     "query": [
-      "ITEM::Offering to the Goddess"
-    ],
-    "items": [
+      "ITEM::Offering to the Goddess",
       "ITEM::Gift to the Goddess",
       "ITEM::Dedication to the Goddess",
       "ITEM::Tribute to the Goddess"
-    ]
+    ],
+    "items": []
   },
   {
     "query": [
@@ -473,7 +550,19 @@
       "ITEM::Eldritch Chaos Orb",
       "ITEM::Eldritch Exalted Orb",
       "ITEM::Orb of Annulment",
-      "ITEM::Veiled Chaos Orb"
+      "ITEM::Exalted Orb",
+      "ITEM::Veiled Orb"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Hunter's Exalted Orb",
+      "ITEM::Warlord's Exalted Orb",
+      "ITEM::Crusader's Exalted Orb",
+      "ITEM::Redeemer's Exalted Orb",
+      "ITEM::Awakener's Orb",
+      "ITEM::Orb of Dominance"
     ],
     "items": []
   },
@@ -484,10 +573,22 @@
     "items": [
       "UNIQUE::Bottled Faith",
       "UNIQUE::Garb of the Ephemeral // Savant's Robe",
-      "UNIQUE::Nebulis // Void Sceptre",
+      "UNIQUE::Perepiteia // Ezomyte Spiked Shield",
       "UNIQUE::Offering to the Serpent // Legion Gloves",
-      "DIVINATION_CARD::Dementophobia",
       "DIVINATION_CARD::Imperfect Memories"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Synthesising Fragment"
+    ],
+    "items": [
+      "UNIQUE::Rational Doctrine // Cobalt Jewel",
+      "UNIQUE::The Apostate // Cabalist Regalia",
+      "UNIQUE::Mask of the Tribunal // Magistrate Crown",
+      "UNIQUE::Nebulis // Void Sceptre",
+      "UNIQUE::Circle of Ambition // Prismatic Ring",
+      "ITEM::Forgotten Reliquary Key"
     ]
   },
   {
@@ -503,9 +604,7 @@
       "UNIQUE::Circle of Guilt // Iron Ring",
       "UNIQUE::Circle of Nostalgia // Amethyst Ring",
       "UNIQUE::Circle of Regret // Topaz Ring",
-      "UNIQUE::Mask of the Tribunal // Magistrate Crown",
-      "UNIQUE::Perepiteia // Ezomyte Spiked Shield",
-      "UNIQUE::Storm's Gift // Assassin's Mitts"
+      "UNIQUE::Cortex // T11"
     ]
   },
   {
@@ -557,6 +656,27 @@
 
 
 
+  {
+    "query": [
+      "ITEM::Orb of Fusing",
+      "ITEM::Omen of Connections",
+      "ITEM::Bestiary Scarab of the Shadowed Crow",
+      "CAPTURED_BEAST::The Black Mórrigan",
+      "CAPTURED_BEAST::Craicic Sand Spitter"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "UNIQUE::Curio of Absorption // Primordial Fragment",
+      "UNIQUE::Curio of Consumption // Primordial Fragment",
+      "UNIQUE::Curio of Decay // Primordial Fragment",
+      "UNIQUE::Curio of Potential // Primordial Fragment"
+    ],
+    "items": [
+      "UNIQUE::The Utmost // Gold Amulet"
+    ]
+  },
   {
     "query": [
       "UNIQUE::Primordial Might // Crimson Jewel",

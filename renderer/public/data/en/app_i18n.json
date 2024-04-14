@@ -23,6 +23,7 @@
   },
 
   "map.mods.heist": "heist",
+  "map.mods.uber": "T17",
   "map.mods.outdated": "outdated",
   "Support development on": "Support development\u00A0on",
 
@@ -54,9 +55,9 @@
     "crit": "Critical Strike Chance: {0}%",
     "aps": "Attacks per Second: {0}",
     "has_empty_modifier": "1 Empty or Crafted Modifier",
-    "has_empty_affix": "Любое",
-    "has_empty_prefix": "Префикс",
-    "has_empty_suffix": "Суффикс",
+    "has_empty_affix": "Any",
+    "has_empty_prefix": "Prefix",
+    "has_empty_suffix": "Suffix",
     "item_level": "Item Level: {0}",
     "stock": "Stock: {0}",
     "map_tier": "Map Tier: {0}",
