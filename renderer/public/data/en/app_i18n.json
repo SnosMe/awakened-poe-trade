@@ -233,6 +233,10 @@
   "image_strip": {
     "name": "Image strip"
   },
+  "calculator": {
+    "title": "Calculator",
+    "formula_input": "Currency equation"
+  },
   "item_search": {
     "name": "Item search",
     "input": "Search by name\u2026",
