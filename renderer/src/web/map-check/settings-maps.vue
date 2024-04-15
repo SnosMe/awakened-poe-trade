@@ -20,7 +20,7 @@
       :item-height="2 * fontSize"
       v-slot="props"
     >
-      <maps-stat-entry
+      <SettingsMatcherEntry
         :style="{ position: 'absolute', top: `${props.top}px` }"
         :matcher="props.item"
         :selected-stats="selectedStats"
@@ -32,11 +32,11 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import { useI18nNs } from '@/web/i18n'
-import { configProp, findWidget } from '../utils'
+import { configProp, findWidget } from '../settings/utils'
 import type { ItemCheckWidget } from '@/web/overlay/interfaces'
 import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
-import MapsStatEntry from './MapsStatEntry.vue'
-import VirtualScroll from '../../ui/VirtualScroll.vue'
+import SettingsMatcherEntry from './SettingsMatcherEntry.vue'
+import VirtualScroll from '../ui/VirtualScroll.vue'
 import { StatMatcher, StatTag, decisionHasColor } from './common.js'
 
 function tagToShowOrder (tag?: StatTag): number {
@@ -50,7 +50,7 @@ function tagToShowOrder (tag?: StatTag): number {
 export default defineComponent({
   name: 'map_check.name',
   components: {
-    MapsStatEntry,
+    SettingsMatcherEntry,
     VirtualScroll
   },
   props: configProp(),
