@@ -3,6 +3,7 @@ import isDeepEqual from 'fast-deep-equal'
 import { Host } from '@/web/background/IPC'
 import { HostConfig, ShortcutAction } from '@ipc/types'
 import type * as widget from './overlay/widgets'
+import type { StashSearchWidget } from './stash-search/widget'
 
 const _config = shallowRef<Config | null>(null)
 let _lastSavedConfig: Config | null = null
@@ -280,7 +281,7 @@ export const defaultConfig = (): Config => ({
         { id: 3, name: '', text: '"Cannot Leech Life"', hotkey: null },
         { id: 4, name: '', text: '"Cannot Leech Mana"', hotkey: null }
       ]
-    } as widget.StashSearchWidget,
+    } as StashSearchWidget,
     {
       wmId: 102,
       wmType: 'stash-search',
@@ -301,7 +302,7 @@ export const defaultConfig = (): Config => ({
         { id: 5, name: '', text: '"Map Device" "Rarity: Normal"', hotkey: null },
         { id: 6, name: '', text: 'Tane Laboratory', hotkey: null }
       ]
-    } as widget.StashSearchWidget,
+    } as StashSearchWidget,
     {
       wmId: 103,
       wmType: 'image-strip',
@@ -540,7 +541,7 @@ function upgradeConfig (_config: Config): Config {
 
   for (const widget of config.widgets) {
     if (widget.wmType === 'stash-search') {
-      (widget as widget.StashSearchWidget).enableHotkeys ??= true
+      (widget as StashSearchWidget).enableHotkeys ??= true
     }
   }
 
@@ -619,7 +620,7 @@ function getConfigForHost (): HostConfig {
   }
   for (const widget of config.widgets) {
     if (widget.wmType === 'stash-search') {
-      const stashSearch = widget as widget.StashSearchWidget
+      const stashSearch = widget as StashSearchWidget
       if (!stashSearch.enableHotkeys) continue
 
       for (const entry of stashSearch.entries) {

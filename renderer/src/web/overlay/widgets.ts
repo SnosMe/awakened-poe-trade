@@ -71,17 +71,6 @@ export interface DelveGridWidget extends Widget {
   toggleKey: string | null
 }
 
-export interface StashSearchWidget extends Widget {
-  anchor: Anchor
-  enableHotkeys: boolean
-  entries: Array<{
-    id: number
-    name: string
-    text: string
-    hotkey: string | null
-  }>
-}
-
 export interface ImageStripWidget extends Widget {
   anchor: Anchor
   images: Array<{
