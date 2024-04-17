@@ -23,9 +23,9 @@ import { inject, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { MainProcess } from '@/web/background/IPC'
 import { pushHostConfig } from '@/web/Config'
-import { WidgetManager, StashSearchWidget } from './interfaces'
+import type { WidgetManager, StashSearchWidget } from '../overlay/interfaces.js'
 
-import Widget from './Widget.vue'
+import Widget from '../overlay/Widget.vue'
 
 const props = defineProps<{
   config: StashSearchWidget

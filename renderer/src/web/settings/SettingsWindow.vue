@@ -64,7 +64,7 @@ import SettingsPricecheck from './price-check.vue'
 import SettingsItemcheck from './item-check.vue'
 import SettingsDebug from './debug.vue'
 import SettingsMaps from '../map-check/settings-maps.vue'
-import SettingsStashSearch from './stash-search.vue'
+import SettingsStashSearch from '../stash-search/stash-search-editor.vue'
 import SettingsStopwatch from './stopwatch.vue'
 import SettingsItemSearch from './item-search.vue'
 
