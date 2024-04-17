@@ -35,7 +35,7 @@ import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { prepareMapStats } from './prepare-map-stats'
 import { STAT_BY_MATCH_STR } from '@/assets/data'
-import { ItemCheckWidget } from '../overlay/interfaces'
+import { ItemCheckWidget } from '../item-check/widget.js'
 import { AppConfig } from '@/web/Config'
 
 import MapStatButton from './MapStatButton.vue'

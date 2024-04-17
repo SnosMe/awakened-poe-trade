@@ -4,6 +4,7 @@ import { Host } from '@/web/background/IPC'
 import { HostConfig, ShortcutAction } from '@ipc/types'
 import type * as widget from './overlay/widgets'
 import type { StashSearchWidget } from './stash-search/widget'
+import type { ItemCheckWidget } from './item-check/widget'
 
 const _config = shallowRef<Config | null>(null)
 let _lastSavedConfig: Config | null = null
@@ -231,7 +232,7 @@ export const defaultConfig = (): Config => ({
           }
         ]
       }
-    } as widget.ItemCheckWidget,
+    } as ItemCheckWidget,
     {
       wmId: 4,
       wmType: 'delve-grid',
@@ -397,8 +398,8 @@ function upgradeConfig (_config: Config): Config {
 
   if (config.configVersion < 8) {
     const itemCheck = config.widgets.find(w => w.wmType === 'item-check')!
-    ;(itemCheck as widget.ItemCheckWidget).maps.showNewStats = false
-    itemCheck.maps.selectedStats = (itemCheck as widget.ItemCheckWidget).maps.selectedStats.map(entry => ({
+    ;(itemCheck as ItemCheckWidget).maps.showNewStats = false
+    itemCheck.maps.selectedStats = (itemCheck as ItemCheckWidget).maps.selectedStats.map(entry => ({
       matcher: entry.matcher,
       decision:
         (entry as any).valueDanger ? 'danger'
@@ -485,7 +486,7 @@ function upgradeConfig (_config: Config): Config {
       })
     })
 
-    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as ItemCheckWidget
     itemCheck.wikiKey = (config as any).wikiKey
     itemCheck.poedbKey = null
     itemCheck.craftOfExileKey = (config as any).craftOfExileKey
@@ -501,7 +502,7 @@ function upgradeConfig (_config: Config): Config {
     const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as widget.ItemSearchWidget
     itemSearch.ocrGemsKey = null
 
-    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as ItemCheckWidget
     itemCheck.maps.profile = 1
     for (const stat of itemCheck.maps.selectedStats) {
       const p1decision =
@@ -519,7 +520,7 @@ function upgradeConfig (_config: Config): Config {
     const delve = config.widgets.find(w => w.wmType === 'delve-grid') as widget.DelveGridWidget
     delve.toggleKey = (config as any).delveGridKey
 
-    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as widget.ItemCheckWidget
+    const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as ItemCheckWidget
     itemCheck.hotkey = (config as any).itemCheckKey
 
     if (itemCheck.maps.profile === undefined) {
@@ -571,7 +572,7 @@ function getConfigForHost (): HostConfig {
     action: { type: 'toggle-overlay' },
     keepModKeys: true
   })
-  const itemCheck = AppConfig('item-check') as widget.ItemCheckWidget
+  const itemCheck = AppConfig('item-check') as ItemCheckWidget
   if (itemCheck.wikiKey) {
     actions.push({
       shortcut: itemCheck.wikiKey,

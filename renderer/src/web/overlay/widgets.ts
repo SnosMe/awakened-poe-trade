@@ -45,22 +45,6 @@ export interface PriceCheckWidget extends Widget {
   rememberCurrency: boolean
 }
 
-export interface ItemCheckWidget extends Widget {
-  hotkey: string | null
-  wikiKey: string | null
-  poedbKey: string | null
-  craftOfExileKey: string | null
-  stashSearchKey: string | null
-  maps: {
-    profile: number
-    showNewStats: boolean
-    selectedStats: Array<{
-      matcher: string
-      decision: string
-    }>
-  }
-}
-
 export interface StopwatchWidget extends Widget {
   anchor: Anchor
   toggleKey: string | null

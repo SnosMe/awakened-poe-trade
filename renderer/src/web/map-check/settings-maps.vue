@@ -33,7 +33,7 @@
 import { computed, defineComponent, ref } from 'vue'
 import { useI18nNs } from '@/web/i18n'
 import { configProp, findWidget } from '../settings/utils'
-import type { ItemCheckWidget } from '@/web/overlay/interfaces'
+import type { ItemCheckWidget } from '../item-check/widget.js'
 import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
 import SettingsMatcherEntry from './SettingsMatcherEntry.vue'
 import VirtualScroll from '../ui/VirtualScroll.vue'

@@ -1,3 +1,12 @@
+export interface MapCheckConfig {
+  profile: number
+  showNewStats: boolean
+  selectedStats: Array<{
+    matcher: string
+    decision: string
+  }>
+}
+
 export enum StatTag {
   Outdated = 1,
   HeistExclusive,

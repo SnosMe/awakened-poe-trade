@@ -16,7 +16,7 @@
 import { computed, useCssModule } from 'vue'
 import { AppConfig } from '@/web/Config'
 import { PreparedStat } from './prepare-map-stats'
-import { ItemCheckWidget } from '../overlay/interfaces'
+import { ItemCheckWidget } from '../item-check/widget.js'
 import { nextDecision, decisionCreate } from './common.js'
 
 import ItemModifierText from '../ui/ItemModifierText.vue'

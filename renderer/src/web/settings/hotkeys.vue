@@ -51,7 +51,8 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { configProp, configModelValue, findWidget } from './utils'
-import { PriceCheckWidget, DelveGridWidget, ItemCheckWidget } from '@/web/overlay/interfaces'
+import { PriceCheckWidget, DelveGridWidget } from '@/web/overlay/interfaces'
+import { ItemCheckWidget } from '../item-check/widget.js'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
