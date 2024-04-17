@@ -2,7 +2,7 @@
   <Widget :config="{ ...config, anchor }" move-handles="none" :removable="false" :inline-edit="false">
     <template v-if="item">
       <MapCheck v-if="isMapLike"
-        :item="item" />
+        :item="item" :config="config.maps" />
       <ItemInfo v-else
         :item="item" />
     </template>

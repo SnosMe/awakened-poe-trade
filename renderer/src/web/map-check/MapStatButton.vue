@@ -14,32 +14,30 @@
 
 <script setup lang="ts">
 import { computed, useCssModule } from 'vue'
-import { AppConfig } from '@/web/Config'
 import { PreparedStat } from './prepare-map-stats'
-import { ItemCheckWidget } from '../item-check/widget.js'
-import { nextDecision, decisionCreate } from './common.js'
+import { nextDecision, decisionCreate, type MapCheckConfig } from './common.js'
 
 import ItemModifierText from '../ui/ItemModifierText.vue'
 
 const props = defineProps<{
-  stat: PreparedStat
+  stat: PreparedStat,
+  config: MapCheckConfig
 }>()
 
 const $style = useCssModule()
 
-const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!.maps)
-const entry = computed(() => config.value.selectedStats
+const entry = computed(() => props.config.selectedStats
   .find(({ matcher }) => matcher === props.stat.matcher))
 
 const decision = computed<string>({
   get () {
     if (!entry.value) return '-'
-    return entry.value.decision[config.value.profile - 1]
+    return entry.value.decision[props.config.profile - 1]
   },
   set (value) {
-    const newSet = decisionCreate(value, config.value.profile, entry.value?.decision)
+    const newSet = decisionCreate(value, props.config.profile, entry.value?.decision)
     if (!entry.value) {
-      config.value.selectedStats.push({
+      props.config.selectedStats.push({
         matcher: props.stat.matcher,
         decision: newSet
       })
@@ -50,14 +48,14 @@ const decision = computed<string>({
 })
 
 function newStatIconVisible (): boolean {
-  if (config.value.showNewStats) {
+  if (props.config.showNewStats) {
     return (decision.value === '-')
   }
   return false
 }
 
 function toggleSeenStatus () {
-  if (config.value.showNewStats) {
+  if (props.config.showNewStats) {
     decision.value = (decision.value === '-') ? 's' : '-'
   }
 }
