@@ -66,7 +66,7 @@ import SettingsDebug from './debug.vue'
 import SettingsMaps from '../map-check/settings-maps.vue'
 import SettingsStashSearch from '../stash-search/stash-search-editor.vue'
 import SettingsStopwatch from './stopwatch.vue'
-import SettingsItemSearch from './item-search.vue'
+import SettingsItemSearch from '../item-search/settings-item-search.vue'
 
 function shuffle<T> (array: T[]): T[] {
   let currentIndex = array.length

@@ -5,6 +5,7 @@ import { HostConfig, ShortcutAction } from '@ipc/types'
 import type * as widget from './overlay/widgets'
 import type { StashSearchWidget } from './stash-search/widget'
 import type { ItemCheckWidget } from './item-check/widget'
+import type { ItemSearchWidget } from './item-search/widget'
 
 const _config = shallowRef<Config | null>(null)
 let _lastSavedConfig: Config | null = null
@@ -262,7 +263,7 @@ export const defaultConfig = (): Config => ({
         x: 10,
         y: 20
       }
-    } as widget.ItemSearchWidget,
+    } as ItemSearchWidget,
     // --- DEFAULT ---
     {
       wmId: 101,
@@ -499,7 +500,7 @@ function upgradeConfig (_config: Config): Config {
     const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
     priceCheck.builtinBrowser = false
 
-    const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as widget.ItemSearchWidget
+    const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as ItemSearchWidget
     itemSearch.ocrGemsKey = null
 
     const itemCheck = config.widgets.find(w => w.wmType === 'item-check') as ItemCheckWidget
@@ -655,7 +656,7 @@ function getConfigForHost (): HostConfig {
         })
       }
     } else if (widget.wmType === 'item-search') {
-      const itemSearch = widget as widget.ItemSearchWidget
+      const itemSearch = widget as ItemSearchWidget
       if (itemSearch.ocrGemsKey) {
         actions.push({
           shortcut: itemSearch.ocrGemsKey,
