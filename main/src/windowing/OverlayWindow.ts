@@ -30,8 +30,8 @@ export class OverlayWindow {
     })
 
     if (process.argv.includes('--no-overlay')) return
-
-    if (process.argv.includes('--fs')) {
+    console.log(process.argv)
+    if (process.argv.includes('--fs-beta')) {
       this.fullScreenSupport = true;
     }
 
