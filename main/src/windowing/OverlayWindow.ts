@@ -1,10 +1,11 @@
 import path from 'path'
 import { BrowserWindow, dialog, shell, Menu, WebContents } from 'electron'
-import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
+import {OVERLAY_WINDOW_OPTS, OverlayController} from 'electron-overlay-window'
 import type { ServerEvents } from '../server'
 import type { Logger } from '../RemoteLogger'
 import type { GameWindow } from './GameWindow'
 import { type HttpProxy, PROXY_HOSTS } from '../proxy'
+import { uIOhook, UiohookKey } from 'uiohook-napi'
 
 export class OverlayWindow {
   public isInteractable = false
@@ -12,6 +13,7 @@ export class OverlayWindow {
   private window?: BrowserWindow
   private overlayKey: string = 'Shift + Space'
   private isOverlayKeyUsed = false
+  private fullScreenSupport = false
 
   constructor (
     private server: ServerEvents,
@@ -29,6 +31,10 @@ export class OverlayWindow {
 
     if (process.argv.includes('--no-overlay')) return
 
+    if (process.argv.includes('--fs')) {
+      this.fullScreenSupport = true;
+    }
+
     this.window = new BrowserWindow({
       icon: path.join(__dirname, process.env.STATIC!, 'icon.png'),
       ...OVERLAY_WINDOW_OPTS,
@@ -38,7 +44,8 @@ export class OverlayWindow {
         allowRunningInsecureContent: false,
         webviewTag: true,
         spellcheck: false
-      }
+      },
+      focusable: !this.fullScreenSupport
     })
 
     this.window.setMenu(Menu.buildFromTemplate([
@@ -58,6 +65,12 @@ export class OverlayWindow {
       shell.openExternal(details.url)
       return { action: 'deny' }
     })
+
+    uIOhook.on('keydown', event => {
+      if ((event.keycode === UiohookKey.Space && event.shiftKey) || (event.keycode === UiohookKey.Tab && event.altKey) || (event.keycode === UiohookKey.Escape)) {
+        this.assertGameActive();
+      }
+    });
   }
 
   loadAppPage (port: number) {
@@ -160,6 +173,13 @@ export class OverlayWindow {
   }
 
   private handlePoeWindowActiveChange = (isActive: boolean) => {
+    if (this.fullScreenSupport) {
+      if (isActive) {
+        uIOhook.stop()
+      } else {
+        uIOhook.start()
+      }
+    }
     if (isActive && this.isInteractable) {
       this.isInteractable = false
     }
