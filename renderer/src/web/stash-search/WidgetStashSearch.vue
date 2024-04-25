@@ -7,11 +7,11 @@
           v-model="config.enableHotkeys">{{ t('stash_search.enable_keys') }}</ui-toggle>
       </div>
       <div class="flex flex-col gap-y-1 overflow-y-auto min-h-0">
-        <button v-for="entry in config.entries" :key="entry.id" @click="stashSearch(entry.text)"
-          class="leading-4 text-gray-100 p-2 rounded text-left bg-gray-800 whitespace-nowrap truncate shrink-0 max-w-sm">
-            {{ entry.name || entry.text }}
-            <span v-if="entry.hotkey && config.enableHotkeys"
-              class="text-center inline-block text-black bg-gray-400 rounded px-1">{{ entry.hotkey }}</span>
+        <button v-for="entry in config.entries" :key="entry.id"
+          @click="stashSearch(entry.text)" :class="$style.searchBtn">
+          <span>{{ entry.name || entry.text }}</span>
+          <span v-if="entry.hotkey && config.enableHotkeys"
+            :class="$style.hotkey">{{ entry.hotkey }}</span>
         </button>
       </div>
     </div>
@@ -23,9 +23,10 @@ import { inject, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { MainProcess } from '@/web/background/IPC'
 import { pushHostConfig } from '@/web/Config'
-import { WidgetManager, StashSearchWidget } from './interfaces'
+import type { WidgetManager } from '../overlay/interfaces.js'
+import type { StashSearchWidget } from './widget.js'
 
-import Widget from './Widget.vue'
+import Widget from '../overlay/Widget.vue'
 
 const props = defineProps<{
   config: StashSearchWidget
@@ -63,3 +64,29 @@ watch(() => props.config.enableHotkeys, () => {
 
 const { t } = useI18n()
 </script>
+
+<style lang="postcss" module>
+.searchBtn {
+  flex-shrink: 0;
+  @apply rounded;
+  @apply max-w-sm;
+  @apply p-2 leading-4;
+  @apply text-gray-100 bg-gray-800;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    @apply bg-gray-700;
+  }
+}
+
+.hotkey {
+  text-align: center;
+  display: inline-block;
+  @apply text-black bg-gray-400;
+  @apply rounded;
+  @apply px-1 ml-1;
+}
+</style>

@@ -45,22 +45,6 @@ export interface PriceCheckWidget extends Widget {
   rememberCurrency: boolean
 }
 
-export interface ItemCheckWidget extends Widget {
-  hotkey: string | null
-  wikiKey: string | null
-  poedbKey: string | null
-  craftOfExileKey: string | null
-  stashSearchKey: string | null
-  maps: {
-    profile: number
-    showNewStats: boolean
-    selectedStats: Array<{
-      matcher: string
-      decision: string
-    }>
-  }
-}
-
 export interface StopwatchWidget extends Widget {
   anchor: Anchor
   toggleKey: string | null
@@ -71,26 +55,10 @@ export interface DelveGridWidget extends Widget {
   toggleKey: string | null
 }
 
-export interface StashSearchWidget extends Widget {
-  anchor: Anchor
-  enableHotkeys: boolean
-  entries: Array<{
-    id: number
-    name: string
-    text: string
-    hotkey: string | null
-  }>
-}
-
 export interface ImageStripWidget extends Widget {
   anchor: Anchor
   images: Array<{
     id: number
     url: string
   }>
-}
-
-export interface ItemSearchWidget extends Widget {
-  anchor: Anchor
-  ocrGemsKey: string | null
 }

@@ -19,7 +19,7 @@
     </div>
     <div v-else class="py-2 flex flex-col">
       <MapStatButton v-for="stat in mapStats" :key="stat.matcher"
-        :stat="stat" />
+        :stat="stat" :config="config" />
       <div v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
         class="py-1 px-8">
         <span class="text-orange-400">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
@@ -35,22 +35,20 @@ import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { prepareMapStats } from './prepare-map-stats'
 import { STAT_BY_MATCH_STR } from '@/assets/data'
-import { ItemCheckWidget } from '../overlay/interfaces'
-import { AppConfig } from '@/web/Config'
+import { MapCheckConfig } from './common.js'
 
 import MapStatButton from './MapStatButton.vue'
 
 const props = defineProps<{
-  item: ParsedItem
+  item: ParsedItem,
+  config: MapCheckConfig
 }>()
 
 const { t } = useI18n()
 
-const config = computed(() => AppConfig<ItemCheckWidget>('item-check')!.maps)
-
 const hasOutdatedTranslation = computed<boolean>(() => {
-  const idx = config.value.profile - 1
-  return config.value.selectedStats
+  const idx = props.config.profile - 1
+  return props.config.selectedStats
     .some(entry =>
       entry.decision[idx] !== '-' &&
       entry.decision[idx] !== 's' &&
@@ -70,8 +68,8 @@ const profiles = computed(() => {
   const ROMAN_NUMERALS = ['I', 'II', 'III']
   return ROMAN_NUMERALS.map((text, i) => ({
     text,
-    active: (config.value.profile === i + 1),
-    select: () => { config.value.profile = i + 1 }
+    active: (props.config.profile === i + 1),
+    select: () => { props.config.profile = i + 1 }
   }))
 })
 </script>

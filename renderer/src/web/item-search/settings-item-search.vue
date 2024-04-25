@@ -10,9 +10,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { configProp, configModelValue, findWidget } from './utils'
-import { ItemSearchWidget } from '@/web/overlay/interfaces'
-import HotkeyInput from './HotkeyInput.vue'
+import { configProp, configModelValue, findWidget } from '../settings/utils.js'
+import { ItemSearchWidget } from './widget.js'
+import HotkeyInput from '../settings/HotkeyInput.vue'
 
 export default defineComponent({
   name: 'item_search.name',

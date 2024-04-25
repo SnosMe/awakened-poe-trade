@@ -615,7 +615,12 @@ function tradeIdToQuery (id: string, stat: StatFilter) {
   let roll = stat.roll
 
   // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
-  if (id.endsWith('stat_1901158930')) {
+  if (id === 'implicit.stat_1901158930') {
+    if (stat.roll?.value === 100) {
+      roll = undefined // stat semantic type is flag
+    }
+  // fixes "Cannot be Poisoned" from Essence
+  } else if (id === 'explicit.stat_3835551335') {
     if (stat.roll?.value === 100) {
       roll = undefined // stat semantic type is flag
     }
