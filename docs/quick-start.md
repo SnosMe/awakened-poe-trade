@@ -25,7 +25,7 @@ All that remains is to parse text in Awakened PoE Trade and show to you in a fan
     ![Pricing Exmaple](https://imgur.com/HYRmois.png)
     
     The checkboxes indicate which mods will be searched for when checking a price.
-    Some mods will be grouped together into "pseudo" mods which can be morr easily searched for in poe trade. For example, the spell damage from 3 mods of this wand have been grouped together into one pseudo spell damage mod with a value of all the mods combined.
+    Some mods will be grouped together into "pseudo" mods which can be more easily searched for on the poe trade api. For example, the spell damage from 3 mods of this wand have been grouped together into one pseudo spell damage mod with a value of all the mods combined.
     The numbers on the side of each mod row indicate the minimum and maximum range to search for when pricing an item. They are automatically populated, but adjusting them manually may get a more accurate price depending on the item.
   - `Alt + W` to open the item on Wiki
   - `Shift + Space` to access overlay with widgets
