@@ -166,14 +166,15 @@ function fuzzyFindHeistGem (badStr: string) {
 <script setup lang="ts">
 import { shallowRef, computed, nextTick, inject } from 'vue'
 import { useI18nNs } from '@/web/i18n'
-import { ItemSearchWidget, WidgetManager } from './interfaces'
+import { WidgetManager } from '../overlay/interfaces'
+import { ItemSearchWidget } from './widget.js'
 import { usePoeninja } from '@/web/background/Prices'
 import { Host } from '@/web/background/IPC'
 import { createVirtualItem, ItemRarity } from '@/parser/ParsedItem'
 import { ItemCategory } from '@/parser'
 
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
-import Widget from './Widget.vue'
+import Widget from '../overlay/Widget.vue'
 
 const props = defineProps<{
   config: ItemSearchWidget

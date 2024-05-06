@@ -33,9 +33,9 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import DndContainer from 'vuedraggable'
-import HotkeyInput from './HotkeyInput.vue'
-import { configProp, configModelValue } from './utils'
-import type { StashSearchWidget } from '@/web/overlay/interfaces'
+import HotkeyInput from '../settings/HotkeyInput.vue'
+import { configProp, configModelValue } from '../settings/utils.js'
+import type { StashSearchWidget } from './widget.js'
 
 export default defineComponent({
   name: 'stash_search.name',

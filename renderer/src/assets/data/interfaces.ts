@@ -20,6 +20,7 @@ export interface Stat {
   matchers: StatMatcher[]
   better: StatBetter
   fromAreaMods?: true
+  fromUberAreaMods?: true
   fromHeistAreaMods?: true
   anointments?: Array<{ roll: number, oils: string }> // Ring anointments
   trade: {

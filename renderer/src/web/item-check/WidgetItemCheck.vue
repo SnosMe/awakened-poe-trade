@@ -2,7 +2,7 @@
   <Widget :config="{ ...config, anchor }" move-handles="none" :removable="false" :inline-edit="false">
     <template v-if="item">
       <MapCheck v-if="isMapLike"
-        :item="item" />
+        :item="item" :config="config.maps" />
       <ItemInfo v-else
         :item="item" />
     </template>
@@ -14,7 +14,8 @@ import { computed, inject, ref } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
 import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
 import { registerActions } from './hotkeyable-actions'
-import type { ItemCheckWidget, WidgetManager } from '../overlay/interfaces'
+import type { WidgetManager } from '../overlay/interfaces'
+import type { ItemCheckWidget } from './widget.js'
 
 import Widget from '../overlay/Widget.vue'
 import MapCheck from '../map-check/MapCheck.vue'

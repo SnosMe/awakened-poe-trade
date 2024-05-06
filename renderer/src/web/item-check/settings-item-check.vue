@@ -22,9 +22,9 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { configProp, configModelValue, findWidget } from './utils'
-import { ItemCheckWidget } from '@/web/overlay/interfaces'
-import HotkeyInput from './HotkeyInput.vue'
+import { configProp, configModelValue, findWidget } from '../settings/utils.js'
+import type { ItemCheckWidget } from './widget.js'
+import HotkeyInput from '../settings/HotkeyInput.vue'
 
 export default defineComponent({
   name: 'item.info',

@@ -61,12 +61,12 @@ import SettingsChat from './chat.vue'
 import SettingsGeneral from './general.vue'
 import SettingsAbout from './about.vue'
 import SettingsPricecheck from './price-check.vue'
-import SettingsItemcheck from './item-check.vue'
+import SettingsItemcheck from '../item-check/settings-item-check.vue'
 import SettingsDebug from './debug.vue'
-import SettingsMaps from './maps/maps.vue'
-import SettingsStashSearch from './stash-search.vue'
+import SettingsMaps from '../map-check/settings-maps.vue'
+import SettingsStashSearch from '../stash-search/stash-search-editor.vue'
 import SettingsStopwatch from './stopwatch.vue'
-import SettingsItemSearch from './item-search.vue'
+import SettingsItemSearch from '../item-search/settings-item-search.vue'
 
 function shuffle<T> (array: T[]): T[] {
   let currentIndex = array.length

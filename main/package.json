@@ -1,6 +1,6 @@
 {
   "name": "awakened-poe-trade",
-  "version": "3.24.10002",
+  "version": "3.24.10004",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
@@ -21,16 +21,16 @@
   },
   "devDependencies": {
     "@types/ini": "^4.1.0",
-    "@types/node": "18.x.x",
+    "@types/node": "20.x.x",
     "@types/ws": "^8.5.3",
     "@wokwi/bmp-ts": "^3.0.0",
     "comlink": "^4.3.1",
-    "electron": "28.1.4",
-    "electron-builder": "24.9.1",
+    "electron": "30.0.1",
+    "electron-builder": "24.13.3",
     "electron-updater": "^6.1.0",
-    "esbuild": "^0.19.0",
+    "esbuild": "^0.20.0",
     "ini": "^4.0.0",
-    "typescript": "5.3.x",
+    "typescript": "5.4.x",
     "ws": "^8.16.0"
   },
   "engines": {

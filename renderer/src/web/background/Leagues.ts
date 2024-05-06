@@ -90,5 +90,8 @@ export const useLeagues = createGlobalState(() => {
 })
 
 function isPrivateLeague (id: string) {
+  if (id.includes('Ruthless')) {
+    return true
+  }
   return /\(PL\d+\)$/.test(id)
 }

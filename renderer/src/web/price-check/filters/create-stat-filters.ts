@@ -120,9 +120,7 @@ export function initUiModFilters (
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
-    searchInRange: (item.rarity === ItemRarity.Normal || item.rarity === ItemRarity.Magic)
-      ? 100 // only care about Tier
-      : opts.searchStatRange,
+    searchInRange: (item.rarity === ItemRarity.Normal) ? 100 : opts.searchStatRange,
     statsByType: item.statsByType.map(calc => {
       if (calc.type === ModifierType.Fractured && calc.stat.trade.ids[ModifierType.Explicit]) {
         return { ...calc, type: ModifierType.Explicit }
@@ -247,6 +245,7 @@ export function calculatedStatToFilter (
       percent = 0
     } else if (
       item.rarity === ItemRarity.Unique ||
+      (item.rarity === ItemRarity.Magic && item.category === ItemCategory.Jewel) ||
       calc.sources.some(({ modifier }) => modifier.info.tier === 1 && modifier.info.type === ModifierType.Fractured)
     ) {
       const perfectRoll = (
