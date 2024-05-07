@@ -43,6 +43,7 @@ export interface PriceCheckWidget extends Widget {
   requestPricePrediction: boolean
   builtinBrowser: boolean
   rememberCurrency: boolean
+  showOffline: boolean
 }
 
 export interface StopwatchWidget extends Widget {
