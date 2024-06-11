@@ -197,6 +197,7 @@ export const defaultConfig = (): Config => ({
       searchStatRange: 10,
       showCursor: true,
       requestPricePrediction: false,
+      pseudo:true,
       rememberCurrency: false
     } as widget.PriceCheckWidget,
     {
