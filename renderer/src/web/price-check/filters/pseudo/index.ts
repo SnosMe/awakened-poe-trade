@@ -180,7 +180,7 @@ const PSEUDO_RULES: PseudoRule[] = [
     pseudo: stat('+#% total Critical Strike Chance for Spells'),
     replaces: 'global_crit_chance',
     stats: [
-      { ref: stat('#% increased Critical Strike Chance for Spells'), required: true },
+      { ref: stat('#% increased Spell Critical Strike Chance'), required: true },
       { ref: stat('#% increased Global Critical Strike Chance') }
     ]
   },

@@ -205,7 +205,7 @@
     "items": [
       "ITEM::Reflective Oil",
       "ITEM::Tainted Oil",
-      "ITEM::Oil Extractor"
+      "ITEM::Prismatic Oil"
     ]
   },
   {
@@ -661,7 +661,7 @@
       "ITEM::Orb of Fusing",
       "ITEM::Omen of Connections",
       "ITEM::Bestiary Scarab of the Shadowed Crow",
-      "CAPTURED_BEAST::The Black Mórrigan",
+      "CAPTURED_BEAST::Black Mórrigan",
       "CAPTURED_BEAST::Craicic Sand Spitter"
     ],
     "items": []
