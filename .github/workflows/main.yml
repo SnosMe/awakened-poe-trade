@@ -14,8 +14,8 @@ jobs:
   renderer:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
     - run: yarn --frozen-lockfile
       working-directory: ./renderer
     - run: yarn make-index-files
@@ -24,7 +24,7 @@ jobs:
       working-directory: ./renderer
     - run: yarn build
       working-directory: ./renderer
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: renderer-dist
         path: ./renderer/dist
@@ -34,12 +34,12 @@ jobs:
     needs: renderer
     strategy:
       matrix:
-        os: [windows-2019, ubuntu-20.04, macos-11]
+        os: [windows-2019, ubuntu-20.04, macos-12]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - uses: actions/download-artifact@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - uses: actions/download-artifact@v4
       with:
         name: renderer-dist
         path: ./renderer/dist
