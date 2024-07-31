@@ -50,13 +50,13 @@ export function propAt20Quality (
   item: ParsedItem
 ): { roll: StatRoll, sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item)
-  const base = calcBase(total, incr.value + (item.quality ?? 0), flat.value)
-  const quality = Math.max(20, item.quality ?? 0)
+  const quality = 1 + Math.max(20, item.quality ?? 0) / 100
+  const base = calcBase(total, incr.value, flat.value) * quality
   return {
     roll: {
-      value: calcIncreased(base + flat.value, incr.value + quality),
-      min: calcIncreased(base + flat.min, incr.min + quality),
-      max: calcIncreased(base + flat.max, incr.max + quality)
+      value: calcIncreased(base + flat.value, incr.value) * quality,
+      min: calcIncreased(base + flat.min, incr.min) * quality,
+      max: calcIncreased(base + flat.max, incr.max) * quality
     },
     sources: sources.map(source => ({ ...source, contributes: undefined }))
   }
@@ -97,7 +97,8 @@ export function calcPropPercentile (
   item: ParsedItem
 ): number {
   const { incr, flat } = calcPropBase(statRefs, item)
-  const roll = calcBase(total, incr.value + (item.quality ?? 0), flat.value)
+  const quality = 1 + (item.quality ?? 0) / 100
+  const roll = calcBase(total, incr.value, flat.value) * quality
   const [min, max] = bounds
   const result = Math.round(((roll - min) / (max - min)) * 100)
   return Math.min(Math.max(result, 0), 100)
