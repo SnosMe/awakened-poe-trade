@@ -47,7 +47,7 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.HeistCloak, 'heistequipment.heistutility'],
   [ItemCategory.Trinket, 'accessory.trinket'],
   [ItemCategory.SanctumRelic, 'sanctum.relic'],
-  [ItemCategory.Tincture, 'azmeri.tincture'],
+  [ItemCategory.Tincture, 'tincture'],
   [ItemCategory.Charm, 'azmeri.charm']
 ])
 
