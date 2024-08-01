@@ -50,13 +50,13 @@ export function propAt20Quality (
   item: ParsedItem
 ): { roll: StatRoll, sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item)
-  const base = calcBase(total, incr.value + (item.quality ?? 0), flat.value)
+  const base = calcFlat(total, incr.value, item.quality) - flat.value
   const quality = Math.max(20, item.quality ?? 0)
   return {
     roll: {
-      value: calcIncreased(base + flat.value, incr.value + quality),
-      min: calcIncreased(base + flat.min, incr.min + quality),
-      max: calcIncreased(base + flat.max, incr.max + quality)
+      value: calcIncreased(base + flat.value, incr.value, quality),
+      min: calcIncreased(base + flat.min, incr.min, quality),
+      max: calcIncreased(base + flat.max, incr.max, quality)
     },
     sources: sources.map(source => ({ ...source, contributes: undefined }))
   }
@@ -68,7 +68,7 @@ export function calcPropBounds (
   item: ParsedItem
 ): { roll: StatRoll, sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item)
-  const base = calcBase(total, incr.value, flat.value)
+  const base = calcFlat(total, incr.value) - flat.value
   return {
     roll: {
       value: calcIncreased(base + flat.value, incr.value),
@@ -97,7 +97,7 @@ export function calcPropPercentile (
   item: ParsedItem
 ): number {
   const { incr, flat } = calcPropBase(statRefs, item)
-  const roll = calcBase(total, incr.value + (item.quality ?? 0), flat.value)
+  const roll = calcFlat(total, incr.value, item.quality ?? 0) - flat.value
   const [min, max] = bounds
   const result = Math.round(((roll - min) / (max - min)) * 100)
   return Math.min(Math.max(result, 0), 100)
@@ -130,10 +130,10 @@ function calcPropBase (
   return { incr, flat, sources }
 }
 
-function calcBase (total: number, incr: number, flat: number) {
-  return (total / (1 + incr / 100)) - flat
+function calcFlat (total: number, incrPct: number, morePct = 0) {
+  return (total / (1 + morePct / 100) / (1 + incrPct / 100))
 }
 
-function calcIncreased (flat: number, incr: number) {
-  return flat * (1 + incr / 100)
+function calcIncreased (flat: number, incrPct: number, morePct = 0) {
+  return flat * (1 + incrPct / 100) * (1 + morePct / 100)
 }
