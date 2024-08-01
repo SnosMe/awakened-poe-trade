@@ -115,6 +115,7 @@ export function initUiModFilters (
   item: ParsedItem,
   opts: {
     searchStatRange: number
+    pseudo: boolean
   }
 ): StatFilter[] {
   const ctx: FiltersCreationContext = {
@@ -132,10 +133,13 @@ export function initUiModFilters (
 
   if (item.info.refName !== 'Split Personality') {
     filterItemProp(ctx)
-    filterPseudo(ctx)
+    //filterPseudo(ctx)
     if (item.info.refName === "Emperor's Vigilance") {
       filterBasePercentile(ctx)
     }
+  }
+  if(opts.pseudo){
+    filterPseudo(ctx)
   }
 
   if (!item.isCorrupted && !item.isMirrored) {

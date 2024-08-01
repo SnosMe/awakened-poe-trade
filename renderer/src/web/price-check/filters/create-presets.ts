@@ -15,6 +15,7 @@ export function createPresets (
     activateStockFilter: boolean
     searchStatRange: number
     useEn: boolean
+    pseudo: boolean
   }
 ): { presets: FilterPreset[], active: string } {
   if (item.info.refName === 'Expedition Logbook') {
