@@ -35,7 +35,8 @@ export function createExactStatFilters (
 
   if (
     !item.influences.length &&
-    !item.isFractured
+    !item.isFractured &&
+    item.category !== ItemCategory.Tincture
   ) {
     keepByType.push(ModifierType.Implicit)
   }
@@ -102,8 +103,7 @@ export function createExactStatFilters (
   } else if (
     item.category === ItemCategory.MemoryLine ||
     item.category === ItemCategory.SanctumRelic ||
-    item.category === ItemCategory.Charm ||
-    item.category === ItemCategory.Tincture
+    item.category === ItemCategory.Charm
   ) {
     enableAllFilters(ctx.filters)
   }
