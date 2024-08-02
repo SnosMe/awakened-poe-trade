@@ -19,7 +19,6 @@ if (!app.requestSingleInstanceLock()) {
   app.exit()
 }
 
-app.disableHardwareAcceleration()
 app.enableSandbox()
 
 let tray: AppTray
