@@ -19,6 +19,10 @@ if (!app.requestSingleInstanceLock()) {
   app.exit()
 }
 
+if (platform != macOS) {
+  app.disableHardwareAcceleration()
+}
+
 app.enableSandbox()
 
 let tray: AppTray
