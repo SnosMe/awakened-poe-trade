@@ -2,6 +2,7 @@ import type { Server } from 'http'
 import * as https from 'https'
 import { app } from 'electron'
 import type { Logger } from './RemoteLogger'
+import { HttpsProxyAgent } from 'https-proxy-agent'
 
 export const PROXY_HOSTS = [
   { host: 'www.pathofexile.com', official: true },
@@ -32,6 +33,9 @@ export class HttpProxy {
             .join('; ')
         : ''
 
+      const proxyOptions = this.getProxyOptions();
+      const agent = proxyOptions ? new HttpsProxyAgent('http://'+proxyOptions) : undefined;
+
       const proxyReq = https.request(
         'https://' + req.url.slice('/proxy/'.length),
         {
@@ -41,7 +45,7 @@ export class HttpProxy {
             host: host,
             cookie: cookie,
             'user-agent': app.userAgentFallback
-          }
+          }, agent
         }, (proxyRes) => {
           res.writeHead(proxyRes.statusCode!, proxyRes.statusMessage!, proxyRes.rawHeaders)
           proxyRes.pipe(res)
@@ -52,5 +56,10 @@ export class HttpProxy {
       })
       req.pipe(proxyReq)
     })
+  }
+
+  private getProxyOptions(): string | undefined {
+    const proxyServer = app.commandLine.getSwitchValue('proxy-server');
+    return proxyServer ? proxyServer : undefined;
   }
 }

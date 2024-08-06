@@ -17,6 +17,7 @@
   "main": "dist/main.js",
   "dependencies": {
     "electron-overlay-window": "3.3.0",
+    "https-proxy-agent": "^7.0.5",
     "uiohook-napi": "1.5.x"
   },
   "devDependencies": {
