@@ -9,11 +9,12 @@ import type { ServerEvents } from '../server'
 
 const POSSIBLE_PATH =
   (process.platform === 'win32') ? [
-    path.join(app.getPath('documents'), 'My Games', 'Path of Exile', 'production_Config.ini')
+    path.join(app.getPath('documents'), 'My Games\\Path of Exile\\production_Config.ini')
   ] : (process.platform === 'linux') ? [
-    // TODO
+    path.join(app.getPath('documents'), 'My Games/Path of Exile/production_Config.ini'),
+    path.join(app.getPath('home'), '.local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile/production_Config.ini')
   ] : (process.platform === 'darwin') ? [
-    path.join(app.getPath('appData'), 'Path of Exile', 'Preferences', 'production_Config.ini')
+    path.join(app.getPath('appData'), 'Path of Exile/Preferences/production_Config.ini')
   ] : []
 
 export class GameConfig {
