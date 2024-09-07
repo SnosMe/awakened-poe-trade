@@ -10,29 +10,10 @@ const POSSIBLE_PATH =
     'C:\\Program Files (x86)\\Grinding Gear Games\\Path of Exile\\logs\\Client.txt',
     'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt'
   ] : (process.platform === 'linux') ? [
-    path.join(
-      app.getPath('home'),
-      '.wine',
-      'drive_c',
-      'Program Files (x86)',
-      'Grinding Gear Games',
-      'Path of Exile',
-      'logs',
-      'Client.txt'
-    ),
-    path.join(
-      app.getPath('home'),
-      '.local',
-      'share',
-      'Steam',
-      'steamapps',
-      'common',
-      'Path of Exile',
-      'logs',
-      'Client.txt'
-    ),
+    path.join(app.getPath('home'), '.wine/drive_c/Program Files (x86)/Grinding Gear Games/Path of Exile/logs/Client.txt'),
+    path.join(app.getPath('home'), '.local/share/Steam/steamapps/common/Path of Exile/logs/Client.txt')
   ] : (process.platform === 'darwin') ? [
-    `${app.getPath('home')}/Library/Caches/com.GGG.PathOfExile/Logs/Client.txt`
+    path.join(app.getPath('home'), 'Library/Caches/com.GGG.PathOfExile/Logs/Client.txt')
   ] : []
 
 export class GameLogWatcher {
