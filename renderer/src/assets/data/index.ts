@@ -1,5 +1,5 @@
 import fnv1a from '@sindresorhus/fnv1a'
-import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict, DisenchantUniqueItem } from './interfaces'
+import type { BaseType, DisenchantUniqueItem, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
 
 export * from './interfaces'
 
