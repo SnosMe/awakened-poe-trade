@@ -78,6 +78,11 @@ export interface ParsedItem {
   }
   category?: ItemCategory
   info: BaseType
+  disenchantCandidates: Array<{
+    name: string
+    value: string
+    icon: string
+  }>
   rawText: string
 }
 
@@ -98,6 +103,7 @@ export function createVirtualItem (
     statsByType: props.statsByType ?? [],
     unknownModifiers: props.unknownModifiers ?? [],
     influences: props.influences ?? [],
+    disenchantCandidates: props.disenchantCandidates ?? [],
     rawText: 'VIRTUAL_ITEM'
   }
 }
