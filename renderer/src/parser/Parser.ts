@@ -14,6 +14,7 @@ import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedIt
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE, IMPLICIT_LINE } from './advanced-mod-desc'
 import { calcPropPercentile, QUALITY_STATS } from './calc-q20'
+import { ITEMS_ITERATOR, DISENCHANT_UNIQUE_ITEMS_ITERATOR, CLIENT_STRINGS } from '@/assets/data'
 
 type SectionParseResult =
   | 'SECTION_PARSED'
@@ -60,6 +61,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
+  parseDisenchantCandidates,
   parseModifiers, // enchant
   parseModifiers, // scourge
   parseModifiers, // implicit
@@ -309,6 +311,7 @@ function parseNamePlate (section: string[]) {
     influences: [],
     info: undefined!,
     infoVariants: undefined!,
+    disenchantCandidates: [],
     rawText: undefined!
   }
 
@@ -655,6 +658,72 @@ function parseModifiers (section: string[], item: ParsedItem) {
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
   }
 
+  return 'SECTION_PARSED'
+}
+
+function parseDisenchantCandidates(section: string[], item: ParsedItem) {
+
+  // TODO: Improve condition to check only items that can be disenchanting. Checking by `item.category` can help but it's not sure.
+  if (item.rarity !== ItemRarity.Unique) return 'PARSER_SKIPPED'
+
+  const refName = item!.info.refName
+  const possibleItems: {name: string, refName: string, icon: string}[] = []
+
+  if (item.isUnidentified) {
+    for (const match of ITEMS_ITERATOR(JSON.stringify(refName))) {
+      if (match.namespace === 'UNIQUE' && match.unique!.base === refName) {
+        possibleItems.push({ name: match.name, refName: match.refName, icon: match.icon })
+      }
+    }
+  } else {
+    possibleItems.push({ name: item.info.name, refName: refName, icon: item.info.icon })
+  }
+
+  const items: {name: string, value: string, icon: string}[] = []
+  const ilvl = item.itemLevel || 0
+  // 50% increased Thaumaturgic Dust per Influence Type
+  let increaseByFactors = item.influences.length * 50
+
+  // 1% increased Thaumaturgic Dust per Item Quality
+  if (item.quality) {
+    increaseByFactors += item.quality
+  } else {
+    // Checking the catalyst quality
+    const catalystQualityStr = CLIENT_STRINGS.QUALITY.slice(0, -2) + ' ('
+    const lines = item.rawText.split(/\r?\n/)
+
+    for (const line of lines) {
+      if (line.startsWith(catalystQualityStr)) {
+        // "Quality (Elemental Damage Modifiers): +20% (augmented)"
+        increaseByFactors += parseInt(line.match(/\d+/)?.join('') || '0', 10)
+        break
+      }
+    }
+  }
+
+  if (item.isCorrupted) {
+    for (const mod of item.newMods) {
+      // 50% increased Thaumaturgic Dust per Corruption Implicit
+      if (mod.info.generation === 'corrupted') {
+        increaseByFactors += 50
+      }
+    }
+  }
+
+  // Per Influence + Corrupt + Quality
+  const factorsMultiplier = (increaseByFactors + 100) / 100
+  // Formula from https://poedb.tw/us/Kingsmarch#Disenchant
+  const globalMultiplier = 100 * (20 - (84 - Math.min(Math.max(65, ilvl), 84))) * factorsMultiplier
+
+  for (const entry of possibleItems) {
+    for (const match of DISENCHANT_UNIQUE_ITEMS_ITERATOR(JSON.stringify(entry.refName))) {
+      if (match.name === entry.refName) {
+        items.push({ name: entry.name, value: Math.round(match.dustAmount * globalMultiplier).toLocaleString('en-us'), icon: entry.icon })
+      }
+    }
+  }
+
+  item.disenchantCandidates = items
   return 'SECTION_PARSED'
 }
 

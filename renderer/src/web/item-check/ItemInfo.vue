@@ -14,9 +14,9 @@
       <div>{{ t('item.elemental_dps') }}</div><div class="text-right">{{ weaponDPS.elem }}</div>
       <div>{{ t('item.total_dps') }}</div><div class="text-right">{{ weaponDPS.total }}</div>
     </div>
-    <div v-if="uniqueItemDisenchantingList" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
+    <div v-if="item.disenchantCandidates" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
       <div class="grid grid-cols-2 gap-2 overflow-auto pb-4 px-4">
-        <div v-for="uniqueItemDisenchanting in uniqueItemDisenchantingList" class="flex">
+        <div v-for="uniqueItemDisenchanting in item.disenchantCandidates" class="flex">
           <div class="bg-gray-700 rounded flex gap-x-3 items-center p-2 w-full">
             <img :src="uniqueItemDisenchanting.icon" class="w-12" />
             <div class="leading-tight text-left">
@@ -38,7 +38,6 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, type ParsedItem } from '@/parser'
 import * as actions from './hotkeyable-actions'
-import { ITEMS_ITERATOR, DISENCHANT_UNIQUE_ITEMS_ITERATOR, CLIENT_STRINGS } from '@/assets/data'
 
 const props = defineProps<{
   item: ParsedItem
@@ -62,72 +61,6 @@ const weaponDPS = computed(() => {
   const pdps = Math.round(item.weaponAS * (item.weaponPHYSICAL ?? 0))
   const edps = Math.round(item.weaponAS * (item.weaponELEMENTAL ?? 0))
   return { phys: pdps, elem: edps, total: pdps + edps }
-})
-
-const uniqueItemDisenchantingList = computed(() => {
-  const { item } = props
-
-  // TODO: Improve condition to check only items that can be disenchanting. Checking by `item.category` can help but it's not sure.
-  if (item.rarity !== ItemRarity.Unique) return undefined
-
-  const refName = item!.info.refName
-  const possibleItems: {name: string, refName: string, icon: string}[] = []
-
-  if (item.isUnidentified) {
-    for (const match of ITEMS_ITERATOR(JSON.stringify(refName))) {
-      if (match.namespace === 'UNIQUE' && match.unique!.base === refName) {
-        possibleItems.push({ name: match.name, refName: match.refName, icon: match.icon })
-      }
-    }
-  } else {
-    possibleItems.push({ name: item.info.name, refName: refName, icon: item.info.icon })
-  }
-
-  const items: {name: string, value: string, icon: string}[] = []
-  const ilvl = item.itemLevel || 0
-  // 50% increased Thaumaturgic Dust per Influence Type
-  let increaseByFactors = item.influences.length * 50
-
-  // 1% increased Thaumaturgic Dust per Item Quality
-  if (item.quality) {
-    increaseByFactors += item.quality
-  } else {
-    // Checking the catalyst quality
-    const catalystQualityStr = CLIENT_STRINGS.QUALITY.slice(0, -2) + ' ('
-    const lines = item.rawText.split(/\r?\n/)
-
-    for (const line of lines) {
-      if (line.startsWith(catalystQualityStr)) {
-        // "Quality (Elemental Damage Modifiers): +20% (augmented)"
-        increaseByFactors += parseInt(line.match(/\d+/)?.join('') || '0', 10)
-        break
-      }
-    }
-  }
-
-  if (item.isCorrupted) {
-    for (const mod of item.newMods) {
-      // 50% increased Thaumaturgic Dust per Corruption Implicit
-      if (mod.info.generation === 'corrupted') {
-        increaseByFactors += 50
-      }
-    }
-  }
-
-  // Per Influence + Corrupt + Quality
-  const factorsMultiplier = (increaseByFactors + 100) / 100
-  // Formula from https://poedb.tw/us/Kingsmarch#Disenchant
-  const globalMultiplier = 100 * (20 - (84 - Math.min(Math.max(65, ilvl), 84))) * factorsMultiplier
-
-  for (const entry of possibleItems) {
-    for (const match of DISENCHANT_UNIQUE_ITEMS_ITERATOR(JSON.stringify(entry.refName))) {
-      if (match.name === entry.refName) {
-        items.push({ name: entry.name, value: Math.round(match.dustAmount * globalMultiplier).toLocaleString('en-us'), icon: entry.icon })
-      }
-    }
-  }
-
-  return items
 })
 
 const itemName = computed(() => props.item.info.name)
