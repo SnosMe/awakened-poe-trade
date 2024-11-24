@@ -27,6 +27,7 @@ import type { WidgetManager } from '../overlay/interfaces.js'
 import type { StashSearchWidget } from './widget.js'
 
 import Widget from '../overlay/Widget.vue'
+import UiToggle from '@/web/ui/UiToggle.vue'
 
 const props = defineProps<{
   config: StashSearchWidget

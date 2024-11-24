@@ -16,13 +16,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
-    - run: yarn --frozen-lockfile
+    - run: npm ci
       working-directory: ./renderer
-    - run: yarn make-index-files
+    - run: npm run make-index-files
       working-directory: ./renderer
-    - run: yarn lint
+    - run: npm run lint
       working-directory: ./renderer
-    - run: yarn build
+    - run: npm run build
       working-directory: ./renderer
     - uses: actions/upload-artifact@v4
       with:

@@ -70,6 +70,8 @@
 import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTick, provide } from 'vue'
 import { Result, ok, err } from 'neverthrow'
 import { useI18n } from 'vue-i18n'
+import UiErrorBox from '@/web/ui/UiErrorBox.vue'
+import UiPopover from '@/web/ui/Popover.vue'
 import CheckedItem from './CheckedItem.vue'
 import BackgroundInfo from './BackgroundInfo.vue'
 import { MainProcess, Host } from '@/web/background/IPC'
@@ -96,7 +98,9 @@ export default defineComponent({
     RelatedItems,
     RateLimiterState,
     CheckPositionCircle,
-    ItemQuickPrice
+    ItemQuickPrice,
+    UiErrorBox,
+    UiPopover
   },
   props: {
     config: {

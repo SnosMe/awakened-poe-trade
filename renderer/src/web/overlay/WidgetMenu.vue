@@ -44,13 +44,15 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, inject } from 'vue'
+import UiToggle from '@/web/ui/UiToggle.vue'
+import UiPopover from '@/web/ui/Popover.vue'
 import { Widget as IWidget, WidgetManager, WidgetMenu } from './interfaces'
 import { Host } from '@/web/background/IPC'
 import Widget from './Widget.vue'
 import { useI18nNs } from '@/web/i18n'
 
 export default defineComponent({
-  components: { Widget },
+  components: { Widget, UiToggle, UiPopover },
   props: {
     config: {
       type: Object as PropType<WidgetMenu>,

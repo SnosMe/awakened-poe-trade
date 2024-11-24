@@ -22,10 +22,12 @@
 <script lang="ts">
 import { defineComponent, computed, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UiRadio from '@/web/ui/UiRadio.vue'
 import { StatMatcher, StatTag, decisionHasColor, decisionCreate, MapCheckConfig } from './common.js'
 
 export default defineComponent({
   emits: [],
+  components: { UiRadio },
   props: {
     matcher: {
       type: Object as PropType<StatMatcher>,

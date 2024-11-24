@@ -32,6 +32,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import { useI18nNs } from '@/web/i18n'
+import UiToggle from '@/web/ui/UiToggle.vue'
 import { configProp, findWidget } from '../settings/utils'
 import type { ItemCheckWidget } from '../item-check/widget.js'
 import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
@@ -51,7 +52,8 @@ export default defineComponent({
   name: 'map_check.name',
   components: {
     SettingsMatcherEntry,
-    VirtualScroll
+    VirtualScroll,
+    UiToggle
   },
   props: configProp(),
   setup (props) {

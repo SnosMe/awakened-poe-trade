@@ -568,7 +568,7 @@ export async function requestResults (
     if (_data.error) {
       throw new Error(_data.error.message)
     } else {
-      data = _data.result.filter(res => res != null) as FetchResult[]
+      data = _data.result.filter(res => res != null)
     }
 
     cache.set<FetchResult[]>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))

@@ -67,6 +67,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, ref, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UiPopover from '@/web/ui/Popover.vue'
 import StatRollSlider from '../../ui/StatRollSlider.vue'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
@@ -78,7 +79,7 @@ import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
-  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider },
+  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider, UiPopover },
   emits: ['submit'],
   props: {
     filter: {

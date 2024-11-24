@@ -17,12 +17,13 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UiToggle from '@/web/ui/UiToggle.vue'
 import { configProp } from './utils'
 import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
   name: 'settings.chat',
-  components: { HotkeyInput },
+  components: { HotkeyInput, UiToggle },
   props: configProp(),
   setup (props) {
     const { t } = useI18n()

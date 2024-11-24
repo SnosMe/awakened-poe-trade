@@ -17,7 +17,7 @@
             class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
         </button>
       </transition-group>
-      <ui-timeout v-if="!showSearch"
+      <UiTimeout v-if="!showSearch"
         ref="showTimeout"
         @timeout="makeInvisible"
         class="self-center" :ms="4000" />
@@ -175,6 +175,7 @@ import { ItemCategory } from '@/parser'
 
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import Widget from '../overlay/Widget.vue'
+import UiTimeout from '@/web/ui/UiTimeout.vue'
 
 const props = defineProps<{
   config: ItemSearchWidget

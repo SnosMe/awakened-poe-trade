@@ -2,7 +2,6 @@ import { createApp, watch } from 'vue'
 import App from './web/App.vue'
 import * as I18n from './web/i18n'
 import * as Data from './assets/data'
-import uiComponents from './web/ui'
 import { initConfig, AppConfig } from './web/Config'
 import { Host } from './web/background/IPC'
 
@@ -19,6 +18,5 @@ import { Host } from './web/background/IPC'
 
   createApp(App)
     .use(i18nPlugin)
-    .use(uiComponents)
     .mount('#app')
 })()

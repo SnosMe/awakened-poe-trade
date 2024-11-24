@@ -13,7 +13,7 @@
         handle="[data-qa=drag-handle]" :animation="200" :force-fallback="true">
         <template #item="{ element: img }">
           <div :class="$style.card">
-            <fullscreen-image
+            <FullscreenImage
               :src="img.url"
               :disabled="isEditing || isMoving"
               class="rounded overflow-hidden" />
@@ -42,6 +42,7 @@ import { WidgetManager, ImageStripWidget } from './interfaces'
 
 import DndContainer from 'vuedraggable'
 import Widget from './Widget.vue'
+import FullscreenImage from '@/web/ui/FullscreenImage.vue'
 
 const props = defineProps<{
   config: ImageStripWidget

@@ -13,7 +13,7 @@
         >{{ profile.text }}</button>
       </div>
     </div>
-    <fullscreen-image v-if="image" :src="image" style="height: auto;" />
+    <FullscreenImage v-if="image" :src="image" style="height: auto;" />
     <div v-if="!mapStats.length" class="px-8 py-2">
       {{ t('map_check.no_mods') }}
     </div>
@@ -38,6 +38,7 @@ import { STAT_BY_MATCH_STR } from '@/assets/data'
 import { MapCheckConfig } from './common.js'
 
 import MapStatButton from './MapStatButton.vue'
+import FullscreenImage from '@/web/ui/FullscreenImage.vue'
 
 const props = defineProps<{
   item: ParsedItem,
