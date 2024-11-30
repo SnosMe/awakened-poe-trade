@@ -43,11 +43,11 @@ jobs:
       with:
         name: renderer-dist
         path: ./renderer/dist
-    - run: yarn --frozen-lockfile
+    - run: npm ci
       working-directory: ./main
-    - run: yarn build
+    - run: npm run build
       working-directory: ./main
-    - run: yarn package -p onTagOrDraft
+    - run: npm run package "--" -p onTagOrDraft
       working-directory: ./main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
