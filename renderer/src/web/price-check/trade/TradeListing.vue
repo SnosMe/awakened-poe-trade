@@ -8,8 +8,7 @@
       </div>
       <online-filter v-if="list" :by-time="true" :filters="filters" />
       <div class="flex-1"></div>
-      <trade-links v-if="list"
-        :get-link="makeTradeLink" />
+      <trade-links v-if="list" :get-link="makeTradeLink" />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -46,21 +45,28 @@
               <td colspan="100" class="text-transparent">***</td>
             </tr>
             <tr v-else :key="result.id">
-              <td class="px-2 whitespace-nowrap"><span :class="{ 'line-through': result.priceCurrency === 'exalted' }">{{ result.priceAmount }} {{ result.priceCurrency }}</span> <span v-if="result.listedTimes > 2" class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{ result.listedTimes }}</span><i v-else-if="!result.hasNote" class="fas fa-question" /></td>
+              <td class="px-2 whitespace-nowrap"><span
+                  :class="{ 'line-through': result.priceCurrency === 'exalted' }">{{ result.priceAmount }} {{
+                    result.priceCurrency }}</span> <span v-if="result.listedTimes > 2"
+                  class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"><span class="font-sans">×</span> {{
+                    result.listedTimes }}</span><i v-else-if="!result.hasNote" class="fas fa-question" /></td>
               <td v-if="item.stackSize" class="px-2 text-right">{{ result.stackSize }}</td>
               <td v-if="filters.itemLevel" class="px-2 whitespace-nowrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.category === 'Gem'" class="pl-2 whitespace-nowrap">{{ result.level }}</td>
-              <td v-if="filters.quality || item.category === 'Gem'" class="px-2 whitespace-nowrap text-blue-400 text-right">{{ result.quality }}</td>
+              <td v-if="filters.quality || item.category === 'Gem'"
+                class="px-2 whitespace-nowrap text-blue-400 text-right">{{ result.quality }}</td>
               <td class="pr-2 pl-4 whitespace-nowrap">
                 <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1 font-sans text-xs">{{ result.relativeDate }}</div>
                 </div>
-                <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
+                <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{
+                  t('You') }}</span>
               </td>
               <td v-if="showSeller" class="px-2 whitespace-nowrap">
                 <span v-if="result.isMine" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
-                <span v-else class="font-sans text-xs">{{ showSeller === 'ign' ? result.ign : result.accountName }}</span>
+                <span v-else class="font-sans text-xs">{{ showSeller === 'ign' ? result.ign : result.accountName
+                  }}</span>
               </td>
             </tr>
           </template>
@@ -99,7 +105,7 @@ const API_FETCH_LIMIT = 100
 const MIN_NOT_GROUPED = 7
 const MIN_GROUPED = 10
 
-function useTradeApi () {
+function useTradeApi() {
   let searchId = 0
   const error = shallowRef<string | null>(null)
   const searchResult = shallowRef<SearchResult | null>(null)
@@ -137,7 +143,7 @@ function useTradeApi () {
     return out
   })
 
-  async function search (filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
+  async function search(filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
     try {
       searchId += 1
       error.value = null
@@ -168,7 +174,7 @@ function useTradeApi () {
       }
 
       let fetched = 20
-      async function fetchMore (): Promise<void> {
+      async function fetchMore(): Promise<void> {
         if (_searchId !== searchId) return
         const totalGrouped = groupedResults.value.length
         const totalNotGrouped = groupedResults.value.reduce((len, res) =>
@@ -209,7 +215,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup (props) {
+  setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
     watch(() => props.item, (item) => {
@@ -220,7 +226,7 @@ export default defineComponent({
 
     const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
-    function makeTradeLink () {
+    function makeTradeLink() {
       return (searchResult.value)
         ? `https://${getTradeEndpoint()}/trade2/search/${props.filters.trade.league}/${searchResult.value.id}`
         : `https://${getTradeEndpoint()}/trade2/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
@@ -247,7 +253,7 @@ export default defineComponent({
       error,
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
-      openTradeLink () {
+      openTradeLink() {
         showBrowser(makeTradeLink())
       }
     }
@@ -261,7 +267,7 @@ export default defineComponent({
   @apply bg-gray-800;
   @apply p-0 m-0;
 
-  & > div {
+  &>div {
     @apply border-b border-gray-700;
   }
 }
@@ -271,10 +277,14 @@ export default defineComponent({
   height: 0.375rem;
   border-radius: 100%;
 
-  &.online { /* */ }
+  &.online {
+    /* */
+  }
+
   &.offline {
     @apply bg-red-600;
   }
+
   &.afk {
     @apply bg-orange-500;
   }
