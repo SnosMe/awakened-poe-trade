@@ -28,12 +28,12 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t(':poe_log_file') }}</div>
       <input v-model.trim="clientLog"
-        class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/Grinding Gear Games/Path of Exile/logs/Client.txt">
+        class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/Grinding Gear Games/Path of Exile 2/logs/Client.txt">
     </div>
     <div class="mb-4">
       <div class="flex-1 mb-1">{{ t(':poe_cfg_file') }}</div>
       <input v-model.trim="gameConfig"
-        class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/My Games/Path of Exile/production_Config.ini">
+        class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/My Games/Path of Exile 2/production_Config.ini">
     </div>
     <hr class="mb-4 mx-8 border-gray-700">
     <div class="mb-2">

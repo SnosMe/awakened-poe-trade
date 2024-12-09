@@ -4,7 +4,7 @@ const BASE = '/awakened-poe-trade/'
 
 export default defineConfig({
   title: 'Awakened PoE Trade',
-  description: 'App for price-checking items in Path of Exile',
+  description: 'App for price-checking items in Path of Exile 2',
   base: BASE,
   mpa: true,
   head: [

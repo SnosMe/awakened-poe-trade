@@ -4,7 +4,7 @@ title: FAQ
 
 - **Where can I change settings, league?**
 
-  Open Path of Exile and press overlay key `Shift + Space`. Click on the button with cog icon there.
+  Open Path of Exile 2 and press overlay key `Shift + Space`. Click on the button with cog icon there.
   ![](https://i.imgur.com/81L9Cp0.png)
 
 - **Where can I find the logs?**

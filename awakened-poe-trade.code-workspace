@@ -1,28 +1,32 @@
 {
-	"folders": [
-		{
-			"name": "renderer",
-			"path": "renderer"
-		},
-		{
-			"name": "main",
-			"path": "main"
-		},
-		{
-			"name": "docs",
-			"path": "docs"
-		},
-		{
-			"name": "root",
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.exclude": {
-			"main/": true,
-			"renderer/": true,
-			"docs/": true,
-			"dist/": true
-		}
-	}
+  "folders": [
+    {
+      "name": "renderer",
+      "path": "renderer"
+    },
+    {
+      "name": "main",
+      "path": "main"
+    },
+    {
+      "name": "docs",
+      "path": "docs"
+    },
+    {
+      "name": "root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "main/": true,
+      "renderer/": true,
+      "docs/": true,
+      "dist/": true
+    },
+    "editor.tabSize": 2,
+    "conventionalCommits.scopes": [
+      "Update to 2"
+    ]
+  }
 }
