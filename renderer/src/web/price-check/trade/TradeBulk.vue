@@ -230,7 +230,7 @@ export default defineComponent({
       const have = _have ?? ((selectedCurr.value === 'xchgStable') ? ['divine'] : ['chaos'])
       const httpPostBody = createTradeRequest(props.filters, props.item, have)
       const httpGetQuery = { exchange: httpPostBody.query }
-      return `https://${getTradeEndpoint()}/trade/exchange/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
+      return `https://${getTradeEndpoint()}/trade2/exchange/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
     }
 
     const { t } = useI18nNs('trade_result')

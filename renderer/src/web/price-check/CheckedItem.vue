@@ -238,7 +238,7 @@ export default defineComponent({
         presets.value.active = id
       },
       makeTradeLink () {
-        return `https://${getTradeEndpoint()}/trade/search/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`
+        return `https://${getTradeEndpoint()}/trade2/search/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`
       }
     }
   }
