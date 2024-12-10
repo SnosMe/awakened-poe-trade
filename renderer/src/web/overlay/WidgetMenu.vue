@@ -61,7 +61,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup (props) {
     const wm = inject<WidgetManager>('wm')!
 
     const widgets = computed(() => {
@@ -79,17 +79,17 @@ export default defineComponent({
     return {
       t,
       widgets,
-      createOfType(type: string) {
+      createOfType (type: string) {
         wm.create(type)
       },
-      toggle(widget: IWidget) {
+      toggle (widget: IWidget) {
         if (widget.wmWants === 'hide') {
           wm.show(widget.wmId)
         } else {
           wm.hide(widget.wmId)
         }
       },
-      handleItemPaste(e: Event) {
+      handleItemPaste (e: Event) {
         const target = e.target as HTMLInputElement
         const inputRect = target.getBoundingClientRect()
         Host.selfDispatch({

@@ -177,7 +177,7 @@ export function calculatedStatToFilter (
         ? FilterTag.Enchant
         : FilterTag.Variant,
       oils: decodeOils(calc),
-      sources: sources,
+      sources,
       option: {
         value: sources[0].contributes!.value
       },
@@ -197,7 +197,7 @@ export function calculatedStatToFilter (
     text: translation.string,
     tag: (type as unknown) as FilterTag,
     oils: decodeOils(calc),
-    sources: sources,
+    sources,
     roll: undefined,
     disabled: true
   }
@@ -288,7 +288,7 @@ export function calculatedStatToFilter (
       bounds: (item.rarity === ItemRarity.Unique && roll.min !== roll.max && calc.stat.better !== StatBetter.NotComparable)
         ? filterBounds
         : undefined,
-      dp: dp,
+      dp,
       isNegated: false,
       tradeInvert: calc.stat.trade.inverted
     }
@@ -427,10 +427,10 @@ function applyClusterJewelRules (filters: StatFilter[]) {
       // 4 is [_, 5]
       if (filter.roll!.value === 4) {
         filter.roll!.max = 5
-      // 5 is [5, 5]
+        // 5 is [5, 5]
       } else if (filter.roll!.value === 5) {
         filter.roll!.min = filter.roll!.default.min
-      // 3, 6, 10, 11, 12 are [n, _]
+        // 3, 6, 10, 11, 12 are [n, _]
       } else if (
         filter.roll!.value === 3 ||
         filter.roll!.value === 6 ||

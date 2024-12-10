@@ -79,7 +79,7 @@ import CheckPositionCircle from './CheckPositionCircle.vue'
 import AppTitleBar from '@/web/ui/AppTitlebar.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
-import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
+import ConversionWarningBanner from '../conversion-warn-banner/ConversionWarningBanner.vue'
 
 type ParseError = { name: string; message: string; rawText: ParsedItem['rawText'] }
 
@@ -103,7 +103,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup (props) {
     const wm = inject<WidgetManager>('wm')!
     const { xchgRate, initialLoading: xchgRateLoading, queuePricesFetch } = usePoeninja()
 
@@ -163,7 +163,7 @@ export default defineComponent({
       }
     })
 
-    function handleIdentification(identified: ParsedItem) {
+    function handleIdentification (identified: ParsedItem) {
       item.value = ok(identified)
     }
 
@@ -205,7 +205,7 @@ export default defineComponent({
       }
     })
 
-    function closePriceCheck() {
+    function closePriceCheck () {
       if (isBrowserShown.value || !Host.isElectron) {
         wm.hide(props.config.wmId)
       } else {
@@ -213,7 +213,7 @@ export default defineComponent({
       }
     }
 
-    function openLeagueSelection() {
+    function openLeagueSelection () {
       const settings = wm.widgets.value.find(w => w.wmType === 'settings')!
       wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true)
       wm.show(settings.wmId)
@@ -221,14 +221,14 @@ export default defineComponent({
 
     const iframeEl = shallowRef<HTMLIFrameElement | null>(null)
 
-    function showBrowser(url: string) {
+    function showBrowser (url: string) {
       wm.setFlag(props.config.wmId, 'has-browser', true)
       nextTick(() => {
         iframeEl.value!.src = url
       })
     }
 
-    function closeBrowser() {
+    function closeBrowser () {
       wm.setFlag(props.config.wmId, 'has-browser', false)
     }
 

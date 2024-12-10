@@ -257,7 +257,7 @@ function propToFilter (opts: {
     better: StatBetter.PositiveRoll
   }
   const filter = calculatedStatToFilter({
-    stat: stat,
+    stat,
     type: ModifierType.Pseudo,
     sources: [{
       modifier: {
@@ -265,7 +265,7 @@ function propToFilter (opts: {
         stats: []
       },
       stat: {
-        stat: stat,
+        stat,
         translation: stat.matchers[0],
         roll: {
           dp: opts.dp ?? false,

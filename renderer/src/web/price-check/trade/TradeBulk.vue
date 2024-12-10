@@ -111,7 +111,7 @@ import TradeLinks from './TradeLinks.vue'
 
 const slowdown = artificialSlowdown(900)
 
-function useBulkApi() {
+function useBulkApi () {
   type BulkSearchExtended = Record<'xchgChaos' | 'xchgStable', {
     listed: Ref<BulkSearch | null>
     listedLazy: ComputedRef<PricingResult[]>
@@ -121,7 +121,7 @@ function useBulkApi() {
   const error = shallowRef<string | null>(null)
   const result = shallowRef<BulkSearchExtended | null>(null)
 
-  async function search(item: ParsedItem, filters: ItemFilters) {
+  async function search (item: ParsedItem, filters: ItemFilters) {
     try {
       searchId += 1
       error.value = null
@@ -133,8 +133,8 @@ function useBulkApi() {
       const have = (item.info.refName === 'Chaos Orb')
         ? ['divine']
         : (item.info.refName === 'Divine Orb')
-          ? ['chaos']
-          : ['divine', 'chaos']
+            ? ['chaos']
+            : ['divine', 'chaos']
 
       const optimisticSearch = await execBulkSearch(
         item, filters, have, { accountName: AppConfig().accountName })
@@ -149,7 +149,7 @@ function useBulkApi() {
     }
   }
 
-  function getResultsByHave(
+  function getResultsByHave (
     item: ParsedItem,
     filters: ItemFilters,
     preloaded: Array<BulkSearch | null>,
@@ -203,7 +203,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup (props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
@@ -236,7 +236,7 @@ export default defineComponent({
       }
     })
 
-    function makeTradeLink(_have?: string[]) {
+    function makeTradeLink (_have?: string[]) {
       const have = _have ?? ((selectedCurr.value === 'xchgStable') ? ['divine'] : ['chaos'])
       const httpPostBody = createTradeRequest(props.filters, props.item, have)
       const httpGetQuery = { exchange: httpPostBody.query }
@@ -254,7 +254,7 @@ export default defineComponent({
       execSearch: () => { search(props.item, props.filters) },
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
-      openTradeLink() {
+      openTradeLink () {
         showBrowser(makeTradeLink(['mirror']))
       }
     }

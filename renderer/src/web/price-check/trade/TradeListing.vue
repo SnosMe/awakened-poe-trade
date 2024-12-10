@@ -105,7 +105,7 @@ const API_FETCH_LIMIT = 100
 const MIN_NOT_GROUPED = 7
 const MIN_GROUPED = 10
 
-function useTradeApi() {
+function useTradeApi () {
   let searchId = 0
   const error = shallowRef<string | null>(null)
   const searchResult = shallowRef<SearchResult | null>(null)
@@ -143,7 +143,7 @@ function useTradeApi() {
     return out
   })
 
-  async function search(filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
+  async function search (filters: ItemFilters, stats: StatFilter[], item: ParsedItem) {
     try {
       searchId += 1
       error.value = null
@@ -174,7 +174,7 @@ function useTradeApi() {
       }
 
       let fetched = 20
-      async function fetchMore(): Promise<void> {
+      async function fetchMore (): Promise<void> {
         if (_searchId !== searchId) return
         const totalGrouped = groupedResults.value.length
         const totalNotGrouped = groupedResults.value.reduce((len, res) =>
@@ -215,7 +215,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup (props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
 
     watch(() => props.item, (item) => {
@@ -226,7 +226,7 @@ export default defineComponent({
 
     const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
-    function makeTradeLink() {
+    function makeTradeLink () {
       return (searchResult.value)
         ? `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}/${searchResult.value.id}`
         : `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
@@ -253,7 +253,7 @@ export default defineComponent({
       error,
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
-      openTradeLink() {
+      openTradeLink () {
         showBrowser(makeTradeLink())
       }
     }
