@@ -6,12 +6,14 @@
         <span class="mr-1">{{ t(':matched') }}</span>
         <span v-if="!result" class="text-gray-600">...</span>
         <div v-else class="flex items-center">
-          <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'xchgChaos' ? 'transparent' : undefined }"
+          <button class="btn flex items-center mr-1"
+            :style="{ background: selectedCurr !== 'xchgChaos' ? 'transparent' : undefined }"
             @click="selectedCurr = 'xchgChaos'">
             <img src="/images/chaos.png" class="trade-bulk-currency-icon">
             <span>{{ result.xchgChaos.listed.value?.total ?? '?' }}</span>
           </button>
-          <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'xchgStable' ? 'transparent' : undefined }"
+          <button class="btn flex items-center mr-1"
+            :style="{ background: selectedCurr !== 'xchgStable' ? 'transparent' : undefined }"
             @click="selectedCurr = 'xchgStable'">
             <img src="/images/divine.png" class="trade-bulk-currency-icon">
             <span>{{ result.xchgStable.listed.value?.total ?? '?' }}</span>
@@ -19,8 +21,7 @@
           <span class="ml-1"><online-filter :filters="filters" /></span>
         </div>
       </div>
-      <trade-links v-if="result"
-        :get-link="makeTradeLink" />
+      <trade-links v-if="result" :get-link="makeTradeLink" />
     </div>
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
@@ -30,7 +31,10 @@
               <div class="px-2">{{ t(':price') }}</div>
             </th>
             <th class="trade-table-heading">
-              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ (selectedCurr === 'xchgChaos') ? 'chaos' : 'div' }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ t(':bulk') }}</span></div>
+              <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span
+                  class="w-8 inline-block text-right -ml-px mr-px">{{ (selectedCurr === 'xchgChaos') ? 'chaos' : 'div'
+                  }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ t(':bulk')
+                  }}</span></div>
             </th>
             <th class="trade-table-heading">
               <div class="px-1">{{ t(':stock') }}</div>
@@ -55,19 +59,25 @@
             </tr>
             <tr v-else :key="result.id">
               <td class="px-2">{{ Number((result.exchangeAmount / result.itemAmount).toFixed(4)) }}</td>
-              <td class="pl-1 whitespace-nowrap"><span class="w-8 inline-block text-right">{{ result.exchangeAmount }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ result.itemAmount }}</span></td>
+              <td class="pl-1 whitespace-nowrap"><span class="w-8 inline-block text-right">{{ result.exchangeAmount
+                  }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ result.itemAmount
+                  }}</span></td>
               <td class="px-1 text-right">{{ result.stock }}</td>
-              <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
+              <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount"
+                  class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock /
+                    result.itemAmount) }}</td>
               <td class="pr-2 pl-4 whitespace-nowrap">
                 <div class="inline-flex items-center">
                   <div class="account-status" :class="result.accountStatus"></div>
                   <div class="ml-1 font-sans text-xs">{{ result.relativeDate }}</div>
                 </div>
-                <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
+                <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{
+                  t('You') }}</span>
               </td>
               <td v-if="showSeller" class="px-2 whitespace-nowrap">
                 <span v-if="result.isMine" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
-                <span v-else class="font-sans text-xs">{{ showSeller === 'ign' ? result.ign : result.accountName }}</span>
+                <span v-else class="font-sans text-xs">{{ showSeller === 'ign' ? result.ign : result.accountName
+                  }}</span>
               </td>
             </tr>
           </template>
@@ -101,7 +111,7 @@ import TradeLinks from './TradeLinks.vue'
 
 const slowdown = artificialSlowdown(900)
 
-function useBulkApi () {
+function useBulkApi() {
   type BulkSearchExtended = Record<'xchgChaos' | 'xchgStable', {
     listed: Ref<BulkSearch | null>
     listedLazy: ComputedRef<PricingResult[]>
@@ -111,7 +121,7 @@ function useBulkApi () {
   const error = shallowRef<string | null>(null)
   const result = shallowRef<BulkSearchExtended | null>(null)
 
-  async function search (item: ParsedItem, filters: ItemFilters) {
+  async function search(item: ParsedItem, filters: ItemFilters) {
     try {
       searchId += 1
       error.value = null
@@ -123,8 +133,8 @@ function useBulkApi () {
       const have = (item.info.refName === 'Chaos Orb')
         ? ['divine']
         : (item.info.refName === 'Divine Orb')
-            ? ['chaos']
-            : ['divine', 'chaos']
+          ? ['chaos']
+          : ['divine', 'chaos']
 
       const optimisticSearch = await execBulkSearch(
         item, filters, have, { accountName: AppConfig().accountName })
@@ -139,7 +149,7 @@ function useBulkApi () {
     }
   }
 
-  function getResultsByHave (
+  function getResultsByHave(
     item: ParsedItem,
     filters: ItemFilters,
     preloaded: Array<BulkSearch | null>,
@@ -154,7 +164,7 @@ function useBulkApi () {
 
     const listedLazy = computed(() => {
       if (!requested) {
-        ;(async function () {
+        ; (async function () {
           try {
             requested = true
             _result.value = shallowReactive((await execBulkSearch(
@@ -193,7 +203,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup (props) {
+  setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const { error, result, search } = useBulkApi()
 
@@ -226,11 +236,11 @@ export default defineComponent({
       }
     })
 
-    function makeTradeLink (_have?: string[]) {
+    function makeTradeLink(_have?: string[]) {
       const have = _have ?? ((selectedCurr.value === 'xchgStable') ? ['divine'] : ['chaos'])
       const httpPostBody = createTradeRequest(props.filters, props.item, have)
       const httpGetQuery = { exchange: httpPostBody.query }
-      return `https://${getTradeEndpoint()}/trade2/exchange/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
+      return `https://${getTradeEndpoint()}/trade2/exchange/poe2/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`
     }
 
     const { t } = useI18nNs('trade_result')
@@ -244,7 +254,7 @@ export default defineComponent({
       execSearch: () => { search(props.item, props.filters) },
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
-      openTradeLink () {
+      openTradeLink() {
         showBrowser(makeTradeLink(['mirror']))
       }
     }

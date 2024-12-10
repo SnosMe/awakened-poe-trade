@@ -228,8 +228,8 @@ export default defineComponent({
 
     function makeTradeLink() {
       return (searchResult.value)
-        ? `https://${getTradeEndpoint()}/trade2/search/${props.filters.trade.league}/${searchResult.value.id}`
-        : `https://${getTradeEndpoint()}/trade2/search/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
+        ? `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}/${searchResult.value.id}`
+        : `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`
     }
 
     const { t } = useI18nNs('trade_result')

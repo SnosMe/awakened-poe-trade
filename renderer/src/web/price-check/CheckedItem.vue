@@ -1,42 +1,24 @@
 <template>
   <div v-if="show" class="p-4 layout-column min-h-0">
-    <filter-name
-      :filters="itemFilters"
+    <filter-name :filters="itemFilters" :item="item" />
+    <price-prediction v-if="showPredictedPrice" class="mb-4" :item="item" />
+    <price-trend v-else :item="item" :filters="itemFilters" />
+    <filters-block ref="filtersComponent" :filters="itemFilters" :stats="itemStats" :item="item" :presets="presets"
+      @preset="selectPreset" @submit="doSearch = true" />
+    <trade-listing v-if="tradeAPI === 'trade' && doSearch" ref="tradeService" :filters="itemFilters" :stats="itemStats"
       :item="item" />
-    <price-prediction v-if="showPredictedPrice" class="mb-4"
-      :item="item" />
-    <price-trend v-else
-      :item="item"
-      :filters="itemFilters" />
-    <filters-block
-      ref="filtersComponent"
-      :filters="itemFilters"
-      :stats="itemStats"
-      :item="item"
-      :presets="presets"
-      @preset="selectPreset"
-      @submit="doSearch = true" />
-    <trade-listing
-      v-if="tradeAPI === 'trade' && doSearch"
-      ref="tradeService"
-      :filters="itemFilters"
-      :stats="itemStats"
-      :item="item" />
-    <trade-bulk
-      v-if="tradeAPI === 'bulk' && doSearch"
-      ref="tradeService"
-      :filters="itemFilters"
-      :item="item" />
+    <trade-bulk v-if="tradeAPI === 'bulk' && doSearch" ref="tradeService" :filters="itemFilters" :item="item" />
     <div v-if="!doSearch" class="flex justify-between items-center">
       <div class="flex w-40" @mouseenter="handleSearchMouseenter">
         <button class="btn" @click="doSearch = true" style="min-width: 5rem;">{{ t('Search') }}</button>
       </div>
-      <trade-links v-if="tradeAPI === 'trade'"
-        :get-link="makeTradeLink" />
+      <trade-links v-if="tradeAPI === 'trade'" :get-link="makeTradeLink" />
     </div>
-    <stack-value :filters="itemFilters" :item="item"/>
+    <stack-value :filters="itemFilters" :item="item" />
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
-      <div class="mb-1">{{ t('Support development on') }} <a href="https://patreon.com/awakened_poe_trade" class="inline-flex align-middle animate__animated animate__fadeInRight" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
+      <div class="mb-1">{{ t('Support development on') }} <a href="https://patreon.com/awakened_poe_trade"
+          class="inline-flex align-middle animate__animated animate__fadeInRight" target="_blank"><img
+            class="inline h-5" src="/images/Patreon.svg"></a></div>
       <i18n-t keypath="app.thanks_3rd_party" tag="div">
         <a href="https://poeprices.info" target="_blank" class="bg-gray-900 px-1 rounded">poeprices.info</a>
         <a href="https://poe.ninja/support" target="_blank" class="bg-gray-900 px-1 rounded">poe.ninja</a>
@@ -89,7 +71,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup (props) {
+  setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const leagues = useLeagues()
 
@@ -120,7 +102,7 @@ export default defineComponent({
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||
-          (props.advancedCheck && !widget.value.lockedInitialSearch)) {
+        (props.advancedCheck && !widget.value.lockedInitialSearch)) {
         doSearch.value = false
       } else {
         doSearch.value = Boolean(
@@ -174,8 +156,8 @@ export default defineComponent({
 
     const showPredictedPrice = computed(() => {
       if (!widget.value.requestPricePrediction ||
-          AppConfig().language !== 'en' ||
-          !leagues.selected.value!.isPopular) return false
+        AppConfig().language !== 'en' ||
+        !leagues.selected.value!.isPopular) return false
 
       if (presets.value.active === 'filters.preset_base_item') return false
 
@@ -195,7 +177,7 @@ export default defineComponent({
         props.item.info.unique == null)
     })
 
-    function handleSearchMouseenter (e: MouseEvent) {
+    function handleSearchMouseenter(e: MouseEvent) {
       if ((filtersComponent.value.$el as HTMLElement).contains(e.relatedTarget as HTMLElement)) {
         doSearch.value = true
 
@@ -234,11 +216,11 @@ export default defineComponent({
       showSupportLinks,
       presets: computed(() => presets.value.presets.map(preset =>
         ({ id: preset.id, active: (preset.id === presets.value.active) }))),
-      selectPreset (id: string) {
+      selectPreset(id: string) {
         presets.value.active = id
       },
-      makeTradeLink () {
-        return `https://${getTradeEndpoint()}/trade2/search/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`
+      makeTradeLink() {
+        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`
       }
     }
   }

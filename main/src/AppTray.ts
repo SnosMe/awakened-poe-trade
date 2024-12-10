@@ -23,7 +23,7 @@ export class AppTray {
     }
 
     this.tray = new Tray(trayImage);
-    this.tray.setToolTip(`Awakened PoE Trade v${app.getVersion()}`);
+    this.tray.setToolTip(`Awakened PoE2 Trade2 v${app.getVersion()}`);
     this.rebuildMenu();
 
     server.onEventAnyClient("CLIENT->MAIN::user-action", ({ action }) => {

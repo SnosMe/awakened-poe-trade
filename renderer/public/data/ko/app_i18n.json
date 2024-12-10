@@ -5,7 +5,6 @@
   "reopen_settings": "{0}을 눌러서 편집을 계속하세요.",
   "seconds": "초",
   "league": "리그",
-
   "app": {
     "leagues_loading": "리그를 불러오는 중\u2026",
     "leagues_failed": "리그 불러오기를 실패하였습니다",
@@ -19,11 +18,9 @@
     "report_bug": "버그 발생 시 GitHub에 보고해주세요",
     "quit": "종료"
   },
-
   "map.mods.heist": "강탈",
   "map.mods.outdated": "사용X",
   "Support development on": "개발을 지원하세요",
-
   "Blighted": "역병 걸린",
   "Blight-ravaged": "역병에 유린당한",
   "Magic": "매직",
@@ -37,7 +34,6 @@
   "Anomalous": "기묘한",
   "Divergent": "상이한",
   "Phantasmal": "몽환적인",
-
   "item": {
     "prop_quality": "{0}% 퀄리티",
     "base_percentile": "기본 백분위수: {0}%",
@@ -150,7 +146,6 @@
     "hide_anointment": "Buyer will likely change anointment",
     "hide_for_crafting": "Select only if price-checking as base item for crafting",
     "hide_empty_mod": "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers",
-
     "tag_implicit": "고정 속성",
     "tag_fractured": "분열된",
     "tag_crafted": "제작된",
@@ -271,7 +266,7 @@
     "stack": "스택"
   },
   "settings": {
-    "title": "세팅 - Awakened PoE Trade",
+    "title": "세팅 - Awakened PoE2 Trade2",
     "language": "언어",
     "private_league": "개인리그",
     "account_name": "계정명",
@@ -302,8 +297,8 @@
   },
   "price_check": {
     "name": "Price check",
-    "hotkey" :"Auto-hide Mode",
-    "hotkey_locked" :"Open without auto-hide",
+    "hotkey": "Auto-hide Mode",
+    "hotkey_locked": "Open without auto-hide",
     "enable_browser": "Enable builtin browser",
     "builtin_browser_warning": "I am aware that future releases can potentially contain malicious code that can steal my POESESSID.",
     "highlight_hint": "Your items will be highlighted even if this setting is off",

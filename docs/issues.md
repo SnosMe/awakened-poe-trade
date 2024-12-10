@@ -14,7 +14,7 @@ title: Common issues
     If Awakened works for you with DirectX11/12 renderer,
     then problem is old Vulkan drivers for sure.
 
-4. Delete `%appdata%\awakened-poe-trade`
+4. Delete `%appdata%\awakened-poe2-trade2`
 
     If needed, backup `apt-data` folder with your configuration inside.
 
@@ -22,7 +22,7 @@ title: Common issues
 
     Launch them later one at a time to identify **conflict**.
 
-6. Restart Awakened PoE Trade.
+6. Restart Awakened PoE2 Trade2.
 
     *(don't forget to quit first, otherwise launching second instance will do nothing).*
 

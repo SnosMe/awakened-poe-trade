@@ -11,7 +11,7 @@ Note that these 2 both depend on each other, and one cannot run without the othe
 
 The most up-to-date instructions can always be derived from CI:
 
-[.github/workflows/main.yml](https://github.com/SnosMe/awakened-poe-trade/blob/master/.github/workflows/main.yml)
+[.github/workflows/main.yml](https://github.com/Kvan7/awakened-poe2-trade2/blob/master/.github/workflows/main.yml)
 
 Here's what that looks like as of 2023-12-03.
 
