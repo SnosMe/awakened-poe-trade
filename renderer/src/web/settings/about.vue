@@ -35,32 +35,32 @@ import { useI18n } from 'vue-i18n'
 import { Host } from '@/web/background/IPC'
 import { DateTime } from 'luxon'
 
-function checkForUpdates() {
+function checkForUpdates () {
   Host.sendEvent({
     name: 'CLIENT->MAIN::user-action',
     payload: { action: 'check-for-update' }
   })
 }
 
-function openDownloadPage() {
+function openDownloadPage () {
   window.open('https://snosme.github.io/awakened-poe-trade/download')
 }
 
-function quitAndInstall() {
+function quitAndInstall () {
   Host.sendEvent({
     name: 'CLIENT->MAIN::user-action',
     payload: { action: 'update-and-restart' }
   })
 }
 
-function fmtTime(millis: number) {
+function fmtTime (millis: number) {
   return DateTime.fromMillis(millis).toRelative({ style: 'long' }) ?? 'n/a'
 }
 
 export default defineComponent({
   name: 'settings.about',
   inheritAttrs: false,
-  setup() {
+  setup () {
     const { t } = useI18n()
 
     const info = computed(() => {

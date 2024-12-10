@@ -71,7 +71,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup (props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
     const leagues = useLeagues()
 
@@ -177,7 +177,7 @@ export default defineComponent({
         props.item.info.unique == null)
     })
 
-    function handleSearchMouseenter(e: MouseEvent) {
+    function handleSearchMouseenter (e: MouseEvent) {
       if ((filtersComponent.value.$el as HTMLElement).contains(e.relatedTarget as HTMLElement)) {
         doSearch.value = true
 
@@ -216,10 +216,10 @@ export default defineComponent({
       showSupportLinks,
       presets: computed(() => presets.value.presets.map(preset =>
         ({ id: preset.id, active: (preset.id === presets.value.active) }))),
-      selectPreset(id: string) {
+      selectPreset (id: string) {
         presets.value.active = id
       },
-      makeTradeLink() {
+      makeTradeLink () {
         return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`
       }
     }

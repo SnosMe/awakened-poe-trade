@@ -63,7 +63,7 @@ const stats = computed(() => {
     if (!parsed.roll) {
       return {
         text: parsed.translation.string,
-        contribution: contribution,
+        contribution,
         contributes: true
       }
     }

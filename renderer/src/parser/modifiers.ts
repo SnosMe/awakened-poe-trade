@@ -109,7 +109,7 @@ export function translateStatWithRoll (
       calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
     : undefined
 
-  return { string: translation.string, negate: translation.negate || false, dp: dp }
+  return { string: translation.string, negate: translation.negate || false, dp }
 }
 
 export enum ModifierType {

@@ -28,6 +28,7 @@ export class HttpProxy {
           delete req.headers[key]
         }
       }
+      const url = req.url.slice('/proxy/'.length);
 
       const proxyReq = net.request({
         url: 'https://' + req.url.slice('/proxy/'.length),
@@ -47,6 +48,7 @@ export class HttpProxy {
       })
       proxyReq.addListener('error', (err) => {
         logger.write(`error [cors-proxy] ${err.message} (${host})`)
+        logger.write(`[DEBUG] error [cors-proxy] ${url}`)
         res.destroy(err)
       })
       req.pipe(proxyReq as unknown as NodeJS.WritableStream)

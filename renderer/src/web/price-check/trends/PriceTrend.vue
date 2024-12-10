@@ -104,7 +104,7 @@ export default defineComponent({
         : autoCurrency(trend.chaos)
 
       return {
-        price: price,
+        price,
         change: deltaFromGraph(trend.graph),
         url: trend.url
       }

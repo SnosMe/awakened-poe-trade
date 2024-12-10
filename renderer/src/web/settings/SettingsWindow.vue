@@ -69,7 +69,7 @@ import SettingsStopwatch from './stopwatch.vue'
 import SettingsItemSearch from '../item-search/settings-item-search.vue'
 import ConversionWarningBanner from '../conversion-warn-banner/ConversionWarningBanner.vue'
 
-function shuffle<T>(array: T[]): T[] {
+function shuffle<T> (array: T[]): T[] {
   let currentIndex = array.length
   while (currentIndex !== 0) {
     const randomIndex = Math.floor(Math.random() * currentIndex)
@@ -80,7 +80,7 @@ function shuffle<T>(array: T[]): T[] {
   return array
 }
 
-function quit() {
+function quit () {
   Host.sendEvent({
     name: 'CLIENT->MAIN::user-action',
     payload: { action: 'quit' }
@@ -95,7 +95,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup (props) {
     const wm = inject<WidgetManager>('wm')!
     const { t } = useI18n()
 
@@ -143,7 +143,7 @@ export default defineComponent({
       menuByType(configWidget.value?.wmType)
         .map(group => group.map(component => ({
           name: t(component.name!),
-          select() { selectedComponent.value = component },
+          select () { selectedComponent.value = component },
           isSelected: (selectedComponent.value === component),
           type: 'menu-item' as const
         }))),
@@ -152,14 +152,14 @@ export default defineComponent({
 
     return {
       t,
-      save() {
+      save () {
         updateConfig(configClone.value!)
         saveConfig()
         pushHostConfig()
 
         wm.hide(props.config.wmId)
       },
-      cancel() {
+      cancel () {
         wm.hide(props.config.wmId)
       },
       quit,
@@ -178,13 +178,13 @@ export default defineComponent({
         })
       }),
       podiumVisible,
-      showPodium() { podiumVisible.value = true },
-      hidePodium() { podiumVisible.value = false }
+      showPodium () { podiumVisible.value = true },
+      hidePodium () { podiumVisible.value = false }
     }
   }
 })
 
-function menuByType(type?: string) {
+function menuByType (type?: string) {
   switch (type) {
     case 'stash-search':
       return [[SettingsStashSearch]]
@@ -206,7 +206,7 @@ function menuByType(type?: string) {
   }
 }
 
-function flatJoin<T, J>(arr: T[][], joinEl: () => J) {
+function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   const out: Array<T | J> = []
   for (const nested of arr) {
     out.push(...nested)
