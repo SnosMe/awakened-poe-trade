@@ -12,13 +12,6 @@
     - `config.json`
 4. Run Awakened PoE2 Trade2
 
-[![](https://user-images.githubusercontent.com/4292308/153364874-dde23599-278c-4350-8d86-dadbc4b978b3.svg)](https://somsubhra.github.io/github-release-stats/?username=SnosMe&repository=awakened-poe-trade)
-[![](https://user-images.githubusercontent.com/4292308/153364769-e4fe1e82-1bbc-46ac-8a3c-f5a98a5667cc.svg)](https://patreon.com/awakened_poe_trade)
-
-
-
-➡ [Download for Windows & Linux](https://snosme.github.io/awakened-poe-trade/download) ⬅
-
 ## Tool showcase
 
 | Gem                                  | Rare                                 | Unique                               | Currency                             |
@@ -31,6 +24,7 @@ See [DEVELOPING.md](./DEVELOPING.md)
 
 ### Acknowledgments
 
+- [awakened-poe-trade](https://github.com/SnosMe/awakened-poe-trade)
 - [libuiohook](https://github.com/kwhat/libuiohook)
 - [RePoE](https://github.com/brather1ng/RePoE)
 - [poeprices.info](https://www.poeprices.info/)
