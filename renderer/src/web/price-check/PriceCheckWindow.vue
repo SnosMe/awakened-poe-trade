@@ -1,12 +1,10 @@
 <template>
-  <div
-    style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
+  <div style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
     class="flex grow h-full pointer-events-none" :class="{
-    'flex-row': clickPosition === 'stash',
-    'flex-row-reverse': clickPosition === 'inventory',
-  }">
-    <div v-if="!isBrowserShown" class="layout-column shrink-0"
-      style="width: var(--game-panel);">
+      'flex-row': clickPosition === 'stash',
+      'flex-row-reverse': clickPosition === 'inventory',
+    }">
+    <div v-if="!isBrowserShown" class="layout-column shrink-0" style="width: var(--game-panel);">
     </div>
     <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
       <AppTitleBar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
@@ -15,10 +13,8 @@
             <button><i class="fas fa-exchange-alt" /> {{ stableOrbCost }}</button>
           </template>
           <template #content>
-            <item-quick-price class="text-base"
-              :price="{ min: stableOrbCost, max: stableOrbCost, currency: 'chaos' }"
-              item-img="/images/divine.png"
-            />
+            <item-quick-price class="text-base" :price="{ min: stableOrbCost, max: stableOrbCost, currency: 'chaos' }"
+              item-img="/images/divine.png" />
             <div v-for="i in 9" :key="i">
               <div class="pl-1">{{ i / 10 }} div ⇒ {{ Math.round(stableOrbCost * i / 10) }} c</div>
             </div>
@@ -29,8 +25,7 @@
       </AppTitleBar>
       <div class="grow layout-column min-h-0 bg-gray-800">
         <background-info />
-        <check-position-circle v-if="showCheckPos"
-          :position="checkPosition" style="z-index: -1;" />
+        <check-position-circle v-if="showCheckPos" :position="checkPosition" style="z-index: -1;" />
         <template v-if="item?.isErr()">
           <ui-error-box class="m-4">
             <template #name>{{ t(item.error.name) }}</template>
@@ -40,8 +35,7 @@
         </template>
         <template v-else-if="item?.isOk()">
           <unidentified-resolver :item="item.value" @identify="handleIdentification($event)" />
-          <checked-item v-if="isLeagueSelected"
-            :item="item.value" :advanced-check="advancedCheck" />
+          <checked-item v-if="isLeagueSelected" :item="item.value" :advanced-check="advancedCheck" />
         </template>
         <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
           <i18n-t keypath="app.toggle_browser_hint" tag="div">
@@ -50,16 +44,14 @@
         </div>
       </div>
     </div>
-    <webview v-if="isBrowserShown" ref="iframeEl"
-      class="pointer-events-auto flex-1"
-      width="100%" height="100%" />
+    <webview v-if="isBrowserShown" ref="iframeEl" class="pointer-events-auto flex-1" width="100%" height="100%" />
     <div v-else class="layout-column flex-1 min-w-0">
       <div class="flex" :class="{
         'flex-row': clickPosition === 'stash',
         'flex-row-reverse': clickPosition === 'inventory'
       }">
-        <related-items v-if="item?.isOk()" class="pointer-events-auto"
-          :item="item.value" :click-position="clickPosition" />
+        <related-items v-if="item?.isOk()" class="pointer-events-auto" :item="item.value"
+          :click-position="clickPosition" />
         <rate-limiter-state class="pointer-events-auto" />
       </div>
     </div>
@@ -108,7 +100,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup (props) {
+  setup(props) {
     const wm = inject<WidgetManager>('wm')!
     const { xchgRate, initialLoading: xchgRateLoading, queuePricesFetch } = usePoeninja()
 
@@ -168,7 +160,7 @@ export default defineComponent({
       }
     })
 
-    function handleIdentification (identified: ParsedItem) {
+    function handleIdentification(identified: ParsedItem) {
       item.value = ok(identified)
     }
 
@@ -183,7 +175,7 @@ export default defineComponent({
     })
 
     const leagues = useLeagues()
-    const title = computed(() => leagues.selectedId.value || 'Awakened PoE Trade')
+    const title = computed(() => leagues.selectedId.value || 'Awakened PoE Trade 2')
     const stableOrbCost = computed(() => (xchgRate.value) ? Math.round(xchgRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)
@@ -196,7 +188,7 @@ export default defineComponent({
         return checkPosition.value.x > (window.screenX + window.innerWidth / 2)
           ? 'inventory'
           : 'stash'
-          // or {chat, vendor, center of screen}
+        // or {chat, vendor, center of screen}
       }
     })
 
@@ -210,7 +202,7 @@ export default defineComponent({
       }
     })
 
-    function closePriceCheck () {
+    function closePriceCheck() {
       if (isBrowserShown.value || !Host.isElectron) {
         wm.hide(props.config.wmId)
       } else {
@@ -218,7 +210,7 @@ export default defineComponent({
       }
     }
 
-    function openLeagueSelection () {
+    function openLeagueSelection() {
       const settings = wm.widgets.value.find(w => w.wmType === 'settings')!
       wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true)
       wm.show(settings.wmId)
@@ -226,14 +218,14 @@ export default defineComponent({
 
     const iframeEl = shallowRef<HTMLIFrameElement | null>(null)
 
-    function showBrowser (url: string) {
+    function showBrowser(url: string) {
       wm.setFlag(props.config.wmId, 'has-browser', true)
       nextTick(() => {
         iframeEl.value!.src = url
       })
     }
 
-    function closeBrowser () {
+    function closeBrowser() {
       wm.setFlag(props.config.wmId, 'has-browser', false)
     }
 

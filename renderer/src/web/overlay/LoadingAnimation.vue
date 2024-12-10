@@ -1,11 +1,10 @@
 <template>
-  <transition
-    enter-active-class="animate__animated animate__fadeIn"
+  <transition enter-active-class="animate__animated animate__fadeIn"
     leave-active-class="animate__animated animate__backOutDown">
     <div :class="$style.widget" v-if="show">
       <div :class="$style.box">
         <div class="py-2 px-4">
-          <div class="text-base">Awakened PoE Trade</div>
+          <div class="text-base">Awakened PoE Trade 2</div>
           <p>{{ t('app_is_ready') }}</p>
         </div>
       </div>
