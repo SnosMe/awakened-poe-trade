@@ -1,7 +1,6 @@
 import { computed, shallowRef, readonly } from 'vue'
 import { createGlobalState } from '@vueuse/core'
-import { AppConfig, poeWebApi } from '@/web/Config'
-import { Host } from './IPC'
+import { AppConfig } from '@/web/Config'
 
 // pc-ggg, pc-garena
 // const PERMANENT_SC = ['Standard', '標準模式']
