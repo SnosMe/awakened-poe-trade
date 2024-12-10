@@ -93,7 +93,7 @@ export async function startServer (
     socket.on('close', () => {
       const clients = websocketServer.clients
       if (clients.size === 1) {
-        lastActiveClient = clients.values().next().value
+        lastActiveClient = clients.values().next().value!
         evBus.emit('CLIENT->MAIN::used-recently', { isOverlay: true })
       }
     })
