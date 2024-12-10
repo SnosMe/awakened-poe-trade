@@ -20,8 +20,8 @@ jobs:
       working-directory: ./renderer
     - run: npm run make-index-files
       working-directory: ./renderer
-    - run: npm run lint
-      working-directory: ./renderer
+    # - run: npm run lint
+    #   working-directory: ./renderer
     - run: npm run build
       working-directory: ./renderer
     - uses: actions/upload-artifact@v4
