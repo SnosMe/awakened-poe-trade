@@ -17,26 +17,26 @@ Here's what that looks like as of 2023-12-03.
 
 ```shell
 cd renderer
-yarn install
-yarn make-index-files
-yarn dev
+npm install
+npm run make-index-files
+npm run dev
 
 # In a second shell
 cd main
-yarn install
-yarn dev
+npm install
+npm run dev
 ```
 
 # How to build
 
 ```shell
 cd renderer
-yarn install
-yarn make-index-files
-yarn build
+npm install
+npm run make-index-files
+npm run build
 
 cd ../main
-yarn build
+npm run build
 # We want to sign with a distribution certificate to ensure other users can
 # install without errors
 CSC_NAME="Certificate name in Keychain" yarn package
