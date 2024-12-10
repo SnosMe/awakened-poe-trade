@@ -8,7 +8,7 @@ import { useData } from 'vitepress'
 const { theme } = useData()
 </script>
 
-You can download Awakened Poe Trade here. Any other mirrors are not known
+You can download Exalted Poe Trade here. Any other mirrors are not known
 to the developer, downloading from them may be unsafe.
 
 | Download link                                                                                                                                      | Automatic updates | Startup time |

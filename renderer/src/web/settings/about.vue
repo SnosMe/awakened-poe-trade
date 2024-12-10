@@ -30,10 +30,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { Host } from '@/web/background/IPC'
-import { DateTime } from 'luxon'
+import { defineComponent, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { Host } from '@/web/background/IPC';
+import { DateTime } from 'luxon';
 
 function checkForUpdates () {
   Host.sendEvent({
@@ -63,31 +63,62 @@ export default defineComponent({
   setup () {
     const { t } = useI18n()
 
-    const info = computed(() => {
-      const rawInfo = Host.updateInfo.value
-      switch (rawInfo.state) {
-        case 'initial':
-          return { str1: t('updates.maybe_outdated'), str2: t('updates.never_checked'), action: checkForUpdates, actionText: t('updates.check_now') }
-        case 'checking-for-update':
-          return { str1: t('updates.checking'), str2: t('please_wait') }
-        case 'update-not-available':
-          return { str1: t('updates.latest'), str2: t('updates.last_checked', [fmtTime(rawInfo.checkedAt)]), action: checkForUpdates, actionText: t('updates.check_now') }
-        case 'error':
-          return { str1: t('updates.maybe_outdated'), str2: t('updates.error'), action: openDownloadPage, actionText: t('updates.downloads_page') }
-        case 'update-downloaded':
-          return { str1: t('updates.available', [rawInfo.version]), str2: t('updates.installed_on_exit'), action: quitAndInstall, actionText: t('updates.install_now') }
-        case 'update-available':
-          return (rawInfo.noDownloadReason)
-            ? { str1: t('updates.available', [rawInfo.version]), str2: (rawInfo.noDownloadReason === 'not-supported') ? t('updates.download_manually') : t('updates.download_disabled'), action: openDownloadPage, actionText: t('updates.downloads_page') }
-            : { str1: t('updates.available', [rawInfo.version]), str2: t('updates.downloading') }
-      }
-    })
+		const info = computed(() => {
+			const rawInfo = Host.updateInfo.value;
+			switch (rawInfo.state) {
+				case 'initial':
+					return {
+						str1: t('updates.maybe_outdated'),
+						str2: t('updates.never_checked'),
+						action: checkForUpdates,
+						actionText: t('updates.check_now'),
+					};
+				case 'checking-for-update':
+					return { str1: t('updates.checking'), str2: t('please_wait') };
+				case 'update-not-available':
+					return {
+						str1: t('updates.latest'),
+						str2: t('updates.last_checked', [fmtTime(rawInfo.checkedAt)]),
+						action: checkForUpdates,
+						actionText: t('updates.check_now'),
+					};
+				case 'error':
+					return {
+						str1: t('updates.maybe_outdated'),
+						str2: t('updates.error'),
+						action: openDownloadPage,
+						actionText: t('updates.downloads_page'),
+					};
+				case 'update-downloaded':
+					return {
+						str1: t('updates.available', [rawInfo.version]),
+						str2: t('updates.installed_on_exit'),
+						action: quitAndInstall,
+						actionText: t('updates.install_now'),
+					};
+				case 'update-available':
+					return rawInfo.noDownloadReason
+						? {
+								str1: t('updates.available', [rawInfo.version]),
+								str2:
+									rawInfo.noDownloadReason === 'not-supported'
+										? t('updates.download_manually')
+										: t('updates.download_disabled'),
+								action: openDownloadPage,
+								actionText: t('updates.downloads_page'),
+							}
+						: {
+								str1: t('updates.available', [rawInfo.version]),
+								str2: t('updates.downloading'),
+							};
+			}
+		});
 
-    return {
-      t,
-      info,
-      version: Host.version
-    }
-  }
-})
+		return {
+			t,
+			info,
+			version: Host.version,
+		};
+	},
+});
 </script>

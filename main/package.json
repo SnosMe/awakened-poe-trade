@@ -10,7 +10,7 @@
     "fix": "eslint src --fix"
   },
   "author": {
-    "name": "Alexander Drozdov"
+    "name": "Garrett Parker"
   },
   "repository": {
     "type": "git",
