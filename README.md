@@ -6,7 +6,7 @@
   - Currently only Windows is supported
   - Only available as pre-release right now
 2. Run installer
-3. Copy `apt-data` from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\awakened-poe2-trade2`
+3. Copy `apt-data` from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\awakened-poe2-trade2` to copy your previous settings
   - Resulting directory structure should look like this:
   - `%APPDATA%\awakened-poe2-trade2\apt-data\`
     - `config.json`
