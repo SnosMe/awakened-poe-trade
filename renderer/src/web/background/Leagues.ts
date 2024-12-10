@@ -1,6 +1,7 @@
 import { computed, shallowRef, readonly } from 'vue'
 import { createGlobalState } from '@vueuse/core'
-import { AppConfig } from '@/web/Config'
+import { AppConfig, poeWebApi } from '@/web/Config'
+import { Host } from './IPC'
 
 // pc-ggg, pc-garena
 // const PERMANENT_SC = ['Standard', '標準模式']
@@ -12,15 +13,6 @@ interface ApiLeague {
   rules: Array<{ id: string }>
 }
 
-/*
-
-[4:51:57 PM] error [cors-proxy] net::ERR_BLOCKED_BY_CLIENT (www.pathofexile.com)
-[4:51:57 PM] error [cors-proxy] net::ERR_BLOCKED_BY_CLIENT (www.pathofexile.com)
-[4:51:57 PM] error [cors-proxy] net::ERR_BLOCKED_BY_CLIENT (www.pathofexile.com)
-[4:51:57 PM] error [Shortcuts] Hotkey "Home" reserved by the game will not be registered.
-[4:51:57 PM] error [GameConfig] Failed to find game configuration file in the default location.
-[4:51:58 PM] error [cors-proxy] net::ERR_BLOCKED_BY_CLIENT (www.pathofexile.com)
-*/
 interface League {
   id: string
   isPopular: boolean
