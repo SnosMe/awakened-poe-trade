@@ -7,6 +7,7 @@
     <div v-if="!isBrowserShown" class="layout-column shrink-0" style="width: var(--game-panel);">
     </div>
     <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
+      <ConversionWarningBanner />
       <AppTitleBar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
         <ui-popover v-if="stableOrbCost" trigger="click" boundary="#price-window">
           <template #target>
@@ -78,6 +79,7 @@ import CheckPositionCircle from './CheckPositionCircle.vue'
 import AppTitleBar from '@/web/ui/AppTitlebar.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
+import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 type ParseError = { name: string; message: string; rawText: ParsedItem['rawText'] }
 
@@ -92,7 +94,8 @@ export default defineComponent({
     CheckPositionCircle,
     ItemQuickPrice,
     UiErrorBox,
-    UiPopover
+    UiPopover,
+    ConversionWarningBanner
   },
   props: {
     config: {

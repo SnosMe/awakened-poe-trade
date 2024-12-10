@@ -5,12 +5,8 @@
       <div class="flex-1 text-center">{{ mapName }}</div>
       <div class="ml-8 text-gray-400">{{ t('map_check.profile') }}</div>
       <div class="flex gap-0.5">
-        <button
-          v-for="profile in profiles" :key="profile.text"
-          @click="profile.select"
-          :class="{ 'border border-gray-600': profile.active }"
-          class="w-6 bg-gray-800"
-        >{{ profile.text }}</button>
+        <button v-for="profile in profiles" :key="profile.text" @click="profile.select"
+          :class="{ 'border border-gray-600': profile.active }" class="w-6 bg-gray-800">{{ profile.text }}</button>
       </div>
     </div>
     <FullscreenImage v-if="image" :src="image" style="height: auto;" />
@@ -18,10 +14,8 @@
       {{ t('map_check.no_mods') }}
     </div>
     <div v-else class="py-2 flex flex-col">
-      <MapStatButton v-for="stat in mapStats" :key="stat.matcher"
-        :stat="stat" :config="config" />
-      <div v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
-        class="py-1 px-8">
+      <MapStatButton v-for="stat in mapStats" :key="stat.matcher" :stat="stat" :config="config" />
+      <div v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text" class="py-1 px-8">
         <span class="text-orange-400">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
       </div>
     </div>

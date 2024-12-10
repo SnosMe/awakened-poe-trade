@@ -1,12 +1,11 @@
 <template>
   <widget :config="config" :hideable="false" :removable="false" move-handles="corners" v-slot="{ isEditing }">
     <div class="widget-default-style">
+      <ConversionWarningBanner />
       <div class="p-1 flex gap-1 items-center text-base">
         <template v-for="widget in widgets" :key="widget.wmId">
-          <button @click="toggle(widget)"
-            :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-800'"
-            class="bg-gray-800 rounded text-gray-100 p-2 leading-none whitespace-nowrap border"
-          >
+          <button @click="toggle(widget)" :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-800'"
+            class="bg-gray-800 rounded text-gray-100 p-2 leading-none whitespace-nowrap border">
             <i v-if="widget.wmType === 'settings'" class="fas fa-cog align-bottom" />
             <i v-else-if="widget.wmType === 'item-search'" class="fas fa-search align-bottom" />
             <template v-else>{{ widget.wmTitle || `#${widget.wmId}` }}</template>
@@ -22,9 +21,12 @@
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Screen saver</button> -->
               <!-- add widget -->
               <div class="text-gray-600 text-sm px-1 select-none whitespace-nowrap">{{ t(':add') }}</div>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('timer')">{{ t('stopwatch.name') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('stash-search')">{{ t('stash_search.name') }}</button>
-              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('image-strip')">{{ t('image_strip.name') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
+                @click="createOfType('timer')">{{ t('stopwatch.name') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
+                @click="createOfType('stash-search')">{{ t('stash_search.name') }}</button>
+              <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
+                @click="createOfType('image-strip')">{{ t('image_strip.name') }}</button>
               <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('TODO')">Image</button> -->
             </div>
           </template>
@@ -34,8 +36,7 @@
         <ui-toggle v-model="config.alwaysShow">{{ t(':always_show') }}</ui-toggle>
       </div>
       <div v-else class="px-1 pb-1">
-        <textarea class="px-2 py-1.5 bg-gray-700 rounded resize-none block"
-          rows="1" spellcheck="false"
+        <textarea class="px-2 py-1.5 bg-gray-700 rounded resize-none block" rows="1" spellcheck="false"
           :placeholder="t(':price_check')" @input="handleItemPaste"></textarea>
       </div>
     </div>
@@ -50,16 +51,17 @@ import { Widget as IWidget, WidgetManager, WidgetMenu } from './interfaces'
 import { Host } from '@/web/background/IPC'
 import Widget from './Widget.vue'
 import { useI18nNs } from '@/web/i18n'
+import ConversionWarningBanner from '../conversion-warn-banner/ConversionWarningBanner.vue'
 
 export default defineComponent({
-  components: { Widget, UiToggle, UiPopover },
+  components: { Widget, UiToggle, UiPopover, ConversionWarningBanner },
   props: {
     config: {
       type: Object as PropType<WidgetMenu>,
       required: true
     }
   },
-  setup (props) {
+  setup(props) {
     const wm = inject<WidgetManager>('wm')!
 
     const widgets = computed(() => {
@@ -77,17 +79,17 @@ export default defineComponent({
     return {
       t,
       widgets,
-      createOfType (type: string) {
+      createOfType(type: string) {
         wm.create(type)
       },
-      toggle (widget: IWidget) {
+      toggle(widget: IWidget) {
         if (widget.wmWants === 'hide') {
           wm.show(widget.wmId)
         } else {
           wm.hide(widget.wmId)
         }
       },
-      handleItemPaste (e: Event) {
+      handleItemPaste(e: Event) {
         const target = e.target as HTMLInputElement
         const inputRect = target.getBoundingClientRect()
         Host.selfDispatch({

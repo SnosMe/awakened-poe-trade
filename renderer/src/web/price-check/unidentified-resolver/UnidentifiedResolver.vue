@@ -28,7 +28,7 @@ export default defineComponent({
       default: null
     }
   },
-  setup (props, ctx) {
+  setup(props, ctx) {
     const identifiedVariants = computed(() => {
       const baseType = props.item!.info.refName
       const possible: BaseType[] = []
@@ -55,7 +55,7 @@ export default defineComponent({
         !props.item.info.unique
     })
 
-    function select (info: BaseType) {
+    function select(info: BaseType) {
       const newItem: ParsedItem = {
         ...props.item!,
         info: info
