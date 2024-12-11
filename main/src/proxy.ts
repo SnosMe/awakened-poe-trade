@@ -10,6 +10,7 @@ const PROXY_HOSTS = [
   { host: 'poe.game.daum.net', official: true },
   { host: 'poe.ninja', official: false },
   { host: 'www.poeprices.info', official: false },
+  { host: 'kvan.dev', official: false },
 ]
 
 export class HttpProxy {
@@ -22,7 +23,7 @@ export class HttpProxy {
       const fullPath = req.url.slice('/proxy/'.length)
       const host = req.url.split('/', 3)[2]
 
-      if (fullPath.startsWith('www.pathofexile.com/api/trade2/search/Standard')) {
+      if (fullPath.startsWith('www.pathofexile.com/api/trade2/search/Standard') || fullPath.startsWith('kvan.dev')) {
         this.executeCurl(fullPath, logger)
       }
 
@@ -47,19 +48,21 @@ export class HttpProxy {
         useSessionCookies: true
       })
       proxyReq.addListener('response', (proxyRes) => {
+        logger.write(`response [proxy] ${proxyRes.statusCode} ${proxyRes.statusMessage} (${host})`)
         const resHeaders = { ...proxyRes.headers }
         delete resHeaders['content-encoding']
         res.writeHead(proxyRes.statusCode, proxyRes.statusMessage, resHeaders)
         ;(proxyRes as unknown as NodeJS.ReadableStream).pipe(res)
       })
       proxyReq.addListener('error', (err) => {
-        logger.write(`error [cors-proxy] ${err.message} (${host})`)
+        logger.write(`error [proxy] ${err.message} (${host})`)
+        logger.write(`error-[proxy]-(${err.name}) ${err.stack}`)
         res.destroy(err)
       })
 
-      logger.write(`Full request details: ${JSON.stringify(proxyReq, null, 2)}`);
-
       req.pipe(proxyReq as unknown as NodeJS.WritableStream)
+      
+      logger.write(`Full request details: ${JSON.stringify(proxyReq, null, 2)}`);
     })
   }
 
@@ -78,8 +81,25 @@ export class HttpProxy {
     })
   }
   executeCurl(path: string, logger: Logger) {
-    const postData = {"query":{"status":{"option":"online"},"stats":[{"type":"and","filters":[]}],"filters":{"trade_filters":{"filters":{"collapse":{"option":"true"}}},"type_filters":{"filters":{"rarity":{"option":"nonunique"},"category":{"option":"accessory.ring"}}},"misc_filters":{"filters":{"corrupted":{"option":"false"},"mirrored":{"option":"false"}}}}},"sort":{"price":"asc"}};
-    const curlCommand = `curl -X POST ${postData ? `--data '${postData}' ` : ''}https://${path}`;
+    const postData = {
+      "query": {
+        "status": { "option": "online" },
+        "stats": [{ "type": "and", "filters": [] }],
+        "filters": {
+          "trade_filters": { "filters": { "collapse": { "option": "true" }}},
+          "type_filters": { "filters": {
+            "rarity": { "option": "nonunique" },
+            "category": { "option": "accessory.ring" }}},
+          "misc_filters": { "filters": {
+            "corrupted": { "option": "false" },
+            "mirrored": { "option": "false" }}}
+        }
+      },
+      "sort": { "price": "asc" }
+    };
+  
+    const postDataStr = JSON.stringify(postData);
+    const curlCommand = `curl -X POST --data '${postDataStr}' https://${path}`;
     exec(curlCommand, (error, stdout, stderr) => {
       if (error) {
         logger.write(`curl error [${path}] ${error.message}`);

@@ -756,6 +756,18 @@ export async function requestTradeResultList (
 
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.SEARCH)
 
+    const testResponse = await Host.proxy(
+      'kvan.dev',
+      {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+    console.log(testResponse)
+
     const response = await Host.proxy(
       `${getTradeEndpoint()}/api/trade2/search/${leagueId}`,
       {
