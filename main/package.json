@@ -1,18 +1,20 @@
 {
-  "name": "Exiles-Exchange",
-  "version": "0.0.5",
+  "name": "exiled-exchange-2",
+  "version": "0.0.6",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
     "build": "tsc --noEmit && node build/script.mjs --prod",
-    "package": "electron-builder build"
+    "package": "electron-builder build",
+    "lint": "eslint src",
+    "fix": "eslint src --fix"
   },
   "author": {
     "name": "Alexander Drozdov"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kvan7/Exiles-Exchange.git"
+    "url": "https://github.com/Kvan7/exiled-exchange-2.git"
   },
   "main": "dist/main.js",
   "dependencies": {
@@ -32,8 +34,5 @@
     "ini": "^5.0.0",
     "typescript": "5.6.x",
     "ws": "^8.16.0"
-  },
-  "engines": {
-    "node": ">=16"
   }
 }

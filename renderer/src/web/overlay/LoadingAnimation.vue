@@ -4,7 +4,7 @@
     <div :class="$style.widget" v-if="show">
       <div :class="$style.box">
         <div class="py-2 px-4">
-          <div class="text-base">Exiles Exchange</div>
+          <div class="text-base">Exiled Exchange 2</div>
           <p>{{ t('app_is_ready') }}</p>
         </div>
       </div>

@@ -14,7 +14,7 @@ title: Common issues
     If Awakened works for you with DirectX11/12 renderer,
     then problem is old Vulkan drivers for sure.
 
-4. Delete `%appdata%\Exiles-Exchange`
+4. Delete `%appdata%\exiled-exchange-2`
 
     If needed, backup `apt-data` folder with your configuration inside.
 
@@ -22,7 +22,7 @@ title: Common issues
 
     Launch them later one at a time to identify **conflict**.
 
-6. Restart Exiles Exchange.
+6. Restart Exiled Exchange 2.
 
     *(don't forget to quit first, otherwise launching second instance will do nothing).*
 

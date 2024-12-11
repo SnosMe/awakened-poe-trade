@@ -1,6 +1,6 @@
 publish:
   - "github"
-productName: "Exiles Exchange"
+productName: "Exiled Exchange 2"
 npmRebuild: false
 files:
   - "package.json"

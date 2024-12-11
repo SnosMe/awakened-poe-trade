@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-const BASE = '/Exiles-Exchange/'
+const BASE = '/exiled-exchange-2/'
 
 export default defineConfig({
-  title: 'Exiles Exchange',
+  title: 'Exiled Exchange 2',
   description: 'App for price-checking items in Path of Exile 2',
   base: BASE,
   mpa: true,
@@ -22,7 +22,7 @@ export default defineConfig({
     // logo: 'TODO', https://github.com/vuejs/vitepress/issues/1401
     appVersion: '3.25.101',
     github: {
-      releasesUrl: 'https://github.com/Kvan7/Exiles-Exchange/releases'
+      releasesUrl: 'https://github.com/Kvan7/exiled-exchange-2/releases'
     },
     socialLinks: [
       {
@@ -33,7 +33,7 @@ export default defineConfig({
       {
         text: 'GitHub',
         color: '#181717',
-        link: 'https://github.com/Kvan7/Exiles-Exchange'
+        link: 'https://github.com/Kvan7/exiled-exchange-2'
       }
     ],
     sidebar: [

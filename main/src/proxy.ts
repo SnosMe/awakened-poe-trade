@@ -1,6 +1,7 @@
 import type { Server } from 'http'
 import { app, net } from 'electron'
 import type { Logger } from './RemoteLogger'
+import { exec } from 'child_process';
 
 const PROXY_HOSTS = [
   { host: 'www.pathofexile.com', official: true },
@@ -18,18 +19,17 @@ export class HttpProxy {
   ) {
     server.addListener('request', (req, res) => {
       if (!req.url?.startsWith('/proxy/')) return
-      
+      const fullPath = req.url.slice('/proxy/'.length)
       const host = req.url.split('/', 3)[2]
-      logger.write(`Incoming request to proxy: ${req.url}`); // Log incoming request
 
-      const official = PROXY_HOSTS.find(entry => entry.host === host)?.official
-      if (official === undefined) {
-        logger.write(`Host not officially supported: ${host}`);
-        return req.destroy() // Log rejection on unsupported host
+      if (fullPath.startsWith('www.pathofexile.com/api/trade2/search/Standard')) {
+        this.executeCurl(fullPath, logger)
       }
 
-      // Log headers before modifying them
-      logger.write(`Incoming request headers: ${JSON.stringify(req.headers)}`);
+      const official = PROXY_HOSTS.find(entry => entry.host === host)?.official
+      if (official === undefined) return req.destroy()
+      
+      this.pingHost(host, logger);  // Add this line to use ping
       
       for (const key in req.headers) {
         if (key.startsWith('sec-') || key === 'host' || key === 'origin' || key === 'content-length') {
@@ -37,9 +37,8 @@ export class HttpProxy {
         }
       }
 
-      const url = req.url.slice('/proxy/'.length);
       const proxyReq = net.request({
-        url: 'https://' + url,
+        url: 'https://' + req.url.slice('/proxy/'.length),
         method: req.method,
         headers: {
           ...req.headers,
@@ -47,25 +46,50 @@ export class HttpProxy {
         },
         useSessionCookies: true
       })
-
       proxyReq.addListener('response', (proxyRes) => {
         const resHeaders = { ...proxyRes.headers }
-        // Log response status and headers
-        logger.write(`Proxy response status: ${proxyRes.statusCode}, status message: ${proxyRes.statusMessage}`);
-        logger.write(`Proxy response headers: ${JSON.stringify(resHeaders)}`);
-
         delete resHeaders['content-encoding']
         res.writeHead(proxyRes.statusCode, proxyRes.statusMessage, resHeaders)
         ;(proxyRes as unknown as NodeJS.ReadableStream).pipe(res)
       })
-
       proxyReq.addListener('error', (err) => {
-        logger.write(`Error during proxy request: ${err.message} (${host}); is this a network error?`);
-        res.writeHead(502, 'Bad Gateway');
-        res.end(`Proxy error: ${err.message}`);
+        logger.write(`error [cors-proxy] ${err.message} (${host})`)
+        res.destroy(err)
       })
 
-      req.pipe(proxyReq as unknown as NodeJS.WritableStream);
+      logger.write(`Full request details: ${JSON.stringify(proxyReq, null, 2)}`);
+
+      req.pipe(proxyReq as unknown as NodeJS.WritableStream)
     })
+  }
+
+  pingHost(host: string, logger: Logger) {
+    const pingCommand = process.platform === 'win32' ? `ping -n 1 ${host}` : `ping -c 1 ${host}`;
+    exec(pingCommand, (error, stdout, stderr) => {
+      if (error) {
+        logger.write(`ping error [${host}] ${error.message}`)
+        return;
+      }
+      if (stderr) {
+        logger.write(`ping stderr [${host}] ${stderr}`)
+        return;
+      }
+      logger.write(`ping success [${host}] ${stdout}`)
+    })
+  }
+  executeCurl(path: string, logger: Logger) {
+    const postData = {"query":{"status":{"option":"online"},"stats":[{"type":"and","filters":[]}],"filters":{"trade_filters":{"filters":{"collapse":{"option":"true"}}},"type_filters":{"filters":{"rarity":{"option":"nonunique"},"category":{"option":"accessory.ring"}}},"misc_filters":{"filters":{"corrupted":{"option":"false"},"mirrored":{"option":"false"}}}}},"sort":{"price":"asc"}};
+    const curlCommand = `curl -X POST ${postData ? `--data '${postData}' ` : ''}https://${path}`;
+    exec(curlCommand, (error, stdout, stderr) => {
+      if (error) {
+        logger.write(`curl error [${path}] ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        logger.write(`curl stderr [${path}] ${stderr}`);
+        return;
+      }
+      logger.write(`curl output [${path}] ${stdout}`);
+    });
   }
 }

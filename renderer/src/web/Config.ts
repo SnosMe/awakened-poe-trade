@@ -76,9 +76,9 @@ export async function initConfig () {
 
     // TODO
     // dialog.showErrorBox(
-    //   'Exiles Exchange - Incompatible configuration',
+    //   'Exiled Exchange 2 - Incompatible configuration',
     //   // ----------------------
-    //   'You are trying to use an older version of Exiles Exchange with a newer incompatible configuration file.\n' +
+    //   'You are trying to use an older version of Exiled Exchange 2 with a newer incompatible configuration file.\n' +
     //   'You need to install the latest version to continue using it.'
     // )
   }

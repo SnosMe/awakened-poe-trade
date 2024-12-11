@@ -5,7 +5,7 @@ title: Quick Start
 #### First of all, how does it work? {:style="margin-top: 0;"}
 
 When you press `Ctrl + C` Path of Exile 2 copies the item's text (under cursor, if any) to the clipboard.
-All that remains is to parse text in Exiles Exchange and show to you in a fancy way.
+All that remains is to parse text in Exiled Exchange 2 and show to you in a fancy way.
 
 ### Usage
 
