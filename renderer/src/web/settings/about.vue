@@ -43,7 +43,7 @@ function checkForUpdates () {
 }
 
 function openDownloadPage () {
-  window.open('https://snosme.github.io/awakened-poe-trade/download')
+  window.open('https://github.com/Kvan7/awakened-poe2-trade2/releases')
 }
 
 function quitAndInstall () {

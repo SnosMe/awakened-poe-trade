@@ -47,10 +47,10 @@ export class HttpProxy {
         ;(proxyRes as unknown as NodeJS.ReadableStream).pipe(res)
       })
       proxyReq.addListener('error', (err) => {
-        logger.write(`error [cors-proxy] ${err.message} (${host})`)
-        logger.write(`[DEBUG] error [cors-proxy] ${url}`)
-        res.destroy(err)
-      })
+        logger.write(`error [cors-proxy] ${err.message} (${host})`);
+        res.writeHead(502, 'Bad Gateway');
+        res.end(`Proxy error: ${err.message}`); // Send informative error response
+      });
       req.pipe(proxyReq as unknown as NodeJS.WritableStream)
     })
   }
