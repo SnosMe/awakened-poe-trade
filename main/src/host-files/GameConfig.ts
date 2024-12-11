@@ -12,25 +12,25 @@ const POSSIBLE_PATH =
     ? [
         path.join(
           app.getPath("documents"),
-          "My Games\\Path of Exile 2\\production_Config.ini"
+          "My Games\\Path of Exile 2\\poe2_production_Config.ini"
         ),
       ]
     : process.platform === "linux"
     ? [
         path.join(
           app.getPath("documents"),
-          "My Games/Path of Exile 2/production_Config.ini"
+          "My Games/Path of Exile 2/poe2_production_Config.ini"
         ),
         path.join(
           app.getPath("home"),
-          ".local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile 2/production_Config.ini"
+          ".local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile 2/poe2_production_Config.ini"
         ),
       ]
     : process.platform === "darwin"
     ? [
         path.join(
           app.getPath("appData"),
-          "Path of Exile 2/Preferences/production_Config.ini"
+          "Path of Exile 2/Preferences/poe2_production_Config.ini"
         ),
       ]
     : [];

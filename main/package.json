@@ -1,6 +1,6 @@
 {
   "name": "Exiles-Exchange",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
