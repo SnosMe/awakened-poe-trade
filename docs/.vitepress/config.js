@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-const BASE = '/awakened-poe2-trade2/'
+const BASE = '/Exiles-Exchange/'
 
 export default defineConfig({
-  title: 'Awakened PoE2 Trade2',
+  title: 'Exiles Exchange',
   description: 'App for price-checking items in Path of Exile 2',
   base: BASE,
   mpa: true,
@@ -22,7 +22,7 @@ export default defineConfig({
     // logo: 'TODO', https://github.com/vuejs/vitepress/issues/1401
     appVersion: '3.25.101',
     github: {
-      releasesUrl: 'https://github.com/Kvan7/awakened-poe2-trade2/releases'
+      releasesUrl: 'https://github.com/Kvan7/Exiles-Exchange/releases'
     },
     socialLinks: [
       {
@@ -33,7 +33,7 @@ export default defineConfig({
       {
         text: 'GitHub',
         color: '#181717',
-        link: 'https://github.com/Kvan7/awakened-poe2-trade2'
+        link: 'https://github.com/Kvan7/Exiles-Exchange'
       }
     ],
     sidebar: [

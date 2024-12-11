@@ -178,7 +178,7 @@ export default defineComponent({
     })
 
     const leagues = useLeagues()
-    const title = computed(() => leagues.selectedId.value || 'Awakened PoE2 Trade2')
+    const title = computed(() => leagues.selectedId.value || 'Exiles Exchange')
     const stableOrbCost = computed(() => (xchgRate.value) ? Math.round(xchgRate.value) : null)
     const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
     const overlayKey = computed(() => AppConfig().overlayKey)

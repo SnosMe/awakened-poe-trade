@@ -1,6 +1,6 @@
 {
-  "name": "awakened-poe2-trade2",
-  "version": "0.0.2",
+  "name": "Exiles-Exchange",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kvan7/awakened-poe2-trade2.git"
+    "url": "https://github.com/Kvan7/Exiles-Exchange.git"
   },
   "main": "dist/main.js",
   "dependencies": {

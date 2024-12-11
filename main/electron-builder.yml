@@ -1,6 +1,6 @@
 publish:
   - "github"
-productName: "Awakened PoE2 Trade2"
+productName: "Exiles Exchange"
 npmRebuild: false
 files:
   - "package.json"

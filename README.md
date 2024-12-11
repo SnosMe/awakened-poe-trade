@@ -1,16 +1,16 @@
-# ![Awakener's Orb](https://web.poecdn.com/image/Art/2DItems/Currency/TransferOrb.png) Awakened PoE2 Trade2
+# ![Exalted Orb](./renderer/dist/images/exa.png) Exile's Exchange
 
 ## Moving from POE1
 
-1. Download latest release from [releases](https://github.com/Kvan7/awakened-poe2-trade2/releases)
+1. Download latest release from [releases](https://github.com/Kvan7/Exiles-Exchange/releases)
   - Currently only Windows is supported
   - Only available as pre-release right now
 2. Run installer
-3. Copy `apt-data` from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\awakened-poe2-trade2` to copy your previous settings
+3. Copy `apt-data` from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\Exiles-Exchange` to copy your previous settings
   - Resulting directory structure should look like this:
-  - `%APPDATA%\awakened-poe2-trade2\apt-data\`
+  - `%APPDATA%\Exiles-Exchange\apt-data\`
     - `config.json`
-4. Run Awakened PoE2 Trade2
+4. Run Exiles Exchange
 
 ## Tool showcase
 
