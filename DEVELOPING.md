@@ -41,3 +41,15 @@ npm run build
 # install without errors
 CSC_NAME="Certificate name in Keychain" yarn package
 ```
+
+# How to release a build
+
+1. Commit all changes
+2. Bump version in `main/package.json`
+3. `npm i` in renderer & main (update `package-lock.json` with new version)
+4. `npm run build` in renderer & main
+5. Stage & commit bumped version
+6. `git push`
+7. `git tag vX.X.X`
+8. `git push origin vX.X.X`
+9. Open release page, create release with tag & title as text of tag & save as draft
