@@ -8,6 +8,7 @@ export interface HostConfig {
   logKeys: boolean
   windowTitle: string
   language: string
+  quitWithPoE: boolean
 }
 
 export interface ShortcutAction {
