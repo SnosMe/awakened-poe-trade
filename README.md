@@ -1,6 +1,6 @@
-# ![Exalted Orb](./renderer/dist/images/exa.png) Exile's Exchange
+# ![Exalted Orb](./renderer/public/images/exa.png) Exiled Exchange 2
 
-## Moving from POE1
+## Moving from POE1/Awakened PoE Trade
 
 1. Download latest release from [releases](https://github.com/Kvan7/exiled-exchange-2/releases)
   - Currently only Windows is supported
