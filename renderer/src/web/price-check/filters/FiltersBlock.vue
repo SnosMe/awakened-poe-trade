@@ -48,6 +48,19 @@
           : t('filters.selected_none')"
       />
     </div>
+    <!-- Warning that many stats may not work -->
+    <div v-if="!statsVisibility.disabled && hasStats" class="mb-4 text-center bg-teal-800 rounded-xl" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'" >
+      Not all stats may load (WIP)
+    </div>
+    <!-- Handled parse error -->
+    <div v-if="!hasStats && item.rarity !== undefined && item.rarity !== 'Normal'" class="mb-4 text-center bg-purple-800 rounded-xl" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'" >
+      For some reason this item's stats did not parse. <br/> It likely has a mod that is not supported yet. <br/>(Potentially new or changed wording from poe1)
+    </div>
+    <!-- Warning that bulk exchange does not work -->
+    <div v-if="!hasStats && item.category === 'Currency'" class="mb-4 text-center bg-teal-900 rounded-xl" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'" >
+      Bulk exchange rates are not implemented yet
+    </div>
+
     <div v-if="!statsVisibility.disabled && hasStats" class="mb-4" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'">
       <div class="flex" v-if="presets.length > 1">
         <div class="w-5 border-b border-gray-700" />
@@ -133,6 +146,8 @@ export default defineComponent({
       showHidden.value = false
       statsVisibility.disabled = false
     })
+
+    console.log(props.item)
 
     const showUnknownMods = computed(() =>
       props.item.unknownModifiers.length &&

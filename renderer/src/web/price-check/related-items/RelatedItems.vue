@@ -8,7 +8,7 @@
         :class="{ 'bg-gray-700': item.highlight }" class="rounded px-1">
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
-          :item-img="item.icon" />
+          :item-img="item.icon === '%NOT_FOUND%' || item.icon === '' ? '/images/404.png' : item.icon" />
         <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <div v-for="item in result.items" :key="item.name">
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
-          :item-img="item.icon" />
+          :item-img="item.icon === '%NOT_FOUND%' || item.icon === '' ? '/images/404.png' : item.icon" />
         <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>

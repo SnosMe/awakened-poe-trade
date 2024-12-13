@@ -28,6 +28,15 @@
     "editor.insertSpaces": true,
     "conventionalCommits.scopes": [
       "Update to 2"
+    ],
+    "cSpell.words": [
+      "edps",
+      "ilvl",
+      "nonunique",
+      "onlineleague",
+      "pdps",
+      "uniquefoil",
+      "WAYSTONE"
     ]
   }
 }

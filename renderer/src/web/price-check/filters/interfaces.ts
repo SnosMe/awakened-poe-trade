@@ -116,7 +116,8 @@ export const INTERNAL_TRADE_IDS = [
   'item.elemental_dps',
   'item.crit',
   'item.aps',
-  'item.has_empty_modifier'
+  'item.has_empty_modifier',
+  'item.spirit'
 ] as const
 
 export type InternalTradeId = typeof INTERNAL_TRADE_IDS[number]

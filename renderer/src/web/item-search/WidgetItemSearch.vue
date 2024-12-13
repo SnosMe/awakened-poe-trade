@@ -8,7 +8,7 @@
           :class="$style.starredItem"
           @click="starredItemClick($event, item)">
           <ItemQuickPrice
-            :item-img="item.info.icon"
+            :item-img="item.info.icon === '%NOT_FOUND%' || item.info.icon === '' ? '/images/404.png' : item.info.icon"
             :price="item.price"
             currency-text
           ></ItemQuickPrice>

@@ -6,7 +6,7 @@
     <div class="grid grid-cols-2 gap-2 overflow-auto pb-4 px-4">
       <div v-for="item in identifiedVariants" :key="item.name" class="flex">
         <button @click="select(item)" class="bg-gray-700 rounded flex gap-x-3 items-center p-2 w-full">
-          <img :src="item.icon" class="w-12" />
+          <img :src="item.icon === '%NOT_FOUND%' || item.icon === '' ? '/images/404.png' : item.icon" class="w-12" />
           <div class="leading-tight text-left">{{ item.name }}</div>
         </button>
       </div>

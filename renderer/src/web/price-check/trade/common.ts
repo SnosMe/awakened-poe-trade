@@ -22,6 +22,7 @@ export type TradeResponse<T> = (T & { error?: null }) | {
 }
 
 export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filters: ItemFilters): 'trade' | 'bulk' {
+  console.log('item', item, 'filter', filters, 'stats', stats)
   if (stats.some(s => !s.disabled)) {
     return 'trade'
   }

@@ -13,7 +13,7 @@
       <div class="flex items-center pb-4">
         <item-quick-price class="flex-1 text-base justify-center"
           :price="price"
-          :item-img="item.info.icon"
+          :item-img="item.info.icon === '%NOT_FOUND%' || item.info.icon === '' ? '/images/404.png' : item.info.icon"
           :item-base="item.info"
           approx
         />

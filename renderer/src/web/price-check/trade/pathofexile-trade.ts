@@ -1,4 +1,4 @@
-import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
+import { ItemCategory, ParsedItem, ItemRarity } from '@/parser'
 import {
   ItemFilters,
   StatFilter,
@@ -60,7 +60,11 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Trinket, 'accessory.trinket'],
   [ItemCategory.SanctumRelic, 'sanctum.relic'],
   [ItemCategory.Tincture, 'tincture'],
-  [ItemCategory.Charm, 'azmeri.charm']
+  [ItemCategory.Charm, 'azmeri.charm'],
+  [ItemCategory.Crossbow, 'weapon.crossbow'],
+  [ItemCategory.SkillGem, 'gem.activegem'],
+  [ItemCategory.SupportGem, 'gem.supportgem'],
+  [ItemCategory.MetaGem, 'gem.metagem']
 ])
 
 const TOTAL_MODS_TEXT = {
@@ -77,14 +81,14 @@ const TOTAL_MODS_TEXT = {
   TOTAL_MODIFIERS: ['# Modifiers', '# Prefix Modifiers', '# Suffix Modifiers']
 }
 
-const INFLUENCE_PSEUDO_TEXT = {
-  [ItemInfluence.Shaper]: 'Has Shaper Influence',
-  [ItemInfluence.Crusader]: 'Has Crusader Influence',
-  [ItemInfluence.Hunter]: 'Has Hunter Influence',
-  [ItemInfluence.Elder]: 'Has Elder Influence',
-  [ItemInfluence.Redeemer]: 'Has Redeemer Influence',
-  [ItemInfluence.Warlord]: 'Has Warlord Influence'
-}
+// const INFLUENCE_PSEUDO_TEXT = {
+//   [ItemInfluence.Shaper]: 'Has Shaper Influence',
+//   [ItemInfluence.Crusader]: 'Has Crusader Influence',
+//   [ItemInfluence.Hunter]: 'Has Hunter Influence',
+//   [ItemInfluence.Elder]: 'Has Elder Influence',
+//   [ItemInfluence.Redeemer]: 'Has Redeemer Influence',
+//   [ItemInfluence.Warlord]: 'Has Warlord Influence'
+// }
 
 interface FilterBoolean {
   option?: 'true' | 'false'
@@ -123,72 +127,64 @@ interface TradeRequest {
           category?: {
             option?: string
           }
+          ilvl?: FilterRange
+          quality?: FilterRange
         }
       }
-      socket_filters?: {
+      equipment_filters?: {
         filters: {
-          links?: FilterRange
-          sockets?: {
-            w?: number
-          }
+          // Attacks per Second
+          aps?: FilterRange
+          // Armor Rating
+          ar?: FilterRange
+          // Block
+          block?: FilterRange
+          // Critical Strike Chance
+          crit?: FilterRange
+          // Damage (not used)
+          // damage?: FilterRange
+          // Damage per Second
+          dps?: FilterRange
+          // Elemental Damage per Second
+          edps?: FilterRange
+          // Energy Shield
+          es?: FilterRange
+          // Evasion Rating
+          ev?: FilterRange
+          // Physical Damage per Second
+          pdps?: FilterRange
+          // Rune Slots
+          rune_sockets?: FilterRange
+          // Spirit
+          spirit?: FilterRange
+        }
+      }
+      req_filters?: {
+        filters: {
+          dex?: FilterRange
+          int?: FilterRange
+          lvl?: FilterRange
+          str?: FilterRange
+        }
+      }
+      // WILL PROBABLY BE REMOVED SOON
+      map_filters?: {
+        filters: {
+          map_bonus?: FilterRange
+          map_tier?: FilterRange
         }
       }
       misc_filters?: {
         filters: {
-          ilvl?: FilterRange
-          quality?: FilterRange
-          gem_level?: FilterRange
-          corrupted?: FilterBoolean
-          fractured_item?: FilterBoolean
-          mirrored?: FilterBoolean
-          identified?: FilterBoolean
-          stack_size?: FilterRange
-        }
-      }
-      armour_filters?: {
-        filters: {
-          ar?: FilterRange
-          es?: FilterRange
-          ev?: FilterRange
-          ward?: FilterRange
-          block?: FilterRange
-          base_defence_percentile?: FilterRange
-        }
-      }
-      weapon_filters?: {
-        filters: {
-          dps?: FilterRange
-          pdps?: FilterRange
-          edps?: FilterRange
-          crit?: FilterRange
-          aps?: FilterRange
-        }
-      }
-      map_filters?: {
-        filters: {
-          map_tier?: FilterRange
-          map_blighted?: FilterBoolean
-          map_uberblighted?: FilterBoolean
+          alternate_art?: FilterBoolean
           area_level?: FilterRange
-        }
-      }
-      heist_filters?: {
-        filters: {
-          heist_wings?: FilterRange
-          heist_agility?: FilterRange
-          heist_brute_force?: FilterRange
-          heist_counter_thaumaturgy?: FilterRange
-          heist_deception?: FilterRange
-          heist_demolition?: FilterRange
-          heist_engineering?: FilterRange
-          heist_lockpicking?: FilterRange
-          heist_perception?: FilterRange
-          heist_trap_disarmament?: FilterRange
-        }
-      }
-      sentinel_filters?: {
-        filters: {
-          sentinel_durability?: FilterRange
+          corrupted?: FilterBoolean
+          gem_level?: FilterRange
+          gem_sockets?: FilterRange
+          identified?: FilterBoolean
+          mirrored?: FilterBoolean
+          sanctum_gold?: FilterRange
+          unidentified_tier?: FilterRange
         }
       }
       trade_filters?: {
@@ -320,6 +316,16 @@ export function createTradeRequest (
     query.type = nameToQuery(activeSearch.baseType, filters)
   }
 
+  // TYPE FILTERS
+  if (activeSearch.category) {
+    const id = CATEGORY_TO_TRADE_ID.get(activeSearch.category)
+    if (id) {
+      propSet(query.filters, 'type_filters.filters.category.option', id)
+    } else {
+      throw new Error(`Invalid category: ${activeSearch.category}`)
+    }
+  }
+
   if (filters.foil && !filters.foil.disabled) {
     propSet(query.filters, 'type_filters.filters.rarity.option', 'uniquefoil')
   } else if (filters.rarity) {
@@ -330,13 +336,63 @@ export function createTradeRequest (
     )
   }
 
-  if (activeSearch.category) {
-    const id = CATEGORY_TO_TRADE_ID.get(activeSearch.category)
-    if (id) {
-      propSet(query.filters, 'type_filters.filters.category.option', id)
-    } else {
-      throw new Error(`Invalid category: ${activeSearch.category}`)
+  if (filters.itemLevel && !filters.itemLevel.disabled) {
+    propSet(
+      query.filters,
+      'type_filters.filters.ilvl.min',
+      filters.itemLevel.value
+    )
+    if (filters.itemLevel.max) {
+      propSet(
+        query.filters,
+        'type_filters.filters.ilvl.max',
+        filters.itemLevel.max
+      )
     }
+  }
+
+  if (filters.quality && !filters.quality.disabled) {
+    propSet(
+      query.filters,
+      'type_filters.filters.quality.min',
+      filters.quality.value
+    )
+  }
+
+  // EQUIPMENT FILTERS
+
+  // REQ FILTERS
+
+  // MAP (WAYSTONE) FILTERS
+
+  if (filters.mapTier && !filters.mapTier.disabled) {
+    propSet(
+      query.filters,
+      'map_filters.filters.map_tier.min',
+      filters.mapTier.value
+    )
+    propSet(
+      query.filters,
+      'map_filters.filters.map_tier.max',
+      filters.mapTier.value
+    )
+  }
+
+  // MISC FILTERS
+  if (filters.gemLevel && !filters.gemLevel.disabled) {
+    propSet(
+      query.filters,
+      'misc_filters.filters.gem_level.min',
+      filters.gemLevel.value
+    )
+  }
+
+  if (filters.unidentified && !filters.unidentified.disabled) {
+    propSet(
+      query.filters,
+      'misc_filters.filters.identified.option',
+      String(false)
+    )
   }
 
   if (filters.corrupted?.value === false || filters.corrupted?.exact) {
@@ -346,13 +402,7 @@ export function createTradeRequest (
       String(filters.corrupted.value)
     )
   }
-  if (filters.fractured?.value === false) {
-    propSet(
-      query.filters,
-      'misc_filters.filters.fractured_item.option',
-      String(false)
-    )
-  }
+
   if (filters.mirrored) {
     if (filters.mirrored.disabled) {
       propSet(
@@ -373,121 +423,9 @@ export function createTradeRequest (
     )
   }
 
-  if (filters.gemLevel && !filters.gemLevel.disabled) {
-    propSet(
-      query.filters,
-      'misc_filters.filters.gem_level.min',
-      filters.gemLevel.value
-    )
-  }
+  // TRADE FILTERS
 
-  if (filters.quality && !filters.quality.disabled) {
-    propSet(
-      query.filters,
-      'misc_filters.filters.quality.min',
-      filters.quality.value
-    )
-  }
-
-  if (filters.itemLevel && !filters.itemLevel.disabled) {
-    propSet(
-      query.filters,
-      'misc_filters.filters.ilvl.min',
-      filters.itemLevel.value
-    )
-    if (filters.itemLevel.max) {
-      propSet(
-        query.filters,
-        'misc_filters.filters.ilvl.max',
-        filters.itemLevel.max
-      )
-    }
-  }
-
-  if (filters.stackSize && !filters.stackSize.disabled) {
-    propSet(
-      query.filters,
-      'misc_filters.filters.stack_size.min',
-      filters.stackSize.value
-    )
-  }
-
-  if (filters.linkedSockets && !filters.linkedSockets.disabled) {
-    propSet(
-      query.filters,
-      'socket_filters.filters.links.min',
-      filters.linkedSockets.value
-    )
-  }
-
-  if (filters.whiteSockets && !filters.whiteSockets.disabled) {
-    propSet(
-      query.filters,
-      'socket_filters.filters.sockets.w',
-      filters.whiteSockets.value
-    )
-  }
-
-  if (filters.mapTier && !filters.mapTier.disabled) {
-    propSet(
-      query.filters,
-      'map_filters.filters.map_tier.min',
-      filters.mapTier.value
-    )
-    propSet(
-      query.filters,
-      'map_filters.filters.map_tier.max',
-      filters.mapTier.value
-    )
-  }
-
-  if (filters.mapBlighted) {
-    if (filters.mapBlighted.value === 'Blighted') {
-      propSet(
-        query.filters,
-        'map_filters.filters.map_blighted.option',
-        String(true)
-      )
-    } else if (filters.mapBlighted.value === 'Blight-ravaged') {
-      propSet(
-        query.filters,
-        'map_filters.filters.map_uberblighted.option',
-        String(true)
-      )
-    }
-  }
-
-  if (filters.unidentified && !filters.unidentified.disabled) {
-    propSet(
-      query.filters,
-      'misc_filters.filters.identified.option',
-      String(false)
-    )
-  }
-
-  if (filters.areaLevel && !filters.areaLevel.disabled) {
-    propSet(
-      query.filters,
-      'map_filters.filters.area_level.min',
-      filters.areaLevel.value
-    )
-  }
-
-  if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
-    propSet(
-      query.filters,
-      'heist_filters.filters.heist_wings.min',
-      filters.heistWingsRevealed.value
-    )
-  }
-
-  if (filters.sentinelCharge && !filters.sentinelCharge.disabled) {
-    propSet(
-      query.filters,
-      'sentinel_filters.filters.sentinel_durability.min',
-      filters.sentinelCharge.value
-    )
-  }
+  // BREAK ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
   for (const stat of stats) {
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
@@ -557,135 +495,135 @@ export function createTradeRequest (
 
     const input = stat.roll!
     switch (stat.tradeId[0] as InternalTradeId) {
-      case 'item.base_percentile':
-        propSet(
-          query.filters,
-          'armour_filters.filters.base_defence_percentile.min',
-          typeof input.min === 'number' ? input.min : undefined
-        )
-        propSet(
-          query.filters,
-          'armour_filters.filters.base_defence_percentile.max',
-          typeof input.max === 'number' ? input.max : undefined
-        )
-        break
+      // case 'item.base_percentile':
+      //   propSet(
+      //     query.filters,
+      //     'equipment_filters.filters.base_defence_percentile.min',
+      //     typeof input.min === 'number' ? input.min : undefined
+      //   )
+      //   propSet(
+      //     query.filters,
+      //     'equipment_filters.filters.base_defence_percentile.max',
+      //     typeof input.max === 'number' ? input.max : undefined
+      //   )
+      //   break
       case 'item.armour':
         propSet(
           query.filters,
-          'armour_filters.filters.ar.min',
+          'equipment_filters.filters.ar.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'armour_filters.filters.ar.max',
+          'equipment_filters.filters.ar.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.evasion_rating':
         propSet(
           query.filters,
-          'armour_filters.filters.ev.min',
+          'equipment_filters.filters.ev.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'armour_filters.filters.ev.max',
+          'equipment_filters.filters.ev.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.energy_shield':
         propSet(
           query.filters,
-          'armour_filters.filters.es.min',
+          'equipment_filters.filters.es.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'armour_filters.filters.es.max',
-          typeof input.max === 'number' ? input.max : undefined
-        )
-        break
-      case 'item.ward':
-        propSet(
-          query.filters,
-          'armour_filters.filters.ward.min',
-          typeof input.min === 'number' ? input.min : undefined
-        )
-        propSet(
-          query.filters,
-          'armour_filters.filters.ward.max',
+          'equipment_filters.filters.es.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.block':
         propSet(
           query.filters,
-          'armour_filters.filters.block.min',
+          'equipment_filters.filters.block.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'armour_filters.filters.block.max',
+          'equipment_filters.filters.block.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.total_dps':
         propSet(
           query.filters,
-          'weapon_filters.filters.dps.min',
+          'equipment_filters.filters.dps.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'weapon_filters.filters.dps.max',
+          'equipment_filters.filters.dps.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.physical_dps':
         propSet(
           query.filters,
-          'weapon_filters.filters.pdps.min',
+          'equipment_filters.filters.pdps.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'weapon_filters.filters.pdps.max',
+          'equipment_filters.filters.pdps.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.elemental_dps':
         propSet(
           query.filters,
-          'weapon_filters.filters.edps.min',
+          'equipment_filters.filters.edps.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'weapon_filters.filters.edps.max',
+          'equipment_filters.filters.edps.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.crit':
         propSet(
           query.filters,
-          'weapon_filters.filters.crit.min',
+          'equipment_filters.filters.crit.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'weapon_filters.filters.crit.max',
+          'equipment_filters.filters.crit.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
       case 'item.aps':
         propSet(
           query.filters,
-          'weapon_filters.filters.aps.min',
+          'equipment_filters.filters.aps.min',
           typeof input.min === 'number' ? input.min : undefined
         )
         propSet(
           query.filters,
-          'weapon_filters.filters.aps.max',
+          'equipment_filters.filters.aps.max',
+          typeof input.max === 'number' ? input.max : undefined
+        )
+        break
+      case 'item.spirit':
+        propSet(
+          query.filters,
+          'equipment_filters.filters.spirit.min',
+          typeof input.min === 'number' ? input.min : undefined
+        )
+        propSet(
+          query.filters,
+          'equipment_filters.filters.spirit.max',
           typeof input.max === 'number' ? input.max : undefined
         )
         break
@@ -695,33 +633,33 @@ export function createTradeRequest (
   stats = stats.filter(
     (stat) => !INTERNAL_TRADE_IDS.includes(stat.tradeId[0] as any)
   )
-  if (filters.veiled) {
-    for (const statRef of filters.veiled.statRefs) {
-      stats.push({
-        disabled: filters.veiled.disabled,
-        statRef: undefined!,
-        text: undefined!,
-        tag: undefined!,
-        sources: undefined!,
-        tradeId: STAT_BY_REF(statRef)!.trade.ids[ModifierType.Veiled]
-      })
-    }
-  }
+  // if (filters.veiled) {
+  //   for (const statRef of filters.veiled.statRefs) {
+  //     stats.push({
+  //       disabled: filters.veiled.disabled,
+  //       statRef: undefined!,
+  //       text: undefined!,
+  //       tag: undefined!,
+  //       sources: undefined!,
+  //       tradeId: STAT_BY_REF(statRef)!.trade.ids[ModifierType.Veiled]
+  //     })
+  //   }
+  // }
 
-  if (filters.influences) {
-    for (const influence of filters.influences) {
-      stats.push({
-        disabled: influence.disabled,
-        statRef: undefined!,
-        text: undefined!,
-        tag: undefined!,
-        sources: undefined!,
-        tradeId: STAT_BY_REF(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[
-          ModifierType.Pseudo
-        ]
-      })
-    }
-  }
+  // if (filters.influences) {
+  //   for (const influence of filters.influences) {
+  //     stats.push({
+  //       disabled: influence.disabled,
+  //       statRef: undefined!,
+  //       text: undefined!,
+  //       tag: undefined!,
+  //       sources: undefined!,
+  //       tradeId: STAT_BY_REF(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[
+  //         ModifierType.Pseudo
+  //       ]
+  //     })
+  //   }
+  // }
 
   const qAnd = query.stats[0]
   for (const stat of stats) {

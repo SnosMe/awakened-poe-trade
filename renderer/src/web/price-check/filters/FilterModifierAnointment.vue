@@ -5,7 +5,7 @@
   >
     <template #item>
       <div class="flex">
-        <img v-for="icon in result.icons" class="w-8 h-8" :src="icon">
+        <img v-for="icon in result.icons" class="w-8 h-8" :src="icon === '%NOT_FOUND%' || icon === '' ? '/images/404.png' : icon">
       </div>
     </template>
   </item-quick-price>

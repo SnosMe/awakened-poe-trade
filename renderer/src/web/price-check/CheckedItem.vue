@@ -4,9 +4,9 @@
     <price-prediction v-if="showPredictedPrice" class="mb-4" :item="item" />
     <price-trend v-else :item="item" :filters="itemFilters" />
     <filters-block ref="filtersComponent" :filters="itemFilters" :stats="itemStats" :item="item" :presets="presets"
-      @preset="selectPreset" @submit="doSearch = true" />
+    @preset="selectPreset" @submit="doSearch = true" />
     <trade-listing v-if="tradeAPI === 'trade' && doSearch" ref="tradeService" :filters="itemFilters" :stats="itemStats"
-      :item="item" />
+    :item="item" />
     <trade-bulk v-if="tradeAPI === 'bulk' && doSearch" ref="tradeService" :filters="itemFilters" :item="item" />
     <div v-if="!doSearch" class="flex justify-between items-center">
       <div class="flex w-40" @mouseenter="handleSearchMouseenter">
