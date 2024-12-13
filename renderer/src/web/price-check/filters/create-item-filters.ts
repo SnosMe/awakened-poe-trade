@@ -14,6 +14,7 @@ interface CreateOptions {
   activateStockFilter: boolean
   exact: boolean
   useEn: boolean
+  pseudo: boolean
 }
 
 export function createFilters (
@@ -28,7 +29,8 @@ export function createFilters (
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
-      collapseListings: opts.collapseListings
+      collapseListings: opts.collapseListings,
+      pseudo: opts.pseudo
     }
   }
 
