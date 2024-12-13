@@ -1,7 +1,7 @@
 ---
 name: Something Broken in PoE2
 about: Use this for things that worked in PoE 1 and do not in PoE 2
-title: "[PoE2]"
+title: "[PoE2] - Summary"
 labels: bug
 assignees: Kvan7
 

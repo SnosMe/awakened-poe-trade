@@ -1,14 +1,14 @@
 ---
 name: An error occurred while parsing the item
 about: This is probably a bug and you can report it on GitHub.
-title: ''
-labels: ''
+title: "[Parse Error] - item name here"
+labels: bug, parse error
 assignees: ''
 
 ---
 
 ## Parse Error
-***Put name of item here***
+***Put name of item here, and in the title***
 
 ### Item Text
 ***Please provide the item's description***

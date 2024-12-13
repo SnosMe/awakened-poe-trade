@@ -2,14 +2,14 @@
 name: Unknown Item
 about: If this Item was introduced in this League, it will likely be supported in
   the next app update.
-title: "[Item Missing] - item name here"
+title: "[Unknown Item] - item name here"
 labels: bug, missing item
 assignees: ''
 
 ---
 
 ## Unknown Item
-***Put name of item here***
+***Put name of item here, and in the title***
 
 ### Item Text
 ***Please provide the item's description***
