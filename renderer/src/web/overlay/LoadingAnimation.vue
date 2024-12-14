@@ -1,11 +1,13 @@
 <template>
-  <transition enter-active-class="animate__animated animate__fadeIn"
-    leave-active-class="animate__animated animate__backOutDown">
+  <transition
+    enter-active-class="animate__animated animate__fadeIn"
+    leave-active-class="animate__animated animate__backOutDown"
+  >
     <div :class="$style.widget" v-if="show">
       <div :class="$style.box">
         <div class="py-2 px-4">
           <div class="text-base">Exiled Exchange 2</div>
-          <p>{{ t('app_is_ready') }}</p>
+          <p>{{ t("app_is_ready") }}</p>
         </div>
       </div>
     </div>
@@ -13,23 +15,23 @@
 </template>
 
 <script setup lang="ts">
-import { shallowRef } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { Host } from '@/web/background/IPC'
-import { AppConfig } from '@/web/Config'
+import { shallowRef } from "vue";
+import { useI18n } from "vue-i18n";
+import { Host } from "@/web/background/IPC";
+import { AppConfig } from "@/web/Config";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
-const show = shallowRef(false)
+const show = shallowRef(false);
 
-Host.onEvent('MAIN->OVERLAY::overlay-attached', () => {
+Host.onEvent("MAIN->OVERLAY::overlay-attached", () => {
   if (!show.value && AppConfig().showAttachNotification) {
-    show.value = true
+    show.value = true;
     setTimeout(() => {
-      show.value = false
-    }, 2500)
+      show.value = false;
+    }, 2500);
   }
-})
+});
 </script>
 
 <style lang="postcss" module>
@@ -52,8 +54,8 @@ Host.onEvent('MAIN->OVERLAY::overlay-attached', () => {
 
 .box::before {
   position: absolute;
-  content: '';
-  background: url('/images/exa.png') no-repeat top right/contain;
+  content: "";
+  background: url("/images/exa.png") no-repeat top right/contain;
   right: 100%;
   width: 100%;
   height: 100%;

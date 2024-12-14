@@ -1,38 +1,38 @@
 {
-    "name": "exiled-exchange-2",
-    "version": "0.0.12",
-    "private": true,
-    "scripts": {
-        "dev": "node build/script.mjs",
-        "build": "tsc --noEmit && node build/script.mjs --prod",
-        "package": "electron-builder build",
-        "lint": "eslint src",
-        "fix": "eslint src --fix"
-    },
-    "author": {
-        "name": "Garrett Parker"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Kvan7/exiled-exchange-2.git"
-    },
-    "main": "dist/main.js",
-    "dependencies": {
-        "electron-overlay-window": "3.3.0",
-        "uiohook-napi": "1.5.x"
-    },
-    "devDependencies": {
-        "@types/ini": "^4.1.0",
-        "@types/node": "20.x.x",
-        "@types/ws": "^8.5.3",
-        "@wokwi/bmp-ts": "^3.0.0",
-        "comlink": "^4.3.1",
-        "electron": "33.2.1",
-        "electron-builder": "25.1.8",
-        "electron-updater": "^6.3.0",
-        "esbuild": "^0.24.0",
-        "ini": "^5.0.0",
-        "typescript": "5.6.x",
-        "ws": "^8.16.0"
-    }
+  "name": "exiled-exchange-2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node build/script.mjs",
+    "build": "tsc --noEmit && node build/script.mjs --prod",
+    "package": "electron-builder build",
+    "lint": "eslint src",
+    "fix": "eslint src --fix"
+  },
+  "author": {
+    "name": "Garrett Parker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kvan7/exiled-exchange-2.git"
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "electron-overlay-window": "3.3.0",
+    "uiohook-napi": "1.5.x"
+  },
+  "devDependencies": {
+    "@types/ini": "^4.1.0",
+    "@types/node": "20.x.x",
+    "@types/ws": "^8.5.3",
+    "@wokwi/bmp-ts": "^3.0.0",
+    "comlink": "^4.3.1",
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8",
+    "electron-updater": "^6.3.0",
+    "esbuild": "^0.24.0",
+    "ini": "^5.0.0",
+    "typescript": "5.6.x",
+    "ws": "^8.16.0"
+  }
 }

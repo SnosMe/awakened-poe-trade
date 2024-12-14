@@ -4,64 +4,65 @@
     @keydown.prevent
     :placeholder="modelValue || t('settings.no_key')"
     :class="{ 'placeholder-red-400': !modelValue }"
-    class="rounded bg-gray-900 px-1 text-center font-poe" />
+    class="rounded bg-gray-900 px-1 text-center font-poe"
+  />
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { KeyToCode, hotkeyToString } from '@ipc/KeyToCode'
+import { defineComponent, PropType } from "vue";
+import { useI18n } from "vue-i18n";
+import { KeyToCode, hotkeyToString } from "@ipc/KeyToCode";
 
 export default defineComponent({
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   props: {
     modelValue: {
       type: String as PropType<string | null>,
-      default: null
+      default: null,
     },
     noModKeys: {
       type: Boolean,
-      default: false
+      default: false,
     },
     required: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-  setup (props, ctx) {
-    const { t } = useI18n()
+  setup(props, ctx) {
+    const { t } = useI18n();
 
     return {
       t,
-      handleKeyup (e: KeyboardEvent) {
-        e.preventDefault()
-        e.stopPropagation()
+      handleKeyup(e: KeyboardEvent) {
+        e.preventDefault();
+        e.stopPropagation();
 
-        if (e.code === 'Backspace') {
+        if (e.code === "Backspace") {
           if (!props.required) {
-            ctx.emit('update:modelValue', null)
+            ctx.emit("update:modelValue", null);
           }
-          return
+          return;
         }
 
-        let { code, ctrlKey, shiftKey, altKey } = e
+        let { code, ctrlKey, shiftKey, altKey } = e;
 
-        if (code.startsWith('Key')) {
-          code = code.slice('Key'.length)
-        } else if (code.startsWith('Digit')) {
-          code = code.slice('Digit'.length)
-        } else if (e.key === 'Cancel' && code === 'Pause') {
-          code = 'Cancel'
+        if (code.startsWith("Key")) {
+          code = code.slice("Key".length);
+        } else if (code.startsWith("Digit")) {
+          code = code.slice("Digit".length);
+        } else if (e.key === "Cancel" && code === "Pause") {
+          code = "Cancel";
         }
 
         if ((KeyToCode as Record<string, number>)[code]) {
-          code = hotkeyToString([code], ctrlKey, shiftKey, altKey)
-          if (code.includes('F12')) return
-          if (props.noModKeys && code.includes('+')) return
-          ctx.emit('update:modelValue', code)
+          code = hotkeyToString([code], ctrlKey, shiftKey, altKey);
+          if (code.includes("F12")) return;
+          if (props.noModKeys && code.includes("+")) return;
+          ctx.emit("update:modelValue", code);
         }
-      }
-    }
-  }
-})
+      },
+    };
+  },
+});
 </script>

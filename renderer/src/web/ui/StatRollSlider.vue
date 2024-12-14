@@ -1,119 +1,148 @@
 <template>
-  <div class="flex justify-between bg-gray-700 rounded relative p-0.5 items-center h-5"
+  <div
+    class="flex justify-between bg-gray-700 rounded relative p-0.5 items-center h-5"
     ref="rootEl"
     :class="$style[state.mode]"
-    @mousedown="handleMousedown">
-    <span :class="[$style.bound, { [$style.inclusive]: state.minInclusive }]">{{ bounds.min }}</span>
-    <div v-if="state.mode !== 'none'"
+    @mousedown="handleMousedown"
+  >
+    <span :class="[$style.bound, { [$style.inclusive]: state.minInclusive }]">{{
+      bounds.min
+    }}</span>
+    <div
+      v-if="state.mode !== 'none'"
       :class="[$style.fill]"
-      :style="{ '--left': `${state.percentLeft}%`, '--right': `${state.percentRight}%` }"
+      :style="{
+        '--left': `${state.percentLeft}%`,
+        '--right': `${state.percentRight}%`,
+      }"
     />
-    <div :class="$style.tick" :style="{ 'left': `max(0.125rem, min(${percentRoll}% - 0.0625rem, 100% - 0.25rem))` }" />
-    <div v-if="popupValue"
+    <div
+      :class="$style.tick"
+      :style="{
+        left: `max(0.125rem, min(${percentRoll}% - 0.0625rem, 100% - 0.25rem))`,
+      }"
+    />
+    <div
+      v-if="popupValue"
       :class="$style.popup"
-      :style="{ '--left': `${state.percentLeft}%`, '--right': `${state.percentRight}%` }"
-    >{{ popupValue }}</div>
-    <span :class="[$style.bound, { [$style.inclusive]: state.maxInclusive }]">{{ bounds.max }}</span>
+      :style="{
+        '--left': `${state.percentLeft}%`,
+        '--right': `${state.percentRight}%`,
+      }"
+    >
+      {{ popupValue }}
+    </div>
+    <span :class="[$style.bound, { [$style.inclusive]: state.maxInclusive }]">{{
+      bounds.max
+    }}</span>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, PropType, shallowRef } from 'vue'
-import { percentRoll } from '../price-check/filters/util'
+import { defineComponent, computed, PropType, shallowRef } from "vue";
+import { percentRoll } from "../price-check/filters/util";
 
 export default defineComponent({
   props: {
     modelValue: {
-      type: Array as PropType<Array<number | '' | undefined>>,
-      required: true
+      type: Array as PropType<Array<number | "" | undefined>>,
+      required: true,
     },
     roll: { type: Number, required: true },
     dp: { type: Boolean, required: true },
     bounds: {
-      type: Object as PropType<{ min: number, max: number }>,
-      required: true
-    }
+      type: Object as PropType<{ min: number; max: number }>,
+      required: true,
+    },
   },
-  setup (props, ctx) {
-    const rootEl = shallowRef<HTMLDivElement>(null!)
+  setup(props, ctx) {
+    const rootEl = shallowRef<HTMLDivElement>(null!);
 
-    const dirty = shallowRef<typeof props['modelValue'] | null>(null)
+    const dirty = shallowRef<(typeof props)["modelValue"] | null>(null);
 
     const state = computed(() => {
-      const min = (dirty.value) ? dirty.value[0] : props.modelValue[0]
-      const max = (dirty.value) ? dirty.value[1] : props.modelValue[1]
-      const { bounds } = props
-      if (typeof min === 'number' && typeof max !== 'number') {
+      const min = dirty.value ? dirty.value[0] : props.modelValue[0];
+      const max = dirty.value ? dirty.value[1] : props.modelValue[1];
+      const { bounds } = props;
+      if (typeof min === "number" && typeof max !== "number") {
         return {
-          mode: 'min',
-          percentLeft: (min - bounds.min) / (bounds.max - bounds.min) * 100,
-          maxInclusive: true
-        }
-      } else if (typeof min !== 'number' && typeof max === 'number') {
+          mode: "min",
+          percentLeft: ((min - bounds.min) / (bounds.max - bounds.min)) * 100,
+          maxInclusive: true,
+        };
+      } else if (typeof min !== "number" && typeof max === "number") {
         return {
-          mode: 'max',
-          percentRight: (bounds.max - max) / (bounds.max - bounds.min) * 100,
-          minInclusive: true
-        }
-      } else if (typeof min === 'number' && typeof max === 'number') {
-        if (min > max) return { mode: 'none' }
+          mode: "max",
+          percentRight: ((bounds.max - max) / (bounds.max - bounds.min)) * 100,
+          minInclusive: true,
+        };
+      } else if (typeof min === "number" && typeof max === "number") {
+        if (min > max) return { mode: "none" };
         return {
-          mode: 'range',
-          percentLeft: (min - bounds.min) / (bounds.max - bounds.min) * 100,
-          percentRight: (bounds.max - max) / (bounds.max - bounds.min) * 100,
-          minInclusive: (min <= bounds.min),
-          maxInclusive: (max >= bounds.max)
-        }
+          mode: "range",
+          percentLeft: ((min - bounds.min) / (bounds.max - bounds.min)) * 100,
+          percentRight: ((bounds.max - max) / (bounds.max - bounds.min)) * 100,
+          minInclusive: min <= bounds.min,
+          maxInclusive: max >= bounds.max,
+        };
       } else {
-        return { mode: 'none' }
+        return { mode: "none" };
       }
-    })
+    });
 
-    function handleMousemove (e: MouseEvent) {
-      e.preventDefault()
-      const { bounds, dp } = props
-      const rect = rootEl.value.getBoundingClientRect()
-      const k = Math.max(0, Math.min((e.clientX - rect.x) / rect.width, 1))
-      const value = (bounds.max - bounds.min) * k + bounds.min
-      if (state.value.mode === 'min') {
-        dirty.value = [percentRoll(value, -0, Math.floor, dp), undefined]
-      } else if (state.value.mode === 'max') {
-        dirty.value = [undefined, percentRoll(value, +0, Math.ceil, dp)]
+    function handleMousemove(e: MouseEvent) {
+      e.preventDefault();
+      const { bounds, dp } = props;
+      const rect = rootEl.value.getBoundingClientRect();
+      const k = Math.max(0, Math.min((e.clientX - rect.x) / rect.width, 1));
+      const value = (bounds.max - bounds.min) * k + bounds.min;
+      if (state.value.mode === "min") {
+        dirty.value = [percentRoll(value, -0, Math.floor, dp), undefined];
+      } else if (state.value.mode === "max") {
+        dirty.value = [undefined, percentRoll(value, +0, Math.ceil, dp)];
       }
     }
-    function removeMousemove () {
-      document.removeEventListener('mousemove', handleMousemove)
-      document.removeEventListener('mouseup', removeMousemove)
-      window.removeEventListener('blur', removeMousemove)
-      ctx.emit('update:modelValue', dirty.value)
-      dirty.value = null
+    function removeMousemove() {
+      document.removeEventListener("mousemove", handleMousemove);
+      document.removeEventListener("mouseup", removeMousemove);
+      window.removeEventListener("blur", removeMousemove);
+      ctx.emit("update:modelValue", dirty.value);
+      dirty.value = null;
     }
 
     return {
       rootEl,
       percentRoll: computed(() => {
-        const { bounds } = props
-        return (props.roll - bounds.min) / (bounds.max - bounds.min) * 100
+        const { bounds } = props;
+        return ((props.roll - bounds.min) / (bounds.max - bounds.min)) * 100;
       }),
-      popupValue: computed(() => state.value.mode === 'min' ? dirty.value?.[0] : dirty.value?.[1]),
-      handleMousedown (e: MouseEvent) {
-        if (state.value.mode !== 'min' && state.value.mode !== 'max') return
-        handleMousemove(e)
-        document.addEventListener('mousemove', handleMousemove)
-        document.addEventListener('mouseup', removeMousemove)
-        window.addEventListener('blur', removeMousemove)
+      popupValue: computed(() =>
+        state.value.mode === "min" ? dirty.value?.[0] : dirty.value?.[1],
+      ),
+      handleMousedown(e: MouseEvent) {
+        if (state.value.mode !== "min" && state.value.mode !== "max") return;
+        handleMousemove(e);
+        document.addEventListener("mousemove", handleMousemove);
+        document.addEventListener("mouseup", removeMousemove);
+        window.addEventListener("blur", removeMousemove);
       },
-      state
-    }
-  }
-})
+      state,
+    };
+  },
+});
 </script>
 
 <style lang="postcss" module>
 .tick {
   position: absolute;
   @apply w-0.5;
-  background: linear-gradient(to bottom, #000 10%, transparent 30%, transparent 70%, #000 90%);
+  background: linear-gradient(
+    to bottom,
+    #000 10%,
+    transparent 30%,
+    transparent 70%,
+    #000 90%
+  );
   height: 100%;
   pointer-events: none;
 }
@@ -130,19 +159,27 @@ export default defineComponent({
   .min & {
     width: calc(100% - var(--left));
     right: 0;
-    background-image: linear-gradient(to right, transparent calc(-1 * var(--left) - 5%), theme('colors.gray.400') 80%);
+    background-image: linear-gradient(
+      to right,
+      transparent calc(-1 * var(--left) - 5%),
+      theme("colors.gray.400") 80%
+    );
   }
 
   .max & {
     width: calc(100% - var(--right));
     left: 0;
-    background-image: linear-gradient(to left, transparent calc(-1 * var(--right) - 5%), theme('colors.gray.400') 80%);
+    background-image: linear-gradient(
+      to left,
+      transparent calc(-1 * var(--right) - 5%),
+      theme("colors.gray.400") 80%
+    );
   }
 
   .range & {
     left: var(--left);
     right: var(--right);
-    background-color: theme('colors.gray.400');
+    background-color: theme("colors.gray.400");
   }
 }
 
@@ -153,10 +190,16 @@ export default defineComponent({
   pointer-events: none;
   user-select: none;
 
-  &.inclusive { @apply text-black; }
+  &.inclusive {
+    @apply text-black;
+  }
 
-  &:first-child { @apply pl-1; }
-  &:last-child { @apply pr-1; }
+  &:first-child {
+    @apply pl-1;
+  }
+  &:last-child {
+    @apply pr-1;
+  }
 }
 
 .popup {

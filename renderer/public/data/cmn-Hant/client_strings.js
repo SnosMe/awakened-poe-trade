@@ -26,7 +26,6 @@ export default {
   ARMOUR: '護甲: ',
   EVASION: '閃避值: ',
   ENERGY_SHIELD: '能量護盾: ',
-  TAG_WARD: '保護: ',
   BLOCK_CHANCE: '格擋率: ',
   CORRUPTED: '已汙染',
   UNIDENTIFIED: '未鑑定',

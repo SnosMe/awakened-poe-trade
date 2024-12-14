@@ -1,25 +1,25 @@
-@font-face{
-  font-family:'FontinSmallCaps';
-  src:url('./font/Fontin-SmallCaps-Hinted.ttf') format("truetype");
-}
-@font-face{
-  font-family:'Fontin';
-  src:url('./font/Fontin-Regular-Hinted.ttf') format("truetype");
-}
-@font-face{
-  font-family:'Fontin';
-  font-style:italic;
-  src:url('./font/Fontin-Italic-Hinted.ttf') format("truetype");
-}
-@font-face{
-  font-family:'Fontin';
-  font-weight:bold;
-  src:url('./font/Fontin-Bold-Hinted.ttf') format("truetype");
+@font-face {
+  font-family: "FontinSmallCaps";
+  src: url("./font/Fontin-SmallCaps-Hinted.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'FrizQuadrataC';
+  font-family: "Fontin";
+  src: url("./font/Fontin-Regular-Hinted.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fontin";
+  font-style: italic;
+  src: url("./font/Fontin-Italic-Hinted.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fontin";
+  font-weight: bold;
+  src: url("./font/Fontin-Bold-Hinted.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FrizQuadrataC";
   unicode-range: U+400-4FF; /* Cyrillic */
-  src:url('./font/FrizQuadrataITC-Hinted.ttf') format("truetype");
+  src: url("./font/FrizQuadrataITC-Hinted.ttf") format("truetype");
 }
 
 .font-poe {
@@ -30,22 +30,22 @@
 }
 
 @font-face {
-  font-family: 'Exo2';
+  font-family: "Exo2";
   font-weight: normal;
   font-style: normal;
-  src:url('./font/Exo2-Regular.ttf') format("truetype");
+  src: url("./font/Exo2-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Exo2';
+  font-family: "Exo2";
   font-weight: 500;
   font-style: normal;
-  src:url('./font/Exo2-Medium.ttf') format("truetype");
+  src: url("./font/Exo2-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Exo2';
+  font-family: "Exo2";
   font-weight: 600;
   font-style: normal;
-  src:url('./font/Exo2-SemiBold.ttf') format("truetype");
+  src: url("./font/Exo2-SemiBold.ttf") format("truetype");
 }
 
 .font-exo2 {

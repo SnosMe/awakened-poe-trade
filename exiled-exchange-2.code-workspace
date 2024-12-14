@@ -9,6 +9,10 @@
       "path": "main"
     },
     {
+      "name": "DataStore",
+      "path": "./renderer/public/.DS_Store"
+    },
+    {
       "name": "docs",
       "path": "docs"
     },

@@ -1,0 +1,126 @@
+{
+  "steam": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile 2",
+  "translations": [
+    "English"
+  ],
+  "tables": [
+    {
+      "name": "BaseItemTypes",
+      "columns": [
+        "Id",
+        "Name",
+        "IsCorrupted",
+        "Width",
+        "Height",
+        "DropLevel",
+        "ItemVisualIdentity",
+        "Implicit_ModsKeys",
+        "ItemClassesKey",
+        "SiteVisibility",
+        "TagsKeys",
+        "TradeMarketCategory"
+      ]
+    },
+    {
+      "name": "ItemClasses",
+      "columns": [
+        "Id",
+        "Name",
+        "ItemClassCategory",
+        "TradeMarketCategory"
+      ]
+    },
+    {
+      "name": "WeaponTypes",
+      "columns": [
+        "BaseItemTypesKey",
+        "DamageMin",
+        "DamageMax"
+      ]
+    },
+    {
+      "name": "ItemClassCategories",
+      "columns": [
+        "Id",
+        "Text"
+      ]
+    },
+    {
+      "name": "SkillGems",
+      "columns": [
+        "BaseItemTypesKey",
+        "IsVaalVariant",
+        "IsSupport"
+      ]
+    },
+    {
+      "name": "SkillGemInfo",
+      "columns": [
+        "Id",
+        "Description",
+        "SkillGemsKey"
+      ]
+    },
+    {
+      "name": "Mods",
+      "columns": [
+        "Id",
+        "Domain",
+        "Name",
+        "StatsKey1",
+        "StatsKey2",
+        "StatsKey3",
+        "StatsKey4"
+      ]
+    },
+    {
+      "name": "Tags",
+      "columns": [
+        "Id",
+        "DisplayString"
+      ]
+    },
+    {
+      "name": "UniqueStashLayout",
+      "columns": [
+        "WordsKey",
+        "ItemVisualIdentityKey",
+        "UniqueStashTypesKey",
+        "RenamedVersion",
+        "ShowIfEmptyChallengeLeague"
+      ]
+    },
+    {
+      "name": "Words",
+      "columns": [
+        "Wordlist",
+        "Text",
+        "Text2",
+        "SpawnWeight_Tags",
+        "SpawnWeight_Values"
+      ]
+    },
+    {
+      "name": "ItemVisualIdentity",
+      "columns": [
+        "Id",
+        "DDSFile",
+        "AOFile"
+      ]
+    },
+    {
+      "name": "Stats",
+      "columns": [
+        "Id",
+        "IsLocal",
+        "IsWeaponLocal",
+        "Semantics",
+        "Text",
+        "IsVirtual",
+        "HASH32",
+        "BelongsActiveSkillsKey",
+        "IsScalable"
+      ]
+    }
+  ]
+}

@@ -4,87 +4,123 @@
       {{ result.error }}
     </div>
     <div v-if="'related' in result" class="flex-1 p-2 w-1/2">
-      <div v-for="item in result.related" :key="item.name"
-        :class="{ 'bg-gray-700': item.highlight }" class="rounded px-1">
-        <item-quick-price currency-text fraction class="text-base"
+      <div
+        v-for="item in result.related"
+        :key="item.name"
+        :class="{ 'bg-gray-700': item.highlight }"
+        class="rounded px-1"
+      >
+        <item-quick-price
+          currency-text
+          fraction
+          class="text-base"
           :price="item.price"
-          :item-img="item.icon === '%NOT_FOUND%' || item.icon === '' ? '/images/404.png' : item.icon" />
-        <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
+          :item-img="
+            item.icon === '%NOT_FOUND%' || item.icon === ''
+              ? '/images/404.png'
+              : item.icon
+          "
+        />
+        <div
+          class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden"
+        >
+          {{ item.name }}
+        </div>
       </div>
     </div>
-    <div v-if="'items' in result && result.items.length" class="flex-1 p-2 w-1/2">
+    <div
+      v-if="'items' in result && result.items.length"
+      class="flex-1 p-2 w-1/2"
+    >
       <div v-for="item in result.items" :key="item.name">
-        <item-quick-price currency-text fraction class="text-base"
+        <item-quick-price
+          currency-text
+          fraction
+          class="text-base"
           :price="item.price"
-          :item-img="item.icon === '%NOT_FOUND%' || item.icon === '' ? '/images/404.png' : item.icon" />
-        <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
+          :item-img="
+            item.icon === '%NOT_FOUND%' || item.icon === ''
+              ? '/images/404.png'
+              : item.icon
+          "
+        />
+        <div
+          class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden"
+        >
+          {{ item.name }}
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
-import { BaseType, ITEM_BY_REF, ITEM_DROP } from '@/assets/data'
-import { usePoeninja, CurrencyValue } from '@/web/background/Prices'
-import { getDetailsId } from '../trends/getDetailsId'
-import { ParsedItem } from '@/parser'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
+import { computed, defineComponent, PropType } from "vue";
+import { BaseType, ITEM_BY_REF, ITEM_DROP } from "@/assets/data";
+import { usePoeninja, CurrencyValue } from "@/web/background/Prices";
+import { getDetailsId } from "../trends/getDetailsId";
+import { ParsedItem } from "@/parser";
+import ItemQuickPrice from "@/web/ui/ItemQuickPrice.vue";
 
-const { findPriceByQuery, autoCurrency } = usePoeninja()
+const { findPriceByQuery, autoCurrency } = usePoeninja();
 
-function findItemByQueryId (queryId: string): BaseType | undefined {
-  const [ns, encodedName] = queryId.split('::')
-  const [name, variant] = encodedName.split(' // ')
-  let found = ITEM_BY_REF(ns as unknown as BaseType['namespace'], name)
-  if (found && ns === 'UNIQUE') {
-    const filtered = found.filter(unique => unique.unique!.base === variant)
-    if (filtered.length) found = filtered
+function findItemByQueryId(queryId: string): BaseType | undefined {
+  const [ns, encodedName] = queryId.split("::");
+  const [name, variant] = encodedName.split(" // ");
+  let found = ITEM_BY_REF(ns as unknown as BaseType["namespace"], name);
+  if (found && ns === "UNIQUE") {
+    const filtered = found.filter((unique) => unique.unique!.base === variant);
+    if (filtered.length) found = filtered;
   }
   // return any first item
-  if (found && found.length) return found[0]
+  if (found && found.length) return found[0];
 }
 
-function findPriceByQueryId (queryId: string) {
-  const [ns, encodedName] = queryId.split('::')
-  const [name, variant] = encodedName.split(' // ')
-  const priceEntry = findPriceByQuery({ ns, name, variant })
+function findPriceByQueryId(queryId: string) {
+  const [ns, encodedName] = queryId.split("::");
+  const [name, variant] = encodedName.split(" // ");
+  const priceEntry = findPriceByQuery({ ns, name, variant });
   if (priceEntry) {
-    return autoCurrency(priceEntry.chaos)
+    return autoCurrency(priceEntry.chaos);
   }
 }
 
-function getItemPrices (queryId: string) {
-  const dropEntry = ITEM_DROP.find(entry => entry.query.includes(queryId))
-  if (!dropEntry) return null
+function getItemPrices(queryId: string) {
+  const dropEntry = ITEM_DROP.find((entry) => entry.query.includes(queryId));
+  if (!dropEntry) return null;
 
   const out = {
-    related: [] as Array<{ name: string, icon: string, price?: CurrencyValue, highlight: boolean }>,
-    items: [] as Array<{ name: string, icon: string, price?: CurrencyValue }>
-  }
+    related: [] as Array<{
+      name: string;
+      icon: string;
+      price?: CurrencyValue;
+      highlight: boolean;
+    }>,
+    items: [] as Array<{ name: string; icon: string; price?: CurrencyValue }>,
+  };
   for (const itemId of dropEntry.query) {
-    const dbItem = findItemByQueryId(itemId)
-    if (!dbItem) return { error: `Can't find "${itemId}".` }
+    const dbItem = findItemByQueryId(itemId);
+    if (!dbItem) return { error: `Can't find "${itemId}".` };
 
     out.related.push({
       icon: dbItem.icon,
       name: dbItem.name,
       price: findPriceByQueryId(itemId),
-      highlight: (itemId === queryId)
-    })
+      highlight: itemId === queryId,
+    });
   }
   for (const itemId of dropEntry.items) {
-    const dbItem = findItemByQueryId(itemId)
-    if (!dbItem) return { error: `Can't find "${itemId}".` }
+    const dbItem = findItemByQueryId(itemId);
+    if (!dbItem) return { error: `Can't find "${itemId}".` };
 
     out.items.push({
       icon: dbItem.icon,
       name: dbItem.name,
-      price: findPriceByQueryId(itemId)
-    })
+      price: findPriceByQueryId(itemId),
+    });
   }
 
-  return out
+  return out;
 }
 
 export default defineComponent({
@@ -92,26 +128,28 @@ export default defineComponent({
   props: {
     item: {
       type: Object as PropType<ParsedItem | null>,
-      default: null
+      default: null,
     },
     clickPosition: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup (props) {
+  setup(props) {
     const result = computed(() => {
-      if (!props.item) return
+      if (!props.item) return;
 
-      const queryId = getDetailsId(props.item)
-      if (!queryId) return
+      const queryId = getDetailsId(props.item);
+      if (!queryId) return;
 
-      return getItemPrices(`${queryId.ns}::${queryId.name}${queryId.variant ? ` // ${queryId.variant}` : ''}`)
-    })
+      return getItemPrices(
+        `${queryId.ns}::${queryId.name}${queryId.variant ? ` // ${queryId.variant}` : ""}`,
+      );
+    });
 
-    return { result }
-  }
-})
+    return { result };
+  },
+});
 </script>
 
 <style lang="postcss" module>

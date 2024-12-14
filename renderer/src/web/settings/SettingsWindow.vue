@@ -2,45 +2,98 @@
   <div>
     <div :class="$style.podium" v-if="podiumVisible">
       <div v-for="i in [2, 4, 5, 3, 1]">
-        <div v-for="patron in patrons[i - 1]" :key="patron.from"
-          :class="[$style.rating, $style[`rating-${patron.style}`]]">{{ patron.from }}{{ (patron.months > 1) ? `
-          x${patron.months}` : null }}</div>
+        <div
+          v-for="patron in patrons[i - 1]"
+          :key="patron.from"
+          :class="[$style.rating, $style[`rating-${patron.style}`]]"
+        >
+          {{ patron.from
+          }}{{
+            patron.months > 1
+              ? `
+          x${patron.months}`
+              : null
+          }}
+        </div>
       </div>
     </div>
-    <div :class="[$style.patronsHorizontal, { 'invisible': podiumVisible }]" :onMouseenter="showPodium">
-      <div class="bg-gray-800 rounded p-1 justify-center text-center w-44 shrink-0 flex items-center">
-        {{ t('settings.thank_you') }}
+    <div
+      :class="[$style.patronsHorizontal, { invisible: podiumVisible }]"
+      :onMouseenter="showPodium"
+    >
+      <div
+        class="bg-gray-800 rounded p-1 justify-center text-center w-44 shrink-0 flex items-center"
+      >
+        {{ t("settings.thank_you") }}
       </div>
       <div class="overflow-x-hidden whitespace-nowrap p-1 text-base">
-        <span :class="$style.patronsLine">{{ patronsString[0] }}</span><br>
+        <span :class="$style.patronsLine">{{ patronsString[0] }}</span
+        ><br />
         <span :class="$style.patronsLine">{{ patronsString[1] }}</span>
       </div>
     </div>
-    <div :class="$style.window" class="grow layout-column" :onMouseenter="hidePodium">
+    <div
+      :class="$style.window"
+      class="grow layout-column"
+      :onMouseenter="hidePodium"
+    >
       <ConversionWarningBanner />
       <AppTitleBar @close="cancel" :title="t('settings.title')" />
       <div class="flex grow min-h-0">
-        <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
+        <div
+          class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1"
+          style="min-width: 10rem"
+        >
           <template v-for="item of menuItems">
-            <button v-if="item.type === 'menu-item'" @click="item.select"
-              :class="[$style['menu-item'], { [$style['active']]: item.isSelected }]">{{ item.name }}</button>
+            <button
+              v-if="item.type === 'menu-item'"
+              @click="item.select"
+              :class="[
+                $style['menu-item'],
+                { [$style['active']]: item.isSelected },
+              ]"
+            >
+              {{ item.name }}
+            </button>
             <div v-else class="border-b mx-2 border-gray-800" />
           </template>
-          <button v-if="menuItems.length >= 4" :class="$style['quit-btn']" @click="quit">{{ t('app.quit') }}</button>
-          <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12"
-            style="max-width: fit-content; min-width: 100%;">
-            <img class="mx-auto mb-1" src="/images/peepoLove2x.webp">
-            {{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade"
-              class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a>
+          <button
+            v-if="menuItems.length >= 4"
+            :class="$style['quit-btn']"
+            @click="quit"
+          >
+            {{ t("app.quit") }}
+          </button>
+          <div
+            class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12"
+            style="max-width: fit-content; min-width: 100%"
+          >
+            <img class="mx-auto mb-1" src="/images/peepoLove2x.webp" />
+            {{ t("Support development on") }}<br />
+            <a
+              href="https://patreon.com/awakened_poe_trade"
+              class="inline-flex mt-1"
+              target="_blank"
+              ><img class="inline h-5" src="/images/Patreon.svg"
+            /></a>
           </div>
         </div>
         <div class="text-gray-100 grow layout-column bg-gray-900">
           <div class="grow overflow-y-auto bg-gray-800 rounded-tl">
-            <component v-if="configClone" :is="selectedComponent" :config="configClone" :configWidget="configWidget" />
+            <component
+              v-if="configClone"
+              :is="selectedComponent"
+              :config="configClone"
+              :configWidget="configWidget"
+            />
           </div>
-          <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end gap-x-2">
-            <button @click="save" class="px-3 bg-gray-800 rounded">{{ t('Save') }}</button>
-            <button @click="cancel" class="px-3">{{ t('Cancel') }}</button>
+          <div
+            class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end gap-x-2"
+          >
+            <button @click="save" class="px-3 bg-gray-800 rounded">
+              {{ t("Save") }}
+            </button>
+            <button @click="cancel" class="px-3">{{ t("Cancel") }}</button>
           </div>
         </div>
       </div>
@@ -49,42 +102,60 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, shallowRef, computed, Component, PropType, nextTick, inject, reactive, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { AppConfig, updateConfig, saveConfig, pushHostConfig, Config } from '@/web/Config'
-import { APP_PATRONS } from '@/assets/data'
-import { Host } from '@/web/background/IPC'
-import type { Widget, WidgetManager } from '@/web/overlay/interfaces'
-import AppTitleBar from '@/web/ui/AppTitlebar.vue'
-import SettingsHotkeys from './hotkeys.vue'
-import SettingsChat from './chat.vue'
-import SettingsGeneral from './general.vue'
-import SettingsAbout from './about.vue'
-import SettingsPricecheck from './price-check.vue'
-import SettingsItemcheck from '../item-check/settings-item-check.vue'
-import SettingsDebug from './debug.vue'
-import SettingsMaps from '../map-check/settings-maps.vue'
-import SettingsStashSearch from '../stash-search/stash-search-editor.vue'
-import SettingsStopwatch from './stopwatch.vue'
-import SettingsItemSearch from '../item-search/settings-item-search.vue'
-import ConversionWarningBanner from '../conversion-warn-banner/ConversionWarningBanner.vue'
+import {
+  defineComponent,
+  shallowRef,
+  computed,
+  Component,
+  PropType,
+  nextTick,
+  inject,
+  reactive,
+  watch,
+} from "vue";
+import { useI18n } from "vue-i18n";
+import {
+  AppConfig,
+  updateConfig,
+  saveConfig,
+  pushHostConfig,
+  Config,
+} from "@/web/Config";
+import { APP_PATRONS } from "@/assets/data";
+import { Host } from "@/web/background/IPC";
+import type { Widget, WidgetManager } from "@/web/overlay/interfaces";
+import AppTitleBar from "@/web/ui/AppTitlebar.vue";
+import SettingsHotkeys from "./hotkeys.vue";
+import SettingsChat from "./chat.vue";
+import SettingsGeneral from "./general.vue";
+import SettingsAbout from "./about.vue";
+import SettingsPricecheck from "./price-check.vue";
+import SettingsItemcheck from "../item-check/settings-item-check.vue";
+import SettingsDebug from "./debug.vue";
+import SettingsMaps from "../map-check/settings-maps.vue";
+import SettingsStashSearch from "../stash-search/stash-search-editor.vue";
+import SettingsStopwatch from "./stopwatch.vue";
+import SettingsItemSearch from "../item-search/settings-item-search.vue";
+import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
-function shuffle<T> (array: T[]): T[] {
-  let currentIndex = array.length
+function shuffle<T>(array: T[]): T[] {
+  let currentIndex = array.length;
   while (currentIndex !== 0) {
-    const randomIndex = Math.floor(Math.random() * currentIndex)
+    const randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-    [array[currentIndex], array[randomIndex]] =
-      [array[randomIndex], array[currentIndex]]
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
-  return array
+  return array;
 }
 
-function quit () {
+function quit() {
   Host.sendEvent({
-    name: 'CLIENT->MAIN::user-action',
-    payload: { action: 'quit' }
-  })
+    name: "CLIENT->MAIN::user-action",
+    payload: { action: "quit" },
+  });
 }
 
 export default defineComponent({
@@ -92,75 +163,91 @@ export default defineComponent({
   props: {
     config: {
       type: Object as PropType<Widget>,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup (props) {
-    const wm = inject<WidgetManager>('wm')!
-    const { t } = useI18n()
+  setup(props) {
+    const wm = inject<WidgetManager>("wm")!;
+    const { t } = useI18n();
 
     nextTick(() => {
-      props.config.wmWants = 'hide'
-    })
+      props.config.wmWants = "hide";
+    });
 
-    const selectedComponent = shallowRef<Component>(SettingsHotkeys)
+    const selectedComponent = shallowRef<Component>(SettingsHotkeys);
 
-    const podiumVisible = shallowRef(false)
-    const patrons = shallowRef<Array<typeof APP_PATRONS>>([])
+    const podiumVisible = shallowRef(false);
+    const patrons = shallowRef<Array<typeof APP_PATRONS>>([]);
 
-    const configClone = shallowRef<Config | null>(null)
-    watch(() => props.config.wmWants, (wmWants) => {
-      if (wmWants === 'show') {
-        configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
-        patrons.value = [1, 2, 3, 4, 5].map(i =>
-          shuffle(APP_PATRONS.filter(row => row.style === i))
-        )
-      } else {
-        configClone.value = null
-        if (selectedWmId.value != null) {
-          selectedWmId.value = null
-          selectedComponent.value = SettingsHotkeys
+    const configClone = shallowRef<Config | null>(null);
+    watch(
+      () => props.config.wmWants,
+      (wmWants) => {
+        if (wmWants === "show") {
+          configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())));
+          patrons.value = [1, 2, 3, 4, 5].map((i) =>
+            shuffle(APP_PATRONS.filter((row) => row.style === i)),
+          );
+        } else {
+          configClone.value = null;
+          if (selectedWmId.value != null) {
+            selectedWmId.value = null;
+            selectedComponent.value = SettingsHotkeys;
+          }
+          podiumVisible.value = false;
         }
-        podiumVisible.value = false
-      }
-    })
+      },
+    );
 
-    const selectedWmId = shallowRef<number | null>(null)
-    const configWidget = computed(() => configClone.value?.widgets.find(w => w.wmId === selectedWmId.value))
+    const selectedWmId = shallowRef<number | null>(null);
+    const configWidget = computed(() =>
+      configClone.value?.widgets.find((w) => w.wmId === selectedWmId.value),
+    );
 
-    watch(() => props.config.wmFlags, (wmFlags) => {
-      const flagStr = wmFlags.find(flag => flag.startsWith('settings:widget:'))
-      if (flagStr) {
-        const _wmId = Number(flagStr.split(':')[2])
-        const _widget = wm.widgets.value.find(w => w.wmId === _wmId)!
-        selectedWmId.value = _wmId
-        selectedComponent.value = menuByType(_widget.wmType)[0][0]
-        wm.setFlag(props.config.wmId, flagStr, false)
-      }
-    }, { deep: true })
+    watch(
+      () => props.config.wmFlags,
+      (wmFlags) => {
+        const flagStr = wmFlags.find((flag) =>
+          flag.startsWith("settings:widget:"),
+        );
+        if (flagStr) {
+          const _wmId = Number(flagStr.split(":")[2]);
+          const _widget = wm.widgets.value.find((w) => w.wmId === _wmId)!;
+          selectedWmId.value = _wmId;
+          selectedComponent.value = menuByType(_widget.wmType)[0][0];
+          wm.setFlag(props.config.wmId, flagStr, false);
+        }
+      },
+      { deep: true },
+    );
 
-    const menuItems = computed(() => flatJoin(
-      menuByType(configWidget.value?.wmType)
-        .map(group => group.map(component => ({
-          name: t(component.name!),
-          select () { selectedComponent.value = component },
-          isSelected: (selectedComponent.value === component),
-          type: 'menu-item' as const
-        }))),
-      () => ({ type: 'separator' as const })
-    ))
+    const menuItems = computed(() =>
+      flatJoin(
+        menuByType(configWidget.value?.wmType).map((group) =>
+          group.map((component) => ({
+            name: t(component.name!),
+            select() {
+              selectedComponent.value = component;
+            },
+            isSelected: selectedComponent.value === component,
+            type: "menu-item" as const,
+          })),
+        ),
+        () => ({ type: "separator" as const }),
+      ),
+    );
 
     return {
       t,
-      save () {
-        updateConfig(configClone.value!)
-        saveConfig()
-        pushHostConfig()
+      save() {
+        updateConfig(configClone.value!);
+        saveConfig();
+        pushHostConfig();
 
-        wm.hide(props.config.wmId)
+        wm.hide(props.config.wmId);
       },
-      cancel () {
-        wm.hide(props.config.wmId)
+      cancel() {
+        wm.hide(props.config.wmId);
       },
       quit,
       menuItems,
@@ -169,50 +256,57 @@ export default defineComponent({
       configWidget,
       patrons,
       patronsString: computed(() => {
-        return [true, false].map(firstHalf => {
-          return patrons.value.flatMap(tier => {
-            const half = Math.ceil(tier.length / 2)
-            tier = (firstHalf) ? tier.slice(0, half) : tier.slice(half)
-            return tier.map(e => e.from)
-          }).reverse().join(' • ')
-        })
+        return [true, false].map((firstHalf) => {
+          return patrons.value
+            .flatMap((tier) => {
+              const half = Math.ceil(tier.length / 2);
+              tier = firstHalf ? tier.slice(0, half) : tier.slice(half);
+              return tier.map((e) => e.from);
+            })
+            .reverse()
+            .join(" • ");
+        });
       }),
       podiumVisible,
-      showPodium () { podiumVisible.value = true },
-      hidePodium () { podiumVisible.value = false }
-    }
-  }
-})
+      showPodium() {
+        podiumVisible.value = true;
+      },
+      hidePodium() {
+        podiumVisible.value = false;
+      },
+    };
+  },
+});
 
-function menuByType (type?: string) {
+function menuByType(type?: string) {
   switch (type) {
-    case 'stash-search':
-      return [[SettingsStashSearch]]
-    case 'timer':
-      return [[SettingsStopwatch]]
-    case 'item-check':
-      return [[SettingsItemcheck, SettingsMaps]]
-    case 'price-check':
-      return [[SettingsPricecheck]]
-    case 'item-search':
-      return [[SettingsItemSearch]]
+    case "stash-search":
+      return [[SettingsStashSearch]];
+    case "timer":
+      return [[SettingsStopwatch]];
+    case "item-check":
+      return [[SettingsItemcheck, SettingsMaps]];
+    case "price-check":
+      return [[SettingsPricecheck]];
+    case "item-search":
+      return [[SettingsItemSearch]];
     default:
       return [
         [SettingsHotkeys, SettingsChat],
         [SettingsGeneral],
         [SettingsPricecheck, SettingsMaps, SettingsItemcheck],
-        [SettingsDebug, SettingsAbout]
-      ]
+        [SettingsDebug, SettingsAbout],
+      ];
   }
 }
 
-function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
-  const out: Array<T | J> = []
+function flatJoin<T, J>(arr: T[][], joinEl: () => J) {
+  const out: Array<T | J> = [];
   for (const nested of arr) {
-    out.push(...nested)
-    out.push(joinEl())
+    out.push(...nested);
+    out.push(joinEl());
   }
-  return out.slice(0, -1)
+  return out.slice(0, -1);
 }
 </script>
 
@@ -315,31 +409,31 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   }
 }
 
-.podium>div {
+.podium > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   min-width: min-content;
 }
 
-.podium>div:nth-child(1) {
+.podium > div:nth-child(1) {
   max-width: 18rem;
 }
 
-.podium>div:nth-child(2) {
+.podium > div:nth-child(2) {
   max-width: 16rem;
 }
 
-.podium>div:nth-child(3) {
+.podium > div:nth-child(3) {
   flex-direction: column;
   align-items: center;
 }
 
-.podium>div:nth-child(4) {
+.podium > div:nth-child(4) {
   max-width: 24rem;
 }
 
-.podium>div:nth-child(5) {
+.podium > div:nth-child(5) {
   max-width: 18rem;
 }
 

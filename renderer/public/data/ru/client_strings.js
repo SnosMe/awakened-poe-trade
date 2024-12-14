@@ -26,7 +26,6 @@ export default {
   ARMOUR: 'Броня: ',
   EVASION: 'Уклонение: ',
   ENERGY_SHIELD: 'Энерг. щит: ',
-  TAG_WARD: 'Барьер: ',
   BLOCK_CHANCE: 'Шанс заблокировать удар: ',
   CORRUPTED: 'Осквернено',
   UNIDENTIFIED: 'Неопознано',

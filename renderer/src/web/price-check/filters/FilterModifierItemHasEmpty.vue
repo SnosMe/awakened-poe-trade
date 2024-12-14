@@ -1,49 +1,56 @@
 <template>
   <div v-if="options" class="flex gap-x-1">
-    <button v-for="option in options"
+    <button
+      v-for="option in options"
       :class="[$style.button, { [$style.selected]: option.isSelected }]"
-      @click="option.select" type="button">{{ t(option.text) }}</button>
+      @click="option.select"
+      type="button"
+    >
+      {{ t(option.text) }}
+    </button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { StatFilter, ItemHasEmptyModifier } from './interfaces'
+import { defineComponent, PropType, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { StatFilter, ItemHasEmptyModifier } from "./interfaces";
 
 export default defineComponent({
   props: {
     filter: {
       type: Object as PropType<StatFilter>,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup (props) {
-    function select (value: ItemHasEmptyModifier) {
-      const { filter } = props
-      filter.option!.value = value
-      filter.disabled = false
+  setup(props) {
+    function select(value: ItemHasEmptyModifier) {
+      const { filter } = props;
+      filter.option!.value = value;
+      filter.disabled = false;
     }
 
     const options = computed(() => {
-      const { filter } = props
-      if (filter.tradeId[0] !== 'item.has_empty_modifier') return null
+      const { filter } = props;
+      if (filter.tradeId[0] !== "item.has_empty_modifier") return null;
 
-      return ([
-        [ItemHasEmptyModifier.Any, 'item.has_empty_affix'],
-        [ItemHasEmptyModifier.Prefix, 'item.has_empty_prefix'],
-        [ItemHasEmptyModifier.Suffix, 'item.has_empty_suffix']
-      ] as const).map(([value, text]) => ({
+      return (
+        [
+          [ItemHasEmptyModifier.Any, "item.has_empty_affix"],
+          [ItemHasEmptyModifier.Prefix, "item.has_empty_prefix"],
+          [ItemHasEmptyModifier.Suffix, "item.has_empty_suffix"],
+        ] as const
+      ).map(([value, text]) => ({
         text,
         select: () => select(value),
-        isSelected: (filter.option!.value === value)
-      }))
-    })
+        isSelected: filter.option!.value === value,
+      }));
+    });
 
-    const { t } = useI18n()
-    return { t, options }
-  }
-})
+    const { t } = useI18n();
+    return { t, options };
+  },
+});
 </script>
 
 <style lang="postcss" module>

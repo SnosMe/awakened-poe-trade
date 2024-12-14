@@ -1,0 +1,3684 @@
+[
+    {
+        "_index": 0,
+        "BaseItemTypesKey": 265,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 1,
+        "BaseItemTypesKey": 266,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 2,
+        "BaseItemTypesKey": 267,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 3,
+        "BaseItemTypesKey": 268,
+        "Armour": 51,
+        "Evasion": 44,
+        "EnergyShield": 21
+    },
+    {
+        "_index": 4,
+        "BaseItemTypesKey": 269,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 5,
+        "BaseItemTypesKey": 270,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 6,
+        "BaseItemTypesKey": 1890,
+        "Armour": 45,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 7,
+        "BaseItemTypesKey": 1891,
+        "Armour": 60,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 8,
+        "BaseItemTypesKey": 1892,
+        "Armour": 96,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 9,
+        "BaseItemTypesKey": 1893,
+        "Armour": 121,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 10,
+        "BaseItemTypesKey": 1894,
+        "Armour": 141,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 11,
+        "BaseItemTypesKey": 1895,
+        "Armour": 177,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 12,
+        "BaseItemTypesKey": 1896,
+        "Armour": 208,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 13,
+        "BaseItemTypesKey": 1897,
+        "Armour": 228,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 14,
+        "BaseItemTypesKey": 1898,
+        "Armour": 269,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 15,
+        "BaseItemTypesKey": 1899,
+        "Armour": 294,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 16,
+        "BaseItemTypesKey": 1900,
+        "Armour": 304,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 17,
+        "BaseItemTypesKey": 1901,
+        "Armour": 335,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 18,
+        "BaseItemTypesKey": 1902,
+        "Armour": 534,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 19,
+        "BaseItemTypesKey": 1903,
+        "Armour": 445,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 20,
+        "BaseItemTypesKey": 1904,
+        "Armour": 445,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 21,
+        "BaseItemTypesKey": 1905,
+        "Armour": 0,
+        "Evasion": 30,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 22,
+        "BaseItemTypesKey": 1906,
+        "Armour": 0,
+        "Evasion": 44,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 23,
+        "BaseItemTypesKey": 1907,
+        "Armour": 0,
+        "Evasion": 78,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 24,
+        "BaseItemTypesKey": 1908,
+        "Armour": 0,
+        "Evasion": 102,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 25,
+        "BaseItemTypesKey": 1909,
+        "Armour": 0,
+        "Evasion": 131,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 26,
+        "BaseItemTypesKey": 1910,
+        "Armour": 0,
+        "Evasion": 150,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 27,
+        "BaseItemTypesKey": 1911,
+        "Armour": 0,
+        "Evasion": 184,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 28,
+        "BaseItemTypesKey": 1912,
+        "Armour": 0,
+        "Evasion": 198,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 29,
+        "BaseItemTypesKey": 1913,
+        "Armour": 0,
+        "Evasion": 242,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 30,
+        "BaseItemTypesKey": 1914,
+        "Armour": 0,
+        "Evasion": 256,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 31,
+        "BaseItemTypesKey": 1915,
+        "Armour": 0,
+        "Evasion": 275,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 32,
+        "BaseItemTypesKey": 1916,
+        "Armour": 0,
+        "Evasion": 295,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 33,
+        "BaseItemTypesKey": 1917,
+        "Armour": 0,
+        "Evasion": 487,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 34,
+        "BaseItemTypesKey": 1918,
+        "Armour": 0,
+        "Evasion": 406,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 35,
+        "BaseItemTypesKey": 1919,
+        "Armour": 0,
+        "Evasion": 406,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 36,
+        "BaseItemTypesKey": 1920,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 37,
+        "BaseItemTypesKey": 1921,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 38,
+        "BaseItemTypesKey": 1922,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 44
+    },
+    {
+        "_index": 39,
+        "BaseItemTypesKey": 1923,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 52
+    },
+    {
+        "_index": 40,
+        "BaseItemTypesKey": 1924,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 61
+    },
+    {
+        "_index": 41,
+        "BaseItemTypesKey": 1925,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 70
+    },
+    {
+        "_index": 42,
+        "BaseItemTypesKey": 1926,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 78
+    },
+    {
+        "_index": 43,
+        "BaseItemTypesKey": 1927,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 89
+    },
+    {
+        "_index": 44,
+        "BaseItemTypesKey": 1928,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 97
+    },
+    {
+        "_index": 45,
+        "BaseItemTypesKey": 1929,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 100
+    },
+    {
+        "_index": 46,
+        "BaseItemTypesKey": 1930,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 108
+    },
+    {
+        "_index": 47,
+        "BaseItemTypesKey": 1931,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 117
+    },
+    {
+        "_index": 48,
+        "BaseItemTypesKey": 1932,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 184
+    },
+    {
+        "_index": 49,
+        "BaseItemTypesKey": 1933,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 153
+    },
+    {
+        "_index": 50,
+        "BaseItemTypesKey": 1934,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 153
+    },
+    {
+        "_index": 51,
+        "BaseItemTypesKey": 1935,
+        "Armour": 25,
+        "Evasion": 16,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 52,
+        "BaseItemTypesKey": 1936,
+        "Armour": 53,
+        "Evasion": 43,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 53,
+        "BaseItemTypesKey": 1937,
+        "Armour": 67,
+        "Evasion": 56,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 54,
+        "BaseItemTypesKey": 1938,
+        "Armour": 95,
+        "Evasion": 83,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 55,
+        "BaseItemTypesKey": 1939,
+        "Armour": 114,
+        "Evasion": 101,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 56,
+        "BaseItemTypesKey": 1940,
+        "Armour": 125,
+        "Evasion": 112,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 57,
+        "BaseItemTypesKey": 1941,
+        "Armour": 148,
+        "Evasion": 133,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 58,
+        "BaseItemTypesKey": 1942,
+        "Armour": 162,
+        "Evasion": 146,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 59,
+        "BaseItemTypesKey": 1943,
+        "Armour": 167,
+        "Evasion": 151,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 60,
+        "BaseItemTypesKey": 1944,
+        "Armour": 184,
+        "Evasion": 167,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 61,
+        "BaseItemTypesKey": 1945,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 62,
+        "BaseItemTypesKey": 1946,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 63,
+        "BaseItemTypesKey": 1947,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 64,
+        "BaseItemTypesKey": 1948,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 65,
+        "BaseItemTypesKey": 1949,
+        "Armour": 294,
+        "Evasion": 268,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 66,
+        "BaseItemTypesKey": 1950,
+        "Armour": 25,
+        "Evasion": 0,
+        "EnergyShield": 16
+    },
+    {
+        "_index": 67,
+        "BaseItemTypesKey": 1951,
+        "Armour": 50,
+        "Evasion": 0,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 68,
+        "BaseItemTypesKey": 1952,
+        "Armour": 67,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 69,
+        "BaseItemTypesKey": 1953,
+        "Armour": 100,
+        "Evasion": 0,
+        "EnergyShield": 39
+    },
+    {
+        "_index": 70,
+        "BaseItemTypesKey": 1954,
+        "Armour": 114,
+        "Evasion": 0,
+        "EnergyShield": 43
+    },
+    {
+        "_index": 71,
+        "BaseItemTypesKey": 1955,
+        "Armour": 123,
+        "Evasion": 0,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 72,
+        "BaseItemTypesKey": 1956,
+        "Armour": 148,
+        "Evasion": 0,
+        "EnergyShield": 53
+    },
+    {
+        "_index": 73,
+        "BaseItemTypesKey": 1957,
+        "Armour": 165,
+        "Evasion": 0,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 74,
+        "BaseItemTypesKey": 1958,
+        "Armour": 167,
+        "Evasion": 0,
+        "EnergyShield": 59
+    },
+    {
+        "_index": 75,
+        "BaseItemTypesKey": 1959,
+        "Armour": 173,
+        "Evasion": 0,
+        "EnergyShield": 61
+    },
+    {
+        "_index": 76,
+        "BaseItemTypesKey": 1960,
+        "Armour": 245,
+        "Evasion": 0,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 77,
+        "BaseItemTypesKey": 1961,
+        "Armour": 245,
+        "Evasion": 0,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 78,
+        "BaseItemTypesKey": 1962,
+        "Armour": 294,
+        "Evasion": 0,
+        "EnergyShield": 101
+    },
+    {
+        "_index": 79,
+        "BaseItemTypesKey": 1963,
+        "Armour": 0,
+        "Evasion": 16,
+        "EnergyShield": 16
+    },
+    {
+        "_index": 80,
+        "BaseItemTypesKey": 1964,
+        "Armour": 0,
+        "Evasion": 43,
+        "EnergyShield": 24
+    },
+    {
+        "_index": 81,
+        "BaseItemTypesKey": 1965,
+        "Armour": 0,
+        "Evasion": 56,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 82,
+        "BaseItemTypesKey": 1966,
+        "Armour": 0,
+        "Evasion": 88,
+        "EnergyShield": 39
+    },
+    {
+        "_index": 83,
+        "BaseItemTypesKey": 1967,
+        "Armour": 0,
+        "Evasion": 101,
+        "EnergyShield": 43
+    },
+    {
+        "_index": 84,
+        "BaseItemTypesKey": 1968,
+        "Armour": 0,
+        "Evasion": 117,
+        "EnergyShield": 48
+    },
+    {
+        "_index": 85,
+        "BaseItemTypesKey": 1969,
+        "Armour": 0,
+        "Evasion": 133,
+        "EnergyShield": 53
+    },
+    {
+        "_index": 86,
+        "BaseItemTypesKey": 1970,
+        "Armour": 0,
+        "Evasion": 149,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 87,
+        "BaseItemTypesKey": 1971,
+        "Armour": 0,
+        "Evasion": 151,
+        "EnergyShield": 59
+    },
+    {
+        "_index": 88,
+        "BaseItemTypesKey": 1972,
+        "Armour": 0,
+        "Evasion": 162,
+        "EnergyShield": 63
+    },
+    {
+        "_index": 89,
+        "BaseItemTypesKey": 1973,
+        "Armour": 0,
+        "Evasion": 268,
+        "EnergyShield": 101
+    },
+    {
+        "_index": 90,
+        "BaseItemTypesKey": 1974,
+        "Armour": 0,
+        "Evasion": 223,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 91,
+        "BaseItemTypesKey": 1975,
+        "Armour": 0,
+        "Evasion": 223,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 92,
+        "BaseItemTypesKey": 1976,
+        "Armour": 29,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 93,
+        "BaseItemTypesKey": 1977,
+        "Armour": 66,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 94,
+        "BaseItemTypesKey": 1978,
+        "Armour": 79,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 95,
+        "BaseItemTypesKey": 1979,
+        "Armour": 116,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 96,
+        "BaseItemTypesKey": 1980,
+        "Armour": 136,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 97,
+        "BaseItemTypesKey": 1981,
+        "Armour": 146,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 98,
+        "BaseItemTypesKey": 1982,
+        "Armour": 176,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 99,
+        "BaseItemTypesKey": 1983,
+        "Armour": 196,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 100,
+        "BaseItemTypesKey": 1984,
+        "Armour": 200,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 101,
+        "BaseItemTypesKey": 1985,
+        "Armour": 216,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 102,
+        "BaseItemTypesKey": 1986,
+        "Armour": 243,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 103,
+        "BaseItemTypesKey": 1987,
+        "Armour": 0,
+        "Evasion": 19,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 104,
+        "BaseItemTypesKey": 1988,
+        "Armour": 0,
+        "Evasion": 48,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 105,
+        "BaseItemTypesKey": 1989,
+        "Armour": 0,
+        "Evasion": 67,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 106,
+        "BaseItemTypesKey": 1990,
+        "Armour": 0,
+        "Evasion": 98,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 107,
+        "BaseItemTypesKey": 1991,
+        "Armour": 0,
+        "Evasion": 121,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 108,
+        "BaseItemTypesKey": 1992,
+        "Armour": 0,
+        "Evasion": 136,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 109,
+        "BaseItemTypesKey": 1993,
+        "Armour": 0,
+        "Evasion": 158,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 110,
+        "BaseItemTypesKey": 1994,
+        "Armour": 0,
+        "Evasion": 177,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 111,
+        "BaseItemTypesKey": 1995,
+        "Armour": 0,
+        "Evasion": 181,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 112,
+        "BaseItemTypesKey": 1996,
+        "Armour": 0,
+        "Evasion": 193,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 113,
+        "BaseItemTypesKey": 1997,
+        "Armour": 0,
+        "Evasion": 222,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 114,
+        "BaseItemTypesKey": 1998,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 115,
+        "BaseItemTypesKey": 1999,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 116,
+        "BaseItemTypesKey": 2000,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 34
+    },
+    {
+        "_index": 117,
+        "BaseItemTypesKey": 2001,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 44
+    },
+    {
+        "_index": 118,
+        "BaseItemTypesKey": 2002,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 51
+    },
+    {
+        "_index": 119,
+        "BaseItemTypesKey": 2003,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 120,
+        "BaseItemTypesKey": 2004,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 63
+    },
+    {
+        "_index": 121,
+        "BaseItemTypesKey": 2005,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 69
+    },
+    {
+        "_index": 122,
+        "BaseItemTypesKey": 2006,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 71
+    },
+    {
+        "_index": 123,
+        "BaseItemTypesKey": 2007,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 77
+    },
+    {
+        "_index": 124,
+        "BaseItemTypesKey": 2008,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 125,
+        "BaseItemTypesKey": 2009,
+        "Armour": 23,
+        "Evasion": 18,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 126,
+        "BaseItemTypesKey": 2010,
+        "Armour": 34,
+        "Evasion": 28,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 127,
+        "BaseItemTypesKey": 2011,
+        "Armour": 44,
+        "Evasion": 37,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 128,
+        "BaseItemTypesKey": 2012,
+        "Armour": 62,
+        "Evasion": 54,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 129,
+        "BaseItemTypesKey": 2013,
+        "Armour": 75,
+        "Evasion": 66,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 130,
+        "BaseItemTypesKey": 2014,
+        "Armour": 97,
+        "Evasion": 87,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 131,
+        "BaseItemTypesKey": 2015,
+        "Armour": 110,
+        "Evasion": 99,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 132,
+        "BaseItemTypesKey": 2016,
+        "Armour": 134,
+        "Evasion": 122,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 133,
+        "BaseItemTypesKey": 2017,
+        "Armour": 23,
+        "Evasion": 0,
+        "EnergyShield": 12
+    },
+    {
+        "_index": 134,
+        "BaseItemTypesKey": 2018,
+        "Armour": 33,
+        "Evasion": 0,
+        "EnergyShield": 15
+    },
+    {
+        "_index": 135,
+        "BaseItemTypesKey": 2019,
+        "Armour": 44,
+        "Evasion": 0,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 136,
+        "BaseItemTypesKey": 2020,
+        "Armour": 66,
+        "Evasion": 0,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 137,
+        "BaseItemTypesKey": 2021,
+        "Armour": 75,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 138,
+        "BaseItemTypesKey": 2022,
+        "Armour": 97,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 139,
+        "BaseItemTypesKey": 2023,
+        "Armour": 110,
+        "Evasion": 0,
+        "EnergyShield": 39
+    },
+    {
+        "_index": 140,
+        "BaseItemTypesKey": 2024,
+        "Armour": 134,
+        "Evasion": 0,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 141,
+        "BaseItemTypesKey": 2025,
+        "Armour": 0,
+        "Evasion": 18,
+        "EnergyShield": 12
+    },
+    {
+        "_index": 142,
+        "BaseItemTypesKey": 2026,
+        "Armour": 0,
+        "Evasion": 26,
+        "EnergyShield": 15
+    },
+    {
+        "_index": 143,
+        "BaseItemTypesKey": 2027,
+        "Armour": 0,
+        "Evasion": 37,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 144,
+        "BaseItemTypesKey": 2028,
+        "Armour": 0,
+        "Evasion": 58,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 145,
+        "BaseItemTypesKey": 2029,
+        "Armour": 0,
+        "Evasion": 66,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 146,
+        "BaseItemTypesKey": 2030,
+        "Armour": 0,
+        "Evasion": 87,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 147,
+        "BaseItemTypesKey": 2031,
+        "Armour": 0,
+        "Evasion": 99,
+        "EnergyShield": 39
+    },
+    {
+        "_index": 148,
+        "BaseItemTypesKey": 2032,
+        "Armour": 0,
+        "Evasion": 122,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 149,
+        "BaseItemTypesKey": 2033,
+        "Armour": 15,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 150,
+        "BaseItemTypesKey": 2034,
+        "Armour": 31,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 151,
+        "BaseItemTypesKey": 2035,
+        "Armour": 40,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 152,
+        "BaseItemTypesKey": 2036,
+        "Armour": 58,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 153,
+        "BaseItemTypesKey": 2037,
+        "Armour": 68,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 154,
+        "BaseItemTypesKey": 2038,
+        "Armour": 88,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 155,
+        "BaseItemTypesKey": 2039,
+        "Armour": 100,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 156,
+        "BaseItemTypesKey": 2040,
+        "Armour": 122,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 157,
+        "BaseItemTypesKey": 2041,
+        "Armour": 0,
+        "Evasion": 10,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 158,
+        "BaseItemTypesKey": 2042,
+        "Armour": 0,
+        "Evasion": 26,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 159,
+        "BaseItemTypesKey": 2043,
+        "Armour": 0,
+        "Evasion": 33,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 160,
+        "BaseItemTypesKey": 2044,
+        "Armour": 0,
+        "Evasion": 52,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 161,
+        "BaseItemTypesKey": 2045,
+        "Armour": 0,
+        "Evasion": 60,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 162,
+        "BaseItemTypesKey": 2046,
+        "Armour": 0,
+        "Evasion": 79,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 163,
+        "BaseItemTypesKey": 2047,
+        "Armour": 0,
+        "Evasion": 90,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 164,
+        "BaseItemTypesKey": 2048,
+        "Armour": 0,
+        "Evasion": 111,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 165,
+        "BaseItemTypesKey": 2049,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 9
+    },
+    {
+        "_index": 166,
+        "BaseItemTypesKey": 2050,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 15
+    },
+    {
+        "_index": 167,
+        "BaseItemTypesKey": 2051,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 17
+    },
+    {
+        "_index": 168,
+        "BaseItemTypesKey": 2052,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 22
+    },
+    {
+        "_index": 169,
+        "BaseItemTypesKey": 2053,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 26
+    },
+    {
+        "_index": 170,
+        "BaseItemTypesKey": 2054,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 32
+    },
+    {
+        "_index": 171,
+        "BaseItemTypesKey": 2055,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 172,
+        "BaseItemTypesKey": 2056,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 42
+    },
+    {
+        "_index": 173,
+        "BaseItemTypesKey": 2057,
+        "Armour": 13,
+        "Evasion": 10,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 174,
+        "BaseItemTypesKey": 2058,
+        "Armour": 22,
+        "Evasion": 18,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 175,
+        "BaseItemTypesKey": 2059,
+        "Armour": 37,
+        "Evasion": 33,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 176,
+        "BaseItemTypesKey": 2060,
+        "Armour": 48,
+        "Evasion": 44,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 177,
+        "BaseItemTypesKey": 2061,
+        "Armour": 55,
+        "Evasion": 50,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 178,
+        "BaseItemTypesKey": 2062,
+        "Armour": 67,
+        "Evasion": 61,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 179,
+        "BaseItemTypesKey": 2063,
+        "Armour": 12,
+        "Evasion": 0,
+        "EnergyShield": 6
+    },
+    {
+        "_index": 180,
+        "BaseItemTypesKey": 2064,
+        "Armour": 22,
+        "Evasion": 0,
+        "EnergyShield": 9
+    },
+    {
+        "_index": 181,
+        "BaseItemTypesKey": 2065,
+        "Armour": 37,
+        "Evasion": 0,
+        "EnergyShield": 14
+    },
+    {
+        "_index": 182,
+        "BaseItemTypesKey": 2066,
+        "Armour": 48,
+        "Evasion": 0,
+        "EnergyShield": 17
+    },
+    {
+        "_index": 183,
+        "BaseItemTypesKey": 2067,
+        "Armour": 55,
+        "Evasion": 0,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 184,
+        "BaseItemTypesKey": 2068,
+        "Armour": 67,
+        "Evasion": 0,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 185,
+        "BaseItemTypesKey": 2069,
+        "Armour": 0,
+        "Evasion": 8,
+        "EnergyShield": 6
+    },
+    {
+        "_index": 186,
+        "BaseItemTypesKey": 2070,
+        "Armour": 0,
+        "Evasion": 18,
+        "EnergyShield": 9
+    },
+    {
+        "_index": 187,
+        "BaseItemTypesKey": 2071,
+        "Armour": 0,
+        "Evasion": 33,
+        "EnergyShield": 14
+    },
+    {
+        "_index": 188,
+        "BaseItemTypesKey": 2072,
+        "Armour": 0,
+        "Evasion": 44,
+        "EnergyShield": 17
+    },
+    {
+        "_index": 189,
+        "BaseItemTypesKey": 2073,
+        "Armour": 0,
+        "Evasion": 50,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 190,
+        "BaseItemTypesKey": 2074,
+        "Armour": 0,
+        "Evasion": 61,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 191,
+        "BaseItemTypesKey": 2075,
+        "Armour": 22,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 192,
+        "BaseItemTypesKey": 2076,
+        "Armour": 47,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 193,
+        "BaseItemTypesKey": 2077,
+        "Armour": 60,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 194,
+        "BaseItemTypesKey": 2078,
+        "Armour": 87,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 195,
+        "BaseItemTypesKey": 2079,
+        "Armour": 102,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 196,
+        "BaseItemTypesKey": 2080,
+        "Armour": 132,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 197,
+        "BaseItemTypesKey": 2081,
+        "Armour": 150,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 198,
+        "BaseItemTypesKey": 2082,
+        "Armour": 182,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 199,
+        "BaseItemTypesKey": 2083,
+        "Armour": 0,
+        "Evasion": 15,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 200,
+        "BaseItemTypesKey": 2084,
+        "Armour": 0,
+        "Evasion": 38,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 201,
+        "BaseItemTypesKey": 2085,
+        "Armour": 0,
+        "Evasion": 50,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 202,
+        "BaseItemTypesKey": 2086,
+        "Armour": 0,
+        "Evasion": 79,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 203,
+        "BaseItemTypesKey": 2087,
+        "Armour": 0,
+        "Evasion": 90,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 204,
+        "BaseItemTypesKey": 2088,
+        "Armour": 0,
+        "Evasion": 119,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 205,
+        "BaseItemTypesKey": 2089,
+        "Armour": 0,
+        "Evasion": 135,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 206,
+        "BaseItemTypesKey": 2090,
+        "Armour": 0,
+        "Evasion": 166,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 207,
+        "BaseItemTypesKey": 2091,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 14
+    },
+    {
+        "_index": 208,
+        "BaseItemTypesKey": 2092,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 22
+    },
+    {
+        "_index": 209,
+        "BaseItemTypesKey": 2093,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 210,
+        "BaseItemTypesKey": 2094,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 34
+    },
+    {
+        "_index": 211,
+        "BaseItemTypesKey": 2095,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 38
+    },
+    {
+        "_index": 212,
+        "BaseItemTypesKey": 2096,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 48
+    },
+    {
+        "_index": 213,
+        "BaseItemTypesKey": 2097,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 53
+    },
+    {
+        "_index": 214,
+        "BaseItemTypesKey": 2098,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 63
+    },
+    {
+        "_index": 215,
+        "BaseItemTypesKey": 2099,
+        "Armour": 19,
+        "Evasion": 15,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 216,
+        "BaseItemTypesKey": 2100,
+        "Armour": 33,
+        "Evasion": 28,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 217,
+        "BaseItemTypesKey": 2101,
+        "Armour": 56,
+        "Evasion": 50,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 218,
+        "BaseItemTypesKey": 2102,
+        "Armour": 73,
+        "Evasion": 65,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 219,
+        "BaseItemTypesKey": 2103,
+        "Armour": 82,
+        "Evasion": 74,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 220,
+        "BaseItemTypesKey": 2104,
+        "Armour": 100,
+        "Evasion": 91,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 221,
+        "BaseItemTypesKey": 2105,
+        "Armour": 18,
+        "Evasion": 0,
+        "EnergyShield": 9
+    },
+    {
+        "_index": 222,
+        "BaseItemTypesKey": 2106,
+        "Armour": 33,
+        "Evasion": 0,
+        "EnergyShield": 14
+    },
+    {
+        "_index": 223,
+        "BaseItemTypesKey": 2107,
+        "Armour": 56,
+        "Evasion": 0,
+        "EnergyShield": 21
+    },
+    {
+        "_index": 224,
+        "BaseItemTypesKey": 2108,
+        "Armour": 73,
+        "Evasion": 0,
+        "EnergyShield": 26
+    },
+    {
+        "_index": 225,
+        "BaseItemTypesKey": 2109,
+        "Armour": 82,
+        "Evasion": 0,
+        "EnergyShield": 29
+    },
+    {
+        "_index": 226,
+        "BaseItemTypesKey": 2110,
+        "Armour": 100,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 227,
+        "BaseItemTypesKey": 2111,
+        "Armour": 0,
+        "Evasion": 13,
+        "EnergyShield": 9
+    },
+    {
+        "_index": 228,
+        "BaseItemTypesKey": 2112,
+        "Armour": 0,
+        "Evasion": 28,
+        "EnergyShield": 14
+    },
+    {
+        "_index": 229,
+        "BaseItemTypesKey": 2113,
+        "Armour": 0,
+        "Evasion": 50,
+        "EnergyShield": 21
+    },
+    {
+        "_index": 230,
+        "BaseItemTypesKey": 2114,
+        "Armour": 0,
+        "Evasion": 65,
+        "EnergyShield": 26
+    },
+    {
+        "_index": 231,
+        "BaseItemTypesKey": 2115,
+        "Armour": 0,
+        "Evasion": 74,
+        "EnergyShield": 29
+    },
+    {
+        "_index": 232,
+        "BaseItemTypesKey": 2116,
+        "Armour": 0,
+        "Evasion": 91,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 233,
+        "BaseItemTypesKey": 2117,
+        "Armour": 18,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 234,
+        "BaseItemTypesKey": 2118,
+        "Armour": 29,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 235,
+        "BaseItemTypesKey": 2119,
+        "Armour": 41,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 236,
+        "BaseItemTypesKey": 2120,
+        "Armour": 50,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 237,
+        "BaseItemTypesKey": 2121,
+        "Armour": 60,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 238,
+        "BaseItemTypesKey": 2122,
+        "Armour": 75,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 239,
+        "BaseItemTypesKey": 2123,
+        "Armour": 85,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 240,
+        "BaseItemTypesKey": 2124,
+        "Armour": 91,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 241,
+        "BaseItemTypesKey": 2125,
+        "Armour": 110,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 242,
+        "BaseItemTypesKey": 2126,
+        "Armour": 121,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 243,
+        "BaseItemTypesKey": 2127,
+        "Armour": 125,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 244,
+        "BaseItemTypesKey": 2128,
+        "Armour": 137,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 245,
+        "BaseItemTypesKey": 2129,
+        "Armour": 152,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 246,
+        "BaseItemTypesKey": 2130,
+        "Armour": 10,
+        "Evasion": 7,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 247,
+        "BaseItemTypesKey": 2131,
+        "Armour": 18,
+        "Evasion": 14,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 248,
+        "BaseItemTypesKey": 2132,
+        "Armour": 27,
+        "Evasion": 23,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 249,
+        "BaseItemTypesKey": 2133,
+        "Armour": 39,
+        "Evasion": 34,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 250,
+        "BaseItemTypesKey": 2134,
+        "Armour": 47,
+        "Evasion": 41,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 251,
+        "BaseItemTypesKey": 2135,
+        "Armour": 51,
+        "Evasion": 46,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 252,
+        "BaseItemTypesKey": 2136,
+        "Armour": 61,
+        "Evasion": 54,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 253,
+        "BaseItemTypesKey": 2137,
+        "Armour": 63,
+        "Evasion": 57,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 254,
+        "BaseItemTypesKey": 2138,
+        "Armour": 69,
+        "Evasion": 62,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 255,
+        "BaseItemTypesKey": 2139,
+        "Armour": 74,
+        "Evasion": 68,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 256,
+        "BaseItemTypesKey": 2140,
+        "Armour": 84,
+        "Evasion": 76,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 257,
+        "BaseItemTypesKey": 2141,
+        "Armour": 10,
+        "Evasion": 0,
+        "EnergyShield": 6
+    },
+    {
+        "_index": 258,
+        "BaseItemTypesKey": 2142,
+        "Armour": 17,
+        "Evasion": 0,
+        "EnergyShield": 8
+    },
+    {
+        "_index": 259,
+        "BaseItemTypesKey": 2143,
+        "Armour": 27,
+        "Evasion": 0,
+        "EnergyShield": 12
+    },
+    {
+        "_index": 260,
+        "BaseItemTypesKey": 2144,
+        "Armour": 41,
+        "Evasion": 0,
+        "EnergyShield": 16
+    },
+    {
+        "_index": 261,
+        "BaseItemTypesKey": 2145,
+        "Armour": 47,
+        "Evasion": 0,
+        "EnergyShield": 18
+    },
+    {
+        "_index": 262,
+        "BaseItemTypesKey": 2146,
+        "Armour": 50,
+        "Evasion": 0,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 263,
+        "BaseItemTypesKey": 2147,
+        "Armour": 61,
+        "Evasion": 0,
+        "EnergyShield": 22
+    },
+    {
+        "_index": 264,
+        "BaseItemTypesKey": 2148,
+        "Armour": 65,
+        "Evasion": 0,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 265,
+        "BaseItemTypesKey": 2149,
+        "Armour": 69,
+        "Evasion": 0,
+        "EnergyShield": 24
+    },
+    {
+        "_index": 266,
+        "BaseItemTypesKey": 2150,
+        "Armour": 74,
+        "Evasion": 0,
+        "EnergyShield": 26
+    },
+    {
+        "_index": 267,
+        "BaseItemTypesKey": 2151,
+        "Armour": 84,
+        "Evasion": 0,
+        "EnergyShield": 29
+    },
+    {
+        "_index": 268,
+        "BaseItemTypesKey": 2152,
+        "Armour": 0,
+        "Evasion": 12,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 269,
+        "BaseItemTypesKey": 2153,
+        "Armour": 0,
+        "Evasion": 20,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 270,
+        "BaseItemTypesKey": 2154,
+        "Armour": 0,
+        "Evasion": 32,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 271,
+        "BaseItemTypesKey": 2155,
+        "Armour": 0,
+        "Evasion": 42,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 272,
+        "BaseItemTypesKey": 2156,
+        "Armour": 0,
+        "Evasion": 54,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 273,
+        "BaseItemTypesKey": 2157,
+        "Armour": 0,
+        "Evasion": 62,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 274,
+        "BaseItemTypesKey": 2158,
+        "Armour": 0,
+        "Evasion": 75,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 275,
+        "BaseItemTypesKey": 2159,
+        "Armour": 0,
+        "Evasion": 87,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 276,
+        "BaseItemTypesKey": 2160,
+        "Armour": 0,
+        "Evasion": 99,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 277,
+        "BaseItemTypesKey": 2161,
+        "Armour": 0,
+        "Evasion": 105,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 278,
+        "BaseItemTypesKey": 2162,
+        "Armour": 0,
+        "Evasion": 113,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 279,
+        "BaseItemTypesKey": 2163,
+        "Armour": 0,
+        "Evasion": 119,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 280,
+        "BaseItemTypesKey": 2164,
+        "Armour": 0,
+        "Evasion": 139,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 281,
+        "BaseItemTypesKey": 2165,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 12
+    },
+    {
+        "_index": 282,
+        "BaseItemTypesKey": 2166,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 15
+    },
+    {
+        "_index": 283,
+        "BaseItemTypesKey": 2167,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 17
+    },
+    {
+        "_index": 284,
+        "BaseItemTypesKey": 2168,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 21
+    },
+    {
+        "_index": 285,
+        "BaseItemTypesKey": 2169,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 286,
+        "BaseItemTypesKey": 2170,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 287,
+        "BaseItemTypesKey": 2171,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 32
+    },
+    {
+        "_index": 288,
+        "BaseItemTypesKey": 2172,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 34
+    },
+    {
+        "_index": 289,
+        "BaseItemTypesKey": 2173,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 40
+    },
+    {
+        "_index": 290,
+        "BaseItemTypesKey": 2174,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 43
+    },
+    {
+        "_index": 291,
+        "BaseItemTypesKey": 2175,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 44
+    },
+    {
+        "_index": 292,
+        "BaseItemTypesKey": 2176,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 47
+    },
+    {
+        "_index": 293,
+        "BaseItemTypesKey": 2177,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 52
+    },
+    {
+        "_index": 294,
+        "BaseItemTypesKey": 2252,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 295,
+        "BaseItemTypesKey": 2253,
+        "Armour": 135,
+        "Evasion": 123,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 296,
+        "BaseItemTypesKey": 2254,
+        "Armour": 88,
+        "Evasion": 80,
+        "EnergyShield": 30
+    },
+    {
+        "_index": 297,
+        "BaseItemTypesKey": 2255,
+        "Armour": 44,
+        "Evasion": 40,
+        "EnergyShield": 15
+    },
+    {
+        "_index": 298,
+        "BaseItemTypesKey": 2256,
+        "Armour": 66,
+        "Evasion": 60,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 299,
+        "BaseItemTypesKey": 2338,
+        "Armour": 269,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 300,
+        "BaseItemTypesKey": 2339,
+        "Armour": 284,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 301,
+        "BaseItemTypesKey": 2340,
+        "Armour": 299,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 302,
+        "BaseItemTypesKey": 2341,
+        "Armour": 320,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 303,
+        "BaseItemTypesKey": 2342,
+        "Armour": 340,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 304,
+        "BaseItemTypesKey": 2343,
+        "Armour": 355,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 305,
+        "BaseItemTypesKey": 2344,
+        "Armour": 0,
+        "Evasion": 242,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 306,
+        "BaseItemTypesKey": 2345,
+        "Armour": 0,
+        "Evasion": 256,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 307,
+        "BaseItemTypesKey": 2346,
+        "Armour": 0,
+        "Evasion": 271,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 308,
+        "BaseItemTypesKey": 2347,
+        "Armour": 0,
+        "Evasion": 290,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 309,
+        "BaseItemTypesKey": 2348,
+        "Armour": 0,
+        "Evasion": 309,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 310,
+        "BaseItemTypesKey": 2349,
+        "Armour": 0,
+        "Evasion": 324,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 311,
+        "BaseItemTypesKey": 2350,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 97
+    },
+    {
+        "_index": 312,
+        "BaseItemTypesKey": 2351,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 101
+    },
+    {
+        "_index": 313,
+        "BaseItemTypesKey": 2352,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 106
+    },
+    {
+        "_index": 314,
+        "BaseItemTypesKey": 2353,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 112
+    },
+    {
+        "_index": 315,
+        "BaseItemTypesKey": 2354,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 119
+    },
+    {
+        "_index": 316,
+        "BaseItemTypesKey": 2355,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 123
+    },
+    {
+        "_index": 317,
+        "BaseItemTypesKey": 2356,
+        "Armour": 148,
+        "Evasion": 133,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 318,
+        "BaseItemTypesKey": 2357,
+        "Armour": 156,
+        "Evasion": 141,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 319,
+        "BaseItemTypesKey": 2358,
+        "Armour": 165,
+        "Evasion": 149,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 320,
+        "BaseItemTypesKey": 2359,
+        "Armour": 176,
+        "Evasion": 159,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 321,
+        "BaseItemTypesKey": 2360,
+        "Armour": 187,
+        "Evasion": 170,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 322,
+        "BaseItemTypesKey": 2361,
+        "Armour": 195,
+        "Evasion": 178,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 323,
+        "BaseItemTypesKey": 2362,
+        "Armour": 148,
+        "Evasion": 0,
+        "EnergyShield": 53
+    },
+    {
+        "_index": 324,
+        "BaseItemTypesKey": 2363,
+        "Armour": 156,
+        "Evasion": 0,
+        "EnergyShield": 56
+    },
+    {
+        "_index": 325,
+        "BaseItemTypesKey": 2364,
+        "Armour": 165,
+        "Evasion": 0,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 326,
+        "BaseItemTypesKey": 2365,
+        "Armour": 176,
+        "Evasion": 0,
+        "EnergyShield": 62
+    },
+    {
+        "_index": 327,
+        "BaseItemTypesKey": 2366,
+        "Armour": 187,
+        "Evasion": 0,
+        "EnergyShield": 65
+    },
+    {
+        "_index": 328,
+        "BaseItemTypesKey": 2367,
+        "Armour": 195,
+        "Evasion": 0,
+        "EnergyShield": 68
+    },
+    {
+        "_index": 329,
+        "BaseItemTypesKey": 2368,
+        "Armour": 0,
+        "Evasion": 133,
+        "EnergyShield": 53
+    },
+    {
+        "_index": 330,
+        "BaseItemTypesKey": 2369,
+        "Armour": 0,
+        "Evasion": 141,
+        "EnergyShield": 56
+    },
+    {
+        "_index": 331,
+        "BaseItemTypesKey": 2370,
+        "Armour": 0,
+        "Evasion": 149,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 332,
+        "BaseItemTypesKey": 2371,
+        "Armour": 0,
+        "Evasion": 159,
+        "EnergyShield": 62
+    },
+    {
+        "_index": 333,
+        "BaseItemTypesKey": 2372,
+        "Armour": 0,
+        "Evasion": 170,
+        "EnergyShield": 65
+    },
+    {
+        "_index": 334,
+        "BaseItemTypesKey": 2373,
+        "Armour": 0,
+        "Evasion": 178,
+        "EnergyShield": 68
+    },
+    {
+        "_index": 335,
+        "BaseItemTypesKey": 2374,
+        "Armour": 176,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 336,
+        "BaseItemTypesKey": 2375,
+        "Armour": 186,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 337,
+        "BaseItemTypesKey": 2376,
+        "Armour": 196,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 338,
+        "BaseItemTypesKey": 2377,
+        "Armour": 210,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 339,
+        "BaseItemTypesKey": 2378,
+        "Armour": 223,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 340,
+        "BaseItemTypesKey": 2379,
+        "Armour": 0,
+        "Evasion": 158,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 341,
+        "BaseItemTypesKey": 2380,
+        "Armour": 0,
+        "Evasion": 168,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 342,
+        "BaseItemTypesKey": 2381,
+        "Armour": 0,
+        "Evasion": 177,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 343,
+        "BaseItemTypesKey": 2382,
+        "Armour": 0,
+        "Evasion": 190,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 344,
+        "BaseItemTypesKey": 2383,
+        "Armour": 0,
+        "Evasion": 203,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 345,
+        "BaseItemTypesKey": 2384,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 63
+    },
+    {
+        "_index": 346,
+        "BaseItemTypesKey": 2385,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 67
+    },
+    {
+        "_index": 347,
+        "BaseItemTypesKey": 2386,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 71
+    },
+    {
+        "_index": 348,
+        "BaseItemTypesKey": 2387,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 74
+    },
+    {
+        "_index": 349,
+        "BaseItemTypesKey": 2388,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 78
+    },
+    {
+        "_index": 350,
+        "BaseItemTypesKey": 2389,
+        "Armour": 97,
+        "Evasion": 87,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 351,
+        "BaseItemTypesKey": 2390,
+        "Armour": 102,
+        "Evasion": 92,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 352,
+        "BaseItemTypesKey": 2391,
+        "Armour": 108,
+        "Evasion": 98,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 353,
+        "BaseItemTypesKey": 2392,
+        "Armour": 115,
+        "Evasion": 105,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 354,
+        "BaseItemTypesKey": 2393,
+        "Armour": 123,
+        "Evasion": 111,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 355,
+        "BaseItemTypesKey": 2394,
+        "Armour": 97,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 356,
+        "BaseItemTypesKey": 2395,
+        "Armour": 102,
+        "Evasion": 0,
+        "EnergyShield": 37
+    },
+    {
+        "_index": 357,
+        "BaseItemTypesKey": 2396,
+        "Armour": 108,
+        "Evasion": 0,
+        "EnergyShield": 38
+    },
+    {
+        "_index": 358,
+        "BaseItemTypesKey": 2397,
+        "Armour": 115,
+        "Evasion": 0,
+        "EnergyShield": 41
+    },
+    {
+        "_index": 359,
+        "BaseItemTypesKey": 2398,
+        "Armour": 123,
+        "Evasion": 0,
+        "EnergyShield": 43
+    },
+    {
+        "_index": 360,
+        "BaseItemTypesKey": 2399,
+        "Armour": 0,
+        "Evasion": 87,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 361,
+        "BaseItemTypesKey": 2400,
+        "Armour": 0,
+        "Evasion": 92,
+        "EnergyShield": 37
+    },
+    {
+        "_index": 362,
+        "BaseItemTypesKey": 2401,
+        "Armour": 0,
+        "Evasion": 98,
+        "EnergyShield": 38
+    },
+    {
+        "_index": 363,
+        "BaseItemTypesKey": 2402,
+        "Armour": 0,
+        "Evasion": 105,
+        "EnergyShield": 41
+    },
+    {
+        "_index": 364,
+        "BaseItemTypesKey": 2403,
+        "Armour": 0,
+        "Evasion": 111,
+        "EnergyShield": 43
+    },
+    {
+        "_index": 365,
+        "BaseItemTypesKey": 2404,
+        "Armour": 88,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 366,
+        "BaseItemTypesKey": 2405,
+        "Armour": 98,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 367,
+        "BaseItemTypesKey": 2406,
+        "Armour": 105,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 368,
+        "BaseItemTypesKey": 2407,
+        "Armour": 111,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 369,
+        "BaseItemTypesKey": 2408,
+        "Armour": 0,
+        "Evasion": 79,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 370,
+        "BaseItemTypesKey": 2409,
+        "Armour": 0,
+        "Evasion": 89,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 371,
+        "BaseItemTypesKey": 2410,
+        "Armour": 0,
+        "Evasion": 95,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 372,
+        "BaseItemTypesKey": 2411,
+        "Armour": 0,
+        "Evasion": 101,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 373,
+        "BaseItemTypesKey": 2412,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 32
+    },
+    {
+        "_index": 374,
+        "BaseItemTypesKey": 2413,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 375,
+        "BaseItemTypesKey": 2414,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 37
+    },
+    {
+        "_index": 376,
+        "BaseItemTypesKey": 2415,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 39
+    },
+    {
+        "_index": 377,
+        "BaseItemTypesKey": 2416,
+        "Armour": 48,
+        "Evasion": 44,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 378,
+        "BaseItemTypesKey": 2417,
+        "Armour": 54,
+        "Evasion": 49,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 379,
+        "BaseItemTypesKey": 2418,
+        "Armour": 61,
+        "Evasion": 56,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 380,
+        "BaseItemTypesKey": 2419,
+        "Armour": 48,
+        "Evasion": 0,
+        "EnergyShield": 17
+    },
+    {
+        "_index": 381,
+        "BaseItemTypesKey": 2420,
+        "Armour": 54,
+        "Evasion": 0,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 382,
+        "BaseItemTypesKey": 2421,
+        "Armour": 61,
+        "Evasion": 0,
+        "EnergyShield": 21
+    },
+    {
+        "_index": 383,
+        "BaseItemTypesKey": 2422,
+        "Armour": 0,
+        "Evasion": 44,
+        "EnergyShield": 17
+    },
+    {
+        "_index": 384,
+        "BaseItemTypesKey": 2423,
+        "Armour": 0,
+        "Evasion": 49,
+        "EnergyShield": 19
+    },
+    {
+        "_index": 385,
+        "BaseItemTypesKey": 2424,
+        "Armour": 0,
+        "Evasion": 56,
+        "EnergyShield": 21
+    },
+    {
+        "_index": 386,
+        "BaseItemTypesKey": 2425,
+        "Armour": 132,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 387,
+        "BaseItemTypesKey": 2426,
+        "Armour": 147,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 388,
+        "BaseItemTypesKey": 2427,
+        "Armour": 157,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 389,
+        "BaseItemTypesKey": 2428,
+        "Armour": 167,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 390,
+        "BaseItemTypesKey": 2429,
+        "Armour": 0,
+        "Evasion": 119,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 391,
+        "BaseItemTypesKey": 2430,
+        "Armour": 0,
+        "Evasion": 133,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 392,
+        "BaseItemTypesKey": 2431,
+        "Armour": 0,
+        "Evasion": 143,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 393,
+        "BaseItemTypesKey": 2432,
+        "Armour": 0,
+        "Evasion": 152,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 394,
+        "BaseItemTypesKey": 2433,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 48
+    },
+    {
+        "_index": 395,
+        "BaseItemTypesKey": 2434,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 52
+    },
+    {
+        "_index": 396,
+        "BaseItemTypesKey": 2435,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 55
+    },
+    {
+        "_index": 397,
+        "BaseItemTypesKey": 2436,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 398,
+        "BaseItemTypesKey": 2437,
+        "Armour": 73,
+        "Evasion": 65,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 399,
+        "BaseItemTypesKey": 2438,
+        "Armour": 81,
+        "Evasion": 73,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 400,
+        "BaseItemTypesKey": 2439,
+        "Armour": 92,
+        "Evasion": 84,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 401,
+        "BaseItemTypesKey": 2440,
+        "Armour": 73,
+        "Evasion": 0,
+        "EnergyShield": 26
+    },
+    {
+        "_index": 402,
+        "BaseItemTypesKey": 2441,
+        "Armour": 81,
+        "Evasion": 0,
+        "EnergyShield": 29
+    },
+    {
+        "_index": 403,
+        "BaseItemTypesKey": 2442,
+        "Armour": 92,
+        "Evasion": 0,
+        "EnergyShield": 32
+    },
+    {
+        "_index": 404,
+        "BaseItemTypesKey": 2443,
+        "Armour": 0,
+        "Evasion": 65,
+        "EnergyShield": 26
+    },
+    {
+        "_index": 405,
+        "BaseItemTypesKey": 2444,
+        "Armour": 0,
+        "Evasion": 73,
+        "EnergyShield": 29
+    },
+    {
+        "_index": 406,
+        "BaseItemTypesKey": 2445,
+        "Armour": 0,
+        "Evasion": 84,
+        "EnergyShield": 32
+    },
+    {
+        "_index": 407,
+        "BaseItemTypesKey": 2446,
+        "Armour": 110,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 408,
+        "BaseItemTypesKey": 2447,
+        "Armour": 116,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 409,
+        "BaseItemTypesKey": 2448,
+        "Armour": 123,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 410,
+        "BaseItemTypesKey": 2449,
+        "Armour": 131,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 411,
+        "BaseItemTypesKey": 2450,
+        "Armour": 139,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 412,
+        "BaseItemTypesKey": 2451,
+        "Armour": 144,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 413,
+        "BaseItemTypesKey": 2452,
+        "Armour": 61,
+        "Evasion": 54,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 414,
+        "BaseItemTypesKey": 2453,
+        "Armour": 64,
+        "Evasion": 58,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 415,
+        "BaseItemTypesKey": 2454,
+        "Armour": 67,
+        "Evasion": 61,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 416,
+        "BaseItemTypesKey": 2455,
+        "Armour": 72,
+        "Evasion": 65,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 417,
+        "BaseItemTypesKey": 2456,
+        "Armour": 77,
+        "Evasion": 70,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 418,
+        "BaseItemTypesKey": 2457,
+        "Armour": 80,
+        "Evasion": 73,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 419,
+        "BaseItemTypesKey": 2458,
+        "Armour": 61,
+        "Evasion": 0,
+        "EnergyShield": 22
+    },
+    {
+        "_index": 420,
+        "BaseItemTypesKey": 2459,
+        "Armour": 64,
+        "Evasion": 0,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 421,
+        "BaseItemTypesKey": 2460,
+        "Armour": 67,
+        "Evasion": 0,
+        "EnergyShield": 24
+    },
+    {
+        "_index": 422,
+        "BaseItemTypesKey": 2461,
+        "Armour": 72,
+        "Evasion": 0,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 423,
+        "BaseItemTypesKey": 2462,
+        "Armour": 77,
+        "Evasion": 0,
+        "EnergyShield": 27
+    },
+    {
+        "_index": 424,
+        "BaseItemTypesKey": 2463,
+        "Armour": 80,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 425,
+        "BaseItemTypesKey": 2464,
+        "Armour": 0,
+        "Evasion": 99,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 426,
+        "BaseItemTypesKey": 2465,
+        "Armour": 0,
+        "Evasion": 105,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 427,
+        "BaseItemTypesKey": 2466,
+        "Armour": 0,
+        "Evasion": 111,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 428,
+        "BaseItemTypesKey": 2467,
+        "Armour": 0,
+        "Evasion": 119,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 429,
+        "BaseItemTypesKey": 2468,
+        "Armour": 0,
+        "Evasion": 127,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 430,
+        "BaseItemTypesKey": 2469,
+        "Armour": 0,
+        "Evasion": 131,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 431,
+        "BaseItemTypesKey": 2470,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 40
+    },
+    {
+        "_index": 432,
+        "BaseItemTypesKey": 2471,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 42
+    },
+    {
+        "_index": 433,
+        "BaseItemTypesKey": 2472,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 43
+    },
+    {
+        "_index": 434,
+        "BaseItemTypesKey": 2473,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 435,
+        "BaseItemTypesKey": 2474,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 49
+    },
+    {
+        "_index": 436,
+        "BaseItemTypesKey": 2475,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 50
+    },
+    {
+        "_index": 437,
+        "BaseItemTypesKey": 2476,
+        "Armour": 534,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 438,
+        "BaseItemTypesKey": 2477,
+        "Armour": 445,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 439,
+        "BaseItemTypesKey": 2478,
+        "Armour": 445,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 440,
+        "BaseItemTypesKey": 2479,
+        "Armour": 0,
+        "Evasion": 406,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 441,
+        "BaseItemTypesKey": 2480,
+        "Armour": 0,
+        "Evasion": 487,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 442,
+        "BaseItemTypesKey": 2481,
+        "Armour": 0,
+        "Evasion": 406,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 443,
+        "BaseItemTypesKey": 2482,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 184
+    },
+    {
+        "_index": 444,
+        "BaseItemTypesKey": 2483,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 153
+    },
+    {
+        "_index": 445,
+        "BaseItemTypesKey": 2484,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 153
+    },
+    {
+        "_index": 446,
+        "BaseItemTypesKey": 2485,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 447,
+        "BaseItemTypesKey": 2486,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 448,
+        "BaseItemTypesKey": 2487,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 449,
+        "BaseItemTypesKey": 2488,
+        "Armour": 245,
+        "Evasion": 223,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 450,
+        "BaseItemTypesKey": 2489,
+        "Armour": 294,
+        "Evasion": 268,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 451,
+        "BaseItemTypesKey": 2490,
+        "Armour": 294,
+        "Evasion": 0,
+        "EnergyShield": 101
+    },
+    {
+        "_index": 452,
+        "BaseItemTypesKey": 2491,
+        "Armour": 245,
+        "Evasion": 0,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 453,
+        "BaseItemTypesKey": 2492,
+        "Armour": 245,
+        "Evasion": 0,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 454,
+        "BaseItemTypesKey": 2493,
+        "Armour": 0,
+        "Evasion": 268,
+        "EnergyShield": 101
+    },
+    {
+        "_index": 455,
+        "BaseItemTypesKey": 2494,
+        "Armour": 0,
+        "Evasion": 223,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 456,
+        "BaseItemTypesKey": 2495,
+        "Armour": 0,
+        "Evasion": 223,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 457,
+        "BaseItemTypesKey": 2496,
+        "Armour": 243,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 458,
+        "BaseItemTypesKey": 2497,
+        "Armour": 267,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 459,
+        "BaseItemTypesKey": 2498,
+        "Armour": 292,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 460,
+        "BaseItemTypesKey": 2499,
+        "Armour": 0,
+        "Evasion": 222,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 461,
+        "BaseItemTypesKey": 2500,
+        "Armour": 0,
+        "Evasion": 244,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 462,
+        "BaseItemTypesKey": 2501,
+        "Armour": 0,
+        "Evasion": 266,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 463,
+        "BaseItemTypesKey": 2502,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 84
+    },
+    {
+        "_index": 464,
+        "BaseItemTypesKey": 2503,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 92
+    },
+    {
+        "_index": 465,
+        "BaseItemTypesKey": 2504,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 101
+    },
+    {
+        "_index": 466,
+        "BaseItemTypesKey": 2505,
+        "Armour": 134,
+        "Evasion": 122,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 467,
+        "BaseItemTypesKey": 2506,
+        "Armour": 147,
+        "Evasion": 134,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 468,
+        "BaseItemTypesKey": 2507,
+        "Armour": 160,
+        "Evasion": 146,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 469,
+        "BaseItemTypesKey": 2508,
+        "Armour": 134,
+        "Evasion": 0,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 470,
+        "BaseItemTypesKey": 2509,
+        "Armour": 147,
+        "Evasion": 0,
+        "EnergyShield": 51
+    },
+    {
+        "_index": 471,
+        "BaseItemTypesKey": 2510,
+        "Armour": 160,
+        "Evasion": 0,
+        "EnergyShield": 55
+    },
+    {
+        "_index": 472,
+        "BaseItemTypesKey": 2511,
+        "Armour": 0,
+        "Evasion": 122,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 473,
+        "BaseItemTypesKey": 2512,
+        "Armour": 0,
+        "Evasion": 134,
+        "EnergyShield": 51
+    },
+    {
+        "_index": 474,
+        "BaseItemTypesKey": 2513,
+        "Armour": 0,
+        "Evasion": 146,
+        "EnergyShield": 55
+    },
+    {
+        "_index": 475,
+        "BaseItemTypesKey": 2514,
+        "Armour": 122,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 476,
+        "BaseItemTypesKey": 2515,
+        "Armour": 134,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 477,
+        "BaseItemTypesKey": 2516,
+        "Armour": 146,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 478,
+        "BaseItemTypesKey": 2517,
+        "Armour": 0,
+        "Evasion": 111,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 479,
+        "BaseItemTypesKey": 2518,
+        "Armour": 0,
+        "Evasion": 122,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 480,
+        "BaseItemTypesKey": 2519,
+        "Armour": 0,
+        "Evasion": 133,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 481,
+        "BaseItemTypesKey": 2520,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 42
+    },
+    {
+        "_index": 482,
+        "BaseItemTypesKey": 2521,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 46
+    },
+    {
+        "_index": 483,
+        "BaseItemTypesKey": 2522,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 50
+    },
+    {
+        "_index": 484,
+        "BaseItemTypesKey": 2523,
+        "Armour": 67,
+        "Evasion": 61,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 485,
+        "BaseItemTypesKey": 2524,
+        "Armour": 74,
+        "Evasion": 67,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 486,
+        "BaseItemTypesKey": 2525,
+        "Armour": 80,
+        "Evasion": 73,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 487,
+        "BaseItemTypesKey": 2526,
+        "Armour": 67,
+        "Evasion": 0,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 488,
+        "BaseItemTypesKey": 2527,
+        "Armour": 74,
+        "Evasion": 0,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 489,
+        "BaseItemTypesKey": 2528,
+        "Armour": 80,
+        "Evasion": 0,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 490,
+        "BaseItemTypesKey": 2529,
+        "Armour": 0,
+        "Evasion": 61,
+        "EnergyShield": 23
+    },
+    {
+        "_index": 491,
+        "BaseItemTypesKey": 2530,
+        "Armour": 0,
+        "Evasion": 67,
+        "EnergyShield": 25
+    },
+    {
+        "_index": 492,
+        "BaseItemTypesKey": 2531,
+        "Armour": 0,
+        "Evasion": 73,
+        "EnergyShield": 28
+    },
+    {
+        "_index": 493,
+        "BaseItemTypesKey": 2532,
+        "Armour": 182,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 494,
+        "BaseItemTypesKey": 2533,
+        "Armour": 200,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 495,
+        "BaseItemTypesKey": 2534,
+        "Armour": 219,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 496,
+        "BaseItemTypesKey": 2535,
+        "Armour": 0,
+        "Evasion": 166,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 497,
+        "BaseItemTypesKey": 2536,
+        "Armour": 0,
+        "Evasion": 183,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 498,
+        "BaseItemTypesKey": 2537,
+        "Armour": 0,
+        "Evasion": 200,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 499,
+        "BaseItemTypesKey": 2538,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 63
+    },
+    {
+        "_index": 500,
+        "BaseItemTypesKey": 2539,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 69
+    },
+    {
+        "_index": 501,
+        "BaseItemTypesKey": 2540,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 75
+    },
+    {
+        "_index": 502,
+        "BaseItemTypesKey": 2541,
+        "Armour": 100,
+        "Evasion": 91,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 503,
+        "BaseItemTypesKey": 2542,
+        "Armour": 110,
+        "Evasion": 101,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 504,
+        "BaseItemTypesKey": 2543,
+        "Armour": 120,
+        "Evasion": 110,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 505,
+        "BaseItemTypesKey": 2544,
+        "Armour": 100,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 506,
+        "BaseItemTypesKey": 2545,
+        "Armour": 110,
+        "Evasion": 0,
+        "EnergyShield": 38
+    },
+    {
+        "_index": 507,
+        "BaseItemTypesKey": 2546,
+        "Armour": 120,
+        "Evasion": 0,
+        "EnergyShield": 42
+    },
+    {
+        "_index": 508,
+        "BaseItemTypesKey": 2547,
+        "Armour": 0,
+        "Evasion": 91,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 509,
+        "BaseItemTypesKey": 2548,
+        "Armour": 0,
+        "Evasion": 101,
+        "EnergyShield": 38
+    },
+    {
+        "_index": 510,
+        "BaseItemTypesKey": 2549,
+        "Armour": 0,
+        "Evasion": 110,
+        "EnergyShield": 42
+    },
+    {
+        "_index": 511,
+        "BaseItemTypesKey": 2550,
+        "Armour": 152,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 512,
+        "BaseItemTypesKey": 2551,
+        "Armour": 167,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 513,
+        "BaseItemTypesKey": 2552,
+        "Armour": 182,
+        "Evasion": 0,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 514,
+        "BaseItemTypesKey": 2553,
+        "Armour": 84,
+        "Evasion": 76,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 515,
+        "BaseItemTypesKey": 2554,
+        "Armour": 92,
+        "Evasion": 84,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 516,
+        "BaseItemTypesKey": 2555,
+        "Armour": 100,
+        "Evasion": 91,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 517,
+        "BaseItemTypesKey": 2556,
+        "Armour": 84,
+        "Evasion": 0,
+        "EnergyShield": 29
+    },
+    {
+        "_index": 518,
+        "BaseItemTypesKey": 2557,
+        "Armour": 92,
+        "Evasion": 0,
+        "EnergyShield": 32
+    },
+    {
+        "_index": 519,
+        "BaseItemTypesKey": 2558,
+        "Armour": 100,
+        "Evasion": 0,
+        "EnergyShield": 35
+    },
+    {
+        "_index": 520,
+        "BaseItemTypesKey": 2559,
+        "Armour": 0,
+        "Evasion": 139,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 521,
+        "BaseItemTypesKey": 2560,
+        "Armour": 0,
+        "Evasion": 152,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 522,
+        "BaseItemTypesKey": 2561,
+        "Armour": 0,
+        "Evasion": 166,
+        "EnergyShield": 0
+    },
+    {
+        "_index": 523,
+        "BaseItemTypesKey": 2562,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 52
+    },
+    {
+        "_index": 524,
+        "BaseItemTypesKey": 2563,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 58
+    },
+    {
+        "_index": 525,
+        "BaseItemTypesKey": 2564,
+        "Armour": 0,
+        "Evasion": 0,
+        "EnergyShield": 63
+    }
+]

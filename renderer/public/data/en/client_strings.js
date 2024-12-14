@@ -26,7 +26,6 @@ export default {
   ARMOUR: 'Armour: ',
   EVASION: 'Evasion Rating: ',
   ENERGY_SHIELD: 'Energy Shield: ',
-  TAG_WARD: 'Ward: ',
   BLOCK_CHANCE: 'Chance to Block: ',
   CORRUPTED: 'Corrupted',
   UNIDENTIFIED: 'Unidentified',
@@ -102,5 +101,6 @@ export default {
   CHAT_GUILD: /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_TO: /^@To (?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_FROM: /^@From (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
-  CHAT_WEBTRADE_GEM: /^level (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/
+  CHAT_WEBTRADE_GEM: /^level (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/,
+  REQUIREMENTS: 'Requirements'
 }

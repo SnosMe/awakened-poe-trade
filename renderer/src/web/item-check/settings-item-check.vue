@@ -1,11 +1,11 @@
 <template>
   <div class="max-w-md p-2">
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('item.open_on_wiki') }}</label>
+      <label class="flex-1">{{ t("item.open_on_wiki") }}</label>
       <hotkey-input v-model="wikiKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('item.open_on_poedb') }}</label>
+      <label class="flex-1">{{ t("item.open_on_poedb") }}</label>
       <hotkey-input v-model="poedbKey" class="w-48" />
     </div>
     <div v-if="isEnglish" class="mb-4 flex">
@@ -13,34 +13,46 @@
       <hotkey-input v-model="craftOfExileKey" class="w-48" />
     </div>
     <div class="mb-4 flex">
-      <label class="flex-1">{{ t('item.find_in_stash') }}</label>
+      <label class="flex-1">{{ t("item.find_in_stash") }}</label>
       <hotkey-input v-model="stashSearchKey" class="w-48" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { configProp, configModelValue, findWidget } from '../settings/utils.js'
-import type { ItemCheckWidget } from './widget.js'
-import HotkeyInput from '../settings/HotkeyInput.vue'
+import { defineComponent, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { configProp, configModelValue, findWidget } from "../settings/utils.js";
+import type { ItemCheckWidget } from "./widget.js";
+import HotkeyInput from "../settings/HotkeyInput.vue";
 
 export default defineComponent({
-  name: 'item.info',
+  name: "item.info",
   components: { HotkeyInput },
   props: configProp(),
-  setup (props) {
-    const { t } = useI18n()
+  setup(props) {
+    const { t } = useI18n();
 
     return {
       t,
-      isEnglish: computed(() => props.config.language === 'en'),
-      wikiKey: configModelValue(() => findWidget<ItemCheckWidget>('item-check', props.config)!, 'wikiKey'),
-      poedbKey: configModelValue(() => findWidget<ItemCheckWidget>('item-check', props.config)!, 'poedbKey'),
-      craftOfExileKey: configModelValue(() => findWidget<ItemCheckWidget>('item-check', props.config)!, 'craftOfExileKey'),
-      stashSearchKey: configModelValue(() => findWidget<ItemCheckWidget>('item-check', props.config)!, 'stashSearchKey')
-    }
-  }
-})
+      isEnglish: computed(() => props.config.language === "en"),
+      wikiKey: configModelValue(
+        () => findWidget<ItemCheckWidget>("item-check", props.config)!,
+        "wikiKey",
+      ),
+      poedbKey: configModelValue(
+        () => findWidget<ItemCheckWidget>("item-check", props.config)!,
+        "poedbKey",
+      ),
+      craftOfExileKey: configModelValue(
+        () => findWidget<ItemCheckWidget>("item-check", props.config)!,
+        "craftOfExileKey",
+      ),
+      stashSearchKey: configModelValue(
+        () => findWidget<ItemCheckWidget>("item-check", props.config)!,
+        "stashSearchKey",
+      ),
+    };
+  },
+});
 </script>

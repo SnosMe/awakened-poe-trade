@@ -1,14 +1,26 @@
 <template>
-  <button :class="[$style.button, { [$style.limited]: isLimited }]"
-    @click="showRateLimitState = !showRateLimitState" v-bind="$attrs">Rate limiting</button>
-  <div v-if="showRateLimitState"
+  <button
+    :class="[$style.button, { [$style.limited]: isLimited }]"
+    @click="showRateLimitState = !showRateLimitState"
+    v-bind="$attrs"
+  >
+    Rate limiting
+  </button>
+  <div
+    v-if="showRateLimitState"
     class="font-sans p-4 bg-gray-800 text-gray-400 mb-8 border border-gray-900 absolute bottom-0"
-    style="border-width: 0.25rem;" v-bind="$attrs">
+    style="border-width: 0.25rem"
+    v-bind="$attrs"
+  >
     <div v-for="limit in limits" :key="limit.policy">
-      <div :class="{ 'text-red-400': limit.hasQueue }">Policy: {{ limit.policy }}</div>
+      <div :class="{ 'text-red-400': limit.hasQueue }">
+        Policy: {{ limit.policy }}
+      </div>
       <div>
         <div v-for="(rule, idx) in limit.rules" :key="idx">
-          <span>{{ rule.active }} / {{ rule.max }} over {{ rule.window }}s</span>
+          <span
+            >{{ rule.active }} / {{ rule.max }} over {{ rule.window }}s</span
+          >
           <span v-if="rule.queue" class="pl-1">(queue: {{ rule.queue }})</span>
         </div>
       </div>
@@ -17,53 +29,61 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { RATE_LIMIT_RULES } from './common'
-import { PriceCheckWidget } from '@/web/overlay/interfaces'
-import { AppConfig } from '@/web/Config'
+import { computed, defineComponent } from "vue";
+import { RATE_LIMIT_RULES } from "./common";
+import { PriceCheckWidget } from "@/web/overlay/interfaces";
+import { AppConfig } from "@/web/Config";
 
 export default defineComponent({
   inheritAttrs: false,
-  setup () {
-    const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
+  setup() {
+    const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
 
     const limits = computed(() => {
       const LIMITS = [
-        { policy: 'trade-search-request-limit', rules: RATE_LIMIT_RULES.SEARCH },
-        { policy: 'trade-exchange-request-limit', rules: RATE_LIMIT_RULES.EXCHANGE },
-        { policy: 'trade-fetch-request-limit', rules: RATE_LIMIT_RULES.FETCH }
-      ]
+        {
+          policy: "trade-search-request-limit",
+          rules: RATE_LIMIT_RULES.SEARCH,
+        },
+        {
+          policy: "trade-exchange-request-limit",
+          rules: RATE_LIMIT_RULES.EXCHANGE,
+        },
+        { policy: "trade-fetch-request-limit", rules: RATE_LIMIT_RULES.FETCH },
+      ];
 
       return LIMITS.map((limit) => ({
         policy: limit.policy,
-        hasQueue: Array.from(limit.rules).some(rl => rl.queue.value),
-        rules: Array.from(limit.rules).map(rl => ({
+        hasQueue: Array.from(limit.rules).some((rl) => rl.queue.value),
+        rules: Array.from(limit.rules).map((rl) => ({
           max: rl.max,
           window: rl.window,
           active: rl.stack.length,
-          queue: rl.queue.value
-        }))
-      }))
-    })
+          queue: rl.queue.value,
+        })),
+      }));
+    });
 
-    const isLimited = computed(() => limits.value.some(limit => limit.hasQueue))
+    const isLimited = computed(() =>
+      limits.value.some((limit) => limit.hasQueue),
+    );
 
     const showRateLimitState = computed<boolean>({
-      get () {
-        return widget.value.showRateLimitState
+      get() {
+        return widget.value.showRateLimitState;
       },
-      set (value) {
-        widget.value.showRateLimitState = value
-      }
-    })
+      set(value) {
+        widget.value.showRateLimitState = value;
+      },
+    });
 
     return {
       limits,
       showRateLimitState,
-      isLimited
-    }
-  }
-})
+      isLimited,
+    };
+  },
+});
 </script>
 
 <style lang="postcss" module>

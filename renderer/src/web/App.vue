@@ -5,13 +5,13 @@
 </template>
 
 <script setup lang="ts">
-import OverlayWindow from './overlay/OverlayWindow.vue'
+import OverlayWindow from "./overlay/OverlayWindow.vue";
 </script>
 
 <style lang="postcss">
-@import url('@fortawesome/fontawesome-free/css/all.min.css');
-@import url('animate.css/animate.css');
-@import url('../assets/font.css');
+@import url("@fortawesome/fontawesome-free/css/all.min.css");
+@import url("animate.css/animate.css");
+@import url("../assets/font.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,15 +44,15 @@ import OverlayWindow from './overlay/OverlayWindow.vue'
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 0.375rem rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 0.375rem rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 0.375rem rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 0.375rem rgba(0, 0, 0, 0.5);
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 

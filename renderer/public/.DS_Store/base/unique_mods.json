@@ -1,0 +1,44 @@
+[
+    {
+        "name": "The Beachhead",
+        "basetype": "The Beachhead",
+        "fixedStats": [
+            {
+                "ref": "Base/Armour/BaseArmour",
+                "value": 100
+            },
+            {
+                "ref": "Base/Evasion/BaseEvasion",
+                "value": 100
+            }
+        ]
+    },
+    {
+        "name": "The Burden of Leadership",
+        "basetype": "The Burden of Leadership",
+        "fixedStats": [
+            {
+                "ref": "Base/Armour/BaseArmour",
+                "value": 100
+            },
+            {
+                "ref": "Base/Evasion/BaseEvasion",
+                "value": 100
+            }
+        ]
+    },
+    {
+        "name": "The Burden of Speed",
+        "basetype": "The Burden of Speed",
+        "fixedStats": [
+            {
+                "ref": "Base/Armour/BaseArmour",
+                "value": 100
+            },
+            {
+                "ref": "Base/Evasion/BaseEvasion",
+                "value": 100
+            }
+        ]
+    }
+]

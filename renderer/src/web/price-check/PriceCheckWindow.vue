@@ -117,31 +117,40 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, PropType, shallowRef, watch, computed, nextTick, provide } from 'vue'
-import { Result, ok, err } from 'neverthrow'
-import { useI18n } from 'vue-i18n'
-import UiErrorBox from '@/web/ui/UiErrorBox.vue'
-import UiPopover from '@/web/ui/Popover.vue'
-import CheckedItem from './CheckedItem.vue'
-import BackgroundInfo from './BackgroundInfo.vue'
-import { MainProcess, Host } from '@/web/background/IPC'
-import { usePoeninja } from '../background/Prices'
-import { useLeagues } from '@/web/background/Leagues'
-import { AppConfig } from '@/web/Config'
-import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
-import RelatedItems from './related-items/RelatedItems.vue'
-import RateLimiterState from './trade/RateLimiterState.vue'
-import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.vue'
-import CheckPositionCircle from './CheckPositionCircle.vue'
-import AppTitleBar from '@/web/ui/AppTitlebar.vue'
-import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
-import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
-import ConversionWarningBanner from '../conversion-warn-banner/ConversionWarningBanner.vue'
+import {
+  defineComponent,
+  inject,
+  PropType,
+  shallowRef,
+  watch,
+  computed,
+  nextTick,
+  provide,
+} from "vue";
+import { Result, ok, err } from "neverthrow";
+import { useI18n } from "vue-i18n";
+import UiErrorBox from "@/web/ui/UiErrorBox.vue";
+import UiPopover from "@/web/ui/Popover.vue";
+import CheckedItem from "./CheckedItem.vue";
+import BackgroundInfo from "./BackgroundInfo.vue";
+import { MainProcess, Host } from "@/web/background/IPC";
+import { usePoeninja } from "../background/Prices";
+import { useLeagues } from "@/web/background/Leagues";
+import { AppConfig } from "@/web/Config";
+import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from "@/parser";
+import RelatedItems from "./related-items/RelatedItems.vue";
+import RateLimiterState from "./trade/RateLimiterState.vue";
+import UnidentifiedResolver from "./unidentified-resolver/UnidentifiedResolver.vue";
+import CheckPositionCircle from "./CheckPositionCircle.vue";
+import AppTitleBar from "@/web/ui/AppTitlebar.vue";
+import ItemQuickPrice from "@/web/ui/ItemQuickPrice.vue";
+import { PriceCheckWidget, WidgetManager } from "../overlay/interfaces";
+import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 type ParseError = {
   name: string;
   message: string;
-  rawText: ParsedItem['rawText'];
+  rawText: ParsedItem["rawText"];
 };
 
 export default defineComponent({
@@ -156,42 +165,46 @@ export default defineComponent({
     ItemQuickPrice,
     UiErrorBox,
     UiPopover,
-    ConversionWarningBanner
+    ConversionWarningBanner,
   },
   props: {
     config: {
       type: Object as PropType<PriceCheckWidget>,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup (props) {
-    const wm = inject<WidgetManager>('wm')!
-    const { xchgRate, initialLoading: xchgRateLoading, queuePricesFetch } = usePoeninja()
+  setup(props) {
+    const wm = inject<WidgetManager>("wm")!;
+    const {
+      xchgRate,
+      initialLoading: xchgRateLoading,
+      queuePricesFetch,
+    } = usePoeninja();
 
     nextTick(() => {
-      props.config.wmWants = 'hide'
-      props.config.wmFlags = ['hide-on-blur', 'skip-menu']
-    })
+      props.config.wmWants = "hide";
+      props.config.wmFlags = ["hide-on-blur", "skip-menu"];
+    });
 
-    const item = shallowRef<null | Result<ParsedItem, ParseError>>(null)
-    const advancedCheck = shallowRef(false)
-    const checkPosition = shallowRef({ x: 1, y: 1 })
+    const item = shallowRef<null | Result<ParsedItem, ParseError>>(null);
+    const advancedCheck = shallowRef(false);
+    const checkPosition = shallowRef({ x: 1, y: 1 });
 
-    MainProcess.onEvent('MAIN->CLIENT::item-text', (e) => {
-      if (e.target !== 'price-check') return
+    MainProcess.onEvent("MAIN->CLIENT::item-text", (e) => {
+      if (e.target !== "price-check") return;
 
       if (Host.isElectron && !e.focusOverlay) {
         // everything in CSS pixels
-        const width = 28.75 * AppConfig().fontSize
+        const width = 28.75 * AppConfig().fontSize;
         const screenX =
           e.position.x - window.screenX > window.innerWidth / 2
             ? window.screenX +
               window.innerWidth -
               wm.poePanelWidth.value -
               width
-            : window.screenX + wm.poePanelWidth.value
+            : window.screenX + wm.poePanelWidth.value;
         MainProcess.sendEvent({
-          name: 'OVERLAY->MAIN::track-area',
+          name: "OVERLAY->MAIN::track-area",
           payload: {
             holdKey: props.config.hotkeyHold,
             closeThreshold: 2.5 * AppConfig().fontSize,
@@ -200,16 +213,16 @@ export default defineComponent({
               x: screenX,
               y: window.screenY,
               width,
-              height: window.innerHeight
+              height: window.innerHeight,
             },
-            dpr: window.devicePixelRatio
-          }
-        })
+            dpr: window.devicePixelRatio,
+          },
+        });
       }
-      closeBrowser()
-      wm.show(props.config.wmId)
-      checkPosition.value = e.position
-      advancedCheck.value = e.focusOverlay
+      closeBrowser();
+      wm.show(props.config.wmId);
+      checkPosition.value = e.position;
+      advancedCheck.value = e.focusOverlay;
 
       item.value = (
         e.item ? ok(e.item as ParsedItem) : parseClipboard(e.clipboard)
@@ -219,95 +232,111 @@ export default defineComponent({
             item.rarity !== ItemRarity.Unique) ||
           (item.category === ItemCategory.Sentinel &&
             item.rarity !== ItemRarity.Unique)
-            ? err('item.unknown')
-            : ok(item)
+            ? err("item.unknown")
+            : ok(item),
         )
         .mapErr((err) => ({
           name: `${err}`,
           message: `${err}_help`,
-          rawText: e.clipboard
-        }))
+          rawText: e.clipboard,
+        }));
 
       if (item.value.isOk()) {
-        queuePricesFetch()
+        queuePricesFetch();
       }
-    })
+    });
 
-    function handleIdentification (identified: ParsedItem) {
-      item.value = ok(identified)
+    function handleIdentification(identified: ParsedItem) {
+      item.value = ok(identified);
     }
 
-    MainProcess.onEvent('MAIN->OVERLAY::hide-exclusive-widget', () => {
-      wm.hide(props.config.wmId)
-    })
+    MainProcess.onEvent("MAIN->OVERLAY::hide-exclusive-widget", () => {
+      wm.hide(props.config.wmId);
+    });
 
     watch(
       () => props.config.wmWants,
       (state) => {
-        if (state === 'hide') {
-          closeBrowser()
+        if (state === "hide") {
+          closeBrowser();
         }
-      }
-    )
+      },
+    );
 
-    const leagues = useLeagues()
-    const title = computed(() => leagues.selectedId.value || 'Exiled Exchange 2')
-    const stableOrbCost = computed(() => (xchgRate.value) ? Math.round(xchgRate.value) : null)
-    const isBrowserShown = computed(() => props.config.wmFlags.includes('has-browser'))
-    const overlayKey = computed(() => AppConfig().overlayKey)
-    const showCheckPos = computed(() => wm.active.value && props.config.showCursor)
-    const isLeagueSelected = computed(() => Boolean(leagues.selectedId.value))
+    const leagues = useLeagues();
+    const title = computed(
+      () => leagues.selectedId.value || "Exiled Exchange 2",
+    );
+    const stableOrbCost = computed(() =>
+      xchgRate.value ? Math.round(xchgRate.value) : null,
+    );
+    const isBrowserShown = computed(() =>
+      props.config.wmFlags.includes("has-browser"),
+    );
+    const overlayKey = computed(() => AppConfig().overlayKey);
+    const showCheckPos = computed(
+      () => wm.active.value && props.config.showCursor,
+    );
+    const isLeagueSelected = computed(() => Boolean(leagues.selectedId.value));
     const clickPosition = computed(() => {
       if (isBrowserShown.value) {
-        return 'inventory'
+        return "inventory";
       } else {
-        return checkPosition.value.x > (window.screenX + window.innerWidth / 2)
-          ? 'inventory'
-          : 'stash'
+        return checkPosition.value.x > window.screenX + window.innerWidth / 2
+          ? "inventory"
+          : "stash";
         // or {chat, vendor, center of screen}
       }
-    })
+    });
 
     watch(isBrowserShown, (isShown) => {
       if (isShown) {
-        wm.setFlag(props.config.wmId, 'hide-on-blur', false)
-        wm.setFlag(props.config.wmId, 'invisible-on-blur', true)
+        wm.setFlag(props.config.wmId, "hide-on-blur", false);
+        wm.setFlag(props.config.wmId, "invisible-on-blur", true);
       } else {
-        wm.setFlag(props.config.wmId, 'invisible-on-blur', false)
-        wm.setFlag(props.config.wmId, 'hide-on-blur', true)
+        wm.setFlag(props.config.wmId, "invisible-on-blur", false);
+        wm.setFlag(props.config.wmId, "hide-on-blur", true);
       }
-    })
+    });
 
-    function closePriceCheck () {
-      if (isBrowserShown.value || !Host.isElectron) {
-        wm.hide(props.config.wmId)
+    function closePriceCheck() {
+      if (AppConfig().overlayAlwaysClose) {
+        Host.sendEvent({
+          name: "OVERLAY->MAIN::focus-game",
+          payload: undefined,
+        });
+      } else if (isBrowserShown.value || !Host.isElectron) {
+        wm.hide(props.config.wmId);
       } else {
-        Host.sendEvent({ name: 'OVERLAY->MAIN::focus-game', payload: undefined })
+        Host.sendEvent({
+          name: "OVERLAY->MAIN::focus-game",
+          payload: undefined,
+        });
       }
     }
 
-    function openLeagueSelection () {
-      const settings = wm.widgets.value.find(w => w.wmType === 'settings')!
-      wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true)
-      wm.show(settings.wmId)
+    function openLeagueSelection() {
+      const settings = wm.widgets.value.find((w) => w.wmType === "settings")!;
+      wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true);
+      wm.show(settings.wmId);
     }
 
-    const iframeEl = shallowRef<HTMLIFrameElement | null>(null)
+    const iframeEl = shallowRef<HTMLIFrameElement | null>(null);
 
-    function showBrowser (url: string) {
-      wm.setFlag(props.config.wmId, 'has-browser', true)
+    function showBrowser(url: string) {
+      wm.setFlag(props.config.wmId, "has-browser", true);
       nextTick(() => {
-        iframeEl.value!.src = url
-      })
+        iframeEl.value!.src = url;
+      });
     }
 
-    function closeBrowser () {
-      wm.setFlag(props.config.wmId, 'has-browser', false)
+    function closeBrowser() {
+      wm.setFlag(props.config.wmId, "has-browser", false);
     }
 
-    provide<(url: string) => void>('builtin-browser', showBrowser)
+    provide<(url: string) => void>("builtin-browser", showBrowser);
 
-    const { t } = useI18n()
+    const { t } = useI18n();
 
     return {
       t,
@@ -325,8 +354,8 @@ export default defineComponent({
       handleIdentification,
       overlayKey,
       isLeagueSelected,
-      openLeagueSelection
-    }
-  }
-})
+      openLeagueSelection,
+    };
+  },
+});
 </script>

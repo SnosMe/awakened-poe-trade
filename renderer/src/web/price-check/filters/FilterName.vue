@@ -1,83 +1,103 @@
 <template>
   <div class="filter-name">
-    <button class="px-2 rounded border overflow-hidden text-ellipsis"
-      :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
-      @click="toggleAccuracy">{{ label }}</button>
-    <button v-if="filters.corrupted" class="px-2" @click="corrupted = !corrupted">
-      <span v-if="corrupted" class="text-red-500">{{ t('item.corrupted') }}</span>
-      <span v-else class="text-gray-600">{{ t('item.not_corrupted') }}</span>
+    <button
+      class="px-2 rounded border overflow-hidden text-ellipsis"
+      :class="{
+        'border-gray-500': showAsActive,
+        'border-gray-900': !showAsActive,
+      }"
+      @click="toggleAccuracy"
+    >
+      {{ label }}
+    </button>
+    <button
+      v-if="filters.corrupted"
+      class="px-2"
+      @click="corrupted = !corrupted"
+    >
+      <span v-if="corrupted" class="text-red-500">{{
+        t("item.corrupted")
+      }}</span>
+      <span v-else class="text-gray-600">{{ t("item.not_corrupted") }}</span>
     </button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import type { ParsedItem } from '@/parser'
-import type { ItemFilters } from './interfaces'
-import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import { defineComponent, PropType, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import type { ParsedItem } from "@/parser";
+import type { ItemFilters } from "./interfaces";
+import { CATEGORY_TO_TRADE_ID } from "../trade/pathofexile-trade";
 
 export default defineComponent({
-  name: 'FilterName',
+  name: "FilterName",
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
-      required: true
+      required: true,
     },
     item: {
       type: Object as PropType<ParsedItem>,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup (props) {
-    const { t } = useI18n()
+  setup(props) {
+    const { t } = useI18n();
 
     const label = computed(() => {
-      const { filters } = props
-      const activeSearch = (filters.searchRelaxed && !filters.searchRelaxed.disabled)
-        ? filters.searchRelaxed
-        : filters.searchExact
+      const { filters } = props;
+      const activeSearch =
+        filters.searchRelaxed && !filters.searchRelaxed.disabled
+          ? filters.searchRelaxed
+          : filters.searchExact;
 
       if (activeSearch.name) {
-        return activeSearch.name
+        return activeSearch.name;
       }
       if (activeSearch.baseType) {
-        return activeSearch.baseType
+        return activeSearch.baseType;
       }
       if (activeSearch.category) {
-        const tradeId = CATEGORY_TO_TRADE_ID.get(activeSearch.category)!
-        return t('item_category.prop', [t(`item_category.${tradeId.replace('.', '_')}`)])
+        const tradeId = CATEGORY_TO_TRADE_ID.get(activeSearch.category)!;
+        return t("item_category.prop", [
+          t(`item_category.${tradeId.replace(".", "_")}`),
+        ]);
       }
 
-      return '??? Report if you see this text'
-    })
+      return "??? Report if you see this text";
+    });
 
     const showAsActive = computed(() => {
-      const { filters } = props
-      return filters.searchRelaxed?.disabled
-    })
+      const { filters } = props;
+      return filters.searchRelaxed?.disabled;
+    });
 
-    function toggleAccuracy () {
-      const { filters } = props
+    function toggleAccuracy() {
+      const { filters } = props;
       if (filters.searchRelaxed) {
-        filters.searchRelaxed.disabled = !filters.searchRelaxed.disabled
+        filters.searchRelaxed.disabled = !filters.searchRelaxed.disabled;
       }
     }
 
     const corrupted = computed<boolean>({
-      get () { return props.filters.corrupted!.value },
-      set (value) { props.filters.corrupted!.value = value }
-    })
+      get() {
+        return props.filters.corrupted!.value;
+      },
+      set(value) {
+        props.filters.corrupted!.value = value;
+      },
+    });
 
     return {
       t,
       label,
       showAsActive,
       toggleAccuracy,
-      corrupted
-    }
-  }
-})
+      corrupted,
+    };
+  },
+});
 </script>
 
 <style lang="postcss">

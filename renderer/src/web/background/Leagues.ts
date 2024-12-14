@@ -1,62 +1,62 @@
-import { computed, shallowRef, readonly } from 'vue'
-import { createGlobalState } from '@vueuse/core'
-import { AppConfig } from '@/web/Config'
+import { computed, shallowRef, readonly } from "vue";
+import { createGlobalState } from "@vueuse/core";
+import { AppConfig } from "@/web/Config";
 
 // pc-ggg, pc-garena
 // const PERMANENT_SC = ['Standard', '標準模式']
-const PERMANENT_HC = ['Hardcore', '專家模式']
+const PERMANENT_HC = ["Hardcore", "專家模式"];
 
 interface ApiLeague {
-  id: string
-  event?: boolean
-  rules: Array<{ id: string }>
+  id: string;
+  event?: boolean;
+  rules: Array<{ id: string }>;
 }
 
 interface League {
-  id: string
-  isPopular: boolean
+  id: string;
+  isPopular: boolean;
 }
 
 export const useLeagues = createGlobalState(() => {
-  const isLoading = shallowRef(false)
-  const error = shallowRef<string | null>(null)
-  const tradeLeagues = shallowRef<League[]>([])
+  const isLoading = shallowRef(false);
+  const error = shallowRef<string | null>(null);
+  const tradeLeagues = shallowRef<League[]>([]);
 
   const DEFAULT_POE2_LEAGUES: ApiLeague[] = [
-    { id: 'Standard', rules: [] },
+    { id: "Standard", rules: [] },
     {
-      id: 'Hardcore',
+      id: "Hardcore",
       rules: [
         {
-          id: 'Hardcore'
-        }
-      ]
-    }
-  ]
+          id: "Hardcore",
+        },
+      ],
+    },
+  ];
 
   const selectedId = computed<string | undefined>({
-    get () {
-      return tradeLeagues.value.length ? AppConfig().leagueId : undefined
+    get() {
+      return tradeLeagues.value.length ? AppConfig().leagueId : undefined;
     },
-    set (id) {
-      AppConfig().leagueId = id
-    }
-  })
+    set(id) {
+      AppConfig().leagueId = id;
+    },
+  });
 
   const selected = computed(() => {
-    const { leagueId } = AppConfig()
-    if (!tradeLeagues.value || !leagueId) return undefined
-    const listed = tradeLeagues.value.find((league) => league.id === leagueId)
+    const { leagueId } = AppConfig();
+    if (!tradeLeagues.value || !leagueId) return undefined;
+    const listed = tradeLeagues.value.find((league) => league.id === leagueId);
     return {
       id: leagueId,
       realm: AppConfig().realm,
-      isPopular: !isPrivateLeague(leagueId) && Boolean(listed?.isPopular)
-    }
-  })
+      isPopular: !isPrivateLeague(leagueId) && Boolean(listed?.isPopular),
+    };
+  });
 
-  async function load () {
-    isLoading.value = true
-    error.value = null
+  async function load() {
+    isLoading.value = true;
+    error.value = null;
 
     try {
       // const response = await Host.proxy(
@@ -65,37 +65,37 @@ export const useLeagues = createGlobalState(() => {
       // if (!response.ok)
       //   throw new Error(JSON.stringify(Object.fromEntries(response.headers)));
       // const leagues: ApiLeague[] = await response.json();
-      const leagues: ApiLeague[] = DEFAULT_POE2_LEAGUES
+      const leagues: ApiLeague[] = DEFAULT_POE2_LEAGUES;
       tradeLeagues.value = leagues
         .filter(
           (league) =>
             !PERMANENT_HC.includes(league.id) &&
             !league.rules.some(
               (rule) =>
-                rule.id === 'NoParties' ||
-                (rule.id === 'HardMode' && !league.event)
-            )
+                rule.id === "NoParties" ||
+                (rule.id === "HardMode" && !league.event),
+            ),
         )
         .map((league) => {
-          return { id: league.id, isPopular: true }
-        })
+          return { id: league.id, isPopular: true };
+        });
 
       const leagueIsAlive = tradeLeagues.value.some(
-        (league) => league.id === selectedId.value
-      )
-      if (!leagueIsAlive && !isPrivateLeague(selectedId.value ?? '')) {
+        (league) => league.id === selectedId.value,
+      );
+      if (!leagueIsAlive && !isPrivateLeague(selectedId.value ?? "")) {
         if (tradeLeagues.value.length > 1) {
-          const TMP_CHALLENGE = 1
-          selectedId.value = tradeLeagues.value[TMP_CHALLENGE].id
+          const TMP_CHALLENGE = 1;
+          selectedId.value = tradeLeagues.value[TMP_CHALLENGE].id;
         } else {
-          const STANDARD = 0
-          selectedId.value = tradeLeagues.value[STANDARD].id
+          const STANDARD = 0;
+          selectedId.value = tradeLeagues.value[STANDARD].id;
         }
       }
     } catch (e) {
-      error.value = (e as Error).message
+      error.value = (e as Error).message;
     } finally {
-      isLoading.value = false
+      isLoading.value = false;
     }
   }
 
@@ -105,13 +105,13 @@ export const useLeagues = createGlobalState(() => {
     selectedId,
     selected,
     list: readonly(tradeLeagues),
-    load
-  }
-})
+    load,
+  };
+});
 
-function isPrivateLeague (id: string) {
-  if (id.includes('Ruthless')) {
-    return true
+function isPrivateLeague(id: string) {
+  if (id.includes("Ruthless")) {
+    return true;
   }
-  return /\(PL\d+\)$/.test(id)
+  return /\(PL\d+\)$/.test(id);
 }
