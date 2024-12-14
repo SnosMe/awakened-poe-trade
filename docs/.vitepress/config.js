@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-const BASE = '/exiled-exchange-2/'
+const BASE = '/Exiled-Exchange-2/'
 
 export default defineConfig({
   title: 'Exiled Exchange 2',
@@ -22,13 +22,13 @@ export default defineConfig({
     // logo: 'TODO', https://github.com/vuejs/vitepress/issues/1401
     appVersion: '0.1.0',
     github: {
-      releasesUrl: 'https://github.com/Kvan7/exiled-exchange-2/releases'
+      releasesUrl: 'https://github.com/Kvan7/Exiled-Exchange-2/releases'
     },
     socialLinks: [
       {
         text: 'GitHub',
         color: '#181717',
-        link: 'https://github.com/Kvan7/exiled-exchange-2'
+        link: 'https://github.com/Kvan7/Exiled-Exchange-2'
       }
     ],
     sidebar: [
