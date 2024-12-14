@@ -23,6 +23,7 @@ Latest version is <span class="bg-gray-100 border rounded px-1">{{ theme.appVers
 *The app is unsigned, which means you'll have to bypass security
 warnings on Windows to open it.{:.text-sm}
 
+
 ---
 
 ### Requirements
