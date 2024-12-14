@@ -20,16 +20,11 @@ export default defineConfig({
   },
   themeConfig: {
     // logo: 'TODO', https://github.com/vuejs/vitepress/issues/1401
-    appVersion: '3.25.101',
+    appVersion: '0.1.0',
     github: {
       releasesUrl: 'https://github.com/Kvan7/exiled-exchange-2/releases'
     },
     socialLinks: [
-      {
-        text: 'Patreon',
-        color: '#FF424D',
-        link: 'https://patreon.com/awakened_poe_trade'
-      },
       {
         text: 'GitHub',
         color: '#181717',

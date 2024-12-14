@@ -30,15 +30,8 @@ title: FAQ
 
 - **Will my language be supported?**
 
-  No plans to support other languages. Why is there Russian language?
-  Because:
-    1 - this is the native language of developer;
-    2 - helps to create cleaner abstractions in code and test it;
-    3 - has the most active community, at least according to the numbers I can measure.
+  No plans to support other languages. I know Awakened PoE has Russian, but I don't have plans to add other languages since I am still fixing this to work with the new game.
 
-  09/21/2020
-
-  ![](https://imgur.com/HujBLLR.png)
 
 - **I downloaded a zip with a bunch of files, but no .exe inside?**
 
