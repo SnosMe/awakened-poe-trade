@@ -1,7 +1,7 @@
 ---
 name: Not Recognized Modifier
 about: For "Not Recognized Modifier" errors
-title: "[Not Recognized Modifier] - ITEM NAME HERE"
+title: "[Not Recognized Modifier] - PUT MODIFIER HERE"
 labels: bug, parse error
 assignees: ''
 
@@ -9,6 +9,7 @@ assignees: ''
 
 ## Not Recognized Modifier
 ***Put name of item here, and in the title***
+`Text of the modifier here`
 
 ### Item Text
 ***Please provide the item's description***
