@@ -241,19 +241,21 @@ function weaponProps(ctx: FiltersCreationContext) {
     );
   }
 
-  ctx.filters.push(
-    propToFilter(
-      {
-        ref: "Attacks per Second: #",
-        tradeId: "item.aps",
-        roll: attackSpeed.roll,
-        sources: attackSpeed.sources,
-        dp: true,
-        disabled: true,
-      },
-      ctx,
-    ),
-  );
+  if (item.weaponAS) {
+    ctx.filters.push(
+      propToFilter(
+        {
+          ref: "Attacks per Second: #",
+          tradeId: "item.aps",
+          roll: attackSpeed.roll,
+          sources: attackSpeed.sources,
+          dp: true,
+          disabled: true,
+        },
+        ctx,
+      ),
+    );
+  }
 
   if (item.weaponCRIT) {
     const critChance = calcPropBounds(

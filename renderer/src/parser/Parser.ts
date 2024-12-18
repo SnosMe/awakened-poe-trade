@@ -65,6 +65,9 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseArmour,
   parseWeapon,
   parseFlask,
+  parseCharmSlots,
+  parseSpirit,
+  parseHelpText,
   parseStackSize,
   parseCorrupted,
   parseFoil,
@@ -913,6 +916,60 @@ function parseFlask(section: string[], item: ParsedItem) {
   }
 
   return isParsed;
+}
+
+function parseCharmSlots(section: string[], item: ParsedItem) {
+  // the purpose of this parser is to "consume" charm slot 1 sections
+  // so they are not recognized as modifiers
+  if (item.category !== ItemCategory.Belt) return "PARSER_SKIPPED";
+
+  let isParsed: SectionParseResult = "SECTION_SKIPPED";
+
+  for (const line of section) {
+    if (line.startsWith(_$.CHARM_SLOTS)) {
+      isParsed = "SECTION_PARSED";
+      break;
+    }
+  }
+
+  return isParsed;
+}
+
+function parseSpirit(section: string[], item: ParsedItem) {
+  // the purpose of this parser is to "consume" Spirit: 100 sections
+  // so they are not recognized as modifiers
+  if (item.category !== ItemCategory.Sceptre) return "PARSER_SKIPPED";
+
+  let isParsed: SectionParseResult = "SECTION_SKIPPED";
+
+  for (const line of section) {
+    if (line.startsWith(_$.BASE_SPIRIT)) {
+      isParsed = "SECTION_PARSED";
+      break;
+    }
+  }
+
+  return isParsed;
+}
+
+function parseHelpText(section: string[], item: ParsedItem) {
+  if (
+    item.category !== ItemCategory.Quiver &&
+    item.category !== ItemCategory.Flask &&
+    item.category !== ItemCategory.Charm
+  )
+    return "PARSER_SKIPPED";
+
+  for (const line of section) {
+    if (
+      line.startsWith(_$.QUIVER_HELP_TEXT) ||
+      line.startsWith(_$.FLASK_HELP_TEXT) ||
+      line.startsWith(_$.CHARM_HELP_TEXT)
+    ) {
+      return "SECTION_PARSED";
+    }
+  }
+  return "SECTION_SKIPPED";
 }
 
 function parseSentinelCharge(section: string[], item: ParsedItem) {

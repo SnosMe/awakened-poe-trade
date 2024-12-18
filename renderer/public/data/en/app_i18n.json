@@ -319,5 +319,15 @@
     "select_stock": "Always select \"Stock\" filter",
     "show_prediction": "Show price prediction",
     "remember_currency": "Remember the Buyout Currency filter"
+  },
+  "poe2_new": {
+    "beta_warning": "This is in BETA for POE2, things will not work always as expected.",
+    "beta_warning2": "Please report any issues.",
+    "pseudo_note": "Pseudo mods not supported by trade site",
+    "pseudo_note2": "Items may appear to be more valuable than they actually are",
+    "parse_error": "For some reason this item's stats did not parse.",
+    "parse_error2": "It likely has a mod that is not supported yet.",
+    "parse_error3": "(Potentially new or changed wording from poe1)",
+    "bulk_exchange": "Bulk exchange rates are not implemented yet"
   }
 }

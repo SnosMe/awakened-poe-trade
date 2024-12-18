@@ -27,9 +27,10 @@
     "stats": "ts-node stats.ts",
     "copy-files": "cp -R EXPORT/tables/English/* vendor/client/tables/",
     "push-ndjson": "bash ./push-ndjson.sh",
-    "anon-python": "python ./vendor/client/parser.py",
+    "anon-vodka-python": "python ./vendor/client/parser.py",
+    "langs-anon-vodka-python": "python ./vendor/client/parserRunner.py",
     "temp-images": "python ./data/en/imageFix.py",
-    "copy-py-ndjson": "cp -R ./vendor/client/pyDumps/en/* ./data/en/",
+    "copy-py-ndjson": "bash ./copy-py-ndjson.sh",
     "fetch-json": "bash ./pull-json.sh"
   },
   "keywords": [],

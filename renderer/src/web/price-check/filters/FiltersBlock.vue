@@ -119,9 +119,9 @@
       class="mb-4 text-center bg-teal-800 rounded-xl"
       :class="presets.length > 1 ? 'mt-1' : 'mt-4'"
     >
-      Pseudo mods not supported by trade site
+      {{ t("poe2_new.pseudo_note") }}
       <br />
-      Items may appear to be more valuable than they actually are
+      {{ t("poe2_new.pseudo_note2") }}
     </div>
     <!-- Handled parse error -->
     <div
@@ -129,9 +129,11 @@
       class="mb-4 text-center bg-purple-800 rounded-xl"
       :class="presets.length > 1 ? 'mt-1' : 'mt-4'"
     >
-      For some reason this item's stats did not parse. <br />
-      It likely has a mod that is not supported yet. <br />(Potentially new or
-      changed wording from poe1)
+      {{ t("poe2_new.parse_error") }}
+      <br />
+      {{ t("poe2_new.parse_error2") }}
+      <br />
+      {{ t("poe2_new.parse_error3") }}
     </div>
     <!-- Warning that bulk exchange does not work -->
     <div
@@ -139,7 +141,7 @@
       class="mb-4 text-center bg-teal-900 rounded-xl"
       :class="presets.length > 1 ? 'mt-1' : 'mt-4'"
     >
-      Bulk exchange rates are not implemented yet
+      {{ t("poe2_new.bulk_exchange") }}
     </div>
 
     <div

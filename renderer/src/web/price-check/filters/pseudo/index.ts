@@ -1,5 +1,10 @@
-// import { stat, STAT_BY_REF } from "@/assets/data";
-import { STAT_BY_REF } from "@/assets/data";
+import {
+  // populatePseudoRules,
+  // pseudoRules,
+  stat,
+  STAT_BY_REF,
+} from "@/assets/data";
+// import { STAT_BY_REF } from "@/assets/data";
 import { ModifierType, StatCalculated, StatSource } from "@/parser/modifiers";
 import {
   calculatedStatToFilter,
@@ -7,45 +12,45 @@ import {
 } from "../create-stat-filters";
 import type { StatFilter } from "../interfaces";
 
-// const RESISTANCES_INFO = [
-//   {
-//     ref: stat("+#% to All Resistances"),
-//     elements: ["fire", "cold", "lightning"],
-//     chaos: true,
-//   },
-//   {
-//     ref: stat("+#% to all Elemental Resistances"),
-//     elements: ["fire", "cold", "lightning"],
-//   },
-//   { ref: stat("+#% to Fire Resistance"), elements: ["fire"] },
-//   { ref: stat("+#% to Cold Resistance"), elements: ["cold"] },
-//   { ref: stat("+#% to Lightning Resistance"), elements: ["lightning"] },
-//   {
-//     ref: stat("+#% to Fire and Lightning Resistances"),
-//     elements: ["fire", "lightning"],
-//   },
-//   { ref: stat("+#% to Fire and Cold Resistances"), elements: ["fire", "cold"] },
-//   {
-//     ref: stat("+#% to Cold and Lightning Resistances"),
-//     elements: ["cold", "lightning"],
-//   },
-//   { ref: stat("+#% to Chaos Resistance"), elements: [], chaos: true },
-// {
-//   ref: stat("+#% to Fire and Chaos Resistances"),
-//   elements: ["fire"],
-//   chaos: true,
-// },
-// {
-//   ref: stat("+#% to Cold and Chaos Resistances"),
-//   elements: ["cold"],
-//   chaos: true,
-// },
-// {
-//   ref: stat("+#% to Lightning and Chaos Resistances"),
-//   elements: ["lightning"],
-//   chaos: true,
-// },
-// ];
+const RESISTANCES_INFO = [
+  // {
+  //   ref: stat("+#% to All Resistances"),
+  //   elements: ["fire", "cold", "lightning"],
+  //   chaos: true,
+  // },
+  {
+    ref: stat("+#% to all Elemental Resistances"),
+    elements: ["fire", "cold", "lightning"],
+  },
+  { ref: stat("+#% to Fire Resistance"), elements: ["fire"] },
+  { ref: stat("+#% to Cold Resistance"), elements: ["cold"] },
+  { ref: stat("+#% to Lightning Resistance"), elements: ["lightning"] },
+  // {
+  //   ref: stat("+#% to Fire and Lightning Resistances"),
+  //   elements: ["fire", "lightning"],
+  // },
+  // { ref: stat("+#% to Fire and Cold Resistances"), elements: ["fire", "cold"] },
+  // {
+  //   ref: stat("+#% to Cold and Lightning Resistances"),
+  //   elements: ["cold", "lightning"],
+  // },
+  // { ref: stat("+#% to Chaos Resistance"), elements: [""], chaos: true },
+  // {
+  //   ref: stat("+#% to Fire and Chaos Resistances"),
+  //   elements: ["fire"],
+  //   chaos: true,
+  // },
+  // {
+  //   ref: stat("+#% to Cold and Chaos Resistances"),
+  //   elements: ["cold"],
+  //   chaos: true,
+  // },
+  // {
+  //   ref: stat("+#% to Lightning and Chaos Resistances"),
+  //   elements: ["lightning"],
+  //   chaos: true,
+  // },
+];
 
 // const ATTRIBUTES_INFO = [
 //   { ref: stat("+# to all Attributes"), attributes: ["str", "dex", "int"] },
@@ -71,34 +76,34 @@ interface PseudoRule {
 }
 
 const PSEUDO_RULES: PseudoRule[] = [
-  // {
-  //   pseudo: stat("+#% total Elemental Resistance"),
-  //   disabled: false,
-  //   stats: RESISTANCES_INFO.filter((info) => info.elements.length).map(
-  //     (info) => ({ ref: info.ref, multiplier: info.elements.length }),
-  //   ),
-  // },
-  // {
-  //   pseudo: stat("+#% total to Fire Resistance"),
-  //   group: "to_x_ele_res",
-  //   stats: RESISTANCES_INFO.filter((info) =>
-  //     info.elements.includes("fire"),
-  //   ).map((info) => ({ ref: info.ref })),
-  // },
-  // {
-  //   pseudo: stat("+#% total to Cold Resistance"),
-  //   group: "to_x_ele_res",
-  //   stats: RESISTANCES_INFO.filter((info) =>
-  //     info.elements.includes("cold"),
-  //   ).map((info) => ({ ref: info.ref })),
-  // },
-  // {
-  //   pseudo: stat("+#% total to Lightning Resistance"),
-  //   group: "to_x_ele_res",
-  //   stats: RESISTANCES_INFO.filter((info) =>
-  //     info.elements.includes("lightning"),
-  //   ).map((info) => ({ ref: info.ref })),
-  // },
+  {
+    pseudo: stat("+#% total Elemental Resistance"),
+    disabled: false,
+    stats: RESISTANCES_INFO.filter((info) => info.elements.length).map(
+      (info) => ({ ref: info.ref, multiplier: info.elements.length }),
+    ),
+  },
+  {
+    pseudo: stat("+#% total to Fire Resistance"),
+    group: "to_x_ele_res",
+    stats: RESISTANCES_INFO.filter((info) =>
+      info.elements.includes("fire"),
+    ).map((info) => ({ ref: info.ref })),
+  },
+  {
+    pseudo: stat("+#% total to Cold Resistance"),
+    group: "to_x_ele_res",
+    stats: RESISTANCES_INFO.filter((info) =>
+      info.elements.includes("cold"),
+    ).map((info) => ({ ref: info.ref })),
+  },
+  {
+    pseudo: stat("+#% total to Lightning Resistance"),
+    group: "to_x_ele_res",
+    stats: RESISTANCES_INFO.filter((info) =>
+      info.elements.includes("lightning"),
+    ).map((info) => ({ ref: info.ref })),
+  },
   // {
   //   pseudo: stat("+#% total to Chaos Resistance"),
   //   stats: RESISTANCES_INFO.filter((info) => info.chaos === true).map(
@@ -162,6 +167,10 @@ const PSEUDO_RULES: PseudoRule[] = [
   //       (info) => ({ ref: info.ref, multiplier: 5 / 10 }),
   //     ),
   //   ],
+  // },
+  // {
+  //   pseudo: stat("+# total maximum Spirit"),
+  //   stats: [{ ref: stat("+# to Spirit") }],
   // },
   // {
   //   pseudo: stat("#% total increased maximum Energy Shield"),

@@ -12,12 +12,32 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@ipc/*": ["../ipc/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@ipc/*": [
+        "../ipc/*"
+      ]
     },
-    "types": ["vite/client"],
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "types": [
+      "vite/client",
+      "vitest/importMeta"
+    ],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

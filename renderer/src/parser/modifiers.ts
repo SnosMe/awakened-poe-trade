@@ -92,6 +92,7 @@ export function statSourcesTotal(
       );
 }
 
+// Does actual translation?
 export function translateStatWithRoll(
   calc: StatCalculated,
   roll: StatRoll | undefined,
