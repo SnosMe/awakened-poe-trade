@@ -101,5 +101,11 @@ export default {
   CHAT_GUILD: /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_TO: /^@발신 (?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_FROM: /^@수신 (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
-  CHAT_WEBTRADE_GEM: /^уровень (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/
+  CHAT_WEBTRADE_GEM: /^уровень (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/,
+  REQUIREMENTS: '요구사항:',
+  CHARM_SLOTS: '호신부 슬롯:',
+  BASE_SPIRIT: '정신력:',
+  QUIVER_HELP_TEXT: '활 장착',
+  FLASK_HELP_TEXT: '마시려면 우클릭하십시오.',
+  CHARM_HELP_TEXT: '조건이 충족되면 자동으로 '
 }

@@ -1,0 +1,758 @@
+[
+  {
+    "_index": 0,
+    "Id": "LifeFlask",
+    "Name": "Флаконы жизни",
+    "TradeMarketCategory": 28,
+    "ItemClassCategory": 0
+  },
+  {
+    "_index": 1,
+    "Id": "ManaFlask",
+    "Name": "Флаконы маны",
+    "TradeMarketCategory": 29,
+    "ItemClassCategory": 0
+  },
+  {
+    "_index": 2,
+    "Id": "DONOTUSE5",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 3,
+    "Id": "Currency",
+    "Name": "Вещи на обмен",
+    "TradeMarketCategory": 39,
+    "ItemClassCategory": 6
+  },
+  {
+    "_index": 4,
+    "Id": "Amulet",
+    "Name": "Амулеты",
+    "TradeMarketCategory": 21,
+    "ItemClassCategory": 7
+  },
+  {
+    "_index": 5,
+    "Id": "Ring",
+    "Name": "Кольца",
+    "TradeMarketCategory": 22,
+    "ItemClassCategory": 8
+  },
+  {
+    "_index": 6,
+    "Id": "Claw",
+    "Name": "Когти",
+    "TradeMarketCategory": 4,
+    "ItemClassCategory": 9
+  },
+  {
+    "_index": 7,
+    "Id": "Dagger",
+    "Name": "Кинжалы",
+    "TradeMarketCategory": 5,
+    "ItemClassCategory": 3
+  },
+  {
+    "_index": 8,
+    "Id": "Wand",
+    "Name": "Жезлы",
+    "TradeMarketCategory": 6,
+    "ItemClassCategory": 10
+  },
+  {
+    "_index": 9,
+    "Id": "One Hand Sword",
+    "Name": "Одноручные мечи",
+    "TradeMarketCategory": 7,
+    "ItemClassCategory": 2
+  },
+  {
+    "_index": 10,
+    "Id": "DONOTUSE6",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 11,
+    "Id": "One Hand Axe",
+    "Name": "Одноручные топоры",
+    "TradeMarketCategory": 9,
+    "ItemClassCategory": 11
+  },
+  {
+    "_index": 12,
+    "Id": "One Hand Mace",
+    "Name": "Одноручные булавы",
+    "TradeMarketCategory": 10,
+    "ItemClassCategory": 1
+  },
+  {
+    "_index": 13,
+    "Id": "Bow",
+    "Name": "Луки",
+    "TradeMarketCategory": 13,
+    "ItemClassCategory": 12
+  },
+  {
+    "_index": 14,
+    "Id": "Staff",
+    "Name": "Посохи",
+    "TradeMarketCategory": 14,
+    "ItemClassCategory": 4
+  },
+  {
+    "_index": 15,
+    "Id": "Two Hand Sword",
+    "Name": "Двуручные мечи",
+    "TradeMarketCategory": 15,
+    "ItemClassCategory": 13
+  },
+  {
+    "_index": 16,
+    "Id": "Two Hand Axe",
+    "Name": "Двуручные топоры",
+    "TradeMarketCategory": 16,
+    "ItemClassCategory": 14
+  },
+  {
+    "_index": 17,
+    "Id": "Two Hand Mace",
+    "Name": "Двуручные булавы",
+    "TradeMarketCategory": 17,
+    "ItemClassCategory": 15
+  },
+  {
+    "_index": 18,
+    "Id": "Active Skill Gem",
+    "Name": "Камни умений",
+    "TradeMarketCategory": 26,
+    "ItemClassCategory": 16
+  },
+  {
+    "_index": 19,
+    "Id": "Support Skill Gem",
+    "Name": "Камни поддержки",
+    "TradeMarketCategory": 27,
+    "ItemClassCategory": 17
+  },
+  {
+    "_index": 20,
+    "Id": "Quiver",
+    "Name": "Колчаны",
+    "TradeMarketCategory": 19,
+    "ItemClassCategory": 18
+  },
+  {
+    "_index": 21,
+    "Id": "Belt",
+    "Name": "Пояса",
+    "TradeMarketCategory": 23,
+    "ItemClassCategory": 19
+  },
+  {
+    "_index": 22,
+    "Id": "Gloves",
+    "Name": "Перчатки",
+    "TradeMarketCategory": 0,
+    "ItemClassCategory": 20
+  },
+  {
+    "_index": 23,
+    "Id": "Boots",
+    "Name": "Обувь",
+    "TradeMarketCategory": 1,
+    "ItemClassCategory": 21
+  },
+  {
+    "_index": 24,
+    "Id": "Body Armour",
+    "Name": "Доспехи",
+    "TradeMarketCategory": 2,
+    "ItemClassCategory": 22
+  },
+  {
+    "_index": 25,
+    "Id": "Helmet",
+    "Name": "Шлемы",
+    "TradeMarketCategory": 3,
+    "ItemClassCategory": 23
+  },
+  {
+    "_index": 26,
+    "Id": "Shield",
+    "Name": "Щиты",
+    "TradeMarketCategory": 20,
+    "ItemClassCategory": 24
+  },
+  {
+    "_index": 27,
+    "Id": "SmallRelic",
+    "Name": "Малые реликвии",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 28,
+    "Id": "MediumRelic",
+    "Name": "Средние реликвии",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 29,
+    "Id": "LargeRelic",
+    "Name": "Большие реликвии",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 30,
+    "Id": "StackableCurrency",
+    "Name": "Валюта",
+    "TradeMarketCategory": 39,
+    "ItemClassCategory": 6
+  },
+  {
+    "_index": 31,
+    "Id": "QuestItem",
+    "Name": "Вещи для заданий",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 25
+  },
+  {
+    "_index": 32,
+    "Id": "Sceptre",
+    "Name": "Скипетры",
+    "TradeMarketCategory": 11,
+    "ItemClassCategory": 61
+  },
+  {
+    "_index": 33,
+    "Id": "UtilityFlask",
+    "Name": "Обереги",
+    "TradeMarketCategory": 31,
+    "ItemClassCategory": 69
+  },
+  {
+    "_index": 34,
+    "Id": "DONOTUSE7",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 35,
+    "Id": "Map",
+    "Name": "Путевые камни",
+    "TradeMarketCategory": 34,
+    "ItemClassCategory": 26
+  },
+  {
+    "_index": 36,
+    "Id": "Unarmed",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 66
+  },
+  {
+    "_index": 37,
+    "Id": "FishingRod",
+    "Name": "Удочки",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 27
+  },
+  {
+    "_index": 38,
+    "Id": "MapFragment",
+    "Name": "Обрывки карт",
+    "TradeMarketCategory": 37,
+    "ItemClassCategory": 28
+  },
+  {
+    "_index": 39,
+    "Id": "HideoutDoodad",
+    "Name": "Предметы убежища",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 40,
+    "Id": "Microtransaction",
+    "Name": "Микротранзакции",
+    "TradeMarketCategory": 53,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 41,
+    "Id": "Jewel",
+    "Name": "Самоцветы",
+    "TradeMarketCategory": 35,
+    "ItemClassCategory": 29
+  },
+  {
+    "_index": 42,
+    "Id": "DivinationCard",
+    "Name": "Гадальные карты",
+    "TradeMarketCategory": 40,
+    "ItemClassCategory": 30
+  },
+  {
+    "_index": 43,
+    "Id": "DONOTUSE8",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 44,
+    "Id": "DONOTUSE9",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 45,
+    "Id": "DONOTUSE10",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 46,
+    "Id": "MiscMapItem",
+    "Name": "Прочие предметы карт",
+    "TradeMarketCategory": 38,
+    "ItemClassCategory": 33
+  },
+  {
+    "_index": 47,
+    "Id": "Leaguestone",
+    "Name": "Камни лиги",
+    "TradeMarketCategory": 33,
+    "ItemClassCategory": 34
+  },
+  {
+    "_index": 48,
+    "Id": "PantheonSoul",
+    "Name": "Души Пантеона",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 35
+  },
+  {
+    "_index": 49,
+    "Id": "UniqueFragment",
+    "Name": "Фрагменты",
+    "TradeMarketCategory": 41,
+    "ItemClassCategory": 36
+  },
+  {
+    "_index": 50,
+    "Id": "AbyssJewel",
+    "Name": "Самоцветы Бездны",
+    "TradeMarketCategory": 36,
+    "ItemClassCategory": 37
+  },
+  {
+    "_index": 51,
+    "Id": "IncursionItem",
+    "Name": "Предметы Вмешательства",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 38
+  },
+  {
+    "_index": 52,
+    "Id": "DelveSocketableCurrency",
+    "Name": "Валюта Спуска",
+    "TradeMarketCategory": 43,
+    "ItemClassCategory": 39
+  },
+  {
+    "_index": 53,
+    "Id": "Incubator",
+    "Name": "Инкубаторы",
+    "TradeMarketCategory": 45,
+    "ItemClassCategory": 40
+  },
+  {
+    "_index": 54,
+    "Id": "UniqueShard",
+    "Name": "Осколки",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 55,
+    "Id": "UniqueShardBase",
+    "Name": "Стержни осколков",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 56,
+    "Id": "DONOTUSE11",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 57,
+    "Id": "Warstaff",
+    "Name": "Боевые посохи",
+    "TradeMarketCategory": 18,
+    "ItemClassCategory": 5
+  },
+  {
+    "_index": 58,
+    "Id": "DelveStackableSocketableCurrency",
+    "Name": "Валюта Спуска",
+    "TradeMarketCategory": 43,
+    "ItemClassCategory": 39
+  },
+  {
+    "_index": 59,
+    "Id": "AtlasUpgradeItem",
+    "Name": "Предметы улучшения Атласа",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 41
+  },
+  {
+    "_index": 60,
+    "Id": "DONOTUSE4",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 61,
+    "Id": "HiddenItem",
+    "Name": "Сокрытые предметы",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 62,
+    "Id": "DONOTUSE1",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 63,
+    "Id": "DONOTUSE2",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 64,
+    "Id": "DONOTUSE3",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 65,
+    "Id": "HeistContract",
+    "Name": "Контракты",
+    "TradeMarketCategory": 48,
+    "ItemClassCategory": 42
+  },
+  {
+    "_index": 66,
+    "Id": "HeistEquipmentWeapon",
+    "Name": "Разбойничьи принадлежности",
+    "TradeMarketCategory": 48,
+    "ItemClassCategory": 43
+  },
+  {
+    "_index": 67,
+    "Id": "HeistEquipmentTool",
+    "Name": "Разбойничий инструмент",
+    "TradeMarketCategory": 48,
+    "ItemClassCategory": 44
+  },
+  {
+    "_index": 68,
+    "Id": "HeistEquipmentUtility",
+    "Name": "Разбойничьи накидки",
+    "TradeMarketCategory": 48,
+    "ItemClassCategory": 45
+  },
+  {
+    "_index": 69,
+    "Id": "HeistEquipmentReward",
+    "Name": "Разбойничьи броши",
+    "TradeMarketCategory": 48,
+    "ItemClassCategory": 46
+  },
+  {
+    "_index": 70,
+    "Id": "HeistBlueprint",
+    "Name": "Чертежи",
+    "TradeMarketCategory": 48,
+    "ItemClassCategory": 47
+  },
+  {
+    "_index": 71,
+    "Id": "Trinket",
+    "Name": "Украшения",
+    "TradeMarketCategory": 25,
+    "ItemClassCategory": 48
+  },
+  {
+    "_index": 72,
+    "Id": "HeistObjective",
+    "Name": "Предметы кражи",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 49
+  },
+  {
+    "_index": 73,
+    "Id": "ExpeditionLogbook",
+    "Name": "Журналы экспедиции",
+    "TradeMarketCategory": 49,
+    "ItemClassCategory": 50
+  },
+  {
+    "_index": 74,
+    "Id": "IncubatorStackable",
+    "Name": "Инкубаторы",
+    "TradeMarketCategory": 45,
+    "ItemClassCategory": 40
+  },
+  {
+    "_index": 75,
+    "Id": "ArchnemesisMod",
+    "Name": "Свойства Возмездия",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 76,
+    "Id": "Meta Skill Gem",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 64
+  },
+  {
+    "_index": 77,
+    "Id": "Spear",
+    "Name": "Копья",
+    "TradeMarketCategory": 55,
+    "ItemClassCategory": 57
+  },
+  {
+    "_index": 78,
+    "Id": "Crossbow",
+    "Name": "Самострелы",
+    "TradeMarketCategory": 56,
+    "ItemClassCategory": 58
+  },
+  {
+    "_index": 79,
+    "Id": "Focus",
+    "Name": "Фокусы",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 59
+  },
+  {
+    "_index": 80,
+    "Id": "InstanceLocalItem",
+    "Name": "Местные предметы области",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 51
+  },
+  {
+    "_index": 81,
+    "Id": "SentinelDrone",
+    "Name": "Часовые",
+    "TradeMarketCategory": 51,
+    "ItemClassCategory": 52
+  },
+  {
+    "_index": 82,
+    "Id": "MemoryLine",
+    "Name": "Воспоминания",
+    "TradeMarketCategory": 52,
+    "ItemClassCategory": 54
+  },
+  {
+    "_index": 83,
+    "Id": "Flail",
+    "Name": "Кистени",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 60
+  },
+  {
+    "_index": 84,
+    "Id": "Relic",
+    "Name": "Реликвии",
+    "TradeMarketCategory": 54,
+    "ItemClassCategory": 53
+  },
+  {
+    "_index": 85,
+    "Id": "SanctumSpecialRelic",
+    "Name": "Священные реликвии",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 53
+  },
+  {
+    "_index": 86,
+    "Id": "Breachstone",
+    "Name": "Камни Разлома",
+    "TradeMarketCategory": 37,
+    "ItemClassCategory": 55
+  },
+  {
+    "_index": 87,
+    "Id": "GiftBox",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 88,
+    "Id": "VaultKey",
+    "Name": "Ключи от хранилищ",
+    "TradeMarketCategory": 38,
+    "ItemClassCategory": 56
+  },
+  {
+    "_index": 89,
+    "Id": "ItemisedSanctum",
+    "Name": "Монеты Испытания",
+    "TradeMarketCategory": 38,
+    "ItemClassCategory": 33
+  },
+  {
+    "_index": 90,
+    "Id": "DONOTUSE12",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 91,
+    "Id": "UncutSkillGem",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 65
+  },
+  {
+    "_index": 92,
+    "Id": "Buckler",
+    "Name": "Баклеры",
+    "TradeMarketCategory": 57,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 93,
+    "Id": "Thrown One Hand Axe",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 94,
+    "Id": "Thrown Two Hand Axe",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 95,
+    "Id": "ConventionTreasure",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 96,
+    "Id": "TrapTool",
+    "Name": "Ловушки",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 63
+  },
+  {
+    "_index": 97,
+    "Id": "Crossbow Attachment REMOVE",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 98,
+    "Id": "SkillGemToken",
+    "Name": "Вещи на обмен",
+    "TradeMarketCategory": 39,
+    "ItemClassCategory": 6
+  },
+  {
+    "_index": 99,
+    "Id": "Nothing",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 100,
+    "Id": "UltimatumKey",
+    "Name": "Начертанные Ультиматумы",
+    "TradeMarketCategory": 38,
+    "ItemClassCategory": 33
+  },
+  {
+    "_index": 101,
+    "Id": "UncutSupportGem",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 65
+  },
+  {
+    "_index": 102,
+    "Id": "UncutReservationGem",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 65
+  },
+  {
+    "_index": 103,
+    "Id": "Thrown Shield",
+    "Name": "",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  },
+  {
+    "_index": 104,
+    "Id": "SoulCore",
+    "Name": "Размещаемое",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 67
+  },
+  {
+    "_index": 105,
+    "Id": "TowerAugmentation",
+    "Name": "Плитки",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 68
+  },
+  {
+    "_index": 106,
+    "Id": "Omen",
+    "Name": "Предзнаменования",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": 70
+  },
+  {
+    "_index": 107,
+    "Id": "PinnacleKey",
+    "Name": "Древние ключи",
+    "TradeMarketCategory": null,
+    "ItemClassCategory": null
+  }
+]

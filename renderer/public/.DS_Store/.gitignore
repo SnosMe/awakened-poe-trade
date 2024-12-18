@@ -129,6 +129,41 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+__pycache__
 
+vendor/json-api/*.json
+vendor/json-api/en/*.json
+vendor/json-api/ru/*.json
+vendor/json-api/ko/*.json
+vendor/json-api/cmn-Hant/*.json
+vendor/client/tables/*.json
 vendor/client/descriptions/*
 !vendor/client/descriptions/.gitkeep
+
+vendor/client/tables/*
+!vendor/client/tables/index.ts
+!vendor/client/tables/ArmourTypesOverride.json
+!vendor/client/tables/en/.gitkeep
+!vendor/client/tables/ru/.gitkeep
+!vendor/client/tables/ko/.gitkeep
+!vendor/client/tables/cmn-Hant/.gitkeep
+
+!vendor/client/tables/en/ArmourTypesOverride.json
+!vendor/client/tables/ru/ArmourTypesOverride.json
+!vendor/client/tables/ko/ArmourTypesOverride.json
+!vendor/client/tables/cmn-Hant/ArmourTypesOverride.json
+
+
+
+!vendor/json-api/.gitkeep
+!vendor/json-api/en/.gitkeep
+!vendor/json-api/ru/.gitkeep
+!vendor/json-api/ko/.gitkeep
+!vendor/json-api/cmn-Hant/.gitkeep
+
+
+EXPORT/tables/English/*.json
+EXPORT/tables/Korean/*.json
+EXPORT/tables/Russian/*.json
+EXPORT/tables/Traditional Chinese/*.json
+

@@ -223,7 +223,6 @@ export default defineComponent({
       wm.show(props.config.wmId);
       checkPosition.value = e.position;
       advancedCheck.value = e.focusOverlay;
-
       item.value = (
         e.item ? ok(e.item as ParsedItem) : parseClipboard(e.clipboard)
       )

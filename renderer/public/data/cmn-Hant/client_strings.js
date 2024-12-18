@@ -101,5 +101,11 @@ export default {
   CHAT_GUILD: /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_TO: /^@向 (?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_FROM: /^@來自 (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
-  CHAT_WEBTRADE_GEM: /^等級 (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/
+  CHAT_WEBTRADE_GEM: /^等級 (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/,
+  REQUIREMENTS: '需求:',
+  CHARM_SLOTS: '護符欄位:',
+  BASE_SPIRIT: '精魂:',
+  QUIVER_HELP_TEXT: '持弓時才可裝備',
+  FLASK_HELP_TEXT: '右鍵點擊以喝下藥劑。',
+  CHARM_HELP_TEXT: '達成特定條件時會自動使用。'
 }

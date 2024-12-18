@@ -26,8 +26,4 @@ yarn-error.log*
 docs/.vitepress/dist
 docs/.vitepress/cache
 
-
-renderer/public/.DS_Store/EXPORT/tables/English/*.json
-renderer/public/.DS_Store/vendor/client/tables/*.json
-!renderer/public/.DS_Store/vendor/client/tables/ArmourTypesOverride.json
-renderer/public/.DS_Store/vendor/json-api/*.json
+*.bin

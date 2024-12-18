@@ -192,7 +192,6 @@ export function calculatedStatToFilter(
 ): StatFilter {
   const { stat, sources, type } = calc;
   let filter: StatFilter;
-
   if (stat.trade.option) {
     filter = {
       tradeId: stat.trade.ids[type],
@@ -359,8 +358,10 @@ export function calculatedStatToFilter(
               min: percentRoll(roll.value, -percent, Math.floor, dp),
               max: percentRoll(roll.value, +percent, Math.ceil, dp),
             };
-    filterDefault.min = Math.max(filterDefault.min, filterBounds.min);
-    filterDefault.max = Math.min(filterDefault.max, filterBounds.max);
+
+    // HACK: This is #64 and #88
+    // filterDefault.min = Math.max(filterDefault.min, filterBounds.min);
+    // filterDefault.max = Math.min(filterDefault.max, filterBounds.max);
 
     filter.roll = {
       value: roundRoll(roll.value, dp),

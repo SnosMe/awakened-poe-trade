@@ -1,0 +1,620 @@
+{
+  "pseudo.pseudo_total_elemental_resistance": {
+    "filters": [
+      {
+        "id": "explicit.stat_3372524247",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3372524247",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_4220027924",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_4220027924",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_1671376347",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_1671376347",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_resistance": {
+    "filters": [
+      {
+        "id": "explicit.stat_3372524247",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3372524247",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_4220027924",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_4220027924",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_1671376347",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_1671376347",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_2923486259",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2923486259",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_fire_resistance": {
+    "filters": [
+      {
+        "id": "explicit.stat_3372524247",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3372524247",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_cold_resistance": {
+    "filters": [
+      {
+        "id": "explicit.stat_4220027924",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_4220027924",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_lightning_resistance": {
+    "filters": [
+      {
+        "id": "explicit.stat_1671376347",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_1671376347",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_chaos_resistance": {
+    "filters": [
+      {
+        "id": "explicit.stat_2923486259",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2923486259",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_all_attributes": {
+    "filters": [
+      {
+        "id": "explicit.stat_3261801346",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3261801346",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_4080418644",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_4080418644",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_328541901",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_328541901",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_dexterity": {
+    "filters": [
+      {
+        "id": "explicit.stat_3261801346",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3261801346",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_strength": {
+    "filters": [
+      {
+        "id": "explicit.stat_4080418644",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_4080418644",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_intelligence": {
+    "filters": [
+      {
+        "id": "explicit.stat_328541901",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_328541901",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_life": {
+    "filters": [
+      {
+        "id": "explicit.stat_3299347043",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3299347043",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_mana": {
+    "filters": [
+      {
+        "id": "explicit.stat_1050105434",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_1050105434",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo_total_energy_shield": {
+    "filters": [
+      {
+        "id": "explicit.stat_4052037485",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3489782002",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_3489782002",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_attack_speed": {
+    "filters": [
+      {
+        "id": "explicit.stat_210067635",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_681332047",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_681332047",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_cast_speed": {
+    "filters": [
+      {
+        "id": "explicit.stat_2891184298",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2891184298",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_movement_speed": {
+    "filters": [
+      {
+        "id": "explicit.stat_2250533757",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2250533757",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "enchant.stat_2250533757",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_physical_damage": {
+    "filters": [
+      {
+        "id": "explicit.stat_1509134228",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "rune.stat_1509134228",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_elemental_damage": {
+    "filters": [
+      {
+        "id": "explicit.stat_3141070085",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_fire_damage": {
+    "filters": [
+      {
+        "id": "explicit.stat_3962278098",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_3141070085",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_cold_damage": {
+    "filters": [
+      {
+        "id": "explicit.stat_3291658075",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_3141070085",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_lightning_damage": {
+    "filters": [
+      {
+        "id": "explicit.stat_2231156303",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "explicit.stat_3141070085",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_increased_mana_regen": {
+    "filters": [
+      {
+        "id": "explicit.stat_789117908",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_789117908",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  },
+  "pseudo.pseudo_total_spirit": {
+    "filters": [
+      {
+        "id": "explicit.stat_3981240776",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_3981240776",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      }
+    ],
+    "type": "weight",
+    "value": {
+      "min": 0
+    }
+  }
+}

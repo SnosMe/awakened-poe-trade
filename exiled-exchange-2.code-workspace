@@ -41,6 +41,9 @@
       "pdps",
       "uniquefoil",
       "WAYSTONE"
-    ]
+    ],
+    "files.associations": {
+      "*.ndjson": "jsonl"
+    }
   }
 }

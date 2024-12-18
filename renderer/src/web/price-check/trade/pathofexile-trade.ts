@@ -16,7 +16,7 @@ import {
   RATE_LIMIT_RULES,
   preventQueueCreation,
 } from "./common";
-import { STAT_BY_REF } from "@/assets/data";
+import { PSEUDO_ID_TO_TRADE_REQUEST, STAT_BY_REF } from "@/assets/data";
 import { RateLimiter } from "./RateLimiter";
 import { ModifierType } from "@/parser/modifiers";
 import { Cache } from "./Cache";
@@ -105,7 +105,7 @@ interface TradeRequest {
     name?: string | { discriminator: string; option: string };
     type?: string | { discriminator: string; option: string };
     stats: Array<{
-      type: "and" | "if" | "count" | "not";
+      type: "and" | "if" | "count" | "not" | "weight";
       value?: FilterRange;
       filters: Array<{
         id: string;
@@ -113,6 +113,7 @@ interface TradeRequest {
           min?: number;
           max?: number;
           option?: number | string;
+          weight?: number;
         };
         disabled?: boolean;
       }>;
@@ -299,6 +300,7 @@ export function createTradeRequest(
     );
   }
 
+  // Search by category not base type?
   const activeSearch =
     filters.searchRelaxed && !filters.searchRelaxed.disabled
       ? filters.searchRelaxed
@@ -427,6 +429,7 @@ export function createTradeRequest(
 
   // BREAK ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
+  // Meta internal stuff, crafting as empty and setting dps/pdps/edps
   for (const stat of stats) {
     if (stat.tradeId[0] === "item.has_empty_modifier") {
       const TARGET_ID = {
@@ -663,7 +666,9 @@ export function createTradeRequest(
 
   const qAnd = query.stats[0];
   for (const stat of stats) {
-    if (stat.tradeId.length === 1) {
+    if (stat.tradeId[0].startsWith("pseudo.")) {
+      query.stats.push(pseudoPseudoToQuery(stat.tradeId[0], stat));
+    } else if (stat.tradeId.length === 1) {
       qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat));
     } else {
       query.stats.push({
@@ -843,4 +848,11 @@ function nameToQuery(name: string, filters: ItemFilters) {
       option: name,
     };
   }
+}
+
+function pseudoPseudoToQuery(id: string, stat: StatFilter) {
+  const filter = PSEUDO_ID_TO_TRADE_REQUEST[id];
+  filter.value = { ...getMinMax(stat.roll) };
+  filter.disabled = stat.disabled;
+  return filter;
 }

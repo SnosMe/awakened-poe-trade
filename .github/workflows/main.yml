@@ -34,7 +34,7 @@ jobs:
     needs: renderer
     strategy:
       matrix:
-        os: [windows-2019] # ubuntu-20.04, macos-14 is a  missing runner
+        os: [windows-2019, ubuntu-20.04, macos-14] # ubuntu-20.04, macos-14 is a  missing runner
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
