@@ -8,15 +8,21 @@
 2. Run installer
 3. Run Exiled Exchange 2
 4. Launch PoE2 to generate correct files
-5. Copy `apt-data` from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\exiled-exchange-2` to copy your previous settings
+5. Quit PoE2 and EE2 after seeing the banner popup that EE2 loaded
+6. Copy `apt-data` from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\exiled-exchange-2` to copy your previous settings
   - Resulting directory structure should look like this:
   - `%APPDATA%\exiled-exchange-2\apt-data\`
     - `config.json`
-6. Restart Exiled Exchange 2
+7. Edit `config.json` and change the value of "windowTitle": "Path of Exile" to instead be "Path of Exile 2", otherwise it will open only for poe1
+8. Start Exiled Exchange 2 and PoE2
 
 #### Updating from 0.0.1 -> 0.0.10
 
 Follow same steps as tranfering from PoE1, instead of copying from `%APPDATA%\awakened-poe-trade` to `%APPDATA%\exiled-exchange-2` instead copy from `%APPDATA%\awakened-poe2-trade` or `%APPDATA%\awakened-poe2-trade2` to `%APPDATA%\exiled-exchange-2`. After copying files feel free to run the uninstaller for `awakened-poe2-trade` to remove old executables, or delete `%APPDATA%\awakened-poe2-trade` and `Local\Programs\awakened-poe2-trade`
+
+## FAQ
+
+https://kvan7.github.io/Exiled-Exchange-2/faq
 
 ## Tool showcase
 
