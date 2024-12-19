@@ -4,7 +4,8 @@ import { AppConfig } from "@/web/Config";
 
 // pc-ggg, pc-garena
 // const PERMANENT_SC = ['Standard', '標準模式']
-const PERMANENT_HC = ["Hardcore", "專家模式"];
+// const PERMANENT_HC = ["Hardcore", "專家模式"];
+const PERMANENT_HC: string[] = [];
 
 interface ApiLeague {
   id: string;

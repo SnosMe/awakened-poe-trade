@@ -190,6 +190,10 @@ export interface TranslationDict {
   CHAT_WHISPER_TO: RegExp;
   CHAT_WHISPER_FROM: RegExp;
   CHAT_WEBTRADE_GEM: RegExp;
+  // ---
+  FIRE_DAMAGE: string;
+  LIGHTNING_DAMAGE: string;
+  COLD_DAMAGE: string;
 }
 
 export interface Filter {

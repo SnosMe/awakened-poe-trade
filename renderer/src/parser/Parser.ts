@@ -635,6 +635,60 @@ function parseWeapon(section: string[], item: ParsedItem) {
       isParsed = "SECTION_PARSED";
       continue;
     }
+    if (line.startsWith(_$.FIRE_DAMAGE)) {
+      const fireDamage = line
+        .slice(_$.FIRE_DAMAGE.length)
+        .split(", ")
+        .map((element) =>
+          getRollOrMinmaxAvg(
+            element.split("-").map((str) => parseInt(str, 10)),
+          ),
+        )
+        .reduce((sum, x) => sum + x, 0);
+      if (item.weaponELEMENTAL) {
+        item.weaponELEMENTAL = fireDamage + item.weaponELEMENTAL;
+      } else {
+        item.weaponELEMENTAL = fireDamage;
+      }
+      isParsed = "SECTION_PARSED";
+      continue;
+    }
+    if (line.startsWith(_$.COLD_DAMAGE)) {
+      const coldDamage = line
+        .slice(_$.COLD_DAMAGE.length)
+        .split(", ")
+        .map((element) =>
+          getRollOrMinmaxAvg(
+            element.split("-").map((str) => parseInt(str, 10)),
+          ),
+        )
+        .reduce((sum, x) => sum + x, 0);
+      if (item.weaponELEMENTAL) {
+        item.weaponELEMENTAL = coldDamage + item.weaponELEMENTAL;
+      } else {
+        item.weaponELEMENTAL = coldDamage;
+      }
+      isParsed = "SECTION_PARSED";
+      continue;
+    }
+    if (line.startsWith(_$.LIGHTNING_DAMAGE)) {
+      const lightningDamage = line
+        .slice(_$.LIGHTNING_DAMAGE.length)
+        .split(", ")
+        .map((element) =>
+          getRollOrMinmaxAvg(
+            element.split("-").map((str) => parseInt(str, 10)),
+          ),
+        )
+        .reduce((sum, x) => sum + x, 0);
+      if (item.weaponELEMENTAL) {
+        item.weaponELEMENTAL = lightningDamage + item.weaponELEMENTAL;
+      } else {
+        item.weaponELEMENTAL = lightningDamage;
+      }
+      isParsed = "SECTION_PARSED";
+      continue;
+    }
   }
 
   if (isParsed === "SECTION_PARSED") {

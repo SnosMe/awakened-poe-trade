@@ -2,6 +2,20 @@
   "pseudo.pseudo_total_elemental_resistance": {
     "filters": [
       {
+        "id": "explicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
         "id": "explicit.stat_3372524247",
         "value": {
           "weight": 1
@@ -51,6 +65,20 @@
   },
   "pseudo.pseudo_total_resistance": {
     "filters": [
+      {
+        "id": "explicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
       {
         "id": "explicit.stat_3372524247",
         "value": {
@@ -116,6 +144,20 @@
   "pseudo.pseudo_total_fire_resistance": {
     "filters": [
       {
+        "id": "explicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
         "id": "explicit.stat_3372524247",
         "value": {
           "weight": 1
@@ -138,6 +180,20 @@
   "pseudo.pseudo_total_cold_resistance": {
     "filters": [
       {
+        "id": "explicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
         "id": "explicit.stat_4220027924",
         "value": {
           "weight": 1
@@ -159,6 +215,20 @@
   },
   "pseudo.pseudo_total_lightning_resistance": {
     "filters": [
+      {
+        "id": "explicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
+      {
+        "id": "implicit.stat_2901986750",
+        "value": {
+          "weight": 1
+        },
+        "disabled": false
+      },
       {
         "id": "explicit.stat_1671376347",
         "value": {

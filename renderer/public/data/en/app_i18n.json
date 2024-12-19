@@ -131,7 +131,8 @@
     "accessory_trinket": "Trinket",
     "sanctum_relic": "Sanctum Relic",
     "tincture": "Tincture",
-    "azmeri_charm": "Charm"
+    "azmeri_charm": "Charm",
+    "weapon_crossbow": "Crossbow"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",
@@ -170,7 +171,8 @@
     "tag_explicit_warlord": "Warlord",
     "tag_explicit_delve": "Delve",
     "tag_explicit_veiled": "Veiled",
-    "tag_explicit_incursion": "Incursion"
+    "tag_explicit_incursion": "Incursion",
+    "tag_rune": "Rune"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
@@ -185,7 +187,9 @@
     "currency_any": "Any Currency",
     "currency_only_chaos": "Chaos Orb",
     "currency_only_div": "Divine Orb",
-    "currency_chaos_div": "Both Orbs"
+    "currency_chaos_div": "Both Orbs",
+    "currency_exalted_div": "Both Orbs",
+    "currency_only_exalted": "Exalted Orbs"
   },
   "widget": {
     "title": "widget title",
