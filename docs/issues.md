@@ -11,7 +11,7 @@ title: Common issues
 
 3. Are you playing with Vulkan renderer? Update GPU drivers.
 
-    If Awakened works for you with DirectX11/12 renderer,
+    If EE2 works for you with DirectX11/12 renderer,
     then problem is old Vulkan drivers for sure.
 
 4. Delete `%appdata%\exiled-exchange-2`
@@ -35,6 +35,11 @@ title: Common issues
 - [Failed to load leagues](/failed-load-leagues)
 - [How to remove the stopwatch in center of screen?](https://github.com/SnosMe/awakened-poe-trade/issues/219)
 - [Sends a whisper when doing price-check](https://github.com/SnosMe/awakened-poe-trade/issues/178)
+
+## PoE2
+
+- 🔥[Query is too complex](/complex-query)
+- 🔥[Unexpected token ..... is not valid JSON](/invalid-json)
 
 ## Windows
 
