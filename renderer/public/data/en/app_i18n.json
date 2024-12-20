@@ -310,6 +310,7 @@
     "hotkey": "Auto-hide Mode",
     "hotkey_locked": "Open without auto-hide",
     "enable_browser": "Enable builtin browser",
+    "use_pseudo": "Use pseudo mods (disable if you have issues with auth)",
     "builtin_browser_warning": "I am aware that future releases can potentially contain malicious code that can steal my POESESSID.",
     "highlight_hint": "Your items will be highlighted even if this setting is off",
     "show_seller": "Show seller",

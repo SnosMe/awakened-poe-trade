@@ -163,6 +163,7 @@ export default defineComponent({
               item.info.refName === prevItem.info.refName)
               ? prevCurrency
               : undefined,
+          usePseudo: widget.value.usePseudo,
         });
 
         if (

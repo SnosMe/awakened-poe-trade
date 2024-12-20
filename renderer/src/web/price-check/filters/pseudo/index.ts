@@ -325,8 +325,10 @@ const PSEUDO_RULES: PseudoRule[] = [
   // },
 ];
 
-export function filterPseudo(ctx: FiltersCreationContext) {
+export function filterPseudo(ctx: FiltersCreationContext, usePseudo: boolean) {
   const filterByGroup = new Map<string, StatFilter[]>();
+
+  if (!usePseudo) return;
 
   rulesLoop: for (const rule of PSEUDO_RULES) {
     const sources = filterPseudoSources(ctx.statsByType, ({ stat }, source) => {

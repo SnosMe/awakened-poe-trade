@@ -205,6 +205,7 @@ export const defaultConfig = (): Config => ({
       lockedInitialSearch: true,
       activateStockFilter: false,
       builtinBrowser: false,
+      usePseudo: true,
       hotkey: "D",
       hotkeyHold: "Ctrl",
       hotkeyLocked: "Ctrl + Alt + D",

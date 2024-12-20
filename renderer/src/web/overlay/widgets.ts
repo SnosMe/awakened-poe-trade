@@ -42,6 +42,7 @@ export interface PriceCheckWidget extends Widget {
   showCursor: boolean;
   requestPricePrediction: boolean;
   builtinBrowser: boolean;
+  usePseudo: boolean;
   rememberCurrency: boolean;
 }
 
