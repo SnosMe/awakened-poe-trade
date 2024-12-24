@@ -188,7 +188,7 @@ export async function execBulkSearch(
     );
 
     const loadedOnDemand =
-      tradeTag === "chaos" &&
+      tradeTag === "exalted" &&
       resultsTag.length < SHOW_RESULTS &&
       query.total > API_FETCH_LIMIT;
     if (loadedOnDemand) return null;

@@ -51,7 +51,7 @@ export default defineComponent({
       type: Object as PropType<{
         min: number;
         max: number;
-        currency: "chaos" | "div";
+        currency: "exalted" | "div";
       }>,
       required: true,
     },

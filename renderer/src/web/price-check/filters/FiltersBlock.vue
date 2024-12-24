@@ -114,7 +114,7 @@
       />
     </div>
     <!-- Warning that many stats may not work -->
-    <div
+    <!-- <div
       v-if="!statsVisibility.disabled && hasStats"
       class="mb-4 text-center bg-teal-800 rounded-xl"
       :class="presets.length > 1 ? 'mt-1' : 'mt-4'"
@@ -122,7 +122,7 @@
       {{ t("poe2_new.pseudo_note") }}
       <br />
       {{ t("poe2_new.pseudo_note2") }}
-    </div>
+    </div> -->
     <!-- Handled parse error -->
     <div
       v-if="!hasStats && item.rarity !== undefined && item.rarity !== 'Normal'"
@@ -136,13 +136,13 @@
       {{ t("poe2_new.parse_error3") }}
     </div>
     <!-- Warning that bulk exchange does not work -->
-    <div
+    <!-- <div
       v-if="!hasStats && item.category === 'Currency'"
       class="mb-4 text-center bg-teal-900 rounded-xl"
       :class="presets.length > 1 ? 'mt-1' : 'mt-4'"
     >
       {{ t("poe2_new.bulk_exchange") }}
-    </div>
+    </div> -->
 
     <div
       v-if="!statsVisibility.disabled && hasStats"

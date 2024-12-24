@@ -107,5 +107,8 @@ export default {
   BASE_SPIRIT: '精魂:',
   QUIVER_HELP_TEXT: '持弓時才可裝備',
   FLASK_HELP_TEXT: '右鍵點擊以喝下藥劑。',
-  CHARM_HELP_TEXT: '達成特定條件時會自動使用。'
+  CHARM_HELP_TEXT: '達成特定條件時會自動使用。',
+  FIRE_DAMAGE: '',
+  LIGHTNING_DAMAGE: '',
+  COLD_DAMAGE: ''
 }

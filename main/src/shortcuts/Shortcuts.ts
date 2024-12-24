@@ -309,10 +309,14 @@ function pressKeysToCopyItemText(
   // finally press `C` to copy text
   uIOhook.keyTap(UiohookKey.C);
 
-  keys.reverse();
-  for (const key of keys) {
-    uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], "up");
-  }
+  // Timeout to enforce release of keys
+  // Game was dropping the release inputs for some reason
+  setTimeout(() => {
+    keys.reverse();
+    for (const key of keys) {
+      uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], "up");
+    }
+  }, 10);
 }
 
 function isStashArea(mouse: UiohookWheelEvent, poeWindow: GameWindow): boolean {

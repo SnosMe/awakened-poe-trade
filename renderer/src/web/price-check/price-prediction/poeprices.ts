@@ -21,7 +21,7 @@ export interface RareItemPrice {
   max: number;
   min: number;
   confidence: number;
-  currency: "chaos" | "div";
+  currency: "exalted" | "div";
   explanation: Array<{
     name: string;
     contrib: number;
@@ -77,7 +77,7 @@ export async function requestPoeprices(
   }
 
   return {
-    currency: data.currency === "divine" ? "div" : "chaos",
+    currency: data.currency === "divine" ? "div" : "exalted",
     min: data.min,
     max: data.max,
     confidence: Math.round(data.pred_confidence_score),
@@ -118,8 +118,9 @@ export async function sendFeedback(
     method: "POST",
     body,
   });
+  console.log(response);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const text = await response.text();
+  // const text = await response.text();
   // console.assert(text === `"${feedback.option}"`)
 }
 

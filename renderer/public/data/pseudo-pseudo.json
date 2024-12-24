@@ -4,14 +4,14 @@
       {
         "id": "explicit.stat_2901986750",
         "value": {
-          "weight": 1
+          "weight": 3
         },
         "disabled": false
       },
       {
         "id": "implicit.stat_2901986750",
         "value": {
-          "weight": 1
+          "weight": 3
         },
         "disabled": false
       },

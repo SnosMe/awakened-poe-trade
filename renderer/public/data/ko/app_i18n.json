@@ -50,6 +50,7 @@
     "has_empty_affix": "빈 속성 부여",
     "has_empty_prefix": "빈 접두어",
     "has_empty_suffix": "빈 접미어",
+    "spirit": "Spirit: {0}",
     "item_level": "아이템 레벨: {0}",
     "stock": "홈: {0}",
     "map_tier": "지도 등급: {0}",
@@ -57,6 +58,8 @@
     "heist_wings_revealed": "드러낸 부속 건물: {0}",
     "linked_sockets": "연결부: {0}",
     "white_sockets": "흰 홈: {0}",
+    "gem_sockets": "Sockets: {0}",
+    "rune_sockets": "Sockets: {0}",
     "quality": "퀄리티: {0}",
     "gem_level": "젬 레벨: {0}",
     "sentinel_charge": "Charge: {0}",
@@ -125,7 +128,8 @@
     "accessory_trinket": "도둑 장신구",
     "sanctum_relic": "성역 유물",
     "tincture": "팅크",
-    "azmeri_charm": "부적"
+    "azmeri_charm": "부적",
+    "weapon_crossbow": "Crossbow"
   },
   "filters": {
     "selected_some": "{1} 중 {0}개 선택",
@@ -164,7 +168,8 @@
     "tag_explicit_warlord": "전쟁 군주",
     "tag_explicit_delve": "탐광",
     "tag_explicit_veiled": "장막",
-    "tag_explicit_incursion": "기습"
+    "tag_explicit_incursion": "기습",
+    "tag_rune": "Rune"
   },
   "online_filter": {
     "offline_toggle": "오프라인 & 온라인",
@@ -179,7 +184,9 @@
     "currency_any": "아무 화폐",
     "currency_only_chaos": "카오스 오브",
     "currency_only_div": "디바인 오브",
-    "currency_chaos_div": "카오스&디바인"
+    "currency_chaos_div": "카오스&디바인",
+    "currency_exalted_div": "카오스&디바인",
+    "currency_only_exalted": "Exalted Orbs"
   },
   "widget": {
     "title": "위젯 이름",
@@ -299,6 +306,7 @@
     "hotkey": "Auto-hide Mode",
     "hotkey_locked": "Open without auto-hide",
     "enable_browser": "Enable builtin browser",
+    "use_pseudo": "Use pseudo mods (disable if you have issues with auth)",
     "builtin_browser_warning": "I am aware that future releases can potentially contain malicious code that can steal my POESESSID.",
     "highlight_hint": "Your items will be highlighted even if this setting is off",
     "show_seller": "Show seller",
@@ -312,5 +320,15 @@
     "select_stock": "Always select \"Stock\" filter",
     "show_prediction": "Show price prediction",
     "remember_currency": "Remember the Buyout Currency filter"
+  },
+  "poe2_new": {
+    "beta_warning": "이 버전은 베타버전입니다. 예기치 못한 버그가 있을 수 있습니다.",
+    "beta_warning2": "문제가 생기면 바로 알려주세요.",
+    "pseudo_note": "해당 접사는 아직 거래소에서 검색이 불가능 합니다.",
+    "pseudo_note2": "아이템이 원래의 가격보다 더 비쌀 수도 있습니다.",
+    "parse_error": "예기치 못한 문제로 이 아이템은 검색할 수 없습니다.",
+    "parse_error2": "아마 특정 접사가 아직 검색이 불가능한 것으로 보입니다.",
+    "parse_error3": "(새로운 접사 혹은 POE 1과는 다른 이름일 수도 있습니다)",
+    "bulk_exchange": "아이템 대량교환 비율 표시는 아직 시행되지 않습니다."
   }
 }

@@ -2,9 +2,9 @@
   <div
     class="bg-orange-400 text-gray-900 text-center text-sm font-bold text-shadow-lg"
   >
-    {{ info.str1 }}
+    {{ t("poe2_new.beta_warning") }}
     <br />
-    {{ info.str2 }}
+    {{ t("poe2_new.beta_warning2") }}
   </div>
 </template>
 
@@ -15,13 +15,8 @@ import { useI18n } from "vue-i18n";
 export default defineComponent({
   setup() {
     const { t } = useI18n();
-
-    const info = {
-      str1: t("poe2_new.beta_warning"),
-      str2: t("poe2_new.beta_warning2"),
-    };
     return {
-      info,
+      t,
     };
   },
 });

@@ -1,4 +1,4 @@
-import { ITEM_BY_REF } from "@/assets/data";
+import { ITEM_BY_TRANSLATED } from "@/assets/data";
 
 export function magicBasetype(name: string) {
   const words = name.split(" ");
@@ -11,7 +11,7 @@ export function magicBasetype(name: string) {
 
   const result = perm
     .map((name) => {
-      const result = ITEM_BY_REF("ITEM", name);
+      const result = ITEM_BY_TRANSLATED("ITEM", name);
       return { name, found: result && result[0].craftable };
     })
     .filter((res) => res.found)

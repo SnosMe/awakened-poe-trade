@@ -35,7 +35,7 @@
         src="/images/divine.png"
         class="max-w-full max-h-full"
       />
-      <img v-else src="/images/chaos.png" class="max-w-full max-h-full" />
+      <img v-else src="/images/exa.png" class="max-w-full max-h-full" />
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default defineComponent({
       type: Object as PropType<{
         min: number;
         max: number;
-        currency: "div" | "chaos";
+        currency: "div" | "exalted";
       }>,
       default: undefined,
     },

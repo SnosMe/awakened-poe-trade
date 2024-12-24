@@ -39,7 +39,7 @@
               :price="{
                 min: stableOrbCost,
                 max: stableOrbCost,
-                currency: 'chaos',
+                currency: 'exalted',
               }"
               item-img="/images/divine.png"
             />

@@ -107,5 +107,8 @@ export default {
   BASE_SPIRIT: '정신력:',
   QUIVER_HELP_TEXT: '활 장착',
   FLASK_HELP_TEXT: '마시려면 우클릭하십시오.',
-  CHARM_HELP_TEXT: '조건이 충족되면 자동으로 '
+  CHARM_HELP_TEXT: '조건이 충족되면 자동으로 ',
+  FIRE_DAMAGE: '',
+  LIGHTNING_DAMAGE: '',
+  COLD_DAMAGE: ''
 }

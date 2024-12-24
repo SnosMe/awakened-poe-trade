@@ -151,6 +151,7 @@ import { ParsedItem } from "@/parser";
 import { artificialSlowdown } from "./artificial-slowdown";
 import OnlineFilter from "./OnlineFilter.vue";
 import TradeLinks from "./TradeLinks.vue";
+import { Host } from "@/web/background/IPC";
 
 const slowdown = artificialSlowdown(900);
 
@@ -294,7 +295,6 @@ export default defineComponent({
   },
   setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
-
     watch(
       () => props.item,
       (item) => {
@@ -337,7 +337,11 @@ export default defineComponent({
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
       openTradeLink() {
-        showBrowser(makeTradeLink());
+        if (widget.value.builtinBrowser && Host.isElectron) {
+          showBrowser(makeTradeLink());
+        } else {
+          window.open(makeTradeLink());
+        }
       },
     };
   },

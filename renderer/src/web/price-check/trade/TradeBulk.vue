@@ -13,12 +13,12 @@
             class="btn flex items-center mr-1"
             :style="{
               background:
-                selectedCurr !== 'xchgChaos' ? 'transparent' : undefined,
+                selectedCurr !== 'xchgExalted' ? 'transparent' : undefined,
             }"
-            @click="selectedCurr = 'xchgChaos'"
+            @click="selectedCurr = 'xchgExalted'"
           >
-            <img src="/images/chaos.png" class="trade-bulk-currency-icon" />
-            <span>{{ result.xchgChaos.listed.value?.total ?? "?" }}</span>
+            <img src="/images/exa.png" class="trade-bulk-currency-icon" />
+            <span>{{ result.xchgExalted.listed.value?.total ?? "?" }}</span>
           </button>
           <button
             class="btn flex items-center mr-1"
@@ -49,7 +49,7 @@
                 style="line-height: 1.3125rem"
               >
                 <span class="w-8 inline-block text-right -ml-px mr-px">{{
-                  selectedCurr === "xchgChaos" ? "chaos" : "div"
+                  selectedCurr === "xchgExalted" ? "exalt" : "div"
                 }}</span
                 ><span>{{ "\u2009" }}/{{ "\u2009" }}</span
                 ><span class="w-8 inline-block">{{ t(":bulk") }}</span>
@@ -169,12 +169,13 @@ import { PriceCheckWidget } from "@/web/overlay/interfaces";
 import { artificialSlowdown } from "./artificial-slowdown";
 import OnlineFilter from "./OnlineFilter.vue";
 import TradeLinks from "./TradeLinks.vue";
+import { Host } from "@/web/background/IPC";
 
 const slowdown = artificialSlowdown(900);
 
 function useBulkApi() {
   type BulkSearchExtended = Record<
-    "xchgChaos" | "xchgStable",
+    "xchgExalted" | "xchgStable",
     {
       listed: Ref<BulkSearch | null>;
       listedLazy: ComputedRef<PricingResult[]>;
@@ -195,11 +196,11 @@ function useBulkApi() {
 
       // override, because at league start many players set wrong price, and this breaks optimistic search
       const have =
-        item.info.refName === "Chaos Orb"
+        item.info.refName === "Exalted Orb"
           ? ["divine"]
           : item.info.refName === "Divine Orb"
-            ? ["chaos"]
-            : ["divine", "chaos"];
+            ? ["exalted"]
+            : ["divine", "exalted"];
 
       const optimisticSearch = await execBulkSearch(item, filters, have, {
         accountName: AppConfig().accountName,
@@ -212,7 +213,12 @@ function useBulkApi() {
             optimisticSearch,
             "divine",
           ),
-          xchgChaos: getResultsByHave(item, filters, optimisticSearch, "chaos"),
+          xchgExalted: getResultsByHave(
+            item,
+            filters,
+            optimisticSearch,
+            "exalted",
+          ),
         };
       }
     } catch (err) {
@@ -224,7 +230,7 @@ function useBulkApi() {
     item: ParsedItem,
     filters: ItemFilters,
     preloaded: Array<BulkSearch | null>,
-    have: "divine" | "chaos",
+    have: "divine" | "exalted",
   ) {
     const _result = shallowRef(
       preloaded.some((res) => res?.haveTag === have)
@@ -249,7 +255,7 @@ function useBulkApi() {
             items.value = _result.value.listed;
             const otherHave =
               have === "divine"
-                ? result.value?.xchgChaos?.listed.value!
+                ? result.value?.xchgExalted?.listed.value!
                 : result.value?.xchgStable?.listed.value!;
             // fix best guess we did while making optimistic search
             otherHave.total -= _result.value.total;
@@ -268,6 +274,25 @@ function useBulkApi() {
   return { error, result, search };
 }
 
+// function tempOverrideApi() {
+//   async function search(item: ParsedItem, filters: ItemFilters) {
+//     console.warn("Bulk Exchange is not available in this version.");
+//   }
+
+//   const error = shallowRef<string | null>(null);
+//   error.value = "Bulk Exchange is not available in this version.";
+
+//   const result: ShallowRef<Record<
+//     "xchgExalted" | "xchgStable",
+//     {
+//       listed: Ref<BulkSearch | null>;
+//       listedLazy: ComputedRef<PricingResult[]>;
+//     }
+//   > | null> = shallowRef(null);
+
+//   return { error, result, search };
+// }
+
 export default defineComponent({
   components: { OnlineFilter, TradeLinks, UiErrorBox },
   props: {
@@ -283,10 +308,13 @@ export default defineComponent({
   setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
     const { error, result, search } = useBulkApi();
+    // const { error, result, search } = tempOverrideApi();
 
     const showBrowser = inject<(url: string) => void>("builtin-browser")!;
 
-    const selectedCurr = shallowRef<"xchgChaos" | "xchgStable">("xchgChaos");
+    const selectedCurr = shallowRef<"xchgExalted" | "xchgStable">(
+      "xchgExalted",
+    );
 
     watch(
       () => props.item,
@@ -307,20 +335,21 @@ export default defineComponent({
 
     watch(result, () => {
       const stableTotal = result.value?.xchgStable.listed.value?.total;
-      const chaosTotal = result.value?.xchgChaos.listed.value?.total;
+      const exaltedTotal = result.value?.xchgExalted.listed.value?.total;
       if (stableTotal == null) {
-        selectedCurr.value = "xchgChaos";
-      } else if (chaosTotal == null) {
+        selectedCurr.value = "xchgExalted";
+      } else if (exaltedTotal == null) {
         selectedCurr.value = "xchgStable";
       } else {
         selectedCurr.value =
-          stableTotal > chaosTotal ? "xchgStable" : "xchgChaos";
+          stableTotal > exaltedTotal ? "xchgStable" : "xchgExalted";
       }
     });
 
     function makeTradeLink(_have?: string[]) {
       const have =
-        _have ?? (selectedCurr.value === "xchgStable" ? ["divine"] : ["chaos"]);
+        _have ??
+        (selectedCurr.value === "xchgStable" ? ["divine"] : ["exalted"]);
       const httpPostBody = createTradeRequest(props.filters, props.item, have);
       const httpGetQuery = { exchange: httpPostBody.query };
       return `https://${getTradeEndpoint()}/trade2/exchange/poe2/${props.filters.trade.league}?q=${JSON.stringify(httpGetQuery)}`;
@@ -340,7 +369,11 @@ export default defineComponent({
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
       openTradeLink() {
-        showBrowser(makeTradeLink(["mirror"]));
+        if (widget.value.builtinBrowser && Host.isElectron) {
+          showBrowser(makeTradeLink(["mirror"]));
+        } else {
+          window.open(makeTradeLink(["mirror"]));
+        }
       },
     };
   },

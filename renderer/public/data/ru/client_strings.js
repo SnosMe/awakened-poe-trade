@@ -141,5 +141,8 @@ export default {
   BASE_SPIRIT: 'Дух:',
   QUIVER_HELP_TEXT: 'Можно использовать',
   FLASK_HELP_TEXT: 'Щёлкните ПКМ, чтобы выпить.',
-  CHARM_HELP_TEXT: 'Используется автоматически при определённых условиях'
+  CHARM_HELP_TEXT: 'Используется автоматически при определённых условиях',
+  FIRE_DAMAGE: 'Урон от огня:',
+  LIGHTNING_DAMAGE: 'Урон от молнии:',
+  COLD_DAMAGE: 'Урон от холода:'
 }

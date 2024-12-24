@@ -1,8 +1,9 @@
 <template>
   <div v-if="show" class="p-4 layout-column min-h-0">
     <filter-name :filters="itemFilters" :item="item" />
-    <price-prediction v-if="showPredictedPrice" class="mb-4" :item="item" />
-    <price-trend v-else :item="item" :filters="itemFilters" />
+    <!-- <price-prediction v-if="showPredictedPrice" class="mb-4" :item="item" /> -->
+    <!-- <price-trend v-else :item="item" :filters="itemFilters" /> -->
+    <price-trend :item="item" :filters="itemFilters" />
     <filters-block
       ref="filtersComponent"
       :filters="itemFilters"

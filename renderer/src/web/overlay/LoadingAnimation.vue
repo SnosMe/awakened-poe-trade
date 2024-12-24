@@ -55,7 +55,7 @@ Host.onEvent("MAIN->OVERLAY::overlay-attached", () => {
 .box::before {
   position: absolute;
   content: "";
-  background: url("/images/exa.png") no-repeat top right/contain;
+  background: url("/images/jeweler.png") no-repeat top right/contain;
   right: 100%;
   width: 100%;
   height: 100%;

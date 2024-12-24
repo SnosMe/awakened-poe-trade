@@ -9,8 +9,8 @@
       "path": "main"
     },
     {
-      "name": "DataStore",
-      "path": "./renderer/public/.DS_Store"
+      "name": "Data Parser",
+      "path": "dataParser"
     },
     {
       "name": "docs",
@@ -26,7 +26,8 @@
       "main/": true,
       "renderer/": true,
       "docs/": true,
-      "dist/": true
+      "dist/": true,
+      "dataParser/": true
     },
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
