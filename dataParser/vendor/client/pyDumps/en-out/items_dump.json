@@ -26993,8 +26993,8 @@
         },
         "armour": {
             "es": [
-                71,
-                71
+                70,
+                70
             ]
         }
     },
@@ -39989,6 +39989,38 @@
         }
     },
     "3202": {
+        "name": "Bidding",
+        "refName": "Bidding",
+        "namespace": "GEM",
+        "class": 19,
+        "dropLevel": 1,
+        "width": 1,
+        "height": 1,
+        "craftable": {
+            "category": "Support Skill Gem"
+        },
+        "gem": {
+            "awakened": false,
+            "transfigured": false
+        }
+    },
+    "3203": {
+        "name": "Tremors",
+        "refName": "Tremors",
+        "namespace": "GEM",
+        "class": 19,
+        "dropLevel": 1,
+        "width": 1,
+        "height": 1,
+        "craftable": {
+            "category": "Support Skill Gem"
+        },
+        "gem": {
+            "awakened": false,
+            "transfigured": false
+        }
+    },
+    "3204": {
         "name": "Ember Fusillade",
         "refName": "Ember Fusillade",
         "namespace": "GEM",
@@ -40004,7 +40036,7 @@
             "transfigured": false
         }
     },
-    "3203": {
+    "3205": {
         "name": "Spark",
         "refName": "Spark",
         "namespace": "GEM",
@@ -40020,7 +40052,7 @@
             "transfigured": false
         }
     },
-    "3204": {
+    "3206": {
         "name": "Expanding Ground",
         "refName": "Expanding Ground",
         "namespace": "GEM",
@@ -40036,7 +40068,7 @@
             "transfigured": false
         }
     },
-    "3205": {
+    "3207": {
         "name": "Lightning Bolt",
         "refName": "Lightning Bolt",
         "namespace": "GEM",

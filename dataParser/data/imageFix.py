@@ -1,7 +1,7 @@
 import json
 import os
 
-SUPPORTED_LANG = ("en", "ru", "ko", "cmn-Hant")
+SUPPORTED_LANG = ("en", "ru", "ko", "cmn-Hant", "ja")
 
 
 def get_script_dir(lang="en"):

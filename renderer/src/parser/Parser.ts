@@ -6,8 +6,9 @@ import {
   ITEM_BY_REF,
   STAT_BY_MATCH_STR,
   BaseType,
+  RUNE_SINGLE_VALUE,
 } from "@/assets/data";
-import { ModifierType, sumStatsByModType } from "./modifiers";
+import { ModifierType, StatCalculated, sumStatsByModType } from "./modifiers";
 import {
   linesToStatStrings,
   tryParseTranslation,
@@ -19,6 +20,7 @@ import {
   ParsedItem,
   ItemInfluence,
   ItemRarity,
+  Rune,
 } from "./ParsedItem";
 import { magicBasetype } from "./magic-name";
 import {
@@ -74,6 +76,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseInfluence,
   parseMap,
   parseSockets,
+  parseRuneSockets,
   parseHeistBlueprint,
   parseAreaLevel,
   parseAtzoatlRooms,
@@ -85,18 +88,24 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseLogbookArea,
   parseLogbookArea,
   parseModifiersPoe2, // enchant
-  parseModifiersPoe2, // scourge
+  parseModifiersPoe2, // rune
   parseModifiersPoe2, // implicit
   parseModifiersPoe2, // explicit
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
+  { virtual: applyRuneSockets },
   { virtual: pickCorrectVariant },
   { virtual: calcBasePercentile },
 ];
 
 export function parseClipboard(clipboard: string): Result<ParsedItem, string> {
   try {
+    const chatRegex = /\[.*?\]|\[.*?\|.*?\]/;
+    const isFromChat = chatRegex.test(clipboard);
+    if (isFromChat) {
+      clipboard = parseChat(clipboard);
+    }
     let sections = itemTextToSections(clipboard);
 
     if (sections[0][2] === _$.CANNOT_USE_ITEM) {
@@ -126,6 +135,9 @@ export function parseClipboard(clipboard: string): Result<ParsedItem, string> {
           break;
         }
       }
+    }
+    if (parsed.isOk() && isFromChat) {
+      parsed.value.fromChat = isFromChat;
     }
     return Object.freeze(parsed);
   } catch (e) {
@@ -530,24 +542,52 @@ function parseStackSize(section: string[], item: ParsedItem) {
   return "SECTION_SKIPPED";
 }
 
-function parseSockets(section: string[], item: ParsedItem) {
+function parseRuneSockets(section: string[], item: ParsedItem) {
+  const categoryMax = getMaxSockets(item.category);
+  const armourOrWeapon = categoryMax && isArmourOrWeapon(item.category);
+  if (!armourOrWeapon) return "PARSER_SKIPPED";
   if (section[0].startsWith(_$.SOCKETS)) {
-    let sockets = section[0].slice(_$.SOCKETS.length).trimEnd();
+    const sockets = section[0].slice(_$.SOCKETS.length).trimEnd();
+    const totalMax = Math.max(sockets.split("S").length - 1, categoryMax);
+    item.runeSockets = {
+      total: totalMax,
+      empty: totalMax,
+      runes: [],
+      type: armourOrWeapon,
+    };
 
-    item.sockets = {
+    return "SECTION_PARSED";
+  }
+  if (categoryMax) {
+    item.runeSockets = {
+      total: categoryMax,
+      empty: categoryMax,
+      runes: [],
+      type: armourOrWeapon,
+    };
+  }
+  return "SECTION_SKIPPED";
+}
+
+function parseSockets(section: string[], item: ParsedItem) {
+  if (item.category === ItemCategory.Gem && section[0].startsWith(_$.SOCKETS)) {
+    let sockets = section[0].slice(_$.SOCKETS.length).trimEnd();
+    sockets = sockets.replace(/[^ -]/g, "#");
+
+    item.gemSockets = {
+      number: sockets.split("#").length - 1,
       white: sockets.split("W").length - 1,
       linked: undefined,
     };
 
-    sockets = sockets.replace(/[^ -]/g, "#");
     if (sockets === "#-#-#-#-#-#") {
-      item.sockets.linked = 6;
+      item.gemSockets.linked = 6;
     } else if (
       sockets === "# #-#-#-#-#" ||
       sockets === "#-#-#-#-# #" ||
       sockets === "#-#-#-#-#"
     ) {
-      item.sockets.linked = 5;
+      item.gemSockets.linked = 5;
     }
     return "SECTION_PARSED";
   }
@@ -942,6 +982,42 @@ function parseModifiersPoe2(section: string[], item: ParsedItem) {
 //   return "SECTION_PARSED";
 // }
 
+function applyRuneSockets(item: ParsedItem) {
+  // If we have any rune sockets
+  if (item.runeSockets) {
+    // Count current mods that are of type Rune
+    const runeMods = item.newMods.filter(
+      (mod) => mod.info.type === ModifierType.Rune,
+    );
+    const runeStats = item.statsByType.filter(
+      (calc) => calc.type === ModifierType.Rune,
+    );
+    const runes = runeMods
+      .map((mod) => {
+        const stat = runeStats.find(
+          (stat) => stat.sources[0].stat === mod.stats[0],
+        );
+        if (!stat) return [];
+        return statToRune(mod, stat);
+      })
+      .flat();
+
+    item.runeSockets.runes.push(...runes);
+
+    const potentialEmptySockets = item.runeSockets.total - runes.length;
+
+    item.runeSockets.empty = potentialEmptySockets;
+    // If we have any empty sockets, add them
+    if (potentialEmptySockets > 0) {
+      for (let i = 0; i < potentialEmptySockets; i++) {
+        item.runeSockets.runes.push({
+          isEmpty: true,
+        });
+      }
+    }
+  }
+}
+
 function parseMirrored(section: string[], item: ParsedItem) {
   if (section.length === 1) {
     if (section[0] === _$.MIRRORED) {
@@ -1263,10 +1339,12 @@ function parseStatsFromMod(
         translation: found.matcher,
       });
     } else {
-      item.unknownModifiers.push({
-        text: modifier.info.name!,
-        type: modifier.info.type,
-      });
+      if (item.rarity !== ItemRarity.Unique) {
+        item.unknownModifiers.push({
+          text: modifier.info.name!,
+          type: modifier.info.type,
+        });
+      }
     }
     return true;
   }
@@ -1283,12 +1361,14 @@ function parseStatsFromMod(
     }
   }
 
-  item.unknownModifiers.push(
-    ...stat.value.map((line) => ({
-      text: line,
-      type: modifier.info.type,
-    })),
-  );
+  if (item.rarity !== ItemRarity.Unique) {
+    item.unknownModifiers.push(
+      ...stat.value.map((line) => ({
+        text: line,
+        type: modifier.info.type,
+      })),
+    );
+  }
   return true;
 }
 
@@ -1339,4 +1419,101 @@ export function removeLinesEnding(
   return lines.map((line) =>
     line.endsWith(ending) ? line.slice(0, -ending.length) : line,
   );
+}
+
+function parseChat(clipboard: string): string {
+  // check if clipboard from chat
+  const chatRegex = /\[.*?\]|\[.*?\|.*?\]/;
+  if (!chatRegex.test(clipboard)) return clipboard;
+  // choose the right item includes "|"
+  let preprocessString = clipboard.replace(/\[.*?\|(.*?)\]/g, "$1");
+  // remove brackets
+  preprocessString = preprocessString.replace(/\[(.*?)\]/g, "$1");
+  return preprocessString;
+}
+function getMaxSockets(category: ItemCategory | undefined) {
+  switch (category) {
+    case ItemCategory.BodyArmour:
+    case ItemCategory.TwoHandedAxe:
+    case ItemCategory.TwoHandedMace:
+    case ItemCategory.TwoHandedSword:
+    case ItemCategory.Crossbow:
+    case ItemCategory.Bow:
+    case ItemCategory.Warstaff:
+    case ItemCategory.Staff:
+      return 2;
+    case ItemCategory.Helmet:
+    case ItemCategory.Shield:
+    case ItemCategory.Gloves:
+    case ItemCategory.Boots:
+    case ItemCategory.OneHandedAxe:
+    case ItemCategory.OneHandedMace:
+    case ItemCategory.OneHandedSword:
+    case ItemCategory.Quiver:
+    case ItemCategory.Claw:
+    case ItemCategory.Dagger:
+    case ItemCategory.Wand:
+    case ItemCategory.Sceptre:
+    case ItemCategory.Focus:
+      return 1;
+    default:
+      return 0;
+  }
+}
+
+function isArmourOrWeapon(
+  category: ItemCategory | undefined,
+): "armour" | "weapon" | undefined {
+  switch (category) {
+    case ItemCategory.BodyArmour:
+    case ItemCategory.Boots:
+    case ItemCategory.Gloves:
+    case ItemCategory.Helmet:
+    case ItemCategory.Shield:
+      return "armour";
+    case ItemCategory.OneHandedAxe:
+    case ItemCategory.OneHandedMace:
+    case ItemCategory.OneHandedSword:
+    case ItemCategory.Quiver:
+    case ItemCategory.Claw:
+    case ItemCategory.Dagger:
+    case ItemCategory.Wand:
+    case ItemCategory.Sceptre:
+    case ItemCategory.TwoHandedAxe:
+    case ItemCategory.TwoHandedMace:
+    case ItemCategory.TwoHandedSword:
+    case ItemCategory.Crossbow:
+    case ItemCategory.Bow:
+    case ItemCategory.Warstaff:
+    case ItemCategory.Staff:
+      return "weapon";
+    default:
+      return undefined;
+  }
+}
+
+function statToRune(mod: ParsedModifier, statCalc: StatCalculated): Rune[] {
+  if (mod.info.type !== ModifierType.Rune) return [];
+  const runeTradeId = statCalc.stat.trade.ids[ModifierType.Rune][0];
+  const runeSingle = RUNE_SINGLE_VALUE[runeTradeId];
+
+  // Calculate how many of this rune are in the item
+  const runeAppliedValue = statCalc.sources[0].contributes!.value;
+  const runeSingleValue = runeSingle.values[0];
+  const totalRunes = Math.floor(runeAppliedValue / runeSingleValue);
+
+  // Get original mod ref text
+  const modRef = runeSingle.baseStat;
+
+  // Return one rune for each rune in the item
+  const runes: Rune[] = [];
+  for (let i = 0; i < totalRunes; i++) {
+    runes.push({
+      isEmpty: false,
+      rune: runeSingle.rune,
+      text: modRef,
+    });
+  }
+
+  return runes;
 }

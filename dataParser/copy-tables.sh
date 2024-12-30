@@ -11,9 +11,13 @@ cp -R EXPORT/tables/Korean/* vendor/client/tables/ko/
 echo "Copying files from EXPORT/tables/Traditional Chinese to data/cmn-Hant"
 cp -R EXPORT/tables/Traditional\ Chinese/* vendor/client/tables/cmn-Hant/
 
+echo "Copying files from EXPORT/tables/Japanese to data/ja"
+cp -R EXPORT/tables/Japanese/* vendor/client/tables/ja/
+
 echo "Copying not generated files from english to other languages"
 
 # Copy without overwriting English -> data/ru
 cp -n vendor/client/tables/en/* vendor/client/tables/ru/
 cp -n vendor/client/tables/en/* vendor/client/tables/ko/
 cp -n vendor/client/tables/en/* vendor/client/tables/cmn-Hant/
+cp -n vendor/client/tables/en/* vendor/client/tables/ja/

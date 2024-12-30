@@ -4,6 +4,7 @@ import {
   StatFilter,
   INTERNAL_TRADE_IDS,
   InternalTradeId,
+  RuneFilter,
 } from "../filters/interfaces";
 import { setProperty as propSet } from "dot-prop";
 import { DateTime } from "luxon";
@@ -65,6 +66,7 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.SkillGem, "gem.activegem"],
   [ItemCategory.SupportGem, "gem.supportgem"],
   [ItemCategory.MetaGem, "gem.metagem"],
+  [ItemCategory.Focus, "armour.focus"],
 ]);
 
 const TOTAL_MODS_TEXT = {
@@ -215,6 +217,7 @@ interface FetchResult {
     ilvl?: number;
     stackSize?: number;
     corrupted?: boolean;
+    gemSockets?: string[];
     properties?: Array<{
       values: [[string, number]];
       type:
@@ -243,6 +246,7 @@ export interface PricingResult {
   corrupted?: boolean;
   quality?: string;
   level?: string;
+  gemSockets?: number;
   relativeDate: string;
   priceAmount: number;
   priceCurrency: string;
@@ -257,6 +261,7 @@ export function createTradeRequest(
   filters: ItemFilters,
   stats: StatFilter[],
   item: ParsedItem,
+  runeFilters: RuneFilter[],
 ) {
   const body: TradeRequest = {
     query: {
@@ -363,6 +368,17 @@ export function createTradeRequest(
 
   // EQUIPMENT FILTERS
 
+  if (runeFilters.length > 0) {
+    const emptyRuneSockets = runeFilters.filter((rune) => rune.isEmpty);
+    if (emptyRuneSockets.length > 0) {
+      propSet(
+        query.filters,
+        "equipment_filters.filters.rune_sockets.min",
+        emptyRuneSockets.filter((rune) => !rune.disabled).length,
+      );
+    }
+  }
+
   // REQ FILTERS
 
   // MAP (WAYSTONE) FILTERS
@@ -386,6 +402,14 @@ export function createTradeRequest(
       query.filters,
       "misc_filters.filters.gem_level.min",
       filters.gemLevel.value,
+    );
+  }
+
+  if (filters.socketNumber && !filters.socketNumber.disabled) {
+    propSet(
+      query.filters,
+      "misc_filters.filters.gem_sockets.min",
+      filters.socketNumber.value,
     );
   }
 
@@ -772,6 +796,7 @@ export async function requestResults(
         ?.values[0][0],
       level: result.item.properties?.find((prop) => prop.type === 5)
         ?.values[0][0],
+      gemSockets: result.item.gemSockets?.length,
       relativeDate:
         DateTime.fromISO(result.listing.indexed).toRelative({
           style: "short",

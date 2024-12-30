@@ -30,6 +30,7 @@ LANG_CODES_TO_NAMES = {
     "ru": "Russian",
     "ko": "Korean",
     "cmn-Hant": "Traditional Chinese",
+    "ja": "Japanese",
 }
 
 
@@ -298,6 +299,8 @@ class Parser:
 
             self.stats[id] = name
 
+        logger.info(f"Stats: {len(self.stats)}")
+
         # translations
         for file in self.translation_files:
             logger.debug(f"Checking translation file: {file}")
@@ -312,11 +315,13 @@ class Parser:
                 logger.debug(f"Parsing translation file: {file}")
                 self.new_parse_translation_file(file)
 
+        logger.info(f"Mod translations: {len(self.mod_translations)}")
+
         for mod in self.mods_file:
             id = mod.get("Id")
-            stats_key = mod.get("StatsKey1")
+            stats_key = mod.get("Stat1")
 
-            logger.debug(f"Processing mod - ID: {id}, StatsKey: {stats_key}")
+            logger.debug(f"Processing mod - ID: {id}, Stat: {stats_key}")
 
             if stats_key is not None:
                 stats_id = self.stats.get(stats_key)
@@ -355,6 +360,14 @@ class Parser:
                         "matchers": translation.get("matchers"),
                         "trade": trade,
                     }
+                else:
+                    logger.debug(
+                        f"Mod {id} has no translations. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                    )
+            else:
+                logger.debug(
+                    f"Mod {id} has no stats_key. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                )
 
         logger.debug("Completed parsing mods.")
 
@@ -418,7 +431,7 @@ class Parser:
             if len(name) == 0:
                 continue
 
-            class_key = item.get("ItemClassesKey")
+            class_key = item.get("ItemClass")
             refName = name
             if id in self.base_en_items_lookup:
                 refName = self.base_en_items_lookup[id]
@@ -442,7 +455,7 @@ class Parser:
 
         # convert base items into gems
         for gem in self.skill_gems:
-            id = gem.get("BaseItemTypesKey")
+            id = gem.get("BaseItemType")
             if id in self.items:
                 self.items[id].update(
                     {
@@ -454,7 +467,7 @@ class Parser:
         # weapons and armor need the craftable tag ("craftable": "type (helmet, boots etc)")
         # convert base items into weapons
         for wpn in self.weapon_types:
-            id = wpn.get("BaseItemTypesKey")
+            id = wpn.get("BaseItemType")
 
             if id in self.items:
                 class_key = self.items[id].get("class")
@@ -472,7 +485,7 @@ class Parser:
         # armour needs the armour tag ("armour": "ar": [min, max], "ev": [min, max], "es": [min, max])
         # Changed since db only has one value for each stat
         for armour in self.armour_types:
-            id = armour.get("BaseItemTypesKey")
+            id = armour.get("BaseItemType")
 
             ar = [armour.get("Armour"), armour.get("Armour")]
             ev = [armour.get("Evasion"), armour.get("Evasion")]
@@ -575,6 +588,11 @@ class Parser:
 
         f.close()
 
+        logger.info(f"Writing stats to {self.out_dir}/stats.ndjson")
+        logger.info(
+            f"Writing ~{len(self.mods.values())} mods to {self.out_dir}/stats.ndjson"
+        )
+
         # somehow not a thing? - possibly missing some data
 
         self.add_missing_mods()
@@ -593,6 +611,18 @@ class Parser:
 
             m.write(json.dumps(mod, ensure_ascii=False) + "\n")
             seen.add(id)
+
+        # Add temp allocates
+        with open(
+            f"{self.get_script_dir()}/overrideData/allocates.json",
+            "r",
+            encoding="utf-8",
+        ) as temp_allocates:
+            allocates = json.load(temp_allocates)
+            if self.lang in allocates:
+                m.write(json.dumps(allocates[self.lang], ensure_ascii=False) + "\n")
+            else:
+                m.write(json.dumps(allocates["en"], ensure_ascii=False) + "\n")
         m.close()
 
         with open(
@@ -624,6 +654,7 @@ class Parser:
             "ru": {"string": "#% увеличение физического урона"},
             "ko": {"string": "물리 피해 #% 증가"},
             "cmn-Hant": {"string": "增加 #% 物理傷害"},
+            "ja": {"string": "物理ダメージが#%増加する"},
         }
         self.mods["physical_local_damage_+%"] = {
             "ref": "#% increased Physical Damage",
@@ -652,4 +683,4 @@ class Parser:
 if __name__ == "__main__":
     logger.info("Starting parser")
     set_log_level(logging.INFO)
-    Parser("ru").run()
+    Parser("en").run()

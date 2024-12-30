@@ -132,11 +132,15 @@
     "sanctum_relic": "Sanctum Relic",
     "tincture": "Tincture",
     "azmeri_charm": "Charm",
-    "weapon_crossbow": "Crossbow"
+    "weapon_crossbow": "Crossbow",
+    "armour_focus": "Focus"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",
     "selected_none": "Stats ignored",
+    "selected_open_runes": "{0} of {1}, Empty",
+    "selected_full_runes": "Runes Full",
+    "empty_rune_socket": "Empty Rune Socket",
     "hidden_toggle": "Hidden",
     "collapse": "Collapse",
     "mods_toggle": "Mods",
@@ -266,6 +270,7 @@
     "seller": "Seller",
     "item_level": "iLvl",
     "gem_level": "Level",
+    "gem_sockets": "Sockets",
     "quality": "Quality",
     "base_item": "Base item",
     "graph_7d": "Last 7 days",

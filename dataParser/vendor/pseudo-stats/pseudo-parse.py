@@ -8,7 +8,7 @@ def get_script_dir():
 
 
 # List of localization codes
-localizations = ["en", "ru", "ko", "cmn-Hant"]
+localizations = ["en", "ru", "ko", "cmn-Hant", "ja"]
 
 key_to_find = "trade.ids.pseudo"  # The specific key path to check for
 

@@ -70,12 +70,15 @@
     "has_empty_prefix": "Префикс",
     "has_empty_suffix": "Суффикс",
     "item_level": "Ур. предмета: {0}",
+    "spirit": "Дух: {0}",
     "stock": "Запас: {0}",
     "map_tier": "Ур. карты: {0}",
     "area_level": "Ур. области: {0}",
     "heist_wings_revealed": "Крыльев обнаружено: {0}",
     "linked_sockets": "Связи: {0}",
     "white_sockets": "Белые: {0}",
+    "gem_sockets": "Гнёзда: {0}",
+    "rune_sockets": "Гнёзда: {0}",
     "quality": "Качество: {0}",
     "gem_level": "Уровень: {0}",
     "sentinel_charge": "Заряд: {0}",
@@ -142,7 +145,10 @@
     "heistequipment_heistweapon": "Разбойничьи принадлежности",
     "heistequipment_heistutility": "Разбойничья накидка",
     "accessory_trinket": "Украшение",
-    "sanctum_relic": "Реликвия Святилища"
+    "sanctum_relic": "Реликвия Святилища",
+    "tincture": "Микстура",
+    "azmeri_charm": "Оберег Азмери",
+    "weapon_crossbow": "Арбалет"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",
@@ -181,7 +187,8 @@
     "tag_explicit_warlord": "Вождь",
     "tag_explicit_delve": "Спуск",
     "tag_explicit_veiled": "Завуалирован",
-    "tag_explicit_incursion": "Вмешательство"
+    "tag_explicit_incursion": "Вмешательство",
+    "tag_rune": "Руна"
   },
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",
@@ -196,7 +203,9 @@
     "currency_any": "Любая валюта",
     "currency_only_chaos": "Сфера хаоса",
     "currency_only_div": "Божествен. сфера",
-    "currency_chaos_div": "Обе сферы"
+    "currency_chaos_div": "Обе сферы",
+    "currency_exalted_div": "Обе сферы",
+    "currency_only_exalted": "Сфера Возвышения"
   },
   "widget": {
     "title": "заголовок виджета",
@@ -304,6 +313,7 @@
     "overlay_bg": "Фон, когда окно APT кликабельно",
     "overlay_bg_none": "Прозрачный",
     "overlay_bg_focus_game": "Нажатие по фону активирует окно игры",
+    "overlay_always_close": "Всегда полностью закрвать оверлей вместо сворачивания",
     "poe_log_file": "Файл логов PoE",
     "poe_cfg_file": "Файл настроек PoE",
     "restore_clipboard": "Восстанавливать буфер обмена",
@@ -315,6 +325,7 @@
     "hotkey": "Режим авто-скрытия",
     "hotkey_locked": "Открыть без авто-скрытия",
     "enable_browser": "Включить встроенный браузер",
+    "use_pseudo": "Использовать псевдо модификаторы (отключите если у вас возникают проблемы с авторизацией)",
     "builtin_browser_warning": "Я осознаю, что в будущие релизы могут потенциально содержать вредоносный код, который может украсть мой POESESSID.",
     "highlight_hint": "Ваши предметы будут подсвечены, даже если эта настройка выключена",
     "show_seller": "Показывать продавца",

@@ -7,6 +7,7 @@
         <option value="ru">Русский</option>
         <option value="cmn-Hant">正體中文</option>
         <option value="ko">한국어</option>
+        <option value="ja">日本語</option>
       </select>
     </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">

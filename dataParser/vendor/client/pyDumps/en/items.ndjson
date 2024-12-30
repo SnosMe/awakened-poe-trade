@@ -21,7 +21,7 @@
 {"name": "Advanced Anchorite Garb", "refName": "Advanced Anchorite Garb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [170, 170], "es": [65, 65]}, "w": 2, "h": 3}
 {"name": "Advanced Antler Focus", "refName": "Advanced Antler Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [42, 42]}, "w": 2, "h": 3}
 {"name": "Advanced Barrier Quarterstaff", "refName": "Advanced Barrier Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
-{"name": "Advanced Beaded Circlet", "refName": "Advanced Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [71, 71]}, "w": 2, "h": 2}
+{"name": "Advanced Beaded Circlet", "refName": "Advanced Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [70, 70]}, "w": 2, "h": 2}
 {"name": "Advanced Blazon Crest Shield", "refName": "Advanced Blazon Crest Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [61, 61], "es": [22, 22]}, "w": 2, "h": 3}
 {"name": "Advanced Bolstered Mitts", "refName": "Advanced Bolstered Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [105, 105]}, "w": 2, "h": 2}
 {"name": "Advanced Bombard Crossbow", "refName": "Advanced Bombard Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
@@ -304,6 +304,7 @@
 {"name": "Behead", "refName": "Behead", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Berserk", "refName": "Berserk", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Bestiary Orb", "refName": "Bestiary Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "Bidding", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Bind Spectre", "refName": "Bind Spectre", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Binding Shard", "refName": "Binding Shard", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "Biting Frost", "refName": "Biting Frost", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -2500,6 +2501,7 @@
 {"name": "Transmutation Shard", "refName": "Transmutation Shard", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpY1NoYXJkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/e67bca229b/CurrencyUpgradeToMagicShard.png", "tradeTag": "transmutation-shard", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "Trarthan Flashpowder", "refName": "Trarthan Flashpowder", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "Treasured Blade", "refName": "Treasured Blade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
+{"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Tribal Bow", "refName": "Tribal Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "Tribal Mask", "refName": "Tribal Mask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ev": [66, 66], "es": [28, 28]}, "w": 2, "h": 2}
 {"name": "Tribute to the Goddess", "refName": "Tribute to the Goddess", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
@@ -3026,27 +3028,29 @@
 {"name": "Guiding Palm", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}}
 {"name": "Hoghunt", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}}
 {"name": "Hrimnor's Hymn", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Twin Flail"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bandit Hatchet"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Vampiric Blade"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Twin Flail"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Extended Cleaver"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
 {"name": "Lifesprig", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}}
 {"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}}
 {"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}}
@@ -3061,6 +3065,7 @@
 {"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}}
 {"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}}
 {"name": "Skysliver", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}}
+{"name": "Solar Lance", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}}
 {"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}}
 {"name": "Splinter of Loratta", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}}
 {"name": "Taryn's Shiver", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}}

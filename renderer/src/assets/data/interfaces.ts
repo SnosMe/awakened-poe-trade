@@ -215,3 +215,13 @@ export interface PseudoIdToTradeRequest {
     disabled?: boolean;
   };
 }
+
+export interface RuneSingleValue {
+  [id: string]: {
+    rune: string;
+    baseStat: string;
+    values: number[];
+    id: string;
+    type: "armour" | "weapon";
+  };
+}

@@ -6,6 +6,7 @@ import {
 import { ModifierType, sumStatsByModType } from "@/parser/modifiers";
 import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import type { FilterPreset } from "./interfaces";
+import { createRuneFilters } from "./create-rune-filter";
 
 const ROMAN_NUMERALS = ["I", "II", "III", "IV", "V"];
 
@@ -28,6 +29,7 @@ export function createPresets(
         id: ROMAN_NUMERALS[idx],
         filters: createFilters(item, { ...opts, exact: true }),
         stats: createExactStatFilters(item, sumStatsByModType(area), opts),
+        runeFilters: createRuneFilters(item, item.runeSockets, opts),
       })),
     };
   }
@@ -56,6 +58,7 @@ export function createPresets(
           id: "filters.preset_exact",
           filters: createFilters(item, { ...opts, exact: true }),
           stats: createExactStatFilters(item, item.statsByType, opts),
+          runeFilters: createRuneFilters(item, item.runeSockets, opts),
         },
       ],
     };
@@ -66,6 +69,7 @@ export function createPresets(
     id: "filters.preset_pseudo",
     filters: createFilters(item, { ...opts, exact: false }),
     stats: initUiModFilters(item, opts),
+    runeFilters: createRuneFilters(item, item.runeSockets, opts),
   };
 
   const likelyFinishedItem =
@@ -94,6 +98,7 @@ export function createPresets(
     id: "filters.preset_base_item",
     filters: createFilters(item, { ...opts, exact: true }),
     stats: createExactStatFilters(item, item.statsByType, opts),
+    runeFilters: createRuneFilters(item, item.runeSockets, opts),
   };
 
   return {

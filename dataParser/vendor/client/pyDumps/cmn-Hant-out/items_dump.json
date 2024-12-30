@@ -573,7 +573,9 @@
         "craftable": {
             "category": "Currency"
         },
-        "category": null
+        "category": null,
+        "tradeTag": "chance-shard",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9VbmlxdWVTaGFyZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9828a70270/CurrencyUpgradeToUniqueShard.png"
     },
     "35": {
         "name": "白化的羽毛",
@@ -26991,8 +26993,8 @@
         },
         "armour": {
             "es": [
-                71,
-                71
+                70,
+                70
             ]
         }
     },
@@ -39987,6 +39989,38 @@
         }
     },
     "3202": {
+        "name": "Bidding",
+        "refName": "Bidding",
+        "namespace": "GEM",
+        "class": 19,
+        "dropLevel": 1,
+        "width": 1,
+        "height": 1,
+        "craftable": {
+            "category": "Support Skill Gem"
+        },
+        "gem": {
+            "awakened": false,
+            "transfigured": false
+        }
+    },
+    "3203": {
+        "name": "Tremors",
+        "refName": "Tremors",
+        "namespace": "GEM",
+        "class": 19,
+        "dropLevel": 1,
+        "width": 1,
+        "height": 1,
+        "craftable": {
+            "category": "Support Skill Gem"
+        },
+        "gem": {
+            "awakened": false,
+            "transfigured": false
+        }
+    },
+    "3204": {
         "name": "餘燼齊射",
         "refName": "Ember Fusillade",
         "namespace": "GEM",
@@ -40002,7 +40036,7 @@
             "transfigured": false
         }
     },
-    "3203": {
+    "3205": {
         "name": "電球",
         "refName": "Spark",
         "namespace": "GEM",
@@ -40018,7 +40052,7 @@
             "transfigured": false
         }
     },
-    "3204": {
+    "3206": {
         "name": "擴大地面",
         "refName": "Expanding Ground",
         "namespace": "GEM",
@@ -40034,7 +40068,7 @@
             "transfigured": false
         }
     },
-    "3205": {
+    "3207": {
         "name": "雷彈",
         "refName": "Lightning Bolt",
         "namespace": "GEM",

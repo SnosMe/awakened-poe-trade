@@ -3,6 +3,7 @@ import type {
   BaseType,
   DropEntry,
   PseudoIdToTradeRequest,
+  RuneSingleValue,
   Stat,
   StatMatcher,
   TranslationDict,
@@ -15,6 +16,7 @@ export let CLIENT_STRINGS: TranslationDict;
 export let CLIENT_STRINGS_REF: TranslationDict;
 export let APP_PATRONS: Array<{ from: string; months: number; style: number }>;
 export let PSEUDO_ID_TO_TRADE_REQUEST: PseudoIdToTradeRequest;
+export let RUNE_SINGLE_VALUE: RuneSingleValue;
 
 export let ITEM_BY_TRANSLATED = (
   ns: BaseType["namespace"],
@@ -243,6 +245,10 @@ export async function init(lang: string) {
 
   PSEUDO_ID_TO_TRADE_REQUEST = await (
     await fetch(`${import.meta.env.BASE_URL}data/pseudo-pseudo.json`)
+  ).json();
+
+  RUNE_SINGLE_VALUE = await (
+    await fetch(`${import.meta.env.BASE_URL}data/rune-single-value.json`)
   ).json();
 
   await loadForLang(lang);

@@ -3,6 +3,8 @@
 {"name": "\"잘 자라는 키스\"", "refName": "\"The Kiss Goodnight\"", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "1차 재보정 렌즈", "refName": "Prime Regrading Lens", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "2차 재보정 렌즈", "refName": "Secondary Regrading Lens", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "Bidding", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -273,7 +275,7 @@
 {"name": "고급 광신자 왕관", "refName": "Advanced Cultist Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [108, 108], "es": [38, 38]}, "w": 2, "h": 2}
 {"name": "고급 광신자 활", "refName": "Advanced Cultist Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "고급 광택 나는 석궁", "refName": "Advanced Varnished Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
-{"name": "고급 구슬 관", "refName": "Advanced Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [71, 71]}, "w": 2, "h": 2}
+{"name": "고급 구슬 관", "refName": "Advanced Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [70, 70]}, "w": 2, "h": 2}
 {"name": "고급 구조물 망치", "refName": "Advanced Construct Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "고급 굳건한 팔보호구", "refName": "Advanced Firm Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ev": [79, 79]}, "w": 2, "h": 2}
 {"name": "고급 금주물 수갑", "refName": "Advanced Goldcast Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [61, 61], "es": [21, 21]}, "w": 2, "h": 2}
@@ -3026,27 +3028,29 @@
 {"name": "인도하는 손바닥", "refName": "인도하는 손바닥", "namespace": "UNIQUE", "unique": {"base": "성소 셉터"}}
 {"name": "돼지사냥", "refName": "돼지사냥", "namespace": "UNIQUE", "unique": {"base": "쓰러진 대곤봉"}}
 {"name": "흐림노르의 찬가", "refName": "흐림노르의 찬가", "namespace": "UNIQUE", "unique": {"base": "참나무 대망치"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "철창날 창"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
+{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "흡혈 칼날"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "고상한 글레이브"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "연장 가로날도끼"}}
 {"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
 {"name": "생명의 가지", "refName": "생명의 가지", "namespace": "UNIQUE", "unique": {"base": "조율된 마법봉"}}
 {"name": "마챠", "refName": "마챠", "namespace": "UNIQUE", "unique": {"base": "초승달 육척봉"}}
 {"name": "연무의 속삭임", "refName": "연무의 속삭임", "namespace": "UNIQUE", "unique": {"base": "임시 석궁"}}
@@ -3061,6 +3065,7 @@
 {"name": "핏빛 예언자", "refName": "핏빛 예언자", "namespace": "UNIQUE", "unique": {"base": "뼈 마법봉"}}
 {"name": "눈앞의 별", "refName": "눈앞의 별", "namespace": "UNIQUE", "unique": {"base": "판금 철퇴"}}
 {"name": "하늘의 편린", "refName": "하늘의 편린", "namespace": "UNIQUE", "unique": {"base": "날개 달린 창"}}
+{"name": "태양 기병창", "refName": "태양 기병창", "namespace": "UNIQUE", "unique": {"base": "갈라진 창"}}
 {"name": "파편심장", "refName": "파편심장", "namespace": "UNIQUE", "unique": {"base": "반곡궁"}}
 {"name": "로라타의 파편", "refName": "로라타의 파편", "namespace": "UNIQUE", "unique": {"base": "견목 창"}}
 {"name": "타린의 오한", "refName": "타린의 오한", "namespace": "UNIQUE", "unique": {"base": "극한의 지팡이"}}

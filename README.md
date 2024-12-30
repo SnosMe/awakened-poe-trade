@@ -11,8 +11,6 @@ Fork of [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade).
 ## Moving from POE1/Awakened PoE Trade
 
 1. Download latest release from [releases](https://github.com/Kvan7/exiled-exchange-2/releases)
-  - Currently only Windows is supported
-  - Only available as pre-release right now
 2. Run installer
 3. Run Exiled Exchange 2
 4. Launch PoE2 to generate correct files

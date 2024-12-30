@@ -136,6 +136,7 @@ const TRADE_WHISPER = {
   "th": /^สวัสดี, เราต้องการจะชื้อของคุณ (?<item>.+) ใน ราคา (?<price>.+) ใน (?<league>.+) \(stash tab "(?<tab_name>.*)"; ตำแหน่ง: ซ้าย (?<tab_left>\d+), บน (?<tab_top>\d+)\)(?<message>.+)?$/,
   "cmn-Hant":
     /^你好，我想購買 (?<item>.+) 標價 (?<price>.+) 在 (?<league>.+) \(倉庫頁 "(?<tab_name>.*)"; 位置: 左 (?<tab_left>\d+), 上 (?<tab_top>\d+)\)(?<message>.+)?$/,
+  "ja": /^こんにちは、(?<league>.+) リーグで (?<price>.+) で売っている、あなたの (?<item>.+) を購入したいです \(スタッシュタブ "(?<tab_name>.*)"; 位置: 左から (?<tab_left>\d+), 上から (?<tab_top>\d+)\)(?<message>.+)?$/,
 };
 
 const TRADE_BULK_WHISPER = {
@@ -144,4 +145,5 @@ const TRADE_BULK_WHISPER = {
   "cmn-Hant":
     /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/,
   "ko": /^_FIX_ME_$/,
+  "ja": /^こんにちは、私は(?<league>.+)であなたの(?<item>.+)を私の(?<price>.+)で購入したいです。\.(?<message>.+)?$/,
 };

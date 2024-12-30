@@ -126,7 +126,7 @@ function forUniqueItem(item: ParsedItem) {
         : item.category === ItemCategory.SanctumRelic
           ? "Relic"
           : item.info.unique.base,
-      item.sockets?.linked ? `${item.sockets.linked}L` : null,
+      item.gemSockets?.linked ? `${item.gemSockets.linked}L` : null,
     ]),
   };
 }

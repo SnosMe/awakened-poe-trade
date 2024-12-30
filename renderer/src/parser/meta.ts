@@ -51,6 +51,7 @@ export enum ItemCategory {
   SkillGem = "Skill Gem",
   SupportGem = "Support Gem",
   MetaGem = "Meta Gem",
+  Focus = "Focus",
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([
@@ -90,6 +91,7 @@ export const ARMOUR = new Set([
   ItemCategory.Gloves,
   ItemCategory.Helmet,
   ItemCategory.Shield,
+  ItemCategory.Focus,
 ]);
 
 export const ACCESSORY = new Set([

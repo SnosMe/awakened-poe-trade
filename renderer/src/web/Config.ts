@@ -97,6 +97,8 @@ export function poeWebApi() {
       return realm === "pc-garena" ? "pathofexile.tw" : "www.pathofexile.com";
     case "ko":
       return "poe.game.daum.net";
+    case "ja":
+      return "jp.pathofexile.com";
   }
 }
 
@@ -118,7 +120,7 @@ export interface Config {
   logKeys: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'ko'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'ko' | 'ja'
   realm: 'pc-ggg' | 'pc-garena'
   widgets: widget.Widget[]
   fontSize: number

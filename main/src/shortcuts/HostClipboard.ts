@@ -175,4 +175,8 @@ const LANGUAGE_DETECTOR = [
     lang: "cmn-Hans",
     firstLine: "物品类别: ",
   },
+  {
+    lang: "ja",
+    firstLine: "アイテムクラス: ",
+  }
 ];

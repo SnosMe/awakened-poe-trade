@@ -3,13 +3,14 @@
     <filter-name :filters="itemFilters" :item="item" />
     <!-- <price-prediction v-if="showPredictedPrice" class="mb-4" :item="item" /> -->
     <!-- <price-trend v-else :item="item" :filters="itemFilters" /> -->
-    <price-trend :item="item" :filters="itemFilters" />
+    <!-- <price-trend :item="item" :filters="itemFilters" /> -->
     <filters-block
       ref="filtersComponent"
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
       :presets="presets"
+      :runes="runeFilters"
       @preset="selectPreset"
       @submit="doSearch = true"
     />
@@ -19,6 +20,7 @@
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
+      :runeFilters="runeFilters"
     />
     <trade-bulk
       v-if="tradeAPI === 'bulk' && doSearch"
@@ -121,6 +123,7 @@ export default defineComponent({
   setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
     const leagues = useLeagues();
+    const lang = computed(() => AppConfig().language);
 
     const presets = ref<{ active: string; presets: FilterPreset[] }>(null!);
     const itemFilters = computed(
@@ -134,6 +137,12 @@ export default defineComponent({
         presets.value.presets.find(
           (preset) => preset.id === presets.value.active,
         )!.stats,
+    );
+    const runeFilters = computed(
+      () =>
+        presets.value.presets.find(
+          (preset) => preset.id === presets.value.active,
+        )!.runeFilters,
     );
     const doSearch = ref(false);
     const tradeAPI = ref<"trade" | "bulk">("bulk");
@@ -164,7 +173,9 @@ export default defineComponent({
               item.info.refName === prevItem.info.refName)
               ? prevCurrency
               : undefined,
-          usePseudo: widget.value.usePseudo,
+          usePseudo:
+            widget.value.usePseudo &&
+            ["en", "ru", "ko", "cmn-Hant"].includes(lang.value),
         });
 
         if (
@@ -317,6 +328,7 @@ export default defineComponent({
       t,
       itemFilters,
       itemStats,
+      runeFilters,
       doSearch,
       tradeAPI,
       tradeService,
@@ -335,7 +347,7 @@ export default defineComponent({
         presets.value.active = id;
       },
       makeTradeLink() {
-        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`;
+        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item, runeFilters.value))}`;
       },
     };
   },

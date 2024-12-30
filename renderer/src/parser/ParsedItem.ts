@@ -19,6 +19,14 @@ export enum ItemInfluence {
   Warlord = "Warlord",
 }
 
+export interface Rune {
+  isEmpty: boolean;
+  rune?: string;
+  text?: string; // Text of modifier
+  modifier?: ParsedModifier; // @deprecated
+  statCalculated?: StatCalculated; // @deprecated
+}
+
 export interface ParsedItem {
   rarity?: ItemRarity;
   itemLevel?: number;
@@ -37,7 +45,14 @@ export interface ParsedItem {
   areaLevel?: number;
   talismanTier?: number;
   quality?: number;
-  sockets?: {
+  runeSockets?: {
+    type: "armour" | "weapon";
+    total: number;
+    empty: number;
+    runes: Rune[];
+  };
+  gemSockets?: {
+    number: number;
     linked?: number; // only 5 or 6
     white: number;
   };
@@ -66,6 +81,7 @@ export interface ParsedItem {
   category?: ItemCategory;
   info: BaseType;
   rawText: string;
+  fromChat?: boolean;
 }
 
 // NOTE: should match option values on trade

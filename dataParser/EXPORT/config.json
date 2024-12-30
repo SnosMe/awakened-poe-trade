@@ -4,7 +4,8 @@
     "English",
     "Russian",
     "Korean",
-    "Traditional Chinese"
+    "Traditional Chinese",
+    "Japanese"
   ],
   "tables": [
     {
@@ -16,12 +17,22 @@
         "Width",
         "Height",
         "DropLevel",
-        "ItemVisualIdentity",
-        "Implicit_ModsKeys",
-        "ItemClassesKey",
+        "Implicit_Mods",
+        "ItemClass",
         "SiteVisibility",
-        "TagsKeys",
+        "Tags",
         "TradeMarketCategory"
+      ]
+    },
+    {
+      "name": "ArmourTypes",
+      "columns": [
+        "BaseItemType",
+        "Armour",
+        "Evasion",
+        "EnergyShield",
+        "IncreasedMovementSpeed",
+        "Ward"
       ]
     },
     {
@@ -36,9 +47,12 @@
     {
       "name": "WeaponTypes",
       "columns": [
-        "BaseItemTypesKey",
+        "BaseItemType",
         "DamageMin",
-        "DamageMax"
+        "DamageMax",
+        "RangeMax",
+        "Speed",
+        "Critical"
       ]
     },
     {
@@ -51,9 +65,8 @@
     {
       "name": "SkillGems",
       "columns": [
-        "BaseItemTypesKey",
-        "IsVaalVariant",
-        "IsSupport"
+        "BaseItemType",
+        "IsVaalVariant"
       ]
     },
     {
@@ -70,10 +83,12 @@
         "Id",
         "Domain",
         "Name",
-        "StatsKey1",
-        "StatsKey2",
-        "StatsKey3",
-        "StatsKey4"
+        "Stat1",
+        "Stat2",
+        "Stat3",
+        "Stat4",
+        "Stat5",
+        "Stat6"
       ]
     },
     {
@@ -117,11 +132,11 @@
         "Id",
         "IsLocal",
         "IsWeaponLocal",
-        "Semantics",
+        "Semantic",
         "Text",
         "IsVirtual",
         "HASH32",
-        "BelongsActiveSkillsKey",
+        "BelongsActiveSkills",
         "IsScalable"
       ]
     }

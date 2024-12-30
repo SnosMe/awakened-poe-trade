@@ -4,7 +4,7 @@
 {"name": "Advanced Anchorite Garb", "refName": "Advanced Anchorite Garb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [170, 170], "es": [65, 65]}, "w": 2, "h": 3}
 {"name": "Advanced Antler Focus", "refName": "Advanced Antler Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [42, 42]}, "w": 2, "h": 3}
 {"name": "Advanced Barrier Quarterstaff", "refName": "Advanced Barrier Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
-{"name": "Advanced Beaded Circlet", "refName": "Advanced Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [71, 71]}, "w": 2, "h": 2}
+{"name": "Advanced Beaded Circlet", "refName": "Advanced Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [70, 70]}, "w": 2, "h": 2}
 {"name": "Advanced Blazon Crest Shield", "refName": "Advanced Blazon Crest Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [61, 61], "es": [22, 22]}, "w": 2, "h": 3}
 {"name": "Advanced Bolstered Mitts", "refName": "Advanced Bolstered Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [105, 105]}, "w": 2, "h": 2}
 {"name": "Advanced Bombard Crossbow", "refName": "Advanced Bombard Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
@@ -186,6 +186,7 @@
 {"name": "Axe Slash", "refName": "Axe Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Barrier Invocation", "refName": "Barrier Invocation", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Berserk", "refName": "Berserk", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9CZXNlcmtHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/fb31554c78/BeserkGem.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Bidding", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Bind Spectre", "refName": "Bind Spectre", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Biting Frost", "refName": "Biting Frost", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Bladed Shoes", "refName": "Bladed Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ev": [91, 91], "es": [35, 35]}, "w": 2, "h": 2}
@@ -739,6 +740,7 @@
 {"name": "Time of Need", "refName": "Time of Need", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Tornado Shot", "refName": "Tornado Shot", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Ub3JuYWRvU2hvdCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/7299d3edf8/TornadoShot.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Toxic Growth", "refName": "Toxic Growth", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Unbound Avatar", "refName": "Unbound Avatar", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Unbreakable", "refName": "Unbreakable", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Uncut Skill Gem", "refName": "Uncut Skill Gem", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UncutSkillGem"}, "w": 1, "h": 1}
@@ -3026,27 +3028,29 @@
 {"name": "Направляющая длань", "refName": "Направляющая длань", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр"}}
 {"name": "Кабаний промысел", "refName": "Кабаний промысел", "namespace": "UNIQUE", "unique": {"base": "Дубина из пня"}}
 {"name": "Гимн Гримнора", "refName": "Гимн Гримнора", "namespace": "UNIQUE", "unique": {"base": "Дубовая кувалда"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Старый нож"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Тупой топорик"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Простой кинжал"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Секач"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Копьё с железным наконечником"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор палача"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Обугленный короткий меч"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ржавый длинный меч"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Старый нож"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий меч"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Железный большой меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Простой кинжал"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Освящённый клеймор"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Тупой топорик"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Воинское копьё"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Лунный кинжал"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Двойной кистень"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Цепное гасило"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Секач"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Бородовидный топор"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Фламберг"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Бандитский чекан"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Клинок-кровопийца"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Обугленный короткий меч"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Изящная глевия"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Фламберг"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Лунный кинжал"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Священное молотило"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Двойной кистень"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Удлинённый тесак"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Охотничье копьё"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Воинское копьё"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ржавый длинный меч"}}
 {"name": "Живой побег", "refName": "Живой побег", "namespace": "UNIQUE", "unique": {"base": "Вытягивающий жезл"}}
 {"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Боевой посох с полумесяцем"}}
 {"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Самодельный самострел"}}
@@ -3061,6 +3065,7 @@
 {"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Костяной жезл"}}
 {"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Кованая булава"}}
 {"name": "Небесный осколок", "refName": "Небесный осколок", "namespace": "UNIQUE", "unique": {"base": "Крылатое копьё"}}
+{"name": "Солнечное копьё", "refName": "Солнечное копьё", "namespace": "UNIQUE", "unique": {"base": "Раздвоенное копьё"}}
 {"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Загнутый лук"}}
 {"name": "Осколок Лоратты", "refName": "Осколок Лоратты", "namespace": "UNIQUE", "unique": {"base": "Копьё из твёрдой древесины"}}
 {"name": "Дрожь Тарина", "refName": "Дрожь Тарина", "namespace": "UNIQUE", "unique": {"base": "Студёный посох"}}

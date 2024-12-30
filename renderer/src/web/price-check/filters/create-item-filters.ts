@@ -213,16 +213,23 @@ export function createFilters(
     }
   }
 
-  if (item.sockets?.linked) {
+  if (item.gemSockets?.linked) {
     filters.linkedSockets = {
-      value: item.sockets.linked,
+      value: item.gemSockets.linked,
       disabled: false,
     };
   }
 
-  if (item.sockets?.white) {
+  if (item.gemSockets?.white) {
     filters.whiteSockets = {
-      value: item.sockets.white,
+      value: item.gemSockets.white,
+      disabled: false,
+    };
+  }
+
+  if (item.runeSockets?.empty) {
+    filters.emptyRuneSockets = {
+      value: item.runeSockets.empty,
       disabled: false,
     };
   }
@@ -426,6 +433,13 @@ function createGemFilters(
     }
 
     return filters;
+  }
+
+  if (item.gemSockets!) {
+    filters.socketNumber = {
+      value: item.gemSockets.number,
+      disabled: item.gemSockets.number < 3,
+    };
   }
 
   if (item.quality) {
