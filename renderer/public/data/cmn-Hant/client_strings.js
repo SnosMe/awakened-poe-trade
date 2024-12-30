@@ -108,7 +108,7 @@ export default {
   QUIVER_HELP_TEXT: '持弓時才可裝備',
   FLASK_HELP_TEXT: '右鍵點擊以喝下藥劑。',
   CHARM_HELP_TEXT: '達成特定條件時會自動使用。',
-  FIRE_DAMAGE: '',
-  LIGHTNING_DAMAGE: '',
-  COLD_DAMAGE: ''
+  FIRE_DAMAGE: '火焰傷害: ',
+  LIGHTNING_DAMAGE: '閃電傷害: ',
+  COLD_DAMAGE: '冰冷傷害: '
 }
