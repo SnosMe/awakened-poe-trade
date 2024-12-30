@@ -1440,7 +1440,6 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.Crossbow:
     case ItemCategory.Bow:
     case ItemCategory.Warstaff:
-    case ItemCategory.Staff:
       return 2;
     case ItemCategory.Helmet:
     case ItemCategory.Shield:
@@ -1449,11 +1448,8 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.OneHandedAxe:
     case ItemCategory.OneHandedMace:
     case ItemCategory.OneHandedSword:
-    case ItemCategory.Quiver:
     case ItemCategory.Claw:
     case ItemCategory.Dagger:
-    case ItemCategory.Wand:
-    case ItemCategory.Sceptre:
     case ItemCategory.Focus:
       return 1;
     default:
