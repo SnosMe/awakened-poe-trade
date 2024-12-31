@@ -2785,304 +2785,304 @@
 {"name": "힘의 부적", "refName": "Sigil of Power", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9DaXJjbGVvZlBvd2VyU2tpbGxHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/b47a71c6bf/CircleofPowerSkillGem.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "힘의 시험 바리야", "refName": "Test of Strength Barya", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MiscMapItem"}, "w": 1, "h": 1}
 {"name": "힘줄 절단", "refName": "Maim", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "앤드바리우스", "refName": "앤드바리우스", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
-{"name": "별의 보석", "refName": "별의 보석", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이"}}
-{"name": "아지스의 등불", "refName": "아지스의 등불", "namespace": "UNIQUE", "unique": {"base": "태양의 목걸이"}}
-{"name": "생득권 버클", "refName": "생득권 버클", "namespace": "UNIQUE", "unique": {"base": "넓은 허리띠"}}
-{"name": "검은화염", "refName": "검은화염", "namespace": "UNIQUE", "unique": {"base": "자수정 반지"}}
-{"name": "검은 심장", "refName": "검은 심장", "namespace": "UNIQUE", "unique": {"base": "철제 반지"}}
-{"name": "물집을 잡는 결속", "refName": "물집을 잡는 결속", "namespace": "UNIQUE", "unique": {"base": "루비 반지"}}
-{"name": "브리나바스", "refName": "브리나바스", "namespace": "UNIQUE", "unique": {"base": "넓은 허리띠"}}
-{"name": "형제의 부름", "refName": "형제의 부름", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지"}}
-{"name": "학살 심장", "refName": "학살 심장", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
-{"name": "태풍의 합창", "refName": "태풍의 합창", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이"}}
-{"name": "겁쟁이의 유물", "refName": "겁쟁이의 유물", "namespace": "UNIQUE", "unique": {"base": "사슬 허리띠"}}
-{"name": "살금박살", "refName": "살금박살", "namespace": "UNIQUE", "unique": {"base": "루비 반지"}}
-{"name": "죽음의 재촉", "refName": "죽음의 재촉", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지"}}
-{"name": "운명의 저항", "refName": "운명의 저항", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이"}}
-{"name": "도이드리의 파멸", "refName": "도이드리의 파멸", "namespace": "UNIQUE", "unique": {"base": "청금석 반지"}}
-{"name": "꿈의 조각", "refName": "꿈의 조각", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
-{"name": "차율라의 눈", "refName": "차율라의 눈", "namespace": "UNIQUE", "unique": {"base": "황금 목걸이"}}
-{"name": "화염꽃", "refName": "화염꽃", "namespace": "UNIQUE", "unique": {"base": "태양의 목걸이"}}
-{"name": "익스의 집착", "refName": "익스의 집착", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이"}}
-{"name": "빛무리", "refName": "빛무리", "namespace": "UNIQUE", "unique": {"base": "청금석 반지"}}
-{"name": "헤드헌터", "refName": "헤드헌터", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠"}}
-{"name": "마음에 묶인 고리", "refName": "마음에 묶인 고리", "namespace": "UNIQUE", "unique": {"base": "진주 반지"}}
-{"name": "울던의 우상", "refName": "울던의 우상", "namespace": "UNIQUE", "unique": {"base": "진홍색 목걸이"}}
-{"name": "이그니페리스", "refName": "이그니페리스", "namespace": "UNIQUE", "unique": {"base": "진홍색 목걸이"}}
-{"name": "지옥불 죔쇠", "refName": "지옥불 죔쇠", "namespace": "UNIQUE", "unique": {"base": "판금 허리띠"}}
-{"name": "기발함", "refName": "기발함", "namespace": "UNIQUE", "unique": {"base": "특수 허리띠"}}
-{"name": "칼란드라의 손길", "refName": "칼란드라의 손길", "namespace": "UNIQUE", "unique": {"base": "반지"}}
-{"name": "용골쓸기", "refName": "용골쓸기", "namespace": "UNIQUE", "unique": {"base": "리넨 허리띠"}}
-{"name": "전광석", "refName": "전광석", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지"}}
-{"name": "리구리움 부적", "refName": "리구리움 부적", "namespace": "UNIQUE", "unique": {"base": "청금석 목걸이"}}
-{"name": "메기노드의 허리띠", "refName": "메기노드의 허리띠", "namespace": "UNIQUE", "unique": {"base": "생가죽 허리띠"}}
-{"name": "심야의 끈", "refName": "심야의 끈", "namespace": "UNIQUE", "unique": {"base": "생가죽 허리띠"}}
-{"name": "밍의 심장", "refName": "밍의 심장", "namespace": "UNIQUE", "unique": {"base": "자수정 반지"}}
-{"name": "원죄", "refName": "원죄", "namespace": "UNIQUE", "unique": {"base": "자수정 반지"}}
-{"name": "페란두스 봉인", "refName": "페란두스 봉인", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
-{"name": "폴시르켈른", "refName": "폴시르켈른", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
-{"name": "신성한 수지", "refName": "신성한 수지", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
-{"name": "허약의 론델", "refName": "허약의 론델", "namespace": "UNIQUE", "unique": {"base": "달의 목걸이"}}
-{"name": "리슬라사의 감개", "refName": "리슬라사의 감개", "namespace": "UNIQUE", "unique": {"base": "화려한 허리띠"}}
-{"name": "대재앙의 씨앗", "refName": "대재앙의 씨앗", "namespace": "UNIQUE", "unique": {"base": "청금석 반지"}}
-{"name": "세케마의 결의", "refName": "세케마의 결의", "namespace": "UNIQUE", "unique": {"base": "반지"}}
-{"name": "독사의 알", "refName": "독사의 알", "namespace": "UNIQUE", "unique": {"base": "황금 목걸이"}}
-{"name": "샤브론의 가방", "refName": "샤브론의 가방", "namespace": "UNIQUE", "unique": {"base": "섬세한 허리띠"}}
-{"name": "뱀 구덩이", "refName": "뱀 구덩이", "namespace": "UNIQUE", "unique": {"base": "진주 반지"}}
-{"name": "영혼 올가미", "refName": "영혼 올가미", "namespace": "UNIQUE", "unique": {"base": "긴 허리띠"}}
-{"name": "몸부림치는 비명", "refName": "몸부림치는 비명", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이"}}
-{"name": "굳건한 부적", "refName": "굳건한 부적", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이"}}
-{"name": "모루", "refName": "모루", "namespace": "UNIQUE", "unique": {"base": "혈석 목걸이"}}
-{"name": "굴착자", "refName": "굴착자", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지"}}
-{"name": "영원한 응시", "refName": "영원한 응시", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이"}}
-{"name": "대혼란", "refName": "대혼란", "namespace": "UNIQUE", "unique": {"base": "청금석 목걸이"}}
-{"name": "도둑의 고통", "refName": "도둑의 고통", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지"}}
-{"name": "웅힐의 조화", "refName": "웅힐의 조화", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이"}}
-{"name": "벤토의 도박", "refName": "벤토의 도박", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
-{"name": "형제단의 속삭임", "refName": "형제단의 속삭임", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
-{"name": "조프의 피", "refName": "조프의 피", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
-{"name": "제르피의 시원", "refName": "제르피의 시원", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠"}}
-{"name": "아브 아이테르노", "refName": "아브 아이테르노", "namespace": "UNIQUE", "unique": {"base": "우수한 허벅지 방어구"}}
-{"name": "아이리스베인의 날개", "refName": "아이리스베인의 날개", "namespace": "UNIQUE", "unique": {"base": "윤이 나는 건틀릿"}}
-{"name": "알켐 에이라", "refName": "알켐 에이라", "namespace": "UNIQUE", "unique": {"base": "문장 문양 방패"}}
-{"name": "우두머리의 울부짖음", "refName": "우두머리의 울부짖음", "namespace": "UNIQUE", "unique": {"base": "장갑을 두른 모자"}}
-{"name": "에미란의 앞치마", "refName": "에미란의 앞치마", "namespace": "UNIQUE", "unique": {"base": "은자 의복"}}
-{"name": "아르빌의 바퀴", "refName": "아르빌의 바퀴", "namespace": "UNIQUE", "unique": {"base": "견목 타지"}}
-{"name": "부서진 잿더미", "refName": "부서진 잿더미", "namespace": "UNIQUE", "unique": {"base": "패스파인더 외투"}}
-{"name": "질식의 진노", "refName": "질식의 진노", "namespace": "UNIQUE", "unique": {"base": "넓은 촉 화살통"}}
-{"name": "공격병동", "refName": "공격병동", "namespace": "UNIQUE", "unique": {"base": "폐쇄형 헬름"}}
-{"name": "아차크의 시야", "refName": "아차크의 시야", "namespace": "UNIQUE", "unique": {"base": "장막 가면"}}
-{"name": "앗지리의 예리함", "refName": "앗지리의 예리함", "namespace": "UNIQUE", "unique": {"base": "주조한 미트"}}
-{"name": "앗지리의 멸시", "refName": "앗지리의 멸시", "namespace": "UNIQUE", "unique": {"base": "황금 관"}}
-{"name": "아우르시즈", "refName": "아우르시즈", "namespace": "UNIQUE", "unique": {"base": "겹겹의 건틀릿"}}
-{"name": "딱정벌레 이빨", "refName": "딱정벌레 이빨", "namespace": "UNIQUE", "unique": {"base": "벨루어 신발"}}
-{"name": "짐승의 소굴", "refName": "짐승의 소굴", "namespace": "UNIQUE", "unique": {"base": "탐험가 방어구"}}
-{"name": "요원한 저 너머", "refName": "요원한 저 너머", "namespace": "UNIQUE", "unique": {"base": "본능적인 화살통"}}
-{"name": "광분의 탄생", "refName": "광분의 탄생", "namespace": "UNIQUE", "unique": {"base": "돌 각반"}}
-{"name": "독살꽃", "refName": "독살꽃", "namespace": "UNIQUE", "unique": {"base": "깃털 로브"}}
-{"name": "검은끈", "refName": "검은끈", "namespace": "UNIQUE", "unique": {"base": "모피 판금 갑옷"}}
-{"name": "검은 섬광", "refName": "검은 섬광", "namespace": "UNIQUE", "unique": {"base": "불 화살통"}}
-{"name": "검은 태양 문양", "refName": "검은 태양 문양", "namespace": "UNIQUE", "unique": {"base": "싸맨 대헬름"}}
-{"name": "축복받은 유대", "refName": "축복받은 유대", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개"}}
-{"name": "푸른불길 팔보호구", "refName": "푸른불길 팔보호구", "namespace": "UNIQUE", "unique": {"base": "금주물 수갑"}}
-{"name": "울러의 뼈", "refName": "울러의 뼈", "namespace": "UNIQUE", "unique": {"base": "격자 샌들"}}
-{"name": "가시나무 갑옷", "refName": "가시나무 갑옷", "namespace": "UNIQUE", "unique": {"base": "녹슨 흉갑"}}
-{"name": "가시밭", "refName": "가시밭", "namespace": "UNIQUE", "unique": {"base": "레이스 장화"}}
-{"name": "활력의 겉옷", "refName": "활력의 겉옷", "namespace": "UNIQUE", "unique": {"base": "로아가죽 외투"}}
-{"name": "가시털멧돼지", "refName": "가시털멧돼지", "namespace": "UNIQUE", "unique": {"base": "가죽 조끼"}}
-{"name": "황동의 턱수염", "refName": "황동의 턱수염", "namespace": "UNIQUE", "unique": {"base": "뿔 달린 왕관"}}
-{"name": "덤불 매복", "refName": "덤불 매복", "namespace": "UNIQUE", "unique": {"base": "도마뱀비늘 장화"}}
-{"name": "양초 제작자", "refName": "양초 제작자", "namespace": "UNIQUE", "unique": {"base": "암울한 장갑"}}
-{"name": "부패하는 부름", "refName": "부패하는 부름", "namespace": "UNIQUE", "unique": {"base": "아로새긴 집중구"}}
-{"name": "화염의 망토", "refName": "화염의 망토", "namespace": "UNIQUE", "unique": {"base": "실크 로브"}}
-{"name": "붉은색의 외투", "refName": "붉은색의 외투", "namespace": "UNIQUE", "unique": {"base": "사슬 갑옷"}}
-{"name": "코르나타움", "refName": "코르나타움", "namespace": "UNIQUE", "unique": {"base": "무거운 왕관"}}
-{"name": "붉은 태양의 광환", "refName": "붉은 태양의 광환", "namespace": "UNIQUE", "unique": {"base": "전사 대헬름"}}
-{"name": "시신걸음", "refName": "시신걸음", "namespace": "UNIQUE", "unique": {"base": "철제 각반"}}
-{"name": "진홍의 예복", "refName": "진홍의 예복", "namespace": "UNIQUE", "unique": {"base": "도금된 법의"}}
-{"name": "아르듀라의 문양", "refName": "아르듀라의 문양", "namespace": "UNIQUE", "unique": {"base": "방울 문양 방패"}}
-{"name": "창백한 왕의 왕관", "refName": "창백한 왕의 왕관", "namespace": "UNIQUE", "unique": {"base": "광신자 왕관"}}
-{"name": "승리자의 왕관", "refName": "승리자의 왕관", "namespace": "UNIQUE", "unique": {"base": "철 왕관"}}
-{"name": "가시 왕관", "refName": "가시 왕관", "namespace": "UNIQUE", "unique": {"base": "잔가지 관"}}
-{"name": "어두운 빛의 궤적", "refName": "어두운 빛의 궤적", "namespace": "UNIQUE", "unique": {"base": "죔쇠 발 덮개"}}
-{"name": "죽음의 일격", "refName": "죽음의 일격", "namespace": "UNIQUE", "unique": {"base": "이중 건틀릿"}}
-{"name": "단말마의 숨소리", "refName": "단말마의 숨소리", "namespace": "UNIQUE", "unique": {"base": "잔가지 집중구"}}
-{"name": "죽음의 종", "refName": "죽음의 종", "namespace": "UNIQUE", "unique": {"base": "정예병 대헬름"}}
-{"name": "악마 봉합자", "refName": "악마 봉합자", "namespace": "UNIQUE", "unique": {"base": "복잡한 장갑"}}
-{"name": "다이오나데어", "refName": "다이오나데어", "namespace": "UNIQUE", "unique": {"base": "쪼개진 거대 방패"}}
-{"name": "도이드리의 임기", "refName": "도이드리의 임기", "namespace": "UNIQUE", "unique": {"base": "꿰맨 장갑"}}
-{"name": "멸망문", "refName": "멸망문", "namespace": "UNIQUE", "unique": {"base": "죔쇠 거대 방패"}}
-{"name": "도리아니의 프로토타입", "refName": "도리아니의 프로토타입", "namespace": "UNIQUE", "unique": {"base": "미늘 갑옷"}}
-{"name": "황혼꽃", "refName": "황혼꽃", "namespace": "UNIQUE", "unique": {"base": "징 박힌 조끼"}}
-{"name": "에디른의 엄니", "refName": "에디른의 엄니", "namespace": "UNIQUE", "unique": {"base": "철 흉갑"}}
-{"name": "원소포식", "refName": "원소포식", "namespace": "UNIQUE", "unique": {"base": "사냥꾼 두건"}}
-{"name": "감싸 안는 여명", "refName": "감싸 안는 여명", "namespace": "UNIQUE", "unique": {"base": "순례자 법의"}}
-{"name": "에리안의 수선", "refName": "에리안의 수선", "namespace": "UNIQUE", "unique": {"base": "보호받는 헬름"}}
-{"name": "에조미어의 면갑", "refName": "에조미어의 면갑", "namespace": "UNIQUE", "unique": {"base": "병사 대헬름"}}
-{"name": "깃털 달린 요새", "refName": "깃털 달린 요새", "namespace": "UNIQUE", "unique": {"base": "초승달 타지"}}
-{"name": "금단의 응시", "refName": "금단의 응시", "namespace": "UNIQUE", "unique": {"base": "사슬 티아라"}}
-{"name": "여우 그림자", "refName": "여우 그림자", "namespace": "UNIQUE", "unique": {"base": "누비 조끼"}}
-{"name": "도박질주", "refName": "도박질주", "namespace": "UNIQUE", "unique": {"base": "양각 무늬 장화"}}
-{"name": "유령의 행진", "refName": "유령의 행진", "namespace": "UNIQUE", "unique": {"base": "실타래 신발"}}
-{"name": "유령의 몸서리", "refName": "유령의 몸서리", "namespace": "UNIQUE", "unique": {"base": "조각난 로브"}}
-{"name": "혼돈의 섬광", "refName": "혼돈의 섬광", "namespace": "UNIQUE", "unique": {"base": "부족 가면"}}
-{"name": "순흑체", "refName": "순흑체", "namespace": "UNIQUE", "unique": {"base": "밀랍재질 재킷"}}
-{"name": "금테", "refName": "금테", "namespace": "UNIQUE", "unique": {"base": "펠트 모자"}}
-{"name": "무덤의 속박", "refName": "무덤의 속박", "namespace": "UNIQUE", "unique": {"base": "밧줄 수갑"}}
-{"name": "탐욕의 포옹", "refName": "탐욕의 포옹", "namespace": "UNIQUE", "unique": {"base": "바알 흉갑"}}
-{"name": "회색작품", "refName": "회색작품", "namespace": "UNIQUE", "unique": {"base": "챙 헬름"}}
-{"name": "겨울의 손아귀", "refName": "겨울의 손아귀", "namespace": "UNIQUE", "unique": {"base": "굳건한 팔보호구"}}
-{"name": "지혜와 행동의 손아귀", "refName": "지혜와 행동의 손아귀", "namespace": "UNIQUE", "unique": {"base": "은밀한 싸개"}}
-{"name": "증오의 탄생", "refName": "증오의 탄생", "namespace": "UNIQUE", "unique": {"base": "주조한 미트"}}
-{"name": "빈덴의 뿔", "refName": "빈덴의 뿔", "namespace": "UNIQUE", "unique": {"base": "녹슨 대헬름"}}
-{"name": "꿈의 껍데기", "refName": "꿈의 껍데기", "namespace": "UNIQUE", "unique": {"base": "주술사 외투"}}
-{"name": "얼음 묘지", "refName": "얼음 묘지", "namespace": "UNIQUE", "unique": {"base": "사슬 법의"}}
-{"name": "게으른 손", "refName": "게으른 손", "namespace": "UNIQUE", "unique": {"base": "절개된 팔보호구"}}
-{"name": "인즈머스", "refName": "인즈머스", "namespace": "UNIQUE", "unique": {"base": "허름한 두건"}}
-{"name": "철손아귀", "refName": "철손아귀", "namespace": "UNIQUE", "unique": {"base": "방랑자 방어구"}}
-{"name": "철의 질주", "refName": "철의 질주", "namespace": "UNIQUE", "unique": {"base": "차양 단 헬름"}}
-{"name": "야릉그레이프", "refName": "야릉그레이프", "namespace": "UNIQUE", "unique": {"base": "고리 갑옷 건틀릿"}}
-{"name": "카옴의 심장", "refName": "카옴의 심장", "namespace": "UNIQUE", "unique": {"base": "정복자 판금 갑옷"}}
-{"name": "전호의 보관자", "refName": "전호의 보관자", "namespace": "UNIQUE", "unique": {"base": "혼백뼈 왕관"}}
-{"name": "깨진 흥", "refName": "깨진 흥", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개"}}
-{"name": "왕의 보호구", "refName": "왕의 보호구", "namespace": "UNIQUE", "unique": {"base": "전신 판금 갑옷"}}
-{"name": "키토코의 흐름", "refName": "키토코의 흐름", "namespace": "UNIQUE", "unique": {"base": "보석 박힌 장갑"}}
-{"name": "음흉한 시선", "refName": "음흉한 시선", "namespace": "UNIQUE", "unique": {"base": "두건 가면"}}
-{"name": "군단의 보조", "refName": "군단의 보조", "namespace": "UNIQUE", "unique": {"base": "거친 각반"}}
-{"name": "록토니얼의 손길", "refName": "록토니얼의 손길", "namespace": "UNIQUE", "unique": {"base": "단조한 미트"}}
-{"name": "빛나는 발걸음", "refName": "빛나는 발걸음", "namespace": "UNIQUE", "unique": {"base": "짚 샌들"}}
-{"name": "늑대 거미", "refName": "늑대 거미", "namespace": "UNIQUE", "unique": {"base": "성벽 거대 방패"}}
-{"name": "마훅소틀의 계책", "refName": "마훅소틀의 계책", "namespace": "UNIQUE", "unique": {"base": "징조 문양 방패"}}
-{"name": "말리가로의 기교", "refName": "말리가로의 기교", "namespace": "UNIQUE", "unique": {"base": "섬세한 팔보호구"}}
-{"name": "혈액술사의 가면", "refName": "혈액술사의 가면", "namespace": "UNIQUE", "unique": {"base": "얼굴 가면"}}
-{"name": "꿰맨 악마의 가면", "refName": "꿰맨 악마의 가면", "namespace": "UNIQUE", "unique": {"base": "깃털 티아라"}}
-{"name": "근정훈장", "refName": "근정훈장", "namespace": "UNIQUE", "unique": {"base": "털가죽 타지"}}
-{"name": "모리오르 인빅투스", "refName": "모리오르 인빅투스", "namespace": "UNIQUE", "unique": {"base": "우수한 예복"}}
-{"name": "미리스 욱소르", "refName": "미리스 욱소르", "namespace": "UNIQUE", "unique": {"base": "은밀한 두건"}}
-{"name": "강령외투", "refName": "강령외투", "namespace": "UNIQUE", "unique": {"base": "뼈 의복"}}
-{"name": "북방발", "refName": "북방발", "namespace": "UNIQUE", "unique": {"base": "스웨드 팔보호구"}}
-{"name": "참나무맹세", "refName": "참나무맹세", "namespace": "UNIQUE", "unique": {"base": "부적 문양 방패"}}
-{"name": "오베른의 보루", "refName": "오베른의 보루", "namespace": "UNIQUE", "unique": {"base": "중첩된 발 덮개"}}
-{"name": "화가의 종", "refName": "화가의 종", "namespace": "UNIQUE", "unique": {"base": "찢긴 장갑"}}
-{"name": "부랑자의 포옹", "refName": "부랑자의 포옹", "namespace": "UNIQUE", "unique": {"base": "은폐 사슬옷"}}
-{"name": "배반", "refName": "배반", "namespace": "UNIQUE", "unique": {"base": "기사 방어구"}}
-{"name": "역병손가락", "refName": "역병손가락", "namespace": "UNIQUE", "unique": {"base": "거즈 싸개"}}
-{"name": "위세의 발 보호대", "refName": "위세의 발 보호대", "namespace": "UNIQUE", "unique": {"base": "사냥용 신발"}}
-{"name": "실용주의", "refName": "실용주의", "namespace": "UNIQUE", "unique": {"base": "탐험가 방어구"}}
-{"name": "기우 기도", "refName": "기우 기도", "namespace": "UNIQUE", "unique": {"base": "케스 의복"}}
-{"name": "콰틀의 허물", "refName": "콰틀의 허물", "namespace": "UNIQUE", "unique": {"base": "뱀 비늘 외투"}}
-{"name": "숲의 여왕", "refName": "숲의 여왕", "namespace": "UNIQUE", "unique": {"base": "밀수범 외투"}}
-{"name": "찬란한 슬픔", "refName": "찬란한 슬픔", "namespace": "UNIQUE", "unique": {"base": "레이스 두건"}}
-{"name": "붉은섬광 도관", "refName": "붉은섬광 도관", "namespace": "UNIQUE", "unique": {"base": "은둔자 의복"}}
-{"name": "불사조의 비상", "refName": "불사조의 비상", "namespace": "UNIQUE", "unique": {"base": "징조 문양 방패"}}
-{"name": "사펠의 골격", "refName": "사펠의 골격", "namespace": "UNIQUE", "unique": {"base": "상징 문양 방패"}}
-{"name": "모래 폭풍의 얼굴", "refName": "모래 폭풍의 얼굴", "namespace": "UNIQUE", "unique": {"base": "사슬 티아라"}}
-{"name": "독사의 교훈", "refName": "독사의 교훈", "namespace": "UNIQUE", "unique": {"base": "음색 집중구"}}
-{"name": "불운아의 족쇄", "refName": "불운아의 족쇄", "namespace": "UNIQUE", "unique": {"base": "오래된 수갑"}}
-{"name": "시에라의 유산", "refName": "시에라의 유산", "namespace": "UNIQUE", "unique": {"base": "도사 의복"}}
-{"name": "시네 아이쿠오", "refName": "시네 아이쿠오", "namespace": "UNIQUE", "unique": {"base": "우수한 소맷부리"}}
-{"name": "충신의 가죽", "refName": "충신의 가죽", "namespace": "UNIQUE", "unique": {"base": "옷"}}
-{"name": "뱀 이빨", "refName": "뱀 이빨", "namespace": "UNIQUE", "unique": {"base": "가시 팔보호구"}}
-{"name": "솔루스 입세", "refName": "솔루스 입세", "namespace": "UNIQUE", "unique": {"base": "우수한 얼굴"}}
-{"name": "스발린", "refName": "스발린", "namespace": "UNIQUE", "unique": {"base": "도가니 거대 방패"}}
-{"name": "템포랄리스", "refName": "템포랄리스", "namespace": "UNIQUE", "unique": {"base": "실크 로브"}}
-{"name": "테츨라포칼의 갈망", "refName": "테츨라포칼의 갈망", "namespace": "UNIQUE", "unique": {"base": "봉헌된 의복"}}
-{"name": "고분의 주민", "refName": "고분의 주민", "namespace": "UNIQUE", "unique": {"base": "악한 방어구"}}
-{"name": "검은 의혹", "refName": "검은 의혹", "namespace": "UNIQUE", "unique": {"base": "사술사의 로브"}}
-{"name": "황동 철갑", "refName": "황동 철갑", "namespace": "UNIQUE", "unique": {"base": "챔피언 흉갑"}}
-{"name": "계약", "refName": "계약", "namespace": "UNIQUE", "unique": {"base": "제단 로브"}}
-{"name": "춤추는 신기루", "refName": "춤추는 신기루", "namespace": "UNIQUE", "unique": {"base": "나그네 재킷"}}
-{"name": "걸신들린 왕관", "refName": "걸신들린 왕관", "namespace": "UNIQUE", "unique": {"base": "고리버들 티아라"}}
-{"name": "영원한 불꽃", "refName": "영원한 불꽃", "namespace": "UNIQUE", "unique": {"base": "결정 집중구"}}
-{"name": "텅 빈 가면", "refName": "텅 빈 가면", "namespace": "UNIQUE", "unique": {"base": "깎아낸 가면"}}
-{"name": "이모탄", "refName": "이모탄", "namespace": "UNIQUE", "unique": {"base": "레이더 판금 갑옷"}}
-{"name": "끝없는 추적", "refName": "끝없는 추적", "namespace": "UNIQUE", "unique": {"base": "청동 각반"}}
-{"name": "무사 수행 기사", "refName": "무사 수행 기사", "namespace": "UNIQUE", "unique": {"base": "사슬 발 덮개"}}
-{"name": "쥐덫", "refName": "쥐덫", "namespace": "UNIQUE", "unique": {"base": "정찰병의 조끼"}}
-{"name": "미소 짓는 기사", "refName": "미소 짓는 기사", "namespace": "UNIQUE", "unique": {"base": "고깔 헬름"}}
-{"name": "포기", "refName": "포기", "namespace": "UNIQUE", "unique": {"base": "돌 거대 방패"}}
-{"name": "세 마리의 용", "refName": "세 마리의 용", "namespace": "UNIQUE", "unique": {"base": "단단한 가면"}}
-{"name": "최정점", "refName": "최정점", "namespace": "UNIQUE", "unique": {"base": "부족 가면"}}
-{"name": "끔찍한 기사", "refName": "끔찍한 기사", "namespace": "UNIQUE", "unique": {"base": "방패 방어 헬름"}}
-{"name": "울부짖는 벽", "refName": "울부짖는 벽", "namespace": "UNIQUE", "unique": {"base": "제웅 거대 방패"}}
-{"name": "실오라기 같은 빛", "refName": "실오라기 같은 빛", "namespace": "UNIQUE", "unique": {"base": "엮은 집중구"}}
-{"name": "전율강철", "refName": "전율강철", "namespace": "UNIQUE", "unique": {"base": "첨탑 대헬름"}}
-{"name": "우레걸음", "refName": "우레걸음", "namespace": "UNIQUE", "unique": {"base": "강철코 장화"}}
-{"name": "거신부패 비늘 갑옷", "refName": "거신부패 비늘 갑옷", "namespace": "UNIQUE", "unique": {"base": "마라케스 흉갑"}}
-{"name": "짓발가락", "refName": "짓발가락", "namespace": "UNIQUE", "unique": {"base": "다듬은 각반"}}
-{"name": "나무손가락", "refName": "나무손가락", "namespace": "UNIQUE", "unique": {"base": "고정못 미트"}}
-{"name": "밤의 장막", "refName": "밤의 장막", "namespace": "UNIQUE", "unique": {"base": "순교자 왕관"}}
-{"name": "아야의 얼굴", "refName": "아야의 얼굴", "namespace": "UNIQUE", "unique": {"base": "구슬 관"}}
-{"name": "볼의 보호자", "refName": "볼의 보호자", "namespace": "UNIQUE", "unique": {"base": "철갑 법의"}}
-{"name": "파괴의 경야", "refName": "파괴의 경야", "namespace": "UNIQUE", "unique": {"base": "보안 레깅스"}}
-{"name": "방랑하는 성유물 보관실", "refName": "방랑하는 성유물 보관실", "namespace": "UNIQUE", "unique": {"base": "강철 판금 갑옷"}}
-{"name": "방랑벽", "refName": "방랑벽", "namespace": "UNIQUE", "unique": {"base": "싸맨 샌들"}}
-{"name": "바람의 괴성", "refName": "바람의 괴성", "namespace": "UNIQUE", "unique": {"base": "깃털 샌들"}}
-{"name": "카일린의 날개", "refName": "카일린의 날개", "namespace": "UNIQUE", "unique": {"base": "녹슨 대헬름"}}
-{"name": "기적의 발판", "refName": "기적의 발판", "namespace": "UNIQUE", "unique": {"base": "실크 슬리퍼"}}
-{"name": "늑대의 천적", "refName": "늑대의 천적", "namespace": "UNIQUE", "unique": {"base": "도색된 거대 방패"}}
-{"name": "녹아내리는 소용돌이", "refName": "녹아내리는 소용돌이", "namespace": "UNIQUE", "unique": {"base": "극한의 마나 플라스크"}}
-{"name": "올로스의 결의", "refName": "올로스의 결의", "namespace": "UNIQUE", "unique": {"base": "극한의 생명력 플라스크"}}
-{"name": "어둠에의 저항", "refName": "어둠에의 저항", "namespace": "UNIQUE", "unique": {"base": "오래된 다이아몬드"}}
-{"name": "제어된 변형", "refName": "제어된 변형", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
-{"name": "허무의 산물", "refName": "허무의 산물", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
-{"name": "장대한 파장", "refName": "장대한 파장", "namespace": "UNIQUE", "unique": {"base": "루비"}}
-{"name": "장대한 파장", "refName": "장대한 파장", "namespace": "UNIQUE", "unique": {"base": "에메랄드"}}
-{"name": "장대한 파장", "refName": "장대한 파장", "namespace": "UNIQUE", "unique": {"base": "사파이어"}}
-{"name": "영웅적인 비극", "refName": "영웅적인 비극", "namespace": "UNIQUE", "unique": {"base": "무궁한 주얼"}}
-{"name": "과대망상", "refName": "과대망상", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
-{"name": "믿음의 분광기", "refName": "믿음의 분광기", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
-{"name": "치장한 자", "refName": "치장한 자", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
-{"name": "푸른혀", "refName": "푸른혀", "namespace": "UNIQUE", "unique": {"base": "절단도"}}
-{"name": "요동치는 두뇌", "refName": "요동치는 두뇌", "namespace": "UNIQUE", "unique": {"base": "징 박힌 대곤봉"}}
-{"name": "브린핸드의 징표", "refName": "브린핸드의 징표", "namespace": "UNIQUE", "unique": {"base": "목재 곤봉"}}
-{"name": "초버 차버", "refName": "초버 차버", "namespace": "UNIQUE", "unique": {"base": "납빛 대망치"}}
-{"name": "무너지는 지평선", "refName": "무너지는 지평선", "namespace": "UNIQUE", "unique": {"base": "아룡 육척봉"}}
-{"name": "죽음의 하프", "refName": "죽음의 하프", "namespace": "UNIQUE", "unique": {"base": "이중시위 활"}}
-{"name": "황혼의 불침번", "refName": "황혼의 불침번", "namespace": "UNIQUE", "unique": {"base": "잿빛 지팡이"}}
-{"name": "대지결속", "refName": "대지결속", "namespace": "UNIQUE", "unique": {"base": "전도성 지팡이"}}
-{"name": "에네준의 돌진", "refName": "에네준의 돌진", "namespace": "UNIQUE", "unique": {"base": "폭발성 마법봉"}}
-{"name": "힘의 샘", "refName": "힘의 샘", "namespace": "UNIQUE", "unique": {"base": "징조 셉터"}}
-{"name": "서리 숨결", "refName": "서리 숨결", "namespace": "UNIQUE", "unique": {"base": "좁은 철퇴"}}
-{"name": "인도하는 손바닥", "refName": "인도하는 손바닥", "namespace": "UNIQUE", "unique": {"base": "성소 셉터"}}
-{"name": "돼지사냥", "refName": "돼지사냥", "namespace": "UNIQUE", "unique": {"base": "쓰러진 대곤봉"}}
-{"name": "흐림노르의 찬가", "refName": "흐림노르의 찬가", "namespace": "UNIQUE", "unique": {"base": "참나무 대망치"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "철창날 창"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "흡혈 칼날"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "고상한 글레이브"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "연장 가로날도끼"}}
-{"name": "미완성", "refName": "미완성", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
-{"name": "생명의 가지", "refName": "생명의 가지", "namespace": "UNIQUE", "unique": {"base": "조율된 마법봉"}}
-{"name": "마챠", "refName": "마챠", "namespace": "UNIQUE", "unique": {"base": "초승달 육척봉"}}
-{"name": "연무의 속삭임", "refName": "연무의 속삭임", "namespace": "UNIQUE", "unique": {"base": "임시 석궁"}}
-{"name": "나지르의 심판", "refName": "나지르의 심판", "namespace": "UNIQUE", "unique": {"base": "강철침 육척봉"}}
-{"name": "올로바사라", "refName": "올로바사라", "namespace": "UNIQUE", "unique": {"base": "고통 곤봉"}}
-{"name": "갇힌 신의 기둥", "refName": "갇힌 신의 기둥", "namespace": "UNIQUE", "unique": {"base": "긴 육척봉"}}
-{"name": "퀘촐리", "refName": "퀘촐리", "namespace": "UNIQUE", "unique": {"base": "허물어지는 대형 망치"}}
-{"name": "화살 비", "refName": "화살 비", "namespace": "UNIQUE", "unique": {"base": "단궁"}}
-{"name": "성벽 랩터", "refName": "성벽 랩터", "namespace": "UNIQUE", "unique": {"base": "팽팽한 석궁"}}
-{"name": "붉은 부리", "refName": "붉은 부리", "namespace": "UNIQUE", "unique": {"base": "절단도"}}
-{"name": "신성한 불꽃", "refName": "신성한 불꽃", "namespace": "UNIQUE", "unique": {"base": "성소 셉터"}}
-{"name": "핏빛 예언자", "refName": "핏빛 예언자", "namespace": "UNIQUE", "unique": {"base": "뼈 마법봉"}}
-{"name": "눈앞의 별", "refName": "눈앞의 별", "namespace": "UNIQUE", "unique": {"base": "판금 철퇴"}}
-{"name": "하늘의 편린", "refName": "하늘의 편린", "namespace": "UNIQUE", "unique": {"base": "날개 달린 창"}}
-{"name": "태양 기병창", "refName": "태양 기병창", "namespace": "UNIQUE", "unique": {"base": "갈라진 창"}}
-{"name": "파편심장", "refName": "파편심장", "namespace": "UNIQUE", "unique": {"base": "반곡궁"}}
-{"name": "로라타의 파편", "refName": "로라타의 파편", "namespace": "UNIQUE", "unique": {"base": "견목 창"}}
-{"name": "타린의 오한", "refName": "타린의 오한", "namespace": "UNIQUE", "unique": {"base": "극한의 지팡이"}}
-{"name": "피의 가시", "refName": "피의 가시", "namespace": "UNIQUE", "unique": {"base": "싸맨 육척봉"}}
-{"name": "그림자의 짐", "refName": "그림자의 짐", "namespace": "UNIQUE", "unique": {"base": "차임벨 지팡이"}}
-{"name": "춤추는 수도승", "refName": "춤추는 수도승", "namespace": "UNIQUE", "unique": {"base": "시미터"}}
-{"name": "어둠의 모독자", "refName": "어둠의 모독자", "namespace": "UNIQUE", "unique": {"base": "덜컹대는 셉터"}}
-{"name": "이글거리는 손길", "refName": "이글거리는 손길", "namespace": "UNIQUE", "unique": {"base": "불저항 지팡이"}}
-{"name": "보초", "refName": "보초", "namespace": "UNIQUE", "unique": {"base": "고딕 육척봉"}}
-{"name": "참호목", "refName": "참호목", "namespace": "UNIQUE", "unique": {"base": "가시 박힌 곤봉"}}
-{"name": "트레피나", "refName": "트레피나", "namespace": "UNIQUE", "unique": {"base": "대장간 대형 망치"}}
-{"name": "과부우박", "refName": "과부우박", "namespace": "UNIQUE", "unique": {"base": "조잡한 활"}}
-{"name": "겨울의 추위", "refName": "겨울의 추위", "namespace": "UNIQUE", "unique": {"base": "유리 단도"}}
-{"name": "와일룬드의 말뚝", "refName": "와일룬드의 말뚝", "namespace": "UNIQUE", "unique": {"base": "대장장이 망치"}}
-{"name": "부서진 향로", "refName": "부서진 향로", "namespace": "UNIQUE", "unique": {"base": "융단 유물"}}
-{"name": "밤의 등화", "refName": "밤의 등화", "namespace": "UNIQUE", "unique": {"base": "인장 유물"}}
-{"name": "두 번째 성체", "refName": "두 번째 성체", "namespace": "UNIQUE", "unique": {"base": "화병 유물"}}
-{"name": "마지막 불길", "refName": "마지막 불길", "namespace": "UNIQUE", "unique": {"base": "향 유물"}}
-{"name": "평화주의자의 영약", "refName": "평화주의자의 영약", "namespace": "UNIQUE", "unique": {"base": "손잡이 항아리 유물"}}
-{"name": "최초의 문양", "refName": "최초의 문양", "namespace": "UNIQUE", "unique": {"base": "궤짝 유물"}}
+{"name": "앤드바리우스", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
+{"name": "별의 보석", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이"}}
+{"name": "아지스의 등불", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "태양의 목걸이"}}
+{"name": "생득권 버클", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "넓은 허리띠"}}
+{"name": "검은화염", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "자수정 반지"}}
+{"name": "검은 심장", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "철제 반지"}}
+{"name": "물집을 잡는 결속", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "루비 반지"}}
+{"name": "브리나바스", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "넓은 허리띠"}}
+{"name": "형제의 부름", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지"}}
+{"name": "학살 심장", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
+{"name": "태풍의 합창", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이"}}
+{"name": "겁쟁이의 유물", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "사슬 허리띠"}}
+{"name": "살금박살", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "루비 반지"}}
+{"name": "죽음의 재촉", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지"}}
+{"name": "운명의 저항", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이"}}
+{"name": "도이드리의 파멸", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "청금석 반지"}}
+{"name": "꿈의 조각", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
+{"name": "차율라의 눈", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "황금 목걸이"}}
+{"name": "화염꽃", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "태양의 목걸이"}}
+{"name": "익스의 집착", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이"}}
+{"name": "빛무리", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "청금석 반지"}}
+{"name": "헤드헌터", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠"}}
+{"name": "마음에 묶인 고리", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "진주 반지"}}
+{"name": "울던의 우상", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "진홍색 목걸이"}}
+{"name": "이그니페리스", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "진홍색 목걸이"}}
+{"name": "지옥불 죔쇠", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "판금 허리띠"}}
+{"name": "기발함", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "특수 허리띠"}}
+{"name": "칼란드라의 손길", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "반지"}}
+{"name": "용골쓸기", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "리넨 허리띠"}}
+{"name": "전광석", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지"}}
+{"name": "리구리움 부적", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "청금석 목걸이"}}
+{"name": "메기노드의 허리띠", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "생가죽 허리띠"}}
+{"name": "심야의 끈", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "생가죽 허리띠"}}
+{"name": "밍의 심장", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "자수정 반지"}}
+{"name": "원죄", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "자수정 반지"}}
+{"name": "페란두스 봉인", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
+{"name": "폴시르켈른", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
+{"name": "신성한 수지", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
+{"name": "허약의 론델", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "달의 목걸이"}}
+{"name": "리슬라사의 감개", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "화려한 허리띠"}}
+{"name": "대재앙의 씨앗", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "청금석 반지"}}
+{"name": "세케마의 결의", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "반지"}}
+{"name": "독사의 알", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "황금 목걸이"}}
+{"name": "샤브론의 가방", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "섬세한 허리띠"}}
+{"name": "뱀 구덩이", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "진주 반지"}}
+{"name": "영혼 올가미", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "긴 허리띠"}}
+{"name": "몸부림치는 비명", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이"}}
+{"name": "굳건한 부적", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이"}}
+{"name": "모루", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "혈석 목걸이"}}
+{"name": "굴착자", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지"}}
+{"name": "영원한 응시", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이"}}
+{"name": "대혼란", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "청금석 목걸이"}}
+{"name": "도둑의 고통", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지"}}
+{"name": "웅힐의 조화", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이"}}
+{"name": "벤토의 도박", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
+{"name": "형제단의 속삭임", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
+{"name": "조프의 피", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
+{"name": "제르피의 시원", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠"}}
+{"name": "아브 아이테르노", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "우수한 허벅지 방어구"}}
+{"name": "아이리스베인의 날개", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "윤이 나는 건틀릿"}}
+{"name": "알켐 에이라", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "문장 문양 방패"}}
+{"name": "우두머리의 울부짖음", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "장갑을 두른 모자"}}
+{"name": "에미란의 앞치마", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "은자 의복"}}
+{"name": "아르빌의 바퀴", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "견목 타지"}}
+{"name": "부서진 잿더미", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "패스파인더 외투"}}
+{"name": "질식의 진노", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "넓은 촉 화살통"}}
+{"name": "공격병동", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "폐쇄형 헬름"}}
+{"name": "아차크의 시야", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "장막 가면"}}
+{"name": "앗지리의 예리함", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "주조한 미트"}}
+{"name": "앗지리의 멸시", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "황금 관"}}
+{"name": "아우르시즈", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "겹겹의 건틀릿"}}
+{"name": "딱정벌레 이빨", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "벨루어 신발"}}
+{"name": "짐승의 소굴", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "탐험가 방어구"}}
+{"name": "요원한 저 너머", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "본능적인 화살통"}}
+{"name": "광분의 탄생", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "돌 각반"}}
+{"name": "독살꽃", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "깃털 로브"}}
+{"name": "검은끈", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "모피 판금 갑옷"}}
+{"name": "검은 섬광", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "불 화살통"}}
+{"name": "검은 태양 문양", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "싸맨 대헬름"}}
+{"name": "축복받은 유대", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개"}}
+{"name": "푸른불길 팔보호구", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "금주물 수갑"}}
+{"name": "울러의 뼈", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "격자 샌들"}}
+{"name": "가시나무 갑옷", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "녹슨 흉갑"}}
+{"name": "가시밭", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "레이스 장화"}}
+{"name": "활력의 겉옷", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "로아가죽 외투"}}
+{"name": "가시털멧돼지", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "가죽 조끼"}}
+{"name": "황동의 턱수염", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "뿔 달린 왕관"}}
+{"name": "덤불 매복", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "도마뱀비늘 장화"}}
+{"name": "양초 제작자", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "암울한 장갑"}}
+{"name": "부패하는 부름", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "아로새긴 집중구"}}
+{"name": "화염의 망토", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "실크 로브"}}
+{"name": "붉은색의 외투", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "사슬 갑옷"}}
+{"name": "코르나타움", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "무거운 왕관"}}
+{"name": "붉은 태양의 광환", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "전사 대헬름"}}
+{"name": "시신걸음", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "철제 각반"}}
+{"name": "진홍의 예복", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "도금된 법의"}}
+{"name": "아르듀라의 문양", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "방울 문양 방패"}}
+{"name": "창백한 왕의 왕관", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "광신자 왕관"}}
+{"name": "승리자의 왕관", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "철 왕관"}}
+{"name": "가시 왕관", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "잔가지 관"}}
+{"name": "어두운 빛의 궤적", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "죔쇠 발 덮개"}}
+{"name": "죽음의 일격", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "이중 건틀릿"}}
+{"name": "단말마의 숨소리", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "잔가지 집중구"}}
+{"name": "죽음의 종", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "정예병 대헬름"}}
+{"name": "악마 봉합자", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "복잡한 장갑"}}
+{"name": "다이오나데어", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "쪼개진 거대 방패"}}
+{"name": "도이드리의 임기", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "꿰맨 장갑"}}
+{"name": "멸망문", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "죔쇠 거대 방패"}}
+{"name": "도리아니의 프로토타입", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "미늘 갑옷"}}
+{"name": "황혼꽃", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "징 박힌 조끼"}}
+{"name": "에디른의 엄니", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "철 흉갑"}}
+{"name": "원소포식", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "사냥꾼 두건"}}
+{"name": "감싸 안는 여명", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "순례자 법의"}}
+{"name": "에리안의 수선", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "보호받는 헬름"}}
+{"name": "에조미어의 면갑", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "병사 대헬름"}}
+{"name": "깃털 달린 요새", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "초승달 타지"}}
+{"name": "금단의 응시", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "사슬 티아라"}}
+{"name": "여우 그림자", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "누비 조끼"}}
+{"name": "도박질주", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "양각 무늬 장화"}}
+{"name": "유령의 행진", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "실타래 신발"}}
+{"name": "유령의 몸서리", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "조각난 로브"}}
+{"name": "혼돈의 섬광", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "부족 가면"}}
+{"name": "순흑체", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "밀랍재질 재킷"}}
+{"name": "금테", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "펠트 모자"}}
+{"name": "무덤의 속박", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "밧줄 수갑"}}
+{"name": "탐욕의 포옹", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "바알 흉갑"}}
+{"name": "회색작품", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "챙 헬름"}}
+{"name": "겨울의 손아귀", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "굳건한 팔보호구"}}
+{"name": "지혜와 행동의 손아귀", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "은밀한 싸개"}}
+{"name": "증오의 탄생", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "주조한 미트"}}
+{"name": "빈덴의 뿔", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "녹슨 대헬름"}}
+{"name": "꿈의 껍데기", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "주술사 외투"}}
+{"name": "얼음 묘지", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "사슬 법의"}}
+{"name": "게으른 손", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "절개된 팔보호구"}}
+{"name": "인즈머스", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "허름한 두건"}}
+{"name": "철손아귀", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "방랑자 방어구"}}
+{"name": "철의 질주", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "차양 단 헬름"}}
+{"name": "야릉그레이프", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "고리 갑옷 건틀릿"}}
+{"name": "카옴의 심장", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "정복자 판금 갑옷"}}
+{"name": "전호의 보관자", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "혼백뼈 왕관"}}
+{"name": "깨진 흥", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개"}}
+{"name": "왕의 보호구", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "전신 판금 갑옷"}}
+{"name": "키토코의 흐름", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "보석 박힌 장갑"}}
+{"name": "음흉한 시선", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "두건 가면"}}
+{"name": "군단의 보조", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "거친 각반"}}
+{"name": "록토니얼의 손길", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "단조한 미트"}}
+{"name": "빛나는 발걸음", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "짚 샌들"}}
+{"name": "늑대 거미", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "성벽 거대 방패"}}
+{"name": "마훅소틀의 계책", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "징조 문양 방패"}}
+{"name": "말리가로의 기교", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "섬세한 팔보호구"}}
+{"name": "혈액술사의 가면", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "얼굴 가면"}}
+{"name": "꿰맨 악마의 가면", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "깃털 티아라"}}
+{"name": "근정훈장", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "털가죽 타지"}}
+{"name": "모리오르 인빅투스", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "우수한 예복"}}
+{"name": "미리스 욱소르", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "은밀한 두건"}}
+{"name": "강령외투", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "뼈 의복"}}
+{"name": "북방발", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "스웨드 팔보호구"}}
+{"name": "참나무맹세", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "부적 문양 방패"}}
+{"name": "오베른의 보루", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "중첩된 발 덮개"}}
+{"name": "화가의 종", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "찢긴 장갑"}}
+{"name": "부랑자의 포옹", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "은폐 사슬옷"}}
+{"name": "배반", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "기사 방어구"}}
+{"name": "역병손가락", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "거즈 싸개"}}
+{"name": "위세의 발 보호대", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "사냥용 신발"}}
+{"name": "실용주의", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "탐험가 방어구"}}
+{"name": "기우 기도", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "케스 의복"}}
+{"name": "콰틀의 허물", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "뱀 비늘 외투"}}
+{"name": "숲의 여왕", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "밀수범 외투"}}
+{"name": "찬란한 슬픔", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "레이스 두건"}}
+{"name": "붉은섬광 도관", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "은둔자 의복"}}
+{"name": "불사조의 비상", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "징조 문양 방패"}}
+{"name": "사펠의 골격", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "상징 문양 방패"}}
+{"name": "모래 폭풍의 얼굴", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "사슬 티아라"}}
+{"name": "독사의 교훈", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "음색 집중구"}}
+{"name": "불운아의 족쇄", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "오래된 수갑"}}
+{"name": "시에라의 유산", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "도사 의복"}}
+{"name": "시네 아이쿠오", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "우수한 소맷부리"}}
+{"name": "충신의 가죽", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "옷"}}
+{"name": "뱀 이빨", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "가시 팔보호구"}}
+{"name": "솔루스 입세", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "우수한 얼굴"}}
+{"name": "스발린", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "도가니 거대 방패"}}
+{"name": "템포랄리스", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "실크 로브"}}
+{"name": "테츨라포칼의 갈망", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "봉헌된 의복"}}
+{"name": "고분의 주민", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "악한 방어구"}}
+{"name": "검은 의혹", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "사술사의 로브"}}
+{"name": "황동 철갑", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "챔피언 흉갑"}}
+{"name": "계약", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "제단 로브"}}
+{"name": "춤추는 신기루", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "나그네 재킷"}}
+{"name": "걸신들린 왕관", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "고리버들 티아라"}}
+{"name": "영원한 불꽃", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "결정 집중구"}}
+{"name": "텅 빈 가면", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "깎아낸 가면"}}
+{"name": "이모탄", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "레이더 판금 갑옷"}}
+{"name": "끝없는 추적", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "청동 각반"}}
+{"name": "무사 수행 기사", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "사슬 발 덮개"}}
+{"name": "쥐덫", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "정찰병의 조끼"}}
+{"name": "미소 짓는 기사", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "고깔 헬름"}}
+{"name": "포기", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "돌 거대 방패"}}
+{"name": "세 마리의 용", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "단단한 가면"}}
+{"name": "최정점", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "부족 가면"}}
+{"name": "끔찍한 기사", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "방패 방어 헬름"}}
+{"name": "울부짖는 벽", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "제웅 거대 방패"}}
+{"name": "실오라기 같은 빛", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "엮은 집중구"}}
+{"name": "전율강철", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "첨탑 대헬름"}}
+{"name": "우레걸음", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "강철코 장화"}}
+{"name": "거신부패 비늘 갑옷", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "마라케스 흉갑"}}
+{"name": "짓발가락", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "다듬은 각반"}}
+{"name": "나무손가락", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "고정못 미트"}}
+{"name": "밤의 장막", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "순교자 왕관"}}
+{"name": "아야의 얼굴", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "구슬 관"}}
+{"name": "볼의 보호자", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "철갑 법의"}}
+{"name": "파괴의 경야", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "보안 레깅스"}}
+{"name": "방랑하는 성유물 보관실", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "강철 판금 갑옷"}}
+{"name": "방랑벽", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "싸맨 샌들"}}
+{"name": "바람의 괴성", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "깃털 샌들"}}
+{"name": "카일린의 날개", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "녹슨 대헬름"}}
+{"name": "기적의 발판", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "실크 슬리퍼"}}
+{"name": "늑대의 천적", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "도색된 거대 방패"}}
+{"name": "녹아내리는 소용돌이", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "극한의 마나 플라스크"}}
+{"name": "올로스의 결의", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "극한의 생명력 플라스크"}}
+{"name": "어둠에의 저항", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "오래된 다이아몬드"}}
+{"name": "제어된 변형", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
+{"name": "허무의 산물", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
+{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "루비"}}
+{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "에메랄드"}}
+{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "사파이어"}}
+{"name": "영웅적인 비극", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "무궁한 주얼"}}
+{"name": "과대망상", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
+{"name": "믿음의 분광기", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
+{"name": "치장한 자", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "다이아몬드"}}
+{"name": "푸른혀", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "절단도"}}
+{"name": "요동치는 두뇌", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "징 박힌 대곤봉"}}
+{"name": "브린핸드의 징표", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "목재 곤봉"}}
+{"name": "초버 차버", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "납빛 대망치"}}
+{"name": "무너지는 지평선", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "아룡 육척봉"}}
+{"name": "죽음의 하프", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "이중시위 활"}}
+{"name": "황혼의 불침번", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "잿빛 지팡이"}}
+{"name": "대지결속", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "전도성 지팡이"}}
+{"name": "에네준의 돌진", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "폭발성 마법봉"}}
+{"name": "힘의 샘", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "징조 셉터"}}
+{"name": "서리 숨결", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "좁은 철퇴"}}
+{"name": "인도하는 손바닥", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "성소 셉터"}}
+{"name": "돼지사냥", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "쓰러진 대곤봉"}}
+{"name": "흐림노르의 찬가", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "참나무 대망치"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철창날 창"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "흡혈 칼날"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "고상한 글레이브"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "연장 가로날도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
+{"name": "생명의 가지", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "조율된 마법봉"}}
+{"name": "마챠", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "초승달 육척봉"}}
+{"name": "연무의 속삭임", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "임시 석궁"}}
+{"name": "나지르의 심판", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "강철침 육척봉"}}
+{"name": "올로바사라", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "고통 곤봉"}}
+{"name": "갇힌 신의 기둥", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "긴 육척봉"}}
+{"name": "퀘촐리", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "허물어지는 대형 망치"}}
+{"name": "화살 비", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "단궁"}}
+{"name": "성벽 랩터", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "팽팽한 석궁"}}
+{"name": "붉은 부리", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "절단도"}}
+{"name": "신성한 불꽃", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "성소 셉터"}}
+{"name": "핏빛 예언자", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "뼈 마법봉"}}
+{"name": "눈앞의 별", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "판금 철퇴"}}
+{"name": "하늘의 편린", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "날개 달린 창"}}
+{"name": "태양 기병창", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "갈라진 창"}}
+{"name": "파편심장", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "반곡궁"}}
+{"name": "로라타의 파편", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "견목 창"}}
+{"name": "타린의 오한", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "극한의 지팡이"}}
+{"name": "피의 가시", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "싸맨 육척봉"}}
+{"name": "그림자의 짐", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "차임벨 지팡이"}}
+{"name": "춤추는 수도승", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "시미터"}}
+{"name": "어둠의 모독자", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "덜컹대는 셉터"}}
+{"name": "이글거리는 손길", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "불저항 지팡이"}}
+{"name": "보초", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "고딕 육척봉"}}
+{"name": "참호목", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "가시 박힌 곤봉"}}
+{"name": "트레피나", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "대장간 대형 망치"}}
+{"name": "과부우박", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "조잡한 활"}}
+{"name": "겨울의 추위", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "유리 단도"}}
+{"name": "와일룬드의 말뚝", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "대장장이 망치"}}
+{"name": "부서진 향로", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "융단 유물"}}
+{"name": "밤의 등화", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "인장 유물"}}
+{"name": "두 번째 성체", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "화병 유물"}}
+{"name": "마지막 불길", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "향 유물"}}
+{"name": "평화주의자의 영약", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "손잡이 항아리 유물"}}
+{"name": "최초의 문양", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "궤짝 유물"}}

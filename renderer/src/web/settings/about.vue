@@ -37,12 +37,6 @@
       </p>
       <ul class="flex gap-4">
         <li>
-          <img class="rounded inline" src="/images/dc_tft.gif" />
-          <a class="border-b" href="https://discord.gg/tftrove" target="_blank"
-            >The Forbidden Trove</a
-          >
-        </li>
-        <li>
           <img class="rounded inline" src="/images/dc_reddit.png" />
           <a
             class="border-b"

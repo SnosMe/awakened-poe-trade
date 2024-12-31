@@ -2785,304 +2785,304 @@
 {"name": "黒焦げのショートソード", "refName": "Charred Shortsword", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
 {"name": "黒鉄のタワーシールド", "refName": "Blacksteel Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [152, 152]}, "w": 2, "h": 4}
 {"name": "鼓舞のルーン", "refName": "Inspiration Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJlY292ZXJ5UnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/5154db8cf8/ManaRecoveryRune.png", "tradeTag": "inspiration-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
-{"name": "アンドヴァリアス", "refName": "アンドヴァリアス", "namespace": "UNIQUE", "unique": {"base": "金の指輪"}}
-{"name": "アストラメンティス", "refName": "アストラメンティス", "namespace": "UNIQUE", "unique": {"base": "星のアミュレット"}}
-{"name": "アジスの標", "refName": "アジスの標", "namespace": "UNIQUE", "unique": {"base": "太陽のアミュレット"}}
-{"name": "遺産のバックル", "refName": "遺産のバックル", "namespace": "UNIQUE", "unique": {"base": "幅広のベルト"}}
-{"name": "黒い炎", "refName": "黒い炎", "namespace": "UNIQUE", "unique": {"base": "アメジストの指輪"}}
-{"name": "ブラックハート", "refName": "ブラックハート", "namespace": "UNIQUE", "unique": {"base": "鉄の指輪"}}
-{"name": "焼け付く絆", "refName": "焼け付く絆", "namespace": "UNIQUE", "unique": {"base": "ルビーの指輪"}}
-{"name": "ブリナバス", "refName": "ブリナバス", "namespace": "UNIQUE", "unique": {"base": "幅広のベルト"}}
-{"name": "兄弟の証", "refName": "兄弟の証", "namespace": "UNIQUE", "unique": {"base": "トパーズの指輪"}}
-{"name": "カーネイジ・ハート", "refName": "カーネイジ・ハート", "namespace": "UNIQUE", "unique": {"base": "琥珀のアミュレット"}}
-{"name": "嵐の合唱", "refName": "嵐の合唱", "namespace": "UNIQUE", "unique": {"base": "翡翠のアミュレット"}}
-{"name": "臆病者の遺産", "refName": "臆病者の遺産", "namespace": "UNIQUE", "unique": {"base": "メイルベルト"}}
-{"name": "クラックルクリープ", "refName": "クラックルクリープ", "namespace": "UNIQUE", "unique": {"base": "ルビーの指輪"}}
-{"name": "死の激発", "refName": "死の激発", "namespace": "UNIQUE", "unique": {"base": "エメラルドの指輪"}}
-{"name": "運命への反抗", "refName": "運命への反抗", "namespace": "UNIQUE", "unique": {"base": "翡翠のアミュレット"}}
-{"name": "ドードゥリの糾弾", "refName": "ドードゥリの糾弾", "namespace": "UNIQUE", "unique": {"base": "青金石の指輪"}}
-{"name": "夢の断片", "refName": "夢の断片", "namespace": "UNIQUE", "unique": {"base": "サファイアの指輪"}}
-{"name": "チャユラの目", "refName": "チャユラの目", "namespace": "UNIQUE", "unique": {"base": "金のアミュレット"}}
-{"name": "ファイアフラワー", "refName": "ファイアフラワー", "namespace": "UNIQUE", "unique": {"base": "太陽のアミュレット"}}
-{"name": "イクスの凝視", "refName": "イクスの凝視", "namespace": "UNIQUE", "unique": {"base": "星のアミュレット"}}
-{"name": "グロウスウォーム", "refName": "グロウスウォーム", "namespace": "UNIQUE", "unique": {"base": "青金石の指輪"}}
-{"name": "ヘッドハンター", "refName": "ヘッドハンター", "namespace": "UNIQUE", "unique": {"base": "重いベルト"}}
-{"name": "ハートバウンド・ループ", "refName": "ハートバウンド・ループ", "namespace": "UNIQUE", "unique": {"base": "真珠の指輪"}}
-{"name": "ウルダーンの偶像", "refName": "ウルダーンの偶像", "namespace": "UNIQUE", "unique": {"base": "深紅のアミュレット"}}
-{"name": "イグニフェリス", "refName": "イグニフェリス", "namespace": "UNIQUE", "unique": {"base": "深紅のアミュレット"}}
-{"name": "地獄の留め金", "refName": "地獄の留め金", "namespace": "UNIQUE", "unique": {"base": "プレートベルト"}}
-{"name": "創造力", "refName": "創造力", "namespace": "UNIQUE", "unique": {"base": "実用的なベルト"}}
-{"name": "カランドラの接触", "refName": "カランドラの接触", "namespace": "UNIQUE", "unique": {"base": "指輪"}}
-{"name": "竜骨くぐり", "refName": "竜骨くぐり", "namespace": "UNIQUE", "unique": {"base": "リネンのベルト"}}
-{"name": "レヴィンストーン", "refName": "レヴィンストーン", "namespace": "UNIQUE", "unique": {"base": "トパーズの指輪"}}
-{"name": "リグリウムの魔除け", "refName": "リグリウムの魔除け", "namespace": "UNIQUE", "unique": {"base": "瑠璃のアミュレット"}}
-{"name": "メギノルドのベルト", "refName": "メギノルドのベルト", "namespace": "UNIQUE", "unique": {"base": "生皮のベルト"}}
-{"name": "真夜中の組紐", "refName": "真夜中の組紐", "namespace": "UNIQUE", "unique": {"base": "生皮のベルト"}}
-{"name": "ミンの心臓", "refName": "ミンの心臓", "namespace": "UNIQUE", "unique": {"base": "アメジストの指輪"}}
-{"name": "原罪", "refName": "原罪", "namespace": "UNIQUE", "unique": {"base": "アメジストの指輪"}}
-{"name": "ペランダスの印鑑指輪", "refName": "ペランダスの印鑑指輪", "namespace": "UNIQUE", "unique": {"base": "金の指輪"}}
-{"name": "プールシルケルン", "refName": "プールシルケルン", "namespace": "UNIQUE", "unique": {"base": "サファイアの指輪"}}
-{"name": "敬われし樹脂", "refName": "敬われし樹脂", "namespace": "UNIQUE", "unique": {"base": "琥珀のアミュレット"}}
-{"name": "脆弱のロンデル", "refName": "脆弱のロンデル", "namespace": "UNIQUE", "unique": {"base": "月のアミュレット"}}
-{"name": "リスラーサのコイル", "refName": "リスラーサのコイル", "namespace": "UNIQUE", "unique": {"base": "華美なベルト"}}
-{"name": "災厄の種子", "refName": "災厄の種子", "namespace": "UNIQUE", "unique": {"base": "青金石の指輪"}}
-{"name": "セケマの決意", "refName": "セケマの決意", "namespace": "UNIQUE", "unique": {"base": "指輪"}}
-{"name": "蛇の卵", "refName": "蛇の卵", "namespace": "UNIQUE", "unique": {"base": "金のアミュレット"}}
-{"name": "シャヴロンの鞄", "refName": "シャヴロンの鞄", "namespace": "UNIQUE", "unique": {"base": "精巧なベルト"}}
-{"name": "スネークピット", "refName": "スネークピット", "namespace": "UNIQUE", "unique": {"base": "真珠の指輪"}}
-{"name": "魂を繋ぐ綱", "refName": "魂を繋ぐ綱", "namespace": "UNIQUE", "unique": {"base": "長いベルト"}}
-{"name": "ストラグルスクリーム", "refName": "ストラグルスクリーム", "namespace": "UNIQUE", "unique": {"base": "星のアミュレット"}}
-{"name": "確かな足取りの印章", "refName": "確かな足取りの印章", "namespace": "UNIQUE", "unique": {"base": "翡翠のアミュレット"}}
-{"name": "鉄床", "refName": "鉄床", "namespace": "UNIQUE", "unique": {"base": "血石のアミュレット"}}
-{"name": "潜る者", "refName": "潜る者", "namespace": "UNIQUE", "unique": {"base": "トパーズの指輪"}}
-{"name": "不朽の眼差し", "refName": "不朽の眼差し", "namespace": "UNIQUE", "unique": {"base": "深青のアミュレット"}}
-{"name": "パンデモニアス", "refName": "パンデモニアス", "namespace": "UNIQUE", "unique": {"base": "瑠璃のアミュレット"}}
-{"name": "泥棒の苦悩", "refName": "泥棒の苦悩", "namespace": "UNIQUE", "unique": {"base": "エメラルドの指輪"}}
-{"name": "アンギルの調和", "refName": "アンギルの調和", "namespace": "UNIQUE", "unique": {"base": "深青のアミュレット"}}
-{"name": "ヴェンターのギャンブル", "refName": "ヴェンターのギャンブル", "namespace": "UNIQUE", "unique": {"base": "金の指輪"}}
-{"name": "一党の囁き", "refName": "一党の囁き", "namespace": "UNIQUE", "unique": {"base": "サファイアの指輪"}}
-{"name": "ゾフの血", "refName": "ゾフの血", "namespace": "UNIQUE", "unique": {"base": "琥珀のアミュレット"}}
-{"name": "ゼルフィの誕生", "refName": "ゼルフィの誕生", "namespace": "UNIQUE", "unique": {"base": "重いベルト"}}
-{"name": "永遠から", "refName": "永遠から", "namespace": "UNIQUE", "unique": {"base": "荘厳な腿当て"}}
-{"name": "エーリスヴェインの翼", "refName": "エーリスヴェインの翼", "namespace": "UNIQUE", "unique": {"base": "艶のあるガントレット"}}
-{"name": "アルケム・エイラ", "refName": "アルケム・エイラ", "namespace": "UNIQUE", "unique": {"base": "青銅のクレストシールド"}}
-{"name": "アルファの遠吠え", "refName": "アルファの遠吠え", "namespace": "UNIQUE", "unique": {"base": "アーマードキャップ"}}
-{"name": "エミレの前掛け", "refName": "エミレの前掛け", "namespace": "UNIQUE", "unique": {"base": "隠修士の服"}}
-{"name": "アルヴィルの車輪", "refName": "アルヴィルの車輪", "namespace": "UNIQUE", "unique": {"base": "堅木のタージ"}}
-{"name": "アシュレンド", "refName": "アシュレンド", "namespace": "UNIQUE", "unique": {"base": "開拓者のコート"}}
-{"name": "アスフィクシアの憤怒", "refName": "アスフィクシアの憤怒", "namespace": "UNIQUE", "unique": {"base": "太矢じりの矢筒"}}
-{"name": "アセイラム", "refName": "アセイラム", "namespace": "UNIQUE", "unique": {"base": "クローズドヘルム"}}
-{"name": "アツァクの視野", "refName": "アツァクの視野", "namespace": "UNIQUE", "unique": {"base": "ベール付きの仮面"}}
-{"name": "アトジリの鋭敏さ", "refName": "アトジリの鋭敏さ", "namespace": "UNIQUE", "unique": {"base": "成形ミット"}}
-{"name": "アッツィリの軽蔑", "refName": "アッツィリの軽蔑", "namespace": "UNIQUE", "unique": {"base": "金のサークレット"}}
-{"name": "オアシーズ", "refName": "オアシーズ", "namespace": "UNIQUE", "unique": {"base": "レイヤーガントレット"}}
-{"name": "ビートルバイト", "refName": "ビートルバイト", "namespace": "UNIQUE", "unique": {"base": "ベロアシューズ"}}
-{"name": "魔獣の内部", "refName": "魔獣の内部", "namespace": "UNIQUE", "unique": {"base": "探検家の鎧"}}
-{"name": "手の届かぬ所", "refName": "手の届かぬ所", "namespace": "UNIQUE", "unique": {"base": "内臓の矢筒"}}
-{"name": "怒りの誕生", "refName": "怒りの誕生", "namespace": "UNIQUE", "unique": {"base": "石のグリーヴ"}}
-{"name": "ビターブルーム", "refName": "ビターブルーム", "namespace": "UNIQUE", "unique": {"base": "羽根付きのローブ"}}
-{"name": "黒い組紐", "refName": "黒い組紐", "namespace": "UNIQUE", "unique": {"base": "毛皮のプレート"}}
-{"name": "ブラックグリーム", "refName": "ブラックグリーム", "namespace": "UNIQUE", "unique": {"base": "火の矢筒"}}
-{"name": "黒い太陽の紋章", "refName": "黒い太陽の紋章", "namespace": "UNIQUE", "unique": {"base": "覆われた大兜"}}
-{"name": "祝福されし絆", "refName": "祝福されし絆", "namespace": "UNIQUE", "unique": {"base": "リネンのラップ"}}
-{"name": "蒼炎の籠手", "refName": "蒼炎の籠手", "namespace": "UNIQUE", "unique": {"base": "ゴールドキャストカフス"}}
-{"name": "ウルルの骨", "refName": "ウルルの骨", "namespace": "UNIQUE", "unique": {"base": "ラティスサンダル"}}
-{"name": "ブランブルジャック", "refName": "ブランブルジャック", "namespace": "UNIQUE", "unique": {"base": "錆びた胴鎧"}}
-{"name": "荊棘", "refName": "荊棘", "namespace": "UNIQUE", "unique": {"base": "レースのブーツ"}}
-{"name": "ブリスクラップ", "refName": "ブリスクラップ", "namespace": "UNIQUE", "unique": {"base": "ロアハイドコート"}}
-{"name": "毛深い猪", "refName": "毛深い猪", "namespace": "UNIQUE", "unique": {"base": "皮のベスト"}}
-{"name": "青銅の髭", "refName": "青銅の髭", "namespace": "UNIQUE", "unique": {"base": "角の冠"}}
-{"name": "ブッシュワック", "refName": "ブッシュワック", "namespace": "UNIQUE", "unique": {"base": "リザードスケールブーツ"}}
-{"name": "キャンドルメーカー", "refName": "キャンドルメーカー", "namespace": "UNIQUE", "unique": {"base": "地味な手袋"}}
-{"name": "死体の呼び声", "refName": "死体の呼び声", "namespace": "UNIQUE", "unique": {"base": "彫り込みのあるフォーカス"}}
-{"name": "炎のクローク", "refName": "炎のクローク", "namespace": "UNIQUE", "unique": {"base": "絹のローブ"}}
-{"name": "赤のコート", "refName": "赤のコート", "namespace": "UNIQUE", "unique": {"base": "チェインメイル"}}
-{"name": "コーナサウム", "refName": "コーナサウム", "namespace": "UNIQUE", "unique": {"base": "重い冠"}}
-{"name": "赤き太陽のコロナ", "refName": "赤き太陽のコロナ", "namespace": "UNIQUE", "unique": {"base": "戦士の大兜"}}
-{"name": "コープスウェード", "refName": "コープスウェード", "namespace": "UNIQUE", "unique": {"base": "鉄のグリーヴ"}}
-{"name": "紅のクチュール", "refName": "紅のクチュール", "namespace": "UNIQUE", "unique": {"base": "煌びやかな祭服"}}
-{"name": "アードゥラの紋章", "refName": "アードゥラの紋章", "namespace": "UNIQUE", "unique": {"base": "鏘然のクレストシールド"}}
-{"name": "ペールキングの王冠", "refName": "ペールキングの王冠", "namespace": "UNIQUE", "unique": {"base": "崇拝者の冠"}}
-{"name": "勝者の冠", "refName": "勝者の冠", "namespace": "UNIQUE", "unique": {"base": "鉄の冠"}}
-{"name": "茨の冠", "refName": "茨の冠", "namespace": "UNIQUE", "unique": {"base": "小枝のサークレット"}}
-{"name": "ダークレイ・ベクトル", "refName": "ダークレイ・ベクトル", "namespace": "UNIQUE", "unique": {"base": "ブレースサバトン"}}
-{"name": "デスブロー", "refName": "デスブロー", "namespace": "UNIQUE", "unique": {"base": "二重のガントレット"}}
-{"name": "死前喘鳴", "refName": "死前喘鳴", "namespace": "UNIQUE", "unique": {"base": "小枝のフォーカス"}}
-{"name": "ディードベル", "refName": "ディードベル", "namespace": "UNIQUE", "unique": {"base": "精鋭の大兜"}}
-{"name": "デーモン・ステッチャー", "refName": "デーモン・ステッチャー", "namespace": "UNIQUE", "unique": {"base": "手の込んだ手袋"}}
-{"name": "ディオナデア", "refName": "ディオナデア", "namespace": "UNIQUE", "unique": {"base": "割れたタワーシールド"}}
-{"name": "ドードゥリの才能", "refName": "ドードゥリの才能", "namespace": "UNIQUE", "unique": {"base": "縫い合わされた手袋"}}
-{"name": "破滅の門", "refName": "破滅の門", "namespace": "UNIQUE", "unique": {"base": "ブレースタワーシールド"}}
-{"name": "ドリヤニの試作品", "refName": "ドリヤニの試作品", "namespace": "UNIQUE", "unique": {"base": "スケイルメイル"}}
-{"name": "ダストブルーム", "refName": "ダストブルーム", "namespace": "UNIQUE", "unique": {"base": "鋲付きのベスト"}}
-{"name": "エディルンの牙", "refName": "エディルンの牙", "namespace": "UNIQUE", "unique": {"base": "鉄の胴鎧"}}
-{"name": "エレボアー", "refName": "エレボアー", "namespace": "UNIQUE", "unique": {"base": "狩人のフード"}}
-{"name": "包み込む夜明け", "refName": "包み込む夜明け", "namespace": "UNIQUE", "unique": {"base": "巡礼者の祭服"}}
-{"name": "エリアンの玉石", "refName": "エリアンの玉石", "namespace": "UNIQUE", "unique": {"base": "防護兜"}}
-{"name": "エゾマイトピーク", "refName": "エゾマイトピーク", "namespace": "UNIQUE", "unique": {"base": "兵士の大兜"}}
-{"name": "羽根付き要塞", "refName": "羽根付き要塞", "namespace": "UNIQUE", "unique": {"base": "三日月のタージ"}}
-{"name": "禁断の眼差し", "refName": "禁断の眼差し", "namespace": "UNIQUE", "unique": {"base": "鎖のティアラ"}}
-{"name": "フォックスシェード", "refName": "フォックスシェード", "namespace": "UNIQUE", "unique": {"base": "キルトのベスト"}}
-{"name": "ギャンブルスプリント", "refName": "ギャンブルスプリント", "namespace": "UNIQUE", "unique": {"base": "エンボスのブーツ"}}
-{"name": "ゴーストマーチ", "refName": "ゴーストマーチ", "namespace": "UNIQUE", "unique": {"base": "スレッドシューズ"}}
-{"name": "ゴーストライズ", "refName": "ゴーストライズ", "namespace": "UNIQUE", "unique": {"base": "ボロボロのローブ"}}
-{"name": "混沌の片鱗", "refName": "混沌の片鱗", "namespace": "UNIQUE", "unique": {"base": "部族の仮面"}}
-{"name": "暗がりの姿", "refName": "暗がりの姿", "namespace": "UNIQUE", "unique": {"base": "ワックスジャケット"}}
-{"name": "ゴールドリム", "refName": "ゴールドリム", "namespace": "UNIQUE", "unique": {"base": "フェルトの帽子"}}
-{"name": "グレーヴバインド", "refName": "グレーヴバインド", "namespace": "UNIQUE", "unique": {"base": "縄のカフス"}}
-{"name": "貪欲の抱擁", "refName": "貪欲の抱擁", "namespace": "UNIQUE", "unique": {"base": "ヴァールの胴鎧"}}
-{"name": "グレイメイク", "refName": "グレイメイク", "namespace": "UNIQUE", "unique": {"base": "つば付き兜"}}
-{"name": "冬の掌握", "refName": "冬の掌握", "namespace": "UNIQUE", "unique": {"base": "頑丈な弓籠手"}}
-{"name": "知恵と行動の手", "refName": "知恵と行動の手", "namespace": "UNIQUE", "unique": {"base": "ファーティブラップ"}}
-{"name": "ヘイトフォージ", "refName": "ヘイトフォージ", "namespace": "UNIQUE", "unique": {"base": "成形ミット"}}
-{"name": "ビンデンの角笛", "refName": "ビンデンの角笛", "namespace": "UNIQUE", "unique": {"base": "錆びた大兜"}}
-{"name": "夢の殻", "refName": "夢の殻", "namespace": "UNIQUE", "unique": {"base": "シャーマンの外套"}}
-{"name": "アイストゥーム", "refName": "アイストゥーム", "namespace": "UNIQUE", "unique": {"base": "鎖帷子の祭服"}}
-{"name": "暇人の手", "refName": "暇人の手", "namespace": "UNIQUE", "unique": {"base": "分割式の弓籠手"}}
-{"name": "インスマス", "refName": "インスマス", "namespace": "UNIQUE", "unique": {"base": "ボロボロのフード"}}
-{"name": "アイアングラスプ", "refName": "アイアングラスプ", "namespace": "UNIQUE", "unique": {"base": "放浪者の鎧"}}
-{"name": "アイアンライド", "refName": "アイアンライド", "namespace": "UNIQUE", "unique": {"base": "バイザー付き兜"}}
-{"name": "ヤールングレイプル", "refName": "ヤールングレイプル", "namespace": "UNIQUE", "unique": {"base": "リングメイルガントレット"}}
-{"name": "カオムの心臓", "refName": "カオムの心臓", "namespace": "UNIQUE", "unique": {"base": "コンカラープレート"}}
-{"name": "弧の守りて", "refName": "弧の守りて", "namespace": "UNIQUE", "unique": {"base": "スピリットボーンの冠"}}
-{"name": "キルジョイ", "refName": "キルジョイ", "namespace": "UNIQUE", "unique": {"base": "リネンのラップ"}}
-{"name": "キングスガード", "refName": "キングスガード", "namespace": "UNIQUE", "unique": {"base": "フルプレート"}}
-{"name": "キトコの流れ", "refName": "キトコの流れ", "namespace": "UNIQUE", "unique": {"base": "宝石をあしらった手袋"}}
-{"name": "リアー・キャスト", "refName": "リアー・キャスト", "namespace": "UNIQUE", "unique": {"base": "フード付きの仮面"}}
-{"name": "リージョンストライド", "refName": "リージョンストライド", "namespace": "UNIQUE", "unique": {"base": "粗末なグリーヴ"}}
-{"name": "ロクトニアルの愛撫", "refName": "ロクトニアルの愛撫", "namespace": "UNIQUE", "unique": {"base": "強化ミット"}}
-{"name": "輝かしい歩調", "refName": "輝かしい歩調", "namespace": "UNIQUE", "unique": {"base": "麦わらのサンダル"}}
-{"name": "コモリグモ", "refName": "コモリグモ", "namespace": "UNIQUE", "unique": {"base": "城壁のタワーシールド"}}
-{"name": "マフゾトールの陰謀", "refName": "マフゾトールの陰謀", "namespace": "UNIQUE", "unique": {"base": "お告げのクレストシールド"}}
-{"name": "マリガロの妙技", "refName": "マリガロの妙技", "namespace": "UNIQUE", "unique": {"base": "上質な弓籠手"}}
-{"name": "操血術師の仮面", "refName": "操血術師の仮面", "namespace": "UNIQUE", "unique": {"base": "フェースマスク"}}
-{"name": "縫合されし悪魔の仮面", "refName": "縫合されし悪魔の仮面", "namespace": "UNIQUE", "unique": {"base": "羽根付きのティアラ"}}
-{"name": "奉仕の真価", "refName": "奉仕の真価", "namespace": "UNIQUE", "unique": {"base": "毛皮のタージ"}}
-{"name": "不屈なる者として死す", "refName": "不屈なる者として死す", "namespace": "UNIQUE", "unique": {"base": "荘厳なレガリア"}}
-{"name": "ミリスの細君", "refName": "ミリスの細君", "namespace": "UNIQUE", "unique": {"base": "コバートフード"}}
-{"name": "ネクロマントル", "refName": "ネクロマントル", "namespace": "UNIQUE", "unique": {"base": "骨の装束"}}
-{"name": "北の脚", "refName": "北の脚", "namespace": "UNIQUE", "unique": {"base": "なめし革の弓籠手"}}
-{"name": "楢の誓い", "refName": "楢の誓い", "namespace": "UNIQUE", "unique": {"base": "紋章のクレストシールド"}}
-{"name": "オバーンの砦", "refName": "オバーンの砦", "namespace": "UNIQUE", "unique": {"base": "多層サバトン"}}
-{"name": "画家の従者", "refName": "画家の従者", "namespace": "UNIQUE", "unique": {"base": "破れた手袋"}}
-{"name": "パーリアの抱擁", "refName": "パーリアの抱擁", "namespace": "UNIQUE", "unique": {"base": "クロークメイル"}}
-{"name": "背信行為", "refName": "背信行為", "namespace": "UNIQUE", "unique": {"base": "騎士の鎧"}}
-{"name": "疫病の指", "refName": "疫病の指", "namespace": "UNIQUE", "unique": {"base": "金網のラップ"}}
-{"name": "パワートレッド", "refName": "パワートレッド", "namespace": "UNIQUE", "unique": {"base": "ハンティングシューズ"}}
-{"name": "プラグマティズム", "refName": "プラグマティズム", "namespace": "UNIQUE", "unique": {"base": "探検家の鎧"}}
-{"name": "雨乞い", "refName": "雨乞い", "namespace": "UNIQUE", "unique": {"base": "ケスの装束"}}
-{"name": "クアトルの換羽", "refName": "クアトルの換羽", "namespace": "UNIQUE", "unique": {"base": "蛇皮のコート"}}
-{"name": "森の女王", "refName": "森の女王", "namespace": "UNIQUE", "unique": {"base": "密輸人のコート"}}
-{"name": "輝く嘆き", "refName": "輝く嘆き", "namespace": "UNIQUE", "unique": {"base": "レースのフード"}}
-{"name": "緋炎の導管", "refName": "緋炎の導管", "namespace": "UNIQUE", "unique": {"base": "隠者の服"}}
-{"name": "フェニックスの復活", "refName": "フェニックスの復活", "namespace": "UNIQUE", "unique": {"base": "お告げのクレストシールド"}}
-{"name": "サフェルのフレーム", "refName": "サフェルのフレーム", "namespace": "UNIQUE", "unique": {"base": "徽章のクレストシールド"}}
-{"name": "サンドストームの容貌", "refName": "サンドストームの容貌", "namespace": "UNIQUE", "unique": {"base": "鎖のティアラ"}}
-{"name": "蛇の学習", "refName": "蛇の学習", "namespace": "UNIQUE", "unique": {"base": "調性のフォーカス"}}
-{"name": "哀れな者の手枷", "refName": "哀れな者の手枷", "namespace": "UNIQUE", "unique": {"base": "古いカフス"}}
-{"name": "シエランの遺産", "refName": "シエランの遺産", "namespace": "UNIQUE", "unique": {"base": "マラブーの服"}}
-{"name": "不平等", "refName": "不平等", "namespace": "UNIQUE", "unique": {"base": "荘厳なマンシェット"}}
-{"name": "忠臣の皮膚", "refName": "忠臣の皮膚", "namespace": "UNIQUE", "unique": {"base": "ガーメント"}}
-{"name": "スネークバイト", "refName": "スネークバイト", "namespace": "UNIQUE", "unique": {"base": "トゲ付きの弓籠手"}}
-{"name": "唯我", "refName": "唯我", "namespace": "UNIQUE", "unique": {"base": "荘厳な顔飾り"}}
-{"name": "スヴァリン", "refName": "スヴァリン", "namespace": "UNIQUE", "unique": {"base": "試練のタワーシールド"}}
-{"name": "テンポラリス", "refName": "テンポラリス", "namespace": "UNIQUE", "unique": {"base": "絹のローブ"}}
-{"name": "テツラポカルの欲望", "refName": "テツラポカルの欲望", "namespace": "UNIQUE", "unique": {"base": "奉献の装束"}}
-{"name": "古墳の住人", "refName": "古墳の住人", "namespace": "UNIQUE", "unique": {"base": "ローグアーマー"}}
-{"name": "黒い疑念", "refName": "黒い疑念", "namespace": "UNIQUE", "unique": {"base": "呪術師のローブ"}}
-{"name": "真鍮のドーム", "refName": "真鍮のドーム", "namespace": "UNIQUE", "unique": {"base": "王者の胴鎧"}}
-{"name": "契約", "refName": "契約", "namespace": "UNIQUE", "unique": {"base": "祭壇のローブ"}}
-{"name": "舞う蜃気楼", "refName": "舞う蜃気楼", "namespace": "UNIQUE", "unique": {"base": "旅人のジャケット"}}
-{"name": "むさぼり食う王冠", "refName": "むさぼり食う王冠", "namespace": "UNIQUE", "unique": {"base": "枝編みのティアラ"}}
-{"name": "永遠の火花", "refName": "永遠の火花", "namespace": "UNIQUE", "unique": {"base": "結晶のフォーカス"}}
-{"name": "虚ろの仮面", "refName": "虚ろの仮面", "namespace": "UNIQUE", "unique": {"base": "粗削りの仮面"}}
-{"name": "イモータン", "refName": "イモータン", "namespace": "UNIQUE", "unique": {"base": "レイダープレート"}}
-{"name": "無限の追跡", "refName": "無限の追跡", "namespace": "UNIQUE", "unique": {"base": "青銅のグリーヴ"}}
-{"name": "放浪騎士", "refName": "放浪騎士", "namespace": "UNIQUE", "unique": {"base": "メイルサバトン"}}
-{"name": "鼠の檻", "refName": "鼠の檻", "namespace": "UNIQUE", "unique": {"base": "偵察者のベスト"}}
-{"name": "微笑む騎士", "refName": "微笑む騎士", "namespace": "UNIQUE", "unique": {"base": "僧帽の兜"}}
-{"name": "降参", "refName": "降参", "namespace": "UNIQUE", "unique": {"base": "石のタワーシールド"}}
-{"name": "三頭のドラゴン", "refName": "三頭のドラゴン", "namespace": "UNIQUE", "unique": {"base": "頑丈な仮面"}}
-{"name": "バーテックス", "refName": "バーテックス", "namespace": "UNIQUE", "unique": {"base": "部族の仮面"}}
-{"name": "卑劣な騎士", "refName": "卑劣な騎士", "namespace": "UNIQUE", "unique": {"base": "シールドヘルム"}}
-{"name": "嘆きの壁", "refName": "嘆きの壁", "namespace": "UNIQUE", "unique": {"base": "肖像のタワーシールド"}}
-{"name": "光の糸", "refName": "光の糸", "namespace": "UNIQUE", "unique": {"base": "編み物のフォーカス"}}
-{"name": "スリルスティール", "refName": "スリルスティール", "namespace": "UNIQUE", "unique": {"base": "尖った大兜"}}
-{"name": "サンダーステップ", "refName": "サンダーステップ", "namespace": "UNIQUE", "unique": {"base": "スチールトーブーツ"}}
-{"name": "タイタンロットのカタフラクト", "refName": "タイタンロットのカタフラクト", "namespace": "UNIQUE", "unique": {"base": "マラケスの胴鎧"}}
-{"name": "踏みつぶす爪先", "refName": "踏みつぶす爪先", "namespace": "UNIQUE", "unique": {"base": "整ったグリーヴ"}}
-{"name": "ツリーフィンガーズ", "refName": "ツリーフィンガーズ", "namespace": "UNIQUE", "unique": {"base": "リベット付きミット"}}
-{"name": "夜の帳", "refName": "夜の帳", "namespace": "UNIQUE", "unique": {"base": "殉教者の冠"}}
-{"name": "アーヤの容貌", "refName": "アーヤの容貌", "namespace": "UNIQUE", "unique": {"base": "ビーズのサークレット"}}
-{"name": "ヴォールの保護具", "refName": "ヴォールの保護具", "namespace": "UNIQUE", "unique": {"base": "甲鉄の祭服"}}
-{"name": "破滅の軌跡", "refName": "破滅の軌跡", "namespace": "UNIQUE", "unique": {"base": "堅牢なレギンス"}}
-{"name": "彷徨う遺物箱", "refName": "彷徨う遺物箱", "namespace": "UNIQUE", "unique": {"base": "鋼鉄のプレート"}}
-{"name": "ワンダーラスト", "refName": "ワンダーラスト", "namespace": "UNIQUE", "unique": {"base": "ラップサンダル"}}
-{"name": "ウィンドスクリーム", "refName": "ウィンドスクリーム", "namespace": "UNIQUE", "unique": {"base": "羽根付きのサンダル"}}
-{"name": "ケイリンの翼", "refName": "ケイリンの翼", "namespace": "UNIQUE", "unique": {"base": "錆びた大兜"}}
-{"name": "ワンダートラップ", "refName": "ワンダートラップ", "namespace": "UNIQUE", "unique": {"base": "シルクの履物"}}
-{"name": "ウルフスベイン", "refName": "ウルフスベイン", "namespace": "UNIQUE", "unique": {"base": "彩色されたタワーシールド"}}
-{"name": "溶解する大渦", "refName": "溶解する大渦", "namespace": "UNIQUE", "unique": {"base": "究極のマナフラスコ"}}
-{"name": "オルロスの決意", "refName": "オルロスの決意", "namespace": "UNIQUE", "unique": {"base": "究極のライフフラスコ"}}
-{"name": "闇との対立", "refName": "闇との対立", "namespace": "UNIQUE", "unique": {"base": "古の金剛石"}}
-{"name": "制御されし変態", "refName": "制御されし変態", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
-{"name": "虚空より来たる", "refName": "虚空より来たる", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
-{"name": "グランド・スペクトラム", "refName": "グランド・スペクトラム", "namespace": "UNIQUE", "unique": {"base": "ルビー"}}
-{"name": "グランド・スペクトラム", "refName": "グランド・スペクトラム", "namespace": "UNIQUE", "unique": {"base": "エメラルド"}}
-{"name": "グランド・スペクトラム", "refName": "グランド・スペクトラム", "namespace": "UNIQUE", "unique": {"base": "サファイア"}}
-{"name": "英雄の悲劇", "refName": "英雄の悲劇", "namespace": "UNIQUE", "unique": {"base": "時知らずのジュエル"}}
-{"name": "メガロマニアック", "refName": "メガロマニアック", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
-{"name": "信仰のプリズム", "refName": "信仰のプリズム", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
-{"name": "飾り立てられしもの", "refName": "飾り立てられしもの", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
-{"name": "青い舌", "refName": "青い舌", "namespace": "UNIQUE", "unique": {"base": "ショートソード"}}
-{"name": "脳揺らし", "refName": "脳揺らし", "namespace": "UNIQUE", "unique": {"base": "鋲付きの金棒"}}
-{"name": "ブリンハンドの印", "refName": "ブリンハンドの印", "namespace": "UNIQUE", "unique": {"base": "棍棒"}}
-{"name": "チョーバー・チェバー", "refName": "チョーバー・チェバー", "namespace": "UNIQUE", "unique": {"base": "鉛のグレートハンマー"}}
-{"name": "崩壊する地平線", "refName": "崩壊する地平線", "namespace": "UNIQUE", "unique": {"base": "ワームクォータースタッフ"}}
-{"name": "死の竪琴", "refName": "死の竪琴", "namespace": "UNIQUE", "unique": {"base": "デュアルストリングボウ"}}
-{"name": "夕闇の番", "refName": "夕闇の番", "namespace": "UNIQUE", "unique": {"base": "灰のスタッフ"}}
-{"name": "アースバウンド", "refName": "アースバウンド", "namespace": "UNIQUE", "unique": {"base": "電流のスタッフ"}}
-{"name": "エネズンの突撃", "refName": "エネズンの突撃", "namespace": "UNIQUE", "unique": {"base": "移り気なワンド"}}
-{"name": "力の源泉", "refName": "力の源泉", "namespace": "UNIQUE", "unique": {"base": "お告げのセプター"}}
-{"name": "フロストブレス", "refName": "フロストブレス", "namespace": "UNIQUE", "unique": {"base": "スリムメイス"}}
-{"name": "導きの掌", "refName": "導きの掌", "namespace": "UNIQUE", "unique": {"base": "神殿のセプター"}}
-{"name": "豚狩り", "refName": "豚狩り", "namespace": "UNIQUE", "unique": {"base": "倒木のグレートクラブ"}}
-{"name": "フリムノーの聖歌", "refName": "フリムノーの聖歌", "namespace": "UNIQUE", "unique": {"base": "オークグレートハンマー"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "簡素な短剣"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "鉤付き斧"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "アイアンヘッドスピアー"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "処刑人の大斧"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "黒焦げのショートソード"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "腐食したグレートソード"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "クローンナイフ"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "ブロードソード"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "鉄のグレートソード"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "祝福されたクレイモア"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "鈍らな手斧"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "ウォースピアー"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "月の短剣"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "双頭のフレイル"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "チェインフレイル"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "髭斧"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "リップルグレートソード"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "山賊の手斧"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "吸血鬼の刃"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "エレガントグレイブ"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "ホーリーフレイル"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "幅広な大包丁"}}
-{"name": "未完", "refName": "未完", "namespace": "UNIQUE", "unique": {"base": "ハンティングスピアー"}}
-{"name": "ライフスプリッグ", "refName": "ライフスプリッグ", "namespace": "UNIQUE", "unique": {"base": "調和のワンド"}}
-{"name": "マツヤ", "refName": "マツヤ", "namespace": "UNIQUE", "unique": {"base": "三日月のクォータースタッフ"}}
-{"name": "霧の囁き", "refName": "霧の囁き", "namespace": "UNIQUE", "unique": {"base": "間に合わせのクロスボウ"}}
-{"name": "ナズィルの審判", "refName": "ナズィルの審判", "namespace": "UNIQUE", "unique": {"base": "スチールポイントクォータースタッフ"}}
-{"name": "オルロヴァサラ", "refName": "オルロヴァサラ", "namespace": "UNIQUE", "unique": {"base": "トーメントクラブ"}}
-{"name": "囚われた神の柱", "refName": "囚われた神の柱", "namespace": "UNIQUE", "unique": {"base": "ロングクォータースタッフ"}}
-{"name": "ケチョーリ", "refName": "ケチョーリ", "namespace": "UNIQUE", "unique": {"base": "朽ちた大槌"}}
-{"name": "針の雨", "refName": "針の雨", "namespace": "UNIQUE", "unique": {"base": "ショートボウ"}}
-{"name": "城壁の略奪者", "refName": "城壁の略奪者", "namespace": "UNIQUE", "unique": {"base": "張り詰めたクロスボウ"}}
-{"name": "レッドビーク", "refName": "レッドビーク", "namespace": "UNIQUE", "unique": {"base": "ショートソード"}}
-{"name": "聖なる炎", "refName": "聖なる炎", "namespace": "UNIQUE", "unique": {"base": "神殿のセプター"}}
-{"name": "血の占い棒", "refName": "血の占い棒", "namespace": "UNIQUE", "unique": {"base": "骨のワンド"}}
-{"name": "見つめる星", "refName": "見つめる星", "namespace": "UNIQUE", "unique": {"base": "プレートメイス"}}
-{"name": "スカイシルバー", "refName": "スカイシルバー", "namespace": "UNIQUE", "unique": {"base": "ウィングドスピアー"}}
-{"name": "ソーラーランス", "refName": "ソーラーランス", "namespace": "UNIQUE", "unique": {"base": "双頭の槍"}}
-{"name": "スプリンターハート", "refName": "スプリンターハート", "namespace": "UNIQUE", "unique": {"base": "リカーブボウ"}}
-{"name": "ロラッタの破片", "refName": "ロラッタの破片", "namespace": "UNIQUE", "unique": {"base": "硬材の槍"}}
-{"name": "テアレンの震え", "refName": "テアレンの震え", "namespace": "UNIQUE", "unique": {"base": "極寒のスタッフ"}}
-{"name": "血の棘", "refName": "血の棘", "namespace": "UNIQUE", "unique": {"base": "覆われたクォータースタッフ"}}
-{"name": "影の重荷", "refName": "影の重荷", "namespace": "UNIQUE", "unique": {"base": "鐘鳴のスタッフ"}}
-{"name": "ダルヴィーシュの舞", "refName": "ダルヴィーシュの舞", "namespace": "UNIQUE", "unique": {"base": "シミター"}}
-{"name": "闇の冒涜者", "refName": "闇の冒涜者", "namespace": "UNIQUE", "unique": {"base": "ラトリングセプター"}}
-{"name": "焼けつく手触り", "refName": "焼けつく手触り", "namespace": "UNIQUE", "unique": {"base": "パイロファイトスタッフ"}}
-{"name": "哨兵", "refName": "哨兵", "namespace": "UNIQUE", "unique": {"base": "ゴシッククォータースタッフ"}}
-{"name": "トレンチティンバー", "refName": "トレンチティンバー", "namespace": "UNIQUE", "unique": {"base": "トゲ付きの棍棒"}}
-{"name": "トレフィナ", "refName": "トレフィナ", "namespace": "UNIQUE", "unique": {"base": "鍜治場の大槌"}}
-{"name": "ウィドウヘイル", "refName": "ウィドウヘイル", "namespace": "UNIQUE", "unique": {"base": "粗雑な弓"}}
-{"name": "冬の牙", "refName": "冬の牙", "namespace": "UNIQUE", "unique": {"base": "柄付きのガラス"}}
-{"name": "ワイランドの褒美", "refName": "ワイランドの褒美", "namespace": "UNIQUE", "unique": {"base": "鍛冶ハンマー"}}
-{"name": "壊れた香炉", "refName": "壊れた香炉", "namespace": "UNIQUE", "unique": {"base": "タペストリーのレリック"}}
-{"name": "夜のランプ", "refName": "夜のランプ", "namespace": "UNIQUE", "unique": {"base": "紋章のレリック"}}
-{"name": "二度目の聖餐式", "refName": "二度目の聖餐式", "namespace": "UNIQUE", "unique": {"base": "瓶のレリック"}}
-{"name": "最後の炎", "refName": "最後の炎", "namespace": "UNIQUE", "unique": {"base": "香のレリック"}}
-{"name": "調停者の杯", "refName": "調停者の杯", "namespace": "UNIQUE", "unique": {"base": "アンフォラのレリック"}}
-{"name": "最初の紋章", "refName": "最初の紋章", "namespace": "UNIQUE", "unique": {"base": "金庫のレリック"}}
+{"name": "アンドヴァリアス", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "金の指輪"}}
+{"name": "アストラメンティス", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "星のアミュレット"}}
+{"name": "アジスの標", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "太陽のアミュレット"}}
+{"name": "遺産のバックル", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "幅広のベルト"}}
+{"name": "黒い炎", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "アメジストの指輪"}}
+{"name": "ブラックハート", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "鉄の指輪"}}
+{"name": "焼け付く絆", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "ルビーの指輪"}}
+{"name": "ブリナバス", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "幅広のベルト"}}
+{"name": "兄弟の証", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "トパーズの指輪"}}
+{"name": "カーネイジ・ハート", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "琥珀のアミュレット"}}
+{"name": "嵐の合唱", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "翡翠のアミュレット"}}
+{"name": "臆病者の遺産", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "メイルベルト"}}
+{"name": "クラックルクリープ", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "ルビーの指輪"}}
+{"name": "死の激発", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "エメラルドの指輪"}}
+{"name": "運命への反抗", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "翡翠のアミュレット"}}
+{"name": "ドードゥリの糾弾", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "青金石の指輪"}}
+{"name": "夢の断片", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "サファイアの指輪"}}
+{"name": "チャユラの目", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "金のアミュレット"}}
+{"name": "ファイアフラワー", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "太陽のアミュレット"}}
+{"name": "イクスの凝視", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "星のアミュレット"}}
+{"name": "グロウスウォーム", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "青金石の指輪"}}
+{"name": "ヘッドハンター", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "重いベルト"}}
+{"name": "ハートバウンド・ループ", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "真珠の指輪"}}
+{"name": "ウルダーンの偶像", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "深紅のアミュレット"}}
+{"name": "イグニフェリス", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "深紅のアミュレット"}}
+{"name": "地獄の留め金", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "プレートベルト"}}
+{"name": "創造力", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "実用的なベルト"}}
+{"name": "カランドラの接触", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "指輪"}}
+{"name": "竜骨くぐり", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "リネンのベルト"}}
+{"name": "レヴィンストーン", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "トパーズの指輪"}}
+{"name": "リグリウムの魔除け", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "瑠璃のアミュレット"}}
+{"name": "メギノルドのベルト", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "生皮のベルト"}}
+{"name": "真夜中の組紐", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "生皮のベルト"}}
+{"name": "ミンの心臓", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "アメジストの指輪"}}
+{"name": "原罪", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "アメジストの指輪"}}
+{"name": "ペランダスの印鑑指輪", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "金の指輪"}}
+{"name": "プールシルケルン", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "サファイアの指輪"}}
+{"name": "敬われし樹脂", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "琥珀のアミュレット"}}
+{"name": "脆弱のロンデル", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "月のアミュレット"}}
+{"name": "リスラーサのコイル", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "華美なベルト"}}
+{"name": "災厄の種子", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "青金石の指輪"}}
+{"name": "セケマの決意", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "指輪"}}
+{"name": "蛇の卵", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "金のアミュレット"}}
+{"name": "シャヴロンの鞄", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "精巧なベルト"}}
+{"name": "スネークピット", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "真珠の指輪"}}
+{"name": "魂を繋ぐ綱", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "長いベルト"}}
+{"name": "ストラグルスクリーム", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "星のアミュレット"}}
+{"name": "確かな足取りの印章", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "翡翠のアミュレット"}}
+{"name": "鉄床", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "血石のアミュレット"}}
+{"name": "潜る者", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "トパーズの指輪"}}
+{"name": "不朽の眼差し", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "深青のアミュレット"}}
+{"name": "パンデモニアス", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "瑠璃のアミュレット"}}
+{"name": "泥棒の苦悩", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "エメラルドの指輪"}}
+{"name": "アンギルの調和", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "深青のアミュレット"}}
+{"name": "ヴェンターのギャンブル", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "金の指輪"}}
+{"name": "一党の囁き", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "サファイアの指輪"}}
+{"name": "ゾフの血", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "琥珀のアミュレット"}}
+{"name": "ゼルフィの誕生", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "重いベルト"}}
+{"name": "永遠から", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "荘厳な腿当て"}}
+{"name": "エーリスヴェインの翼", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "艶のあるガントレット"}}
+{"name": "アルケム・エイラ", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "青銅のクレストシールド"}}
+{"name": "アルファの遠吠え", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "アーマードキャップ"}}
+{"name": "エミレの前掛け", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "隠修士の服"}}
+{"name": "アルヴィルの車輪", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "堅木のタージ"}}
+{"name": "アシュレンド", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "開拓者のコート"}}
+{"name": "アスフィクシアの憤怒", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "太矢じりの矢筒"}}
+{"name": "アセイラム", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "クローズドヘルム"}}
+{"name": "アツァクの視野", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "ベール付きの仮面"}}
+{"name": "アトジリの鋭敏さ", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "成形ミット"}}
+{"name": "アッツィリの軽蔑", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "金のサークレット"}}
+{"name": "オアシーズ", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "レイヤーガントレット"}}
+{"name": "ビートルバイト", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "ベロアシューズ"}}
+{"name": "魔獣の内部", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "探検家の鎧"}}
+{"name": "手の届かぬ所", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "内臓の矢筒"}}
+{"name": "怒りの誕生", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "石のグリーヴ"}}
+{"name": "ビターブルーム", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "羽根付きのローブ"}}
+{"name": "黒い組紐", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "毛皮のプレート"}}
+{"name": "ブラックグリーム", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "火の矢筒"}}
+{"name": "黒い太陽の紋章", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "覆われた大兜"}}
+{"name": "祝福されし絆", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "リネンのラップ"}}
+{"name": "蒼炎の籠手", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "ゴールドキャストカフス"}}
+{"name": "ウルルの骨", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "ラティスサンダル"}}
+{"name": "ブランブルジャック", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "錆びた胴鎧"}}
+{"name": "荊棘", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "レースのブーツ"}}
+{"name": "ブリスクラップ", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "ロアハイドコート"}}
+{"name": "毛深い猪", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "皮のベスト"}}
+{"name": "青銅の髭", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "角の冠"}}
+{"name": "ブッシュワック", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "リザードスケールブーツ"}}
+{"name": "キャンドルメーカー", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "地味な手袋"}}
+{"name": "死体の呼び声", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "彫り込みのあるフォーカス"}}
+{"name": "炎のクローク", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "絹のローブ"}}
+{"name": "赤のコート", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "チェインメイル"}}
+{"name": "コーナサウム", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "重い冠"}}
+{"name": "赤き太陽のコロナ", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "戦士の大兜"}}
+{"name": "コープスウェード", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "鉄のグリーヴ"}}
+{"name": "紅のクチュール", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "煌びやかな祭服"}}
+{"name": "アードゥラの紋章", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "鏘然のクレストシールド"}}
+{"name": "ペールキングの王冠", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "崇拝者の冠"}}
+{"name": "勝者の冠", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "鉄の冠"}}
+{"name": "茨の冠", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "小枝のサークレット"}}
+{"name": "ダークレイ・ベクトル", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "ブレースサバトン"}}
+{"name": "デスブロー", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "二重のガントレット"}}
+{"name": "死前喘鳴", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "小枝のフォーカス"}}
+{"name": "ディードベル", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "精鋭の大兜"}}
+{"name": "デーモン・ステッチャー", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "手の込んだ手袋"}}
+{"name": "ディオナデア", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "割れたタワーシールド"}}
+{"name": "ドードゥリの才能", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "縫い合わされた手袋"}}
+{"name": "破滅の門", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "ブレースタワーシールド"}}
+{"name": "ドリヤニの試作品", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "スケイルメイル"}}
+{"name": "ダストブルーム", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "鋲付きのベスト"}}
+{"name": "エディルンの牙", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "鉄の胴鎧"}}
+{"name": "エレボアー", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "狩人のフード"}}
+{"name": "包み込む夜明け", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "巡礼者の祭服"}}
+{"name": "エリアンの玉石", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "防護兜"}}
+{"name": "エゾマイトピーク", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "兵士の大兜"}}
+{"name": "羽根付き要塞", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "三日月のタージ"}}
+{"name": "禁断の眼差し", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "鎖のティアラ"}}
+{"name": "フォックスシェード", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "キルトのベスト"}}
+{"name": "ギャンブルスプリント", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "エンボスのブーツ"}}
+{"name": "ゴーストマーチ", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "スレッドシューズ"}}
+{"name": "ゴーストライズ", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "ボロボロのローブ"}}
+{"name": "混沌の片鱗", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "部族の仮面"}}
+{"name": "暗がりの姿", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "ワックスジャケット"}}
+{"name": "ゴールドリム", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "フェルトの帽子"}}
+{"name": "グレーヴバインド", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "縄のカフス"}}
+{"name": "貪欲の抱擁", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "ヴァールの胴鎧"}}
+{"name": "グレイメイク", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "つば付き兜"}}
+{"name": "冬の掌握", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "頑丈な弓籠手"}}
+{"name": "知恵と行動の手", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "ファーティブラップ"}}
+{"name": "ヘイトフォージ", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "成形ミット"}}
+{"name": "ビンデンの角笛", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "錆びた大兜"}}
+{"name": "夢の殻", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "シャーマンの外套"}}
+{"name": "アイストゥーム", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "鎖帷子の祭服"}}
+{"name": "暇人の手", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "分割式の弓籠手"}}
+{"name": "インスマス", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "ボロボロのフード"}}
+{"name": "アイアングラスプ", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "放浪者の鎧"}}
+{"name": "アイアンライド", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "バイザー付き兜"}}
+{"name": "ヤールングレイプル", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "リングメイルガントレット"}}
+{"name": "カオムの心臓", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "コンカラープレート"}}
+{"name": "弧の守りて", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "スピリットボーンの冠"}}
+{"name": "キルジョイ", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "リネンのラップ"}}
+{"name": "キングスガード", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "フルプレート"}}
+{"name": "キトコの流れ", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "宝石をあしらった手袋"}}
+{"name": "リアー・キャスト", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "フード付きの仮面"}}
+{"name": "リージョンストライド", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "粗末なグリーヴ"}}
+{"name": "ロクトニアルの愛撫", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "強化ミット"}}
+{"name": "輝かしい歩調", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "麦わらのサンダル"}}
+{"name": "コモリグモ", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "城壁のタワーシールド"}}
+{"name": "マフゾトールの陰謀", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "お告げのクレストシールド"}}
+{"name": "マリガロの妙技", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "上質な弓籠手"}}
+{"name": "操血術師の仮面", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "フェースマスク"}}
+{"name": "縫合されし悪魔の仮面", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "羽根付きのティアラ"}}
+{"name": "奉仕の真価", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "毛皮のタージ"}}
+{"name": "不屈なる者として死す", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "荘厳なレガリア"}}
+{"name": "ミリスの細君", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "コバートフード"}}
+{"name": "ネクロマントル", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "骨の装束"}}
+{"name": "北の脚", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "なめし革の弓籠手"}}
+{"name": "楢の誓い", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "紋章のクレストシールド"}}
+{"name": "オバーンの砦", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "多層サバトン"}}
+{"name": "画家の従者", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "破れた手袋"}}
+{"name": "パーリアの抱擁", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "クロークメイル"}}
+{"name": "背信行為", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "騎士の鎧"}}
+{"name": "疫病の指", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "金網のラップ"}}
+{"name": "パワートレッド", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "ハンティングシューズ"}}
+{"name": "プラグマティズム", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "探検家の鎧"}}
+{"name": "雨乞い", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "ケスの装束"}}
+{"name": "クアトルの換羽", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "蛇皮のコート"}}
+{"name": "森の女王", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "密輸人のコート"}}
+{"name": "輝く嘆き", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "レースのフード"}}
+{"name": "緋炎の導管", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "隠者の服"}}
+{"name": "フェニックスの復活", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "お告げのクレストシールド"}}
+{"name": "サフェルのフレーム", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "徽章のクレストシールド"}}
+{"name": "サンドストームの容貌", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "鎖のティアラ"}}
+{"name": "蛇の学習", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "調性のフォーカス"}}
+{"name": "哀れな者の手枷", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "古いカフス"}}
+{"name": "シエランの遺産", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "マラブーの服"}}
+{"name": "不平等", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "荘厳なマンシェット"}}
+{"name": "忠臣の皮膚", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "ガーメント"}}
+{"name": "スネークバイト", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "トゲ付きの弓籠手"}}
+{"name": "唯我", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "荘厳な顔飾り"}}
+{"name": "スヴァリン", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "試練のタワーシールド"}}
+{"name": "テンポラリス", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "絹のローブ"}}
+{"name": "テツラポカルの欲望", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "奉献の装束"}}
+{"name": "古墳の住人", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "ローグアーマー"}}
+{"name": "黒い疑念", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "呪術師のローブ"}}
+{"name": "真鍮のドーム", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "王者の胴鎧"}}
+{"name": "契約", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "祭壇のローブ"}}
+{"name": "舞う蜃気楼", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "旅人のジャケット"}}
+{"name": "むさぼり食う王冠", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "枝編みのティアラ"}}
+{"name": "永遠の火花", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "結晶のフォーカス"}}
+{"name": "虚ろの仮面", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "粗削りの仮面"}}
+{"name": "イモータン", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "レイダープレート"}}
+{"name": "無限の追跡", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "青銅のグリーヴ"}}
+{"name": "放浪騎士", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "メイルサバトン"}}
+{"name": "鼠の檻", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "偵察者のベスト"}}
+{"name": "微笑む騎士", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "僧帽の兜"}}
+{"name": "降参", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "石のタワーシールド"}}
+{"name": "三頭のドラゴン", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "頑丈な仮面"}}
+{"name": "バーテックス", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "部族の仮面"}}
+{"name": "卑劣な騎士", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "シールドヘルム"}}
+{"name": "嘆きの壁", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "肖像のタワーシールド"}}
+{"name": "光の糸", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "編み物のフォーカス"}}
+{"name": "スリルスティール", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "尖った大兜"}}
+{"name": "サンダーステップ", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "スチールトーブーツ"}}
+{"name": "タイタンロットのカタフラクト", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "マラケスの胴鎧"}}
+{"name": "踏みつぶす爪先", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "整ったグリーヴ"}}
+{"name": "ツリーフィンガーズ", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "リベット付きミット"}}
+{"name": "夜の帳", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "殉教者の冠"}}
+{"name": "アーヤの容貌", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "ビーズのサークレット"}}
+{"name": "ヴォールの保護具", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "甲鉄の祭服"}}
+{"name": "破滅の軌跡", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "堅牢なレギンス"}}
+{"name": "彷徨う遺物箱", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "鋼鉄のプレート"}}
+{"name": "ワンダーラスト", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "ラップサンダル"}}
+{"name": "ウィンドスクリーム", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "羽根付きのサンダル"}}
+{"name": "ケイリンの翼", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "錆びた大兜"}}
+{"name": "ワンダートラップ", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "シルクの履物"}}
+{"name": "ウルフスベイン", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "彩色されたタワーシールド"}}
+{"name": "溶解する大渦", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "究極のマナフラスコ"}}
+{"name": "オルロスの決意", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "究極のライフフラスコ"}}
+{"name": "闇との対立", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "古の金剛石"}}
+{"name": "制御されし変態", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
+{"name": "虚空より来たる", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
+{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "ルビー"}}
+{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "エメラルド"}}
+{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "サファイア"}}
+{"name": "英雄の悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "時知らずのジュエル"}}
+{"name": "メガロマニアック", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
+{"name": "信仰のプリズム", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
+{"name": "飾り立てられしもの", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "金剛石"}}
+{"name": "青い舌", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "ショートソード"}}
+{"name": "脳揺らし", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "鋲付きの金棒"}}
+{"name": "ブリンハンドの印", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "棍棒"}}
+{"name": "チョーバー・チェバー", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "鉛のグレートハンマー"}}
+{"name": "崩壊する地平線", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "ワームクォータースタッフ"}}
+{"name": "死の竪琴", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "デュアルストリングボウ"}}
+{"name": "夕闇の番", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "灰のスタッフ"}}
+{"name": "アースバウンド", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "電流のスタッフ"}}
+{"name": "エネズンの突撃", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "移り気なワンド"}}
+{"name": "力の源泉", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "お告げのセプター"}}
+{"name": "フロストブレス", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "スリムメイス"}}
+{"name": "導きの掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "神殿のセプター"}}
+{"name": "豚狩り", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "倒木のグレートクラブ"}}
+{"name": "フリムノーの聖歌", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "オークグレートハンマー"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉤付き斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "アイアンヘッドスピアー"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "黒焦げのショートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "簡素な短剣"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "処刑人の大斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "祝福されたクレイモア"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "クローンナイフ"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鈍らな手斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ブロードソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "腐食したグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉄のグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ウォースピアー"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "月の短剣"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "双頭のフレイル"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "チェインフレイル"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "髭斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "リップルグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "山賊の手斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "吸血鬼の刃"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "エレガントグレイブ"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ホーリーフレイル"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "幅広な大包丁"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ハンティングスピアー"}}
+{"name": "ライフスプリッグ", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "調和のワンド"}}
+{"name": "マツヤ", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "三日月のクォータースタッフ"}}
+{"name": "霧の囁き", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "間に合わせのクロスボウ"}}
+{"name": "ナズィルの審判", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "スチールポイントクォータースタッフ"}}
+{"name": "オルロヴァサラ", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "トーメントクラブ"}}
+{"name": "囚われた神の柱", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "ロングクォータースタッフ"}}
+{"name": "ケチョーリ", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "朽ちた大槌"}}
+{"name": "針の雨", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "ショートボウ"}}
+{"name": "城壁の略奪者", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "張り詰めたクロスボウ"}}
+{"name": "レッドビーク", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "ショートソード"}}
+{"name": "聖なる炎", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "神殿のセプター"}}
+{"name": "血の占い棒", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "骨のワンド"}}
+{"name": "見つめる星", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "プレートメイス"}}
+{"name": "スカイシルバー", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "ウィングドスピアー"}}
+{"name": "ソーラーランス", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "双頭の槍"}}
+{"name": "スプリンターハート", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "リカーブボウ"}}
+{"name": "ロラッタの破片", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "硬材の槍"}}
+{"name": "テアレンの震え", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "極寒のスタッフ"}}
+{"name": "血の棘", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "覆われたクォータースタッフ"}}
+{"name": "影の重荷", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "鐘鳴のスタッフ"}}
+{"name": "ダルヴィーシュの舞", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "シミター"}}
+{"name": "闇の冒涜者", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "ラトリングセプター"}}
+{"name": "焼けつく手触り", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "パイロファイトスタッフ"}}
+{"name": "哨兵", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "ゴシッククォータースタッフ"}}
+{"name": "トレンチティンバー", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "トゲ付きの棍棒"}}
+{"name": "トレフィナ", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "鍜治場の大槌"}}
+{"name": "ウィドウヘイル", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "粗雑な弓"}}
+{"name": "冬の牙", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "柄付きのガラス"}}
+{"name": "ワイランドの褒美", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "鍛冶ハンマー"}}
+{"name": "壊れた香炉", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "タペストリーのレリック"}}
+{"name": "夜のランプ", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "紋章のレリック"}}
+{"name": "二度目の聖餐式", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "瓶のレリック"}}
+{"name": "最後の炎", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "香のレリック"}}
+{"name": "調停者の杯", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "アンフォラのレリック"}}
+{"name": "最初の紋章", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "金庫のレリック"}}

@@ -18,6 +18,8 @@ export let APP_PATRONS: Array<{ from: string; months: number; style: number }>;
 export let PSEUDO_ID_TO_TRADE_REQUEST: PseudoIdToTradeRequest;
 export let RUNE_SINGLE_VALUE: RuneSingleValue;
 
+export let RUNE_LIST: BaseType[];
+
 export let ITEM_BY_TRANSLATED = (
   ns: BaseType["namespace"],
   name: string,
@@ -163,6 +165,8 @@ async function loadItems(language: string) {
   REPLICA_UNIQUE_NAMES = itemNamesFromLines(
     ITEMS_ITERATOR('refName":"Replica'),
   );
+
+  RUNE_LIST = Array.from(ITEMS_ITERATOR('Rune", "namespace": "ITEM",'));
 }
 
 async function loadStats(language: string) {

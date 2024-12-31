@@ -370,7 +370,10 @@ export function createTradeRequest(
 
   if (runeFilters.length > 0) {
     const emptyRuneSockets = runeFilters.filter((rune) => rune.isEmpty);
-    if (emptyRuneSockets.length > 0) {
+    if (
+      emptyRuneSockets.length > 0 &&
+      emptyRuneSockets.filter((rune) => !rune.disabled).length > 0
+    ) {
       propSet(
         query.filters,
         "equipment_filters.filters.rune_sockets.min",

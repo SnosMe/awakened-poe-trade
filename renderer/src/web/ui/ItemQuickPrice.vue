@@ -43,7 +43,8 @@
 <script lang="ts">
 import { defineComponent, computed, PropType } from "vue";
 import { displayRounding } from "../background/Prices";
-import { ITEM_BY_REF, BaseType } from "@/assets/data";
+import { BaseType, ITEM_BY_TRANSLATED } from "@/assets/data";
+// import { ITEM_BY_REF, BaseType, ITEM_BY_TRANSLATED } from "@/assets/data";
 
 export default defineComponent({
   props: {
@@ -88,7 +89,7 @@ export default defineComponent({
       if (!props.itemBase) return "w-8 h-8";
 
       const base = props.itemBase.unique
-        ? ITEM_BY_REF("ITEM", props.itemBase.unique.base)![0]
+        ? ITEM_BY_TRANSLATED("ITEM", props.itemBase.unique.base)![0] // ITEM_BY_REF("ITEM", props.itemBase.unique.base)![0]
         : props.itemBase;
 
       const width = base.w ?? 1;

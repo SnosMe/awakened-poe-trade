@@ -10,6 +10,16 @@
         <option value="ja">日本語</option>
       </select>
     </div>
+    <div class="mb-4">
+      <div class="flex-1 mb-1">{{ t(":preferred_trade_site") }}</div>
+      <select v-model="preferredTradeSite" class="p-1 rounded bg-gray-700 w-24">
+        <option value="en">www.pathofexile.com</option>
+        <option value="ru">ru.pathofexile.com</option>
+        <option value="cmn-Hant">pathofexile.tw</option>
+        <option value="ko">poe.game.daum.net</option>
+        <option value="ja">jp.pathofexile.com</option>
+      </select>
+    </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">
       <div class="flex-1 mb-1">{{ t("realm") }}</div>
       <div class="flex gap-x-4">
@@ -63,12 +73,18 @@
         }}</ui-radio>
       </div>
     </div>
-    <ui-checkbox class="mb-2" v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'"
-      v-model="overlayBackgroundClose">{{ t(':overlay_bg_focus_game') }}</ui-checkbox>
-    <ui-checkbox class="mb-4"
-      v-model="showAttachNotification">{{ t(':show_overlay_ready') }}</ui-checkbox>
-    <ui-checkbox class="mb-4"
-      v-model="overlayAlwaysClose">{{ t(':overlay_always_close') }}</ui-checkbox>
+    <ui-checkbox
+      class="mb-2"
+      v-if="overlayBackground !== 'rgba(255, 255, 255, 0)'"
+      v-model="overlayBackgroundClose"
+      >{{ t(":overlay_bg_focus_game") }}</ui-checkbox
+    >
+    <ui-checkbox class="mb-4" v-model="showAttachNotification">{{
+      t(":show_overlay_ready")
+    }}</ui-checkbox>
+    <ui-checkbox class="mb-4" v-model="overlayAlwaysClose">{{
+      t(":overlay_always_close")
+    }}</ui-checkbox>
     <div class="mb-4">
       <div class="flex-1 mb-1">
         {{ t(":window_title") }}
@@ -124,12 +140,30 @@ export default defineComponent({
           }
         },
       }),
-      realm: configModelValue(() => props.config, 'realm'),
-      restoreClipboard: configModelValue(() => props.config, 'restoreClipboard'),
-      showAttachNotification: configModelValue(() => props.config, 'showAttachNotification'),
-      overlayAlwaysClose: configModelValue(() => props.config, 'overlayAlwaysClose'),
-      windowTitle: configModelValue(() => props.config, 'windowTitle')
-    }
-  }
-})
+      preferredTradeSite: computed<typeof props.config.preferredTradeSite>({
+        get() {
+          return props.config.preferredTradeSite;
+        },
+        set(value) {
+          props.config.preferredTradeSite = value;
+          AppConfig().preferredTradeSite = value;
+        },
+      }),
+      realm: configModelValue(() => props.config, "realm"),
+      restoreClipboard: configModelValue(
+        () => props.config,
+        "restoreClipboard",
+      ),
+      showAttachNotification: configModelValue(
+        () => props.config,
+        "showAttachNotification",
+      ),
+      overlayAlwaysClose: configModelValue(
+        () => props.config,
+        "overlayAlwaysClose",
+      ),
+      windowTitle: configModelValue(() => props.config, "windowTitle"),
+    };
+  },
+});
 </script>

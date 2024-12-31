@@ -160,7 +160,7 @@ export function tryParseTranslation(
 ): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
     const found = STAT_BY_MATCH_STR(combination.stat);
-    if (!found || !found.stat.trade.ids[modType]) {
+    if (!found || !found.stat.trade.ids || !found.stat.trade.ids[modType]) {
       continue;
     }
 

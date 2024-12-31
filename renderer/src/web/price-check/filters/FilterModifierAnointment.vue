@@ -18,7 +18,8 @@
 import { defineComponent, PropType, computed } from "vue";
 import { StatFilter } from "./interfaces";
 import { usePoeninja } from "@/web/background/Prices";
-import { ITEM_BY_REF } from "@/assets/data";
+import { ITEM_BY_TRANSLATED } from "@/assets/data";
+// import { ITEM_BY_REF, ITEM_BY_TRANSLATED } from "@/assets/data";
 import ItemQuickPrice from "@/web/ui/ItemQuickPrice.vue";
 
 export default defineComponent({
@@ -36,7 +37,7 @@ export default defineComponent({
       if (!props.filter.oils) return null;
 
       const oils = props.filter.oils.map(
-        (oilName) => ITEM_BY_REF("ITEM", oilName)![0],
+        (oilName) => ITEM_BY_TRANSLATED("ITEM", oilName)![0], // ITEM_BY_REF("ITEM", oilName)![0],
       );
 
       let totalChaos: number | undefined = 0;

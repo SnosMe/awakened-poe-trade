@@ -2785,260 +2785,260 @@
 {"name": "Яманра, легендарный воин", "refName": "Jamanra, the Legendary Warrior", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "Яростный крик", "refName": "Enraged Warcry", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Яростный рассекатель", "refName": "Fury Cleaver", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
-{"name": "Андвариус", "refName": "Андвариус", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
-{"name": "Астраментис", "refName": "Астраментис", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет"}}
+{"name": "Андвариус", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
+{"name": "Астраментис", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет"}}
 {"name": "Beacon of Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Солнечный амулет"}}
 {"name": "Birthright Buckle", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Широкий ремень"}}
-{"name": "Чёрное пламя", "refName": "Чёрное пламя", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом"}}
-{"name": "Чёрное сердце", "refName": "Чёрное сердце", "namespace": "UNIQUE", "unique": {"base": "Железное кольцо"}}
+{"name": "Чёрное пламя", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом"}}
+{"name": "Чёрное сердце", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Железное кольцо"}}
 {"name": "Blistering Bond", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Кольцо с рубином"}}
-{"name": "Бринабас", "refName": "Бринабас", "namespace": "UNIQUE", "unique": {"base": "Широкий ремень"}}
-{"name": "Зов братьев", "refName": "Зов братьев", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом"}}
-{"name": "Сердце бойни", "refName": "Сердце бойни", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём"}}
-{"name": "Хор бури", "refName": "Хор бури", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом"}}
-{"name": "Наследие труса", "refName": "Наследие труса", "namespace": "UNIQUE", "unique": {"base": "Кольчужный ремень"}}
+{"name": "Бринабас", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Широкий ремень"}}
+{"name": "Зов братьев", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом"}}
+{"name": "Сердце бойни", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём"}}
+{"name": "Хор бури", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом"}}
+{"name": "Наследие труса", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Кольчужный ремень"}}
 {"name": "Cracklecreep", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Кольцо с рубином"}}
-{"name": "Смертельная спешка", "refName": "Смертельная спешка", "namespace": "UNIQUE", "unique": {"base": "Кольцо с изумрудом"}}
+{"name": "Смертельная спешка", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Кольцо с изумрудом"}}
 {"name": "Defiance of Destiny", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом"}}
-{"name": "Проклятие Доэдре", "refName": "Проклятие Доэдре", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом"}}
-{"name": "Осколки снов", "refName": "Осколки снов", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром"}}
-{"name": "Глаз Чаюлы", "refName": "Глаз Чаюлы", "namespace": "UNIQUE", "unique": {"base": "Золотой амулет"}}
+{"name": "Проклятие Доэдре", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом"}}
+{"name": "Осколки снов", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром"}}
+{"name": "Глаз Чаюлы", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Золотой амулет"}}
 {"name": "Fireflower", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Солнечный амулет"}}
 {"name": "Fixation of Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет"}}
 {"name": "Glowswarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом"}}
-{"name": "Охотник за головами", "refName": "Охотник за головами", "namespace": "UNIQUE", "unique": {"base": "Тяжёлый ремень"}}
-{"name": "Сердечная связь", "refName": "Сердечная связь", "namespace": "UNIQUE", "unique": {"base": "Жемчужное кольцо"}}
+{"name": "Охотник за головами", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Тяжёлый ремень"}}
+{"name": "Сердечная связь", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Жемчужное кольцо"}}
 {"name": "Idol of Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Алый амулет"}}
 {"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Алый амулет"}}
-{"name": "Адская пряжка", "refName": "Адская пряжка", "namespace": "UNIQUE", "unique": {"base": "Ремень из пластин"}}
+{"name": "Адская пряжка", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Ремень из пластин"}}
 {"name": "Ingenuity", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Практичный ремень"}}
-{"name": "Касание Каландры", "refName": "Касание Каландры", "namespace": "UNIQUE", "unique": {"base": "Кольцо"}}
-{"name": "Килевание", "refName": "Килевание", "namespace": "UNIQUE", "unique": {"base": "Матерчатый пояс"}}
+{"name": "Касание Каландры", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Кольцо"}}
+{"name": "Килевание", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Матерчатый пояс"}}
 {"name": "Levinstone", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом"}}
 {"name": "Ligurium Talisman", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Амулет с лазуритом"}}
-{"name": "Ремень Мегинорда", "refName": "Ремень Мегинорда", "namespace": "UNIQUE", "unique": {"base": "Ремень из сыромятной кожи"}}
-{"name": "Полуночная тесьма", "refName": "Полуночная тесьма", "namespace": "UNIQUE", "unique": {"base": "Ремень из сыромятной кожи"}}
-{"name": "Сердце Мина", "refName": "Сердце Мина", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом"}}
-{"name": "Первородный грех", "refName": "Первородный грех", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом"}}
-{"name": "Печатка Перандусов", "refName": "Печатка Перандусов", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
+{"name": "Ремень Мегинорда", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Ремень из сыромятной кожи"}}
+{"name": "Полуночная тесьма", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Ремень из сыромятной кожи"}}
+{"name": "Сердце Мина", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом"}}
+{"name": "Первородный грех", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом"}}
+{"name": "Печатка Перандусов", "refName": "Perandus Signet", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
 {"name": "Polcirkeln", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром"}}
 {"name": "Revered Resin", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём"}}
 {"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Лунный амулет"}}
-{"name": "Моток Рюслаты", "refName": "Моток Рюслаты", "namespace": "UNIQUE", "unique": {"base": "Декорированный ремень"}}
+{"name": "Моток Рюслаты", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Декорированный ремень"}}
 {"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом"}}
-{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve", "namespace": "UNIQUE", "unique": {"base": "Кольцо"}}
+{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "Кольцо"}}
 {"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Золотой амулет"}}
 {"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Тонкий ремень"}}
-{"name": "Серпентарий", "refName": "Серпентарий", "namespace": "UNIQUE", "unique": {"base": "Жемчужное кольцо"}}
-{"name": "Оковы души", "refName": "Оковы души", "namespace": "UNIQUE", "unique": {"base": "Длинный ремень"}}
+{"name": "Серпентарий", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Жемчужное кольцо"}}
+{"name": "Оковы души", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Длинный ремень"}}
 {"name": "Strugglescream", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет"}}
 {"name": "Surefooted Sigil", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом"}}
-{"name": "Наковальня", "refName": "Наковальня", "namespace": "UNIQUE", "unique": {"base": "Амулет с кровавым камнем"}}
+{"name": "Наковальня", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Амулет с кровавым камнем"}}
 {"name": "The Burrower", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом"}}
 {"name": "The Everlasting Gaze", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Лазурный амулет"}}
-{"name": "Обитель демонов", "refName": "Обитель демонов", "namespace": "UNIQUE", "unique": {"base": "Амулет с лазуритом"}}
-{"name": "Воровская мука", "refName": "Воровская мука", "namespace": "UNIQUE", "unique": {"base": "Кольцо с изумрудом"}}
-{"name": "Гармония Ангила", "refName": "Гармония Ангила", "namespace": "UNIQUE", "unique": {"base": "Лазурный амулет"}}
-{"name": "Игра Вентора", "refName": "Игра Вентора", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
+{"name": "Обитель демонов", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Амулет с лазуритом"}}
+{"name": "Воровская мука", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Кольцо с изумрудом"}}
+{"name": "Гармония Ангила", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Лазурный амулет"}}
+{"name": "Игра Вентора", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
 {"name": "Whisper of the Brotherhood", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром"}}
-{"name": "Кровь Ксофа", "refName": "Кровь Ксофа", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём"}}
+{"name": "Кровь Ксофа", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём"}}
 {"name": "Zerphi's Genesis", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Тяжёлый ремень"}}
 {"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}}
-{"name": "Крылья Эрисвейна", "refName": "Крылья Эрисвейна", "namespace": "UNIQUE", "unique": {"base": "Полированные перчатки"}}
-{"name": "Альким Эира", "refName": "Альким Эира", "namespace": "UNIQUE", "unique": {"base": "Крашеный гербовый щит"}}
-{"name": "Вой Альфы", "refName": "Вой Альфы", "namespace": "UNIQUE", "unique": {"base": "Защитный капюшон"}}
-{"name": "Передник Эмирана", "refName": "Передник Эмирана", "namespace": "UNIQUE", "unique": {"base": "Наряд отшельника"}}
-{"name": "Колесо Арвила", "refName": "Колесо Арвила", "namespace": "UNIQUE", "unique": {"base": "Тарджет из твёрдой древесины"}}
-{"name": "Пепел", "refName": "Пепел", "namespace": "UNIQUE", "unique": {"base": "Куртка следопыта"}}
-{"name": "Гнев Асфиксии", "refName": "Гнев Асфиксии", "namespace": "UNIQUE", "unique": {"base": "Колчан охотничьих стрел"}}
-{"name": "Приют агрессора", "refName": "Приют агрессора", "namespace": "UNIQUE", "unique": {"base": "Закрытый шлем"}}
-{"name": "Взор Ацака", "refName": "Взор Ацака", "namespace": "UNIQUE", "unique": {"base": "Маска с вуалью"}}
-{"name": "Проницательность Атзири", "refName": "Проницательность Атзири", "namespace": "UNIQUE", "unique": {"base": "Литые рукавицы"}}
-{"name": "Презрение Атзири", "refName": "Презрение Атзири", "namespace": "UNIQUE", "unique": {"base": "Венец из золота"}}
-{"name": "Златохваты", "refName": "Златохваты", "namespace": "UNIQUE", "unique": {"base": "Пластинчатые перчатки"}}
+{"name": "Крылья Эрисвейна", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Полированные перчатки"}}
+{"name": "Альким Эира", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Крашеный гербовый щит"}}
+{"name": "Вой Альфы", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Защитный капюшон"}}
+{"name": "Передник Эмирана", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Наряд отшельника"}}
+{"name": "Колесо Арвила", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Тарджет из твёрдой древесины"}}
+{"name": "Пепел", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Куртка следопыта"}}
+{"name": "Гнев Асфиксии", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Колчан охотничьих стрел"}}
+{"name": "Приют агрессора", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Закрытый шлем"}}
+{"name": "Взор Ацака", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Маска с вуалью"}}
+{"name": "Проницательность Атзири", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Литые рукавицы"}}
+{"name": "Презрение Атзири", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Венец из золота"}}
+{"name": "Златохваты", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Пластинчатые перчатки"}}
 {"name": "Beetlebite", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Бархатные ботинки"}}
-{"name": "Брюхо Зверя", "refName": "Брюхо Зверя", "namespace": "UNIQUE", "unique": {"base": "Броня исследователя"}}
+{"name": "Брюхо Зверя", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Броня исследователя"}}
 {"name": "Beyond Reach", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Колчан жестоких стрел"}}
 {"name": "Birth of Fury", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Каменные поножи"}}
-{"name": "Жестокое цветение", "refName": "Жестокое цветение", "namespace": "UNIQUE", "unique": {"base": "Наряд из перьев"}}
-{"name": "Чёрное плетение", "refName": "Чёрное плетение", "namespace": "UNIQUE", "unique": {"base": "Меховой доспех"}}
-{"name": "Отсвет мрака", "refName": "Отсвет мрака", "namespace": "UNIQUE", "unique": {"base": "Колчан огненных стрел"}}
-{"name": "Гребень чёрного солнца", "refName": "Гребень чёрного солнца", "namespace": "UNIQUE", "unique": {"base": "Обмотанный большой шлем"}}
-{"name": "Благословенные узы", "refName": "Благословенные узы", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки"}}
-{"name": "Браслеты синего пламени", "refName": "Браслеты синего пламени", "namespace": "UNIQUE", "unique": {"base": "Золотые манжеты"}}
-{"name": "Кости Уллра", "refName": "Кости Уллра", "namespace": "UNIQUE", "unique": {"base": "Сетчатые сандалии"}}
-{"name": "Колючий панцирь", "refName": "Колючий панцирь", "namespace": "UNIQUE", "unique": {"base": "Ржавая кираса"}}
-{"name": "Терновники", "refName": "Терновники", "namespace": "UNIQUE", "unique": {"base": "Сапоги с тесьмой"}}
-{"name": "Ремни проворства", "refName": "Ремни проворства", "namespace": "UNIQUE", "unique": {"base": "Доспех из шкур роа"}}
-{"name": "Ощетинившийся вепрь", "refName": "Ощетинившийся вепрь", "namespace": "UNIQUE", "unique": {"base": "Кожаный жилет"}}
-{"name": "Бронзовая борода", "refName": "Бронзовая борода", "namespace": "UNIQUE", "unique": {"base": "Корона с рогами"}}
-{"name": "Кустоломы", "refName": "Кустоломы", "namespace": "UNIQUE", "unique": {"base": "Сапоги из кожи ящера"}}
-{"name": "Свечеделы", "refName": "Свечеделы", "namespace": "UNIQUE", "unique": {"base": "Тёмные перчатки"}}
+{"name": "Жестокое цветение", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Наряд из перьев"}}
+{"name": "Чёрное плетение", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Меховой доспех"}}
+{"name": "Отсвет мрака", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Колчан огненных стрел"}}
+{"name": "Гребень чёрного солнца", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Обмотанный большой шлем"}}
+{"name": "Благословенные узы", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки"}}
+{"name": "Браслеты синего пламени", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Золотые манжеты"}}
+{"name": "Кости Уллра", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Сетчатые сандалии"}}
+{"name": "Колючий панцирь", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Ржавая кираса"}}
+{"name": "Терновники", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "Сапоги с тесьмой"}}
+{"name": "Ремни проворства", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "Доспех из шкур роа"}}
+{"name": "Ощетинившийся вепрь", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Кожаный жилет"}}
+{"name": "Бронзовая борода", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Корона с рогами"}}
+{"name": "Кустоломы", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Сапоги из кожи ящера"}}
+{"name": "Свечеделы", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Тёмные перчатки"}}
 {"name": "Carrion Call", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Резной фокус"}}
-{"name": "Накидка пламени", "refName": "Накидка пламени", "namespace": "UNIQUE", "unique": {"base": "Шёлковое платье"}}
-{"name": "Алый покров", "refName": "Алый покров", "namespace": "UNIQUE", "unique": {"base": "Кольчуга"}}
+{"name": "Накидка пламени", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Шёлковое платье"}}
+{"name": "Алый покров", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Кольчуга"}}
 {"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Тяжёлая корона"}}
-{"name": "Корона красного солнца", "refName": "Корона красного солнца", "namespace": "UNIQUE", "unique": {"base": "Большой шлем воина"}}
-{"name": "Ядоброды", "refName": "Ядоброды", "namespace": "UNIQUE", "unique": {"base": "Железные поножи"}}
-{"name": "Алое облачение", "refName": "Алое облачение", "namespace": "UNIQUE", "unique": {"base": "Золочёное облачение"}}
-{"name": "Герб Ардура", "refName": "Герб Ардура", "namespace": "UNIQUE", "unique": {"base": "Звенящий гербовый щит"}}
-{"name": "Корона Бледного царя", "refName": "Корона Бледного царя", "namespace": "UNIQUE", "unique": {"base": "Корона культиста"}}
-{"name": "Корона победителя", "refName": "Корона победителя", "namespace": "UNIQUE", "unique": {"base": "Железная корона"}}
-{"name": "Терновый венец", "refName": "Терновый венец", "namespace": "UNIQUE", "unique": {"base": "Венок из ветвей"}}
-{"name": "Несущие тьму", "refName": "Несущие тьму", "namespace": "UNIQUE", "unique": {"base": "Сабатоны с ремнями"}}
-{"name": "Смертельный удар", "refName": "Смертельный удар", "namespace": "UNIQUE", "unique": {"base": "Двухслойные перчатки"}}
-{"name": "Предсмертный хрип", "refName": "Предсмертный хрип", "namespace": "UNIQUE", "unique": {"base": "Фокус из веток"}}
-{"name": "Колокол мёртвых", "refName": "Колокол мёртвых", "namespace": "UNIQUE", "unique": {"base": "Большой шлем элиты"}}
-{"name": "Сшиватель демонов", "refName": "Сшиватель демонов", "namespace": "UNIQUE", "unique": {"base": "Затейливые перчатки"}}
-{"name": "Защитник", "refName": "Защитник", "namespace": "UNIQUE", "unique": {"base": "Обшарпанный ростовой щит"}}
-{"name": "Власть Доэдре", "refName": "Власть Доэдре", "namespace": "UNIQUE", "unique": {"base": "Сшитые перчатки"}}
-{"name": "Врата Рока", "refName": "Врата Рока", "namespace": "UNIQUE", "unique": {"base": "Окованный ростовой щит"}}
-{"name": "Прототип Дориани", "refName": "Прототип Дориани", "namespace": "UNIQUE", "unique": {"base": "Чешуйчатый доспех"}}
-{"name": "Хрупкое цветение", "refName": "Хрупкое цветение", "namespace": "UNIQUE", "unique": {"base": "Клёпаный нагрудник"}}
-{"name": "Бивни Эдирна", "refName": "Бивни Эдирна", "namespace": "UNIQUE", "unique": {"base": "Железная кираса"}}
-{"name": "Поедатель стихий", "refName": "Поедатель стихий", "namespace": "UNIQUE", "unique": {"base": "Капюшон охотника"}}
-{"name": "Окутывающий рассвет", "refName": "Окутывающий рассвет", "namespace": "UNIQUE", "unique": {"base": "Облачение пилигрима"}}
-{"name": "Шишак Эриана", "refName": "Шишак Эриана", "namespace": "UNIQUE", "unique": {"base": "Шлем с забралом"}}
-{"name": "Триумф эзомита", "refName": "Триумф эзомита", "namespace": "UNIQUE", "unique": {"base": "Большой шлем солдата"}}
-{"name": "Пернатая крепость", "refName": "Пернатая крепость", "namespace": "UNIQUE", "unique": {"base": "Тарджет с полумесяцем"}}
-{"name": "Запретный взор", "refName": "Запретный взор", "namespace": "UNIQUE", "unique": {"base": "Цепная тиара"}}
-{"name": "Лисья тень", "refName": "Лисья тень", "namespace": "UNIQUE", "unique": {"base": "Стёганый жилет"}}
-{"name": "Дух азарта", "refName": "Дух азарта", "namespace": "UNIQUE", "unique": {"base": "Тиснёные сапоги"}}
-{"name": "Марш призраков", "refName": "Марш призраков", "namespace": "UNIQUE", "unique": {"base": "Прошитые ботинки"}}
-{"name": "Призрачные изгибы", "refName": "Призрачные изгибы", "namespace": "UNIQUE", "unique": {"base": "Рваное платье"}}
-{"name": "Взгляд хаоса", "refName": "Взгляд хаоса", "namespace": "UNIQUE", "unique": {"base": "Племенная маска"}}
-{"name": "Мрачная форма", "refName": "Мрачная форма", "namespace": "UNIQUE", "unique": {"base": "Вощёный плащ"}}
-{"name": "Золотой колпак", "refName": "Золотой колпак", "namespace": "UNIQUE", "unique": {"base": "Войлочная шляпа"}}
-{"name": "Могильные узы", "refName": "Могильные узы", "namespace": "UNIQUE", "unique": {"base": "Верёвочные манжеты"}}
-{"name": "Объятия жадности", "refName": "Объятия жадности", "namespace": "UNIQUE", "unique": {"base": "Нагрудник ваал"}}
-{"name": "Серый мрак", "refName": "Серый мрак", "namespace": "UNIQUE", "unique": {"base": "Шлем с полями"}}
-{"name": "Хватка зимы", "refName": "Хватка зимы", "namespace": "UNIQUE", "unique": {"base": "Плотные наручи"}}
-{"name": "Длань мудрости и деяния", "refName": "Длань мудрости и деяния", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}}
-{"name": "Кузня ненависти", "refName": "Кузня ненависти", "namespace": "UNIQUE", "unique": {"base": "Литые рукавицы"}}
-{"name": "Рога Биндена", "refName": "Рога Биндена", "namespace": "UNIQUE", "unique": {"base": "Ржавый большой шлем"}}
-{"name": "Оболочка мечты", "refName": "Оболочка мечты", "namespace": "UNIQUE", "unique": {"base": "Наряд шамана"}}
-{"name": "Ледяной склеп", "refName": "Ледяной склеп", "namespace": "UNIQUE", "unique": {"base": "Кольчужное одеяние"}}
-{"name": "Праздные руки", "refName": "Праздные руки", "namespace": "UNIQUE", "unique": {"base": "Сегментные наручи"}}
-{"name": "Иннсмут", "refName": "Иннсмут", "namespace": "UNIQUE", "unique": {"base": "Потрёпанный капюшон"}}
-{"name": "Железная хватка", "refName": "Железная хватка", "namespace": "UNIQUE", "unique": {"base": "Доспех бродяги"}}
-{"name": "Железный наездник", "refName": "Железный наездник", "namespace": "UNIQUE", "unique": {"base": "Шлем с козырьком"}}
-{"name": "Ярнгрейпр", "refName": "Ярнгрейпр", "namespace": "UNIQUE", "unique": {"base": "Кольчужные перчатки"}}
-{"name": "Сердце Каома", "refName": "Сердце Каома", "namespace": "UNIQUE", "unique": {"base": "Доспех завоевателя"}}
+{"name": "Корона красного солнца", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Большой шлем воина"}}
+{"name": "Ядоброды", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Железные поножи"}}
+{"name": "Алое облачение", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Золочёное облачение"}}
+{"name": "Герб Ардура", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Звенящий гербовый щит"}}
+{"name": "Корона Бледного царя", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Корона культиста"}}
+{"name": "Корона победителя", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Железная корона"}}
+{"name": "Терновый венец", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Венок из ветвей"}}
+{"name": "Несущие тьму", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Сабатоны с ремнями"}}
+{"name": "Смертельный удар", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Двухслойные перчатки"}}
+{"name": "Предсмертный хрип", "refName": "Death Rattle", "namespace": "UNIQUE", "unique": {"base": "Фокус из веток"}}
+{"name": "Колокол мёртвых", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Большой шлем элиты"}}
+{"name": "Сшиватель демонов", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "Затейливые перчатки"}}
+{"name": "Защитник", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "Обшарпанный ростовой щит"}}
+{"name": "Власть Доэдре", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Сшитые перчатки"}}
+{"name": "Врата Рока", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Окованный ростовой щит"}}
+{"name": "Прототип Дориани", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Чешуйчатый доспех"}}
+{"name": "Хрупкое цветение", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Клёпаный нагрудник"}}
+{"name": "Бивни Эдирна", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Железная кираса"}}
+{"name": "Поедатель стихий", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Капюшон охотника"}}
+{"name": "Окутывающий рассвет", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Облачение пилигрима"}}
+{"name": "Шишак Эриана", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Шлем с забралом"}}
+{"name": "Триумф эзомита", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Большой шлем солдата"}}
+{"name": "Пернатая крепость", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Тарджет с полумесяцем"}}
+{"name": "Запретный взор", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Цепная тиара"}}
+{"name": "Лисья тень", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "Стёганый жилет"}}
+{"name": "Дух азарта", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "Тиснёные сапоги"}}
+{"name": "Марш призраков", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Прошитые ботинки"}}
+{"name": "Призрачные изгибы", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Рваное платье"}}
+{"name": "Взгляд хаоса", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Племенная маска"}}
+{"name": "Мрачная форма", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Вощёный плащ"}}
+{"name": "Золотой колпак", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Войлочная шляпа"}}
+{"name": "Могильные узы", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Верёвочные манжеты"}}
+{"name": "Объятия жадности", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "Нагрудник ваал"}}
+{"name": "Серый мрак", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Шлем с полями"}}
+{"name": "Хватка зимы", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Плотные наручи"}}
+{"name": "Длань мудрости и деяния", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}}
+{"name": "Кузня ненависти", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Литые рукавицы"}}
+{"name": "Рога Биндена", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Ржавый большой шлем"}}
+{"name": "Оболочка мечты", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Наряд шамана"}}
+{"name": "Ледяной склеп", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Кольчужное одеяние"}}
+{"name": "Праздные руки", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Сегментные наручи"}}
+{"name": "Иннсмут", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Потрёпанный капюшон"}}
+{"name": "Железная хватка", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Доспех бродяги"}}
+{"name": "Железный наездник", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Шлем с козырьком"}}
+{"name": "Ярнгрейпр", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Кольчужные перчатки"}}
+{"name": "Сердце Каома", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Доспех завоевателя"}}
 {"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Корона из костей духа"}}
-{"name": "Брюзга", "refName": "Брюзга", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки"}}
-{"name": "Хранитель царей", "refName": "Хранитель царей", "namespace": "UNIQUE", "unique": {"base": "Полные латы"}}
-{"name": "Поток Китоко", "refName": "Поток Китоко", "namespace": "UNIQUE", "unique": {"base": "Инкрустированные перчатки"}}
-{"name": "Маска труппы хитрецов", "refName": "Маска труппы хитрецов", "namespace": "UNIQUE", "unique": {"base": "Маска с капюшоном"}}
-{"name": "Поступь легиона", "refName": "Поступь легиона", "namespace": "UNIQUE", "unique": {"base": "Грубые поножи"}}
-{"name": "Ласка Локтона", "refName": "Ласка Локтона", "namespace": "UNIQUE", "unique": {"base": "Закалённые рукавицы"}}
-{"name": "Поступь света", "refName": "Поступь света", "namespace": "UNIQUE", "unique": {"base": "Соломенные сандалии"}}
-{"name": "Паук-волк", "refName": "Паук-волк", "namespace": "UNIQUE", "unique": {"base": "Крепостной ростовой щит"}}
-{"name": "Махинации Махушотля", "refName": "Махинации Махушотля", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит знамения"}}
-{"name": "Виртуозность Малигаро", "refName": "Виртуозность Малигаро", "namespace": "UNIQUE", "unique": {"base": "Искусные наручи"}}
-{"name": "Маска кровоманта", "refName": "Маска кровоманта", "namespace": "UNIQUE", "unique": {"base": "Лицевая маска"}}
-{"name": "Маска Сшитого Демона", "refName": "Маска Сшитого Демона", "namespace": "UNIQUE", "unique": {"base": "Тиара с перьями"}}
-{"name": "Ценность службы", "refName": "Ценность службы", "namespace": "UNIQUE", "unique": {"base": "Отделанный мехом тарджет"}}
-{"name": "Мориор Инвиктус", "refName": "Мориор Инвиктус", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}}
+{"name": "Брюзга", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки"}}
+{"name": "Хранитель царей", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Полные латы"}}
+{"name": "Поток Китоко", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Инкрустированные перчатки"}}
+{"name": "Маска труппы хитрецов", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Маска с капюшоном"}}
+{"name": "Поступь легиона", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Грубые поножи"}}
+{"name": "Ласка Локтона", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Закалённые рукавицы"}}
+{"name": "Поступь света", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Соломенные сандалии"}}
+{"name": "Паук-волк", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Крепостной ростовой щит"}}
+{"name": "Махинации Махушотля", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит знамения"}}
+{"name": "Виртуозность Малигаро", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "Искусные наручи"}}
+{"name": "Маска кровоманта", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "Лицевая маска"}}
+{"name": "Маска Сшитого Демона", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Тиара с перьями"}}
+{"name": "Ценность службы", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Отделанный мехом тарджет"}}
+{"name": "Мориор Инвиктус", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}}
 {"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Капюшон агента"}}
-{"name": "Некромантия", "refName": "Некромантия", "namespace": "UNIQUE", "unique": {"base": "Костяное облачение"}}
-{"name": "Северные лапы", "refName": "Северные лапы", "namespace": "UNIQUE", "unique": {"base": "Замшевые наручи"}}
-{"name": "Старый дуб", "refName": "Старый дуб", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит с символикой"}}
+{"name": "Некромантия", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Костяное облачение"}}
+{"name": "Северные лапы", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Замшевые наручи"}}
+{"name": "Старый дуб", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит с символикой"}}
 {"name": "Obern's Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Пластинчатые сабатоны"}}
-{"name": "Подручный творца", "refName": "Подручный творца", "namespace": "UNIQUE", "unique": {"base": "Рваные перчатки"}}
-{"name": "Объятья парии", "refName": "Объятья парии", "namespace": "UNIQUE", "unique": {"base": "Доспех с кольцами"}}
-{"name": "Вероломство", "refName": "Вероломство", "namespace": "UNIQUE", "unique": {"base": "Рыцарский доспех"}}
-{"name": "Чумной перст", "refName": "Чумной перст", "namespace": "UNIQUE", "unique": {"base": "Обмотки из муслина"}}
+{"name": "Подручный творца", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Рваные перчатки"}}
+{"name": "Объятья парии", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Доспех с кольцами"}}
+{"name": "Вероломство", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Рыцарский доспех"}}
+{"name": "Чумной перст", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Обмотки из муслина"}}
 {"name": "Powertread", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Охотничьи ботинки"}}
 {"name": "Pragmatism", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Броня исследователя"}}
-{"name": "Мольбы о дожде", "refName": "Мольбы о дожде", "namespace": "UNIQUE", "unique": {"base": "Кетское одеяние"}}
-{"name": "Шкура Коатля", "refName": "Шкура Коатля", "namespace": "UNIQUE", "unique": {"base": "Доспех из змеиной чешуи"}}
-{"name": "Царица леса", "refName": "Царица леса", "namespace": "UNIQUE", "unique": {"base": "Куртка контрабандиста"}}
-{"name": "Светлая скорбь", "refName": "Светлая скорбь", "namespace": "UNIQUE", "unique": {"base": "Вышитый капюшон"}}
-{"name": "Проводник красного пламени", "refName": "Проводник красного пламени", "namespace": "UNIQUE", "unique": {"base": "Одеяние анахорета"}}
-{"name": "Возрождение Феникса", "refName": "Возрождение Феникса", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит знамения"}}
-{"name": "Самоделка Саффелла", "refName": "Самоделка Саффелла", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит с эмблемой"}}
-{"name": "Образ песчаной бури", "refName": "Образ песчаной бури", "namespace": "UNIQUE", "unique": {"base": "Цепная тиара"}}
-{"name": "Урок змеи", "refName": "Урок змеи", "namespace": "UNIQUE", "unique": {"base": "Звенящий фокус"}}
-{"name": "Оковы убогих", "refName": "Оковы убогих", "namespace": "UNIQUE", "unique": {"base": "Старинные манжеты"}}
-{"name": "Наследие Сиерры", "refName": "Наследие Сиерры", "namespace": "UNIQUE", "unique": {"base": "Костюм марабута"}}
-{"name": "Непревзойдённость", "refName": "Непревзойдённость", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}}
-{"name": "Кожа верных", "refName": "Кожа верных", "namespace": "UNIQUE", "unique": {"base": "Одеяние"}}
-{"name": "Укус змеи", "refName": "Укус змеи", "namespace": "UNIQUE", "unique": {"base": "Шипастые наручи"}}
-{"name": "Солипсист", "refName": "Солипсист", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}}
-{"name": "Свалинн", "refName": "Свалинн", "namespace": "UNIQUE", "unique": {"base": "Закалённый ростовой щит"}}
-{"name": "Темпоралис", "refName": "Темпоралис", "namespace": "UNIQUE", "unique": {"base": "Шёлковое платье"}}
-{"name": "Желание Тецлапокаля", "refName": "Желание Тецлапокаля", "namespace": "UNIQUE", "unique": {"base": "Обетное одеяние"}}
-{"name": "Страж кургана", "refName": "Страж кургана", "namespace": "UNIQUE", "unique": {"base": "Доспех изгоя"}}
-{"name": "Мрачные сомнения", "refName": "Мрачные сомнения", "namespace": "UNIQUE", "unique": {"base": "Ведьмино облачение"}}
-{"name": "Латунный свод", "refName": "Латунный свод", "namespace": "UNIQUE", "unique": {"base": "Доспех чемпиона"}}
-{"name": "Договор", "refName": "Договор", "namespace": "UNIQUE", "unique": {"base": "Церемониальное одеяние"}}
-{"name": "Танцующий мираж", "refName": "Танцующий мираж", "namespace": "UNIQUE", "unique": {"base": "Плащ путника"}}
-{"name": "Пожирающая диадема", "refName": "Пожирающая диадема", "namespace": "UNIQUE", "unique": {"base": "Тиара из прутьев"}}
+{"name": "Мольбы о дожде", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Кетское одеяние"}}
+{"name": "Шкура Коатля", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Доспех из змеиной чешуи"}}
+{"name": "Царица леса", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Куртка контрабандиста"}}
+{"name": "Светлая скорбь", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Вышитый капюшон"}}
+{"name": "Проводник красного пламени", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Одеяние анахорета"}}
+{"name": "Возрождение Феникса", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит знамения"}}
+{"name": "Самоделка Саффелла", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит с эмблемой"}}
+{"name": "Образ песчаной бури", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Цепная тиара"}}
+{"name": "Урок змеи", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Звенящий фокус"}}
+{"name": "Оковы убогих", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Старинные манжеты"}}
+{"name": "Наследие Сиерры", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Костюм марабута"}}
+{"name": "Непревзойдённость", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}}
+{"name": "Кожа верных", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Одеяние"}}
+{"name": "Укус змеи", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Шипастые наручи"}}
+{"name": "Солипсист", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}}
+{"name": "Свалинн", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Закалённый ростовой щит"}}
+{"name": "Темпоралис", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Шёлковое платье"}}
+{"name": "Желание Тецлапокаля", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Обетное одеяние"}}
+{"name": "Страж кургана", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Доспех изгоя"}}
+{"name": "Мрачные сомнения", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Ведьмино облачение"}}
+{"name": "Латунный свод", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Доспех чемпиона"}}
+{"name": "Договор", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Церемониальное одеяние"}}
+{"name": "Танцующий мираж", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Плащ путника"}}
+{"name": "Пожирающая диадема", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Тиара из прутьев"}}
 {"name": "The Eternal Spark", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Кристальный фокус"}}
-{"name": "Полая маска", "refName": "Полая маска", "namespace": "UNIQUE", "unique": {"base": "Обтёсанная маска"}}
-{"name": "Несмертный", "refName": "Несмертный", "namespace": "UNIQUE", "unique": {"base": "Рейдерский нагрудник"}}
-{"name": "Бесконечная погоня", "refName": "Бесконечная погоня", "namespace": "UNIQUE", "unique": {"base": "Бронзовые поножи"}}
-{"name": "Странствующий рыцарь", "refName": "Странствующий рыцарь", "namespace": "UNIQUE", "unique": {"base": "Кольчужные сабатоны"}}
-{"name": "Крысиная клетка", "refName": "Крысиная клетка", "namespace": "UNIQUE", "unique": {"base": "Безрукавка разведчика"}}
-{"name": "Улыбающийся рыцарь", "refName": "Улыбающийся рыцарь", "namespace": "UNIQUE", "unique": {"base": "Шлем с капюшоном"}}
-{"name": "Отречение", "refName": "Отречение", "namespace": "UNIQUE", "unique": {"base": "Каменный ростовой щит"}}
-{"name": "Три дракона", "refName": "Три дракона", "namespace": "UNIQUE", "unique": {"base": "Цельная маска"}}
-{"name": "Вертекс", "refName": "Вертекс", "namespace": "UNIQUE", "unique": {"base": "Племенная маска"}}
-{"name": "Подлый рыцарь", "refName": "Подлый рыцарь", "namespace": "UNIQUE", "unique": {"base": "Шлем с горжетом"}}
-{"name": "Стена плача", "refName": "Стена плача", "namespace": "UNIQUE", "unique": {"base": "Тотемный ростовой щит"}}
-{"name": "Нить света", "refName": "Нить света", "namespace": "UNIQUE", "unique": {"base": "Плетёный фокус"}}
-{"name": "Стальной раж", "refName": "Стальной раж", "namespace": "UNIQUE", "unique": {"base": "Остроконечный большой шлем"}}
-{"name": "Громовая поступь", "refName": "Громовая поступь", "namespace": "UNIQUE", "unique": {"base": "Сапоги со стальным носком"}}
-{"name": "Ржавый катафракт", "refName": "Ржавый катафракт", "namespace": "UNIQUE", "unique": {"base": "Маракетская кираса"}}
+{"name": "Полая маска", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Обтёсанная маска"}}
+{"name": "Несмертный", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Рейдерский нагрудник"}}
+{"name": "Бесконечная погоня", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Бронзовые поножи"}}
+{"name": "Странствующий рыцарь", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Кольчужные сабатоны"}}
+{"name": "Крысиная клетка", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Безрукавка разведчика"}}
+{"name": "Улыбающийся рыцарь", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Шлем с капюшоном"}}
+{"name": "Отречение", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Каменный ростовой щит"}}
+{"name": "Три дракона", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "Цельная маска"}}
+{"name": "Вертекс", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "Племенная маска"}}
+{"name": "Подлый рыцарь", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "Шлем с горжетом"}}
+{"name": "Стена плача", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "Тотемный ростовой щит"}}
+{"name": "Нить света", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "Плетёный фокус"}}
+{"name": "Стальной раж", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Остроконечный большой шлем"}}
+{"name": "Громовая поступь", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Сапоги со стальным носком"}}
+{"name": "Ржавый катафракт", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Маракетская кираса"}}
 {"name": "Trampletoe", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Подогнанные поножи"}}
-{"name": "Древохваты", "refName": "Древохваты", "namespace": "UNIQUE", "unique": {"base": "Клёпаные рукавицы"}}
-{"name": "Покров ночи", "refName": "Покров ночи", "namespace": "UNIQUE", "unique": {"base": "Корона мученика"}}
-{"name": "Лик Айи", "refName": "Лик Айи", "namespace": "UNIQUE", "unique": {"base": "Обруч с чётками"}}
-{"name": "Защитник Волла", "refName": "Защитник Волла", "namespace": "UNIQUE", "unique": {"base": "Ратное облачение"}}
-{"name": "Зачинщики разрушений", "refName": "Зачинщики разрушений", "namespace": "UNIQUE", "unique": {"base": "Меховые сапоги"}}
-{"name": "Блуждающий реликварий", "refName": "Блуждающий реликварий", "namespace": "UNIQUE", "unique": {"base": "Стальной доспех"}}
-{"name": "Странники", "refName": "Странники", "namespace": "UNIQUE", "unique": {"base": "Cандалии с обмотками"}}
-{"name": "Вопли ветра", "refName": "Вопли ветра", "namespace": "UNIQUE", "unique": {"base": "Пернатые сандалии"}}
-{"name": "Крылья Кейлин", "refName": "Крылья Кейлин", "namespace": "UNIQUE", "unique": {"base": "Ржавый большой шлем"}}
-{"name": "Ведущие к чудесам", "refName": "Ведущие к чудесам", "namespace": "UNIQUE", "unique": {"base": "Шёлковые тапочки"}}
-{"name": "Погибель Вульфа", "refName": "Погибель Вульфа", "namespace": "UNIQUE", "unique": {"base": "Расписной ростовой щит"}}
+{"name": "Древохваты", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Клёпаные рукавицы"}}
+{"name": "Покров ночи", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Корона мученика"}}
+{"name": "Лик Айи", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Обруч с чётками"}}
+{"name": "Защитник Волла", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ратное облачение"}}
+{"name": "Зачинщики разрушений", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Меховые сапоги"}}
+{"name": "Блуждающий реликварий", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Стальной доспех"}}
+{"name": "Странники", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Cандалии с обмотками"}}
+{"name": "Вопли ветра", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Пернатые сандалии"}}
+{"name": "Крылья Кейлин", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Ржавый большой шлем"}}
+{"name": "Ведущие к чудесам", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Шёлковые тапочки"}}
+{"name": "Погибель Вульфа", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Расписной ростовой щит"}}
 {"name": "Melting Maelstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Совершенный флакон маны"}}
-{"name": "Решительность Олрота", "refName": "Решительность Олрота", "namespace": "UNIQUE", "unique": {"base": "Совершенный флакон жизни"}}
-{"name": "Противление тьме", "refName": "Противление тьме", "namespace": "UNIQUE", "unique": {"base": "Утерянный алмаз"}}
+{"name": "Решительность Олрота", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Совершенный флакон жизни"}}
+{"name": "Противление тьме", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Утерянный алмаз"}}
 {"name": "Controlled Metamorphosis", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
-{"name": "Из ничего", "refName": "Из ничего", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
-{"name": "Великий образ", "refName": "Великий образ", "namespace": "UNIQUE", "unique": {"base": "Багровый самоцвет"}}
-{"name": "Великий образ", "refName": "Великий образ", "namespace": "UNIQUE", "unique": {"base": "Бирюзовый самоцвет"}}
-{"name": "Великий образ", "refName": "Великий образ", "namespace": "UNIQUE", "unique": {"base": "Кобальтовый самоцвет"}}
+{"name": "Из ничего", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
+{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Багровый самоцвет"}}
+{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Бирюзовый самоцвет"}}
+{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Кобальтовый самоцвет"}}
 {"name": "Heroic Tragedy", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Вневременной самоцвет"}}
-{"name": "Мания величия", "refName": "Мания величия", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
+{"name": "Мания величия", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
 {"name": "Prism of Belief", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
-{"name": "Былой блеск", "refName": "Былой блеск", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
-{"name": "Синее жало", "refName": "Синее жало", "namespace": "UNIQUE", "unique": {"base": "Короткий меч"}}
-{"name": "Мозготряс", "refName": "Мозготряс", "namespace": "UNIQUE", "unique": {"base": "Шипастая палица"}}
-{"name": "Знак Бринханда", "refName": "Знак Бринханда", "namespace": "UNIQUE", "unique": {"base": "Деревянная дубинка"}}
-{"name": "Стук-Постук", "refName": "Стук-Постук", "namespace": "UNIQUE", "unique": {"base": "Освинцованный молот"}}
+{"name": "Былой блеск", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Алмаз"}}
+{"name": "Синее жало", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Короткий меч"}}
+{"name": "Мозготряс", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Шипастая палица"}}
+{"name": "Знак Бринханда", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Деревянная дубинка"}}
+{"name": "Стук-Постук", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Освинцованный молот"}}
 {"name": "Collapsing Horizon", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Боевой посох змия"}}
-{"name": "Арфа смерти", "refName": "Арфа смерти", "namespace": "UNIQUE", "unique": {"base": "Спаренный лук"}}
-{"name": "Сумеречный дозор", "refName": "Сумеречный дозор", "namespace": "UNIQUE", "unique": {"base": "Пепельный посох"}}
+{"name": "Арфа смерти", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Спаренный лук"}}
+{"name": "Сумеречный дозор", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Пепельный посох"}}
 {"name": "Earthbound", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Гальванический посох"}}
 {"name": "Enezun's Charge", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Нестабильный жезл"}}
-{"name": "Купель силы", "refName": "Купель силы", "namespace": "UNIQUE", "unique": {"base": "Скипетр предвестия"}}
-{"name": "Ледяное дыхание", "refName": "Ледяное дыхание", "namespace": "UNIQUE", "unique": {"base": "Шестопёр"}}
-{"name": "Направляющая длань", "refName": "Направляющая длань", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр"}}
-{"name": "Кабаний промысел", "refName": "Кабаний промысел", "namespace": "UNIQUE", "unique": {"base": "Дубина из пня"}}
-{"name": "Гимн Гримнора", "refName": "Гимн Гримнора", "namespace": "UNIQUE", "unique": {"base": "Дубовая кувалда"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Простой кинжал"}}
+{"name": "Купель силы", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Скипетр предвестия"}}
+{"name": "Ледяное дыхание", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Шестопёр"}}
+{"name": "Направляющая длань", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр"}}
+{"name": "Кабаний промысел", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Дубина из пня"}}
+{"name": "Гимн Гримнора", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Дубовая кувалда"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Секач"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Копьё с железным наконечником"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор палача"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Обугленный короткий меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ржавый длинный меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Старый нож"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Железный большой меч"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Простой кинжал"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор палача"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Освящённый клеймор"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Старый нож"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Тупой топорик"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий меч"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ржавый длинный меч"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Железный большой меч"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Воинское копьё"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Лунный кинжал"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Двойной кистень"}}
@@ -3051,38 +3051,38 @@
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Священное молотило"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Удлинённый тесак"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Охотничье копьё"}}
-{"name": "Живой побег", "refName": "Живой побег", "namespace": "UNIQUE", "unique": {"base": "Вытягивающий жезл"}}
+{"name": "Живой побег", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Вытягивающий жезл"}}
 {"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Боевой посох с полумесяцем"}}
 {"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Самодельный самострел"}}
 {"name": "Nazir's Judgement", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Боевой посох со стальным наконечником"}}
 {"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Булава мучений"}}
-{"name": "Опора пленённого бога", "refName": "Опора пленённого бога", "namespace": "UNIQUE", "unique": {"base": "Длинный боевой посох"}}
-{"name": "Кечолли", "refName": "Кечолли", "namespace": "UNIQUE", "unique": {"base": "Крошащий молот"}}
-{"name": "Ливень перьев", "refName": "Ливень перьев", "namespace": "UNIQUE", "unique": {"base": "Короткий лук"}}
+{"name": "Опора пленённого бога", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Длинный боевой посох"}}
+{"name": "Кечолли", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Крошащий молот"}}
+{"name": "Ливень перьев", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Короткий лук"}}
 {"name": "Rampart Raptor", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Тугой самострел"}}
-{"name": "Красный клюв", "refName": "Красный клюв", "namespace": "UNIQUE", "unique": {"base": "Короткий меч"}}
-{"name": "Священное пламя", "refName": "Священное пламя", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр"}}
+{"name": "Красный клюв", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Короткий меч"}}
+{"name": "Священное пламя", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр"}}
 {"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Костяной жезл"}}
 {"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Кованая булава"}}
-{"name": "Небесный осколок", "refName": "Небесный осколок", "namespace": "UNIQUE", "unique": {"base": "Крылатое копьё"}}
-{"name": "Солнечное копьё", "refName": "Солнечное копьё", "namespace": "UNIQUE", "unique": {"base": "Раздвоенное копьё"}}
+{"name": "Небесный осколок", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Крылатое копьё"}}
+{"name": "Солнечное копьё", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Раздвоенное копьё"}}
 {"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Загнутый лук"}}
-{"name": "Осколок Лоратты", "refName": "Осколок Лоратты", "namespace": "UNIQUE", "unique": {"base": "Копьё из твёрдой древесины"}}
-{"name": "Дрожь Тарина", "refName": "Дрожь Тарина", "namespace": "UNIQUE", "unique": {"base": "Студёный посох"}}
-{"name": "Кровавый шип", "refName": "Кровавый шип", "namespace": "UNIQUE", "unique": {"base": "Обмотанный боевой посох"}}
+{"name": "Осколок Лоратты", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Копьё из твёрдой древесины"}}
+{"name": "Дрожь Тарина", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Студёный посох"}}
+{"name": "Кровавый шип", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Обмотанный боевой посох"}}
 {"name": "The Burden of Shadows", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Звенящий посох"}}
-{"name": "Танцующий дервиш", "refName": "Танцующий дервиш", "namespace": "UNIQUE", "unique": {"base": "Скимитар"}}
-{"name": "Тёмный осквернитель", "refName": "Тёмный осквернитель", "namespace": "UNIQUE", "unique": {"base": "Гремящий скипетр"}}
-{"name": "Опаляющее касание", "refName": "Опаляющее касание", "namespace": "UNIQUE", "unique": {"base": "Пирофитовый посох"}}
-{"name": "Часовой", "refName": "Часовой", "namespace": "UNIQUE", "unique": {"base": "Готический боевой посох"}}
+{"name": "Танцующий дервиш", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Скимитар"}}
+{"name": "Тёмный осквернитель", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Гремящий скипетр"}}
+{"name": "Опаляющее касание", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Пирофитовый посох"}}
+{"name": "Часовой", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Готический боевой посох"}}
 {"name": "Trenchtimbre", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Шипастая дубинка"}}
 {"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Кузнечная кувалда"}}
-{"name": "Вдовья доля", "refName": "Вдовья доля", "namespace": "UNIQUE", "unique": {"base": "Грубый лук"}}
-{"name": "Укус зимы", "refName": "Укус зимы", "namespace": "UNIQUE", "unique": {"base": "Осколок стекла"}}
-{"name": "Доля Вилунда", "refName": "Доля Вилунда", "namespace": "UNIQUE", "unique": {"base": "Кузнечный молот"}}
-{"name": "Разбитая курительница", "refName": "Разбитая курительница", "namespace": "UNIQUE", "unique": {"base": "Гобелен"}}
-{"name": "Ночная лампа", "refName": "Ночная лампа", "namespace": "UNIQUE", "unique": {"base": "Печать"}}
-{"name": "Второе причастие", "refName": "Второе причастие", "namespace": "UNIQUE", "unique": {"base": "Ваза"}}
-{"name": "Последнее пламя", "refName": "Последнее пламя", "namespace": "UNIQUE", "unique": {"base": "Курительница"}}
-{"name": "Позолоченная чаша", "refName": "Позолоченная чаша", "namespace": "UNIQUE", "unique": {"base": "Амфора"}}
-{"name": "Первый щит", "refName": "Первый щит", "namespace": "UNIQUE", "unique": {"base": "Ларец"}}
+{"name": "Вдовья доля", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Грубый лук"}}
+{"name": "Укус зимы", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Осколок стекла"}}
+{"name": "Доля Вилунда", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Кузнечный молот"}}
+{"name": "Разбитая курительница", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Гобелен"}}
+{"name": "Ночная лампа", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Печать"}}
+{"name": "Второе причастие", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Ваза"}}
+{"name": "Последнее пламя", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "Курительница"}}
+{"name": "Позолоченная чаша", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "Амфора"}}
+{"name": "Первый щит", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "Ларец"}}

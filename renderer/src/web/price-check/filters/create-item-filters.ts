@@ -2,7 +2,8 @@ import type { ItemFilters } from "./interfaces";
 import { ParsedItem, ItemCategory, ItemRarity } from "@/parser";
 import { tradeTag } from "../trade/common";
 import { ModifierType } from "@/parser/modifiers";
-import { BaseType, ITEM_BY_REF } from "@/assets/data";
+// import { BaseType, ITEM_BY_REF } from "@/assets/data";
+import { BaseType, ITEM_BY_TRANSLATED } from "@/assets/data";
 import { CATEGORY_TO_TRADE_ID } from "../trade/pathofexile-trade";
 
 export const SPECIAL_SUPPORT_GEM = [
@@ -112,7 +113,10 @@ export function createFilters(
       filters.searchExact = {
         name: item.info.name,
         nameTrade: t(opts, item.info),
-        baseTypeTrade: t(opts, ITEM_BY_REF("ITEM", item.info.unique.base)![0]),
+        baseTypeTrade: t(
+          opts,
+          ITEM_BY_TRANSLATED("ITEM", item.info.unique.base)![0],
+        ),
       };
     } else {
       const isOccupiedBy = item.statsByType.some(
@@ -170,7 +174,10 @@ export function createFilters(
     filters.searchExact = {
       name: item.info.name,
       nameTrade: t(opts, item.info),
-      baseTypeTrade: t(opts, ITEM_BY_REF("ITEM", item.info.unique.base)![0]),
+      baseTypeTrade: t(
+        opts,
+        ITEM_BY_TRANSLATED("ITEM", item.info.unique.base)![0],
+      ),
     };
   } else {
     filters.searchExact = {
@@ -389,7 +396,10 @@ function createGemFilters(
       baseTypeTrade: t(opts, item.info),
     };
   } else {
-    const normalGem = ITEM_BY_REF("GEM", item.info.gem!.normalVariant!)![0];
+    const normalGem = ITEM_BY_TRANSLATED(
+      "GEM",
+      item.info.gem!.normalVariant!,
+    )![0];
     filters.searchExact = {
       baseType: item.info.name,
       baseTypeTrade: t(opts, normalGem),

@@ -2826,7 +2826,7 @@
 {"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}}
 {"name": "Ryslatha's Coil", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}}
 {"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}}
-{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ring"}}
+{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "Ring"}}
 {"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}}
 {"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}}
 {"name": "Snakepit", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}}
@@ -3028,17 +3028,17 @@
 {"name": "Guiding Palm", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}}
 {"name": "Hoghunt", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}}
 {"name": "Hrimnor's Hymn", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Twin Flail"}}

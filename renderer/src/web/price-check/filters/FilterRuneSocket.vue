@@ -67,6 +67,7 @@ import ItemModifierText from "../../ui/ItemModifierText.vue";
 import { computed, defineComponent, PropType, ref } from "vue";
 import { ParsedItem } from "@/parser";
 import { RuneFilter } from "./interfaces";
+import { RUNE_LIST } from "@/assets/data";
 
 export default defineComponent({
   components: { ItemModifierText },
@@ -86,11 +87,11 @@ export default defineComponent({
     const selectedRune = ref<string>(""); // Initialize selectedRune
 
     // Sample rune options you can modify according to your needs
-    const runeOptions = [
-      { value: "rune1", text: "%NOT_IMPLEMENTED% 1" },
-      { value: "rune2", text: "%NOT_IMPLEMENTED% 2" },
-      { value: "rune3", text: "%NOT_IMPLEMENTED% 3" },
-    ];
+    const runeOptions = RUNE_LIST.map((rune) => ({
+      value: rune.refName,
+      text: `%NOT_IMPLEMENTED% ${rune.refName}`,
+      icon: rune.icon,
+    }));
 
     function toggleFilter() {
       if (!props.rune.isEmpty) return;
@@ -130,6 +131,7 @@ export default defineComponent({
   @apply text-center;
   @apply px-1;
   @apply border border-transparent;
+  @apply max-w-48;
 
   &:first-child {
     @apply rounded-l;

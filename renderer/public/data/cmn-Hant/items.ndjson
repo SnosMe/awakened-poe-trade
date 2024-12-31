@@ -2785,274 +2785,275 @@
 {"name": "龍捲射擊", "refName": "Tornado Shot", "namespace": "GEM", "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Ub3JuYWRvU2hvdCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/7299d3edf8/TornadoShot.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "龍捲風", "refName": "Tornado", "namespace": "GEM", "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Ub3JuYWRvR2VtIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/6ff8d3b903/TornadoGem.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "龍蜥最後通牒雕刻", "refName": "Chimeral Inscribed Ultimatum", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
-{"name": "貪慾之記", "refName": "貪慾之記", "namespace": "UNIQUE", "unique": {"base": "金光戒指"}}
-{"name": "均衡之符", "refName": "均衡之符", "namespace": "UNIQUE", "unique": {"base": "恆星項鍊"}}
-{"name": "阿基斯的信標", "refName": "阿基斯的信標", "namespace": "UNIQUE", "unique": {"base": "日耀項鍊"}}
-{"name": "天生權利扣環", "refName": "天生權利扣環", "namespace": "UNIQUE", "unique": {"base": "寬大腰帶"}}
-{"name": "黯炎", "refName": "黯炎", "namespace": "UNIQUE", "unique": {"base": "紫晶戒指"}}
-{"name": "幽暗之語", "refName": "幽暗之語", "namespace": "UNIQUE", "unique": {"base": "鍛鐵戒指"}}
-{"name": "極熱護環", "refName": "極熱護環", "namespace": "UNIQUE", "unique": {"base": "紅玉戒指"}}
-{"name": "布萊納巴斯", "refName": "布萊納巴斯", "namespace": "UNIQUE", "unique": {"base": "寬大腰帶"}}
-{"name": "意志呼喚", "refName": "意志呼喚", "namespace": "UNIQUE", "unique": {"base": "黃玉戒指"}}
-{"name": "屠戮之心", "refName": "屠戮之心", "namespace": "UNIQUE", "unique": {"base": "琥珀護身符"}}
-{"name": "暴風之語", "refName": "暴風之語", "namespace": "UNIQUE", "unique": {"base": "翠玉護身符"}}
-{"name": "懦夫的遺產", "refName": "懦夫的遺產", "namespace": "UNIQUE", "unique": {"base": "鎖甲腰帶"}}
-{"name": "裂紋怪客", "refName": "裂紋怪客", "namespace": "UNIQUE", "unique": {"base": "紅玉戒指"}}
-{"name": "亡者呼喚", "refName": "亡者呼喚", "namespace": "UNIQUE", "unique": {"base": "綠寶石戒指"}}
-{"name": "拒絕命運", "refName": "拒絕命運", "namespace": "UNIQUE", "unique": {"base": "翠玉護身符"}}
-{"name": "德瑞的魔具", "refName": "德瑞的魔具", "namespace": "UNIQUE", "unique": {"base": "青金石戒指"}}
-{"name": "夢語之痕", "refName": "夢語之痕", "namespace": "UNIQUE", "unique": {"base": "藍玉戒指"}}
-{"name": "夏烏拉之眼", "refName": "夏烏拉之眼", "namespace": "UNIQUE", "unique": {"base": "帝金護身符"}}
-{"name": "火焰之花", "refName": "火焰之花", "namespace": "UNIQUE", "unique": {"base": "日耀項鍊"}}
-{"name": "伊克斯的依戀", "refName": "伊克斯的依戀", "namespace": "UNIQUE", "unique": {"base": "恆星項鍊"}}
-{"name": "發光蟲群", "refName": "發光蟲群", "namespace": "UNIQUE", "unique": {"base": "青金石戒指"}}
-{"name": "獵首", "refName": "獵首", "namespace": "UNIQUE", "unique": {"base": "重革腰帶"}}
-{"name": "結魂之環", "refName": "結魂之環", "namespace": "UNIQUE", "unique": {"base": "珍珠戒指"}}
-{"name": "奧敦塑像", "refName": "奧敦塑像", "namespace": "UNIQUE", "unique": {"base": "赤紅項鍊"}}
-{"name": "烈焰之擊", "refName": "烈焰之擊", "namespace": "UNIQUE", "unique": {"base": "赤紅項鍊"}}
-{"name": "地獄之握", "refName": "地獄之握", "namespace": "UNIQUE", "unique": {"base": "板甲腰帶"}}
-{"name": "獨創", "refName": "獨創", "namespace": "UNIQUE", "unique": {"base": "實用腰帶"}}
-{"name": "卡蘭德之觸", "refName": "卡蘭德之觸", "namespace": "UNIQUE", "unique": {"base": "戒指"}}
-{"name": "船拖刑", "refName": "船拖刑", "namespace": "UNIQUE", "unique": {"base": "麻布腰帶"}}
-{"name": "浮游石", "refName": "浮游石", "namespace": "UNIQUE", "unique": {"base": "黃玉戒指"}}
-{"name": "豐金巫符", "refName": "豐金巫符", "namespace": "UNIQUE", "unique": {"base": "海玉護身符"}}
-{"name": "梅吉諾德的力量泉源", "refName": "梅吉諾德的力量泉源", "namespace": "UNIQUE", "unique": {"base": "生皮腰帶"}}
-{"name": "午夜護鏈", "refName": "午夜護鏈", "namespace": "UNIQUE", "unique": {"base": "生皮腰帶"}}
-{"name": "明恩的慧心", "refName": "明恩的慧心", "namespace": "UNIQUE", "unique": {"base": "紫晶戒指"}}
-{"name": "原罪", "refName": "原罪", "namespace": "UNIQUE", "unique": {"base": "紫晶戒指"}}
-{"name": "普蘭德斯之印", "refName": "普蘭德斯之印", "namespace": "UNIQUE", "unique": {"base": "金光戒指"}}
-{"name": "極圈", "refName": "極圈", "namespace": "UNIQUE", "unique": {"base": "藍玉戒指"}}
-{"name": "崇敬樹脂", "refName": "崇敬樹脂", "namespace": "UNIQUE", "unique": {"base": "琥珀護身符"}}
-{"name": "弱化圓飾", "refName": "弱化圓飾", "namespace": "UNIQUE", "unique": {"base": "月神項鍊"}}
-{"name": "瑞斯拉薩之纏", "refName": "瑞斯拉薩之纏", "namespace": "UNIQUE", "unique": {"base": "華麗腰帶"}}
-{"name": "浩劫種子", "refName": "浩劫種子", "namespace": "UNIQUE", "unique": {"base": "青金石戒指"}}
-{"name": "絲克瑪的決意", "refName": "絲克瑪的決意", "namespace": "UNIQUE", "unique": {"base": "戒指"}}
-{"name": "毒蛇之卵", "refName": "毒蛇之卵", "namespace": "UNIQUE", "unique": {"base": "帝金護身符"}}
-{"name": "薛朗的背包", "refName": "薛朗的背包", "namespace": "UNIQUE", "unique": {"base": "精良腰帶"}}
-{"name": "蛇巢", "refName": "蛇巢", "namespace": "UNIQUE", "unique": {"base": "珍珠戒指"}}
-{"name": "靈魂束縛", "refName": "靈魂束縛", "namespace": "UNIQUE", "unique": {"base": "長腰帶"}}
-{"name": "穩健印記", "refName": "穩健印記", "namespace": "UNIQUE", "unique": {"base": "翠玉護身符"}}
-{"name": "信念之砧", "refName": "信念之砧", "namespace": "UNIQUE", "unique": {"base": "血石項鍊"}}
-{"name": "掘地者", "refName": "掘地者", "namespace": "UNIQUE", "unique": {"base": "黃玉戒指"}}
-{"name": "永恆凝視", "refName": "永恆凝視", "namespace": "UNIQUE", "unique": {"base": "蒼藍項鍊"}}
-{"name": "群魔殿", "refName": "群魔殿", "namespace": "UNIQUE", "unique": {"base": "海玉護身符"}}
-{"name": "竊罪", "refName": "竊罪", "namespace": "UNIQUE", "unique": {"base": "綠寶石戒指"}}
-{"name": "恩吉爾的和諧", "refName": "恩吉爾的和諧", "namespace": "UNIQUE", "unique": {"base": "蒼藍項鍊"}}
-{"name": "賭神芬多", "refName": "賭神芬多", "namespace": "UNIQUE", "unique": {"base": "金光戒指"}}
-{"name": "意志低語", "refName": "意志低語", "namespace": "UNIQUE", "unique": {"base": "藍玉戒指"}}
-{"name": "索伏之血", "refName": "索伏之血", "namespace": "UNIQUE", "unique": {"base": "琥珀護身符"}}
-{"name": "澤菲的創世紀", "refName": "澤菲的創世紀", "namespace": "UNIQUE", "unique": {"base": "重革腰帶"}}
-{"name": "源於永恆", "refName": "源於永恆", "namespace": "UNIQUE", "unique": {"base": "宏偉腿甲"}}
-{"name": "艾瑞斯凡恩之翼", "refName": "艾瑞斯凡恩之翼", "namespace": "UNIQUE", "unique": {"base": "拋光護手"}}
-{"name": "神諭", "refName": "神諭", "namespace": "UNIQUE", "unique": {"base": "家徽紋章盾"}}
-{"name": "極地之嗥", "refName": "極地之嗥", "namespace": "UNIQUE", "unique": {"base": "裝甲便帽"}}
-{"name": "埃米蘭之裙", "refName": "埃米蘭之裙", "namespace": "UNIQUE", "unique": {"base": "隱士裝束"}}
-{"name": "阿瓦爾之輪", "refName": "阿瓦爾之輪", "namespace": "UNIQUE", "unique": {"base": "硬木圓盾"}}
-{"name": "拂燼", "refName": "拂燼", "namespace": "UNIQUE", "unique": {"base": "追獵者外套"}}
-{"name": "冰靈之吼", "refName": "冰靈之吼", "namespace": "UNIQUE", "unique": {"base": "寬頭箭袋"}}
-{"name": "刺殺", "refName": "刺殺", "namespace": "UNIQUE", "unique": {"base": "緊閉之盔"}}
-{"name": "阿札克之瞳", "refName": "阿札克之瞳", "namespace": "UNIQUE", "unique": {"base": "隱匿之面"}}
-{"name": "阿茲里的捷思", "refName": "阿茲里的捷思", "namespace": "UNIQUE", "unique": {"base": "鑄模長手套"}}
-{"name": "阿茲里的蔑視", "refName": "阿茲里的蔑視", "namespace": "UNIQUE", "unique": {"base": "黃金頭環"}}
-{"name": "富貴之運", "refName": "富貴之運", "namespace": "UNIQUE", "unique": {"base": "層板護手"}}
-{"name": "甲蟲噬咬", "refName": "甲蟲噬咬", "namespace": "UNIQUE", "unique": {"base": "絲絨輕鞋"}}
-{"name": "獸腹", "refName": "獸腹", "namespace": "UNIQUE", "unique": {"base": "探索者護甲"}}
-{"name": "無法到達", "refName": "無法到達", "namespace": "UNIQUE", "unique": {"base": "內臟箭袋"}}
-{"name": "憤怒的誕生", "refName": "憤怒的誕生", "namespace": "UNIQUE", "unique": {"base": "岩石脛甲"}}
-{"name": "苦心花", "refName": "苦心花", "namespace": "UNIQUE", "unique": {"base": "羽毛長袍"}}
-{"name": "黑辮", "refName": "黑辮", "namespace": "UNIQUE", "unique": {"base": "毛皮鎧甲"}}
-{"name": "黑炎之芒", "refName": "黑炎之芒", "namespace": "UNIQUE", "unique": {"base": "火焰箭袋"}}
-{"name": "黑陽之冠", "refName": "黑陽之冠", "namespace": "UNIQUE", "unique": {"base": "纏繞巨盔"}}
-{"name": "祝福之絆", "refName": "祝福之絆", "namespace": "UNIQUE", "unique": {"base": "麻布裹手"}}
-{"name": "藍焰護腕", "refName": "藍焰護腕", "namespace": "UNIQUE", "unique": {"base": "金鑄腕帶"}}
-{"name": "烏勒爾之骨", "refName": "烏勒爾之骨", "namespace": "UNIQUE", "unique": {"base": "格子便鞋"}}
-{"name": "刺棘寶甲", "refName": "刺棘寶甲", "namespace": "UNIQUE", "unique": {"base": "生鏽胸甲"}}
-{"name": "薔薇眼罩", "refName": "薔薇眼罩", "namespace": "UNIQUE", "unique": {"base": "飾帶長靴"}}
-{"name": "荒途", "refName": "荒途", "namespace": "UNIQUE", "unique": {"base": "恐喙鳥皮外套"}}
-{"name": "鬃豬", "refName": "鬃豬", "namespace": "UNIQUE", "unique": {"base": "皮革背心"}}
-{"name": "銅鬚", "refName": "銅鬚", "namespace": "UNIQUE", "unique": {"base": "犄角之冠"}}
-{"name": "突襲", "refName": "突襲", "namespace": "UNIQUE", "unique": {"base": "蜥蜴鱗長靴"}}
-{"name": "製燭者", "refName": "製燭者", "namespace": "UNIQUE", "unique": {"base": "暗淡手套"}}
-{"name": "腐肉呼喚", "refName": "腐肉呼喚", "namespace": "UNIQUE", "unique": {"base": "紋刻法器"}}
-{"name": "烈炎之袍", "refName": "烈炎之袍", "namespace": "UNIQUE", "unique": {"base": "絲質之袍"}}
-{"name": "腥紅外衣", "refName": "腥紅外衣", "namespace": "UNIQUE", "unique": {"base": "鎖鍊鎖甲"}}
-{"name": "科那索姆", "refName": "科那索姆", "namespace": "UNIQUE", "unique": {"base": "沉重之冠"}}
-{"name": "紅日之冕", "refName": "紅日之冕", "namespace": "UNIQUE", "unique": {"base": "戰士巨盔"}}
-{"name": "屍骨之靴", "refName": "屍骨之靴", "namespace": "UNIQUE", "unique": {"base": "鐵鍛脛甲"}}
-{"name": "緋紅訂製服", "refName": "緋紅訂製服", "namespace": "UNIQUE", "unique": {"base": "鍍金法衣"}}
-{"name": "阿杜拉之冠", "refName": "阿杜拉之冠", "namespace": "UNIQUE", "unique": {"base": "響聲紋章盾"}}
-{"name": "殞皇之冠", "refName": "殞皇之冠", "namespace": "UNIQUE", "unique": {"base": "教徒之冠"}}
-{"name": "勝者之冠", "refName": "勝者之冠", "namespace": "UNIQUE", "unique": {"base": "鍛鐵之冠"}}
-{"name": "刺棘之冠", "refName": "刺棘之冠", "namespace": "UNIQUE", "unique": {"base": "嫩枝頭環"}}
-{"name": "暗雷", "refName": "暗雷", "namespace": "UNIQUE", "unique": {"base": "加固鎧靴"}}
-{"name": "致命一擊", "refName": "致命一擊", "namespace": "UNIQUE", "unique": {"base": "雙層護手"}}
-{"name": "死亡之聲", "refName": "死亡之聲", "namespace": "UNIQUE", "unique": {"base": "枝條法器"}}
-{"name": "喪鐘", "refName": "喪鐘", "namespace": "UNIQUE", "unique": {"base": "菁英巨盔"}}
-{"name": "縫魔", "refName": "縫魔", "namespace": "UNIQUE", "unique": {"base": "精妙手套"}}
-{"name": "捍衛者", "refName": "捍衛者", "namespace": "UNIQUE", "unique": {"base": "朽木塔盾"}}
-{"name": "德瑞的精神手套", "refName": "德瑞的精神手套", "namespace": "UNIQUE", "unique": {"base": "縫合手套"}}
-{"name": "末日之門", "refName": "末日之門", "namespace": "UNIQUE", "unique": {"base": "加固塔盾"}}
-{"name": "多里亞尼之型", "refName": "多里亞尼之型", "namespace": "UNIQUE", "unique": {"base": "鱗片鎖甲"}}
-{"name": "塵土之花", "refName": "塵土之花", "namespace": "UNIQUE", "unique": {"base": "鑲釘背心"}}
-{"name": "埃狄恩的曲牙", "refName": "埃狄恩的曲牙", "namespace": "UNIQUE", "unique": {"base": "鍛鐵胸甲"}}
-{"name": "愛勒弗", "refName": "愛勒弗", "namespace": "UNIQUE", "unique": {"base": "獵者之兜"}}
-{"name": "晨曦之擁", "refName": "晨曦之擁", "namespace": "UNIQUE", "unique": {"base": "朝聖者法衣"}}
-{"name": "埃里安的鵝卵石", "refName": "埃里安的鵝卵石", "namespace": "UNIQUE", "unique": {"base": "警惕之盔"}}
-{"name": "艾茲麥的榮光", "refName": "艾茲麥的榮光", "namespace": "UNIQUE", "unique": {"base": "士兵巨盔"}}
-{"name": "羽毛堡壘", "refName": "羽毛堡壘", "namespace": "UNIQUE", "unique": {"base": "新月圓盾"}}
-{"name": "禁忌凝視", "refName": "禁忌凝視", "namespace": "UNIQUE", "unique": {"base": "鎖鍊頭冠"}}
-{"name": "狐毛鎧", "refName": "狐毛鎧", "namespace": "UNIQUE", "unique": {"base": "襯墊背心"}}
-{"name": "豪賭", "refName": "豪賭", "namespace": "UNIQUE", "unique": {"base": "浮雕長靴"}}
-{"name": "鬼行", "refName": "鬼行", "namespace": "UNIQUE", "unique": {"base": "縫紉輕鞋"}}
-{"name": "鬧鬼", "refName": "鬧鬼", "namespace": "UNIQUE", "unique": {"base": "殘破長袍"}}
-{"name": "混沌一瞥", "refName": "混沌一瞥", "namespace": "UNIQUE", "unique": {"base": "部落之面"}}
-{"name": "幽暗之衣", "refName": "幽暗之衣", "namespace": "UNIQUE", "unique": {"base": "打蠟外衣"}}
-{"name": "金縷帽", "refName": "金縷帽", "namespace": "UNIQUE", "unique": {"base": "毛氈便帽"}}
-{"name": "幽墓束縛", "refName": "幽墓束縛", "namespace": "UNIQUE", "unique": {"base": "繩索腕帶"}}
-{"name": "貪婪之擁", "refName": "貪婪之擁", "namespace": "UNIQUE", "unique": {"base": "瓦爾胸甲"}}
-{"name": "灰製", "refName": "灰製", "namespace": "UNIQUE", "unique": {"base": "邊緣之盔"}}
-{"name": "凜冬之握", "refName": "凜冬之握", "namespace": "UNIQUE", "unique": {"base": "穩固護腕"}}
-{"name": "智行之手", "refName": "智行之手", "namespace": "UNIQUE", "unique": {"base": "隱秘裹手"}}
-{"name": "怨恨鍛造", "refName": "怨恨鍛造", "namespace": "UNIQUE", "unique": {"base": "鑄模長手套"}}
-{"name": "賓登之角", "refName": "賓登之角", "namespace": "UNIQUE", "unique": {"base": "鏽蝕巨盔"}}
-{"name": "夢境軀殼", "refName": "夢境軀殼", "namespace": "UNIQUE", "unique": {"base": "薩滿披肩"}}
-{"name": "冰息", "refName": "冰息", "namespace": "UNIQUE", "unique": {"base": "鎖甲法衣"}}
-{"name": "遊手好閒", "refName": "遊手好閒", "namespace": "UNIQUE", "unique": {"base": "分段護腕"}}
-{"name": "印斯茅斯", "refName": "印斯茅斯", "namespace": "UNIQUE", "unique": {"base": "破舊兜帽"}}
-{"name": "鐵握", "refName": "鐵握", "namespace": "UNIQUE", "unique": {"base": "流浪者護甲"}}
-{"name": "鐵騎", "refName": "鐵騎", "namespace": "UNIQUE", "unique": {"base": "假面之盔"}}
-{"name": "雅恩格利佩爾", "refName": "雅恩格利佩爾", "namespace": "UNIQUE", "unique": {"base": "環鎖護手"}}
-{"name": "岡姆的壯志", "refName": "岡姆的壯志", "namespace": "UNIQUE", "unique": {"base": "征服者鎧甲"}}
-{"name": "電弧守護者", "refName": "電弧守護者", "namespace": "UNIQUE", "unique": {"base": "魂骨之冠"}}
-{"name": "掃興之人", "refName": "掃興之人", "namespace": "UNIQUE", "unique": {"base": "麻布裹手"}}
-{"name": "皇家衛甲", "refName": "皇家衛甲", "namespace": "UNIQUE", "unique": {"base": "連身鎧甲"}}
-{"name": "奇多可之流", "refName": "奇多可之流", "namespace": "UNIQUE", "unique": {"base": "寶石手套"}}
-{"name": "共鳴之面", "refName": "共鳴之面", "namespace": "UNIQUE", "unique": {"base": "風帽之面"}}
-{"name": "帝國之靴", "refName": "帝國之靴", "namespace": "UNIQUE", "unique": {"base": "粗糙脛甲"}}
-{"name": "意識之緣", "refName": "意識之緣", "namespace": "UNIQUE", "unique": {"base": "淬鍊長手套"}}
-{"name": "閃爍步伐", "refName": "閃爍步伐", "namespace": "UNIQUE", "unique": {"base": "乾草便鞋"}}
-{"name": "狼蛛", "refName": "狼蛛", "namespace": "UNIQUE", "unique": {"base": "壁壘塔盾"}}
-{"name": "瑪哈薩多的陰謀", "refName": "瑪哈薩多的陰謀", "namespace": "UNIQUE", "unique": {"base": "預兆紋章盾"}}
-{"name": "馬雷葛蘿的血染手套", "refName": "馬雷葛蘿的血染手套", "namespace": "UNIQUE", "unique": {"base": "精良護腕"}}
-{"name": "占血之面", "refName": "占血之面", "namespace": "UNIQUE", "unique": {"base": "護臉之面"}}
-{"name": "惡縫之面", "refName": "惡縫之面", "namespace": "UNIQUE", "unique": {"base": "羽毛頭冠"}}
-{"name": "服役功績", "refName": "服役功績", "namespace": "UNIQUE", "unique": {"base": "毛皮圓盾"}}
-{"name": "不敗亡者", "refName": "不敗亡者", "namespace": "UNIQUE", "unique": {"base": "宏偉華服"}}
-{"name": "米立斯之妻", "refName": "米立斯之妻", "namespace": "UNIQUE", "unique": {"base": "隱蔽兜帽"}}
-{"name": "亡者披肩", "refName": "亡者披肩", "namespace": "UNIQUE", "unique": {"base": "骸骨之衣"}}
-{"name": "北方之爪", "refName": "北方之爪", "namespace": "UNIQUE", "unique": {"base": "麂皮護腕"}}
-{"name": "橡誓者", "refName": "橡誓者", "namespace": "UNIQUE", "unique": {"base": "符印紋章盾"}}
-{"name": "歐伯恩的壁壘", "refName": "歐伯恩的壁壘", "namespace": "UNIQUE", "unique": {"base": "疊層鎧靴"}}
-{"name": "畫家的侍從", "refName": "畫家的侍從", "namespace": "UNIQUE", "unique": {"base": "撕裂手套"}}
-{"name": "草民之擁", "refName": "草民之擁", "namespace": "UNIQUE", "unique": {"base": "斗篷鎖甲"}}
-{"name": "背信忘義", "refName": "背信忘義", "namespace": "UNIQUE", "unique": {"base": "騎士護甲"}}
-{"name": "瘟疫之指", "refName": "瘟疫之指", "namespace": "UNIQUE", "unique": {"base": "紗布裹手"}}
-{"name": "動力圖樣", "refName": "動力圖樣", "namespace": "UNIQUE", "unique": {"base": "狩獵輕鞋"}}
-{"name": "務實主義", "refName": "務實主義", "namespace": "UNIQUE", "unique": {"base": "探索者護甲"}}
-{"name": "祈雨禱言", "refName": "祈雨禱言", "namespace": "UNIQUE", "unique": {"base": "凱斯之衣"}}
-{"name": "夸特之帶", "refName": "夸特之帶", "namespace": "UNIQUE", "unique": {"base": "蛇鱗外套"}}
-{"name": "森林之后", "refName": "森林之后", "namespace": "UNIQUE", "unique": {"base": "走私者外套"}}
-{"name": "聖光哀痛", "refName": "聖光哀痛", "namespace": "UNIQUE", "unique": {"base": "綁帶兜帽"}}
-{"name": "紅焰導體", "refName": "紅焰導體", "namespace": "UNIQUE", "unique": {"base": "隱者裝束"}}
-{"name": "烈炎之翼", "refName": "烈炎之翼", "namespace": "UNIQUE", "unique": {"base": "預兆紋章盾"}}
-{"name": "薩費爾的智慧", "refName": "薩費爾的智慧", "namespace": "UNIQUE", "unique": {"base": "徽印紋章盾"}}
-{"name": "沙瀑面紗", "refName": "沙瀑面紗", "namespace": "UNIQUE", "unique": {"base": "鎖鍊頭冠"}}
-{"name": "巨蛇教誨", "refName": "巨蛇教誨", "namespace": "UNIQUE", "unique": {"base": "音調法器"}}
-{"name": "悲運之縛", "refName": "悲運之縛", "namespace": "UNIQUE", "unique": {"base": "陳舊腕帶"}}
-{"name": "錫耶拉的遺產", "refName": "錫耶拉的遺產", "namespace": "UNIQUE", "unique": {"base": "修士裝束"}}
-{"name": "無與倫比", "refName": "無與倫比", "namespace": "UNIQUE", "unique": {"base": "宏偉手鐲"}}
-{"name": "忠誠之膚", "refName": "忠誠之膚", "namespace": "UNIQUE", "unique": {"base": "服裝"}}
-{"name": "蝮吻", "refName": "蝮吻", "namespace": "UNIQUE", "unique": {"base": "棘刺護腕"}}
-{"name": "唯我論", "refName": "唯我論", "namespace": "UNIQUE", "unique": {"base": "宏偉面紗"}}
-{"name": "斯佛林", "refName": "斯佛林", "namespace": "UNIQUE", "unique": {"base": "磨煉塔盾"}}
-{"name": "時空之物", "refName": "時空之物", "namespace": "UNIQUE", "unique": {"base": "絲質之袍"}}
-{"name": "特沙波卡爾之慾", "refName": "特沙波卡爾之慾", "namespace": "UNIQUE", "unique": {"base": "還願之衣"}}
-{"name": "遺塚居民", "refName": "遺塚居民", "namespace": "UNIQUE", "unique": {"base": "盜賊護甲"}}
-{"name": "黑色之疑", "refName": "黑色之疑", "namespace": "UNIQUE", "unique": {"base": "咒術師長袍"}}
-{"name": "堅銅戰罩", "refName": "堅銅戰罩", "namespace": "UNIQUE", "unique": {"base": "冠軍胸甲"}}
-{"name": "血誓", "refName": "血誓", "namespace": "UNIQUE", "unique": {"base": "祭壇長袍"}}
-{"name": "舞動幻影", "refName": "舞動幻影", "namespace": "UNIQUE", "unique": {"base": "旅人外衣"}}
-{"name": "吞噬之冠", "refName": "吞噬之冠", "namespace": "UNIQUE", "unique": {"base": "枝條頭冠"}}
-{"name": "永恆火花", "refName": "永恆火花", "namespace": "UNIQUE", "unique": {"base": "水晶法器"}}
-{"name": "聖潔面具", "refName": "聖潔面具", "namespace": "UNIQUE", "unique": {"base": "粗製之面"}}
-{"name": "永生者", "refName": "永生者", "namespace": "UNIQUE", "unique": {"base": "俠客鎧甲"}}
-{"name": "無盡之距", "refName": "無盡之距", "namespace": "UNIQUE", "unique": {"base": "青銅脛甲"}}
-{"name": "漂泊騎士", "refName": "漂泊騎士", "namespace": "UNIQUE", "unique": {"base": "鎖甲鎧靴"}}
-{"name": "疫鼠囚籠", "refName": "疫鼠囚籠", "namespace": "UNIQUE", "unique": {"base": "斥侯背心"}}
-{"name": "微笑騎士", "refName": "微笑騎士", "namespace": "UNIQUE", "unique": {"base": "斗篷之盔"}}
-{"name": "降伏", "refName": "降伏", "namespace": "UNIQUE", "unique": {"base": "岩石塔盾"}}
-{"name": "三龍戰紀", "refName": "三龍戰紀", "namespace": "UNIQUE", "unique": {"base": "堅固之面"}}
-{"name": "謎容", "refName": "謎容", "namespace": "UNIQUE", "unique": {"base": "部落之面"}}
-{"name": "惡劣騎士", "refName": "惡劣騎士", "namespace": "UNIQUE", "unique": {"base": "庇護之盔"}}
-{"name": "哀嚎之牆", "refName": "哀嚎之牆", "namespace": "UNIQUE", "unique": {"base": "靈像塔盾"}}
-{"name": "縫紉之光", "refName": "縫紉之光", "namespace": "UNIQUE", "unique": {"base": "編織法器"}}
-{"name": "顫慄之鋼", "refName": "顫慄之鋼", "namespace": "UNIQUE", "unique": {"base": "尖頂巨盔"}}
-{"name": "雷霆步伐", "refName": "雷霆步伐", "namespace": "UNIQUE", "unique": {"base": "鐵趾長靴"}}
-{"name": "泰坦腐化重騎兵", "refName": "泰坦腐化重騎兵", "namespace": "UNIQUE", "unique": {"base": "馬拉克斯胸甲"}}
-{"name": "踐踏之鞋", "refName": "踐踏之鞋", "namespace": "UNIQUE", "unique": {"base": "鑲邊脛甲"}}
-{"name": "樹木之指", "refName": "樹木之指", "namespace": "UNIQUE", "unique": {"base": "鉚接長手套"}}
-{"name": "夜幕", "refName": "夜幕", "namespace": "UNIQUE", "unique": {"base": "殉難之冠"}}
-{"name": "艾雅面紗", "refName": "艾雅面紗", "namespace": "UNIQUE", "unique": {"base": "串珠頭環"}}
-{"name": "福爾的戰鎧", "refName": "福爾的戰鎧", "namespace": "UNIQUE", "unique": {"base": "鐵甲法衣"}}
-{"name": "覆滅之兆", "refName": "覆滅之兆", "namespace": "UNIQUE", "unique": {"base": "牢固護腿"}}
-{"name": "流浪寶庫", "refName": "流浪寶庫", "namespace": "UNIQUE", "unique": {"base": "堅鋼鎧甲"}}
-{"name": "苦行之履", "refName": "苦行之履", "namespace": "UNIQUE", "unique": {"base": "裹腳便鞋"}}
-{"name": "惡風足跡", "refName": "惡風足跡", "namespace": "UNIQUE", "unique": {"base": "羽毛便鞋"}}
-{"name": "凱林之翼", "refName": "凱林之翼", "namespace": "UNIQUE", "unique": {"base": "鏽蝕巨盔"}}
-{"name": "迴光之跡", "refName": "迴光之跡", "namespace": "UNIQUE", "unique": {"base": "絲綢便鞋"}}
-{"name": "狼之禍", "refName": "狼之禍", "namespace": "UNIQUE", "unique": {"base": "彩繪塔盾"}}
-{"name": "融解漩渦", "refName": "融解漩渦", "namespace": "UNIQUE", "unique": {"base": "終極魔力藥劑"}}
-{"name": "奧爾羅斯的決心", "refName": "奧爾羅斯的決心", "namespace": "UNIQUE", "unique": {"base": "終極生命藥劑"}}
-{"name": "力抗黑暗", "refName": "力抗黑暗", "namespace": "UNIQUE", "unique": {"base": "時迭鑽石"}}
-{"name": "受控的蛻變", "refName": "受控的蛻變", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
-{"name": "從無到有", "refName": "從無到有", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
-{"name": "巨光譜", "refName": "巨光譜", "namespace": "UNIQUE", "unique": {"base": "紅玉"}}
-{"name": "巨光譜", "refName": "巨光譜", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
-{"name": "巨光譜", "refName": "巨光譜", "namespace": "UNIQUE", "unique": {"base": "藍玉"}}
-{"name": "英雄悲劇", "refName": "英雄悲劇", "namespace": "UNIQUE", "unique": {"base": "永恆珠寶"}}
-{"name": "信仰棱鏡", "refName": "信仰棱鏡", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
-{"name": "朝氣之靈", "refName": "朝氣之靈", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
-{"name": "腦亂者", "refName": "腦亂者", "namespace": "UNIQUE", "unique": {"base": "鑲釘巨棍棒"}}
-{"name": "布林漢的印記", "refName": "布林漢的印記", "namespace": "UNIQUE", "unique": {"base": "木製棍棒"}}
-{"name": "忠誠之錘", "refName": "忠誠之錘", "namespace": "UNIQUE", "unique": {"base": "麻木巨錘"}}
-{"name": "崩塌的地平線", "refName": "崩塌的地平線", "namespace": "UNIQUE", "unique": {"base": "蠕蟲細杖"}}
-{"name": "冥使之琴", "refName": "冥使之琴", "namespace": "UNIQUE", "unique": {"base": "雙弦弓"}}
-{"name": "暗暮守夜", "refName": "暗暮守夜", "namespace": "UNIQUE", "unique": {"base": "灰燼長杖"}}
-{"name": "地縛者", "refName": "地縛者", "namespace": "UNIQUE", "unique": {"base": "電流長杖"}}
-{"name": "艾尼尊的衝鋒", "refName": "艾尼尊的衝鋒", "namespace": "UNIQUE", "unique": {"base": "失衡法杖"}}
-{"name": "力量水晶塔", "refName": "力量水晶塔", "namespace": "UNIQUE", "unique": {"base": "徵兆權杖"}}
-{"name": "霜息", "refName": "霜息", "namespace": "UNIQUE", "unique": {"base": "纖細之錘"}}
-{"name": "引導之掌", "refName": "引導之掌", "namespace": "UNIQUE", "unique": {"base": "神殿權杖"}}
-{"name": "獵豬", "refName": "獵豬", "namespace": "UNIQUE", "unique": {"base": "墮落巨棍棒"}}
-{"name": "雷姆諾的奪命樂具", "refName": "雷姆諾的奪命樂具", "namespace": "UNIQUE", "unique": {"base": "橡木巨錘"}}
-{"name": "未完成", "refName": "未完成", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
-{"name": "未完成", "refName": "未完成", "namespace": "UNIQUE", "unique": {"base": "拱形巨斧"}}
-{"name": "生機之記", "refName": "生機之記", "namespace": "UNIQUE", "unique": {"base": "調和法杖"}}
-{"name": "摩蹉", "refName": "摩蹉", "namespace": "UNIQUE", "unique": {"base": "新月細杖"}}
-{"name": "迷霧低語者", "refName": "迷霧低語者", "namespace": "UNIQUE", "unique": {"base": "臨時十字弓"}}
-{"name": "納齊爾的審判", "refName": "納齊爾的審判", "namespace": "UNIQUE", "unique": {"base": "鋼尖細杖"}}
-{"name": "歐洛瓦沙拉", "refName": "歐洛瓦沙拉", "namespace": "UNIQUE", "unique": {"base": "磨難棍棒"}}
-{"name": "囚神杵", "refName": "囚神杵", "namespace": "UNIQUE", "unique": {"base": "加長細杖"}}
-{"name": "重擊之錘", "refName": "重擊之錘", "namespace": "UNIQUE", "unique": {"base": "崩毀重錘"}}
-{"name": "驟雨之弦", "refName": "驟雨之弦", "namespace": "UNIQUE", "unique": {"base": "短弓"}}
-{"name": "壁壘猛禽", "refName": "壁壘猛禽", "namespace": "UNIQUE", "unique": {"base": "緊繃十字弓"}}
-{"name": "神聖烈焰", "refName": "神聖烈焰", "namespace": "UNIQUE", "unique": {"base": "神殿權杖"}}
-{"name": "血色聖者", "refName": "血色聖者", "namespace": "UNIQUE", "unique": {"base": "骸骨法杖"}}
-{"name": "見證群星", "refName": "見證群星", "namespace": "UNIQUE", "unique": {"base": "華麗之錘"}}
-{"name": "裂心", "refName": "裂心", "namespace": "UNIQUE", "unique": {"base": "反曲弓"}}
-{"name": "塔林的顫慄之語", "refName": "塔林的顫慄之語", "namespace": "UNIQUE", "unique": {"base": "極寒長杖"}}
-{"name": "血棘", "refName": "血棘", "namespace": "UNIQUE", "unique": {"base": "纏繞細杖"}}
-{"name": "暗影重擔", "refName": "暗影重擔", "namespace": "UNIQUE", "unique": {"base": "鳴響長杖"}}
-{"name": "黑暗玷汙者", "refName": "黑暗玷汙者", "namespace": "UNIQUE", "unique": {"base": "雜響權杖"}}
-{"name": "熾炎之使", "refName": "熾炎之使", "namespace": "UNIQUE", "unique": {"base": "炎植長杖"}}
-{"name": "哨兵", "refName": "哨兵", "namespace": "UNIQUE", "unique": {"base": "歌德細杖"}}
-{"name": "壕溝之音", "refName": "壕溝之音", "namespace": "UNIQUE", "unique": {"base": "鈍釘木棒"}}
-{"name": "崔非那", "refName": "崔非那", "namespace": "UNIQUE", "unique": {"base": "鍛造重錘"}}
-{"name": "鰥寡之托", "refName": "鰥寡之托", "namespace": "UNIQUE", "unique": {"base": "粗製弓"}}
-{"name": "威倫德的木樁", "refName": "威倫德的木樁", "namespace": "UNIQUE", "unique": {"base": "鍛造錘"}}
-{"name": "破香爐", "refName": "破香爐", "namespace": "UNIQUE", "unique": {"base": "聖經聖物"}}
-{"name": "夜燈", "refName": "夜燈", "namespace": "UNIQUE", "unique": {"base": "草紙聖物"}}
-{"name": "第二聖事", "refName": "第二聖事", "namespace": "UNIQUE", "unique": {"base": "器皿聖物"}}
-{"name": "終焉烈焰", "refName": "終焉烈焰", "namespace": "UNIQUE", "unique": {"base": "香爐聖物"}}
-{"name": "和平使者藥水", "refName": "和平使者藥水", "namespace": "UNIQUE", "unique": {"base": "陶罐聖物"}}
-{"name": "第一頂峰", "refName": "第一頂峰", "namespace": "UNIQUE", "unique": {"base": "寶箱聖物"}}
+{"name": "貪慾之記", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "金光戒指"}}
+{"name": "均衡之符", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "恆星項鍊"}}
+{"name": "阿基斯的信標", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "日耀項鍊"}}
+{"name": "天生權利扣環", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "寬大腰帶"}}
+{"name": "黯炎", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "紫晶戒指"}}
+{"name": "幽暗之語", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "鍛鐵戒指"}}
+{"name": "極熱護環", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "紅玉戒指"}}
+{"name": "布萊納巴斯", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "寬大腰帶"}}
+{"name": "意志呼喚", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "黃玉戒指"}}
+{"name": "屠戮之心", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "琥珀護身符"}}
+{"name": "暴風之語", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "翠玉護身符"}}
+{"name": "懦夫的遺產", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "鎖甲腰帶"}}
+{"name": "裂紋怪客", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "紅玉戒指"}}
+{"name": "亡者呼喚", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "綠寶石戒指"}}
+{"name": "拒絕命運", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "翠玉護身符"}}
+{"name": "德瑞的魔具", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "青金石戒指"}}
+{"name": "夢語之痕", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "藍玉戒指"}}
+{"name": "夏烏拉之眼", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "帝金護身符"}}
+{"name": "火焰之花", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "日耀項鍊"}}
+{"name": "伊克斯的依戀", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "恆星項鍊"}}
+{"name": "發光蟲群", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "青金石戒指"}}
+{"name": "獵首", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "重革腰帶"}}
+{"name": "結魂之環", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "珍珠戒指"}}
+{"name": "奧敦塑像", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "赤紅項鍊"}}
+{"name": "烈焰之擊", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "赤紅項鍊"}}
+{"name": "地獄之握", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "板甲腰帶"}}
+{"name": "獨創", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "實用腰帶"}}
+{"name": "卡蘭德之觸", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "戒指"}}
+{"name": "船拖刑", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "麻布腰帶"}}
+{"name": "浮游石", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "黃玉戒指"}}
+{"name": "豐金巫符", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "海玉護身符"}}
+{"name": "梅吉諾德的力量泉源", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "生皮腰帶"}}
+{"name": "午夜護鏈", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "生皮腰帶"}}
+{"name": "明恩的慧心", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "紫晶戒指"}}
+{"name": "原罪", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "紫晶戒指"}}
+{"name": "普蘭德斯之印", "refName": "Perandus Blazon", "namespace": "UNIQUE", "unique": {"base": "金光戒指"}}
+{"name": "極圈", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "藍玉戒指"}}
+{"name": "崇敬樹脂", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "琥珀護身符"}}
+{"name": "弱化圓飾", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "月神項鍊"}}
+{"name": "瑞斯拉薩之纏", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "華麗腰帶"}}
+{"name": "浩劫種子", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "青金石戒指"}}
+{"name": "絲克瑪的決意", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "戒指"}}
+{"name": "毒蛇之卵", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "帝金護身符"}}
+{"name": "薛朗的背包", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "精良腰帶"}}
+{"name": "蛇巢", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "珍珠戒指"}}
+{"name": "靈魂束縛", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "長腰帶"}}
+{"name": "掙扎吶喊", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "恆星項鍊"}}
+{"name": "穩健印記", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "翠玉護身符"}}
+{"name": "信念之砧", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "血石項鍊"}}
+{"name": "掘地者", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "黃玉戒指"}}
+{"name": "永恆凝視", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "蒼藍項鍊"}}
+{"name": "群魔殿", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "海玉護身符"}}
+{"name": "竊罪", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "綠寶石戒指"}}
+{"name": "恩吉爾的和諧", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "蒼藍項鍊"}}
+{"name": "賭神芬多", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "金光戒指"}}
+{"name": "意志低語", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "藍玉戒指"}}
+{"name": "索伏之血", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "琥珀護身符"}}
+{"name": "澤菲的創世紀", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "重革腰帶"}}
+{"name": "源於永恆", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "宏偉腿甲"}}
+{"name": "艾瑞斯凡恩之翼", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "拋光護手"}}
+{"name": "神諭", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "家徽紋章盾"}}
+{"name": "極地之嗥", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "裝甲便帽"}}
+{"name": "埃米蘭之裙", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "隱士裝束"}}
+{"name": "阿瓦爾之輪", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "硬木圓盾"}}
+{"name": "拂燼", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "追獵者外套"}}
+{"name": "冰靈之吼", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "寬頭箭袋"}}
+{"name": "刺殺", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "緊閉之盔"}}
+{"name": "阿札克之瞳", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "隱匿之面"}}
+{"name": "阿茲里的捷思", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "鑄模長手套"}}
+{"name": "阿茲里的蔑視", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "黃金頭環"}}
+{"name": "富貴之運", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "層板護手"}}
+{"name": "甲蟲噬咬", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "絲絨輕鞋"}}
+{"name": "獸腹", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "探索者護甲"}}
+{"name": "無法到達", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "內臟箭袋"}}
+{"name": "憤怒的誕生", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "岩石脛甲"}}
+{"name": "苦心花", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "羽毛長袍"}}
+{"name": "黑辮", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "毛皮鎧甲"}}
+{"name": "黑炎之芒", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "火焰箭袋"}}
+{"name": "黑陽之冠", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "纏繞巨盔"}}
+{"name": "祝福之絆", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "麻布裹手"}}
+{"name": "藍焰護腕", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "金鑄腕帶"}}
+{"name": "烏勒爾之骨", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "格子便鞋"}}
+{"name": "刺棘寶甲", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "生鏽胸甲"}}
+{"name": "薔薇眼罩", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "飾帶長靴"}}
+{"name": "荒途", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "恐喙鳥皮外套"}}
+{"name": "鬃豬", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "皮革背心"}}
+{"name": "銅鬚", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "犄角之冠"}}
+{"name": "突襲", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "蜥蜴鱗長靴"}}
+{"name": "製燭者", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "暗淡手套"}}
+{"name": "腐肉呼喚", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "紋刻法器"}}
+{"name": "烈炎之袍", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "絲質之袍"}}
+{"name": "腥紅外衣", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "鎖鍊鎖甲"}}
+{"name": "科那索姆", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "沉重之冠"}}
+{"name": "紅日之冕", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "戰士巨盔"}}
+{"name": "屍骨之靴", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "鐵鍛脛甲"}}
+{"name": "緋紅訂製服", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "鍍金法衣"}}
+{"name": "阿杜拉之冠", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "響聲紋章盾"}}
+{"name": "殞皇之冠", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "教徒之冠"}}
+{"name": "勝者之冠", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "鍛鐵之冠"}}
+{"name": "刺棘之冠", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "嫩枝頭環"}}
+{"name": "暗雷", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "加固鎧靴"}}
+{"name": "致命一擊", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "雙層護手"}}
+{"name": "死亡之聲", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "枝條法器"}}
+{"name": "喪鐘", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "菁英巨盔"}}
+{"name": "縫魔", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "精妙手套"}}
+{"name": "捍衛者", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "朽木塔盾"}}
+{"name": "德瑞的精神手套", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "縫合手套"}}
+{"name": "末日之門", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "加固塔盾"}}
+{"name": "多里亞尼之型", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "鱗片鎖甲"}}
+{"name": "塵土之花", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "鑲釘背心"}}
+{"name": "埃狄恩的曲牙", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "鍛鐵胸甲"}}
+{"name": "愛勒弗", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "獵者之兜"}}
+{"name": "晨曦之擁", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "朝聖者法衣"}}
+{"name": "埃里安的鵝卵石", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "警惕之盔"}}
+{"name": "艾茲麥的榮光", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "士兵巨盔"}}
+{"name": "羽毛堡壘", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "新月圓盾"}}
+{"name": "禁忌凝視", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "鎖鍊頭冠"}}
+{"name": "狐毛鎧", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "襯墊背心"}}
+{"name": "豪賭", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "浮雕長靴"}}
+{"name": "鬼行", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "縫紉輕鞋"}}
+{"name": "鬧鬼", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "殘破長袍"}}
+{"name": "混沌一瞥", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "部落之面"}}
+{"name": "幽暗之衣", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "打蠟外衣"}}
+{"name": "金縷帽", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "毛氈便帽"}}
+{"name": "幽墓束縛", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "繩索腕帶"}}
+{"name": "貪婪之擁", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "瓦爾胸甲"}}
+{"name": "灰製", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "邊緣之盔"}}
+{"name": "凜冬之握", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "穩固護腕"}}
+{"name": "智行之手", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "隱秘裹手"}}
+{"name": "怨恨鍛造", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "鑄模長手套"}}
+{"name": "賓登之角", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "鏽蝕巨盔"}}
+{"name": "夢境軀殼", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "薩滿披肩"}}
+{"name": "冰息", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "鎖甲法衣"}}
+{"name": "遊手好閒", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "分段護腕"}}
+{"name": "印斯茅斯", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "破舊兜帽"}}
+{"name": "鐵握", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "流浪者護甲"}}
+{"name": "鐵騎", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "假面之盔"}}
+{"name": "雅恩格利佩爾", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "環鎖護手"}}
+{"name": "岡姆的壯志", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "征服者鎧甲"}}
+{"name": "電弧守護者", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "魂骨之冠"}}
+{"name": "掃興之人", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "麻布裹手"}}
+{"name": "皇家衛甲", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "連身鎧甲"}}
+{"name": "奇多可之流", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "寶石手套"}}
+{"name": "共鳴之面", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "風帽之面"}}
+{"name": "帝國之靴", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "粗糙脛甲"}}
+{"name": "意識之緣", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "淬鍊長手套"}}
+{"name": "閃爍步伐", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "乾草便鞋"}}
+{"name": "狼蛛", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "壁壘塔盾"}}
+{"name": "瑪哈薩多的陰謀", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "預兆紋章盾"}}
+{"name": "馬雷葛蘿的血染手套", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "精良護腕"}}
+{"name": "占血之面", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "護臉之面"}}
+{"name": "惡縫之面", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "羽毛頭冠"}}
+{"name": "服役功績", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "毛皮圓盾"}}
+{"name": "不敗亡者", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "宏偉華服"}}
+{"name": "米立斯之妻", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "隱蔽兜帽"}}
+{"name": "亡者披肩", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "骸骨之衣"}}
+{"name": "北方之爪", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "麂皮護腕"}}
+{"name": "橡誓者", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "符印紋章盾"}}
+{"name": "歐伯恩的壁壘", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "疊層鎧靴"}}
+{"name": "畫家的侍從", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "撕裂手套"}}
+{"name": "草民之擁", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "斗篷鎖甲"}}
+{"name": "背信忘義", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "騎士護甲"}}
+{"name": "瘟疫之指", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "紗布裹手"}}
+{"name": "動力圖樣", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "狩獵輕鞋"}}
+{"name": "務實主義", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "探索者護甲"}}
+{"name": "祈雨禱言", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "凱斯之衣"}}
+{"name": "夸特之帶", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "蛇鱗外套"}}
+{"name": "森林之后", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "走私者外套"}}
+{"name": "聖光哀痛", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "綁帶兜帽"}}
+{"name": "紅焰導體", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "隱者裝束"}}
+{"name": "烈炎之翼", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "預兆紋章盾"}}
+{"name": "薩費爾的智慧", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "徽印紋章盾"}}
+{"name": "沙瀑面紗", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "鎖鍊頭冠"}}
+{"name": "巨蛇教誨", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "音調法器"}}
+{"name": "悲運之縛", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "陳舊腕帶"}}
+{"name": "錫耶拉的遺產", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "修士裝束"}}
+{"name": "無與倫比", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "宏偉手鐲"}}
+{"name": "忠誠之膚", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "服裝"}}
+{"name": "蝮吻", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "棘刺護腕"}}
+{"name": "唯我論", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "宏偉面紗"}}
+{"name": "斯佛林", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "磨煉塔盾"}}
+{"name": "時空之物", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "絲質之袍"}}
+{"name": "特沙波卡爾之慾", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "還願之衣"}}
+{"name": "遺塚居民", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "盜賊護甲"}}
+{"name": "黑色之疑", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "咒術師長袍"}}
+{"name": "堅銅戰罩", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "冠軍胸甲"}}
+{"name": "血誓", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "祭壇長袍"}}
+{"name": "舞動幻影", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "旅人外衣"}}
+{"name": "吞噬之冠", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "枝條頭冠"}}
+{"name": "永恆火花", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "水晶法器"}}
+{"name": "聖潔面具", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "粗製之面"}}
+{"name": "永生者", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "俠客鎧甲"}}
+{"name": "無盡之距", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "青銅脛甲"}}
+{"name": "漂泊騎士", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "鎖甲鎧靴"}}
+{"name": "疫鼠囚籠", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "斥侯背心"}}
+{"name": "微笑騎士", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "斗篷之盔"}}
+{"name": "降伏", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "岩石塔盾"}}
+{"name": "三龍戰紀", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "堅固之面"}}
+{"name": "謎容", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "部落之面"}}
+{"name": "惡劣騎士", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "庇護之盔"}}
+{"name": "哀嚎之牆", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "靈像塔盾"}}
+{"name": "縫紉之光", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "編織法器"}}
+{"name": "顫慄之鋼", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "尖頂巨盔"}}
+{"name": "雷霆步伐", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "鐵趾長靴"}}
+{"name": "泰坦腐化重騎兵", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "馬拉克斯胸甲"}}
+{"name": "踐踏之鞋", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "鑲邊脛甲"}}
+{"name": "樹木之指", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "鉚接長手套"}}
+{"name": "夜幕", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "殉難之冠"}}
+{"name": "艾雅面紗", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "串珠頭環"}}
+{"name": "福爾的戰鎧", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "鐵甲法衣"}}
+{"name": "覆滅之兆", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "牢固護腿"}}
+{"name": "流浪寶庫", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "堅鋼鎧甲"}}
+{"name": "苦行之履", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "裹腳便鞋"}}
+{"name": "惡風足跡", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "羽毛便鞋"}}
+{"name": "凱林之翼", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "鏽蝕巨盔"}}
+{"name": "迴光之跡", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "絲綢便鞋"}}
+{"name": "狼之禍", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "彩繪塔盾"}}
+{"name": "融解漩渦", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "終極魔力藥劑"}}
+{"name": "奧爾羅斯的決心", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "終極生命藥劑"}}
+{"name": "力抗黑暗", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "時迭鑽石"}}
+{"name": "受控的蛻變", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
+{"name": "從無到有", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "紅玉"}}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "藍玉"}}
+{"name": "英雄悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "永恆珠寶"}}
+{"name": "信仰棱鏡", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
+{"name": "朝氣之靈", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
+{"name": "腦亂者", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "鑲釘巨棍棒"}}
+{"name": "布林漢的印記", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "木製棍棒"}}
+{"name": "忠誠之錘", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "麻木巨錘"}}
+{"name": "崩塌的地平線", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "蠕蟲細杖"}}
+{"name": "冥使之琴", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "雙弦弓"}}
+{"name": "暗暮守夜", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "灰燼長杖"}}
+{"name": "地縛者", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "電流長杖"}}
+{"name": "艾尼尊的衝鋒", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "失衡法杖"}}
+{"name": "力量水晶塔", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "徵兆權杖"}}
+{"name": "霜息", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "纖細之錘"}}
+{"name": "引導之掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "神殿權杖"}}
+{"name": "獵豬", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "墮落巨棍棒"}}
+{"name": "雷姆諾的奪命樂具", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "橡木巨錘"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "拱形巨斧"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
+{"name": "生機之記", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "調和法杖"}}
+{"name": "摩蹉", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "新月細杖"}}
+{"name": "迷霧低語者", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "臨時十字弓"}}
+{"name": "納齊爾的審判", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "鋼尖細杖"}}
+{"name": "歐洛瓦沙拉", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "磨難棍棒"}}
+{"name": "囚神杵", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "加長細杖"}}
+{"name": "重擊之錘", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "崩毀重錘"}}
+{"name": "驟雨之弦", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "短弓"}}
+{"name": "壁壘猛禽", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "緊繃十字弓"}}
+{"name": "神聖烈焰", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "神殿權杖"}}
+{"name": "血色聖者", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "骸骨法杖"}}
+{"name": "見證群星", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "華麗之錘"}}
+{"name": "裂心", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "反曲弓"}}
+{"name": "塔林的顫慄之語", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "極寒長杖"}}
+{"name": "血棘", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "纏繞細杖"}}
+{"name": "暗影重擔", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "鳴響長杖"}}
+{"name": "黑暗玷汙者", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "雜響權杖"}}
+{"name": "熾炎之使", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "炎植長杖"}}
+{"name": "哨兵", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "歌德細杖"}}
+{"name": "壕溝之音", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "鈍釘木棒"}}
+{"name": "崔非那", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "鍛造重錘"}}
+{"name": "鰥寡之托", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "粗製弓"}}
+{"name": "威倫德的木樁", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "鍛造錘"}}
+{"name": "破香爐", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "聖經聖物"}}
+{"name": "夜燈", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "草紙聖物"}}
+{"name": "第二聖事", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "器皿聖物"}}
+{"name": "終焉烈焰", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "香爐聖物"}}
+{"name": "和平使者藥水", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "陶罐聖物"}}
+{"name": "第一頂峰", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "寶箱聖物"}}

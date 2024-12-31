@@ -236,7 +236,7 @@ function findInDatabase(item: ParserState) {
     if (item.info.craftable) {
       item.category = item.info.craftable.category;
     } else if (item.info.unique) {
-      item.category = ITEM_BY_REF(
+      item.category = ITEM_BY_TRANSLATED(
         "ITEM",
         item.info.unique.base,
       )![0].craftable!.category;
@@ -1381,7 +1381,7 @@ function transformToLegacyModifiers(item: ParsedItem) {
 
 function calcBasePercentile(item: ParsedItem) {
   const info = item.info.unique
-    ? ITEM_BY_REF("ITEM", item.info.unique.base)![0].armour
+    ? ITEM_BY_TRANSLATED("ITEM", item.info.unique.base)![0].armour
     : item.info.armour;
   if (!info) return;
 

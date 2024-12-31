@@ -87,8 +87,8 @@ export async function initConfig() {
 }
 
 export function poeWebApi() {
-  const { language, realm } = AppConfig();
-  switch (language) {
+  const { realm, preferredTradeSite } = AppConfig();
+  switch (preferredTradeSite) {
     case "en":
       return "www.pathofexile.com";
     case "ru":
@@ -110,26 +110,27 @@ export interface Config {
   overlayBackgroundClose: boolean;
   restoreClipboard: boolean;
   commands: Array<{
-    text: string
-    hotkey: string | null
-    send: boolean
-  }>
-  clientLog: string | null
-  gameConfig: string | null
-  windowTitle: string
-  logKeys: boolean
-  accountName: string
-  stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'ko' | 'ja'
-  realm: 'pc-ggg' | 'pc-garena'
-  widgets: widget.Widget[]
-  fontSize: number
-  showAttachNotification: boolean
-  overlayAlwaysClose: boolean
+    text: string;
+    hotkey: string | null;
+    send: boolean;
+  }>;
+  clientLog: string | null;
+  gameConfig: string | null;
+  windowTitle: string;
+  logKeys: boolean;
+  accountName: string;
+  stashScroll: boolean;
+  language: "en" | "ru" | "cmn-Hant" | "ko" | "ja";
+  preferredTradeSite: "en" | "ru" | "cmn-Hant" | "ko" | "ja";
+  realm: "pc-ggg" | "pc-garena";
+  widgets: widget.Widget[];
+  fontSize: number;
+  showAttachNotification: boolean;
+  overlayAlwaysClose: boolean;
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 16,
+  configVersion: 17,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -175,6 +176,7 @@ export const defaultConfig = (): Config => ({
   accountName: "",
   stashScroll: true,
   language: "en",
+  preferredTradeSite: "en",
   realm: "pc-ggg",
   fontSize: 16,
   widgets: [
@@ -579,6 +581,11 @@ function upgradeConfig(_config: Config): Config {
     }
 
     config.configVersion = 16;
+  }
+
+  if (config.configVersion < 17) {
+    config.preferredTradeSite = config.language;
+    config.configVersion = 17;
   }
 
   if (config.logKeys === undefined) {
