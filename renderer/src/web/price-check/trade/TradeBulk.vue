@@ -388,4 +388,8 @@ export default defineComponent({
   margin-right: 0.125rem;
   filter: grayscale(1);
 }
+
+.trade-table-heading {
+  @apply whitespace-nowrap;
+}
 </style>

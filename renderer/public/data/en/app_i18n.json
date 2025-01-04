@@ -193,7 +193,8 @@
     "currency_only_div": "Divine Orb",
     "currency_chaos_div": "Both Orbs",
     "currency_exalted_div": "Both Orbs",
-    "currency_only_exalted": "Exalted Orbs"
+    "currency_only_exalted": "Exalted Orbs",
+    "ratio_tooltip": "Ratio used for sorting locally\nDefault on trade site is 7.5:1"
   },
   "widget": {
     "title": "widget title",
@@ -277,7 +278,10 @@
     "getting_price": "Getting price {0}",
     "getting_price_from": "from poe.ninja \u2026",
     "you_have": "You have",
-    "stack": "Stack"
+    "stack": "Stack",
+    "results_warn_tooltip": "Enable Exalted Only in Online Filter. You can disable this alert in settings.",
+    "results_warn_title": "Price likely too high",
+    "results_warn_message": "Trade site hiding results between {0} and {1} ex"
   },
   "settings": {
     "title": "Settings - Exiled Exchange 2",
@@ -309,7 +313,9 @@
     "restore_clipboard": "Restore clipboard",
     "show_overlay_ready": "Show a notification when the Overlay detects a PoE window",
     "debug_hotkeys": "Record all key presses",
-    "preferred_trade_site": "Preferred trade site"
+    "preferred_trade_site": "Preferred trade site",
+    "enable_alphas": "Enable alphas",
+    "alphas_warning": "Alphas are extremely experimental and will probably not work as expected. Please report any issues you encounter."
   },
   "price_check": {
     "name": "Price check",
@@ -329,7 +335,11 @@
     "auto_search": "Perform an auto search, when pressing",
     "select_stock": "Always select \"Stock\" filter",
     "show_prediction": "Show price prediction",
-    "remember_currency": "Remember the Buyout Currency filter"
+    "remember_currency": "Remember the Buyout Currency filter",
+    "show_suggest_warning": "Price check wrong warning",
+    "show_suggest_warning_none": "Disable",
+    "show_suggest_warning_warn": "Show alert",
+    "show_suggest_warning_help": "Show alert and help"
   },
   "poe2_new": {
     "beta_warning": "This is in BETA for POE2, things will not work always as expected.",

@@ -17,6 +17,13 @@ interface SearchFilter {
   category?: ItemCategory;
 }
 
+export interface Suggestion {
+  type: "exalted";
+  text?: string;
+  text2?: string;
+  confidenceLevel?: "Low" | "Medium" | "High";
+}
+
 export interface ItemFilters {
   searchExact: SearchFilter;
   searchRelaxed?: SearchFilter & { disabled: boolean };
@@ -74,6 +81,7 @@ export interface ItemFilters {
     currency: string | undefined;
     league: string;
     collapseListings: "api" | "app";
+    currencyRatio: number;
   };
 }
 
@@ -87,6 +95,8 @@ export interface RuneFilter {
   rune?: string;
   text?: string;
   isEmpty: boolean;
+  isFake: boolean;
+  index: number;
   disabled: boolean; // NOTE: mutable in UI
 }
 
@@ -159,4 +169,6 @@ export enum FilterTag {
   Delve = "explicit-delve",
   Unveiled = "explicit-veiled",
   Incursion = "explicit-incursion",
+  Rune = "rune",
+  FakeRune = "fake-rune",
 }

@@ -1,7 +1,7 @@
 {
   "rune.stat_387439868": {
     "rune": "Soul Core of Citaqualotl",
-    "baseStat": "30% increased Elemental Damage with Attacks",
+    "baseStat": "#% increased Elemental Damage with Attacks",
     "values": [
       30
     ],
@@ -10,7 +10,7 @@
   },
   "rune.stat_789117908": {
     "rune": "Inspiration Rune",
-    "baseStat": "15% increased Mana Regeneration Rate",
+    "baseStat": "#% increased Mana Regeneration Rate",
     "values": [
       15
     ],
@@ -19,7 +19,7 @@
   },
   "rune.stat_3372524247": {
     "rune": "Desert Rune",
-    "baseStat": "12% to Fire Resistance",
+    "baseStat": "#% to Fire Resistance",
     "values": [
       12
     ],
@@ -28,7 +28,7 @@
   },
   "rune.stat_4220027924": {
     "rune": "Glacial Rune",
-    "baseStat": "12% to Cold Resistance",
+    "baseStat": "#% to Cold Resistance",
     "values": [
       12
     ],
@@ -37,7 +37,7 @@
   },
   "rune.stat_1671376347": {
     "rune": "Storm Rune",
-    "baseStat": "12% to Lightning Resistance",
+    "baseStat": "#% to Lightning Resistance",
     "values": [
       12
     ],
@@ -46,7 +46,7 @@
   },
   "rune.stat_2901986750": {
     "rune": "Soul Core of Citaqualotl",
-    "baseStat": "5% to all Elemental Resistances",
+    "baseStat": "#% to all Elemental Resistances",
     "values": [
       5
     ],
@@ -55,7 +55,7 @@
   },
   "rune.stat_2923486259": {
     "rune": "Soul Core of Tacati",
-    "baseStat": "7% to Chaos Resistance",
+    "baseStat": "#% to Chaos Resistance",
     "values": [
       7
     ],
@@ -64,7 +64,7 @@
   },
   "rune.stat_3299347043": {
     "rune": "Body Rune",
-    "baseStat": "25 to maximum Life",
+    "baseStat": "# to maximum Life",
     "values": [
       25
     ],
@@ -73,7 +73,7 @@
   },
   "rune.stat_1050105434": {
     "rune": "Mind Rune",
-    "baseStat": "20 to maximum Mana",
+    "baseStat": "# to maximum Mana",
     "values": [
       20
     ],
@@ -82,7 +82,7 @@
   },
   "rune.stat_2748665614": {
     "rune": "Soul Core of Zalatl",
-    "baseStat": "2% increased maximum Mana",
+    "baseStat": "#% increased maximum Mana",
     "values": [
       2
     ],
@@ -91,7 +91,7 @@
   },
   "rune.stat_915769802": {
     "rune": "Stone Rune",
-    "baseStat": "40 to Stun Threshold",
+    "baseStat": "# to Stun Threshold",
     "values": [
       40
     ],
@@ -100,7 +100,7 @@
   },
   "rune.stat_55876295": {
     "rune": "Body Rune",
-    "baseStat": "Leeches 3% of Physical Damage as Life",
+    "baseStat": "Leeches #% of Physical Damage as Life",
     "values": [
       3
     ],
@@ -109,7 +109,7 @@
   },
   "rune.stat_669069897": {
     "rune": "Mind Rune",
-    "baseStat": "Leeches 3% of Physical Damage as Mana",
+    "baseStat": "Leeches #% of Physical Damage as Mana",
     "values": [
       3
     ],
@@ -118,7 +118,7 @@
   },
   "rune.stat_3695891184": {
     "rune": "Rebirth Rune",
-    "baseStat": "Gain 20 Life per Enemy Killed",
+    "baseStat": "Gain # Life per Enemy Killed",
     "values": [
       20
     ],
@@ -127,7 +127,7 @@
   },
   "rune.stat_1368271171": {
     "rune": "Inspiration Rune",
-    "baseStat": "Gain 10 Mana per Enemy Killed",
+    "baseStat": "Gain # Mana per Enemy Killed",
     "values": [
       10
     ],
@@ -136,7 +136,7 @@
   },
   "rune.stat_2694482655": {
     "rune": "Soul Core of Ticaba",
-    "baseStat": "12% to Critical Damage Bonus",
+    "baseStat": "#% to Critical Damage Bonus",
     "values": [
       12
     ],
@@ -145,7 +145,7 @@
   },
   "rune.stat_3917489142": {
     "rune": "Soul Core of Azcapa",
-    "baseStat": "10% increased Rarity of Items found",
+    "baseStat": "#% increased Rarity of Items found",
     "values": [
       10
     ],
@@ -154,7 +154,7 @@
   },
   "rune.stat_4095671657": {
     "rune": "Soul Core of Puhuarte",
-    "baseStat": "1% to Maximum Fire Resistance",
+    "baseStat": "#% to Maximum Fire Resistance",
     "values": [
       1
     ],
@@ -163,7 +163,7 @@
   },
   "rune.stat_3676141501": {
     "rune": "Soul Core of Tzamoto",
-    "baseStat": "1% to Maximum Cold Resistance",
+    "baseStat": "#% to Maximum Cold Resistance",
     "values": [
       1
     ],
@@ -172,7 +172,7 @@
   },
   "rune.stat_1011760251": {
     "rune": "Soul Core of Xopec",
-    "baseStat": "1% to Maximum Lightning Resistance",
+    "baseStat": "#% to Maximum Lightning Resistance",
     "values": [
       1
     ],
@@ -181,7 +181,7 @@
   },
   "rune.stat_3585532255": {
     "rune": "Soul Core of Opiloti",
-    "baseStat": "10% increased Charm Charges gained",
+    "baseStat": "#% increased Charm Charges gained",
     "values": [
       10
     ],
@@ -190,7 +190,7 @@
   },
   "rune.stat_2968503605": {
     "rune": "Soul Core of Puhuarte",
-    "baseStat": "30% increased chance to Ignite",
+    "baseStat": "#% increased chance to Ignite",
     "values": [
       30
     ],
@@ -199,7 +199,7 @@
   },
   "rune.stat_473429811": {
     "rune": "Soul Core of Tzamoto",
-    "baseStat": "20% increased Freeze Buildup",
+    "baseStat": "#% increased Freeze Buildup",
     "values": [
       20
     ],
@@ -208,7 +208,7 @@
   },
   "rune.stat_293638271": {
     "rune": "Soul Core of Xopec",
-    "baseStat": "30% increased chance to Shock",
+    "baseStat": "#% increased chance to Shock",
     "values": [
       30
     ],
@@ -217,7 +217,7 @@
   },
   "rune.stat_791928121": {
     "rune": "Stone Rune",
-    "baseStat": "Causes 25% increased Stun Buildup",
+    "baseStat": "Causes #% increased Stun Buildup",
     "values": [
       25
     ],
@@ -226,7 +226,7 @@
   },
   "rune.stat_836936635": {
     "rune": "Rebirth Rune",
-    "baseStat": "Regenerate 0.3% of Life per second",
+    "baseStat": "Regenerate #% of Life per second",
     "values": [
       0.3
     ],
@@ -235,7 +235,7 @@
   },
   "rune.stat_3544800472": {
     "rune": "Soul Core of Topotante",
-    "baseStat": "15% increased Elemental Ailment Threshold",
+    "baseStat": "#% increased Elemental Ailment Threshold",
     "values": [
       15
     ],
@@ -244,7 +244,7 @@
   },
   "rune.stat_1519615863": {
     "rune": "Soul Core of Opiloti",
-    "baseStat": "15% chance to cause Bleeding on Hit",
+    "baseStat": "#% chance to cause Bleeding on Hit",
     "values": [
       15
     ],
@@ -253,7 +253,7 @@
   },
   "rune.stat_2023107756": {
     "rune": "Vision Rune",
-    "baseStat": "10% increased Life and Mana Recovery from Flasks",
+    "baseStat": "#% increased Life and Mana Recovery from Flasks",
     "values": [
       10
     ],
@@ -262,7 +262,7 @@
   },
   "rune.stat_3885634897": {
     "rune": "Soul Core of Tacati",
-    "baseStat": "15% chance to Poison on Hit",
+    "baseStat": "#% chance to Poison on Hit",
     "values": [
       15
     ],
@@ -271,7 +271,7 @@
   },
   "rune.stat_3981240776": {
     "rune": "Soul Core of Azcapa",
-    "baseStat": "15 to Spirit",
+    "baseStat": "# to Spirit",
     "values": [
       15
     ],
@@ -280,7 +280,7 @@
   },
   "rune.stat_3523867985": {
     "rune": "Iron Rune",
-    "baseStat": "20% increased Armour, Evasion and Energy Shield",
+    "baseStat": "#% increased Armour, Evasion and Energy Shield",
     "values": [
       20
     ],
@@ -289,7 +289,7 @@
   },
   "rune.stat_1030153674": {
     "rune": "Soul Core of Zalatl",
-    "baseStat": "Recover 2% of Mana on Kill",
+    "baseStat": "Recover #% of Mana on Kill",
     "values": [
       2
     ],
@@ -298,7 +298,7 @@
   },
   "rune.stat_2310741722": {
     "rune": "Soul Core of Jiquani",
-    "baseStat": "Recover 2% of Life on Kill",
+    "baseStat": "Recover #% of Life on Kill",
     "values": [
       2
     ],
@@ -307,7 +307,7 @@
   },
   "rune.stat_4064396395": {
     "rune": "Soul Core of Topotante",
-    "baseStat": "Attacks with this Weapon Penetrate 15% Elemental Resistances",
+    "baseStat": "Attacks with this Weapon Penetrate #% Elemental Resistances",
     "values": [
       15
     ],
@@ -316,7 +316,7 @@
   },
   "rune.stat_709508406": {
     "rune": "Desert Rune",
-    "baseStat": "Adds 7 to 11 Fire Damage",
+    "baseStat": "Adds # to # Fire Damage",
     "values": [
       7,
       11
@@ -326,7 +326,7 @@
   },
   "rune.stat_1037193709": {
     "rune": "Glacial Rune",
-    "baseStat": "Adds 6 to 10 Cold Damage",
+    "baseStat": "Adds # to # Cold Damage",
     "values": [
       6,
       10
@@ -336,7 +336,7 @@
   },
   "rune.stat_3336890334": {
     "rune": "Storm Rune",
-    "baseStat": "Adds 1 to 20 Lightning Damage",
+    "baseStat": "Adds # to # Lightning Damage",
     "values": [
       1,
       20
@@ -346,7 +346,7 @@
   },
   "rune.stat_983749596": {
     "rune": "Soul Core of Jiquani",
-    "baseStat": "2% increased maximum Life",
+    "baseStat": "#% increased maximum Life",
     "values": [
       2
     ],
@@ -355,7 +355,7 @@
   },
   "rune.stat_924253255": {
     "rune": "Soul Core of Quipolatl",
-    "baseStat": "10% Reduced Slowing Potency of Debuffs on You",
+    "baseStat": "#% Reduced Slowing Potency of Debuffs on You",
     "values": [
       10
     ],
@@ -364,7 +364,7 @@
   },
   "rune.stat_3855016469": {
     "rune": "Soul Core of Ticaba",
-    "baseStat": "Hits against you have 10% reduced Critical Damage Bonus",
+    "baseStat": "Hits against you have #% reduced Critical Damage Bonus",
     "values": [
       10
     ],
@@ -373,7 +373,7 @@
   },
   "rune.stat_419810844": {
     "rune": "Iron Rune",
-    "baseStat": "20% increased Physical Damage",
+    "baseStat": "#% increased Physical Damage",
     "values": [
       20
     ],
@@ -382,7 +382,7 @@
   },
   "rune.stat_210067635": {
     "rune": "Soul Core of Quipolatl",
-    "baseStat": "5% increased Attack Speed",
+    "baseStat": "#% increased Attack Speed",
     "values": [
       5
     ],
@@ -391,7 +391,7 @@
   },
   "rune.stat_691932474": {
     "rune": "Vision Rune",
-    "baseStat": "100 to Accuracy Rating",
+    "baseStat": "# to Accuracy Rating",
     "values": [
       100
     ],

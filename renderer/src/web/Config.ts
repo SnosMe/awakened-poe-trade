@@ -87,8 +87,11 @@ export async function initConfig() {
 }
 
 export function poeWebApi() {
-  const { realm, preferredTradeSite } = AppConfig();
-  switch (preferredTradeSite) {
+  const { realm, preferredTradeSite, language } = AppConfig();
+  if (preferredTradeSite === "www") {
+    return "www.pathofexile.com";
+  }
+  switch (language) {
     case "en":
       return "www.pathofexile.com";
     case "ru":
@@ -121,16 +124,18 @@ export interface Config {
   accountName: string;
   stashScroll: boolean;
   language: "en" | "ru" | "cmn-Hant" | "ko" | "ja";
-  preferredTradeSite: "en" | "ru" | "cmn-Hant" | "ko" | "ja";
+  preferredTradeSite: "default" | "www";
   realm: "pc-ggg" | "pc-garena";
   widgets: widget.Widget[];
   fontSize: number;
   showAttachNotification: boolean;
   overlayAlwaysClose: boolean;
+  enableAlphas: boolean;
+  alphas: Array<"runes">;
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 17,
+  configVersion: 18,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -176,9 +181,11 @@ export const defaultConfig = (): Config => ({
   accountName: "",
   stashScroll: true,
   language: "en",
-  preferredTradeSite: "en",
+  preferredTradeSite: "default",
   realm: "pc-ggg",
   fontSize: 16,
+  enableAlphas: false,
+  alphas: [],
   widgets: [
     // --- REQUIRED ---
     {
@@ -209,7 +216,7 @@ export const defaultConfig = (): Config => ({
       lockedInitialSearch: true,
       activateStockFilter: false,
       builtinBrowser: false,
-      usePseudo: true,
+      usePseudo: false,
       hotkey: "D",
       hotkeyHold: "Ctrl",
       hotkeyLocked: "Ctrl + Alt + D",
@@ -218,6 +225,7 @@ export const defaultConfig = (): Config => ({
       showCursor: true,
       requestPricePrediction: false,
       rememberCurrency: false,
+      showSuggestWarning: "help",
     } as widget.PriceCheckWidget,
     {
       wmId: 3,
@@ -584,8 +592,20 @@ function upgradeConfig(_config: Config): Config {
   }
 
   if (config.configVersion < 17) {
-    config.preferredTradeSite = config.language;
+    // config.preferredTradeSite = config.language;
     config.configVersion = 17;
+  }
+
+  if (config.configVersion < 18) {
+    const priceCheck = config.widgets.find(
+      (w) => w.wmType === "price-check",
+    ) as widget.PriceCheckWidget;
+    priceCheck.showSuggestWarning = "help";
+    priceCheck.usePseudo = false;
+    config.enableAlphas = false;
+    config.alphas = [];
+    config.preferredTradeSite = "default";
+    config.configVersion = 18;
   }
 
   if (config.logKeys === undefined) {

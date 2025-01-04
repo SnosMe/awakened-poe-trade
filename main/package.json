@@ -1,6 +1,6 @@
 {
   "name": "exiled-exchange-2",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
@@ -29,6 +29,7 @@
     "comlink": "^4.3.1",
     "electron": "33.2.1",
     "electron-builder": "25.1.8",
+    "electron-devtools-installer": "^4.0.0",
     "electron-updater": "^6.3.0",
     "esbuild": "^0.24.0",
     "ini": "^5.0.0",

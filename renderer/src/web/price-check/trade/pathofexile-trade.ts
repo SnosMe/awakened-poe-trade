@@ -369,7 +369,9 @@ export function createTradeRequest(
   // EQUIPMENT FILTERS
 
   if (runeFilters.length > 0) {
-    const emptyRuneSockets = runeFilters.filter((rune) => rune.isEmpty);
+    const emptyRuneSockets = runeFilters.filter(
+      (rune) => rune.isEmpty && !rune.isFake,
+    );
     if (
       emptyRuneSockets.length > 0 &&
       emptyRuneSockets.filter((rune) => !rune.disabled).length > 0

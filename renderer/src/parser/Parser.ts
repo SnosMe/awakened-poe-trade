@@ -889,7 +889,7 @@ Item Level: 39
  * 
  */
 
-function parseModifiersPoe2(section: string[], item: ParsedItem) {
+export function parseModifiersPoe2(section: string[], item: ParsedItem) {
   if (
     item.rarity !== ItemRarity.Normal &&
     item.rarity !== ItemRarity.Magic &&
@@ -1011,9 +1011,15 @@ function applyRuneSockets(item: ParsedItem) {
     if (potentialEmptySockets > 0) {
       for (let i = 0; i < potentialEmptySockets; i++) {
         item.runeSockets.runes.push({
+          index: i + runes.length,
           isEmpty: true,
         });
       }
+    }
+
+    // reset indices just to be safe
+    for (let i = 0; i < item.runeSockets.runes.length; i++) {
+      item.runeSockets.runes[i].index = i;
     }
   }
 }
@@ -1457,7 +1463,7 @@ function getMaxSockets(category: ItemCategory | undefined) {
   }
 }
 
-function isArmourOrWeapon(
+export function isArmourOrWeapon(
   category: ItemCategory | undefined,
 ): "armour" | "weapon" | undefined {
   switch (category) {
@@ -1466,6 +1472,7 @@ function isArmourOrWeapon(
     case ItemCategory.Gloves:
     case ItemCategory.Helmet:
     case ItemCategory.Shield:
+    case ItemCategory.Focus:
       return "armour";
     case ItemCategory.OneHandedAxe:
     case ItemCategory.OneHandedMace:
@@ -1499,12 +1506,13 @@ function statToRune(mod: ParsedModifier, statCalc: StatCalculated): Rune[] {
   const totalRunes = Math.floor(runeAppliedValue / runeSingleValue);
 
   // Get original mod ref text
-  const modRef = runeSingle.baseStat;
+  const modRef = replaceHashWithValues(runeSingle.baseStat, runeSingle.values);
 
   // Return one rune for each rune in the item
   const runes: Rune[] = [];
   for (let i = 0; i < totalRunes; i++) {
     runes.push({
+      index: i,
       isEmpty: false,
       rune: runeSingle.rune,
       text: modRef,
@@ -1512,4 +1520,12 @@ function statToRune(mod: ParsedModifier, statCalc: StatCalculated): Rune[] {
   }
 
   return runes;
+}
+
+export function replaceHashWithValues(template: string, values: number[]) {
+  let result = template;
+  values.forEach((value: number) => {
+    result = result.replace("#", value.toString()); // Replace the first occurrence of #
+  });
+  return result;
 }

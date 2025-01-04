@@ -11,8 +11,10 @@
       :item="item"
       :presets="presets"
       :runes="runeFilters"
+      :change-item="changeItem"
       @preset="selectPreset"
       @submit="doSearch = true"
+      :rebuild-key="rebuildKey"
     />
     <trade-listing
       v-if="tradeAPI === 'trade' && doSearch"
@@ -119,6 +121,14 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
+    changeItem: {
+      type: Function as PropType<(newItem: ParsedItem) => void>,
+      required: true,
+    },
+    rebuildKey: {
+      type: Number,
+      required: true,
+    },
   },
   setup(props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
@@ -164,8 +174,9 @@ export default defineComponent({
           activateStockFilter: widget.value.activateStockFilter,
           searchStatRange: widget.value.searchStatRange,
           useEn:
-            AppConfig().language === "cmn-Hant" &&
-            AppConfig().realm === "pc-ggg",
+            (AppConfig().language === "cmn-Hant" &&
+              AppConfig().realm === "pc-ggg") ||
+            AppConfig().preferredTradeSite === "www",
           currency:
             widget.value.rememberCurrency ||
             (prevItem &&
@@ -202,7 +213,7 @@ export default defineComponent({
           itemFilters.value,
         );
       },
-      { immediate: true },
+      { immediate: true, deep: true },
     );
 
     watch(

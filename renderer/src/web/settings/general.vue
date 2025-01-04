@@ -10,14 +10,11 @@
         <option value="ja">日本語</option>
       </select>
     </div>
-    <div class="mb-4">
+    <div class="mb-4" v-if="language !== 'en'">
       <div class="flex-1 mb-1">{{ t(":preferred_trade_site") }}</div>
       <select v-model="preferredTradeSite" class="p-1 rounded bg-gray-700 w-24">
-        <option value="en">www.pathofexile.com</option>
-        <option value="ru">ru.pathofexile.com</option>
-        <option value="cmn-Hant">pathofexile.tw</option>
-        <option value="ko">poe.game.daum.net</option>
-        <option value="ja">jp.pathofexile.com</option>
+        <option value="default">{{ tradeUrl }}</option>
+        <option value="www">www.pathofexile.com</option>
       </select>
     </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">
@@ -97,11 +94,23 @@
         class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe"
       />
     </div>
+    <div class="mb-4" :class="{ 'p-2 bg-orange-800 rounded': enableAlphas }">
+      <ui-checkbox class="mb-4" v-model="enableAlphas">{{
+        t(":enable_alphas")
+      }}</ui-checkbox>
+      <ui-checkbox class="mb-4" v-model="runesAlpha" v-if="enableAlphas">
+        runes
+      </ui-checkbox>
+
+      <div v-if="enableAlphas" class="mt-1">
+        {{ t(":alphas_warning") }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, ref, watch } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import UiRadio from "@/web/ui/UiRadio.vue";
 import UiCheckbox from "@/web/ui/UiCheckbox.vue";
@@ -114,6 +123,22 @@ export default defineComponent({
   props: configProp(),
   setup(props) {
     const { t } = useI18nNs("settings");
+    const runesAlpha = ref(
+      AppConfig().enableAlphas && AppConfig().alphas.includes("runes"),
+    );
+    watch(
+      runesAlpha,
+      (value) => {
+        if (value) {
+          props.config.alphas.push("runes");
+        } else {
+          props.config.alphas = props.config.alphas.filter(
+            (alpha) => alpha !== "runes",
+          );
+        }
+      },
+      { immediate: true },
+    );
 
     return {
       t,
@@ -140,6 +165,22 @@ export default defineComponent({
           }
         },
       }),
+      tradeUrl: computed(() => {
+        switch (props.config.language) {
+          case "en":
+            return "www.pathofexile.com";
+          case "ru":
+            return "ru.pathofexile.com";
+          case "cmn-Hant":
+            return props.config.realm === "pc-garena"
+              ? "pathofexile.tw"
+              : "www.pathofexile.com";
+          case "ko":
+            return "poe.game.daum.net";
+          case "ja":
+            return "jp.pathofexile.com";
+        }
+      }),
       preferredTradeSite: computed<typeof props.config.preferredTradeSite>({
         get() {
           return props.config.preferredTradeSite;
@@ -149,6 +190,7 @@ export default defineComponent({
           AppConfig().preferredTradeSite = value;
         },
       }),
+
       realm: configModelValue(() => props.config, "realm"),
       restoreClipboard: configModelValue(
         () => props.config,
@@ -163,6 +205,8 @@ export default defineComponent({
         "overlayAlwaysClose",
       ),
       windowTitle: configModelValue(() => props.config, "windowTitle"),
+      enableAlphas: configModelValue(() => props.config, "enableAlphas"),
+      runesAlpha,
     };
   },
 });

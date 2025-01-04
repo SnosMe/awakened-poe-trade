@@ -12,6 +12,8 @@ export const SPECIAL_SUPPORT_GEM = [
   "Enhance Support",
 ];
 
+export const CURRENCY_RATIO = 100;
+
 interface CreateOptions {
   league: string;
   currency: string | undefined;
@@ -34,6 +36,7 @@ export function createFilters(
       currency: opts.currency,
       league: opts.league,
       collapseListings: opts.collapseListings,
+      currencyRatio: CURRENCY_RATIO,
     },
   };
 

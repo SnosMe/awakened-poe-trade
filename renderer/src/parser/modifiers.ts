@@ -144,4 +144,5 @@ export enum ModifierType {
   Veiled = "veiled",
   Fractured = "fractured",
   Rune = "rune",
+  FakeRune = "fake-rune",
 }

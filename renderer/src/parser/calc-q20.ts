@@ -96,7 +96,7 @@ export function calcPropPercentile(
   return Math.min(Math.max(result, 0), 100);
 }
 
-function calcPropBase(
+export function calcPropBase(
   statRefs: { flat: string[]; incr: string[] },
   item: ParsedItem,
 ) {
@@ -123,10 +123,10 @@ function calcPropBase(
   return { incr, flat, sources };
 }
 
-function calcFlat(total: number, incrPct: number, morePct = 0) {
+export function calcFlat(total: number, incrPct: number, morePct = 0) {
   return total / (1 + morePct / 100) / (1 + incrPct / 100);
 }
 
-function calcIncreased(flat: number, incrPct: number, morePct = 0) {
+export function calcIncreased(flat: number, incrPct: number, morePct = 0) {
   return flat * (1 + incrPct / 100) * (1 + morePct / 100);
 }

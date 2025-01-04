@@ -307,8 +307,11 @@ function isPdpsImportant(item: ParsedItem) {
     case ItemCategory.TwoHandedAxe:
     case ItemCategory.OneHandedSword:
     case ItemCategory.TwoHandedSword:
+    case ItemCategory.OneHandedMace:
+    case ItemCategory.TwoHandedMace:
     case ItemCategory.Bow:
     case ItemCategory.Warstaff:
+    case ItemCategory.Crossbow:
       return true;
     default:
       return false;

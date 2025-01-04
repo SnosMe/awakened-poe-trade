@@ -6,10 +6,46 @@
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? "+" : "" }}</span>
       </div>
-      <online-filter v-if="list" :by-time="true" :filters="filters" />
+      <online-filter
+        v-if="list"
+        :by-time="true"
+        :filters="filters"
+        :currency-ratio="true"
+        :suggest="suggest"
+      />
       <div class="flex-1"></div>
       <trade-links v-if="list" :get-link="makeTradeLink" />
     </div>
+    <ui-popover
+      :delay="[150, null]"
+      placement="bottom-end"
+      boundary="#price-window"
+      v-if="suggest && showSuggestWarning === 'help'"
+    >
+      <template #target>
+        <div v-if="suggest" class="mb-4 text-center bg-orange-800 rounded-xl">
+          <div class="font-bold" v-if="suggest.confidenceLevel === 'High'">
+            {{ t(":results_warn_title") }}
+          </div>
+          {{ suggest.text }}
+        </div>
+      </template>
+      <template #content>
+        <div style="max-width: 18.5rem" class="text-xs">
+          {{ t(":results_warn_tooltip") }}
+        </div>
+      </template>
+    </ui-popover>
+    <div
+      v-if="suggest && showSuggestWarning === 'warn'"
+      class="mb-4 text-center bg-orange-800 rounded-xl"
+    >
+      <div class="font-bold" v-if="suggest.confidenceLevel === 'High'">
+        {{ t(":results_warn_title") }}
+      </div>
+      {{ suggest.text }}
+    </div>
+
     <div class="layout-column overflow-y-auto overflow-x-hidden">
       <table class="table-stripped w-full">
         <thead>
@@ -139,8 +175,10 @@ import {
   inject,
   shallowReactive,
   shallowRef,
+  ref,
 } from "vue";
 import { useI18nNs } from "@/web/i18n";
+import UiPopover from "@/web/ui/Popover.vue";
 import UiErrorBox from "@/web/ui/UiErrorBox.vue";
 import {
   requestTradeResultList,
@@ -152,7 +190,12 @@ import {
 import { getTradeEndpoint } from "./common";
 import { AppConfig } from "@/web/Config";
 import { PriceCheckWidget } from "@/web/overlay/interfaces";
-import { ItemFilters, RuneFilter, StatFilter } from "../filters/interfaces";
+import {
+  ItemFilters,
+  RuneFilter,
+  StatFilter,
+  Suggestion,
+} from "../filters/interfaces";
 import { ParsedItem } from "@/parser";
 import { artificialSlowdown } from "./artificial-slowdown";
 import OnlineFilter from "./OnlineFilter.vue";
@@ -251,6 +294,37 @@ function useTradeApi() {
         await Promise.all([r1, r2]);
       }
 
+      if (filters.trade.currencyRatio) {
+        // Check if there exists any entry with priceCurrency "DIVINE"
+        const hasDivine = fetchResults.value.some(
+          (result) => result.priceCurrency === "divine",
+        );
+
+        if (hasDivine) {
+          // Sort the fetch results based on the exchange ratios
+          fetchResults.value.sort((a, b) => {
+            const getCurrencyValue = (currency: string): number => {
+              switch (currency) {
+                case "exalted":
+                  return 1; // 1:1
+                case "divine":
+                  return filters.trade.currencyRatio!; // 1:<currencyRatio>
+                case "chaos":
+                  return 5; // 1:5
+                default:
+                  return 1 / 40; // Default 40:1 for all other currencies
+              }
+            };
+
+            const aValue = a.priceAmount * getCurrencyValue(a.priceCurrency);
+            const bValue = b.priceAmount * getCurrencyValue(b.priceCurrency);
+
+            // Ascending order
+            return aValue - bValue;
+          });
+        }
+      }
+
       let fetched = 20;
       async function fetchMore(): Promise<void> {
         if (_searchId !== searchId) return;
@@ -285,7 +359,7 @@ function useTradeApi() {
 }
 
 export default defineComponent({
-  components: { OnlineFilter, TradeLinks, UiErrorBox },
+  components: { OnlineFilter, TradeLinks, UiErrorBox, UiPopover },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -318,17 +392,95 @@ export default defineComponent({
 
     const showBrowser = inject<(url: string) => void>("builtin-browser")!;
 
+    const suggest = ref<Suggestion | undefined>(undefined);
+    const { t } = useI18nNs("trade_result");
+
     function makeTradeLink() {
       return searchResult.value
         ? `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}/${searchResult.value.id}`
         : `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item, props.runeFilters))}`;
     }
 
-    const { t } = useI18nNs("trade_result");
+    watch(groupedResults, (values) => {
+      if (
+        widget.value.showSuggestWarning !== "none" &&
+        !props.filters.trade.currency
+      ) {
+        if (!values.length) return;
+        const totalResults = values.length;
+        const divineResults = values.filter(
+          (result) => result.priceCurrency === "divine",
+        );
+        const divineCount = divineResults.length;
+        if (!divineCount) return;
+        const exaltResults = values.filter(
+          (result) => result.priceCurrency === "exalted",
+        );
+        const exaltCount = exaltResults.length;
+        const maxDivine = divineResults.reduce(
+          (max, result) => Math.max(max, result.priceAmount),
+          0,
+        );
+        const maxExalt = exaltResults.reduce(
+          (max, result) => Math.max(max, result.priceAmount),
+          0,
+        );
+        const oneDivCount = divineResults.filter(
+          (result) => result.priceAmount === 1,
+        ).length;
+        const text = t(":results_warn_message", [
+          maxDivine * 7.5,
+          props.filters.trade.currencyRatio ?? 100 * maxDivine,
+        ]);
+        if (oneDivCount === totalResults) {
+          // console.log("Condition only one div");
+          suggest.value = {
+            type: "exalted",
+            text,
+            confidenceLevel: "High",
+          };
+        } else if (
+          divineCount === totalResults &&
+          divineResults.every((result) => result.priceAmount <= 3)
+        ) {
+          // console.log("All divs and less than 3 max");
+          suggest.value = {
+            type: "exalted",
+            text,
+            confidenceLevel: "Low",
+          };
+        } else if (
+          divineCount > (totalResults / 3) * 2 &&
+          divineCount < totalResults &&
+          maxDivine <= 3
+        ) {
+          // console.log("divs more than 2/3 of results and less than 3 max");
+          suggest.value = {
+            type: "exalted",
+            text,
+            confidenceLevel: "Medium",
+          };
+        } else if (
+          divineCount > totalResults / 2 &&
+          exaltCount > 0 &&
+          maxExalt <= 30
+        ) {
+          // console.log("Exalted and less than 30 max");
+          suggest.value = {
+            type: "exalted",
+            text,
+            confidenceLevel: "Medium",
+          };
+        } else {
+          suggest.value = undefined;
+        }
+      }
+    });
 
     return {
       t,
       list: searchResult,
+      suggest,
       groupedResults: computed(() => {
         if (!slowdown.isReady.value) {
           return Array<undefined>(SHOW_RESULTS);
@@ -346,6 +498,7 @@ export default defineComponent({
       },
       error,
       showSeller: computed(() => widget.value.showSeller),
+      showSuggestWarning: computed(() => widget.value.showSuggestWarning),
       makeTradeLink,
       openTradeLink() {
         if (widget.value.builtinBrowser && Host.isElectron) {
@@ -364,6 +517,7 @@ export default defineComponent({
   @apply sticky top-0;
   @apply bg-gray-800;
   @apply p-0 m-0;
+  @apply whitespace-nowrap;
 
   & > div {
     @apply border-b border-gray-700;

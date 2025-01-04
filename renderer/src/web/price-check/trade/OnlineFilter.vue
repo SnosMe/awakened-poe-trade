@@ -7,7 +7,14 @@
     <template #target>
       <button
         class="rounded mr-1 px-2 truncate"
-        :class="showWarning() ? 'text-orange-500' : 'text-gray-500'"
+        :class="
+          showWarning()
+            ? 'text-orange-500'
+            : 'text-gray-500' +
+              (suggest && showSuggestWarning === 'help'
+                ? ' ring-4 ring-orange-200'
+                : '')
+        "
       >
         <span
           ><i class="fas fa-history"></i>
@@ -86,19 +93,51 @@
             }}</ui-radio> -->
           </template>
         </div>
+        <div class="flex flex-col gap-y-1">
+          <template v-if="currencyRatio">
+            <ui-popover
+              tag-name="div"
+              class="flex"
+              placement="top"
+              boundary="#price-window"
+            >
+              <template #target>
+                <div>{{ localCurrencyRatio }} ex : 1 div</div>
+              </template>
+              <template #content>
+                <div style="max-width: 18.5rem">
+                  {{ t(":ratio_tooltip") }}
+                </div>
+              </template>
+            </ui-popover>
+            <input
+              id="currency-ratio"
+              type="range"
+              v-model="localCurrencyRatio"
+              min="0"
+              max="300"
+              step="1"
+              @mouseup="updateCurrencyRatio"
+              @touchend="updateCurrencyRatio"
+            />
+          </template>
+        </div>
       </div>
     </template>
   </ui-popover>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { computed, defineComponent, PropType, ref } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import UiRadio from "@/web/ui/UiRadio.vue";
 import UiToggle from "@/web/ui/UiToggle.vue";
 import UiPopover from "@/web/ui/Popover.vue";
-import type { ItemFilters } from "../filters/interfaces";
+import type { ItemFilters, Suggestion } from "../filters/interfaces";
 import { useLeagues } from "@/web/background/Leagues";
+import { AppConfig } from "@/web/Config";
+import { PriceCheckWidget } from "@/web/overlay/widgets";
+import { CURRENCY_RATIO } from "../filters/create-item-filters";
 
 export default defineComponent({
   components: { UiRadio, UiToggle, UiPopover },
@@ -111,21 +150,44 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    currencyRatio: {
+      type: Boolean,
+      default: false,
+    },
+    suggest: {
+      type: Object as PropType<Suggestion | undefined>,
+      default: undefined,
+    },
   },
   setup(props) {
+    const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
     const leagues = useLeagues();
     const { t } = useI18nNs("online_filter");
 
+    const localCurrencyRatio = ref(props.filters.trade.currencyRatio);
+
+    const updateCurrencyRatio = () => {
+      props.filters.trade.currencyRatio = localCurrencyRatio.value;
+    };
+
+    if (!props.filters.trade.currencyRatio) {
+      updateCurrencyRatio();
+    }
+
     return {
       t,
+      showSuggestWarning: computed(() => widget.value.showSuggestWarning),
       tradeLeagues: leagues.list,
+      localCurrencyRatio,
+      updateCurrencyRatio,
       showLeagueName: () =>
         leagues.selectedId.value !== props.filters.trade.league,
       showWarning: () =>
         Boolean(
           (props.filters.trade.listed &&
             ["1day", "3days", "1week"].includes(props.filters.trade.listed)) ||
-            props.filters.trade.currency,
+            props.filters.trade.currency ||
+            CURRENCY_RATIO !== props.filters.trade.currencyRatio,
         ),
       onOfflineUpdate(offline: boolean) {
         const { filters } = props;

@@ -20,14 +20,16 @@ export enum ItemInfluence {
 }
 
 export interface Rune {
+  index: number;
   isEmpty: boolean;
   rune?: string;
   text?: string; // Text of modifier
+  isFake?: boolean;
   modifier?: ParsedModifier; // @deprecated
   statCalculated?: StatCalculated; // @deprecated
 }
 
-export interface ParsedItem {
+export interface BaseParsedItem {
   rarity?: ItemRarity;
   itemLevel?: number;
   armourAR?: number;
@@ -82,6 +84,10 @@ export interface ParsedItem {
   info: BaseType;
   rawText: string;
   fromChat?: boolean;
+}
+
+export interface ParsedItem extends BaseParsedItem {
+  originalItem?: BaseParsedItem;
 }
 
 // NOTE: should match option values on trade

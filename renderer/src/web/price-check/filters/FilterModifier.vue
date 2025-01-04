@@ -448,6 +448,9 @@ export default defineComponent({
 .tag-pseudo {
   @apply bg-gray-700 text-black;
 }
+.tag-rune {
+  @apply bg-blue-600 text-blue-100;
+}
 </style>
 
 <style lang="postcss">

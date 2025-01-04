@@ -225,3 +225,15 @@ export interface RuneSingleValue {
     type: "armour" | "weapon";
   };
 }
+
+export interface RuneDataByRune {
+  [rune: string]: [
+    {
+      rune: string;
+      baseStat: string;
+      values: number[];
+      id: string;
+      type: "armour" | "weapon";
+    },
+  ];
+}

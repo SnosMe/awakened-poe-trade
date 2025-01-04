@@ -3,6 +3,7 @@ import type {
   BaseType,
   DropEntry,
   PseudoIdToTradeRequest,
+  RuneDataByRune,
   RuneSingleValue,
   Stat,
   StatMatcher,
@@ -17,6 +18,7 @@ export let CLIENT_STRINGS_REF: TranslationDict;
 export let APP_PATRONS: Array<{ from: string; months: number; style: number }>;
 export let PSEUDO_ID_TO_TRADE_REQUEST: PseudoIdToTradeRequest;
 export let RUNE_SINGLE_VALUE: RuneSingleValue;
+export let RUNE_DATA_BY_RUNE: RuneDataByRune;
 
 export let RUNE_LIST: BaseType[];
 
@@ -255,6 +257,8 @@ export async function init(lang: string) {
     await fetch(`${import.meta.env.BASE_URL}data/rune-single-value.json`)
   ).json();
 
+  RUNE_DATA_BY_RUNE = convertRuneSingleValueToRuneDataByRune(RUNE_SINGLE_VALUE);
+
   await loadForLang(lang);
 
   let failed = false;
@@ -286,4 +290,28 @@ export async function loadForLang(lang: string) {
   ).default;
   await loadItems(lang);
   await loadStats(lang);
+}
+
+function convertRuneSingleValueToRuneDataByRune(
+  runeSingleValue: RuneSingleValue,
+): RuneDataByRune {
+  const runeDataByRune: RuneDataByRune = {};
+
+  for (const id in runeSingleValue) {
+    const { rune, baseStat, values, id: runeId, type } = runeSingleValue[id];
+
+    if (!runeDataByRune[rune]) {
+      runeDataByRune[rune] = [{ rune, baseStat, values, id: runeId, type }];
+    } else {
+      runeDataByRune[rune].push({
+        rune,
+        baseStat,
+        values,
+        id: runeId,
+        type,
+      });
+    }
+  }
+
+  return runeDataByRune;
 }

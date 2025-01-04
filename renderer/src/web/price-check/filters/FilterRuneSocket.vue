@@ -6,15 +6,17 @@
           class="flex items-baseline text-left min-w-0"
           :class="{
             'pointer-events-none opacity-50': !rune.isEmpty,
+            'pointer-events-none': rune.isFake,
           }"
           type="button"
-          @disabled="!rune.isEmpty"
+          @disabled="!rune.isEmpty || rune.isFake"
           @click="toggleFilter"
         >
           <i
             class="w-5"
             :class="{
-              'far fa-check-square text-gray-500 opacity-50': !rune.isEmpty, // Inverted checked box
+              'far fa-check-square text-gray-500 opacity-50':
+                !rune.isEmpty || rune.isFake, // Inverted checked box
               'far fa-square text-gray-500': isDisabled && rune.isEmpty,
               'fas fa-check-square': !isDisabled && rune.isEmpty,
             }"
@@ -35,10 +37,10 @@
             :class="$style['rollInput']"
             v-model="selectedRune"
           >
-            <option value="" disabled>Select a rune</option>
+            <option value="empty">Empty Socket</option>
             <option
               v-for="option in runeOptions"
-              :key="option.value"
+              :key="option.value + option.text"
               :value="option.value"
             >
               {{ option.text }}
@@ -64,10 +66,18 @@
 import { useI18n } from "vue-i18n";
 
 import ItemModifierText from "../../ui/ItemModifierText.vue";
-import { computed, defineComponent, PropType, ref } from "vue";
+import { computed, defineComponent, PropType, ref, watch } from "vue";
 import { ParsedItem } from "@/parser";
 import { RuneFilter } from "./interfaces";
-import { RUNE_LIST } from "@/assets/data";
+import { RUNE_LIST, RUNE_DATA_BY_RUNE } from "@/assets/data";
+import { AppConfig } from "@/web/Config";
+import {
+  isArmourOrWeapon,
+  parseModifiersPoe2,
+  replaceHashWithValues,
+} from "@/parser/Parser";
+import { sumStatsByModType } from "@/parser/modifiers";
+import { calcBaseDamage, calcTotalDamage } from "@/parser/calc-base";
 
 export default defineComponent({
   components: { ItemModifierText },
@@ -80,23 +90,114 @@ export default defineComponent({
       type: Object as PropType<RuneFilter>,
       required: true,
     },
+    changeItem: {
+      type: Function as PropType<(newItem: ParsedItem) => void>,
+      required: true,
+    },
   },
   setup(props) {
+    const widget = computed(() => AppConfig());
     const { t } = useI18n();
     const item = props.item;
-    const selectedRune = ref<string>(""); // Initialize selectedRune
+    const selectedRune = ref("empty"); // Initialize
 
     // Sample rune options you can modify according to your needs
-    const runeOptions = RUNE_LIST.map((rune) => ({
-      value: rune.refName,
-      text: `%NOT_IMPLEMENTED% ${rune.refName}`,
-      icon: rune.icon,
-    }));
+    const runeOptions = computed(() => {
+      if (widget.value.enableAlphas && widget.value.alphas.includes("runes")) {
+        // Return modified rune options if enableAlphas is true
+        return RUNE_LIST.map((rune) => ({
+          value: rune.refName,
+          text: `%Test% ${rune.refName}`,
+          icon: rune.icon,
+        }));
+      } else {
+        // Return current rune options if enableAlphas is false
+        return RUNE_LIST.map((rune) => ({
+          value: rune.refName,
+          text: `%NOT_IMPLEMENTED% ${rune.refName}`,
+          icon: rune.icon,
+        }));
+      }
+    });
 
+    watch(
+      () => props.rune,
+      () => {
+        if (props.rune.isFake) {
+          selectedRune.value = props.rune.rune!;
+        } else {
+          selectedRune.value = "empty";
+        }
+      },
+      { immediate: true },
+    );
     function toggleFilter() {
-      if (!props.rune.isEmpty) return;
+      if (!props.rune.isEmpty || props.rune.isFake) return;
       props.rune.disabled = !props.rune.disabled;
     }
+    watch(
+      () => selectedRune.value,
+      (selected, prev) => {
+        if (
+          !selected ||
+          !widget.value.enableAlphas ||
+          !widget.value.alphas.includes("runes")
+        )
+          return;
+
+        if (selected === "empty" && item.originalItem) {
+          const newItem = item.originalItem;
+          props.changeItem(newItem);
+          return;
+        } else if (selected === "empty") {
+          return;
+        }
+        // if (item.runeSockets!.empty - 1 < 0) return;
+        const itemToChange = prev !== "empty" ? item.originalItem : item;
+        const newItem = JSON.parse(JSON.stringify(itemToChange)) as ParsedItem;
+        newItem.originalItem = JSON.parse(
+          JSON.stringify(itemToChange),
+        ) as ParsedItem;
+        newItem.runeSockets!.empty -= 1;
+
+        const runeData = RUNE_DATA_BY_RUNE[selected].find(
+          (rune) => rune.type === isArmourOrWeapon(item.category),
+        );
+        if (!runeData) return;
+        const statString = replaceHashWithValues(
+          runeData.baseStat,
+          runeData.values,
+        );
+        parseModifiersPoe2([statString], newItem);
+        newItem.statsByType = sumStatsByModType(newItem.newMods);
+
+        // Redo damage calc
+        if (selectedRune.value === "Iron Rune") {
+          if (isArmourOrWeapon(item.category) === "weapon") {
+            const baseDamage = calcBaseDamage(newItem.originalItem!);
+            const totalDamage = calcTotalDamage(newItem, baseDamage);
+            if (totalDamage > 0) {
+              newItem.weaponPHYSICAL = totalDamage;
+            }
+          }
+        }
+
+        const index = props.item.runeSockets!.runes.findIndex(
+          (rune) => rune.index === props.rune.index,
+        );
+        if (index === -1) throw new Error("rune not found");
+
+        // replace empty rune with selected rune by rune index
+        newItem.runeSockets!.runes[index] = {
+          isEmpty: true,
+          isFake: true,
+          rune: selected,
+          index,
+        };
+        props.changeItem(newItem);
+      },
+      { immediate: false },
+    );
 
     return {
       t,

@@ -195,7 +195,10 @@ export function calculatedStatToFilter(
   let filter: StatFilter;
   if (stat.trade.option) {
     filter = {
-      tradeId: stat.trade.ids[type],
+      tradeId:
+        stat.trade.ids[
+          type === ModifierType.FakeRune ? ModifierType.Rune : type
+        ],
       statRef: stat.ref,
       text: sources[0].stat.translation.string,
       tag:
@@ -216,7 +219,8 @@ export function calculatedStatToFilter(
   const translation = translateStatWithRoll(calc, roll);
 
   filter ??= {
-    tradeId: stat.trade.ids[type],
+    tradeId:
+      stat.trade.ids[type === ModifierType.FakeRune ? ModifierType.Rune : type],
     statRef: stat.ref,
     text: translation.string,
     tag: type as unknown as FilterTag,
@@ -405,11 +409,12 @@ function hideNotVariableStat(filter: StatFilter, item: ParsedItem) {
 
   if (!filter.roll) {
     filter.hidden = "filters.hide_const_roll";
-  } else if (!filter.roll.bounds) {
-    filter.roll.min = undefined;
-    filter.roll.max = undefined;
-    filter.hidden = "filters.hide_const_roll";
   }
+  // else if (!filter.roll.bounds) {
+  //   filter.roll.min = undefined;
+  //   filter.roll.max = undefined;
+  //   filter.hidden = "filters.hide_const_roll";
+  // }
 }
 
 function filterFillMinMax(
@@ -496,13 +501,14 @@ function finalFilterTweaks(ctx: FiltersCreationContext) {
   }
 
   if (item.rarity === ItemRarity.Unique) {
-    const countVisible = ctx.filters.reduce(
-      (cnt, filter) => (filter.hidden ? cnt : cnt + 1),
-      0,
-    );
-    if (countVisible <= 3) {
-      enableAllFilters(ctx.filters);
-    }
+    // const countVisible = ctx.filters.reduce(
+    //   (cnt, filter) => (filter.hidden ? cnt : cnt + 1),
+    //   0,
+    // );
+    // if (countVisible <= 3) {
+    //   enableAllFilters(ctx.filters);
+    // }
+    enableAllFilters(ctx.filters);
   }
 }
 

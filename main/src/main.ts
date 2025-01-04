@@ -14,6 +14,7 @@ import { AppTray } from "./AppTray";
 import { OverlayVisibility } from "./windowing/OverlayVisibility";
 import { GameLogWatcher } from "./host-files/GameLogWatcher";
 import { HttpProxy } from "./proxy";
+import { installExtension, VUEJS_DEVTOOLS } from "electron-devtools-installer";
 
 if (!app.requestSingleInstanceLock()) {
   app.exit();
@@ -34,6 +35,16 @@ app.on("ready", async () => {
   const poeWindow = new GameWindow();
   const appUpdater = new AppUpdater(eventPipe);
   const _httpProxy = new HttpProxy(server, logger);
+
+  if (process.env.VITE_DEV_SERVER_URL) {
+    try {
+      await installExtension(VUEJS_DEVTOOLS);
+      logger.write("info Vue Devtools installed");
+    } catch (error) {
+      logger.write(`error installing Vue Devtools: ${error}`);
+      console.log(`error installing Vue Devtools: ${error}`);
+    }
+  }
 
   setTimeout(
     async () => {

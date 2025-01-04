@@ -61,10 +61,10 @@ export const WEAPON_ONE_HANDED_MELEE = new Set([
   ItemCategory.Claw,
   ItemCategory.Dagger,
   ItemCategory.RuneDagger,
-  ItemCategory.Sceptre,
 ]);
 
 export const WEAPON_ONE_HANDED = new Set([
+  ItemCategory.Sceptre,
   ItemCategory.Wand,
   ...WEAPON_ONE_HANDED_MELEE,
 ]);
@@ -73,11 +73,11 @@ export const WEAPONE_TWO_HANDED_MELEE = new Set([
   ItemCategory.TwoHandedAxe,
   ItemCategory.TwoHandedMace,
   ItemCategory.TwoHandedSword,
-  ItemCategory.Staff,
   ItemCategory.Warstaff,
 ]);
 
 export const WEAPON = new Set([
+  ItemCategory.Staff,
   ItemCategory.FishingRod,
   ItemCategory.Bow,
   ItemCategory.Crossbow,
