@@ -11,35 +11,22 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+<script setup lang="ts">
+import { defineProps, shallowRef, computed } from 'vue'
 
-export default defineComponent({
-  name: 'FullscreenImage',
-  props: {
-    src: {
-      type: String,
-      required: true
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup (props) {
-    const isHovered = ref(false)
-    return {
-      isHovered,
-      resolvedSrc: computed(() => {
-        if (props.src.includes('://')) {
-          return props.src
-        } else {
-          return (props.src.length < 32)
-            ? `${import.meta.env.BASE_URL}images/${props.src}`
-            : `/uploads/${props.src}`
-        }
-      })
-    }
+const props = defineProps<{
+  src: string
+  disabled?: boolean
+}>()
+
+const isHovered = shallowRef(false)
+const resolvedSrc = computed(() => {
+  if (props.src.includes('://')) {
+    return props.src
+  } else {
+    return (props.src.length < 32)
+      ? `${import.meta.env.BASE_URL}images/${props.src}`
+      : `/uploads/${props.src}`
   }
 })
 </script>

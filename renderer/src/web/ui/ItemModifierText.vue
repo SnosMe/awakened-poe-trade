@@ -9,43 +9,31 @@
   </span>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed, defineProps } from 'vue'
 
-export default defineComponent({
-  props: {
-    text: {
-      type: String,
-      required: true
-    },
-    roll: {
-      type: Number,
-      default: undefined
+const props = defineProps<{
+  text: string
+  roll?: number
+}>()
+
+const parts = computed(() => {
+  const res = [] as Array<{ text: string, placeholder?: boolean }>
+  props.text.split(/(?<![#])[+-]?[#]/gm).forEach((text, idx, parts) => {
+    if (text !== '') {
+      res.push({ text })
     }
-  },
-  setup (props) {
-    return {
-      parts: computed(() => {
-        const res = [] as Array<{ text: string, placeholder?: boolean }>
-        props.text.split(/(?<![#])[+-]?[#]/gm).forEach((text, idx, parts) => {
-          if (text !== '') {
-            res.push({ text })
-          }
-          if (idx !== (parts.length - 1)) {
-            if (props.roll == null) {
-              res.push({ text: '#' })
-            } else {
-              res.push({
-                text: String(props.roll),
-                placeholder: true
-              })
-            }
-          }
+    if (idx !== (parts.length - 1)) {
+      if (props.roll == null) {
+        res.push({ text: '#' })
+      } else {
+        res.push({
+          text: String(props.roll),
+          placeholder: true
         })
-
-        return res
-      })
+      }
     }
-  }
+  })
+  return res
 })
 </script>

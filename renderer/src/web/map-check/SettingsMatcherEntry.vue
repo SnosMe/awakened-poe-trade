@@ -23,7 +23,7 @@
 import { defineComponent, computed, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UiRadio from '@/web/ui/UiRadio.vue'
-import { StatMatcher, StatTag, decisionHasColor, decisionCreate, MapCheckConfig } from './common.js'
+import { StatMatcher, StatTag, decisionHasColor, decisionCreate, MapCheckStat } from './common.js'
 
 export default defineComponent({
   emits: [],
@@ -34,7 +34,7 @@ export default defineComponent({
       required: true
     },
     selectedStats: {
-      type: Array as PropType<MapCheckConfig['selectedStats']>,
+      type: Array as PropType<MapCheckStat[]>,
       required: true
     },
     profile: {
