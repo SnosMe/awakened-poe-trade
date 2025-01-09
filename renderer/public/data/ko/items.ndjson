@@ -3,8 +3,6 @@
 {"name": "\"잘 자라는 키스\"", "refName": "\"The Kiss Goodnight\"", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "1차 재보정 렌즈", "refName": "Prime Regrading Lens", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "2차 재보정 렌즈", "refName": "Secondary Regrading Lens", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "Bidding", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -447,6 +445,7 @@
 {"name": "고정", "refName": "Pin", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "고정못 미트", "refName": "Riveted Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [31, 31]}, "w": 2, "h": 2}
 {"name": "고조", "refName": "Culmination", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "고조된 저주", "refName": "Heightened Curse", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "고통 격화", "refName": "Swift Affliction", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "고통 곤봉", "refName": "Torment Club", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "고통 재킷", "refName": "Torment Jacket", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [268, 268], "es": [101, 101]}, "w": 2, "h": 3}
@@ -2092,7 +2091,6 @@
 {"name": "조각난 인큐베이터", "refName": "Fragmented Incubator", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRnJhZ21lbnRzIiwic2NhbGUiOjF9XQ/a3cf9d4a10/IncubationFragments.png", "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "조각된 타지", "refName": "Carved Targe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [63, 63], "ev": [57, 57]}, "w": 2, "h": 3}
 {"name": "조각용 손도끼", "refName": "Carving Hatchet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
-{"name": "조고된 저주", "refName": "Heightened Curse", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "조밀한 화석", "refName": "Dense Fossil", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRGVuc2VGb3NzaWwiLCJzY2FsZSI6MX1d/ac39aaf3cd/DenseFossil.png", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "조율된 마법봉", "refName": "Attuned Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Wand"}, "w": 1, "h": 3}
 {"name": "조율된 집중구", "refName": "Attuned Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [47, 47]}, "w": 2, "h": 3}
@@ -2158,6 +2156,7 @@
 {"name": "지배의 오브", "refName": "Orb of Dominance", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvTWF2ZW5PcmIiLCJzY2FsZSI6MX1d/f307d80bfd/MavenOrb.png", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "지속되는 환상", "refName": "Lingering Illusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "지속성", "refName": "Persistence", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "지시", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "지식의 서 I", "refName": "Book of Knowledge I", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "지식의 서 II", "refName": "Book of Knowledge II", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "지식의 서 III", "refName": "Book of Knowledge III", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
@@ -2191,6 +2190,7 @@
 {"name": "직공 레깅스", "refName": "Weaver Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ar": [73, 73], "es": [26, 26]}, "w": 2, "h": 2}
 {"name": "진 바리야", "refName": "Djinn Barya", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MiscMapItem"}, "w": 1, "h": 1}
 {"name": "진노 셉터", "refName": "Wrath Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
+{"name": "진동", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "진주 반지", "refName": "Pearl Ring", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Ring"}, "w": 1, "h": 1}
 {"name": "진주 버클러", "refName": "Pearl Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ev": [105, 105]}, "w": 2, "h": 2}
 {"name": "진청록색 감시자의 돌", "refName": "Viridian Watchstone", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "AtlasUpgradeItem"}, "w": 1, "h": 1}
@@ -2219,7 +2219,7 @@
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
 {"name": "집중 유지 중 시전", "refName": "Cast while Channelling", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "집중 집중구", "refName": "Focused Curse", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "집중된 저주", "refName": "Focused Curse", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "집합 부적", "refName": "Aggregator Charm", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSGVpc3QvQWdncmVnYXRvckNoYXJtTWFnaWNTdG9uZSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/18dabef4ca/AggregatorCharmMagicStone.png", "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
 {"name": "짓밟는 지대", "refName": "Stomping Ground", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "징 박힌 대곤봉", "refName": "Studded Greatclub", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
@@ -2840,7 +2840,7 @@
 {"name": "도둑의 고통", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지"}}
 {"name": "웅힐의 조화", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이"}}
 {"name": "벤토의 도박", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "황금 반지"}}
-{"name": "형제단의 속삭임", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
+{"name": "형제의 속삭임", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지"}}
 {"name": "조프의 피", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이"}}
 {"name": "제르피의 시원", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠"}}
 {"name": "아브 아이테르노", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "우수한 허벅지 방어구"}}
@@ -3028,29 +3028,32 @@
 {"name": "인도하는 손바닥", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "성소 셉터"}}
 {"name": "돼지사냥", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "쓰러진 대곤봉"}}
 {"name": "흐림노르의 찬가", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "참나무 대망치"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철창날 창"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "분할의 대도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "아치형 대도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓은날 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "흡혈 칼날"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "고상한 글레이브"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "연장 가로날도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
 {"name": "생명의 가지", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "조율된 마법봉"}}
 {"name": "마챠", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "초승달 육척봉"}}
 {"name": "연무의 속삭임", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "임시 석궁"}}
@@ -3080,9 +3083,9 @@
 {"name": "과부우박", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "조잡한 활"}}
 {"name": "겨울의 추위", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "유리 단도"}}
 {"name": "와일룬드의 말뚝", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "대장장이 망치"}}
-{"name": "부서진 향로", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "융단 유물"}}
-{"name": "밤의 등화", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "인장 유물"}}
-{"name": "두 번째 성체", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "화병 유물"}}
+{"name": "통솔의 짐", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "융단 유물"}}
+{"name": "변화하는 계절", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "인장 유물"}}
+{"name": "필사적인 동맹", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "화병 유물"}}
 {"name": "마지막 불길", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "향 유물"}}
 {"name": "평화주의자의 영약", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "손잡이 항아리 유물"}}
-{"name": "최초의 문양", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "궤짝 유물"}}
+{"name": "기억된 이야기들", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "궤짝 유물"}}

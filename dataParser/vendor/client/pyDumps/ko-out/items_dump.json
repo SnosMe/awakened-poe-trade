@@ -36418,7 +36418,7 @@
         }
     },
     "2972": {
-        "name": "조고된 저주",
+        "name": "고조된 저주",
         "refName": "Heightened Curse",
         "namespace": "GEM",
         "class": 19,
@@ -36498,7 +36498,7 @@
         }
     },
     "2977": {
-        "name": "집중 집중구",
+        "name": "집중된 저주",
         "refName": "Focused Curse",
         "namespace": "GEM",
         "class": 19,
@@ -39989,7 +39989,7 @@
         }
     },
     "3202": {
-        "name": "Bidding",
+        "name": "지시",
         "refName": "Bidding",
         "namespace": "GEM",
         "class": 19,
@@ -40005,7 +40005,7 @@
         }
     },
     "3203": {
-        "name": "Tremors",
+        "name": "진동",
         "refName": "Tremors",
         "namespace": "GEM",
         "class": 19,

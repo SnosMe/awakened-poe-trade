@@ -428,7 +428,7 @@ function parseInfluence(section: string[], item: ParsedItem) {
 }
 
 function parseCorrupted(section: string[], item: ParsedItem) {
-  if (section[0] === _$.CORRUPTED) {
+  if (section[0].trim() === _$.CORRUPTED) {
     item.isCorrupted = true;
     return "SECTION_PARSED";
   } else if (section[0] === _$.UNMODIFIABLE) {
@@ -1529,3 +1529,9 @@ export function replaceHashWithValues(template: string, values: number[]) {
   });
   return result;
 }
+
+// Disable since this is export for tests
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const __testExports = {
+  itemTextToSections,
+};

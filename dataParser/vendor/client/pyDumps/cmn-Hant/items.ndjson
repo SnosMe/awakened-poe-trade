@@ -92,6 +92,7 @@
 {"name": "伏擊", "refName": "Ambush", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "低語的培育器", "refName": "Whispering Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "低語的培育器", "refName": "Whispering Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
+{"name": "低階工匠石", "refName": "Lesser Jeweller's Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "低階法杖", "refName": "Crude Ward", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "低階生命藥劑", "refName": "Lesser Life Flask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Flask"}, "w": 1, "h": 2}
 {"name": "低階異能灰燼", "refName": "Lesser Eldritch Ember", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -586,8 +587,8 @@
 {"name": "奪取之魂：無邊沙丘潛行者", "refName": "Captured Soul of Stalker of the Endless Dunes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "奪取之魂：獄炎之王", "refName": "Captured Soul of The Infernal King", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "奪取之魂：獵者之巔德雷克", "refName": "Captured Soul of Drek, Apex Hunter", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
+{"name": "奪取之魂：紅刃軍閥", "refName": "Captured Soul of a Redblade Warlord", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "奪取之魂：紛爭女王", "refName": "Captured Soul of Queen of the Great Tangle", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
-{"name": "奪取之魂：緋紅之雨賓妮雅", "refName": "Captured Soul of a Redblade Warlord", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "奪取之魂：被詛咒的．隊長克雷波恩", "refName": "Captured Soul of Captain Clayborne, The Accursed", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "奪取之魂：起亂者達斯", "refName": "Captured Soul of Tahsin, Warmaker", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "奪取之魂：隊長坦納萊富特", "refName": "Captured Soul of Captain Tanner Lightfoot", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
@@ -814,7 +815,6 @@
 {"name": "崛起風暴", "refName": "Rising Tempest", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "崩毀重錘", "refName": "Crumbling Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "崩雷鳴", "refName": "Falling Thunder", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "工匠石", "refName": "Lesser Jeweller's Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "工匠石", "refName": "Artificer's Orb", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRFcXVpcG1lbnRTb2NrZXQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5131fd4774/CurrencyAddEquipmentSocket.png", "tradeTag": "artificers", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "工匠碎片", "refName": "Artificer's Shard", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRFcXVpcG1lbnRTb2NrZXRTaGFyZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/cdcdd8bf3f/CurrencyAddEquipmentSocketShard.png", "tradeTag": "artificers-shard", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "工程石", "refName": "Engineer's Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -3007,10 +3007,11 @@
 {"name": "力抗黑暗", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "時迭鑽石"}}
 {"name": "受控的蛻變", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
 {"name": "從無到有", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
-{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "紅玉"}}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "紅玉"}}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "藍玉"}}
 {"name": "英雄悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "永恆珠寶"}}
+{"name": "妄想症", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
 {"name": "信仰棱鏡", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
 {"name": "朝氣之靈", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
 {"name": "腦亂者", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "鑲釘巨棍棒"}}
@@ -3027,7 +3028,12 @@
 {"name": "獵豬", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "墮落巨棍棒"}}
 {"name": "雷姆諾的奪命樂具", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "橡木巨錘"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "拱形巨斧"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鍛鐵巨劍"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂鏈錘"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "戰爭長鋒"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "優雅長柄刀"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "闊刃巨劍"}}
 {"name": "生機之記", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "調和法杖"}}
 {"name": "摩蹉", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "新月細杖"}}
 {"name": "迷霧低語者", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "臨時十字弓"}}
@@ -3051,9 +3057,9 @@
 {"name": "崔非那", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "鍛造重錘"}}
 {"name": "鰥寡之托", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "粗製弓"}}
 {"name": "威倫德的木樁", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "鍛造錘"}}
-{"name": "破香爐", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "聖經聖物"}}
-{"name": "夜燈", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "草紙聖物"}}
-{"name": "第二聖事", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "器皿聖物"}}
+{"name": "破香爐", "refName": "破香爐", "namespace": "UNIQUE", "unique": {"base": "聖經聖物"}}
+{"name": "夜燈", "refName": "夜燈", "namespace": "UNIQUE", "unique": {"base": "草紙聖物"}}
+{"name": "第二聖事", "refName": "第二聖事", "namespace": "UNIQUE", "unique": {"base": "器皿聖物"}}
 {"name": "終焉烈焰", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "香爐聖物"}}
 {"name": "和平使者藥水", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "陶罐聖物"}}
-{"name": "第一頂峰", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "寶箱聖物"}}
+{"name": "第一頂峰", "refName": "第一頂峰", "namespace": "UNIQUE", "unique": {"base": "寶箱聖物"}}

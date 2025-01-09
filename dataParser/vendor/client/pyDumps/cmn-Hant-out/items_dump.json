@@ -374,7 +374,7 @@
         }
     },
     "22": {
-        "name": "工匠石",
+        "name": "低階工匠石",
         "refName": "Lesser Jeweller's Orb",
         "namespace": "ITEM",
         "class": "手套",
@@ -9359,7 +9359,7 @@
         }
     },
     "707": {
-        "name": "奪取之魂：緋紅之雨賓妮雅",
+        "name": "奪取之魂：紅刃軍閥",
         "refName": "Captured Soul of a Redblade Warlord",
         "namespace": "ITEM",
         "class": 48,

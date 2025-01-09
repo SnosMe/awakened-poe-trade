@@ -26,6 +26,9 @@ export default defineConfig({
       "@ipc": path.resolve(__dirname, "./src/../../ipc"),
     },
   },
+  define: {
+    "import.meta.vitest": "undefined",
+  },
   server: {
     proxy: {
       "^/(config|uploads|proxy)": { target: "http://127.0.0.1:8584" },
