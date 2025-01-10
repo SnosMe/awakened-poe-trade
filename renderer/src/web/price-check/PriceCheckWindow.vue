@@ -85,11 +85,40 @@ import UnidentifiedResolver from './unidentified-resolver/UnidentifiedResolver.v
 import CheckPositionCircle from './CheckPositionCircle.vue'
 import AppTitleBar from '@/web/ui/AppTitlebar.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
-import { PriceCheckWidget, WidgetManager } from '../overlay/interfaces'
+import { PriceCheckWidget, WidgetManager, WidgetSpec } from '../overlay/interfaces'
 
 type ParseError = { name: string; message: string; rawText: ParsedItem['rawText'] }
 
 export default defineComponent({
+  widget: {
+    type: 'price-check',
+    instances: 'single',
+    initInstance: (): PriceCheckWidget => {
+      return {
+        wmId: 0,
+        wmType: 'price-check',
+        wmTitle: '',
+        wmWants: 'hide',
+        wmZorder: 'exclusive',
+        wmFlags: ['hide-on-blur', 'skip-menu'],
+        showRateLimitState: false,
+        apiLatencySeconds: 2,
+        collapseListings: 'api',
+        smartInitialSearch: true,
+        lockedInitialSearch: true,
+        activateStockFilter: false,
+        builtinBrowser: false,
+        hotkey: 'D',
+        hotkeyHold: 'Ctrl',
+        hotkeyLocked: 'Ctrl + Alt + D',
+        showSeller: false,
+        searchStatRange: 10,
+        showCursor: true,
+        requestPricePrediction: false,
+        rememberCurrency: false
+      }
+    }
+  } satisfies WidgetSpec,
   components: {
     AppTitleBar,
     CheckedItem,

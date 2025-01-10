@@ -10,7 +10,7 @@
         v-show="isVisible(widget.wmId)"
         :config="widget"
         :id="`widget-${widget.wmId}`"
-        :is="`widget-${widget.wmType}`" />
+        :is="registry.getWidgetComponent(widget.wmType)" />
     </template>
     <pre v-if="showLogs"
       class="widget-default-style p-4 mx-auto mt-6 overflow-hidden"
@@ -35,15 +35,7 @@ import { defineComponent, provide, shallowRef, watch, readonly, computed, onMoun
 import { useI18n } from 'vue-i18n'
 import { Host } from '@/web/background/IPC'
 import { Widget, WidgetManager } from './interfaces'
-import WidgetTimer from './WidgetTimer.vue'
-import WidgetStashSearch from '../stash-search/WidgetStashSearch.vue'
-import WidgetMenu from './WidgetMenu.vue'
-import PriceCheckWindow from '@/web/price-check/PriceCheckWindow.vue'
-import WidgetItemCheck from '@/web/item-check/WidgetItemCheck.vue'
-import WidgetImageStrip from './WidgetImageStrip.vue'
-import WidgetDelveGrid from './WidgetDelveGrid.vue'
-import WidgetItemSearch from '../item-search/WidgetItemSearch.vue'
-import WidgetSettings from '../settings/SettingsWindow.vue'
+import { registry } from './widget-registry.js'
 import { AppConfig, saveConfig, pushHostConfig } from '@/web/Config'
 import LoadingAnimation from './LoadingAnimation.vue'
 // ---
@@ -55,15 +47,6 @@ type WMID = Widget['wmId']
 
 export default defineComponent({
   components: {
-    WidgetTimer,
-    WidgetStashSearch,
-    WidgetMenu,
-    WidgetPriceCheck: PriceCheckWindow,
-    WidgetItemCheck,
-    WidgetImageStrip,
-    WidgetDelveGrid,
-    WidgetItemSearch,
-    WidgetSettings,
     LoadingAnimation
   },
   setup () {
@@ -318,7 +301,8 @@ export default defineComponent({
       overlayKey: computed(() => AppConfig().overlayKey),
       get showLogs () { return !active.value && AppConfig().logKeys },
       logs: computed(() => sliceLastLines(Host.logs.value, 11)),
-      showEditingNotification: computed(() => !active.value && showEditingNotification.value)
+      showEditingNotification: computed(() => !active.value && showEditingNotification.value),
+      registry
     }
   }
 })
