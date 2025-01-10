@@ -100,7 +100,7 @@ export default defineComponent({
         wmTitle: '',
         wmWants: 'hide',
         wmZorder: 'exclusive',
-        wmFlags: ['hide-on-blur', 'skip-menu'],
+        wmFlags: ['hide-on-blur', 'menu::skip'],
         showRateLimitState: false,
         apiLatencySeconds: 2,
         collapseListings: 'api',
@@ -143,7 +143,7 @@ export default defineComponent({
 
     nextTick(() => {
       props.config.wmWants = 'hide'
-      props.config.wmFlags = ['hide-on-blur', 'skip-menu']
+      props.config.wmFlags = ['hide-on-blur', 'menu::skip']
     })
 
     const item = shallowRef<null | Result<ParsedItem, ParseError>>(null)

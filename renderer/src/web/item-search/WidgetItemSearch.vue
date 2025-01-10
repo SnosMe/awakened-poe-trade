@@ -83,7 +83,7 @@ export default {
       return {
         wmId: 0,
         wmType: 'item-search',
-        wmTitle: '',
+        wmTitle: '{icon=fa-search}',
         wmWants: 'hide',
         wmZorder: null,
         wmFlags: ['invisible-on-blur'],

@@ -20,12 +20,14 @@ export const registry = {
   }
 }
 
+// Core
 registry.widgets.push(WidgetMenu as unknown as WidgetComponent)
+registry.widgets.push(WidgetSettings as unknown as WidgetComponent)
+// Extra
+registry.widgets.push(WidgetItemSearch as unknown as WidgetComponent)
 registry.widgets.push(WidgetTimer as unknown as WidgetComponent)
 registry.widgets.push(WidgetStashSearch as unknown as WidgetComponent)
 registry.widgets.push(PriceCheckWindow as unknown as WidgetComponent)
 registry.widgets.push(WidgetItemCheck as unknown as WidgetComponent)
 registry.widgets.push(WidgetImageStrip as unknown as WidgetComponent)
 registry.widgets.push(WidgetDelveGrid as unknown as WidgetComponent)
-registry.widgets.push(WidgetItemSearch as unknown as WidgetComponent)
-registry.widgets.push(WidgetSettings as unknown as WidgetComponent)

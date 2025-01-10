@@ -7,9 +7,8 @@
             :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-800'"
             class="bg-gray-800 rounded text-gray-100 p-2 leading-none whitespace-nowrap border"
           >
-            <i v-if="widget.wmType === 'settings'" class="fas fa-cog align-bottom" />
-            <i v-else-if="widget.wmType === 'item-search'" class="fas fa-search align-bottom" />
-            <template v-else>{{ widget.wmTitle || `#${widget.wmId}` }}</template>
+            <i v-if="widget.icon" class="fas align-bottom" :class="widget.icon" />
+            <template v-if="widget.title">{{ widget.title }}</template>
           </button>
         </template>
         <ui-popover>
@@ -59,7 +58,7 @@ export default defineComponent({
         wmTitle: '',
         wmWants: 'show',
         wmZorder: 1,
-        wmFlags: ['invisible-on-blur', 'skip-menu'],
+        wmFlags: ['invisible-on-blur', 'menu::skip'],
         anchor: {
           pos: 'tl',
           x: 5,
@@ -84,9 +83,19 @@ export default defineComponent({
         wm.widgets.value.find(widget => widget.wmType === 'settings')!,
         ...wm.widgets.value.filter(widget => widget.wmType !== 'settings')
       ].filter(widget =>
-        !widget.wmFlags.includes('skip-menu') &&
+        !widget.wmFlags.includes('menu::skip') &&
         (props.config.alwaysShow || (widget.wmWants === 'hide'))
-      )
+      ).map((widget) => {
+        const regexMatch = widget.wmTitle
+          .match(/^(?:\{icon=(?<icon>[^}]+)\}\s*)?(?<title>.*)$/)
+        return {
+          wmId: widget.wmId,
+          wmWants: widget.wmWants,
+          title: regexMatch?.groups!.title ||
+            ((!regexMatch?.groups!.icon) ? `#${widget.wmId}` : undefined),
+          icon: regexMatch?.groups!.icon
+        }
+      })
     })
 
     const { t } = useI18nNs('widget_menu')
@@ -102,7 +111,7 @@ export default defineComponent({
       createOfType (type: string) {
         wm.create(type)
       },
-      toggle (widget: IWidget) {
+      toggle (widget: Pick<IWidget, 'wmId' | 'wmWants'>) {
         if (widget.wmWants === 'hide') {
           wm.show(widget.wmId)
         } else {

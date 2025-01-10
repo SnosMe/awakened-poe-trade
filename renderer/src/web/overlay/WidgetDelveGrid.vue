@@ -37,7 +37,7 @@ export default {
         wmTitle: '',
         wmWants: 'hide',
         wmZorder: null,
-        wmFlags: ['hide-on-focus', 'skip-menu'],
+        wmFlags: ['hide-on-focus', 'menu::skip'],
         toggleKey: null
       }
     }

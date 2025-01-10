@@ -121,7 +121,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 16,
+  configVersion: 17,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -397,6 +397,23 @@ function upgradeConfig (_config: Config): Config {
     if (widget.wmType === 'stash-search') {
       (widget as StashSearchWidget).enableHotkeys ??= true
     }
+  }
+
+  if (config.configVersion < 17) {
+    for (const widget of config.widgets) {
+      for (let i = 0; i < widget.wmFlags.length; ++i) {
+        if (widget.wmFlags[i] === 'skip-menu') {
+          widget.wmFlags[i] = 'menu::skip'
+        }
+      }
+    }
+
+    const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as widget.Widget
+    itemSearch.wmTitle = '{icon=fa-search}'
+    const settings = config.widgets.find(w => w.wmType === 'settings') as widget.Widget
+    settings.wmTitle = '{icon=fa-cog}'
+
+    config.configVersion = 17
   }
 
   return config as unknown as Config

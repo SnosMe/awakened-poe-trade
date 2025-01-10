@@ -94,7 +94,7 @@ export default defineComponent({
       return {
         wmId: 0,
         wmType: 'settings',
-        wmTitle: '',
+        wmTitle: '{icon=fa-cog}',
         wmWants: 'hide',
         wmZorder: 'exclusive',
         wmFlags: ['invisible-on-blur', 'ignore-ui-visibility']

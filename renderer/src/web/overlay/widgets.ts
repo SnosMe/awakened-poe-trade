@@ -17,7 +17,7 @@ export interface WidgetSpec {
 
 export type WellKnownFlag =
   'uninitialized' |
-  'skip-menu' |
+  'menu::skip' |
   'has-browser' |
   'invisible-on-blur' |
   'hide-on-blur' |
