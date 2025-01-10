@@ -5,6 +5,7 @@ import {
   INTERNAL_TRADE_IDS,
   InternalTradeId,
   RuneFilter,
+  WeightStatGroup,
 } from "../filters/interfaces";
 import { setProperty as propSet } from "dot-prop";
 import { DateTime } from "luxon";
@@ -262,6 +263,7 @@ export function createTradeRequest(
   stats: StatFilter[],
   item: ParsedItem,
   runeFilters: RuneFilter[],
+  weightGroups?: WeightStatGroup[],
 ) {
   const body: TradeRequest = {
     query: {
@@ -709,7 +711,36 @@ export function createTradeRequest(
     }
   }
 
+  if (weightGroups) {
+    for (const weightGroup of weightGroups) {
+      query.stats.push({
+        type: "weight",
+        value: weightGroup.value,
+        disabled: false,
+        filters: weightStatsToFilters(weightGroup.stats),
+      });
+    }
+  }
+
   return body;
+}
+
+function weightStatsToFilters(weightStats: StatFilter[]) {
+  const filters: any[] = [];
+
+  for (const stat of weightStats) {
+    for (const tradeId of stat.tradeId) {
+      filters.push({
+        disabled: false,
+        id: tradeId,
+        value: {
+          weight: stat.weight,
+        },
+      });
+    }
+  }
+
+  return filters;
 }
 
 const cache = new Cache();

@@ -18,9 +18,16 @@ import logging
 import os
 import re
 import urllib.parse
+from collections import defaultdict
+from copy import deepcopy
 from pprint import pprint
 
+from clientStrings.clientStringBuilder import (
+    create_client_strings,
+    write_client_strings,
+)
 from descriptionParser.descriptionFile import DescriptionFile
+from modTiers.modTierBuilder import modTierBuilderB
 from services.logger_setup import set_log_level
 
 logger = logging.getLogger(__name__)
@@ -36,6 +43,94 @@ LANG_CODES_TO_NAMES = {
 
 def find_first_matching_item(items, field: str, value: str) -> dict | None:
     return next((item for item in items if item.get(field) == value), None)
+
+
+def flatten_stats_ids(input_data):
+    if isinstance(input_data, list):
+        if len(input_data) == 1:
+            return input_data[0]
+        else:
+            result = {}
+            for item in input_data:
+                for key, values in item.items():
+                    if key not in result:
+                        result[key] = []
+                    result[key].extend(values)
+            return result
+    elif isinstance(input_data, dict):
+        return input_data
+    else:
+        raise ValueError("Invalid input format")
+
+
+def flatten_mods(mods):
+    # Create a dictionary to group mods by "ref"
+    grouped_mods = defaultdict(
+        lambda: {
+            "ref": None,
+            "better": None,
+            "id": None,
+            "matchers": [],
+            "trade": {"ids": None},  # Default to None for trade.ids
+            "tiers": None,  # Default to None for tiers
+        }
+    )
+
+    for base_id, mod in mods.items():
+        ref = mod["ref"]
+        if not grouped_mods[ref]["ref"]:
+            grouped_mods[ref]["ref"] = ref
+            grouped_mods[ref]["better"] = mod["better"]
+            grouped_mods[ref]["id"] = mod["id"]
+
+        # Merge matchers
+        for matcher in mod.get("matchers") or []:
+            if matcher not in grouped_mods[ref]["matchers"]:
+                grouped_mods[ref]["matchers"].append(matcher)
+
+        # Merge trade IDs
+        if grouped_mods[ref]["trade"]["ids"] is None:
+            grouped_mods[ref]["trade"]["ids"] = (
+                None if mod["trade"]["ids"] is None else deepcopy(mod["trade"]["ids"])
+            )
+        elif mod["trade"]["ids"] is not None:
+            # Merge trade.ids only if both are not None
+            for key, ids in mod["trade"]["ids"].items():
+                grouped_mods[ref]["trade"]["ids"].setdefault(key, []).extend(ids)
+
+        # Merge tiers
+        if grouped_mods[ref]["tiers"] is None:
+            grouped_mods[ref]["tiers"] = (
+                None if "tiers" not in mod else deepcopy(mod["tiers"])
+            )
+        elif mod["tiers"] is not None:
+            for tier_type, tier_data in mod["tiers"].items():
+                if tier_type == "implicit":
+                    # Merge implicit tiers (dictionary)
+                    for base_type, implicit_data in tier_data.items():
+                        if base_type not in grouped_mods[ref]["tiers"]["implicit"]:
+                            grouped_mods[ref]["tiers"]["implicit"][base_type] = (
+                                deepcopy(implicit_data)
+                            )
+                        else:
+                            grouped_mods[ref]["tiers"]["implicit"][base_type][
+                                "mods"
+                            ].extend(deepcopy(implicit_data["mods"]))
+                else:
+                    # Merge list-based tiers
+                    grouped_mods[ref]["tiers"][tier_type].extend(deepcopy(tier_data))
+
+    # Convert back to dictionary with unique base_ids
+    flattened_mods = {}
+    for i, (ref, group) in enumerate(grouped_mods.items()):
+        # Deduplicate trade IDs if they are not None
+        if group["trade"]["ids"] is not None:
+            group["trade"]["ids"] = {
+                k: list(set(v)) for k, v in group["trade"]["ids"].items()
+            }
+        flattened_mods[f"merged_{i}"] = group  # Use a new unique key for merged mods
+
+    return flattened_mods
 
 
 class Parser:
@@ -71,6 +166,9 @@ class Parser:
         self.translation_files = os.listdir(f"{self.cwd}/descriptions")
         self.mods_file = self.load_file("Mods")
         self.words_file = self.load_file("Words")
+        self.gold_mod_prices = self.load_file("GoldModPrices")
+        self.tags = self.load_file("Tags")
+        self.client_strings_file = self.load_file("ClientStrings")
         # NOTE: could need to add local here?
         self.trade_stats = json.loads(
             open(
@@ -207,9 +305,9 @@ class Parser:
                 "===================================================================="
             )
             print(f"[i:{i}, id:{id}] {stats_translations[i]}")
-            print(f"[i:{i+1}, id:{id}] {stats_translations[i+1]}")
-            print(f"[i:{i+2}, id:{id}] {stats_translations[i+2]}")
-            print(f"[i:{i+3}, id:{id}] {stats_translations[i+3]}")
+            print(f"[i:{i + 1}, id:{id}] {stats_translations[i + 1]}")
+            print(f"[i:{i + 2}, id:{id}] {stats_translations[i + 2]}")
+            print(f"[i:{i + 3}, id:{id}] {stats_translations[i + 3]}")
         line = stats_translations[i + 3].strip()  # skip first 2 characters
         start = line.find('"')
         end = line.rfind('"')
@@ -322,59 +420,101 @@ class Parser:
 
         logger.info(f"Mod translations: {len(self.mod_translations)}")
 
-        for mod in self.mods_file:
-            id = mod.get("Id")
-            stats_key = mod.get("Stat1")
+        hybrid_count = 0
+        hybrids = []
 
-            logger.debug(f"Processing mod - ID: {id}, Stat: {stats_key}")
+        for ids, tiers, base_id in modTierBuilderB(
+            self.mods_file, self.base_items, self.gold_mod_prices, self.tags
+        ):
+            value_counts = len(ids)
+            if value_counts < 1:
+                logger.debug(f"No stat_ids for {base_id}")
+                continue
+            ids_list = []
+            translations = []
+            stat_id = None
 
-            if stats_key is not None:
-                stats_id = self.stats.get(stats_key)
-                translation = self.mod_translations.get(stats_id)
+            for stats_key in ids:
+                logger.debug(f"Processing mod - ID: {base_id}, Stat: {stats_key}")
 
-                if translation:
-                    ref = translation.get("ref")
-                    matchers = translation.get("matchers")
+                if stats_key is not None:
+                    stats_id = self.stats.get(stats_key)
+                    translation = self.mod_translations.get(stats_id)
 
-                    if matchers is None or len(matchers) == 0:
-                        logger.warning(f"No matchers found for stats ID: {stats_id}.")
-                        continue
+                    if translation:
+                        ref = translation.get("ref")
+                        matchers = translation.get("matchers")
 
-                    ids = self.stats_trade_ids.get(matchers[0].get("string"))
-
-                    if ids is None and len(matchers) > 1:
-                        ids = self.stats_trade_ids.get(matchers[1].get("string"))
-                        if ids is None:
+                        if matchers is None or len(matchers) == 0:
                             logger.warning(
-                                f"No trade IDs found for matchers: {matchers[0].get('string')} or {matchers[1].get('string')}."
+                                f"No matchers found for stats ID: {stats_id}."
                             )
-                            self.matchers_no_trade_ids.extend(
-                                [matchers[0].get("string"), matchers[1].get("string")]
-                            )
-                    elif ids is None:
-                        logger.warning(
-                            f"No trade IDs found for matcher: {matchers[0].get('string')}."
-                        )
-                        self.matchers_no_trade_ids.append(matchers[0].get("string"))
+                            continue
 
-                    trade = {"ids": ids}
-                    self.mods[id] = {
-                        "ref": translation.get("ref"),
-                        "better": 1,
-                        "id": stats_id,
-                        "matchers": translation.get("matchers"),
-                        "trade": trade,
-                    }
+                        ids = self.stats_trade_ids.get(matchers[0].get("string"))
+                        if stat_id is None:
+                            stat_id = stats_id
+
+                        if ids is None and len(matchers) > 1:
+                            ids = self.stats_trade_ids.get(matchers[1].get("string"))
+                            if ids is None:
+                                logger.warning(
+                                    f"No trade IDs found for matchers: {matchers[0].get('string')} or {matchers[1].get('string')}."
+                                )
+                                self.matchers_no_trade_ids.extend(
+                                    [
+                                        matchers[0].get("string"),
+                                        matchers[1].get("string"),
+                                    ]
+                                )
+                        elif ids is None:
+                            logger.warning(
+                                f"No trade IDs found for matcher: {matchers[0].get('string')}."
+                            )
+                            self.matchers_no_trade_ids.append(matchers[0].get("string"))
+
+                        ids_list.append(ids)
+                        translations.append(translation)
+                    else:
+                        logger.debug(
+                            f"Mod {base_id} has no translations. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                        )
                 else:
                     logger.debug(
-                        f"Mod {id} has no translations. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                        f"Mod {base_id} has no stats_key. [stats_key: {stats_key}, stats_id: {stats_id}]"
                     )
-            else:
+            if len(translations) == 0:
                 logger.debug(
-                    f"Mod {id} has no stats_key. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                    f"Mod {base_id} has no stats_key. [stats_key: {stats_key}, stats_id: {stats_id}]"
                 )
+                continue
+
+            ids_list = [x for x in ids_list if x is not None]
+
+            if len(ids_list) == 0:
+                flatten_stats = None
+            else:
+                flatten_stats = flatten_stats_ids(ids_list)
+            trade = {"ids": flatten_stats}
+            if base_id in self.mods:
+                logger.warn(f"Duplicate mod {base_id}")
+
+            if len(translations) > 1 and translations[0].get("ref", "").count("#") == 1:
+                hybrid_count += 1
+                hybrids.append((base_id, translations))
+                continue
+            self.mods[base_id] = {
+                "ref": translations[0].get("ref"),
+                "better": 1,
+                "id": stat_id,
+                "matchers": translations[0].get("matchers"),
+                "trade": trade,
+                "tiers": tiers,
+            }
 
         logger.debug("Completed parsing mods.")
+        logger.info(f"Mods: {len(self.mods)}")
+        logger.info(f"Hybrid mods: {hybrid_count}")
 
     def parse_categories(self):
         # parse item categories
@@ -614,8 +754,10 @@ class Parser:
 
         self.add_missing_mods()
 
+        self.mods = flatten_mods(self.mods)
+
         seen = set()
-        skip = {"maximum_life_%_lost_on_kill"}
+        skip = {"maximum_life_%_lost_on_kill", "base_spirit"}
         m = open(
             f"{self.out_dir}/stats.ndjson",
             "w",
@@ -644,21 +786,21 @@ class Parser:
         m.close()
 
         with open(
-            f"{self.get_script_dir()}/pyDumps/{self.lang+'-out'}/items_dump.json",
+            f"{self.get_script_dir()}/pyDumps/{self.lang + '-out'}/items_dump.json",
             "w",
             encoding="utf-8",
         ) as f:
             f.write(json.dumps(self.items, indent=4, ensure_ascii=False))
 
         with open(
-            f"{self.get_script_dir()}/pyDumps/{self.lang+'-out'}/mods_dump.json",
+            f"{self.get_script_dir()}/pyDumps/{self.lang + '-out'}/mods_dump.json",
             "w",
             encoding="utf-8",
         ) as f:
             f.write(json.dumps(self.mods, indent=4, ensure_ascii=False))
 
         with open(
-            f"{self.get_script_dir()}/pyDumps/{self.lang+'-out'}/matchers_no_trade_ids.json",
+            f"{self.get_script_dir()}/pyDumps/{self.lang + '-out'}/matchers_no_trade_ids.json",
             "w",
             encoding="utf-8",
         ) as f:
@@ -688,6 +830,17 @@ class Parser:
             },
         }
 
+    def do_client_strings(self):
+        cl = create_client_strings(self.client_strings_file)
+        out_string = write_client_strings(cl)
+        print(out_string)
+        # with open(
+        #     f"{self.get_script_dir()}/pyDumps/{self.lang}/client_strings.js",
+        #     "w",
+        #     encoding="utf-8",
+        # ) as f:
+        #     f.write(out_string)
+
     def run(self):
         self.parse_trade_ids()
         self.parse_mods()
@@ -696,9 +849,10 @@ class Parser:
         self.resolve_item_classes()
         self.parse_trade_exchange_items()
         self.write_to_file()
+        self.do_client_strings()
 
 
 if __name__ == "__main__":
     logger.info("Starting parser")
     set_log_level(logging.WARNING)
-    Parser("ru").run()
+    Parser("en").run()

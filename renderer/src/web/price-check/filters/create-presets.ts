@@ -1,7 +1,9 @@
 import { createFilters } from "./create-item-filters";
 import {
   createExactStatFilters,
+  createResistanceWeightFilter,
   initUiModFilters,
+  initWeightFilters,
 } from "./create-stat-filters";
 import { ModifierType, sumStatsByModType } from "@/parser/modifiers";
 import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
@@ -30,6 +32,7 @@ export function createPresets(
         filters: createFilters(item, { ...opts, exact: true }),
         stats: createExactStatFilters(item, sumStatsByModType(area), opts),
         runeFilters: createRuneFilters(item, item.runeSockets, opts),
+        weightFilters: createResistanceWeightFilter(item, sumStatsByModType(area), opts)
       })),
     };
   }
@@ -59,6 +62,7 @@ export function createPresets(
           filters: createFilters(item, { ...opts, exact: true }),
           stats: createExactStatFilters(item, item.statsByType, opts),
           runeFilters: createRuneFilters(item, item.runeSockets, opts),
+          weightFilters: createResistanceWeightFilter(item, item.statsByType, opts)
         },
       ],
     };
@@ -70,6 +74,7 @@ export function createPresets(
     filters: createFilters(item, { ...opts, exact: false }),
     stats: initUiModFilters(item, opts),
     runeFilters: createRuneFilters(item, item.runeSockets, opts),
+    weightFilters: initWeightFilters(item, opts)
   };
 
   const likelyFinishedItem =
@@ -99,6 +104,7 @@ export function createPresets(
     filters: createFilters(item, { ...opts, exact: true }),
     stats: createExactStatFilters(item, item.statsByType, opts),
     runeFilters: createRuneFilters(item, item.runeSockets, opts),
+    weightFilters: createResistanceWeightFilter(item, item.statsByType, opts)
   };
 
   return {

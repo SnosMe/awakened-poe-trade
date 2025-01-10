@@ -101,20 +101,6 @@
     <ui-checkbox class="mb-4" v-model="usePseudo">{{
       t(":use_pseudo")
     }}</ui-checkbox>
-    <div class="mb-4">
-      <div class="flex-1 mb-1">{{ t(":show_suggest_warning") }}</div>
-      <select v-model="showSuggestWarning" class="p-1 rounded bg-gray-700 w-48">
-        <option value="en">
-          {{ t(":show_suggest_warning_none") }}
-        </option>
-        <option value="warn">
-          {{ t(":show_suggest_warning_warn") }}
-        </option>
-        <option value="help">
-          {{ t(":show_suggest_warning_help") }}
-        </option>
-      </select>
-    </div>
     <div class="mb-4" :class="{ 'p-2 bg-orange-600 rounded': builtinBrowser }">
       <ui-checkbox v-model="builtinBrowser">{{
         t(":enable_browser")
@@ -215,10 +201,6 @@ export default defineComponent({
         "builtinBrowser",
       ),
       usePseudo: configModelValue(() => configWidget.value, "usePseudo"),
-      showSuggestWarning: configModelValue(
-        () => configWidget.value,
-        "showSuggestWarning",
-      ),
       requestPricePrediction: configModelValue(
         () => configWidget.value,
         "requestPricePrediction",

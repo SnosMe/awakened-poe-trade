@@ -111,4 +111,5 @@ export default {
   QUIVER_HELP_TEXT: '弓装備時のみ装備可能',
   FLASK_HELP_TEXT: '右クリックして飲む。',
   CHARM_HELP_TEXT: '条件を満たした時に自動的に使用される。',
+  PRICE_NOTE: 'メモ: '
 }

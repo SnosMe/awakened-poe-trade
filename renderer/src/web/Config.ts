@@ -225,7 +225,6 @@ export const defaultConfig = (): Config => ({
       showCursor: true,
       requestPricePrediction: false,
       rememberCurrency: false,
-      showSuggestWarning: "help",
     } as widget.PriceCheckWidget,
     {
       wmId: 3,
@@ -600,7 +599,6 @@ function upgradeConfig(_config: Config): Config {
     const priceCheck = config.widgets.find(
       (w) => w.wmType === "price-check",
     ) as widget.PriceCheckWidget;
-    priceCheck.showSuggestWarning = "help";
     priceCheck.usePseudo = false;
     config.enableAlphas = false;
     config.alphas = [];

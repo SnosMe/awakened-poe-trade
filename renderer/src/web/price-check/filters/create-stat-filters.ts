@@ -6,19 +6,107 @@ import {
   translateStatWithRoll,
 } from "@/parser/modifiers";
 import { percentRoll, percentRollDelta, roundRoll } from "./util";
-import { FilterTag, ItemHasEmptyModifier, StatFilter } from "./interfaces";
+import {
+  FilterTag,
+  ItemHasEmptyModifier,
+  RESISTANCE_WEIGHT_GROUP,
+  StatFilter,
+  WeightStatGroup,
+} from "./interfaces";
 import { filterPseudo } from "./pseudo";
 import { applyRules as applyAtzoatlRules } from "./pseudo/atzoatl-rules";
 import { applyRules as applyMirroredTabletRules } from "./pseudo/reflection-rules";
 import { filterItemProp, filterBasePercentile } from "./pseudo/item-property";
 import { decodeOils, applyAnointmentRules } from "./pseudo/anointments";
-import { StatBetter, CLIENT_STRINGS } from "@/assets/data";
+import { StatBetter, CLIENT_STRINGS, STAT_BY_REF } from "@/assets/data";
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem;
   readonly searchInRange: number;
   filters: StatFilter[];
   statsByType: StatCalculated[];
+}
+
+export function initWeightFilters(
+  item: ParsedItem,
+  opts: {
+    searchStatRange: number;
+  },
+): WeightStatGroup[] {
+  const statsByType = item.statsByType.map((calc) => {
+    if (
+      calc.type === ModifierType.Fractured &&
+      calc.stat.trade.ids[ModifierType.Explicit]
+    ) {
+      return { ...calc, type: ModifierType.Explicit };
+    } else {
+      return calc;
+    }
+  });
+
+  return createResistanceWeightFilter(item, statsByType, opts);
+}
+
+export function createResistanceWeightFilter(
+  item: ParsedItem,
+  statsByType: StatCalculated[],
+  opts: {
+    searchStatRange: number;
+  },
+): WeightStatGroup[] {
+  const weightFilter: WeightStatGroup = {
+    stats: [],
+    value: {},
+    disabled: true,
+    name: RESISTANCE_WEIGHT_GROUP,
+  };
+
+  const searchInRange = Math.min(2, opts.searchStatRange);
+
+  const resistanceWeights: any = {
+    "+#% to Lightning Resistance": 1,
+    "+#% to Fire Resistance": 1,
+    "+#% to Cold Resistance": 1,
+    "+#% to all Elemental Resistances": 3,
+  };
+
+  let min = 0;
+  for (const stat of statsByType) {
+    if (!resistanceWeights[stat.stat.ref]) continue;
+
+    const modWeight = resistanceWeights[stat.stat.ref];
+    const statValue = stat.sources
+      .map((source) => source.contributes?.value)
+      .map((value) => value || 0)
+      .reduce((acc: number, v: number) => acc + v, 0);
+    min += statValue * modWeight;
+  }
+
+  if (min === 0) return [];
+
+  for (const ref of Object.keys(resistanceWeights)) {
+    const stat = STAT_BY_REF(ref)!;
+    const modWeight = resistanceWeights[ref];
+    const calcStat: StatCalculated = {
+      stat,
+      type: ModifierType.Pseudo,
+      sources: [],
+    };
+
+    const statFilter = calculatedStatToFilter(calcStat, searchInRange, item);
+    statFilter.disabled = false;
+    statFilter.weight = modWeight;
+    statFilter.tradeId = Object.values(stat.trade.ids).flat();
+    weightFilter.stats.push(statFilter);
+  }
+
+  weightFilter.value.min = percentRoll(
+    min,
+    -opts.searchStatRange,
+    Math.floor,
+    false,
+  );
+  return [weightFilter];
 }
 
 export function createExactStatFilters(
@@ -364,9 +452,8 @@ export function calculatedStatToFilter(
               max: percentRoll(roll.value, +percent, Math.ceil, dp),
             };
 
-    // HACK: This is #64 and #88
-    // filterDefault.min = Math.max(filterDefault.min, filterBounds.min);
-    // filterDefault.max = Math.min(filterDefault.max, filterBounds.max);
+    filterDefault.min = Math.max(filterDefault.min, filterBounds.min);
+    filterDefault.max = Math.min(filterDefault.max, filterBounds.max);
 
     filter.roll = {
       value: roundRoll(roll.value, dp),

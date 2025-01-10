@@ -7,14 +7,7 @@
     <template #target>
       <button
         class="rounded mr-1 px-2 truncate"
-        :class="
-          showWarning()
-            ? 'text-orange-500'
-            : 'text-gray-500' +
-              (suggest && showSuggestWarning === 'help'
-                ? ' ring-4 ring-orange-200'
-                : '')
-        "
+        :class="showWarning() ? 'text-orange-500' : 'text-gray-500'"
       >
         <span
           ><i class="fas fa-history"></i>
@@ -128,15 +121,13 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from "vue";
+import { defineComponent, PropType, ref } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import UiRadio from "@/web/ui/UiRadio.vue";
 import UiToggle from "@/web/ui/UiToggle.vue";
 import UiPopover from "@/web/ui/Popover.vue";
-import type { ItemFilters, Suggestion } from "../filters/interfaces";
+import type { ItemFilters } from "../filters/interfaces";
 import { useLeagues } from "@/web/background/Leagues";
-import { AppConfig } from "@/web/Config";
-import { PriceCheckWidget } from "@/web/overlay/widgets";
 import { CURRENCY_RATIO } from "../filters/create-item-filters";
 
 export default defineComponent({
@@ -154,13 +145,8 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    suggest: {
-      type: Object as PropType<Suggestion | undefined>,
-      default: undefined,
-    },
   },
   setup(props) {
-    const widget = computed(() => AppConfig<PriceCheckWidget>("price-check")!);
     const leagues = useLeagues();
     const { t } = useI18nNs("online_filter");
 
@@ -176,7 +162,6 @@ export default defineComponent({
 
     return {
       t,
-      showSuggestWarning: computed(() => widget.value.showSuggestWarning),
       tradeLeagues: leagues.list,
       localCurrencyRatio,
       updateCurrencyRatio,

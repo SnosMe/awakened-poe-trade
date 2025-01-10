@@ -294,11 +294,12 @@ function removeUsedStats(ctx: FiltersCreationContext, stats: Set<string>) {
 }
 
 function isSingleAttrArmour(item: ParsedItem) {
-  return (
-    [item.armourAR, item.armourEV, item.armourES].filter(
-      (value) => value != null,
-    ).length === 1
-  );
+  return true;
+  // return (
+  //   [item.armourAR, item.armourEV, item.armourES].filter(
+  //     (value) => value != null,
+  //   ).length === 1
+  // );
 }
 
 function isPdpsImportant(item: ParsedItem) {

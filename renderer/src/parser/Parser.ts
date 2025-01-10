@@ -34,6 +34,9 @@ import {
   SCOURGE_LINE,
   IMPLICIT_LINE,
   RUNE_LINE,
+  isModInfoLine,
+  groupLinesByMod,
+  parseModInfoLine,
 } from "./advanced-mod-desc";
 import { calcPropPercentile, QUALITY_STATS } from "./calc-q20";
 
@@ -69,6 +72,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseFlask,
   parseCharmSlots,
   parseSpirit,
+  parsePriceNote,
   parseHelpText,
   parseStackSize,
   parseCorrupted,
@@ -937,50 +941,52 @@ export function parseModifiersPoe2(section: string[], item: ParsedItem) {
 
   return foundAnyMods ? "SECTION_PARSED" : "SECTION_SKIPPED";
 }
-// function parseModifiers(section: string[], item: ParsedItem) {
-//   if (
-//     item.rarity !== ItemRarity.Normal &&
-//     item.rarity !== ItemRarity.Magic &&
-//     item.rarity !== ItemRarity.Rare &&
-//     item.rarity !== ItemRarity.Unique
-//   ) {
-//     return "PARSER_SKIPPED";
-//   }
 
-//   const recognizedLine = section.find(
-//     (line) =>
-//       line.endsWith(ENCHANT_LINE) ||
-//       line.endsWith(SCOURGE_LINE) ||
-//       isModInfoLine(line),
-//   );
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function parseModifiers(section: string[], item: ParsedItem) {
+  if (
+    item.rarity !== ItemRarity.Normal &&
+    item.rarity !== ItemRarity.Magic &&
+    item.rarity !== ItemRarity.Rare &&
+    item.rarity !== ItemRarity.Unique
+  ) {
+    return "PARSER_SKIPPED";
+  }
 
-//   if (!recognizedLine) {
-//     return "SECTION_SKIPPED";
-//   }
+  const recognizedLine = section.find(
+    (line) =>
+      line.endsWith(ENCHANT_LINE) ||
+      line.endsWith(SCOURGE_LINE) ||
+      isModInfoLine(line),
+  );
 
-//   if (isModInfoLine(recognizedLine)) {
-//     for (const { modLine, statLines } of groupLinesByMod(section)) {
-//       const { modType, lines } = parseModType(statLines);
-//       const modInfo = parseModInfoLine(modLine, modType);
-//       parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
+  if (!recognizedLine) {
+    return "SECTION_SKIPPED";
+  }
 
-//       if (modType === ModifierType.Veiled) {
-//         item.isVeiled = true;
-//       }
-//     }
-//   } else {
-//     const { lines } = parseModType(section);
-//     const modInfo: ModifierInfo = {
-//       type: recognizedLine.endsWith(ENCHANT_LINE)
-//         ? ModifierType.Enchant
-//         : ModifierType.Scourge,
-//       tags: [],
-//     };
-//     parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
-//   }
+  if (isModInfoLine(recognizedLine)) {
+    for (const { modLine, statLines } of groupLinesByMod(section)) {
+      const { modType, lines } = parseModType(statLines);
+      const modInfo = parseModInfoLine(modLine, modType);
+      parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
 
-//   return "SECTION_PARSED";
-// }
+      if (modType === ModifierType.Veiled) {
+        item.isVeiled = true;
+      }
+    }
+  } else {
+    const { lines } = parseModType(section);
+    const modInfo: ModifierInfo = {
+      type: recognizedLine.endsWith(ENCHANT_LINE)
+        ? ModifierType.Enchant
+        : ModifierType.Scourge,
+      tags: [],
+    };
+    parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
+  }
+
+  return "SECTION_PARSED";
+}
 
 function applyRuneSockets(item: ParsedItem) {
   // If we have any rune sockets
@@ -1080,6 +1086,19 @@ function parseSpirit(section: string[], item: ParsedItem) {
 
   for (const line of section) {
     if (line.startsWith(_$.BASE_SPIRIT)) {
+      isParsed = "SECTION_PARSED";
+      break;
+    }
+  }
+
+  return isParsed;
+}
+
+function parsePriceNote(section: string[], item: ParsedItem) {
+  let isParsed: SectionParseResult = "SECTION_SKIPPED";
+
+  for (const line of section) {
+    if (line.startsWith(_$.PRICE_NOTE)) {
       isParsed = "SECTION_PARSED";
       break;
     }
@@ -1278,11 +1297,12 @@ function parseMirroredTablet(section: string[], item: ParsedItem) {
   if (section.length < 8) return "SECTION_SKIPPED";
 
   for (const line of section) {
-    const found = tryParseTranslation(
+    const foundAndTier = tryParseTranslation(
       { string: line, unscalable: true },
       ModifierType.Pseudo,
     );
-    if (found) {
+    if (foundAndTier) {
+      const { stat: found } = foundAndTier;
       item.newMods.push({
         info: { tags: [], type: ModifierType.Pseudo },
         stats: [found],
@@ -1358,9 +1378,18 @@ function parseStatsFromMod(
   const statIterator = linesToStatStrings(lines);
   let stat = statIterator.next();
   while (!stat.done) {
-    const parsedStat = tryParseTranslation(stat.value, modifier.info.type);
-    if (parsedStat) {
+    const parsedStatAndTier = tryParseTranslation(
+      stat.value,
+      modifier.info.type,
+      item.category,
+      item.rarity,
+    );
+    if (parsedStatAndTier) {
+      const { stat: parsedStat, tier } = parsedStatAndTier;
       modifier.stats.push(parsedStat);
+      if (tier) {
+        modifier.info.tier = tier;
+      }
       stat = statIterator.next(true);
     } else {
       stat = statIterator.next(false);

@@ -5,7 +5,7 @@
         @click="open(false)"
         class="bg-gray-700 text-gray-400 rounded-l px-2"
       >
-        {{ t("Trade") }}
+        {{ t(text) }}
       </button>
       <button
         @click="open(true)"
@@ -19,7 +19,7 @@
       @click="open(true)"
       class="bg-gray-700 text-gray-400 rounded px-2"
     >
-      {{ t("Trade") }} <i class="fas fa-external-link-alt text-xs" />
+      {{ t(text) }} <i class="fas fa-external-link-alt text-xs" />
     </button>
   </div>
 </template>
@@ -36,6 +36,10 @@ export default defineComponent({
     getLink: {
       type: Function as PropType<() => string>,
       required: true,
+    },
+    text: {
+      type: String,
+      default: "Trade",
     },
   },
   setup(props) {

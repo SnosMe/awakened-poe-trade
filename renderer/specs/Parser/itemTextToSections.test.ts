@@ -1,7 +1,7 @@
 // itemTextToSections.test.ts
 import { __testExports } from "@/parser/Parser";
-import { beforeEach, describe } from "node:test";
-import { expect, test, vi } from "vitest";
+import { describe } from "node:test";
+import { expect, test } from "vitest";
 
 describe("itemTextToSections", () => {
   test("empty string should not throw", () => {

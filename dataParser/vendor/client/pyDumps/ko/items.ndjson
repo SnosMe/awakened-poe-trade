@@ -3032,13 +3032,14 @@
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "분할의 대도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "아치형 대도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
@@ -3047,7 +3048,6 @@
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓은날 대검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}

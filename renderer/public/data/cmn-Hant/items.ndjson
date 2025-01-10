@@ -3007,8 +3007,8 @@
 {"name": "力抗黑暗", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "時迭鑽石"}}
 {"name": "受控的蛻變", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
 {"name": "從無到有", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
-{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "紅玉"}}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "藍玉"}}
 {"name": "英雄悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "永恆珠寶"}}
 {"name": "妄想症", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "鑽石"}}
