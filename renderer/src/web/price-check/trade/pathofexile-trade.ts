@@ -22,6 +22,7 @@ import { PSEUDO_ID_TO_TRADE_REQUEST, STAT_BY_REF } from "@/assets/data";
 import { RateLimiter } from "./RateLimiter";
 import { ModifierType } from "@/parser/modifiers";
 import { Cache } from "./Cache";
+import { filterInPseudo } from "../filters/pseudo";
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Map, "map"],
@@ -697,15 +698,21 @@ export function createTradeRequest(
 
   const qAnd = query.stats[0];
   for (const stat of stats) {
+    let overrideDisabled = false;
+    if (weightGroups && filterInPseudo(stat)) {
+      overrideDisabled = true;
+    }
     if (stat.tradeId[0].startsWith("pseudo.")) {
       query.stats.push(pseudoPseudoToQuery(stat.tradeId[0], stat));
     } else if (stat.tradeId.length === 1) {
-      qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat));
+      qAnd.filters.push(
+        tradeIdToQuery(stat.tradeId[0], stat, overrideDisabled),
+      );
     } else {
       query.stats.push({
         type: "count",
         value: { min: 1 },
-        disabled: stat.disabled,
+        disabled: stat.disabled || overrideDisabled,
         filters: stat.tradeId.map((id) => tradeIdToQuery(id, stat)),
       });
     }
@@ -864,7 +871,11 @@ function getMinMax(roll: StatFilter["roll"]) {
   return !roll.tradeInvert ? { min: a, max: b } : { min: b, max: a };
 }
 
-function tradeIdToQuery(id: string, stat: StatFilter) {
+function tradeIdToQuery(
+  id: string,
+  stat: StatFilter,
+  overrideDisabled: boolean = false,
+) {
   // NOTE: if there will be too many overrides in the future,
   //       consider moving them to stats.ndjson
 
@@ -896,7 +907,7 @@ function tradeIdToQuery(id: string, stat: StatFilter) {
       ...getMinMax(roll),
       option: stat.option != null ? stat.option.value : undefined,
     },
-    disabled: stat.disabled,
+    disabled: stat.disabled || overrideDisabled,
   };
 }
 
