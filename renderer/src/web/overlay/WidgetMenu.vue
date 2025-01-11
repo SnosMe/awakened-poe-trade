@@ -79,10 +79,7 @@ export default defineComponent({
     const wm = inject<WidgetManager>('wm')!
 
     const widgets = computed(() => {
-      return [
-        wm.widgets.value.find(widget => widget.wmType === 'settings')!,
-        ...wm.widgets.value.filter(widget => widget.wmType !== 'settings')
-      ].filter(widget =>
+      return wm.widgets.value.filter(widget =>
         !widget.wmFlags.includes('menu::skip') &&
         (props.config.alwaysShow || (widget.wmWants === 'hide'))
       ).map((widget) => {

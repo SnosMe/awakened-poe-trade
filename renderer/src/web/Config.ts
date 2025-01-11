@@ -413,6 +413,13 @@ function upgradeConfig (_config: Config): Config {
     const settings = config.widgets.find(w => w.wmType === 'settings') as widget.Widget
     settings.wmTitle = '{icon=fa-cog}'
 
+    // make sure icon for settings comes first in the widget menu
+    config.widgets.sort((a, b) => {
+      if (a.wmType === 'settings') return -1
+      if (b.wmType === 'settings') return 1
+      return 0
+    })
+
     config.configVersion = 17
   }
 
