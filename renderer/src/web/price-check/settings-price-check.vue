@@ -99,7 +99,7 @@ import UiRadio from '@/web/ui/UiRadio.vue'
 import UiCheckbox from '@/web/ui/UiCheckbox.vue'
 import UiToggle from '@/web/ui/UiToggle.vue'
 import UiErrorBox from '@/web/ui/UiErrorBox.vue'
-import { configModelValue, configProp, findWidget } from './utils'
+import { configModelValue, configProp, findWidget } from '../settings/utils.js'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { useLeagues } from '../background/Leagues'
 

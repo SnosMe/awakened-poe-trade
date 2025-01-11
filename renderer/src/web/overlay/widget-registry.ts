@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
 import type { WidgetSpec } from './interfaces'
-import WidgetTimer from './WidgetTimer.vue'
+import WidgetTimer from '../stopwatch/WidgetTimer.vue'
 import WidgetStashSearch from '../stash-search/WidgetStashSearch.vue'
 import WidgetMenu from './WidgetMenu.vue'
 import PriceCheckWindow from '@/web/price-check/PriceCheckWindow.vue'
