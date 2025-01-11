@@ -37,6 +37,12 @@ export interface DropEntry {
   items: string[]
 }
 
+export interface DisenchantUniqueItem {
+  name: string
+  baseType: string
+  dustAmount: number
+}
+
 export interface BaseType {
   name: string
   refName: string
