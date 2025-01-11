@@ -323,7 +323,8 @@
     "auto_search": "按下時自動搜尋",
     "select_stock": "始終選擇“庫存”過濾器",
     "show_prediction": "顯示價格預測",
-    "remember_currency": "記住買方貨幣過濾器"
+    "remember_currency": "記住買方貨幣過濾器",
+    "default_all_selected": "Default all filters to enabled"
   },
   "poe2_new": {
     "beta_warning": "這是 POE2 的測試版，某些功能可能無法正常運作。",

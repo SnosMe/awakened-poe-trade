@@ -3,6 +3,8 @@
     class="bg-gray-800 text-gray-200 border-gray-900 border-4 flex flex-col"
     style="min-width: 20rem; max-width: min(100vw - var(--game-panel), 30rem)"
   >
+    <ConversionWarningBanner />
+
     <div class="bg-gray-900 py-1 px-4 text-center">{{ itemName }}</div>
     <div class="flex gap-1 py-1 bg-gray-900 items-center">
       <button class="btn flex-1" @click="openWiki">wiki</button>
@@ -33,6 +35,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import type { ParsedItem } from "@/parser";
 import * as actions from "./hotkeyable-actions";
+import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 const props = defineProps<{
   item: ParsedItem;

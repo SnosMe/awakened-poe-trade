@@ -22,6 +22,7 @@ export function createPresets(
     searchStatRange: number;
     useEn: boolean;
     usePseudo: boolean;
+    defaultAllSelected: boolean;
   },
 ): { presets: FilterPreset[]; active: string } {
   if (item.info.refName === "Expedition Logbook") {
@@ -32,7 +33,11 @@ export function createPresets(
         filters: createFilters(item, { ...opts, exact: true }),
         stats: createExactStatFilters(item, sumStatsByModType(area), opts),
         runeFilters: createRuneFilters(item, item.runeSockets, opts),
-        weightFilters: createResistanceWeightFilter(item, sumStatsByModType(area), opts)
+        weightFilters: createResistanceWeightFilter(
+          item,
+          sumStatsByModType(area),
+          opts,
+        ),
       })),
     };
   }
@@ -62,7 +67,11 @@ export function createPresets(
           filters: createFilters(item, { ...opts, exact: true }),
           stats: createExactStatFilters(item, item.statsByType, opts),
           runeFilters: createRuneFilters(item, item.runeSockets, opts),
-          weightFilters: createResistanceWeightFilter(item, item.statsByType, opts)
+          weightFilters: createResistanceWeightFilter(
+            item,
+            item.statsByType,
+            opts,
+          ),
         },
       ],
     };
@@ -74,7 +83,7 @@ export function createPresets(
     filters: createFilters(item, { ...opts, exact: false }),
     stats: initUiModFilters(item, opts),
     runeFilters: createRuneFilters(item, item.runeSockets, opts),
-    weightFilters: initWeightFilters(item, opts)
+    weightFilters: initWeightFilters(item, opts),
   };
 
   const likelyFinishedItem =
@@ -104,7 +113,7 @@ export function createPresets(
     filters: createFilters(item, { ...opts, exact: true }),
     stats: createExactStatFilters(item, item.statsByType, opts),
     runeFilters: createRuneFilters(item, item.runeSockets, opts),
-    weightFilters: createResistanceWeightFilter(item, item.statsByType, opts)
+    weightFilters: createResistanceWeightFilter(item, item.statsByType, opts),
   };
 
   return {

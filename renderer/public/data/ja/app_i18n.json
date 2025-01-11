@@ -323,7 +323,8 @@
     "auto_search": "押すと自動検索を実行",
     "select_stock": "常に\"在庫\"フィルターを選択",
     "show_prediction": "価格予測を表示",
-    "remember_currency": "バイアウト価格の通貨フィルターを記憶"
+    "remember_currency": "バイアウト価格の通貨フィルターを記憶",
+    "default_all_selected": "Default all filters to enabled"
   },
   "poe2_new": {
     "beta_warning": "これはPOE2のベータ版です、期待通りに動作しないことがあります。",

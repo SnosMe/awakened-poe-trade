@@ -202,6 +202,7 @@ export default defineComponent({
           usePseudo:
             widget.value.usePseudo &&
             ["en", "ru", "ko", "cmn-Hant"].includes(lang.value),
+          defaultAllSelected: widget.value.defaultAllSelected,
         });
 
         if (

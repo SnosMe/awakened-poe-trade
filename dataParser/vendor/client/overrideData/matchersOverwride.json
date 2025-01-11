@@ -1,0 +1,338 @@
+{
+  "copy-me-default": {
+    "en": [
+      {
+        "string": ""
+      }
+    ],
+    "ja": [
+      {
+        "string": ""
+      }
+    ],
+    "es": [
+      {
+        "string": ""
+      }
+    ],
+    "cmn-Hant": [
+      {
+        "string": ""
+      }
+    ],
+    "de": [
+      {
+        "string": ""
+      }
+    ],
+    "ru": [
+      {
+        "string": ""
+      }
+    ],
+    "th": [
+      {
+        "string": ""
+      }
+    ],
+    "fr": [
+      {
+        "string": ""
+      }
+    ],
+    "pt": [
+      {
+        "string": ""
+      }
+    ],
+    "ko": [
+      {
+        "string": ""
+      }
+    ]
+  },
+  "Controlled Metamorphosis": {
+    "en": [
+      {
+        "string": "Only affects Passives in Small Ring"
+      },
+      {
+        "string": "Only affects Passives in Medium-Small Ring"
+      },
+      {
+        "string": "Only affects Passives in Medium Ring"
+      },
+      {
+        "string": "Only affects Passives in Medium-Large Ring"
+      },
+      {
+        "string": "Only affects Passives in Large Ring"
+      },
+      {
+        "string": "Only affects Passives in Very Large Ring"
+      },
+      {
+        "string": "Only affects Passives in Massive Ring"
+      }
+    ],
+    "ja": [
+      {
+        "string": "小型リング内のパッシブにのみ影響する"
+      },
+      {
+        "string": "中小型リング内のパッシブにのみ影響する"
+      },
+      {
+        "string": "中型リング内のパッシブにのみ影響する"
+      },
+      {
+        "string": "中大型リング内のパッシブにのみ影響する"
+      },
+      {
+        "string": "大型リング内のパッシブにのみ影響する"
+      },
+      {
+        "string": "特大リング内のパッシブにのみ影響する"
+      },
+      {
+        "string": "巨大リング内のパッシブにのみ影響する"
+      }
+    ],
+    "es": [
+      {
+        "string": "Solo afecta a las pasivas en un anillo pequeño"
+      },
+      {
+        "string": "Solo afecta a las pasivas en un anillo mediano-pequeño"
+      },
+      {
+        "string": "Solo afecta a las pasivas en un anillo mediano"
+      },
+      {
+        "string": "Solo afecta a las pasivas en un anillo mediano-grande"
+      },
+      {
+        "string": "Solo afecta a las pasivas en un anillo grande"
+      },
+      {
+        "string": "Solo afecta a las pasivas en un anillo muy grande"
+      },
+      {
+        "string": "Solo afecta a las pasivas en un anillo enorme"
+      }
+    ],
+    "cmn-Hant": [
+      {
+        "string": "只會影響小範圍內的天賦"
+      },
+      {
+        "string": "只會影響中至小範圍內的天賦"
+      },
+      {
+        "string": "只會影響中範圍內的天賦"
+      },
+      {
+        "string": "只會影響中至大範圍內的天賦"
+      },
+      {
+        "string": "只會影響大範圍內的天賦"
+      },
+      {
+        "string": "只會影響極大範圍內的天賦"
+      },
+      {
+        "string": "只會影響巨大範圍內的天賦"
+      }
+    ],
+    "de": [
+      {
+        "string": "Beeinflusst nur Passive in kleinem Ring"
+      },
+      {
+        "string": "Beeinflusst nur Passive in mittlerem-kleinem Ring"
+      },
+      {
+        "string": "Beeinflusst nur Passive in mittlerem Ring"
+      },
+      {
+        "string": "Beeinflusst nur Passive in mittlerem-großem Ring"
+      },
+      {
+        "string": "Beeinflusst nur Passive in großem Ring"
+      },
+      {
+        "string": "Beeinflusst nur Passive in sehr großem Ring"
+      },
+      {
+        "string": "Beeinflusst nur Passive in massivem Ring"
+      }
+    ],
+    "ru": [
+      {
+        "string": "Влияет только на пассивные умения внутри малого кольца"
+      },
+      {
+        "string": "Влияет только на пассивные умения внутри средне-малого кольца"
+      },
+      {
+        "string": "Влияет только на пассивные умения внутри среднего кольца"
+      },
+      {
+        "string": "Влияет только на пассивные умения внутри средне-большого кольца"
+      },
+      {
+        "string": "Влияет только на пассивные умения внутри большого кольца"
+      },
+      {
+        "string": "Влияет только на пассивные умения внутри очень большого кольца"
+      },
+      {
+        "string": "Влияет только на пассивные умения внутри огромного кольца"
+      }
+    ],
+    "th": [
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด เล็ก เท่านั้น"
+      },
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด กลาง-เล็ก เท่านั้น"
+      },
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด กลาง เท่านั้น"
+      },
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด กลาง-ใหญ่ เท่านั้น"
+      },
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด ใหญ่ เท่านั้น"
+      },
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด ใหญ่มาก เท่านั้น"
+      },
+      {
+        "string": "ส่งผลต่อพาสซีฟในวงแหวนขนาด มหึมา เท่านั้น"
+      }
+    ],
+    "fr": [
+      {
+        "string": "Affecte uniquement les Talents situés dans un petit anneau"
+      },
+      {
+        "string": "Affecte uniquement les Talents situés dans un anneau légèrement moyen"
+      },
+      {
+        "string": "Affecte uniquement les Talents situés dans un anneau moyen"
+      },
+      {
+        "string": "Affecte uniquement les Talents situés dans un anneau grandement moyen"
+      },
+      {
+        "string": "Affecte uniquement les Talents situés dans un grand anneau"
+      },
+      {
+        "string": "Affecte uniquement les Talents situés dans un très grand anneau"
+      },
+      {
+        "string": "Affecte uniquement les Talents situés dans un anneau gigantesque"
+      }
+    ],
+    "pt": [
+      {
+        "string": "Só afeta as Passivas em um Círculo Pequeno"
+      },
+      {
+        "string": "Só afeta as Passivas em um Círculo Médio-Pequeno"
+      },
+      {
+        "string": "Só afeta as Passivas em um Círculo Médio"
+      },
+      {
+        "string": "Só afeta as Passivas em um Círculo Médio"
+      },
+      {
+        "string": "Só afeta as Passivas em um Círculo Grande"
+      },
+      {
+        "string": "Só afeta as Passivas em um Círculo Muito Grande"
+      },
+      {
+        "string": "Só afeta as Passivas em um Círculo Massivo"
+      }
+    ],
+    "ko": [
+      {
+        "string": "좁은 반경의 패시브 스킬에만 영향을 미침"
+      },
+      {
+        "string": "중간 반경-좁은 반경의 패시브 스킬에만 영향을 미침"
+      },
+      {
+        "string": "중간 반경의 패시브 스킬에만 영향을 미침"
+      },
+      {
+        "string": "중간 반경-넓은 반경의 패시브 스킬에만 영향을 미침"
+      },
+      {
+        "string": "넓은 반경의 패시브 스킬에만 영향을 미침"
+      },
+      {
+        "string": "아주 넓은 반경의 패시브 스킬에만 영향을 미침"
+      },
+      {
+        "string": "거대한 반경의 패시브 스킬에만 영향을 미침"
+      }
+    ]
+  },
+  "Charm Slots": {
+    "en": [
+      {
+        "string": "# Charm Slots"
+      }
+    ],
+    "ja": [
+      {
+        "string": "チャームスロット #"
+      }
+    ],
+    "es": [
+      {
+        "string": "# espacios para viales"
+      }
+    ],
+    "cmn-Hant": [
+      {
+        "string": "# 護符欄位"
+      }
+    ],
+    "de": [
+      {
+        "string": "# Phiolen-Plätze"
+      }
+    ],
+    "ru": [
+      {
+        "string": "# ячейки для оберегов"
+      }
+    ],
+    "th": [
+      {
+        "string": "ช่องใส่ของขลัง #"
+      }
+    ],
+    "fr": [
+      {
+        "string": "# Emplacements de Charme"
+      }
+    ],
+    "pt": [
+      {
+        "string": "# Espaços para Patuás"
+      }
+    ],
+    "ko": [
+      {
+        "string": "호신부 슬롯 #개"
+      }
+    ]
+  }
+}

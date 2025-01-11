@@ -3,6 +3,8 @@
     class="bg-gray-800 text-gray-200 border-gray-900 border-4"
     style="min-width: 20rem; max-width: min(100vw - var(--game-panel), 30rem)"
   >
+    <ConversionWarningBanner />
+
     <div class="bg-gray-900 py-1 px-8 flex items-baseline gap-2">
       <div class="flex-1 text-center">{{ mapName }}</div>
       <div class="ml-8 text-gray-400">{{ t("map_check.profile") }}</div>
@@ -56,6 +58,7 @@ import { MapCheckConfig } from "./common.js";
 
 import MapStatButton from "./MapStatButton.vue";
 import FullscreenImage from "@/web/ui/FullscreenImage.vue";
+import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 const props = defineProps<{
   item: ParsedItem;

@@ -79,6 +79,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseFoil,
   parseInfluence,
   parseMap,
+  parseWaystone,
   parseSockets,
   parseRuneSockets,
   parseHeistBlueprint,
@@ -256,6 +257,14 @@ function findInDatabase(item: ParserState) {
 function parseMap(section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.MAP_TIER)) {
     item.mapTier = Number(section[0].slice(_$.MAP_TIER.length));
+    return "SECTION_PARSED";
+  }
+  return "SECTION_SKIPPED";
+}
+
+function parseWaystone(section: string[], item: ParsedItem) {
+  if (section[0].startsWith(_$.WAYSTONE_TIER)) {
+    item.mapTier = Number(section[0].slice(_$.WAYSTONE_TIER.length));
     return "SECTION_PARSED";
   }
   return "SECTION_SKIPPED";
@@ -1111,7 +1120,9 @@ function parseHelpText(section: string[], item: ParsedItem) {
   if (
     item.category !== ItemCategory.Quiver &&
     item.category !== ItemCategory.Flask &&
-    item.category !== ItemCategory.Charm
+    item.category !== ItemCategory.Charm &&
+    item.category !== ItemCategory.Waystone &&
+    item.category !== ItemCategory.Map
   )
     return "PARSER_SKIPPED";
 
@@ -1119,7 +1130,8 @@ function parseHelpText(section: string[], item: ParsedItem) {
     if (
       line.startsWith(_$.QUIVER_HELP_TEXT) ||
       line.startsWith(_$.FLASK_HELP_TEXT) ||
-      line.startsWith(_$.CHARM_HELP_TEXT)
+      line.startsWith(_$.CHARM_HELP_TEXT) ||
+      line.startsWith(_$.WAYSTONE_HELP)
     ) {
       return "SECTION_PARSED";
     }
@@ -1381,8 +1393,7 @@ function parseStatsFromMod(
     const parsedStatAndTier = tryParseTranslation(
       stat.value,
       modifier.info.type,
-      item.category,
-      item.rarity,
+      item,
     );
     if (parsedStatAndTier) {
       const { stat: parsedStat, tier } = parsedStatAndTier;

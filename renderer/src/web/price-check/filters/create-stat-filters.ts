@@ -112,7 +112,7 @@ export function createResistanceWeightFilter(
 export function createExactStatFilters(
   item: ParsedItem,
   statsByType: StatCalculated[],
-  opts: { searchStatRange: number },
+  opts: { searchStatRange: number; defaultAllSelected: boolean },
 ): StatFilter[] {
   if (item.mapBlighted || item.category === ItemCategory.Invitation) return [];
   if (
@@ -206,6 +206,9 @@ export function createExactStatFilters(
   ) {
     enableAllFilters(ctx.filters);
   }
+  if (opts.defaultAllSelected) {
+    enableAllFilters(ctx.filters);
+  }
 
   return ctx.filters;
 }
@@ -215,6 +218,7 @@ export function initUiModFilters(
   opts: {
     searchStatRange: number;
     usePseudo: boolean;
+    defaultAllSelected: boolean;
   },
 ): StatFilter[] {
   const ctx: FiltersCreationContext = {
@@ -270,6 +274,10 @@ export function initUiModFilters(
   }
 
   finalFilterTweaks(ctx);
+
+  if (opts.defaultAllSelected) {
+    enableAllFilters(ctx.filters);
+  }
 
   return ctx.filters;
 }
@@ -496,12 +504,11 @@ function hideNotVariableStat(filter: StatFilter, item: ParsedItem) {
 
   if (!filter.roll) {
     filter.hidden = "filters.hide_const_roll";
+  } else if (!filter.roll.bounds && item.rarity === ItemRarity.Unique) {
+    filter.roll.min = undefined;
+    filter.roll.max = undefined;
+    filter.hidden = "filters.hide_const_roll";
   }
-  // else if (!filter.roll.bounds) {
-  //   filter.roll.min = undefined;
-  //   filter.roll.max = undefined;
-  //   filter.hidden = "filters.hide_const_roll";
-  // }
 }
 
 function filterFillMinMax(
@@ -588,14 +595,13 @@ function finalFilterTweaks(ctx: FiltersCreationContext) {
   }
 
   if (item.rarity === ItemRarity.Unique) {
-    // const countVisible = ctx.filters.reduce(
-    //   (cnt, filter) => (filter.hidden ? cnt : cnt + 1),
-    //   0,
-    // );
-    // if (countVisible <= 3) {
-    //   enableAllFilters(ctx.filters);
-    // }
-    enableAllFilters(ctx.filters);
+    const countVisible = ctx.filters.reduce(
+      (cnt, filter) => (filter.hidden ? cnt : cnt + 1),
+      0,
+    );
+    if (countVisible <= 3) {
+      enableAllFilters(ctx.filters);
+    }
   }
 }
 

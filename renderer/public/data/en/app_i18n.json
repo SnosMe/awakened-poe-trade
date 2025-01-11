@@ -339,7 +339,8 @@
     "show_suggest_warning": "Price check wrong warning",
     "show_suggest_warning_none": "Disable",
     "show_suggest_warning_warn": "Show alert",
-    "show_suggest_warning_help": "Show alert and help"
+    "show_suggest_warning_help": "Show alert and help",
+    "default_all_selected": "Default all filters to enabled"
   },
   "poe2_new": {
     "beta_warning": "This is in BETA for POE2, things will not work always as expected.",

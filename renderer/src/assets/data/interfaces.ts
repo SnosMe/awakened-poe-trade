@@ -47,12 +47,19 @@ export interface Stat {
     };
   };
   tiers?: {
-    [key: string]: StatTierMod[] | { [type: string]: StatTierMod };
+    [key: string]:
+      | StatTierMod[]
+      | { [type: string]: StatTierMod }
+      | {
+          [type: string]: number[][];
+        };
     explicit: StatTierMod[];
     implicit: {
       [type: string]: StatTierMod;
     };
-    unique: StatTierMod[];
+    unique: {
+      [type: string]: number[][];
+    };
     corruption: StatTierMod[];
     crafted: StatTierMod[];
     jewel: StatTierMod[];
@@ -224,6 +231,8 @@ export interface TranslationDict {
   LIGHTNING_DAMAGE: string;
   COLD_DAMAGE: string;
   PRICE_NOTE: string;
+  WAYSTONE_TIER: string;
+  WAYSTONE_HELP: string;
 }
 
 export interface Filter {

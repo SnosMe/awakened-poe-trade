@@ -111,5 +111,7 @@ export default {
   FIRE_DAMAGE: '火焰傷害: ',
   LIGHTNING_DAMAGE: '閃電傷害: ',
   COLD_DAMAGE: '冰冷傷害: ',
-  PRICE_NOTE: '備註：'
+  PRICE_NOTE: '備註：',
+  WAYSTONE_TIER: '地圖鑰匙 階級: ',
+  WAYSTONE_HELP: '可用於地圖裝置以進入地圖'
 }

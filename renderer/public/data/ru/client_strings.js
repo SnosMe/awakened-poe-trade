@@ -145,5 +145,7 @@ export default {
   FIRE_DAMAGE: 'Урон от огня:',
   LIGHTNING_DAMAGE: 'Урон от молнии:',
   COLD_DAMAGE: 'Урон от холода:',
-  PRICE_NOTE: 'Примечание: '
+  PRICE_NOTE: 'Примечание: ',
+  WAYSTONE_TIER: 'Путевой камень Ур.:',
+  WAYSTONE_HELP: 'Можно использовать в Машине картоходца,'
 }

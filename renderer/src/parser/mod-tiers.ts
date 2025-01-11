@@ -12,11 +12,11 @@ function mapItemCategoryToKeys(itemCategory: ItemCategory): string[] {
     [ItemCategory.Map]: [""],
     [ItemCategory.CapturedBeast]: [""],
     [ItemCategory.MetamorphSample]: [""],
-    [ItemCategory.Helmet]: ["helmet"],
-    [ItemCategory.BodyArmour]: ["body_armour"],
-    [ItemCategory.Gloves]: ["gloves"],
-    [ItemCategory.Boots]: ["boots"],
-    [ItemCategory.Shield]: ["shield"],
+    [ItemCategory.Helmet]: ["helmet", "armour"],
+    [ItemCategory.BodyArmour]: ["body_armour", "armour"],
+    [ItemCategory.Gloves]: ["gloves", "armour"],
+    [ItemCategory.Boots]: ["boots", "armour"],
+    [ItemCategory.Shield]: ["shield", "armour"],
     [ItemCategory.Amulet]: ["amulet"],
     [ItemCategory.Belt]: ["belt"],
     [ItemCategory.Flask]: ["flask"],
@@ -56,7 +56,8 @@ function mapItemCategoryToKeys(itemCategory: ItemCategory): string[] {
     [ItemCategory.SkillGem]: [""],
     [ItemCategory.SupportGem]: [""],
     [ItemCategory.MetaGem]: [""],
-    [ItemCategory.Focus]: ["focus"],
+    [ItemCategory.Focus]: ["focus", "armour"],
+    [ItemCategory.Waystone]: [""],
   };
 
   return categoryMap[itemCategory] || [itemCategory.toLowerCase()];

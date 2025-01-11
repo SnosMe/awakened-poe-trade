@@ -1,0 +1,4434 @@
+{
+    "Adds # to # Physical Damage": {
+        "Redbeak": [
+            [
+                3,
+                5
+            ],
+            [
+                7,
+                10
+            ]
+        ],
+        "Bluetongue": [
+            [
+                4,
+                6
+            ],
+            [
+                7,
+                10
+            ]
+        ],
+        "Brynhand's Mark": [
+            [
+                3,
+                4
+            ],
+            [
+                6,
+                8
+            ]
+        ],
+        "Wylund's Stake": [
+            [
+                2,
+                3
+            ],
+            [
+                4,
+                5
+            ]
+        ],
+        "Frostbreath": [
+            [
+                4,
+                6
+            ],
+            [
+                8,
+                12
+            ]
+        ],
+        "Trenchtimbre": [
+            [
+                10,
+                12
+            ],
+            [
+                18,
+                22
+            ]
+        ],
+        "Trephina": [
+            [
+                7,
+                10
+            ],
+            [
+                12,
+                18
+            ]
+        ],
+        "Brain Rattler": [
+            [
+                10,
+                12
+            ],
+            [
+                18,
+                22
+            ]
+        ],
+        "Splinter of Loratta": [
+            [
+                3,
+                5
+            ],
+            [
+                8,
+                10
+            ]
+        ],
+        "The Blood Thorn": [
+            [
+                3,
+                5
+            ],
+            [
+                9,
+                11
+            ]
+        ]
+    },
+    "#% increased Physical Damage": {
+        "Hoghunt": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Hrimnor's Hymn": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Chober Chaber": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Quecholli": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Nazir's Judgement": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Splinterheart": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Rampart Raptor": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "+# to Accuracy Rating": {
+        "Brynhand's Mark": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Olrovasara": [
+            [
+                300,
+                400
+            ]
+        ],
+        "Splinter of Loratta": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Nazir's Judgement": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Splinterheart": [
+            [
+                50,
+                70
+            ]
+        ],
+        "Corona of the Red Sun": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Myris Uxor": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                30
+            ]
+        ],
+        "The Smiling Knight": [
+            [
+                50,
+                100
+            ]
+        ],
+        "The Vile Knight": [
+            [
+                75,
+                125
+            ]
+        ],
+        "Assailum": [
+            [
+                200,
+                400
+            ]
+        ],
+        "Idle Hands": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Death Rush": [
+            [
+                75,
+                125
+            ]
+        ],
+        "Thief's Torment": [
+            [
+                120,
+                160
+            ]
+        ]
+    },
+    "+# to Strength": {
+        "Brynhand's Mark": [
+            [
+                5,
+                10
+            ]
+        ],
+        "The Blood Thorn": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Blackbraid": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Wandering Reliquary": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Tetzlapokal's Desire": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Icetomb": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Horns of Bynden": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Greymake": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                5
+            ]
+        ],
+        "Mask of the Sanguimancer": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Corpsewade": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Wondertrap": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Dionadair": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Wulfsbane": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Feathered Fortress": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Revered Resin": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Carnage Heart": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Xoph's Blood": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Defiance of Destiny": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Polcirkeln": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Meginord's Girdle": [
+            [
+                40,
+                50
+            ]
+        ],
+        "Infernoclasp": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Headhunter": [
+            [
+                20,
+                40
+            ]
+        ],
+        "Zerphi's Genesis": [
+            [
+                10,
+                30
+            ]
+        ]
+    },
+    "Adds # to # Fire Damage": {
+        "Wylund's Stake": [
+            [
+                2,
+                3
+            ],
+            [
+                4,
+                5
+            ]
+        ],
+        "Hrimnor's Hymn": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Solar Lance": [
+            [
+                10,
+                15
+            ],
+            [
+                25,
+                30
+            ]
+        ],
+        "The Sentry": [
+            [
+                8,
+                12
+            ],
+            [
+                16,
+                20
+            ]
+        ]
+    },
+    "Adds # to # Cold Damage": {
+        "Frostbreath": [
+            [
+                4,
+                6
+            ],
+            [
+                8,
+                12
+            ]
+        ],
+        "Seeing Stars": [
+            [
+                9,
+                12
+            ],
+            [
+                18,
+                22
+            ]
+        ],
+        "Winter's Bite": [
+            [
+                8,
+                10
+            ],
+            [
+                15,
+                18
+            ]
+        ],
+        "Mist Whisper": [
+            [
+                4,
+                6
+            ],
+            [
+                9,
+                12
+            ]
+        ]
+    },
+    "Adds # to # Lightning Damage": {
+        "Seeing Stars": [
+            [
+                1,
+                1
+            ],
+            [
+                30,
+                35
+            ]
+        ],
+        "Olrovasara": [
+            [
+                1,
+                1
+            ],
+            [
+                60,
+                80
+            ]
+        ],
+        "Brain Rattler": [
+            [
+                1,
+                1
+            ],
+            [
+                36,
+                42
+            ]
+        ],
+        "Skysliver": [
+            [
+                1,
+                1
+            ],
+            [
+                60,
+                80
+            ]
+        ]
+    },
+    "Hits Break # Armour": {
+        "Wylund's Stake": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% increased Attack Speed": {
+        "Trenchtimbre": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Seeing Stars": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Olrovasara": [
+            [
+                5,
+                30
+            ]
+        ],
+        "Trephina": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Brain Rattler": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Skysliver": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Matsya": [
+            [
+                15,
+                20
+            ]
+        ],
+        "Rampart Raptor": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Jarngreipr": [
+            [
+                4,
+                8
+            ]
+        ],
+        "Aerisvane's Wings": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Plaguefinger": [
+            [
+                4,
+                6
+            ]
+        ],
+        "Asphyxia's Wrath": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "+# to Level of all Minion Skills": {
+        "Trenchtimbre": [
+            [
+                1,
+                3
+            ]
+        ]
+    },
+    "Causes #% increased Stun Buildup": {
+        "Hrimnor's Hymn": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Trephina": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Gain # Life per Enemy Killed": {
+        "Hrimnor's Hymn": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Sanguine Diviner": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Dusk Vigil": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Death's Harp": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Deathblow": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Gravebind": [
+            [
+                7,
+                10
+            ]
+        ]
+    },
+    "+# to maximum Mana": {
+        "Chober Chaber": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Lifesprig": [
+            [
+                10,
+                20
+            ]
+        ],
+        "The Dark Defiler": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Font of Power": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Wandering Reliquary": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Kingsguard": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Bitterbloom": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Necromantle": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Redflare Conduit": [
+            [
+                50,
+                70
+            ]
+        ],
+        "Myris Uxor": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Atziri's Disdain": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                10
+            ]
+        ],
+        "Ironride": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Leer Cast": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Glimpse of Chaos": [
+            [
+                50,
+                150
+            ]
+        ],
+        "Ghostmarch": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Alkem Eira": [
+            [
+                15,
+                30
+            ]
+        ],
+        "Serpent's Lesson": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Solus Ipse": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Blackgleam": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Ungil's Harmony": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Beacon of Azis": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Blackheart": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Glowswarm": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Seed of Cataclysm": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Polcirkeln": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Levinstone": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Perandus Seal": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Midnight Braid": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Brynabas": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "+# to all Attributes": {
+        "Quecholli": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Guiding Palm": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Veil of the Night": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Carnage Heart": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Astramentis": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Fixation of Yix": [
+            [
+                5,
+                7
+            ]
+        ],
+        "Strugglescream": [
+            [
+                5,
+                7
+            ]
+        ],
+        "Eye of Chayula": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Serpent's Egg": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Perandus Seal": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Sekhema's Resolve": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "+# to Dexterity": {
+        "Skysliver": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Quill Rain": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Foxshade": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Briskwrap": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Apron of Emiran": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Gloomform": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Wings of Caelyn": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Elevore": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Sandstorm Visage": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Greymake": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                5
+            ]
+        ],
+        "Atsak's Sight": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Maligaro's Virtuosity": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Kitoko's Current": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Hand of Wisdom and Action": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Gamblesprint": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Bushwhack": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Wondertrap": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Feathered Fortress": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Idol of Uldurn": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Surefooted Sigil": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Choir of the Storm": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Defiance of Destiny": [
+            [
+                10,
+                15
+            ]
+        ],
+        "You cannot be Chilled or Frozen": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Coward's Legacy": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Headhunter": [
+            [
+                20,
+                40
+            ]
+        ]
+    },
+    "#% increased chance to Shock": {
+        "Skysliver": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Levinstone": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "#% increased Projectile Speed": {
+        "Solar Lance": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Splinterheart": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "# to # Physical Thorns damage": {
+        "The Blood Thorn": [
+            [
+                4,
+                5
+            ],
+            [
+                8,
+                10
+            ]
+        ],
+        "Edyrn's Tusks": [
+            [
+                15,
+                20
+            ],
+            [
+                25,
+                30
+            ]
+        ],
+        "Crown of Thorns": [
+            [
+                3,
+                5
+            ],
+            [
+                6,
+                10
+            ]
+        ]
+    },
+    "+#% to Critical Hit Chance": {
+        "Matsya": [
+            [
+                3,
+                5
+            ]
+        ],
+        "Collapsing Horizon": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "#% increased Mana Regeneration Rate": {
+        "Matsya": [
+            [
+                25,
+                40
+            ]
+        ],
+        "Earthbound": [
+            [
+                20,
+                30
+            ]
+        ],
+        "The Dark Defiler": [
+            [
+                10,
+                30
+            ]
+        ],
+        "Font of Power": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Keeper of the Arc": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Crest of Ardura": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Threaded Light": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Carrion Call": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Igniferis": [
+            [
+                20,
+                30
+            ]
+        ],
+        "The Everlasting Gaze": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Ungil's Harmony": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Defiance of Destiny": [
+            [
+                25,
+                40
+            ]
+        ],
+        "Fireflower": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Serpent's Egg": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Cracklecreep": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Dream Fragments": [
+            [
+                30,
+                50
+            ]
+        ],
+        "You cannot be Chilled or Frozen": [
+            [
+                25,
+                35
+            ]
+        ],
+        "The Burrower": [
+            [
+                25,
+                35
+            ]
+        ],
+        "Call of the Brotherhood": [
+            [
+                25,
+                35
+            ]
+        ],
+        "Blackflame": [
+            [
+                15,
+                30
+            ]
+        ],
+        "Heartbound Loop": [
+            [
+                20,
+                40
+            ]
+        ]
+    },
+    "#% increased Stun Duration": {
+        "Nazir's Judgement": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "+# to Level of all Elemental Skills": {
+        "Collapsing Horizon": [
+            [
+                2,
+                4
+            ]
+        ]
+    },
+    "#% increased Spell Damage": {
+        "Sanguine Diviner": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Enezun's Charge": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Dusk Vigil": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Deathrattle": [
+            [
+                20,
+                40
+            ]
+        ],
+        "Snakepit": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "+# to Level of all Spell Skills": {
+        "Lifesprig": [
+            [
+                1,
+                3
+            ]
+        ]
+    },
+    "#% increased Cast Speed": {
+        "Lifesprig": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Taryn's Shiver": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Earthbound": [
+            [
+                10,
+                20
+            ]
+        ],
+        "The Searing Touch": [
+            [
+                10,
+                20
+            ]
+        ],
+        "The Burden of Shadows": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Demon Stitcher": [
+            [
+                6,
+                12
+            ]
+        ],
+        "Snakepit": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Heartbound Loop": [
+            [
+                7,
+                10
+            ]
+        ]
+    },
+    "#% increased Critical Hit Chance for Spells": {
+        "Enezun's Charge": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Mask of the Sanguimancer": [
+            [
+                20,
+                40
+            ]
+        ],
+        "Seed of Cataclysm": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Gain # Mana per Enemy Killed": {
+        "Enezun's Charge": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Death's Harp": [
+            [
+                12,
+                18
+            ]
+        ],
+        "Deathblow": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Gravebind": [
+            [
+                4,
+                6
+            ]
+        ],
+        "Blessed Bonds": [
+            [
+                25,
+                35
+            ]
+        ],
+        "Blackheart": [
+            [
+                1,
+                10
+            ]
+        ]
+    },
+    "#% increased Cold Damage": {
+        "Taryn's Shiver": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Polcirkeln": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Lightning Damage": {
+        "Earthbound": [
+            [
+                80,
+                120
+            ]
+        ]
+    },
+    "#% increased Fire Damage": {
+        "The Searing Touch": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Cracklecreep": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased bonuses gained from Equipped Quiver": {
+        "Widowhail": [
+            [
+                150,
+                250
+            ]
+        ]
+    },
+    "#% increased Arrow Speed": {
+        "Quill Rain": [
+            [
+                50,
+                100
+            ]
+        ]
+    },
+    "+#% to Critical Damage Bonus": {
+        "Death's Harp": [
+            [
+                50,
+                70
+            ]
+        ]
+    },
+    "#% increased Freeze Buildup": {
+        "Mist Whisper": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Grip of Winter": [
+            [
+                40,
+                50
+            ]
+        ],
+        "Call of the Brotherhood": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Bolt Speed": {
+        "Rampart Raptor": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "+# to Intelligence": {
+        "The Dark Defiler": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Blackbraid": [
+            [
+                5,
+                15
+            ]
+        ],
+        "The Black Doubt": [
+            [
+                10,
+                30
+            ]
+        ],
+        "Prayers for Rain": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Icetomb": [
+            [
+                20,
+                30
+            ]
+        ],
+        "The Devouring Diadem": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Greymake": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                5
+            ]
+        ],
+        "Cornathaum": [
+            [
+                40,
+                50
+            ]
+        ],
+        "Mask of the Sanguimancer": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Atsak's Sight": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Atziri's Acuity": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Idle Hands": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Doedre's Tenure": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Aerisvane's Wings": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Blueflame Bracers": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Hand of Wisdom and Action": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Luminous Pace": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Wondertrap": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Windscream": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Powertread": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Crest of Ardura": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Deathrattle": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Ligurium Talisman": [
+            [
+                20,
+                30
+            ]
+        ],
+        "The Pandemonius": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Call of the Brotherhood": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Soul Tether": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Shavronne's Satchel": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Spirit": {
+        "Font of Power": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Gain #% of Damage as Extra Fire Damage": {
+        "Sacred Flame": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "Allies in your Presence Gain #% of Damage as Extra Fire Damage": {
+        "Sacred Flame": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "Allies in your Presence Regenerate #% of their Maximum Life per second": {
+        "Sacred Flame": [
+            [
+                2,
+                3
+            ]
+        ]
+    },
+    "Allies in your Presence deal # to # additional Attack Fire Damage": {
+        "Guiding Palm": [
+            [
+                4,
+                6
+            ],
+            [
+                7,
+                10
+            ]
+        ]
+    },
+    "+# to maximum Life": {
+        "Bramblejack": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Kingsguard": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Bristleboar": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Ashrend": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Quatl's Molt": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Necromantle": [
+            [
+                40,
+                60
+            ]
+        ],
+        "The Covenant": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Coat of Red": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Belly of the Beast": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Doryani's Prototype": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Ezomyte Peak": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Corona of the Red Sun": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                15
+            ]
+        ],
+        "Bronzebeard": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Crown of the Pale King": [
+            [
+                40,
+                80
+            ]
+        ],
+        "The Hollow Mask": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Leer Cast": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Glimpse of Chaos": [
+            [
+                50,
+                150
+            ]
+        ],
+        "Lochtonial Caress": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Demon Stitcher": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Jarngreipr": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Killjoy": [
+            [
+                30,
+                50
+            ]
+        ],
+        "The Infinite Pursuit": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Birth of Fury": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Briarpatch": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Wulfsbane": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Serpent's Lesson": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Idol of Uldurn": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Ungil's Harmony": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Revered Resin": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Surefooted Sigil": [
+            [
+                40,
+                60
+            ]
+        ],
+        "The Anvil": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Blistering Bond": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Ventor's Gamble": [
+            [
+                0,
+                80
+            ]
+        ],
+        "Ryslatha's Coil": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Headhunter": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "+# to Stun Threshold": {
+        "Bramblejack": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Blackbraid": [
+            [
+                40,
+                60
+            ]
+        ],
+        "The Brass Dome": [
+            [
+                200,
+                300
+            ]
+        ],
+        "Coat of Red": [
+            [
+                75,
+                150
+            ]
+        ],
+        "Irongrasp": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Belly of the Beast": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Legionstride": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Briarpatch": [
+            [
+                60,
+                80
+            ]
+        ],
+        "The Knight-errant": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Wulfsbane": [
+            [
+                60,
+                80
+            ]
+        ],
+        "The Wailing Wall": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Surrender": [
+            [
+                150,
+                200
+            ]
+        ],
+        "Merit of Service": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Ungil's Harmony": [
+            [
+                60,
+                100
+            ]
+        ]
+    },
+    "#% increased Armour": {
+        "Edyrn's Tusks": [
+            [
+                120,
+                160
+            ]
+        ],
+        "The Immortan": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Titanrot Cataphract": [
+            [
+                200,
+                300
+            ]
+        ],
+        "Wandering Reliquary": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Greed's Embrace": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Brass Dome": [
+            [
+                300,
+                400
+            ]
+        ],
+        "Ezomyte Peak": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Black Sun Crest": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Deidbell": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Treefingers": [
+            [
+                30,
+                60
+            ]
+        ],
+        "Atziri's Acuity": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Hateforge": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Legionstride": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Corpsewade": [
+            [
+                30,
+                50
+            ]
+        ],
+        "The Infinite Pursuit": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Trampletoe": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Dionadair": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Doomgate": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Wailing Wall": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Lycosidae": [
+            [
+                60,
+                100
+            ]
+        ],
+        "The Surrender": [
+            [
+                150,
+                200
+            ]
+        ],
+        "Svalinn": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Anvil": [
+            [
+                25,
+                50
+            ]
+        ]
+    },
+    "+#% to Fire Resistance": {
+        "The Immortan": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Greed's Embrace": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Ashrend": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Cloak of Flame": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Radiant Grief": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                5
+            ]
+        ],
+        "Painter's Servant": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Candlemaker": [
+            [
+                15,
+                30
+            ]
+        ],
+        "Blueflame Bracers": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Birth of Fury": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Feathered Fortress": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Saffell's Frame": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Rise of the Phoenix": [
+            [
+                20,
+                25
+            ]
+        ],
+        "Igniferis": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Xoph's Blood": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Cracklecreep": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Blistering Bond": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Infernoclasp": [
+            [
+                25,
+                35
+            ]
+        ]
+    },
+    "+#% to Lightning Resistance": {
+        "The Immortan": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Queen of the Fores": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Sierran Inheritance": [
+            [
+                15,
+                25
+            ]
+        ],
+        "The Dancing Mirage": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Redflare Conduit": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                5
+            ]
+        ],
+        "Ironride": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Painter's Servant": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Gamblesprint": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Thunderstep": [
+            [
+                25,
+                35
+            ]
+        ],
+        "Darkray Vectors": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Saffell's Frame": [
+            [
+                15,
+                25
+            ]
+        ],
+        "The Eternal Spark": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Choir of the Storm": [
+            [
+                20,
+                30
+            ]
+        ],
+        "The Burrower": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Call of the Brotherhood": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Levinstone": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Brynabas": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Strength": {
+        "Titanrot Cataphract": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Black Sun Crest": [
+            [
+                5,
+                15
+            ]
+        ]
+    },
+    "+#% to all Elemental Resistances": {
+        "Kingsguard": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Temporalis": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Pragmatism": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Enfolding Dawn": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Goldrim": [
+            [
+                25,
+                35
+            ]
+        ],
+        "The Three Dragons": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Skin of the Loyal": [
+            [
+                5,
+                40
+            ]
+        ],
+        "Carnage Heart": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Blackheart": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Thief's Torment": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Midnight Braid": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "#% increased Rarity of Items found": {
+        "Greed's Embrace": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Wings of Caelyn": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Horns of Bynden": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Visage of Ayah": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Atziri's Disdain": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                10
+            ]
+        ],
+        "Crown of the Victor": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Cornathaum": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Aurseize": [
+            [
+                40,
+                50
+            ]
+        ],
+        "Fireflower": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Eye of Chayula": [
+            [
+                12,
+                20
+            ]
+        ],
+        "Serpent's Egg": [
+            [
+                12,
+                20
+            ]
+        ],
+        "Thief's Torment": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Perandus Seal": [
+            [
+                6,
+                15
+            ]
+        ],
+        "Andvarius Gold Ring": [
+            [
+                50,
+                70
+            ]
+        ],
+        "Ventor's Gamble": [
+            [
+                6,
+                15
+            ]
+        ],
+        "Sekhema's Resolve": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "#% increased Stun Threshold": {
+        "Kaom's Heart": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Headhunter": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Zerphi's Genesis": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Evasion Rating": {
+        "Bristleboar": [
+            [
+                40,
+                80
+            ]
+        ],
+        "Dustbloom": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Rat Cage": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Queen of the Fores": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Gloomform": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Radiant Grief": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Elevore": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Myris Uxor": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Alpha's Howl": [
+            [
+                80,
+                100
+            ]
+        ],
+        "Grip of Winter": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Idle Hands": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Snakebite": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Maligaro's Virtuosity": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Gamblesprint": [
+            [
+                100,
+                140
+            ]
+        ],
+        "Thunderstep": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Bushwhack": [
+            [
+                50,
+                80
+            ]
+        ]
+    },
+    "+# to Evasion Rating": {
+        "Foxshade": [
+            [
+                50,
+                70
+            ]
+        ],
+        "Goldrim": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                15
+            ]
+        ],
+        "Blessed Bonds": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Death Rush": [
+            [
+                75,
+                125
+            ]
+        ]
+    },
+    "#% increased Flask Life Recovery rate": {
+        "Briskwrap": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Revered Resin": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Ryslatha's Coil": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% increased Flask Mana Recovery rate": {
+        "Briskwrap": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Glowswarm": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "+#% to Cold Resistance": {
+        "Briskwrap": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Dustbloom": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Queen of the Fores": [
+            [
+                25,
+                30
+            ]
+        ],
+        "Icetomb": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Innsmouth": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Alpha's Howl": [
+            [
+                50,
+                75
+            ]
+        ],
+        "Forbidden Gaze": [
+            [
+                25,
+                35
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                5
+            ]
+        ],
+        "Painter's Servant": [
+            [
+                5,
+                10
+            ]
+        ],
+        "Blueflame Bracers": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Feathered Fortress": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Saffell's Frame": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Asphyxia's Wrath": [
+            [
+                5,
+                10
+            ]
+        ],
+        "The Pandemonius": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Polcirkeln": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Dream Fragments": [
+            [
+                20,
+                30
+            ]
+        ],
+        "You cannot be Chilled or Frozen": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Meginord's Girdle": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "+#% to Chaos Resistance": {
+        "Quatl's Molt": [
+            [
+                17,
+                23
+            ]
+        ],
+        "Ghostwrithe": [
+            [
+                29,
+                37
+            ]
+        ],
+        "Tetzlapokal's Desire": [
+            [
+                17,
+                23
+            ]
+        ],
+        "Husk of Dreams": [
+            [
+                13,
+                17
+            ]
+        ],
+        "Innsmouth": [
+            [
+                13,
+                19
+            ]
+        ],
+        "The Devouring Diadem": [
+            [
+                13,
+                19
+            ]
+        ],
+        "Mask of the Stitched Demon": [
+            [
+                17,
+                23
+            ]
+        ],
+        "The Vertex": [
+            [
+                13,
+                17
+            ]
+        ],
+        "Snakebite": [
+            [
+                7,
+                17
+            ]
+        ],
+        "Ghostmarch": [
+            [
+                17,
+                23
+            ]
+        ],
+        "Oaksworn": [
+            [
+                17,
+                23
+            ]
+        ],
+        "Serpent's Egg": [
+            [
+                17,
+                23
+            ]
+        ],
+        "Seed of Cataclysm": [
+            [
+                13,
+                17
+            ]
+        ],
+        "Ming's Heart": [
+            [
+                7,
+                13
+            ]
+        ],
+        "Original Sin": [
+            [
+                7,
+                13
+            ]
+        ],
+        "Blackflame": [
+            [
+                7,
+                13
+            ]
+        ]
+    },
+    "# Life Regeneration per second": {
+        "Quatl's Molt": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Pariah's Embrace": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                3
+            ]
+        ],
+        "The Vile Knight": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Keeper of the Arc": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Obern's Bastion": [
+            [
+                20,
+                25
+            ]
+        ],
+        "Igniferis": [
+            [
+                2,
+                4
+            ]
+        ],
+        "Idol of Uldurn": [
+            [
+                2,
+                4
+            ]
+        ],
+        "Blackheart": [
+            [
+                3,
+                6
+            ]
+        ],
+        "Heartbound Loop": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Brynabas": [
+            [
+                7,
+                12
+            ]
+        ]
+    },
+    "#% increased Energy Shield": {
+        "Bitterbloom": [
+            [
+                50,
+                100
+            ]
+        ],
+        "The Black Doubt": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Prayers for Rain": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Tetzlapokal's Desire": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Covenant": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Devouring Diadem": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Visage of Ayah": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Forbidden Gaze": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Mask of the Stitched Demon": [
+            [
+                120,
+                160
+            ]
+        ],
+        "Candlemaker": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Kitoko's Current": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Bones of Ullr": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Windscream": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Threaded Light": [
+            [
+                50,
+                70
+            ]
+        ],
+        "The Eternal Spark": [
+            [
+                50,
+                70
+            ]
+        ]
+    },
+    "Minions gain #% of their Maximum Life as Extra Maximum Energy Shield": {
+        "Necromantle": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% reduced Ignite Duration on you": {
+        "Cloak of Flame": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "+# to maximum Energy Shield": {
+        "Temporalis": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Crown of Thorns": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Sandstorm Visage": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                10
+            ]
+        ],
+        "Demon Stitcher": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Blessed Bonds": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Wanderlust": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Deathrattle": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Carrion Call": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Ligurium Talisman": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Rondel of Fragility": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Soul Tether": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "#% of Damage taken Recouped as Life": {
+        "Temporalis": [
+            [
+                5,
+                30
+            ]
+        ]
+    },
+    "#% of Damage taken Recouped as Mana": {
+        "Temporalis": [
+            [
+                5,
+                30
+            ]
+        ]
+    },
+    "#% increased Armour and Evasion": {
+        "Coat of Red": [
+            [
+                80,
+                100
+            ]
+        ],
+        "The Barrow Dweller": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Irongrasp": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Pariah's Embrace": [
+            [
+                50,
+                80
+            ]
+        ],
+        "Belly of the Beast": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Pragmatism": [
+            [
+                200,
+                300
+            ]
+        ],
+        "Doryani's Prototype": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Perfidy": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Ironride": [
+            [
+                60,
+                80
+            ]
+        ],
+        "The Smiling Knight": [
+            [
+                30,
+                50
+            ]
+        ],
+        "The Vile Knight": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Assailum": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Aurseize": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Deathblow": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Aerisvane's Wings": [
+            [
+                50,
+                70
+            ]
+        ],
+        "The Knight-errant": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Darkray Vectors": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Obern's Bastion": [
+            [
+                150,
+                200
+            ]
+        ],
+        "Arvil's Wheel": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Merit of Service": [
+            [
+                60,
+                80
+            ]
+        ]
+    },
+    "#% chance to Avoid Physical Damage from Hits": {
+        "Perfidy": [
+            [
+                10,
+                40
+            ]
+        ]
+    },
+    "#% chance to Avoid Chaos Damage from Hits": {
+        "Perfidy": [
+            [
+                10,
+                40
+            ]
+        ]
+    },
+    "#% increased Armour and Energy Shield": {
+        "Enfolding Dawn": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Husk of Dreams": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Voll's Protector": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Couture of Crimson": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Bronzebeard": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Crown of the Pale King": [
+            [
+                50,
+                100
+            ]
+        ],
+        "Keeper of the Arc": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Gravebind": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Shackles of the Wretched": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Wake of Destruction": [
+            [
+                30,
+                60
+            ]
+        ],
+        "Alkem Eira": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Oaksworn": [
+            [
+                80,
+                120
+            ]
+        ],
+        "Crest of Ardura": [
+            [
+                60,
+                100
+            ]
+        ],
+        "Mahuxotl's Machination": [
+            [
+                333,
+                666
+            ]
+        ]
+    },
+    "#% increased Flask Charges used": {
+        "Husk of Dreams": [
+            [
+                25,
+                50
+            ]
+        ]
+    },
+    "#% reduced Bleeding Duration on you": {
+        "Couture of Crimson": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Apron of Emiran": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "#% increased Evasion and Energy Shield": {
+        "Apron of Emiran": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Sierran Inheritance": [
+            [
+                50,
+                80
+            ]
+        ],
+        "The Dancing Mirage": [
+            [
+                60,
+                100
+            ]
+        ],
+        "The Vertex": [
+            [
+                100,
+                150
+            ]
+        ],
+        "The Three Dragons": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Plaguefinger": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Killjoy": [
+            [
+                30,
+                60
+            ]
+        ],
+        "Ghostmarch": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Powertread": [
+            [
+                60,
+                80
+            ]
+        ],
+        "Beetlebite": [
+            [
+                60,
+                120
+            ]
+        ]
+    },
+    "#% faster start of Energy Shield Recharge": {
+        "Sierran Inheritance": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% increased Area of Effect": {
+        "Ezomyte Peak": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "#% increased Dexterity": {
+        "Black Sun Crest": [
+            [
+                5,
+                15
+            ]
+        ]
+    },
+    "#% increased Intelligence": {
+        "Black Sun Crest": [
+            [
+                5,
+                15
+            ]
+        ]
+    },
+    "#% increased Warcry Speed": {
+        "Deidbell": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "Warcry Skills have #% increased Area of Effect": {
+        "Deidbell": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Critical Hit Chance": {
+        "Visage of Ayah": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Erian's Cobble": [
+            [
+                0,
+                15
+            ]
+        ],
+        "The Smiling Knight": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Assailum": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Atsak's Sight": [
+            [
+                20,
+                40
+            ]
+        ],
+        "The Vertex": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Atziri's Acuity": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Maligaro's Virtuosity": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Rondel of Fragility": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "+#% to Maximum Cold Resistance": {
+        "Forbidden Gaze": [
+            [
+                3,
+                5
+            ]
+        ]
+    },
+    "#% of Damage taken bypasses Energy Shield": {
+        "Atziri's Disdain": [
+            [
+                20,
+                25
+            ]
+        ]
+    },
+    "Gain #% of Maximum Life as Extra Maximum Energy Shield": {
+        "Atziri's Disdain": [
+            [
+                25,
+                30
+            ]
+        ]
+    },
+    "+# to Armour": {
+        "Erian's Cobble": [
+            [
+                0,
+                20
+            ]
+        ],
+        "Birthright Buckle": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Infernoclasp": [
+            [
+                100,
+                150
+            ]
+        ]
+    },
+    "Skills have a #% longer Perfect Timing window": {
+        "Assailum": [
+            [
+                100,
+                150
+            ]
+        ]
+    },
+    "#% reduced Effect of Chill on you": {
+        "Bronzebeard": [
+            [
+                35,
+                50
+            ]
+        ]
+    },
+    "#% reduced effect of Ignite on you": {
+        "Bronzebeard": [
+            [
+                35,
+                50
+            ]
+        ]
+    },
+    "#% reduced effect of Shock on you": {
+        "Bronzebeard": [
+            [
+                35,
+                50
+            ]
+        ]
+    },
+    "Adds # to # Physical Damage to Attacks": {
+        "Treefingers": [
+            [
+                3,
+                5
+            ],
+            [
+                6,
+                8
+            ]
+        ],
+        "Northpaw": [
+            [
+                2,
+                3
+            ],
+            [
+                5,
+                6
+            ]
+        ],
+        "Jarngreipr": [
+            [
+                2,
+                3
+            ],
+            [
+                5,
+                6
+            ]
+        ]
+    },
+    "#% increased Skill Speed": {
+        "Lochtonial Caress": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Sine Aequo": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Rondel of Fragility": [
+            [
+                15,
+                30
+            ]
+        ],
+        "You cannot be Chilled or Frozen": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "#% reduced maximum Mana": {
+        "Lochtonial Caress": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "Gain # random Charge on reaching Maximum Rage": {
+        "Hateforge": [
+            [
+                1,
+                3
+            ]
+        ]
+    },
+    "#% increased Critical Damage Bonus": {
+        "Northpaw": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "Adds # to # Cold damage to Attacks": {
+        "Grip of Winter": [
+            [
+                3,
+                5
+            ],
+            [
+                6,
+                8
+            ]
+        ]
+    },
+    "#% increased Magnitude of Chill you inflict": {
+        "Grip of Winter": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% reduced Cast Speed": {
+        "Doedre's Tenure": [
+            [
+                15,
+                25
+            ]
+        ]
+    },
+    "#% reduced Attack and Cast Speed": {
+        "Kitoko's Current": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "Sacrifice #% of Life to gain that much Energy Shield when you Cast a Spell": {
+        "Demon Stitcher": [
+            [
+                5,
+                15
+            ]
+        ]
+    },
+    "#% chance to Poison on Hit": {
+        "Plaguefinger": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "#% increased Chance to be afflicted by Ailments when Hit": {
+        "The Infinite Pursuit": [
+            [
+                80,
+                100
+            ]
+        ]
+    },
+    "#% increased Movement Speed": {
+        "Briarpatch": [
+            [
+                10,
+                20
+            ]
+        ],
+        "Thunderstep": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Bushwhack": [
+            [
+                15,
+                25
+            ]
+        ],
+        "Wondertrap": [
+            [
+                5,
+                15
+            ]
+        ],
+        "Windscream": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Powertread": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Beetlebite": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Ab Aeterno": [
+            [
+                15,
+                30
+            ]
+        ]
+    },
+    "+#% to Maximum Lightning Resistance": {
+        "Thunderstep": [
+            [
+                3,
+                5
+            ]
+        ]
+    },
+    "#% reduced Energy Shield Recharge Rate": {
+        "Luminous Pace": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% reduced Chill Duration on you": {
+        "Obern's Bastion": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% reduced Freeze Duration on you": {
+        "Obern's Bastion": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% reduced Shock duration on you": {
+        "Obern's Bastion": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Adds # to # Lightning damage to Attacks": {
+        "Wake of Destruction": [
+            [
+                1,
+                1
+            ],
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% increased Block chance": {
+        "Lycosidae": [
+            [
+                30,
+                40
+            ]
+        ],
+        "The Surrender": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Arvil's Wheel": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Merit of Service": [
+            [
+                30,
+                50
+            ]
+        ],
+        "Alkem Eira": [
+            [
+                30,
+                40
+            ]
+        ],
+        "Oaksworn": [
+            [
+                40,
+                60
+            ]
+        ]
+    },
+    "#% increased Skill Effect Duration": {
+        "Arvil's Wheel": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% increased Cooldown Recovery Rate": {
+        "Crest of Ardura": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "#% increased effect of Socketed Soul Cores": {
+        "Mahuxotl's Machination": [
+            [
+                333,
+                666
+            ]
+        ]
+    },
+    "#% increased Spell Damage per # Spirit": {
+        "Threaded Light": [
+            [
+                8,
+                12
+            ]
+        ]
+    },
+    "Minions have #% increased maximum Life": {
+        "Carrion Call": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Heartbound Loop": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "#% increased Armour, Evasion and Energy Shield": {
+        "Morior Invictus": [
+            [
+                200,
+                300
+            ]
+        ],
+        "Solus Ipse": [
+            [
+                100,
+                150
+            ]
+        ],
+        "Sine Aequo": [
+            [
+                40,
+                60
+            ]
+        ],
+        "Ab Aeterno": [
+            [
+                60,
+                80
+            ]
+        ]
+    },
+    "Remembrancing # songworthy deeds by the line of Vorana": {
+        "Heroic Tragedy": [
+            [
+                100,
+                8000
+            ]
+        ]
+    },
+    "+# to Level of all Specific Skill Skills": {
+        "Prism of Belief": [
+            [
+                1,
+                3
+            ]
+        ]
+    },
+    "#% increased Effect of Jewel Socket Passive Skills": {
+        "The Adorned": [
+            [
+                0,
+                100
+            ]
+        ]
+    },
+    "Attacks Gain #% of Damage as Extra Cold Damage": {
+        "Asphyxia's Wrath": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "Attacks Gain #% of Damage as Extra Fire Damage": {
+        "Blackgleam": [
+            [
+                5,
+                10
+            ]
+        ]
+    },
+    "#% increased Critical Hit Chance for Attacks": {
+        "Beyond Reach": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% reduced Attack Speed": {
+        "Beyond Reach": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "Attacks Gain #% of Physical Damage as extra Chaos Damage": {
+        "Beyond Reach": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "Gain #% of Maximum Mana as Extra Maximum Energy Shield": {
+        "The Everlasting Gaze": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased maximum Life": {
+        "Xoph's Blood": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Defiance of Destiny": [
+            [
+                6,
+                10
+            ]
+        ]
+    },
+    "+# to Spirit": {
+        "Ligurium Talisman": [
+            [
+                25,
+                35
+            ]
+        ],
+        "Beacon of Azis": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Fireflower": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Ventor's Gamble": [
+            [
+                0,
+                20
+            ]
+        ]
+    },
+    "#% increased Damage": {
+        "Rondel of Fragility": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "+#% to maximum Block chance": {
+        "The Anvil": [
+            [
+                3,
+                5
+            ]
+        ]
+    },
+    "Allies in your Presence have #% increased Critical Hit Chance": {
+        "Fixation of Yix": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Allies in your Presence have #% increased Critical Damage Bonus": {
+        "Fixation of Yix": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Allies in your Presence have #% increased Attack Speed": {
+        "Fixation of Yix": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "Allies in your Presence have #% increased Cast Speed": {
+        "Fixation of Yix": [
+            [
+                10,
+                20
+            ]
+        ]
+    },
+    "+# to Level of all Fire Skills": {
+        "Fireflower": [
+            [
+                1,
+                4
+            ]
+        ]
+    },
+    "#% reduced maximum Life": {
+        "Eye of Chayula": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "Adds # to # Chaos Damage to Attacks": {
+        "Blackheart": [
+            [
+                2,
+                3
+            ],
+            [
+                4,
+                5
+            ]
+        ]
+    },
+    "#% increased Critical Spell Damage Bonus": {
+        "Seed of Cataclysm": [
+            [
+                30,
+                50
+            ]
+        ]
+    },
+    "Gain #% of Damage as Extra Chaos Damage": {
+        "Ming's Heart": [
+            [
+                30,
+                40
+            ]
+        ]
+    },
+    "Minions Revive #% faster": {
+        "Heartbound Loop": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "#% increased Quantity of Gold Dropped by Slain Enemies": {
+        "Perandus Seal": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "#% increased Life Recovery from Flasks": {
+        "Meginord's Girdle": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Midnight Braid": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Mana Recovery from Flasks": {
+        "Keelhaul": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Flask Charges gained": {
+        "Birthright Buckle": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Brynabas": [
+            [
+                20,
+                30
+            ]
+        ],
+        "Shavronne's Satchel": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% reduced Flask Charges used": {
+        "Birthright Buckle": [
+            [
+                10,
+                15
+            ]
+        ],
+        "Coward's Legacy": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "#% increased Charm Effect Duration": {
+        "Soul Tether": [
+            [
+                15,
+                20
+            ]
+        ]
+    },
+    "+#% to Maximum Fire Resistance": {
+        "Infernoclasp": [
+            [
+                3,
+                5
+            ]
+        ]
+    },
+    "#% reduced Charm Charges used": {
+        "Ryslatha's Coil": [
+            [
+                10,
+                15
+            ]
+        ]
+    },
+    "#% more maximum Physical Attack Damage": {
+        "Ryslatha's Coil": [
+            [
+                30,
+                40
+            ]
+        ]
+    },
+    "#% less minimum Physical Attack Damage": {
+        "Ryslatha's Coil": [
+            [
+                30,
+                40
+            ]
+        ]
+    },
+    "#% increased Life and Mana Recovery from Flasks": {
+        "Coward's Legacy": [
+            [
+                30,
+                40
+            ]
+        ]
+    },
+    "#% increased Charm Charges used": {
+        "Zerphi's Genesis": [
+            [
+                10,
+                30
+            ]
+        ]
+    },
+    "#% increased bonuses gained from Equipped Rings": {
+        "Ingenuity": [
+            [
+                40,
+                80
+            ]
+        ]
+    },
+    "#% reduced Flask Life Recovery rate": {
+        "Shavronne's Satchel": [
+            [
+                20,
+                30
+            ]
+        ]
+    },
+    "#% increased Charges per use": {
+        "Olroth's Resolve": [
+            [
+                100,
+                150
+            ]
+        ]
+    },
+    "#% increased Duration": {
+        "Melting Maelstrom": [
+            [
+                200,
+                250
+            ]
+        ]
+    }
+}

@@ -1,6 +1,4 @@
 [
-    "No Physical Damage",
-    "No Physical Damage",
     "#% increased Trap Damage",
     "#% reduced Trap Damage",
     "#% increased Trap Damage",
@@ -67,7 +65,6 @@
     "#% reduced Global Damage",
     "# to # Cold Thorns damage",
     "# to # Cold Thorns damage",
-    "No Physical Damage",
     "Damage over Time bypasses your Energy Shield\\nWhile not on Full Life, Sacrifice #% of Mana per Second to Recover that much Life",
     "You can apply one fewer Curse",
     "Your Maximum Resistances are #%",

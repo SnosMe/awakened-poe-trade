@@ -101,6 +101,9 @@
     <ui-checkbox class="mb-4" v-model="usePseudo">{{
       t(":use_pseudo")
     }}</ui-checkbox>
+    <ui-checkbox class="mb-4" v-model="defaultAllSelected">{{
+      t(":default_all_selected")
+    }}</ui-checkbox>
     <div class="mb-4" :class="{ 'p-2 bg-orange-600 rounded': builtinBrowser }">
       <ui-checkbox v-model="builtinBrowser">{{
         t(":enable_browser")
@@ -252,6 +255,10 @@ export default defineComponent({
           );
         },
       }),
+      defaultAllSelected: configModelValue(
+        () => configWidget.value,
+        "defaultAllSelected",
+      ),
       leagues,
     };
   },

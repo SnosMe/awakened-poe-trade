@@ -86,7 +86,9 @@ def modTierBuilder(mod_data):
 def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
     gold_with_readable_tags = {
         mod_data[gold_row["Mod"]]["Id"]: {
-            tags[tag]["Id"] if "armour" not in tags[tag]["Id"] else "body_armour"
+            tags[tag]["Id"]
+            if "armour" not in tags[tag]["Id"] or "armour" == tags[tag]["Id"]
+            else "body_armour"
             for tag in gold_row["Tags"]
             if tag
         }
@@ -171,7 +173,6 @@ def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
         sorted_row = {
             "explicit": [],
             "implicit": {},
-            "unique": [],
             "corruption": [],
             "crafted": [],
             "jewel": [],
@@ -190,9 +191,11 @@ def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
                 sorted_row["implicit"][base_type] = modGroupToOutputTier(mod_group)
             elif "unique" in mod_id:
                 if "jewel" in mod_id:
-                    sorted_row["uniquejewel"].append(modGroupToOutputTier(mod_group))
+                    # sorted_row["uniquejewel"].append(modGroupToOutputTier(mod_group))
+                    continue
                 else:
-                    sorted_row["unique"].append(modGroupToOutputTier(mod_group))
+                    # sorted_row["unique"].append(modGroupToOutputTier(mod_group))
+                    continue
             elif "crafted" in mod_id:
                 sorted_row["crafted"].append(modGroupToOutputTier(mod_group))
             elif "jewel" in mod_id:
@@ -208,7 +211,7 @@ def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
                 if len(mod_group["mod_allowed_base_types"]) > 0:
                     sorted_row["explicit"].append(modGroupToOutputTier(mod_group))
                 else:
-                    sorted_row["unique"].append(modGroupToOutputTier(mod_group))
+                    # sorted_row["unique"].append(modGroupToOutputTier(mod_group))
                     logger.debug(f"No base type for {mod_group['mods_id']}")
         output_data.append((tuple(all_stats), sorted_row, one_id))
     logger.info(f"Created {len(output_data)} mod groups.")

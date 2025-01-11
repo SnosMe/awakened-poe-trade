@@ -319,7 +319,8 @@
     "auto_search": "눌렀을 때 자동으로 검색하기",
     "select_stock": "Always select \"Stock\" filter",
     "show_prediction": "가격 예측 표시",
-    "remember_currency": "Remember the Buyout Currency filter"
+    "remember_currency": "Remember the Buyout Currency filter",
+    "default_all_selected": "Default all filters to enabled"
   },
   "poe2_new": {
     "beta_warning": "이 버전은 베타버전입니다. 예기치 못한 버그가 있을 수 있습니다.",

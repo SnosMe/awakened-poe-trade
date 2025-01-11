@@ -6,7 +6,6 @@
     :inline-edit="false"
   >
     <template v-if="item">
-      <ConversionWarningBanner />
       <MapCheck v-if="isMapLike" :item="item" :config="config.maps" />
       <ItemInfo v-else :item="item" />
     </template>
@@ -24,7 +23,6 @@ import type { ItemCheckWidget } from "./widget.js";
 import Widget from "../overlay/Widget.vue";
 import MapCheck from "../map-check/MapCheck.vue";
 import ItemInfo from "./ItemInfo.vue";
-import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 const props = defineProps<{
   config: ItemCheckWidget;
