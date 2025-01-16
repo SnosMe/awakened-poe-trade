@@ -1,4 +1,5 @@
 {"name": "Bidding", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Overseer Precursor Tablet", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -2583,7 +2584,7 @@
 {"name": "雙肢弓", "refName": "Double Limb Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "雜響權杖", "refName": "Rattling Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
 {"name": "雷彈", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "雷彈", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "雷彈", "refName": "Greater Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "雷暴彈藥", "refName": "Stormblast Bolts", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "雷霆之杖", "refName": "Lightning Rod", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "電光領域", "refName": "Galvanic Field", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -3027,11 +3028,14 @@
 {"name": "引導之掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "神殿權杖"}}
 {"name": "獵豬", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "墮落巨棍棒"}}
 {"name": "雷姆諾的奪命樂具", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "橡木巨錘"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "拱形巨斧"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鍛鐵巨劍"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂鏈錘"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鈍斧"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "戰爭長鋒"}}
-{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "闊劍"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "焦黑短劍"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "優雅長柄刀"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "闊刃巨劍"}}
 {"name": "生機之記", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "調和法杖"}}
@@ -3050,6 +3054,7 @@
 {"name": "塔林的顫慄之語", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "極寒長杖"}}
 {"name": "血棘", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "纏繞細杖"}}
 {"name": "暗影重擔", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "鳴響長杖"}}
+{"name": "狂舞德爾維希", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "彎刀"}}
 {"name": "黑暗玷汙者", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "雜響權杖"}}
 {"name": "熾炎之使", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "炎植長杖"}}
 {"name": "哨兵", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "歌德細杖"}}

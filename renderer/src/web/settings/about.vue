@@ -32,7 +32,7 @@
       <p>
         {{ t("app.contact_me") }} <br /><span
           class="font-sans text-gray-500 select-all"
-          >&lt;@295216259795124225&gt;</span
+          >&lt;@340233612064718851&gt;</span
         >
       </p>
       <ul class="flex gap-4">
@@ -40,9 +40,18 @@
           <img class="rounded inline" src="/images/dc_reddit.png" />
           <a
             class="border-b"
-            href="https://discord.gg/pathofexile"
+            href="https://old.reddit.com/r/pathofexile2"
             target="_blank"
             >r/pathofexile</a
+          >
+        </li>
+        <li>
+          <img class="rounded inline" src="/images/discord.png" />
+          <a
+            class="border-b"
+            href="https://discord.gg/pathofexile"
+            target="_blank"
+            >pathofexile</a
           >
         </li>
       </ul>

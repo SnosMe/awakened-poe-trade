@@ -3,7 +3,7 @@ from parser import Parser
 
 from services.logger_setup import logger, set_log_level
 
-SUPPORTED_LANGUAGES = ["en", "ru", "ko", "cmn-Hant", "ja"]
+SUPPORTED_LANGUAGES = ["en", "ru", "ko", "cmn-Hant", "ja", "de"]
 
 
 if __name__ == "__main__":

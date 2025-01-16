@@ -15,6 +15,7 @@ import { OverlayVisibility } from "./windowing/OverlayVisibility";
 import { GameLogWatcher } from "./host-files/GameLogWatcher";
 import { HttpProxy } from "./proxy";
 import { installExtension, VUEJS_DEVTOOLS } from "electron-devtools-installer";
+import { FilterGenerator } from "./filter-generator/FilterGenerator";
 
 if (!app.requestSingleInstanceLock()) {
   app.exit();
@@ -54,6 +55,11 @@ app.on("ready", async () => {
         logger,
         overlay,
         poeWindow,
+        gameConfig,
+        eventPipe
+      );
+      const filterGenerator = new FilterGenerator(
+        logger,
         gameConfig,
         eventPipe
       );

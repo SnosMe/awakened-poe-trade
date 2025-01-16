@@ -6,6 +6,7 @@ import type * as widget from "./overlay/widgets";
 import type { StashSearchWidget } from "./stash-search/widget";
 import type { ItemCheckWidget } from "./item-check/widget";
 import type { ItemSearchWidget } from "./item-search/widget";
+import type { FilterGeneratorWidget } from "./filter-generator/widget";
 
 const _config = shallowRef<Config | null>(null);
 let _lastSavedConfig: Config | null = null;
@@ -102,6 +103,8 @@ export function poeWebApi() {
       return "poe.game.daum.net";
     case "ja":
       return "jp.pathofexile.com";
+    case "de":
+      return "de.pathofexile.com";
   }
 }
 
@@ -123,7 +126,7 @@ export interface Config {
   logKeys: boolean;
   accountName: string;
   stashScroll: boolean;
-  language: "en" | "ru" | "cmn-Hant" | "ko" | "ja";
+  language: "en" | "ru" | "cmn-Hant" | "ko" | "ja" | "de";
   preferredTradeSite: "default" | "www";
   realm: "pc-ggg" | "pc-garena";
   widgets: widget.Widget[];
@@ -135,7 +138,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 19,
+  configVersion: 20,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -352,6 +355,72 @@ export const defaultConfig = (): Config => ({
       },
       images: [{ id: 1, url: "syndicate.jpg" }],
     } as widget.ImageStripWidget,
+    {
+      wmId: 104,
+      wmType: "filter-generator",
+      wmTitle: "Filter generator",
+      wmWants: "hide",
+      wmZorder: 104,
+      wmFlags: ["invisible-on-blur"],
+      filtersFolder: "",
+      selectedFilterFile: "",
+      filterStrategy: "before",
+      anchor: {
+        pos: "tl",
+        x: 34,
+        y: 56,
+      },
+      entries: [
+        {
+          id: 1,
+          name: "Scroll of Wisdom",
+          identifiers: [{ key: "BaseType", value: "Scroll of Wisdom" }],
+          action: "hide",
+        },
+        {
+          id: 2,
+          name: "Flasks",
+          identifiers: [{ key: "BaseType", value: "Life Flask,Mana Flask" }],
+          action: "hide",
+        },
+        {
+          id: 3,
+          name: "People get those for Headhunter unique",
+          identifiers: [
+            { key: "Class", value: "Belts" },
+            { key: "BaseType", value: "Heavy Belt" },
+            { key: "Rarity", value: "Normal" },
+          ],
+          action: "interesting",
+        },
+        {
+          id: 4,
+          name: "People get those for Astramentis unique",
+          identifiers: [
+            { key: "Class", value: "Amulets" },
+            { key: "BaseType", value: "Stellar Amulet" },
+            { key: "Rarity", value: "Normal" },
+          ],
+          action: "interesting",
+        },
+        {
+          id: 5,
+          name: "Low level area items",
+          identifiers: [
+            {
+              key: "Class",
+              value:
+                "Body Armours,Helmets,Boots,Gloves,Shields,Foci,One Hand Maces,Two Hand Maces,Quarterstaves,Bows,Crossbows",
+            },
+            { key: "AreaLevel", value: "< 65" },
+            { key: "Rarity", value: "Normal,Magic,Rare" },
+            { key: "Quality", value: "= 0" },
+            { key: "Sockets", value: "= 0" },
+          ],
+          action: "hide",
+        },
+      ],
+    } as FilterGeneratorWidget,
   ],
 });
 
@@ -611,6 +680,16 @@ function upgradeConfig(_config: Config): Config {
     config.widgets.find((w) => w.wmType === "price-check")!.defaultAllSelected =
       false;
     config.configVersion = 19;
+  }
+
+  if (config.configVersion < 20) {
+    config.widgets.push({
+      ...defaultConfig().widgets.find((w) => w.wmType === "filter-generator")!,
+      wmId: Math.max(0, ...config.widgets.map((_) => _.wmId)) + 1,
+      wmZorder: null,
+    });
+
+    config.configVersion = 20;
   }
 
   if (config.logKeys === undefined) {

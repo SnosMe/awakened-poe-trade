@@ -81,9 +81,9 @@
             <ui-radio v-model="filters.trade.currency" value="divine">{{
               t(":currency_only_div")
             }}</ui-radio>
-            <!-- <ui-radio v-model="filters.trade.currency" value="exalted_divine">{{
+            <ui-radio v-model="filters.trade.currency" value="exalted_divine">{{
               t(":currency_exalted_div")
-            }}</ui-radio> -->
+            }}</ui-radio>
           </template>
         </div>
         <div class="flex flex-col gap-y-1">

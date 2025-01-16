@@ -62,6 +62,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: normalizeName },
   parseVaalGemName,
   { virtual: findInDatabase },
+  { virtual: tempErrLogbooks },
   // -----------
   parseItemLevel,
   parseRequirements,
@@ -251,6 +252,12 @@ function findInDatabase(item: ParserState) {
   // Override charm since its flask in trade
   if (item.category === ItemCategory.Charm) {
     item.category = ItemCategory.Flask;
+  }
+}
+
+function tempErrLogbooks(item: ParserState) {
+  if (item.info.refName === "Expedition Logbook") {
+    return err("item.parse_error");
   }
 }
 

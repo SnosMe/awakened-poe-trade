@@ -1,0 +1,30 @@
+{
+  "$COLON": ": ",
+  "RARITY_NORMAL": "ItemDisplayStringNormal",
+  "RARITY_MAGIC": "ItemDisplayStringMagic",
+  "RARITY_RARE": "ItemDisplayStringRare",
+  "RARITY_UNIQUE": "ItemDisplayStringUnique",
+  "RARITY_GEM": "ItemDisplayStringGem",
+  "RARITY_CURRENCY": "ItemDisplayStringCurrency",
+  "RARITY_DIVCARD": "ItemDisplayStringDivinationCard",
+  "RARITY_QUEST": "ItemDisplayStringQuest",
+  "$TIER": "Tier",
+  "$MAP": "UIOptionsSectionTitleMap",
+  "MAP_TIER": [
+    "$MAP",
+    "$Tier",
+    "$COLON"
+  ],
+  "RARITY": [
+    "ItemDisplayStringRarity",
+    "$COLON"
+  ],
+  "ITEM_CLASS": [
+    "ItemDisplayStringClass",
+    "$COLON"
+  ],
+  "ITEM_LEVEL": [
+    "ItemDisplayStringLevel",
+    "$COLON"
+  ]
+}

@@ -1,11 +1,34 @@
 {
   "steam": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile 2",
+  "files": [
+    "Metadata/StatDescriptions/active_skill_gem_stat_descriptions.csd",
+    "Metadata/StatDescriptions/advanced_mod_stat_descriptions.csd",
+    "Metadata/StatDescriptions/atlas_stat_descriptions.csd",
+    "Metadata/StatDescriptions/character_panel_stat_descriptions.csd",
+    "Metadata/StatDescriptions/chest_stat_descriptions.csd",
+    "Metadata/StatDescriptions/expedition_relic_stat_descriptions.csd",
+    "Metadata/StatDescriptions/gem_stat_descriptions.csd",
+    "Metadata/StatDescriptions/heist_equipment_stat_descriptions.csd",
+    "Metadata/StatDescriptions/leaguestone_stat_descriptions.csd",
+    "Metadata/StatDescriptions/map_stat_descriptions.csd",
+    "Metadata/StatDescriptions/meta_gem_stat_descriptions.csd",
+    "Metadata/StatDescriptions/monster_stat_descriptions.csd",
+    "Metadata/StatDescriptions/passive_skill_aura_stat_descriptions.csd",
+    "Metadata/StatDescriptions/passive_skill_stat_descriptions.csd",
+    "Metadata/StatDescriptions/primordial_altar_stat_descriptions.csd",
+    "Metadata/StatDescriptions/sanctum_relic_stat_descriptions.csd",
+    "Metadata/StatDescriptions/sentinel_stat_descriptions.csd",
+    "Metadata/StatDescriptions/skill_stat_descriptions.csd",
+    "Metadata/StatDescriptions/stat_descriptions.csd",
+    "Metadata/StatDescriptions/utility_flask_buff_stat_descriptions.csd"
+  ],
   "translations": [
     "English",
     "Russian",
     "Korean",
     "Traditional Chinese",
-    "Japanese"
+    "Japanese",
+    "German"
   ],
   "tables": [
     {

@@ -4,7 +4,7 @@ import fnv1a from "@sindresorhus/fnv1a";
 import fs from "fs";
 import path from "path";
 
-const LANGUAGES = ["en", "ru", "cmn-Hant", "ko", "ja"];
+const LANGUAGES = ["en", "ru", "cmn-Hant", "ko", "ja", "de"];
 
 for (const lang of LANGUAGES) {
   const lineStarts = {

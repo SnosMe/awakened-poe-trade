@@ -3,6 +3,7 @@
 {"name": "MTX包装", "refName": "MTX Wrapper", "namespace": "ITEM", "icon": "%NOT_FOUND%", "w": 2, "h": 1}
 {"name": "MTX包装", "refName": "MTX Wrapper", "namespace": "ITEM", "icon": "%NOT_FOUND%", "w": 2, "h": 2}
 {"name": "MTX包装", "refName": "MTX Wrapper", "namespace": "ITEM", "icon": "%NOT_FOUND%", "w": 2, "h": 3}
+{"name": "Overseer Precursor Tablet", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -229,7 +230,6 @@
 {"name": "エネルギー保持", "refName": "Energy Retention", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "エベルの鍵", "refName": "Eber's Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "エベルの鍵", "refName": "Eber's Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
-{"name": "エメラルド", "refName": "Emerald", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "エメラルドの指輪", "refName": "Emerald Ring", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Ring"}, "w": 1, "h": 1}
 {"name": "エルダーオーブ", "refName": "Elder's Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "エルダースレイヤーの紋章", "refName": "Crest of the Elderslayers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
@@ -418,7 +418,6 @@
 {"name": "サイズミッククライ", "refName": "Seismic Cry", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TZWlzbWljQ3J5U2tpbGxHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/f15f5c64ff/SeismicCrySkillGem.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "サイフォンストライク", "refName": "Siphoning Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "サクリファイス", "refName": "Sacrifice", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "サファイア", "refName": "Sapphire", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "サファイアの指輪", "refName": "Sapphire Ring", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzYiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/74a5d719fd/Ring6.png", "craftable": {"category": "Ring"}, "w": 1, "h": 1}
 {"name": "サポートジェムの原石", "refName": "Uncut Support Gem", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UncutSkillGem"}, "w": 1, "h": 1}
 {"name": "サルファーのガスバーナー", "refName": "Sulphur Blowtorch", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSGVpc3QvVG9yY2hTdGQiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/9291e5d539/TorchStd.png", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
@@ -944,7 +943,7 @@
 {"name": "ライトニングコンジット", "refName": "Lightning Conduit", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9FbmVyZ3lSZWxlYXNlU2tpbGxHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/5a89cebfb0/EnergyReleaseSkillGem.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ライトニングストーム", "refName": "Lightning Storm", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ライトニングボルト", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "ライトニングボルト", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "ライトニングボルト", "refName": "Greater Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ライトニングロッド", "refName": "Lightning Rod", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ライトニングワープ", "refName": "Lightning Warp", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9MaWdodG5pbmdXYXJwIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/5f79874aa8/LightningWarp.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ライトハルバート", "refName": "Light Halberd", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Axe"}, "w": 2, "h": 4}
@@ -1039,7 +1038,6 @@
 {"name": "リープスラム", "refName": "Leap Slam", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9MZWFwU2xhbSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/f65891de7a/LeapSlam.png", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ルナリスの印章", "refName": "Seal of Lunaris", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "ルパインセプター", "refName": "Lupine Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
-{"name": "ルビー", "refName": "Ruby", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "ルビーの指輪", "refName": "Ruby Ring", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzciLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/0e04df86a3/Ring7.png", "craftable": {"category": "Ring"}, "w": 1, "h": 1}
 {"name": "ルースレス", "refName": "Ruthless", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "ルーニックショートソード", "refName": "Runic Shortsword", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
@@ -2233,6 +2231,7 @@
 {"name": "精神のエッセンス（大）", "refName": "Greater Essence of the Mind", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9HcmVhdGVyTWFuYUVzc2VuY2UiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/f9e17e6d47/GreaterManaEssence.png", "tradeTag": "greater-essence-of-the-mind", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "精神のルーン", "refName": "Mind Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJ1bmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4be6331480/ManaRune.png", "tradeTag": "mind-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "精鋭の大兜", "refName": "Elite Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [136, 136]}, "w": 2, "h": 2}
+{"name": "紅玉", "refName": "Ruby", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "紅玉のチャーム", "refName": "Ruby Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Charm"}, "w": 1, "h": 1}
 {"name": "紋章のクレストシールド", "refName": "Sigil Crest Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [17, 17], "es": [8, 8]}, "w": 2, "h": 3}
 {"name": "紋章のタワーシールド", "refName": "Heraldric Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [85, 85]}, "w": 2, "h": 4}
@@ -2293,6 +2292,7 @@
 {"name": "羽根付きの矢じり", "refName": "Flanged Arrowhead", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSGVpc3QvQXJyb3doZWFkRmxhbmdlZCIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/2f2fd20710/ArrowheadFlanged.png", "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
 {"name": "羽飾りのついた黄金像", "refName": "Crested Golden Idol", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "羽飾りのフォーカス", "refName": "Plumed Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [34, 34]}, "w": 2, "h": 3}
+{"name": "翠玉", "refName": "Emerald", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "翡翠のアミュレット", "refName": "Jade Amulet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbXVsZXQ0IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/ffc5888355/Amulet4.png", "craftable": {"category": "Amulet"}, "w": 1, "h": 1}
 {"name": "翡翠のティアラ", "refName": "Jade Tiara", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [69, 69]}, "w": 2, "h": 2}
 {"name": "翡翠のフォーカス", "refName": "Jade Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [40, 40]}, "w": 2, "h": 3}
@@ -2357,6 +2357,7 @@
 {"name": "蒸留された罪悪感", "refName": "Distilled Guilt", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkR3VpbHQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/21cd0fd17b/DistilledGuilt.png", "tradeTag": "distilled-guilt", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "蒸留された苦悩", "refName": "Distilled Suffering", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkU3VmZmVyaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/801a53662a/DistilledSuffering.png", "tradeTag": "distilled-suffering", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "蒸留された貪欲", "refName": "Distilled Greed", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkR3JlZWQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5888a4ae61/DistilledGreed.png", "tradeTag": "distilled-greed", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "蒼玉", "refName": "Sapphire", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "蒼玉のチャーム", "refName": "Sapphire Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Charm"}, "w": 1, "h": 1}
 {"name": "蛆虫の皮", "refName": "Maggot Husk", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 3}
 {"name": "蛇皮のコート", "refName": "Serpentscale Coat", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [198, 198]}, "w": 2, "h": 3}
@@ -3028,22 +3029,23 @@
 {"name": "導きの掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "神殿のセプター"}}
 {"name": "豚狩り", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "倒木のグレートクラブ"}}
 {"name": "フリムノーの聖歌", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "オークグレートハンマー"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "アイアンヘッドスピアー"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉤付き斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "黒焦げのショートソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "簡素な短剣"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "処刑人の大斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "リップルグレートソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "クローンナイフ"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "髭斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ブロードソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "割り大斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "弓型の大斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "腐食したグレートソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "月の短剣"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鈍らな手斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ハンティングスピアー"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "黒焦げのショートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "アイアンヘッドスピアー"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "クローンナイフ"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "処刑人の大斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "簡素な短剣"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉤付き斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "割り大斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ブロードソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "弓型の大斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "リップルグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "髭斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "剥ぎ取りナイフ"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉄のグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "月の短剣"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ハンティングスピアー"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ホーリーフレイル"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ウォースピアー"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "祝福されたクレイモア"}}

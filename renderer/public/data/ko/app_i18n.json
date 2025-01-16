@@ -228,6 +228,33 @@
     "search_text": "단어 혹은 Regex를 검색하세요",
     "friendly_name": "약칭"
   },
+  "filter_generator": {
+    "name": "Filter Generator",
+    "editor": "Editor",
+    "open_settings": "Edit extra rules",
+    "update_filter": "Update",
+    "update_disclaimer": "After you update it, remember to refresh the filter in Settings > Game",
+    "friendly_name": "friendly name",
+    "identifier": "identifier",
+    "identifier_key": "Key",
+    "identifier_value": "Value",
+    "identifier_add": "Add identifier",
+    "about_folder": "Filter files folder location (change only if it's not populated by default or is invalid)",
+    "about_file_select": "Select which filter file will be updated with your custom rules:",
+    "about_strategy_select": "Additional filter will be put between dedicated comments. If filter file does not have those comments, put extra rules at:",
+    "about_disclaimer_header": "Disclaimer regarding early access",
+    "about_disclaimer_text1": "As of day of writing this PoE2 developers did not provide us PoE2 dedicated filter instructions.",
+    "about_disclaimer_text2": "All working filters are based on PoE1 filter instructions. You can find them at",
+    "about_disclaimer_text3": "Go check full documentation to sell all potential identifiers, there's lots of them.",
+    "about_disclaimer_link_desc": "under Conditions section",
+    "examples_header": "Examples for editor",
+    "examples_class": "Filtering by class (for belts)",
+    "examples_class_multi": "Filtering by class (for belts and Amulets)",
+    "examples_name": "Filtering by name (for Stellar Amulet)",
+    "examples_name_multi": "Filtering by name (for Flasks)",
+    "examples_complex": "Filtering by amulets that dropped on map under level 50 (map level, not waystone tier)",
+    "base_type_note": "Note: Keys are case-sensitive, ei: BaseType"
+  },
   "image_strip": {
     "name": "이미지"
   },

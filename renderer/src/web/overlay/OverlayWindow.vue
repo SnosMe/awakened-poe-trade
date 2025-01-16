@@ -78,6 +78,7 @@ import WidgetItemSearch from "../item-search/WidgetItemSearch.vue";
 import WidgetSettings from "../settings/SettingsWindow.vue";
 import { AppConfig, saveConfig, pushHostConfig } from "@/web/Config";
 import LoadingAnimation from "./LoadingAnimation.vue";
+import WidgetFilterGenerator from "../filter-generator/WidgetFilterGenerator.vue";
 // ---
 import { usePoeninja } from "@/web/background/Prices";
 import { useLeagues } from "@/web/background/Leagues";
@@ -97,6 +98,7 @@ export default defineComponent({
     WidgetItemSearch,
     WidgetSettings,
     LoadingAnimation,
+    WidgetFilterGenerator,
   },
   setup() {
     usePoeninja();
@@ -325,13 +327,16 @@ export default defineComponent({
       setFlag,
     });
 
-    function handleBackgroundClick () {
+    function handleBackgroundClick() {
       if (AppConfig().overlayAlwaysClose) {
-        Host.sendEvent({ name: 'OVERLAY->MAIN::focus-game', payload: undefined })
+        Host.sendEvent({
+          name: "OVERLAY->MAIN::focus-game",
+          payload: undefined,
+        });
       } else if (!Host.isElectron) {
-        const widget = topmostOrExclusiveWidget.value
-        if (widget.wmZorder === 'exclusive') {
-          hide(widget.wmId)
+        const widget = topmostOrExclusiveWidget.value;
+        if (widget.wmZorder === "exclusive") {
+          hide(widget.wmId);
         }
       } else if (AppConfig().overlayBackgroundClose) {
         Host.sendEvent({

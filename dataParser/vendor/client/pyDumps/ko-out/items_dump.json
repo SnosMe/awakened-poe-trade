@@ -27545,7 +27545,7 @@
         }
     },
     "2414": {
-        "name": "향상된 보석 박힌 장갑",
+        "name": "고급 보석 박힌 장갑",
         "refName": "Advanced Jewelled Gloves",
         "namespace": "ITEM",
         "class": 22,
@@ -38411,6 +38411,20 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRHZW5lcmljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5658ce7f2d/PrecursorTabletGeneric.png"
     },
     "3100": {
+        "name": "Overseer Precursor Tablet",
+        "refName": "Overseer Precursor Tablet",
+        "namespace": "ITEM",
+        "class": 105,
+        "dropLevel": 65,
+        "width": 1,
+        "height": 1,
+        "craftable": {
+            "category": "TowerAugment"
+        },
+        "tradeTag": "overseer-precursor-tablet",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png"
+    },
+    "3101": {
         "name": "부패",
         "refName": "Decompose",
         "namespace": "GEM",
@@ -38426,7 +38440,7 @@
             "transfigured": false
         }
     },
-    "3101": {
+    "3102": {
         "name": "원소 표현",
         "refName": "Elemental Expression",
         "namespace": "GEM",
@@ -38442,7 +38456,7 @@
             "transfigured": false
         }
     },
-    "3102": {
+    "3103": {
         "name": "얼음 화살",
         "refName": "Ice Shot",
         "namespace": "GEM",
@@ -38458,7 +38472,7 @@
             "transfigured": false
         }
     },
-    "3103": {
+    "3104": {
         "name": "전쟁 깃발",
         "refName": "War Banner",
         "namespace": "GEM",
@@ -38474,7 +38488,7 @@
             "transfigured": false
         }
     },
-    "3104": {
+    "3105": {
         "name": "저항의 깃발",
         "refName": "Defiance Banner",
         "namespace": "GEM",
@@ -38490,7 +38504,7 @@
             "transfigured": false
         }
     },
-    "3105": {
+    "3106": {
         "name": "동결의 징표",
         "refName": "Freezing Mark",
         "namespace": "GEM",
@@ -38506,7 +38520,7 @@
             "transfigured": false
         }
     },
-    "3106": {
+    "3107": {
         "name": "전도성 징표",
         "refName": "Voltaic Mark",
         "namespace": "GEM",
@@ -38522,7 +38536,7 @@
             "transfigured": false
         }
     },
-    "3107": {
+    "3108": {
         "name": "차율라의 손",
         "refName": "Hand of Chayula",
         "namespace": "GEM",
@@ -38538,7 +38552,7 @@
             "transfigured": false
         }
     },
-    "3108": {
+    "3109": {
         "name": "시간의 균열",
         "refName": "Temporal Rift",
         "namespace": "GEM",
@@ -38554,7 +38568,7 @@
             "transfigured": false
         }
     },
-    "3109": {
+    "3110": {
         "name": "악마 형상",
         "refName": "Demon Form",
         "namespace": "GEM",
@@ -38570,7 +38584,7 @@
             "transfigured": false
         }
     },
-    "3110": {
+    "3111": {
         "name": "긴요한 시기",
         "refName": "Time of Need",
         "namespace": "GEM",
@@ -38586,7 +38600,7 @@
             "transfigured": false
         }
     },
-    "3111": {
+    "3112": {
         "name": "원소 기원",
         "refName": "Elemental Invocation",
         "namespace": "GEM",
@@ -38602,7 +38616,7 @@
             "transfigured": false
         }
     },
-    "3112": {
+    "3113": {
         "name": "폭발 유탄",
         "refName": "Explosive Grenade",
         "namespace": "GEM",
@@ -38618,7 +38632,7 @@
             "transfigured": false
         }
     },
-    "3113": {
+    "3114": {
         "name": "섬광 유탄",
         "refName": "Flash Grenade",
         "namespace": "GEM",
@@ -38634,7 +38648,7 @@
             "transfigured": false
         }
     },
-    "3114": {
+    "3115": {
         "name": "기름 유탄",
         "refName": "Oil Grenade",
         "namespace": "GEM",
@@ -38650,7 +38664,7 @@
             "transfigured": false
         }
     },
-    "3115": {
+    "3116": {
         "name": "가스 유탄",
         "refName": "Gas Grenade",
         "namespace": "GEM",
@@ -38666,7 +38680,7 @@
             "transfigured": false
         }
     },
-    "3116": {
+    "3117": {
         "name": "전도성 유탄",
         "refName": "Voltaic Grenade",
         "namespace": "GEM",
@@ -38682,7 +38696,7 @@
             "transfigured": false
         }
     },
-    "3117": {
+    "3118": {
         "name": "소모",
         "refName": "Attrition",
         "namespace": "GEM",
@@ -38698,7 +38712,7 @@
             "transfigured": false
         }
     },
-    "3118": {
+    "3119": {
         "name": "원소 융합",
         "refName": "Elemental Conflux",
         "namespace": "GEM",
@@ -38714,7 +38728,7 @@
             "transfigured": false
         }
     },
-    "3119": {
+    "3120": {
         "name": "균열 속으로",
         "refName": "Into the Breach",
         "namespace": "GEM",
@@ -38730,7 +38744,7 @@
             "transfigured": false
         }
     },
-    "3120": {
+    "3121": {
         "name": "선대의 혼백",
         "refName": "Ancestral Spirits",
         "namespace": "GEM",
@@ -38746,7 +38760,7 @@
             "transfigured": false
         }
     },
-    "3121": {
+    "3122": {
         "name": "비상 재장전",
         "refName": "Emergency Reload",
         "namespace": "GEM",
@@ -38762,7 +38776,7 @@
             "transfigured": false
         }
     },
-    "3122": {
+    "3123": {
         "name": "피의 샘",
         "refName": "Font of Blood",
         "namespace": "GEM",
@@ -38778,7 +38792,7 @@
             "transfigured": false
         }
     },
-    "3123": {
+    "3124": {
         "name": "마나의 샘",
         "refName": "Font of Mana",
         "namespace": "GEM",
@@ -38794,7 +38808,7 @@
             "transfigured": false
         }
     },
-    "3124": {
+    "3125": {
         "name": "격노의 샘",
         "refName": "Font of Rage",
         "namespace": "GEM",
@@ -38810,7 +38824,7 @@
             "transfigured": false
         }
     },
-    "3125": {
+    "3126": {
         "name": "집속 유탄",
         "refName": "Cluster Grenade",
         "namespace": "GEM",
@@ -38826,7 +38840,7 @@
             "transfigured": false
         }
     },
-    "3126": {
+    "3127": {
         "name": "공포의 깃발",
         "refName": "Dread Banner",
         "namespace": "GEM",
@@ -38842,7 +38856,7 @@
             "transfigured": false
         }
     },
-    "3127": {
+    "3128": {
         "name": "회오리 사격",
         "refName": "Tornado Shot",
         "namespace": "GEM",
@@ -38858,7 +38872,7 @@
             "transfigured": false
         }
     },
-    "3128": {
+    "3129": {
         "name": "원기 회복의 징조",
         "refName": "Omen of Refreshment",
         "namespace": "ITEM",
@@ -38872,7 +38886,7 @@
         "tradeTag": "omen-of-refreshment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/213474d1d5/VoodooOmens1Blue.png"
     },
-    "3129": {
+    "3130": {
         "name": "재기의 징조",
         "refName": "Omen of Resurgence",
         "namespace": "ITEM",
@@ -38886,7 +38900,7 @@
         "tradeTag": "omen-of-resurgence",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/044d5086da/VoodooOmens2Blue.png"
     },
-    "3130": {
+    "3131": {
         "name": "개량의 징조",
         "refName": "Omen of Amelioration",
         "namespace": "ITEM",
@@ -38900,7 +38914,7 @@
         "tradeTag": "omen-of-amelioration",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/b5ee965352/VoodooOmens3Blue.png"
     },
-    "3131": {
+    "3132": {
         "name": "절사의 징조",
         "refName": "Omen of Whittling",
         "namespace": "ITEM",
@@ -38914,7 +38928,7 @@
         "tradeTag": "omen-of-whittling",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxRGFyayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2dea0999d5/VoodooOmens1Dark.png"
     },
-    "3132": {
+    "3133": {
         "name": "좌측 말소의 징조",
         "refName": "Omen of Sinistral Erasure",
         "namespace": "ITEM",
@@ -38928,7 +38942,7 @@
         "tradeTag": "omen-of-sinistral-erasure",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyRGFyayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/0cfa6959be/VoodooOmens2Dark.png"
     },
-    "3133": {
+    "3134": {
         "name": "우측 말소의 징조",
         "refName": "Omen of Dextral Erasure",
         "namespace": "ITEM",
@@ -38942,7 +38956,7 @@
         "tradeTag": "omen-of-dextral-erasure",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzRGFyayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6e2bb52963/VoodooOmens3Dark.png"
     },
-    "3134": {
+    "3135": {
         "name": "좌측 연금술의 징조",
         "refName": "Omen of Sinistral Alchemy",
         "namespace": "ITEM",
@@ -38956,7 +38970,7 @@
         "tradeTag": "omen-of-sinistral-alchemy",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxR3JlZW4iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/11c49d2322/VoodooOmens1Green.png"
     },
-    "3135": {
+    "3136": {
         "name": "우측 연금술의 징조",
         "refName": "Omen of Dextral Alchemy",
         "namespace": "ITEM",
@@ -38970,7 +38984,7 @@
         "tradeTag": "omen-of-dextral-alchemy",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyR3JlZW4iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/0ff0cfbb93/VoodooOmens2Green.png"
     },
-    "3136": {
+    "3137": {
         "name": "좌측 대관식의 징조",
         "refName": "Omen of Sinistral Coronation",
         "namespace": "ITEM",
@@ -38984,7 +38998,7 @@
         "tradeTag": "omen-of-sinistral-coronation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxUmVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b8e2b8ed3f/VoodooOmens1Red.png"
     },
-    "3137": {
+    "3138": {
         "name": "우측 대관식의 징조",
         "refName": "Omen of Dextral Coronation",
         "namespace": "ITEM",
@@ -38998,7 +39012,7 @@
         "tradeTag": "omen-of-dextral-coronation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyUmVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/f1bbb78614/VoodooOmens2Red.png"
     },
-    "3138": {
+    "3139": {
         "name": "타락의 징조",
         "refName": "Omen of Corruption",
         "namespace": "ITEM",
@@ -39012,7 +39026,7 @@
         "tradeTag": "omen-of-corruption",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzUmVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9cfdcc9e1a/VoodooOmens3Red.png"
     },
-    "3139": {
+    "3140": {
         "name": "상위 찬미의 징조",
         "refName": "Omen of Greater Exaltation",
         "namespace": "ITEM",
@@ -39026,7 +39040,7 @@
         "tradeTag": "omen-of-greater-exaltation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/22d9b6478d/VoodooOmens1Yellow.png"
     },
-    "3140": {
+    "3141": {
         "name": "좌측 찬미의 징조",
         "refName": "Omen of Sinistral Exaltation",
         "namespace": "ITEM",
@@ -39040,7 +39054,7 @@
         "tradeTag": "omen-of-sinistral-exaltation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/6d316b47ee/VoodooOmens2Yellow.png"
     },
-    "3141": {
+    "3142": {
         "name": "우측 찬미의 징조",
         "refName": "Omen of Dextral Exaltation",
         "namespace": "ITEM",
@@ -39054,7 +39068,7 @@
         "tradeTag": "omen-of-dextral-exaltation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ed7cf06fa4/VoodooOmens3Yellow.png"
     },
-    "3142": {
+    "3143": {
         "name": "상위 소멸의 징조",
         "refName": "Omen of Greater Annulment",
         "namespace": "ITEM",
@@ -39068,7 +39082,7 @@
         "tradeTag": "omen-of-greater-annulment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxUHVycGxlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a6848dff1c/VoodooOmens1Purple.png"
     },
-    "3143": {
+    "3144": {
         "name": "좌측 소멸의 징조",
         "refName": "Omen of Sinistral Annulment",
         "namespace": "ITEM",
@@ -39082,7 +39096,7 @@
         "tradeTag": "omen-of-sinistral-annulment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyUHVycGxlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b9eaf38592/VoodooOmens2Purple.png"
     },
-    "3144": {
+    "3145": {
         "name": "우측 소멸의 징조",
         "refName": "Omen of Dextral Annulment",
         "namespace": "ITEM",
@@ -39096,7 +39110,7 @@
         "tradeTag": "omen-of-dextral-annulment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzUHVycGxlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d901658529/VoodooOmens3Purple.png"
     },
-    "3145": {
+    "3146": {
         "name": "점멸",
         "refName": "Blink",
         "namespace": "GEM",
@@ -39112,7 +39126,7 @@
             "transfigured": false
         }
     },
-    "3146": {
+    "3147": {
         "name": "충전 주입",
         "refName": "Charge Infusion",
         "namespace": "GEM",
@@ -39128,7 +39142,7 @@
             "transfigured": false
         }
     },
-    "3147": {
+    "3148": {
         "name": "상서로운 비탈",
         "refName": "Holy Descent",
         "namespace": "GEM",
@@ -39144,7 +39158,7 @@
             "transfigured": false
         }
     },
-    "3148": {
+    "3149": {
         "name": "용암 명문",
         "refName": "Burning Inscription",
         "namespace": "GEM",
@@ -39160,7 +39174,7 @@
             "transfigured": false
         }
     },
-    "3149": {
+    "3150": {
         "name": "파편 청소부",
         "refName": "Shard Scavenger",
         "namespace": "GEM",
@@ -39176,7 +39190,7 @@
             "transfigured": false
         }
     },
-    "3150": {
+    "3151": {
         "name": "더블배럴",
         "refName": "Double Barrel",
         "namespace": "GEM",
@@ -39192,7 +39206,7 @@
             "transfigured": false
         }
     },
-    "3151": {
+    "3152": {
         "name": "자동 재장전",
         "refName": "Auto Reload",
         "namespace": "GEM",
@@ -39208,7 +39222,7 @@
             "transfigured": false
         }
     },
-    "3152": {
+    "3153": {
         "name": "탄약 보존",
         "refName": "Ammo Conservation",
         "namespace": "GEM",
@@ -39224,7 +39238,7 @@
             "transfigured": false
         }
     },
-    "3153": {
+    "3154": {
         "name": "가뿐한 재장전",
         "refName": "Nimble Reload",
         "namespace": "GEM",
@@ -39240,7 +39254,7 @@
             "transfigured": false
         }
     },
-    "3154": {
+    "3155": {
         "name": "새 탄창",
         "refName": "Fresh Clip",
         "namespace": "GEM",
@@ -39256,7 +39270,7 @@
             "transfigured": false
         }
     },
-    "3155": {
+    "3156": {
         "name": "희생양",
         "refName": "Sacrificial Lamb",
         "namespace": "GEM",
@@ -39272,7 +39286,7 @@
             "transfigured": false
         }
     },
-    "3156": {
+    "3157": {
         "name": "압도적인 존재감",
         "refName": "Overwhelming Presence",
         "namespace": "GEM",
@@ -39288,7 +39302,7 @@
             "transfigured": false
         }
     },
-    "3157": {
+    "3158": {
         "name": "연금술사의 은혜",
         "refName": "Alchemist's Boon",
         "namespace": "GEM",
@@ -39304,7 +39318,7 @@
             "transfigured": false
         }
     },
-    "3158": {
+    "3159": {
         "name": "수확자의 기원",
         "refName": "Reaper's Invocation",
         "namespace": "GEM",
@@ -39320,7 +39334,7 @@
             "transfigured": false
         }
     },
-    "3159": {
+    "3160": {
         "name": "희생",
         "refName": "Sacrifice",
         "namespace": "GEM",
@@ -39336,7 +39350,7 @@
             "transfigured": false
         }
     },
-    "3160": {
+    "3161": {
         "name": "대마법사",
         "refName": "Archmage",
         "namespace": "GEM",
@@ -39352,7 +39366,7 @@
             "transfigured": false
         }
     },
-    "3161": {
+    "3162": {
         "name": "자성 포화",
         "refName": "Magnetic Salvo",
         "namespace": "GEM",
@@ -39368,7 +39382,7 @@
             "transfigured": false
         }
     },
-    "3162": {
+    "3163": {
         "name": "얼어붙는 포화",
         "refName": "Freezing Salvo",
         "namespace": "GEM",
@@ -39384,7 +39398,7 @@
             "transfigured": false
         }
     },
-    "3163": {
+    "3164": {
         "name": "[DNT] Gas Cloud",
         "refName": "[DNT] Gas Cloud",
         "namespace": "GEM",
@@ -39400,7 +39414,7 @@
             "transfigured": false
         }
     },
-    "3164": {
+    "3165": {
         "name": "[DNT] Detonation",
         "refName": "[DNT] Detonation",
         "namespace": "GEM",
@@ -39416,7 +39430,7 @@
             "transfigured": false
         }
     },
-    "3165": {
+    "3166": {
         "name": "광폭",
         "refName": "Berserk",
         "namespace": "GEM",
@@ -39432,7 +39446,7 @@
             "transfigured": false
         }
     },
-    "3166": {
+    "3167": {
         "name": "역병의 전령",
         "refName": "Herald of Plague",
         "namespace": "GEM",
@@ -39448,7 +39462,7 @@
             "transfigured": false
         }
     },
-    "3168": {
+    "3169": {
         "name": "고사시키는 존재",
         "refName": "Withering Presence",
         "namespace": "GEM",
@@ -39464,7 +39478,7 @@
             "transfigured": false
         }
     },
-    "3169": {
+    "3170": {
         "name": "새겨진 결전",
         "refName": "Inscribed Ultimatum",
         "namespace": "ITEM",
@@ -39476,7 +39490,7 @@
             "category": "MiscMapItem"
         }
     },
-    "3170": {
+    "3171": {
         "name": "전투 격분",
         "refName": "Combat Frenzy",
         "namespace": "GEM",
@@ -39492,7 +39506,7 @@
             "transfigured": false
         }
     },
-    "3171": {
+    "3172": {
         "name": "막기 시 시전",
         "refName": "Cast on Block",
         "namespace": "GEM",
@@ -39508,7 +39522,7 @@
             "transfigured": false
         }
     },
-    "3172": {
+    "3173": {
         "name": "몰려드는 폭풍",
         "refName": "Gathering Storm",
         "namespace": "GEM",
@@ -39524,7 +39538,7 @@
             "transfigured": false
         }
     },
-    "3173": {
+    "3174": {
         "name": "격변",
         "refName": "Upheaval",
         "namespace": "GEM",
@@ -39540,7 +39554,7 @@
             "transfigured": false
         }
     },
-    "3174": {
+    "3175": {
         "name": "갈취자",
         "refName": "Despoiler",
         "namespace": "GEM",
@@ -39556,7 +39570,7 @@
             "transfigured": false
         }
     },
-    "3175": {
+    "3176": {
         "name": "튕겨 쏘기",
         "refName": "Ricochet",
         "namespace": "GEM",
@@ -39572,7 +39586,7 @@
             "transfigured": false
         }
     },
-    "3176": {
+    "3177": {
         "name": "선대의 다급함",
         "refName": "Ancestral Urgency",
         "namespace": "GEM",
@@ -39588,7 +39602,7 @@
             "transfigured": false
         }
     },
-    "3177": {
+    "3178": {
         "name": "긴 퓨즈",
         "refName": "Long Fuse",
         "namespace": "GEM",
@@ -39604,7 +39618,7 @@
             "transfigured": false
         }
     },
-    "3178": {
+    "3179": {
         "name": "화물",
         "refName": "Payload",
         "namespace": "GEM",
@@ -39620,7 +39634,7 @@
             "transfigured": false
         }
     },
-    "3179": {
+    "3180": {
         "name": "과도한 노출",
         "refName": "Strip Away",
         "namespace": "GEM",
@@ -39636,7 +39650,7 @@
             "transfigured": false
         }
     },
-    "3180": {
+    "3181": {
         "name": "철목",
         "refName": "Ironwood",
         "namespace": "GEM",
@@ -39652,7 +39666,7 @@
             "transfigured": false
         }
     },
-    "3181": {
+    "3182": {
         "name": "신중한 시전",
         "refName": "Considered Casting",
         "namespace": "GEM",
@@ -39668,7 +39682,7 @@
             "transfigured": false
         }
     },
-    "3182": {
+    "3183": {
         "name": "난무하는 파편",
         "refName": "Wildshards",
         "namespace": "GEM",
@@ -39684,7 +39698,7 @@
             "transfigured": false
         }
     },
-    "3183": {
+    "3184": {
         "name": "고드름",
         "refName": "Icicle",
         "namespace": "GEM",
@@ -39700,7 +39714,7 @@
             "transfigured": false
         }
     },
-    "3184": {
+    "3185": {
         "name": "빙하",
         "refName": "Glacier",
         "namespace": "GEM",
@@ -39716,7 +39730,7 @@
             "transfigured": false
         }
     },
-    "3185": {
+    "3186": {
         "name": "중량",
         "refName": "Heft",
         "namespace": "GEM",
@@ -39732,7 +39746,7 @@
             "transfigured": false
         }
     },
-    "3186": {
+    "3187": {
         "name": "밀려오는 폭풍",
         "refName": "Rising Tempest",
         "namespace": "GEM",
@@ -39748,7 +39762,7 @@
             "transfigured": false
         }
     },
-    "3187": {
+    "3188": {
         "name": "추출",
         "refName": "Extraction",
         "namespace": "GEM",
@@ -39764,7 +39778,7 @@
             "transfigured": false
         }
     },
-    "3188": {
+    "3189": {
         "name": "우주의 영사",
         "refName": "Astral Projection",
         "namespace": "GEM",
@@ -39780,7 +39794,7 @@
             "transfigured": false
         }
     },
-    "3189": {
+    "3190": {
         "name": "숙련된 연계",
         "refName": "Practiced Combo",
         "namespace": "GEM",
@@ -39796,7 +39810,7 @@
             "transfigured": false
         }
     },
-    "3190": {
+    "3191": {
         "name": "지렛대 효과",
         "refName": "Leverage",
         "namespace": "GEM",
@@ -39812,7 +39826,7 @@
             "transfigured": false
         }
     },
-    "3191": {
+    "3192": {
         "name": "고조",
         "refName": "Culmination",
         "namespace": "GEM",
@@ -39828,7 +39842,7 @@
             "transfigured": false
         }
     },
-    "3192": {
+    "3193": {
         "name": "잠재력",
         "refName": "Potential",
         "namespace": "GEM",
@@ -39844,7 +39858,7 @@
             "transfigured": false
         }
     },
-    "3193": {
+    "3194": {
         "name": "광장",
         "refName": "Expanse",
         "namespace": "GEM",
@@ -39860,7 +39874,7 @@
             "transfigured": false
         }
     },
-    "3194": {
+    "3195": {
         "name": "절제",
         "refName": "Excise",
         "namespace": "GEM",
@@ -39876,7 +39890,7 @@
             "transfigured": false
         }
     },
-    "3195": {
+    "3196": {
         "name": "혐오 표출",
         "refName": "Execrate",
         "namespace": "GEM",
@@ -39892,7 +39906,7 @@
             "transfigured": false
         }
     },
-    "3196": {
+    "3197": {
         "name": "에너지 유지",
         "refName": "Energy Retention",
         "namespace": "GEM",
@@ -39908,7 +39922,7 @@
             "transfigured": false
         }
     },
-    "3197": {
+    "3198": {
         "name": "흉포함",
         "refName": "Ferocity",
         "namespace": "GEM",
@@ -39924,7 +39938,7 @@
             "transfigured": false
         }
     },
-    "3198": {
+    "3199": {
         "name": "삭마",
         "refName": "Ablation",
         "namespace": "GEM",
@@ -39940,7 +39954,7 @@
             "transfigured": false
         }
     },
-    "3199": {
+    "3200": {
         "name": "섬뜩한 무도",
         "refName": "Danse Macabre",
         "namespace": "GEM",
@@ -39956,7 +39970,7 @@
             "transfigured": false
         }
     },
-    "3200": {
+    "3201": {
         "name": "축전기",
         "refName": "Capacitor",
         "namespace": "GEM",
@@ -39972,7 +39986,7 @@
             "transfigured": false
         }
     },
-    "3201": {
+    "3202": {
         "name": "탄력",
         "refName": "Impetus",
         "namespace": "GEM",
@@ -39988,7 +40002,7 @@
             "transfigured": false
         }
     },
-    "3202": {
+    "3203": {
         "name": "지시",
         "refName": "Bidding",
         "namespace": "GEM",
@@ -40004,7 +40018,7 @@
             "transfigured": false
         }
     },
-    "3203": {
+    "3204": {
         "name": "진동",
         "refName": "Tremors",
         "namespace": "GEM",
@@ -40020,7 +40034,7 @@
             "transfigured": false
         }
     },
-    "3204": {
+    "3205": {
         "name": "불씨 일제 사격",
         "refName": "Ember Fusillade",
         "namespace": "GEM",
@@ -40036,7 +40050,7 @@
             "transfigured": false
         }
     },
-    "3205": {
+    "3206": {
         "name": "전기불꽃",
         "refName": "Spark",
         "namespace": "GEM",
@@ -40052,7 +40066,7 @@
             "transfigured": false
         }
     },
-    "3206": {
+    "3207": {
         "name": "확장되는 지대",
         "refName": "Expanding Ground",
         "namespace": "GEM",
@@ -40068,9 +40082,9 @@
             "transfigured": false
         }
     },
-    "3207": {
+    "3208": {
         "name": "낙뢰",
-        "refName": "Lightning Bolt",
+        "refName": "Greater Lightning Bolt",
         "namespace": "GEM",
         "class": 18,
         "dropLevel": 1,

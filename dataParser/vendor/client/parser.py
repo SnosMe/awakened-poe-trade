@@ -38,6 +38,7 @@ LANG_CODES_TO_NAMES = {
     "ko": "Korean",
     "cmn-Hant": "Traditional Chinese",
     "ja": "Japanese",
+    "de": "German",
 }
 
 
@@ -436,18 +437,18 @@ class Parser:
         hybrid_count = 0
         hybrids = []
 
-        for ids, tiers, base_id in modTierBuilderB(
+        for in_ids, tiers, base_id in modTierBuilderB(
             self.mods_file, self.base_items, self.gold_mod_prices, self.tags
         ):
-            value_counts = len(ids)
-            if value_counts < 1:
+            value_counts = len(in_ids)
+            if in_ids is None or value_counts < 1:
                 logger.debug(f"No stat_ids for {base_id}")
                 continue
             ids_list = []
             translations = []
             stat_id = None
 
-            for stats_key in ids:
+            for stats_key in in_ids:
                 logger.debug(f"Processing mod - ID: {base_id}, Stat: {stats_key}")
 
                 if stats_key is not None:
@@ -512,15 +513,25 @@ class Parser:
             if base_id in self.mods:
                 logger.warn(f"Duplicate mod {base_id}")
 
-            if len(translations) > 1 and translations[0].get("ref", "").count("#") == 1:
-                hybrid_count += 1
-                hybrids.append((base_id, translations))
+            # first where ref is not none
+            main_translation = next(
+                (x for x in translations if x.get("ref") is not None), None
+            )
+
+            if main_translation is None:
                 continue
+
+            if len(translations) > 1:
+                # first translation where
+                if main_translation.get("ref").count("#") == 1:
+                    hybrid_count += 1
+                    hybrids.append((base_id, translations))
+                    continue
             self.mods[base_id] = {
-                "ref": translations[0].get("ref"),
+                "ref": main_translation.get("ref"),
                 "better": 1,
                 "id": stat_id,
-                "matchers": translations[0].get("matchers"),
+                "matchers": main_translation.get("matchers"),
                 "trade": trade,
                 "tiers": tiers,
             }
@@ -852,6 +863,7 @@ class Parser:
             "ko": {"string": "물리 피해 #% 증가"},
             "cmn-Hant": {"string": "增加 #% 物理傷害"},
             "ja": {"string": "物理ダメージが#%増加する"},
+            "de": {"string": "#% erhöhte physischen Schaden"},
         }
         # somehow not a thing? - possibly missing some data
         # self.mods["physical_local_damage_+%"] = {
