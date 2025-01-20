@@ -11,7 +11,7 @@ const { theme } = useData()
   ⚠️ This is in beta for PoE2. <br/> Please be aware that there may be bugs or issues.
 </div>
 You can download Exiled Exchange 2 here. Any other mirrors are not known
-to the developer, downloading from them may be unsafe.
+to the developer, downloading from them may be unsafe or malicious.
 
 | Download link                                                                                                                                      | Automatic updates | Startup time |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------ |
