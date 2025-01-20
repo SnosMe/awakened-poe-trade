@@ -172,7 +172,9 @@
     "tag_explicit_delve": "掘獄",
     "tag_explicit_veiled": "隱匿",
     "tag_explicit_incursion": "穿越",
-    "tag_rune": "符文"
+    "tag_rune": "符文",
+    "tag_sanctum": "Sanctum",
+    "fill_rune_iron": "Fill Runes(Iron)"
   },
   "online_filter": {
     "offline_toggle": "離線 & 在線",
@@ -351,7 +353,11 @@
     "select_stock": "始終選擇“庫存”過濾器",
     "show_prediction": "顯示價格預測",
     "remember_currency": "記住買方貨幣過濾器",
-    "default_all_selected": "Default all filters to enabled"
+    "default_all_selected": "Default all filters to enabled",
+    "use_tooltip_hover": "將滑鼠懸停在價格上時顯示物品",
+    "use_tooltip_keybind": "SHIFT + 懸停",
+    "use_tooltip_always": "始終懸停顯示",
+    "use_tooltip_off": "關閉"
   },
   "poe2_new": {
     "beta_warning": "這是 POE2 的測試版，某些功能可能無法正常運作。",

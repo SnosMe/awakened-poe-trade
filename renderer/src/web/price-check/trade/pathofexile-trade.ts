@@ -4,7 +4,6 @@ import {
   StatFilter,
   INTERNAL_TRADE_IDS,
   InternalTradeId,
-  RuneFilter,
   WeightStatGroup,
 } from "../filters/interfaces";
 import { setProperty as propSet } from "dot-prop";
@@ -23,6 +22,7 @@ import { RateLimiter } from "./RateLimiter";
 import { ModifierType } from "@/parser/modifiers";
 import { Cache } from "./Cache";
 import { filterInPseudo } from "../filters/pseudo";
+import { parseAffixStrings } from "@/parser/Parser";
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Map, "map"],
@@ -229,6 +229,18 @@ interface FetchResult {
         | 5; // Level
     }>;
     note?: string;
+    implicitMods?: string[];
+    explicitMods?: string[];
+    runeMods?: string[];
+    extended?: {
+      dps?: number;
+      pdps?: number;
+      edps?: number;
+      ar?: number;
+      ev?: number;
+      es?: number;
+    };
+    pseudoMods?: string[];
   };
   listing: {
     indexed: string;
@@ -239,6 +251,14 @@ interface FetchResult {
     };
     account: Account;
   };
+}
+
+export interface DisplayItem {
+  runeMods?: string[];
+  implicitMods?: string[];
+  explicitMods?: string[];
+  pseudoMods?: string[];
+  extended?: Array<{ text: string; value: number }>;
 }
 
 export interface PricingResult {
@@ -257,13 +277,13 @@ export interface PricingResult {
   accountName: string;
   accountStatus: "offline" | "online" | "afk";
   ign: string;
+  displayItem: DisplayItem;
 }
 
 export function createTradeRequest(
   filters: ItemFilters,
   stats: StatFilter[],
   item: ParsedItem,
-  runeFilters: RuneFilter[],
   weightGroups?: WeightStatGroup[],
 ) {
   const body: TradeRequest = {
@@ -371,20 +391,12 @@ export function createTradeRequest(
 
   // EQUIPMENT FILTERS
 
-  if (runeFilters.length > 0) {
-    const emptyRuneSockets = runeFilters.filter(
-      (rune) => rune.isEmpty && !rune.isFake,
+  if (filters.runeSockets && !filters.runeSockets.disabled) {
+    propSet(
+      query.filters,
+      "equipment_filters.filters.rune_sockets.min",
+      filters.runeSockets.value,
     );
-    if (
-      emptyRuneSockets.length > 0 &&
-      emptyRuneSockets.filter((rune) => !rune.disabled).length > 0
-    ) {
-      propSet(
-        query.filters,
-        "equipment_filters.filters.rune_sockets.min",
-        emptyRuneSockets.filter((rune) => !rune.disabled).length,
-      );
-    }
   }
 
   // REQ FILTERS
@@ -828,6 +840,52 @@ export async function requestResults(
   }
 
   return data.map<PricingResult>((result) => {
+    const runeMods = result.item.runeMods?.map((s) => parseAffixStrings(s));
+    const implicitMods = result.item.implicitMods?.map((s) =>
+      parseAffixStrings(s),
+    );
+    const explicitMods = result.item.explicitMods?.map((s) =>
+      parseAffixStrings(s),
+    );
+    const pseudoMods = result.item.pseudoMods?.map((s) => {
+      if (s.startsWith("Sum: ")) {
+        const pseudoRes = +s.slice(5);
+        if (!isNaN(pseudoRes)) {
+          return `+${pseudoRes}% total Elemental Resistance`;
+        }
+      }
+      return s;
+    });
+    const extended = result.item.extended
+      ? Object.entries(result.item.extended)
+          .filter(([key, value]) => value !== undefined) // Include only keys with defined values
+          .filter(([key]) =>
+            ["ar", "ev", "es", "dps", "pdps", "edps"].includes(key),
+          ) // Exclude mods
+          .map(([key, value]) => {
+            const labels: Record<string, string> = {
+              ar: "Armour: ",
+              ev: "Evasion Rating: ",
+              es: "Energy Shield: ",
+              dps: "Total DPS: ",
+              pdps: "Physical DPS: ",
+              edps: "Elemental DPS: ",
+            };
+
+            return {
+              text: labels[key] || `${key}: `,
+              value: Math.round(value),
+            };
+          })
+      : undefined;
+
+    const displayItem: PricingResult["displayItem"] = {
+      runeMods,
+      implicitMods,
+      explicitMods,
+      pseudoMods,
+      extended,
+    };
     return {
       id: result.id,
       itemLevel:
@@ -855,6 +913,7 @@ export async function requestResults(
           ? "afk"
           : "online"
         : "offline",
+      displayItem,
     };
   });
 }

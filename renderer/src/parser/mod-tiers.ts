@@ -58,6 +58,7 @@ function mapItemCategoryToKeys(itemCategory: ItemCategory): string[] {
     [ItemCategory.MetaGem]: [""],
     [ItemCategory.Focus]: ["focus", "armour"],
     [ItemCategory.Waystone]: [""],
+    [ItemCategory.Relic]: [""],
   };
 
   return categoryMap[itemCategory] || [itemCategory.toLowerCase()];

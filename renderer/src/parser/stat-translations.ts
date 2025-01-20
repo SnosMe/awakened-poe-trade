@@ -231,22 +231,88 @@ export function tryParseTranslation(
           }
         }
       }
-    } else if (found.stat.tiers && itemRarity === ItemRarity.Unique && item) {
-      if (found.stat.tiers.unique) {
-        const uniqueName = item.info.refName;
-        if (uniqueName in found.stat.tiers.unique) {
-          const uniqueModValues = found.stat.tiers.unique[uniqueName];
-          if (uniqueModValues) {
-            combination.values.forEach((stat, index) => {
-              const tierBounds = uniqueModValues[index];
-              if (tierBounds) {
+    } else if (
+      found.stat &&
+      itemRarity === ItemRarity.Unique &&
+      item?.info.unique?.stats
+    ) {
+      // replace +# with # in ref
+      const refName = found.stat.ref.replace(/\+#+/g, "#");
+      const negatedRefName = refName
+        .replace(/increased/g, "reduced") // Replace "increased" with "reduced"
+        .replace(/faster/g, "slower") // Replace "faster" with "slower"
+        .replace(/more/g, "less"); // Replace "more" with "less"
+      const implicitTestString = `(implicit) ${refName}`;
+      const negatedImplicitTestString = `(implicit) ${negatedRefName}`;
+      if (
+        modType === ModifierType.Implicit &&
+        (implicitTestString in item.info.unique.stats ||
+          negatedImplicitTestString in item.info.unique.stats)
+      ) {
+        if (negatedImplicitTestString in item.info.unique.stats) {
+          const thisModValues =
+            item.info.unique.stats[negatedImplicitTestString];
+          combination.values.forEach((stat, index) => {
+            const tierBounds = thisModValues[index];
+            if (tierBounds) {
+              if (tierBounds[0] > 0 && tierBounds[1] > 0) {
+                stat.bounds = {
+                  min: -1 * tierBounds[0],
+                  max: -1 * tierBounds[1],
+                };
+              } else {
                 stat.bounds = {
                   min: tierBounds[0],
                   max: tierBounds[1],
                 };
               }
-            });
-          }
+            }
+          });
+        } else {
+          const thisModValues = item.info.unique.stats[implicitTestString];
+          combination.values.forEach((stat, index) => {
+            const tierBounds = thisModValues[index];
+            if (tierBounds) {
+              stat.bounds = {
+                min: tierBounds[0],
+                max: tierBounds[1],
+              };
+            }
+          });
+        }
+      } else if (
+        refName in item.info.unique.stats ||
+        negatedRefName in item.info.unique.stats
+      ) {
+        if (negatedRefName in item.info.unique.stats) {
+          const thisModValues = item.info.unique.stats[negatedRefName];
+          combination.values.forEach((stat, index) => {
+            const tierBounds = thisModValues[index];
+            if (tierBounds) {
+              if (tierBounds[0] > 0 && tierBounds[1] > 0) {
+                stat.bounds = {
+                  min: -1 * tierBounds[0],
+                  max: -1 * tierBounds[1],
+                };
+              } else {
+                stat.bounds = {
+                  min: tierBounds[0],
+                  max: tierBounds[1],
+                };
+              }
+            }
+          });
+        } else {
+          const thisModValues = item.info.unique.stats[refName];
+          combination.values.forEach((stat, index) => {
+            const tierBounds = thisModValues[index];
+            if (tierBounds) {
+              stat.bounds = {
+                min: tierBounds[0],
+                max: tierBounds[1],
+              };
+            }
+          });
         }
       } else {
         if (item.info.refName === "Controlled Metamorphosis") {

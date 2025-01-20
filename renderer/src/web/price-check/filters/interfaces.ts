@@ -6,7 +6,6 @@ export interface FilterPreset {
   id: string;
   filters: ItemFilters;
   stats: StatFilter[];
-  runeFilters: RuneFilter[];
   weightFilters: WeightStatGroup[];
 }
 
@@ -38,7 +37,8 @@ export interface ItemFilters {
   socketNumber?: FilterNumeric;
   linkedSockets?: FilterNumeric;
   whiteSockets?: FilterNumeric;
-  emptyRuneSockets?: FilterNumeric;
+  runeSockets?: FilterNumeric;
+  fillEmptyRuneSockets?: { disabled: boolean };
   corrupted?: {
     value: boolean;
     exact?: boolean;
@@ -92,13 +92,10 @@ export interface FilterNumeric {
   disabled: boolean;
 }
 
-export interface RuneFilter {
-  rune?: string;
-  text?: string;
-  isEmpty: boolean;
-  isFake: boolean;
-  index: number;
-  disabled: boolean; // NOTE: mutable in UI
+export interface FilterDropdown {
+  value: string;
+  disabled: boolean;
+  options: Array<{ label: string; value: string }>;
 }
 
 export interface StatFilter {
@@ -123,7 +120,7 @@ export interface StatFilter {
   };
   hidden?: string;
   disabled: boolean; // NOTE: mutable in UI
-  weight?: number
+  weight?: number;
 }
 
 export interface WeightStatGroup {
@@ -136,7 +133,8 @@ export interface WeightStatGroup {
   disabled: boolean;
 }
 
-export const RESISTANCE_WEIGHT_GROUP: string = "RESISTANCE_WEIGHT_GROUP" as const;
+export const RESISTANCE_WEIGHT_GROUP: string =
+  "RESISTANCE_WEIGHT_GROUP" as const;
 
 export const INTERNAL_TRADE_IDS = [
   "item.base_percentile",

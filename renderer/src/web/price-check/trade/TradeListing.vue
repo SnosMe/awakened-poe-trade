@@ -64,69 +64,15 @@
             <tr v-if="!result" :key="idx">
               <td colspan="100" class="text-transparent">***</td>
             </tr>
-            <tr v-else :key="result.id">
-              <td class="px-2 whitespace-nowrap">
-                <span
-                  :class="{
-                    'line-through': result.priceCurrency === 'chaos',
-                  }"
-                  >{{ result.priceAmount }} {{ result.priceCurrency }}</span
-                >
-                <span
-                  v-if="result.listedTimes > 2"
-                  class="rounded px-1 text-gray-800 bg-gray-400 -mr-2"
-                  ><span class="font-sans">×</span>
-                  {{ result.listedTimes }}</span
-                ><i v-else-if="!result.hasNote" class="fas fa-question" />
-              </td>
-              <td v-if="item.stackSize" class="px-2 text-right">
-                {{ result.stackSize }}
-              </td>
-              <td
-                v-if="filters.itemLevel"
-                class="px-2 whitespace-nowrap text-right"
-              >
-                {{ result.itemLevel }}
-              </td>
-              <td v-if="item.category === 'Gem'" class="pl-2 whitespace-nowrap">
-                {{ result.level }}
-              </td>
-              <td v-if="item.category === 'Gem'" class="pl-2 whitespace-nowrap">
-                {{ result.gemSockets }}
-              </td>
-              <td
-                v-if="filters.quality || item.category === 'Gem'"
-                class="px-2 whitespace-nowrap text-blue-400 text-right"
-              >
-                {{ result.quality }}
-              </td>
-              <td class="pr-2 pl-4 whitespace-nowrap">
-                <div class="inline-flex items-center">
-                  <div
-                    class="account-status"
-                    :class="result.accountStatus"
-                  ></div>
-                  <div class="ml-1 font-sans text-xs">
-                    {{ result.relativeDate }}
-                  </div>
-                </div>
-                <span
-                  v-if="!showSeller && result.isMine"
-                  class="rounded px-1 text-gray-800 bg-gray-400 ml-1"
-                  >{{ t("You") }}</span
-                >
-              </td>
-              <td v-if="showSeller" class="px-2 whitespace-nowrap">
-                <span
-                  v-if="result.isMine"
-                  class="rounded px-1 text-gray-800 bg-gray-400"
-                  >{{ t("You") }}</span
-                >
-                <span v-else class="font-sans text-xs">{{
-                  showSeller === "ign" ? result.ign : result.accountName
-                }}</span>
-              </td>
-            </tr>
+            <trade-item
+              v-else
+              :key="result.id"
+              :result="result"
+              :item="item"
+              :show-seller="showSeller"
+              :item-level="filters.itemLevel"
+              :quality="filters.quality"
+            />
           </template>
         </tbody>
       </table>
@@ -151,6 +97,9 @@ import {
   inject,
   shallowReactive,
   shallowRef,
+  ref,
+  onMounted,
+  onUnmounted,
 } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import UiPopover from "@/web/ui/Popover.vue";
@@ -167,7 +116,6 @@ import { AppConfig } from "@/web/Config";
 import { PriceCheckWidget } from "@/web/overlay/interfaces";
 import {
   ItemFilters,
-  RuneFilter,
   StatFilter,
   WeightStatGroup,
 } from "../filters/interfaces";
@@ -175,6 +123,7 @@ import { ParsedItem } from "@/parser";
 import { artificialSlowdown } from "./artificial-slowdown";
 import OnlineFilter from "./OnlineFilter.vue";
 import TradeLinks from "./TradeLinks.vue";
+import TradeItem from "./TradeItem.vue";
 import { Host } from "@/web/background/IPC";
 import { CURRENCY_RATIO } from "@/web/price-check/filters/create-item-filters";
 
@@ -223,7 +172,6 @@ function useTradeApi() {
     filters: ItemFilters,
     stats: StatFilter[],
     item: ParsedItem,
-    runeFilters: RuneFilter[],
   ) {
     try {
       searchId += 1;
@@ -233,7 +181,7 @@ function useTradeApi() {
       fetchResults.value = _fetchResults;
 
       const _searchId = searchId;
-      const request = createTradeRequest(filters, stats, item, runeFilters);
+      const request = createTradeRequest(filters, stats, item);
       const _searchResult = await requestTradeResultList(
         request,
         filters.trade.league,
@@ -335,7 +283,7 @@ function useTradeApi() {
 }
 
 export default defineComponent({
-  components: { OnlineFilter, TradeLinks, UiErrorBox, UiPopover },
+  components: { OnlineFilter, TradeLinks, TradeItem, UiErrorBox, UiPopover },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,
@@ -347,10 +295,6 @@ export default defineComponent({
     },
     item: {
       type: Object as PropType<ParsedItem>,
-      required: true,
-    },
-    runeFilters: {
-      type: Array as PropType<RuneFilter[]>,
       required: true,
     },
     weightFilters: {
@@ -377,12 +321,37 @@ export default defineComponent({
     function makeTradeLink() {
       return searchResult.value
         ? `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}/${searchResult.value.id}`
-        : `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item, props.runeFilters))}`;
+        : `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item))}`;
     }
 
     function makeTradeLinkPseudo() {
-      return `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item, props.runeFilters, props.weightFilters))}`;
+      return `https://${getTradeEndpoint()}/trade2/search/poe2/${props.filters.trade.league}?q=${JSON.stringify(createTradeRequest(props.filters, props.stats, props.item, props.weightFilters))}`;
     }
+
+    // Shift Key Detection
+    const isShiftPressed = ref(false);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Shift") {
+        isShiftPressed.value = true;
+      }
+    };
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (event.key === "Shift") {
+        isShiftPressed.value = false;
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("keyup", handleKeyUp);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    });
 
     return {
       t,
@@ -400,7 +369,7 @@ export default defineComponent({
         }
       }),
       execSearch: () => {
-        search(props.filters, props.stats, props.item, props.runeFilters);
+        search(props.filters, props.stats, props.item);
       },
       error,
       showSeller: computed(() => widget.value.showSeller),
@@ -421,6 +390,8 @@ export default defineComponent({
             ["en", "ru", "ko", "cmn-Hant"].includes(AppConfig().language)
           ),
       ),
+      // Shift key state and methods
+      isShiftPressed,
     };
   },
 });

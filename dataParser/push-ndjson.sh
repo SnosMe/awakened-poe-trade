@@ -7,7 +7,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Get the data directory
 DATA_DIR="./data"
-SUPPORTED_LANG=("en" "ru" "ko" "cmn-Hant" "ja" "de")
+SUPPORTED_LANG=("en" "ru" "ko" "cmn-Hant" "ja" "de" "es")
 # Get all *.ndjson files in the data directory
 
 echo "current dir: $DIR"

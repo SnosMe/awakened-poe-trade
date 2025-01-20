@@ -53,6 +53,7 @@ export enum ItemCategory {
   MetaGem = "Meta Gem",
   Focus = "Focus",
   Waystone = "Waystone",
+  Relic = "Relic",
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([

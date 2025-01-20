@@ -20,7 +20,6 @@ import {
   ParsedItem,
   ItemInfluence,
   ItemRarity,
-  Rune,
 } from "./ParsedItem";
 import { magicBasetype } from "./magic-name";
 import {
@@ -110,7 +109,7 @@ export function parseClipboard(clipboard: string): Result<ParsedItem, string> {
     const chatRegex = /\[.*?\]|\[.*?\|.*?\]/;
     const isFromChat = chatRegex.test(clipboard);
     if (isFromChat) {
-      clipboard = parseChat(clipboard);
+      clipboard = parseAffixStrings(clipboard);
     }
     let sections = itemTextToSections(clipboard);
 
@@ -568,22 +567,22 @@ function parseRuneSockets(section: string[], item: ParsedItem) {
   if (!armourOrWeapon) return "PARSER_SKIPPED";
   if (section[0].startsWith(_$.SOCKETS)) {
     const sockets = section[0].slice(_$.SOCKETS.length).trimEnd();
-    const totalMax = Math.max(sockets.split("S").length - 1, categoryMax);
+    const current = sockets.split("S").length - 1;
     item.runeSockets = {
-      total: totalMax,
-      empty: totalMax,
-      runes: [],
       type: armourOrWeapon,
+      empty: 0,
+      current,
+      normal: categoryMax,
     };
 
     return "SECTION_PARSED";
   }
   if (categoryMax) {
     item.runeSockets = {
-      total: categoryMax,
-      empty: categoryMax,
-      runes: [],
       type: armourOrWeapon,
+      empty: categoryMax,
+      current: 0,
+      normal: categoryMax,
     };
   }
   return "SECTION_SKIPPED";
@@ -941,7 +940,13 @@ export function parseModifiersPoe2(section: string[], item: ParsedItem) {
     foundAnyMods = parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
   } else {
     for (const statLines of section) {
-      const { modType, lines } = parseModType([statLines]);
+      let { modType, lines } = parseModType([statLines]);
+      if (
+        modType === ModifierType.Explicit &&
+        item.category === ItemCategory.Relic
+      ) {
+        modType = ModifierType.Sanctum;
+      }
       // const modInfo = parseModInfoLine(modLine, modType);
       foundAnyMods =
         parseStatsFromMod(lines, item, {
@@ -1020,29 +1025,15 @@ function applyRuneSockets(item: ParsedItem) {
           (stat) => stat.sources[0].stat === mod.stats[0],
         );
         if (!stat) return [];
-        return statToRune(mod, stat);
+        return runeCount(mod, stat);
       })
       .flat();
 
-    item.runeSockets.runes.push(...runes);
-
-    const potentialEmptySockets = item.runeSockets.total - runes.length;
+    const potentialEmptySockets =
+      Math.max(item.runeSockets.normal, item.runeSockets.current) -
+      runes.reduce((x, y) => x + y, 0);
 
     item.runeSockets.empty = potentialEmptySockets;
-    // If we have any empty sockets, add them
-    if (potentialEmptySockets > 0) {
-      for (let i = 0; i < potentialEmptySockets; i++) {
-        item.runeSockets.runes.push({
-          index: i + runes.length,
-          isEmpty: true,
-        });
-      }
-    }
-
-    // reset indices just to be safe
-    for (let i = 0; i < item.runeSockets.runes.length; i++) {
-      item.runeSockets.runes[i].index = i;
-    }
   }
 }
 
@@ -1129,7 +1120,9 @@ function parseHelpText(section: string[], item: ParsedItem) {
     item.category !== ItemCategory.Flask &&
     item.category !== ItemCategory.Charm &&
     item.category !== ItemCategory.Waystone &&
-    item.category !== ItemCategory.Map
+    item.category !== ItemCategory.Map &&
+    item.category !== ItemCategory.Jewel &&
+    item.category !== ItemCategory.Relic
   )
     return "PARSER_SKIPPED";
 
@@ -1138,7 +1131,9 @@ function parseHelpText(section: string[], item: ParsedItem) {
       line.startsWith(_$.QUIVER_HELP_TEXT) ||
       line.startsWith(_$.FLASK_HELP_TEXT) ||
       line.startsWith(_$.CHARM_HELP_TEXT) ||
-      line.startsWith(_$.WAYSTONE_HELP)
+      line.startsWith(_$.WAYSTONE_HELP) ||
+      line.startsWith(_$.JEWEL_HELP) ||
+      line.startsWith(_$.SANCTUM_HELP)
     ) {
       return "SECTION_PARSED";
     }
@@ -1474,15 +1469,10 @@ export function removeLinesEnding(
   );
 }
 
-function parseChat(clipboard: string): string {
-  // check if clipboard from chat
-  const chatRegex = /\[.*?\]|\[.*?\|.*?\]/;
-  if (!chatRegex.test(clipboard)) return clipboard;
-  // choose the right item includes "|"
-  let preprocessString = clipboard.replace(/\[.*?\|(.*?)\]/g, "$1");
-  // remove brackets
-  preprocessString = preprocessString.replace(/\[(.*?)\]/g, "$1");
-  return preprocessString;
+export function parseAffixStrings(clipboard: string): string {
+  return clipboard.replace(/\[([^\]|]+)\|?([^\]]*)\]/g, (_, part1, part2) => {
+    return part2 || part1;
+  });
 }
 function getMaxSockets(category: ItemCategory | undefined) {
   switch (category) {
@@ -1542,8 +1532,8 @@ export function isArmourOrWeapon(
   }
 }
 
-function statToRune(mod: ParsedModifier, statCalc: StatCalculated): Rune[] {
-  if (mod.info.type !== ModifierType.Rune) return [];
+function runeCount(mod: ParsedModifier, statCalc: StatCalculated): number {
+  if (mod.info.type !== ModifierType.Rune) return 0;
   const runeTradeId = statCalc.stat.trade.ids[ModifierType.Rune][0];
   const runeSingle = RUNE_SINGLE_VALUE[runeTradeId];
 
@@ -1552,21 +1542,7 @@ function statToRune(mod: ParsedModifier, statCalc: StatCalculated): Rune[] {
   const runeSingleValue = runeSingle.values[0];
   const totalRunes = Math.floor(runeAppliedValue / runeSingleValue);
 
-  // Get original mod ref text
-  const modRef = replaceHashWithValues(runeSingle.baseStat, runeSingle.values);
-
-  // Return one rune for each rune in the item
-  const runes: Rune[] = [];
-  for (let i = 0; i < totalRunes; i++) {
-    runes.push({
-      index: i,
-      isEmpty: false,
-      rune: runeSingle.rune,
-      text: modRef,
-    });
-  }
-
-  return runes;
+  return totalRunes;
 }
 
 export function replaceHashWithValues(template: string, values: number[]) {

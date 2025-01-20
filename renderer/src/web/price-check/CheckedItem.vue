@@ -10,7 +10,6 @@
       :stats="itemStats"
       :item="item"
       :presets="presets"
-      :runes="runeFilters"
       :weightFilters="weightFilters"
       :change-item="changeItem"
       @preset="selectPreset"
@@ -23,7 +22,6 @@
       :filters="itemFilters"
       :stats="itemStats"
       :item="item"
-      :runeFilters="runeFilters"
       :weightFilters="weightFilters"
     />
     <trade-bulk
@@ -156,12 +154,6 @@ export default defineComponent({
         presets.value.presets.find(
           (preset) => preset.id === presets.value.active,
         )!.stats,
-    );
-    const runeFilters = computed(
-      () =>
-        presets.value.presets.find(
-          (preset) => preset.id === presets.value.active,
-        )!.runeFilters,
     );
     const weightFilters = computed(
       () =>
@@ -355,7 +347,6 @@ export default defineComponent({
       t,
       itemFilters,
       itemStats,
-      runeFilters,
       weightFilters,
       doSearch,
       tradeAPI,
@@ -383,10 +374,10 @@ export default defineComponent({
           ),
       ),
       makeTradeLink() {
-        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item, runeFilters.value))}`;
+        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`;
       },
       makeTradeLinkPseudo() {
-        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item, runeFilters.value, weightFilters.value))}`;
+        return `https://${getTradeEndpoint()}/trade2/search/poe2/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item, weightFilters.value))}`;
       },
     };
   },

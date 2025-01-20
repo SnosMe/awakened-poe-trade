@@ -147,4 +147,5 @@ const TRADE_BULK_WHISPER = {
   "ko": /^_FIX_ME_$/,
   "ja": /^こんにちは、私は(?<league>.+)であなたの(?<item>.+)を私の(?<price>.+)で購入したいです。\.(?<message>.+)?$/,
   "de": /^Hallo, ich möchte dein (?<item>.+) für (?<price>.+) in der Liga (?<league>.+) kaufen\.(?<message>.+)?$/,
+  "es": /^Hola, quisiera comprar tu (?<item>.+) listado por (?<price>.+) en (?<league>.+).(?<message>.+)?$/,
 };

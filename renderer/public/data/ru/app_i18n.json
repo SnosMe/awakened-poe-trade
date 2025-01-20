@@ -188,7 +188,9 @@
     "tag_explicit_delve": "Спуск",
     "tag_explicit_veiled": "Завуалирован",
     "tag_explicit_incursion": "Вмешательство",
-    "tag_rune": "Руна"
+    "tag_rune": "Руна",
+    "tag_sanctum": "Sanctum",
+    "fill_rune_iron": "Fill Runes(Iron)"
   },
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",
@@ -366,7 +368,11 @@
     "select_stock": "Всегда активировать фильтр \"Запас\"",
     "show_prediction": "Показывать приблизительную цену",
     "remember_currency": "Запоминать фильтр \"Валюты выкупа\"",
-    "default_all_selected": "Default all filters to enabled"
+    "default_all_selected": "Default all filters to enabled",
+    "use_tooltip_hover": "Show item when hovering over price",
+    "use_tooltip_keybind": "SHIFT + hover",
+    "use_tooltip_always": "hover",
+    "use_tooltip_off": "off"
   },
   "poe2_new": {
     "beta_warning": "Функционал для PoE2 находится в стадии бета тестирования и не всегда работает так, как задумано.",

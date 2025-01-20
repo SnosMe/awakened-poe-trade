@@ -140,6 +140,7 @@ vendor/json-api/ko/*.json
 vendor/json-api/cmn-Hant/*.json
 vendor/json-api/ja/*.json
 vendor/json-api/de/*.json
+vendor/json-api/es/*.json
 vendor/client/tables/*.json
 vendor/client/descriptions/*
 !vendor/client/descriptions/.gitkeep
@@ -154,6 +155,7 @@ vendor/client/tables/*
 !vendor/client/tables/cmn-Hant/ArmourTypesOverride.json
 !vendor/client/tables/ja/ArmourTypesOverride.json
 !vendor/client/tables/de/ArmourTypesOverride.json
+!vendor/client/tables/es/ArmourTypesOverride.json
 
 !vendor/client/tables/en/.gitkeep
 !vendor/client/tables/ru/.gitkeep
@@ -161,6 +163,7 @@ vendor/client/tables/*
 !vendor/client/tables/cmn-Hant/.gitkeep
 !vendor/client/tables/ja/.gitkeep
 !vendor/client/tables/de/.gitkeep
+!vendor/client/tables/es/.gitkeep
 
 
 
@@ -172,6 +175,7 @@ vendor/client/tables/*
 !vendor/json-api/cmn-Hant/.gitkeep
 !vendor/json-api/ja/.gitkeep
 !vendor/json-api/de/.gitkeep
+!vendor/json-api/es/.gitkeep
 
 
 EXPORT/tables/**/*.json
@@ -184,5 +188,7 @@ vendor/json-api/ko/*.json
 vendor/json-api/cmn-Hant/*.json
 vendor/json-api/ja/*.json
 vendor/json-api/de/*.json
+vendor/json-api/de/*.json
+vendor/json-api/es/*.json
 
 EXPORT/files/**/*.csd

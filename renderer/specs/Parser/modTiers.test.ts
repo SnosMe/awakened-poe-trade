@@ -8,8 +8,10 @@ import {
   maxManaStat,
   strengthStat,
 } from "../static";
+import { setupTests } from "../vitest.setup";
 
 describe("getModTier", () => {
+  setupTests();
   test("If 'found' is undefined, should throw", () => {
     const values = [
       {
@@ -204,6 +206,7 @@ describe("getModTier", () => {
 });
 
 describe("getTier", () => {
+  setupTests();
   test.each(
     strengthStat!.explicit.flatMap((tier) =>
       tier.mods.flatMap((mod, modIndex) => {
@@ -281,6 +284,7 @@ describe("getTier", () => {
 });
 
 describe("getTierNumber", () => {
+  setupTests();
   test("If tier is the first tier, should return total mods count - 1", () => {
     const tier = strengthStat!.explicit[0].mods[0];
     const mod = strengthStat!.explicit[0];

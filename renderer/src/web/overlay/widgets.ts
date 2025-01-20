@@ -45,6 +45,7 @@ export interface PriceCheckWidget extends Widget {
   usePseudo: boolean;
   rememberCurrency: boolean;
   defaultAllSelected: boolean;
+  itemHoverTooltip: "off" | "keybind" | "always";
 }
 
 export interface StopwatchWidget extends Widget {

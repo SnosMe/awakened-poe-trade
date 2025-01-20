@@ -451,6 +451,9 @@ export default defineComponent({
 .tag-rune {
   @apply bg-blue-600 text-blue-100;
 }
+.tag-sanctum {
+  @apply border;
+}
 </style>
 
 <style lang="postcss">

@@ -2,7 +2,8 @@ import { vi } from "vitest";
 import fs from "fs";
 import path from "path";
 import { Headers } from "node-fetch"; // Assuming you are using node-fetch
-
+import { Config } from "@/web/Config";
+let mockConfig: Config;
 // Mock client-string-loader
 export const setupClientStringLoaderMock = () => {
   vi.mock("@/assets/client-string-loader", () => ({
@@ -72,10 +73,41 @@ export const setupFetchMock = () => {
   });
 };
 
+export const defaultConfigMock = (overrides: Partial<Config> = {}) => {
+  const defaultConfig: Config = {
+    configVersion: 99999999,
+    overlayKey: "default",
+    overlayBackground: "",
+    overlayBackgroundClose: false,
+    restoreClipboard: false,
+    commands: [],
+    clientLog: null,
+    gameConfig: null,
+    windowTitle: "Test Window",
+    logKeys: false,
+    accountName: "TestAccount",
+    stashScroll: false,
+    language: "en", // Default language
+    preferredTradeSite: "default",
+    realm: "pc-ggg",
+    widgets: [],
+    fontSize: 12,
+    showAttachNotification: true,
+    overlayAlwaysClose: false,
+    enableAlphas: false,
+    alphas: [],
+  };
+
+  mockConfig = { ...defaultConfig, ...overrides };
+
+  vi.mock("@/web/Config", () => ({
+    AppConfig: vi.fn(() => mockConfig),
+  }));
+};
+
 // Consolidate setup
-export const setupTests = () => {
+export const setupTests = (configOverrides: Partial<Config> = {}) => {
+  defaultConfigMock(configOverrides); // Pass overrides here
   setupClientStringLoaderMock();
   setupFetchMock();
 };
-
-setupTests();

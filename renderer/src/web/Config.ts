@@ -105,6 +105,8 @@ export function poeWebApi() {
       return "jp.pathofexile.com";
     case "de":
       return "de.pathofexile.com";
+    case "es":
+      return "es.pathofexile.com";
   }
 }
 
@@ -126,7 +128,7 @@ export interface Config {
   logKeys: boolean;
   accountName: string;
   stashScroll: boolean;
-  language: "en" | "ru" | "cmn-Hant" | "ko" | "ja" | "de";
+  language: "en" | "ru" | "cmn-Hant" | "ko" | "ja" | "de" | "es";
   preferredTradeSite: "default" | "www";
   realm: "pc-ggg" | "pc-garena";
   widgets: widget.Widget[];
@@ -134,11 +136,11 @@ export interface Config {
   showAttachNotification: boolean;
   overlayAlwaysClose: boolean;
   enableAlphas: boolean;
-  alphas: Array<"runes">;
+  alphas: [];
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 20,
+  configVersion: 21,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -229,6 +231,7 @@ export const defaultConfig = (): Config => ({
       requestPricePrediction: false,
       rememberCurrency: false,
       defaultAllSelected: false,
+      itemHoverTooltip: "keybind",
     } as widget.PriceCheckWidget,
     {
       wmId: 3,
@@ -690,6 +693,15 @@ function upgradeConfig(_config: Config): Config {
     });
 
     config.configVersion = 20;
+  }
+
+  if (config.configVersion < 21) {
+    config.widgets.find((w) => w.wmType === "price-check")!.itemHoverTooltip =
+      "keybind";
+
+    config.alphas = [];
+
+    config.configVersion = 21;
   }
 
   if (config.logKeys === undefined) {

@@ -9,6 +9,7 @@ const POEDB_LANGS = {
   "ko": "kr",
   "ja": "jp",
   "de": "de",
+  "es": "sp",
 };
 
 export function registerActions() {

@@ -2786,262 +2786,262 @@
 {"name": "[UNUSED] Heist Test Tool", "refName": "[UNUSED] Heist Test Tool", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "[UNUSED] Heist Test Utility Equipment", "refName": "[UNUSED] Heist Test Utility Equipment", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentUtility"}, "w": 2, "h": 2}
 {"name": "[UNUSED] Heist Test Weapon", "refName": "[UNUSED] Heist Test Weapon", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
-{"name": "Andvarius", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}}
-{"name": "Astramentis", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}}
-{"name": "Beacon of Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}}
-{"name": "Birthright Buckle", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}}
-{"name": "Blackflame", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}}
-{"name": "Blackheart", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}}
-{"name": "Blistering Bond", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}}
-{"name": "Brynabas", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}}
-{"name": "Call of the Brotherhood", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}}
-{"name": "Carnage Heart", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}}
-{"name": "Choir of the Storm", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}}
-{"name": "Coward's Legacy", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Mail Belt"}}
-{"name": "Cracklecreep", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}}
-{"name": "Death Rush", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}}
-{"name": "Defiance of Destiny", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}}
-{"name": "Doedre's Damning", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}}
-{"name": "Dream Fragments", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}}
-{"name": "Eye of Chayula", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}}
-{"name": "Fireflower", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}}
-{"name": "Fixation of Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}}
-{"name": "Glowswarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}}
-{"name": "Headhunter", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}}
-{"name": "Heartbound Loop", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}}
-{"name": "Idol of Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}}
-{"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}}
-{"name": "Infernoclasp", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}}
-{"name": "Ingenuity", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Utility Belt"}}
-{"name": "Kalandra's Touch", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Ring"}}
-{"name": "Keelhaul", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Linen Belt"}}
-{"name": "Levinstone", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}}
-{"name": "Ligurium Talisman", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}}
-{"name": "Meginord's Girdle", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}}
-{"name": "Midnight Braid", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}}
-{"name": "Ming's Heart", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}}
-{"name": "Original Sin", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}}
-{"name": "Perandus Seal", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}}
-{"name": "Polcirkeln", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}}
-{"name": "Revered Resin", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}}
-{"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}}
-{"name": "Ryslatha's Coil", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}}
-{"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}}
+{"name": "Andvarius", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring", "stats": {"#% increased Rarity of Items found": [[50, 70]], "(implicit) #% increased Rarity of Items found": [[6, 15]]}}}
+{"name": "Astramentis", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet", "stats": {"# to all Attributes": [[80, 100]], "(implicit) # to all Attributes": [[5, 7]]}}}
+{"name": "Beacon of Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet", "stats": {"# to Spirit": [[10, 15]], "# to maximum Mana": [[60, 100]]}}}
+{"name": "Birthright Buckle", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt", "stats": {"#% increased Flask Charges gained": [[20, 30]], "# to Armour": [[100, 150]], "#% reduced Flask Charges used": [[10, 15]], "(implicit) #% increased Flask Charges gained": [[20, 30]]}}}
+{"name": "Blackflame", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring", "stats": {"#% to Chaos Resistance": [[7, 13]], "#% increased Mana Regeneration Rate": [[15, 30]]}}}
+{"name": "Blackheart", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring", "stats": {"# Life Regeneration per second": [[3, 6]], "Adds # to # Chaos Damage to Attacks": [[4, 6], [8, 10]]}}}
+{"name": "Blistering Bond", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring", "stats": {"#% to Fire Resistance": [[20, 30]], "# to maximum Life": [[40, 60]], "(implicit) #% to Fire Resistance": [[20, 30]]}}}
+{"name": "Brynabas", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt", "stats": {"#% increased Flask Charges gained": [[20, 30]], "# to maximum Mana": [[40, 60]], "#% to Lightning Resistance": [[30, 40]], "# Life Regeneration per second": [[7, 12]]}}}
+{"name": "Call of the Brotherhood", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring", "stats": {"#% to Lightning Resistance": [[20, 30]], "# to Intelligence": [[10, 20]], "#% increased Mana Regeneration Rate": [[25, 35]], "#% increased Freeze Buildup": [[20, 30]]}}}
+{"name": "Carnage Heart", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet", "stats": {"# to Strength": [[10, 15]], "# to all Attributes": [[10, 20]], "#% to all Elemental Resistances": [[10, 20]]}}}
+{"name": "Choir of the Storm", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet", "stats": {"# to Dexterity": [[10, 15]], "#% to Lightning Resistance": [[20, 30]]}}}
+{"name": "Coward's Legacy", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Mail Belt", "stats": {"#% reduced Flask Charges used": [[10, 15]], "# to Strength": [[-20, -10]], "# to Dexterity": [[20, 30]], "#% increased Life and Mana Recovery from Flasks": [[30, 40]]}}}
+{"name": "Cracklecreep", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring", "stats": {"#% to Fire Resistance": [[20, 30]], "#% increased Fire Damage": [[20, 30]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
+{"name": "Death Rush", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring", "stats": {"# to Accuracy Rating": [[75, 125]], "(implicit) # to Accuracy Rating": [[120, 160]], "# to Evasion Rating": [[75, 125]]}}}
+{"name": "Defiance of Destiny", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet", "stats": {"# to Dexterity": [[10, 15]], "#% increased maximum Life": [[6, 10]], "# to Strength": [[10, 20]], "#% increased Mana Regeneration Rate": [[25, 40]]}}}
+{"name": "Doedre's Damning", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring", "stats": {"# to maximum Mana": [[20, 30]], "#% to all Elemental Resistances": [[5, 15]], "Gain # Mana per Enemy Killed": [[1, 10]]}}}
+{"name": "Dream Fragments", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
+{"name": "Eye of Chayula", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet", "stats": {"#% increased Rarity of Items found": [[12, 20]], "#% reduced maximum Life": [[20, 30]], "# to all Attributes": [[10, 15]]}}}
+{"name": "Fireflower", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet", "stats": {"# to Spirit": [[10, 15]], "#% increased Rarity of Items found": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 40]], "# to Level of all Fire Skills": [[1, 4]]}}}
+{"name": "Fixation of Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet", "stats": {"# to all Attributes": [[5, 7]], "Allies in your Presence have #% increased Critical Hit Chance": [[30, 50]], "Allies in your Presence have #% increased Critical Damage Bonus": [[30, 50]], "Allies in your Presence have #% increased Attack Speed": [[10, 20]], "Allies in your Presence have #% increased Cast Speed": [[10, 20]]}}}
+{"name": "Glowswarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring", "stats": {"# to maximum Mana": [[40, 60]], "(implicit) # to maximum Mana": [[20, 30]], "#% increased Flask Mana Recovery rate": [[20, 30]]}}}
+{"name": "Headhunter", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt", "stats": {"#% increased Stun Threshold": [[20, 30]], "# to maximum Life": [[40, 60]], "# to Strength": [[20, 40]], "# to Dexterity": [[20, 40]]}}}
+{"name": "Heartbound Loop", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring", "stats": {"#% increased Cast Speed": [[7, 10]], "Minions have #% increased maximum Life": [[10, 15]], "# Life Regeneration per second": [[10, 15]], "#% increased Mana Regeneration Rate": [[20, 40]], "Minions Revive #% faster": [[10, 15]]}}}
+{"name": "Idol of Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet", "stats": {"# Life Regeneration per second": [[2, 4]], "# to maximum Life": [[60, 80]], "# to Dexterity": [[10, 20]]}}}
+{"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet", "stats": {"# Life Regeneration per second": [[2, 4]], "#% to Fire Resistance": [[10, 20]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
+{"name": "Infernoclasp", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt", "stats": {"# to Armour": [[100, 150]], "(implicit) # to Armour": [[100, 140]], "# to Strength": [[10, 20]], "#% to Maximum Fire Resistance": [[3, 5]], "#% to Fire Resistance": [[30, 50]]}}}
+{"name": "Ingenuity", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Utility Belt", "stats": {"#% increased bonuses gained from Equipped Rings": [[40, 80]]}}}
+{"name": "Kalandra's Touch", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Ring", "stats": {}}}
+{"name": "Keelhaul", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Linen Belt", "stats": {"#% increased Mana Recovery from Flasks": [[20, 30]], "#% reduced Flask Life Recovery rate": [[-25, 25]], "#% reduced Flask Mana Recovery rate": [[-25, 25]]}}}
+{"name": "Levinstone", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring", "stats": {"#% to Lightning Resistance": [[20, 30]], "# to maximum Mana": [[40, 60]], "#% increased chance to Shock": [[10, 20]]}}}
+{"name": "Ligurium Talisman", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet", "stats": {"# to Intelligence": [[20, 30]], "# to maximum Energy Shield": [[30, 40]], "# to Spirit": [[25, 35]], "(implicit) # to Intelligence": [[10, 15]]}}}
+{"name": "Meginord's Girdle", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt", "stats": {"#% increased Life Recovery from Flasks": [[20, 30]], "# to Strength": [[40, 50]], "#% to Cold Resistance": [[10, 15]]}}}
+{"name": "Midnight Braid", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt", "stats": {"#% increased Life Recovery from Flasks": [[20, 30]], "# to maximum Mana": [[30, 50]], "#% to all Elemental Resistances": [[5, 10]]}}}
+{"name": "Ming's Heart", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring", "stats": {"#% to Chaos Resistance": [[7, 13]], "Gain #% of Damage as Extra Chaos Damage": [[30, 40]]}}}
+{"name": "Original Sin", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring", "stats": {"#% to Chaos Resistance": [[17, 23]], "(implicit) #% to Chaos Resistance": [[7, 13]]}}}
+{"name": "Perandus Seal", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "Gold Ring", "stats": {"#% increased Rarity of Items found": [[6, 15]], "# to maximum Mana": [[30, 50]], "# to all Attributes": [[5, 10]], "#% increased Quantity of Gold Dropped by Slain Enemies": [[10, 15]]}}}
+{"name": "Polcirkeln", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Cold Damage": [[20, 30]], "# to maximum Mana": [[40, 60]], "# to Strength": [[10, 15]]}}}
+{"name": "Revered Resin", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet", "stats": {"# to Strength": [[10, 15]], "# to maximum Life": [[40, 60]], "#% increased Flask Life Recovery rate": [[20, 30]]}}}
+{"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet", "stats": {"# to maximum Energy Shield": [[20, 30]], "#% increased Skill Speed": [[15, 30]], "#% increased Critical Hit Chance": [[20, 30]], "#% increased Damage": [[30, 50]]}}}
+{"name": "Ryslatha's Coil", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt", "stats": {"#% reduced Charm Charges used": [[10, 15]], "# to maximum Life": [[80, 100]], "#% increased Flask Life Recovery rate": [[30, 50]], "#% more maximum Physical Attack Damage": [[30, 40]], "#% less minimum Physical Attack Damage": [[30, 40]]}}}
+{"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring", "stats": {"# to maximum Mana": [[20, 30]], "#% increased Critical Hit Chance for Spells": [[30, 50]], "#% increased Critical Spell Damage Bonus": [[30, 50]], "#% to Chaos Resistance": [[17, 23]]}}}
 {"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "Ring"}}
-{"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}}
-{"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}}
-{"name": "Snakepit", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}}
-{"name": "Soul Tether", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}}
-{"name": "Strugglescream", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}}
-{"name": "Surefooted Sigil", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}}
-{"name": "The Anvil", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}}
-{"name": "The Burrower", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}}
-{"name": "The Everlasting Gaze", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}}
-{"name": "The Pandemonius", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}}
-{"name": "Thief's Torment", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}}
-{"name": "Ungil's Harmony", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}}
-{"name": "Ventor's Gamble", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}}
-{"name": "Whisper of the Brotherhood", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}}
-{"name": "Xoph's Blood", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}}
-{"name": "Zerphi's Genesis", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}}
-{"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}}
-{"name": "Aerisvane's Wings", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}}
-{"name": "Alkem Eira", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}}
-{"name": "Alpha's Howl", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}}
-{"name": "Apron of Emiran", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}}
-{"name": "Arvil's Wheel", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}}
-{"name": "Ashrend", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}}
-{"name": "Asphyxia's Wrath", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver"}}
-{"name": "Assailum", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Closed Helm"}}
-{"name": "Atsak's Sight", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Veiled Mask"}}
-{"name": "Atziri's Acuity", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}}
-{"name": "Atziri's Disdain", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Gold Circlet"}}
-{"name": "Aurseize", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Layered Gauntlets"}}
-{"name": "Beetlebite", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes"}}
-{"name": "Belly of the Beast", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}}
-{"name": "Beyond Reach", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver"}}
-{"name": "Birth of Fury", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves"}}
-{"name": "Bitterbloom", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Feathered Robe"}}
-{"name": "Blackbraid", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Fur Plate"}}
-{"name": "Blackgleam", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}}
-{"name": "Black Sun Crest", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm"}}
-{"name": "Blessed Bonds", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}}
-{"name": "Blueflame Bracers", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs"}}
-{"name": "Bones of Ullr", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals"}}
-{"name": "Bramblejack", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass"}}
-{"name": "Briarpatch", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "Laced Boots"}}
-{"name": "Briskwrap", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "Rhoahide Coat"}}
-{"name": "Bristleboar", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest"}}
-{"name": "Bronzebeard", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}}
-{"name": "Bushwhack", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}}
-{"name": "Candlemaker", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}}
-{"name": "Carrion Call", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}}
-{"name": "Cloak of Flame", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}}
-{"name": "Coat of Red", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}}
-{"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}}
-{"name": "Corona of the Red Sun", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Warrior Greathelm"}}
-{"name": "Corpsewade", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}}
-{"name": "Couture of Crimson", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}}
-{"name": "Crest of Ardura", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield"}}
-{"name": "Crown of the Pale King", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown"}}
-{"name": "Crown of the Victor", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown"}}
-{"name": "Crown of Thorns", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet"}}
-{"name": "Darkray Vectors", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons"}}
-{"name": "Deathblow", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets"}}
-{"name": "Deathrattle", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus"}}
-{"name": "Deidbell", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm"}}
-{"name": "Demon Stitcher", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "Intricate Gloves"}}
-{"name": "Dionadair", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "Splintered Tower Shield"}}
-{"name": "Doedre's Tenure", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves"}}
-{"name": "Doomgate", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield"}}
-{"name": "Doryani's Prototype", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail"}}
-{"name": "Dustbloom", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest"}}
-{"name": "Edyrn's Tusks", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass"}}
-{"name": "Elevore", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood"}}
-{"name": "Enfolding Dawn", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments"}}
-{"name": "Erian's Cobble", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm"}}
-{"name": "Ezomyte Peak", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm"}}
-{"name": "Feathered Fortress", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe"}}
-{"name": "Forbidden Gaze", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}}
-{"name": "Foxshade", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "Quilted Vest"}}
-{"name": "Gamblesprint", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "Embossed Boots"}}
-{"name": "Ghostmarch", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes"}}
-{"name": "Ghostwrithe", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe"}}
-{"name": "Glimpse of Chaos", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}}
-{"name": "Gloomform", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket"}}
-{"name": "Goldrim", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap"}}
-{"name": "Gravebind", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs"}}
-{"name": "Greed's Embrace", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "Vaal Cuirass"}}
-{"name": "Greymake", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm"}}
-{"name": "Grip of Winter", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers"}}
-{"name": "Hand of Wisdom and Action", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}}
-{"name": "Hateforge", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}}
-{"name": "Horns of Bynden", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}}
-{"name": "Husk of Dreams", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle"}}
-{"name": "Icetomb", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments"}}
-{"name": "Idle Hands", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers"}}
-{"name": "Innsmouth", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood"}}
-{"name": "Irongrasp", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour"}}
-{"name": "Ironride", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}}
-{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets"}}
-{"name": "Kaom's Heart", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Conqueror Plate"}}
-{"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}}
-{"name": "Killjoy", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}}
-{"name": "Kingsguard", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Full Plate"}}
-{"name": "Kitoko's Current", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}}
-{"name": "Leer Cast", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask"}}
-{"name": "Legionstride", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves"}}
-{"name": "Lochtonial Caress", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts"}}
-{"name": "Luminous Pace", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals"}}
-{"name": "Lycosidae", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield"}}
-{"name": "Mahuxotl's Machination", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}}
-{"name": "Maligaro's Virtuosity", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "Fine Bracers"}}
-{"name": "Mask of the Sanguimancer", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "Face Mask"}}
-{"name": "Mask of the Stitched Demon", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Feathered Tiara"}}
-{"name": "Merit of Service", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Pelage Targe"}}
-{"name": "Morior Invictus", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}}
-{"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}}
-{"name": "Necromantle", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}}
-{"name": "Northpaw", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}}
-{"name": "Oaksworn", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}}
-{"name": "Obern's Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}}
-{"name": "Painter's Servant", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Torn Gloves"}}
-{"name": "Pariah's Embrace", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Cloaked Mail"}}
-{"name": "Perfidy", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}}
-{"name": "Plaguefinger", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Gauze Wraps"}}
-{"name": "Powertread", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}}
-{"name": "Pragmatism", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}}
-{"name": "Prayers for Rain", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}}
-{"name": "Quatl's Molt", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}}
-{"name": "Queen of the Forest", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}}
-{"name": "Radiant Grief", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood"}}
-{"name": "Redflare Conduit", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb"}}
-{"name": "Rise of the Phoenix", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}}
-{"name": "Saffell's Frame", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield"}}
-{"name": "Sandstorm Visage", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}}
-{"name": "Serpent's Lesson", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}}
-{"name": "Shackles of the Wretched", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}}
-{"name": "Sierran Inheritance", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}}
-{"name": "Sine Aequo", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}}
-{"name": "Skin of the Loyal", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}}
-{"name": "Snakebite", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}}
-{"name": "Solus Ipse", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}}
-{"name": "Svalinn", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield"}}
-{"name": "Temporalis", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}}
-{"name": "Tetzlapokal's Desire", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment"}}
-{"name": "The Barrow Dweller", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour"}}
-{"name": "The Black Doubt", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe"}}
-{"name": "The Brass Dome", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass"}}
-{"name": "The Covenant", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}}
-{"name": "The Dancing Mirage", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}}
-{"name": "The Devouring Diadem", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}}
-{"name": "The Eternal Spark", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}}
-{"name": "The Hollow Mask", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}}
-{"name": "The Road Warrior", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}}
-{"name": "The Infinite Pursuit", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}}
-{"name": "The Knight-errant", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}}
-{"name": "The Rat Cage", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}}
-{"name": "The Smiling Knight", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm"}}
-{"name": "The Surrender", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield"}}
-{"name": "The Three Dragons", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "Solid Mask"}}
-{"name": "The Vertex", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}}
-{"name": "The Vile Knight", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "Shielded Helm"}}
-{"name": "The Wailing Wall", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "Effigial Tower Shield"}}
-{"name": "Threaded Light", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "Woven Focus"}}
-{"name": "Thrillsteel", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Spired Greathelm"}}
-{"name": "Thunderstep", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Steeltoe Boots"}}
-{"name": "Titanrot Cataphract", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}}
-{"name": "Trampletoe", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}}
-{"name": "Treefingers", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}}
-{"name": "Veil of the Night", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}}
-{"name": "Visage of Ayah", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}}
-{"name": "Voll's Protector", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments"}}
-{"name": "Wake of Destruction", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings"}}
-{"name": "Wandering Reliquary", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate"}}
-{"name": "Wanderlust", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals"}}
-{"name": "Windscream", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals"}}
-{"name": "Wings of Caelyn", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}}
-{"name": "Wondertrap", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}}
-{"name": "Wulfsbane", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}}
-{"name": "Melting Maelstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}}
-{"name": "Olroth's Resolve", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}}
-{"name": "Against the Darkness", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}}
-{"name": "Controlled Metamorphosis", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}}
-{"name": "From Nothing", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}}
-{"name": "Grand Spectrum", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby"}}
+{"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet", "stats": {"#% increased Rarity of Items found": [[12, 20]], "# to all Attributes": [[10, 20]], "#% to Chaos Resistance": [[17, 23]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
+{"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt", "stats": {"#% reduced Flask Life Recovery rate": [[20, 30]], "# to Intelligence": [[20, 30]], "#% increased Flask Charges gained": [[20, 30]]}}}
+{"name": "Snakepit", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring", "stats": {"#% increased Cast Speed": [[10, 15]], "#% increased Spell Damage": [[20, 30]], "(implicit) #% increased Cast Speed": [[7, 10]]}}}
+{"name": "Soul Tether", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt", "stats": {"#% increased Charm Effect Duration": [[15, 20]], "# to maximum Energy Shield": [[40, 60]], "# to Intelligence": [[20, 30]]}}}
+{"name": "Strugglescream", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet", "stats": {"# to all Attributes": [[5, 7]]}}}
+{"name": "Surefooted Sigil", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet", "stats": {"# to Dexterity": [[5, 15]], "# to maximum Life": [[40, 60]], "(implicit) # to Dexterity": [[10, 15]]}}}
+{"name": "The Anvil", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet", "stats": {"# to maximum Life": [[30, 40]], "#% increased Armour": [[25, 50]], "#% to maximum Block chance": [[3, 5]]}}}
+{"name": "The Burrower", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring", "stats": {"#% to Lightning Resistance": [[20, 30]], "(implicit) #% to Lightning Resistance": [[20, 30]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
+{"name": "The Everlasting Gaze", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet", "stats": {"#% increased Mana Regeneration Rate": [[20, 30]], "Gain #% of Maximum Mana as Extra Maximum Energy Shield": [[20, 30]]}}}
+{"name": "The Pandemonius", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet", "stats": {"# to Intelligence": [[10, 15]], "#% to Cold Resistance": [[20, 30]]}}}
+{"name": "Thief's Torment", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring", "stats": {"# to Accuracy Rating": [[120, 160]], "#% increased Rarity of Items found": [[30, 40]], "#% to all Elemental Resistances": [[10, 15]]}}}
+{"name": "Ungil's Harmony", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet", "stats": {"#% increased Mana Regeneration Rate": [[20, 30]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% increased Critical Hit Chance": [[100, 200]], "# to Stun Threshold": [[60, 100]]}}}
+{"name": "Ventor's Gamble", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring", "stats": {"#% increased Rarity of Items found": [[6, 15]], "# to maximum Life": [[0, 80]], "# to Spirit": [[0, 20]], "#% reduced Rarity of Items found": [[-40, 40]], "#% to Fire Resistance": [[-40, 40]], "#% to Cold Resistance": [[-40, 40]], "#% to Lightning Resistance": [[-40, 40]]}}}
+{"name": "Whisper of the Brotherhood", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Skill Speed": [[5, 10]], "# to Dexterity": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
+{"name": "Xoph's Blood", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet", "stats": {"# to Strength": [[10, 15]], "#% increased maximum Life": [[10, 15]], "#% to Fire Resistance": [[20, 30]]}}}
+{"name": "Zerphi's Genesis", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt", "stats": {"#% increased Stun Threshold": [[20, 30]], "# to Strength": [[10, 30]], "#% increased Charm Charges used": [[10, 30]]}}}
+{"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses", "stats": {"#% increased Movement Speed": [[15, 30]], "#% increased Armour, Evasion and Energy Shield": [[60, 80]]}}}
+{"name": "Aerisvane's Wings", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets", "stats": {"#% increased Armour and Evasion": [[50, 70]], "#% increased Attack Speed": [[5, 10]], "# to Intelligence": [[20, 30]]}}}
+{"name": "Alkem Eira", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield", "stats": {"#% increased Block chance": [[30, 40]], "#% increased Armour and Energy Shield": [[30, 50]], "# to maximum Mana": [[50, 70]]}}}
+{"name": "Alpha's Howl", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap", "stats": {"#% increased Evasion Rating": [[80, 100]], "#% to Cold Resistance": [[50, 75]]}}}
+{"name": "Apron of Emiran", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb", "stats": {"#% increased Evasion and Energy Shield": [[30, 50]], "# to Dexterity": [[10, 20]], "#% reduced Bleeding Duration on you": [[40, 60]]}}}
+{"name": "Arvil's Wheel", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe", "stats": {"#% increased Armour and Evasion": [[60, 100]], "# to maximum Life": [[40, 60]], "# to maximum Mana": [[40, 60]], "#% increased Skill Effect Duration": [[30, 50]]}}}
+{"name": "Ashrend", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat", "stats": {"# to maximum Life": [[40, 60]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[30, 40]]}}}
+{"name": "Asphyxia's Wrath", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver", "stats": {"Adds # to # Cold damage to Attacks": [[3, 4], [5, 8]], "#% increased Attack Speed": [[5, 10]], "#% to Cold Resistance": [[5, 10]], "Attacks Gain #% of Damage as Extra Cold Damage": [[5, 10]]}}}
+{"name": "Assailum", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Closed Helm", "stats": {"#% increased Armour and Evasion": [[50, 100]], "# to Accuracy Rating": [[200, 400]], "#% increased Critical Hit Chance": [[30, 50]], "Skills have a #% longer Perfect Timing window": [[100, 150]]}}}
+{"name": "Atsak's Sight", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Veiled Mask", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "#% increased Critical Hit Chance": [[30, 40]], "# to Dexterity": [[10, 20]], "# to Intelligence": [[10, 20]]}}}
+{"name": "Atziri's Acuity", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts", "stats": {"#% increased Armour": [[80, 100]], "#% increased Critical Hit Chance": [[30, 50]], "# to Intelligence": [[20, 30]]}}}
+{"name": "Atziri's Disdain", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Gold Circlet", "stats": {"# to maximum Mana": [[40, 60]], "#% increased Rarity of Items found": [[10, 20]], "#% of Damage taken bypasses Energy Shield": [[20, 25]], "Gain #% of Maximum Life as Extra Maximum Energy Shield": [[25, 30]]}}}
+{"name": "Aurseize", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Layered Gauntlets", "stats": {"#% increased Armour and Evasion": [[40, 60]], "#% increased Rarity of Items found": [[40, 50]]}}}
+{"name": "Beetlebite", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes", "stats": {"#% increased Movement Speed": [[20, 30]], "#% increased Evasion and Energy Shield": [[60, 120]]}}}
+{"name": "Belly of the Beast", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to maximum Life": [[100, 150]], "# to Stun Threshold": [[100, 150]], "# to # Physical Thorns damage": [[25, 30], [35, 40]]}}}
+{"name": "Beyond Reach", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver", "stats": {"#% increased Critical Hit Chance for Attacks": [[20, 30]], "#% reduced Attack Speed": [[10, 15]], "Attacks Gain #% of Physical Damage as extra Chaos Damage": [[10, 20]]}}}
+{"name": "Birth of Fury", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves", "stats": {"# to maximum Life": [[40, 60]], "#% to Fire Resistance": [[20, 30]]}}}
+{"name": "Bitterbloom", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Feathered Robe", "stats": {"#% increased Energy Shield": [[50, 100]], "# to maximum Mana": [[50, 100]]}}}
+{"name": "Blackbraid", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Fur Plate", "stats": {"# to Armour": [[40, 60]], "# to Strength": [[10, 20]], "# to Intelligence": [[10, 20]], "# to Stun Threshold": [[40, 60]]}}}
+{"name": "Blackgleam", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver", "stats": {"Adds # to # Fire damage to Attacks": [[3, 5], [6, 9]], "# to maximum Mana": [[30, 50]], "Attacks Gain #% of Damage as Extra Fire Damage": [[5, 10]]}}}
+{"name": "Black Sun Crest", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm", "stats": {"#% increased Armour": [[50, 80]], "#% increased Strength": [[5, 15]], "#% increased Dexterity": [[5, 15]], "#% increased Intelligence": [[5, 15]]}}}
+{"name": "Blessed Bonds", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps", "stats": {"# to Evasion Rating": [[60, 100]], "# to maximum Energy Shield": [[30, 50]], "Gain # Mana per Enemy Killed": [[25, 35]]}}}
+{"name": "Blueflame Bracers", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs", "stats": {"# to Intelligence": [[10, 20]], "#% to Fire Resistance": [[5, 15]], "#% to Cold Resistance": [[5, 15]]}}}
+{"name": "Bones of Ullr", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals", "stats": {"#% increased Energy Shield": [[40, 60]], "# to maximum Life": [[20, 40]], "# to maximum Mana": [[20, 40]]}}}
+{"name": "Bramblejack", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass", "stats": {"# to maximum Life": [[60, 100]], "# to Stun Threshold": [[60, 100]]}}}
+{"name": "Briarpatch", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "Laced Boots", "stats": {"#% increased Movement Speed": [[10, 20]], "# to maximum Life": [[40, 60]], "# to Stun Threshold": [[60, 80]], "# to # Physical Thorns damage": [[10, 15], [20, 25]]}}}
+{"name": "Briskwrap", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "Rhoahide Coat", "stats": {"#% increased Evasion Rating": [[60, 100]], "#% increased Flask Life Recovery rate": [[40, 60]], "#% increased Flask Mana Recovery rate": [[40, 60]], "# to Dexterity": [[20, 30]], "#% to Cold Resistance": [[20, 30]]}}}
+{"name": "Bristleboar", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest", "stats": {"# to maximum Life": [[40, 60]], "# Life Regeneration per second": [[3, 5]]}}}
+{"name": "Bronzebeard", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% reduced Effect of Chill on you": [[35, 50]], "#% reduced effect of Ignite on you": [[35, 50]], "#% reduced effect of Shock on you": [[35, 50]]}}}
+{"name": "Bushwhack", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots", "stats": {"#% increased Movement Speed": [[15, 25]], "#% increased Evasion Rating": [[50, 80]], "# to Dexterity": [[10, 20]]}}}
+{"name": "Candlemaker", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves", "stats": {"#% increased Energy Shield": [[50, 80]], "#% increased Fire Damage": [[20, 40]], "#% reduced Cold Damage": [[10, 20]], "#% to Fire Resistance": [[20, 40]], "#% to Cold Resistance": [[-20, -10]]}}}
+{"name": "Carrion Call", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus", "stats": {"# to maximum Energy Shield": [[30, 40]], "Minions have #% increased maximum Life": [[20, 30]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
+{"name": "Cloak of Flame", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe", "stats": {"#% to Fire Resistance": [[30, 50]], "#% reduced Ignite Duration on you": [[30, 50]]}}}
+{"name": "Coat of Red", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail", "stats": {"#% increased Armour and Evasion": [[80, 100]], "# to maximum Life": [[80, 100]], "# to Stun Threshold": [[75, 150]]}}}
+{"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown", "stats": {"#% increased Rarity of Items found": [[10, 20]], "# to Intelligence": [[40, 50]]}}}
+{"name": "Corona of the Red Sun", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Warrior Greathelm", "stats": {"# to Accuracy Rating": [[100, 150]], "# to maximum Life": [[60, 80]], "#% to Fire Resistance": [[20, 25]]}}}
+{"name": "Corpsewade", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves", "stats": {"#% increased Armour": [[30, 50]], "# to Strength": [[5, 10]]}}}
+{"name": "Couture of Crimson", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% reduced Bleeding Duration on you": [[40, 60]]}}}
+{"name": "Crest of Ardura", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield", "stats": {"#% increased Armour and Energy Shield": [[60, 100]], "# to Intelligence": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 50]], "#% increased Cooldown Recovery Rate": [[30, 50]]}}}
+{"name": "Crown of the Pale King", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "# to maximum Life": [[40, 80]], "# to # Physical Thorns damage": [[10, 15], [20, 25]]}}}
+{"name": "Crown of the Victor", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown", "stats": {"#% increased Rarity of Items found": [[10, 20]]}}}
+{"name": "Crown of Thorns", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet", "stats": {"# to maximum Energy Shield": [[100, 150]], "# to # Physical Thorns damage": [[3, 5], [6, 10]]}}}
+{"name": "Darkray Vectors", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons", "stats": {"#% increased Armour and Evasion": [[50, 100]], "#% to Lightning Resistance": [[30, 40]]}}}
+{"name": "Deathblow", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets", "stats": {"#% increased Armour and Evasion": [[100, 150]], "#% increased Attack Speed": [[5, 10]], "Gain # Life per Enemy Killed": [[20, 30]], "Gain # Mana per Enemy Killed": [[20, 30]]}}}
+{"name": "Deathrattle", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus", "stats": {"# to maximum Energy Shield": [[10, 20]], "#% increased Spell Damage": [[20, 40]], "# to Intelligence": [[5, 10]]}}}
+{"name": "Deidbell", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm", "stats": {"#% increased Armour": [[60, 100]], "# to Strength": [[10, 20]], "#% increased Warcry Speed": [[20, 30]], "Warcry Skills have #% increased Area of Effect": [[20, 30]]}}}
+{"name": "Demon Stitcher", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "Intricate Gloves", "stats": {"# to maximum Energy Shield": [[40, 60]], "# to maximum Life": [[80, 120]], "#% increased Cast Speed": [[6, 12]], "Sacrifice #% of Life to gain that much Energy Shield when you Cast a Spell": [[5, 15]]}}}
+{"name": "Dionadair", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "Splintered Tower Shield", "stats": {"#% increased Armour": [[60, 80]], "# to Strength": [[10, 15]], "# Life Regeneration per second": [[3, 5]]}}}
+{"name": "Doedre's Tenure", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves", "stats": {"# to maximum Energy Shield": [[20, 30]], "#% reduced Cast Speed": [[15, 25]], "# to Intelligence": [[10, 15]]}}}
+{"name": "Doomgate", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield", "stats": {"#% increased Armour": [[100, 150]], "#% to Chaos Resistance": [[13, 17]]}}}
+{"name": "Doryani's Prototype", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail", "stats": {"#% increased Armour and Evasion": [[50, 100]], "# to maximum Life": [[60, 80]]}}}
+{"name": "Dustbloom", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest", "stats": {"#% increased Evasion Rating": [[100, 150]], "#% to Cold Resistance": [[20, 30]]}}}
+{"name": "Edyrn's Tusks", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass", "stats": {"#% increased Armour": [[120, 160]], "# to # Physical Thorns damage": [[15, 20], [25, 30]]}}}
+{"name": "Elevore", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood", "stats": {"#% increased Evasion Rating": [[50, 80]], "# to Dexterity": [[20, 30]]}}}
+{"name": "Enfolding Dawn", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% to all Elemental Resistances": [[5, 15]]}}}
+{"name": "Erian's Cobble", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm", "stats": {"# to Armour": [[0, 40]], "# to Evasion Rating": [[0, 30]], "# to maximum Energy Shield": [[0, 20]], "# to Accuracy Rating": [[0, 60]], "# to maximum Life": [[0, 30]], "# to maximum Mana": [[0, 20]], "#% increased Rarity of Items found": [[0, 20]], "#% increased Critical Hit Chance": [[0, 30]], "# to Strength": [[0, 10]], "# to Dexterity": [[0, 10]], "# to Intelligence": [[0, 10]], "#% to Fire Resistance": [[0, 10]], "#% to Cold Resistance": [[0, 10]], "#% to Lightning Resistance": [[0, 10]], "# Life Regeneration per second": [[0, 6]]}}}
+{"name": "Ezomyte Peak", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm", "stats": {"#% increased Armour": [[50, 100]], "# to maximum Life": [[50, 80]], "# Life Regeneration per second": [[3, 6]], "#% increased Area of Effect": [[10, 20]]}}}
+{"name": "Feathered Fortress", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe", "stats": {"# to Strength": [[20, 30]], "# to Dexterity": [[20, 30]], "#% to Fire Resistance": [[20, 30]], "#% to Cold Resistance": [[20, 30]]}}}
+{"name": "Forbidden Gaze", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara", "stats": {"#% increased Energy Shield": [[60, 100]], "#% to Maximum Cold Resistance": [[3, 5]], "#% to Cold Resistance": [[30, 50]]}}}
+{"name": "Foxshade", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "Quilted Vest", "stats": {"# to Evasion Rating": [[50, 70]], "# to Dexterity": [[20, 30]]}}}
+{"name": "Gamblesprint", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "Embossed Boots", "stats": {"#% increased Evasion Rating": [[100, 140]], "# to Dexterity": [[10, 15]], "#% to Lightning Resistance": [[15, 25]]}}}
+{"name": "Ghostmarch", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "# to maximum Mana": [[30, 50]], "#% to Chaos Resistance": [[17, 23]]}}}
+{"name": "Ghostwrithe", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe", "stats": {"#% to Chaos Resistance": [[29, 37]]}}}
+{"name": "Glimpse of Chaos", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask", "stats": {"# to maximum Life": [[50, 150]], "# to maximum Mana": [[50, 150]], "#% to Fire Resistance": [[-30, 30]], "#% to Cold Resistance": [[-30, 30]], "#% to Lightning Resistance": [[-30, 30]]}}}
+{"name": "Gloomform", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket", "stats": {"#% increased Evasion Rating": [[100, 150]], "# to Dexterity": [[10, 20]], "#% to Fire Resistance": [[10, 20]]}}}
+{"name": "Goldrim", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap", "stats": {"# to Evasion Rating": [[30, 50]], "#% to all Elemental Resistances": [[25, 35]]}}}
+{"name": "Gravebind", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs", "stats": {"#% increased Armour and Energy Shield": [[40, 60]], "#% to Cold Resistance": [[10, 15]], "Gain # Life per Enemy Killed": [[7, 10]], "Gain # Mana per Enemy Killed": [[4, 6]]}}}
+{"name": "Greed's Embrace", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "Vaal Cuirass", "stats": {"#% increased Armour": [[100, 150]], "#% increased Rarity of Items found": [[30, 50]], "#% to Fire Resistance": [[20, 30]]}}}
+{"name": "Greymake", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm", "stats": {"# to Strength": [[30, 50]], "# to Dexterity": [[30, 50]], "# to Intelligence": [[30, 50]]}}}
+{"name": "Grip of Winter", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers", "stats": {"#% increased Evasion Rating": [[30, 50]], "Adds # to # Cold damage to Attacks": [[3, 5], [6, 8]], "#% to Cold Resistance": [[20, 30]], "#% increased Freeze Buildup": [[40, 50]], "#% increased Magnitude of Chill you inflict": [[20, 30]]}}}
+{"name": "Hand of Wisdom and Action", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps", "stats": {"# to Dexterity": [[15, 25]], "# to Intelligence": [[15, 25]]}}}
+{"name": "Hateforge", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts", "stats": {"#% increased Armour": [[50, 80]], "Gain # random Charge on reaching Maximum Rage": [[1, 3]], "# to Maximum Rage": [[-10, 10]]}}}
+{"name": "Horns of Bynden", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm", "stats": {"#% increased Rarity of Items found": [[5, 15]], "# to Strength": [[20, 30]]}}}
+{"name": "Husk of Dreams", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "#% to Chaos Resistance": [[17, 23]], "#% increased Flask Charges used": [[20, 30]]}}}
+{"name": "Icetomb", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments", "stats": {"# to Strength": [[20, 30]], "# to Intelligence": [[20, 30]], "#% to Cold Resistance": [[30, 40]]}}}
+{"name": "Idle Hands", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers", "stats": {"#% increased Evasion Rating": [[40, 60]], "# to Accuracy Rating": [[60, 100]], "# to Intelligence": [[5, 10]]}}}
+{"name": "Innsmouth", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
+{"name": "Irongrasp", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
+{"name": "Ironride", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
+{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "Kaom's Heart", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Conqueror Plate", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
+{"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
+{"name": "Killjoy", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
+{"name": "Kingsguard", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Full Plate", "stats": {"# to maximum Life": [[60, 80]], "# to maximum Mana": [[40, 60]], "#% to all Elemental Resistances": [[5, 10]]}}}
+{"name": "Kitoko's Current", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves", "stats": {"#% increased Energy Shield": [[30, 50]], "# to Dexterity": [[10, 20]], "#% reduced Attack and Cast Speed": [[10, 15]]}}}
+{"name": "Leer Cast", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask", "stats": {"# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "# to Dexterity": [[10, 20]]}}}
+{"name": "Legionstride", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves", "stats": {"# to Armour": [[50, 70]], "# to Stun Threshold": [[50, 70]]}}}
+{"name": "Lochtonial Caress", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts", "stats": {"#% increased Skill Speed": [[10, 15]], "# to Armour": [[15, 25]], "# to maximum Life": [[40, 60]], "#% reduced maximum Mana": [[10, 15]]}}}
+{"name": "Luminous Pace", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals", "stats": {"# to maximum Energy Shield": [[20, 30]], "# to Intelligence": [[5, 10]], "#% reduced Energy Shield Recharge Rate": [[20, 30]]}}}
+{"name": "Lycosidae", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield", "stats": {"#% increased Block chance": [[30, 40]], "#% increased Armour": [[60, 100]]}}}
+{"name": "Mahuxotl's Machination", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield", "stats": {"#% increased Armour and Energy Shield": [[333, 666]], "#% increased effect of Socketed Soul Cores": [[333, 666]]}}}
+{"name": "Maligaro's Virtuosity", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "Fine Bracers", "stats": {"#% increased Evasion Rating": [[60, 80]], "#% increased Critical Hit Chance": [[20, 30]], "# to Dexterity": [[20, 30]]}}}
+{"name": "Mask of the Sanguimancer", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "Face Mask", "stats": {"# to Evasion Rating": [[20, 25]], "# to maximum Energy Shield": [[10, 15]], "#% increased Critical Hit Chance for Spells": [[20, 40]], "# to Strength": [[20, 30]], "# to Intelligence": [[10, 20]]}}}
+{"name": "Mask of the Stitched Demon", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Feathered Tiara", "stats": {"#% increased Energy Shield": [[120, 160]], "#% to Chaos Resistance": [[17, 23]]}}}
+{"name": "Merit of Service", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Pelage Targe", "stats": {"#% increased Block chance": [[30, 50]], "#% increased Armour and Evasion": [[60, 80]], "# to Stun Threshold": [[60, 80]]}}}
+{"name": "Morior Invictus", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia", "stats": {"#% increased Armour, Evasion and Energy Shield": [[200, 300]]}}}
+{"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood", "stats": {"#% increased Evasion Rating": [[40, 60]], "# to Accuracy Rating": [[100, 150]], "# to maximum Mana": [[40, 60]]}}}
+{"name": "Necromantle", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment", "stats": {"# to maximum Life": [[40, 60]], "# to maximum Mana": [[30, 50]], "#% to Chaos Resistance": [[17, 23]], "Minions gain #% of their Maximum Life as Extra Maximum Energy Shield": [[20, 30]]}}}
+{"name": "Northpaw", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers", "stats": {"# to Evasion Rating": [[15, 25]], "Adds # to # Physical Damage to Attacks": [[3, 5], [8, 10]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
+{"name": "Oaksworn", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield", "stats": {"#% increased Block chance": [[40, 60]], "#% increased Armour and Energy Shield": [[80, 120]], "#% to Chaos Resistance": [[17, 23]]}}}
+{"name": "Obern's Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons", "stats": {"#% increased Armour and Evasion": [[150, 200]], "# Life Regeneration per second": [[20, 25]], "#% reduced Chill Duration on you": [[30, 50]], "#% reduced Freeze Duration on you": [[30, 50]], "#% reduced Shock duration on you": [[30, 50]]}}}
+{"name": "Painter's Servant", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Torn Gloves", "stats": {"Gain #% of Elemental Damage as Extra Cold Damage": [[5, 10]], "Gain #% of Elemental Damage Damage as Extra Fire Damage": [[5, 10]], "Gain #% of Elemental Damage Damage as Extra Lightning Damage": [[5, 10]]}}}
+{"name": "Pariah's Embrace", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Cloaked Mail", "stats": {"#% increased Armour and Evasion": [[50, 80]], "# to all Attributes": [[10, 15]], "# Life Regeneration per second": [[10, 15]]}}}
+{"name": "Perfidy", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Knight Armour", "stats": {"#% increased Armour and Evasion": [[100, 150]], "#% chance to Avoid Physical Damage from Hits": [[10, 40]], "#% chance to Avoid Chaos Damage from Hits": [[10, 40]]}}}
+{"name": "Plaguefinger", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Gauze Wraps", "stats": {"#% increased Evasion and Energy Shield": [[30, 50]], "#% increased Attack Speed": [[4, 6]], "#% chance to Poison on Hit": [[20, 30]]}}}
+{"name": "Powertread", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Evasion and Energy Shield": [[60, 80]], "# to Intelligence": [[10, 20]]}}}
+{"name": "Pragmatism", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour", "stats": {"#% increased Armour and Evasion": [[200, 300]], "#% to all Elemental Resistances": [[10, 20]]}}}
+{"name": "Prayers for Rain", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment", "stats": {"#% increased Energy Shield": [[60, 100]], "# to Intelligence": [[10, 15]], "#% to Lightning Resistance": [[10, 20]]}}}
+{"name": "Quatl's Molt", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat", "stats": {"#% increased Evasion Rating": [[60, 80]], "# to maximum Life": [[60, 80]], "#% to Chaos Resistance": [[17, 23]], "# Life Regeneration per second": [[10, 20]]}}}
+{"name": "Queen of the Forest", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat", "stats": {"#% increased Evasion Rating": [[100, 150]], "#% to Fire Resistance": [[-15, -10]], "#% to Cold Resistance": [[25, 30]], "#% to Lightning Resistance": [[10, 15]]}}}
+{"name": "Radiant Grief", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood", "stats": {"#% increased Evasion Rating": [[80, 100]], "#% to Fire Resistance": [[15, 25]]}}}
+{"name": "Redflare Conduit", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb", "stats": {"# to maximum Mana": [[50, 70]], "#% to Lightning Resistance": [[20, 30]]}}}
+{"name": "Rise of the Phoenix", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield", "stats": {"#% to Fire Resistance": [[20, 25]]}}}
+{"name": "Saffell's Frame", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield", "stats": {"#% to Fire Resistance": [[15, 25]], "#% to Cold Resistance": [[15, 25]], "#% to Lightning Resistance": [[30, 40]]}}}
+{"name": "Sandstorm Visage", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara", "stats": {"# to maximum Energy Shield": [[80, 120]], "# to Dexterity": [[20, 30]]}}}
+{"name": "Serpent's Lesson", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus", "stats": {"# to maximum Life": [[60, 100]], "# to maximum Mana": [[60, 100]]}}}
+{"name": "Shackles of the Wretched", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs", "stats": {"#% increased Armour and Energy Shield": [[30, 50]]}}}
+{"name": "Sierran Inheritance", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb", "stats": {"#% increased Evasion and Energy Shield": [[50, 80]], "#% to Lightning Resistance": [[30, 40]], "#% faster start of Energy Shield Recharge": [[30, 50]]}}}
+{"name": "Sine Aequo", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes", "stats": {"#% increased Skill Speed": [[10, 15]], "#% increased Armour, Evasion and Energy Shield": [[40, 60]]}}}
+{"name": "Skin of the Loyal", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment", "stats": {"#% to all Elemental Resistances": [[5, 40]]}}}
+{"name": "Snakebite", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers", "stats": {"#% increased Evasion Rating": [[40, 60]], "#% to Chaos Resistance": [[7, 17]], "# Life Regeneration per second": [[6, 10]], "#% chance to Poison on Hit": [[20, 30]]}}}
+{"name": "Solus Ipse", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage", "stats": {"# to maximum Mana": [[60, 100]], "#% increased Armour, Evasion and Energy Shield": [[100, 150]]}}}
+{"name": "Svalinn", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield", "stats": {"#% increased Armour": [[100, 150]], "#% to maximum Block chance": [[-20, -10]]}}}
+{"name": "Temporalis", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe", "stats": {"# to maximum Energy Shield": [[100, 150]], "#% to all Elemental Resistances": [[10, 20]], "#% of Damage taken Recouped as Life": [[5, 30]], "#% of Damage taken Recouped as Mana": [[5, 30]], "Skills have # seconds to Cooldown": [[-4, -2]]}}}
+{"name": "Tetzlapokal's Desire", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment", "stats": {"#% increased Energy Shield": [[100, 150]], "# to Strength": [[20, 30]], "# to Intelligence": [[20, 30]], "#% to Chaos Resistance": [[17, 23]]}}}
+{"name": "The Barrow Dweller", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour", "stats": {"#% increased Armour and Evasion": [[60, 100]], "#% to Fire Resistance": [[-20, -10]]}}}
+{"name": "The Black Doubt", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe", "stats": {"#% increased Energy Shield": [[60, 100]], "# to Intelligence": [[10, 30]], "#% to Cold Resistance": [[10, 20]]}}}
+{"name": "The Brass Dome", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass", "stats": {"#% increased Armour": [[400, 500]], "#% to all Maximum Elemental Resistances": [[-5, -1]], "# to Stun Threshold": [[200, 300]]}}}
+{"name": "The Covenant", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe", "stats": {"#% increased Energy Shield": [[100, 150]], "# to maximum Life": [[100, 150]]}}}
+{"name": "The Dancing Mirage", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket", "stats": {"#% increased Evasion and Energy Shield": [[150, 200]], "#% to Lightning Resistance": [[10, 20]]}}}
+{"name": "The Devouring Diadem", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara", "stats": {"#% increased Energy Shield": [[60, 100]], "# to maximum Life": [[40, 60]], "# to Intelligence": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
+{"name": "The Eternal Spark", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus", "stats": {"#% increased Energy Shield": [[50, 70]], "#% to Lightning Resistance": [[20, 30]]}}}
+{"name": "The Hollow Mask", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask", "stats": {"# to maximum Life": [[60, 80]]}}}
+{"name": "The Road Warrior", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate", "stats": {"# to all Attributes": [[10, 15]], "#% to Fire Resistance": [[15, 30]], "#% to Lightning Resistance": [[15, 30]], "# Life Regeneration per second": [[10, 15]]}}}
+{"name": "The Infinite Pursuit", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves", "stats": {"#% increased Armour": [[100, 150]], "# to maximum Life": [[80, 100]], "#% increased Chance to be afflicted by Ailments when Hit": [[80, 100]]}}}
+{"name": "The Knight-errant", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons", "stats": {"#% increased Armour and Evasion": [[30, 50]], "# to Stun Threshold": [[30, 50]], "# to Ailment Threshold": [[30, 50]]}}}
+{"name": "The Rat Cage", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest", "stats": {"#% increased Evasion Rating": [[100, 150]]}}}
+{"name": "The Smiling Knight", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm", "stats": {"# to Accuracy Rating": [[50, 100]], "#% increased Armour and Evasion": [[150, 200]], "#% increased Critical Hit Chance": [[15, 25]]}}}
+{"name": "The Surrender", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield", "stats": {"#% increased Block chance": [[40, 60]], "#% increased Armour": [[150, 200]], "# to Stun Threshold": [[150, 200]]}}}
+{"name": "The Three Dragons", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "Solid Mask", "stats": {"#% increased Evasion and Energy Shield": [[40, 60]], "#% to all Elemental Resistances": [[10, 20]]}}}
+{"name": "The Vertex", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "#% increased Critical Hit Chance": [[30, 50]], "#% to Chaos Resistance": [[13, 17]]}}}
+{"name": "The Vile Knight", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "Shielded Helm", "stats": {"#% increased Armour and Evasion": [[60, 100]], "# to Accuracy Rating": [[75, 125]], "# Life Regeneration per second": [[10, 15]]}}}
+{"name": "The Wailing Wall", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "Effigial Tower Shield", "stats": {"#% increased Armour": [[100, 150]], "# to Stun Threshold": [[100, 150]]}}}
+{"name": "Threaded Light", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "Woven Focus", "stats": {"#% increased Energy Shield": [[50, 70]], "#% increased Mana Regeneration Rate": [[30, 40]], "#% increased Spell Damage per # Spirit": [[8, 12]]}}}
+{"name": "Thrillsteel", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Spired Greathelm", "stats": {}}}
+{"name": "Thunderstep", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Steeltoe Boots", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Evasion Rating": [[40, 60]], "#% to Maximum Lightning Resistance": [[3, 5]], "#% to Lightning Resistance": [[30, 50]]}}}
+{"name": "Titanrot Cataphract", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass", "stats": {"#% increased Armour": [[400, 500]], "#% increased Strength": [[15, 30]]}}}
+{"name": "Trampletoe", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves", "stats": {"#% increased Armour": [[50, 100]]}}}
+{"name": "Treefingers", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts", "stats": {"#% increased Armour": [[30, 60]], "Adds # to # Physical Damage to Attacks": [[6, 10], [12, 16]], "#% increased Stun Buildup": [[20, 30]]}}}
+{"name": "Veil of the Night", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown", "stats": {"# to all Attributes": [[10, 20]]}}}
+{"name": "Visage of Ayah", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet", "stats": {"#% increased Energy Shield": [[50, 80]], "#% increased Rarity of Items found": [[10, 15]], "#% increased Critical Hit Chance": [[20, 30]], "#% to Lightning Resistance": [[10, 20]]}}}
+{"name": "Voll's Protector", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "#% to Chaos Resistance": [[13, 17]]}}}
+{"name": "Wake of Destruction", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings", "stats": {"#% increased Armour and Energy Shield": [[30, 60]], "Adds # to # Lightning damage to Attacks": [[1, 1], [30, 50]]}}}
+{"name": "Wandering Reliquary", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate", "stats": {"#% increased Armour": [[50, 100]], "# to maximum Mana": [[40, 60]], "# to Strength": [[10, 20]], "# to Stun Threshold": [[60, 80]]}}}
+{"name": "Wanderlust", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals", "stats": {"# to maximum Energy Shield": [[10, 20]]}}}
+{"name": "Windscream", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Energy Shield": [[50, 100]], "# to Intelligence": [[10, 20]]}}}
+{"name": "Wings of Caelyn", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm", "stats": {"#% increased Rarity of Items found": [[5, 15]], "# to Dexterity": [[20, 30]]}}}
+{"name": "Wondertrap", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers", "stats": {"#% increased Movement Speed": [[10, 20]], "# to maximum Energy Shield": [[30, 50]], "# to Strength": [[10, 20]], "# to Dexterity": [[10, 20]], "# to Intelligence": [[10, 20]]}}}
+{"name": "Wulfsbane", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield", "stats": {"# to maximum Life": [[40, 60]], "# to Strength": [[10, 15]], "# to Stun Threshold": [[60, 80]]}}}
+{"name": "Melting Maelstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask", "stats": {"#% increased Duration": [[200, 250]]}}}
+{"name": "Olroth's Resolve", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask", "stats": {"#% increased Charges per use": [[100, 150]]}}}
+{"name": "Against the Darkness", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond", "stats": {}}}
+{"name": "Controlled Metamorphosis", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond", "stats": {"#% to all Elemental Resistances": [[-20, -5]], "#% to Chaos Resistance": [[-23, -3]]}}}
+{"name": "From Nothing", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond", "stats": {}}}
+{"name": "Grand Spectrum", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby", "stats": {}}}
 {"name": "Grand Spectrum", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Emerald"}}
 {"name": "Grand Spectrum", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}}
-{"name": "Heroic Tragedy", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}}
-{"name": "Megalomaniac", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}}
-{"name": "Prism of Belief", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}}
-{"name": "The Adorned", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}}
-{"name": "Bluetongue", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}}
-{"name": "Brain Rattler", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}}
-{"name": "Brynhand's Mark", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}}
-{"name": "Chober Chaber", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}}
-{"name": "Collapsing Horizon", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}}
-{"name": "Death's Harp", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}}
-{"name": "Dusk Vigil", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}}
-{"name": "Earthbound", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}}
-{"name": "Enezun's Charge", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}}
-{"name": "Font of Power", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Omen Sceptre"}}
-{"name": "Frostbreath", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Slim Mace"}}
-{"name": "Guiding Palm", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}}
-{"name": "Hoghunt", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}}
-{"name": "Hrimnor's Hymn", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}}
+{"name": "Heroic Tragedy", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel", "stats": {"Remembrancing # songworthy deeds by the line of Vorana": [[100, 8000]]}}}
+{"name": "Megalomaniac", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond", "stats": {}}}
+{"name": "Prism of Belief", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond", "stats": {"# to Level of all Specific Skill Skills": [[1, 3]]}}}
+{"name": "The Adorned", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond", "stats": {"#% increased Effect of Jewel Socket Passive Skills": [[0, 100]]}}}
+{"name": "Bluetongue", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword", "stats": {"Adds # to # Physical Damage": [[4, 6], [7, 10]]}}}
+{"name": "Brain Rattler", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub", "stats": {"Adds # to # Physical Damage": [[18, 22], [24, 28]], "Adds # to # Lightning Damage": [[1, 1], [50, 55]], "#% increased Attack Speed": [[10, 15]]}}}
+{"name": "Brynhand's Mark", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club", "stats": {"Adds # to # Physical Damage": [[10, 14], [16, 20]], "# to Accuracy Rating": [[30, 50]], "# to Strength": [[10, 20]]}}}
+{"name": "Chober Chaber", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer", "stats": {"Adds # to # Physical Damage": [[58, 65], [102, 110]], "# to maximum Mana": [[80, 100]]}}}
+{"name": "Collapsing Horizon", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff", "stats": {"#% to Critical Hit Chance": [[5, 10]], "# to Level of all Elemental Skills": [[2, 4]]}}}
+{"name": "Death's Harp", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow", "stats": {"#% to Critical Damage Bonus": [[50, 70]], "Gain # Life per Enemy Killed": [[20, 30]], "Gain # Mana per Enemy Killed": [[12, 18]]}}}
+{"name": "Dusk Vigil", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff", "stats": {"#% increased Spell Damage": [[60, 80]], "Gain # Life per Enemy Killed": [[5, 10]]}}}
+{"name": "Earthbound", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff", "stats": {"#% increased Lightning Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
+{"name": "Enezun's Charge", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand", "stats": {"#% increased Spell Damage": [[80, 100]], "#% increased Critical Hit Chance for Spells": [[30, 50]], "Gain # Mana per Enemy Killed": [[10, 15]]}}}
+{"name": "Font of Power", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Omen Sceptre", "stats": {"#% increased Spirit": [[30, 50]], "# to maximum Mana": [[40, 60]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
+{"name": "Frostbreath", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Slim Mace", "stats": {"Adds # to # Physical Damage": [[8, 12], [16, 20]], "Adds # to # Cold Damage": [[8, 12], [16, 20]]}}}
+{"name": "Guiding Palm", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre", "stats": {"Allies in your Presence deal # to # additional Attack Fire Damage": [[4, 6], [7, 10]], "# to all Attributes": [[5, 10]]}}}
+{"name": "Hoghunt", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
+{"name": "Hrimnor's Hymn", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}}
@@ -3056,38 +3056,38 @@
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Vampiric Blade"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Extended Cleaver"}}
-{"name": "Lifesprig", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}}
-{"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}}
-{"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}}
-{"name": "Nazir's Judgement", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}}
-{"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}}
-{"name": "Pillar of the Caged God", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}}
-{"name": "Quecholli", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}}
-{"name": "Quill Rain", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Shortbow"}}
-{"name": "Rampart Raptor", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}}
-{"name": "Redbeak", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}}
-{"name": "Sacred Flame", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}}
-{"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}}
-{"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}}
-{"name": "Skysliver", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}}
-{"name": "Solar Lance", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}}
-{"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}}
-{"name": "Splinter of Loratta", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}}
-{"name": "Taryn's Shiver", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}}
-{"name": "The Blood Thorn", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}}
-{"name": "The Burden of Shadows", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}}
-{"name": "The Dancing Dervish", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}}
-{"name": "The Dark Defiler", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}}
-{"name": "The Searing Touch", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}}
-{"name": "The Sentry", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}}
-{"name": "Trenchtimbre", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}}
-{"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}}
-{"name": "Widowhail", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}}
-{"name": "Winter's Bite", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}}
-{"name": "Wylund's Stake", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}}
-{"name": "The Burden of Leadership", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Tapestry Relic"}}
-{"name": "The Changing Seasons", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Seal Relic"}}
-{"name": "The Desperate Alliance", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Vase Relic"}}
-{"name": "The Last Flame", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "Incense Relic"}}
-{"name": "The Peacemaker's Draught", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "Amphora Relic"}}
-{"name": "The Remembered Tales", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "Coffer Relic"}}
+{"name": "Lifesprig", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand", "stats": {"# to maximum Mana": [[10, 20]], "# to Level of all Spell Skills": [[1, 3]], "#% increased Cast Speed": [[5, 10]]}}}
+{"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff", "stats": {"Adds # to # Cold Damage": [[6, 9], [10, 15]], "Adds # to # Lightning Damage": [[1, 1], [19, 29]], "#% to Critical Hit Chance": [[3, 5]], "#% increased Attack Speed": [[15, 20]], "#% increased Mana Regeneration Rate": [[25, 40]]}}}
+{"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow", "stats": {"Adds # to # Cold Damage": [[8, 10], [13, 15]], "#% increased Freeze Buildup": [[30, 50]]}}}
+{"name": "Nazir's Judgement", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff", "stats": {"Adds # to # Physical Damage": [[30, 36], [75, 81]], "# to Accuracy Rating": [[50, 100]], "#% increased Stun Duration": [[10, 20]]}}}
+{"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club", "stats": {"Adds # to # Lightning Damage": [[1, 1], [60, 80]], "# to Accuracy Rating": [[300, 400]], "#% increased Attack Speed": [[5, 30]]}}}
+{"name": "Pillar of the Caged God", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff", "stats": {}}}
+{"name": "Quecholli", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul", "stats": {"#% increased Physical Damage": [[100, 150]], "# to all Attributes": [[10, 15]]}}}
+{"name": "Quill Rain", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Shortbow", "stats": {"# to Dexterity": [[10, 20]], "#% increased Arrow Speed": [[50, 100]]}}}
+{"name": "Rampart Raptor", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow", "stats": {"#% increased Bolt Speed": [[20, 30]], "#% increased Physical Damage": [[40, 60]], "#% increased Attack Speed": [[30, 40]]}}}
+{"name": "Redbeak", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword", "stats": {"Adds # to # Physical Damage": [[3, 5], [7, 10]]}}}
+{"name": "Sacred Flame", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre", "stats": {"Gain #% of Damage as Extra Fire Damage": [[40, 60]], "Allies in your Presence Gain #% of Damage as Extra Fire Damage": [[20, 30]], "Allies in your Presence Regenerate #% of their Maximum Life per second": [[2, 3]]}}}
+{"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand", "stats": {"#% increased Spell Damage": [[80, 100]], "Gain # Life per Enemy Killed": [[10, 15]]}}}
+{"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace", "stats": {"Adds # to # Cold Damage": [[12, 16], [22, 25]], "Adds # to # Lightning Damage": [[1, 1], [40, 45]], "#% increased Attack Speed": [[10, 20]]}}}
+{"name": "Skysliver", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear", "stats": {"Adds # to # Lightning Damage": [[1, 1], [60, 80]], "#% increased Attack Speed": [[5, 10]], "# to Dexterity": [[10, 20]], "#% increased chance to Shock": [[50, 100]]}}}
+{"name": "Solar Lance", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Forked Spear", "stats": {"Adds # to # Fire Damage": [[10, 15], [25, 30]], "#% increased Projectile Speed": [[40, 60]]}}}
+{"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow", "stats": {"#% increased Physical Damage": [[120, 160]], "# to Accuracy Rating": [[50, 70]], "#% increased Projectile Speed": [[20, 30]]}}}
+{"name": "Splinter of Loratta", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear", "stats": {"Adds # to # Physical Damage": [[3, 5], [8, 10]], "# to Accuracy Rating": [[30, 50]], "#% chance to Poison on Hit": [[20, 30]]}}}
+{"name": "Taryn's Shiver", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff", "stats": {"#% increased Cold Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]]}}}
+{"name": "The Blood Thorn", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff", "stats": {"Adds # to # Physical Damage": [[8, 12], [16, 18]], "# to Strength": [[10, 15]], "# to # Physical Thorns damage": [[4, 5], [8, 10]]}}}
+{"name": "The Burden of Shadows", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff", "stats": {"#% increased Cast Speed": [[20, 30]]}}}
+{"name": "The Dancing Dervish", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar", "stats": {}}}
+{"name": "The Dark Defiler", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre", "stats": {"# to maximum Mana": [[20, 30]], "# to Intelligence": [[5, 10]], "#% increased Mana Regeneration Rate": [[10, 30]]}}}
+{"name": "The Searing Touch", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff", "stats": {"#% increased Fire Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]]}}}
+{"name": "The Sentry", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff", "stats": {"Adds # to # Fire Damage": [[25, 32], [40, 50]], "# to Accuracy Rating": [[30, 50]]}}}
+{"name": "Trenchtimbre", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club", "stats": {"Adds # to # Physical Damage": [[13, 15], [22, 25]], "#% increased Attack Speed": [[20, 30]], "# to Level of all Minion Skills": [[1, 3]]}}}
+{"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul", "stats": {"Adds # to # Physical Damage": [[12, 15], [22, 25]], "#% increased Attack Speed": [[10, 15]], "Causes #% increased Stun Buildup": [[30, 50]]}}}
+{"name": "Widowhail", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow", "stats": {"#% increased bonuses gained from Equipped Quiver": [[150, 250]]}}}
+{"name": "Winter's Bite", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank", "stats": {"Adds # to # Cold Damage": [[8, 10], [15, 18]]}}}
+{"name": "Wylund's Stake", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer", "stats": {"Adds # to # Physical Damage": [[4, 6], [8, 10]], "Adds # to # Fire Damage": [[4, 6], [8, 10]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[20, 30]], "Hits Break # Armour": [[30, 50]]}}}
+{"name": "The Burden of Leadership", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Tapestry Relic", "stats": {}}}
+{"name": "The Changing Seasons", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Seal Relic", "stats": {}}}
+{"name": "The Desperate Alliance", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Vase Relic", "stats": {}}}
+{"name": "The Last Flame", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "Incense Relic", "stats": {}}}
+{"name": "The Peacemaker's Draught", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "Amphora Relic", "stats": {}}}
+{"name": "The Remembered Tales", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "Coffer Relic", "stats": {}}}

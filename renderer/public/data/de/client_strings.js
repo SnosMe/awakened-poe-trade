@@ -113,6 +113,9 @@ export default {
   CHARM_HELP_TEXT: 'Wird automatisch benutzt, wenn die Bedingung erfüllt ist. Kann nur',
   PRICE_NOTE: 'Notiz: ',
   WAYSTONE_TIER: 'Wegsteinlevel: ',
-  WAYSTONE_HELP: 'Kann in einem Kartenapparat verwendet werden und gewährt dir Zutritt zu einer Karte. Wegsteine'
+  WAYSTONE_HELP: 'Kann in einem Kartenapparat verwendet werden und gewährt dir Zutritt zu einer Karte. Wegsteine',
+  JEWEL_HELP: 'Platziere das',
+  SANCTUM_HELP: 'Platziere diesen Gegenstand beim',
+  TIMELESS_RADIUS: 'Radius: '
 }
 

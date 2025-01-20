@@ -172,7 +172,9 @@
     "tag_explicit_delve": "デルヴ",
     "tag_explicit_veiled": "ヴェール",
     "tag_explicit_incursion": "インカージョン",
-    "tag_rune": "ルーン"
+    "tag_rune": "ルーン",
+    "tag_sanctum": "Sanctum",
+    "fill_rune_iron": "Fill Runes(Iron)"
   },
   "online_filter": {
     "offline_toggle": "オフライン & オンライン",
@@ -351,7 +353,11 @@
     "select_stock": "常に\"在庫\"フィルターを選択",
     "show_prediction": "価格予測を表示",
     "remember_currency": "バイアウト価格の通貨フィルターを記憶",
-    "default_all_selected": "Default all filters to enabled"
+    "default_all_selected": "Default all filters to enabled",
+    "use_tooltip_hover": "Show item when hovering over price",
+    "use_tooltip_keybind": "SHIFT + hover",
+    "use_tooltip_always": "hover",
+    "use_tooltip_off": "off"
   },
   "poe2_new": {
     "beta_warning": "これはPOE2のベータ版です、期待通りに動作しないことがあります。",

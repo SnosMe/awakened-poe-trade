@@ -202,7 +202,8 @@ export function createExactStatFilters(
   } else if (
     item.category === ItemCategory.MemoryLine ||
     item.category === ItemCategory.SanctumRelic ||
-    item.category === ItemCategory.Charm
+    item.category === ItemCategory.Charm ||
+    item.category === ItemCategory.Relic
   ) {
     enableAllFilters(ctx.filters);
   }
@@ -501,6 +502,10 @@ function hideNotVariableStat(filter: StatFilter, item: ParsedItem) {
     filter.tag !== FilterTag.Pseudo
   )
     return;
+  // show all rolls for
+  if (item.info.refName === "Morior Invictus") {
+    return;
+  }
 
   if (!filter.roll) {
     filter.hidden = "filters.hide_const_roll";
@@ -594,7 +599,10 @@ function finalFilterTweaks(ctx: FiltersCreationContext) {
     }
   }
 
-  if (item.rarity === ItemRarity.Unique) {
+  if (
+    item.rarity === ItemRarity.Unique ||
+    item.category === ItemCategory.Relic
+  ) {
     const countVisible = ctx.filters.reduce(
       (cnt, filter) => (filter.hidden ? cnt : cnt + 1),
       0,

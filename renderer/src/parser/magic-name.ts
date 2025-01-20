@@ -1,12 +1,17 @@
 import { ITEM_BY_TRANSLATED } from "@/assets/data";
+import { AppConfig } from "@/web/Config";
 
 export function magicBasetype(name: string) {
-  const words = name.split(" ");
+  let separator = " ";
+  if (AppConfig().language === "cmn-Hant") {
+    separator = /[\u4e00-\u9fa5]/.test(name) ? "" : " ";
+  }
+  const words = name.split(separator);
 
   const perm: string[] = words.flatMap((_, start) =>
     Array(words.length - start)
       .fill(undefined)
-      .map((_, idx) => words.slice(start, start + idx + 1).join(" ")),
+      .map((_, idx) => words.slice(start, start + idx + 1).join(separator)),
   );
 
   const result = perm

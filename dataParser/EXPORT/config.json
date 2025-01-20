@@ -28,7 +28,8 @@
     "Korean",
     "Traditional Chinese",
     "Japanese",
-    "German"
+    "German",
+    "Spanish"
   ],
   "tables": [
     {
@@ -121,7 +122,9 @@
         "Stat5Value",
         "Stat6Value",
         "RadiusJewelType",
-        "Level"
+        "Level",
+        "GenerationType",
+        "Families"
       ]
     },
     {

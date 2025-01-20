@@ -39,6 +39,7 @@ LANG_CODES_TO_NAMES = {
     "cmn-Hant": "Traditional Chinese",
     "ja": "Japanese",
     "de": "German",
+    "es": "Spanish",
 }
 
 
@@ -104,7 +105,7 @@ def flatten_mods(mods):
             grouped_mods[ref]["tiers"] = (
                 None if "tiers" not in mod else deepcopy(mod["tiers"])
             )
-        elif mod["tiers"] is not None:
+        elif "tiers" in mod and mod["tiers"] is not None:
             for tier_type, tier_data in mod["tiers"].items():
                 if tier_type == "implicit":
                     # Merge implicit tiers (dictionary)
@@ -120,6 +121,14 @@ def flatten_mods(mods):
                 else:
                     # Merge list-based tiers
                     grouped_mods[ref]["tiers"][tier_type].extend(deepcopy(tier_data))
+
+        # Merge fromAreaMods
+        if "fromAreaMods" in grouped_mods[ref]:
+            grouped_mods[ref]["fromAreaMods"] = grouped_mods[ref]["fromAreaMods"] or (
+                False if "fromAreaMods" not in mod else mod["fromAreaMods"]
+            )
+        elif "fromAreaMods" in mod:
+            grouped_mods[ref]["fromAreaMods"] = mod["fromAreaMods"]
 
     # Convert back to dictionary with unique base_ids
     flattened_mods = {}
@@ -199,6 +208,12 @@ class Parser:
                 f"{self.cwd}/../json-api/{self.lang}/static.json", encoding="utf-8"
             ).read()
         )  # content of https://www.pathofexile.com/api/trade2/data/static
+        self.unique_item_stats_lookup = json.loads(
+            open(
+                f"{self.cwd}/overrideData/unique_override_data_by_item.json",
+                encoding="utf-8",
+            ).read()
+        )
 
         self.items = {}
         self.unique_items = []
@@ -262,6 +277,8 @@ class Parser:
                 text = entry.get("text")
                 type = entry.get("type")
                 text = self.convert_stat_name(text)
+
+                text = text.replace("+#", "#")
 
                 logger.debug(f"Processing entry - ID: {id}, Text: {text}, Type: {type}")
 
@@ -437,6 +454,8 @@ class Parser:
         hybrid_count = 0
         hybrids = []
 
+        stats_from_tiers = set()
+
         for in_ids, tiers, base_id in modTierBuilderB(
             self.mods_file, self.base_items, self.gold_mod_prices, self.tags
         ):
@@ -527,6 +546,7 @@ class Parser:
                     hybrid_count += 1
                     hybrids.append((base_id, translations))
                     continue
+            stats_from_tiers.add(stat_id)
             self.mods[base_id] = {
                 "ref": main_translation.get("ref"),
                 "better": 1,
@@ -535,6 +555,75 @@ class Parser:
                 "trade": trade,
                 "tiers": tiers,
             }
+
+            if base_id.lower().startswith("map"):
+                self.mods[base_id]["fromAreaMods"] = True
+
+        for mod in self.mods_file:
+            id = mod.get("Id")
+            stats_key = mod.get("Stat1")
+
+            logger.debug(f"Processing mod - ID: {id}, Stat: {stats_key}")
+
+            if stats_key is not None:
+                stats_id = self.stats.get(stats_key)
+                translation = self.mod_translations.get(stats_id)
+
+                if stats_id in stats_from_tiers:
+                    continue
+
+                if translation:
+                    ref = translation.get("ref")
+                    matchers = translation.get("matchers")
+
+                    if matchers is None or len(matchers) == 0:
+                        logger.warning(f"No matchers found for stats ID: {stats_id}.")
+                        continue
+
+                    if ref is None:
+                        logger.warning(f"No ref found for stats ID: {stats_id}.")
+                        continue
+
+                    ids = self.stats_trade_ids.get(matchers[0].get("string"))
+
+                    if ids is None and len(matchers) > 1:
+                        ids = self.stats_trade_ids.get(matchers[1].get("string"))
+                        if ids is None:
+                            logger.warning(
+                                f"No trade IDs found for matchers: {matchers[0].get('string')} or {matchers[1].get('string')}."
+                            )
+                            self.matchers_no_trade_ids.extend(
+                                [matchers[0].get("string"), matchers[1].get("string")]
+                            )
+                    elif ids is None:
+                        logger.warning(
+                            f"No trade IDs found for matcher: {matchers[0].get('string')}."
+                        )
+                        self.matchers_no_trade_ids.append(matchers[0].get("string"))
+
+                    trade = {"ids": ids}
+                    stats_from_tiers.add(stats_id)
+                    if id in self.mods:
+                        logger.error(f"Duplicate mod ID found: {id}. Skipping mod.")
+                        continue
+                    self.mods[id] = {
+                        "ref": translation.get("ref"),
+                        "better": 1,
+                        "id": stats_id,
+                        "matchers": translation.get("matchers"),
+                        "trade": trade,
+                    }
+
+                    if id.lower().startswith("map"):
+                        self.mods[id]["fromAreaMods"] = True
+                else:
+                    logger.debug(
+                        f"Mod {id} has no translations. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                    )
+            else:
+                logger.debug(
+                    f"Mod {id} has no stats_key. [stats_key: {stats_key}, stats_id: {stats_id}]"
+                )
 
         logger.debug("Completed parsing mods.")
         logger.info(f"Mods: {len(self.mods)}")
@@ -592,14 +681,19 @@ class Parser:
                     if index is not None and index in self.base_en_items_lookup:
                         refType = self.base_en_items_lookup[index]
 
-                self.unique_items.append(
-                    {
-                        "name": name,
-                        "refName": refName,
-                        "namespace": "UNIQUE",
-                        "unique": {"base": type},
-                    }
-                )
+                unique_item = {
+                    "name": name,
+                    "refName": refName,
+                    "namespace": "UNIQUE",
+                    "unique": {"base": type},
+                }
+
+                if refName is not None and refType is not None:
+                    full_name = f"{refName} {refType}"
+                    item_stats = self.unique_item_stats_lookup.get(full_name)
+                    if item_stats is not None:
+                        unique_item["unique"]["stats"] = item_stats
+                self.unique_items.append(unique_item)
 
         # parse base items
         for item in self.base_items:
@@ -780,15 +874,6 @@ class Parser:
 
         self.mods = flatten_mods(self.mods)
 
-        words_lookup = {w.get("Text"): w.get("Text2") for w in self.words_file}
-
-        with open(
-            f"{self.get_script_dir()}/overrideData/unique_override_data.json",
-            "r",
-            encoding="utf-8",
-        ) as f:
-            self.mods = add_unique_mods(self.mods, json.load(f), words_lookup)
-
         seen = set()
         skip = {"maximum_life_%_lost_on_kill", "base_spirit"}
         m = open(
@@ -864,6 +949,7 @@ class Parser:
             "cmn-Hant": {"string": "增加 #% 物理傷害"},
             "ja": {"string": "物理ダメージが#%増加する"},
             "de": {"string": "#% erhöhte physischen Schaden"},
+            "es": {"string": "#% de daño físico aumentado"},
         }
         # somehow not a thing? - possibly missing some data
         # self.mods["physical_local_damage_+%"] = {

@@ -1,0 +1,5234 @@
+{
+  "Heroic Tragedy Timeless Jewel": {
+    "Remembrancing # songworthy deeds by the line of Vorana": [
+      [
+        100,
+        8000
+      ]
+    ]
+  },
+  "Grand Spectrum Ruby": {},
+  "Megalomaniac Diamond": {},
+  "From Nothing Diamond": {},
+  "Controlled Metamorphosis Diamond": {
+    "#% to all Elemental Resistances": [
+      [
+        -20,
+        -5
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        -23,
+        -3
+      ]
+    ]
+  },
+  "Prism of Belief Diamond": {
+    "# to Level of all Specific Skill Skills": [
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  "The Adorned Diamond": {
+    "#% increased Effect of Jewel Socket Passive Skills": [
+      [
+        0,
+        100
+      ]
+    ]
+  },
+  "Against the Darkness Time-Lost Diamond": {},
+  "The Peacemaker's Draught Amphora Relic": {},
+  "The Desperate Alliance Vase Relic": {},
+  "The Changing Seasons Seal Relic": {},
+  "The Remembered Tales Coffer Relic": {},
+  "The Burden of Leadership Tapestry Relic": {},
+  "The Last Flame Incense Relic": {},
+  "Asphyxia's Wrath Broadhead Quiver": {
+    "Adds # to # Cold damage to Attacks": [
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        5,
+        10
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        5,
+        10
+      ]
+    ],
+    "Attacks Gain #% of Damage as Extra Cold Damage": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Blackgleam Fire Quiver": {
+    "Adds # to # Fire damage to Attacks": [
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        9
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Attacks Gain #% of Damage as Extra Fire Damage": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Beyond Reach Visceral Quiver": {
+    "#% increased Critical Hit Chance for Attacks": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% reduced Attack Speed": [
+      [
+        10,
+        15
+      ]
+    ],
+    "Attacks Gain #% of Physical Damage as extra Chaos Damage": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Igniferis Crimson Amulet": {
+    "# Life Regeneration per second": [
+      [
+        2,
+        4
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Idol of Uldurn Crimson Amulet": {
+    "# Life Regeneration per second": [
+      [
+        2,
+        4
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "The Everlasting Gaze Azure Amulet": {
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ],
+    "Gain #% of Maximum Mana as Extra Maximum Energy Shield": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Ungil's Harmony Azure Amulet": {
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        100,
+        200
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        60,
+        100
+      ]
+    ]
+  },
+  "Revered Resin Amber Amulet": {
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Flask Life Recovery rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Carnage Heart Amber Amulet": {
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Xoph's Blood Amber Amulet": {
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased maximum Life": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Surefooted Sigil Jade Amulet": {
+    "# to Dexterity": [
+      [
+        5,
+        15
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "(implicit) # to Dexterity": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Choir of the Storm Jade Amulet": {
+    "# to Dexterity": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Defiance of Destiny Jade Amulet": {
+    "# to Dexterity": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased maximum Life": [
+      [
+        6,
+        10
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        25,
+        40
+      ]
+    ]
+  },
+  "Ligurium Talisman Lapis Amulet": {
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Energy Shield": [
+      [
+        30,
+        40
+      ]
+    ],
+    "# to Spirit": [
+      [
+        25,
+        35
+      ]
+    ],
+    "(implicit) # to Intelligence": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "The Pandemonius Lapis Amulet": {
+    "# to Intelligence": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Rondel of Fragility Lunar Amulet": {
+    "# to maximum Energy Shield": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Skill Speed": [
+      [
+        15,
+        30
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Damage": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "The Anvil Bloodstone Amulet": {
+    "# to maximum Life": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% increased Armour": [
+      [
+        25,
+        50
+      ]
+    ],
+    "#% to maximum Block chance": [
+      [
+        3,
+        5
+      ]
+    ]
+  },
+  "Astramentis Stellar Amulet": {
+    "# to all Attributes": [
+      [
+        80,
+        100
+      ]
+    ],
+    "(implicit) # to all Attributes": [
+      [
+        5,
+        7
+      ]
+    ]
+  },
+  "Fixation of Yix Stellar Amulet": {
+    "# to all Attributes": [
+      [
+        5,
+        7
+      ]
+    ],
+    "Allies in your Presence have #% increased Critical Hit Chance": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Allies in your Presence have #% increased Critical Damage Bonus": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Allies in your Presence have #% increased Attack Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "Allies in your Presence have #% increased Cast Speed": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Strugglescream Stellar Amulet": {
+    "# to all Attributes": [
+      [
+        5,
+        7
+      ]
+    ]
+  },
+  "Beacon of Azis Solar Amulet": {
+    "# to Spirit": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        60,
+        100
+      ]
+    ]
+  },
+  "Fireflower Solar Amulet": {
+    "# to Spirit": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        30,
+        40
+      ]
+    ],
+    "# to Level of all Fire Skills": [
+      [
+        1,
+        4
+      ]
+    ]
+  },
+  "Eye of Chayula Gold Amulet": {
+    "#% increased Rarity of Items found": [
+      [
+        12,
+        20
+      ]
+    ],
+    "#% reduced maximum Life": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Serpent's Egg Gold Amulet": {
+    "#% increased Rarity of Items found": [
+      [
+        12,
+        20
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Blackheart Iron Ring": {
+    "# Life Regeneration per second": [
+      [
+        3,
+        6
+      ]
+    ],
+    "Adds # to # Chaos Damage to Attacks": [
+      [
+        4,
+        6
+      ],
+      [
+        8,
+        10
+      ]
+    ]
+  },
+  "Doedre's Damning Lazuli Ring": {
+    "# to maximum Mana": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        5,
+        15
+      ]
+    ],
+    "Gain # Mana per Enemy Killed": [
+      [
+        1,
+        10
+      ]
+    ]
+  },
+  "Glowswarm Lazuli Ring": {
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "(implicit) # to maximum Mana": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Flask Mana Recovery rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Seed of Cataclysm Lazuli Ring": {
+    "# to maximum Mana": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Critical Hit Chance for Spells": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Critical Spell Damage Bonus": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ]
+  },
+  "Cracklecreep Ruby Ring": {
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Fire Damage": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Blistering Bond Ruby Ring": {
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "(implicit) #% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Polcirkeln Sapphire Ring": {
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Cold Damage": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Dream Fragments Sapphire Ring": {
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Whisper of the Brotherhood Sapphire Ring": {
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Skill Speed": [
+      [
+        5,
+        10
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "The Burrower Topaz Ring": {
+    "#% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "(implicit) #% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Call of the Brotherhood Topaz Ring": {
+    "#% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        25,
+        35
+      ]
+    ],
+    "#% increased Freeze Buildup": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Levinstone Topaz Ring": {
+    "#% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased chance to Shock": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Ming's Heart Amethyst Ring": {
+    "#% to Chaos Resistance": [
+      [
+        7,
+        13
+      ]
+    ],
+    "Gain #% of Damage as Extra Chaos Damage": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Original Sin Amethyst Ring": {
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ],
+    "(implicit) #% to Chaos Resistance": [
+      [
+        7,
+        13
+      ]
+    ]
+  },
+  "Blackflame Amethyst Ring": {
+    "#% to Chaos Resistance": [
+      [
+        7,
+        13
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        15,
+        30
+      ]
+    ]
+  },
+  "Death Rush Emerald Ring": {
+    "# to Accuracy Rating": [
+      [
+        75,
+        125
+      ]
+    ],
+    "(implicit) # to Accuracy Rating": [
+      [
+        120,
+        160
+      ]
+    ],
+    "# to Evasion Rating": [
+      [
+        75,
+        125
+      ]
+    ]
+  },
+  "Thief's Torment Emerald Ring": {
+    "# to Accuracy Rating": [
+      [
+        120,
+        160
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Snakepit Pearl Ring": {
+    "#% increased Cast Speed": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased Spell Damage": [
+      [
+        20,
+        30
+      ]
+    ],
+    "(implicit) #% increased Cast Speed": [
+      [
+        7,
+        10
+      ]
+    ]
+  },
+  "Heartbound Loop Pearl Ring": {
+    "#% increased Cast Speed": [
+      [
+        7,
+        10
+      ]
+    ],
+    "Minions have #% increased maximum Life": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        40
+      ]
+    ],
+    "Minions Revive #% faster": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Perandus Seal Gold Ring": {
+    "#% increased Rarity of Items found": [
+      [
+        6,
+        15
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        5,
+        10
+      ]
+    ],
+    "#% increased Quantity of Gold Dropped by Slain Enemies": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Andvarius Gold Ring": {
+    "#% increased Rarity of Items found": [
+      [
+        50,
+        70
+      ]
+    ],
+    "(implicit) #% increased Rarity of Items found": [
+      [
+        6,
+        15
+      ]
+    ]
+  },
+  "Ventor's Gamble Gold Ring": {
+    "#% increased Rarity of Items found": [
+      [
+        6,
+        15
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        0,
+        80
+      ]
+    ],
+    "# to Spirit": [
+      [
+        0,
+        20
+      ]
+    ],
+    "#% reduced Rarity of Items found": [
+      [
+        -40,
+        40
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        -40,
+        40
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        -40,
+        40
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        -40,
+        40
+      ]
+    ]
+  },
+  "Meginord's Girdle Rawhide Belt": {
+    "#% increased Life Recovery from Flasks": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Strength": [
+      [
+        40,
+        50
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Midnight Braid Rawhide Belt": {
+    "#% increased Life Recovery from Flasks": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Keelhaul Linen Belt": {
+    "#% increased Mana Recovery from Flasks": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% reduced Flask Life Recovery rate": [
+      [
+        -25,
+        25
+      ]
+    ],
+    "#% reduced Flask Mana Recovery rate": [
+      [
+        -25,
+        25
+      ]
+    ]
+  },
+  "Birthright Buckle Wide Belt": {
+    "#% increased Flask Charges gained": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% reduced Flask Charges used": [
+      [
+        10,
+        15
+      ]
+    ],
+    "(implicit) #% increased Flask Charges gained": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Brynabas Wide Belt": {
+    "#% increased Flask Charges gained": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        30,
+        40
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        7,
+        12
+      ]
+    ]
+  },
+  "Soul Tether Long Belt": {
+    "#% increased Charm Effect Duration": [
+      [
+        15,
+        20
+      ]
+    ],
+    "# to maximum Energy Shield": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Infernoclasp Plate Belt": {
+    "# to Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "(implicit) # to Armour": [
+      [
+        100,
+        140
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Maximum Fire Resistance": [
+      [
+        3,
+        5
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Ryslatha's Coil Ornate Belt": {
+    "#% reduced Charm Charges used": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        80,
+        100
+      ]
+    ],
+    "#% increased Flask Life Recovery rate": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% more maximum Physical Attack Damage": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% less minimum Physical Attack Damage": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Coward's Legacy Mail Belt": {
+    "#% reduced Flask Charges used": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to Strength": [
+      [
+        -20,
+        -10
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Life and Mana Recovery from Flasks": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Headhunter Heavy Belt": {
+    "#% increased Stun Threshold": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Strength": [
+      [
+        20,
+        40
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        40
+      ]
+    ]
+  },
+  "Zerphi's Genesis Heavy Belt": {
+    "#% increased Stun Threshold": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        30
+      ]
+    ],
+    "#% increased Charm Charges used": [
+      [
+        10,
+        30
+      ]
+    ]
+  },
+  "Ingenuity Utility Belt": {
+    "#% increased bonuses gained from Equipped Rings": [
+      [
+        40,
+        80
+      ]
+    ]
+  },
+  "Shavronne's Satchel Fine Belt": {
+    "#% reduced Flask Life Recovery rate": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Flask Charges gained": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Olroth's Resolve Ultimate Life Flask": {
+    "#% increased Charges per use": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Melting Maelstrom Ultimate Mana Flask": {
+    "#% increased Duration": [
+      [
+        200,
+        250
+      ]
+    ]
+  },
+  "Kalandra's Touch Ring": {},
+  "Sekhema's Resolve Ring": {
+    "#% increased Rarity of Items found": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Redbeak Shortsword": {
+    "Adds # to # Physical Damage": [
+      [
+        3,
+        5
+      ],
+      [
+        7,
+        10
+      ]
+    ]
+  },
+  "Bluetongue Shortsword": {
+    "Adds # to # Physical Damage": [
+      [
+        4,
+        6
+      ],
+      [
+        7,
+        10
+      ]
+    ]
+  },
+  "The Dancing Dervish Scimitar": {},
+  "Brynhand's Mark Wooden Club": {
+    "Adds # to # Physical Damage": [
+      [
+        10,
+        14
+      ],
+      [
+        16,
+        20
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Wylund's Stake Smithing Hammer": {
+    "Adds # to # Physical Damage": [
+      [
+        4,
+        6
+      ],
+      [
+        8,
+        10
+      ]
+    ],
+    "Adds # to # Fire Damage": [
+      [
+        4,
+        6
+      ],
+      [
+        8,
+        10
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "Hits Break # Armour": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Frostbreath Slim Mace": {
+    "Adds # to # Physical Damage": [
+      [
+        8,
+        12
+      ],
+      [
+        16,
+        20
+      ]
+    ],
+    "Adds # to # Cold Damage": [
+      [
+        8,
+        12
+      ],
+      [
+        16,
+        20
+      ]
+    ]
+  },
+  "Trenchtimbre Spiked Club": {
+    "Adds # to # Physical Damage": [
+      [
+        13,
+        15
+      ],
+      [
+        22,
+        25
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Level of all Minion Skills": [
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  "Seeing Stars Plated Mace": {
+    "Adds # to # Cold Damage": [
+      [
+        12,
+        16
+      ],
+      [
+        22,
+        25
+      ]
+    ],
+    "Adds # to # Lightning Damage": [
+      [
+        1,
+        1
+      ],
+      [
+        40,
+        45
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Olrovasara Torment Club": {
+    "Adds # to # Lightning Damage": [
+      [
+        1,
+        1
+      ],
+      [
+        60,
+        80
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        300,
+        400
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        5,
+        30
+      ]
+    ]
+  },
+  "Hoghunt Felled Greatclub": {
+    "Adds # to # Physical Damage": [
+      [
+        16,
+        20
+      ],
+      [
+        23,
+        27
+      ]
+    ]
+  },
+  "Hrimnor's Hymn Oak Greathammer": {
+    "Causes #% increased Stun Buildup": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Physical Damage": [
+      [
+        80,
+        120
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "Gain # Life per Enemy Killed": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Trephina Forge Maul": {
+    "Adds # to # Physical Damage": [
+      [
+        12,
+        15
+      ],
+      [
+        22,
+        25
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        10,
+        15
+      ]
+    ],
+    "Causes #% increased Stun Buildup": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Brain Rattler Studded Greatclub": {
+    "Adds # to # Physical Damage": [
+      [
+        18,
+        22
+      ],
+      [
+        24,
+        28
+      ]
+    ],
+    "Adds # to # Lightning Damage": [
+      [
+        1,
+        1
+      ],
+      [
+        50,
+        55
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Chober Chaber Leaden Greathammer": {
+    "Adds # to # Physical Damage": [
+      [
+        58,
+        65
+      ],
+      [
+        102,
+        110
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        80,
+        100
+      ]
+    ]
+  },
+  "Quecholli Crumbling Maul": {
+    "#% increased Physical Damage": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Splinter of Loratta Hardwood Spear": {
+    "Adds # to # Physical Damage": [
+      [
+        3,
+        5
+      ],
+      [
+        8,
+        10
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% chance to Poison on Hit": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Skysliver Winged Spear": {
+    "Adds # to # Lightning Damage": [
+      [
+        1,
+        1
+      ],
+      [
+        60,
+        80
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        5,
+        10
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased chance to Shock": [
+      [
+        50,
+        100
+      ]
+    ]
+  },
+  "Solar Lance Forked Spear": {
+    "Adds # to # Fire Damage": [
+      [
+        10,
+        15
+      ],
+      [
+        25,
+        30
+      ]
+    ],
+    "#% increased Projectile Speed": [
+      [
+        40,
+        60
+      ]
+    ]
+  },
+  "Winter's Bite Glass Shank": {
+    "Adds # to # Cold Damage": [
+      [
+        8,
+        10
+      ],
+      [
+        15,
+        18
+      ]
+    ]
+  },
+  "The Blood Thorn Wrapped Quarterstaff": {
+    "Adds # to # Physical Damage": [
+      [
+        8,
+        12
+      ],
+      [
+        16,
+        18
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to # Physical Thorns damage": [
+      [
+        4,
+        5
+      ],
+      [
+        8,
+        10
+      ]
+    ]
+  },
+  "Pillar of the Caged God Long Quarterstaff": {},
+  "The Sentry Gothic Quarterstaff": {
+    "Adds # to # Fire Damage": [
+      [
+        25,
+        32
+      ],
+      [
+        40,
+        50
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Matsya Crescent Quarterstaff": {
+    "Adds # to # Cold Damage": [
+      [
+        6,
+        9
+      ],
+      [
+        10,
+        15
+      ]
+    ],
+    "Adds # to # Lightning Damage": [
+      [
+        1,
+        1
+      ],
+      [
+        19,
+        29
+      ]
+    ],
+    "#% to Critical Hit Chance": [
+      [
+        3,
+        5
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        15,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        25,
+        40
+      ]
+    ]
+  },
+  "Nazir's Judgement Steelpoint Quarterstaff": {
+    "Adds # to # Physical Damage": [
+      [
+        30,
+        36
+      ],
+      [
+        75,
+        81
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        50,
+        100
+      ]
+    ],
+    "#% increased Stun Duration": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Collapsing Horizon Wyrm Quarterstaff": {
+    "#% to Critical Hit Chance": [
+      [
+        5,
+        10
+      ]
+    ],
+    "# to Level of all Elemental Skills": [
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  "Sanguine Diviner Bone Wand": {
+    "#% increased Spell Damage": [
+      [
+        80,
+        100
+      ]
+    ],
+    "Gain # Life per Enemy Killed": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Lifesprig Attuned Wand": {
+    "# to maximum Mana": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Level of all Spell Skills": [
+      [
+        1,
+        3
+      ]
+    ],
+    "#% increased Cast Speed": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Enezun's Charge Volatile Wand": {
+    "#% increased Spell Damage": [
+      [
+        80,
+        100
+      ]
+    ],
+    "#% increased Critical Hit Chance for Spells": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Gain # Mana per Enemy Killed": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Dusk Vigil Ashen Staff": {
+    "#% increased Spell Damage": [
+      [
+        60,
+        80
+      ]
+    ],
+    "Gain # Life per Enemy Killed": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Taryn's Shiver Gelid Staff": {
+    "#% increased Cold Damage": [
+      [
+        80,
+        120
+      ]
+    ],
+    "#% increased Cast Speed": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Earthbound Voltaic Staff": {
+    "#% increased Lightning Damage": [
+      [
+        80,
+        120
+      ]
+    ],
+    "#% increased Cast Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "The Searing Touch Pyrophyte Staff": {
+    "#% increased Fire Damage": [
+      [
+        80,
+        120
+      ]
+    ],
+    "#% increased Cast Speed": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "The Burden of Shadows Chiming Staff": {
+    "#% increased Cast Speed": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Widowhail Crude Bow": {
+    "#% increased bonuses gained from Equipped Quiver": [
+      [
+        150,
+        250
+      ]
+    ]
+  },
+  "Quill Rain Shortbow": {
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Arrow Speed": [
+      [
+        50,
+        100
+      ]
+    ]
+  },
+  "Splinterheart Recurve Bow": {
+    "#% increased Physical Damage": [
+      [
+        120,
+        160
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        50,
+        70
+      ]
+    ],
+    "#% increased Projectile Speed": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Death's Harp Dualstring Bow": {
+    "#% to Critical Damage Bonus": [
+      [
+        50,
+        70
+      ]
+    ],
+    "Gain # Life per Enemy Killed": [
+      [
+        20,
+        30
+      ]
+    ],
+    "Gain # Mana per Enemy Killed": [
+      [
+        12,
+        18
+      ]
+    ]
+  },
+  "Mist Whisper Makeshift Crossbow": {
+    "Adds # to # Cold Damage": [
+      [
+        8,
+        10
+      ],
+      [
+        13,
+        15
+      ]
+    ],
+    "#% increased Freeze Buildup": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Rampart Raptor Tense Crossbow": {
+    "#% increased Bolt Speed": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Physical Damage": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "The Dark Defiler Rattling Sceptre": {
+    "# to maximum Mana": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        5,
+        10
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        10,
+        30
+      ]
+    ]
+  },
+  "Font of Power Omen Sceptre": {
+    "#% increased Spirit": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Sacred Flame Shrine Sceptre": {
+    "Gain #% of Damage as Extra Fire Damage": [
+      [
+        40,
+        60
+      ]
+    ],
+    "Allies in your Presence Gain #% of Damage as Extra Fire Damage": [
+      [
+        20,
+        30
+      ]
+    ],
+    "Allies in your Presence Regenerate #% of their Maximum Life per second": [
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  "Guiding Palm Shrine Sceptre": {
+    "Allies in your Presence deal # to # additional Attack Fire Damage": [
+      [
+        4,
+        6
+      ],
+      [
+        7,
+        10
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Bramblejack Rusted Cuirass": {
+    "# to maximum Life": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        60,
+        100
+      ]
+    ]
+  },
+  "Blackbraid Fur Plate": {
+    "# to Armour": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        40,
+        60
+      ]
+    ]
+  },
+  "Edyrn's Tusks Iron Cuirass": {
+    "#% increased Armour": [
+      [
+        120,
+        160
+      ]
+    ],
+    "# to # Physical Thorns damage": [
+      [
+        15,
+        20
+      ],
+      [
+        25,
+        30
+      ]
+    ]
+  },
+  "The Immortan Raider Plate": {
+    "# to all Attributes": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        15,
+        30
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        15,
+        30
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Titanrot Cataphract Maraketh Cuirass": {
+    "#% increased Armour": [
+      [
+        400,
+        500
+      ]
+    ],
+    "#% increased Strength": [
+      [
+        15,
+        30
+      ]
+    ]
+  },
+  "Wandering Reliquary Steel Plate": {
+    "#% increased Armour": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        60,
+        80
+      ]
+    ]
+  },
+  "Kingsguard Full Plate": {
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Greed's Embrace Vaal Cuirass": {
+    "#% increased Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "The Brass Dome Champion Cuirass": {
+    "#% increased Armour": [
+      [
+        400,
+        500
+      ]
+    ],
+    "#% to all Maximum Elemental Resistances": [
+      [
+        -5,
+        -1
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        200,
+        300
+      ]
+    ]
+  },
+  "Kaom's Heart Conqueror Plate": {
+    "#% increased Stun Threshold": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Bristleboar Leather Vest": {
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        3,
+        5
+      ]
+    ]
+  },
+  "Foxshade Quilted Vest": {
+    "# to Evasion Rating": [
+      [
+        50,
+        70
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Ashrend Pathfinder Coat": {
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Briskwrap Rhoahide Coat": {
+    "#% increased Evasion Rating": [
+      [
+        60,
+        100
+      ]
+    ],
+    "#% increased Flask Life Recovery rate": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Flask Mana Recovery rate": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Dustbloom Studded Vest": {
+    "#% increased Evasion Rating": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "The Rat Cage Scout's Vest": {
+    "#% increased Evasion Rating": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Quatl's Molt Serpentscale Coat": {
+    "#% increased Evasion Rating": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Queen of the Forest Smuggler Coat": {
+    "#% increased Evasion Rating": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        -15,
+        -10
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        25,
+        30
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Ghostwrithe Tattered Robe": {
+    "#% to Chaos Resistance": [
+      [
+        29,
+        37
+      ]
+    ]
+  },
+  "Bitterbloom Feathered Robe": {
+    "#% increased Energy Shield": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        50,
+        100
+      ]
+    ]
+  },
+  "The Black Doubt Hexer's Robe": {
+    "#% increased Energy Shield": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        30
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Necromantle Bone Raiment": {
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ],
+    "Minions gain #% of their Maximum Life as Extra Maximum Energy Shield": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Cloak of Flame Silk Robe": {
+    "#% to Fire Resistance": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% reduced Ignite Duration on you": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Temporalis Silk Robe": {
+    "# to maximum Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% of Damage taken Recouped as Life": [
+      [
+        5,
+        30
+      ]
+    ],
+    "#% of Damage taken Recouped as Mana": [
+      [
+        5,
+        30
+      ]
+    ],
+    "Skills have # seconds to Cooldown": [
+      [
+        -4,
+        -2
+      ]
+    ]
+  },
+  "Prayers for Rain Keth Raiment": {
+    "#% increased Energy Shield": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Tetzlapokal's Desire Votive Raiment": {
+    "#% increased Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to Strength": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ]
+  },
+  "The Covenant Altar Robe": {
+    "#% increased Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Coat of Red Chain Mail": {
+    "#% increased Armour and Evasion": [
+      [
+        80,
+        100
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        80,
+        100
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        75,
+        150
+      ]
+    ]
+  },
+  "The Barrow Dweller Rogue Armour": {
+    "#% increased Armour and Evasion": [
+      [
+        60,
+        100
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        -20,
+        -10
+      ]
+    ]
+  },
+  "Irongrasp Vagabond Armour": {
+    "#% increased Armour and Evasion": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to Strength": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Pariah's Embrace Cloaked Mail": {
+    "#% increased Armour and Evasion": [
+      [
+        50,
+        80
+      ]
+    ],
+    "# to all Attributes": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Belly of the Beast Explorer Armour": {
+    "#% increased Armour and Evasion": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to # Physical Thorns damage": [
+      [
+        25,
+        30
+      ],
+      [
+        35,
+        40
+      ]
+    ]
+  },
+  "Pragmatism Explorer Armour": {
+    "#% increased Armour and Evasion": [
+      [
+        200,
+        300
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Doryani's Prototype Scale Mail": {
+    "#% increased Armour and Evasion": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ]
+  },
+  "Perfidy Knight Armour": {
+    "#% increased Armour and Evasion": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% chance to Avoid Physical Damage from Hits": [
+      [
+        10,
+        40
+      ]
+    ],
+    "#% chance to Avoid Chaos Damage from Hits": [
+      [
+        10,
+        40
+      ]
+    ]
+  },
+  "Enfolding Dawn Pilgrim Vestments": {
+    "#% increased Armour and Energy Shield": [
+      [
+        50,
+        100
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        5,
+        15
+      ]
+    ]
+  },
+  "Icetomb Mail Vestments": {
+    "# to Strength": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Husk of Dreams Shaman Mantle": {
+    "#% increased Armour and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ],
+    "#% increased Flask Charges used": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Voll's Protector Ironclad Vestments": {
+    "#% increased Armour and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        13,
+        17
+      ]
+    ]
+  },
+  "Couture of Crimson Gilded Vestments": {
+    "#% increased Armour and Energy Shield": [
+      [
+        50,
+        100
+      ]
+    ],
+    "#% reduced Bleeding Duration on you": [
+      [
+        40,
+        60
+      ]
+    ]
+  },
+  "Apron of Emiran Hermit Garb": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% reduced Bleeding Duration on you": [
+      [
+        40,
+        60
+      ]
+    ]
+  },
+  "Gloomform Waxed Jacket": {
+    "#% increased Evasion Rating": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Sierran Inheritance Marabout Garb": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        50,
+        80
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% faster start of Energy Shield Recharge": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "The Dancing Mirage Wayfarer Jacket": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        150,
+        200
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Redflare Conduit Anchorite Garb": {
+    "# to maximum Mana": [
+      [
+        50,
+        70
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Wings of Caelyn Rusted Greathelm": {
+    "#% increased Rarity of Items found": [
+      [
+        5,
+        15
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Horns of Bynden Rusted Greathelm": {
+    "#% increased Rarity of Items found": [
+      [
+        5,
+        15
+      ]
+    ],
+    "# to Strength": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Ezomyte Peak Soldier Greathelm": {
+    "#% increased Armour": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        50,
+        80
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        3,
+        6
+      ]
+    ],
+    "#% increased Area of Effect": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Black Sun Crest Wrapped Greathelm": {
+    "#% increased Armour": [
+      [
+        50,
+        80
+      ]
+    ],
+    "#% increased Strength": [
+      [
+        5,
+        15
+      ]
+    ],
+    "#% increased Dexterity": [
+      [
+        5,
+        15
+      ]
+    ],
+    "#% increased Intelligence": [
+      [
+        5,
+        15
+      ]
+    ]
+  },
+  "Thrillsteel Spired Greathelm": {},
+  "Deidbell Elite Greathelm": {
+    "#% increased Armour": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Warcry Speed": [
+      [
+        20,
+        30
+      ]
+    ],
+    "Warcry Skills have #% increased Area of Effect": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Corona of the Red Sun Warrior Greathelm": {
+    "# to Accuracy Rating": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        25
+      ]
+    ]
+  },
+  "Innsmouth Shabby Hood": {
+    "# to Evasion Rating": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        13,
+        19
+      ]
+    ]
+  },
+  "Goldrim Felt Cap": {
+    "# to Evasion Rating": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        25,
+        35
+      ]
+    ]
+  },
+  "Radiant Grief Lace Hood": {
+    "#% increased Evasion Rating": [
+      [
+        80,
+        100
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        15,
+        25
+      ]
+    ]
+  },
+  "Elevore Hunter Hood": {
+    "#% increased Evasion Rating": [
+      [
+        50,
+        80
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Myris Uxor Covert Hood": {
+    "#% increased Evasion Rating": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ]
+  },
+  "Alpha's Howl Armoured Cap": {
+    "#% increased Evasion Rating": [
+      [
+        80,
+        100
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        50,
+        75
+      ]
+    ]
+  },
+  "Crown of Thorns Twig Circlet": {
+    "# to maximum Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to # Physical Thorns damage": [
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        10
+      ]
+    ]
+  },
+  "The Devouring Diadem Wicker Tiara": {
+    "#% increased Energy Shield": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        13,
+        19
+      ]
+    ]
+  },
+  "Visage of Ayah Beaded Circlet": {
+    "#% increased Energy Shield": [
+      [
+        50,
+        80
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Forbidden Gaze Chain Tiara": {
+    "#% increased Energy Shield": [
+      [
+        60,
+        100
+      ]
+    ],
+    "#% to Maximum Cold Resistance": [
+      [
+        3,
+        5
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Sandstorm Visage Chain Tiara": {
+    "# to maximum Energy Shield": [
+      [
+        80,
+        120
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Mask of the Stitched Demon Feathered Tiara": {
+    "#% increased Energy Shield": [
+      [
+        120,
+        160
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ]
+  },
+  "Atziri's Disdain Gold Circlet": {
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% of Damage taken bypasses Energy Shield": [
+      [
+        20,
+        25
+      ]
+    ],
+    "Gain #% of Maximum Life as Extra Maximum Energy Shield": [
+      [
+        25,
+        30
+      ]
+    ]
+  },
+  "Greymake Brimmed Helm": {
+    "# to Strength": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Erian's Cobble Guarded Helm": {
+    "# to Armour": [
+      [
+        0,
+        40
+      ]
+    ],
+    "# to Evasion Rating": [
+      [
+        0,
+        30
+      ]
+    ],
+    "# to maximum Energy Shield": [
+      [
+        0,
+        20
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        0,
+        60
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        0,
+        30
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        0,
+        20
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        0,
+        20
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        0,
+        30
+      ]
+    ],
+    "# to Strength": [
+      [
+        0,
+        10
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        0,
+        10
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        0,
+        10
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        0,
+        10
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        0,
+        10
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        0,
+        10
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        0,
+        6
+      ]
+    ]
+  },
+  "Ironride Visored Helm": {
+    "#% increased Armour and Evasion": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "The Smiling Knight Cowled Helm": {
+    "# to Accuracy Rating": [
+      [
+        50,
+        100
+      ]
+    ],
+    "#% increased Armour and Evasion": [
+      [
+        150,
+        200
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        15,
+        25
+      ]
+    ]
+  },
+  "The Vile Knight Shielded Helm": {
+    "#% increased Armour and Evasion": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        75,
+        125
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Assailum Closed Helm": {
+    "#% increased Armour and Evasion": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        200,
+        400
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Skills have a #% longer Perfect Timing window": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Crown of the Victor Iron Crown": {
+    "#% increased Rarity of Items found": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Bronzebeard Horned Crown": {
+    "#% increased Armour and Energy Shield": [
+      [
+        50,
+        100
+      ]
+    ],
+    "#% reduced Effect of Chill on you": [
+      [
+        35,
+        50
+      ]
+    ],
+    "#% reduced effect of Ignite on you": [
+      [
+        35,
+        50
+      ]
+    ],
+    "#% reduced effect of Shock on you": [
+      [
+        35,
+        50
+      ]
+    ]
+  },
+  "Crown of the Pale King Cultist Crown": {
+    "#% increased Armour and Energy Shield": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        80
+      ]
+    ],
+    "# to # Physical Thorns damage": [
+      [
+        10,
+        15
+      ],
+      [
+        20,
+        25
+      ]
+    ]
+  },
+  "Veil of the Night Martyr Crown": {
+    "# to all Attributes": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Cornathaum Heavy Crown": {
+    "#% increased Rarity of Items found": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        40,
+        50
+      ]
+    ]
+  },
+  "Keeper of the Arc Spiritbone Crown": {
+    "#% increased Armour and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        15,
+        25
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        15,
+        25
+      ]
+    ]
+  },
+  "The Hollow Mask Hewn Mask": {
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ]
+  },
+  "Mask of the Sanguimancer Face Mask": {
+    "# to Evasion Rating": [
+      [
+        20,
+        25
+      ]
+    ],
+    "# to maximum Energy Shield": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased Critical Hit Chance for Spells": [
+      [
+        20,
+        40
+      ]
+    ],
+    "# to Strength": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Leer Cast Hooded Mask": {
+    "# to maximum Life": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Atsak's Sight Veiled Mask": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        30,
+        40
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "The Vertex Tribal Mask": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        13,
+        17
+      ]
+    ]
+  },
+  "Glimpse of Chaos Tribal Mask": {
+    "# to maximum Life": [
+      [
+        50,
+        150
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        50,
+        150
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        -30,
+        30
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        -30,
+        30
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        -30,
+        30
+      ]
+    ]
+  },
+  "The Three Dragons Solid Mask": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to all Elemental Resistances": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Treefingers Riveted Mitts": {
+    "#% increased Armour": [
+      [
+        30,
+        60
+      ]
+    ],
+    "Adds # to # Physical Damage to Attacks": [
+      [
+        6,
+        10
+      ],
+      [
+        12,
+        16
+      ]
+    ],
+    "#% increased Stun Buildup": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Lochtonial Caress Tempered Mitts": {
+    "#% increased Skill Speed": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to Armour": [
+      [
+        15,
+        25
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% reduced maximum Mana": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Atziri's Acuity Moulded Mitts": {
+    "#% increased Armour": [
+      [
+        80,
+        100
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Hateforge Moulded Mitts": {
+    "#% increased Armour": [
+      [
+        50,
+        80
+      ]
+    ],
+    "Gain # random Charge on reaching Maximum Rage": [
+      [
+        1,
+        3
+      ]
+    ],
+    "# to Maximum Rage": [
+      [
+        -10,
+        10
+      ]
+    ]
+  },
+  "Northpaw Suede Bracers": {
+    "# to Evasion Rating": [
+      [
+        15,
+        25
+      ]
+    ],
+    "Adds # to # Physical Damage to Attacks": [
+      [
+        3,
+        5
+      ],
+      [
+        8,
+        10
+      ]
+    ],
+    "#% increased Critical Damage Bonus": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Grip of Winter Firm Bracers": {
+    "#% increased Evasion Rating": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Adds # to # Cold damage to Attacks": [
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        8
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Freeze Buildup": [
+      [
+        40,
+        50
+      ]
+    ],
+    "#% increased Magnitude of Chill you inflict": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Idle Hands Sectioned Bracers": {
+    "#% increased Evasion Rating": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Accuracy Rating": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Snakebite Spined Bracers": {
+    "#% increased Evasion Rating": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        7,
+        17
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        6,
+        10
+      ]
+    ],
+    "#% chance to Poison on Hit": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Maligaro's Virtuosity Fine Bracers": {
+    "#% increased Evasion Rating": [
+      [
+        60,
+        80
+      ]
+    ],
+    "#% increased Critical Hit Chance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Painter's Servant Torn Gloves": {
+    "Gain #% of Elemental Damage as Extra Cold Damage": [
+      [
+        5,
+        10
+      ]
+    ],
+    "Gain #% of Elemental Damage Damage as Extra Fire Damage": [
+      [
+        5,
+        10
+      ]
+    ],
+    "Gain #% of Elemental Damage Damage as Extra Lightning Damage": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Candlemaker Sombre Gloves": {
+    "#% increased Energy Shield": [
+      [
+        50,
+        80
+      ]
+    ],
+    "#% increased Fire Damage": [
+      [
+        20,
+        40
+      ]
+    ],
+    "#% reduced Cold Damage": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        40
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        -20,
+        -10
+      ]
+    ]
+  },
+  "Doedre's Tenure Stitched Gloves": {
+    "# to maximum Energy Shield": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% reduced Cast Speed": [
+      [
+        15,
+        25
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Kitoko's Current Jewelled Gloves": {
+    "#% increased Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% reduced Attack and Cast Speed": [
+      [
+        10,
+        15
+      ]
+    ]
+  },
+  "Demon Stitcher Intricate Gloves": {
+    "# to maximum Energy Shield": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        80,
+        120
+      ]
+    ],
+    "#% increased Cast Speed": [
+      [
+        6,
+        12
+      ]
+    ],
+    "Sacrifice #% of Life to gain that much Energy Shield when you Cast a Spell": [
+      [
+        5,
+        15
+      ]
+    ]
+  },
+  "Jarngreipr Ringmail Gauntlets": {
+    "Adds # to # Physical Damage to Attacks": [
+      [
+        2,
+        3
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        60,
+        80
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        4,
+        8
+      ]
+    ]
+  },
+  "Aurseize Layered Gauntlets": {
+    "#% increased Armour and Evasion": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Rarity of Items found": [
+      [
+        40,
+        50
+      ]
+    ]
+  },
+  "Deathblow Doubled Gauntlets": {
+    "#% increased Armour and Evasion": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        5,
+        10
+      ]
+    ],
+    "Gain # Life per Enemy Killed": [
+      [
+        20,
+        30
+      ]
+    ],
+    "Gain # Mana per Enemy Killed": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Aerisvane's Wings Burnished Gauntlets": {
+    "#% increased Armour and Evasion": [
+      [
+        50,
+        70
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        5,
+        10
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Gravebind Rope Cuffs": {
+    "#% increased Armour and Energy Shield": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        10,
+        15
+      ]
+    ],
+    "Gain # Life per Enemy Killed": [
+      [
+        7,
+        10
+      ]
+    ],
+    "Gain # Mana per Enemy Killed": [
+      [
+        4,
+        6
+      ]
+    ]
+  },
+  "Shackles of the Wretched Aged Cuffs": {
+    "#% increased Armour and Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Blueflame Bracers Goldcast Cuffs": {
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        5,
+        15
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        5,
+        15
+      ]
+    ]
+  },
+  "Plaguefinger Gauze Wraps": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Attack Speed": [
+      [
+        4,
+        6
+      ]
+    ],
+    "#% chance to Poison on Hit": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Killjoy Linen Wraps": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        30,
+        60
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Critical Damage Bonus": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Blessed Bonds Linen Wraps": {
+    "# to Evasion Rating": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to maximum Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ],
+    "Gain # Mana per Enemy Killed": [
+      [
+        25,
+        35
+      ]
+    ]
+  },
+  "Hand of Wisdom and Action Furtive Wraps": {
+    "# to Dexterity": [
+      [
+        15,
+        25
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        15,
+        25
+      ]
+    ]
+  },
+  "Legionstride Rough Greaves": {
+    "# to Armour": [
+      [
+        50,
+        70
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        50,
+        70
+      ]
+    ]
+  },
+  "Corpsewade Iron Greaves": {
+    "#% increased Armour": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Strength": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "The Infinite Pursuit Bronze Greaves": {
+    "#% increased Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        80,
+        100
+      ]
+    ],
+    "#% increased Chance to be afflicted by Ailments when Hit": [
+      [
+        80,
+        100
+      ]
+    ]
+  },
+  "Trampletoe Trimmed Greaves": {
+    "#% increased Armour": [
+      [
+        50,
+        100
+      ]
+    ]
+  },
+  "Birth of Fury Stone Greaves": {
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Briarpatch Laced Boots": {
+    "#% increased Movement Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to # Physical Thorns damage": [
+      [
+        10,
+        15
+      ],
+      [
+        20,
+        25
+      ]
+    ]
+  },
+  "Gamblesprint Embossed Boots": {
+    "#% increased Evasion Rating": [
+      [
+        100,
+        140
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        15,
+        25
+      ]
+    ]
+  },
+  "Thunderstep Steeltoe Boots": {
+    "#% increased Movement Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Evasion Rating": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% to Maximum Lightning Resistance": [
+      [
+        3,
+        5
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Bushwhack Lizardscale Boots": {
+    "#% increased Movement Speed": [
+      [
+        15,
+        25
+      ]
+    ],
+    "#% increased Evasion Rating": [
+      [
+        50,
+        80
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Luminous Pace Straw Sandals": {
+    "# to maximum Energy Shield": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        5,
+        10
+      ]
+    ],
+    "#% reduced Energy Shield Recharge Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Wanderlust Wrapped Sandals": {
+    "# to maximum Energy Shield": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Bones of Ullr Lattice Sandals": {
+    "#% increased Energy Shield": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        20,
+        40
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        20,
+        40
+      ]
+    ]
+  },
+  "Wondertrap Silk Slippers": {
+    "#% increased Movement Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to maximum Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        10,
+        20
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Windscream Feathered Sandals": {
+    "#% increased Movement Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Energy Shield": [
+      [
+        50,
+        100
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "The Knight-errant Mail Sabatons": {
+    "#% increased Armour and Evasion": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to Ailment Threshold": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Darkray Vectors Braced Sabatons": {
+    "#% increased Armour and Evasion": [
+      [
+        50,
+        100
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Obern's Bastion Stacked Sabatons": {
+    "#% increased Armour and Evasion": [
+      [
+        150,
+        200
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        20,
+        25
+      ]
+    ],
+    "#% reduced Chill Duration on you": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% reduced Freeze Duration on you": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% reduced Shock duration on you": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Wake of Destruction Secured Leggings": {
+    "#% increased Armour and Energy Shield": [
+      [
+        30,
+        60
+      ]
+    ],
+    "Adds # to # Lightning damage to Attacks": [
+      [
+        1,
+        1
+      ],
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Ghostmarch Threaded Shoes": {
+    "#% increased Evasion and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ]
+  },
+  "Powertread Hunting Shoes": {
+    "#% increased Movement Speed": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Evasion and Energy Shield": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ]
+  },
+  "Beetlebite Velour Shoes": {
+    "#% increased Movement Speed": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Evasion and Energy Shield": [
+      [
+        60,
+        120
+      ]
+    ]
+  },
+  "Dionadair Splintered Tower Shield": {
+    "#% increased Armour": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# Life Regeneration per second": [
+      [
+        3,
+        5
+      ]
+    ]
+  },
+  "Wulfsbane Painted Tower Shield": {
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to Strength": [
+      [
+        10,
+        15
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        60,
+        80
+      ]
+    ]
+  },
+  "Doomgate Braced Tower Shield": {
+    "#% increased Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        13,
+        17
+      ]
+    ]
+  },
+  "The Wailing Wall Effigial Tower Shield": {
+    "#% increased Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Lycosidae Rampart Tower Shield": {
+    "#% increased Block chance": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% increased Armour": [
+      [
+        60,
+        100
+      ]
+    ]
+  },
+  "The Surrender Stone Tower Shield": {
+    "#% increased Block chance": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Armour": [
+      [
+        150,
+        200
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        150,
+        200
+      ]
+    ]
+  },
+  "Svalinn Crucible Tower Shield": {
+    "#% increased Armour": [
+      [
+        100,
+        150
+      ]
+    ],
+    "#% to maximum Block chance": [
+      [
+        -20,
+        -10
+      ]
+    ]
+  },
+  "Arvil's Wheel Hardwood Targe": {
+    "#% increased Armour and Evasion": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to maximum Life": [
+      [
+        40,
+        60
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Skill Effect Duration": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Merit of Service Pelage Targe": {
+    "#% increased Block chance": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Armour and Evasion": [
+      [
+        60,
+        80
+      ]
+    ],
+    "# to Stun Threshold": [
+      [
+        60,
+        80
+      ]
+    ]
+  },
+  "Feathered Fortress Crescent Targe": {
+    "# to Strength": [
+      [
+        20,
+        30
+      ]
+    ],
+    "# to Dexterity": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Fire Resistance": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Alkem Eira Blazon Crest Shield": {
+    "#% increased Block chance": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% increased Armour and Energy Shield": [
+      [
+        30,
+        50
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        50,
+        70
+      ]
+    ]
+  },
+  "Oaksworn Sigil Crest Shield": {
+    "#% increased Block chance": [
+      [
+        40,
+        60
+      ]
+    ],
+    "#% increased Armour and Energy Shield": [
+      [
+        80,
+        120
+      ]
+    ],
+    "#% to Chaos Resistance": [
+      [
+        17,
+        23
+      ]
+    ]
+  },
+  "Saffell's Frame Emblem Crest Shield": {
+    "#% to Fire Resistance": [
+      [
+        15,
+        25
+      ]
+    ],
+    "#% to Cold Resistance": [
+      [
+        15,
+        25
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        30,
+        40
+      ]
+    ]
+  },
+  "Crest of Ardura Jingling Crest Shield": {
+    "#% increased Armour and Energy Shield": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        30,
+        50
+      ]
+    ],
+    "#% increased Cooldown Recovery Rate": [
+      [
+        30,
+        50
+      ]
+    ]
+  },
+  "Mahuxotl's Machination Omen Crest Shield": {
+    "#% increased Armour and Energy Shield": [
+      [
+        333,
+        666
+      ]
+    ],
+    "#% increased effect of Socketed Soul Cores": [
+      [
+        333,
+        666
+      ]
+    ]
+  },
+  "Rise of the Phoenix Omen Crest Shield": {
+    "#% to Fire Resistance": [
+      [
+        20,
+        25
+      ]
+    ]
+  },
+  "Deathrattle Twig Focus": {
+    "# to maximum Energy Shield": [
+      [
+        10,
+        20
+      ]
+    ],
+    "#% increased Spell Damage": [
+      [
+        20,
+        40
+      ]
+    ],
+    "# to Intelligence": [
+      [
+        5,
+        10
+      ]
+    ]
+  },
+  "Threaded Light Woven Focus": {
+    "#% increased Energy Shield": [
+      [
+        50,
+        70
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        30,
+        40
+      ]
+    ],
+    "#% increased Spell Damage per # Spirit": [
+      [
+        8,
+        12
+      ]
+    ]
+  },
+  "Carrion Call Engraved Focus": {
+    "# to maximum Energy Shield": [
+      [
+        30,
+        40
+      ]
+    ],
+    "Minions have #% increased maximum Life": [
+      [
+        20,
+        30
+      ]
+    ],
+    "#% increased Mana Regeneration Rate": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Serpent's Lesson Tonal Focus": {
+    "# to maximum Life": [
+      [
+        60,
+        100
+      ]
+    ],
+    "# to maximum Mana": [
+      [
+        60,
+        100
+      ]
+    ]
+  },
+  "The Eternal Spark Crystal Focus": {
+    "#% increased Energy Shield": [
+      [
+        50,
+        70
+      ]
+    ],
+    "#% to Lightning Resistance": [
+      [
+        20,
+        30
+      ]
+    ]
+  },
+  "Skin of the Loyal Garment": {
+    "#% to all Elemental Resistances": [
+      [
+        5,
+        40
+      ]
+    ]
+  },
+  "Morior Invictus Grand Regalia": {
+    "#% increased Armour, Evasion and Energy Shield": [
+      [
+        200,
+        300
+      ]
+    ]
+  },
+  "Solus Ipse Grand Visage": {
+    "# to maximum Mana": [
+      [
+        60,
+        100
+      ]
+    ],
+    "#% increased Armour, Evasion and Energy Shield": [
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "Sine Aequo Grand Manchettes": {
+    "#% increased Skill Speed": [
+      [
+        10,
+        15
+      ]
+    ],
+    "#% increased Armour, Evasion and Energy Shield": [
+      [
+        40,
+        60
+      ]
+    ]
+  },
+  "Ab Aeterno Grand Cuisses": {
+    "#% increased Movement Speed": [
+      [
+        15,
+        30
+      ]
+    ],
+    "#% increased Armour, Evasion and Energy Shield": [
+      [
+        60,
+        80
+      ]
+    ]
+  }
+}

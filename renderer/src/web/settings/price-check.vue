@@ -101,6 +101,22 @@
     <ui-checkbox class="mb-4" v-model="usePseudo">{{
       t(":use_pseudo")
     }}</ui-checkbox>
+
+    <div class="mb-2">
+      <div class="flex-1 mb-1">{{ t(":use_tooltip_hover") }}</div>
+      <div class="mb-1 flex">
+        <ui-radio v-model="tooltipHover" value="off" class="mr-4">{{
+          t(":use_tooltip_off")
+        }}</ui-radio>
+        <ui-radio v-model="tooltipHover" value="keybind" class="mr-4">{{
+          t(":use_tooltip_keybind")
+        }}</ui-radio>
+        <ui-radio v-model="tooltipHover" value="always">{{
+          t(":use_tooltip_always")
+        }}</ui-radio>
+      </div>
+    </div>
+
     <ui-checkbox class="mb-4" v-model="defaultAllSelected">{{
       t(":default_all_selected")
     }}</ui-checkbox>
@@ -260,6 +276,10 @@ export default defineComponent({
         "defaultAllSelected",
       ),
       leagues,
+      tooltipHover: configModelValue(
+        () => configWidget.value,
+        "itemHoverTooltip",
+      ),
     };
   },
 });
