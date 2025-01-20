@@ -8,6 +8,8 @@ Path of Exile 2 overlay program for price checking items, among many other loved
 
 Fork of [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade).
 
+NOT affiliated with exiledexchange2.com in any way shape or form. The ONLY official website is https://kvan7.github.io/Exiled-Exchange-2/
+
 ## Moving from POE1/Awakened PoE Trade
 
 1. Download latest release from [releases](https://github.com/Kvan7/exiled-exchange-2/releases)
