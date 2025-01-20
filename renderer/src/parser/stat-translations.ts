@@ -249,7 +249,10 @@ export function tryParseTranslation(
         (implicitTestString in item.info.unique.stats ||
           negatedImplicitTestString in item.info.unique.stats)
       ) {
-        if (negatedImplicitTestString in item.info.unique.stats) {
+        if (
+          negatedImplicitTestString !== implicitTestString &&
+          negatedImplicitTestString in item.info.unique.stats
+        ) {
           const thisModValues =
             item.info.unique.stats[negatedImplicitTestString];
           combination.values.forEach((stat, index) => {
@@ -284,7 +287,10 @@ export function tryParseTranslation(
         refName in item.info.unique.stats ||
         negatedRefName in item.info.unique.stats
       ) {
-        if (negatedRefName in item.info.unique.stats) {
+        if (
+          negatedRefName !== refName &&
+          negatedRefName in item.info.unique.stats
+        ) {
           const thisModValues = item.info.unique.stats[negatedRefName];
           combination.values.forEach((stat, index) => {
             const tierBounds = thisModValues[index];
