@@ -392,6 +392,17 @@ export function createFilters(
     }
   }
 
+  if (
+    (item.rarity === ItemRarity.Normal ||
+      item.rarity === ItemRarity.Magic ||
+      item.rarity === ItemRarity.Rare ||
+      item.rarity === ItemRarity.Unique) &&
+    item.runeSockets &&
+    item.runeSockets.empty > 0
+  ) {
+    filters.tempRuneStorage = [];
+  }
+
   return filters;
 }
 

@@ -42,6 +42,109 @@ LANG_CODES_TO_NAMES = {
     "es": "Spanish",
 }
 
+HARDCODE_MAP_HYBRID_MODS = {
+    "mapmonsterstunailmentthreshold",
+    "mapmonsterelementailmentchance",
+    "mapmonsterdamageasfire",
+    "mapmonsterdamageascold",
+    "mapmonsterdamageaslightning",
+    "mapmonsterdamageincrease",
+    "mapmonsterspeedincrease",
+    "mapmonstercritincrease",
+    "mapmonsterlifeincrease",
+    "mapmonsterelementalresistances",
+    "mapmonsterarmoured",
+    "mapmonsterevasive",
+    "mapmonsterenergyshield",
+    "mapmonsterpoisoning",
+    "mapmonsterbleeding",
+    "mapmonsterarmourbreak",
+    "mapmonsteraccuracy",
+    "mapmonsterdamageaschaos",
+    "mapmonsterstunbuildup",
+    "mapmonsteradditionalprojectiles",
+    "mapmonsterincreasedareaofeffect",
+    "mapplayerenfeeble",
+    "mapplayertemporalchains",
+    "mapplayerelementalweakness",
+    "mapmonsterselementalpenetration",
+    "mapplayermaximumresists",
+    "mapplayerflaskchargegain",
+    "mapplayerrecoveryrate",
+    "mapmonstersbaseselfcriticalmultiplier",
+    "mapmonsterscurseeffectonself",
+    "mapmonstersstealcharges",
+    "mapplayercooldownrecovery",
+}
+
+HARDCODE_MAP_MODS = {
+    "mapdroppeditemrarityincrease",
+    "mapdroppedgoldincrease",
+    "mapexperiencegainincrease",
+    "mappacksizeincrease",
+    "maptotaleffectivenessincrease",
+    "mapchestcountincrease",
+    "mapmagicpackincrease",
+    "maprarepackincrease",
+    "mapmagicchestcountincrease",
+    "maprarechestcountincrease",
+    "mapmagicpacksizeincrease",
+    # "mapraremonstersadditionalmodifier",
+    "mapadditionalshrine",
+    "mapadditionalstrongbox",
+    "mapadditionalessence",
+    "mapmonsteradditionalpacksundead",
+    "mapmonsteradditionalpacksbeasts",
+    "mapmonsteradditionalpacksezomyte",
+    "mapmonsteradditionalpacksfaridun",
+    "mapmonsteradditionalpacksvaal",
+    "mapmonsteradditionalpacksbaron",
+    "mapmonsteradditionalpacksperennial",
+    "mapmonsteradditionalpacksdoryani",
+    "mapmonsteradditionalpackbramble",
+    "mapspreadburningground",
+    "mapspreadchilledground",
+    "mapspreadshockedground",
+    "mapchestsalwaysmagicrare",
+    "base_item_found_quantity_+%",
+    "map_map_item_drop_chance_+%",
+    # "mapsimulacrumdamageasfire",
+    # "mapsimulacrumdamageascold",
+    # "mapsimulacrumdamageaslightning",
+    # "mapsimulacrumdamageaschaos",
+    # "mapsimulacrumdamage",
+    "mapmonsterdamageasfire",
+    "mapmonsterdamageascold",
+    "mapmonsterdamageaslightning",
+    "mapmonsterdamageincrease",
+    "mapmonsterspeedincrease",
+    "mapmonstercritincrease",
+    "mapmonsterlifeincrease",
+    "mapmonsterelementalresistances",
+    "mapmonsterarmoured",
+    "mapmonsterevasive",
+    "mapmonsterenergyshield",
+    "mapmonsterpoisoning",
+    "mapmonsterbleeding",
+    "mapmonsterarmourbreak",
+    "mapmonsteraccuracy",
+    "mapmonsterdamageaschaos",
+    "mapmonsterstunbuildup",
+    "mapmonsteradditionalprojectiles",
+    "mapmonsterincreasedareaofeffect",
+    "mapplayerenfeeble",
+    "mapplayertemporalchains",
+    "mapplayerelementalweakness",
+    "mapmonsterselementalpenetration",
+    "mapplayermaximumresists",
+    "mapplayerflaskchargegain",
+    "mapplayerrecoveryrate",
+    "mapmonstersbaseselfcriticalmultiplier",
+    "mapmonsterscurseeffectonself",
+    "mapmonstersstealcharges",
+    "mapplayercooldownrecovery",
+}
+
 
 def find_first_matching_item(items, field: str, value: str) -> dict | None:
     return next((item for item in items if item.get(field) == value), None)
@@ -540,24 +643,40 @@ class Parser:
             if main_translation is None:
                 continue
 
-            if len(translations) > 1:
+            if len(translations) > 1 and base_id not in HARDCODE_MAP_HYBRID_MODS:
                 # first translation where
                 if main_translation.get("ref").count("#") == 1:
                     hybrid_count += 1
                     hybrids.append((base_id, translations))
                     continue
             stats_from_tiers.add(stat_id)
-            self.mods[base_id] = {
-                "ref": main_translation.get("ref"),
-                "better": 1,
-                "id": stat_id,
-                "matchers": main_translation.get("matchers"),
-                "trade": trade,
-                "tiers": tiers,
-            }
-
-            if base_id.lower().startswith("map"):
-                self.mods[base_id]["fromAreaMods"] = True
+            if base_id in HARDCODE_MAP_HYBRID_MODS:
+                non_waystone_translations = [
+                    t for t in translations if "waystone" not in t.get("ref").lower()
+                ]
+                for index, allowed_hybrid_translation in enumerate(
+                    non_waystone_translations
+                ):
+                    self.mods[f"{base_id}_{index}"] = {
+                        "ref": allowed_hybrid_translation.get("ref"),
+                        "better": 1,
+                        "id": f"{base_id}_{index}",
+                        "matchers": allowed_hybrid_translation.get("matchers"),
+                        "trade": {"ids": ids_list[index]},
+                        "tiers": tiers,
+                        "fromAreaMods": True,
+                    }
+            else:
+                self.mods[base_id] = {
+                    "ref": main_translation.get("ref"),
+                    "better": 1,
+                    "id": stat_id,
+                    "matchers": main_translation.get("matchers"),
+                    "trade": trade,
+                    "tiers": tiers,
+                }
+                if base_id in HARDCODE_MAP_MODS:
+                    self.mods[base_id]["fromAreaMods"] = True
 
         for mod in self.mods_file:
             id = mod.get("Id")
@@ -613,8 +732,7 @@ class Parser:
                         "matchers": translation.get("matchers"),
                         "trade": trade,
                     }
-
-                    if id.lower().startswith("map"):
+                    if stats_id in HARDCODE_MAP_MODS:
                         self.mods[id]["fromAreaMods"] = True
                 else:
                     logger.debug(

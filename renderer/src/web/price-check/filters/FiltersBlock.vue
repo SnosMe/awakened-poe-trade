@@ -279,16 +279,11 @@ export default defineComponent({
       type: Function as PropType<(newItem: ParsedItem) => void>,
       required: true,
     },
-    rebuildKey: {
-      type: Number,
-      required: true,
-    },
   },
   setup(props, ctx) {
     const statsVisibility = shallowReactive({ disabled: false });
     const showHidden = shallowRef(false);
     const showFilterSources = shallowRef(false);
-    const fillButtonPressStorage: StatFilter[] = [];
 
     watch(
       () => props.item,
@@ -307,21 +302,32 @@ export default defineComponent({
           props.item.rarity === ItemRarity.Unique
         ),
     );
-
+    console.warn(
+      " ================================= ACTUALLY INIT ================================= ",
+    );
     // For handling filling runes
     watch(
       () => props.filters.fillEmptyRuneSockets?.disabled,
       (selected, prev) => {
-        // if the fill runes value changed
-        if (selected !== prev) {
+        console.log("fillEmptyRuneSockets: ", "new: ", selected, "old: ", prev);
+        console.log("CURRENT STORAGE", props.filters.tempRuneStorage);
+        // if (selected === undefined || prev === undefined) {
+        //   console.log("Potentially init");
+        //   while (fillButtonPressStorage.length > 0) {
+        //     fillButtonPressStorage.pop();
+        //   }
+        // }
+        if (selected !== prev && props.filters.tempRuneStorage) {
+          console.log("applying filter");
           const shouldFill = !selected;
           handleFillButtonPress(
             props.stats,
             props.item,
             shouldFill,
-            fillButtonPressStorage,
+            props.filters.tempRuneStorage,
           );
         }
+        console.log("ENDING STORAGE", props.filters.tempRuneStorage);
       },
     );
 

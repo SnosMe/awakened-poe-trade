@@ -84,6 +84,7 @@ export interface ItemFilters {
     collapseListings: "api" | "app";
     currencyRatio: number;
   };
+  tempRuneStorage?: StatFilter[];
 }
 
 export interface FilterNumeric {
