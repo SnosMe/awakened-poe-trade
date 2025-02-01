@@ -220,7 +220,7 @@ export const defaultConfig = (): Config => ({
   ),
   enableAlphas: false,
   alphas: [],
-  tipsFrequency: 1,
+  tipsFrequency: TipsFrequency.Normal,
 });
 
 function upgradeConfig(_config: Config): Config {
