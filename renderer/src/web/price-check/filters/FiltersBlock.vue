@@ -140,7 +140,12 @@
     </div> -->
     <!-- Handled parse error -->
     <div
-      v-if="!hasStats && item.rarity !== undefined && item.rarity !== 'Normal'"
+      v-if="
+        !hasStats &&
+        item.rarity !== undefined &&
+        item.rarity !== 'Normal' &&
+        !item.isUnidentified
+      "
       class="mb-4 text-center bg-purple-800 rounded-xl"
       :class="presets.length > 1 ? 'mt-1' : 'mt-4'"
     >
@@ -245,7 +250,7 @@ import UnknownModifier from "./UnknownModifier.vue";
 import { ItemFilters, StatFilter } from "./interfaces";
 import { ParsedItem, ItemRarity, ItemCategory } from "@/parser";
 import FilterBtnDropdown from "./FilterBtnDropdown.vue";
-import { handleFillButtonPress } from "./fill-runes";
+import { handleFillRuneSockets } from "./fill-runes";
 
 export default defineComponent({
   name: "FiltersBlock",
@@ -302,32 +307,21 @@ export default defineComponent({
           props.item.rarity === ItemRarity.Unique
         ),
     );
-    console.warn(
-      " ================================= ACTUALLY INIT ================================= ",
-    );
     // For handling filling runes
     watch(
       () => props.filters.fillEmptyRuneSockets?.disabled,
       (selected, prev) => {
-        console.log("fillEmptyRuneSockets: ", "new: ", selected, "old: ", prev);
-        console.log("CURRENT STORAGE", props.filters.tempRuneStorage);
-        // if (selected === undefined || prev === undefined) {
-        //   console.log("Potentially init");
-        //   while (fillButtonPressStorage.length > 0) {
-        //     fillButtonPressStorage.pop();
-        //   }
-        // }
-        if (selected !== prev && props.filters.tempRuneStorage) {
-          console.log("applying filter");
+        const normalCase = selected !== prev && props.filters.tempRuneStorage;
+        // const initAsFilled = selected && props.filters.tempRuneStorage;
+        if (normalCase) {
           const shouldFill = !selected;
-          handleFillButtonPress(
+          handleFillRuneSockets(
             props.stats,
             props.item,
             shouldFill,
-            props.filters.tempRuneStorage,
+            props.filters.tempRuneStorage!,
           );
         }
-        console.log("ENDING STORAGE", props.filters.tempRuneStorage);
       },
     );
 

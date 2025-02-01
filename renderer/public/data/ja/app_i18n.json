@@ -89,7 +89,12 @@
     "veiled": "ヴェール",
     "foil_unique": "フォイルユニーク",
     "mirrored": "ミラー化",
-    "not_mirrored": "非ミラー"
+    "not_mirrored": "非ミラー",
+    "mod_grade": "グレード: {0}",
+    "has_elemental_affix": "Any",
+    "has_elemental_fire_affix": "Fire",
+    "has_elemental_cold_affix": "Cold",
+    "has_elemental_lightning_affix": "Lightning"
   },
   "item_category": {
     "prop": "カテゴリー: {0}",
@@ -174,7 +179,8 @@
     "tag_explicit_incursion": "インカージョン",
     "tag_rune": "ルーン",
     "tag_sanctum": "Sanctum",
-    "fill_rune_iron": "Fill Runes(Iron)"
+    "fill_rune_iron": "Fill Runes(Iron)",
+    "grade": "グレード {0}"
   },
   "online_filter": {
     "offline_toggle": "オフライン & オンライン",
@@ -301,7 +307,8 @@
     "getting_price": "価格取得中 {0}",
     "getting_price_from": "poe.ninjaから\u2026",
     "you_have": "既に所持しています",
-    "stack": "スタック"
+    "stack": "スタック",
+    "fix_complex_query": "設定で\"Use pseudo mods\"を無効にするか、組み込みブラウザでログインしてください"
   },
   "settings": {
     "title": "設定 - Exiled Exchange 2",
@@ -332,7 +339,18 @@
     "poe_cfg_file": "PoE設定ファイル",
     "restore_clipboard": "クリップボードを復元",
     "show_overlay_ready": "オーバーレイがPoEウィンドウを検出したときに通知を表示",
-    "debug_hotkeys": "すべてのキー押下を記録"
+    "debug_hotkeys": "すべてのキー押下を記録",
+    "help": "ヘルプ",
+    "show_tips_on_startup": "起動時にヒントを表示する",
+    "show_tips_frequency": "プライスチェック時にヒントを表示する頻度",
+    "tip_frequency_1": "常に",
+    "tip_frequency_2": "頻繁に",
+    "tip_frequency_3": "普通",
+    "tip_frequency_4": "稀に",
+    "tip_frequency_5": "ごく稀に",
+    "tip_frequency_6": "表示しない",
+    "tips_header": "すべてのヒントを切り替え：",
+    "tip_number_header": "ヒント #{0}"
   },
   "price_check": {
     "name": "価格チェック",
@@ -354,10 +372,14 @@
     "show_prediction": "価格予測を表示",
     "remember_currency": "バイアウト価格の通貨フィルターを記憶",
     "default_all_selected": "Default all filters to enabled",
-    "use_tooltip_hover": "Show item when hovering over price",
-    "use_tooltip_keybind": "SHIFT + hover",
-    "use_tooltip_always": "hover",
-    "use_tooltip_off": "off"
+    "use_tooltip_hover": "価格をマウスホバーした時にアイテム表示",
+    "use_tooltip_keybind": "SHIFT + マウスホバー",
+    "use_tooltip_always": "マウスホバー",
+    "use_tooltip_off": "無効",
+    "tier_numbering": "ティアのナンバリングスタイル",
+    "tier_numbering_poe1": "PoE1（数値が低いほど良い）",
+    "tier_numbering_poe2": "PoE2（数値が高いほど良い）",
+    "tier_numbering_help": "ゲーム内の命名規則との衝突による混乱を減らすため、PoE1のティアは\"Tier\"ではなく\"Grade\"という名称を使用します。"
   },
   "poe2_new": {
     "beta_warning": "これはPOE2のベータ版です、期待通りに動作しないことがあります。",
@@ -368,5 +390,37 @@
     "parse_error2": "おそらくまだサポートされていないモッドが含まれています。",
     "parse_error3": "(poe1からの表現が新しいもしくは変更された可能性があります)",
     "bulk_exchange": "バルク交換レートはまだ実装されていません"
+  },
+  "tips": {
+    "tip_1": "Cheat Sheetウィジェットで\"edit\"を押すことで、独自の画像を追加できます",
+    "tip_2": "フィルターを多く選択しすぎると、アイテムの価格を過大に見積もる可能性があります。",
+    "tip_3": "価格にカーソルを合わせている間、SHIFTを押し続けるとアイテムのステータスが表示されます",
+    "tip_4": "プライスチェック時に\"mods\"を有効にすると、各フィルターに使用されているステータスを確認できます",
+    "tip_5": "設定でPoE1とPoE2のティアナンバリング方式を切り替えることができます",
+    "tip_6": "アイテムチェック後、Craft of Exileで開くとそのアイテムに付与可能なmodを確認できます",
+    "tip_7": "アイテムチェックウィンドウのすべての操作にホットキーを割り当てることができます",
+    "tip_8": "ユニークアイテムをプライスチェックする際に表示されるバーをドラッグして数値を変更できます",
+    "tip_9": "空いているルーンソケットを鉄のルーンで埋めるには\"Fill Iron\"ボタンを使用できます",
+    "tip_10": "あるステータスが表示されない場合は、\"Hidden\"セクションにある可能性があります",
+    "tip_11": "武器のdpsに寄与するステータスは表示されず、dpsフィルターに組み込まれています",
+    "tip_12": "フィルターにティアが表示される場合、アイテムにとって最良または二番目に良いティアであることを示します",
+    "tip_13": "プライスチェックを開きっぱなしにするためにボタンを押し続けなくてもよいよう、設定で\"Auto-hide off\"を使えます",
+    "tip_14": "\"Pseudo\"ボタンを押すと、耐性を疑似的な重み付け合計として扱いながらトレードサイトも同時に開きます",
+    "tip_15": "複数のキャラクターに対して異なるマップチェックの選択を保存するには\"Profile\"を使用できます",
+    "tip_16": "Stash内のベースタイプを検索するには\"Find in Stash\"を使用してください",
+    "tip_17": "\"Online filter\"を使用すると、\"Exalted only\"や\"Offline & Online\"などのメタフィルタリングオプションが利用できます",
+    "tip_18": "楽しんでください！",
+    "tip_19": "もしゲーム内の何かを計測したい場合は、\"Stopwatch\"ウィジェットを使用できます",
+    "tip_20": "問題が発生した場合はGitHubに報告してください",
+    "tip_21": "\"Stash search\"ウィジェットを使ってスタッシュ内のアイテムを検索できます",
+    "tip_22": "不要なmodが含まれていないかを素早く確認するためにマップチェックを使用できます",
+    "tip_23": "Stashタブスクロールを有効にするには、PoEの設定（Options -> UI）で\"Mousewheel Zoom\"を無効にしてください",
+    "tip_24": "アイテム価格の横の疑問符は、その価格がStashタブ名を利用しているため実際の価格ではない可能性を示します",
+    "tip_25": "アイテム価格の横にあるオレンジ色の丸は、そのプレイヤーがAFK状態であることを示します",
+    "tip_26": "アイテム価格の横にある赤色の丸は、そのプレイヤーがオフライン状態であることを示します",
+    "tip_27": "ログは設定の\"Debug\"タブで確認できます",
+    "tip_28": "設定でリーグを変更できます",
+    "tip_29": "設定でカスタムチャットコマンドのホットキーを追加できます",
+    "tip_30": "Exiled Exchange 1のことは話しません"
   }
 }

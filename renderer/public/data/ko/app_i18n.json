@@ -86,7 +86,12 @@
     "veiled": "장막 속성",
     "foil_unique": "반짝이",
     "mirrored": "복제된",
-    "not_mirrored": "복제되지 않은"
+    "not_mirrored": "복제되지 않은",
+    "mod_grade": "등급: {0}",
+    "has_elemental_affix": "Any",
+    "has_elemental_fire_affix": "Fire",
+    "has_elemental_cold_affix": "Cold",
+    "has_elemental_lightning_affix": "Lightning"
   },
   "item_category": {
     "prop": "유형: {0}",
@@ -171,7 +176,8 @@
     "tag_explicit_incursion": "기습",
     "tag_rune": "룬",
     "tag_sanctum": "Sanctum",
-    "fill_rune_iron": "Fill Runes(Iron)"
+    "fill_rune_iron": "Fill Runes(Iron)",
+    "grade": "등급 {0}"
   },
   "online_filter": {
     "offline_toggle": "오프라인 & 온라인",
@@ -298,7 +304,8 @@
     "getting_price": "가격 불러오는 중 {0}",
     "getting_price_from": "from poe.ninja \u2026",
     "you_have": "가진 갯수",
-    "stack": "스택"
+    "stack": "스택",
+    "fix_complex_query": "Disable \"Use pseudo mods\" in settings or log in with builtin browser"
   },
   "settings": {
     "title": "세팅 - Exiled Exchange 2",
@@ -328,7 +335,15 @@
     "poe_cfg_file": "PoE 설정 파일",
     "restore_clipboard": "클립보드 복사 내용 복구",
     "show_overlay_ready": "오버레이가 PoE 창을 발견하면 알림을 보여줍니다",
-    "debug_hotkeys": "모든 키 스트로크 기록"
+    "debug_hotkeys": "모든 키 스트로크 기록",
+    "help": "Help",
+    "show_tips_on_startup": "Show tips on startup notification",
+    "show_tips_frequency": "How often to show tips when price checking",
+    "tip_frequency_1": "Always",
+    "tip_frequency_2": "Normal",
+    "tip_frequency_3": "Rarely",
+    "tip_frequency_4": "Very Rarely",
+    "tip_frequency_5": "Never"
   },
   "price_check": {
     "name": "가격 체크",
@@ -350,10 +365,14 @@
     "show_prediction": "가격 예측 표시",
     "remember_currency": "Remember the Buyout Currency filter",
     "default_all_selected": "Default all filters to enabled",
-    "use_tooltip_hover": "Show item when hovering over price",
-    "use_tooltip_keybind": "SHIFT + hover",
-    "use_tooltip_always": "hover",
-    "use_tooltip_off": "off"
+    "use_tooltip_hover": "가격에 커서를 가져다 대면 아이템 상세 정보 표시",
+    "use_tooltip_keybind": "SHIFT + 가격에 커서를 이동",
+    "use_tooltip_always": "가격에 커서를 이동",
+    "use_tooltip_off": "기능 끔",
+    "tier_numbering": "티어 넘버링 스타일",
+    "tier_numbering_poe1": "PoE1 (낮을수록 좋음)",
+    "tier_numbering_poe2": "PoE2 (높을수록 좋음)",
+    "tier_numbering_help": "혼란을 방지하기 위해서 POE 1의 아이템 티어는 \"티어\"가아닌\"등급\"으로 표시됩니다."
   },
   "poe2_new": {
     "beta_warning": "이 버전은 베타버전입니다. 예기치 못한 버그가 있을 수 있습니다.",
@@ -364,5 +383,36 @@
     "parse_error2": "아마 특정 접사가 아직 검색이 불가능한 것으로 보입니다.",
     "parse_error3": "(새로운 접사 혹은 POE 1과는 다른 이름일 수도 있습니다)",
     "bulk_exchange": "아이템 대량교환 비율 표시는 아직 시행되지 않습니다."
+  },
+  "tips": {
+    "tip_1": "세팅에서 Cheat Sheets 위젯에 원하는 이미지를 추가해 필요할때마다 보실 수 있습니다.",
+    "tip_2": "너무 많은 필터를 선택 시 아이템의 가격이 과하게 책정될 수 있습니다.",
+    "tip_3": "가격 검색하면서 가격 위에 커서를 두고 쉬프트키를 누르면 아이템의 옵션들을 볼 수 있습니다.",
+    "tip_4": "가격 검색 시 각 필터별로 사용되는 접사를 보려면 \"mods\"를 활성화 해주세요.",
+    "tip_5": "세팅에서 POE 1과 POE 2별 아이템 티어 넘버링를 선택할 수 있습니다.",
+    "tip_6": "아이템에 가능한 접사를 보려면, 아이템 정보를 열고 후 크래프트 오브 엑자일을 열어주세요.",
+    "tip_7": "아이템 정보창의 모든 액션은 핫키로 설정할 수 있습니다.",
+    "tip_8": "고유 아이템의 수치를 마우스로 드래그해서 조정할 수 있습니다.",
+    "tip_9": "빈 소켓에 철 룬을 반영한 수치를 보려면 \"Fill Iron\" 버튼을 누르면 됩니다.",
+    "tip_10": "접사가 보이지 않는다면 \"Hidden\"을 클릭하면 확인할 수 있습니다.",
+    "tip_11": "무기 DPS에 적용되는 접사들은 따로 보이지 않고 DPS 수치에 직접 반영됩니다.",
+    "tip_12": "필터에 티어가 적혀있다면 해당 티어는 이 아이템에 뜰 수 있는 제일 높은 티어와 그 다음 티어를 의미합니다.",
+    "tip_13": "가격 체크를 계속 유지하려면 세팅해서 \"Auto-hide off\"를 설정하시면 됩니다.",
+    "tip_14": "\"Pseudo\" 버튼은 거래소를 엽니다만 가상의 가중 합계를 이용하여 검색합니다.",
+    "tip_15": "\"Profile\"를 이용해서 캐릭터별 지도 체크를 저장할 수 있습니다.",
+    "tip_16": "보관함에서 베이스 타입을 검색하려면 \"Find in Stash\"을 이용하세요.",
+    "tip_17": "\"Online filter\"를 사용하면 \"엑잘티드 오브\"나 \"오프라인 & 온라인\"같은 필터 옵션을 사용할 수 있습니다.",
+    "tip_19": "기록이나 시간을 재고 싶으면 \"Stopwatch\" 위젯을 사용하시면 됩니다.",
+    "tip_20": "이슈가 생겼다면 GitHub에 보고해주세요.",
+    "tip_21": "\"Stash search\" 위젯을 이요해서 보관함에 있는 아이템을 검색할 수 있습니다.",
+    "tip_22": "지도 체크는 사용자가 원하지 않는 지도 모드를 빠르게 확인할 수 있는 기능입니다.",
+    "tip_23": "보관함간 마우스 스크롤링을 가능하게 하려면 인게임 세팅 UI에 있는 \"Mousewheel Zoom\"를 비활성화 해주세요",
+    "tip_24": "아이템 가격 옆에 있는 물음표는 해당 아이템이 보관함 가격 전체 설정으로 되어있음을 뜻합니다.",
+    "tip_25": "아이템 가격 옆에 주황색 원형 아이콘은 플레이어가 현재 자리 비움 상태임을 뜻합니다.",
+    "tip_26": "아이템 가격 옆에 주황색 원형 아이콘은 플레이어가 현재 오프라인 상태임을 뜻합니다.",
+    "tip_27": "로그는 세팅에 있는 \"Debug\"에서 확인 가능합니다.",
+    "tip_28": "세팅에서 리그를 변경할 수 있습니다.",
+    "tip_29": "세팅에서 채팅 명령어를 추가할 수 있습니다.",
+    "tip_30": "Exiled Exchange 1과 관련된 내용이 아닙니다."
   }
 }

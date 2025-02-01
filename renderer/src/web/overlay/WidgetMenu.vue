@@ -18,16 +18,11 @@
             class="bg-gray-800 rounded text-gray-100 p-2 leading-none whitespace-nowrap border"
           >
             <i
-              v-if="widget.wmType === 'settings'"
-              class="fas fa-cog align-bottom"
+              v-if="widget.icon"
+              class="fas align-bottom"
+              :class="widget.icon"
             />
-            <i
-              v-else-if="widget.wmType === 'item-search'"
-              class="fas fa-search align-bottom"
-            />
-            <template v-else>{{
-              widget.wmTitle || `#${widget.wmId}`
-            }}</template>
+            <template v-if="widget.title">{{ widget.title }}</template>
           </button>
         </template>
         <ui-popover>
@@ -38,33 +33,19 @@
           </template>
           <template #content>
             <div class="flex flex-col justify-center text-base">
-              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Chromatic calculator</button> -->
-              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap">Screen saver</button> -->
-              <!-- add widget -->
               <div
                 class="text-gray-600 text-sm px-1 select-none whitespace-nowrap"
               >
                 {{ t(":add") }}
               </div>
               <button
+                v-for="spec in instantiableWidgets"
+                :key="spec.type"
                 class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
-                @click="createOfType('timer')"
+                @click="createOfType(spec.type)"
               >
-                {{ t("stopwatch.name") }}
+                {{ t(spec.trNameKey ?? spec.type) }}
               </button>
-              <button
-                class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
-                @click="createOfType('stash-search')"
-              >
-                {{ t("stash_search.name") }}
-              </button>
-              <button
-                class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
-                @click="createOfType('image-strip')"
-              >
-                {{ t("image_strip.name") }}
-              </button>
-              <!-- <button class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap" @click="createOfType('TODO')">Image</button> -->
             </div>
           </template>
         </ui-popover>
@@ -91,13 +72,39 @@
 import { defineComponent, PropType, computed, inject } from "vue";
 import UiToggle from "@/web/ui/UiToggle.vue";
 import UiPopover from "@/web/ui/Popover.vue";
-import { Widget as IWidget, WidgetManager, WidgetMenu } from "./interfaces";
+import {
+  Widget as IWidget,
+  WidgetManager,
+  WidgetMenu,
+  WidgetSpec,
+} from "./interfaces";
+import { registry } from "./widget-registry";
 import { Host } from "@/web/background/IPC";
 import Widget from "./Widget.vue";
 import { useI18nNs } from "@/web/i18n";
 import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 export default defineComponent({
+  widget: {
+    type: "menu",
+    instances: "single",
+    initInstance: (): WidgetMenu => {
+      return {
+        wmId: 0,
+        wmType: "menu",
+        wmTitle: "",
+        wmWants: "show",
+        wmZorder: 1,
+        wmFlags: ["invisible-on-blur", "menu::skip"],
+        anchor: {
+          pos: "tl",
+          x: 5,
+          y: 5,
+        },
+        alwaysShow: false,
+      };
+    },
+  } satisfies WidgetSpec,
   components: { Widget, UiToggle, UiPopover, ConversionWarningBanner },
   props: {
     config: {
@@ -109,14 +116,25 @@ export default defineComponent({
     const wm = inject<WidgetManager>("wm")!;
 
     const widgets = computed(() => {
-      return [
-        wm.widgets.value.find((widget) => widget.wmType === "settings")!,
-        ...wm.widgets.value.filter((widget) => widget.wmType !== "settings"),
-      ].filter(
-        (widget) =>
-          !widget.wmFlags.includes("skip-menu") &&
-          (props.config.alwaysShow || widget.wmWants === "hide"),
-      );
+      return wm.widgets.value
+        .filter(
+          (widget) =>
+            !widget.wmFlags.includes("menu::skip") &&
+            (props.config.alwaysShow || widget.wmWants === "hide"),
+        )
+        .map((widget) => {
+          const regexMatch = widget.wmTitle.match(
+            /^(?:\{icon=(?<icon>[^}]+)\}\s*)?(?<title>.*)$/,
+          );
+          return {
+            wmId: widget.wmId,
+            wmWants: widget.wmWants,
+            title:
+              regexMatch?.groups!.title ||
+              (!regexMatch?.groups!.icon ? `#${widget.wmId}` : undefined),
+            icon: regexMatch?.groups!.icon,
+          };
+        });
     });
 
     const { t } = useI18nNs("widget_menu");
@@ -124,10 +142,15 @@ export default defineComponent({
     return {
       t,
       widgets,
+      instantiableWidgets: computed(() => {
+        return registry.widgets
+          .filter(({ widget }) => widget.instances === "multi")
+          .map(({ widget }) => widget);
+      }),
       createOfType(type: string) {
         wm.create(type);
       },
-      toggle(widget: IWidget) {
+      toggle(widget: Pick<IWidget, "wmId" | "wmWants">) {
         if (widget.wmWants === "hide") {
           wm.show(widget.wmId);
         } else {

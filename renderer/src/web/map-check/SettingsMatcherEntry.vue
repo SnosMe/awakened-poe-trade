@@ -56,7 +56,7 @@ import {
   StatTag,
   decisionHasColor,
   decisionCreate,
-  MapCheckConfig,
+  MapCheckStat,
 } from "./common.js";
 
 export default defineComponent({
@@ -68,7 +68,7 @@ export default defineComponent({
       required: true,
     },
     selectedStats: {
-      type: Array as PropType<MapCheckConfig["selectedStats"]>,
+      type: Array as PropType<MapCheckStat[]>,
       required: true,
     },
     profile: {

@@ -89,7 +89,12 @@
     "veiled": "隱匿",
     "foil_unique": "貼模傳奇",
     "mirrored": "已複製",
-    "not_mirrored": "未複製"
+    "not_mirrored": "未複製",
+    "mod_grade": "等級: {0}",
+    "has_elemental_affix": "Any",
+    "has_elemental_fire_affix": "Fire",
+    "has_elemental_cold_affix": "Cold",
+    "has_elemental_lightning_affix": "Lightning"
   },
   "item_category": {
     "prop": "類別：{0}",
@@ -174,7 +179,8 @@
     "tag_explicit_incursion": "穿越",
     "tag_rune": "符文",
     "tag_sanctum": "Sanctum",
-    "fill_rune_iron": "Fill Runes(Iron)"
+    "fill_rune_iron": "Fill Runes(Iron)",
+    "grade": "等級 {0}"
   },
   "online_filter": {
     "offline_toggle": "離線 & 在線",
@@ -301,7 +307,8 @@
     "getting_price": "獲取價格 {0}",
     "getting_price_from": "來自 poe.ninja \u2026",
     "you_have": "您有",
-    "stack": "堆疊"
+    "stack": "堆疊",
+    "fix_complex_query": "請在設定中禁用\"偽屬性\"選項，或通過內置瀏覽器登錄。"
   },
   "settings": {
     "title": "設置 - 流亡交易所 2",
@@ -332,7 +339,18 @@
     "poe_cfg_file": "PoE 配置文件",
     "restore_clipboard": "恢復剪貼板",
     "show_overlay_ready": "當輔助介面檢測到 PoE 窗口時顯示通知",
-    "debug_hotkeys": "記錄所有按鍵"
+    "debug_hotkeys": "記錄所有按鍵",
+    "help": "幫助",
+    "show_tips_on_startup": "啟動時顯示提示通知",
+    "show_tips_frequency": "價格檢查時顯示提示的頻率",
+    "tip_frequency_1": "總是",
+    "tip_frequency_2": "經常",
+    "tip_frequency_3": "正常",
+    "tip_frequency_4": "很少",
+    "tip_frequency_5": "非常少",
+    "tip_frequency_6": "從不",
+    "tips_header": "循環查看所有提示：",
+    "tip_number_header": "提示 #{0}"
   },
   "price_check": {
     "name": "價格檢查",
@@ -357,7 +375,11 @@
     "use_tooltip_hover": "將滑鼠懸停在價格上時顯示物品",
     "use_tooltip_keybind": "SHIFT + 懸停",
     "use_tooltip_always": "始終懸停顯示",
-    "use_tooltip_off": "關閉"
+    "use_tooltip_off": "關閉",
+    "tier_numbering": "層級編號風格",
+    "tier_numbering_poe1": "POE1（數值越小越好）",
+    "tier_numbering_poe2": "POE2（數值越大越好）",
+    "tier_numbering_help": "為了減少因遊戲內命名衝突而導致的混淆，POE1的層級將使用\"Grade\"而非\"Tier\"來命名。"
   },
   "poe2_new": {
     "beta_warning": "這是 POE2 的測試版，某些功能可能無法正常運作。",
@@ -368,5 +390,37 @@
     "parse_error2": "可能包含尚未支援的詞綴。",
     "parse_error3": "（可能是來自 POE1 的新詞綴或修改後的措辭）",
     "bulk_exchange": "尚未實現大量交易匯率功能"
+  },
+  "tips": {
+    "tip_1": "可以通過點擊 \"編輯\" 來為小部件添加自己的圖片。",
+    "tip_2": "選擇過多的過濾器可能會高估物品的價格。",
+    "tip_3": "當懸停在價格上時，按住 SHIFT 鍵可以顯示物品的屬性。",
+    "tip_4": "在價格檢查時啟用「詞綴」選項，以查看每個過濾器使用了哪些屬性。",
+    "tip_5": "您可以在設定中切換《流放之路1》和《流放之路2》的層級編號風格。",
+    "tip_6": "要查看物品可能的 \"詞綴\" ，請運行物品檢查，然後在 Craft of Exile 中打開。",
+    "tip_7": "物品檢查窗口中的所有操作都可以綁定到快捷鍵。",
+    "tip_8": "可以通過拖動價格檢查傳奇物品時顯示的條來更改其數值。",
+    "tip_9": "可以使用 \"Fill Iron\" 按鈕來用鍛鐵符文填充空的符文插槽。",
+    "tip_10": "如果某個屬性未顯示，它可能在 \"隱藏\" 部分中。",
+    "tip_11": "影響武器 DPS 的屬性不會顯示，而是被計入 DPS 過濾器中。",
+    "tip_12": "當過濾器上顯示一個層級時，意味著該層級是該物品的最佳或次佳選擇。",
+    "tip_13": "如果您不想按住按鈕來保持價格檢查窗口打開，可以在設定中使用「關閉自動隱藏」選項。",
+    "tip_14": "「偽屬性」按鈕也會打開交易網站，但會將抗性作為偽加權總和顯示。",
+    "tip_15": "您可以使用「配置文件」為不同角色保存不同的地圖檢查選擇。",
+    "tip_16": "使用「在倉庫中查找」來搜索倉庫中的基礎類型物品。",
+    "tip_17": "使用「在線過濾器」可以讓你使用更多元過濾選項，例如「僅崇高石」或「離線和在線」。",
+    "tip_18": "玩得開心！",
+    "tip_19": "如果想在遊戲中計時，可以使用「秒表」小部件。",
+    "tip_20": "如果遇到任何問題，請在 GitHub 上報告。",
+    "tip_21": "可以使用「倉庫搜索」小部件來搜索倉庫中的物品。",
+    "tip_22": "地圖檢查可以快速確認地圖是否包含你不想要的詞綴。",
+    "tip_23": "要啟用倉庫標籤滾動功能，請在POE游戏設定中禁用「滑鼠滾輪縮放」（選項 -> 界面）。",
+    "tip_24": "物品價格旁邊的問號表示該物品的價格是基於倉庫標籤名稱估算的，可能不是真實價格。",
+    "tip_25": "物品價格旁邊的橙色圓圈表示玩家狀態為「離開」。",
+    "tip_26": "物品價格旁邊的紅色圓圈表示玩家狀態為「離線」。",
+    "tip_27": "日誌顯示在設定中的「調試」選項卡下。",
+    "tip_28": "你可以在設定中更改聯盟。",
+    "tip_29": "你可以在設定中添加自定義聊天命令快捷鍵。",
+    "tip_30": "我們不談論 Exiled Exchange 1。"
   }
 }

@@ -2923,7 +2923,7 @@
 {"name": "인즈머스", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "허름한 두건", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "철손아귀", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "방랑자 방어구", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "철의 질주", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "차양 단 헬름", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "야릉그레이프", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "고리 갑옷 건틀릿", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "야릉그레이프", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "고리 갑옷 건틀릿", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "카옴의 심장", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "정복자 판금 갑옷", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "전호의 보관자", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "혼백뼈 왕관", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "깨진 흥", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3030,28 +3030,28 @@
 {"name": "돼지사냥", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "쓰러진 대곤봉", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "흐림노르의 찬가", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "참나무 대망치", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철창날 창"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "분할의 대도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "아치형 대도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무두질용 단도"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무두질용 단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "분할의 대도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓은날 대검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "흡혈 칼날"}}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "고상한 글레이브"}}

@@ -1,10 +1,14 @@
+import { STAT_BY_MATCH_STR } from "@/assets/data";
+
 export interface MapCheckConfig {
   profile: number;
   showNewStats: boolean;
-  selectedStats: Array<{
-    matcher: string;
-    decision: string;
-  }>;
+  selectedStats: MapCheckStat[];
+}
+
+export interface MapCheckStat {
+  matcher: string;
+  decision: string;
 }
 
 export enum StatTag {
@@ -50,4 +54,11 @@ export function decisionCreate(
   const split = updateSet.split("");
   split[idx] = value;
   return split.join("");
+}
+
+export function isOutdated(profileName: number, stat: MapCheckStat): boolean {
+  return (
+    decisionHasColor(stat.decision, profileName) &&
+    STAT_BY_MATCH_STR(stat.matcher) == null
+  );
 }

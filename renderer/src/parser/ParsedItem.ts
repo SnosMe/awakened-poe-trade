@@ -41,6 +41,10 @@ export interface BaseParsedItem {
   weaponAS?: number;
   weaponPHYSICAL?: number;
   weaponELEMENTAL?: number;
+  weaponFIRE?: number;
+  weaponCOLD?: number;
+  weaponLIGHTNING?: number;
+  weaponChaos?: number;
   mapBlighted?: "Blighted" | "Blight-ravaged";
   mapTier?: number;
   gemLevel?: number;

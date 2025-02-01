@@ -21,6 +21,7 @@ export interface ModifierInfo {
   name?: string;
   tier?: number;
   rank?: number;
+  tierNew?: number;
   tags: string[];
   rollIncr?: number;
 }

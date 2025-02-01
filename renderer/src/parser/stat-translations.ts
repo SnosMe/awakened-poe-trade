@@ -161,7 +161,9 @@ export function tryParseTranslation(
   stat: StatString,
   modType: ModifierType,
   item?: ParsedItem,
-): { stat: ParsedStat; tier: number | undefined } | undefined {
+):
+  | { stat: ParsedStat; tier: { poe1: number; poe2: number } | undefined }
+  | undefined {
   let itemRarity: ItemRarity | undefined;
   let itemCategory: ItemCategory | undefined;
   if (item) {
@@ -195,7 +197,7 @@ export function tryParseTranslation(
       };
     }
 
-    let foundTier: number | undefined;
+    let foundTier: { poe1: number; poe2: number } | undefined;
 
     if (
       modType === ModifierType.Explicit &&
@@ -226,7 +228,7 @@ export function tryParseTranslation(
           const tierNumber = getTierNumber(tierMatch, modTiers, itemCategory, [
             modTiers,
           ]);
-          if (tierNumber !== -1) {
+          if (tierNumber) {
             foundTier = tierNumber;
           }
         }
@@ -322,12 +324,10 @@ export function tryParseTranslation(
         }
       } else {
         if (item.info.refName === "Controlled Metamorphosis") {
-          const matchedName = found.matcher.string;
           const matchers = found.stat.matchers.map((matcher) => matcher.string);
-          const matcherValue = matchers.indexOf(matchedName) + 1;
           combination.values = [
             {
-              roll: matcherValue,
+              roll: found.matcher.value!,
               decimal: false,
               bounds: {
                 min: 1,

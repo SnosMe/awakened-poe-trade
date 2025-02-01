@@ -4,7 +4,7 @@
     class="flex items-center text-xs leading-none gap-x-1"
   >
     <span v-for="tag of tags" :class="$style[tag.type]">{{
-      t("filters.tier", [tag.tier])
+      t(tierOption == "poe2" ? "filters.tier" : "filters.grade", [tag.tier])
     }}</span>
   </div>
 </template>
@@ -14,6 +14,8 @@ import { defineComponent, PropType, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { ItemCategory, ParsedItem } from "@/parser";
 import { FilterTag, StatFilter } from "./interfaces";
+import { AppConfig } from "@/web/Config";
+import { PriceCheckWidget } from "@/web/overlay/widgets";
 
 export default defineComponent({
   props: {
@@ -27,12 +29,18 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const tierOption = computed(
+      () => AppConfig<PriceCheckWidget>("price-check")!.tierNumbering,
+    );
+
     const tags = computed(() => {
       const { filter, item } = props;
       const out: Array<{ type: string; tier: number }> = [];
       for (const source of filter.sources) {
         const tier = source.modifier.info.tier;
-        if (!tier) continue;
+        const tierNew = source.modifier.info.tierNew;
+        if (!tier || !tierNew) continue;
+        const usedTier = tierOption.value === "poe1" ? tier : tierNew;
 
         if (
           (filter.tag === FilterTag.Explicit ||
@@ -42,11 +50,11 @@ export default defineComponent({
           item.category !== ItemCategory.ClusterJewel &&
           item.category !== ItemCategory.MemoryLine
         ) {
-          if (tier === 1) out.push({ type: "tier-1", tier });
-          else if (tier === 2) out.push({ type: "tier-2", tier });
+          if (tier === 1) out.push({ type: "tier-1", tier: usedTier });
+          else if (tier === 2) out.push({ type: "tier-2", tier: usedTier });
         } else if (tier >= 2) {
           // fractured, explicit-* filters
-          out.push({ type: "not-tier-1", tier });
+          out.push({ type: "not-tier-1", tier: usedTier });
         }
       }
       out.sort((a, b) => a.tier - b.tier);
@@ -54,7 +62,7 @@ export default defineComponent({
     });
 
     const { t } = useI18n();
-    return { t, tags };
+    return { t, tags, tierOption };
   },
 });
 </script>

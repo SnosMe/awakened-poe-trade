@@ -116,5 +116,6 @@ export default {
   WAYSTONE_HELP: '可用於地圖裝置以進入地圖',
   JEWEL_HELP: '放置到',
   SANCTUM_HELP: '"將此物品放置到絲克瑪',
-  TIMELESS_RADIUS: '範圍: '
+  TIMELESS_RADIUS: '範圍: ',
+  PRECURSOR_TABLET_HELP: '可用於輿圖中的一座已完成高塔來影響'
 }

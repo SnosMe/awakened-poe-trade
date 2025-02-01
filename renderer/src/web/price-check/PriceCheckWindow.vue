@@ -146,7 +146,11 @@ import UnidentifiedResolver from "./unidentified-resolver/UnidentifiedResolver.v
 import CheckPositionCircle from "./CheckPositionCircle.vue";
 import AppTitleBar from "@/web/ui/AppTitlebar.vue";
 import ItemQuickPrice from "@/web/ui/ItemQuickPrice.vue";
-import { PriceCheckWidget, WidgetManager } from "../overlay/interfaces";
+import {
+  PriceCheckWidget,
+  WidgetManager,
+  WidgetSpec,
+} from "../overlay/interfaces";
 import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
 type ParseError = {
@@ -156,6 +160,41 @@ type ParseError = {
 };
 
 export default defineComponent({
+  widget: {
+    type: "price-check",
+    instances: "single",
+    initInstance: (): PriceCheckWidget => {
+      return {
+        wmId: 0,
+        wmType: "price-check",
+        wmTitle: "",
+        wmWants: "hide",
+        wmZorder: "exclusive",
+        wmFlags: ["hide-on-blur", "menu::skip"],
+        showRateLimitState: false,
+        apiLatencySeconds: 2,
+        collapseListings: "api",
+        smartInitialSearch: true,
+        lockedInitialSearch: true,
+        activateStockFilter: false,
+        builtinBrowser: false,
+        hotkey: "D",
+        hotkeyHold: "Ctrl",
+        hotkeyLocked: "Ctrl + Alt + D",
+        showSeller: false,
+        searchStatRange: 10,
+        showCursor: true,
+        requestPricePrediction: false,
+        rememberCurrency: false,
+        // New Settings EE2
+        usePseudo: false,
+        defaultAllSelected: false,
+        itemHoverTooltip: "keybind",
+        autoFillEmptyRuneSockets: false,
+        tierNumbering: "poe2",
+      };
+    },
+  } satisfies WidgetSpec,
   components: {
     AppTitleBar,
     CheckedItem,
@@ -185,7 +224,7 @@ export default defineComponent({
 
     nextTick(() => {
       props.config.wmWants = "hide";
-      props.config.wmFlags = ["hide-on-blur", "skip-menu"];
+      props.config.wmFlags = ["hide-on-blur", "menu::skip"];
     });
 
     const item = shallowRef<null | Result<ParsedItem, ParseError>>(null);
@@ -332,7 +371,7 @@ export default defineComponent({
 
     function openLeagueSelection() {
       const settings = wm.widgets.value.find((w) => w.wmType === "settings")!;
-      wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true);
+      wm.setFlag(settings.wmId, `settings::widget=${props.config.wmId}`, true);
       wm.show(settings.wmId);
     }
 

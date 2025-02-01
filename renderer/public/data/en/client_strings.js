@@ -209,5 +209,7 @@ export default {
   // ItemDescriptionSanctumRelic
   SANCTUM_HELP: 'Place this item on the Relic Altar',
   // JewelRadiusLabel
-  TIMELESS_RADIUS: 'Radius: '
+  TIMELESS_RADIUS: 'Radius: ',
+  // ItemDescriptionPrecursorTablet
+  PRECURSOR_TABLET_HELP: 'Can be used in a completed Tower on your Atlas to influence surrounding Maps',
 }

@@ -504,7 +504,7 @@ class Parser:
         for mod in description_file.descriptions:
             id = mod.id.split(" ")
 
-            for a in id:
+            for description_id in id:
                 matchers = []
                 if LANG_CODES_TO_NAMES[self.lang] in mod.data:
                     logger.debug(f"Found translations for {mod.english_ref}")
@@ -512,7 +512,7 @@ class Parser:
                 else:
                     logger.warning(f"No translations found for {mod.english_ref}")
                     matchers = mod.data["English"]
-                if a == "number_of_additional_arrows":
+                if description_id == "number_of_additional_arrows":
                     matchers.append(
                         {
                             "string": "Bow Attacks fire # additional Arrows",
@@ -520,10 +520,22 @@ class Parser:
                         }
                     )
                 logger.debug(f"Matchers: {matchers}")
-                self.mod_translations[a] = {
-                    "ref": mod.english_ref,
-                    "matchers": matchers,
-                }
+                if "map" in description_id:
+                    if description_id in self.mod_translations:
+                        self.mod_translations[description_id]["ref"] = mod.english_ref
+                        self.mod_translations[description_id]["matchers"] = (
+                            matchers + self.mod_translations[description_id]["matchers"]
+                        )
+                    else:
+                        self.mod_translations[description_id] = {
+                            "ref": mod.english_ref,
+                            "matchers": matchers,
+                        }
+                else:
+                    self.mod_translations[description_id] = {
+                        "ref": mod.english_ref,
+                        "matchers": matchers,
+                    }
 
     def parse_mods(self):
         logger.debug("Starting to parse mods.")
@@ -1090,7 +1102,7 @@ class Parser:
             self.lang
         ]
         self.mods["local_jewel_variable_ring_radius_value"] = {
-            "ref": "Only affects Passives in Very Small Ring",
+            "ref": "Only affects Passives in # Ring",
             "better": 1,
             "id": "local_jewel_variable_ring_radius_value",
             "matchers": controlled_metamorphosis,

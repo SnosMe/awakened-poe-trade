@@ -8,6 +8,8 @@ import {
 import { ModifierType, sumStatsByModType } from "@/parser/modifiers";
 import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import type { FilterPreset } from "./interfaces";
+import { PriceCheckWidget } from "@/web/overlay/widgets";
+import { handleFillRuneSockets } from "./fill-runes";
 
 const ROMAN_NUMERALS = ["I", "II", "III", "IV", "V"];
 
@@ -22,6 +24,7 @@ export function createPresets(
     useEn: boolean;
     usePseudo: boolean;
     defaultAllSelected: boolean;
+    autoFillEmptyRuneSockets: PriceCheckWidget["autoFillEmptyRuneSockets"];
   },
 ): { presets: FilterPreset[]; active: string } {
   if (item.info.refName === "Expedition Logbook") {
@@ -99,6 +102,21 @@ export function createPresets(
     (item.category !== ItemCategory.Jewel &&
       item.category !== ItemCategory.AbyssJewel &&
       item.itemLevel! >= 82);
+
+  // Apply runes if we should
+  if (
+    (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare) &&
+    pseudoPreset.filters.fillEmptyRuneSockets &&
+    opts.autoFillEmptyRuneSockets
+  ) {
+    handleFillRuneSockets(
+      pseudoPreset.stats,
+      item,
+      true,
+      pseudoPreset.filters.tempRuneStorage!,
+      opts.autoFillEmptyRuneSockets,
+    );
+  }
 
   if (likelyFinishedItem || !hasCraftingValue) {
     return { active: pseudoPreset.id, presets: [pseudoPreset] };

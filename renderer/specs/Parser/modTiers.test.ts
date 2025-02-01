@@ -292,7 +292,7 @@ describe("getTierNumber", () => {
     const tierArray = strengthStat!.explicit;
 
     const result = getTierNumber(tier, mod, itemCategory, tierArray);
-    expect(result).toEqual(8);
+    expect(result?.poe1).toEqual(8);
   });
   test("If tier is the best, should be 1", () => {
     const tier = strengthStat!.explicit[0].mods.at(-1);
@@ -301,7 +301,7 @@ describe("getTierNumber", () => {
     const tierArray = strengthStat!.explicit;
 
     const result = getTierNumber(tier!, mod, itemCategory, tierArray);
-    expect(result).toEqual(1);
+    expect(result?.poe1).toEqual(1);
   });
   test("If category not in items, should return -1", () => {
     const tier = strengthStat!.explicit[0].mods[0];
@@ -310,6 +310,6 @@ describe("getTierNumber", () => {
     const tierArray = strengthStat!.explicit;
 
     const result = getTierNumber(tier, mod, itemCategory, tierArray);
-    expect(result).toEqual(-1);
+    expect(result).toBeUndefined();
   });
 });

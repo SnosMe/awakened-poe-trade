@@ -2923,7 +2923,7 @@
 {"name": "Innsmouth", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Einfache Haube", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "Eisenumklammerung", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabunden-Rüstung", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "Eisenritt", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visierhelm", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringpanzerhandschuhe", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringpanzerhandschuhe", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "Kaoms Herz", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Erobererpanzer", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "Hüter des Arkus", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Geisterknochen-Krone", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "Mordlust", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Leinenwickel", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3030,28 +3030,28 @@
 {"name": "Treibjagd", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Gefällte Großkeule", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "Hrimnors Hymne", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Eichen-Großhammer", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Eisenkopf-Speer\t"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Stumpfes Kriegsbeil"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Korrodiertes Langschwert"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Henker-Großaxt"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Stumpfes Kriegsbeil"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Breitschwert"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Küchenmesser"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Kettenflegel"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Heiliger Flegel"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Verkohltes Kurzschwert"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Spaltende Großaxt"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gewölbte Großaxt"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Geriffeltes Großschwert"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Kürschnermesser"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Eisernes Großschwert"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Einfacher Dolch"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hakenaxt"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bartaxt"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Breitschwert"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Kürschnermesser"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Eisernes Großschwert"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Spaltende Großaxt"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Monddolch"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Jagdspeer"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Heiliger Flegel"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Kriegsspeer"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gesegnetes Claymore"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Zwillingsflegel"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Breites Großschwert"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Kettenflegel"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Banditenkriegsbeil"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Vampirische Klinge"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegante Gleve"}}

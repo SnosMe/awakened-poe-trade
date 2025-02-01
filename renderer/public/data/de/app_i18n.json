@@ -89,7 +89,12 @@
     "veiled": "Verschleiert",
     "foil_unique": "Foil Unique",
     "mirrored": "Spiegelbildlich",
-    "not_mirrored": "Nicht spiegelbildlich"
+    "not_mirrored": "Nicht spiegelbildlich",
+    "mod_grade": "Grad: {0}",
+    "has_elemental_affix": "Any",
+    "has_elemental_fire_affix": "Fire",
+    "has_elemental_cold_affix": "Cold",
+    "has_elemental_lightning_affix": "Lightning"
   },
   "item_category": {
     "prop": "Kategorie: {0}",
@@ -178,7 +183,8 @@
     "tag_explicit_incursion": "Incursion",
     "tag_rune": "Rune",
     "tag_sanctum": "Sanctum",
-    "fill_rune_iron": "Fill Runes(Iron)"
+    "fill_rune_iron": "Fill Runes(Iron)",
+    "grade": "Grad {0}"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
@@ -283,7 +289,8 @@
     "stack": "Stapel",
     "results_warn_tooltip": "Aktivieren Sie nur 'Exalted' im Online-Filter. Sie können diese Warnung in den Einstellungen deaktivieren.",
     "results_warn_title": "Preis wahrscheinlich zu hoch",
-    "results_warn_message": "Handelsseite blendet Ergebnisse zwischen {0} und {1} Ex aus"
+    "results_warn_message": "Handelsseite blendet Ergebnisse zwischen {0} und {1} Ex aus",
+    "fix_complex_query": "Deaktiviere \"Pseudo-Mods verwenden\" in den Einstellungen oder melde dich mit dem integrierten Browser an"
   },
   "settings": {
     "title": "Einstellungen - Exiled Exchange 2",
@@ -317,7 +324,18 @@
     "debug_hotkeys": "Alle Tastenanschläge aufzeichnen",
     "preferred_trade_site": "Bevorzugte Handelsseite",
     "enable_alphas": "Alphas aktivieren",
-    "alphas_warning": "Alphas sind extrem experimentell und werden wahrscheinlich nicht wie erwartet funktionieren. Bitte melden Sie alle auftretenden Probleme."
+    "alphas_warning": "Alphas sind extrem experimentell und werden wahrscheinlich nicht wie erwartet funktionieren. Bitte melden Sie alle auftretenden Probleme.",
+    "help": "Hilfe",
+    "show_tips_on_startup": "Tipps bei Startbenachrichtigung anzeigen",
+    "show_tips_frequency": "Wie oft sollen Tipps beim Preis-Check angezeigt werden?",
+    "tip_frequency_1": "Immer",
+    "tip_frequency_2": "Oft",
+    "tip_frequency_3": "Normal",
+    "tip_frequency_4": "Selten",
+    "tip_frequency_5": "Sehr selten",
+    "tip_frequency_6": "Nie",
+    "tips_header": "Alle Tipps durchblättern:",
+    "tip_number_header": "Tipp #{0}"
   },
   "price_check": {
     "name": "Preisprüfung",
@@ -343,10 +361,14 @@
     "show_suggest_warning_warn": "Warnung anzeigen",
     "show_suggest_warning_help": "Warnung und Hilfe anzeigen",
     "default_all_selected": "Standardmäßig alle Filter aktivieren",
-    "use_tooltip_hover": "Show item when hovering over price",
-    "use_tooltip_keybind": "SHIFT + hover",
-    "use_tooltip_always": "hover",
-    "use_tooltip_off": "off"
+    "use_tooltip_hover": "Zeige Gegenstand beim Hovern über den Preis",
+    "use_tooltip_keybind": "SHIFT + Hover",
+    "use_tooltip_always": "Hover",
+    "use_tooltip_off": "Aus",
+    "tier_numbering": "Stil der Tier-Nummerierung",
+    "tier_numbering_poe1": "PoE1 (niedrigere Werte sind besser)",
+    "tier_numbering_poe2": "PoE2 (höhere Werte sind besser)",
+    "tier_numbering_help": "Um Verwirrung durch widersprüchliche Namenskonventionen im Spiel zu reduzieren, werden PoE1-Tiers als \"Grad\" bezeichnet, anstatt \"Stufe\"."
   },
   "poe2_new": {
     "beta_warning": "Dies ist eine BETA für POE2, es wird nicht immer wie erwartet funktionieren.",
@@ -357,5 +379,37 @@
     "parse_error2": "Er hat wahrscheinlich einen Mod, der noch nicht unterstützt wird.",
     "parse_error3": "(Möglicherweise neuer oder geänderter Wortlaut aus PoE1)",
     "bulk_exchange": "Sammelumtauschraten sind noch nicht implementiert"
+  },
+  "tips": {
+    "tip_1": "Du kannst eigene Bilder zur Cheat-Sheet-Ansicht hinzufügen, indem du auf \"Bearbeiten\" klickst.",
+    "tip_2": "Zu viele Filter auszuwählen, kann den Preis eines Gegenstands überschätzen.",
+    "tip_3": "Halte die SHIFT-Taste gedrückt, während du über einen Preis fährst, um die Werte des Gegenstands anzuzeigen.",
+    "tip_4": "Aktiviere \"Mods\", um beim Preis-Check zu sehen, welche Werte für jeden Filter verwendet werden.",
+    "tip_5": "Du kannst zwischen den Tier-Nummerierungsstilen von PoE1 und PoE2 in den Einstellungen wechseln.",
+    "tip_6": "Um die möglichen Mods eines Gegenstands zu sehen, führe den Item-Check aus und öffne den Gegenstand dann in Craft of Exile.",
+    "tip_7": "Alle Aktionen im Item-Check-Fenster können einer Tastenkombination zugewiesen werden.",
+    "tip_8": "Du kannst die Balken, die beim Preis-Check eines einzigartigen Gegenstands angezeigt werden, ziehen, um deren Werte zu ändern.",
+    "tip_9": "Du kannst den Button \"Eisen füllen\" verwenden, um leere Runen-Sockel mit Eisen-Runen zu füllen.",
+    "tip_10": "Falls ein Wert nicht angezeigt wird, befindet er sich möglicherweise im Abschnitt \"Versteckt\".",
+    "tip_11": "Werte, die zum DPS einer Waffe beitragen, werden nicht angezeigt, sondern in den DPS-Filter einbezogen.",
+    "tip_12": "Wenn ein Tier im Filter angezeigt wird, bedeutet das, dass dieses Tier das beste oder zweitbeste für den Gegenstand ist.",
+    "tip_13": "Um den Preis-Check offen zu halten, ohne eine Taste gedrückt zu halten, aktiviere \"Auto-Hide aus\" in den Einstellungen.",
+    "tip_14": "Der Button \"Pseudo\" öffnet ebenfalls die Handelsseite, jedoch mit Resistenzen als simulierte Pseudo-Gewichtssumme.",
+    "tip_15": "Du kannst \"Profil\" verwenden, um verschiedene Map-Check-Auswahlen für unterschiedliche Charaktere zu speichern.",
+    "tip_16": "Verwende \"Im Stash suchen\", um nach einem Basistyp in deinem Stash zu suchen.",
+    "tip_17": "Mit \"Online-Filter\" kannst du erweiterte Meta-Filteroptionen wie \"Nur Exalted\" oder \"Offline & Online\" nutzen.",
+    "tip_18": "Viel Spaß!",
+    "tip_19": "Wenn du etwas im Spiel timen möchtest, kannst du das Widget \"Stoppuhr\" verwenden.",
+    "tip_20": "Falls du auf Probleme stößt, melde diese bitte auf GitHub.",
+    "tip_21": "Du kannst das Widget \"Stash-Suche\" verwenden, um nach Gegenständen in deinem Stash zu suchen.",
+    "tip_22": "Map-Check kann verwendet werden, um schnell sicherzustellen, dass eine Map keine unerwünschten Mods hat.",
+    "tip_23": "Um Stash-Tab-Scrolling zu aktivieren, deaktiviere \"Mausrad-Zoom\" in den PoE-Einstellungen (Optionen -> UI).",
+    "tip_24": "Das Fragezeichen neben dem Preis eines Gegenstands zeigt an, dass der Gegenstand über den Stash-Tab-Namen bepreist wurde und möglicherweise keinen realen Preis hat.",
+    "tip_25": "Der orangefarbene Kreis neben dem Preis eines Gegenstands zeigt an, dass der Spielerstatus auf AFK steht.",
+    "tip_26": "Der rote Kreis neben dem Preis eines Gegenstands zeigt an, dass der Spielerstatus auf Offline steht.",
+    "tip_27": "Logs werden im Tab \"Debug\" in den Einstellungen angezeigt.",
+    "tip_28": "Du kannst deine Liga in den Einstellungen ändern.",
+    "tip_29": "Du kannst in den Einstellungen benutzerdefinierte Chat-Befehl-Hotkeys hinzufügen.",
+    "tip_30": "Wir reden nicht über Exiled Exchange 1."
   }
 }

@@ -70,6 +70,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseArmour,
   parseWeapon,
   parseFlask,
+  parseJewelery,
   parseCharmSlots,
   parseSpirit,
   parsePriceNote,
@@ -100,6 +101,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
   { virtual: applyRuneSockets },
+  { virtual: applyElementalAdded },
   { virtual: pickCorrectVariant },
   { virtual: calcBasePercentile },
 ];
@@ -948,11 +950,11 @@ export function parseModifiersPoe2(section: string[], item: ParsedItem) {
         modType = ModifierType.Sanctum;
       }
       // const modInfo = parseModInfoLine(modLine, modType);
-      foundAnyMods =
-        parseStatsFromMod(lines, item, {
-          info: { type: modType, tags: [] },
-          stats: [],
-        }) || foundAnyMods;
+      const found = parseStatsFromMod(lines, item, {
+        info: { type: modType, tags: [] },
+        stats: [],
+      });
+      foundAnyMods = found || foundAnyMods;
 
       if (modType === ModifierType.Veiled) {
         item.isVeiled = true;
@@ -1067,6 +1069,24 @@ function parseFlask(section: string[], item: ParsedItem) {
   return isParsed;
 }
 
+function parseJewelery(section: string[], item: ParsedItem) {
+  if (
+    item.category !== ItemCategory.Amulet &&
+    item.category !== ItemCategory.Ring &&
+    item.category !== ItemCategory.Belt
+  ) {
+    return "PARSER_SKIPPED";
+  }
+
+  for (const line of section) {
+    if (line.startsWith(_$.QUALITY.substring(0, _$.QUALITY.indexOf(":")))) {
+      return "SECTION_PARSED";
+    }
+  }
+
+  return "SECTION_SKIPPED";
+}
+
 function parseCharmSlots(section: string[], item: ParsedItem) {
   // the purpose of this parser is to "consume" charm slot 1 sections
   // so they are not recognized as modifiers
@@ -1122,7 +1142,9 @@ function parseHelpText(section: string[], item: ParsedItem) {
     item.category !== ItemCategory.Waystone &&
     item.category !== ItemCategory.Map &&
     item.category !== ItemCategory.Jewel &&
-    item.category !== ItemCategory.Relic
+    item.category !== ItemCategory.Relic &&
+    item.category !== ItemCategory.Tablet &&
+    item.category !== ItemCategory.TowerAugment
   )
     return "PARSER_SKIPPED";
 
@@ -1133,7 +1155,8 @@ function parseHelpText(section: string[], item: ParsedItem) {
       line.startsWith(_$.CHARM_HELP_TEXT) ||
       line.startsWith(_$.WAYSTONE_HELP) ||
       line.startsWith(_$.JEWEL_HELP) ||
-      line.startsWith(_$.SANCTUM_HELP)
+      line.startsWith(_$.SANCTUM_HELP) ||
+      line.startsWith(_$.PRECURSOR_TABLET_HELP)
     ) {
       return "SECTION_PARSED";
     }
@@ -1401,7 +1424,8 @@ function parseStatsFromMod(
       const { stat: parsedStat, tier } = parsedStatAndTier;
       modifier.stats.push(parsedStat);
       if (tier) {
-        modifier.info.tier = tier;
+        modifier.info.tier = tier.poe1;
+        modifier.info.tierNew = tier.poe2;
       }
       stat = statIterator.next(true);
     } else {
@@ -1425,6 +1449,43 @@ function parseStatsFromMod(
  */
 function transformToLegacyModifiers(item: ParsedItem) {
   item.statsByType = sumStatsByModType(item.newMods);
+}
+
+function applyElementalAdded(item: ParsedItem) {
+  if (item.weaponELEMENTAL) {
+    const knownRefs = new Set<string>([
+      "Adds # to # Lightning Damage",
+      "Adds # to # Cold Damage",
+      "Adds # to # Fire Damage",
+    ]);
+
+    item.statsByType.forEach((calc) => {
+      if (knownRefs.has(calc.stat.ref)) {
+        for (const source of calc.sources) {
+          if (calc.stat.ref === "Adds # to # Lightning Damage") {
+            if (item.weaponLIGHTNING) {
+              item.weaponLIGHTNING =
+                source.contributes!.value + item.weaponLIGHTNING;
+            } else {
+              item.weaponLIGHTNING = source.contributes!.value;
+            }
+          } else if (calc.stat.ref === "Adds # to # Cold Damage") {
+            if (item.weaponCOLD) {
+              item.weaponCOLD = source.contributes!.value + item.weaponCOLD;
+            } else {
+              item.weaponCOLD = source.contributes!.value;
+            }
+          } else if (calc.stat.ref === "Adds # to # Fire Damage") {
+            if (item.weaponFIRE) {
+              item.weaponFIRE = source.contributes!.value + item.weaponFIRE;
+            } else {
+              item.weaponFIRE = source.contributes!.value;
+            }
+          }
+        }
+      }
+    });
+  }
 }
 
 function calcBasePercentile(item: ParsedItem) {

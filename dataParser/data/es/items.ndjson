@@ -2923,7 +2923,7 @@
 {"name": "Boca de tinieblas", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Capucha gastada", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "Restricción de hierro", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Armadura de vagabundo", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "Montura de hierro", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Yelmo con visor", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Guanteletes de malla", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Guanteletes de malla", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "El corazón de Kaom", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Peto de conquistador", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "Guardián del arco", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Corona de hueso espiritual", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "Aguafiestas", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Vendajes de lino", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3030,28 +3030,28 @@
 {"name": "La caza del puerco", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Garrote talado", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "Himno de Hrimnor", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Gran martillo de roble", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Lanza con punta de hierro"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gran hacha del verdugo"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada larga corroída"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hachuela opaca"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada larga corroída"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gran hacha del verdugo"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada ancha"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Cuchillo de bruja"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mangual con cadena"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mangual sagrado"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada corta quemada"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gran hacha fragmentadora"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gran hacha arqueada"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mandoble ondulado"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Cuchillo para despellejar"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada larga de hierro"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Daga simple"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hacha ganchuda"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hacha barbuda"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada ancha"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Cuchillo para despellejar"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Espada larga de hierro"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gran hacha fragmentadora"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Daga de la luna"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Lanza de cacería"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mangual sagrado"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Lanza de guerra"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Gran espada bendita"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mangual gemelo"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mandoble ancho"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Mangual con cadena"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hachuela de bandido"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hoja vampírica"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Guja elegante"}}

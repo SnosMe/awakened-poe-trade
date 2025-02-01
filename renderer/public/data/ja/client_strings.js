@@ -116,5 +116,6 @@ export default {
   WAYSTONE_HELP: 'マップデバイスで使用すると、',
   JEWEL_HELP: 'パッシブツリ',
   SANCTUM_HELP: 'セケマの試練開始時にこ',
-  TIMELESS_RADIUS: '半径: '
+  TIMELESS_RADIUS: '半径: ',
+  PRECURSOR_TABLET_HELP: 'アトラス上の完了した塔で使用することで、周囲の'
 }

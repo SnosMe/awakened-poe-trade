@@ -129,6 +129,31 @@ import {
 } from "@/assets/data";
 import { AppConfig } from "@/web/Config";
 import { CurrencyValue } from "@/web/background/Prices";
+import type { WidgetSpec } from "../overlay/interfaces";
+import { ItemSearchWidget } from "./widget.js";
+
+export default {
+  widget: {
+    type: "item-search",
+    instances: "single",
+    initInstance: (): ItemSearchWidget => {
+      return {
+        wmId: 0,
+        wmType: "item-search",
+        wmTitle: "{icon=fa-search}",
+        wmWants: "hide",
+        wmZorder: null,
+        wmFlags: ["invisible-on-blur"],
+        anchor: {
+          pos: "tl",
+          x: 10,
+          y: 20,
+        },
+        ocrGemsKey: null,
+      };
+    },
+  } satisfies WidgetSpec,
+};
 
 interface SelectedItem {
   info: BaseType;
@@ -231,7 +256,6 @@ function fuzzyFindHeistGem(badStr: string) {
 import { shallowRef, computed, nextTick, inject } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import { WidgetManager } from "../overlay/interfaces";
-import { ItemSearchWidget } from "./widget.js";
 import { usePoeninja } from "@/web/background/Prices";
 import { Host } from "@/web/background/IPC";
 import { createVirtualItem, ItemRarity } from "@/parser/ParsedItem";

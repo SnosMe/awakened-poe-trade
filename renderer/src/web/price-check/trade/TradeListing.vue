@@ -81,6 +81,9 @@
   <ui-error-box v-else>
     <template #name>{{ t(":error") }}</template>
     <p>Error: {{ error }}</p>
+    <div v-if="error && errorFix" class="border p-1 rounded">
+      {{ errorFix }}
+    </div>
     <template #actions>
       <button class="btn" @click="execSearch">{{ t("Retry") }}</button>
       <button class="btn" @click="openTradeLink">{{ t("Browser") }}</button>
@@ -372,6 +375,14 @@ export default defineComponent({
         search(props.filters, props.stats, props.item);
       },
       error,
+      errorFix: computed(() => {
+        console.log(error.value);
+        if (error.value?.startsWith("Query is too complex.")) {
+          return t(":fix_complex_query");
+        }
+
+        return undefined;
+      }),
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
       makeTradeLinkPseudo,

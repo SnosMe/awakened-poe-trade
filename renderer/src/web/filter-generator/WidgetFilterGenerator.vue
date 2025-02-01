@@ -31,12 +31,91 @@
   </Widget>
 </template>
 
+<script lang="ts">
+import type { WidgetSpec } from "../overlay/interfaces";
+import type { FilterGeneratorWidget } from "./widget.ts";
+
+export default {
+  widget: {
+    type: "filter-generator",
+    instances: "single",
+    initInstance: (): FilterGeneratorWidget => {
+      return {
+        wmId: 0,
+        wmType: "filter-generator",
+        wmTitle: "{icon=fa-filter}",
+        wmWants: "hide",
+        wmZorder: null,
+        wmFlags: ["invisible-on-blur"],
+        filtersFolder: "",
+        selectedFilterFile: "",
+        filterStrategy: "before",
+        anchor: {
+          pos: "tl",
+          x: 34,
+          y: 56,
+        },
+        entries: [
+          {
+            id: 1,
+            name: "Scroll of Wisdom",
+            identifiers: [{ key: "BaseType", value: "Scroll of Wisdom" }],
+            action: "hide",
+          },
+          {
+            id: 2,
+            name: "Flasks",
+            identifiers: [{ key: "BaseType", value: "Life Flask,Mana Flask" }],
+            action: "hide",
+          },
+          {
+            id: 3,
+            name: "People get those for Headhunter unique",
+            identifiers: [
+              { key: "Class", value: "Belts" },
+              { key: "BaseType", value: "Heavy Belt" },
+              { key: "Rarity", value: "Normal" },
+            ],
+            action: "interesting",
+          },
+          {
+            id: 4,
+            name: "People get those for Astramentis unique",
+            identifiers: [
+              { key: "Class", value: "Amulets" },
+              { key: "BaseType", value: "Stellar Amulet" },
+              { key: "Rarity", value: "Normal" },
+            ],
+            action: "interesting",
+          },
+          {
+            id: 5,
+            name: "Low level area items",
+            identifiers: [
+              {
+                key: "Class",
+                value:
+                  "Body Armours,Helmets,Boots,Gloves,Shields,Foci,One Hand Maces,Two Hand Maces,Quarterstaves,Bows,Crossbows",
+              },
+              { key: "AreaLevel", value: "< 65" },
+              { key: "Rarity", value: "Normal,Magic,Rare" },
+              { key: "Quality", value: "= 0" },
+              { key: "Sockets", value: "= 0" },
+            ],
+            action: "hide",
+          },
+        ],
+      };
+    },
+  } satisfies WidgetSpec,
+};
+</script>
+
 <script setup lang="ts">
 import { inject } from "vue";
 import { useI18n } from "vue-i18n";
 import { MainProcess } from "@/web/background/IPC";
 import type { WidgetManager } from "../overlay/interfaces.js";
-import type { FilterGeneratorWidget } from "./widget.js";
 
 import Widget from "../overlay/Widget.vue";
 

@@ -5,6 +5,7 @@ import {
   INTERNAL_TRADE_IDS,
   InternalTradeId,
   WeightStatGroup,
+  ItemIsElementalModifier,
 } from "../filters/interfaces";
 import { setProperty as propSet } from "dot-prop";
 import { DateTime } from "luxon";
@@ -540,6 +541,47 @@ export function createTradeRequest(
 
     if (stat.disabled) continue;
 
+    function applyElementalDamageLogicalFilter() {
+      if (stat.tradeId[0] !== "item.elemental_dps") {
+        console.error("Elemental damage filter applied to non-elemental dps");
+        return;
+      }
+      const mapIds = (ids: { [type: string]: string[] }) =>
+        Object.values(ids)
+          .flat()
+          .map((id) => ({ id }));
+      const fireIds = mapIds(STAT_BY_REF("Adds # to # Fire Damage")!.trade.ids);
+      const coldIds = mapIds(STAT_BY_REF("Adds # to # Cold Damage")!.trade.ids);
+      const lightningIds = mapIds(
+        STAT_BY_REF("Adds # to # Lightning Damage")!.trade.ids,
+      );
+
+      const selectedType = stat.option!.value as ItemIsElementalModifier;
+      const notGroup: Array<{ id: string }> = [];
+      switch (selectedType) {
+        case ItemIsElementalModifier.Any:
+          break;
+        case ItemIsElementalModifier.Fire:
+          notGroup.push(...coldIds);
+          notGroup.push(...lightningIds);
+          break;
+        case ItemIsElementalModifier.Cold:
+          notGroup.push(...fireIds);
+          notGroup.push(...lightningIds);
+          break;
+        case ItemIsElementalModifier.Lightning:
+          notGroup.push(...fireIds);
+          notGroup.push(...coldIds);
+          break;
+      }
+      if (notGroup.length) {
+        query.stats.push({
+          type: "not",
+          filters: notGroup,
+        });
+      }
+    }
+
     const input = stat.roll!;
     switch (stat.tradeId[0] as InternalTradeId) {
       // case 'item.base_percentile':
@@ -637,6 +679,7 @@ export function createTradeRequest(
           "equipment_filters.filters.edps.max",
           typeof input.max === "number" ? input.max : undefined,
         );
+        applyElementalDamageLogicalFilter();
         break;
       case "item.crit":
         propSet(
@@ -714,6 +757,26 @@ export function createTradeRequest(
     if (weightGroups && filterInPseudo(stat)) {
       overrideDisabled = true;
     }
+
+    if (stat.statRef === "Only affects Passives in # Ring") {
+      const metaSource = stat.roll!;
+      const metamorphosisCount = metaSource.bounds!.max;
+      const metamorphosisCurrent = metaSource.min as number;
+      const builtTradeFilter = Array.from(
+        { length: metamorphosisCount - metamorphosisCurrent + 1 },
+        (_, index) => ({
+          id: `${stat.tradeId[0]}|${metamorphosisCurrent + index}`,
+        }),
+      );
+      query.stats.push({
+        type: "count",
+        value: { min: 1 },
+        disabled: stat.disabled,
+        filters: builtTradeFilter,
+      });
+      continue;
+    }
+
     if (stat.tradeId[0].startsWith("pseudo.")) {
       query.stats.push(pseudoPseudoToQuery(stat.tradeId[0], stat));
     } else if (stat.tradeId.length === 1) {

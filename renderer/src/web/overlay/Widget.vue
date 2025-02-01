@@ -324,7 +324,7 @@ export default defineComponent({
           )!;
           wm.setFlag(
             settings.wmId,
-            `settings:widget:${props.config.wmId}`,
+            `settings::widget=${props.config.wmId}`,
             true,
           );
           wm.show(settings.wmId);

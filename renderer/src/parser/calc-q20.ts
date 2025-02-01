@@ -43,7 +43,9 @@ export function propAt20Quality(
 ): { roll: StatRoll; sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item);
   const base = calcFlat(total, incr.value, item.quality) - flat.value;
-  const quality = Math.max(20, item.quality ?? 0);
+  const quality = item.isCorrupted
+    ? (item.quality ?? 0)
+    : Math.max(20, item.quality ?? 0);
   return {
     roll: {
       value: calcIncreased(base + flat.value, incr.value, quality),

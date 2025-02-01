@@ -2,7 +2,7 @@ import { vi } from "vitest";
 import fs from "fs";
 import path from "path";
 import { Headers } from "node-fetch"; // Assuming you are using node-fetch
-import { Config } from "@/web/Config";
+import { Config, TipsFrequency } from "@/web/Config";
 let mockConfig: Config;
 // Mock client-string-loader
 export const setupClientStringLoaderMock = () => {
@@ -96,6 +96,7 @@ export const defaultConfigMock = (overrides: Partial<Config> = {}) => {
     overlayAlwaysClose: false,
     enableAlphas: false,
     alphas: [],
+    tipsFrequency: TipsFrequency.Always,
   };
 
   mockConfig = { ...defaultConfig, ...overrides };

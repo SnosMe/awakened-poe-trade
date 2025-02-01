@@ -2923,7 +2923,7 @@
 {"name": "Innsmouth", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "Irongrasp", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "Ironride", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "Jarngreipr", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "Kaom's Heart", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Conqueror Plate", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "Killjoy", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3030,28 +3030,28 @@
 {"name": "Hoghunt", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "Hrimnor's Hymn", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Twin Flail"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broad Greatsword"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bandit Hatchet"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Vampiric Blade"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}}

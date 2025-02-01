@@ -26,6 +26,12 @@ import type { StatCalculated } from "@/parser/modifiers";
 import type { StatFilter } from "./interfaces";
 
 import ItemModifierText from "@/web/ui/ItemModifierText.vue";
+import { AppConfig } from "@/web/Config";
+import { PriceCheckWidget } from "@/web/overlay/widgets";
+
+const tierOption = computed(
+  () => AppConfig<PriceCheckWidget>("price-check")!.tierNumbering,
+);
 
 const props = defineProps<{
   source: StatCalculated["sources"][number];
@@ -41,14 +47,29 @@ const modText = computed(() => {
   if (info.name) {
     text += ` "${info.name}"`;
   }
-  if (info.tier != null) {
-    text += ` (${t("item.mod_tier", [info.tier])})`;
+  if (info.tier != null || info.rank != null) {
+    if (tierOption.value === "poe1") {
+      text += ` (${t("item.mod_grade", [info.tier])})`;
+    } else {
+      text += ` (${t("item.mod_tier", [info.tierNew])} [${info.tier! + info.tierNew! - 1}])`;
+    }
   }
   if (info.rank != null) {
     text += ` (${t("item.mod_rank", [info.rank])})`;
   }
   return text;
 });
+
+/*
+1   +(5–8)   to Intelligence (Tier: 1[8]) (Grade: 8)
+11  +(9–12)  to Intelligence (Tier: 2[8]) (Grade: 7)
+22  +(13–16) to Intelligence (Tier: 3[8]) (Grade: 6)
+33  +(17–20) to Intelligence (Tier: 4[8]) (Grade: 5)
+44  +(21–24) to Intelligence (Tier: 5[8]) (Grade: 4)
+55  +(25–27) to Intelligence (Tier: 6[8]) (Grade: 3)
+66  +(28–30) to Intelligence (Tier: 7[8]) (Grade: 2)
+74  +(31–33) to Intelligence (Tier: 8[8]) (Grade: 1)
+ */
 
 const stats = computed(() => {
   const { stats } = props.source.modifier;

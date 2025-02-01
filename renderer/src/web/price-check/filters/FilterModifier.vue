@@ -96,6 +96,7 @@
           >
           <filter-modifier-tiers :filter="filter" :item="item" />
           <filter-modifier-item-has-empty :filter="filter" />
+          <filter-modifier-item-is-elemental :filter="filter" />
         </div>
         <stat-roll-slider
           v-if="roll && roll.bounds"
@@ -128,6 +129,7 @@ import { AppConfig } from "@/web/Config";
 import { ItemRarity, ParsedItem } from "@/parser";
 import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from "./interfaces";
 import SourceInfo from "./SourceInfo.vue";
+import FilterModifierItemIsElemental from "./FilterModifierItemIsElemental.vue";
 
 export default defineComponent({
   components: {
@@ -138,6 +140,7 @@ export default defineComponent({
     SourceInfo,
     StatRollSlider,
     UiPopover,
+    FilterModifierItemIsElemental,
   },
   emits: ["submit"],
   props: {
@@ -170,13 +173,15 @@ export default defineComponent({
     );
 
     const showQ20Notice = computed(() => {
-      return [
-        "item.armour",
-        "item.evasion_rating",
-        "item.energy_shield",
-        "item.total_dps",
-        "item.physical_dps",
-      ].includes(props.filter.tradeId[0]);
+      return (
+        [
+          "item.armour",
+          "item.evasion_rating",
+          "item.energy_shield",
+          "item.total_dps",
+          "item.physical_dps",
+        ].includes(props.filter.tradeId[0]) && !props.item.isCorrupted
+      );
     });
 
     const calcQuality = computed(() => Math.max(20, props.item.quality || 0));

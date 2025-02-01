@@ -99,6 +99,17 @@ export interface FilterDropdown {
   options: Array<{ label: string; value: string }>;
 }
 
+export interface StatFilterRoll {
+  value: number;
+  min: number | "" | undefined; // NOTE: mutable in UI
+  max: number | "" | undefined; // NOTE: mutable in UI
+  default: { min: number; max: number };
+  bounds?: { min: number; max: number };
+  tradeInvert?: boolean;
+  dp: boolean;
+  isNegated: boolean;
+}
+
 export interface StatFilter {
   tradeId: string[];
   statRef: string;
@@ -106,22 +117,16 @@ export interface StatFilter {
   tag: FilterTag;
   oils?: string[];
   sources: StatCalculated["sources"];
-  roll?: {
-    value: number;
-    min: number | "" | undefined; // NOTE: mutable in UI
-    max: number | "" | undefined; // NOTE: mutable in UI
-    default: { min: number; max: number };
-    bounds?: { min: number; max: number };
-    tradeInvert?: boolean;
-    dp: boolean;
-    isNegated: boolean;
-  };
+  roll?: StatFilterRoll;
   option?: {
     value: number; // NOTE: mutable in UI
   };
   hidden?: string;
   disabled: boolean; // NOTE: mutable in UI
   weight?: number;
+  additionalInfo?: {
+    [key: string]: StatFilterRoll;
+  };
 }
 
 export interface WeightStatGroup {
@@ -150,6 +155,10 @@ export const INTERNAL_TRADE_IDS = [
   "item.aps",
   "item.has_empty_modifier",
   "item.spirit",
+  "item.has_elemental_affix",
+  "item.has_elemental_fire_affix",
+  "item.has_elemental_cold_affix",
+  "item.has_elemental_lightning_affix",
 ] as const;
 
 export type InternalTradeId = (typeof INTERNAL_TRADE_IDS)[number];
@@ -158,6 +167,12 @@ export enum ItemHasEmptyModifier {
   Any = 0,
   Prefix = 1,
   Suffix = 2,
+}
+export enum ItemIsElementalModifier {
+  Any = 0,
+  Fire = 1,
+  Cold = 2,
+  Lightning = 3,
 }
 
 export enum FilterTag {

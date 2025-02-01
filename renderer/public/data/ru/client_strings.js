@@ -150,5 +150,6 @@ export default {
   WAYSTONE_HELP: 'Можно использовать в Машине картоходца,',
   JEWEL_HELP: 'Поместите самоцвет',
   SANCTUM_HELP: 'Разместите этот предмет на алтаре',
-  TIMELESS_RADIUS: 'Радиус: '
+  TIMELESS_RADIUS: 'Радиус: ',
+  PRECURSOR_TABLET_HELP: 'Может быть использовано в завершенной башне на вашем Атласе, чтобы '
 }

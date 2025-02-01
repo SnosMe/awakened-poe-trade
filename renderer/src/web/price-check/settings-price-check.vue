@@ -82,6 +82,21 @@
         }}</ui-radio>
       </div>
     </div>
+    <div class="mb-4">
+      <div class="flex-1 mb-1">{{ t(":tier_numbering") }}</div>
+      <div class="mb-1 flex">
+        <ui-radio v-model="tierNumbering" value="poe1" class="mr-4">{{
+          t(":tier_numbering_poe1")
+        }}</ui-radio>
+        <ui-radio v-model="tierNumbering" value="poe2" class="mr-4">{{
+          t(":tier_numbering_poe2")
+        }}</ui-radio>
+      </div>
+      <div class="mb-4 italic text-gray-500">
+        {{ t(":tier_numbering_help") }}
+      </div>
+    </div>
+
     <ui-checkbox class="mb-4" v-model="rememberCurrency">{{
       t(":remember_currency")
     }}</ui-checkbox>
@@ -97,6 +112,18 @@
     <ui-checkbox class="mb-4" v-model="showCursor">{{
       t(":cursor_pos")
     }}</ui-checkbox>
+
+    <div class="mb-4">
+      <select
+        v-model="autoFillEmptyRuneSockets"
+        class="p-1 rounded bg-gray-700 w-24"
+      >
+        <!-- This is true since it will be assigned to "disabled" in the code -->
+        <option :value="false">No</option>
+        <option value="Iron Rune">Iron Rune</option>
+      </select>
+      Automatically fill empty rune sockets
+    </div>
 
     <ui-checkbox class="mb-4" v-model="usePseudo">{{
       t(":use_pseudo")
@@ -178,7 +205,7 @@ import UiRadio from "@/web/ui/UiRadio.vue";
 import UiCheckbox from "@/web/ui/UiCheckbox.vue";
 import UiToggle from "@/web/ui/UiToggle.vue";
 import UiErrorBox from "@/web/ui/UiErrorBox.vue";
-import { configModelValue, configProp, findWidget } from "./utils";
+import { configModelValue, configProp, findWidget } from "../settings/utils.js";
 import type { PriceCheckWidget } from "@/web/overlay/interfaces";
 import { useLeagues } from "../background/Leagues";
 
@@ -279,6 +306,14 @@ export default defineComponent({
       tooltipHover: configModelValue(
         () => configWidget.value,
         "itemHoverTooltip",
+      ),
+      autoFillEmptyRuneSockets: configModelValue(
+        () => configWidget.value,
+        "autoFillEmptyRuneSockets",
+      ),
+      tierNumbering: configModelValue(
+        () => configWidget.value,
+        "tierNumbering",
       ),
     };
   },

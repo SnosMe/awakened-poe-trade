@@ -116,6 +116,7 @@ export default {
   WAYSTONE_HELP: 'Kann in einem Kartenapparat verwendet werden und gewährt dir Zutritt zu einer Karte. Wegsteine',
   JEWEL_HELP: 'Platziere das',
   SANCTUM_HELP: 'Platziere diesen Gegenstand beim',
-  TIMELESS_RADIUS: 'Radius: '
+  TIMELESS_RADIUS: 'Radius: ',
+  PRECURSOR_TABLET_HELP: 'Kann in einem abgeschlossenen Turm auf Eurem Atlas verwendet werden,'
 }
 

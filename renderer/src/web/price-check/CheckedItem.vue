@@ -71,6 +71,7 @@
         >
       </i18n-t>
     </div>
+    <tip v-else-if="showTip" :selected="showTip" />
   </div>
 </template>
 
@@ -96,16 +97,19 @@ import { createPresets } from "./filters/create-presets";
 import PricePrediction from "./price-prediction/PricePrediction.vue";
 import StackValue from "./stack-value/StackValue.vue";
 import FilterName from "./filters/FilterName.vue";
+import Tip from "../help/Tip.vue";
 import {
   CATEGORY_TO_TRADE_ID,
   createTradeRequest,
 } from "./trade/pathofexile-trade";
-import { AppConfig } from "@/web/Config";
+import { AppConfig, TipsFrequency } from "@/web/Config";
 import { FilterPreset } from "./filters/interfaces";
 import { PriceCheckWidget } from "../overlay/interfaces";
 import { useLeagues } from "@/web/background/Leagues";
+import { randomTip, TIP_FREQUENCY_MAP } from "../help/tips";
 
 let _showSupportLinksCounter = 0;
+let _showTipCounter = 15;
 
 export default defineComponent({
   name: "CheckedItem",
@@ -118,6 +122,7 @@ export default defineComponent({
     FiltersBlock,
     FilterName,
     StackValue,
+    Tip,
   },
   props: {
     item: {
@@ -195,6 +200,7 @@ export default defineComponent({
             widget.value.usePseudo &&
             ["en", "ru", "ko", "cmn-Hant"].includes(lang.value),
           defaultAllSelected: widget.value.defaultAllSelected,
+          autoFillEmptyRuneSockets: widget.value.autoFillEmptyRuneSockets,
         });
 
         if (
@@ -323,6 +329,7 @@ export default defineComponent({
     }
 
     const showSupportLinks = ref(false);
+    const showTip = ref(0);
     watch(
       () => [props.item, doSearch.value],
       ([cItem, cInteracted], [pItem]) => {
@@ -334,6 +341,22 @@ export default defineComponent({
           _showSupportLinksCounter = 0;
         } else {
           showSupportLinks.value = false;
+          if (
+            AppConfig().tipsFrequency !== TipsFrequency.Never &&
+            (AppConfig().tipsFrequency === TipsFrequency.Always ||
+              _showTipCounter >=
+                TIP_FREQUENCY_MAP[AppConfig().tipsFrequency]) &&
+            !cInteracted
+          ) {
+            _showTipCounter = 0;
+            showTip.value = randomTip();
+          } else {
+            showTip.value = 0;
+            if (cItem !== pItem) {
+              _showTipCounter += 1;
+            }
+          }
+
           if (cItem !== pItem) {
             _showSupportLinksCounter += 1;
           }
@@ -353,6 +376,7 @@ export default defineComponent({
       tradeService,
       filtersComponent,
       showPredictedPrice,
+      showTip,
       show,
       handleSearchMouseenter,
       showSupportLinks,

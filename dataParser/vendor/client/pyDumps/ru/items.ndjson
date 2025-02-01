@@ -2923,7 +2923,7 @@
 {"name": "Иннсмут", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Потрёпанный капюшон", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "Железная хватка", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Доспех бродяги", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "Железный наездник", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Шлем с козырьком", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "Ярнгрейпр", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Кольчужные перчатки", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "Ярнгрейпр", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Кольчужные перчатки", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "Сердце Каома", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Доспех завоевателя", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Корона из костей духа", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "Брюзга", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3030,28 +3030,28 @@
 {"name": "Кабаний промысел", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Дубина из пня", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "Гимн Гримнора", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Дубовая кувалда", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Копьё с железным наконечником"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Тупой топорик"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ржавый длинный меч"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор палача"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Тупой топорик"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий меч"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Старый нож"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Цепное гасило"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Священное молотило"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Обугленный короткий меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор лесоруба"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Загнутый большой топор"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Фламберг"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Нож скорняка"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Железный большой меч"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Простой кинжал"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Секач"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Бородовидный топор"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Нож скорняка"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Железный большой меч"}}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор лесоруба"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Лунный кинжал"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Охотничье копьё"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Священное молотило"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Воинское копьё"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Освящённый клеймор"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Двойной кистень"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий большой меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Цепное гасило"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Бандитский чекан"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Клинок-кровопийца"}}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Изящная глевия"}}

@@ -239,6 +239,7 @@ export interface TranslationDict {
   JEWEL_HELP: string;
   SANCTUM_HELP: string;
   TIMELESS_RADIUS: string;
+  PRECURSOR_TABLET_HELP: string;
 }
 
 export interface Filter {

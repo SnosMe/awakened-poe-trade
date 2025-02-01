@@ -13,16 +13,17 @@ import { AppConfig } from "@/web/Config";
 import { PriceCheckWidget } from "@/web/overlay/widgets";
 import { filterItemProp } from "./pseudo/item-property";
 
-export function handleFillButtonPress(
+export function handleFillRuneSockets(
   filters: StatFilter[],
   item: ParsedItem,
   shouldFill: boolean,
   filterStorage: StatFilter[],
+  rune?: string,
 ) {
   if (shouldFill) {
     if (filterStorage.length !== 0) return;
     // Testing with just one stat
-    const newFilters = createNewStatFilter(item, "Iron Rune");
+    const newFilters = createNewStatFilter(item, rune ?? "Iron Rune");
     if (!newFilters) return;
     const newFiltersByRef = newFilters.reduce<Record<string, StatFilter>>(
       (dict, filter) => {

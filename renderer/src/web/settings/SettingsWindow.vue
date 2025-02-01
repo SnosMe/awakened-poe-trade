@@ -123,20 +123,25 @@ import {
 } from "@/web/Config";
 import { APP_PATRONS } from "@/assets/data";
 import { Host } from "@/web/background/IPC";
-import type { Widget, WidgetManager } from "@/web/overlay/interfaces";
+import type {
+  Widget,
+  WidgetManager,
+  WidgetSpec,
+} from "@/web/overlay/interfaces";
 import AppTitleBar from "@/web/ui/AppTitlebar.vue";
 import SettingsHotkeys from "./hotkeys.vue";
 import SettingsChat from "./chat.vue";
 import SettingsGeneral from "./general.vue";
 import SettingsAbout from "./about.vue";
-import SettingsPricecheck from "./price-check.vue";
+import SettingsPricecheck from "../price-check/settings-price-check.vue";
 import SettingsItemcheck from "../item-check/settings-item-check.vue";
+import SettingsHelp from "./help.vue";
 import SettingsDebug from "./debug.vue";
 import SettingsMaps from "../map-check/settings-maps.vue";
 import SettingsFilterGeneratorEditor from "../filter-generator/FilterGeneratorEditor.vue";
 import SettingsFilterGeneratorAbout from "../filter-generator/FilterGeneratorAbout.vue";
 import SettingsStashSearch from "../stash-search/stash-search-editor.vue";
-import SettingsStopwatch from "./stopwatch.vue";
+import SettingsStopwatch from "../stopwatch/settings-stopwatch.vue";
 import SettingsItemSearch from "../item-search/settings-item-search.vue";
 import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 
@@ -161,6 +166,20 @@ function quit() {
 }
 
 export default defineComponent({
+  widget: {
+    type: "settings",
+    instances: "single",
+    initInstance: () => {
+      return {
+        wmId: 0,
+        wmType: "settings",
+        wmTitle: "{icon=fa-cog}",
+        wmWants: "hide",
+        wmZorder: "exclusive",
+        wmFlags: ["invisible-on-blur", "ignore-ui-visibility"],
+      };
+    },
+  } satisfies WidgetSpec,
   components: { AppTitleBar, ConversionWarningBanner },
   props: {
     config: {
@@ -299,7 +318,7 @@ function menuByType(type?: string) {
         [SettingsHotkeys, SettingsChat],
         [SettingsGeneral],
         [SettingsPricecheck, SettingsMaps, SettingsItemcheck],
-        [SettingsDebug, SettingsAbout],
+        [SettingsHelp, SettingsDebug, SettingsAbout],
       ];
   }
 }

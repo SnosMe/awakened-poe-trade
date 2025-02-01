@@ -59,6 +59,8 @@ function mapItemCategoryToKeys(itemCategory: ItemCategory): string[] {
     [ItemCategory.Focus]: ["focus", "armour"],
     [ItemCategory.Waystone]: [""],
     [ItemCategory.Relic]: [""],
+    [ItemCategory.Tablet]: [""],
+    [ItemCategory.TowerAugment]: [""],
   };
 
   return categoryMap[itemCategory] || [itemCategory.toLowerCase()];
@@ -295,15 +297,15 @@ export function getTierNumber(
   mod: StatTierMod,
   itemCategory: ItemCategory,
   tierArray: StatTierMod[],
-): number {
+): { poe1: number; poe2: number } | undefined {
   if (mod === undefined || mod.mods === undefined || !mod.mods) {
     console.warn("No mods found for mod", mod);
-    return -1;
+    return;
   }
 
   if (tier === undefined || itemCategory === undefined) {
     console.warn("No tier or itemCategory found");
-    return -1;
+    return;
   }
 
   // Map the itemCategory to its corresponding key(s)
@@ -315,7 +317,7 @@ export function getTierNumber(
     );
 
   if (!categoryExists || !primaryCategoryKey) {
-    return -1; // Return -1 if the category is not found in any mod
+    return; // Return if the category is not found in any mod
   }
 
   // Find the index of the given tier in mod.mods
@@ -331,5 +333,5 @@ export function getTierNumber(
     .filter((t) => t.items.includes(primaryCategoryKey)).length;
 
   // Return the tier number (1-based)
-  return matchingTiersAfter + 1;
+  return { poe1: matchingTiersAfter + 1, poe2: tierIndex + 1 };
 }

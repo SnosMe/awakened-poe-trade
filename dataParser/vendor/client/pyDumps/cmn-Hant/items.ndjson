@@ -1,5 +1,5 @@
 {"name": "Bidding", "refName": "Bidding", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Overseer Precursor Tablet", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Overseer Precursor Tablet", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -2923,7 +2923,7 @@
 {"name": "印斯茅斯", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "破舊兜帽", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "鐵握", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "流浪者護甲", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "鐵騎", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "假面之盔", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "雅恩格利佩爾", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "環鎖護手", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "雅恩格利佩爾", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "環鎖護手", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "岡姆的壯志", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "征服者鎧甲", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "電弧守護者", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "魂骨之冠", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "掃興之人", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "麻布裹手", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3009,8 +3009,8 @@
 {"name": "受控的蛻變", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "鑽石", "stats": {"#% to all Elemental Resistances": [[-20, -5]], "#% to Chaos Resistance": [[-23, -3]]}}}
 {"name": "從無到有", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "鑽石", "stats": {}}}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "紅玉", "stats": {}}}
-{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "藍玉"}}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠綠碧雲"}}
 {"name": "英雄悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "永恆珠寶", "stats": {"Remembrancing # songworthy deeds by the line of Vorana": [[100, 8000]]}}}
 {"name": "妄想症", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "鑽石", "stats": {}}}
 {"name": "信仰棱鏡", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "鑽石", "stats": {"# to Level of all Specific Skill Skills": [[1, 3]]}}}
@@ -3028,7 +3028,6 @@
 {"name": "引導之掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "神殿權杖", "stats": {"Allies in your Presence deal # to # additional Attack Fire Damage": [[4, 6], [7, 10]], "# to all Attributes": [[5, 10]]}}}
 {"name": "獵豬", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "墮落巨棍棒", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "雷姆諾的奪命樂具", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "橡木巨錘", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
-{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "拱形巨斧"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鍛鐵巨劍"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂鏈錘"}}
@@ -3036,6 +3035,8 @@
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "戰爭長鋒"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "闊劍"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "焦黑短劍"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "分裂巨斧"}}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "輕巧斧槍"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "優雅長柄刀"}}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "闊刃巨劍"}}
 {"name": "生機之記", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "調和法杖", "stats": {"# to maximum Mana": [[10, 20]], "# to Level of all Spell Skills": [[1, 3]], "#% increased Cast Speed": [[5, 10]]}}}
@@ -3062,9 +3063,9 @@
 {"name": "崔非那", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "鍛造重錘", "stats": {"Adds # to # Physical Damage": [[12, 15], [22, 25]], "#% increased Attack Speed": [[10, 15]], "Causes #% increased Stun Buildup": [[30, 50]]}}}
 {"name": "鰥寡之托", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "粗製弓", "stats": {"#% increased bonuses gained from Equipped Quiver": [[150, 250]]}}}
 {"name": "威倫德的木樁", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "鍛造錘", "stats": {"Adds # to # Physical Damage": [[4, 6], [8, 10]], "Adds # to # Fire Damage": [[4, 6], [8, 10]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[20, 30]], "Hits Break # Armour": [[30, 50]]}}}
-{"name": "破香爐", "refName": "破香爐", "namespace": "UNIQUE", "unique": {"base": "聖經聖物"}}
-{"name": "夜燈", "refName": "夜燈", "namespace": "UNIQUE", "unique": {"base": "草紙聖物"}}
-{"name": "第二聖事", "refName": "第二聖事", "namespace": "UNIQUE", "unique": {"base": "器皿聖物"}}
+{"name": "領袖的重擔", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "聖經聖物", "stats": {}}}
+{"name": "流轉的季節", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "草紙聖物", "stats": {}}}
+{"name": "絕望的同盟", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "器皿聖物", "stats": {}}}
 {"name": "終焉烈焰", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "香爐聖物", "stats": {}}}
 {"name": "和平使者藥水", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "陶罐聖物", "stats": {}}}
-{"name": "第一頂峰", "refName": "第一頂峰", "namespace": "UNIQUE", "unique": {"base": "寶箱聖物"}}
+{"name": "被銘記的故事", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "寶箱聖物", "stats": {}}}

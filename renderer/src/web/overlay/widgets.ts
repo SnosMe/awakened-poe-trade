@@ -7,9 +7,17 @@ export interface Widget {
   wmFlags: Array<WellKnownFlag | string>;
 }
 
+export interface WidgetSpec {
+  type: string;
+  instances: "single" | "multi";
+  trNameKey?: string;
+  initInstance?: () => Widget;
+  defaultInstances?: () => Widget[];
+}
+
 export type WellKnownFlag =
   | "uninitialized"
-  | "skip-menu"
+  | "menu::skip"
   | "has-browser"
   | "invisible-on-blur"
   | "hide-on-blur"
@@ -46,6 +54,8 @@ export interface PriceCheckWidget extends Widget {
   rememberCurrency: boolean;
   defaultAllSelected: boolean;
   itemHoverTooltip: "off" | "keybind" | "always";
+  autoFillEmptyRuneSockets: "Iron Rune" | false;
+  tierNumbering: "poe1" | "poe2";
 }
 
 export interface StopwatchWidget extends Widget {

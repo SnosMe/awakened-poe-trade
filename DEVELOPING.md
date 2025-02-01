@@ -53,3 +53,11 @@ CSC_NAME="Certificate name in Keychain" yarn package
 7. `git tag vX.X.X`
 8. `git push origin vX.X.X`
 9. Open release page, create release with tag & title as text of tag & save as draft
+
+# How to build yourself
+
+```shell
+sh testUpdate.sh
+```
+
+Read the contents of `testUpdate.sh` to understand what it does. Running random scripts from the internet is not recommended so you really should read the code before running it.

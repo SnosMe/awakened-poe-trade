@@ -2923,7 +2923,7 @@
 {"name": "インスマス", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "ボロボロのフード", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
 {"name": "アイアングラスプ", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "放浪者の鎧", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
 {"name": "アイアンライド", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "バイザー付き兜", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "ヤールングレイプル", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "リングメイルガントレット", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[60, 80]], "#% increased Attack Speed": [[4, 8]]}}}
+{"name": "ヤールングレイプル", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "リングメイルガントレット", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
 {"name": "カオムの心臓", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "コンカラープレート", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
 {"name": "弧の守りて", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "スピリットボーンの冠", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
 {"name": "キルジョイ", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "リネンのラップ", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
@@ -3030,28 +3030,28 @@
 {"name": "豚狩り", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "倒木のグレートクラブ", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
 {"name": "フリムノーの聖歌", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "オークグレートハンマー", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "アイアンヘッドスピアー"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鈍らな手斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "腐食したグレートソード"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "処刑人の大斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鈍らな手斧"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ブロードソード"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "クローンナイフ"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "チェインフレイル"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ホーリーフレイル"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "黒焦げのショートソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "割り大斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "弓型の大斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "リップルグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "剥ぎ取りナイフ"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉄のグレートソード"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "簡素な短剣"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉤付き斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "髭斧"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ブロードソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "剥ぎ取りナイフ"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "鉄のグレートソード"}}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "割り大斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "月の短剣"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ハンティングスピアー"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ホーリーフレイル"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ウォースピアー"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "祝福されたクレイモア"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "双頭のフレイル"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "ブロードグレートソード"}}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "チェインフレイル"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "山賊の手斧"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "吸血鬼の刃"}}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "エレガントグレイブ"}}
