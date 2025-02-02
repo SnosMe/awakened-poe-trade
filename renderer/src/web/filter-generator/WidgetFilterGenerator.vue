@@ -138,7 +138,7 @@ if (props.config.wmFlags[0] === "uninitialized") {
 
 function openSettings() {
   const settings = wm.widgets.value.find((w) => w.wmType === "settings")!;
-  wm.setFlag(settings.wmId, `settings:widget:${props.config.wmId}`, true);
+  wm.setFlag(settings.wmId, `settings::widget=${props.config.wmId}`, true);
   wm.show(settings.wmId);
 }
 

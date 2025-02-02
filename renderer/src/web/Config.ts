@@ -150,7 +150,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 22,
+  configVersion: 23,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -500,17 +500,48 @@ function upgradeConfig(_config: Config): Config {
     config.configVersion = 21;
   }
 
+  const priceCheck = config.widgets.find(
+    (w) => w.wmType === "price-check",
+  ) as widget.PriceCheckWidget;
+  if (priceCheck.rememberCurrency === undefined) {
+    priceCheck.rememberCurrency = false;
+  }
+
+  for (const widget of config.widgets) {
+    if (widget.wmType === "stash-search") {
+      (widget as StashSearchWidget).enableHotkeys ??= true;
+    }
+  }
+
+  if (config.logKeys === undefined) {
+    config.logKeys = false;
+  }
+
   if (config.configVersion < 22) {
     // NOTE: v0.7.0
     config.widgets.find(
       (w) => w.wmType === "price-check",
     )!.autoFillEmptyRuneSockets = false;
 
+    config.widgets.find((w) => w.wmType === "price-check")!.tierNumbering =
+      "poe2";
+
+    config.tipsFrequency = TipsFrequency.Normal;
+
+    config.configVersion = 22;
+  }
+
+  if (config.configVersion < 23) {
     for (const widget of config.widgets) {
       for (let i = 0; i < widget.wmFlags.length; ++i) {
         if (widget.wmFlags[i] === "skip-menu") {
           widget.wmFlags[i] = "menu::skip";
         }
+      }
+      if (widget.wmType === "settings") {
+        widget.wmFlags = widget.wmFlags.filter(
+          (flag: string) => !flag.startsWith("settings::"),
+        );
       }
     }
 
@@ -530,29 +561,7 @@ function upgradeConfig(_config: Config): Config {
       return 0;
     });
 
-    config.widgets.find((w) => w.wmType === "price-check")!.tierNumbering =
-      "poe2";
-
-    config.tipsFrequency = TipsFrequency.Normal;
-
-    config.configVersion = 22;
-  }
-
-  if (config.logKeys === undefined) {
-    config.logKeys = false;
-  }
-
-  const priceCheck = config.widgets.find(
-    (w) => w.wmType === "price-check",
-  ) as widget.PriceCheckWidget;
-  if (priceCheck.rememberCurrency === undefined) {
-    priceCheck.rememberCurrency = false;
-  }
-
-  for (const widget of config.widgets) {
-    if (widget.wmType === "stash-search") {
-      (widget as StashSearchWidget).enableHotkeys ??= true;
-    }
+    config.configVersion = 23;
   }
 
   return config as unknown as Config;

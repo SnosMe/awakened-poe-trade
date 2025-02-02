@@ -229,10 +229,10 @@ export default defineComponent({
       () => props.config.wmFlags,
       (wmFlags) => {
         const flagStr = wmFlags.find((flag) =>
-          flag.startsWith("settings:widget:"),
+          flag.startsWith("settings::widget="),
         );
         if (flagStr) {
-          const _wmId = Number(flagStr.split(":")[2]);
+          const _wmId = Number(flagStr.split("=")[1]);
           const _widget = wm.widgets.value.find((w) => w.wmId === _wmId)!;
           selectedWmId.value = _wmId;
           selectedComponent.value = menuByType(_widget.wmType)[0][0];
