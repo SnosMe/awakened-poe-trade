@@ -5,6 +5,7 @@ import { RateLimiter } from './RateLimiter'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
+import { AppConfig } from '@/web/Config'
 
 interface TradeRequest { /* eslint-disable camelcase */
   engine: 'new'
@@ -70,7 +71,8 @@ async function requestTradeResultList (body: TradeRequest, leagueId: string): Pr
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'poesessid': AppConfig().poesessid
       },
       body: JSON.stringify(body)
     })

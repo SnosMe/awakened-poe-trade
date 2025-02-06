@@ -8,6 +8,7 @@ import { STAT_BY_REF } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
+import { AppConfig } from '@/web/Config'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Map, 'map'],
@@ -532,7 +533,8 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'poesessid': AppConfig().poesessid
       },
       body: JSON.stringify(body)
     })
@@ -561,7 +563,11 @@ export async function requestResults (
   if (!data) {
     await RateLimiter.waitMulti(RATE_LIMIT_RULES.FETCH)
 
-    const response = await Host.proxy(`${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`)
+    const response = await Host.proxy(`${getTradeEndpoint()}/api/trade/fetch/${resultIds.join(',')}?query=${queryId}`, {
+      headers: {
+        'poesessid': AppConfig().poesessid
+      }
+    })
     adjustRateLimits(RATE_LIMIT_RULES.FETCH, response.headers)
 
     const _data = await response.json() as TradeResponse<{ result: Array<FetchResult | null> }>
@@ -619,17 +625,17 @@ function tradeIdToQuery (id: string, stat: StatFilter) {
     if (stat.roll?.value === 100) {
       roll = undefined // stat semantic type is flag
     }
-  // fixes "Cannot be Poisoned" from Essence
+    // fixes "Cannot be Poisoned" from Essence
   } else if (id === 'explicit.stat_3835551335') {
     if (stat.roll?.value === 100) {
       roll = undefined // stat semantic type is flag
     }
-  // fixes "Instant Recovery" on Flasks
+    // fixes "Instant Recovery" on Flasks
   } else if (id.endsWith('stat_1526933524')) {
     if (stat.roll?.value === 100) {
       roll = undefined // stat semantic type is flag
     }
-  // fixes Delve "Reservation Efficiency of Skills"
+    // fixes Delve "Reservation Efficiency of Skills"
   } else if (id.endsWith('stat_1269219558')) {
     roll = { ...roll!, tradeInvert: !(roll!.tradeInvert) }
   }
