@@ -129,6 +129,7 @@ export default defineComponent({
           (item.category === ItemCategory.HeistBlueprint) ||
           (item.category === ItemCategory.SanctumRelic) ||
           (item.category === ItemCategory.Charm) ||
+          (item.category === ItemCategory.Idol) ||
           (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
           (item.isUnidentified) ||
           (item.isVeiled)

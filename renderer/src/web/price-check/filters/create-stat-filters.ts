@@ -36,7 +36,8 @@ export function createExactStatFilters (
   if (
     !item.influences.length &&
     !item.isFractured &&
-    item.category !== ItemCategory.Tincture
+    item.category !== ItemCategory.Tincture &&
+    item.category !== ItemCategory.Idol
   ) {
     keepByType.push(ModifierType.Implicit)
   }
@@ -48,6 +49,8 @@ export function createExactStatFilters (
     item.category !== ItemCategory.HeistBlueprint &&
     item.category !== ItemCategory.Sentinel
   )) {
+    keepByType.push(ModifierType.Explicit)
+  } else if (item.rarity === ItemRarity.Rare && item.category === ItemCategory.Idol) {
     keepByType.push(ModifierType.Explicit)
   }
 
@@ -106,6 +109,8 @@ export function createExactStatFilters (
     item.category === ItemCategory.Charm
   ) {
     enableAllFilters(ctx.filters)
+  } else if (item.category === ItemCategory.Idol) {
+    enableGoodRolledFilters(ctx.filters, 0.66)
   }
 
   return ctx.filters
@@ -257,6 +262,18 @@ export function calculatedStatToFilter (
       }
     }
 
+    let goodness: number | undefined
+    if (calc.stat.better !== StatBetter.NotComparable) {
+      if (roll.min === roll.max) {
+        goodness = 1
+      } else {
+        goodness = (roll.value - roll.min) / (roll.max - roll.min)
+        if (calc.stat.better === StatBetter.NegativeRoll) {
+          goodness = 1 - goodness
+        }
+      }
+    }
+
     const dp =
     calc.stat.dp ||
     calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
@@ -290,7 +307,8 @@ export function calculatedStatToFilter (
         : undefined,
       dp: dp,
       isNegated: false,
-      tradeInvert: calc.stat.trade.inverted
+      tradeInvert: calc.stat.trade.inverted,
+      goodness
     }
 
     filterFillMinMax(filter.roll, calc.stat.better)
@@ -501,6 +519,20 @@ function showHasEmptyModifier (ctx: FiltersCreationContext): ItemHasEmptyModifie
 function enableAllFilters (filters: StatFilter[]) {
   for (const filter of filters) {
     if (!filter.hidden) {
+      filter.disabled = false
+    }
+  }
+}
+
+function enableGoodRolledFilters (filters: StatFilter[], abovePct: number) {
+  for (const filter of filters) {
+    if (filter.hidden) continue
+    if (!filter.roll || filter.roll.goodness == null) {
+      filter.disabled = false
+      continue
+    }
+
+    if (filter.roll.goodness >= abovePct) {
       filter.disabled = false
     }
   }

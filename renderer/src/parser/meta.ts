@@ -47,6 +47,7 @@ export enum ItemCategory {
   SanctumRelic = 'Sanctum Relic',
   Tincture = 'Tincture',
   Charm = 'Charm',
+  Idol = 'Idol',
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([

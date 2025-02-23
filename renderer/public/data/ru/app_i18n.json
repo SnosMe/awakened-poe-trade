@@ -148,7 +148,10 @@
     "heistequipment_heistweapon": "Разбойничьи принадлежности",
     "heistequipment_heistutility": "Разбойничья накидка",
     "accessory_trinket": "Украшение",
-    "sanctum_relic": "Реликвия Святилища"
+    "sanctum_relic": "Реликвия Святилища",
+    "tincture": "Микстура",
+    "azmeri_charm": "Оберег",
+    "idol": "Идол"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",

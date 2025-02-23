@@ -166,7 +166,10 @@ export function createFilters (
     }
     if (item.category && CATEGORY_TO_TRADE_ID.has(item.category)) {
       let disabled = opts.exact
-      if (item.category === ItemCategory.ClusterJewel) {
+      if (
+        item.category === ItemCategory.ClusterJewel ||
+        item.category === ItemCategory.Idol
+      ) {
         disabled = true
       } else if (
         item.category === ItemCategory.SanctumRelic ||
@@ -271,6 +274,7 @@ export function createFilters (
       item.category !== ItemCategory.MemoryLine &&
       item.category !== ItemCategory.SanctumRelic &&
       item.category !== ItemCategory.Charm &&
+      item.category !== ItemCategory.Idol &&
       item.info.refName !== 'Expedition Logbook'
     ) {
       if (item.category === ItemCategory.ClusterJewel) {
