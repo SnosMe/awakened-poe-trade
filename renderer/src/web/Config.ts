@@ -98,6 +98,7 @@ export function poeWebApi () {
 export interface Config {
   configVersion: number
   leagueId?: string
+  poesessid: string
   overlayKey: string
   overlayBackground: string
   overlayBackgroundClose: boolean
@@ -157,6 +158,7 @@ export const defaultConfig = (): Config => ({
   windowTitle: 'Path of Exile',
   logKeys: false,
   accountName: '',
+  poesessid: '',
   stashScroll: true,
   language: 'en',
   realm: 'pc-ggg',

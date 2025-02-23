@@ -27,6 +27,11 @@ export class HttpProxy {
         if (key.startsWith('sec-') || key === 'host' || key === 'origin' || key === 'content-length') {
           delete req.headers[key]
         }
+
+        if (key == 'poesessid') {
+          req.headers.cookie = 'POESESSID=' + (req.headers['poesessid'] ?? '');
+          delete req.headers['poesessid'];
+        }
       }
 
       const proxyReq = net.request({
@@ -36,14 +41,14 @@ export class HttpProxy {
           ...req.headers,
           'user-agent': app.userAgentFallback
         },
-        useSessionCookies: true
+        useSessionCookies: false
       })
       proxyReq.addListener('response', (proxyRes) => {
         const resHeaders = { ...proxyRes.headers }
         // `net.request` returns an already decoded body
         delete resHeaders['content-encoding']
         res.writeHead(proxyRes.statusCode, proxyRes.statusMessage, resHeaders)
-        ;(proxyRes as unknown as NodeJS.ReadableStream).pipe(res)
+          ;(proxyRes as unknown as NodeJS.ReadableStream).pipe(res)
       })
       proxyReq.addListener('error', (err) => {
         logger.write(`error [cors-proxy] ${err.message} (${host})`)

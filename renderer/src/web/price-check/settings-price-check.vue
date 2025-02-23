@@ -15,6 +15,10 @@
           <div class="text-gray-500">{{ t('settings.private_league') }}</div>
           <input v-model="customLeagueId" placeholder="My League (PL12345)" class="rounded bg-gray-900 px-1 mb-1 flex-1" />
         </div>
+        <div class="flex gap-x-2 mb-4">
+          <div class="text-gray-500">{{ t('settings.poesessid') }}</div>
+          <input v-model="poesessid" placeholder="" class="rounded bg-gray-900 px-1 mb-1 flex-1" />
+        </div>
       </template>
     </div>
     <ui-error-box v-else class="mb-4">
@@ -122,6 +126,7 @@ export default defineComponent({
           : '',
         set: (value) => { props.config.leagueId = value }
       }),
+      poesessid: configModelValue(() => props.config, 'poesessid'),
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
