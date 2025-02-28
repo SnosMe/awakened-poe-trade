@@ -1,4 +1,4 @@
-import { ITEM_BY_TRANSLATED } from "@/assets/data";
+import { ITEM_BY_REF } from "@/assets/data";
 import { AppConfig } from "@/web/Config";
 
 export function magicBasetype(name: string) {
@@ -16,7 +16,7 @@ export function magicBasetype(name: string) {
 
   const result = perm
     .map((name) => {
-      const result = ITEM_BY_TRANSLATED("ITEM", name);
+      const result = ITEM_BY_REF("ITEM", name);
       return { name, found: result && result[0].craftable };
     })
     .filter((res) => res.found)

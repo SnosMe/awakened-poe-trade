@@ -1,0 +1,365 @@
+{
+  "Wand": {
+    "filters": [
+      {
+        "id": "explicit.stat_1050105434"
+      },
+      {
+        "id": "explicit.stat_2974417149"
+      },
+      {
+        "id": "explicit.stat_3962278098"
+      },
+      {
+        "id": "explicit.stat_3291658075"
+      },
+      {
+        "id": "explicit.stat_2231156303"
+      },
+      {
+        "id": "explicit.stat_736967255"
+      },
+      {
+        "id": "explicit.stat_2768835289"
+      },
+      {
+        "id": "explicit.stat_3278136794"
+      },
+      {
+        "id": "explicit.stat_3015669065"
+      },
+      {
+        "id": "explicit.stat_2505884597"
+      }
+    ],
+    "type": "not"
+  },
+  "One Hand Mace": {
+    "filters": [
+      {
+        "id": "explicit.stat_1940865751"
+      },
+      {
+        "id": "explicit.stat_3336890334"
+      },
+      {
+        "id": "explicit.stat_1037193709"
+      },
+      {
+        "id": "explicit.stat_709508406"
+      },
+      {
+        "id": "explicit.stat_1509134228"
+      },
+      {
+        "id": "explicit.stat_387439868"
+      },
+      {
+        "id": "explicit.stat_691932474"
+      }
+    ],
+    "type": "not"
+  },
+  "Two Hand Mace": {
+    "filters": [
+      {
+        "id": "explicit.stat_1940865751"
+      },
+      {
+        "id": "explicit.stat_3336890334"
+      },
+      {
+        "id": "explicit.stat_1037193709"
+      },
+      {
+        "id": "explicit.stat_709508406"
+      },
+      {
+        "id": "explicit.stat_1509134228"
+      },
+      {
+        "id": "explicit.stat_387439868"
+      },
+      {
+        "id": "explicit.stat_691932474"
+      }
+    ],
+    "type": "not"
+  },
+  "Sceptre": {
+    "filters": [
+      {
+        "id": "explicit.stat_1050105434"
+      },
+      {
+        "id": "explicit.stat_1574590649"
+      },
+      {
+        "id": "explicit.stat_2854751904"
+      },
+      {
+        "id": "explicit.stat_849987426"
+      },
+      {
+        "id": "explicit.stat_2347036682"
+      },
+      {
+        "id": "explicit.stat_1798257884"
+      },
+      {
+        "id": "explicit.stat_3169585282"
+      },
+      {
+        "id": "explicit.stat_3984865854"
+      }
+    ],
+    "type": "not"
+  },
+  "Bow": {
+    "filters": [
+      {
+        "id": "explicit.stat_1940865751"
+      },
+      {
+        "id": "explicit.stat_3336890334"
+      },
+      {
+        "id": "explicit.stat_1037193709"
+      },
+      {
+        "id": "explicit.stat_709508406"
+      },
+      {
+        "id": "explicit.stat_1509134228"
+      },
+      {
+        "id": "explicit.stat_387439868"
+      },
+      {
+        "id": "explicit.stat_691932474"
+      }
+    ],
+    "type": "not"
+  },
+  "Staff": {
+    "filters": [
+      {
+        "id": "explicit.stat_1050105434"
+      },
+      {
+        "id": "explicit.stat_2974417149"
+      },
+      {
+        "id": "explicit.stat_3962278098"
+      },
+      {
+        "id": "explicit.stat_3291658075"
+      },
+      {
+        "id": "explicit.stat_2231156303"
+      },
+      {
+        "id": "explicit.stat_736967255"
+      },
+      {
+        "id": "explicit.stat_2768835289"
+      },
+      {
+        "id": "explicit.stat_3278136794"
+      },
+      {
+        "id": "explicit.stat_3015669065"
+      },
+      {
+        "id": "explicit.stat_2505884597"
+      }
+    ],
+    "type": "not"
+  },
+  "Warstaff": {
+    "filters": [
+      {
+        "id": "explicit.stat_1940865751"
+      },
+      {
+        "id": "explicit.stat_3336890334"
+      },
+      {
+        "id": "explicit.stat_1037193709"
+      },
+      {
+        "id": "explicit.stat_709508406"
+      },
+      {
+        "id": "explicit.stat_1509134228"
+      },
+      {
+        "id": "explicit.stat_387439868"
+      },
+      {
+        "id": "explicit.stat_691932474"
+      }
+    ],
+    "type": "not"
+  },
+  "Crossbow": {
+    "filters": [
+      {
+        "id": "explicit.stat_1940865751"
+      },
+      {
+        "id": "explicit.stat_3336890334"
+      },
+      {
+        "id": "explicit.stat_1037193709"
+      },
+      {
+        "id": "explicit.stat_709508406"
+      },
+      {
+        "id": "explicit.stat_1509134228"
+      },
+      {
+        "id": "explicit.stat_387439868"
+      },
+      {
+        "id": "explicit.stat_691932474"
+      }
+    ],
+    "type": "not"
+  },
+  "Quiver": {
+    "filters": [
+      {
+        "id": "explicit.stat_3032590688"
+      },
+      {
+        "id": "explicit.stat_1754445556"
+      },
+      {
+        "id": "explicit.stat_4067062424"
+      },
+      {
+        "id": "explicit.stat_1573130764"
+      },
+      {
+        "id": "explicit.stat_3759663284"
+      },
+      {
+        "id": "explicit.stat_1241625305"
+      },
+      {
+        "id": "explicit.stat_803737631"
+      }
+    ],
+    "type": "not"
+  },
+  "Focus": {
+    "filters": [
+      {
+        "id": "explicit.stat_1050105434"
+      },
+      {
+        "id": "explicit.stat_2974417149"
+      },
+      {
+        "id": "explicit.stat_2231156303"
+      },
+      {
+        "id": "explicit.stat_3291658075"
+      },
+      {
+        "id": "explicit.stat_3962278098"
+      },
+      {
+        "id": "explicit.stat_2768835289"
+      }
+    ],
+    "type": "not"
+  },
+  "Shield": {
+    "filters": [
+      {
+        "id": "explicit.stat_3299347043"
+      },
+      {
+        "id": "explicit.stat_3484657501"
+      },
+      {
+        "id": "explicit.stat_1062208444"
+      },
+      {
+        "id": "explicit.stat_2481353198"
+      },
+      {
+        "id": "explicit.stat_2881298780"
+      },
+      {
+        "id": "explicit.stat_915769802"
+      },
+      {
+        "id": "explicit.stat_53045048"
+      },
+      {
+        "id": "explicit.stat_124859000"
+      },
+      {
+        "id": "explicit.stat_4052037485"
+      },
+      {
+        "id": "explicit.stat_2451402625"
+      },
+      {
+        "id": "explicit.stat_3321629045"
+      }
+    ],
+    "type": "not"
+  },
+  "Amulet": {
+    "filters": [
+      {
+        "id": "explicit.stat_3299347043"
+      },
+      {
+        "id": "explicit.stat_2866361420"
+      },
+      {
+        "id": "explicit.stat_2481353198"
+      },
+      {
+        "id": "explicit.stat_2881298780"
+      },
+      {
+        "id": "explicit.stat_915769802"
+      },
+      {
+        "id": "explicit.stat_2106365538"
+      },
+      {
+        "id": "explicit.stat_3489782002"
+      },
+      {
+        "id": "explicit.stat_2974417149"
+      },
+      {
+        "id": "explicit.stat_3981240776"
+      },
+      {
+        "id": "explicit.stat_3917489142"
+      },
+      {
+        "id": "explicit.stat_2748665614"
+      },
+      {
+        "id": "explicit.stat_2482852589"
+      },
+      {
+        "id": "explicit.stat_803737631"
+      },
+      {
+        "id": "explicit.stat_1050105434"
+      }
+    ],
+    "type": "not"
+  }
+}

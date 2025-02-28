@@ -2,20 +2,17 @@ import { ModifierType, StatCalculated } from "@/parser/modifiers";
 import type { ParsedItem } from "@/parser";
 import type { StatFilter } from "../interfaces";
 
-const OILS = [
-  "Clear Oil",
-  "Sepia Oil",
-  "Amber Oil",
-  "Verdant Oil",
-  "Teal Oil",
-  "Azure Oil",
-  "Indigo Oil",
-  "Violet Oil",
-  "Crimson Oil",
-  "Black Oil",
-  "Opalescent Oil",
-  "Silver Oil",
-  "Golden Oil",
+const EMOTIONS = [
+  "Distilled Ire",
+  "Distilled Guilt",
+  "Distilled Greed",
+  "Distilled Paranoia",
+  "Distilled Envy",
+  "Distilled Disgust",
+  "Distilled Despair",
+  "Distilled Fear",
+  "Distilled Suffering",
+  "Distilled Isolation",
 ];
 
 export function decodeOils(calc: StatCalculated): string[] | undefined {
@@ -38,8 +35,8 @@ export function decodeOils(calc: StatCalculated): string[] | undefined {
   const decoded = encoded
     .split(",")
     .map(Number)
-    .sort((a, b) => b - a) // [Golden Oil ... Clear Oil]
-    .map((idx) => OILS[idx]);
+    // .sort((a, b) => b - a) // [Golden Oil ... Clear Oil]
+    .map((idx) => EMOTIONS[idx]);
 
   return decoded;
 }
@@ -52,7 +49,10 @@ export function applyAnointmentRules(filters: StatFilter[], item: ParsedItem) {
     anointment.disabled = false;
   } else if (!item.isCorrupted && !item.isMirrored) {
     const oils = anointment.oils!;
-    if (oils[0] !== "Golden Oil" && oils[0] !== "Silver Oil") {
+    if (
+      !oils.includes("Distilled Isolation") &&
+      !oils.includes("Distilled Suffering")
+    ) {
       anointment.hidden = "filters.hide_anointment";
       anointment.disabled = true;
     }

@@ -66,7 +66,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: 'Ungewöhnliche Gemmen',
   HEIST_BLUEPRINT_REPLICAS: 'Repliken oder Experimentelle Gegenstände',
   MIRRORED: 'Gespiegelt',
-  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,
+  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Level: (?<tier>\d+)\))?(?:\s+\(Rang: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: 'Präfix-Modifikator',
   SUFFIX_MODIFIER: 'Suffix-Modifikator',
   CRAFTED_PREFIX: 'Meister-Präfix-Modifikator',
@@ -117,6 +117,8 @@ export default {
   JEWEL_HELP: 'Platziere das',
   SANCTUM_HELP: 'Platziere diesen Gegenstand beim',
   TIMELESS_RADIUS: 'Radius: ',
-  PRECURSOR_TABLET_HELP: 'Kann in einem abgeschlossenen Turm auf Eurem Atlas verwendet werden,'
+  PRECURSOR_TABLET_HELP: 'Kann in einem abgeschlossenen Turm auf Eurem Atlas verwendet werden,',
+  LOGBOOK_HELP: 'Bringt diesen Gegenstand zu Dannig',
+  REQUIRES: 'Erfordert'
 }
 

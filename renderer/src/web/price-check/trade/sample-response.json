@@ -1738,6 +1738,136 @@
           }
         }
       }
+    },
+    {
+      "id": "e20fa3bd8917ef48165ab0cbf1983152252ec3155b32d1ef942915863691e2d3",
+      "listing": {
+        "method": "psapi",
+        "indexed": "2025-01-09T22:21:59Z",
+        "stash": {
+          "name": "4",
+          "x": 11,
+          "y": 2
+        },
+        "whisper": "@ПиськинТулупчик Здравствуйте, хочу купить у вас Кровоизливающий Рубин оглушения за 1 exalted в лиге Standard (секция \"4\"; позиция: 12 столбец, 3 ряд)",
+        "whisper_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4YzhiMjdlZTk3YTFlNjY4MDIzM2Y3ZDc4NTNiYmJjNCIsImlzcyI6ImFEYVhQZDNmZSIsImF1ZCI6ImNjMjVjMjI0LTllMTAtNDUwYy1hM2U1LWIyMTRjMmEwYjU5OSIsImRzdCI6Ilx1MDQxZlx1MDQzOFx1MDQ0MVx1MDQ0Y1x1MDQzYVx1MDQzOFx1MDQzZFx1MDQyMlx1MDQ0M1x1MDQzYlx1MDQ0M1x1MDQzZlx1MDQ0N1x1MDQzOFx1MDQzYSIsImxvYyI6InJ1X1JVIiwidG9rIjoiaXRlbSIsInN1YiI6ImUyMGZhM2JkODkxN2VmNDgxNjVhYjBjYmYxOTgzMTUyMjUyZWMzMTU1YjMyZDFlZjk0MjkxNTg2MzY5MWUyZDMiLCJkYXQiOiJmNzhhYzA2MDk5ODUyOTJhZjk2ZmI3NjZjZDAzYWJhNiIsImlhdCI6MTczOTk3Njg5MCwiZXhwIjoxNzM5OTc3MTkwfQ.MazdbgtwvDGM6J7xLGhjZYyfxmLD7tt_5MEWo1snRuI",
+        "account": {
+          "name": "isoofix#4861",
+          "online": {
+            "league": "Standard",
+            "status": "afk"
+          },
+          "lastCharacterName": "ПиськинТулупчик",
+          "language": "ru_RU",
+          "realm": "poe2"
+        },
+        "price": {
+          "type": "~price",
+          "amount": 1,
+          "currency": "exalted"
+        }
+      },
+      "item": {
+        "realm": "poe2",
+        "verified": true,
+        "w": 1,
+        "h": 1,
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1J1YnlKZXdlbCIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8ef1a48ec8/RubyJewel.png",
+        "league": "Standard",
+        "id": "e20fa3bd8917ef48165ab0cbf1983152252ec3155b32d1ef942915863691e2d3",
+        "name": "",
+        "typeLine": "Haemorrhaging Ruby of Stunning",
+        "baseType": "Ruby",
+        "rarity": "Magic",
+        "ilvl": 53,
+        "identified": true,
+        "note": "~price 1 exalted",
+        "corrupted": true,
+        "properties": [
+          {
+            "name": "[Jewel]",
+            "values": [],
+            "displayMode": 0
+          }
+        ],
+        "enchantMods": [
+          "[CorruptedBlood|Corrupted Blood] cannot be inflicted on you"
+        ],
+        "explicitMods": [
+          "16% increased [Stun] Buildup",
+          "14% increased [BuffMagnitude|Magnitude] of [Bleeding|Bleeding] you inflict"
+        ],
+        "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
+        "frameType": 1,
+        "extended": {
+          "mods": {
+            "explicit": [
+              {
+                "name": "of Stunning",
+                "tier": "S0",
+                "level": 1,
+                "magnitudes": [
+                  {
+                    "hash": "explicit.stat_239367161",
+                    "min": "10",
+                    "max": "20"
+                  }
+                ]
+              },
+              {
+                "name": "Haemorrhaging",
+                "tier": "P0",
+                "level": 1,
+                "magnitudes": [
+                  {
+                    "hash": "explicit.stat_3166958180",
+                    "min": "5",
+                    "max": "15"
+                  }
+                ]
+              }
+            ],
+            "enchant": [
+              {
+                "name": "",
+                "tier": "",
+                "level": 1,
+                "magnitudes": [
+                  {
+                    "hash": "enchant.stat_1658498488",
+                    "min": "1",
+                    "max": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          "hashes": {
+            "explicit": [
+              [
+                "explicit.stat_239367161",
+                [
+                  0
+                ]
+              ],
+              [
+                "explicit.stat_3166958180",
+                [
+                  1
+                ]
+              ]
+            ],
+            "enchant": [
+              [
+                "enchant.stat_1658498488",
+                [
+                  0
+                ]
+              ]
+            ]
+          }
+        }
+      }
     }
   ]
 }

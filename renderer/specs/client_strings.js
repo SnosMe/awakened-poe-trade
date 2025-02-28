@@ -24,7 +24,7 @@ export default {
   LIGHTNING_DAMAGE: 'Lightning Damage: ',
   COLD_DAMAGE: 'Cold Damage: ',
   FIRE_DAMAGE: 'Fire Damage: ',
-  CRIT_CHANCE: 'Critical Strike Chance: ',
+  CRIT_CHANCE: 'Critical Hit Chance: ',
   ATTACK_SPEED: 'Attacks per Second: ',
   ARMOUR: 'Armour: ',
   EVASION: 'Evasion Rating: ',
@@ -110,6 +110,14 @@ export default {
   BASE_SPIRIT: 'Spirit:',
   QUIVER_HELP_TEXT: 'Can only be equipped',
   FLASK_HELP_TEXT: 'Right click to drink.',
-  CHARM_HELP_TEXT: 'Used automatically when condition'
+  CHARM_HELP_TEXT: 'Used automatically when condition',
+  PRICE_NOTE: '',
+  WAYSTONE_TIER: '',
+  WAYSTONE_HELP: '',
+  JEWEL_HELP: '',
+  SANCTUM_HELP: '',
+  TIMELESS_RADIUS: '',
+  PRECURSOR_TABLET_HELP: '',
+  LOGBOOK_HELP: ''
 }
 

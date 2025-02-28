@@ -18,6 +18,7 @@ export interface StatTier {
 
 export interface StatTierMod {
   id: string;
+  generation?: string;
   items: {
     [type: string]: number;
   };
@@ -46,27 +47,12 @@ export interface Stat {
       [type: string]: string[];
     };
   };
-  tiers?: {
-    [key: string]:
-      | StatTierMod[]
-      | { [type: string]: StatTierMod }
-      | {
-          [type: string]: number[][];
-        };
-    explicit: StatTierMod[];
-    implicit: {
-      [type: string]: StatTierMod;
-    };
-    // unique: {
-    //   [type: string]: number[][];
-    // };
-    corruption: StatTierMod[];
-    crafted: StatTierMod[];
-    jewel: StatTierMod[];
-    corruptionjewel: StatTierMod[];
-    uniquejewel: StatTierMod[];
+}
+
+export interface TierLookup {
+  [ref: string]: {
+    [itemClass: string]: number;
   };
-  // isFakePseudo?: true;
 }
 
 export interface DropEntry {
@@ -100,10 +86,7 @@ export interface BaseType {
   };
   unique?: {
     base: BaseType["refName"];
-    fixedStats?: Array<Stat["ref"]>;
-    stats?: {
-      [key: string]: number[][];
-    };
+    fixedStats?: string[];
   };
   map?: {
     screenshot?: string;
@@ -215,6 +198,7 @@ export interface TranslationDict {
   FOIL_UNIQUE: string;
   UNMODIFIABLE: string;
   REQUIREMENTS: string;
+  REQUIRES: string;
   CHARM_SLOTS: string;
   BASE_SPIRIT: string;
   QUIVER_HELP_TEXT: string;
@@ -240,6 +224,7 @@ export interface TranslationDict {
   SANCTUM_HELP: string;
   TIMELESS_RADIUS: string;
   PRECURSOR_TABLET_HELP: string;
+  LOGBOOK_HELP: string;
 }
 
 export interface Filter {
@@ -258,6 +243,14 @@ export interface PseudoIdToTradeRequest {
       min?: number;
       max?: number;
     };
+    disabled?: boolean;
+  };
+}
+
+export interface ItemCategoryToEmptyPrefix {
+  [id: string]: {
+    filters: Filter[];
+    type: "not";
     disabled?: boolean;
   };
 }

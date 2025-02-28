@@ -1,4 +1,12 @@
 <template>
+  <!-- @deprecated -->
+  <div
+    class="m-3 w-3/4 bg-orange-500 text-black rounded font-extrabold text-center"
+  >
+    <p class="mb-1 ml-1">
+      {{ t("app.deprecated", ["v0.11.0"]) }}
+    </p>
+  </div>
   <div class="p-3">
     <p class="mb-1 ml-1">{{ t("filter_generator.about_folder") }}</p>
     <input

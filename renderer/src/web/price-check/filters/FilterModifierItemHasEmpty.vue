@@ -36,9 +36,10 @@ export default defineComponent({
 
       return (
         [
-          [ItemHasEmptyModifier.Any, "item.has_empty_affix"],
+          // NOTE: Disabled since prefix is the only hardcoded one
+          // [ItemHasEmptyModifier.Any, "item.has_empty_affix"],
           [ItemHasEmptyModifier.Prefix, "item.has_empty_prefix"],
-          [ItemHasEmptyModifier.Suffix, "item.has_empty_suffix"],
+          // [ItemHasEmptyModifier.Suffix, "item.has_empty_suffix"],
         ] as const
       ).map(([value, text]) => ({
         text,

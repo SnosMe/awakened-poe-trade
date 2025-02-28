@@ -563,6 +563,13 @@ function upgradeConfig(_config: Config): Config {
 
     config.configVersion = 23;
   }
+  if (config.configVersion < 24) {
+    // NOTE: v0.8.0
+    config.widgets.find((w) => w.wmType === "price-check")!.alwaysShowTier =
+      false;
+
+    config.configVersion = 24;
+  }
 
   return config as unknown as Config;
 }

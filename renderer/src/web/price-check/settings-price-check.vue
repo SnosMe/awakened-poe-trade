@@ -100,6 +100,9 @@
     <ui-checkbox class="mb-4" v-model="rememberCurrency">{{
       t(":remember_currency")
     }}</ui-checkbox>
+    <ui-checkbox class="mb-4" v-model="rememberRatio">{{
+      t(":remember_ratio")
+    }}</ui-checkbox>
     <ui-checkbox class="mb-4" v-model="activateStockFilter">{{
       t(":select_stock")
     }}</ui-checkbox>
@@ -146,6 +149,9 @@
 
     <ui-checkbox class="mb-4" v-model="defaultAllSelected">{{
       t(":default_all_selected")
+    }}</ui-checkbox>
+    <ui-checkbox class="mb-4" v-model="alwaysShowTier">{{
+      t(":always_show_tier")
     }}</ui-checkbox>
     <div class="mb-4" :class="{ 'p-2 bg-orange-600 rounded': builtinBrowser }">
       <ui-checkbox v-model="builtinBrowser">{{
@@ -273,6 +279,10 @@ export default defineComponent({
         () => configWidget.value,
         "rememberCurrency",
       ),
+      rememberRatio: configModelValue(
+        () => configWidget.value,
+        "rememberRatio",
+      ),
       searchStatRange: computed<number>({
         get() {
           return configWidget.value.searchStatRange;
@@ -314,6 +324,10 @@ export default defineComponent({
       tierNumbering: configModelValue(
         () => configWidget.value,
         "tierNumbering",
+      ),
+      alwaysShowTier: configModelValue(
+        () => configWidget.value,
+        "alwaysShowTier",
       ),
     };
   },

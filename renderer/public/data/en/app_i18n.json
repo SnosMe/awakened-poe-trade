@@ -18,7 +18,8 @@
     "version": "Version {0}",
     "release_notes": "Release notes",
     "report_bug": "Report a bug on GitHub",
-    "quit": "Quit"
+    "quit": "Quit",
+    "deprecated": "This feature is deprecated and will be removed in update {0}"
   },
   "map.mods.heist": "heist",
   "map.mods.uber": "T17",
@@ -158,7 +159,7 @@
     "hide_phys_dps": "Physical damage is not the main source of DPS",
     "hide_ele_res": "Filtering by exact Elemental Resistance unreasonably increases the price",
     "hide_crafted_chaos": "Crafted Chaos Resistance without Explicit mod has no value",
-    "hide_anointment": "Buyer will likely change anointment",
+    "hide_anointment": "Buyer will likely change instilment",
     "hide_for_crafting": "Select only if price-checking as base item for crafting",
     "hide_empty_mod": "Select only if item has 6 modifiers (1 of which is crafted) or if it has 5 modifiers",
     "tag_implicit": "implicit",
@@ -184,7 +185,8 @@
     "tag_rune": "Rune",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "Grade {0}"
+    "grade": "Grade {0}",
+    "hybrid_note": "Tier may be incorrect due to the potential for a hybrid mod"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
@@ -395,7 +397,9 @@
     "tier_numbering": "Tier numbering style",
     "tier_numbering_poe1": "PoE1 (lower is better)",
     "tier_numbering_poe2": "PoE2 (higher is better)",
-    "tier_numbering_help": "To try to reduce confusion due to conflicting naming conventions with the game, PoE1 tiers will use the name \"Grade\" instead of \"Tier\". "
+    "tier_numbering_help": "To try to reduce confusion due to conflicting naming conventions with the game, PoE1 tiers will use the name \"Grade\" instead of \"Tier\". ",
+    "always_show_tier": "Always show tier",
+    "remember_ratio": "Remember currency ratio"
   },
   "poe2_new": {
     "beta_warning": "This is in BETA for POE2, things will not work always as expected.",

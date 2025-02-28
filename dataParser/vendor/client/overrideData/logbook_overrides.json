@@ -1,0 +1,380 @@
+{
+    "en": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Druids of the Broken Circle"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Black Scythe Mercenaries"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Order of the Chalice"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Knights of the Sun"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ],
+    "ru": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Друиды Разомкнутого круга"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Наёмники Чёрной косы"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Орден Чаши"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Рыцари Солнца"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ],
+    "ko": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "끊어진 원의 드루이드"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "검은 낫 용병단"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "성배단"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "태양의 기사단"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ],
+    "cmn-Hant": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "破碎環之德魯伊"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "黑鐮傭兵"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "聖杯之序"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "豔陽騎士"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ],
+    "ja": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "断たれた円環のドルイド"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "黒い鎌の傭兵団"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "杯の教団"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "太陽の騎士団"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ],
+    "de": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Druiden des Gebrochenen Zirkels"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Söldner der Schwarzen Sense"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Orden des Kelches"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Ritter der Sonne"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ],
+    "es": [
+        {
+            "ref": "Has Logbook Faction: Druids of the Broken Circle",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Druidas del Círculo roto"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "druids_of_the_broken_circle"
+        },
+        {
+            "ref": "Has Logbook Faction: Black Scythe Mercenaries",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Mercenarios de la Guadaña negra"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "black_scythe_mercenaries"
+        },
+        {
+            "ref": "Has Logbook Faction: Order of the Chalice",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Orden del Cáliz"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "order_of_the_chalice"
+        },
+        {
+            "ref": "Has Logbook Faction: Knights of the Sun",
+            "better": 0,
+            "matchers": [
+                {
+                    "string": "Caballeros del Sol"
+                }
+            ],
+            "trade": {
+                "ids": null
+            },
+            "id": "knights_of_the_sun"
+        }
+    ]
+}

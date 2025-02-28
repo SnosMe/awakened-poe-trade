@@ -41,6 +41,7 @@ export default defineComponent({
     const item = props.result.displayItem;
     const sections = [
       { key: "extended", content: item.extended },
+      { key: "enchantMods", content: item.enchantMods },
       { key: "runeMods", content: item.runeMods },
       { key: "implicitMods", content: item.implicitMods },
       { key: "explicitMods", content: item.explicitMods },

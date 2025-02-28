@@ -1,8 +1,7 @@
 import { Result, ok, err } from "neverthrow";
 import {
   CLIENT_STRINGS as _$,
-  // CLIENT_STRINGS_REF as _$REF,
-  ITEM_BY_TRANSLATED,
+  CLIENT_STRINGS_REF as _$REF,
   ITEM_BY_REF,
   STAT_BY_MATCH_STR,
   BaseType,
@@ -38,6 +37,7 @@ import {
   parseModInfoLine,
 } from "./advanced-mod-desc";
 import { calcPropPercentile, QUALITY_STATS } from "./calc-q20";
+import { getMaxTier } from "./mod-tiers";
 
 type SectionParseResult =
   | "SECTION_PARSED"
@@ -61,7 +61,6 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: normalizeName },
   parseVaalGemName,
   { virtual: findInDatabase },
-  { virtual: tempErrLogbooks },
   // -----------
   parseItemLevel,
   parseRequirements,
@@ -69,6 +68,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseGem,
   parseArmour,
   parseWeapon,
+  parseCaster,
   parseFlask,
   parseJewelery,
   parseCharmSlots,
@@ -93,10 +93,13 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
+  parseModifiers, // enchant
+  parseModifiers, // rune
+  parseModifiers, // implicit
+  parseModifiers, // explicit
+  // catch enchant and rune since they don't have curlys rn
   parseModifiersPoe2, // enchant
   parseModifiersPoe2, // rune
-  parseModifiersPoe2, // implicit
-  parseModifiersPoe2, // explicit
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
@@ -184,15 +187,15 @@ function normalizeName(item: ParserState) {
   if (item.rarity === ItemRarity.Normal || item.rarity === ItemRarity.Rare) {
     if (item.baseType) {
       if (_$.MAP_BLIGHTED.test(item.baseType)) {
-        item.baseType = _$.MAP_BLIGHTED.exec(item.baseType)![1];
+        item.baseType = _$REF.MAP_BLIGHTED.exec(item.baseType)![1];
       } else if (_$.MAP_BLIGHT_RAVAGED.test(item.baseType)) {
-        item.baseType = _$.MAP_BLIGHT_RAVAGED.exec(item.baseType)![1];
+        item.baseType = _$REF.MAP_BLIGHT_RAVAGED.exec(item.baseType)![1];
       }
     } else {
       if (_$.MAP_BLIGHTED.test(item.name)) {
-        item.name = _$.MAP_BLIGHTED.exec(item.name)![1];
+        item.name = _$REF.MAP_BLIGHTED.exec(item.name)![1];
       } else if (_$.MAP_BLIGHT_RAVAGED.test(item.name)) {
-        item.name = _$.MAP_BLIGHT_RAVAGED.exec(item.name)![1];
+        item.name = _$REF.MAP_BLIGHT_RAVAGED.exec(item.name)![1];
       }
     }
   }
@@ -215,19 +218,19 @@ function normalizeName(item: ParserState) {
 function findInDatabase(item: ParserState) {
   let info: BaseType[] | undefined;
   if (item.category === ItemCategory.DivinationCard) {
-    info = ITEM_BY_TRANSLATED("DIVINATION_CARD", item.name);
+    info = ITEM_BY_REF("DIVINATION_CARD", item.name);
   } else if (item.category === ItemCategory.CapturedBeast) {
-    info = ITEM_BY_TRANSLATED("CAPTURED_BEAST", item.baseType ?? item.name);
+    info = ITEM_BY_REF("CAPTURED_BEAST", item.baseType ?? item.name);
   } else if (item.category === ItemCategory.Gem) {
-    info = ITEM_BY_TRANSLATED("GEM", item.name);
+    info = ITEM_BY_REF("GEM", item.name);
   } else if (item.category === ItemCategory.MetamorphSample) {
-    info = ITEM_BY_TRANSLATED("ITEM", item.name);
+    info = ITEM_BY_REF("ITEM", item.name);
   } else if (item.category === ItemCategory.Voidstone) {
-    info = ITEM_BY_TRANSLATED("ITEM", "Charged Compass");
+    info = ITEM_BY_REF("ITEM", "Charged Compass");
   } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
-    info = ITEM_BY_TRANSLATED("UNIQUE", item.name);
+    info = ITEM_BY_REF("UNIQUE", item.name);
   } else {
-    info = ITEM_BY_TRANSLATED("ITEM", item.baseType ?? item.name);
+    info = ITEM_BY_REF("ITEM", item.baseType ?? item.name);
   }
   if (!info?.length) {
     return err("item.unknown");
@@ -243,7 +246,7 @@ function findInDatabase(item: ParserState) {
     if (item.info.craftable) {
       item.category = item.info.craftable.category;
     } else if (item.info.unique) {
-      item.category = ITEM_BY_TRANSLATED(
+      item.category = ITEM_BY_REF(
         "ITEM",
         item.info.unique.base,
       )![0].craftable!.category;
@@ -253,12 +256,6 @@ function findInDatabase(item: ParserState) {
   // Override charm since its flask in trade
   if (item.category === ItemCategory.Charm) {
     item.category = ItemCategory.Flask;
-  }
-}
-
-function tempErrLogbooks(item: ParserState) {
-  if (item.info.refName === "Expedition Logbook") {
-    return err("item.parse_error");
   }
 }
 
@@ -448,6 +445,7 @@ function parseInfluence(section: string[], item: ParsedItem) {
   return "SECTION_SKIPPED";
 }
 
+// #region Small Sections
 function parseCorrupted(section: string[], item: ParsedItem) {
   if (section[0].trim() === _$.CORRUPTED) {
     item.isCorrupted = true;
@@ -495,7 +493,10 @@ function parseItemLevel(section: string[], item: ParsedItem) {
 }
 
 function parseRequirements(section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$.REQUIREMENTS)) {
+  if (
+    section[0].startsWith(_$.REQUIREMENTS) ||
+    section[0].startsWith(_$.REQUIRES)
+  ) {
     return "SECTION_PARSED";
   }
   return "SECTION_SKIPPED";
@@ -515,11 +516,11 @@ function parseVaalGemName(section: string[], item: ParserState) {
   // TODO blocked by https://www.pathofexile.com/forum/view-thread/3231236
   if (section.length === 1) {
     let gemName: string | undefined;
-    if (ITEM_BY_TRANSLATED("GEM", section[0])) {
+    if (ITEM_BY_REF("GEM", section[0])) {
       gemName = section[0];
     }
     if (gemName) {
-      item.name = ITEM_BY_TRANSLATED("GEM", gemName)![0].refName;
+      item.name = ITEM_BY_REF("GEM", gemName)![0].refName;
       return "SECTION_PARSED";
     }
   }
@@ -540,6 +541,7 @@ function parseGem(section: string[], item: ParsedItem) {
   }
   return "SECTION_SKIPPED";
 }
+// #endregion
 
 function parseStackSize(section: string[], item: ParsedItem) {
   if (
@@ -570,16 +572,25 @@ function parseRuneSockets(section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.SOCKETS)) {
     const sockets = section[0].slice(_$.SOCKETS.length).trimEnd();
     const current = sockets.split("S").length - 1;
-    item.runeSockets = {
-      type: armourOrWeapon,
-      empty: 0,
-      current,
-      normal: categoryMax,
-    };
+    if (item.isCorrupted) {
+      item.runeSockets = {
+        type: armourOrWeapon,
+        empty: 0,
+        current,
+        normal: categoryMax,
+      };
+    } else {
+      item.runeSockets = {
+        type: armourOrWeapon,
+        empty: 0,
+        current,
+        normal: categoryMax,
+      };
+    }
 
     return "SECTION_PARSED";
   }
-  if (categoryMax) {
+  if (categoryMax && !item.isCorrupted) {
     item.runeSockets = {
       type: armourOrWeapon,
       empty: categoryMax,
@@ -653,6 +664,13 @@ function parseArmour(section: string[], item: ParsedItem) {
 
   if (isParsed === "SECTION_PARSED") {
     parseQualityNested(section, item);
+  }
+  if (item.rarity === "Unique") {
+    // undo everything
+    item.armourAR = undefined;
+    item.armourEV = undefined;
+    item.armourES = undefined;
+    item.armourBLOCK = undefined;
   }
 
   return isParsed;
@@ -756,7 +774,34 @@ function parseWeapon(section: string[], item: ParsedItem) {
     parseQualityNested(section, item);
   }
 
+  if (item.rarity === "Unique") {
+    // undo everything
+    item.weaponELEMENTAL = undefined;
+    item.weaponAS = undefined;
+    item.weaponPHYSICAL = undefined;
+    item.weaponCOLD = undefined;
+    item.weaponLIGHTNING = undefined;
+    item.weaponFIRE = undefined;
+    item.weaponCRIT = undefined;
+  }
+
   return isParsed;
+}
+
+function parseCaster(section: string[], item: ParsedItem) {
+  if (
+    item.category !== ItemCategory.Wand &&
+    item.category !== ItemCategory.Sceptre &&
+    item.category !== ItemCategory.Staff
+  )
+    return "PARSER_SKIPPED";
+
+  if (section.length === 1 && section[0].startsWith(_$.QUALITY)) {
+    parseQualityNested(section, item);
+    return "SECTION_PARSED";
+  }
+
+  return "SECTION_SKIPPED";
 }
 
 function parseLogbookArea(section: string[], item: ParsedItem) {
@@ -781,134 +826,29 @@ function parseLogbookArea(section: string[], item: ParsedItem) {
 
   const { modType, lines } = parseModType(section.slice(2));
   for (const line of lines) {
-    const found = STAT_BY_MATCH_STR(line);
-    if (found && found.stat.ref === "Area contains an Expedition Boss (#)") {
-      const roll = found.matcher.value!;
+    const found = tryParseTranslation(
+      { string: line, unscalable: false },
+      modType,
+    );
+    if (found) {
       areaMods.push({
         info: { tags: [], type: modType },
-        stats: [
-          {
-            stat: found.stat,
-            translation: found.matcher,
-            roll: {
-              value: roll,
-              min: roll,
-              max: roll,
-              dp: false,
-              unscalable: true,
-            },
-          },
-        ],
+        stats: [found],
       });
     }
   }
 
-  if (!item.logbookAreaMods) {
-    item.logbookAreaMods = [areaMods];
-  } else {
-    item.logbookAreaMods.push(areaMods);
+  areaMods.shift();
+  if (areaMods.length) {
+    if (!item.logbookAreaMods) {
+      item.logbookAreaMods = [areaMods];
+    } else {
+      item.logbookAreaMods.push(areaMods);
+    }
   }
 
   return "SECTION_PARSED";
 }
-/**
- * 
- *
- * 
- * 
- * Item Class: Gloves
-Rarity: Rare
-Golem Grasp
-Precursor Gauntlets
---------
-Quality: +20% (augmented)
-Armour: 1030 (augmented)
---------
-Requirements:
-Level: 78
-Str: 155
-Dex: 68
-Int: 27
---------
-Sockets: R-R-R-R 
---------
-Item Level: 86
---------
-+5% chance to Suppress Spell Damage (implicit)
-8% increased Attack Speed (implicit)
---------
-+32 to Strength
-+101 to Armour
-89% increased Armour
-+98 to maximum Life
-+48% to Fire Resistance
-+29% to Lightning Resistance
-Searing Exarch Item
-Eater of Worlds Item
-
- * 
- * 
- * Item Class: Gloves
-Rarity: Rare
-Golem Grasp
-Precursor Gauntlets
---------
-Quality: +20% (augmented)
-Armour: 1030 (augmented)
---------
-Requirements:
-Level: 78
-Str: 155
-Dex: 68
-Int: 27
---------
-Sockets: R-R-R-R 
---------
-Item Level: 86
---------
-{ Searing Exarch Implicit Modifier (Lesser) — Attack, Speed }
-8% increased Attack Speed (implicit)
-{ Eater of Worlds Implicit Modifier (Lesser) }
-+5% chance to Suppress Spell Damage (implicit)
-(50% of Damage from Suppressed Hits and Ailments they inflict is prevented) (implicit)
---------
-{ Prefix Modifier "Plated" (Tier: 3) — Defences, Armour }
-+101(83-101) to Armour
-{ Prefix Modifier "Girded" (Tier: 2) — Defences, Armour }
-89(80-91)% increased Armour
-{ Prefix Modifier "Rotund" (Tier: 3) — Life }
-+98(85-99) to maximum Life
-{ Suffix Modifier "of the Thunderhead" (Tier: 5) — Elemental, Lightning, Resistance }
-+29(24-29)% to Lightning Resistance
-{ Suffix Modifier "of Tzteosh" (Tier: 1) — Elemental, Fire, Resistance }
-+48(46-48)% to Fire Resistance
-{ Suffix Modifier "of the Gorilla" (Tier: 5) — Attribute }
-+32(28-32) to Strength
-Searing Exarch Item
-Eater of Worlds Item
-
- * 
- * 
- * Item Class: Rings
-Rarity: Rare
-Morbid Whorl
-Ruby Ring
---------
-Requirements:
-Level: 23
---------
-Item Level: 39
---------
-+27% to Fire Resistance (implicit)
---------
-+33 to Accuracy Rating
-+35 to Evasion Rating
-+13% to Lightning Resistance
-38% increased Mana Regeneration Rate
-
-
- * 
- */
 
 export function parseModifiersPoe2(section: string[], item: ParsedItem) {
   if (
@@ -965,7 +905,6 @@ export function parseModifiersPoe2(section: string[], item: ParsedItem) {
   return foundAnyMods ? "SECTION_PARSED" : "SECTION_SKIPPED";
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function parseModifiers(section: string[], item: ParsedItem) {
   if (
     item.rarity !== ItemRarity.Normal &&
@@ -991,7 +930,16 @@ function parseModifiers(section: string[], item: ParsedItem) {
     for (const { modLine, statLines } of groupLinesByMod(section)) {
       const { modType, lines } = parseModType(statLines);
       const modInfo = parseModInfoLine(modLine, modType);
-      parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
+      const modifier: ParsedModifier = { info: modInfo, stats: [] };
+      parseStatsFromMod(lines, item, modifier);
+
+      if (modInfo.tierNew && item.category) {
+        const refLines = [];
+        for (const stat of modifier.stats) {
+          refLines.push(stat.stat.ref);
+        }
+        parseRealTierFromMod(refLines, modInfo, item.category);
+      }
 
       if (modType === ModifierType.Veiled) {
         item.isVeiled = true;
@@ -1144,7 +1092,8 @@ function parseHelpText(section: string[], item: ParsedItem) {
     item.category !== ItemCategory.Jewel &&
     item.category !== ItemCategory.Relic &&
     item.category !== ItemCategory.Tablet &&
-    item.category !== ItemCategory.TowerAugment
+    item.category !== ItemCategory.TowerAugment &&
+    item.info.refName !== "Expedition Logbook"
   )
     return "PARSER_SKIPPED";
 
@@ -1156,7 +1105,8 @@ function parseHelpText(section: string[], item: ParsedItem) {
       line.startsWith(_$.WAYSTONE_HELP) ||
       line.startsWith(_$.JEWEL_HELP) ||
       line.startsWith(_$.SANCTUM_HELP) ||
-      line.startsWith(_$.PRECURSOR_TABLET_HELP)
+      line.startsWith(_$.PRECURSOR_TABLET_HELP) ||
+      line.startsWith(_$.LOGBOOK_HELP)
     ) {
       return "SECTION_PARSED";
     }
@@ -1184,9 +1134,9 @@ function parseSynthesised(section: string[], item: ParserState) {
     if (section[0] === _$.SECTION_SYNTHESISED) {
       item.isSynthesised = true;
       if (item.baseType) {
-        item.baseType = _$.ITEM_SYNTHESISED.exec(item.baseType)![1];
+        item.baseType = _$REF.ITEM_SYNTHESISED.exec(item.baseType)![1];
       } else {
-        item.name = _$.ITEM_SYNTHESISED.exec(item.name)![1];
+        item.name = _$REF.ITEM_SYNTHESISED.exec(item.name)![1];
       }
       return "SECTION_PARSED";
     }
@@ -1203,7 +1153,7 @@ function parseSuperior(item: ParserState) {
     (item.rarity === ItemRarity.Unique && item.isUnidentified)
   ) {
     if (_$.ITEM_SUPERIOR.test(item.name)) {
-      item.name = _$.ITEM_SUPERIOR.exec(item.name)![1];
+      item.name = _$REF.ITEM_SUPERIOR.exec(item.name)![1];
     }
   }
 }
@@ -1264,8 +1214,8 @@ function parseHeistBlueprint(section: string[], item: ParsedItem) {
 function parseAreaLevelNested(section: string[], item: ParsedItem) {
   for (const line of section) {
     if (line.startsWith(_$.AREA_LEVEL)) {
-      item.areaLevel = Number(line.slice(_$.AREA_LEVEL.length));
-      break;
+    item.areaLevel = Number(line.slice(_$.AREA_LEVEL.length));
+    break;
     }
   }
 }
@@ -1334,12 +1284,11 @@ function parseMirroredTablet(section: string[], item: ParsedItem) {
   if (section.length < 8) return "SECTION_SKIPPED";
 
   for (const line of section) {
-    const foundAndTier = tryParseTranslation(
+    const found = tryParseTranslation(
       { string: line, unscalable: true },
       ModifierType.Pseudo,
     );
-    if (foundAndTier) {
-      const { stat: found } = foundAndTier;
+    if (found) {
       item.newMods.push({
         info: { tags: [], type: ModifierType.Pseudo },
         stats: [found],
@@ -1386,6 +1335,19 @@ function markupConditionParser(text: string) {
   return text;
 }
 
+function parseRealTierFromMod(
+  lines: string[],
+  modInfo: ModifierInfo,
+  category: ItemCategory,
+): void {
+  if (!modInfo.tierNew) return;
+  const joinedLines = lines.join("\n");
+  const maxPossibleTier = getMaxTier(joinedLines, category);
+  if (maxPossibleTier) {
+    modInfo.tier = maxPossibleTier - modInfo.tierNew + 1;
+  }
+}
+
 function parseStatsFromMod(
   lines: string[],
   item: ParsedItem,
@@ -1415,18 +1377,10 @@ function parseStatsFromMod(
   const statIterator = linesToStatStrings(lines);
   let stat = statIterator.next();
   while (!stat.done) {
-    const parsedStatAndTier = tryParseTranslation(
-      stat.value,
-      modifier.info.type,
-      item,
-    );
-    if (parsedStatAndTier) {
-      const { stat: parsedStat, tier } = parsedStatAndTier;
+    const parsedStat = tryParseTranslation(stat.value, modifier.info.type);
+    if (parsedStat) {
       modifier.stats.push(parsedStat);
-      if (tier) {
-        modifier.info.tier = tier.poe1;
-        modifier.info.tierNew = tier.poe2;
-      }
+
       stat = statIterator.next(true);
     } else {
       stat = statIterator.next(false);
@@ -1452,7 +1406,7 @@ function transformToLegacyModifiers(item: ParsedItem) {
 }
 
 function applyElementalAdded(item: ParsedItem) {
-  if (item.weaponELEMENTAL) {
+  if (item.weaponELEMENTAL && item.rarity !== "Unique") {
     const knownRefs = new Set<string>([
       "Adds # to # Lightning Damage",
       "Adds # to # Cold Damage",
@@ -1490,7 +1444,7 @@ function applyElementalAdded(item: ParsedItem) {
 
 function calcBasePercentile(item: ParsedItem) {
   const info = item.info.unique
-    ? ITEM_BY_TRANSLATED("ITEM", item.info.unique.base)![0].armour
+    ? ITEM_BY_REF("ITEM", item.info.unique.base)![0].armour
     : item.info.armour;
   if (!info) return;
 

@@ -2,11 +2,13 @@ import fnv1a from "@sindresorhus/fnv1a";
 import type {
   BaseType,
   DropEntry,
+  ItemCategoryToEmptyPrefix,
   PseudoIdToTradeRequest,
   RuneDataByRune,
   RuneSingleValue,
   Stat,
   StatMatcher,
+  TierLookup,
   TranslationDict,
 } from "./interfaces";
 import { loadClientStrings } from "../client-string-loader";
@@ -20,6 +22,8 @@ export let APP_PATRONS: Array<{ from: string; months: number; style: number }>;
 export let PSEUDO_ID_TO_TRADE_REQUEST: PseudoIdToTradeRequest;
 export let RUNE_SINGLE_VALUE: RuneSingleValue;
 export let RUNE_DATA_BY_RUNE: RuneDataByRune;
+export let ITEM_CATEGORY_TO_EMPTY_PREFIX: ItemCategoryToEmptyPrefix;
+export let MAX_TIER_LOOKUP: TierLookup;
 
 export let RUNE_LIST: BaseType[];
 
@@ -250,11 +254,19 @@ export async function init(lang: string, isTest = false) {
     await fetch(`${import.meta.env.BASE_URL}data/pseudo-pseudo.json`)
   ).json();
 
+  ITEM_CATEGORY_TO_EMPTY_PREFIX = await (
+    await fetch(`${import.meta.env.BASE_URL}data/pseudo-empty-prefix.json`)
+  ).json();
+
   RUNE_SINGLE_VALUE = await (
     await fetch(`${import.meta.env.BASE_URL}data/rune-single-value.json`)
   ).json();
 
   RUNE_DATA_BY_RUNE = convertRuneSingleValueToRuneDataByRune(RUNE_SINGLE_VALUE);
+
+  MAX_TIER_LOOKUP = await (
+    await fetch(`${import.meta.env.BASE_URL}data/tiers.json`)
+  ).json();
 
   await loadForLang(lang, isTest);
 

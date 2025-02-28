@@ -16,7 +16,8 @@
     "version": "버전 {0}",
     "release_notes": "릴리즈 노트",
     "report_bug": "버그 발생 시 GitHub에 보고해주세요",
-    "quit": "종료"
+    "quit": "종료",
+    "deprecated": "この機能は非推奨でありバージョン {0} のアップデートで削除されます"
   },
   "map.mods.heist": "강탈",
   "map.mods.outdated": "사용X",
@@ -151,7 +152,7 @@
     "hide_phys_dps": "물리 피해가 DPS의 주된 요소가 아닙니다",
     "hide_ele_res": "특정 원소 저항 수치로 필터하면 가격이 기하급수적으로 오를 수 있습니다",
     "hide_crafted_chaos": "작업대로 달린 카오스 저항은 밸류가 없습니다",
-    "hide_anointment": "구매자가 성유작을 바꿀 수도 있습니다",
+    "hide_anointment": "購入者はおそらくアノイントを変更するでしょう",
     "hide_for_crafting": "제작을 위한 베이스 아이템 가격을 체크할 때만 선택하세요",
     "hide_empty_mod": "접사가 5개 혹은 작업대 접사를 포함해서 6개인 아이템만 보려면 선택하세요",
     "tag_implicit": "고정 속성",
@@ -177,7 +178,8 @@
     "tag_rune": "룬",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "등급 {0}"
+    "grade": "등급 {0}",
+    "hybrid_note": "ハイブリッドモッドであるためティアが誤っている可能性があります"
   },
   "online_filter": {
     "offline_toggle": "오프라인 & 온라인",
@@ -372,7 +374,9 @@
     "tier_numbering": "티어 넘버링 스타일",
     "tier_numbering_poe1": "PoE1 (낮을수록 좋음)",
     "tier_numbering_poe2": "PoE2 (높을수록 좋음)",
-    "tier_numbering_help": "혼란을 방지하기 위해서 POE 1의 아이템 티어는 \"티어\"가아닌\"등급\"으로 표시됩니다."
+    "tier_numbering_help": "혼란을 방지하기 위해서 POE 1의 아이템 티어는 \"티어\"가아닌\"등급\"으로 표시됩니다.",
+    "always_show_tier": "常にティアを表示",
+    "remember_ratio": "通貨比率を記憶する"
   },
   "poe2_new": {
     "beta_warning": "이 버전은 베타버전입니다. 예기치 못한 버그가 있을 수 있습니다.",

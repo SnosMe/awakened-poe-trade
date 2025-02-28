@@ -28,6 +28,7 @@ from clientStrings.clientStringBuilder import (
 )
 from descriptionParser.descriptionFile import DescriptionFile
 from modTiers.modTierBuilder import modTierBuilderB
+from overrideData.buildAnnoints import AnnointBuilder
 from services.logger_setup import set_log_level
 
 logger = logging.getLogger(__name__)
@@ -145,6 +146,8 @@ HARDCODE_MAP_MODS = {
     "mapplayercooldownrecovery",
 }
 
+BETTER_NOT_1 = {"local_attribute_requirements_+%": -1}
+
 
 def find_first_matching_item(items, field: str, value: str) -> dict | None:
     return next((item for item in items if item.get(field) == value), None)
@@ -177,7 +180,8 @@ def flatten_mods(mods):
             "id": None,
             "matchers": [],
             "trade": {"ids": None},  # Default to None for trade.ids
-            "tiers": None,  # Default to None for tiers
+            # "tiers": None,  # Default to None for tiers
+            # "hybrids": {},
         }
     )
 
@@ -204,26 +208,26 @@ def flatten_mods(mods):
                 grouped_mods[ref]["trade"]["ids"].setdefault(key, []).extend(ids)
 
         # Merge tiers
-        if grouped_mods[ref]["tiers"] is None:
-            grouped_mods[ref]["tiers"] = (
-                None if "tiers" not in mod else deepcopy(mod["tiers"])
-            )
-        elif "tiers" in mod and mod["tiers"] is not None:
-            for tier_type, tier_data in mod["tiers"].items():
-                if tier_type == "implicit":
-                    # Merge implicit tiers (dictionary)
-                    for base_type, implicit_data in tier_data.items():
-                        if base_type not in grouped_mods[ref]["tiers"]["implicit"]:
-                            grouped_mods[ref]["tiers"]["implicit"][base_type] = (
-                                deepcopy(implicit_data)
-                            )
-                        else:
-                            grouped_mods[ref]["tiers"]["implicit"][base_type][
-                                "mods"
-                            ].extend(deepcopy(implicit_data["mods"]))
-                else:
-                    # Merge list-based tiers
-                    grouped_mods[ref]["tiers"][tier_type].extend(deepcopy(tier_data))
+        # if grouped_mods[ref]["tiers"] is None:
+        #     grouped_mods[ref]["tiers"] = (
+        #         None if "tiers" not in mod else deepcopy(mod["tiers"])
+        #     )
+        # elif "tiers" in mod and mod["tiers"] is not None:
+        #     for tier_type, tier_data in mod["tiers"].items():
+        #         if tier_type == "implicit":
+        #             # Merge implicit tiers (dictionary)
+        #             for base_type, implicit_data in tier_data.items():
+        #                 if base_type not in grouped_mods[ref]["tiers"]["implicit"]:
+        #                     grouped_mods[ref]["tiers"]["implicit"][base_type] = (
+        #                         deepcopy(implicit_data)
+        #                     )
+        #                 else:
+        #                     grouped_mods[ref]["tiers"]["implicit"][base_type][
+        #                         "mods"
+        #                     ].extend(deepcopy(implicit_data["mods"]))
+        #         else:
+        #             # Merge list-based tiers
+        #             grouped_mods[ref]["tiers"][tier_type].extend(deepcopy(tier_data))
 
         # Merge fromAreaMods
         if "fromAreaMods" in grouped_mods[ref]:
@@ -232,6 +236,20 @@ def flatten_mods(mods):
             )
         elif "fromAreaMods" in mod:
             grouped_mods[ref]["fromAreaMods"] = mod["fromAreaMods"]
+
+        # Merge hybrids
+        # if "hybrids" in mod and mod["hybrids"]:
+        #     for hybrid_ref, valid_equipment in mod["hybrids"].items():
+        #         if hybrid_ref in grouped_mods[ref]["hybrids"]:
+        #             grouped_mods[ref]["hybrids"][hybrid_ref].extend(
+        #                 item
+        #                 for item in valid_equipment
+        #                 if item not in grouped_mods[ref]["hybrids"][hybrid_ref]
+        #             )
+        #         else:
+        #             grouped_mods[ref]["hybrids"][hybrid_ref] = list(
+        #                 valid_equipment
+        #             )  # Ensure list type
 
     # Convert back to dictionary with unique base_ids
     flattened_mods = {}
@@ -311,12 +329,6 @@ class Parser:
                 f"{self.cwd}/../json-api/{self.lang}/static.json", encoding="utf-8"
             ).read()
         )  # content of https://www.pathofexile.com/api/trade2/data/static
-        self.unique_item_stats_lookup = json.loads(
-            open(
-                f"{self.cwd}/overrideData/unique_override_data_by_item.json",
-                encoding="utf-8",
-            ).read()
-        )
 
         self.items = {}
         self.unique_items = []
@@ -327,6 +339,7 @@ class Parser:
         self.mod_translations = {}
         self.mods = {}
         self.matchers_no_trade_ids = []
+        self.tiers = {}
 
         base_en = self.load_file("BaseItemTypes", is_en=True)
         self.base_en_items_lookup = dict()
@@ -414,6 +427,9 @@ class Parser:
 
             if has_negate:
                 matcher = matcher[: matcher.find('"')].strip()
+
+            if "flask_charges_used_+%" in id or "charm_charges_used_+%" in id:
+                has_negate = not has_negate
 
             matchers.append({"string": matcher, "negate": has_negate})
 
@@ -571,6 +587,9 @@ class Parser:
 
         stats_from_tiers = set()
 
+        def better(x):
+            return 1 if x not in BETTER_NOT_1 else BETTER_NOT_1[x]
+
         for in_ids, tiers, base_id in modTierBuilderB(
             self.mods_file, self.base_items, self.gold_mod_prices, self.tags
         ):
@@ -637,12 +656,12 @@ class Parser:
                 )
                 continue
 
-            ids_list = [x for x in ids_list if x is not None]
+            ids_list_noneless = [x for x in ids_list if x is not None]
 
-            if len(ids_list) == 0:
+            if len(ids_list_noneless) == 0:
                 flatten_stats = None
             else:
-                flatten_stats = flatten_stats_ids(ids_list)
+                flatten_stats = flatten_stats_ids(ids_list_noneless)
             trade = {"ids": flatten_stats}
             if base_id in self.mods:
                 logger.warn(f"Duplicate mod {base_id}")
@@ -655,40 +674,51 @@ class Parser:
             if main_translation is None:
                 continue
 
-            if len(translations) > 1 and base_id not in HARDCODE_MAP_HYBRID_MODS:
+            if (
+                len(translations) > 1
+                and base_id not in HARDCODE_MAP_HYBRID_MODS
+                and main_translation.get("ref").count("#") == 1
+            ):
                 # first translation where
-                if main_translation.get("ref").count("#") == 1:
-                    hybrid_count += 1
-                    hybrids.append((base_id, translations))
-                    continue
-            stats_from_tiers.add(stat_id)
-            if base_id in HARDCODE_MAP_HYBRID_MODS:
-                non_waystone_translations = [
-                    t for t in translations if "waystone" not in t.get("ref").lower()
-                ]
-                for index, allowed_hybrid_translation in enumerate(
-                    non_waystone_translations
-                ):
-                    self.mods[f"{base_id}_{index}"] = {
-                        "ref": allowed_hybrid_translation.get("ref"),
-                        "better": 1,
-                        "id": f"{base_id}_{index}",
-                        "matchers": allowed_hybrid_translation.get("matchers"),
-                        "trade": {"ids": ids_list[index]},
-                        "tiers": tiers,
-                        "fromAreaMods": True,
-                    }
+                hybrid_count += 1
+                hybrids.append((base_id, translations, tiers))
             else:
-                self.mods[base_id] = {
-                    "ref": main_translation.get("ref"),
-                    "better": 1,
-                    "id": stat_id,
-                    "matchers": main_translation.get("matchers"),
-                    "trade": trade,
-                    "tiers": tiers,
-                }
-                if base_id in HARDCODE_MAP_MODS:
-                    self.mods[base_id]["fromAreaMods"] = True
+                stats_from_tiers.add(stat_id)
+                if base_id in HARDCODE_MAP_HYBRID_MODS:
+                    non_waystone_translations = [
+                        t
+                        for t in translations
+                        if "waystone" not in t.get("ref").lower()
+                    ]
+                    for index, allowed_hybrid_translation in enumerate(
+                        non_waystone_translations
+                    ):
+                        self.mods[f"{base_id}_{index}"] = {
+                            "ref": allowed_hybrid_translation.get("ref"),
+                            "better": better(stats_id),
+                            "id": f"{base_id}_{index}",
+                            "matchers": allowed_hybrid_translation.get("matchers"),
+                            "trade": {"ids": ids_list[index]},
+                            "fromAreaMods": True,
+                        }
+                else:
+                    self.mods[base_id] = {
+                        "ref": main_translation.get("ref"),
+                        "better": better(stats_id),
+                        "id": stat_id,
+                        "matchers": main_translation.get("matchers"),
+                        "trade": trade,
+                    }
+                    if base_id in HARDCODE_MAP_MODS:
+                        self.mods[base_id]["fromAreaMods"] = True
+
+            if tiers is not None:
+                tier_refs = [t.get("ref") for t in translations]
+                tier_ref_strings = "\n".join(dict.fromkeys(tier_refs))
+                if tier_ref_strings in self.tiers:
+                    self.tiers[tier_ref_strings].update(tiers)
+                else:
+                    self.tiers[tier_ref_strings] = tiers
 
         for mod in self.mods_file:
             id = mod.get("Id")
@@ -739,7 +769,7 @@ class Parser:
                         continue
                     self.mods[id] = {
                         "ref": translation.get("ref"),
-                        "better": 1,
+                        "better": better(stats_id),
                         "id": stats_id,
                         "matchers": translation.get("matchers"),
                         "trade": trade,
@@ -755,9 +785,38 @@ class Parser:
                     f"Mod {id} has no stats_key. [stats_key: {stats_key}, stats_id: {stats_id}]"
                 )
 
+        # for base_id, translations, tiers in hybrids:
+        #     # Collect all valid equipment for this hybrid
+        #     valid_equipment = {
+        #         item
+        #         for tier_group in tiers["explicit"]
+        #         for item in tier_group["items"].keys()
+        #     }
+
+        #     for hybrid_translation in translations:
+        #         for mod in self.mods.values():
+        #             if mod["ref"] == hybrid_translation["ref"]:
+        #                 if "hybrids" not in mod:
+        #                     mod["hybrids"] = {}
+
+        #                 # Iterate over all other hybrid translations (except the current one)
+        #                 for not_same_hybrid_translation in translations:
+        #                     if (
+        #                         not_same_hybrid_translation["ref"]
+        #                         == hybrid_translation["ref"]
+        #                     ):
+        #                         continue  # Skip itself
+
+        #                     hybrid_ref = not_same_hybrid_translation["ref"]
+
+        #                     if hybrid_ref in mod["hybrids"]:
+        #                         mod["hybrids"][hybrid_ref].update(valid_equipment)
+        #                     else:
+        #                         mod["hybrids"][hybrid_ref] = set(valid_equipment)
+
         logger.debug("Completed parsing mods.")
         logger.info(f"Mods: {len(self.mods)}")
-        logger.info(f"Hybrid mods: {hybrid_count}")
+        # logger.info(f"Hybrid mods: {hybrid_count}")
 
     def parse_categories(self):
         # parse item categories
@@ -788,10 +847,8 @@ class Parser:
                 name = item.get("name")
                 if name is None:
                     continue
-                text = item.get("text")
                 type = item.get("type")
                 # unique item
-                flags = item.get("flags")
                 refName = name
 
                 # id = item.get("_index")
@@ -815,14 +872,10 @@ class Parser:
                     "name": name,
                     "refName": refName,
                     "namespace": "UNIQUE",
-                    "unique": {"base": type},
+                    "unique": {"base": refType},
+                    "icon": "%NOT_FOUND%",
                 }
 
-                if refName is not None and refType is not None:
-                    full_name = f"{refName} {refType}"
-                    item_stats = self.unique_item_stats_lookup.get(full_name)
-                    if item_stats is not None:
-                        unique_item["unique"]["stats"] = item_stats
                 self.unique_items.append(unique_item)
 
         # parse base items
@@ -1020,18 +1073,36 @@ class Parser:
             m.write(json.dumps(mod, ensure_ascii=False) + "\n")
             seen.add(id)
 
+        annoints = AnnointBuilder().get_annoints(self.lang)
+        m.write(json.dumps(annoints, ensure_ascii=False) + "\n")
+
         # Add temp allocates
-        with open(
-            f"{self.get_script_dir()}/overrideData/allocates.json",
-            "r",
-            encoding="utf-8",
-        ) as temp_allocates:
-            allocates = json.load(temp_allocates)
-            if self.lang in allocates:
-                m.write(json.dumps(allocates[self.lang], ensure_ascii=False) + "\n")
-            else:
-                m.write(json.dumps(allocates["en"], ensure_ascii=False) + "\n")
+        # with open(
+        #     f"{self.get_script_dir()}/overrideData/allocates.json",
+        #     "r",
+        #     encoding="utf-8",
+        # ) as temp_allocates:
+        #     allocates = json.load(temp_allocates)
+        #     if self.lang in allocates:
+        #         m.write(json.dumps(allocates[self.lang], ensure_ascii=False) + "\n")
+        #     else:
+        #         m.write(json.dumps(allocates["en"], ensure_ascii=False) + "\n")
         m.close()
+
+        if self.lang == "en":
+            with open(
+                f"{self.get_script_dir()}/pyDumps/generic/tiers.json",
+                "w",
+                encoding="utf-8",
+            ) as j:
+                j.write(json.dumps(self.tiers, ensure_ascii=False))
+
+            with open(
+                f"{self.get_script_dir()}/pyDumps/generic-out/tiers_dump.json",
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(json.dumps(self.tiers, indent=4, ensure_ascii=False))
 
         with open(
             f"{self.get_script_dir()}/pyDumps/{self.lang + '-out'}/items_dump.json",
@@ -1057,15 +1128,6 @@ class Parser:
             )
 
     def add_missing_mods(self):
-        default = {
-            "explicit": [],
-            "implicit": {},
-            "corruption": [],
-            "crafted": [],
-            "jewel": [],
-            "corruptionjewel": [],
-            "uniquejewel": [],
-        }
         with open(
             f"{self.get_script_dir()}/overrideData/matchersOverwride.json",
             "r",
@@ -1094,7 +1156,6 @@ class Parser:
         #             "rune": ["rune.stat_419810844"],
         #         }
         #     },
-        #     "tiers": {"unique": {}},
         # }
 
         # Controlled Metamorphosis
@@ -1111,7 +1172,6 @@ class Parser:
                     "explicit": ["explicit.stat_3642528642"],
                 }
             },
-            "tiers": default,
         }
         charm_slots = override_matchers["Charm Slots"][self.lang]
         self.mods["charm_slots"] = {
@@ -1120,8 +1180,16 @@ class Parser:
             "id": "local_charm_slots",
             "matchers": charm_slots,
             "trade": {"ids": {}},
-            "tiers": default,
         }
+        with open(
+            f"{self.get_script_dir()}/overrideData/logbook_overrides.json",
+            "r",
+            encoding="utf-8",
+        ) as f:
+            logbook_overrides = json.load(f)
+        factions = logbook_overrides[self.lang]
+        for faction in factions:
+            self.mods[faction["ref"]] = faction
 
     def do_client_strings(self):
         cl = create_client_strings(self.client_strings_file)

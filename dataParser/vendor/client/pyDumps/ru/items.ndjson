@@ -1,18 +1,14 @@
-{"name": "Bladed Shoes", "refName": "Bladed Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ev": [91, 91], "es": [35, 35]}, "w": 2, "h": 2}
 {"name": "Cандалии с обмотками", "refName": "Wrapped Sandals", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"es": [22, 22]}, "w": 2, "h": 2}
 {"name": "Cвязка типовых ключей", "refName": "Essential Keyring", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
-{"name": "Furtive Wraps", "refName": "Furtive Wraps", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ev": [50, 50], "es": [19, 19]}, "w": 2, "h": 2}
-{"name": "Gallant Helm", "refName": "Gallant Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [134, 134], "ev": [122, 122]}, "w": 2, "h": 2}
-{"name": "Grand Cuisses", "refName": "Grand Cuisses", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ar": [66, 66], "ev": [60, 60], "es": [23, 23]}, "w": 2, "h": 2}
-{"name": "Grand Manchettes", "refName": "Grand Manchettes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [44, 44], "ev": [40, 40], "es": [15, 15]}, "w": 2, "h": 2}
-{"name": "Grand Mitts", "refName": "Grand Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [122, 122]}, "w": 2, "h": 2}
-{"name": "Grand Regalia", "refName": "Grand Regalia", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ar": [135, 135], "ev": [123, 123], "es": [46, 46]}, "w": 2, "h": 3}
-{"name": "Grand Visage", "refName": "Grand Visage", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [88, 88], "ev": [80, 80], "es": [30, 30]}, "w": 2, "h": 2}
-{"name": "Overseer Precursor Tablet", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Golden Blade", "refName": "Golden Blade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
+{"name": "Golden Bracers", "refName": "Golden Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "w": 2, "h": 2}
+{"name": "Golden Greaves", "refName": "Golden Greaves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "w": 2, "h": 2}
+{"name": "Golden Plate", "refName": "Golden Plate", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "w": 2, "h": 3}
+{"name": "Golden Shield", "refName": "Golden Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "w": 2, "h": 4}
+{"name": "Golden Visage", "refName": "Golden Visage", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "w": 2, "h": 2}
 {"name": "Playtest Attack", "refName": "Playtest Attack", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Playtest Slam", "refName": "Playtest Slam", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Playtest Spell", "refName": "Playtest Spell", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Tremors", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -207,9 +203,9 @@
 {"name": "Большой шлем воина", "refName": "Warrior Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [146, 146]}, "w": 2, "h": 2}
 {"name": "Большой шлем голиафа", "refName": "Goliath Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [216, 216]}, "w": 2, "h": 2}
 {"name": "Большой шлем командира", "refName": "Commander Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [176, 176]}, "w": 2, "h": 2}
-{"name": "Большой шлем поединщика", "refName": "Dueling Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [200, 200]}, "w": 2, "h": 2}
 {"name": "Большой шлем солдата", "refName": "Soldier Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [66, 66]}, "w": 2, "h": 2}
 {"name": "Большой шлем стража", "refName": "Guardian Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [243, 243]}, "w": 2, "h": 2}
+{"name": "Большой шлем часового", "refName": "Dueling Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [200, 200]}, "w": 2, "h": 2}
 {"name": "Большой шлем элиты", "refName": "Elite Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [136, 136]}, "w": 2, "h": 2}
 {"name": "Бородовидный топор", "refName": "Bearded Axe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
 {"name": "Ботинки со стальным носком", "refName": "Steelpoint Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ev": [65, 65], "es": [26, 26]}, "w": 2, "h": 2}
@@ -248,17 +244,24 @@
 {"name": "Веление Мейвен", "refName": "The Maven's Writ", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "Великий древний уголёк", "refName": "Grand Eldritch Ember", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "Великий зловещий ихор", "refName": "Grand Eldritch Ichor", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "Великий удар грома", "refName": "Greater Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Великий флакон жизни", "refName": "Colossal Life Flask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Flask"}, "w": 1, "h": 2}
 {"name": "Великий флакон маны", "refName": "Colossal Mana Flask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Flask"}, "w": 1, "h": 2}
+{"name": "Великолепное облачение", "refName": "Grand Regalia", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ar": [135, 135], "ev": [123, 123], "es": [46, 46]}, "w": 2, "h": 3}
 {"name": "Великолепные латы", "refName": "Glorious Plate", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ar": [534, 534]}, "w": 2, "h": 3}
+{"name": "Великолепные манжеты", "refName": "Grand Manchettes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [44, 44], "ev": [40, 40], "es": [15, 15]}, "w": 2, "h": 2}
+{"name": "Великолепные набедренники", "refName": "Grand Cuisses", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ar": [66, 66], "ev": [60, 60], "es": [23, 23]}, "w": 2, "h": 2}
 {"name": "Великолепный идол", "refName": "Glorious Idol", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "Великолепный лик", "refName": "Grand Visage", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [88, 88], "ev": [80, 80], "es": [30, 30]}, "w": 2, "h": 2}
 {"name": "Великолепный тарджет", "refName": "Grand Targe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ar": [84, 84], "ev": [76, 76]}, "w": 2, "h": 3}
+{"name": "Величественные рукавицы", "refName": "Grand Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [122, 122]}, "w": 2, "h": 2}
 {"name": "Венец аристократа", "refName": "Noble Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [71, 71]}, "w": 2, "h": 2}
 {"name": "Венец из золота", "refName": "Gold Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [58, 58]}, "w": 2, "h": 2}
 {"name": "Венец эзомита", "refName": "Crest of Ezomyr", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "Венок из ветвей", "refName": "Twig Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"es": [19, 19]}, "w": 2, "h": 2}
 {"name": "Верёвочные манжеты", "refName": "Rope Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [12, 12], "es": [6, 6]}, "w": 2, "h": 2}
 {"name": "Вестник грома", "refName": "Herald of Thunder", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Вестник крови", "refName": "", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Вестник льда", "refName": "Herald of Ice", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Вестник пепла", "refName": "Herald of Ash", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Вестник чумы", "refName": "Herald of Plague", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -298,7 +301,6 @@
 {"name": "Вневременной осколок храмовников", "refName": "Timeless Templar Splinter", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "Вневременной самоцвет", "refName": "Timeless Jewel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
 {"name": "Внезапный удар", "refName": "Flicker Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Возбуждение", "refName": "Conduction", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Возбуждение", "refName": "Innervate", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Возвышенное проклятие", "refName": "Heightened Curse", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Возвышенный секстант", "refName": "Elevated Sextant", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -362,7 +364,7 @@
 {"name": "Вытяжка из яда трясин", "refName": "Venom Draught of the Marshes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 2}
 {"name": "Вытяжка из яда ясности", "refName": "Venom Draught of Clarity", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 2}
 {"name": "Выход стихии", "refName": "Elemental Expression", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Выцветший переломный фрагмент", "refName": "Weathered Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/32e6544250/PinnacleKey3.png", "tradeTag": "weathered-crisis-fragment", "w": 1, "h": 1}
+{"name": "Выцветший переломный фрагмент", "refName": "Weathered Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/32e6544250/PinnacleKey3.png", "tradeTag": "weathered-crisis-fragment", "craftable": {"category": "PinnacleKey"}, "w": 1, "h": 1}
 {"name": "Вышибание", "refName": "Break Posture", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Вышитый капюшон", "refName": "Lace Hood", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ev": [67, 67]}, "w": 2, "h": 2}
 {"name": "Газовая граната", "refName": "Gas Grenade", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -485,7 +487,7 @@
 {"name": "Древний Часовой-охотник", "refName": "Ancient Stalker Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "Древний Часовой-пандемоний", "refName": "Ancient Pandemonium Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "Древний осколок", "refName": "Ancient Shard", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "Древний переломный фрагмент", "refName": "Ancient Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ef329c74d1/PinnacleKey1.png", "tradeTag": "ancient-crisis-fragment", "w": 1, "h": 1}
+{"name": "Древний переломный фрагмент", "refName": "Ancient Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ef329c74d1/PinnacleKey1.png", "tradeTag": "ancient-crisis-fragment", "craftable": {"category": "PinnacleKey"}, "w": 1, "h": 1}
 {"name": "Древний тяжёлый меч", "refName": "Ancient Greatblade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Sword"}, "w": 2, "h": 4}
 {"name": "Древняя печать", "refName": "Ancient Seal", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 4}
 {"name": "Древняя сфера", "refName": "Ancient Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -493,6 +495,7 @@
 {"name": "Дробление", "refName": "Splinter", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Дробление костей", "refName": "Boneshatter", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Дрожащее ископаемое", "refName": "Shuddering Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "Дрожь", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Дубина из пня", "refName": "Felled Greatclub", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "Дубовая кувалда", "refName": "Oak Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "Духи предков", "refName": "Ancestral Spirits", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -730,7 +733,7 @@
 {"name": "Исследовательский доклад разведки", "refName": "Explorer's Scouting Report", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "Истощающее присутствие", "refName": "Withering Presence", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Истрёпанная накидка", "refName": "Tattered Cloak", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentUtility"}, "w": 2, "h": 2}
-{"name": "Истёртый переломный фрагмент", "refName": "Faded Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5709c39ee7/PinnacleKey2.png", "tradeTag": "faded-crisis-fragment", "w": 1, "h": 1}
+{"name": "Истёртый переломный фрагмент", "refName": "Faded Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5709c39ee7/PinnacleKey2.png", "tradeTag": "faded-crisis-fragment", "craftable": {"category": "PinnacleKey"}, "w": 1, "h": 1}
 {"name": "Казнь", "refName": "Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Калгууранский инкубатор", "refName": "Kalguuran Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "Калгууранский инкубатор", "refName": "Kalguuran Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
@@ -772,6 +775,7 @@
 {"name": "Кистень с кольцами", "refName": "Ring Flail", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Flail"}, "w": 2, "h": 3}
 {"name": "Кластерная граната", "refName": "Cluster Grenade", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Клевец", "refName": "Warpick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "Клинковые ботинки", "refName": "Bladed Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ev": [91, 91], "es": [35, 35]}, "w": 2, "h": 2}
 {"name": "Клинок из ключей", "refName": "Keyblade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Sword"}, "w": 2, "h": 4}
 {"name": "Клинок энергии", "refName": "Energy Blade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
 {"name": "Клинок энергии", "refName": "Energy Blade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Sword"}, "w": 2, "h": 4}
@@ -1542,6 +1546,7 @@
 {"name": "Плитка Предтеч Делириума", "refName": "Delirium Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXREZWxpcml1bSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/81acb86b9f/PrecursorTabletDelirium.png", "tradeTag": "delirium-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плитка Предтеч Разлома", "refName": "Breach Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCcmVhY2giLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/295c0839d7/PrecursorTabletBreach.png", "tradeTag": "breach-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плитка Предтеч Ритуала", "refName": "Ritual Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRSaXR1YWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7c49d00f07/PrecursorTabletRitual.png", "tradeTag": "ritual-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Плитка Предтеч Смотрителя", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плитка Предтеч Экспедиции", "refName": "Expedition Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRFeHBlZGl0aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4450dac451/PrecursorTabletExpedition.png", "tradeTag": "expedition-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плотная кожанка", "refName": "Shrouded Vest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [102, 102]}, "w": 2, "h": 3}
 {"name": "Плотное ископаемое", "refName": "Dense Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -1748,6 +1753,7 @@
 {"name": "Пробиватель доспеха", "refName": "Mail Breaker", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Dagger"}, "w": 1, "h": 3}
 {"name": "Пробуждённый секстант", "refName": "Awakened Sextant", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "Проводимость", "refName": "Conductivity", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Проводник", "refName": "Conduction", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Проводник молнии", "refName": "Lightning Conduit", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Проводящая цепочка", "refName": "Conduit Line", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
 {"name": "Проворное ископаемое", "refName": "Deft Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -2069,6 +2075,7 @@
 {"name": "Скоро", "refName": "Coming Soon", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Скоро", "refName": "Coming Soon", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Скоротечность", "refName": "Fast Forward", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Скрытые обмотки", "refName": "Furtive Wraps", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ev": [50, 50], "es": [19, 19]}, "w": 2, "h": 2}
 {"name": "Скрытый Апекс-Часовой", "refName": "Cryptic Apex Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "Скрытый Часовой-охотник", "refName": "Cryptic Stalker Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "Скрытый Часовой-пандемоний", "refName": "Cryptic Pandemonium Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
@@ -2376,7 +2383,6 @@
 {"name": "Удар булавой", "refName": "Mace Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Удар в прыжке", "refName": "Vaulting Impact", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Удар грома", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Удар грома", "refName": "Greater Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Удар кинжалом", "refName": "Dagger Stab", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Удар кинжалом", "refName": "Dagger Stab", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Удар кистенем", "refName": "Flail Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -2731,6 +2737,7 @@
 {"name": "Шитый золотом пояс", "refName": "Golden Obi", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Belt"}, "w": 2, "h": 1}
 {"name": "Шкатулка из Трипикса", "refName": "Box of Tripyxis", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "Шквал бури", "refName": "Tempest Flurry", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Шлем героя", "refName": "Gallant Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [134, 134], "ev": [122, 122]}, "w": 2, "h": 2}
 {"name": "Шлем с горжетом", "refName": "Shielded Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [75, 75], "ev": [66, 66]}, "w": 2, "h": 2}
 {"name": "Шлем с забралом", "refName": "Guarded Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [34, 34], "ev": [28, 28]}, "w": 2, "h": 2}
 {"name": "Шлем с капюшоном", "refName": "Cowled Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [62, 62], "ev": [54, 54]}, "w": 2, "h": 2}
@@ -2786,308 +2793,308 @@
 {"name": "Яростный рассекатель", "refName": "Fury Cleaver", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
 {"name": "Яростный удар", "refName": "Furious Slam", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Ясность ума", "refName": "Clarity", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Андвариус", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо", "stats": {"#% increased Rarity of Items found": [[50, 70]], "(implicit) #% increased Rarity of Items found": [[6, 15]]}}}
-{"name": "Астраментис", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет", "stats": {"# to all Attributes": [[80, 100]], "(implicit) # to all Attributes": [[5, 7]]}}}
-{"name": "Beacon of Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Солнечный амулет", "stats": {"# to Spirit": [[10, 15]], "# to maximum Mana": [[60, 100]]}}}
-{"name": "Birthright Buckle", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Широкий ремень", "stats": {"#% increased Flask Charges gained": [[20, 30]], "# to Armour": [[100, 150]], "#% reduced Flask Charges used": [[10, 15]], "(implicit) #% increased Flask Charges gained": [[20, 30]]}}}
-{"name": "Чёрное пламя", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом", "stats": {"#% to Chaos Resistance": [[7, 13]], "#% increased Mana Regeneration Rate": [[15, 30]]}}}
-{"name": "Чёрное сердце", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Железное кольцо", "stats": {"# Life Regeneration per second": [[3, 6]], "Adds # to # Chaos Damage to Attacks": [[4, 6], [8, 10]]}}}
-{"name": "Blistering Bond", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Кольцо с рубином", "stats": {"#% to Fire Resistance": [[20, 30]], "# to maximum Life": [[40, 60]], "(implicit) #% to Fire Resistance": [[20, 30]]}}}
-{"name": "Бринабас", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Широкий ремень", "stats": {"#% increased Flask Charges gained": [[20, 30]], "# to maximum Mana": [[40, 60]], "#% to Lightning Resistance": [[30, 40]], "# Life Regeneration per second": [[7, 12]]}}}
-{"name": "Зов братьев", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом", "stats": {"#% to Lightning Resistance": [[20, 30]], "# to Intelligence": [[10, 20]], "#% increased Mana Regeneration Rate": [[25, 35]], "#% increased Freeze Buildup": [[20, 30]]}}}
-{"name": "Сердце бойни", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём", "stats": {"# to Strength": [[10, 15]], "# to all Attributes": [[10, 20]], "#% to all Elemental Resistances": [[10, 20]]}}}
-{"name": "Хор бури", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом", "stats": {"# to Dexterity": [[10, 15]], "#% to Lightning Resistance": [[20, 30]]}}}
-{"name": "Наследие труса", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Кольчужный ремень", "stats": {"#% reduced Flask Charges used": [[10, 15]], "# to Strength": [[-20, -10]], "# to Dexterity": [[20, 30]], "#% increased Life and Mana Recovery from Flasks": [[30, 40]]}}}
-{"name": "Cracklecreep", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Кольцо с рубином", "stats": {"#% to Fire Resistance": [[20, 30]], "#% increased Fire Damage": [[20, 30]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "Смертельная спешка", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Кольцо с изумрудом", "stats": {"# to Accuracy Rating": [[75, 125]], "(implicit) # to Accuracy Rating": [[120, 160]], "# to Evasion Rating": [[75, 125]]}}}
-{"name": "Непокорность судьбе", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом", "stats": {"# to Dexterity": [[10, 15]], "#% increased maximum Life": [[6, 10]], "# to Strength": [[10, 20]], "#% increased Mana Regeneration Rate": [[25, 40]]}}}
-{"name": "Проклятие Доэдре", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом", "stats": {"# to maximum Mana": [[20, 30]], "#% to all Elemental Resistances": [[5, 15]], "Gain # Mana per Enemy Killed": [[1, 10]]}}}
-{"name": "Осколки снов", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
-{"name": "Глаз Чаюлы", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Золотой амулет", "stats": {"#% increased Rarity of Items found": [[12, 20]], "#% reduced maximum Life": [[20, 30]], "# to all Attributes": [[10, 15]]}}}
-{"name": "Fireflower", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Солнечный амулет", "stats": {"# to Spirit": [[10, 15]], "#% increased Rarity of Items found": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 40]], "# to Level of all Fire Skills": [[1, 4]]}}}
-{"name": "Fixation of Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет", "stats": {"# to all Attributes": [[5, 7]], "Allies in your Presence have #% increased Critical Hit Chance": [[30, 50]], "Allies in your Presence have #% increased Critical Damage Bonus": [[30, 50]], "Allies in your Presence have #% increased Attack Speed": [[10, 20]], "Allies in your Presence have #% increased Cast Speed": [[10, 20]]}}}
-{"name": "Glowswarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом", "stats": {"# to maximum Mana": [[40, 60]], "(implicit) # to maximum Mana": [[20, 30]], "#% increased Flask Mana Recovery rate": [[20, 30]]}}}
-{"name": "Охотник за головами", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Тяжёлый ремень", "stats": {"#% increased Stun Threshold": [[20, 30]], "# to maximum Life": [[40, 60]], "# to Strength": [[20, 40]], "# to Dexterity": [[20, 40]]}}}
-{"name": "Сердечная связь", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Жемчужное кольцо", "stats": {"#% increased Cast Speed": [[7, 10]], "Minions have #% increased maximum Life": [[10, 15]], "# Life Regeneration per second": [[10, 15]], "#% increased Mana Regeneration Rate": [[20, 40]], "Minions Revive #% faster": [[10, 15]]}}}
-{"name": "Idol of Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Алый амулет", "stats": {"# Life Regeneration per second": [[2, 4]], "# to maximum Life": [[60, 80]], "# to Dexterity": [[10, 20]]}}}
-{"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Алый амулет", "stats": {"# Life Regeneration per second": [[2, 4]], "#% to Fire Resistance": [[10, 20]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "Адская пряжка", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Ремень из пластин", "stats": {"# to Armour": [[100, 150]], "(implicit) # to Armour": [[100, 140]], "# to Strength": [[10, 20]], "#% to Maximum Fire Resistance": [[3, 5]], "#% to Fire Resistance": [[30, 50]]}}}
-{"name": "Находчивость", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Практичный ремень", "stats": {"#% increased bonuses gained from Equipped Rings": [[40, 80]]}}}
-{"name": "Касание Каландры", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Кольцо", "stats": {}}}
-{"name": "Килевание", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Матерчатый пояс", "stats": {"#% increased Mana Recovery from Flasks": [[20, 30]], "#% reduced Flask Life Recovery rate": [[-25, 25]], "#% reduced Flask Mana Recovery rate": [[-25, 25]]}}}
-{"name": "Levinstone", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом", "stats": {"#% to Lightning Resistance": [[20, 30]], "# to maximum Mana": [[40, 60]], "#% increased chance to Shock": [[10, 20]]}}}
-{"name": "Ligurium Talisman", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Амулет с лазуритом", "stats": {"# to Intelligence": [[20, 30]], "# to maximum Energy Shield": [[30, 40]], "# to Spirit": [[25, 35]], "(implicit) # to Intelligence": [[10, 15]]}}}
-{"name": "Ремень Мегинорда", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Ремень из сыромятной кожи", "stats": {"#% increased Life Recovery from Flasks": [[20, 30]], "# to Strength": [[40, 50]], "#% to Cold Resistance": [[10, 15]]}}}
-{"name": "Полуночная тесьма", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Ремень из сыромятной кожи", "stats": {"#% increased Life Recovery from Flasks": [[20, 30]], "# to maximum Mana": [[30, 50]], "#% to all Elemental Resistances": [[5, 10]]}}}
-{"name": "Сердце Мина", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом", "stats": {"#% to Chaos Resistance": [[7, 13]], "Gain #% of Damage as Extra Chaos Damage": [[30, 40]]}}}
-{"name": "Первородный грех", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Кольцо с аметистом", "stats": {"#% to Chaos Resistance": [[17, 23]], "(implicit) #% to Chaos Resistance": [[7, 13]]}}}
-{"name": "Печатка Перандусов", "refName": "Perandus Signet", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо"}}
-{"name": "Polcirkeln", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Cold Damage": [[20, 30]], "# to maximum Mana": [[40, 60]], "# to Strength": [[10, 15]]}}}
-{"name": "Revered Resin", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём", "stats": {"# to Strength": [[10, 15]], "# to maximum Life": [[40, 60]], "#% increased Flask Life Recovery rate": [[20, 30]]}}}
-{"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Лунный амулет", "stats": {"# to maximum Energy Shield": [[20, 30]], "#% increased Skill Speed": [[15, 30]], "#% increased Critical Hit Chance": [[20, 30]], "#% increased Damage": [[30, 50]]}}}
-{"name": "Моток Рюслаты", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Декорированный ремень", "stats": {"#% reduced Charm Charges used": [[10, 15]], "# to maximum Life": [[80, 100]], "#% increased Flask Life Recovery rate": [[30, 50]], "#% more maximum Physical Attack Damage": [[30, 40]], "#% less minimum Physical Attack Damage": [[30, 40]]}}}
-{"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Кольцо с лазуритом", "stats": {"# to maximum Mana": [[20, 30]], "#% increased Critical Hit Chance for Spells": [[30, 50]], "#% increased Critical Spell Damage Bonus": [[30, 50]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "Кольцо"}}
-{"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Золотой амулет", "stats": {"#% increased Rarity of Items found": [[12, 20]], "# to all Attributes": [[10, 20]], "#% to Chaos Resistance": [[17, 23]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Тонкий ремень", "stats": {"#% reduced Flask Life Recovery rate": [[20, 30]], "# to Intelligence": [[20, 30]], "#% increased Flask Charges gained": [[20, 30]]}}}
-{"name": "Серпентарий", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Жемчужное кольцо", "stats": {"#% increased Cast Speed": [[10, 15]], "#% increased Spell Damage": [[20, 30]], "(implicit) #% increased Cast Speed": [[7, 10]]}}}
-{"name": "Оковы души", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Длинный ремень", "stats": {"#% increased Charm Effect Duration": [[15, 20]], "# to maximum Energy Shield": [[40, 60]], "# to Intelligence": [[20, 30]]}}}
-{"name": "Strugglescream", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Звёздный амулет", "stats": {"# to all Attributes": [[5, 7]]}}}
-{"name": "Surefooted Sigil", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Амулет с нефритом", "stats": {"# to Dexterity": [[5, 15]], "# to maximum Life": [[40, 60]], "(implicit) # to Dexterity": [[10, 15]]}}}
-{"name": "Наковальня", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Амулет с кровавым камнем", "stats": {"# to maximum Life": [[30, 40]], "#% increased Armour": [[25, 50]], "#% to maximum Block chance": [[3, 5]]}}}
-{"name": "The Burrower", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Кольцо с топазом", "stats": {"#% to Lightning Resistance": [[20, 30]], "(implicit) #% to Lightning Resistance": [[20, 30]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
-{"name": "The Everlasting Gaze", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Лазурный амулет", "stats": {"#% increased Mana Regeneration Rate": [[20, 30]], "Gain #% of Maximum Mana as Extra Maximum Energy Shield": [[20, 30]]}}}
-{"name": "Обитель демонов", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Амулет с лазуритом", "stats": {"# to Intelligence": [[10, 15]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "Воровская мука", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Кольцо с изумрудом", "stats": {"# to Accuracy Rating": [[120, 160]], "#% increased Rarity of Items found": [[30, 40]], "#% to all Elemental Resistances": [[10, 15]]}}}
-{"name": "Гармония Ангила", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Лазурный амулет", "stats": {"#% increased Mana Regeneration Rate": [[20, 30]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% increased Critical Hit Chance": [[100, 200]], "# to Stun Threshold": [[60, 100]]}}}
-{"name": "Игра Вентора", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Золотое кольцо", "stats": {"#% increased Rarity of Items found": [[6, 15]], "# to maximum Life": [[0, 80]], "# to Spirit": [[0, 20]], "#% reduced Rarity of Items found": [[-40, 40]], "#% to Fire Resistance": [[-40, 40]], "#% to Cold Resistance": [[-40, 40]], "#% to Lightning Resistance": [[-40, 40]]}}}
-{"name": "Whisper of the Brotherhood", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Кольцо с сапфиром", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Skill Speed": [[5, 10]], "# to Dexterity": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
-{"name": "Кровь Ксофа", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Амулет с янтарём", "stats": {"# to Strength": [[10, 15]], "#% increased maximum Life": [[10, 15]], "#% to Fire Resistance": [[20, 30]]}}}
-{"name": "Zerphi's Genesis", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Тяжёлый ремень", "stats": {"#% increased Stun Threshold": [[20, 30]], "# to Strength": [[10, 30]], "#% increased Charm Charges used": [[10, 30]]}}}
-{"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses", "stats": {"#% increased Movement Speed": [[15, 30]], "#% increased Armour, Evasion and Energy Shield": [[60, 80]]}}}
-{"name": "Крылья Эрисвейна", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Полированные перчатки", "stats": {"#% increased Armour and Evasion": [[50, 70]], "#% increased Attack Speed": [[5, 10]], "# to Intelligence": [[20, 30]]}}}
-{"name": "Альким Эира", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Крашеный гербовый щит", "stats": {"#% increased Block chance": [[30, 40]], "#% increased Armour and Energy Shield": [[30, 50]], "# to maximum Mana": [[50, 70]]}}}
-{"name": "Вой Альфы", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Защитный капюшон", "stats": {"#% increased Evasion Rating": [[80, 100]], "#% to Cold Resistance": [[50, 75]]}}}
-{"name": "Передник Эмирана", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Наряд отшельника", "stats": {"#% increased Evasion and Energy Shield": [[30, 50]], "# to Dexterity": [[10, 20]], "#% reduced Bleeding Duration on you": [[40, 60]]}}}
-{"name": "Колесо Арвила", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Тарджет из твёрдой древесины", "stats": {"#% increased Armour and Evasion": [[60, 100]], "# to maximum Life": [[40, 60]], "# to maximum Mana": [[40, 60]], "#% increased Skill Effect Duration": [[30, 50]]}}}
-{"name": "Пепел", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Куртка следопыта", "stats": {"# to maximum Life": [[40, 60]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[30, 40]]}}}
-{"name": "Гнев Асфиксии", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Колчан охотничьих стрел", "stats": {"Adds # to # Cold damage to Attacks": [[3, 4], [5, 8]], "#% increased Attack Speed": [[5, 10]], "#% to Cold Resistance": [[5, 10]], "Attacks Gain #% of Damage as Extra Cold Damage": [[5, 10]]}}}
-{"name": "Приют агрессора", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Закрытый шлем", "stats": {"#% increased Armour and Evasion": [[50, 100]], "# to Accuracy Rating": [[200, 400]], "#% increased Critical Hit Chance": [[30, 50]], "Skills have a #% longer Perfect Timing window": [[100, 150]]}}}
-{"name": "Взор Ацака", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Маска с вуалью", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "#% increased Critical Hit Chance": [[30, 40]], "# to Dexterity": [[10, 20]], "# to Intelligence": [[10, 20]]}}}
-{"name": "Проницательность Атзири", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Литые рукавицы", "stats": {"#% increased Armour": [[80, 100]], "#% increased Critical Hit Chance": [[30, 50]], "# to Intelligence": [[20, 30]]}}}
-{"name": "Презрение Атзири", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Венец из золота", "stats": {"# to maximum Mana": [[40, 60]], "#% increased Rarity of Items found": [[10, 20]], "#% of Damage taken bypasses Energy Shield": [[20, 25]], "Gain #% of Maximum Life as Extra Maximum Energy Shield": [[25, 30]]}}}
-{"name": "Златохваты", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Пластинчатые перчатки", "stats": {"#% increased Armour and Evasion": [[40, 60]], "#% increased Rarity of Items found": [[40, 50]]}}}
-{"name": "Beetlebite", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Бархатные ботинки", "stats": {"#% increased Movement Speed": [[20, 30]], "#% increased Evasion and Energy Shield": [[60, 120]]}}}
-{"name": "Брюхо Зверя", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Броня исследователя", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to maximum Life": [[100, 150]], "# to Stun Threshold": [[100, 150]], "# to # Physical Thorns damage": [[25, 30], [35, 40]]}}}
-{"name": "Beyond Reach", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Колчан жестоких стрел", "stats": {"#% increased Critical Hit Chance for Attacks": [[20, 30]], "#% reduced Attack Speed": [[10, 15]], "Attacks Gain #% of Physical Damage as extra Chaos Damage": [[10, 20]]}}}
-{"name": "Birth of Fury", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Каменные поножи", "stats": {"# to maximum Life": [[40, 60]], "#% to Fire Resistance": [[20, 30]]}}}
-{"name": "Жестокое цветение", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Наряд из перьев", "stats": {"#% increased Energy Shield": [[50, 100]], "# to maximum Mana": [[50, 100]]}}}
-{"name": "Чёрное плетение", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Меховой доспех", "stats": {"# to Armour": [[40, 60]], "# to Strength": [[10, 20]], "# to Intelligence": [[10, 20]], "# to Stun Threshold": [[40, 60]]}}}
-{"name": "Отсвет мрака", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Колчан огненных стрел", "stats": {"Adds # to # Fire damage to Attacks": [[3, 5], [6, 9]], "# to maximum Mana": [[30, 50]], "Attacks Gain #% of Damage as Extra Fire Damage": [[5, 10]]}}}
-{"name": "Гребень чёрного солнца", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Обмотанный большой шлем", "stats": {"#% increased Armour": [[50, 80]], "#% increased Strength": [[5, 15]], "#% increased Dexterity": [[5, 15]], "#% increased Intelligence": [[5, 15]]}}}
-{"name": "Благословенные узы", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки", "stats": {"# to Evasion Rating": [[60, 100]], "# to maximum Energy Shield": [[30, 50]], "Gain # Mana per Enemy Killed": [[25, 35]]}}}
-{"name": "Браслеты синего пламени", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Золотые манжеты", "stats": {"# to Intelligence": [[10, 20]], "#% to Fire Resistance": [[5, 15]], "#% to Cold Resistance": [[5, 15]]}}}
-{"name": "Кости Уллра", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Сетчатые сандалии", "stats": {"#% increased Energy Shield": [[40, 60]], "# to maximum Life": [[20, 40]], "# to maximum Mana": [[20, 40]]}}}
-{"name": "Колючий панцирь", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Ржавая кираса", "stats": {"# to maximum Life": [[60, 100]], "# to Stun Threshold": [[60, 100]]}}}
-{"name": "Терновники", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "Сапоги с тесьмой", "stats": {"#% increased Movement Speed": [[10, 20]], "# to maximum Life": [[40, 60]], "# to Stun Threshold": [[60, 80]], "# to # Physical Thorns damage": [[10, 15], [20, 25]]}}}
-{"name": "Ремни проворства", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "Доспех из шкур роа", "stats": {"#% increased Evasion Rating": [[60, 100]], "#% increased Flask Life Recovery rate": [[40, 60]], "#% increased Flask Mana Recovery rate": [[40, 60]], "# to Dexterity": [[20, 30]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "Ощетинившийся вепрь", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Кожаный жилет", "stats": {"# to maximum Life": [[40, 60]], "# Life Regeneration per second": [[3, 5]]}}}
-{"name": "Бронзовая борода", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Корона с рогами", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% reduced Effect of Chill on you": [[35, 50]], "#% reduced effect of Ignite on you": [[35, 50]], "#% reduced effect of Shock on you": [[35, 50]]}}}
-{"name": "Кустоломы", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Сапоги из кожи ящера", "stats": {"#% increased Movement Speed": [[15, 25]], "#% increased Evasion Rating": [[50, 80]], "# to Dexterity": [[10, 20]]}}}
-{"name": "Свечеделы", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Тёмные перчатки", "stats": {"#% increased Energy Shield": [[50, 80]], "#% increased Fire Damage": [[20, 40]], "#% reduced Cold Damage": [[10, 20]], "#% to Fire Resistance": [[20, 40]], "#% to Cold Resistance": [[-20, -10]]}}}
-{"name": "Carrion Call", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Резной фокус", "stats": {"# to maximum Energy Shield": [[30, 40]], "Minions have #% increased maximum Life": [[20, 30]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "Накидка пламени", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Шёлковое платье", "stats": {"#% to Fire Resistance": [[30, 50]], "#% reduced Ignite Duration on you": [[30, 50]]}}}
-{"name": "Алый покров", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Кольчуга", "stats": {"#% increased Armour and Evasion": [[80, 100]], "# to maximum Life": [[80, 100]], "# to Stun Threshold": [[75, 150]]}}}
-{"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Тяжёлая корона", "stats": {"#% increased Rarity of Items found": [[10, 20]], "# to Intelligence": [[40, 50]]}}}
-{"name": "Корона красного солнца", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Большой шлем воина", "stats": {"# to Accuracy Rating": [[100, 150]], "# to maximum Life": [[60, 80]], "#% to Fire Resistance": [[20, 25]]}}}
-{"name": "Ядоброды", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Железные поножи", "stats": {"#% increased Armour": [[30, 50]], "# to Strength": [[5, 10]]}}}
-{"name": "Алое облачение", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Золочёное облачение", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% reduced Bleeding Duration on you": [[40, 60]]}}}
-{"name": "Герб Ардура", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Звенящий гербовый щит", "stats": {"#% increased Armour and Energy Shield": [[60, 100]], "# to Intelligence": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 50]], "#% increased Cooldown Recovery Rate": [[30, 50]]}}}
-{"name": "Корона Бледного царя", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Корона культиста", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "# to maximum Life": [[40, 80]], "# to # Physical Thorns damage": [[10, 15], [20, 25]]}}}
-{"name": "Корона победителя", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Железная корона", "stats": {"#% increased Rarity of Items found": [[10, 20]]}}}
-{"name": "Терновый венец", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Венок из ветвей", "stats": {"# to maximum Energy Shield": [[100, 150]], "# to # Physical Thorns damage": [[3, 5], [6, 10]]}}}
-{"name": "Несущие тьму", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Сабатоны с ремнями", "stats": {"#% increased Armour and Evasion": [[50, 100]], "#% to Lightning Resistance": [[30, 40]]}}}
-{"name": "Смертельный удар", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Двухслойные перчатки", "stats": {"#% increased Armour and Evasion": [[100, 150]], "#% increased Attack Speed": [[5, 10]], "Gain # Life per Enemy Killed": [[20, 30]], "Gain # Mana per Enemy Killed": [[20, 30]]}}}
-{"name": "Предсмертный хрип", "refName": "Death Rattle", "namespace": "UNIQUE", "unique": {"base": "Фокус из веток"}}
-{"name": "Колокол мёртвых", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Большой шлем элиты", "stats": {"#% increased Armour": [[60, 100]], "# to Strength": [[10, 20]], "#% increased Warcry Speed": [[20, 30]], "Warcry Skills have #% increased Area of Effect": [[20, 30]]}}}
-{"name": "Сшиватель демонов", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "Затейливые перчатки", "stats": {"# to maximum Energy Shield": [[40, 60]], "# to maximum Life": [[80, 120]], "#% increased Cast Speed": [[6, 12]], "Sacrifice #% of Life to gain that much Energy Shield when you Cast a Spell": [[5, 15]]}}}
-{"name": "Защитник", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "Обшарпанный ростовой щит", "stats": {"#% increased Armour": [[60, 80]], "# to Strength": [[10, 15]], "# Life Regeneration per second": [[3, 5]]}}}
-{"name": "Власть Доэдре", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Сшитые перчатки", "stats": {"# to maximum Energy Shield": [[20, 30]], "#% reduced Cast Speed": [[15, 25]], "# to Intelligence": [[10, 15]]}}}
-{"name": "Врата Рока", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Окованный ростовой щит", "stats": {"#% increased Armour": [[100, 150]], "#% to Chaos Resistance": [[13, 17]]}}}
-{"name": "Прототип Дориани", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Чешуйчатый доспех", "stats": {"#% increased Armour and Evasion": [[50, 100]], "# to maximum Life": [[60, 80]]}}}
-{"name": "Хрупкое цветение", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Клёпаный нагрудник", "stats": {"#% increased Evasion Rating": [[100, 150]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "Бивни Эдирна", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Железная кираса", "stats": {"#% increased Armour": [[120, 160]], "# to # Physical Thorns damage": [[15, 20], [25, 30]]}}}
-{"name": "Поедатель стихий", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Капюшон охотника", "stats": {"#% increased Evasion Rating": [[50, 80]], "# to Dexterity": [[20, 30]]}}}
-{"name": "Окутывающий рассвет", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Облачение пилигрима", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% to all Elemental Resistances": [[5, 15]]}}}
-{"name": "Шишак Эриана", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Шлем с забралом", "stats": {"# to Armour": [[0, 40]], "# to Evasion Rating": [[0, 30]], "# to maximum Energy Shield": [[0, 20]], "# to Accuracy Rating": [[0, 60]], "# to maximum Life": [[0, 30]], "# to maximum Mana": [[0, 20]], "#% increased Rarity of Items found": [[0, 20]], "#% increased Critical Hit Chance": [[0, 30]], "# to Strength": [[0, 10]], "# to Dexterity": [[0, 10]], "# to Intelligence": [[0, 10]], "#% to Fire Resistance": [[0, 10]], "#% to Cold Resistance": [[0, 10]], "#% to Lightning Resistance": [[0, 10]], "# Life Regeneration per second": [[0, 6]]}}}
-{"name": "Триумф эзомита", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Большой шлем солдата", "stats": {"#% increased Armour": [[50, 100]], "# to maximum Life": [[50, 80]], "# Life Regeneration per second": [[3, 6]], "#% increased Area of Effect": [[10, 20]]}}}
-{"name": "Пернатая крепость", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Тарджет с полумесяцем", "stats": {"# to Strength": [[20, 30]], "# to Dexterity": [[20, 30]], "#% to Fire Resistance": [[20, 30]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "Запретный взор", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Цепная тиара", "stats": {"#% increased Energy Shield": [[60, 100]], "#% to Maximum Cold Resistance": [[3, 5]], "#% to Cold Resistance": [[30, 50]]}}}
-{"name": "Лисья тень", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "Стёганый жилет", "stats": {"# to Evasion Rating": [[50, 70]], "# to Dexterity": [[20, 30]]}}}
-{"name": "Дух азарта", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "Тиснёные сапоги", "stats": {"#% increased Evasion Rating": [[100, 140]], "# to Dexterity": [[10, 15]], "#% to Lightning Resistance": [[15, 25]]}}}
-{"name": "Марш призраков", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Прошитые ботинки", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "# to maximum Mana": [[30, 50]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "Призрачные изгибы", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Рваное платье", "stats": {"#% to Chaos Resistance": [[29, 37]]}}}
-{"name": "Взгляд хаоса", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Племенная маска", "stats": {"# to maximum Life": [[50, 150]], "# to maximum Mana": [[50, 150]], "#% to Fire Resistance": [[-30, 30]], "#% to Cold Resistance": [[-30, 30]], "#% to Lightning Resistance": [[-30, 30]]}}}
-{"name": "Мрачная форма", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Вощёный плащ", "stats": {"#% increased Evasion Rating": [[100, 150]], "# to Dexterity": [[10, 20]], "#% to Fire Resistance": [[10, 20]]}}}
-{"name": "Золотой колпак", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Войлочная шляпа", "stats": {"# to Evasion Rating": [[30, 50]], "#% to all Elemental Resistances": [[25, 35]]}}}
-{"name": "Могильные узы", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Верёвочные манжеты", "stats": {"#% increased Armour and Energy Shield": [[40, 60]], "#% to Cold Resistance": [[10, 15]], "Gain # Life per Enemy Killed": [[7, 10]], "Gain # Mana per Enemy Killed": [[4, 6]]}}}
-{"name": "Объятия жадности", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "Нагрудник ваал", "stats": {"#% increased Armour": [[100, 150]], "#% increased Rarity of Items found": [[30, 50]], "#% to Fire Resistance": [[20, 30]]}}}
-{"name": "Серый мрак", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Шлем с полями", "stats": {"# to Strength": [[30, 50]], "# to Dexterity": [[30, 50]], "# to Intelligence": [[30, 50]]}}}
-{"name": "Хватка зимы", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Плотные наручи", "stats": {"#% increased Evasion Rating": [[30, 50]], "Adds # to # Cold damage to Attacks": [[3, 5], [6, 8]], "#% to Cold Resistance": [[20, 30]], "#% increased Freeze Buildup": [[40, 50]], "#% increased Magnitude of Chill you inflict": [[20, 30]]}}}
-{"name": "Длань мудрости и деяния", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps", "stats": {"# to Dexterity": [[15, 25]], "# to Intelligence": [[15, 25]]}}}
-{"name": "Кузня ненависти", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Литые рукавицы", "stats": {"#% increased Armour": [[50, 80]], "Gain # random Charge on reaching Maximum Rage": [[1, 3]], "# to Maximum Rage": [[-10, 10]]}}}
-{"name": "Рога Биндена", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Ржавый большой шлем", "stats": {"#% increased Rarity of Items found": [[5, 15]], "# to Strength": [[20, 30]]}}}
-{"name": "Оболочка мечты", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Наряд шамана", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "#% to Chaos Resistance": [[17, 23]], "#% increased Flask Charges used": [[20, 30]]}}}
-{"name": "Ледяной склеп", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Кольчужное одеяние", "stats": {"# to Strength": [[20, 30]], "# to Intelligence": [[20, 30]], "#% to Cold Resistance": [[30, 40]]}}}
-{"name": "Праздные руки", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Сегментные наручи", "stats": {"#% increased Evasion Rating": [[40, 60]], "# to Accuracy Rating": [[60, 100]], "# to Intelligence": [[5, 10]]}}}
-{"name": "Иннсмут", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Потрёпанный капюшон", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
-{"name": "Железная хватка", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Доспех бродяги", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
-{"name": "Железный наездник", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Шлем с козырьком", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "Ярнгрейпр", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Кольчужные перчатки", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
-{"name": "Сердце Каома", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Доспех завоевателя", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
-{"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Корона из костей духа", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
-{"name": "Брюзга", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Льняные обмотки", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
-{"name": "Хранитель царей", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Полные латы", "stats": {"# to maximum Life": [[60, 80]], "# to maximum Mana": [[40, 60]], "#% to all Elemental Resistances": [[5, 10]]}}}
-{"name": "Поток Китоко", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Инкрустированные перчатки", "stats": {"#% increased Energy Shield": [[30, 50]], "# to Dexterity": [[10, 20]], "#% reduced Attack and Cast Speed": [[10, 15]]}}}
-{"name": "Маска труппы хитрецов", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Маска с капюшоном", "stats": {"# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "# to Dexterity": [[10, 20]]}}}
-{"name": "Поступь легиона", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Грубые поножи", "stats": {"# to Armour": [[50, 70]], "# to Stun Threshold": [[50, 70]]}}}
-{"name": "Ласка Локтона", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Закалённые рукавицы", "stats": {"#% increased Skill Speed": [[10, 15]], "# to Armour": [[15, 25]], "# to maximum Life": [[40, 60]], "#% reduced maximum Mana": [[10, 15]]}}}
-{"name": "Поступь света", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Соломенные сандалии", "stats": {"# to maximum Energy Shield": [[20, 30]], "# to Intelligence": [[5, 10]], "#% reduced Energy Shield Recharge Rate": [[20, 30]]}}}
-{"name": "Паук-волк", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Крепостной ростовой щит", "stats": {"#% increased Block chance": [[30, 40]], "#% increased Armour": [[60, 100]]}}}
-{"name": "Махинации Махушотля", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит знамения", "stats": {"#% increased Armour and Energy Shield": [[333, 666]], "#% increased effect of Socketed Soul Cores": [[333, 666]]}}}
-{"name": "Виртуозность Малигаро", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "Искусные наручи", "stats": {"#% increased Evasion Rating": [[60, 80]], "#% increased Critical Hit Chance": [[20, 30]], "# to Dexterity": [[20, 30]]}}}
-{"name": "Маска кровоманта", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "Лицевая маска", "stats": {"# to Evasion Rating": [[20, 25]], "# to maximum Energy Shield": [[10, 15]], "#% increased Critical Hit Chance for Spells": [[20, 40]], "# to Strength": [[20, 30]], "# to Intelligence": [[10, 20]]}}}
-{"name": "Маска Сшитого Демона", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Тиара с перьями", "stats": {"#% increased Energy Shield": [[120, 160]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "Доблесть служения", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Отделанный мехом тарджет", "stats": {"#% increased Block chance": [[30, 50]], "#% increased Armour and Evasion": [[60, 80]], "# to Stun Threshold": [[60, 80]]}}}
-{"name": "Мориор Инвиктус", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia", "stats": {"#% increased Armour, Evasion and Energy Shield": [[200, 300]]}}}
-{"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Капюшон агента", "stats": {"#% increased Evasion Rating": [[40, 60]], "# to Accuracy Rating": [[100, 150]], "# to maximum Mana": [[40, 60]]}}}
-{"name": "Некромантия", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Костяное облачение", "stats": {"# to maximum Life": [[40, 60]], "# to maximum Mana": [[30, 50]], "#% to Chaos Resistance": [[17, 23]], "Minions gain #% of their Maximum Life as Extra Maximum Energy Shield": [[20, 30]]}}}
-{"name": "Северные лапы", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Замшевые наручи", "stats": {"# to Evasion Rating": [[15, 25]], "Adds # to # Physical Damage to Attacks": [[3, 5], [8, 10]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
-{"name": "Старый дуб", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит с символикой", "stats": {"#% increased Block chance": [[40, 60]], "#% increased Armour and Energy Shield": [[80, 120]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "Obern's Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Пластинчатые сабатоны", "stats": {"#% increased Armour and Evasion": [[150, 200]], "# Life Regeneration per second": [[20, 25]], "#% reduced Chill Duration on you": [[30, 50]], "#% reduced Freeze Duration on you": [[30, 50]], "#% reduced Shock duration on you": [[30, 50]]}}}
-{"name": "Подручный творца", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Рваные перчатки", "stats": {"Gain #% of Elemental Damage as Extra Cold Damage": [[5, 10]], "Gain #% of Elemental Damage Damage as Extra Fire Damage": [[5, 10]], "Gain #% of Elemental Damage Damage as Extra Lightning Damage": [[5, 10]]}}}
-{"name": "Объятья парии", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Доспех с кольцами", "stats": {"#% increased Armour and Evasion": [[50, 80]], "# to all Attributes": [[10, 15]], "# Life Regeneration per second": [[10, 15]]}}}
-{"name": "Вероломство", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Рыцарский доспех", "stats": {"#% increased Armour and Evasion": [[100, 150]], "#% chance to Avoid Physical Damage from Hits": [[10, 40]], "#% chance to Avoid Chaos Damage from Hits": [[10, 40]]}}}
-{"name": "Чумной перст", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Обмотки из муслина", "stats": {"#% increased Evasion and Energy Shield": [[30, 50]], "#% increased Attack Speed": [[4, 6]], "#% chance to Poison on Hit": [[20, 30]]}}}
-{"name": "Powertread", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Охотничьи ботинки", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Evasion and Energy Shield": [[60, 80]], "# to Intelligence": [[10, 20]]}}}
-{"name": "Pragmatism", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Броня исследователя", "stats": {"#% increased Armour and Evasion": [[200, 300]], "#% to all Elemental Resistances": [[10, 20]]}}}
-{"name": "Мольбы о дожде", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Кетское одеяние", "stats": {"#% increased Energy Shield": [[60, 100]], "# to Intelligence": [[10, 15]], "#% to Lightning Resistance": [[10, 20]]}}}
-{"name": "Шкура Коатля", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Доспех из змеиной чешуи", "stats": {"#% increased Evasion Rating": [[60, 80]], "# to maximum Life": [[60, 80]], "#% to Chaos Resistance": [[17, 23]], "# Life Regeneration per second": [[10, 20]]}}}
-{"name": "Царица леса", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Куртка контрабандиста", "stats": {"#% increased Evasion Rating": [[100, 150]], "#% to Fire Resistance": [[-15, -10]], "#% to Cold Resistance": [[25, 30]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "Светлая скорбь", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Вышитый капюшон", "stats": {"#% increased Evasion Rating": [[80, 100]], "#% to Fire Resistance": [[15, 25]]}}}
-{"name": "Проводник красного пламени", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Одеяние анахорета", "stats": {"# to maximum Mana": [[50, 70]], "#% to Lightning Resistance": [[20, 30]]}}}
-{"name": "Возрождение Феникса", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит знамения", "stats": {"#% to Fire Resistance": [[20, 25]]}}}
-{"name": "Самоделка Саффелла", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Гербовый щит с эмблемой", "stats": {"#% to Fire Resistance": [[15, 25]], "#% to Cold Resistance": [[15, 25]], "#% to Lightning Resistance": [[30, 40]]}}}
-{"name": "Образ песчаной бури", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Цепная тиара", "stats": {"# to maximum Energy Shield": [[80, 120]], "# to Dexterity": [[20, 30]]}}}
-{"name": "Урок змеи", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Звенящий фокус", "stats": {"# to maximum Life": [[60, 100]], "# to maximum Mana": [[60, 100]]}}}
-{"name": "Оковы убогих", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Старинные манжеты", "stats": {"#% increased Armour and Energy Shield": [[30, 50]]}}}
-{"name": "Наследие Сиерры", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Костюм марабута", "stats": {"#% increased Evasion and Energy Shield": [[50, 80]], "#% to Lightning Resistance": [[30, 40]], "#% faster start of Energy Shield Recharge": [[30, 50]]}}}
-{"name": "Непревзойдённость", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes", "stats": {"#% increased Skill Speed": [[10, 15]], "#% increased Armour, Evasion and Energy Shield": [[40, 60]]}}}
-{"name": "Кожа верных", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Одеяние", "stats": {"#% to all Elemental Resistances": [[5, 40]]}}}
-{"name": "Укус змеи", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Шипастые наручи", "stats": {"#% increased Evasion Rating": [[40, 60]], "#% to Chaos Resistance": [[7, 17]], "# Life Regeneration per second": [[6, 10]], "#% chance to Poison on Hit": [[20, 30]]}}}
-{"name": "Солипсист", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage", "stats": {"# to maximum Mana": [[60, 100]], "#% increased Armour, Evasion and Energy Shield": [[100, 150]]}}}
-{"name": "Свалинн", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Закалённый ростовой щит", "stats": {"#% increased Armour": [[100, 150]], "#% to maximum Block chance": [[-20, -10]]}}}
-{"name": "Темпоралис", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Шёлковое платье", "stats": {"# to maximum Energy Shield": [[100, 150]], "#% to all Elemental Resistances": [[10, 20]], "#% of Damage taken Recouped as Life": [[5, 30]], "#% of Damage taken Recouped as Mana": [[5, 30]], "Skills have # seconds to Cooldown": [[-4, -2]]}}}
-{"name": "Желание Тецлапокаля", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Обетное одеяние", "stats": {"#% increased Energy Shield": [[100, 150]], "# to Strength": [[20, 30]], "# to Intelligence": [[20, 30]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "Страж кургана", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Доспех изгоя", "stats": {"#% increased Armour and Evasion": [[60, 100]], "#% to Fire Resistance": [[-20, -10]]}}}
-{"name": "Мрачные сомнения", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Ведьмино облачение", "stats": {"#% increased Energy Shield": [[60, 100]], "# to Intelligence": [[10, 30]], "#% to Cold Resistance": [[10, 20]]}}}
-{"name": "Латунный свод", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Доспех чемпиона", "stats": {"#% increased Armour": [[400, 500]], "#% to all Maximum Elemental Resistances": [[-5, -1]], "# to Stun Threshold": [[200, 300]]}}}
-{"name": "Договор", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Церемониальное одеяние", "stats": {"#% increased Energy Shield": [[100, 150]], "# to maximum Life": [[100, 150]]}}}
-{"name": "Танцующий мираж", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Плащ путника", "stats": {"#% increased Evasion and Energy Shield": [[150, 200]], "#% to Lightning Resistance": [[10, 20]]}}}
-{"name": "Пожирающая диадема", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Тиара из прутьев", "stats": {"#% increased Energy Shield": [[60, 100]], "# to maximum Life": [[40, 60]], "# to Intelligence": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
-{"name": "The Eternal Spark", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Кристальный фокус", "stats": {"#% increased Energy Shield": [[50, 70]], "#% to Lightning Resistance": [[20, 30]]}}}
-{"name": "Полая маска", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Обтёсанная маска", "stats": {"# to maximum Life": [[60, 80]]}}}
-{"name": "Несмертный", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Рейдерский нагрудник", "stats": {"# to all Attributes": [[10, 15]], "#% to Fire Resistance": [[15, 30]], "#% to Lightning Resistance": [[15, 30]], "# Life Regeneration per second": [[10, 15]]}}}
-{"name": "Бесконечная погоня", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Бронзовые поножи", "stats": {"#% increased Armour": [[100, 150]], "# to maximum Life": [[80, 100]], "#% increased Chance to be afflicted by Ailments when Hit": [[80, 100]]}}}
-{"name": "Странствующий рыцарь", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Кольчужные сабатоны", "stats": {"#% increased Armour and Evasion": [[30, 50]], "# to Stun Threshold": [[30, 50]], "# to Ailment Threshold": [[30, 50]]}}}
-{"name": "Крысиная клетка", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Безрукавка разведчика", "stats": {"#% increased Evasion Rating": [[100, 150]]}}}
-{"name": "Улыбающийся рыцарь", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Шлем с капюшоном", "stats": {"# to Accuracy Rating": [[50, 100]], "#% increased Armour and Evasion": [[150, 200]], "#% increased Critical Hit Chance": [[15, 25]]}}}
-{"name": "Отречение", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Каменный ростовой щит", "stats": {"#% increased Block chance": [[40, 60]], "#% increased Armour": [[150, 200]], "# to Stun Threshold": [[150, 200]]}}}
-{"name": "Три дракона", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "Цельная маска", "stats": {"#% increased Evasion and Energy Shield": [[40, 60]], "#% to all Elemental Resistances": [[10, 20]]}}}
-{"name": "Вертекс", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "Племенная маска", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "#% increased Critical Hit Chance": [[30, 50]], "#% to Chaos Resistance": [[13, 17]]}}}
-{"name": "Подлый рыцарь", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "Шлем с горжетом", "stats": {"#% increased Armour and Evasion": [[60, 100]], "# to Accuracy Rating": [[75, 125]], "# Life Regeneration per second": [[10, 15]]}}}
-{"name": "Стена плача", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "Тотемный ростовой щит", "stats": {"#% increased Armour": [[100, 150]], "# to Stun Threshold": [[100, 150]]}}}
-{"name": "Нить света", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "Плетёный фокус", "stats": {"#% increased Energy Shield": [[50, 70]], "#% increased Mana Regeneration Rate": [[30, 40]], "#% increased Spell Damage per # Spirit": [[8, 12]]}}}
-{"name": "Стальной раж", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Остроконечный большой шлем", "stats": {}}}
-{"name": "Громовая поступь", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Сапоги со стальным носком", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Evasion Rating": [[40, 60]], "#% to Maximum Lightning Resistance": [[3, 5]], "#% to Lightning Resistance": [[30, 50]]}}}
-{"name": "Ржавый катафракт", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Маракетская кираса", "stats": {"#% increased Armour": [[400, 500]], "#% increased Strength": [[15, 30]]}}}
-{"name": "Trampletoe", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Подогнанные поножи", "stats": {"#% increased Armour": [[50, 100]]}}}
-{"name": "Древохваты", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Клёпаные рукавицы", "stats": {"#% increased Armour": [[30, 60]], "Adds # to # Physical Damage to Attacks": [[6, 10], [12, 16]], "#% increased Stun Buildup": [[20, 30]]}}}
-{"name": "Покров ночи", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Корона мученика", "stats": {"# to all Attributes": [[10, 20]]}}}
-{"name": "Лик Айи", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Обруч с чётками", "stats": {"#% increased Energy Shield": [[50, 80]], "#% increased Rarity of Items found": [[10, 15]], "#% increased Critical Hit Chance": [[20, 30]], "#% to Lightning Resistance": [[10, 20]]}}}
-{"name": "Защитник Волла", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ратное облачение", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "#% to Chaos Resistance": [[13, 17]]}}}
-{"name": "Зачинщики разрушений", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Меховые сапоги", "stats": {"#% increased Armour and Energy Shield": [[30, 60]], "Adds # to # Lightning damage to Attacks": [[1, 1], [30, 50]]}}}
-{"name": "Блуждающий реликварий", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Стальной доспех", "stats": {"#% increased Armour": [[50, 100]], "# to maximum Mana": [[40, 60]], "# to Strength": [[10, 20]], "# to Stun Threshold": [[60, 80]]}}}
-{"name": "Странники", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Cандалии с обмотками", "stats": {"# to maximum Energy Shield": [[10, 20]]}}}
-{"name": "Вопли ветра", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Пернатые сандалии", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Energy Shield": [[50, 100]], "# to Intelligence": [[10, 20]]}}}
-{"name": "Крылья Кейлин", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Ржавый большой шлем", "stats": {"#% increased Rarity of Items found": [[5, 15]], "# to Dexterity": [[20, 30]]}}}
-{"name": "Ведущие к чудесам", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Шёлковые тапочки", "stats": {"#% increased Movement Speed": [[10, 20]], "# to maximum Energy Shield": [[30, 50]], "# to Strength": [[10, 20]], "# to Dexterity": [[10, 20]], "# to Intelligence": [[10, 20]]}}}
-{"name": "Погибель Вульфа", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Расписной ростовой щит", "stats": {"# to maximum Life": [[40, 60]], "# to Strength": [[10, 15]], "# to Stun Threshold": [[60, 80]]}}}
-{"name": "Melting Maelstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Совершенный флакон маны", "stats": {"#% increased Duration": [[200, 250]]}}}
-{"name": "Решительность Олрота", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Совершенный флакон жизни", "stats": {"#% increased Charges per use": [[100, 150]]}}}
-{"name": "Противление тьме", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Утерянный алмаз", "stats": {}}}
-{"name": "Controlled Metamorphosis", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Алмаз", "stats": {"#% to all Elemental Resistances": [[-20, -5]], "#% to Chaos Resistance": [[-23, -3]]}}}
-{"name": "Из ничего", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Алмаз", "stats": {}}}
-{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Рубин", "stats": {}}}
-{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Изумруд"}}
-{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Сапфир"}}
-{"name": "Heroic Tragedy", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Вневременной самоцвет", "stats": {"Remembrancing # songworthy deeds by the line of Vorana": [[100, 8000]]}}}
-{"name": "Мания величия", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Алмаз", "stats": {}}}
-{"name": "Prism of Belief", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Алмаз", "stats": {"# to Level of all Specific Skill Skills": [[1, 3]]}}}
-{"name": "Былой блеск", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Алмаз", "stats": {"#% increased Effect of Jewel Socket Passive Skills": [[0, 100]]}}}
-{"name": "Синее жало", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Короткий меч", "stats": {"Adds # to # Physical Damage": [[4, 6], [7, 10]]}}}
-{"name": "Мозготряс", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Шипастая палица", "stats": {"Adds # to # Physical Damage": [[18, 22], [24, 28]], "Adds # to # Lightning Damage": [[1, 1], [50, 55]], "#% increased Attack Speed": [[10, 15]]}}}
-{"name": "Знак Бринханда", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Деревянная дубинка", "stats": {"Adds # to # Physical Damage": [[10, 14], [16, 20]], "# to Accuracy Rating": [[30, 50]], "# to Strength": [[10, 20]]}}}
-{"name": "Стук-Постук", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Освинцованный молот", "stats": {"Adds # to # Physical Damage": [[58, 65], [102, 110]], "# to maximum Mana": [[80, 100]]}}}
-{"name": "Collapsing Horizon", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Боевой посох змия", "stats": {"#% to Critical Hit Chance": [[5, 10]], "# to Level of all Elemental Skills": [[2, 4]]}}}
-{"name": "Арфа смерти", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Спаренный лук", "stats": {"#% to Critical Damage Bonus": [[50, 70]], "Gain # Life per Enemy Killed": [[20, 30]], "Gain # Mana per Enemy Killed": [[12, 18]]}}}
-{"name": "Сумеречный дозор", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Пепельный посох", "stats": {"#% increased Spell Damage": [[60, 80]], "Gain # Life per Enemy Killed": [[5, 10]]}}}
-{"name": "Earthbound", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Гальванический посох", "stats": {"#% increased Lightning Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "Enezun's Charge", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Нестабильный жезл", "stats": {"#% increased Spell Damage": [[80, 100]], "#% increased Critical Hit Chance for Spells": [[30, 50]], "Gain # Mana per Enemy Killed": [[10, 15]]}}}
-{"name": "Купель силы", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Скипетр предвестия", "stats": {"#% increased Spirit": [[30, 50]], "# to maximum Mana": [[40, 60]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "Ледяное дыхание", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Шестопёр", "stats": {"Adds # to # Physical Damage": [[8, 12], [16, 20]], "Adds # to # Cold Damage": [[8, 12], [16, 20]]}}}
-{"name": "Направляющая длань", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр", "stats": {"Allies in your Presence deal # to # additional Attack Fire Damage": [[4, 6], [7, 10]], "# to all Attributes": [[5, 10]]}}}
-{"name": "Кабаний промысел", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Дубина из пня", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
-{"name": "Гимн Гримнора", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Дубовая кувалда", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Копьё с железным наконечником"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Тупой топорик"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ржавый длинный меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор палача"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Старый нож"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Цепное гасило"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Священное молотило"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Обугленный короткий меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Загнутый большой топор"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Фламберг"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Нож скорняка"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Железный большой меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Простой кинжал"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Секач"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Бородовидный топор"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Большой топор лесоруба"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Лунный кинжал"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Охотничье копьё"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Воинское копьё"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Освящённый клеймор"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Двойной кистень"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Широкий большой меч"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Бандитский чекан"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Клинок-кровопийца"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Изящная глевия"}}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Удлинённый тесак"}}
-{"name": "Живой побег", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Вытягивающий жезл", "stats": {"# to maximum Mana": [[10, 20]], "# to Level of all Spell Skills": [[1, 3]], "#% increased Cast Speed": [[5, 10]]}}}
-{"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Боевой посох с полумесяцем", "stats": {"Adds # to # Cold Damage": [[6, 9], [10, 15]], "Adds # to # Lightning Damage": [[1, 1], [19, 29]], "#% to Critical Hit Chance": [[3, 5]], "#% increased Attack Speed": [[15, 20]], "#% increased Mana Regeneration Rate": [[25, 40]]}}}
-{"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Самодельный самострел", "stats": {"Adds # to # Cold Damage": [[8, 10], [13, 15]], "#% increased Freeze Buildup": [[30, 50]]}}}
-{"name": "Nazir's Judgement", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Боевой посох со стальным наконечником", "stats": {"Adds # to # Physical Damage": [[30, 36], [75, 81]], "# to Accuracy Rating": [[50, 100]], "#% increased Stun Duration": [[10, 20]]}}}
-{"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Булава мучений", "stats": {"Adds # to # Lightning Damage": [[1, 1], [60, 80]], "# to Accuracy Rating": [[300, 400]], "#% increased Attack Speed": [[5, 30]]}}}
-{"name": "Опора пленённого бога", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Длинный боевой посох", "stats": {}}}
-{"name": "Кечолли", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Крошащий молот", "stats": {"#% increased Physical Damage": [[100, 150]], "# to all Attributes": [[10, 15]]}}}
-{"name": "Ливень перьев", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Короткий лук", "stats": {"# to Dexterity": [[10, 20]], "#% increased Arrow Speed": [[50, 100]]}}}
-{"name": "Rampart Raptor", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Тугой самострел", "stats": {"#% increased Bolt Speed": [[20, 30]], "#% increased Physical Damage": [[40, 60]], "#% increased Attack Speed": [[30, 40]]}}}
-{"name": "Красный клюв", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Короткий меч", "stats": {"Adds # to # Physical Damage": [[3, 5], [7, 10]]}}}
-{"name": "Священное пламя", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Храмовый скипетр", "stats": {"Gain #% of Damage as Extra Fire Damage": [[40, 60]], "Allies in your Presence Gain #% of Damage as Extra Fire Damage": [[20, 30]], "Allies in your Presence Regenerate #% of their Maximum Life per second": [[2, 3]]}}}
-{"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Костяной жезл", "stats": {"#% increased Spell Damage": [[80, 100]], "Gain # Life per Enemy Killed": [[10, 15]]}}}
-{"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Кованая булава", "stats": {"Adds # to # Cold Damage": [[12, 16], [22, 25]], "Adds # to # Lightning Damage": [[1, 1], [40, 45]], "#% increased Attack Speed": [[10, 20]]}}}
-{"name": "Небесный осколок", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Крылатое копьё", "stats": {"Adds # to # Lightning Damage": [[1, 1], [60, 80]], "#% increased Attack Speed": [[5, 10]], "# to Dexterity": [[10, 20]], "#% increased chance to Shock": [[50, 100]]}}}
-{"name": "Солнечное копьё", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Раздвоенное копьё", "stats": {"Adds # to # Fire Damage": [[10, 15], [25, 30]], "#% increased Projectile Speed": [[40, 60]]}}}
-{"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Загнутый лук", "stats": {"#% increased Physical Damage": [[120, 160]], "# to Accuracy Rating": [[50, 70]], "#% increased Projectile Speed": [[20, 30]]}}}
-{"name": "Осколок Лоратты", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Копьё из твёрдой древесины", "stats": {"Adds # to # Physical Damage": [[3, 5], [8, 10]], "# to Accuracy Rating": [[30, 50]], "#% chance to Poison on Hit": [[20, 30]]}}}
-{"name": "Дрожь Тарина", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Студёный посох", "stats": {"#% increased Cold Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]]}}}
-{"name": "Кровавый шип", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Обмотанный боевой посох", "stats": {"Adds # to # Physical Damage": [[8, 12], [16, 18]], "# to Strength": [[10, 15]], "# to # Physical Thorns damage": [[4, 5], [8, 10]]}}}
-{"name": "The Burden of Shadows", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Звенящий посох", "stats": {"#% increased Cast Speed": [[20, 30]]}}}
-{"name": "Танцующий дервиш", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Скимитар", "stats": {}}}
-{"name": "Тёмный осквернитель", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Гремящий скипетр", "stats": {"# to maximum Mana": [[20, 30]], "# to Intelligence": [[5, 10]], "#% increased Mana Regeneration Rate": [[10, 30]]}}}
-{"name": "Опаляющее касание", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Пирофитовый посох", "stats": {"#% increased Fire Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]]}}}
-{"name": "Часовой", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Готический боевой посох", "stats": {"Adds # to # Fire Damage": [[25, 32], [40, 50]], "# to Accuracy Rating": [[30, 50]]}}}
-{"name": "Trenchtimbre", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Шипастая дубинка", "stats": {"Adds # to # Physical Damage": [[13, 15], [22, 25]], "#% increased Attack Speed": [[20, 30]], "# to Level of all Minion Skills": [[1, 3]]}}}
-{"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Кузнечная кувалда", "stats": {"Adds # to # Physical Damage": [[12, 15], [22, 25]], "#% increased Attack Speed": [[10, 15]], "Causes #% increased Stun Buildup": [[30, 50]]}}}
-{"name": "Вдовья доля", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Грубый лук", "stats": {"#% increased bonuses gained from Equipped Quiver": [[150, 250]]}}}
-{"name": "Укус зимы", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Осколок стекла", "stats": {"Adds # to # Cold Damage": [[8, 10], [15, 18]]}}}
-{"name": "Доля Вилунда", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Кузнечный молот", "stats": {"Adds # to # Physical Damage": [[4, 6], [8, 10]], "Adds # to # Fire Damage": [[4, 6], [8, 10]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[20, 30]], "Hits Break # Armour": [[30, 50]]}}}
-{"name": "Бремя лидерства", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Гобелен", "stats": {}}}
-{"name": "Сменяющиеся сезоны", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Печать", "stats": {}}}
-{"name": "Отчаянный союз", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Ваза", "stats": {}}}
-{"name": "Последнее пламя", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "Курительница", "stats": {}}}
-{"name": "Вытяжка миротворца", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "Амфора", "stats": {}}}
-{"name": "Изустные предания", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "Ларец", "stats": {}}}
+{"name": "Андвариус", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Астраментис", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Beacon of Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Birthright Buckle", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Чёрное пламя", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Чёрное сердце", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Blistering Bond", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Бринабас", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Зов братьев", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Сердце бойни", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Хор бури", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Наследие труса", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Mail Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Cracklecreep", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Смертельная спешка", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Непокорность судьбе", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Проклятие Доэдре", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Осколки снов", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Глаз Чаюлы", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Fireflower", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Fixation of Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Glowswarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Охотник за головами", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Сердечная связь", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Idol of Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Адская пряжка", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Находчивость", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Utility Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Касание Каландры", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Килевание", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Linen Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Levinstone", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Ligurium Talisman", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Ремень Мегинорда", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Полуночная тесьма", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Сердце Мина", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Первородный грех", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Печатка Перандусов", "refName": "Perandus Signet", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Polcirkeln", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Revered Resin", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Моток Рюслаты", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Серпентарий", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Оковы души", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Strugglescream", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Surefooted Sigil", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Наковальня", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "The Burrower", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "The Everlasting Gaze", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Обитель демонов", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Воровская мука", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Гармония Ангила", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Игра Вентора", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Whisper of the Brotherhood", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Кровь Ксофа", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Zerphi's Genesis", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
+{"name": "Крылья Эрисвейна", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "Альким Эира", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Вой Альфы", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "Передник Эмирана", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "Колесо Арвила", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
+{"name": "Пепел", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "Гнев Асфиксии", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Приют агрессора", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Closed Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Взор Ацака", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Veiled Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Проницательность Атзири", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Презрение Атзири", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Gold Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "Златохваты", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Layered Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "Beetlebite", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "Брюхо Зверя", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "Beyond Reach", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Birth of Fury", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Жестокое цветение", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Feathered Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Чёрное плетение", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Fur Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Отсвет мрака", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Гребень чёрного солнца", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Благословенные узы", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "Браслеты синего пламени", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs"}, "icon": "%NOT_FOUND%"}
+{"name": "Кости Уллра", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "Колючий панцирь", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Терновники", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "Laced Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "Ремни проворства", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "Rhoahide Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "Ощетинившийся вепрь", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "Бронзовая борода", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Кустоломы", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "Свечеделы", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "Carrion Call", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Накидка пламени", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Алый покров", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Корона красного солнца", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Warrior Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Ядоброды", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Алое облачение", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "Герб Ардура", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Корона Бледного царя", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Корона победителя", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Терновый венец", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "Несущие тьму", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "Смертельный удар", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "Предсмертный хрип", "refName": "Death Rattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Колокол мёртвых", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Сшиватель демонов", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "Intricate Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "Защитник", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "Splintered Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Власть Доэдре", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "Врата Рока", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Прототип Дориани", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "Хрупкое цветение", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "Бивни Эдирна", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Поедатель стихий", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Окутывающий рассвет", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "Шишак Эриана", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Триумф эзомита", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Пернатая крепость", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe"}, "icon": "%NOT_FOUND%"}
+{"name": "Запретный взор", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "Лисья тень", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "Quilted Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "Дух азарта", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "Embossed Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "Марш призраков", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "Призрачные изгибы", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Взгляд хаоса", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Мрачная форма", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "Золотой колпак", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "Могильные узы", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs"}, "icon": "%NOT_FOUND%"}
+{"name": "Объятия жадности", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "Vaal Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Серый мрак", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Хватка зимы", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "Длань мудрости и деяния", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "Кузня ненависти", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Рога Биндена", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Оболочка мечты", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "Ледяной склеп", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "Праздные руки", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "Иннсмут", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Железная хватка", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "Железный наездник", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Ярнгрейпр", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "Сердце Каома", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Conqueror Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Брюзга", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "Хранитель царей", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Full Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Поток Китоко", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "Маска труппы хитрецов", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Поступь легиона", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Ласка Локтона", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Поступь света", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "Паук-волк", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Махинации Махушотля", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Виртуозность Малигаро", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "Fine Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "Маска кровоманта", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "Face Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Маска Сшитого Демона", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Feathered Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "Доблесть служения", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Pelage Targe"}, "icon": "%NOT_FOUND%"}
+{"name": "Мориор Инвиктус", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}, "icon": "%NOT_FOUND%"}
+{"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Некромантия", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "Северные лапы", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "Старый дуб", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Obern's Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "Подручный творца", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Torn Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "Объятья парии", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Cloaked Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "Вероломство", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "Чумной перст", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Gauze Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "Powertread", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "Pragmatism", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "Мольбы о дожде", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "Шкура Коатля", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "Царица леса", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "Светлая скорбь", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Проводник красного пламени", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "Возрождение Феникса", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Самоделка Саффелла", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Образ песчаной бури", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "Урок змеи", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Оковы убогих", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}, "icon": "%NOT_FOUND%"}
+{"name": "Наследие Сиерры", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "Непревзойдённость", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}, "icon": "%NOT_FOUND%"}
+{"name": "Кожа верных", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
+{"name": "Укус змеи", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "Солипсист", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}, "icon": "%NOT_FOUND%"}
+{"name": "Свалинн", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Темпоралис", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Желание Тецлапокаля", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "Страж кургана", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "Мрачные сомнения", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Латунный свод", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Договор", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Танцующий мираж", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "Пожирающая диадема", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "The Eternal Spark", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Полая маска", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Несмертный", "refName": "Несмертный", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Бесконечная погоня", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Странствующий рыцарь", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "Крысиная клетка", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "Улыбающийся рыцарь", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Отречение", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Три дракона", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "Solid Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Вертекс", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Подлый рыцарь", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "Shielded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Стена плача", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "Effigial Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Нить света", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "Woven Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Стальной раж", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Spired Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Громовая поступь", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Steeltoe Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "Ржавый катафракт", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Trampletoe", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Древохваты", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Покров ночи", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Лик Айи", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "Защитник Волла", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "Зачинщики разрушений", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings"}, "icon": "%NOT_FOUND%"}
+{"name": "Блуждающий реликварий", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Странники", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "Вопли ветра", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "Крылья Кейлин", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "Ведущие к чудесам", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}, "icon": "%NOT_FOUND%"}
+{"name": "Погибель Вульфа", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Melting Maelstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Решительность Олрота", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Противление тьме", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Controlled Metamorphosis", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Из ничего", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby"}, "icon": "%NOT_FOUND%"}
+{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Emerald"}, "icon": "%NOT_FOUND%"}
+{"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}, "icon": "%NOT_FOUND%"}
+{"name": "Heroic Tragedy", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}, "icon": "%NOT_FOUND%"}
+{"name": "Мания величия", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Prism of Belief", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Былой блеск", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Синее жало", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "Мозготряс", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "%NOT_FOUND%"}
+{"name": "Знак Бринханда", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
+{"name": "Стук-Постук", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "Collapsing Horizon", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Арфа смерти", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "Сумеречный дозор", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "Earthbound", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "Enezun's Charge", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Купель силы", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Omen Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "Ледяное дыхание", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Slim Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "Направляющая длань", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "Кабаний промысел", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
+{"name": "Гимн Гримнора", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Twin Flail"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broad Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bandit Hatchet"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Vampiric Blade"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Extended Cleaver"}, "icon": "%NOT_FOUND%"}
+{"name": "Живой побег", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "Nazir's Judgement", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
+{"name": "Опора пленённого бога", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Кечолли", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "Ливень перьев", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Shortbow"}, "icon": "%NOT_FOUND%"}
+{"name": "Rampart Raptor", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "Красный клюв", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "Священное пламя", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "Небесный осколок", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "Солнечное копьё", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "Осколок Лоратты", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "Дрожь Тарина", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "Кровавый шип", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "The Burden of Shadows", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "Танцующий дервиш", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}, "icon": "%NOT_FOUND%"}
+{"name": "Тёмный осквернитель", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "Опаляющее касание", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "Часовой", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Trenchtimbre", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
+{"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "Вдовья доля", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "Укус зимы", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
+{"name": "Доля Вилунда", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}
+{"name": "Бремя лидерства", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Tapestry Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "Сменяющиеся сезоны", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Seal Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "Отчаянный союз", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Vase Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "Последнее пламя", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "Incense Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "Вытяжка миротворца", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "Amphora Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "Изустные предания", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "Coffer Relic"}, "icon": "%NOT_FOUND%"}

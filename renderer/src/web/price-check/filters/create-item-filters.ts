@@ -2,8 +2,7 @@ import type { ItemFilters } from "./interfaces";
 import { ParsedItem, ItemCategory, ItemRarity } from "@/parser";
 import { tradeTag } from "../trade/common";
 import { ModifierType } from "@/parser/modifiers";
-// import { BaseType, ITEM_BY_REF } from "@/assets/data";
-import { BaseType, ITEM_BY_TRANSLATED } from "@/assets/data";
+import { BaseType, ITEM_BY_REF } from "@/assets/data";
 import { CATEGORY_TO_TRADE_ID } from "../trade/pathofexile-trade";
 import { PriceCheckWidget } from "@/web/overlay/widgets";
 
@@ -13,7 +12,7 @@ export const SPECIAL_SUPPORT_GEM = [
   "Enhance Support",
 ];
 
-export const CURRENCY_RATIO = 100;
+export const CURRENCY_RATIO = 300;
 
 interface CreateOptions {
   league: string;
@@ -23,6 +22,7 @@ interface CreateOptions {
   exact: boolean;
   useEn: boolean;
   autoFillEmptyRuneSockets: PriceCheckWidget["autoFillEmptyRuneSockets"];
+  currencyRatio: number | undefined;
 }
 
 export function createFilters(
@@ -38,7 +38,7 @@ export function createFilters(
       currency: opts.currency,
       league: opts.league,
       collapseListings: opts.collapseListings,
-      currencyRatio: CURRENCY_RATIO,
+      currencyRatio: opts.currencyRatio ?? CURRENCY_RATIO,
     },
   };
 
@@ -118,10 +118,7 @@ export function createFilters(
       filters.searchExact = {
         name: item.info.name,
         nameTrade: t(opts, item.info),
-        baseTypeTrade: t(
-          opts,
-          ITEM_BY_TRANSLATED("ITEM", item.info.unique.base)![0],
-        ),
+        baseTypeTrade: t(opts, ITEM_BY_REF("ITEM", item.info.unique.base)![0]),
       };
     } else {
       const isOccupiedBy = item.statsByType.some(
@@ -151,7 +148,7 @@ export function createFilters(
       baseTypeTrade: t(opts, item.info),
     };
     filters.areaLevel = {
-      value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81, 83]),
+      value: floorToBracket(item.areaLevel!, [1, 68, 73, 79, 83]),
       disabled: false,
     };
   } else if (item.category === ItemCategory.HeistBlueprint) {
@@ -179,10 +176,7 @@ export function createFilters(
     filters.searchExact = {
       name: item.info.name,
       nameTrade: t(opts, item.info),
-      baseTypeTrade: t(
-        opts,
-        ITEM_BY_TRANSLATED("ITEM", item.info.unique.base)![0],
-      ),
+      baseTypeTrade: t(opts, ITEM_BY_REF("ITEM", item.info.unique.base)![0]),
     };
   } else {
     filters.searchExact = {
@@ -246,7 +240,7 @@ export function createFilters(
         disabled: item.runeSockets.current <= item.runeSockets.normal,
       };
     }
-    if (item.runeSockets.empty > 0) {
+    if (item.runeSockets.empty > 0 && item.rarity !== ItemRarity.Unique) {
       if (
         opts.autoFillEmptyRuneSockets &&
         (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare)
@@ -267,6 +261,24 @@ export function createFilters(
     // item.isCorrupted && -- let the buyer corrupt
     (item.category === ItemCategory.Jewel ||
       item.category === ItemCategory.AbyssJewel);
+  const chanceBases = new Set([
+    "Sapphire Ring",
+    "Stellar Amulet",
+    "Heavy Belt",
+    "Emerald Ring",
+    "Gold Ring",
+    "Ornate Belt",
+    "Azure Amulet",
+    "Solar Amulet",
+    "Moulded Mitts",
+    "Gold Amulet",
+  ]);
+  const forChanceBase =
+    item.rarity === ItemRarity.Normal &&
+    (chanceBases.has(item.info.refName) ||
+      // NOTE: May remove either above(set) or below(categories) depending on how EA works out
+      item.category === ItemCategory.Ring ||
+      item.category === ItemCategory.Amulet);
 
   if (
     !item.isUnmodifiable &&
@@ -285,17 +297,22 @@ export function createFilters(
     filters.rarity = {
       value: "magic",
     };
+  } else if (forChanceBase) {
+    // Sinc chance orbs only work on normal items
+    filters.rarity = {
+      value: "normal",
+    };
+  } else if (item.rarity === ItemRarity.Magic && opts.exact) {
+    filters.rarity = {
+      value: "magic",
+    };
   } else if (
+    item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||
     item.rarity === ItemRarity.Rare
   ) {
     filters.rarity = {
       value: "nonunique",
-    };
-  } else if (item.rarity === ItemRarity.Normal) {
-    // Sinc chance orbs only work on normal items
-    filters.rarity = {
-      value: "normal",
     };
   }
 
@@ -432,10 +449,7 @@ function createGemFilters(
       baseTypeTrade: t(opts, item.info),
     };
   } else {
-    const normalGem = ITEM_BY_TRANSLATED(
-      "GEM",
-      item.info.gem!.normalVariant!,
-    )![0];
+    const normalGem = ITEM_BY_REF("GEM", item.info.gem!.normalVariant!)![0];
     filters.searchExact = {
       baseType: item.info.name,
       baseTypeTrade: t(opts, normalGem),

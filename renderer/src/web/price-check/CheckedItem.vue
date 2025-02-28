@@ -179,6 +179,10 @@ export default defineComponent({
       (item, prevItem) => {
         const prevCurrency =
           presets.value != null ? itemFilters.value.trade.currency : undefined;
+        const prevCurrencyRatio =
+          presets.value != null
+            ? itemFilters.value.trade.currencyRatio
+            : undefined;
 
         presets.value = createPresets(item, {
           league: leagues.selectedId.value!,
@@ -201,6 +205,13 @@ export default defineComponent({
             ["en", "ru", "ko", "cmn-Hant"].includes(lang.value),
           defaultAllSelected: widget.value.defaultAllSelected,
           autoFillEmptyRuneSockets: widget.value.autoFillEmptyRuneSockets,
+          currencyRatio:
+            widget.value.rememberRatio ||
+            (prevItem &&
+              item.info.namespace === prevItem.info.namespace &&
+              item.info.refName === prevItem.info.refName)
+              ? prevCurrencyRatio
+              : undefined,
         });
 
         if (

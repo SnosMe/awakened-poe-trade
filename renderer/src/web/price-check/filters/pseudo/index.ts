@@ -205,24 +205,24 @@ const PSEUDO_RULES: PseudoRule[] = [
   //   stats: [{ ref: stat("#% increased Global Physical Damage") }],
   // },
   // {
-  //   pseudo: stat("+#% Global Critical Strike Chance"),
+  //   pseudo: stat("+#% Global Critical Hit Chance"),
   //   group: "global_crit_chance",
-  //   stats: [{ ref: stat("#% increased Global Critical Strike Chance") }],
+  //   stats: [{ ref: stat("#% increased Global Critical Hit Chance") }],
   // },
   // {
-  //   pseudo: stat("+#% total Critical Strike Chance for Spells"),
+  //   pseudo: stat("+#% total Critical Hit Chance for Spells"),
   //   replaces: "global_crit_chance",
   //   stats: [
   //     {
-  //       ref: stat("#% increased Spell Critical Strike Chance"),
+  //       ref: stat("#% increased Spell Critical Hit Chance"),
   //       required: true,
   //     },
-  //     { ref: stat("#% increased Global Critical Strike Chance") },
+  //     { ref: stat("#% increased Global Critical Hit Chance") },
   //   ],
   // },
   // {
-  //   pseudo: stat("+#% Global Critical Strike Multiplier"),
-  //   stats: [{ ref: stat("+#% to Global Critical Strike Multiplier") }],
+  //   pseudo: stat("+#% Global Critical Hit Multiplier"),
+  //   stats: [{ ref: stat("+#% to Global Critical Hit Multiplier") }],
   // },
   // {
   //   pseudo: stat("#% increased Elemental Damage"),

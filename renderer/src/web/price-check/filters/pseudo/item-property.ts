@@ -335,14 +335,17 @@ function weaponProps(ctx: FiltersCreationContext) {
   if (item.weaponCRIT) {
     const critChance = calcPropBounds(
       item.weaponCRIT,
-      { incr: ["#% increased Critical Strike Chance"], flat: [] },
+      {
+        incr: ["#% increased Critical Hit Chance"],
+        flat: ["+#% to Critical Hit Chance"],
+      },
       item,
     );
 
     ctx.filters.push(
       propToFilter(
         {
-          ref: "Critical Strike Chance: #%",
+          ref: "Critical Hit Chance: #%",
           tradeId: "item.crit",
           roll: critChance.roll,
           sources: critChance.sources,

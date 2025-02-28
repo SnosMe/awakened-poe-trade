@@ -36,7 +36,8 @@
     "version": "Версия {0}",
     "release_notes": "Список изменений",
     "report_bug": "Сообщить о баге на GitHub",
-    "quit": "Выход"
+    "quit": "Выход",
+    "deprecated": "This feature is deprecated and will be removed in update {0}"
   },
   "map.mods.heist": "кража",
   "map.mods.outdated": "устарело",
@@ -196,7 +197,8 @@
     "tag_rune": "Руна",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "Грейд {0}"
+    "grade": "Грейд {0}",
+    "hybrid_note": "Tier may be incorrect due to the potential for a hybrid mod"
   },
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",
@@ -394,7 +396,9 @@
     "tier_numbering": "Стиль нумерации тиров",
     "tier_numbering_poe1": "PoE1 (меньше - лучше)",
     "tier_numbering_poe2": "PoE2 (больше - лучше)",
-    "tier_numbering_help": "Во избежание недоразумений связанных с системой наименований в игре, тиры из PoE1 будут называться \"Grade\" вместо \"Tier\". "
+    "tier_numbering_help": "Во избежание недоразумений связанных с системой наименований в игре, тиры из PoE1 будут называться \"Grade\" вместо \"Tier\". ",
+    "always_show_tier": "Always show tier",
+    "remember_ratio": "Remember currency ratio"
   },
   "poe2_new": {
     "beta_warning": "Функционал для PoE2 находится в стадии бета тестирования и не всегда работает так, как задумано.",

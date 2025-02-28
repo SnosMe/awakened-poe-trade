@@ -44,6 +44,12 @@
         text="Magic"
       />
       <filter-btn-logical
+        v-if="filters.rarity?.value === 'normal'"
+        readonly
+        :filter="{ disabled: false }"
+        text="Normal"
+      />
+      <filter-btn-logical
         v-if="filters.discriminator?.value"
         readonly
         :filter="{ disabled: false }"

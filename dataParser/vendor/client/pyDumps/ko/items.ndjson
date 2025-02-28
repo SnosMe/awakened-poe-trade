@@ -3,7 +3,12 @@
 {"name": "\"잘 자라는 키스\"", "refName": "\"The Kiss Goodnight\"", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "1차 재보정 렌즈", "refName": "Prime Regrading Lens", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "2차 재보정 렌즈", "refName": "Secondary Regrading Lens", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "Overseer Precursor Tablet", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Golden Blade", "refName": "Golden Blade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
+{"name": "Golden Bracers", "refName": "Golden Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "w": 2, "h": 2}
+{"name": "Golden Greaves", "refName": "Golden Greaves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "w": 2, "h": 2}
+{"name": "Golden Plate", "refName": "Golden Plate", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "w": 2, "h": 3}
+{"name": "Golden Shield", "refName": "Golden Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "w": 2, "h": 4}
+{"name": "Golden Visage", "refName": "Golden Visage", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "w": 2, "h": 2}
 {"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "[DNT] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -104,6 +109,7 @@
 {"name": "갈라진 클로", "refName": "Forked Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Claw"}, "w": 2, "h": 2}
 {"name": "갈래", "refName": "Fork", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "갈취자", "refName": "Despoiler", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "감독관 선도자 서판", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "감속", "refName": "Deceleration", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "감전 시 시전", "refName": "Cast on Shock", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "감전 파열 탄환", "refName": "Shockburst Rounds", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -188,7 +194,6 @@
 {"name": "결전 위상", "refName": "Ultimatum Aspect", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 2}
 {"name": "결전 위상", "refName": "Ultimatum Aspect", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 2}
 {"name": "결정 집중구", "refName": "Crystal Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [28, 28]}, "w": 2, "h": 3}
-{"name": "결투 대헬름", "refName": "Dueling Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [200, 200]}, "w": 2, "h": 2}
 {"name": "결투 마법봉", "refName": "Dueling Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Wand"}, "w": 1, "h": 3}
 {"name": "겹겹의 건틀릿", "refName": "Layered Gauntlets", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [22, 22], "ev": [18, 18]}, "w": 2, "h": 2}
 {"name": "경건한 레깅스", "refName": "Pious Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ar": [100, 100], "es": [35, 35]}, "w": 2, "h": 2}
@@ -425,7 +430,7 @@
 {"name": "고대 거물 파수꾼", "refName": "Ancient Apex Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "고대 대칼날", "refName": "Ancient Greatblade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Sword"}, "w": 2, "h": 4}
 {"name": "고대 대혼란 파수꾼", "refName": "Ancient Pandemonium Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
-{"name": "고대 위기 조각", "refName": "Ancient Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ef329c74d1/PinnacleKey1.png", "tradeTag": "ancient-crisis-fragment", "w": 1, "h": 1}
+{"name": "고대 위기 조각", "refName": "Ancient Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ef329c74d1/PinnacleKey1.png", "tradeTag": "ancient-crisis-fragment", "craftable": {"category": "PinnacleKey"}, "w": 1, "h": 1}
 {"name": "고대 추적자 파수꾼", "refName": "Ancient Stalker Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "고대의 봉인", "refName": "Ancient Seal", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 4}
 {"name": "고대의 성유물 보관실 열쇠", "refName": "Ancient Reliquary Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
@@ -665,7 +670,6 @@
 {"name": "나쉬타 대면", "refName": "Confront Nashta", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "나쉬타의 전쟁 일지", "refName": "Nashta's War Journal", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "낙뢰", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "낙뢰", "refName": "Greater Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "낚싯대", "refName": "Fishing Rod", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "FishingRod"}, "w": 1, "h": 4}
 {"name": "난무하는 파편", "refName": "Wildshards", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "난사", "refName": "Scattershot", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -789,7 +793,6 @@
 {"name": "더럽혀진 연결의 오브", "refName": "Tainted Orb of Fusing", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "더럽혀진 쥬얼러 오브", "refName": "Tainted Jeweller's Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "더럽혀진 카오스 오브", "refName": "Tainted Chaos Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "더럽히는 자", "refName": "Messer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
 {"name": "더블배럴", "refName": "Double Barrel", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "덜컹대는 셉터", "refName": "Rattling Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
 {"name": "덩굴 화살", "refName": "Vine Arrow", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -928,6 +931,7 @@
 {"name": "머베일의 웨딩드레스", "refName": "Merveil's Wedding Dress", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "메가이라의 포획한 영혼", "refName": "Captured Soul of Megaera", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "메달리온 덫", "refName": "Medallion Trap", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TrapTool"}, "w": 2, "h": 2}
+{"name": "메서", "refName": "Messer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
 {"name": "메이븐의 문서", "refName": "The Maven's Writ", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "메이븐의 초대: 글렌나크 돌무덤", "refName": "Maven's Invitation: Glennach Cairns", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "메이븐의 초대: 글렌나크 돌무덤", "refName": "Maven's Invitation: Glennach Cairns", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
@@ -1251,7 +1255,7 @@
 {"name": "빛나는 관측기", "refName": "Luminous Astrolabe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "빛나는 수호", "refName": "Lustrous Ward", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "빛나는 화석", "refName": "Lucent Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "빛바랜 위기 조각", "refName": "Faded Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5709c39ee7/PinnacleKey2.png", "tradeTag": "faded-crisis-fragment", "w": 1, "h": 1}
+{"name": "빛바랜 위기 조각", "refName": "Faded Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5709c39ee7/PinnacleKey2.png", "tradeTag": "faded-crisis-fragment", "craftable": {"category": "PinnacleKey"}, "w": 1, "h": 1}
 {"name": "빛의 파멸 에레빅스의 포획한 영혼", "refName": "Captured Soul of Erebix, Light's Bane", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "PantheonSoul"}, "w": 1, "h": 1}
 {"name": "빨리 감기", "refName": "Fast Forward", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "뼈 공물", "refName": "Bone Offering", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -1311,6 +1315,7 @@
 {"name": "상위 가속의 에센스", "refName": "Greater Essence of Haste", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9HcmVhdGVyU3BlZWRFc3NlbmNlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5a72f95c24/GreaterSpeedEssence.png", "tradeTag": "greater-essence-of-haste", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "상위 강화의 에센스", "refName": "Greater Essence of Enhancement", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9HcmVhdGVyRGVmZW5jZXNFc3NlbmNlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a0ed2df82c/GreaterDefencesEssence.png", "tradeTag": "greater-essence-of-enhancement", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "상위 고뇌의 에센스", "refName": "Greater Essence of Torment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9HcmVhdGVyUGh5c2ljYWxFc3NlbmNlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a28c932def/GreaterPhysicalEssence.png", "tradeTag": "greater-essence-of-torment", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "상위 낙뢰", "refName": "Greater Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "상위 마술의 에센스", "refName": "Greater Essence of Sorcery", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9HcmVhdGVyQ2FzdGVyRXNzZW5jZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/14b7e4c8ef/GreaterCasterEssence.png", "tradeTag": "greater-essence-of-sorcery", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "상위 무한의 에센스", "refName": "Greater Essence of the Infinite", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9HcmVhdGVyQXR0cmlidXRlRXNzZW5jZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8a8cb823af/GreaterAttributeEssence.png", "tradeTag": "greater-essence-of-the-infinite", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "상위 소멸의 징조", "refName": "Omen of Greater Annulment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxUHVycGxlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a6848dff1c/VoodooOmens1Purple.png", "tradeTag": "omen-of-greater-annulment", "craftable": {"category": "Omen"}, "w": 1, "h": 1}
@@ -2216,6 +2221,7 @@
 {"name": "진화의 파편", "refName": "Transmutation Shard", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpY1NoYXJkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/e67bca229b/CurrencyUpgradeToMagicShard.png", "tradeTag": "transmutation-shard", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "질주자 조끼", "refName": "Strider Vest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [275, 275]}, "w": 2, "h": 3}
 {"name": "집속 유탄", "refName": "Cluster Grenade", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "집정관 왕관", "refName": "Templar Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [134, 134], "es": [46, 46]}, "w": 2, "h": 2}
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 2}
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 2}
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
@@ -2449,7 +2455,6 @@
 {"name": "테스트용 공격", "refName": "Playtest Attack", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "테스트용 주문", "refName": "Playtest Spell", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "테클라티피치의 거울", "refName": "Mirror of Teklatipitzi", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
-{"name": "템플러 왕관", "refName": "Templar Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [134, 134], "es": [46, 46]}, "w": 2, "h": 2}
 {"name": "템플러 제복", "refName": "Templar Uniforms", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "토너먼트 사슬옷", "refName": "Tournament Mail", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ar": [245, 245], "ev": [223, 223]}, "w": 2, "h": 3}
 {"name": "토너먼트 사슬옷", "refName": "Tournament Mail", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ar": [245, 245], "ev": [223, 223]}, "w": 2, "h": 3}
@@ -2507,6 +2512,7 @@
 {"name": "파루드의 단지", "refName": "Urn of Farud", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "파문 대검", "refName": "Rippled Greatsword", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Two Hand Sword"}, "w": 2, "h": 4}
 {"name": "파쇄 주문서", "refName": "Fragmentation Scroll", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "파수꾼 대헬름", "refName": "Dueling Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ar": [200, 200]}, "w": 2, "h": 2}
 {"name": "파수꾼 조작기", "refName": "Sentinel Controller", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "파열", "refName": "Rupture", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "파우아 집중구", "refName": "Paua Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Focus"}, "armour": {"es": [43, 43]}, "w": 2, "h": 3}
@@ -2572,7 +2578,7 @@
 {"name": "표준 자물쇠 따개", "refName": "Standard Lockpick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "푸후알테의 영혼 핵", "refName": "Soul Core of Puhuarte", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUZpcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6390ebeaa6/GreaterSoulCoreFire.png", "tradeTag": "soul-core-of-puhuarte", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "풍성", "refName": "Profusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "풍화된 위기 조각", "refName": "Weathered Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/32e6544250/PinnacleKey3.png", "tradeTag": "weathered-crisis-fragment", "w": 1, "h": 1}
+{"name": "풍화된 위기 조각", "refName": "Weathered Crisis Fragment", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/32e6544250/PinnacleKey3.png", "tradeTag": "weathered-crisis-fragment", "craftable": {"category": "PinnacleKey"}, "w": 1, "h": 1}
 {"name": "프로클라 제독의 담뱃대", "refName": "Admiral Proclar's Pipe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "플라스마 폭발", "refName": "Plasma Blast", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "피 담긴 그릇", "refName": "Blood-filled Vessel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
@@ -2582,6 +2588,7 @@
 {"name": "피얼룩 화석", "refName": "Bloodstained Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "피의 샘", "refName": "Font of Blood", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "피의 우상", "refName": "The Blood Idol", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
+{"name": "피의 전령", "refName": "", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "피폐", "refName": "Enervation", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "피할 수 없는 치명타", "refName": "Inevitable Critical", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "피해 받을 시 시전", "refName": "Cast when Damage Taken", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -2786,308 +2793,308 @@
 {"name": "힘의 부적", "refName": "Sigil of Power", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "힘의 시험 바리야", "refName": "Test of Strength Barya", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MiscMapItem"}, "w": 1, "h": 1}
 {"name": "힘줄 절단", "refName": "Maim", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "앤드바리우스", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "황금 반지", "stats": {"#% increased Rarity of Items found": [[50, 70]], "(implicit) #% increased Rarity of Items found": [[6, 15]]}}}
-{"name": "별의 보석", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이", "stats": {"# to all Attributes": [[80, 100]], "(implicit) # to all Attributes": [[5, 7]]}}}
-{"name": "아지스의 등불", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "태양의 목걸이", "stats": {"# to Spirit": [[10, 15]], "# to maximum Mana": [[60, 100]]}}}
-{"name": "생득권 버클", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "넓은 허리띠", "stats": {"#% increased Flask Charges gained": [[20, 30]], "# to Armour": [[100, 150]], "#% reduced Flask Charges used": [[10, 15]], "(implicit) #% increased Flask Charges gained": [[20, 30]]}}}
-{"name": "검은화염", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "자수정 반지", "stats": {"#% to Chaos Resistance": [[7, 13]], "#% increased Mana Regeneration Rate": [[15, 30]]}}}
-{"name": "검은 심장", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "철제 반지", "stats": {"# Life Regeneration per second": [[3, 6]], "Adds # to # Chaos Damage to Attacks": [[4, 6], [8, 10]]}}}
-{"name": "물집을 잡는 결속", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "루비 반지", "stats": {"#% to Fire Resistance": [[20, 30]], "# to maximum Life": [[40, 60]], "(implicit) #% to Fire Resistance": [[20, 30]]}}}
-{"name": "브리나바스", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "넓은 허리띠", "stats": {"#% increased Flask Charges gained": [[20, 30]], "# to maximum Mana": [[40, 60]], "#% to Lightning Resistance": [[30, 40]], "# Life Regeneration per second": [[7, 12]]}}}
-{"name": "형제의 부름", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지", "stats": {"#% to Lightning Resistance": [[20, 30]], "# to Intelligence": [[10, 20]], "#% increased Mana Regeneration Rate": [[25, 35]], "#% increased Freeze Buildup": [[20, 30]]}}}
-{"name": "학살 심장", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이", "stats": {"# to Strength": [[10, 15]], "# to all Attributes": [[10, 20]], "#% to all Elemental Resistances": [[10, 20]]}}}
-{"name": "태풍의 합창", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이", "stats": {"# to Dexterity": [[10, 15]], "#% to Lightning Resistance": [[20, 30]]}}}
-{"name": "겁쟁이의 유물", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "사슬 허리띠", "stats": {"#% reduced Flask Charges used": [[10, 15]], "# to Strength": [[-20, -10]], "# to Dexterity": [[20, 30]], "#% increased Life and Mana Recovery from Flasks": [[30, 40]]}}}
-{"name": "살금박살", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "루비 반지", "stats": {"#% to Fire Resistance": [[20, 30]], "#% increased Fire Damage": [[20, 30]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "죽음의 재촉", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지", "stats": {"# to Accuracy Rating": [[75, 125]], "(implicit) # to Accuracy Rating": [[120, 160]], "# to Evasion Rating": [[75, 125]]}}}
-{"name": "운명의 저항", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이", "stats": {"# to Dexterity": [[10, 15]], "#% increased maximum Life": [[6, 10]], "# to Strength": [[10, 20]], "#% increased Mana Regeneration Rate": [[25, 40]]}}}
-{"name": "도이드리의 파멸", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "청금석 반지", "stats": {"# to maximum Mana": [[20, 30]], "#% to all Elemental Resistances": [[5, 15]], "Gain # Mana per Enemy Killed": [[1, 10]]}}}
-{"name": "꿈의 조각", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
-{"name": "차율라의 눈", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "황금 목걸이", "stats": {"#% increased Rarity of Items found": [[12, 20]], "#% reduced maximum Life": [[20, 30]], "# to all Attributes": [[10, 15]]}}}
-{"name": "화염꽃", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "태양의 목걸이", "stats": {"# to Spirit": [[10, 15]], "#% increased Rarity of Items found": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 40]], "# to Level of all Fire Skills": [[1, 4]]}}}
-{"name": "익스의 집착", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이", "stats": {"# to all Attributes": [[5, 7]], "Allies in your Presence have #% increased Critical Hit Chance": [[30, 50]], "Allies in your Presence have #% increased Critical Damage Bonus": [[30, 50]], "Allies in your Presence have #% increased Attack Speed": [[10, 20]], "Allies in your Presence have #% increased Cast Speed": [[10, 20]]}}}
-{"name": "빛무리", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "청금석 반지", "stats": {"# to maximum Mana": [[40, 60]], "(implicit) # to maximum Mana": [[20, 30]], "#% increased Flask Mana Recovery rate": [[20, 30]]}}}
-{"name": "헤드헌터", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠", "stats": {"#% increased Stun Threshold": [[20, 30]], "# to maximum Life": [[40, 60]], "# to Strength": [[20, 40]], "# to Dexterity": [[20, 40]]}}}
-{"name": "마음에 묶인 고리", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "진주 반지", "stats": {"#% increased Cast Speed": [[7, 10]], "Minions have #% increased maximum Life": [[10, 15]], "# Life Regeneration per second": [[10, 15]], "#% increased Mana Regeneration Rate": [[20, 40]], "Minions Revive #% faster": [[10, 15]]}}}
-{"name": "울던의 우상", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "진홍색 목걸이", "stats": {"# Life Regeneration per second": [[2, 4]], "# to maximum Life": [[60, 80]], "# to Dexterity": [[10, 20]]}}}
-{"name": "이그니페리스", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "진홍색 목걸이", "stats": {"# Life Regeneration per second": [[2, 4]], "#% to Fire Resistance": [[10, 20]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "지옥불 죔쇠", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "판금 허리띠", "stats": {"# to Armour": [[100, 150]], "(implicit) # to Armour": [[100, 140]], "# to Strength": [[10, 20]], "#% to Maximum Fire Resistance": [[3, 5]], "#% to Fire Resistance": [[30, 50]]}}}
-{"name": "기발함", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "특수 허리띠", "stats": {"#% increased bonuses gained from Equipped Rings": [[40, 80]]}}}
-{"name": "칼란드라의 손길", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "반지", "stats": {}}}
-{"name": "용골쓸기", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "리넨 허리띠", "stats": {"#% increased Mana Recovery from Flasks": [[20, 30]], "#% reduced Flask Life Recovery rate": [[-25, 25]], "#% reduced Flask Mana Recovery rate": [[-25, 25]]}}}
-{"name": "전광석", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지", "stats": {"#% to Lightning Resistance": [[20, 30]], "# to maximum Mana": [[40, 60]], "#% increased chance to Shock": [[10, 20]]}}}
-{"name": "리구리움 부적", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "청금석 목걸이", "stats": {"# to Intelligence": [[20, 30]], "# to maximum Energy Shield": [[30, 40]], "# to Spirit": [[25, 35]], "(implicit) # to Intelligence": [[10, 15]]}}}
-{"name": "메기노드의 허리띠", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "생가죽 허리띠", "stats": {"#% increased Life Recovery from Flasks": [[20, 30]], "# to Strength": [[40, 50]], "#% to Cold Resistance": [[10, 15]]}}}
-{"name": "심야의 끈", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "생가죽 허리띠", "stats": {"#% increased Life Recovery from Flasks": [[20, 30]], "# to maximum Mana": [[30, 50]], "#% to all Elemental Resistances": [[5, 10]]}}}
-{"name": "밍의 심장", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "자수정 반지", "stats": {"#% to Chaos Resistance": [[7, 13]], "Gain #% of Damage as Extra Chaos Damage": [[30, 40]]}}}
-{"name": "원죄", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "자수정 반지", "stats": {"#% to Chaos Resistance": [[17, 23]], "(implicit) #% to Chaos Resistance": [[7, 13]]}}}
-{"name": "페란두스 봉인", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "황금 반지", "stats": {"#% increased Rarity of Items found": [[6, 15]], "# to maximum Mana": [[30, 50]], "# to all Attributes": [[5, 10]], "#% increased Quantity of Gold Dropped by Slain Enemies": [[10, 15]]}}}
-{"name": "폴시르켈른", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Cold Damage": [[20, 30]], "# to maximum Mana": [[40, 60]], "# to Strength": [[10, 15]]}}}
-{"name": "신성한 수지", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이", "stats": {"# to Strength": [[10, 15]], "# to maximum Life": [[40, 60]], "#% increased Flask Life Recovery rate": [[20, 30]]}}}
-{"name": "허약의 론델", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "달의 목걸이", "stats": {"# to maximum Energy Shield": [[20, 30]], "#% increased Skill Speed": [[15, 30]], "#% increased Critical Hit Chance": [[20, 30]], "#% increased Damage": [[30, 50]]}}}
-{"name": "리슬라사의 감개", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "화려한 허리띠", "stats": {"#% reduced Charm Charges used": [[10, 15]], "# to maximum Life": [[80, 100]], "#% increased Flask Life Recovery rate": [[30, 50]], "#% more maximum Physical Attack Damage": [[30, 40]], "#% less minimum Physical Attack Damage": [[30, 40]]}}}
-{"name": "대재앙의 씨앗", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "청금석 반지", "stats": {"# to maximum Mana": [[20, 30]], "#% increased Critical Hit Chance for Spells": [[30, 50]], "#% increased Critical Spell Damage Bonus": [[30, 50]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "세케마의 결의", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "반지"}}
-{"name": "독사의 알", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "황금 목걸이", "stats": {"#% increased Rarity of Items found": [[12, 20]], "# to all Attributes": [[10, 20]], "#% to Chaos Resistance": [[17, 23]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "샤브론의 가방", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "섬세한 허리띠", "stats": {"#% reduced Flask Life Recovery rate": [[20, 30]], "# to Intelligence": [[20, 30]], "#% increased Flask Charges gained": [[20, 30]]}}}
-{"name": "뱀 구덩이", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "진주 반지", "stats": {"#% increased Cast Speed": [[10, 15]], "#% increased Spell Damage": [[20, 30]], "(implicit) #% increased Cast Speed": [[7, 10]]}}}
-{"name": "영혼 올가미", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "긴 허리띠", "stats": {"#% increased Charm Effect Duration": [[15, 20]], "# to maximum Energy Shield": [[40, 60]], "# to Intelligence": [[20, 30]]}}}
-{"name": "몸부림치는 비명", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "별의 목걸이", "stats": {"# to all Attributes": [[5, 7]]}}}
-{"name": "굳건한 부적", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "비취 목걸이", "stats": {"# to Dexterity": [[5, 15]], "# to maximum Life": [[40, 60]], "(implicit) # to Dexterity": [[10, 15]]}}}
-{"name": "모루", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "혈석 목걸이", "stats": {"# to maximum Life": [[30, 40]], "#% increased Armour": [[25, 50]], "#% to maximum Block chance": [[3, 5]]}}}
-{"name": "굴착자", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "토파즈 반지", "stats": {"#% to Lightning Resistance": [[20, 30]], "(implicit) #% to Lightning Resistance": [[20, 30]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
-{"name": "영원한 응시", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이", "stats": {"#% increased Mana Regeneration Rate": [[20, 30]], "Gain #% of Maximum Mana as Extra Maximum Energy Shield": [[20, 30]]}}}
-{"name": "대혼란", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "청금석 목걸이", "stats": {"# to Intelligence": [[10, 15]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "도둑의 고통", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "에메랄드 반지", "stats": {"# to Accuracy Rating": [[120, 160]], "#% increased Rarity of Items found": [[30, 40]], "#% to all Elemental Resistances": [[10, 15]]}}}
-{"name": "웅힐의 조화", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "담청색 목걸이", "stats": {"#% increased Mana Regeneration Rate": [[20, 30]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% increased Critical Hit Chance": [[100, 200]], "# to Stun Threshold": [[60, 100]]}}}
-{"name": "벤토의 도박", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "황금 반지", "stats": {"#% increased Rarity of Items found": [[6, 15]], "# to maximum Life": [[0, 80]], "# to Spirit": [[0, 20]], "#% reduced Rarity of Items found": [[-40, 40]], "#% to Fire Resistance": [[-40, 40]], "#% to Cold Resistance": [[-40, 40]], "#% to Lightning Resistance": [[-40, 40]]}}}
-{"name": "형제의 속삭임", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "사파이어 반지", "stats": {"#% to Cold Resistance": [[20, 30]], "#% increased Skill Speed": [[5, 10]], "# to Dexterity": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 50]]}}}
-{"name": "조프의 피", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "호박 목걸이", "stats": {"# to Strength": [[10, 15]], "#% increased maximum Life": [[10, 15]], "#% to Fire Resistance": [[20, 30]]}}}
-{"name": "제르피의 시원", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "무거운 허리띠", "stats": {"#% increased Stun Threshold": [[20, 30]], "# to Strength": [[10, 30]], "#% increased Charm Charges used": [[10, 30]]}}}
-{"name": "아브 아이테르노", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "우수한 허벅지 방어구", "stats": {"#% increased Movement Speed": [[15, 30]], "#% increased Armour, Evasion and Energy Shield": [[60, 80]]}}}
-{"name": "아이리스베인의 날개", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "윤이 나는 건틀릿", "stats": {"#% increased Armour and Evasion": [[50, 70]], "#% increased Attack Speed": [[5, 10]], "# to Intelligence": [[20, 30]]}}}
-{"name": "알켐 에이라", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "문장 문양 방패", "stats": {"#% increased Block chance": [[30, 40]], "#% increased Armour and Energy Shield": [[30, 50]], "# to maximum Mana": [[50, 70]]}}}
-{"name": "우두머리의 울부짖음", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "장갑을 두른 모자", "stats": {"#% increased Evasion Rating": [[80, 100]], "#% to Cold Resistance": [[50, 75]]}}}
-{"name": "에미란의 앞치마", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "은자 의복", "stats": {"#% increased Evasion and Energy Shield": [[30, 50]], "# to Dexterity": [[10, 20]], "#% reduced Bleeding Duration on you": [[40, 60]]}}}
-{"name": "아르빌의 바퀴", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "견목 타지", "stats": {"#% increased Armour and Evasion": [[60, 100]], "# to maximum Life": [[40, 60]], "# to maximum Mana": [[40, 60]], "#% increased Skill Effect Duration": [[30, 50]]}}}
-{"name": "부서진 잿더미", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "패스파인더 외투", "stats": {"# to maximum Life": [[40, 60]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[30, 40]]}}}
-{"name": "질식의 진노", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "넓은 촉 화살통", "stats": {"Adds # to # Cold damage to Attacks": [[3, 4], [5, 8]], "#% increased Attack Speed": [[5, 10]], "#% to Cold Resistance": [[5, 10]], "Attacks Gain #% of Damage as Extra Cold Damage": [[5, 10]]}}}
-{"name": "공격병동", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "폐쇄형 헬름", "stats": {"#% increased Armour and Evasion": [[50, 100]], "# to Accuracy Rating": [[200, 400]], "#% increased Critical Hit Chance": [[30, 50]], "Skills have a #% longer Perfect Timing window": [[100, 150]]}}}
-{"name": "아차크의 시야", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "장막 가면", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "#% increased Critical Hit Chance": [[30, 40]], "# to Dexterity": [[10, 20]], "# to Intelligence": [[10, 20]]}}}
-{"name": "앗지리의 예리함", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "주조한 미트", "stats": {"#% increased Armour": [[80, 100]], "#% increased Critical Hit Chance": [[30, 50]], "# to Intelligence": [[20, 30]]}}}
-{"name": "앗지리의 멸시", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "황금 관", "stats": {"# to maximum Mana": [[40, 60]], "#% increased Rarity of Items found": [[10, 20]], "#% of Damage taken bypasses Energy Shield": [[20, 25]], "Gain #% of Maximum Life as Extra Maximum Energy Shield": [[25, 30]]}}}
-{"name": "아우르시즈", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "겹겹의 건틀릿", "stats": {"#% increased Armour and Evasion": [[40, 60]], "#% increased Rarity of Items found": [[40, 50]]}}}
-{"name": "딱정벌레 이빨", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "벨루어 신발", "stats": {"#% increased Movement Speed": [[20, 30]], "#% increased Evasion and Energy Shield": [[60, 120]]}}}
-{"name": "짐승의 소굴", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "탐험가 방어구", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to maximum Life": [[100, 150]], "# to Stun Threshold": [[100, 150]], "# to # Physical Thorns damage": [[25, 30], [35, 40]]}}}
-{"name": "요원한 저 너머", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "본능적인 화살통", "stats": {"#% increased Critical Hit Chance for Attacks": [[20, 30]], "#% reduced Attack Speed": [[10, 15]], "Attacks Gain #% of Physical Damage as extra Chaos Damage": [[10, 20]]}}}
-{"name": "광분의 탄생", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "돌 각반", "stats": {"# to maximum Life": [[40, 60]], "#% to Fire Resistance": [[20, 30]]}}}
-{"name": "독살꽃", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "깃털 로브", "stats": {"#% increased Energy Shield": [[50, 100]], "# to maximum Mana": [[50, 100]]}}}
-{"name": "검은끈", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "모피 판금 갑옷", "stats": {"# to Armour": [[40, 60]], "# to Strength": [[10, 20]], "# to Intelligence": [[10, 20]], "# to Stun Threshold": [[40, 60]]}}}
-{"name": "검은 섬광", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "불 화살통", "stats": {"Adds # to # Fire damage to Attacks": [[3, 5], [6, 9]], "# to maximum Mana": [[30, 50]], "Attacks Gain #% of Damage as Extra Fire Damage": [[5, 10]]}}}
-{"name": "검은 태양 문양", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "싸맨 대헬름", "stats": {"#% increased Armour": [[50, 80]], "#% increased Strength": [[5, 15]], "#% increased Dexterity": [[5, 15]], "#% increased Intelligence": [[5, 15]]}}}
-{"name": "축복받은 유대", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개", "stats": {"# to Evasion Rating": [[60, 100]], "# to maximum Energy Shield": [[30, 50]], "Gain # Mana per Enemy Killed": [[25, 35]]}}}
-{"name": "푸른불길 팔보호구", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "금주물 수갑", "stats": {"# to Intelligence": [[10, 20]], "#% to Fire Resistance": [[5, 15]], "#% to Cold Resistance": [[5, 15]]}}}
-{"name": "울러의 뼈", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "격자 샌들", "stats": {"#% increased Energy Shield": [[40, 60]], "# to maximum Life": [[20, 40]], "# to maximum Mana": [[20, 40]]}}}
-{"name": "가시나무 갑옷", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "녹슨 흉갑", "stats": {"# to maximum Life": [[60, 100]], "# to Stun Threshold": [[60, 100]]}}}
-{"name": "가시밭", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "레이스 장화", "stats": {"#% increased Movement Speed": [[10, 20]], "# to maximum Life": [[40, 60]], "# to Stun Threshold": [[60, 80]], "# to # Physical Thorns damage": [[10, 15], [20, 25]]}}}
-{"name": "활력의 겉옷", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "로아가죽 외투", "stats": {"#% increased Evasion Rating": [[60, 100]], "#% increased Flask Life Recovery rate": [[40, 60]], "#% increased Flask Mana Recovery rate": [[40, 60]], "# to Dexterity": [[20, 30]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "가시털멧돼지", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "가죽 조끼", "stats": {"# to maximum Life": [[40, 60]], "# Life Regeneration per second": [[3, 5]]}}}
-{"name": "황동의 턱수염", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "뿔 달린 왕관", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% reduced Effect of Chill on you": [[35, 50]], "#% reduced effect of Ignite on you": [[35, 50]], "#% reduced effect of Shock on you": [[35, 50]]}}}
-{"name": "덤불 매복", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "도마뱀비늘 장화", "stats": {"#% increased Movement Speed": [[15, 25]], "#% increased Evasion Rating": [[50, 80]], "# to Dexterity": [[10, 20]]}}}
-{"name": "양초 제작자", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "암울한 장갑", "stats": {"#% increased Energy Shield": [[50, 80]], "#% increased Fire Damage": [[20, 40]], "#% reduced Cold Damage": [[10, 20]], "#% to Fire Resistance": [[20, 40]], "#% to Cold Resistance": [[-20, -10]]}}}
-{"name": "부패하는 부름", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "아로새긴 집중구", "stats": {"# to maximum Energy Shield": [[30, 40]], "Minions have #% increased maximum Life": [[20, 30]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "화염의 망토", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "실크 로브", "stats": {"#% to Fire Resistance": [[30, 50]], "#% reduced Ignite Duration on you": [[30, 50]]}}}
-{"name": "붉은색의 외투", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "사슬 갑옷", "stats": {"#% increased Armour and Evasion": [[80, 100]], "# to maximum Life": [[80, 100]], "# to Stun Threshold": [[75, 150]]}}}
-{"name": "코르나타움", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "무거운 왕관", "stats": {"#% increased Rarity of Items found": [[10, 20]], "# to Intelligence": [[40, 50]]}}}
-{"name": "붉은 태양의 광환", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "전사 대헬름", "stats": {"# to Accuracy Rating": [[100, 150]], "# to maximum Life": [[60, 80]], "#% to Fire Resistance": [[20, 25]]}}}
-{"name": "시신걸음", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "철제 각반", "stats": {"#% increased Armour": [[30, 50]], "# to Strength": [[5, 10]]}}}
-{"name": "진홍의 예복", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "도금된 법의", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% reduced Bleeding Duration on you": [[40, 60]]}}}
-{"name": "아르듀라의 문양", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "방울 문양 방패", "stats": {"#% increased Armour and Energy Shield": [[60, 100]], "# to Intelligence": [[10, 20]], "#% increased Mana Regeneration Rate": [[30, 50]], "#% increased Cooldown Recovery Rate": [[30, 50]]}}}
-{"name": "창백한 왕의 왕관", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "광신자 왕관", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "# to maximum Life": [[40, 80]], "# to # Physical Thorns damage": [[10, 15], [20, 25]]}}}
-{"name": "승리자의 왕관", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "철 왕관", "stats": {"#% increased Rarity of Items found": [[10, 20]]}}}
-{"name": "가시 왕관", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "잔가지 관", "stats": {"# to maximum Energy Shield": [[100, 150]], "# to # Physical Thorns damage": [[3, 5], [6, 10]]}}}
-{"name": "어두운 빛의 궤적", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "죔쇠 발 덮개", "stats": {"#% increased Armour and Evasion": [[50, 100]], "#% to Lightning Resistance": [[30, 40]]}}}
-{"name": "죽음의 일격", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "이중 건틀릿", "stats": {"#% increased Armour and Evasion": [[100, 150]], "#% increased Attack Speed": [[5, 10]], "Gain # Life per Enemy Killed": [[20, 30]], "Gain # Mana per Enemy Killed": [[20, 30]]}}}
-{"name": "단말마의 숨소리", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "잔가지 집중구", "stats": {"# to maximum Energy Shield": [[10, 20]], "#% increased Spell Damage": [[20, 40]], "# to Intelligence": [[5, 10]]}}}
-{"name": "죽음의 종", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "정예병 대헬름", "stats": {"#% increased Armour": [[60, 100]], "# to Strength": [[10, 20]], "#% increased Warcry Speed": [[20, 30]], "Warcry Skills have #% increased Area of Effect": [[20, 30]]}}}
-{"name": "악마 봉합자", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "복잡한 장갑", "stats": {"# to maximum Energy Shield": [[40, 60]], "# to maximum Life": [[80, 120]], "#% increased Cast Speed": [[6, 12]], "Sacrifice #% of Life to gain that much Energy Shield when you Cast a Spell": [[5, 15]]}}}
-{"name": "다이오나데어", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "쪼개진 거대 방패", "stats": {"#% increased Armour": [[60, 80]], "# to Strength": [[10, 15]], "# Life Regeneration per second": [[3, 5]]}}}
-{"name": "도이드리의 임기", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "꿰맨 장갑", "stats": {"# to maximum Energy Shield": [[20, 30]], "#% reduced Cast Speed": [[15, 25]], "# to Intelligence": [[10, 15]]}}}
-{"name": "멸망문", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "죔쇠 거대 방패", "stats": {"#% increased Armour": [[100, 150]], "#% to Chaos Resistance": [[13, 17]]}}}
-{"name": "도리아니의 프로토타입", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "미늘 갑옷", "stats": {"#% increased Armour and Evasion": [[50, 100]], "# to maximum Life": [[60, 80]]}}}
-{"name": "황혼꽃", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "징 박힌 조끼", "stats": {"#% increased Evasion Rating": [[100, 150]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "에디른의 엄니", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "철 흉갑", "stats": {"#% increased Armour": [[120, 160]], "# to # Physical Thorns damage": [[15, 20], [25, 30]]}}}
-{"name": "원소포식", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "사냥꾼 두건", "stats": {"#% increased Evasion Rating": [[50, 80]], "# to Dexterity": [[20, 30]]}}}
-{"name": "감싸 안는 여명", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "순례자 법의", "stats": {"#% increased Armour and Energy Shield": [[50, 100]], "#% to all Elemental Resistances": [[5, 15]]}}}
-{"name": "에리안의 수선", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "보호받는 헬름", "stats": {"# to Armour": [[0, 40]], "# to Evasion Rating": [[0, 30]], "# to maximum Energy Shield": [[0, 20]], "# to Accuracy Rating": [[0, 60]], "# to maximum Life": [[0, 30]], "# to maximum Mana": [[0, 20]], "#% increased Rarity of Items found": [[0, 20]], "#% increased Critical Hit Chance": [[0, 30]], "# to Strength": [[0, 10]], "# to Dexterity": [[0, 10]], "# to Intelligence": [[0, 10]], "#% to Fire Resistance": [[0, 10]], "#% to Cold Resistance": [[0, 10]], "#% to Lightning Resistance": [[0, 10]], "# Life Regeneration per second": [[0, 6]]}}}
-{"name": "에조미어의 면갑", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "병사 대헬름", "stats": {"#% increased Armour": [[50, 100]], "# to maximum Life": [[50, 80]], "# Life Regeneration per second": [[3, 6]], "#% increased Area of Effect": [[10, 20]]}}}
-{"name": "깃털 달린 요새", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "초승달 타지", "stats": {"# to Strength": [[20, 30]], "# to Dexterity": [[20, 30]], "#% to Fire Resistance": [[20, 30]], "#% to Cold Resistance": [[20, 30]]}}}
-{"name": "금단의 응시", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "사슬 티아라", "stats": {"#% increased Energy Shield": [[60, 100]], "#% to Maximum Cold Resistance": [[3, 5]], "#% to Cold Resistance": [[30, 50]]}}}
-{"name": "여우 그림자", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "누비 조끼", "stats": {"# to Evasion Rating": [[50, 70]], "# to Dexterity": [[20, 30]]}}}
-{"name": "도박질주", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "양각 무늬 장화", "stats": {"#% increased Evasion Rating": [[100, 140]], "# to Dexterity": [[10, 15]], "#% to Lightning Resistance": [[15, 25]]}}}
-{"name": "유령의 행진", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "실타래 신발", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "# to maximum Mana": [[30, 50]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "유령의 몸서리", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "조각난 로브", "stats": {"#% to Chaos Resistance": [[29, 37]]}}}
-{"name": "혼돈의 섬광", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "부족 가면", "stats": {"# to maximum Life": [[50, 150]], "# to maximum Mana": [[50, 150]], "#% to Fire Resistance": [[-30, 30]], "#% to Cold Resistance": [[-30, 30]], "#% to Lightning Resistance": [[-30, 30]]}}}
-{"name": "순흑체", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "밀랍재질 재킷", "stats": {"#% increased Evasion Rating": [[100, 150]], "# to Dexterity": [[10, 20]], "#% to Fire Resistance": [[10, 20]]}}}
-{"name": "금테", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "펠트 모자", "stats": {"# to Evasion Rating": [[30, 50]], "#% to all Elemental Resistances": [[25, 35]]}}}
-{"name": "무덤의 속박", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "밧줄 수갑", "stats": {"#% increased Armour and Energy Shield": [[40, 60]], "#% to Cold Resistance": [[10, 15]], "Gain # Life per Enemy Killed": [[7, 10]], "Gain # Mana per Enemy Killed": [[4, 6]]}}}
-{"name": "탐욕의 포옹", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "바알 흉갑", "stats": {"#% increased Armour": [[100, 150]], "#% increased Rarity of Items found": [[30, 50]], "#% to Fire Resistance": [[20, 30]]}}}
-{"name": "회색작품", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "챙 헬름", "stats": {"# to Strength": [[30, 50]], "# to Dexterity": [[30, 50]], "# to Intelligence": [[30, 50]]}}}
-{"name": "겨울의 손아귀", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "굳건한 팔보호구", "stats": {"#% increased Evasion Rating": [[30, 50]], "Adds # to # Cold damage to Attacks": [[3, 5], [6, 8]], "#% to Cold Resistance": [[20, 30]], "#% increased Freeze Buildup": [[40, 50]], "#% increased Magnitude of Chill you inflict": [[20, 30]]}}}
-{"name": "지혜와 행동의 손아귀", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "은밀한 싸개", "stats": {"# to Dexterity": [[15, 25]], "# to Intelligence": [[15, 25]]}}}
-{"name": "증오의 탄생", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "주조한 미트", "stats": {"#% increased Armour": [[50, 80]], "Gain # random Charge on reaching Maximum Rage": [[1, 3]], "# to Maximum Rage": [[-10, 10]]}}}
-{"name": "빈덴의 뿔", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "녹슨 대헬름", "stats": {"#% increased Rarity of Items found": [[5, 15]], "# to Strength": [[20, 30]]}}}
-{"name": "꿈의 껍데기", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "주술사 외투", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "#% to Chaos Resistance": [[17, 23]], "#% increased Flask Charges used": [[20, 30]]}}}
-{"name": "얼음 묘지", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "사슬 법의", "stats": {"# to Strength": [[20, 30]], "# to Intelligence": [[20, 30]], "#% to Cold Resistance": [[30, 40]]}}}
-{"name": "게으른 손", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "절개된 팔보호구", "stats": {"#% increased Evasion Rating": [[40, 60]], "# to Accuracy Rating": [[60, 100]], "# to Intelligence": [[5, 10]]}}}
-{"name": "인즈머스", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "허름한 두건", "stats": {"# to Evasion Rating": [[20, 30]], "#% to Cold Resistance": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
-{"name": "철손아귀", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "방랑자 방어구", "stats": {"#% increased Armour and Evasion": [[100, 150]], "# to Strength": [[20, 30]], "# to Stun Threshold": [[100, 150]]}}}
-{"name": "철의 질주", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "차양 단 헬름", "stats": {"#% increased Armour and Evasion": [[60, 80]], "# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "야릉그레이프", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "고리 갑옷 건틀릿", "stats": {"Adds # to # Physical Damage to Attacks": [[2, 3], [5, 6]], "# to maximum Life": [[30, 50]], "#% increased Attack Speed": [[4, 8]]}}}
-{"name": "카옴의 심장", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "정복자 판금 갑옷", "stats": {"#% increased Stun Threshold": [[30, 40]]}}}
-{"name": "전호의 보관자", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "혼백뼈 왕관", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "# Life Regeneration per second": [[15, 25]], "#% increased Mana Regeneration Rate": [[15, 25]]}}}
-{"name": "깨진 흥", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "리넨 싸개", "stats": {"#% increased Evasion and Energy Shield": [[30, 60]], "# to maximum Life": [[30, 50]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
-{"name": "왕의 보호구", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "전신 판금 갑옷", "stats": {"# to maximum Life": [[60, 80]], "# to maximum Mana": [[40, 60]], "#% to all Elemental Resistances": [[5, 10]]}}}
-{"name": "키토코의 흐름", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "보석 박힌 장갑", "stats": {"#% increased Energy Shield": [[30, 50]], "# to Dexterity": [[10, 20]], "#% reduced Attack and Cast Speed": [[10, 15]]}}}
-{"name": "음흉한 시선", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "두건 가면", "stats": {"# to maximum Life": [[30, 50]], "# to maximum Mana": [[30, 50]], "# to Dexterity": [[10, 20]]}}}
-{"name": "군단의 보조", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "거친 각반", "stats": {"# to Armour": [[50, 70]], "# to Stun Threshold": [[50, 70]]}}}
-{"name": "록토니얼의 손길", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "단조한 미트", "stats": {"#% increased Skill Speed": [[10, 15]], "# to Armour": [[15, 25]], "# to maximum Life": [[40, 60]], "#% reduced maximum Mana": [[10, 15]]}}}
-{"name": "빛나는 발걸음", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "짚 샌들", "stats": {"# to maximum Energy Shield": [[20, 30]], "# to Intelligence": [[5, 10]], "#% reduced Energy Shield Recharge Rate": [[20, 30]]}}}
-{"name": "늑대 거미", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "성벽 거대 방패", "stats": {"#% increased Block chance": [[30, 40]], "#% increased Armour": [[60, 100]]}}}
-{"name": "마훅소틀의 계책", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "징조 문양 방패", "stats": {"#% increased Armour and Energy Shield": [[333, 666]], "#% increased effect of Socketed Soul Cores": [[333, 666]]}}}
-{"name": "말리가로의 기교", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "섬세한 팔보호구", "stats": {"#% increased Evasion Rating": [[60, 80]], "#% increased Critical Hit Chance": [[20, 30]], "# to Dexterity": [[20, 30]]}}}
-{"name": "혈액술사의 가면", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "얼굴 가면", "stats": {"# to Evasion Rating": [[20, 25]], "# to maximum Energy Shield": [[10, 15]], "#% increased Critical Hit Chance for Spells": [[20, 40]], "# to Strength": [[20, 30]], "# to Intelligence": [[10, 20]]}}}
-{"name": "꿰맨 악마의 가면", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "깃털 티아라", "stats": {"#% increased Energy Shield": [[120, 160]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "근정훈장", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "털가죽 타지", "stats": {"#% increased Block chance": [[30, 50]], "#% increased Armour and Evasion": [[60, 80]], "# to Stun Threshold": [[60, 80]]}}}
-{"name": "모리오르 인빅투스", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "우수한 예복", "stats": {"#% increased Armour, Evasion and Energy Shield": [[200, 300]]}}}
-{"name": "미리스 욱소르", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "은밀한 두건", "stats": {"#% increased Evasion Rating": [[40, 60]], "# to Accuracy Rating": [[100, 150]], "# to maximum Mana": [[40, 60]]}}}
-{"name": "강령외투", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "뼈 의복", "stats": {"# to maximum Life": [[40, 60]], "# to maximum Mana": [[30, 50]], "#% to Chaos Resistance": [[17, 23]], "Minions gain #% of their Maximum Life as Extra Maximum Energy Shield": [[20, 30]]}}}
-{"name": "북방발", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "스웨드 팔보호구", "stats": {"# to Evasion Rating": [[15, 25]], "Adds # to # Physical Damage to Attacks": [[3, 5], [8, 10]], "#% increased Critical Damage Bonus": [[20, 30]]}}}
-{"name": "참나무맹세", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "부적 문양 방패", "stats": {"#% increased Block chance": [[40, 60]], "#% increased Armour and Energy Shield": [[80, 120]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "오베른의 보루", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "중첩된 발 덮개", "stats": {"#% increased Armour and Evasion": [[150, 200]], "# Life Regeneration per second": [[20, 25]], "#% reduced Chill Duration on you": [[30, 50]], "#% reduced Freeze Duration on you": [[30, 50]], "#% reduced Shock duration on you": [[30, 50]]}}}
-{"name": "화가의 종", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "찢긴 장갑", "stats": {"Gain #% of Elemental Damage as Extra Cold Damage": [[5, 10]], "Gain #% of Elemental Damage Damage as Extra Fire Damage": [[5, 10]], "Gain #% of Elemental Damage Damage as Extra Lightning Damage": [[5, 10]]}}}
-{"name": "부랑자의 포옹", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "은폐 사슬옷", "stats": {"#% increased Armour and Evasion": [[50, 80]], "# to all Attributes": [[10, 15]], "# Life Regeneration per second": [[10, 15]]}}}
-{"name": "배반", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "기사 방어구", "stats": {"#% increased Armour and Evasion": [[100, 150]], "#% chance to Avoid Physical Damage from Hits": [[10, 40]], "#% chance to Avoid Chaos Damage from Hits": [[10, 40]]}}}
-{"name": "역병손가락", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "거즈 싸개", "stats": {"#% increased Evasion and Energy Shield": [[30, 50]], "#% increased Attack Speed": [[4, 6]], "#% chance to Poison on Hit": [[20, 30]]}}}
-{"name": "위세의 발 보호대", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "사냥용 신발", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Evasion and Energy Shield": [[60, 80]], "# to Intelligence": [[10, 20]]}}}
-{"name": "실용주의", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "탐험가 방어구", "stats": {"#% increased Armour and Evasion": [[200, 300]], "#% to all Elemental Resistances": [[10, 20]]}}}
-{"name": "기우 기도", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "케스 의복", "stats": {"#% increased Energy Shield": [[60, 100]], "# to Intelligence": [[10, 15]], "#% to Lightning Resistance": [[10, 20]]}}}
-{"name": "콰틀의 허물", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "뱀 비늘 외투", "stats": {"#% increased Evasion Rating": [[60, 80]], "# to maximum Life": [[60, 80]], "#% to Chaos Resistance": [[17, 23]], "# Life Regeneration per second": [[10, 20]]}}}
-{"name": "숲의 여왕", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "밀수범 외투", "stats": {"#% increased Evasion Rating": [[100, 150]], "#% to Fire Resistance": [[-15, -10]], "#% to Cold Resistance": [[25, 30]], "#% to Lightning Resistance": [[10, 15]]}}}
-{"name": "찬란한 슬픔", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "레이스 두건", "stats": {"#% increased Evasion Rating": [[80, 100]], "#% to Fire Resistance": [[15, 25]]}}}
-{"name": "붉은섬광 도관", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "은둔자 의복", "stats": {"# to maximum Mana": [[50, 70]], "#% to Lightning Resistance": [[20, 30]]}}}
-{"name": "불사조의 비상", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "징조 문양 방패", "stats": {"#% to Fire Resistance": [[20, 25]]}}}
-{"name": "사펠의 골격", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "상징 문양 방패", "stats": {"#% to Fire Resistance": [[15, 25]], "#% to Cold Resistance": [[15, 25]], "#% to Lightning Resistance": [[30, 40]]}}}
-{"name": "모래 폭풍의 얼굴", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "사슬 티아라", "stats": {"# to maximum Energy Shield": [[80, 120]], "# to Dexterity": [[20, 30]]}}}
-{"name": "독사의 교훈", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "음색 집중구", "stats": {"# to maximum Life": [[60, 100]], "# to maximum Mana": [[60, 100]]}}}
-{"name": "불운아의 족쇄", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "오래된 수갑", "stats": {"#% increased Armour and Energy Shield": [[30, 50]]}}}
-{"name": "시에라의 유산", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "도사 의복", "stats": {"#% increased Evasion and Energy Shield": [[50, 80]], "#% to Lightning Resistance": [[30, 40]], "#% faster start of Energy Shield Recharge": [[30, 50]]}}}
-{"name": "시네 아이쿠오", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "우수한 소맷부리", "stats": {"#% increased Skill Speed": [[10, 15]], "#% increased Armour, Evasion and Energy Shield": [[40, 60]]}}}
-{"name": "충신의 가죽", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "옷", "stats": {"#% to all Elemental Resistances": [[5, 40]]}}}
-{"name": "뱀 이빨", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "가시 팔보호구", "stats": {"#% increased Evasion Rating": [[40, 60]], "#% to Chaos Resistance": [[7, 17]], "# Life Regeneration per second": [[6, 10]], "#% chance to Poison on Hit": [[20, 30]]}}}
-{"name": "솔루스 입세", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "우수한 얼굴", "stats": {"# to maximum Mana": [[60, 100]], "#% increased Armour, Evasion and Energy Shield": [[100, 150]]}}}
-{"name": "스발린", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "도가니 거대 방패", "stats": {"#% increased Armour": [[100, 150]], "#% to maximum Block chance": [[-20, -10]]}}}
-{"name": "템포랄리스", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "실크 로브", "stats": {"# to maximum Energy Shield": [[100, 150]], "#% to all Elemental Resistances": [[10, 20]], "#% of Damage taken Recouped as Life": [[5, 30]], "#% of Damage taken Recouped as Mana": [[5, 30]], "Skills have # seconds to Cooldown": [[-4, -2]]}}}
-{"name": "테츨라포칼의 갈망", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "봉헌된 의복", "stats": {"#% increased Energy Shield": [[100, 150]], "# to Strength": [[20, 30]], "# to Intelligence": [[20, 30]], "#% to Chaos Resistance": [[17, 23]]}}}
-{"name": "고분의 주민", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "악한 방어구", "stats": {"#% increased Armour and Evasion": [[60, 100]], "#% to Fire Resistance": [[-20, -10]]}}}
-{"name": "검은 의혹", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "사술사의 로브", "stats": {"#% increased Energy Shield": [[60, 100]], "# to Intelligence": [[10, 30]], "#% to Cold Resistance": [[10, 20]]}}}
-{"name": "황동 철갑", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "챔피언 흉갑", "stats": {"#% increased Armour": [[400, 500]], "#% to all Maximum Elemental Resistances": [[-5, -1]], "# to Stun Threshold": [[200, 300]]}}}
-{"name": "계약", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "제단 로브", "stats": {"#% increased Energy Shield": [[100, 150]], "# to maximum Life": [[100, 150]]}}}
-{"name": "춤추는 신기루", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "나그네 재킷", "stats": {"#% increased Evasion and Energy Shield": [[150, 200]], "#% to Lightning Resistance": [[10, 20]]}}}
-{"name": "걸신들린 왕관", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "고리버들 티아라", "stats": {"#% increased Energy Shield": [[60, 100]], "# to maximum Life": [[40, 60]], "# to Intelligence": [[10, 20]], "#% to Chaos Resistance": [[13, 19]]}}}
-{"name": "영원한 불꽃", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "결정 집중구", "stats": {"#% increased Energy Shield": [[50, 70]], "#% to Lightning Resistance": [[20, 30]]}}}
-{"name": "텅 빈 가면", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "깎아낸 가면", "stats": {"# to maximum Life": [[60, 80]]}}}
-{"name": "이모탄", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "레이더 판금 갑옷", "stats": {"# to all Attributes": [[10, 15]], "#% to Fire Resistance": [[15, 30]], "#% to Lightning Resistance": [[15, 30]], "# Life Regeneration per second": [[10, 15]]}}}
-{"name": "끝없는 추적", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "청동 각반", "stats": {"#% increased Armour": [[100, 150]], "# to maximum Life": [[80, 100]], "#% increased Chance to be afflicted by Ailments when Hit": [[80, 100]]}}}
-{"name": "무사 수행 기사", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "사슬 발 덮개", "stats": {"#% increased Armour and Evasion": [[30, 50]], "# to Stun Threshold": [[30, 50]], "# to Ailment Threshold": [[30, 50]]}}}
-{"name": "쥐덫", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "정찰병의 조끼", "stats": {"#% increased Evasion Rating": [[100, 150]]}}}
-{"name": "미소 짓는 기사", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "고깔 헬름", "stats": {"# to Accuracy Rating": [[50, 100]], "#% increased Armour and Evasion": [[150, 200]], "#% increased Critical Hit Chance": [[15, 25]]}}}
-{"name": "포기", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "돌 거대 방패", "stats": {"#% increased Block chance": [[40, 60]], "#% increased Armour": [[150, 200]], "# to Stun Threshold": [[150, 200]]}}}
-{"name": "세 마리의 용", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "단단한 가면", "stats": {"#% increased Evasion and Energy Shield": [[40, 60]], "#% to all Elemental Resistances": [[10, 20]]}}}
-{"name": "최정점", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "부족 가면", "stats": {"#% increased Evasion and Energy Shield": [[100, 150]], "#% increased Critical Hit Chance": [[30, 50]], "#% to Chaos Resistance": [[13, 17]]}}}
-{"name": "끔찍한 기사", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "방패 방어 헬름", "stats": {"#% increased Armour and Evasion": [[60, 100]], "# to Accuracy Rating": [[75, 125]], "# Life Regeneration per second": [[10, 15]]}}}
-{"name": "울부짖는 벽", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "제웅 거대 방패", "stats": {"#% increased Armour": [[100, 150]], "# to Stun Threshold": [[100, 150]]}}}
-{"name": "실오라기 같은 빛", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "엮은 집중구", "stats": {"#% increased Energy Shield": [[50, 70]], "#% increased Mana Regeneration Rate": [[30, 40]], "#% increased Spell Damage per # Spirit": [[8, 12]]}}}
-{"name": "전율강철", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "첨탑 대헬름", "stats": {}}}
-{"name": "우레걸음", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "강철코 장화", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Evasion Rating": [[40, 60]], "#% to Maximum Lightning Resistance": [[3, 5]], "#% to Lightning Resistance": [[30, 50]]}}}
-{"name": "거신부패 비늘 갑옷", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "마라케스 흉갑", "stats": {"#% increased Armour": [[400, 500]], "#% increased Strength": [[15, 30]]}}}
-{"name": "짓발가락", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "다듬은 각반", "stats": {"#% increased Armour": [[50, 100]]}}}
-{"name": "나무손가락", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "고정못 미트", "stats": {"#% increased Armour": [[30, 60]], "Adds # to # Physical Damage to Attacks": [[6, 10], [12, 16]], "#% increased Stun Buildup": [[20, 30]]}}}
-{"name": "밤의 장막", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "순교자 왕관", "stats": {"# to all Attributes": [[10, 20]]}}}
-{"name": "아야의 얼굴", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "구슬 관", "stats": {"#% increased Energy Shield": [[50, 80]], "#% increased Rarity of Items found": [[10, 15]], "#% increased Critical Hit Chance": [[20, 30]], "#% to Lightning Resistance": [[10, 20]]}}}
-{"name": "볼의 보호자", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "철갑 법의", "stats": {"#% increased Armour and Energy Shield": [[100, 150]], "#% to Chaos Resistance": [[13, 17]]}}}
-{"name": "파괴의 경야", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "보안 레깅스", "stats": {"#% increased Armour and Energy Shield": [[30, 60]], "Adds # to # Lightning damage to Attacks": [[1, 1], [30, 50]]}}}
-{"name": "방랑하는 성유물 보관실", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "강철 판금 갑옷", "stats": {"#% increased Armour": [[50, 100]], "# to maximum Mana": [[40, 60]], "# to Strength": [[10, 20]], "# to Stun Threshold": [[60, 80]]}}}
-{"name": "방랑벽", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "싸맨 샌들", "stats": {"# to maximum Energy Shield": [[10, 20]]}}}
-{"name": "바람의 괴성", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "깃털 샌들", "stats": {"#% increased Movement Speed": [[10, 20]], "#% increased Energy Shield": [[50, 100]], "# to Intelligence": [[10, 20]]}}}
-{"name": "카일린의 날개", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "녹슨 대헬름", "stats": {"#% increased Rarity of Items found": [[5, 15]], "# to Dexterity": [[20, 30]]}}}
-{"name": "기적의 발판", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "실크 슬리퍼", "stats": {"#% increased Movement Speed": [[10, 20]], "# to maximum Energy Shield": [[30, 50]], "# to Strength": [[10, 20]], "# to Dexterity": [[10, 20]], "# to Intelligence": [[10, 20]]}}}
-{"name": "늑대의 천적", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "도색된 거대 방패", "stats": {"# to maximum Life": [[40, 60]], "# to Strength": [[10, 15]], "# to Stun Threshold": [[60, 80]]}}}
-{"name": "녹아내리는 소용돌이", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "극한의 마나 플라스크", "stats": {"#% increased Duration": [[200, 250]]}}}
-{"name": "올로스의 결의", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "극한의 생명력 플라스크", "stats": {"#% increased Charges per use": [[100, 150]]}}}
-{"name": "어둠에의 저항", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "오래된 다이아몬드", "stats": {}}}
-{"name": "제어된 변형", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "다이아몬드", "stats": {"#% to all Elemental Resistances": [[-20, -5]], "#% to Chaos Resistance": [[-23, -3]]}}}
-{"name": "허무의 산물", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "다이아몬드", "stats": {}}}
-{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "루비", "stats": {}}}
-{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "에메랄드"}}
-{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "사파이어"}}
-{"name": "영웅적인 비극", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "무궁한 주얼", "stats": {"Remembrancing # songworthy deeds by the line of Vorana": [[100, 8000]]}}}
-{"name": "과대망상", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "다이아몬드", "stats": {}}}
-{"name": "믿음의 분광기", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "다이아몬드", "stats": {"# to Level of all Specific Skill Skills": [[1, 3]]}}}
-{"name": "치장한 자", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "다이아몬드", "stats": {"#% increased Effect of Jewel Socket Passive Skills": [[0, 100]]}}}
-{"name": "푸른혀", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "절단도", "stats": {"Adds # to # Physical Damage": [[4, 6], [7, 10]]}}}
-{"name": "요동치는 두뇌", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "징 박힌 대곤봉", "stats": {"Adds # to # Physical Damage": [[18, 22], [24, 28]], "Adds # to # Lightning Damage": [[1, 1], [50, 55]], "#% increased Attack Speed": [[10, 15]]}}}
-{"name": "브린핸드의 징표", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "목재 곤봉", "stats": {"Adds # to # Physical Damage": [[10, 14], [16, 20]], "# to Accuracy Rating": [[30, 50]], "# to Strength": [[10, 20]]}}}
-{"name": "초버 차버", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "납빛 대망치", "stats": {"Adds # to # Physical Damage": [[58, 65], [102, 110]], "# to maximum Mana": [[80, 100]]}}}
-{"name": "무너지는 지평선", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "아룡 육척봉", "stats": {"#% to Critical Hit Chance": [[5, 10]], "# to Level of all Elemental Skills": [[2, 4]]}}}
-{"name": "죽음의 하프", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "이중시위 활", "stats": {"#% to Critical Damage Bonus": [[50, 70]], "Gain # Life per Enemy Killed": [[20, 30]], "Gain # Mana per Enemy Killed": [[12, 18]]}}}
-{"name": "황혼의 불침번", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "잿빛 지팡이", "stats": {"#% increased Spell Damage": [[60, 80]], "Gain # Life per Enemy Killed": [[5, 10]]}}}
-{"name": "대지결속", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "전도성 지팡이", "stats": {"#% increased Lightning Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "에네준의 돌진", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "폭발성 마법봉", "stats": {"#% increased Spell Damage": [[80, 100]], "#% increased Critical Hit Chance for Spells": [[30, 50]], "Gain # Mana per Enemy Killed": [[10, 15]]}}}
-{"name": "힘의 샘", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "징조 셉터", "stats": {"#% increased Spirit": [[30, 50]], "# to maximum Mana": [[40, 60]], "#% increased Mana Regeneration Rate": [[20, 30]]}}}
-{"name": "서리 숨결", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "좁은 철퇴", "stats": {"Adds # to # Physical Damage": [[8, 12], [16, 20]], "Adds # to # Cold Damage": [[8, 12], [16, 20]]}}}
-{"name": "인도하는 손바닥", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "성소 셉터", "stats": {"Allies in your Presence deal # to # additional Attack Fire Damage": [[4, 6], [7, 10]], "# to all Attributes": [[5, 10]]}}}
-{"name": "돼지사냥", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "쓰러진 대곤봉", "stats": {"Adds # to # Physical Damage": [[16, 20], [23, 27]]}}}
-{"name": "흐림노르의 찬가", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "참나무 대망치", "stats": {"Causes #% increased Stun Buildup": [[30, 50]], "#% increased Physical Damage": [[80, 120]], "# to Strength": [[10, 15]], "Gain # Life per Enemy Killed": [[10, 20]]}}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철창날 창"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무딘 손도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "부식된 장검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사형 집행자 대도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓적검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "노파 단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사슬 도리깨"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "신성한 도리깨"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "까맣게 탄 절단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "아치형 대도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "파문 대검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "무두질용 단도"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "철 대검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "단순한 단검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "갈고리 도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "수염 도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "분할의 대도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "달의 단검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "사냥 창"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "전쟁 창"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "축복받은 클레이모어"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "쌍둥이 도리깨"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "넓은날 대검"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "도적 손도끼"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "흡혈 칼날"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "고상한 글레이브"}}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "연장 가로날도끼"}}
-{"name": "생명의 가지", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "조율된 마법봉", "stats": {"# to maximum Mana": [[10, 20]], "# to Level of all Spell Skills": [[1, 3]], "#% increased Cast Speed": [[5, 10]]}}}
-{"name": "마챠", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "초승달 육척봉", "stats": {"Adds # to # Cold Damage": [[6, 9], [10, 15]], "Adds # to # Lightning Damage": [[1, 1], [19, 29]], "#% to Critical Hit Chance": [[3, 5]], "#% increased Attack Speed": [[15, 20]], "#% increased Mana Regeneration Rate": [[25, 40]]}}}
-{"name": "연무의 속삭임", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "임시 석궁", "stats": {"Adds # to # Cold Damage": [[8, 10], [13, 15]], "#% increased Freeze Buildup": [[30, 50]]}}}
-{"name": "나지르의 심판", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "강철침 육척봉", "stats": {"Adds # to # Physical Damage": [[30, 36], [75, 81]], "# to Accuracy Rating": [[50, 100]], "#% increased Stun Duration": [[10, 20]]}}}
-{"name": "올로바사라", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "고통 곤봉", "stats": {"Adds # to # Lightning Damage": [[1, 1], [60, 80]], "# to Accuracy Rating": [[300, 400]], "#% increased Attack Speed": [[5, 30]]}}}
-{"name": "갇힌 신의 기둥", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "긴 육척봉", "stats": {}}}
-{"name": "퀘촐리", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "허물어지는 대형 망치", "stats": {"#% increased Physical Damage": [[100, 150]], "# to all Attributes": [[10, 15]]}}}
-{"name": "화살 비", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "단궁", "stats": {"# to Dexterity": [[10, 20]], "#% increased Arrow Speed": [[50, 100]]}}}
-{"name": "성벽 랩터", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "팽팽한 석궁", "stats": {"#% increased Bolt Speed": [[20, 30]], "#% increased Physical Damage": [[40, 60]], "#% increased Attack Speed": [[30, 40]]}}}
-{"name": "붉은 부리", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "절단도", "stats": {"Adds # to # Physical Damage": [[3, 5], [7, 10]]}}}
-{"name": "신성한 불꽃", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "성소 셉터", "stats": {"Gain #% of Damage as Extra Fire Damage": [[40, 60]], "Allies in your Presence Gain #% of Damage as Extra Fire Damage": [[20, 30]], "Allies in your Presence Regenerate #% of their Maximum Life per second": [[2, 3]]}}}
-{"name": "핏빛 예언자", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "뼈 마법봉", "stats": {"#% increased Spell Damage": [[80, 100]], "Gain # Life per Enemy Killed": [[10, 15]]}}}
-{"name": "눈앞의 별", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "판금 철퇴", "stats": {"Adds # to # Cold Damage": [[12, 16], [22, 25]], "Adds # to # Lightning Damage": [[1, 1], [40, 45]], "#% increased Attack Speed": [[10, 20]]}}}
-{"name": "하늘의 편린", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "날개 달린 창", "stats": {"Adds # to # Lightning Damage": [[1, 1], [60, 80]], "#% increased Attack Speed": [[5, 10]], "# to Dexterity": [[10, 20]], "#% increased chance to Shock": [[50, 100]]}}}
-{"name": "태양 기병창", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "갈라진 창", "stats": {"Adds # to # Fire Damage": [[10, 15], [25, 30]], "#% increased Projectile Speed": [[40, 60]]}}}
-{"name": "파편심장", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "반곡궁", "stats": {"#% increased Physical Damage": [[120, 160]], "# to Accuracy Rating": [[50, 70]], "#% increased Projectile Speed": [[20, 30]]}}}
-{"name": "로라타의 파편", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "견목 창", "stats": {"Adds # to # Physical Damage": [[3, 5], [8, 10]], "# to Accuracy Rating": [[30, 50]], "#% chance to Poison on Hit": [[20, 30]]}}}
-{"name": "타린의 오한", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "극한의 지팡이", "stats": {"#% increased Cold Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]]}}}
-{"name": "피의 가시", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "싸맨 육척봉", "stats": {"Adds # to # Physical Damage": [[8, 12], [16, 18]], "# to Strength": [[10, 15]], "# to # Physical Thorns damage": [[4, 5], [8, 10]]}}}
-{"name": "그림자의 짐", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "차임벨 지팡이", "stats": {"#% increased Cast Speed": [[20, 30]]}}}
-{"name": "춤추는 수도승", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "시미터", "stats": {}}}
-{"name": "어둠의 모독자", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "덜컹대는 셉터", "stats": {"# to maximum Mana": [[20, 30]], "# to Intelligence": [[5, 10]], "#% increased Mana Regeneration Rate": [[10, 30]]}}}
-{"name": "이글거리는 손길", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "불저항 지팡이", "stats": {"#% increased Fire Damage": [[80, 120]], "#% increased Cast Speed": [[10, 20]]}}}
-{"name": "보초", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "고딕 육척봉", "stats": {"Adds # to # Fire Damage": [[25, 32], [40, 50]], "# to Accuracy Rating": [[30, 50]]}}}
-{"name": "참호목", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "가시 박힌 곤봉", "stats": {"Adds # to # Physical Damage": [[13, 15], [22, 25]], "#% increased Attack Speed": [[20, 30]], "# to Level of all Minion Skills": [[1, 3]]}}}
-{"name": "트레피나", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "대장간 대형 망치", "stats": {"Adds # to # Physical Damage": [[12, 15], [22, 25]], "#% increased Attack Speed": [[10, 15]], "Causes #% increased Stun Buildup": [[30, 50]]}}}
-{"name": "과부우박", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "조잡한 활", "stats": {"#% increased bonuses gained from Equipped Quiver": [[150, 250]]}}}
-{"name": "겨울의 추위", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "유리 단도", "stats": {"Adds # to # Cold Damage": [[8, 10], [15, 18]]}}}
-{"name": "와일룬드의 말뚝", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "대장장이 망치", "stats": {"Adds # to # Physical Damage": [[4, 6], [8, 10]], "Adds # to # Fire Damage": [[4, 6], [8, 10]], "# to Strength": [[10, 20]], "#% to Fire Resistance": [[20, 30]], "Hits Break # Armour": [[30, 50]]}}}
-{"name": "통솔의 짐", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "융단 유물", "stats": {}}}
-{"name": "변화하는 계절", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "인장 유물", "stats": {}}}
-{"name": "필사적인 동맹", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "화병 유물", "stats": {}}}
-{"name": "마지막 불길", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "향 유물", "stats": {}}}
-{"name": "평화주의자의 영약", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "손잡이 항아리 유물", "stats": {}}}
-{"name": "기억된 이야기들", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "궤짝 유물", "stats": {}}}
+{"name": "앤드바리우스", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "별의 보석", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "아지스의 등불", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "생득권 버클", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "검은화염", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "검은 심장", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "물집을 잡는 결속", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "브리나바스", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "형제의 부름", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "학살 심장", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "태풍의 합창", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "겁쟁이의 유물", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Mail Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "살금박살", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "죽음의 재촉", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "운명의 저항", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "도이드리의 파멸", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "꿈의 조각", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "차율라의 눈", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "화염꽃", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "익스의 집착", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "빛무리", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "헤드헌터", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "마음에 묶인 고리", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "울던의 우상", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "이그니페리스", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "지옥불 죔쇠", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "기발함", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Utility Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "칼란드라의 손길", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "용골쓸기", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Linen Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "전광석", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "리구리움 부적", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "메기노드의 허리띠", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "심야의 끈", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "밍의 심장", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "원죄", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "페란두스 봉인", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "폴시르켈른", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "신성한 수지", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "허약의 론델", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "리슬라사의 감개", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "대재앙의 씨앗", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "세케마의 결의", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "독사의 알", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "샤브론의 가방", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "뱀 구덩이", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "영혼 올가미", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "몸부림치는 비명", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "굳건한 부적", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "모루", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "굴착자", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "영원한 응시", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "대혼란", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "도둑의 고통", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "웅힐의 조화", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "벤토의 도박", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "형제의 속삭임", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "조프의 피", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "제르피의 시원", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "아브 아이테르노", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
+{"name": "아이리스베인의 날개", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "알켐 에이라", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "우두머리의 울부짖음", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "에미란의 앞치마", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "아르빌의 바퀴", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
+{"name": "부서진 잿더미", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "질식의 진노", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "공격병동", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Closed Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "아차크의 시야", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Veiled Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "앗지리의 예리함", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "앗지리의 멸시", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Gold Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "아우르시즈", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Layered Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "딱정벌레 이빨", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "짐승의 소굴", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "요원한 저 너머", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "광분의 탄생", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "독살꽃", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Feathered Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "검은끈", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Fur Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "검은 섬광", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "검은 태양 문양", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "축복받은 유대", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "푸른불길 팔보호구", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs"}, "icon": "%NOT_FOUND%"}
+{"name": "울러의 뼈", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "가시나무 갑옷", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "가시밭", "refName": "Briarpatch", "namespace": "UNIQUE", "unique": {"base": "Laced Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "활력의 겉옷", "refName": "Briskwrap", "namespace": "UNIQUE", "unique": {"base": "Rhoahide Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "가시털멧돼지", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "황동의 턱수염", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "덤불 매복", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "양초 제작자", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "부패하는 부름", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "화염의 망토", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "붉은색의 외투", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "코르나타움", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "붉은 태양의 광환", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Warrior Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "시신걸음", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "진홍의 예복", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "아르듀라의 문양", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "창백한 왕의 왕관", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "승리자의 왕관", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "가시 왕관", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "어두운 빛의 궤적", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "죽음의 일격", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "단말마의 숨소리", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "죽음의 종", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "악마 봉합자", "refName": "Demon Stitcher", "namespace": "UNIQUE", "unique": {"base": "Intricate Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "다이오나데어", "refName": "Dionadair", "namespace": "UNIQUE", "unique": {"base": "Splintered Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "도이드리의 임기", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "멸망문", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "도리아니의 프로토타입", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "황혼꽃", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "에디른의 엄니", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "원소포식", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "감싸 안는 여명", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "에리안의 수선", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "에조미어의 면갑", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "깃털 달린 요새", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe"}, "icon": "%NOT_FOUND%"}
+{"name": "금단의 응시", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "여우 그림자", "refName": "Foxshade", "namespace": "UNIQUE", "unique": {"base": "Quilted Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "도박질주", "refName": "Gamblesprint", "namespace": "UNIQUE", "unique": {"base": "Embossed Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "유령의 행진", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "유령의 몸서리", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "혼돈의 섬광", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "순흑체", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "금테", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "무덤의 속박", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs"}, "icon": "%NOT_FOUND%"}
+{"name": "탐욕의 포옹", "refName": "Greed's Embrace", "namespace": "UNIQUE", "unique": {"base": "Vaal Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "회색작품", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "겨울의 손아귀", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "지혜와 행동의 손아귀", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "증오의 탄생", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "빈덴의 뿔", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "꿈의 껍데기", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "얼음 묘지", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "게으른 손", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "인즈머스", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "철손아귀", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "철의 질주", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "야릉그레이프", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets"}, "icon": "%NOT_FOUND%"}
+{"name": "카옴의 심장", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Conqueror Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "전호의 보관자", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "깨진 흥", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "왕의 보호구", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Full Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "키토코의 흐름", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "음흉한 시선", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "군단의 보조", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "록토니얼의 손길", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "빛나는 발걸음", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "늑대 거미", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "마훅소틀의 계책", "refName": "Mahuxotl's Machination", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "말리가로의 기교", "refName": "Maligaro's Virtuosity", "namespace": "UNIQUE", "unique": {"base": "Fine Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "혈액술사의 가면", "refName": "Mask of the Sanguimancer", "namespace": "UNIQUE", "unique": {"base": "Face Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "꿰맨 악마의 가면", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Feathered Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "근정훈장", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Pelage Targe"}, "icon": "%NOT_FOUND%"}
+{"name": "모리오르 인빅투스", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}, "icon": "%NOT_FOUND%"}
+{"name": "미리스 욱소르", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "강령외투", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "북방발", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "참나무맹세", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "오베른의 보루", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "화가의 종", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Torn Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "부랑자의 포옹", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Cloaked Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "배반", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "역병손가락", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Gauze Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "위세의 발 보호대", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "실용주의", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "기우 기도", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "콰틀의 허물", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "숲의 여왕", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "찬란한 슬픔", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "붉은섬광 도관", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "불사조의 비상", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "사펠의 골격", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "모래 폭풍의 얼굴", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "독사의 교훈", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "불운아의 족쇄", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}, "icon": "%NOT_FOUND%"}
+{"name": "시에라의 유산", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "시네 아이쿠오", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}, "icon": "%NOT_FOUND%"}
+{"name": "충신의 가죽", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
+{"name": "뱀 이빨", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "솔루스 입세", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}, "icon": "%NOT_FOUND%"}
+{"name": "스발린", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "템포랄리스", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "테츨라포칼의 갈망", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "고분의 주민", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "검은 의혹", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "황동 철갑", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "계약", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "춤추는 신기루", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "걸신들린 왕관", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "영원한 불꽃", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "텅 빈 가면", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "이모탄", "refName": "이모탄", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "끝없는 추적", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "무사 수행 기사", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "쥐덫", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "미소 짓는 기사", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "포기", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "세 마리의 용", "refName": "The Three Dragons", "namespace": "UNIQUE", "unique": {"base": "Solid Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "최정점", "refName": "The Vertex", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "끔찍한 기사", "refName": "The Vile Knight", "namespace": "UNIQUE", "unique": {"base": "Shielded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "울부짖는 벽", "refName": "The Wailing Wall", "namespace": "UNIQUE", "unique": {"base": "Effigial Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "실오라기 같은 빛", "refName": "Threaded Light", "namespace": "UNIQUE", "unique": {"base": "Woven Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "전율강철", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Spired Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "우레걸음", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Steeltoe Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "거신부패 비늘 갑옷", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "짓발가락", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "나무손가락", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "밤의 장막", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "아야의 얼굴", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "볼의 보호자", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "파괴의 경야", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings"}, "icon": "%NOT_FOUND%"}
+{"name": "방랑하는 성유물 보관실", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "방랑벽", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "바람의 괴성", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "카일린의 날개", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
+{"name": "기적의 발판", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}, "icon": "%NOT_FOUND%"}
+{"name": "늑대의 천적", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "녹아내리는 소용돌이", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "올로스의 결의", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "어둠에의 저항", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "제어된 변형", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "허무의 산물", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby"}, "icon": "%NOT_FOUND%"}
+{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Emerald"}, "icon": "%NOT_FOUND%"}
+{"name": "장대한 파장", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}, "icon": "%NOT_FOUND%"}
+{"name": "영웅적인 비극", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}, "icon": "%NOT_FOUND%"}
+{"name": "과대망상", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "믿음의 분광기", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "치장한 자", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "푸른혀", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "요동치는 두뇌", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "%NOT_FOUND%"}
+{"name": "브린핸드의 징표", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
+{"name": "초버 차버", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "무너지는 지평선", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "죽음의 하프", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "황혼의 불침번", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "대지결속", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "에네준의 돌진", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "힘의 샘", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Omen Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "서리 숨결", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Slim Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "인도하는 손바닥", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "돼지사냥", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
+{"name": "흐림노르의 찬가", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Twin Flail"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broad Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bandit Hatchet"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Vampiric Blade"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Extended Cleaver"}, "icon": "%NOT_FOUND%"}
+{"name": "생명의 가지", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "마챠", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "연무의 속삭임", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "나지르의 심판", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "올로바사라", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
+{"name": "갇힌 신의 기둥", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "퀘촐리", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "화살 비", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Shortbow"}, "icon": "%NOT_FOUND%"}
+{"name": "성벽 랩터", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "붉은 부리", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "신성한 불꽃", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "핏빛 예언자", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "눈앞의 별", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "하늘의 편린", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "태양 기병창", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "파편심장", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "로라타의 파편", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "타린의 오한", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "피의 가시", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "그림자의 짐", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "춤추는 수도승", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}, "icon": "%NOT_FOUND%"}
+{"name": "어둠의 모독자", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "이글거리는 손길", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "보초", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "참호목", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
+{"name": "트레피나", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "과부우박", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "겨울의 추위", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
+{"name": "와일룬드의 말뚝", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}
+{"name": "통솔의 짐", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Tapestry Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "변화하는 계절", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Seal Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "필사적인 동맹", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Vase Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "마지막 불길", "refName": "The Last Flame", "namespace": "UNIQUE", "unique": {"base": "Incense Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "평화주의자의 영약", "refName": "The Peacemaker's Draught", "namespace": "UNIQUE", "unique": {"base": "Amphora Relic"}, "icon": "%NOT_FOUND%"}
+{"name": "기억된 이야기들", "refName": "The Remembered Tales", "namespace": "UNIQUE", "unique": {"base": "Coffer Relic"}, "icon": "%NOT_FOUND%"}

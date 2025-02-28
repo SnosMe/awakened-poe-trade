@@ -18,7 +18,8 @@
     "version": "版本 {0}",
     "release_notes": "更新記錄",
     "report_bug": "在 GitHub 上報告錯誤",
-    "quit": "退出"
+    "quit": "退出",
+    "deprecated": "此功能已淘汰，將於版本 {0} 更新中移除"
   },
   "map.mods.heist": "劫盜",
   "map.mods.uber": "T17",
@@ -180,7 +181,8 @@
     "tag_rune": "符文",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "等級 {0}"
+    "grade": "等級 {0}",
+    "hybrid_note": "階級可能因複合詞綴的存在而顯示不正確"
   },
   "online_filter": {
     "offline_toggle": "離線 & 在線",
@@ -379,7 +381,9 @@
     "tier_numbering": "層級編號風格",
     "tier_numbering_poe1": "POE1（數值越小越好）",
     "tier_numbering_poe2": "POE2（數值越大越好）",
-    "tier_numbering_help": "為了減少因遊戲內命名衝突而導致的混淆，POE1的層級將使用\"Grade\"而非\"Tier\"來命名。"
+    "tier_numbering_help": "為了減少因遊戲內命名衝突而導致的混淆，POE1的層級將使用\"Grade\"而非\"Tier\"來命名。",
+    "always_show_tier": "始終顯示階級",
+    "remember_ratio": "記住通貨比例"
   },
   "poe2_new": {
     "beta_warning": "這是 POE2 的測試版，某些功能可能無法正常運作。",

@@ -21,3 +21,6 @@ for lang in "${SUPPORTED_LANG[@]}"; do
         cp $file ../renderer/public/data/$lang
     done
 done
+
+echo "Pushing generic data to ./data"
+cp $DIR/data/generic/* ../renderer/public/data

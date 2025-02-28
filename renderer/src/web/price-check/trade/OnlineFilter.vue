@@ -87,33 +87,20 @@
           </template>
         </div>
         <div class="flex flex-col gap-y-1">
-          <template v-if="currencyRatio">
-            <ui-popover
-              tag-name="div"
-              class="flex"
-              placement="top"
-              boundary="#price-window"
-            >
-              <template #target>
-                <div>{{ localCurrencyRatio }} ex : 1 div</div>
-              </template>
-              <template #content>
-                <div style="max-width: 18.5rem">
-                  {{ t(":ratio_tooltip") }}
-                </div>
-              </template>
-            </ui-popover>
+          <div>
             <input
-              id="currency-ratio"
-              type="range"
-              v-model="localCurrencyRatio"
-              min="0"
-              max="300"
-              step="1"
-              @mouseup="updateCurrencyRatio"
-              @touchend="updateCurrencyRatio"
-            />
-          </template>
+              :class="$style.input"
+              step="any"
+              type="number"
+              v-model.number="localCurrencyRatio"
+              @focus="inputFocus"
+              @blur="inputBlur"
+              @mousewheel.stop
+              :style="{
+                width: `${1.2 + Math.max(String(localCurrencyRatio).length, 2)}ch`,
+              }"
+            /><span>ex : 1 div</span>
+          </div>
         </div>
       </div>
     </template>
@@ -121,7 +108,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from "vue";
+import { computed, defineComponent, PropType, ref } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import UiRadio from "@/web/ui/UiRadio.vue";
 import UiToggle from "@/web/ui/UiToggle.vue";
@@ -150,21 +137,23 @@ export default defineComponent({
     const leagues = useLeagues();
     const { t } = useI18nNs("online_filter");
 
-    const localCurrencyRatio = ref(props.filters.trade.currencyRatio);
-
-    const updateCurrencyRatio = () => {
-      props.filters.trade.currencyRatio = localCurrencyRatio.value;
-    };
+    const _localCurrencyRatio = ref(props.filters.trade.currencyRatio);
 
     if (!props.filters.trade.currencyRatio) {
-      updateCurrencyRatio();
+      props.filters.trade.currencyRatio = _localCurrencyRatio.value;
     }
 
     return {
       t,
       tradeLeagues: leagues.list,
-      localCurrencyRatio,
-      updateCurrencyRatio,
+      localCurrencyRatio: computed<number>({
+        get() {
+          return _localCurrencyRatio.value;
+        },
+        set(value) {
+          _localCurrencyRatio.value = value;
+        },
+      }),
       showLeagueName: () =>
         leagues.selectedId.value !== props.filters.trade.league,
       showWarning: () =>
@@ -181,7 +170,42 @@ export default defineComponent({
           filters.trade.listed = offline ? "2months" : undefined;
         }
       },
+      inputFocus(e: FocusEvent) {
+        const target = e.target as HTMLInputElement;
+        target.select();
+      },
+      inputBlur() {
+        if (typeof _localCurrencyRatio.value !== "number") {
+          _localCurrencyRatio.value = CURRENCY_RATIO;
+          props.filters.trade.currencyRatio = CURRENCY_RATIO;
+        } else if (typeof _localCurrencyRatio.value === "number") {
+          props.filters.trade.currencyRatio = _localCurrencyRatio.value;
+        }
+      },
     };
   },
 });
 </script>
+
+<style lang="postcss" module>
+.input {
+  @apply text-center;
+  @apply bg-transparent;
+  @apply text-gray-300;
+  @apply select-all;
+
+  &:hover,
+  &:focus {
+    @apply bg-gray-700;
+    @apply -my-px border-t border-b border-gray-500;
+  }
+
+  &::placeholder {
+    @apply text-gray-400;
+  }
+
+  &:focus {
+    cursor: none;
+  }
+}
+</style>

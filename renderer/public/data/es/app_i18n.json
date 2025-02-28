@@ -18,7 +18,8 @@
     "version": "Versión {0}",
     "release_notes": "Notas de la versión",
     "report_bug": "Reportar un error en GitHub",
-    "quit": "Salir"
+    "quit": "Salir",
+    "deprecated": "This feature is deprecated and will be removed in update {0}"
   },
   "map.mods.heist": "heist",
   "map.mods.uber": "T17",
@@ -184,7 +185,8 @@
     "tag_rune": "Runa",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "Grade {0}"
+    "grade": "Grade {0}",
+    "hybrid_note": "Tier may be incorrect due to the potential for a hybrid mod"
   },
   "online_filter": {
     "offline_toggle": "Desconectado & En línea",
@@ -392,7 +394,9 @@
     "tier_numbering": "Tier numbering style",
     "tier_numbering_poe1": "PoE1 (lower is better)",
     "tier_numbering_poe2": "PoE2 (higher is better)",
-    "tier_numbering_help": "To try to reduce confusion due to conflicting naming conventions with the game, PoE1 tiers will use the name \"Grade\" instead of \"Tier\". "
+    "tier_numbering_help": "To try to reduce confusion due to conflicting naming conventions with the game, PoE1 tiers will use the name \"Grade\" instead of \"Tier\". ",
+    "always_show_tier": "Always show tier",
+    "remember_ratio": "Remember currency ratio"
   },
   "poe2_new": {
     "beta_warning": "Esto está en BETA para POE2, las cosas no siempre funcionarán como se espera.",

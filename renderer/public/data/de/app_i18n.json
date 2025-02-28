@@ -18,7 +18,8 @@
     "version": "Version {0}",
     "release_notes": "Release Notes",
     "report_bug": "Einen Fehler auf GitHub melden",
-    "quit": "Beenden"
+    "quit": "Beenden",
+    "deprecated": "Dieses Feature ist veraltet und wird in Update {0} entfernt"
   },
   "map.mods.heist": "Heist",
   "map.mods.uber": "T17",
@@ -184,7 +185,8 @@
     "tag_rune": "Rune",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "Grad {0}"
+    "grade": "Grad {0}",
+    "hybrid_note": "Das Tier könnte aufgrund eines potenziellen Hybrid-Mods falsch sein"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
@@ -368,7 +370,9 @@
     "tier_numbering": "Stil der Tier-Nummerierung",
     "tier_numbering_poe1": "PoE1 (niedrigere Werte sind besser)",
     "tier_numbering_poe2": "PoE2 (höhere Werte sind besser)",
-    "tier_numbering_help": "Um Verwirrung durch widersprüchliche Namenskonventionen im Spiel zu reduzieren, werden PoE1-Tiers als \"Grad\" bezeichnet, anstatt \"Stufe\"."
+    "tier_numbering_help": "Um Verwirrung durch widersprüchliche Namenskonventionen im Spiel zu reduzieren, werden PoE1-Tiers als \"Grad\" bezeichnet, anstatt \"Stufe\".",
+    "always_show_tier": "Tier immer anzeigen",
+    "remember_ratio": "Währungs-Verhältnis merken"
   },
   "poe2_new": {
     "beta_warning": "Dies ist eine BETA für POE2, es wird nicht immer wie erwartet funktionieren.",

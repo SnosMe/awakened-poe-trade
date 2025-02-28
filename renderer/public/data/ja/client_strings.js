@@ -117,5 +117,7 @@ export default {
   JEWEL_HELP: 'パッシブツリ',
   SANCTUM_HELP: 'セケマの試練開始時にこ',
   TIMELESS_RADIUS: '半径: ',
-  PRECURSOR_TABLET_HELP: 'アトラス上の完了した塔で使用することで、周囲の'
+  PRECURSOR_TABLET_HELP: 'アトラス上の完了した塔で使用することで、周囲の',
+  LOGBOOK_HELP: 'このアイテムをダニグに渡し、',
+  REQUIRES: '要求'
 }

@@ -56,6 +56,8 @@ export interface PriceCheckWidget extends Widget {
   itemHoverTooltip: "off" | "keybind" | "always";
   autoFillEmptyRuneSockets: "Iron Rune" | false;
   tierNumbering: "poe1" | "poe2";
+  alwaysShowTier: boolean;
+  rememberRatio: boolean;
 }
 
 export interface StopwatchWidget extends Widget {

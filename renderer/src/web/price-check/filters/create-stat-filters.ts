@@ -21,6 +21,7 @@ import { applyRules as applyMirroredTabletRules } from "./pseudo/reflection-rule
 import { filterItemProp, filterBasePercentile } from "./pseudo/item-property";
 import { decodeOils, applyAnointmentRules } from "./pseudo/anointments";
 import { StatBetter, CLIENT_STRINGS, STAT_BY_REF } from "@/assets/data";
+import { itemHasPerfectPlusLevels } from "./create-presets";
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem;
@@ -197,6 +198,21 @@ export function createExactStatFilters(
     }
   }
 
+  const hasEmptyModifier = showHasEmptyModifier(ctx);
+  if (hasEmptyModifier !== false && itemHasPerfectPlusLevels(ctx.item)) {
+    ctx.filters.push({
+      tradeId: ["item.has_empty_modifier"],
+      text: "1 Empty or Crafted Modifier",
+      statRef: "1 Empty or Crafted Modifier",
+      disabled: false,
+      tag: FilterTag.Pseudo,
+      sources: [],
+      option: {
+        value: hasEmptyModifier,
+      },
+    });
+  }
+
   if (item.category === ItemCategory.ClusterJewel) {
     applyClusterJewelRules(ctx.filters);
   } else if (item.category === ItemCategory.Flask) {
@@ -368,9 +384,7 @@ export function calculatedStatToFilter(
   };
 
   if (type === ModifierType.Implicit) {
-    if (sources.some((s) => s.modifier.info.generation === "corrupted")) {
-      filter.tag = FilterTag.Corrupted;
-    } else if (sources.some((s) => s.modifier.info.generation === "eldritch")) {
+    if (sources.some((s) => s.modifier.info.generation === "eldritch")) {
       filter.tag = FilterTag.Eldritch;
     } else if (item.isSynthesised) {
       filter.tag = FilterTag.Synthesised;
@@ -436,6 +450,16 @@ export function calculatedStatToFilter(
       )
     ) {
       filter.tag = FilterTag.Incursion;
+    }
+  } else if (type === ModifierType.Enchant) {
+    if (
+      (item.isCorrupted &&
+        sources.filter((s) => !s.stat.stat.ref.includes("Allocates")).length &&
+        item.category !== ItemCategory.Map &&
+        item.category !== ItemCategory.Waystone) ||
+      sources.some((s) => s.modifier.info.generation === "corrupted")
+    ) {
+      filter.tag = FilterTag.Corrupted;
     }
   }
 
@@ -605,7 +629,7 @@ function finalFilterTweaks(ctx: FiltersCreationContext) {
   }
 
   const hasEmptyModifier = showHasEmptyModifier(ctx);
-  if (hasEmptyModifier !== false) {
+  if (hasEmptyModifier !== false && itemHasPerfectPlusLevels(ctx.item)) {
     ctx.filters.push({
       tradeId: ["item.has_empty_modifier"],
       text: "1 Empty or Crafted Modifier",
@@ -705,6 +729,29 @@ function showHasEmptyModifier(
   ctx: FiltersCreationContext,
 ): ItemHasEmptyModifier | false {
   const { item } = ctx;
+
+  if (item.rarity === ItemRarity.Magic) {
+    const magicRandomMods = item.newMods.filter(
+      (mod) => mod.info.type === ModifierType.Explicit,
+    );
+    if (magicRandomMods.length) {
+      const magicPrefixes = magicRandomMods.filter(
+        (mod) => mod.info.generation === "prefix",
+      ).length;
+      const magicSuffixes = magicRandomMods.filter(
+        (mod) => mod.info.generation === "suffix",
+      ).length;
+      if (magicPrefixes && magicSuffixes) {
+        return false;
+      }
+      if (magicPrefixes > 0) {
+        return ItemHasEmptyModifier.Suffix;
+      } else if (magicSuffixes > 0) {
+        return ItemHasEmptyModifier.Prefix;
+      }
+      return false;
+    }
+  }
 
   if (item.rarity !== ItemRarity.Rare || item.isCorrupted || item.isMirrored)
     return false;

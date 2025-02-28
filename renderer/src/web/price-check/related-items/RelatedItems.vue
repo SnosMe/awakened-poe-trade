@@ -56,12 +56,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType } from "vue";
-import {
-  BaseType,
-  // ITEM_BY_REF,
-  ITEM_BY_TRANSLATED,
-  ITEM_DROP,
-} from "@/assets/data";
+import { BaseType, ITEM_BY_REF, ITEM_DROP } from "@/assets/data";
 import { usePoeninja, CurrencyValue } from "@/web/background/Prices";
 import { getDetailsId } from "../trends/getDetailsId";
 import { ParsedItem } from "@/parser";
@@ -72,7 +67,7 @@ const { findPriceByQuery, autoCurrency } = usePoeninja();
 function findItemByQueryId(queryId: string): BaseType | undefined {
   const [ns, encodedName] = queryId.split("::");
   const [name, variant] = encodedName.split(" // ");
-  let found = ITEM_BY_TRANSLATED(ns as unknown as BaseType["namespace"], name); // ITEM_BY_REF(ns as unknown as BaseType["namespace"], name);
+  let found = ITEM_BY_REF(ns as unknown as BaseType["namespace"], name);
   if (found && ns === "UNIQUE") {
     const filtered = found.filter((unique) => unique.unique!.base === variant);
     if (filtered.length) found = filtered;

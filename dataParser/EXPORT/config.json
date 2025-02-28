@@ -187,7 +187,51 @@
       "name": "GoldModPrices",
       "columns": [
         "Mod",
-        "Tags"
+        "Tags",
+        "SpawnWeight"
+      ]
+    },
+    {
+      "name": "BlightCraftingRecipes",
+      "columns": [
+        "Id",
+        "BlightCraftingResult",
+        "BlightCraftingItems"
+      ]
+    },
+    {
+      "name": "BlightCraftingItems",
+      "columns": [
+        "Oil",
+        "Tier",
+        "Achievements",
+        "UseType",
+        "NameShort"
+      ]
+    },
+    {
+      "name": "BlightCraftingResults",
+      "columns": [
+        "Id",
+        "Mod",
+        "PassiveSkill"
+      ]
+    },
+    {
+      "name": "PassiveSkills",
+      "columns": [
+        "Id",
+        "PassiveSkillGraphId",
+        "Name",
+        "IsKeystone",
+        "IsNotable"
+      ]
+    },
+    {
+      "name": "ExpeditionFactions",
+      "columns": [
+        "Id",
+        "Name"
       ]
     }
   ]

@@ -18,7 +18,8 @@
     "version": "バージョン {0}",
     "release_notes": "リリースノート",
     "report_bug": "GitHubでバグを報告する",
-    "quit": "終了"
+    "quit": "終了",
+    "deprecated": "This feature is deprecated and will be removed in update {0}"
   },
   "map.mods.heist": "ハイスト",
   "map.mods.uber": "ティア17",
@@ -180,7 +181,8 @@
     "tag_rune": "ルーン",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
-    "grade": "グレード {0}"
+    "grade": "グレード {0}",
+    "hybrid_note": "Tier may be incorrect due to the potential for a hybrid mod"
   },
   "online_filter": {
     "offline_toggle": "オフライン & オンライン",
@@ -379,7 +381,9 @@
     "tier_numbering": "ティアのナンバリングスタイル",
     "tier_numbering_poe1": "PoE1（数値が低いほど良い）",
     "tier_numbering_poe2": "PoE2（数値が高いほど良い）",
-    "tier_numbering_help": "ゲーム内の命名規則との衝突による混乱を減らすため、PoE1のティアは\"Tier\"ではなく\"Grade\"という名称を使用します。"
+    "tier_numbering_help": "ゲーム内の命名規則との衝突による混乱を減らすため、PoE1のティアは\"Tier\"ではなく\"Grade\"という名称を使用します。",
+    "always_show_tier": "Always show tier",
+    "remember_ratio": "Remember currency ratio"
   },
   "poe2_new": {
     "beta_warning": "これはPOE2のベータ版です、期待通りに動作しないことがあります。",
