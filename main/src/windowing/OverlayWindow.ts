@@ -1,5 +1,5 @@
 import path from 'path'
-import { BrowserWindow, dialog, shell, Menu, WebContents } from 'electron'
+import { BrowserWindow, dialog, shell, Menu, WebContents, app } from 'electron'
 import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
 import type { ServerEvents } from '../server'
 import type { Logger } from '../RemoteLogger'
@@ -98,8 +98,14 @@ export class OverlayWindow {
     }
   }
 
-  updateOpts (overlayKey: string, windowTitle: string) {
+  updateOpts (overlayKey: string, windowTitle: string, quitWithPoE: boolean) {
     this.overlayKey = overlayKey
+    if (quitWithPoE) {
+      OverlayController.events.on('detach', app.quit)
+    }
+    else {
+      OverlayController.events.removeListener('detach', app.quit)
+    }
     this.poeWindow.attach(this.window, windowTitle)
   }
 
