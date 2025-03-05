@@ -1,1 +1,11 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
+contact_links:
+  - name: Feature Request
+    url: https://github.com/Kvan7/Exiled-Exchange-2/discussions/categories/ideas
+    about: Feature ideas should be submitted here so they can be discussed before work is done on them
+  - name: Help/Q&A
+    url: https://github.com/Kvan7/Exiled-Exchange-2/discussions/categories/q-a
+    about: Please ask and answer questions here. This is marked as a q&a category so replies that fix things can be marked as "answers" similar to Stack Overflow
+  - name: Discussions
+    url: https://github.com/Kvan7/Exiled-Exchange-2/discussions
+    about: Link to discussions page
