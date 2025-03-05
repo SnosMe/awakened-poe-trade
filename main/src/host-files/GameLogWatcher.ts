@@ -12,30 +12,31 @@ const POSSIBLE_PATH =
         "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile 2\\logs\\Client.txt",
       ]
     : process.platform === "linux"
-    ? [
-        path.join(
-          app.getPath("home"),
-          ".wine/drive_c/Program Files (x86)/Grinding Gear Games/Path of Exile 2/logs/Client.txt"
-        ),
-        path.join(
-          app.getPath("home"),
-          ".local/share/Steam/steamapps/common/Path of Exile 2/logs/Client.txt"
-        ),
-      ]
-    : process.platform === "darwin"
-    ? [
-        path.join(
-          app.getPath("home"),
-          "Library/Caches/com.GGG.PathOfExile/Logs/Client.txt"
-        ),
-      ]
-    : [];
+      ? [
+          path.join(
+            app.getPath("home"),
+            ".wine/drive_c/Program Files (x86)/Grinding Gear Games/Path of Exile 2/logs/Client.txt",
+          ),
+          path.join(
+            app.getPath("home"),
+            ".local/share/Steam/steamapps/common/Path of Exile 2/logs/Client.txt",
+          ),
+        ]
+      : process.platform === "darwin"
+        ? [
+            path.join(
+              app.getPath("home"),
+              "Library/Caches/com.GGG.PathOfExile/Logs/Client.txt",
+            ),
+          ]
+        : [];
 
 export class GameLogWatcher {
   private _wantedPath: string | null = null;
   get actualPath() {
     return this._state?.path ?? null;
   }
+
   private _state: {
     offset: number;
     path: string;
@@ -44,7 +45,10 @@ export class GameLogWatcher {
     readBuff: Buffer;
   } | null = null;
 
-  constructor(private server: ServerEvents, private logger: Logger) {}
+  constructor(
+    private server: ServerEvents,
+    private logger: Logger,
+  ) {}
 
   async restart(logFile: string) {
     if (this._wantedPath !== logFile) {
@@ -73,7 +77,7 @@ export class GameLogWatcher {
       watchFile(logFile, { interval: 450 }, this.handleFileChange.bind(this));
       this._state = {
         path: logFile,
-        file: file,
+        file,
         offset: stats.size,
         isReading: false,
         readBuff: Buffer.allocUnsafe(64 * 1024),

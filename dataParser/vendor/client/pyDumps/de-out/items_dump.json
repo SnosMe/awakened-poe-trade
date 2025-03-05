@@ -38498,7 +38498,9 @@
         "height": 1,
         "craftable": {
             "category": "TowerAugment"
-        }
+        },
+        "tradeTag": "precursor-tablet",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRHZW5lcmljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5658ce7f2d/PrecursorTabletGeneric.png"
     },
     "3106": {
         "name": "Aufseher-Wegbereitertafel",
@@ -38510,7 +38512,9 @@
         "height": 1,
         "craftable": {
             "category": "TowerAugment"
-        }
+        },
+        "tradeTag": "overseer-precursor-tablet",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png"
     },
     "3107": {
         "name": "Zersetzen",

@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, shallowRef, computed } from "vue";
+import { shallowRef, computed } from "vue";
 
 const props = defineProps<{
   src: string;

@@ -1,8 +1,4 @@
-import {
-  type IFilter,
-  type IFilterIdentifiers,
-  type IFilterModifiers,
-} from "../data/IFilter";
+import { type IFilter } from "../data/IFilter";
 
 const knownOperators = ["=", "!", "!=", "<=", ">=", "<", ">", "=="];
 
@@ -12,7 +8,7 @@ const afterComment = "### Exiled-Exchange-2 custom filter rules -  end  ###";
 export default function getFiltersContent(
   strategy: "before" | "after",
   oldContent: string,
-  filters: Array<IFilter>
+  filters: IFilter[],
 ) {
   let start = oldContent.indexOf(beforeComment);
   let end = oldContent.indexOf(afterComment, start);
@@ -32,7 +28,7 @@ export default function getFiltersContent(
   return (
     contentToReplace.slice(0, start) +
     [beforeComment, ...filters.map(mapSingleFilter), afterComment].join(
-      "\n\n"
+      "\n\n",
     ) +
     contentToReplace.slice(end)
   );
@@ -42,21 +38,13 @@ function mapSingleFilter(filter: IFilter) {
   const lines = [`${filter.hide ? "Hide" : "Show"} # ${filter.name}`];
 
   if (filter.identifiers) {
-    (
-      Object.entries(filter.identifiers) as Array<
-        [string, IFilterIdentifiers[string]]
-      >
-    )
+    Object.entries(filter.identifiers)
       .map(mapIdentifiersEntries)
       .forEach((line: string) => lines.push("\t" + line));
   }
 
   if (filter.modifiers) {
-    (
-      Object.entries(filter.modifiers) as Array<
-        [string, IFilterModifiers[string]]
-      >
-    )
+    Object.entries(filter.modifiers)
       .map(mapModifiersEntries)
       .forEach((line: string) => lines.push("\t" + line));
   }
@@ -69,7 +57,7 @@ function mapSingleFilter(filter: IFilter) {
 
 function mapIdentifiersEntries([key, value]: [
   string,
-  string | Array<string>
+  string | string[],
 ]): string {
   let safeValue = value;
   if (safeValue instanceof Array) {
@@ -83,5 +71,5 @@ function mapIdentifiersEntries([key, value]: [
 }
 
 function mapModifiersEntries([key, value]: [string, string | number]): string {
-  return key + " " + value;
+  return key + " " + String(value);
 }

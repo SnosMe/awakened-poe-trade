@@ -14,6 +14,7 @@ export class AppUpdater {
   get info() {
     return this._info;
   }
+
   set info(info: UpdateInfo) {
     this._info = info;
     this.server.sendEventTo("broadcast", {

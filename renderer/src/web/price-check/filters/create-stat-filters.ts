@@ -397,42 +397,6 @@ export function calculatedStatToFilter(
       }
     } else if (
       sources.some((s) =>
-        CLIENT_STRINGS.SHAPER_MODS.includes(s.modifier.info.name!),
-      )
-    ) {
-      filter.tag = FilterTag.Shaper;
-    } else if (
-      sources.some((s) =>
-        CLIENT_STRINGS.ELDER_MODS.includes(s.modifier.info.name!),
-      )
-    ) {
-      filter.tag = FilterTag.Elder;
-    } else if (
-      sources.some((s) =>
-        CLIENT_STRINGS.HUNTER_MODS.includes(s.modifier.info.name!),
-      )
-    ) {
-      filter.tag = FilterTag.Hunter;
-    } else if (
-      sources.some((s) =>
-        CLIENT_STRINGS.WARLORD_MODS.includes(s.modifier.info.name!),
-      )
-    ) {
-      filter.tag = FilterTag.Warlord;
-    } else if (
-      sources.some((s) =>
-        CLIENT_STRINGS.REDEEMER_MODS.includes(s.modifier.info.name!),
-      )
-    ) {
-      filter.tag = FilterTag.Redeemer;
-    } else if (
-      sources.some((s) =>
-        CLIENT_STRINGS.CRUSADER_MODS.includes(s.modifier.info.name!),
-      )
-    ) {
-      filter.tag = FilterTag.Crusader;
-    } else if (
-      sources.some((s) =>
         CLIENT_STRINGS.DELVE_MODS.includes(s.modifier.info.name!),
       )
     ) {

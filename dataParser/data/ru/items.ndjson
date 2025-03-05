@@ -1546,7 +1546,7 @@
 {"name": "Плитка Предтеч Делириума", "refName": "Delirium Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXREZWxpcml1bSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/81acb86b9f/PrecursorTabletDelirium.png", "tradeTag": "delirium-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плитка Предтеч Разлома", "refName": "Breach Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCcmVhY2giLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/295c0839d7/PrecursorTabletBreach.png", "tradeTag": "breach-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плитка Предтеч Ритуала", "refName": "Ritual Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRSaXR1YWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7c49d00f07/PrecursorTabletRitual.png", "tradeTag": "ritual-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
-{"name": "Плитка Предтеч Смотрителя", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Плитка Предтеч Смотрителя", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плитка Предтеч Экспедиции", "refName": "Expedition Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRFeHBlZGl0aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4450dac451/PrecursorTabletExpedition.png", "tradeTag": "expedition-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Плотная кожанка", "refName": "Shrouded Vest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [102, 102]}, "w": 2, "h": 3}
 {"name": "Плотное ископаемое", "refName": "Dense Fossil", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRGVuc2VGb3NzaWwiLCJzY2FsZSI6MX1d/ac39aaf3cd/DenseFossil.png", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -2795,63 +2795,63 @@
 {"name": "Ясность ума", "refName": "Clarity", "namespace": "GEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9DbGFyaXR5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/30046e480b/Clarity.png", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Андвариус", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzRVbmlxdWUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/eea4645cf2/Ring4Unique.png"}
 {"name": "Астраментис", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbXVsZXQzNiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/95da0d04a4/Amulet36.png"}
-{"name": "Beacon of Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Birthright Buckle", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Сигнал Азиса", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Пряжка первородства", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Чёрное пламя", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQmxhY2tGbGFtZUZpcmUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/d8cb90fe20/BlackFlameFire.png"}
 {"name": "Чёрное сердце", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzFVbmlxdWUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/40666e2827/Ring1Unique.png"}
-{"name": "Blistering Bond", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Жгучий перстень", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Бринабас", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Зов братьев", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQnJvdGhlcmhvb2QiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/956d645be0/Brotherhood.png"}
 {"name": "Сердце бойни", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbXVsZXQzNyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/451ac32a56/Amulet37.png"}
 {"name": "Хор бури", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9Wb2ljZU9mVGhlU3Rvcm1VcGdyYWRlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/50b59f1123/VoiceOfTheStormUpgrade.png"}
 {"name": "Наследие труса", "refName": "Coward's Legacy", "namespace": "UNIQUE", "unique": {"base": "Mail Belt"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvQ293YXJkJ3MgTGVnYWN5IiwidyI6MiwiaCI6MSwic2NhbGUiOjF9XQ/2325fc7213/Coward%27s%20Legacy.png"}
-{"name": "Cracklecreep", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Трескучий пожар", "refName": "Cracklecreep", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Смертельная спешка", "refName": "Death Rush", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQW1ldGh5c3RSaW5nVW5pcXVlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/1ade97e0ac/AmethystRingUnique.png"}
 {"name": "Непокорность судьбе", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9IaW5la29yYUFtdWxldCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/d26f80f9c7/HinekoraAmulet.png"}
 {"name": "Проклятие Доэдре", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzNVbmlxdWUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/d06b386d73/Ring3Unique.png"}
 {"name": "Осколки снов", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzZVbmlxdWUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/0c74ddd77c/Ring6Unique.png"}
 {"name": "Глаз Чаюлы", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbXVsZXQ3VW5pcXVlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/6b059ec15d/Amulet7Unique.png"}
-{"name": "Fireflower", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Fixation of Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Glowswarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Пламенный цветок", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Одержимость Ийи", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Светлячок", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Охотник за головами", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvSGVhZGh1bnRlciIsInciOjIsImgiOjEsInNjYWxlIjoxfV0/e9542ec6ee/Headhunter.png"}
 {"name": "Сердечная связь", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvSGVhcnRib3VuZFJpbmciLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/c214aff507/HeartboundRing.png"}
-{"name": "Idol of Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Идол Улдурна", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Игниферис", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Адская пряжка", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Находчивость", "refName": "Ingenuity", "namespace": "UNIQUE", "unique": {"base": "Utility Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Касание Каландры", "refName": "Kalandra's Touch", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvTWlycm9yUmluZyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJkdXBsaWNhdGVkIjp0cnVlfV0/2cbd02eced/MirrorRing.png"}
 {"name": "Килевание", "refName": "Keelhaul", "namespace": "UNIQUE", "unique": {"base": "Linen Belt"}, "icon": "%NOT_FOUND%"}
-{"name": "Levinstone", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
-{"name": "Ligurium Talisman", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Молнекамень", "refName": "Levinstone", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Лигурский талисман", "refName": "Ligurium Talisman", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Ремень Мегинорда", "refName": "Meginord's Girdle", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvQmVsdDdVbmlxdWUiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/59718aca01/Belt7Unique.png"}
 {"name": "Полуночная тесьма", "refName": "Midnight Braid", "namespace": "UNIQUE", "unique": {"base": "Rawhide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Сердце Мина", "refName": "Ming's Heart", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvTWluZ3NIZWFydCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/7395d98bba/MingsHeart.png"}
 {"name": "Первородный грех", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvU2FuY3R1bVNwZWNpYWxVbmlxdWVSaW5nIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/e0ff1c1c6b/SanctumSpecialUniqueRing.png"}
 {"name": "Печатка Перандусов", "refName": "Perandus Signet", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvTGFkeVJpbmciLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/d696be5b25/LadyRing.png"}
-{"name": "Polcirkeln", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
-{"name": "Revered Resin", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Rondel of Fragility", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Полярный круг", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Почтенная смола", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Круг уязвимости", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Моток Рюслаты", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvUnl1c2xhdGhhc0NsdXRjaGVzIiwidyI6MiwiaCI6MSwic2NhbGUiOjF9XQ/5b990decd3/RyuslathasClutches.png"}
-{"name": "Seed of Cataclysm", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
-{"name": "Sekhema's Resolve", "refName": "Sekhema's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "%NOT_FOUND%"}
-{"name": "Serpent's Egg", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Shavronne's Satchel", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Семя Катаклизма", "refName": "Seed of Cataclysm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Решимость Сехемы", "refName": "Sekhema's Resolve Fire", "namespace": "UNIQUE", "unique": {"base": "Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Змеиное яйцо", "refName": "Serpent's Egg", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Пояс Шавронн", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Серпентарий", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvU2VycGVudHNlZWQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/634a5c8913/Serpentseed.png"}
 {"name": "Оковы души", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvU291bFRldGhlciIsInciOjIsImgiOjEsInNjYWxlIjoxfV0/a2b7447a4a/SoulTether.png"}
-{"name": "Strugglescream", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
-{"name": "Surefooted Sigil", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Крик борьбы", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Медальон твёрдого шага", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Наковальня", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbnZpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/8d05280077/Anvil.png"}
-{"name": "The Burrower", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
-{"name": "The Everlasting Gaze", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Землекоп", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Вечный взор", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Обитель демонов", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9HbGFjaWVyQ2Fjb29uVXBncmFkZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/f54aa988e2/GlacierCacoonUpgrade.png"}
 {"name": "Воровская мука", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvVGhpZWZzVG9ybWVudCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/1c182176dc/ThiefsTorment.png"}
 {"name": "Гармония Ангила", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9VbmdpbHNIYXJtb255IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/dfdaf30e66/UngilsHarmony.png"}
 {"name": "Игра Вентора", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvRGllT2ZEZXN0aW55IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/1470dfcdce/DieOfDestiny.png"}
-{"name": "Whisper of the Brotherhood", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Шёпот братства", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Кровь Ксофа", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9ZcGhldGhha2tzSGVhcnRVcGdyYWRlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/259f2be84d/YphethakksHeartUpgrade.png"}
-{"name": "Zerphi's Genesis", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
-{"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
+{"name": "Зарождение Зерфи", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Извечные", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
 {"name": "Крылья Эрисвейна", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "Альким Эира", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Вой Альфы", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1dvbGZoZWFkIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/2acc10e593/Wolfhead.png"}
@@ -2864,10 +2864,10 @@
 {"name": "Проницательность Атзири", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvQXR6aXJpc0FjdWl0eSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/2c0f04ae47/AtzirisAcuity.png"}
 {"name": "Презрение Атзири", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Gold Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "Златохваты", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Layered Gauntlets"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvQXVyc2VpemUiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/4c0d010425/Aurseize.png"}
-{"name": "Beetlebite", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "Жучиный укус", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "Брюхо Зверя", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9iZWxseW9mdGhlYmVhc3QiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/d38723f8b9/bellyofthebeast.png"}
-{"name": "Beyond Reach", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver"}, "icon": "%NOT_FOUND%"}
-{"name": "Birth of Fury", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "За гранью", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Рождение ярости", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Жестокое цветение", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Feathered Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "Чёрное плетение", "refName": "Blackbraid", "namespace": "UNIQUE", "unique": {"base": "Fur Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "Отсвет мрака", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVpdmVycy9RdWl2ZXJVbmlxdWUxIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/797ce777ed/QuiverUnique1.png"}
@@ -2882,10 +2882,10 @@
 {"name": "Бронзовая борода", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Кустоломы", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}, "icon": "%NOT_FOUND%"}
 {"name": "Свечеделы", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}, "icon": "%NOT_FOUND%"}
-{"name": "Carrion Call", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Трупный зов", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Накидка пламени", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9Cb2R5SW50MUF1bmlxdWUiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/41c15c6511/BodyInt1Aunique.png"}
 {"name": "Алый покров", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}, "icon": "%NOT_FOUND%"}
-{"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Рогатый колпак", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Корона красного солнца", "refName": "Corona of the Red Sun", "namespace": "UNIQUE", "unique": {"base": "Warrior Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Ядоброды", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Алое облачение", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}, "icon": "%NOT_FOUND%"}
@@ -2932,7 +2932,7 @@
 {"name": "Железный наездник", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "Ярнгрейпр", "refName": "Jarngreipr", "namespace": "UNIQUE", "unique": {"base": "Ringmail Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "Сердце Каома", "refName": "Kaom's Heart", "namespace": "UNIQUE", "unique": {"base": "Conqueror Plate"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9Cb2R5U3RyM0NVbmlxdWUiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/1027cdf1ad/BodyStr3CUnique.png"}
-{"name": "Keeper of the Arc", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
+{"name": "Хранитель свода", "refName": "Keeper of the Arc", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Брюзга", "refName": "Killjoy", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "Хранитель царей", "refName": "Kingsguard", "namespace": "UNIQUE", "unique": {"base": "Full Plate"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9LaW5nc2d1YXJkIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/28d6e7ff11/Kingsguard.png"}
 {"name": "Поток Китоко", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}, "icon": "%NOT_FOUND%"}
@@ -2947,17 +2947,17 @@
 {"name": "Маска Сшитого Демона", "refName": "Mask of the Stitched Demon", "namespace": "UNIQUE", "unique": {"base": "Feathered Tiara"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL01hc2tvZnRoZVN0aXRjaGVkRGVtb24iLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/0e24c9f156/MaskoftheStitchedDemon.png"}
 {"name": "Доблесть служения", "refName": "Merit of Service", "namespace": "UNIQUE", "unique": {"base": "Pelage Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "Мориор Инвиктус", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}, "icon": "%NOT_FOUND%"}
-{"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Мирис Уксор", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "Некромантия", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "Северные лапы", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "Старый дуб", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}, "icon": "%NOT_FOUND%"}
-{"name": "Obern's Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "Бастион Оберна", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "Подручный творца", "refName": "Painter's Servant", "namespace": "UNIQUE", "unique": {"base": "Torn Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "Объятья парии", "refName": "Pariah's Embrace", "namespace": "UNIQUE", "unique": {"base": "Cloaked Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "Вероломство", "refName": "Perfidy", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9UYW5nbWF6dWFybW91cmJvZHlhcm1vdXIiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/2170370e8f/Tangmazuarmourbodyarmour.png"}
 {"name": "Чумной перст", "refName": "Plaguefinger", "namespace": "UNIQUE", "unique": {"base": "Gauze Wraps"}, "icon": "%NOT_FOUND%"}
-{"name": "Powertread", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
-{"name": "Pragmatism", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9HcmVlbmV5ZXNBcm1vdXIiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/bef792208d/GreeneyesArmour.png"}
+{"name": "Энергоступы", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
+{"name": "Прагматизм", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9HcmVlbmV5ZXNBcm1vdXIiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/bef792208d/GreeneyesArmour.png"}
 {"name": "Мольбы о дожде", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "Шкура Коатля", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "Царица леса", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9RdWVlbm9mdGhlRm9yZXN0IiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/bd3ec993e7/QueenoftheForest.png"}
@@ -2982,9 +2982,9 @@
 {"name": "Договор", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9FbWJyYWNlIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/d0110e7660/Embrace.png"}
 {"name": "Танцующий мираж", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}, "icon": "%NOT_FOUND%"}
 {"name": "Пожирающая диадема", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1RoZURldm91cmluZ0RpYWRlbSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/8bc93d2104/TheDevouringDiadem.png"}
-{"name": "The Eternal Spark", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Вечная искра", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Полая маска", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "Несмертный", "refName": "Несмертный", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Воин дорог", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "Бесконечная погоня", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Ud29Ub25lZEJvb3RzQUxUMyIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/ce68366000/TwoTonedBootsALT3.png"}
 {"name": "Странствующий рыцарь", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "Крысиная клетка", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9UaGVSYXRDYWdlIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/585313cc27/TheRatCage.png"}
@@ -2998,7 +2998,7 @@
 {"name": "Стальной раж", "refName": "Thrillsteel", "namespace": "UNIQUE", "unique": {"base": "Spired Greathelm"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0hlbG1vZldhciIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/887e20115c/HelmofWar.png"}
 {"name": "Громовая поступь", "refName": "Thunderstep", "namespace": "UNIQUE", "unique": {"base": "Steeltoe Boots"}, "icon": "%NOT_FOUND%"}
 {"name": "Ржавый катафракт", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}, "icon": "%NOT_FOUND%"}
-{"name": "Trampletoe", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Плоскостопы", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Древохваты", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "Покров ночи", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1ZlaWxPZlRoZU5pZ2h0IiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/809ee0994f/VeilOfTheNight.png"}
 {"name": "Лик Айи", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}, "icon": "%NOT_FOUND%"}
@@ -3010,47 +3010,47 @@
 {"name": "Крылья Кейлин", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Ведущие к чудесам", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Xb25kZXJ0cmFwIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/6af24f543f/Wondertrap.png"}
 {"name": "Погибель Вульфа", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
-{"name": "Melting Maelstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Тающая круговерть", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
 {"name": "Решительность Олрота", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvV2FyZEZsYXNrMDIiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/b6f390075a/WardFlask02.png"}
 {"name": "Противление тьме", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
-{"name": "Controlled Metamorphosis", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Управляемый метаморфоз", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Из ничего", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
 {"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Emerald"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
 {"name": "Великий образ", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
-{"name": "Heroic Tragedy", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}, "icon": "%NOT_FOUND%"}
+{"name": "Трагедия героев", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}, "icon": "%NOT_FOUND%"}
 {"name": "Мания величия", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png"}
-{"name": "Prism of Belief", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Призма убеждений", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Былой блеск", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1RyaWFsbWFzdGVySmV3IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/f04386d454/TrialmasterJew.png"}
 {"name": "Синее жало", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "Мозготряс", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kTWFjZXMvQnJhaW5TY3JhbWJsZXIiLCJ3IjoyLCJoIjo0LCJzY2FsZSI6MX1d/0749c07fa6/BrainScrambler.png"}
 {"name": "Знак Бринханда", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
 {"name": "Стук-Постук", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kTWFjZXMvQ2hvYmVyQ2hhYmVyIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/77d9d3e30a/ChoberChaber.png"}
-{"name": "Collapsing Horizon", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Рухнувший горизонт", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "Арфа смерти", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Cb3dzL0RlYXRoc2hhcnAiLCJ3IjoyLCJoIjo0LCJzY2FsZSI6MX1d/488e5f6267/Deathsharp.png"}
 {"name": "Сумеречный дозор", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}, "icon": "%NOT_FOUND%"}
-{"name": "Earthbound", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
-{"name": "Enezun's Charge", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Грозоотвод", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
+{"name": "Марш Инедзуна", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
 {"name": "Купель силы", "refName": "Font of Power", "namespace": "UNIQUE", "unique": {"base": "Omen Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "Ледяное дыхание", "refName": "Frostbreath", "namespace": "UNIQUE", "unique": {"base": "Slim Mace"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kTWFjZXMvRnJvc3RCcmVhdGgiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/8a6b305388/FrostBreath.png"}
 {"name": "Направляющая длань", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "Кабаний промысел", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "Гимн Гримнора", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kTWFjZXMvVHdvSGFuZE1hY2U2VW5pcXVlIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/31ad6258ac/TwoHandMace6Unique.png"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
@@ -3064,31 +3064,31 @@
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Extended Cleaver"}, "icon": "%NOT_FOUND%"}
 {"name": "Живой побег", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9XYW5kcy9MaWZlU3ByaWciLCJ3IjoxLCJoIjozLCJzY2FsZSI6MX1d/8e97a1d808/LifeSprig.png"}
-{"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
-{"name": "Mist Whisper", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
-{"name": "Nazir's Judgement", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
-{"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
+{"name": "Матсья", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Шёпот в тумане", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "Правосудие Назира", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Олровасара", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "Опора пленённого бога", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvUGlsbGFyb2Z0aGVDYWdlZEdvZCIsInciOjIsImgiOjQsInNjYWxlIjoxfV0/0451281624/PillaroftheCagedGod.png"}
 {"name": "Кечолли", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kTWFjZXMvVHdvSGFuZE1hY2U1VW5pcXVlIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/9361b8eb61/TwoHandMace5Unique.png"}
 {"name": "Ливень перьев", "refName": "Quill Rain", "namespace": "UNIQUE", "unique": {"base": "Shortbow"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Cb3dzL0JvdzJ1bmlxdWUiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/5c5cad82e8/Bow2unique.png"}
-{"name": "Rampart Raptor", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "Хищник бастиона", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
 {"name": "Красный клюв", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL09uZUhhbmRTd29yZDFVbmlxdWUiLCJ3IjoxLCJoIjozLCJzY2FsZSI6MX1d/a3010a69f5/OneHandSword1Unique.png"}
 {"name": "Священное пламя", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
-{"name": "Sanguine Diviner", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
-{"name": "Seeing Stars", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "Алый прорицатель", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Звездочёт", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
 {"name": "Небесный осколок", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Солнечное копьё", "refName": "Solar Lance", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}, "icon": "%NOT_FOUND%"}
-{"name": "Splinterheart", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "Заноза в сердце", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "Осколок Лоратты", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Дрожь Тарина", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvVGFyeW5zc2hpdmVyIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/b11b3dffb7/Tarynsshiver.png"}
 {"name": "Кровавый шип", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvVGhlQmxvb2RUaG9ybiIsInciOjEsImgiOjQsInNjYWxlIjoxfV0/3dac5ee34b/TheBloodThorn.png"}
-{"name": "The Burden of Shadows", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvVm9vZG9vS2luZ1N0YWZmIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/295f49d20f/VoodooKingStaff.png"}
+{"name": "Гнёт теней", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvVm9vZG9vS2luZ1N0YWZmIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/295f49d20f/VoodooKingStaff.png"}
 {"name": "Танцующий дервиш", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kU3dvcmRzL1JoeXNibGFkZSIsInciOjIsImgiOjQsInNjYWxlIjoxfV0/3ed974e708/Rhysblade.png"}
 {"name": "Тёмный осквернитель", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "Опаляющее касание", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvU3RhZmY0dW5pcXVlIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/5c7ddd5550/Staff4unique.png"}
 {"name": "Часовой", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}, "icon": "%NOT_FOUND%"}
-{"name": "Trenchtimbre", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
-{"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "Траншейный звон", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
+{"name": "Трефина", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "Вдовья доля", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Cb3dzL1dpZG93aGFpbEJvdyIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/1f31742277/WidowhailBow.png"}
 {"name": "Укус зимы", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
 {"name": "Доля Вилунда", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}

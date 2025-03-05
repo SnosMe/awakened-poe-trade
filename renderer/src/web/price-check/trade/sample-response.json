@@ -62,34 +62,19 @@
           },
           {
             "name": "[Quality]",
-            "values": [
-              [
-                "+20%",
-                1
-              ]
-            ],
+            "values": [["+20%", 1]],
             "displayMode": 0,
             "type": 6
           },
           {
             "name": "[Evasion|Evasion Rating]",
-            "values": [
-              [
-                "965",
-                1
-              ]
-            ],
+            "values": [["965", 1]],
             "displayMode": 0,
             "type": 17
           },
           {
             "name": "[EnergyShield|Energy Shield]",
-            "values": [
-              [
-                "381",
-                1
-              ]
-            ],
+            "values": [["381", 1]],
             "displayMode": 0,
             "type": 18
           }
@@ -97,34 +82,19 @@
         "requirements": [
           {
             "name": "Level",
-            "values": [
-              [
-                "65",
-                0
-              ]
-            ],
+            "values": [["65", 0]],
             "displayMode": 0,
             "type": 62
           },
           {
             "name": "[Dexterity|Dex]",
-            "values": [
-              [
-                "86",
-                0
-              ]
-            ],
+            "values": [["86", 0]],
             "displayMode": 1,
             "type": 64
           },
           {
             "name": "[Intelligence|Int]",
-            "values": [
-              [
-                "86",
-                0
-              ]
-            ],
+            "values": [["86", 0]],
             "displayMode": 1,
             "type": 65
           }
@@ -161,12 +131,7 @@
             "properties": [
               {
                 "name": "Stack Size",
-                "values": [
-                  [
-                    "1/10",
-                    0
-                  ]
-                ],
+                "values": [["1/10", 0]],
                 "displayMode": 0,
                 "type": 32
               }
@@ -197,12 +162,7 @@
             "properties": [
               {
                 "name": "Stack Size",
-                "values": [
-                  [
-                    "1/10",
-                    0
-                  ]
-                ],
+                "values": [["1/10", 0]],
                 "displayMode": 0,
                 "type": 32
               }
@@ -307,56 +267,15 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_53045048",
-                [
-                  5
-                ]
-              ],
-              [
-                "explicit.stat_4052037485",
-                [
-                  5
-                ]
-              ],
-              [
-                "explicit.stat_1999113824",
-                [
-                  3,
-                  4
-                ]
-              ],
-              [
-                "explicit.stat_3299347043",
-                [
-                  4
-                ]
-              ],
-              [
-                "explicit.stat_1671376347",
-                [
-                  0
-                ]
-              ],
-              [
-                "explicit.stat_2923486259",
-                [
-                  2
-                ]
-              ],
-              [
-                "explicit.stat_915769802",
-                [
-                  1
-                ]
-              ]
+              ["explicit.stat_53045048", [5]],
+              ["explicit.stat_4052037485", [5]],
+              ["explicit.stat_1999113824", [3, 4]],
+              ["explicit.stat_3299347043", [4]],
+              ["explicit.stat_1671376347", [0]],
+              ["explicit.stat_2923486259", [2]],
+              ["explicit.stat_915769802", [1]]
             ],
-            "rune": [
-              [
-                "rune.stat_3523867985",
-                null
-              ]
-            ]
+            "rune": [["rune.stat_3523867985", null]]
           }
         }
       }
@@ -423,56 +342,31 @@
           },
           {
             "name": "[Physical] Damage",
-            "values": [
-              [
-                "120-362",
-                1
-              ]
-            ],
+            "values": [["120-362", 1]],
             "displayMode": 0,
             "type": 9
           },
           {
             "name": "Lightning Damage",
-            "values": [
-              [
-                "1-53",
-                6
-              ]
-            ],
+            "values": [["1-53", 6]],
             "displayMode": 0,
             "type": 10
           },
           {
             "name": "[Critical|Critical Hit] Chance",
-            "values": [
-              [
-                "5.00%",
-                0
-              ]
-            ],
+            "values": [["5.00%", 0]],
             "displayMode": 0,
             "type": 12
           },
           {
             "name": "Attacks per Second",
-            "values": [
-              [
-                "1.65",
-                0
-              ]
-            ],
+            "values": [["1.65", 0]],
             "displayMode": 0,
             "type": 13
           },
           {
             "name": "Reload Time",
-            "values": [
-              [
-                "0.75",
-                0
-              ]
-            ],
+            "values": [["0.75", 0]],
             "displayMode": 0,
             "type": 97
           }
@@ -480,41 +374,24 @@
         "requirements": [
           {
             "name": "Level",
-            "values": [
-              [
-                "79",
-                0
-              ]
-            ],
+            "values": [["79", 0]],
             "displayMode": 0,
             "type": 62
           },
           {
             "name": "[Strength|Str]",
-            "values": [
-              [
-                "92",
-                1
-              ]
-            ],
+            "values": [["92", 1]],
             "displayMode": 1,
             "type": 63
           },
           {
             "name": "[Dexterity|Dex]",
-            "values": [
-              [
-                "92",
-                1
-              ]
-            ],
+            "values": [["92", 1]],
             "displayMode": 1,
             "type": 64
           }
         ],
-        "runeMods": [
-          "40% increased [Physical] Damage"
-        ],
+        "runeMods": ["40% increased [Physical] Damage"],
         "implicitMods": [
           "[Grenade] Skills Fire an additional [Projectile|Projectile]"
         ],
@@ -546,12 +423,7 @@
             "properties": [
               {
                 "name": "Stack Size",
-                "values": [
-                  [
-                    "1/10",
-                    0
-                  ]
-                ],
+                "values": [["1/10", 0]],
                 "displayMode": 0,
                 "type": 32
               }
@@ -582,12 +454,7 @@
             "properties": [
               {
                 "name": "Stack Size",
-                "values": [
-                  [
-                    "1/10",
-                    0
-                  ]
-                ],
+                "values": [["1/10", 0]],
                 "displayMode": 0,
                 "type": 32
               }
@@ -709,57 +576,15 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_1509134228",
-                [
-                  1
-                ]
-              ],
-              [
-                "explicit.stat_1940865751",
-                [
-                  2
-                ]
-              ],
-              [
-                "explicit.stat_3336890334",
-                [
-                  3
-                ]
-              ],
-              [
-                "explicit.stat_3639275092",
-                [
-                  5
-                ]
-              ],
-              [
-                "explicit.stat_3261801346",
-                [
-                  4
-                ]
-              ],
-              [
-                "explicit.stat_55876295",
-                [
-                  0
-                ]
-              ]
+              ["explicit.stat_1509134228", [1]],
+              ["explicit.stat_1940865751", [2]],
+              ["explicit.stat_3336890334", [3]],
+              ["explicit.stat_3639275092", [5]],
+              ["explicit.stat_3261801346", [4]],
+              ["explicit.stat_55876295", [0]]
             ],
-            "implicit": [
-              [
-                "implicit.stat_1980802737",
-                [
-                  0
-                ]
-              ]
-            ],
-            "rune": [
-              [
-                "rune.stat_1509134228",
-                null
-              ]
-            ]
+            "implicit": [["implicit.stat_1980802737", [0]]],
+            "rune": [["rune.stat_1509134228", null]]
           }
         }
       }
@@ -814,31 +639,19 @@
           },
           {
             "name": "Charm Slots",
-            "values": [
-              [
-                "1",
-                0
-              ]
-            ],
+            "values": [["1", 0]],
             "displayMode": 0
           }
         ],
         "requirements": [
           {
             "name": "Level",
-            "values": [
-              [
-                "61",
-                0
-              ]
-            ],
+            "values": [["61", 0]],
             "displayMode": 0,
             "type": 62
           }
         ],
-        "implicitMods": [
-          "30% increased Mana Recovery from [Flask|Flasks]"
-        ],
+        "implicitMods": ["30% increased Mana Recovery from [Flask|Flasks]"],
         "explicitMods": [
           "+92 to maximum Life",
           "36% increased [Flask] Life Recovery rate",
@@ -928,56 +741,17 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_3299347043",
-                [
-                  3
-                ]
-              ],
-              [
-                "explicit.stat_51994685",
-                [
-                  4
-                ]
-              ],
-              [
-                "explicit.stat_3372524247",
-                [
-                  2
-                ]
-              ],
-              [
-                "explicit.stat_1671376347",
-                [
-                  0
-                ]
-              ],
-              [
-                "explicit.stat_1570770415",
-                [
-                  1
-                ]
-              ]
+              ["explicit.stat_3299347043", [3]],
+              ["explicit.stat_51994685", [4]],
+              ["explicit.stat_3372524247", [2]],
+              ["explicit.stat_1671376347", [0]],
+              ["explicit.stat_1570770415", [1]]
             ],
-            "implicit": [
-              [
-                "implicit.stat_2222186378",
-                [
-                  0
-                ]
-              ]
-            ],
-            "pseudo": [
-              [
-                "statgroup.0",
-                null
-              ]
-            ]
+            "implicit": [["implicit.stat_2222186378", [0]]],
+            "pseudo": [["statgroup.0", null]]
           }
         },
-        "pseudoMods": [
-          "Sum: 73"
-        ]
+        "pseudoMods": ["Sum: 73"]
       }
     },
     {
@@ -1030,63 +804,36 @@
           },
           {
             "name": "[Quality]",
-            "values": [
-              [
-                "+5%",
-                1
-              ]
-            ],
+            "values": [["+5%", 1]],
             "displayMode": 0,
             "type": 6
           },
           {
             "name": "Recovers {0} Life over {1} Seconds",
             "values": [
-              [
-                "966",
-                1
-              ],
-              [
-                "2.10",
-                1
-              ]
+              ["966", 1],
+              ["2.10", 1]
             ],
             "displayMode": 3
           },
           {
             "name": "Consumes {0} of {1} Charges on use",
             "values": [
-              [
-                "10",
-                0
-              ],
-              [
-                "120",
-                1
-              ]
+              ["10", 0],
+              ["120", 1]
             ],
             "displayMode": 3
           },
           {
             "name": "Currently has {0} Charges",
-            "values": [
-              [
-                "0",
-                0
-              ]
-            ],
+            "values": [["0", 0]],
             "displayMode": 3
           }
         ],
         "requirements": [
           {
             "name": "Level",
-            "values": [
-              [
-                "60",
-                0
-              ]
-            ],
+            "values": [["60", 0]],
             "displayMode": 0,
             "type": 62
           }
@@ -1128,18 +875,8 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_173226756",
-                [
-                  1
-                ]
-              ],
-              [
-                "explicit.stat_1366840608",
-                [
-                  0
-                ]
-              ]
+              ["explicit.stat_173226756", [1]],
+              ["explicit.stat_1366840608", [0]]
             ]
           }
         }
@@ -1194,12 +931,7 @@
           },
           {
             "name": "Spirit",
-            "values": [
-              [
-                "151",
-                1
-              ]
-            ],
+            "values": [["151", 1]],
             "displayMode": 0,
             "type": 25
           }
@@ -1207,34 +939,19 @@
         "requirements": [
           {
             "name": "Level",
-            "values": [
-              [
-                "78",
-                0
-              ]
-            ],
+            "values": [["78", 0]],
             "displayMode": 0,
             "type": 62
           },
           {
             "name": "[Strength|Str]",
-            "values": [
-              [
-                "43",
-                1
-              ]
-            ],
+            "values": [["43", 1]],
             "displayMode": 1,
             "type": 63
           },
           {
             "name": "[Intelligence|Int]",
-            "values": [
-              [
-                "110",
-                1
-              ]
-            ],
+            "values": [["110", 1]],
             "displayMode": 1,
             "type": 65
           }
@@ -1242,12 +959,7 @@
         "grantedSkills": [
           {
             "name": "Grants Skill",
-            "values": [
-              [
-                "Level 18 Skeletal Warrior Minion",
-                25
-              ]
-            ],
+            "values": [["Level 18 Skeletal Warrior Minion", 25]],
             "displayMode": 0,
             "icon": "https://web.poecdn.com/gen/image/WzIxLDE0LHsiayI6IjJEQXJ0L1NraWxsSWNvbnMvV2l0Y2hXYXJyaW9yU2tlbGV0b24iLCJyZWFsbSI6InBvZTIifV0/b1213d0796/WitchWarriorSkeleton.png"
           }
@@ -1350,49 +1062,14 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_3984865854",
-                [
-                  0
-                ]
-              ],
-              [
-                "explicit.stat_1574590649",
-                [
-                  2
-                ]
-              ],
-              [
-                "explicit.stat_2854751904",
-                [
-                  1
-                ]
-              ],
-              [
-                "explicit.stat_289128254",
-                [
-                  3
-                ]
-              ],
-              [
-                "explicit.stat_3639275092",
-                [
-                  4
-                ]
-              ],
-              [
-                "explicit.stat_789117908",
-                [
-                  5
-                ]
-              ]
+              ["explicit.stat_3984865854", [0]],
+              ["explicit.stat_1574590649", [2]],
+              ["explicit.stat_2854751904", [1]],
+              ["explicit.stat_289128254", [3]],
+              ["explicit.stat_3639275092", [4]],
+              ["explicit.stat_789117908", [5]]
             ],
-            "skill": [
-              [
-                "skill.summon_skeleton_warrior",
-                null
-              ]
-            ]
+            "skill": [["skill.summon_skeleton_warrior", null]]
           }
         }
       }
@@ -1459,34 +1136,19 @@
           },
           {
             "name": "[Quality]",
-            "values": [
-              [
-                "+20%",
-                1
-              ]
-            ],
+            "values": [["+20%", 1]],
             "displayMode": 0,
             "type": 6
           },
           {
             "name": "[Evasion|Evasion Rating]",
-            "values": [
-              [
-                "993",
-                1
-              ]
-            ],
+            "values": [["993", 1]],
             "displayMode": 0,
             "type": 17
           },
           {
             "name": "[EnergyShield|Energy Shield]",
-            "values": [
-              [
-                "388",
-                1
-              ]
-            ],
+            "values": [["388", 1]],
             "displayMode": 0,
             "type": 18
           }
@@ -1494,34 +1156,19 @@
         "requirements": [
           {
             "name": "Level",
-            "values": [
-              [
-                "65",
-                0
-              ]
-            ],
+            "values": [["65", 0]],
             "displayMode": 0,
             "type": 62
           },
           {
             "name": "[Dexterity|Dex]",
-            "values": [
-              [
-                "86",
-                0
-              ]
-            ],
+            "values": [["86", 0]],
             "displayMode": 1,
             "type": 64
           },
           {
             "name": "[Intelligence|Int]",
-            "values": [
-              [
-                "86",
-                0
-              ]
-            ],
+            "values": [["86", 0]],
             "displayMode": 1,
             "type": 65
           }
@@ -1556,12 +1203,7 @@
             "properties": [
               {
                 "name": "Stack Size",
-                "values": [
-                  [
-                    "1/10",
-                    0
-                  ]
-                ],
+                "values": [["1/10", 0]],
                 "displayMode": 0,
                 "type": 32
               }
@@ -1592,12 +1234,7 @@
             "properties": [
               {
                 "name": "Stack Size",
-                "values": [
-                  [
-                    "1/10",
-                    0
-                  ]
-                ],
+                "values": [["1/10", 0]],
                 "displayMode": 0,
                 "type": 32
               }
@@ -1695,46 +1332,13 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_53045048",
-                [
-                  1,
-                  2
-                ]
-              ],
-              [
-                "explicit.stat_4052037485",
-                [
-                  1,
-                  2
-                ]
-              ],
-              [
-                "explicit.stat_1999113824",
-                [
-                  2,
-                  3
-                ]
-              ],
-              [
-                "explicit.stat_3261801346",
-                [
-                  0
-                ]
-              ],
-              [
-                "explicit.stat_328541901",
-                [
-                  4
-                ]
-              ]
+              ["explicit.stat_53045048", [1, 2]],
+              ["explicit.stat_4052037485", [1, 2]],
+              ["explicit.stat_1999113824", [2, 3]],
+              ["explicit.stat_3261801346", [0]],
+              ["explicit.stat_328541901", [4]]
             ],
-            "rune": [
-              [
-                "rune.stat_3523867985",
-                null
-              ]
-            ]
+            "rune": [["rune.stat_3523867985", null]]
           }
         }
       }
@@ -1844,27 +1448,10 @@
           },
           "hashes": {
             "explicit": [
-              [
-                "explicit.stat_239367161",
-                [
-                  0
-                ]
-              ],
-              [
-                "explicit.stat_3166958180",
-                [
-                  1
-                ]
-              ]
+              ["explicit.stat_239367161", [0]],
+              ["explicit.stat_3166958180", [1]]
             ],
-            "enchant": [
-              [
-                "enchant.stat_1658498488",
-                [
-                  0
-                ]
-              ]
-            ]
+            "enchant": [["enchant.stat_1658498488", [0]]]
           }
         }
       }

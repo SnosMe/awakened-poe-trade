@@ -930,6 +930,13 @@ function parseModifiers(section: string[], item: ParsedItem) {
     for (const { modLine, statLines } of groupLinesByMod(section)) {
       const { modType, lines } = parseModType(statLines);
       const modInfo = parseModInfoLine(modLine, modType);
+      if (
+        item.category === ItemCategory.Relic &&
+        modInfo.type === ModifierType.Explicit
+      ) {
+        modInfo.type = ModifierType.Sanctum;
+      }
+
       const modifier: ParsedModifier = { info: modInfo, stats: [] };
       parseStatsFromMod(lines, item, modifier);
 
@@ -1214,8 +1221,8 @@ function parseHeistBlueprint(section: string[], item: ParsedItem) {
 function parseAreaLevelNested(section: string[], item: ParsedItem) {
   for (const line of section) {
     if (line.startsWith(_$.AREA_LEVEL)) {
-    item.areaLevel = Number(line.slice(_$.AREA_LEVEL.length));
-    break;
+      item.areaLevel = Number(line.slice(_$.AREA_LEVEL.length));
+      break;
     }
   }
 }

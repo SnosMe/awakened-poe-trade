@@ -1,6 +1,5 @@
 import { clipboard, Clipboard } from "electron";
 import type { Logger } from "../RemoteLogger";
-import { text } from "stream/consumers";
 
 const POLL_DELAY = 48;
 const POLL_LIMIT = 500;
@@ -75,7 +74,7 @@ export class HostClipboard {
       setTimeout(poll, POLL_DELAY);
     });
 
-    return this.pollPromise;
+    return await this.pollPromise;
   }
 
   // when `shouldRestore` is false, this function continues
@@ -110,7 +109,7 @@ function isUncutSkillGem(text: string) {
   if (
     lines[0].startsWith("Rarity: Currency") &&
     UNCUT_SKILL_GEM_DETECTOR.find(({ firstLine }) =>
-      lines[1].startsWith(firstLine)
+      lines[1].startsWith(firstLine),
     )
   ) {
     return true;
@@ -178,5 +177,5 @@ const LANGUAGE_DETECTOR = [
   {
     lang: "ja",
     firstLine: "アイテムクラス: ",
-  }
+  },
 ];

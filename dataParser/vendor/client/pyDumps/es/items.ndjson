@@ -2481,7 +2481,7 @@
 {"name": "Tablilla precursora de expedición", "refName": "Expedition Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRFeHBlZGl0aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4450dac451/PrecursorTabletExpedition.png", "tradeTag": "expedition-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Tablilla precursora de fisura", "refName": "Breach Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCcmVhY2giLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/295c0839d7/PrecursorTabletBreach.png", "tradeTag": "breach-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Tablilla precursora de ritual", "refName": "Ritual Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRSaXR1YWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7c49d00f07/PrecursorTabletRitual.png", "tradeTag": "ritual-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
-{"name": "Tablilla precursora del capataz", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Tablilla precursora del capataz", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Taladro con reborde", "refName": "Flanged Drill", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "Taladro de acero", "refName": "Steel Drill", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "Talismán potenciador", "refName": "Aggregator Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
@@ -2612,7 +2612,7 @@
 {"name": "Ultimátum inscrito", "refName": "Inscribed Ultimatum", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MiscMapItem"}, "w": 1, "h": 1}
 {"name": "Ultimátum inscrito quimérico", "refName": "Chimeral Inscribed Ultimatum", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "Ultracongelación", "refName": "Deep Freeze", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Una audiencia con el rey", "refName": "An Audience with the King", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
+{"name": "Una audiencia con el rey", "refName": "An Audience with the King", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUml0dWFsL1Zvb2Rvb0tpbmdFZmZpZ3kiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/0b02c113cc/VoodooKingEffigy.png", "tradeTag": "an-audience-with-the-king", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "Uniformes templarios", "refName": "Templar Uniforms", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "Urgencia ancestral", "refName": "Ancestral Urgency", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Urna de Farud", "refName": "Urn of Farud", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
@@ -2858,7 +2858,7 @@
 {"name": "Mandil de Emiran", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "Rueda de Arvil", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "Desgarro de cenizas", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
-{"name": "Ira de asphyxia", "refName": "Ira de asphyxia", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Ira de Asphyxia", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver"}, "icon": "%NOT_FOUND%"}
 {"name": "Assailum", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Closed Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "Visión de Atsak", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Veiled Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "Agudeza de Atziri", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
@@ -2984,7 +2984,7 @@
 {"name": "Diadema devoradora", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "La chispa eterna", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Máscara hueca", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "El inmortan", "refName": "El inmortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "El guerrero de la carretera", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "La persecución infinita", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Pisadas del caballero", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "La jaula de ratas", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
@@ -3036,21 +3036,21 @@
 {"name": "Palma guiadora", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "La caza del puerco", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "Himno de Hrimnor", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
@@ -3091,7 +3091,7 @@
 {"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "Granizo de viuda", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "Mordisco de invierno", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
-{"name": "Apuesta de Wylund", "refName": "Apuesta de Wylund", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}
+{"name": "Estaca de Wylund", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}
 {"name": "El peso del liderazgo", "refName": "The Burden of Leadership", "namespace": "UNIQUE", "unique": {"base": "Tapestry Relic"}, "icon": "%NOT_FOUND%"}
 {"name": "El cambio de las estaciones", "refName": "The Changing Seasons", "namespace": "UNIQUE", "unique": {"base": "Seal Relic"}, "icon": "%NOT_FOUND%"}
 {"name": "Alianza desesperada", "refName": "The Desperate Alliance", "namespace": "UNIQUE", "unique": {"base": "Vase Relic"}, "icon": "%NOT_FOUND%"}

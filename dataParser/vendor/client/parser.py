@@ -146,7 +146,10 @@ HARDCODE_MAP_MODS = {
     "mapplayercooldownrecovery",
 }
 
-BETTER_NOT_1 = {"local_attribute_requirements_+%": -1}
+BETTER_NOT_1 = {
+    "local_attribute_requirements_+%": -1,
+    "sanctum_merchant_gold_cost_+%": -1,
+}
 
 
 def find_first_matching_item(items, field: str, value: str) -> dict | None:
@@ -376,6 +379,7 @@ class Parser:
             stat = stat.replace(match, "#")
 
         stat = stat.replace("{0:+d}", "+#")
+        stat = stat.replace("{}", "#")
 
         if len(stat) == 0:
             return None
@@ -586,6 +590,7 @@ class Parser:
         hybrids = []
 
         stats_from_tiers = set()
+        existing_matchers = set()
 
         def better(x):
             return 1 if x not in BETTER_NOT_1 else BETTER_NOT_1[x]
@@ -671,7 +676,7 @@ class Parser:
                 (x for x in translations if x.get("ref") is not None), None
             )
 
-            if main_translation is None:
+            if main_translation is None or "sanctum" in base_id:
                 continue
 
             if (
@@ -693,6 +698,8 @@ class Parser:
                     for index, allowed_hybrid_translation in enumerate(
                         non_waystone_translations
                     ):
+                        for matcher in allowed_hybrid_translation.get("matchers"):
+                            existing_matchers.add(matcher.get("string"))
                         self.mods[f"{base_id}_{index}"] = {
                             "ref": allowed_hybrid_translation.get("ref"),
                             "better": better(stats_id),
@@ -702,6 +709,8 @@ class Parser:
                             "fromAreaMods": True,
                         }
                 else:
+                    for matcher in main_translation.get("matchers"):
+                        existing_matchers.add(matcher.get("string"))
                     self.mods[base_id] = {
                         "ref": main_translation.get("ref"),
                         "better": better(stats_id),
@@ -721,7 +730,7 @@ class Parser:
                     self.tiers[tier_ref_strings] = tiers
 
         for mod in self.mods_file:
-            id = mod.get("Id")
+            id = mod.get("Id").lower()
             stats_key = mod.get("Stat1")
 
             logger.debug(f"Processing mod - ID: {id}, Stat: {stats_key}")
@@ -767,6 +776,20 @@ class Parser:
                     if id in self.mods:
                         logger.error(f"Duplicate mod ID found: {id}. Skipping mod.")
                         continue
+
+                    if "sanctum" in id:
+                        new_matchers = []
+                        for matcher in translation.get("matchers"):
+                            matcher_str = matcher.get("string")
+                            if (
+                                matcher_str is not None
+                                and matcher_str not in existing_matchers
+                            ):
+                                new_matchers.append(matcher)
+                        translation["matchers"] = new_matchers
+                    for matcher in translation.get("matchers"):
+                        existing_matchers.add(matcher.get("string"))
+
                     self.mods[id] = {
                         "ref": translation.get("ref"),
                         "better": better(stats_id),

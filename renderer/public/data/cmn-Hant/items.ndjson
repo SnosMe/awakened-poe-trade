@@ -1726,7 +1726,7 @@
 {"name": "縫合手套", "refName": "Stitched Gloves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"es": [17, 17]}, "w": 2, "h": 2}
 {"name": "縫紉輕鞋", "refName": "Threaded Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ev": [28, 28], "es": [14, 14]}, "w": 2, "h": 2}
 {"name": "縫製氣囊", "refName": "Stitched Bladder", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "QuestItem"}, "w": 2, "h": 1}
-{"name": "總督的先行者碑牌", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "總督的先行者碑牌", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "總督軍的崇高石", "refName": "Warlord's Exalted Orb", "namespace": "ITEM", "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5mbHVlbmNlIEV4YWx0cy9Db25xdWVyb3JPcmIiLCJzY2FsZSI6MX1d/57f0d85951/ConquerorOrb.png", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "繩索腕帶", "refName": "Rope Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Gloves"}, "armour": {"ar": [12, 12], "es": [6, 6]}, "w": 2, "h": 2}
 {"name": "纏繞之邀", "refName": "Writhing Invitation", "namespace": "ITEM", "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9UYW5nbGVkT3JiUXVlc3QwIiwic2NhbGUiOjF9XQ/7a2f21c33e/TangledOrbQuest0.png", "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
@@ -2984,7 +2984,7 @@
 {"name": "吞噬之冠", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1RoZURldm91cmluZ0RpYWRlbSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/8bc93d2104/TheDevouringDiadem.png"}
 {"name": "永恆火花", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "聖潔面具", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "永生者", "refName": "永生者", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "無畏戰士", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "無盡之距", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Ud29Ub25lZEJvb3RzQUxUMyIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/ce68366000/TwoTonedBootsALT3.png"}
 {"name": "漂泊騎士", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "疫鼠囚籠", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9UaGVSYXRDYWdlIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/585313cc27/TheRatCage.png"}
@@ -3016,8 +3016,8 @@
 {"name": "受控的蛻變", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "從無到有", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
-{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
 {"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Emerald"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
+{"name": "巨光譜", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEdyYW5kU3BlY3RydW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e6789a065/RedGrandSpectrum.png"}
 {"name": "英雄悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}, "icon": "%NOT_FOUND%"}
 {"name": "妄想症", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png"}
 {"name": "信仰棱鏡", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
@@ -3035,6 +3035,7 @@
 {"name": "引導之掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "獵豬", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "雷姆諾的奪命樂具", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "https://webtw.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kTWFjZXMvVHdvSGFuZE1hY2U2VW5pcXVlIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/31ad6258ac/TwoHandMace6Unique.png"}
+{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splintered Flail"}, "icon": "%NOT_FOUND%"}
@@ -3042,7 +3043,6 @@
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Light Halberd"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Elegant Glaive"}, "icon": "%NOT_FOUND%"}
 {"name": "未完成", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broad Greatsword"}, "icon": "%NOT_FOUND%"}

@@ -12,22 +12,11 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@ipc/*": [
-        "../ipc/*"
-      ]
+      "@/*": ["./src/*"],
+      "@ipc/*": ["../ipc/*"]
     },
-    "types": [
-      "vite/client",
-      "vitest/importMeta"
-    ],
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ]
+    "types": ["vite/client", "vitest/importMeta"],
+    "lib": ["esnext", "dom", "dom.iterable"]
   },
   "include": [
     "src/**/*.ts",

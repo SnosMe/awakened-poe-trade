@@ -16,17 +16,17 @@ nsis:
   allowToChangeInstallationDirectory: true
 win:
   target:
-  - "nsis"
-  - "portable"
+    - "nsis"
+    - "portable"
 linux:
   target:
-  - "AppImage"
+    - "AppImage"
 mac:
   target:
-  - target: "dmg"
-    arch:
-    - "universal"
+    - target: "dmg"
+      arch:
+        - "universal"
   identity: null
 appImage:
   executableArgs:
-  - "--sandbox"
+    - "--sandbox"

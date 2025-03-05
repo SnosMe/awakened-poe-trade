@@ -1,5 +1,5 @@
 import path from "path";
-import { BrowserWindow, dialog, shell, Menu, WebContents } from "electron";
+import { BrowserWindow, dialog, shell, Menu } from "electron";
 import {
   OverlayController,
   OVERLAY_WINDOW_OPTS,
@@ -18,11 +18,11 @@ export class OverlayWindow {
   constructor(
     private server: ServerEvents,
     private logger: Logger,
-    private poeWindow: GameWindow
+    private poeWindow: GameWindow,
   ) {
     this.server.onEventAnyClient(
       "OVERLAY->MAIN::focus-game",
-      this.assertGameActive
+      this.assertGameActive,
     );
     this.poeWindow.on("active-change", this.handlePoeWindowActiveChange);
     this.poeWindow.onAttach(this.handleOverlayAttached);
@@ -50,7 +50,7 @@ export class OverlayWindow {
         { role: "editMenu" },
         { role: "reload" },
         { role: "toggleDevTools" },
-      ])
+      ]),
     );
 
     this.window.webContents.on("before-input-event", this.handleExtraCommands);
@@ -58,7 +58,7 @@ export class OverlayWindow {
       "did-attach-webview",
       (_, webviewWebContents) => {
         webviewWebContents.on("before-input-event", this.handleExtraCommands);
-      }
+      },
     );
 
     this.window.webContents.setWindowOpenHandler((details) => {
@@ -116,7 +116,7 @@ export class OverlayWindow {
 
   private handleExtraCommands = (
     event: Electron.Event,
-    input: Electron.Input
+    input: Electron.Input,
   ) => {
     if (input.type !== "keyDown") return;
 
@@ -153,7 +153,7 @@ export class OverlayWindow {
   private handleOverlayAttached = (hasAccess?: boolean) => {
     if (hasAccess === false) {
       this.logger.write(
-        "error [Overlay] PoE is running with administrator rights"
+        "error [Overlay] PoE is running with administrator rights",
       );
 
       dialog.showErrorBox(
@@ -161,7 +161,7 @@ export class OverlayWindow {
         // ----------------------
         "Path of Exile 2 is running with administrator rights.\n" +
           "\n" +
-          "You need to restart Exiled Exchange 2 with administrator rights."
+          "You need to restart Exiled Exchange 2 with administrator rights.",
       );
     } else {
       this.server.sendEventTo("broadcast", {

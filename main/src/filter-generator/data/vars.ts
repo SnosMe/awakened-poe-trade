@@ -6,10 +6,10 @@ interface Color {
 }
 
 export const FONT_SIZE = {
-  T0: 16, //ignorable entries
-  T1: 24, //default
-  T2: 36, //interesting stuff
-  T3: 44, //important stuff
+  T0: 16, // ignorable entries
+  T1: 24, // default
+  T2: 36, // interesting stuff
+  T3: 44, // important stuff
 };
 
 export const RARITY = {
@@ -117,16 +117,22 @@ const colors = {
 export const RGBA: Record<
   keyof typeof colors,
   (overides?: number | Partial<Color>) => string
-> = Object.entries(colors).reduce((result, [key, value]) => {
-  result[key as keyof typeof colors] = (
-    overrides?: number | Partial<Color>
-  ) => {
-    overrides =
-      typeof overrides === "number" ? { a: overrides } : overrides || {};
-    const overridden = Object.assign({}, value, overrides);
-    return `${overridden.r} ${overridden.g} ${overridden.b} ${
-      overridden.a ?? 255
-    }`;
-  };
-  return result;
-}, {} as Record<keyof typeof colors, (overides?: number | Partial<Color>) => string>);
+> = Object.entries(colors).reduce(
+  (result, [key, value]) => {
+    result[key as keyof typeof colors] = (
+      overrides?: number | Partial<Color>,
+    ) => {
+      overrides =
+        typeof overrides === "number" ? { a: overrides } : overrides || {};
+      const overridden = Object.assign({}, value, overrides);
+      return `${overridden.r} ${overridden.g} ${overridden.b} ${
+        overridden.a ?? 255
+      }`;
+    };
+    return result;
+  },
+  {} as Record<
+    keyof typeof colors,
+    (overides?: number | Partial<Color>) => string
+  >,
+);

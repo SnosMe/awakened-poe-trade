@@ -1,4 +1,4 @@
-export type IFilterIdentifiers = Record<string, string | Array<string>>;
+export type IFilterIdentifiers = Record<string, string | string[]>;
 export type IFilterModifiers = Record<string, string | number>;
 
 export interface IFilter {

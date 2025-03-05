@@ -14,6 +14,7 @@ const PROXY_HOSTS = [
   { host: "www.poeprices.info", official: false },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class HttpProxy {
   constructor(server: Server, logger: Logger) {
     server.addListener("request", (req, res) => {
@@ -21,7 +22,7 @@ export class HttpProxy {
       const host = req.url.split("/", 3)[2];
 
       const official = PROXY_HOSTS.find(
-        (entry) => entry.host === host
+        (entry) => entry.host === host,
       )?.official;
       if (official === undefined) return req.destroy();
 
@@ -32,6 +33,7 @@ export class HttpProxy {
           key === "origin" ||
           key === "content-length"
         ) {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
           delete req.headers[key];
         }
       }

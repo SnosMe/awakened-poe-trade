@@ -27,6 +27,13 @@ npm install
 npm run dev
 ```
 
+## Formatting
+
+```shell
+cd renderer
+npm run format
+```
+
 # How to build
 
 ```shell

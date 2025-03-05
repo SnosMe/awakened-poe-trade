@@ -35,6 +35,7 @@ app.on("ready", async () => {
   const gameConfig = new GameConfig(eventPipe, logger);
   const poeWindow = new GameWindow();
   const appUpdater = new AppUpdater(eventPipe);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _httpProxy = new HttpProxy(server, logger);
 
   if (process.env.VITE_DEV_SERVER_URL) {
@@ -50,18 +51,20 @@ app.on("ready", async () => {
   setTimeout(
     async () => {
       const overlay = new OverlayWindow(eventPipe, logger, poeWindow);
+      // eslint-disable-next-line no-new
       new OverlayVisibility(eventPipe, overlay, gameConfig);
       const shortcuts = await Shortcuts.create(
         logger,
         overlay,
         poeWindow,
         gameConfig,
-        eventPipe
+        eventPipe,
       );
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const filterGenerator = new FilterGenerator(
         logger,
         gameConfig,
-        eventPipe
+        eventPipe,
       );
       eventPipe.onEventAnyClient("CLIENT->MAIN::update-host-config", (cfg) => {
         overlay.updateOpts(cfg.overlayKey, cfg.windowTitle);
@@ -70,7 +73,7 @@ app.on("ready", async () => {
           cfg.stashScroll,
           cfg.logKeys,
           cfg.restoreClipboard,
-          cfg.language
+          cfg.language,
         );
         gameLogWatcher.restart(cfg.clientLog ?? "");
         gameConfig.readConfig(cfg.gameConfig ?? "");
@@ -85,6 +88,6 @@ app.on("ready", async () => {
       tray.serverPort = port;
     },
     // fixes(linux): window is black instead of transparent
-    process.platform === "linux" ? 1000 : 0
+    process.platform === "linux" ? 1000 : 0,
   );
 });

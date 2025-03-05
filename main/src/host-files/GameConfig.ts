@@ -12,28 +12,28 @@ const POSSIBLE_PATH =
     ? [
         path.join(
           app.getPath("documents"),
-          "My Games\\Path of Exile 2\\poe2_production_Config.ini"
+          "My Games\\Path of Exile 2\\poe2_production_Config.ini",
         ),
       ]
     : process.platform === "linux"
-    ? [
-        path.join(
-          app.getPath("documents"),
-          "My Games/Path of Exile 2/poe2_production_Config.ini"
-        ),
-        path.join(
-          app.getPath("home"),
-          ".local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile 2/poe2_production_Config.ini"
-        ),
-      ]
-    : process.platform === "darwin"
-    ? [
-        path.join(
-          app.getPath("appData"),
-          "Path of Exile 2/Preferences/poe2_production_Config.ini"
-        ),
-      ]
-    : [];
+      ? [
+          path.join(
+            app.getPath("documents"),
+            "My Games/Path of Exile 2/poe2_production_Config.ini",
+          ),
+          path.join(
+            app.getPath("home"),
+            ".local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile 2/poe2_production_Config.ini",
+          ),
+        ]
+      : process.platform === "darwin"
+        ? [
+            path.join(
+              app.getPath("appData"),
+              "Path of Exile 2/Preferences/poe2_production_Config.ini",
+            ),
+          ]
+        : [];
 
 export class GameConfig {
   private _wantedPath: string | null = null;
@@ -46,11 +46,15 @@ export class GameConfig {
   get showModsKeyNullable() {
     return this._showModsKey;
   }
+
   get showModsKey() {
     return this._showModsKey ?? "Alt";
   }
 
-  constructor(private server: ServerEvents, private logger: Logger) {}
+  constructor(
+    private server: ServerEvents,
+    private logger: Logger,
+  ) {}
 
   async readConfig(filePath: string) {
     if (this._wantedPath !== filePath) {
@@ -66,7 +70,7 @@ export class GameConfig {
         filePath = guessedPath;
       } else {
         this.logger.write(
-          "error [GameConfig] Failed to find game configuration file in the default location."
+          "error [GameConfig] Failed to find game configuration file in the default location.",
         );
         return;
       }
@@ -81,13 +85,13 @@ export class GameConfig {
       const parsed = ini.parse(contents);
 
       this._showModsKey = this.parseConfigHotkey(
-        parsed["ACTION_KEYS"]?.["show_advanced_item_descriptions"]
+        parsed.ACTION_KEYS?.show_advanced_item_descriptions,
       );
 
       this._actualPath = filePath;
     } catch {
       this.logger.write(
-        "error [GameConfig] Failed to read game configuration file."
+        "error [GameConfig] Failed to read game configuration file.",
       );
     }
   }
@@ -115,7 +119,7 @@ export class GameConfig {
         key2 = "Alt";
       } else {
         this.logger.write(
-          `error [GameConfig] Failed to read modifier key: ${cfgKey}.`
+          `error [GameConfig] Failed to read modifier key: ${cfgKey}.`,
         );
         return null;
       }
@@ -125,7 +129,7 @@ export class GameConfig {
       [key1],
       key2 === "Ctrl",
       key2 === "Shift",
-      key2 === "Alt"
+      key2 === "Alt",
     );
   }
 }

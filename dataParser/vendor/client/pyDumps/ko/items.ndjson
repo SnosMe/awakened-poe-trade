@@ -109,7 +109,7 @@
 {"name": "갈라진 클로", "refName": "Forked Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Claw"}, "w": 2, "h": 2}
 {"name": "갈래", "refName": "Fork", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "갈취자", "refName": "Despoiler", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "감독관 선도자 서판", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "감독관 선도자 서판", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "감속", "refName": "Deceleration", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "감전 시 시전", "refName": "Cast on Shock", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "감전 파열 탄환", "refName": "Shockburst Rounds", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -2984,7 +2984,7 @@
 {"name": "걸신들린 왕관", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "영원한 불꽃", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "텅 빈 가면", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "이모탄", "refName": "이모탄", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "도로의 전사", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "끝없는 추적", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "무사 수행 기사", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "쥐덫", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
@@ -3036,21 +3036,21 @@
 {"name": "인도하는 손바닥", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "돼지사냥", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "흐림노르의 찬가", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}

@@ -1,4 +1,4 @@
-import { Rectangle, Point, screen, Display } from "electron";
+import { Rectangle, Point, screen } from "electron";
 import { uIOhook, UiohookMouseEvent } from "uiohook-napi";
 import type { OverlayWindow } from "./OverlayWindow";
 import type { ServerEvents } from "../server";
@@ -8,7 +8,10 @@ export class WidgetAreaTracker {
   private from!: Point;
   private area!: Rectangle;
   private closeThreshold!: number;
-  constructor(private server: ServerEvents, private overlay: OverlayWindow) {
+  constructor(
+    private server: ServerEvents,
+    private overlay: OverlayWindow,
+  ) {
     this.server.onEventAnyClient("OVERLAY->MAIN::track-area", (opts) => {
       this.holdKey = opts.holdKey;
 
@@ -26,14 +29,14 @@ export class WidgetAreaTracker {
             value,
             display.bounds.x,
             display.nativeOrigin.x,
-            display.scaleFactor
+            display.scaleFactor,
           );
         const scaleY = (value: number) =>
           scaleNumberByDisplay(
             value,
             display.bounds.y,
             display.nativeOrigin.y,
-            display.scaleFactor
+            display.scaleFactor,
           );
 
         // scale coordinates using the display scale factor.
@@ -114,7 +117,7 @@ function scaleNumberByDisplay(
   value: number,
   boundValue: number,
   nativeValue: number,
-  scaleFactor: number
+  scaleFactor: number,
 ) {
   return (value - boundValue + nativeValue) * scaleFactor;
 }

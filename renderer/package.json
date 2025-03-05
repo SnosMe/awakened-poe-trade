@@ -7,6 +7,7 @@
     "dev": "vite",
     "lint": "eslint --ext .ts,.vue src",
     "lint-fix": "eslint --ext .ts,.vue src --fix",
+    "format": "prettier . --write ",
     "build": "vue-tsc --noEmit && vite build",
     "make-index-files": "node src/assets/make-index-files.mjs",
     "test": "vitest"

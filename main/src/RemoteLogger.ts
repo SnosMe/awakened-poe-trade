@@ -1,18 +1,16 @@
-import type { ServerEvents } from './server'
+import type { ServerEvents } from "./server";
 
 export class Logger {
-  history = ''
+  history = "";
 
-  constructor (
-    private server: ServerEvents
-  ) {}
+  constructor(private server: ServerEvents) {}
 
-  write (message: string) {
-    message = `[${new Date().toLocaleTimeString()}] ${message}\n`
-    this.history += message
-    this.server.sendEventTo('broadcast', {
-      name: 'MAIN->CLIENT::log-entry',
-      payload: { message }
-    })
+  write(message: string) {
+    message = `[${new Date().toLocaleTimeString()}] ${message}\n`;
+    this.history += message;
+    this.server.sendEventTo("broadcast", {
+      name: "MAIN->CLIENT::log-entry",
+      payload: { message },
+    });
   }
 }

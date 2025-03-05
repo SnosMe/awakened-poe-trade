@@ -18,7 +18,7 @@ import type { ServerEvents } from "../server";
 
 type UiohookKeyT = keyof typeof UiohookKey;
 const UiohookToName = Object.fromEntries(
-  Object.entries(UiohookKey).map(([k, v]) => [v, k])
+  Object.entries(UiohookKey).map(([k, v]) => [v, k]),
 );
 
 export class Shortcuts {
@@ -33,7 +33,7 @@ export class Shortcuts {
     overlay: OverlayWindow,
     poeWindow: GameWindow,
     gameConfig: GameConfig,
-    server: ServerEvents
+    server: ServerEvents,
   ) {
     const ocrWorker = await OcrWorker.create();
     const shortcuts = new Shortcuts(
@@ -42,7 +42,7 @@ export class Shortcuts {
       poeWindow,
       gameConfig,
       server,
-      ocrWorker
+      ocrWorker,
     );
     return shortcuts;
   }
@@ -53,7 +53,7 @@ export class Shortcuts {
     private poeWindow: GameWindow,
     private gameConfig: GameConfig,
     private server: ServerEvents,
-    private ocrWorker: OcrWorker
+    private ocrWorker: OcrWorker,
   ) {
     this.areaTracker = new WidgetAreaTracker(server, overlay);
     this.clipboard = new HostClipboard(logger);
@@ -86,7 +86,7 @@ export class Shortcuts {
       this.logger.write(
         `debug [Shortcuts] Keyup ${
           UiohookToName[e.keycode] || "not_supported_key"
-        }`
+        }`,
       );
     });
 
@@ -108,7 +108,7 @@ export class Shortcuts {
     stashScroll: boolean,
     logKeys: boolean,
     restoreClipboard: boolean,
-    language: string
+    language: string,
   ) {
     this.stashScroll = stashScroll;
     this.logKeys = logKeys;
@@ -117,7 +117,7 @@ export class Shortcuts {
 
     const copyItemShortcut = mergeTwoHotkeys(
       "Ctrl + C",
-      this.gameConfig.showModsKey
+      this.gameConfig.showModsKey,
     );
     if (copyItemShortcut !== "Ctrl + C") {
       actions.push({
@@ -147,7 +147,7 @@ export class Shortcuts {
         action.action.type !== "test-only"
       ) {
         this.logger.write(
-          `error [Shortcuts] Hotkey "${action.shortcut}" reserved by the game will not be registered.`
+          `error [Shortcuts] Hotkey "${action.shortcut}" reserved by the game will not be registered.`,
         );
       }
     }
@@ -157,7 +157,7 @@ export class Shortcuts {
     for (const action of actions) {
       if (allShortcuts.has(action.shortcut)) {
         this.logger.write(
-          `error [Shortcuts] It is not possible to use the same hotkey "${action.shortcut}" for multiple actions.`
+          `error [Shortcuts] It is not possible to use the same hotkey "${action.shortcut}" for multiple actions.`,
         );
         duplicates.add(action.shortcut);
       } else {
@@ -167,7 +167,7 @@ export class Shortcuts {
     this.actions = actions.filter(
       (action) =>
         !duplicates.has(action.shortcut) ||
-        action.action.type === "toggle-overlay"
+        action.action.type === "toggle-overlay",
     );
   }
 
@@ -178,7 +178,7 @@ export class Shortcuts {
         () => {
           if (this.logKeys) {
             this.logger.write(
-              `debug [Shortcuts] Action type: ${entry.action.type}`
+              `debug [Shortcuts] Action type: ${entry.action.type}`,
             );
           }
 
@@ -236,7 +236,7 @@ export class Shortcuts {
               entry.keepModKeys
                 ? entry.shortcut.split(" + ").filter((key) => isModKey(key))
                 : undefined,
-              this.gameConfig.showModsKey
+              this.gameConfig.showModsKey,
             );
           } else if (
             entry.action.type === "ocr-text" &&
@@ -266,12 +266,12 @@ export class Shortcuts {
               })
               .catch(() => {});
           }
-        }
+        },
       );
 
       if (!isOk) {
         this.logger.write(
-          `error [Shortcuts] Failed to register a shortcut "${entry.shortcut}". It is already registered by another application.`
+          `error [Shortcuts] Failed to register a shortcut "${entry.shortcut}". It is already registered by another application.`,
         );
       }
 
@@ -288,7 +288,7 @@ export class Shortcuts {
 
 function pressKeysToCopyItemText(
   pressedModKeys: string[] = [],
-  showModsKey: string
+  showModsKey: string,
 ) {
   let keys = mergeTwoHotkeys("Ctrl + C", showModsKey).split(" + ");
   keys = keys.filter((key) => key !== "C");

@@ -1,17 +1,19 @@
-import fs from 'fs/promises'
+import fs from "fs/promises";
 
-export async function guessFileLocation (entries: Iterable<string>): Promise<string | null> {
-  let found: string | null = null
+export async function guessFileLocation(
+  entries: Iterable<string>,
+): Promise<string | null> {
+  let found: string | null = null;
   for (const path of entries) {
     try {
-      await fs.access(path, fs.constants.R_OK)
+      await fs.access(path, fs.constants.R_OK);
       if (found != null) {
         // don't allow multiple matches (i.e. standalone + Steam)
-        return null
+        return null;
       } else {
-        found = path
+        found = path;
       }
     } catch {}
   }
-  return found
+  return found;
 }

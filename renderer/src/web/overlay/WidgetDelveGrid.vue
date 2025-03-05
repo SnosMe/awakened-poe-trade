@@ -29,26 +29,26 @@
 </template>
 
 <script lang="ts">
-import type { WidgetSpec } from '../overlay/interfaces'
-import { DelveGridWidget } from './interfaces'
+import type { WidgetSpec } from "../overlay/interfaces";
+import { DelveGridWidget } from "./interfaces";
 
 export default {
   widget: {
-    type: 'delve-grid',
-    instances: 'single',
+    type: "delve-grid",
+    instances: "single",
     initInstance: (): DelveGridWidget => {
       return {
         wmId: 0,
-        wmType: 'delve-grid',
-        wmTitle: '',
-        wmWants: 'hide',
+        wmType: "delve-grid",
+        wmTitle: "",
+        wmWants: "hide",
         wmZorder: null,
-        wmFlags: ['hide-on-focus', 'menu::skip'],
-        toggleKey: null
-      }
-    }
-  } satisfies WidgetSpec
-}
+        wmFlags: ["hide-on-focus", "menu::skip"],
+        toggleKey: null,
+      };
+    },
+  } satisfies WidgetSpec,
+};
 </script>
 
 <script setup lang="ts">

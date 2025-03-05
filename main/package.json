@@ -1,13 +1,14 @@
 {
   "name": "exiled-exchange-2",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
     "build": "tsc --noEmit && node build/script.mjs --prod",
     "package": "electron-builder build",
     "lint": "eslint src",
-    "fix": "eslint src --fix"
+    "fix": "eslint src --fix",
+    "format": "prettier . --write "
   },
   "author": {
     "name": "Garrett Parker"
@@ -33,7 +34,18 @@
     "electron-updater": "^6.3.0",
     "esbuild": "^0.24.0",
     "ini": "^5.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.4.2",
     "typescript": "5.6.x",
     "ws": "^8.16.0"
+  },
+  "optionalDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.21.0",
+    "eslint-config-standard-with-typescript": "^31.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0"
   }
 }

@@ -99,7 +99,7 @@
 {"name": "Aufreißen", "refName": "Rupture", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Aufruhr", "refName": "Upheaval", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Aufschlitzender Kampfstab", "refName": "Slicing Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
-{"name": "Aufseher-Wegbereitertafel", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Aufseher-Wegbereitertafel", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Aufspießen", "refName": "Impale", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Auftauende Phiole", "refName": "Thawing Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Charm"}, "w": 1, "h": 1}
 {"name": "Auftrag zum Selbstschutz", "refName": "Vigilante Contract", "namespace": "ITEM", "icon": "", "craftable": {"category": "HeistContract"}, "w": 1, "h": 1}
@@ -2544,7 +2544,7 @@
 {"name": "Wappen von Ezomyr", "refName": "Crest of Ezomyr", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "Wappen von Veritiana", "refName": "Veritania's Crest", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9SZWRlZW1lckZyYWdtZW50Iiwic2NhbGUiOjF9XQ/86d22a34cc/RedeemerFragment.png", "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "Weber-Beinlinge", "refName": "Weaver Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Boots"}, "armour": {"ar": [73, 73], "es": [26, 26]}, "w": 2, "h": 2}
-{"name": "Wegbereitertafel", "refName": "Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "Wegbereitertafel", "refName": "Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRHZW5lcmljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5658ce7f2d/PrecursorTabletGeneric.png", "tradeTag": "precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "Wegstein (Level 1)", "refName": "Waystone (Tier 1)", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9FbmRnYW1lTWFwcy9FbmRnYW1lTWFwMSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bb4c55989d/EndgameMap1.png", "tradeTag": "waystone-1", "craftable": {"category": "Map"}, "w": 1, "h": 1}
 {"name": "Wegstein (Level 10)", "refName": "Waystone (Tier 10)", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9FbmRnYW1lTWFwcy9FbmRnYW1lTWFwMTAiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4a1266867a/EndgameMap10.png", "tradeTag": "waystone-10", "craftable": {"category": "Map"}, "w": 1, "h": 1}
 {"name": "Wegstein (Level 11)", "refName": "Waystone (Tier 11)", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9FbmRnYW1lTWFwcy9FbmRnYW1lTWFwMTEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/77da168a75/EndgameMap11.png", "tradeTag": "waystone-11", "craftable": {"category": "Map"}, "w": 1, "h": 1}
@@ -2984,7 +2984,7 @@
 {"name": "Das verschlingende Diadem", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1RoZURldm91cmluZ0RpYWRlbSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/8bc93d2104/TheDevouringDiadem.png"}
 {"name": "Der Ewige Funke", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Die ausgehöhlte Maske", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "Der Immortan", "refName": "Der Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "Der Straßenkrieger", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "Das endlose Streben", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Ud29Ub25lZEJvb3RzQUxUMyIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/ce68366000/TwoTonedBootsALT3.png"}
 {"name": "Der fahrende Ritter", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Rattenkäfig", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9UaGVSYXRDYWdlIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/585313cc27/TheRatCage.png"}
@@ -3036,21 +3036,21 @@
 {"name": "Führende Hand", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "Treibjagd", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "Hrimnors Hymne", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kTWFjZXMvVHdvSGFuZE1hY2U2VW5pcXVlIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/31ad6258ac/TwoHandMace6Unique.png"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}

@@ -17,25 +17,23 @@ const modifiers = {
   },
 };
 
-export default function parseRawFilters(
-  rawFilters: Array<IRawFilter>
-): Array<IFilter> {
+export default function parseRawFilters(rawFilters: IRawFilter[]): IFilter[] {
   return rawFilters
     .filter((filter: IRawFilter) => {
       const identifiersCount = filter.identifiers.filter(
         (identifier: IRawFilter["identifiers"][number]) => {
           return identifier.key.length > 0 && identifier.value.length > 0;
-        }
+        },
       ).length;
 
-      //filter out empty raw filters (with no specified or not full identifiers)
+      // filter out empty raw filters (with no specified or not full identifiers)
       return identifiersCount > 0;
     })
     .map((filter: IRawFilter) => ({
       name: filter.name,
       identifiers: filter.identifiers.reduce(
         (result, next: { key: string; value: string }) => {
-          //filter empty or not full identifiers
+          // filter empty or not full identifiers
           if (next.key.length > 0 && next.value.length > 0) {
             result[next.key] = next.value.includes(",")
               ? next.value.split(",")
@@ -43,7 +41,7 @@ export default function parseRawFilters(
           }
           return result;
         },
-        {} as Record<string, string | Array<string>>
+        {} as Record<string, string | string[]>,
       ),
       hide: filter.action === "hide",
       modifiers:

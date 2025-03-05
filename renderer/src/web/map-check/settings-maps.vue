@@ -93,7 +93,7 @@ function findAllAreaMods(): StatMatcher[] {
 </script>
 
 <script setup lang="ts">
-import { computed, defineProps, ref } from "vue";
+import { computed, ref } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import { configProp, findWidget, configModelValue } from "../settings/utils";
 import type { ItemCheckWidget } from "../item-check/widget.js";

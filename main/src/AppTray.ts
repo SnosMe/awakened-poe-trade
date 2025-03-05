@@ -12,8 +12,8 @@ export class AppTray {
       path.join(
         __dirname,
         process.env.STATIC!,
-        process.platform === "win32" ? "icon.ico" : "icon.png"
-      )
+        process.platform === "win32" ? "icon.ico" : "icon.png",
+      ),
     );
 
     if (process.platform === "darwin") {

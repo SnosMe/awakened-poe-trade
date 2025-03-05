@@ -2147,7 +2147,7 @@
 {"name": "皮のベスト", "refName": "Leather Vest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Body Armour"}, "armour": {"ev": [30, 30]}, "w": 2, "h": 3}
 {"name": "皮張りのフード", "refName": "Leatherbound Hood", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Helmet"}, "armour": {"ev": [177, 177]}, "w": 2, "h": 2}
 {"name": "盗賊のメイス", "refName": "Brigand Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
-{"name": "監督者の先人の石板", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
+{"name": "監督者の先人の石板", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
 {"name": "監視者の弓", "refName": "Warden Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "盲目", "refName": "Blind", "namespace": "GEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "真珠のバックラー", "refName": "Pearl Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "craftable": {"category": "Shield"}, "armour": {"ev": [105, 105]}, "w": 2, "h": 2}
@@ -2857,15 +2857,15 @@
 {"name": "アルファの遠吠え", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "エミレの前掛け", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "アルヴィルの車輪", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
-{"name": "アシュレンド", "refName": "アシュレンド", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
+{"name": "アッシュレンド", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "アスフィクシアの憤怒", "refName": "Asphyxia's Wrath", "namespace": "UNIQUE", "unique": {"base": "Broadhead Quiver"}, "icon": "%NOT_FOUND%"}
 {"name": "アセイラム", "refName": "Assailum", "namespace": "UNIQUE", "unique": {"base": "Closed Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "アツァクの視野", "refName": "Atsak's Sight", "namespace": "UNIQUE", "unique": {"base": "Veiled Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "アトジリの鋭敏さ", "refName": "アトジリの鋭敏さ", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "アッツィリの鋭敏さ", "refName": "Atziri's Acuity", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "アッツィリの軽蔑", "refName": "Atziri's Disdain", "namespace": "UNIQUE", "unique": {"base": "Gold Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "オアシーズ", "refName": "Aurseize", "namespace": "UNIQUE", "unique": {"base": "Layered Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "ビートルバイト", "refName": "Beetlebite", "namespace": "UNIQUE", "unique": {"base": "Velour Shoes"}, "icon": "%NOT_FOUND%"}
-{"name": "魔獣の内部", "refName": "魔獣の内部", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "魔獣の腹", "refName": "Belly of the Beast", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "手の届かぬ所", "refName": "Beyond Reach", "namespace": "UNIQUE", "unique": {"base": "Visceral Quiver"}, "icon": "%NOT_FOUND%"}
 {"name": "怒りの誕生", "refName": "Birth of Fury", "namespace": "UNIQUE", "unique": {"base": "Stone Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "ビターブルーム", "refName": "Bitterbloom", "namespace": "UNIQUE", "unique": {"base": "Feathered Robe"}, "icon": "%NOT_FOUND%"}
@@ -2968,7 +2968,7 @@
 {"name": "砂嵐の容貌", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "蛇の学習", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "哀れな者の手枷", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}, "icon": "%NOT_FOUND%"}
-{"name": "シエランの遺産", "refName": "シエランの遺産", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "シエラの遺産", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "不平等", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}, "icon": "%NOT_FOUND%"}
 {"name": "忠臣の皮膚", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "スネークバイト", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}, "icon": "%NOT_FOUND%"}
@@ -2984,7 +2984,7 @@
 {"name": "むさぼり食う王冠", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "永遠の火花", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "虚ろの仮面", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
-{"name": "イモータン", "refName": "イモータン", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
+{"name": "道の戦士", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "無限の追跡", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "放浪騎士", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
 {"name": "鼠の檻", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
@@ -3012,16 +3012,16 @@
 {"name": "ウルフスベイン", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "溶解する大渦", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
 {"name": "オルロスの決意", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "%NOT_FOUND%"}
-{"name": "闇との対立", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "古の金剛石"}, "icon": "%NOT_FOUND%"}
-{"name": "制御されし変態", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "金剛石"}, "icon": "%NOT_FOUND%"}
-{"name": "虚空より来たる", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "金剛石"}, "icon": "%NOT_FOUND%"}
-{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "紅玉"}, "icon": "%NOT_FOUND%"}
-{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "翠玉"}, "icon": "%NOT_FOUND%"}
-{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "蒼玉"}, "icon": "%NOT_FOUND%"}
+{"name": "闇との対立", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "制御されし変態", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "虚空より来たる", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Ruby"}, "icon": "%NOT_FOUND%"}
+{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Emerald"}, "icon": "%NOT_FOUND%"}
+{"name": "グランド・スペクトラム", "refName": "Grand Spectrum", "namespace": "UNIQUE", "unique": {"base": "Sapphire"}, "icon": "%NOT_FOUND%"}
 {"name": "英雄の悲劇", "refName": "Heroic Tragedy", "namespace": "UNIQUE", "unique": {"base": "Timeless Jewel"}, "icon": "%NOT_FOUND%"}
-{"name": "メガロマニアック", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "金剛石"}, "icon": "%NOT_FOUND%"}
-{"name": "信仰のプリズム", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "金剛石"}, "icon": "%NOT_FOUND%"}
-{"name": "飾り立てられしもの", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "金剛石"}, "icon": "%NOT_FOUND%"}
+{"name": "メガロマニアック", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "信仰のプリズム", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "飾り立てられしもの", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "青い舌", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "脳揺らし", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "ブリンハンドの印", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
@@ -3036,21 +3036,21 @@
 {"name": "導きの掌", "refName": "Guiding Palm", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
 {"name": "豚狩り", "refName": "Hoghunt", "namespace": "UNIQUE", "unique": {"base": "Felled Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "フリムノーの聖歌", "refName": "Hrimnor's Hymn", "namespace": "UNIQUE", "unique": {"base": "Oak Greathammer"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Dull Hatchet"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}

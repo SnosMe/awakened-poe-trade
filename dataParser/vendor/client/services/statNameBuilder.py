@@ -71,6 +71,7 @@ def convert_stat_name(stat: str) -> str | None:
         stat = stat.replace(match, "#")
 
     stat = stat.replace("{0:+d}", "+#")
+    stat = stat.replace("{}", "#")
 
     if len(stat) == 0:
         logger.warning("Converted stat name is empty, returning None.")
