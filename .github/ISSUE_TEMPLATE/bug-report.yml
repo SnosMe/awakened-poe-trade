@@ -1,0 +1,63 @@
+name: Bug Report
+description: File a bug report.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: common-bug
+    attributes:
+      label: Common Bugs
+      description: Selection for bugs that are known to occur frequently with game updates
+      options:
+        - An error occurred while parsing the item 
+        - Not Recognized Modifier
+        - No modifiers found
+        - Other
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of EE2 are you running? You can see this in Settings -> About
+      options:
+        - 0.8.1
+        - 0.8.0
+        - 0.7.x
+        - 0.6.x
+        - 0.5.x
+        - 0.4.x
+        - 0.3.x
+        - 0.2.x
+        - Other
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: If able, please go to Settings -> Debug, and copy and paste what is in that text box. (No need for backticks)
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Common Questions
+      description: Please check the [FAQ](https://kvan7.github.io/Exiled-Exchange-2/faq), [Common Issues Page](https://kvan7.github.io/Exiled-Exchange-2/issues), and for [pinned issues and existing issues](https://github.com/Kvan7/Exiled-Exchange-2/issues?q=is%3Aissue) before submitting an issue
+      options:
+        - label: I have checked the FAQ, Common Issues, and for existing issues and my problem was not there
+          required: true
