@@ -13,7 +13,7 @@
         handle="[data-qa=drag-handle]" :animation="200" :force-fallback="true">
         <template #item="{ element: img }">
           <div :class="$style.card">
-            <fullscreen-image
+            <FullscreenImage
               :src="img.url"
               :disabled="isEditing || isMoving"
               class="rounded overflow-hidden" />
@@ -34,14 +34,45 @@
   </Widget>
 </template>
 
+<script lang="ts">
+import type { WidgetSpec, ImageStripWidget } from '../overlay/interfaces'
+
+export default {
+  widget: {
+    type: 'image-strip',
+    instances: 'multi',
+    trNameKey: 'image_strip.name',
+    defaultInstances: (): ImageStripWidget[] => {
+      return [{
+        wmId: 0,
+        wmType: 'image-strip',
+        wmTitle: 'Cheat sheets',
+        wmWants: 'hide',
+        wmZorder: null,
+        wmFlags: ['invisible-on-blur'],
+        anchor: {
+          pos: 'tc',
+          x: 50,
+          y: 10
+        },
+        images: [
+          { id: 1, url: 'syndicate.jpg' }
+        ]
+      }]
+    }
+  } satisfies WidgetSpec
+}
+</script>
+
 <script setup lang="ts">
 import { inject, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Host } from '@/web/background/IPC'
-import { WidgetManager, ImageStripWidget } from './interfaces'
+import { WidgetManager } from './interfaces'
 
 import DndContainer from 'vuedraggable'
 import Widget from './Widget.vue'
+import FullscreenImage from '@/web/ui/FullscreenImage.vue'
 
 const props = defineProps<{
   config: ImageStripWidget

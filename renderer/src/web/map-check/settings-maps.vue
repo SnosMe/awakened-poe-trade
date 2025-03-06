@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col overflow-hidden h-full">
-    <div class="p-1 flex">
+    <div class="flex p-1">
       <input :placeholder="t('Search') + '...'" v-model="search" class="bg-gray-900 rounded px-1">
-      <ui-toggle v-model="onlySelected" class="mx-2">{{ t(':search_selected') }}</ui-toggle>
-      <ui-toggle v-model="showNewStats" class="ml-12">{{ t(':new_mods_icon') }}</ui-toggle>
+      <UiToggle v-model="onlySelected" class="mx-2">{{ t(':search_selected') }}</UiToggle>
+      <UiToggle v-model="showNewStats" class="ml-12">{{ t(':new_mods_icon') }}</UiToggle>
     </div>
     <div class="flex items-baseline py-1 shadow">
       <div class="flex-1 px-2 leading-none">{{ t(':search_stat_col', [filteredStats.length]) }}</div>
@@ -30,14 +30,12 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
-import { useI18nNs } from '@/web/i18n'
-import { configProp, findWidget } from '../settings/utils'
-import type { ItemCheckWidget } from '../item-check/widget.js'
-import { STATS_ITERATOR, STAT_BY_MATCH_STR } from '@/assets/data'
-import SettingsMatcherEntry from './SettingsMatcherEntry.vue'
-import VirtualScroll from '../ui/VirtualScroll.vue'
-import { StatMatcher, StatTag, decisionHasColor } from './common.js'
+import { STATS_ITERATOR } from '@/assets/data'
+import { StatMatcher, StatTag, decisionHasColor, isOutdated } from './common.js'
+
+export default {
+  name: 'map_check.name'
+}
 
 function tagToShowOrder (tag?: StatTag): number {
   switch (tag) {
@@ -47,88 +45,82 @@ function tagToShowOrder (tag?: StatTag): number {
   return 0
 }
 
-export default defineComponent({
-  name: 'map_check.name',
-  components: {
-    SettingsMatcherEntry,
-    VirtualScroll
-  },
-  props: configProp(),
-  setup (props) {
-    const search = ref('')
-    const onlySelected = ref(false)
+function findAllAreaMods (): StatMatcher[] {
+  const out: StatMatcher[] = []
+  for (const stat of STATS_ITERATOR('AreaMods')) {
+    if (!stat.fromAreaMods && !stat.fromUberAreaMods && !stat.fromHeistAreaMods) continue
 
-    const widget = computed(() => findWidget<ItemCheckWidget>('item-check', props.config)!)
+    const tag = (stat.fromHeistAreaMods && !stat.fromAreaMods) ? StatTag.HeistExclusive
+      : (stat.fromUberAreaMods && !stat.fromAreaMods) ? StatTag.UberMapExclusive : undefined
 
-    const areaStatsDb = computed(() => {
-      const out: StatMatcher[] = []
-      for (const stat of STATS_ITERATOR('AreaMods')) {
-        if (!stat.fromAreaMods && !stat.fromUberAreaMods && !stat.fromHeistAreaMods) continue
-
-        const tag = (stat.fromHeistAreaMods && !stat.fromAreaMods) ? StatTag.HeistExclusive
-          : (stat.fromUberAreaMods && !stat.fromAreaMods) ? StatTag.UberMapExclusive : undefined
-
-        for (const c of stat.matchers) {
-          out.push({ matchStr: c.string, tag })
-        }
-      }
-      out.sort((a, b) =>
-        (tagToShowOrder(a.tag) - tagToShowOrder(b.tag)) ||
-        a.matchStr.localeCompare(b.matchStr))
-      return out
-    })
-
-    const selectedProfileMatchers = computed(() => {
-      const { profile } = widget.value.maps
-      return new Set(
-        widget.value.maps.selectedStats
-          .filter((entry) => decisionHasColor(entry.decision, profile))
-          .map(entry => entry.matcher))
-    })
-
-    const showNewStats = computed<boolean>({
-      get () { return widget.value.maps.showNewStats },
-      set (value) { widget.value.maps.showNewStats = value }
-    })
-
-    const outdatedTranslationList = computed<StatMatcher[]>(() => {
-      const { profile } = widget.value.maps
-      return widget.value.maps.selectedStats
-        .filter(entry =>
-          decisionHasColor(entry.decision, profile) &&
-          STAT_BY_MATCH_STR(entry.matcher) == null)
-        .map(entry => ({ matchStr: entry.matcher, tag: StatTag.Outdated }))
-    })
-
-    const { t } = useI18nNs('map_check')
-
-    return {
-      t,
-      search,
-      onlySelected,
-      showNewStats,
-      filteredStats: computed<StatMatcher[]>(() => {
-        const q = search.value.toLowerCase().split(' ')
-
-        const filtered = areaStatsDb.value
-          .filter(stat => {
-            const searchStr = stat.matchStr.toLowerCase()
-            if (!q.every(part => searchStr.includes(part))) return false
-            if (onlySelected.value) {
-              return selectedProfileMatchers.value.has(stat.matchStr)
-            }
-            return true
-          })
-
-        return [
-          ...outdatedTranslationList.value,
-          ...filtered
-        ]
-      }),
-      selectedStats: computed(() => widget.value.maps.selectedStats),
-      profile: computed(() => widget.value.maps.profile),
-      fontSize: computed(() => props.config.fontSize)
+    for (const c of stat.matchers) {
+      out.push({ matchStr: c.string, tag })
     }
   }
+  out.sort((a, b) =>
+    (tagToShowOrder(a.tag) - tagToShowOrder(b.tag)) ||
+    a.matchStr.localeCompare(b.matchStr))
+  return out
+}
+</script>
+
+<script setup lang="ts">
+import { computed, defineProps, ref } from 'vue'
+import { useI18nNs } from '@/web/i18n'
+import { configProp, findWidget, configModelValue } from '../settings/utils'
+import type { ItemCheckWidget } from '../item-check/widget.js'
+
+import UiToggle from '@/web/ui/UiToggle.vue'
+import VirtualScroll from '@/web/ui/VirtualScroll.vue'
+import SettingsMatcherEntry from './SettingsMatcherEntry.vue'
+
+const props = defineProps(configProp())
+
+const widget = computed(() => findWidget<ItemCheckWidget>('item-check', props.config)!)
+
+const selectedProfileMatchers = computed(() => {
+  const { profile } = widget.value.maps
+  const matchers = new Set<string>()
+  for (const entry of widget.value.maps.selectedStats) {
+    if (decisionHasColor(entry.decision, profile)) {
+      matchers.add(entry.matcher)
+    }
+  }
+  return matchers
 })
+
+const outdatedTranslationList = computed<StatMatcher[]>(() => {
+  const { profile } = widget.value.maps
+  return widget.value.maps.selectedStats
+    .filter(entry => isOutdated(profile, entry))
+    .map(entry => ({ matchStr: entry.matcher, tag: StatTag.Outdated }))
+})
+
+const areaStatsDb = computed(() => findAllAreaMods())
+const search = ref('')
+const onlySelected = ref(false)
+const filteredStats = computed<StatMatcher[]>(() => {
+  const q = search.value.toLowerCase().split(' ')
+
+  const filtered = areaStatsDb.value
+    .filter(stat => {
+      const searchStr = stat.matchStr.toLowerCase()
+      if (!q.every(part => searchStr.includes(part))) return false
+      if (onlySelected.value) {
+        return selectedProfileMatchers.value.has(stat.matchStr)
+      }
+      return true
+    })
+
+  return [
+    ...outdatedTranslationList.value,
+    ...filtered
+  ]
+})
+
+const selectedStats = computed(() => widget.value.maps.selectedStats)
+const profile = computed(() => widget.value.maps.profile)
+const fontSize = computed(() => props.config.fontSize)
+const showNewStats = configModelValue(() => widget.value.maps, 'showNewStats')
+const { t } = useI18nNs('map_check')
 </script>

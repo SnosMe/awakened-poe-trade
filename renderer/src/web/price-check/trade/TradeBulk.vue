@@ -88,6 +88,7 @@
 <script lang="ts">
 import { defineComponent, PropType, computed, watch, ComputedRef, Ref, shallowRef, shallowReactive, inject } from 'vue'
 import { useI18nNs } from '@/web/i18n'
+import UiErrorBox from '@/web/ui/UiErrorBox.vue'
 import { BulkSearch, execBulkSearch, createTradeRequest, PricingResult } from './pathofexile-bulk'
 import { getTradeEndpoint } from './common'
 import { AppConfig } from '@/web/Config'
@@ -181,7 +182,7 @@ function useBulkApi () {
 }
 
 export default defineComponent({
-  components: { OnlineFilter, TradeLinks },
+  components: { OnlineFilter, TradeLinks, UiErrorBox },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,

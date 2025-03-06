@@ -20,11 +20,13 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType, ref } from 'vue'
+import UiPopover from '@/web/ui/Popover.vue'
 import { ParsedItem } from '@/parser'
 import { sendFeedback } from './poeprices'
 
 export default defineComponent({
   emits: ['sent'],
+  components: { UiPopover },
   props: {
     option: {
       type: String as PropType<'fair' | 'low' | 'high'>,

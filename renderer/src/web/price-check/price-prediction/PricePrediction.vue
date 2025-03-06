@@ -61,6 +61,7 @@
 
 <script lang="ts">
 import { defineComponent, watch, ref, PropType, computed } from 'vue'
+import UiErrorBox from '@/web/ui/UiErrorBox.vue'
 import { getExternalLink, RareItemPrice, requestPoeprices } from './poeprices'
 import FeedbackOption from './FeedbackOption.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
@@ -71,7 +72,7 @@ const slowdown = artificialSlowdown(800)
 
 export default defineComponent({
   name: 'PricePrediction',
-  components: { FeedbackOption, ItemQuickPrice },
+  components: { FeedbackOption, ItemQuickPrice, UiErrorBox },
   props: {
     item: {
       type: Object as PropType<ParsedItem>,

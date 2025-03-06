@@ -46,10 +46,14 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { useI18nNs } from '@/web/i18n'
+import UiRadio from '@/web/ui/UiRadio.vue'
+import UiToggle from '@/web/ui/UiToggle.vue'
+import UiPopover from '@/web/ui/Popover.vue'
 import type { ItemFilters } from '../filters/interfaces'
 import { useLeagues } from '@/web/background/Leagues'
 
 export default defineComponent({
+  components: { UiRadio, UiToggle, UiPopover },
   props: {
     filters: {
       type: Object as PropType<ItemFilters>,

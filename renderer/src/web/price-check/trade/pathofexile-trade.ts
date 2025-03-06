@@ -48,7 +48,8 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Trinket, 'accessory.trinket'],
   [ItemCategory.SanctumRelic, 'sanctum.relic'],
   [ItemCategory.Tincture, 'tincture'],
-  [ItemCategory.Charm, 'azmeri.charm']
+  [ItemCategory.Charm, 'azmeri.charm'],
+  [ItemCategory.Idol, 'idol']
 ])
 
 const TOTAL_MODS_TEXT = {
@@ -568,7 +569,7 @@ export async function requestResults (
     if (_data.error) {
       throw new Error(_data.error.message)
     } else {
-      data = _data.result.filter(res => res != null) as FetchResult[]
+      data = _data.result.filter(res => res != null)
     }
 
     cache.set<FetchResult[]>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))

@@ -50,6 +50,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UiRadio from '@/web/ui/UiRadio.vue'
 import { configProp, configModelValue, findWidget } from './utils'
 import { PriceCheckWidget, DelveGridWidget } from '@/web/overlay/interfaces'
 import { ItemCheckWidget } from '../item-check/widget.js'
@@ -57,7 +58,7 @@ import HotkeyInput from './HotkeyInput.vue'
 
 export default defineComponent({
   name: 'settings.hotkeys',
-  components: { HotkeyInput },
+  components: { HotkeyInput, UiRadio },
   props: configProp(),
   setup (props) {
     const { t } = useI18n()

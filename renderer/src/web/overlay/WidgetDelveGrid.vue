@@ -22,6 +22,29 @@
   </Widget>
 </template>
 
+<script lang="ts">
+import type { WidgetSpec } from '../overlay/interfaces'
+import { DelveGridWidget } from './interfaces'
+
+export default {
+  widget: {
+    type: 'delve-grid',
+    instances: 'single',
+    initInstance: (): DelveGridWidget => {
+      return {
+        wmId: 0,
+        wmType: 'delve-grid',
+        wmTitle: '',
+        wmWants: 'hide',
+        wmZorder: null,
+        wmFlags: ['hide-on-focus', 'menu::skip'],
+        toggleKey: null
+      }
+    }
+  } satisfies WidgetSpec
+}
+</script>
+
 <script setup lang="ts">
 import { computed, inject } from 'vue'
 import { Host } from '@/web/background/IPC'

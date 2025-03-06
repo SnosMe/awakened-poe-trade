@@ -22,6 +22,8 @@ import { useLeagues } from '@/web/background/Leagues'
 import { Host } from '@/web/background/IPC'
 import { poeWebApi } from '@/web/Config'
 
+import UiErrorBox from '@/web/ui/UiErrorBox.vue'
+
 const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
 const { t } = useI18n()

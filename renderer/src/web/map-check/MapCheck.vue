@@ -13,7 +13,7 @@
         >{{ profile.text }}</button>
       </div>
     </div>
-    <fullscreen-image v-if="image" :src="image" style="height: auto;" />
+    <FullscreenImage v-if="image" :src="image" style="height: auto;" />
     <div v-if="!mapStats.length" class="px-8 py-2">
       {{ t('map_check.no_mods') }}
     </div>
@@ -34,10 +34,10 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
 import { prepareMapStats } from './prepare-map-stats'
-import { STAT_BY_MATCH_STR } from '@/assets/data'
-import { MapCheckConfig } from './common.js'
+import { type MapCheckConfig, isOutdated } from './common.js'
 
 import MapStatButton from './MapStatButton.vue'
+import FullscreenImage from '@/web/ui/FullscreenImage.vue'
 
 const props = defineProps<{
   item: ParsedItem,
@@ -47,12 +47,9 @@ const props = defineProps<{
 const { t } = useI18n()
 
 const hasOutdatedTranslation = computed<boolean>(() => {
-  const idx = props.config.profile - 1
+  const { profile } = props.config
   return props.config.selectedStats
-    .some(entry =>
-      entry.decision[idx] !== '-' &&
-      entry.decision[idx] !== 's' &&
-      STAT_BY_MATCH_STR(entry.matcher) == null)
+    .some(entry => isOutdated(profile, entry))
 })
 
 const mapName = computed(() => props.item.info.name)

@@ -17,12 +17,17 @@
 <script lang="ts">
 import { defineComponent, PropType, inject, ref, onUnmounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Widget from './Widget.vue'
+import Widget from '../overlay/Widget.vue'
 import { MainProcess } from '@/web/background/IPC'
 import { Duration } from 'luxon'
-import { WidgetManager, StopwatchWidget } from './interfaces'
+import { WidgetManager, StopwatchWidget, WidgetSpec } from '../overlay/interfaces'
 
 export default defineComponent({
+  widget: {
+    type: 'timer',
+    instances: 'multi',
+    trNameKey: 'stopwatch.name'
+  } satisfies WidgetSpec,
   components: { Widget },
   props: {
     config: {

@@ -16,13 +16,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
-    - run: yarn --frozen-lockfile
+    - run: npm ci
       working-directory: ./renderer
-    - run: yarn make-index-files
+    - run: npm run make-index-files
       working-directory: ./renderer
-    - run: yarn lint
+    - run: npm run lint
       working-directory: ./renderer
-    - run: yarn build
+    - run: npm run build
       working-directory: ./renderer
     - uses: actions/upload-artifact@v4
       with:
@@ -34,7 +34,7 @@ jobs:
     needs: renderer
     strategy:
       matrix:
-        os: [windows-2019, ubuntu-20.04, macos-12]
+        os: [windows-2019, ubuntu-20.04, macos-13]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
@@ -43,11 +43,11 @@ jobs:
       with:
         name: renderer-dist
         path: ./renderer/dist
-    - run: yarn --frozen-lockfile
+    - run: npm ci
       working-directory: ./main
-    - run: yarn build
+    - run: npm run build
       working-directory: ./main
-    - run: yarn package -p onTagOrDraft
+    - run: npm run package "--" -p onTagOrDraft
       working-directory: ./main
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

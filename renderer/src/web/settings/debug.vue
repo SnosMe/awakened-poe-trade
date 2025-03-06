@@ -10,11 +10,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UiCheckbox from '@/web/ui/UiCheckbox.vue'
 import { configProp, configModelValue } from './utils'
 import { Host } from '@/web/background/IPC'
 
 export default defineComponent({
   name: 'settings.debug',
+  components: { UiCheckbox },
   props: configProp(),
   setup (props) {
     const { t } = useI18n()

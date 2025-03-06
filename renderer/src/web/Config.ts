@@ -6,6 +6,7 @@ import type * as widget from './overlay/widgets'
 import type { StashSearchWidget } from './stash-search/widget'
 import type { ItemCheckWidget } from './item-check/widget'
 import type { ItemSearchWidget } from './item-search/widget'
+import { registry as widgetRegistry } from './overlay/widget-registry.js'
 
 const _config = shallowRef<Config | null>(null)
 let _lastSavedConfig: Config | null = null
@@ -120,7 +121,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 16,
+  configVersion: 17,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -160,168 +161,19 @@ export const defaultConfig = (): Config => ({
   language: 'en',
   realm: 'pc-ggg',
   fontSize: 16,
-  widgets: [
-    // --- REQUIRED ---
-    {
-      wmId: 1,
-      wmType: 'menu',
-      wmTitle: '',
-      wmWants: 'show',
-      wmZorder: 1,
-      wmFlags: ['invisible-on-blur', 'skip-menu'],
-      anchor: {
-        pos: 'tl',
-        x: 5,
-        y: 5
-      },
-      alwaysShow: false
-    } as widget.WidgetMenu,
-    {
-      wmId: 2,
-      wmType: 'price-check',
-      wmTitle: '',
-      wmWants: 'hide',
-      wmZorder: 'exclusive',
-      wmFlags: ['hide-on-blur', 'skip-menu'],
-      showRateLimitState: false,
-      apiLatencySeconds: 2,
-      collapseListings: 'api',
-      smartInitialSearch: true,
-      lockedInitialSearch: true,
-      activateStockFilter: false,
-      builtinBrowser: false,
-      hotkey: 'D',
-      hotkeyHold: 'Ctrl',
-      hotkeyLocked: 'Ctrl + Alt + D',
-      showSeller: false,
-      searchStatRange: 10,
-      showCursor: true,
-      requestPricePrediction: false,
-      rememberCurrency: false
-    } as widget.PriceCheckWidget,
-    {
-      wmId: 3,
-      wmType: 'item-check',
-      wmTitle: '',
-      wmWants: 'hide',
-      wmZorder: 'exclusive',
-      wmFlags: ['hide-on-blur', 'skip-menu'],
-      hotkey: null,
-      wikiKey: null,
-      poedbKey: null,
-      craftOfExileKey: null,
-      stashSearchKey: null,
-      maps: {
-        profile: 1,
-        showNewStats: false,
-        selectedStats: [
-          {
-            matcher: '#% maximum Player Resistances',
-            decision: 'w--'
-          },
-          {
-            matcher: 'Monsters reflect #% of Physical Damage',
-            decision: 'd--'
-          },
-          {
-            matcher: 'Monsters reflect #% of Elemental Damage',
-            decision: 'd--'
-          },
-          {
-            matcher: 'Area contains two Unique Bosses',
-            decision: 'g--'
-          }
-        ]
-      }
-    } as ItemCheckWidget,
-    {
-      wmId: 4,
-      wmType: 'delve-grid',
-      wmTitle: '',
-      wmWants: 'hide',
-      wmZorder: 4,
-      wmFlags: ['hide-on-focus', 'skip-menu'],
-      toggleKey: null
-    } as widget.DelveGridWidget,
-    {
-      wmId: 5,
-      wmType: 'settings',
-      wmTitle: '',
-      wmWants: 'hide',
-      wmZorder: 'exclusive',
-      wmFlags: ['invisible-on-blur', 'ignore-ui-visibility']
-    },
-    {
-      wmId: 6,
-      wmType: 'item-search',
-      wmTitle: '',
-      wmWants: 'hide',
-      wmZorder: 6,
-      wmFlags: ['invisible-on-blur'],
-      anchor: {
-        pos: 'tl',
-        x: 10,
-        y: 20
-      }
-    } as ItemSearchWidget,
-    // --- DEFAULT ---
-    {
-      wmId: 101,
-      wmType: 'stash-search',
-      wmTitle: 'Map rolling',
-      wmWants: 'hide',
-      wmZorder: 101,
-      wmFlags: ['invisible-on-blur'],
-      anchor: {
-        pos: 'tl',
-        x: 35,
-        y: 46
-      },
-      entries: [
-        { id: 1, name: '', text: '"Pack Size: +3"', hotkey: null },
-        { id: 2, name: '', text: 'Reflect', hotkey: null },
-        { id: 3, name: '', text: '"Cannot Leech Life"', hotkey: null },
-        { id: 4, name: '', text: '"Cannot Leech Mana"', hotkey: null }
-      ]
-    } as StashSearchWidget,
-    {
-      wmId: 102,
-      wmType: 'stash-search',
-      wmTitle: 'Dump sorting',
-      wmWants: 'hide',
-      wmZorder: 102,
-      wmFlags: ['invisible-on-blur'],
-      anchor: {
-        pos: 'tl',
-        x: 34,
-        y: 56
-      },
-      entries: [
-        { id: 1, name: '', text: 'Currency', hotkey: null },
-        { id: 2, name: '', text: '"Divination Card"', hotkey: null },
-        { id: 3, name: '', text: 'Fossil', hotkey: null },
-        { id: 4, name: '', text: '"Map Tier"', hotkey: null },
-        { id: 5, name: '', text: '"Map Device" "Rarity: Normal"', hotkey: null },
-        { id: 6, name: '', text: 'Tane Laboratory', hotkey: null }
-      ]
-    } as StashSearchWidget,
-    {
-      wmId: 103,
-      wmType: 'image-strip',
-      wmTitle: 'Cheat sheets',
-      wmWants: 'hide',
-      wmZorder: 103,
-      wmFlags: ['invisible-on-blur'],
-      anchor: {
-        pos: 'tc',
-        x: 50,
-        y: 10
-      },
-      images: [
-        { id: 1, url: 'syndicate.jpg' }
-      ]
-    } as widget.ImageStripWidget
-  ]
+  widgets: widgetRegistry.widgets.reduce<widget.Widget[]>((widgets, { widget }) => {
+    const res: widget.Widget[] = []
+    if (widget.instances === 'single') {
+      res.push(widget.initInstance!())
+    } else if (widget.instances === 'multi' && widget.defaultInstances != null) {
+      res.push(...widget.defaultInstances())
+    }
+    for (const config of res) {
+      config.wmId = widgets.length + 1
+      widgets.push(config)
+    }
+    return widgets
+  }, [])
 })
 
 function upgradeConfig (_config: Config): Config {
@@ -545,6 +397,30 @@ function upgradeConfig (_config: Config): Config {
     if (widget.wmType === 'stash-search') {
       (widget as StashSearchWidget).enableHotkeys ??= true
     }
+  }
+
+  if (config.configVersion < 17) {
+    for (const widget of config.widgets) {
+      for (let i = 0; i < widget.wmFlags.length; ++i) {
+        if (widget.wmFlags[i] === 'skip-menu') {
+          widget.wmFlags[i] = 'menu::skip'
+        }
+      }
+    }
+
+    const itemSearch = config.widgets.find(w => w.wmType === 'item-search') as widget.Widget
+    itemSearch.wmTitle = '{icon=fa-search}'
+    const settings = config.widgets.find(w => w.wmType === 'settings') as widget.Widget
+    settings.wmTitle = '{icon=fa-cog}'
+
+    // make sure icon for settings comes first in the widget menu
+    config.widgets.sort((a, b) => {
+      if (a.wmType === 'settings') return -1
+      if (b.wmType === 'settings') return 1
+      return 0
+    })
+
+    config.configVersion = 17
   }
 
   return config as unknown as Config

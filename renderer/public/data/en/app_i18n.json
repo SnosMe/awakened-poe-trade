@@ -133,7 +133,8 @@
     "accessory_trinket": "Trinket",
     "sanctum_relic": "Sanctum Relic",
     "tincture": "Tincture",
-    "azmeri_charm": "Charm"
+    "azmeri_charm": "Charm",
+    "idol": "Idol"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",

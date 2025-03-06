@@ -9,13 +9,49 @@
   </Widget>
 </template>
 
+<script lang="ts">
+import type { WidgetSpec } from '../overlay/interfaces'
+import type { ItemCheckWidget } from './widget.js'
+
+export default {
+  widget: {
+    type: 'item-check',
+    instances: 'single',
+    initInstance: (): ItemCheckWidget => {
+      return {
+        wmId: 0,
+        wmType: 'item-check',
+        wmTitle: '',
+        wmWants: 'hide',
+        wmZorder: 'exclusive',
+        wmFlags: ['hide-on-blur', 'menu::skip'],
+        hotkey: null,
+        wikiKey: null,
+        poedbKey: null,
+        craftOfExileKey: null,
+        stashSearchKey: null,
+        maps: {
+          profile: 1,
+          showNewStats: false,
+          selectedStats: [
+            { matcher: '#% maximum Player Resistances', decision: 'w--' },
+            { matcher: 'Monsters reflect #% of Physical Damage', decision: 'd--' },
+            { matcher: 'Monsters reflect #% of Elemental Damage', decision: 'd--' },
+            { matcher: 'Area contains two Unique Bosses', decision: 'g--' }
+          ]
+        }
+      }
+    }
+  } satisfies WidgetSpec
+}
+</script>
+
 <script setup lang="ts">
 import { computed, inject, ref } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
 import { ItemCategory, ItemRarity, parseClipboard, ParsedItem } from '@/parser'
 import { registerActions } from './hotkeyable-actions'
 import type { WidgetManager } from '../overlay/interfaces'
-import type { ItemCheckWidget } from './widget.js'
 
 import Widget from '../overlay/Widget.vue'
 import MapCheck from '../map-check/MapCheck.vue'

@@ -18,15 +18,71 @@
   </Widget>
 </template>
 
+<script lang="ts">
+import type { WidgetSpec } from '../overlay/interfaces.js'
+import type { StashSearchWidget } from './widget.js'
+
+export default {
+  widget: {
+    type: 'stash-search',
+    instances: 'multi',
+    trNameKey: 'stash_search.name',
+    defaultInstances: (): StashSearchWidget[] => {
+      return [{
+        wmId: 0,
+        wmType: 'stash-search',
+        wmTitle: 'Map rolling',
+        wmWants: 'hide',
+        wmZorder: null,
+        wmFlags: ['invisible-on-blur'],
+        anchor: {
+          pos: 'tl',
+          x: 35,
+          y: 46
+        },
+        enableHotkeys: true,
+        entries: [
+          { id: 1, name: '', text: '"Pack Size: +3"', hotkey: null },
+          { id: 2, name: '', text: 'Reflect', hotkey: null },
+          { id: 3, name: '', text: '"Cannot Leech Life"', hotkey: null },
+          { id: 4, name: '', text: '"Cannot Leech Mana"', hotkey: null }
+        ]
+      }, {
+        wmId: 0,
+        wmType: 'stash-search',
+        wmTitle: 'Dump sorting',
+        wmWants: 'hide',
+        wmZorder: null,
+        wmFlags: ['invisible-on-blur'],
+        anchor: {
+          pos: 'tl',
+          x: 34,
+          y: 56
+        },
+        enableHotkeys: true,
+        entries: [
+          { id: 1, name: '', text: 'Currency', hotkey: null },
+          { id: 2, name: '', text: '"Divination Card"', hotkey: null },
+          { id: 3, name: '', text: 'Fossil', hotkey: null },
+          { id: 4, name: '', text: '"Map Tier"', hotkey: null },
+          { id: 5, name: '', text: '"Map Device" "Rarity: Normal"', hotkey: null },
+          { id: 6, name: '', text: 'Tane Laboratory', hotkey: null }
+        ]
+      }]
+    }
+  } satisfies WidgetSpec
+}
+</script>
+
 <script setup lang="ts">
 import { inject, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { MainProcess } from '@/web/background/IPC'
 import { pushHostConfig } from '@/web/Config'
 import type { WidgetManager } from '../overlay/interfaces.js'
-import type { StashSearchWidget } from './widget.js'
 
 import Widget from '../overlay/Widget.vue'
+import UiToggle from '@/web/ui/UiToggle.vue'
 
 const props = defineProps<{
   config: StashSearchWidget
