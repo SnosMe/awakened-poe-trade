@@ -498,6 +498,7 @@
   {
     "query": [
       "ITEM::Ancient Orb",
+      "ITEM::Ancient Shard",
       "ITEM::Astragali",
       "ITEM::Voidborn Reliquary Key"
     ],
@@ -550,7 +551,9 @@
       "ITEM::Eldritch Chaos Orb",
       "ITEM::Eldritch Exalted Orb",
       "ITEM::Orb of Annulment",
+      "ITEM::Annulment Shard",
       "ITEM::Exalted Orb",
+      "ITEM::Exalted Shard",
       "ITEM::Veiled Orb"
     ],
     "items": []
@@ -660,6 +663,8 @@
     "query": [
       "ITEM::Orb of Fusing",
       "ITEM::Omen of Connections",
+      "ITEM::Jeweller's Orb",
+      "ITEM::Omen of the Jeweller",
       "ITEM::Bestiary Scarab of the Shadowed Crow",
       "CAPTURED_BEAST::Black Mórrigan",
       "CAPTURED_BEAST::Craicic Sand Spitter"
@@ -1282,5 +1287,43 @@
       "UNIQUE::The Night Lamp // Relic",
       "UNIQUE::The Broken Censer // Relic"
     ]
+  },
+  {
+    "query": [
+      "ITEM::Harbinger's Orb",
+      "ITEM::Harbinger's Shard"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Ritual Vessel",
+      "ITEM::Ritual Splinter"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Orb of Alteration",
+      "ITEM::Orb of Augmentation",
+      "ITEM::Orb of Transmutation"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Orb of Unmaking",
+      "ITEM::Orb of Regret",
+      "ITEM::Orb of Scouring",
+      "ITEM::Orb of Chance"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Blacksmith's Whetstone",
+      "ITEM::Armourer's Scrap"
+    ],
+    "items": []
   }
 ]
