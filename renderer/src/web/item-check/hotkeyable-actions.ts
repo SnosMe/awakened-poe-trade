@@ -30,7 +30,7 @@ export function openPoedb (item: ParsedItem) {
 }
 export function openCoE (item: ParsedItem) {
   const encodedClipboard = encodeURIComponent(item.rawText)
-  window.open(`https://craftofexile.com/?eimport=${encodedClipboard}`)
+  window.open(`https://craftofexile.com/?game=poe1&eimport=${encodedClipboard}`)
 }
 
 export function findSimilarItems (item: ParsedItem) {
