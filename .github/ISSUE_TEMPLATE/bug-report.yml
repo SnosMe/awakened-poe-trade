@@ -56,6 +56,12 @@ body:
     validations:
       required: true
   - type: textarea
+    id: item
+    attributes:
+      label: Item Copy text
+      description: If your bug relates in ANY way to an item, copy the item's text and paste it here. You can do so with `ctrl + alt + c` when hovering over the item. 
+      render: shell
+  - type: textarea
     id: logs
     attributes:
       label: Relevant log output
