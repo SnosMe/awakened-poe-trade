@@ -8,7 +8,7 @@ All widgets shown in the overlay when pressing (`shift + space`) can be moved, h
 
 To move a widget, hover over it and click the `Move` button that appears.
 
-![Move widget](/reference-images/StopWatchMove.png)
+![Move widget](/reference-images/StopwatchMove.png)
 
 After doing so, click and drag the white box to move the widget, hitting `Move` again to exit the placement mode.
 
@@ -36,4 +36,4 @@ The widget will then be hidden(minimized) and can be shown again by clicking the
 
 To delete a widget, hover over it then click & hold the `Delete` button that appears. This will remove the widget **AND remove any associated keybinds or settings**.
 
-![Delete Stopwatch](/reference-images/StopWatchDelete.png)
+![Delete Stopwatch](/reference-images/StopwatchDelete.png)
