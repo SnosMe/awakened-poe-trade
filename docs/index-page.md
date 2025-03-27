@@ -40,7 +40,7 @@ title: Index Page
 
 ## O
 
-- [ORC](/orc-guide.md)
+- [ORC](/ocr-guide.md)
 
 ## P
 
