@@ -9,7 +9,7 @@ This guide will help you to setup and perform OCR using Awakened PoE Trade.
 1. Download a 6MB archive with OCR files from [here](https://github.com/SnosMe/awakened-poe-trade/releases/download/v3.20.10007/cv-ocr.zip).
 
 2. Open the folder with configuration file.
-   ![](https://i.imgur.com/z5WI9Fx.png)
+   ![](/reference-images/toolbar-config.png)
 
 3. Extract "cv-ocr" folder, inside the archive, into it.\
    You should have the following structure:

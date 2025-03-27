@@ -8,7 +8,7 @@ If you don't see any stats, or only see basic item properties on
 weapons/armour, then it means that the tool receives from the game
 item text without any mods.
 
-![](https://i.imgur.com/2mOkMLL.png)
+![Example with no stats](/reference-images/no-stats.png)
 
 Make sure to check the [logs](/faq) first.
 - Maybe you've bound an unsupported key for "Advanced Descriptions".

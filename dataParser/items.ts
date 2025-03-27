@@ -121,6 +121,8 @@ const ITEM_CATEGORY = new Map([
   ["Crossbow", { name: "Crossbow", craftable: true }],
   ["TrapTool", { name: "Trap Tool", craftable: true }],
   ["Focus", { name: "Focus", craftable: true }],
+  ["Spear", { name: "Spear", craftable: true }],
+  ["Flail", { name: "Flail", craftable: true }],
 ]);
 const ArmourTypes = Tables.ArmourTypes();
 function getArmourField(baseRid: number): BaseType["armour"] {

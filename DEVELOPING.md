@@ -43,10 +43,11 @@ npm run make-index-files
 npm run build
 
 cd ../main
+npm install
 npm run build
 # We want to sign with a distribution certificate to ensure other users can
 # install without errors
-CSC_NAME="Certificate name in Keychain" yarn package
+CSC_NAME="Certificate name in Keychain" npm run package
 ```
 
 # How to release a build

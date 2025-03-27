@@ -192,3 +192,6 @@ vendor/json-api/de/*.json
 vendor/json-api/es/*.json
 
 EXPORT/files/**/*.csd
+
+data/itemImageCache.json
+data/itemImageCache*.json

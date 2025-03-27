@@ -365,8 +365,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_809229260",
-                    "explicit.stat_3484657501"
+                    "explicit.stat_3484657501",
+                    "explicit.stat_809229260"
                 ],
                 "implicit": [
                     "implicit.stat_809229260"
@@ -387,8 +387,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2144192055",
-                    "explicit.stat_53045048"
+                    "explicit.stat_53045048",
+                    "explicit.stat_2144192055"
                 ]
             }
         }
@@ -406,8 +406,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_3489782002",
-                    "explicit.stat_4052037485"
+                    "explicit.stat_4052037485",
+                    "explicit.stat_3489782002"
                 ],
                 "implicit": [
                     "implicit.stat_3489782002"
@@ -462,8 +462,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_124859000",
-                    "explicit.stat_2106365538"
+                    "explicit.stat_2106365538",
+                    "explicit.stat_124859000"
                 ],
                 "enchant": [
                     "enchant.stat_2106365538",
@@ -1626,8 +1626,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_210067635",
-                    "explicit.stat_681332047"
+                    "explicit.stat_681332047",
+                    "explicit.stat_210067635"
                 ],
                 "implicit": [
                     "implicit.stat_681332047"
@@ -1750,8 +1750,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_691932474",
-                    "explicit.stat_803737631"
+                    "explicit.stat_803737631",
+                    "explicit.stat_691932474"
                 ],
                 "implicit": [
                     "implicit.stat_803737631"
@@ -2092,8 +2092,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_4147897060",
-                    "explicit.stat_2481353198"
+                    "explicit.stat_2481353198",
+                    "explicit.stat_4147897060"
                 ],
                 "enchant": [
                     "enchant.stat_2481353198"
@@ -2745,8 +2745,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1416292992",
-                    "explicit.stat_554899692"
+                    "explicit.stat_554899692",
+                    "explicit.stat_1416292992"
                 ]
             }
         }
@@ -3062,23 +3062,16 @@
         "id": "presence_area_+%",
         "matchers": [
             {
-                "string": "存在下における効果範囲が#%増加する",
+                "string": "存在下の効果範囲が#%増加する",
                 "negate": false
             },
             {
-                "string": "存在下における効果範囲が#%減少する",
+                "string": "存在下の効果範囲が#%減少する",
                 "negate": true
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_101878827"
-                ],
-                "enchant": [
-                    "enchant.stat_101878827"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_132": {
@@ -3373,8 +3366,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1256719186",
-                    "explicit.stat_2541588185"
+                    "explicit.stat_2541588185",
+                    "explicit.stat_1256719186"
                 ]
             }
         }
@@ -3987,14 +3980,6 @@
         "id": "base_slow_potency_+%",
         "matchers": [
             {
-                "string": "プレイヤーに対する減速のデバフポテンシャルが#%増加する",
-                "negate": false
-            },
-            {
-                "string": "プレイヤーに対する減速のデバフポテンシャルが#%減少する",
-                "negate": true
-            },
-            {
                 "string": "プレイヤーに対する減速のポテンシャルが#%増加する",
                 "negate": false
             },
@@ -4005,18 +3990,6 @@
         ],
         "trade": {
             "ids": {
-                "explicit": [
-                    "explicit.stat_924253255"
-                ],
-                "implicit": [
-                    "implicit.stat_924253255"
-                ],
-                "enchant": [
-                    "enchant.stat_924253255"
-                ],
-                "rune": [
-                    "rune.stat_924253255"
-                ],
                 "sanctum": [
                     "sanctum.stat_978111083"
                 ]
@@ -4194,16 +4167,12 @@
         "id": "melee_splash",
         "matchers": [
             {
-                "string": "ストライクは周囲の対象にスプラッシュダメージを与える",
+                "string": "ストライクスキルは周囲の対象にスプラッシュダメージを与える",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "implicit": [
-                    "implicit.stat_3675300253"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_185": {
@@ -4345,8 +4314,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_795138349",
-                    "explicit.stat_3885634897"
+                    "explicit.stat_3885634897",
+                    "explicit.stat_795138349"
                 ],
                 "enchant": [
                     "enchant.stat_3885634897"
@@ -5865,7 +5834,7 @@
                 "negate": false
             },
             {
-                "string": "敵キル時にライフの#%を失う",
+                "string": "敵を倒した時にライフの#%を失う",
                 "negate": true
             }
         ],
@@ -6032,8 +6001,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1604736568",
-                    "explicit.stat_1030153674"
+                    "explicit.stat_1030153674",
+                    "explicit.stat_1604736568"
                 ],
                 "rune": [
                     "rune.stat_1030153674"
@@ -9364,16 +9333,12 @@
         "id": "base_leech_is_instant_on_critical",
         "matchers": [
             {
-                "string": "クリティカルヒットによるリーチは即時になる",
+                "string": "クリティカルストライクによるリーチは即時になる",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3389184522"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_437": {
@@ -9821,11 +9786,11 @@
                 "negate": true
             },
             {
-                "string": "#% increased Experience gain in your Maps",
+                "string": "マップでの獲得経験値が#%増加する",
                 "negate": false
             },
             {
-                "string": "#% reduced Experience gain in your Maps",
+                "string": "マップでの獲得経験値が#%減少する",
                 "negate": true
             }
         ],
@@ -10183,16 +10148,12 @@
         "id": "total_base_life_regeneration_rate_per_minute_%_granted_to_allies_in_your_presence",
         "matchers": [
             {
-                "string": "プレイヤーのライフ自動回復の#%が存在下にいる味方に付与される",
+                "string": "プレイヤーの基礎ライフ自動回復の#%が存在下にいる味方に付与される",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_4287671144"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_480": {
@@ -10273,16 +10234,12 @@
         "id": "your_shield_skills_are_disabled",
         "matchers": [
             {
-                "string": "盾スキルを使用できない",
+                "string": "シールドスキルを使用できない",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_65135897"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_485": {
@@ -10344,21 +10301,17 @@
         }
     },
     "merged_488": {
-        "ref": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude",
+        "ref": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude or Freeze Buildup",
         "better": 1,
         "id": "unique_cold_damage_ignites",
         "matchers": [
             {
-                "string": "ヒットによる冷気ダメージが冷却の強度の代わりに発火確率およびその強度に寄与する",
+                "string": "ヒットによる冷気ダメージが冷却強度および凍結蓄積の代わりに発火確率およびその強度に寄与する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1261612903"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_489": {
@@ -10439,16 +10392,12 @@
         "id": "critical_strike_multiplier_is_300",
         "matchers": [
             {
-                "string": "クリティカルダメージボーナスが300%になる",
+                "string": "クリティカルダメージ倍率が300%になる",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_824024007"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_494": {
@@ -10544,16 +10493,12 @@
         "id": "life_leeched_from_hits_also_leeches_same_amount_to_allies_in_presence",
         "matchers": [
             {
-                "string": "プレイヤーがヒットによりライフをライフリーチした時に、プレイヤーの存在下にいる見方も同量のライフをリーチする",
+                "string": "プレイヤーがヒットによりライフをライフリーチした時に、プレイヤーの存在下にいる味方も同量のライフをリーチする",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3605721598"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_500": {
@@ -10562,16 +10507,12 @@
         "id": "maximum_random_movement_velocity_+%_when_hit",
         "matchers": [
             {
-                "string": "ヒットを受けた時に再度ヒットを受けるまで、移動スピードが0%から最大#%増加した値までのランダムな数値になる",
+                "string": "ヒットを受けた時に再度ヒットを受けるまで、移動スピードが最大#%増加した値までのランダムな数値になる",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_796381300"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_501": {
@@ -10580,16 +10521,12 @@
         "id": "projectile_number_to_split",
         "matchers": [
             {
-                "string": "投射物は#体の対象に対して分裂する",
+                "string": "投射物は#体の対象に対して分岐する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3464380325"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_502": {
@@ -11302,16 +11239,12 @@
         "id": "onslaught_buff_duration_on_kill_ms",
         "matchers": [
             {
-                "string": "敵キル時にプレイヤーは猛攻を#秒間獲得する",
+                "string": "敵を倒した時にプレイヤーは猛攻を#秒間獲得する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1195849808"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_545": {
@@ -11338,16 +11271,12 @@
         "id": "always_pierce_burning_enemies",
         "matchers": [
             {
-                "string": "投射物は発火状態の敵を全て貫通する",
+                "string": "投射物は燃焼状態の敵を全て貫通する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2214228141"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_547": {
@@ -12092,16 +12021,12 @@
         "id": "local_display_triggers_level_x_lightning_bolt_on_critical_strike",
         "matchers": [
             {
-                "string": "Trigger Greater Lightning Bolt Skill on Critical Hit",
+                "string": "クリティカルヒット時にグレーターライトニングボルトをトリガーする",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_704919631"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_589": {
@@ -13308,9 +13233,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_2541588185",
                     "explicit.stat_1256719186",
-                    "explicit.stat_3969608626",
-                    "explicit.stat_2541588185"
+                    "explicit.stat_3969608626"
                 ]
             }
         }
@@ -13671,16 +13596,12 @@
         "id": "ailment_threshold_+",
         "matchers": [
             {
-                "string": "# to Ailment Threshold",
+                "string": "状態異常閾値 #",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1488650448"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_672": {
@@ -14054,16 +13975,12 @@
         "id": "non_skill_base_elemental_damage_%_to_gain_as_fire",
         "matchers": [
             {
-                "string": "Gain #% of Elemental Damage as Extra Fire Damage",
+                "string": "獲得する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_701564564"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_693": {
@@ -14072,16 +13989,12 @@
         "id": "non_skill_base_elemental_damage_%_to_gain_as_cold",
         "matchers": [
             {
-                "string": "Gain #% of Elemental Damage as Extra Cold Damage",
+                "string": "獲得する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1158842087"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_694": {
@@ -14090,16 +14003,12 @@
         "id": "non_skill_base_elemental_damage_%_to_gain_as_lightning",
         "matchers": [
             {
-                "string": "Gain #% of Elemental Damage Damage as Extra Lightning Damage",
+                "string": "獲得する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3550887155"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_695": {
@@ -14144,7 +14053,7 @@
         "id": "demigods_virtue",
         "matchers": [
             {
-                "string": "Virtuous",
+                "string": "美徳",
                 "negate": false
             }
         ],
@@ -14356,11 +14265,11 @@
                 "negate": true
             },
             {
-                "string": "#% increased Gold found in your Maps",
+                "string": "マップで見つかるゴールドの量が#%増加する",
                 "negate": false
             },
             {
-                "string": "#% reduced Gold found in your Maps",
+                "string": "マップで見つかるゴールドの量が#%減少する",
                 "negate": true
             }
         ],
@@ -15031,8 +14940,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2306522833",
-                    "explicit.stat_1913583994"
+                    "explicit.stat_1913583994",
+                    "explicit.stat_2306522833"
                 ]
             }
         },
@@ -15064,16 +14973,12 @@
         "id": "mapmonstercritincrease_0",
         "matchers": [
             {
-                "string": "モンスターのクリティカルダメージボーナス #%",
+                "string": "モンスターのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_57326096"
-                ]
-            }
+            "ids": null
         },
         "fromAreaMods": true
     },
@@ -15472,9 +15377,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_4103440490",
                     "explicit.stat_2326202293",
-                    "explicit.stat_558910024",
-                    "explicit.stat_4103440490"
+                    "explicit.stat_558910024"
                 ]
             }
         },
@@ -15550,9 +15455,9 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2390685262",
                     "explicit.stat_349586058",
-                    "explicit.stat_2306002879"
+                    "explicit.stat_2306002879",
+                    "explicit.stat_2390685262"
                 ],
                 "enchant": [
                     "enchant.stat_2306002879"
@@ -15857,16 +15762,12 @@
         "id": "tower_add_map_bosses_to_X_maps",
         "matchers": [
             {
-                "string": "Up to # Maps in Range contain Bosses",
+                "string": "範囲内の最大#個のマップにボスが出現する",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "implicit": [
-                    "implicit.stat_3376302538"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_778": {
@@ -15924,34 +15825,34 @@
                 "negate": false
             },
             {
-                "string": "Rare Monsters in your Maps have a #% chance to have an additional Modifier",
+                "string": "マップに出現するレアモンスターは#%の確率で追加のモッドを1個持つ",
                 "negate": false
             },
             {
-                "string": "Rare Monsters in your Maps have an additional Modifier",
+                "string": "マップに出現するレアモンスターは追加のモッドを1個持つ",
                 "negate": false,
                 "value": 100
             },
             {
-                "string": "Rare Monsters in your Maps have an additional Modifier and a #% chance to have another additional Modifier",
+                "string": "マップに出現するレアモンスターは追加のモッドを1個持ち、#%の確率でさらに追加のモッドを1個持つ",
                 "negate": false
             },
             {
-                "string": "Rare Monsters in your Maps have two additional Modifiers",
+                "string": "マップに出現するレアモンスターは追加のモッドを2個持つ",
                 "negate": false,
                 "value": 200
             },
             {
-                "string": "Rare Monsters in your Maps have two additional Modifiers and a #% chance to have another additional Modifier",
+                "string": "マップに出現するレアモンスターは追加のモッドを2個持ち、#%の確率でさらに追加のモッドを1個持つ",
                 "negate": false
             },
             {
-                "string": "Rare Monsters in your Maps have three additional Modifiers",
+                "string": "マップに出現するレアモンスターは追加のモッドを3個持つ",
                 "negate": false,
                 "value": 300
             },
             {
-                "string": "Rare Monsters in your Maps have three additional Modifiers and a #% chance to have another additional Modifier",
+                "string": "マップに出現するレアモンスターは追加のモッドを3個持ち、#%の確率でさらに追加のモッドを1個持つ",
                 "negate": false
             }
         ],
@@ -15972,7 +15873,7 @@
         "id": "map_shrine_chance_%",
         "matchers": [
             {
-                "string": "Area has #% chance to contain a Shrine",
+                "string": "エリアにシュラインが出現する確率 #%",
                 "negate": false
             },
             {
@@ -15981,11 +15882,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2571125745"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_781": {
@@ -15994,7 +15891,7 @@
         "id": "map_strongbox_chance_%",
         "matchers": [
             {
-                "string": "Area has #% chance to contain a Strongbox",
+                "string": "エリアにストロングボックスが出現する確率 #%",
                 "negate": false
             },
             {
@@ -16003,11 +15900,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2388936716"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_782": {
@@ -16016,7 +15909,7 @@
         "id": "map_monolith_chance_%",
         "matchers": [
             {
-                "string": "Area has #% chance to contain an Essence",
+                "string": "エリアにエッセンスが出現する確率 #%",
                 "negate": false
             },
             {
@@ -16025,11 +15918,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_4098286334"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_783": {
@@ -16062,11 +15951,11 @@
         "id": "map_breach_number_of_magic_packs_+%",
         "matchers": [
             {
-                "string": "Breaches in Area spawn #% increased Magic Monsters",
+                "string": "エリアのブリーチがスポーンさせるマジックモンスターが#%増加する",
                 "negate": false
             },
             {
-                "string": "Breaches in Area spawn #% reduced Magic Monsters",
+                "string": "エリアのブリーチがスポーンさせるマジックモンスターが#%減少する",
                 "negate": true
             },
             {
@@ -16079,11 +15968,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1090596078"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_785": {
@@ -16092,12 +15977,12 @@
         "id": "map_breach_X_additional_rare_monsters",
         "matchers": [
             {
-                "string": "Breaches in Area spawn an additional Rare Monster",
+                "string": "エリアのブリーチはレアモンスターを追加で1体スポーンさせる",
                 "negate": false,
                 "value": 1
             },
             {
-                "string": "Breaches in Area spawn # additional Rare Monsters",
+                "string": "エリアのブリーチはレアモンスターを追加で#体スポーンさせる",
                 "negate": false
             },
             {
@@ -16111,11 +15996,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1653625239"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_786": {
@@ -16174,11 +16055,11 @@
         "id": "map_breach_monster_splinter_quantity_+%",
         "matchers": [
             {
-                "string": "#% increased Quantity of Breach Splinters dropped by Breach Monsters in Area",
+                "string": "エリアのブリーチモンスターがドロップするブリーチの破片の数量が#%増加する",
                 "negate": false
             },
             {
-                "string": "#% reduced Quantity of Breach Splinters dropped by Breach Monsters in Area",
+                "string": "エリアのブリーチモンスターがドロップするブリーチの破片の数量が#%減少する",
                 "negate": true
             },
             {
@@ -16191,11 +16072,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_624534143"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_789": {
@@ -16204,11 +16081,11 @@
         "id": "map_breach_%_chance_for_3_additional_breach",
         "matchers": [
             {
-                "string": "Areas which contain Breaches have #% chance to contain three additional Breaches",
+                "string": "ブリーチの出現するエリアには#%の確率でブリーチが追加で3個出現する",
                 "negate": false
             },
             {
-                "string": "Areas which contain Breaches contain three additional Breaches",
+                "string": "ブリーチの出現するエリアにはブリーチが追加で3個出現する",
                 "negate": false,
                 "value": 100
             },
@@ -16223,11 +16100,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2440265466"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_790": {
@@ -16236,11 +16109,11 @@
         "id": "map_breach_%_chance_for_1_additional_breach",
         "matchers": [
             {
-                "string": "Areas which contain Breaches have #% chance to contain an additional Breach",
+                "string": "ブリーチの出現するエリアには#%の確率でブリーチが追加で1個出現する",
                 "negate": false
             },
             {
-                "string": "Areas which contain Breaches contain an additional Breach",
+                "string": "ブリーチの出現するエリアにはブリーチが追加で1個出現する",
                 "negate": false,
                 "value": 100
             },
@@ -16255,11 +16128,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3049505189"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_791": {
@@ -16309,11 +16178,11 @@
                 "negate": false
             },
             {
-                "string": "マップでは爆発物の設置間隔が#%増加する",
+                "string": "マップでは爆発物の設置距離が#%増加する",
                 "negate": false
             },
             {
-                "string": "マップでは爆発物の設置間隔が#%減少する",
+                "string": "マップでは爆発物の設置距離が#%減少する",
                 "negate": false
             }
         ],
@@ -16404,11 +16273,11 @@
         "id": "map_expedition_rare_monsters_+%",
         "matchers": [
             {
-                "string": "#% increased number of Rare Expedition Monsters in Area",
+                "string": "エリアのレアエクスペディションモンスターの数が#%増加する",
                 "negate": false
             },
             {
-                "string": "#% reduced number of Rare Expedition Monsters in Area",
+                "string": "エリアのレアエクスペディションモンスターの数が#%減少する",
                 "negate": false
             },
             {
@@ -16421,11 +16290,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2694800111"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_797": {
@@ -16434,11 +16299,11 @@
         "id": "map_expedition_relic_mod_effect_+%",
         "matchers": [
             {
-                "string": "#% increased Effect of Remnants in Area",
+                "string": "エリアのレムナントの効果が#%増加する",
                 "negate": false
             },
             {
-                "string": "#% reduced Effect of Remnants in Area",
+                "string": "エリアのレムナントの効果が#%減少する",
                 "negate": false
             },
             {
@@ -16451,11 +16316,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3078574625"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_798": {
@@ -16464,11 +16325,11 @@
         "id": "map_expedition_elite_marker_count_+%",
         "matchers": [
             {
-                "string": "エリアに含まれるルーニックモンスターの目印の数が#%増加する",
+                "string": "エリアに含まれるルークニックモンスターの目印の数が#%増加する",
                 "negate": false
             },
             {
-                "string": "エリアに含まれるルーニックモンスターの目印の数が#%減少する",
+                "string": "エリアに含まれるルークニックモンスターの目印の数が#%減少する",
                 "negate": false
             },
             {
@@ -16481,14 +16342,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1640965354"
-                ],
-                "implicit": [
-                    "implicit.stat_1640965354"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_799": {
@@ -16530,7 +16384,7 @@
         "id": "map_affliction_reward_progress_on_kill_+%",
         "matchers": [
             {
-                "string": "Delirious Monsters Killed in Area provide #% increased Reward Progress",
+                "string": "エリアでキルされたデリリウムモンスターが寄与する報酬の進行が#%増加する",
                 "negate": false
             },
             {
@@ -16539,11 +16393,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3428124128"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_801": {
@@ -16552,7 +16402,7 @@
         "id": "map_affliction_secondary_wave_delay_ms_+",
         "matchers": [
             {
-                "string": "Delirium Fog in Area lasts # additional seconds before dissipating",
+                "string": "エリアのデリリウムの霧は消える前に追加で#秒間持続する",
                 "negate": false
             },
             {
@@ -16561,11 +16411,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1174954559"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_802": {
@@ -16574,11 +16420,11 @@
         "id": "map_affliction_secondary_wave_acceleration_+%",
         "matchers": [
             {
-                "string": "Delirium Fog in Area dissipates #% faster",
+                "string": "エリアのデリリウムの霧は#%速く消える",
                 "negate": false
             },
             {
-                "string": "Delirium Fog in Area dissipates #% slower",
+                "string": "エリアのデリリウムの霧は#%遅く消える",
                 "negate": true
             },
             {
@@ -16591,11 +16437,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3350944114"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_803": {
@@ -16604,11 +16446,11 @@
         "id": "map_affliction_encounter_monster_depth_+%",
         "matchers": [
             {
-                "string": "Delirium in Area increases #% faster with distance from the mirror",
+                "string": "エリアのデリリウムは鏡からの距離が#%速く広がる",
                 "negate": false
             },
             {
-                "string": "Delirium in Area increases #% slower with distance from the mirror",
+                "string": "エリアのデリリウムは鏡からの距離が#%遅く広がる",
                 "negate": false
             },
             {
@@ -16621,11 +16463,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1769611692"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_804": {
@@ -16634,11 +16472,11 @@
         "id": "map_affliction_pack_size_+%",
         "matchers": [
             {
-                "string": "Delirium Monsters in Area have #% increased Pack Size",
+                "string": "エリアのデリリウムモンスターはパックサイズが#%増加する",
                 "negate": false
             },
             {
-                "string": "Delirium Monsters in Area have #% reduced Pack Size",
+                "string": "エリアのデリリウムモンスターはパックサイズが#%減少する",
                 "negate": true
             },
             {
@@ -16651,11 +16489,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3465791711"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_805": {
@@ -16664,11 +16498,11 @@
         "id": "map_delirium_doodads_+%_final",
         "matchers": [
             {
-                "string": "Delirium Fog in Area spawns #% increased Fracturing Mirrors",
+                "string": "エリアのデリリウムエンカウンターがスポーンする割れる鏡の量が#%増加する",
                 "negate": false
             },
             {
-                "string": "Delirium Fog in Area spawns #% reduced Fracturing Mirrors",
+                "string": "エリアのデリリウムエンカウンターがスポーンする割れる鏡の量が#%減少する",
                 "negate": true
             },
             {
@@ -16681,11 +16515,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_551040294"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_806": {
@@ -16694,12 +16524,12 @@
         "id": "map_killing_rare_monsters_pauses_delirium_mirror_timer_for_x_seconds",
         "matchers": [
             {
-                "string": "Slaying Rare Monsters in Area pauses the Delirium Mirror Timer for 1 second",
+                "string": "エリアでレアモンスターを倒すとデリリウムの鏡のタイマーが1秒間停止する",
                 "negate": false,
                 "value": 1
             },
             {
-                "string": "Slaying Rare Monsters in Area pauses the Delirium Mirror Timer for # seconds",
+                "string": "エリアでレアモンスターを倒すとデリリウムの鏡のタイマーが#秒間停止する",
                 "negate": false
             },
             {
@@ -16713,11 +16543,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2323782229"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_807": {
@@ -16726,11 +16552,11 @@
         "id": "map_affliction_encounter_boss_chance_+%",
         "matchers": [
             {
-                "string": "Delirium Encounters in Area are #% more likely to spawn Unique Bosses",
+                "string": "エリアのデリリウムエンカウンターがユニークボスをスポーンさせる確率が#%上昇する",
                 "negate": false
             },
             {
-                "string": "Delirium Encounters in Area are #% less likely to spawn Unique Bosses",
+                "string": "エリアのデリリウムエンカウンターがユニークボスをスポーンさせる確率が#%低下する",
                 "negate": true
             },
             {
@@ -16743,11 +16569,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3962960008"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_808": {
@@ -16756,7 +16578,7 @@
         "id": "map_delirium_additional_reward_type_chance_%",
         "matchers": [
             {
-                "string": "Delirium Encounters in Area have #% chance to generate an additional Reward type",
+                "string": "エリアのデリリウムエンカウンターは#%の確率で報酬タイプを追加で1種類生成する",
                 "negate": false
             },
             {
@@ -16765,11 +16587,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1770833858"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_809": {
@@ -16808,11 +16626,11 @@
         "id": "map_ritual_rewards_reroll_cost_+%_final",
         "matchers": [
             {
-                "string": "Rerolling Favours at Ritual Altars in Area costs #% increased Tribute",
+                "string": "エリアのリチュアルの祭壇で恩寵のリロールに必要なトリビュートコストが#%増加する",
                 "negate": false
             },
             {
-                "string": "Rerolling Favours at Ritual Altars in Area costs #% reduced Tribute",
+                "string": "エリアのリチュアルの祭壇で恩寵のリロールに必要なトリビュートコストが#%減少する",
                 "negate": true
             },
             {
@@ -16825,11 +16643,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2282052746"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_811": {
@@ -16838,11 +16652,11 @@
         "id": "map_ritual_defer_reward_tribute_cost_+%",
         "matchers": [
             {
-                "string": "Deferring Favours at Ritual Altars in Area costs #% increased Tribute",
+                "string": "エリアのリチュアルの祭壇で恩寵の繰り越しに必要なトリビュートコストが#%増加する",
                 "negate": false
             },
             {
-                "string": "Deferring Favours at Ritual Altars in Area costs #% reduced Tribute",
+                "string": "エリアのリチュアルの祭壇で恩寵の繰り越しに必要なトリビュートコストが#%減少する",
                 "negate": true
             },
             {
@@ -16855,11 +16669,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1345835998"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_812": {
@@ -16868,7 +16678,7 @@
         "id": "map_ritual_deferred_rewards_are_offered_again_+%_sooner",
         "matchers": [
             {
-                "string": "Favours Deferred at Ritual Altars in Area reappear #% sooner",
+                "string": "エリアのリチュアルの祭壇で繰り越した恩寵は#%速く再出現する",
                 "negate": false
             },
             {
@@ -16877,11 +16687,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_28208665"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_813": {
@@ -16922,7 +16728,7 @@
         "id": "map_ritual_offered_rewards_from_rerolls_have_permyriad_chance_to_cost_no_tribute",
         "matchers": [
             {
-                "string": "Favours Rerolled at Ritual Altars in Area have #% chance to cost no Tribute",
+                "string": "エリアのリチュアルの祭壇で恩寵のリロールが#%の確率でトリビュートコストがなくなる",
                 "negate": false
             },
             {
@@ -16931,11 +16737,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_937291386"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_815": {
@@ -16944,11 +16746,11 @@
         "id": "map_ritual_magic_monsters_+%",
         "matchers": [
             {
-                "string": "Revived Monsters from Ritual Altars in Area have #% increased chance to be Magic",
+                "string": "エリアのリチュアルの祭壇で復活したモンスターがマジックになる確率が#%増加する",
                 "negate": false
             },
             {
-                "string": "Revived Monsters from Ritual Altars in Area have #% reduced chance to be Magic",
+                "string": "エリアのリチュアルの祭壇で復活したモンスターがマジックになる確率が#%減少する",
                 "negate": true
             },
             {
@@ -16961,11 +16763,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1031644647"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_816": {
@@ -16974,11 +16772,11 @@
         "id": "map_ritual_rare_monsters_+%",
         "matchers": [
             {
-                "string": "Revived Monsters from Ritual Altars in Area have #% increased chance to be Rare",
+                "string": "エリアのリチュアルの祭壇で復活したモンスターがレアになる確率が#%増加する",
                 "negate": false
             },
             {
-                "string": "Revived Monsters from Ritual Altars in Area have #% reduced chance to be Rare",
+                "string": "エリアのリチュアルの祭壇で復活したモンスターがレアになる確率が#%減少する",
                 "negate": true
             },
             {
@@ -16991,11 +16789,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3979184174"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_817": {
@@ -17004,11 +16798,11 @@
         "id": "map_ritual_omen_chance_+%",
         "matchers": [
             {
-                "string": "Ritual Favours in Area have #% increased chance to contain Omens",
+                "string": "エリアのリチュアルの祭壇の恩寵がお告げを含む確率が#%増加する",
                 "negate": false
             },
             {
-                "string": "Ritual Favours in Area have #% reduced chance to contain Omens",
+                "string": "エリアのリチュアルの祭壇の恩寵がお告げを含む確率が#%減少する",
                 "negate": true
             },
             {
@@ -17021,11 +16815,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_4219853180"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_818": {
@@ -17103,16 +16893,16 @@
         "id": "map_final_boss_map_key_of_at_least_same_tier_as_current_map_drop_chance_%",
         "matchers": [
             {
-                "string": "Map Boss has #% chance to drop a Waystone of the current tier or higher",
+                "string": "マップボスが現在のティアまたはそれより高いティアのウェイストーンをドロップする確率 #%",
+                "negate": false
+            },
+            {
+                "string": "マップボスは#%の確率で現在と同じティアまたはより高いティアのウェイストーンを1個ドロップする",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1314787770"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_822": {
@@ -17143,14 +16933,6 @@
         "id": "map_boss_item_rarity_+%",
         "matchers": [
             {
-                "string": "#% increased Rarity of Items dropped by Map Bosses",
-                "negate": false
-            },
-            {
-                "string": "#% reduced Rarity of Items dropped by Map Bosses",
-                "negate": true
-            },
-            {
                 "string": "マップボスのドロップするアイテムのレアリティが#%増加する",
                 "negate": false
             },
@@ -17160,11 +16942,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_4255069232"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_824": {
@@ -17172,14 +16950,6 @@
         "better": 1,
         "id": "map_boss_dropped_item_quantity_+%",
         "matchers": [
-            {
-                "string": "#% increased Quantity of Items dropped by Map Bosses",
-                "negate": false
-            },
-            {
-                "string": "#% reduced Quantity of Items dropped by Map Bosses",
-                "negate": true
-            },
             {
                 "string": "マップボスのドロップするアイテムの数量が#%増加する",
                 "negate": false
@@ -17190,11 +16960,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3119172063"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_825": {
@@ -18703,7 +18469,7 @@
         "id": "map_monsters_are_hexproof",
         "matchers": [
             {
-                "string": "モンスターはヘックスプルーフになる",
+                "string": "モンスターは呪術無効化を持つ",
                 "negate": false
             }
         ],
@@ -27361,7 +27127,7 @@
         "id": "mace_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "メイスまたはセプターのクリティカルダメージボーナス #%",
+                "string": "メイスまたはセプターのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27375,7 +27141,7 @@
         "id": "axe_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "斧のクリティカルダメージボーナス #%",
+                "string": "斧のクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27389,7 +27155,7 @@
         "id": "sword_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "剣のクリティカルダメージボーナス #%",
+                "string": "剣のクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27417,7 +27183,7 @@
         "id": "claw_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "鉤爪のクリティカルダメージボーナス #%",
+                "string": "鉤爪のクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27445,7 +27211,7 @@
         "id": "wand_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "ワンドのクリティカルダメージボーナス #%",
+                "string": "ワンドのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27703,7 +27469,7 @@
         "id": "global_critical_strike_multiplier_while_dual_wielding_+",
         "matchers": [
             {
-                "string": "二刀流中のクリティカルダメージボーナス #%",
+                "string": "二刀流中のクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27717,7 +27483,7 @@
         "id": "melee_critical_strike_multiplier_+_while_wielding_shield",
         "matchers": [
             {
-                "string": "盾装備中のクリティカルダメージボーナス #%",
+                "string": "盾装備中のクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27731,7 +27497,7 @@
         "id": "mine_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "マインのクリティカルダメージボーナス #%",
+                "string": "マインのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27745,7 +27511,7 @@
         "id": "fire_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "火スキルのクリティカルダメージボーナス #%",
+                "string": "火スキルのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27759,7 +27525,7 @@
         "id": "cold_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "冷気スキルのクリティカルダメージボーナス #%",
+                "string": "冷気スキルのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27773,7 +27539,7 @@
         "id": "lightning_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "雷スキルのクリティカルダメージボーナス #%",
+                "string": "雷スキルのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27787,7 +27553,7 @@
         "id": "elemental_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "元素スキルのクリティカルダメージボーナス #%",
+                "string": "元素スキルのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -27801,7 +27567,7 @@
         "id": "chaos_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "混沌スキルのクリティカルダメージボーナス #%",
+                "string": "混沌スキルのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -28696,7 +28462,7 @@
         "id": "local_display_nearby_allies_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "近くの味方のクリティカルダメージボーナス #%",
+                "string": "近くの味方のクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -28788,7 +28554,7 @@
         "id": "vaal_skill_critical_strike_multiplier_+",
         "matchers": [
             {
-                "string": "ヴァールスキルのクリティカルダメージボーナス #%",
+                "string": "ヴァールスキルのクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -28884,7 +28650,7 @@
         "id": "maximum_life_%_lost_on_kill",
         "matchers": [
             {
-                "string": "敵キル時にライフの#%を失う",
+                "string": "敵を倒した時にライフの#%を失う",
                 "negate": false
             }
         ],
@@ -29509,9 +29275,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_398335579",
                     "explicit.stat_1414945937",
-                    "explicit.stat_4007938693",
-                    "explicit.stat_398335579"
+                    "explicit.stat_4007938693"
                 ]
             }
         }
@@ -31129,7 +30895,7 @@
         "id": "minion_critical_strike_multiplier_+_per_stackable_unique_jewel",
         "matchers": [
             {
-                "string": "グランドスペクトラム1個ごとにミニオンのクリティカルダメージボーナス #",
+                "string": "グランドスペクトラム1個ごとにミニオンのクリティカルダメージ倍率 #",
                 "negate": false
             }
         ],
@@ -31895,7 +31661,7 @@
         "id": "global_critical_strike_mulitplier_+_per_green_socket_on_item",
         "matchers": [
             {
-                "string": "緑ソケット1個ごとにグローバルクリティカルダメージボーナス #%",
+                "string": "緑ソケット1個ごとにグローバルクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -35936,7 +35702,7 @@
         "id": "global_critical_strike_multiplier_+_while_you_have_no_frenzy_charges",
         "matchers": [
             {
-                "string": "フレンジーチャージがない場合にグローバルクリティカルダメージボーナス #%",
+                "string": "フレンジーチャージがない場合にグローバルクリティカルダメージ倍率 #%",
                 "negate": false
             }
         ],
@@ -36219,15 +35985,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_4219583418",
-                    "explicit.stat_1640965354",
-                    "explicit.stat_1539368271"
+                    "explicit.stat_1539368271",
+                    "explicit.stat_4219583418"
                 ],
                 "implicit": [
                     "implicit.stat_1539368271",
-                    "implicit.stat_3051490307",
                     "implicit.stat_4219583418",
-                    "implicit.stat_1640965354"
+                    "implicit.stat_3051490307"
                 ]
             }
         }
@@ -36536,9 +36300,9 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_57434274",
-                    "explicit.stat_3666934677"
+                    "explicit.stat_3666934677",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
                     "enchant.stat_2017682521"
@@ -39506,13 +39270,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39530,13 +39294,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39554,13 +39318,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39578,13 +39342,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -48064,7 +47828,7 @@
         "id": "map_duplicate_essence_monsters_with_shrieking_essence",
         "matchers": [
             {
-                "string": "喚きのエッセンスに閉じ込められたモンスターは解放された時に複製される",
+                "string": "喚きのエッセンスに閉じ込められたモンスターはアンリーシュされた時に複製される",
                 "negate": false
             },
             {
@@ -48488,11 +48252,11 @@
         "id": "map_beyond_portal_chance_+%",
         "matchers": [
             {
-                "string": "敵キル時に融合するコラプションをスポーンする確率が#%増加する",
+                "string": "敵を倒した時に融合するコラプションをスポーンする確率が#%増加する",
                 "negate": false
             },
             {
-                "string": "敵キル時に融合するコラプションをスポーンする確率が#%減少する",
+                "string": "敵を倒した時に融合するコラプションをスポーンする確率が#%減少する",
                 "negate": true
             },
             {
@@ -51018,16 +50782,12 @@
         "id": "map_sanctum_boss_drop_unique_1",
         "matchers": [
             {
-                "string": "時の王、ザロクが祝福のオーブをドロップする",
+                "string": "時の王、ザロクが祝福されし絆をドロップする",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "sanctum": [
-                    "sanctum.stat_767926824"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_2934": {

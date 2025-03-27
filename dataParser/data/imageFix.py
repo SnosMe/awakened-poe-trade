@@ -15,6 +15,12 @@ def read_ndjson(file_path, encoding="utf-8"):
         return [json.loads(line) for line in file]
 
 
+def read_cache(file_path):
+    """Reads a cache file and returns a dictionary of parsed JSON objects."""
+    with open(file_path, "r", encoding="utf-8") as file:
+        return json.loads(file.read())
+
+
 def write_ndjson(file_path, data):
     """Writes a list of JSON objects to a newline-delimited JSON file."""
     with open(file_path, "w", encoding="utf-8") as file:
@@ -22,14 +28,23 @@ def write_ndjson(file_path, data):
             file.write(json.dumps(item, ensure_ascii=False) + "\n")
 
 
-def update_icons(new_items, old_items):
+def get_save_name(item: dict[str, str]) -> str:
+    return item["namespace"] + "=" + item["name"]
+
+
+def update_icons(new_items, old_items, api_cache={}):
     """Update icons in new_items if they are missing and present in old_items."""
-    old_icons = {item["refName"]: item["icon"] for item in old_items if "icon" in item}
+    old_icons = {
+        get_save_name(item): item["icon"] for item in old_items if "icon" in item
+    }
 
     for new_item in new_items:
-        ref_name = new_item["refName"]
-        if new_item.get("icon") == "%NOT_FOUND%" and ref_name in old_icons:
-            new_item["icon"] = old_icons[ref_name]
+        lookup_name = get_save_name(new_item)
+        if new_item.get("icon") == "%NOT_FOUND%":
+            if lookup_name in api_cache and api_cache[lookup_name] != "%NOT_FOUND%":
+                new_item["icon"] = api_cache[lookup_name]
+            elif lookup_name in old_icons:
+                new_item["icon"] = old_icons[lookup_name]
 
     return new_items
 
@@ -45,8 +60,13 @@ if __name__ == "__main__":
         old_items = read_ndjson(os.path.join(script_dir, "items.ndjson.old"))
         new_items = read_ndjson(os.path.join(script_dir, "items.ndjson"))
 
+        # Load the cache from the cache file in the script's directory
+        cache_items = read_cache(
+            os.path.join(get_script_dir(lang=""), "itemImageCache.json")
+        )
+
         # Update new_items with icons from old_items where applicable
-        updated_new_items = update_icons(new_items, old_items)
+        updated_new_items = update_icons(new_items, old_items, api_cache=cache_items)
 
         # Write the updated new items back to the new file or a new file as needed
         write_ndjson(os.path.join(script_dir, "items.ndjson"), updated_new_items)

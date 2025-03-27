@@ -18,6 +18,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+.DS_Store
 
 # Electron-builder output
 /dist_electron

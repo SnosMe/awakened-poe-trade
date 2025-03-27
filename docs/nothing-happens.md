@@ -26,10 +26,12 @@ As you may have noticed, compared to other third-party PoE tools APT uses "Advan
 </video>
 
 As a starting point, common programs reported by players were:
+
 - ASUS GPU Tweak II
 - Radeon™ Software
 - Display Pilot (BenQ)
 - AHK scripts
+- Discord (clips)
 
 Just for reference, this is what you should expect to see in the logs.
 I'll remind once again that your goal is not to make it look exactly like on the screenshot,

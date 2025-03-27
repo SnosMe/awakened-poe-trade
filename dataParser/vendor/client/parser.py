@@ -20,6 +20,7 @@ import re
 import urllib.parse
 from collections import defaultdict
 from copy import deepcopy
+from itertools import permutations
 from pprint import pprint
 
 from clientStrings.clientStringBuilder import (
@@ -723,11 +724,12 @@ class Parser:
 
             if tiers is not None:
                 tier_refs = [t.get("ref") for t in translations]
-                tier_ref_strings = "\n".join(dict.fromkeys(tier_refs))
-                if tier_ref_strings in self.tiers:
-                    self.tiers[tier_ref_strings].update(tiers)
-                else:
-                    self.tiers[tier_ref_strings] = tiers
+                for perm in permutations(tier_refs):
+                    tier_ref_strings = "\n".join(perm)
+                    if tier_ref_strings in self.tiers:
+                        self.tiers[tier_ref_strings].update(tiers)
+                    else:
+                        self.tiers[tier_ref_strings] = tiers
 
         for mod in self.mods_file:
             id = mod.get("Id").lower()
@@ -1024,7 +1026,10 @@ class Parser:
 
     def write_to_file(self):
         f = open(f"{self.out_dir}/items.ndjson", "w", encoding="utf-8")
-        items_name = sorted(self.items.values(), key=lambda x: x.get("name"))
+        items_name = sorted(
+            self.items.values(),
+            key=lambda x: (x.get("namespace", "ITEM"), x.get("refName")),
+        )
         for item in items_name:
             name = item.get("name")
             refName = item.get("refName")

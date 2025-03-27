@@ -6,6 +6,7 @@ import {
   STAT_BY_MATCH_STR,
   BaseType,
   RUNE_SINGLE_VALUE,
+  ITEM_BY_TRANSLATED,
 } from "@/assets/data";
 import { ModifierType, StatCalculated, sumStatsByModType } from "./modifiers";
 import {
@@ -100,6 +101,9 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   // catch enchant and rune since they don't have curlys rn
   parseModifiersPoe2, // enchant
   parseModifiersPoe2, // rune
+  // HACK: catch implicit and explicit for controllers
+  parseModifiersPoe2, // implicit
+  parseModifiersPoe2, // explicit
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
@@ -233,10 +237,38 @@ function findInDatabase(item: ParserState) {
     info = ITEM_BY_REF("ITEM", item.baseType ?? item.name);
   }
   if (!info?.length) {
-    return err("item.unknown");
+    // HACK: controller support while poe2 doesn't have advanced copy for controllers
+    if (item.category === ItemCategory.DivinationCard) {
+      info = ITEM_BY_TRANSLATED("DIVINATION_CARD", item.name);
+    } else if (item.category === ItemCategory.CapturedBeast) {
+      info = ITEM_BY_TRANSLATED("CAPTURED_BEAST", item.baseType ?? item.name);
+    } else if (item.category === ItemCategory.Gem) {
+      info = ITEM_BY_TRANSLATED("GEM", item.name);
+    } else if (item.category === ItemCategory.MetamorphSample) {
+      info = ITEM_BY_TRANSLATED("ITEM", item.name);
+    } else if (item.category === ItemCategory.Voidstone) {
+      info = ITEM_BY_TRANSLATED("ITEM", "Charged Compass");
+    } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
+      info = ITEM_BY_TRANSLATED("UNIQUE", item.name);
+    } else {
+      info = ITEM_BY_TRANSLATED("ITEM", item.baseType ?? item.name);
+    }
+    if (!info?.length) {
+      return err("item.unknown");
+    }
   }
   if (info[0].unique) {
-    info = info.filter((info) => info.unique!.base === item.baseType);
+    const uniqueInfo = info.filter(
+      (info) => info.unique!.base === item.baseType,
+    );
+    if (uniqueInfo?.length) {
+      info = uniqueInfo;
+    } else if (item.baseType) {
+      const baseInfo = ITEM_BY_TRANSLATED("ITEM", item.baseType);
+      if (baseInfo?.length) {
+        info = info.filter((info) => info.unique!.base === baseInfo[0].refName);
+      }
+    }
   }
   item.infoVariants = info;
   // choose 1st variant, correct one will be picked at the end of parsing
@@ -1516,6 +1548,8 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.Claw:
     case ItemCategory.Dagger:
     case ItemCategory.Focus:
+    case ItemCategory.Spear:
+    case ItemCategory.Flail:
       return 1;
     default:
       return 0;
@@ -1548,6 +1582,8 @@ export function isArmourOrWeapon(
     case ItemCategory.Bow:
     case ItemCategory.Warstaff:
     case ItemCategory.Staff:
+    case ItemCategory.Spear:
+    case ItemCategory.Flail:
       return "weapon";
     default:
       return undefined;

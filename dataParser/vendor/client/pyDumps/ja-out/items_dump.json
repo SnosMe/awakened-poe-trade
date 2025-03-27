@@ -16892,7 +16892,7 @@
         }
     },
     "1752": {
-        "name": "ボードスピアー",
+        "name": "ブロードスピアー",
         "refName": "Broad Spear",
         "namespace": "ITEM",
         "class": 77,
@@ -25229,7 +25229,7 @@
         }
     },
     "2257": {
-        "name": "Golden Visage",
+        "name": "黄金の顔飾り",
         "refName": "Golden Visage",
         "namespace": "ITEM",
         "class": 25,
@@ -25242,7 +25242,7 @@
         "armour": {}
     },
     "2258": {
-        "name": "Golden Bracers",
+        "name": "黄金のブレーサー",
         "refName": "Golden Bracers",
         "namespace": "ITEM",
         "class": 22,
@@ -25255,7 +25255,7 @@
         "armour": {}
     },
     "2259": {
-        "name": "Golden Greaves",
+        "name": "黄金のグリーヴ",
         "refName": "Golden Greaves",
         "namespace": "ITEM",
         "class": 23,
@@ -25268,7 +25268,7 @@
         "armour": {}
     },
     "2260": {
-        "name": "Golden Plate",
+        "name": "黄金のプレート",
         "refName": "Golden Plate",
         "namespace": "ITEM",
         "class": 24,
@@ -25281,7 +25281,7 @@
         "armour": {}
     },
     "2261": {
-        "name": "Golden Shield",
+        "name": "黄金の盾",
         "refName": "Golden Shield",
         "namespace": "ITEM",
         "class": 26,
@@ -25294,7 +25294,7 @@
         "armour": {}
     },
     "2262": {
-        "name": "Golden Blade",
+        "name": "黄金の刃",
         "refName": "Golden Blade",
         "namespace": "ITEM",
         "class": 9,

@@ -23,7 +23,7 @@ to the developer, downloading from them may be unsafe or malicious.
 Latest version is <span class="bg-gray-100 border rounded px-1">{{ theme.appVersion }}</span>
 
 *The app is unsigned, which means you'll have to bypass security
-warnings on Windows to open it.{:.text-sm}
+warnings on Windows and [macOS](https://support.apple.com/en-us/HT202491#openanyway) to open it.{:.text-sm}
 
 
 ---

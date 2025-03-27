@@ -23,7 +23,7 @@ const POSSIBLE_PATH =
           ),
           path.join(
             app.getPath("home"),
-            ".local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile 2/poe2_production_Config.ini",
+            ".local/share/Steam/steamapps/compatdata/2694490/pfx/drive_c/users/steamuser/Documents/My Games/Path of Exile 2/poe2_production_Config.ini",
           ),
         ]
       : process.platform === "darwin"

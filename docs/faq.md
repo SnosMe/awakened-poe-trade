@@ -5,12 +5,12 @@ title: FAQ
 - **Where can I change settings, league?**
 
   Open Path of Exile 2 and press overlay key `Shift + Space`. Click on the button with cog icon there.
-  ![](https://i.imgur.com/81L9Cp0.png)
+  ![overlay](/reference-images/overlay-keybind.png)
 
 - **Where can I find the logs?**
 
   In the settings under the "Debug" tab.
-  ![](https://i.imgur.com/0VPm9Cz.png)
+  ![logs](/reference-images/logs.png)
 
 - **Is this app approved by GGG? Can I get banned for using it?**
 
@@ -23,15 +23,14 @@ title: FAQ
 - **I want to `Ctrl + Scroll` stash tabs without zooming my character.**
 
   You can disable "Mousewheel Zoom" in PoE settings (Options -> UI -> 3-rd check mark starting from the bottom)
-  ![](https://imgur.com/WJcChYb.png)
+  ![mousewheel zoom](/reference-images/mousewheel-zoom.png)
 
   Don't worry, you still can use keys
-  ![](https://imgur.com/F3GA0f0.png)
+  ![zoom keybinds](/reference-images/zoom-keybinds.png)
 
 - **Will my language be supported?**
 
   No plans to support other languages. I know Awakened PoE has Russian, but I don't have plans to add other languages since I am still fixing this to work with the new game.
-
 
 - **I downloaded a zip with a bunch of files, but no .exe inside?**
 
@@ -62,6 +61,12 @@ title: FAQ
 
   This is possible by using the [command line flag](/cmd-flags).
 
+- **Why does a sound play when I price check an item?**
+
+  Discord :( Change the default key for saving clips. By default it is `Alt + c` which is pressed by EE2 every time a price check happens.
+
 - **Is exiledexchange2.com an official website?**
 
-  No, the only official website is https://kvan7.github.io/Exiled-Exchange-2/ and the official github repo is https://github.com/Kvan7/Exiled-Exchange-2. Any other mirrors are not known to the developer, downloading from them may be unsafe or malicious.
+  No, the only official website is <https://kvan7.github.io/Exiled-Exchange-2/> and the official github repo is <https://github.com/Kvan7/Exiled-Exchange-2>. Any other mirrors are not known to the developer, downloading from them may be unsafe or malicious.
+
+- [Index Page](/index-page.md)

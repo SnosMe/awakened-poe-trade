@@ -74,6 +74,7 @@
     "Your Minions spread Caustic Ground on Death, dealing #% of their maximum Life as Chaos Damage per second",
     "Gain #% of Physical Damage as Extra Damage of each Element with Attacks",
     "When a Party Member in your Presence Casts a Spell, you\\nSacrifice #% of Mana and they Leech that Mana",
+    "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude or Freeze Buildup",
     "Reflects # to # Lightning Damage to Melee Attackers",
     "Reflects # to # Lightning Damage to Melee Attackers",
     "Damage cannot bypass Energy Shield",

@@ -54,10 +54,10 @@ export default {
           },
           enableHotkeys: true,
           entries: [
-            { id: 1, name: "", text: '"Pack Size: +3"', hotkey: null },
-            { id: 2, name: "", text: "Reflect", hotkey: null },
-            { id: 3, name: "", text: '"Cannot Leech Life"', hotkey: null },
-            { id: 4, name: "", text: '"Cannot Leech Mana"', hotkey: null },
+            { id: 1, name: "", text: '"Increased Pack Size"', hotkey: null },
+            { id: 2, name: "", text: '"Additional Packs"', hotkey: null },
+            { id: 3, name: "", text: '"Burning Ground"', hotkey: null },
+            { id: 4, name: "", text: '"Less Recovery Rate"', hotkey: null },
           ],
         },
         {
@@ -75,16 +75,16 @@ export default {
           enableHotkeys: true,
           entries: [
             { id: 1, name: "", text: "Currency", hotkey: null },
-            { id: 2, name: "", text: '"Divination Card"', hotkey: null },
-            { id: 3, name: "", text: "Fossil", hotkey: null },
-            { id: 4, name: "", text: '"Map Tier"', hotkey: null },
+            { id: 2, name: "", text: '"Martial Weapon"', hotkey: null },
+            { id: 3, name: "", text: "Jewel", hotkey: null },
+            { id: 4, name: "", text: '"Waystone Tier"', hotkey: null },
             {
               id: 5,
               name: "",
-              text: '"Map Device" "Rarity: Normal"',
+              text: '"Rarity: Normal"',
               hotkey: null,
             },
-            { id: 6, name: "", text: "Tane Laboratory", hotkey: null },
+            { id: 6, name: "", text: "Trials:", hotkey: null },
           ],
         },
       ];

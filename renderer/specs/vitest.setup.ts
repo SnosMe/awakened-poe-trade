@@ -3,6 +3,15 @@ import fs from "fs";
 import path from "path";
 import { Headers } from "node-fetch"; // Assuming you are using node-fetch
 import { Config, TipsFrequency } from "@/web/Config";
+
+vi.mock("@/web/Config", async (original) => {
+  return {
+    AppConfig: vi.fn(() => mockConfig),
+    TipsFrequency: {
+      Always: 1,
+    },
+  };
+});
 let mockConfig: Config;
 // Mock client-string-loader
 export const setupClientStringLoaderMock = () => {
@@ -100,10 +109,6 @@ export const defaultConfigMock = (overrides: Partial<Config> = {}) => {
   };
 
   mockConfig = { ...defaultConfig, ...overrides };
-
-  vi.mock("@/web/Config", () => ({
-    AppConfig: vi.fn(() => mockConfig),
-  }));
 };
 
 // Consolidate setup

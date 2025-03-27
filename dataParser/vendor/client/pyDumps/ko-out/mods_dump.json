@@ -365,8 +365,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_809229260",
-                    "explicit.stat_3484657501"
+                    "explicit.stat_3484657501",
+                    "explicit.stat_809229260"
                 ],
                 "implicit": [
                     "implicit.stat_809229260"
@@ -387,8 +387,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2144192055",
-                    "explicit.stat_53045048"
+                    "explicit.stat_53045048",
+                    "explicit.stat_2144192055"
                 ]
             }
         }
@@ -406,8 +406,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_3489782002",
-                    "explicit.stat_4052037485"
+                    "explicit.stat_4052037485",
+                    "explicit.stat_3489782002"
                 ],
                 "implicit": [
                     "implicit.stat_3489782002"
@@ -462,8 +462,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_124859000",
-                    "explicit.stat_2106365538"
+                    "explicit.stat_2106365538",
+                    "explicit.stat_124859000"
                 ],
                 "enchant": [
                     "enchant.stat_2106365538",
@@ -1479,8 +1479,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_707457662",
-                    "explicit.stat_669069897"
+                    "explicit.stat_669069897",
+                    "explicit.stat_707457662"
                 ],
                 "implicit": [
                     "implicit.stat_669069897"
@@ -1507,8 +1507,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_707457662",
-                    "explicit.stat_669069897"
+                    "explicit.stat_669069897",
+                    "explicit.stat_707457662"
                 ],
                 "implicit": [
                     "implicit.stat_669069897"
@@ -1645,8 +1645,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_210067635",
-                    "explicit.stat_681332047"
+                    "explicit.stat_681332047",
+                    "explicit.stat_210067635"
                 ],
                 "implicit": [
                     "implicit.stat_681332047"
@@ -1769,8 +1769,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_691932474",
-                    "explicit.stat_803737631"
+                    "explicit.stat_803737631",
+                    "explicit.stat_691932474"
                 ],
                 "implicit": [
                     "implicit.stat_803737631"
@@ -2119,8 +2119,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_4147897060",
-                    "explicit.stat_2481353198"
+                    "explicit.stat_2481353198",
+                    "explicit.stat_4147897060"
                 ],
                 "enchant": [
                     "enchant.stat_2481353198"
@@ -2772,8 +2772,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1416292992",
-                    "explicit.stat_554899692"
+                    "explicit.stat_554899692",
+                    "explicit.stat_1416292992"
                 ]
             }
         }
@@ -3397,8 +3397,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1256719186",
-                    "explicit.stat_2541588185"
+                    "explicit.stat_2541588185",
+                    "explicit.stat_1256719186"
                 ]
             }
         }
@@ -6043,8 +6043,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1604736568",
-                    "explicit.stat_1030153674"
+                    "explicit.stat_1030153674",
+                    "explicit.stat_1604736568"
                 ],
                 "rune": [
                     "rune.stat_1030153674"
@@ -6248,20 +6248,16 @@
         "id": "minion_critical_strike_chance_+%",
         "matchers": [
             {
-                "string": "소환수의 치명타 확률 #% 증가",
+                "string": "소환수의 치명타 명중 확률 #% 증가",
                 "negate": false
             },
             {
-                "string": "소환수의 치명타 확률 #% 감소",
+                "string": "소환수의 치명타 명중 확률 #% 감소",
                 "negate": true
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_491450213"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_280": {
@@ -8203,16 +8199,12 @@
         "id": "unique_you_count_as_on_low_mana_while_at_%_of_maximum_health_or_below",
         "matchers": [
             {
-                "string": "생명력 최대치의 #% 이하일 때 낮은 마나 상태로 간주",
+                "string": "최대 생명력의 #% 이하일 때 낮은 마나 상태로 간주",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1143240184"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_376": {
@@ -9021,16 +9013,12 @@
         "id": "share_charges_with_allies_in_your_presence",
         "matchers": [
             {
-                "string": "플레이어에게 접근해 있는 동료들과 충전 공유",
+                "string": "플레이어에게 접근해 있는 동료들들과 충전 공유",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2535267021"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_418": {
@@ -9039,16 +9027,12 @@
         "id": "override_weapon_base_critical_strike_chance",
         "matchers": [
             {
-                "string": "무기 공격의 기본 치명타 확률 #%",
+                "string": "무기 공격의 기본 치명타 명중 확률 #%",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2635559734"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_419": {
@@ -9667,16 +9651,12 @@
         "id": "poison_on_critical_strike",
         "matchers": [
             {
-                "string": "치명타 시 적 중독",
+                "string": "치명타 명중 시 적 중독",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_62849030"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_453": {
@@ -10040,16 +10020,12 @@
         "id": "local_shield_double_stun_threshold_while_active_blocking",
         "matchers": [
             {
-                "string": "방패를 들고 있는 동안 기절 한계치 2배",
+                "string": "방패를 올린 동안 기절 한계치 2배",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3686997387"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_471": {
@@ -10198,16 +10174,12 @@
         "id": "total_base_life_regeneration_rate_per_minute_%_granted_to_allies_in_your_presence",
         "matchers": [
             {
-                "string": "플레이어의 기본 생명력 재생의 #%가 접근해 있는 동료들에게 부여됨",
+                "string": "플레이어의 생명력 재생의 #%가 접근해 있는 동료들에게 부여됨",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_4287671144"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_480": {
@@ -10355,21 +10327,17 @@
         }
     },
     "merged_488": {
-        "ref": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude",
+        "ref": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude or Freeze Buildup",
         "better": 1,
         "id": "unique_cold_damage_ignites",
         "matchers": [
             {
-                "string": "명중의 냉기 피해가 냉각 강도 대신 점화 확률 및 강도에 반영",
+                "string": "명중의 냉기 피해가 냉각 강도 또는 동결 축적 대신 점화 확률 및 강도에 반영",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1261612903"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_489": {
@@ -10573,16 +10541,12 @@
         "id": "maximum_random_movement_velocity_+%_when_hit",
         "matchers": [
             {
-                "string": "명중당하면 다시 명중당할 때까지 이동 속도가 무작위로 최대 #% 증가",
+                "string": "명중당하면 다시 명중당할 때까지 이동 속도가 0%-#% 중 무작위로 증가",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_796381300"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_501": {
@@ -10591,16 +10555,12 @@
         "id": "projectile_number_to_split",
         "matchers": [
             {
-                "string": "투사체가 대상 #를 향해 분할",
+                "string": "투사체가 대상 #개를 향해 분할",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3464380325"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_502": {
@@ -11639,16 +11599,12 @@
         "id": "missing_life_%_gained_as_life_before_hit",
         "matchers": [
             {
-                "string": "적에게 명중당하기 전, 상실한 생명력의 #% 획득",
+                "string": "적에게 명중당하기 전, 상실한 생명력의 #% 회복",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1990472846"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_564": {
@@ -13323,9 +13279,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_2541588185",
                     "explicit.stat_1256719186",
-                    "explicit.stat_3969608626",
-                    "explicit.stat_2541588185"
+                    "explicit.stat_3969608626"
                 ]
             }
         }
@@ -14159,7 +14115,7 @@
         "id": "demigods_virtue",
         "matchers": [
             {
-                "string": "Virtuous",
+                "string": "고결",
                 "negate": false
             }
         ],
@@ -15074,8 +15030,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2306522833",
-                    "explicit.stat_1913583994"
+                    "explicit.stat_1913583994",
+                    "explicit.stat_2306522833"
                 ]
             }
         },
@@ -15515,9 +15471,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_4103440490",
                     "explicit.stat_2326202293",
-                    "explicit.stat_558910024",
-                    "explicit.stat_4103440490"
+                    "explicit.stat_558910024"
                 ]
             }
         },
@@ -15593,9 +15549,9 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2390685262",
                     "explicit.stat_349586058",
-                    "explicit.stat_2306002879"
+                    "explicit.stat_2306002879",
+                    "explicit.stat_2390685262"
                 ],
                 "enchant": [
                     "enchant.stat_2306002879"
@@ -15810,16 +15766,12 @@
         "id": "tower_add_irradiated_to_X_maps",
         "matchers": [
             {
-                "string": "범위 내 지도 #개의 몬스터 레벨 +1",
+                "string": "범위 내 지도 #개가 방사능에 노출됨",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "implicit": [
-                    "implicit.stat_4041853756"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_774": {
@@ -16780,7 +16732,7 @@
                 "negate": true
             },
             {
-                "string": "지도 내 환영 인카운터의 고유 보스 등장 확률이 #% 높아짐",
+                "string": "지도 내 환영 인카운터의 고유 보스 등장 확률 #% 증폭",
                 "negate": false
             },
             {
@@ -17474,11 +17426,11 @@
         "id": "avoid_damage_%",
         "matchers": [
             {
-                "string": "피격 시 #% 확률로 모든 피해 긴급회피",
+                "string": "#% 확률로 명중으로 인한 모든 피해 긴급회피",
                 "negate": false
             },
             {
-                "string": "피격 시 모든 피해 긴급회피",
+                "string": "명중으로 인한 모든 피해 긴급회피",
                 "negate": false,
                 "value": 100
             }
@@ -17507,7 +17459,7 @@
         "id": "always_crit",
         "matchers": [
             {
-                "string": "몬스터가 무조건 치명타로 명중",
+                "string": "몬스터의 명중이 무조건 치명타로 명중",
                 "negate": false
             }
         ],
@@ -17521,7 +17473,7 @@
         "id": "never_take_critical_strike",
         "matchers": [
             {
-                "string": "몬스터에게 명중 시 치명타가 발생하지 않음",
+                "string": "몬스터에게 명중 시 치명타 명중이 발생하지 않음",
                 "negate": false
             }
         ],
@@ -17619,12 +17571,12 @@
         "id": "apply_X_random_curses_on_hit",
         "matchers": [
             {
-                "string": "룬 몬스터가 명중 시 무작위 사술 1개 유발",
+                "string": "룬 몬스터가 명중 시 무작위 저주 1개 유발",
                 "negate": false,
                 "value": 1
             },
             {
-                "string": "룬 몬스터가 명중 시 무작위 사술 #개 유발",
+                "string": "룬 몬스터가 명중 시 무작위 저주 #개 유발",
                 "negate": false
             }
         ],
@@ -21559,7 +21511,7 @@
         "id": "map_monsters_curse_effect_+%",
         "matchers": [
             {
-                "string": "몬스터에게 걸리는 저주 효과 #% 증가",
+                "string": "몬스터에게 적용되는 저주 효과 #% 증가",
                 "negate": false
             },
             {
@@ -29531,9 +29483,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_398335579",
                     "explicit.stat_1414945937",
-                    "explicit.stat_4007938693",
-                    "explicit.stat_398335579"
+                    "explicit.stat_4007938693"
                 ]
             }
         }
@@ -35090,7 +35042,7 @@
         "id": "non_critical_strikes_deal_no_damage",
         "matchers": [
             {
-                "string": "치명타로만 피해를 줌",
+                "string": "비-치명타 명중이 피해를 주지 않음",
                 "negate": false
             }
         ],
@@ -36317,15 +36269,15 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_4219583418",
+                    "explicit.stat_1539368271",
                     "explicit.stat_1640965354",
-                    "explicit.stat_1539368271"
+                    "explicit.stat_4219583418"
                 ],
                 "implicit": [
                     "implicit.stat_1539368271",
-                    "implicit.stat_3051490307",
                     "implicit.stat_4219583418",
-                    "implicit.stat_1640965354"
+                    "implicit.stat_1640965354",
+                    "implicit.stat_3051490307"
                 ],
                 "sanctum": [
                     "sanctum.stat_1680962389"
@@ -36637,9 +36589,9 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_57434274",
-                    "explicit.stat_3666934677"
+                    "explicit.stat_3666934677",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
                     "enchant.stat_2017682521"
@@ -39542,7 +39494,7 @@
                 "value": 1
             },
             {
-                "string": "최대 권능 충전 상태에서 저주 #회 추가 적용 가능",
+                "string": "최대 권능 충전 상태에서 저주 #개 추가 적용 가능",
                 "negate": false
             }
         ],
@@ -39591,13 +39543,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39615,13 +39567,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39639,13 +39591,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39663,13 +39615,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -42705,7 +42657,7 @@
                 "negate": false
             },
             {
-                "string": "헌신 10당 플레이어가에게 적용된 저주 지속시간 #% 감소",
+                "string": "헌신 10당 플레이어에게 적용되는 저주 지속시간 #% 감소",
                 "negate": true
             }
         ],
@@ -44069,11 +44021,11 @@
         "id": "critical_strike_chance_+%_while_not_escaping_heist",
         "matchers": [
             {
-                "string": "지역이 폐쇄 중이 아닐 때 치명타 확률 #% 증가\\n지역이 폐쇄 중이 아닐 때 플레이어의 치명타 확률 #% 증가",
+                "string": "지역이 폐쇄 중이 아닐 때 치명타 명중 확률 #% 증가\\n지역이 폐쇄 중이 아닐 때 플레이어의 치명타 명중 확률 #% 증가",
                 "negate": false
             },
             {
-                "string": "지역이 폐쇄 중이 아닐 때 치명타 확률 #% 감소\\n지역이 폐쇄 중이 아닐 때 플레이어의 치명타 확률 #% 감소",
+                "string": "지역이 폐쇄 중이 아닐 때 치명타 명중 확률 #% 감소\\n지역이 폐쇄 중이 아닐 때 플레이어의 치명타 명중 확률 #% 감소",
                 "negate": true
             }
         ],
@@ -44087,7 +44039,7 @@
         "id": "critical_strike_multiplier_+_while_not_escaping_heist",
         "matchers": [
             {
-                "string": "지역이 폐쇄 중이 아닐 때 치명타 피해 배율 #%\\n지역이 폐쇄 중이 아닐 때 플레이어의 치명타 피해 배율 #%",
+                "string": "지역이 폐쇄 중이 아닐 때 치명타 피해 보너스 #%\\n지역이 폐쇄 중이 아닐 때 플레이어의 치명타 피해 보너스 #%",
                 "negate": false
             }
         ],
@@ -49875,11 +49827,11 @@
         "id": "map_player_buff_time_passed_+%_only_buff_category",
         "matchers": [
             {
-                "string": "플레이어에게 적용되는 버프가 #% 더 빠르게 만료됨",
+                "string": "플레이어에게 적용된 버프가 #% 더 빠르게 만료됨",
                 "negate": false
             },
             {
-                "string": "플레이어에게 적용되는 버프가 #% 더 느리게 만료됨",
+                "string": "플레이어에게 적용된 버프가 #% 더 느리게 만료됨",
                 "negate": false
             }
         ],
@@ -50648,7 +50600,7 @@
         "id": "sanctum_avoid_affliction_chance_%",
         "matchers": [
             {
-                "string": "고난을 획득해야 할 때 #%의 확률로 획득하지 않음",
+                "string": "고난을 획득해야 할 때 #%의 확률로 긴급회피",
                 "negate": false
             },
             {
@@ -50658,11 +50610,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "sanctum": [
-                    "sanctum.stat_1960517795"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_2914": {

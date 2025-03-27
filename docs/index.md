@@ -1,4 +1,5 @@
 ---
+title: Exiled Exchange 2
 ---
 
-![](https://imgur.com/uH9xs4R.png){:.rounded}
+![splash](https://imgur.com/uH9xs4R.png){:.rounded}

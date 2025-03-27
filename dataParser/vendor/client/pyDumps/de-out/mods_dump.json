@@ -365,8 +365,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_809229260",
-                    "explicit.stat_3484657501"
+                    "explicit.stat_3484657501",
+                    "explicit.stat_809229260"
                 ],
                 "implicit": [
                     "implicit.stat_809229260"
@@ -387,8 +387,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2144192055",
-                    "explicit.stat_53045048"
+                    "explicit.stat_53045048",
+                    "explicit.stat_2144192055"
                 ]
             }
         }
@@ -406,8 +406,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_3489782002",
-                    "explicit.stat_4052037485"
+                    "explicit.stat_4052037485",
+                    "explicit.stat_3489782002"
                 ],
                 "implicit": [
                     "implicit.stat_3489782002"
@@ -462,8 +462,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_124859000",
-                    "explicit.stat_2106365538"
+                    "explicit.stat_2106365538",
+                    "explicit.stat_124859000"
                 ],
                 "enchant": [
                     "enchant.stat_2106365538",
@@ -1479,8 +1479,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_707457662",
-                    "explicit.stat_669069897"
+                    "explicit.stat_669069897",
+                    "explicit.stat_707457662"
                 ],
                 "implicit": [
                     "implicit.stat_669069897"
@@ -1507,8 +1507,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_707457662",
-                    "explicit.stat_669069897"
+                    "explicit.stat_669069897",
+                    "explicit.stat_707457662"
                 ],
                 "implicit": [
                     "implicit.stat_669069897"
@@ -1587,23 +1587,16 @@
         "id": "base_life_gain_per_target",
         "matchers": [
             {
-                "string": "Erhaltet # Leben für jeden Gegner, der durch Eure Angriffe getroffen wird",
+                "string": "Erhaltet # Leben pro Gegner, der mit Angriffen getroffen wird",
                 "negate": false
             },
             {
-                "string": "Verliert # Leben für jeden Gegner, der durch Eure Angriffe getroffen wird",
+                "string": "Verliert # Leben pro Gegner, der mit Angriffen getroffen wird",
                 "negate": true
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2797971005"
-                ],
-                "implicit": [
-                    "implicit.stat_2797971005"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_69": {
@@ -1645,8 +1638,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_210067635",
-                    "explicit.stat_681332047"
+                    "explicit.stat_681332047",
+                    "explicit.stat_210067635"
                 ],
                 "implicit": [
                     "implicit.stat_681332047"
@@ -1769,8 +1762,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_691932474",
-                    "explicit.stat_803737631"
+                    "explicit.stat_803737631",
+                    "explicit.stat_691932474"
                 ],
                 "implicit": [
                     "implicit.stat_803737631"
@@ -2127,8 +2120,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_4147897060",
-                    "explicit.stat_2481353198"
+                    "explicit.stat_2481353198",
+                    "explicit.stat_4147897060"
                 ],
                 "enchant": [
                     "enchant.stat_2481353198"
@@ -2784,8 +2777,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1416292992",
-                    "explicit.stat_554899692"
+                    "explicit.stat_554899692",
+                    "explicit.stat_1416292992"
                 ]
             }
         }
@@ -3412,8 +3405,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1256719186",
-                    "explicit.stat_2541588185"
+                    "explicit.stat_2541588185",
+                    "explicit.stat_1256719186"
                 ]
             }
         }
@@ -4908,20 +4901,16 @@
         "id": "damage_+%_to_rare_and_unique_enemies",
         "matchers": [
             {
-                "string": "#% erhöhter Schaden gegen seltene und einzigartige Gegner",
+                "string": "#% erhöhter Schaden mit Treffern gegen seltene und einzigartige Gegner",
                 "negate": false
             },
             {
-                "string": "#% verringerter Schaden gegen seltene und einzigartige Gegner",
+                "string": "#% verringerter Schaden mit Treffern gegen seltene und einzigartige Gegner",
                 "negate": true
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1852872083"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_218": {
@@ -5959,20 +5948,16 @@
         "id": "mace_damage_+%",
         "matchers": [
             {
-                "string": "#% erhöhter Schaden mit Streitkolben und Zeptern",
+                "string": "#% erhöhter Schaden mit Streitkolben",
                 "negate": false
             },
             {
-                "string": "#% verringerter Schaden mit Streitkolben und Zeptern",
+                "string": "#% verringerter Schaden mit Streitkolben",
                 "negate": true
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1181419800"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_266": {
@@ -6062,8 +6047,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_1604736568",
-                    "explicit.stat_1030153674"
+                    "explicit.stat_1030153674",
+                    "explicit.stat_1604736568"
                 ],
                 "rune": [
                     "rune.stat_1030153674"
@@ -9146,16 +9131,12 @@
         "id": "physical_ranged_attack_damage_taken_+",
         "matchers": [
             {
-                "string": "# erhöhter physischer Schaden von Projektilangriffen",
+                "string": "# erhöhter physischen Schaden von Projektilangriffen",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3612407781"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_423": {
@@ -10075,16 +10056,12 @@
         "id": "local_shield_double_stun_threshold_while_active_blocking",
         "matchers": [
             {
-                "string": "Doppelter Betäubungsaufbau, während der Schild gehoben ist",
+                "string": "Doppelter Betäubungsschwelle, während der Schild gehoben ist",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3686997387"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_471": {
@@ -10283,16 +10260,12 @@
         "id": "maximum_block_modifiers_apply_to_maximum_resistances_instead",
         "matchers": [
             {
-                "string": "Modifikatoren für maximale Blockchance gelten stattdessen für maximale Widerstände",
+                "string": "Modifikatoren für maximale Blockdchance gelten stattdessen für maximale Widerstände",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3679696791"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_483": {
@@ -10301,16 +10274,12 @@
         "id": "can_block_all_hits",
         "matchers": [
             {
-                "string": "Kann Schaden von sämtlichen Treffern blocken",
+                "string": "Kann Schaden von sämtlichen Treffern  blocken",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3902042119"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_484": {
@@ -10390,21 +10359,17 @@
         }
     },
     "merged_488": {
-        "ref": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude",
+        "ref": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude or Freeze Buildup",
         "better": 1,
         "id": "unique_cold_damage_ignites",
         "matchers": [
             {
-                "string": "Kälteschaden von Treffern wird auf die Magnitude und Chance auf Entzünden statt auf die Magnitude von Unterkühlen angerechnet",
+                "string": "Cold Damage from Hits Contributes to Ignite Chance and Magnitude instead of Chill Magnitude or Freeze Buildup",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1261612903"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_489": {
@@ -10852,16 +10817,12 @@
         "id": "spell_damage_+%_per_10_spirit",
         "matchers": [
             {
-                "string": "#% erhöhter Zauberschaden pro 10 Wille",
+                "string": "#% erhöhter Zaubernschaden pro 10 Wille",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_2412053423"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_515": {
@@ -13362,9 +13323,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_2541588185",
                     "explicit.stat_1256719186",
-                    "explicit.stat_3969608626",
-                    "explicit.stat_2541588185"
+                    "explicit.stat_3969608626"
                 ]
             }
         }
@@ -13456,21 +13417,17 @@
         "id": "blind_chilled_enemies_on_hit_%",
         "matchers": [
             {
-                "string": "Blendet Gegner bei Treffer",
+                "string": "Blendet unterkühlte Gegner bei Treffer",
                 "negate": false,
                 "value": 100
             },
             {
-                "string": "#% Chance, Gegner bei Treffer zu blenden",
+                "string": "#% Chance, unterkühlte Gegner bei Treffer zu blenden",
                 "negate": false
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_3450276548"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_658": {
@@ -15112,8 +15069,8 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2306522833",
-                    "explicit.stat_1913583994"
+                    "explicit.stat_1913583994",
+                    "explicit.stat_2306522833"
                 ]
             }
         },
@@ -15553,9 +15510,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_4103440490",
                     "explicit.stat_2326202293",
-                    "explicit.stat_558910024",
-                    "explicit.stat_4103440490"
+                    "explicit.stat_558910024"
                 ]
             }
         },
@@ -15631,9 +15588,9 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2390685262",
                     "explicit.stat_349586058",
-                    "explicit.stat_2306002879"
+                    "explicit.stat_2306002879",
+                    "explicit.stat_2390685262"
                 ],
                 "enchant": [
                     "enchant.stat_2306002879"
@@ -16346,7 +16303,7 @@
                 "negate": false
             },
             {
-                "string": "Eure Karten, die Risse enthalten, enthalten einen zusätzlichen Riss",
+                "string": "Eure Karten, die Risse enthalten, enthalten einen zusätzlichen Risse",
                 "negate": false,
                 "value": 100
             }
@@ -16483,7 +16440,7 @@
         "id": "expedition_monsters_logbook_chance_+%",
         "matchers": [
             {
-                "string": "#% erhöhte Menge fallen gelassener Expedition-Logbücher von Runenmonstern",
+                "string": "#% erhöhte Menge fallen gelassener Expedition-Logbüchervon Runenmonstern",
                 "negate": false
             },
             {
@@ -16492,11 +16449,7 @@
             }
         ],
         "trade": {
-            "ids": {
-                "explicit": [
-                    "explicit.stat_1083387327"
-                ]
-            }
+            "ids": null
         }
     },
     "merged_797": {
@@ -16510,6 +16463,14 @@
             },
             {
                 "string": "#% verringerte Anzahl seltener Expedition-Monster in Euren Karten",
+                "negate": false
+            },
+            {
+                "string": "#% erhöhte Anzahl seltener Expeditionen-Monster in Euren Karten",
+                "negate": false
+            },
+            {
+                "string": "#% verringerte Anzahl seltener Expeditionen-Monster in Euren Karten",
                 "negate": false
             }
         ],
@@ -16939,11 +16900,11 @@
                 "negate": true
             },
             {
-                "string": "Das Aufbewahren von Gaben in Ritual-Altären in Euren Karten kostet #% erhöhten Tribut",
+                "string": "Das Aufbewahren von Gaben in Ritual-Altäre in Euren Karten kostet #% erhöhten Tribut",
                 "negate": false
             },
             {
-                "string": "Das Aufbewahren von Gaben in Ritual-Altären in Euren Karten kostet #% verringerten Tribut",
+                "string": "Das Aufbewahren von Gaben in Ritual-Altäre in Euren Karten kostet #% verringerten Tribut",
                 "negate": true
             }
         ],
@@ -16992,12 +16953,12 @@
                 "negate": false
             },
             {
-                "string": "Gaben von Ritual-Altären in Euren Karten können ein zusätzliches Mal gewürfelt werden",
+                "string": "Gaben von Ritual-Altäre in Euren Karten können ein zusätzliches Mal gewürfelt werden",
                 "negate": false,
                 "value": 1
             },
             {
-                "string": "Gaben von Ritual-Altären in Euren Karten können # zusätzliche Male gewürfelt werden",
+                "string": "Gaben von Ritual-Altäre in Euren Karten können # zusätzliche Male gewürfelt werden",
                 "negate": false
             }
         ],
@@ -17045,11 +17006,11 @@
                 "negate": true
             },
             {
-                "string": "Wiederbelebte Monster von Ritualen in Euren Karten haben #% erhöhte Chance, magisch zu sein",
+                "string": "Wiederbelebte Monster von Ritual-Altären in Euren Karten haben #% erhöhte Chance, magisch zu sein",
                 "negate": false
             },
             {
-                "string": "Wiederbelebte Monster von Ritualen in Euren Karten haben #% verringerte Chance, magisch zu sein",
+                "string": "Wiederbelebte Monster von Ritual-Altären in Euren Karten haben #% verringerte Chance, magisch zu sein",
                 "negate": true
             }
         ],
@@ -17075,11 +17036,11 @@
                 "negate": true
             },
             {
-                "string": "Wiederbelebte Monster von Ritualen in Euren Karten haben #% erhöhte Chance, selten zu sein",
+                "string": "Wiederbelebte Monster von Ritual-Altären in Euren Karten haben #% erhöhte Chance, selten zu sein",
                 "negate": false
             },
             {
-                "string": "Wiederbelebte Monster von Ritualen in Euren Karten haben #% verringerte Chance, selten zu sein",
+                "string": "Wiederbelebte Monster von Ritual-Altären in Euren Karten haben #% verringerte Chance, selten zu sein",
                 "negate": true
             }
         ],
@@ -17670,12 +17631,12 @@
         "id": "apply_X_random_curses_on_hit",
         "matchers": [
             {
-                "string": "Runenmonster wenden bei Treffer eine zufällige Verhexung an",
+                "string": "Runenmonster wenden bei Treffer einen zufälligen Fluch an",
                 "negate": false,
                 "value": 1
             },
             {
-                "string": "Runenmonster wenden bei Treffer # zufällige Verhexungen an",
+                "string": "Runenmonster wenden bei Treffer # zufällige Flüche an",
                 "negate": false
             }
         ],
@@ -17868,7 +17829,7 @@
                 "negate": false
             },
             {
-                "string": "Expedition-Monster in Euren Karten erscheinen mit zusätzlich #% fehlendem Leben",
+                "string": "Expeditionen-Monster in Euren Karten erscheinen mit zusätzlich #% fehlendem Leben",
                 "negate": false
             }
         ],
@@ -21057,11 +21018,11 @@
         "id": "base_frenzy_charge_duration_+%",
         "matchers": [
             {
-                "string": "#% verlängerte Dauer von Raserei-Ladungen",
+                "string": "#% verlängerte Dauer von Raserei-Ladung",
                 "negate": false
             },
             {
-                "string": "#% verkürzte Dauer von Raserei-Ladungen",
+                "string": "#% verkürzte Dauer von Raserei-Ladung",
                 "negate": true
             }
         ],
@@ -21610,7 +21571,7 @@
         "id": "map_monsters_curse_effect_+%",
         "matchers": [
             {
-                "string": "#% erhöhte Wirkung von Flüchen auf Monster",
+                "string": "#% erhöhte Stärkungswirkung von Flüchen auf Monster",
                 "negate": false
             },
             {
@@ -21904,7 +21865,7 @@
         "id": "local_left_ring_slot_no_energy_shield_recharge_or_regeneration",
         "matchers": [
             {
-                "string": "Linker Ring-Platz: Ihr könnt Euren Energieschild nicht wieder aufladen oder regenerieren",
+                "string": "Linker Ring-Platz: Ihr könnt Euren Energieschilds nicht wieder aufladen oder regenerieren",
                 "negate": false
             }
         ],
@@ -21946,11 +21907,11 @@
         "id": "killed_monster_dropped_item_rarity_+%_on_crit",
         "matchers": [
             {
-                "string": "#% erhöhte Seltenheit gefundener Gegenstände bei durch kritische Treffer getötet Gegner",
+                "string": "#% erhöhte Seltenheit gefundener Gegenstände bei durch Kritische Treffer getötet Gegner",
                 "negate": false
             },
             {
-                "string": "#% verringerte Seltenheit gefundener Gegenstände bei durch kritische Treffer getötet Gegner",
+                "string": "#% verringerte Seltenheit gefundener Gegenstände bei durch Kritische Treffer getötet Gegner",
                 "negate": true
             }
         ],
@@ -25712,11 +25673,11 @@
         "id": "elemental_damage_with_attack_skills_+%_while_using_flask",
         "matchers": [
             {
-                "string": "#% erhöhter Elementarschaden mit Angriffsfertigkeiten während beliebiger Fläschchenwirkung",
+                "string": "#% erhöhter Elementarschaden mit Angriffsfertigkeiten während beliebiger Fläschchenenwirkung",
                 "negate": false
             },
             {
-                "string": "#% verringerter Elementarschaden mit Angriffsfertigkeiten während beliebiger Fläschchenwirkung",
+                "string": "#% verringerter Elementarschaden mit Angriffsfertigkeiten während beliebiger Fläschchenenwirkung",
                 "negate": true
             }
         ],
@@ -25845,11 +25806,11 @@
         "id": "damage_vs_enemies_on_full_life_per_power_charge_+%",
         "matchers": [
             {
-                "string": "#% erhöhter Schaden pro Energie-Ladung gegen Gegner mit vollem Leben",
+                "string": "#% erhöhter Schaden pro Energie-Ladung mit Treffern gegen Gegner mit vollem Leben",
                 "negate": false
             },
             {
-                "string": "#% verringerter Schaden pro Energie-Ladung gegen Gegner mit vollem Leben",
+                "string": "#% verringerter Schaden pro Energie-Ladung mit Treffern gegen Gegner mit vollem Leben",
                 "negate": true
             }
         ],
@@ -27598,11 +27559,11 @@
         "id": "one_handed_melee_critical_strike_chance_+%",
         "matchers": [
             {
-                "string": "#% erhöhte kritische Trefferchance mit Einhand-Nahkampfwaffen",
+                "string": "#% erhöhte kritische Treffer mit Einhand-Nahkampfwaffen",
                 "negate": false
             },
             {
-                "string": "#% verringerte kritische Trefferchance mit Einhand-Nahkampfwaffen",
+                "string": "#% verringerte kritische Treffer mit Einhand-Nahkampfwaffen",
                 "negate": true
             }
         ],
@@ -27620,7 +27581,7 @@
                 "negate": false
             },
             {
-                "string": "#% verringerte kritische Trefferchance mit Zweihand-Nahkampfwaffen",
+                "string": "#% verringerte kritische Treffermit Zweihand-Nahkampfwaffen",
                 "negate": true
             }
         ],
@@ -28743,7 +28704,7 @@
         "id": "life_gained_on_hit_per_enemy_status_ailment",
         "matchers": [
             {
-                "string": "Erhaltet # Leben für jede elementare Beeinträchtigung auf Gegnern, die von Euren Angriffen getroffen werden",
+                "string": "Erhaltet # Leben für jede elementare Beeinträchtigung auf Gegnern, die von Euren Angriffen  getroffen werden",
                 "negate": false
             }
         ],
@@ -29634,9 +29595,9 @@
         "trade": {
             "ids": {
                 "explicit": [
+                    "explicit.stat_398335579",
                     "explicit.stat_1414945937",
-                    "explicit.stat_4007938693",
-                    "explicit.stat_398335579"
+                    "explicit.stat_4007938693"
                 ]
             }
         }
@@ -30745,7 +30706,7 @@
         "id": "local_varunastra_weapon_counts_as_all_1h_melee_weapon_types",
         "matchers": [
             {
-                "string": "Zählt zu allen einhändigen Waffentypen",
+                "string": "Zählt zu allen einhändigen Nahkampf-Waffentypen",
                 "negate": false
             }
         ],
@@ -31699,7 +31660,7 @@
         "id": "critical_strike_chance_increased_by_overcapped_lightning_resistance",
         "matchers": [
             {
-                "string": "Kritische Trefferchance wird erhöht durch übergedeckelten Blitzwiderstand",
+                "string": "kritische Trefferchance wird erhöht durch übergedeckelten Blitzwiderstand",
                 "negate": false
             }
         ],
@@ -32061,7 +32022,7 @@
         "id": "local_unique_overflowing_chalice_flask_cannot_gain_flask_charges_during_flask_effect",
         "matchers": [
             {
-                "string": "Erhält keine Füllungen während der Wirkung von 'Überfließender Kelch'",
+                "string": "Erhält keine Füllungen während der Wirkung von 'Überfließender Kelch'-Fläschchens",
                 "negate": false
             }
         ],
@@ -32359,7 +32320,7 @@
         "id": "evasion_rating_+%_while_phasing",
         "matchers": [
             {
-                "string": "#% erhöhter Ausweichwert während Schemenform",
+                "string": "#% erhöhter Ausweichen während Schemenform",
                 "negate": false
             }
         ],
@@ -33399,11 +33360,11 @@
         "id": "attack_and_cast_speed_+%_during_flask_effect",
         "matchers": [
             {
-                "string": "#% erhöhte Angriffs- und Zaubergeschwindigkeit während beliebiger Fläschchenwirkung",
+                "string": "#% erhöhte Angriffs- und Zaubergeschwindigkeit während beliebiger Fläschchenenwirkung",
                 "negate": false
             },
             {
-                "string": "#% verringerte Angriffs- und Zaubergeschwindigkeit während beliebiger Fläschchenwirkung",
+                "string": "#% verringerte Angriffs- und Zaubergeschwindigkeit während beliebiger Fläschchenenwirkung",
                 "negate": true
             }
         ],
@@ -35196,7 +35157,7 @@
         "id": "non_critical_strikes_deal_no_damage",
         "matchers": [
             {
-                "string": "Nicht kritische Treffer verursachen keinen Schaden",
+                "string": "Nicht Kritische Treffer verursachen keinen Schaden",
                 "negate": false
             }
         ],
@@ -36423,15 +36384,15 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_4219583418",
+                    "explicit.stat_1539368271",
                     "explicit.stat_1640965354",
-                    "explicit.stat_1539368271"
+                    "explicit.stat_4219583418"
                 ],
                 "implicit": [
                     "implicit.stat_1539368271",
-                    "implicit.stat_3051490307",
                     "implicit.stat_4219583418",
-                    "implicit.stat_1640965354"
+                    "implicit.stat_1640965354",
+                    "implicit.stat_3051490307"
                 ]
             }
         }
@@ -36648,7 +36609,7 @@
         "id": "energy_shield_recharge_start_when_stunned",
         "matchers": [
             {
-                "string": "Energieschildaufladung startet, sobald Ihr betäubt werdet",
+                "string": "Energieschild-Wiederaufladung startet, sobald Ihr betäubt werdet",
                 "negate": false
             }
         ],
@@ -36744,9 +36705,9 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_57434274",
-                    "explicit.stat_3666934677"
+                    "explicit.stat_3666934677",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
                     "enchant.stat_2017682521"
@@ -36856,11 +36817,11 @@
         "id": "projectile_attack_skill_critical_strike_chance_+%",
         "matchers": [
             {
-                "string": "Projektilangriffsfertigkeiten haben #% erhöhte kritische Trefferchance",
+                "string": "Projektil-Angriffsfertigkeiten haben #% erhöhte kritische Trefferchance",
                 "negate": false
             },
             {
-                "string": "Projektilangriffsfertigkeiten haben #% verringerte kritische Trefferchance",
+                "string": "Projektil-Angriffsfertigkeiten haben #% verringerte kritische Trefferchance",
                 "negate": true
             }
         ],
@@ -37648,7 +37609,7 @@
         "id": "cannot_be_ignited_with_strength_higher_than_dex",
         "matchers": [
             {
-                "string": "Ihr könnt nicht entzündet werden, falls Euer Stärkewert höher ist als Euer Geschickwert",
+                "string": "Ihr könnt nicht entzündet werden, falls Euer Stärkewert höher ist als Euer Geschick wert",
                 "negate": false
             }
         ],
@@ -39702,13 +39663,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39726,13 +39687,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39750,13 +39711,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -39774,13 +39735,13 @@
         "trade": {
             "ids": {
                 "explicit": [
-                    "explicit.stat_2017682521",
                     "explicit.stat_2306002879",
-                    "explicit.stat_2390685262"
+                    "explicit.stat_2390685262",
+                    "explicit.stat_2017682521"
                 ],
                 "enchant": [
-                    "enchant.stat_2306002879",
-                    "enchant.stat_2017682521"
+                    "enchant.stat_2017682521",
+                    "enchant.stat_2306002879"
                 ]
             }
         }
@@ -42854,11 +42815,11 @@
         "id": "minion_attack_and_cast_speed_+%_per_10_devotion",
         "matchers": [
             {
-                "string": "#% erhöhte Kreaturenangriffs- und Zaubergeschwindigkeit pro 10 Hingabe",
+                "string": "#% erhöhte KreaturenAngriffs- und Zaubergeschwindigkeit pro 10 Hingabe",
                 "negate": false
             },
             {
-                "string": "#% verringerte Kreaturenangriffs- und Zaubergeschwindigkeit pro 10 Hingabe",
+                "string": "#% verringerte KreaturenAngriffs- und Zaubergeschwindigkeit pro 10 Hingabe",
                 "negate": true
             }
         ],
@@ -50831,7 +50792,7 @@
                 "negate": false
             },
             {
-                "string": "Ihr könnt keine Bürden erhalten",
+                "string": "Ihr könnt keine Bürde erhalten",
                 "negate": false,
                 "value": 100
             }

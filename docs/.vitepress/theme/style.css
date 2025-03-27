@@ -114,6 +114,28 @@
   h3 {
     font-size: 1.25rem;
   }
+  h1>a.header-anchor, h2>a.header-anchor, h3>a.header-anchor, h4>a.header-anchor, h5>a.header-anchor, h6>a.header-anchor {
+    background-color: transparent;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    margin-left: 0.5rem;
+  }
+  
+  h1>a.header-anchor::before, h2>a.header-anchor::before, h3>a.header-anchor::before, h4>a.header-anchor::before, h5>a.header-anchor::before, h6>a.header-anchor::before {
+    content: "#";
+    display: inline;
+    font-size: 0.8em;
+    color: #006030;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  h1:hover>a.header-anchor::before, h2:hover>a.header-anchor::before, h3:hover>a.header-anchor::before, h4:hover>a.header-anchor::before, h5:hover>a.header-anchor::before, h6:hover>a.header-anchor::before {
+    opacity: 1;
+  }
 }
 
 .markdown-body {

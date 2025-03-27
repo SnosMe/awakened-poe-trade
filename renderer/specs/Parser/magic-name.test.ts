@@ -48,3 +48,26 @@ describe("Check Magic Name (cmn-Hant)", () => {
     expect(magicBasetype(name)).toBe("神殿重錘");
   });
 });
+
+describe("Check Magic Name (cmn-Hant) when UI returns english name", () => {
+  beforeEach(async () => {
+    setupTests({ language: "cmn-Hant" });
+    await loadForLang("cmn-Hant");
+  });
+  test("Should parse normal name", () => {
+    const name = "Rattling Sceptre";
+    expect(magicBasetype(name)).toBe("Rattling Sceptre");
+  });
+  test("Should parse magic name with suffix", () => {
+    const name = "Advanced Cultist Greathammer of Nourishment";
+    expect(magicBasetype(name)).toBe("Advanced Cultist Greathammer");
+  });
+  test("Should parse magic name with prefix", () => {
+    const name = "Pulsing Advanced Antler Focus";
+    expect(magicBasetype(name)).toBe("Advanced Antler Focus");
+  });
+  test("Should parse magic name with prefix and suffix", () => {
+    const name = "Reaver's Temple Maul of Stunning";
+    expect(magicBasetype(name)).toBe("Temple Maul");
+  });
+});

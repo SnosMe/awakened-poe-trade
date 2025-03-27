@@ -48,7 +48,7 @@
     "total_dps": "Total DPS: {0}",
     "physical_dps": "Physical DPS: {0}",
     "elemental_dps": "Elemental DPS: {0}",
-    "crit": "Critical Strike Chance: {0}%",
+    "crit": "Critical Hit Chance: {0}%",
     "aps": "Attacks per Second: {0}",
     "spirit": "Spirit: {0}",
     "has_empty_modifier": "1 Empty or Crafted Modifier",

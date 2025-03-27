@@ -225,6 +225,7 @@ export function createExactStatFilters(
   ) {
     enableAllFilters(ctx.filters);
   }
+
   if (opts.defaultAllSelected) {
     enableAllFilters(ctx.filters);
   }
@@ -453,6 +454,18 @@ export function calculatedStatToFilter(
       }
     }
 
+    let goodness: number | undefined;
+    if (calc.stat.better !== StatBetter.NotComparable) {
+      if (roll.min === roll.max) {
+        goodness = 1;
+      } else {
+        goodness = (roll.value - roll.min) / (roll.max - roll.min);
+        if (calc.stat.better === StatBetter.NegativeRoll) {
+          goodness = 1 - goodness;
+        }
+      }
+    }
+
     const dp =
       calc.stat.dp ||
       calc.sources.some(
@@ -506,6 +519,7 @@ export function calculatedStatToFilter(
       dp,
       isNegated: false,
       tradeInvert: calc.stat.trade.inverted,
+      goodness,
     };
 
     filterFillMinMax(filter.roll, calc.stat.better);
@@ -761,6 +775,21 @@ function showHasEmptyModifier(
 function enableAllFilters(filters: StatFilter[]) {
   for (const filter of filters) {
     if (!filter.hidden) {
+      filter.disabled = false;
+    }
+  }
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function enableGoodRolledFilters(filters: StatFilter[], abovePct: number) {
+  for (const filter of filters) {
+    if (filter.hidden) continue;
+    if (!filter.roll || filter.roll.goodness == null) {
+      filter.disabled = false;
+      continue;
+    }
+
+    if (filter.roll.goodness >= abovePct) {
       filter.disabled = false;
     }
   }
