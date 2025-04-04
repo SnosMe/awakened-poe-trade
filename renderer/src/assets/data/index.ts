@@ -5,6 +5,7 @@ import type {
   ItemCategoryToEmptyPrefix,
   PseudoIdToTradeRequest,
   RuneDataByRune,
+  RuneDataByTradeId,
   RuneSingleValue,
   Stat,
   StatMatcher,
@@ -22,10 +23,12 @@ export let APP_PATRONS: Array<{ from: string; months: number; style: number }>;
 export let PSEUDO_ID_TO_TRADE_REQUEST: PseudoIdToTradeRequest;
 export let RUNE_SINGLE_VALUE: RuneSingleValue;
 export let RUNE_DATA_BY_RUNE: RuneDataByRune;
+export let RUNE_DATA_BY_TRADE_ID: RuneDataByTradeId;
 export let ITEM_CATEGORY_TO_EMPTY_PREFIX: ItemCategoryToEmptyPrefix;
 export let MAX_TIER_LOOKUP: TierLookup;
 
 export let RUNE_LIST: BaseType[];
+export const HIGH_VALUE_RUNES_HARDCODED = new Set<string>([]);
 
 export let ITEM_BY_TRANSLATED = (
   ns: BaseType["namespace"],
@@ -173,7 +176,13 @@ async function loadItems(language: string, isTest = false) {
     ITEMS_ITERATOR('refName":"Replica'),
   );
 
-  RUNE_LIST = Array.from(ITEMS_ITERATOR('Rune", "namespace": "ITEM",'));
+  RUNE_SINGLE_VALUE = await (
+    await fetch(`${import.meta.env.BASE_URL}data/rune-single-value.json`)
+  ).json();
+
+  RUNE_LIST = Array.from(
+    ITEMS_ITERATOR('"craftable": {"category": "SoulCore"}'),
+  ).filter((r) => r.rune && r.rune.armour?.tradeId && r.rune.weapon?.tradeId);
 }
 
 async function loadStats(language: string, isTest = false) {
@@ -258,12 +267,6 @@ export async function init(lang: string, isTest = false) {
     await fetch(`${import.meta.env.BASE_URL}data/pseudo-empty-prefix.json`)
   ).json();
 
-  RUNE_SINGLE_VALUE = await (
-    await fetch(`${import.meta.env.BASE_URL}data/rune-single-value.json`)
-  ).json();
-
-  RUNE_DATA_BY_RUNE = convertRuneSingleValueToRuneDataByRune(RUNE_SINGLE_VALUE);
-
   MAX_TIER_LOOKUP = await (
     await fetch(`${import.meta.env.BASE_URL}data/tiers.json`)
   ).json();
@@ -289,6 +292,10 @@ export async function init(lang: string, isTest = false) {
     );
   }
   DELAYED_STAT_VALIDATION.clear();
+
+  RUNE_DATA_BY_RUNE = runesToLookup(RUNE_LIST);
+
+  RUNE_DATA_BY_TRADE_ID = runesToLookupTradeId(RUNE_LIST);
 }
 
 export async function loadForLang(lang: string, isTest = false) {
@@ -297,26 +304,70 @@ export async function loadForLang(lang: string, isTest = false) {
   await loadStats(lang);
 }
 
-function convertRuneSingleValueToRuneDataByRune(
-  runeSingleValue: RuneSingleValue,
-): RuneDataByRune {
+export function loadUltraLateItems(
+  runeFilter: (value: BaseType, index: number, array: BaseType[]) => unknown,
+) {
+  RUNE_LIST = Array.from(
+    ITEMS_ITERATOR('"craftable": {"category": "SoulCore"}'),
+  )
+    .filter((r) => r.rune && r.rune.armour?.tradeId && r.rune.weapon?.tradeId)
+    .filter(runeFilter);
+
+  RUNE_DATA_BY_RUNE = runesToLookup(RUNE_LIST);
+
+  RUNE_DATA_BY_TRADE_ID = runesToLookupTradeId(RUNE_LIST);
+}
+
+function runesToLookup(runeList: BaseType[]): RuneDataByRune {
   const runeDataByRune: RuneDataByRune = {};
 
-  for (const id in runeSingleValue) {
-    const { rune, baseStat, values, id: runeId, type } = runeSingleValue[id];
-
-    if (!runeDataByRune[rune]) {
-      runeDataByRune[rune] = [{ rune, baseStat, values, id: runeId, type }];
-    } else {
-      runeDataByRune[rune].push({
-        rune,
-        baseStat,
+  for (const rune of runeList) {
+    if (!rune.rune) continue;
+    for (const runeStat in rune.rune) {
+      const { string: text, values, tradeId } = rune.rune[runeStat];
+      if (!runeDataByRune[rune.name]) {
+        runeDataByRune[rune.name] = [];
+      }
+      runeDataByRune[rune.name].push({
+        rune: rune.name,
+        baseStat: text,
         values,
-        id: runeId,
-        type,
+        id: tradeId[0],
+        type: runeStat,
+        icon: rune.icon,
       });
     }
   }
 
   return runeDataByRune;
 }
+
+function runesToLookupTradeId(runeList: BaseType[]): RuneDataByTradeId {
+  const runeDataByRune: RuneDataByTradeId = {};
+
+  for (const rune of runeList) {
+    if (!rune.rune) continue;
+    for (const runeStat in rune.rune) {
+      const { string: text, values, tradeId } = rune.rune[runeStat];
+      if (!runeDataByRune[tradeId[0]]) {
+        runeDataByRune[tradeId[0]] = [];
+      }
+      runeDataByRune[tradeId[0]].push({
+        rune: rune.name,
+        baseStat: text,
+        values,
+        id: tradeId[0],
+        type: runeStat,
+        icon: rune.icon,
+      });
+    }
+  }
+
+  return runeDataByRune;
+}
+
+// Disable since this is export for tests
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const __testExports = {
+  runesToLookup,
+};

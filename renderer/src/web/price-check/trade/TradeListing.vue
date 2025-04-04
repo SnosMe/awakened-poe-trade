@@ -127,7 +127,6 @@ import { artificialSlowdown } from "./artificial-slowdown";
 import OnlineFilter from "./OnlineFilter.vue";
 import TradeLinks from "./TradeLinks.vue";
 import TradeItem from "./TradeItem.vue";
-import { Host } from "@/web/background/IPC";
 import { CURRENCY_RATIO } from "@/web/price-check/filters/create-item-filters";
 
 const slowdown = artificialSlowdown(900);
@@ -387,11 +386,7 @@ export default defineComponent({
       makeTradeLink,
       makeTradeLinkPseudo,
       openTradeLink() {
-        if (widget.value.builtinBrowser && Host.isElectron) {
-          showBrowser(makeTradeLink());
-        } else {
-          window.open(makeTradeLink());
-        }
+        showBrowser(makeTradeLink());
       },
       showPseudoLink: computed(
         () =>

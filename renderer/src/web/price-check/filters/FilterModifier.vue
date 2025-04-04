@@ -24,7 +24,9 @@
             style="line-height: 1rem"
           >
             <span class="truncate"
-              ><item-modifier-text :text="text" :roll="roll?.value"
+              ><item-modifier-text
+                :text="timeLost ? timeLostText : text"
+                :roll="roll?.value"
             /></span>
             <span class="search-text-full whitespace-pre-wrap"
               ><item-modifier-text :text="text" :roll="roll?.value"
@@ -32,6 +34,20 @@
           </div>
         </button>
         <div class="flex items-baseline gap-x-1">
+          <div
+            v-if="showRuneNotice"
+            :class="$style['qualityLabel']"
+            class="self-center"
+          >
+            <img
+              :src="
+                showRuneNotice === '%NOT_FOUND%'
+                  ? '/images/404.png'
+                  : showRuneNotice
+              "
+              class="min-w-5 min-h-5 w-5 h-5"
+            />
+          </div>
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">
             {{ t("item.prop_quality", [calcQuality]) }}
           </div>
@@ -87,17 +103,21 @@
             </template>
           </ui-popover>
         </div>
-        <div class="flex-1 flex items-start gap-x-2">
-          <span v-if="showTag" :class="[$style['tag'], $style[`tag-${tag}`]]"
-            >{{ t(`filters.tag_${tag.replace("-", "_")}`)
-            }}{{
-              filter.sources.length > 1 ? ` x ${filter.sources.length}` : null
-            }}</span
-          >
-          <filter-modifier-tiers :filter="filter" :item="item" />
-          <filter-modifier-item-has-empty :filter="filter" />
+
+        <div class="flex-1 flex flex-col gap-1">
+          <div class="flex-1 flex items-start gap-x-2">
+            <span v-if="showTag" :class="[$style['tag'], $style[`tag-${tag}`]]"
+              >{{ t(`filters.tag_${tag.replace("-", "_")}`)
+              }}{{
+                filter.sources.length > 1 ? ` x ${filter.sources.length}` : null
+              }}</span
+            >
+            <filter-modifier-tiers :filter="filter" :item="item" />
+            <filter-modifier-item-has-empty :filter="filter" />
+          </div>
           <filter-modifier-item-is-elemental :filter="filter" />
         </div>
+
         <stat-roll-slider
           v-if="roll && roll.bounds"
           class="mr-4"
@@ -126,10 +146,11 @@ import ModifierAnointment from "./FilterModifierAnointment.vue";
 import FilterModifierItemHasEmpty from "./FilterModifierItemHasEmpty.vue";
 import FilterModifierTiers from "./FilterModifierTiers.vue";
 import { AppConfig } from "@/web/Config";
-import { ItemRarity, ParsedItem } from "@/parser";
+import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from "./interfaces";
 import SourceInfo from "./SourceInfo.vue";
 import FilterModifierItemIsElemental from "./FilterModifierItemIsElemental.vue";
+import { CLIENT_STRINGS as _$ } from "@/assets/data";
 
 export default defineComponent({
   components: {
@@ -171,6 +192,16 @@ export default defineComponent({
             props.filter.tag === FilterTag.Pseudo)
         ),
     );
+
+    const showRuneNotice = computed(() => {
+      if (props.filter.sources.some((source) => source.stat.fromAddedRune)) {
+        const i = props.filter.sources.find(
+          (source) => source.stat.fromAddedRune,
+        )?.stat.fromAddedRune?.icon;
+        return i;
+      }
+      return false;
+    });
 
     const showQ20Notice = computed(() => {
       return (
@@ -235,11 +266,24 @@ export default defineComponent({
       }
     }
 
+    const text = computed(() => {
+      if (
+        !(INTERNAL_TRADE_IDS as readonly string[]).includes(
+          props.filter.tradeId[0],
+        )
+      ) {
+        return props.filter.text;
+      } else {
+        return t(props.filter.tradeId[0], ["#", "#"]);
+      }
+    });
+
     const { t } = useI18n();
 
     return {
       t,
       showTag,
+      showRuneNotice,
       showQ20Notice,
       calcQuality,
       inputMinEl,
@@ -269,17 +313,26 @@ export default defineComponent({
       ),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
-      text: computed(() => {
+      timeLostText: computed(() => {
         if (
-          !(INTERNAL_TRADE_IDS as readonly string[]).includes(
-            props.filter.tradeId[0],
-          )
+          props.item.category === ItemCategory.Jewel &&
+          props.item.info.refName.startsWith("Time-Lost")
         ) {
-          return props.filter.text;
-        } else {
-          return t(props.filter.tradeId[0], ["#", "#"]);
+          const raw = text.value;
+          const templates = [
+            _$.TIMELESS_SMALL_PASSIVES,
+            _$.TIMELESS_NOTABLE_PASSIVES,
+          ];
+          for (const template of templates) {
+            const escaped = template.replace("{0}", "(.*)");
+            const regex = new RegExp("^" + escaped + "$");
+            const match = raw.match(regex);
+            if (match) return match[1];
+          }
         }
+        return text.value;
       }),
+      text,
       roll: computed(() => props.filter.roll),
       isHidden: computed(() => props.filter.hidden != null),
       hiddenReason: computed(() => t(props.filter.hidden!)),
@@ -287,7 +340,10 @@ export default defineComponent({
         () =>
           props.showSources &&
           props.filter.sources.length &&
-          props.filter.option == null &&
+          (props.filter.option == null ||
+            (props.filter.tradeId &&
+              props.filter.tradeId.length > 0 &&
+              props.filter.tradeId[0] === "item.elemental_dps")) &&
           (props.filter.tag === FilterTag.Pseudo ||
             props.filter.sources.length >= 2 ||
             props.filter.sources[0].modifier.info.name != null ||
@@ -296,6 +352,11 @@ export default defineComponent({
       ),
       inputFocus,
       toggleFilter,
+      timeLost: computed(
+        () =>
+          props.item.category === ItemCategory.Jewel &&
+          props.item.info.refName.startsWith("Time-Lost"),
+      ),
     };
   },
 });
@@ -342,7 +403,7 @@ export default defineComponent({
   @apply border border-gray-700;
   @apply rounded;
   @apply px-2;
-  text-align: center;
+  @apply text-center;
 }
 
 .mods {
@@ -456,6 +517,17 @@ export default defineComponent({
 .tag-rune {
   @apply bg-blue-600 text-blue-100;
 }
+.tag-added-rune {
+  @apply text-blue-100 relative overflow-hidden;
+
+  background: repeating-linear-gradient(
+    45deg,
+    #3182ce,
+    #3182ce 8px,
+    #1a4773 8px,
+    #1a4773 16px
+  );
+}
 .tag-sanctum {
   @apply border;
 }
@@ -477,5 +549,17 @@ export default defineComponent({
   .search-text:hover & {
     @apply bg-gray-700;
   }
+}
+
+.truncate-start {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  direction: rtl;
+}
+.truncate-start:after {
+  position: absolute;
+  left: 0px;
+  content: "...";
 }
 </style>

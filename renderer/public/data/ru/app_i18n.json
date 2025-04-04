@@ -195,6 +195,7 @@
     "tag_explicit_veiled": "Завуалирован",
     "tag_explicit_incursion": "Вмешательство",
     "tag_rune": "Руна",
+    "tag_added_rune": "Руна",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
     "grade": "Грейд {0}",
@@ -398,7 +399,8 @@
     "tier_numbering_poe2": "PoE2 (больше - лучше)",
     "tier_numbering_help": "Во избежание недоразумений связанных с системой наименований в игре, тиры из PoE1 будут называться \"Grade\" вместо \"Tier\". ",
     "always_show_tier": "Always show tier",
-    "remember_ratio": "Remember currency ratio"
+    "remember_ratio": "Remember currency ratio",
+    "open_editor_above": "Open rune socket selector upwards"
   },
   "poe2_new": {
     "beta_warning": "Функционал для PoE2 находится в стадии бета тестирования и не всегда работает так, как задумано.",

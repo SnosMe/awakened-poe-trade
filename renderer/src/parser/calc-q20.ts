@@ -35,6 +35,12 @@ export const QUALITY_STATS = {
     incr: [stat("#% increased Physical Damage")],
   },
 };
+export const OTHER_PSEUDO_STATS = {
+  ATTACK_SPEED: {
+    flat: [],
+    incr: [stat("#% increased Attack Speed")],
+  },
+};
 
 export function propAt20Quality(
   total: number,

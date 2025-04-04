@@ -1,5 +1,10 @@
-import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from "@/assets/data";
-import type { StatMatcher, Stat } from "@/assets/data";
+import {
+  CLIENT_STRINGS as _$,
+  ITEM_BY_REF,
+  RUNE_DATA_BY_TRADE_ID,
+  STAT_BY_MATCH_STR,
+} from "@/assets/data";
+import type { StatMatcher, Stat, BaseType } from "@/assets/data";
 import { ModifierType } from "./modifiers";
 
 // This file is a little messy and scary,
@@ -19,6 +24,7 @@ export interface ParsedStat {
     min: number;
     max: number;
   };
+  fromAddedRune?: BaseType;
 }
 
 interface StatString {
@@ -160,7 +166,9 @@ export function tryParseTranslation(
 ): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
     const found = STAT_BY_MATCH_STR(combination.stat);
-    if (!found || !found.stat.trade.ids || !found.stat.trade.ids[modType]) {
+    const realType =
+      modType === ModifierType.AddedRune ? ModifierType.Rune : modType;
+    if (!found || !found.stat.trade.ids || !found.stat.trade.ids[realType]) {
       continue;
     }
 
@@ -242,8 +250,26 @@ export function tryParseTranslation(
             ),
           }
         : undefined,
+      fromAddedRune:
+        modType === ModifierType.AddedRune ? getRune(found.stat) : undefined,
     };
   }
+}
+
+function getRune(stat: Stat): BaseType | undefined {
+  if (
+    !stat.trade.ids ||
+    !stat.trade.ids.rune ||
+    stat.trade.ids.rune.length === 0
+  )
+    return;
+
+  const tradeId = stat.trade.ids.rune[0];
+  // HACK: temp fix for icons
+  const runes = RUNE_DATA_BY_TRADE_ID[tradeId];
+  const rune = runes.find((r) => r.icon !== "%NOT_FOUND%") ?? runes[0];
+  const runesWithSameTradeId = ITEM_BY_REF("ITEM", rune.rune)!;
+  return runesWithSameTradeId[0];
 }
 
 export function getRollOrMinmaxAvg(values: number[]): number {

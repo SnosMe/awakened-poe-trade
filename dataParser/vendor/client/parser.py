@@ -31,6 +31,8 @@ from descriptionParser.descriptionFile import DescriptionFile
 from modTiers.modTierBuilder import modTierBuilderB
 from overrideData.buildAnnoints import AnnointBuilder
 from services.logger_setup import set_log_level
+from services.runes import build_runes_df, get_df
+from services.statNameBuilder import convert_stat_name
 
 logger = logging.getLogger(__name__)
 
@@ -261,7 +263,7 @@ def flatten_mods(mods):
         # Deduplicate trade IDs if they are not None
         if group["trade"]["ids"] is not None:
             group["trade"]["ids"] = {
-                k: list(set(v)) for k, v in group["trade"]["ids"].items()
+                k: sorted(list(set(v))) for k, v in group["trade"]["ids"].items()
             }
         flattened_mods[f"merged_{i}"] = group  # Use a new unique key for merged mods
 
@@ -279,6 +281,48 @@ def add_unique_mods(mods, unique_override_data, words_lookup):
                 # out_mods[words_lookup[unique_name]] = stat_values
             mod["tiers"]["unique"] = out_mods
     return mods
+
+
+def replace_hash_with_values(template: str, values: list[int]) -> str:
+    """replaces all the hashes in the template with the values sequentially
+
+    Parameters
+    ----------
+    template : str
+        string with `#` in it to replace
+    values : list[int]
+        `int` values to replace the `#` with
+
+    Returns
+    -------
+    str
+        output string with the values replaced
+    Example:
+        >>> replace_hash_with_values("# to maximum Life", [20])
+        "20 to maximum Life"
+        >>> replace_hash_with_values("Adds # to # Physical Damage to Attacks", [20, 35])
+        "Adds 20 to 35 Physical Damage to Attacks"
+    """
+    result = template
+    for value in values:
+        result = result.replace("#", str(value), 1)
+    return result
+
+
+def first_non_negated(matchers):
+    # Look for a matcher that is not negated
+    non_negated = [
+        matcher
+        for matcher in matchers
+        if not matcher.get("negate", False) and matcher.get("value") is None
+    ]
+
+    # If found, return the first one
+    if non_negated:
+        return non_negated[0]
+
+    # Otherwise, return the first matcher, assuming at least one is negated
+    return matchers[0] if matchers else None
 
 
 class Parser:
@@ -315,8 +359,10 @@ class Parser:
         self.mods_file = self.load_file("Mods")
         self.words_file = self.load_file("Words")
         self.gold_mod_prices = self.load_file("GoldModPrices")
+        self.runes = self.load_file("SoulCores")
         self.tags = self.load_file("Tags")
         self.client_strings_file = self.load_file("ClientStrings")
+        self.client_strings_file_en = self.load_file("ClientStrings", is_en=True)
         # NOTE: could need to add local here?
         self.trade_stats = json.loads(
             open(
@@ -344,6 +390,12 @@ class Parser:
         self.mods = {}
         self.matchers_no_trade_ids = []
         self.tiers = {}
+        self.client_strings_by_id = {
+            s.get("Id"): s.get("Text") for s in self.client_strings_file
+        }
+        self.client_strings_by_id_en = {
+            s.get("Id"): s.get("Text") for s in self.client_strings_file_en
+        }
 
         base_en = self.load_file("BaseItemTypes", is_en=True)
         self.base_en_items_lookup = dict()
@@ -355,6 +407,14 @@ class Parser:
             if name is None:
                 continue
             self.base_en_items_lookup[id] = name
+
+    def get_mod_by_id(self, id: str) -> dict | None:
+        filtered = [mod for mod in self.mods.values() if mod.get("id") == id]
+        return None if len(filtered) == 0 else filtered[0]
+
+    def get_stat_by_id(self, id: str) -> dict | None:
+        filtered = [stat for stat in self.stats.values() if stat == id]
+        return None if len(filtered) == 0 else filtered[0]
 
     def make_poe_cdn_url(self, path):
         return urllib.parse.urljoin("https://web.poecdn.com/", path)
@@ -612,7 +672,7 @@ class Parser:
 
                 if stats_key is not None:
                     stats_id = self.stats.get(stats_key)
-                    translation = self.mod_translations.get(stats_id)
+                    translation = deepcopy(self.mod_translations.get(stats_id))
 
                     if translation:
                         ref = translation.get("ref")
@@ -623,6 +683,28 @@ class Parser:
                                 f"No matchers found for stats ID: {stats_id}."
                             )
                             continue
+
+                        if tiers is not None and "radius_jewel" in tiers:
+                            jewel_type = tiers["radius_jewel"]
+                            if jewel_type == 1 or jewel_type == 2:
+                                jewel_text_id = (
+                                    "ModStatJewelAddToSmall"
+                                    if jewel_type == 1
+                                    else "ModStatJewelAddToNotable"
+                                )
+                                jewel_text_to_add = convert_stat_name(
+                                    self.client_strings_by_id.get(jewel_text_id)
+                                )
+                                jewel_text_to_add_ref = convert_stat_name(
+                                    self.client_strings_by_id_en.get(jewel_text_id)
+                                )
+                                translation["ref"] = jewel_text_to_add_ref.replace(
+                                    "#", ref
+                                )
+                                for matcher in matchers:
+                                    matcher["string"] = jewel_text_to_add.replace(
+                                        "#", matcher["string"]
+                                    )
 
                         ids = self.stats_trade_ids.get(matchers[0].get("string"))
                         if stat_id is None:
@@ -712,10 +794,13 @@ class Parser:
                 else:
                     for matcher in main_translation.get("matchers"):
                         existing_matchers.add(matcher.get("string"))
+                    time_lost_prepend = (
+                        "" if tiers is None or "radius_jewel" not in tiers else "TLJ_"
+                    )
                     self.mods[base_id] = {
                         "ref": main_translation.get("ref"),
                         "better": better(stats_id),
-                        "id": stat_id,
+                        "id": time_lost_prepend + stat_id,
                         "matchers": main_translation.get("matchers"),
                         "trade": trade,
                     }
@@ -723,7 +808,7 @@ class Parser:
                         self.mods[base_id]["fromAreaMods"] = True
 
             if tiers is not None:
-                tier_refs = [t.get("ref") for t in translations]
+                tier_refs = list({t.get("ref") for t in translations})
                 for perm in permutations(tier_refs):
                     tier_ref_strings = "\n".join(perm)
                     if tier_ref_strings in self.tiers:
@@ -839,6 +924,75 @@ class Parser:
         #                     else:
         #                         mod["hybrids"][hybrid_ref] = set(valid_equipment)
 
+        def add_missing_rune_stat(rune_stat_key: str):
+            rune_stat_id = self.stats.get(rune_stat_key)
+            rune_stat_translation = self.mod_translations.get(rune_stat_id)
+            if not rune_stat_translation:
+                logger.warning(f"No translation found for rune stat: {rune_stat_id}")
+                raise ValueError(f"No translation found for rune stat: {rune_stat_id}")
+            rune_stat_ref = rune_stat_translation.get("ref")
+            rune_stat_matchers = rune_stat_translation.get("matchers")
+            if rune_stat_matchers is None or len(rune_stat_matchers) == 0:
+                logger.error(f"No matchers found for rune stats ID: {rune_stat_key}.")
+                return
+
+            if rune_stat_ref is None:
+                logger.error(f"No ref found for rune stats ID: {rune_stat_key}.")
+                return
+
+            ids = self.stats_trade_ids.get(rune_stat_matchers[0].get("string"))
+            if ids is None and len(rune_stat_matchers) > 1:
+                ids = self.stats_trade_ids.get(rune_stat_matchers[1].get("string"))
+                if ids is None:
+                    logger.warning(
+                        f"No trade IDs found for matchers: {rune_stat_matchers[0].get('string')} or {rune_stat_matchers[1].get('string')}."
+                    )
+                    self.matchers_no_trade_ids.extend(
+                        [
+                            rune_stat_matchers[0].get("string"),
+                            rune_stat_matchers[1].get("string"),
+                        ]
+                    )
+            elif ids is None:
+                logger.warning(
+                    f"No trade IDs found for matcher: {rune_stat_matchers[0].get('string')}."
+                )
+                self.matchers_no_trade_ids.append(rune_stat_matchers[0].get("string"))
+
+            trade = {"ids": ids}
+            stats_from_tiers.add(rune_stat_id)
+            if rune_stat_key in self.mods:
+                raise ValueError(
+                    f"Duplicate mod ID found: {rune_stat_key}. Skipping mod."
+                )
+            self.mods[rune_stat_key] = {
+                "ref": rune_stat_translation.get("ref"),
+                "better": better(rune_stat_id),
+                "id": rune_stat_id,
+                "matchers": rune_stat_translation.get("matchers"),
+                "trade": trade,
+            }
+
+        for rune in self.runes:
+            # Handle any missing armour stats
+            armour_stat_list = rune.get("StatsArmour")
+            if isinstance(armour_stat_list, list) and len(armour_stat_list) > 0:
+                armour_stat = armour_stat_list[0]
+                if self.get_mod_by_id(self.stats[armour_stat]) is None:
+                    # This stat wasn't added by the above 2 loops
+                    # (Should run for "convert req to" runes only, PoE2 0.1.x)
+                    add_missing_rune_stat(armour_stat)
+
+            # Handle any missing weapon stats
+            weapon_stat_list = rune.get("StatsWeapon")
+            if isinstance(weapon_stat_list, list) and len(weapon_stat_list) > 0:
+                weapon_stat = weapon_stat_list[0]
+                if self.get_mod_by_id(self.stats[weapon_stat]) is None:
+                    # This stat wasn't added by the above 2 loops
+                    # (Should never run, PoE2 0.1.x)
+                    # (technically condition is met, but stat is already added from the above if)
+                    add_missing_rune_stat(weapon_stat)
+
         logger.debug("Completed parsing mods.")
         logger.info(f"Mods: {len(self.mods)}")
         # logger.info(f"Hybrid mods: {hybrid_count}")
@@ -918,6 +1072,10 @@ class Parser:
             refName = name
             if id in self.base_en_items_lookup:
                 refName = self.base_en_items_lookup[id]
+            item_tags = []
+            if isinstance(item.get("Tags"), list):
+                for t in item.get("Tags"):
+                    item_tags.append(self.tags[t].get("Id"))
 
             # update name to localized keep ref name as english
             self.items[id] = {
@@ -928,6 +1086,7 @@ class Parser:
                 "dropLevel": item.get("DropLevel"),
                 "width": item.get("Width"),
                 "height": item.get("Height"),
+                "tags": item_tags,
             }
 
             if class_key is not None:
@@ -988,6 +1147,64 @@ class Parser:
             if id in self.items:
                 self.items[id].update({"armour": armour})
 
+        # Handle Runes/Soul Cores
+        runes_df = get_df(self.runes)
+        base_items_df = get_df(self.base_items)
+        stats_df = get_df(self.stats_file)
+        full_runes_df = build_runes_df(base_items_df, stats_df, runes_df)
+
+        for rune in full_runes_df.to_dict("records"):
+            id = rune.get("BaseItemType")
+            # Handle any missing armour stats
+            has_armour = False
+            has_weapon = False
+
+            armour_stat_list = rune.get("StatsArmour")
+            if isinstance(armour_stat_list, list) and len(armour_stat_list) > 0:
+                armour_stat = armour_stat_list[0]
+                armour_mod = self.get_mod_by_id(armour_stat)
+                armour_translated = first_non_negated(armour_mod.get("matchers")).get(
+                    "string"
+                )
+                has_armour = True
+            # armour_filled = replace_hash_with_values(
+            #     armour_translated, rune.get("StatsValuesArmour")
+            # )
+
+            weapon_stat_list = rune.get("StatsWeapon")
+            if isinstance(weapon_stat_list, list) and len(weapon_stat_list) > 0:
+                weapon_stat = weapon_stat_list[0]
+                weapon_mod = self.get_mod_by_id(weapon_stat)
+                weapon_translated = first_non_negated(weapon_mod.get("matchers")).get(
+                    "string"
+                )
+                has_weapon = True
+            # weapon_filled = replace_hash_with_values(
+            #     weapon_translated, rune.get("StatsValuesWeapon")
+            # )
+
+            if id in self.items and has_armour and has_weapon:
+                self.items[id].update(
+                    {
+                        "rune": {
+                            "armour": {
+                                "string": armour_translated,
+                                "values": rune.get("StatsValuesArmour"),
+                                "tradeId": (
+                                    (armour_mod.get("trade") or {}).get("ids") or {}
+                                ).get("rune"),
+                            },
+                            "weapon": {
+                                "string": weapon_translated,
+                                "values": rune.get("StatsValuesWeapon"),
+                                "tradeId": (
+                                    (weapon_mod.get("trade") or {}).get("ids") or {}
+                                ).get("rune"),
+                            },
+                        }
+                    }
+                )
+
     def parse_trade_exchange_items(self):
         items_ids = {}
         for id, item in self.items.items():
@@ -1041,12 +1258,15 @@ class Parser:
             height = item.get("height", None)
             tradeTag = item.get("tradeTag", None)
             icon = item.get("icon", "%NOT_FOUND%")
+            rune = item.get("rune", None)
+            tags = item.get("tags", [])
 
             out = {
                 "name": name,
                 "refName": refName,
                 "namespace": namespace,
                 "icon": icon,
+                "tags": tags,
             }
 
             if tradeTag:
@@ -1066,6 +1286,9 @@ class Parser:
 
             if gem:
                 out.update({"gem": gem})
+
+            if rune:
+                out.update({"rune": rune})
 
             f.write(json.dumps(out, ensure_ascii=False) + "\n")
 

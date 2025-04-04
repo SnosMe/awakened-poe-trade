@@ -233,6 +233,16 @@
         "Id",
         "Name"
       ]
+    },
+    {
+      "name": "SoulCores",
+      "columns": [
+        "BaseItemType",
+        "StatsWeapon",
+        "StatsValuesWeapon",
+        "StatsArmour",
+        "StatsValuesArmour"
+      ]
     }
   ]
 }

@@ -245,15 +245,28 @@ export function createFilters(
         opts.autoFillEmptyRuneSockets &&
         (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare)
       ) {
-        filters.fillEmptyRuneSockets = {
+        filters.itemEditorSelection = {
           disabled: false,
+          editing: false,
+          value: opts.autoFillEmptyRuneSockets
+            ? opts.autoFillEmptyRuneSockets
+            : "None",
         };
       } else {
-        filters.fillEmptyRuneSockets = {
-          disabled: true,
+        filters.itemEditorSelection = {
+          disabled: false,
+          editing: false,
+          value: "None",
         };
       }
     }
+  }
+  if (!filters.itemEditorSelection) {
+    filters.itemEditorSelection = {
+      disabled: true,
+      editing: false,
+      value: "None",
+    };
   }
 
   const forAdornedJewel =

@@ -20,7 +20,7 @@ export default defineConfig({
   },
   themeConfig: {
     // logo: 'TODO', https://github.com/vuejs/vitepress/issues/1401
-    appVersion: '0.8.2',
+    appVersion: '0.9.0',
     github: {
       releasesUrl: 'https://github.com/Kvan7/Exiled-Exchange-2/releases'
     },

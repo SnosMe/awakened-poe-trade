@@ -183,6 +183,7 @@
     "tag_explicit_veiled": "Verschleiert",
     "tag_explicit_incursion": "Incursion",
     "tag_rune": "Rune",
+    "tag_added_rune": "Rune",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
     "grade": "Grad {0}",
@@ -372,7 +373,8 @@
     "tier_numbering_poe2": "PoE2 (höhere Werte sind besser)",
     "tier_numbering_help": "Um Verwirrung durch widersprüchliche Namenskonventionen im Spiel zu reduzieren, werden PoE1-Tiers als \"Grad\" bezeichnet, anstatt \"Stufe\".",
     "always_show_tier": "Tier immer anzeigen",
-    "remember_ratio": "Währungs-Verhältnis merken"
+    "remember_ratio": "Währungs-Verhältnis merken",
+    "open_editor_above": "Open rune socket selector upwards"
   },
   "poe2_new": {
     "beta_warning": "Dies ist eine BETA für POE2, es wird nicht immer wie erwartet funktionieren.",

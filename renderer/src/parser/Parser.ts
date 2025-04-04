@@ -5,7 +5,6 @@ import {
   ITEM_BY_REF,
   STAT_BY_MATCH_STR,
   BaseType,
-  RUNE_SINGLE_VALUE,
   ITEM_BY_TRANSLATED,
 } from "@/assets/data";
 import { ModifierType, StatCalculated, sumStatsByModType } from "./modifiers";
@@ -36,6 +35,7 @@ import {
   isModInfoLine,
   groupLinesByMod,
   parseModInfoLine,
+  ADDED_RUNE_LINE,
 } from "./advanced-mod-desc";
 import { calcPropPercentile, QUALITY_STATS } from "./calc-q20";
 import { getMaxTier } from "./mod-tiers";
@@ -75,7 +75,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseCharmSlots,
   parseSpirit,
   parsePriceNote,
-  parseHelpText,
+  parseUnneededText,
+  parseTimelostRadius,
   parseStackSize,
   parseCorrupted,
   parseFoil,
@@ -898,7 +899,8 @@ export function parseModifiersPoe2(section: string[], item: ParsedItem) {
     (line) =>
       line.endsWith(ENCHANT_LINE) ||
       line.endsWith(SCOURGE_LINE) ||
-      line.endsWith(RUNE_LINE),
+      line.endsWith(RUNE_LINE) ||
+      line.endsWith(ADDED_RUNE_LINE),
   );
 
   if (enchantOrScourgeOrRune) {
@@ -908,7 +910,9 @@ export function parseModifiersPoe2(section: string[], item: ParsedItem) {
         ? ModifierType.Enchant
         : enchantOrScourgeOrRune.endsWith(SCOURGE_LINE)
           ? ModifierType.Scourge
-          : ModifierType.Rune,
+          : enchantOrScourgeOrRune.endsWith(ADDED_RUNE_LINE)
+            ? ModifierType.AddedRune
+            : ModifierType.Rune,
       tags: [],
     };
     foundAnyMods = parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
@@ -951,6 +955,7 @@ function parseModifiers(section: string[], item: ParsedItem) {
     (line) =>
       line.endsWith(ENCHANT_LINE) ||
       line.endsWith(SCOURGE_LINE) ||
+      line.endsWith(RUNE_LINE) ||
       isModInfoLine(line),
   );
 
@@ -989,7 +994,9 @@ function parseModifiers(section: string[], item: ParsedItem) {
     const modInfo: ModifierInfo = {
       type: recognizedLine.endsWith(ENCHANT_LINE)
         ? ModifierType.Enchant
-        : ModifierType.Scourge,
+        : recognizedLine.endsWith(SCOURGE_LINE)
+          ? ModifierType.Scourge
+          : ModifierType.Rune,
       tags: [],
     };
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
@@ -1002,6 +1009,7 @@ function applyRuneSockets(item: ParsedItem) {
   // If we have any rune sockets
   if (item.runeSockets) {
     // Count current mods that are of type Rune
+
     const runeMods = item.newMods.filter(
       (mod) => mod.info.type === ModifierType.Rune,
     );
@@ -1018,10 +1026,11 @@ function applyRuneSockets(item: ParsedItem) {
       })
       .flat();
 
-    const potentialEmptySockets =
-      Math.max(item.runeSockets.normal, item.runeSockets.current) -
-      runes.reduce((x, y) => x + y, 0);
-
+    // HACK: fix since I can't detect how many exist due to rune tiers
+    const tempFix = runes.reduce((x, y) => x + y, 0) > 0;
+    const potentialEmptySockets = tempFix
+      ? 0
+      : Math.max(item.runeSockets.normal, item.runeSockets.current);
     item.runeSockets.empty = potentialEmptySockets;
   }
 }
@@ -1121,7 +1130,7 @@ function parsePriceNote(section: string[], item: ParsedItem) {
   return isParsed;
 }
 
-function parseHelpText(section: string[], item: ParsedItem) {
+function parseUnneededText(section: string[], item: ParsedItem) {
   if (
     item.category !== ItemCategory.Quiver &&
     item.category !== ItemCategory.Flask &&
@@ -1132,7 +1141,11 @@ function parseHelpText(section: string[], item: ParsedItem) {
     item.category !== ItemCategory.Relic &&
     item.category !== ItemCategory.Tablet &&
     item.category !== ItemCategory.TowerAugment &&
-    item.info.refName !== "Expedition Logbook"
+    item.info.refName !== "Expedition Logbook" &&
+    item.category !== ItemCategory.Sceptre &&
+    item.category !== ItemCategory.Wand &&
+    item.category !== ItemCategory.Staff &&
+    item.category !== ItemCategory.Shield
   )
     return "PARSER_SKIPPED";
 
@@ -1145,8 +1158,18 @@ function parseHelpText(section: string[], item: ParsedItem) {
       line.startsWith(_$.JEWEL_HELP) ||
       line.startsWith(_$.SANCTUM_HELP) ||
       line.startsWith(_$.PRECURSOR_TABLET_HELP) ||
-      line.startsWith(_$.LOGBOOK_HELP)
+      line.startsWith(_$.LOGBOOK_HELP) ||
+      line.startsWith(_$.GRANTS_SKILL)
     ) {
+      return "SECTION_PARSED";
+    }
+  }
+  return "SECTION_SKIPPED";
+}
+function parseTimelostRadius(section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Jewel) return "PARSER_SKIPPED";
+  for (const line of section) {
+    if (line.startsWith(_$.TIMELESS_RADIUS)) {
       return "SECTION_PARSED";
     }
   }
@@ -1395,7 +1418,6 @@ function parseStatsFromMod(
   item.newMods.push(modifier);
 
   if (modifier.info.type === ModifierType.Veiled) {
-    console.log("mod name:", modifier.info.name);
     const found = STAT_BY_MATCH_STR(modifier.info.name!);
     if (found) {
       modifier.stats.push({
@@ -1592,15 +1614,16 @@ export function isArmourOrWeapon(
 
 function runeCount(mod: ParsedModifier, statCalc: StatCalculated): number {
   if (mod.info.type !== ModifierType.Rune) return 0;
-  const runeTradeId = statCalc.stat.trade.ids[ModifierType.Rune][0];
-  const runeSingle = RUNE_SINGLE_VALUE[runeTradeId];
+  // HACK: fix since I can't detect how many exist due to rune tiers
+  // const runeTradeId = statCalc.stat.trade.ids[ModifierType.Rune][0];
+  // const runeSingle = RUNE_SINGLE_VALUE[runeTradeId];
 
-  // Calculate how many of this rune are in the item
-  const runeAppliedValue = statCalc.sources[0].contributes!.value;
-  const runeSingleValue = runeSingle.values[0];
-  const totalRunes = Math.floor(runeAppliedValue / runeSingleValue);
+  // // Calculate how many of this rune are in the item
+  // const runeAppliedValue = statCalc.sources[0].contributes!.value;
+  // const runeSingleValue = runeSingle.values[0];
+  // const totalRunes = Math.floor(runeAppliedValue / runeSingleValue);
 
-  return totalRunes;
+  return 1;
 }
 
 export function replaceHashWithValues(template: string, values: number[]) {

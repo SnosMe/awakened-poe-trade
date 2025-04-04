@@ -9,7 +9,7 @@ import { ModifierType, sumStatsByModType } from "@/parser/modifiers";
 import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import type { FilterPreset } from "./interfaces";
 import { PriceCheckWidget } from "@/web/overlay/widgets";
-import { handleFillRuneSockets } from "./fill-runes";
+import { handleApplyItemEdits } from "./fill-runes";
 
 const ROMAN_NUMERALS = ["I", "II", "III", "IV", "V"];
 
@@ -111,15 +111,15 @@ export function createPresets(
   // Apply runes if we should
   if (
     (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare) &&
-    pseudoPreset.filters.fillEmptyRuneSockets &&
+    pseudoPreset.filters.itemEditorSelection &&
+    !pseudoPreset.filters.itemEditorSelection.disabled &&
     opts.autoFillEmptyRuneSockets
   ) {
-    handleFillRuneSockets(
+    handleApplyItemEdits(
       pseudoPreset.stats,
       item,
-      true,
-      pseudoPreset.filters.tempRuneStorage!,
-      opts.autoFillEmptyRuneSockets,
+      pseudoPreset.filters.tempRuneStorage ?? [],
+      opts.autoFillEmptyRuneSockets ?? "None",
     );
   }
 

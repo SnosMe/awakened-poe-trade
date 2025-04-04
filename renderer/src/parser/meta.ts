@@ -78,20 +78,25 @@ export const WEAPON_ONE_HANDED = new Set([
   ...WEAPON_ONE_HANDED_MELEE,
 ]);
 
-export const WEAPONE_TWO_HANDED_MELEE = new Set([
+export const WEAPON_TWO_HANDED_MELEE = new Set([
   ItemCategory.TwoHandedAxe,
   ItemCategory.TwoHandedMace,
   ItemCategory.TwoHandedSword,
   ItemCategory.Warstaff,
 ]);
 
+export const MARTIAL_WEAPON = new Set([
+  ItemCategory.Bow,
+  ItemCategory.Crossbow,
+  ...WEAPON_ONE_HANDED_MELEE,
+  ...WEAPON_TWO_HANDED_MELEE,
+]);
+
 export const WEAPON = new Set([
   ItemCategory.Staff,
   ItemCategory.FishingRod,
-  ItemCategory.Bow,
-  ItemCategory.Crossbow,
   ...WEAPON_ONE_HANDED,
-  ...WEAPONE_TWO_HANDED_MELEE,
+  ...MARTIAL_WEAPON,
 ]);
 
 export const ARMOUR = new Set([
@@ -110,3 +115,9 @@ export const ACCESSORY = new Set([
   ItemCategory.Trinket,
   // ItemCategory.Quiver
 ]);
+
+export enum ItemEditorType {
+  Rune = "rune",
+  Catalyst = "catalyst",
+  None = "none",
+}

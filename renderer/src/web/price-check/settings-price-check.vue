@@ -116,7 +116,7 @@
       t(":cursor_pos")
     }}</ui-checkbox>
 
-    <div class="mb-4">
+    <div class="mb-2">
       <select
         v-model="autoFillEmptyRuneSockets"
         class="p-1 rounded bg-gray-700 w-24"
@@ -127,6 +127,9 @@
       </select>
       Automatically fill empty rune sockets
     </div>
+    <ui-checkbox class="mb-4" v-model="openItemEditorAbove">{{
+      t(":open_editor_above")
+    }}</ui-checkbox>
 
     <ui-checkbox class="mb-4" v-model="usePseudo">{{
       t(":use_pseudo")
@@ -328,6 +331,10 @@ export default defineComponent({
       alwaysShowTier: configModelValue(
         () => configWidget.value,
         "alwaysShowTier",
+      ),
+      openItemEditorAbove: configModelValue(
+        () => configWidget.value,
+        "openItemEditorAbove",
       ),
     };
   },

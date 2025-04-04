@@ -215,5 +215,11 @@ export default {
   // ItemDescriptionExpeditionLogbook
   LOGBOOK_HELP: 'Take this item to Dannig ',
   // HeistRequiresText?
-  REQUIRES: 'Requires'
+  REQUIRES: 'Requires',
+  // ModStatJewelAddToSmall
+  TIMELESS_SMALL_PASSIVES: 'Small Passive Skills in Radius also grant {0}',
+  // ModStatJewelAddToNotable
+  TIMELESS_NOTABLE_PASSIVES: 'Notable Passive Skills in Radius also grant {0}',
+  // ItemDisplayGrantsSkill
+  GRANTS_SKILL: 'Grants Skill'
 }

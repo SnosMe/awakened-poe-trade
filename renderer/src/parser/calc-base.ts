@@ -4,10 +4,14 @@ import {
   calcFlat,
   calcIncreased,
   calcPropBase,
+  OTHER_PSEUDO_STATS,
   QUALITY_STATS,
 } from "./calc-q20";
 
-export function applyIronRune(newItem: ParsedItem, oldItem: ParsedItem) {
+export function recalculateItemProperties(
+  newItem: ParsedItem,
+  oldItem: ParsedItem,
+) {
   const { category } = newItem;
   const weaponOrArmour = isArmourOrWeapon(category);
   if (weaponOrArmour === undefined) return;
@@ -19,6 +23,21 @@ export function applyIronRune(newItem: ParsedItem, oldItem: ParsedItem) {
     );
     const total = calcTotal(base, newItem, QUALITY_STATS.PHYSICAL_DAMAGE);
     newItem.weaponPHYSICAL = total;
+  }
+  if (newItem.weaponAS) {
+    const base = calcBase(
+      oldItem,
+      oldItem.weaponAS,
+      OTHER_PSEUDO_STATS.ATTACK_SPEED,
+      false,
+    );
+    const total = calcTotal(
+      base,
+      newItem,
+      OTHER_PSEUDO_STATS.ATTACK_SPEED,
+      false,
+    );
+    newItem.weaponAS = total;
   }
   if (newItem.armourAR) {
     const base = calcBase(oldItem, oldItem.armourAR, QUALITY_STATS.ARMOUR);
@@ -41,13 +60,58 @@ export function applyIronRune(newItem: ParsedItem, oldItem: ParsedItem) {
   }
 }
 
+export function applyEleRune(
+  item: ParsedItem,
+  type: "Glacial Rune" | "Storm Rune" | "Desert Rune",
+  values: number[],
+) {
+  const { category } = item;
+  const weaponOrArmour = isArmourOrWeapon(category);
+  if (weaponOrArmour === undefined || weaponOrArmour === "armour") return;
+  if (values.length !== 2) return;
+  const adding = values.reduce((a, b) => a + b) / 2;
+  if (item.weaponELEMENTAL) {
+    item.weaponELEMENTAL += adding;
+  } else {
+    item.weaponELEMENTAL = adding;
+  }
+  switch (type) {
+    case "Glacial Rune":
+      if (item.weaponCOLD) {
+        item.weaponCOLD += adding;
+      } else {
+        item.weaponCOLD = adding;
+      }
+      break;
+    case "Storm Rune":
+      if (item.weaponLIGHTNING) {
+        item.weaponLIGHTNING += adding;
+      } else {
+        item.weaponLIGHTNING = adding;
+      }
+      break;
+    case "Desert Rune":
+      if (item.weaponFIRE) {
+        item.weaponFIRE += adding;
+      } else {
+        item.weaponFIRE = adding;
+      }
+      break;
+    default:
+      break;
+  }
+}
+
 export function calcBase(
   item: ParsedItem,
   inStat: number | undefined,
   statRefs: { flat: string[]; incr: string[] },
+  useQuality = true,
 ) {
   const { incr, flat } = calcPropBase(statRefs, item);
-  const base = calcFlat(inStat ?? 0, incr.value, item.quality) - flat.value;
+  const base =
+    calcFlat(inStat ?? 0, incr.value, useQuality ? (item.quality ?? 0) : 0) -
+    flat.value;
 
   return base;
 }
@@ -56,13 +120,14 @@ export function calcTotal(
   base: number,
   item: ParsedItem,
   statRefs: { flat: string[]; incr: string[] },
+  useQuality = true,
 ) {
   const { incr, flat } = calcPropBase(statRefs, item);
 
   const damage = calcIncreased(
     base + flat.value,
     incr.value,
-    item.quality ?? 0,
+    useQuality ? (item.quality ?? 0) : 0,
   );
 
   return damage;

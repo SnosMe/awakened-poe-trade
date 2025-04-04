@@ -13,12 +13,12 @@ describe("Check Magic Name (en)", () => {
     expect(magicBasetype(name)).toBe("Rattling Sceptre");
   });
   test("Should parse magic name with suffix", () => {
-    const name = "Advanced Cultist Greathammer of Nourishment";
-    expect(magicBasetype(name)).toBe("Advanced Cultist Greathammer");
+    const name = "Cultist Greathammer of Nourishment";
+    expect(magicBasetype(name)).toBe("Cultist Greathammer");
   });
   test("Should parse magic name with prefix", () => {
-    const name = "Pulsing Advanced Antler Focus";
-    expect(magicBasetype(name)).toBe("Advanced Antler Focus");
+    const name = "Pulsing Antler Focus";
+    expect(magicBasetype(name)).toBe("Antler Focus");
   });
   test("Should parse magic name with prefix and suffix", () => {
     const name = "Reaver's Temple Maul of Stunning";
@@ -36,12 +36,12 @@ describe("Check Magic Name (cmn-Hant)", () => {
     expect(magicBasetype(name)).toBe("雜響權杖");
   });
   test("Should parse magic name with suffix", () => {
-    const name = "營養之進階教徒巨錘";
-    expect(magicBasetype(name)).toBe("進階教徒巨錘");
+    const name = "營養之教徒巨錘";
+    expect(magicBasetype(name)).toBe("教徒巨錘");
   });
   test("Should parse magic name with prefix", () => {
-    const name = "脈衝的進階靈鹿法器";
-    expect(magicBasetype(name)).toBe("進階靈鹿法器");
+    const name = "脈衝的靈鹿法器";
+    expect(magicBasetype(name)).toBe("靈鹿法器");
   });
   test("Should parse magic name with prefix and suffix", () => {
     const name = "掠奪者的擊暈之神殿重錘";
@@ -59,12 +59,12 @@ describe("Check Magic Name (cmn-Hant) when UI returns english name", () => {
     expect(magicBasetype(name)).toBe("Rattling Sceptre");
   });
   test("Should parse magic name with suffix", () => {
-    const name = "Advanced Cultist Greathammer of Nourishment";
-    expect(magicBasetype(name)).toBe("Advanced Cultist Greathammer");
+    const name = "Cultist Greathammer of Nourishment";
+    expect(magicBasetype(name)).toBe("Cultist Greathammer");
   });
   test("Should parse magic name with prefix", () => {
-    const name = "Pulsing Advanced Antler Focus";
-    expect(magicBasetype(name)).toBe("Advanced Antler Focus");
+    const name = "Pulsing Antler Focus";
+    expect(magicBasetype(name)).toBe("Antler Focus");
   });
   test("Should parse magic name with prefix and suffix", () => {
     const name = "Reaver's Temple Maul of Stunning";

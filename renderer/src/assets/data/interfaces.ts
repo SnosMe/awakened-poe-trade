@@ -102,6 +102,14 @@ export interface BaseType {
     ev?: [min: number, max: number];
     es?: [min: number, max: number];
   };
+  rune?: {
+    [category: string]: {
+      string: string;
+      values: number[];
+      tradeId: string[];
+    };
+  };
+  tags: string[];
 }
 
 export interface TranslationDict {
@@ -225,6 +233,9 @@ export interface TranslationDict {
   TIMELESS_RADIUS: string;
   PRECURSOR_TABLET_HELP: string;
   LOGBOOK_HELP: string;
+  TIMELESS_SMALL_PASSIVES: string;
+  TIMELESS_NOTABLE_PASSIVES: string;
+  GRANTS_SKILL: string;
 }
 
 export interface Filter {
@@ -265,14 +276,25 @@ export interface RuneSingleValue {
   };
 }
 
+export interface RuneData {
+  rune: string;
+  baseStat: string;
+  values: number[];
+  id: string;
+  type: string;
+  icon: string;
+}
+
 export interface RuneDataByRune {
-  [rune: string]: [
-    {
-      rune: string;
-      baseStat: string;
-      values: number[];
-      id: string;
-      type: "armour" | "weapon";
-    },
-  ];
+  [rune: string]: RuneData[];
+}
+export interface RuneDataByTradeId {
+  [tradeId: string]: Array<{
+    rune: string;
+    baseStat: string;
+    values: number[];
+    id: string;
+    type: string;
+    icon: string;
+  }>;
 }

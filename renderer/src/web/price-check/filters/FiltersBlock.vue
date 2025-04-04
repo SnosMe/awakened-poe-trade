@@ -1,138 +1,164 @@
 <template>
   <div>
-    <div class="flex flex-wrap items-center pb-3 gap-2">
-      <filter-btn-numeric
-        v-if="filters.socketNumber"
-        :filter="filters.socketNumber"
-        :name="t('item.gem_sockets')"
-      />
-      <filter-btn-numeric
-        v-if="filters.linkedSockets"
-        :filter="filters.linkedSockets"
-        :name="t('item.linked_sockets')"
-      />
-      <filter-btn-numeric
-        v-if="filters.mapTier"
-        :filter="filters.mapTier"
-        :name="t('item.map_tier')"
-      />
-      <filter-btn-numeric
-        v-if="filters.areaLevel"
-        :filter="filters.areaLevel"
-        :name="t('item.area_level')"
-      />
-      <filter-btn-numeric
-        v-if="filters.heistWingsRevealed"
-        :filter="filters.heistWingsRevealed"
-        :name="t('item.heist_wings_revealed')"
-      />
-      <filter-btn-numeric
-        v-if="filters.sentinelCharge"
-        :filter="filters.sentinelCharge"
-        :name="t('item.sentinel_charge')"
-      />
-      <filter-btn-logical
-        v-if="filters.mapBlighted"
-        readonly
-        :filter="{ disabled: false }"
-        :text="filters.mapBlighted.value"
-      />
-      <filter-btn-logical
-        v-if="filters.rarity?.value === 'magic'"
-        readonly
-        :filter="{ disabled: false }"
-        text="Magic"
-      />
-      <filter-btn-logical
-        v-if="filters.rarity?.value === 'normal'"
-        readonly
-        :filter="{ disabled: false }"
-        text="Normal"
-      />
-      <filter-btn-logical
-        v-if="filters.discriminator?.value"
-        readonly
-        :filter="{ disabled: false }"
-        :text="filters.discriminator.value"
-      />
-      <filter-btn-numeric
-        v-if="filters.itemLevel"
-        :filter="filters.itemLevel"
-        :name="t('item.item_level')"
-      />
-      <filter-btn-numeric
-        v-if="filters.stackSize"
-        :filter="filters.stackSize"
-        :name="t('item.stock')"
-      />
-      <filter-btn-numeric
-        v-if="filters.whiteSockets"
-        :filter="filters.whiteSockets"
-        :name="t('item.white_sockets')"
-      />
-      <filter-btn-numeric
-        v-if="filters.runeSockets"
-        :filter="filters.runeSockets"
-        :name="t('item.rune_sockets')"
-      />
-      <filter-btn-numeric
-        v-if="filters.gemLevel"
-        :filter="filters.gemLevel"
-        :name="t('item.gem_level')"
-      />
-      <filter-btn-numeric
-        v-if="filters.quality"
-        :filter="filters.quality"
-        :name="t('item.quality')"
-      />
-      <template v-if="filters.influences">
-        <filter-btn-logical
-          v-for="influence of filters.influences"
-          :key="influence.value"
-          :filter="influence"
-          :text="influence.value"
-          :img="`/images/influence-${influence.value}.png`"
+    <div class="flex justify-between">
+      <div class="flex flex-wrap items-center pb-3 gap-2">
+        <filter-btn-numeric
+          v-if="filters.socketNumber"
+          :filter="filters.socketNumber"
+          :name="t('item.gem_sockets')"
         />
-      </template>
-      <filter-btn-logical
-        v-if="filters.unidentified"
-        :filter="filters.unidentified"
-        :text="t('item.unidentified')"
-      />
-      <filter-btn-logical
-        v-if="filters.veiled"
-        :filter="filters.veiled"
-        :text="t('item.veiled')"
-      />
-      <filter-btn-logical
-        v-if="filters.foil"
-        :filter="filters.foil"
-        :text="t('item.foil_unique')"
-      />
-      <filter-btn-logical
-        v-if="filters.mirrored"
-        active
-        :filter="filters.mirrored"
-        :text="
-          t(filters.mirrored.disabled ? 'item.not_mirrored' : 'item.mirrored')
+        <filter-btn-numeric
+          v-if="filters.linkedSockets"
+          :filter="filters.linkedSockets"
+          :name="t('item.linked_sockets')"
+        />
+        <filter-btn-numeric
+          v-if="filters.mapTier"
+          :filter="filters.mapTier"
+          :name="t('item.map_tier')"
+        />
+        <filter-btn-numeric
+          v-if="filters.areaLevel"
+          :filter="filters.areaLevel"
+          :name="t('item.area_level')"
+        />
+        <filter-btn-numeric
+          v-if="filters.heistWingsRevealed"
+          :filter="filters.heistWingsRevealed"
+          :name="t('item.heist_wings_revealed')"
+        />
+        <filter-btn-numeric
+          v-if="filters.sentinelCharge"
+          :filter="filters.sentinelCharge"
+          :name="t('item.sentinel_charge')"
+        />
+        <filter-btn-logical
+          v-if="filters.mapBlighted"
+          readonly
+          :filter="{ disabled: false }"
+          :text="filters.mapBlighted.value"
+        />
+        <filter-btn-logical
+          v-if="filters.rarity?.value === 'magic'"
+          readonly
+          :filter="{ disabled: false }"
+          text="Magic"
+        />
+        <filter-btn-logical
+          v-if="filters.rarity?.value === 'normal'"
+          readonly
+          :filter="{ disabled: false }"
+          text="Normal"
+        />
+        <filter-btn-logical
+          v-if="filters.discriminator?.value"
+          readonly
+          :filter="{ disabled: false }"
+          :text="filters.discriminator.value"
+        />
+        <filter-btn-numeric
+          v-if="filters.itemLevel"
+          :filter="filters.itemLevel"
+          :name="t('item.item_level')"
+        />
+        <filter-btn-numeric
+          v-if="filters.stackSize"
+          :filter="filters.stackSize"
+          :name="t('item.stock')"
+        />
+        <filter-btn-numeric
+          v-if="filters.whiteSockets"
+          :filter="filters.whiteSockets"
+          :name="t('item.white_sockets')"
+        />
+        <filter-btn-numeric
+          v-if="filters.runeSockets"
+          :filter="filters.runeSockets"
+          :name="t('item.rune_sockets')"
+        />
+        <filter-btn-numeric
+          v-if="filters.gemLevel"
+          :filter="filters.gemLevel"
+          :name="t('item.gem_level')"
+        />
+        <filter-btn-numeric
+          v-if="filters.quality"
+          :filter="filters.quality"
+          :name="t('item.quality')"
+        />
+        <template v-if="filters.influences">
+          <filter-btn-logical
+            v-for="influence of filters.influences"
+            :key="influence.value"
+            :filter="influence"
+            :text="influence.value"
+            :img="`/images/influence-${influence.value}.png`"
+          />
+        </template>
+        <filter-btn-logical
+          v-if="filters.unidentified"
+          :filter="filters.unidentified"
+          :text="t('item.unidentified')"
+        />
+        <filter-btn-logical
+          v-if="filters.veiled"
+          :filter="filters.veiled"
+          :text="t('item.veiled')"
+        />
+        <filter-btn-logical
+          v-if="filters.foil"
+          :filter="filters.foil"
+          :text="t('item.foil_unique')"
+        />
+        <filter-btn-logical
+          v-if="filters.mirrored"
+          active
+          :filter="filters.mirrored"
+          :text="
+            t(filters.mirrored.disabled ? 'item.not_mirrored' : 'item.mirrored')
+          "
+        />
+        <filter-btn-logical
+          v-if="hasStats"
+          :collapse="statsVisibility.disabled"
+          :filter="statsVisibility"
+          :active="totalSelectedMods > 0"
+          :text="
+            totalSelectedMods > 0
+              ? t('filters.selected_some', [totalSelectedMods, stats.length])
+              : t('filters.selected_none')
+          "
+        />
+      </div>
+      <button
+        v-if="
+          hasEmptyRuneSockets &&
+          filters.itemEditorSelection &&
+          !filters.itemEditorSelection.disabled
         "
-      />
-      <filter-btn-logical
-        v-if="hasStats"
-        :collapse="statsVisibility.disabled"
-        :filter="statsVisibility"
-        :active="totalSelectedMods > 0"
-        :text="
-          totalSelectedMods > 0
-            ? t('filters.selected_some', [totalSelectedMods, stats.length])
-            : t('filters.selected_none')
+        @click="
+          filters.itemEditorSelection.editing =
+            !filters.itemEditorSelection.editing
         "
-      />
-      <filter-btn-logical
-        v-if="hasEmptyRuneSockets && filters.fillEmptyRuneSockets"
-        :filter="filters.fillEmptyRuneSockets"
-        :text="t('filters.fill_rune_iron')"
-      />
+        class="flex items-center bg-gray-900 rounded border"
+        :class="[
+          filters.itemEditorSelection.value !== 'None'
+            ? 'border-gray-500'
+            : 'border-transparent',
+        ]"
+      >
+        <div class="flex items-center justify-center shrink-0 w-8 h-8">
+          <div
+            v-if="filters.itemEditorSelection.value === 'None'"
+            class="flex items-center justify-center shrink-0 w-8 h-8 border-2 border-dashed border-gray-400 rounded-full"
+          />
+          <img
+            v-else
+            :src="getRuneImage(filters.itemEditorSelection.value)"
+            class="max-w-full max-h-full overflow-hidden"
+          />
+        </div>
+      </button>
     </div>
     <!-- Handled parse error -->
     <div
@@ -221,7 +247,8 @@ import UnknownModifier from "./UnknownModifier.vue";
 import { ItemFilters, StatFilter } from "./interfaces";
 import { ParsedItem, ItemRarity, ItemCategory } from "@/parser";
 import FilterBtnDropdown from "./FilterBtnDropdown.vue";
-import { handleFillRuneSockets } from "./fill-runes";
+import { handleApplyItemEdits, handleRemoveItemEdits } from "./fill-runes";
+import { RUNE_DATA_BY_RUNE } from "@/assets/data";
 
 export default defineComponent({
   name: "FiltersBlock",
@@ -251,10 +278,6 @@ export default defineComponent({
       type: Object as PropType<ParsedItem>,
       required: true,
     },
-    changeItem: {
-      type: Function as PropType<(newItem: ParsedItem) => void>,
-      required: true,
-    },
   },
   setup(props, ctx) {
     const statsVisibility = shallowReactive({ disabled: false });
@@ -280,18 +303,33 @@ export default defineComponent({
     );
     // For handling filling runes
     watch(
-      () => props.filters.fillEmptyRuneSockets?.disabled,
+      () => props.filters.itemEditorSelection?.value,
       (selected, prev) => {
         const normalCase = selected !== prev && props.filters.tempRuneStorage;
-        // const initAsFilled = selected && props.filters.tempRuneStorage;
-        if (normalCase) {
-          const shouldFill = !selected;
-          handleFillRuneSockets(
-            props.stats,
-            props.item,
-            shouldFill,
-            props.filters.tempRuneStorage!,
-          );
+        if (normalCase && selected !== undefined) {
+          // If last wasn't empty
+          if (
+            prev !== "None" &&
+            props.filters.tempRuneStorage &&
+            props.filters.tempRuneStorage.length > 0
+          ) {
+            // Remove current rune
+            handleRemoveItemEdits(
+              props.stats,
+              props.item,
+              props.filters.tempRuneStorage!,
+            );
+          }
+          // If we didn't choose empty
+          if (selected !== "None") {
+            // add new rune
+            handleApplyItemEdits(
+              props.stats,
+              props.item,
+              props.filters.tempRuneStorage!,
+              selected,
+            );
+          }
         }
       },
     );
@@ -329,6 +367,10 @@ export default defineComponent({
       hasEmptyRuneSockets: computed(() => {
         return props.item.runeSockets && props.item.runeSockets.empty > 0;
       }),
+      getRuneImage(rune: string) {
+        const icon = RUNE_DATA_BY_RUNE[rune][0].icon;
+        return icon === "%NOT_FOUND%" ? "/images/404.png" : icon;
+      },
     };
   },
 });

@@ -119,5 +119,8 @@ export default {
   TIMELESS_RADIUS: '範圍: ',
   PRECURSOR_TABLET_HELP: '可用於輿圖中的一座已完成高塔來影響',
   LOGBOOK_HELP: '把此道具帶回你的',
-  REQUIRES: '需要'
+  REQUIRES: '需要',
+  TIMELESS_SMALL_PASSIVES: '範圍內小型天賦也會賦予 {0}',
+  TIMELESS_NOTABLE_PASSIVES: '範圍內核心天賦也會賦予 {0}',
+  GRANTS_SKILL: '賦予技能'
 }

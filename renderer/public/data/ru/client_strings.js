@@ -153,5 +153,8 @@ export default {
   TIMELESS_RADIUS: 'Радиус: ',
   PRECURSOR_TABLET_HELP: 'Может быть использовано в завершенной башне на вашем Атласе, чтобы ',
   LOGBOOK_HELP: 'Отнесите этот предмет Дэннигу ',
-  REQUIRES: 'Требуется'
+  REQUIRES: 'Требуется',
+  TIMELESS_SMALL_PASSIVES: 'Малые пассивные умения в радиусе также дают: {0}',
+  TIMELESS_NOTABLE_PASSIVES: 'Значимые пассивные умения в радиусе также дают: {0}',
+  GRANTS_SKILL: 'Дарует умение'
 }

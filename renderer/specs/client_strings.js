@@ -46,11 +46,9 @@ export default {
   VEILED_PREFIX: "Veiled Prefix",
   VEILED_SUFFIX: "Veiled Suffix",
   FLASK_CHARGES: /^Currently has \d+ Charges$/,
-  METAMORPH_HELP:
-    "Combine this with four other different samples in Tane's Laboratory.",
+  METAMORPH_HELP: "Combine this with four other different samples in Tane's Laboratory.",
   BEAST_HELP: "Right-click to add this to your bestiary.",
-  VOIDSTONE_HELP:
-    "Socket this into your Atlas to increase the Tier of all Maps.",
+  VOIDSTONE_HELP: "Socket this into your Atlas to increase the Tier of all Maps.",
   METAMORPH_BRAIN: /^.* Brain$/,
   METAMORPH_EYE: /^.* Eye$/,
   METAMORPH_LUNG: /^.* Lung$/,
@@ -68,8 +66,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: "Unusual Gems",
   HEIST_BLUEPRINT_REPLICAS: "Replicas or Experimented Items",
   MIRRORED: "Mirrored",
-  MODIFIER_LINE:
-    /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,
+  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: "Prefix Modifier",
   SUFFIX_MODIFIER: "Suffix Modifier",
   CRAFTED_PREFIX: "Master Crafted Prefix Modifier",
@@ -118,10 +115,8 @@ export default {
   CHAT_PARTY: /^%(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_GUILD: /^&(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
   CHAT_WHISPER_TO: /^@To (?<char_name>.+?): (?<body>.+)$/,
-  CHAT_WHISPER_FROM:
-    /^@From (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
-  CHAT_WEBTRADE_GEM:
-    /^level (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/,
+  CHAT_WHISPER_FROM: /^@From (?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
+  CHAT_WEBTRADE_GEM: /^level (?<gem_lvl>\d+) (?<gem_qual>\d+)% (?<gem_name>.+)$/,
   REQUIREMENTS: "Requirements",
   CHARM_SLOTS: "Charm Slots:",
   BASE_SPIRIT: "Spirit:",
@@ -137,4 +132,7 @@ export default {
   PRECURSOR_TABLET_HELP: "",
   LOGBOOK_HELP: "",
   REQUIRES: "",
+  TIMELESS_SMALL_PASSIVES: '',
+  TIMELESS_NOTABLE_PASSIVES: '',
+  GRANTS_SKILL: ''
 };

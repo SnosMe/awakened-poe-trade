@@ -176,6 +176,7 @@
     "tag_explicit_veiled": "장막",
     "tag_explicit_incursion": "기습",
     "tag_rune": "룬",
+    "tag_added_rune": "룬",
     "tag_sanctum": "Sanctum",
     "fill_rune_iron": "Fill Runes(Iron)",
     "grade": "등급 {0}",
@@ -376,7 +377,8 @@
     "tier_numbering_poe2": "PoE2 (높을수록 좋음)",
     "tier_numbering_help": "혼란을 방지하기 위해서 POE 1의 아이템 티어는 \"티어\"가아닌\"등급\"으로 표시됩니다.",
     "always_show_tier": "常にティアを表示",
-    "remember_ratio": "通貨比率を記憶する"
+    "remember_ratio": "通貨比率を記憶する",
+    "open_editor_above": "Open rune socket selector upwards"
   },
   "poe2_new": {
     "beta_warning": "이 버전은 베타버전입니다. 예기치 못한 버그가 있을 수 있습니다.",

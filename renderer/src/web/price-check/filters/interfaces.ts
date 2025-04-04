@@ -38,7 +38,7 @@ export interface ItemFilters {
   linkedSockets?: FilterNumeric;
   whiteSockets?: FilterNumeric;
   runeSockets?: FilterNumeric;
-  fillEmptyRuneSockets?: { disabled: boolean };
+  itemEditorSelection?: { disabled: boolean; editing: boolean; value: string };
   corrupted?: {
     value: boolean;
     exact?: boolean;
@@ -199,5 +199,5 @@ export enum FilterTag {
   Unveiled = "explicit-veiled",
   Incursion = "explicit-incursion",
   Rune = "rune",
-  FakeRune = "fake-rune",
+  AddedRune = "added-rune",
 }

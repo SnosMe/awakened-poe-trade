@@ -344,6 +344,7 @@ export function calculatedStatToFilter(
   calc: StatCalculated,
   percent: number,
   item: ParsedItem,
+  disabled: boolean = true,
 ): StatFilter {
   const { stat, sources, type } = calc;
   let filter: StatFilter;
@@ -351,7 +352,7 @@ export function calculatedStatToFilter(
     filter = {
       tradeId:
         stat.trade.ids[
-          type === ModifierType.FakeRune ? ModifierType.Rune : type
+          type === ModifierType.AddedRune ? ModifierType.Rune : type
         ],
       statRef: stat.ref,
       text: sources[0].stat.translation.string,
@@ -374,14 +375,16 @@ export function calculatedStatToFilter(
 
   filter ??= {
     tradeId:
-      stat.trade.ids[type === ModifierType.FakeRune ? ModifierType.Rune : type],
+      stat.trade.ids[
+        type === ModifierType.AddedRune ? ModifierType.Rune : type
+      ],
     statRef: stat.ref,
     text: translation.string,
     tag: type as unknown as FilterTag,
     oils: decodeOils(calc),
     sources,
     roll: undefined,
-    disabled: true,
+    disabled,
   };
 
   if (type === ModifierType.Implicit) {

@@ -279,6 +279,12 @@ def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
         mod_stats = []
         mod_stat_ids = []
         mod_allowed_base_types = gold_with_readable_tags.get(mod_unique_id, [])
+        if len(mod_allowed_base_types) == 0:
+            if mod_unique_id.lower().startswith("jewelradius"):
+                mod_allowed_base_types = ["radius_jewel"]
+            elif mod_unique_id.lower().startswith("jewel"):
+                mod_allowed_base_types = ["jewel"]
+
         is_processed_map = False
         if mod_unique_id.lower().startswith("map"):
             stat1 = mod.get("Stat1")
@@ -345,6 +351,7 @@ def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
                 "mod_allowed_base_types": set(mod["mod_allowed_base_types"]),
                 "mod_stat_ids": set(mod["mod_stat_ids"]),
                 "mod_generation": mod["mod_generation"],
+                "mod_jewel_radius": mod["mod_jewel_radius"],
             }
         by_id[mod_id]["mods"].append(mod)
         by_id[mod_id]["mod_stat_ids"] = by_id[mod_id]["mod_stat_ids"].union(
@@ -358,7 +365,11 @@ def modTierBuilderB(mod_data, base_item_types, gold_mod_prices, tags):
 
     grouped_by_mod_type = defaultdict(list)
     for mod_id, mod_group in by_id.items():
-        grouped_by_mod_type[mod_group["mod_type"]].append(mod_group)
+        grouped_by_mod_type[
+            mod_group["mod_type"]
+            if "radius_jewel" not in mod_group["mod_allowed_base_types"]
+            else mod_group["mods_id"]
+        ].append(mod_group)
 
     output_data = []
 
@@ -392,6 +403,8 @@ def modGroupToOutputTier(mod_group):
         base: len(
             [mod for mod in mod_group["mods"] if base in mod["mod_allowed_base_types"]]
         )
+        if base != "radius_jewel"
+        else mod_group["mod_jewel_radius"]
         for base in mod_group["mod_allowed_base_types"]
     }
     return base_counts_dict

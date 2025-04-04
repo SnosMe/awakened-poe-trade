@@ -150,7 +150,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 23,
+  configVersion: 25,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -569,6 +569,14 @@ function upgradeConfig(_config: Config): Config {
       false;
 
     config.configVersion = 24;
+  }
+  if (config.configVersion < 25) {
+    // NOTE: v0.9.0 || poe0.2.0
+    config.widgets.find(
+      (w) => w.wmType === "price-check",
+    )!.openItemEditorAbove = false;
+
+    config.configVersion = 25;
   }
 
   return config as unknown as Config;
