@@ -60,11 +60,7 @@ export function recalculateItemProperties(
   }
 }
 
-export function applyEleRune(
-  item: ParsedItem,
-  type: "Glacial Rune" | "Storm Rune" | "Desert Rune",
-  values: number[],
-) {
+export function applyEleRune(item: ParsedItem, type: string, values: number[]) {
   const { category } = item;
   const weaponOrArmour = isArmourOrWeapon(category);
   if (weaponOrArmour === undefined || weaponOrArmour === "armour") return;
@@ -77,6 +73,8 @@ export function applyEleRune(
   }
   switch (type) {
     case "Glacial Rune":
+    case "Lesser Glacial Rune":
+    case "Greater Glacial Rune":
       if (item.weaponCOLD) {
         item.weaponCOLD += adding;
       } else {
@@ -84,6 +82,8 @@ export function applyEleRune(
       }
       break;
     case "Storm Rune":
+    case "Lesser Storm Rune":
+    case "Greater Storm Rune":
       if (item.weaponLIGHTNING) {
         item.weaponLIGHTNING += adding;
       } else {
@@ -91,6 +91,8 @@ export function applyEleRune(
       }
       break;
     case "Desert Rune":
+    case "Lesser Desert Rune":
+    case "Greater Desert Rune":
       if (item.weaponFIRE) {
         item.weaponFIRE += adding;
       } else {

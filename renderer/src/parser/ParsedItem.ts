@@ -29,7 +29,7 @@ export enum ItemInfluence {
 //   statCalculated?: StatCalculated; // @deprecated
 // }
 
-export interface BaseParsedItem {
+export interface ParsedItem {
   rarity?: ItemRarity;
   itemLevel?: number;
   armourAR?: number;
@@ -88,10 +88,6 @@ export interface BaseParsedItem {
   info: BaseType;
   rawText: string;
   fromChat?: boolean;
-}
-
-export interface ParsedItem extends BaseParsedItem {
-  originalItem?: BaseParsedItem;
 }
 
 // NOTE: should match option values on trade

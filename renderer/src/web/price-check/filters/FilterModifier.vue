@@ -194,11 +194,8 @@ export default defineComponent({
     );
 
     const showRuneNotice = computed(() => {
-      if (props.filter.sources.some((source) => source.stat.fromAddedRune)) {
-        const i = props.filter.sources.find(
-          (source) => source.stat.fromAddedRune,
-        )?.stat.fromAddedRune?.icon;
-        return i;
+      if (props.filter.editorAdded) {
+        return props.filter.editorAdded.icon;
       }
       return false;
     });

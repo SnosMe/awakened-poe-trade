@@ -1,7 +1,7 @@
 import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import { StatFilter } from "./interfaces";
 import { applyEleRune, recalculateItemProperties } from "@/parser/calc-base";
-import { BaseType, RUNE_DATA_BY_RUNE } from "@/assets/data";
+import { BaseType, ITEM_BY_REF, RUNE_DATA_BY_RUNE } from "@/assets/data";
 import {
   isArmourOrWeapon,
   parseModifiersPoe2,
@@ -82,6 +82,8 @@ function createNewStatFilter(
     (rune) => rune.type === isArmourOrWeapon(item.category),
   );
   if (!runeData) return;
+  const runeItem = ITEM_BY_REF("ITEM", runeData.refName)![0];
+
   const emptyRuneCount = item.runeSockets!.empty;
   const statString = replaceHashWithValues(
     runeData.baseStat + ADDED_RUNE_LINE,
@@ -107,11 +109,11 @@ function createNewStatFilter(
   };
 
   if (
-    newRune === "Glacial Rune" ||
-    newRune === "Storm Rune" ||
-    newRune === "Desert Rune"
+    runeItem.refName.includes("Glacial Rune") ||
+    runeItem.refName.includes("Storm Rune") ||
+    runeItem.refName.includes("Desert Rune")
   ) {
-    applyEleRune(newItem, newRune, runeData.values);
+    applyEleRune(newItem, runeItem.refName, runeData.values);
   }
 
   recalculateItemProperties(newItem, item);
@@ -132,7 +134,16 @@ function createNewStatFilter(
       ),
     ),
   );
-
+  ctx.filters = ctx.filters.map((filter) => {
+    if (
+      filter.sources.some(
+        (source) => source.modifier.info.type === ModifierType.AddedRune,
+      )
+    ) {
+      filter.editorAdded = runeItem;
+    }
+    return filter;
+  });
   return ctx.filters;
 }
 

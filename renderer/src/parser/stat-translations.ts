@@ -1,9 +1,4 @@
-import {
-  CLIENT_STRINGS as _$,
-  ITEM_BY_REF,
-  RUNE_DATA_BY_TRADE_ID,
-  STAT_BY_MATCH_STR,
-} from "@/assets/data";
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from "@/assets/data";
 import type { StatMatcher, Stat, BaseType } from "@/assets/data";
 import { ModifierType } from "./modifiers";
 
@@ -230,46 +225,38 @@ export function tryParseTranslation(
       ];
     }
 
+    const roll:
+      | {
+          unscalable: boolean;
+          legacy: true | undefined;
+          dp: boolean;
+          value: number;
+          min: number;
+          max: number;
+        }
+      | undefined = combination.values.length
+      ? {
+          unscalable: stat.unscalable,
+          legacy: legacyStatRolls || undefined,
+          dp: found.stat.dp || combination.values.some((stat) => stat.decimal),
+          value: getRollOrMinmaxAvg(
+            combination.values.map((stat) => stat.roll),
+          ),
+          min: getRollOrMinmaxAvg(
+            combination.values.map((stat) => stat.bounds?.min ?? stat.roll),
+          ),
+          max: getRollOrMinmaxAvg(
+            combination.values.map((stat) => stat.bounds?.max ?? stat.roll),
+          ),
+        }
+      : undefined;
+
     return {
       stat: found.stat,
       translation: found.matcher,
-      roll: combination.values.length
-        ? {
-            unscalable: stat.unscalable,
-            legacy: legacyStatRolls || undefined,
-            dp:
-              found.stat.dp || combination.values.some((stat) => stat.decimal),
-            value: getRollOrMinmaxAvg(
-              combination.values.map((stat) => stat.roll),
-            ),
-            min: getRollOrMinmaxAvg(
-              combination.values.map((stat) => stat.bounds?.min ?? stat.roll),
-            ),
-            max: getRollOrMinmaxAvg(
-              combination.values.map((stat) => stat.bounds?.max ?? stat.roll),
-            ),
-          }
-        : undefined,
-      fromAddedRune:
-        modType === ModifierType.AddedRune ? getRune(found.stat) : undefined,
+      roll,
     };
   }
-}
-
-function getRune(stat: Stat): BaseType | undefined {
-  if (
-    !stat.trade.ids ||
-    !stat.trade.ids.rune ||
-    stat.trade.ids.rune.length === 0
-  )
-    return;
-
-  const tradeId = stat.trade.ids.rune[0];
-  // HACK: temp fix for icons
-  const runes = RUNE_DATA_BY_TRADE_ID[tradeId];
-  const rune = runes.find((r) => r.icon !== "%NOT_FOUND%") ?? runes[0];
-  const runesWithSameTradeId = ITEM_BY_REF("ITEM", rune.rune)!;
-  return runesWithSameTradeId[0];
 }
 
 export function getRollOrMinmaxAvg(values: number[]): number {
