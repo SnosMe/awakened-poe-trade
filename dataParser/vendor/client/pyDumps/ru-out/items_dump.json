@@ -7122,7 +7122,7 @@
         "refName": "Spearfield",
         "namespace": "GEM",
         "class": 18,
-        "dropLevel": 7,
+        "dropLevel": 15,
         "width": 1,
         "height": 1,
         "tags": [],
@@ -8830,14 +8830,18 @@
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_889552744"
+                ]
             },
             "weapon": {
                 "string": "Приспешники наносят #% от ох физического урона в виде дополнительного урона от молнии",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_1433756169"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-leadership",
@@ -8862,14 +8866,18 @@
                     1,
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_757050353"
+                ]
             },
             "weapon": {
                 "string": "Мета-умения получают увеличенное на #% количество энергии",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4236566306"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-tithing",
@@ -8893,14 +8901,18 @@
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_1238227257"
+                ]
             },
             "weapon": {
                 "string": "#% повышение скорости умений",
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_970213192"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-alacrity",
@@ -8924,14 +8936,18 @@
                 "values": [
                     -10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3801067695"
+                ]
             },
             "weapon": {
                 "string": "Атаки этим оружием с #% шансом могут наложить восприимчивость к молнии",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_2158896334"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-nobility",
@@ -9262,7 +9278,9 @@
                 "values": [
                     5
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3175163625"
+                ]
             },
             "weapon": {
                 "string": "# к духу",
@@ -50693,6 +50711,23 @@
         }
     },
     "3438": {
+        "name": "Cull The Weak",
+        "refName": "Cull The Weak",
+        "namespace": "GEM",
+        "class": 18,
+        "dropLevel": 7,
+        "width": 1,
+        "height": 1,
+        "tags": [],
+        "craftable": {
+            "category": "Active Skill Gem"
+        },
+        "gem": {
+            "awakened": false,
+            "transfigured": false
+        }
+    },
+    "3439": {
         "name": "Ледяные клыки",
         "refName": "Fangs of Frost",
         "namespace": "GEM",
@@ -50709,7 +50744,7 @@
             "transfigured": false
         }
     },
-    "3439": {
+    "3440": {
         "name": "Ярость воздушного змея",
         "refName": "Wind Serpent's Fury",
         "namespace": "GEM",
@@ -50726,7 +50761,7 @@
             "transfigured": false
         }
     },
-    "3440": {
+    "3441": {
         "name": "Выпад",
         "refName": "Rake",
         "namespace": "GEM",
@@ -50743,7 +50778,7 @@
             "transfigured": false
         }
     },
-    "3441": {
+    "3442": {
         "name": "Метка кровавой гончей",
         "refName": "Bloodhound's Mark",
         "namespace": "GEM",
@@ -50760,7 +50795,7 @@
             "transfigured": false
         }
     },
-    "3442": {
+    "3443": {
         "name": "Приручение зверя",
         "refName": "Tame Beast",
         "namespace": "GEM",
@@ -50777,7 +50812,7 @@
             "transfigured": false
         }
     },
-    "3443": {
+    "3444": {
         "name": "Копьё Солярис",
         "refName": "Spear of Solaris",
         "namespace": "GEM",
@@ -50794,7 +50829,7 @@
             "transfigured": false
         }
     },
-    "3444": {
+    "3445": {
         "name": "Штормовое копьё",
         "refName": "Storm Lance",
         "namespace": "GEM",
@@ -50811,7 +50846,7 @@
             "transfigured": false
         }
     },
-    "3445": {
+    "3446": {
         "name": "Парирование",
         "refName": "Parry",
         "namespace": "GEM",
@@ -50828,7 +50863,7 @@
             "transfigured": false
         }
     },
-    "3446": {
+    "3447": {
         "name": "Стихийный раскол",
         "refName": "Elemental Sundering",
         "namespace": "GEM",
@@ -50845,7 +50880,7 @@
             "transfigured": false
         }
     },
-    "3447": {
+    "3448": {
         "name": "Компаньон: {0}",
         "refName": "Companion: {0}",
         "namespace": "GEM",
@@ -50862,7 +50897,7 @@
             "transfigured": false
         }
     },
-    "3448": {
+    "3449": {
         "name": "Сотворение чар при использовании оберега",
         "refName": "Cast on Charm Use",
         "namespace": "GEM",
@@ -50879,7 +50914,7 @@
             "transfigured": false
         }
     },
-    "3449": {
+    "3450": {
         "name": "Триединство",
         "refName": "Trinity",
         "namespace": "GEM",
@@ -50896,7 +50931,7 @@
             "transfigured": false
         }
     },
-    "3450": {
+    "3451": {
         "name": "Заряд в сгнившей сумке",
         "refName": "Rotten Satchel Charge",
         "namespace": "ITEM",
@@ -50909,7 +50944,7 @@
             "category": "InstanceLocalItem"
         }
     },
-    "3451": {
+    "3452": {
         "name": "Тропа из кальтропов",
         "refName": "Trail of Caltrops",
         "namespace": "GEM",
@@ -50926,7 +50961,7 @@
             "transfigured": false
         }
     },
-    "3452": {
+    "3453": {
         "name": "Насыщение оружия",
         "refName": "Infuse Weapon",
         "namespace": "GEM",
@@ -50943,7 +50978,7 @@
             "transfigured": false
         }
     },
-    "3453": {
+    "3454": {
         "name": "Насыщение хаосом",
         "refName": "Chaotic Infusion",
         "namespace": "GEM",
@@ -50960,7 +50995,7 @@
             "transfigured": false
         }
     },
-    "3454": {
+    "3455": {
         "name": "Чары молнии при ударе",
         "refName": "Lightning Spell on Hit",
         "namespace": "GEM",
@@ -50977,7 +51012,7 @@
             "transfigured": false
         }
     },
-    "3455": {
+    "3456": {
         "name": "Чары огня при ударе",
         "refName": "Fire Spell on Hit",
         "namespace": "GEM",
@@ -50994,7 +51029,7 @@
             "transfigured": false
         }
     },
-    "3456": {
+    "3457": {
         "name": "Призыв оружия",
         "refName": "Manifest Weapon",
         "namespace": "GEM",
@@ -51011,7 +51046,7 @@
             "transfigured": false
         }
     },
-    "3457": {
+    "3458": {
         "name": "Огневая поддержка",
         "refName": "Supporting Fire",
         "namespace": "GEM",
@@ -51028,7 +51063,7 @@
             "transfigured": false
         }
     },
-    "3458": {
+    "3459": {
         "name": "Закалка",
         "refName": "Temper Weapon",
         "namespace": "GEM",
@@ -51045,7 +51080,7 @@
             "transfigured": false
         }
     },
-    "3459": {
+    "3460": {
         "name": "Высвобождение",
         "refName": "Unleash",
         "namespace": "GEM",
@@ -51062,7 +51097,7 @@
             "transfigured": false
         }
     },
-    "3460": {
+    "3461": {
         "name": "Оздоровление",
         "refName": "Convalescence",
         "namespace": "GEM",
@@ -51079,7 +51114,7 @@
             "transfigured": false
         }
     },
-    "3461": {
+    "3462": {
         "name": "Удалённое умение",
         "refName": "Removed Skill",
         "namespace": "GEM",

@@ -178,6 +178,7 @@
 {"name": "狂いしミニオン", "refName": "Crazed Minions", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "クレッシェンド", "refName": "Crescendo", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "クロスボウショット", "refName": "Crossbow Shot", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Cull The Weak", "refName": "Cull The Weak", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "カリングストライク", "refName": "Culling Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "極致", "refName": "Culmination", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "呪い領域", "refName": "Cursed Ground", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -1698,10 +1699,10 @@
 {"name": "特大のマナフラスコ", "refName": "Greater Mana Flask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Flask"}, "w": 1, "h": 2}
 {"name": "精神のルーン（大）", "refName": "Greater Mind Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/49619b701f/ManaRuneTier2.png", "tags": [], "tradeTag": "greater-mind-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "最大マナ #", "values": [35], "tradeId": ["rune.stat_1050105434"]}, "weapon": {"string": "物理ダメージの#%をマナとしてリーチする", "values": [250], "tradeId": ["rune.stat_669069897"]}}}
 {"name": "復活のルーン（大）", "refName": "Greater Rebirth Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlmZVJlY292ZXJ5UnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/41b22fb4e5/LifeRecoveryRuneTier2.png", "tags": [], "tradeTag": "greater-rebirth-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "毎秒ライフの#%を自動回復する", "values": [21], "tradeId": ["rune.stat_836936635"]}, "weapon": {"string": "キルされた敵1体ごとに#のライフを獲得する", "values": [30], "tradeId": ["rune.stat_3695891184"]}}}
-{"name": "積極性のルーン（大）", "refName": "Greater Rune of Alacrity", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/633300b884/LightningRuneSpecial3.png", "tags": [], "tradeTag": "greater-rune-of-alacrity", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "プレイヤーに対するデバフは#%速く消える", "values": [8], "tradeId": null}, "weapon": {"string": "スキルスピードが#%増加する", "values": [8], "tradeId": null}}}
-{"name": "統率力のルーン（大）", "refName": "Greater Rune of Leadership", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/81a3fe75a5/LightningRuneSpecial1.png", "tags": [], "tradeTag": "greater-rune-of-leadership", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "ミニオンは物理ダメージの#%を雷ダメージとして受ける", "values": [10], "tradeId": null}, "weapon": {"string": "ミニオンはその物理ダメージの#%を追加雷ダメージとして獲得する", "values": [10], "tradeId": null}}}
-{"name": "高潔なルーン（大）", "refName": "Greater Rune of Nobility", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWw0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ffcde6ca9/LightningRuneSpecial4.png", "tags": [], "tradeTag": "greater-rune-of-nobility", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "プレイヤーに対する感電の効果が#%増加する", "values": [-10], "tradeId": null}, "weapon": {"string": "この武器によるアタックは#%の確率で雷の曝露を付与する", "values": [10], "tradeId": null}}}
-{"name": "什一献金のルーン（大）", "refName": "Greater Rune of Tithing", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png", "tags": [], "tradeTag": "greater-rune-of-tithing", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#から#の雷棘ダメージ", "values": [1, 10], "tradeId": null}, "weapon": {"string": "メタスキルの獲得エネルギーが#%増加する", "values": [10], "tradeId": null}}}
+{"name": "積極性のルーン（大）", "refName": "Greater Rune of Alacrity", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/633300b884/LightningRuneSpecial3.png", "tags": [], "tradeTag": "greater-rune-of-alacrity", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "プレイヤーに対するデバフは#%速く消える", "values": [8], "tradeId": ["rune.stat_1238227257"]}, "weapon": {"string": "スキルスピードが#%増加する", "values": [8], "tradeId": ["rune.stat_970213192"]}}}
+{"name": "統率力のルーン（大）", "refName": "Greater Rune of Leadership", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/81a3fe75a5/LightningRuneSpecial1.png", "tags": [], "tradeTag": "greater-rune-of-leadership", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "ミニオンは物理ダメージの#%を雷ダメージとして受ける", "values": [10], "tradeId": ["rune.stat_889552744"]}, "weapon": {"string": "ミニオンはその物理ダメージの#%を追加雷ダメージとして獲得する", "values": [10], "tradeId": ["rune.stat_1433756169"]}}}
+{"name": "高潔なルーン（大）", "refName": "Greater Rune of Nobility", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWw0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ffcde6ca9/LightningRuneSpecial4.png", "tags": [], "tradeTag": "greater-rune-of-nobility", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "プレイヤーに対する感電の効果が#%増加する", "values": [-10], "tradeId": ["rune.stat_3801067695"]}, "weapon": {"string": "この武器によるアタックは#%の確率で雷の曝露を付与する", "values": [10], "tradeId": ["rune.stat_2158896334"]}}}
+{"name": "什一献金のルーン（大）", "refName": "Greater Rune of Tithing", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png", "tags": [], "tradeTag": "greater-rune-of-tithing", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#から#の雷棘ダメージ", "values": [1, 10], "tradeId": ["rune.stat_757050353"]}, "weapon": {"string": "メタスキルの獲得エネルギーが#%増加する", "values": [10], "tradeId": ["rune.stat_4236566306"]}}}
 {"name": "石のルーン（大）", "refName": "Greater Stone Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvU3R1blJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/836627f793/StunRuneTier2.png", "tags": [], "tradeTag": "greater-stone-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "スタン閾値 #", "values": [50], "tradeId": ["rune.stat_915769802"]}, "weapon": {"string": "引き起こすスタン蓄積が#%増加する", "values": [30], "tradeId": ["rune.stat_791928121"]}}}
 {"name": "嵐のルーン（大）", "refName": "Greater Storm Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/47c9eb3f9e/LightningRuneTier2.png", "tags": [], "tradeTag": "greater-storm-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "雷耐性 #%", "values": [14], "tradeId": ["rune.stat_1671376347"]}, "weapon": {"string": "#から#の雷ダメージを追加する", "values": [1, 30], "tradeId": ["rune.stat_3336890334", "rune.stat_3336890334"]}}}
 {"name": "先見のルーン（大）", "refName": "Greater Vision Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png", "tags": [], "tradeTag": "greater-vision-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "フラスコによるライフおよびマナの回復量が#%増加する", "values": [12], "tradeId": ["rune.stat_2310741722"]}, "weapon": {"string": "命中力 #", "values": [110], "tradeId": ["rune.stat_691932474"]}}}
@@ -2576,7 +2577,7 @@
 {"name": "地味な手袋", "refName": "Sombre Gloves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "ezomyte_basetype"], "craftable": {"category": "Gloves"}, "armour": {"es": [15, 15]}, "w": 2, "h": 2}
 {"name": "術師のティアラ", "refName": "Sorcerous Tiara", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Helmet"}, "armour": {"es": [92, 92]}, "w": 2, "h": 2}
 {"name": "アトモフアのソウルコア", "refName": "Soul Core of Atmohua", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVN0cmVuZ3RoIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/1b37135049/GreaterSoulCoreStrength.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-atmohua", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "要求能力値の#%を筋力に変換する", "values": [20], "tradeId": ["rune.stat_1556124492"]}, "weapon": {"string": "要求能力値の#%を筋力に変換する", "values": [20], "tradeId": ["rune.stat_1556124492"]}}}
-{"name": "アズカパのソウルコア", "refName": "Soul Core of Azcapa", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png", "tags": ["soul_core", "soul_core_tier3"], "tradeTag": "soul-core-of-azcapa", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "倒した敵がドロップするゴールドの数量が#%増加する", "values": [5], "tradeId": null}, "weapon": {"string": "スピリット #", "values": [15], "tradeId": ["rune.stat_3981240776"]}}}
+{"name": "アズカパのソウルコア", "refName": "Soul Core of Azcapa", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png", "tags": ["soul_core", "soul_core_tier3"], "tradeTag": "soul-core-of-azcapa", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "倒した敵がドロップするゴールドの数量が#%増加する", "values": [5], "tradeId": ["rune.stat_3175163625"]}, "weapon": {"string": "スピリット #", "values": [15], "tradeId": ["rune.stat_3981240776"]}}}
 {"name": "チョロトルのソウルコア", "refName": "Soul Core of Cholotl", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZURleCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c732c8a579/GreaterSoulCoreDex.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-cholotl", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "要求能力値の#%を器用さに変換する", "values": [20], "tradeId": ["rune.stat_1496740334"]}, "weapon": {"string": "要求能力値の#%を器用さに変換する", "values": [20], "tradeId": ["rune.stat_1496740334"]}}}
 {"name": "シアクラトルのソウルコア", "refName": "Soul Core of Citaqualotl", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1NvdWxDb3JlUGh5c2ljYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/f48f9f0c62/SoulCorePhysical.png", "tags": ["soul_core", "soul_core_tier1"], "tradeTag": "soul-core-of-citaqualotl", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "全ての元素耐性 #%", "values": [5], "tradeId": ["rune.stat_2901986750"]}, "weapon": {"string": "アタックスキルによる元素ダメージが#%増加する", "values": [30], "tradeId": ["rune.stat_387439868"]}}}
 {"name": "ヘクアニのソウルコア", "refName": "Soul Core of Jiquani", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUxpZmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bb83a9f337/GreaterSoulCoreLife.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-jiquani", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "最大ライフが#%増加する", "values": [2], "tradeId": ["rune.stat_983749596"]}, "weapon": {"string": "敵を倒した時にライフの#%を回復する", "values": [2], "tradeId": ["rune.stat_2023107756"]}}}
@@ -3013,11 +3014,11 @@
 {"name": "ユリエルの鍵", "refName": "Yriel's Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "ユリエルの鍵", "refName": "Yriel's Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "ザロクの聖廟の鍵", "refName": "Zarokh's Reliquary Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "ザロクの聖廟の鍵", "refName": "Zarokh's Reliquary Key: Against the Darkness", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "ザロクの聖廟の鍵", "refName": "Zarokh's Reliquary Key: Blessed Bonds", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "ザロクの聖廟の鍵", "refName": "Zarokh's Reliquary Key: Sandstorm Visage", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "ザロクの聖廟の鍵", "refName": "Zarokh's Reliquary Key: Sekhema's Resolve", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "ザロクの聖廟の鍵", "refName": "Zarokh's Reliquary Key: Temporalis", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d9adae38a9/TwilightOrderReliquaryKeySanctum6.png", "tags": ["fake_currency"], "tradeTag": "temporalis", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "ザロクの聖廟の鍵（闇との対立）", "refName": "Zarokh's Reliquary Key: Against the Darkness", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/67f96bbfc0/TwilightOrderReliquaryKeySanctum2.png", "tags": ["fake_currency"], "tradeTag": "against-the-darkness", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "ザロクの聖廟の鍵（祝福されし絆）", "refName": "Zarokh's Reliquary Key: Blessed Bonds", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/351ca53587/TwilightOrderReliquaryKeySanctum4.png", "tags": ["fake_currency"], "tradeTag": "blessed-bonds", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "ザロクの聖廟の鍵（砂嵐の容貌）", "refName": "Zarokh's Reliquary Key: Sandstorm Visage", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/243ec48d7d/TwilightOrderReliquaryKeySanctum3.png", "tags": ["fake_currency"], "tradeTag": "sandstorm-visage", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "ザロクの聖廟の鍵（セケマの決意）", "refName": "Zarokh's Reliquary Key: Sekhema's Resolve", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e6484afed0/TwilightOrderReliquaryKeySanctum5.png", "tags": ["fake_currency"], "tradeTag": "sekhemas-resolve", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "ザロクの聖廟の鍵（テンポラリス）", "refName": "Zarokh's Reliquary Key: Temporalis", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d9adae38a9/TwilightOrderReliquaryKeySanctum6.png", "tags": ["fake_currency"], "tradeTag": "temporalis", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
 {"name": "狂信者の弓", "refName": "Zealot Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "狂信者の冠", "refName": "Zealot Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [108, 108], "es": [38, 38]}, "w": 2, "h": 2}
 {"name": "狂信者のガントレット", "refName": "Zealot Gauntlets", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [61, 61], "ev": [56, 56]}, "w": 2, "h": 2}
@@ -3043,11 +3044,13 @@
 {"name": "アンドヴァリアス", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "アストラメンティス", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "アジスの標", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "ビジューボーン", "refName": "Bijouborne", "namespace": "UNIQUE", "unique": {"base": "Double Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "遺産のバックル", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "黒い炎", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "ブラックハート", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "焼け付く絆", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "ブリナバス", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "溢れる腐敗", "refName": "Bursting Decay", "namespace": "UNIQUE", "unique": {"base": "Unset Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "兄弟の証", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "カーネイジ・ハート", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "嵐の合唱", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
@@ -3057,12 +3060,16 @@
 {"name": "運命への反抗", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "ドードゥリの糾弾", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "夢の断片", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "貪欲の指輪", "refName": "Evergrasping Ring", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "チャユラの目", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "ファイアフラワー", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "イクスの凝視", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "天の恩恵", "refName": "Gifts from Above", "namespace": "UNIQUE", "unique": {"base": "Prismatic Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "グロウスウォーム", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "ゴアガードル", "refName": "Goregirdle", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "ヘッドハンター", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "ハートバウンド・ループ", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "アイスファングの軌道", "refName": "Icefang Orbit", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "ウルダーンの偶像", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "イグニフェリス", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "地獄の留め金", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
@@ -3077,6 +3084,7 @@
 {"name": "原罪", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "ペランダスの印鑑指輪", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "プールシルケルン", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "尊ばれし苦痛", "refName": "Prized Pain", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "敬われし樹脂", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "脆弱のロンデル", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "リスラーサのコイル", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}, "icon": "%NOT_FOUND%"}
@@ -3086,22 +3094,29 @@
 {"name": "シャヴロンの鞄", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "スネークピット", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "魂を繋ぐ綱", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "ラズワールの石", "refName": "Stone of Lazhwar", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "ストラグルスクリーム", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "確かな足取りの印章", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "鉄床", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "潜る者", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "不朽の眼差し", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "歯を鳴らす帯", "refName": "The Gnashing Sash", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "パンデモニアス", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "泥棒の苦悩", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "アンギルの調和", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "ヴェノパンクチャー", "refName": "Venopuncture", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "ヴェンターのギャンブル", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "警戒の目", "refName": "Vigilant View", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "ウェイストゲート", "refName": "Waistgate", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "一党の囁き", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "ゾフの血", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "苦痛の頸木", "refName": "Yoke of Suffering", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "ゼルフィの誕生", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "永遠から", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
 {"name": "エーリスヴェインの翼", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "アルケム・エイラ", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "アルファの遠吠え", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "アペプの優越性", "refName": "Apep's Supremacy", "namespace": "UNIQUE", "unique": {"base": "Voodoo Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "エミレの前掛け", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "アルヴィルの車輪", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "アッシュレンド", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
@@ -3120,6 +3135,8 @@
 {"name": "ブラックグリーム", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}, "icon": "%NOT_FOUND%"}
 {"name": "黒い太陽の紋章", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "祝福されし絆", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "血の関門", "refName": "Bloodbarrier", "namespace": "UNIQUE", "unique": {"base": "Iron Buckler"}, "icon": "%NOT_FOUND%"}
+{"name": "血の対価", "refName": "Blood Price", "namespace": "UNIQUE", "unique": {"base": "Fierce Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "蒼炎の籠手", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "ウルルの骨", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "ブランブルジャック", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass"}, "icon": "%NOT_FOUND%"}
@@ -3128,8 +3145,11 @@
 {"name": "毛深い猪", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "青銅の髭", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "ブッシュワック", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "カルジャイラの弧", "refName": "Calgyra's Arc", "namespace": "UNIQUE", "unique": {"base": "Ornate Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "キャンドルメーカー", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "死体の呼び声", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "チェルノボグの柱", "refName": "Chernobog's Pillar", "namespace": "UNIQUE", "unique": {"base": "Blacksteel Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "反抗のクローク", "refName": "Cloak of Defiance", "namespace": "UNIQUE", "unique": {"base": "Havoc Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "炎のクローク", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "赤のコート", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "コーナサウム", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
@@ -3137,10 +3157,12 @@
 {"name": "コープスウェード", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "紅のクチュール", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "アードゥラの紋章", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "目の王冠", "refName": "Crown of Eyes", "namespace": "UNIQUE", "unique": {"base": "Coral Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "ペールキングの王冠", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "勝者の冠", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "茨の冠", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "ダークレイ・ベクトル", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "明確な死", "refName": "Death Articulated", "namespace": "UNIQUE", "unique": {"base": "Ornate Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "デスブロー", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "死前喘鳴", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "ディードベル", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm"}, "icon": "%NOT_FOUND%"}
@@ -3150,11 +3172,16 @@
 {"name": "ドードゥリの才能", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "破滅の門", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "ドリヤニの試作品", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "ドレッドフィスト", "refName": "Dreadfist", "namespace": "UNIQUE", "unique": {"base": "Bolstered Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "ダンケルハルト", "refName": "Dunkelhalt", "namespace": "UNIQUE", "unique": {"base": "Leather Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "ダストブルーム", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "エディルンの牙", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "残酷の人型", "refName": "Effigy of Cruelty", "namespace": "UNIQUE", "unique": {"base": "Antler Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "エレボアー", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "帝国の掴み", "refName": "Empire's Grasp", "namespace": "UNIQUE", "unique": {"base": "Titan Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "包み込む夜明け", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "エリアンの玉石", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "エッセンシア・サングイス", "refName": "Essentia Sanguis", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "エゾマイトピーク", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "羽根付き要塞", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "禁断の眼差し", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
@@ -3163,6 +3190,7 @@
 {"name": "ゴーストマーチ", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "ゴーストライズ", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "混沌の片鱗", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "グロームガウン", "refName": "Gloamgown", "namespace": "UNIQUE", "unique": {"base": "Elementalist Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "暗がりの姿", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket"}, "icon": "%NOT_FOUND%"}
 {"name": "ゴールドリム", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "グレーヴバインド", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs"}, "icon": "%NOT_FOUND%"}
@@ -3170,11 +3198,15 @@
 {"name": "グレイメイク", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "冬の掌握", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "知恵と行動の手", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "知恵と行動の手", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Spiral Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "ヘイトフォージ", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "ヒートシヴァー", "refName": "Heatshiver", "namespace": "UNIQUE", "unique": {"base": "Velvet Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "ビンデンの角笛", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "夢の殻", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "ハイリの怒り", "refName": "Hyrri's Ire", "namespace": "UNIQUE", "unique": {"base": "Armoured Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "アイストゥーム", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "暇人の手", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "インディゴン", "refName": "Indigon", "namespace": "UNIQUE", "unique": {"base": "Magus Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "インスマス", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "アイアングラスプ", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "アイアンライド", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}, "icon": "%NOT_FOUND%"}
@@ -3186,6 +3218,7 @@
 {"name": "キトコの流れ", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "リアー・キャスト", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "リージョンストライド", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "レオポルドの拍手", "refName": "Leopold's Applause", "namespace": "UNIQUE", "unique": {"base": "Embroidered Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "ロクトニアルの愛撫", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "輝かしい歩調", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "コモリグモ", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield"}, "icon": "%NOT_FOUND%"}
@@ -3197,6 +3230,8 @@
 {"name": "不屈なる者として死す", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}, "icon": "%NOT_FOUND%"}
 {"name": "ミリスの細君", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "ネクロマントル", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "ナイトスケール", "refName": "Nightscale", "namespace": "UNIQUE", "unique": {"base": "Pauascale Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "夜想曲", "refName": "Nocturne", "namespace": "UNIQUE", "unique": {"base": "Wooden Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "北の脚", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "楢の誓い", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "オバーンの砦", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
@@ -3207,34 +3242,56 @@
 {"name": "パワートレッド", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "プラグマティズム", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "雨乞い", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "プリズム・ガーディアン", "refName": "Prism Guardian", "namespace": "UNIQUE", "unique": {"base": "Intricate Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "クアトルの換羽", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "森の女王", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "輝く嘆き", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "ラスピスの球体", "refName": "Rathpith Globe", "namespace": "UNIQUE", "unique": {"base": "Sacred Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "リアガード", "refName": "Rearguard", "namespace": "UNIQUE", "unique": {"base": "Blunt Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "レッドブレードの紋章旗", "refName": "Redblade Banner", "namespace": "UNIQUE", "unique": {"base": "Heraldric Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "緋炎の導管", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "フェニックスの復活", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "ロンデル・デ・エゾ", "refName": "Rondel de Ezo", "namespace": "UNIQUE", "unique": {"base": "Plated Buckler"}, "icon": "%NOT_FOUND%"}
+{"name": "サクロサンクタム", "refName": "Sacrosanctum", "namespace": "UNIQUE", "unique": {"base": "Corvus Mantle"}, "icon": "%NOT_FOUND%"}
 {"name": "サフェルのフレーム", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "絹の砂", "refName": "Sands of Silk", "namespace": "UNIQUE", "unique": {"base": "Shrouded Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "砂嵐の容貌", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "スコルドの馬勒", "refName": "Scold's Bridle", "namespace": "UNIQUE", "unique": {"base": "Jade Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "蛇の学習", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "哀れな者の手枷", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "シエラの遺産", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "畏敬の衣", "refName": "Silks of Veneration", "namespace": "UNIQUE", "unique": {"base": "Enlightened Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "シルバーソーン", "refName": "Silverthorne", "namespace": "UNIQUE", "unique": {"base": "Spiked Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "不平等", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}, "icon": "%NOT_FOUND%"}
 {"name": "忠臣の皮膚", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "スネークバイト", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "唯我", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}, "icon": "%NOT_FOUND%"}
+{"name": "魂の外套", "refName": "Soul Mantle", "namespace": "UNIQUE", "unique": {"base": "Sacrificial Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "スターコンジャの頭", "refName": "Starkonja's Head", "namespace": "UNIQUE", "unique": {"base": "Leatherbound Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "サンスプリンター", "refName": "Sunsplinter", "namespace": "UNIQUE", "unique": {"base": "Array Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "スヴァリン", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "タビュラ・ラサ", "refName": "Tabula Rasa", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "テンポラリス", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "テツラポカルの欲望", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "古墳の住人", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "黒い疑念", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "黒の記章", "refName": "The Black Insignia", "namespace": "UNIQUE", "unique": {"base": "Corsair Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "真鍮のドーム", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "雨をもたらすもの", "refName": "The Bringer of Rain", "namespace": "UNIQUE", "unique": {"base": "Decorated Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "迫り来る災難", "refName": "The Coming Calamity", "namespace": "UNIQUE", "unique": {"base": "Heroic Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "契約", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "舞う蜃気楼", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "最深の塔", "refName": "The Deepest Tower", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "むさぼり食う王冠", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "永遠の火花", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "堕ちたる陣形", "refName": "The Fallen Formation", "namespace": "UNIQUE", "unique": {"base": "Lamellar Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "虚ろの仮面", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "道の戦士", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "無限の追跡", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "放浪騎士", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "致死の一矢", "refName": "The Lethal Draw", "namespace": "UNIQUE", "unique": {"base": "Sacral Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "通変星", "refName": "The Mutable Star", "namespace": "UNIQUE", "unique": {"base": "Cleric Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "囚人の枷", "refName": "The Prisoner's Manacles", "namespace": "UNIQUE", "unique": {"base": "Diviner Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "鼠の檻", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "微笑む騎士", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "降参", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield"}, "icon": "%NOT_FOUND%"}
@@ -3248,18 +3305,37 @@
 {"name": "タイタンロットのカタフラクト", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}, "icon": "%NOT_FOUND%"}
 {"name": "踏みつぶす爪先", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "ツリーフィンガーズ", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "ヴァラコの悪心", "refName": "Valako's Vice", "namespace": "UNIQUE", "unique": {"base": "Plate Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "夜の帳", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "アーヤの容貌", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "ヴィズ・モーティス", "refName": "Vis Mortis", "namespace": "UNIQUE", "unique": {"base": "Plated Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "ヴォールの保護具", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "破滅の軌跡", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings"}, "icon": "%NOT_FOUND%"}
 {"name": "彷徨う遺物箱", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "ワンダーラスト", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "ウェーブシェイパー", "refName": "Waveshaper", "namespace": "UNIQUE", "unique": {"base": "Tideseer Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "未亡人の統治", "refName": "Widow's Reign", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "楽園への窓", "refName": "Window to Paradise", "namespace": "UNIQUE", "unique": {"base": "Barricade Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "ウィンドスクリーム", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "ケイリンの翼", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "ワンダートラップ", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}, "icon": "%NOT_FOUND%"}
 {"name": "ウルフスベイン", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "ユリエルの養育", "refName": "Yriel's Fostering", "namespace": "UNIQUE", "unique": {"base": "Strider Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "ゼルフィのセラーペ", "refName": "Zerphi's Serape", "namespace": "UNIQUE", "unique": {"base": "Scalper's Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "アラカーリの贈り物", "refName": "Arakaali's Gift", "namespace": "UNIQUE", "unique": {"base": "Antidote Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "ベイラの苦悶", "refName": "Beira's Anguish", "namespace": "UNIQUE", "unique": {"base": "Dousing Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "山の息吹", "refName": "Breath of the Mountains", "namespace": "UNIQUE", "unique": {"base": "Sapphire Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "見捨てられしバングル", "refName": "Forsaken Bangle", "namespace": "UNIQUE", "unique": {"base": "Amethyst Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "楽園のために", "refName": "For Utopia", "namespace": "UNIQUE", "unique": {"base": "Stone Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "溶解する大渦", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "希望の芽吹き", "refName": "Nascent Hope", "namespace": "UNIQUE", "unique": {"base": "Thawing Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "ナマフに選ばれしもの", "refName": "Ngamahu's Chosen", "namespace": "UNIQUE", "unique": {"base": "Ruby Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "オルロスの決意", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "通過儀礼", "refName": "Rite of Passage", "namespace": "UNIQUE", "unique": {"base": "Golden Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "サングイス・ヘロウム", "refName": "Sanguis Heroum", "namespace": "UNIQUE", "unique": {"base": "Staunching Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "黒猫", "refName": "The Black Cat", "namespace": "UNIQUE", "unique": {"base": "Grounding Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "斧の一振り", "refName": "The Fall of the Axe", "namespace": "UNIQUE", "unique": {"base": "Silver Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "ヴァラコの雄叫び", "refName": "Valako's Roar", "namespace": "UNIQUE", "unique": {"base": "Topaz Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "闇との対立", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "制御されし変態", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "虚空より来たる", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
@@ -3270,12 +3346,24 @@
 {"name": "メガロマニアック", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "信仰のプリズム", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "飾り立てられしもの", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "開けた空", "refName": "Clear Skies", "namespace": "UNIQUE", "unique": {"base": "Delirium Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "残酷な支配", "refName": "Cruel Hegemony", "namespace": "UNIQUE", "unique": {"base": "Overseer Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "時に忘れられし物", "refName": "Forgotten By Time", "namespace": "UNIQUE", "unique": {"base": "Expedition Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "信仰の自由", "refName": "Freedom of Faith", "namespace": "UNIQUE", "unique": {"base": "Ritual Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "狩りの季節", "refName": "Season of the Hunt", "namespace": "UNIQUE", "unique": {"base": "Overseer Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "偉大なる計画", "refName": "The Grand Project", "namespace": "UNIQUE", "unique": {"base": "Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "楽園の幻視", "refName": "Visions of Paradise", "namespace": "UNIQUE", "unique": {"base": "Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "包囲されたレイクラスト", "refName": "Wraeclast Besieged", "namespace": "UNIQUE", "unique": {"base": "Breach Precursor Tablet"}, "icon": "%NOT_FOUND%"}
 {"name": "青い舌", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "脳揺らし", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "ブリンハンドの印", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
+{"name": "チェインスティング", "refName": "Chainsting", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "チョーバー・チェバー", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}, "icon": "%NOT_FOUND%"}
 {"name": "崩壊する地平線", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "呪い刻み", "refName": "Cursecarver", "namespace": "UNIQUE", "unique": {"base": "Acrid Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "ダイヴァータの風", "refName": "Daevata's Wind", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "死の竪琴", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "ドゥームフレッチ", "refName": "Doomfletch", "namespace": "UNIQUE", "unique": {"base": "Composite Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "夕闇の番", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "アースバウンド", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "エネズンの突撃", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
@@ -3288,20 +3376,20 @@
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "未完", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}, "icon": "%NOT_FOUND%"}
@@ -3314,7 +3402,9 @@
 {"name": "ライフスプリッグ", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}, "icon": "%NOT_FOUND%"}
 {"name": "マーツヤ", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "霧の囁き", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "ミョルナー", "refName": "Mjölner", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "ナズィルの審判", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "ネブロック", "refName": "Nebuloch", "namespace": "UNIQUE", "unique": {"base": "Execratus Hammer"}, "icon": "%NOT_FOUND%"}
 {"name": "オルロヴァサラ", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "囚われた神の柱", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "ケチョーリ", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}, "icon": "%NOT_FOUND%"}
@@ -3322,20 +3412,33 @@
 {"name": "城壁の略奪者", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
 {"name": "レッドビーク", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "聖なる炎", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "サイザの槍", "refName": "Saitha's Spear", "namespace": "UNIQUE", "unique": {"base": "Barbed Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "血の占い棒", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "彫刻されし苦痛", "refName": "Sculpted Suffering", "namespace": "UNIQUE", "unique": {"base": "Warpick"}, "icon": "%NOT_FOUND%"}
 {"name": "見つめる星", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "シャバ", "refName": "Shyaba", "namespace": "UNIQUE", "unique": {"base": "Temple Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "欠片の主権", "refName": "Sire of Shards", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "スカイシルバー", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "スリヴァータン", "refName": "Slivertongue", "namespace": "UNIQUE", "unique": {"base": "Zealot Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "怒りの柱", "refName": "Spire of Ire", "namespace": "UNIQUE", "unique": {"base": "Helix Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "スプリンターハート", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "ロラッタの破片", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "タングルタン", "refName": "Tangletongue", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "テアレンの震え", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "血の棘", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "影の重荷", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "ダルヴィーシュの舞", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}, "icon": "%NOT_FOUND%"}
 {"name": "闇の冒涜者", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "虚ろな咆哮", "refName": "The Empty Roar", "namespace": "UNIQUE", "unique": {"base": "Cultist Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "信仰の鎚", "refName": "The Hammer of Faith", "namespace": "UNIQUE", "unique": {"base": "Giant Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "焼けつく手触り", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "哨兵", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "邪悪な針", "refName": "The Wicked Quill", "namespace": "UNIQUE", "unique": {"base": "Withered Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "タイドブレーカー", "refName": "Tidebreaker", "namespace": "UNIQUE", "unique": {"base": "Pointed Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "トレンチティンバー", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
 {"name": "トレフィナ", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "圧政の手", "refName": "Tyranny's Grip", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "ボルタキシック・リフト", "refName": "Voltaxic Rift", "namespace": "UNIQUE", "unique": {"base": "Fanatic Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "ウィドウヘイル", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "冬の牙", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
 {"name": "ワイランドの褒美", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}

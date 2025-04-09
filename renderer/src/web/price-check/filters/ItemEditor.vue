@@ -94,8 +94,6 @@ export default defineComponent({
         displayString: string;
       }> = [];
 
-      console.log(props.item);
-
       const category = props.item.category;
       if (!category) return items;
       if (getItemEditorType(props.item) === ItemEditorType.Rune) {

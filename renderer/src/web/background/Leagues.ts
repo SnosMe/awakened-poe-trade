@@ -5,7 +5,6 @@ import { AppConfig } from "@/web/Config";
 // pc-ggg, pc-garena
 // const PERMANENT_SC = ['Standard', '標準模式']
 // const PERMANENT_HC = ["Hardcore", "專家模式"];
-const PERMANENT_HC: string[] = [];
 
 interface ApiLeague {
   id: string;
@@ -79,7 +78,6 @@ export const useLeagues = createGlobalState(() => {
       tradeLeagues.value = leagues
         .filter(
           (league) =>
-            !PERMANENT_HC.includes(league.id) &&
             !league.rules.some(
               (rule) =>
                 rule.id === "NoParties" ||
@@ -94,8 +92,8 @@ export const useLeagues = createGlobalState(() => {
         (league) => league.id === selectedId.value,
       );
       if (!leagueIsAlive && !isPrivateLeague(selectedId.value ?? "")) {
-        if (tradeLeagues.value.length > 1) {
-          const TMP_CHALLENGE = 1;
+        if (tradeLeagues.value.length > 2) {
+          const TMP_CHALLENGE = 2;
           selectedId.value = tradeLeagues.value[TMP_CHALLENGE].id;
         } else {
           const STANDARD = 0;

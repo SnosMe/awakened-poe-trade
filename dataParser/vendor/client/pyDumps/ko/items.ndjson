@@ -89,7 +89,7 @@
 {"name": "연쇄", "refName": "Chain", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "동결 확률", "refName": "Chance to Freeze", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "카오스 화살", "refName": "Chaos Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "카오스 고취", "refName": "Chaos Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "카오스 주입", "refName": "Chaos Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "카오스 숙련", "refName": "Chaos Mastery", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "혼돈의 동결", "refName": "Chaotic Freeze", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "카오스 주입", "refName": "Chaotic Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -104,7 +104,7 @@
 {"name": "근접 전투", "refName": "Close Combat", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "집속 유탄", "refName": "Cluster Grenade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "냉기 노출", "refName": "Cold Exposure", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "냉기 고취", "refName": "Cold Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "냉기 주입", "refName": "Cold Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "냉기 숙련", "refName": "Cold Mastery", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "냉기 관통", "refName": "Cold Penetration", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "한파", "refName": "Cold Snap", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -159,7 +159,7 @@
 {"name": "율령", "refName": "Commandment", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "동정", "refName": "Commiserate", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "동반이환", "refName": "Comorbidity", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "동료: {0}", "refName": "Companion: {0}", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "반려수: {0}", "refName": "Companion: {0}", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "효과 집중", "refName": "Concentrated Effect", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "배합", "refName": "Concoct", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "전도", "refName": "Conduction", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -178,6 +178,7 @@
 {"name": "미쳐버린 소환수", "refName": "Crazed Minions", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "크레센도", "refName": "Crescendo", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "석궁 사격", "refName": "Crossbow Shot", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Cull The Weak", "refName": "Cull The Weak", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "마무리 타격", "refName": "Culling Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "고조", "refName": "Culmination", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "저주받은 지대", "refName": "Cursed Ground", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -235,7 +236,7 @@
 {"name": "원소 기원", "refName": "Elemental Invocation", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "원소 착취", "refName": "Elemental Siphon", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "원소 폭풍", "refName": "Elemental Storm", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Elemental Sundering", "refName": "Elemental Sundering", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "원소 작렬", "refName": "Elemental Sundering", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "불씨 일제 사격", "refName": "Ember Fusillade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "불씨 일제 사격", "refName": "Ember Fusillade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "혹독", "refName": "Embitter", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -258,7 +259,7 @@
 {"name": "혐오 표출", "refName": "Execrate", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "처형", "refName": "Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "광장", "refName": "Expanse", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Expedite", "refName": "Expedite", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "신속 처리", "refName": "Expedite", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "약점 이용", "refName": "Exploit Weakness", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "폭발성 혼합물", "refName": "Explosive Concoction", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "폭발 유탄", "refName": "Explosive Grenade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -276,7 +277,7 @@
 {"name": "불타는 죽음", "refName": "Fiery Death", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "선수상", "refName": "Figurehead", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "화염 노출", "refName": "Fire Exposure", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "화염 고취", "refName": "Fire Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "화염 주입", "refName": "Fire Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "화염 숙련", "refName": "Fire Mastery", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "화염 관통", "refName": "Fire Penetration", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "명중 시 화염 주문", "refName": "Fire Spell on Hit", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -325,7 +326,7 @@
 {"name": "혼의 춤", "refName": "Ghost Dance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "빙하 볼트", "refName": "Glacial Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "빙하 폭포", "refName": "Glacial Cascade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "작열의 기병창", "refName": "Glacial Lance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "빙하 창", "refName": "Glacial Lance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "빙하 작용", "refName": "Glaciation", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "빙하", "refName": "Glacier", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "큰나무", "refName": "Greatwood", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -401,7 +402,7 @@
 {"name": "낙뢰", "refName": "Lightning Bolt", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "번개 도관", "refName": "Lightning Conduit", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "번개 노출", "refName": "Lightning Exposure", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "번개 고취", "refName": "Lightning Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "번개 주입", "refName": "Lightning Infusion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "번개 숙련", "refName": "Lightning Mastery", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "번개 관통", "refName": "Lightning Penetration", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "피뢰침", "refName": "Lightning Rod", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -516,7 +517,7 @@
 {"name": "응수", "refName": "Retort", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "퇴각", "refName": "Retreat", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "울림", "refName": "Reverberate", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "로아 탈것 소환", "refName": "Rhoa Mount", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "로아 탈것", "refName": "Rhoa Mount", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "튕겨 쏘기", "refName": "Ricochet", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "흰서리", "refName": "Rime", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "뜯기", "refName": "Rip", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -536,7 +537,7 @@
 {"name": "주운 판금", "refName": "Scavenged Plating", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "이글거리는 화염", "refName": "Searing Flame", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "새로운 활력", "refName": "Second Wind", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "See Red", "refName": "See Red", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "빨간색 보기", "refName": "See Red", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "지진 함성", "refName": "Seismic Cry", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "파편 청소부", "refName": "Shard Scavenger", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "산산조각의 혼합물", "refName": "Shattering Concoction", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -602,7 +603,7 @@
 {"name": "과도한 노출", "refName": "Strip Away", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "강심장", "refName": "Strong Hearted", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "만연", "refName": "Suffuse", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "동료 소환", "refName": "Summon Companion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "반려수 소환", "refName": "Summon Companion", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "지옥불 사냥개 소환", "refName": "Summon Infernal Hound", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "늑대 소환", "refName": "Summon Wolf", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "산산조각", "refName": "Sunder", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -630,7 +631,7 @@
 {"name": "회오리", "refName": "Tornado", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "회오리 사격", "refName": "Tornado Shot", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "맹독성 종양", "refName": "Toxic Growth", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Trail of Caltrops", "refName": "Trail of Caltrops", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "마름쇠의 발자취", "refName": "Trail of Caltrops", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "진동", "refName": "Tremors", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "삼위일체", "refName": "Trinity", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Tumult", "refName": "Tumult", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -645,7 +646,7 @@
 {"name": "흔들리지 않는 힘", "refName": "Unerring Power", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "촉발", "refName": "Unleash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "촉발", "refName": "Unleash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Unleash", "refName": "Unleash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "촉발", "refName": "Unleash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "불안정한 속도", "refName": "Unsteady Tempo", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "불가촉", "refName": "Untouchable", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "완고", "refName": "Unyielding", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -670,7 +671,7 @@
 {"name": "서리의 파도", "refName": "Wave of Frost", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "선회 공격", "refName": "Whirling Assault", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "소용돌이 베기", "refName": "Whirling Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Whirlwind Lance", "refName": "Whirlwind Lance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "와류 기병창", "refName": "Whirlwind Lance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "도깨비불", "refName": "Wildfire", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "난무하는 파편", "refName": "Wildshards", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "바람 폭발", "refName": "Wind Blast", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -747,7 +748,7 @@
 {"name": "심연의 인큐베이터", "refName": "Abyssal Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "매서운 마법봉", "refName": "Acrid Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Wand"}, "w": 1, "h": 3}
 {"name": "적응형 기폭제", "refName": "Adaptive Catalyst", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0cmlidXRlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/015f6c9ac8/BreachCatalystAttribute.png", "tags": ["catalyst"], "tradeTag": "adaptive-catalyst", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "고급 광신자 활", "refName": "Adherent Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "지지자 활", "refName": "Adherent Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "고급 패드 레깅스", "refName": "Adherent Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [73, 73], "es": [26, 26]}, "w": 2, "h": 2}
 {"name": "고급 봉헌된 의복", "refName": "Adherent's Raiment", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"es": [119, 119]}, "w": 2, "h": 3}
 {"name": "다나우 제독", "refName": "Admiral Darnaw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
@@ -757,7 +758,7 @@
 {"name": "치장된 장갑", "refName": "Adorned Gloves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Gloves"}, "armour": {"es": [42, 42]}, "w": 2, "h": 2}
 {"name": "고급 나선 싸개", "refName": "Adorned Wraps", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Gloves"}, "armour": {"ev": [56, 56], "es": [21, 21]}, "w": 2, "h": 2}
 {"name": "비호 버클러", "refName": "Aegis Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "dex_shield"], "craftable": {"category": "Buckler"}, "armour": {"ev": [111, 111]}, "w": 2, "h": 2}
-{"name": "전문 방벽 육척봉", "refName": "Aegis Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "비호 육척봉", "refName": "Aegis Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "에테르 화석", "refName": "Aetheric Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "오래된 수갑", "refName": "Aged Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "maraketh_basetype"], "craftable": {"category": "Gloves"}, "armour": {"ar": [22, 22], "es": [9, 9]}, "w": 2, "h": 2}
 {"name": "고급 도색된 거대 방패", "refName": "Aged Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "str_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [110, 110]}, "w": 2, "h": 4}
@@ -797,7 +798,7 @@
 {"name": "소멸의 파편", "refName": "Annulment Shard", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["currency_shard"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "해독 호신부", "refName": "Antidote Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Charm"}, "w": 1, "h": 1}
 {"name": "사슴 뿔 집중구", "refName": "Antler Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "ezomyte_basetype"], "craftable": {"category": "Focus"}, "armour": {"es": [17, 17]}, "w": 2, "h": 3}
-{"name": "전문 대장간 대형 망치", "refName": "Anvil Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "모루 대형 망치", "refName": "Anvil Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "전문 보안 레깅스", "refName": "Apostle Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [110, 110], "es": [38, 38]}, "w": 2, "h": 2}
 {"name": "수습 지도제작자의 봉인", "refName": "Apprentice Cartographer's Seal", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "중재자의 지식의 서 I", "refName": "Arbiter's Book of Knowledge I", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
@@ -817,7 +818,7 @@
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 2}
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
 {"name": "집정관의 연모양 방패 조각", "refName": "Archon Kite Shield Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
-{"name": "고급 치직대는 육척봉", "refName": "Arcing Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "전호의 육척봉", "refName": "Arcing Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "방어구 재조합기", "refName": "Armour Recombinator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "장갑을 두른 모자", "refName": "Armoured Cap", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Helmet"}, "armour": {"ev": [222, 222]}, "w": 2, "h": 2}
 {"name": "장갑을 두른 클로", "refName": "Armoured Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Claw"}, "w": 2, "h": 2}
@@ -856,12 +857,12 @@
 {"name": "발바라의 바리야", "refName": "Balbala's Barya", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["not_for_sale", "sanctum_key", "quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "고급 거즈 싸개", "refName": "Bandage Wraps", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Gloves"}, "armour": {"ev": [44, 44], "es": [17, 17]}, "w": 2, "h": 2}
 {"name": "도적 손도끼", "refName": "Bandit Hatchet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
-{"name": "고급 도둑 철퇴", "refName": "Bandit Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "도적 철퇴", "refName": "Bandit Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "고급 얼굴 가면", "refName": "Bandit Mask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ev": [92, 92], "es": [37, 37]}, "w": 2, "h": 2}
 {"name": "고급 격자 샌들", "refName": "Bangled Sandals", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Boots"}, "armour": {"es": [52, 52]}, "w": 2, "h": 2}
 {"name": "바란의 문양", "refName": "Baran's Crest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "고급 모피 판금 갑옷", "refName": "Barbarian Plate", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [269, 269]}, "w": 2, "h": 3}
-{"name": "고급 고딕 육척봉", "refName": "Barbarous Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "상스러운 육척봉", "refName": "Barbarous Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "전문 가시 팔보호구", "refName": "Barbed Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Gloves"}, "armour": {"ev": [133, 133]}, "w": 2, "h": 2}
 {"name": "가시 돋친 창", "refName": "Barbed Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
 {"name": "고급 보석 박힌 장갑", "refName": "Baroque Gloves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Gloves"}, "armour": {"es": [37, 37]}, "w": 2, "h": 2}
@@ -871,9 +872,9 @@
 {"name": "기본 변장 도구", "refName": "Basic Disguise Kit", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_deception", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "고급 중첩된 발 덮개", "refName": "Bastion Sabatons", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [92, 92], "ev": [84, 84]}, "w": 2, "h": 2}
 {"name": "전투용 도끼", "refName": "Battle Axe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
-{"name": "고급 전쟁곡괭이", "refName": "Battle Pick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "전투 곡괭이", "refName": "Battle Pick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "구슬 관", "refName": "Beaded Circlet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "maraketh_basetype"], "craftable": {"category": "Helmet"}, "armour": {"es": [34, 34]}, "w": 2, "h": 2}
-{"name": "Bear Talisman", "refName": "Bear Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2d494d1054/AzmeriSocketableBear.png", "tags": ["wild_talisman"], "tradeTag": "bear-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "곰 부적", "refName": "Bear Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2d494d1054/AzmeriSocketableBear.png", "tags": ["wild_talisman"], "tradeTag": "bear-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "수염 도끼", "refName": "Bearded Axe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
 {"name": "고급 가죽모 외투", "refName": "Bearskin Mantle", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [156, 156], "es": [56, 56]}, "w": 2, "h": 3}
 {"name": "야수의 오브", "refName": "Bestiary Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -881,10 +882,10 @@
 {"name": "검은 낫 유물", "refName": "Black Scythe Artifact", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lNiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2260f34070/Rune6.png", "tags": ["expedition_currency_faction2"], "tradeTag": "black-scythe-artifact", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "검은불 석궁", "refName": "Blackfire Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
 {"name": "검은 근위대 인사 문서", "refName": "Blackguard Personnel Files", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
-{"name": "고급 대장간 대형 망치", "refName": "Blacksmith Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "대장장이 대형 망치", "refName": "Blacksmith Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "대장장이의 숫돌", "refName": "Blacksmith's Whetstone", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lXZWFwb25RdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/18715ea7be/CurrencyWeaponQuality.png", "tags": ["quality_currency"], "tradeTag": "whetstone", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "검은강철 거대 방패", "refName": "Blacksteel Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "str_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [152, 152]}, "w": 2, "h": 4}
-{"name": "고급 저미는 육척봉", "refName": "Bladed Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "칼날 육척봉", "refName": "Bladed Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "톱날 신발", "refName": "Bladed Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [91, 91], "es": [35, 35]}, "w": 2, "h": 2}
 {"name": "칼날 덫", "refName": "Bladed Trap", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "TrapTool"}, "w": 2, "h": 2}
 {"name": "고급 칼날 버클러", "refName": "Bladeguard Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "dex_shield"], "craftable": {"category": "Buckler"}, "armour": {"ev": [105, 105]}, "w": 2, "h": 2}
@@ -920,12 +921,12 @@
 {"name": "뭉툭한 화살통 조각", "refName": "Blunt Arrow Quiver Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 2}
 {"name": "뭉툭한 화살통 조각", "refName": "Blunt Arrow Quiver Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 2, "h": 1}
 {"name": "뭉툭한 화살통", "refName": "Blunt Quiver", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Quiver"}, "w": 2, "h": 3}
-{"name": "Boar Talisman", "refName": "Boar Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJvYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e04714fc6/AzmeriSocketableBoar.png", "tags": ["wild_talisman"], "tradeTag": "boar-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "멧돼지 부적", "refName": "Boar Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJvYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e04714fc6/AzmeriSocketableBoar.png", "tags": ["wild_talisman"], "tradeTag": "boar-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "선상 손도끼", "refName": "Boarding Hatchet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
 {"name": "육신 룬", "refName": "Body Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlmZVJ1bmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a09dcb651b/LifeRune.png", "tags": [], "tradeTag": "body-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "생명력 최대치 #", "values": [30], "tradeId": ["rune.stat_3299347043"]}, "weapon": {"string": "물리 공격 피해의 #%를 생명력으로 흡수", "values": [250], "tradeId": ["rune.stat_55876295"]}}}
 {"name": "대담한 발 덮개", "refName": "Bold Sabatons", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [100, 100], "ev": [91, 91]}, "w": 2, "h": 2}
 {"name": "발전된 미트", "refName": "Bolstered Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "maraketh_basetype"], "craftable": {"category": "Gloves"}, "armour": {"ar": [58, 58]}, "w": 2, "h": 2}
-{"name": "전문 치직대는 육척봉", "refName": "Bolting Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "번갯불의 육척봉", "refName": "Bolting Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "포격 석궁", "refName": "Bombard Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
 {"name": "뼈 의복", "refName": "Bone Raiment", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "maraketh_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"es": [52, 52]}, "w": 2, "h": 3}
 {"name": "뼈 마법봉", "refName": "Bone Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["no_fire_spell_mods", "no_cold_spell_mods", "no_lightning_spell_mods", "no_chaos_spell_mods"], "craftable": {"category": "Wand"}, "w": 1, "h": 3}
@@ -994,7 +995,7 @@
 {"name": "격발 반지", "refName": "Burst Band", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_weapon", "heist_equipment_caster"], "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
 {"name": "카스피로 황제의 흉상", "refName": "Bust of Emperor Caspiro", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "고급 고깔 헬름", "refName": "Cabalist Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [115, 115], "ev": [105, 105]}, "w": 2, "h": 2}
-{"name": "고급 대장장이 망치", "refName": "Calescent Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "열기 증가 망치", "refName": "Calescent Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "냉담한 가면 조각", "refName": "Callous Mask Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
 {"name": "냉담한 가면 조각", "refName": "Callous Mask Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 1, "h": 1}
 {"name": "냉담한 가면 조각", "refName": "Callous Mask Piece", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "UniqueFragment"}, "w": 2, "h": 1}
@@ -1030,9 +1031,9 @@
 {"name": "고급 돌 각반", "refName": "Carved Greaves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [167, 167]}, "w": 2, "h": 2}
 {"name": "조각된 타지", "refName": "Carved Targe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour", "str_dex_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [63, 63], "ev": [57, 57]}, "w": 2, "h": 3}
 {"name": "조각용 손도끼", "refName": "Carving Hatchet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
-{"name": "Cat Talisman", "refName": "Cat Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUNhdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/3d5bc70405/AzmeriSocketableCat.png", "tags": ["vivid_talisman"], "tradeTag": "cat-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "고양이 부적", "refName": "Cat Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUNhdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/3d5bc70405/AzmeriSocketableCat.png", "tags": ["vivid_talisman"], "tradeTag": "cat-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "전문 강철코 장화", "refName": "Cavalry Boots", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [183, 183]}, "w": 2, "h": 2}
-{"name": "전문 합성궁", "refName": "Cavalry Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "기병대 활", "refName": "Cavalry Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "천공의 갑옷제작자의 인큐베이터", "refName": "Celestial Armoursmith's Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "천공의 갑옷제작자의 인큐베이터", "refName": "Celestial Armoursmith's Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "천공의 대장장이의 인큐베이터", "refName": "Celestial Blacksmith's Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
@@ -1225,7 +1226,7 @@
 {"name": "치명적인 마법봉", "refName": "Critical Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Wand"}, "w": 1, "h": 3}
 {"name": "노파 단도", "refName": "Crone Knife", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "Dagger"}, "w": 1, "h": 3}
 {"name": "십자칼날 창", "refName": "Crossblade Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
-{"name": "전문 판금 철퇴", "refName": "Crown Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "왕관 철퇴", "refName": "Crown Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "도가니 거대 방패", "refName": "Crucible Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "str_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [110, 110]}, "w": 2, "h": 4}
 {"name": "조잡한 활", "refName": "Crude Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "조잡한 클로", "refName": "Crude Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "Claw"}, "w": 2, "h": 2}
@@ -1238,21 +1239,21 @@
 {"name": "난해한 대혼란 파수꾼", "refName": "Cryptic Pandemonium Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["sentinel_b", "all_sentinels"], "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "난해한 추적자 파수꾼", "refName": "Cryptic Stalker Sentinel", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["sentinel_a", "all_sentinels"], "craftable": {"category": "SentinelDrone"}, "w": 2, "h": 2}
 {"name": "결정 집중구", "refName": "Crystal Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "maraketh_basetype"], "craftable": {"category": "Focus"}, "armour": {"es": [28, 28]}, "w": 2, "h": 3}
-{"name": "지식의 결정체 파편 I", "refName": "Crystalline Core of Knowledge I", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 II", "refName": "Crystalline Core of Knowledge II", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 III", "refName": "Crystalline Core of Knowledge III", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 IV", "refName": "Crystalline Core of Knowledge IV", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 IX", "refName": "Crystalline Core of Knowledge IX", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 V", "refName": "Crystalline Core of Knowledge V", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 VI", "refName": "Crystalline Core of Knowledge VI", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 VII", "refName": "Crystalline Core of Knowledge VII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 VIII", "refName": "Crystalline Core of Knowledge VIII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 X", "refName": "Crystalline Core of Knowledge X", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 XI", "refName": "Crystalline Core of Knowledge XI", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 XII", "refName": "Crystalline Core of Knowledge XII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 XIII", "refName": "Crystalline Core of Knowledge XIII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 XIV", "refName": "Crystalline Core of Knowledge XIV", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "지식의 결정체 파편 XV", "refName": "Crystalline Core of Knowledge XV", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 I", "refName": "Crystalline Core of Knowledge I", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 II", "refName": "Crystalline Core of Knowledge II", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 III", "refName": "Crystalline Core of Knowledge III", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 IV", "refName": "Crystalline Core of Knowledge IV", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 IX", "refName": "Crystalline Core of Knowledge IX", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 IV", "refName": "Crystalline Core of Knowledge V", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 VI", "refName": "Crystalline Core of Knowledge VI", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 VII", "refName": "Crystalline Core of Knowledge VII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 VIII", "refName": "Crystalline Core of Knowledge VIII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 X", "refName": "Crystalline Core of Knowledge X", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 XI", "refName": "Crystalline Core of Knowledge XI", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 XII", "refName": "Crystalline Core of Knowledge XII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 XIII", "refName": "Crystalline Core of Knowledge XIII", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 XIV", "refName": "Crystalline Core of Knowledge XIV", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "지식의 결정체 핵 XV", "refName": "Crystalline Core of Knowledge XV", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "광신자 활", "refName": "Cultist Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "광신자 왕관", "refName": "Cultist Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "maraketh_basetype"], "craftable": {"category": "Helmet"}, "armour": {"ar": [44, 44], "es": [19, 19]}, "w": 2, "h": 2}
 {"name": "고급 주술 집중구", "refName": "Cultist Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Focus"}, "armour": {"es": [49, 49]}, "w": 2, "h": 3}
@@ -1306,7 +1307,7 @@
 {"name": "포식 셉터", "refName": "Devouring Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
 {"name": "헌신자 의복", "refName": "Devout Garb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [223, 223], "es": [84, 84]}, "w": 2, "h": 3}
 {"name": "다이아몬드", "refName": "Diamond", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["jewel", "not_for_sale"], "craftable": {"category": "Jewel"}, "w": 1, "h": 1}
-{"name": "고급 허물어지는 대형 망치", "refName": "Disintegrating Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "분해시키는 대형 망치", "refName": "Disintegrating Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "정제된 절망", "refName": "Distilled Despair", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRGVzcGFpciIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c676bf7dae/DistilledDespair.png", "tags": ["mushrune"], "tradeTag": "distilled-despair", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "정제된 혐오", "refName": "Distilled Disgust", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRGlzZ3VzdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/f462426de0/DistilledDisgust.png", "tags": ["mushrune"], "tradeTag": "distilled-disgust", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "정제된 선망", "refName": "Distilled Envy", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRW52eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/abf219916e/DistilledEnvy.png", "tags": ["mushrune"], "tradeTag": "distilled-envy", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -1458,8 +1459,8 @@
 {"name": "언월도", "refName": "Falchion", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
 {"name": "전문 두피수집가의 재킷", "refName": "Falconer's Jacket", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [223, 223], "es": [84, 84]}, "w": 2, "h": 3}
 {"name": "가문의 계약", "refName": "Familial Contract", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistContract"}, "w": 1, "h": 1}
-{"name": "전문 광신자 활", "refName": "Fanatic Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
-{"name": "전문 광신자 대망치", "refName": "Fanatic Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "광신도 활", "refName": "Fanatic Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "광신도 대망치", "refName": "Fanatic Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "전문 장막 가면", "refName": "Faridun Mask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ev": [134, 134], "es": [51, 51]}, "w": 2, "h": 2}
 {"name": "페룰 루어", "refName": "Farric Lure", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "고급 주조한 미트", "refName": "Feathered Mitts", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [111, 111]}, "w": 2, "h": 2}
@@ -1487,9 +1488,9 @@
 {"name": "테두리 화살촉", "refName": "Flanged Arrowhead", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_weapon", "heist_equipment_ranged"], "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
 {"name": "테두리 송곳", "refName": "Flanged Drill", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_engineering", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "테두리 대칼날", "refName": "Flanged Greatblade", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Sword"}, "w": 2, "h": 4}
-{"name": "전문 좁은 철퇴", "refName": "Flanged Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "테두리 철퇴", "refName": "Flanged Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "번쩍이는 장화", "refName": "Flared Boots", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [119, 119]}, "w": 2, "h": 2}
-{"name": "고급 좁은 철퇴", "refName": "Flared Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "번쩍이는 철퇴", "refName": "Flared Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "섬광가루 통", "refName": "Flashpowder Keg", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "IncursionItem"}, "w": 1, "h": 1}
 {"name": "웰라카스의 플라스크", "refName": "Flask of Welakath", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
 {"name": "아마 샌들", "refName": "Flax Sandals", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Boots"}, "armour": {"es": [48, 48]}, "w": 2, "h": 2}
@@ -1511,12 +1512,12 @@
 {"name": "잊혀진 성유물 보관실 열쇠", "refName": "Forgotten Reliquary Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
 {"name": "갈라진 클로", "refName": "Forked Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "Claw"}, "w": 2, "h": 2}
 {"name": "갈라진 창", "refName": "Forked Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
-{"name": "전문 구조물 망치", "refName": "Fortified Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "견고한 망치", "refName": "Fortified Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "전문 중첩된 발 덮개", "refName": "Fortress Sabatons", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [120, 120], "ev": [110, 110]}, "w": 2, "h": 2}
 {"name": "전문 성벽 거대 방패", "refName": "Fortress Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "str_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [167, 167]}, "w": 2, "h": 4}
 {"name": "화석화된 인큐베이터", "refName": "Fossilised Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "화석화된 인큐베이터", "refName": "Fossilised Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
-{"name": "Fox Talisman", "refName": "Fox Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUZveCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9d48a79d56/AzmeriSocketableFox.png", "tags": ["sacred_talisman"], "tradeTag": "fox-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "여우 부적", "refName": "Fox Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUZveCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9d48a79d56/AzmeriSocketableFox.png", "tags": ["sacred_talisman"], "tradeTag": "fox-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "여우가죽 밑창", "refName": "Foxhide Sole", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_agility", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "분열된 화석", "refName": "Fractured Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "분열의 오브", "refName": "Fracturing Orb", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRnJhY3R1cmluZ09yYiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8b85ed1dc2/FracturingOrb.png", "tags": [], "tradeTag": "fracturing-orb", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -1567,7 +1568,7 @@
 {"name": "세공사의 인큐베이터", "refName": "Gemcutter's Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "세공사의 인큐베이터", "refName": "Gemcutter's Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "세공사의 프리즘", "refName": "Gemcutter's Prism", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lHZW1RdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/f4bace18d7/CurrencyGemQuality.png", "tags": ["quality_currency"], "tradeTag": "gcp", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "전문 이중시위 활", "refName": "Gemini Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "쌍둥이자리 활", "refName": "Gemini Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "전문 이중 석궁", "refName": "Gemini Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
 {"name": "마석부패 두개골", "refName": "Gemrot Skull", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "대지술사의 인큐베이터", "refName": "Geomancer's Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
@@ -1698,10 +1699,10 @@
 {"name": "대용량 마나 플라스크", "refName": "Greater Mana Flask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Flask"}, "w": 1, "h": 2}
 {"name": "상위 정신 룬", "refName": "Greater Mind Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/49619b701f/ManaRuneTier2.png", "tags": [], "tradeTag": "greater-mind-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "마나 최대치 #", "values": [35], "tradeId": ["rune.stat_1050105434"]}, "weapon": {"string": "물리 공격 피해의 #%를 마나로 흡수", "values": [250], "tradeId": ["rune.stat_669069897"]}}}
 {"name": "상위 부활 룬", "refName": "Greater Rebirth Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlmZVJlY292ZXJ5UnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/41b22fb4e5/LifeRecoveryRuneTier2.png", "tags": [], "tradeTag": "greater-rebirth-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "1초마다 생명력의 #% 재생", "values": [21], "tradeId": ["rune.stat_836936635"]}, "weapon": {"string": "처치한 적 하나당 생명력 # 획득", "values": [30], "tradeId": ["rune.stat_3695891184"]}}}
-{"name": "기민성의 상위 룬", "refName": "Greater Rune of Alacrity", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/633300b884/LightningRuneSpecial3.png", "tags": [], "tradeTag": "greater-rune-of-alacrity", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "플레이어에게 적용되는 디버프가 #% 더 빠르게 만료됨", "values": [8], "tradeId": null}, "weapon": {"string": "스킬 속도 #% 증가", "values": [8], "tradeId": null}}}
-{"name": "통솔의 상위 룬", "refName": "Greater Rune of Leadership", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/81a3fe75a5/LightningRuneSpecial1.png", "tags": [], "tradeTag": "greater-rune-of-leadership", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "소환수가 물리 피해의 #%를 번개 피해로 받음", "values": [10], "tradeId": null}, "weapon": {"string": "소환수가 자신의 물리 피해의 #%를 추가 번개 피해로 획득", "values": [10], "tradeId": null}}}
-{"name": "고결성의 상위 룬", "refName": "Greater Rune of Nobility", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWw0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ffcde6ca9/LightningRuneSpecial4.png", "tags": [], "tradeTag": "greater-rune-of-nobility", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "플레이어에게 적용되는 감전 효과 #% 증가", "values": [-10], "tradeId": null}, "weapon": {"string": "이 무기로 공격 시 #%의 확률로 번개 노출 유발", "values": [10], "tradeId": null}}}
-{"name": "십일조의 상위 룬", "refName": "Greater Rune of Tithing", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png", "tags": [], "tradeTag": "greater-rune-of-tithing", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#~# 번개 가시 피해", "values": [1, 10], "tradeId": null}, "weapon": {"string": "메타 스킬의 에너지 획득 #% 증가", "values": [10], "tradeId": null}}}
+{"name": "기민성의 상위 룬", "refName": "Greater Rune of Alacrity", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/633300b884/LightningRuneSpecial3.png", "tags": [], "tradeTag": "greater-rune-of-alacrity", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "플레이어에게 적용되는 디버프가 #% 더 빠르게 만료됨", "values": [8], "tradeId": ["rune.stat_1238227257"]}, "weapon": {"string": "스킬 속도 #% 증가", "values": [8], "tradeId": ["rune.stat_970213192"]}}}
+{"name": "통솔의 상위 룬", "refName": "Greater Rune of Leadership", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/81a3fe75a5/LightningRuneSpecial1.png", "tags": [], "tradeTag": "greater-rune-of-leadership", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "소환수가 물리 피해의 #%를 번개 피해로 받음", "values": [10], "tradeId": ["rune.stat_889552744"]}, "weapon": {"string": "소환수가 자신의 물리 피해의 #%를 추가 번개 피해로 획득", "values": [10], "tradeId": ["rune.stat_1433756169"]}}}
+{"name": "고결성의 상위 룬", "refName": "Greater Rune of Nobility", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWw0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ffcde6ca9/LightningRuneSpecial4.png", "tags": [], "tradeTag": "greater-rune-of-nobility", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "플레이어에게 적용되는 감전 효과 #% 증가", "values": [-10], "tradeId": ["rune.stat_3801067695"]}, "weapon": {"string": "이 무기로 공격 시 #%의 확률로 번개 노출 유발", "values": [10], "tradeId": ["rune.stat_2158896334"]}}}
+{"name": "십일조의 상위 룬", "refName": "Greater Rune of Tithing", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png", "tags": [], "tradeTag": "greater-rune-of-tithing", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#~# 번개 가시 피해", "values": [1, 10], "tradeId": ["rune.stat_757050353"]}, "weapon": {"string": "메타 스킬의 에너지 획득 #% 증가", "values": [10], "tradeId": ["rune.stat_4236566306"]}}}
 {"name": "상위 돌 룬", "refName": "Greater Stone Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvU3R1blJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/836627f793/StunRuneTier2.png", "tags": [], "tradeTag": "greater-stone-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "기절 한계치 #", "values": [50], "tradeId": ["rune.stat_915769802"]}, "weapon": {"string": "유발하는 기절 축적 #% 증가", "values": [30], "tradeId": ["rune.stat_791928121"]}}}
 {"name": "상위 폭풍 룬", "refName": "Greater Storm Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/47c9eb3f9e/LightningRuneTier2.png", "tags": [], "tradeTag": "greater-storm-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "번개 저항 #%", "values": [14], "tradeId": ["rune.stat_1671376347"]}, "weapon": {"string": "번개 피해 #~# 추가", "values": [1, 30], "tradeId": ["rune.stat_3336890334", "rune.stat_3336890334"]}}}
 {"name": "상위 환영 룬", "refName": "Greater Vision Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png", "tags": [], "tradeTag": "greater-vision-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "플라스크로 얻는 생명력과 마나 회복 #% 증가", "values": [12], "tradeId": ["rune.stat_2310741722"]}, "weapon": {"string": "정확도 #", "values": [110], "tradeId": ["rune.stat_691932474"]}}}
@@ -1711,9 +1712,9 @@
 {"name": "접지 호신부", "refName": "Grounding Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Charm"}, "w": 1, "h": 1}
 {"name": "보호받는 도리깨", "refName": "Guarded Flail", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Flail"}, "w": 2, "h": 3}
 {"name": "보호받는 헬름", "refName": "Guarded Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour", "ezomyte_basetype"], "craftable": {"category": "Helmet"}, "armour": {"ar": [34, 34], "ev": [28, 28]}, "w": 2, "h": 2}
-{"name": "전문 간수 활", "refName": "Guardian Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "수호자 활", "refName": "Guardian Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "수호병 대헬름", "refName": "Guardian Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [243, 243]}, "w": 2, "h": 2}
-{"name": "고급 방벽 육척봉", "refName": "Guardian Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "수호자 육척봉", "refName": "Guardian Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "전문 가시 버클러", "refName": "Gutspike Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "dex_shield"], "craftable": {"category": "Buckler"}, "armour": {"ev": [122, 122]}, "w": 2, "h": 2}
 {"name": "핏빛 연소 주문서", "refName": "Haemocombustion Scroll", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "고급 순교자 왕관", "refName": "Hallowed Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [115, 115], "es": [41, 41]}, "w": 2, "h": 2}
@@ -1736,7 +1737,7 @@
 {"name": "무거운 허리띠", "refName": "Heavy Belt", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Belt"}, "w": 2, "h": 1}
 {"name": "무거운 활", "refName": "Heavy Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "무거운 왕관", "refName": "Heavy Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "vaal_basetype"], "craftable": {"category": "Helmet"}, "armour": {"ar": [75, 75], "es": [28, 28]}, "w": 2, "h": 2}
-{"name": "고급 납빛 대망치", "refName": "Heavy Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "무거운 대망치", "refName": "Heavy Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "고급 전신 판금 갑옷", "refName": "Heavy Plate", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [340, 340]}, "w": 2, "h": 3}
 {"name": "장대한 육척봉", "refName": "Hefty Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "고급 오래된 수갑", "refName": "Heirloom Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [54, 54], "es": [19, 19]}, "w": 2, "h": 2}
@@ -1825,8 +1826,8 @@
 {"name": "철갑 법의", "refName": "Ironclad Vestments", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "vaal_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [114, 114], "es": [43, 43]}, "w": 2, "h": 3}
 {"name": "철창날 창", "refName": "Ironhead Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
 {"name": "고급 고리 갑옷 건틀릿", "refName": "Ironmail Gauntlets", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [48, 48], "ev": [44, 44]}, "w": 2, "h": 2}
-{"name": "전문 참나무 대망치", "refName": "Ironwood Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
-{"name": "전문 단궁", "refName": "Ironwood Shortbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "철목 대망치", "refName": "Ironwood Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "철목 단궁", "refName": "Ironwood Shortbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "고급 견목 타지", "refName": "Ironwood Targe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour", "str_dex_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [61, 61], "ev": [54, 54]}, "w": 2, "h": 3}
 {"name": "고급 나그네 재킷", "refName": "Itinerant Jacket", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [159, 159], "es": [62, 62]}, "w": 2, "h": 3}
 {"name": "상아색 감시자의 돌", "refName": "Ivory Watchstone", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "AtlasUpgradeItem"}, "w": 1, "h": 1}
@@ -1912,7 +1913,7 @@
 {"name": "루멘 철퇴", "refName": "Lumen Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "빛나는 관측기", "refName": "Luminous Astrolabe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "달의 목걸이", "refName": "Lunar Amulet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Amulet"}, "w": 1, "h": 1}
-{"name": "전문 초승달 육척봉", "refName": "Lunar Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "달의 육척봉", "refName": "Lunar Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "늑대 셉터", "refName": "Lupine Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
 {"name": "빛나는 수호", "refName": "Lustrous Ward", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_counterthaumaturge", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "고급 실크 로브", "refName": "Luxurious Robe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"es": [106, 106]}, "w": 2, "h": 3}
@@ -1939,11 +1940,11 @@
 {"name": "고급 은폐 사슬옷", "refName": "Mantled Mail", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [176, 176], "ev": [159, 159]}, "w": 2, "h": 3}
 {"name": "도사 의복", "refName": "Marabout Garb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour", "maraketh_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [56, 56], "es": [28, 28]}, "w": 2, "h": 3}
 {"name": "마라케스 흉갑", "refName": "Maraketh Cuirass", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "maraketh_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [141, 141]}, "w": 2, "h": 3}
-{"name": "전문 도둑 철퇴", "refName": "Marauding Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
-{"name": "고급 판금 철퇴", "refName": "Marching Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "약탈하는 철퇴", "refName": "Marauding Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "행진 철퇴", "refName": "Marching Mace", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "순교자 왕관", "refName": "Martyr Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "maraketh_basetype"], "craftable": {"category": "Helmet"}, "armour": {"ar": [66, 66], "es": [25, 25]}, "w": 2, "h": 2}
 {"name": "전문 첨탑 대헬름", "refName": "Masked Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [267, 267]}, "w": 2, "h": 2}
-{"name": "전문 납빛 대망치", "refName": "Massive Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "거대한 대망치", "refName": "Massive Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "고급 넓은날 창", "refName": "Massive Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
 {"name": "대가 지도제작자의 봉인", "refName": "Master Cartographer's Seal", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "만능 열쇠", "refName": "Master Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
@@ -2026,12 +2027,12 @@
 {"name": "메서", "refName": "Messer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Sword"}, "w": 2, "h": 3}
 {"name": "금속성 화석", "refName": "Metallic Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "고급 죔쇠 거대 방패", "refName": "Metalworked Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "str_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [116, 116]}, "w": 2, "h": 4}
-{"name": "고급 맹신자 활", "refName": "Militant Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "호전적인 활", "refName": "Militant Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "정신 룬", "refName": "Mind Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJ1bmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4be6331480/ManaRune.png", "tags": [], "tradeTag": "mind-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "마나 최대치 #", "values": [25], "tradeId": ["rune.stat_1050105434"]}, "weapon": {"string": "물리 공격 피해의 #%를 마나로 흡수", "values": [200], "tradeId": ["rune.stat_669069897"]}}}
 {"name": "거울 파편", "refName": "Mirror Shard", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["currency_shard"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "칼란드라의 거울", "refName": "Mirror of Kalandra", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lEdXBsaWNhdGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/26bc31680e/CurrencyDuplicate.png", "tags": ["currency_duplicate"], "tradeTag": "mirror", "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "테클라티피치의 거울", "refName": "Mirror of Teklatipitzi", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistObjective"}, "w": 2, "h": 2}
-{"name": "전문 대장장이 망치", "refName": "Molten Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "녹아내린 망치", "refName": "Molten Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "수도원 의복", "refName": "Monastic Garb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [162, 162], "es": [63, 63]}, "w": 2, "h": 3}
 {"name": "기념비 대도끼", "refName": "Monument Greataxe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Axe"}, "w": 2, "h": 4}
 {"name": "기념비 각반", "refName": "Monument Greaves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [150, 150]}, "w": 2, "h": 2}
@@ -2148,8 +2149,8 @@
 {"name": "신기한 정찰 보고서", "refName": "Otherworldly Scouting Report", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["drops_in_maps_only"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "지하 감옥 성유물 보관실 열쇠", "refName": "Oubliette Reliquary Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
 {"name": "감독관 선도자 서판", "refName": "Overseer Precursor Tablet", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRCb3NzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4c442297f2/PrecursorTabletBoss.png", "tags": ["tower_augment_map_boss"], "tradeTag": "overseer-precursor-tablet", "craftable": {"category": "TowerAugment"}, "w": 1, "h": 1}
-{"name": "Owl Talisman", "refName": "Owl Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png", "tags": ["primal_talisman"], "tradeTag": "owl-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
-{"name": "Ox Talisman", "refName": "Ox Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU94Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ebdb092f5/AzmeriSocketableOx.png", "tags": ["wild_talisman"], "tradeTag": "ox-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "올빼미 부적", "refName": "Owl Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png", "tags": ["primal_talisman"], "tradeTag": "owl-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "수 부적", "refName": "Ox Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU94Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ebdb092f5/AzmeriSocketableOx.png", "tags": ["wild_talisman"], "tradeTag": "ox-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "패드 레깅스", "refName": "Padded Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "ezomyte_basetype"], "craftable": {"category": "Boots"}, "armour": {"ar": [18, 18], "es": [9, 9]}, "w": 2, "h": 2}
 {"name": "고급 판금 버클러", "refName": "Painted Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "dex_shield"], "craftable": {"category": "Buckler"}, "armour": {"ev": [84, 84]}, "w": 2, "h": 2}
 {"name": "고급 문장 문양 방패", "refName": "Painted Crest Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "str_int_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [61, 61], "es": [22, 22]}, "w": 2, "h": 3}
@@ -2240,7 +2241,7 @@
 {"name": "원시 생기 결정", "refName": "Primal Crystallised Lifeforce", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "원시 인큐베이터", "refName": "Primal Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "원시 인큐베이터", "refName": "Primal Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
-{"name": "Primate Talisman", "refName": "Primate Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/77a4554895/AzmeriSocketableMonkey.png", "tags": ["primal_talisman"], "tradeTag": "primate-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "영장류 부적", "refName": "Primate Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/77a4554895/AzmeriSocketableMonkey.png", "tags": ["primal_talisman"], "tradeTag": "primate-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "최종형 연금술 공명기", "refName": "Prime Alchemical Resonator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "DelveSocketableCurrency"}, "w": 2, "h": 2}
 {"name": "최종형 연금술 공명기", "refName": "Prime Alchemical Resonator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "DelveSocketableCurrency"}, "w": 2, "h": 2}
 {"name": "최종형 혼돈 공명기", "refName": "Prime Chaotic Resonator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "DelveSocketableCurrency"}, "w": 2, "h": 2}
@@ -2262,12 +2263,12 @@
 {"name": "부정한 가로날도끼", "refName": "Profane Cleaver", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Axe"}, "w": 2, "h": 3}
 {"name": "전문 갈라진 창", "refName": "Pronged Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
 {"name": "예언", "refName": "Prophecy", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "고급 간수 활", "refName": "Protector Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "보호자 활", "refName": "Protector Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "불저항 지팡이", "refName": "Pyrophyte Staff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["no_cold_spell_mods", "no_lightning_spell_mods", "no_chaos_spell_mods", "no_physical_spell_mods"], "craftable": {"category": "Staff"}, "w": 1, "h": 4}
 {"name": "고급 종파 문양 방패", "refName": "Quartered Crest Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "str_int_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [77, 77], "es": [27, 27]}, "w": 2, "h": 3}
 {"name": "전문 사냥용 신발", "refName": "Quickslip Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [110, 110], "es": [42, 42]}, "w": 2, "h": 2}
 {"name": "누비 조끼", "refName": "Quilted Vest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "ezomyte_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [44, 44]}, "w": 2, "h": 3}
-{"name": "Rabbit Talisman", "refName": "Rabbit Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVJhYmJpdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/d578d6d700/AzmeriSocketableRabbit.png", "tags": ["sacred_talisman"], "tradeTag": "rabbit-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "토끼 부적", "refName": "Rabbit Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVJhYmJpdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/d578d6d700/AzmeriSocketableRabbit.png", "tags": ["sacred_talisman"], "tradeTag": "rabbit-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "레이더 판금 갑옷", "refName": "Raider Plate", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "maraketh_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [121, 121]}, "w": 2, "h": 3}
 {"name": "무지갯빛 투칸 깃털", "refName": "Rainbow Toucan Feather", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "전문 나그네 재킷", "refName": "Rambler Jacket", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [223, 223], "es": [84, 84]}, "w": 2, "h": 3}
@@ -2325,7 +2326,7 @@
 {"name": "덜컹대는 셉터", "refName": "Rattling Sceptre", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Sceptre"}, "w": 2, "h": 3}
 {"name": "생가죽 허리띠", "refName": "Rawhide Belt", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Belt"}, "w": 2, "h": 1}
 {"name": "생가죽 장화", "refName": "Rawhide Boots", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "ezomyte_basetype"], "craftable": {"category": "Boots"}, "armour": {"ev": [15, 15]}, "w": 2, "h": 2}
-{"name": "전문 저미는 육척봉", "refName": "Razor Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "면도날 육척봉", "refName": "Razor Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "면도날유리 클로", "refName": "Razorglass Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Claw"}, "w": 2, "h": 2}
 {"name": "고급 긴 육척봉", "refName": "Reaching Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "낫질 지팡이", "refName": "Reaping Staff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["no_fire_spell_mods", "no_cold_spell_mods", "no_lightning_spell_mods", "no_chaos_spell_mods"], "craftable": {"category": "Staff"}, "w": 1, "h": 4}
@@ -2350,7 +2351,7 @@
 {"name": "하나 구출", "refName": "Rescue Hana", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "존경받는 법의", "refName": "Revered Vestments", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [245, 245], "es": [84, 84]}, "w": 2, "h": 3}
 {"name": "로아가죽 외투", "refName": "Rhoahide Coat", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "maraketh_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [131, 131]}, "w": 2, "h": 3}
-{"name": "고급 합성궁", "refName": "Rider Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "기수 활", "refName": "Rider Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "이랑 버클러", "refName": "Ridged Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "dex_shield", "maraketh_basetype"], "craftable": {"category": "Buckler"}, "armour": {"ev": [43, 43]}, "w": 2, "h": 2}
 {"name": "고급 로아가죽 외투", "refName": "Riding Coat", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [271, 271]}, "w": 2, "h": 3}
 {"name": "정의로운 수갑", "refName": "Righteous Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [55, 55], "es": [19, 19]}, "w": 2, "h": 2}
@@ -2376,7 +2377,7 @@
 {"name": "도둑의 증표", "refName": "Rogue's Marker", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_coin"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "밧줄 수갑", "refName": "Rope Cuffs", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "ezomyte_basetype"], "craftable": {"category": "Gloves"}, "armour": {"ar": [12, 12], "es": [6, 6]}, "w": 2, "h": 2}
 {"name": "고급 허름한 두건", "refName": "Rotted Hood", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Helmet"}, "armour": {"ev": [158, 158]}, "w": 2, "h": 2}
-{"name": "썩은 가방 충전", "refName": "Rotten Satchel Charge", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "InstanceLocalItem"}, "w": 2, "h": 3}
+{"name": "썩은 가방 화약", "refName": "Rotten Satchel Charge", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "InstanceLocalItem"}, "w": 2, "h": 3}
 {"name": "거친 각반", "refName": "Rough Greaves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "ezomyte_basetype"], "craftable": {"category": "Boots"}, "armour": {"ar": [22, 22]}, "w": 2, "h": 2}
 {"name": "거친 숫돌", "refName": "Rough Sharpening Stone", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_weapon", "heist_equipment_melee"], "craftable": {"category": "HeistEquipmentWeapon"}, "w": 2, "h": 2}
 {"name": "전문 죔쇠 거대 방패", "refName": "Royal Tower Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "str_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [152, 152]}, "w": 2, "h": 4}
@@ -2384,7 +2385,7 @@
 {"name": "루비 호신부", "refName": "Ruby Charm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Charm"}, "w": 1, "h": 1}
 {"name": "루비 반지", "refName": "Ruby Ring", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Ring"}, "w": 1, "h": 1}
 {"name": "고급 철 흉갑", "refName": "Rugged Cuirass", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [284, 284]}, "w": 2, "h": 3}
-{"name": "전문 허물어지는 대형 망치", "refName": "Ruination Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "폐허의 대형 망치", "refName": "Ruination Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "룬 문자 팔보호구", "refName": "Runed Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_bruteforce", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "룬 각인 허리띠", "refName": "Runed Girdle", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 1}
 {"name": "룬 각인 수호병", "refName": "Runed Guard", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 2}
@@ -2420,7 +2421,7 @@
 {"name": "신성한 꽃", "refName": "Sacred Blossom", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "신성한 생기 결정", "refName": "Sacred Crystallised Lifeforce", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "전문 깃털 달린 집중구", "refName": "Sacred Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Focus"}, "armour": {"es": [63, 63]}, "w": 2, "h": 3}
-{"name": "전문 사원 대형 망치", "refName": "Sacred Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "신성한 대형 망치", "refName": "Sacred Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "성스러운 오브", "refName": "Sacred Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "희생 세트", "refName": "Sacrifice Set", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 2, "h": 2}
 {"name": "새벽의 희생", "refName": "Sacrifice at Dawn", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["atziri1"], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
@@ -2471,7 +2472,7 @@
 {"name": "전문 방울 문양 방패", "refName": "Sekheman Crest Shield", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour", "str_int_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [92, 92], "es": [32, 32]}, "w": 2, "h": 3}
 {"name": "파수꾼 조작기", "refName": "Sentinel Controller", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "파수꾼 대헬름", "refName": "Sentinel Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [200, 200]}, "w": 2, "h": 2}
-{"name": "Serpent Talisman", "refName": "Serpent Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVNuYWtlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/752d762312/AzmeriSocketableSnake.png", "tags": ["primal_talisman"], "tradeTag": "serpent-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "독사 부적", "refName": "Serpent Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVNuYWtlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/752d762312/AzmeriSocketableSnake.png", "tags": ["primal_talisman"], "tradeTag": "serpent-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "고급 도마뱀비늘 장화", "refName": "Serpentscale Boots", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [152, 152]}, "w": 2, "h": 2}
 {"name": "뱀 비늘 외투", "refName": "Serpentscale Coat", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "vaal_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [198, 198]}, "w": 2, "h": 3}
 {"name": "톱니 화석", "refName": "Serrated Fossil", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
@@ -2536,7 +2537,7 @@
 {"name": "비범한 인큐베이터", "refName": "Singular Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "비범한 인큐베이터", "refName": "Singular Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "비범한 정찰 보고서", "refName": "Singular Scouting Report", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["drops_in_maps_only"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "전문 고딕 육척봉", "refName": "Sinister Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "험악한 육척봉", "refName": "Sinister Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "착취 마법봉", "refName": "Siphoning Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Wand"}, "w": 1, "h": 3}
 {"name": "해골 열쇠고리", "refName": "Skeleton Keyring", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_trapdisarmament", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "무두질용 단도", "refName": "Skinning Knife", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "Dagger"}, "w": 1, "h": 3}
@@ -2561,8 +2562,8 @@
 {"name": "대장장이 도구", "refName": "Smithing Tools", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 3, "h": 2}
 {"name": "매끄러운 육척봉", "refName": "Smooth Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "밀수범 외투", "refName": "Smuggler Coat", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [256, 256]}, "w": 2, "h": 3}
-{"name": "고급 참나무 대망치", "refName": "Snakewood Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
-{"name": "고급 단궁", "refName": "Snakewood Shortbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "뱀나무 대망치", "refName": "Snakewood Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "뱀나무 단궁", "refName": "Snakewood Shortbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "전문 부족 가면", "refName": "Soaring Mask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ev": [146, 146], "es": [55, 55]}, "w": 2, "h": 2}
 {"name": "전문 깃털 타지", "refName": "Soaring Targe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour", "str_dex_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [100, 100], "ev": [91, 91]}, "w": 2, "h": 3}
 {"name": "태양의 목걸이", "refName": "Solar Amulet", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Amulet"}, "w": 1, "h": 1}
@@ -2570,13 +2571,13 @@
 {"name": "병사 대헬름", "refName": "Soldier Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "ezomyte_basetype"], "craftable": {"category": "Helmet"}, "armour": {"ar": [66, 66]}, "w": 2, "h": 2}
 {"name": "고급 차양 헬름", "refName": "Soldier Helm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [108, 108], "ev": [98, 98]}, "w": 2, "h": 2}
 {"name": "고급 사슬 발 덮개", "refName": "Soldiering Sabatons", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [73, 73], "ev": [65, 65]}, "w": 2, "h": 2}
-{"name": "고급 사원 대형 망치", "refName": "Solemn Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "엄숙한 대형 망치", "refName": "Solemn Maul", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "솔레라이의 창", "refName": "Solerai's Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "단단한 가면", "refName": "Solid Mask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ev": [87, 87], "es": [35, 35]}, "w": 2, "h": 2}
 {"name": "암울한 장갑", "refName": "Sombre Gloves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "ezomyte_basetype"], "craftable": {"category": "Gloves"}, "armour": {"es": [15, 15]}, "w": 2, "h": 2}
 {"name": "전문 사슬 티아라", "refName": "Sorcerous Tiara", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Helmet"}, "armour": {"es": [92, 92]}, "w": 2, "h": 2}
 {"name": "앗모후아의 영혼 핵", "refName": "Soul Core of Atmohua", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVN0cmVuZ3RoIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/1b37135049/GreaterSoulCoreStrength.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-atmohua", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "요구사항의 #%를 힘으로 전환", "values": [20], "tradeId": ["rune.stat_1556124492"]}, "weapon": {"string": "요구사항의 #%를 힘으로 전환", "values": [20], "tradeId": ["rune.stat_1556124492"]}}}
-{"name": "아즈카파의 영혼 핵", "refName": "Soul Core of Azcapa", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png", "tags": ["soul_core", "soul_core_tier3"], "tradeTag": "soul-core-of-azcapa", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "처치한 적이 떨어뜨리는 골드 수량 #% 증가", "values": [5], "tradeId": null}, "weapon": {"string": "정신력 #", "values": [15], "tradeId": ["rune.stat_3981240776"]}}}
+{"name": "아즈카파의 영혼 핵", "refName": "Soul Core of Azcapa", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png", "tags": ["soul_core", "soul_core_tier3"], "tradeTag": "soul-core-of-azcapa", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "처치한 적이 떨어뜨리는 골드 수량 #% 증가", "values": [5], "tradeId": ["rune.stat_3175163625"]}, "weapon": {"string": "정신력 #", "values": [15], "tradeId": ["rune.stat_3981240776"]}}}
 {"name": "촐로틀의 영혼 핵", "refName": "Soul Core of Cholotl", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZURleCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c732c8a579/GreaterSoulCoreDex.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-cholotl", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "요구사항의 #%를 민첩으로 전환", "values": [20], "tradeId": ["rune.stat_1496740334"]}, "weapon": {"string": "요구사항의 #%를 민첩으로 전환", "values": [20], "tradeId": ["rune.stat_1496740334"]}}}
 {"name": "시타콰로틀의 영혼 핵", "refName": "Soul Core of Citaqualotl", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1NvdWxDb3JlUGh5c2ljYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/f48f9f0c62/SoulCorePhysical.png", "tags": ["soul_core", "soul_core_tier1"], "tradeTag": "soul-core-of-citaqualotl", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "모든 원소 저항 #%", "values": [5], "tradeId": ["rune.stat_2901986750"]}, "weapon": {"string": "공격 스킬의 원소 피해 #% 증가", "values": [30], "tradeId": ["rune.stat_387439868"]}}}
 {"name": "지콰니의 영혼 핵", "refName": "Soul Core of Jiquani", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUxpZmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bb83a9f337/GreaterSoulCoreLife.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-jiquani", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "최대 생명력 #% 증가", "values": [2], "tradeId": ["rune.stat_983749596"]}, "weapon": {"string": "처치 시 생명력의 #% 회복", "values": [2], "tradeId": ["rune.stat_2023107756"]}}}
@@ -2612,7 +2613,7 @@
 {"name": "스프리건 지팡이", "refName": "Spriggan Staff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Staff"}, "w": 1, "h": 4}
 {"name": "중첩된 발 덮개", "refName": "Stacked Sabatons", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour", "vaal_basetype"], "craftable": {"category": "Boots"}, "armour": {"ar": [56, 56], "ev": [50, 50]}, "w": 2, "h": 2}
 {"name": "최초의 죄악을 먹는 자의 지팡이", "refName": "Staff of the First Sin Eater", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistObjective"}, "w": 2, "h": 4}
-{"name": "Stag Talisman", "refName": "Stag Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVN0YWciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2a0668f95a/AzmeriSocketableStag.png", "tags": ["vivid_talisman"], "tradeTag": "stag-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "수사슴 부적", "refName": "Stag Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVN0YWciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2a0668f95a/AzmeriSocketableStag.png", "tags": ["vivid_talisman"], "tradeTag": "stag-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "고급 사슴 뿔 집중구", "refName": "Staghorn Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Focus"}, "armour": {"es": [42, 42]}, "w": 2, "h": 3}
 {"name": "전문 굳건한 팔보호구", "refName": "Stalking Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Gloves"}, "armour": {"ev": [111, 111]}, "w": 2, "h": 2}
 {"name": "전문 사냥 창", "refName": "Stalking Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
@@ -2647,13 +2648,13 @@
 {"name": "계층화된 타지", "refName": "Stratified Targe", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour", "str_dex_shield"], "craftable": {"category": "Shield"}, "armour": {"ar": [61, 61], "ev": [54, 54]}, "w": 2, "h": 3}
 {"name": "짚 샌들", "refName": "Straw Sandals", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "ezomyte_basetype"], "craftable": {"category": "Boots"}, "armour": {"es": [14, 14]}, "w": 2, "h": 2}
 {"name": "질주자 조끼", "refName": "Strider Vest", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [275, 275]}, "w": 2, "h": 3}
-{"name": "전문 전쟁곡괭이", "refName": "Strife Pick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "투쟁 곡괭이", "refName": "Strife Pick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "전문 긴 육척봉", "refName": "Striking Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "타격하는 창", "refName": "Striking Spear", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Spear"}, "w": 1, "h": 4}
 {"name": "강력한 철 그물", "refName": "Strong Iron Net", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["bestiary_net"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "강력한 밧줄 그물", "refName": "Strong Rope Net", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["bestiary_net"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "강력한 강철 그물", "refName": "Strong Steel Net", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["bestiary_net"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "고급 구조물 망치", "refName": "Structured Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
+{"name": "구조화된 망치", "refName": "Structured Hammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "고급 강철코 장화", "refName": "Studded Boots", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [143, 143]}, "w": 2, "h": 2}
 {"name": "징 박힌 팔보호구", "refName": "Studded Bracers", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_bruteforce", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "징 박힌 대곤봉", "refName": "Studded Greatclub", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
@@ -2801,7 +2802,7 @@
 {"name": "잔가지 집중구", "refName": "Twig Focus", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "ezomyte_basetype"], "craftable": {"category": "Focus"}, "armour": {"es": [12, 12]}, "w": 2, "h": 3}
 {"name": "황혼 성유물 보관실 열쇠", "refName": "Twilight Reliquary Key", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5V29ybGQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/11ce1d0bfd/TwilightOrderReliquaryKeyWorld.png", "tags": ["fake_currency"], "tradeTag": "twilight-reliquary-key", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
 {"name": "황혼 티아라", "refName": "Twilight Tiara", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Helmet"}, "armour": {"es": [77, 77]}, "w": 2, "h": 2}
-{"name": "고급 이중시위 활", "refName": "Twin Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "쌍둥이 활", "refName": "Twin Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "고급 이중 석궁", "refName": "Twin Crossbow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Crossbow"}, "w": 2, "h": 4}
 {"name": "쌍둥이 도리깨", "refName": "Twin Flail", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "Flail"}, "w": 2, "h": 3}
 {"name": "쌍촉 화살통", "refName": "Two-Point Quiver", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Quiver"}, "w": 2, "h": 3}
@@ -2921,12 +2922,12 @@
 {"name": "간수 활", "refName": "Warden Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "전문 가죽모 레깅스", "refName": "Warlock Leggings", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Boots"}, "armour": {"ar": [120, 120], "es": [42, 42]}, "w": 2, "h": 2}
 {"name": "전쟁군주의 엑잘티드 오브", "refName": "Warlord's Exalted Orb", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "전문 맹신자 활", "refName": "Warmonger Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
+{"name": "전쟁광 활", "refName": "Warmonger Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "전문 병사 대헬름", "refName": "Warmonger Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [243, 243]}, "w": 2, "h": 2}
 {"name": "전쟁곡괭이", "refName": "Warpick", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "One Hand Mace"}, "w": 2, "h": 3}
 {"name": "전사 대헬름", "refName": "Warrior Greathelm", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_armour", "vaal_basetype"], "craftable": {"category": "Helmet"}, "armour": {"ar": [146, 146]}, "w": 2, "h": 2}
 {"name": "밀랍재질 재킷", "refName": "Waxed Jacket", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour", "ezomyte_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [43, 43], "es": [24, 24]}, "w": 2, "h": 3}
-{"name": "고급 초승달 육척봉", "refName": "Waxing Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "차오르는 육척봉", "refName": "Waxing Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "나그네 재킷", "refName": "Wayfarer Jacket", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour", "maraketh_basetype"], "craftable": {"category": "Body Armour"}, "armour": {"ev": [88, 88], "es": [39, 39]}, "w": 2, "h": 3}
 {"name": "고급 흐트러진 신발", "refName": "Wayfarer Shoes", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_int_armour"], "craftable": {"category": "Boots"}, "armour": {"ev": [65, 65], "es": [26, 26]}, "w": 2, "h": 2}
 {"name": "경로석(1등급)", "refName": "Waystone (Tier 1)", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9FbmRnYW1lTWFwcy9FbmRnYW1lTWFwMSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bb4c55989d/EndgameMap1.png", "tags": ["map_key_low"], "tradeTag": "waystone-1", "craftable": {"category": "Map"}, "w": 1, "h": 1}
@@ -2974,7 +2975,7 @@
 {"name": "날개 달린 아황산염 갑충석", "refName": "Winged Sulphite Scarab", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["jewelled_scarab"], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "날개 달린 고통 갑충석", "refName": "Winged Torment Scarab", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["jewelled_scarab"], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "말라버린 마법봉", "refName": "Withered Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["no_fire_spell_mods", "no_cold_spell_mods", "no_lightning_spell_mods", "no_physical_spell_mods"], "craftable": {"category": "Wand"}, "w": 1, "h": 3}
-{"name": "Wolf Talisman", "refName": "Wolf Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVdvbGYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c0deeb6d94/AzmeriSocketableWolf.png", "tags": ["vivid_talisman"], "tradeTag": "wolf-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
+{"name": "늑대 부적", "refName": "Wolf Talisman", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVdvbGYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c0deeb6d94/AzmeriSocketableWolf.png", "tags": ["vivid_talisman"], "tradeTag": "wolf-talisman", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1}
 {"name": "늑대뼈 클로", "refName": "Wolfbone Claw", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["ezomyte_basetype"], "craftable": {"category": "Claw"}, "w": 2, "h": 2}
 {"name": "전문 가죽모 외투", "refName": "Wolfskin Mantle", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [294, 294], "es": [101, 101]}, "w": 2, "h": 3}
 {"name": "목재 버클러", "refName": "Wooden Buckler", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["dex_armour", "dex_shield", "ezomyte_basetype"], "craftable": {"category": "Buckler"}, "armour": {"ev": [16, 16]}, "w": 2, "h": 2}
@@ -3021,7 +3022,7 @@
 {"name": "맹신자 활", "refName": "Zealot Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "고급 광신자 왕관", "refName": "Zealot Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [108, 108], "es": [38, 38]}, "w": 2, "h": 2}
 {"name": "고급 이중 건틀릿", "refName": "Zealot Gauntlets", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [61, 61], "ev": [56, 56]}, "w": 2, "h": 2}
-{"name": "고급 광신자 대망치", "refName": "Zealot Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
+{"name": "맹신자 대망치", "refName": "Zealot Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "북극성 법의", "refName": "Zenith Vestments", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [294, 294], "es": [101, 101]}, "w": 2, "h": 3}
 {"name": "[DNT] Bind Spectre Token", "refName": "[DNT] Bind Spectre Token", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
 {"name": "[DNT] Boat Charter", "refName": "[DNT] Boat Charter", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
@@ -3043,11 +3044,13 @@
 {"name": "앤드바리우스", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "별의 보석", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "아지스의 등불", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "쌍죔쇠", "refName": "Bijouborne", "namespace": "UNIQUE", "unique": {"base": "Double Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "생득권 버클", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "검은화염", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "검은 심장", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "물집을 잡는 결속", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "브리나바스", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "터져 나오는 부패", "refName": "Bursting Decay", "namespace": "UNIQUE", "unique": {"base": "Unset Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "형제의 부름", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "학살 심장", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "태풍의 합창", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
@@ -3057,12 +3060,16 @@
 {"name": "운명의 저항", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "도이드리의 파멸", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "꿈의 조각", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "거머쥐는 손아귀의 반지", "refName": "Evergrasping Ring", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "차율라의 눈", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "화염꽃", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "익스의 집착", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "하늘에서 내려준 선물", "refName": "Gifts from Above", "namespace": "UNIQUE", "unique": {"base": "Prismatic Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "빛무리", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "선혈의 요대", "refName": "Goregirdle", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "헤드헌터", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "마음에 묶인 고리", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "얼음송곳니의 위력", "refName": "Icefang Orbit", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "울던의 우상", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "이그니페리스", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "지옥불 죔쇠", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
@@ -3077,6 +3084,7 @@
 {"name": "원죄", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "페란두스 봉인", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "폴시르켈른", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "귀한 고통", "refName": "Prized Pain", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "신성한 수지", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "허약의 론델", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "리슬라사의 감개", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}, "icon": "%NOT_FOUND%"}
@@ -3086,22 +3094,29 @@
 {"name": "샤브론의 가방", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "뱀 구덩이", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "영혼 올가미", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "라즈워의 보석", "refName": "Stone of Lazhwar", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "몸부림치는 비명", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "굳건한 부적", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "모루", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "굴착자", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "영원한 응시", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "악무는 띠", "refName": "The Gnashing Sash", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "대혼란", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "도둑의 고통", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "웅힐의 조화", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "혈관 관통", "refName": "Venopuncture", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "벤토의 도박", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "경계하는 시야", "refName": "Vigilant View", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "허리문", "refName": "Waistgate", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "형제의 속삭임", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "조프의 피", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "고통의 멍에", "refName": "Yoke of Suffering", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "제르피의 시원", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "아브 아이테르노", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
 {"name": "아이리스베인의 날개", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "알켐 에이라", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "우두머리의 울부짖음", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "아펩의 패권", "refName": "Apep's Supremacy", "namespace": "UNIQUE", "unique": {"base": "Voodoo Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "에미란의 앞치마", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "아르빌의 바퀴", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "부서진 잿더미", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
@@ -3120,6 +3135,8 @@
 {"name": "검은 섬광", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}, "icon": "%NOT_FOUND%"}
 {"name": "검은 태양 문양", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "축복받은 유대", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "혈장벽", "refName": "Bloodbarrier", "namespace": "UNIQUE", "unique": {"base": "Iron Buckler"}, "icon": "%NOT_FOUND%"}
+{"name": "피의 대가", "refName": "Blood Price", "namespace": "UNIQUE", "unique": {"base": "Fierce Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "푸른불길 팔보호구", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "울러의 뼈", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "가시나무 갑옷", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass"}, "icon": "%NOT_FOUND%"}
@@ -3128,8 +3145,11 @@
 {"name": "가시털멧돼지", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "황동의 턱수염", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "덤불 매복", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "칼기라의 원호", "refName": "Calgyra's Arc", "namespace": "UNIQUE", "unique": {"base": "Ornate Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "양초 제작자", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "부패하는 부름", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "체르노보그의 기둥", "refName": "Chernobog's Pillar", "namespace": "UNIQUE", "unique": {"base": "Blacksteel Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "저항의 망토", "refName": "Cloak of Defiance", "namespace": "UNIQUE", "unique": {"base": "Havoc Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "화염의 망토", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "붉은색의 외투", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "코르나타움", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
@@ -3137,10 +3157,12 @@
 {"name": "시신걸음", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "진홍의 예복", "refName": "Couture of Crimson", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "아르듀라의 문양", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "눈알 왕관", "refName": "Crown of Eyes", "namespace": "UNIQUE", "unique": {"base": "Coral Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "창백한 왕의 왕관", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "승리자의 왕관", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "가시 왕관", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "어두운 빛의 궤적", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "Death Articulated", "refName": "Death Articulated", "namespace": "UNIQUE", "unique": {"base": "Ornate Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "죽음의 일격", "refName": "Deathblow", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "단말마의 숨소리", "refName": "Deathrattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "죽음의 종", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm"}, "icon": "%NOT_FOUND%"}
@@ -3150,11 +3172,16 @@
 {"name": "도이드리의 임기", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "멸망문", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "도리아니의 프로토타입", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "공포주먹", "refName": "Dreadfist", "namespace": "UNIQUE", "unique": {"base": "Bolstered Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "둥켈할트", "refName": "Dunkelhalt", "namespace": "UNIQUE", "unique": {"base": "Leather Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "황혼꽃", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "에디른의 엄니", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "잔혹성의 인형", "refName": "Effigy of Cruelty", "namespace": "UNIQUE", "unique": {"base": "Antler Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "원소포식", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "제국의 손아귀", "refName": "Empire's Grasp", "namespace": "UNIQUE", "unique": {"base": "Titan Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "감싸 안는 여명", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "에리안의 수선", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "피의 정수", "refName": "Essentia Sanguis", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "에조미어의 면갑", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "깃털 달린 요새", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "금단의 응시", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
@@ -3163,6 +3190,7 @@
 {"name": "유령의 행진", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "유령의 몸서리", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "혼돈의 섬광", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "석양법복", "refName": "Gloamgown", "namespace": "UNIQUE", "unique": {"base": "Elementalist Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "순흑체", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket"}, "icon": "%NOT_FOUND%"}
 {"name": "금테", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "무덤의 속박", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs"}, "icon": "%NOT_FOUND%"}
@@ -3170,11 +3198,15 @@
 {"name": "회색작품", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "겨울의 손아귀", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "지혜와 행동의 손아귀", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "지혜와 행동의 손아귀", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Spiral Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "증오의 탄생", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "열기와 오한", "refName": "Heatshiver", "namespace": "UNIQUE", "unique": {"base": "Velvet Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "빈덴의 뿔", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "꿈의 껍데기", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "하이리의 노여움", "refName": "Hyrri's Ire", "namespace": "UNIQUE", "unique": {"base": "Armoured Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "얼음 묘지", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "게으른 손", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "인디곤", "refName": "Indigon", "namespace": "UNIQUE", "unique": {"base": "Magus Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "인즈머스", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "철손아귀", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "철의 질주", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}, "icon": "%NOT_FOUND%"}
@@ -3186,6 +3218,7 @@
 {"name": "키토코의 흐름", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "음흉한 시선", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "군단의 보조", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "레오폴드의 갈채", "refName": "Leopold's Applause", "namespace": "UNIQUE", "unique": {"base": "Embroidered Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "록토니얼의 손길", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "빛나는 발걸음", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "늑대 거미", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield"}, "icon": "%NOT_FOUND%"}
@@ -3197,6 +3230,8 @@
 {"name": "모리오르 인빅투스", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}, "icon": "%NOT_FOUND%"}
 {"name": "미리스 욱소르", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "강령외투", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "밤비늘", "refName": "Nightscale", "namespace": "UNIQUE", "unique": {"base": "Pauascale Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "야상곡", "refName": "Nocturne", "namespace": "UNIQUE", "unique": {"base": "Wooden Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "북방발", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "참나무맹세", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "오베른의 보루", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
@@ -3207,34 +3242,56 @@
 {"name": "위세의 발 보호대", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "실용주의", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "기우 기도", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "분광의 수호자", "refName": "Prism Guardian", "namespace": "UNIQUE", "unique": {"base": "Intricate Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "콰틀의 허물", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "숲의 여왕", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "찬란한 슬픔", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "래스피스 구체", "refName": "Rathpith Globe", "namespace": "UNIQUE", "unique": {"base": "Sacred Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "후위 경계", "refName": "Rearguard", "namespace": "UNIQUE", "unique": {"base": "Blunt Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "적검단 깃발", "refName": "Redblade Banner", "namespace": "UNIQUE", "unique": {"base": "Heraldric Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "붉은섬광 도관", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "불사조의 비상", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "론델 데 에소", "refName": "Rondel de Ezo", "namespace": "UNIQUE", "unique": {"base": "Plated Buckler"}, "icon": "%NOT_FOUND%"}
+{"name": "천골성소", "refName": "Sacrosanctum", "namespace": "UNIQUE", "unique": {"base": "Corvus Mantle"}, "icon": "%NOT_FOUND%"}
 {"name": "사펠의 골격", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "실크의 모래", "refName": "Sands of Silk", "namespace": "UNIQUE", "unique": {"base": "Shrouded Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "모래 폭풍의 얼굴", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "꾸짖음의 굴레", "refName": "Scold's Bridle", "namespace": "UNIQUE", "unique": {"base": "Jade Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "독사의 교훈", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "불운아의 족쇄", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "시에라의 유산", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "숭배의 비단", "refName": "Silks of Veneration", "namespace": "UNIQUE", "unique": {"base": "Enlightened Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "은빛가시", "refName": "Silverthorne", "namespace": "UNIQUE", "unique": {"base": "Spiked Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "시네 아이쿠오", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}, "icon": "%NOT_FOUND%"}
 {"name": "충신의 가죽", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "뱀 이빨", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "솔루스 입세", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}, "icon": "%NOT_FOUND%"}
+{"name": "영혼의 외투", "refName": "Soul Mantle", "namespace": "UNIQUE", "unique": {"base": "Sacrificial Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "스타콘자의 머리", "refName": "Starkonja's Head", "namespace": "UNIQUE", "unique": {"base": "Leatherbound Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "태양분열자", "refName": "Sunsplinter", "namespace": "UNIQUE", "unique": {"base": "Array Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "스발린", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "타뷸라 라사", "refName": "Tabula Rasa", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "템포랄리스", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "테츨라포칼의 갈망", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "고분의 주민", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "검은 의혹", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "검은 휘장", "refName": "The Black Insignia", "namespace": "UNIQUE", "unique": {"base": "Corsair Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "황동 철갑", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "비의 인도자", "refName": "The Bringer of Rain", "namespace": "UNIQUE", "unique": {"base": "Decorated Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "다가오는 대재난", "refName": "The Coming Calamity", "namespace": "UNIQUE", "unique": {"base": "Heroic Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "계약", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "춤추는 신기루", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "가장 깊은 탑", "refName": "The Deepest Tower", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "걸신들린 왕관", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "영원한 불꽃", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "몰락자 진형", "refName": "The Fallen Formation", "namespace": "UNIQUE", "unique": {"base": "Lamellar Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "텅 빈 가면", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "도로의 전사", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "끝없는 추적", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "무사 수행 기사", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "죽음을 부르는 무승부", "refName": "The Lethal Draw", "namespace": "UNIQUE", "unique": {"base": "Sacral Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "변이하는 별", "refName": "The Mutable Star", "namespace": "UNIQUE", "unique": {"base": "Cleric Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "죄수의 수갑", "refName": "The Prisoner's Manacles", "namespace": "UNIQUE", "unique": {"base": "Diviner Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "쥐덫", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "미소 짓는 기사", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "포기", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield"}, "icon": "%NOT_FOUND%"}
@@ -3248,18 +3305,37 @@
 {"name": "거신부패 비늘 갑옷", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}, "icon": "%NOT_FOUND%"}
 {"name": "짓발가락", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "나무손가락", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "발라코의 악덕", "refName": "Valako's Vice", "namespace": "UNIQUE", "unique": {"base": "Plate Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "밤의 장막", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "아야의 얼굴", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "비스 모티스", "refName": "Vis Mortis", "namespace": "UNIQUE", "unique": {"base": "Plated Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "볼의 보호자", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "파괴의 경야", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings"}, "icon": "%NOT_FOUND%"}
 {"name": "방랑하는 성유물 보관실", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "방랑벽", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "파도형성자", "refName": "Waveshaper", "namespace": "UNIQUE", "unique": {"base": "Tideseer Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "과부의 치세", "refName": "Widow's Reign", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "낙원으로 열린 창", "refName": "Window to Paradise", "namespace": "UNIQUE", "unique": {"base": "Barricade Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "바람의 괴성", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "카일린의 날개", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "기적의 발판", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}, "icon": "%NOT_FOUND%"}
 {"name": "늑대의 천적", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "이리엘의 훈육", "refName": "Yriel's Fostering", "namespace": "UNIQUE", "unique": {"base": "Strider Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "제르피의 모포", "refName": "Zerphi's Serape", "namespace": "UNIQUE", "unique": {"base": "Scalper's Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "Arakaali's Gift", "refName": "Arakaali's Gift", "namespace": "UNIQUE", "unique": {"base": "Antidote Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "베이라의 비통", "refName": "Beira's Anguish", "namespace": "UNIQUE", "unique": {"base": "Dousing Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Breath of the Mountains", "refName": "Breath of the Mountains", "namespace": "UNIQUE", "unique": {"base": "Sapphire Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Forsaken Bangle", "refName": "Forsaken Bangle", "namespace": "UNIQUE", "unique": {"base": "Amethyst Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "For Utopia", "refName": "For Utopia", "namespace": "UNIQUE", "unique": {"base": "Stone Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "녹아내리는 소용돌이", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Nascent Hope", "refName": "Nascent Hope", "namespace": "UNIQUE", "unique": {"base": "Thawing Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "나마후의 선택받은 자", "refName": "Ngamahu's Chosen", "namespace": "UNIQUE", "unique": {"base": "Ruby Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "올로스의 결의", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Rite of Passage", "refName": "Rite of Passage", "namespace": "UNIQUE", "unique": {"base": "Golden Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Sanguis Heroum", "refName": "Sanguis Heroum", "namespace": "UNIQUE", "unique": {"base": "Staunching Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "The Black Cat", "refName": "The Black Cat", "namespace": "UNIQUE", "unique": {"base": "Grounding Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "도끼의 추락", "refName": "The Fall of the Axe", "namespace": "UNIQUE", "unique": {"base": "Silver Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Valako's Roar", "refName": "Valako's Roar", "namespace": "UNIQUE", "unique": {"base": "Topaz Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "어둠에의 저항", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "제어된 변형", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "허무의 산물", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
@@ -3270,12 +3346,24 @@
 {"name": "과대망상", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "믿음의 분광기", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "치장한 자", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "맑은 하늘", "refName": "Clear Skies", "namespace": "UNIQUE", "unique": {"base": "Delirium Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "잔혹한 헤게모니", "refName": "Cruel Hegemony", "namespace": "UNIQUE", "unique": {"base": "Overseer Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "시간에 잊힌 존재", "refName": "Forgotten By Time", "namespace": "UNIQUE", "unique": {"base": "Expedition Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "신념의 자유", "refName": "Freedom of Faith", "namespace": "UNIQUE", "unique": {"base": "Ritual Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "사냥철", "refName": "Season of the Hunt", "namespace": "UNIQUE", "unique": {"base": "Overseer Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "대공사", "refName": "The Grand Project", "namespace": "UNIQUE", "unique": {"base": "Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Visions of Paradise", "refName": "Visions of Paradise", "namespace": "UNIQUE", "unique": {"base": "Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Wraeclast Besieged", "refName": "Wraeclast Besieged", "namespace": "UNIQUE", "unique": {"base": "Breach Precursor Tablet"}, "icon": "%NOT_FOUND%"}
 {"name": "푸른혀", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "요동치는 두뇌", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "브린핸드의 징표", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
+{"name": "사슬침", "refName": "Chainsting", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "초버 차버", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}, "icon": "%NOT_FOUND%"}
 {"name": "무너지는 지평선", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "저주난자", "refName": "Cursecarver", "namespace": "UNIQUE", "unique": {"base": "Acrid Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "다이바타의 바람", "refName": "Daevata's Wind", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "죽음의 하프", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "죽음의 깃", "refName": "Doomfletch", "namespace": "UNIQUE", "unique": {"base": "Composite Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "황혼의 불침번", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "대지결속", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "에네준의 돌진", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
@@ -3288,20 +3376,20 @@
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "미완성", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}, "icon": "%NOT_FOUND%"}
@@ -3314,7 +3402,9 @@
 {"name": "생명의 가지", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}, "icon": "%NOT_FOUND%"}
 {"name": "마챠", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "연무의 속삭임", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "묠니르", "refName": "Mjölner", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "나지르의 심판", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "네뷸록", "refName": "Nebuloch", "namespace": "UNIQUE", "unique": {"base": "Execratus Hammer"}, "icon": "%NOT_FOUND%"}
 {"name": "올로바사라", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "갇힌 신의 기둥", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "퀘촐리", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}, "icon": "%NOT_FOUND%"}
@@ -3322,20 +3412,33 @@
 {"name": "성벽 랩터", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
 {"name": "붉은 부리", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "신성한 불꽃", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "사이타의 창", "refName": "Saitha's Spear", "namespace": "UNIQUE", "unique": {"base": "Barbed Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "핏빛 예언자", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "조각된 고통", "refName": "Sculpted Suffering", "namespace": "UNIQUE", "unique": {"base": "Warpick"}, "icon": "%NOT_FOUND%"}
 {"name": "눈앞의 별", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "샤바", "refName": "Shyaba", "namespace": "UNIQUE", "unique": {"base": "Temple Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "파편의 영주", "refName": "Sire of Shards", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "하늘의 편린", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "슬리버텅", "refName": "Slivertongue", "namespace": "UNIQUE", "unique": {"base": "Zealot Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "노여움의 첨탑", "refName": "Spire of Ire", "namespace": "UNIQUE", "unique": {"base": "Helix Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "파편심장", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "로라타의 파편", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "꼬인혀", "refName": "Tangletongue", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "타린의 오한", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "피의 가시", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "그림자의 짐", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "춤추는 수도승", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}, "icon": "%NOT_FOUND%"}
 {"name": "어둠의 모독자", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "공허한 포효", "refName": "The Empty Roar", "namespace": "UNIQUE", "unique": {"base": "Cultist Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "신념의 망치", "refName": "The Hammer of Faith", "namespace": "UNIQUE", "unique": {"base": "Giant Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "이글거리는 손길", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "보초", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "부도덕한 깃펜", "refName": "The Wicked Quill", "namespace": "UNIQUE", "unique": {"base": "Withered Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "물결 분쇄기", "refName": "Tidebreaker", "namespace": "UNIQUE", "unique": {"base": "Pointed Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "참호목", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
 {"name": "트레피나", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "거리 유지", "refName": "Tyranny's Grip", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "전도성 균열", "refName": "Voltaxic Rift", "namespace": "UNIQUE", "unique": {"base": "Fanatic Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "과부우박", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "겨울의 추위", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
 {"name": "와일룬드의 말뚝", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}

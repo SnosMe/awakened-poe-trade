@@ -138,7 +138,9 @@
     "sanctum_relic": "サンクタムレリック",
     "tincture": "チンキ",
     "azmeri_charm": "チャーム",
-    "weapon_crossbow": "クロスボウ"
+    "weapon_crossbow": "クロスボウ",
+    "weapon_spear": "Spear",
+    "weapon_flail": "Flail"
   },
   "filters": {
     "selected_some": "スタット {1}つの内{0}",

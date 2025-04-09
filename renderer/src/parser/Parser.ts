@@ -1145,7 +1145,8 @@ function parseUnneededText(section: string[], item: ParsedItem) {
     item.category !== ItemCategory.Sceptre &&
     item.category !== ItemCategory.Wand &&
     item.category !== ItemCategory.Staff &&
-    item.category !== ItemCategory.Shield
+    item.category !== ItemCategory.Shield &&
+    item.category !== ItemCategory.Spear
   )
     return "PARSER_SKIPPED";
 

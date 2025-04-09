@@ -408,6 +408,18 @@ class Parser:
                 continue
             self.base_en_items_lookup[id] = name
 
+        self.trade_stats_pseudo = [
+            res for res in self.trade_stats["result"] if res["id"] == "pseudo"
+        ][0]["entries"]
+
+        self.trade_stats_pseudo_ref = [
+            res
+            for res in json.loads(
+                open(f"{self.cwd}/../json-api/en/stats.json", encoding="utf-8").read()
+            )["result"]
+            if res["id"] == "pseudo"
+        ][0]["entries"]
+
     def get_mod_by_id(self, id: str) -> dict | None:
         filtered = [mod for mod in self.mods.values() if mod.get("id") == id]
         return None if len(filtered) == 0 else filtered[0]
@@ -1304,6 +1316,8 @@ class Parser:
 
         # somehow not a thing? - possibly missing some data
 
+        self.add_pseudo_mods()
+
         self.add_missing_mods()
 
         self.mods = flatten_mods(self.mods)
@@ -1441,6 +1455,23 @@ class Parser:
         factions = logbook_overrides[self.lang]
         for faction in factions:
             self.mods[faction["ref"]] = faction
+
+    def add_pseudo_mods(self):
+        for trade_stat in self.trade_stats_pseudo:
+            assert trade_stat["type"] == "pseudo"
+            trade_stat_id = trade_stat["id"]
+            trade_stat_text = trade_stat["text"]
+            trade_stat_ref = [
+                res for res in self.trade_stats_pseudo_ref if res["id"] == trade_stat_id
+            ][0]["text"]
+
+            self.mods[trade_stat_id] = {
+                "ref": trade_stat_ref,
+                "better": 1,
+                "id": trade_stat_id,
+                "matchers": [{"string": trade_stat_text}],
+                "trade": {"ids": {"pseudo": [trade_stat_id]}},
+            }
 
     def do_client_strings(self):
         cl = create_client_strings(self.client_strings_file)

@@ -139,7 +139,9 @@
     "tincture": "Tinktur",
     "azmeri_charm": "Azmeri-Talisman",
     "weapon_crossbow": "Armbrust",
-    "armour_focus": "Fokus"
+    "armour_focus": "Fokus",
+    "weapon_spear": "Spear",
+    "weapon_flail": "Flail"
   },
   "filters": {
     "selected_some": "{0} von {1}, Werte",

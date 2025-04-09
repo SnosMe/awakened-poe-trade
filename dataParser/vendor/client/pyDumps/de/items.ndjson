@@ -178,6 +178,7 @@
 {"name": "Verrückte Kreaturen", "refName": "Crazed Minions", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Crescendo", "refName": "Crescendo", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Armbrust-Schuss", "refName": "Crossbow Shot", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Cull The Weak", "refName": "Cull The Weak", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Todesstoß", "refName": "Culling Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Krönender Abschluss", "refName": "Culmination", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Verfluchter Boden", "refName": "Cursed Ground", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -516,7 +517,7 @@
 {"name": "Erwidern", "refName": "Retort", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Rückzug", "refName": "Retreat", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Nachhall", "refName": "Reverberate", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "Rhoa aufsatteln", "refName": "Rhoa Mount", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "Rhoa-Reittier", "refName": "Rhoa Mount", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Querschläger", "refName": "Ricochet", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Raureif", "refName": "Rime", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Zerreißen", "refName": "Rip", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
@@ -683,59 +684,59 @@
 {"name": "Verkümmernde Präsenz", "refName": "Withering Presence", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Verkümmernde Berührung", "refName": "Withering Touch", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "Zenit", "refName": "Zenith", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Ailment CDR", "refName": "[DNT] Ailment CDR", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Leaping Chop", "refName": "[DNT] Axe Leaping Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Raised Chop", "refName": "[DNT] Axe Raised Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Slash", "refName": "[DNT] Axe Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Axe Whirling Slash", "refName": "[DNT] Axe Whirling Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Blade Dance", "refName": "[DNT] Blade Dance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Blade Nova", "refName": "[DNT] Blade Nova", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Block CDR", "refName": "[DNT] Block CDR", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Claw Rake", "refName": "[DNT] Claw Rake", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Combo Knife Throw", "refName": "[DNT] Combo Knife Throw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Detonation", "refName": "[DNT] Detonation", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Dodge Roll", "refName": "[DNT] Dodge Roll", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Dominating Aura", "refName": "[DNT] Dominating Aura", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Eternal Service", "refName": "[DNT] Eternal Service", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Evasive Strike", "refName": "[DNT] Evasive Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Flame Slice", "refName": "[DNT] Flame Slice", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Frosthunger", "refName": "[DNT] Frosthunger", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Gas Cloud", "refName": "[DNT] Gas Cloud", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Howl", "refName": "[DNT] Howl", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Hyper Slash", "refName": "[DNT] Hyper Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Icewalker", "refName": "[DNT] Icewalker", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Knife Flip", "refName": "[DNT] Knife Flip", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Leaping Axe Catch", "refName": "[DNT] Leaping Axe Catch", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Leaping Claw", "refName": "[DNT] Leaping Claw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Lingering Presence", "refName": "[DNT] Lingering Presence", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Manaforged Shots", "refName": "[DNT] Manaforged Shots", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Maul", "refName": "[DNT] Maul", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Meta Bow Totem", "refName": "[DNT] Meta Bow Totem", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Meta Spell Totem", "refName": "[DNT] Meta Spell Totem", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Overwhelming Force", "refName": "[DNT] Overwhelming Force", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Plunging Blade", "refName": "[DNT] Plunging Blade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] RingOfBlades", "refName": "[DNT] RingOfBlades", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Shadow Ambush", "refName": "[DNT] Shadow Ambush", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Shadow Dash", "refName": "[DNT] Shadow Dash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Shadow Thief Slash", "refName": "[DNT] Shadow Thief Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spear Discharge", "refName": "[DNT] Spear Discharge", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spear Vortex", "refName": "[DNT] Spear Vortex", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spectral Palm", "refName": "[DNT] Spectral Palm", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spellblade", "refName": "[DNT] Spellblade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spinning Flail", "refName": "[DNT] Spinning Flail", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spinning Throw", "refName": "[DNT] Spinning Throw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Spiral Throw", "refName": "[DNT] Spiral Throw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Storm Blade", "refName": "[DNT] Storm Blade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Stun CDR", "refName": "[DNT] Stun CDR", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Sword Leap Slash", "refName": "[DNT] Sword Leap Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Sword Lunge", "refName": "[DNT] Sword Lunge", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Timerot", "refName": "[DNT] Timerot", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Titanic Arrows", "refName": "[DNT] Titanic Arrows", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Triple Slash Combo", "refName": "[DNT] Triple Slash Combo", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
-{"name": "[DNT] Vulnerable Extension", "refName": "[DNT] Vulnerable Extension", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Ailment CDR", "refName": "[DNT] Ailment CDR", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Chop", "refName": "[DNT] Axe Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Execute", "refName": "[DNT] Axe Execute", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Heavy Cleave", "refName": "[DNT] Axe Heavy Cleave", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Leaping Chop", "refName": "[DNT] Axe Leaping Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Raised Chop", "refName": "[DNT] Axe Raised Chop", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Slash", "refName": "[DNT] Axe Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Axe Whirling Slash", "refName": "[DNT] Axe Whirling Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Blade Dance", "refName": "[DNT] Blade Dance", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Blade Nova", "refName": "[DNT] Blade Nova", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Block CDR", "refName": "[DNT] Block CDR", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Claw Rake", "refName": "[DNT] Claw Rake", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Combo Knife Throw", "refName": "[DNT] Combo Knife Throw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Detonation", "refName": "[DNT] Detonation", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Dodge Roll", "refName": "[DNT] Dodge Roll", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Dominating Aura", "refName": "[DNT] Dominating Aura", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Eternal Service", "refName": "[DNT] Eternal Service", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Evasive Strike", "refName": "[DNT] Evasive Strike", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Flame Slice", "refName": "[DNT] Flame Slice", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Frosthunger", "refName": "[DNT] Frosthunger", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Gas Cloud", "refName": "[DNT] Gas Cloud", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Howl", "refName": "[DNT] Howl", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Hyper Slash", "refName": "[DNT] Hyper Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Icewalker", "refName": "[DNT] Icewalker", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Knife Flip", "refName": "[DNT] Knife Flip", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Leaping Axe Catch", "refName": "[DNT] Leaping Axe Catch", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Leaping Claw", "refName": "[DNT] Leaping Claw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Lingering Presence", "refName": "[DNT] Lingering Presence", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Manaforged Shots", "refName": "[DNT] Manaforged Shots", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Maul", "refName": "[DNT] Maul", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Meta Bow Totem", "refName": "[DNT] Meta Bow Totem", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Meta Spell Totem", "refName": "[DNT] Meta Spell Totem", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MetaSkillGem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Overwhelming Force", "refName": "[DNT] Overwhelming Force", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Plunging Blade", "refName": "[DNT] Plunging Blade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] RingOfBlades", "refName": "[DNT] RingOfBlades", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Shadow Ambush", "refName": "[DNT] Shadow Ambush", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Shadow Dash", "refName": "[DNT] Shadow Dash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Shadow Thief Slash", "refName": "[DNT] Shadow Thief Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spear Discharge", "refName": "[DNT] Spear Discharge", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spear Vortex", "refName": "[DNT] Spear Vortex", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spectral Palm", "refName": "[DNT] Spectral Palm", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spellblade", "refName": "[DNT] Spellblade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spinning Flail", "refName": "[DNT] Spinning Flail", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spinning Throw", "refName": "[DNT] Spinning Throw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Spiral Throw", "refName": "[DNT] Spiral Throw", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Storm Blade", "refName": "[DNT] Storm Blade", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Stun CDR", "refName": "[DNT] Stun CDR", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Sword Leap Slash", "refName": "[DNT] Sword Leap Slash", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Sword Lunge", "refName": "[DNT] Sword Lunge", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Timerot", "refName": "[DNT] Timerot", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Titanic Arrows", "refName": "[DNT] Titanic Arrows", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Triple Slash Combo", "refName": "[DNT] Triple Slash Combo", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Active Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
+{"name": "[DNT-UNUSED] Vulnerable Extension", "refName": "[DNT] Vulnerable Extension", "namespace": "GEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Support Skill Gem"}, "w": 1, "h": 1, "gem": {"awakened": false, "transfigured": false}}
 {"name": "\"Oh' Ewige\"", "refName": "\"O' Eternal\"", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "\"Der Gutenacht-Kuss\"", "refName": "\"The Kiss Goodnight\"", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
 {"name": "\"Das namenlose Stück\"", "refName": "\"The Nameless Play\"", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
@@ -1698,10 +1699,10 @@
 {"name": "Größeres Manafläschchen", "refName": "Greater Mana Flask", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Flask"}, "w": 1, "h": 2}
 {"name": "Große Gedanken-Rune", "refName": "Greater Mind Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/49619b701f/ManaRuneTier2.png", "tags": [], "tradeTag": "greater-mind-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "# zu maximalem Mana", "values": [35], "tradeId": ["rune.stat_1050105434"]}, "weapon": {"string": "#% des physischen Angriffsschadens werden als Mana geraubt", "values": [250], "tradeId": ["rune.stat_669069897"]}}}
 {"name": "Große Wiedergeburt-Rune", "refName": "Greater Rebirth Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlmZVJlY292ZXJ5UnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/41b22fb4e5/LifeRecoveryRuneTier2.png", "tags": [], "tradeTag": "greater-rebirth-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Regeneriert #% des Lebens pro Sekunde", "values": [21], "tradeId": ["rune.stat_836936635"]}, "weapon": {"string": "Erhaltet # Leben pro getötetem Gegner", "values": [30], "tradeId": ["rune.stat_3695891184"]}}}
-{"name": "Große Rune der Gewissenhaftigkeit", "refName": "Greater Rune of Alacrity", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/633300b884/LightningRuneSpecial3.png", "tags": [], "tradeTag": "greater-rune-of-alacrity", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Schwächungen auf Euch klingen #% schneller ab", "values": [8], "tradeId": null}, "weapon": {"string": "#% erhöhte Fertigkeitengeschwindigkeit", "values": [8], "tradeId": null}}}
-{"name": "Große Rune der Führungsqualität", "refName": "Greater Rune of Leadership", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/81a3fe75a5/LightningRuneSpecial1.png", "tags": [], "tradeTag": "greater-rune-of-leadership", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Kreaturen erleiden #% des physischen Schadens als Blitzschaden", "values": [10], "tradeId": null}, "weapon": {"string": "Kreaturen verursachen #% ihres physischen Schadens als extra Blitzschaden", "values": [10], "tradeId": null}}}
-{"name": "Große Rune des Adels", "refName": "Greater Rune of Nobility", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWw0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ffcde6ca9/LightningRuneSpecial4.png", "tags": [], "tradeTag": "greater-rune-of-nobility", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% erhöhte Wirkung von Schock auf Euch", "values": [-10], "tradeId": null}, "weapon": {"string": "Angriffe mit dieser Waffe haben #% Chance, Blitz-Anfälligkeit zu verursachen", "values": [10], "tradeId": null}}}
-{"name": "Große Rune des Zehntels", "refName": "Greater Rune of Tithing", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png", "tags": [], "tradeTag": "greater-rune-of-tithing", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "# bis # Blitz-Dornenschaden", "values": [1, 10], "tradeId": null}, "weapon": {"string": "Meta-Fertigkeiten erhalten #% erhöhte Energie", "values": [10], "tradeId": null}}}
+{"name": "Große Rune der Gewissenhaftigkeit", "refName": "Greater Rune of Alacrity", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/633300b884/LightningRuneSpecial3.png", "tags": [], "tradeTag": "greater-rune-of-alacrity", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Schwächungen auf Euch klingen #% schneller ab", "values": [8], "tradeId": ["rune.stat_1238227257"]}, "weapon": {"string": "#% erhöhte Fertigkeitengeschwindigkeit", "values": [8], "tradeId": ["rune.stat_970213192"]}}}
+{"name": "Große Rune der Führungsqualität", "refName": "Greater Rune of Leadership", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/81a3fe75a5/LightningRuneSpecial1.png", "tags": [], "tradeTag": "greater-rune-of-leadership", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Kreaturen erleiden #% des physischen Schadens als Blitzschaden", "values": [10], "tradeId": ["rune.stat_889552744"]}, "weapon": {"string": "Kreaturen verursachen #% ihres physischen Schadens als extra Blitzschaden", "values": [10], "tradeId": ["rune.stat_1433756169"]}}}
+{"name": "Große Rune des Adels", "refName": "Greater Rune of Nobility", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWw0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ffcde6ca9/LightningRuneSpecial4.png", "tags": [], "tradeTag": "greater-rune-of-nobility", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% erhöhte Wirkung von Schock auf Euch", "values": [-10], "tradeId": ["rune.stat_3801067695"]}, "weapon": {"string": "Angriffe mit dieser Waffe haben #% Chance, Blitz-Anfälligkeit zu verursachen", "values": [10], "tradeId": ["rune.stat_2158896334"]}}}
+{"name": "Große Rune des Zehntels", "refName": "Greater Rune of Tithing", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png", "tags": [], "tradeTag": "greater-rune-of-tithing", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "# bis # Blitz-Dornenschaden", "values": [1, 10], "tradeId": ["rune.stat_757050353"]}, "weapon": {"string": "Meta-Fertigkeiten erhalten #% erhöhte Energie", "values": [10], "tradeId": ["rune.stat_4236566306"]}}}
 {"name": "Große Stein-Rune", "refName": "Greater Stone Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvU3R1blJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/836627f793/StunRuneTier2.png", "tags": [], "tradeTag": "greater-stone-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "# zur Betäubungsschwelle", "values": [50], "tradeId": ["rune.stat_915769802"]}, "weapon": {"string": "Bewirkt #% erhöhten Betäubungsaufbau", "values": [30], "tradeId": ["rune.stat_791928121"]}}}
 {"name": "Große Sturm-Rune", "refName": "Greater Storm Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/47c9eb3f9e/LightningRuneTier2.png", "tags": [], "tradeTag": "greater-storm-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% zu Blitzwiderstand", "values": [14], "tradeId": ["rune.stat_1671376347"]}, "weapon": {"string": "Fügt # bis # Blitzschaden hinzu", "values": [1, 30], "tradeId": ["rune.stat_3336890334", "rune.stat_3336890334"]}}}
 {"name": "Große Visions-Rune", "refName": "Greater Vision Rune", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png", "tags": [], "tradeTag": "greater-vision-rune", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% erhöhte Lebens- und Manawiederherstellung von Fläschchen", "values": [12], "tradeId": ["rune.stat_2310741722"]}, "weapon": {"string": "# zu Treffgenauigkeit", "values": [110], "tradeId": ["rune.stat_691932474"]}}}
@@ -2536,7 +2537,7 @@
 {"name": "Einmaliger Inkubator", "refName": "Singular Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "Einmaliger Inkubator", "refName": "Singular Incubator", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Incubator"}, "w": 1, "h": 1}
 {"name": "Einmaliger Kundschafterbericht", "refName": "Singular Scouting Report", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["drops_in_maps_only"], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "Unheimlicher Kampfstab", "refName": "Sinister Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
+{"name": "Finsterer Kampfstab", "refName": "Sinister Quarterstaff", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Warstaff"}, "w": 2, "h": 4}
 {"name": "Auslaugender Zauberstab", "refName": "Siphoning Wand", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Wand"}, "w": 1, "h": 3}
 {"name": "Provisorischer Schlüsselring", "refName": "Skeleton Keyring", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["heist_equipment_trapdisarmament", "heist_equipment_tool"], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "Kürschnermesser", "refName": "Skinning Knife", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["maraketh_basetype"], "craftable": {"category": "Dagger"}, "w": 1, "h": 3}
@@ -2576,7 +2577,7 @@
 {"name": "Düstere Handschuhe", "refName": "Sombre Gloves", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour", "ezomyte_basetype"], "craftable": {"category": "Gloves"}, "armour": {"es": [15, 15]}, "w": 2, "h": 2}
 {"name": "Magische Tiara", "refName": "Sorcerous Tiara", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["int_armour"], "craftable": {"category": "Helmet"}, "armour": {"es": [92, 92]}, "w": 2, "h": 2}
 {"name": "Seelenkern von Atmohua", "refName": "Soul Core of Atmohua", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVN0cmVuZ3RoIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/1b37135049/GreaterSoulCoreStrength.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-atmohua", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Wandelt #% der Anforderungen in Stärke um", "values": [20], "tradeId": ["rune.stat_1556124492"]}, "weapon": {"string": "Wandelt #% der Anforderungen in Stärke um", "values": [20], "tradeId": ["rune.stat_1556124492"]}}}
-{"name": "Seelenkern von Azpaca", "refName": "Soul Core of Azcapa", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png", "tags": ["soul_core", "soul_core_tier3"], "tradeTag": "soul-core-of-azcapa", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% erhöhte Menge fallen gelassenen Goldes von getöteten Gegnern", "values": [5], "tradeId": null}, "weapon": {"string": "# zu Wille", "values": [15], "tradeId": ["rune.stat_3981240776"]}}}
+{"name": "Seelenkern von Azpaca", "refName": "Soul Core of Azcapa", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png", "tags": ["soul_core", "soul_core_tier3"], "tradeTag": "soul-core-of-azcapa", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% erhöhte Menge fallen gelassenen Goldes von getöteten Gegnern", "values": [5], "tradeId": ["rune.stat_3175163625"]}, "weapon": {"string": "# zu Wille", "values": [15], "tradeId": ["rune.stat_3981240776"]}}}
 {"name": "Seelenkern von Cholotl", "refName": "Soul Core of Cholotl", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZURleCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c732c8a579/GreaterSoulCoreDex.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-cholotl", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "Wandelt #% der Anforderungen in Geschick um", "values": [20], "tradeId": ["rune.stat_1496740334"]}, "weapon": {"string": "Wandelt #% der Anforderungen in Geschick um", "values": [20], "tradeId": ["rune.stat_1496740334"]}}}
 {"name": "Seelenkern von Citaqualotl", "refName": "Soul Core of Citaqualotl", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1NvdWxDb3JlUGh5c2ljYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/f48f9f0c62/SoulCorePhysical.png", "tags": ["soul_core", "soul_core_tier1"], "tradeTag": "soul-core-of-citaqualotl", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% zu allen Elementarwiderständen", "values": [5], "tradeId": ["rune.stat_2901986750"]}, "weapon": {"string": "#% erhöhter Elementarschaden mit Angriffsfertigkeiten", "values": [30], "tradeId": ["rune.stat_387439868"]}}}
 {"name": "Seelenkern von Jiquani", "refName": "Soul Core of Jiquani", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUxpZmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bb83a9f337/GreaterSoulCoreLife.png", "tags": ["soul_core", "soul_core_tier2"], "tradeTag": "soul-core-of-jiquani", "craftable": {"category": "SoulCore"}, "w": 1, "h": 1, "rune": {"armour": {"string": "#% erhöhtes maximales Leben", "values": [2], "tradeId": ["rune.stat_983749596"]}, "weapon": {"string": "Stellt bei Tötung #% des Lebens wieder her", "values": [2], "tradeId": ["rune.stat_2023107756"]}}}
@@ -3013,29 +3014,29 @@
 {"name": "Yriels Schlüssel", "refName": "Yriel's Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "Yriels Schlüssel", "refName": "Yriel's Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "MapFragment"}, "w": 1, "h": 1}
 {"name": "Schlüssel zur Reliquienkammer von Zarokh", "refName": "Zarokh's Reliquary Key", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "Schlüssel zur Reliquienkammer von Zarokh", "refName": "Zarokh's Reliquary Key: Against the Darkness", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "Schlüssel zur Reliquienkammer von Zarokh", "refName": "Zarokh's Reliquary Key: Blessed Bonds", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "Schlüssel zur Reliquienkammer von Zarokh", "refName": "Zarokh's Reliquary Key: Sandstorm Visage", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "Schlüssel zur Reliquienkammer von Zarokh", "refName": "Zarokh's Reliquary Key: Sekhema's Resolve", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["fake_currency"], "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
-{"name": "Schlüssel zur Reliquienkammer von Zarokh", "refName": "Zarokh's Reliquary Key: Temporalis", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d9adae38a9/TwilightOrderReliquaryKeySanctum6.png", "tags": ["fake_currency"], "tradeTag": "temporalis", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "Schlüssel zur Reliquienkammer von Zarokh: Gegen die Dunkelheit", "refName": "Zarokh's Reliquary Key: Against the Darkness", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/67f96bbfc0/TwilightOrderReliquaryKeySanctum2.png", "tags": ["fake_currency"], "tradeTag": "against-the-darkness", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "Schlüssel zur Reliquienkammer von Zarokh: Gesegnete Verbindungen", "refName": "Zarokh's Reliquary Key: Blessed Bonds", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/351ca53587/TwilightOrderReliquaryKeySanctum4.png", "tags": ["fake_currency"], "tradeTag": "blessed-bonds", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "Schlüssel zur Reliquienkammer von Zarokh: Antlitz des Sandsturms", "refName": "Zarokh's Reliquary Key: Sandstorm Visage", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/243ec48d7d/TwilightOrderReliquaryKeySanctum3.png", "tags": ["fake_currency"], "tradeTag": "sandstorm-visage", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "Schlüssel zur Reliquienkammer von Zarokh: Sekhemas Entschlossenheit", "refName": "Zarokh's Reliquary Key: Sekhema's Resolve", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e6484afed0/TwilightOrderReliquaryKeySanctum5.png", "tags": ["fake_currency"], "tradeTag": "sekhemas-resolve", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
+{"name": "Schlüssel zur Reliquienkammer von Zarokh: Temporalis", "refName": "Zarokh's Reliquary Key: Temporalis", "namespace": "ITEM", "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5U2FuY3R1bTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d9adae38a9/TwilightOrderReliquaryKeySanctum6.png", "tags": ["fake_currency"], "tradeTag": "temporalis", "craftable": {"category": "VaultKey"}, "w": 1, "h": 1}
 {"name": "Eifererbogen", "refName": "Zealot Bow", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["vaal_basetype"], "craftable": {"category": "Bow"}, "w": 2, "h": 4}
 {"name": "Eifererkrone", "refName": "Zealot Crown", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Helmet"}, "armour": {"ar": [108, 108], "es": [38, 38]}, "w": 2, "h": 2}
 {"name": "Eiferer-Panzerhandschuhe", "refName": "Zealot Gauntlets", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_dex_armour"], "craftable": {"category": "Gloves"}, "armour": {"ar": [61, 61], "ev": [56, 56]}, "w": 2, "h": 2}
 {"name": "Eiferer-Großhammer", "refName": "Zealot Greathammer", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Two Hand Mace"}, "w": 2, "h": 4}
 {"name": "Zenitgewand", "refName": "Zenith Vestments", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["str_int_armour"], "craftable": {"category": "Body Armour"}, "armour": {"ar": [294, 294], "es": [101, 101]}, "w": 2, "h": 3}
-{"name": "[DNT] Bind Spectre Token", "refName": "[DNT] Bind Spectre Token", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
-{"name": "[DNT] Boat Charter", "refName": "[DNT] Boat Charter", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
-{"name": "[DNT] Bone Cultist Shield Boss Drop", "refName": "[DNT] Bone Cultist Shield Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Dredge Fiend Shaman Boss Drop", "refName": "[DNT] Dredge Fiend Shaman Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Eel Monster Boss Drop", "refName": "[DNT] Eel Monster Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Gargoyle Golem Drop", "refName": "[DNT] Gargoyle Golem Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Guillotine Executioner Drop", "refName": "[DNT] Guillotine Executioner Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Quadrilla Boss Drop", "refName": "[DNT] Quadrilla Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Scarecrow Drop", "refName": "[DNT] Scarecrow Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Treasure Deed", "refName": "[DNT] Treasure Deed", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
-{"name": "[DNT] Vaal Blood Priestess Boss Drop", "refName": "[DNT] Vaal Blood Priestess Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Vaal Sun Worshipper Boss Drop", "refName": "[DNT] Vaal Sun Worshipper Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
-{"name": "[DNT] Viper Napuatzi Drop", "refName": "[DNT] Viper Napuatzi Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Bind Spectre Token", "refName": "[DNT] Bind Spectre Token", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "Currency"}, "w": 1, "h": 1}
+{"name": "[DNT-UNUSED] Boat Charter", "refName": "[DNT] Boat Charter", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
+{"name": "[DNT-UNUSED] Bone Cultist Shield Boss Drop", "refName": "[DNT] Bone Cultist Shield Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Dredge Fiend Shaman Boss Drop", "refName": "[DNT] Dredge Fiend Shaman Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Eel Monster Boss Drop", "refName": "[DNT] Eel Monster Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Gargoyle Golem Drop", "refName": "[DNT] Gargoyle Golem Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Guillotine Executioner Drop", "refName": "[DNT] Guillotine Executioner Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Quadrilla Boss Drop", "refName": "[DNT] Quadrilla Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Scarecrow Drop", "refName": "[DNT] Scarecrow Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Treasure Deed", "refName": "[DNT] Treasure Deed", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 1, "h": 1}
+{"name": "[DNT-UNUSED] Vaal Blood Priestess Boss Drop", "refName": "[DNT] Vaal Blood Priestess Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Vaal Sun Worshipper Boss Drop", "refName": "[DNT] Vaal Sun Worshipper Boss Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
+{"name": "[DNT-UNUSED] Viper Napuatzi Drop", "refName": "[DNT] Viper Napuatzi Drop", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": ["quest_item"], "craftable": {"category": "QuestItem"}, "w": 2, "h": 2}
 {"name": "[UNUSED] Heist Test Reward Equipment", "refName": "[UNUSED] Heist Test Reward Equipment", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistEquipmentReward"}, "w": 1, "h": 1}
 {"name": "[UNUSED] Heist Test Tool", "refName": "[UNUSED] Heist Test Tool", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistEquipmentTool"}, "w": 2, "h": 2}
 {"name": "[UNUSED] Heist Test Utility Equipment", "refName": "[UNUSED] Heist Test Utility Equipment", "namespace": "ITEM", "icon": "%NOT_FOUND%", "tags": [], "craftable": {"category": "HeistEquipmentUtility"}, "w": 2, "h": 2}
@@ -3043,11 +3044,13 @@
 {"name": "Andvarius", "refName": "Andvarius", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Astramentis", "refName": "Astramentis", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Signalfeuer von Azis", "refName": "Beacon of Azis", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Kleinodträger", "refName": "Bijouborne", "namespace": "UNIQUE", "unique": {"base": "Double Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Schnalle des Geburtsrechts", "refName": "Birthright Buckle", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Schwarzflamme", "refName": "Blackflame", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Schwarzherz", "refName": "Blackheart", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Glühender Bund", "refName": "Blistering Bond", "namespace": "UNIQUE", "unique": {"base": "Ruby Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Brynabas", "refName": "Brynabas", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Berstender Zerfall", "refName": "Bursting Decay", "namespace": "UNIQUE", "unique": {"base": "Unset Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Ruf der Bruderschaft", "refName": "Call of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Herz des Gemetzels", "refName": "Carnage Heart", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Chor des Sturms", "refName": "Choir of the Storm", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
@@ -3057,12 +3060,16 @@
 {"name": "Dem Schicksal zum Trotz", "refName": "Defiance of Destiny", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Doedres Verdammung", "refName": "Doedre's Damning", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Traumfragmente", "refName": "Dream Fragments", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Immergreifender Ring", "refName": "Evergrasping Ring", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Auge des Chayula", "refName": "Eye of Chayula", "namespace": "UNIQUE", "unique": {"base": "Gold Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Feuerblume", "refName": "Fireflower", "namespace": "UNIQUE", "unique": {"base": "Solar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Fixierung des Yix", "refName": "Fixation of Yix", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Geschenke des Himmels", "refName": "Gifts from Above", "namespace": "UNIQUE", "unique": {"base": "Prismatic Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Glühschwarm", "refName": "Glowswarm", "namespace": "UNIQUE", "unique": {"base": "Lazuli Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Blutgürtel", "refName": "Goregirdle", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Kopfjäger", "refName": "Headhunter", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Des Herzens Windung", "refName": "Heartbound Loop", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Eisschlangenzahn", "refName": "Icefang Orbit", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Bildnis des Uldurn", "refName": "Idol of Uldurn", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Igniferis", "refName": "Igniferis", "namespace": "UNIQUE", "unique": {"base": "Crimson Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Infernoschnalle", "refName": "Infernoclasp", "namespace": "UNIQUE", "unique": {"base": "Plate Belt"}, "icon": "%NOT_FOUND%"}
@@ -3077,6 +3084,7 @@
 {"name": "Ursünde", "refName": "Original Sin", "namespace": "UNIQUE", "unique": {"base": "Amethyst Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Perandussiegel", "refName": "Perandus Seal", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Polarkreis", "refName": "Polcirkeln", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Geschätzter Schmerz", "refName": "Prized Pain", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Verehrtes Harz", "refName": "Revered Resin", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Gedicht der Zerbrechlichkeit", "refName": "Rondel of Fragility", "namespace": "UNIQUE", "unique": {"base": "Lunar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Ryslathas Schlinge", "refName": "Ryslatha's Coil", "namespace": "UNIQUE", "unique": {"base": "Ornate Belt"}, "icon": "%NOT_FOUND%"}
@@ -3086,22 +3094,29 @@
 {"name": "Shavronnes Tasche", "refName": "Shavronne's Satchel", "namespace": "UNIQUE", "unique": {"base": "Fine Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Schlangengrube", "refName": "Snakepit", "namespace": "UNIQUE", "unique": {"base": "Pearl Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Seelenleine", "refName": "Soul Tether", "namespace": "UNIQUE", "unique": {"base": "Long Belt"}, "icon": "%NOT_FOUND%"}
+{"name": "Stein von Lazhwar", "refName": "Stone of Lazhwar", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Qualvoller Schrei", "refName": "Strugglescream", "namespace": "UNIQUE", "unique": {"base": "Stellar Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Siegel der Trittsicherheit", "refName": "Surefooted Sigil", "namespace": "UNIQUE", "unique": {"base": "Jade Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Amboss", "refName": "The Anvil", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Wühler", "refName": "The Burrower", "namespace": "UNIQUE", "unique": {"base": "Topaz Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Der ewige Blick", "refName": "The Everlasting Gaze", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "The Gnashing Sash", "refName": "The Gnashing Sash", "namespace": "UNIQUE", "unique": {"base": "Wide Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Pandemonius", "refName": "The Pandemonius", "namespace": "UNIQUE", "unique": {"base": "Lapis Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Des Diebes Folter", "refName": "Thief's Torment", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Ungils Harmonie", "refName": "Ungil's Harmony", "namespace": "UNIQUE", "unique": {"base": "Azure Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Giftbiss", "refName": "Venopuncture", "namespace": "UNIQUE", "unique": {"base": "Iron Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Ventors Glücksspiel", "refName": "Ventor's Gamble", "namespace": "UNIQUE", "unique": {"base": "Gold Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Wachsamer Blick", "refName": "Vigilant View", "namespace": "UNIQUE", "unique": {"base": "Emerald Ring"}, "icon": "%NOT_FOUND%"}
+{"name": "Hüftschutz", "refName": "Waistgate", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Flüstern der Bruderschaft", "refName": "Whisper of the Brotherhood", "namespace": "UNIQUE", "unique": {"base": "Sapphire Ring"}, "icon": "%NOT_FOUND%"}
 {"name": "Xophs Blut", "refName": "Xoph's Blood", "namespace": "UNIQUE", "unique": {"base": "Amber Amulet"}, "icon": "%NOT_FOUND%"}
+{"name": "Joch des Leids", "refName": "Yoke of Suffering", "namespace": "UNIQUE", "unique": {"base": "Bloodstone Amulet"}, "icon": "%NOT_FOUND%"}
 {"name": "Zerphis Schöpfung", "refName": "Zerphi's Genesis", "namespace": "UNIQUE", "unique": {"base": "Heavy Belt"}, "icon": "%NOT_FOUND%"}
 {"name": "Ab Aeterno", "refName": "Ab Aeterno", "namespace": "UNIQUE", "unique": {"base": "Grand Cuisses"}, "icon": "%NOT_FOUND%"}
 {"name": "Aerisvanes Flügel", "refName": "Aerisvane's Wings", "namespace": "UNIQUE", "unique": {"base": "Burnished Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "Alkem Eira", "refName": "Alkem Eira", "namespace": "UNIQUE", "unique": {"base": "Blazon Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Heulen des Alphas", "refName": "Alpha's Howl", "namespace": "UNIQUE", "unique": {"base": "Armoured Cap"}, "icon": "%NOT_FOUND%"}
+{"name": "Apeps Überlegenheit", "refName": "Apep's Supremacy", "namespace": "UNIQUE", "unique": {"base": "Voodoo Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Schürze von Emiran", "refName": "Apron of Emiran", "namespace": "UNIQUE", "unique": {"base": "Hermit Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "Arvils Rad", "refName": "Arvil's Wheel", "namespace": "UNIQUE", "unique": {"base": "Hardwood Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "Aschefetzen", "refName": "Ashrend", "namespace": "UNIQUE", "unique": {"base": "Pathfinder Coat"}, "icon": "%NOT_FOUND%"}
@@ -3120,6 +3135,8 @@
 {"name": "Schwarzglut", "refName": "Blackgleam", "namespace": "UNIQUE", "unique": {"base": "Fire Quiver"}, "icon": "%NOT_FOUND%"}
 {"name": "Krone der schwarzen Sonne", "refName": "Black Sun Crest", "namespace": "UNIQUE", "unique": {"base": "Wrapped Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Gesegnete Verbindungen", "refName": "Blessed Bonds", "namespace": "UNIQUE", "unique": {"base": "Linen Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "Blutbarriere", "refName": "Bloodbarrier", "namespace": "UNIQUE", "unique": {"base": "Iron Buckler"}, "icon": "%NOT_FOUND%"}
+{"name": "Preis des Blutes", "refName": "Blood Price", "namespace": "UNIQUE", "unique": {"base": "Fierce Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Blaugeflammte Armschienen", "refName": "Blueflame Bracers", "namespace": "UNIQUE", "unique": {"base": "Goldcast Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "Gebeine des Ullr", "refName": "Bones of Ullr", "namespace": "UNIQUE", "unique": {"base": "Lattice Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "Dornenpanzer", "refName": "Bramblejack", "namespace": "UNIQUE", "unique": {"base": "Rusted Cuirass"}, "icon": "%NOT_FOUND%"}
@@ -3128,8 +3145,11 @@
 {"name": "Borstenschwein", "refName": "Bristleboar", "namespace": "UNIQUE", "unique": {"base": "Leather Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "Bronzebart", "refName": "Bronzebeard", "namespace": "UNIQUE", "unique": {"base": "Horned Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Buschwerk", "refName": "Bushwhack", "namespace": "UNIQUE", "unique": {"base": "Lizardscale Boots"}, "icon": "%NOT_FOUND%"}
+{"name": "Calgyras Arkus", "refName": "Calgyra's Arc", "namespace": "UNIQUE", "unique": {"base": "Ornate Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "Kerzenmacher", "refName": "Candlemaker", "namespace": "UNIQUE", "unique": {"base": "Sombre Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "Aasruf", "refName": "Carrion Call", "namespace": "UNIQUE", "unique": {"base": "Engraved Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Chernobogs Pfeiler", "refName": "Chernobog's Pillar", "namespace": "UNIQUE", "unique": {"base": "Blacksteel Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Umhang des Ungehorsams", "refName": "Cloak of Defiance", "namespace": "UNIQUE", "unique": {"base": "Havoc Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "Umhang der Flammen", "refName": "Cloak of Flame", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "Blutroter Mantel", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Chain Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "Cornathaum", "refName": "Cornathaum", "namespace": "UNIQUE", "unique": {"base": "Heavy Crown"}, "icon": "%NOT_FOUND%"}
@@ -3137,10 +3157,12 @@
 {"name": "Leichenschlurfer", "refName": "Corpsewade", "namespace": "UNIQUE", "unique": {"base": "Iron Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Blutroter Mantel", "refName": "Coat of Red", "namespace": "UNIQUE", "unique": {"base": "Gilded Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "Wappen von Ardura", "refName": "Crest of Ardura", "namespace": "UNIQUE", "unique": {"base": "Jingling Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Augenkrone", "refName": "Crown of Eyes", "namespace": "UNIQUE", "unique": {"base": "Coral Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "Krone des bleichen Königs", "refName": "Crown of the Pale King", "namespace": "UNIQUE", "unique": {"base": "Cultist Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Krone des Siegers", "refName": "Crown of the Victor", "namespace": "UNIQUE", "unique": {"base": "Iron Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Dornenkrone", "refName": "Crown of Thorns", "namespace": "UNIQUE", "unique": {"base": "Twig Circlet"}, "icon": "%NOT_FOUND%"}
 {"name": "Dunkelschimmervektoren", "refName": "Darkray Vectors", "namespace": "UNIQUE", "unique": {"base": "Braced Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "Der artikulierte Tod", "refName": "Death Articulated", "namespace": "UNIQUE", "unique": {"base": "Ornate Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "Schicksalsschlag", "refName": "Broadstroke", "namespace": "UNIQUE", "unique": {"base": "Doubled Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "Todesröcheln", "refName": "Death Rattle", "namespace": "UNIQUE", "unique": {"base": "Twig Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Totenglocke", "refName": "Deidbell", "namespace": "UNIQUE", "unique": {"base": "Elite Greathelm"}, "icon": "%NOT_FOUND%"}
@@ -3150,11 +3172,16 @@
 {"name": "Doedres Talent", "refName": "Doedre's Tenure", "namespace": "UNIQUE", "unique": {"base": "Stitched Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "Unheilspforte", "refName": "Doomgate", "namespace": "UNIQUE", "unique": {"base": "Braced Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Doryanis Prototyp", "refName": "Doryani's Prototype", "namespace": "UNIQUE", "unique": {"base": "Scale Mail"}, "icon": "%NOT_FOUND%"}
+{"name": "Schreckensfaust", "refName": "Dreadfist", "namespace": "UNIQUE", "unique": {"base": "Bolstered Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Dunkelhalt", "refName": "Dunkelhalt", "namespace": "UNIQUE", "unique": {"base": "Leather Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "Staubgeborene Blüte", "refName": "Dustbloom", "namespace": "UNIQUE", "unique": {"base": "Studded Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "Edyrn's Stoßzähne", "refName": "Edyrn's Tusks", "namespace": "UNIQUE", "unique": {"base": "Iron Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Abbild der Grausamkeit", "refName": "Effigy of Cruelty", "namespace": "UNIQUE", "unique": {"base": "Antler Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Elevore", "refName": "Elevore", "namespace": "UNIQUE", "unique": {"base": "Hunter Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Griff des Kaiserreichs", "refName": "Empire's Grasp", "namespace": "UNIQUE", "unique": {"base": "Titan Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "Umfassende Morgendämmerung", "refName": "Enfolding Dawn", "namespace": "UNIQUE", "unique": {"base": "Pilgrim Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "Erians Kopfsteinpflaster", "refName": "Erian's Cobble", "namespace": "UNIQUE", "unique": {"base": "Guarded Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Essentia Sanguis", "refName": "Essentia Sanguis", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "Höhepunkt der Ezomyten", "refName": "Ezomyte Peak", "namespace": "UNIQUE", "unique": {"base": "Soldier Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Gefiederte Festung", "refName": "Feathered Fortress", "namespace": "UNIQUE", "unique": {"base": "Crescent Targe"}, "icon": "%NOT_FOUND%"}
 {"name": "Verbotener Blick", "refName": "Forbidden Gaze", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
@@ -3163,6 +3190,7 @@
 {"name": "Geistermarsch", "refName": "Ghostmarch", "namespace": "UNIQUE", "unique": {"base": "Threaded Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "Geisterschauder", "refName": "Ghostwrithe", "namespace": "UNIQUE", "unique": {"base": "Tattered Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "Verschleiertes Chaos", "refName": "Glimpse of Chaos", "namespace": "UNIQUE", "unique": {"base": "Tribal Mask"}, "icon": "%NOT_FOUND%"}
+{"name": "Zwielichtrobe", "refName": "Gloamgown", "namespace": "UNIQUE", "unique": {"base": "Elementalist Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "Mantel der Schwermut", "refName": "Gloomform", "namespace": "UNIQUE", "unique": {"base": "Waxed Jacket"}, "icon": "%NOT_FOUND%"}
 {"name": "Goldkranz", "refName": "Goldrim", "namespace": "UNIQUE", "unique": {"base": "Felt Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "Leichendieb", "refName": "Gravebind", "namespace": "UNIQUE", "unique": {"base": "Rope Cuffs"}, "icon": "%NOT_FOUND%"}
@@ -3170,11 +3198,15 @@
 {"name": "Vergrauung", "refName": "Greymake", "namespace": "UNIQUE", "unique": {"base": "Brimmed Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "Griff des Winters", "refName": "Grip of Winter", "namespace": "UNIQUE", "unique": {"base": "Firm Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "Hand der Weisheit und Tatkraft", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Furtive Wraps"}, "icon": "%NOT_FOUND%"}
+{"name": "Hand der Weisheit und Tatkraft", "refName": "Hand of Wisdom and Action", "namespace": "UNIQUE", "unique": {"base": "Spiral Wraps"}, "icon": "%NOT_FOUND%"}
 {"name": "Hass-Schmiede", "refName": "Hateforge", "namespace": "UNIQUE", "unique": {"base": "Moulded Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Heißkalt", "refName": "Heatshiver", "namespace": "UNIQUE", "unique": {"base": "Velvet Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "Hörner von Bynden", "refName": "Horns of Bynden", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Traumhülle", "refName": "Husk of Dreams", "namespace": "UNIQUE", "unique": {"base": "Shaman Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "Hyrris Wut", "refName": "Hyrri's Ire", "namespace": "UNIQUE", "unique": {"base": "Armoured Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "Eisgrab", "refName": "Icetomb", "namespace": "UNIQUE", "unique": {"base": "Mail Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "Untätige Hände", "refName": "Idle Hands", "namespace": "UNIQUE", "unique": {"base": "Sectioned Bracers"}, "icon": "%NOT_FOUND%"}
+{"name": "Indigon", "refName": "Indigon", "namespace": "UNIQUE", "unique": {"base": "Magus Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "Innsmouth", "refName": "Innsmouth", "namespace": "UNIQUE", "unique": {"base": "Shabby Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "Eisenumklammerung", "refName": "Irongrasp", "namespace": "UNIQUE", "unique": {"base": "Vagabond Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "Eisenritt", "refName": "Ironride", "namespace": "UNIQUE", "unique": {"base": "Visored Helm"}, "icon": "%NOT_FOUND%"}
@@ -3186,6 +3218,7 @@
 {"name": "Kitokos Stromstärke", "refName": "Kitoko's Current", "namespace": "UNIQUE", "unique": {"base": "Jewelled Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "Anzüglicher Blick", "refName": "Leer Cast", "namespace": "UNIQUE", "unique": {"base": "Hooded Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "Schritt der Legion", "refName": "Legionstride", "namespace": "UNIQUE", "unique": {"base": "Rough Greaves"}, "icon": "%NOT_FOUND%"}
+{"name": "Leopolds Beifall", "refName": "Leopold's Applause", "namespace": "UNIQUE", "unique": {"base": "Embroidered Gloves"}, "icon": "%NOT_FOUND%"}
 {"name": "Lochtoniale Schmeichler", "refName": "Lochtonial Caress", "namespace": "UNIQUE", "unique": {"base": "Tempered Mitts"}, "icon": "%NOT_FOUND%"}
 {"name": "Leuchtender Schritt", "refName": "Luminous Pace", "namespace": "UNIQUE", "unique": {"base": "Straw Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "Lycosidae", "refName": "Lycosidae", "namespace": "UNIQUE", "unique": {"base": "Rampart Tower Shield"}, "icon": "%NOT_FOUND%"}
@@ -3197,6 +3230,8 @@
 {"name": "Morior Invictus", "refName": "Morior Invictus", "namespace": "UNIQUE", "unique": {"base": "Grand Regalia"}, "icon": "%NOT_FOUND%"}
 {"name": "Myris Uxor", "refName": "Myris Uxor", "namespace": "UNIQUE", "unique": {"base": "Covert Hood"}, "icon": "%NOT_FOUND%"}
 {"name": "Nekromantel", "refName": "Necromantle", "namespace": "UNIQUE", "unique": {"base": "Bone Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "Nachtschuppe", "refName": "Nightscale", "namespace": "UNIQUE", "unique": {"base": "Pauascale Gloves"}, "icon": "%NOT_FOUND%"}
+{"name": "Nokturne", "refName": "Nocturne", "namespace": "UNIQUE", "unique": {"base": "Wooden Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "Nordpfote", "refName": "Northpaw", "namespace": "UNIQUE", "unique": {"base": "Suede Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "Eichenschwur", "refName": "Oaksworn", "namespace": "UNIQUE", "unique": {"base": "Sigil Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Oberns Bastion", "refName": "Obern's Bastion", "namespace": "UNIQUE", "unique": {"base": "Stacked Sabatons"}, "icon": "%NOT_FOUND%"}
@@ -3207,34 +3242,56 @@
 {"name": "Machtvoller Tritt", "refName": "Powertread", "namespace": "UNIQUE", "unique": {"base": "Hunting Shoes"}, "icon": "%NOT_FOUND%"}
 {"name": "Pragmatismus", "refName": "Pragmatism", "namespace": "UNIQUE", "unique": {"base": "Explorer Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "Stoßgebete für den Regen", "refName": "Prayers for Rain", "namespace": "UNIQUE", "unique": {"base": "Keth Raiment"}, "icon": "%NOT_FOUND%"}
+{"name": "Spektralwächter", "refName": "Prism Guardian", "namespace": "UNIQUE", "unique": {"base": "Intricate Crest Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Quatls Häutung", "refName": "Quatl's Molt", "namespace": "UNIQUE", "unique": {"base": "Serpentscale Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "Königin des Waldes", "refName": "Queen of the Forest", "namespace": "UNIQUE", "unique": {"base": "Smuggler Coat"}, "icon": "%NOT_FOUND%"}
 {"name": "Strahlende Trauer", "refName": "Radiant Grief", "namespace": "UNIQUE", "unique": {"base": "Lace Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Rathpith-Globus", "refName": "Rathpith Globe", "namespace": "UNIQUE", "unique": {"base": "Sacred Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Rückenschutz", "refName": "Rearguard", "namespace": "UNIQUE", "unique": {"base": "Blunt Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Rotklingen-Banner", "refName": "Redblade Banner", "namespace": "UNIQUE", "unique": {"base": "Heraldric Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Rotblitz-Ableiter", "refName": "Redflare Conduit", "namespace": "UNIQUE", "unique": {"base": "Anchorite Garb"}, "icon": "%NOT_FOUND%"}
 {"name": "Auferstehung des Phönix", "refName": "Rise of the Phoenix", "namespace": "UNIQUE", "unique": {"base": "Omen Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Rondel de Ezo", "refName": "Rondel de Ezo", "namespace": "UNIQUE", "unique": {"base": "Plated Buckler"}, "icon": "%NOT_FOUND%"}
+{"name": "Sacrosanctum", "refName": "Sacrosanctum", "namespace": "UNIQUE", "unique": {"base": "Corvus Mantle"}, "icon": "%NOT_FOUND%"}
 {"name": "Saffells List", "refName": "Saffell's Frame", "namespace": "UNIQUE", "unique": {"base": "Emblem Crest Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Seidensand", "refName": "Sands of Silk", "namespace": "UNIQUE", "unique": {"base": "Shrouded Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "Antlitz des Sandsturms", "refName": "Sandstorm Visage", "namespace": "UNIQUE", "unique": {"base": "Chain Tiara"}, "icon": "%NOT_FOUND%"}
+{"name": "Schandmaske", "refName": "Scold's Bridle", "namespace": "UNIQUE", "unique": {"base": "Jade Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "Lektion der Schlange", "refName": "Serpent's Lesson", "namespace": "UNIQUE", "unique": {"base": "Tonal Focus"}, "icon": "%NOT_FOUND%"}
 {"name": "Fesseln des Elends", "refName": "Shackles of the Wretched", "namespace": "UNIQUE", "unique": {"base": "Aged Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "Sierrisches Erbe", "refName": "Sierran Inheritance", "namespace": "UNIQUE", "unique": {"base": "Marabout Garb"}, "icon": "%NOT_FOUND%"}
+{"name": "Silks of Veneration", "refName": "Silks of Veneration", "namespace": "UNIQUE", "unique": {"base": "Enlightened Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Silberdorn", "refName": "Silverthorne", "namespace": "UNIQUE", "unique": {"base": "Spiked Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "Sine Aequo", "refName": "Sine Aequo", "namespace": "UNIQUE", "unique": {"base": "Grand Manchettes"}, "icon": "%NOT_FOUND%"}
 {"name": "Haut der Ergebenen", "refName": "Skin of the Loyal", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "Schlangenbiss", "refName": "Snakebite", "namespace": "UNIQUE", "unique": {"base": "Spined Bracers"}, "icon": "%NOT_FOUND%"}
 {"name": "Solus Ipse", "refName": "Solus Ipse", "namespace": "UNIQUE", "unique": {"base": "Grand Visage"}, "icon": "%NOT_FOUND%"}
+{"name": "Seelenmantel", "refName": "Soul Mantle", "namespace": "UNIQUE", "unique": {"base": "Sacrificial Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "Starkonjas Schädel", "refName": "Starkonja's Head", "namespace": "UNIQUE", "unique": {"base": "Leatherbound Hood"}, "icon": "%NOT_FOUND%"}
+{"name": "Sonnensplitter", "refName": "Sunsplinter", "namespace": "UNIQUE", "unique": {"base": "Array Buckler"}, "icon": "%NOT_FOUND%"}
 {"name": "Svalinn", "refName": "Svalinn", "namespace": "UNIQUE", "unique": {"base": "Crucible Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Tabula Rasa", "refName": "Tabula Rasa", "namespace": "UNIQUE", "unique": {"base": "Garment"}, "icon": "%NOT_FOUND%"}
 {"name": "Temporalis", "refName": "Temporalis", "namespace": "UNIQUE", "unique": {"base": "Silk Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "Tetzlapokals Verlangen", "refName": "Tetzlapokal's Desire", "namespace": "UNIQUE", "unique": {"base": "Votive Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Grabhügelbewohner", "refName": "The Barrow Dweller", "namespace": "UNIQUE", "unique": {"base": "Rogue Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "Der schwarze Zweifel", "refName": "The Black Doubt", "namespace": "UNIQUE", "unique": {"base": "Hexer's Robe"}, "icon": "%NOT_FOUND%"}
+{"name": "Die schwarze Insignie", "refName": "The Black Insignia", "namespace": "UNIQUE", "unique": {"base": "Corsair Cap"}, "icon": "%NOT_FOUND%"}
 {"name": "Messingkuppel", "refName": "The Brass Dome", "namespace": "UNIQUE", "unique": {"base": "Champion Cuirass"}, "icon": "%NOT_FOUND%"}
+{"name": "Der Regenbringer", "refName": "The Bringer of Rain", "namespace": "UNIQUE", "unique": {"base": "Decorated Helm"}, "icon": "%NOT_FOUND%"}
+{"name": "Das nahende Unheil", "refName": "The Coming Calamity", "namespace": "UNIQUE", "unique": {"base": "Heroic Armour"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Schwur", "refName": "The Covenant", "namespace": "UNIQUE", "unique": {"base": "Altar Robe"}, "icon": "%NOT_FOUND%"}
 {"name": "Das tanzende Trugbild", "refName": "The Dancing Mirage", "namespace": "UNIQUE", "unique": {"base": "Wayfarer Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "Der tiefste Turm", "refName": "The Deepest Tower", "namespace": "UNIQUE", "unique": {"base": "Spiritbone Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Das verschlingende Diadem", "refName": "The Devouring Diadem", "namespace": "UNIQUE", "unique": {"base": "Wicker Tiara"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Ewige Funke", "refName": "The Eternal Spark", "namespace": "UNIQUE", "unique": {"base": "Crystal Focus"}, "icon": "%NOT_FOUND%"}
+{"name": "Die gefallene Formation", "refName": "The Fallen Formation", "namespace": "UNIQUE", "unique": {"base": "Lamellar Mail"}, "icon": "%NOT_FOUND%"}
 {"name": "Die ausgehöhlte Maske", "refName": "The Hollow Mask", "namespace": "UNIQUE", "unique": {"base": "Hewn Mask"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Straßenkrieger", "refName": "The Immortan", "namespace": "UNIQUE", "unique": {"base": "Raider Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "Das endlose Streben", "refName": "The Infinite Pursuit", "namespace": "UNIQUE", "unique": {"base": "Bronze Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Der fahrende Ritter", "refName": "The Knight-errant", "namespace": "UNIQUE", "unique": {"base": "Mail Sabatons"}, "icon": "%NOT_FOUND%"}
+{"name": "The Lethal Draw", "refName": "The Lethal Draw", "namespace": "UNIQUE", "unique": {"base": "Sacral Quiver"}, "icon": "%NOT_FOUND%"}
+{"name": "Der Wandelstern", "refName": "The Mutable Star", "namespace": "UNIQUE", "unique": {"base": "Cleric Vestments"}, "icon": "%NOT_FOUND%"}
+{"name": "Die Fesseln des Gefangenen", "refName": "The Prisoner's Manacles", "namespace": "UNIQUE", "unique": {"base": "Diviner Cuffs"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Rattenkäfig", "refName": "The Rat Cage", "namespace": "UNIQUE", "unique": {"base": "Scout's Vest"}, "icon": "%NOT_FOUND%"}
 {"name": "Der lächelnde Ritter", "refName": "The Smiling Knight", "namespace": "UNIQUE", "unique": {"base": "Cowled Helm"}, "icon": "%NOT_FOUND%"}
 {"name": "Die Hingabe", "refName": "The Surrender", "namespace": "UNIQUE", "unique": {"base": "Stone Tower Shield"}, "icon": "%NOT_FOUND%"}
@@ -3248,18 +3305,37 @@
 {"name": "Titanenfäulnis-Kataphrakt", "refName": "Titanrot Cataphract", "namespace": "UNIQUE", "unique": {"base": "Maraketh Cuirass"}, "icon": "%NOT_FOUND%"}
 {"name": "Trampelzeh", "refName": "Trampletoe", "namespace": "UNIQUE", "unique": {"base": "Trimmed Greaves"}, "icon": "%NOT_FOUND%"}
 {"name": "Baumfinger", "refName": "Treefingers", "namespace": "UNIQUE", "unique": {"base": "Riveted Mitts"}, "icon": "%NOT_FOUND%"}
+{"name": "Valakos Laster", "refName": "Valako's Vice", "namespace": "UNIQUE", "unique": {"base": "Plate Gauntlets"}, "icon": "%NOT_FOUND%"}
 {"name": "Schleier der Nacht", "refName": "Veil of the Night", "namespace": "UNIQUE", "unique": {"base": "Martyr Crown"}, "icon": "%NOT_FOUND%"}
 {"name": "Antlitz von Ayah", "refName": "Visage of Ayah", "namespace": "UNIQUE", "unique": {"base": "Beaded Circlet"}, "icon": "%NOT_FOUND%"}
+{"name": "Vis Mortis", "refName": "Vis Mortis", "namespace": "UNIQUE", "unique": {"base": "Plated Raiment"}, "icon": "%NOT_FOUND%"}
 {"name": "Volls Protektor", "refName": "Voll's Protector", "namespace": "UNIQUE", "unique": {"base": "Ironclad Vestments"}, "icon": "%NOT_FOUND%"}
 {"name": "Pfad der Zerstörung", "refName": "Wake of Destruction", "namespace": "UNIQUE", "unique": {"base": "Secured Leggings"}, "icon": "%NOT_FOUND%"}
 {"name": "Wanderndes Reliquiar", "refName": "Wandering Reliquary", "namespace": "UNIQUE", "unique": {"base": "Steel Plate"}, "icon": "%NOT_FOUND%"}
 {"name": "Wanderlust", "refName": "Wanderlust", "namespace": "UNIQUE", "unique": {"base": "Wrapped Sandals"}, "icon": "%NOT_FOUND%"}
+{"name": "Wellenformer", "refName": "Waveshaper", "namespace": "UNIQUE", "unique": {"base": "Tideseer Mantle"}, "icon": "%NOT_FOUND%"}
+{"name": "Wittwenherrschaft", "refName": "Widow's Reign", "namespace": "UNIQUE", "unique": {"base": "Knight Armour"}, "icon": "%NOT_FOUND%"}
+{"name": "Fenster zum Paradies", "refName": "Window to Paradise", "namespace": "UNIQUE", "unique": {"base": "Barricade Tower Shield"}, "icon": "%NOT_FOUND%"}
 {"name": "Windschreier", "refName": "Windscream", "namespace": "UNIQUE", "unique": {"base": "Feathered Sandals"}, "icon": "%NOT_FOUND%"}
 {"name": "Schwingen von Caelyn", "refName": "Wings of Caelyn", "namespace": "UNIQUE", "unique": {"base": "Rusted Greathelm"}, "icon": "%NOT_FOUND%"}
 {"name": "Wunderschreiter", "refName": "Wondertrap", "namespace": "UNIQUE", "unique": {"base": "Silk Slippers"}, "icon": "%NOT_FOUND%"}
 {"name": "Wolfsfluch", "refName": "Wulfsbane", "namespace": "UNIQUE", "unique": {"base": "Painted Tower Shield"}, "icon": "%NOT_FOUND%"}
+{"name": "Yriels Pflege", "refName": "Yriel's Fostering", "namespace": "UNIQUE", "unique": {"base": "Strider Vest"}, "icon": "%NOT_FOUND%"}
+{"name": "Zerphis Umhang", "refName": "Zerphi's Serape", "namespace": "UNIQUE", "unique": {"base": "Scalper's Jacket"}, "icon": "%NOT_FOUND%"}
+{"name": "Arakaalis Geschenk", "refName": "Arakaali's Gift", "namespace": "UNIQUE", "unique": {"base": "Antidote Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Beiras Qualen", "refName": "Beira's Anguish", "namespace": "UNIQUE", "unique": {"base": "Dousing Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Atem der Berge", "refName": "Breath of the Mountains", "namespace": "UNIQUE", "unique": {"base": "Sapphire Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Verlorener Armreif", "refName": "Forsaken Bangle", "namespace": "UNIQUE", "unique": {"base": "Amethyst Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Für Utopia", "refName": "For Utopia", "namespace": "UNIQUE", "unique": {"base": "Stone Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "Schmelzender Mahlstrom", "refName": "Melting Maelstrom", "namespace": "UNIQUE", "unique": {"base": "Ultimate Mana Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Hoffnungsschimmer", "refName": "Nascent Hope", "namespace": "UNIQUE", "unique": {"base": "Thawing Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Ngamahus Auserwählte", "refName": "Ngamahu's Chosen", "namespace": "UNIQUE", "unique": {"base": "Ruby Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "Olroths Entschlossenheit", "refName": "Olroth's Resolve", "namespace": "UNIQUE", "unique": {"base": "Ultimate Life Flask"}, "icon": "%NOT_FOUND%"}
+{"name": "Ritus der Passage", "refName": "Rite of Passage", "namespace": "UNIQUE", "unique": {"base": "Golden Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Sanguis Heroum", "refName": "Sanguis Heroum", "namespace": "UNIQUE", "unique": {"base": "Staunching Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Die schwarze Katze", "refName": "The Black Cat", "namespace": "UNIQUE", "unique": {"base": "Grounding Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Der Fall der Axt", "refName": "The Fall of the Axe", "namespace": "UNIQUE", "unique": {"base": "Silver Charm"}, "icon": "%NOT_FOUND%"}
+{"name": "Valakos Gebrüll", "refName": "Valako's Roar", "namespace": "UNIQUE", "unique": {"base": "Topaz Charm"}, "icon": "%NOT_FOUND%"}
 {"name": "Gegen die Dunkelheit", "refName": "Against the Darkness", "namespace": "UNIQUE", "unique": {"base": "Time-Lost Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Kontrollierte Metamorphose", "refName": "Controlled Metamorphosis", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Aus dem Nichts", "refName": "From Nothing", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
@@ -3270,12 +3346,24 @@
 {"name": "Megalomaniac", "refName": "Megalomaniac", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Prisma des Glaubens", "refName": "Prism of Belief", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
 {"name": "Die Geschmückten", "refName": "The Adorned", "namespace": "UNIQUE", "unique": {"base": "Diamond"}, "icon": "%NOT_FOUND%"}
+{"name": "Klarer Himmel", "refName": "Clear Skies", "namespace": "UNIQUE", "unique": {"base": "Delirium Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Grausame Vorherrschaft", "refName": "Cruel Hegemony", "namespace": "UNIQUE", "unique": {"base": "Overseer Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Vergessen von der Zeit", "refName": "Forgotten By Time", "namespace": "UNIQUE", "unique": {"base": "Expedition Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Freiheit des Glaubens", "refName": "Freedom of Faith", "namespace": "UNIQUE", "unique": {"base": "Ritual Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Saison der Jagd", "refName": "Season of the Hunt", "namespace": "UNIQUE", "unique": {"base": "Overseer Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Das große Projekt", "refName": "The Grand Project", "namespace": "UNIQUE", "unique": {"base": "Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Visionen des Paradieses", "refName": "Visions of Paradise", "namespace": "UNIQUE", "unique": {"base": "Precursor Tablet"}, "icon": "%NOT_FOUND%"}
+{"name": "Wraeclast unter Belagerung", "refName": "Wraeclast Besieged", "namespace": "UNIQUE", "unique": {"base": "Breach Precursor Tablet"}, "icon": "%NOT_FOUND%"}
 {"name": "Blauzunge", "refName": "Bluetongue", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "Hirnschleuder", "refName": "Brain Rattler", "namespace": "UNIQUE", "unique": {"base": "Studded Greatclub"}, "icon": "%NOT_FOUND%"}
 {"name": "Brynhands Zeichen", "refName": "Brynhand's Mark", "namespace": "UNIQUE", "unique": {"base": "Wooden Club"}, "icon": "%NOT_FOUND%"}
+{"name": "Kettenstachel", "refName": "Chainsting", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Chober Chaber", "refName": "Chober Chaber", "namespace": "UNIQUE", "unique": {"base": "Leaden Greathammer"}, "icon": "%NOT_FOUND%"}
 {"name": "Einstürzender Horizont", "refName": "Collapsing Horizon", "namespace": "UNIQUE", "unique": {"base": "Wyrm Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Fluchschnitzer", "refName": "Cursecarver", "namespace": "UNIQUE", "unique": {"base": "Acrid Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Daevatas Wind", "refName": "Daevata's Wind", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Harfe des Todes", "refName": "Death's Harp", "namespace": "UNIQUE", "unique": {"base": "Dualstring Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "Verhängnisfeder", "refName": "Doomfletch", "namespace": "UNIQUE", "unique": {"base": "Composite Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "Mahnwache in der Dunkelheit", "refName": "Dusk Vigil", "namespace": "UNIQUE", "unique": {"base": "Ashen Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "Erdenbund", "refName": "Earthbound", "namespace": "UNIQUE", "unique": {"base": "Voltaic Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "Enezuns Aufladung", "refName": "Enezun's Charge", "namespace": "UNIQUE", "unique": {"base": "Volatile Wand"}, "icon": "%NOT_FOUND%"}
@@ -3288,20 +3376,20 @@
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Corroded Longsword"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Charred Shortsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Chain Flail"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Holy Flail"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Arched Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Rippled Greatsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Skinning Knife"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Executioner Greataxe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Iron Greatsword"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
-{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Crone Knife"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Bearded Axe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Broadsword"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Splitting Greataxe"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Simple Dagger"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Moon Dagger"}, "icon": "%NOT_FOUND%"}
+{"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hook Axe"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Hunting Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "War Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "INCOMPLETE", "refName": "INCOMPLETE", "namespace": "UNIQUE", "unique": {"base": "Blessed Claymore"}, "icon": "%NOT_FOUND%"}
@@ -3314,7 +3402,9 @@
 {"name": "Lebenszweiglein", "refName": "Lifesprig", "namespace": "UNIQUE", "unique": {"base": "Attuned Wand"}, "icon": "%NOT_FOUND%"}
 {"name": "Matsya", "refName": "Matsya", "namespace": "UNIQUE", "unique": {"base": "Crescent Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "Nebelgeflüster", "refName": "Mist Whisper", "namespace": "UNIQUE", "unique": {"base": "Makeshift Crossbow"}, "icon": "%NOT_FOUND%"}
+{"name": "Mjölner", "refName": "Mjölner", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "Nazirs Urteil", "refName": "Nazir's Judgement", "namespace": "UNIQUE", "unique": {"base": "Steelpoint Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Nebuloch", "refName": "Nebuloch", "namespace": "UNIQUE", "unique": {"base": "Execratus Hammer"}, "icon": "%NOT_FOUND%"}
 {"name": "Olrovasara", "refName": "Olrovasara", "namespace": "UNIQUE", "unique": {"base": "Torment Club"}, "icon": "%NOT_FOUND%"}
 {"name": "Pfeiler des gefangenen Gottes", "refName": "Pillar of the Caged God", "namespace": "UNIQUE", "unique": {"base": "Long Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "Quecholli", "refName": "Quecholli", "namespace": "UNIQUE", "unique": {"base": "Crumbling Maul"}, "icon": "%NOT_FOUND%"}
@@ -3322,20 +3412,33 @@
 {"name": "Zinnenfalke", "refName": "Rampart Raptor", "namespace": "UNIQUE", "unique": {"base": "Tense Crossbow"}, "icon": "%NOT_FOUND%"}
 {"name": "Rotspitze", "refName": "Redbeak", "namespace": "UNIQUE", "unique": {"base": "Shortsword"}, "icon": "%NOT_FOUND%"}
 {"name": "Heilige Flamme", "refName": "Sacred Flame", "namespace": "UNIQUE", "unique": {"base": "Shrine Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "Saithas Speer", "refName": "Saitha's Spear", "namespace": "UNIQUE", "unique": {"base": "Barbed Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Wohlgemuter Wahrsager", "refName": "Sanguine Diviner", "namespace": "UNIQUE", "unique": {"base": "Bone Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Geformtes Leid", "refName": "Sculpted Suffering", "namespace": "UNIQUE", "unique": {"base": "Warpick"}, "icon": "%NOT_FOUND%"}
 {"name": "Sternenklar", "refName": "Seeing Stars", "namespace": "UNIQUE", "unique": {"base": "Plated Mace"}, "icon": "%NOT_FOUND%"}
+{"name": "Shyaba", "refName": "Shyaba", "namespace": "UNIQUE", "unique": {"base": "Temple Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "Herr der Splitter", "refName": "Sire of Shards", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "Himmelsspalter", "refName": "Skysliver", "namespace": "UNIQUE", "unique": {"base": "Winged Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "Spaltzunge", "refName": "Slivertongue", "namespace": "UNIQUE", "unique": {"base": "Zealot Bow"}, "icon": "%NOT_FOUND%"}
+{"name": "Spitze des Zorns", "refName": "Spire of Ire", "namespace": "UNIQUE", "unique": {"base": "Helix Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Splitterherz", "refName": "Splinterheart", "namespace": "UNIQUE", "unique": {"base": "Recurve Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "Splitter von Loratta", "refName": "Splinter of Loratta", "namespace": "UNIQUE", "unique": {"base": "Hardwood Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "Tangletounge", "refName": "Tangletongue", "namespace": "UNIQUE", "unique": {"base": "Forked Spear"}, "icon": "%NOT_FOUND%"}
 {"name": "Taryns Schauder", "refName": "Taryn's Shiver", "namespace": "UNIQUE", "unique": {"base": "Gelid Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Blutdorn", "refName": "The Blood Thorn", "namespace": "UNIQUE", "unique": {"base": "Wrapped Quarterstaff"}, "icon": "%NOT_FOUND%"}
 {"name": "Die Bürde der Schatten", "refName": "The Burden of Shadows", "namespace": "UNIQUE", "unique": {"base": "Chiming Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "Der tanzende Derwisch", "refName": "The Dancing Dervish", "namespace": "UNIQUE", "unique": {"base": "Scimitar"}, "icon": "%NOT_FOUND%"}
 {"name": "Der dunkle Schänder", "refName": "The Dark Defiler", "namespace": "UNIQUE", "unique": {"base": "Rattling Sceptre"}, "icon": "%NOT_FOUND%"}
+{"name": "Das leere Gebrüll", "refName": "The Empty Roar", "namespace": "UNIQUE", "unique": {"base": "Cultist Greathammer"}, "icon": "%NOT_FOUND%"}
+{"name": "Der Hammer des Glaubens", "refName": "The Hammer of Faith", "namespace": "UNIQUE", "unique": {"base": "Giant Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "Sengende Berührung", "refName": "The Searing Touch", "namespace": "UNIQUE", "unique": {"base": "Pyrophyte Staff"}, "icon": "%NOT_FOUND%"}
 {"name": "Der Wachposten", "refName": "The Sentry", "namespace": "UNIQUE", "unique": {"base": "Gothic Quarterstaff"}, "icon": "%NOT_FOUND%"}
+{"name": "Der boshafte Federkiel", "refName": "The Wicked Quill", "namespace": "UNIQUE", "unique": {"base": "Withered Wand"}, "icon": "%NOT_FOUND%"}
+{"name": "Wellenbrecher", "refName": "Tidebreaker", "namespace": "UNIQUE", "unique": {"base": "Pointed Maul"}, "icon": "%NOT_FOUND%"}
 {"name": "Grabenruf", "refName": "Trenchtimbre", "namespace": "UNIQUE", "unique": {"base": "Spiked Club"}, "icon": "%NOT_FOUND%"}
 {"name": "Trephina", "refName": "Trephina", "namespace": "UNIQUE", "unique": {"base": "Forge Maul"}, "icon": "%NOT_FOUND%"}
+{"name": "Griff der Tyrannei", "refName": "Tyranny's Grip", "namespace": "UNIQUE", "unique": {"base": "Ironhead Spear"}, "icon": "%NOT_FOUND%"}
+{"name": "Voltaxische Kluft", "refName": "Voltaxic Rift", "namespace": "UNIQUE", "unique": {"base": "Fanatic Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "Witwenhagel", "refName": "Widowhail", "namespace": "UNIQUE", "unique": {"base": "Crude Bow"}, "icon": "%NOT_FOUND%"}
 {"name": "Winterbiss", "refName": "Winter's Bite", "namespace": "UNIQUE", "unique": {"base": "Glass Shank"}, "icon": "%NOT_FOUND%"}
 {"name": "Wylunds Pfahl", "refName": "Wylund's Stake", "namespace": "UNIQUE", "unique": {"base": "Smithing Hammer"}, "icon": "%NOT_FOUND%"}
