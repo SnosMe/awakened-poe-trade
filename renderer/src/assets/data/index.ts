@@ -330,6 +330,7 @@ function runesToLookup(runeList: BaseType[]): RuneDataByRune {
       }
       runeDataByRune[rune.name].push({
         rune: rune.name,
+        refName: rune.refName,
         baseStat: text,
         values,
         id: tradeId[0],

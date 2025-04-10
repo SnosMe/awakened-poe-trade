@@ -135,7 +135,9 @@
     "sanctum_relic": "성역 유물",
     "tincture": "팅크",
     "azmeri_charm": "부적",
-    "weapon_crossbow": "석궁"
+    "weapon_crossbow": "석궁",
+    "weapon_spear": "Spear",
+    "weapon_flail": "Flail"
   },
   "filters": {
     "selected_some": "{1} 중 {0}개 선택",

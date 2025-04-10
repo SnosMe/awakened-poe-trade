@@ -5004,7 +5004,7 @@
         }
     },
     "331": {
-        "name": "지식의 결정체 파편 I",
+        "name": "지식의 결정체 핵 I",
         "refName": "Crystalline Core of Knowledge I",
         "namespace": "ITEM",
         "class": 31,
@@ -5017,7 +5017,7 @@
         }
     },
     "332": {
-        "name": "지식의 결정체 파편 II",
+        "name": "지식의 결정체 핵 II",
         "refName": "Crystalline Core of Knowledge II",
         "namespace": "ITEM",
         "class": 31,
@@ -5030,7 +5030,7 @@
         }
     },
     "333": {
-        "name": "지식의 결정체 파편 III",
+        "name": "지식의 결정체 핵 III",
         "refName": "Crystalline Core of Knowledge III",
         "namespace": "ITEM",
         "class": 31,
@@ -5043,7 +5043,7 @@
         }
     },
     "334": {
-        "name": "지식의 결정체 파편 IV",
+        "name": "지식의 결정체 핵 IV",
         "refName": "Crystalline Core of Knowledge IV",
         "namespace": "ITEM",
         "class": 31,
@@ -5056,7 +5056,7 @@
         }
     },
     "335": {
-        "name": "지식의 결정체 파편 V",
+        "name": "지식의 결정체 핵 IV",
         "refName": "Crystalline Core of Knowledge V",
         "namespace": "ITEM",
         "class": 31,
@@ -5069,7 +5069,7 @@
         }
     },
     "336": {
-        "name": "지식의 결정체 파편 VI",
+        "name": "지식의 결정체 핵 VI",
         "refName": "Crystalline Core of Knowledge VI",
         "namespace": "ITEM",
         "class": 31,
@@ -5082,7 +5082,7 @@
         }
     },
     "337": {
-        "name": "지식의 결정체 파편 VII",
+        "name": "지식의 결정체 핵 VII",
         "refName": "Crystalline Core of Knowledge VII",
         "namespace": "ITEM",
         "class": 31,
@@ -5095,7 +5095,7 @@
         }
     },
     "338": {
-        "name": "지식의 결정체 파편 VIII",
+        "name": "지식의 결정체 핵 VIII",
         "refName": "Crystalline Core of Knowledge VIII",
         "namespace": "ITEM",
         "class": 31,
@@ -5108,7 +5108,7 @@
         }
     },
     "339": {
-        "name": "지식의 결정체 파편 IX",
+        "name": "지식의 결정체 핵 IX",
         "refName": "Crystalline Core of Knowledge IX",
         "namespace": "ITEM",
         "class": 31,
@@ -5121,7 +5121,7 @@
         }
     },
     "340": {
-        "name": "지식의 결정체 파편 X",
+        "name": "지식의 결정체 핵 X",
         "refName": "Crystalline Core of Knowledge X",
         "namespace": "ITEM",
         "class": 31,
@@ -5134,7 +5134,7 @@
         }
     },
     "341": {
-        "name": "지식의 결정체 파편 XI",
+        "name": "지식의 결정체 핵 XI",
         "refName": "Crystalline Core of Knowledge XI",
         "namespace": "ITEM",
         "class": 31,
@@ -5147,7 +5147,7 @@
         }
     },
     "342": {
-        "name": "지식의 결정체 파편 XII",
+        "name": "지식의 결정체 핵 XII",
         "refName": "Crystalline Core of Knowledge XII",
         "namespace": "ITEM",
         "class": 31,
@@ -5160,7 +5160,7 @@
         }
     },
     "343": {
-        "name": "지식의 결정체 파편 XIII",
+        "name": "지식의 결정체 핵 XIII",
         "refName": "Crystalline Core of Knowledge XIII",
         "namespace": "ITEM",
         "class": 31,
@@ -5173,7 +5173,7 @@
         }
     },
     "344": {
-        "name": "지식의 결정체 파편 XIV",
+        "name": "지식의 결정체 핵 XIV",
         "refName": "Crystalline Core of Knowledge XIV",
         "namespace": "ITEM",
         "class": 31,
@@ -5186,7 +5186,7 @@
         }
     },
     "345": {
-        "name": "지식의 결정체 파편 XV",
+        "name": "지식의 결정체 핵 XV",
         "refName": "Crystalline Core of Knowledge XV",
         "namespace": "ITEM",
         "class": 31,
@@ -7122,7 +7122,7 @@
         "refName": "Spearfield",
         "namespace": "GEM",
         "class": 18,
-        "dropLevel": 7,
+        "dropLevel": 15,
         "width": 1,
         "height": 1,
         "tags": [],
@@ -7169,7 +7169,7 @@
         }
     },
     "469": {
-        "name": "작열의 기병창",
+        "name": "빙하 창",
         "refName": "Glacial Lance",
         "namespace": "GEM",
         "class": 18,
@@ -8830,14 +8830,18 @@
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_889552744"
+                ]
             },
             "weapon": {
                 "string": "소환수가 자신의 물리 피해의 #%를 추가 번개 피해로 획득",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_1433756169"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-leadership",
@@ -8862,14 +8866,18 @@
                     1,
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_757050353"
+                ]
             },
             "weapon": {
                 "string": "메타 스킬의 에너지 획득 #% 증가",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4236566306"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-tithing",
@@ -8893,14 +8901,18 @@
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_1238227257"
+                ]
             },
             "weapon": {
                 "string": "스킬 속도 #% 증가",
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_970213192"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-alacrity",
@@ -8924,14 +8936,18 @@
                 "values": [
                     -10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3801067695"
+                ]
             },
             "weapon": {
                 "string": "이 무기로 공격 시 #%의 확률로 번개 노출 유발",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_2158896334"
+                ]
             }
         },
         "tradeTag": "greater-rune-of-nobility",
@@ -9262,7 +9278,9 @@
                 "values": [
                     5
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3175163625"
+                ]
             },
             "weapon": {
                 "string": "정신력 #",
@@ -9506,7 +9524,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZWludCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bf932f7001/GreaterSoulCoreint.png"
     },
     "552": {
-        "name": "Serpent Talisman",
+        "name": "독사 부적",
         "refName": "Serpent Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9523,7 +9541,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVNuYWtlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/752d762312/AzmeriSocketableSnake.png"
     },
     "553": {
-        "name": "Primate Talisman",
+        "name": "영장류 부적",
         "refName": "Primate Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9540,7 +9558,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/77a4554895/AzmeriSocketableMonkey.png"
     },
     "554": {
-        "name": "Owl Talisman",
+        "name": "올빼미 부적",
         "refName": "Owl Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9557,7 +9575,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png"
     },
     "555": {
-        "name": "Cat Talisman",
+        "name": "고양이 부적",
         "refName": "Cat Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9574,7 +9592,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUNhdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/3d5bc70405/AzmeriSocketableCat.png"
     },
     "556": {
-        "name": "Wolf Talisman",
+        "name": "늑대 부적",
         "refName": "Wolf Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9591,7 +9609,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVdvbGYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c0deeb6d94/AzmeriSocketableWolf.png"
     },
     "557": {
-        "name": "Stag Talisman",
+        "name": "수사슴 부적",
         "refName": "Stag Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9608,7 +9626,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVN0YWciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2a0668f95a/AzmeriSocketableStag.png"
     },
     "558": {
-        "name": "Boar Talisman",
+        "name": "멧돼지 부적",
         "refName": "Boar Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9625,7 +9643,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJvYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e04714fc6/AzmeriSocketableBoar.png"
     },
     "559": {
-        "name": "Bear Talisman",
+        "name": "곰 부적",
         "refName": "Bear Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9642,7 +9660,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2d494d1054/AzmeriSocketableBear.png"
     },
     "560": {
-        "name": "Ox Talisman",
+        "name": "수 부적",
         "refName": "Ox Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9659,7 +9677,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU94Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ebdb092f5/AzmeriSocketableOx.png"
     },
     "561": {
-        "name": "Rabbit Talisman",
+        "name": "토끼 부적",
         "refName": "Rabbit Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -9676,7 +9694,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVJhYmJpdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/d578d6d700/AzmeriSocketableRabbit.png"
     },
     "562": {
-        "name": "Fox Talisman",
+        "name": "여우 부적",
         "refName": "Fox Talisman",
         "namespace": "ITEM",
         "class": 104,
@@ -32125,7 +32143,7 @@
         ]
     },
     "2382": {
-        "name": "고급 대장장이 망치",
+        "name": "열기 증가 망치",
         "refName": "Calescent Hammer",
         "namespace": "ITEM",
         "class": 12,
@@ -32138,7 +32156,7 @@
         }
     },
     "2383": {
-        "name": "고급 좁은 철퇴",
+        "name": "번쩍이는 철퇴",
         "refName": "Flared Mace",
         "namespace": "ITEM",
         "class": 12,
@@ -32151,7 +32169,7 @@
         }
     },
     "2384": {
-        "name": "고급 전쟁곡괭이",
+        "name": "전투 곡괭이",
         "refName": "Battle Pick",
         "namespace": "ITEM",
         "class": 12,
@@ -32164,7 +32182,7 @@
         }
     },
     "2385": {
-        "name": "고급 판금 철퇴",
+        "name": "행진 철퇴",
         "refName": "Marching Mace",
         "namespace": "ITEM",
         "class": 12,
@@ -32177,7 +32195,7 @@
         }
     },
     "2386": {
-        "name": "고급 도둑 철퇴",
+        "name": "도적 철퇴",
         "refName": "Bandit Mace",
         "namespace": "ITEM",
         "class": 12,
@@ -32190,7 +32208,7 @@
         }
     },
     "2387": {
-        "name": "고급 구조물 망치",
+        "name": "구조화된 망치",
         "refName": "Structured Hammer",
         "namespace": "ITEM",
         "class": 12,
@@ -32203,7 +32221,7 @@
         }
     },
     "2388": {
-        "name": "고급 참나무 대망치",
+        "name": "뱀나무 대망치",
         "refName": "Snakewood Greathammer",
         "namespace": "ITEM",
         "class": 17,
@@ -32216,7 +32234,7 @@
         }
     },
     "2389": {
-        "name": "고급 대장간 대형 망치",
+        "name": "대장장이 대형 망치",
         "refName": "Blacksmith Maul",
         "namespace": "ITEM",
         "class": 17,
@@ -32229,7 +32247,7 @@
         }
     },
     "2390": {
-        "name": "고급 광신자 대망치",
+        "name": "맹신자 대망치",
         "refName": "Zealot Greathammer",
         "namespace": "ITEM",
         "class": 17,
@@ -32242,7 +32260,7 @@
         }
     },
     "2391": {
-        "name": "고급 사원 대형 망치",
+        "name": "엄숙한 대형 망치",
         "refName": "Solemn Maul",
         "namespace": "ITEM",
         "class": 17,
@@ -32255,7 +32273,7 @@
         }
     },
     "2392": {
-        "name": "고급 납빛 대망치",
+        "name": "무거운 대망치",
         "refName": "Heavy Greathammer",
         "namespace": "ITEM",
         "class": 17,
@@ -32268,7 +32286,7 @@
         }
     },
     "2393": {
-        "name": "고급 허물어지는 대형 망치",
+        "name": "분해시키는 대형 망치",
         "refName": "Disintegrating Maul",
         "namespace": "ITEM",
         "class": 17,
@@ -32294,7 +32312,7 @@
         }
     },
     "2395": {
-        "name": "고급 고딕 육척봉",
+        "name": "상스러운 육척봉",
         "refName": "Barbarous Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -32307,7 +32325,7 @@
         }
     },
     "2396": {
-        "name": "고급 치직대는 육척봉",
+        "name": "전호의 육척봉",
         "refName": "Arcing Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -32320,7 +32338,7 @@
         }
     },
     "2397": {
-        "name": "고급 초승달 육척봉",
+        "name": "차오르는 육척봉",
         "refName": "Waxing Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -32333,7 +32351,7 @@
         }
     },
     "2398": {
-        "name": "고급 저미는 육척봉",
+        "name": "칼날 육척봉",
         "refName": "Bladed Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -32346,7 +32364,7 @@
         }
     },
     "2399": {
-        "name": "고급 방벽 육척봉",
+        "name": "수호자 육척봉",
         "refName": "Guardian Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -32359,7 +32377,7 @@
         }
     },
     "2400": {
-        "name": "고급 단궁",
+        "name": "뱀나무 단궁",
         "refName": "Snakewood Shortbow",
         "namespace": "ITEM",
         "class": 13,
@@ -32372,7 +32390,7 @@
         }
     },
     "2401": {
-        "name": "고급 간수 활",
+        "name": "보호자 활",
         "refName": "Protector Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -32385,7 +32403,7 @@
         }
     },
     "2402": {
-        "name": "고급 합성궁",
+        "name": "기수 활",
         "refName": "Rider Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -32398,7 +32416,7 @@
         }
     },
     "2403": {
-        "name": "고급 이중시위 활",
+        "name": "쌍둥이 활",
         "refName": "Twin Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -32411,7 +32429,7 @@
         }
     },
     "2404": {
-        "name": "고급 광신자 활",
+        "name": "지지자 활",
         "refName": "Adherent Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -32424,7 +32442,7 @@
         }
     },
     "2405": {
-        "name": "고급 맹신자 활",
+        "name": "호전적인 활",
         "refName": "Militant Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -37824,7 +37842,7 @@
         }
     },
     "2645": {
-        "name": "전문 좁은 철퇴",
+        "name": "테두리 철퇴",
         "refName": "Flanged Mace",
         "namespace": "ITEM",
         "class": 12,
@@ -37837,7 +37855,7 @@
         }
     },
     "2646": {
-        "name": "전문 판금 철퇴",
+        "name": "왕관 철퇴",
         "refName": "Crown Mace",
         "namespace": "ITEM",
         "class": 12,
@@ -37850,7 +37868,7 @@
         }
     },
     "2647": {
-        "name": "전문 대장장이 망치",
+        "name": "녹아내린 망치",
         "refName": "Molten Hammer",
         "namespace": "ITEM",
         "class": 12,
@@ -37863,7 +37881,7 @@
         }
     },
     "2648": {
-        "name": "전문 전쟁곡괭이",
+        "name": "투쟁 곡괭이",
         "refName": "Strife Pick",
         "namespace": "ITEM",
         "class": 12,
@@ -37876,7 +37894,7 @@
         }
     },
     "2649": {
-        "name": "전문 구조물 망치",
+        "name": "견고한 망치",
         "refName": "Fortified Hammer",
         "namespace": "ITEM",
         "class": 12,
@@ -37889,7 +37907,7 @@
         }
     },
     "2650": {
-        "name": "전문 도둑 철퇴",
+        "name": "약탈하는 철퇴",
         "refName": "Marauding Mace",
         "namespace": "ITEM",
         "class": 12,
@@ -37902,7 +37920,7 @@
         }
     },
     "2651": {
-        "name": "전문 대장간 대형 망치",
+        "name": "모루 대형 망치",
         "refName": "Anvil Maul",
         "namespace": "ITEM",
         "class": 17,
@@ -37915,7 +37933,7 @@
         }
     },
     "2652": {
-        "name": "전문 사원 대형 망치",
+        "name": "신성한 대형 망치",
         "refName": "Sacred Maul",
         "namespace": "ITEM",
         "class": 17,
@@ -37928,7 +37946,7 @@
         }
     },
     "2653": {
-        "name": "전문 참나무 대망치",
+        "name": "철목 대망치",
         "refName": "Ironwood Greathammer",
         "namespace": "ITEM",
         "class": 17,
@@ -37941,7 +37959,7 @@
         }
     },
     "2654": {
-        "name": "전문 광신자 대망치",
+        "name": "광신도 대망치",
         "refName": "Fanatic Greathammer",
         "namespace": "ITEM",
         "class": 17,
@@ -37954,7 +37972,7 @@
         }
     },
     "2655": {
-        "name": "전문 허물어지는 대형 망치",
+        "name": "폐허의 대형 망치",
         "refName": "Ruination Maul",
         "namespace": "ITEM",
         "class": 17,
@@ -37967,7 +37985,7 @@
         }
     },
     "2656": {
-        "name": "전문 납빛 대망치",
+        "name": "거대한 대망치",
         "refName": "Massive Greathammer",
         "namespace": "ITEM",
         "class": 17,
@@ -37980,7 +37998,7 @@
         }
     },
     "2657": {
-        "name": "전문 고딕 육척봉",
+        "name": "험악한 육척봉",
         "refName": "Sinister Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -37993,7 +38011,7 @@
         }
     },
     "2658": {
-        "name": "전문 초승달 육척봉",
+        "name": "달의 육척봉",
         "refName": "Lunar Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -38019,7 +38037,7 @@
         }
     },
     "2660": {
-        "name": "전문 치직대는 육척봉",
+        "name": "번갯불의 육척봉",
         "refName": "Bolting Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -38032,7 +38050,7 @@
         }
     },
     "2661": {
-        "name": "전문 방벽 육척봉",
+        "name": "비호 육척봉",
         "refName": "Aegis Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -38045,7 +38063,7 @@
         }
     },
     "2662": {
-        "name": "전문 저미는 육척봉",
+        "name": "면도날 육척봉",
         "refName": "Razor Quarterstaff",
         "namespace": "ITEM",
         "class": 57,
@@ -38058,7 +38076,7 @@
         }
     },
     "2663": {
-        "name": "전문 단궁",
+        "name": "철목 단궁",
         "refName": "Ironwood Shortbow",
         "namespace": "ITEM",
         "class": 13,
@@ -38071,7 +38089,7 @@
         }
     },
     "2664": {
-        "name": "전문 합성궁",
+        "name": "기병대 활",
         "refName": "Cavalry Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -38084,7 +38102,7 @@
         }
     },
     "2665": {
-        "name": "전문 간수 활",
+        "name": "수호자 활",
         "refName": "Guardian Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -38097,7 +38115,7 @@
         }
     },
     "2666": {
-        "name": "전문 이중시위 활",
+        "name": "쌍둥이자리 활",
         "refName": "Gemini Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -38110,7 +38128,7 @@
         }
     },
     "2667": {
-        "name": "전문 광신자 활",
+        "name": "광신도 활",
         "refName": "Fanatic Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -38123,7 +38141,7 @@
         }
     },
     "2668": {
-        "name": "전문 맹신자 활",
+        "name": "전쟁광 활",
         "refName": "Warmonger Bow",
         "namespace": "ITEM",
         "class": 13,
@@ -41465,7 +41483,7 @@
         }
     },
     "2891": {
-        "name": "동료 소환",
+        "name": "반려수 소환",
         "refName": "Summon Companion",
         "namespace": "GEM",
         "class": 76,
@@ -42056,7 +42074,7 @@
         }
     },
     "2926": {
-        "name": "로아 탈것 소환",
+        "name": "로아 탈것",
         "refName": "Rhoa Mount",
         "namespace": "GEM",
         "class": 18,
@@ -42583,7 +42601,7 @@
         }
     },
     "2957": {
-        "name": "화염 고취",
+        "name": "화염 주입",
         "refName": "Fire Infusion",
         "namespace": "GEM",
         "class": 19,
@@ -43399,7 +43417,7 @@
         }
     },
     "3005": {
-        "name": "번개 고취",
+        "name": "번개 주입",
         "refName": "Lightning Infusion",
         "namespace": "GEM",
         "class": 19,
@@ -44368,7 +44386,7 @@
         }
     },
     "3062": {
-        "name": "냉기 고취",
+        "name": "냉기 주입",
         "refName": "Cold Infusion",
         "namespace": "GEM",
         "class": 19,
@@ -44555,7 +44573,7 @@
         }
     },
     "3073": {
-        "name": "카오스 고취",
+        "name": "카오스 주입",
         "refName": "Chaos Infusion",
         "namespace": "GEM",
         "class": 19,
@@ -50384,7 +50402,7 @@
         }
     },
     "3420": {
-        "name": "See Red",
+        "name": "빨간색 보기",
         "refName": "See Red",
         "namespace": "GEM",
         "class": 19,
@@ -50401,7 +50419,7 @@
         }
     },
     "3421": {
-        "name": "Expedite",
+        "name": "신속 처리",
         "refName": "Expedite",
         "namespace": "GEM",
         "class": 19,
@@ -50659,7 +50677,7 @@
         }
     },
     "3436": {
-        "name": "Whirlwind Lance",
+        "name": "와류 기병창",
         "refName": "Whirlwind Lance",
         "namespace": "GEM",
         "class": 18,
@@ -50693,6 +50711,23 @@
         }
     },
     "3438": {
+        "name": "Cull The Weak",
+        "refName": "Cull The Weak",
+        "namespace": "GEM",
+        "class": 18,
+        "dropLevel": 7,
+        "width": 1,
+        "height": 1,
+        "tags": [],
+        "craftable": {
+            "category": "Active Skill Gem"
+        },
+        "gem": {
+            "awakened": false,
+            "transfigured": false
+        }
+    },
+    "3439": {
         "name": "서리의 송곳니",
         "refName": "Fangs of Frost",
         "namespace": "GEM",
@@ -50709,7 +50744,7 @@
             "transfigured": false
         }
     },
-    "3439": {
+    "3440": {
         "name": "바람 독사의 광분",
         "refName": "Wind Serpent's Fury",
         "namespace": "GEM",
@@ -50726,7 +50761,7 @@
             "transfigured": false
         }
     },
-    "3440": {
+    "3441": {
         "name": "갈퀴질",
         "refName": "Rake",
         "namespace": "GEM",
@@ -50743,7 +50778,7 @@
             "transfigured": false
         }
     },
-    "3441": {
+    "3442": {
         "name": "피사냥개의 징표",
         "refName": "Bloodhound's Mark",
         "namespace": "GEM",
@@ -50760,7 +50795,7 @@
             "transfigured": false
         }
     },
-    "3442": {
+    "3443": {
         "name": "짐승 길들이기",
         "refName": "Tame Beast",
         "namespace": "GEM",
@@ -50777,7 +50812,7 @@
             "transfigured": false
         }
     },
-    "3443": {
+    "3444": {
         "name": "솔라리스의 창",
         "refName": "Spear of Solaris",
         "namespace": "GEM",
@@ -50794,7 +50829,7 @@
             "transfigured": false
         }
     },
-    "3444": {
+    "3445": {
         "name": "폭풍의 창",
         "refName": "Storm Lance",
         "namespace": "GEM",
@@ -50811,7 +50846,7 @@
             "transfigured": false
         }
     },
-    "3445": {
+    "3446": {
         "name": "흘려보내기",
         "refName": "Parry",
         "namespace": "GEM",
@@ -50828,8 +50863,8 @@
             "transfigured": false
         }
     },
-    "3446": {
-        "name": "Elemental Sundering",
+    "3447": {
+        "name": "원소 작렬",
         "refName": "Elemental Sundering",
         "namespace": "GEM",
         "class": 18,
@@ -50845,8 +50880,8 @@
             "transfigured": false
         }
     },
-    "3447": {
-        "name": "동료: {0}",
+    "3448": {
+        "name": "반려수: {0}",
         "refName": "Companion: {0}",
         "namespace": "GEM",
         "class": 18,
@@ -50862,7 +50897,7 @@
             "transfigured": false
         }
     },
-    "3448": {
+    "3449": {
         "name": "호신부 사용 시 시전",
         "refName": "Cast on Charm Use",
         "namespace": "GEM",
@@ -50879,7 +50914,7 @@
             "transfigured": false
         }
     },
-    "3449": {
+    "3450": {
         "name": "삼위일체",
         "refName": "Trinity",
         "namespace": "GEM",
@@ -50896,8 +50931,8 @@
             "transfigured": false
         }
     },
-    "3450": {
-        "name": "썩은 가방 충전",
+    "3451": {
+        "name": "썩은 가방 화약",
         "refName": "Rotten Satchel Charge",
         "namespace": "ITEM",
         "class": 80,
@@ -50909,8 +50944,8 @@
             "category": "InstanceLocalItem"
         }
     },
-    "3451": {
-        "name": "Trail of Caltrops",
+    "3452": {
+        "name": "마름쇠의 발자취",
         "refName": "Trail of Caltrops",
         "namespace": "GEM",
         "class": 18,
@@ -50926,7 +50961,7 @@
             "transfigured": false
         }
     },
-    "3452": {
+    "3453": {
         "name": "무기 주입",
         "refName": "Infuse Weapon",
         "namespace": "GEM",
@@ -50943,7 +50978,7 @@
             "transfigured": false
         }
     },
-    "3453": {
+    "3454": {
         "name": "카오스 주입",
         "refName": "Chaotic Infusion",
         "namespace": "GEM",
@@ -50960,7 +50995,7 @@
             "transfigured": false
         }
     },
-    "3454": {
+    "3455": {
         "name": "명중 시 번개 주문",
         "refName": "Lightning Spell on Hit",
         "namespace": "GEM",
@@ -50977,7 +51012,7 @@
             "transfigured": false
         }
     },
-    "3455": {
+    "3456": {
         "name": "명중 시 화염 주문",
         "refName": "Fire Spell on Hit",
         "namespace": "GEM",
@@ -50994,7 +51029,7 @@
             "transfigured": false
         }
     },
-    "3456": {
+    "3457": {
         "name": "무기 현현",
         "refName": "Manifest Weapon",
         "namespace": "GEM",
@@ -51011,7 +51046,7 @@
             "transfigured": false
         }
     },
-    "3457": {
+    "3458": {
         "name": "지원 사격",
         "refName": "Supporting Fire",
         "namespace": "GEM",
@@ -51028,7 +51063,7 @@
             "transfigured": false
         }
     },
-    "3458": {
+    "3459": {
         "name": "무기 담금질",
         "refName": "Temper Weapon",
         "namespace": "GEM",
@@ -51045,8 +51080,8 @@
             "transfigured": false
         }
     },
-    "3459": {
-        "name": "Unleash",
+    "3460": {
+        "name": "촉발",
         "refName": "Unleash",
         "namespace": "GEM",
         "class": 18,
@@ -51062,7 +51097,7 @@
             "transfigured": false
         }
     },
-    "3460": {
+    "3461": {
         "name": "요양",
         "refName": "Convalescence",
         "namespace": "GEM",
@@ -51079,7 +51114,7 @@
             "transfigured": false
         }
     },
-    "3461": {
+    "3462": {
         "name": "제거된 스킬",
         "refName": "Removed Skill",
         "namespace": "GEM",

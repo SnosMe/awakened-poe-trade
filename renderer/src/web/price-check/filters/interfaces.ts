@@ -1,3 +1,4 @@
+import { BaseType } from "@/assets/data";
 import type { ItemInfluence, ItemCategory } from "@/parser";
 import type { StatCalculated } from "@/parser/modifiers";
 import type { ParsedItem } from "@/parser/ParsedItem";
@@ -128,6 +129,7 @@ export interface StatFilter {
   additionalInfo?: {
     [key: string]: StatFilterRoll;
   };
+  editorAdded?: BaseType;
 }
 
 export interface WeightStatGroup {

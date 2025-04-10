@@ -22,7 +22,7 @@ BASE_PAYLOAD = {
     },
     "sort": {"price": "asc"},
 }
-SEARCH_URL = "https://www.pathofexile.com/api/trade2/search/Standard"
+SEARCH_URL = "https://www.pathofexile.com/api/trade2/search/Dawn%20of%20the%20Hunt"
 SEARCH_HEADERS = {"content-type": "application/json"}
 FETCH_URL = "https://www.pathofexile.com/api/trade2/fetch/"
 NOT_FOUND = "%NOT_FOUND%"

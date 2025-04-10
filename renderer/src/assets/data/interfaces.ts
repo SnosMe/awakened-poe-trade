@@ -278,6 +278,7 @@ export interface RuneSingleValue {
 
 export interface RuneData {
   rune: string;
+  refName: string;
   baseStat: string;
   values: number[];
   id: string;

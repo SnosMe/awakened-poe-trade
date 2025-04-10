@@ -154,7 +154,9 @@
     "sanctum_relic": "Реликвия Святилища",
     "tincture": "Микстура",
     "azmeri_charm": "Оберег Азмери",
-    "weapon_crossbow": "Арбалет"
+    "weapon_crossbow": "Арбалет",
+    "weapon_spear": "Spear",
+    "weapon_flail": "Flail"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",
