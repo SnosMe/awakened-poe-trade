@@ -7793,6 +7793,13 @@
                 "tradeId": [
                     "rune.stat_709508406"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外火焰傷害",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "desert-rune",
@@ -7832,6 +7839,13 @@
                     "rune.stat_1037193709",
                     "rune.stat_1037193709"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外冰冷傷害",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "glacial-rune",
@@ -7871,6 +7885,13 @@
                     "rune.stat_3336890334",
                     "rune.stat_3336890334"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外閃電傷害",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "storm-rune",
@@ -7908,6 +7929,13 @@
                 "tradeId": [
                     "rune.stat_1509134228"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 法術傷害",
+                "values": [
+                    25
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "iron-rune",
@@ -7945,6 +7973,13 @@
                 "tradeId": [
                     "rune.stat_55876295"
                 ]
+            },
+            "caster": {
+                "string": "# 最大能量護盾",
+                "values": [
+                    30
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "body-rune",
@@ -7981,6 +8016,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_669069897"
+                ]
+            },
+            "caster": {
+                "string": "# 最大魔力",
+                "values": [
+                    30
+                ],
+                "tradeId": [
+                    "rune.stat_1050105434"
                 ]
             }
         },
@@ -8019,6 +8063,13 @@
                 "tradeId": [
                     "rune.stat_3695891184"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 能量護盾充能率",
+                "values": [
+                    15
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "rebirth-rune",
@@ -8055,6 +8106,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_1368271171"
+                ]
+            },
+            "caster": {
+                "string": "增加 #% 魔力回復率",
+                "values": [
+                    20
+                ],
+                "tradeId": [
+                    "rune.stat_789117908"
                 ]
             }
         },
@@ -8093,6 +8153,13 @@
                 "tradeId": [
                     "rune.stat_791928121"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於最大 能量護盾 #% 的額外暈眩門檻",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "stone-rune",
@@ -8130,6 +8197,13 @@
                 "tradeId": [
                     "rune.stat_691932474"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 法術暴擊率",
+                "values": [
+                    20
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "vision-rune",
@@ -8168,6 +8242,13 @@
                 "tradeId": [
                     "rune.stat_709508406"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外火焰傷害",
+                "values": [
+                    8
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-desert-rune",
@@ -8207,6 +8288,13 @@
                     "rune.stat_1037193709",
                     "rune.stat_1037193709"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外冰冷傷害",
+                "values": [
+                    8
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-glacial-rune",
@@ -8246,6 +8334,13 @@
                     "rune.stat_3336890334",
                     "rune.stat_3336890334"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外閃電傷害",
+                "values": [
+                    8
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-storm-rune",
@@ -8283,6 +8378,13 @@
                 "tradeId": [
                     "rune.stat_1509134228"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 法術傷害",
+                "values": [
+                    20
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-iron-rune",
@@ -8320,6 +8422,13 @@
                 "tradeId": [
                     "rune.stat_55876295"
                 ]
+            },
+            "caster": {
+                "string": "# 最大能量護盾",
+                "values": [
+                    25
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-body-rune",
@@ -8356,6 +8465,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_669069897"
+                ]
+            },
+            "caster": {
+                "string": "# 最大魔力",
+                "values": [
+                    25
+                ],
+                "tradeId": [
+                    "rune.stat_1050105434"
                 ]
             }
         },
@@ -8394,6 +8512,13 @@
                 "tradeId": [
                     "rune.stat_3695891184"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 能量護盾充能率",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-rebirth-rune",
@@ -8430,6 +8555,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_1368271171"
+                ]
+            },
+            "caster": {
+                "string": "增加 #% 魔力回復率",
+                "values": [
+                    16
+                ],
+                "tradeId": [
+                    "rune.stat_789117908"
                 ]
             }
         },
@@ -8468,6 +8602,13 @@
                 "tradeId": [
                     "rune.stat_791928121"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於最大 能量護盾 #% 的額外暈眩門檻",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-stone-rune",
@@ -8505,6 +8646,13 @@
                 "tradeId": [
                     "rune.stat_691932474"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 法術暴擊率",
+                "values": [
+                    16
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-vision-rune",
@@ -8543,6 +8691,13 @@
                 "tradeId": [
                     "rune.stat_709508406"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外火焰傷害",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-desert-rune",
@@ -8582,6 +8737,13 @@
                     "rune.stat_1037193709",
                     "rune.stat_1037193709"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外冰冷傷害",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-glacial-rune",
@@ -8621,6 +8783,13 @@
                     "rune.stat_3336890334",
                     "rune.stat_3336890334"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於傷害 #% 的額外閃電傷害",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-storm-rune",
@@ -8658,6 +8827,13 @@
                 "tradeId": [
                     "rune.stat_1509134228"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 法術傷害",
+                "values": [
+                    30
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-iron-rune",
@@ -8695,6 +8871,13 @@
                 "tradeId": [
                     "rune.stat_55876295"
                 ]
+            },
+            "caster": {
+                "string": "# 最大能量護盾",
+                "values": [
+                    35
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-body-rune",
@@ -8731,6 +8914,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_669069897"
+                ]
+            },
+            "caster": {
+                "string": "# 最大魔力",
+                "values": [
+                    35
+                ],
+                "tradeId": [
+                    "rune.stat_1050105434"
                 ]
             }
         },
@@ -8769,6 +8961,13 @@
                 "tradeId": [
                     "rune.stat_3695891184"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 能量護盾充能率",
+                "values": [
+                    18
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-rebirth-rune",
@@ -8805,6 +9004,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_1368271171"
+                ]
+            },
+            "caster": {
+                "string": "增加 #% 魔力回復率",
+                "values": [
+                    24
+                ],
+                "tradeId": [
+                    "rune.stat_789117908"
                 ]
             }
         },
@@ -8843,6 +9051,13 @@
                 "tradeId": [
                     "rune.stat_791928121"
                 ]
+            },
+            "caster": {
+                "string": "獲得相當於最大 能量護盾 #% 的額外暈眩門檻",
+                "values": [
+                    14
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-stone-rune",
@@ -8880,6 +9095,13 @@
                 "tradeId": [
                     "rune.stat_691932474"
                 ]
+            },
+            "caster": {
+                "string": "增加 #% 法術暴擊率",
+                "values": [
+                    24
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-vision-rune",
@@ -8905,14 +9127,18 @@
                 "values": [
                     6
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             },
             "weapon": {
                 "string": "# 力量",
                 "values": [
                     6
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
@@ -8936,14 +9162,18 @@
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             },
             "weapon": {
                 "string": "# 力量",
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
@@ -8967,14 +9197,18 @@
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             },
             "weapon": {
                 "string": "# 力量",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
@@ -8998,14 +9232,18 @@
                 "values": [
                     6
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             },
             "weapon": {
                 "string": "# 敏捷",
                 "values": [
                     5
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
@@ -9029,14 +9267,18 @@
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             },
             "weapon": {
                 "string": "# 敏捷",
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
@@ -9060,14 +9302,18 @@
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             },
             "weapon": {
                 "string": "# 敏捷",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
@@ -9091,14 +9337,18 @@
                 "values": [
                     6
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             },
             "weapon": {
                 "string": "# 智慧",
                 "values": [
                     6
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
@@ -9122,14 +9372,18 @@
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             },
             "weapon": {
                 "string": "# 智慧",
                 "values": [
                     8
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
@@ -9153,14 +9407,18 @@
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             },
             "weapon": {
                 "string": "# 智慧",
                 "values": [
                     10
                 ],
-                "tradeId": null
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },

@@ -14,7 +14,10 @@ def build_runes_df(
     runes["StatsArmour"] = runes["StatsArmour"].apply(
         lambda lst: replace_indices_with_ids(lst, stats)
     )
-    runes["StatsWeapon"] = runes["StatsWeapon"].apply(
+    runes["StatsMartialWeapon"] = runes["StatsMartialWeapon"].apply(
+        lambda lst: replace_indices_with_ids(lst, stats)
+    )
+    runes["StatsCasterWeapon"] = runes["StatsCasterWeapon"].apply(
         lambda lst: replace_indices_with_ids(lst, stats)
     )
     runes_merged = runes.merge(
@@ -22,10 +25,12 @@ def build_runes_df(
     )[
         [
             "BaseItemType",
-            "StatsWeapon",
-            "StatsValuesWeapon",
+            "StatsMartialWeapon",
+            "StatsValuesMartialWeapon",
             "StatsArmour",
             "StatsValuesArmour",
+            "StatsCasterWeapon",
+            "StatsValuesCasterWeapon",
         ]
     ]
 

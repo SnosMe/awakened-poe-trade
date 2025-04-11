@@ -14,6 +14,7 @@ import type { StatFilter } from "../interfaces";
 import { ARMOUR_STATS, WEAPON_STATS } from "./item-property";
 import { AppConfig } from "@/web/Config";
 import { PriceCheckWidget } from "@/web/overlay/widgets";
+import { tryParseTranslation } from "@/parser/stat-translations";
 
 const RESISTANCES_INFO = [
   // {
@@ -491,4 +492,16 @@ export function refEffectsPseudos(ref: string): boolean {
     WEAPON_STATS.has(ref) ||
     ref === "Adds # to # Chaos Damage"
   );
+}
+
+export function translatedEffectsPseudos(translated: string): boolean {
+  // get the ref from the translated string
+  const stat = tryParseTranslation(
+    { string: translated, unscalable: false },
+    ModifierType.Rune,
+  );
+  if (!stat) return false;
+  const ref = stat.stat.ref;
+  // If it is in these pseudos
+  return refEffectsPseudos(ref);
 }

@@ -28,7 +28,7 @@ export function handleApplyItemEdits(
 ) {
   if (filterStorage.length !== 0) return;
   // Testing with just one stat
-  const newFilters = createNewStatFilter(item, currencyItem ?? "Iron Rune");
+  const newFilters = createNewStatFilter(item, currencyItem);
   if (!newFilters) return;
 
   for (const filter of newFilters) {
@@ -161,4 +161,10 @@ export function selectRuneEffectByItemCategory(
   if (category.toLowerCase() in rune) {
     return rune[category.toLowerCase()];
   }
+}
+
+export function getRuneNameByRef(ref: string) {
+  const rune = ITEM_BY_REF("ITEM", ref);
+  if (!rune) return "error";
+  return rune[0].name;
 }

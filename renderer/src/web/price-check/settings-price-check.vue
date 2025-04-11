@@ -123,7 +123,7 @@
       >
         <!-- This is true since it will be assigned to "disabled" in the code -->
         <option :value="false">No</option>
-        <option value="Iron Rune">Iron Rune</option>
+        <option value="Iron Rune">{{ getRuneNameByRef("Iron Rune") }}</option>
       </select>
       Automatically fill empty rune sockets
     </div>
@@ -217,6 +217,7 @@ import UiErrorBox from "@/web/ui/UiErrorBox.vue";
 import { configModelValue, configProp, findWidget } from "../settings/utils.js";
 import type { PriceCheckWidget } from "@/web/overlay/interfaces";
 import { useLeagues } from "../background/Leagues";
+import { getRuneNameByRef } from "./filters/fill-runes.js";
 
 export default defineComponent({
   name: "price_check.name",
@@ -336,6 +337,7 @@ export default defineComponent({
         () => configWidget.value,
         "openItemEditorAbove",
       ),
+      getRuneNameByRef,
     };
   },
 });
