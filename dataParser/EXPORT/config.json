@@ -238,10 +238,13 @@
       "name": "SoulCores",
       "columns": [
         "BaseItemType",
-        "StatsWeapon",
-        "StatsValuesWeapon",
+        "StatsMartialWeapon",
+        "StatsValuesMartialWeapon",
         "StatsArmour",
-        "StatsValuesArmour"
+        "StatsValuesArmour",
+        "Rank",
+        "StatsCasterWeapon",
+        "StatsValuesCasterWeapon"
       ]
     }
   ]

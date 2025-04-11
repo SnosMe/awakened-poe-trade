@@ -106,7 +106,7 @@ export interface BaseType {
     [category: string]: {
       string: string;
       values: number[];
-      tradeId: string[];
+      tradeId?: string[];
     };
   };
   tags: string[];

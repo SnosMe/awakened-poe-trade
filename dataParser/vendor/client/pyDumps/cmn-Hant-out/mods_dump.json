@@ -19,6 +19,9 @@
                 ],
                 "enchant": [
                     "enchant.stat_4080418644"
+                ],
+                "rune": [
+                    "rune.stat_4080418644"
                 ]
             }
         }
@@ -43,6 +46,9 @@
                 ],
                 "enchant": [
                     "enchant.stat_3261801346"
+                ],
+                "rune": [
+                    "rune.stat_3261801346"
                 ]
             }
         }
@@ -67,6 +73,9 @@
                 ],
                 "enchant": [
                     "enchant.stat_328541901"
+                ],
+                "rune": [
+                    "rune.stat_328541901"
                 ]
             }
         }
@@ -19061,7 +19070,11 @@
             }
         ],
         "trade": {
-            "ids": null
+            "ids": {
+                "explicit": [
+                    "explicit.stat_1920747151"
+                ]
+            }
         }
     },
     "merged_932": {
@@ -19079,7 +19092,11 @@
             }
         ],
         "trade": {
-            "ids": null
+            "ids": {
+                "explicit": [
+                    "explicit.stat_1027889455"
+                ]
+            }
         }
     },
     "merged_933": {
@@ -19097,7 +19114,11 @@
             }
         ],
         "trade": {
-            "ids": null
+            "ids": {
+                "explicit": [
+                    "explicit.stat_170426423"
+                ]
+            }
         }
     },
     "merged_934": {
@@ -23758,6 +23779,9 @@
             "ids": {
                 "explicit": [
                     "explicit.stat_3836551197"
+                ],
+                "enchant": [
+                    "enchant.stat_3836551197"
                 ]
             }
         }

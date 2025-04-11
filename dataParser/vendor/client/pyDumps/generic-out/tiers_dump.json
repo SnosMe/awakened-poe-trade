@@ -1,138 +1,138 @@
 {
     "+# to Strength": {
-        "amulet": 8,
-        "gloves": 8,
         "mace": 8,
-        "axe": 8,
-        "spear": 8,
+        "focus": 8,
         "belt": 9,
+        "crossbow": 8,
+        "spear": 8,
+        "boots": 8,
+        "axe": 8,
+        "amulet": 8,
+        "shield": 8,
         "sword": 8,
-        "body_armour": 8,
-        "flail": 8,
+        "gloves": 8,
         "sceptre": 8,
         "helmet": 8,
-        "crossbow": 8,
+        "flail": 8,
         "ring": 8,
-        "focus": 8,
-        "shield": 8,
-        "boots": 8
+        "body_armour": 8
     },
     "+# to Dexterity": {
-        "quiver": 8,
-        "amulet": 8,
-        "dagger": 8,
-        "gloves": 9,
-        "warstaff": 8,
-        "trap": 8,
-        "bow": 8,
-        "spear": 8,
         "claw": 8,
-        "sword": 8,
-        "body_armour": 8,
-        "helmet": 8,
-        "crossbow": 8,
-        "ring": 8,
         "focus": 8,
+        "bow": 8,
+        "dagger": 8,
+        "crossbow": 8,
+        "spear": 8,
+        "boots": 8,
+        "amulet": 8,
+        "gloves": 9,
+        "sword": 8,
+        "warstaff": 8,
         "shield": 8,
-        "boots": 8
+        "helmet": 8,
+        "trap": 8,
+        "ring": 8,
+        "body_armour": 8,
+        "quiver": 8
     },
     "+# to Intelligence": {
-        "wand": 8,
-        "body_armour": 8,
-        "dagger": 8,
         "amulet": 8,
-        "staff": 8,
-        "flail": 8,
+        "warstaff": 8,
+        "shield": 8,
         "gloves": 8,
         "sceptre": 8,
         "helmet": 9,
-        "warstaff": 8,
         "trap": 8,
-        "ring": 8,
+        "flail": 8,
         "focus": 8,
-        "shield": 8,
-        "boots": 8
+        "ring": 8,
+        "dagger": 8,
+        "staff": 8,
+        "boots": 8,
+        "wand": 8,
+        "body_armour": 8
     },
     "+# to all Attributes": {
-        "ring": 4,
-        "amulet": 9
+        "amulet": 9,
+        "ring": 4
     },
     "+#% to Fire Resistance": {
-        "body_armour": 8,
         "amulet": 8,
-        "helmet": 8,
-        "belt": 8,
-        "gloves": 8,
-        "ring": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "gloves": 8,
+        "boots": 8,
+        "helmet": 8,
+        "focus": 8,
+        "belt": 8,
+        "ring": 8,
+        "body_armour": 8
     },
     "+#% to Cold Resistance": {
-        "body_armour": 8,
         "amulet": 8,
-        "helmet": 8,
-        "belt": 8,
-        "gloves": 8,
-        "ring": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "gloves": 8,
+        "boots": 8,
+        "helmet": 8,
+        "focus": 8,
+        "belt": 8,
+        "ring": 8,
+        "body_armour": 8
     },
     "+#% to Lightning Resistance": {
-        "body_armour": 8,
         "amulet": 8,
-        "helmet": 8,
-        "belt": 8,
-        "gloves": 8,
-        "ring": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "gloves": 8,
+        "boots": 8,
+        "helmet": 8,
+        "focus": 8,
+        "belt": 8,
+        "ring": 8,
+        "body_armour": 8
     },
     "+#% to all Elemental Resistances": {
-        "ring": 5,
         "amulet": 6,
-        "shield": 6
+        "shield": 6,
+        "ring": 5
     },
     "Allies in your Presence have +#% to all Elemental Resistances": {
         "sceptre": 6
     },
     "+#% to Chaos Resistance": {
-        "body_armour": 6,
         "amulet": 6,
-        "helmet": 6,
-        "belt": 6,
-        "gloves": 6,
-        "ring": 6,
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "gloves": 6,
+        "boots": 6,
+        "helmet": 6,
+        "focus": 6,
+        "belt": 6,
+        "ring": 6,
+        "body_armour": 6
     },
     "+# to maximum Life": {
-        "body_armour": 13,
         "amulet": 9,
-        "helmet": 10,
         "gloves": 9,
-        "belt": 10,
-        "ring": 8,
         "shield": 11,
-        "boots": 9
+        "helmet": 10,
+        "ring": 8,
+        "belt": 10,
+        "boots": 9,
+        "body_armour": 13
     },
     "#% increased maximum Life": {
         "amulet": 3
     },
     "+# to maximum Mana": {
-        "wand": 11,
         "amulet": 13,
+        "gloves": 9,
         "sceptre": 11,
         "helmet": 10,
-        "gloves": 9,
         "trap": 11,
         "ring": 12,
         "focus": 11,
         "belt": 9,
         "boots": 9,
+        "wand": 11,
         "staff": 11
     },
     "#% increased maximum Mana": {
@@ -140,499 +140,499 @@
     },
     "+# to Armour": {
         "belt": 10,
-        "body_armour": 11,
-        "focus": 11,
-        "shield": 10,
-        "helmet": 8,
         "gloves": 7,
-        "boots": 7
+        "shield": 10,
+        "boots": 7,
+        "helmet": 8,
+        "focus": 11,
+        "body_armour": 11
     },
     "+# to Evasion Rating": {
         "ring": 9,
-        "body_armour": 11,
-        "focus": 11,
-        "shield": 10,
-        "helmet": 8,
         "gloves": 7,
-        "boots": 7
+        "shield": 10,
+        "boots": 7,
+        "helmet": 8,
+        "focus": 11,
+        "body_armour": 11
     },
     "+# to maximum Energy Shield": {
         "amulet": 10,
-        "body_armour": 11,
-        "focus": 10,
-        "shield": 10,
-        "helmet": 8,
         "gloves": 7,
-        "boots": 7
+        "shield": 10,
+        "boots": 7,
+        "helmet": 8,
+        "focus": 10,
+        "body_armour": 11
     },
     "#% increased Armour": {
         "amulet": 7,
         "jewel": 1,
-        "body_armour": 8,
-        "helmet": 8,
         "gloves": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "helmet": 8,
+        "focus": 8,
+        "boots": 8,
+        "body_armour": 8
     },
     "#% increased Evasion Rating": {
         "amulet": 7,
         "jewel": 1,
-        "body_armour": 8,
-        "helmet": 8,
         "gloves": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "helmet": 8,
+        "focus": 8,
+        "boots": 8,
+        "body_armour": 8
     },
     "#% increased maximum Energy Shield": {
         "amulet": 7,
         "jewel": 1
     },
     "+# to Evasion Rating\n+# to Armour": {
-        "body_armour": 8,
-        "focus": 8,
-        "shield": 7,
-        "helmet": 5,
         "gloves": 4,
-        "boots": 4
+        "shield": 7,
+        "boots": 4,
+        "helmet": 5,
+        "focus": 8,
+        "body_armour": 8
     },
     "+# to Armour\n+# to Evasion Rating": {
-        "body_armour": 8,
-        "focus": 8,
-        "shield": 7,
-        "helmet": 5,
         "gloves": 4,
-        "boots": 4
-    },
-    "+# to maximum Energy Shield\n+# to Armour": {
-        "body_armour": 8,
-        "focus": 8,
         "shield": 7,
+        "boots": 4,
         "helmet": 5,
-        "gloves": 4,
-        "boots": 4
+        "focus": 8,
+        "body_armour": 8
     },
     "+# to Armour\n+# to maximum Energy Shield": {
-        "body_armour": 8,
-        "focus": 8,
-        "shield": 7,
-        "helmet": 5,
         "gloves": 4,
-        "boots": 4
+        "shield": 7,
+        "boots": 4,
+        "helmet": 5,
+        "focus": 8,
+        "body_armour": 8
     },
-    "+# to maximum Energy Shield\n+# to Evasion Rating": {
-        "body_armour": 8,
-        "focus": 8,
-        "shield": 7,
-        "helmet": 5,
+    "+# to maximum Energy Shield\n+# to Armour": {
         "gloves": 4,
-        "boots": 4
+        "shield": 7,
+        "boots": 4,
+        "helmet": 5,
+        "focus": 8,
+        "body_armour": 8
     },
     "+# to Evasion Rating\n+# to maximum Energy Shield": {
-        "body_armour": 8,
-        "focus": 8,
-        "shield": 7,
-        "helmet": 5,
         "gloves": 4,
-        "boots": 4
+        "shield": 7,
+        "boots": 4,
+        "helmet": 5,
+        "focus": 8,
+        "body_armour": 8
+    },
+    "+# to maximum Energy Shield\n+# to Evasion Rating": {
+        "gloves": 4,
+        "shield": 7,
+        "boots": 4,
+        "helmet": 5,
+        "focus": 8,
+        "body_armour": 8
     },
     "#% increased Energy Shield": {
-        "body_armour": 8,
-        "helmet": 8,
         "gloves": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "helmet": 8,
+        "focus": 8,
+        "boots": 8,
+        "body_armour": 8
     },
     "#% increased Armour and Evasion": {
-        "body_armour": 8,
-        "helmet": 8,
         "gloves": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "helmet": 8,
+        "focus": 8,
+        "boots": 8,
+        "body_armour": 8
     },
     "#% increased Armour and Energy Shield": {
-        "body_armour": 8,
-        "helmet": 8,
         "gloves": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
+        "helmet": 8,
+        "focus": 8,
+        "boots": 8,
+        "body_armour": 8
     },
     "#% increased Evasion and Energy Shield": {
-        "body_armour": 8,
-        "helmet": 8,
         "gloves": 8,
-        "focus": 8,
         "shield": 8,
-        "boots": 8
-    },
-    "+# to Stun Threshold\n#% increased Armour": {
-        "focus": 6,
-        "shield": 6,
-        "boots": 6
+        "helmet": 8,
+        "focus": 8,
+        "boots": 8,
+        "body_armour": 8
     },
     "#% increased Armour\n+# to Stun Threshold": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
+    },
+    "+# to Stun Threshold\n#% increased Armour": {
+        "shield": 6,
+        "boots": 6,
+        "focus": 6
     },
     "#% increased Evasion Rating\n+# to Stun Threshold": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
     "+# to Stun Threshold\n#% increased Evasion Rating": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
     "#% increased Energy Shield\n+# to Stun Threshold": {
-        "boots": 6,
-        "shield": 6
+        "shield": 6,
+        "boots": 6
     },
     "+# to Stun Threshold\n#% increased Energy Shield": {
-        "boots": 6,
-        "shield": 6
+        "shield": 6,
+        "boots": 6
     },
     "#% increased Armour and Evasion\n+# to Stun Threshold": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
     "+# to Stun Threshold\n#% increased Armour and Evasion": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
     "#% increased Armour and Energy Shield\n+# to Stun Threshold": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
     "+# to Stun Threshold\n#% increased Armour and Energy Shield": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
-    },
-    "+# to Stun Threshold\n#% increased Evasion and Energy Shield": {
-        "focus": 6,
-        "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
     "#% increased Evasion and Energy Shield\n+# to Stun Threshold": {
-        "focus": 6,
         "shield": 6,
-        "boots": 6
+        "boots": 6,
+        "focus": 6
     },
-    "+# to maximum Life\n#% increased Armour": {
-        "body_armour": 6,
-        "helmet": 6,
-        "gloves": 6,
+    "+# to Stun Threshold\n#% increased Evasion and Energy Shield": {
+        "shield": 6,
+        "boots": 6,
         "focus": 6
     },
     "#% increased Armour\n+# to maximum Life": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
     },
-    "#% increased Evasion Rating\n+# to maximum Life": {
-        "body_armour": 6,
-        "helmet": 6,
+    "+# to maximum Life\n#% increased Armour": {
         "gloves": 6,
-        "focus": 6
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
     },
     "+# to maximum Life\n#% increased Evasion Rating": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
+    },
+    "#% increased Evasion Rating\n+# to maximum Life": {
+        "gloves": 6,
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Energy Shield\n+# to maximum Life": {
-        "body_armour": 6,
+        "gloves": 6,
         "helmet": 6,
-        "gloves": 6
+        "body_armour": 6
     },
     "+# to maximum Life\n#% increased Energy Shield": {
-        "body_armour": 6,
+        "gloves": 6,
         "helmet": 6,
-        "gloves": 6
+        "body_armour": 6
     },
     "+# to maximum Life\n#% increased Armour and Evasion": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Armour and Evasion\n+# to maximum Life": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
-    },
-    "#% increased Armour and Energy Shield\n+# to maximum Life": {
-        "body_armour": 6,
         "helmet": 6,
-        "gloves": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
     "+# to maximum Life\n#% increased Armour and Energy Shield": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
+    },
+    "#% increased Armour and Energy Shield\n+# to maximum Life": {
+        "gloves": 6,
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
     },
     "+# to maximum Life\n#% increased Evasion and Energy Shield": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
+        "helmet": 6,
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Evasion and Energy Shield\n+# to maximum Life": {
-        "body_armour": 6,
-        "helmet": 6,
         "gloves": 6,
-        "focus": 6
-    },
-    "+# to maximum Mana\n#% increased Armour": {
         "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Armour\n+# to maximum Mana": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
+    },
+    "+# to maximum Mana\n#% increased Armour": {
+        "focus": 6,
+        "helmet": 6
     },
     "#% increased Evasion Rating\n+# to maximum Mana": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
     "+# to maximum Mana\n#% increased Evasion Rating": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
     "#% increased Energy Shield\n+# to maximum Mana": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
     "+# to maximum Mana\n#% increased Energy Shield": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
     "#% increased Armour and Evasion\n+# to maximum Mana": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
     "+# to maximum Mana\n#% increased Armour and Evasion": {
-        "helmet": 6,
-        "focus": 6
-    },
-    "#% increased Armour and Energy Shield\n+# to maximum Mana": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
     "+# to maximum Mana\n#% increased Armour and Energy Shield": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
-    "+# to maximum Mana\n#% increased Evasion and Energy Shield": {
-        "helmet": 6,
-        "focus": 6
+    "#% increased Armour and Energy Shield\n+# to maximum Mana": {
+        "focus": 6,
+        "helmet": 6
     },
     "#% increased Evasion and Energy Shield\n+# to maximum Mana": {
-        "helmet": 6,
-        "focus": 6
+        "focus": 6,
+        "helmet": 6
     },
-    "+# to Armour\n#% increased Armour": {
-        "body_armour": 6,
-        "focus": 6
+    "+# to maximum Mana\n#% increased Evasion and Energy Shield": {
+        "focus": 6,
+        "helmet": 6
     },
     "#% increased Armour\n+# to Armour": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to Armour\n#% increased Armour": {
+        "focus": 6,
+        "body_armour": 6
     },
     "+# to Evasion Rating\n#% increased Evasion Rating": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Evasion Rating\n+# to Evasion Rating": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to maximum Energy Shield\n#% increased Energy Shield": {
+        "focus": 6,
         "body_armour": 6
     },
     "#% increased Energy Shield\n+# to maximum Energy Shield": {
         "body_armour": 6
     },
-    "+# to Armour\n+# to Evasion Rating\n#% increased Armour and Evasion": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to Armour\n#% increased Armour and Evasion\n+# to Evasion Rating": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to Evasion Rating\n+# to Armour\n#% increased Armour and Evasion": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to Evasion Rating\n#% increased Armour and Evasion\n+# to Armour": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "#% increased Armour and Evasion\n+# to Armour\n+# to Evasion Rating": {
-        "body_armour": 6,
-        "focus": 6
+    "+# to maximum Energy Shield\n#% increased Energy Shield": {
+        "body_armour": 6
     },
     "#% increased Armour and Evasion\n+# to Evasion Rating\n+# to Armour": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
-    "+# to maximum Energy Shield\n+# to Armour\n#% increased Armour and Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
+    "#% increased Armour and Evasion\n+# to Armour\n+# to Evasion Rating": {
+        "focus": 6,
+        "body_armour": 6
     },
-    "+# to maximum Energy Shield\n#% increased Armour and Energy Shield\n+# to Armour": {
-        "body_armour": 6,
-        "focus": 6
+    "+# to Evasion Rating\n#% increased Armour and Evasion\n+# to Armour": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to Evasion Rating\n+# to Armour\n#% increased Armour and Evasion": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to Armour\n#% increased Armour and Evasion\n+# to Evasion Rating": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to Armour\n+# to Evasion Rating\n#% increased Armour and Evasion": {
+        "focus": 6,
+        "body_armour": 6
     },
     "+# to Armour\n+# to maximum Energy Shield\n#% increased Armour and Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
     "+# to Armour\n#% increased Armour and Energy Shield\n+# to maximum Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
-    "#% increased Armour and Energy Shield\n+# to maximum Energy Shield\n+# to Armour": {
-        "body_armour": 6,
-        "focus": 6
+    "+# to maximum Energy Shield\n+# to Armour\n#% increased Armour and Energy Shield": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to maximum Energy Shield\n#% increased Armour and Energy Shield\n+# to Armour": {
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Armour and Energy Shield\n+# to Armour\n+# to maximum Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
     },
-    "+# to maximum Energy Shield\n+# to Evasion Rating\n#% increased Evasion and Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to maximum Energy Shield\n#% increased Evasion and Energy Shield\n+# to Evasion Rating": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to Evasion Rating\n+# to maximum Energy Shield\n#% increased Evasion and Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "+# to Evasion Rating\n#% increased Evasion and Energy Shield\n+# to maximum Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
-    },
-    "#% increased Evasion and Energy Shield\n+# to maximum Energy Shield\n+# to Evasion Rating": {
-        "body_armour": 6,
-        "focus": 6
+    "#% increased Armour and Energy Shield\n+# to maximum Energy Shield\n+# to Armour": {
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Evasion and Energy Shield\n+# to Evasion Rating\n+# to maximum Energy Shield": {
-        "body_armour": 6,
-        "focus": 6
+        "focus": 6,
+        "body_armour": 6
+    },
+    "#% increased Evasion and Energy Shield\n+# to maximum Energy Shield\n+# to Evasion Rating": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to Evasion Rating\n#% increased Evasion and Energy Shield\n+# to maximum Energy Shield": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to Evasion Rating\n+# to maximum Energy Shield\n#% increased Evasion and Energy Shield": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to maximum Energy Shield\n#% increased Evasion and Energy Shield\n+# to Evasion Rating": {
+        "focus": 6,
+        "body_armour": 6
+    },
+    "+# to maximum Energy Shield\n+# to Evasion Rating\n#% increased Evasion and Energy Shield": {
+        "focus": 6,
+        "body_armour": 6
     },
     "#% increased Attribute Requirements": {
-        "dagger": 5,
-        "gloves": 5,
-        "axe": 5,
-        "sword": 5,
-        "body_armour": 5,
-        "sceptre": 5,
-        "flail": 5,
-        "crossbow": 5,
-        "focus": 5,
-        "boots": 5,
-        "warstaff": 5,
         "mace": 5,
+        "focus": 5,
         "bow": 5,
         "spear": 5,
-        "wand": 5,
-        "claw": 5,
-        "staff": 5,
+        "shield": 5,
+        "gloves": 5,
+        "sword": 5,
+        "sceptre": 5,
         "helmet": 5,
-        "shield": 5
+        "warstaff": 5,
+        "flail": 5,
+        "body_armour": 5,
+        "claw": 5,
+        "dagger": 5,
+        "crossbow": 5,
+        "boots": 5,
+        "axe": 5,
+        "staff": 5,
+        "wand": 5
     },
     "+# to Stun Threshold": {
-        "shield": 10,
-        "body_armour": 10,
         "belt": 10,
-        "boots": 11
+        "shield": 10,
+        "boots": 11,
+        "body_armour": 10
     },
     "#% increased Movement Speed": {
         "boots": 6,
         "jewel": 1
     },
     "# to # Physical Thorns damage": {
-        "body_armour": 7,
         "belt": 7,
-        "shield": 7
+        "shield": 7,
+        "body_armour": 7
     },
     "Adds # to # Physical Damage to Attacks": {
-        "ring": 9,
+        "gloves": 9,
         "quiver": 9,
-        "gloves": 9
+        "ring": 9
     },
     "Adds # to # Fire damage to Attacks": {
-        "ring": 9,
+        "gloves": 9,
         "quiver": 9,
-        "gloves": 9
+        "ring": 9
     },
     "Adds # to # Cold damage to Attacks": {
-        "ring": 9,
+        "gloves": 9,
         "quiver": 9,
-        "gloves": 9
+        "ring": 9
     },
     "Adds # to # Lightning damage to Attacks": {
-        "ring": 9,
+        "gloves": 9,
         "quiver": 9,
-        "gloves": 9
+        "ring": 9
     },
     "Adds # to # Physical Damage": {
-        "one_hand_weapon": 9,
         "bow": 9,
+        "one_hand_weapon": 9,
         "two_hand_weapon": 9
     },
     "Adds # to # Fire Damage": {
-        "claw": 10,
         "sword": 10,
-        "dagger": 10,
-        "flail": 10,
         "mace": 10,
-        "axe": 10,
+        "claw": 10,
+        "flail": 10,
         "bow": 10,
+        "dagger": 10,
         "spear": 10,
+        "axe": 10,
         "warstaff": 10,
         "crossbow": 10
     },
     "Adds # to # Cold Damage": {
-        "claw": 10,
         "sword": 10,
-        "dagger": 10,
-        "flail": 10,
         "mace": 10,
-        "axe": 10,
+        "claw": 10,
+        "flail": 10,
         "bow": 10,
+        "dagger": 10,
         "spear": 10,
+        "axe": 10,
         "warstaff": 10,
         "crossbow": 10
     },
     "Adds # to # Lightning Damage": {
-        "claw": 10,
         "sword": 10,
-        "dagger": 10,
-        "flail": 10,
         "mace": 10,
-        "axe": 10,
+        "claw": 10,
+        "flail": 10,
         "bow": 10,
+        "dagger": 10,
         "spear": 10,
+        "axe": 10,
         "warstaff": 10,
         "crossbow": 10
     },
@@ -649,40 +649,40 @@
         "sceptre": 9
     },
     "#% increased Physical Damage": {
-        "dagger": 8,
-        "warstaff": 8,
         "mace": 8,
-        "axe": 8,
-        "bow": 8,
-        "spear": 8,
         "claw": 8,
-        "sword": 8,
-        "flail": 8,
-        "crossbow": 8
-    },
-    "+# to Accuracy Rating\n#% increased Physical Damage": {
+        "bow": 8,
         "dagger": 8,
-        "warstaff": 8,
-        "mace": 8,
-        "axe": 8,
-        "bow": 8,
+        "crossbow": 8,
         "spear": 8,
-        "claw": 8,
+        "axe": 8,
+        "warstaff": 8,
         "sword": 8,
-        "flail": 8,
-        "crossbow": 8
+        "flail": 8
     },
     "#% increased Physical Damage\n+# to Accuracy Rating": {
-        "dagger": 8,
-        "warstaff": 8,
         "mace": 8,
-        "axe": 8,
-        "bow": 8,
-        "spear": 8,
         "claw": 8,
+        "bow": 8,
+        "dagger": 8,
+        "crossbow": 8,
+        "spear": 8,
+        "axe": 8,
+        "warstaff": 8,
         "sword": 8,
-        "flail": 8,
-        "crossbow": 8
+        "flail": 8
+    },
+    "+# to Accuracy Rating\n#% increased Physical Damage": {
+        "mace": 8,
+        "claw": 8,
+        "bow": 8,
+        "dagger": 8,
+        "crossbow": 8,
+        "spear": 8,
+        "axe": 8,
+        "warstaff": 8,
+        "sword": 8,
+        "flail": 8
     },
     "Allies in your Presence deal #% increased Damage": {
         "sceptre": 8
@@ -751,8 +751,8 @@
         "trap": 7
     },
     "+# to Level of all Spell Skills": {
-        "focus": 2,
         "amulet": 3,
+        "focus": 2,
         "wand": 4,
         "staff": 4
     },
@@ -777,46 +777,46 @@
         "staff": 5
     },
     "+# to Level of all Minion Skills": {
-        "helmet": 2,
         "amulet": 3,
+        "helmet": 2,
         "sceptre": 4
     },
     "+# to Level of all Trap Skill Gems": {
         "trap": 5
     },
     "+# to Level of all Melee Skills": {
-        "gloves": 2,
         "amulet": 3,
+        "gloves": 2,
         "one_hand_weapon": 5,
         "spear": 5,
         "two_hand_weapon": 5
     },
     "+# to Level of all Projectile Skills": {
-        "quiver": 2,
         "amulet": 3,
+        "quiver": 2,
         "bow": 5,
         "spear": 5,
         "crossbow": 5
     },
     "# Life Regeneration per second": {
-        "ring": 7,
-        "body_armour": 11,
         "amulet": 10,
         "belt": 9,
+        "boots": 8,
         "helmet": 8,
-        "boots": 8
+        "body_armour": 11,
+        "ring": 7
     },
     "Allies in your Presence Regenerate # Life per second": {
         "sceptre": 10
     },
     "#% increased Mana Regeneration Rate": {
-        "wand": 6,
         "amulet": 6,
         "sceptre": 6,
-        "staff": 6,
         "trap": 6,
-        "ring": 6,
         "focus": 6,
+        "staff": 6,
+        "ring": 6,
+        "wand": 6,
         "jewel": 1
     },
     "Leech #% of Physical Attack Damage as Life": {
@@ -824,108 +824,108 @@
         "ring": 3
     },
     "Leeches #% of Physical Damage as Life": {
-        "dagger": 5,
-        "warstaff": 5,
         "mace": 5,
-        "axe": 5,
-        "bow": 5,
-        "spear": 5,
         "claw": 5,
+        "bow": 5,
+        "dagger": 5,
+        "crossbow": 5,
+        "spear": 5,
+        "axe": 5,
+        "warstaff": 5,
         "sword": 5,
-        "flail": 5,
-        "crossbow": 5
+        "flail": 5
     },
     "Leech #% of Physical Attack Damage as Mana": {
         "gloves": 5,
         "ring": 3
     },
     "Leeches #% of Physical Damage as Mana": {
-        "dagger": 5,
-        "warstaff": 5,
         "mace": 5,
-        "axe": 5,
-        "bow": 5,
-        "spear": 5,
         "claw": 5,
+        "bow": 5,
+        "dagger": 5,
+        "crossbow": 5,
+        "spear": 5,
+        "axe": 5,
+        "warstaff": 5,
         "sword": 5,
-        "flail": 5,
-        "crossbow": 5
+        "flail": 5
     },
     "Gain # Life per Enemy Killed": {
-        "quiver": 6,
-        "dagger": 8,
-        "gloves": 8,
-        "trap": 8,
-        "warstaff": 8,
         "mace": 8,
-        "axe": 8,
-        "bow": 8,
-        "spear": 8,
-        "wand": 8,
-        "sword": 8,
         "claw": 8,
-        "staff": 8,
-        "flail": 8,
+        "bow": 8,
+        "dagger": 8,
         "crossbow": 8,
-        "ring": 6
+        "spear": 8,
+        "axe": 8,
+        "gloves": 8,
+        "sword": 8,
+        "warstaff": 8,
+        "trap": 8,
+        "flail": 8,
+        "staff": 8,
+        "ring": 6,
+        "wand": 8,
+        "quiver": 6
     },
     "Gain # Mana per Enemy Killed": {
-        "quiver": 6,
-        "dagger": 8,
-        "gloves": 8,
-        "trap": 8,
-        "warstaff": 8,
         "mace": 8,
-        "axe": 8,
-        "bow": 8,
-        "spear": 8,
-        "wand": 8,
-        "sword": 8,
         "claw": 8,
-        "staff": 8,
-        "flail": 8,
+        "bow": 8,
+        "dagger": 8,
         "crossbow": 8,
-        "ring": 6
+        "spear": 8,
+        "axe": 8,
+        "gloves": 8,
+        "sword": 8,
+        "warstaff": 8,
+        "trap": 8,
+        "flail": 8,
+        "staff": 8,
+        "ring": 6,
+        "wand": 8,
+        "quiver": 6
     },
     "Gain # Life per Enemy Hit with Attacks": {
         "gloves": 4
     },
     "Grants # Life per Enemy Hit": {
-        "dagger": 4,
-        "warstaff": 4,
         "mace": 4,
-        "axe": 4,
-        "bow": 4,
-        "spear": 4,
         "claw": 4,
+        "bow": 4,
+        "dagger": 4,
+        "crossbow": 4,
+        "spear": 4,
+        "axe": 4,
+        "warstaff": 4,
         "sword": 4,
-        "flail": 4,
-        "crossbow": 4
+        "flail": 4
     },
     "#% increased Attack Speed": {
         "gloves": 4,
         "quiver": 4,
         "jewel": 1,
-        "dagger": 8,
-        "warstaff": 8,
         "mace": 8,
-        "axe": 8,
-        "bow": 8,
-        "spear": 8,
         "claw": 8,
+        "bow": 8,
+        "dagger": 8,
+        "crossbow": 8,
+        "spear": 8,
+        "axe": 8,
+        "warstaff": 8,
         "sword": 8,
         "flail": 8,
-        "ranged": 2,
-        "crossbow": 8
+        "ranged": 2
     },
     "Allies in your Presence have #% increased Attack Speed": {
         "sceptre": 4
     },
     "#% increased Cast Speed": {
-        "wand": 7,
-        "ring": 4,
-        "focus": 6,
         "amulet": 5,
+        "ring": 4,
+        "wand": 7,
+        "focus": 6,
         "staff": 7,
         "jewel": 1
     },
@@ -937,47 +937,47 @@
         "jewel": 1
     },
     "+# to Accuracy Rating": {
+        "amulet": 8,
+        "gloves": 9,
+        "helmet": 9,
         "ring": 8,
         "quiver": 9,
-        "amulet": 8,
-        "helmet": 9,
-        "gloves": 9,
-        "claw": 9,
-        "sword": 9,
-        "dagger": 9,
-        "flail": 9,
-        "ranged": 1,
         "warstaff": 9,
+        "sword": 9,
         "mace": 9,
-        "crossbow": 9,
-        "axe": 9,
+        "claw": 9,
+        "flail": 9,
         "bow": 9,
-        "spear": 9
+        "dagger": 9,
+        "crossbow": 9,
+        "spear": 9,
+        "axe": 9,
+        "ranged": 1
     },
     "Allies in your Presence have +# to Accuracy Rating": {
         "sceptre": 8
     },
     "#% increased Critical Hit Chance": {
-        "helmet": 5,
         "amulet": 6,
+        "helmet": 5,
         "jewel": 1
     },
     "+#% to Critical Hit Chance": {
-        "dagger": 6,
-        "warstaff": 6,
         "mace": 6,
-        "axe": 6,
-        "bow": 6,
-        "spear": 6,
         "claw": 6,
+        "bow": 6,
+        "dagger": 6,
+        "crossbow": 6,
+        "spear": 6,
+        "axe": 6,
+        "warstaff": 6,
         "sword": 6,
-        "flail": 6,
-        "crossbow": 6
+        "flail": 6
     },
     "#% increased Critical Hit Chance for Spells": {
+        "staff": 6,
         "wand": 6,
         "focus": 5,
-        "staff": 6,
         "jewel": 1
     },
     "#% increased Critical Hit Chance for Attacks": {
@@ -991,26 +991,26 @@
         "sceptre": 6
     },
     "#% increased Critical Damage Bonus": {
-        "gloves": 5,
         "amulet": 6,
+        "gloves": 5,
         "jewel": 1
     },
     "+#% to Critical Damage Bonus": {
-        "dagger": 6,
-        "warstaff": 6,
         "mace": 6,
-        "axe": 6,
-        "bow": 6,
-        "spear": 6,
         "claw": 6,
+        "bow": 6,
+        "dagger": 6,
+        "crossbow": 6,
+        "spear": 6,
+        "axe": 6,
+        "warstaff": 6,
         "sword": 6,
-        "flail": 6,
-        "crossbow": 6
+        "flail": 6
     },
     "#% increased Critical Spell Damage Bonus": {
+        "staff": 6,
         "wand": 6,
         "focus": 5,
-        "staff": 6,
         "jewel": 1
     },
     "#% increased Critical Damage Bonus for Attack Damage": {
@@ -1025,56 +1025,56 @@
     },
     "#% increased Rarity of Items found": {
         "amulet": 5,
-        "helmet": 5,
         "gloves": 5,
+        "helmet": 5,
         "ring": 5,
         "boots": 5
     },
     "#% increased Light Radius\n+# to Accuracy Rating": {
         "helmet": 3,
-        "dagger": 3,
-        "warstaff": 3,
         "mace": 3,
-        "axe": 3,
-        "bow": 3,
-        "spear": 3,
         "claw": 3,
+        "bow": 3,
+        "dagger": 3,
+        "crossbow": 3,
+        "spear": 3,
+        "axe": 3,
+        "warstaff": 3,
         "sword": 3,
-        "flail": 3,
-        "crossbow": 3
+        "flail": 3
     },
     "+# to Accuracy Rating\n#% increased Light Radius": {
         "helmet": 3,
-        "dagger": 3,
-        "warstaff": 3,
         "mace": 3,
-        "axe": 3,
-        "bow": 3,
-        "spear": 3,
         "claw": 3,
+        "bow": 3,
+        "dagger": 3,
+        "crossbow": 3,
+        "spear": 3,
+        "axe": 3,
+        "warstaff": 3,
         "sword": 3,
-        "flail": 3,
-        "crossbow": 3
+        "flail": 3
     },
     "#% increased Light Radius\n#% increased Mana Regeneration Rate": {
-        "wand": 3,
-        "staff": 3,
         "sceptre": 3,
-        "ring": 3
+        "staff": 3,
+        "ring": 3,
+        "wand": 3
     },
     "#% increased Mana Regeneration Rate\n#% increased Light Radius": {
-        "wand": 3,
-        "staff": 3,
         "sceptre": 3,
-        "ring": 3
+        "staff": 3,
+        "ring": 3,
+        "wand": 3
     },
     "#% increased Block chance": {
         "shield": 7,
         "jewel": 1
     },
     "+# to Spirit": {
-        "body_armour": 8,
-        "amulet": 5
+        "amulet": 5,
+        "body_armour": 8
     },
     "#% increased Spirit": {
         "sceptre": 8
@@ -1169,20 +1169,20 @@
         "belt": 2
     },
     "#% increased chance to Ignite": {
-        "wand": 5,
         "staff": 5,
+        "wand": 5,
         "trap": 5,
         "jewel": 1
     },
     "#% increased Freeze Buildup": {
-        "wand": 5,
         "staff": 5,
+        "wand": 5,
         "trap": 5,
         "jewel": 1
     },
     "#% increased chance to Shock": {
-        "wand": 5,
         "staff": 5,
+        "wand": 5,
         "trap": 5,
         "jewel": 1
     },
@@ -1198,32 +1198,32 @@
         "amulet": 5
     },
     "#% increased Stun Duration": {
-        "dagger": 6,
-        "warstaff": 6,
         "mace": 6,
-        "axe": 6,
-        "bow": 6,
-        "spear": 6,
         "claw": 6,
+        "bow": 6,
+        "dagger": 6,
+        "crossbow": 6,
+        "spear": 6,
+        "axe": 6,
+        "warstaff": 6,
         "sword": 6,
-        "flail": 6,
-        "crossbow": 6
+        "flail": 6
     },
     "Causes #% increased Stun Buildup": {
-        "dagger": 6,
-        "warstaff": 6,
         "mace": 6,
-        "axe": 6,
-        "bow": 6,
-        "spear": 6,
         "claw": 6,
+        "bow": 6,
+        "dagger": 6,
+        "crossbow": 6,
+        "spear": 6,
+        "axe": 6,
+        "warstaff": 6,
         "sword": 6,
-        "flail": 6,
-        "crossbow": 6
+        "flail": 6
     },
     "#% increased Elemental Damage with Attacks": {
-        "one_hand_weapon": 6,
         "bow": 6,
+        "one_hand_weapon": 6,
         "two_hand_weapon": 6
     },
     "Gain #% of Damage as Extra Fire Damage": {

@@ -181,8 +181,13 @@ import {
 } from "../overlay/interfaces";
 import ConversionWarningBanner from "../conversion-warn-banner/ConversionWarningBanner.vue";
 import ItemEditor from "./filters/ItemEditor.vue";
-import { HIGH_VALUE_RUNES_HARDCODED, loadUltraLateItems } from "@/assets/data";
-import { refEffectsPseudos } from "./filters/pseudo";
+import {
+  BaseType,
+  HIGH_VALUE_RUNES_HARDCODED,
+  loadUltraLateItems,
+  setLocalRuneFilter,
+} from "@/assets/data";
+import { translatedEffectsPseudos } from "./filters/pseudo";
 import { ItemEditorType } from "@/parser/meta";
 import { getItemEditorType } from "./filters/util";
 
@@ -255,12 +260,12 @@ export default defineComponent({
     watch(
       () => props.config.usePseudo,
       () => {
-        loadUltraLateItems(
-          (item) =>
-            Object.values(item.rune!).some((runeStat) =>
-              refEffectsPseudos(runeStat.string),
-            ) || HIGH_VALUE_RUNES_HARDCODED.has(item.refName),
-        );
+        const runeFilter = (item: BaseType) =>
+          Object.values(item.rune!).some((runeStat) =>
+            translatedEffectsPseudos(runeStat.string),
+          ) || HIGH_VALUE_RUNES_HARDCODED.has(item.refName);
+        setLocalRuneFilter(runeFilter);
+        loadUltraLateItems(runeFilter);
       },
       { immediate: true },
     );

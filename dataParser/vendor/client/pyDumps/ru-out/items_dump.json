@@ -7793,6 +7793,13 @@
                 "tradeId": [
                     "rune.stat_709508406"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от огня",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "desert-rune",
@@ -7832,6 +7839,13 @@
                     "rune.stat_1037193709",
                     "rune.stat_1037193709"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от холода",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "glacial-rune",
@@ -7871,6 +7885,13 @@
                     "rune.stat_3336890334",
                     "rune.stat_3336890334"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от молнии",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "storm-rune",
@@ -7908,6 +7929,13 @@
                 "tradeId": [
                     "rune.stat_1509134228"
                 ]
+            },
+            "caster": {
+                "string": "#% увеличение урона от чар",
+                "values": [
+                    25
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "iron-rune",
@@ -7945,6 +7973,13 @@
                 "tradeId": [
                     "rune.stat_55876295"
                 ]
+            },
+            "caster": {
+                "string": "# к максимуму энергетического щита",
+                "values": [
+                    30
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "body-rune",
@@ -7981,6 +8016,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_669069897"
+                ]
+            },
+            "caster": {
+                "string": "# к максимуму маны",
+                "values": [
+                    30
+                ],
+                "tradeId": [
+                    "rune.stat_1050105434"
                 ]
             }
         },
@@ -8019,6 +8063,13 @@
                 "tradeId": [
                     "rune.stat_3695891184"
                 ]
+            },
+            "caster": {
+                "string": "#% повышение скорости перезарядки энергетического щита",
+                "values": [
+                    15
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "rebirth-rune",
@@ -8055,6 +8106,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_1368271171"
+                ]
+            },
+            "caster": {
+                "string": "#% повышение скорости регенерации маны",
+                "values": [
+                    20
+                ],
+                "tradeId": [
+                    "rune.stat_789117908"
                 ]
             }
         },
@@ -8093,6 +8153,13 @@
                 "tradeId": [
                     "rune.stat_791928121"
                 ]
+            },
+            "caster": {
+                "string": "Дарует дополнительный порог оглушения в размере #% от максимума энергетического щита",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "stone-rune",
@@ -8130,6 +8197,13 @@
                 "tradeId": [
                     "rune.stat_691932474"
                 ]
+            },
+            "caster": {
+                "string": "#% повышение шанса критического удара для чар",
+                "values": [
+                    20
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "vision-rune",
@@ -8168,6 +8242,13 @@
                 "tradeId": [
                     "rune.stat_709508406"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от огня",
+                "values": [
+                    8
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-desert-rune",
@@ -8207,6 +8288,13 @@
                     "rune.stat_1037193709",
                     "rune.stat_1037193709"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от холода",
+                "values": [
+                    8
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-glacial-rune",
@@ -8246,6 +8334,13 @@
                     "rune.stat_3336890334",
                     "rune.stat_3336890334"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от молнии",
+                "values": [
+                    8
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-storm-rune",
@@ -8283,6 +8378,13 @@
                 "tradeId": [
                     "rune.stat_1509134228"
                 ]
+            },
+            "caster": {
+                "string": "#% увеличение урона от чар",
+                "values": [
+                    20
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-iron-rune",
@@ -8320,6 +8422,13 @@
                 "tradeId": [
                     "rune.stat_55876295"
                 ]
+            },
+            "caster": {
+                "string": "# к максимуму энергетического щита",
+                "values": [
+                    25
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-body-rune",
@@ -8356,6 +8465,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_669069897"
+                ]
+            },
+            "caster": {
+                "string": "# к максимуму маны",
+                "values": [
+                    25
+                ],
+                "tradeId": [
+                    "rune.stat_1050105434"
                 ]
             }
         },
@@ -8394,6 +8512,13 @@
                 "tradeId": [
                     "rune.stat_3695891184"
                 ]
+            },
+            "caster": {
+                "string": "#% повышение скорости перезарядки энергетического щита",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-rebirth-rune",
@@ -8430,6 +8555,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_1368271171"
+                ]
+            },
+            "caster": {
+                "string": "#% повышение скорости регенерации маны",
+                "values": [
+                    16
+                ],
+                "tradeId": [
+                    "rune.stat_789117908"
                 ]
             }
         },
@@ -8468,6 +8602,13 @@
                 "tradeId": [
                     "rune.stat_791928121"
                 ]
+            },
+            "caster": {
+                "string": "Дарует дополнительный порог оглушения в размере #% от максимума энергетического щита",
+                "values": [
+                    10
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-stone-rune",
@@ -8505,6 +8646,13 @@
                 "tradeId": [
                     "rune.stat_691932474"
                 ]
+            },
+            "caster": {
+                "string": "#% повышение шанса критического удара для чар",
+                "values": [
+                    16
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "lesser-vision-rune",
@@ -8543,6 +8691,13 @@
                 "tradeId": [
                     "rune.stat_709508406"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от огня",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-desert-rune",
@@ -8582,6 +8737,13 @@
                     "rune.stat_1037193709",
                     "rune.stat_1037193709"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от холода",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-glacial-rune",
@@ -8621,6 +8783,13 @@
                     "rune.stat_3336890334",
                     "rune.stat_3336890334"
                 ]
+            },
+            "caster": {
+                "string": "Наносит #% урона в виде дополнительного урона от молнии",
+                "values": [
+                    12
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-storm-rune",
@@ -8658,6 +8827,13 @@
                 "tradeId": [
                     "rune.stat_1509134228"
                 ]
+            },
+            "caster": {
+                "string": "#% увеличение урона от чар",
+                "values": [
+                    30
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-iron-rune",
@@ -8695,6 +8871,13 @@
                 "tradeId": [
                     "rune.stat_55876295"
                 ]
+            },
+            "caster": {
+                "string": "# к максимуму энергетического щита",
+                "values": [
+                    35
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-body-rune",
@@ -8731,6 +8914,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_669069897"
+                ]
+            },
+            "caster": {
+                "string": "# к максимуму маны",
+                "values": [
+                    35
+                ],
+                "tradeId": [
+                    "rune.stat_1050105434"
                 ]
             }
         },
@@ -8769,6 +8961,13 @@
                 "tradeId": [
                     "rune.stat_3695891184"
                 ]
+            },
+            "caster": {
+                "string": "#% повышение скорости перезарядки энергетического щита",
+                "values": [
+                    18
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-rebirth-rune",
@@ -8805,6 +9004,15 @@
                 ],
                 "tradeId": [
                     "rune.stat_1368271171"
+                ]
+            },
+            "caster": {
+                "string": "#% повышение скорости регенерации маны",
+                "values": [
+                    24
+                ],
+                "tradeId": [
+                    "rune.stat_789117908"
                 ]
             }
         },
@@ -8843,6 +9051,13 @@
                 "tradeId": [
                     "rune.stat_791928121"
                 ]
+            },
+            "caster": {
+                "string": "Дарует дополнительный порог оглушения в размере #% от максимума энергетического щита",
+                "values": [
+                    14
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-stone-rune",
@@ -8880,6 +9095,13 @@
                 "tradeId": [
                     "rune.stat_691932474"
                 ]
+            },
+            "caster": {
+                "string": "#% повышение шанса критического удара для чар",
+                "values": [
+                    24
+                ],
+                "tradeId": null
             }
         },
         "tradeTag": "greater-vision-rune",

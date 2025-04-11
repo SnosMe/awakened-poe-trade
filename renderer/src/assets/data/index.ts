@@ -55,6 +55,12 @@ export let STATS_ITERATOR = function* (
   andIncludes?: string[],
 ): Generator<Stat> {};
 
+let localRuneFilter: (
+  value: BaseType,
+  index: number,
+  array: BaseType[],
+) => unknown = (value: BaseType, index: number, array: BaseType[]) => true;
+
 function dataBinarySearch(
   data: Uint32Array,
   value: number,
@@ -179,10 +185,6 @@ async function loadItems(language: string, isTest = false) {
   RUNE_SINGLE_VALUE = await (
     await fetch(`${import.meta.env.BASE_URL}data/rune-single-value.json`)
   ).json();
-
-  RUNE_LIST = Array.from(
-    ITEMS_ITERATOR('"craftable": {"category": "SoulCore"}'),
-  ).filter((r) => r.rune && r.rune.armour?.tradeId && r.rune.weapon?.tradeId);
 }
 
 async function loadStats(language: string, isTest = false) {
@@ -292,26 +294,31 @@ export async function init(lang: string, isTest = false) {
     );
   }
   DELAYED_STAT_VALIDATION.clear();
+}
 
-  RUNE_DATA_BY_RUNE = runesToLookup(RUNE_LIST);
-
-  RUNE_DATA_BY_TRADE_ID = runesToLookupTradeId(RUNE_LIST);
+export function setLocalRuneFilter(
+  filter: (value: BaseType, index: number, array: BaseType[]) => unknown,
+) {
+  localRuneFilter = filter;
 }
 
 export async function loadForLang(lang: string, isTest = false) {
   CLIENT_STRINGS = await loadClientStrings(lang);
   await loadItems(lang);
   await loadStats(lang);
+  loadUltraLateItems(localRuneFilter);
 }
 
 export function loadUltraLateItems(
   runeFilter: (value: BaseType, index: number, array: BaseType[]) => unknown,
 ) {
-  RUNE_LIST = Array.from(
-    ITEMS_ITERATOR('"craftable": {"category": "SoulCore"}'),
-  )
-    .filter((r) => r.rune && r.rune.armour?.tradeId && r.rune.weapon?.tradeId)
-    .filter(runeFilter);
+  const a = Array.from(ITEMS_ITERATOR('"craftable": {"category": "SoulCore"}'));
+  const b = a.filter(
+    (r) => r.rune && r.rune.armour?.tradeId && r.rune.weapon?.tradeId,
+  );
+  const c = b.filter(runeFilter);
+
+  RUNE_LIST = c;
 
   RUNE_DATA_BY_RUNE = runesToLookup(RUNE_LIST);
 
@@ -325,10 +332,11 @@ function runesToLookup(runeList: BaseType[]): RuneDataByRune {
     if (!rune.rune) continue;
     for (const runeStat in rune.rune) {
       const { string: text, values, tradeId } = rune.rune[runeStat];
-      if (!runeDataByRune[rune.name]) {
-        runeDataByRune[rune.name] = [];
+      if (!tradeId) continue;
+      if (!runeDataByRune[rune.refName]) {
+        runeDataByRune[rune.refName] = [];
       }
-      runeDataByRune[rune.name].push({
+      runeDataByRune[rune.refName].push({
         rune: rune.name,
         refName: rune.refName,
         baseStat: text,
@@ -350,6 +358,7 @@ function runesToLookupTradeId(runeList: BaseType[]): RuneDataByTradeId {
     if (!rune.rune) continue;
     for (const runeStat in rune.rune) {
       const { string: text, values, tradeId } = rune.rune[runeStat];
+      if (!tradeId) continue;
       if (!runeDataByRune[tradeId[0]]) {
         runeDataByRune[tradeId[0]] = [];
       }

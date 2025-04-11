@@ -46,7 +46,7 @@ import ItemEditorButton from "./ItemEditorButton.vue";
 import { useI18n } from "vue-i18n";
 import { selectRuneEffectByItemCategory } from "./fill-runes";
 import { replaceHashWithValues } from "@/parser/Parser";
-import { refEffectsPseudos } from "./pseudo";
+import { translatedEffectsPseudos } from "./pseudo";
 import { ItemEditorType } from "@/parser/meta";
 import { getItemEditorType } from "./util";
 
@@ -107,7 +107,7 @@ export default defineComponent({
             if (runeEffect) {
               if (
                 !(
-                  refEffectsPseudos(runeEffect.string) ||
+                  translatedEffectsPseudos(runeEffect.string) ||
                   HIGH_VALUE_RUNES_HARDCODED.has(rune.refName)
                 )
               )
