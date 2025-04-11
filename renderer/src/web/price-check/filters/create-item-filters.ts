@@ -5,6 +5,7 @@ import { ModifierType } from "@/parser/modifiers";
 import { BaseType, ITEM_BY_REF } from "@/assets/data";
 import { CATEGORY_TO_TRADE_ID } from "../trade/pathofexile-trade";
 import { PriceCheckWidget } from "@/web/overlay/widgets";
+import { isArmourOrWeaponOrCaster } from "@/parser/Parser";
 
 export const SPECIAL_SUPPORT_GEM = [
   "Empower Support",
@@ -240,7 +241,12 @@ export function createFilters(
         disabled: item.runeSockets.current <= item.runeSockets.normal,
       };
     }
-    if (item.runeSockets.empty > 0 && item.rarity !== ItemRarity.Unique) {
+    const type = isArmourOrWeaponOrCaster(item.category);
+    if (
+      item.runeSockets.empty > 0 &&
+      item.rarity !== ItemRarity.Unique &&
+      (type === "armour" || type === "weapon")
+    ) {
       if (
         opts.autoFillEmptyRuneSockets &&
         (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare)

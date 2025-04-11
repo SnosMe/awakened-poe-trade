@@ -3,7 +3,7 @@ import { StatFilter } from "./interfaces";
 import { applyEleRune, recalculateItemProperties } from "@/parser/calc-base";
 import { BaseType, ITEM_BY_REF, RUNE_DATA_BY_RUNE } from "@/assets/data";
 import {
-  isArmourOrWeapon,
+  isArmourOrWeaponOrCaster,
   parseModifiersPoe2,
   replaceHashWithValues,
 } from "@/parser/Parser";
@@ -79,7 +79,7 @@ function createNewStatFilter(
 ): StatFilter[] | undefined {
   const newItem = JSON.parse(JSON.stringify(item)) as ParsedItem;
   const runeData = RUNE_DATA_BY_RUNE[newRune].find(
-    (rune) => rune.type === isArmourOrWeapon(item.category),
+    (rune) => rune.type === isArmourOrWeaponOrCaster(item.category),
   );
   if (!runeData) return;
   const runeItem = ITEM_BY_REF("ITEM", runeData.refName)![0];
@@ -151,7 +151,7 @@ export function selectRuneEffectByItemCategory(
   category: ItemCategory,
   rune: BaseType["rune"],
 ) {
-  const a = isArmourOrWeapon(category);
+  const a = isArmourOrWeaponOrCaster(category);
   if (!a || !rune) return;
 
   // try to get by most general first

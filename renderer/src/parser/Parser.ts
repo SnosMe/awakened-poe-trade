@@ -600,7 +600,7 @@ function parseStackSize(section: string[], item: ParsedItem) {
 
 function parseRuneSockets(section: string[], item: ParsedItem) {
   const categoryMax = getMaxSockets(item.category);
-  const armourOrWeapon = categoryMax && isArmourOrWeapon(item.category);
+  const armourOrWeapon = categoryMax && isArmourOrWeaponOrCaster(item.category);
   if (!armourOrWeapon) return "PARSER_SKIPPED";
   if (section[0].startsWith(_$.SOCKETS)) {
     const sockets = section[0].slice(_$.SOCKETS.length).trimEnd();
@@ -1560,6 +1560,7 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.Crossbow:
     case ItemCategory.Bow:
     case ItemCategory.Warstaff:
+    case ItemCategory.Staff:
       return 2;
     case ItemCategory.Helmet:
     case ItemCategory.Shield:
@@ -1573,15 +1574,16 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.Focus:
     case ItemCategory.Spear:
     case ItemCategory.Flail:
+    case ItemCategory.Wand:
       return 1;
     default:
       return 0;
   }
 }
 
-export function isArmourOrWeapon(
+export function isArmourOrWeaponOrCaster(
   category: ItemCategory | undefined,
-): "armour" | "weapon" | undefined {
+): "armour" | "weapon" | "caster" | undefined {
   switch (category) {
     case ItemCategory.BodyArmour:
     case ItemCategory.Boots:
@@ -1596,7 +1598,6 @@ export function isArmourOrWeapon(
     case ItemCategory.Quiver:
     case ItemCategory.Claw:
     case ItemCategory.Dagger:
-    case ItemCategory.Wand:
     case ItemCategory.Sceptre:
     case ItemCategory.TwoHandedAxe:
     case ItemCategory.TwoHandedMace:
@@ -1604,10 +1605,12 @@ export function isArmourOrWeapon(
     case ItemCategory.Crossbow:
     case ItemCategory.Bow:
     case ItemCategory.Warstaff:
-    case ItemCategory.Staff:
     case ItemCategory.Spear:
     case ItemCategory.Flail:
       return "weapon";
+    case ItemCategory.Wand:
+    case ItemCategory.Staff:
+      return "caster";
     default:
       return undefined;
   }

@@ -1,4 +1,4 @@
-import { isArmourOrWeapon } from "./Parser";
+import { isArmourOrWeaponOrCaster } from "./Parser";
 import { ParsedItem } from "./ParsedItem";
 import {
   calcFlat,
@@ -13,8 +13,8 @@ export function recalculateItemProperties(
   oldItem: ParsedItem,
 ) {
   const { category } = newItem;
-  const weaponOrArmour = isArmourOrWeapon(category);
-  if (weaponOrArmour === undefined) return;
+  const weaponOrArmour = isArmourOrWeaponOrCaster(category);
+  if (weaponOrArmour === undefined || weaponOrArmour === "caster") return;
   if (newItem.weaponPHYSICAL) {
     const base = calcBase(
       oldItem,
@@ -62,8 +62,13 @@ export function recalculateItemProperties(
 
 export function applyEleRune(item: ParsedItem, type: string, values: number[]) {
   const { category } = item;
-  const weaponOrArmour = isArmourOrWeapon(category);
-  if (weaponOrArmour === undefined || weaponOrArmour === "armour") return;
+  const weaponOrArmour = isArmourOrWeaponOrCaster(category);
+  if (
+    weaponOrArmour === undefined ||
+    weaponOrArmour === "armour" ||
+    weaponOrArmour === "caster"
+  )
+    return;
   if (values.length !== 2) return;
   const adding = values.reduce((a, b) => a + b) / 2;
   if (item.weaponELEMENTAL) {
@@ -137,7 +142,7 @@ export function calcTotal(
 
 export function calcBaseDamage(item: ParsedItem) {
   const { category } = item;
-  if (isArmourOrWeapon(category) !== "weapon") return 0;
+  if (isArmourOrWeaponOrCaster(category) !== "weapon") return 0;
   const { weaponPHYSICAL } = item;
   // Damage = (Base_Damage + Added_Damage) * Increased_Damage * More_Damage
   //           * Hit_Rate * (Critical_Strike_Damage * Critical_Strike_Chance)
@@ -152,7 +157,7 @@ export function calcBaseDamage(item: ParsedItem) {
 
 export function calcTotalDamage(item: ParsedItem, baseDamage: number) {
   const { category } = item;
-  if (isArmourOrWeapon(category) !== "weapon") return 0;
+  if (isArmourOrWeaponOrCaster(category) !== "weapon") return 0;
   // Damage = (Base_Damage + Added_Damage) * Increased_Damage * More_Damage
   //           * Hit_Rate * (Critical_Strike_Damage * Critical_Strike_Chance)
   //           (Ignore Hit_Rate and crit stuff)
