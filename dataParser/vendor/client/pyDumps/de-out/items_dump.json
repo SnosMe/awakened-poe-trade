@@ -1963,7 +1963,7 @@
         "name": "Immerwährender Splitter der Templer",
         "refName": "Timeless Templar Splinter",
         "namespace": "ITEM",
-        "class": "Zinnenschhlüssel",
+        "class": "Über-Schlüssel",
         "dropLevel": 1,
         "width": 1,
         "height": 1,
@@ -7748,7 +7748,7 @@
         }
     },
     "503": {
-        "name": "Blank Rune",
+        "name": "Leere Rune",
         "refName": "Blank Rune",
         "namespace": "ITEM",
         "class": 31,
@@ -8391,7 +8391,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRW5oYW5jZVJ1bmVUaWVyMSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/719e7a07b9/EnhanceRuneTier1.png"
     },
     "518": {
-        "name": "Kleine Körper-Rüne",
+        "name": "Kleine Körper-Rune",
         "refName": "Lesser Body Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9108,7 +9108,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png"
     },
     "534": {
-        "name": "Lesser Robust Rune",
+        "name": "Kleine Robuste Rune",
         "refName": "Lesser Robust Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9139,11 +9139,20 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# zu Stärke",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
     "535": {
-        "name": "Robust Rune",
+        "name": "Robuste Rune",
         "refName": "Robust Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9174,11 +9183,20 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# zu Stärke",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
     "536": {
-        "name": "Greater Robust Rune",
+        "name": "Große Robuste Rune",
         "refName": "Greater Robust Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9209,11 +9227,20 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# zu Stärke",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
     "537": {
-        "name": "Lesser Adept Rune",
+        "name": "Kleine Adept-Rune",
         "refName": "Lesser Adept Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9244,11 +9271,20 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# zu Geschick",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
     "538": {
-        "name": "Adept Rune",
+        "name": "Adept-Rune",
         "refName": "Adept Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9279,11 +9315,20 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# zu Geschick",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
     "539": {
-        "name": "Greater Adept Rune",
+        "name": "Große Adept-Rune",
         "refName": "Greater Adept Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9314,11 +9359,20 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# zu Geschick",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
     "540": {
-        "name": "Lesser Resolve Rune",
+        "name": "Kleine Entschlossenheit-Rune",
         "refName": "Lesser Resolve Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9349,11 +9403,20 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# zu Intelligenz",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
     "541": {
-        "name": "Resolve Rune",
+        "name": "Entschlossenheit-Rune",
         "refName": "Resolve Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9384,11 +9447,20 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# zu Intelligenz",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
     "542": {
-        "name": "Greater Resolve Rune",
+        "name": "Große Entschlossenheit-Rune",
         "refName": "Greater Resolve Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9419,11 +9491,20 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# zu Intelligenz",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
     "543": {
-        "name": "Lesser Tempered Rune",
+        "name": "Kleine Gehärtete Rune",
         "refName": "Lesser Tempered Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9456,7 +9537,7 @@
         }
     },
     "544": {
-        "name": "Tempered Rune",
+        "name": "Gehärtete Rune",
         "refName": "Tempered Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9489,7 +9570,7 @@
         }
     },
     "545": {
-        "name": "Greater Tempered Rune",
+        "name": "Große Gehärtete Rune",
         "refName": "Greater Tempered Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9573,7 +9654,7 @@
                 "string": "# bis # Blitz-Dornenschaden",
                 "values": [
                     1,
-                    10
+                    100
                 ],
                 "tradeId": [
                     "rune.stat_757050353"
@@ -39829,7 +39910,7 @@
         }
     },
     "2748": {
-        "name": "Small Soul Core",
+        "name": "Kleiner Seelenkern",
         "refName": "Small Soul Core",
         "namespace": "ITEM",
         "class": 80,
@@ -39868,7 +39949,7 @@
         }
     },
     "2751": {
-        "name": "Medium Soul Core",
+        "name": "Mittlerer Seelenkern",
         "refName": "Medium Soul Core",
         "namespace": "ITEM",
         "class": 80,
@@ -43837,7 +43918,7 @@
         }
     },
     "3001": {
-        "name": "Überfluss",
+        "name": "Fülle",
         "refName": "Overabundance",
         "namespace": "GEM",
         "class": 19,
@@ -51247,7 +51328,7 @@
         }
     },
     "3441": {
-        "name": "Inhibitor",
+        "name": "Hemmstoff",
         "refName": "Inhibitor",
         "namespace": "GEM",
         "class": 19,
@@ -51471,7 +51552,7 @@
         }
     },
     "3454": {
-        "name": "Cull The Weak",
+        "name": "Die Schwachen ausmerzen",
         "refName": "Cull The Weak",
         "namespace": "GEM",
         "class": 18,
