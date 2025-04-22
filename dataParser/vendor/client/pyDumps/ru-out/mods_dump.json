@@ -55526,7 +55526,7 @@
         }
     },
     "merged_3106": {
-        "ref": "# to Level of all # Skills",
+        "ref": "+# to Level of all # Skills",
         "better": 1,
         "id": "unique_jewel_specific_skill_level_+_level",
         "matchers": [

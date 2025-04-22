@@ -3102,7 +3102,7 @@
 {"ref": "Sacrifice up to # to receive double on Trial completion", "better": 1, "id": "ultimatum_wager_type_hash", "matchers": [{"string": "試練の完了時に最大#個捧げ二倍の報酬を受け取る", "negate": false}], "trade": {"ids": null}}
 {"ref": "#% increased Effect of Jewel Socket Passive Skills\\ncontaining Corrupted Magic Jewels", "better": 1, "id": "local_unique_jewel_passive_jewel_socket_mod_effect_+%_with_corrupted_magic_jewel_socketed", "matchers": [{"string": "コラプト状態のマジックジュエルをはめている\\nソケットパッシブスキルの効果が#%増加する", "negate": false}, {"string": "コラプト状態のマジックジュエルをはめている\\nソケットパッシブスキルの効果が#%減少する", "negate": true}], "trade": {"ids": null}}
 {"ref": "Monsters have #% increased Skill Speed", "better": 1, "id": "map_monsters_skill_speed_+%", "matchers": [{"string": "モンスターのスキルスピードが#%増加する", "negate": false}, {"string": "モンスターのスキルスピードが#%減少する", "negate": true}], "trade": {"ids": null}}
-{"ref": "# to Level of all # Skills", "better": 1, "id": "unique_jewel_specific_skill_level_+_level", "matchers": [{"string": "全ての#スキルのレベル #", "negate": false}], "trade": {"ids": null}}
+{"ref": "+# to Level of all # Skills", "better": 1, "id": "unique_jewel_specific_skill_level_+_level", "matchers": [{"string": "全ての#スキルのレベル #", "negate": false}], "trade": {"ids": null}}
 {"ref": "Contains buried treasure", "better": 1, "id": "map_contains_buried_treasure", "matchers": [{"string": "マップには埋められた宝物が出現する", "negate": false}], "trade": {"ids": null}}
 {"ref": "All items dropped are converted to Gold", "better": 1, "id": "map_all_items_drop_as_gold", "matchers": [{"string": "全てのアイテムは金貨に変換される", "negate": false}], "trade": {"ids": null}}
 {"ref": "Can be reopened # times", "better": 1, "id": "strongbox_can_reopen_X_times", "matchers": [{"string": "#回再び開けることができる", "negate": false}], "trade": {"ids": null}}

@@ -3103,7 +3103,7 @@
 {"ref": "Sacrifice up to # to receive double on Trial completion", "better": 1, "id": "ultimatum_wager_type_hash", "matchers": [{"string": "獻祭最多 #，以在完成試煉時獲得兩倍獎勵", "negate": false}], "trade": {"ids": null}}
 {"ref": "#% increased Effect of Jewel Socket Passive Skills\\ncontaining Corrupted Magic Jewels", "better": 1, "id": "local_unique_jewel_passive_jewel_socket_mod_effect_+%_with_corrupted_magic_jewel_socketed", "matchers": [{"string": "含有已汙染魔法珠寶的\\n珠寶插槽天賦效果增加 #%", "negate": false}, {"string": "含有已汙染魔法珠寶的\\n珠寶插槽天賦效果減少 #%", "negate": true}], "trade": {"ids": null}}
 {"ref": "Monsters have #% increased Skill Speed", "better": 1, "id": "map_monsters_skill_speed_+%", "matchers": [{"string": "怪物的技能速度增加 #%", "negate": false}, {"string": "技能的技能速度減少 #%", "negate": true}], "trade": {"ids": null}}
-{"ref": "# to Level of all # Skills", "better": 1, "id": "unique_jewel_specific_skill_level_+_level", "matchers": [{"string": "# 至所有 # 技能的等級", "negate": false}], "trade": {"ids": null}}
+{"ref": "+# to Level of all # Skills", "better": 1, "id": "unique_jewel_specific_skill_level_+_level", "matchers": [{"string": "# 至所有 # 技能的等級", "negate": false}], "trade": {"ids": null}}
 {"ref": "Contains buried treasure", "better": 1, "id": "map_contains_buried_treasure", "matchers": [{"string": "地圖含有埋藏的寶藏", "negate": false}], "trade": {"ids": null}}
 {"ref": "All items dropped are converted to Gold", "better": 1, "id": "map_all_items_drop_as_gold", "matchers": [{"string": "所有物品轉換為金幣", "negate": false}], "trade": {"ids": null}}
 {"ref": "Can be reopened # times", "better": 1, "id": "strongbox_can_reopen_X_times", "matchers": [{"string": "可重新開啟 # 次", "negate": false}], "trade": {"ids": null}}

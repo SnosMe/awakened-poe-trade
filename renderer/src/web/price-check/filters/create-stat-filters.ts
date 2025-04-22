@@ -433,8 +433,9 @@ export function calculatedStatToFilter(
 
   if (roll && !filter.option) {
     if (
-      item.rarity === ItemRarity.Magic &&
-      (item.isUnmodifiable || item.isCorrupted || item.isMirrored)
+      (item.rarity === ItemRarity.Magic &&
+        (item.isUnmodifiable || item.isCorrupted || item.isMirrored)) ||
+      stat.ref === "Has # Charm Slots"
     ) {
       percent = 0;
     } else if (
