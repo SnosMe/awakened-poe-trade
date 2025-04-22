@@ -9139,6 +9139,15 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# to Strength",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
@@ -9167,6 +9176,15 @@
                 ]
             },
             "weapon": {
+                "string": "# to Strength",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
+            },
+            "caster": {
                 "string": "# to Strength",
                 "values": [
                     8
@@ -9209,6 +9227,15 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# to Strength",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
@@ -9244,6 +9271,15 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# to Dexterity",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
@@ -9272,6 +9308,15 @@
                 ]
             },
             "weapon": {
+                "string": "# to Dexterity",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
+            },
+            "caster": {
                 "string": "# to Dexterity",
                 "values": [
                     8
@@ -9314,6 +9359,15 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# to Dexterity",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
@@ -9342,6 +9396,15 @@
                 ]
             },
             "weapon": {
+                "string": "# to Intelligence",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
+            },
+            "caster": {
                 "string": "# to Intelligence",
                 "values": [
                     6
@@ -9384,6 +9447,15 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# to Intelligence",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
@@ -9412,6 +9484,15 @@
                 ]
             },
             "weapon": {
+                "string": "# to Intelligence",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
+            },
+            "caster": {
                 "string": "# to Intelligence",
                 "values": [
                     10
@@ -9573,7 +9654,7 @@
                 "string": "# to # Lightning Thorns damage",
                 "values": [
                     1,
-                    10
+                    100
                 ],
                 "tradeId": [
                     "rune.stat_757050353"

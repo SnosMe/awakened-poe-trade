@@ -7067,7 +7067,7 @@
         }
     },
     "463": {
-        "name": "Retirada",
+        "name": "Retroceso",
         "refName": "Disengage",
         "namespace": "GEM",
         "class": 18,
@@ -7748,7 +7748,7 @@
         }
     },
     "503": {
-        "name": "Blank Rune",
+        "name": "Runa en blanco",
         "refName": "Blank Rune",
         "namespace": "ITEM",
         "class": 31,
@@ -9108,7 +9108,7 @@
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png"
     },
     "534": {
-        "name": "Lesser Robust Rune",
+        "name": "Runa robusta menor",
         "refName": "Lesser Robust Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9139,11 +9139,20 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# a la fuerza",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
     "535": {
-        "name": "Robust Rune",
+        "name": "Runa robusta",
         "refName": "Robust Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9174,11 +9183,20 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# a la fuerza",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
     "536": {
-        "name": "Greater Robust Rune",
+        "name": "Runa robusta mayor",
         "refName": "Greater Robust Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9209,11 +9227,20 @@
                 "tradeId": [
                     "rune.stat_4080418644"
                 ]
+            },
+            "caster": {
+                "string": "# a la fuerza",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_4080418644"
+                ]
             }
         }
     },
     "537": {
-        "name": "Lesser Adept Rune",
+        "name": "Runa de habilidad menor",
         "refName": "Lesser Adept Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9244,11 +9271,20 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# a la destreza",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
     "538": {
-        "name": "Adept Rune",
+        "name": "Runa de habilidad",
         "refName": "Adept Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9279,11 +9315,20 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# a la destreza",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
     "539": {
-        "name": "Greater Adept Rune",
+        "name": "Runa de habilidad mayor",
         "refName": "Greater Adept Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9314,11 +9359,20 @@
                 "tradeId": [
                     "rune.stat_3261801346"
                 ]
+            },
+            "caster": {
+                "string": "# a la destreza",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_3261801346"
+                ]
             }
         }
     },
     "540": {
-        "name": "Lesser Resolve Rune",
+        "name": "Runa de resolución menor",
         "refName": "Lesser Resolve Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9349,11 +9403,20 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# a la inteligencia",
+                "values": [
+                    6
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
     "541": {
-        "name": "Resolve Rune",
+        "name": "Runa de resolución",
         "refName": "Resolve Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9384,11 +9447,20 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# a la inteligencia",
+                "values": [
+                    8
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
     "542": {
-        "name": "Greater Resolve Rune",
+        "name": "Runa de resolución mayor",
         "refName": "Greater Resolve Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9419,11 +9491,20 @@
                 "tradeId": [
                     "rune.stat_328541901"
                 ]
+            },
+            "caster": {
+                "string": "# a la inteligencia",
+                "values": [
+                    10
+                ],
+                "tradeId": [
+                    "rune.stat_328541901"
+                ]
             }
         }
     },
     "543": {
-        "name": "Lesser Tempered Rune",
+        "name": "Runa templada menor",
         "refName": "Lesser Tempered Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9456,7 +9537,7 @@
         }
     },
     "544": {
-        "name": "Tempered Rune",
+        "name": "Runa templada",
         "refName": "Tempered Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9489,7 +9570,7 @@
         }
     },
     "545": {
-        "name": "Greater Tempered Rune",
+        "name": "Runa templada mayor",
         "refName": "Greater Tempered Rune",
         "namespace": "ITEM",
         "class": 104,
@@ -9573,7 +9654,7 @@
                 "string": "De # a # de daño de rayo de las espinas",
                 "values": [
                     1,
-                    10
+                    100
                 ],
                 "tradeId": [
                     "rune.stat_757050353"
@@ -39829,7 +39910,7 @@
         }
     },
     "2748": {
-        "name": "Small Soul Core",
+        "name": "Núcleo de alma pequeño",
         "refName": "Small Soul Core",
         "namespace": "ITEM",
         "class": 80,
@@ -39868,7 +39949,7 @@
         }
     },
     "2751": {
-        "name": "Medium Soul Core",
+        "name": "Núcleo de alma mediano",
         "refName": "Medium Soul Core",
         "namespace": "ITEM",
         "class": 80,
@@ -51247,7 +51328,7 @@
         }
     },
     "3441": {
-        "name": "Inhibitor",
+        "name": "Inhibidor",
         "refName": "Inhibitor",
         "namespace": "GEM",
         "class": 19,
@@ -51471,7 +51552,7 @@
         }
     },
     "3454": {
-        "name": "Cull The Weak",
+        "name": "Acabar con el débil",
         "refName": "Cull The Weak",
         "namespace": "GEM",
         "class": 18,
@@ -51556,7 +51637,7 @@
         }
     },
     "3459": {
-        "name": "Domar a la bestia",
+        "name": "Domar bestia",
         "refName": "Tame Beast",
         "namespace": "GEM",
         "class": 18,
