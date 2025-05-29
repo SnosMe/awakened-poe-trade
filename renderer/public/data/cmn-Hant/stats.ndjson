@@ -5844,6 +5844,7 @@
 {"ref":"Used when you use a Life Flask","better":1,"matchers":[{"string":"當你使用生命藥劑時使用"}],"trade":{"ids":{"enchant":["enchant.stat_359574900"]}}}
 {"ref":"Used when you Use a Travel Skill","better":1,"matchers":[{"string":"當你使用快行技能時使用"}],"trade":{"ids":{"enchant":["enchant.stat_1260843520"]}}}
 {"ref":"Uses both hand slots","better":1,"matchers":[{"string":"占用所有武器欄位"}],"trade":{"ids":{"explicit":["explicit.stat_2846730569"]}}}
+{"ref":"Utility Flasks gain # Charge every 3 seconds","better":1,"matchers":[{"string":"每 3 秒功能藥劑回復 # 充能"}],"trade":{"ids":{"explicit":["explicit.stat_2567919918"]}}}
 {"ref":"Vaal Attack Skills you Use yourself Cost Rage instead of requiring Souls","better":1,"matchers":[{"string":"你使用的瓦爾技能消耗盛怒而不是靈魂"}],"trade":{"ids":{"explicit":["explicit.stat_1103075489"]}}}
 {"ref":"Vaal Pact","better":1,"matchers":[{"string":"瓦爾冥約"}],"trade":{"ids":{"explicit":["explicit.stat_2257118425"],"scourge":["scourge.stat_2257118425"]}}}
 {"ref":"Vaal Skills deal #% more Damage during Effect","better":1,"matchers":[{"string":"瓦爾技能造成 #% 更多傷害持續效果"},{"string":"瓦爾技能造成 #% 更少傷害持續效果","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4147528862"]}}}
