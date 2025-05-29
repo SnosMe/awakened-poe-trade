@@ -6233,6 +6233,7 @@
 {"ref":"Used when you Use a Travel Skill","better":1,"matchers":[{"string":"이동 전용 스킬 사용 시 사용"}],"trade":{"ids":{"enchant":["enchant.stat_1260843520"]}}}
 {"ref":"Uses both hand slots","better":1,"matchers":[{"string":"무기 슬롯 양쪽 모두 사용"}],"trade":{"ids":{"explicit":["explicit.stat_2846730569"]}}}
 {"ref":"Using Remnants of Corruption on Imprisoned Monsters in your Maps replaces all Essences with one of the Essences on the Imprisoned Monster","better":1,"matchers":[{"string":"지도 내 갇힌 몬스터에 타락의 유물을 사용하면 모든 에센스를 갇힌 몬스터의 에센스 중 하나로 대체"}],"trade":{"ids":{"explicit":["explicit.stat_1019460035"]}}}
+{"ref":"Utility Flasks gain # Charge every 3 seconds","better":1,"matchers":[{"string":"3초마다 특수 플라스크 # 충전"}],"trade":{"ids":{"explicit":["explicit.stat_2567919918"]}}}
 {"ref":"Uul-Netol, Unburdened Flesh in your Maps has a #% chance to be Duplicated","better":1,"matchers":[{"string":"지도 내 내려놓은 육체 울네톨이 #%의 확률로 복제됨"},{"string":"지도 내 내려놓은 육체 울네톨이 복제됨","value":100}],"trade":{"ids":{"explicit":["explicit.stat_66623393"]}}}
 {"ref":"Vaal Attack Skills you Use yourself Cost Rage instead of requiring Souls","better":1,"matchers":[{"string":"플레이어가 직접 사용하는 바알 공격 스킬이 영혼 대신 격노 소모"}],"trade":{"ids":{"explicit":["explicit.stat_1103075489"]}}}
 {"ref":"Vaal Pact","better":1,"matchers":[{"string":"바알의 계약"}],"trade":{"ids":{"explicit":["explicit.stat_2257118425"],"scourge":["scourge.stat_2257118425"]}}}
