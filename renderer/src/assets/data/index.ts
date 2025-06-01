@@ -9,7 +9,6 @@ import type {
   RuneSingleValue,
   Stat,
   StatMatcher,
-  TierLookup,
   TranslationDict,
 } from "./interfaces";
 import { loadClientStrings } from "../client-string-loader";
@@ -25,7 +24,6 @@ export let RUNE_SINGLE_VALUE: RuneSingleValue;
 export let RUNE_DATA_BY_RUNE: RuneDataByRune;
 export let RUNE_DATA_BY_TRADE_ID: RuneDataByTradeId;
 export let ITEM_CATEGORY_TO_EMPTY_PREFIX: ItemCategoryToEmptyPrefix;
-export let MAX_TIER_LOOKUP: TierLookup;
 
 export let RUNE_LIST: BaseType[];
 export const HIGH_VALUE_RUNES_HARDCODED = new Set<string>([]);
@@ -267,10 +265,6 @@ export async function init(lang: string, isTest = false) {
 
   ITEM_CATEGORY_TO_EMPTY_PREFIX = await (
     await fetch(`${import.meta.env.BASE_URL}data/pseudo-empty-prefix.json`)
-  ).json();
-
-  MAX_TIER_LOOKUP = await (
-    await fetch(`${import.meta.env.BASE_URL}data/tiers.json`)
   ).json();
 
   await loadForLang(lang, isTest);

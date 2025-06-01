@@ -49,12 +49,6 @@ export interface Stat {
   };
 }
 
-export interface TierLookup {
-  [ref: string]: {
-    [itemClass: string]: number;
-  };
-}
-
 export interface DropEntry {
   query: string[];
   items: string[];

@@ -523,9 +523,6 @@ function upgradeConfig(_config: Config): Config {
       (w) => w.wmType === "price-check",
     )!.autoFillEmptyRuneSockets = false;
 
-    config.widgets.find((w) => w.wmType === "price-check")!.tierNumbering =
-      "poe2";
-
     config.tipsFrequency = TipsFrequency.Normal;
 
     config.configVersion = 22;

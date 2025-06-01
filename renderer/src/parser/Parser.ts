@@ -38,7 +38,6 @@ import {
   ADDED_RUNE_LINE,
 } from "./advanced-mod-desc";
 import { calcPropPercentile, QUALITY_STATS } from "./calc-q20";
-import { getMaxTier } from "./mod-tiers";
 
 type SectionParseResult =
   | "SECTION_PARSED"
@@ -973,17 +972,7 @@ function parseModifiers(section: string[], item: ParsedItem) {
       ) {
         modInfo.type = ModifierType.Sanctum;
       }
-
-      const modifier: ParsedModifier = { info: modInfo, stats: [] };
-      parseStatsFromMod(lines, item, modifier);
-
-      if (modInfo.tierNew && item.category) {
-        const refLines = [];
-        for (const stat of modifier.stats) {
-          refLines.push(stat.stat.ref);
-        }
-        parseRealTierFromMod(refLines, modInfo, item.category);
-      }
+      parseStatsFromMod(lines, item, { info: modInfo, stats: [] });
 
       if (modType === ModifierType.Veiled) {
         item.isVeiled = true;
@@ -1396,19 +1385,6 @@ function markupConditionParser(text: string) {
   );
 
   return text;
-}
-
-function parseRealTierFromMod(
-  lines: string[],
-  modInfo: ModifierInfo,
-  category: ItemCategory,
-): void {
-  if (!modInfo.tierNew) return;
-  const joinedLines = lines.join("\n");
-  const maxPossibleTier = getMaxTier(joinedLines, category);
-  if (maxPossibleTier) {
-    modInfo.tier = maxPossibleTier - modInfo.tierNew + 1;
-  }
 }
 
 function parseStatsFromMod(
