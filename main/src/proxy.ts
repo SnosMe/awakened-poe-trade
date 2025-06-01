@@ -10,6 +10,7 @@ const PROXY_HOSTS = [
   { host: "jp.pathofexile.com", official: true },
   { host: "de.pathofexile.com", official: true },
   { host: "es.pathofexile.com", official: true },
+  { host: "br.pathofexile.com", official: true },
   { host: "poe.ninja", official: false },
   { host: "www.poeprices.info", official: false },
 ];

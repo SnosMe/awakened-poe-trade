@@ -10,6 +10,7 @@
         <option value="ja">日本語</option>
         <option value="de">Deutsch</option>
         <option value="es">Español</option>
+        <option value="pt">Português (Brasil)</option>
       </select>
     </div>
     <div class="mb-4" v-if="language !== 'en'">
@@ -166,6 +167,8 @@ export default defineComponent({
             return "de.pathofexile.com";
           case "es":
             return "es.pathofexile.com";
+          case "pt":
+            return "br.pathofexile.com";
         }
       }),
       preferredTradeSite: computed<typeof props.config.preferredTradeSite>({
