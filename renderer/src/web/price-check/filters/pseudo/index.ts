@@ -18,52 +18,52 @@ import { tryParseTranslation } from "@/parser/stat-translations";
 
 const RESISTANCES_INFO = [
   // {
-  //   ref: stat("+#% to All Resistances"),
+  //   ref: stat("#% to All Resistances"),
   //   elements: ["fire", "cold", "lightning"],
   //   chaos: true,
   // },
   {
-    ref: stat("+#% to all Elemental Resistances"),
+    ref: stat("#% to all Elemental Resistances"),
     elements: ["fire", "cold", "lightning"],
   },
-  { ref: stat("+#% to Fire Resistance"), elements: ["fire"] },
-  { ref: stat("+#% to Cold Resistance"), elements: ["cold"] },
-  { ref: stat("+#% to Lightning Resistance"), elements: ["lightning"] },
+  { ref: stat("#% to Fire Resistance"), elements: ["fire"] },
+  { ref: stat("#% to Cold Resistance"), elements: ["cold"] },
+  { ref: stat("#% to Lightning Resistance"), elements: ["lightning"] },
   // {
-  //   ref: stat("+#% to Fire and Lightning Resistances"),
+  //   ref: stat("#% to Fire and Lightning Resistances"),
   //   elements: ["fire", "lightning"],
   // },
-  // { ref: stat("+#% to Fire and Cold Resistances"), elements: ["fire", "cold"] },
+  // { ref: stat("#% to Fire and Cold Resistances"), elements: ["fire", "cold"] },
   // {
-  //   ref: stat("+#% to Cold and Lightning Resistances"),
+  //   ref: stat("#% to Cold and Lightning Resistances"),
   //   elements: ["cold", "lightning"],
   // },
-  // { ref: stat("+#% to Chaos Resistance"), elements: [""], chaos: true },
+  // { ref: stat("#% to Chaos Resistance"), elements: [""], chaos: true },
   // {
-  //   ref: stat("+#% to Fire and Chaos Resistances"),
+  //   ref: stat("#% to Fire and Chaos Resistances"),
   //   elements: ["fire"],
   //   chaos: true,
   // },
   // {
-  //   ref: stat("+#% to Cold and Chaos Resistances"),
+  //   ref: stat("#% to Cold and Chaos Resistances"),
   //   elements: ["cold"],
   //   chaos: true,
   // },
   // {
-  //   ref: stat("+#% to Lightning and Chaos Resistances"),
+  //   ref: stat("#% to Lightning and Chaos Resistances"),
   //   elements: ["lightning"],
   //   chaos: true,
   // },
 ];
 
 // const ATTRIBUTES_INFO = [
-//   { ref: stat("+# to all Attributes"), attributes: ["str", "dex", "int"] },
-//   { ref: stat("+# to Strength"), attributes: ["str"] },
-//   { ref: stat("+# to Dexterity"), attributes: ["dex"] },
-//   { ref: stat("+# to Intelligence"), attributes: ["int"] },
-//   { ref: stat("+# to Strength and Intelligence"), attributes: ["str", "int"] },
-//   { ref: stat("+# to Strength and Dexterity"), attributes: ["str", "dex"] },
-//   { ref: stat("+# to Dexterity and Intelligence"), attributes: ["dex", "int"] },
+//   { ref: stat("# to all Attributes"), attributes: ["str", "dex", "int"] },
+//   { ref: stat("# to Strength"), attributes: ["str"] },
+//   { ref: stat("# to Dexterity"), attributes: ["dex"] },
+//   { ref: stat("# to Intelligence"), attributes: ["int"] },
+//   { ref: stat("# to Strength and Intelligence"), attributes: ["str", "int"] },
+//   { ref: stat("# to Strength and Dexterity"), attributes: ["str", "dex"] },
+//   { ref: stat("# to Dexterity and Intelligence"), attributes: ["dex", "int"] },
 // ];
 
 interface PseudoRule {
@@ -128,7 +128,7 @@ const PSEUDO_RULES: PseudoRule[] = [
   //   pseudo: stat("+# total to all Attributes"),
   //   group: "to_all_attrs",
   //   stats: [
-  //     { ref: stat("+# to all Attributes") },
+  //     { ref: stat("# to all Attributes") },
   //     // NOTE: not including other sources from `ATTRIBUTES_INFO`
   //   ],
   // },
@@ -157,7 +157,7 @@ const PSEUDO_RULES: PseudoRule[] = [
   //   pseudo: stat("+# total maximum Life"),
   //   disabled: false,
   //   stats: [
-  //     { ref: stat("+# to maximum Life"), required: true },
+  //     { ref: stat("# to maximum Life"), required: true },
   //     ...ATTRIBUTES_INFO.filter((info) => info.attributes.includes("str")).map(
   //       (info) => ({ ref: info.ref, multiplier: 5 / 10 }),
   //     ),
@@ -166,7 +166,7 @@ const PSEUDO_RULES: PseudoRule[] = [
   // {
   //   pseudo: stat("+# total maximum Mana"),
   //   stats: [
-  //     { ref: stat("+# to maximum Mana"), required: true },
+  //     { ref: stat("# to maximum Mana"), required: true },
   //     ...ATTRIBUTES_INFO.filter((info) => info.attributes.includes("int")).map(
   //       (info) => ({ ref: info.ref, multiplier: 5 / 10 }),
   //     ),
@@ -174,7 +174,7 @@ const PSEUDO_RULES: PseudoRule[] = [
   // },
   // {
   //   pseudo: stat("+# total maximum Spirit"),
-  //   stats: [{ ref: stat("+# to Spirit") }],
+  //   stats: [{ ref: stat("# to Spirit") }],
   // },
   // {
   //   pseudo: stat("#% total increased maximum Energy Shield"),
@@ -183,7 +183,7 @@ const PSEUDO_RULES: PseudoRule[] = [
   // {
   //   pseudo: stat("+# total maximum Energy Shield"),
   //   stats: [
-  //     { ref: stat("+# to maximum Energy Shield") }, // global
+  //     { ref: stat("# to maximum Energy Shield") }, // global
   //   ],
   // },
   // {
