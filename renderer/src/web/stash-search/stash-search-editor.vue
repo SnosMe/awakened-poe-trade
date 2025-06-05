@@ -13,7 +13,7 @@
           <input v-model="entry.text"
             :placeholder="t('stash_search.search_text')"
             class="px-1 col-span-2 leading-6"
-            :class="(entry.text.length > 50) ? 'bg-red-800' : 'bg-gray-900'">
+            :class="(entry.text.length > 250) ? 'bg-red-800' : 'bg-gray-900'">
           <button class="leading-none rounded-r bg-gray-700 w-6 h-6" @click="removeEntry(entry.id)">
             <i class="fas fa-times text-gray-400" />
           </button>
