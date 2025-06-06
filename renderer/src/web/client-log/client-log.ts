@@ -148,4 +148,6 @@ const TRADE_BULK_WHISPER = {
   "ja": /^こんにちは、私は(?<league>.+)であなたの(?<item>.+)を私の(?<price>.+)で購入したいです。\.(?<message>.+)?$/,
   "de": /^Hallo, ich möchte dein (?<item>.+) für (?<price>.+) in der Liga (?<league>.+) kaufen\.(?<message>.+)?$/,
   "es": /^Hola, quisiera comprar tu (?<item>.+) listado por (?<price>.+) en (?<league>.+).(?<message>.+)?$/,
+  // THIS IS PROBABLY WRONG
+  "pt": /^Olá, eu gostaria de comprar o seu item (?<item>.+) listado por (?<price>.+) na (?<league>.+)\.(?<message>.+)?$/,
 };

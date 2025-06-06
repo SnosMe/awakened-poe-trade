@@ -10,6 +10,7 @@ const POEDB_LANGS = {
   "ja": "jp",
   "de": "de",
   "es": "sp",
+  "pt": "pt",
 };
 
 export function registerActions() {
