@@ -162,6 +162,7 @@ export const INTERNAL_TRADE_IDS = [
   "item.has_elemental_fire_affix",
   "item.has_elemental_cold_affix",
   "item.has_elemental_lightning_affix",
+  "item.reload_time",
 ] as const;
 
 export type InternalTradeId = (typeof INTERNAL_TRADE_IDS)[number];

@@ -800,6 +800,11 @@ function parseWeapon(section: string[], item: ParsedItem) {
       isParsed = "SECTION_PARSED";
       continue;
     }
+    if (line.startsWith(_$.RELOAD_SPEED)) {
+      item.weaponReload = parseFloat(line.slice(_$.RELOAD_SPEED.length));
+      isParsed = "SECTION_PARSED";
+      continue;
+    }
   }
 
   if (isParsed === "SECTION_PARSED") {
@@ -815,6 +820,7 @@ function parseWeapon(section: string[], item: ParsedItem) {
     item.weaponLIGHTNING = undefined;
     item.weaponFIRE = undefined;
     item.weaponCRIT = undefined;
+    item.weaponReload = undefined;
   }
 
   return isParsed;

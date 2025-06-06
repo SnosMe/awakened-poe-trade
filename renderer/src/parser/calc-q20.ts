@@ -66,14 +66,15 @@ export function calcPropBounds(
   total: number,
   statRefs: { flat: string[]; incr: string[] },
   item: ParsedItem,
+  inverted: boolean = false,
 ): { roll: StatRoll; sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item);
-  const base = calcFlat(total, incr.value) - flat.value;
+  const base = calcFlat(total, incr.value, 0, inverted) - flat.value;
   return {
     roll: {
-      value: calcIncreased(base + flat.value, incr.value),
-      min: calcIncreased(base + flat.min, incr.min),
-      max: calcIncreased(base + flat.max, incr.max),
+      value: calcIncreased(base + flat.value, incr.value, 0, inverted),
+      min: calcIncreased(base + flat.min, incr.min, 0, inverted),
+      max: calcIncreased(base + flat.max, incr.max, 0, inverted),
     },
     sources:
       statRefs.incr.length && statRefs.flat.length
@@ -131,10 +132,26 @@ export function calcPropBase(
   return { incr, flat, sources };
 }
 
-export function calcFlat(total: number, incrPct: number, morePct = 0) {
+export function calcFlat(
+  total: number,
+  incrPct: number,
+  morePct: number = 0,
+  inverted: boolean = false,
+): number {
+  if (inverted) {
+    return calcIncreased(total, incrPct, morePct);
+  }
   return total / (1 + morePct / 100) / (1 + incrPct / 100);
 }
 
-export function calcIncreased(flat: number, incrPct: number, morePct = 0) {
+export function calcIncreased(
+  flat: number,
+  incrPct: number,
+  morePct: number = 0,
+  inverted: boolean = false,
+): number {
+  if (inverted) {
+    return calcFlat(flat, incrPct, morePct);
+  }
   return flat * (1 + incrPct / 100) * (1 + morePct / 100);
 }

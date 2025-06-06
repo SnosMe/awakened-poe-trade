@@ -170,6 +170,8 @@ interface TradeRequest {
           rune_sockets?: FilterRange;
           // Spirit
           spirit?: FilterRange;
+          // reload time
+          reload_time?: FilterRange;
         };
       };
       req_filters?: {
@@ -739,6 +741,18 @@ export function createTradeRequest(
         propSet(
           query.filters,
           "equipment_filters.filters.spirit.max",
+          typeof input.max === "number" ? input.max : undefined,
+        );
+        break;
+      case "item.reload_time":
+        propSet(
+          query.filters,
+          "equipment_filters.filters.reload_time.min",
+          typeof input.min === "number" ? input.min : undefined,
+        );
+        propSet(
+          query.filters,
+          "equipment_filters.filters.reload_time.max",
           typeof input.max === "number" ? input.max : undefined,
         );
         break;

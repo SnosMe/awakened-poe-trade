@@ -156,5 +156,6 @@ export default {
   REQUIRES: 'Требуется',
   TIMELESS_SMALL_PASSIVES: 'Малые пассивные умения в радиусе также дают: {0}',
   TIMELESS_NOTABLE_PASSIVES: 'Значимые пассивные умения в радиусе также дают: {0}',
-  GRANTS_SKILL: 'Дарует умение'
+  GRANTS_SKILL: 'Дарует умение: ',
+  RELOAD_SPEED: 'Время перезарядки: '
 }

@@ -221,5 +221,7 @@ export default {
   // ModStatJewelAddToNotable
   TIMELESS_NOTABLE_PASSIVES: 'Notable Passive Skills in Radius also grant {0}',
   // ItemDisplayGrantsSkill
-  GRANTS_SKILL: 'Grants Skill'
+  GRANTS_SKILL: 'Grants Skill: ',
+  // SkillPopupReloadTime
+  RELOAD_SPEED: 'Reload Time: '
 }

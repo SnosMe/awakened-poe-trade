@@ -230,6 +230,7 @@ export interface TranslationDict {
   TIMELESS_SMALL_PASSIVES: string;
   TIMELESS_NOTABLE_PASSIVES: string;
   GRANTS_SKILL: string;
+  RELOAD_SPEED: string;
 }
 
 export interface Filter {

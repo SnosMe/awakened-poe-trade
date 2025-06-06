@@ -122,5 +122,6 @@ export default {
   REQUIRES: '要求',
   TIMELESS_SMALL_PASSIVES: '範囲内の通常パッシブスキルは{0}も付与する',
   TIMELESS_NOTABLE_PASSIVES: '範囲内の特殊パッシブスキルは{0}も付与する',
-  GRANTS_SKILL: 'スキルを付与'
+  GRANTS_SKILL: 'スキルを付与: ',
+  RELOAD_SPEED: '再装填時間: '
 }

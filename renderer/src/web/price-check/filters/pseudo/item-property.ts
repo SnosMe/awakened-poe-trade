@@ -357,6 +357,32 @@ function weaponProps(ctx: FiltersCreationContext) {
     );
   }
 
+  if (item.weaponReload) {
+    const reloadTime = calcPropBounds(
+      item.weaponReload,
+      {
+        incr: ["#% increased Attack Speed"],
+        flat: [],
+      },
+      item,
+      // Inverted since lower is better for reload time
+      true,
+    );
+    ctx.filters.push(
+      propToFilter(
+        {
+          ref: "Reload Time: #",
+          tradeId: "item.reload_time",
+          roll: reloadTime.roll,
+          sources: reloadTime.sources,
+          dp: true,
+          disabled: true,
+        },
+        ctx,
+      ),
+    );
+  }
+
   if (
     item.weaponAS ||
     item.weaponCRIT ||

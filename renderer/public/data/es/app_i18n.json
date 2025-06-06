@@ -51,6 +51,7 @@
     "crit": "Probabilidad de golpe crítico: {0}%",
     "aps": "Ataques por segundo: {0}",
     "spirit": "Espíritu: {0}",
+    "reload_time": "Tiempo de recarga: {0}",
     "has_empty_modifier": "1 modificador vacío o fabricado",
     "has_empty_affix": "Cualquiera",
     "has_empty_prefix": "Prefijo",

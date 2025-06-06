@@ -51,6 +51,7 @@
     "crit": "クリティカルヒット率: {0}%",
     "aps": "秒間アタック回数: {0}",
     "spirit": "スピリット: {0}",
+    "reload_time": "再装填時間: {0}",
     "has_empty_modifier": "1つの空のまたはクラフトされたモッド",
     "has_empty_affix": "任意",
     "has_empty_prefix": "プレフィックス",
