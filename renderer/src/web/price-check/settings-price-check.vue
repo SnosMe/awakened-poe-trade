@@ -82,20 +82,6 @@
         }}</ui-radio>
       </div>
     </div>
-    <div class="mb-4">
-      <div class="flex-1 mb-1">{{ t(":tier_numbering") }}</div>
-      <div class="mb-1 flex">
-        <ui-radio v-model="tierNumbering" value="poe1" class="mr-4">{{
-          t(":tier_numbering_poe1")
-        }}</ui-radio>
-        <ui-radio v-model="tierNumbering" value="poe2" class="mr-4">{{
-          t(":tier_numbering_poe2")
-        }}</ui-radio>
-      </div>
-      <div class="mb-4 italic text-gray-500">
-        {{ t(":tier_numbering_help") }}
-      </div>
-    </div>
 
     <ui-checkbox class="mb-4" v-model="rememberCurrency">{{
       t(":remember_currency")
@@ -324,10 +310,6 @@ export default defineComponent({
       autoFillEmptyRuneSockets: configModelValue(
         () => configWidget.value,
         "autoFillEmptyRuneSockets",
-      ),
-      tierNumbering: configModelValue(
-        () => configWidget.value,
-        "tierNumbering",
       ),
       alwaysShowTier: configModelValue(
         () => configWidget.value,

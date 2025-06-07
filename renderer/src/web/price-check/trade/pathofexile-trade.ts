@@ -170,6 +170,8 @@ interface TradeRequest {
           rune_sockets?: FilterRange;
           // Spirit
           spirit?: FilterRange;
+          // reload time
+          reload_time?: FilterRange;
         };
       };
       req_filters?: {
@@ -742,6 +744,18 @@ export function createTradeRequest(
           typeof input.max === "number" ? input.max : undefined,
         );
         break;
+      case "item.reload_time":
+        propSet(
+          query.filters,
+          "equipment_filters.filters.reload_time.min",
+          typeof input.min === "number" ? input.min : undefined,
+        );
+        propSet(
+          query.filters,
+          "equipment_filters.filters.reload_time.max",
+          typeof input.max === "number" ? input.max : undefined,
+        );
+        break;
     }
   }
 
@@ -1031,33 +1045,38 @@ function tradeIdToQuery(
   // NOTE: if there will be too many overrides in the future,
   //       consider moving them to stats.ndjson
 
-  let roll = stat.roll;
-
-  // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
-  if (id === "implicit.stat_1901158930") {
-    if (stat.roll?.value === 100) {
-      roll = undefined; // stat semantic type is flag
-    }
-    // fixes "Cannot be Poisoned" from Essence
-  } else if (id === "explicit.stat_3835551335") {
-    if (stat.roll?.value === 100) {
-      roll = undefined; // stat semantic type is flag
-    }
-    // fixes "Instant Recovery" on Flasks
-  } else if (id.endsWith("stat_1526933524")) {
-    if (stat.roll?.value === 100) {
-      roll = undefined; // stat semantic type is flag
-    }
-    // fixes Delve "Reservation Efficiency of Skills"
-  } else if (id.endsWith("stat_1269219558")) {
-    roll = { ...roll!, tradeInvert: !roll!.tradeInvert };
+  const roll = stat.roll;
+  let tradeId = id;
+  if (stat.option != null) {
+    tradeId += `|${stat.option.value}`;
   }
 
+  // NOTE: poe1 overrides, leaving until any for poe2 are added
+  // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
+  // if (id === "implicit.stat_1901158930") {
+  //   if (stat.roll?.value === 100) {
+  //     roll = undefined; // stat semantic type is flag
+  //   }
+  //   // fixes "Cannot be Poisoned" from Essence
+  // } else if (id === "explicit.stat_3835551335") {
+  //   if (stat.roll?.value === 100) {
+  //     roll = undefined; // stat semantic type is flag
+  //   }
+  //   // fixes "Instant Recovery" on Flasks
+  // } else if (id.endsWith("stat_1526933524")) {
+  //   if (stat.roll?.value === 100) {
+  //     roll = undefined; // stat semantic type is flag
+  //   }
+  //   // fixes Delve "Reservation Efficiency of Skills"
+  // } else if (id.endsWith("stat_1269219558")) {
+  //   roll = { ...roll!, tradeInvert: !roll!.tradeInvert };
+  // }
+
   return {
-    id,
+    id: tradeId,
     value: {
       ...getMinMax(roll),
-      option: stat.option != null ? stat.option.value : undefined,
+      // option: stat.option != null ? stat.option.value : undefined,
     },
     disabled: stat.disabled || overrideDisabled,
   };

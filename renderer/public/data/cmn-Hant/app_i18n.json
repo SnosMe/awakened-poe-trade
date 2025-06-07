@@ -51,6 +51,7 @@
     "crit": "暴擊率：{0}%",
     "aps": "攻擊次數：{0}",
     "spirit": "精魂：{0}",
+    "reload_time": "重新裝填時間: {0}",
     "has_empty_modifier": "1 個空的或已製作的修改詞綴",
     "has_empty_affix": "任何",
     "has_empty_prefix": "前綴",

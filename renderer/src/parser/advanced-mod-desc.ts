@@ -22,7 +22,6 @@ export interface ModifierInfo {
   name?: string;
   tier?: number;
   rank?: number;
-  tierNew?: number;
   tags: string[];
   rollIncr?: number;
   hybridWithRef?: Set<string>;
@@ -39,7 +38,7 @@ export function parseModInfoLine(
 
   let generation: ModifierInfo["generation"];
   let name: ModifierInfo["name"];
-  let tierNew: ModifierInfo["tierNew"];
+  let tier: ModifierInfo["tier"];
   let rank: ModifierInfo["rank"];
 
   if (_$.EATER_IMPLICIT.test(modText) || _$.EXARCH_IMPLICIT.test(modText)) {
@@ -87,7 +86,7 @@ export function parseModInfoLine(
     }
 
     name = match.groups!.name || undefined;
-    tierNew = Number(match.groups!.tier) || undefined;
+    tier = Number(match.groups!.tier) || undefined;
     rank = Number(match.groups!.rank) || undefined;
   }
 
@@ -110,7 +109,7 @@ export function parseModInfoLine(
       : undefined;
   }
 
-  return { type, generation, name, tierNew, rank, tags, rollIncr };
+  return { type, generation, name, tier, rank, tags, rollIncr };
 }
 
 export function isModInfoLine(line: string): boolean {

@@ -326,6 +326,8 @@ def first_non_negated(matchers):
 
 
 class Parser:
+    """@deprecated This parser is deprecated and is not being maintained. It may not work as expected."""
+
     def get_script_dir(self):
         """Returns the directory where the script is located."""
         return os.path.dirname(os.path.realpath(__file__))

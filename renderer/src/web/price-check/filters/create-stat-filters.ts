@@ -526,7 +526,15 @@ export function calculatedStatToFilter(
       goodness,
     };
 
-    filterFillMinMax(filter.roll, calc.stat.better);
+    let usedBetter = calc.stat.better;
+    if (
+      stat.trade.ids.pseudo?.length === 1 &&
+      stat.trade.ids.pseudo[0] === "item.reload_time"
+    ) {
+      usedBetter = StatBetter.NegativeRoll;
+    }
+
+    filterFillMinMax(filter.roll, usedBetter);
 
     if (translation.negate) {
       filterAdjustmentForNegate(filter.roll);

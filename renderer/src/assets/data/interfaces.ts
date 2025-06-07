@@ -49,12 +49,6 @@ export interface Stat {
   };
 }
 
-export interface TierLookup {
-  [ref: string]: {
-    [itemClass: string]: number;
-  };
-}
-
 export interface DropEntry {
   query: string[];
   items: string[];
@@ -236,6 +230,7 @@ export interface TranslationDict {
   TIMELESS_SMALL_PASSIVES: string;
   TIMELESS_NOTABLE_PASSIVES: string;
   GRANTS_SKILL: string;
+  RELOAD_SPEED: string;
 }
 
 export interface Filter {

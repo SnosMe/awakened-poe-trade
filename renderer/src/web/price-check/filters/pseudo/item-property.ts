@@ -149,7 +149,7 @@ export const WEAPON_STATS = new Set<string>([
   ...QUALITY_STATS.PHYSICAL_DAMAGE.flat,
   ...QUALITY_STATS.PHYSICAL_DAMAGE.incr,
   stat("#% increased Attack Speed"),
-  stat("+#% to Critical Hit Chance"),
+  stat("#% to Critical Hit Chance"),
 
   // stat('Adds # to # Chaos Damage'),
   stat("Adds # to # Lightning Damage"),
@@ -349,6 +349,32 @@ function weaponProps(ctx: FiltersCreationContext) {
           tradeId: "item.crit",
           roll: critChance.roll,
           sources: critChance.sources,
+          dp: true,
+          disabled: true,
+        },
+        ctx,
+      ),
+    );
+  }
+
+  if (item.weaponReload) {
+    const reloadTime = calcPropBounds(
+      item.weaponReload,
+      {
+        incr: ["#% increased Attack Speed"],
+        flat: [],
+      },
+      item,
+      // Inverted since lower is better for reload time
+      true,
+    );
+    ctx.filters.push(
+      propToFilter(
+        {
+          ref: "Reload Time: #",
+          tradeId: "item.reload_time",
+          roll: reloadTime.roll,
+          sources: reloadTime.sources,
           dp: true,
           disabled: true,
         },

@@ -229,7 +229,6 @@ export default defineComponent({
         defaultAllSelected: false,
         itemHoverTooltip: "keybind",
         autoFillEmptyRuneSockets: false,
-        tierNumbering: "poe2",
         alwaysShowTier: false,
         rememberRatio: false,
         openItemEditorAbove: false,
