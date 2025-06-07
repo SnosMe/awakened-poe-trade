@@ -60,7 +60,7 @@
     "armour": "Броня: {0}",
     "evasion_rating": "Уклонение: {0}",
     "energy_shield": "Энерг. щит: {0}",
-    "block": "Блок: {0}%",
+    "block": "Шанс блока: {0}%",
     "total_dps": "Общий ДПС: {0}",
     "physical_dps": "Физический ДПС: {0}",
     "elemental_dps": "Стихийный ДПС: {0}",
@@ -156,8 +156,9 @@
     "tincture": "Микстура",
     "azmeri_charm": "Оберег Азмери",
     "weapon_crossbow": "Арбалет",
-    "weapon_spear": "Spear",
-    "weapon_flail": "Flail"
+    "weapon_spear": "Копьё",
+    "weapon_flail": "Кистень",
+    "armour_buckler": "Баклер"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",

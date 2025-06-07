@@ -58,7 +58,7 @@ export default {
   // ItemDisplayArmourEnergyShield
   ENERGY_SHIELD: 'Energy Shield: ',
   // ItemDisplayShieldBlockChance
-  BLOCK_CHANCE: 'Chance to Block: ',
+  BLOCK_CHANCE: 'Block chance: ',
   // ItemPopupCorrupted
   CORRUPTED: 'Corrupted',
   // ItemPopupUnidentified

@@ -1141,7 +1141,8 @@ function parseUnneededText(section: string[], item: ParsedItem) {
     item.category !== ItemCategory.Wand &&
     item.category !== ItemCategory.Staff &&
     item.category !== ItemCategory.Shield &&
-    item.category !== ItemCategory.Spear
+    item.category !== ItemCategory.Spear &&
+    item.category !== ItemCategory.Buckler
   )
     return "PARSER_SKIPPED";
 
@@ -1557,6 +1558,7 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.Spear:
     case ItemCategory.Flail:
     case ItemCategory.Wand:
+    case ItemCategory.Buckler:
       return 1;
     default:
       return 0;

@@ -26,7 +26,7 @@ export default {
   ARMOUR: '護甲: ',
   EVASION: '閃避值: ',
   ENERGY_SHIELD: '能量護盾: ',
-  BLOCK_CHANCE: '格擋率: ',
+  BLOCK_CHANCE: '格擋機率: ',
   CORRUPTED: '已汙染',
   UNIDENTIFIED: '未鑑定',
   ITEM_SUPERIOR: /^精良的 (.*)$/,
