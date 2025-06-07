@@ -27,7 +27,7 @@
     <div v-else class="py-2 flex flex-col">
       <MapStatButton
         v-for="stat in mapStats"
-        :key="stat.matcher"
+        :key="stat.matcher + stat.type"
         :stat="stat"
         :config="config"
       />
