@@ -44,7 +44,7 @@
     "armour": "Armour: {0}",
     "evasion_rating": "Evasion Rating: {0}",
     "energy_shield": "Energy Shield: {0}",
-    "block": "Block: {0}%",
+    "block": "Block Chance: {0}%",
     "total_dps": "Total DPS: {0}",
     "physical_dps": "Physical DPS: {0}",
     "elemental_dps": "Elemental DPS: {0}",
@@ -142,7 +142,8 @@
     "weapon_crossbow": "Crossbow",
     "armour_focus": "Focus",
     "weapon_spear": "Spear",
-    "weapon_flail": "Flail"
+    "weapon_flail": "Flail",
+    "armour_buckler": "Buckler"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",

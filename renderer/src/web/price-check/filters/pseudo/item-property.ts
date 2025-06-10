@@ -54,7 +54,7 @@ export const ARMOUR_STATS = new Set<string>([
   ...QUALITY_STATS.ARMOUR.incr,
   ...QUALITY_STATS.EVASION.incr,
   ...QUALITY_STATS.ENERGY_SHIELD.incr,
-  stat("+#% Chance to Block"),
+  stat("#% increased Block chance"),
 ]);
 
 function armourProps(ctx: FiltersCreationContext) {
@@ -122,7 +122,7 @@ function armourProps(ctx: FiltersCreationContext) {
   if (item.armourBLOCK) {
     const block = calcPropBounds(
       item.armourBLOCK,
-      { flat: ["+#% Chance to Block"], incr: [] },
+      { flat: [], incr: ["#% increased Block chance"] },
       item,
     );
 

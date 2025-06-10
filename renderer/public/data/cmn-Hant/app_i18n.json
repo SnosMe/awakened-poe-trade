@@ -44,7 +44,7 @@
     "armour": "護甲：{0}",
     "evasion_rating": "閃避值：{0}",
     "energy_shield": "能量護盾：{0}",
-    "block": "格擋率：{0}%",
+    "block": "格擋機率：{0}%",
     "total_dps": "總 DPS：{0}",
     "physical_dps": "物理 DPS：{0}",
     "elemental_dps": "元素 DPS：{0}",
@@ -140,8 +140,9 @@
     "tincture": "萃取物",
     "azmeri_charm": "阿茲麥麗符咒",
     "weapon_crossbow": "十字弓",
-    "weapon_spear": "Spear",
-    "weapon_flail": "Flail"
+    "weapon_spear": "長鋒",
+    "weapon_flail": "鏈錘",
+    "armour_buckler": "輕盾"
   },
   "filters": {
     "selected_some": "已選擇：{0}/{1}，屬性",

@@ -58,6 +58,7 @@ export enum ItemCategory {
   TowerAugment = "TowerAugment",
   Spear = "Spear",
   Flail = "Flail",
+  Buckler = "Buckler",
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([
@@ -106,6 +107,7 @@ export const ARMOUR = new Set([
   ItemCategory.Helmet,
   ItemCategory.Shield,
   ItemCategory.Focus,
+  ItemCategory.Buckler,
 ]);
 
 export const ACCESSORY = new Set([

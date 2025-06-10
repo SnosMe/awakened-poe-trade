@@ -5,6 +5,7 @@ import { roundRoll } from "../price-check/filters/util";
 export interface PreparedStat {
   matcher: string;
   roll?: number;
+  type?: string;
 }
 
 export function prepareMapStats(item: ParsedItem): PreparedStat[] {
@@ -15,6 +16,7 @@ export function prepareMapStats(item: ParsedItem): PreparedStat[] {
     const prepared = {
       matcher: translation.string,
       roll: roll && roundRoll(roll.value, translation.dp ?? false),
+      type: calc.type,
     };
 
     if (translation.negate) {

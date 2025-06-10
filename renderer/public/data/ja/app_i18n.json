@@ -44,7 +44,7 @@
     "armour": "アーマー: {0}",
     "evasion_rating": "回避力: {0}",
     "energy_shield": "エナジーシールド: {0}",
-    "block": "ブロック: {0}%",
+    "block": "ブロック率: {0}%",
     "total_dps": "DPS: {0}",
     "physical_dps": "物理DPS: {0}",
     "elemental_dps": "元素DPS: {0}",
@@ -140,8 +140,9 @@
     "tincture": "チンキ",
     "azmeri_charm": "チャーム",
     "weapon_crossbow": "クロスボウ",
-    "weapon_spear": "Spear",
-    "weapon_flail": "Flail"
+    "weapon_spear": "槍",
+    "weapon_flail": "フレイル",
+    "armour_buckler": "バックラー"
   },
   "filters": {
     "selected_some": "スタット {1}つの内{0}",

@@ -54,6 +54,7 @@ export enum ItemCategory {
   Focus = "Focus",
   Spear = "Spear",
   Flail = "Flail",
+  Buckler = "Buckler",
 }
 
 export interface StatMatcher {

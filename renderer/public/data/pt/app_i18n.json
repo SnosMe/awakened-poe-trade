@@ -43,7 +43,7 @@
     "armour": "Armadura: {0}",
     "evasion_rating": "Índice de evasão: {0}",
     "energy_shield": "Escudo de energia: {0}",
-    "block": "Bloqueio: {0}%",
+    "block": "Chance de Bloqueio: {0}%",
     "total_dps": "DPS total: {0}",
     "physical_dps": "DPS físico: {0}",
     "elemental_dps": "DPS elemental: {0}",
@@ -134,7 +134,10 @@
     "tincture": "Tintura",
     "azmeri_charm": "Amuleto Azmeri",
     "weapon_crossbow": "Besta",
-    "armour_focus": "Foco"
+    "armour_focus": "Foco",
+    "weapon_spear": "Lança",
+    "weapon_flail": "Mangual",
+    "armour_buckler": "Broquel"
   },
   "filters": {
     "selected_some": "{0} de {1}, estatísticas",

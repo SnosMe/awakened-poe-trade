@@ -44,7 +44,7 @@
     "armour": "Rüstung: {0}",
     "evasion_rating": "Ausweichwertung: {0}",
     "energy_shield": "Energieschild: {0}",
-    "block": "Blocken: {0}%",
+    "block": "Blockchance: {0}%",
     "total_dps": "Gesamter DPS: {0}",
     "physical_dps": "Physischer DPS: {0}",
     "elemental_dps": "Elementarer DPS: {0}",
@@ -141,8 +141,9 @@
     "azmeri_charm": "Azmeri-Talisman",
     "weapon_crossbow": "Armbrust",
     "armour_focus": "Fokus",
-    "weapon_spear": "Spear",
-    "weapon_flail": "Flail"
+    "weapon_spear": "Speer",
+    "weapon_flail": "Flegel",
+    "armour_buckler": "Faustschild"
   },
   "filters": {
     "selected_some": "{0} von {1}, Werte",

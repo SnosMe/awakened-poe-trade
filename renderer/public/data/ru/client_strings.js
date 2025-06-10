@@ -26,7 +26,7 @@ export default {
   ARMOUR: 'Броня: ',
   EVASION: 'Уклонение: ',
   ENERGY_SHIELD: 'Энергетический щит: ',
-  BLOCK_CHANCE: 'Шанс заблокировать удар: ',
+  BLOCK_CHANCE: 'Шанс блока: ',
   CORRUPTED: 'Осквернено',
   UNIDENTIFIED: 'Неопознано',
   ITEM_SUPERIOR: /^(.*) высокого качества$/,

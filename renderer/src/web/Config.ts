@@ -602,7 +602,6 @@ function getConfigForHost(): HostConfig {
   actions.push({
     shortcut: config.overlayKey,
     action: { type: "toggle-overlay" },
-    keepModKeys: true,
   });
   const itemCheck = AppConfig("item-check") as ItemCheckWidget;
   if (itemCheck.wikiKey) {

@@ -137,8 +137,9 @@
     "tincture": "팅크",
     "azmeri_charm": "부적",
     "weapon_crossbow": "석궁",
-    "weapon_spear": "Spear",
-    "weapon_flail": "Flail"
+    "weapon_spear": "창",
+    "weapon_flail": "도리깨",
+    "armour_buckler": "버클러"
   },
   "filters": {
     "selected_some": "{1} 중 {0}개 선택",
