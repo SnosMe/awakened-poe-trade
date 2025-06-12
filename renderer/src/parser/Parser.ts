@@ -1575,6 +1575,7 @@ export function isArmourOrWeaponOrCaster(
     case ItemCategory.Helmet:
     case ItemCategory.Shield:
     case ItemCategory.Focus:
+    case ItemCategory.Buckler:
       return "armour";
     case ItemCategory.OneHandedAxe:
     case ItemCategory.OneHandedMace:
