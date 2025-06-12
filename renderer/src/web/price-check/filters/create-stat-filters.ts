@@ -67,10 +67,10 @@ export function createResistanceWeightFilter(
   const searchInRange = Math.min(2, opts.searchStatRange);
 
   const resistanceWeights: any = {
-    "+#% to Lightning Resistance": 1,
-    "+#% to Fire Resistance": 1,
-    "+#% to Cold Resistance": 1,
-    "+#% to all Elemental Resistances": 3,
+    "#% to Lightning Resistance": 1,
+    "#% to Fire Resistance": 1,
+    "#% to Cold Resistance": 1,
+    "#% to all Elemental Resistances": 3,
   };
 
   let min = 0;

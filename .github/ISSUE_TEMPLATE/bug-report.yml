@@ -43,6 +43,7 @@ body:
       label: Version
       description: What version of EE2 are you running? You can see this in Settings -> About
       options:
+        - 0.10.2
         - 0.10.1
         - 0.10.0
         - 0.9.x
