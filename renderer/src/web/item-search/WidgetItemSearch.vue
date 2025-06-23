@@ -137,10 +137,12 @@ function findItems (opts: {
   namespace: 'GEM' | 'UNIQUE'
   itemNames: () => Generator<string>
 }): BaseType[] | false {
+  const isCJK = (AppConfig().language === 'cmn-Hant' || AppConfig().language === 'zh_CN')
+  const minSearchLimit = isCJK ? 1 : 3
   const search = opts.search.trim()
   const lcSearch = search.toLowerCase().split(/\s+/).sort((a, b) => b.length - a.length)
   const lcLongestWord = lcSearch[0]
-  if (search.length < 3) return false
+  if (search.length < minSearchLimit) return false
 
   const MAX_RESULTS = 5 // NOTE: don't want to pick from too many results
   const out = []

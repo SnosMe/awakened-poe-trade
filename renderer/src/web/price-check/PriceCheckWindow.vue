@@ -191,7 +191,7 @@ export default defineComponent({
           message: `${err}_help`,
           rawText: e.clipboard
         }))
-
+      console.log(123123, item)
       if (item.value.isOk()) {
         queuePricesFetch()
       }

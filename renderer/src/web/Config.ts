@@ -91,6 +91,7 @@ export function poeWebApi () {
     case 'cmn-Hant': return (realm === 'pc-garena')
       ? 'pathofexile.tw'
       : 'www.pathofexile.com'
+    case 'zh_CN': return 'www.pathofexile.com'
     case 'ko': return 'poe.game.daum.net'
   }
 }
@@ -113,7 +114,7 @@ export interface Config {
   logKeys: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'ko'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'ko' | 'zh_CN'
   realm: 'pc-ggg' | 'pc-garena'
   widgets: widget.Widget[]
   fontSize: number
@@ -158,7 +159,7 @@ export const defaultConfig = (): Config => ({
   logKeys: false,
   accountName: '',
   stashScroll: true,
-  language: 'en',
+  language: 'zh_CN',
   realm: 'pc-ggg',
   fontSize: 16,
   widgets: widgetRegistry.widgets.reduce<widget.Widget[]>((widgets, { widget }) => {

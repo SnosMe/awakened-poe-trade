@@ -160,7 +160,6 @@ function weaponProps (ctx: FiltersCreationContext) {
       sources: [],
       disabled: false
     }, ctx))
-
     ctx.filters.push(propToFilter({
       ref: 'Elemental DPS: #',
       tradeId: 'item.elemental_dps',

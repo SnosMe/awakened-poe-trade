@@ -333,12 +333,15 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
     filter.tag !== FilterTag.Pseudo
   ) return
 
+  console.log(33221155, filter)
   if (!filter.roll) {
     filter.hidden = 'filters.hide_const_roll'
+    console.log(332211, filter.text, filter.roll)
   } else if (!filter.roll.bounds) {
     filter.roll.min = undefined
     filter.roll.max = undefined
     filter.hidden = 'filters.hide_const_roll'
+    console.log(33221144, filter.text, filter.roll)
   }
 }
 
