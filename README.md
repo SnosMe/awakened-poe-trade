@@ -2,8 +2,8 @@
 
 原来维护的版本感觉有点难理解，不知道从何开始，现在基于原版重新二开一个
 
-## 20250624 加了点传奇
-加了点词条
+# 目前只支持国际服
+## 20250624 加了点传奇、加了点词条
 
 cd ./renderer
 yarn --frozen-lockfile
@@ -14,4 +14,3 @@ cd ../main
 yarn --frozen-lockfile
 yarn build
 yarn package
-cd ..
