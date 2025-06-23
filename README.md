@@ -5,6 +5,13 @@
 # 目前只支持国际服
 ## 20250624 加了点传奇、加了点词条
 
+
+
+## 备注
+之前的彼岸，凤梨群的彼岸，都是我。
+本职IT狗，996加班比较多，所以做的慢，主要是很多内容我玩不到，所以更新动力比较小
+
+```
 cd ./renderer
 yarn --frozen-lockfile
 yarn make-index-files
@@ -14,3 +21,4 @@ cd ../main
 yarn --frozen-lockfile
 yarn build
 yarn package
+```
