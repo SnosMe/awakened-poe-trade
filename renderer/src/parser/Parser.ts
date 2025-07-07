@@ -684,9 +684,9 @@ function parseDisenchantCandidates(section: string[], item: ParsedItem) {
   // 50% increased Thaumaturgic Dust per Influence Type
   let increaseByFactors = item.influences.length * 50
 
-  // 1% increased Thaumaturgic Dust per Item Quality
+  // Increased Thaumaturgic Dust per Item Quality
   if (item.quality) {
-    increaseByFactors += item.quality
+    increaseByFactors += item.quality * 2
   } else {
     // Checking the catalyst quality
     const catalystQualityStr = CLIENT_STRINGS.QUALITY.slice(0, -2) + ' ('
@@ -713,7 +713,7 @@ function parseDisenchantCandidates(section: string[], item: ParsedItem) {
   // Per Influence + Corrupt + Quality
   const factorsMultiplier = (increaseByFactors + 100) / 100
   // Formula from https://poedb.tw/us/Kingsmarch#Disenchant
-  const globalMultiplier = 100 * (20 - (84 - Math.min(Math.max(65, ilvl), 84))) * factorsMultiplier
+  const globalMultiplier = 125 * (20 - (84 - Math.min(Math.max(65, ilvl), 84))) * factorsMultiplier
 
   for (const entry of possibleItems) {
     for (const match of DISENCHANT_UNIQUE_ITEMS_ITERATOR(JSON.stringify(entry.refName))) {
