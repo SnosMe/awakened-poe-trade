@@ -1559,6 +1559,7 @@ function getMaxSockets(category: ItemCategory | undefined) {
     case ItemCategory.Flail:
     case ItemCategory.Wand:
     case ItemCategory.Buckler:
+    case ItemCategory.Sceptre:
       return 1;
     default:
       return 0;
