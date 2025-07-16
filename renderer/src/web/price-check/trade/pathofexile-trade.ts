@@ -217,10 +217,13 @@ interface FetchResult {
   }
   listing: {
     indexed: string
+    stash?: {
+      name: string
+    }
     price?: {
       amount: number
       currency: string
-      type: '~price'
+      type: '~price' | '~b/o'
     }
     account: Account
   }
@@ -237,7 +240,7 @@ export interface PricingResult {
   priceAmount: number
   priceCurrency: string
   isMine: boolean
-  hasNote: boolean
+  isIndividuallyPriced: boolean
   accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
   ign: string
@@ -586,7 +589,7 @@ export async function requestResults (
       relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
-      hasNote: result.item.note != null,
+      isIndividuallyPriced: isIndividuallyPriced(result),
       isMine: (result.listing.account.name === opts.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
@@ -595,6 +598,17 @@ export async function requestResults (
         : 'offline'
     }
   })
+}
+
+function isIndividuallyPriced (result: FetchResult) {
+  const stashName = result.listing.stash?.name
+  const price = result.listing.price
+
+  if (!stashName || !price) {
+    return false
+  }
+
+  return stashName !== `${price.type} ${price.amount} ${price.currency}`
 }
 
 function getMinMax (roll: StatFilter['roll']) {
