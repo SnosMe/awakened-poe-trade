@@ -418,6 +418,7 @@ export class Shortcuts {
             // F11 - Stop any running orb operation
             console.log("F11: Stopping orb operations");
             FLAG.stop = 1;
+            FLAG.escPressed = true; // Trigger immediate stop
             cleanupOrbUsage();
             this.updateOrbUsageStatus(false, 'none');
           }

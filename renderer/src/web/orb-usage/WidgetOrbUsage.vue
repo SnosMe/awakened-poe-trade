@@ -191,7 +191,7 @@ export default {
         maxAttempts: 1,
         stashGrid: { width: 12, height: 12 },
         itemGrid: { width: 1, height: 1 },
-        delayBetweenItems: 300,
+        delayBetweenItems: 150,
         delayBetweenRounds: 300,
         stashMode: true,
         isRunning: false,
@@ -235,7 +235,7 @@ if (props.config.wmFlags[0] === 'uninitialized') {
   props.config.maxAttempts = 1
   props.config.stashGrid = { width: 12, height: 12 }
   props.config.itemGrid = { width: 1, height: 1 }
-  props.config.delayBetweenItems = 300
+  props.config.delayBetweenItems = 150
   props.config.delayBetweenRounds = 300
   props.config.stashMode = true
   props.config.isRunning = false

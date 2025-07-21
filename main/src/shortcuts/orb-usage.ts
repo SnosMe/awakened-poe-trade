@@ -17,8 +17,79 @@ const STASH = {
   gridSize: 70,
 }
 
-// Global flag to stop operations
-export const FLAG = { stop: 0 };
+// Enhanced stopping mechanism
+export const FLAG = { 
+  stop: 0,
+  shiftPressed: false,
+  escPressed: false,
+  stashBounds: {
+    minX: STASH.start.x - 200, // 200px buffer around stash
+    maxX: STASH.end.x + 200,
+    minY: STASH.start.y - 200, 
+    maxY: STASH.end.y + 200
+  },
+  monitorMouseMovement: false // Only start monitoring after first item
+};
+
+// Enhanced stop checking function
+async function shouldStop(): Promise<boolean> {
+  if (FLAG.stop === 1) return true;
+  if (FLAG.escPressed) return true;
+  if (!FLAG.shiftPressed) return true; // Stop if shift is released
+  
+  // Stop if mouse moved outside stash area (only if we're monitoring)
+  if (FLAG.monitorMouseMovement) {
+    try {
+      const currentPos = await mouse.getPosition();
+      if (currentPos.x < FLAG.stashBounds.minX || 
+          currentPos.x > FLAG.stashBounds.maxX ||
+          currentPos.y < FLAG.stashBounds.minY || 
+          currentPos.y > FLAG.stashBounds.maxY) {
+        console.log("Stopping: Mouse moved outside stash area");
+        return true;
+      }
+    } catch (error) {
+      // If we can't get mouse position, don't stop for this reason
+    }
+  }
+  
+  return false;
+}
+
+// Initialize stopping mechanisms
+async function initializeStopMechanisms() {
+  FLAG.stop = 0;
+  FLAG.escPressed = false;
+  FLAG.shiftPressed = true; // Assume shift is pressed when starting
+  FLAG.monitorMouseMovement = false; // Start monitoring after first item
+  
+  // Listen for key events
+  const keyListener = (e: any) => {
+    if (e.keycode === Key.Shift) {
+      FLAG.shiftPressed = false;
+      console.log("Stopping: Shift key released");
+    } else if (e.keycode === Key.Escape) {
+      FLAG.escPressed = true;
+      console.log("Stopping: ESC key pressed");
+    }
+  };
+  
+  uIOhook.on('keyup', keyListener);
+  
+  // Return cleanup function
+  return () => {
+    uIOhook.removeListener('keyup', keyListener);
+  };
+}
+
+// Clean up function
+function cleanupStopMechanisms() {
+  FLAG.stop = 0;
+  FLAG.shiftPressed = false;
+  FLAG.escPressed = false;
+  FLAG.monitorMouseMovement = false;
+  uIOhook.removeAllListeners('keyup');
+}
 
 interface OrbUsageOptions {
   orbType: string;
@@ -144,9 +215,17 @@ export async function processItemAtCursor(
 ): Promise<ItemProcessResult> {
   overlay.assertGameActive();
   
-  const currentPos = await mouse.getPosition();
-  // No screenshot parameter - will capture its own
-  return processItem(currentPos.x, currentPos.y, ocrWorker, overlay, options);
+  // Initialize stopping mechanisms for single item
+  const cleanup = await initializeStopMechanisms();
+  
+  try {
+    const currentPos = await mouse.getPosition();
+    // No screenshot parameter - will capture its own
+    return await processItem(currentPos.x, currentPos.y, ocrWorker, overlay, options);
+  } finally {
+    cleanup();
+    cleanupStopMechanisms();
+  }
 }
 
 /**
@@ -165,20 +244,22 @@ export async function processStashItems(
 ): Promise<ItemProcessResult[]> {
   const {
     maxAttempts = 2, // Number of rounds to process the full grid
-    delayBetweenItems = 300,
+    delayBetweenItems = 150,
     delayBetweenRounds = 300,
     stashGrid = { width: 3, height: 12 },
+    itemGrid = { width: 1, height: 1 },
     onItemProcessed,
     onRoundComplete,
-    onComplete,
-    itemGrid = { width: 1 , height: 1 }
+    onComplete
   } = options;
 
   overlay.assertGameActive();
-  FLAG.stop = 0;
+  
+  // Initialize enhanced stopping mechanisms
+  const cleanup = await initializeStopMechanisms();
   uIOhook.keyToggle(Key.Shift, "down");
 
-  // const allResults: ItemProcessResult[] = [];
+  const allResults: ItemProcessResult[] = [];
   const grid = {
     startX: STASH.start.x,
     startY: STASH.start.y,
@@ -189,64 +270,75 @@ export async function processStashItems(
 
   let totalProcessed = 0;
 
-
   console.log(`Processing stash grid: ${grid.width}x${grid.height} for ${maxAttempts} rounds`);
 
-  // Process multiple rounds
-  for (let round = 0; round < maxAttempts && FLAG.stop === 0; round++) {
-    console.log(`\n=== Starting Round ${round + 1}/${maxAttempts} ===`);
-    
-    // Capture screenshot once per round
-    console.log(`Capturing screenshot for round ${round + 1}...`);
-    const screenshot = overlay.screenshot();
-    
-    
-    // Process full grid for this round
-    for (let col = 0; col < grid.width && FLAG.stop === 0; col+=itemGrid.width) {
-      for (let row = 0; row < grid.height && FLAG.stop === 0; row+=itemGrid.height) {
-        
-        const itemX = grid.startX + col * grid.itemSize
-        const itemY = grid.startY + row * grid.itemSize
-        
-        // Pass the shared screenshot to avoid capturing for each item
-        const result = await processItem(itemX, itemY, ocrWorker, overlay, options, screenshot);
-        if (result.processed) {
-          totalProcessed++;
-        }
-        
-        if (onItemProcessed) {
-          onItemProcessed(result, row, col, round + 1);
-        }
-        
-        if (delayBetweenItems > 0) {
-          await new Promise(resolve => setTimeout(resolve, delayBetweenItems));
+  try {
+    // Process multiple rounds
+    for (let round = 0; round < maxAttempts && !(await shouldStop()); round++) {
+      console.log(`\n=== Starting Round ${round + 1}/${maxAttempts} ===`);
+      
+      // Capture screenshot once per round
+     // console.log(`Capturing screenshot for round ${round + 1}...`);
+      const screenshot = overlay.screenshot();
+      
+      // Process full grid for this round
+      for (let col = 0; col < grid.width && !(await shouldStop()); col += itemGrid.width) {
+        for (let row = 0; row < grid.height && !(await shouldStop()); row += itemGrid.height) {
+          
+          const itemX = grid.startX + col * grid.itemSize;
+          const itemY = grid.startY + row * grid.itemSize;
+          
+          // Enable mouse movement monitoring after first few items
+          if (!FLAG.monitorMouseMovement) {
+            FLAG.monitorMouseMovement = true;
+         //   console.log("Started monitoring mouse movement outside stash area");
+          }
+          
+          // Pass the shared screenshot to avoid capturing for each item
+          const result = await processItem(itemX, itemY, ocrWorker, overlay, options, screenshot);
+          allResults.push(result);
+          if (result.processed) {
+            totalProcessed++;
+          }
+          
+          if (onItemProcessed) {
+            onItemProcessed(result, row, col, round + 1);
+          }
+          
+          if (delayBetweenItems > 0) {
+            await new Promise(resolve => setTimeout(resolve, delayBetweenItems));
+          }
         }
       }
+      
+      if (onRoundComplete) {
+        onRoundComplete(round + 1);
+      }
+      
+      // Delay between rounds (except after the last round)
+      if (round < maxAttempts - 1 && !(await shouldStop()) && delayBetweenRounds > 0) {
+        // console.log(`Waiting ${delayBetweenRounds}ms before next round...`);
+        await new Promise(resolve => setTimeout(resolve, delayBetweenRounds));
+      }
     }
-    
-    
-    if (onRoundComplete) {
-      onRoundComplete(round + 1);
-    }
-    
-    // Delay between rounds (except after the last round)
-    if (round < maxAttempts - 1 && FLAG.stop === 0 && delayBetweenRounds > 0) {
-      console.log(`Waiting ${delayBetweenRounds}ms before next round...`);
-      await new Promise(resolve => setTimeout(resolve, delayBetweenRounds));
-    }
-  }
 
-  // const totalItems = allResults.length;
-  // const totalProcessed = allResults.filter(r => r.processed).length;
-  console.log(`\n=== Completed all ${maxAttempts} rounds ===`);
-  
-  if (onComplete) {
-    onComplete(totalProcessed);
+   // console.log(`\n=== Completed all ${maxAttempts} rounds ===`);
+    
+    if (onComplete) {
+      onComplete(totalProcessed);
+    }
+  } finally {
+    // Always cleanup, regardless of how we exit
+    cleanup();
+    cleanupStopMechanisms();
   }
+  
+  return allResults;
 }
 
 export const cleanupOrbUsage = () => {
   uIOhook.keyToggle(Key.Shift, "up");
+  cleanupStopMechanisms();
 }
 
 /**
@@ -270,14 +362,14 @@ export async function useOrbOnStash(
       ...options,
       useOrb: true,
       onRoundComplete: (round) => {
-        console.log(`Round ${round}: Used orb on items`);
+       // console.log(`Round ${round}: Used orb on items`);
         
         if (options.onRoundComplete) {
           options.onRoundComplete(round);
         }
       },
       onComplete: (totalProcessed) => {
-        console.log(`Completed all rounds: Used orb ${totalProcessed} total items`);
+       // console.log(`Completed all rounds: Used orb ${totalProcessed} total items`);
       }
     });
     return results;
@@ -325,7 +417,7 @@ export async function useOrbOnStashItemsWithOrbSelection(
 }
 
 
-export const useOrbOnMouse = async (options: ProcessOptions, ocrWorker: OcrWorker, overlay: OverlayWindow ) => {
-  const res = await processItemAtCursor(ocrWorker, overlay, options)
-  return res  
+export const useOrbOnMouse = async (options: ProcessOptions, ocrWorker: OcrWorker, overlay: OverlayWindow) => {
+  const res = await processItemAtCursor(ocrWorker, overlay, options);
+  return res;
 }
