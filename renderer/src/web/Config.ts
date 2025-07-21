@@ -451,16 +451,16 @@ function getConfigForHost (): HostConfig {
   })
 
   actions.push({
-    shortcut: 'Ctrl + F10',
+    shortcut: 'F10',
     action: {
-      type: 'use-orb-once',
+      type: 'use-orb-on-mouse',
       orbType: 'chaos',
       maxAttempts: 1,
     }
   })
   // Add Control + L for orb spamming
   actions.push({
-    shortcut: 'F10',
+    shortcut: 'Ctrl + F10',
     action: {
       type: 'use-orb-stash',
       orbType: 'chaos',

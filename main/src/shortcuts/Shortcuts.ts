@@ -8,7 +8,7 @@ import {
 import { typeInChat, stashSearch } from "./text-box";
 import {
   FLAG,
-  useOrbOnItemWithCheck,
+  useOrbOnMouse,
   useOrbOnStashItemsWithOrbSelection,
 } from "./orb-usage";
 import { WidgetAreaTracker } from "../windowing/WidgetAreaTracker";
@@ -304,12 +304,7 @@ export class Shortcuts {
               delayBetweenClicks: action.delayBetweenClicks,
               orbPosition: action.orbPosition!
             };
-            useOrbOnStashItemsWithOrbSelection(
-              options,
-              this.clipboard,
-              this.overlay,
-              this.ocrWorker
-            )
+            useOrbOnMouse(options, this.ocrWorker, this.overlay)
           }
         }
       );

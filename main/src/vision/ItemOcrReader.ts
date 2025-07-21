@@ -42,7 +42,7 @@ export class ItemOcrReader {
 
       if (mouseX !== undefined && mouseY !== undefined) {
         // Create a 70x70 rectangle centered on mouse cursor
-        const rectSize = 70
+        const rectSize = 60
         const halfSize = Math.floor(rectSize / 2)
         
         // Calculate start coordinates ensuring we don't go out of bounds
@@ -79,7 +79,7 @@ export class ItemOcrReader {
       const value = hsvMeans[2] || 0
       
       // Item is considered "matched"/colored if it has sufficient saturation and value
-      const isMatched = saturation > 30 && value > 60
+      const isMatched = value > 33
       console.log("isMatched", isMatched, saturation, value);
       
       // Clean up Mats
@@ -114,3 +114,5 @@ export class ItemOcrReader {
     return this.analyzeItemColors(screenshot, mouseX, mouseY)
   }
 } 
+
+
