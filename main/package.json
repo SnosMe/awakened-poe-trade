@@ -16,6 +16,7 @@
   },
   "main": "dist/main.js",
   "dependencies": {
+    "@nut-tree-fork/nut-js": "^4.2.6",
     "electron-overlay-window": "3.3.0",
     "uiohook-napi": "1.5.x"
   },

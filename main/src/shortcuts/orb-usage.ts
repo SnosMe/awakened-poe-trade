@@ -1,4 +1,5 @@
 import { uIOhook, UiohookKey as Key } from "uiohook-napi";
+import { mouse, Point } from "@nut-tree-fork/nut-js";
 import type { HostClipboard } from "./HostClipboard";
 import type { OverlayWindow } from "../windowing/OverlayWindow";
 
@@ -68,8 +69,8 @@ export function useOrbOnStashItems(
     const itemY = grid.startY + row * grid.itemSize + grid.itemSize / 2;
 
     try {
-      // Move mouse to item
-      uIOhook.mouseMove(itemX, itemY);
+      // Move mouse to item using nut-js
+      await mouse.move([new Point(itemX, itemY)]);
 
       // Wait a bit for the item tooltip to appear
       await new Promise((resolve) => setTimeout(resolve, 200));
@@ -95,7 +96,7 @@ export function useOrbOnStashItems(
       console.log(`Using ${orbType} orb on item at (${row}, ${col})`);
 
       // Click to use orb (Shift should already be held)
-      uIOhook.mouseClick(1, itemX, itemY); // Left click
+      await mouse.leftClick();
 
       // Wait between clicks
       await new Promise((resolve) => setTimeout(resolve, delayBetweenClicks));
@@ -198,8 +199,8 @@ export function useOrbOnStashItemsWithOrbSelection(
     const itemY = grid.startY + row * grid.itemSize + grid.itemSize / 2;
 
     try {
-      // Move mouse to item
-      uIOhook.mouseMove(itemX, itemY);
+      // Move mouse to item using nut-js
+      await mouse.move([new Point(itemX, itemY)]);
 
       // Wait a bit for the item tooltip to appear
       await new Promise((resolve) => setTimeout(resolve, 200));
@@ -225,7 +226,7 @@ export function useOrbOnStashItemsWithOrbSelection(
       console.log(`Using ${orbType} orb on item at (${row}, ${col})`);
 
       // Click to use orb (Shift should already be held)
-      uIOhook.mouseClick(1, itemX, itemY); // Left click
+      await mouse.leftClick();
 
       // Wait between clicks
       await new Promise((resolve) => setTimeout(resolve, delayBetweenClicks));
@@ -266,9 +267,9 @@ export function useOrbOnStashItemsWithOrbSelection(
     console.log(
       `Selecting ${orbType} orb at position (${orbPosition.x}, ${orbPosition.y})...`
     );
-    uIOhook.mouseMove(orbPosition.x, orbPosition.y);
+    await mouse.move([new Point(orbPosition.x, orbPosition.y)]);
     await new Promise((resolve) => setTimeout(resolve, 100));
-    uIOhook.mouseClick(1, orbPosition.x, orbPosition.y); // Left click to select orb
+    await mouse.leftClick(); // Left click to select orb
 
     // Wait a bit for orb selection
     await new Promise((resolve) => setTimeout(resolve, 200));
