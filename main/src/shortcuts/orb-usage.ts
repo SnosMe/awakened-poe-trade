@@ -75,7 +75,7 @@ export async function processItem(
   };
 
   try {
-    console.log(`Processing item at (${x}, ${y})`);
+    console.log(`\n(${Math.round((y - STASH.start.y) / STASH.gridSize)}, ${Math.round((x - STASH.start.x) / STASH.gridSize)})`);
 
     // Move mouse to item
     await mouse.move([new Point(x, y)]);
@@ -83,30 +83,28 @@ export async function processItem(
 
     // Use provided screenshot or capture new one
     const imageData = screenshot || overlay.screenshot();
-    console.log('imageData', imageData);
     const colorResult = await ocrWorker.readItemColors(imageData, x, y);
-    console.log('colorResult', colorResult);
     
     result.isMatched = colorResult.isMatched;
     result.averageColor = colorResult.averageColor;
     
-    console.log(`Item: ${colorResult.isMatched ? 'COLORED' : 'GREY'}`);
+    // console.log(`Item: ${colorResult.isMatched ? 'COLORED' : 'GREY'}`);
 
     // Check skip pattern
     // const shouldSkip = shouldSkipItem(colorResult.isMatched, skipPattern);
     
-    // if (shouldSkip) {
-    //   console.log('Skipping item - matches skip pattern');
-    //   return result;
-    // }
+    if (result.isMatched) {
+      console.log('Skipping item - matches skip pattern');
+      return result;
+    }
 
     // Use orb if enabled
-    // if (useOrb) {
-    //   console.log(`Using ${orbType} orb`);
-    //   // await mouse.leftClick(); // Keep your commented out click
-    //   await new Promise(resolve => setTimeout(resolve, delayBetweenClicks));
-    //   result.processed = true;
-    // }
+    if (useOrb) {
+      console.log(`Using ${orbType} orb`);
+      await mouse.leftClick(); // Keep your commented out click
+      await new Promise(resolve => setTimeout(resolve, delayBetweenClicks));
+      result.processed = true;
+    }
 
     result.processed = true;
 
@@ -159,16 +157,16 @@ export async function processStashItems(
   options: ProcessOptions & {
     stashGrid?: { width: number; height: number };
     onItemProcessed?: (result: ItemProcessResult, row: number, col: number, round: number) => void;
-    onRoundComplete?: (round: number, processedInRound: number, totalInRound: number) => void;
-    onComplete?: (results: ItemProcessResult[]) => void;
+    onRoundComplete?: (round: number) => void;
+    onComplete?: (totalProcessed: number) => void;
     delayBetweenRounds?: number;
   } = {}
 ): Promise<ItemProcessResult[]> {
   const {
-    maxAttempts = 1, // Number of rounds to process the full grid
+    maxAttempts = 2, // Number of rounds to process the full grid
     delayBetweenItems = 500,
     delayBetweenRounds = 1000,
-    stashGrid = { width: 12, height: 12 },
+    stashGrid = { width: 3, height: 12 },
     onItemProcessed,
     onRoundComplete,
     onComplete
@@ -176,6 +174,7 @@ export async function processStashItems(
 
   overlay.assertGameActive();
   FLAG.stop = 0;
+  uIOhook.keyToggle(Key.Shift, "down");
 
   // const allResults: ItemProcessResult[] = [];
   const grid = {
@@ -185,6 +184,8 @@ export async function processStashItems(
     height: stashGrid.height,
     itemSize: STASH.gridSize,
   };
+
+  let totalProcessed = 0;
 
   console.log(`Processing stash grid: ${grid.width}x${grid.height} for ${maxAttempts} rounds`);
 
@@ -206,9 +207,9 @@ export async function processStashItems(
         
         // Pass the shared screenshot to avoid capturing for each item
         const result = await processItem(itemX, itemY, ocrWorker, overlay, options, screenshot);
-        // allResults.push(result);
-        
-       
+        if (result.processed) {
+          totalProcessed++;
+        }
         
         if (onItemProcessed) {
           onItemProcessed(result, row, col, round + 1);
@@ -232,16 +233,17 @@ export async function processStashItems(
     }
   }
 
-  const totalItems = allResults.length;
-  const totalProcessed = allResults.filter(r => r.processed).length;
+  // const totalItems = allResults.length;
+  // const totalProcessed = allResults.filter(r => r.processed).length;
   console.log(`\n=== Completed all ${maxAttempts} rounds ===`);
-  console.log(`Total items processed: ${totalProcessed}/${totalItems}`);
   
   if (onComplete) {
-    onComplete(allResults);
+    onComplete(totalProcessed);
   }
+}
 
-  return allResults;
+export const cleanupOrbUsage = () => {
+  uIOhook.keyToggle(Key.Shift, "up");
 }
 
 /**
@@ -271,14 +273,13 @@ export async function useOrbOnStash(
           options.onRoundComplete(round);
         }
       },
-      onComplete: (allResults) => {
-        const totalProcessed = allResults.filter(r => r.processed).length;
-        console.log(`Completed all rounds: Used orb on ${totalProcessed}/${allResults.length} total items`);
+      onComplete: (totalProcessed) => {
+        console.log(`Completed all rounds: Used orb ${totalProcessed} total items`);
       }
     });
     return results;
   } finally {
-    // cleanupOrbUsage();
+    cleanupOrbUsage();
   }
 }
 

@@ -30,7 +30,6 @@ export class ItemOcrReader {
         throw new Error('OpenCV not properly initialized')
       }
 
-      // Create Mat from screenshot
       const colorMat = Bindings.cvMatFromImage(screenshot)
       
       // Verify Mat was created successfully
@@ -41,8 +40,8 @@ export class ItemOcrReader {
       let roiRect;
 
       if (mouseX !== undefined && mouseY !== undefined) {
-        // Create a 70x70 rectangle centered on mouse cursor
-        const rectSize = 60
+        // Create a 58x58 rectangle centered on mouse cursor
+        const rectSize = 58
         const halfSize = Math.floor(rectSize / 2)
         
         // Calculate start coordinates ensuring we don't go out of bounds
@@ -79,11 +78,30 @@ export class ItemOcrReader {
       const value = hsvMeans[2] || 0
       
       // Item is considered "matched"/colored if it has sufficient saturation and value
-      const isMatched = value > 33
-      console.log("isMatched", isMatched, saturation, value);
+      let isMatched = false;
+      let matchConfidence = 0;
+      
+      // Rule of thumb from observation:
+      // - Grey items: saturation < 30, value < 36
+      // - Colored items: saturation > 40, value > 60
+      
+      if (saturation > 45 && value > 65) {
+        isMatched = true;
+        matchConfidence = 1;
+      } else if (saturation > 38 && value > 55) {
+        isMatched = true;
+        matchConfidence = 0.8;
+      } else if (saturation > 33 && value > 45) {
+        isMatched = true;
+        matchConfidence = 0.6;
+      } else {
+        isMatched = false;
+        matchConfidence = 0.2;
+      } 
+      console.log("isMatched", isMatched ? "COLORED" : "GREY", " :  ", saturation, value);
       
       // Clean up Mats
-      // colorMat.delete()
+      colorMat.delete()
       roi.delete()
       hsvMat.delete()
       hsvMat2.delete()
