@@ -231,6 +231,9 @@
     "search_text": "search text or regex",
     "friendly_name": "friendly name"
   },
+  "orb_usage": {
+    "name": "Orb Usage"
+  },
   "image_strip": {
     "name": "Image strip"
   },

@@ -45,6 +45,7 @@ interface ProcessOptions {
   mouseTimeout?: number;
   useOrb?: boolean;
   maxAttempts?: number;
+  itemGrid?: { width: number; height: number };
 }
 
 /**
@@ -164,12 +165,13 @@ export async function processStashItems(
 ): Promise<ItemProcessResult[]> {
   const {
     maxAttempts = 2, // Number of rounds to process the full grid
-    delayBetweenItems = 500,
-    delayBetweenRounds = 1000,
+    delayBetweenItems = 300,
+    delayBetweenRounds = 300,
     stashGrid = { width: 3, height: 12 },
     onItemProcessed,
     onRoundComplete,
-    onComplete
+    onComplete,
+    itemGrid = { width: 1 , height: 1 }
   } = options;
 
   overlay.assertGameActive();
@@ -187,6 +189,7 @@ export async function processStashItems(
 
   let totalProcessed = 0;
 
+
   console.log(`Processing stash grid: ${grid.width}x${grid.height} for ${maxAttempts} rounds`);
 
   // Process multiple rounds
@@ -199,11 +202,11 @@ export async function processStashItems(
     
     
     // Process full grid for this round
-    for (let col = 0; col < grid.width && FLAG.stop === 0; col++) {
-      for (let row = 0; row < grid.height && FLAG.stop === 0; row++) {
+    for (let col = 0; col < grid.width && FLAG.stop === 0; col+=itemGrid.width) {
+      for (let row = 0; row < grid.height && FLAG.stop === 0; row+=itemGrid.height) {
         
-        const itemX = grid.startX + col * grid.itemSize;
-        const itemY = grid.startY + row * grid.itemSize;
+        const itemX = grid.startX + col * grid.itemSize
+        const itemY = grid.startY + row * grid.itemSize
         
         // Pass the shared screenshot to avoid capturing for each item
         const result = await processItem(itemX, itemY, ocrWorker, overlay, options, screenshot);

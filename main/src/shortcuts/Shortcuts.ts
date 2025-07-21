@@ -7,9 +7,12 @@ import {
 } from "../../../ipc/KeyToCode";
 import { typeInChat, stashSearch } from "./text-box";
 import {
-  FLAG,
-  useOrbOnMouse,
   useOrbOnStashItemsWithOrbSelection,
+  processStashItems,
+  analyzeStash,
+  cleanupOrbUsage,
+  useOrbOnMouse,
+  FLAG
 } from "./orb-usage";
 import { WidgetAreaTracker } from "../windowing/WidgetAreaTracker";
 import { HostClipboard } from "./HostClipboard";
@@ -32,6 +35,21 @@ export class Shortcuts {
   private logKeys = false;
   private areaTracker: WidgetAreaTracker;
   private clipboard: HostClipboard;
+  private orbUsageConfig: {
+    maxAttempts: number;
+    stashGrid: { width: number; height: number };
+    itemGrid: { width: number; height: number };
+    delayBetweenItems: number;
+    delayBetweenRounds: number;
+    stashMode: boolean;
+  } = {
+    maxAttempts: 1,
+    stashGrid: { width: 12, height: 12 },
+    itemGrid: { width: 1, height: 1 },
+    delayBetweenItems: 300,
+    delayBetweenRounds: 300,
+    stashMode: true
+  };
 
   static async create(
     logger: Logger,
@@ -81,6 +99,53 @@ export class Shortcuts {
       }
     });
 
+    // Handle orb usage actions from the UI
+    this.server.onEventAnyClient("CLIENT->MAIN::orb-usage-action", async (e) => {
+      if (e.action === "save-config") {
+        console.log("Saving orb usage config from UI:", e.config);
+        this.orbUsageConfig = { ...e.config };
+        
+        // Update the actions array to include the orb usage shortcuts
+        
+      } else if (e.action === "start-orb-usage") {
+        console.log("Starting orb usage from UI:", e.config);
+        const options = {
+          maxAttempts: e.config.maxAttempts,
+          stashGrid: e.config.stashGrid,
+          delayBetweenItems: e.config.delayBetweenItems,
+          delayBetweenRounds: e.config.delayBetweenRounds,
+          useOrb: true,
+          orbType: e.config.orbType
+        };
+        
+        try {
+          await processStashItems(this.ocrWorker, this.overlay, options);
+        } catch (error) {
+          console.error("Error during orb usage:", error);
+        } finally {
+          cleanupOrbUsage();
+        }
+      } else if (e.action === "stop-orb-usage") {
+        console.log("Stopping orb usage from UI");
+        FLAG.stop = 1;
+        cleanupOrbUsage();
+      } else if (e.action === "analyze-stash") {
+        console.log("Starting stash analysis from UI:", e.config);
+        const options = {
+          maxAttempts: e.config.maxAttempts,
+          stashGrid: e.config.stashGrid,
+          delayBetweenItems: e.config.delayBetweenItems,
+          delayBetweenRounds: e.config.delayBetweenRounds
+        };
+        
+        try {
+          await analyzeStash(this.ocrWorker, this.overlay, options);
+        } catch (error) {
+          console.error("Error during stash analysis:", error);
+        }
+      }
+    });
+
     uIOhook.on("keydown", (e) => {
       if (!this.logKeys) return;
       const pressed = eventToString(e);
@@ -107,6 +172,7 @@ export class Shortcuts {
       }
     });
   }
+
 
   updateActions(
     actions: ShortcutAction[],
@@ -281,7 +347,7 @@ export class Shortcuts {
               delayBetweenItems: action.delayBetweenItems,
               delayBetweenClicks: action.delayBetweenClicks,
               stashGrid: action.stashGrid,
-              orbPosition: action.orbPosition,
+              orbPosition: action.orbPosition || { x: 100, y: 100 }, // Default position
             };
             useOrbOnStashItemsWithOrbSelection(
               options,
@@ -289,22 +355,49 @@ export class Shortcuts {
               this.overlay,
               this.ocrWorker
             );
-          } else if (entry.action.type === "stop-orb-usage") {
-            console.log("stop-orb-usage");
-            FLAG.stop = 1;
-          } else if (entry.action.type === "use-orb-on-mouse") {
-            const { action } = entry;
+          } else if (entry.action.type === "orb-process-mode") {
+            // F10 - Process based on current mode (stash or single item)
+            if (this.orbUsageConfig.stashMode) {
+              console.log("F10: Processing stash (stash mode enabled)");
+              const options = {
+                maxAttempts: this.orbUsageConfig.maxAttempts,
+                stashGrid: this.orbUsageConfig.stashGrid,
+                delayBetweenItems: this.orbUsageConfig.delayBetweenItems,
+                delayBetweenRounds: this.orbUsageConfig.delayBetweenRounds,
+                useOrb: true,
+                itemGrid: this.orbUsageConfig.itemGrid
+              };
+              processStashItems(this.ocrWorker, this.overlay, options)
+                .catch(error => console.error("Error during stash processing:", error))
+                .finally(() => cleanupOrbUsage());
+            } else {
+              console.log("F10: Processing item at cursor (single item mode)");
+              const options = {
+                orbType: "chaos",
+                useOrb: true
+              };
+              useOrbOnMouse(options, this.ocrWorker, this.overlay)
+                .catch(error => console.error("Error during cursor processing:", error));
+            }
+          } else if (entry.action.type === "orb-process-stash") {
+            // Ctrl+F10 - Always process stash regardless of mode
+            console.log("Ctrl+F10: Force processing stash");
             const options = {
-              orbType: action.orbType,
-              skipPattern: action.skipPattern
-                ? new RegExp(action.skipPattern)
-                : undefined,
-              maxAttempts: action.maxAttempts,
-              delayBetweenItems: action.delayBetweenItems,
-              delayBetweenClicks: action.delayBetweenClicks,
-              orbPosition: action.orbPosition!
+              maxAttempts: this.orbUsageConfig.maxAttempts,
+              stashGrid: this.orbUsageConfig.stashGrid,
+              delayBetweenItems: this.orbUsageConfig.delayBetweenItems,
+              delayBetweenRounds: this.orbUsageConfig.delayBetweenRounds,
+              useOrb: true,
+              itemGrid: this.orbUsageConfig.itemGrid
             };
-            useOrbOnMouse(options, this.ocrWorker, this.overlay)
+            processStashItems(this.ocrWorker, this.overlay, options)
+              .catch(error => console.error("Error during forced stash processing:", error))
+              .finally(() => cleanupOrbUsage());
+          } else if (entry.action.type === "orb-stop") {
+            // F11 - Stop any running orb operation
+            console.log("F11: Stopping orb operations");
+            FLAG.stop = 1;
+            cleanupOrbUsage();
           }
         }
       );

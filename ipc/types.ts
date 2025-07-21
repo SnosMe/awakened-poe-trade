@@ -54,7 +54,8 @@ export interface ShortcutAction {
         maxAttempts?: number;
         delayBetweenItems?: number;
         delayBetweenClicks?: number;
-        stashGrid?: {
+        orbPosition: { x: number; y: number };
+        stashGrid: {
           startX: number;
           startY: number;
           width: number;
@@ -63,19 +64,16 @@ export interface ShortcutAction {
         };
       }
     | {
-        type: "stop-orb-usage";
+        type: "orb-process-mode";
+      }
+    | {
+        type: "orb-process-stash";
+      }
+    | {
+        type: "orb-stop";
       }
     | {
         type: "test-only";
-      }
-    | {
-        type: "use-orb-once";
-        orbType: "alteration" | "chaos";
-        skipPattern?: string;
-        maxAttempts?: number;
-        delayBetweenItems?: number;
-        delayBetweenClicks?: number;
-        orbPosition?: { x: number; y: number };
       };
 }
 
@@ -122,7 +120,8 @@ export type IpcEvent =
   | IpcItemText
   | IpcOcrText
   | IpcConfigChanged
-  | IpcUserAction;
+  | IpcUserAction
+  | IpcOrbUsageAction;
 
 export type IpcEventPayload<
   Name extends IpcEvent["name"],
@@ -240,6 +239,46 @@ type IpcUserAction = Event<
   | {
       action: "stash-search";
       text: string;
+    }
+>;
+
+type IpcOrbUsageAction = Event<
+  "CLIENT->MAIN::orb-usage-action", 
+  | {
+      action: "start-orb-usage";
+      config: {
+        maxAttempts: number;
+        stashGrid: { width: number; height: number };
+        itemGrid: { width: number; height: number };
+        delayBetweenItems: number;
+        delayBetweenRounds: number;
+        stashMode: boolean;
+      };
+    }
+  | {
+      action: "stop-orb-usage";
+    }
+  | {
+      action: "analyze-stash";
+      config: {
+        maxAttempts: number;
+        stashGrid: { width: number; height: number };
+        itemGrid: { width: number; height: number };
+        delayBetweenItems: number;
+        delayBetweenRounds: number;
+        stashMode: boolean;
+      };
+    }
+  | {
+      action: "save-config";
+      config: {
+        maxAttempts: number;
+        stashGrid: { width: number; height: number };
+        itemGrid: { width: number; height: number };
+        delayBetweenItems: number;
+        delayBetweenRounds: number;
+        stashMode: boolean;
+      };
     }
 >;
 

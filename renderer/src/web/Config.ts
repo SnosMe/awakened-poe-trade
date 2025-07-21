@@ -450,41 +450,23 @@ function getConfigForHost (): HostConfig {
     keepModKeys: true
   })
 
+  
+  // Add new orb usage shortcuts
   actions.push({
     shortcut: 'F10',
-    action: {
-      type: 'use-orb-on-mouse',
-      orbType: 'chaos',
-      maxAttempts: 1,
-    }
-  })
-  // Add Control + L for orb spamming
+    action: { type: 'orb-process-mode' }
+  });
+  
   actions.push({
-    shortcut: 'Ctrl + F10',
-    action: {
-      type: 'use-orb-stash',
-      orbType: 'chaos',
-      delayBetweenItems: 150,
-      delayBetweenClicks: 150,
-    }
-  })
-
+    shortcut: 'Ctrl + F10', 
+    action: { type: 'orb-process-stash' }
+  });
+  
   actions.push({
     shortcut: 'F11',
-    action: {
-      type: 'stop-orb-usage'
-    }
-  })
-
-  actions.push({
-    shortcut: 'Shift + F11',
-    action: {
-      type: 'stop-orb-usage',
-    }
-  })
-
-
- 
+    action: { type: 'orb-stop' }
+  });
+  
   const itemCheck = AppConfig('item-check') as ItemCheckWidget
   if (itemCheck.wikiKey) {
     actions.push({

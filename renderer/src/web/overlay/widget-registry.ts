@@ -9,6 +9,7 @@ import WidgetImageStrip from './WidgetImageStrip.vue'
 import WidgetDelveGrid from './WidgetDelveGrid.vue'
 import WidgetItemSearch from '../item-search/WidgetItemSearch.vue'
 import WidgetSettings from '../settings/SettingsWindow.vue'
+import WidgetOrbUsage from '../orb-usage/WidgetOrbUsage.vue'
 
 type WidgetComponent = Component & { widget: WidgetSpec }
 
@@ -23,6 +24,8 @@ export const registry = {
 // Core
 registry.widgets.push(WidgetMenu as unknown as WidgetComponent)
 registry.widgets.push(WidgetSettings as unknown as WidgetComponent)
+registry.widgets.push(WidgetOrbUsage as unknown as WidgetComponent)
+
 // Extra
 registry.widgets.push(WidgetItemSearch as unknown as WidgetComponent)
 registry.widgets.push(WidgetTimer as unknown as WidgetComponent)
