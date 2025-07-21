@@ -126,7 +126,8 @@ export class ItemOcrReader {
       return {
         elapsed,
         isMatched: false,
-        averageColor: { r: 0, g: 0, b: 0 }
+        averageColor: { r: 0, g: 0, b: 0 },
+        isEmpty: false
       }
     }
   }
