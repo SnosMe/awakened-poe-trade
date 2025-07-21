@@ -3,32 +3,32 @@ name: Build
 on:
   push:
     branches:
-      - 'master'
+      - "master"
     tags-ignore:
-      - '**'
+      - "**"
     paths-ignore:
-      - 'docs/**'
+      - "docs/**"
       - README.md
 
 jobs:
   renderer:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-    - run: npm ci
-      working-directory: ./renderer
-    - run: npm run make-index-files
-      working-directory: ./renderer
-    - run: npm run lint
-      working-directory: ./renderer
-    - run: npm run build
-      working-directory: ./renderer
-    - uses: actions/upload-artifact@v4
-      with:
-        name: renderer-dist
-        path: ./renderer/dist
-        retention-days: 1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+        working-directory: ./renderer
+      - run: npm run make-index-files
+        working-directory: ./renderer
+      - run: npm run lint
+        working-directory: ./renderer
+      - run: npm run build
+        working-directory: ./renderer
+      - uses: actions/upload-artifact@v4
+        with:
+          name: renderer-dist
+          path: ./renderer/dist
+          retention-days: 1
 
   package:
     needs: renderer
@@ -37,26 +37,26 @@ jobs:
         os: [windows-2022, ubuntu-22.04, macos-13]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-    - uses: actions/download-artifact@v4
-      with:
-        name: renderer-dist
-        path: ./renderer/dist
-    - run: npm ci
-      working-directory: ./main
-    - run: npm run build
-      working-directory: ./main
-    - run: npm run package "--" -p onTagOrDraft
-      working-directory: ./main
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Hash
-      if: ${{ startsWith(matrix.os, 'windows') }}
-      run: type .\main\dist\latest.yml
-    - name: Hash
-      if: ${{ startsWith(matrix.os, 'ubuntu') }}
-      run: cat ./main/dist/latest-linux.yml
-    - name: Hash
-      if: ${{ startsWith(matrix.os, 'macos') }}
-      run: cat ./main/dist/latest-mac.yml
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: renderer-dist
+          path: ./renderer/dist
+      - run: npm ci
+        working-directory: ./main
+      - run: npm run build
+        working-directory: ./main
+      - run: npm run package "--" -p onTagOrDraft
+        working-directory: ./main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Hash
+        if: ${{ startsWith(matrix.os, 'windows') }}
+        run: type .\main\dist\latest.yml
+      - name: Hash
+        if: ${{ startsWith(matrix.os, 'ubuntu') }}
+        run: cat ./main/dist/latest-linux.yml
+      - name: Hash
+        if: ${{ startsWith(matrix.os, 'macos') }}
+        run: cat ./main/dist/latest-mac.yml
