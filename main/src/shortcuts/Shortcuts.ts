@@ -387,8 +387,9 @@ export class Shortcuts {
               console.log("F10: Processing item at cursor (single item mode)");
               this.updateOrbUsageStatus(true, 'single');
               const options = {
-                orbType: "chaos",
-                useOrb: true
+                useOrb: true,
+                maxAttempts: this.orbUsageConfig.maxAttempts,
+                delayBetweenItems: this.orbUsageConfig.delayBetweenItems,
               };
               useOrbOnMouse(options, this.ocrWorker, this.overlay)
                 .catch(error => console.error("Error during cursor processing:", error))

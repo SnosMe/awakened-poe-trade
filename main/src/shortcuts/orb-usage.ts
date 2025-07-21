@@ -157,7 +157,6 @@ export async function processItem(
   screenshot?: any // Optional screenshot parameter
 ): Promise<ItemProcessResult> {
   const {
-    orbType = "unknown",
     delayBetweenClicks = 100,
     mouseTimeout = MOUSE_TIMEOUT,
     useOrb = false
@@ -185,7 +184,7 @@ export async function processItem(
     result.isMatched = colorResult.isMatched;
     result.averageColor = colorResult.averageColor;
     result.isEmpty = colorResult.isEmpty;
-    // console.log(`Item: ${colorResult.isMatched ? 'COLORED' : 'GREY'}`);
+    console.log(`Item: ${colorResult.isMatched ? 'COLORED' : 'GREY'}`);
 
     // Check skip pattern
     // const shouldSkip = shouldSkipItem(colorResult.isMatched, skipPattern);
@@ -223,18 +222,32 @@ export async function processItemAtCursor(
   ocrWorker: OcrWorker,
   overlay: OverlayWindow,
   options: ProcessOptions = {}
-): Promise<ItemProcessResult> {
+): Promise<ItemProcessResult | null> {
   overlay.assertGameActive();
-  
+  const { maxAttempts = 1, delayBetweenItems = 150} = options;
   // Initialize stopping mechanisms for single item
   const cleanup = await initializeStopMechanisms();
+
+  uIOhook.keyToggle(Key.Shift, "down");
+
+  console.log("Processing item at cursor", options);
   
   try {
     const currentPos = await mouse.getPosition();
     // No screenshot parameter - will capture its own
-    return await processItem(currentPos.x, currentPos.y, ocrWorker, overlay, options);
+    for (let i = 0; i < maxAttempts; i++) {
+      const result = await processItem(currentPos.x, currentPos.y, ocrWorker, overlay, options);
+      if (result.isMatched) {
+        return result;
+      }
+      if (delayBetweenItems > 0 && i < maxAttempts - 1) {
+        await new Promise(resolve => setTimeout(resolve, delayBetweenItems));
+      }
+    }
+    return null;
   } finally {
     cleanup();
+    uIOhook.keyToggle(Key.Shift, "up");
     cleanupStopMechanisms();
   }
 }
