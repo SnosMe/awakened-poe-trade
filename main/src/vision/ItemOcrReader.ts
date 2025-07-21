@@ -83,7 +83,7 @@ export class ItemOcrReader {
       console.log("isMatched", isMatched, saturation, value);
       
       // Clean up Mats
-      colorMat.delete()
+      // colorMat.delete()
       roi.delete()
       hsvMat.delete()
       hsvMat2.delete()

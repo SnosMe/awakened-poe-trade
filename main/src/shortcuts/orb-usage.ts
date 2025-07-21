@@ -4,7 +4,7 @@ import { HostClipboard } from "./HostClipboard";
 import { OverlayWindow } from "../windowing/OverlayWindow";
 import type { OcrWorker } from "../vision/link-main";
 
-const MOUSE_TIMEOUT = 1000;
+const MOUSE_TIMEOUT = 200;
 
 
 const STASH = {
@@ -56,7 +56,8 @@ export async function processItem(
   y: number,
   ocrWorker: OcrWorker,
   overlay: OverlayWindow,
-  options: ProcessOptions = {}
+  options: ProcessOptions = {},
+  screenshot?: any // Optional screenshot parameter
 ): Promise<ItemProcessResult> {
   const {
     orbType = "unknown",
@@ -80,9 +81,11 @@ export async function processItem(
     await mouse.move([new Point(x, y)]);
     await new Promise(resolve => setTimeout(resolve, mouseTimeout));
 
-    // Analyze item colors
-    const screenshot = overlay.screenshot();
-    const colorResult = await ocrWorker.readItemColors(screenshot, x, y);
+    // Use provided screenshot or capture new one
+    const imageData = screenshot || overlay.screenshot();
+    console.log('imageData', imageData);
+    const colorResult = await ocrWorker.readItemColors(imageData, x, y);
+    console.log('colorResult', colorResult);
     
     result.isMatched = colorResult.isMatched;
     result.averageColor = colorResult.averageColor;
@@ -90,20 +93,24 @@ export async function processItem(
     console.log(`Item: ${colorResult.isMatched ? 'COLORED' : 'GREY'}`);
 
     // Check skip pattern
-    const shouldSkip = shouldSkipItem(colorResult.isMatched, skipPattern);
+    // const shouldSkip = shouldSkipItem(colorResult.isMatched, skipPattern);
     
-    if (shouldSkip) {
-      console.log('Skipping item - matches skip pattern');
-      return result;
-    }
+    // if (shouldSkip) {
+    //   console.log('Skipping item - matches skip pattern');
+    //   return result;
+    // }
 
     // Use orb if enabled
-    if (useOrb) {
-      console.log(`Using ${orbType} orb`);
-      // await mouse.leftClick();
-      await new Promise(resolve => setTimeout(resolve, delayBetweenClicks));
-      result.processed = true;
-    }
+    // if (useOrb) {
+    //   console.log(`Using ${orbType} orb`);
+    //   // await mouse.leftClick(); // Keep your commented out click
+    //   await new Promise(resolve => setTimeout(resolve, delayBetweenClicks));
+    //   result.processed = true;
+    // }
+
+    result.processed = true;
+
+    return result;
 
   } catch (error) {
     result.error = `Error: ${error}`;
@@ -139,33 +146,38 @@ export async function processItemAtCursor(
   overlay.assertGameActive();
   
   const currentPos = await mouse.getPosition();
+  // No screenshot parameter - will capture its own
   return processItem(currentPos.x, currentPos.y, ocrWorker, overlay, options);
 }
 
 /**
- * Process all items in stash using grid pattern
+ * Process all items in stash using grid pattern - SIMPLIFIED ROUND-BASED VERSION
  */
 export async function processStashItems(
   ocrWorker: OcrWorker,
   overlay: OverlayWindow,
   options: ProcessOptions & {
     stashGrid?: { width: number; height: number };
-    onItemProcessed?: (result: ItemProcessResult, row: number, col: number) => void;
+    onItemProcessed?: (result: ItemProcessResult, row: number, col: number, round: number) => void;
+    onRoundComplete?: (round: number, processedInRound: number, totalInRound: number) => void;
     onComplete?: (results: ItemProcessResult[]) => void;
+    delayBetweenRounds?: number;
   } = {}
 ): Promise<ItemProcessResult[]> {
   const {
-    maxAttempts = 144, // 12x12 grid
+    maxAttempts = 1, // Number of rounds to process the full grid
     delayBetweenItems = 500,
+    delayBetweenRounds = 1000,
     stashGrid = { width: 12, height: 12 },
     onItemProcessed,
+    onRoundComplete,
     onComplete
   } = options;
 
   overlay.assertGameActive();
   FLAG.stop = 0;
 
-  const results: ItemProcessResult[] = [];
+  // const allResults: ItemProcessResult[] = [];
   const grid = {
     startX: STASH.start.x,
     startY: STASH.start.y,
@@ -174,88 +186,66 @@ export async function processStashItems(
     itemSize: STASH.gridSize,
   };
 
-  console.log("Processing stash grid:", grid);
+  console.log(`Processing stash grid: ${grid.width}x${grid.height} for ${maxAttempts} rounds`);
 
-  let attempts = 0;
-  
-  for (let col = 0; col < grid.width && FLAG.stop === 0 && attempts < maxAttempts; col++) {
-    for (let row = 0; row < grid.height && FLAG.stop === 0 && attempts < maxAttempts; row++) {
-      attempts++;
-      
-      const itemX = grid.startX + col * grid.itemSize;
-      const itemY = grid.startY + row * grid.itemSize;
-      
-      const result = await processItem(itemX, itemY, ocrWorker, overlay, options);
-      results.push(result);
-      
-      if (onItemProcessed) {
-        onItemProcessed(result, row, col);
+  // Process multiple rounds
+  for (let round = 0; round < maxAttempts && FLAG.stop === 0; round++) {
+    console.log(`\n=== Starting Round ${round + 1}/${maxAttempts} ===`);
+    
+    // Capture screenshot once per round
+    console.log(`Capturing screenshot for round ${round + 1}...`);
+    const screenshot = overlay.screenshot();
+    
+    
+    // Process full grid for this round
+    for (let col = 0; col < grid.width && FLAG.stop === 0; col++) {
+      for (let row = 0; row < grid.height && FLAG.stop === 0; row++) {
+        
+        const itemX = grid.startX + col * grid.itemSize;
+        const itemY = grid.startY + row * grid.itemSize;
+        
+        // Pass the shared screenshot to avoid capturing for each item
+        const result = await processItem(itemX, itemY, ocrWorker, overlay, options, screenshot);
+        // allResults.push(result);
+        
+       
+        
+        if (onItemProcessed) {
+          onItemProcessed(result, row, col, round + 1);
+        }
+        
+        if (delayBetweenItems > 0) {
+          await new Promise(resolve => setTimeout(resolve, delayBetweenItems));
+        }
       }
-      
-      if (delayBetweenItems > 0) {
-        await new Promise(resolve => setTimeout(resolve, delayBetweenItems));
-      }
+    }
+    
+    
+    if (onRoundComplete) {
+      onRoundComplete(round + 1);
+    }
+    
+    // Delay between rounds (except after the last round)
+    if (round < maxAttempts - 1 && FLAG.stop === 0 && delayBetweenRounds > 0) {
+      console.log(`Waiting ${delayBetweenRounds}ms before next round...`);
+      await new Promise(resolve => setTimeout(resolve, delayBetweenRounds));
     }
   }
 
-  console.log(`Processed ${results.length} items`);
+  const totalItems = allResults.length;
+  const totalProcessed = allResults.filter(r => r.processed).length;
+  console.log(`\n=== Completed all ${maxAttempts} rounds ===`);
+  console.log(`Total items processed: ${totalProcessed}/${totalItems}`);
   
   if (onComplete) {
-    onComplete(results);
+    onComplete(allResults);
   }
 
-  return results;
+  return allResults;
 }
 
 /**
- * Setup orb for usage (select orb, hold shift)
- */
-export async function setupOrbUsage(orbPosition: { x: number; y: number }, orbType: string): Promise<void> {
-  return;
-  console.log(`Selecting ${orbType} orb at (${orbPosition.x}, ${orbPosition.y})`);
-  
-  await mouse.move([new Point(orbPosition.x, orbPosition.y)]);
-  await new Promise(resolve => setTimeout(resolve, 100));
-  await mouse.leftClick();
-  await new Promise(resolve => setTimeout(resolve, 200));
-  
-  console.log("Holding Shift for multiple orb usage");
-  uIOhook.keyToggle(Key.Shift, "down");
-}
-
-/**
- * Cleanup orb usage (release shift)
- */
-export function cleanupOrbUsage(): void {
-  console.log("Releasing Shift");
-  uIOhook.keyToggle(Key.Shift, "up");
-  FLAG.stop = 1;
-}
-
-/**
- * High-level function: Use orb on cursor item
- */
-export async function useOrbAtCursor(
-  orbPosition: { x: number; y: number },
-  ocrWorker: OcrWorker,
-  overlay: OverlayWindow,
-  options: ProcessOptions = {}
-): Promise<ItemProcessResult> {
-  await setupOrbUsage(orbPosition, options.orbType || "unknown");
-  
-  try {
-    const result = await processItemAtCursor(ocrWorker, overlay, {
-      ...options,
-      useOrb: true
-    });
-    return result;
-  } finally {
-    cleanupOrbUsage();
-  }
-}
-
-/**
- * High-level function: Use orb on entire stash
+ * High-level function: Use orb on entire stash - SIMPLIFIED
  */
 export async function useOrbOnStash(
   orbPosition: { x: number; y: number },
@@ -263,44 +253,46 @@ export async function useOrbOnStash(
   overlay: OverlayWindow,
   options: ProcessOptions & {
     stashGrid?: { width: number; height: number };
-    onItemProcessed?: (result: ItemProcessResult, row: number, col: number) => void;
+    onItemProcessed?: (result: ItemProcessResult, row: number, col: number, round: number) => void;
+    onRoundComplete?: (round: number) => void;
+    delayBetweenRounds?: number;
   } = {}
 ): Promise<ItemProcessResult[]> {
-  await setupOrbUsage(orbPosition, options.orbType || "unknown");
+  // await setupOrbUsage(orbPosition, options.orbType || "unknown");
   
   try {
     const results = await processStashItems(ocrWorker, overlay, {
       ...options,
       useOrb: true,
-      onComplete: (results) => {
-        console.log(`Completed processing ${results.length} items`);
-        const processedCount = results.filter(r => r.processed).length;
-        console.log(`Used orb on ${processedCount} items`);
+      onRoundComplete: (round) => {
+        console.log(`Round ${round}: Used orb on items`);
+        
+        if (options.onRoundComplete) {
+          options.onRoundComplete(round);
+        }
+      },
+      onComplete: (allResults) => {
+        const totalProcessed = allResults.filter(r => r.processed).length;
+        console.log(`Completed all rounds: Used orb on ${totalProcessed}/${allResults.length} total items`);
       }
     });
     return results;
   } finally {
-    cleanupOrbUsage();
+    // cleanupOrbUsage();
   }
 }
 
 /**
- * Analysis only: Check item at cursor (no orb usage)
- */
-export async function analyzeItemAtCursor(
-  ocrWorker: OcrWorker,
-  overlay: OverlayWindow
-): Promise<ItemProcessResult> {
-  return processItemAtCursor(ocrWorker, overlay, { useOrb: false });
-}
-
-/**
- * Analysis only: Check all stash items (no orb usage)
+ * Analysis only: Check all stash items - SIMPLIFIED
  */
 export async function analyzeStash(
   ocrWorker: OcrWorker,
   overlay: OverlayWindow,
-  options: { stashGrid?: { width: number; height: number } } = {}
+  options: { 
+    stashGrid?: { width: number; height: number };
+    maxAttempts?: number; // Number of rounds
+    delayBetweenRounds?: number;
+  } = {}
 ): Promise<ItemProcessResult[]> {
   return processStashItems(ocrWorker, overlay, { 
     ...options, 
@@ -309,69 +301,7 @@ export async function analyzeStash(
 }
 
 /**
- * Process items in a custom rectangle area
- */
-export async function processRectangleArea(
-  startX: number, 
-  startY: number, 
-  width: number, 
-  height: number,
-  itemSize: number,
-  ocrWorker: OcrWorker,
-  overlay: OverlayWindow,
-  options: ProcessOptions = {}
-): Promise<ItemProcessResult[]> {
-  const results: ItemProcessResult[] = [];
-  
-  const cols = Math.floor(width / itemSize);
-  const rows = Math.floor(height / itemSize);
-  
-  for (let col = 0; col < cols && FLAG.stop === 0; col++) {
-    for (let row = 0; row < rows && FLAG.stop === 0; row++) {
-      const x = startX + col * itemSize;
-      const y = startY + row * itemSize;
-      const result = await processItem(x, y, ocrWorker, overlay, options);
-      results.push(result);
-      
-      if (options.delayBetweenItems) {
-        await new Promise(resolve => setTimeout(resolve, options.delayBetweenItems));
-      }
-    }
-  }
-  
-  return results;
-}
-
-/**
- * Process inventory (6x4 grid) - example extension
- */
-export async function processInventory(
-  ocrWorker: OcrWorker,
-  overlay: OverlayWindow,
-  options: ProcessOptions = {}
-): Promise<ItemProcessResult[]> {
-  // Inventory coordinates (these would need to be adjusted for actual game)
-  const INVENTORY = {
-    start: { x: 1275, y: 610 },
-    gridSize: 53,
-    width: 12,
-    height: 5
-  };
-  
-  return processRectangleArea(
-    INVENTORY.start.x,
-    INVENTORY.start.y,
-    INVENTORY.width * INVENTORY.gridSize,
-    INVENTORY.height * INVENTORY.gridSize,
-    INVENTORY.gridSize,
-    ocrWorker,
-    overlay,
-    options
-  );
-}
-
-/**
- * Original function - now just a wrapper for backward compatibility
+ * Original function - SIMPLIFIED
  */
 export async function useOrbOnStashItemsWithOrbSelection(
   options: OrbUsageOptions & { orbPosition: { x: number; y: number } },
@@ -387,7 +317,7 @@ export async function useOrbOnStashItemsWithOrbSelection(
   );
 
   // Return stop function
-  return () => cleanupOrbUsage();
+  // return () => cleanupOrbUsage();
 }
 
 
