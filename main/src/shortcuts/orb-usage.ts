@@ -43,14 +43,16 @@ export function useOrbOnStashItems(
   let attempts = 0;
   let isRunning = true;
 
-  // Default stash grid (12x12 grid, adjust based on your stash size)
-  const grid = stashGrid || {
-    startX: 100, // Adjust based on your stash position
-    startY: 100, // Adjust based on your stash position
-    width: 12,
-    height: 12,
-    itemSize: 40, // Adjust based on your item size
+  // Always use the STASH constant for grid calculations  
+  const grid = {
+    startX: STASH.start.x,
+    startY: STASH.start.y,
+    width: Math.floor((STASH.end.x - STASH.start.x) / STASH.gridSize),
+    height: Math.floor((STASH.end.y - STASH.start.y) / STASH.gridSize),
+    itemSize: STASH.gridSize,
   };
+
+  console.log("Using stash grid:", grid);
 
   const processStashItem = async (row: number, col: number) => {
     if (!isRunning || attempts >= maxAttempts) {
@@ -64,11 +66,13 @@ export function useOrbOnStashItems(
 
     attempts++;
 
-    // Calculate item position in stash
-    const itemX = grid.startX + col * grid.itemSize + grid.itemSize / 2;
-    const itemY = grid.startY + row * grid.itemSize + grid.itemSize / 2;
+    // Calculate item position using STASH grid: position (col, row) = (startX + col * gridSize, startY + row * gridSize)
+    const itemX = grid.startX + col * grid.itemSize;
+    const itemY = grid.startY + row * grid.itemSize;
 
     try {
+      console.log(`Processing item at grid position (${row}, ${col}) -> screen position (${itemX}, ${itemY})`);
+
       // Move mouse to item using nut-js
       await mouse.move([new Point(itemX, itemY)]);
 
@@ -79,7 +83,14 @@ export function useOrbOnStashItems(
       if (skipPattern) {
         try {
           const itemText = await clipboard.readItemText();
-          if (skipPattern.test(itemText)) {
+          let shouldSkip = false;
+          if (typeof skipPattern === 'string') {
+            shouldSkip = itemText.includes(skipPattern);
+          } else {
+            shouldSkip = skipPattern.test(itemText);
+          }
+          
+          if (shouldSkip) {
             console.log(
               `Item at (${row}, ${col}) matches pattern, skipping...`
             );
@@ -111,16 +122,16 @@ export function useOrbOnStashItems(
   };
 
   const processNextItem = (currentRow: number, currentCol: number) => {
-    // Move to next item in grid
-    let nextRow = currentRow;
-    let nextCol = currentCol + 1;
-
-    if (nextCol >= grid.width) {
-      nextCol = 0;
-      nextRow++;
-    }
+    // Move to next item in grid (go down first, then right)
+    let nextRow = currentRow + 1;
+    let nextCol = currentCol;
 
     if (nextRow >= grid.height) {
+      nextRow = 0;
+      nextCol++;
+    }
+
+    if (nextCol >= grid.width) {
       // Finished all items in grid
       console.log("Finished processing all items in stash grid");
       isRunning = false;
@@ -155,7 +166,24 @@ export function useOrbOnStashItems(
   };
 }
 
-export function useOrbOnStashItemsWithOrbSelection(
+export const FLAG = {
+  stop: 0
+}
+
+
+const STASH = {
+  start: {
+    x: 55, y: 200
+  },
+  end: {
+    x: 825, y: 975
+  },
+  gridSize: 70,
+}
+
+const MOUSE_TIMEOUT = 100;
+
+export async function useOrbOnStashItemsWithOrbSelection(
   options: OrbUsageOptions & { orbPosition: { x: number; y: number } },
   clipboard: HostClipboard,
   overlay: OverlayWindow
@@ -170,17 +198,21 @@ export function useOrbOnStashItemsWithOrbSelection(
     orbPosition,
   } = options;
 
+  FLAG.stop = 0;
+
   let attempts = 0;
   let isRunning = true;
 
-  // Default stash grid (12x12 grid, adjust based on your stash size)
-  const grid = stashGrid || {
-    startX: 100, // Adjust based on your stash position
-    startY: 100, // Adjust based on your stash position
-    width: 12,
+  // Always use the STASH constant for grid calculations
+  const grid = {
+    startX: STASH.start.x,
+    startY: STASH.start.y,
+    width: 12, // default stash
     height: 12,
-    itemSize: 40, // Adjust based on your item size
+    itemSize: STASH.gridSize,
   };
+
+  console.log("Using stash grid:", grid);
 
   const processStashItem = async (row: number, col: number) => {
     if (!isRunning || attempts >= maxAttempts) {
@@ -194,22 +226,40 @@ export function useOrbOnStashItemsWithOrbSelection(
 
     attempts++;
 
-    // Calculate item position in stash
-    const itemX = grid.startX + col * grid.itemSize + grid.itemSize / 2;
-    const itemY = grid.startY + row * grid.itemSize + grid.itemSize / 2;
+    // Calculate item position using STASH grid: position (col, row) = (startX + col * gridSize, startY + row * gridSize)
+    const itemX = grid.startX + col * grid.itemSize;
+    const itemY = grid.startY + row * grid.itemSize;
 
     try {
+      if(FLAG.stop === 1) {
+        console.log("Stopping orb usage");
+        return;
+      }
+
+      console.log(`Processing item at grid position (${row}, ${col})` + "\n");
+
       // Move mouse to item using nut-js
       await mouse.move([new Point(itemX, itemY)]);
 
       // Wait a bit for the item tooltip to appear
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, MOUSE_TIMEOUT));
 
       // Copy item text to check if it matches pattern
-      if (skipPattern) {
+      if (true) {
         try {
+          
+          
+
           const itemText = await clipboard.readItemText();
-          if (skipPattern.test(itemText)) {
+          console.log("itemText", itemText);
+          let shouldSkip = false;
+          if (typeof skipPattern === 'string') {
+            shouldSkip = itemText.includes(skipPattern);
+          } else {
+            // shouldSkip = skipPattern.test(itemText);
+          }
+          
+          if (shouldSkip) {
             console.log(
               `Item at (${row}, ${col}) matches pattern, skipping...`
             );
@@ -223,7 +273,7 @@ export function useOrbOnStashItemsWithOrbSelection(
       }
 
       // Item doesn't match pattern, use orb on it
-      console.log(`Using ${orbType} orb on item at (${row}, ${col})`);
+      // console.log(`Using ${orbType} orb on item at (${row}, ${col})`);
 
       // Click to use orb (Shift should already be held)
       await mouse.leftClick();
@@ -241,16 +291,16 @@ export function useOrbOnStashItemsWithOrbSelection(
   };
 
   const processNextItem = (currentRow: number, currentCol: number) => {
-    // Move to next item in grid
-    let nextRow = currentRow;
-    let nextCol = currentCol + 1;
-
-    if (nextCol >= grid.width) {
-      nextCol = 0;
-      nextRow++;
-    }
+    // Move to next item in grid (go down first, then right)
+    let nextRow = currentRow + 1;
+    let nextCol = currentCol;
 
     if (nextRow >= grid.height) {
+      nextRow = 0;
+      nextCol++;
+    }
+
+    if (nextCol >= grid.width) {
       // Finished all items in grid
       console.log("Finished processing all items in stash grid");
       isRunning = false;
@@ -362,7 +412,7 @@ export function useOrbOnItemWithCheck(
     delayBetweenAttempts = 100,
     checkInterval = 500,
   } = options;
-
+  console.log("useOrbOnItemWithCheck", options);
   let attempts = 0;
   let isRunning = true;
 
@@ -381,14 +431,24 @@ export function useOrbOnItemWithCheck(
     try {
       // Copy the current item text
       const itemText = await clipboard.readItemText();
+      console.log("itemText", itemText);
 
       // Check if item matches desired pattern - if it does, skip using orb
-      if (skipPattern && skipPattern.test(itemText)) {
-        console.log(
-          `Item matches desired pattern, stopping ${orbType} orb usage - item is already what you want!`
-        );
-        isRunning = false;
-        return; // Stop the process - item is already good
+      if (skipPattern) {
+        let shouldSkip = false;
+        if (typeof skipPattern === 'string') {
+          shouldSkip = itemText.includes(skipPattern);
+        } else {
+          shouldSkip = skipPattern.test(itemText);
+        }
+        
+        if (shouldSkip) {
+          console.log(
+            `Item matches desired pattern, stopping ${orbType} orb usage - item is already what you want!`
+          );
+          isRunning = false;
+          return; // Stop the process - item is already good
+        }
       }
 
       // Use the appropriate orb only if item doesn't match the desired pattern

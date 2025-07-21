@@ -64,6 +64,9 @@ export interface ShortcutAction {
         };
       }
     | {
+        type: "stop-orb-usage";
+      }
+    | {
         type: "test-only";
       };
 }

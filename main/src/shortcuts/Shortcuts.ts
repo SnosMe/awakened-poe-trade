@@ -7,6 +7,7 @@ import {
 } from "../../../ipc/KeyToCode";
 import { typeInChat, stashSearch } from "./text-box";
 import {
+  FLAG,
   useOrbOnItemWithCheck,
   useOrbOnStashItemsWithOrbSelection,
 } from "./orb-usage";
@@ -299,6 +300,8 @@ export class Shortcuts {
               this.clipboard,
               this.overlay
             );
+          } else if (entry.action.type === "stop-orb-usage") {
+            FLAG.stop = 1;
           }
         }
       );

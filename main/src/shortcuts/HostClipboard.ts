@@ -2,7 +2,7 @@ import { clipboard, Clipboard } from 'electron'
 import type { Logger } from '../RemoteLogger'
 
 const POLL_DELAY = 48
-const POLL_LIMIT = 500
+const POLL_LIMIT = 1500
 
 // PoE must read clipboard within this timeframe,
 // after that we restore clipboard.

@@ -449,6 +449,36 @@ function getConfigForHost (): HostConfig {
     action: { type: 'toggle-overlay' },
     keepModKeys: true
   })
+
+  // Add Control + L for orb spamming
+  actions.push({
+    shortcut: 'Ctrl + L',
+    action: {
+      type: 'use-orb-stash',
+      orbType: 'chaos',
+      maxAttempts: 50,
+      delayBetweenItems: 150,
+      delayBetweenClicks: 150,
+      orbPosition: { x: 150, y: 50 },
+      stashGrid: {
+        startX: 200,
+        startY: 150,
+        width: 12,
+        height: 12,
+        itemSize: 40,
+      },
+    }
+  })
+
+  actions.push({
+    shortcut: 'Ctrl + Shift + L',
+    action: {
+      type: 'stop-orb-usage'
+    }
+  })
+
+
+ 
   const itemCheck = AppConfig('item-check') as ItemCheckWidget
   if (itemCheck.wikiKey) {
     actions.push({

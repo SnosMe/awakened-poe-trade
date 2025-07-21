@@ -50,7 +50,7 @@ export default {
       }, {
         wmId: 0,
         wmType: 'stash-search',
-        wmTitle: 'Dump sorting',
+        wmTitle: 'Dump sorting 123',
         wmWants: 'hide',
         wmZorder: null,
         wmFlags: ['invisible-on-blur'],
