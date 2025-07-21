@@ -311,7 +311,7 @@ function upgradeConfig (_config: Config): Config {
     const afterSettings = config.widgets.findIndex(w => w.wmType === 'settings')
     config.widgets.splice(afterSettings + 1, 0, {
       ...defaultConfig().widgets.find(w => w.wmType === 'item-search')!,
-      wmWants: 'show',
+      wmWants: 'hide',
       wmId: Math.max(0, ...config.widgets.map(_ => _.wmId)) + 1
     })
 

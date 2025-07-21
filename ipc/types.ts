@@ -121,7 +121,8 @@ export type IpcEvent =
   | IpcOcrText
   | IpcConfigChanged
   | IpcUserAction
-  | IpcOrbUsageAction;
+  | IpcOrbUsageAction
+  | IpcOrbUsageStatus;
 
 export type IpcEventPayload<
   Name extends IpcEvent["name"],
@@ -280,6 +281,14 @@ type IpcOrbUsageAction = Event<
         stashMode: boolean;
       };
     }
+>;
+
+type IpcOrbUsageStatus = Event<
+  "MAIN->CLIENT::orb-usage-status",
+  {
+    isRunning: boolean;
+    lastOperation: 'none' | 'single' | 'stash' | 'analyze';
+  }
 >;
 
 interface Event<TName extends string, TPayload = undefined> {

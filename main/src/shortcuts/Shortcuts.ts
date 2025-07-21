@@ -70,6 +70,16 @@ export class Shortcuts {
     return shortcuts;
   }
 
+  private updateOrbUsageStatus(isRunning: boolean, lastOperation: 'none' | 'single' | 'stash' | 'analyze') {
+    this.server.sendEventTo("broadcast", {
+      name: "MAIN->CLIENT::orb-usage-status",
+      payload: {
+        isRunning,
+        lastOperation
+      }
+    });
+  }
+
   private constructor(
     private logger: Logger,
     private overlay: OverlayWindow,
@@ -115,7 +125,6 @@ export class Shortcuts {
           delayBetweenItems: e.config.delayBetweenItems,
           delayBetweenRounds: e.config.delayBetweenRounds,
           useOrb: true,
-          orbType: e.config.orbType
         };
         
         try {
@@ -359,6 +368,7 @@ export class Shortcuts {
             // F10 - Process based on current mode (stash or single item)
             if (this.orbUsageConfig.stashMode) {
               console.log("F10: Processing stash (stash mode enabled)");
+              this.updateOrbUsageStatus(true, 'stash');
               const options = {
                 maxAttempts: this.orbUsageConfig.maxAttempts,
                 stashGrid: this.orbUsageConfig.stashGrid,
@@ -369,19 +379,27 @@ export class Shortcuts {
               };
               processStashItems(this.ocrWorker, this.overlay, options)
                 .catch(error => console.error("Error during stash processing:", error))
-                .finally(() => cleanupOrbUsage());
+                .finally(() => {
+                  cleanupOrbUsage();
+                  this.updateOrbUsageStatus(false, 'stash');
+                });
             } else {
               console.log("F10: Processing item at cursor (single item mode)");
+              this.updateOrbUsageStatus(true, 'single');
               const options = {
                 orbType: "chaos",
                 useOrb: true
               };
               useOrbOnMouse(options, this.ocrWorker, this.overlay)
-                .catch(error => console.error("Error during cursor processing:", error));
+                .catch(error => console.error("Error during cursor processing:", error))
+                .finally(() => {
+                  this.updateOrbUsageStatus(false, 'single');
+                });
             }
           } else if (entry.action.type === "orb-process-stash") {
             // Ctrl+F10 - Always process stash regardless of mode
             console.log("Ctrl+F10: Force processing stash");
+            this.updateOrbUsageStatus(true, 'stash');
             const options = {
               maxAttempts: this.orbUsageConfig.maxAttempts,
               stashGrid: this.orbUsageConfig.stashGrid,
@@ -392,12 +410,16 @@ export class Shortcuts {
             };
             processStashItems(this.ocrWorker, this.overlay, options)
               .catch(error => console.error("Error during forced stash processing:", error))
-              .finally(() => cleanupOrbUsage());
+              .finally(() => {
+                cleanupOrbUsage();
+                this.updateOrbUsageStatus(false, 'stash');
+              });
           } else if (entry.action.type === "orb-stop") {
             // F11 - Stop any running orb operation
             console.log("F11: Stopping orb operations");
             FLAG.stop = 1;
             cleanupOrbUsage();
+            this.updateOrbUsageStatus(false, 'none');
           }
         }
       );
