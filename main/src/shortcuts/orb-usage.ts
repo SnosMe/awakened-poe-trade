@@ -28,8 +28,31 @@ export const FLAG = {
     minY: STASH.start.y - 200, 
     maxY: STASH.end.y + 200
   },
-  monitorMouseMovement: false // Only start monitoring after first item
+  monitorMouseMovement: false, // Only start monitoring after first item
+  processedPositions: new Map<string, { isMatched: boolean, isEmpty?: boolean, processed: boolean }>() // Track processed positions
 };
+
+// Helper function to create position key
+function getPositionKey(row: number, col: number): string {
+  return `${row},${col}`;
+}
+
+// Check if position should be skipped
+function shouldSkipPosition(row: number, col: number): boolean {
+  const key = getPositionKey(row, col);
+  const positionData = FLAG.processedPositions.get(key);
+  return positionData?.isMatched === true || positionData?.isEmpty === true; // Skip if already processed and matched
+}
+
+// Record position result
+function recordPositionResult(row: number, col: number, result: ItemProcessResult) {
+  const key = getPositionKey(row, col);
+  FLAG.processedPositions.set(key, {
+    isMatched: result.isMatched,
+    isEmpty: result.isEmpty,
+    processed: result.processed
+  });
+}
 
 // Enhanced stop checking function
 async function shouldStop(): Promise<boolean> {
@@ -88,6 +111,7 @@ function cleanupStopMechanisms() {
   FLAG.shiftPressed = false;
   FLAG.escPressed = false;
   FLAG.monitorMouseMovement = false;
+  FLAG.processedPositions.clear(); // Clear position tracking
   uIOhook.removeAllListeners('keyup');
 }
 
@@ -106,6 +130,7 @@ interface ItemProcessResult {
   averageColor: { r: number; g: number; b: number };
   processed: boolean;
   error?: string;
+  isEmpty: boolean;
 }
 
 interface ProcessOptions {
@@ -133,7 +158,6 @@ export async function processItem(
 ): Promise<ItemProcessResult> {
   const {
     orbType = "unknown",
-    skipPattern,
     delayBetweenClicks = 100,
     mouseTimeout = MOUSE_TIMEOUT,
     useOrb = false
@@ -143,7 +167,8 @@ export async function processItem(
     position: { x, y },
     isMatched: false,
     averageColor: { r: 0, g: 0, b: 0 },
-    processed: false
+    processed: false,
+    isEmpty: false
   };
 
   try {
@@ -159,7 +184,7 @@ export async function processItem(
     
     result.isMatched = colorResult.isMatched;
     result.averageColor = colorResult.averageColor;
-    
+    result.isEmpty = colorResult.isEmpty;
     // console.log(`Item: ${colorResult.isMatched ? 'COLORED' : 'GREY'}`);
 
     // Check skip pattern
@@ -172,7 +197,7 @@ export async function processItem(
 
     // Use orb if enabled
     if (useOrb) {
-      console.log(`Using ${orbType} orb`);
+      // console.log(`Using ${orbType} orb`);
       await mouse.leftClick(); // Keep your commented out click
       await new Promise(resolve => setTimeout(resolve, delayBetweenClicks));
       result.processed = true;
@@ -190,20 +215,6 @@ export async function processItem(
   return result;
 }
 
-/**
- * Helper function to determine if item should be skipped
- */
-function shouldSkipItem(isMatched: boolean, skipPattern?: string | RegExp): boolean {
-  if (!skipPattern) return false;
-  
-  if (typeof skipPattern === 'string') {
-    return isMatched && skipPattern === 'matched';
-  } else if (skipPattern instanceof RegExp) {
-    return isMatched; // Custom logic can be added here
-  }
-  
-  return false;
-}
 
 /**
  * Process item at current mouse cursor position
@@ -259,6 +270,9 @@ export async function processStashItems(
   const cleanup = await initializeStopMechanisms();
   uIOhook.keyToggle(Key.Shift, "down");
 
+  // Clear processed positions for new operation
+  FLAG.processedPositions.clear();
+  
   const allResults: ItemProcessResult[] = [];
   const grid = {
     startX: STASH.start.x,
@@ -269,6 +283,7 @@ export async function processStashItems(
   };
 
   let totalProcessed = 0;
+  let totalSkipped = 0;
 
   console.log(`Processing stash grid: ${grid.width}x${grid.height} for ${maxAttempts} rounds`);
 
@@ -278,12 +293,22 @@ export async function processStashItems(
       console.log(`\n=== Starting Round ${round + 1}/${maxAttempts} ===`);
       
       // Capture screenshot once per round
-     // console.log(`Capturing screenshot for round ${round + 1}...`);
+      // console.log(`Capturing screenshot for round ${round + 1}...`);
       const screenshot = overlay.screenshot();
+      
+      let roundProcessed = 0;
+      let roundSkipped = 0;
       
       // Process full grid for this round
       for (let col = 0; col < grid.width && !(await shouldStop()); col += itemGrid.width) {
         for (let row = 0; row < grid.height && !(await shouldStop()); row += itemGrid.height) {
+          
+          // Skip positions that are already matched (colored)
+          if (shouldSkipPosition(row, col)) {
+            roundSkipped++;
+            totalSkipped++;
+            continue; // Skip this position entirely
+          }
           
           const itemX = grid.startX + col * grid.itemSize;
           const itemY = grid.startY + row * grid.itemSize;
@@ -297,8 +322,13 @@ export async function processStashItems(
           // Pass the shared screenshot to avoid capturing for each item
           const result = await processItem(itemX, itemY, ocrWorker, overlay, options, screenshot);
           allResults.push(result);
+          
+          // Record this position's result for future rounds
+          recordPositionResult(row, col, result);
+          
           if (result.processed) {
             totalProcessed++;
+            roundProcessed++;
           }
           
           if (onItemProcessed) {
@@ -311,6 +341,8 @@ export async function processStashItems(
         }
       }
       
+      // console.log(`Round ${round + 1}: Processed ${roundProcessed} items, Skipped ${roundSkipped} items`);
+      
       if (onRoundComplete) {
         onRoundComplete(round + 1);
       }
@@ -322,7 +354,7 @@ export async function processStashItems(
       }
     }
 
-   // console.log(`\n=== Completed all ${maxAttempts} rounds ===`);
+    // console.log(`\n=== Completed: Processed ${totalProcessed} items, Skipped ${totalSkipped} items ===`);
     
     if (onComplete) {
       onComplete(totalProcessed);
@@ -368,7 +400,7 @@ export async function useOrbOnStash(
           options.onRoundComplete(round);
         }
       },
-      onComplete: (totalProcessed) => {
+      onComplete: () => {
        // console.log(`Completed all rounds: Used orb ${totalProcessed} total items`);
       }
     });
@@ -401,16 +433,9 @@ export async function analyzeStash(
  */
 export async function useOrbOnStashItemsWithOrbSelection(
   options: OrbUsageOptions & { orbPosition: { x: number; y: number } },
-  clipboard: HostClipboard,
   overlay: OverlayWindow,
   ocrWorker: OcrWorker
 ) {
-  const results = await useOrbOnStash(
-    options.orbPosition,
-    ocrWorker,
-    overlay,
-    options
-  );
 
   // Return stop function
   // return () => cleanupOrbUsage();

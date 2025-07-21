@@ -9,6 +9,7 @@ interface ItemColorResult {
   elapsed: number
   isMatched: boolean // true if item has color, false if grey/unmatched
   averageColor: { r: number, g: number, b: number }
+  isEmpty: boolean
 }
 
 export class ItemOcrReader {
@@ -98,7 +99,9 @@ export class ItemOcrReader {
         isMatched = false;
         matchConfidence = 0.2;
       } 
-      console.log("isMatched", isMatched ? "COLORED" : "GREY", " :  ", saturation, value);
+      // console.log("isMatched", isMatched ? "COLORED" : "GREY", " :  ", saturation, value);
+      // around this is empty 6.766349583828775 8.352853745541022
+      let isEmpty = saturation < 9 && value < 12
       
       // Clean up Mats
       colorMat.delete()
@@ -111,7 +114,8 @@ export class ItemOcrReader {
       return {
         elapsed,
         isMatched,
-        averageColor
+        averageColor,
+        isEmpty,
       }
       
     } catch (error) {
