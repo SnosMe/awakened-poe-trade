@@ -450,30 +450,36 @@ function getConfigForHost (): HostConfig {
     keepModKeys: true
   })
 
+  actions.push({
+    shortcut: 'Ctrl + F10',
+    action: {
+      type: 'use-orb-once',
+      orbType: 'chaos',
+      maxAttempts: 1,
+    }
+  })
   // Add Control + L for orb spamming
   actions.push({
-    shortcut: 'Ctrl + L',
+    shortcut: 'F10',
     action: {
       type: 'use-orb-stash',
       orbType: 'chaos',
-      maxAttempts: 50,
       delayBetweenItems: 150,
       delayBetweenClicks: 150,
-      orbPosition: { x: 150, y: 50 },
-      stashGrid: {
-        startX: 200,
-        startY: 150,
-        width: 12,
-        height: 12,
-        itemSize: 40,
-      },
     }
   })
 
   actions.push({
-    shortcut: 'Ctrl + Shift + L',
+    shortcut: 'F11',
     action: {
       type: 'stop-orb-usage'
+    }
+  })
+
+  actions.push({
+    shortcut: 'Shift + F11',
+    action: {
+      type: 'stop-orb-usage',
     }
   })
 

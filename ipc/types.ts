@@ -54,8 +54,7 @@ export interface ShortcutAction {
         maxAttempts?: number;
         delayBetweenItems?: number;
         delayBetweenClicks?: number;
-        orbPosition: { x: number; y: number };
-        stashGrid: {
+        stashGrid?: {
           startX: number;
           startY: number;
           width: number;
@@ -68,6 +67,15 @@ export interface ShortcutAction {
       }
     | {
         type: "test-only";
+      }
+    | {
+        type: "use-orb-once";
+        orbType: "alteration" | "chaos";
+        skipPattern?: string;
+        maxAttempts?: number;
+        delayBetweenItems?: number;
+        delayBetweenClicks?: number;
+        orbPosition?: { x: number; y: number };
       };
 }
 

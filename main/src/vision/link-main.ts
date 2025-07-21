@@ -5,9 +5,11 @@ import type { WorkerAPI } from './link-worker'
 import type { ImageData } from './utils'
 import { app } from 'electron'
 import path from 'path'
+import fs from 'fs'
 
 export class OcrWorker {
-  private binDir = path.join(app.getPath('userData'), 'apt-data/cv-ocr')
+  // Point directly to the cv-ocr folder in main directory
+  private binDir = path.join(__dirname, '..', 'cv-ocr')
   private api: Comlink.Remote<WorkerAPI>
   private lang = ''
 
@@ -19,8 +21,17 @@ export class OcrWorker {
   static async create () {
     const worker = new OcrWorker()
     try {
+      // Verify opencv.js exists before initializing
+      const opencvPath = path.join(worker.binDir, 'opencv.js')
+      if (!fs.existsSync(opencvPath)) {
+        throw new Error(`OpenCV file not found at: ${opencvPath}\nPlease ensure cv-ocr folder is in the correct location`)
+      }
+      
       await worker.api.init(worker.binDir)
-    } catch {}
+    } catch (error) {
+      console.error('OcrWorker initialization failed:', error)
+      // Don't throw - let it continue with limited functionality
+    }
     return worker
   }
 
@@ -37,6 +48,12 @@ export class OcrWorker {
   async findHeistGems (image: ImageData) {
     const result = await this.api.findHeistGems(
       Comlink.transfer(image, [image.data.buffer]))
+    return result
+  }
+
+  async readItemColors (image: ImageData, mouseX?: number, mouseY?: number) {
+    const result = await this.api.readItemColors(
+      Comlink.transfer(image, [image.data.buffer]), mouseX, mouseY)
     return result
   }
 }

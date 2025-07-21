@@ -270,18 +270,6 @@ export class Shortcuts {
                 });
               })
               .catch(() => {});
-          } else if (entry.action.type === "use-orb") {
-            const { action } = entry;
-            const options = {
-              orbType: action.orbType,
-              skipPattern: action.skipPattern
-                ? new RegExp(action.skipPattern)
-                : undefined,
-              maxAttempts: action.maxAttempts,
-              delayBetweenAttempts: action.delayBetweenAttempts,
-              checkInterval: action.checkInterval,
-            };
-            useOrbOnItemWithCheck(options, this.clipboard, this.overlay);
           } else if (entry.action.type === "use-orb-stash") {
             const { action } = entry;
             const options = {
@@ -298,10 +286,30 @@ export class Shortcuts {
             useOrbOnStashItemsWithOrbSelection(
               options,
               this.clipboard,
-              this.overlay
+              this.overlay,
+              this.ocrWorker
             );
           } else if (entry.action.type === "stop-orb-usage") {
+            console.log("stop-orb-usage");
             FLAG.stop = 1;
+          } else if (entry.action.type === "use-orb-on-mouse") {
+            const { action } = entry;
+            const options = {
+              orbType: action.orbType,
+              skipPattern: action.skipPattern
+                ? new RegExp(action.skipPattern)
+                : undefined,
+              maxAttempts: action.maxAttempts,
+              delayBetweenItems: action.delayBetweenItems,
+              delayBetweenClicks: action.delayBetweenClicks,
+              orbPosition: action.orbPosition!
+            };
+            useOrbOnStashItemsWithOrbSelection(
+              options,
+              this.clipboard,
+              this.overlay,
+              this.ocrWorker
+            )
           }
         }
       );

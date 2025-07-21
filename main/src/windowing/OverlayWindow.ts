@@ -89,6 +89,15 @@ export class OverlayWindow {
     }
   }
 
+  screenshot() {
+    const imageData = this.poeWindow.screenshot()
+    return {
+      width: this.poeWindow.bounds.width,
+      height: this.poeWindow.bounds.height,
+      data: imageData
+    }
+  }
+
   toggleActiveState = () => {
     this.isOverlayKeyUsed = true
     if (this.isInteractable) {
