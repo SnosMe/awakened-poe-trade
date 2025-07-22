@@ -51,14 +51,22 @@ export class OcrWorker {
     return result
   }
 
-  async readItemColors (image: ImageData, mouseX?: number, mouseY?: number) {
+  async readItemColors (
+    image: ImageData, 
+    mouseX?: number, 
+    mouseY?: number,
+    customThresholds?: {
+      matched: { saturation: number; value: number };
+      unmatched: { saturation: number; value: number };
+    }
+  ) {
     // clone the image
     const clone = {
       ...image,
       data: new Uint8Array(image.data)
     }
     const result = await this.api.readItemColors(
-      Comlink.transfer(clone, [clone.data.buffer]), mouseX, mouseY)
+      Comlink.transfer(clone, [clone.data.buffer]), mouseX, mouseY, customThresholds)
     return result
   }
 }

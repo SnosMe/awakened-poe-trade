@@ -73,6 +73,12 @@ export interface ShortcutAction {
         type: "orb-stop";
       }
     | {
+        type: "orb-capture-matched-color";
+      }
+    | {
+        type: "orb-capture-unmatched-color";
+      }
+    | {
         type: "test-only";
       };
 }
@@ -122,7 +128,8 @@ export type IpcEvent =
   | IpcConfigChanged
   | IpcUserAction
   | IpcOrbUsageAction
-  | IpcOrbUsageStatus;
+  | IpcOrbUsageStatus
+  | IpcColorCaptureResult;
 
 export type IpcEventPayload<
   Name extends IpcEvent["name"],
@@ -254,6 +261,12 @@ type IpcOrbUsageAction = Event<
         delayBetweenItems: number;
         delayBetweenRounds: number;
         stashMode: boolean;
+        useCustomColors: boolean;
+        customColorThresholds: {
+          matched: { saturation: number; value: number };
+          unmatched: { saturation: number; value: number };
+        };
+        scanAreaSize: number;
       };
     }
   | {
@@ -268,6 +281,12 @@ type IpcOrbUsageAction = Event<
         delayBetweenItems: number;
         delayBetweenRounds: number;
         stashMode: boolean;
+        useCustomColors: boolean;
+        customColorThresholds: {
+          matched: { saturation: number; value: number };
+          unmatched: { saturation: number; value: number };
+        };
+        scanAreaSize: number;
       };
     }
   | {
@@ -279,6 +298,12 @@ type IpcOrbUsageAction = Event<
         delayBetweenItems: number;
         delayBetweenRounds: number;
         stashMode: boolean;
+        useCustomColors: boolean;
+        customColorThresholds: {
+          matched: { saturation: number; value: number };
+          unmatched: { saturation: number; value: number };
+        };
+        scanAreaSize: number;
       };
     }
 >;
@@ -288,6 +313,16 @@ type IpcOrbUsageStatus = Event<
   {
     isRunning: boolean;
     lastOperation: 'none' | 'single' | 'stash' | 'analyze';
+  }
+>;
+
+type IpcColorCaptureResult = Event<
+  "MAIN->CLIENT::color-capture-result",
+  {
+    captureType: 'matched' | 'unmatched';
+    saturation: number;
+    value: number;
+    averageColor: { r: number; g: number; b: number };
   }
 >;
 

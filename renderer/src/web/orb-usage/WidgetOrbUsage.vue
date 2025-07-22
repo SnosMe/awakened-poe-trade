@@ -42,7 +42,121 @@
           <div class="text-xs text-gray-400 mt-1">
             F10: {{ config.stashMode ? 'Process Stash' : 'Process Item at Cursor' }}<br/>
             Ctrl+F10: Force Stash Process<br/>
-            F11: Stop Operation
+            F11: Stop Operation<br/>
+            <span v-if="config.useCustomColors" class="text-blue-300">
+              ; (semicolon): Analyze matched item color at cursor<br/>
+              ' (apostrophe): Analyze unmatched item color at cursor
+            </span>
+          </div>
+        </div>
+
+        <!-- Color Detection Mode -->
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-gray-300">Color Detection</label>
+          <div class="flex items-center gap-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                v-model="config.useCustomColors"
+                class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500"
+                @change="saveConfig"
+              />
+              <span class="text-sm text-gray-300">
+                {{ config.useCustomColors ? 'Custom Colors' : 'Default (Map Rolling)' }}
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Custom Color Configuration -->
+        <div v-if="config.useCustomColors" class="flex flex-col gap-2 p-2 bg-gray-800 rounded">
+          <div class="text-sm text-gray-300 font-medium">Custom Color Thresholds</div>
+          
+          <!-- Scan Area Size -->
+          <div class="flex flex-col gap-1">
+            <label class="text-xs text-gray-400">Scan Area Size (px)</label>
+            <input
+              v-model.number="config.scanAreaSize"
+              type="number"
+              min="20"
+              max="100"
+              step="2"
+              class="w-20 px-2 py-1 rounded bg-gray-700 text-gray-100 border border-gray-600 focus:border-blue-500 focus:outline-none"
+              @input="saveConfig"
+            />
+          </div>
+
+          <!-- Matched (Colored) Items -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-300">Matched Items (Colored)</span>
+              <div class="text-xs text-blue-400 font-mono">Ctrl J</div>
+            </div>
+            <div class="flex gap-2">
+              <div class="flex flex-col gap-1 flex-1">
+                <label class="text-xs text-gray-400">Saturation</label>
+                <input
+                  v-model.number="config.customColorThresholds.matched.saturation"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="1"
+                  class="px-2 py-1 rounded bg-gray-700 text-gray-100 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  @input="saveConfig"
+                />
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <label class="text-xs text-gray-400">Value</label>
+                <input
+                  v-model.number="config.customColorThresholds.matched.value"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="1"
+                  class="px-2 py-1 rounded bg-gray-700 text-gray-100 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  @input="saveConfig"
+                />
+              </div> 
+            </div>
+          </div>
+
+          <!-- Unmatched (Grey) Items -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-300">Unmatched Items (Grey)</span>
+              <div class="text-xs text-blue-400 font-mono">Alt J</div>
+            </div>
+            <div class="flex gap-2">
+              <div class="flex flex-col gap-1 flex-1">
+                <label class="text-xs text-gray-400">Saturation</label>
+                <input
+                  v-model.number="config.customColorThresholds.unmatched.saturation"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="1"
+                  class="px-2 py-1 rounded bg-gray-700 text-gray-100 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  @input="saveConfig"
+                />
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <label class="text-xs text-gray-400">Value</label>
+                <input
+                  v-model.number="config.customColorThresholds.unmatched.value"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="1"
+                  class="px-2 py-1 rounded bg-gray-700 text-gray-100 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  @input="saveConfig"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-xs text-gray-400 mt-1">
+            Hover over an item and press the hotkey to analyze its colors:<br/>
+            <span class="text-blue-400 font-mono">Ctrl J</span> for matched items, <span class="text-blue-400 font-mono">Alt J</span> for unmatched items
           </div>
         </div>
 
@@ -195,7 +309,13 @@ export default {
         delayBetweenRounds: 300,
         stashMode: true,
         isRunning: false,
-        lastOperation: 'none'
+        lastOperation: 'none',
+        useCustomColors: false,
+        customColorThresholds: {
+          matched: { saturation: 45, value: 65 },
+          unmatched: { saturation: 30, value: 36 }
+        },
+        scanAreaSize: 58
       }]
     }
   } satisfies WidgetSpec
@@ -203,7 +323,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { inject, ref, onMounted, onUnmounted } from 'vue'
+import { inject, ref, onMounted } from 'vue'
 import { MainProcess } from '@/web/background/IPC'
 import { pushHostConfig } from '@/web/Config'
 import type { WidgetManager } from '../overlay/interfaces.js'
@@ -223,6 +343,23 @@ onMounted(() => {
     props.config.lastOperation = e.lastOperation
     console.log('Orb usage status update:', e)
   })
+
+  // Listen for color capture results from hotkeys
+  MainProcess.onEvent('MAIN->CLIENT::color-capture-result', (e) => {
+    if (e.captureType === 'matched') {
+      props.config.customColorThresholds.matched = {
+        saturation: e.saturation,
+        value: e.value
+      }
+    } else if (e.captureType === 'unmatched') {
+      props.config.customColorThresholds.unmatched = {
+        saturation: e.saturation,
+        value: e.value
+      }
+    }
+    saveConfig()
+    console.log('Color capture completed via hotkey:', e)
+  })
 })
 
 if (props.config.wmFlags[0] === 'uninitialized') {
@@ -240,15 +377,21 @@ if (props.config.wmFlags[0] === 'uninitialized') {
   props.config.stashMode = true
   props.config.isRunning = false
   props.config.lastOperation = 'none'
+  props.config.useCustomColors = false
+  props.config.customColorThresholds = {
+    matched: { saturation: 45, value: 65 },
+    unmatched: { saturation: 30, value: 36 }
+  }
+  props.config.scanAreaSize = 58
   wm.show(props.config.wmId)
 }
 
-function saveConfig() {
+function saveConfig (): void {
   // This saves the widget config but doesn't update shortcuts
   pushHostConfig()
 }
 
-function saveConfiguration() {
+function saveConfiguration (): void {
   // Save the widget config and update host config with shortcuts
   console.log('Saving orb usage configuration:', {
     maxAttempts: props.config.maxAttempts,
@@ -256,9 +399,12 @@ function saveConfiguration() {
     itemGrid: props.config.itemGrid,
     delayBetweenItems: props.config.delayBetweenItems,
     delayBetweenRounds: props.config.delayBetweenRounds,
-    stashMode: props.config.stashMode
+    stashMode: props.config.stashMode,
+    useCustomColors: props.config.useCustomColors,
+    customColorThresholds: props.config.customColorThresholds,
+    scanAreaSize: props.config.scanAreaSize
   })
-  
+
   // Send event to update shortcuts in main process
   MainProcess.sendEvent({
     name: 'CLIENT->MAIN::orb-usage-action',
@@ -270,15 +416,20 @@ function saveConfiguration() {
         itemGrid: props.config.itemGrid,
         delayBetweenItems: props.config.delayBetweenItems,
         delayBetweenRounds: props.config.delayBetweenRounds,
-        stashMode: props.config.stashMode
+        stashMode: props.config.stashMode,
+        useCustomColors: props.config.useCustomColors,
+        customColorThresholds: props.config.customColorThresholds,
+        scanAreaSize: props.config.scanAreaSize
       }
     }
   })
-  
+
   pushHostConfig()
 }
 
-function getOperationClass(operation: string) {
+
+
+function getOperationClass (operation: string): string {
   switch (operation) {
     case 'single': return 'bg-blue-600 text-white'
     case 'stash': return 'bg-green-600 text-white'
@@ -287,7 +438,7 @@ function getOperationClass(operation: string) {
   }
 }
 
-function getOperationText(operation: string) {
+function getOperationText (operation: string): string {
   switch (operation) {
     case 'single': return 'Single'
     case 'stash': return 'Stash'

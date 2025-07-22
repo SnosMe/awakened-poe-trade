@@ -10,6 +10,8 @@ interface ItemColorResult {
   isMatched: boolean // true if item has color, false if grey/unmatched
   averageColor: { r: number, g: number, b: number }
   isEmpty: boolean
+  saturation: number // HSV saturation value (0-255)
+  value: number // HSV value/brightness (0-255)
 }
 
 export class ItemOcrReader {
@@ -22,7 +24,15 @@ export class ItemOcrReader {
     return new ItemOcrReader()
   }
 
-  analyzeItemColors(screenshot: ImageData, mouseX?: number, mouseY?: number): ItemColorResult {
+  analyzeItemColors(
+    screenshot: ImageData, 
+    mouseX?: number, 
+    mouseY?: number,
+    customThresholds?: {
+      matched: { saturation: number; value: number };
+      unmatched: { saturation: number; value: number };
+    }
+  ): ItemColorResult {
     const startTime = performance.now()
     
     try {
@@ -82,23 +92,47 @@ export class ItemOcrReader {
       let isMatched = false;
       let matchConfidence = 0;
       
-      // Rule of thumb from observation:
-      // - Grey items: saturation < 30, value < 36
-      // - Colored items: saturation > 40, value > 60
-      
-      if (saturation > 45 && value > 65) {
-        isMatched = true;
-        matchConfidence = 1;
-      } else if (saturation > 38 && value > 55) {
-        isMatched = true;
-        matchConfidence = 0.8;
-      } else if (saturation > 33 && value > 45) {
-        isMatched = true;
-        matchConfidence = 0.6;
+      // Use custom thresholds if provided, otherwise use default hardcoded values
+      if (customThresholds) {
+        // When using custom thresholds, determine if item is matched or unmatched
+        // based on proximity to either threshold set
+        const matchedThreshold = customThresholds.matched;
+        const unmatchedThreshold = customThresholds.unmatched;
+        
+        // Calculate distance to matched threshold
+        const matchedDistance = Math.sqrt(
+          Math.pow(saturation - matchedThreshold.saturation, 2) + 
+          Math.pow(value - matchedThreshold.value, 2)
+        );
+        
+        // Calculate distance to unmatched threshold  
+        const unmatchedDistance = Math.sqrt(
+          Math.pow(saturation - unmatchedThreshold.saturation, 2) + 
+          Math.pow(value - unmatchedThreshold.value, 2)
+        );
+        
+        // Item is considered matched if it's closer to matched threshold
+        isMatched = matchedDistance < unmatchedDistance;
+        matchConfidence = isMatched ? (1 - matchedDistance / 100) : (unmatchedDistance / 100);
       } else {
-        isMatched = false;
-        matchConfidence = 0.2;
-      } 
+        // Default hardcoded thresholds - rule of thumb from observation:
+        // - Grey items: saturation < 30, value < 36
+        // - Colored items: saturation > 40, value > 60
+        
+        if (saturation > 45 && value > 65) {
+          isMatched = true;
+          matchConfidence = 1;
+        } else if (saturation > 38 && value > 55) {
+          isMatched = true;
+          matchConfidence = 0.8;
+        } else if (saturation > 33 && value > 45) {
+          isMatched = true;
+          matchConfidence = 0.6;
+        } else {
+          isMatched = false;
+          matchConfidence = 0.2;
+        }
+      }
       // console.log("isMatched", isMatched ? "COLORED" : "GREY", " :  ", saturation, value);
       // around this is empty 6.766349583828775 8.352853745541022
       let isEmpty = saturation < 9 && value < 12
@@ -116,6 +150,8 @@ export class ItemOcrReader {
         isMatched,
         averageColor,
         isEmpty,
+        saturation,
+        value,
       }
       
     } catch (error) {
@@ -127,14 +163,24 @@ export class ItemOcrReader {
         elapsed,
         isMatched: false,
         averageColor: { r: 0, g: 0, b: 0 },
-        isEmpty: false
+        isEmpty: false,
+        saturation: 0,
+        value: 0,
       }
     }
   }
 
   // Keep the old method name for backward compatibility
-  ocrItemTooltip(screenshot: ImageData, mouseX?: number, mouseY?: number): ItemColorResult {
-    return this.analyzeItemColors(screenshot, mouseX, mouseY)
+  ocrItemTooltip(
+    screenshot: ImageData, 
+    mouseX?: number, 
+    mouseY?: number,
+    customThresholds?: {
+      matched: { saturation: number; value: number };
+      unmatched: { saturation: number; value: number };
+    }
+  ): ItemColorResult {
+    return this.analyzeItemColors(screenshot, mouseX, mouseY, customThresholds)
   }
 } 
 

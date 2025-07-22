@@ -39,11 +39,19 @@ const WorkerBody = {
     await _changeLangPromise
     return _heistGems.ocrScreenshot(screenshot)
   },
-  async readItemColors (screenshot: ImageData, mouseX?: number, mouseY?: number) {
+  async readItemColors (
+    screenshot: ImageData, 
+    mouseX?: number, 
+    mouseY?: number,
+    customThresholds?: {
+      matched: { saturation: number; value: number };
+      unmatched: { saturation: number; value: number };
+    }
+  ) {
     if (!_itemOcr) {
       throw new Error('ItemOcrReader not available - color analysis initialization failed')
     }
-    return _itemOcr.analyzeItemColors(screenshot, mouseX, mouseY)
+    return _itemOcr.analyzeItemColors(screenshot, mouseX, mouseY, customThresholds)
   }
 }
 Comlink.expose(WorkerBody, nodeEndpoint(parentPort!))

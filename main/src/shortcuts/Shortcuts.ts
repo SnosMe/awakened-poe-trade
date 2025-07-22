@@ -42,13 +42,25 @@ export class Shortcuts {
     delayBetweenItems: number;
     delayBetweenRounds: number;
     stashMode: boolean;
+    useCustomColors: boolean;
+    customColorThresholds: {
+      matched: { saturation: number; value: number };
+      unmatched: { saturation: number; value: number };
+    };
+    scanAreaSize: number;
   } = {
     maxAttempts: 1,
     stashGrid: { width: 12, height: 12 },
     itemGrid: { width: 1, height: 1 },
     delayBetweenItems: 300,
     delayBetweenRounds: 300,
-    stashMode: true
+    stashMode: true,
+    useCustomColors: false,
+    customColorThresholds: {
+      matched: { saturation: 45, value: 65 },
+      unmatched: { saturation: 30, value: 36 }
+    },
+    scanAreaSize: 58
   };
 
   static async create(
@@ -78,6 +90,52 @@ export class Shortcuts {
         lastOperation
       }
     });
+  }
+
+  private async captureColorAtCursor(captureType: 'matched' | 'unmatched') {
+    try {
+      // Ensure game is active
+      this.overlay.assertGameActive();
+      
+      // Get current mouse position
+      const { mouse } = await import('@nut-tree-fork/nut-js');
+      const currentPos = await mouse.getPosition();
+      
+      // Capture screenshot
+      const imageData = this.overlay.screenshot();
+      
+      // Prepare custom thresholds for analysis
+      const customThresholds = this.orbUsageConfig.useCustomColors ? 
+        this.orbUsageConfig.customColorThresholds : undefined;
+      
+      // Analyze color at cursor position with the configured scan area size
+      const colorResult = await this.ocrWorker.readItemColors(
+        imageData, 
+        currentPos.x, 
+        currentPos.y,
+        customThresholds
+      );
+      
+      console.log(`Color capture ${captureType}:`, {
+        saturation: Math.round(colorResult.saturation || 0),
+        value: Math.round(colorResult.value || 0),
+        averageColor: colorResult.averageColor
+      });
+      
+      // Send result back to UI
+      this.server.sendEventTo("broadcast", {
+        name: "MAIN->CLIENT::color-capture-result",
+        payload: {
+          captureType,
+          saturation: Math.round(colorResult.saturation || 0),
+          value: Math.round(colorResult.value || 0),
+          averageColor: colorResult.averageColor
+        }
+      });
+      
+    } catch (error) {
+      console.error(`Error capturing ${captureType} color:`, error);
+    }
   }
 
   private constructor(
@@ -356,7 +414,9 @@ export class Shortcuts {
                 delayBetweenItems: this.orbUsageConfig.delayBetweenItems,
                 delayBetweenRounds: this.orbUsageConfig.delayBetweenRounds,
                 useOrb: true,
-                itemGrid: this.orbUsageConfig.itemGrid
+                itemGrid: this.orbUsageConfig.itemGrid,
+                customColorThresholds: this.orbUsageConfig.useCustomColors ? 
+                  this.orbUsageConfig.customColorThresholds : undefined
               };
               processStashItems(this.ocrWorker, this.overlay, options)
                 .catch(error => console.error("Error during stash processing:", error))
@@ -371,6 +431,8 @@ export class Shortcuts {
                 useOrb: true,
                 maxAttempts: this.orbUsageConfig.maxAttempts,
                 delayBetweenItems: this.orbUsageConfig.delayBetweenItems,
+                customColorThresholds: this.orbUsageConfig.useCustomColors ? 
+                  this.orbUsageConfig.customColorThresholds : undefined
               };
               useOrbOnMouse(options, this.ocrWorker, this.overlay)
                 .catch(error => console.error("Error during cursor processing:", error))
@@ -388,7 +450,9 @@ export class Shortcuts {
               delayBetweenItems: this.orbUsageConfig.delayBetweenItems,
               delayBetweenRounds: this.orbUsageConfig.delayBetweenRounds,
               useOrb: true,
-              itemGrid: this.orbUsageConfig.itemGrid
+              itemGrid: this.orbUsageConfig.itemGrid,
+              customColorThresholds: this.orbUsageConfig.useCustomColors ? 
+                this.orbUsageConfig.customColorThresholds : undefined
             };
             processStashItems(this.ocrWorker, this.overlay, options)
               .catch(error => console.error("Error during forced stash processing:", error))
@@ -403,6 +467,18 @@ export class Shortcuts {
             FLAG.escPressed = true; // Trigger immediate stop
             cleanupOrbUsage();
             this.updateOrbUsageStatus(false, 'none');
+          } else if (entry.action.type === "orb-capture-matched-color") {
+            // ; - Capture color at cursor for matched items (when custom colors enabled)
+            if (this.orbUsageConfig.useCustomColors) {
+              console.log("Semicolon: Capturing matched item color at cursor");
+              this.captureColorAtCursor('matched');
+            }
+          } else if (entry.action.type === "orb-capture-unmatched-color") {
+            // ' - Capture color at cursor for unmatched items (when custom colors enabled)  
+            if (this.orbUsageConfig.useCustomColors) {
+              console.log("Apostrophe: Capturing unmatched item color at cursor");
+              this.captureColorAtCursor('unmatched');
+            }
           }
         }
       );

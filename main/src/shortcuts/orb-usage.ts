@@ -142,6 +142,10 @@ interface ProcessOptions {
   useOrb?: boolean;
   maxAttempts?: number;
   itemGrid?: { width: number; height: number };
+  customColorThresholds?: {
+    matched: { saturation: number; value: number };
+    unmatched: { saturation: number; value: number };
+  };
 }
 
 /**
@@ -159,7 +163,8 @@ export async function processItem(
   const {
     delayBetweenClicks = 100,
     mouseTimeout = MOUSE_TIMEOUT,
-    useOrb = false
+    useOrb = false,
+    customColorThresholds
   } = options;
 
   const result: ItemProcessResult = {
@@ -179,7 +184,7 @@ export async function processItem(
 
     // Use provided screenshot or capture new one
     const imageData = screenshot || overlay.screenshot();
-    const colorResult = await ocrWorker.readItemColors(imageData, x, y);
+    const colorResult = await ocrWorker.readItemColors(imageData, x, y, customColorThresholds);
     
     result.isMatched = colorResult.isMatched;
     result.averageColor = colorResult.averageColor;

@@ -466,6 +466,17 @@ function getConfigForHost (): HostConfig {
     shortcut: 'F11',
     action: { type: 'orb-stop' }
   });
+
+  // Add color capture shortcuts for custom color mode
+  actions.push({
+    shortcut: 'Ctrl + J',
+    action: { type: 'orb-capture-matched-color' }
+  });
+  
+  actions.push({
+    shortcut: 'Alt + J',
+    action: { type: 'orb-capture-unmatched-color' }
+  });
   
   const itemCheck = AppConfig('item-check') as ItemCheckWidget
   if (itemCheck.wikiKey) {
