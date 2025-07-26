@@ -10,6 +10,7 @@ export default {
   RARITY_DIVCARD: 'Гадальная карта',
   RARITY_QUEST: 'Задание',
   MAP_TIER: 'Уровень карты: ',
+  MAP_COMPLETION_REWARD: 'Награда: Особая ',
   RARITY: 'Редкость: ',
   ITEM_CLASS: 'Класс предмета: ',
   ITEM_LEVEL: 'Уровень предмета: ',

@@ -5,6 +5,8 @@
         :filter="filters.linkedSockets" :name="t('item.linked_sockets')" />
       <filter-btn-numeric v-if="filters.mapTier"
         :filter="filters.mapTier" :name="t('item.map_tier')" />
+      <filter-btn-logical v-if="filters.mapCompletionReward" readonly
+        :filter="{ disabled: false }" :text="t('item.foil_item', [item.mapCompletionReward])" />
       <filter-btn-numeric v-if="filters.areaLevel"
         :filter="filters.areaLevel" :name="t('item.area_level')" />
       <filter-btn-numeric v-if="filters.heistWingsRevealed"

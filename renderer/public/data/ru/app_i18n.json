@@ -108,7 +108,8 @@
     "veiled": "Завуалирован",
     "foil_unique": "Реликвия",
     "mirrored": "Отражено",
-    "not_mirrored": "Не отражено"
+    "not_mirrored": "Не отражено",
+    "foil_item": "Особая {0}"
   },
   "item_category": {
     "prop": "Категория: {0}",

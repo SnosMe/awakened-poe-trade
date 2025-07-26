@@ -10,6 +10,7 @@ export default {
   RARITY_DIVCARD: 'Divination Card',
   RARITY_QUEST: 'Quest',
   MAP_TIER: 'Map Tier: ',
+  MAP_COMPLETION_REWARD: 'Reward: Foil ',
   RARITY: 'Rarity: ',
   ITEM_CLASS: 'Item Class: ',
   ITEM_LEVEL: 'Item Level: ',
