@@ -212,8 +212,18 @@ function findInDatabase (item: ParserState) {
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.MAP_TIER)) {
     item.mapTier = Number(section[0].slice(_$.MAP_TIER.length))
+
+    const foundValdoReward = section.find((sect) => sect.startsWith(_$.MAP_COMPLETION_REWARD))
+
+    if (foundValdoReward) {
+      item.mapCompletionReward = String(
+        foundValdoReward.slice(_$.MAP_COMPLETION_REWARD.length)
+      )
+    }
+
     return 'SECTION_PARSED'
   }
+
   return 'SECTION_SKIPPED'
 }
 

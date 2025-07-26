@@ -88,7 +88,8 @@
     "veiled": "장막 속성",
     "foil_unique": "반짝이",
     "mirrored": "복제된",
-    "not_mirrored": "복제되지 않은"
+    "not_mirrored": "복제되지 않은",
+    "foil_item": "반짝이 {0}"
   },
   "item_category": {
     "prop": "유형: {0}",

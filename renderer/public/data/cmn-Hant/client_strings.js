@@ -10,6 +10,7 @@ export default {
   RARITY_DIVCARD: '命運卡',
   RARITY_QUEST: '任務',
   MAP_TIER: '地圖階級: ',
+  MAP_COMPLETION_REWARD: 'MISSING_TRANSLATION',
   RARITY: '稀有度: ',
   ITEM_CLASS: '物品種類: ',
   ITEM_LEVEL: '物品等級: ',

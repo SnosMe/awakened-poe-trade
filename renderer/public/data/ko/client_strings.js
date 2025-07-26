@@ -10,6 +10,7 @@ export default {
   RARITY_DIVCARD: '점술 카드',
   RARITY_QUEST: '퀘스트',
   MAP_TIER: '지도 등급: ',
+  MAP_COMPLETION_REWARD: '보상: 반짝이 ',
   RARITY: '아이템 희귀도: ',
   ITEM_CLASS: '아이템 종류: ',
   ITEM_LEVEL: '아이템 레벨: ',

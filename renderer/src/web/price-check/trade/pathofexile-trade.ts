@@ -157,6 +157,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           map_blighted?: FilterBoolean
           map_uberblighted?: FilterBoolean
           area_level?: FilterRange
+          map_completion_reward: 'any' | string
         }
       }
       heist_filters?: {
@@ -360,6 +361,16 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       propSet(query.filters, 'map_filters.filters.map_blighted.option', String(true))
     } else if (filters.mapBlighted.value === 'Blight-ravaged') {
       propSet(query.filters, 'map_filters.filters.map_uberblighted.option', String(true))
+    }
+  }
+
+  if (filters.mapCompletionReward) {
+    if (filters.mapCompletionReward.value) {
+      propSet(
+        query.filters,
+        'map_filters.filters.map_completion_reward.option',
+        String(filters.mapCompletionReward.value || 'any')
+      )
     }
   }
 

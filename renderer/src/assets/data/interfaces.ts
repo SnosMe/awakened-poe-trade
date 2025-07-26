@@ -98,6 +98,7 @@ export interface TranslationDict {
   RARITY_DIVCARD: string
   RARITY_QUEST: string
   MAP_TIER: string
+  MAP_COMPLETION_REWARD: string
   RARITY: string
   ITEM_CLASS: string
   ITEM_LEVEL: string

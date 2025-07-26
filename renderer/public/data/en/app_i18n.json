@@ -91,7 +91,8 @@
     "veiled": "Veiled",
     "foil_unique": "Foil Unique",
     "mirrored": "Mirrored",
-    "not_mirrored": "Not Mirrored"
+    "not_mirrored": "Not Mirrored",
+    "foil_item": "Foil {0}"
   },
   "item_category": {
     "prop": "Category: {0}",
