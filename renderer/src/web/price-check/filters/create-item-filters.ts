@@ -4,6 +4,7 @@ import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import { ARMOUR, WEAPON } from '@/parser/meta'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -192,7 +193,16 @@ export function createFilters (
   }
 
   if (item.quality && item.quality >= 20) {
-    if (item.category === ItemCategory.Flask || item.category === ItemCategory.Tincture) {
+    const applicableQualityCategories = [
+      ItemCategory.Flask,
+      ItemCategory.Tincture,
+      ...WEAPON,
+      ...ARMOUR
+    ]
+
+    const doesQualityApplyForCategory = item.category ? applicableQualityCategories.includes(item.category) : false
+
+    if (doesQualityApplyForCategory) {
       filters.quality = {
         value: item.quality,
         disabled: (item.quality <= 20)
