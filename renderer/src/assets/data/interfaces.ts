@@ -280,7 +280,11 @@ export interface RuneData {
   type: string;
   icon: string;
 }
-
+/**
+ * Key for each rune, Iron, Lesser Rebirth, Soul core of xx
+ *
+ * Value is each option that the value could be for, ie stat for armour or weapon.
+ */
 export interface RuneDataByRune {
   [rune: string]: RuneData[];
 }
