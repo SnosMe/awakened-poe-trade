@@ -41,12 +41,7 @@ export class HostClipboard {
 
     this.pollPromise = new Promise((resolve, reject) => {
       const poll = () => {
-        let textAfter = clipboard.readText();
-
-        if (isUncutSkillGem(textAfter)) {
-          // Insert item class line at start
-          textAfter = "Item Class: UncutSkillGem\n" + textAfter;
-        }
+        const textAfter = clipboard.readText();
 
         if (isPoeItem(textAfter)) {
           if (this.shouldRestore) {
@@ -99,83 +94,66 @@ export class HostClipboard {
 }
 
 function isPoeItem(text: string) {
-  return LANGUAGE_DETECTOR.find(({ firstLine }) => text.startsWith(firstLine));
+  return LANGUAGE_DETECTOR.find(
+    ({ firstLine, uncutSkillGemLine }) =>
+      text.startsWith(firstLine) || text.startsWith(uncutSkillGemLine),
+  );
 }
-
-function isUncutSkillGem(text: string) {
-  const lines = text.split("\n");
-  if (lines.length < 2) return false;
-
-  if (
-    lines[0].startsWith("Rarity: Currency") &&
-    UNCUT_SKILL_GEM_DETECTOR.find(({ firstLine }) =>
-      lines[1].startsWith(firstLine),
-    )
-  ) {
-    return true;
-  }
-
-  return false;
-}
-
-const UNCUT_SKILL_GEM_DETECTOR = [
-  {
-    lang: "en",
-    firstLine: "Uncut Skill Gem",
-  },
-  {
-    lang: "en",
-    firstLine: "Uncut Spirit Gem",
-  },
-  {
-    lang: "en",
-    firstLine: "Uncut Support Gem",
-  },
-];
 
 const LANGUAGE_DETECTOR = [
   {
     lang: "en",
     firstLine: "Item Class: ",
+    uncutSkillGemLine: "Rarity: Currency",
   },
   {
     lang: "ru",
     firstLine: "Класс предмета: ",
+    uncutSkillGemLine: "Редкость: Валюта",
   },
   {
     lang: "fr",
     firstLine: "Classe d'objet: ",
+    uncutSkillGemLine: "Rarity: unsupported",
   },
   {
     lang: "de",
     firstLine: "Gegenstandsklasse: ",
+    uncutSkillGemLine: "Seltenheit: Währung",
   },
   {
     lang: "pt",
     firstLine: "Classe do Item: ",
+    uncutSkillGemLine: "Rarity: unsupported",
   },
   {
     lang: "es",
     firstLine: "Clase de objeto: ",
+    uncutSkillGemLine: "Rareza: Objetos monetarios",
   },
   {
     lang: "th",
     firstLine: "ชนิดไอเทม: ",
+    uncutSkillGemLine: "Rarity: unsupported",
   },
   {
     lang: "ko",
     firstLine: "아이템 종류: ",
+    uncutSkillGemLine: "아이템 희귀도: 화폐",
   },
   {
     lang: "cmn-Hant",
     firstLine: "物品種類: ",
+    uncutSkillGemLine: "稀有度: 通貨",
   },
   {
     lang: "cmn-Hans",
     firstLine: "物品类别: ",
+    uncutSkillGemLine: "Rarity: unsupported",
   },
   {
     lang: "ja",
     firstLine: "アイテムクラス: ",
+    uncutSkillGemLine: "レアリティ: カレンシー",
   },
 ];

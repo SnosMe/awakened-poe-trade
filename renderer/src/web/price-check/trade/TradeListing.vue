@@ -35,14 +35,23 @@
             <th v-if="filters.itemLevel" class="trade-table-heading">
               <div class="px-2">{{ t(":item_level") }}</div>
             </th>
-            <th v-if="item.category === 'Gem'" class="trade-table-heading">
+            <th
+              v-if="
+                item.category === ItemCategory.Gem ||
+                item.category === ItemCategory.UncutGem
+              "
+              class="trade-table-heading"
+            >
               <div class="px-2">{{ t(":gem_level") }}</div>
             </th>
-            <th v-if="item.category === 'Gem'" class="trade-table-heading">
+            <th
+              v-if="item.category === ItemCategory.Gem"
+              class="trade-table-heading"
+            >
               <div class="px-2">{{ t(":gem_sockets") }}</div>
             </th>
             <th
-              v-if="filters.quality || item.category === 'Gem'"
+              v-if="filters.quality || item.category === ItemCategory.Gem"
               class="trade-table-heading"
             >
               <div class="px-2">{{ t(":quality") }}</div>
@@ -122,7 +131,7 @@ import {
   StatFilter,
   WeightStatGroup,
 } from "../filters/interfaces";
-import { ParsedItem } from "@/parser";
+import { ItemCategory, ParsedItem } from "@/parser";
 import { artificialSlowdown } from "./artificial-slowdown";
 import OnlineFilter from "./OnlineFilter.vue";
 import TradeLinks from "./TradeLinks.vue";
@@ -398,6 +407,7 @@ export default defineComponent({
       ),
       // Shift key state and methods
       isShiftPressed,
+      ItemCategory,
     };
   },
 });

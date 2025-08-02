@@ -378,8 +378,14 @@ function pickCorrectVariant(item: ParserState) {
 
 function parseNamePlate(section: string[]) {
   let line = section.shift();
+  let uncutSkillGem = false;
   if (!line?.startsWith(_$.ITEM_CLASS)) {
-    return err("item.parse_error");
+    // HACK: Uncut skill gems
+    if (line && section.unshift(line) && isUncutSkillGem(section)) {
+      uncutSkillGem = true;
+    } else {
+      return err("item.parse_error");
+    }
   }
 
   line = section.shift();
@@ -438,6 +444,9 @@ function parseNamePlate(section: string[]) {
     case _$.RARITY_UNIQUE:
       item.rarity = ItemRarity.Unique;
       break;
+  }
+  if (uncutSkillGem) {
+    item.category = ItemCategory.UncutGem;
   }
 
   return ok(item);
@@ -560,12 +569,21 @@ function parseVaalGemName(section: string[], item: ParserState) {
 }
 
 function parseGem(section: string[], item: ParsedItem) {
-  if (item.category !== ItemCategory.Gem) {
+  if (
+    item.category !== ItemCategory.Gem &&
+    item.category !== ItemCategory.UncutGem
+  ) {
     return "PARSER_SKIPPED";
   }
-  if (section[1]?.startsWith(_$.GEM_LEVEL)) {
+
+  const gemLevelLineNumber = item.category === ItemCategory.Gem ? 1 : 0;
+
+  if (section[gemLevelLineNumber]?.startsWith(_$.GEM_LEVEL)) {
     // "Level: 20 (Max)"
-    item.gemLevel = parseInt(section[1].slice(_$.GEM_LEVEL.length), 10);
+    item.gemLevel = parseInt(
+      section[gemLevelLineNumber].slice(_$.GEM_LEVEL.length),
+      10,
+    );
 
     parseQualityNested(section, item);
 
@@ -1624,8 +1642,16 @@ export function replaceHashWithValues(template: string, values: number[]) {
   return result;
 }
 
+function isUncutSkillGem(section: string[]): boolean {
+  if (section.length !== 2) return false;
+  const translated = _$.RARITY + _$.RARITY_CURRENCY;
+  return section[0] === translated && section[1] !== undefined;
+}
+
 // Disable since this is export for tests
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const __testExports = {
   itemTextToSections,
+  parseNamePlate,
+  isUncutSkillGem,
 };

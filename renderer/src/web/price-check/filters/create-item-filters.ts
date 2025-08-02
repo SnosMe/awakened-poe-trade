@@ -46,6 +46,9 @@ export function createFilters(
   if (item.category === ItemCategory.Gem) {
     return createGemFilters(item, filters, opts);
   }
+  if (item.category === ItemCategory.UncutGem) {
+    return createUncutGemFilters(item, filters, opts);
+  }
   if (item.category === ItemCategory.CapturedBeast) {
     filters.searchExact = {
       baseType: item.info.name,
@@ -532,6 +535,30 @@ function createGemFilters(
     value: item.gemLevel!,
     disabled: item.gemLevel! < 19,
   };
+
+  return filters;
+}
+
+export function createUncutGemFilters(
+  item: ParsedItem,
+  filters: ItemFilters,
+  opts: CreateOptions,
+) {
+  const normalGem = ITEM_BY_REF("ITEM", item.info.refName)![0];
+  filters.searchExact = {
+    baseType: item.info.name,
+    baseTypeTrade: t(opts, normalGem),
+  };
+  const range =
+    item.gemLevel! < 18 && item.info.refName !== "Uncut Support Gem" ? 1 : 0;
+
+  filters.gemLevel = {
+    value: item.gemLevel! - range,
+    disabled: false,
+  };
+  if (range) {
+    filters.gemLevel.max = item.gemLevel! + range;
+  }
 
   return filters;
 }

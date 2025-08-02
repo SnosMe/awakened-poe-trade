@@ -436,6 +436,13 @@ export function createTradeRequest(
       "misc_filters.filters.gem_level.min",
       filters.gemLevel.value,
     );
+    if (filters.gemLevel.max) {
+      propSet(
+        query.filters,
+        "misc_filters.filters.gem_level.max",
+        filters.gemLevel.max,
+      );
+    }
   }
 
   if (filters.socketNumber && !filters.socketNumber.disabled) {
