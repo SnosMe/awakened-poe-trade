@@ -48,6 +48,7 @@ export const useLeagues = createGlobalState(() => {
     error.value = null;
 
     try {
+      // TODO: swap back to /api/leagues?realm=poe2 when available (allows detection of Hardcore leagues)
       const response = await Host.proxy(
         `${poeWebApi()}/api/trade2/data/leagues`,
       );

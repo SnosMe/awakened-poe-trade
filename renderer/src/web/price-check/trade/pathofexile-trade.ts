@@ -1028,6 +1028,7 @@ export async function requestResults(
       priceCurrency: result.listing.price?.currency ?? "no price",
       hasNote: result.item.note != null,
       isMine: result.listing.account.name === opts.accountName,
+      // FIXME: actually calc this
       isMerchant: rand(0, 2) !== 0,
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
