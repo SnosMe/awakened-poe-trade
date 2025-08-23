@@ -22,7 +22,7 @@
             :key="league.id"
             v-model="leagueId"
             :value="league.id"
-            >{{ league.id }}</ui-radio
+            >{{ league.text }}</ui-radio
           >
         </div>
         <div class="flex gap-x-2 mb-4">

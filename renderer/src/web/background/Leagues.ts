@@ -1,47 +1,27 @@
 import { computed, shallowRef, readonly } from "vue";
 import { createGlobalState } from "@vueuse/core";
-import { AppConfig } from "@/web/Config";
+import { AppConfig, poeWebApi } from "@/web/Config";
+import { Host } from "./IPC";
 
 // pc-ggg, pc-garena
 // const PERMANENT_SC = ['Standard', '標準模式']
 // const PERMANENT_HC = ["Hardcore", "專家模式"];
 
-interface ApiLeague {
+interface TradeLeague {
   id: string;
-  event?: boolean;
-  rules: Array<{ id: string }>;
+  text: string;
 }
 
 interface League {
   id: string;
   isPopular: boolean;
+  text: string;
 }
 
 export const useLeagues = createGlobalState(() => {
   const isLoading = shallowRef(false);
   const error = shallowRef<string | null>(null);
   const tradeLeagues = shallowRef<League[]>([]);
-
-  const DEFAULT_POE2_LEAGUES: ApiLeague[] = [
-    { id: "Standard", rules: [] },
-    {
-      id: "Hardcore",
-      rules: [
-        {
-          id: "Hardcore",
-        },
-      ],
-    },
-    { id: "Dawn of the Hunt", rules: [] },
-    {
-      id: "HC Dawn of the Hunt",
-      rules: [
-        {
-          id: "Hardcore",
-        },
-      ],
-    },
-  ];
 
   const selectedId = computed<string | undefined>({
     get() {
@@ -68,25 +48,15 @@ export const useLeagues = createGlobalState(() => {
     error.value = null;
 
     try {
-      // const response = await Host.proxy(
-      //   `${poeWebApi()}/api/leagues?type=main&realm=pc`
-      // );
-      // if (!response.ok)
-      //   throw new Error(JSON.stringify(Object.fromEntries(response.headers)));
-      // const leagues: ApiLeague[] = await response.json();
-      const leagues: ApiLeague[] = DEFAULT_POE2_LEAGUES;
-      tradeLeagues.value = leagues
-        .filter(
-          (league) =>
-            !league.rules.some(
-              (rule) =>
-                rule.id === "NoParties" ||
-                (rule.id === "HardMode" && !league.event),
-            ),
-        )
-        .map((league) => {
-          return { id: league.id, isPopular: true };
-        });
+      const response = await Host.proxy(
+        `${poeWebApi()}/api/trade2/data/leagues`,
+      );
+      if (!response.ok)
+        throw new Error(JSON.stringify(Object.fromEntries(response.headers)));
+      const leagues: { result: TradeLeague[] } = await response.json();
+      tradeLeagues.value = leagues.result.map((league) => {
+        return { id: league.id, isPopular: true, text: league.text };
+      });
 
       const leagueIsAlive = tradeLeagues.value.some(
         (league) => league.id === selectedId.value,
