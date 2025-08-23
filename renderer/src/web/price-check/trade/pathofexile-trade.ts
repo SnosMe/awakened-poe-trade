@@ -29,6 +29,7 @@ import { ModifierType } from "@/parser/modifiers";
 import { Cache } from "./Cache";
 import { filterInPseudo } from "../filters/pseudo";
 import { parseAffixStrings } from "@/parser/Parser";
+import { rand } from "@vueuse/core";
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Map, "map"],
@@ -287,6 +288,7 @@ export interface PricingResult {
   priceCurrency: string;
   isMine: boolean;
   hasNote: boolean;
+  isMerchant: boolean;
   accountName: string;
   accountStatus: "offline" | "online" | "afk";
   ign: string;
@@ -316,6 +318,11 @@ export function createTradeRequest(
     },
   };
   const { query } = body;
+
+  if (filters.trade.merchant) {
+    // FIXME: actually do something
+    console.log("do something cause merchant");
+  }
 
   if (filters.trade.currency) {
     propSet(
@@ -1021,6 +1028,7 @@ export async function requestResults(
       priceCurrency: result.listing.price?.currency ?? "no price",
       hasNote: result.item.note != null,
       isMine: result.listing.account.name === opts.accountName,
+      isMerchant: rand(0, 2) !== 0,
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
       accountStatus: result.listing.account.online

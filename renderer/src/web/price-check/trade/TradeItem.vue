@@ -8,7 +8,7 @@
     <td class="px-2 whitespace-nowrap">
       <span
         :class="{
-          'line-through': result.priceCurrency === 'chaos',
+          'line-through': false,
         }"
         >{{ result.priceAmount }} {{ result.priceCurrency }}</span
       >
@@ -47,7 +47,10 @@
     </td>
     <td class="pr-2 pl-4 whitespace-nowrap">
       <div class="inline-flex items-center">
-        <div class="account-status" :class="result.accountStatus"></div>
+        <div
+          class="account-status"
+          :class="result.isMerchant ? 'merchant' : result.accountStatus"
+        ></div>
         <div class="ml-1 font-sans text-xs">
           {{ result.relativeDate }}
         </div>

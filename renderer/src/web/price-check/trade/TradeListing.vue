@@ -430,8 +430,12 @@ export default defineComponent({
   height: 0.375rem;
   border-radius: 100%;
 
-  &.online {
+  &.merchant {
     /* */
+  }
+
+  &.online {
+    @apply bg-pink-400;
   }
 
   &.offline {

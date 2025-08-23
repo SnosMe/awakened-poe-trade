@@ -35,6 +35,7 @@ export function createFilters(
     trade: {
       offline: false,
       onlineInLeague: false,
+      merchant: false,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
