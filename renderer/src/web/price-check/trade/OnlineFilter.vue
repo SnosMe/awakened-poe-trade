@@ -86,36 +86,19 @@
             }}</ui-radio>
           </template>
         </div>
-        <div class="flex flex-col gap-y-1">
-          <div>
-            <input
-              :class="$style.input"
-              step="any"
-              type="number"
-              v-model.number="localCurrencyRatio"
-              @focus="inputFocus"
-              @blur="inputBlur"
-              @mousewheel.stop
-              :style="{
-                width: `${1.2 + Math.max(String(localCurrencyRatio).length, 2)}ch`,
-              }"
-            /><span>ex : 1 div</span>
-          </div>
-        </div>
       </div>
     </template>
   </ui-popover>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from "vue";
+import { defineComponent, PropType } from "vue";
 import { useI18nNs } from "@/web/i18n";
 import UiRadio from "@/web/ui/UiRadio.vue";
 import UiToggle from "@/web/ui/UiToggle.vue";
 import UiPopover from "@/web/ui/Popover.vue";
 import type { ItemFilters } from "../filters/interfaces";
 import { useLeagues } from "@/web/background/Leagues";
-import { CURRENCY_RATIO } from "../filters/create-item-filters";
 
 export default defineComponent({
   components: { UiRadio, UiToggle, UiPopover },
@@ -128,40 +111,21 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    currencyRatio: {
-      type: Boolean,
-      default: false,
-    },
   },
   setup(props) {
     const leagues = useLeagues();
     const { t } = useI18nNs("online_filter");
 
-    const _localCurrencyRatio = ref(props.filters.trade.currencyRatio);
-
-    if (!props.filters.trade.currencyRatio) {
-      props.filters.trade.currencyRatio = _localCurrencyRatio.value;
-    }
-
     return {
       t,
       tradeLeagues: leagues.list,
-      localCurrencyRatio: computed<number>({
-        get() {
-          return _localCurrencyRatio.value;
-        },
-        set(value) {
-          _localCurrencyRatio.value = value;
-        },
-      }),
       showLeagueName: () =>
         leagues.selectedId.value !== props.filters.trade.league,
       showWarning: () =>
         Boolean(
           (props.filters.trade.listed &&
             ["1day", "3days", "1week"].includes(props.filters.trade.listed)) ||
-            props.filters.trade.currency ||
-            CURRENCY_RATIO !== props.filters.trade.currencyRatio,
+            props.filters.trade.currency,
         ),
       onOfflineUpdate(offline: boolean) {
         const { filters } = props;
@@ -173,14 +137,6 @@ export default defineComponent({
       inputFocus(e: FocusEvent) {
         const target = e.target as HTMLInputElement;
         target.select();
-      },
-      inputBlur() {
-        if (typeof _localCurrencyRatio.value !== "number") {
-          _localCurrencyRatio.value = CURRENCY_RATIO;
-          props.filters.trade.currencyRatio = CURRENCY_RATIO;
-        } else if (typeof _localCurrencyRatio.value === "number") {
-          props.filters.trade.currencyRatio = _localCurrencyRatio.value;
-        }
       },
     };
   },

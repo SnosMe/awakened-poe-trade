@@ -230,7 +230,6 @@ export default defineComponent({
         itemHoverTooltip: "keybind",
         autoFillEmptyRuneSockets: false,
         alwaysShowTier: false,
-        rememberRatio: false,
         openItemEditorAbove: false,
       };
     },

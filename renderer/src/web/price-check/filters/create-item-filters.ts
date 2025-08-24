@@ -13,8 +13,6 @@ export const SPECIAL_SUPPORT_GEM = [
   "Enhance Support",
 ];
 
-export const CURRENCY_RATIO = 300;
-
 interface CreateOptions {
   league: string;
   currency: string | undefined;
@@ -23,7 +21,6 @@ interface CreateOptions {
   exact: boolean;
   useEn: boolean;
   autoFillEmptyRuneSockets: PriceCheckWidget["autoFillEmptyRuneSockets"];
-  currencyRatio: number | undefined;
 }
 
 export function createFilters(
@@ -40,7 +37,6 @@ export function createFilters(
       currency: opts.currency,
       league: opts.league,
       collapseListings: opts.collapseListings,
-      currencyRatio: opts.currencyRatio ?? CURRENCY_RATIO,
     },
   };
 

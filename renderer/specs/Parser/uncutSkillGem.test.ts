@@ -76,7 +76,6 @@ describe("Create Filter for uncut gems", () => {
       exact: true,
       useEn: true,
       autoFillEmptyRuneSockets: false as const,
-      currencyRatio: undefined,
     };
 
     const result = createFilters(gem, opts);
