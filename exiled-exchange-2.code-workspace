@@ -57,7 +57,8 @@
       "uniquefoil",
       "uniquejewel",
       "Warstaff",
-      "WAYSTONE"
+      "WAYSTONE",
+      "xchg"
     ],
     "files.associations": {
       "*.ndjson": "jsonl",

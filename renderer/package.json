@@ -36,7 +36,7 @@
     "@types/luxon": "^3.0.0",
     "@types/node": "^20.0.0",
     "@types/object-hash": "^3.0.0",
-    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue": "^4.6.2",
     "autoprefixer": "^10.0.2",
     "eslint-config-prettier": "^9.1.0",
     "node-fetch": "^3.3.2",
