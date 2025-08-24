@@ -304,11 +304,11 @@ export function createTradeRequest(
   const body: TradeRequest = {
     query: {
       status: {
-        option: filters.trade.offline
-          ? "any"
-          : filters.trade.onlineInLeague
-            ? "onlineleague"
-            : "online",
+        option:
+          filters.trade.listingType === "merchant"
+            ? // FIXME: Set to correct account status here
+              "online"
+            : filters.trade.listingType,
       },
       stats: [{ type: "and", filters: [] }],
       filters: {},
@@ -319,7 +319,7 @@ export function createTradeRequest(
   };
   const { query } = body;
 
-  if (filters.trade.merchant) {
+  if (filters.trade.listingType === "merchant") {
     // FIXME: actually do something
     console.log("do something cause merchant");
   }

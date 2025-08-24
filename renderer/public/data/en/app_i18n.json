@@ -195,7 +195,7 @@
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
-    "in_league_toggle": "In League",
+    "in_league_toggle": "Online in League",
     "listed_any_time": "Listed: Any Time",
     "listed_1day": "1 Day Ago",
     "listed_3days": "3 Days Ago",

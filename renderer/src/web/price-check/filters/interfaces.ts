@@ -79,7 +79,7 @@ export interface ItemFilters {
   trade: {
     offline: boolean;
     onlineInLeague: boolean;
-    merchant: boolean;
+    listingType: "any" | "online" | "onlineleague" | "merchant";
     listed: string | undefined;
     currency: string | undefined;
     league: string;

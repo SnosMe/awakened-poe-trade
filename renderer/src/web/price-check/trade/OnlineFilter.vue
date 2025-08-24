@@ -11,7 +11,15 @@
       >
         <span
           ><i class="fas fa-history"></i>
-          {{ t(filters.trade.offline ? "Offline" : "Online") }}</span
+          {{
+            t(
+              filters.trade.listingType === "merchant"
+                ? "Merchant"
+                : filters.trade.listingType === "any"
+                  ? "Offline"
+                  : "Online",
+            )
+          }}</span
         >
         <span v-if="showLeagueName()">, {{ filters.trade.league }}</span>
       </button>
@@ -19,17 +27,30 @@
     <template #content>
       <div class="flex gap-x-8 p-2 bg-gray-800 text-gray-400">
         <div class="flex flex-col gap-y-1">
-          <div class="mb-1">
-            <ui-toggle
-              :modelValue="filters.trade.offline"
-              @update:modelValue="onOfflineUpdate"
-              >{{ t(":offline_toggle") }}</ui-toggle
-            >
-          </div>
+          <!-- <div class="mb-1">
+            <ui-toggle v-model="filters.trade.merchant">{{
+              t("Merchant Only")
+            }}</ui-toggle>
+          </div> -->
+          <ui-radio v-model="filters.trade.listingType" value="merchant">{{
+            t("Merchant Only")
+          }}</ui-radio>
+          <ui-radio v-model="filters.trade.listingType" value="onlineleague">{{
+            t(":in_league_toggle")
+          }}</ui-radio>
+          <ui-radio v-model="filters.trade.listingType" value="online">{{
+            t("Online")
+          }}</ui-radio>
+          <ui-radio v-model="filters.trade.listingType" value="any">{{
+            t(":offline_toggle")
+          }}</ui-radio>
           <template v-if="byTime">
-            <ui-radio v-model="filters.trade.listed" :value="undefined">{{
-              t(":listed_any_time")
-            }}</ui-radio>
+            <ui-radio
+              v-model="filters.trade.listed"
+              :value="undefined"
+              class="mt-3"
+              >{{ t(":listed_any_time") }}</ui-radio
+            >
             <ui-radio v-model="filters.trade.listed" value="1day">{{
               t(":listed_1day")
             }}</ui-radio>
@@ -51,13 +72,13 @@
           </template>
         </div>
         <div class="flex flex-col gap-y-1">
-          <div class="mb-1">
+          <!-- <div class="mb-1">
             <ui-toggle
               :class="{ invisible: filters.trade.offline }"
               v-model="filters.trade.onlineInLeague"
               >{{ t(":in_league_toggle") }}</ui-toggle
             >
-          </div>
+          </div> -->
           <ui-radio
             v-for="league of tradeLeagues"
             :key="league.id"
