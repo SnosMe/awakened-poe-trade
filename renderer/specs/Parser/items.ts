@@ -29,7 +29,6 @@ class TestItem implements ParsedItem {
   quality?: number | undefined;
   runeSockets?:
     | {
-        type: "armour" | "weapon" | "caster";
         empty: number;
         current: number;
         normal: number;

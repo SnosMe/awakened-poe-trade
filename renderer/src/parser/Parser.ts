@@ -624,14 +624,12 @@ function parseRuneSockets(section: string[], item: ParsedItem) {
     const current = sockets.split("S").length - 1;
     if (item.isCorrupted) {
       item.runeSockets = {
-        type: armourOrWeapon,
         empty: 0,
         current,
         normal: categoryMax,
       };
     } else {
       item.runeSockets = {
-        type: armourOrWeapon,
         empty: 0,
         current,
         normal: categoryMax,
@@ -642,7 +640,6 @@ function parseRuneSockets(section: string[], item: ParsedItem) {
   }
   if (categoryMax && !item.isCorrupted) {
     item.runeSockets = {
-      type: armourOrWeapon,
       empty: categoryMax,
       current: 0,
       normal: categoryMax,

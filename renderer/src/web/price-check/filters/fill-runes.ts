@@ -2,11 +2,7 @@ import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import { StatFilter } from "./interfaces";
 import { applyEleRune, recalculateItemProperties } from "@/parser/calc-base";
 import { BaseType, ITEM_BY_REF, RUNE_DATA_BY_RUNE } from "@/assets/data";
-import {
-  isArmourOrWeaponOrCaster,
-  parseModifiersPoe2,
-  replaceHashWithValues,
-} from "@/parser/Parser";
+import { parseModifiersPoe2, replaceHashWithValues } from "@/parser/Parser";
 import { ModifierType, sumStatsByModType } from "@/parser/modifiers";
 import {
   calculatedStatToFilter,
@@ -77,9 +73,10 @@ function createNewStatFilter(
   item: ParsedItem,
   newRune: string,
 ): StatFilter[] | undefined {
+  if (!item.category) return;
   const newItem = JSON.parse(JSON.stringify(item)) as ParsedItem;
-  const runeData = RUNE_DATA_BY_RUNE[newRune].find(
-    (rune) => rune.type === isArmourOrWeaponOrCaster(item.category),
+  const runeData = RUNE_DATA_BY_RUNE[newRune].find((rune) =>
+    rune.categories.includes(item.category!),
   );
   if (!runeData) return;
   const runeItem = ITEM_BY_REF("ITEM", runeData.refName)![0];
@@ -151,16 +148,9 @@ export function selectRuneEffectByItemCategory(
   category: ItemCategory,
   rune: BaseType["rune"],
 ) {
-  const a = isArmourOrWeaponOrCaster(category);
-  if (!a || !rune) return;
+  if (!rune) return;
 
-  // try to get by most general first
-  if (a in rune) {
-    return rune[a];
-  }
-  if (category.toLowerCase() in rune) {
-    return rune[category.toLowerCase()];
-  }
+  return rune.find((rune) => rune.categories.includes(category));
 }
 
 export function getRuneNameByRef(ref: string) {

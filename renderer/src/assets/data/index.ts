@@ -307,12 +307,14 @@ export function loadUltraLateItems(
   runeFilter: (value: BaseType, index: number, array: BaseType[]) => unknown,
 ) {
   const a = Array.from(ITEMS_ITERATOR('"craftable": {"category": "SoulCore"}'));
-  const b = a.filter(
-    (r) => r.rune && r.rune.armour?.tradeId && r.rune.weapon?.tradeId,
-  );
-  const c = b.filter(runeFilter);
+  const b = a.filter((r) => r.rune && r.rune.some((s) => s.tradeId));
+  const c = b.map((r) => ({
+    ...r,
+    rune: r.rune!.filter((s) => s.tradeId),
+  }));
+  const d = c.filter(runeFilter);
 
-  RUNE_LIST = c;
+  RUNE_LIST = d;
 
   RUNE_DATA_BY_RUNE = runesToLookup(RUNE_LIST);
 
@@ -324,8 +326,8 @@ function runesToLookup(runeList: BaseType[]): RuneDataByRune {
 
   for (const rune of runeList) {
     if (!rune.rune) continue;
-    for (const runeStat in rune.rune) {
-      const { string: text, values, tradeId } = rune.rune[runeStat];
+    for (const runeStat of rune.rune) {
+      const { categories, string: text, values, tradeId } = runeStat;
       if (!tradeId) continue;
       if (!runeDataByRune[rune.refName]) {
         runeDataByRune[rune.refName] = [];
@@ -336,7 +338,7 @@ function runesToLookup(runeList: BaseType[]): RuneDataByRune {
         baseStat: text,
         values,
         id: tradeId[0],
-        type: runeStat,
+        categories,
         icon: rune.icon,
       });
     }
@@ -350,8 +352,8 @@ function runesToLookupTradeId(runeList: BaseType[]): RuneDataByTradeId {
 
   for (const rune of runeList) {
     if (!rune.rune) continue;
-    for (const runeStat in rune.rune) {
-      const { string: text, values, tradeId } = rune.rune[runeStat];
+    for (const runeStat of rune.rune) {
+      const { categories, string: text, values, tradeId } = runeStat;
       if (!tradeId) continue;
       if (!runeDataByRune[tradeId[0]]) {
         runeDataByRune[tradeId[0]] = [];
@@ -361,7 +363,7 @@ function runesToLookupTradeId(runeList: BaseType[]): RuneDataByTradeId {
         baseStat: text,
         values,
         id: tradeId[0],
-        type: runeStat,
+        categories,
         icon: rune.icon,
       });
     }

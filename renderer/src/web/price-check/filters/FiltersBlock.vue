@@ -249,6 +249,7 @@ import { ParsedItem, ItemRarity, ItemCategory } from "@/parser";
 import FilterBtnDropdown from "./FilterBtnDropdown.vue";
 import { handleApplyItemEdits, handleRemoveItemEdits } from "./fill-runes";
 import { RUNE_DATA_BY_RUNE } from "@/assets/data";
+import { ARMOUR, MARTIAL_WEAPON } from "@/parser/meta";
 
 export default defineComponent({
   name: "FiltersBlock",
@@ -365,7 +366,12 @@ export default defineComponent({
         ctx.emit("preset", id);
       },
       hasEmptyRuneSockets: computed(() => {
-        return props.item.runeSockets && props.item.runeSockets.empty > 0;
+        return (
+          props.item.runeSockets &&
+          props.item.runeSockets.empty > 0 &&
+          (MARTIAL_WEAPON.has(props.item.category!) ||
+            ARMOUR.has(props.item.category!))
+        );
       }),
       getRuneImage(rune: string) {
         const icon = RUNE_DATA_BY_RUNE[rune][0].icon;

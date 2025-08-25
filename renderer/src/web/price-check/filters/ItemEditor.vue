@@ -104,19 +104,17 @@ export default defineComponent({
               props.item.category,
               rune.rune,
             );
-            if (runeEffect) {
-              if (
-                !(
-                  translatedEffectsPseudos(runeEffect.string) ||
-                  HIGH_VALUE_RUNES_HARDCODED.has(rune.refName)
-                )
+
+            if (
+              !runeEffect ||
+              !(
+                translatedEffectsPseudos(runeEffect.string) ||
+                HIGH_VALUE_RUNES_HARDCODED.has(rune.refName)
               )
-                continue;
-              stat = replaceHashWithValues(
-                runeEffect.string,
-                runeEffect.values,
-              );
-            }
+            )
+              continue;
+
+            stat = replaceHashWithValues(runeEffect.string, runeEffect.values);
           }
           items.push({
             name: rune.name,

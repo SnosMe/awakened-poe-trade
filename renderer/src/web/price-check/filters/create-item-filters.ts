@@ -241,15 +241,12 @@ export function createFilters(
         disabled: item.runeSockets.current <= item.runeSockets.normal,
       };
     }
-    const type = isArmourOrWeaponOrCaster(item.category);
-    if (
-      item.runeSockets.empty > 0 &&
-      item.rarity !== ItemRarity.Unique &&
-      (type === "armour" || type === "weapon")
-    ) {
+    if (item.runeSockets.empty > 0 && item.rarity !== ItemRarity.Unique) {
+      const type = isArmourOrWeaponOrCaster(item.category);
       if (
         opts.autoFillEmptyRuneSockets &&
-        (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare)
+        (item.rarity === ItemRarity.Magic || item.rarity === ItemRarity.Rare) &&
+        (type === "armour" || type === "weapon")
       ) {
         filters.itemEditorSelection = {
           disabled: false,
