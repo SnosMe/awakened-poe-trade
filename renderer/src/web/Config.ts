@@ -152,7 +152,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 25,
+  configVersion: 26,
   overlayKey: "Shift + Space",
   overlayBackground: "rgba(129, 139, 149, 0.15)",
   overlayBackgroundClose: true,
@@ -483,16 +483,6 @@ function upgradeConfig(_config: Config): Config {
     config.configVersion = 19;
   }
 
-  if (config.configVersion < 20) {
-    config.widgets.push({
-      ...defaultConfig().widgets.find((w) => w.wmType === "filter-generator")!,
-      wmId: Math.max(0, ...config.widgets.map((_) => _.wmId)) + 1,
-      wmZorder: null,
-    });
-
-    config.configVersion = 20;
-  }
-
   if (config.configVersion < 21) {
     config.widgets.find((w) => w.wmType === "price-check")!.itemHoverTooltip =
       "keybind";
@@ -576,6 +566,16 @@ function upgradeConfig(_config: Config): Config {
     )!.openItemEditorAbove = false;
 
     config.configVersion = 25;
+  }
+
+  if (config.configVersion < 26) {
+    // NOTE: v0.11.0 || poe0.3.0
+    // Removes item filter generator
+    config.widgets = config.widgets.filter(
+      (w) => w.wmType !== "filter-generator",
+    );
+
+    config.configVersion = 26;
   }
 
   return config as unknown as Config;

@@ -87,8 +87,7 @@ export type IpcEvent =
   | IpcItemText
   | IpcOcrText
   | IpcConfigChanged
-  | IpcUserAction
-  | FilterGeneratorListEvent;
+  | IpcUserAction;
 
 export type IpcEventPayload<
   Name extends IpcEvent["name"],
@@ -204,20 +203,9 @@ type IpcUserAction = Event<
       action: "check-for-update" | "update-and-restart" | "quit";
     }
   | {
-      action:
-        | "stash-search"
-        | "filter-generator:update"
-        | "filter-generator:list";
+      action: "stash-search";
       text: string;
     }
->;
-
-type FilterGeneratorListEvent = Event<
-  "MAIN->CLIENT::filter-generator:list",
-  {
-    folder: string;
-    files: string[];
-  }
 >;
 
 interface Event<TName extends string, TPayload = undefined> {
