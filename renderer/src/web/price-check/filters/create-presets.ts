@@ -93,19 +93,23 @@ export function createPresets(
     item.isMirrored;
 
   const hasCraftingValue =
+    // Base useful crafting item (synth and influence not in poe2 yet though)
     item.isSynthesised ||
     item.isFractured ||
     item.influences.length ||
+    // Clusters (deprecated)
     item.category === ItemCategory.ClusterJewel ||
+    // Jewels
     (item.category === ItemCategory.Jewel &&
       item.rarity === ItemRarity.Magic) ||
+    // High ilvl, non jewel
     (item.category !== ItemCategory.Jewel &&
       item.category !== ItemCategory.AbyssJewel &&
       item.itemLevel! >= 82) ||
-    (!item.isCorrupted &&
-      item.rarity === ItemRarity.Magic &&
-      item.itemLevel! >= 81 &&
-      itemHasPerfectPlusLevels(item));
+    (item.itemLevel! >= 81 &&
+      (item.category === ItemCategory.Wand ||
+        item.category === ItemCategory.Spear ||
+        item.category === ItemCategory.Staff));
 
   // Apply runes if we should
   if (
