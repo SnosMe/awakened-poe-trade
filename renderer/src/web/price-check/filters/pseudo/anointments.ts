@@ -3,17 +3,30 @@ import type { ParsedItem } from "@/parser";
 import type { StatFilter } from "../interfaces";
 
 const EMOTIONS = [
-  "Diluted Liquid Ire",
-  "Diluted Liquid Guilt",
-  "Diluted Liquid Greed",
-  "Liquid Paranoia",
-  "Liquid Envy",
-  "Liquid Disgust",
-  "Liquid Despair",
-  "Concentrated Liquid Fear",
-  "Concentrated Liquid Suffering",
-  "Concentrated Liquid Isolation",
+  "Distilled Ire",
+  "Distilled Guilt",
+  "Distilled Greed",
+  "Distilled Paranoia",
+  "Distilled Envy",
+  "Distilled Disgust",
+  "Distilled Despair",
+  "Distilled Fear",
+  "Distilled Suffering",
+  "Distilled Isolation",
 ];
+
+// [
+//   "Diluted Liquid Ire",
+//   "Diluted Liquid Guilt",
+//   "Diluted Liquid Greed",
+//   "Liquid Paranoia",
+//   "Liquid Envy",
+//   "Liquid Disgust",
+//   "Liquid Despair",
+//   "Concentrated Liquid Fear",
+//   "Concentrated Liquid Suffering",
+//   "Concentrated Liquid Isolation",
+// ];
 
 export function decodeOils(calc: StatCalculated): string[] | undefined {
   if (calc.type !== ModifierType.Enchant) return;
