@@ -286,6 +286,7 @@ export interface PricingResult {
   relativeDate: string;
   priceAmount: number;
   priceCurrency: string;
+  priceCurrencyRank?: number;
   isMine: boolean;
   hasNote: boolean;
   isMerchant: boolean;
@@ -1008,6 +1009,13 @@ export async function requestResults(
       pseudoMods,
       extended,
     };
+
+    let priceCurrencyRank: PricingResult["priceCurrencyRank"];
+    // FIXME: Find a way to determine the price rank
+    if (rand(0, 2) === 0) {
+      priceCurrencyRank = rand(0, 2) ? 3 : 2;
+    }
+
     return {
       id: result.id,
       itemLevel:
@@ -1026,6 +1034,7 @@ export async function requestResults(
         }) ?? "",
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? "no price",
+      priceCurrencyRank,
       hasNote: result.item.note != null,
       isMine: result.listing.account.name === opts.accountName,
       // FIXME: actually calc this

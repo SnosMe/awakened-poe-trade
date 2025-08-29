@@ -32,9 +32,9 @@
               t("Merchant Only")
             }}</ui-toggle>
           </div> -->
-          <ui-radio v-model="filters.trade.listingType" value="merchant">{{
+          <!-- <ui-radio v-model="filters.trade.listingType" value="merchant">{{
             t("Merchant Only")
-          }}</ui-radio>
+          }}</ui-radio> -->
           <ui-radio v-model="filters.trade.listingType" value="onlineleague">{{
             t(":in_league_toggle")
           }}</ui-radio>

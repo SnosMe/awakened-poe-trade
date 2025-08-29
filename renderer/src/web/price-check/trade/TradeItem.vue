@@ -47,9 +47,16 @@
     </td>
     <td class="pr-2 pl-4 whitespace-nowrap">
       <div class="inline-flex items-center">
+        <!-- FIXME: Change to merchant to be merchant/instantBuyout -->
         <div
           class="account-status"
-          :class="result.isMerchant ? 'merchant' : result.accountStatus"
+          :class="
+            result.isMerchant
+              ? 'merchant'
+              : result.accountStatus === 'online'
+                ? 'merchant'
+                : result.accountStatus
+          "
         ></div>
         <div class="ml-1 font-sans text-xs">
           {{ result.relativeDate }}

@@ -286,5 +286,13 @@ export default defineComponent({
   &.afk {
     @apply bg-orange-500;
   }
+
+  &.rank-2 {
+    @apply bg-blue-600;
+  }
+
+  &.rank-3 {
+    @apply bg-yellow-600;
+  }
 }
 </style>
