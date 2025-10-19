@@ -6152,6 +6152,7 @@
 {"ref":"Used when you Use a Travel Skill","better":1,"matchers":[{"string":"當你使用快行技能時使用"}],"trade":{"ids":{"enchant":["enchant.stat_1260843520"]}}}
 {"ref":"Uses both hand slots","better":1,"matchers":[{"string":"占用所有武器欄位"}],"trade":{"ids":{"explicit":["explicit.stat_2846730569"]}}}
 {"ref":"Using Remnants of Corruption on Imprisoned Monsters in your Maps replaces all Essences with one of the Essences on the Imprisoned Monster","better":1,"matchers":[{"string":"對你地圖中被禁錮的怪物使用腐化遺駭，將所有精髓以被禁錮的怪物身上的精髓之一取代"}],"trade":{"ids":{"explicit":["explicit.stat_1019460035"]}}}
+{"ref":"Utility Flasks gain # Charge every 3 seconds","better":1,"matchers":[{"string":"每 3 秒功能藥劑回復 # 充能"}],"trade":{"ids":{"explicit":["explicit.stat_2567919918"]}}}
 {"ref":"Uul-Netol, Unburdened Flesh in your Maps has a #% chance to be Duplicated","better":1,"matchers":[{"string":"你地圖中的截載者‧烏爾尼多有 #% 機率被複製"},{"string":"你地圖中的截載者‧烏爾尼多被複製","value":100}],"trade":{"ids":{"explicit":["explicit.stat_66623393"]}}}
 {"ref":"Vaal Attack Skills you Use yourself Cost Rage instead of requiring Souls","better":1,"matchers":[{"string":"你使用的瓦爾技能消耗盛怒而不是靈魂"}],"trade":{"ids":{"explicit":["explicit.stat_1103075489"]}}}
 {"ref":"Vaal Pact","better":1,"matchers":[{"string":"瓦爾冥約"}],"trade":{"ids":{"explicit":["explicit.stat_2257118425"],"scourge":["scourge.stat_2257118425"]}}}
