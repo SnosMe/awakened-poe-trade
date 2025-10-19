@@ -1,4 +1,4 @@
-import { STAT_BY_MATCH_STR } from '@/assets/data'
+import { STAT_BY_MATCH_STR_V2 } from '@/assets/data'
 
 export interface MapCheckConfig {
   profile: number
@@ -51,5 +51,5 @@ export function decisionCreate (value: string, profileName: number, updateSet = 
 
 export function isOutdated (profileName: number, stat: MapCheckStat): boolean {
   return decisionHasColor(stat.decision, profileName) &&
-    STAT_BY_MATCH_STR(stat.matcher) == null
+    STAT_BY_MATCH_STR_V2(stat.matcher) == null
 }

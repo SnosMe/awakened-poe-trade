@@ -907,7 +907,7 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
   const statIterator = linesToStatStrings(lines)
   let stat = statIterator.next()
   while (!stat.done) {
-    const parsedStat = tryParseTranslation(stat.value, modifier.info.type)
+    const parsedStat = tryParseTranslation(stat.value, modifier.info.type, item.category)
     if (parsedStat) {
       modifier.stats.push(parsedStat)
       stat = statIterator.next(true)

@@ -1,6 +1,7 @@
-import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from '@/assets/data'
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR_V2 } from '@/assets/data'
 import type { StatMatcher, Stat } from '@/assets/data'
 import type { ModifierType } from './modifiers'
+import { ItemCategory, ARMOUR, WEAPON, HEIST_EQUIPMENT } from './meta'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
@@ -131,12 +132,14 @@ function * _statPlaceholderGenerator (stat: string) {
   yield { stat, values: [] }
 }
 
-export function tryParseTranslation (stat: StatString, modType: ModifierType): ParsedStat | undefined {
+export function tryParseTranslation (
+  stat: StatString,
+  modType: ModifierType,
+  itemCategory?: ItemCategory
+): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
-    const found = STAT_BY_MATCH_STR(combination.stat)
-    if (!found || !found.stat.trade.ids[modType]) {
-      continue
-    }
+    const found = findAndResolveTranslation(combination.stat, modType, itemCategory)
+    if (!found) continue
 
     // Modifiers must be upgraded to the new values with a Divine Orb
     let legacyStatRolls = false
@@ -216,5 +219,56 @@ export function getRollOrMinmaxAvg (values: number[]): number {
     return (values[0] + values[1]) / 2
   } else {
     return values[0]
+  }
+}
+
+function findAndResolveTranslation (
+  matchStr: string,
+  modType: ModifierType,
+  itemCategory?: ItemCategory
+): { matcher: StatMatcher, stat: Stat } | undefined {
+  const statOrGroup = STAT_BY_MATCH_STR_V2(matchStr)
+  if (!statOrGroup) return undefined
+
+  if (!('stats' in statOrGroup)) {
+    const stat = statOrGroup
+    if (!(modType in stat.trade.ids)) return undefined
+    const matcher = stat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)!
+    return { stat, matcher }
+  }
+
+  const { resolve, stats } = statOrGroup
+  if (resolve.strat === 'select') {
+    // give priority to exact match
+    let idx = resolve.test.findIndex(expected => expected !== null &&
+      testItemCategory(itemCategory ?? null, expected))
+    // fallback to any match (if it exists at all)
+    if (idx === -1) idx = resolve.test.indexOf(null)
+    if (idx === -1) return undefined
+
+    const stat = stats[idx]
+    if (!(modType in stat.trade.ids)) return undefined
+    const matcher = stat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)
+    if (!matcher) return undefined
+    return { stat, matcher }
+  }
+
+  return undefined
+}
+
+function testItemCategory (actual: ItemCategory | null, expected: string): boolean {
+  if (actual === null) return false
+
+  switch (expected) {
+    case 'WEAPON':
+      return WEAPON.has(actual)
+    case 'ARMOUR':
+      return ARMOUR.has(actual)
+    case 'HEIST_EQUIPMENT':
+      return HEIST_EQUIPMENT.has(actual)
+    default:
+      return expected === actual
   }
 }
