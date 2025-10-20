@@ -1,7 +1,7 @@
 import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR_V2 } from '@/assets/data'
-import type { StatMatcher, Stat } from '@/assets/data'
+import type { StatMatcher, Stat, StatGroup } from '@/assets/data'
 import type { ModifierType } from './modifiers'
-import { ItemCategory, ARMOUR, WEAPON, HEIST_EQUIPMENT } from './meta'
+import { type ItemCategory, ARMOUR, WEAPON, HEIST_EQUIPMENT } from './meta'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
@@ -138,8 +138,10 @@ export function tryParseTranslation (
   itemCategory?: ItemCategory
 ): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
-    const found = findAndResolveTranslation(combination.stat, modType, itemCategory)
-    if (!found) continue
+    const found = findAndResolveTranslation(combination.stat, itemCategory)
+    if (!found || !(modType in found.stat.trade.ids)) {
+      continue
+    }
 
     // Modifiers must be upgraded to the new values with a Divine Orb
     let legacyStatRolls = false
@@ -224,35 +226,59 @@ export function getRollOrMinmaxAvg (values: number[]): number {
 
 function findAndResolveTranslation (
   matchStr: string,
-  modType: ModifierType,
   itemCategory?: ItemCategory
 ): { matcher: StatMatcher, stat: Stat } | undefined {
   const statOrGroup = STAT_BY_MATCH_STR_V2(matchStr)
   if (!statOrGroup) return undefined
 
+  let stat: Stat | undefined
   if (!('stats' in statOrGroup)) {
-    const stat = statOrGroup
-    if (!(modType in stat.trade.ids)) return undefined
-    const matcher = stat.matchers.find(m =>
-      m.string === matchStr || m.advanced === matchStr)!
-    return { stat, matcher }
+    stat = statOrGroup
+  } else {
+    stat = _resolveTranslation(statOrGroup, matchStr, itemCategory)
   }
 
-  const { resolve, stats } = statOrGroup
+  if (stat) {
+    const matcher = stat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)
+    if (!matcher) return undefined
+    return { stat, matcher }
+  }
+  return undefined
+}
+
+function _resolveTranslation (
+  statGroup: StatGroup,
+  matchStr: string,
+  itemCategory?: ItemCategory
+): Stat | undefined {
+  let { resolve, stats } = statGroup
   if (resolve.strat === 'select') {
     // give priority to exact match
     let idx = resolve.test.findIndex(expected => expected !== null &&
       testItemCategory(itemCategory ?? null, expected))
     // fallback to any match (if it exists at all)
     if (idx === -1) idx = resolve.test.indexOf(null)
-    if (idx === -1) return undefined
-
-    const stat = stats[idx]
-    if (!(modType in stat.trade.ids)) return undefined
-    const matcher = stat.matchers.find(m =>
-      m.string === matchStr || m.advanced === matchStr)
-    if (!matcher) return undefined
-    return { stat, matcher }
+    return (idx !== -1) ? stats[idx] : undefined
+  } else if (resolve.strat === 'trivial-merge') {
+    stats = stats.filter(stat =>
+      stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+    if (!stats.length) return undefined
+    const merged = stats[0]
+    for (const stat of stats) {
+      if (merged === stat) continue
+      for (const modType in stat.trade.ids) {
+        const tradeId = stat.trade.ids[modType][0]
+        if (modType in merged.trade.ids) {
+          if (!merged.trade.ids[modType].includes(tradeId)) {
+            merged.trade.ids[modType].push(tradeId)
+          }
+        } else {
+          merged.trade.ids[modType] = [tradeId]
+        }
+      }
+    }
+    return merged
   }
 
   return undefined
