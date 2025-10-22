@@ -267,21 +267,39 @@ function _resolveTranslation (
     const merged = stats[0]
     for (const stat of stats) {
       if (merged === stat) continue
-      for (const modType in stat.trade.ids) {
-        const tradeId = stat.trade.ids[modType][0]
-        if (modType in merged.trade.ids) {
-          if (!merged.trade.ids[modType].includes(tradeId)) {
-            merged.trade.ids[modType].push(tradeId)
-          }
-        } else {
-          merged.trade.ids[modType] = [tradeId]
-        }
-      }
+      _mergeTradeIdsInto(merged, stat)
     }
     return merged
+  } else if (resolve.strat === 'percent-merge') {
+    const pctStat = stats[resolve.kind.indexOf('percent')]
+    const matcher = pctStat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)
+    const roll100 = (matcher !== undefined && matcher.value === 100)
+    if (roll100) {
+      const otherStat = stats[resolve.kind.indexOf('value')]
+      const flag = (otherStat.matchers.length === 1 && !otherStat.matchers[0].string.includes('#'))
+      _mergeTradeIdsInto(pctStat, otherStat, flag ? '{empty_if_100}' : '{div_by_100}')
+      return pctStat
+    }
+    return stats.find(stat =>
+      stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
   }
 
   return undefined
+}
+
+function _mergeTradeIdsInto (dest: Stat, source: Stat, prefix?: string) {
+  for (const modType in source.trade.ids) {
+    let tradeId = source.trade.ids[modType][0]
+    if (prefix) tradeId = prefix + tradeId
+    if (modType in dest.trade.ids) {
+      if (!dest.trade.ids[modType].includes(tradeId)) {
+        dest.trade.ids[modType].push(tradeId)
+      }
+    } else {
+      dest.trade.ids[modType] = [tradeId]
+    }
+  }
 }
 
 function testItemCategory (actual: ItemCategory | null, expected: string): boolean {

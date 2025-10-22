@@ -606,48 +606,33 @@ export async function requestResults (
   })
 }
 
-function getMinMax (roll: StatFilter['roll']) {
+function getMinMax (roll: StatFilter['roll'], divisor: number) {
   if (!roll) {
     return { min: undefined, max: undefined }
   }
 
   const sign = roll.tradeInvert ? -1 : 1
-  const a = typeof roll.min === 'number' ? roll.min * sign : undefined
-  const b = typeof roll.max === 'number' ? roll.max * sign : undefined
+  const a = typeof roll.min === 'number' ? roll.min * sign / divisor : undefined
+  const b = typeof roll.max === 'number' ? roll.max * sign / divisor : undefined
 
   return !roll.tradeInvert ? { min: a, max: b } : { min: b, max: a }
 }
 
 function tradeIdToQuery (id: string, stat: Pick<StatFilter, 'roll' | 'option' | 'disabled'>) {
-  // NOTE: if there will be too many overrides in the future,
-  //       consider moving them to stats.ndjson
-
   let roll = stat.roll
 
-  // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
-  if (id === 'implicit.stat_1901158930') {
-    if (stat.roll?.value === 100) {
-      roll = undefined // stat semantic type is flag
-    }
-  // fixes "Cannot be Poisoned" from Essence
-  } else if (id === 'explicit.stat_3835551335') {
-    if (stat.roll?.value === 100) {
-      roll = undefined // stat semantic type is flag
-    }
-  // fixes "Instant Recovery" on Flasks
-  } else if (id.endsWith('stat_1526933524')) {
-    if (stat.roll?.value === 100) {
-      roll = undefined // stat semantic type is flag
-    }
-  // fixes Delve "Reservation Efficiency of Skills"
-  } else if (id.endsWith('stat_1269219558')) {
-    roll = { ...roll!, tradeInvert: !(roll!.tradeInvert) }
+  const divMinMax = id.startsWith('{div_by_100}') ? 100 : 1
+  if (id.startsWith('{empty_if_100}')) {
+    if (roll?.value === 100) roll = undefined
+  }
+  if (id.startsWith('{')) {
+    id = id.slice(id.indexOf('}') + 1)
   }
 
   return {
     id,
     value: {
-      ...getMinMax(roll),
+      ...getMinMax(roll, divMinMax),
       option: stat.option != null
         ? stat.option.value
         : undefined
