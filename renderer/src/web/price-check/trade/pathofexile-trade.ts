@@ -622,8 +622,10 @@ function tradeIdToQuery (id: string, stat: Pick<StatFilter, 'roll' | 'option' | 
   let roll = stat.roll
 
   const divMinMax = id.startsWith('{div_by_100}') ? 100 : 1
-  if (id.startsWith('{empty_if_100}')) {
-    if (roll?.value === 100) roll = undefined
+  if (id.startsWith('{empty}') ||
+    (id.startsWith('{empty_if_100}') && roll?.value === 100)
+  ) {
+    roll = undefined
   }
   if (id.startsWith('{')) {
     id = id.slice(id.indexOf('}') + 1)

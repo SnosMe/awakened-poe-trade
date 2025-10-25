@@ -138,7 +138,11 @@ export function tryParseTranslation (
   itemCategory?: ItemCategory
 ): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
-    const found = findAndResolveTranslation(combination.stat, itemCategory)
+    const found = findAndResolveTranslation(
+      combination.stat,
+      itemCategory,
+      (combination.values.length === 1) ? combination.values[0].roll : undefined
+    )
     if (!found || !(modType in found.stat.trade.ids)) {
       continue
     }
@@ -226,7 +230,8 @@ export function getRollOrMinmaxAvg (values: number[]): number {
 
 function findAndResolveTranslation (
   matchStr: string,
-  itemCategory?: ItemCategory
+  itemCategory?: ItemCategory,
+  roll?: number
 ): { matcher: StatMatcher, stat: Stat } | undefined {
   const statOrGroup = STAT_BY_MATCH_STR_V2(matchStr)
   if (!statOrGroup) return undefined
@@ -235,7 +240,7 @@ function findAndResolveTranslation (
   if (!('stats' in statOrGroup)) {
     stat = statOrGroup
   } else {
-    stat = _resolveTranslation(statOrGroup, matchStr, itemCategory)
+    stat = _resolveTranslation(statOrGroup, matchStr, itemCategory, roll)
   }
 
   if (stat) {
@@ -250,7 +255,8 @@ function findAndResolveTranslation (
 function _resolveTranslation (
   statGroup: StatGroup,
   matchStr: string,
-  itemCategory?: ItemCategory
+  itemCategory?: ItemCategory,
+  roll?: number
 ): Stat | undefined {
   let { resolve, stats } = statGroup
   if (resolve.strat === 'select') {
@@ -283,6 +289,15 @@ function _resolveTranslation (
     }
     return stats.find(stat =>
       stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+  } else if (resolve.strat === 'flag-merge') {
+    if (roll === undefined) return undefined
+    const valStat = stats[resolve.kind.indexOf('value')]
+    const flagStat = stats[resolve.kind.indexOf('flag')]
+    const flagRoll = flagStat.matchers[0].value!
+    if (roll === flagRoll) {
+      _mergeTradeIdsInto(valStat, flagStat, '{empty}')
+    }
+    return valStat
   }
 
   return undefined
