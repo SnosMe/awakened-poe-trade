@@ -44,6 +44,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseArmour,
   parseWeapon,
   parseFlask,
+  parseTincture,
   parseStackSize,
   parseCorrupted,
   parseFoil,
@@ -669,6 +670,8 @@ function parseMirrored (section: string[], item: ParsedItem) {
 }
 
 function parseFlask (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Flask) return 'PARSER_SKIPPED'
+
   // the purpose of this parser is to "consume" flask buffs
   // so they are not recognized as modifiers
 
@@ -685,6 +688,16 @@ function parseFlask (section: string[], item: ParsedItem) {
   }
 
   return isParsed
+}
+
+function parseTincture (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Tincture) return 'PARSER_SKIPPED'
+
+  parseQualityNested(section, item)
+
+  return (item.quality !== undefined)
+    ? 'SECTION_PARSED'
+    : 'SECTION_SKIPPED'
 }
 
 function parseSentinelCharge (section: string[], item: ParsedItem) {
