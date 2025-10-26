@@ -318,7 +318,8 @@
     "poe_cfg_file" :"Файл настроек PoE",
     "restore_clipboard" :"Восстанавливать буфер обмена",
     "show_overlay_ready" :"Показывать уведомление при открытии PoE",
-    "debug_hotkeys": "Запись всех нажатий клавиш"
+    "debug_hotkeys": "Запись всех нажатий клавиш",
+    "preferred_trade_site": "Предпочитаемый торговый сайт"
   },
   "price_check": {
     "name": "Прайс-чек",

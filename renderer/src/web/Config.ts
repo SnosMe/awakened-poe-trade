@@ -84,7 +84,10 @@ export async function initConfig () {
 }
 
 export function poeWebApi () {
-  const { language, realm } = AppConfig()
+  const { language, realm, preferredTradeSite } = AppConfig()
+  if (preferredTradeSite === "www") {
+    return "www.pathofexile.com";
+  }
   switch (language) {
     case 'en': return 'www.pathofexile.com'
     case 'ru': return 'ru.pathofexile.com'
@@ -115,6 +118,7 @@ export interface Config {
   stashScroll: boolean
   language: 'en' | 'ru' | 'cmn-Hant' | 'ko'
   realm: 'pc-ggg' | 'pc-garena'
+  preferredTradeSite: 'default' | 'www'
   widgets: widget.Widget[]
   fontSize: number
   showAttachNotification: boolean
@@ -160,6 +164,7 @@ export const defaultConfig = (): Config => ({
   stashScroll: true,
   language: 'en',
   realm: 'pc-ggg',
+  preferredTradeSite: 'default',
   fontSize: 16,
   widgets: widgetRegistry.widgets.reduce<widget.Widget[]>((widgets, { widget }) => {
     const res: widget.Widget[] = []
@@ -421,6 +426,12 @@ function upgradeConfig (_config: Config): Config {
     })
 
     config.configVersion = 17
+  }
+
+  if (config.configVersion < 18) {
+    config.preferredTradeSite = 'default'
+    
+    config.configVersion = 18
   }
 
   return config as unknown as Config

@@ -9,6 +9,13 @@
         <option value="ko">한국어</option>
       </select>
     </div>
+    <div class="mb-4" v-if="language !== 'en'">
+      <div class="flex-1 mb-1">{{ t(":preferred_trade_site") }}</div>
+      <select v-model="preferredTradeSite" class="p-1 rounded bg-gray-700 w-24">
+        <option value="default">{{ tradeUrl }}</option>
+        <option value="www">www.pathofexile.com</option>
+      </select>
+    </div>
     <div class="mb-4" v-if="language === 'cmn-Hant'">
       <div class="flex-1 mb-1">{{ t('realm') }}</div>
       <div class="flex gap-x-4">
@@ -87,6 +94,31 @@ export default defineComponent({
         }
       }),
       realm: configModelValue(() => props.config, 'realm'),
+      tradeUrl: computed(() => {
+        switch (props.config.language) {
+          case "en":
+            return "www.pathofexile.com";
+          case "ru":
+            return "ru.pathofexile.com";
+          case "cmn-Hant":
+            return props.config.realm === "pc-garena"
+              ? "pathofexile.tw"
+              : "www.pathofexile.com";
+          case "ko":
+            return "poe.game.daum.net";
+          default:
+            return "www.pathofexile.com";
+        }
+      }),
+      preferredTradeSite: computed<typeof props.config.preferredTradeSite>({
+        get() {
+          return props.config.preferredTradeSite;
+        },
+        set(value) {
+          props.config.preferredTradeSite = value;
+          AppConfig().preferredTradeSite = value;
+        },
+      }),
       restoreClipboard: configModelValue(() => props.config, 'restoreClipboard'),
       showAttachNotification: configModelValue(() => props.config, 'showAttachNotification'),
       windowTitle: configModelValue(() => props.config, 'windowTitle')

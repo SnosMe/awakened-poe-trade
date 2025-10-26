@@ -298,7 +298,8 @@
     "poe_cfg_file": "PoE config file",
     "restore_clipboard": "Restore clipboard",
     "show_overlay_ready": "Show a notification when the Overlay detects a PoE window",
-    "debug_hotkeys": "모든 키 스트로크 기록"
+    "debug_hotkeys": "모든 키 스트로크 기록",
+    "preferred_trade_site": "선호하는 거래 사이트"
   },
   "price_check": {
     "name": "Price check",

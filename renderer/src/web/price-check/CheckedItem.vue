@@ -112,7 +112,7 @@ export default defineComponent({
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
-        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg'),
+        useEn: (AppConfig().language === 'cmn-Hant' && AppConfig().realm === 'pc-ggg') || AppConfig().preferredTradeSite === "www",
         currency: widget.value.rememberCurrency || (prevItem &&
           item.info.namespace === prevItem.info.namespace &&
           item.info.refName === prevItem.info.refName
