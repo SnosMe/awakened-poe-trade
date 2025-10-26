@@ -680,7 +680,7 @@ function parseFlask (section: string[], item: ParsedItem) {
     }
   }
 
-  if (isParsed) {
+  if (isParsed === 'SECTION_PARSED') {
     parseQualityNested(section, item)
   }
 
