@@ -4,7 +4,7 @@ import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
 import { Host } from '@/web/background/IPC'
 import { TradeResponse, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
-import { STAT_BY_REF } from '@/assets/data'
+import { stat, STAT_BY_REF_V2, pseudoStatByRef } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
@@ -54,29 +54,34 @@ export const CATEGORY_TO_TRADE_ID = new Map([
 
 const TOTAL_MODS_TEXT = {
   CRAFTED_MODIFIERS: [
-    '# Crafted Modifiers',
-    '# Crafted Prefix Modifiers',
-    '# Crafted Suffix Modifiers'
+    stat('# Crafted Modifiers'),
+    stat('# Crafted Prefix Modifiers'),
+    stat('# Crafted Suffix Modifiers')
   ],
   EMPTY_MODIFIERS: [
-    '# Empty Modifiers',
-    '# Empty Prefix Modifiers',
-    '# Empty Suffix Modifiers'
+    stat('# Empty Modifiers'),
+    stat('# Empty Prefix Modifiers'),
+    stat('# Empty Suffix Modifiers')
   ],
   TOTAL_MODIFIERS: [
-    '# Modifiers',
-    '# Prefix Modifiers',
-    '# Suffix Modifiers'
+    stat('# Modifiers'),
+    stat('# Prefix Modifiers'),
+    stat('# Suffix Modifiers')
   ]
 }
 
 const INFLUENCE_PSEUDO_TEXT = {
-  [ItemInfluence.Shaper]: 'Has Shaper Influence',
-  [ItemInfluence.Crusader]: 'Has Crusader Influence',
-  [ItemInfluence.Hunter]: 'Has Hunter Influence',
-  [ItemInfluence.Elder]: 'Has Elder Influence',
-  [ItemInfluence.Redeemer]: 'Has Redeemer Influence',
-  [ItemInfluence.Warlord]: 'Has Warlord Influence'
+  [ItemInfluence.Shaper]: stat('Has Shaper Influence'),
+  [ItemInfluence.Crusader]: stat('Has Crusader Influence'),
+  [ItemInfluence.Hunter]: stat('Has Hunter Influence'),
+  [ItemInfluence.Elder]: stat('Has Elder Influence'),
+  [ItemInfluence.Redeemer]: stat('Has Redeemer Influence'),
+  [ItemInfluence.Warlord]: stat('Has Warlord Influence')
+}
+
+const FLASK = {
+  INCR_CHARGE_RECOVERY: stat('#% increased Charge Recovery'),
+  INCR_EFFECT: stat('#% increased effect')
 }
 
 interface FilterBoolean { option?: 'true' | 'false' }
@@ -382,9 +387,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   for (const stat of stats) {
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
       const TARGET_ID = {
-        CRAFTED_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
-        EMPTY_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
-        TOTAL_MODIFIERS: STAT_BY_REF(TOTAL_MODS_TEXT.TOTAL_MODIFIERS[0])!.trade.ids[ModifierType.Pseudo][0]
+        CRAFTED_MODIFIERS: pseudoStatByRef(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
+        EMPTY_MODIFIERS: pseudoStatByRef(TOTAL_MODS_TEXT.EMPTY_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
+        TOTAL_MODIFIERS: pseudoStatByRef(TOTAL_MODS_TEXT.TOTAL_MODIFIERS[0])!.trade.ids[ModifierType.Pseudo][0]
       }
 
       query.stats.push({
@@ -408,10 +413,16 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       })
     } else if ( // https://github.com/SnosMe/awakened-poe-trade/issues/758
       item.category === ItemCategory.Flask &&
-      stat.statRef === '#% increased Charge Recovery' &&
-      !stats.some(s => s.statRef === '#% increased effect')
+      stat.statRef === FLASK.INCR_CHARGE_RECOVERY &&
+      !stats.some(s => s.statRef === FLASK.INCR_EFFECT)
     ) {
-      const reducedEffectId = STAT_BY_REF('#% increased effect')!.trade.ids[ModifierType.Explicit][0]
+      const statGroup = STAT_BY_REF_V2(FLASK.INCR_EFFECT)!
+      if (!('stats' in statGroup && statGroup.resolve.strat === 'select')) {
+        throw new Error(`Unexpected stat shape: ${FLASK.INCR_EFFECT}`)
+      }
+      const incrStat = statGroup.stats[statGroup.resolve.test.indexOf(null)]
+
+      const reducedEffectId = incrStat.trade.ids[ModifierType.Explicit][0]
       query.stats.push({
         type: 'not',
         disabled: stat.disabled,
@@ -472,35 +483,33 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
     }
   }
 
-  stats = stats.filter(stat => !INTERNAL_TRADE_IDS.includes(stat.tradeId[0] as any))
+  type BareStatFilter = Omit<StatFilter, 'statRef' | 'text' | 'tag' | 'sources'>
+  const realStats: BareStatFilter[] = stats.filter(stat =>
+    !INTERNAL_TRADE_IDS.includes(stat.tradeId[0] as any))
   if (filters.veiled) {
     for (const statRef of filters.veiled.statRefs) {
-      stats.push({
+      const statOrGroup = STAT_BY_REF_V2(statRef)!
+      const dbStats = ('stats' in statOrGroup) ? statOrGroup.stats : [statOrGroup]
+      realStats.push({
         disabled: filters.veiled.disabled,
-        statRef: undefined!,
-        text: undefined!,
-        tag: undefined!,
-        sources: undefined!,
-        tradeId: STAT_BY_REF(statRef)!.trade.ids[ModifierType.Veiled]
+        tradeId: dbStats
+          .filter(dbStat => ModifierType.Veiled in dbStat.trade.ids)
+          .map(dbStat => dbStat.trade.ids[ModifierType.Veiled][0])
       })
     }
   }
 
   if (filters.influences) {
     for (const influence of filters.influences) {
-      stats.push({
+      realStats.push({
         disabled: influence.disabled,
-        statRef: undefined!,
-        text: undefined!,
-        tag: undefined!,
-        sources: undefined!,
-        tradeId: STAT_BY_REF(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[ModifierType.Pseudo]
+        tradeId: pseudoStatByRef(INFLUENCE_PSEUDO_TEXT[influence.value])!.trade.ids[ModifierType.Pseudo]
       })
     }
   }
 
   const qAnd = query.stats[0]
-  for (const stat of stats) {
+  for (const stat of realStats) {
     if (stat.tradeId.length === 1) {
       qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat))
     } else {
@@ -597,48 +606,35 @@ export async function requestResults (
   })
 }
 
-function getMinMax (roll: StatFilter['roll']) {
+function getMinMax (roll: StatFilter['roll'], divisor: number) {
   if (!roll) {
     return { min: undefined, max: undefined }
   }
 
   const sign = roll.tradeInvert ? -1 : 1
-  const a = typeof roll.min === 'number' ? roll.min * sign : undefined
-  const b = typeof roll.max === 'number' ? roll.max * sign : undefined
+  const a = typeof roll.min === 'number' ? roll.min * sign / divisor : undefined
+  const b = typeof roll.max === 'number' ? roll.max * sign / divisor : undefined
 
   return !roll.tradeInvert ? { min: a, max: b } : { min: b, max: a }
 }
 
-function tradeIdToQuery (id: string, stat: StatFilter) {
-  // NOTE: if there will be too many overrides in the future,
-  //       consider moving them to stats.ndjson
-
+function tradeIdToQuery (id: string, stat: Pick<StatFilter, 'roll' | 'option' | 'disabled'>) {
   let roll = stat.roll
 
-  // fixes Corrupted Implicit "Bleeding cannot be inflicted on you"
-  if (id === 'implicit.stat_1901158930') {
-    if (stat.roll?.value === 100) {
-      roll = undefined // stat semantic type is flag
-    }
-  // fixes "Cannot be Poisoned" from Essence
-  } else if (id === 'explicit.stat_3835551335') {
-    if (stat.roll?.value === 100) {
-      roll = undefined // stat semantic type is flag
-    }
-  // fixes "Instant Recovery" on Flasks
-  } else if (id.endsWith('stat_1526933524')) {
-    if (stat.roll?.value === 100) {
-      roll = undefined // stat semantic type is flag
-    }
-  // fixes Delve "Reservation Efficiency of Skills"
-  } else if (id.endsWith('stat_1269219558')) {
-    roll = { ...roll!, tradeInvert: !(roll!.tradeInvert) }
+  const divMinMax = id.startsWith('{div_by_100}') ? 100 : 1
+  if (id.startsWith('{empty}') ||
+    (id.startsWith('{empty_if_100}') && roll?.value === 100)
+  ) {
+    roll = undefined
+  }
+  if (id.startsWith('{')) {
+    id = id.slice(id.indexOf('}') + 1)
   }
 
   return {
     id,
     value: {
-      ...getMinMax(roll),
+      ...getMinMax(roll, divMinMax),
       option: stat.option != null
         ? stat.option.value
         : undefined

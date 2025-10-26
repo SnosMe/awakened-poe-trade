@@ -95,3 +95,10 @@ export const ACCESSORY = new Set([
   ItemCategory.Trinket
   // ItemCategory.Quiver
 ])
+
+export const HEIST_EQUIPMENT = new Set([
+  ItemCategory.HeistTool,
+  ItemCategory.HeistBrooch,
+  ItemCategory.HeistGear,
+  ItemCategory.HeistCloak
+])

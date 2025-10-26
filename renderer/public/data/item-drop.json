@@ -377,6 +377,18 @@
   },
   {
     "query": [
+      "ITEM::An Audience With The King"
+    ],
+    "items": [
+      "UNIQUE::Pragmatism // Colosseum Plate",
+      "UNIQUE::The Untouched Soul // Gold Amulet",
+      "UNIQUE::The Light of Meaning // Prismatic Jewel",
+      "UNIQUE::The Burden of Shadows // Primordial Staff",
+      "ITEM::Perfect Forest Tiger"
+    ]
+  },
+  {
+    "query": [
       "ITEM::Abrasive Catalyst",
       "ITEM::Fertile Catalyst",
       "ITEM::Imbued Catalyst",

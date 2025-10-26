@@ -32,6 +32,27 @@ export interface Stat {
   }
 }
 
+export interface StatGroup {
+  resolve: StatGroupResolver
+  stats: Stat[]
+}
+
+export type StatOrGroup = Stat | StatGroup
+
+export type StatGroupResolver =
+  {
+    strat: 'select'
+    test: Array<string | null>
+  } | {
+    strat: 'trivial-merge'
+  } | {
+    strat: 'percent-merge'
+    kind: Array<'percent' | 'value'>
+  } | {
+    strat: 'flag-merge'
+    kind: Array<'flag' | 'value'>
+  }
+
 export interface DropEntry {
   query: string[]
   items: string[]
