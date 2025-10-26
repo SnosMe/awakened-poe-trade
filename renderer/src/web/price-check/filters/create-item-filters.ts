@@ -192,7 +192,10 @@ export function createFilters (
   }
 
   if (item.quality && item.quality >= 20) {
-    if (item.category === ItemCategory.Flask || item.category === ItemCategory.Tincture) {
+    if (
+      item.category === ItemCategory.Flask || item.category === ItemCategory.Tincture ||
+      opts.exact // for Weapons & Armour
+    ) {
       filters.quality = {
         value: item.quality,
         disabled: (item.quality <= 20)
