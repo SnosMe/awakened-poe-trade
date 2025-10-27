@@ -128,6 +128,7 @@ export interface TranslationDict {
   STACK_SIZE: string
   SOCKETS: string
   QUALITY: string
+  MEMORY_STRANDS: string
   PHYSICAL_DAMAGE: string
   ELEMENTAL_DAMAGE: string
   CRIT_CHANCE: string

@@ -135,6 +135,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           mirrored?: FilterBoolean
           identified?: FilterBoolean
           stack_size?: FilterRange
+          memory_level?: FilterRange
         }
       }
       armour_filters?: {
@@ -439,6 +440,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       case 'item.base_percentile':
         propSet(query.filters, 'armour_filters.filters.base_defence_percentile.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'armour_filters.filters.base_defence_percentile.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.memory_strands':
+        propSet(query.filters, 'misc_filters.filters.memory_level.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'misc_filters.filters.memory_level.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'item.armour':
         propSet(query.filters, 'armour_filters.filters.ar.min', typeof input.min === 'number' ? input.min : undefined)

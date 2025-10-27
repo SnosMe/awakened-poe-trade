@@ -19,6 +19,7 @@ export default {
   STACK_SIZE: '중첩 개수: ',
   SOCKETS: '홈: ',
   QUALITY: '퀄리티: ',
+  MEMORY_STRANDS: '기억 가닥: ',
   PHYSICAL_DAMAGE: '물리 피해: ',
   ELEMENTAL_DAMAGE: '원소 피해: ',
   CRIT_CHANCE: '치명타 확률: ',

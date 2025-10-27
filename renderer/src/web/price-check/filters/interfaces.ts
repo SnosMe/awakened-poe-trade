@@ -107,6 +107,7 @@ export interface StatFilter {
 
 export const INTERNAL_TRADE_IDS = [
   'item.base_percentile',
+  'item.memory_strands',
   'item.armour',
   'item.evasion_rating',
   'item.energy_shield',

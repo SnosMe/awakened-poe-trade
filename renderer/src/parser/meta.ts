@@ -91,9 +91,7 @@ export const ARMOUR = new Set([
 export const ACCESSORY = new Set([
   ItemCategory.Amulet,
   ItemCategory.Belt,
-  ItemCategory.Ring,
-  ItemCategory.Trinket
-  // ItemCategory.Quiver
+  ItemCategory.Ring
 ])
 
 export const HEIST_EQUIPMENT = new Set([

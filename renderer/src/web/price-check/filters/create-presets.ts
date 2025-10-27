@@ -63,7 +63,7 @@ export function createPresets (
   const likelyFinishedItem = (
     item.rarity === ItemRarity.Unique ||
     item.statsByType.some(calc => calc.type === ModifierType.Crafted) ||
-    item.quality === 20 || // quality > 20 can be used for selling bases, quality < 20 drops sometimes
+    (item.quality === 20 && !item.memoryStrands) || // quality > 20 can be used for selling bases, quality < 20 drops sometimes
     item.isCorrupted ||
     item.isMirrored
   )

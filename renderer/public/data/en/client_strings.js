@@ -19,6 +19,7 @@ export default {
   STACK_SIZE: 'Stack Size: ',
   SOCKETS: 'Sockets: ',
   QUALITY: 'Quality: ',
+  MEMORY_STRANDS: 'Memory Strands: ',
   PHYSICAL_DAMAGE: 'Physical Damage: ',
   ELEMENTAL_DAMAGE: 'Elemental Damage: ',
   CRIT_CHANCE: 'Critical Strike Chance: ',

@@ -9,7 +9,7 @@ import {
 } from '@/assets/data'
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
-import { ItemCategory } from './meta'
+import { ItemCategory, ACCESSORY } from './meta'
 import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE, IMPLICIT_LINE } from './advanced-mod-desc'
@@ -43,6 +43,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseGem,
   parseArmour,
   parseWeapon,
+  parseAccessory,
   parseFlask,
   parseTincture,
   parseStackSize,
@@ -494,14 +495,25 @@ function parseSockets (section: string[], item: ParsedItem) {
   return 'SECTION_SKIPPED'
 }
 
-function parseQualityNested (section: string[], item: ParsedItem) {
+function parseQualityNested (section: string[], item: ParsedItem): boolean {
   for (const line of section) {
     if (line.startsWith(_$.QUALITY)) {
       // "Quality: +20% (augmented)"
       item.quality = parseInt(line.slice(_$.QUALITY.length), 10)
-      break
+      return true
     }
   }
+  return false
+}
+
+function parseMemoryStrandsNested (section: string[], item: ParsedItem): boolean {
+  for (const line of section) {
+    if (line.startsWith(_$.MEMORY_STRANDS)) {
+      item.memoryStrands = parseInt(line.slice(_$.MEMORY_STRANDS.length), 10)
+      return true
+    }
+  }
+  return false
 }
 
 function parseArmour (section: string[], item: ParsedItem) {
@@ -532,6 +544,7 @@ function parseArmour (section: string[], item: ParsedItem) {
 
   if (isParsed === 'SECTION_PARSED') {
     parseQualityNested(section, item)
+    parseMemoryStrandsNested(section, item)
   }
 
   return isParsed
@@ -569,9 +582,20 @@ function parseWeapon (section: string[], item: ParsedItem) {
 
   if (isParsed === 'SECTION_PARSED') {
     parseQualityNested(section, item)
+    parseMemoryStrandsNested(section, item)
   }
 
   return isParsed
+}
+
+function parseAccessory (section: string[], item: ParsedItem) {
+  if (!item.category || !ACCESSORY.has(item.category)) return 'PARSER_SKIPPED'
+
+  if (parseMemoryStrandsNested(section, item)) {
+    return 'SECTION_PARSED'
+  }
+
+  return 'SECTION_SKIPPED'
 }
 
 function parseLogbookArea (section: string[], item: ParsedItem) {
@@ -693,11 +717,11 @@ function parseFlask (section: string[], item: ParsedItem) {
 function parseTincture (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.Tincture) return 'PARSER_SKIPPED'
 
-  parseQualityNested(section, item)
+  if (parseQualityNested(section, item)) {
+    return 'SECTION_PARSED'
+  }
 
-  return (item.quality !== undefined)
-    ? 'SECTION_PARSED'
-    : 'SECTION_SKIPPED'
+  return 'SECTION_SKIPPED'
 }
 
 function parseSentinelCharge (section: string[], item: ParsedItem) {

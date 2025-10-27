@@ -63,6 +63,7 @@
     "linked_sockets": "연결부: {0}",
     "white_sockets": "흰 홈: {0}",
     "quality": "퀄리티: {0}",
+    "memory_strands": "기억 가닥: {0}",
     "gem_level": "젬 레벨: {0}",
     "sentinel_charge": "Charge: {0}",
     "find_in_stash": "보관함에서 찾기",
