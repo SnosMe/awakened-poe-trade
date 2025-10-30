@@ -19,9 +19,7 @@ export interface Stat {
   dp?: true
   matchers: StatMatcher[]
   better: StatBetter
-  fromAreaMods?: true
-  fromUberAreaMods?: true
-  fromHeistAreaMods?: true
+  fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
   anointments?: Array<{ roll: number, oils: string }> // Ring anointments
   trade: {
     inverted?: true

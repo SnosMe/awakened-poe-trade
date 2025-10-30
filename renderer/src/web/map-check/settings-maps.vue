@@ -48,10 +48,10 @@ function tagToShowOrder (tag?: StatTag): number {
 function findAllAreaMods (): StatMatcher[] {
   const out: StatMatcher[] = []
   for (const stat of STATS_ITERATOR('AreaMods')) {
-    if (!stat.fromAreaMods && !stat.fromUberAreaMods && !stat.fromHeistAreaMods) continue
+    if (!stat.fromAreaMods) continue
 
-    const tag = (stat.fromHeistAreaMods && !stat.fromAreaMods) ? StatTag.HeistExclusive
-      : (stat.fromUberAreaMods && !stat.fromAreaMods) ? StatTag.UberMapExclusive : undefined
+    const tag = (stat.fromAreaMods === 'heist_exclusive') ? StatTag.HeistExclusive
+      : (stat.fromAreaMods === 'ubermap_exclusive') ? StatTag.UberMapExclusive : undefined
 
     for (const c of stat.matchers) {
       out.push({ matchStr: c.string, tag })
