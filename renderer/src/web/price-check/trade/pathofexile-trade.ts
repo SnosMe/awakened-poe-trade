@@ -228,6 +228,7 @@ interface FetchResult {
       currency: string
       type: '~price'
     }
+    fee?: number
     account: Account
   }
 }
@@ -244,6 +245,7 @@ export interface PricingResult {
   priceCurrency: string
   isMine: boolean
   hasNote: boolean
+  hasFee: boolean
   accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
   ign: string
@@ -601,12 +603,15 @@ export async function requestResults (
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
       hasNote: result.item.note != null,
+      hasFee: result.listing.fee != null,
       isMine: (result.listing.account.name === opts.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
-      accountStatus: result.listing.account.online
-        ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
-        : 'offline'
+      accountStatus: (result.listing.fee != null)
+        ? 'online'
+        : result.listing.account.online
+          ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
+          : 'offline'
     }
   })
 }
