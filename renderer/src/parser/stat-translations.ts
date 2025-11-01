@@ -61,7 +61,7 @@ export function * linesToStatStrings (lines: string[]): Generator<StatString, st
     }
     notParsedLines.push(lines[start])
   }
-  return notParsedLines
+  return notParsedLines.filter(line => line.length)
 }
 
 const PLACEHOLDER_MAP = [
