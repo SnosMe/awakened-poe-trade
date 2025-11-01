@@ -11,6 +11,7 @@ export function createPresets (
   opts: {
     league: string
     currency: string | undefined
+    merchantOnly: boolean | undefined
     collapseListings: 'app' | 'api'
     activateStockFilter: boolean
     searchStatRange: number

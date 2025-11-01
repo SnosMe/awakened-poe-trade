@@ -115,7 +115,8 @@ export default defineComponent({
         searchStatRange: 10,
         showCursor: true,
         requestPricePrediction: false,
-        rememberCurrency: false
+        rememberCurrency: false,
+        rememberMerchantOnly: true
       }
     }
   } satisfies WidgetSpec,
