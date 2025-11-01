@@ -41,6 +41,9 @@ export interface ItemFilters {
   foil?: {
     disabled: boolean
   }
+  foulborn?: {
+    value: boolean
+  }
   influences?: Array<{
     value: ItemInfluence
     disabled: boolean
@@ -140,6 +143,7 @@ export enum FilterTag {
   Fractured = 'fractured',
   Corrupted = 'corrupted',
   Synthesised = 'synthesised',
+  Foulborn = 'foulborn',
   Eldritch = 'eldritch',
   Variant = 'variant',
   Property = 'property',

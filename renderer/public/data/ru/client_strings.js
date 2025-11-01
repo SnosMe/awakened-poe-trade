@@ -128,6 +128,8 @@ export default {
   ],
   FOIL_UNIQUE: 'Особый уникальный предмет',
   UNMODIFIABLE: 'Неизменяемый',
+  FOULBORN_NAME: /^Нечестивый: (.*)$/,
+  FOULBORN_MODIFIER: 'Нечестивое уникальное свойство',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

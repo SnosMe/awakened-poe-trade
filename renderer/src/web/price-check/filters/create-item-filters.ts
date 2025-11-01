@@ -344,6 +344,12 @@ export function createFilters (
     }
   }
 
+  if (item.rarity === ItemRarity.Unique) {
+    filters.foulborn = {
+      value: Boolean(item.isFoulborn)
+    }
+  }
+
   return filters
 }
 

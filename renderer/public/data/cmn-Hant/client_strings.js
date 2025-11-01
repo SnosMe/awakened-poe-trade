@@ -95,6 +95,8 @@ export default {
   INCURSION_MODS: ['瓜特利斯的', '柔派克的', '塔普塔特的', '特卡蒂的', '麥塔爾的', '麥塔爾之', '希特克拉多的', '希特克拉多之', '特卡蒂之', '瓜特利斯之', '普希瓦爾之'],
   FOIL_UNIQUE: '貼模傳奇',
   UNMODIFIABLE: '不可調整的',
+  FOULBORN_NAME: /^穢生 (.*)$/,
+  FOULBORN_MODIFIER: 'Foulborn Unique Modifier',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

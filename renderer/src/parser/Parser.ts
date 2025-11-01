@@ -32,6 +32,7 @@ interface ParserState extends ParsedItem {
 const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseUnidentified,
   { virtual: parseSuperior },
+  { virtual: parseFoulborn },
   parseSynthesised,
   parseCategoryByHelpText,
   { virtual: normalizeName },
@@ -762,6 +763,15 @@ function parseSuperior (item: ParserState) {
     if (_$REF.ITEM_SUPERIOR.test(item.name)) {
       item.name = _$REF.ITEM_SUPERIOR.exec(item.name)![1]
     }
+  }
+}
+
+function parseFoulborn (item: ParserState) {
+  if (item.rarity !== ItemRarity.Unique || item.isUnidentified) return
+
+  if (_$.FOULBORN_NAME.test(item.name)) {
+    item.name = _$.FOULBORN_NAME.exec(item.name)![1]
+    item.isFoulborn = true
   }
 }
 

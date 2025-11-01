@@ -164,6 +164,7 @@
     "tag_variant": "variant",
     "tag_corrupted": "corrupted",
     "tag_synthesised": "synthesised",
+    "tag_foulborn": "foulborn",
     "tag_eldritch": "eldritch",
     "tag_pseudo": "pseudo",
     "tag_explicit": "explicit",
