@@ -83,6 +83,7 @@
     "linked_sockets": "Связи: {0}",
     "white_sockets": "Белые: {0}",
     "quality": "Качество: {0}",
+    "memory_strands": "Пряди воспоминаний: {0}",
     "gem_level": "Уровень: {0}",
     "sentinel_charge": "Заряд: {0}",
     "find_in_stash": "Найти в тайнике",
@@ -196,6 +197,7 @@
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",
     "in_league_toggle": "В лиге",
+    "merchant_toggle": "Только торговец",
     "listed_any_time": "Любое время",
     "listed_1day": "До 1-го дня",
     "listed_3days": "До 3-х дней",

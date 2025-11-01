@@ -19,9 +19,7 @@ export interface Stat {
   dp?: true
   matchers: StatMatcher[]
   better: StatBetter
-  fromAreaMods?: true
-  fromUberAreaMods?: true
-  fromHeistAreaMods?: true
+  fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
   anointments?: Array<{ roll: number, oils: string }> // Ring anointments
   trade: {
     inverted?: true
@@ -128,6 +126,7 @@ export interface TranslationDict {
   STACK_SIZE: string
   SOCKETS: string
   QUALITY: string
+  MEMORY_STRANDS: string
   PHYSICAL_DAMAGE: string
   ELEMENTAL_DAMAGE: string
   CRIT_CHANCE: string

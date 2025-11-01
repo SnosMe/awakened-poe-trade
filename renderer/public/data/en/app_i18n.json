@@ -66,6 +66,7 @@
     "linked_sockets": "Links: {0}",
     "white_sockets": "White: {0}",
     "quality": "Quality: {0}",
+    "memory_strands": "Memory Strands: {0}",
     "gem_level": "Level: {0}",
     "sentinel_charge": "Charge: {0}",
     "find_in_stash": "Find in Stash",
@@ -179,6 +180,7 @@
   "online_filter": {
     "offline_toggle": "Offline & Online",
     "in_league_toggle": "In League",
+    "merchant_toggle": "Merchant Only",
     "listed_any_time": "Listed: Any Time",
     "listed_1day": "1 Day Ago",
     "listed_3days": "3 Days Ago",

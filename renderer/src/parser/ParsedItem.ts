@@ -37,6 +37,7 @@ export interface ParsedItem {
   gemLevel?: number
   areaLevel?: number
   talismanTier?: number
+  memoryStrands?: number
   quality?: number
   sockets?: {
     linked?: number // only 5 or 6

@@ -19,6 +19,7 @@ export default {
   STACK_SIZE: '중첩 개수: ',
   SOCKETS: '홈: ',
   QUALITY: '퀄리티: ',
+  MEMORY_STRANDS: '기억 가닥: ',
   PHYSICAL_DAMAGE: '물리 피해: ',
   ELEMENTAL_DAMAGE: '원소 피해: ',
   CRIT_CHANCE: '치명타 확률: ',
@@ -91,7 +92,7 @@ export default {
   WARLORD_MODS: ['전쟁군주의','- 점령자'],
   DELVE_MODS: ['지하의','- 지하'],
   VEILED_MODS: ['선택','- 질서','선택받은'],
-  INCURSION_MODS: ['과텔리치의','조펙의','토포탄테의','타카티의','마타틀의','- 마타틀','시타콰로틀의','- 시타콰로틀','- 타카티','- 과텔리치','- 푸후아테'],
+  INCURSION_MODS: ['과텔리치의','조펙의','토포탄테의','타카티의','마타틀의','- 마타틀','시타콰로틀의','- 시타콰로틀','- 타카티','- 과텔리치','- 푸후알테'],
   FOIL_UNIQUE: '반짝이 버전 고유 아이템',
   UNMODIFIABLE: '속성 부여 불가',
   // ---

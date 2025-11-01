@@ -89,7 +89,7 @@ interface FilterRange { min?: number, max?: number }
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
-    status: { option: 'online' | 'onlineleague' | 'any' }
+    status: { option: 'online' | 'securable' | 'available' | 'any' }
     name?: string | { discriminator: string, option: string }
     type?: string | { discriminator: string, option: string }
     stats: Array<{
@@ -135,6 +135,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           mirrored?: FilterBoolean
           identified?: FilterBoolean
           stack_size?: FilterRange
+          memory_level?: FilterRange
         }
       }
       armour_filters?: {
@@ -227,6 +228,7 @@ interface FetchResult {
       currency: string
       type: '~price'
     }
+    fee?: number
     account: Account
   }
 }
@@ -243,6 +245,7 @@ export interface PricingResult {
   priceCurrency: string
   isMine: boolean
   hasNote: boolean
+  hasFee: boolean
   accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
   ign: string
@@ -254,7 +257,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       status: {
         option: filters.trade.offline
           ? 'any'
-          : (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
+          : (filters.trade.merchantOnly ? 'securable' : 'available')
       },
       stats: [
         { type: 'and', filters: [] }
@@ -440,6 +443,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
         propSet(query.filters, 'armour_filters.filters.base_defence_percentile.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'armour_filters.filters.base_defence_percentile.max', typeof input.max === 'number' ? input.max : undefined)
         break
+      case 'item.memory_strands':
+        propSet(query.filters, 'misc_filters.filters.memory_level.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'misc_filters.filters.memory_level.max', typeof input.max === 'number' ? input.max : undefined)
+        break
       case 'item.armour':
         propSet(query.filters, 'armour_filters.filters.ar.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'armour_filters.filters.ar.max', typeof input.max === 'number' ? input.max : undefined)
@@ -596,12 +603,15 @@ export async function requestResults (
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
       hasNote: result.item.note != null,
+      hasFee: result.listing.fee != null,
       isMine: (result.listing.account.name === opts.accountName),
       ign: result.listing.account.lastCharacterName,
       accountName: result.listing.account.name,
-      accountStatus: result.listing.account.online
-        ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
-        : 'offline'
+      accountStatus: (result.listing.fee != null)
+        ? 'online'
+        : result.listing.account.online
+          ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
+          : 'offline'
     }
   })
 }

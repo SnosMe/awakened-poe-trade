@@ -2,7 +2,7 @@
   <ui-popover :delay="[80, null]" placement="bottom-start" boundary="#price-window">
     <template #target>
       <button class="rounded mr-1 px-2 truncate" :class="showWarning() ? 'text-orange-500' : 'text-gray-500'">
-        <span><i class="fas fa-history"></i> {{ t(filters.trade.offline ? 'Offline' : 'Online') }}</span>
+        <span><i class="fas fa-history"></i> {{ t(popoverLabelId()) }}</span>
         <span v-if="showLeagueName()">, {{ filters.trade.league }}</span>
       </button>
     </template>
@@ -26,8 +26,10 @@
         </div>
         <div class="flex flex-col gap-y-1">
           <div class="mb-1">
-            <ui-toggle :class="{ 'invisible': filters.trade.offline }"
+            <ui-toggle v-if="api === 'bulk'" :class="{ 'invisible': filters.trade.offline }"
               v-model="filters.trade.onlineInLeague">{{ t(':in_league_toggle') }}</ui-toggle>
+            <ui-toggle v-if="api === 'trade'" :class="{ 'invisible': filters.trade.offline }"
+              v-model="filters.trade.merchantOnly">{{ t(':merchant_toggle') }}</ui-toggle>
           </div>
           <ui-radio v-for="league of tradeLeagues" :key="league.id"
             v-model="filters.trade.league" :value="league.id">{{ league.id }}</ui-radio>
@@ -62,6 +64,10 @@ export default defineComponent({
     byTime: {
       type: Boolean,
       default: false
+    },
+    api: {
+      type: String as PropType<'trade' | 'bulk'>,
+      required: true
     }
   },
   setup (props) {
@@ -77,6 +83,14 @@ export default defineComponent({
           ['1day', '3days', '1week'].includes(props.filters.trade.listed)) ||
         props.filters.trade.currency
       ),
+      popoverLabelId: () => {
+        if (props.filters.trade.offline) {
+          return 'Offline'
+        } else if (props.api === 'trade' && props.filters.trade.merchantOnly) {
+          return ':merchant_toggle'
+        }
+        return 'Online'
+      },
       onOfflineUpdate (offline: boolean) {
         const { filters } = props
         filters.trade.offline = offline

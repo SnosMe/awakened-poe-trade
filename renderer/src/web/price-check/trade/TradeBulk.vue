@@ -8,15 +8,15 @@
         <div v-else class="flex items-center">
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'xchgChaos' ? 'transparent' : undefined }"
             @click="selectedCurr = 'xchgChaos'">
-            <img src="/images/chaos.png" class="trade-bulk-currency-icon">
+            <img src="/images/chaos.png" :class="$style.currencyIcon">
             <span>{{ result.xchgChaos.listed.value?.total ?? '?' }}</span>
           </button>
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'xchgStable' ? 'transparent' : undefined }"
             @click="selectedCurr = 'xchgStable'">
-            <img src="/images/divine.png" class="trade-bulk-currency-icon">
+            <img src="/images/divine.png" :class="$style.currencyIcon">
             <span>{{ result.xchgStable.listed.value?.total ?? '?' }}</span>
           </button>
-          <span class="ml-1"><online-filter :filters="filters" /></span>
+          <span class="ml-1"><online-filter :filters="filters" api="bulk" /></span>
         </div>
       </div>
       <trade-links v-if="result"
@@ -26,24 +26,24 @@
       <table class="table-stripped w-full">
         <thead>
           <tr class="text-left">
-            <th class="trade-table-heading">
+            <th :class="$style.tableHeading">
               <div class="px-2">{{ t(':price') }}</div>
             </th>
-            <th class="trade-table-heading">
+            <th :class="$style.tableHeading">
               <div class="pl-1 pr-2 flex text-xs" style="line-height: 1.3125rem;"><span class="w-8 inline-block text-right -ml-px mr-px">{{ (selectedCurr === 'xchgChaos') ? 'chaos' : 'div' }}</span><span>{{ '\u2009' }}/{{ '\u2009' }}</span><span class="w-8 inline-block">{{ t(':bulk') }}</span></div>
             </th>
-            <th class="trade-table-heading">
+            <th :class="$style.tableHeading">
               <div class="px-1">{{ t(':stock') }}</div>
             </th>
-            <th class="trade-table-heading">
+            <th :class="$style.tableHeading">
               <div class="px-1">{{ t(':fulfill') }}</div>
             </th>
-            <th class="trade-table-heading" :class="{ 'w-full': !showSeller }">
+            <th :class="[$style.tableHeading, { 'w-full': !showSeller }]">
               <div class="pr-2 pl-4">
                 <span class="ml-1" style="padding-left: 0.375rem;">{{ t(':listed') }}</span>
               </div>
             </th>
-            <th v-if="showSeller" class="trade-table-heading w-full">
+            <th v-if="showSeller" class="w-full" :class="$style.tableHeading">
               <div class="px-2">{{ t(':seller') }}</div>
             </th>
           </tr>
@@ -60,7 +60,7 @@
               <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
               <td class="pr-2 pl-4 whitespace-nowrap">
                 <div class="inline-flex items-center">
-                  <div class="account-status" :class="result.accountStatus"></div>
+                  <div :class="[$style.accountStatus, $style[result.accountStatus]]"></div>
                   <div class="ml-1 font-sans text-xs">{{ result.relativeDate }}</div>
                 </div>
                 <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
@@ -252,8 +252,29 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss">
-.trade-bulk-currency-icon {
+<style lang="postcss" module>
+.tableHeading {
+  @apply sticky top-0;
+  @apply bg-gray-800;
+  @apply p-0 m-0;
+  white-space: nowrap;
+
+  & > div {
+    @apply border-b border-gray-700;
+  }
+}
+
+.accountStatus {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 100%;
+
+  /* &.online {} */
+  &.offline { @apply bg-red-600; }
+  &.afk { @apply bg-orange-500; }
+}
+
+.currencyIcon {
   width: 1.75rem;
   height: 1.75rem;
   margin: -0.4375rem;

@@ -154,7 +154,19 @@ async function loadStats (language: string) {
     return { stat, matcher }
   }
 
-  STATS_ITERATOR = ndjsonFindLines<Stat>(ndjson)
+  const _STATS_ITERATOR = ndjsonFindLines<StatOrGroup>(ndjson)
+
+  STATS_ITERATOR = function * (includes, andIncludes) {
+    for (const statOrGroup of _STATS_ITERATOR(includes, andIncludes)) {
+      if ('stats' in statOrGroup) {
+        for (const stat of statOrGroup.stats) {
+          yield stat
+        }
+      } else {
+        yield statOrGroup
+      }
+    }
+  }
 }
 
 export function pseudoStatByRef (ref: string): Stat | undefined {
