@@ -120,6 +120,10 @@ export function createFilters (
       filters.mapBlighted = { value: item.mapBlighted }
     }
 
+    if (item.mapCompletionReward) {
+      filters.mapCompletionReward = { value: item.mapCompletionReward }
+    }
+
     filters.mapTier = {
       value: item.mapTier!,
       disabled: false

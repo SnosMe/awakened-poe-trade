@@ -34,6 +34,7 @@ export interface ParsedItem {
   weaponELEMENTAL?: number
   mapBlighted?: 'Blighted' | 'Blight-ravaged'
   mapTier?: number
+  mapCompletionReward?: string
   gemLevel?: number
   areaLevel?: number
   talismanTier?: number
