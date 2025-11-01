@@ -53,6 +53,8 @@
     <ui-checkbox class="mb-4"
       v-model="rememberCurrency">{{ t(':remember_currency') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
+      v-model="rememberMerchantOnly">{{ t(':remember_merchant') }}</ui-checkbox>
+    <ui-checkbox class="mb-4"
       v-model="activateStockFilter">{{ t(':select_stock') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
       v-model="requestPricePrediction">{{ t(':show_prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></ui-checkbox>
@@ -136,6 +138,7 @@ export default defineComponent({
       smartInitialSearch: configModelValue(() => configWidget.value, 'smartInitialSearch'),
       lockedInitialSearch: configModelValue(() => configWidget.value, 'lockedInitialSearch'),
       rememberCurrency: configModelValue(() => configWidget.value, 'rememberCurrency'),
+      rememberMerchantOnly: configModelValue(() => configWidget.value, 'rememberMerchantOnly'),
       searchStatRange: computed<number>({
         get () {
           return configWidget.value.searchStatRange
