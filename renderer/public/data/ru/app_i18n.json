@@ -197,6 +197,7 @@
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",
     "in_league_toggle": "В лиге",
+    "merchant_toggle": "Только торговец",
     "listed_any_time": "Любое время",
     "listed_1day": "До 1-го дня",
     "listed_3days": "До 3-х дней",

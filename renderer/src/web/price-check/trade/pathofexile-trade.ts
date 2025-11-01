@@ -89,7 +89,7 @@ interface FilterRange { min?: number, max?: number }
 
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
-    status: { option: 'online' | 'onlineleague' | 'any' }
+    status: { option: 'online' | 'securable' | 'available' | 'any' }
     name?: string | { discriminator: string, option: string }
     type?: string | { discriminator: string, option: string }
     stats: Array<{
@@ -257,7 +257,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       status: {
         option: filters.trade.offline
           ? 'any'
-          : (filters.trade.onlineInLeague ? 'onlineleague' : 'online')
+          : (filters.trade.merchantOnly ? 'securable' : 'available')
       },
       stats: [
         { type: 'and', filters: [] }

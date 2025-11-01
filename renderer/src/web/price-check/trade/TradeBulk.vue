@@ -16,7 +16,7 @@
             <img src="/images/divine.png" :class="$style.currencyIcon">
             <span>{{ result.xchgStable.listed.value?.total ?? '?' }}</span>
           </button>
-          <span class="ml-1"><online-filter :filters="filters" /></span>
+          <span class="ml-1"><online-filter :filters="filters" api="bulk" /></span>
         </div>
       </div>
       <trade-links v-if="result"
