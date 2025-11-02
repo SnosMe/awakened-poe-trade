@@ -424,6 +424,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'filters.hide_for_crafting'
       }
+    } else if (filter.tag === FilterTag.Foulborn || filter.tag === FilterTag.Variant) {
+      filter.disabled = false
     }
   }
 
