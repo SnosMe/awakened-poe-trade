@@ -22,6 +22,9 @@ if (!app.requestSingleInstanceLock()) {
 if (process.platform !== 'darwin') {
   app.disableHardwareAcceleration()
 }
+if (process.platform === 'linux') {
+  app.commandLine.appendSwitch('ozone-platform', 'x11')
+}
 app.enableSandbox()
 
 let tray: AppTray
