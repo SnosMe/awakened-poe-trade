@@ -769,8 +769,8 @@ function parseSuperior (item: ParserState) {
 function parseFoulborn (item: ParserState) {
   if (item.rarity !== ItemRarity.Unique || item.isUnidentified) return
 
-  if (_$.FOULBORN_NAME.test(item.name)) {
-    item.name = _$.FOULBORN_NAME.exec(item.name)![1]
+  if (_$REF.FOULBORN_NAME.test(item.name)) {
+    item.name = _$REF.FOULBORN_NAME.exec(item.name)![1]
     item.isFoulborn = true
   }
 }
