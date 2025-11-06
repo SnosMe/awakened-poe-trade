@@ -291,7 +291,8 @@
     "getting_price": "Получение цены {0}",
     "getting_price_from": "с poe.ninja \u2026",
     "you_have": "В наличии",
-    "stack": "Стак"
+    "stack": "Стак",
+    "legacy_bulk_xchg_msg": "Используйте внутриигровой рынок обмена валюты для этого предмета."
   },
   "settings": {
     "title": "Настройки - Awakened PoE Trade",

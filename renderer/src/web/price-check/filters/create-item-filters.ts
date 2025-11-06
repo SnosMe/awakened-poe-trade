@@ -44,7 +44,7 @@ export function createFilters (
     }
     return filters
   }
-  if (item.stackSize || tradeTag(item)) {
+  if (item.stackSize || tradeTag(item) || item.info.exchangeable) {
     filters.stackSize = {
       value: item.stackSize?.value || 1,
       disabled: !(item.stackSize && item.stackSize.value > 1 && opts.activateStockFilter)

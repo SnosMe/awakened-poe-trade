@@ -3,7 +3,7 @@ import type { ItemFilters, StatFilter } from '../filters/interfaces'
 import { AppConfig } from '@/web/Config'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
-import { ParsedItem, ItemCategory } from '@/parser'
+import { ParsedItem } from '@/parser'
 export { poeWebApi as getTradeEndpoint } from '@/web/Config'
 
 export interface Account {
@@ -22,20 +22,7 @@ export type TradeResponse<T> = (T & { error?: null }) | {
 }
 
 export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filters: ItemFilters): 'trade' | 'bulk' {
-  if (stats.some(s => !s.disabled)) {
-    return 'trade'
-  }
-
-  if (filters.stackSize) {
-    if (
-      item.category === ItemCategory.DivinationCard ||
-      item.category === ItemCategory.Map
-    ) {
-      return filters.stackSize.disabled ? 'trade' : 'bulk'
-    }
-  }
-
-  return tradeTag(item) != null ? 'bulk' : 'trade'
+  return (item.info.exchangeable) ? 'bulk' : 'trade'
 }
 
 export function tradeTag (item: ParsedItem): string | undefined {

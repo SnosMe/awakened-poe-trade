@@ -275,7 +275,8 @@
     "getting_price": "Getting price {0}",
     "getting_price_from": "from poe.ninja \u2026",
     "you_have": "You have",
-    "stack": "Stack"
+    "stack": "Stack",
+    "legacy_bulk_xchg_msg": "Please use the in-game Currency Exchange Market for this item."
   },
   "settings": {
     "title": "Settings - Awakened PoE Trade",

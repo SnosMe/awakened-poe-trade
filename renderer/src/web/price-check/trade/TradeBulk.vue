@@ -1,5 +1,8 @@
 <template>
-  <div v-if="!error" class="layout-column min-h-0" style="height: auto;">
+  <div v-if="featureDisabled" :class="$style.legacyMessage">
+    {{ t(':legacy_bulk_xchg_msg') }}
+  </div>
+  <div v-else-if="!error" class="layout-column min-h-0" style="height: auto;">
     <!-- @TODO: fix "Matched" text jumping (min-height: 22px) -->
     <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 1.375rem;">
       <div class="flex items-center text-gray-500">
@@ -195,7 +198,7 @@ export default defineComponent({
   },
   setup (props) {
     const widget = computed(() => AppConfig<PriceCheckWidget>('price-check')!)
-    const { error, result, search } = useBulkApi()
+    const { error, result } = useBulkApi()
 
     const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
@@ -241,7 +244,8 @@ export default defineComponent({
       result,
       selectedResults,
       selectedCurr,
-      execSearch: () => { search(props.item, props.filters) },
+      execSearch: () => { /* noop */ },
+      featureDisabled: true,
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
       openTradeLink () {
@@ -280,5 +284,12 @@ export default defineComponent({
   margin: -0.4375rem;
   margin-right: 0.125rem;
   filter: grayscale(1);
+}
+
+.legacyMessage {
+  @apply rounded p-2;
+  @apply border border-gray-600 bg-gray-700;
+  text-wrap-style: balance;
+  text-align: center;
 }
 </style>
