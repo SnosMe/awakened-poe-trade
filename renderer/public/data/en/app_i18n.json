@@ -303,7 +303,7 @@
     "restore_clipboard" :"Restore clipboard",
     "show_overlay_ready" :"Show a notification when the Overlay detects a PoE window",
     "debug_hotkeys": "Record all key presses",
-    "preferred_trade_site": "Preferred trade site"
+    "use_intl_site": "Force the English version of the site"
   },
   "price_check": {
     "name": "Price check",
