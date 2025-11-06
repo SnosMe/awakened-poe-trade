@@ -116,7 +116,7 @@ function useTradeApi () {
     const out: Array<PricingResult & { listedTimes: number }> = []
     for (const result of fetchResults.value) {
       if (result == null) break
-      if (out.length === 0) {
+      if (out.length === 0 || result.hasFee) {
         out.push({ listedTimes: 1, ...result })
         continue
       }
