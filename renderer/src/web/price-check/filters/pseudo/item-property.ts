@@ -166,13 +166,15 @@ function weaponProps (ctx: FiltersCreationContext) {
   }
 
   if (item.weaponELEMENTAL) {
-    ctx.filters.push(propToFilter({
-      ref: 'Total DPS: #',
-      tradeId: 'item.total_dps',
-      roll: dps,
-      sources: [],
-      disabled: false
-    }, ctx))
+    if (item.weaponPHYSICAL) {
+      ctx.filters.push(propToFilter({
+        ref: 'Total DPS: #',
+        tradeId: 'item.total_dps',
+        roll: dps,
+        sources: [],
+        disabled: false
+      }, ctx))
+    }
 
     ctx.filters.push(propToFilter({
       ref: 'Elemental DPS: #',
