@@ -152,7 +152,8 @@
     "sanctum_relic": "Реликвия Святилища",
     "tincture": "Микстура",
     "azmeri_charm": "Оберег",
-    "idol": "Идол"
+    "idol": "Идол",
+    "graft": "Нарост"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",
