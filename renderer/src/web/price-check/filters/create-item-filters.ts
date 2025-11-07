@@ -83,15 +83,16 @@ export function createFilters (
         disabled: false
       }
     }
-    if (item.info.refName === 'Mirrored Tablet' || item.info.refName === 'Forbidden Tome') {
+    if (item.info.refName === 'Mirrored Tablet') {
       filters.areaLevel = {
         value: item.areaLevel!,
         disabled: false
       }
     }
-    if (item.info.refName === 'Filled Coffin') {
+    // Incubators, Wombgifts, Forbidden Tome
+    if (item.itemLevel) {
       filters.itemLevel = {
-        value: item.itemLevel!,
+        value: item.itemLevel,
         disabled: false
       }
     }
@@ -170,7 +171,8 @@ export function createFilters (
       let disabled = opts.exact
       if (
         item.category === ItemCategory.ClusterJewel ||
-        item.category === ItemCategory.Idol
+        item.category === ItemCategory.Idol ||
+        item.category === ItemCategory.Graft
       ) {
         disabled = true
       } else if (

@@ -49,7 +49,8 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.SanctumRelic, 'sanctum.relic'],
   [ItemCategory.Tincture, 'tincture'],
   [ItemCategory.Charm, 'azmeri.charm'],
-  [ItemCategory.Idol, 'idol']
+  [ItemCategory.Idol, 'idol'],
+  [ItemCategory.Graft, 'graft']
 ])
 
 const TOTAL_MODS_TEXT = {
