@@ -41,7 +41,7 @@ export function createFilters (
   if (item.category === ItemCategory.CapturedBeast) {
     filters.searchExact = {
       baseType: item.info.name,
-      baseTypeTrade: item.info.refName // NOTE: always English on trade
+      baseTypeTrade: t(opts, item.info)
     }
     return filters
   }
