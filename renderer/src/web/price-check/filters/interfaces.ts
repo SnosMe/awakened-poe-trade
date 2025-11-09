@@ -25,6 +25,7 @@ export interface ItemFilters {
   }
   rarity?: {
     value: string
+    disabled: boolean
   }
   linkedSockets?: FilterNumeric
   whiteSockets?: FilterNumeric

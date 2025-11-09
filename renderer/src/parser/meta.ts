@@ -38,6 +38,7 @@ export enum ItemCategory {
   HeistCloak = 'Heist Cloak',
   Trinket = 'Trinket',
   Invitation = 'Invitation',
+  ExpeditionLogbook = 'Expedition Logbook',
   Gem = 'Gem',
   Currency = 'Currency',
   DivinationCard = 'Divination Card',
@@ -100,4 +101,21 @@ export const HEIST_EQUIPMENT = new Set([
   ItemCategory.HeistBrooch,
   ItemCategory.HeistGear,
   ItemCategory.HeistCloak
+])
+
+export const MAGIC_ONLY_OR_UNIQUE_ITEM = new Set([
+  ItemCategory.Flask,
+  ItemCategory.Tincture,
+  ItemCategory.Voidstone,
+  ItemCategory.SanctumRelic,
+  ItemCategory.Charm
+])
+
+export const CONSUMABLE_CRAFTABLE_ITEM = new Set([
+  ItemCategory.Map,
+  ItemCategory.HeistBlueprint,
+  ItemCategory.HeistContract,
+  ItemCategory.Invitation,
+  ItemCategory.MemoryLine,
+  ItemCategory.ExpeditionLogbook
 ])

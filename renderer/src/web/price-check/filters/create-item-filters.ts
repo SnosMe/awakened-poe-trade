@@ -1,5 +1,6 @@
 import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { MAGIC_ONLY_OR_UNIQUE_ITEM, CONSUMABLE_CRAFTABLE_ITEM } from '@/parser/meta'
 import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF } from '@/assets/data'
@@ -241,7 +242,18 @@ export function createFilters (
 
   if (forAdornedJewel) {
     filters.rarity = {
-      value: 'magic'
+      value: 'magic',
+      disabled: false
+    }
+  } else if (
+    opts.exact &&
+    item.rarity === ItemRarity.Magic &&
+    !CONSUMABLE_CRAFTABLE_ITEM.has(item.category!) &&
+    !MAGIC_ONLY_OR_UNIQUE_ITEM.has(item.category!)
+  ) {
+    filters.rarity = {
+      value: 'magic',
+      disabled: true
     }
   } else if (
     item.rarity === ItemRarity.Normal ||
@@ -249,7 +261,8 @@ export function createFilters (
     item.rarity === ItemRarity.Rare
   ) {
     filters.rarity = {
-      value: 'nonunique'
+      value: 'nonunique',
+      disabled: false
     }
   }
 

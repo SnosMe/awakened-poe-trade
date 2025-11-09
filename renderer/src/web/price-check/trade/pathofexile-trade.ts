@@ -303,7 +303,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   if (filters.foil && !filters.foil.disabled) {
     propSet(query.filters, 'type_filters.filters.rarity.option', 'uniquefoil')
   } else if (filters.rarity) {
-    propSet(query.filters, 'type_filters.filters.rarity.option', filters.rarity.value)
+    propSet(query.filters, 'type_filters.filters.rarity.option', (filters.rarity.disabled) ? 'nonunique' : filters.rarity.value)
   }
 
   if (activeSearch.category) {
