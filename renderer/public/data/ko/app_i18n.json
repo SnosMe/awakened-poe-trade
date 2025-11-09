@@ -270,7 +270,8 @@
     "getting_price": "Getting price {0}",
     "getting_price_from": "from poe.ninja \u2026",
     "you_have": "가진 갯수",
-    "stack": "스택"
+    "stack": "스택",
+    "market_ratio": "시장 비율"
   },
   "settings": {
     "title": "세팅 - Awakened PoE Trade",

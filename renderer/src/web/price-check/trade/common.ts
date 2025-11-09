@@ -22,7 +22,11 @@ export type TradeResponse<T> = (T & { error?: null }) | {
 }
 
 export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filters: ItemFilters): 'trade' | 'bulk' {
-  return (item.info.exchangeable) ? 'bulk' : 'trade'
+  if (stats.some(s => !s.disabled)) {
+    return 'trade'
+  }
+
+  return tradeTag(item) != null ? 'bulk' : 'trade'
 }
 
 export function tradeTag (item: ParsedItem): string | undefined {

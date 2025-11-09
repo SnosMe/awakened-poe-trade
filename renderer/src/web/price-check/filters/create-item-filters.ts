@@ -26,7 +26,8 @@ export function createFilters (
     trade: {
       offline: false,
       onlineInLeague: false,
-      merchantOnly: !PERMANENT_SC.includes(opts.league),
+      merchantOnly: !PERMANENT_SC.includes(opts.league) &&
+        item.category !== ItemCategory.DivinationCard,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
