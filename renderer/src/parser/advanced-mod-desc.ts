@@ -66,7 +66,7 @@ export function parseModInfoLine (line: string, type: ModifierType): ModifierInf
         generation = 'foulborn'; break
     }
 
-    name = match.groups!.name || undefined
+    name = match.groups!.name ?? undefined
     tier = Number(match.groups!.tier) || undefined
     rank = Number(match.groups!.rank) || undefined
   }
