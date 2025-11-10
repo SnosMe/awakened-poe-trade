@@ -102,6 +102,7 @@ import { BulkSearch, execBulkSearch, createTradeRequest, PricingResult } from '.
 import { getTradeEndpoint } from './common'
 import { AppConfig } from '@/web/Config'
 import { usePoeninja } from '@/web/background/Prices'
+import { useLeagues } from '@/web/background/Leagues'
 import { getDetailsId } from '../trends/getDetailsId'
 import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
@@ -213,11 +214,14 @@ function mergeWithMarketRatio (results: readonly PricingResult[], marketRatio: M
 function useMarketRatioFinder () {
   type MarketRatioMap = Record<'xchgChaos' | 'xchgStable', MarketRatio | undefined>
 
+  const { selected: defaultLeague } = useLeagues()
   const { findPriceByQuery, xchgRate } = usePoeninja()
   const marketRatio = shallowRef<MarketRatioMap>({ xchgChaos: undefined, xchgStable: undefined })
 
-  function find (item: ParsedItem): void {
+  function find (item: ParsedItem, filters: ItemFilters): void {
     marketRatio.value = { xchgChaos: undefined, xchgStable: undefined }
+
+    if (filters.trade.league !== defaultLeague.value?.id) return
 
     const detailsId = getDetailsId(item)
     const priceEntry = detailsId && findPriceByQuery(detailsId)
@@ -324,7 +328,7 @@ export default defineComponent({
       selectedCurr,
       execSearch: () => {
         search(props.item, props.filters)
-        findMarketRatio(props.item)
+        findMarketRatio(props.item, props.filters)
       },
       showSeller: computed(() => widget.value.showSeller),
       makeTradeLink,
