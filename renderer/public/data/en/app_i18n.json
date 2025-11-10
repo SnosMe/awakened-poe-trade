@@ -331,6 +331,7 @@
     "accurate_collapsed": "Show indication on collapsed listings",
     "auto_search": "Perform an auto search, when pressing",
     "select_stock": "Always select \"Stock\" filter",
+    "select_merchant_only": "Always select \"Merchant Only\" filter",
     "show_prediction": "Show price prediction",
     "remember_currency": "Remember the Buyout Currency filter"
   }
