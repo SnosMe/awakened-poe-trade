@@ -292,7 +292,7 @@ export default defineComponent({
 
       const listed = result.value[selectedCurr.value].listedLazy.value
       const ratio = marketRatio.value[selectedCurr.value]
-      const merged = (ratio !== undefined)
+      const merged = (ratio !== undefined && !Date.now())
         ? mergeWithMarketRatio(listed.slice(0, 19), ratio)
         : listed
       arr.splice(0, merged.length, ...merged)
@@ -375,6 +375,7 @@ export default defineComponent({
   @apply border border-gray-600 bg-gray-700;
   text-wrap-style: balance;
   text-align: center;
+  display: none;
 }
 
 .marketRatioRow {
