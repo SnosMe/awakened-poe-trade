@@ -111,6 +111,7 @@ export default defineComponent({
         league: leagues.selectedId.value!,
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
+        activateMerchantOnlyFilter: widget.value.activateMerchantOnlyFilter,
         searchStatRange: widget.value.searchStatRange,
         useEn: AppConfig().useIntlSite,
         currency: (prevItem &&
