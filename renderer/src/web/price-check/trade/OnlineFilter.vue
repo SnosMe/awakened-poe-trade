@@ -81,7 +81,8 @@ export default defineComponent({
       showWarning: () => Boolean(
         (props.filters.trade.listed &&
           ['1day', '3days', '1week'].includes(props.filters.trade.listed)) ||
-        props.filters.trade.currency
+        (props.filters.trade.currency &&
+          props.filters.trade.currency !== 'chaos_divine')
       ),
       popoverLabelId: () => {
         if (props.filters.trade.offline) {

@@ -36,6 +36,14 @@ export function createFilters (
     }
   }
 
+  if (!opts.currency) {
+    if ((!item.info.craftable || CONSUMABLE_CRAFTABLE_ITEM.has(item.category!)) &&
+      item.rarity !== ItemRarity.Unique
+    ) {
+      filters.trade.currency = 'chaos_divine'
+    }
+  }
+
   if (item.category === ItemCategory.Gem) {
     return createGemFilters(item, filters, opts)
   }
