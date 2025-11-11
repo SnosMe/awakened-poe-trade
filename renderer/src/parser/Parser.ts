@@ -214,7 +214,26 @@ function findInDatabase (item: ParserState) {
 
 function parseMap (section: string[], item: ParsedItem) {
   if (section[0].startsWith(_$.MAP_TIER)) {
-    item.mapTier = Number(section[0].slice(_$.MAP_TIER.length))
+    item.map = {
+      tier: Number(section[0].slice(_$.MAP_TIER.length))
+    }
+    for (const line of section) {
+      if (line.startsWith(_$.MAP_ITEM_QUANTITY)) {
+        item.map.itemQuantity = parseInt(line.slice(_$.MAP_ITEM_QUANTITY.length), 10)
+      } else if (line.startsWith(_$.MAP_ITEM_RARITY)) {
+        item.map.itemRarity = parseInt(line.slice(_$.MAP_ITEM_RARITY.length), 10)
+      } else if (line.startsWith(_$.MAP_MONSTER_PACK_SIZE)) {
+        item.map.packSize = parseInt(line.slice(_$.MAP_MONSTER_PACK_SIZE.length), 10)
+      } else if (line.startsWith(_$.MAP_MORE_MAPS)) {
+        item.map.moreMaps = parseInt(line.slice(_$.MAP_MORE_MAPS.length), 10)
+      } else if (line.startsWith(_$.MAP_MORE_SCARABS)) {
+        item.map.moreScarabs = parseInt(line.slice(_$.MAP_MORE_SCARABS.length), 10)
+      } else if (line.startsWith(_$.MAP_MORE_CURRENCY)) {
+        item.map.moreCurrency = parseInt(line.slice(_$.MAP_MORE_CURRENCY.length), 10)
+      } else if (line.startsWith(_$.MAP_MORE_DIVINATION_CARDS)) {
+        item.map.moreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
+      }
+    }
     return 'SECTION_PARSED'
   }
   return 'SECTION_SKIPPED'
@@ -253,9 +272,9 @@ function pickCorrectVariant (item: ParserState) {
     if (cond.propEV && !item.armourEV) continue
     if (cond.propES && !item.armourES) continue
 
-    if (cond.mapTier === 'W' && !(item.mapTier! <= 5)) continue
-    if (cond.mapTier === 'Y' && !(item.mapTier! >= 6 && item.mapTier! <= 10)) continue
-    if (cond.mapTier === 'R' && !(item.mapTier! >= 11)) continue
+    if (cond.mapTier === 'W' && !(item.map!.tier <= 5)) continue
+    if (cond.mapTier === 'Y' && !(item.map!.tier >= 6 && item.map!.tier <= 10)) continue
+    if (cond.mapTier === 'R' && !(item.map!.tier >= 11)) continue
 
     if (cond.hasImplicit && !item.statsByType.some(calc =>
       calc.type === ModifierType.Implicit &&
