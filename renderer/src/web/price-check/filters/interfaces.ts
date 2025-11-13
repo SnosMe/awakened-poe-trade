@@ -123,7 +123,10 @@ export const INTERNAL_TRADE_IDS = [
   'item.elemental_dps',
   'item.crit',
   'item.aps',
-  'item.has_empty_modifier'
+  'item.has_empty_modifier',
+  'item.map_item_quantity',
+  'item.map_item_rarity',
+  'item.map_pack_size'
 ] as const
 
 export type InternalTradeId = typeof INTERNAL_TRADE_IDS[number]

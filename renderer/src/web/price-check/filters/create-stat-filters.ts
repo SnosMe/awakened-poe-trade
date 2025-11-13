@@ -6,6 +6,7 @@ import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rules'
 import { filterItemProp, filterBasePercentile, filterMemoryStrands } from './pseudo/item-property'
+import { mapProps } from './pseudo/maps'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
 
@@ -60,13 +61,16 @@ export function createExactStatFilters (
 
   const ctx: FiltersCreationContext = {
     item,
-    searchInRange: Math.min(2, opts.searchStatRange),
+    searchInRange: (item.category !== ItemCategory.Map)
+      ? Math.min(2, opts.searchStatRange)
+      : opts.searchStatRange,
     filters: [],
     statsByType: statsByType.filter(calc => keepByType.includes(calc.type))
   }
 
   filterBasePercentile(ctx)
   filterMemoryStrands(ctx)
+  mapProps(ctx)
 
   ctx.filters.push(
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
@@ -78,6 +82,14 @@ export function createExactStatFilters (
   }
   if (item.info.refName === 'Mirrored Tablet') {
     applyMirroredTabletRules(ctx.filters)
+    return ctx.filters
+  }
+  if (item.category === ItemCategory.Map) {
+    for (const filter of ctx.filters) {
+      if (filter.tag !== FilterTag.Property && filter.tag !== FilterTag.Pseudo) {
+        filter.disabled = false
+      }
+    }
     return ctx.filters
   }
 

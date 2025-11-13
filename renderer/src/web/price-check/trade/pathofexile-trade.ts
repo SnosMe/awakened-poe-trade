@@ -162,6 +162,9 @@ interface TradeRequest { /* eslint-disable camelcase */
       map_filters?: {
         filters: {
           map_tier?: FilterRange
+          map_iiq?: FilterRange
+          map_iir?: FilterRange
+          map_packsize?: FilterRange
           map_blighted?: FilterBoolean
           map_uberblighted?: FilterBoolean
           area_level?: FilterRange
@@ -491,6 +494,18 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       case 'item.aps':
         propSet(query.filters, 'weapon_filters.filters.aps.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'weapon_filters.filters.aps.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.map_item_quantity':
+        propSet(query.filters, 'map_filters.filters.map_iiq.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'map_filters.filters.map_iiq.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.map_item_rarity':
+        propSet(query.filters, 'map_filters.filters.map_iir.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'map_filters.filters.map_iir.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.map_pack_size':
+        propSet(query.filters, 'map_filters.filters.map_packsize.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'map_filters.filters.map_packsize.max', typeof input.max === 'number' ? input.max : undefined)
         break
     }
   }
