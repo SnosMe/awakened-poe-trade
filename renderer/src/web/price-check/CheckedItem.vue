@@ -113,7 +113,7 @@ export default defineComponent({
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
         useEn: AppConfig().useIntlSite,
-        currency: widget.value.rememberCurrency || (prevItem &&
+        currency: (prevItem &&
           item.info.namespace === prevItem.info.namespace &&
           item.info.refName === prevItem.info.refName
         ) ? prevCurrency : undefined
