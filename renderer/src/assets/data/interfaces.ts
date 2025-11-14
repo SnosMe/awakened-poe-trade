@@ -125,6 +125,7 @@ export interface TranslationDict {
   MAP_MORE_SCARABS: string
   MAP_MORE_CURRENCY: string
   MAP_MORE_DIVINATION_CARDS: string
+  MAP_COMPLETION_REWARD: RegExp
   RARITY: string
   ITEM_CLASS: string
   ITEM_LEVEL: string

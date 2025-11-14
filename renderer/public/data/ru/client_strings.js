@@ -17,6 +17,7 @@ export default {
   MAP_MORE_SCARABS: 'Больше скарабеев: ',
   MAP_MORE_CURRENCY: 'Больше валюты: ',
   MAP_MORE_DIVINATION_CARDS: 'Больше гадальных карт: ',
+  MAP_COMPLETION_REWARD: /^Награда: Особая (.*)$/,
   RARITY: 'Редкость: ',
   ITEM_CLASS: 'Класс предмета: ',
   ITEM_LEVEL: 'Уровень предмета: ',

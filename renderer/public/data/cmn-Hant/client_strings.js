@@ -17,6 +17,7 @@ export default {
   MAP_MORE_SCARABS: '更多聖甲蟲: ',
   MAP_MORE_CURRENCY: '更多通貨: ',
   MAP_MORE_DIVINATION_CARDS: '更多命運卡: ',
+  MAP_COMPLETION_REWARD: /^獎勵: 貼模 \((.*)\)$/,
   RARITY: '稀有度: ',
   ITEM_CLASS: '物品種類: ',
   ITEM_LEVEL: '物品等級: ',

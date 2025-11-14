@@ -232,6 +232,8 @@ function parseMap (section: string[], item: ParsedItem) {
         item.map.moreCurrency = parseInt(line.slice(_$.MAP_MORE_CURRENCY.length), 10)
       } else if (line.startsWith(_$.MAP_MORE_DIVINATION_CARDS)) {
         item.map.moreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
+      } else if (_$.MAP_COMPLETION_REWARD.test(line)) {
+        item.mapCompletionReward = _$.MAP_COMPLETION_REWARD.exec(line)![1]
       }
     }
     return 'SECTION_PARSED'

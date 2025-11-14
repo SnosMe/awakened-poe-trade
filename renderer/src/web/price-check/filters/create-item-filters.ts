@@ -3,7 +3,7 @@ import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { MAGIC_ONLY_OR_UNIQUE_ITEM, CONSUMABLE_CRAFTABLE_ITEM } from '@/parser/meta'
 import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
-import { BaseType, ITEM_BY_REF } from '@/assets/data'
+import { BaseType, ITEM_BY_REF, ITEM_BY_TRANSLATED } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 import { PERMANENT_SC } from '../../background/Leagues'
 
@@ -117,9 +117,11 @@ export function createFilters (
         baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
       }
     } else {
-      const ignoreLayout = item.statsByType.some(calc =>
-        calc.stat.ref === 'Map is occupied by #' ||
-        calc.stat.ref === "Map contains #'s Citadel")
+      const ignoreLayout =
+        item.mapCompletionReward != null ||
+        item.statsByType.some(calc =>
+          calc.stat.ref === 'Map is occupied by #' ||
+          calc.stat.ref === "Map contains #'s Citadel")
       filters.searchExact = {
         baseType: item.info.name,
         baseTypeTrade: t(opts, item.info)
@@ -132,6 +134,13 @@ export function createFilters (
 
     if (item.mapBlighted) {
       filters.mapBlighted = { value: item.mapBlighted }
+    }
+
+    if (item.mapCompletionReward) {
+      filters.mapCompletionReward = {
+        name: item.mapCompletionReward,
+        nameTrade: t(opts, ITEM_BY_TRANSLATED('UNIQUE', item.mapCompletionReward)![0])
+      }
     }
 
     filters.mapTier = {

@@ -33,6 +33,7 @@ export interface ParsedItem {
   weaponPHYSICAL?: number
   weaponELEMENTAL?: number
   mapBlighted?: 'Blighted' | 'Blight-ravaged'
+  mapCompletionReward?: string
   map?: {
     tier: number
     itemQuantity?: number
