@@ -168,7 +168,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           map_blighted?: FilterBoolean
           map_uberblighted?: FilterBoolean
           area_level?: FilterRange
-          map_completion_reward: 'any' | string
+          map_completion_reward?: { option?: 'any' | string }
         }
       }
       heist_filters?: {
@@ -381,13 +381,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   if (filters.mapCompletionReward) {
-    if (filters.mapCompletionReward.value) {
-      propSet(
-        query.filters,
-        'map_filters.filters.map_completion_reward.option',
-        String(filters.mapCompletionReward.value || 'any')
-      )
-    }
+    propSet(query.filters, 'map_filters.filters.map_completion_reward.option', filters.mapCompletionReward.nameTrade)
   }
 
   if (filters.unidentified && !filters.unidentified.disabled) {

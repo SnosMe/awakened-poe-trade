@@ -56,7 +56,8 @@ export interface ItemFilters {
     value: NonNullable<ParsedItem['mapBlighted']>
   }
   mapCompletionReward?: {
-    value: string
+    name: string
+    nameTrade: string
   }
   itemLevel?: FilterNumeric
   stackSize?: FilterNumeric

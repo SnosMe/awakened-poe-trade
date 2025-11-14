@@ -17,7 +17,7 @@ export default {
   MAP_MORE_SCARABS: 'More Scarabs: ',
   MAP_MORE_CURRENCY: 'More Currency: ',
   MAP_MORE_DIVINATION_CARDS: 'More Divination Cards: ',
-  MAP_COMPLETION_REWARD: 'Reward: Foil ',
+  MAP_COMPLETION_REWARD: /^Reward: Foil (.*)$/,
   RARITY: 'Rarity: ',
   ITEM_CLASS: 'Item Class: ',
   ITEM_LEVEL: 'Item Level: ',

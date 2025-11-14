@@ -17,7 +17,7 @@ export default {
   MAP_MORE_SCARABS: '갑충석 더 많음: ',
   MAP_MORE_CURRENCY: '화폐 더 많음: ',
   MAP_MORE_DIVINATION_CARDS: '점술 카드 증폭: ',
-  MAP_COMPLETION_REWARD: '보상: 반짝이 ',
+  MAP_COMPLETION_REWARD: /^보상: 반짝이 (.*)$/,
   RARITY: '아이템 희귀도: ',
   ITEM_CLASS: '아이템 종류: ',
   ITEM_LEVEL: '아이템 레벨: ',
