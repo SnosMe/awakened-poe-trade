@@ -29,7 +29,7 @@ const modText = computed(() => {
   const { info } = props.source.modifier
 
   let text = t(`item.mod_${info.type}`)
-  if (info.name) {
+  if (info.name != null) {
     text += ` "${info.name}"`
   }
   if (info.tier != null) {

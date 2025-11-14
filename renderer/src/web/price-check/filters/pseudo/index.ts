@@ -1,4 +1,4 @@
-import { stat, STAT_BY_REF } from '@/assets/data'
+import { stat, pseudoStatByRef } from '@/assets/data'
 import { ModifierType, StatCalculated, StatSource } from '@/parser/modifiers'
 import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-filters'
 import type { StatFilter } from '../interfaces'
@@ -333,7 +333,7 @@ export function filterPseudo (ctx: FiltersCreationContext) {
     }
 
     const filter = calculatedStatToFilter({
-      stat: STAT_BY_REF(rule.pseudo)!,
+      stat: pseudoStatByRef(rule.pseudo)!,
       type: ModifierType.Pseudo,
       sources: sources
     }, ctx.searchInRange, ctx.item)

@@ -1,6 +1,6 @@
 import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-filters'
 import { calcPropBounds, propAt20Quality, QUALITY_STATS } from '@/parser/calc-q20'
-import { stat, StatBetter } from '@/assets/data'
+import { stat, StatBetter, Stat } from '@/assets/data'
 import { ARMOUR, WEAPON, ItemCategory } from '@/parser/meta'
 import { ParsedItem } from '@/parser'
 import { ModifierType, StatRoll, StatSource } from '@/parser/modifiers'
@@ -23,6 +23,19 @@ export function filterBasePercentile (ctx: FiltersCreationContext) {
       roll: { min: 0, max: 100, value: ctx.item.basePercentile },
       sources: [],
       disabled: (ctx.item.basePercentile < 50)
+    }, ctx))
+  }
+}
+
+export function filterMemoryStrands (ctx: FiltersCreationContext, hidden?: string) {
+  if (ctx.item.memoryStrands != null) {
+    ctx.filters.push(propToFilter({
+      ref: 'Memory Strands: #',
+      tradeId: 'item.memory_strands',
+      roll: { min: 0, max: 100, value: ctx.item.memoryStrands },
+      sources: [],
+      disabled: (ctx.item.memoryStrands < 60 || hidden !== undefined),
+      hidden: hidden
     }, ctx))
   }
 }
@@ -153,13 +166,15 @@ function weaponProps (ctx: FiltersCreationContext) {
   }
 
   if (item.weaponELEMENTAL) {
-    ctx.filters.push(propToFilter({
-      ref: 'Total DPS: #',
-      tradeId: 'item.total_dps',
-      roll: dps,
-      sources: [],
-      disabled: false
-    }, ctx))
+    if (item.weaponPHYSICAL) {
+      ctx.filters.push(propToFilter({
+        ref: 'Total DPS: #',
+        tradeId: 'item.total_dps',
+        roll: dps,
+        sources: [],
+        disabled: false
+      }, ctx))
+    }
 
     ctx.filters.push(propToFilter({
       ref: 'Elemental DPS: #',
@@ -241,7 +256,7 @@ function isPdpsImportant (item: ParsedItem) {
   }
 }
 
-function propToFilter (opts: {
+export function propToFilter (opts: {
   ref: string
   tradeId: InternalTradeId
   roll: StatRoll
@@ -250,14 +265,35 @@ function propToFilter (opts: {
   disabled?: StatFilter['disabled']
   hidden?: StatFilter['hidden']
 }, ctx: FiltersCreationContext): StatFilter {
-  const stat = {
+  const stat: Stat = {
     ref: opts.ref,
     matchers: [{ string: opts.ref }],
     trade: { ids: { pseudo: [opts.tradeId] } },
     better: StatBetter.PositiveRoll
   }
+  const filter = noSourcePseudoToFilter({
+    pseudo: stat,
+    roll: opts.roll,
+    dp: opts.dp,
+    disabled: opts.disabled,
+    hidden: opts.hidden
+  }, ctx)
+
+  filter.tag = FilterTag.Property
+  filter.sources = opts.sources
+
+  return filter
+}
+
+export function noSourcePseudoToFilter (opts: {
+  pseudo: Stat
+  roll: StatRoll
+  dp?: boolean
+  disabled?: StatFilter['disabled']
+  hidden?: StatFilter['hidden']
+}, ctx: FiltersCreationContext): StatFilter {
   const filter = calculatedStatToFilter({
-    stat: stat,
+    stat: opts.pseudo,
     type: ModifierType.Pseudo,
     sources: [{
       modifier: {
@@ -265,8 +301,8 @@ function propToFilter (opts: {
         stats: []
       },
       stat: {
-        stat: stat,
-        translation: stat.matchers[0],
+        stat: opts.pseudo,
+        translation: opts.pseudo.matchers[0],
         roll: {
           dp: opts.dp ?? false,
           unscalable: false,
@@ -277,8 +313,7 @@ function propToFilter (opts: {
     }]
   }, ctx.searchInRange, ctx.item)
 
-  filter.tag = FilterTag.Property
-  filter.sources = opts.sources
+  filter.sources = []
   if (opts.disabled != null) filter.disabled = opts.disabled
   if (opts.hidden != null) filter.hidden = opts.hidden
 

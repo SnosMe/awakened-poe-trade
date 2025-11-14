@@ -19,13 +19,16 @@ for (const lang of LANGUAGES) {
     let start = 0
     while (start !== ndjson.length) {
       const end = ndjson.indexOf('\n', start)
-      /** @type {import('./data/interfaces').Stat} */
-      const stat = JSON.parse(ndjson.slice(start, end))
-      lineStarts.statsByRef.push({ start, hash: Number(fnv1a(stat.ref, { size: 32 })) })
-      for (const matcher of stat.matchers) {
-        lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.string, { size: 32 })) })
-        if (matcher.advanced) {
-          lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.advanced, { size: 32 })) })
+      /** @type {import('./data/interfaces').StatOrGroup} */
+      const statOrGroup = JSON.parse(ndjson.slice(start, end))
+      const stats = ('stats' in statOrGroup) ? statOrGroup.stats : [statOrGroup]
+      for (const stat of stats) {
+        lineStarts.statsByRef.push({ start, hash: Number(fnv1a(stat.ref, { size: 32 })) })
+        for (const matcher of stat.matchers) {
+          lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.string, { size: 32 })) })
+          if (matcher.advanced) {
+            lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.advanced, { size: 32 })) })
+          }
         }
       }
       start = (end + 1)

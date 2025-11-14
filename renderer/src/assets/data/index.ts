@@ -1,5 +1,5 @@
 import fnv1a from '@sindresorhus/fnv1a'
-import type { BaseType, DropEntry, Stat, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
 
 export * from './interfaces'
 
@@ -16,7 +16,8 @@ export let ALTQ_GEM_NAMES = function * (): Generator<string> {}
 export let REPLICA_UNIQUE_NAMES = function * (): Generator<string> {}
 
 export let STAT_BY_MATCH_STR = (name: string): { matcher: StatMatcher, stat: Stat } | undefined => undefined
-export let STAT_BY_REF = (name: string): Stat | undefined => undefined
+export let STAT_BY_MATCH_STR_V2 = (name: string): StatOrGroup | undefined => undefined
+export let STAT_BY_REF_V2 = (name: string): StatOrGroup | undefined => undefined
 export let STATS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<Stat> {}
 
 function dataBinarySearch (data: Uint32Array, value: number, rowOffset: number, rowSize: number) {
@@ -111,7 +112,7 @@ async function loadStats (language: string) {
   const indexRef = new Uint32Array(await (await fetch(`${import.meta.env.BASE_URL}data/${language}/stats-ref.index.bin`)).arrayBuffer())
   const indexMatcher = new Uint32Array(await (await fetch(`${import.meta.env.BASE_URL}data/${language}/stats-matcher.index.bin`)).arrayBuffer())
 
-  STAT_BY_REF = function (ref: string) {
+  STAT_BY_REF_V2 = function (ref: string) {
     let start = dataBinarySearch(indexRef, Number(fnv1a(ref, { size: 32 })), 0, INDEX_WIDTH)
     if (start === -1) return undefined
     start = indexRef[start * INDEX_WIDTH + 1]
@@ -119,27 +120,70 @@ async function loadStats (language: string) {
     return JSON.parse(ndjson.slice(start, end))
   }
 
-  STAT_BY_MATCH_STR = function (matchStr: string) {
+  STAT_BY_MATCH_STR_V2 = function (matchStr: string) {
     let start = dataBinarySearch(indexMatcher, Number(fnv1a(matchStr, { size: 32 })), 0, INDEX_WIDTH)
     if (start === -1) return undefined
     start = indexMatcher[start * INDEX_WIDTH + 1]
     const end = ndjson.indexOf('\n', start)
-    const stat = JSON.parse(ndjson.slice(start, end)) as Stat
-
-    const matcher = stat.matchers.find(m =>
-      m.string === matchStr || m.advanced === matchStr)
-    if (!matcher) {
+    const statOrGroup = JSON.parse(ndjson.slice(start, end)) as StatOrGroup
+    const stats = ('stats' in statOrGroup) ? statOrGroup.stats : [statOrGroup]
+    if (!stats.some(stat =>
+      stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+    ) {
       // console.log('fnv1a32 collision')
       return undefined
     }
+    return statOrGroup
+  }
+
+  STAT_BY_MATCH_STR = function (matchStr: string) {
+    const statOrGroup = STAT_BY_MATCH_STR_V2(matchStr)
+    if (!statOrGroup) return undefined
+
+    let stat: Stat
+    if ('stats' in statOrGroup) {
+      const stats = statOrGroup.stats.filter(stat =>
+        stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+      if (stats.length !== 1) return undefined
+      stat = stats[0]
+    } else {
+      stat = statOrGroup
+    }
+    const matcher = stat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)!
     return { stat, matcher }
   }
 
-  STATS_ITERATOR = ndjsonFindLines<Stat>(ndjson)
+  const _STATS_ITERATOR = ndjsonFindLines<StatOrGroup>(ndjson)
+
+  STATS_ITERATOR = function * (includes, andIncludes) {
+    for (const statOrGroup of _STATS_ITERATOR(includes, andIncludes)) {
+      if ('stats' in statOrGroup) {
+        for (const stat of statOrGroup.stats) {
+          yield stat
+        }
+      } else {
+        yield statOrGroup
+      }
+    }
+  }
+}
+
+export function pseudoStatByRef (ref: string): Stat | undefined {
+  const statOrGroup = STAT_BY_REF_V2(ref)
+  if (statOrGroup != null && 'stats' in statOrGroup) {
+    return statOrGroup.stats.find(stat =>
+      stat.ref === ref &&
+      'pseudo' in stat.trade.ids)
+  }
+  return statOrGroup
 }
 
 // assertion, to avoid regressions in stats.ndjson
 const DELAYED_STAT_VALIDATION = new Set<string>()
+// type StatCheck =
+//   | 'ref-match' // text will be used for comparison with other stat refs
+//   | 'pseudo-find' // text will only be used in `pseudoStatByRef`
 export function stat (text: string) {
   DELAYED_STAT_VALIDATION.add(text)
   return text
@@ -153,8 +197,20 @@ export async function init (lang: string) {
   await loadForLang(lang)
 
   for (const text of DELAYED_STAT_VALIDATION) {
-    if (STAT_BY_REF(text) == null) {
+    const statOrGroup = STAT_BY_REF_V2(text)
+    if (!statOrGroup) {
       throw new Error(`Cannot find stat: ${text}`)
+    }
+    if (
+      'stats' in statOrGroup &&
+      // other languages are allowed to have unrelated stats grouped with our `ref`
+      lang === 'en' &&
+      statOrGroup.stats.some(stat => stat.ref !== text)
+    ) {
+      // TODO implement `StatCheck` if this causes error later.
+      // This check cannot be delegated to ndjson creation time because only
+      // a subset of groups need to adhere to it (that are seen in `stat()`).
+      throw new Error(`Some stats have different ref text: ${text}`)
     }
   }
   DELAYED_STAT_VALIDATION.clear()

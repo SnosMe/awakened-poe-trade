@@ -51,6 +51,9 @@
     "elemental_dps": "원소 DPS: {0}",
     "crit": "치명타 확률: {0}%",
     "aps": "초당 공격 횟수: {0}",
+    "map_item_quantity": "아이템 수량: {0}%",
+    "map_item_rarity": "아이템 희귀도: {0}%",
+    "map_pack_size": "몬스터 무리 규모: {0}%",
     "has_empty_modifier": "비었거나 작업대 모드 1",
     "has_empty_affix": "빈 속성 부여",
     "has_empty_prefix": "빈 접두어",
@@ -63,6 +66,7 @@
     "linked_sockets": "연결부: {0}",
     "white_sockets": "흰 홈: {0}",
     "quality": "퀄리티: {0}",
+    "memory_strands": "기억 가닥: {0}",
     "gem_level": "젬 레벨: {0}",
     "sentinel_charge": "Charge: {0}",
     "find_in_stash": "보관함에서 찾기",
@@ -160,6 +164,7 @@
     "tag_variant": "변동",
     "tag_corrupted": "타락",
     "tag_synthesised": "결합된",
+    "tag_foulborn": "삿된",
     "tag_eldritch": "섬뜩한",
     "tag_pseudo": "pseudo",
     "tag_explicit": "부여된 속성",
@@ -269,7 +274,8 @@
     "getting_price": "Getting price {0}",
     "getting_price_from": "from poe.ninja \u2026",
     "you_have": "가진 갯수",
-    "stack": "스택"
+    "stack": "스택",
+    "market_ratio": "시장 비율"
   },
   "settings": {
     "title": "세팅 - Awakened PoE Trade",

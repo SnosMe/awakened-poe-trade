@@ -33,11 +33,21 @@ export interface ParsedItem {
   weaponPHYSICAL?: number
   weaponELEMENTAL?: number
   mapBlighted?: 'Blighted' | 'Blight-ravaged'
-  mapTier?: number
   mapCompletionReward?: string
+  map?: {
+    tier: number
+    itemQuantity?: number
+    itemRarity?: number
+    packSize?: number
+    moreMaps?: number
+    moreScarabs?: number
+    moreCurrency?: number
+    moreDivCards?: number
+  }
   gemLevel?: number
   areaLevel?: number
   talismanTier?: number
+  memoryStrands?: number
   quality?: number
   sockets?: {
     linked?: number // only 5 or 6
@@ -55,6 +65,7 @@ export interface ParsedItem {
   isFractured?: boolean
   isVeiled?: boolean
   isFoil?: boolean
+  isFoulborn?: boolean
   statsByType: StatCalculated[]
   newMods: ParsedModifier[]
   unknownModifiers: Array<{

@@ -19,9 +19,7 @@ export interface Stat {
   dp?: true
   matchers: StatMatcher[]
   better: StatBetter
-  fromAreaMods?: true
-  fromUberAreaMods?: true
-  fromHeistAreaMods?: true
+  fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
   anointments?: Array<{ roll: number, oils: string }> // Ring anointments
   trade: {
     inverted?: true
@@ -31,6 +29,27 @@ export interface Stat {
     }
   }
 }
+
+export interface StatGroup {
+  resolve: StatGroupResolver
+  stats: Stat[]
+}
+
+export type StatOrGroup = Stat | StatGroup
+
+export type StatGroupResolver =
+  {
+    strat: 'select'
+    test: Array<string | null>
+  } | {
+    strat: 'trivial-merge'
+  } | {
+    strat: 'percent-merge'
+    kind: Array<'percent' | 'value'>
+  } | {
+    strat: 'flag-merge'
+    kind: Array<'flag' | 'value'>
+  }
 
 export interface DropEntry {
   query: string[]
@@ -51,6 +70,7 @@ export interface BaseType {
   w?: number
   h?: number
   tradeTag?: string
+  exchangeable?: true
   tradeDisc?: string
   disc?: {
     propAR?: true
@@ -98,6 +118,13 @@ export interface TranslationDict {
   RARITY_DIVCARD: string
   RARITY_QUEST: string
   MAP_TIER: string
+  MAP_ITEM_QUANTITY: string
+  MAP_ITEM_RARITY: string
+  MAP_MONSTER_PACK_SIZE: string
+  MAP_MORE_MAPS: string
+  MAP_MORE_SCARABS: string
+  MAP_MORE_CURRENCY: string
+  MAP_MORE_DIVINATION_CARDS: string
   MAP_COMPLETION_REWARD: string
   RARITY: string
   ITEM_CLASS: string
@@ -108,6 +135,7 @@ export interface TranslationDict {
   STACK_SIZE: string
   SOCKETS: string
   QUALITY: string
+  MEMORY_STRANDS: string
   PHYSICAL_DAMAGE: string
   ELEMENTAL_DAMAGE: string
   CRIT_CHANCE: string
@@ -183,6 +211,8 @@ export interface TranslationDict {
   INCURSION_MODS: string[]
   FOIL_UNIQUE: string
   UNMODIFIABLE: string
+  FOULBORN_NAME: RegExp
+  FOULBORN_MODIFIER: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

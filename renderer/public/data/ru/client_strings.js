@@ -10,6 +10,13 @@ export default {
   RARITY_DIVCARD: 'Гадальная карта',
   RARITY_QUEST: 'Задание',
   MAP_TIER: 'Уровень карты: ',
+  MAP_ITEM_QUANTITY: 'Количество предметов: ',
+  MAP_ITEM_RARITY: 'Редкость предметов: ',
+  MAP_MONSTER_PACK_SIZE: 'Размер групп монстров: ',
+  MAP_MORE_MAPS: 'Больше карт: ',
+  MAP_MORE_SCARABS: 'Больше скарабеев: ',
+  MAP_MORE_CURRENCY: 'Больше валюты: ',
+  MAP_MORE_DIVINATION_CARDS: 'Больше гадальных карт: ',
   MAP_COMPLETION_REWARD: 'Награда: Особая ',
   RARITY: 'Редкость: ',
   ITEM_CLASS: 'Класс предмета: ',
@@ -20,6 +27,7 @@ export default {
   STACK_SIZE: 'Размер стопки: ',
   SOCKETS: 'Гнезда: ',
   QUALITY: 'Качество: ',
+  MEMORY_STRANDS: 'Пряди воспоминаний: ',
   PHYSICAL_DAMAGE: 'Физический урон: ',
   ELEMENTAL_DAMAGE: 'Урон от стихий: ',
   CRIT_CHANCE: 'Шанс критического удара: ',
@@ -65,7 +73,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: 'Необычные камни',
   HEIST_BLUEPRINT_REPLICAS: 'Копии или экспериментальные предметы',
   MIRRORED: 'Отражено',
-  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]+)")?(?:\s+\(Уровень: (?<tier>\d+)\))?(?:\s+\(Ранг: (?<rank>\d+)\))?$/,
+  MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s+\(Уровень: (?<tier>\d+)\))?(?:\s+\(Ранг: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: 'Префикс',
   SUFFIX_MODIFIER: 'Суффикс',
   CRAFTED_PREFIX: 'Мастерский префикс',
@@ -105,7 +113,6 @@ export default {
     'Освободительный', 'Освободительная', 'Освободительное', 'Освободительные', 'Освободительные', 'Освободительные'
   ],
   WARLORD_MODS: [
-    'Главный', 'Главная', 'Главное', 'Главные', 'Главные', 'Главные',
     'Военный', 'Военная', 'Военное', 'Военные', 'Военные', 'Военные',
     'завоевания'
   ],
@@ -129,6 +136,8 @@ export default {
   ],
   FOIL_UNIQUE: 'Особый уникальный предмет',
   UNMODIFIABLE: 'Неизменяемый',
+  FOULBORN_NAME: /^Нечестивый: (.*)$/,
+  FOULBORN_MODIFIER: 'Нечестивое уникальное свойство',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

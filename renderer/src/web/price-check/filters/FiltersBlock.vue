@@ -15,8 +15,6 @@
         :filter="filters.sentinelCharge" :name="t('item.sentinel_charge')" />
       <filter-btn-logical v-if="filters.mapBlighted" readonly
         :filter="{ disabled: false }" :text="filters.mapBlighted.value" />
-      <filter-btn-logical v-if="filters.rarity?.value === 'magic'" readonly
-        :filter="{ disabled: false }" text="Magic" />
       <filter-btn-logical v-if="filters.discriminator?.value" readonly
         :filter="{ disabled: false }" :text="filters.discriminator.value" />
       <filter-btn-numeric v-if="filters.itemLevel"
@@ -33,6 +31,8 @@
         <filter-btn-logical v-for="influence of filters.influences" :key="influence.value"
           :filter="influence" :text="influence.value" :img="`/images/influence-${influence.value}.png`" />
       </template>
+      <filter-btn-logical v-if="filters.rarity?.value === 'magic'"
+        :filter="filters.rarity" text="Magic" />
       <filter-btn-logical v-if="filters.unidentified"
         :filter="filters.unidentified" :text="t('item.unidentified')" />
       <filter-btn-logical v-if="filters.veiled"

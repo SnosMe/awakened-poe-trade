@@ -1,9 +1,11 @@
 import type { ItemFilters } from './interfaces'
 import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
+import { MAGIC_ONLY_OR_UNIQUE_ITEM, CONSUMABLE_CRAFTABLE_ITEM } from '@/parser/meta'
 import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import { PERMANENT_SC } from '../../background/Leagues'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -25,10 +27,20 @@ export function createFilters (
     trade: {
       offline: false,
       onlineInLeague: false,
+      merchantOnly: !PERMANENT_SC.includes(opts.league) &&
+        item.category !== ItemCategory.DivinationCard,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
       collapseListings: opts.collapseListings
+    }
+  }
+
+  if (!opts.currency) {
+    if ((!item.info.craftable || CONSUMABLE_CRAFTABLE_ITEM.has(item.category!)) &&
+      item.rarity !== ItemRarity.Unique
+    ) {
+      filters.trade.currency = 'chaos_divine'
     }
   }
 
@@ -38,11 +50,11 @@ export function createFilters (
   if (item.category === ItemCategory.CapturedBeast) {
     filters.searchExact = {
       baseType: item.info.name,
-      baseTypeTrade: item.info.refName // NOTE: always English on trade
+      baseTypeTrade: t(opts, item.info)
     }
     return filters
   }
-  if (item.stackSize || tradeTag(item)) {
+  if (item.stackSize || tradeTag(item) || item.info.exchangeable) {
     filters.stackSize = {
       value: item.stackSize?.value || 1,
       disabled: !(item.stackSize && item.stackSize.value > 1 && opts.activateStockFilter)
@@ -81,15 +93,16 @@ export function createFilters (
         disabled: false
       }
     }
-    if (item.info.refName === 'Mirrored Tablet' || item.info.refName === 'Forbidden Tome') {
+    if (item.info.refName === 'Mirrored Tablet') {
       filters.areaLevel = {
         value: item.areaLevel!,
         disabled: false
       }
     }
-    if (item.info.refName === 'Filled Coffin') {
+    // Incubators, Wombgifts, Forbidden Tome
+    if (item.itemLevel) {
       filters.itemLevel = {
-        value: item.itemLevel!,
+        value: item.itemLevel,
         disabled: false
       }
     }
@@ -104,14 +117,16 @@ export function createFilters (
         baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
       }
     } else {
-      const isOccupiedBy = item.statsByType.some(calc => calc.stat.ref === 'Map is occupied by #')
+      const ignoreLayout = item.statsByType.some(calc =>
+        calc.stat.ref === 'Map is occupied by #' ||
+        calc.stat.ref === "Map contains #'s Citadel")
       filters.searchExact = {
         baseType: item.info.name,
         baseTypeTrade: t(opts, item.info)
       }
       filters.searchRelaxed = {
         category: item.category,
-        disabled: !isOccupiedBy
+        disabled: !ignoreLayout
       }
     }
 
@@ -124,7 +139,7 @@ export function createFilters (
     }
 
     filters.mapTier = {
-      value: item.mapTier!,
+      value: item.map!.tier,
       disabled: false
     }
   } else if (item.info.refName === 'Expedition Logbook') {
@@ -172,7 +187,8 @@ export function createFilters (
       let disabled = opts.exact
       if (
         item.category === ItemCategory.ClusterJewel ||
-        item.category === ItemCategory.Idol
+        item.category === ItemCategory.Idol ||
+        item.category === ItemCategory.Graft
       ) {
         disabled = true
       } else if (
@@ -196,7 +212,10 @@ export function createFilters (
   }
 
   if (item.quality && item.quality >= 20) {
-    if (item.category === ItemCategory.Flask || item.category === ItemCategory.Tincture) {
+    if (
+      item.category === ItemCategory.Flask || item.category === ItemCategory.Tincture ||
+      opts.exact // for Weapons & Armour
+    ) {
       filters.quality = {
         value: item.quality,
         disabled: (item.quality <= 20)
@@ -237,7 +256,18 @@ export function createFilters (
 
   if (forAdornedJewel) {
     filters.rarity = {
-      value: 'magic'
+      value: 'magic',
+      disabled: false
+    }
+  } else if (
+    opts.exact &&
+    item.rarity === ItemRarity.Magic &&
+    !CONSUMABLE_CRAFTABLE_ITEM.has(item.category!) &&
+    !MAGIC_ONLY_OR_UNIQUE_ITEM.has(item.category!)
+  ) {
+    filters.rarity = {
+      value: 'magic',
+      disabled: true
     }
   } else if (
     item.rarity === ItemRarity.Normal ||
@@ -245,7 +275,8 @@ export function createFilters (
     item.rarity === ItemRarity.Rare
   ) {
     filters.rarity = {
-      value: 'nonunique'
+      value: 'nonunique',
+      disabled: false
     }
   }
 
@@ -341,6 +372,12 @@ export function createFilters (
       if (filters.itemLevel) {
         filters.itemLevel.disabled = false
       }
+    }
+  }
+
+  if (item.rarity === ItemRarity.Unique) {
+    filters.foulborn = {
+      value: Boolean(item.isFoulborn)
     }
   }
 

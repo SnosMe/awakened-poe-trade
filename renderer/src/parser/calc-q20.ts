@@ -53,11 +53,11 @@ export function propAt20Quality (
   const base = calcFlat(total, incr.value, item.quality) - flat.value
   const quality = Math.max(20, item.quality ?? 0)
   return {
-    roll: {
+    roll: !Number.isNaN(base) ? {
       value: calcIncreased(base + flat.value, incr.value, quality),
       min: calcIncreased(base + flat.min, incr.min, quality),
       max: calcIncreased(base + flat.max, incr.max, quality)
-    },
+    } : { value: 0, min: 0, max: 0 },
     sources: sources.map(source => ({ ...source, contributes: undefined }))
   }
 }
@@ -131,6 +131,8 @@ function calcPropBase (
 }
 
 function calcFlat (total: number, incrPct: number, morePct = 0) {
+  // We cannot know original roll if the `morePct` or `incrPct` is equal to -100,
+  // in that case a NaN will be returned.
   return (total / (1 + morePct / 100) / (1 + incrPct / 100))
 }
 

@@ -47,6 +47,7 @@
 
   "Blighted": "Заражённая",
   "Blight-ravaged": "Разорённая Скверной",
+  "Magic": "Волшебный",
   "Shaper": "Создатель",
   "Elder": "Древний",
   "Crusader": "Крестоносец",
@@ -71,6 +72,9 @@
     "elemental_dps": "Стихийный ДПС: {0}",
     "crit": "Шанс критического удара: {0}%",
     "aps": "Атак в секунду: {0}",
+    "map_item_quantity": "Количество предметов: {0}%",
+    "map_item_rarity": "Редкость предметов: {0}%",
+    "map_pack_size": "Размер групп монстров: {0}%",
     "has_empty_modifier": "1 свободное или ремесленное свойство",
     "has_empty_affix": "Любое",
     "has_empty_prefix": "Префикс",
@@ -83,6 +87,7 @@
     "linked_sockets": "Связи: {0}",
     "white_sockets": "Белые: {0}",
     "quality": "Качество: {0}",
+    "memory_strands": "Пряди воспоминаний: {0}",
     "gem_level": "Уровень: {0}",
     "sentinel_charge": "Заряд: {0}",
     "find_in_stash": "Найти в тайнике",
@@ -152,7 +157,8 @@
     "sanctum_relic": "Реликвия Святилища",
     "tincture": "Микстура",
     "azmeri_charm": "Оберег",
-    "idol": "Идол"
+    "idol": "Идол",
+    "graft": "Нарост"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",
@@ -181,6 +187,7 @@
     "tag_variant": "вариант",
     "tag_corrupted": "осквернено",
     "tag_synthesised": "синтезирован",
+    "tag_foulborn": "нечестивый",
     "tag_eldritch": "зловещий",
     "tag_pseudo": "псевдо",
     "tag_explicit": "свойство",
@@ -197,6 +204,7 @@
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",
     "in_league_toggle": "В лиге",
+    "merchant_toggle": "Только торговец",
     "listed_any_time": "Любое время",
     "listed_1day": "До 1-го дня",
     "listed_3days": "До 3-х дней",
@@ -289,7 +297,9 @@
     "getting_price": "Получение цены {0}",
     "getting_price_from": "с poe.ninja \u2026",
     "you_have": "В наличии",
-    "stack": "Стак"
+    "stack": "Стак",
+    "legacy_bulk_xchg_msg": "Этот предмет доступен на внутриигровом рынке обмена валют.",
+    "market_ratio": "Рыночный курс"
   },
   "settings": {
     "title": "Настройки - Awakened PoE Trade",
@@ -319,7 +329,8 @@
     "poe_cfg_file" :"Файл настроек PoE",
     "restore_clipboard" :"Восстанавливать буфер обмена",
     "show_overlay_ready" :"Показывать уведомление при открытии PoE",
-    "debug_hotkeys": "Запись всех нажатий клавиш"
+    "debug_hotkeys": "Запись всех нажатий клавиш",
+    "use_intl_site": "Использовать английскую версию сайта"
   },
   "price_check": {
     "name": "Прайс-чек",
