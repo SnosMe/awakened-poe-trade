@@ -13,9 +13,9 @@ const PSEUDO = {
 
 export function mapProps (ctx: FiltersCreationContext): void {
   const { item } = ctx
-  if (!item.map || item.mapBlighted || item.map.tier > 16 || item.rarity === ItemRarity.Unique) return
+  if (!item.map || item.mapBlighted || item.mapCompletionReward || item.rarity === ItemRarity.Unique) return
 
-  if (!item.isCorrupted) return
+  if (!item.isCorrupted && item.map.tier !== 17) return
 
   if (item.map.itemQuantity) {
     ctx.filters.push(propToFilter({
@@ -46,7 +46,7 @@ export function mapProps (ctx: FiltersCreationContext): void {
   }
 
   const explicitMods = item.newMods.filter(mod => mod.info.generation === 'prefix' || mod.info.generation === 'suffix')
-  const moreHidden = (explicitMods.length < 6) ? 'less_than_6_mods' : undefined
+  const moreHidden = (explicitMods.length < 6 && item.map.tier !== 17) ? 'less_than_6_mods' : undefined
 
   if (item.map.moreMaps) {
     ctx.filters.push(noSourcePseudoToFilter({
