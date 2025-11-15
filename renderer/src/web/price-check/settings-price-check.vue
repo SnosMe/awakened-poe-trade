@@ -55,6 +55,8 @@
     <ui-checkbox class="mb-4"
       v-model="activateStockFilter">{{ t(':select_stock') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
+      v-model="activateMerchantOnlyFilter">{{ t(':select_merchant_only') }}</ui-checkbox>
+    <ui-checkbox class="mb-4"
       v-model="requestPricePrediction">{{ t(':show_prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></ui-checkbox>
     <ui-checkbox class="mb-4"
       v-model="showCursor">{{ t(':cursor_pos') }}</ui-checkbox>
@@ -125,6 +127,7 @@ export default defineComponent({
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
+      activateMerchantOnlyFilter: configModelValue(() => configWidget.value, 'activateMerchantOnlyFilter'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
       builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),
       requestPricePrediction: configModelValue(() => configWidget.value, 'requestPricePrediction'),
