@@ -289,7 +289,9 @@ export function createFilters (
     filters.mirrored = { disabled: false }
   }
 
-  if (!item.isFractured && opts.exact) {
+  if (!item.isFractured &&
+    (item.info.craftable && !item.isCorrupted && !item.isMirrored)
+  ) {
     filters.fractured = { value: false }
   }
 
