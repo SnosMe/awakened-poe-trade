@@ -15,7 +15,9 @@ export function mapProps (ctx: FiltersCreationContext): void {
   const { item } = ctx
   if (!item.map || item.mapBlighted || item.mapCompletionReward || item.rarity === ItemRarity.Unique) return
 
-  if (!item.isCorrupted && item.map.tier !== 17) return
+  const hasMoreDrops = Boolean(item.map.moreMaps || item.map.moreScarabs || item.map.moreCurrency || item.map.moreDivCards)
+
+  if (!item.isCorrupted && !hasMoreDrops && item.map.tier !== 17) return
 
   if (item.map.itemQuantity) {
     ctx.filters.push(propToFilter({
@@ -32,7 +34,7 @@ export function mapProps (ctx: FiltersCreationContext): void {
       tradeId: 'item.map_item_rarity',
       roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.map.itemRarity },
       sources: [],
-      disabled: true
+      disabled: hasMoreDrops
     }, ctx))
   }
   if (item.map.packSize) {
@@ -45,54 +47,41 @@ export function mapProps (ctx: FiltersCreationContext): void {
     }, ctx))
   }
 
-  const explicitMods = item.newMods.filter(mod => mod.info.generation === 'prefix' || mod.info.generation === 'suffix')
-  const moreHidden = (explicitMods.length < 6 && item.map.tier !== 17) ? 'less_than_6_mods' : undefined
-
   if (item.map.moreMaps) {
     ctx.filters.push(noSourcePseudoToFilter({
       pseudo: pseudoStatByRef(PSEUDO.MORE_MAPS)!,
       roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.map.moreMaps },
-      hidden: moreHidden,
-      disabled: moreHidden != null
+      disabled: false
     }, ctx))
   }
   if (item.map.moreScarabs) {
     ctx.filters.push(noSourcePseudoToFilter({
       pseudo: pseudoStatByRef(PSEUDO.MORE_SCARABS)!,
       roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.map.moreScarabs },
-      hidden: moreHidden,
-      disabled: moreHidden != null
+      disabled: false
     }, ctx))
   }
   if (item.map.moreCurrency) {
     ctx.filters.push(noSourcePseudoToFilter({
       pseudo: pseudoStatByRef(PSEUDO.MORE_CURRENCY)!,
       roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.map.moreCurrency },
-      hidden: moreHidden,
-      disabled: moreHidden != null
+      disabled: false
     }, ctx))
   }
   if (item.map.moreDivCards) {
     ctx.filters.push(noSourcePseudoToFilter({
       pseudo: pseudoStatByRef(PSEUDO.MORE_DIVINATION_CARDS)!,
       roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.map.moreDivCards },
-      hidden: moreHidden,
-      disabled: moreHidden != null
+      disabled: false
     }, ctx))
   }
 
-  if (
-    !item.map.moreMaps &&
-    !item.map.moreScarabs &&
-    !item.map.moreCurrency &&
-    !item.map.moreDivCards
-  ) {
-    if (explicitMods.length === 8) {
-      ctx.filters.push(noSourcePseudoToFilter({
-        pseudo: pseudoStatByRef(PSEUDO.EXPLICIT_MODIFIERS)!,
-        roll: { min: 0, max: 8, value: explicitMods.length },
-        disabled: false
-      }, { ...ctx, searchInRange: 0 }))
-    }
+  const explicitMods = item.newMods.filter(mod => mod.info.generation === 'prefix' || mod.info.generation === 'suffix')
+  if (explicitMods.length === 8 && !hasMoreDrops) {
+    ctx.filters.push(noSourcePseudoToFilter({
+      pseudo: pseudoStatByRef(PSEUDO.EXPLICIT_MODIFIERS)!,
+      roll: { min: 0, max: 8, value: explicitMods.length },
+      disabled: false
+    }, { ...ctx, searchInRange: 0 }))
   }
 }
