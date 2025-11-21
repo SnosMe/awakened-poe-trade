@@ -19,6 +19,7 @@
 {"name":"Soul Taker","baseType":"Siege Axe","dustAmount":663.11}
 {"name":"Voltaxic Rift","baseType":"Spine Bow","dustAmount":643.79}
 {"name":"Atziri's Disfavour","baseType":"Vaal Axe","dustAmount":643.79}
+{"name":"Varunastra","baseType":"Vaal Blade","dustAmount":643.79}
 {"name":"Replica Duskdawn","baseType":"Maelström Staff","dustAmount":643.79}
 {"name":"Bloodseeker","baseType":"Hellion's Paw","dustAmount":606.84}
 {"name":"The Saviour","baseType":"Legion Sword","dustAmount":606.84}
@@ -32,6 +33,7 @@
 {"name":"Soul Ascension","baseType":"Carnal Mitts","dustAmount":317.64}
 {"name":"Nimis","baseType":"Topaz Ring","dustAmount":317.64}
 {"name":"Replica Headhunter","baseType":"Leather Belt","dustAmount":316.7}
+{"name":"Ephemeral Edge","baseType":"Dusk Blade","dustAmount":250.01}
 {"name":"Yoke of Suffering","baseType":"Onyx Amulet","dustAmount":236.36}
 {"name":"Manastorm","baseType":"Lacewood Spirit Shield","dustAmount":210}
 {"name":"Replica Bated Breath","baseType":"Chain Belt","dustAmount":206}
@@ -49,13 +51,22 @@
 {"name":"The Brine Crown","baseType":"Prophet Crown","dustAmount":156.26}
 {"name":"Replica Atziri's Acuity","baseType":"Vaal Gauntlets","dustAmount":156.26}
 {"name":"Garukhan's Flight","baseType":"Stealth Boots","dustAmount":151.71}
+{"name":"The Utmost","baseType":"Gold Amulet","dustAmount":151.26}
 {"name":"Tukohama's Fortress","baseType":"Ebony Tower Shield","dustAmount":147.29}
+{"name":"Starcaller","baseType":"Abyssal Axe","dustAmount":139.53}
+{"name":"Legacy of the Rose","baseType":"Judgement Staff","dustAmount":139.53}
 {"name":"Entropic Devastation","baseType":"Assassin's Mitts","dustAmount":134.79}
+{"name":"Festering Resentment","baseType":"Demon Dagger","dustAmount":130.43}
 {"name":"Cloak of Tawm'r Isley","baseType":"Savant's Robe","dustAmount":127.05}
+{"name":"Wing of the Wyvern","baseType":"Imperial Bow","dustAmount":122.94}
+{"name":"The Golden Charlatan","baseType":"Lion Sword","dustAmount":119.36}
+{"name":"Hand of Heresy","baseType":"Martyr Gloves","dustAmount":116.86}
+{"name":"Eclipse Solaris","baseType":"Engraved Wand","dustAmount":116.27}
 {"name":"Arakaali's Fang","baseType":"Fiend Dagger","dustAmount":116.27}
 {"name":"Martyr of Innocence","baseType":"Highborn Staff","dustAmount":112.89}
 {"name":"Song of the Sirens","baseType":"Fishing Rod","dustAmount":111.95}
 {"name":"Replica Alberon's Warpath","baseType":"Soldier Boots","dustAmount":103.31}
+{"name":"Binds of Bloody Vengeance","baseType":"Vanguard Belt","dustAmount":100.8}
 {"name":"Replica Maloney's Mechanism","baseType":"Ornate Quiver","dustAmount":91.79}
 {"name":"Replica Trypanon","baseType":"Great Mallet","dustAmount":79.18}
 {"name":"Gruthkul's Pelt","baseType":"Wyrmscale Doublet","dustAmount":74.63}
@@ -66,7 +77,11 @@
 {"name":"Eyes of the Greatwolf","baseType":"Greatwolf Talisman","dustAmount":65.76}
 {"name":"The Dark Seer","baseType":"Shadow Sceptre","dustAmount":62.5}
 {"name":"Ryslatha's Coil","baseType":"Studded Belt","dustAmount":62.5}
+{"name":"Enmity's Embrace","baseType":"Vermillion Ring","dustAmount":61.99}
+{"name":"Coiling Whisper","baseType":"Amethyst Ring","dustAmount":59.7}
 {"name":"Shade of Solaris","baseType":"Sage Wand","dustAmount":58.91}
+{"name":"Servant of Decay","baseType":"Torturer Garb","dustAmount":58.43}
+{"name":"Betrayal's Sting","baseType":"Steel Ring","dustAmount":58.43}
 {"name":"Void Battery","baseType":"Prophecy Wand","dustAmount":56.73}
 {"name":"Rigwald's Quills","baseType":"Two-Point Arrow Quiver","dustAmount":56.73}
 {"name":"The Brass Dome","baseType":"Gladiator Plate","dustAmount":56.73}
@@ -74,9 +89,16 @@
 {"name":"Seven-League Step","baseType":"Rawhide Boots","dustAmount":53.47}
 {"name":"Warrior's Legacy","baseType":"Ruby Ring","dustAmount":53.47}
 {"name":"Astral Projector","baseType":"Topaz Ring","dustAmount":53.47}
+{"name":"Venarius' Astrolabe","baseType":"Astrolabe Amulet","dustAmount":53.47}
+{"name":"The Arkhon's Tools","baseType":"Cloth Belt","dustAmount":52.61}
+{"name":"Whispers of Infinity","baseType":"Seaglass Amulet","dustAmount":51.91}
 {"name":"Aegis Aurora","baseType":"Champion Kite Shield","dustAmount":50.4}
+{"name":"The Tides of Time","baseType":"Vanguard Belt","dustAmount":50.4}
+{"name":"Seven Teachings","baseType":"Waxed Garb","dustAmount":50}
+{"name":"Spinehail","baseType":"Vile Arrow Quiver","dustAmount":49.34}
 {"name":"Atziri's Splendour","baseType":"Sacrificial Garb","dustAmount":48.93}
 {"name":"Shroud of the Lightless","baseType":"Carnal Armour","dustAmount":47.51}
+{"name":"The Dark Monarch","baseType":"Lich's Circlet","dustAmount":46.51}
 {"name":"Voll's Devotion","baseType":"Agate Amulet","dustAmount":46.12}
 {"name":"Shavronne's Revelation","baseType":"Moonstone Ring","dustAmount":46.12}
 {"name":"Windripper","baseType":"Imperial Bow","dustAmount":46.12}
@@ -91,8 +113,6 @@
 {"name":"Broken Faith","baseType":"Archon Kite Shield","dustAmount":43.48}
 {"name":"Cospri's Malice","baseType":"Jewelled Foil","dustAmount":43.48}
 {"name":"Inpulsa's Broken Heart","baseType":"Sadist Garb","dustAmount":43.48}
-{"name":"Hand of Wisdom and Action","baseType":"Imperial Claw","dustAmount":43.48}
-{"name":"The Red Trail","baseType":"Titan Greaves","dustAmount":43.48}
 {"name":"Doryani's Delusion","baseType":"Sorcerer Boots","dustAmount":43.48}
 {"name":"The Queen's Hunger","baseType":"Vaal Regalia","dustAmount":43.48}
 {"name":"Maloney's Mechanism","baseType":"Ornate Quiver","dustAmount":43.48}
@@ -102,6 +122,7 @@
 {"name":"Replica Red Trail","baseType":"Titan Greaves","dustAmount":43.48}
 {"name":"Viridi's Veil","baseType":"Praetor Crown","dustAmount":43.48}
 {"name":"Doppelgänger Guise","baseType":"Sadist Garb","dustAmount":43.48}
+{"name":"Grace of the Goddess","baseType":"Prophecy Wand","dustAmount":43.48}
 {"name":"Thunderfist","baseType":"Murder Mitts","dustAmount":42.21}
 {"name":"Steppan Eard","baseType":"Sorcerer Boots","dustAmount":42.21}
 {"name":"Heretic's Veil","baseType":"Deicide Mask","dustAmount":42.21}
@@ -112,15 +133,12 @@
 {"name":"The Yielding Mortality","baseType":"Imperial Staff","dustAmount":40.98}
 {"name":"Replica Paradoxica","baseType":"Vaal Rapier","dustAmount":40.98}
 {"name":"Replica Allure","baseType":"Vaal Claw","dustAmount":40.98}
+{"name":"Rigwald's Hunt","baseType":"General's Brigantine","dustAmount":40.98}
 {"name":"Hyrri's Ire","baseType":"Zodiac Leather","dustAmount":39.79}
-{"name":"The Formless Inferno","baseType":"Royal Burgonet","dustAmount":39.79}
-{"name":"The Perfect Form","baseType":"Zodiac Leather","dustAmount":39.79}
 {"name":"Doedre's Skin","baseType":"Widowsilk Robe","dustAmount":39.79}
 {"name":"The Eternity Shroud","baseType":"Blood Raiment","dustAmount":39.79}
 {"name":"Replica Perfect Form","baseType":"Zodiac Leather","dustAmount":39.79}
 {"name":"Replica Hyrri's Ire","baseType":"Zodiac Leather","dustAmount":39.79}
-{"name":"Varunastra","baseType":"Vaal Blade","dustAmount":38.63}
-{"name":"Uul-Netol's Embrace","baseType":"Vaal Axe","dustAmount":38.63}
 {"name":"The Surrender","baseType":"Ezomyte Tower Shield","dustAmount":38.63}
 {"name":"Disintegrator","baseType":"Maelström Staff","dustAmount":38.63}
 {"name":"Loreweave","baseType":"Elegant Ringmail","dustAmount":38.63}
@@ -130,8 +148,6 @@
 {"name":"Shavronne's Wrappings","baseType":"Occultist's Vestment","dustAmount":36.41}
 {"name":"Darkscorn","baseType":"Assassin Bow","dustAmount":36.41}
 {"name":"Kintsugi","baseType":"Exquisite Leather","dustAmount":36.41}
-{"name":"Tulfall","baseType":"Opal Wand","dustAmount":36.41}
-{"name":"Esh's Visage","baseType":"Vaal Spirit Shield","dustAmount":36.41}
 {"name":"Arborix","baseType":"Assassin Bow","dustAmount":36.41}
 {"name":"Apep's Supremacy","baseType":"Vaal Spirit Shield","dustAmount":36.41}
 {"name":"The Surging Thoughts","baseType":"Legion Sword","dustAmount":36.41}
@@ -146,9 +162,10 @@
 {"name":"Farrul's Pounce","baseType":"Hydrascale Gauntlets","dustAmount":33.32}
 {"name":"Fleshcrafter","baseType":"Necromancer Silks","dustAmount":33.32}
 {"name":"Gravebind","baseType":"Hydrascale Gauntlets","dustAmount":33.32}
-{"name":"Xoph's Nurture","baseType":"Citadel Bow","dustAmount":32.35}
+{"name":"Kaom's Primacy","baseType":"Karui Chopper","dustAmount":32.35}
 {"name":"Crown of the Tyrant","baseType":"Magistrate Crown","dustAmount":32.35}
 {"name":"Crest of Desire","baseType":"Fluted Bascinet","dustAmount":32.35}
+{"name":"Lost Unity","baseType":"Formless Ring","dustAmount":31.67}
 {"name":"Farrul's Bite","baseType":"Harlequin Mask","dustAmount":31.41}
 {"name":"Offering to the Serpent","baseType":"Legion Gloves","dustAmount":31.41}
 {"name":"Garb of the Ephemeral","baseType":"Savant's Robe","dustAmount":30.49}
@@ -159,11 +176,14 @@
 {"name":"Qotra's Regulator","baseType":"Sovereign Spiked Shield","dustAmount":28.74}
 {"name":"Atziri's Reflection","baseType":"Golden Buckler","dustAmount":28.74}
 {"name":"Sandstorm Visage","baseType":"Necromancer Circlet","dustAmount":28.74}
+{"name":"The Tempest Rising","baseType":"Goliath Greaves","dustAmount":28.74}
 {"name":"Utula's Hunger","baseType":"Majestic Plate","dustAmount":27.91}
+{"name":"The Celestial Brace","baseType":"Goliath Gauntlets","dustAmount":27.91}
 {"name":"Cloak of Defiance","baseType":"Lacquered Garb","dustAmount":27.09}
-{"name":"Skin of the Lords","baseType":"Simple Robe","dustAmount":26.52}
 {"name":"Zerphi's Heart","baseType":"Paua Amulet","dustAmount":26.52}
+{"name":"Svalinn","baseType":"Girded Tower Shield","dustAmount":26.3}
 {"name":"Replica Frostbreath","baseType":"Ornate Mace","dustAmount":25.54}
+{"name":"Hand of the Lords","baseType":"Carnal Mitts","dustAmount":25.54}
 {"name":"The Covenant","baseType":"Spidersilk Robe","dustAmount":24.79}
 {"name":"Anathema","baseType":"Moonstone Ring","dustAmount":24.79}
 {"name":"Replica Covenant","baseType":"Spidersilk Robe","dustAmount":24.79}
@@ -175,12 +195,17 @@
 {"name":"Abhorrent Interrogation","baseType":"Ambush Mitts","dustAmount":22.03}
 {"name":"The Tempest's Liberation","baseType":"Callous Mask","dustAmount":22.03}
 {"name":"Perfidy","baseType":"Glorious Plate","dustAmount":21.92}
+{"name":"Ravenous Passion","baseType":"Zealot Helmet","dustAmount":21.39}
+{"name":"Mystic Refractor","baseType":"Pagan Wand","dustAmount":21.22}
 {"name":"Hand of the Fervent","baseType":"Zealot Gloves","dustAmount":20.76}
 {"name":"Impresence","baseType":"Onyx Amulet","dustAmount":20.66}
 {"name":"Assailum","baseType":"Sinner Tricorne","dustAmount":20.66}
 {"name":"Mark of the Elder","baseType":"Steel Ring","dustAmount":19.48}
 {"name":"Mark of the Shaper","baseType":"Opal Ring","dustAmount":19.48}
 {"name":"Polaric Devastation","baseType":"Opal Ring","dustAmount":19.48}
+{"name":"The Unseen Hue","baseType":"Opal Ring","dustAmount":19.48}
+{"name":"Woespike","baseType":"Steel Ring","dustAmount":19.48}
+{"name":"Refuge in Isolation","baseType":"Paladin Crown","dustAmount":19.48}
 {"name":"Replica Soul Strike","baseType":"Spike-Point Arrow Quiver","dustAmount":19}
 {"name":"Replica Midnight Bargain","baseType":"Engraved Wand","dustAmount":19}
 {"name":"Brain Rattler","baseType":"Meatgrinder","dustAmount":18.91}
@@ -194,8 +219,6 @@
 {"name":"Augyre","baseType":"Void Sceptre","dustAmount":18.91}
 {"name":"Gloomfang","baseType":"Blue Pearl Amulet","dustAmount":18.91}
 {"name":"The Gull","baseType":"Raven Mask","dustAmount":17.91}
-{"name":"Severed in Sleep","baseType":"Cutlass","dustAmount":17.91}
-{"name":"United in Dream","baseType":"Cutlass","dustAmount":17.91}
 {"name":"Blackflame","baseType":"Amethyst Ring","dustAmount":17.91}
 {"name":"Maligaro's Virtuosity","baseType":"Deerskin Gloves","dustAmount":17.82}
 {"name":"Asenath's Gentle Touch","baseType":"Silk Gloves","dustAmount":17.82}
@@ -207,6 +230,7 @@
 {"name":"Sunblast","baseType":"Cloth Belt","dustAmount":17.39}
 {"name":"Doon Cuebiyari","baseType":"Vaal Sceptre","dustAmount":17.3}
 {"name":"Death's Door","baseType":"Crusader Boots","dustAmount":17.3}
+{"name":"Bonemeld","baseType":"Marble Amulet","dustAmount":17.3}
 {"name":"Auxium","baseType":"Crystal Belt","dustAmount":16.8}
 {"name":"Flamesight","baseType":"Solaris Circlet","dustAmount":16.8}
 {"name":"Galesight","baseType":"Solaris Circlet","dustAmount":16.8}
@@ -216,6 +240,8 @@
 {"name":"Mistwall","baseType":"Lacquered Buckler","dustAmount":16.8}
 {"name":"Maw of Mischief","baseType":"Bone Helmet","dustAmount":16.8}
 {"name":"The Burden of Truth","baseType":"Crystal Belt","dustAmount":16.8}
+{"name":"The Hallowed Monarch","baseType":"Faithful Helmet","dustAmount":16.8}
+{"name":"The Apostate","baseType":"Cabalist Regalia","dustAmount":16.39}
 {"name":"Shadowstitch","baseType":"Sacrificial Garb","dustAmount":16.31}
 {"name":"Hegemony's Era","baseType":"Judgement Staff","dustAmount":15.84}
 {"name":"Replica Restless Ward","baseType":"Carnal Armour","dustAmount":15.84}
@@ -233,6 +259,7 @@
 {"name":"Replica Voidwalker","baseType":"Murder Boots","dustAmount":14.93}
 {"name":"Vorana's March","baseType":"Runic Sabatons","dustAmount":14.93}
 {"name":"Kaom's Spirit","baseType":"Titan Gauntlets","dustAmount":14.93}
+{"name":"Squirming Terror","baseType":"Unset ","dustAmount":14.69}
 {"name":"The Shattered Divinity","baseType":"Blunt Arrow Quiver","dustAmount":14.56}
 {"name":"Mon'tregul's Grasp","baseType":"Void Sceptre","dustAmount":14.49}
 {"name":"Pledge of Hands","baseType":"Judgement Staff","dustAmount":14.49}
@@ -241,8 +268,6 @@
 {"name":"Malachai's Vision","baseType":"Praetor Crown","dustAmount":14.49}
 {"name":"Cospri's Will","baseType":"Assassin's Garb","dustAmount":14.49}
 {"name":"Tinkerskin","baseType":"Sadist Garb","dustAmount":14.49}
-{"name":"Hand of Thought and Motion","baseType":"Imperial Claw","dustAmount":14.49}
-{"name":"The Infinite Pursuit","baseType":"Titan Greaves","dustAmount":14.49}
 {"name":"The Unshattered Will","baseType":"Archon Kite Shield","dustAmount":14.49}
 {"name":"Invictus Solaris","baseType":"Archon Kite Shield","dustAmount":14.49}
 {"name":"Cyclopean Coil","baseType":"Leather Belt","dustAmount":14.49}
@@ -252,7 +277,9 @@
 {"name":"Nebulis","baseType":"Void Sceptre","dustAmount":14.49}
 {"name":"Atziri's Rule","baseType":"Judgement Staff","dustAmount":14.49}
 {"name":"Cadigan's Crown","baseType":"Runic Crown","dustAmount":14.49}
+{"name":"Howlcrack","baseType":"Ezomyte Burgonet","dustAmount":14.49}
 {"name":"The Taming","baseType":"Prismatic Ring","dustAmount":14.14}
+{"name":"Circle of Ambition","baseType":"Prismatic Ring","dustAmount":14.14}
 {"name":"The Bringer of Rain","baseType":"Nightmare Bascinet","dustAmount":14.07}
 {"name":"Replica Oro's Sacrifice","baseType":"Infernal Sword","dustAmount":14.07}
 {"name":"Dawnbreaker","baseType":"Colossal Tower Shield","dustAmount":14.07}
@@ -265,6 +292,7 @@
 {"name":"Hands of the High Templar","baseType":"Crusader Gloves","dustAmount":13.66}
 {"name":"Font of Thunder","baseType":"Mirrored Spiked Shield","dustAmount":13.66}
 {"name":"Replica Dreamfeather","baseType":"Eternal Sword","dustAmount":13.66}
+{"name":"Jiquani's Potential","baseType":"imperial Staff","dustAmount":13.66}
 {"name":"The Goddess Scorned","baseType":"Elegant Sword","dustAmount":13.33}
 {"name":"Rime Gaze","baseType":"Mind Cage","dustAmount":13.26}
 {"name":"Infernal Mantle","baseType":"Widowsilk Robe","dustAmount":13.26}
@@ -272,8 +300,7 @@
 {"name":"Jack, the Axe","baseType":"Vaal Hatchet","dustAmount":13.26}
 {"name":"Doomsower","baseType":"Lion Sword","dustAmount":13.26}
 {"name":"Scold's Bridle","baseType":"Mind Cage","dustAmount":13.26}
-{"name":"The Formless Flame","baseType":"Royal Burgonet","dustAmount":13.26}
-{"name":"The Snowblind Grace","baseType":"Zodiac Leather","dustAmount":13.26}
+{"name":"Skin of the Lords","baseType":"Simple Robe","dustAmount":13.26}
 {"name":"Saqawal's Nest","baseType":"Blood Raiment","dustAmount":13.26}
 {"name":"Fenumus' Shroud","baseType":"Widowsilk Robe","dustAmount":13.26}
 {"name":"Hale Negator","baseType":"Mind Cage","dustAmount":13.26}
@@ -283,9 +310,9 @@
 {"name":"Rebuke of the Vaal","baseType":"Vaal Blade","dustAmount":12.88}
 {"name":"Hezmana's Bloodlust","baseType":"Vaal Axe","dustAmount":12.88}
 {"name":"Reach of the Council","baseType":"Spine Bow","dustAmount":12.88}
-{"name":"Uul-Netol's Kiss","baseType":"Vaal Axe","dustAmount":12.88}
 {"name":"The Anticipation","baseType":"Ezomyte Tower Shield","dustAmount":12.88}
 {"name":"Replica Alpha's Howl","baseType":"Sinner Tricorne","dustAmount":12.88}
+{"name":"Cowards' Wail","baseType":"Ezomyte Tower Shield","dustAmount":12.88}
 {"name":"Daresso's Defiance","baseType":"Full Dragonscale","dustAmount":12.5}
 {"name":"Atziri's Acuity","baseType":"Vaal Gauntlets","dustAmount":12.5}
 {"name":"Fenumus' Spinnerets","baseType":"Assassin's Boots","dustAmount":12.5}
@@ -302,8 +329,6 @@
 {"name":"Carcass Jack","baseType":"Varnished Coat","dustAmount":12.14}
 {"name":"Death's Oath","baseType":"Astral Plate","dustAmount":12.14}
 {"name":"The Vertex","baseType":"Vaal Mask","dustAmount":12.14}
-{"name":"Tulborn","baseType":"Opal Wand","dustAmount":12.14}
-{"name":"Esh's Mirror","baseType":"Vaal Spirit Shield","dustAmount":12.14}
 {"name":"Yriel's Fostering","baseType":"Exquisite Leather","dustAmount":12.14}
 {"name":"The Rippling Thoughts","baseType":"Legion Sword","dustAmount":12.14}
 {"name":"Perepiteia","baseType":"Ezomyte Spiked Shield","dustAmount":12.14}
@@ -314,12 +339,15 @@
 {"name":"Replica Wings of Entropy","baseType":"Ezomyte Axe","dustAmount":12.14}
 {"name":"Glimpse of Chaos","baseType":"Vaal Mask","dustAmount":12.14}
 {"name":"Dawnstrider","baseType":"Vaal Greaves","dustAmount":12.14}
+{"name":"Cadigan's Authority","baseType":"Platinum Sceptre","dustAmount":12.14}
+{"name":"Bitter Instinct","baseType":"Spiny Round Shield","dustAmount":12.14}
 {"name":"Rigwald's Savagery","baseType":"Royal Axe","dustAmount":11.82}
 {"name":"Rigwald's Command","baseType":"Midnight Blade","dustAmount":11.82}
 {"name":"Slivertongue","baseType":"Harbinger Bow","dustAmount":11.82}
 {"name":"Obscurantis","baseType":"Lion Pelt","dustAmount":11.82}
 {"name":"Inya's Epiphany","baseType":"Arcanist Slippers","dustAmount":11.78}
 {"name":"Replica Inya's Epiphany","baseType":"Arcanist Slippers","dustAmount":11.78}
+{"name":"The Living Blade","baseType":"Ezomyte Blade","dustAmount":11.78}
 {"name":"Abyssus","baseType":"Ezomyte Burgonet","dustAmount":11.44}
 {"name":"Lightning Coil","baseType":"Desert Brigandine","dustAmount":11.44}
 {"name":"Null's Inclination","baseType":"Ranger Bow","dustAmount":11.44}
@@ -332,7 +360,6 @@
 {"name":"The Fulcrum","baseType":"Ezomyte Staff","dustAmount":11.44}
 {"name":"Replica Grip of the Council","baseType":"Arcanist Gloves","dustAmount":11.44}
 {"name":"Cameria's Avarice","baseType":"Gavel","dustAmount":11.44}
-{"name":"Contract: The Twins","baseType":"Vengeful Contract","dustAmount":11.29}
 {"name":"Algor Mortis","baseType":"Carnal Mitts","dustAmount":11.14}
 {"name":"Saffell's Frame","baseType":"Branded Kite Shield","dustAmount":11.11}
 {"name":"Queen of the Forest","baseType":"Destiny Leather","dustAmount":11.11}
@@ -341,26 +368,17 @@
 {"name":"Expedition's End","baseType":"Sentinel Jacket","dustAmount":11.11}
 {"name":"Wilma's Requital","baseType":"Solaris Circlet","dustAmount":11.11}
 {"name":"Gamblesprint","baseType":"Hydrascale Boots","dustAmount":11.11}
-{"name":"First Piece of Focus","baseType":"Archon Kite Shield Piece","dustAmount":10.96}
-{"name":"Second Piece of Focus","baseType":"Archon Kite Shield Piece","dustAmount":10.96}
-{"name":"Third Piece of Focus","baseType":"Archon Kite Shield Piece","dustAmount":10.96}
-{"name":"Fourth Piece of Focus","baseType":"Archon Kite Shield Piece","dustAmount":10.96}
-{"name":"First Piece of Storms","baseType":"Callous Mask Piece","dustAmount":10.96}
-{"name":"Second Piece of Storms","baseType":"Callous Mask Piece","dustAmount":10.96}
-{"name":"Third Piece of Storms","baseType":"Callous Mask Piece","dustAmount":10.96}
-{"name":"Contract: Death to Darnaw","baseType":"Naval Contract","dustAmount":10.96}
 {"name":"Unyielding Flame","baseType":"Archon Kite Shield","dustAmount":10.82}
-{"name":"Xoph's Inception","baseType":"Citadel Bow","dustAmount":10.78}
 {"name":"Craiceann's Chitin","baseType":"Magistrate Crown","dustAmount":10.78}
 {"name":"Mask of the Stitched Demon","baseType":"Magistrate Crown","dustAmount":10.78}
 {"name":"Storm's Gift","baseType":"Assassin's Mitts","dustAmount":10.78}
 {"name":"Mask of the Tribunal","baseType":"Magistrate Crown","dustAmount":10.78}
-{"name":"Contract: Heart of Glory","baseType":"Familial Contract","dustAmount":10.64}
 {"name":"The Magnate","baseType":"Studded Belt","dustAmount":10.52}
 {"name":"The Torrent's Reclamation","baseType":"Cloth Belt","dustAmount":10.52}
 {"name":"Replica Soul Tether","baseType":"Cloth Belt","dustAmount":10.52}
 {"name":"Replica Ungil's Gauche","baseType":"Boot Knife","dustAmount":10.52}
 {"name":"Replica Badge of the Brotherhood","baseType":"Turquoise Amulet","dustAmount":10.52}
+{"name":"Haunting Memories","baseType":"Turquoise Amulet","dustAmount":10.52}
 {"name":"Perseverance","baseType":"Vanguard Belt","dustAmount":10.5}
 {"name":"The Black Cane","baseType":"Royal Sceptre","dustAmount":10.5}
 {"name":"Willowgift","baseType":"Jade Amulet","dustAmount":10.5}
@@ -369,8 +387,6 @@
 {"name":"Mind of the Council","baseType":"Harlequin Mask","dustAmount":10.47}
 {"name":"The Crimson Storm","baseType":"Steelwood Bow","dustAmount":10.47}
 {"name":"Kaom's Binding","baseType":"Heavy Belt","dustAmount":10.47}
-{"name":"Contract: Breaking the Unbreakable","baseType":"Preventative Contract","dustAmount":10.33}
-{"name":"Contract: The Slaver King","baseType":"Vigilante Contract","dustAmount":10.33}
 {"name":"The Rat Cage","baseType":"Sharkskin Tunic","dustAmount":10.16}
 {"name":"Craiceann's Carapace","baseType":"Golden Plate","dustAmount":10.16}
 {"name":"Fate of the Vaal","baseType":"Gemstone Sword","dustAmount":10.16}
@@ -392,12 +408,6 @@
 {"name":"Craiceann's Tracks","baseType":"Goliath Greaves","dustAmount":9.58}
 {"name":"Fenumus' Toxins","baseType":"Necromancer Circlet","dustAmount":9.58}
 {"name":"Eye of Innocence","baseType":"Citrine Amulet","dustAmount":9.45}
-{"name":"First Piece of Brutality","baseType":"Imperial Staff Piece","dustAmount":9.45}
-{"name":"Second Piece of Brutality","baseType":"Imperial Staff Piece","dustAmount":9.45}
-{"name":"Third Piece of Brutality","baseType":"Imperial Staff Piece","dustAmount":9.45}
-{"name":"First Piece of Directions","baseType":"Blunt Arrow Quiver Piece","dustAmount":9.45}
-{"name":"Second Piece of Directions","baseType":"Blunt Arrow Quiver Piece","dustAmount":9.45}
-{"name":"Third Piece of Directions","baseType":"Blunt Arrow Quiver Piece","dustAmount":9.45}
 {"name":"Leper's Alms","baseType":"Mirrored Spiked Shield","dustAmount":9.45}
 {"name":"Atziri's Foible","baseType":"Paua Amulet","dustAmount":9.35}
 {"name":"Ahkeli's Meadow","baseType":"Ruby Ring","dustAmount":9.35}
@@ -416,10 +426,13 @@
 {"name":"Touch of Anguish","baseType":"Imperial Claw","dustAmount":9.06}
 {"name":"Ahn's Contempt","baseType":"Praetor Crown","dustAmount":9.06}
 {"name":"Ahn's Might","baseType":"Midnight Blade","dustAmount":9.06}
+{"name":"Azadi Crest","baseType":"Lacquered Buckler","dustAmount":9.06}
+{"name":"Scornflux","baseType":"Satin Slippers","dustAmount":9.06}
 {"name":"Gorgon's Gaze","baseType":"Regicide Mask","dustAmount":9.03}
 {"name":"Profane Proxy","baseType":"Unset Ring","dustAmount":9.03}
 {"name":"Witchhunter's Judgment","baseType":"Highborn Staff","dustAmount":9.03}
 {"name":"Akoya's Gaze","baseType":"Regicide Mask","dustAmount":9.03}
+{"name":"Ynda's Stand","baseType":"Studded Belt","dustAmount":9.03}
 {"name":"The Ephemeral Bond","baseType":"Lapis Amulet","dustAmount":8.91}
 {"name":"Kongor's Undying Rage","baseType":"Terror Maul","dustAmount":8.79}
 {"name":"Ahn's Heritage","baseType":"Colossal Tower Shield","dustAmount":8.79}
@@ -456,8 +469,10 @@
 {"name":"Geofri's Sanctuary","baseType":"Elegant Ringmail","dustAmount":8.05}
 {"name":"Hyrri's Truth","baseType":"Jade Amulet","dustAmount":8.05}
 {"name":"Rashkaldor's Patience","baseType":"Jade Amulet","dustAmount":8.02}
+{"name":"Soul Tether","baseType":"Cloth Belt","dustAmount":8.02}
 {"name":"Maw of Conquest","baseType":"Steel Circlet","dustAmount":8.02}
 {"name":"The Jinxed Juju","baseType":"Citrine Amulet","dustAmount":8.02}
+{"name":"Kaom's Command","baseType":"Siege Helmet","dustAmount":8.02}
 {"name":"The Restless Ward","baseType":"Carnal Armour","dustAmount":7.92}
 {"name":"Replica Siegebreaker","baseType":"Heavy Belt","dustAmount":7.83}
 {"name":"Speaker's Wreath","baseType":"Prophet Crown","dustAmount":7.81}
@@ -479,6 +494,7 @@
 {"name":"Asenath's Mark","baseType":"Iron Circlet","dustAmount":7.38}
 {"name":"Uzaza's Valley","baseType":"Sapphire Ring","dustAmount":7.38}
 {"name":"Scorpion's Call","baseType":"Heavy Arrow Quiver","dustAmount":7.36}
+{"name":"Tawhoa's Felling","baseType":"Piledriver","dustAmount":7.36}
 {"name":"Soulthirst","baseType":"Cloth Belt","dustAmount":7.34}
 {"name":"The Tempest's Binding","baseType":"Callous Mask","dustAmount":7.34}
 {"name":"Slavedriver's Hand","baseType":"Ambush Mitts","dustAmount":7.34}
@@ -489,6 +505,9 @@
 {"name":"Triumvirate Authority","baseType":"Unset Ring","dustAmount":7.34}
 {"name":"Izaro's Dilemma","baseType":"Imperial Claw","dustAmount":7.25}
 {"name":"Nuro's Harp","baseType":"Harbinger Bow","dustAmount":7.25}
+{"name":"The Hateful Accuser","baseType":"Nameless Ring","dustAmount":7.25}
+{"name":"The Selfish Shepherd","baseType":"Nameless Ring","dustAmount":7.25}
+{"name":"The Queller of Minds","baseType":"Nameless Ring","dustAmount":7.25}
 {"name":"Xoph's Blood","baseType":"Amber Amulet","dustAmount":7.16}
 {"name":"The Pandemonius","baseType":"Jade Amulet","dustAmount":7.16}
 {"name":"Choir of the Storm","baseType":"Lapis Amulet","dustAmount":7.16}
@@ -503,8 +522,14 @@
 {"name":"The Blood Dance","baseType":"Sharkskin Boots","dustAmount":7.13}
 {"name":"Hinekora's Sight","baseType":"Onyx Amulet","dustAmount":7.13}
 {"name":"Replica Hinekora's Sight","baseType":"Onyx Amulet","dustAmount":7.13}
+{"name":"Robbie's Rotten Mace","baseType":"Terror Maul","dustAmount":7.03}
+{"name":"Carl's Crusher","baseType":"Terror Maul","dustAmount":7.03}
 {"name":"Oro's Sacrifice","baseType":"Infernal Sword","dustAmount":7.03}
 {"name":"Surgebinders","baseType":"Dragonscale Gauntlets","dustAmount":7.03}
+{"name":"Spiritskin","baseType":"Saint's Hauberk","dustAmount":7.03}
+{"name":"Waycarver","baseType":"Dragonscale Gauntlets","dustAmount":7.03}
+{"name":"The Formless Inferno","baseType":"Royal Burgonet","dustAmount":6.96}
+{"name":"The Perfect Form","baseType":"Zodiac Leather","dustAmount":6.96}
 {"name":"Piscator's Vigil","baseType":"Imbued Wand","dustAmount":6.94}
 {"name":"The Dancing Dervish","baseType":"Reaver Sword","dustAmount":6.94}
 {"name":"Hiltless","baseType":"Reaver Sword","dustAmount":6.94}
@@ -518,7 +543,7 @@
 {"name":"Allure","baseType":"Vaal Claw","dustAmount":6.83}
 {"name":"Debeon's Dirge","baseType":"Despot Axe","dustAmount":6.83}
 {"name":"White Wind","baseType":"Imperial Skean","dustAmount":6.83}
-{"name":"Kaom's Primacy","baseType":"Karui Chopper","dustAmount":6.74}
+{"name":"Uul-Netol's Embrace","baseType":"Vaal Axe","dustAmount":6.76}
 {"name":"Snakebite","baseType":"Assassin's Mitts","dustAmount":6.74}
 {"name":"Ichimonji","baseType":"Corsair Sword","dustAmount":6.74}
 {"name":"Mask of the Spirit Drinker","baseType":"Magistrate Crown","dustAmount":6.74}
@@ -536,7 +561,8 @@
 {"name":"Allelopathy","baseType":"Satin Gloves","dustAmount":6.52}
 {"name":"Replica Allelopathy","baseType":"Satin Gloves","dustAmount":6.52}
 {"name":"Mark of the Doubting Knight","baseType":"Platinum Kris","dustAmount":6.44}
-{"name":"Skin of the Loyal","baseType":"Simple Robe","dustAmount":6.37}
+{"name":"The Rack","baseType":"Ezomyte Tower Shield","dustAmount":6.44}
+{"name":"Esh's Visage","baseType":"Vaal Spirit Shield","dustAmount":6.37}
 {"name":"Replica Atziri's Foible","baseType":"Paua Amulet","dustAmount":6.37}
 {"name":"Greed's Embrace","baseType":"Golden Plate","dustAmount":6.35}
 {"name":"Story of the Vaal","baseType":"Gemstone Sword","dustAmount":6.35}
@@ -552,12 +578,20 @@
 {"name":"Blood Price","baseType":"Reaver Helmet","dustAmount":6.33}
 {"name":"Thousand Teeth Temu","baseType":"Vaal Buckler","dustAmount":6.25}
 {"name":"The Broken Crown","baseType":"Prophet Crown","dustAmount":6.25}
+{"name":"Prospero's Protection","baseType":"Iron Ring","dustAmount":6.25}
 {"name":"The Retch","baseType":"Rustic Sash","dustAmount":6.18}
 {"name":"Voidbringer","baseType":"Conjurer Gloves","dustAmount":6.17}
 {"name":"Dance of the Offered","baseType":"Carnal Boots","dustAmount":6.17}
+{"name":"Admiral's Arrogance","baseType":"Antique Gauntlets","dustAmount":6.15}
+{"name":"The Caged Mammoth","baseType":"Antique Gauntlets","dustAmount":6.15}
 {"name":"Sin Trek","baseType":"Stealth Boots","dustAmount":6.07}
 {"name":"Chin Sol","baseType":"Assassin Bow","dustAmount":6.07}
 {"name":"Wings of Entropy","baseType":"Ezomyte Axe","dustAmount":6.07}
+{"name":"Santoni's Faith","baseType":"Champion Kite Shield","dustAmount":6.07}
+{"name":"Fairgraves' Bearing","baseType":"Perocado","dustAmount":6.07}
+{"name":"Borrowed Power","baseType":"Platinum Sceptre","dustAmount":6.07}
+{"name":"Bloodletter","baseType":"Ezomyte Dagger","dustAmount":6.07}
+{"name":"Rumblemarch","baseType":"Vaal Greaves","dustAmount":6.07}
 {"name":"Sinvicta's Mettle","baseType":"Ezomyte Axe","dustAmount":6.07}
 {"name":"Voidhome","baseType":"Dread Maul","dustAmount":5.99}
 {"name":"Pyroshock Clasp","baseType":"Leather Belt","dustAmount":5.99}
@@ -569,6 +603,7 @@
 {"name":"Bronn's Lithe","baseType":"Cutthroat's Garb","dustAmount":5.81}
 {"name":"The Consuming Dark","baseType":"Fiend Dagger","dustAmount":5.81}
 {"name":"The Coming Calamity","baseType":"Destroyer Regalia","dustAmount":5.81}
+{"name":"Serle's Masterwork","baseType":"Phantom Mace","dustAmount":5.81}
 {"name":"Command of the Pit","baseType":"Riveted Gloves","dustAmount":5.8}
 {"name":"Replica Harvest","baseType":"Jasper Chopper","dustAmount":5.8}
 {"name":"Cameria's Maul","baseType":"Gavel","dustAmount":5.72}
@@ -586,6 +621,7 @@
 {"name":"Vixen's Entrapment","baseType":"Embroidered Gloves","dustAmount":5.63}
 {"name":"Moonsorrow","baseType":"Imbued Wand","dustAmount":5.55}
 {"name":"Obliteration","baseType":"Imbued Wand","dustAmount":5.55}
+{"name":"Farsight","baseType":"Solaris Circlet","dustAmount":5.55}
 {"name":"Replica Soul Taker","baseType":"Siege Axe","dustAmount":5.55}
 {"name":"The Dancing Duo","baseType":"Reaver Sword","dustAmount":5.55}
 {"name":"The Fledgling","baseType":"Lacquered Helmet","dustAmount":5.48}
@@ -595,8 +631,12 @@
 {"name":"Xoph's Heart","baseType":"Amber Amulet","dustAmount":5.46}
 {"name":"The Halcyon","baseType":"Jade Amulet","dustAmount":5.46}
 {"name":"Replica Earendel's Embrace","baseType":"Grinning Fetish","dustAmount":5.46}
+{"name":"Leviathan Ivory","baseType":"Great White Claw","dustAmount":5.39}
+{"name":"Rory's Revengance","baseType":"Corsair Sword","dustAmount":5.39}
+{"name":"Mark2's Mastery","baseType":"Siege Axe","dustAmount":5.39}
 {"name":"Gang's Momentum","baseType":"Legion Boots","dustAmount":5.39}
 {"name":"Femurs of the Saints","baseType":"Primordial Staff","dustAmount":5.39}
+{"name":"Lawbreaker","baseType":"Fluted Bascinet","dustAmount":5.39}
 {"name":"March of the Legion","baseType":"Legion Boots","dustAmount":5.39}
 {"name":"Sign of the Sin Eater","baseType":"Tyrant's Sekhem","dustAmount":5.39}
 {"name":"Rotting Legion","baseType":"Loricated Ringmail","dustAmount":5.39}
@@ -620,11 +660,12 @@
 {"name":"Windscream","baseType":"Reinforced Greaves","dustAmount":5.15}
 {"name":"Deidbell","baseType":"Gilded Sallet","dustAmount":5.15}
 {"name":"The Whispering Ice","baseType":"Vile Staff","dustAmount":5.15}
+{"name":"The Grey Wind","baseType":"Spectral Axe","dustAmount":5.15}
+{"name":"Prospero's Vault","baseType":"Golden Plate","dustAmount":5.08}
 {"name":"Gluttony","baseType":"Leather Belt","dustAmount":5.01}
 {"name":"Nightgrip","baseType":"Runic Gages","dustAmount":5.01}
 {"name":"Olroth's Charge","baseType":"Runic Sollerets","dustAmount":5.01}
 {"name":"Sudden Dawn","baseType":"Steel Circlet","dustAmount":5.01}
-{"name":"Ephemeral Edge","baseType":"Dusk Blade","dustAmount":5}
 {"name":"Death's Harp","baseType":"Death Bow","dustAmount":5}
 {"name":"Bitterdream","baseType":"Shadow Sceptre","dustAmount":5}
 {"name":"Replica Iron Commander","baseType":"Death Bow","dustAmount":5}
@@ -647,8 +688,10 @@
 {"name":"Replica Lioneye's Paws","baseType":"Bronzescale Boots","dustAmount":4.71}
 {"name":"Relic of the Pact","baseType":"Sage Wand","dustAmount":4.71}
 {"name":"Infractem","baseType":"Decimation Bow","dustAmount":4.65}
+{"name":"Felltooth","baseType":"Fiend Dagger","dustAmount":4.65}
 {"name":"Prismatic Eclipse","baseType":"Twilight Blade","dustAmount":4.65}
 {"name":"Empire's Grasp","baseType":"Goliath Gauntlets","dustAmount":4.65}
+{"name":"Disjunction","baseType":"Abyssal Sceptre","dustAmount":4.65}
 {"name":"Replica Forbidden Shako","baseType":"Great Crown","dustAmount":4.65}
 {"name":"Geofri's Legacy","baseType":"Great Crown","dustAmount":4.65}
 {"name":"Voideye","baseType":"Unset Ring","dustAmount":4.59}
@@ -685,6 +728,11 @@
 {"name":"The Eternal Struggle","baseType":"Onyx Amulet","dustAmount":4.07}
 {"name":"Midnight Bargain","baseType":"Engraved Wand","dustAmount":3.96}
 {"name":"Ceinture of Benevolence","baseType":"Cloth Belt","dustAmount":3.96}
+{"name":"The Will of Tul","baseType":"Cryonic Ring","dustAmount":3.96}
+{"name":"The Will of Xoph","baseType":"Enthalpic Ring","dustAmount":3.96}
+{"name":"The Will of Esh","baseType":"Synaptic Ring","dustAmount":3.96}
+{"name":"The Will of Uul-Netol","baseType":"Organic Ring","dustAmount":3.96}
+{"name":"The Sundered Will","baseType":"Fugitive Ring","dustAmount":3.96}
 {"name":"Dream Fragments","baseType":"Sapphire Ring","dustAmount":3.95}
 {"name":"Reverberation Rod","baseType":"Spiraled Wand","dustAmount":3.95}
 {"name":"Winterweave","baseType":"Coral Ring","dustAmount":3.95}
@@ -701,6 +749,7 @@
 {"name":"Valako's Sign","baseType":"Topaz Ring","dustAmount":3.73}
 {"name":"Replica Bones of Ullr","baseType":"Silk Slippers","dustAmount":3.72}
 {"name":"The Blood Reaper","baseType":"Headsman Axe","dustAmount":3.67}
+{"name":"Deadman's Hand","baseType":"Ambush Mitts","dustAmount":3.67}
 {"name":"Sibyl's Lament","baseType":"Coral Ring","dustAmount":3.67}
 {"name":"The Anvil","baseType":"Amber Amulet","dustAmount":3.67}
 {"name":"Maligaro's Lens","baseType":"Compound Spiked Shield","dustAmount":3.67}
@@ -730,15 +779,17 @@
 {"name":"Goldwyrm","baseType":"Nubuck Boots","dustAmount":3.32}
 {"name":"The Primordial Chain","baseType":"Coral Amulet","dustAmount":3.32}
 {"name":"Plume of Pursuit","baseType":"Bone Circlet","dustAmount":3.32}
+{"name":"Veruso's Ambition","baseType":"Shackled Boots","dustAmount":3.32}
 {"name":"Cloak of Flame","baseType":"Scholar's Robe","dustAmount":3.31}
 {"name":"Clayshaper","baseType":"Rock Breaker","dustAmount":3.26}
 {"name":"Sentari's Answer","baseType":"Brass Spirit Shield","dustAmount":3.22}
 {"name":"Chober Chaber","baseType":"Great Mallet","dustAmount":3.17}
-{"name":"Eclipse Solaris","baseType":"Engraved Wand","dustAmount":3.17}
 {"name":"Chaber Cairn","baseType":"Great Mallet","dustAmount":3.17}
 {"name":"The Aylardex","baseType":"Agate Amulet","dustAmount":3.13}
 {"name":"Iron Commander","baseType":"Death Bow","dustAmount":3.13}
+{"name":"United in Dream","baseType":"Cutlass","dustAmount":3.13}
 {"name":"Replica Bitterdream","baseType":"Shadow Sceptre","dustAmount":3.13}
+{"name":"The Monastery Bell","baseType":"Dream Mace","dustAmount":3.13}
 {"name":"Ahkeli's Valley","baseType":"Ruby Ring","dustAmount":3.12}
 {"name":"Precursor's Emblem","baseType":"Ruby Ring","dustAmount":3.12}
 {"name":"Circle of Anguish","baseType":"Ruby Ring","dustAmount":3.12}
@@ -755,6 +806,7 @@
 {"name":"Thief's Torment","baseType":"Prismatic Ring","dustAmount":2.95}
 {"name":"Lori's Lantern","baseType":"Prismatic Ring","dustAmount":2.95}
 {"name":"Replica Twyzel","baseType":"Sage Wand","dustAmount":2.95}
+{"name":"Unlight Extant","baseType":"Sage Wand","dustAmount":2.95}
 {"name":"Zahndethus' Cassock","baseType":"Sage's Robe","dustAmount":2.9}
 {"name":"Mindspiral","baseType":"Aventail Helmet","dustAmount":2.9}
 {"name":"Cybil's Paw","baseType":"Thresher Claw","dustAmount":2.9}
@@ -771,8 +823,10 @@
 {"name":"The Three Dragons","baseType":"Golden Mask","dustAmount":2.73}
 {"name":"Earendel's Embrace","baseType":"Grinning Fetish","dustAmount":2.73}
 {"name":"Willclash","baseType":"Golden Mask","dustAmount":2.73}
+{"name":"Meginord's Vigour","baseType":"Steel Gauntlets","dustAmount":2.73}
 {"name":"Lycosidae","baseType":"Rawhide Tower Shield","dustAmount":2.69}
 {"name":"Mortem Morsu","baseType":"Fright Claw","dustAmount":2.65}
+{"name":"Ylfe Ban","baseType":"Bone Circlet","dustAmount":2.65}
 {"name":"Al Dhih","baseType":"Timeworn Claw","dustAmount":2.62}
 {"name":"The Baron","baseType":"Close Helmet","dustAmount":2.62}
 {"name":"Fairgraves' Tricorne","baseType":"Tricorne","dustAmount":2.61}
@@ -784,7 +838,9 @@
 {"name":"Drillneck","baseType":"Penetrating Arrow Quiver","dustAmount":2.54}
 {"name":"Timeclasp","baseType":"Moonstone Ring","dustAmount":2.54}
 {"name":"Faithguard","baseType":"Runic Helm","dustAmount":2.54}
+{"name":"Grattus Signet","baseType":"Diamond Ring","dustAmount":2.54}
 {"name":"Shavronne's Pace","baseType":"Scholar Boots","dustAmount":2.5}
+{"name":"Stillwater","baseType":"Shadow Sceptre","dustAmount":2.5}
 {"name":"Briskwrap","baseType":"Sun Leather","dustAmount":2.5}
 {"name":"Flesh-Eater","baseType":"Dream Mace","dustAmount":2.5}
 {"name":"Triad Grip","baseType":"Mesh Gloves","dustAmount":2.5}
@@ -796,11 +852,14 @@
 {"name":"Circle of Fear","baseType":"Sapphire Ring","dustAmount":2.46}
 {"name":"Replica Tasalio's Sign","baseType":"Sapphire Ring","dustAmount":2.46}
 {"name":"Call of the Void","baseType":"Sapphire Ring","dustAmount":2.46}
+{"name":"The Formless Flame","baseType":"Royal Burgonet","dustAmount":2.44}
+{"name":"The Snowblind Grace","baseType":"Zodiac Leather","dustAmount":2.44}
 {"name":"Ikiaho's Promise","baseType":"Coral Amulet","dustAmount":2.43}
 {"name":"Matua Tupuna","baseType":"Tarnished Spirit Shield","dustAmount":2.4}
 {"name":"The Trickster's Smile","baseType":"Visored Sallet","dustAmount":2.4}
 {"name":"Blood of Corruption","baseType":"Amber Amulet","dustAmount":2.39}
 {"name":"Replica Karui Ward","baseType":"Jade Amulet","dustAmount":2.39}
+{"name":"Uul-Netol's Kiss","baseType":"Vaal Axe","dustAmount":2.37}
 {"name":"Mightflay","baseType":"Flaying Knife","dustAmount":2.36}
 {"name":"Titucius' Span","baseType":"Reinforced Tower Shield","dustAmount":2.36}
 {"name":"Twyzel","baseType":"Sage Wand","dustAmount":2.36}
@@ -815,8 +874,10 @@
 {"name":"Thirst for Horrors","baseType":"War Buckler","dustAmount":2.29}
 {"name":"Fated End","baseType":"Paua Ring","dustAmount":2.25}
 {"name":"Replica Doedre's Damning","baseType":"Paua Ring","dustAmount":2.25}
+{"name":"Esh's Mirror","baseType":"Vaal Spirit Shield","dustAmount":2.24}
 {"name":"Wake of Destruction","baseType":"Mesh Boots","dustAmount":2.22}
 {"name":"Leer Cast","baseType":"Festival Mask","dustAmount":2.22}
+{"name":"Death Rattle","baseType":"Jingling Spirit Shield","dustAmount":2.22}
 {"name":"Lakishu's Blade","baseType":"Elegant Sword","dustAmount":2.22}
 {"name":"The Stormheart","baseType":"Royal Staff","dustAmount":2.22}
 {"name":"Viper's Scales","baseType":"Full Scale Armour","dustAmount":2.22}
@@ -836,21 +897,27 @@
 {"name":"Sundance","baseType":"Clasped Boots","dustAmount":2.16}
 {"name":"Slitherpinch","baseType":"Bronzescale Gauntlets","dustAmount":2.16}
 {"name":"Queen's Decree","baseType":"Ornate Sword","dustAmount":2.16}
+{"name":"Alkem Eira","baseType":"Layered Kite Shield","dustAmount":2.16}
 {"name":"Glitterdisc","baseType":"Burnished Spiked Shield","dustAmount":2.16}
 {"name":"Queen's Escape","baseType":"Ornate Sword","dustAmount":2.16}
 {"name":"Sunspite","baseType":"Clasped Boots","dustAmount":2.16}
 {"name":"Geofri's Devotion","baseType":"Brass Maul","dustAmount":2.16}
 {"name":"Thousand Ribbons","baseType":"Simple Robe","dustAmount":2.12}
 {"name":"Tabula Rasa","baseType":"Simple Robe","dustAmount":2.12}
+{"name":"Vizaru's Folly","baseType":"Tribal Circlet","dustAmount":2.09}
 {"name":"Ewar's Mirage","baseType":"Antique Rapier","dustAmount":2.09}
 {"name":"Mark of the Red Covenant","baseType":"Tribal Circlet","dustAmount":2.09}
 {"name":"Coward's Legacy","baseType":"Chain Belt","dustAmount":2.06}
 {"name":"Circle of Guilt","baseType":"Iron Ring","dustAmount":2.06}
 {"name":"Chains of Emancipation","baseType":"Chain Belt","dustAmount":2.06}
+{"name":"Hand of Thought and Motion","baseType":"Imperial Claw","dustAmount":2.04}
+{"name":"The Infinite Pursuit","baseType":"Titan Greaves","dustAmount":2.04}
 {"name":"Carnage Heart","baseType":"Onyx Amulet","dustAmount":2.03}
 {"name":"Foxshade","baseType":"Wild Leather","dustAmount":2.03}
+{"name":"Mana Sponge","baseType":"Moonstone Ring","dustAmount":2.03}
 {"name":"Prismweave","baseType":"Rustic Sash","dustAmount":2.03}
 {"name":"Duskwing","baseType":"Saqawine Vulture","dustAmount":2.03}
+{"name":"The Learning Stone","baseType":"Onyx Amulet","dustAmount":2.03}
 {"name":"Timetwist","baseType":"Moonstone Ring","dustAmount":2.03}
 {"name":"Fox's Fortune","baseType":"Wild Leather","dustAmount":2.03}
 {"name":"Malachai's Simula","baseType":"Iron Mask","dustAmount":2.01}
@@ -858,6 +925,7 @@
 {"name":"Solaris Lorica","baseType":"Copper Plate","dustAmount":2.01}
 {"name":"Trolltimber Spire","baseType":"Cedar Tower Shield","dustAmount":2.01}
 {"name":"Widowhail","baseType":"Crude Bow","dustAmount":2}
+{"name":"Pagan Geis","baseType":"Ochre Sceptre","dustAmount":1.97}
 {"name":"Storm Prison","baseType":"Spiraled Wand","dustAmount":1.97}
 {"name":"Amplification Rod","baseType":"Spiraled Wand","dustAmount":1.97}
 {"name":"Facebreaker","baseType":"Strapped Mitts","dustAmount":1.95}
@@ -871,11 +939,13 @@
 {"name":"Replica Bloodplay","baseType":"Stiletto","dustAmount":1.89}
 {"name":"Bones of Ullr","baseType":"Silk Slippers","dustAmount":1.86}
 {"name":"Quecholli","baseType":"Jagged Maul","dustAmount":1.86}
+{"name":"Mordhau","baseType":"Etched Greatsword","dustAmount":1.86}
 {"name":"Deerstalker","baseType":"Deerskin Boots","dustAmount":1.86}
 {"name":"Fidelitas' Spike","baseType":"Jagged Foil","dustAmount":1.86}
 {"name":"Bated Breath","baseType":"Chain Belt","dustAmount":1.86}
 {"name":"Praxis","baseType":"Paua Ring","dustAmount":1.86}
 {"name":"Panquetzaliztli","baseType":"Jagged Maul","dustAmount":1.86}
+{"name":"Boreal Shepherd","baseType":"Broad Axe","dustAmount":1.81}
 {"name":"Perandus Blazon","baseType":"Cloth Belt","dustAmount":1.75}
 {"name":"Ungil's Gauche","baseType":"Boot Knife","dustAmount":1.75}
 {"name":"Brightbeak","baseType":"War Hammer","dustAmount":1.75}
@@ -896,9 +966,11 @@
 {"name":"Victario's Flight","baseType":"Goathide Boots","dustAmount":1.73}
 {"name":"Ashcaller","baseType":"Carved Wand","dustAmount":1.73}
 {"name":"Putembo's Valley","baseType":"Topaz Ring","dustAmount":1.73}
+{"name":"Tulborn","baseType":"Opal Wand","dustAmount":1.71}
 {"name":"Ghostwrithe","baseType":"Silken Vest","dustAmount":1.68}
 {"name":"Dusktoe","baseType":"Ironscale Boots","dustAmount":1.65}
 {"name":"Wideswing","baseType":"Poleaxe","dustAmount":1.65}
+{"name":"Ghostmarch","baseType":"Ironscale Boots","dustAmount":1.65}
 {"name":"Faminebind","baseType":"Rustic Sash","dustAmount":1.65}
 {"name":"Roth's Reach","baseType":"Recurve Bow","dustAmount":1.65}
 {"name":"Duskblight","baseType":"Ironscale Boots","dustAmount":1.65}
@@ -912,6 +984,7 @@
 {"name":"Hrimnor's Dirge","baseType":"Sledgehammer","dustAmount":1.6}
 {"name":"Malachai's Awakening","baseType":"Iron Mask","dustAmount":1.6}
 {"name":"Kaltenhalt","baseType":"Painted Buckler","dustAmount":1.56}
+{"name":"Battlehaste","baseType":"Strapped Boots","dustAmount":1.56}
 {"name":"Nomic's Storm","baseType":"Strapped Boots","dustAmount":1.56}
 {"name":"Dreadarc","baseType":"Cleaver","dustAmount":1.56}
 {"name":"Kaltensoul","baseType":"Painted Buckler","dustAmount":1.56}
@@ -920,7 +993,10 @@
 {"name":"Wreath of Phrecia","baseType":"Iron Circlet","dustAmount":1.54}
 {"name":"Demigod's Presence","baseType":"Gold Amulet","dustAmount":1.51}
 {"name":"The Ignomon","baseType":"Gold Amulet","dustAmount":1.51}
+{"name":"Band of the Victor","baseType":"Jet Ring","dustAmount":1.51}
 {"name":"Bloodplay","baseType":"Stiletto","dustAmount":1.51}
+{"name":"Frost Unbroken","baseType":"Gold Amulet","dustAmount":1.51}
+{"name":"Xoph's Inception","baseType":"Citadel Bow","dustAmount":1.51}
 {"name":"The Effigon","baseType":"Gold Amulet","dustAmount":1.51}
 {"name":"The Untouched Soul","baseType":"Gold Amulet","dustAmount":1.51}
 {"name":"The Goddess Bound","baseType":"Whalebone Rapier","dustAmount":1.49}
@@ -937,17 +1013,23 @@
 {"name":"Doedre's Damning","baseType":"Paua Ring","dustAmount":1.41}
 {"name":"Quill Rain","baseType":"Short Bow","dustAmount":1.41}
 {"name":"Replica Quill Rain","baseType":"Short Bow","dustAmount":1.41}
+{"name":"Hand of Wisdom and Action","baseType":"Imperial Claw","dustAmount":1.4}
+{"name":"The Red Trail","baseType":"Titan Greaves","dustAmount":1.4}
 {"name":"Shiversting","baseType":"Bastard Sword","dustAmount":1.38}
 {"name":"Honourhome","baseType":"Soldier Helmet","dustAmount":1.38}
 {"name":"Doedre's Tenure","baseType":"Velvet Gloves","dustAmount":1.38}
 {"name":"Demigod's Triumph","baseType":"Golden Wreath","dustAmount":1.38}
+{"name":"Ungils's Coil","baseType":"Topaz Ring","dustAmount":1.38}
 {"name":"Demigod's Stride","baseType":"Golden Caligae","dustAmount":1.38}
+{"name":"Galla's Riposte","baseType":"Battered Foil","dustAmount":1.38}
 {"name":"Demigod's Touch","baseType":"Golden Bracers","dustAmount":1.38}
+{"name":"Stormblast","baseType":"Carved Wand","dustAmount":1.38}
 {"name":"Demigod's Bounty","baseType":"Golden Obi","dustAmount":1.38}
 {"name":"Demigod's Eye","baseType":"Golden Hoop","dustAmount":1.38}
 {"name":"Wildslash","baseType":"Awl","dustAmount":1.38}
 {"name":"Demigod's Immortality","baseType":"Golden Visage","dustAmount":1.38}
 {"name":"Doedre's Malevolence","baseType":"Velvet Gloves","dustAmount":1.38}
+{"name":"Honourhold","baseType":"Soldier Helmet","dustAmount":1.38}
 {"name":"Kaom's Sign","baseType":"Coral Ring","dustAmount":1.37}
 {"name":"Replica Blood Thorn","baseType":"Gnarled Branch","dustAmount":1.37}
 {"name":"Replica Fencoil","baseType":"Gnarled Branch","dustAmount":1.37}
@@ -956,6 +1038,7 @@
 {"name":"Goldrim","baseType":"Leather Cap","dustAmount":1.33}
 {"name":"Sacrificial Heart","baseType":"Paua Amulet","dustAmount":1.33}
 {"name":"Replica Last Resort","baseType":"Nailed Fist","dustAmount":1.33}
+{"name":"Maligaro's Etcher","baseType":"Carving Knife","dustAmount":1.3}
 {"name":"The Princess","baseType":"Sabre","dustAmount":1.3}
 {"name":"Gorebreaker","baseType":"Spiked Club","dustAmount":1.3}
 {"name":"Axiom Perpetuum","baseType":"Bronze Sceptre","dustAmount":1.3}
@@ -965,17 +1048,21 @@
 {"name":"Hrimsorrow","baseType":"Goathide Gloves","dustAmount":1.27}
 {"name":"Storm Cloud","baseType":"Long Bow","dustAmount":1.27}
 {"name":"Hrimburn","baseType":"Goathide Gloves","dustAmount":1.27}
+{"name":"The Tempest","baseType":"Long Bow","dustAmount":1.27}
 {"name":"Greedtrap","baseType":"Velvet Slippers","dustAmount":1.27}
 {"name":"Wildwrap","baseType":"Strapped Leather","dustAmount":1.27}
 {"name":"Bramblejack","baseType":"Plate Vest","dustAmount":1.25}
 {"name":"Crest of Perandus","baseType":"Pine Buckler","dustAmount":1.23}
 {"name":"Asenath's Chant","baseType":"Iron Circlet","dustAmount":1.23}
 {"name":"Stone of Lazhwar","baseType":"Lapis Amulet","dustAmount":1.19}
+{"name":"Broadstroke","baseType":"Heavy Quiver","dustAmount":1.19}
 {"name":"Karui Ward","baseType":"Jade Amulet","dustAmount":1.19}
 {"name":"Springleaf","baseType":"Plank Kite Shield","dustAmount":1.19}
+{"name":"The Rathorn","baseType":"Amber Amulet","dustAmount":1.19}
 {"name":"Tear of Purity","baseType":"Lapis Amulet","dustAmount":1.19}
 {"name":"Karui Charge","baseType":"Jade Amulet","dustAmount":1.19}
 {"name":"The Oak","baseType":"Plank Kite Shield","dustAmount":1.19}
+{"name":"Tulfall","baseType":"Opal Wand","dustAmount":1.17}
 {"name":"The Screaming Eagle","baseType":"Jade Hatchet","dustAmount":1.16}
 {"name":"Abberath's Horn","baseType":"Goat's Horn","dustAmount":1.16}
 {"name":"The Gryphon","baseType":"Jade Hatchet","dustAmount":1.16}
@@ -984,6 +1071,9 @@
 {"name":"Goredrill","baseType":"Skinning Knife","dustAmount":1.13}
 {"name":"Sanguine Gambol","baseType":"Skinning Knife","dustAmount":1.13}
 {"name":"The Megalomaniac","baseType":"Bronze Stalker Sentinel","dustAmount":1.13}
+{"name":"Skin of the Loyal","baseType":"Simple Robe","dustAmount":1.11}
+{"name":"Wurmfist","baseType":"Fishscale Gauntlets","dustAmount":1.09}
+{"name":"Vestige of Divinity","baseType":"Gnarled Branch","dustAmount":1.09}
 {"name":"Fencoil","baseType":"Gnarled Branch","dustAmount":1.09}
 {"name":"Craghead","baseType":"Serrated Arrow Quiver","dustAmount":1.09}
 {"name":"The Blood Thorn","baseType":"Gnarled Branch","dustAmount":1.09}
@@ -995,26 +1085,40 @@
 {"name":"Araku Tiki","baseType":"Coral Amulet","dustAmount":1.06}
 {"name":"Wanderlust","baseType":"Wool Shoes","dustAmount":1.06}
 {"name":"Last Resort","baseType":"Nailed Fist","dustAmount":1.06}
+{"name":"DrTestapus' Charm","baseType":"Paua Amulet","dustAmount":1.06}
+{"name":"Thunder of the Dawn","baseType":"Corroded Blade","dustAmount":1.06}
+{"name":"Ironweld","baseType":"Rawhide Gloves","dustAmount":1.06}
+{"name":"Scar of Fate","baseType":"Nailed Fist","dustAmount":1.06}
 {"name":"Ngamahu Tiki","baseType":"Coral Amulet","dustAmount":1.06}
 {"name":"Martyr's Crown","baseType":"Vine Circlet","dustAmount":1.06}
+{"name":"Sidhebite","baseType":"Paua Amulet","dustAmount":1.06}
+{"name":"Xoph's Nurture","baseType":"Citadel Bow","dustAmount":1.04}
 {"name":"Blackheart","baseType":"Iron Ring","dustAmount":1.03}
 {"name":"Blackgleam","baseType":"Blazing Arrow Quiver","dustAmount":1.03}
+{"name":"Dewath's Hide","baseType":"Shabby Jerkin","dustAmount":1.03}
+{"name":"Remnant of Empires","baseType":"Goathide Buckler","dustAmount":1.03}
+{"name":"Rust of Winter","baseType":"Rusted Hatchet","dustAmount":1.03}
+{"name":"Chains of Time","baseType":"Rustic Sash","dustAmount":1.03}
 {"name":"Voidheart","baseType":"Iron Ring","dustAmount":1.03}
 {"name":"Oni-Goroshi","baseType":"Charan's Sword","dustAmount":1.03}
 {"name":"Redbeak","baseType":"Rusted Sword","dustAmount":1}
 {"name":"Silverbranch","baseType":"Crude Bow","dustAmount":1}
 {"name":"Ezomyte Peak","baseType":"Iron Hat","dustAmount":1}
 {"name":"Lochtonial Caress","baseType":"Iron Gauntlets","dustAmount":1}
+{"name":"Fragment of Eternity","baseType":"Glass Shank","dustAmount":1}
+{"name":"Splinter of the Moon","baseType":"Driftwood Wand","dustAmount":1}
+{"name":"Ashes of the Sun","baseType":"Driftwood Club","dustAmount":1}
+{"name":"Relic of the Cycle","baseType":"Crude Bow","dustAmount":1}
+{"name":"Tear of Entropy","baseType":"Iron Hat","dustAmount":1}
 {"name":"Lifesprig","baseType":"Driftwood Wand","dustAmount":1}
+{"name":"Celestial Fragment","baseType":"Glass Shank","dustAmount":1}
+{"name":"Bartek's Finger","baseType":"Driftwood Club","dustAmount":1}
+{"name":"Blood of Summer","baseType":"Rusted Sword","dustAmount":1}
 {"name":"Talisman of the Victor","baseType":"Jet Amulet","dustAmount":1}
-{"name":"First Piece of the Arcane","baseType":"Legion Sword Piece","dustAmount":1}
-{"name":"Second Piece of the Arcane","baseType":"Legion Sword Piece","dustAmount":1}
-{"name":"Third Piece of the Arcane","baseType":"Legion Sword Piece","dustAmount":1}
-{"name":"First Piece of Time","baseType":"Cloth Belt Piece","dustAmount":1}
-{"name":"Second Piece of Time","baseType":"Cloth Belt Piece","dustAmount":1}
+{"name":"Slivers of Providence","baseType":"Serrated Arrow Quiver","dustAmount":1}
 {"name":"Demigod's Authority","baseType":"Golden Blade","dustAmount":1}
 {"name":"Wall of Brambles","baseType":"Plate Vest","dustAmount":1}
 {"name":"Ezomyte Hold","baseType":"Iron Hat","dustAmount":1}
 {"name":"Silverbough","baseType":"Crude Bow","dustAmount":1}
 {"name":"Dreadbeak","baseType":"Rusted Sword","dustAmount":1}
-{"name":"Grattus Signet","baseType":"Diamond Ring","dustAmount":2.54}
+{"name":"Severed in Sleep","baseType":"Cutlass","dustAmount":1}
