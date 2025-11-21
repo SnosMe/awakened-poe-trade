@@ -1,6 +1,7 @@
-import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR } from '@/assets/data'
-import type { StatMatcher, Stat } from '@/assets/data'
+import { CLIENT_STRINGS as _$, STAT_BY_MATCH_STR_V2 } from '@/assets/data'
+import type { StatMatcher, Stat, StatGroup } from '@/assets/data'
 import type { ModifierType } from './modifiers'
+import { type ItemCategory, ARMOUR, WEAPON, HEIST_EQUIPMENT } from './meta'
 
 // This file is a little messy and scary,
 // but that's how stats translations are parsed :-D
@@ -60,7 +61,7 @@ export function * linesToStatStrings (lines: string[]): Generator<StatString, st
     }
     notParsedLines.push(lines[start])
   }
-  return notParsedLines
+  return notParsedLines.filter(line => line.length)
 }
 
 const PLACEHOLDER_MAP = [
@@ -131,10 +132,18 @@ function * _statPlaceholderGenerator (stat: string) {
   yield { stat, values: [] }
 }
 
-export function tryParseTranslation (stat: StatString, modType: ModifierType): ParsedStat | undefined {
+export function tryParseTranslation (
+  stat: StatString,
+  modType: ModifierType,
+  itemCategory?: ItemCategory
+): ParsedStat | undefined {
   for (const combination of _statPlaceholderGenerator(stat.string)) {
-    const found = STAT_BY_MATCH_STR(combination.stat)
-    if (!found || !found.stat.trade.ids[modType]) {
+    const found = findAndResolveTranslation(
+      combination.stat,
+      itemCategory,
+      (combination.values.length === 1) ? combination.values[0].roll : undefined
+    )
+    if (!found || !(modType in found.stat.trade.ids)) {
       continue
     }
 
@@ -216,5 +225,109 @@ export function getRollOrMinmaxAvg (values: number[]): number {
     return (values[0] + values[1]) / 2
   } else {
     return values[0]
+  }
+}
+
+function findAndResolveTranslation (
+  matchStr: string,
+  itemCategory?: ItemCategory,
+  roll?: number
+): { matcher: StatMatcher, stat: Stat } | undefined {
+  const statOrGroup = STAT_BY_MATCH_STR_V2(matchStr)
+  if (!statOrGroup) return undefined
+
+  let stat: Stat | undefined
+  if (!('stats' in statOrGroup)) {
+    stat = statOrGroup
+  } else {
+    stat = _resolveTranslation(statOrGroup, matchStr, itemCategory, roll)
+  }
+
+  if (stat) {
+    const matcher = stat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)
+    if (!matcher) return undefined
+    return { stat, matcher }
+  }
+  return undefined
+}
+
+function _resolveTranslation (
+  statGroup: StatGroup,
+  matchStr: string,
+  itemCategory?: ItemCategory,
+  roll?: number
+): Stat | undefined {
+  let { resolve, stats } = statGroup
+  if (resolve.strat === 'select') {
+    // give priority to exact match
+    let idx = resolve.test.findIndex(expected => expected !== null &&
+      testItemCategory(itemCategory ?? null, expected))
+    // fallback to any match (if it exists at all)
+    if (idx === -1) idx = resolve.test.indexOf(null)
+    return (idx !== -1) ? stats[idx] : undefined
+  } else if (resolve.strat === 'trivial-merge') {
+    stats = stats.filter(stat =>
+      stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+    if (!stats.length) return undefined
+    const merged = stats[0]
+    for (const stat of stats) {
+      if (merged === stat) continue
+      _mergeTradeIdsInto(merged, stat)
+    }
+    return merged
+  } else if (resolve.strat === 'percent-merge') {
+    const pctStat = stats[resolve.kind.indexOf('percent')]
+    const matcher = pctStat.matchers.find(m =>
+      m.string === matchStr || m.advanced === matchStr)
+    const roll100 = (matcher !== undefined && matcher.value === 100)
+    if (roll100) {
+      const otherStat = stats[resolve.kind.indexOf('value')]
+      const flag = (otherStat.matchers.length === 1 && !otherStat.matchers[0].string.includes('#'))
+      _mergeTradeIdsInto(pctStat, otherStat, flag ? '{empty_if_100}' : '{div_by_100}')
+      return pctStat
+    }
+    return stats.find(stat =>
+      stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+  } else if (resolve.strat === 'flag-merge') {
+    if (roll === undefined) return undefined
+    const valStat = stats[resolve.kind.indexOf('value')]
+    const flagStat = stats[resolve.kind.indexOf('flag')]
+    const flagRoll = flagStat.matchers[0].value!
+    if (roll === flagRoll) {
+      _mergeTradeIdsInto(valStat, flagStat, '{empty}')
+    }
+    return valStat
+  }
+
+  return undefined
+}
+
+function _mergeTradeIdsInto (dest: Stat, source: Stat, prefix?: string) {
+  for (const modType in source.trade.ids) {
+    let tradeId = source.trade.ids[modType][0]
+    if (prefix) tradeId = prefix + tradeId
+    if (modType in dest.trade.ids) {
+      if (!dest.trade.ids[modType].includes(tradeId)) {
+        dest.trade.ids[modType].push(tradeId)
+      }
+    } else {
+      dest.trade.ids[modType] = [tradeId]
+    }
+  }
+}
+
+function testItemCategory (actual: ItemCategory | null, expected: string): boolean {
+  if (actual === null) return false
+
+  switch (expected) {
+    case 'WEAPON':
+      return WEAPON.has(actual)
+    case 'ARMOUR':
+      return ARMOUR.has(actual)
+    case 'HEIST_EQUIPMENT':
+      return HEIST_EQUIPMENT.has(actual)
+    default:
+      return expected === actual
   }
 }

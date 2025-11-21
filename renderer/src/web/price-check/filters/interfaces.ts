@@ -25,6 +25,7 @@ export interface ItemFilters {
   }
   rarity?: {
     value: string
+    disabled: boolean
   }
   linkedSockets?: FilterNumeric
   whiteSockets?: FilterNumeric
@@ -41,6 +42,9 @@ export interface ItemFilters {
   foil?: {
     disabled: boolean
   }
+  foulborn?: {
+    value: boolean
+  }
   influences?: Array<{
     value: ItemInfluence
     disabled: boolean
@@ -50,6 +54,10 @@ export interface ItemFilters {
   mapTier?: FilterNumeric
   mapBlighted?: {
     value: NonNullable<ParsedItem['mapBlighted']>
+  }
+  mapCompletionReward?: {
+    name: string
+    nameTrade: string
   }
   itemLevel?: FilterNumeric
   stackSize?: FilterNumeric
@@ -67,6 +75,7 @@ export interface ItemFilters {
   trade: {
     offline: boolean
     onlineInLeague: boolean
+    merchantOnly: boolean
     listed: string | undefined
     currency: string | undefined
     league: string
@@ -107,6 +116,7 @@ export interface StatFilter {
 
 export const INTERNAL_TRADE_IDS = [
   'item.base_percentile',
+  'item.memory_strands',
   'item.armour',
   'item.evasion_rating',
   'item.energy_shield',
@@ -117,7 +127,10 @@ export const INTERNAL_TRADE_IDS = [
   'item.elemental_dps',
   'item.crit',
   'item.aps',
-  'item.has_empty_modifier'
+  'item.has_empty_modifier',
+  'item.map_item_quantity',
+  'item.map_item_rarity',
+  'item.map_pack_size'
 ] as const
 
 export type InternalTradeId = typeof INTERNAL_TRADE_IDS[number]
@@ -138,6 +151,7 @@ export enum FilterTag {
   Fractured = 'fractured',
   Corrupted = 'corrupted',
   Synthesised = 'synthesised',
+  Foulborn = 'foulborn',
   Eldritch = 'eldritch',
   Variant = 'variant',
   Property = 'property',

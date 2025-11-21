@@ -50,8 +50,8 @@
         <ui-radio v-model="searchStatRange" :value="0">{{ t(':fill_roll_exact') }}</ui-radio>
       </div>
     </div>
-    <ui-checkbox class="mb-4"
-      v-model="rememberCurrency">{{ t(':remember_currency') }}</ui-checkbox>
+    <!-- <ui-checkbox class="mb-4"
+      v-model="rememberCurrency">{{ t(':remember_currency') }}</ui-checkbox> -->
     <ui-checkbox class="mb-4"
       v-model="activateStockFilter">{{ t(':select_stock') }}</ui-checkbox>
     <ui-checkbox class="mb-4"

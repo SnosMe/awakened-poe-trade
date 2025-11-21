@@ -84,13 +84,14 @@ export async function initConfig () {
 }
 
 export function poeWebApi () {
-  const { language, realm } = AppConfig()
+  const { language, useIntlSite } = AppConfig()
+  if (useIntlSite) {
+    return 'www.pathofexile.com'
+  }
   switch (language) {
     case 'en': return 'www.pathofexile.com'
     case 'ru': return 'ru.pathofexile.com'
-    case 'cmn-Hant': return (realm === 'pc-garena')
-      ? 'pathofexile.tw'
-      : 'www.pathofexile.com'
+    case 'cmn-Hant': return 'pathofexile.tw'
     case 'ko': return 'poe.game.daum.net'
   }
 }
@@ -115,13 +116,14 @@ export interface Config {
   stashScroll: boolean
   language: 'en' | 'ru' | 'cmn-Hant' | 'ko'
   realm: 'pc-ggg' | 'pc-garena'
+  useIntlSite: boolean
   widgets: widget.Widget[]
   fontSize: number
   showAttachNotification: boolean
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 17,
+  configVersion: 18,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -160,6 +162,7 @@ export const defaultConfig = (): Config => ({
   stashScroll: true,
   language: 'en',
   realm: 'pc-ggg',
+  useIntlSite: false,
   fontSize: 16,
   widgets: widgetRegistry.widgets.reduce<widget.Widget[]>((widgets, { widget }) => {
     const res: widget.Widget[] = []
@@ -421,6 +424,12 @@ function upgradeConfig (_config: Config): Config {
     })
 
     config.configVersion = 17
+  }
+
+  if (config.configVersion < 18) {
+    config.useIntlSite = (config.language === 'cmn-Hant' && config.realm === 'pc-ggg')
+
+    config.configVersion = 18
   }
 
   return config as unknown as Config

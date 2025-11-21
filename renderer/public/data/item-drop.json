@@ -113,6 +113,7 @@
     ],
     "items": [
       "ITEM::Orb of Dominance",
+      "ITEM::Shaper's Exalted Orb",
       "UNIQUE::Dying Sun",
       "ITEM::Fragment of Knowledge",
       "ITEM::Fragment of Shape",
@@ -143,6 +144,7 @@
     ],
     "items": [
       "ITEM::Orb of Dominance",
+      "ITEM::Elder's Exalted Orb",
       "UNIQUE::Watcher's Eye // Prismatic Jewel",
       "ITEM::Fragment of Terror",
       "ITEM::Fragment of Emptiness",
@@ -163,6 +165,8 @@
     ],
     "items": [
       "ITEM::Orb of Dominance",
+      "ITEM::Elder's Exalted Orb",
+      "ITEM::Shaper's Exalted Orb",
       "UNIQUE::Watcher's Eye // Prismatic Jewel",
       "UNIQUE::Disintegrator // Maelström Staff",
       "UNIQUE::Voidfletcher // Primal Arrow Quiver",
@@ -184,6 +188,59 @@
       "UNIQUE::Sublime Vision // Prismatic Jewel",
       "UNIQUE::Curio of Decay // Primordial Fragment",
       "ITEM::Decaying Reliquary Key"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Syndicate Medallion"
+    ],
+    "items": [
+      "ITEM::Veiled Exalted Orb",
+      "UNIQUE::Cinderswallow Urn",
+      "UNIQUE::Spinehail // Vile Arrow Quiver",
+      "UNIQUE::The Devouring Diadem // Necromancer Circlet",
+      "UNIQUE::Bitterbind Point // Titanium Spirit Shield",
+      "UNIQUE::The Queen's Hunger // Vaal Regalia",
+      "UNIQUE::Cane of Kulemak // Serpentine Staff"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Echo of Loneliness"
+    ],
+    "items": [
+      "ITEM::Orb of Remembrance",
+      "UNIQUE::Betrayal's Sting // Steel Ring",
+      "UNIQUE::The Arkhon's Tools // Cloth Belt",
+      "UNIQUE::Venarius' Astrolabe // Astrolabe Amulet",
+      "UNIQUE::Legacy of the Rose // Judgement Staff",
+      "UNIQUE::Bound By Destiny // Prismatic Jewel"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Echo of Trauma"
+    ],
+    "items": [
+      "ITEM::Orb of Intention",
+      "UNIQUE::Servant of Decay // Torturer Garb",
+      "UNIQUE::Coiling Whisper // Amethyst Ring",
+      "UNIQUE::Enmity's Embrace // Vermillion Ring",
+      "UNIQUE::Starcaller // Abyssal Axe",
+      "UNIQUE::Bound By Destiny // Prismatic Jewel"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Echo of Reverence"
+    ],
+    "items": [
+      "ITEM::Orb of Unravelling",
+      "UNIQUE::Whispers of Infinity // Seaglass Amulet",
+      "UNIQUE::The Dark Monarch // Lich's Circlet",
+      "UNIQUE::Seven Teachings // Waxed Garb",
+      "UNIQUE::Wine of the Prophet",
+      "UNIQUE::Bound By Destiny // Prismatic Jewel"
     ]
   },
   {
@@ -377,6 +434,18 @@
   },
   {
     "query": [
+      "ITEM::An Audience With The King"
+    ],
+    "items": [
+      "UNIQUE::Pragmatism // Colosseum Plate",
+      "UNIQUE::The Untouched Soul // Gold Amulet",
+      "UNIQUE::The Light of Meaning // Prismatic Jewel",
+      "UNIQUE::The Burden of Shadows // Primordial Staff",
+      "ITEM::Perfect Forest Tiger"
+    ]
+  },
+  {
+    "query": [
       "ITEM::Abrasive Catalyst",
       "ITEM::Fertile Catalyst",
       "ITEM::Imbued Catalyst",
@@ -549,8 +618,10 @@
       "ITEM::Eldritch Orb of Annulment",
       "ITEM::Eldritch Chaos Orb",
       "ITEM::Eldritch Exalted Orb",
+      "ITEM::Exalted Orb",
       "ITEM::Orb of Annulment",
-      "ITEM::Exalted Orb"
+      "CAPTURED_BEAST::Farric Wolf Alpha",
+      "CAPTURED_BEAST::Farric Lynx Alpha"
     ],
     "items": []
   },
@@ -560,8 +631,27 @@
       "ITEM::Warlord's Exalted Orb",
       "ITEM::Crusader's Exalted Orb",
       "ITEM::Redeemer's Exalted Orb",
+      "ITEM::Shaper's Exalted Orb",
+      "ITEM::Elder's Exalted Orb",
       "ITEM::Awakener's Orb",
       "ITEM::Orb of Dominance"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "ITEM::Orb of Fusing",
+      "ITEM::Omen of Connections",
+      "ITEM::Bestiary Scarab of the Shadowed Crow",
+      "CAPTURED_BEAST::Black Mórrigan",
+      "CAPTURED_BEAST::Craicic Sand Spitter"
+    ],
+    "items": []
+  },
+  {
+    "query": [
+      "UNIQUE::Watcher's Eye // Prismatic Jewel",
+      "CAPTURED_BEAST::Wild Hellion Alpha"
     ],
     "items": []
   },
@@ -655,16 +745,6 @@
 
 
 
-  {
-    "query": [
-      "ITEM::Orb of Fusing",
-      "ITEM::Omen of Connections",
-      "ITEM::Bestiary Scarab of the Shadowed Crow",
-      "CAPTURED_BEAST::Black Mórrigan",
-      "CAPTURED_BEAST::Craicic Sand Spitter"
-    ],
-    "items": []
-  },
   {
     "query": [
       "UNIQUE::Curio of Absorption // Primordial Fragment",

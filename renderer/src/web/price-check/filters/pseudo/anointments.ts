@@ -3,6 +3,7 @@ import type { ParsedItem } from '@/parser'
 import type { StatFilter } from '../interfaces'
 
 const OILS = [
+  'Prismatic Oil',
   'Clear Oil',
   'Sepia Oil',
   'Amber Oil',

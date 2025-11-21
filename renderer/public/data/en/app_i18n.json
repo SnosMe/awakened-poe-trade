@@ -54,6 +54,9 @@
     "elemental_dps": "Elemental DPS: {0}",
     "crit": "Critical Strike Chance: {0}%",
     "aps": "Attacks per Second: {0}",
+    "map_item_quantity": "Item Quantity: {0}%",
+    "map_item_rarity": "Item Rarity: {0}%",
+    "map_pack_size": "Monster Pack Size: {0}%",
     "has_empty_modifier": "1 Empty or Crafted Modifier",
     "has_empty_affix": "Any",
     "has_empty_prefix": "Prefix",
@@ -66,6 +69,7 @@
     "linked_sockets": "Links: {0}",
     "white_sockets": "White: {0}",
     "quality": "Quality: {0}",
+    "memory_strands": "Memory Strands: {0}",
     "gem_level": "Level: {0}",
     "sentinel_charge": "Charge: {0}",
     "find_in_stash": "Find in Stash",
@@ -91,7 +95,8 @@
     "veiled": "Veiled",
     "foil_unique": "Foil Unique",
     "mirrored": "Mirrored",
-    "not_mirrored": "Not Mirrored"
+    "not_mirrored": "Not Mirrored",
+    "map_foil_reward": "Foil {0}"
   },
   "item_category": {
     "prop": "Category: {0}",
@@ -134,7 +139,8 @@
     "sanctum_relic": "Sanctum Relic",
     "tincture": "Tincture",
     "azmeri_charm": "Charm",
-    "idol": "Idol"
+    "idol": "Idol",
+    "graft": "Graft"
   },
   "filters": {
     "selected_some": "{0} of {1}, stats",
@@ -163,6 +169,7 @@
     "tag_variant": "variant",
     "tag_corrupted": "corrupted",
     "tag_synthesised": "synthesised",
+    "tag_foulborn": "foulborn",
     "tag_eldritch": "eldritch",
     "tag_pseudo": "pseudo",
     "tag_explicit": "explicit",
@@ -179,6 +186,7 @@
   "online_filter": {
     "offline_toggle": "Offline & Online",
     "in_league_toggle": "In League",
+    "merchant_toggle": "Merchant Only",
     "listed_any_time": "Listed: Any Time",
     "listed_1day": "1 Day Ago",
     "listed_3days": "3 Days Ago",
@@ -272,7 +280,9 @@
     "getting_price": "Getting price {0}",
     "getting_price_from": "from poe.ninja \u2026",
     "you_have": "You have",
-    "stack": "Stack"
+    "stack": "Stack",
+    "legacy_bulk_xchg_msg": "This item is available on the Currency Exchange Market.",
+    "market_ratio": "Market Ratio"
   },
   "settings": {
     "title": "Settings - Awakened PoE Trade",
@@ -302,7 +312,8 @@
     "poe_cfg_file" :"PoE config file",
     "restore_clipboard" :"Restore clipboard",
     "show_overlay_ready" :"Show a notification when the Overlay detects a PoE window",
-    "debug_hotkeys": "Record all key presses"
+    "debug_hotkeys": "Record all key presses",
+    "use_intl_site": "Force the English version of the site"
   },
   "price_check": {
     "name": "Price check",

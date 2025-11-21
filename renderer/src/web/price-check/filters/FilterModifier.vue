@@ -42,14 +42,14 @@
             </template>
           </ui-popover>
         </div>
-        <div class="flex-1 flex items-start gap-x-2">
+        <div class="flex-1 min-w-0 flex items-start gap-x-2">
           <span v-if="showTag"
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(`filters.tag_${tag.replace('-', '_')}`) }}{{ (filter.sources.length > 1) ? ` x ${filter.sources.length}` : null }}</span>
           <filter-modifier-tiers :filter="filter" :item="item" />
           <filter-modifier-item-has-empty :filter="filter" />
         </div>
         <stat-roll-slider v-if="roll && roll.bounds"
-          class="mr-4" style="width: 12.5rem;"
+          class="ml-2 mr-4" style="width: 12.5rem;"
           v-model="sliderValue"
           :roll="roll.value"
           :dp="roll.dp"
@@ -283,6 +283,8 @@ export default defineComponent({
   @apply rounded;
   @apply text-xs;
   line-height: 1;
+  overflow: hidden;
+  text-overflow: clip;
 }
 .tag-variant {
   @apply bg-yellow-700 text-yellow-100; }
@@ -340,6 +342,8 @@ export default defineComponent({
 }
 .tag-scourge {
   @apply bg-orange-600 text-white; }
+.tag-foulborn {
+  @apply bg-pink-700 text-white; }
 .tag-enchant {
   @apply bg-purple-600 text-purple-100; }
 .tag-pseudo {

@@ -77,8 +77,13 @@ export const usePoeninja = createGlobalState(() => {
     switch (league) {
       case 'Standard': return 'standard'
       case 'Hardcore': return 'hardcore'
-      default:
-        return (league.startsWith('Hardcore ')) ? 'challengehc' : 'challenge'
+      default: {
+        let ninjaId = league.replace('Hardcore ', '').toLowerCase()
+        if (league.startsWith('Hardcore ')) {
+          ninjaId += 'hc'
+        }
+        return ninjaId
+      }
     }
   }
 
@@ -101,7 +106,7 @@ export const usePoeninja = createGlobalState(() => {
 
       return {
         ...info,
-        url: `https://poe.ninja/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`
+        url: `https://poe.ninja/poe1/economy/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`
       }
     }
     return null
