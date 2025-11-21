@@ -13,6 +13,7 @@ export function createPresets (
     currency: string | undefined
     collapseListings: 'app' | 'api'
     activateStockFilter: boolean
+    activateMerchantOnlyFilter: boolean
     searchStatRange: number
     useEn: boolean
   }
