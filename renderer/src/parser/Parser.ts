@@ -768,7 +768,7 @@ function parseDisenchantCandidates(section: string[], item: ParsedItem) {
   for (const entry of possibleItems) {
     for (const match of DISENCHANT_UNIQUE_ITEMS_ITERATOR(JSON.stringify(entry.refName))) {
       if (match.name === entry.refName) {
-        items.push({ name: entry.name, value: Math.round(match.dustAmount * globalMultiplier).toLocaleString('en-us'), icon: entry.icon })
+        items.push({ name: entry.name, value: Math.floor(match.dustAmount * globalMultiplier).toLocaleString('en-us'), icon: entry.icon })
       }
     }
   }
