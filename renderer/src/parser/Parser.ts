@@ -759,8 +759,11 @@ function parseDisenchantCandidates(section: string[], item: ParsedItem) {
 
   // Per Influence + Corrupt + Quality
   const factorsMultiplier = (increaseByFactors + 100) / 100
-  // Formula from https://poedb.tw/us/Kingsmarch#Disenchant
-  const globalMultiplier = 125 * (20 - (84 - Math.min(Math.max(65, ilvl), 84))) * factorsMultiplier
+  const term1 = 50 // ilvl 46 and below
+  const term2 = 2 * (Math.min(Math.max(ilvl, 46), 68) - 46) // ilvl 47 to 68
+  const term3 = Math.floor(3 * (Math.min(Math.max(ilvl, 46), 68) - 46) / 11) // ilvl 47 to 68
+  const term4 = 25 * (Math.min(Math.max(ilvl, 68), 84) - 68) // ilvl 69 to 84
+  const globalMultiplier = 5 * (term1 + term2 + term3 + term4) * factorsMultiplier
 
   for (const entry of possibleItems) {
     for (const match of DISENCHANT_UNIQUE_ITEMS_ITERATOR(JSON.stringify(entry.refName))) {
