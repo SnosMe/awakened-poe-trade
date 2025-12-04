@@ -121,8 +121,7 @@ function itemTextToSections (text: string) {
   }
 
   const sections: string[][] = [[]]
-  lines.reduce((section, rawLine) => {
-    const line = rawLine.trim()
+  lines.reduce((section, line) => {
     if (line !== '--------') {
       section.push(line)
       return section
