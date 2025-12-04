@@ -8,7 +8,7 @@ import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rule
 import { filterItemProp, filterBasePercentile, filterMemoryStrands } from './pseudo/item-property'
 import { mapProps } from './pseudo/maps'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
-import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
+import { StatBetter, CLIENT_STRINGS, pseudoStatByRef } from '@/assets/data'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -76,6 +76,51 @@ export function createExactStatFilters (
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
   )
 
+  if (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Jewel) {
+    const text = item.rawText
+    const patterns: Array<{ re: RegExp, ref: string, fmt: (v: number) => string }> = [
+      { re: /Passive Skills in Radius also grant (\d+)% increased Armour/, ref: 'Passive Skills in Radius also grant #% increased Armour', fmt: v => `Passive Skills in Radius also grant ${v}% increased Armour` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Chaos Damage/, ref: 'Passive Skills in Radius also grant #% increased Chaos Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Chaos Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Cold Damage/, ref: 'Passive Skills in Radius also grant #% increased Cold Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Cold Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Energy Shield/, ref: 'Passive Skills in Radius also grant #% increased Energy Shield', fmt: v => `Passive Skills in Radius also grant ${v}% increased Energy Shield` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Evasion Rating/, ref: 'Passive Skills in Radius also grant #% increased Evasion Rating', fmt: v => `Passive Skills in Radius also grant ${v}% increased Evasion Rating` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Fire Damage/, ref: 'Passive Skills in Radius also grant #% increased Fire Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Fire Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Global Critical Strike Chance/, ref: 'Passive Skills in Radius also grant #% increased Global Critical Strike Chance', fmt: v => `Passive Skills in Radius also grant ${v}% increased Global Critical Strike Chance` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Lightning Damage/, ref: 'Passive Skills in Radius also grant #% increased Lightning Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Lightning Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Physical Damage/, ref: 'Passive Skills in Radius also grant #% increased Physical Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Physical Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% to Chaos Resistance/, ref: 'Passive Skills in Radius also grant +#% to Chaos Resistance', fmt: v => `Passive Skills in Radius also grant ${v}% to Chaos Resistance` },
+      { re: /Passive Skills in Radius also grant \+(\d+) to all Attributes/, ref: 'Passive Skills in Radius also grant +# to all Attributes', fmt: v => `Passive Skills in Radius also grant +${v} to all Attributes` },
+      { re: /Passive Skills in Radius also grant \+(\d+) to maximum Life/, ref: 'Passive Skills in Radius also grant +# to maximum Life', fmt: v => `Passive Skills in Radius also grant +${v} to maximum Life` },
+      { re: /Passive Skills in Radius also grant \+(\d+) to maximum Mana/, ref: 'Passive Skills in Radius also grant +# to maximum Mana', fmt: v => `Passive Skills in Radius also grant +${v} to maximum Mana` }
+    ]
+    for (const p of patterns) {
+      const m = text.match(p.re)
+      if (!m) continue
+      const value = Number(m[1])
+      const dbStat = pseudoStatByRef(p.ref)
+      if (!dbStat) continue
+      const tradeId = dbStat.trade.ids[ModifierType.Explicit][0]
+      ctx.filters.push({
+        tradeId: [tradeId],
+        statRef: dbStat.ref,
+        text: p.fmt(value),
+        tag: FilterTag.Explicit,
+        oils: undefined,
+        sources: [],
+        roll: {
+          value,
+          min: value,
+          max: value,
+          default: { min: value, max: value },
+          bounds: { min: value, max: value },
+          tradeInvert: false,
+          dp: false,
+          isNegated: false
+        },
+        disabled: false
+      })
+    }
+  }
   if (item.info.refName === 'Chronicle of Atzoatl') {
     applyAtzoatlRules(ctx.filters)
     return ctx.filters
@@ -176,6 +221,83 @@ export function initUiModFilters (
 
   finalFilterTweaks(ctx)
 
+  if (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Jewel) {
+    const text = item.rawText
+    const patterns: Array<{ re: RegExp, ref: string, fmt: (v: number) => string }> = [
+      { re: /Passive Skills in Radius also grant (\d+)% increased Armour/, ref: 'Passive Skills in Radius also grant #% increased Armour', fmt: v => `Passive Skills in Radius also grant ${v}% increased Armour` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Chaos Damage/, ref: 'Passive Skills in Radius also grant #% increased Chaos Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Chaos Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Cold Damage/, ref: 'Passive Skills in Radius also grant #% increased Cold Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Cold Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Energy Shield/, ref: 'Passive Skills in Radius also grant #% increased Energy Shield', fmt: v => `Passive Skills in Radius also grant ${v}% increased Energy Shield` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Evasion Rating/, ref: 'Passive Skills in Radius also grant #% increased Evasion Rating', fmt: v => `Passive Skills in Radius also grant ${v}% increased Evasion Rating` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Fire Damage/, ref: 'Passive Skills in Radius also grant #% increased Fire Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Fire Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Global Critical Strike Chance/, ref: 'Passive Skills in Radius also grant #% increased Global Critical Strike Chance', fmt: v => `Passive Skills in Radius also grant ${v}% increased Global Critical Strike Chance` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Lightning Damage/, ref: 'Passive Skills in Radius also grant #% increased Lightning Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Lightning Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% increased Physical Damage/, ref: 'Passive Skills in Radius also grant #% increased Physical Damage', fmt: v => `Passive Skills in Radius also grant ${v}% increased Physical Damage` },
+      { re: /Passive Skills in Radius also grant (\d+)% to Chaos Resistance/, ref: 'Passive Skills in Radius also grant +#% to Chaos Resistance', fmt: v => `Passive Skills in Radius also grant ${v}% to Chaos Resistance` },
+      { re: /Passive Skills in Radius also grant \+(\d+) to all Attributes/, ref: 'Passive Skills in Radius also grant +# to all Attributes', fmt: v => `Passive Skills in Radius also grant +${v} to all Attributes` },
+      { re: /Passive Skills in Radius also grant \+(\d+) to maximum Life/, ref: 'Passive Skills in Radius also grant +# to maximum Life', fmt: v => `Passive Skills in Radius also grant +${v} to maximum Life` },
+      { re: /Passive Skills in Radius also grant \+(\d+) to maximum Mana/, ref: 'Passive Skills in Radius also grant +# to maximum Mana', fmt: v => `Passive Skills in Radius also grant +${v} to maximum Mana` }
+    ]
+    for (const p of patterns) {
+      const m = text.match(p.re)
+      if (!m) continue
+      const value = Number(m[1])
+      const dbStat = pseudoStatByRef(p.ref)
+      if (!dbStat) continue
+      const tradeId = dbStat.trade.ids[ModifierType.Explicit][0]
+      ctx.filters.push({
+        tradeId: [tradeId],
+        statRef: dbStat.ref,
+        text: p.fmt(value),
+        tag: FilterTag.Explicit,
+        oils: undefined,
+        sources: [],
+        roll: {
+          value,
+          min: value,
+          max: value,
+          default: { min: value, max: value },
+          bounds: { min: value, max: value },
+          tradeInvert: false,
+          dp: false,
+          isNegated: false
+        },
+        disabled: false
+      })
+    }
+  }
+
+  const lightRefs = new Set<string>([
+    'Passive Skills in Radius also grant #% increased Armour',
+    'Passive Skills in Radius also grant #% increased Chaos Damage',
+    'Passive Skills in Radius also grant #% increased Cold Damage',
+    'Passive Skills in Radius also grant #% increased Energy Shield',
+    'Passive Skills in Radius also grant #% increased Evasion Rating',
+    'Passive Skills in Radius also grant #% increased Fire Damage',
+    'Passive Skills in Radius also grant #% increased Global Critical Strike Chance',
+    'Passive Skills in Radius also grant #% increased Lightning Damage',
+    'Passive Skills in Radius also grant #% increased Physical Damage',
+    'Passive Skills in Radius also grant +#% to Chaos Resistance',
+    'Passive Skills in Radius also grant +# to all Attributes',
+    'Passive Skills in Radius also grant +# to maximum Life',
+    'Passive Skills in Radius also grant +# to maximum Mana'
+  ])
+
+  for (const filter of ctx.filters) {
+    if (
+      ctx.item.rarity === ItemRarity.Unique &&
+      ctx.item.category === ItemCategory.Jewel &&
+      lightRefs.has(filter.statRef)
+    ) {
+      filter.disabled = false
+      if (filter.roll) {
+        filter.roll.min = filter.roll.value
+        filter.roll.max = filter.roll.value
+        filter.roll.default.min = filter.roll.value
+        filter.roll.default.max = filter.roll.value
+      }
+    }
+  }
   return ctx.filters
 }
 
