@@ -47,7 +47,7 @@ export function applyRules (item: ParsedItem, filters: StatFilter[]) {
       tradeId: [tradeId],
       statRef: dbStat.ref,
       text: matched.text,
-      tag: FilterTag.Explicit,
+      tag: FilterTag.Variant,
       oils: undefined,
       sources: [],
       roll: {
@@ -55,7 +55,7 @@ export function applyRules (item: ParsedItem, filters: StatFilter[]) {
         min: matched.value,
         max: matched.value,
         default: { min: matched.value, max: matched.value },
-        bounds: { min: matched.value, max: matched.value },
+        bounds: undefined,
         tradeInvert: false,
         dp: false,
         isNegated: false
