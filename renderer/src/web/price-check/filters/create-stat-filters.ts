@@ -76,7 +76,12 @@ export function createExactStatFilters (
     ...ctx.statsByType.map(mod => calculatedStatToFilter(mod, ctx.searchInRange, item))
   )
 
-  if (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Jewel) {
+  if (
+    item.rarity === ItemRarity.Unique &&
+    item.category === ItemCategory.Jewel &&
+    item.info.refName === 'The Light of Meaning' &&
+    item.info.unique?.base === 'Prismatic Jewel'
+  ) {
     const text = item.rawText
     const refs = [
       'Passive Skills in Radius also grant #% increased Armour',
@@ -230,7 +235,12 @@ export function initUiModFilters (
 
   finalFilterTweaks(ctx)
 
-  if (item.rarity === ItemRarity.Unique && item.category === ItemCategory.Jewel) {
+  if (
+    item.rarity === ItemRarity.Unique &&
+    item.category === ItemCategory.Jewel &&
+    item.info.refName === 'The Light of Meaning' &&
+    item.info.unique?.base === 'Prismatic Jewel'
+  ) {
     const text = item.rawText
     const refs = [
       'Passive Skills in Radius also grant #% increased Armour',
@@ -305,6 +315,8 @@ export function initUiModFilters (
     if (
       ctx.item.rarity === ItemRarity.Unique &&
       ctx.item.category === ItemCategory.Jewel &&
+      ctx.item.info.refName === 'The Light of Meaning' &&
+      ctx.item.info.unique?.base === 'Prismatic Jewel' &&
       lightRefs.has(filter.statRef)
     ) {
       filter.disabled = false
