@@ -432,19 +432,6 @@ function upgradeConfig (_config: Config): Config {
     config.configVersion = 18
   }
 
-  if (config.configVersion < 19) {
-    const imgWidgets = config.widgets.filter(w => w.wmType === 'image-strip') as widget.ImageStripWidget[]
-    imgWidgets.forEach((imgStrip) => {
-      imgStrip.images.forEach((img) => {
-        if (img.url === 'syndicate.jpg' || img.url.endsWith('/syndicate.jpg')) {
-          img.url = 'images/elrincondelexiliado.com_syndicate-cheatsheet3_27.png'
-        }
-      })
-    })
-
-    config.configVersion = 19
-  }
-
   return config as unknown as Config
 }
 
