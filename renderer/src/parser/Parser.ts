@@ -674,6 +674,7 @@ function parseModifiers (section: string[], item: ParsedItem) {
   const recognizedLine = section.find(line =>
     line.endsWith(ENCHANT_LINE) ||
     line.endsWith(SCOURGE_LINE) ||
+    line.endsWith(IMPLICIT_LINE) ||
     isModInfoLine(line)
   )
 
@@ -696,7 +697,9 @@ function parseModifiers (section: string[], item: ParsedItem) {
     const modInfo: ModifierInfo = {
       type: recognizedLine.endsWith(ENCHANT_LINE)
         ? ModifierType.Enchant
-        : ModifierType.Scourge,
+        : recognizedLine.endsWith(IMPLICIT_LINE)
+          ? ModifierType.Implicit
+          : ModifierType.Scourge,
       tags: []
     }
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
