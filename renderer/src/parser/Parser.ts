@@ -178,19 +178,20 @@ function normalizeName (item: ParserState) {
 function findInDatabase (item: ParserState) {
   let info: BaseType[] | undefined
   if (item.category === ItemCategory.DivinationCard) {
-    info = ITEM_BY_REF('DIVINATION_CARD', item.name)
+    info = ITEM_BY_REF('DIVINATION_CARD', item.name) ?? ITEM_BY_TRANSLATED('DIVINATION_CARD', item.name)
   } else if (item.category === ItemCategory.CapturedBeast) {
-    info = ITEM_BY_REF('CAPTURED_BEAST', item.baseType ?? item.name)
+    info = ITEM_BY_REF('CAPTURED_BEAST', item.baseType ?? item.name) ?? ITEM_BY_TRANSLATED('CAPTURED_BEAST', item.baseType ?? item.name)
   } else if (item.category === ItemCategory.Gem) {
-    info = ITEM_BY_REF('GEM', item.name)
+    info = ITEM_BY_REF('GEM', item.name) ?? ITEM_BY_TRANSLATED('GEM', item.name)
   } else if (item.category === ItemCategory.MetamorphSample) {
-    info = ITEM_BY_REF('ITEM', item.name)
+    info = ITEM_BY_REF('ITEM', item.name) ?? ITEM_BY_TRANSLATED('ITEM', item.name)
   } else if (item.category === ItemCategory.Voidstone) {
     info = ITEM_BY_REF('ITEM', 'Charged Compass')
   } else if (item.rarity === ItemRarity.Unique && !item.isUnidentified) {
-    info = ITEM_BY_REF('UNIQUE', item.name)
+    info = ITEM_BY_REF('UNIQUE', item.name) ?? ITEM_BY_TRANSLATED('UNIQUE', item.name)
   } else {
-    info = ITEM_BY_REF('ITEM', item.baseType ?? item.name)
+    const key = item.baseType ?? item.name
+    info = ITEM_BY_REF('ITEM', key) ?? ITEM_BY_TRANSLATED('ITEM', key)
   }
   if (!info?.length) {
     return err('item.unknown')
