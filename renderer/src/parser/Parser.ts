@@ -693,8 +693,15 @@ function parseModifiers (section: string[], item: ParsedItem) {
       }
     }
   } else {
-    const { modType, lines } = parseModType(section)
-    const modInfo: ModifierInfo = { type: modType, tags: [] }
+    const { lines } = parseModType(section)
+    const modInfo: ModifierInfo = {
+      type: recognizedLine.endsWith(ENCHANT_LINE)
+        ? ModifierType.Enchant
+        : recognizedLine.endsWith(IMPLICIT_LINE)
+          ? ModifierType.Implicit
+          : ModifierType.Scourge,
+      tags: []
+    }
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
   }
 
