@@ -92,22 +92,24 @@ export function createFilters (
         value: floorToBracket(item.areaLevel!, [1, 68, 73, 75, 78, 80]),
         disabled: false
       }
-    }
-    if (item.info.refName === 'Mirrored Tablet') {
+    } else if (item.info.refName === 'Mirrored Tablet') {
       filters.areaLevel = {
         value: item.areaLevel!,
         disabled: false
       }
-    }
-    // Incubators, Wombgifts, Forbidden Tome
-    if (item.itemLevel) {
+    } else if (item.info.refName === 'Forbidden Tome') {
+      filters.areaLevel = {
+        value: item.areaLevel!,
+        disabled: false
+      }
+      if (item.areaLevel! < 83) {
+        filters.areaLevel.max = item.areaLevel!
+      }
+    } else if (item.itemLevel) {
+      // Incubators, Wombgifts
       filters.itemLevel = {
         value: item.itemLevel,
         disabled: false
-      }
-
-      if (item.info.refName === 'Forbidden Tome') {
-        filters.itemLevel.max = item.itemLevel
       }
     }
     return filters

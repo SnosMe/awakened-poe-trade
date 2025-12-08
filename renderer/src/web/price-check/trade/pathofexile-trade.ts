@@ -390,6 +390,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
 
   if (filters.areaLevel && !filters.areaLevel.disabled) {
     propSet(query.filters, 'map_filters.filters.area_level.min', filters.areaLevel.value)
+    if (filters.areaLevel.max) {
+      propSet(query.filters, 'map_filters.filters.area_level.max', filters.areaLevel.max)
+    }
   }
 
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
