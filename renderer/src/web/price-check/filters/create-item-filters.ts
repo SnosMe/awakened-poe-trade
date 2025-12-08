@@ -105,6 +105,10 @@ export function createFilters (
         value: item.itemLevel,
         disabled: false
       }
+
+      if (item.info.refName === 'Forbidden Tome') {
+        filters.itemLevel.max = item.itemLevel
+      }
     }
     return filters
   }
