@@ -99,21 +99,15 @@ export function createFilters (
         disabled: false
       }
     }
-    if (item.info.refName === 'Forbidden Tome') {
-      if (item.itemLevel) {
-        filters.itemLevel = {
-          value: item.itemLevel!,
-          max: item.itemLevel,
-          disabled: false
-        }
-      }
-      return filters
-    }
-    // Incubators, Wombgifts
+    // Incubators, Wombgifts, Forbidden Tome
     if (item.itemLevel) {
       filters.itemLevel = {
         value: item.itemLevel,
         disabled: false
+      }
+
+      if (item.info.refName === 'Forbidden Tome') {
+        filters.itemLevel.max = item.itemLevel
       }
     }
     return filters
