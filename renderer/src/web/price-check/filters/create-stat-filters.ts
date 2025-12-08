@@ -202,6 +202,10 @@ export function calculatedStatToFilter (
       },
       disabled: false
     }
+
+    if (filter.oils) {
+      filter.disabled = true
+    }
   }
 
   const roll = statSourcesTotal(
