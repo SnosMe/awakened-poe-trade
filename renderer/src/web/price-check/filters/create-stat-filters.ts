@@ -356,6 +356,12 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
     filter.roll.max = undefined
     filter.hidden = 'filters.hide_const_roll'
   }
+
+  if (item.isFoulborn && filter.tag === FilterTag.Explicit) {
+    // some mod not being replaced with foulborn one can be important
+    filter.hidden = undefined
+    filter.disabled = false
+  }
 }
 
 function filterFillMinMax (
