@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ItemRarity, type ParsedItem } from '@/parser'
+import type { ParsedItem } from '@/parser'
 import * as actions from './hotkeyable-actions'
 
 const props = defineProps<{
