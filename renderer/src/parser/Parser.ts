@@ -68,7 +68,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseModifiers, // scourge
   parseModifiers, // implicit
   parseModifiers, // explicit
-  parseDisenchantCandidates,
+  { virtual: parseDisenchantCandidates},
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
@@ -708,10 +708,10 @@ function parseModifiers (section: string[], item: ParsedItem) {
   return 'SECTION_PARSED'
 }
 
-function parseDisenchantCandidates(section: string[], item: ParsedItem) {
+function parseDisenchantCandidates(item: ParserState) {
 
   // TODO: Improve condition to check only items that can be disenchanting. Checking by `item.category` can help but it's not sure.
-  if (item.rarity !== ItemRarity.Unique) return 'PARSER_SKIPPED'
+  if (item.rarity !== ItemRarity.Unique) return
 
   const refName = item!.info.refName
   const possibleItems: {name: string, refName: string, icon: string}[] = []
@@ -774,7 +774,6 @@ function parseDisenchantCandidates(section: string[], item: ParsedItem) {
   }
 
   item.disenchantCandidates = items
-  return 'SECTION_PARSED'
 }
 
 function parseMirrored (section: string[], item: ParsedItem) {
