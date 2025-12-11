@@ -1,5 +1,5 @@
 import fnv1a from '@sindresorhus/fnv1a'
-import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, DisenchantUniqueItem, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
 
 export * from './interfaces'
 
@@ -11,6 +11,7 @@ export let APP_PATRONS: Array<{ from: string, months: number, style: number }>
 export let ITEM_BY_TRANSLATED = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
 export let ITEM_BY_REF = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
 export let ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<BaseType> {}
+export let DISENCHANT_UNIQUE_ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<DisenchantUniqueItem> {}
 
 export let ALTQ_GEM_NAMES = function * (): Generator<string> {}
 export let REPLICA_UNIQUE_NAMES = function * (): Generator<string> {}
@@ -76,6 +77,7 @@ function itemNamesFromLines (items: Generator<BaseType>) {
 
 async function loadItems (language: string) {
   const ndjson = await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items.ndjson`)).text()
+  const disenchantingNdjson = await (await fetch(`${import.meta.env.BASE_URL}data/disenchanting.ndjson`)).text()
   const INDEX_WIDTH = 2
   const indexNames = new Uint32Array(await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items-name.index.bin`)).arrayBuffer())
   const indexRefNames = new Uint32Array(await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items-ref.index.bin`)).arrayBuffer())
@@ -102,6 +104,7 @@ async function loadItems (language: string) {
   ITEM_BY_TRANSLATED = commonFind(indexNames, 'name')
   ITEM_BY_REF = commonFind(indexRefNames, 'refName')
   ITEMS_ITERATOR = ndjsonFindLines<BaseType>(ndjson)
+  DISENCHANT_UNIQUE_ITEMS_ITERATOR = ndjsonFindLines<DisenchantUniqueItem>(disenchantingNdjson)
   ALTQ_GEM_NAMES = itemNamesFromLines(ITEMS_ITERATOR('altQuality":["Anomalous'))
   REPLICA_UNIQUE_NAMES = itemNamesFromLines(ITEMS_ITERATOR('refName":"Replica'))
 }
