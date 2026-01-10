@@ -61,7 +61,7 @@
 {"name":"Wing of the Wyvern","baseType":"Imperial Bow","dustAmount":122.94}
 {"name":"The Golden Charlatan","baseType":"Lion Sword","dustAmount":119.36}
 {"name":"Hand of Heresy","baseType":"Martyr Gloves","dustAmount":116.86}
-{"name":"Eclipse Solaris","baseType":"Engraved Wand","dustAmount":116.27}
+{"name":"Eclipse Solaris","baseType":"Faun's Horn","dustAmount":116.27}
 {"name":"Arakaali's Fang","baseType":"Fiend Dagger","dustAmount":116.27}
 {"name":"Martyr of Innocence","baseType":"Highborn Staff","dustAmount":112.89}
 {"name":"Song of the Sirens","baseType":"Fishing Rod","dustAmount":111.95}
@@ -145,6 +145,7 @@
 {"name":"Replica Loreweave","baseType":"Elegant Ringmail","dustAmount":38.63}
 {"name":"Yaomac's Accord","baseType":"Vaal Sceptre","dustAmount":38.63}
 {"name":"Replica Stampede","baseType":"Assassin's Boots","dustAmount":37.5}
+{"name":"The Devourer of Minds","baseType":"Pig-Faced Bascinet","dustAmount":37.5}
 {"name":"Shavronne's Wrappings","baseType":"Occultist's Vestment","dustAmount":36.41}
 {"name":"Darkscorn","baseType":"Assassin Bow","dustAmount":36.41}
 {"name":"Kintsugi","baseType":"Exquisite Leather","dustAmount":36.41}
@@ -669,6 +670,7 @@
 {"name":"Death's Harp","baseType":"Death Bow","dustAmount":5}
 {"name":"Bitterdream","baseType":"Shadow Sceptre","dustAmount":5}
 {"name":"Replica Iron Commander","baseType":"Death Bow","dustAmount":5}
+{"name":"The Hand of Phrecia","baseType":"Mesh Gloves","dustAmount":5}
 {"name":"Hrimnor's Resolve","baseType":"Samnite Helmet","dustAmount":4.93}
 {"name":"Rat's Nest","baseType":"Ursine Pelt","dustAmount":4.93}
 {"name":"Maloney's Nightfall","baseType":"Vile Arrow Quiver","dustAmount":4.93}
@@ -771,6 +773,7 @@
 {"name":"Graven's Secret","baseType":"Cloth Belt","dustAmount":3.51}
 {"name":"Ixchel's Temptation","baseType":"Gold Ring","dustAmount":3.51}
 {"name":"Replica Heatshiver","baseType":"Leather Hood","dustAmount":3.51}
+{"name":"Nevalius Inheritance","baseType":"Cloth Belt","dustAmount":3.51}
 {"name":"Daresso's Passion","baseType":"Estoc","dustAmount":3.46}
 {"name":"El'Abin's Visage","baseType":"Fencer Helm","dustAmount":3.46}
 {"name":"Bloodbond","baseType":"Bone Armour","dustAmount":3.41}
