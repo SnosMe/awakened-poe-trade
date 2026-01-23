@@ -90,6 +90,7 @@ export interface BaseType {
   unique?: {
     base: BaseType['refName']
     fixedStats?: Array<Stat['ref']>
+    disenchantValue?: number
   }
   map?: {
     screenshot?: string
