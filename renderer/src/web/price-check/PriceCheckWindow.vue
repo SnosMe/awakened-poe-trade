@@ -107,6 +107,7 @@ export default defineComponent({
         smartInitialSearch: true,
         lockedInitialSearch: true,
         activateStockFilter: false,
+        activateMerchantOnlyFilter: true,
         builtinBrowser: false,
         hotkey: 'D',
         hotkeyHold: 'Ctrl',

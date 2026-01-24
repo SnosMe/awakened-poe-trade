@@ -14,6 +14,7 @@ interface CreateOptions {
   currency: string | undefined
   collapseListings: 'app' | 'api'
   activateStockFilter: boolean
+  activateMerchantOnlyFilter: boolean
   exact: boolean
   useEn: boolean
 }
@@ -27,8 +28,7 @@ export function createFilters (
     trade: {
       offline: false,
       onlineInLeague: false,
-      merchantOnly: !PERMANENT_SC.includes(opts.league) &&
-        item.category !== ItemCategory.DivinationCard,
+      merchantOnly: opts.activateMerchantOnlyFilter,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
