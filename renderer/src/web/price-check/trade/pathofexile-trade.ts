@@ -80,11 +80,6 @@ const INFLUENCE_PSEUDO_TEXT = {
   [ItemInfluence.Warlord]: stat('Has Warlord Influence')
 }
 
-const FLASK = {
-  INCR_CHARGE_RECOVERY: stat('#% increased Charge Recovery'),
-  INCR_EFFECT: stat('#% increased effect')
-}
-
 interface FilterBoolean { option?: 'true' | 'false' }
 interface FilterRange { min?: number, max?: number }
 
@@ -430,25 +425,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
           { id: TARGET_ID.TOTAL_MODIFIERS, value: { min: 6, max: undefined }, disabled: stat.disabled }
         ]
       })
-    } else if ( // https://github.com/SnosMe/awakened-poe-trade/issues/758
-      item.category === ItemCategory.Flask &&
-      stat.statRef === FLASK.INCR_CHARGE_RECOVERY &&
-      !stats.some(s => s.statRef === FLASK.INCR_EFFECT)
-    ) {
-      const statGroup = STAT_BY_REF_V2(FLASK.INCR_EFFECT)!
-      if (!('stats' in statGroup && statGroup.resolve.strat === 'select')) {
-        throw new Error(`Unexpected stat shape: ${FLASK.INCR_EFFECT}`)
-      }
-      const incrStat = statGroup.stats[statGroup.resolve.test.indexOf(null)]
-
-      const reducedEffectId = incrStat.trade.ids[ModifierType.Explicit][0]
-      query.stats.push({
-        type: 'not',
-        disabled: stat.disabled,
-        filters: [
-          { id: reducedEffectId, disabled: stat.disabled }
-        ]
-      })
     }
 
     if (stat.disabled) continue
@@ -544,17 +520,32 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
 
   const qAnd = query.stats[0]
+  const qNot: TradeRequest['query']['stats'][number] = {
+    type: 'not',
+    filters: []
+  }
+
   for (const stat of realStats) {
-    if (stat.tradeId.length === 1) {
-      qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat))
+    if (stat.not) {
+      for (const id of stat.tradeId) {
+        qNot.filters.push(tradeIdToQuery(id, stat))
+      }
     } else {
-      query.stats.push({
-        type: 'count',
-        value: { min: 1 },
-        disabled: stat.disabled,
-        filters: stat.tradeId.map(id => tradeIdToQuery(id, stat))
-      })
+      if (stat.tradeId.length === 1) {
+        qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat))
+      } else {
+        query.stats.push({
+          type: 'count',
+          value: { min: 1 },
+          disabled: stat.disabled,
+          filters: stat.tradeId.map(id => tradeIdToQuery(id, stat))
+        })
+      }
     }
+  }
+
+  if (qNot.filters.length) {
+    query.stats.push(qNot)
   }
 
   return body

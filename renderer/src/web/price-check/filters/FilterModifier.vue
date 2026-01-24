@@ -43,6 +43,8 @@
           </ui-popover>
         </div>
         <div class="flex-1 min-w-0 flex items-start gap-x-2">
+          <span v-if="filter.not"
+            :class="[$style['tag'], $style['tag-not']]">{{ t('filters.tag_not') }}</span>
           <span v-if="showTag"
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(`filters.tag_${tag.replace('-', '_')}`) }}{{ (filter.sources.length > 1) ? ` x ${filter.sources.length}` : null }}</span>
           <filter-modifier-tiers :filter="filter" :item="item" />
@@ -346,7 +348,8 @@ export default defineComponent({
   @apply bg-pink-700 text-white; }
 .tag-enchant {
   @apply bg-purple-600 text-purple-100; }
-.tag-pseudo {
+.tag-pseudo,
+.tag-not {
   @apply bg-gray-700 text-black; }
 </style>
 

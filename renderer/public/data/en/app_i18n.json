@@ -172,6 +172,7 @@
     "tag_foulborn": "foulborn",
     "tag_eldritch": "eldritch",
     "tag_pseudo": "pseudo",
+    "tag_not": "not",
     "tag_explicit": "explicit",
     "tag_explicit_shaper": "Shaper",
     "tag_explicit_elder": "Elder",

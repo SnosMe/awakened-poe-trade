@@ -96,6 +96,7 @@ export interface StatFilter {
   tag: FilterTag
   oils?: string[]
   sources: StatCalculated['sources']
+  not?: true
   roll?: {
     value: number
     min: number | '' | undefined // NOTE: mutable in UI
