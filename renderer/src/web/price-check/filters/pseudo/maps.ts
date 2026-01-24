@@ -1,5 +1,7 @@
-import { stat, pseudoStatByRef } from '@/assets/data'
+import { stat, pseudoStatByRef, STAT_BY_REF_V2, Stat } from '@/assets/data'
 import { ItemRarity } from '@/parser/ParsedItem'
+import { ModifierType } from '@/parser/modifiers'
+import { FilterTag } from '../interfaces'
 import { FiltersCreationContext } from '../create-stat-filters'
 import { noSourcePseudoToFilter, propToFilter } from './item-property'
 
@@ -10,6 +12,10 @@ const PSEUDO = {
   MORE_CURRENCY: stat('More Currency: #%'),
   EXPLICIT_MODIFIERS: stat('# Modifiers')
 }
+
+const VALDO_LETHAL_STATS = [
+  stat('Players who Die in area are sent to the Void')
+]
 
 export function mapProps (ctx: FiltersCreationContext): void {
   const { item } = ctx
@@ -83,5 +89,31 @@ export function mapProps (ctx: FiltersCreationContext): void {
       roll: { min: 0, max: 8, value: explicitMods.length },
       disabled: false
     }, { ...ctx, searchInRange: 0 }))
+  }
+}
+
+export function valdoBadMods (ctx: FiltersCreationContext): void {
+  if (!ctx.item.mapCompletionReward) return
+
+  for (const lethalStatRef of VALDO_LETHAL_STATS) {
+    if (ctx.item.statsByType.some(calc => calc.stat.ref === lethalStatRef)) continue
+
+    let lethalStat: Stat
+    const statOrGroup = STAT_BY_REF_V2(lethalStatRef)!
+    if (!('stats' in statOrGroup)) {
+      lethalStat = statOrGroup
+    } else {
+      throw new Error('Not imeplemented.')
+    }
+
+    ctx.filters.push({
+      tradeId: lethalStat.trade.ids[ModifierType.Explicit],
+      statRef: lethalStat.ref,
+      text: lethalStat.matchers[0].string,
+      tag: FilterTag.Explicit,
+      sources: [],
+      disabled: false,
+      not: true
+    })
   }
 }
