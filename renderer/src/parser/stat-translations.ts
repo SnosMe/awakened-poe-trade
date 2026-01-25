@@ -259,7 +259,7 @@ function findAndResolveTranslation (
   return undefined
 }
 
-function _resolveTranslation (
+export function _resolveTranslation (
   statGroup: StatGroup,
   params: FindResolveParams
 ): Stat | undefined {
@@ -278,8 +278,10 @@ function _resolveTranslation (
   if (onTradeStats.length === 1) return onTradeStats[0]
 
   if (resolve.strat === 'trivial-merge') {
-    const withMatchStr = onTradeStats.filter(stat =>
-      stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+    const withMatchStr = (matchStr.length)
+      ? onTradeStats.filter(stat =>
+        stat.matchers.some(m => m.string === matchStr || m.advanced === matchStr))
+      : onTradeStats
     if (!withMatchStr.length) return undefined
     const merged = withMatchStr[0]
     for (const stat of withMatchStr) {

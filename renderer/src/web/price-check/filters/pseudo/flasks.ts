@@ -1,8 +1,7 @@
-import { stat, STAT_BY_REF_V2 } from '@/assets/data'
+import { stat } from '@/assets/data'
 import { ItemRarity } from '@/parser'
-import { ModifierType } from '@/parser/modifiers'
 import type { FiltersCreationContext } from '../create-stat-filters'
-import { StatFilter, FilterTag } from '../interfaces'
+import { findAndResolveByRef, explicitStatToNotFilter } from './utils'
 
 const STATS = {
   INCR_CHARGE_RECOVERY: stat('#% increased Charge Recovery'),
@@ -16,21 +15,12 @@ export function applyFlaskHybridMod (ctx: FiltersCreationContext) {
     !ctx.filters.some(filter => filter.statRef === STATS.INCR_EFFECT)
   if (!applicable) return
 
-  const statGroup = STAT_BY_REF_V2(STATS.INCR_EFFECT)!
-  if (!('stats' in statGroup && statGroup.resolve.strat === 'select')) {
-    throw new Error(`Unexpected stat shape: ${STATS.INCR_EFFECT}`)
-  }
-  const effectStat = statGroup.stats[statGroup.resolve.test.indexOf(null)]
-
-  const filter: StatFilter = {
-    tradeId: effectStat.trade.ids[ModifierType.Explicit],
-    statRef: effectStat.ref,
-    text: effectStat.matchers.find(matcher => matcher.negate)!.string,
-    tag: FilterTag.Explicit,
-    sources: [],
-    disabled: false,
-    not: true
-  }
+  const effectStat = findAndResolveByRef(STATS.INCR_EFFECT, ctx.item.category)
+  const filter = explicitStatToNotFilter({
+    stat: effectStat,
+    negateString: true,
+    disabled: false
+  })
   const insertAfter = ctx.filters.findIndex(filter => filter.statRef === STATS.INCR_CHARGE_RECOVERY)
   ctx.filters.splice(insertAfter + 1, 0, filter)
 }

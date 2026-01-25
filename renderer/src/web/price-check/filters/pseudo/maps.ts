@@ -1,9 +1,8 @@
-import { stat, pseudoStatByRef, STAT_BY_REF_V2, Stat } from '@/assets/data'
+import { stat, pseudoStatByRef } from '@/assets/data'
 import { ItemRarity } from '@/parser/ParsedItem'
-import { ModifierType } from '@/parser/modifiers'
-import { FilterTag } from '../interfaces'
 import { FiltersCreationContext } from '../create-stat-filters'
 import { noSourcePseudoToFilter, propToFilter } from './item-property'
+import { findAndResolveByRef, explicitStatToNotFilter } from './utils'
 
 const PSEUDO = {
   MORE_SCARABS: stat('More Scarabs: #%'),
@@ -98,22 +97,11 @@ export function valdoBadMods (ctx: FiltersCreationContext): void {
   for (const lethalStatRef of VALDO_LETHAL_STATS) {
     if (ctx.item.statsByType.some(calc => calc.stat.ref === lethalStatRef)) continue
 
-    let lethalStat: Stat
-    const statOrGroup = STAT_BY_REF_V2(lethalStatRef)!
-    if (!('stats' in statOrGroup)) {
-      lethalStat = statOrGroup
-    } else {
-      throw new Error('Not imeplemented.')
-    }
-
-    ctx.filters.push({
-      tradeId: lethalStat.trade.ids[ModifierType.Explicit],
-      statRef: lethalStat.ref,
-      text: lethalStat.matchers[0].string,
-      tag: FilterTag.Explicit,
-      sources: [],
-      disabled: false,
-      not: true
+    const lethalStat = findAndResolveByRef(lethalStatRef, ctx.item.category)
+    const filter = explicitStatToNotFilter({
+      stat: lethalStat,
+      disabled: false
     })
+    ctx.filters.push(filter)
   }
 }
