@@ -907,7 +907,7 @@ function parseMirroredTablet (section: string[], item: ParsedItem) {
   if (section.length < 8) return 'SECTION_SKIPPED'
 
   for (const line of section) {
-    const found = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Pseudo)
+    const found = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Pseudo, undefined)
     if (found) {
       item.newMods.push({
         info: { tags: [], type: ModifierType.Pseudo },
