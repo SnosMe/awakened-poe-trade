@@ -73,6 +73,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: 'Unusual Gems',
   HEIST_BLUEPRINT_REPLICAS: 'Replicas or Experimented Items',
   MIRRORED: 'Mirrored',
+  SPLIT: 'Split',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: 'Prefix Modifier',
   SUFFIX_MODIFIER: 'Suffix Modifier',

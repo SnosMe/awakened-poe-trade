@@ -129,6 +129,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           corrupted?: FilterBoolean
           fractured_item?: FilterBoolean
           mirrored?: FilterBoolean
+          split?: FilterBoolean
           identified?: FilterBoolean
           stack_size?: FilterRange
           memory_level?: FilterRange
@@ -319,6 +320,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
   if (filters.fractured?.value === false) {
     propSet(query.filters, 'misc_filters.filters.fractured_item.option', String(false))
+  }
+  if (filters.split?.disabled) {
+    propSet(query.filters, 'misc_filters.filters.split.option', String(false))
   }
   if (filters.foulborn?.value === false) {
     propSet(query.filters, 'misc_filters.filters.foulborn_item.option', String(false))

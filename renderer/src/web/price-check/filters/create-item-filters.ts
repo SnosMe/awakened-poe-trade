@@ -295,6 +295,15 @@ export function createFilters (
     filters.mirrored = { disabled: false }
   }
 
+  if (item.isSplit) {
+    filters.split = { disabled: false, hidden: false }
+  } else if (
+    item.info.craftable && !item.isCorrupted && !item.isMirrored &&
+    !item.isSynthesised && !item.isFractured && !item.influences.length
+  ) {
+    filters.split = { disabled: true, hidden: true }
+  }
+
   if (!item.isFractured &&
     (item.info.craftable && !item.isCorrupted && !item.isMirrored)
   ) {

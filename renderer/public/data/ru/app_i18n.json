@@ -114,6 +114,8 @@
     "foil_unique": "Реликвия",
     "mirrored": "Отражено",
     "not_mirrored": "Не отражено",
+    "split": "Разделено",
+    "not_split": "Не разделено",
     "map_foil_reward": "Особая {0}"
   },
   "item_category": {

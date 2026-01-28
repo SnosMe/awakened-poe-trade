@@ -73,6 +73,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: 'Необычные камни',
   HEIST_BLUEPRINT_REPLICAS: 'Копии или экспериментальные предметы',
   MIRRORED: 'Отражено',
+  SPLIT: 'Разделено',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s+\(Уровень: (?<tier>\d+)\))?(?:\s+\(Ранг: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: 'Префикс',
   SUFFIX_MODIFIER: 'Суффикс',

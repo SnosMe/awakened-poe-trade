@@ -59,6 +59,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMirroredTablet,
   parseFilledCoffin,
   parseMirrored,
+  parseSplit,
   parseSentinelCharge,
   parseLogbookArea,
   parseLogbookArea,
@@ -709,6 +710,16 @@ function parseMirrored (section: string[], item: ParsedItem) {
   if (section.length === 1) {
     if (section[0] === _$.MIRRORED) {
       item.isMirrored = true
+      return 'SECTION_PARSED'
+    }
+  }
+  return 'SECTION_SKIPPED'
+}
+
+function parseSplit (section: string[], item: ParsedItem) {
+  if (section.length === 1) {
+    if (section[0] === _$.SPLIT) {
+      item.isSplit = true
       return 'SECTION_PARSED'
     }
   }

@@ -73,6 +73,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: '도둑의 장신구 또는 화폐',
   HEIST_BLUEPRINT_REPLICAS: '모조품 또는 실험적 아이템',
   MIRRORED: '복제',
+  SPLIT: '분할됨',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s+\(등급: (?<tier>\d+)\))?(?:\s+\(단계: (?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: '접두어 속성 부여',
   SUFFIX_MODIFIER: '접미어 속성 부여',

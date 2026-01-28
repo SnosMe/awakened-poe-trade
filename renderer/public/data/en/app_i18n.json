@@ -96,6 +96,8 @@
     "foil_unique": "Foil Unique",
     "mirrored": "Mirrored",
     "not_mirrored": "Not Mirrored",
+    "split": "Split",
+    "not_split": "Not Split",
     "map_foil_reward": "Foil {0}"
   },
   "item_category": {

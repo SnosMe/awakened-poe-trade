@@ -58,6 +58,7 @@ export interface ParsedItem {
   isCorrupted: boolean
   isUnmodifiable?: boolean
   isMirrored?: boolean
+  isSplit?: boolean
   influences: ItemInfluence[]
   logbookAreaMods?: ParsedModifier[][]
   sentinelCharge?: number

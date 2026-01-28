@@ -73,6 +73,7 @@ export default {
   HEIST_BLUEPRINT_GEMS: '不尋常寶石',
   HEIST_BLUEPRINT_REPLICAS: '贗品或實驗性物品',
   MIRRORED: '已複製',
+  SPLIT: '分化',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s*\(階層：(?<tier>\d+)\))?(?:\s*\(階級：(?<rank>\d+)\))?$/,
   PREFIX_MODIFIER: '前綴',
   SUFFIX_MODIFIER: '後綴',
