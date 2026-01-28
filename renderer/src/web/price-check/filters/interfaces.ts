@@ -38,6 +38,7 @@ export interface ItemFilters {
   }
   mirrored?: {
     disabled: boolean
+    hidden: boolean
   }
   split?: {
     disabled: boolean

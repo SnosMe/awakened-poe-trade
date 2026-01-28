@@ -292,7 +292,11 @@ export function createFilters (
   }
 
   if (item.isMirrored) {
-    filters.mirrored = { disabled: false }
+    filters.mirrored = { disabled: false, hidden: false }
+  } else if (
+    item.info.craftable && !item.isCorrupted
+  ) {
+    filters.mirrored = { disabled: true, hidden: true }
   }
 
   if (item.isSplit) {

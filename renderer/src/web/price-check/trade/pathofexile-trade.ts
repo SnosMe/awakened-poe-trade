@@ -1,4 +1,4 @@
-import { ItemInfluence, ItemCategory, ParsedItem, ItemRarity } from '@/parser'
+import { ItemInfluence, ItemCategory, ParsedItem } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
@@ -327,15 +327,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   if (filters.foulborn?.value === false) {
     propSet(query.filters, 'misc_filters.filters.foulborn_item.option', String(false))
   }
-  if (filters.mirrored) {
-    if (filters.mirrored.disabled) {
-      propSet(query.filters, 'misc_filters.filters.mirrored.option', String(false))
-    }
-  } else if (
-    item.rarity === ItemRarity.Normal ||
-    item.rarity === ItemRarity.Magic ||
-    item.rarity === ItemRarity.Rare
-  ) {
+  if (filters.mirrored?.disabled) {
     propSet(query.filters, 'misc_filters.filters.mirrored.option', String(false))
   }
 
