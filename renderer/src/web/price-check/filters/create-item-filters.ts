@@ -441,10 +441,11 @@ function createGemFilters (
       disabled: (item.gemLevel! < 5)
     }
 
-    if (item.isCorrupted && item.quality) {
+    if (item.quality) {
+      
       filters.quality = {
         value: item.quality,
-        disabled: (item.quality < 20)
+        disabled: (item.isCorrupted && item.quality < 20)
       }
     }
 
