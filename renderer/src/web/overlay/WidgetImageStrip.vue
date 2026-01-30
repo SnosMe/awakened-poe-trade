@@ -56,7 +56,7 @@ export default {
           y: 10
         },
         images: [
-          { id: 1, url: 'syndicate.jpg' }
+          { id: 1, url: 'images/elrincondelexiliado.com_syndicate-cheatsheet3_27.png' }
         ]
       }]
     }
@@ -89,9 +89,7 @@ if (props.config.wmFlags[0] === 'uninitialized') {
     x: (Math.random() * (60 - 40) + 40),
     y: (Math.random() * (15 - 5) + 5)
   }
-  props.config.images = [{
-    id: 1, url: 'syndicate.jpg'
-  }]
+  props.config.images = [{ id: 1, url: 'images/elrincondelexiliado.com_syndicate-cheatsheet3_27.png' }]
   nextTick(() => {
     wm.show(props.config.wmId)
   })
