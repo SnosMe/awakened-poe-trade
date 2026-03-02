@@ -5,7 +5,6 @@ import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF, ITEM_BY_TRANSLATED } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
-import { PERMANENT_SC } from '../../background/Leagues'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -14,6 +13,7 @@ interface CreateOptions {
   currency: string | undefined
   collapseListings: 'app' | 'api'
   activateStockFilter: boolean
+  merchantOnly: boolean
   exact: boolean
   useEn: boolean
 }
@@ -27,8 +27,7 @@ export function createFilters (
     trade: {
       offline: false,
       onlineInLeague: false,
-      merchantOnly: !PERMANENT_SC.includes(opts.league) &&
-        item.category !== ItemCategory.DivinationCard,
+      merchantOnly: item.category === ItemCategory.DivinationCard ? false : opts.merchantOnly,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,

@@ -123,7 +123,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 18,
+  configVersion: 19,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -394,6 +394,9 @@ function upgradeConfig (_config: Config): Config {
   const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
   if (priceCheck.rememberCurrency === undefined) {
     priceCheck.rememberCurrency = false
+  }
+  if (priceCheck.merchantOnly === undefined) {
+    priceCheck.merchantOnly = true
   }
 
   for (const widget of config.widgets) {
