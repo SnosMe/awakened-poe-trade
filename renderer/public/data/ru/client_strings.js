@@ -9,7 +9,7 @@ export default {
   RARITY_CURRENCY: 'Валюта',
   RARITY_DIVCARD: 'Гадальная карта',
   RARITY_QUEST: 'Задание',
-  MAP_TIER: 'Уровень карты: ',
+  MAP_TIER: / \(Ур. (\d+)\)$/,
   MAP_ITEM_QUANTITY: 'Количество предметов: ',
   MAP_ITEM_RARITY: 'Редкость предметов: ',
   MAP_MONSTER_PACK_SIZE: 'Размер групп монстров: ',

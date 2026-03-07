@@ -121,19 +121,14 @@ export function createFilters (
         baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
       }
     } else {
-      const ignoreLayout =
-        item.mapCompletionReward != null ||
-        item.statsByType.some(calc =>
-          calc.stat.ref === 'Map is occupied by #' ||
-          calc.stat.ref === "Map contains #'s Citadel")
       filters.searchExact = {
         baseType: item.info.name,
         baseTypeTrade: t(opts, item.info)
       }
-      filters.searchRelaxed = {
-        category: item.category,
-        disabled: !ignoreLayout
-      }
+    }
+
+    if (item.info.refName === 'Map' || item.info.unique?.base === 'Map') {
+      filters.discriminator = { trade: 'map' }
     }
 
     if (item.mapBlighted) {

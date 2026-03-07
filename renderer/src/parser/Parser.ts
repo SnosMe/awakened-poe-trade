@@ -35,6 +35,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: parseFoulborn },
   parseSynthesised,
   parseCategoryByHelpText,
+  { virtual: parseMapTier },
   { virtual: normalizeName },
   parseVaalGemName,
   { virtual: findInDatabase },
@@ -213,33 +214,56 @@ function findInDatabase (item: ParserState) {
   }
 }
 
-function parseMap (section: string[], item: ParsedItem) {
-  if (section[0].startsWith(_$.MAP_TIER)) {
-    item.map = {
-      tier: Number(section[0].slice(_$.MAP_TIER.length))
-    }
-    for (const line of section) {
-      if (line.startsWith(_$.MAP_ITEM_QUANTITY)) {
-        item.map.itemQuantity = parseInt(line.slice(_$.MAP_ITEM_QUANTITY.length), 10)
-      } else if (line.startsWith(_$.MAP_ITEM_RARITY)) {
-        item.map.itemRarity = parseInt(line.slice(_$.MAP_ITEM_RARITY.length), 10)
-      } else if (line.startsWith(_$.MAP_MONSTER_PACK_SIZE)) {
-        item.map.packSize = parseInt(line.slice(_$.MAP_MONSTER_PACK_SIZE.length), 10)
-      } else if (line.startsWith(_$.MAP_MORE_MAPS)) {
-        item.map.moreMaps = parseInt(line.slice(_$.MAP_MORE_MAPS.length), 10)
-      } else if (line.startsWith(_$.MAP_MORE_SCARABS)) {
-        item.map.moreScarabs = parseInt(line.slice(_$.MAP_MORE_SCARABS.length), 10)
-      } else if (line.startsWith(_$.MAP_MORE_CURRENCY)) {
-        item.map.moreCurrency = parseInt(line.slice(_$.MAP_MORE_CURRENCY.length), 10)
-      } else if (line.startsWith(_$.MAP_MORE_DIVINATION_CARDS)) {
-        item.map.moreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
-      } else if (_$.MAP_COMPLETION_REWARD.test(line)) {
-        item.mapCompletionReward = _$.MAP_COMPLETION_REWARD.exec(line)![1]
-      }
-    }
-    return 'SECTION_PARSED'
+function parseMapTier (item: ParserState) {
+  // TODO blocked by https://www.pathofexile.com/forum/view-thread/3915458
+  const execResult = _$REF.MAP_TIER.exec(item.baseType || item.name)
+  if (!execResult) return
+
+  item.map = {
+    tier: Number(execResult[1])
   }
-  return 'SECTION_SKIPPED'
+
+  if (item.baseType) {
+    item.baseType = item.baseType.replace(execResult[0], '')
+  } else {
+    item.name = item.name.replace(execResult[0], '')
+  }
+}
+
+function parseMap (section: string[], item: ParsedItem) {
+  if (!item.map) return 'PARSER_SKIPPED'
+
+  let isParsed: SectionParseResult = 'SECTION_SKIPPED'
+
+  for (const line of section) {
+    if (line.startsWith(_$.MAP_ITEM_QUANTITY)) {
+      item.map.itemQuantity = parseInt(line.slice(_$.MAP_ITEM_QUANTITY.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_ITEM_RARITY)) {
+      item.map.itemRarity = parseInt(line.slice(_$.MAP_ITEM_RARITY.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_MONSTER_PACK_SIZE)) {
+      item.map.packSize = parseInt(line.slice(_$.MAP_MONSTER_PACK_SIZE.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_MORE_MAPS)) {
+      item.map.moreMaps = parseInt(line.slice(_$.MAP_MORE_MAPS.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_MORE_SCARABS)) {
+      item.map.moreScarabs = parseInt(line.slice(_$.MAP_MORE_SCARABS.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_MORE_CURRENCY)) {
+      item.map.moreCurrency = parseInt(line.slice(_$.MAP_MORE_CURRENCY.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_MORE_DIVINATION_CARDS)) {
+      item.map.moreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
+      isParsed = 'SECTION_PARSED'
+    } else if (_$.MAP_COMPLETION_REWARD.test(line)) {
+      item.mapCompletionReward = _$.MAP_COMPLETION_REWARD.exec(line)![1]
+      isParsed = 'SECTION_PARSED'
+    }
+  }
+
+  return isParsed
 }
 
 function parseBlightedMap (item: ParsedItem) {

@@ -9,7 +9,7 @@ export default {
   RARITY_CURRENCY: '通貨',
   RARITY_DIVCARD: '命運卡',
   RARITY_QUEST: '任務',
-  MAP_TIER: '地圖階級: ',
+  MAP_TIER: /（階級 (\d+)）$/,
   MAP_ITEM_QUANTITY: '物品數量: ',
   MAP_ITEM_RARITY: '物品稀有度: ',
   MAP_MONSTER_PACK_SIZE: '怪物群大小: ',

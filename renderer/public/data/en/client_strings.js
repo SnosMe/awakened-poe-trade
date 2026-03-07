@@ -9,7 +9,7 @@ export default {
   RARITY_CURRENCY: 'Currency',
   RARITY_DIVCARD: 'Divination Card',
   RARITY_QUEST: 'Quest',
-  MAP_TIER: 'Map Tier: ',
+  MAP_TIER: / \(Tier (\d+)\)$/,
   MAP_ITEM_QUANTITY: 'Item Quantity: ',
   MAP_ITEM_RARITY: 'Item Rarity: ',
   MAP_MONSTER_PACK_SIZE: 'Monster Pack Size: ',
