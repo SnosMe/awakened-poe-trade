@@ -23,11 +23,16 @@ const isHovered = shallowRef(false)
 const resolvedSrc = computed(() => {
   if (props.src.includes('://')) {
     return props.src
-  } else {
-    return (props.src.length < 32)
-      ? `${import.meta.env.BASE_URL}images/${props.src}`
-      : `/uploads/${props.src}`
   }
+  if (props.src.startsWith('/')) {
+    return props.src
+  }
+  if (props.src.includes('/')) {
+    return `${import.meta.env.BASE_URL}${props.src}`
+  }
+  return (props.src.length < 32)
+    ? `${import.meta.env.BASE_URL}images/${props.src}`
+    : `/uploads/${props.src}`
 })
 </script>
 
