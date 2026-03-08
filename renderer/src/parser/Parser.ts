@@ -231,7 +231,11 @@ function parseMapTier (item: ParserState) {
 }
 
 function parseMap (section: string[], item: ParsedItem) {
-  if (!item.map) return 'PARSER_SKIPPED'
+  if (item.category !== ItemCategory.Map) return 'PARSER_SKIPPED'
+
+  if (!item.map) {
+    item.map = { tier: undefined }
+  }
 
   let isParsed: SectionParseResult = 'SECTION_SKIPPED'
 
@@ -299,9 +303,12 @@ function pickCorrectVariant (item: ParserState) {
     if (cond.propEV && !item.armourEV) continue
     if (cond.propES && !item.armourES) continue
 
-    if (cond.mapTier === 'W' && !(item.map!.tier <= 5)) continue
-    if (cond.mapTier === 'Y' && !(item.map!.tier >= 6 && item.map!.tier <= 10)) continue
-    if (cond.mapTier === 'R' && !(item.map!.tier >= 11)) continue
+    if (cond.mapTier) {
+      if (!item.map?.tier) continue
+      if (cond.mapTier === 'W' && !(item.map.tier <= 5)) continue
+      if (cond.mapTier === 'Y' && !(item.map.tier >= 6 && item.map.tier <= 10)) continue
+      if (cond.mapTier === 'R' && !(item.map.tier >= 11)) continue
+    }
 
     if (cond.hasImplicit && !item.statsByType.some(calc =>
       calc.type === ModifierType.Implicit &&

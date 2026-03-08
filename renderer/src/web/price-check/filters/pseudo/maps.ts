@@ -22,7 +22,7 @@ export function mapProps (ctx: FiltersCreationContext): void {
 
   const hasMoreDrops = Boolean(item.map.moreMaps || item.map.moreScarabs || item.map.moreCurrency || item.map.moreDivCards)
 
-  if (!item.isCorrupted && !hasMoreDrops && item.map.tier !== 17) return
+  if (!item.isCorrupted && !hasMoreDrops && item.info.refName !== 'Nightmare Map') return
 
   if (item.map.itemQuantity) {
     ctx.filters.push(propToFilter({

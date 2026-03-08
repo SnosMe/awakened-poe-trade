@@ -142,9 +142,11 @@ export function createFilters (
       }
     }
 
-    filters.mapTier = {
-      value: item.map!.tier,
-      disabled: false
+    if (item.map!.tier) {
+      filters.mapTier = {
+        value: item.map!.tier,
+        disabled: false
+      }
     }
   } else if (item.info.refName === 'Expedition Logbook') {
     filters.searchExact = {

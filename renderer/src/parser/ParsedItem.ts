@@ -35,7 +35,7 @@ export interface ParsedItem {
   mapBlighted?: 'Blighted' | 'Blight-ravaged'
   mapCompletionReward?: string
   map?: {
-    tier: number
+    tier: number | undefined
     itemQuantity?: number
     itemRarity?: number
     packSize?: number
