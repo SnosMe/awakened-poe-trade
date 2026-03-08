@@ -34,7 +34,10 @@ export interface ItemFilters {
     exact?: boolean
   }
   fractured?: {
-    value: boolean
+    value: false
+  }
+  imbuedGem?: {
+    disabled: true
   }
   mirrored?: {
     disabled: boolean

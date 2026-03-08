@@ -128,6 +128,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           gem_level?: FilterRange
           corrupted?: FilterBoolean
           fractured_item?: FilterBoolean
+          gem_imbued?: FilterBoolean
           mirrored?: FilterBoolean
           split?: FilterBoolean
           identified?: FilterBoolean
@@ -320,6 +321,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
   }
   if (filters.fractured?.value === false) {
     propSet(query.filters, 'misc_filters.filters.fractured_item.option', String(false))
+  }
+  if (filters.imbuedGem?.disabled) {
+    propSet(query.filters, 'misc_filters.filters.gem_imbued.option', String(false))
   }
   if (filters.split?.disabled) {
     propSet(query.filters, 'misc_filters.filters.split.option', String(false))

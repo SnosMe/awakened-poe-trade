@@ -50,6 +50,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseTincture,
   parseStackSize,
   parseCorrupted,
+  parseImbuedGem,
   parseFoil,
   parseInfluence,
   parseMap,
@@ -503,6 +504,27 @@ function parseGem (section: string[], item: ParsedItem) {
     item.gemLevel = parseInt(section[1].slice(_$.GEM_LEVEL.length), 10)
 
     parseQualityNested(section, item)
+
+    return 'SECTION_PARSED'
+  }
+  return 'SECTION_SKIPPED'
+}
+
+function parseImbuedGem (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Gem) return 'PARSER_SKIPPED'
+
+  if (section.length === 1) {
+    const support = STAT_BY_MATCH_STR(section[0])
+    if (!support) return 'SECTION_SKIPPED'
+
+    item.newMods.push({
+      info: { tags: [], type: ModifierType.Imbued },
+      stats: [{
+        stat: support.stat,
+        translation: support.matcher
+      }]
+    })
+    item.imbuedGem = true
 
     return 'SECTION_PARSED'
   }

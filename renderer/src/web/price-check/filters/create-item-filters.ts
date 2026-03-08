@@ -430,6 +430,12 @@ function createGemFilters (
     value: item.isCorrupted
   }
 
+  if (!item.imbuedGem && item.isCorrupted && item.gemLevel! >= 20) {
+    filters.imbuedGem = {
+      disabled: true
+    }
+  }
+
   if (item.info.gem!.awakened) {
     filters.gemLevel = {
       value: item.gemLevel!,

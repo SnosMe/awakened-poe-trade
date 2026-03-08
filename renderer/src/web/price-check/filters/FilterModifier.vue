@@ -76,7 +76,7 @@ import ModifierAnointment from './FilterModifierAnointment.vue'
 import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
 import FilterModifierTiers from './FilterModifierTiers.vue'
 import { AppConfig } from '@/web/Config'
-import { ItemRarity, ParsedItem } from '@/parser'
+import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
 import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
 
@@ -104,6 +104,7 @@ export default defineComponent({
       props.item.info.refName !== 'Chronicle of Atzoatl' &&
       props.item.info.refName !== 'Mirrored Tablet' &&
       props.item.info.refName !== 'Filled Coffin' &&
+      props.item.category !== ItemCategory.Gem &&
       !(props.item.rarity === ItemRarity.Unique && (
         props.filter.tag === FilterTag.Explicit ||
         props.filter.tag === FilterTag.Pseudo))

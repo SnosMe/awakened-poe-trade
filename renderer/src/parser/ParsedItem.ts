@@ -45,6 +45,7 @@ export interface ParsedItem {
     moreDivCards?: number
   }
   gemLevel?: number
+  imbuedGem?: boolean
   areaLevel?: number
   talismanTier?: number
   memoryStrands?: number
