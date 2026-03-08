@@ -150,6 +150,7 @@
 {"ref":"#% chance in Heists for Orbs of Scouring to drop as Orbs of Regret instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率使掉落的重鑄石改為掉落後悔石"},{"string":"劫盜中的重鑄石改為掉落後悔石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_1824085933"]}}}
 {"ref":"#% chance in Heists for Orbs of Transmutation to drop as Chaos Orbs instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率使掉落的蛻變石改為掉落混沌石"},{"string":"劫盜中的蛻變石改為掉落混沌石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_3265666559"]}}}
 {"ref":"#% chance in Heists for Orbs of Transmutation to drop as Orbs of Alchemy instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率使掉落的蛻變石改為掉落點金石"},{"string":"劫盜中的蛻變石改為掉落點金石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2532905418"]}}}
+{"ref":"#% chance in Heists for Regal Orbs to drop as Ancient Orbs instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率使掉落的富豪石改為掉落古變石"},{"string":"劫盜中的富豪石改為掉落古變石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_709446441"]}}}
 {"ref":"#% chance in Heists for Regal Orbs to drop as Divine Orbs instead","better":1,"matchers":[{"string":"劫盜中有 #% 機率使掉落的富豪石改為掉落神聖石"},{"string":"劫盜中的富豪石改為掉落神聖石","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2766470009"]}}}
 {"ref":"#% chance on completing a Heist to generate an additional Reveal with Whakano","better":1,"matchers":[{"string":"和華卡諾完成劫盜有 #% 機率產生額外的揭露"}],"trade":{"ids":{"explicit":["explicit.stat_3107439245"],"fractured":["fractured.stat_3107439245"]}}}
 {"ref":"#% chance on Hitting an Enemy for all Impales on that Enemy to last for an additional Hit","better":1,"matchers":[{"string":"擊中敵人有 #% 機率使他身上的穿刺持續額外 1 次擊中"}],"trade":{"ids":{"explicit":["explicit.stat_220868259"]}}}
@@ -237,7 +238,7 @@
 {"resolve":{"strat":"percent-merge","kind":["percent","value"]},"stats":[{"ref":"#% chance to Curse Enemies with Vulnerability on Hit","better":1,"matchers":[{"string":"擊中時有 #% 機率使未被詛咒的敵人受到脆弱詛咒"},{"string":"擊中時使敵人受到脆弱詛咒","value":100}],"trade":{"ids":{"explicit":["explicit.stat_2213584313"],"fractured":["fractured.stat_2213584313"]}}},{"ref":"Curse Enemies with Vulnerability on Hit","better":1,"matchers":[{"string":"擊中時使敵人受到脆弱詛咒","value":1}],"trade":{"ids":{"explicit":["explicit.stat_3967845372"],"implicit":["implicit.stat_3967845372"],"fractured":["fractured.stat_3967845372"]}}}]}
 {"ref":"#% chance to Curse non-Cursed Enemies with a random Hex on Hit","better":1,"matchers":[{"string":"擊中時有 #% 機率使用 1 個隨機咒術詛咒未被詛咒的敵人"}],"trade":{"ids":{"explicit":["explicit.stat_1726444796"]}}}
 {"ref":"#% chance to deal Double Damage","better":1,"matchers":[{"string":"#% 機率造成兩倍傷害"}],"trade":{"ids":{"explicit":["explicit.stat_1172810729"],"implicit":["implicit.stat_1172810729"],"fractured":["fractured.stat_1172810729"],"crafted":["crafted.stat_1172810729"]}}}
-{"ref":"#% chance to deal Double Damage against Enemies for each type of Ailment you have inflicted on them","better":1,"matchers":[{"string":"每一你已施加於敵人的異常狀態，會賦予你#%對該敵人造成兩倍傷害的機率"}],"trade":{"ids":{"explicit":["explicit.stat_1916537902"]}}}
+{"ref":"#% chance to deal Double Damage against Enemies for each type of Ailment you have inflicted on them","better":1,"matchers":[{"string":"每一你已施加於敵人的異常狀態，會賦予你#%對該敵人造成兩倍傷害的機率"}],"trade":{"ids":{"explicit":["explicit.stat_1916537902"],"fractured":["fractured.stat_1916537902"]}}}
 {"ref":"#% chance to deal Double Damage if you have Stunned an Enemy Recently","better":1,"matchers":[{"string":"若你近期有暈眩敵人，有 #% 機率造成兩倍傷害"}],"trade":{"ids":{"explicit":["explicit.stat_4224978303"],"fractured":["fractured.stat_4224978303"]}}}
 {"ref":"#% chance to deal Double Damage if you've cast Vulnerability in the past 10 seconds","better":1,"matchers":[{"string":"若你過去 10 秒有施放過脆弱，有 #% 機率造成兩倍傷害"}],"trade":{"ids":{"explicit":["explicit.stat_2304988974"]}}}
 {"ref":"#% chance to deal Double Damage while affected by Glorious Madness","better":1,"matchers":[{"string":"被榮耀瘋癲影響時，有 #% 機率造成兩倍傷害"}],"trade":{"ids":{"explicit":["explicit.stat_1299868012"]}}}
@@ -818,6 +819,7 @@
 {"ref":"#% increased Dexterity if 2 Redeemer Items are Equipped","better":1,"matchers":[{"string":"若裝備 2 種救贖者之物，敏捷增加 #%"},{"string":"若裝備 2 種救贖者之物，敏捷減少 #%","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2543696990"]}}}
 {"ref":"#% increased Dexterity if Strength is higher than Intelligence","better":1,"matchers":[{"string":"若力量高於智慧，增加 #% 敏捷"},{"string":"若力量高於智慧，減少 #% 敏捷","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2022724400"]}}}
 {"ref":"#% increased Duration","better":1,"matchers":[{"string":"增加 #% 持續時間"},{"string":"減少 #% 持續時間","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1256719186"],"fractured":["fractured.stat_1256719186"],"enchant":["enchant.stat_1256719186"]}}}
+{"ref":"#% increased Duration of Ailments of types you haven't inflicted Recently","better":1,"matchers":[{"string":"增加#%你近期尚未施加的異常狀態的持續時間"},{"string":"減少#%你近期尚未施加的異常狀態的持續時間","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_967840105"]}}}
 {"ref":"#% increased Duration of Ailments on Enemies","better":1,"matchers":[{"string":"增加 #% 敵人身上異常狀態時間"},{"string":"減少 #% 敵人身上異常狀態時間","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2419712247"],"implicit":["implicit.stat_2419712247"],"fractured":["fractured.stat_2419712247"]}}}
 {"ref":"#% increased Duration of Ailments you inflict while Focused","better":1,"matchers":[{"string":"專注時增加 #% 你造成異常狀態的持續時間"},{"string":"專注時減少 #% 你造成異常狀態的持續時間","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1840751341"],"fractured":["fractured.stat_1840751341"],"crafted":["crafted.stat_1840751341"]}}}
 {"ref":"#% increased Duration of Cold Ailments","better":1,"matchers":[{"string":"增加 #% 冰冷異常狀態持續時間"},{"string":"減少 #% 冰冷異常狀態持續時間","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3571964448"],"fractured":["fractured.stat_3571964448"]}}}
@@ -1001,6 +1003,7 @@
 {"ref":"#% increased Global Critical Strike Chance when in Main Hand","better":1,"matchers":[{"string":"裝備於主手時增加 #% 全域暴擊率"}],"trade":{"ids":{"explicit":["explicit.stat_3404168630"]}}}
 {"ref":"#% increased Global Damage","better":1,"matchers":[{"string":"增加 #% 全域傷害"},{"string":"減少 #% 全域傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_819529588"]}}}
 {"ref":"#% increased Global Defences","better":1,"matchers":[{"string":"增加 #% 全域防禦"},{"string":"減少 #% 全域防禦","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1389153006"],"implicit":["implicit.stat_1389153006"],"fractured":["fractured.stat_1389153006"]}}}
+{"ref":"#% increased Global Defences if there are no Defence Modifiers on other Equipped Items","better":1,"matchers":[{"string":"若其他的裝備物品沒有防禦詞綴，增加#%全域防禦"}],"trade":{"ids":{"explicit":["explicit.stat_2939710712"]}}}
 {"ref":"#% increased Global Defences per White Socket","better":1,"matchers":[{"string":"每個白色插槽增加 #% 全域防禦"},{"string":"每個白色插槽減少 #% 全域防禦","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_967108924"]}}}
 {"ref":"#% increased Global Evasion Rating when on Low Life","better":1,"matchers":[{"string":"貧血時增加 #% 全域閃避值"},{"string":"貧血時減少 #% 全域閃避值","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2695354435"]}}}
 {"ref":"#% increased Global maximum Energy Shield and reduced Lightning Resistance","better":1,"matchers":[{"string":"增加 #% 全域能量護盾和減少閃電抗性"},{"string":"減少 #% 全域能量護盾和增加閃電抗性","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1381972535"]}}}
@@ -1135,7 +1138,7 @@
 {"ref":"#% increased Movement Speed during any Flask Effect","better":1,"matchers":[{"string":"任何藥劑效果持續時間內，增加 #% 移動速度"},{"string":"任何藥劑效果持續時間內，減少 #% 移動速度","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_304970526"],"implicit":["implicit.stat_304970526"],"fractured":["fractured.stat_304970526"]}}}
 {"ref":"#% increased Movement Speed during Effect","better":1,"matchers":[{"string":"效果持續時間，增加 #% 移動速度"}],"trade":{"ids":{"explicit":["explicit.stat_3182498570"],"fractured":["fractured.stat_3182498570"],"crafted":["crafted.stat_3182498570"]}}}
 {"ref":"#% increased Movement Speed for # seconds on Throwing a Trap","better":1,"matchers":[{"string":"投擲陷阱後 # 秒內增加 #% 移動速度"},{"string":"投擲陷阱後 # 秒內增加 30% 移動速度"}],"trade":{"ids":{"explicit":["explicit.stat_3102860761"]}}}
-{"ref":"#% increased Movement Speed for each nearby Enemy, up to a maximum of 50%","better":1,"matchers":[{"string":"根據每一周遭敵人數增加#%移動速度，最大50%"}],"trade":{"ids":{"explicit":["explicit.stat_1426967889"]}}}
+{"ref":"#% increased Movement Speed for each nearby Enemy, up to a maximum of 50%","better":1,"matchers":[{"string":"根據每一周遭敵人數增加#%移動速度，最大50%"}],"trade":{"ids":{"explicit":["explicit.stat_1426967889"],"fractured":["fractured.stat_1426967889"]}}}
 {"ref":"#% increased Movement Speed for each Poison on you up to a maximum of 50%","better":1,"matchers":[{"string":"你身上每層中毒增加 #% 移動速度，最多 50%"},{"string":"你身上每層中毒減少 #% 移動速度","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1360723495"]}}}
 {"ref":"#% increased Movement Speed for you and nearby Allies","better":1,"matchers":[{"string":"你和附近友方增加 #% 移動速度"},{"string":"你和附近友方減少 #% 移動速度","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_3410049114"]}}}
 {"ref":"#% increased Movement Speed if 4 Hunter Items are Equipped","better":1,"matchers":[{"string":"若裝備 4 種狩獵者之物，增加 #% 移動速度"},{"string":"若裝備 4 種狩獵者之物，減少 #% 移動速度","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_502694677"]}}}
@@ -1992,7 +1995,7 @@
 {"ref":"+# to Level of Socketed Elemental Gems","better":1,"matchers":[{"string":"此物品插槽中元素寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_3571342795"]}}}
 {"ref":"+# to Level of Socketed Fire Gems","better":1,"matchers":[{"string":"此物品插槽中火焰寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_339179093"],"implicit":["implicit.stat_339179093"],"fractured":["fractured.stat_339179093"]}}}
 {"ref":"+# to Level of Socketed Gems","better":1,"matchers":[{"string":"此物品插槽中寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_2843100721"],"implicit":["implicit.stat_2843100721"],"fractured":["fractured.stat_2843100721"]}}}
-{"ref":"+# to Level of Socketed Gems while there is a single Gem Socketed in this Item","better":1,"matchers":[{"string":"若此物品的插槽中僅有一枚寶石，#插槽寶石等級"}],"trade":{"ids":{"explicit":["explicit.stat_3298991976"]}}}
+{"ref":"+# to Level of Socketed Gems while there is a single Gem Socketed in this Item","better":1,"matchers":[{"string":"若此物品的插槽中僅有一枚寶石，#插槽寶石等級"}],"trade":{"ids":{"explicit":["explicit.stat_3298991976"],"fractured":["fractured.stat_3298991976"]}}}
 {"ref":"+# to Level of Socketed Golem Gems","better":1,"matchers":[{"string":"此物品插槽中魔像寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_3448743676"]}}}
 {"ref":"+# to Level of Socketed Herald Gems","better":1,"matchers":[{"string":"此物品上捷光環寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_1344805487"]}}}
 {"ref":"+# to Level of Socketed Intelligence Gems","better":1,"matchers":[{"string":"此物品插槽中智慧寶石等級 #"}],"trade":{"ids":{"explicit":["explicit.stat_1719423857"],"implicit":["implicit.stat_1719423857"],"fractured":["fractured.stat_1719423857"]}}}
@@ -3036,7 +3039,7 @@
 {"ref":"Aura Skills other than Vitality are Disabled","better":1,"matchers":[{"string":"除了活力外的光環技能都失效"}],"trade":{"ids":{"explicit":["explicit.stat_110034065"]}}}
 {"ref":"Aura Skills other than Wrath are Disabled","better":1,"matchers":[{"string":"除了雷霆外的光環技能都失效"}],"trade":{"ids":{"explicit":["explicit.stat_3292388799"]}}}
 {"ref":"Aura Skills other than Zealotry are Disabled","better":1,"matchers":[{"string":"除了狂熱外的光環技能都失效"}],"trade":{"ids":{"explicit":["explicit.stat_374559518"]}}}
-{"ref":"Auras from Player Skills which affect Allies also affect Enemies","better":1,"fromAreaMods":"ubermap_exclusive","matchers":[{"string":"來自玩家技能、且可以影響友方的光環會同時影響敵人"}],"trade":{"ids":{"explicit":["explicit.stat_2156372077"]}}}
+{"ref":"Auras from Player Skills which affect Allies also affect Enemies","better":1,"fromAreaMods":"ubermap_exclusive","matchers":[{"string":"來自玩家技能、且可以影響友方的光環會同時影響敵人"}],"trade":{"ids":{"explicit":["explicit.stat_2156372077"],"fractured":["fractured.stat_2156372077"]}}}
 {"ref":"Auras from your Skills grant #% increased Damage to you and Allies","better":1,"matchers":[{"string":"你的技能光環給予你和友方增加 #% 傷害"}],"trade":{"ids":{"explicit":["explicit.stat_3729445224"],"fractured":["fractured.stat_3729445224"]}}}
 {"ref":"Auras from your Skills have #% increased Effect on you","better":1,"matchers":[{"string":"來自你技能的光環增加 #% 你身上的效果"},{"string":"來自你技能的光環減少 #% 你身上的效果","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_472812693"]}}}
 {"ref":"Aureus Coins are converted to Experience upon defeating the Herald of the Scourge","better":1,"matchers":[{"string":"災魘先鋒後，奧瑞厄斯幣轉化至經驗"}],"trade":{"ids":{"explicit":["sanctum.stat_1307773596"]}}}
@@ -4798,7 +4801,7 @@
 {"ref":"Projectile Attack Skills have #% increased Critical Strike Chance","better":1,"matchers":[{"string":"投射物攻擊技能增加 #% 暴擊率"},{"string":"投射物攻擊技能減少 #% 暴擊率","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4095169720"]}}}
 {"ref":"Projectile Barrages have no spread","better":1,"matchers":[{"string":"投射彈幕不會擴散"}],"trade":{"ids":{"explicit":["explicit.stat_3953699641"]}}}
 {"ref":"Projectiles are fired in random directions","better":1,"matchers":[{"string":"投射物以隨機方向發射"}],"trade":{"ids":{"explicit":["explicit.stat_4159765624"],"enchant":["enchant.stat_4159765624"]}}}
-{"ref":"Projectiles can Chain from any number of additional targets in Close Range","better":1,"matchers":[{"string":"投射物在近距離時可以向任意數量的目標連鎖"}],"trade":{"ids":{"explicit":["explicit.stat_2940232338"]}}}
+{"ref":"Projectiles can Chain from any number of additional targets in Close Range","better":1,"matchers":[{"string":"投射物在近距離時可以向任意數量的目標連鎖"}],"trade":{"ids":{"explicit":["explicit.stat_2940232338"],"fractured":["fractured.stat_2940232338"]}}}
 {"ref":"Projectiles cannot collide with Enemies in Close Range","better":1,"matchers":[{"string":"投射物在近距離時不能碰撞敵人"}],"trade":{"ids":{"explicit":["explicit.stat_2826633504"]}}}
 {"ref":"Projectiles cannot continue after colliding with targets","better":1,"matchers":[{"string":"投射物撞擊目標後無法繼續行進"}],"trade":{"ids":{"explicit":["explicit.stat_1732165753"]}}}
 {"ref":"Projectiles Chain +# times while you have Phasing","better":1,"matchers":[{"string":"你有迷蹤時，投射物連鎖 # 次"}],"trade":{"ids":{"explicit":["explicit.stat_383509486"]}}}
@@ -5222,6 +5225,7 @@
 {"ref":"Socketed Gems are Supported by Level # Behead","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 斬首 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_140"]}}}
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Blasphemy","better":1,"matchers":[{"string":"此物品插槽中詛咒寶石由等級 # 詛咒光環輔助"}],"trade":{"ids":{"explicit":["explicit.stat_539747809"]}}},{"ref":"Socketed Gems are Supported by Level # Blasphemy","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 詛咒光環 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_119"]}}}]}
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Blastchain Mine","better":1,"matchers":[{"string":"此物品插槽中寶石受到等級 # 的連鎖爆破地雷輔助"}],"trade":{"ids":{"explicit":["explicit.stat_1710508327"],"fractured":["fractured.stat_1710508327"]}}},{"ref":"Socketed Gems are Supported by Level # Blastchain Mine","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 連鎖爆破地雷 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_23"]}}}]}
+{"ref":"Socketed Gems are Supported by Level # Blessed Call","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 禮贈呼喚 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_170"]}}}
 {"ref":"Socketed Gems are supported by Level # Blind","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的致盲輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2223640518"],"implicit":["implicit.stat_2223640518"],"fractured":["fractured.stat_2223640518"]}}}
 {"ref":"Socketed Gems are Supported by Level # Blind","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 致盲 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_118"]}}}
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Bloodlust","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 嗜血 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_117"]}}},{"ref":"Socketed Gems are Supported by Level # Bloodthirst","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 嗜血 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_135"]}}}]}
@@ -5277,6 +5281,8 @@
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Endurance Charge on Melee Stun","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的近戰擊暈獲得耐力球輔助"}],"trade":{"ids":{"explicit":["explicit.stat_3375208082"],"fractured":["fractured.stat_3375208082"]}}},{"ref":"Socketed Gems are Supported by Level # Endurance Charge on Melee Stun","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 近戰擊暈獲得耐力球 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_88"]}}}]}
 {"ref":"Socketed Gems are Supported by Level # Energy Leech","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 能量偷取 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_87"]}}}
 {"ref":"Socketed Gems are Supported by Level # Eternal Blessing","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 永恆祝福 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_143"]}}}
+{"ref":"Socketed Gems are Supported by Level # Excommunicate","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 驅逐 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_169"]}}}
+{"ref":"Socketed Gems are Supported by Level # Exemplar","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 典範 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_171"]}}}
 {"ref":"Socketed Gems are Supported by Level # Expert Retaliation","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 專家復仇 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_164"]}}}
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Faster Attacks","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的快速攻擊輔助"}],"trade":{"ids":{"explicit":["explicit.stat_928701213"],"fractured":["fractured.stat_928701213"]}}},{"ref":"Socketed Gems are Supported by Level # Faster Attacks","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 快速攻擊 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_86"]}}}]}
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Faster Casting","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的快速施放輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2169938251"],"implicit":["implicit.stat_2169938251"],"fractured":["fractured.stat_2169938251"]}}},{"ref":"Socketed Gems are Supported by Level # Faster Casting","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 快速施放 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_85"]}}}]}
@@ -5297,6 +5303,7 @@
 {"ref":"Socketed Gems are Supported by Level # Greater Spell Cascade","better":1,"matchers":[{"string":"插槽中的寶石被等級#的高階秘能爆發輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2292610865"]}}}
 {"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Socketed Gems are Supported by Level # Greater Volley","better":1,"matchers":[{"string":"插槽中寶石被等級 # 的高階齊射輔助"}],"trade":{"ids":{"explicit":["explicit.stat_2223565123"]}}},{"ref":"Socketed Gems are Supported by Level # Greater Volley","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 高階齊射 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_75"]}}}]}
 {"ref":"Socketed Gems are Supported by Level # Guardian's Blessing","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 守護者的祝福 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_157"]}}}
+{"ref":"Socketed Gems are Supported by Level # Hallow","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 聖徒 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_172"]}}}
 {"ref":"Socketed Gems are Supported by Level # Hex Bloom","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 咒術綻放 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_146"]}}}
 {"ref":"Socketed Gems are Supported by Level # Hextouch","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 咒術降臨 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_95"]}}}
 {"ref":"Socketed Gems are Supported by Level # High-Impact Mine","better":1,"matchers":[{"string":"插槽中的寶石被等級 # 的 高能地雷 輔助"}],"trade":{"ids":{"explicit":["explicit.indexable_support_22"]}}}
@@ -5536,6 +5543,164 @@
 {"ref":"Summoned Skeletons have Avatar of Fire","better":1,"matchers":[{"string":"召喚有火之化身的骷髏"}],"trade":{"ids":{"explicit":["explicit.stat_1958210928"]}}}
 {"ref":"Summoned Skeletons take #% of their Maximum Life per second as Fire Damage","better":1,"matchers":[{"string":"召喚骷髏每秒承受 #% 他們最大生命的火焰傷害"}],"trade":{"ids":{"explicit":["explicit.stat_2912438397"]}}}
 {"ref":"Summoned Skitterbots' Auras affect you as well as Enemies","better":1,"matchers":[{"string":"召喚探測機獸的光環會影響你和敵人"}],"trade":{"ids":{"explicit":["explicit.stat_2483115633"]}}}
+{"ref":"Supported by Level 1 Added Chaos Damage","better":1,"matchers":[{"string":"被等級1的附加混沌傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1826945816"]}}}
+{"ref":"Supported by Level 1 Added Cold Damage","better":1,"matchers":[{"string":"被等級1的附加冰冷傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2368767632"]}}}
+{"ref":"Supported by Level 1 Added Fire Damage","better":1,"matchers":[{"string":"被等級1的附加火焰傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2554120916"]}}}
+{"ref":"Supported by Level 1 Added Lightning Damage","better":1,"matchers":[{"string":"被等級1的附加閃電傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3321425861"]}}}
+{"ref":"Supported by Level 1 Additional Accuracy","better":1,"matchers":[{"string":"被等級1的額外命中輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3356250656"]}}}
+{"ref":"Supported by Level 1 Advanced Traps","better":1,"matchers":[{"string":"被等級1的進階陷阱輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2633900295"]}}}
+{"ref":"Supported by Level 1 Ancestral Call","better":1,"matchers":[{"string":"被等級1的先祖怒嚎輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4269882850"]}}}
+{"ref":"Supported by Level 1 Arcane Surge","better":1,"matchers":[{"string":"被等級1的秘能波動輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2744614343"]}}}
+{"ref":"Supported by Level 1 Archmage","better":1,"matchers":[{"string":"被等級1的魔幻輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1887128856"]}}}
+{"ref":"Supported by Level 1 Arrogance","better":1,"matchers":[{"string":"被等級1的傲慢輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4029843952"]}}}
+{"ref":"Supported by Level 1 Arrow Nova","better":1,"matchers":[{"string":"被等級1的箭矢新星輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2067275224"]}}}
+{"ref":"Supported by Level 1 Ballista Totem","better":1,"matchers":[{"string":"被等級1的砲塔圖騰輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|379055421"]}}}
+{"ref":"Supported by Level 1 Barrage","better":1,"matchers":[{"string":"被等級1的彈幕輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1190052435"]}}}
+{"ref":"Supported by Level 1 Behead","better":1,"matchers":[{"string":"被等級1的斬首輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3471518268"]}}}
+{"ref":"Supported by Level 1 Blasphemy","better":1,"matchers":[{"string":"被等級1的詛咒光環輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1496371093"]}}}
+{"ref":"Supported by Level 1 Blastchain Mine","better":1,"matchers":[{"string":"被等級1的連鎖爆破地雷輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1874477201"]}}}
+{"ref":"Supported by Level 1 Blessed Call","better":1,"matchers":[{"string":"被等級1的禮贈呼喚輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3277324447"]}}}
+{"ref":"Supported by Level 1 Blind","better":1,"matchers":[{"string":"被等級1的致盲輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1221753837"]}}}
+{"resolve":{"strat":"trivial-merge"},"stats":[{"ref":"Supported by Level 1 Bloodlust","better":1,"matchers":[{"string":"被等級1的嗜血輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2069099215"]}}},{"ref":"Supported by Level 1 Bloodthirst","better":1,"matchers":[{"string":"被等級1的嗜血輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3290360578"]}}}]}
+{"ref":"Supported by Level 1 Bonechill","better":1,"matchers":[{"string":"被等級1的寒冰刺骨輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2451064053"]}}}
+{"ref":"Supported by Level 1 Brutality","better":1,"matchers":[{"string":"被等級1的殘虐輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1281012522"]}}}
+{"ref":"Supported by Level 1 Burning Damage","better":1,"matchers":[{"string":"被等級1的燃燒傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|19679479"]}}}
+{"ref":"Supported by Level 1 Cast On Critical Strike","better":1,"matchers":[{"string":"被等級1的暴擊時施放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|826020281"]}}}
+{"ref":"Supported by Level 1 Cast on Death","better":1,"matchers":[{"string":"被等級1的死亡時施放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2894953063"]}}}
+{"ref":"Supported by Level 1 Cast on Melee Kill","better":1,"matchers":[{"string":"被等級1的近戰擊殺時施放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3582467606"]}}}
+{"ref":"Supported by Level 1 Cast when Stunned","better":1,"matchers":[{"string":"被等級1的暈眩時施放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3311033584"]}}}
+{"ref":"Supported by Level 1 Cast while Channelling","better":1,"matchers":[{"string":"被等級1的引導時施放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1089139173"]}}}
+{"ref":"Supported by Level 1 Chain","better":1,"matchers":[{"string":"被等級1的連鎖輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2300092378"]}}}
+{"ref":"Supported by Level 1 Chance to Bleed","better":1,"matchers":[{"string":"被等級1的機率流血輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3078658653"]}}}
+{"ref":"Supported by Level 1 Chance to Flee","better":1,"matchers":[{"string":"被等級1的機率逃跑輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2632782139"]}}}
+{"ref":"Supported by Level 1 Chance to Poison","better":1,"matchers":[{"string":"被等級1的機率中毒輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2392994107"]}}}
+{"ref":"Supported by Level 1 Charged Traps","better":1,"matchers":[{"string":"被等級1的陷阱充能輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1587233226"]}}}
+{"ref":"Supported by Level 1 Close Combat","better":1,"matchers":[{"string":"被等級1的近身戰輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|947240231"]}}}
+{"ref":"Supported by Level 1 Cluster Traps","better":1,"matchers":[{"string":"被等級1的散彈陷阱輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2007342753"]}}}
+{"ref":"Supported by Level 1 Cold Penetration","better":1,"matchers":[{"string":"被等級1的冰冷穿透輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1660360583"]}}}
+{"ref":"Supported by Level 1 Cold to Fire","better":1,"matchers":[{"string":"被等級1的寒冰轉烈焰輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3990013913"]}}}
+{"ref":"Supported by Level 1 Combustion","better":1,"matchers":[{"string":"被等級1的燃燒輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3488848533"]}}}
+{"ref":"Supported by Level 1 Concentrated Effect","better":1,"matchers":[{"string":"被等級1的集中效應輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2571880157"]}}}
+{"ref":"Supported by Level 1 Controlled Blaze","better":1,"matchers":[{"string":"被等級1的精準烈火輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3498757786"]}}}
+{"ref":"Supported by Level 1 Controlled Destruction","better":1,"matchers":[{"string":"被等級1的精準破壞輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1716224442"]}}}
+{"ref":"Supported by Level 1 Corrupting Cry","better":1,"matchers":[{"string":"被等級1的汙染戰吼輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2972801927"]}}}
+{"ref":"Supported by Level 1 Critical Strike Affliction","better":1,"matchers":[{"string":"被等級1的暴擊苦痛輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2533131557"]}}}
+{"ref":"Supported by Level 1 Cruelty","better":1,"matchers":[{"string":"被等級1的殘酷輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1246588902"]}}}
+{"ref":"Supported by Level 1 Culling Strike","better":1,"matchers":[{"string":"被等級1的撲殺輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3346867338"]}}}
+{"ref":"Supported by Level 1 Cursed Ground","better":1,"matchers":[{"string":"被等級1的詛咒地面輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2011379008"]}}}
+{"ref":"Supported by Level 1 Damage on Full Life","better":1,"matchers":[{"string":"被等級1的滿血傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2721225790"]}}}
+{"ref":"Supported by Level 1 Deadly Ailments","better":1,"matchers":[{"string":"被等級1的致命異常輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3092222470"]}}}
+{"ref":"Supported by Level 1 Decay","better":1,"matchers":[{"string":"被等級1的腐化輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4149556221"]}}}
+{"ref":"Supported by Level 1 Devour","better":1,"matchers":[{"string":"被等級1的吞噬輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2451084442"]}}}
+{"ref":"Supported by Level 1 Efficacy","better":1,"matchers":[{"string":"被等級1的效能輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|830701349"]}}}
+{"ref":"Supported by Level 1 Elemental Army","better":1,"matchers":[{"string":"被等級1的元素軍隊輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3849702703"]}}}
+{"ref":"Supported by Level 1 Elemental Damage with Attacks","better":1,"matchers":[{"string":"被等級1的元素攻擊傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|638399684"]}}}
+{"ref":"Supported by Level 1 Elemental Focus","better":1,"matchers":[{"string":"被等級1的元素集中輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|770262833"]}}}
+{"ref":"Supported by Level 1 Elemental Proliferation","better":1,"matchers":[{"string":"被等級1的元素擴散輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1666671509"]}}}
+{"ref":"Supported by Level 1 Endurance Charge on Melee Stun","better":1,"matchers":[{"string":"被等級1的近戰擊暈獲得耐力球輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1251682852"]}}}
+{"ref":"Supported by Level 1 Energy Leech","better":1,"matchers":[{"string":"被等級1的能量偷取輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1237276220"]}}}
+{"ref":"Supported by Level 1 Eternal Blessing","better":1,"matchers":[{"string":"被等級1的永恆祝福輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1371874082"]}}}
+{"ref":"Supported by Level 1 Excommunicate","better":1,"matchers":[{"string":"被等級1的驅逐輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2952549466"]}}}
+{"ref":"Supported by Level 1 Exemplar","better":1,"matchers":[{"string":"被等級1的典範輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2763365156"]}}}
+{"ref":"Supported by Level 1 Expert Retaliation","better":1,"matchers":[{"string":"被等級1的專家復仇輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2266469129"]}}}
+{"ref":"Supported by Level 1 Faster Attacks","better":1,"matchers":[{"string":"被等級1的快速攻擊輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|262345857"]}}}
+{"ref":"Supported by Level 1 Faster Casting","better":1,"matchers":[{"string":"被等級1的快速施放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1255849548"]}}}
+{"ref":"Supported by Level 1 Faster Projectiles","better":1,"matchers":[{"string":"被等級1的快速投射輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1049046441"]}}}
+{"ref":"Supported by Level 1 Feeding Frenzy","better":1,"matchers":[{"string":"被等級1的豢養狂熱輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3519811388"]}}}
+{"ref":"Supported by Level 1 Fire Penetration","better":1,"matchers":[{"string":"被等級1的火焰穿透輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3376396961"]}}}
+{"ref":"Supported by Level 1 Fist of War","better":1,"matchers":[{"string":"被等級1的拳霸輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|172023623"]}}}
+{"ref":"Supported by Level 1 Focused Ballista","better":1,"matchers":[{"string":"被等級1的專注砲塔輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3255037645"]}}}
+{"ref":"Supported by Level 1 Focused Channelling","better":1,"matchers":[{"string":"被等級1的專注引導輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|544627868"]}}}
+{"ref":"Supported by Level 1 Fork","better":1,"matchers":[{"string":"被等級1的分裂輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1584251003"]}}}
+{"ref":"Supported by Level 1 Fortify","better":1,"matchers":[{"string":"被等級1的護體輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4141042029"]}}}
+{"ref":"Supported by Level 1 Fresh Meat","better":1,"matchers":[{"string":"被等級1的鮮肉輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3131076360"]}}}
+{"ref":"Supported by Level 1 Generosity","better":1,"matchers":[{"string":"被等級1的和善輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1892604624"]}}}
+{"ref":"Supported by Level 1 Greater Multiple Projectiles","better":1,"matchers":[{"string":"被等級1的高階多重投射輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3950169394"]}}}
+{"ref":"Supported by Level 1 Greater Volley","better":1,"matchers":[{"string":"被等級1的高階齊射輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1088438448"]}}}
+{"ref":"Supported by Level 1 Guardian's Blessing","better":1,"matchers":[{"string":"被等級1的守護者的祝福輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|71388113"]}}}
+{"ref":"Supported by Level 1 Hallow","better":1,"matchers":[{"string":"被等級1的聖徒輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|22608709"]}}}
+{"ref":"Supported by Level 1 Hex Bloom","better":1,"matchers":[{"string":"被等級1的咒術綻放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|318949620"]}}}
+{"ref":"Supported by Level 1 Hextouch","better":1,"matchers":[{"string":"被等級1的咒術降臨輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2883596469"]}}}
+{"ref":"Supported by Level 1 High-Impact Mine","better":1,"matchers":[{"string":"被等級1的高能地雷輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3520866002"]}}}
+{"ref":"Supported by Level 1 Hypothermia","better":1,"matchers":[{"string":"被等級1的急凍輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|114272251"]}}}
+{"ref":"Supported by Level 1 Ice Bite","better":1,"matchers":[{"string":"被等級1的霜咬輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3232085103"]}}}
+{"ref":"Supported by Level 1 Ignite Proliferation","better":1,"matchers":[{"string":"被等級1的點燃擴散輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2520596918"]}}}
+{"ref":"Supported by Level 1 Immolate","better":1,"matchers":[{"string":"被等級1的犧牲輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4236314787"]}}}
+{"ref":"Supported by Level 1 Impale","better":1,"matchers":[{"string":"被等級1的穿刺輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|578583560"]}}}
+{"ref":"Supported by Level 1 Increased Area of Effect","better":1,"matchers":[{"string":"被等級1的增加範圍輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1466145569"]}}}
+{"ref":"Supported by Level 1 Increased Critical Damage","better":1,"matchers":[{"string":"被等級1的增加暴擊傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|191534163"]}}}
+{"ref":"Supported by Level 1 Increased Critical Strikes","better":1,"matchers":[{"string":"被等級1的增加暴擊率輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3398161162"]}}}
+{"ref":"Supported by Level 1 Infernal Legion","better":1,"matchers":[{"string":"被等級1的煉獄軍團輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4159921771"]}}}
+{"ref":"Supported by Level 1 Infused Channelling","better":1,"matchers":[{"string":"被等級1的注入引導輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3128644425"]}}}
+{"ref":"Supported by Level 1 Innervate","better":1,"matchers":[{"string":"被等級1的亢奮輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|110946631"]}}}
+{"ref":"Supported by Level 1 Inspiration","better":1,"matchers":[{"string":"被等級1的啟發輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|282207976"]}}}
+{"ref":"Supported by Level 1 Intensify","better":1,"matchers":[{"string":"被等級1的強化輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1796692633"]}}}
+{"ref":"Supported by Level 1 Iron Grip","better":1,"matchers":[{"string":"被等級1的鋼鐵之握輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1332031472"]}}}
+{"ref":"Supported by Level 1 Iron Will","better":1,"matchers":[{"string":"被等級1的鋼鐵意志輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3373854464"]}}}
+{"ref":"Supported by Level 1 Item Rarity","better":1,"matchers":[{"string":"被等級1的物品稀有度增幅輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1787283513"]}}}
+{"ref":"Supported by Level 1 Knockback","better":1,"matchers":[{"string":"被等級1的擊退輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2003102433"]}}}
+{"ref":"Supported by Level 1 Less Duration","better":1,"matchers":[{"string":"被等級1的持續時間縮短輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4224789409"]}}}
+{"ref":"Supported by Level 1 Life Gain on Hit","better":1,"matchers":[{"string":"被等級1的擊中生命回復輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|763543857"]}}}
+{"ref":"Supported by Level 1 Life Leech","better":1,"matchers":[{"string":"被等級1的生命偷取輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2811214937"]}}}
+{"ref":"Supported by Level 1 Lifetap","better":1,"matchers":[{"string":"被等級1的活栓輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3918067187"]}}}
+{"ref":"Supported by Level 1 Lightning Penetration","better":1,"matchers":[{"string":"被等級1的閃電穿透輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3248757232"]}}}
+{"ref":"Supported by Level 1 Locus Mine","better":1,"matchers":[{"string":"被等級1的定位地雷輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3320826005"]}}}
+{"ref":"Supported by Level 1 Maim","better":1,"matchers":[{"string":"被等級1的癱瘓輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|86502960"]}}}
+{"ref":"Supported by Level 1 Mana Leech","better":1,"matchers":[{"string":"被等級1的魔力偷取輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1236685577"]}}}
+{"ref":"Supported by Level 1 Manaforged Arrows","better":1,"matchers":[{"string":"被等級1的魔改箭矢輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2816032231"]}}}
+{"ref":"Supported by Level 1 Mark On Hit","better":1,"matchers":[{"string":"被等級1的擊中時印記輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3719049861"]}}}
+{"ref":"Supported by Level 1 Meat Shield","better":1,"matchers":[{"string":"被等級1的肉盾輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3535984827"]}}}
+{"ref":"Supported by Level 1 Melee Physical Damage","better":1,"matchers":[{"string":"被等級1的近戰物理傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3626246352"]}}}
+{"ref":"Supported by Level 1 Melee Splash","better":1,"matchers":[{"string":"被等級1的近戰傷害擴散輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2277529223"]}}}
+{"ref":"Supported by Level 1 Minefield","better":1,"matchers":[{"string":"被等級1的地雷網輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3322685172"]}}}
+{"ref":"Supported by Level 1 Minion Damage","better":1,"matchers":[{"string":"被等級1的召喚物傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|344293939"]}}}
+{"ref":"Supported by Level 1 Minion Life","better":1,"matchers":[{"string":"被等級1的召喚物生命輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1181489488"]}}}
+{"ref":"Supported by Level 1 Minion Speed","better":1,"matchers":[{"string":"被等級1的召喚物速度輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|695144847"]}}}
+{"ref":"Supported by Level 1 Mirage Archer","better":1,"matchers":[{"string":"被等級1的幻影射手輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|683812711"]}}}
+{"ref":"Supported by Level 1 Momentum","better":1,"matchers":[{"string":"被等級1的氣勢輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3400389576"]}}}
+{"ref":"Supported by Level 1 More Duration","better":1,"matchers":[{"string":"被等級1的更多持續時間輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|48249346"]}}}
+{"ref":"Supported by Level 1 Multiple Projectiles","better":1,"matchers":[{"string":"被等級1的多重投射物輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|89542028"]}}}
+{"ref":"Supported by Level 1 Multiple Totems","better":1,"matchers":[{"string":"被等級1的多重圖騰輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|33708788"]}}}
+{"ref":"Supported by Level 1 Multiple Traps","better":1,"matchers":[{"string":"被等級1的多重陷阱輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3313613094"]}}}
+{"ref":"Supported by Level 1 Multistrike","better":1,"matchers":[{"string":"被等級1的多重打擊輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|646275157"]}}}
+{"ref":"Supported by Level 1 Nightblade","better":1,"matchers":[{"string":"被等級1的夜刃輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3345636521"]}}}
+{"ref":"Supported by Level 1 Overcharge","better":1,"matchers":[{"string":"被等級1的超負荷輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1961131194"]}}}
+{"ref":"Supported by Level 1 Overexertion","better":1,"matchers":[{"string":"被等級1的過度施力輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3676897366"]}}}
+{"ref":"Supported by Level 1 Physical to Lightning","better":1,"matchers":[{"string":"被等級1的物理轉閃電輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|817697514"]}}}
+{"ref":"Supported by Level 1 Pierce","better":1,"matchers":[{"string":"被等級1的穿透輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4016557208"]}}}
+{"ref":"Supported by Level 1 Point Blank","better":1,"matchers":[{"string":"被等級1的零點射擊輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|910857224"]}}}
+{"ref":"Supported by Level 1 Power Charge On Critical","better":1,"matchers":[{"string":"被等級1的暴擊獲得暴擊球輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3106835412"]}}}
+{"ref":"Supported by Level 1 Pulverise","better":1,"matchers":[{"string":"被等級1的磨鍊輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|687583659"]}}}
+{"ref":"Supported by Level 1 Rage","better":1,"matchers":[{"string":"被等級1的盛怒輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|973619657"]}}}
+{"ref":"Supported by Level 1 Returning Projectiles","better":1,"matchers":[{"string":"被等級1的投射物返回輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2342654864"]}}}
+{"ref":"Supported by Level 1 Rupture","better":1,"matchers":[{"string":"被等級1的殘破輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1235991958"]}}}
+{"ref":"Supported by Level 1 Ruthless","better":1,"matchers":[{"string":"被等級1的殘暴輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|4081846217"]}}}
+{"ref":"Supported by Level 1 Sacrifice","better":1,"matchers":[{"string":"被等級1的獻祭輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2276372010"]}}}
+{"ref":"Supported by Level 1 Sadism","better":1,"matchers":[{"string":"被等級1的虐待輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1591272514"]}}}
+{"ref":"Supported by Level 1 Second Wind","better":1,"matchers":[{"string":"被等級1的恢復輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3226210172"]}}}
+{"ref":"Supported by Level 1 Slower Projectiles","better":1,"matchers":[{"string":"被等級1的投射物減速輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|663883068"]}}}
+{"ref":"Supported by Level 1 Spell Cascade","better":1,"matchers":[{"string":"被等級1的秘能爆發輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3802739165"]}}}
+{"ref":"Supported by Level 1 Spell Echo","better":1,"matchers":[{"string":"被等級1的施放迴響輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3076322868"]}}}
+{"ref":"Supported by Level 1 Spell Totem","better":1,"matchers":[{"string":"被等級1的法術圖騰輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1342846117"]}}}
+{"ref":"Supported by Level 1 Spellblade","better":1,"matchers":[{"string":"被等級1的魔刃輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2139519964"]}}}
+{"ref":"Supported by Level 1 Stun","better":1,"matchers":[{"string":"被等級1的擊暈輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3378399298"]}}}
+{"ref":"Supported by Level 1 Summon Phantasm","better":1,"matchers":[{"string":"被等級1的召喚幻影輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|21787019"]}}}
+{"ref":"Supported by Level 1 Swift Affliction","better":1,"matchers":[{"string":"被等級1的極速苦痛輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2290801007"]}}}
+{"ref":"Supported by Level 1 Swift Assembly","better":1,"matchers":[{"string":"被等級1的迅速組裝輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3993822420"]}}}
+{"ref":"Supported by Level 1 Swiftbrand","better":1,"matchers":[{"string":"被等級1的迅速烙印輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1597853541"]}}}
+{"ref":"Supported by Level 1 Trap","better":1,"matchers":[{"string":"被等級1的陷阱輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|865602902"]}}}
+{"ref":"Supported by Level 1 Trap and Mine Damage","better":1,"matchers":[{"string":"被等級1的陷阱及地雷傷害輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2222630080"]}}}
+{"ref":"Supported by Level 1 Trauma","better":1,"matchers":[{"string":"被等級1的創傷輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2380689033"]}}}
+{"ref":"Supported by Level 1 Trinity","better":1,"matchers":[{"string":"被等級1的三體輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1826317887"]}}}
+{"ref":"Supported by Level 1 Unbound Ailments","better":1,"matchers":[{"string":"被等級1的無邊異能輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|796460095"]}}}
+{"ref":"Supported by Level 1 Unleash","better":1,"matchers":[{"string":"被等級1的釋放輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2395805465"]}}}
+{"ref":"Supported by Level 1 Urgent Orders","better":1,"matchers":[{"string":"被等級1的緊急詔令輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3288860132"]}}}
+{"ref":"Supported by Level 1 Vicious Projectiles","better":1,"matchers":[{"string":"被等級1的猛毒投射物輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|2679148081"]}}}
+{"ref":"Supported by Level 1 Vile Toxins","better":1,"matchers":[{"string":"被等級1的罪惡毒素輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|3064536173"]}}}
+{"ref":"Supported by Level 1 Void Manipulation","better":1,"matchers":[{"string":"被等級1的虛空操縱輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|538077215"]}}}
+{"ref":"Supported by Level 1 Volatility","better":1,"matchers":[{"string":"被等級1的易變輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1677409971"]}}}
+{"ref":"Supported by Level 1 Volley","better":1,"matchers":[{"string":"被等級1的齊射輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1041958248"]}}}
+{"ref":"Supported by Level 1 Withering Touch","better":1,"matchers":[{"string":"被等級1的凋零之觸輔助"}],"trade":{"ids":{"imbued":["imbued.pseudo_built_in_support|1337767102"]}}}
 {"ref":"Supreme Decadence","better":1,"matchers":[{"string":"至高．頹廢"}],"trade":{"ids":{"explicit":["explicit.stat_3215997147"]}}}
 {"ref":"Supreme Ego","better":1,"matchers":[{"string":"至高．自我"}],"trade":{"ids":{"explicit":["explicit.stat_1421267186"],"fractured":["fractured.stat_1421267186"]}}}
 {"ref":"Survival","better":1,"matchers":[{"string":"存活"}],"trade":{"ids":{"explicit":["explicit.stat_2995661301"]}}}
@@ -6481,6 +6646,7 @@
 {"ref":"You have Phasing while on Low Life","better":1,"matchers":[{"string":"貧血時你有迷蹤效果"}],"trade":{"ids":{"explicit":["explicit.stat_23466649"]}}}
 {"ref":"You have Phasing while you have Cat's Stealth","better":1,"matchers":[{"string":"當你有傲貓隱身時獲得迷蹤效果"}],"trade":{"ids":{"explicit":["explicit.stat_1834455446"]}}}
 {"ref":"You have Replenishing Shrine Buff while affected by no Flasks","better":1,"matchers":[{"string":"你在不受藥劑影響時擁有回復神殿增益"}],"trade":{"ids":{"explicit":["explicit.stat_2752009372"]}}}
+{"ref":"You have Resistance Shrine Buff while affected by no Flasks","better":1,"matchers":[{"string":"你在不受藥劑影響時擁有抗性神殿增益"}],"trade":{"ids":{"explicit":["explicit.stat_3934633832"]}}}
 {"ref":"You have Resolute Technique while you do not have Elemental Overload","better":1,"matchers":[{"string":"當你沒有元素超載時獲得堅毅之心"}],"trade":{"ids":{"explicit":["explicit.stat_2905429068"]}}}
 {"ref":"You have Resonating Shrine Buff while affected by no Flasks","better":1,"matchers":[{"string":"你在不受藥劑影響時擁有回響神殿增益"}],"trade":{"ids":{"explicit":["explicit.stat_736980450"]}}}
 {"ref":"You have Scorching Conflux, Brittle Conflux and Sapping Conflux while your two highest Attributes are equal","better":1,"matchers":[{"string":"你兩個最高的能力值相等時，你有焦灼匯流、易碎匯流和殘喘匯流"}],"trade":{"ids":{"explicit":["explicit.stat_1518701332"]}}}
