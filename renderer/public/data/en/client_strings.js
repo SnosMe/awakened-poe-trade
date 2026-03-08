@@ -55,7 +55,7 @@ export default {
   FLASK_CHARGES: /^Currently has \d+ Charges$/,
   METAMORPH_HELP: "Combine this with four other different samples in Tane's Laboratory.",
   BEAST_HELP: 'Right-click to add this to your bestiary.',
-  VOIDSTONE_HELP: 'Socket this into your Atlas to increase the Tier of all Maps.',
+  VOIDSTONE_HELP: 'Socket this into your Atlas to empower Maps.',
   METAMORPH_BRAIN: /^.* Brain$/,
   METAMORPH_EYE: /^.* Eye$/,
   METAMORPH_LUNG: /^.* Lung$/,

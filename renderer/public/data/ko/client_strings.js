@@ -55,7 +55,7 @@ export default {
   FLASK_CHARGES: /^현재 충전량: \d+$/,
   METAMORPH_HELP: '테인의 연구실에서 이 아이템을 다른 샘플과 조합하십시오.',
   BEAST_HELP: '우클릭으로 이것을 야수 도감에 추가하십시오.',
-  VOIDSTONE_HELP: '아틀라스에 장착하여 모든 지도의 등급을 상승시키십시오.',
+  VOIDSTONE_HELP: '아틀라스에 이 아이템을 장착하여 지도를 강화하십시오.',
   METAMORPH_BRAIN: /^Мозг: .*$/,
   METAMORPH_EYE: /^Глаз: .*$/,
   METAMORPH_LUNG: /^Лёгкое: .*$/,
