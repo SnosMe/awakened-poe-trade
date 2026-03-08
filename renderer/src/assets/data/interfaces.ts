@@ -188,6 +188,9 @@ export interface TranslationDict {
   SUFFIX_MODIFIER: string
   CRAFTED_PREFIX: string
   CRAFTED_SUFFIX: string
+  IMPLICIT_MODIFIER: string
+  FRACTURED_PREFIX: string
+  FRACTURED_SUFFIX: string
   UNSCALABLE_VALUE: string
   CORRUPTED_IMPLICIT: string
   MODIFIER_INCREASED: RegExp

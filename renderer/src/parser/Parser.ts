@@ -708,20 +708,17 @@ function parseModifiers (section: string[], item: ParsedItem) {
 
   if (isModInfoLine(recognizedLine)) {
     for (const { modLine, statLines } of groupLinesByMod(section)) {
-      const { modType, lines } = parseModType(statLines)
-      const modInfo = parseModInfoLine(modLine, modType)
-      parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
-
-      if (modType === ModifierType.Veiled) {
+      const modInfo = parseModInfoLine(modLine)
+      if (statLines[0] === _$.VEILED_PREFIX || statLines[0] === _$.VEILED_SUFFIX) {
+        modInfo.type = ModifierType.Veiled
         item.isVeiled = true
       }
+      parseStatsFromMod(statLines, item, { info: modInfo, stats: [] })
     }
   } else {
-    const { lines } = parseModType(section)
+    const { modType, lines } = parseModType(section)
     const modInfo: ModifierInfo = {
-      type: recognizedLine.endsWith(ENCHANT_LINE)
-        ? ModifierType.Enchant
-        : ModifierType.Scourge,
+      type: modType,
       tags: []
     }
     parseStatsFromMod(lines, item, { info: modInfo, stats: [] })
@@ -1050,14 +1047,4 @@ function calcBasePercentile (item: ParsedItem) {
   } else if (item.armourWARD && info.ward) {
     item.basePercentile = calcPropPercentile(item.armourWARD, info.ward, QUALITY_STATS.WARD, item)
   }
-}
-
-export function removeLinesEnding (
-  lines: readonly string[], ending: string
-): string[] {
-  return lines.map(line =>
-    line.endsWith(ending)
-      ? line.slice(0, -ending.length)
-      : line
-  )
 }

@@ -1,14 +1,10 @@
 import { CLIENT_STRINGS as _$ } from '@/assets/data'
 import type { ParsedStat } from './stat-translations'
 import { ModifierType } from './modifiers'
-import { removeLinesEnding } from './Parser'
 
 export const SCOURGE_LINE = ' (scourge)'
 export const ENCHANT_LINE = ' (enchant)'
 export const IMPLICIT_LINE = ' (implicit)'
-const CRAFTED_LINE = ' (crafted)'
-const FRACTURED_LINE = ' (fractured)'
-const FOULBORN_LINE = ' (mutated)'
 
 export interface ParsedModifier {
   info: ModifierInfo
@@ -25,12 +21,13 @@ export interface ModifierInfo {
   rollIncr?: number
 }
 
-export function parseModInfoLine (line: string, type: ModifierType): ModifierInfo {
+export function parseModInfoLine (line: string): ModifierInfo {
   const [modText, xText2, xText3] = line
     .slice(1, -1)
     .split('\u2014')
     .map(_ => _.trim())
 
+  let type = ModifierType.Explicit
   let generation: ModifierInfo['generation']
   let name: ModifierInfo['name']
   let tier: ModifierInfo['tier']
@@ -38,7 +35,10 @@ export function parseModInfoLine (line: string, type: ModifierType): ModifierInf
 
   if (_$.EATER_IMPLICIT.test(modText) || _$.EXARCH_IMPLICIT.test(modText)) {
     const match = modText.match(_$.EATER_IMPLICIT) ?? modText.match(_$.EXARCH_IMPLICIT)!
+
+    type = ModifierType.Implicit
     generation = 'eldritch'
+
     switch (match.groups!.rank) {
       case _$.ELDRITCH_MOD_R1: rank = 1; break
       case _$.ELDRITCH_MOD_R2: rank = 2; break
@@ -54,10 +54,24 @@ export function parseModInfoLine (line: string, type: ModifierType): ModifierInf
     }
 
     switch (match.groups!.type) {
+      case _$.IMPLICIT_MODIFIER:
+      case _$.CORRUPTED_IMPLICIT:
+        type = ModifierType.Implicit; break
+      case _$.FRACTURED_PREFIX:
+      case _$.FRACTURED_SUFFIX:
+        type = ModifierType.Fractured; break
+      case _$.CRAFTED_PREFIX:
+      case _$.CRAFTED_SUFFIX:
+        type = ModifierType.Crafted; break
+    }
+
+    switch (match.groups!.type) {
       case _$.PREFIX_MODIFIER:
+      case _$.FRACTURED_PREFIX:
       case _$.CRAFTED_PREFIX:
         generation = 'prefix'; break
       case _$.SUFFIX_MODIFIER:
+      case _$.FRACTURED_SUFFIX:
       case _$.CRAFTED_SUFFIX:
         generation = 'suffix'; break
       case _$.CORRUPTED_IMPLICIT:
@@ -119,9 +133,7 @@ export function * groupLinesByMod (lines: string[]): Generator<GroupedModLines, 
 
 export function parseModType (lines: string[]): { modType: ModifierType, lines: string[] } {
   let modType: ModifierType
-  if (lines[0] === _$.VEILED_PREFIX || lines[0] === _$.VEILED_SUFFIX) {
-    modType = ModifierType.Veiled
-  } else if (lines.some(line => line.endsWith(SCOURGE_LINE))) {
+  if (lines.some(line => line.endsWith(SCOURGE_LINE))) {
     modType = ModifierType.Scourge
     lines = removeLinesEnding(lines, SCOURGE_LINE)
   } else if (lines.some(line => line.endsWith(ENCHANT_LINE))) {
@@ -130,20 +142,21 @@ export function parseModType (lines: string[]): { modType: ModifierType, lines: 
   } else if (lines.some(line => line.endsWith(IMPLICIT_LINE))) {
     modType = ModifierType.Implicit
     lines = removeLinesEnding(lines, IMPLICIT_LINE)
-  } else if (lines.some(line => line.endsWith(FRACTURED_LINE))) {
-    modType = ModifierType.Fractured
-    lines = removeLinesEnding(lines, FRACTURED_LINE)
-  } else if (lines.some(line => line.endsWith(CRAFTED_LINE))) {
-    modType = ModifierType.Crafted
-    lines = removeLinesEnding(lines, CRAFTED_LINE)
-  } else if (lines.some(line => line.endsWith(FOULBORN_LINE))) {
-    modType = ModifierType.Explicit
-    lines = removeLinesEnding(lines, FOULBORN_LINE)
   } else {
-    modType = ModifierType.Explicit
+    throw new Error('Expected to be used only on lines that have modifier type')
   }
 
   return { modType, lines }
+}
+
+function removeLinesEnding (
+  lines: readonly string[], ending: string
+): string[] {
+  return lines.map(line =>
+    line.endsWith(ending)
+      ? line.slice(0, -ending.length)
+      : line
+  )
 }
 
 // stat values internally stored as ints,
