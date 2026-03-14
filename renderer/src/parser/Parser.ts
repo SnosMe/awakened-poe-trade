@@ -1014,6 +1014,19 @@ function markupConditionParser (text: string) {
   return text
 }
 
+const ITEM_MOD_NORMALIZATIONS: Record<string, Array<(line: string) => string>> = {
+  'Forbidden Shako': [
+    // The game appends a gem-range parenthetical after the support gem name,
+    // e.g. "...Cold to Fire(Greater Multiple Projectiles-Hallow)".
+    // The variant is letters/spaces/hyphens only — distinct from numeric roll
+    // ranges like "(1-10)" which must be preserved. The variant name changes
+    // between game updates so we strip any letter-only parenthetical generically.
+    (line) => line.startsWith('Socketed Gems are Supported by')
+      ? line.replace(/\([A-Za-z][A-Za-z -]*\)/, '')
+      : line
+  ]
+}
+
 function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedModifier) {
   item.newMods.push(modifier)
 
@@ -1033,7 +1046,10 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
     return
   }
 
-  const statIterator = linesToStatStrings(lines)
+  const normalizations = ITEM_MOD_NORMALIZATIONS[item.info.refName]
+  const statIterator = linesToStatStrings(
+    normalizations ? lines.map(line => normalizations.reduce((l, fn) => fn(l), line)) : lines
+  )
   let stat = statIterator.next()
   while (!stat.done) {
     const parsedStat = tryParseTranslation(stat.value, modifier.info.type, item.category)
