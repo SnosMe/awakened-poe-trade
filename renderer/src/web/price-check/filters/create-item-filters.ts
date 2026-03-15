@@ -375,10 +375,9 @@ function createGemFilters (
     }
 
     if (item.quality) {
-      
       filters.quality = {
         value: item.quality,
-        disabled: (item.isCorrupted && item.quality < 20)
+        disabled: (item.quality < 20)
       }
     }
 
