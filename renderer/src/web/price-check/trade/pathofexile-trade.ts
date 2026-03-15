@@ -390,6 +390,41 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     }
   }
 
+  if (filters.heistContractDepartment
+    && filters.heistContractMinLevel && !filters.heistContractMinLevel.disabled) {
+    const minLevel = filters.heistContractMinLevel.value
+
+    switch (filters.heistContractDepartment) {
+      case HeistDepartment.Agility:
+        propSet(query.filters, 'heist_filters.filters.heist_agility.min', minLevel)
+        break
+      case HeistDepartment.BruteForce:
+        propSet(query.filters, 'heist_filters.filters.heist_brute_force.min', minLevel)
+        break
+      case HeistDepartment.CounterThaumaturgy:
+        propSet(query.filters, 'heist_filters.filters.heist_counter_thaumaturgy.min', minLevel)
+        break
+      case HeistDepartment.Deception:
+        propSet(query.filters, 'heist_filters.filters.heist_deception.min', minLevel)
+        break
+      case HeistDepartment.Demolition:
+        propSet(query.filters, 'heist_filters.filters.heist_demolition.min', minLevel)
+        break
+      case HeistDepartment.Engineering:
+        propSet(query.filters, 'heist_filters.filters.heist_engineering.min', minLevel)
+        break
+      case HeistDepartment.Lockpicking:
+        propSet(query.filters, 'heist_filters.filters.heist_lockpicking.min', minLevel)
+        break
+      case HeistDepartment.Perception:
+        propSet(query.filters, 'heist_filters.filters.heist_perception.min', minLevel)
+        break
+      case HeistDepartment.TrapDisarmament:
+        propSet(query.filters, 'heist_filters.filters.heist_trap_disarmament.min', minLevel)
+        break
+    }
+  }
+
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }

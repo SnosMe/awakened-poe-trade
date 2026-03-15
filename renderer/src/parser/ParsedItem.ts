@@ -74,9 +74,14 @@ export interface ParsedItem {
     text: string
     type: ModifierType
   }>
-  heist?: {
+  heistBlueprint?: {
     wingsRevealed?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
+  }
+  heistContract?: {
+    requiredJob?: 'Lockpicking' | 'Brute Force' | 'Perception' | 'Demolition' | 'Counter-Thaumaturgy' | 'Trap Disarmament' | 'Agility' | 'Deception' | 'Engineering'
+    jobLevel?: number
+    targetValue?: 'Priceless'
   }
   category?: ItemCategory
   info: BaseType

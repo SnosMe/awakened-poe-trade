@@ -139,7 +139,17 @@ export const INTERNAL_TRADE_IDS = [
   'item.has_empty_modifier',
   'item.map_item_quantity',
   'item.map_item_rarity',
-  'item.map_pack_size'
+  'item.map_pack_size',
+  'item.heist_job_lockpicking',
+  'item.heist_job_bruteforce',
+  'item.heist_job_perception',
+  'item.heist_job_demolition',
+  'item.heist_job_counterthaumaturgy',
+  'item.heist_job_trapdisarmament',
+  'item.heist_job_agility',
+  'item.heist_job_deception',
+  'item.heist_job_engineering',
+  'item.heist_target_priceless'
 ] as const
 
 export type InternalTradeId = typeof INTERNAL_TRADE_IDS[number]
