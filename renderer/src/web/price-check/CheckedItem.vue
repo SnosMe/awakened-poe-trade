@@ -3,6 +3,12 @@
     <filter-name
       :filters="itemFilters"
       :item="item" />
+    <div v-if="item.disenchantCandidates" class="grid" style="grid-template-columns: auto auto;">
+      <div v-if="disenchantValue" class="flex" style="padding-left: 9px">
+        <img src="/images/dust.png" class="w-5" style="float: left" />
+        <span style="padding-left: 2px;">{{ disenchantValue }}</span>
+      </div>
+    </div>
     <price-prediction v-if="showPredictedPrice" class="mb-4"
       :item="item" />
     <price-trend v-else
@@ -219,6 +225,15 @@ export default defineComponent({
       }
     })
 
+    const disenchantValue = computed(() => {
+      for (const uniqueItemDisenchanting of props.item.disenchantCandidates) {
+        if (uniqueItemDisenchanting.name == props.item.info.refName) {
+          return uniqueItemDisenchanting.value
+        }
+      }
+      return null
+    })
+
     const { t } = useI18n()
 
     return {
@@ -228,6 +243,7 @@ export default defineComponent({
       doSearch,
       tradeAPI,
       tradeService,
+      disenchantValue,
       filtersComponent,
       showPredictedPrice,
       show,
