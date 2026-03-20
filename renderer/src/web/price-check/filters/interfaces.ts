@@ -78,6 +78,11 @@ export interface ItemFilters {
     disabled: boolean
   }
   areaLevel?: FilterNumeric
+  ultimatum?: {
+    challenge: { value: string, label: string, disabled: boolean }
+    reward: { value: string, label: string, disabled: boolean }
+    input: { value: string, disabled: boolean }
+  }
   heistWingsRevealed?: FilterNumeric
   sentinelCharge?: FilterNumeric
   trade: {
@@ -172,5 +177,6 @@ export enum FilterTag {
   Warlord = 'explicit-warlord',
   Delve = 'explicit-delve',
   Unveiled = 'explicit-veiled',
-  Incursion = 'explicit-incursion'
+  Incursion = 'explicit-incursion',
+  Ultimatum = 'ultimatum'
 }

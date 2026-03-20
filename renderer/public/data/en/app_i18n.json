@@ -98,7 +98,10 @@
     "not_mirrored": "Not Mirrored",
     "split": "Split",
     "not_split": "Not Split",
-    "map_foil_reward": "Foil {0}"
+    "map_foil_reward": "Foil {0}",
+    "ultimatum_challenge": "Challenge",
+    "ultimatum_reward": "Reward",
+    "ultimatum_input": "Sacrifice: {0}"
   },
   "item_category": {
     "prop": "Category: {0}",

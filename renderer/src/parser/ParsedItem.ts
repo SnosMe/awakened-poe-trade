@@ -74,6 +74,12 @@ export interface ParsedItem {
     text: string
     type: ModifierType
   }>
+  ultimatum?: {
+    challenge: string
+    reward: string
+    sacrifice: string
+    sacrificeAmount: number
+  }
   heist?: {
     wingsRevealed?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'

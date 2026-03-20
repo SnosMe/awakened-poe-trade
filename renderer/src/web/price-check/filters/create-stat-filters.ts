@@ -55,6 +55,9 @@ export function createExactStatFilters (
     keepByType.push(ModifierType.Explicit)
   } else if (item.rarity === ItemRarity.Rare && item.category === ItemCategory.Idol) {
     keepByType.push(ModifierType.Explicit)
+  } else if (item.info.refName === 'Inscribed Ultimatum') {
+    keepByType.push(ModifierType.Explicit)
+    keepByType.push(ModifierType.Ultimatum)
   }
 
   if (item.category === ItemCategory.Flask) {
@@ -130,6 +133,8 @@ export function createExactStatFilters (
     enableAllFilters(ctx.filters)
   } else if (item.category === ItemCategory.Idol) {
     enableGoodRolledFilters(ctx.filters, 0.66)
+  } else if (item.info.refName === 'Inscribed Ultimatum') {
+    enableAllFilters(ctx.filters)
   }
 
   return ctx.filters

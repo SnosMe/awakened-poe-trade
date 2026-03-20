@@ -93,7 +93,10 @@
     "foil_unique": "반짝이",
     "mirrored": "복제된",
     "not_mirrored": "복제되지 않은",
-    "map_foil_reward": "반짝이 {0}"
+    "map_foil_reward": "반짝이 {0}",
+    "ultimatum_challenge": "Challenge",
+    "ultimatum_reward": "Reward",
+    "ultimatum_input": "Sacrifice: {0}"
   },
   "item_category": {
     "prop": "유형: {0}",

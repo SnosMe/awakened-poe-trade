@@ -116,7 +116,10 @@
     "not_mirrored": "Не отражено",
     "split": "Разделено",
     "not_split": "Не разделено",
-    "map_foil_reward": "Особая {0}"
+    "map_foil_reward": "Особая {0}",
+    "ultimatum_challenge": "Испытание",
+    "ultimatum_reward": "Награда",
+    "ultimatum_input": "Жертва: {0}"
   },
   "item_category": {
     "prop": "Категория: {0}",

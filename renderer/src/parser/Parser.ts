@@ -56,6 +56,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMap,
   parseSockets,
   parseHeistBlueprint,
+  parseUltimatum,
+  parseUltimatumMods,
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirroredTablet,
@@ -925,6 +927,67 @@ function parseAreaLevel (section: string[], item: ParsedItem) {
   return (item.areaLevel)
     ? 'SECTION_PARSED'
     : 'SECTION_SKIPPED'
+}
+
+function parseUltimatum (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Inscribed Ultimatum') return 'PARSER_SKIPPED'
+  if (!section.some(line => line.startsWith(_$.ULTIMATUM_CHALLENGE))) return 'SECTION_SKIPPED'
+
+  let challenge: string | undefined
+  let reward: string | undefined
+  let sacrifice: string | undefined
+  let sacrificeAmount: number | undefined
+
+  for (const line of section) {
+    if (line.startsWith(_$.ULTIMATUM_CHALLENGE)) {
+      challenge = line.slice(_$.ULTIMATUM_CHALLENGE.length)
+    } else if (line.startsWith(_$.ULTIMATUM_REWARD)) {
+      reward = line.slice(_$.ULTIMATUM_REWARD.length)
+    } else {
+      const m = _$.ULTIMATUM_SACRIFICE.exec(line)
+      if (m) {
+        sacrifice = m[1]
+        sacrificeAmount = Number(m[2])
+      }
+    }
+  }
+
+  parseAreaLevelNested(section, item)
+
+  if (challenge && reward && sacrifice && sacrificeAmount) {
+    item.ultimatum = { challenge, reward, sacrifice, sacrificeAmount }
+    return 'SECTION_PARSED'
+  }
+  return 'SECTION_SKIPPED'
+}
+
+function parseUltimatumMods (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Inscribed Ultimatum') return 'PARSER_SKIPPED'
+
+  let anyParsed = false
+  for (const line of section) {
+    // try ultimatum-specific mods first (Stormcaller Runes, Blistering Cold, etc.)
+    const ultFound = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Ultimatum, undefined)
+    if (ultFound) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Ultimatum },
+        stats: [ultFound]
+      })
+      anyParsed = true
+      continue
+    }
+    // then try standard area mods (Monster Life, Monster Damage, etc.)
+    const expFound = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Explicit, undefined)
+    if (expFound) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Explicit },
+        stats: [expFound]
+      })
+      anyParsed = true
+    }
+  }
+
+  return anyParsed ? 'SECTION_PARSED' : 'SECTION_SKIPPED'
 }
 
 function parseAtzoatlRooms (section: string[], item: ParsedItem) {

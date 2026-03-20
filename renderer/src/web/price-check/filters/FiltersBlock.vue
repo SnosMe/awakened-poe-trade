@@ -9,6 +9,14 @@
         :filter="{ disabled: false }" :text="t('item.map_foil_reward', [filters.mapCompletionReward.name])" />
       <filter-btn-numeric v-if="filters.areaLevel"
         :filter="filters.areaLevel" :name="t('item.area_level')" />
+      <template v-if="filters.ultimatum">
+        <filter-btn-logical
+          :filter="filters.ultimatum.challenge" :text="filters.ultimatum.challenge.label" />
+        <filter-btn-logical
+          :filter="filters.ultimatum.reward" :text="filters.ultimatum.reward.label" />
+        <filter-btn-logical
+          :filter="filters.ultimatum.input" :text="t('item.ultimatum_input', [filters.ultimatum.input.value])" />
+      </template>
       <filter-btn-numeric v-if="filters.heistWingsRevealed"
         :filter="filters.heistWingsRevealed" :name="t('item.heist_wings_revealed')" />
       <filter-btn-numeric v-if="filters.sentinelCharge"

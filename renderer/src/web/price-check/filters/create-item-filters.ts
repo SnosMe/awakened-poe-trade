@@ -106,6 +106,27 @@ export function createFilters (
       if (item.areaLevel! < 83) {
         filters.areaLevel.max = item.areaLevel!
       }
+    } else if (item.info.refName === 'Inscribed Ultimatum' && item.ultimatum) {
+      filters.areaLevel = {
+        value: item.areaLevel!,
+        disabled: false
+      }
+      filters.ultimatum = {
+        challenge: {
+          value: ultimatumChallengeId(item.ultimatum.challenge),
+          label: item.ultimatum.challenge,
+          disabled: false
+        },
+        reward: {
+          value: ultimatumRewardId(item.ultimatum.reward),
+          label: item.ultimatum.reward,
+          disabled: false
+        },
+        input: {
+          value: item.ultimatum.sacrifice,
+          disabled: false
+        }
+      }
     } else if (item.itemLevel) {
       // Incubators, Wombgifts
       filters.itemLevel = {
@@ -459,6 +480,24 @@ function createGemFilters (
 
 function t (opts: CreateOptions, info: BaseType) {
   return (opts.useEn) ? info.refName : info.name
+}
+
+function ultimatumChallengeId (text: string): string {
+  const t = text.toLowerCase()
+  if (t.includes('wave') || t.includes('defeat')) return 'Exterminate'
+  if (t.includes('survive') || t.includes('survival')) return 'Survival'
+  if (t.includes('protect') || t.includes('altar')) return 'Defense'
+  if (t.includes('stand') || t.includes('circle')) return 'Conquer'
+  return text
+}
+
+function ultimatumRewardId (text: string): string {
+  const t = text.toLowerCase()
+  if (t.includes('divination')) return 'DoubleDivCards'
+  if (t.includes('currency')) return 'DoubleCurrency'
+  if (t.includes('mirror') || t.includes('rare')) return 'MirrorRare'
+  if (t.includes('unique') || t.includes('exchange')) return 'ExchangeUnique'
+  return text
 }
 
 export function floorToBracket (value: number, brackets: readonly number[]) {
