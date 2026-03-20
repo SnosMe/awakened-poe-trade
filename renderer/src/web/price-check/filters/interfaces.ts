@@ -84,6 +84,11 @@ export interface ItemFilters {
     input: { value: string, disabled: boolean }
   }
   heistWingsRevealed?: FilterNumeric
+  heistContractDepartment?: {
+    value: string
+    disabled: boolean
+  }
+  heistContractMinLevel?: FilterNumeric
   sentinelCharge?: FilterNumeric
   trade: {
     offline: boolean

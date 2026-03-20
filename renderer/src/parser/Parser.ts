@@ -10,7 +10,7 @@ import {
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory, ACCESSORY } from './meta'
-import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
+import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity, HeistDepartment } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE, IMPLICIT_LINE } from './advanced-mod-desc'
 import { calcPropPercentile, QUALITY_STATS } from './calc-q20'
@@ -56,6 +56,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMap,
   parseSockets,
   parseHeistBlueprint,
+  parseHeistContract,
   parseUltimatum,
   parseUltimatumMods,
   parseAreaLevel,
@@ -903,6 +904,30 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
   }
 
   return 'SECTION_PARSED'
+}
+
+const HEIST_DEPARTMENTS = new Set<string>(Object.values(HeistDepartment))
+
+function parseHeistContract (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.HeistContract) return 'PARSER_SKIPPED'
+
+  parseAreaLevelNested(section, item)
+  if (!item.areaLevel) return 'SECTION_SKIPPED'
+
+  for (const line of section) {
+    if (line.startsWith(_$.HEIST_CONTRACT_REQUIRED)) {
+      const m = _$.HEIST_CONTRACT_REQUIRED_DEPARTMENT_LEVEL.exec(line)
+      if (m && HEIST_DEPARTMENTS.has(m[1])) {
+        item.heistContract = {
+          department: m[1] as HeistDepartment,
+          minLevel: Number(m[2])
+        }
+      }
+      break
+    }
+  }
+
+  return (item.heistContract) ? 'SECTION_PARSED' : 'SECTION_SKIPPED'
 }
 
 function parseAreaLevelNested (section: string[], item: ParsedItem) {

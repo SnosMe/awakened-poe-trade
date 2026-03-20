@@ -402,6 +402,24 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }
 
+  if (filters.heistContractDepartment && !filters.heistContractDepartment.disabled) {
+    const DEPARTMENT_TO_FILTER: Record<string, string> = {
+      'Agility': 'heist_agility',
+      'Brute Force': 'heist_brute_force',
+      'Counter Thaumaturgy': 'heist_counter_thaumaturgy',
+      'Deception': 'heist_deception',
+      'Demolition': 'heist_demolition',
+      'Engineering': 'heist_engineering',
+      'Lockpicking': 'heist_lockpicking',
+      'Perception': 'heist_perception',
+      'Trap Disarmament': 'heist_trap_disarmament'
+    }
+    const filterKey = DEPARTMENT_TO_FILTER[filters.heistContractDepartment.value]
+    if (filterKey && filters.heistContractMinLevel && !filters.heistContractMinLevel.disabled) {
+      propSet(query.filters, `heist_filters.filters.${filterKey}.min`, filters.heistContractMinLevel.value)
+    }
+  }
+
   if (filters.ultimatum) {
     if (!filters.ultimatum.challenge.disabled) {
       propSet(query.filters, 'ultimatum_filters.filters.ultimatum_challenge.option', filters.ultimatum.challenge.value)

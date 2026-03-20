@@ -10,6 +10,18 @@ export enum ItemRarity {
   Unique = 'Unique'
 }
 
+export enum HeistDepartment {
+  Agility = 'Agility',
+  BruteForce = 'Brute Force',
+  CounterThaumaturgy = 'Counter Thaumaturgy',
+  Deception = 'Deception',
+  Demolition = 'Demolition',
+  Engineering = 'Engineering',
+  Lockpicking = 'Lockpicking',
+  Perception = 'Perception',
+  TrapDisarmament = 'Trap Disarmament'
+}
+
 export enum ItemInfluence {
   Crusader = 'Crusader',
   Elder = 'Elder',
@@ -84,6 +96,10 @@ export interface ParsedItem {
   heist?: {
     wingsRevealed?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
+  }
+  heistContract?: {
+    department: HeistDepartment
+    minLevel: number
   }
   category?: ItemCategory
   info: BaseType

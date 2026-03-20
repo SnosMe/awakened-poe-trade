@@ -119,7 +119,8 @@
     "map_foil_reward": "Особая {0}",
     "ultimatum_challenge": "Испытание",
     "ultimatum_reward": "Награда",
-    "ultimatum_input": "Жертва: {0}"
+    "ultimatum_input": "Жертва: {0}",
+    "heist_contract_required_level": "Уровень: {0}"
   },
   "item_category": {
     "prop": "Категория: {0}",

@@ -75,6 +75,8 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: '도둑의 장신구 또는 화폐',
   HEIST_BLUEPRINT_GEMS: '도둑의 장신구 또는 화폐',
   HEIST_BLUEPRINT_REPLICAS: '모조품 또는 실험적 아이템',
+  HEIST_CONTRACT_REQUIRED: 'Requires ',
+  HEIST_CONTRACT_REQUIRED_DEPARTMENT_LEVEL: /^Requires (.+?) \(Level (\d)(?:\s*\(unmet\))?\)/,
   MIRRORED: '복제',
   SPLIT: '분할됨',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s+\(등급: (?<tier>\d+)\))?(?:\s+\(단계: (?<rank>\d+)\))?$/,

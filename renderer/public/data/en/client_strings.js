@@ -75,6 +75,8 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: 'Thieves\' Trinkets or Currency',
   HEIST_BLUEPRINT_GEMS: 'Unusual Gems',
   HEIST_BLUEPRINT_REPLICAS: 'Replicas or Experimented Items',
+  HEIST_CONTRACT_REQUIRED: 'Requires ',
+  HEIST_CONTRACT_REQUIRED_DEPARTMENT_LEVEL: /^Requires (.+?) \(Level (\d)(?:\s*\(unmet\))?\)/,
   MIRRORED: 'Mirrored',
   SPLIT: 'Split',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s+\(Tier: (?<tier>\d+)\))?(?:\s+\(Rank: (?<rank>\d+)\))?$/,

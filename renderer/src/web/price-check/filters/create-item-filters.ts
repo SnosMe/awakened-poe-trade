@@ -181,6 +181,30 @@ export function createFilters (
       value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81, 83]),
       disabled: false
     }
+  } else if (item.category === ItemCategory.HeistContract && item.heistContract) {
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
+    }
+    if (item.rarity === ItemRarity.Unique && item.info.unique) {
+      filters.searchExact = {
+        name: item.info.name,
+        nameTrade: t(opts, item.info),
+        baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
+      }
+    }
+    filters.areaLevel = {
+      value: item.areaLevel!,
+      disabled: false
+    }
+    filters.heistContractDepartment = {
+      value: item.heistContract.department,
+      disabled: false
+    }
+    filters.heistContractMinLevel = {
+      value: item.heistContract.minLevel,
+      disabled: false
+    }
   } else if (item.category === ItemCategory.HeistBlueprint) {
     filters.searchRelaxed = {
       category: item.category,

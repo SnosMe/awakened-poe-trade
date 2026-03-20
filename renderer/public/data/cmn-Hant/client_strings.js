@@ -75,6 +75,8 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: '盜賊的飾品或通貨',
   HEIST_BLUEPRINT_GEMS: '不尋常寶石',
   HEIST_BLUEPRINT_REPLICAS: '贗品或實驗性物品',
+  HEIST_CONTRACT_REQUIRED: 'Requires ',
+  HEIST_CONTRACT_REQUIRED_DEPARTMENT_LEVEL: /^Requires (.+?) \(Level (\d)(?:\s*\(unmet\))?\)/,
   MIRRORED: '已複製',
   SPLIT: '分化',
   MODIFIER_LINE: /^(?<type>[^"]+)(?:\s+"(?<name>[^"]*)")?(?:\s*\(階層：(?<tier>\d+)\))?(?:\s*\(階級：(?<rank>\d+)\))?$/,

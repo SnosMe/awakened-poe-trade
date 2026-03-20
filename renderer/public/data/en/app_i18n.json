@@ -101,7 +101,8 @@
     "map_foil_reward": "Foil {0}",
     "ultimatum_challenge": "Challenge",
     "ultimatum_reward": "Reward",
-    "ultimatum_input": "Sacrifice: {0}"
+    "ultimatum_input": "Sacrifice: {0}",
+    "heist_contract_required_level": "Level: {0}"
   },
   "item_category": {
     "prop": "Category: {0}",
