@@ -80,6 +80,7 @@ export interface ParsedItem {
     sacrifice: string
     sacrificeAmount: number
   }
+  ultimatumModDescriptions?: Record<string, string>
   heist?: {
     wingsRevealed?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'

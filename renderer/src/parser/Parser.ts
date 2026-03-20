@@ -965,7 +965,18 @@ function parseUltimatumMods (section: string[], item: ParsedItem) {
   if (item.info.refName !== 'Inscribed Ultimatum') return 'PARSER_SKIPPED'
 
   let anyParsed = false
+  let lastModRef: string | undefined
   for (const line of section) {
+    // capture description lines in parentheses as ultimatumModDescriptions
+    if (line.startsWith('(') && lastModRef) {
+      const desc = line.endsWith(')') ? line.slice(1, -1) : line.slice(1)
+      if (!item.ultimatumModDescriptions) {
+        item.ultimatumModDescriptions = {}
+      }
+      item.ultimatumModDescriptions[lastModRef] = desc
+      continue
+    }
+    lastModRef = undefined
     // try ultimatum-specific mods first (Stormcaller Runes, Blistering Cold, etc.)
     const ultFound = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Ultimatum, undefined)
     if (ultFound) {
@@ -973,6 +984,7 @@ function parseUltimatumMods (section: string[], item: ParsedItem) {
         info: { tags: [], type: ModifierType.Ultimatum },
         stats: [ultFound]
       })
+      lastModRef = ultFound.stat.ref
       anyParsed = true
       continue
     }
@@ -983,6 +995,7 @@ function parseUltimatumMods (section: string[], item: ParsedItem) {
         info: { tags: [], type: ModifierType.Explicit },
         stats: [expFound]
       })
+      lastModRef = expFound.stat.ref
       anyParsed = true
     }
   }
