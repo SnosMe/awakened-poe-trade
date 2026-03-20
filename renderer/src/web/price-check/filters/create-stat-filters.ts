@@ -134,7 +134,13 @@ export function createExactStatFilters (
   } else if (item.category === ItemCategory.Idol) {
     enableGoodRolledFilters(ctx.filters, 0.66)
   } else if (item.info.refName === 'Inscribed Ultimatum') {
-    enableAllFilters(ctx.filters)
+    for (const filter of ctx.filters) {
+      if (filter.tag === FilterTag.Explicit) {
+        filter.disabled = false
+      } else if (filter.tag === FilterTag.Ultimatum) {
+        filter.disabled = true
+      }
+    }
   }
 
   return ctx.filters
