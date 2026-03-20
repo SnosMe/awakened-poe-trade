@@ -406,7 +406,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     const DEPARTMENT_TO_FILTER: Record<string, string> = {
       'Agility': 'heist_agility',
       'Brute Force': 'heist_brute_force',
-      'Counter Thaumaturgy': 'heist_counter_thaumaturgy',
+      'Counter-Thaumaturgy': 'heist_counter_thaumaturgy',
       'Deception': 'heist_deception',
       'Demolition': 'heist_demolition',
       'Engineering': 'heist_engineering',

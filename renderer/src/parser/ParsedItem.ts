@@ -13,7 +13,7 @@ export enum ItemRarity {
 export enum HeistDepartment {
   Agility = 'Agility',
   BruteForce = 'Brute Force',
-  CounterThaumaturgy = 'Counter Thaumaturgy',
+  CounterThaumaturgy = 'Counter-Thaumaturgy',
   Deception = 'Deception',
   Demolition = 'Demolition',
   Engineering = 'Engineering',
