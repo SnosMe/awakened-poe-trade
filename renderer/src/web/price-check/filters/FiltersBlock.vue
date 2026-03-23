@@ -14,8 +14,33 @@
           :filter="filters.ultimatum.challenge" :text="filters.ultimatum.challenge.label" />
         <filter-btn-logical
           :filter="filters.ultimatum.reward" :text="filters.ultimatum.reward.label" />
+        <span v-if="rewardPrice"
+          class="inline-flex items-center gap-1 normal-case cursor-pointer hover:brightness-125"
+          @click="openRewardNinja" title="poe.ninja">
+          <span :style="{ color: rewardPrice.unit.currency === 'div' ? '#e4c29a' : '' }">{{ formatPrice(rewardPrice.unit.min) }}</span>
+          <img :src="rewardPrice.unit.currency === 'div' ? '/images/divine.png' : '/images/chaos.png'" class="w-5 h-5">
+        </span>
         <filter-btn-logical
           :filter="filters.ultimatum.input" :text="t('item.ultimatum_input', [filters.ultimatum.input.value])" />
+        <span v-if="sacrificePrice"
+          class="inline-flex items-center gap-1 normal-case cursor-pointer hover:brightness-125"
+          @click="openSacrificeNinja" title="poe.ninja">
+          <span :style="{ color: sacrificePrice.unit.currency === 'div' ? '#e4c29a' : '' }">{{ formatPrice(sacrificePrice.unit.min) }}</span>
+          <img :src="sacrificePrice.unit.currency === 'div' ? '/images/divine.png' : '/images/chaos.png'" class="w-5 h-5">
+          <template v-if="sacrificePrice.total">
+            <span class="text-gray-500 font-sans">× {{ sacrificePrice.amount }} =</span>
+            <span :style="{ color: sacrificePrice.total.currency === 'div' ? '#e4c29a' : '' }">{{ formatPrice(sacrificePrice.total.min) }}</span>
+            <img :src="sacrificePrice.total.currency === 'div' ? '/images/divine.png' : '/images/chaos.png'" class="w-5 h-5">
+          </template>
+        </span>
+        <span v-if="ultimatumProfit"
+          class="inline-flex items-center gap-1 normal-case">
+          <i class="fas fa-arrow-right text-gray-600 text-xs"></i>
+          <span :style="{ color: ultimatumProfit.min >= 0 ? '#48bb78' : '#f56565' }">
+            {{ ultimatumProfit.min >= 0 ? '+' : '' }}{{ formatPrice(ultimatumProfit.min) }}</span>
+          <img :src="ultimatumProfit.currency === 'div' ? '/images/divine.png' : '/images/chaos.png'" class="w-5 h-5">
+          <span class="text-gray-600 text-xs">profit</span>
+        </span>
       </template>
       <filter-btn-numeric v-if="filters.heistWingsRevealed"
         :filter="filters.heistWingsRevealed" :name="t('item.heist_wings_revealed')" />
@@ -96,6 +121,9 @@
           v-model="showHidden" class="text-gray-400 pt-2">{{ t('filters.hidden_toggle') }}</ui-toggle>
         <ui-toggle
           v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('filters.mods_toggle') }}</ui-toggle>
+        <ui-toggle
+          :modelValue="isAutoSearchEnabled" @update:modelValue="toggleAutoSearch"
+          class="text-gray-400 pt-2">Auto</ui-toggle>
       </div>
     </div>
   </div>
@@ -111,6 +139,9 @@ import FilterBtnLogical from './FilterBtnLogical.vue'
 import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
+import { usePoeninja, displayRounding } from '@/web/background/Prices'
+import { AppConfig } from '@/web/Config'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export default defineComponent({
   name: 'FiltersBlock',
@@ -157,6 +188,62 @@ export default defineComponent({
     )
 
     const { t } = useI18n()
+    const { findPriceByQuery, findPriceByName, autoCurrency } = usePoeninja()
+
+    function findItemPrice (name: string) {
+      for (const ns of ['DIVINATION_CARD', 'ITEM']) {
+        const result = findPriceByQuery({ ns, name, variant: undefined })
+        if (result) return result
+      }
+      return findPriceByName(name)
+    }
+
+    const sacrificePrice = computed(() => {
+      const ult = props.item.ultimatum
+      if (!ult) return null
+      const result = findItemPrice(ult.sacrifice)
+      if (!result) return null
+      const amount = ult.sacrificeAmount
+      return {
+        unit: autoCurrency(result.chaos),
+        total: (amount > 1) ? autoCurrency(result.chaos * amount) : null,
+        amount,
+        url: result.url
+      }
+    })
+
+    const rewardPrice = computed(() => {
+      const ult = props.item.ultimatum
+      if (!ult) return null
+      const result = findItemPrice(ult.reward)
+      if (!result) return null
+      return {
+        unit: autoCurrency(result.chaos),
+        chaos: result.chaos,
+        url: result.url
+      }
+    })
+
+    const ultimatumProfit = computed(() => {
+      const ult = props.item.ultimatum
+      if (!ult || !sacrificePrice.value) return null
+
+      const sacrificeResult = findItemPrice(ult.sacrifice)
+      if (!sacrificeResult) return null
+      const sacrificeTotalChaos = sacrificeResult.chaos * ult.sacrificeAmount
+
+      const rewardId = props.filters.ultimatum?.reward.value
+      let profitChaos: number
+
+      if (rewardId === 'DoubleDivCards' || rewardId === 'DoubleCurrency') {
+        profitChaos = sacrificeTotalChaos
+      } else {
+        if (!rewardPrice.value) return null
+        profitChaos = rewardPrice.value.chaos - sacrificeTotalChaos
+      }
+
+      return autoCurrency(profitChaos)
+    })
 
     return {
       t,
@@ -183,6 +270,37 @@ export default defineComponent({
       },
       selectPreset (id: string) {
         ctx.emit('preset', id)
+      },
+      sacrificePrice,
+      rewardPrice,
+      ultimatumProfit,
+      formatPrice (value: number) {
+        return displayRounding(value)
+      },
+      openSacrificeNinja () {
+        if (sacrificePrice.value?.url) {
+          window.open(sacrificePrice.value.url)
+        }
+      },
+      openRewardNinja () {
+        if (rewardPrice.value?.url) {
+          window.open(rewardPrice.value.url)
+        }
+      },
+      isAutoSearchEnabled: computed(() => {
+        const widget = AppConfig<PriceCheckWidget>('price-check')!
+        return !widget.autoSearchDisabled.includes(props.item.info.refName)
+      }),
+      toggleAutoSearch (enabled: boolean) {
+        const widget = AppConfig<PriceCheckWidget>('price-check')!
+        const list = widget.autoSearchDisabled
+        const refName = props.item.info.refName
+        if (enabled) {
+          const idx = list.indexOf(refName)
+          if (idx !== -1) list.splice(idx, 1)
+        } else {
+          if (!list.includes(refName)) list.push(refName)
+        }
       }
     }
   }

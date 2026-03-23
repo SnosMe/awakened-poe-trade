@@ -395,6 +395,9 @@ function upgradeConfig (_config: Config): Config {
   if (priceCheck.rememberCurrency === undefined) {
     priceCheck.rememberCurrency = false
   }
+  if (priceCheck.autoSearchDisabled === undefined) {
+    priceCheck.autoSearchDisabled = []
+  }
 
   for (const widget of config.widgets) {
     if (widget.wmType === 'stash-search') {
