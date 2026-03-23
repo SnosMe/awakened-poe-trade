@@ -128,6 +128,7 @@ interface TradeRequest {
           gem_level?: FilterRange
           corrupted?: FilterBoolean
           fractured_item?: FilterBoolean
+          synthesised_item?: FilterBoolean
           gem_imbued?: FilterBoolean
           mirrored?: FilterBoolean
           split?: FilterBoolean
@@ -321,6 +322,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
   if (filters.fractured?.value === false) {
     propSet(query.filters, 'misc_filters.filters.fractured_item.option', String(false))
+  }
+  if (filters.synthesised?.value === false) {
+    propSet(query.filters, 'misc_filters.filters.synthesised_item.option', String(false))
   }
   if (filters.imbuedGem?.disabled) {
     propSet(query.filters, 'misc_filters.filters.gem_imbued.option', String(false))
@@ -523,6 +527,15 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   const qNot: TradeRequest['query']['stats'][number] = {
     type: 'not',
     filters: []
+  }
+
+  if (filters.nonInfluenced && !filters.nonInfluenced.disabled) {
+    const tradeId = pseudoStatByRef(stat('Has # Influences'))!.trade.ids[ModifierType.Pseudo][0]
+    qAnd.filters.push({
+      id: tradeId,
+      value: { max: 0 },
+      disabled: false
+    })
   }
 
   for (const stat of realStats) {

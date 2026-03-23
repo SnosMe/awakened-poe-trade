@@ -47,6 +47,12 @@ export interface ItemFilters {
     disabled: boolean
     hidden: boolean
   }
+  synthesised?: {
+    value: false
+  }
+  nonInfluenced?: {
+    disabled: boolean
+  }
   foil?: {
     disabled: boolean
   }

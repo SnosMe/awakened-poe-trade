@@ -300,16 +300,21 @@ export function createFilters (
   if (item.isSplit) {
     filters.split = { disabled: false, hidden: false }
   } else if (
-    item.info.craftable && !item.isCorrupted && !item.isMirrored &&
-    !item.isSynthesised && !item.isFractured && !item.influences.length
+    item.info.craftable && !item.isCorrupted && !item.isMirrored
   ) {
-    filters.split = { disabled: true, hidden: true }
+    filters.split = { disabled: true, hidden: false }
   }
 
   if (!item.isFractured &&
     (item.info.craftable && !item.isCorrupted && !item.isMirrored)
   ) {
     filters.fractured = { value: false }
+  }
+
+  if (!item.isSynthesised &&
+    (item.info.craftable && !item.isCorrupted && !item.isMirrored)
+  ) {
+    filters.synthesised = { value: false }
   }
 
   if (item.isFoil) {
@@ -321,6 +326,12 @@ export function createFilters (
       value: influence,
       disabled: !opts.exact
     }))
+  }
+
+  if (!item.influences.length &&
+    (item.info.craftable && !item.isCorrupted)
+  ) {
+    filters.nonInfluenced = { disabled: false }
   }
 
   if (item.itemLevel) {
