@@ -246,6 +246,13 @@ export function createFilters (
     }
   }
 
+  if (item.sockets?.abyssal) {
+    filters.abyssalSockets = {
+      value: item.sockets.abyssal,
+      disabled: false
+    }
+  }
+
   const forAdornedJewel = (
     item.rarity === ItemRarity.Magic &&
     // item.isCorrupted && -- let the buyer corrupt

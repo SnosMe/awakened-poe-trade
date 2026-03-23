@@ -553,6 +553,7 @@ function parseSockets (section: string[], item: ParsedItem) {
 
     item.sockets = {
       white: (sockets.split('W').length - 1),
+      abyssal: (sockets.split('A').length - 1),
       linked: undefined
     }
 

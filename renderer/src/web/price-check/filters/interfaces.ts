@@ -29,6 +29,7 @@ export interface ItemFilters {
   }
   linkedSockets?: FilterNumeric
   whiteSockets?: FilterNumeric
+  abyssalSockets?: FilterNumeric
   corrupted?: {
     value: boolean
     exact?: boolean

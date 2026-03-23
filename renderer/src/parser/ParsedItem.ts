@@ -53,6 +53,7 @@ export interface ParsedItem {
   sockets?: {
     linked?: number // only 5 or 6
     white: number
+    abyssal: number
   }
   stackSize?: { value: number, max: number }
   isUnidentified: boolean
