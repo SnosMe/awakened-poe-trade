@@ -27,6 +27,10 @@
     "Refresh": "刷新",
     "map.mods.heist": "劫盜",
     "map.mods.outdated": "過時",
-    "Support development on": "支持開發"
-  
+    "Support development on": "支持開發",
+    "ultimatum_challenge": "挑戰",
+    "ultimatum_reward": "獎勵",
+    "ultimatum_input": "獻祭: {0}",
+    "tag_ultimatum": "結戰"
+
 }

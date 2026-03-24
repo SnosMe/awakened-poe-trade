@@ -106,6 +106,28 @@ export function createFilters (
       if (item.areaLevel! < 83) {
         filters.areaLevel.max = item.areaLevel!
       }
+    } else if (item.info.refName === 'Inscribed Ultimatum' && item.ultimatum) {
+      filters.areaLevel = {
+        value: item.areaLevel!,
+        disabled: false
+      }
+      filters.ultimatum = {
+        challenge: {
+          value: ultimatumChallengeId(item.ultimatum.challenge),
+          label: item.ultimatum.challenge,
+          disabled: false
+        },
+        reward: {
+          value: ultimatumRewardId(item.ultimatum.reward),
+          label: item.ultimatum.reward,
+          disabled: false
+        },
+        input: {
+          value: localizedToRefName(item.ultimatum.sacrifice),
+          disabled: false
+        },
+        rewardOutput: ultimatumRewardOutput(item.ultimatum.reward, localizedToRefName)
+      }
     } else if (item.itemLevel) {
       // Incubators, Wombgifts
       filters.itemLevel = {
@@ -469,6 +491,41 @@ function createGemFilters (
 
 function t (opts: CreateOptions, info: BaseType) {
   return (opts.useEn) ? info.refName : info.name
+}
+
+function ultimatumChallengeId (text: string): string {
+  const t = text.toLowerCase()
+  if (t.includes('wave') || t.includes('defeat') || t.includes('волн') || t.includes('побед')) return 'Exterminate'
+  if (t.includes('survive') || t.includes('survival') || t.includes('выжив')) return 'Survival'
+  if (t.includes('protect') || t.includes('altar') || t.includes('защити') || t.includes('алтар')) return 'Defense'
+  if (t.includes('stand') || t.includes('circle') || t.includes('круг') || t.includes('стой')) return 'Conquer'
+  return text
+}
+
+const GENERIC_REWARD_KEYWORDS = ['divination', 'currency', 'mirror', 'rare', 'unique', 'exchange',
+  'гадальн', 'валют', 'зеркал', 'уникальн', 'обмен', 'удваивает']
+
+function ultimatumRewardId (text: string): string {
+  const t = text.toLowerCase()
+  if (t.includes('divination') || t.includes('гадальн')) return 'DoubleDivCards'
+  if (t.includes('currency') || t.includes('валют') || t.includes('удваивает')) return 'DoubleCurrency'
+  if (t.includes('mirror') || t.includes('зеркал')) return 'MirrorRare'
+  if (t.includes('unique') || t.includes('exchange') || t.includes('уникальн') || t.includes('обмен')) return 'ExchangeUnique'
+  return 'ExchangeUnique'
+}
+
+function ultimatumRewardOutput (text: string, toRef: (name: string) => string): string | undefined {
+  const t = text.toLowerCase()
+  if (GENERIC_REWARD_KEYWORDS.some(k => t.includes(k))) return undefined
+  return toRef(text)
+}
+
+function localizedToRefName (name: string): string {
+  for (const ns of ['ITEM', 'DIVINATION_CARD', 'UNIQUE'] as const) {
+    const found = ITEM_BY_TRANSLATED(ns, name)
+    if (found?.length) return found[0].refName
+  }
+  return name
 }
 
 export function floorToBracket (value: number, brackets: readonly number[]) {
