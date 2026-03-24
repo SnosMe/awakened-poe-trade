@@ -329,7 +329,7 @@ export function createFilters (
   }
 
   if (!item.influences.length &&
-    (item.info.craftable && !item.isCorrupted)
+    (item.info.craftable && !item.isCorrupted && !item.isMirrored)
   ) {
     filters.nonInfluenced = { disabled: false }
   }
