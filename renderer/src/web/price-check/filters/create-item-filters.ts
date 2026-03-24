@@ -407,9 +407,11 @@ export function createFilters (
   }
 
   if (item.category === ItemCategory.HeistContract) {
-    filters.areaLevel = {
-      value: item.areaLevel!,
-      disabled: false
+    if (item.rarity !== ItemRarity.Unique) {
+      filters.areaLevel = {
+        value: item.areaLevel!,
+        disabled: false
+      }
     }
   }
 
