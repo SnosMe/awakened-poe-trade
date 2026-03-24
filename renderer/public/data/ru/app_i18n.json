@@ -120,6 +120,13 @@
     "ultimatum_challenge": "Испытание",
     "ultimatum_reward": "Награда",
     "ultimatum_input": "Жертва: {0}",
+    "heist_escape_routes": "Путей отхода: {0}",
+    "heist_reward_rooms": "Комнат с наградами: {0}",
+    "heist_iiq": "Кол-во предметов: {0}%",
+    "heist_iir": "Редкость предметов: {0}%",
+    "heist_total_wings": "Всего крыльев",
+    "heist_total_escape_routes": "Всего путей отхода",
+    "heist_total_reward_rooms": "Всего комнат с наградами",
     "heist_contract_required_level": "Уровень: {0}"
   },
   "item_category": {
@@ -172,6 +179,7 @@
     "hidden_toggle": "Скрытые",
     "collapse": "Свернуть",
     "mods_toggle": "Моды",
+    "auto_toggle": "Авто",
     "empty": "Подходящие свойства не найдены",
     "tier": "Ур {0}",
     "preset_pseudo": "Псевдо",

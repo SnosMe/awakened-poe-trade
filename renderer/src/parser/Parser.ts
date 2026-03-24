@@ -899,7 +899,26 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
           item.heist.target = 'Trinkets'; break
       }
     } else if (line.startsWith(_$.HEIST_WINGS_REVEALED)) {
-      item.heist.wingsRevealed = parseInt(line.slice(_$.HEIST_WINGS_REVEALED.length), 10)
+      const text = line.slice(_$.HEIST_WINGS_REVEALED.length)
+      const parts = text.split('/')
+      item.heist.wingsRevealed = parseInt(parts[0], 10)
+      if (parts[1]) item.heist.totalWings = parseInt(parts[1], 10)
+    } else if (line.startsWith(_$.HEIST_ESCAPE_ROUTES)) {
+      const text = line.slice(_$.HEIST_ESCAPE_ROUTES.length)
+      const parts = text.split('/')
+      item.heist.escapeRoutes = parseInt(parts[0], 10)
+      if (parts[1]) item.heist.totalEscapeRoutes = parseInt(parts[1], 10)
+    } else if (line.startsWith(_$.HEIST_REWARD_ROOMS)) {
+      const text = line.slice(_$.HEIST_REWARD_ROOMS.length)
+      const parts = text.split('/')
+      item.heist.rewardRooms = parseInt(parts[0], 10)
+      if (parts[1]) item.heist.totalRewardRooms = parseInt(parts[1], 10)
+    } else if (line.startsWith(_$.HEIST_ITEM_QUANTITY)) {
+      const m = line.slice(_$.HEIST_ITEM_QUANTITY.length).match(/\+?(\d+)%/)
+      if (m) item.heist.itemQuantity = parseInt(m[1], 10)
+    } else if (line.startsWith(_$.HEIST_ITEM_RARITY)) {
+      const m = line.slice(_$.HEIST_ITEM_RARITY.length).match(/\+?(\d+)%/)
+      if (m) item.heist.itemRarity = parseInt(m[1], 10)
     }
   }
 
@@ -917,13 +936,27 @@ function parseHeistContract (section: string[], item: ParsedItem) {
   for (const line of section) {
     if (line.startsWith(_$.HEIST_CONTRACT_REQUIRED)) {
       const m = _$.HEIST_CONTRACT_REQUIRED_DEPARTMENT_LEVEL.exec(line)
-      if (m && HEIST_DEPARTMENTS.has(m[1])) {
-        item.heistContract = {
-          department: m[1] as HeistDepartment,
-          minLevel: Number(m[2])
+      if (m) {
+        const deptName = _$.HEIST_DEPARTMENT_MAP[m[1]] ?? m[1]
+        if (HEIST_DEPARTMENTS.has(deptName)) {
+          item.heistContract = {
+            department: deptName as HeistDepartment,
+            minLevel: Number(m[2])
+          }
         }
       }
-      break
+    } else if (line.startsWith(_$.HEIST_ITEM_QUANTITY)) {
+      const m = line.slice(_$.HEIST_ITEM_QUANTITY.length).match(/\+?(\d+)%/)
+      if (m) {
+        if (!item.heist) item.heist = {}
+        item.heist.itemQuantity = parseInt(m[1], 10)
+      }
+    } else if (line.startsWith(_$.HEIST_ITEM_RARITY)) {
+      const m = line.slice(_$.HEIST_ITEM_RARITY.length).match(/\+?(\d+)%/)
+      if (m) {
+        if (!item.heist) item.heist = {}
+        item.heist.itemRarity = parseInt(m[1], 10)
+      }
     }
   }
 
@@ -956,8 +989,6 @@ function parseAreaLevel (section: string[], item: ParsedItem) {
 
 function parseUltimatum (section: string[], item: ParsedItem) {
   if (item.info.refName !== 'Inscribed Ultimatum') return 'PARSER_SKIPPED'
-  if (!section.some(line => line.startsWith(_$.ULTIMATUM_CHALLENGE))) return 'SECTION_SKIPPED'
-
   let challenge: string | undefined
   let reward: string | undefined
   let sacrifice: string | undefined
@@ -972,14 +1003,13 @@ function parseUltimatum (section: string[], item: ParsedItem) {
       const m = _$.ULTIMATUM_SACRIFICE.exec(line)
       if (m) {
         sacrifice = m[1]
-        sacrificeAmount = Number(m[2])
+        sacrificeAmount = m[2] ? Number(m[2]) : 1
       }
     }
   }
 
-  parseAreaLevelNested(section, item)
-
   if (challenge && reward && sacrifice && sacrificeAmount) {
+    parseAreaLevelNested(section, item)
     item.ultimatum = { challenge, reward, sacrifice, sacrificeAmount }
     return 'SECTION_PARSED'
   }

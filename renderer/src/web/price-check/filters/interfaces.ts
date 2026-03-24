@@ -1,4 +1,4 @@
-import type { ItemInfluence, ItemCategory } from '@/parser'
+import type { ItemInfluence, ItemCategory, HeistDepartment } from '@/parser'
 import type { StatCalculated } from '@/parser/modifiers'
 import type { ParsedItem } from '@/parser/ParsedItem'
 
@@ -82,10 +82,18 @@ export interface ItemFilters {
     challenge: { value: string, label: string, disabled: boolean }
     reward: { value: string, label: string, disabled: boolean }
     input: { value: string, disabled: boolean }
+    rewardOutput?: string
   }
   heistWingsRevealed?: FilterNumeric
+  heistTotalWings?: FilterNumeric
+  heistEscapeRoutes?: FilterNumeric
+  heistTotalEscapeRoutes?: FilterNumeric
+  heistRewardRooms?: FilterNumeric
+  heistTotalRewardRooms?: FilterNumeric
+  heistItemQuantity?: FilterNumeric
+  heistItemRarity?: FilterNumeric
   heistContractDepartment?: {
-    value: string
+    value: HeistDepartment
     disabled: boolean
   }
   heistContractMinLevel?: FilterNumeric

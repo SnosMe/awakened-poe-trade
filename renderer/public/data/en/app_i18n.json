@@ -102,6 +102,13 @@
     "ultimatum_challenge": "Challenge",
     "ultimatum_reward": "Reward",
     "ultimatum_input": "Sacrifice: {0}",
+    "heist_escape_routes": "Escape Routes: {0}",
+    "heist_reward_rooms": "Reward Rooms: {0}",
+    "heist_iiq": "Item Quantity: {0}%",
+    "heist_iir": "Item Rarity: {0}%",
+    "heist_total_wings": "Total Wings",
+    "heist_total_escape_routes": "Total Escape Routes",
+    "heist_total_reward_rooms": "Total Reward Rooms",
     "heist_contract_required_level": "Level: {0}"
   },
   "item_category": {
@@ -154,6 +161,7 @@
     "hidden_toggle": "Hidden",
     "collapse": "Collapse",
     "mods_toggle": "Mods",
+    "auto_toggle": "Auto",
     "empty": "No relevant stats were found",
     "tier": "Tier {0}",
     "preset_pseudo": "Pseudo",

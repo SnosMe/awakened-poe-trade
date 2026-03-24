@@ -44,6 +44,20 @@
       </template>
       <filter-btn-numeric v-if="filters.heistWingsRevealed"
         :filter="filters.heistWingsRevealed" :name="t('item.heist_wings_revealed')" />
+      <filter-btn-numeric v-if="filters.heistTotalWings"
+        :filter="filters.heistTotalWings" :name="t('item.heist_total_wings')" />
+      <filter-btn-numeric v-if="filters.heistEscapeRoutes"
+        :filter="filters.heistEscapeRoutes" :name="t('item.heist_escape_routes')" />
+      <filter-btn-numeric v-if="filters.heistTotalEscapeRoutes"
+        :filter="filters.heistTotalEscapeRoutes" :name="t('item.heist_total_escape_routes')" />
+      <filter-btn-numeric v-if="filters.heistRewardRooms"
+        :filter="filters.heistRewardRooms" :name="t('item.heist_reward_rooms')" />
+      <filter-btn-numeric v-if="filters.heistTotalRewardRooms"
+        :filter="filters.heistTotalRewardRooms" :name="t('item.heist_total_reward_rooms')" />
+      <filter-btn-numeric v-if="filters.heistItemQuantity"
+        :filter="filters.heistItemQuantity" :name="t('item.heist_iiq')" />
+      <filter-btn-numeric v-if="filters.heistItemRarity"
+        :filter="filters.heistItemRarity" :name="t('item.heist_iir')" />
       <filter-btn-logical v-if="filters.heistContractDepartment"
         :filter="filters.heistContractDepartment" :text="filters.heistContractDepartment.value" />
       <filter-btn-numeric v-if="filters.heistContractMinLevel"
@@ -123,7 +137,7 @@
           v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('filters.mods_toggle') }}</ui-toggle>
         <ui-toggle
           :modelValue="isAutoSearchEnabled" @update:modelValue="toggleAutoSearch"
-          class="text-gray-400 pt-2">Auto</ui-toggle>
+          class="text-gray-400 pt-2">{{ t('filters.auto_toggle') }}</ui-toggle>
       </div>
     </div>
   </div>
@@ -139,6 +153,7 @@ import FilterBtnLogical from './FilterBtnLogical.vue'
 import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
+import { ITEM_BY_TRANSLATED } from '@/assets/data'
 import { usePoeninja, displayRounding } from '@/web/background/Prices'
 import { AppConfig } from '@/web/Config'
 import { PriceCheckWidget } from '@/web/overlay/interfaces'
@@ -191,11 +206,16 @@ export default defineComponent({
     const { findPriceByQuery, findPriceByName, autoCurrency } = usePoeninja()
 
     function findItemPrice (name: string) {
+      let refName = name
+      for (const ns of ['ITEM', 'DIVINATION_CARD', 'UNIQUE'] as const) {
+        const found = ITEM_BY_TRANSLATED(ns, name)
+        if (found?.length) { refName = found[0].refName; break }
+      }
       for (const ns of ['DIVINATION_CARD', 'ITEM']) {
-        const result = findPriceByQuery({ ns, name, variant: undefined })
+        const result = findPriceByQuery({ ns, name: refName, variant: undefined })
         if (result) return result
       }
-      return findPriceByName(name)
+      return findPriceByName(refName)
     }
 
     const sacrificePrice = computed(() => {

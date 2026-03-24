@@ -123,9 +123,10 @@ export function createFilters (
           disabled: false
         },
         input: {
-          value: item.ultimatum.sacrifice,
+          value: localizedToRefName(item.ultimatum.sacrifice),
           disabled: false
-        }
+        },
+        rewardOutput: ultimatumRewardOutput(item.ultimatum.reward, localizedToRefName)
       }
     } else if (item.itemLevel) {
       // Incubators, Wombgifts
@@ -205,26 +206,45 @@ export function createFilters (
       value: item.heistContract.minLevel,
       disabled: false
     }
+    if (item.heist?.itemQuantity != null) {
+      filters.heistItemQuantity = { value: item.heist.itemQuantity, disabled: true }
+    }
+    if (item.heist?.itemRarity != null) {
+      filters.heistItemRarity = { value: item.heist.itemRarity, disabled: true }
+    }
   } else if (item.category === ItemCategory.HeistBlueprint) {
     filters.searchRelaxed = {
       category: item.category,
-      disabled: true // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3109852
+      disabled: true // TODO: blocked by trade API bug
     }
     filters.searchExact = {
       baseType: item.info.name,
       baseTypeTrade: t(opts, item.info)
     }
-
-    filters.areaLevel = {
-      value: item.areaLevel!,
-      disabled: false
-    }
-
+    filters.areaLevel = { value: item.areaLevel!, disabled: false }
     if (item.heist?.wingsRevealed) {
-      filters.heistWingsRevealed = {
-        value: item.heist.wingsRevealed,
-        disabled: false
-      }
+      filters.heistWingsRevealed = { value: item.heist.wingsRevealed, disabled: false }
+    }
+    if (item.heist?.totalWings != null) {
+      filters.heistTotalWings = { value: item.heist.totalWings, disabled: true }
+    }
+    if (item.heist?.escapeRoutes != null) {
+      filters.heistEscapeRoutes = { value: item.heist.escapeRoutes, disabled: true }
+    }
+    if (item.heist?.totalEscapeRoutes != null) {
+      filters.heistTotalEscapeRoutes = { value: item.heist.totalEscapeRoutes, disabled: true }
+    }
+    if (item.heist?.rewardRooms != null) {
+      filters.heistRewardRooms = { value: item.heist.rewardRooms, disabled: true }
+    }
+    if (item.heist?.totalRewardRooms != null) {
+      filters.heistTotalRewardRooms = { value: item.heist.totalRewardRooms, disabled: true }
+    }
+    if (item.heist?.itemQuantity != null) {
+      filters.heistItemQuantity = { value: item.heist.itemQuantity, disabled: true }
+    }
+    if (item.heist?.itemRarity != null) {
+      filters.heistItemRarity = { value: item.heist.itemRarity, disabled: true }
     }
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
     filters.searchExact = {
@@ -508,20 +528,37 @@ function t (opts: CreateOptions, info: BaseType) {
 
 function ultimatumChallengeId (text: string): string {
   const t = text.toLowerCase()
-  if (t.includes('wave') || t.includes('defeat')) return 'Exterminate'
-  if (t.includes('survive') || t.includes('survival')) return 'Survival'
-  if (t.includes('protect') || t.includes('altar')) return 'Defense'
-  if (t.includes('stand') || t.includes('circle')) return 'Conquer'
+  if (t.includes('wave') || t.includes('defeat') || t.includes('волн') || t.includes('побед')) return 'Exterminate'
+  if (t.includes('survive') || t.includes('survival') || t.includes('выжив')) return 'Survival'
+  if (t.includes('protect') || t.includes('altar') || t.includes('защити') || t.includes('алтар')) return 'Defense'
+  if (t.includes('stand') || t.includes('circle') || t.includes('круг') || t.includes('стой')) return 'Conquer'
   return text
 }
 
+const GENERIC_REWARD_KEYWORDS = ['divination', 'currency', 'mirror', 'rare', 'unique', 'exchange',
+  'гадальн', 'валют', 'зеркал', 'уникальн', 'обмен', 'удваивает']
+
 function ultimatumRewardId (text: string): string {
   const t = text.toLowerCase()
-  if (t.includes('divination')) return 'DoubleDivCards'
-  if (t.includes('currency')) return 'DoubleCurrency'
-  if (t.includes('mirror') || t.includes('rare')) return 'MirrorRare'
-  if (t.includes('unique') || t.includes('exchange')) return 'ExchangeUnique'
-  return text
+  if (t.includes('divination') || t.includes('гадальн')) return 'DoubleDivCards'
+  if (t.includes('currency') || t.includes('валют') || t.includes('удваивает')) return 'DoubleCurrency'
+  if (t.includes('mirror') || t.includes('зеркал')) return 'MirrorRare'
+  if (t.includes('unique') || t.includes('exchange') || t.includes('уникальн') || t.includes('обмен')) return 'ExchangeUnique'
+  return 'ExchangeUnique'
+}
+
+function ultimatumRewardOutput (text: string, toRef: (name: string) => string): string | undefined {
+  const t = text.toLowerCase()
+  if (GENERIC_REWARD_KEYWORDS.some(k => t.includes(k))) return undefined
+  return toRef(text)
+}
+
+function localizedToRefName (name: string): string {
+  for (const ns of ['ITEM', 'DIVINATION_CARD', 'UNIQUE'] as const) {
+    const found = ITEM_BY_TRANSLATED(ns, name)
+    if (found?.length) return found[0].refName
+  }
+  return name
 }
 
 export function floorToBracket (value: number, brackets: readonly number[]) {

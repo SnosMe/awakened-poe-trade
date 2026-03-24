@@ -95,7 +95,14 @@ export interface ParsedItem {
   ultimatumModDescriptions?: Record<string, string>
   heist?: {
     wingsRevealed?: number
+    totalWings?: number
+    escapeRoutes?: number
+    totalEscapeRoutes?: number
+    rewardRooms?: number
+    totalRewardRooms?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
+    itemQuantity?: number
+    itemRarity?: number
   }
   heistContract?: {
     department: HeistDepartment

@@ -1,4 +1,4 @@
-import { ItemInfluence, ItemCategory } from '@/parser'
+import { ItemInfluence, ItemCategory, HeistDepartment } from '@/parser'
 import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
@@ -52,6 +52,18 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Idol, 'idol'],
   [ItemCategory.Graft, 'graft']
 ])
+
+const DEPARTMENT_TO_HEIST_FILTER: Record<HeistDepartment, string> = {
+  [HeistDepartment.Agility]: 'heist_agility',
+  [HeistDepartment.BruteForce]: 'heist_brute_force',
+  [HeistDepartment.CounterThaumaturgy]: 'heist_counter_thaumaturgy',
+  [HeistDepartment.Deception]: 'heist_deception',
+  [HeistDepartment.Demolition]: 'heist_demolition',
+  [HeistDepartment.Engineering]: 'heist_engineering',
+  [HeistDepartment.Lockpicking]: 'heist_lockpicking',
+  [HeistDepartment.Perception]: 'heist_perception',
+  [HeistDepartment.TrapDisarmament]: 'heist_trap_disarmament'
+}
 
 const TOTAL_MODS_TEXT = {
   CRAFTED_MODIFIERS: [
@@ -171,6 +183,11 @@ interface TradeRequest {
       heist_filters?: {
         filters: {
           heist_wings?: FilterRange
+          heist_max_wings?: FilterRange
+          heist_escape_routes?: FilterRange
+          heist_max_escape_routes?: FilterRange
+          heist_reward_rooms?: FilterRange
+          heist_max_reward_rooms?: FilterRange
           heist_agility?: FilterRange
           heist_brute_force?: FilterRange
           heist_counter_thaumaturgy?: FilterRange
@@ -401,20 +418,31 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }
+  if (filters.heistTotalWings && !filters.heistTotalWings.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_max_wings.min', filters.heistTotalWings.value)
+  }
+  if (filters.heistEscapeRoutes && !filters.heistEscapeRoutes.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_escape_routes.min', filters.heistEscapeRoutes.value)
+  }
+  if (filters.heistTotalEscapeRoutes && !filters.heistTotalEscapeRoutes.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_max_escape_routes.min', filters.heistTotalEscapeRoutes.value)
+  }
+  if (filters.heistRewardRooms && !filters.heistRewardRooms.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_reward_rooms.min', filters.heistRewardRooms.value)
+  }
+  if (filters.heistTotalRewardRooms && !filters.heistTotalRewardRooms.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_max_reward_rooms.min', filters.heistTotalRewardRooms.value)
+  }
+
+  if (filters.heistItemQuantity && !filters.heistItemQuantity.disabled) {
+    propSet(query.filters, 'map_filters.filters.map_iiq.min', filters.heistItemQuantity.value)
+  }
+  if (filters.heistItemRarity && !filters.heistItemRarity.disabled) {
+    propSet(query.filters, 'map_filters.filters.map_iir.min', filters.heistItemRarity.value)
+  }
 
   if (filters.heistContractDepartment && !filters.heistContractDepartment.disabled) {
-    const DEPARTMENT_TO_FILTER: Record<string, string> = {
-      'Agility': 'heist_agility',
-      'Brute Force': 'heist_brute_force',
-      'Counter-Thaumaturgy': 'heist_counter_thaumaturgy',
-      'Deception': 'heist_deception',
-      'Demolition': 'heist_demolition',
-      'Engineering': 'heist_engineering',
-      'Lockpicking': 'heist_lockpicking',
-      'Perception': 'heist_perception',
-      'Trap Disarmament': 'heist_trap_disarmament'
-    }
-    const filterKey = DEPARTMENT_TO_FILTER[filters.heistContractDepartment.value]
+    const filterKey = DEPARTMENT_TO_HEIST_FILTER[filters.heistContractDepartment.value]
     if (filterKey && filters.heistContractMinLevel && !filters.heistContractMinLevel.disabled) {
       propSet(query.filters, `heist_filters.filters.${filterKey}.min`, filters.heistContractMinLevel.value)
     }
@@ -429,6 +457,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     }
     if (!filters.ultimatum.input.disabled) {
       propSet(query.filters, 'ultimatum_filters.filters.ultimatum_input.option', filters.ultimatum.input.value)
+    }
+    if (!filters.ultimatum.reward.disabled && filters.ultimatum.rewardOutput) {
+      propSet(query.filters, 'ultimatum_filters.filters.ultimatum_output.option', filters.ultimatum.rewardOutput)
     }
   }
 
