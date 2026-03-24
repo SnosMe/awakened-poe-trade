@@ -10,6 +10,18 @@ export enum ItemRarity {
   Unique = 'Unique'
 }
 
+export enum HeistDepartment {
+  Agility = 'Agility',
+  BruteForce = 'Brute Force',
+  CounterThaumaturgy = 'Counter-Thaumaturgy',
+  Deception = 'Deception',
+  Demolition = 'Demolition',
+  Engineering = 'Engineering',
+  Lockpicking = 'Lockpicking',
+  Perception = 'Perception',
+  TrapDisarmament = 'Trap Disarmament'
+}
+
 export enum ItemInfluence {
   Crusader = 'Crusader',
   Elder = 'Elder',
@@ -76,12 +88,18 @@ export interface ParsedItem {
   }>
   heistBlueprint?: {
     wingsRevealed?: number
+    totalWings?: number
+    escapeRoutes?: number
+    totalEscapeRoutes?: number
+    rewardRooms?: number
+    totalRewardRooms?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
+    itemQuantity?: number
+    itemRarity?: number
   }
   heistContract?: {
-    requiredJob?: 'Lockpicking' | 'Brute Force' | 'Perception' | 'Demolition' | 'Counter-Thaumaturgy' | 'Trap Disarmament' | 'Agility' | 'Deception' | 'Engineering'
-    jobLevel?: number
-    targetValue?: 'Priceless'
+    department: HeistDepartment
+    minLevel: number
   }
   category?: ItemCategory
   info: BaseType
