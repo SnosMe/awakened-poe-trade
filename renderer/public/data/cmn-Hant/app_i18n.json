@@ -34,9 +34,9 @@
       "heist_reward_rooms": "Reward Rooms: {0}",
       "heist_iiq": "Item Quantity: {0}%",
       "heist_iir": "Item Rarity: {0}%",
-      "heist_total_wings": "Total Wings",
-      "heist_total_escape_routes": "Total Escape Routes",
-      "heist_total_reward_rooms": "Total Reward Rooms"
+      "heist_total_wings": "Total Wings: {0}",
+      "heist_total_escape_routes": "Total Escape Routes: {0}",
+      "heist_total_reward_rooms": "Total Reward Rooms: {0}"
     },
 
     "filters": {
