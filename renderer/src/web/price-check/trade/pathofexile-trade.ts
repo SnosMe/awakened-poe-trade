@@ -171,6 +171,7 @@ interface TradeRequest {
       heist_filters?: {
         filters: {
           heist_wings?: FilterRange
+          heist_objective_value?: { option?: 'priceless' }
           heist_agility?: FilterRange
           heist_brute_force?: FilterRange
           heist_counter_thaumaturgy?: FilterRange
@@ -390,41 +391,6 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     }
   }
 
-  if (filters.heistContractDepartment
-    && filters.heistContractMinLevel && !filters.heistContractMinLevel.disabled) {
-    const minLevel = filters.heistContractMinLevel.value
-
-    switch (filters.heistContractDepartment) {
-      case HeistDepartment.Agility:
-        propSet(query.filters, 'heist_filters.filters.heist_agility.min', minLevel)
-        break
-      case HeistDepartment.BruteForce:
-        propSet(query.filters, 'heist_filters.filters.heist_brute_force.min', minLevel)
-        break
-      case HeistDepartment.CounterThaumaturgy:
-        propSet(query.filters, 'heist_filters.filters.heist_counter_thaumaturgy.min', minLevel)
-        break
-      case HeistDepartment.Deception:
-        propSet(query.filters, 'heist_filters.filters.heist_deception.min', minLevel)
-        break
-      case HeistDepartment.Demolition:
-        propSet(query.filters, 'heist_filters.filters.heist_demolition.min', minLevel)
-        break
-      case HeistDepartment.Engineering:
-        propSet(query.filters, 'heist_filters.filters.heist_engineering.min', minLevel)
-        break
-      case HeistDepartment.Lockpicking:
-        propSet(query.filters, 'heist_filters.filters.heist_lockpicking.min', minLevel)
-        break
-      case HeistDepartment.Perception:
-        propSet(query.filters, 'heist_filters.filters.heist_perception.min', minLevel)
-        break
-      case HeistDepartment.TrapDisarmament:
-        propSet(query.filters, 'heist_filters.filters.heist_trap_disarmament.min', minLevel)
-        break
-    }
-  }
-
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
   }
@@ -434,6 +400,8 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
 
   for (const stat of stats) {
+    if (!stat.tradeId[0].startsWith('item.')) continue
+
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
       const TARGET_ID = {
         CRAFTED_MODIFIERS: pseudoStatByRef(TOTAL_MODS_TEXT.CRAFTED_MODIFIERS[stat.option!.value])!.trade.ids[ModifierType.Pseudo][0],
@@ -525,6 +493,45 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
       case 'item.map_pack_size':
         propSet(query.filters, 'map_filters.filters.map_packsize.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'map_filters.filters.map_packsize.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_agility':
+        propSet(query.filters, 'heist_filters.filters.heist_agility.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_agility.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_bruteforce':
+        propSet(query.filters, 'heist_filters.filters.heist_brute_force.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_brute_force.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_counterthaumaturgy':
+        propSet(query.filters, 'heist_filters.filters.heist_counter_thaumaturgy.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_counter_thaumaturgy.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_deception':
+        propSet(query.filters, 'heist_filters.filters.heist_deception.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_deception.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_demolition':
+        propSet(query.filters, 'heist_filters.filters.heist_demolition.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_demolition.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_engineering':
+        propSet(query.filters, 'heist_filters.filters.heist_engineering.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_engineering.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_lockpicking':
+        propSet(query.filters, 'heist_filters.filters.heist_lockpicking.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_lockpicking.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_perception':
+        propSet(query.filters, 'heist_filters.filters.heist_perception.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_perception.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_job_trapdisarmament':
+        propSet(query.filters, 'heist_filters.filters.heist_trap_disarmament.min', typeof input.min === 'number' ? input.min : 1)
+        propSet(query.filters, 'heist_filters.filters.heist_trap_disarmament.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_target_priceless':
+        propSet(query.filters, 'heist_filters.filters.heist_objective_value.option', 'priceless')
         break
     }
   }

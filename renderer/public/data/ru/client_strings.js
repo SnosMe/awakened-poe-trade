@@ -72,7 +72,7 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: 'Воровские украшения или валюта',
   HEIST_BLUEPRINT_GEMS: 'Необычные камни',
   HEIST_BLUEPRINT_REPLICAS: 'Копии или экспериментальные предметы',
-  HEIST_CONTRACT_JOB: /^Требуется (?<job>.+) \((?<level>\d+) уровень\)$/,
+  HEIST_CONTRACT_JOB: /^Требуется (?<job>.+) \((?<level>\d+)(?:\s*\(unmet\))? уровень\)$/,
   HEIST_JOB_LOCKPICKING: 'взлом',
   HEIST_JOB_BRUTEFORCE: 'грубая сила',
   HEIST_JOB_PERCEPTION: 'восприятие',

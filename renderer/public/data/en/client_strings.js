@@ -72,7 +72,7 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: 'Thieves\' Trinkets or Currency',
   HEIST_BLUEPRINT_GEMS: 'Unusual Gems',
   HEIST_BLUEPRINT_REPLICAS: 'Replicas or Experimented Items',
-  HEIST_CONTRACT_JOB: /^Requires (?<job>.+) \(Level (?<level>\d+)\)$/,
+  HEIST_CONTRACT_JOB: /^Requires (?<job>.+) \(Level (?<level>\d+)(?:\s*\(unmet\))?\)$/,
   HEIST_JOB_LOCKPICKING: 'Lockpicking',
   HEIST_JOB_BRUTEFORCE: 'Brute Force',
   HEIST_JOB_PERCEPTION: 'Perception',

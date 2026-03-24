@@ -72,7 +72,7 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: '盜賊的飾品或通貨',
   HEIST_BLUEPRINT_GEMS: '不尋常寶石',
   HEIST_BLUEPRINT_REPLICAS: '贗品或實驗性物品',
-  HEIST_CONTRACT_JOB: /^需要 (?<job>.+) \(等級 (?<level>\d+)\)$/,
+  HEIST_CONTRACT_JOB: /^需要 (?<job>.+) \(等級 (?<level>\d+)(?:\s*\(unmet\))?\)$/,
   HEIST_JOB_LOCKPICKING: '開鎖',
   HEIST_JOB_BRUTEFORCE: '蠻力',
   HEIST_JOB_PERCEPTION: '洞察力',

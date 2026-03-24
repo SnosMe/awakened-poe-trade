@@ -72,7 +72,7 @@ export default {
   HEIST_BLUEPRINT_TRINKETS: '도둑의 장신구 또는 화폐',
   HEIST_BLUEPRINT_GEMS: '도둑의 장신구 또는 화폐',
   HEIST_BLUEPRINT_REPLICAS: '모조품 또는 실험적 아이템',
-  HEIST_CONTRACT_JOB: /^(?<job>.+) 필요\((?<level>\d+)레벨\)$/,
+  HEIST_CONTRACT_JOB: /^(?<job>.+) 필요\((?<level>\d+)(?:\s*\(unmet\))?레벨\)$/,
   HEIST_JOB_LOCKPICKING: '자물쇠 따기',
   HEIST_JOB_BRUTEFORCE: '완력',
   HEIST_JOB_PERCEPTION: '통찰력',

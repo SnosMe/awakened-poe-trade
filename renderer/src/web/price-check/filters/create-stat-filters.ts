@@ -117,7 +117,10 @@ export function createExactStatFilters (
 
   if (item.category === ItemCategory.ClusterJewel) {
     applyClusterJewelRules(ctx.filters)
-  } if (item.category === ItemCategory.HeistBlueprint) {
+  } if (
+    item.category === ItemCategory.HeistContract ||
+    item.category === ItemCategory.HeistBlueprint
+  ) {
     applyHeistRules(ctx)
   } else if (item.category === ItemCategory.Flask) {
     applyFlaskRules(ctx.filters)
