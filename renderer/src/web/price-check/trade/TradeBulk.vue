@@ -90,6 +90,7 @@
     <template #actions>
       <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
       <button class="btn" @click="openTradeLink">{{ t('Browser') }}</button>
+      <button class="btn" @click="openExternal"><i class="fas fa-external-link-alt text-xs"></i></button>
     </template>
   </ui-error-box>
 </template>
@@ -334,6 +335,9 @@ export default defineComponent({
       makeTradeLink,
       openTradeLink () {
         showBrowser(makeTradeLink(['mirror']))
+      },
+      openExternal () {
+        window.open(makeTradeLink(['mirror']))
       }
     }
   }
