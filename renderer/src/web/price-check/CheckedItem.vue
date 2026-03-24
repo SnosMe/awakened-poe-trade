@@ -123,7 +123,7 @@ export default defineComponent({
           (props.advancedCheck && !widget.value.lockedInitialSearch)) {
         doSearch.value = false
       } else {
-        doSearch.value = Boolean(
+        const wouldAutoSearch = Boolean(
           (item.rarity === ItemRarity.Unique) ||
           (item.category === ItemCategory.Map) ||
           (item.category === ItemCategory.HeistContract) ||
@@ -135,6 +135,8 @@ export default defineComponent({
           (item.isUnidentified) ||
           (item.isVeiled)
         )
+        doSearch.value = wouldAutoSearch &&
+          !widget.value.autoSearchDisabled.includes(item.info.refName)
       }
 
       tradeAPI.value = apiToSatisfySearch(props.item, itemStats.value, itemFilters.value)

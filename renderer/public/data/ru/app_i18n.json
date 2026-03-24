@@ -178,6 +178,7 @@
     "hidden_toggle": "Скрытые",
     "collapse": "Свернуть",
     "mods_toggle": "Моды",
+    "auto_toggle": "Авто",
     "empty": "Подходящие свойства не найдены",
     "tier": "Ур {0}",
     "preset_pseudo": "Псевдо",
