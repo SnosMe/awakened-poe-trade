@@ -23,10 +23,6 @@ export class OverlayVisibility {
     uIOhook.on('keyup', (e) => {
       if (!e.altKey) { this.makeVisible() }
     })
-
-    uIOhook.on('mousemove', (e) => {
-      if (!e.altKey) { this.makeVisible() }
-    })
   }
 
   private makeVisible () {
