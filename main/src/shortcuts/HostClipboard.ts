@@ -43,6 +43,9 @@ export class HostClipboard {
         // see https://github.com/SnosMe/awakened-poe-trade/issues/1790#issuecomment-4062830614
         clipboard.writeText(`__APT_FORCE_EMPTY_${Date.now()}`)
       }
+    } else if (process.platform === 'linux') {
+      // workaround bug in Proton 10+ https://github.com/SnosMe/awakened-poe-trade/issues/1846
+      clipboard.writeText(`__APT_FORCE_EMPTY_${Date.now()}`)
     }
 
     this.pollPromise = new Promise((resolve, reject) => {
