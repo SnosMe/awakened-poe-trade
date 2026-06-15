@@ -6,7 +6,7 @@
     "dev": "node build/script.mjs",
     "build": "tsc --noEmit && node build/script.mjs --prod",
     "package": "electron-builder build",
-    "postinstall": "patch-package --patch-dir build"
+    "postinstall": "patch-package --patch-dir patches"
   },
   "author": {
     "name": "Alexander Drozdov"
