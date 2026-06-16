@@ -74,6 +74,13 @@ export interface ParsedItem {
     text: string
     type: ModifierType
   }>
+  ultimatum?: {
+    challenge: string
+    reward: string
+    sacrifice: string
+    sacrificeAmount: number
+  }
+  ultimatumModDescriptions?: Record<string, string>
   heistBlueprint?: {
     wingsRevealed?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'

@@ -183,6 +183,14 @@ interface TradeRequest {
           heist_trap_disarmament?: FilterRange
         }
       }
+      ultimatum_filters?: {
+        filters: {
+          ultimatum_challenge?: { option?: string }
+          ultimatum_reward?: { option?: string }
+          ultimatum_input?: { option?: string }
+          ultimatum_output?: { option?: string }
+        }
+      }
       sentinel_filters?: {
         filters: {
           sentinel_durability?: FilterRange
@@ -393,6 +401,21 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
+  }
+
+  if (filters.ultimatum) {
+    if (!filters.ultimatum.challenge.disabled) {
+      propSet(query.filters, 'ultimatum_filters.filters.ultimatum_challenge.option', filters.ultimatum.challenge.value)
+    }
+    if (!filters.ultimatum.reward.disabled) {
+      propSet(query.filters, 'ultimatum_filters.filters.ultimatum_reward.option', filters.ultimatum.reward.value)
+    }
+    if (!filters.ultimatum.input.disabled) {
+      propSet(query.filters, 'ultimatum_filters.filters.ultimatum_input.option', filters.ultimatum.input.value)
+    }
+    if (!filters.ultimatum.reward.disabled && filters.ultimatum.rewardOutput) {
+      propSet(query.filters, 'ultimatum_filters.filters.ultimatum_output.option', filters.ultimatum.rewardOutput)
+    }
   }
 
   if (filters.sentinelCharge && !filters.sentinelCharge.disabled) {
