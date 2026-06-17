@@ -75,7 +75,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
   { virtual: pickCorrectVariant },
-  { virtual: calcBasePercentile }
+  { virtual: calcBasePercentile },
+  parseStoredExperience
 ]
 
 export function parseClipboard (clipboard: string): Result<ParsedItem, string> {
@@ -1126,4 +1127,16 @@ function calcBasePercentile (item: ParsedItem) {
   } else if (item.armourWARD && info.ward) {
     item.basePercentile = calcPropPercentile(item.armourWARD, info.ward, QUALITY_STATS.WARD, item)
   }
+}
+
+function parseStoredExperience (section: string[], item: ParsedItem) {
+  let prefix = _$.STORED_EXPERIENCE
+
+  for (const line of section) {
+    if (line.startsWith(prefix)) {
+      item.storedExperience = Number(line.slice(prefix.length).replace(/,/g, ""))
+      return 'SECTION_PARSED'
+    }
+  }
+  return 'SECTION_SKIPPED'
 }

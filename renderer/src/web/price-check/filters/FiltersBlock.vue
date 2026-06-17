@@ -51,6 +51,8 @@
           ? t('filters.selected_some', [totalSelectedMods, stats.length])
           : t('filters.selected_none')"
       />
+      <filter-btn-numeric v-if="filters.storedExperience"
+        :filter="filters.storedExperience" :name="t('item.stored_experience')" />
     </div>
     <div v-if="!statsVisibility.disabled && hasStats" class="mb-4" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'">
       <div class="flex" v-if="presets.length > 1">

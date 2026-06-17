@@ -86,6 +86,7 @@ export interface ParsedItem {
   category?: ItemCategory
   info: BaseType
   rawText: string
+  storedExperience?: number
 }
 
 // NOTE: should match option values on trade

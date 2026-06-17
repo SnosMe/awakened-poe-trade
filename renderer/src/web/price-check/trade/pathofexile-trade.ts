@@ -135,6 +135,7 @@ interface TradeRequest {
           stack_size?: FilterRange
           memory_level?: FilterRange
           foulborn_item?: FilterBoolean
+          stored_experience?: FilterRange
         }
       }
       armour_filters?: {
@@ -221,7 +222,8 @@ interface FetchResult {
       78 | // Corpse Level (Filled Coffin)
       30 | // Spawns a Level %0 Monster when Harvested
       6 | // Quality
-      5 // Level
+      5 | // Level
+      31 // Stored Experience
     }>
     note?: string
   }
@@ -244,6 +246,7 @@ export interface PricingResult {
   corrupted?: boolean
   quality?: string
   level?: string
+  storedExperience?: string
   relativeDate: string
   priceAmount: number
   priceCurrency: string
@@ -353,6 +356,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 
   if (filters.stackSize && !filters.stackSize.disabled) {
     propSet(query.filters, 'misc_filters.filters.stack_size.min', filters.stackSize.value)
+  }
+
+  if (filters.storedExperience && !filters.storedExperience?.disabled) {
+    propSet(query.filters, 'misc_filters.filters.stored_experience.min', filters.storedExperience.value)
   }
 
   if (filters.linkedSockets && !filters.linkedSockets.disabled) {
@@ -660,6 +667,7 @@ export async function requestResults (
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
       level: result.item.properties?.find(prop => prop.type === 5)?.values[0][0],
+      storedExperience: result.item.properties?.find(prop => prop.type === 31)?.values[0][0],
       relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',

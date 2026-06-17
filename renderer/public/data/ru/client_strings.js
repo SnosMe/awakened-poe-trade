@@ -154,6 +154,7 @@ export default {
   UNMODIFIABLE: 'Неизменяемый',
   FOULBORN_NAME: /^(?:Нечестивый|Нечестивая|Нечестивое|Нечестивые) (.*)$/,
   FOULBORN_MODIFIER: 'Нечестивое уникальное свойство',
+  STORED_EXPERIENCE: 'Stored Experience: ',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

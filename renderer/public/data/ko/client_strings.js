@@ -121,6 +121,7 @@ export default {
   UNMODIFIABLE: '속성 부여 불가',
   FOULBORN_NAME: /^삿된 (.*)$/,
   FOULBORN_MODIFIER: '삿된 고유 속성',
+  STORED_EXPERIENCE: 'Stored Experience: ',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

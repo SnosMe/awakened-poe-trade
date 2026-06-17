@@ -112,6 +112,12 @@ export function createFilters (
         value: item.itemLevel,
         disabled: false
       }
+    } else if (item.storedExperience) {
+      // Facetor's Lens
+      filters.storedExperience = {
+        value: item.storedExperience,
+        disabled: false
+      }
     }
     return filters
   }
