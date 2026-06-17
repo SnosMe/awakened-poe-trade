@@ -153,6 +153,7 @@
     "hidden_toggle": "숨겨진",
     "collapse": "접기",
     "mods_toggle": "모드",
+    "auto_toggle": "자동",
     "empty": "No relevant stats were found",
     "tier": "티어 {0}",
     "preset_pseudo": "Pseudo",
