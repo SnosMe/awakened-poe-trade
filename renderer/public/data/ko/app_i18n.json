@@ -103,7 +103,15 @@
     "foil_unique": "반짝이",
     "mirrored": "복제된",
     "not_mirrored": "복제되지 않은",
-    "map_foil_reward": "반짝이 {0}"
+    "map_foil_reward": "반짝이 {0}",
+    "heist_escape_routes": "탈출 경로: {0}",
+    "heist_reward_rooms": "보물 창고: {0}",
+    "heist_iiq": "아이템 수량: {0}%",
+    "heist_iir": "아이템 희귀도: {0}%",
+    "heist_total_wings": "전체 부속 건물: {0}",
+    "heist_total_escape_routes": "전체 탈출 경로: {0}",
+    "heist_total_reward_rooms": "전체 보물 창고: {0}",
+    "heist_contract_required_level": "레벨: {0}"
   },
   "item_category": {
     "prop": "유형: {0}",
