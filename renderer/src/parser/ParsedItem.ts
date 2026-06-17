@@ -76,6 +76,13 @@ export interface ParsedItem {
   }>
   heistBlueprint?: {
     wingsRevealed?: number
+    totalWings?: number
+    escapeRoutes?: number
+    totalEscapeRoutes?: number
+    rewardRooms?: number
+    totalRewardRooms?: number
+    itemQuantity?: number
+    itemRarity?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
   }
   heistContract?: {

@@ -946,7 +946,26 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
           item.heistBlueprint.target = 'Trinkets'; break
       }
     } else if (line.startsWith(_$.HEIST_WINGS_REVEALED)) {
-      item.heistBlueprint.wingsRevealed = parseInt(line.slice(_$.HEIST_WINGS_REVEALED.length), 10)
+      const text = line.slice(_$.HEIST_WINGS_REVEALED.length)
+      const parts = text.split('/')
+      item.heistBlueprint.wingsRevealed = parseInt(parts[0], 10)
+      if (parts[1]) item.heistBlueprint.totalWings = parseInt(parts[1], 10)
+    } else if (line.startsWith(_$.HEIST_ESCAPE_ROUTES)) {
+      const text = line.slice(_$.HEIST_ESCAPE_ROUTES.length)
+      const parts = text.split('/')
+      item.heistBlueprint.escapeRoutes = parseInt(parts[0], 10)
+      if (parts[1]) item.heistBlueprint.totalEscapeRoutes = parseInt(parts[1], 10)
+    } else if (line.startsWith(_$.HEIST_REWARD_ROOMS)) {
+      const text = line.slice(_$.HEIST_REWARD_ROOMS.length)
+      const parts = text.split('/')
+      item.heistBlueprint.rewardRooms = parseInt(parts[0], 10)
+      if (parts[1]) item.heistBlueprint.totalRewardRooms = parseInt(parts[1], 10)
+    } else if (line.startsWith(_$.HEIST_ITEM_QUANTITY)) {
+      const m = line.slice(_$.HEIST_ITEM_QUANTITY.length).match(/\+?(\d+)%/)
+      if (m) item.heistBlueprint.itemQuantity = parseInt(m[1], 10)
+    } else if (line.startsWith(_$.HEIST_ITEM_RARITY)) {
+      const m = line.slice(_$.HEIST_ITEM_RARITY.length).match(/\+?(\d+)%/)
+      if (m) item.heistBlueprint.itemRarity = parseInt(m[1], 10)
     }
   }
 
