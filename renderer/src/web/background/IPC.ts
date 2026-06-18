@@ -17,7 +17,8 @@ class HostTransport {
       this.updateInfo.value = info
     })
     await new Promise((resolve) => {
-      this.socket = new Sockette(`ws://${window.location.host}/events`, {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      this.socket = new Sockette(`${protocol}//${window.location.host}/events`, {
         onmessage: (e) => {
           this.selfDispatch(JSON.parse(e.data))
         },
