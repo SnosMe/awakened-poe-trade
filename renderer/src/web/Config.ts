@@ -92,7 +92,7 @@ export function poeWebApi () {
     case 'en': return 'www.pathofexile.com'
     case 'ru': return 'ru.pathofexile.com'
     case 'cmn-Hant': return 'pathofexile.tw'
-    case 'ko': return 'poe.game.daum.net'
+    case 'ko': return 'poe.kakaogames.com'
   }
 }
 
