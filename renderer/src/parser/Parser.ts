@@ -10,7 +10,7 @@ import {
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
 import { ItemCategory, ACCESSORY } from './meta'
-import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
+import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity, HeistDepartment } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE, IMPLICIT_LINE } from './advanced-mod-desc'
 import { calcPropPercentile, QUALITY_STATS } from './calc-q20'
@@ -55,8 +55,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseInfluence,
   parseMap,
   parseSockets,
-  parseHeistContract,
   parseHeistBlueprint,
+  parseHeistContract,
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirroredTablet,
@@ -873,55 +873,6 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
   return 'SECTION_SKIPPED'
 }
 
-function parseHeistContract (section: string[], item: ParsedItem) {
-  if (item.category !== ItemCategory.HeistContract) return 'PARSER_SKIPPED'
-
-  parseAreaLevelNested(section, item)
-  if (!item.areaLevel) {
-    return 'SECTION_SKIPPED'
-  }
-
-  item.heistContract = {}
-
-  for (const line of section) {
-    const jobMatch = line.match(_$.HEIST_CONTRACT_JOB)
-    if (jobMatch) {
-      switch (jobMatch.groups!.job) {
-        case _$.HEIST_JOB_LOCKPICKING:
-          item.heistContract.requiredJob = 'Lockpicking'; break
-        case _$.HEIST_JOB_BRUTEFORCE:
-          item.heistContract.requiredJob = 'Brute Force'; break
-        case _$.HEIST_JOB_PERCEPTION:
-          item.heistContract.requiredJob = 'Perception'; break
-        case _$.HEIST_JOB_DEMOLITION:
-          item.heistContract.requiredJob = 'Demolition'; break
-        case _$.HEIST_JOB_COUNTERTHAUMATURGY:
-          item.heistContract.requiredJob = 'Counter-Thaumaturgy'; break
-        case _$.HEIST_JOB_TRAPDISARMAMENT:
-          item.heistContract.requiredJob = 'Trap Disarmament'; break
-        case _$.HEIST_JOB_AGILITY:
-          item.heistContract.requiredJob = 'Agility'; break
-        case _$.HEIST_JOB_DECEPTION:
-          item.heistContract.requiredJob = 'Deception'; break
-        case _$.HEIST_JOB_ENGINEERING:
-          item.heistContract.requiredJob = 'Engineering'; break
-      }
-      item.heistContract.jobLevel = Number(jobMatch.groups!.level)
-      continue
-    }
-
-    const targetMatch = line.match(_$.HEIST_CONTRACT_TARGET)
-    if (targetMatch) {
-      if (targetMatch[1] === _$.HEIST_TARGET_PRICELESS) {
-        item.heistContract.targetValue = 'Priceless'
-      }
-      continue
-    }
-  }
-
-  return 'SECTION_PARSED'
-}
-
 function parseHeistBlueprint (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.HeistBlueprint) return 'PARSER_SKIPPED'
 
@@ -951,6 +902,42 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
   }
 
   return 'SECTION_PARSED'
+}
+
+const HEIST_DEPARTMENTS = new Set<string>(Object.values(HeistDepartment))
+
+function parseHeistContract (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.HeistContract) return 'PARSER_SKIPPED'
+
+  parseAreaLevelNested(section, item)
+  if (!item.areaLevel) return 'SECTION_SKIPPED'
+
+  for (const line of section) {
+    const m = _$.HEIST_CONTRACT_REQUIRED_DEPARTMENT_LEVEL.exec(line)
+    if (m) {
+        const deptName = _$.HEIST_DEPARTMENT_MAP[m[1]] ?? m[1]
+        if (HEIST_DEPARTMENTS.has(deptName)) {
+          item.heistContract = {
+            department: deptName as HeistDepartment,
+            minLevel: Number(m[2])
+          }
+        }
+    } else if (line.startsWith(_$.HEIST_ITEM_QUANTITY)) {
+      const m = line.slice(_$.HEIST_ITEM_QUANTITY.length).match(/\+?(\d+)%/)
+      if (m) {
+        if (!item.heistBlueprint) item.heistBlueprint = {}
+        item.heistBlueprint.itemQuantity = parseInt(m[1], 10)
+      }
+    } else if (line.startsWith(_$.HEIST_ITEM_RARITY)) {
+      const m = line.slice(_$.HEIST_ITEM_RARITY.length).match(/\+?(\d+)%/)
+      if (m) {
+        if (!item.heistBlueprint) item.heistBlueprint = {}
+        item.heistBlueprint.itemRarity = parseInt(m[1], 10)
+      }
+    }
+  }
+
+  return (item.heistContract) ? 'SECTION_PARSED' : 'SECTION_SKIPPED'
 }
 
 function parseAreaLevelNested (section: string[], item: ParsedItem) {

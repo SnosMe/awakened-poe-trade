@@ -11,6 +11,24 @@
         :filter="filters.areaLevel" :name="t('item.area_level')" />
       <filter-btn-numeric v-if="filters.heistWingsRevealed"
         :filter="filters.heistWingsRevealed" :name="t('item.heist_wings_revealed')" />
+      <filter-btn-numeric v-if="filters.heistTotalWings"
+        :filter="filters.heistTotalWings" :name="t('item.heist_total_wings')" />
+      <filter-btn-numeric v-if="filters.heistEscapeRoutes"
+        :filter="filters.heistEscapeRoutes" :name="t('item.heist_escape_routes')" />
+      <filter-btn-numeric v-if="filters.heistTotalEscapeRoutes"
+        :filter="filters.heistTotalEscapeRoutes" :name="t('item.heist_total_escape_routes')" />
+      <filter-btn-numeric v-if="filters.heistRewardRooms"
+        :filter="filters.heistRewardRooms" :name="t('item.heist_reward_rooms')" />
+      <filter-btn-numeric v-if="filters.heistTotalRewardRooms"
+        :filter="filters.heistTotalRewardRooms" :name="t('item.heist_total_reward_rooms')" />
+      <filter-btn-numeric v-if="filters.heistItemQuantity"
+        :filter="filters.heistItemQuantity" :name="t('item.heist_iiq')" />
+      <filter-btn-numeric v-if="filters.heistItemRarity"
+        :filter="filters.heistItemRarity" :name="t('item.heist_iir')" />
+      <filter-btn-logical v-if="filters.heistContractDepartment"
+        :filter="filters.heistContractDepartment" :text="filters.heistContractDepartment.value" />
+      <filter-btn-numeric v-if="filters.heistContractMinLevel"
+        :filter="filters.heistContractMinLevel" :name="t('item.heist_contract_required_level')" />
       <filter-btn-numeric v-if="filters.sentinelCharge"
         :filter="filters.sentinelCharge" :name="t('item.sentinel_charge')" />
       <filter-btn-logical v-if="filters.mapBlighted" readonly
