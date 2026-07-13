@@ -103,7 +103,10 @@
     "foil_unique": "반짝이",
     "mirrored": "복제된",
     "not_mirrored": "복제되지 않은",
-    "map_foil_reward": "반짝이 {0}"
+    "map_foil_reward": "반짝이 {0}",
+    "ultimatum_challenge": "도전",
+    "ultimatum_reward": "보상",
+    "ultimatum_input": "희생: {0}"
   },
   "item_category": {
     "prop": "유형: {0}",
@@ -187,7 +190,8 @@
     "tag_explicit_warlord": "전쟁 군주",
     "tag_explicit_delve": "탐광",
     "tag_explicit_veiled": "장막",
-    "tag_explicit_incursion": "기습"
+    "tag_explicit_incursion": "기습",
+    "tag_ultimatum": "결전"
   },
   "online_filter": {
     "offline_toggle": "오프라인 & 온라인",

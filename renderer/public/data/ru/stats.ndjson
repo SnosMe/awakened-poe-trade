@@ -6951,3 +6951,66 @@
 {"ref":"Zealotry has #% increased Aura Effect","better":1,"matchers":[{"string":"#% усиление эффекта ауры Фанатизма"},{"string":"#% ослабление эффекта ауры Фанатизма","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4096052153"],"implicit":["implicit.stat_4096052153"],"fractured":["fractured.stat_4096052153"]}}}
 {"ref":"Zealotry has #% increased Mana Reservation Efficiency","better":1,"matchers":[{"string":"#% увеличение эффективности удержания маны Фанатизмом"},{"string":"#% уменьшение эффективности удержания маны Фанатизмом","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_168308685"],"enchant":["enchant.stat_168308685"]}}}
 {"ref":"Zealotry has no Reservation","better":1,"matchers":[{"string":"Фанатизм не удерживает ресурсы"}],"trade":{"ids":{"explicit":["explicit.stat_1741242318"]}}}
+{"ref":"Choking Miasma","better":0,"matchers":[{"string":"Удушающие испарения"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_40225"]}},"fromAreaMods":"yes"}
+{"ref":"Choking Miasma II","better":0,"matchers":[{"string":"Удушающие испарения II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_54213"]}},"fromAreaMods":"yes"}
+{"ref":"Choking Miasma III","better":0,"matchers":[{"string":"Удушающие испарения III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_12812"]}},"fromAreaMods":"yes"}
+{"ref":"Stormcaller Runes","better":0,"matchers":[{"string":"Руны призывателя шторма"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_11866"]}},"fromAreaMods":"yes"}
+{"ref":"Stormcaller Runes II","better":0,"matchers":[{"string":"Руны призывателя шторма II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_40295"]}},"fromAreaMods":"yes"}
+{"ref":"Stormcaller Runes III","better":0,"matchers":[{"string":"Руны призывателя шторма III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_43498"]}},"fromAreaMods":"yes"}
+{"ref":"Stormcaller Runes IV","better":0,"matchers":[{"string":"Руны призывателя шторма IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_53101"]}},"fromAreaMods":"yes"}
+{"ref":"Руны призывателя шторма","better":0,"matchers":[{"string":"Руны призывателя шторма"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_19821"]}},"fromAreaMods":"yes"}
+{"ref":"Руны призывателя шторма II","better":0,"matchers":[{"string":"Руны призывателя шторма II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_13955"]}},"fromAreaMods":"yes"}
+{"ref":"Raging Dead","better":0,"matchers":[{"string":"Неистовый мертвец"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_62391"]}},"fromAreaMods":"yes"}
+{"ref":"Raging Dead II","better":0,"matchers":[{"string":"Неистовый мертвец II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_26465"]}},"fromAreaMods":"yes"}
+{"ref":"Raging Dead III","better":0,"matchers":[{"string":"Неистовый мертвец III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_6748"]}},"fromAreaMods":"yes"}
+{"ref":"Raging Dead IV","better":0,"matchers":[{"string":"Неистовый мертвец IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_39655"]}},"fromAreaMods":"yes"}
+{"ref":"Неистовый мертвец","better":0,"matchers":[{"string":"Неистовый мертвец"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_28673"]}},"fromAreaMods":"yes"}
+{"ref":"Неистовый мертвец II","better":0,"matchers":[{"string":"Неистовый мертвец II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_38306"]}},"fromAreaMods":"yes"}
+{"ref":"Неистовый мертвец III","better":0,"matchers":[{"string":"Неистовый мертвец III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_49977"]}},"fromAreaMods":"yes"}
+{"ref":"Неистовый мертвец IV","better":0,"matchers":[{"string":"Неистовый мертвец IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_24954"]}},"fromAreaMods":"yes"}
+{"ref":"Blistering Cold","better":0,"matchers":[{"string":"Обжигающий холод"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_13648"]}},"fromAreaMods":"yes"}
+{"ref":"Blistering Cold II","better":0,"matchers":[{"string":"Обжигающий холод II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_62444"]}},"fromAreaMods":"yes"}
+{"ref":"Blistering Cold III","better":0,"matchers":[{"string":"Обжигающий холод III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_28497"]}},"fromAreaMods":"yes"}
+{"ref":"Blistering Cold IV","better":0,"matchers":[{"string":"Обжигающий холод IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_3273"]}},"fromAreaMods":"yes"}
+{"ref":"Restless Ground","better":0,"matchers":[{"string":"Беспокойная земля"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_27548"]}},"fromAreaMods":"yes"}
+{"ref":"Restless Ground II","better":0,"matchers":[{"string":"Беспокойная земля II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_63601"]}},"fromAreaMods":"yes"}
+{"ref":"Stalking Ruin","better":0,"matchers":[{"string":"Крадущаяся гибель"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_7958"]}},"fromAreaMods":"yes"}
+{"ref":"Stalking Ruin II","better":0,"matchers":[{"string":"Крадущаяся гибель II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_32061"]}},"fromAreaMods":"yes"}
+{"ref":"Stalking Ruin III","better":0,"matchers":[{"string":"Крадущаяся гибель III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_47172"]}},"fromAreaMods":"yes"}
+{"ref":"Stalking Ruin IV","better":0,"matchers":[{"string":"Крадущаяся гибель IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_49847"]}},"fromAreaMods":"yes"}
+{"ref":"Razor Dance","better":0,"matchers":[{"string":"Танец лезвий"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_7052"]}},"fromAreaMods":"yes"}
+{"ref":"Razor Dance II","better":0,"matchers":[{"string":"Танец лезвий II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_45148"]}},"fromAreaMods":"yes"}
+{"ref":"Razor Dance III","better":0,"matchers":[{"string":"Танец лезвий III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_22941"]}},"fromAreaMods":"yes"}
+{"ref":"Razor Dance IV","better":0,"matchers":[{"string":"Танец лезвий IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_15044"]}},"fromAreaMods":"yes"}
+{"ref":"Totem of Costly Might","better":0,"matchers":[{"string":"Тотем дорогостоящей силы"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_8887"]}},"fromAreaMods":"yes"}
+{"ref":"Totem of Costly Potency","better":0,"matchers":[{"string":"Тотем дорогостоящего могущества"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_58910"]}},"fromAreaMods":"yes"}
+{"ref":"Ruin II","better":0,"matchers":[{"string":"Гибель II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_24728"]}},"fromAreaMods":"yes"}
+{"ref":"Ruin III","better":0,"matchers":[{"string":"Гибель III"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_35694"]}},"fromAreaMods":"yes"}
+{"ref":"Ruin IV","better":0,"matchers":[{"string":"Гибель IV"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_60794"]}},"fromAreaMods":"yes"}
+{"ref":"Reduced Recovery","better":0,"matchers":[{"string":"Уменьшенное восстановление"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_5772"]}},"fromAreaMods":"yes"}
+{"ref":"Reduced Recovery II","better":0,"matchers":[{"string":"Уменьшенное восстановление II"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_37639"]}},"fromAreaMods":"yes"}
+{"ref":"Lessened Reach","better":0,"matchers":[{"string":"Уменьшение досягаемости"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_50320"]}},"fromAreaMods":"yes"}
+{"ref":"Buffs Expire Faster","better":0,"matchers":[{"string":"Быстрое истечение положительных эффектов"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_29421"]}},"fromAreaMods":"yes"}
+{"ref":"Less Cooldown Recovery","better":0,"matchers":[{"string":"Замедление перезарядки"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_39295"]}},"fromAreaMods":"yes"}
+{"ref":"Escalating Damage Taken","better":0,"matchers":[{"string":"Постоянное повышение получаемого урона"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_57621"]}},"fromAreaMods":"yes"}
+{"ref":"Escalating Monster Speed","better":0,"matchers":[{"string":"Постоянное повышение скорости монстров"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_7961"]}},"fromAreaMods":"yes"}
+{"ref":"Profane Monsters","better":0,"matchers":[{"string":"Нечестивые монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_18354"]}},"fromAreaMods":"yes"}
+{"ref":"Unlucky Criticals","better":0,"matchers":[{"string":"Неудачливые критические удары"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_40124"]}},"fromAreaMods":"yes"}
+{"ref":"Hindering Flasks","better":0,"matchers":[{"string":"Сковывающие флаконы"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_27491"]}},"fromAreaMods":"yes"}
+{"ref":"Drought","better":0,"matchers":[{"string":"Засуха"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_15668"]}},"fromAreaMods":"yes"}
+{"ref":"Ailment and Curse Reflection","better":0,"matchers":[{"string":"Отражение состояний и проклятий"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_11872"]}},"fromAreaMods":"yes"}
+{"ref":"Lightning Damage from Mana Costs","better":0,"matchers":[{"string":"Урон от молнии при расходе маны"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_58901"]}},"fromAreaMods":"yes"}
+{"ref":"Treacherous Auras","better":0,"matchers":[{"string":"Предательские ауры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_12730"]}},"fromAreaMods":"yes"}
+{"ref":"Occasional Impotence","better":0,"matchers":[{"string":"Случайное бессилие"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_65051"]}},"fromAreaMods":"yes"}
+{"ref":"Siphoned Charges","better":0,"matchers":[{"string":"Исчезающие заряды"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_21966"]}},"fromAreaMods":"yes"}
+{"ref":"Shattered Shield","better":0,"matchers":[{"string":"Расколотый щит"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_43095"]}},"fromAreaMods":"yes"}
+{"ref":"Unstoppable Monsters","better":0,"matchers":[{"string":"Неудержимые монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_11559"]}},"fromAreaMods":"yes"}
+{"ref":"Lethal Rare Monsters","better":0,"matchers":[{"string":"Беспощадные редкие монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_47347"]}},"fromAreaMods":"yes"}
+{"ref":"Shielding Monsters","better":0,"matchers":[{"string":"Ограждающие монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_36548"]}},"fromAreaMods":"yes"}
+{"ref":"Precise Monsters","better":0,"matchers":[{"string":"Точные монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_33891"]}},"fromAreaMods":"yes"}
+{"ref":"Overwhelming Monsters","better":0,"matchers":[{"string":"Подавляющие монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_59748"]}},"fromAreaMods":"yes"}
+{"ref":"Deadly Monsters","better":0,"matchers":[{"string":"Смертоносные монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_38838"]}},"fromAreaMods":"yes"}
+{"ref":"Prismatic Monsters","better":0,"matchers":[{"string":"Радужные монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_39785"]}},"fromAreaMods":"yes"}
+{"ref":"Resistant Monsters","better":0,"matchers":[{"string":"Устойчивые монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_25457"]}},"fromAreaMods":"yes"}
+{"ref":"Dexterous Monsters","better":0,"matchers":[{"string":"Проворные монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_10506"]}},"fromAreaMods":"yes"}
+{"ref":"Siphoning Monsters","better":0,"matchers":[{"string":"Вытягивающие монстры"}],"trade":{"ids":{"ultimatum":["ultimatum.umod_45921"]}},"fromAreaMods":"yes"}

@@ -57,6 +57,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSockets,
   parseHeistContract,
   parseHeistBlueprint,
+  parseUltimatum,
+  parseUltimatumMods,
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirroredTablet,
@@ -960,6 +962,74 @@ function parseAreaLevelNested (section: string[], item: ParsedItem) {
       break
     }
   }
+}
+
+function parseUltimatum (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Inscribed Ultimatum') return 'PARSER_SKIPPED'
+  let challenge: string | undefined
+  let reward: string | undefined
+  let sacrifice: string | undefined
+  let sacrificeAmount: number | undefined
+
+  for (const line of section) {
+    if (line.startsWith(_$.ULTIMATUM_CHALLENGE)) {
+      challenge = line.slice(_$.ULTIMATUM_CHALLENGE.length)
+    } else if (line.startsWith(_$.ULTIMATUM_REWARD)) {
+      reward = line.slice(_$.ULTIMATUM_REWARD.length)
+    } else {
+      const m = _$.ULTIMATUM_SACRIFICE.exec(line)
+      if (m) {
+        sacrifice = m[1]
+        sacrificeAmount = m[2] ? Number(m[2]) : 1
+      }
+    }
+  }
+
+  if (challenge && reward && sacrifice && sacrificeAmount) {
+    parseAreaLevelNested(section, item)
+    item.ultimatum = { challenge, reward, sacrifice, sacrificeAmount }
+    return 'SECTION_PARSED'
+  }
+  return 'SECTION_SKIPPED'
+}
+
+function parseUltimatumMods (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Inscribed Ultimatum') return 'PARSER_SKIPPED'
+
+  let anyParsed = false
+  let lastModRef: string | undefined
+  for (const line of section) {
+    if (line.startsWith('(') && lastModRef) {
+      const desc = line.endsWith(')') ? line.slice(1, -1) : line.slice(1)
+      if (!item.ultimatumModDescriptions) {
+        item.ultimatumModDescriptions = {}
+      }
+      item.ultimatumModDescriptions[lastModRef] = desc
+      continue
+    }
+    lastModRef = undefined
+    const ultFound = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Ultimatum, undefined)
+    if (ultFound) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Ultimatum },
+        stats: [ultFound]
+      })
+      lastModRef = ultFound.stat.ref
+      anyParsed = true
+      continue
+    }
+    const expFound = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Explicit, undefined)
+    if (expFound) {
+      item.newMods.push({
+        info: { tags: [], type: ModifierType.Explicit },
+        stats: [expFound]
+      })
+      lastModRef = expFound.stat.ref
+      anyParsed = true
+    }
+  }
+
+  return anyParsed ? 'SECTION_PARSED' : 'SECTION_SKIPPED'
 }
 
 function parseAreaLevel (section: string[], item: ParsedItem) {

@@ -33,7 +33,7 @@ export const usePoeninja = createGlobalState(() => {
   const xchgRate = shallowRef<number | undefined>(undefined)
 
   const isLoading = shallowRef(false)
-  let PRICES_DB: PriceDatabase = []
+  const PRICES_DB = shallowRef<PriceDatabase>([])
   let lastUpdateTime = 0
   let downloadController: AbortController | undefined
   let lastInterestTime = 0
@@ -56,7 +56,7 @@ export const usePoeninja = createGlobalState(() => {
       })
       const jsonBlob = await response.text()
 
-      PRICES_DB = splitJsonBlob(jsonBlob)
+      PRICES_DB.value = splitJsonBlob(jsonBlob)
       const divine = findPriceByQuery({ ns: 'ITEM', name: 'Divine Orb', variant: undefined })
       if (divine && divine.chaos >= 30) {
         xchgRate.value = divine.chaos
@@ -95,7 +95,7 @@ export const usePoeninja = createGlobalState(() => {
       chaos: 0
     }).replace(':0}', ':')
 
-    for (const { ns, url, lines } of PRICES_DB) {
+    for (const { ns, url, lines } of PRICES_DB.value) {
       if (ns !== query.ns) continue
 
       const startPos = lines.indexOf(searchString)
@@ -110,6 +110,39 @@ export const usePoeninja = createGlobalState(() => {
       }
     }
     return null
+  }
+
+  function findPriceByName (name: string) {
+    const nameStr = `"name":${JSON.stringify(name)},`
+    let fallback: (NinjaDenseInfo & { url: string }) | null = null
+
+    for (const { ns, url, lines } of PRICES_DB.value) {
+      let searchFrom = 0
+      while (true) {
+        const namePos = lines.indexOf(nameStr, searchFrom)
+        if (namePos === -1) break
+
+        const startPos = lines.lastIndexOf('{', namePos)
+        const endPos = lines.indexOf('}', namePos)
+        if (startPos === -1 || endPos === -1) { searchFrom = namePos + nameStr.length; continue }
+
+        const info: NinjaDenseInfo = JSON.parse(lines.slice(startPos, endPos + 1))
+        searchFrom = endPos + 1
+
+        const entry = {
+          ...info,
+          url: `https://poe.ninja/poe1/economy/${selectedLeagueToUrl()}/${url}/${denseInfoToDetailsId(info)}`
+        }
+
+        if (!info.variant || !info.variant.includes(',')) {
+          return entry
+        }
+        if (!fallback) {
+          fallback = entry
+        }
+      }
+    }
+    return fallback
   }
 
   function autoCurrency (value: number | [number, number]): CurrencyValue {
@@ -139,16 +172,17 @@ export const usePoeninja = createGlobalState(() => {
 
   watch(leagues.selectedId, () => {
     xchgRate.value = undefined
-    PRICES_DB = []
+    PRICES_DB.value = []
     load(true)
   })
 
   return {
     xchgRate: readonly(xchgRate),
     findPriceByQuery,
+    findPriceByName,
     autoCurrency,
     queuePricesFetch,
-    initialLoading: () => isLoading.value && !PRICES_DB.length
+    initialLoading: () => isLoading.value && !PRICES_DB.value.length
   }
 })
 
