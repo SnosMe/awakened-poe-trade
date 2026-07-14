@@ -429,6 +429,14 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     applyFlaskHybridMod(ctx)
   }
 
+  if (item.sockets?.abyssal) {
+    for (const filter of ctx.filters) {
+      if (filter.statRef === 'Has # Abyssal Sockets') {
+        filter.hidden = 'filters.hide_const_roll'
+      }
+    }
+  }
+
   const hasEmptyModifier = showHasEmptyModifier(ctx)
   if (hasEmptyModifier !== false) {
     ctx.filters.push({

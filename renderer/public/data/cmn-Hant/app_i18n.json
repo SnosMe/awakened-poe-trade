@@ -25,6 +25,9 @@
     "scourge": "天災",
     "Not recognized modifier": "無法使用此詞綴",
     "Refresh": "刷新",
+    "item": {
+      "abyssal_sockets": "Abyss: {0}"
+    },
     "map.mods.heist": "劫盜",
     "map.mods.outdated": "過時",
     "Support development on": "支持開發"

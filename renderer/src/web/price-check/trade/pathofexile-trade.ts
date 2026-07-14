@@ -363,6 +363,17 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     propSet(query.filters, 'socket_filters.filters.sockets.w', filters.whiteSockets.value)
   }
 
+  if (filters.abyssalSockets && !filters.abyssalSockets.disabled) {
+    const abyssalStat = STAT_BY_REF_V2(stat('Has # Abyssal Sockets'))!
+    const dbStats = ('stats' in abyssalStat) ? abyssalStat.stats : [abyssalStat]
+    const tradeId = dbStats[0].trade.ids[ModifierType.Explicit][0]
+    query.stats[0].filters.push({
+      id: tradeId,
+      value: { min: filters.abyssalSockets.value },
+      disabled: false
+    })
+  }
+
   if (filters.mapTier && !filters.mapTier.disabled) {
     propSet(query.filters, 'map_filters.filters.map_tier.min', filters.mapTier.value)
     propSet(query.filters, 'map_filters.filters.map_tier.max', filters.mapTier.value)
