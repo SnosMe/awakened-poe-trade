@@ -83,7 +83,7 @@ export class HostClipboard {
 
   // when `shouldRestore` is false, this function continues
   // to work as a throttler for callback
-  restoreShortly (cb: (clipboard: Clipboard) => void) {
+  async restoreShortly (cb: (clipboard: Clipboard) => void | Promise<void>) {
     // Not only do we not overwrite the clipboard, but we don't exec callback.
     // This throttling helps against disconnects from "Too many actions".
     if (!this.isRestored) {
@@ -92,7 +92,7 @@ export class HostClipboard {
 
     this.isRestored = false
     const saved = clipboard.readText()
-    cb(clipboard)
+    await cb(clipboard)
     setTimeout(() => {
       if (this.shouldRestore) {
         clipboard.writeText(saved)
