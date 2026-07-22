@@ -17,6 +17,7 @@
   },
   "main": "dist/main.js",
   "dependencies": {
+    "@homebridge/dbus-native": "0.7.7",
     "electron-overlay-window": "4.1.0",
     "uiohook-napi": "1.5.5"
   },

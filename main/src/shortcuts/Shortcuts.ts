@@ -1,4 +1,4 @@
-import { screen, globalShortcut } from 'electron'
+import { globalShortcut } from 'electron'
 import { uIOhook, UiohookKey, UiohookWheelEvent } from 'uiohook-napi'
 import { isModKey, KeyToElectron, mergeTwoHotkeys } from '../../../ipc/KeyToCode'
 import { typeInChat, stashSearch } from './text-box'
@@ -11,6 +11,7 @@ import type { OverlayWindow } from '../windowing/OverlayWindow'
 import type { GameWindow } from '../windowing/GameWindow'
 import type { GameConfig } from '../host-files/GameConfig'
 import type { ServerEvents } from '../server'
+import { isPlasmaWayland, Keyboard, setWaylandLog, WaylandShortcuts } from '../wayland'
 
 type UiohookKeyT = keyof typeof UiohookKey
 const UiohookToName = Object.fromEntries(Object.entries(UiohookKey).map(([k, v]) => ([v, k])))
@@ -21,6 +22,8 @@ export class Shortcuts {
   private logKeys = false
   private areaTracker: WidgetAreaTracker
   private clipboard: HostClipboard
+  private keyboard = new Keyboard()
+  private waylandShortcuts = isPlasmaWayland ? new WaylandShortcuts() : undefined
 
   static async create (
     logger: Logger,
@@ -31,6 +34,7 @@ export class Shortcuts {
   ) {
     const ocrWorker = await OcrWorker.create()
     const shortcuts = new Shortcuts(logger, overlay, poeWindow, gameConfig, server, ocrWorker)
+    await shortcuts.keyboard.start()
     return shortcuts
   }
 
@@ -42,7 +46,8 @@ export class Shortcuts {
     private server: ServerEvents,
     private ocrWorker: OcrWorker
   ) {
-    this.areaTracker = new WidgetAreaTracker(server, overlay)
+    setWaylandLog((message) => { this.logger.write(message) })
+    this.areaTracker = new WidgetAreaTracker(server, overlay, poeWindow)
     this.clipboard = new HostClipboard(logger)
 
     this.poeWindow.on('active-change', (isActive) => {
@@ -59,7 +64,7 @@ export class Shortcuts {
 
     this.server.onEventAnyClient('CLIENT->MAIN::user-action', (e) => {
       if (e.action === 'stash-search') {
-        stashSearch(e.text, this.clipboard, this.overlay)
+        stashSearch(e.text, this.clipboard, this.overlay, this.keyboard)
       }
     })
 
@@ -78,9 +83,9 @@ export class Shortcuts {
 
       if (!isStashArea(e, this.poeWindow)) {
         if (e.rotation > 0) {
-          uIOhook.keyTap(UiohookKey.ArrowRight)
+          this.keyboard.keyTap(UiohookKey.ArrowRight)
         } else if (e.rotation < 0) {
-          uIOhook.keyTap(UiohookKey.ArrowLeft)
+          this.keyboard.keyTap(UiohookKey.ArrowLeft)
         }
       }
     })
@@ -134,40 +139,50 @@ export class Shortcuts {
     this.actions = actions.filter(action =>
       !duplicates.has(action.shortcut) ||
       action.action.type === 'toggle-overlay')
+
+    if (this.waylandShortcuts && this.poeWindow.isActive) this.register()
   }
 
   private register () {
+    const definitions = []
     for (const entry of this.actions) {
-      const isOk = globalShortcut.register(shortcutToElectron(entry.shortcut), () => {
+      const activate = (releaseKeys: boolean) => {
         if (this.logKeys) {
           this.logger.write(`debug [Shortcuts] Action type: ${entry.action.type}`)
         }
 
-        if (entry.keepModKeys) {
-          const nonModKey = entry.shortcut.split(' + ').filter(key => !isModKey(key))[0]
-          uIOhook.keyToggle(UiohookKey[nonModKey as UiohookKeyT], 'up')
-        } else {
-          entry.shortcut.split(' + ').reverse().forEach(key => { uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'up') })
+        if (releaseKeys) {
+          if (entry.keepModKeys) {
+            const nonModKey = entry.shortcut.split(' + ').filter(key => !isModKey(key))[0]
+            this.keyboard.keyToggle(UiohookKey[nonModKey as UiohookKeyT], 'up')
+          } else {
+            entry.shortcut.split(' + ').reverse().forEach(key => { this.keyboard.keyToggle(UiohookKey[key as UiohookKeyT], 'up') })
+          }
         }
 
         if (entry.action.type === 'toggle-overlay') {
           this.areaTracker.removeListeners()
           this.overlay.toggleActiveState()
         } else if (entry.action.type === 'paste-in-chat') {
-          typeInChat(entry.action.text, entry.action.send, this.clipboard)
+          typeInChat(entry.action.text, entry.action.send, this.clipboard, this.keyboard)
         } else if (entry.action.type === 'trigger-event') {
           this.server.sendEventTo('broadcast', {
             name: 'MAIN->CLIENT::widget-action',
             payload: { target: entry.action.target }
           })
         } else if (entry.action.type === 'stash-search') {
-          stashSearch(entry.action.text, this.clipboard, this.overlay)
+          stashSearch(entry.action.text, this.clipboard, this.overlay, this.keyboard)
         } else if (entry.action.type === 'copy-item') {
           const { action } = entry
+          const pressPosition = this.poeWindow.cursorPosition
 
-          const pressPosition = screen.getCursorScreenPoint()
-
-          this.clipboard.readItemText()
+          this.clipboard.readItemText(() => {
+            pressKeysToCopyItemText(
+              (entry.keepModKeys) ? entry.shortcut.split(' + ').filter(key => isModKey(key)) : undefined,
+              this.gameConfig.showModsKey,
+              this.keyboard
+            )
+          })
             .then(clipboard => {
               this.areaTracker.removeListeners()
               this.server.sendEventTo('last-active', {
@@ -179,10 +194,6 @@ export class Shortcuts {
               }
             }).catch(() => {})
 
-          pressKeysToCopyItemText(
-            (entry.keepModKeys) ? entry.shortcut.split(' + ').filter(key => isModKey(key)) : undefined,
-            this.gameConfig.showModsKey
-          )
         } else if (entry.action.type === 'ocr-text' && entry.action.target === 'heist-gems') {
           if (process.platform !== 'win32') return
 
@@ -205,24 +216,50 @@ export class Shortcuts {
             })
           }).catch(() => {})
         }
-      })
+      }
 
+      if (this.waylandShortcuts) {
+        definitions.push({
+          shortcut: entry.shortcut,
+          description: shortcutDescription(entry),
+          onActivated: () => { if (this.poeWindow.isActive) activate(false) }
+        })
+        continue
+      }
+
+      const isOk = globalShortcut.register(shortcutToElectron(entry.shortcut), () => { activate(true) })
       if (!isOk) {
         this.logger.write(`error [Shortcuts] Failed to register a shortcut "${entry.shortcut}". It is already registered by another application.`)
       }
-
       if (entry.action.type === 'test-only') {
         globalShortcut.unregister(shortcutToElectron(entry.shortcut))
       }
     }
+
+    if (this.waylandShortcuts) {
+      void this.waylandShortcuts.configure(definitions)
+      void this.waylandShortcuts.start()
+    }
   }
 
   private unregister () {
-    globalShortcut.unregisterAll()
+    if (this.waylandShortcuts) void this.waylandShortcuts.stop()
+    else globalShortcut.unregisterAll()
+  }
+
+  async stop () {
+    await Promise.all([this.keyboard.stop(), this.waylandShortcuts?.stop()])
   }
 }
 
-function pressKeysToCopyItemText (pressedModKeys: string[] = [], showModsKey: string) {
+function shortcutDescription (entry: ShortcutAction) {
+  const description = entry.action.type === 'copy-item' && entry.action.focusOverlay
+    ? 'price check item'
+    : entry.action.type.replaceAll('-', ' ')
+  return description[0].toUpperCase() + description.slice(1)
+}
+
+function pressKeysToCopyItemText (pressedModKeys: string[] = [], showModsKey: string, keyboard: Keyboard) {
   let keys = mergeTwoHotkeys('Ctrl + C', showModsKey).split(' + ')
   keys = keys.filter(key => key !== 'C')
   if (process.platform !== 'darwin') {
@@ -236,15 +273,15 @@ function pressKeysToCopyItemText (pressedModKeys: string[] = [], showModsKey: st
   }
 
   for (const key of keys) {
-    uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'down')
+    keyboard.keyToggle(UiohookKey[key as UiohookKeyT], 'down')
   }
 
   // finally press `C` to copy text
-  uIOhook.keyTap(UiohookKey.C)
+  keyboard.keyTap(UiohookKey.C)
 
   keys.reverse()
   for (const key of keys) {
-    uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'up')
+    keyboard.keyToggle(UiohookKey[key as UiohookKeyT], 'up')
   }
 }
 
