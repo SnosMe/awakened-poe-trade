@@ -14,9 +14,15 @@ import { AppTray } from './AppTray'
 import { OverlayVisibility } from './windowing/OverlayVisibility'
 import { GameLogWatcher } from './host-files/GameLogWatcher'
 import { HttpProxy } from './proxy'
+import { isPlasmaWayland, WAYLAND_APP_ID } from './wayland'
 
 if (!app.requestSingleInstanceLock()) {
   app.exit()
+}
+
+if (isPlasmaWayland) {
+  app.commandLine.appendSwitch('class', WAYLAND_APP_ID)
+  app.commandLine.appendSwitch('ozone-platform', 'wayland')
 }
 
 if (process.platform !== 'darwin') {
@@ -38,8 +44,15 @@ app.on('ready', async () => {
   setTimeout(
     async () => {
       const overlay = new OverlayWindow(eventPipe, logger, poeWindow)
-      new OverlayVisibility(eventPipe, overlay, gameConfig)
+      if (!isPlasmaWayland) new OverlayVisibility(eventPipe, overlay, gameConfig)
       const shortcuts = await Shortcuts.create(logger, overlay, poeWindow, gameConfig, eventPipe)
+      let isShuttingDown = false
+      app.on('before-quit', (event) => {
+        if (!isPlasmaWayland || isShuttingDown) return
+        event.preventDefault()
+        isShuttingDown = true
+        Promise.all([poeWindow.stop(), shortcuts.stop()]).finally(() => { app.quit() })
+      })
       eventPipe.onEventAnyClient('CLIENT->MAIN::update-host-config', (cfg) => {
         overlay.updateOpts(cfg.overlayKey, cfg.windowTitle)
         shortcuts.updateActions(cfg.shortcuts, cfg.stashScroll, cfg.logKeys, cfg.restoreClipboard, cfg.language)
@@ -48,7 +61,7 @@ app.on('ready', async () => {
         appUpdater.checkAtStartup()
         tray.overlayKey = cfg.overlayKey
       })
-      uIOhook.start()
+      if (!isPlasmaWayland) uIOhook.start()
       const port = await startServer(appUpdater, logger)
       // TODO: move up (currently crashes)
       logger.write(`info ${os.type()} ${os.release} / v${app.getVersion()}`)

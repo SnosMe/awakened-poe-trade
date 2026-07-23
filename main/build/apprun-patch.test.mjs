@@ -8,11 +8,13 @@ export default function (ctx) {
   const stdout = execSync(`
     chmod +x '${ctx.file}' && \
     '${ctx.file}' --appimage-extract AppRun && \
-    grep 'args=' squashfs-root/AppRun
+    grep -E 'XDG_SESSION_TYPE|args=' squashfs-root/AppRun
   `, { encoding: 'utf-8' })
 
   assert.equal(
     stdout,
-    'args=("$@" "--ozone-platform=x11")\n',
+    'if [[ "${XDG_SESSION_TYPE:-}" == "wayland" && "${XDG_CURRENT_DESKTOP:-}" == *KDE* ]] ; then\n' +
+    '  args=("$@")\n' +
+    '  args=("$@" "--ozone-platform=x11")\n',
     "AppImage contains non patched AppRun file.")
 }

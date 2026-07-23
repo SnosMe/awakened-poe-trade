@@ -1,9 +1,10 @@
 import path from 'path'
 import { BrowserWindow, dialog, shell, Menu, WebContents } from 'electron'
-import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
+import { OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
 import type { ServerEvents } from '../server'
 import type { Logger } from '../RemoteLogger'
 import type { GameWindow } from './GameWindow'
+import { isPlasmaWayland, WAYLAND_WINDOW_TITLE } from '../wayland'
 
 export class OverlayWindow {
   public isInteractable = false
@@ -30,6 +31,9 @@ export class OverlayWindow {
     this.window = new BrowserWindow({
       icon: path.join(__dirname, process.env.STATIC!, 'icon.png'),
       ...OVERLAY_WINDOW_OPTS,
+      title: isPlasmaWayland ? WAYLAND_WINDOW_TITLE : undefined,
+      skipTaskbar: isPlasmaWayland || OVERLAY_WINDOW_OPTS.skipTaskbar,
+      alwaysOnTop: isPlasmaWayland || OVERLAY_WINDOW_OPTS.alwaysOnTop,
       width: 800,
       height: 600,
       webPreferences: {
@@ -76,7 +80,7 @@ export class OverlayWindow {
   assertOverlayActive = () => {
     if (!this.isInteractable) {
       this.isInteractable = true
-      OverlayController.activateOverlay()
+      this.poeWindow.activateOverlay()
       this.poeWindow.isActive = false
     }
   }
@@ -84,7 +88,7 @@ export class OverlayWindow {
   assertGameActive = () => {
     if (this.isInteractable) {
       this.isInteractable = false
-      OverlayController.focusTarget()
+      this.poeWindow.focusTarget()
       this.poeWindow.isActive = true
     }
   }
