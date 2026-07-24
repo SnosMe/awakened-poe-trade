@@ -20,7 +20,7 @@ export default defineConfig({
   },
   themeConfig: {
     // logo: 'TODO', https://github.com/vuejs/vitepress/issues/1401
-    appVersion: '3.28.101',
+    appVersion: '3.28.104',
     github: {
       releasesUrl: 'https://github.com/SnosMe/awakened-poe-trade/releases'
     },
