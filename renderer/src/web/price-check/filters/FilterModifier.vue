@@ -307,11 +307,14 @@ export default defineComponent({
   align-items: center;
   @apply -mx-1 pl-0.5 gap-x-0.5 text-gray-600;
   text-shadow: 0 0 4px theme('colors.gray.900');
+  overflow: clip visible;
+  min-width: 0;
 
   &::before {
     background-size: contain;
     @apply w-5 h-5 -my-5;
     content: '';
+    flex-shrink: 0;
   }
 }
 .tag-explicit-shaper::before {
