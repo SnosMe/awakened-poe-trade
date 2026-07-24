@@ -109,7 +109,8 @@
     "not_mirrored": "Not Mirrored",
     "split": "Split",
     "not_split": "Not Split",
-    "map_foil_reward": "Foil {0}"
+    "map_foil_reward": "Foil {0}",
+    "stored_experience": "Stored Experience"
   },
   "item_category": {
     "prop": "Category: {0}",
@@ -296,7 +297,8 @@
     "you_have": "You have",
     "stack": "Stack",
     "legacy_bulk_xchg_msg": "This item is available on the Currency Exchange Market",
-    "market_ratio": "Market Ratio"
+    "market_ratio": "Market Ratio",
+    "stored_experience": "Stored Experience"
   },
   "settings": {
     "title": "Settings - Awakened PoE Trade",
