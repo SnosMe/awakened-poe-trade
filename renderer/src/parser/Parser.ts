@@ -678,11 +678,10 @@ function parseAccessory (section: string[], item: ParsedItem) {
 function parseLogbookArea (section: string[], item: ParsedItem) {
   if (item.info.refName !== 'Expedition Logbook') return 'PARSER_SKIPPED'
   if (section.length < 3) return 'SECTION_SKIPPED'
-  if (isModInfoLine(section[0])) return 'SECTION_SKIPPED'
 
-  // skip Area, parse Faction
+  // skip Logbook Area line, parse Faction
   const faction = STAT_BY_MATCH_STR(section[1])
-  if (!faction) return 'SECTION_SKIPPED'
+  if (!faction || !faction.stat.ref.startsWith('Has Logbook Faction:')) return 'SECTION_SKIPPED'
 
   const areaMods: ParsedModifier[] = [{
     info: { tags: [], type: ModifierType.Pseudo },
