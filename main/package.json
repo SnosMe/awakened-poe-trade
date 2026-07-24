@@ -26,7 +26,7 @@
     "@types/ws": "^8.18.1",
     "@wokwi/bmp-ts": "^3.0.0",
     "comlink": "^4.4.2",
-    "electron": "^40.9.1",
+    "electron": "^40.10.6",
     "electron-builder": "^26.9.0",
     "electron-updater": "^6.8.3",
     "esbuild": "^0.28.0",
@@ -34,5 +34,8 @@
     "patch-package": "^8.0.1",
     "typescript": "^6.0.2",
     "ws": "^8.20.0"
+  },
+  "allowScripts": {
+    "electron": true
   }
 }
