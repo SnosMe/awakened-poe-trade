@@ -240,13 +240,6 @@ export function createFilters (
     }
   }
 
-  if (item.sockets?.white) {
-    filters.whiteSockets = {
-      value: item.sockets.white,
-      disabled: false
-    }
-  }
-
   const forAdornedJewel = (
     item.rarity === ItemRarity.Magic &&
     // item.isCorrupted && -- let the buyer corrupt
