@@ -3,8 +3,11 @@
     <button @click="handleClick" :class="[$style.cycleBtn, btnStyle().bg]">
       <i class="text-center w-4 shrink-0"
         :class="btnStyle().icon" />
-      <ItemModifierText class="truncate"
-        :text="stat.matcher" :roll="stat.roll" />
+      <div>
+        <ItemModifierText
+          :text="stat.matcher" :roll="stat.roll" />
+        <div v-if="stat.description" class="text-xs text-gray-400">{{ stat.description }}</div>
+      </div>
     </button>
     <button @click="toggleSeenStatus" :class="$style.seenBtn">
       <i v-if="newStatIconVisible()" class="fas fa-eye-slash"></i>
@@ -78,11 +81,10 @@ function handleClick () {
 .cycleBtn {
   @apply p-2;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   @apply gap-x-2;
   line-height: 1;
   text-align: left;
-  overflow: hidden;
   flex: 1;
 
   &.danger { @apply bg-red-700; }

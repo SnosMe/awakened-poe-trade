@@ -122,5 +122,6 @@ export enum ModifierType {
   Necropolis = 'necropolis',
   Veiled = 'veiled',
   Fractured = 'fractured',
-  Imbued = 'imbued'
+  Imbued = 'imbued',
+  Ultimatum = 'ultimatum'
 }
