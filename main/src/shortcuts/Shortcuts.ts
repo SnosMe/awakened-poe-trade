@@ -98,21 +98,12 @@ export class Shortcuts {
     this.clipboard.updateOptions(restoreClipboard)
     this.ocrWorker.updateOptions(language)
 
-    const copyItemShortcut = mergeTwoHotkeys('Ctrl + C', this.gameConfig.showModsKey)
-    if (copyItemShortcut !== 'Ctrl + C') {
-      actions.push({
-        shortcut: copyItemShortcut,
-        action: { type: 'test-only' }
-      })
-    }
-
     const allShortcuts = new Set([
       'Ctrl + C', 'Ctrl + V', 'Ctrl + A',
       'Ctrl + F',
       'Ctrl + Enter',
       'Home', 'Delete', 'Enter',
-      'ArrowUp', 'ArrowRight', 'ArrowLeft',
-      copyItemShortcut
+      'ArrowUp', 'ArrowRight', 'ArrowLeft'
     ])
 
     for (const action of actions) {
@@ -223,6 +214,9 @@ export class Shortcuts {
 }
 
 function pressKeysToCopyItemText (pressedModKeys: string[] = [], showModsKey: string) {
+  // 3.29: Copying an item's text now always copies the advanced description format.
+  showModsKey = 'Ctrl'
+
   let keys = mergeTwoHotkeys('Ctrl + C', showModsKey).split(' + ')
   keys = keys.filter(key => key !== 'C')
   if (process.platform !== 'darwin') {
