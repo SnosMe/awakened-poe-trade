@@ -242,10 +242,12 @@ function pressKeysToCopyItemText (pressedModKeys: string[] = [], showModsKey: st
   // finally press `C` to copy text
   uIOhook.keyTap(UiohookKey.C)
 
-  keys.reverse()
-  for (const key of keys) {
-    uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'up')
-  }
+  setTimeout(() => {
+    keys.reverse()
+    for (const key of keys) {
+      uIOhook.keyToggle(UiohookKey[key as UiohookKeyT], 'up')
+    }
+  }, 10)
 }
 
 function isStashArea (mouse: UiohookWheelEvent, poeWindow: GameWindow): boolean {
