@@ -692,6 +692,13 @@ function getMinMax (roll: StatFilter['roll'], divisor: number) {
 function tradeIdToQuery (id: string, stat: Pick<StatFilter, 'roll' | 'option' | 'disabled'>) {
   let roll = stat.roll
 
+  // A pipe suffix selects a fixed variant from an option-based trade stat.
+  // Numbers shown in the variant's text describe the variant itself and must
+  // not also be sent as min/max filters.
+  if (id.includes('|')) {
+    roll = undefined
+  }
+
   const divMinMax = id.startsWith('{div_by_100}') ? 100 : 1
   if (id.startsWith('{empty}') ||
     (id.startsWith('{empty_if_100}') && roll?.value === 100)
