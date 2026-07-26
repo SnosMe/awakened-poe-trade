@@ -1,5 +1,5 @@
 import path from 'path'
-import { BrowserWindow, dialog, shell, Menu, WebContents } from 'electron'
+import { BrowserWindow, dialog, shell, Menu, WebContents, session } from 'electron'
 import { OverlayController, OVERLAY_WINDOW_OPTS } from 'electron-overlay-window'
 import type { ServerEvents } from '../server'
 import type { Logger } from '../RemoteLogger'
@@ -48,6 +48,26 @@ export class OverlayWindow {
     this.window.webContents.on('before-input-event', this.handleExtraCommands)
     this.window.webContents.on('did-attach-webview', (_, webviewWebContents) => {
       webviewWebContents.on('before-input-event', this.handleExtraCommands)
+      webviewWebContents.on('did-finish-load', async () => {
+        try {
+          const cookies = await webviewWebContents.session.cookies.get({})
+          for (const cookie of cookies) {
+            const scheme = cookie.secure ? 'https' : 'http'
+            const domain = (cookie.domain || 'pathofexile.com').replace(/^\./, '')
+            const url = `${scheme}://${domain}${cookie.path || '/'}`
+            await session.defaultSession.cookies.set({
+              url,
+              name: cookie.name,
+              value: cookie.value,
+              domain: cookie.domain,
+              path: cookie.path,
+              secure: cookie.secure,
+              httpOnly: cookie.httpOnly,
+              expirationDate: cookie.expirationDate
+            })
+          }
+        } catch {}
+      })
     })
 
     this.window.webContents.setWindowOpenHandler((details) => {

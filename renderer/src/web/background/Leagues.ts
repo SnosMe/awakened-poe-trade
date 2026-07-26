@@ -50,13 +50,35 @@ export const useLeagues = createGlobalState(() => {
     error.value = null
 
     try {
-      const response = await Host.proxy(`${poeWebApi()}/api/leagues?type=main&realm=pc`)
-      if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
-      const leagues: ApiLeague[] = await response.json()
+      let leagues: ApiLeague[] | undefined
+      try {
+        const response = await Host.proxy(`${poeWebApi()}/api/leagues?type=main&realm=pc`)
+        if (response.ok) {
+          leagues = await response.json()
+        }
+      } catch {}
+
+      if (!leagues) {
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const webview = document.querySelector<any>('webview')
+        if (webview && typeof webview.executeJavaScript === 'function') {
+          try {
+            const bodyText = await webview.executeJavaScript('document.body.innerText')
+            if (bodyText && bodyText.trim().startsWith('[')) {
+              leagues = JSON.parse(bodyText)
+            }
+          } catch {}
+        }
+      }
+
+      if (!leagues) {
+        throw new Error('Failed to load leagues.')
+      }
+
       tradeLeagues.value = leagues
         .filter(league =>
           !PERMANENT_HC.includes(league.id) &&
-          !league.rules.some(rule => rule.id === 'NoParties' ||
+          !league.rules?.some(rule => rule.id === 'NoParties' ||
             (rule.id === 'HardMode' && !league.event)))
         .map(league => {
           return { id: league.id, isPopular: true }

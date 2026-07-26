@@ -8,6 +8,7 @@
   <ui-error-box class="mx-4 mt-4" v-else-if="leagues.error.value">
     <template #name>{{ t('app.leagues_failed') }}</template>
     <p>{{ t('app.leagues_failed_help') }}</p>
+    <p class="text-xs text-red-400 font-mono mt-1 break-all" v-if="leagues.error.value">{{ leagues.error.value }}</p>
     <template #actions>
       <button class="btn" @click="leagues.load">{{ t('Retry') }}</button>
       <button class="btn" @click="openCaptcha">{{ t('Browser') }}</button>
