@@ -16,6 +16,28 @@
         <div v-if="item.title.length">{{ item.title[0] }}</div>
         <div v-if="item.title.length > 1">{{ item.title[1] }}</div>
       </div>
+      <div
+        v-if="influenceBadges.length"
+        data-testid="item-influences"
+        class="flex flex-wrap items-center justify-center gap-1 px-3 py-1 border-b border-gray-800 bg-gray-900"
+      >
+        <span
+          v-for="badge in influenceBadges"
+          :key="badge.type"
+          :data-influence="badge.type"
+          class="inline-flex items-center gap-0.5 rounded-sm border border-gray-700 bg-black px-1.5 py-0.5 text-xs leading-none"
+          :class="$style[`influence-${badge.type}`]"
+        >
+          <img
+            v-if="badge.icon"
+            :src="badge.icon"
+            :alt="`${badge.label} influence`"
+            class="w-4 h-4 -my-1"
+          >
+          <span v-else class="inline-block w-1.5 h-1.5 rounded-full" :class="$style[`influence-mark-${badge.type}`]" />
+          {{ badge.label }}
+        </span>
+      </div>
       <div class="flex flex-col px-3 py-1 text-sm leading-snug">
         <template v-for="(section, index) in sections" :key="section.key">
           <div v-if="section.content?.length">
@@ -58,7 +80,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { PricingResult } from './pathofexile-trade'
-import { orderDisplayAffixes, type DisplayItemLine } from './trade-tooltip'
+import { orderDisplayAffixes, type DisplayInfluence, type DisplayItemLine } from './trade-tooltip'
 import UiDetailedItemImg from '@/web/ui/UiDetailedItemImg.vue'
 
 const props = defineProps<{
@@ -66,6 +88,22 @@ const props = defineProps<{
 }>()
 
 const item = computed(() => props.result.displayItem)
+
+const INFLUENCE_BADGES: Record<DisplayInfluence, { label: string, icon?: string }> = {
+  'shaper': { label: 'Shaper', icon: '/images/influence-Shaper.png' },
+  'elder': { label: 'Elder', icon: '/images/influence-Elder.png' },
+  'crusader': { label: 'Crusader', icon: '/images/influence-Crusader.png' },
+  'hunter': { label: 'Hunter', icon: '/images/influence-Hunter.png' },
+  'redeemer': { label: 'Redeemer', icon: '/images/influence-Redeemer.png' },
+  'warlord': { label: 'Warlord', icon: '/images/influence-Warlord.png' },
+  'searing-exarch': { label: 'Searing Exarch' },
+  'eater-of-worlds': { label: 'Eater of Worlds' }
+}
+
+const influenceBadges = computed(() => (item.value?.influences ?? []).map(type => ({
+  type,
+  ...INFLUENCE_BADGES[type]
+})))
 
 const frameRarity = computed(() => {
   const byFrame = ['Normal', 'Magic', 'Rare', 'Unique']
@@ -151,6 +189,23 @@ const dividerVisible = computed(() => sections.value.map((section, index) => {
   background-position: top left, top right, top center;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-size: 46px auto, 46px auto, 46px auto;
+}
+
+.influence-shaper { @apply text-blue-200; }
+.influence-elder { @apply text-purple-300; }
+.influence-crusader { @apply text-red-300; }
+.influence-hunter { @apply text-green-300; }
+.influence-redeemer { @apply text-blue-300; }
+.influence-warlord { @apply text-orange-300; }
+.influence-searing-exarch { @apply text-red-300; }
+.influence-eater-of-worlds { @apply text-teal-300; }
+.influence-mark-searing-exarch {
+  @apply bg-red-500;
+  box-shadow: 0 0 4px theme('colors.red.500');
+}
+.influence-mark-eater-of-worlds {
+  @apply bg-teal-400;
+  box-shadow: 0 0 4px theme('colors.teal.400');
 }
 
 .number-color-0 { @apply text-white; }

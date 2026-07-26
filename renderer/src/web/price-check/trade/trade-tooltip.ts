@@ -65,10 +65,33 @@ export interface DisplaySocket {
   sColour?: string
 }
 
+export type DisplayInfluence =
+  'shaper' |
+  'elder' |
+  'crusader' |
+  'hunter' |
+  'redeemer' |
+  'warlord' |
+  'searing-exarch' |
+  'eater-of-worlds'
+
+const CLASSIC_INFLUENCES: Array<{
+  field: string
+  display: DisplayInfluence
+}> = [
+  { field: 'shaper', display: 'shaper' },
+  { field: 'elder', display: 'elder' },
+  { field: 'crusader', display: 'crusader' },
+  { field: 'hunter', display: 'hunter' },
+  { field: 'redeemer', display: 'redeemer' },
+  { field: 'warlord', display: 'warlord' }
+]
+
 export interface DisplayItem {
   title: string[]
   rarity: string
   frameType?: number
+  influences: DisplayInfluence[]
   nameBlock?: DisplayItemLine[]
   itemProps?: DisplayItemLine[]
   enchantMods?: DisplayItemLine[]
@@ -104,6 +127,9 @@ export interface FetchItem {
   synthesised?: boolean
   fractured?: boolean
   replica?: boolean
+  influences?: Record<string, boolean>
+  searing?: boolean
+  tangled?: boolean
   sockets?: DisplaySocket[]
   properties?: TradeDataLine[]
   requirements?: TradeDataLine[]
@@ -139,6 +165,7 @@ export function parseFetchResult (result: FetchResultForTooltip): DisplayItem {
     title,
     rarity: result.item.rarity ?? 'Normal',
     frameType: result.item.frameType,
+    influences: parseInfluences(result.item),
     nameBlock: buildNameBlock(result.item.properties),
     itemProps: buildItemProps(result.item.ilvl, result.item.requirements),
     ...parseMods(result),
@@ -153,6 +180,18 @@ export function parseFetchResult (result: FetchResultForTooltip): DisplayItem {
         }
       : undefined
   }
+}
+
+function parseInfluences (item: FetchItem): DisplayInfluence[] {
+  const influences = CLASSIC_INFLUENCES
+    .filter(({ field }) => item.influences?.[field] === true)
+    .map(({ display }) => display)
+
+  if (item.searing === true) influences.push('searing-exarch')
+  // The PoE 1 trade API calls Eater of Worlds influence "tangled".
+  if (item.tangled === true) influences.push('eater-of-worlds')
+
+  return influences
 }
 
 function parseMods (result: FetchResultForTooltip): Pick<DisplayItem,

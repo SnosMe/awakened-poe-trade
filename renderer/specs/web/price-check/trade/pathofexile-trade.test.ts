@@ -47,6 +47,35 @@ describe('PoE 1 trade listing tooltip parsing', () => {
     expect(item?.itemTags).toContainEqual(expect.objectContaining({ text: 'Corrupted' }))
   })
 
+  it('normalizes every classic and Eldritch influence field from the PoE 1 fetch payload', () => {
+    const item = parse({
+      ...fixture.item,
+      influences: {
+        shaper: true,
+        elder: true,
+        crusader: true,
+        hunter: true,
+        redeemer: true,
+        warlord: true,
+        ignored_future_field: true,
+        ignored_false_field: false
+      },
+      searing: true,
+      tangled: true
+    })
+
+    expect(item.influences).toEqual([
+      'shaper',
+      'elder',
+      'crusader',
+      'hunter',
+      'redeemer',
+      'warlord',
+      'searing-exarch',
+      'eater-of-worlds'
+    ])
+  })
+
   it('preserves modifier categories, tiers, and colors from current rich fetch lines', () => {
     const item = parse()
 
