@@ -597,6 +597,7 @@ const cache = new Cache()
 
 export async function requestTradeResultList (body: TradeRequest, leagueId: string): Promise<SearchResult> {
   let data = cache.get<SearchResult>([body, leagueId])
+  const cached = data != null
 
   if (!data) {
     preventQueueCreation([
@@ -624,6 +625,22 @@ export async function requestTradeResultList (body: TradeRequest, leagueId: stri
     }
 
     cache.set<SearchResult>([body, leagueId], data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
+  }
+
+  if (import.meta.env.DEV && Host.isElectron) {
+    Host.sendEvent({
+      name: 'CLIENT->MAIN::dev-trade-search',
+      payload: {
+        league: leagueId,
+        request: body,
+        result: {
+          total: data.total,
+          returned: data.result.length,
+          inexact: data.inexact === true,
+          cached
+        }
+      }
+    })
   }
 
   return data

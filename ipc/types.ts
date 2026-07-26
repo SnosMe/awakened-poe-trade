@@ -77,6 +77,7 @@ export type IpcEvent =
   IpcItemText |
   IpcOcrText |
   IpcConfigChanged |
+  IpcDevTradeSearch |
   IpcUserAction
 
 export type IpcEventPayload<Name extends IpcEvent['name'], T extends IpcEvent = IpcEvent> =
@@ -161,6 +162,21 @@ type IpcOcrText =
 type IpcGameLog =
   Event<'MAIN->CLIENT::game-log', {
     lines: string[]
+  }>
+
+type IpcDevTradeSearch =
+  Event<'CLIENT->MAIN::dev-trade-search', {
+    league: string
+    request: {
+      query: object
+      sort: object
+    }
+    result: {
+      total: number
+      returned: number
+      inexact: boolean
+      cached: boolean
+    }
   }>
 
 type IpcUpdaterState =

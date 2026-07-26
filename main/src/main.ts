@@ -2,7 +2,9 @@
 
 import { app } from 'electron'
 import { uIOhook } from 'uiohook-napi'
+import fs from 'node:fs'
 import os from 'node:os'
+import path from 'node:path'
 import { startServer, eventPipe, server } from './server'
 import { Logger } from './RemoteLogger'
 import { GameWindow } from './windowing/GameWindow'
@@ -34,6 +36,18 @@ app.on('ready', async () => {
   const poeWindow = new GameWindow()
   const appUpdater = new AppUpdater(eventPipe)
   const _httpProxy = new HttpProxy(server, logger)
+
+  if (process.env.VITE_DEV_SERVER_URL) {
+    const tracePath = path.resolve(__dirname, '../../.hermes/dev/trade-searches.jsonl')
+    fs.mkdirSync(path.dirname(tracePath), { recursive: true })
+    fs.writeFileSync(tracePath, '')
+    eventPipe.onEventAnyClient('CLIENT->MAIN::dev-trade-search', (trace) => {
+      const line = JSON.stringify({ timestamp: new Date().toISOString(), ...trace })
+      void fs.promises.appendFile(tracePath, `${line}\n`).catch((error: unknown) => {
+        logger.write(`error Failed to write dev trade-search trace: ${String(error)}`)
+      })
+    })
+  }
 
   setTimeout(
     async () => {
