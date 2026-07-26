@@ -1,0 +1,86 @@
+{
+  "id": "listing-1",
+  "listing": {
+    "indexed": "2026-07-22T11:47:36Z",
+    "price": {
+      "type": "~price",
+      "amount": 1,
+      "currency": "divine"
+    },
+    "account": {
+      "name": "fixture-seller",
+      "online": false,
+      "lastCharacterName": "FixtureSeller"
+    }
+  },
+  "item": {
+    "verified": true,
+    "w": 2,
+    "h": 3,
+    "icon": "https://web.poecdn.com/gen/image/fixture/VaalRegalia.png",
+    "sockets": [
+      { "group": 0, "attr": "S", "sColour": "R" },
+      { "group": 0, "attr": "D", "sColour": "G" },
+      { "group": 0, "attr": "I", "sColour": "B" },
+      { "group": 1, "attr": "I", "sColour": "B" }
+    ],
+    "name": "Kraken Guardian",
+    "typeLine": "Vaal Regalia",
+    "baseType": "Vaal Regalia",
+    "rarity": "Rare",
+    "ilvl": 84,
+    "identified": true,
+    "corrupted": true,
+    "properties": [
+      { "name": "Quality", "values": [["+20%", 1]], "displayMode": 0, "type": 6 },
+      { "name": "Energy Shield", "values": [["437", 1]], "displayMode": 0, "type": 18 }
+    ],
+    "requirements": [
+      { "name": "Level", "values": [["68", 0]], "displayMode": 0, "type": 62 },
+      { "name": "Int", "values": [["194", 0]], "displayMode": 1, "type": 65 }
+    ],
+    "implicitMods": [
+      {
+        "description": "+12% to all Elemental Resistances",
+        "domain": "implicit",
+        "hash": "stat.implicit.stat_2901986750",
+        "mods": [{ "name": "", "tier": "", "magnitudes": [{ "min": "12", "max": "12" }] }]
+      }
+    ],
+    "explicitMods": [
+      {
+        "description": "+97 to maximum Energy Shield",
+        "domain": "explicit",
+        "hash": "stat.explicit.stat_4052037485",
+        "mods": [{ "name": "Resplendent", "tier": "P1", "level": 75, "magnitudes": [{ "min": "91", "max": "100" }] }]
+      },
+      {
+        "description": "+44% to Fire Resistance",
+        "domain": "explicit",
+        "hash": "stat.explicit.stat_3372524247",
+        "mods": [{ "name": "of the Magma", "tier": "S2", "level": 72, "magnitudes": [{ "min": "42", "max": "45" }] }]
+      },
+      {
+        "description": "63% increased Energy Shield",
+        "flags": { "crafted": true },
+        "domain": "crafted",
+        "hash": "stat.crafted.stat_4015621042",
+        "mods": [{ "name": "Upgraded", "tier": "R3", "level": 75, "magnitudes": [{ "min": "56", "max": "74" }] }]
+      }
+    ],
+    "frameType": 2,
+    "frameTypeId": "Rare",
+    "extended": {
+      "es": 524,
+      "es_aug": true,
+      "hashes": {
+        "implicit": [["implicit.stat_2901986750", [0]]],
+        "explicit": [
+          ["explicit.stat_4052037485", [0]],
+          ["explicit.stat_3372524247", [1]]
+        ],
+        "crafted": [["crafted.stat_4015621042", [0]]]
+      }
+    }
+  }
+}

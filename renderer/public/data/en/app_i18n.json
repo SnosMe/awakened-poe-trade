@@ -346,6 +346,10 @@
     "auto_search": "Perform an auto search, when pressing",
     "select_stock": "Always select \"Stock\" filter",
     "show_prediction": "Show price prediction",
-    "remember_currency": "Remember the Buyout Currency filter"
+    "remember_currency": "Remember the Buyout Currency filter",
+    "use_tooltip_hover": "Show item when hovering over price",
+    "use_tooltip_keybind": "SHIFT + hover",
+    "use_tooltip_always": "hover",
+    "use_tooltip_off": "off"
   }
 }

@@ -335,6 +335,10 @@
     "auto_search": "Perform an auto search, when pressing",
     "select_stock": "Always select \"Stock\" filter",
     "show_prediction": "Show price prediction",
-    "remember_currency": "Remember the Buyout Currency filter"
+    "remember_currency": "Remember the Buyout Currency filter",
+    "use_tooltip_hover": "가격에 커서를 가져다 대면 아이템 상세 정보 표시",
+    "use_tooltip_keybind": "SHIFT + 가격에 커서를 이동",
+    "use_tooltip_always": "가격에 커서를 이동",
+    "use_tooltip_off": "기능 끔"
   }
 }

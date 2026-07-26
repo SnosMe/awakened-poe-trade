@@ -11,6 +11,10 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
+      normal: '#c8c8c8',
+      magic: '#8888ff',
+      rare: '#ffff77',
+      unique: '#af6025',
 
       gray: {
         100: '#f7fafc',

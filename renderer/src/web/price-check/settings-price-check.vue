@@ -39,6 +39,14 @@
       </div>
       <div class="mb-4 italic text-gray-500">{{ t(':highlight_hint') }}</div>
     </div>
+    <div class="mb-4">
+      <div class="flex-1 mb-1">{{ t(':use_tooltip_hover') }}</div>
+      <div class="flex flex-wrap gap-x-4 gap-y-1">
+        <ui-radio v-model="itemHoverTooltip" value="keybind">{{ t(':use_tooltip_keybind') }}</ui-radio>
+        <ui-radio v-model="itemHoverTooltip" value="always">{{ t(':use_tooltip_always') }}</ui-radio>
+        <ui-radio v-model="itemHoverTooltip" value="off">{{ t(':use_tooltip_off') }}</ui-radio>
+      </div>
+    </div>
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t(':fill_rolls') }}</div>
       <div class="mb-4 flex">
@@ -124,6 +132,7 @@ export default defineComponent({
       }),
       accountName: configModelValue(() => props.config, 'accountName'),
       showSeller: configModelValue(() => configWidget.value, 'showSeller'),
+      itemHoverTooltip: configModelValue(() => configWidget.value, 'itemHoverTooltip'),
       activateStockFilter: configModelValue(() => configWidget.value, 'activateStockFilter'),
       showCursor: configModelValue(() => configWidget.value, 'showCursor'),
       builtinBrowser: configModelValue(() => configWidget.value, 'builtinBrowser'),

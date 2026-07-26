@@ -123,7 +123,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 18,
+  configVersion: 19,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -431,6 +431,13 @@ function upgradeConfig (_config: Config): Config {
     config.useIntlSite = (config.language === 'cmn-Hant' && config.realm === 'pc-ggg')
 
     config.configVersion = 18
+  }
+
+  if (config.configVersion < 19) {
+    const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
+    priceCheck.itemHoverTooltip = 'keybind'
+
+    config.configVersion = 19
   }
   /* eslint-enable */
 

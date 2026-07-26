@@ -27,6 +27,11 @@
     "Refresh": "刷新",
     "map.mods.heist": "劫盜",
     "map.mods.outdated": "過時",
-    "Support development on": "支持開發"
-  
+    "Support development on": "支持開發",
+    "price_check": {
+      "use_tooltip_hover": "將滑鼠懸停在價格上時顯示物品",
+      "use_tooltip_keybind": "SHIFT + 懸停",
+      "use_tooltip_always": "始終懸停顯示",
+      "use_tooltip_off": "關閉"
+    }
 }

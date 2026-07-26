@@ -51,6 +51,7 @@ export interface PriceCheckWidget extends Widget {
   requestPricePrediction: boolean
   builtinBrowser: boolean
   rememberCurrency: boolean
+  itemHoverTooltip: 'off' | 'keybind' | 'always'
 }
 
 export interface StopwatchWidget extends Widget {

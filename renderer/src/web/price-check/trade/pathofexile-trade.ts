@@ -8,6 +8,9 @@ import { stat, STAT_BY_REF_V2, pseudoStatByRef } from '@/assets/data'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
+import { DisplayItem, FetchItem, findPropertyValue, parseFetchResult } from './trade-tooltip'
+
+export type { DisplayItem, DisplayItemLine, DisplaySocket } from './trade-tooltip'
 
 export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Map, 'map'],
@@ -211,20 +214,7 @@ export interface SearchResult {
 
 interface FetchResult {
   id: string
-  item: {
-    ilvl?: number
-    stackSize?: number
-    corrupted?: boolean
-    properties?: Array<{
-      values: [[string, number]]
-      type:
-      78 | // Corpse Level (Filled Coffin)
-      30 | // Spawns a Level %0 Monster when Harvested
-      6 | // Quality
-      5 // Level
-    }>
-    note?: string
-  }
+  item: FetchItem
   listing: {
     indexed: string
     price?: {
@@ -253,6 +243,7 @@ export interface PricingResult {
   accountName: string
   accountStatus: 'offline' | 'online' | 'afk'
   ign: string
+  displayItem?: DisplayItem
 }
 
 export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
@@ -669,29 +660,39 @@ export async function requestResults (
     cache.set<FetchResult[]>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
   }
 
-  return data.map<PricingResult>(result => {
-    return {
-      id: result.id,
-      itemLevel: result.item.properties?.find(prop => prop.type === 78)?.values[0][0] ?? String(result.item.ilvl),
-      stackSize: result.item.stackSize,
-      corrupted: result.item.corrupted,
-      quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
-      level: result.item.properties?.find(prop => prop.type === 5)?.values[0][0],
-      relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
-      priceAmount: result.listing.price?.amount ?? 0,
-      priceCurrency: result.listing.price?.currency ?? 'no price',
-      hasNote: result.item.note != null,
-      hasFee: result.listing.fee != null,
-      isMine: (result.listing.account.name === opts.accountName),
-      ign: result.listing.account.lastCharacterName,
-      accountName: result.listing.account.name,
-      accountStatus: (result.listing.fee != null)
-        ? 'online'
-        : result.listing.account.online
-          ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
-          : 'offline'
-    }
-  })
+  return data.map(result => toPricingResult(result, opts))
+}
+
+function toPricingResult (result: FetchResult, opts: { accountName: string }): PricingResult {
+  let displayItem: DisplayItem | undefined
+  try {
+    displayItem = parseFetchResult(result)
+  } catch (error) {
+    console.warn(`Unable to build item tooltip for trade result ${result.id}`, error)
+  }
+
+  return {
+    id: result.id,
+    itemLevel: findPropertyValue(result.item, 78) ?? (result.item.ilvl != null ? String(result.item.ilvl) : undefined),
+    stackSize: result.item.stackSize,
+    corrupted: result.item.corrupted,
+    quality: findPropertyValue(result.item, 6),
+    level: findPropertyValue(result.item, 5),
+    relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
+    priceAmount: result.listing.price?.amount ?? 0,
+    priceCurrency: result.listing.price?.currency ?? 'no price',
+    hasNote: result.item.note != null,
+    hasFee: result.listing.fee != null,
+    isMine: (result.listing.account.name === opts.accountName),
+    ign: result.listing.account.lastCharacterName,
+    accountName: result.listing.account.name,
+    accountStatus: (result.listing.fee != null)
+      ? 'online'
+      : result.listing.account.online
+        ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
+        : 'offline',
+    displayItem
+  }
 }
 
 function getMinMax (roll: StatFilter['roll'], divisor: number) {
