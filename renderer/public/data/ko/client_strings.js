@@ -117,6 +117,8 @@ export default {
   DELVE_MODS: ['지하의','- 지하'],
   VEILED_MODS: ['선택','- 질서','선택받은'],
   INCURSION_MODS: ['과텔리치의','조펙의','토포탄테의','타카티의','마타틀의','- 마타틀','시타콰로틀의','- 시타콰로틀','- 타카티','- 과텔리치','- 푸후알테'],
+  ESSENCE_MODS: ['- 에센스', '에센스'],
+  INFAMOUS_MODS: ['- 악명', '악명 높은'],
   FOIL_UNIQUE: '반짝이 버전 고유 아이템',
   UNMODIFIABLE: '속성 부여 불가',
   FOULBORN_NAME: /^삿된 (.*)$/,

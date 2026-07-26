@@ -212,7 +212,9 @@
     "tag_explicit_warlord": "Вождь",
     "tag_explicit_delve": "Спуск",
     "tag_explicit_veiled": "Завуалирован",
-    "tag_explicit_incursion": "Вмешательство"
+    "tag_explicit_incursion": "Вмешательство",
+    "tag_explicit_infamous": "Наёмник",
+    "tag_explicit_essence": "Сущность"
   },
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",

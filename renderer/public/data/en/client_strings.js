@@ -117,6 +117,8 @@ export default {
   DELVE_MODS: ['Subterranean', 'of the Underground'],
   VEILED_MODS: ['Chosen', 'of the Order'],
   INCURSION_MODS: ["Guatelitzi's", "Xopec's", "Topotante's", "Tacati's", "Matatl's", 'of Matatl', "Citaqualotl's", 'of Citaqualotl', 'of Tacati', 'of Guatelitzi', 'of Puhuarte'],
+  ESSENCE_MODS: ['of the Essence', 'Essences'],
+  INFAMOUS_MODS: ['of Infamy', 'Infamous'],
   FOIL_UNIQUE: 'Foil Unique',
   UNMODIFIABLE: 'Unmodifiable',
   FOULBORN_NAME: /^Foulborn (.*)$/,

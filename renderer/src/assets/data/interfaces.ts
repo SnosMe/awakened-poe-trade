@@ -226,6 +226,8 @@ export interface TranslationDict {
   DELVE_MODS: string[]
   VEILED_MODS: string[]
   INCURSION_MODS: string[]
+  ESSENCE_MODS: string[]
+  INFAMOUS_MODS: string[]
   FOIL_UNIQUE: string
   UNMODIFIABLE: string
   FOULBORN_NAME: RegExp

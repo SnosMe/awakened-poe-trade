@@ -269,6 +269,10 @@ export function calculatedStatToFilter (
       // filter.tag = FilterTag.Unveiled
     } else if (sources.some(s => CLIENT_STRINGS.INCURSION_MODS.includes(s.modifier.info.name!))) {
       filter.tag = FilterTag.Incursion
+    } else if (sources.some(s => CLIENT_STRINGS.ESSENCE_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Essence
+    } else if (sources.some(s => CLIENT_STRINGS.INFAMOUS_MODS.includes(s.modifier.info.name!))) {
+      filter.tag = FilterTag.Infamous
     }
   }
 

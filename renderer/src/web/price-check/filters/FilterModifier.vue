@@ -302,7 +302,9 @@ export default defineComponent({
 .tag-explicit-warlord,
 .tag-explicit-delve,
 .tag-explicit-veiled,
-.tag-explicit-incursion {
+.tag-explicit-incursion,
+.tag-explicit-infamous,
+.tag-explicit-essence {
   display: flex;
   align-items: center;
   @apply -mx-1 pl-0.5 gap-x-0.5 text-gray-600;
@@ -335,6 +337,10 @@ export default defineComponent({
   background-image: url('/images/veiled.png'); }
 .tag-explicit-incursion::before {
   background-image: url('/images/incursion.png'); }
+.tag-explicit-infamous::before {
+  background-image: url('/images/mercenary.png'); }
+.tag-explicit-essence::before {
+  background-image: url('/images/essence.png'); }
 
 .tag-corrupted {
   @apply bg-red-700 text-red-100; }

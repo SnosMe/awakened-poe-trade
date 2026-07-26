@@ -195,7 +195,9 @@
     "tag_explicit_warlord": "Warlord",
     "tag_explicit_delve": "Delve",
     "tag_explicit_veiled": "Veiled",
-    "tag_explicit_incursion": "Incursion"
+    "tag_explicit_incursion": "Incursion",
+    "tag_explicit_infamous": "Mercenary",
+    "tag_explicit_essence": "Essence"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
