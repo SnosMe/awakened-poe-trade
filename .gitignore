@@ -26,3 +26,6 @@ yarn-error.log*
 # vitepress
 docs/.vitepress/dist
 docs/.vitepress/cache
+
+# Hermes local plans, logs, and development traces
+/.hermes/
