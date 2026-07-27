@@ -28,7 +28,7 @@
         <div v-else class="w-8" />
       </AppTitleBar>
       <div class="grow layout-column min-h-0 bg-gray-800">
-        <background-info />
+        <background-info :builtin-browser="builtinBrowser()" />
         <check-position-circle v-if="showCheckPos"
           :position="checkPosition" style="z-index: -1;" />
         <template v-if="item?.isErr()">
@@ -285,7 +285,8 @@ export default defineComponent({
       handleIdentification,
       overlayKey,
       isLeagueSelected,
-      openLeagueSelection
+      openLeagueSelection,
+      builtinBrowser: () => ({ webview: iframeEl.value!, show: showBrowser, close: closeBrowser })
     }
   }
 })
