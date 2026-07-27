@@ -28,7 +28,7 @@
         <div v-else class="w-8" />
       </AppTitleBar>
       <div class="grow layout-column min-h-0 bg-gray-800">
-        <background-info :builtin-browser="builtinBrowser()" />
+        <background-info />
         <check-position-circle v-if="showCheckPos"
           :position="checkPosition" style="z-index: -1;" />
         <template v-if="item?.isErr()">
@@ -238,6 +238,12 @@ export default defineComponent({
       }
     })
 
+    watch(leagues.error, (value) => {
+      if (value === null) {
+        closeBrowser()
+      }
+    })
+
     function closePriceCheck () {
       if (isBrowserShown.value || !Host.isElectron) {
         wm.hide(props.config.wmId)
@@ -285,8 +291,7 @@ export default defineComponent({
       handleIdentification,
       overlayKey,
       isLeagueSelected,
-      openLeagueSelection,
-      builtinBrowser: () => ({ webview: iframeEl.value!, show: showBrowser, close: closeBrowser })
+      openLeagueSelection
     }
   }
 })

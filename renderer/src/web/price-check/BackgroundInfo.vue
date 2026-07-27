@@ -9,14 +9,14 @@
     <template #name>{{ t('app.leagues_failed') }}</template>
     <p>{{ t('app.leagues_failed_help') }}</p>
     <template #actions>
-      <button class="btn" @click="leagues.load(builtinBrowser)">{{ t('Retry') }}</button>
+      <button class="btn" @click="leagues.load()">{{ t('Retry') }}</button>
       <button class="btn" @click="openCaptcha">{{ t('Browser') }}</button>
     </template>
   </ui-error-box>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLeagues } from '@/web/background/Leagues'
 import { Host } from '@/web/background/IPC'
@@ -24,13 +24,7 @@ import { poeWebApi } from '@/web/Config'
 
 import UiErrorBox from '@/web/ui/UiErrorBox.vue'
 
-const props = defineProps<{
-  builtinBrowser: {
-    webview: Element
-    show: (url: string) => void
-    close: () => void
-  }
-}>()
+const showBrowser = inject<(url: string) => void>('builtin-browser')!
 
 const { t } = useI18n()
 
@@ -51,6 +45,6 @@ const updateInfo = computed(() => {
 const leagues = useLeagues()
 
 function openCaptcha () {
-  props.builtinBrowser.show(`https://${poeWebApi()}/api/leagues?type=main&realm=pc`)
+  showBrowser(`https://${poeWebApi()}/api/leagues?type=main&realm=pc`)
 }
 </script>

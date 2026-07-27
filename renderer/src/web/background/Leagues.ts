@@ -45,33 +45,14 @@ export const useLeagues = createGlobalState(() => {
     }
   })
 
-  async function load (
-    builtinBrowser?: { webview: Element, close: () => void }
-  ) {
+  async function load () {
     isLoading.value = true
     error.value = null
 
     try {
-      let leagues: ApiLeague[] | undefined
-      try {
-        const response = await Host.proxy(`${poeWebApi()}/api/leagues?type=main&realm=pc`)
-        leagues = await response.json() as ApiLeague[]
-      } catch (e) {
-        // when you click the "Retry" and has the built-in browser open
-        interface WebviewTag extends Element {
-          executeJavaScript (code: string): Promise<unknown>
-        }
-        if (builtinBrowser) {
-          const webview = builtinBrowser.webview as WebviewTag
-          try {
-            const bodyText = await webview.executeJavaScript('document.body.innerText')
-            leagues = JSON.parse(bodyText as string)
-            builtinBrowser.close()
-          } catch {}
-        }
-
-        if (!leagues) throw e
-      }
+      const response = await Host.proxy(`${poeWebApi()}/api/leagues?type=main&realm=pc`)
+      if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
+      const leagues: ApiLeague[] = await response.json()
 
       tradeLeagues.value = leagues
         .filter(league =>
