@@ -76,6 +76,68 @@ describe('PoE 1 trade listing tooltip parsing', () => {
     ])
   })
 
+  it('identifies only Eldritch implicit lines and derives unambiguous Lesser tiers', () => {
+    const item = parse({
+      ...fixture.item,
+      searing: true,
+      tangled: true,
+      enchantMods: [{
+        description: 'Allocates Whispers of Doom',
+        hash: 'stat.implicit.stat_561307714',
+        mods: [{ level: 75, magnitudes: [{ min: '5', max: '5' }] }]
+      }],
+      implicitMods: [
+        '+12% to all Elemental Resistances',
+        {
+          description: '5% Chance to Block Spell Damage',
+          hash: 'stat.implicit.stat_561307714',
+          mods: [{ level: 75, magnitudes: [{ min: '5', max: '5' }] }]
+        },
+        {
+          description: '17% increased Global Physical Damage',
+          hash: 'stat.implicit.stat_1310194496',
+          mods: [{ level: 75, magnitudes: [{ min: '15', max: '17' }] }]
+        }
+      ],
+      extended: undefined
+    } as never)
+
+    expect(item.enchantMods?.[0].influence).toBeUndefined()
+    expect(item.implicitMods).toEqual([
+      expect.objectContaining({ text: '+12% to all Elemental Resistances' }),
+      expect.objectContaining({
+        text: '5% Chance to Block Spell Damage',
+        influence: 'eater-of-worlds',
+        tier: 'Lesser'
+      }),
+      expect.objectContaining({
+        text: '17% increased Global Physical Damage',
+        influence: 'searing-exarch',
+        tier: 'Lesser'
+      })
+    ])
+    expect(item.implicitMods?.[0].influence).toBeUndefined()
+  })
+
+  it('omits an Eldritch tier when the API magnitude matches multiple ranks', () => {
+    const item = parse({
+      ...fixture.item,
+      searing: true,
+      tangled: false,
+      implicitMods: [{
+        description: '+1% to maximum Lightning Resistance',
+        hash: 'stat.implicit.stat_1011760251',
+        mods: [{ level: 75, magnitudes: [{ min: '1', max: '1' }] }]
+      }],
+      extended: undefined
+    } as never)
+
+    expect(item.implicitMods?.[0]).toMatchObject({
+      influence: 'searing-exarch',
+      tier: undefined
+    })
+  })
+
   it('preserves modifier categories, tiers, and colors from current rich fetch lines', () => {
     const item = parse()
 

@@ -4,7 +4,7 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import TooltipItem from '@/web/price-check/trade/TooltipItem.vue'
 import type { PricingResult } from '@/web/price-check/trade/pathofexile-trade'
-import type { DisplayInfluence } from '@/web/price-check/trade/trade-tooltip'
+import { TradeNumberColors, type DisplayInfluence, type DisplayItemLine } from '@/web/price-check/trade/trade-tooltip'
 
 const ALL_INFLUENCES: DisplayInfluence[] = [
   'shaper',
@@ -17,13 +17,14 @@ const ALL_INFLUENCES: DisplayInfluence[] = [
   'eater-of-worlds'
 ]
 
-function mountTooltip (influences: DisplayInfluence[]) {
+function mountTooltip (influences: DisplayInfluence[], implicitMods?: DisplayItemLine[]) {
   const result = {
     displayItem: {
       title: ['Fixture Mantle', 'Vaal Regalia'],
       rarity: 'Rare',
       frameType: 2,
-      influences
+      influences,
+      implicitMods
     }
   } as unknown as PricingResult
 
@@ -60,5 +61,42 @@ describe('Trade listing tooltip influences', () => {
 
   it('omits the influence row when the API reports none', () => {
     expect(mountTooltip([]).find('[data-testid="item-influences"]').exists()).toBe(false)
+  })
+
+  it('colors only associated Eldritch implicit lines and renders their tiers', () => {
+    const wrapper = mountTooltip(
+      ['searing-exarch', 'eater-of-worlds'],
+      [
+        {
+          text: '+12% to all Elemental Resistances',
+          color: TradeNumberColors.Augmented
+        },
+        {
+          text: '5% Chance to Block Spell Damage',
+          tier: 'Lesser',
+          color: TradeNumberColors.Augmented,
+          influence: 'eater-of-worlds'
+        },
+        {
+          text: '17% increased Global Physical Damage',
+          tier: 'Lesser',
+          color: TradeNumberColors.Augmented,
+          influence: 'searing-exarch'
+        }
+      ]
+    )
+
+    const ordinary = wrapper.findAll('[data-testid="modifier-line"]')
+      .find(line => line.text() === '+12% to all Elemental Resistances')!
+    const eater = wrapper.find('[data-mod-influence="eater-of-worlds"]')
+    const exarch = wrapper.find('[data-mod-influence="searing-exarch"]')
+
+    expect(ordinary.text()).toBe('+12% to all Elemental Resistances')
+    expect(ordinary.html()).not.toContain('influence-eater-of-worlds')
+    expect(ordinary.html()).not.toContain('influence-searing-exarch')
+    expect(eater.text()).toContain('Lesser')
+    expect(eater.html()).toContain('influence-eater-of-worlds')
+    expect(exarch.text()).toContain('Lesser')
+    expect(exarch.html()).toContain('influence-searing-exarch')
   })
 })

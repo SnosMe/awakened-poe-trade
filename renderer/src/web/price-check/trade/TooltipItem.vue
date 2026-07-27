@@ -44,16 +44,20 @@
             <div
               v-for="(line, lineIndex) in section.content"
               :key="`${line.text}-${lineIndex}`"
+              data-testid="modifier-line"
+              :data-mod-influence="line.influence"
               class="flex items-center justify-between gap-3"
             >
               <span class="flex-grow text-center whitespace-pre-line">
-                <span :class="line.value != null ? 'text-gray-400' : $style[`number-color-${line.color}`]">{{ line.text }}</span>
-                <span v-if="line.value != null" :class="$style[`number-color-${line.color}`]">{{ line.value }}</span>
+                <span :class="line.influence ? $style[`influence-${line.influence}`] : line.value != null ? 'text-gray-400' : $style[`number-color-${line.color}`]">{{ line.text }}</span>
+                <span v-if="line.value != null" :class="line.influence ? $style[`influence-${line.influence}`] : $style[`number-color-${line.color}`]">{{ line.value }}</span>
               </span>
               <span
                 v-if="line.tier"
                 class="flex-none text-xs"
-                :class="{
+                :class="line.influence
+                  ? $style[`influence-${line.influence}`]
+                  : {
                   'text-blue-300': line.tier.startsWith('S'),
                   'text-red-300': line.tier.startsWith('P'),
                   'text-gray-400': !line.tier.startsWith('S') && !line.tier.startsWith('P')

@@ -1,3 +1,9 @@
+import { CLIENT_STRINGS } from '@/assets/data'
+import {
+  ELDRITCH_IMPLICIT_METADATA,
+  type EldritchImplicitInfluence
+} from './eldritch-implicit-metadata'
+
 export enum TradeNumberColors {
   White = 0,
   Augmented = 1,
@@ -32,7 +38,7 @@ interface TradeModMetadata {
   name?: string
   tier?: string
   level?: number
-  magnitudes: Array<{ hash?: string, min: string, max: string }>
+  magnitudes?: Array<{ hash?: string, min: string | number, max: string | number }>
 }
 
 export type TradeModHashes = [string, number[] | null]
@@ -56,6 +62,7 @@ export interface DisplayItemLine {
   tier?: string
   value?: string | number
   color: TradeNumberColors
+  influence?: EldritchImplicitInfluence
   modCategory?: 'fractured' | 'explicit' | 'crafted' | 'veiled'
 }
 
@@ -210,7 +217,9 @@ function parseMods (result: FetchResultForTooltip): Pick<DisplayItem,
       result.item.implicitMods,
       TradeNumberColors.Augmented,
       modMetadata?.implicit,
-      modHashes?.implicit
+      modHashes?.implicit,
+      undefined,
+      result.item
     ),
     fracturedMods: parseModBlock(
       result.item.fracturedMods,
@@ -241,16 +250,67 @@ function parseModBlock (
   color: TradeNumberColors,
   mods?: TradeModMetadata[],
   hashes?: TradeModHashes[],
-  modCategory?: DisplayItemLine['modCategory']
+  modCategory?: DisplayItemLine['modCategory'],
+  eldritchItem?: Pick<FetchItem, 'searing' | 'tangled'>
 ): DisplayItemLine[] | undefined {
   if (!lines) return undefined
 
-  return lines.map((line, index) => ({
-    text: parseTradeText(line),
-    color: getModColor(line, color),
-    tier: getRichTier(line) ?? getLegacyTier(index, mods, hashes),
-    modCategory: getModCategory(line, modCategory)
-  }))
+  return lines.map((line, index) => {
+    const eldritch = eldritchItem ? getEldritchImplicit(line, eldritchItem) : undefined
+    return {
+      text: parseTradeText(line),
+      color: getModColor(line, color),
+      tier: getRichTier(line) ?? getLegacyTier(index, mods, hashes) ?? eldritch?.tier,
+      influence: eldritch?.influence,
+      modCategory: getModCategory(line, modCategory)
+    }
+  })
+}
+
+function getEldritchImplicit (
+  line: FetchResultModLine,
+  item: Pick<FetchItem, 'searing' | 'tangled'>
+): { influence: EldritchImplicitInfluence, tier?: string } | undefined {
+  if (typeof line !== 'object' || line == null || !('hash' in line) || !line.hash) return undefined
+
+  const tradeId = line.hash.startsWith('stat.') ? line.hash.slice('stat.'.length) : line.hash
+  const metadata = ELDRITCH_IMPLICIT_METADATA[tradeId]
+  if (!metadata) return undefined
+  if (metadata.influence === 'searing-exarch' && item.searing !== true) return undefined
+  if (metadata.influence === 'eater-of-worlds' && item.tangled !== true) return undefined
+
+  const ranks = new Set<number>()
+  for (const mod of line.mods ?? []) {
+    if (!mod.magnitudes?.length) continue
+    const fingerprint = mod.magnitudes
+      .map(magnitude => `${normalizeMagnitude(magnitude.min)},${normalizeMagnitude(magnitude.max)}`)
+      .join(';')
+    for (const rank of metadata.tiers[fingerprint] ?? []) ranks.add(rank)
+  }
+
+  const rank = ranks.size === 1 ? [...ranks][0] : undefined
+  return {
+    influence: metadata.influence,
+    tier: rank != null ? eldritchTierLabel(rank) : undefined
+  }
+}
+
+function normalizeMagnitude (value: string | number): string {
+  const numeric = Number(value)
+  return Number.isFinite(numeric) ? String(numeric) : String(value)
+}
+
+function eldritchTierLabel (rank: number): string | undefined {
+  const labels = [
+    undefined,
+    CLIENT_STRINGS?.ELDRITCH_MOD_R1 ?? 'Lesser',
+    CLIENT_STRINGS?.ELDRITCH_MOD_R2 ?? 'Greater',
+    CLIENT_STRINGS?.ELDRITCH_MOD_R3 ?? 'Grand',
+    CLIENT_STRINGS?.ELDRITCH_MOD_R4 ?? 'Exceptional',
+    CLIENT_STRINGS?.ELDRITCH_MOD_R5 ?? 'Exquisite',
+    CLIENT_STRINGS?.ELDRITCH_MOD_R6 ?? 'Perfect'
+  ]
+  return labels[rank]
 }
 
 function getModCategory (
