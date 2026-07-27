@@ -4,6 +4,7 @@ import {
   ITEM_BY_TRANSLATED,
   ITEM_BY_REF,
   STAT_BY_MATCH_STR,
+  StatBetter,
   BaseType
 } from '@/assets/data'
 import { ModifierType, sumStatsByModType } from './modifiers'
@@ -696,14 +697,13 @@ function parseLogbookArea (section: string[], item: ParsedItem) {
   const { modType, lines } = parseModType(section.slice(2))
   for (const line of lines) {
     const found = STAT_BY_MATCH_STR(line)
-    if (found && found.stat.ref === 'Area contains an Expedition Boss (#)') {
-      const roll = found.matcher.value!
+    // Area contains an Expedition Boss (#)
+    if (found && found.stat.better === StatBetter.NotComparable) {
       areaMods.push({
         info: { tags: [], type: modType },
         stats: [{
           stat: found.stat,
-          translation: found.matcher,
-          roll: { value: roll, min: roll, max: roll, dp: false, unscalable: true }
+          translation: found.matcher
         }]
       })
     }

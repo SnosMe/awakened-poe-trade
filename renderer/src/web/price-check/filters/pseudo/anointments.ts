@@ -22,10 +22,8 @@ const OILS = [
 export function decodeOils (calc: StatCalculated): string[] | undefined {
   if (calc.type !== ModifierType.Enchant) return
 
-  // try Amulet enchant
-  let encoded = calc.sources[0].stat.translation.oils
-  // else try Ring enchant
-  if (!encoded && calc.stat.anointments) {
+  let encoded: string | undefined
+  if (calc.stat.anointments) {
     if (calc.stat.anointments.length === 1) {
       encoded = calc.stat.anointments[0].oils
     } else {

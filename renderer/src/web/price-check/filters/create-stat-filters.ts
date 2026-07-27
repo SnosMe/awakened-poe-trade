@@ -204,16 +204,11 @@ export function calculatedStatToFilter (
       tag: (type === ModifierType.Enchant)
         ? FilterTag.Enchant
         : FilterTag.Variant,
-      oils: decodeOils(calc),
       sources: sources,
       option: {
         value: sources[0].contributes!.value
       },
       disabled: false
-    }
-
-    if (filter.oils) {
-      filter.disabled = true
     }
   }
 
@@ -232,6 +227,13 @@ export function calculatedStatToFilter (
     sources: sources,
     roll: undefined,
     disabled: true
+  }
+
+  if (calc.stat.better === StatBetter.NotComparable) {
+    if (type !== ModifierType.Enchant) {
+      filter.tag = FilterTag.Variant
+    }
+    filter.disabled = false
   }
 
   if (type === ModifierType.Implicit) {
