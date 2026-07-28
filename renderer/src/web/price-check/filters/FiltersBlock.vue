@@ -84,6 +84,9 @@
           v-model="showHidden" class="text-gray-400 pt-2">{{ t('filters.hidden_toggle') }}</ui-toggle>
         <ui-toggle
           v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('filters.mods_toggle') }}</ui-toggle>
+        <ui-toggle
+          :modelValue="isAutoSearchEnabled" @update:modelValue="toggleAutoSearch"
+          class="text-gray-400 pt-2">{{ t('filters.auto_toggle') }}</ui-toggle>
       </div>
     </div>
   </div>
@@ -99,6 +102,8 @@ import FilterBtnLogical from './FilterBtnLogical.vue'
 import UnknownModifier from './UnknownModifier.vue'
 import { ItemFilters, StatFilter } from './interfaces'
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
+import { AppConfig } from '@/web/Config'
+import { PriceCheckWidget } from '@/web/overlay/interfaces'
 
 export default defineComponent({
   name: 'FiltersBlock',
@@ -171,6 +176,21 @@ export default defineComponent({
       },
       selectPreset (id: string) {
         ctx.emit('preset', id)
+      },
+      isAutoSearchEnabled: computed(() => {
+        const widget = AppConfig<PriceCheckWidget>('price-check')!
+        return !widget.autoSearchDisabled.includes(props.item.info.refName)
+      }),
+      toggleAutoSearch (enabled: boolean) {
+        const widget = AppConfig<PriceCheckWidget>('price-check')!
+        const list = widget.autoSearchDisabled
+        const refName = props.item.info.refName
+        if (enabled) {
+          const idx = list.indexOf(refName)
+          if (idx !== -1) list.splice(idx, 1)
+        } else {
+          if (!list.includes(refName)) list.push(refName)
+        }
       }
     }
   }

@@ -161,6 +161,7 @@
     "hidden_toggle": "Hidden",
     "collapse": "Collapse",
     "mods_toggle": "Mods",
+    "auto_toggle": "Auto",
     "empty": "No relevant stats were found",
     "tier": "Tier {0}",
     "preset_pseudo": "Pseudo",
