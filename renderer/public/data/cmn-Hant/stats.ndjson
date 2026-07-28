@@ -817,6 +817,7 @@
 {"ref":"#% increased Damage with Vaal Skills","better":1,"matchers":[{"string":"增加 #% 瓦爾技能傷害"},{"string":"減少 #% 瓦爾技能傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2257141320"],"implicit":["implicit.stat_2257141320"],"fractured":["fractured.stat_2257141320"],"crafted":["crafted.stat_2257141320"]}}}
 {"ref":"#% increased Damage with Vaal Skills during effect","better":1,"matchers":[{"string":"效果持續時間內，增加 #% 瓦爾技能傷害"},{"string":"效果持續時間內，減少 #% 瓦爾技能傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4067144129"]}}}
 {"ref":"#% increased Damage with Wands","better":1,"matchers":[{"string":"增加 #% 法杖傷害"},{"string":"減少 #% 法杖傷害","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_379328644"],"fractured":["fractured.stat_379328644"]}}}
+{"ref":"#% increased Dead Man's Sulphur found in this Area","better":1,"matchers":[{"string":"增加 #% 此區域中找到的亡者硫酸"}],"trade":{"ids":{"explicit":["explicit.stat_1605192338"]}}}
 {"ref":"#% increased Deception speed","better":1,"matchers":[{"string":"增加 #% 詐欺速度"},{"string":"減少 #% 詐欺速度","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2520458995"],"implicit":["implicit.stat_2520458995"],"fractured":["fractured.stat_2520458995"]}}}
 {"ref":"#% increased Defences from Equipped Shield","better":1,"matchers":[{"string":"增加 #% 從盾牌獲取的防禦"},{"string":"減少 #% 從盾牌獲取的防禦","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1215155013"]}}}
 {"ref":"#% increased Defences from Equipped Shield per 10 Devotion","better":1,"matchers":[{"string":"每 10 個奉獻，增加 #% 裝備的盾牌的防禦","advanced":"每 10 個奉獻，從裝備的盾牌增加 #% 防禦"},{"string":"每 10 個奉獻，減少 #% 裝備的盾牌的防禦","advanced":"每 10 個奉獻，從裝備的盾牌減少 #% 防禦","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2803981661"]}}}
@@ -7483,6 +7484,7 @@
 {"ref":"Voltaxic Sulphite Veins and Chests in your Maps have #% chance to contain double Sulphite","better":1,"matchers":[{"string":"你地圖中的魔暴硫酸礦脈和寶箱，有 #% 機率含有 2 倍硫酸"}],"trade":{"ids":{"explicit":["explicit.stat_1174549622"]}}}
 {"ref":"Voracious Flame","better":1,"matchers":[{"string":"貪婪惡火"}],"trade":{"ids":{"explicit":["explicit.stat_3458351769"]}}}
 {"ref":"Vorici's Veiled","better":0,"matchers":[{"string":"瓦里西的隱匿"}],"trade":{"ids":{"veiled":["veiled.mod_47933"]}}}
+{"ref":"Voyage Modifier will be revealed once Charted","better":1,"matchers":[{"string":"航程詞綴會於測繪後揭露"}],"trade":{"ids":{"implicit":["implicit.stat_3582759801"]}}}
 {"ref":"Vulnerability has no Reservation if Cast as an Aura","better":1,"matchers":[{"string":"若脆弱以光環施放沒有保留"}],"trade":{"ids":{"explicit":["explicit.stat_531868030"]}}}
 {"ref":"Warcries cannot Exert Travel Skills","better":1,"matchers":[{"string":"戰吼不能竭盡快行技能"}],"trade":{"ids":{"explicit":["explicit.stat_2174134106"],"fractured":["fractured.stat_2174134106"],"crafted":["crafted.stat_2174134106"]}}}
 {"ref":"Warcries Cost +#% of Life","better":1,"matchers":[{"string":"戰吼消耗 #% 的生命"}],"trade":{"ids":{"explicit":["explicit.stat_1427553227"]}}}

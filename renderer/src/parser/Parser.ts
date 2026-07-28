@@ -57,6 +57,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSockets,
   parseHeistContract,
   parseHeistBlueprint,
+  parseChart,
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirroredTablet,
@@ -949,6 +950,32 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
       }
     } else if (line.startsWith(_$.HEIST_WINGS_REVEALED)) {
       item.heistBlueprint.wingsRevealed = parseInt(line.slice(_$.HEIST_WINGS_REVEALED.length), 10)
+    }
+  }
+
+  return 'SECTION_PARSED'
+}
+
+function parseChart (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Chart) return 'PARSER_SKIPPED'
+
+  parseAreaLevelNested(section, item)
+  if (!item.areaLevel) {
+    return 'SECTION_SKIPPED'
+  }
+
+  // reward stats granted by Chart modifiers are aggregated
+  // in the same section, using Map-like property lines
+  if (!item.map) {
+    item.map = { tier: undefined }
+  }
+  for (const line of section) {
+    if (line.startsWith(_$.MAP_ITEM_QUANTITY)) {
+      item.map.itemQuantity = parseInt(line.slice(_$.MAP_ITEM_QUANTITY.length), 10)
+    } else if (line.startsWith(_$.MAP_ITEM_RARITY)) {
+      item.map.itemRarity = parseInt(line.slice(_$.MAP_ITEM_RARITY.length), 10)
+    } else if (line.startsWith(_$.MAP_MONSTER_PACK_SIZE)) {
+      item.map.packSize = parseInt(line.slice(_$.MAP_MONSTER_PACK_SIZE.length), 10)
     }
   }
 

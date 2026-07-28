@@ -170,7 +170,8 @@
     "tincture": "Микстура",
     "azmeri_charm": "Оберег",
     "idol": "Идол",
-    "graft": "Нарост"
+    "graft": "Нарост",
+    "chart": "Карта"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",

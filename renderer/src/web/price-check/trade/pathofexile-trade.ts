@@ -50,7 +50,8 @@ export const CATEGORY_TO_TRADE_ID = new Map([
   [ItemCategory.Tincture, 'tincture'],
   [ItemCategory.Charm, 'azmeri.charm'],
   [ItemCategory.Idol, 'idol'],
-  [ItemCategory.Graft, 'graft']
+  [ItemCategory.Graft, 'graft'],
+  [ItemCategory.Chart, 'chart']
 ])
 
 const TOTAL_MODS_TEXT = {

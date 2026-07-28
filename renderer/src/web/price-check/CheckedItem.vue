@@ -126,6 +126,7 @@ export default defineComponent({
         doSearch.value = Boolean(
           (item.rarity === ItemRarity.Unique) ||
           (item.category === ItemCategory.Map) ||
+          (item.category === ItemCategory.Chart) ||
           (item.category === ItemCategory.HeistContract) ||
           (item.category === ItemCategory.HeistBlueprint) ||
           (item.category === ItemCategory.SanctumRelic) ||
@@ -183,6 +184,7 @@ export default defineComponent({
 
       return props.item.rarity === ItemRarity.Rare &&
         props.item.category !== ItemCategory.Map &&
+        props.item.category !== ItemCategory.Chart &&
         props.item.category !== ItemCategory.CapturedBeast &&
         props.item.category !== ItemCategory.HeistContract &&
         props.item.category !== ItemCategory.HeistBlueprint &&

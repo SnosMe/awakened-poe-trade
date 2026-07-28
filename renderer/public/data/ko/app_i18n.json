@@ -145,7 +145,8 @@
     "accessory_trinket": "도둑 장신구",
     "sanctum_relic": "성역 유물",
     "tincture": "팅크",
-    "azmeri_charm": "부적"
+    "azmeri_charm": "부적",
+    "chart": "해도"
   },
   "filters": {
     "selected_some": "{1} 중 {0}개 선택",

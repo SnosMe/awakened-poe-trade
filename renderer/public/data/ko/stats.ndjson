@@ -817,6 +817,7 @@
 {"ref":"#% increased Damage with Vaal Skills","better":1,"matchers":[{"string":"바알 스킬로 주는 피해 #% 증가"},{"string":"바알 스킬로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2257141320"],"implicit":["implicit.stat_2257141320"],"fractured":["fractured.stat_2257141320"],"crafted":["crafted.stat_2257141320"]}}}
 {"ref":"#% increased Damage with Vaal Skills during effect","better":1,"matchers":[{"string":"효과를 받는 동안 바알 스킬로 주는 피해 #% 증가"},{"string":"효과를 받는 동안 바알 스킬로 주는 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_4067144129"]}}}
 {"ref":"#% increased Damage with Wands","better":1,"matchers":[{"string":"마법봉 피해 #% 증가"},{"string":"마법봉 피해 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_379328644"],"fractured":["fractured.stat_379328644"]}}}
+{"ref":"#% increased Dead Man's Sulphur found in this Area","better":1,"matchers":[{"string":"이 지역에서 발견하는 망자의 유황 #% 증가"}],"trade":{"ids":{"explicit":["explicit.stat_1605192338"]}}}
 {"ref":"#% increased Deception speed","better":1,"matchers":[{"string":"기만 속도 #% 증가"},{"string":"기만 속도 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2520458995"],"implicit":["implicit.stat_2520458995"],"fractured":["fractured.stat_2520458995"]}}}
 {"ref":"#% increased Defences from Equipped Shield","better":1,"matchers":[{"string":"장착한 방패로 얻는 방어력 #% 증가"},{"string":"장착한 방패로 얻는 방어력 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_1215155013"]}}}
 {"ref":"#% increased Defences from Equipped Shield per 10 Devotion","better":1,"matchers":[{"string":"헌신 10당 장착한 방패로 얻는 방어력 #% 증가","advanced":"헌신 10당 장착한 방패로 얻는 방어 #% 증가"},{"string":"헌신 10당 장착한 방패로 얻는 방어력 #% 감소","advanced":"헌신 10당 장착한 방패로 얻는 방어 #% 감소","negate":true}],"trade":{"ids":{"explicit":["explicit.stat_2803981661"]}}}
@@ -7475,6 +7476,7 @@
 {"ref":"Voltaxic Sulphite Veins and Chests in your Maps have #% chance to contain double Sulphite","better":1,"matchers":[{"string":"지도 내의 전도성 아황산염 광맥과 상자에 아황산염이 2배로 들어 있을 확률 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1174549622"]}}}
 {"ref":"Voracious Flame","better":1,"matchers":[{"string":"탐욕적인 화염"}],"trade":{"ids":{"explicit":["explicit.stat_3458351769"]}}}
 {"ref":"Vorici's Veiled","better":0,"matchers":[{"string":"보리치의 장막의"}],"trade":{"ids":{"veiled":["veiled.mod_47933"]}}}
+{"ref":"Voyage Modifier will be revealed once Charted","better":1,"matchers":[{"string":"해도를 기록하면 항해 속성이 드러남"}],"trade":{"ids":{"implicit":["implicit.stat_3582759801"]}}}
 {"ref":"Vulnerability has no Reservation if Cast as an Aura","better":1,"matchers":[{"string":"취약성이 오라의 형태로 시전되는 경우 점유 없음"}],"trade":{"ids":{"explicit":["explicit.stat_531868030"]}}}
 {"ref":"Warcries cannot Exert Travel Skills","better":1,"matchers":[{"string":"함성이 이동 전용 스킬을 전력 공격으로 사용하지 않음"}],"trade":{"ids":{"explicit":["explicit.stat_2174134106"],"fractured":["fractured.stat_2174134106"],"crafted":["crafted.stat_2174134106"]}}}
 {"ref":"Warcries Cost +#% of Life","better":1,"matchers":[{"string":"함성의 생명력 소모량 #%"}],"trade":{"ids":{"explicit":["explicit.stat_1427553227"]}}}

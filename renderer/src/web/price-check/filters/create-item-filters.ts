@@ -187,6 +187,21 @@ export function createFilters (
       nameTrade: t(opts, item.info),
       baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
     }
+  } else if (item.category === ItemCategory.Chart) {
+    filters.searchRelaxed = {
+      category: item.category,
+      disabled: true
+    }
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
+    }
+    if (item.areaLevel) {
+      filters.areaLevel = {
+        value: floorToBracket(item.areaLevel, [1, 68, 73, 78, 81, 83]),
+        disabled: false
+      }
+    }
   } else {
     filters.searchExact = {
       baseType: item.info.name,
@@ -328,6 +343,7 @@ export function createFilters (
       item.category !== ItemCategory.SanctumRelic &&
       item.category !== ItemCategory.Charm &&
       item.category !== ItemCategory.Idol &&
+      item.category !== ItemCategory.Chart &&
       item.info.refName !== 'Expedition Logbook'
     ) {
       if (item.category === ItemCategory.ClusterJewel) {

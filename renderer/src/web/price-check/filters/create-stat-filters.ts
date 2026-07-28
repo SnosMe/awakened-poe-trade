@@ -53,7 +53,10 @@ export function createExactStatFilters (
     item.category !== ItemCategory.Sentinel
   )) {
     keepByType.push(ModifierType.Explicit)
-  } else if (item.rarity === ItemRarity.Rare && item.category === ItemCategory.Idol) {
+  } else if (item.rarity === ItemRarity.Rare && (
+    item.category === ItemCategory.Idol ||
+    item.category === ItemCategory.Chart
+  )) {
     keepByType.push(ModifierType.Explicit)
   }
 

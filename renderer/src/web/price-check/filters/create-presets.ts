@@ -38,6 +38,7 @@ export function createPresets (
     (item.category === ItemCategory.Idol && item.rarity !== ItemRarity.Unique) ||
     item.category === ItemCategory.Charm ||
     item.category === ItemCategory.Map ||
+    item.category === ItemCategory.Chart ||
     item.category === ItemCategory.MemoryLine ||
     item.category === ItemCategory.Invitation ||
     item.category === ItemCategory.HeistContract ||
