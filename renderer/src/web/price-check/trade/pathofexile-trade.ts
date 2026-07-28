@@ -171,6 +171,11 @@ interface TradeRequest {
       heist_filters?: {
         filters: {
           heist_wings?: FilterRange
+          heist_max_wings?: FilterRange
+          heist_escape_routes?: FilterRange
+          heist_max_escape_routes?: FilterRange
+          heist_reward_rooms?: FilterRange
+          heist_max_reward_rooms?: FilterRange
           heist_objective_value?: { option?: 'priceless' }
           heist_agility?: FilterRange
           heist_brute_force?: FilterRange
@@ -393,6 +398,27 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
 
   if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
     propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
+  }
+  if (filters.heistTotalWings && !filters.heistTotalWings.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_max_wings.min', filters.heistTotalWings.value)
+  }
+  if (filters.heistEscapeRoutes && !filters.heistEscapeRoutes.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_escape_routes.min', filters.heistEscapeRoutes.value)
+  }
+  if (filters.heistTotalEscapeRoutes && !filters.heistTotalEscapeRoutes.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_max_escape_routes.min', filters.heistTotalEscapeRoutes.value)
+  }
+  if (filters.heistRewardRooms && !filters.heistRewardRooms.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_reward_rooms.min', filters.heistRewardRooms.value)
+  }
+  if (filters.heistTotalRewardRooms && !filters.heistTotalRewardRooms.disabled) {
+    propSet(query.filters, 'heist_filters.filters.heist_max_reward_rooms.min', filters.heistTotalRewardRooms.value)
+  }
+  if (filters.heistItemQuantity && !filters.heistItemQuantity.disabled) {
+    propSet(query.filters, 'map_filters.filters.map_iiq.min', filters.heistItemQuantity.value)
+  }
+  if (filters.heistItemRarity && !filters.heistItemRarity.disabled) {
+    propSet(query.filters, 'map_filters.filters.map_iir.min', filters.heistItemRarity.value)
   }
 
   if (filters.sentinelCharge && !filters.sentinelCharge.disabled) {

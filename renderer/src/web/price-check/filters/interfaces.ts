@@ -79,6 +79,13 @@ export interface ItemFilters {
   }
   areaLevel?: FilterNumeric
   heistWingsRevealed?: FilterNumeric
+  heistTotalWings?: FilterNumeric
+  heistEscapeRoutes?: FilterNumeric
+  heistTotalEscapeRoutes?: FilterNumeric
+  heistRewardRooms?: FilterNumeric
+  heistTotalRewardRooms?: FilterNumeric
+  heistItemQuantity?: FilterNumeric
+  heistItemRarity?: FilterNumeric
   sentinelCharge?: FilterNumeric
   trade: {
     offline: boolean

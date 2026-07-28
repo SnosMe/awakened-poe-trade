@@ -176,10 +176,28 @@ export function createFilters (
     }
 
     if (item.heistBlueprint?.wingsRevealed) {
-      filters.heistWingsRevealed = {
-        value: item.heistBlueprint.wingsRevealed,
-        disabled: false
-      }
+      filters.heistWingsRevealed = { value: item.heistBlueprint.wingsRevealed, disabled: false }
+    }
+    if (item.heistBlueprint?.totalWings != null) {
+      filters.heistTotalWings = { value: item.heistBlueprint.totalWings, disabled: true }
+    }
+    if (item.heistBlueprint?.escapeRoutes != null) {
+      filters.heistEscapeRoutes = { value: item.heistBlueprint.escapeRoutes, disabled: true }
+    }
+    if (item.heistBlueprint?.totalEscapeRoutes != null) {
+      filters.heistTotalEscapeRoutes = { value: item.heistBlueprint.totalEscapeRoutes, disabled: true }
+    }
+    if (item.heistBlueprint?.rewardRooms != null) {
+      filters.heistRewardRooms = { value: item.heistBlueprint.rewardRooms, disabled: true }
+    }
+    if (item.heistBlueprint?.totalRewardRooms != null) {
+      filters.heistTotalRewardRooms = { value: item.heistBlueprint.totalRewardRooms, disabled: true }
+    }
+    if (item.heistBlueprint?.itemQuantity != null) {
+      filters.heistItemQuantity = { value: item.heistBlueprint.itemQuantity, disabled: true }
+    }
+    if (item.heistBlueprint?.itemRarity != null) {
+      filters.heistItemRarity = { value: item.heistBlueprint.itemRarity, disabled: true }
     }
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
     filters.searchExact = {
