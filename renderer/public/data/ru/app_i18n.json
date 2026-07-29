@@ -126,7 +126,15 @@
     "not_mirrored": "Не отражено",
     "split": "Разделено",
     "not_split": "Не разделено",
-    "map_foil_reward": "Особая {0}"
+    "map_foil_reward": "Особая {0}",
+    "heist_escape_routes": "Путей отхода: {0}",
+    "heist_reward_rooms": "Комнат с наградами: {0}",
+    "heist_iiq": "Кол-во предметов: {0}%",
+    "heist_iir": "Редкость предметов: {0}%",
+    "heist_total_wings": "Всего крыльев: {0}",
+    "heist_total_escape_routes": "Всего путей отхода: {0}",
+    "heist_total_reward_rooms": "Всего комнат с наградами: {0}",
+    "heist_contract_required_level": "Уровень: {0}"
   },
   "item_category": {
     "prop": "Категория: {0}",

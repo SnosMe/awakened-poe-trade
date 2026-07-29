@@ -1,4 +1,4 @@
-import type { ItemInfluence, ItemCategory } from '@/parser'
+import type { ItemInfluence, ItemCategory, HeistDepartment } from '@/parser'
 import type { StatCalculated } from '@/parser/modifiers'
 import type { ParsedItem } from '@/parser/ParsedItem'
 
@@ -79,6 +79,18 @@ export interface ItemFilters {
   }
   areaLevel?: FilterNumeric
   heistWingsRevealed?: FilterNumeric
+  heistTotalWings?: FilterNumeric
+  heistEscapeRoutes?: FilterNumeric
+  heistTotalEscapeRoutes?: FilterNumeric
+  heistRewardRooms?: FilterNumeric
+  heistTotalRewardRooms?: FilterNumeric
+  heistItemQuantity?: FilterNumeric
+  heistItemRarity?: FilterNumeric
+  heistContractDepartment?: {
+    value: HeistDepartment
+    disabled: boolean
+  }
+  heistContractMinLevel?: FilterNumeric
   sentinelCharge?: FilterNumeric
   trade: {
     offline: boolean
@@ -139,17 +151,7 @@ const _INTERNAL_TRADE_IDS = [
   'item.has_empty_modifier',
   'item.map_item_quantity',
   'item.map_item_rarity',
-  'item.map_pack_size',
-  'item.heist_job_lockpicking',
-  'item.heist_job_bruteforce',
-  'item.heist_job_perception',
-  'item.heist_job_demolition',
-  'item.heist_job_counterthaumaturgy',
-  'item.heist_job_trapdisarmament',
-  'item.heist_job_agility',
-  'item.heist_job_deception',
-  'item.heist_job_engineering',
-  'item.heist_target_priceless'
+  'item.map_pack_size'
 ] as const
 
 export type InternalTradeId = typeof _INTERNAL_TRADE_IDS[number]

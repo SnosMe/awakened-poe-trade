@@ -160,26 +160,69 @@ export function createFilters (
       value: floorToBracket(item.areaLevel!, [1, 68, 73, 78, 81, 83]),
       disabled: false
     }
+  } else if (item.category === ItemCategory.HeistContract && item.heistContract) {
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: t(opts, item.info)
+    }
+    if (item.rarity === ItemRarity.Unique && item.info.unique) {
+      filters.searchExact = {
+        name: item.info.name,
+        nameTrade: t(opts, item.info),
+        baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
+      }
+    }
+    filters.areaLevel = {
+      value: item.areaLevel!,
+      disabled: false
+    }
+    filters.heistContractDepartment = {
+      value: item.heistContract.department,
+      disabled: false
+    }
+    filters.heistContractMinLevel = {
+      value: item.heistContract.minLevel,
+      disabled: false
+    }
+    if (item.heistBlueprint?.itemQuantity != null) {
+      filters.heistItemQuantity = { value: item.heistBlueprint.itemQuantity, disabled: true }
+    }
+    if (item.heistBlueprint?.itemRarity != null) {
+      filters.heistItemRarity = { value: item.heistBlueprint.itemRarity, disabled: true }
+    }
   } else if (item.category === ItemCategory.HeistBlueprint) {
     filters.searchRelaxed = {
       category: item.category,
-      disabled: true // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3109852
+      disabled: true // TODO: blocked by trade API bug
     }
     filters.searchExact = {
       baseType: item.info.name,
       baseTypeTrade: t(opts, item.info)
     }
-
-    filters.areaLevel = {
-      value: item.areaLevel!,
-      disabled: false
-    }
-
+    filters.areaLevel = { value: item.areaLevel!, disabled: false }
     if (item.heistBlueprint?.wingsRevealed) {
-      filters.heistWingsRevealed = {
-        value: item.heistBlueprint.wingsRevealed,
-        disabled: false
-      }
+      filters.heistWingsRevealed = { value: item.heistBlueprint.wingsRevealed, disabled: false }
+    }
+    if (item.heistBlueprint?.totalWings != null) {
+      filters.heistTotalWings = { value: item.heistBlueprint.totalWings, disabled: true }
+    }
+    if (item.heistBlueprint?.escapeRoutes != null) {
+      filters.heistEscapeRoutes = { value: item.heistBlueprint.escapeRoutes, disabled: true }
+    }
+    if (item.heistBlueprint?.totalEscapeRoutes != null) {
+      filters.heistTotalEscapeRoutes = { value: item.heistBlueprint.totalEscapeRoutes, disabled: true }
+    }
+    if (item.heistBlueprint?.rewardRooms != null) {
+      filters.heistRewardRooms = { value: item.heistBlueprint.rewardRooms, disabled: true }
+    }
+    if (item.heistBlueprint?.totalRewardRooms != null) {
+      filters.heistTotalRewardRooms = { value: item.heistBlueprint.totalRewardRooms, disabled: true }
+    }
+    if (item.heistBlueprint?.itemQuantity != null) {
+      filters.heistItemQuantity = { value: item.heistBlueprint.itemQuantity, disabled: true }
+    }
+    if (item.heistBlueprint?.itemRarity != null) {
+      filters.heistItemRarity = { value: item.heistBlueprint.itemRarity, disabled: true }
     }
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
     filters.searchExact = {
