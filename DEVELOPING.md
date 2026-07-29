@@ -36,6 +36,7 @@ yarn make-index-files
 yarn build
 
 cd ../main
+yarn install
 yarn build
 # We want to sign with a distribution certificate to ensure other users can
 # install without errors
