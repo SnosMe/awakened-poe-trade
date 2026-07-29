@@ -1,6 +1,6 @@
 'use strict'
 
-import { app } from 'electron'
+import { app, dialog, shell, systemPreferences } from 'electron'
 import { uIOhook } from 'uiohook-napi'
 import os from 'node:os'
 import { startServer, eventPipe, server } from './server'
@@ -23,6 +23,11 @@ if (process.platform !== 'darwin') {
   app.disableHardwareAcceleration()
 }
 app.enableSandbox()
+
+function canStartUiohook () {
+  return process.platform !== 'darwin' ||
+    systemPreferences.isTrustedAccessibilityClient(false)
+}
 
 let tray: AppTray
 
@@ -48,7 +53,24 @@ app.on('ready', async () => {
         appUpdater.checkAtStartup()
         tray.overlayKey = cfg.overlayKey
       })
-      uIOhook.start()
+      if (canStartUiohook()) {
+        uIOhook.start()
+      } else {
+        const needsRestart = dialog.showMessageBoxSync({
+          type: 'warning',
+          title: 'Accessibility Permission Required',
+          message: 'Awakened PoE Trade needs Accessibility permission to capture shortcuts on macOS.',
+          detail:
+            'Open System Settings > Privacy & Security > Accessibility and allow this app/Terminal.\n\n' +
+            'After enabling, restart the app.',
+          buttons: ['Open Settings', 'Later'],
+          defaultId: 0,
+          cancelId: 1
+        })
+        if (needsRestart === 0) {
+          await shell.openExternal('x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility')
+        }
+      }
       const port = await startServer(appUpdater, logger)
       // TODO: move up (currently crashes)
       logger.write(`info ${os.type()} ${os.release} / v${app.getVersion()}`)
