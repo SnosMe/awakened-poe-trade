@@ -2,12 +2,12 @@
 title: Common issues
 ---
 
-1. Read the [requirements](/download) again.
+1. Read the [requirements](https://snosme.github.io/awakened-poe-trade/download.md) again.
 
     Please do it. Did you know that updating Geforce Experience can reset game
     video settings to "optimized profile" and silently enable Fullscreen mode?
 
-2. [Check the logs](/faq).
+2. [Check the logs](/docs/faq.md).
 
 3. Are you playing with Vulkan renderer? Update GPU drivers.
 
@@ -31,14 +31,14 @@ title: Common issues
 
 ---
 
-- 🔥[There are no stats to select from when price checking](/no-item-mods)
-- [Failed to load leagues](/failed-load-leagues)
+- 🔥[There are no stats to select from when price checking](/docs/no-item-mods.md)
+- [Failed to load leagues](/docs/failed-load-leagues.md)
 - [How to remove the stopwatch in center of screen?](https://github.com/SnosMe/awakened-poe-trade/issues/219)
 - [Sends a whisper when doing price-check](https://github.com/SnosMe/awakened-poe-trade/issues/178)
 
 ## Windows
 
-- 🔥[Nothing happens when I try to price check](/nothing-happens)
+- 🔥[Nothing happens when I try to price check](/docs/nothing-happens.md)
 - [Can't open settings via tray icon when game is active](https://github.com/SnosMe/awakened-poe-trade/issues/265)
 
 ## Linux
