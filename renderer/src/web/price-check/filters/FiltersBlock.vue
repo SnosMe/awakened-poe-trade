@@ -31,6 +31,8 @@
         <filter-btn-logical v-for="influence of filters.influences" :key="influence.value"
           :filter="influence" :text="influence.value" :img="`/images/influence-${influence.value}.png`" />
       </template>
+      <filter-btn-logical v-if="filters.nonInfluenced"
+        :filter="filters.nonInfluenced" :text="t('item.non_influenced')" />
       <filter-btn-logical v-if="filters.rarity?.value === 'magic'"
         :filter="filters.rarity" text="Magic" />
       <filter-btn-logical v-if="filters.unidentified"

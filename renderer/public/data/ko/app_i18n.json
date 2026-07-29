@@ -103,7 +103,8 @@
     "foil_unique": "반짝이",
     "mirrored": "복제된",
     "not_mirrored": "복제되지 않은",
-    "map_foil_reward": "반짝이 {0}"
+    "map_foil_reward": "반짝이 {0}",
+    "non_influenced": "Non-influenced"
   },
   "item_category": {
     "prop": "유형: {0}",
