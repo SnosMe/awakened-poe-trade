@@ -21,12 +21,14 @@
       ref="tradeService"
       :filters="itemFilters"
       :stats="itemStats"
-      :item="item" />
+      :item="item"
+      @reset="resetTradeResults" />
     <trade-bulk
       v-if="tradeAPI === 'bulk' && doSearch"
       ref="tradeService"
       :filters="itemFilters"
-      :item="item" />
+      :item="item"
+      @reset="resetTradeResults" />
     <div v-if="!doSearch" class="flex justify-between items-center">
       <div class="flex w-40" @mouseenter="handleSearchMouseenter">
         <button class="btn" @click="doSearch = true" style="min-width: 5rem;">{{ t('Search') }}</button>
@@ -241,6 +243,9 @@ export default defineComponent({
       },
       makeTradeLink () {
         return `https://${getTradeEndpoint()}/trade/search/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value))}`
+      },
+      resetTradeResults () {
+        doSearch.value = false
       }
     }
   }
