@@ -1,11 +1,11 @@
 <template>
   <div class="filter-name">
     <button class="px-2 rounded border overflow-hidden text-ellipsis"
-      :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
+      :class="{ 'border-line-strong': showAsActive, 'border-surface-deep': !showAsActive }"
       @click="toggleAccuracy">{{ label }}</button>
     <button v-if="filters.corrupted" class="px-2" @click="corrupted = !corrupted">
-      <span v-if="corrupted" class="text-red-500">{{ t('item.corrupted') }}</span>
-      <span v-else class="text-gray-600">{{ t('item.not_corrupted') }}</span>
+      <span v-if="corrupted" class="text-danger-text">{{ t('item.corrupted') }}</span>
+      <span v-else class="text-content-muted">{{ t('item.not_corrupted') }}</span>
     </button>
   </div>
 </template>
@@ -82,7 +82,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .filter-name {
-  @apply bg-gray-900 mb-2 rounded;
+  @apply bg-surface-base mb-2 rounded;
   line-height: 1.25rem;
   display: flex;
   justify-content: space-between;

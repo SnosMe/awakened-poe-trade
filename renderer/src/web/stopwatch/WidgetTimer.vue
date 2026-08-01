@@ -130,11 +130,11 @@ export default defineComponent({
   font-size: 2rem;
   line-height: 1;
   @apply font-mono;
-  text-shadow: 0 1px 3px rgb(0, 0, 0);
+  text-shadow: 0 1px 3px rgb(var(--c-shadow));
 }
 
 .button {
-  background: rgba(29, 29, 29, 0.863);
+  background: rgb(var(--c-surface-base) / 0.88);
   @apply rounded;
   line-height: 1;
   width: 2rem;
@@ -156,7 +156,7 @@ export default defineComponent({
 .wrapper {
   @apply px-2 py-1;
   @apply rounded text-white;
-  @apply bg-gray-300/30;
+  @apply bg-surface-hover/30;
 
   &:not(:hover) {
     .controls {
@@ -171,6 +171,6 @@ export default defineComponent({
   right: 0;
   line-height: 1;
   @apply px-2 rounded shadow;
-  @apply bg-orange-700 text-white;
+  @apply bg-warn text-white;
 }
 </style>

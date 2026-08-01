@@ -4,7 +4,7 @@
       :style="{
         width: `${anchor.width}px`,
         height: `${anchor.height}px`,
-        background: 'rgba(255,255,255,0.1)'
+        background: 'rgb(var(--c-text-primary) / 0.1)'
       }">
       <div
         class="absolute"
@@ -14,7 +14,7 @@
         }">
           <div v-for="i in 9" :key="i" class="flex">
             <div v-for="j in 11" :key="j"
-              class="border border-gray-600"
+              class="border border-line"
               :style="cellSize" />
           </div>
         </div>

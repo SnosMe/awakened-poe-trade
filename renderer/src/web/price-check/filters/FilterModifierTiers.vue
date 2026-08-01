@@ -63,12 +63,12 @@ export default defineComponent({
 }
 
 .tier-1 {
-  @apply bg-yellow-500 text-black;
+  @apply bg-accent text-content-inverse;
 }
 .tier-2 {
-  @apply border -my-px border-yellow-500 text-yellow-500;
+  @apply border -my-px border-accent text-accent;
 }
 .not-tier-1 {
-  @apply bg-gray-700 text-black;
+  @apply bg-surface-hover text-content-body;
 }
 </style>

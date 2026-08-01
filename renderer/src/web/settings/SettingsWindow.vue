@@ -8,7 +8,7 @@
     </div>
   </div>
   <div :class="[$style.patronsHorizontal, { 'invisible': podiumVisible }]" :onMouseenter="showPodium">
-    <div class="bg-gray-800 rounded p-1 justify-center text-center w-44 shrink-0 flex items-center">
+    <div class="bg-surface-raised rounded p-1 justify-center text-center w-44 shrink-0 flex items-center">
       {{ t('settings.thank_you') }}
     </div>
     <div class="overflow-x-hidden whitespace-nowrap p-1 text-base">
@@ -19,27 +19,27 @@
   <div :class="$style.window" class="grow layout-column" :onMouseenter="hidePodium">
     <AppTitleBar @close="cancel" :title="t('settings.title')" />
     <div class="flex grow min-h-0">
-      <div class="pl-2 pt-2 bg-gray-900 flex flex-col gap-1" style="min-width: 10rem;">
+      <div class="pl-2 pt-2 bg-surface-base flex flex-col gap-1" style="min-width: 10rem;">
         <template v-for="item of menuItems">
           <button v-if="item.type === 'menu-item'"
             @click="item.select" :class="[$style['menu-item'], { [$style['active']]: item.isSelected }]">{{ item.name }}</button>
           <div v-else
-            class="border-b mx-2 border-gray-800" />
+            class="border-b mx-2 border-line" />
         </template>
         <button v-if="menuItems.length >= 4"
           :class="$style['quit-btn']" @click="quit">{{ t('app.quit') }}</button>
-        <div class="text-gray-400 text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content; min-width: 100%;">
+        <div class="text-content-muted text-center mt-auto pr-3 pt-4 pb-12" style="max-width: fit-content; min-width: 100%;">
           <img class="mx-auto mb-1" src="/images/peepoLove2x.webp">
           {{ t('Support development on') }}<br> <a href="https://patreon.com/awakened_poe_trade" class="inline-flex mt-1" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a>
         </div>
       </div>
-      <div class="text-gray-100 grow layout-column bg-gray-900">
-        <div class="grow overflow-y-auto bg-gray-800 rounded-tl">
+      <div class="text-content-primary grow layout-column bg-surface-base">
+        <div class="grow overflow-y-auto bg-surface-raised rounded-tl">
           <component v-if="configClone"
             :is="selectedComponent" :config="configClone" :configWidget="configWidget" />
         </div>
-        <div class="border-t bg-gray-900 border-gray-600 p-2 flex justify-end gap-x-2">
-          <button @click="save" class="px-3 bg-gray-800 rounded">{{ t('Save') }}</button>
+        <div class="border-t bg-surface-base border-line p-2 flex justify-end gap-x-2">
+          <button @click="save" class="px-3 bg-surface-raised rounded">{{ t('Save') }}</button>
           <button @click="cancel" class="px-3">{{ t('Cancel') }}</button>
         </div>
       </div>
@@ -237,7 +237,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   max-width: 50rem;
   max-height: 38rem;
   overflow: hidden;
-  @apply bg-gray-800;
+  @apply bg-surface-raised;
   @apply rounded-b;
   &:global {
     animation-name: slideInDown;
@@ -249,32 +249,32 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   text-align: left;
   @apply p-2;
   line-height: 1;
-  @apply text-gray-600;
+  @apply text-content-muted;
   @apply rounded-l;
 
   &:hover {
-    @apply text-gray-100;
+    @apply text-content-primary;
   }
 
   &.active {
-    @apply text-gray-400;
-    @apply bg-gray-800;
+    @apply text-content-muted;
+    @apply bg-surface-raised;
   }
 }
 
 .quit-btn {
-  @apply text-gray-600;
-  @apply border border-gray-800;
+  @apply text-content-muted;
+  @apply border border-line;
   @apply p-1 mt-2 mr-2 rounded;
 
   &:hover {
-    @apply text-red-400;
-    @apply border-red-400;
+    @apply text-danger-text;
+    @apply border-danger-text;
   }
 }
 
 .patronsHorizontal {
-  @apply bg-gray-900 p-1 rounded gap-1;
+  @apply bg-surface-base p-1 rounded gap-1;
   position: absolute;
   top: 40rem; left: 0; right: 0;
   margin: 0 auto;
@@ -328,6 +328,7 @@ function flatJoin<T, J> (arr: T[][], joinEl: () => J) {
   white-space: nowrap;
   @apply px-1 border;
 }
+/* Patreon tier badges — intentionally not themed. */
 .rating-1 {
   background-color: rgb(0, 0, 0);
   color: rgb(190, 178, 135);

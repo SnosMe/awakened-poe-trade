@@ -21,17 +21,17 @@
         class="self-center" :ms="4000" />
       <div v-else :class="$style.searchWrapper">
         <div class="flex gap-x-1 p-1">
-          <input type="text" :placeholder="t(':input')" class="rounded bg-gray-900 px-1 flex-1"
+          <input type="text" :placeholder="t(':input')" class="rounded bg-surface-base px-1 flex-1"
             v-model="searchValue">
           <button @click="clearSelectedItems" class="btn"><i class="fas fa-times" /> {{ t(':reset') }}</button>
         </div>
         <div class="flex gap-x-2 px-2 mb-px1 py-1">
           <span>{{ t(':heist_target') }}</span>
           <div class="flex gap-x-1">
-            <button :class="{ 'border': (typeFilter === 'gem') }" class="rounded px-2 bg-gray-900"
+            <button :class="{ 'border': (typeFilter === 'gem') }" class="rounded px-2 bg-surface-base"
               @click="typeFilter = 'gem'">{{ t(':target_gem') }}</button>
-            <button :class="{ 'border': (typeFilter === 'replica') }" class="rounded px-2 bg-gray-900"
-              @click="typeFilter = 'replica'">{{ t(':target_replica') }}, <span class="line-through text-gray-600">Base items</span></button>
+            <button :class="{ 'border': (typeFilter === 'replica') }" class="rounded px-2 bg-surface-base"
+              @click="typeFilter = 'replica'">{{ t(':target_replica') }}, <span class="line-through text-content-muted">Base items</span></button>
           </div>
         </div>
         <div class="flex flex-col">
@@ -318,7 +318,7 @@ function selectedItemClick (e: MouseEvent, item: SelectedItem) {
   padding-top: theme('spacing.1');
 
   &:hover {
-    background: linear-gradient(to left, theme('colors.gray.800'), theme('colors.gray.900'));
+    background: linear-gradient(to left, rgb(var(--c-surface-raised)), rgb(var(--c-surface-base)));
   }
 
   & .icon {
@@ -341,15 +341,15 @@ function selectedItemClick (e: MouseEvent, item: SelectedItem) {
     gap: theme('spacing.1');
 
     & > button {
-      @apply text-gray-600;
+      @apply text-content-muted;
       @apply px-1;
       @apply rounded;
     }
   }
 
   &:hover .selectButtons > button {
-    @apply text-gray-400;
-    @apply bg-gray-700;
+    @apply text-content-muted;
+    @apply bg-surface-hover;
   }
 }
 
@@ -360,7 +360,7 @@ function selectedItemClick (e: MouseEvent, item: SelectedItem) {
 }
 
 .selectedItems, .searchWrapper {
-  background: theme('colors.gray.800');
+  background: rgb(var(--c-surface-raised));
   border-radius: theme('borderRadius.DEFAULT');
 }
 
@@ -375,7 +375,7 @@ function selectedItemClick (e: MouseEvent, item: SelectedItem) {
   @apply rounded px-1 pb-1 pt-0.5;
 
   &:hover {
-    @apply bg-gray-700;
+    @apply bg-surface-hover;
   }
 
   & > .name {
@@ -389,7 +389,7 @@ function selectedItemClick (e: MouseEvent, item: SelectedItem) {
 
 @keyframes selectedItemEnter {
   0% { @apply bg-transparent; }
-  50% { @apply bg-gray-700; }
+  50% { @apply bg-surface-hover; }
   100% { @apply bg-transparent; }
 }
 .selectedItemEnter {

@@ -85,12 +85,12 @@ function handleClick () {
   overflow: hidden;
   flex: 1;
 
-  &.danger { @apply bg-red-700; }
-  &.warn { @apply bg-orange-600; }
-  &.good { @apply bg-green-700; }
+  &.danger { @apply bg-danger; }
+  &.warn { @apply bg-warn; }
+  &.good { @apply bg-good; }
 
   &.normal:hover {
-    @apply bg-gray-700;
+    @apply bg-surface-hover;
   }
 }
 
@@ -99,7 +99,7 @@ function handleClick () {
   display: flex;
   align-items: center;
   justify-content: center;
-  @apply text-gray-600;
+  @apply text-content-muted;
   text-align: center;
   line-height: 1;
 }

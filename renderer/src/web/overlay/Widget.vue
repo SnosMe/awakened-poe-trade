@@ -265,8 +265,8 @@ export default defineComponent({
 
 .actionsPanel {
   @apply py-1;
-  color: #fff;
-  background: rgba(0,0,0, 0.4);
+  color: rgb(var(--c-text-primary));
+  background: rgb(var(--c-surface-overlay) / 0.82);
   display: flex;
   flex-direction: column;
   @apply rounded;
@@ -278,15 +278,15 @@ export default defineComponent({
   white-space: nowrap;
 
   &:hover {
-    background: rgba(255,255,255, 0.15);
+    background: rgb(var(--c-text-primary) / 0.12);
   }
 
   &.active {
-    background: rgba(0,0,0, 0.6);
+    background: rgb(var(--c-surface-overlay) / 0.92);
   }
 
   &.removable {
-    background: linear-gradient(to left, transparent 50%, theme('colors.red.600') 50%);
+    background: linear-gradient(to left, transparent 50%, rgb(var(--c-danger)) 50%);
     background-size: 250% 100%;
     background-position: right bottom;
   }
@@ -304,16 +304,16 @@ export default defineComponent({
   /* left: max(0%, min(calc(x% - (1rem/2)), calc(100% - 1rem))); */
   width: 1rem;
   height: 1rem;
-  border: 0.25rem solid rgba(0, 0, 0, 0.6);
-  background: rgba(0,0,0,0.2);
+  border: 0.25rem solid rgb(var(--c-shadow) / 0.6);
+  background: rgb(var(--c-shadow) / 0.2);
   cursor: move;
   user-select: none;
 
   &.active {
     position: fixed;
-    border-color: #fff;
-    box-shadow: 0 1px 3px 0 rgb(0, 0, 0),
-                0 1px 2px 0 rgb(0, 0, 0);
+    border-color: rgb(var(--c-accent-strong));
+    box-shadow: 0 1px 3px 0 rgb(var(--c-shadow)),
+                0 1px 2px 0 rgb(var(--c-shadow));
   }
 }
 </style>
@@ -321,8 +321,8 @@ export default defineComponent({
 <style lang="postcss">
 .widget-default-style {
   @apply rounded;
-  @apply bg-gray-900;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.75),
-              0 1px 2px 0 rgba(0, 0, 0, 0.75);
+  @apply bg-surface-base;
+  box-shadow: 0 1px 3px 0 rgb(var(--c-shadow) / 0.75),
+              0 1px 2px 0 rgb(var(--c-shadow) / 0.75);
 }
 </style>

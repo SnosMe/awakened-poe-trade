@@ -19,7 +19,7 @@ const emit = defineEmits<{
 
 <style lang="postcss" module>
 .titlebar {
-  @apply bg-gray-900 text-gray-600;
+  @apply bg-surface-base text-content-muted;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,13 +30,13 @@ const emit = defineEmits<{
     @apply px-2 pt-px;
 
     &:hover {
-      @apply text-gray-400;
-      background: linear-gradient(to top, theme('colors.gray.900'), theme('colors.gray.700'))
+      @apply text-content-muted;
+      background: linear-gradient(to top, rgb(var(--c-surface-base)), rgb(var(--c-surface-hover)))
     }
 
     &.close:hover {
-      @apply text-red-200;
-      background: theme('colors.red.500');
+      @apply text-content-primary;
+      background: rgb(var(--c-danger));
     }
   }
 }

@@ -9,7 +9,7 @@
       <div class="pb-px flex items-baseline justify-between">
         <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
           <i class="w-5" :class="{
-            'far fa-square text-gray-500': isDisabled,
+            'far fa-square text-content-muted': isDisabled,
             'fas fa-check-square': !isDisabled
           }"></i>
           <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
@@ -33,7 +33,7 @@
         <div class="w-5 flex items-start">
           <ui-popover v-if="isHidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
             <template #target>
-              <span class="text-xs leading-none text-gray-600 cursor-pointer">
+              <span class="text-xs leading-none text-content-muted cursor-pointer">
                 <i class="fas fa-eye-slash" :class="{ 'faa-ring': !isDisabled }"></i>
               </span>
             </template>
@@ -228,14 +228,14 @@ export default defineComponent({
 <style lang="postcss" module>
 .filter {
   @apply py-2;
-  @apply border-b border-gray-700;
+  @apply border-b border-line;
   display: flex;
   position: relative;
 }
 
 .rollInput {
-  @apply bg-gray-900;
-  @apply text-gray-300;
+  @apply bg-surface-base;
+  @apply text-content-body;
   @apply text-center;
   @apply w-12;
   @apply px-1;
@@ -245,29 +245,29 @@ export default defineComponent({
   &:last-child { @apply rounded-r; }
 
   &::placeholder {
-    @apply text-gray-700;
+    @apply text-content-faint;
     font-size: 0.8125rem;
   }
 
-  /* &:not(:placeholder-shown) { @apply border-gray-600; } */
+  /* &:not(:placeholder-shown) { @apply border-line; } */
 
   &:focus {
-    @apply border-gray-500;
+    @apply border-line-strong;
     cursor: none;
   }
 }
 
 .qualityLabel {
-  @apply text-gray-500;
-  @apply border border-gray-700;
+  @apply text-content-muted;
+  @apply border border-line;
   @apply rounded;
   @apply px-2;
   text-align: center;
 }
 
 .mods {
-  @apply border-b-4 border-gray-500;
-  background: linear-gradient(to bottom, theme('colors.gray.800') , theme('colors.gray.900') );
+  @apply border-b-4 border-line-strong;
+  background: linear-gradient(to bottom, rgb(var(--c-surface-raised)) , rgb(var(--c-surface-base)) );
   @apply -mx-4 px-4;
   position: absolute;
   top: 100%;
@@ -289,10 +289,16 @@ export default defineComponent({
   overflow: hidden;
   text-overflow: clip;
 }
+/* Mod-source tags follow PoE's canonical mod colors (desaturated and darkened so a
+   light foreground reads on them), because the player's eye is already trained on
+   those hues in-game. Local to this block on purpose — they are tag-specific, not
+   app-wide tokens. */
 .tag-variant {
-  @apply bg-yellow-700 text-yellow-100; }
+  background: #6B5A33; color: #E8D9A8; }
 .tag-eldritch {
-  background: linear-gradient(to right, theme('colors.red.700'), theme('colors.blue.700'));
+  /* Searing Exarch -> Eater of Worlds */
+  background: linear-gradient(to right, #8A3A1E, #5E3E8C);
+  color: #F0DFD2;
 }
 .tag-explicit-shaper,
 .tag-explicit-elder,
@@ -307,8 +313,8 @@ export default defineComponent({
 .tag-explicit-essence {
   display: flex;
   align-items: center;
-  @apply -mx-1 pl-0.5 gap-x-0.5 text-gray-600;
-  text-shadow: 0 0 4px theme('colors.gray.900');
+  @apply -mx-1 pl-0.5 gap-x-0.5 text-content-muted;
+  text-shadow: 0 0 4px rgb(var(--c-surface-base));
   overflow: clip visible;
   min-width: 0;
 
@@ -343,24 +349,26 @@ export default defineComponent({
   background-image: url('/images/essence.png'); }
 
 .tag-corrupted {
-  @apply bg-red-700 text-red-100; }
+  background: #8A1F1F; color: #F0C8C8; }
 .tag-fractured {
-  @apply bg-yellow-400 text-black; }
-.tag-crafted, .tag-synthesised {
-  @apply bg-blue-600 text-blue-100; }
+  background: #6E6140; color: #E4D8B4; }
+.tag-crafted {
+  background: #3B3F7A; color: #C8CAF0; }
+.tag-synthesised {
+  background: #2E4E6E; color: #BBD4E8; }
 .tag-implicit, .tag-explicit {
-  @apply -mx-1 text-gray-600;
-  text-shadow: 0 0 4px theme('colors.gray.900');
+  @apply -mx-1 text-content-faint;
+  text-shadow: 0 0 4px rgb(var(--c-surface-base));
 }
 .tag-scourge {
-  @apply bg-orange-600 text-white; }
+  background: #8A3616; color: #F2C7AC; }
 .tag-foulborn {
-  @apply bg-pink-700 text-white; }
+  background: #6E2450; color: #EFC0DC; }
 .tag-enchant {
-  @apply bg-purple-600 text-purple-100; }
+  background: #4A3670; color: #D5C4EE; }
 .tag-pseudo,
 .tag-not {
-  @apply bg-gray-700 text-black; }
+  background: rgb(var(--c-surface-hover)); color: rgb(var(--c-text-body)); }
 </style>
 
 <style lang="postcss">
@@ -377,7 +385,7 @@ export default defineComponent({
   }
 
   .search-text:hover & {
-    @apply bg-gray-700;
+    @apply bg-surface-hover;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <span v-for="(part, idx) of parts" :key="idx"
       :class="{
         'text-white font-exo2 font-semibold': part.placeholder,
-        'text-gray-200': !part.placeholder
+        'text-content-body': !part.placeholder
       }"
       >{{ part.text }}</span>
   </span>

@@ -46,22 +46,22 @@ const { t } = useI18n()
 .required {
   font-size: theme('fontSize.lg');
   line-height: 1;
-  color: theme('colors.red.500');
+  color: rgb(var(--c-danger-text));
 }
 
 .splitKey {
   display: flex;
   gap: theme('spacing.1');
-  color: theme('colors.gray.100');
+  color: rgb(var(--c-text-primary));
 
   &.unset {
-    color: theme('colors.red.400');
+    color: rgb(var(--c-danger-text));
   }
 
   & > button {
     border-radius: theme('borderRadius.DEFAULT');
     padding: 0 theme('spacing.1');
-    background: theme('colors.gray.900');
+    background: rgb(var(--c-surface-base));
     border: theme('borderWidth.DEFAULT') solid transparent;
     line-height: 1;
 

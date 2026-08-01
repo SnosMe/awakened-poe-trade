@@ -4,8 +4,8 @@
       <div class="p-1 flex gap-1 items-center text-base">
         <template v-for="widget in widgets" :key="widget.wmId">
           <button @click="toggle(widget)"
-            :class="widget.wmWants === 'show' ? 'border-gray-500' : 'border-gray-800'"
-            class="bg-gray-800 rounded text-gray-100 p-2 leading-none whitespace-nowrap border"
+            :class="widget.wmWants === 'show' ? 'border-line-strong' : 'border-line'"
+            class="bg-surface-raised rounded text-content-primary p-2 leading-none whitespace-nowrap border"
           >
             <i v-if="widget.icon" class="fas align-bottom" :class="widget.icon" />
             <template v-if="widget.title">{{ widget.title }}</template>
@@ -13,23 +13,23 @@
         </template>
         <ui-popover>
           <template #target>
-            <button class="rounded text-gray-600 px-2 py-1 leading-none"><i class="fas fa-ellipsis-h"></i></button>
+            <button class="rounded text-content-muted px-2 py-1 leading-none"><i class="fas fa-ellipsis-h"></i></button>
           </template>
           <template #content>
             <div class="flex flex-col justify-center text-base">
-              <div class="text-gray-600 text-sm px-1 select-none whitespace-nowrap">{{ t(':add') }}</div>
+              <div class="text-content-muted text-sm px-1 select-none whitespace-nowrap">{{ t(':add') }}</div>
               <button v-for="spec in instantiableWidgets" :key="spec.type"
-                class="text-left hover:bg-gray-400 rounded px-1 whitespace-nowrap"
+                class="text-left hover:bg-accent rounded px-1 whitespace-nowrap"
                 @click="createOfType(spec.type)">{{ t(spec.trNameKey ?? spec.type) }}</button>
             </div>
           </template>
         </ui-popover>
       </div>
-      <div v-if="isEditing" class="text-gray-100 px-2 pb-1 whitespace-nowrap">
+      <div v-if="isEditing" class="text-content-primary px-2 pb-1 whitespace-nowrap">
         <ui-toggle v-model="config.alwaysShow">{{ t(':always_show') }}</ui-toggle>
       </div>
       <div v-else class="px-1 pb-1">
-        <textarea class="px-2 py-1.5 bg-gray-700 rounded resize-none block"
+        <textarea class="px-2 py-1.5 bg-surface-hover rounded resize-none block"
           rows="1" spellcheck="false"
           :placeholder="t(':price_check')" @input="handleItemPaste"></textarea>
       </div>

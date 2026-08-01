@@ -2,10 +2,10 @@
   <button :class="[$style.button, { [$style.limited]: isLimited }]"
     @click="showRateLimitState = !showRateLimitState" v-bind="$attrs">Rate limiting</button>
   <div v-if="showRateLimitState"
-    class="font-sans p-4 bg-gray-800 text-gray-400 mb-8 border border-gray-900 absolute bottom-0"
+    class="font-sans p-4 bg-surface-raised text-content-muted mb-8 border border-surface-deep absolute bottom-0"
     style="border-width: 0.25rem;" v-bind="$attrs">
     <div v-for="limit in limits" :key="limit.policy">
-      <div :class="{ 'text-red-400': limit.hasQueue }">Policy: {{ limit.policy }}</div>
+      <div :class="{ 'text-danger-text': limit.hasQueue }">Policy: {{ limit.policy }}</div>
       <div>
         <div v-for="(rule, idx) in limit.rules" :key="idx">
           <span>{{ rule.active }} / {{ rule.max }} over {{ rule.window }}s</span>
@@ -69,7 +69,7 @@ export default defineComponent({
 <style lang="postcss" module>
 .button {
   @apply mx-6 px-4;
-  @apply bg-gray-900 text-gray-600;
+  @apply bg-surface-base text-content-muted;
   @apply rounded-t;
   @apply leading-6;
   position: absolute;
@@ -77,7 +77,7 @@ export default defineComponent({
 }
 
 .limited {
-  @apply bg-red-700 text-red-200;
+  @apply bg-danger text-content-primary;
 
   /* Animate.css */
   :global {

@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.box">
-    <h4 class="text-red-400">
+    <h4 class="text-danger-text">
       <slot name="name">Error comes here.</slot>
     </h4>
     <slot />
@@ -20,7 +20,7 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .box {
-  @apply border border-red-400;
+  @apply border border-danger-text;
   @apply rounded;
   @apply px-4 py-2;
   @apply flex flex-col gap-y-1;

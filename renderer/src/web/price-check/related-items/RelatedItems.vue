@@ -5,11 +5,11 @@
     </div>
     <div v-if="'related' in result" class="flex-1 p-2 w-1/2">
       <div v-for="item in result.related" :key="item.name"
-        :class="{ 'bg-gray-700': item.highlight }" class="rounded px-1">
+        :class="{ 'bg-surface-hover': item.highlight }" class="rounded px-1">
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
           :item-img="item.icon" />
-        <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
+        <div class="text-left text-content-muted mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
     <div v-if="'items' in result && result.items.length" class="flex-1 p-2 w-1/2">
@@ -17,7 +17,7 @@
         <item-quick-price currency-text fraction class="text-base"
           :price="item.price"
           :item-img="item.icon" />
-        <div class="text-left text-gray-600 mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
+        <div class="text-left text-content-muted mb-1 whitespace-nowrap overflow-hidden">{{ item.name }}</div>
       </div>
     </div>
   </div>
@@ -117,21 +117,21 @@ export default defineComponent({
 <style lang="postcss" module>
 .wrapper {
   display: flex;
-  @apply bg-gray-800 text-gray-400 mt-6;
-  @apply border border-gray-900;
+  @apply bg-surface-raised text-content-muted mt-6;
+  @apply border border-surface-deep;
   border-width: 0.25rem;
   max-width: min(100%, 24rem);
 }
 
 .inventory {
   @apply rounded-l-lg;
-  box-shadow: inset -0.5rem 0 0.5rem -0.5rem rgb(0 0 0 / 70%);
+  box-shadow: inset -0.5rem 0 0.5rem -0.5rem rgb(var(--c-shadow) / 70%);
   border-right: none;
 }
 
 .stash {
   @apply rounded-r-lg;
-  box-shadow: inset 0.5rem 0 0.5rem -0.5rem rgb(0 0 0 / 70%);
+  box-shadow: inset 0.5rem 0 0.5rem -0.5rem rgb(var(--c-shadow) / 70%);
   border-left: none;
 }
 </style>

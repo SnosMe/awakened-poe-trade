@@ -5,9 +5,9 @@
     </div>
     <!-- @TODO: fix "Matched" text jumping (min-height: 22px) -->
     <div class="mb-2 flex pl-2 justify-between items-baseline" style="min-height: 1.375rem;">
-      <div class="flex items-center text-gray-500">
+      <div class="flex items-center text-content-muted">
         <span class="mr-1">{{ t(':matched') }}</span>
-        <span v-if="!result" class="text-gray-600">...</span>
+        <span v-if="!result" class="text-content-muted">...</span>
         <div v-else class="flex items-center">
           <button class="btn flex items-center mr-1" :style="{ background: selectedCurr !== 'xchgChaos' ? 'transparent' : undefined }"
             @click="selectedCurr = 'xchgChaos'">
@@ -65,16 +65,16 @@
               </template>
               <template v-else>
                 <td class="px-1 text-right">{{ result.stock }}</td>
-                <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-gray-500"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
+                <td class="px-1 text-right"><i v-if="result.stock < result.itemAmount" class="fas fa-exclamation-triangle mr-1 text-content-muted"></i>{{ Math.floor(result.stock / result.itemAmount) }}</td>
                 <td class="pr-2 pl-4 whitespace-nowrap">
                   <div class="inline-flex items-center">
                     <div :class="[$style.accountStatus, $style[result.accountStatus]]"></div>
                     <div class="ml-1 font-sans text-xs">{{ result.relativeDate }}</div>
                   </div>
-                  <span v-if="!showSeller && result.isMine" class="rounded px-1 text-gray-800 bg-gray-400 ml-1">{{ t('You') }}</span>
+                  <span v-if="!showSeller && result.isMine" class="rounded px-1 text-content-inverse bg-accent ml-1">{{ t('You') }}</span>
                 </td>
                 <td v-if="showSeller" class="px-2 whitespace-nowrap">
-                  <span v-if="result.isMine" class="rounded px-1 text-gray-800 bg-gray-400">{{ t('You') }}</span>
+                  <span v-if="result.isMine" class="rounded px-1 text-content-inverse bg-accent">{{ t('You') }}</span>
                   <span v-else class="font-sans text-xs">{{ showSeller === 'ign' ? result.ign : result.accountName }}</span>
                 </td>
               </template>
@@ -346,12 +346,12 @@ export default defineComponent({
 <style lang="postcss" module>
 .tableHeading {
   @apply sticky top-0;
-  @apply bg-gray-800;
+  @apply bg-surface-raised;
   @apply p-0 m-0;
   white-space: nowrap;
 
   & > div {
-    @apply border-b border-gray-700;
+    @apply border-b border-line;
   }
 }
 
@@ -361,8 +361,8 @@ export default defineComponent({
   border-radius: 100%;
 
   /* &.online {} */
-  &.offline { @apply bg-red-600; }
-  &.afk { @apply bg-orange-500; }
+  &.offline { @apply bg-danger; }
+  &.afk { @apply bg-warn; }
 }
 
 .currencyIcon {
@@ -375,14 +375,14 @@ export default defineComponent({
 
 .legacyMessage {
   @apply rounded p-2 mb-3;
-  @apply border border-gray-600 bg-gray-700;
+  @apply border border-line bg-surface-hover;
   text-wrap-style: balance;
   text-align: center;
 }
 
 .marketRatioRow {
-  @apply bg-gray-700 !important;
-  outline: 1px solid theme('colors.gray.600');
+  @apply bg-surface-hover !important;
+  outline: 1px solid rgb(var(--c-border));
   outline-offset: -1px;
 }
 </style>

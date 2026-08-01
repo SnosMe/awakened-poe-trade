@@ -4,7 +4,7 @@
   >
     <img v-if="img" :src="img" class="w-5 h-5">
     <span class="pl-1">{{ t(text) }}</span>
-    <i v-if="collapse" class="pl-2 text-xs text-gray-400"
+    <i v-if="collapse" class="pl-2 text-xs text-content-muted"
       :class="filter.disabled ? 'fas fa-chevron-down' : 'fas fa-chevron-up'" />
   </button>
 </template>
@@ -37,7 +37,7 @@ function toggle () {
 
 <style lang="postcss" module>
 .btn {
-  @apply bg-gray-900 rounded;
+  @apply bg-surface-base rounded;
   @apply border border-transparent;
   @apply pl-1 pr-2;
   line-height: 1.25rem;
@@ -45,7 +45,7 @@ function toggle () {
   align-items: center;
 
   &.active {
-    @apply border-gray-500;
+    @apply border-line-strong;
   }
 }
 </style>

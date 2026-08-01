@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between bg-gray-700 rounded relative p-0.5 items-center h-5"
+  <div class="flex justify-between bg-surface-hover rounded relative p-0.5 items-center h-5"
     ref="rootEl"
     :class="$style[state.mode]"
     @mousedown="handleMousedown">
@@ -113,7 +113,7 @@ export default defineComponent({
 .tick {
   position: absolute;
   @apply w-0.5;
-  background: linear-gradient(to bottom, #000 10%, transparent 30%, transparent 70%, #000 90%);
+  background: linear-gradient(to bottom, rgb(var(--c-shadow)) 10%, transparent 30%, transparent 70%, rgb(var(--c-shadow)) 90%);
   height: 100%;
   pointer-events: none;
 }
@@ -130,30 +130,30 @@ export default defineComponent({
   .min & {
     width: calc(100% - var(--left));
     right: 0;
-    background-image: linear-gradient(to right, transparent calc(-1 * var(--left) - 5%), theme('colors.gray.400') 80%);
+    background-image: linear-gradient(to right, transparent calc(-1 * var(--left) - 5%), rgb(var(--c-accent-dim)) 80%);
   }
 
   .max & {
     width: calc(100% - var(--right));
     left: 0;
-    background-image: linear-gradient(to left, transparent calc(-1 * var(--right) - 5%), theme('colors.gray.400') 80%);
+    background-image: linear-gradient(to left, transparent calc(-1 * var(--right) - 5%), rgb(var(--c-accent-dim)) 80%);
   }
 
   .range & {
     left: var(--left);
     right: var(--right);
-    background-color: theme('colors.gray.400');
+    background-color: rgb(var(--c-accent-dim));
   }
 }
 
 .bound {
   line-height: none;
   z-index: 1;
-  @apply text-gray-500;
+  @apply text-content-muted;
   pointer-events: none;
   user-select: none;
 
-  &.inclusive { @apply text-black; }
+  &.inclusive { @apply text-content-inverse; }
 
   &:first-child { @apply pl-1; }
   &:last-child { @apply pr-1; }
@@ -161,7 +161,7 @@ export default defineComponent({
 
 .popup {
   position: absolute;
-  @apply bg-blue-600;
+  @apply bg-accent-dim;
   @apply px-1 mb-1;
   @apply rounded;
   bottom: 100%;

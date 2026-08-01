@@ -11,7 +11,7 @@
       <ui-radio v-model="decision" value="d" class="p-1" />
       <ui-radio v-model="decision" value="g" class="p-1" />
       <button v-if="removable()" @click="remove"
-        class="flex items-center mx-1 py-1" :class="{ 'text-red-400': matcher.tag === StatTag.Outdated }">
+        class="flex items-center mx-1 py-1" :class="{ 'text-danger-text': matcher.tag === StatTag.Outdated }">
         <i class="w-4" :class="(matcher.tag === StatTag.Outdated) ? 'fas fa-trash-alt' : 'fas fa-times'"></i>
       </button>
       <div v-else class="w-6" />
@@ -97,7 +97,7 @@ export default defineComponent({
 }
 
 .row:hover {
-  @apply bg-gray-700;
+  @apply bg-surface-hover;
 }
 
 .row:not(:hover) .controls-auto-hide {
@@ -110,13 +110,13 @@ export default defineComponent({
   line-height: 1;
 }
 .tag-heist {
-  @apply bg-red-800;
+  @apply bg-danger;
 }
 .tag-uber {
-  @apply bg-gray-900;
-  outline: 1px solid theme('colors.gray.700');
+  @apply bg-surface-base;
+  outline: 1px solid rgb(var(--c-border));
 }
 .tag-outdated {
-  @apply bg-red-400 text-black;
+  @apply bg-danger text-black;
 }
 </style>

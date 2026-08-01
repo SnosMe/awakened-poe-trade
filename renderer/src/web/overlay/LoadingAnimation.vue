@@ -43,10 +43,10 @@ Host.onEvent('MAIN->OVERLAY::overlay-attached', () => {
 .box {
   position: relative;
   display: flex;
-  @apply bg-gray-800;
-  @apply text-gray-100;
+  @apply bg-surface-raised;
+  @apply text-content-primary;
   @apply rounded;
-  box-shadow: 0px 0px 1px 2px rgb(255 255 255 / 20%);
+  box-shadow: 0px 0px 1px 2px rgb(var(--c-accent) / 25%);
 }
 
 .box::before {
@@ -59,6 +59,6 @@ Host.onEvent('MAIN->OVERLAY::overlay-attached', () => {
   max-width: 78px;
   @apply mr-2;
   pointer-events: none;
-  filter: drop-shadow(2px 4px 6px #000);
+  filter: drop-shadow(2px 4px 6px rgb(var(--c-shadow)));
 }
 </style>

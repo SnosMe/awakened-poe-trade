@@ -1,10 +1,10 @@
 <template>
-  <div v-if="updateInfo" class="bg-gray-900 mt-2 mx-4 rounded py-1 px-2">
+  <div v-if="updateInfo" class="bg-surface-base mt-2 mx-4 rounded py-1 px-2">
     <p>{{ updateInfo.str1 }}</p>
-    <p class="text-gray-500">{{ updateInfo.str2 }}</p>
+    <p class="text-content-muted">{{ updateInfo.str2 }}</p>
   </div>
   <div v-if="leagues.isLoading.value" class="pt-2 px-4">
-    <i class="fas fa-info-circle text-gray-600"></i> {{ t('app.leagues_loading') }}</div>
+    <i class="fas fa-info-circle text-content-muted"></i> {{ t('app.leagues_loading') }}</div>
   <ui-error-box class="mx-4 mt-4" v-else-if="leagues.error.value">
     <template #name>{{ t('app.leagues_failed') }}</template>
     <p>{{ t('app.leagues_failed_help') }}</p>
