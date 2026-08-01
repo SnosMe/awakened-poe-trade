@@ -1,10 +1,9 @@
 import { ITEM_BY_TRANSLATED } from '@/assets/data'
 
 export function magicBasetype (name: string) {
-  // Chinese/Korean names have no spaces to split on, so fall back to characters
-  const hasSpaces = name.includes(' ')
-  const words = hasSpaces ? name.split(' ') : [...name]
-  const separator = hasSpaces ? ' ' : ''
+  // Chinese and Japanese don't use spaces to separate words, so fallback to characters
+  const separator = name.includes(' ') ? ' ' : ''
+  const words = name.split(separator)
 
   const perm: string[] = words.flatMap((_, start) =>
     Array(words.length - start).fill(undefined)
