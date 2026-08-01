@@ -231,6 +231,7 @@ export interface TranslationDict {
   UNMODIFIABLE: string
   FOULBORN_NAME: RegExp
   FOULBORN_MODIFIER: string
+  STORED_EXPERIENCE: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

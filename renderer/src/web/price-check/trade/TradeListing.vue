@@ -33,6 +33,9 @@
             <th v-if="filters.quality || item.category === 'Gem'" :class="$style.tableHeading">
               <div class="px-2">{{ t(':quality') }}</div>
             </th>
+            <th v-if="filters.storedExperience" :class="$style.tableHeading">
+              <div class="px-2">{{ t(':stored_experience') }}</div>
+            </th>
             <th :class="[$style.tableHeading, { 'w-full': !showSeller }]">
               <div class="pr-2 pl-4">
                 <span class="ml-1" style="padding-left: 0.375rem;">{{ t(':listed') }}</span>
@@ -61,6 +64,7 @@
               <td v-if="filters.itemLevel" class="px-2 whitespace-nowrap text-right">{{ result.itemLevel }}</td>
               <td v-if="item.category === 'Gem'" class="pl-2 whitespace-nowrap">{{ result.level }}</td>
               <td v-if="filters.quality || item.category === 'Gem'" class="px-2 whitespace-nowrap text-blue-400 text-right">{{ result.quality }}</td>
+              <td v-if="filters.storedExperience" class="pl-2 whitespace-nowrap text-right">{{ result.storedExperience }}</td>
               <td class="pr-2 pl-4 whitespace-nowrap">
                 <div class="inline-flex items-center">
                   <div :class="[$style.accountStatus, $style[result.accountStatus]]"></div>
