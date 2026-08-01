@@ -3,6 +3,7 @@ import isDeepEqual from 'fast-deep-equal'
 import { Host } from '@/web/background/IPC'
 import { HostConfig, ShortcutAction } from '@ipc/types'
 import type * as widget from './overlay/widgets'
+import { DEFAULT_ENABLED_STATS } from './overlay/widgets'
 import type { StashSearchWidget } from './stash-search/widget'
 import type { ItemCheckWidget } from './item-check/widget'
 import type { ItemSearchWidget } from './item-search/widget'
@@ -123,7 +124,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 18,
+  configVersion: 19,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -431,6 +432,13 @@ function upgradeConfig (_config: Config): Config {
     config.useIntlSite = (config.language === 'cmn-Hant' && config.realm === 'pc-ggg')
 
     config.configVersion = 18
+  }
+
+  if (config.configVersion < 19) {
+    config.widgets.find(w => w.wmType === 'price-check')!
+      .defaultEnabledStats = [...DEFAULT_ENABLED_STATS]
+
+    config.configVersion = 19
   }
   /* eslint-enable */
 

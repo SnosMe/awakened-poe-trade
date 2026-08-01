@@ -1,3 +1,12 @@
+// Stat refs ticked automatically on every price check. Seeded with the set
+// that used to be hardcoded in PSEUDO_RULES; users pin and unpin the rest
+// from the price check panel.
+export const DEFAULT_ENABLED_STATS = [
+  '+#% total Elemental Resistance',
+  '+# total maximum Life',
+  '+#% total to Chaos Resistance'
+]
+
 export interface Widget {
   wmId: number
   wmType: string
@@ -41,6 +50,7 @@ export interface PriceCheckWidget extends Widget {
   hotkeyLocked: string | null
   showSeller: false | 'account' | 'ign'
   searchStatRange: number
+  defaultEnabledStats: string[]
   showRateLimitState: boolean
   apiLatencySeconds: number
   collapseListings: 'api' | 'app'
