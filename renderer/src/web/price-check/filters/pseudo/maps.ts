@@ -17,13 +17,20 @@ const VALDO_LETHAL_STATS = [
   stat('Players who Die in area are sent to the Void')
 ]
 
+const ORIGINATOR_IMPLICIT = stat("Area is Influenced by the Originator's Memories")
+
 export function mapProps (ctx: FiltersCreationContext): void {
   const { item } = ctx
   if (!item.map || item.mapBlighted || item.mapCompletionReward || item.rarity === ItemRarity.Unique) return
 
   const hasMoreDrops = Boolean(item.map.moreMaps || item.map.moreScarabs || item.map.moreCurrency || item.map.moreDivCards)
 
-  if (!item.isCorrupted && !hasMoreDrops && item.info.refName !== 'Nightmare Map') return
+  // Originator maps are priced on quantity/rarity/pack size whether or not
+  // they rolled any of the "More ..." drop properties.
+  const isOriginator = item.statsByType.some(calc =>
+    calc.type === ModifierType.Implicit && calc.stat.ref === ORIGINATOR_IMPLICIT)
+
+  if (!item.isCorrupted && !hasMoreDrops && !isOriginator && item.info.refName !== 'Nightmare Map') return
 
   if (item.map.itemQuantity) {
     ctx.filters.push(propToFilter({
