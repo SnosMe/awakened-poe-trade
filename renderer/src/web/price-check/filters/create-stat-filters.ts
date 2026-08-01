@@ -322,10 +322,22 @@ export function calculatedStatToFilter (
     if (calc.stat.better === StatBetter.NotComparable) {
       filterDefault = { min: roll.value, max: roll.value }
     } else if (percent === STAT_RANGE_ROUND) {
-      filterDefault = {
+      const rounded = {
         min: roundedRoll(roll.value, Math.floor, dp),
         max: roundedRoll(roll.value, Math.ceil, dp)
       }
+      // A mod with a narrow range (jewel life only rolls 5-7%) can round clean
+      // past its own bounds, leaving a filter that every roll of the mod
+      // passes. Those are worth more pinned to the exact value.
+      const matchesWholeRange =
+        (calc.stat.better === StatBetter.PositiveRoll && rounded.min <= roll.min) ||
+        (calc.stat.better === StatBetter.NegativeRoll && rounded.max >= roll.max)
+      filterDefault = (matchesWholeRange)
+        ? {
+            min: percentRoll(roll.value, -0, Math.floor, dp),
+            max: percentRoll(roll.value, +0, Math.ceil, dp)
+          }
+        : rounded
     } else if (item.rarity === ItemRarity.Unique) {
       filterDefault = {
         min: percentRollDelta(roll.value, (roll.max - roll.min), -percent, Math.floor, dp),
