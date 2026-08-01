@@ -48,7 +48,7 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .button {
-  @apply bg-gray-700;
+  @apply bg-surface-hover;
   @apply rounded;
   @apply px-2;
   @apply border border-transparent;
@@ -56,6 +56,6 @@ export default defineComponent({
 }
 
 .selected {
-  @apply border-gray-500;
+  @apply border-line-strong;
 }
 </style>

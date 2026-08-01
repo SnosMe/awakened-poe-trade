@@ -24,6 +24,7 @@ export function AppConfig (type?: string) {
 export function updateConfig (updates: Config) {
   _config.value = deepReactive(JSON.parse(JSON.stringify(updates)))
   document.documentElement.style.fontSize = `${_config.value!.fontSize}px`
+  document.documentElement.dataset.theme = _config.value!.theme
 }
 
 export function saveConfig (opts?: { isTemporary: boolean }) {
@@ -96,8 +97,12 @@ export function poeWebApi () {
   }
 }
 
+export const THEMES = ['warm-ash', 'legacy-slate'] as const
+export type ThemeName = typeof THEMES[number]
+
 export interface Config {
   configVersion: number
+  theme: ThemeName
   leagueId?: string
   overlayKey: string
   overlayBackground: string
@@ -123,9 +128,10 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 18,
+  configVersion: 19,
+  theme: 'warm-ash',
   overlayKey: 'Shift + Space',
-  overlayBackground: 'rgba(129, 139, 149, 0.15)',
+  overlayBackground: 'rgba(18, 16, 13, 0.45)',
   overlayBackgroundClose: true,
   restoreClipboard: false,
   showAttachNotification: true,
@@ -431,6 +437,14 @@ function upgradeConfig (_config: Config): Config {
     config.useIntlSite = (config.language === 'cmn-Hant' && config.realm === 'pc-ggg')
 
     config.configVersion = 18
+  }
+
+  if (config.configVersion < 19) {
+    // Existing users keep the look they know; 'warm-ash' is opt-in from Settings.
+    // `overlayBackground` is deliberately left alone for the same reason.
+    config.theme = 'legacy-slate'
+
+    config.configVersion = 19
   }
   /* eslint-enable */
 

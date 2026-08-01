@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-md p-2">
-    <div class="mb-2 bg-gray-700 rounded px-2 py-1 leading-none">
+    <div class="mb-2 bg-surface-hover rounded px-2 py-1 leading-none">
       <i class="fas fa-info-circle"></i> {{ t('settings.clear_hotkey') }}
     </div>
     <div class="flex flex-col gap-4 mb-8">

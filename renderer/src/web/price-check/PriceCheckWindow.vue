@@ -8,7 +8,7 @@
     <div v-if="!isBrowserShown" class="layout-column shrink-0"
       style="width: var(--game-panel);">
     </div>
-    <div id="price-window" class="layout-column shrink-0 text-gray-200 pointer-events-auto" style="width: 28.75rem;">
+    <div id="price-window" class="layout-column shrink-0 text-content-body pointer-events-auto" style="width: 28.75rem;">
       <AppTitleBar @close="closePriceCheck" @click="openLeagueSelection" :title="title">
         <ui-popover v-if="stableOrbCost" trigger="click" boundary="#price-window">
           <template #target>
@@ -27,7 +27,7 @@
         <i v-else-if="xchgRateLoading()" class="fas fa-dna fa-spin px-2" />
         <div v-else class="w-8" />
       </AppTitleBar>
-      <div class="grow layout-column min-h-0 bg-gray-800">
+      <div class="grow layout-column min-h-0 bg-surface-raised">
         <background-info />
         <check-position-circle v-if="showCheckPos"
           :position="checkPosition" style="z-index: -1;" />
@@ -36,16 +36,16 @@
             <template #name>{{ t(item.error.name) }}</template>
             <p>{{ t(item.error.message) }}</p>
           </ui-error-box>
-          <pre class="bg-gray-900 rounded m-4 overflow-x-hidden p-2">{{ item.error.rawText }}</pre>
+          <pre class="bg-surface-base rounded m-4 overflow-x-hidden p-2">{{ item.error.rawText }}</pre>
         </template>
         <template v-else-if="item?.isOk()">
           <unidentified-resolver :item="item.value" @identify="handleIdentification($event)" />
           <checked-item v-if="isLeagueSelected"
             :item="item.value" :advanced-check="advancedCheck" />
         </template>
-        <div v-if="isBrowserShown" class="bg-gray-900 px-6 py-2 truncate">
+        <div v-if="isBrowserShown" class="bg-surface-base px-6 py-2 truncate">
           <i18n-t keypath="app.toggle_browser_hint" tag="div">
-            <span class="bg-gray-400 text-gray-900 rounded px-1">{{ overlayKey }}</span>
+            <span class="bg-accent text-content-inverse rounded px-1">{{ overlayKey }}</span>
           </i18n-t>
         </div>
       </div>

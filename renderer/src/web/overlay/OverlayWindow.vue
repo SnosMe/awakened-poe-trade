@@ -18,14 +18,14 @@
     >{{ logs }}</pre>
     <loading-animation />
     <div v-if="showEditingNotification"
-      class="widget-default-style p-6 bg-blue-600 mx-auto text-center text-base mt-6"
+      class="widget-default-style p-6 bg-info mx-auto text-center text-base mt-6"
       style="min-width: 30rem; z-index: 998; width: fit-content; position: absolute; left: 0; right: 0;">
       <i18n-t keypath="reopen_settings">
-        <span class="bg-blue-800 rounded px-1">{{ overlayKey }}</span>
+        <span class="bg-info rounded px-1">{{ overlayKey }}</span>
       </i18n-t>
     </div>
     <!-- <div v-show="!gameFocused && !active">
-      <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-red-500 p-2 rounded">Game window is not active</div>
+      <div style="right: 24px; bottom: 24px; position: absolute;" class="bg-danger p-2 rounded">Game window is not active</div>
     </div> -->
   </div>
 </template>

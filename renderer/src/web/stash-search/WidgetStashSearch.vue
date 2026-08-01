@@ -1,7 +1,7 @@
 <template>
   <Widget :config="config" move-handles="corners" :inline-edit="false">
     <div class="widget-default-style p-1 flex flex-col overflow-y-auto min-h-0" style="min-width: 5rem;">
-      <div class="text-gray-100 p-1 flex items-center justify-between gap-4">
+      <div class="text-content-primary p-1 flex items-center justify-between gap-4">
         <span class="truncate">{{ config.wmTitle || 'Untitled' }}</span>
         <ui-toggle v-if="hasHotkeys"
           v-model="config.enableHotkeys">{{ t('stash_search.enable_keys') }}</ui-toggle>
@@ -127,21 +127,21 @@ const { t } = useI18n()
   @apply rounded;
   @apply max-w-sm;
   @apply p-2 leading-4;
-  @apply text-gray-100 bg-gray-800;
+  @apply text-content-primary bg-surface-raised;
   text-align: left;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 
   &:hover {
-    @apply bg-gray-700;
+    @apply bg-surface-hover;
   }
 }
 
 .hotkey {
   text-align: center;
   display: inline-block;
-  @apply text-black bg-gray-400;
+  @apply text-black bg-accent;
   @apply rounded;
   @apply px-1 ml-1;
 }

@@ -1,8 +1,8 @@
 <template>
   <button
     @click="updateInput" class="flex items-center" style="height: 1.375rem;">
-    <i v-if="modelValue" class="fas fa-toggle-on pr-1 text-gray-300"></i>
-    <i v-else class="fas fa-toggle-off pr-1 text-gray-600"></i>
+    <i v-if="modelValue" class="fas fa-toggle-on pr-1 text-content-body"></i>
+    <i v-else class="fas fa-toggle-off pr-1 text-content-muted"></i>
     <slot />
   </button>
 </template>

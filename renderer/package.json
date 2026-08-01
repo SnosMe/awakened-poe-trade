@@ -6,6 +6,7 @@
     "dev": "vite",
     "lint": "eslint --ext .ts,.vue src",
     "build": "vue-tsc --noEmit && vite build",
+    "check-colors": "node scripts/check-colors.mjs",
     "make-index-files": "node src/assets/make-index-files.mjs"
   },
   "dependencies": {

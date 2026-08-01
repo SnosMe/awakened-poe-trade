@@ -54,8 +54,8 @@ const resolvedSrc = computed(() => {
 
 .imgFullscreen {
   max-height: 100%;
-  border: 0.25rem solid theme('colors.gray.900');
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.75),
-              0 1px 2px 0 rgba(0, 0, 0, 0.75);
+  border: 0.25rem solid rgb(var(--c-surface-base));
+  box-shadow: 0 1px 3px 0 rgb(var(--c-shadow) / 0.75),
+              0 1px 2px 0 rgb(var(--c-shadow) / 0.75);
 }
 </style>

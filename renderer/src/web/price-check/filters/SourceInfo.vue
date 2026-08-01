@@ -81,7 +81,7 @@ const stats = computed(() => {
 
 <style lang="postcss" module>
 .modinfo {
-  @apply text-gray-500;
+  @apply text-content-muted;
   font-style: italic;
 }
 
@@ -89,7 +89,7 @@ const stats = computed(() => {
   margin-left: auto;
   @apply w-12;
   @apply rounded;
-  @apply border border-gray-700;
+  @apply border border-line;
   text-align: center;
   flex-shrink: 0;
 }

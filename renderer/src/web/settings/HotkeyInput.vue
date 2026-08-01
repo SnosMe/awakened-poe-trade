@@ -3,8 +3,8 @@
     @keyup="handleKeyup"
     @keydown.prevent
     :placeholder="modelValue || t('settings.no_key')"
-    :class="{ 'placeholder-red-400': !modelValue }"
-    class="rounded bg-gray-900 px-1 text-center font-poe" />
+    :class="{ 'placeholder-danger-text': !modelValue }"
+    class="rounded bg-surface-base px-1 text-center font-poe" />
 </template>
 
 <script lang="ts">

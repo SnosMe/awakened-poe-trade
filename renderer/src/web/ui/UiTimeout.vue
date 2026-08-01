@@ -48,12 +48,12 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .bar {
-  @apply bg-gray-800 rounded w-64 h-1;
+  @apply bg-surface-raised rounded w-64 h-1;
   position: relative;
   overflow: hidden;
 
   &::after {
-    @apply bg-gray-400 rounded;
+    @apply bg-accent-dim rounded;
     height: 100%;
     width: 100%;
     position: absolute;

@@ -5,7 +5,7 @@
       <button class="btn flex-1" @click="openWiki">wiki</button>
       <button class="btn flex-1" @click="openPoedb">poedb</button>
       <button v-if="showCoE" class="btn flex-1" @click="openCoE">CoE</button>
-      <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
+      <i class="fa-solid fa-ellipsis-vertical text-content-muted"></i>
       <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('item.find_in_stash') }}</button>
     </div>
     <div v-if="weaponDPS" :class="$style.itemInfo">
@@ -58,8 +58,8 @@ const itemName = computed(() => props.item.info.name)
 .widget {
   display: flex;
   flex-direction: column;
-  background: theme('colors.gray.900');
-  color: theme('colors.gray.200');
+  background: rgb(var(--c-surface-base));
+  color: rgb(var(--c-text-body));
   padding: theme('borderWidth.4');
   min-width: 20rem;
   max-width: min(100vw - var(--game-panel), 30rem);
@@ -80,7 +80,7 @@ const itemName = computed(() => props.item.info.name)
 .itemInfo {
   display: flex;
   justify-content: center;
-  background: theme('colors.gray.800');
+  background: rgb(var(--c-surface-raised));
   padding: theme('spacing.2') 0;
 
   & > :global(.grid) {

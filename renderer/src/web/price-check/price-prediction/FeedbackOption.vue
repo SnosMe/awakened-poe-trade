@@ -1,7 +1,7 @@
 <template>
   <ui-popover tag-name="div" trigger="click" placement="bottom" boundary="#price-window">
     <template #target>
-      <button class="bg-gray-700 px-2 py-1 text-gray-400 leading-none opacity-50" :class="{ 'rounded-l': option === 'low', 'rounded-r': option === 'high' }"
+      <button class="bg-surface-hover px-2 py-1 text-content-muted leading-none opacity-50" :class="{ 'rounded-l': option === 'low', 'rounded-r': option === 'high' }"
         >{{ option }}</button>
     </template>
     <template #content>
@@ -10,7 +10,7 @@
         <textarea v-if="option !== 'fair'"
           v-model="feedbackText"
           placeholder="Why do you think so? (Not required)"
-          rows="5" class="w-full bg-gray-700 text-gray-100 p-1"></textarea>
+          rows="5" class="w-full bg-surface-hover text-content-primary p-1"></textarea>
         <button class="btn" type="submit">Send feedback</button>
         <span class="ml-2">to poeprices.info</span>
       </form>

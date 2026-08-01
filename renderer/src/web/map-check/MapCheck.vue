@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4"
+  <div class="bg-surface-raised text-content-body border-surface-deep border-4"
     style="min-width: 20rem; max-width: min(100vw - var(--game-panel), 30rem);">
-    <div class="bg-gray-900 py-1 px-8 flex items-baseline gap-2">
+    <div class="bg-surface-base py-1 px-8 flex items-baseline gap-2">
       <div class="flex-1 text-center">{{ mapName }}</div>
-      <div class="ml-8 text-gray-400">{{ t('map_check.profile') }}</div>
+      <div class="ml-8 text-content-muted">{{ t('map_check.profile') }}</div>
       <div class="flex gap-0.5">
         <button
           v-for="profile in profiles" :key="profile.text"
           @click="profile.select"
-          :class="{ 'border border-gray-600': profile.active }"
-          class="w-6 bg-gray-800"
+          :class="{ 'border border-line': profile.active }"
+          class="w-6 bg-surface-raised"
         >{{ profile.text }}</button>
       </div>
     </div>
@@ -22,10 +22,10 @@
         :stat="stat" :config="config" />
       <div v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
         class="py-1 px-8">
-        <span class="text-orange-400">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
+        <span class="text-warn-text">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
       </div>
     </div>
-    <div v-if="hasOutdatedTranslation" class="py-2 px-8 bg-gray-700">{{ t('map_check.has_outdated') }}</div>
+    <div v-if="hasOutdatedTranslation" class="py-2 px-8 bg-surface-hover">{{ t('map_check.has_outdated') }}</div>
   </div>
 </template>
 

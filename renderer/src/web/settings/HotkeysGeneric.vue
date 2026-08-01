@@ -2,7 +2,7 @@
   <template v-for="itemOrGroup of hotkeys">
     <div v-if="'items' in itemOrGroup" class="flex flex-col gap-1">
       <div>{{ t(itemOrGroup.translationKey) }}</div>
-      <div class="flex flex-col gap-2 pl-4 text-gray-500">
+      <div class="flex flex-col gap-2 pl-4 text-content-muted">
         <SettingsHotkey v-for="item in itemOrGroup.items"
           :schema="item" />
       </div>

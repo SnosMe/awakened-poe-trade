@@ -2,7 +2,7 @@
   <div class="max-w-md p-2">
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t(':language') }}</div>
-      <select v-model="language" class="p-1 rounded bg-gray-700 w-24">
+      <select v-model="language" class="p-1 rounded bg-surface-hover w-24">
         <option value="en">English</option>
         <option value="ru">Русский</option>
         <option value="cmn-Hant">正體中文</option>
@@ -18,11 +18,18 @@
     </div>
     <ui-checkbox class="mb-4" v-if="language !== 'en' && realm === 'pc-ggg'"
       v-model="useIntlSite" :disabled="forcedIntlSite"
-      :class="{ 'text-gray-500': forcedIntlSite }">{{ t(':use_intl_site') }} <span class="bg-gray-200 text-gray-900 rounded px-1">www.pathofexile.com</span></ui-checkbox>
+      :class="{ 'text-content-muted': forcedIntlSite }">{{ t(':use_intl_site') }} <span class="bg-accent text-content-inverse rounded px-1">www.pathofexile.com</span></ui-checkbox>
+    <div class="mb-4 mt-4">
+      <div class="flex-1 mb-1">{{ t(':theme') }}</div>
+      <select v-model="theme" class="p-1 rounded bg-surface-hover w-40">
+        <option value="warm-ash">{{ t(':theme_warm_ash') }}</option>
+        <option value="legacy-slate">{{ t(':theme_legacy_slate') }}</option>
+      </select>
+    </div>
     <div class="mb-4 mt-4">
       <div class="flex-1 mb-1">{{ t(':font_size') }}</div>
       <div class="flex gap-1">
-        <input v-model.number="fontSize" class="rounded bg-gray-900 px-1 block w-16 font-poe text-center" />
+        <input v-model.number="fontSize" class="rounded bg-surface-base px-1 block w-16 font-poe text-center" />
         <span>px</span>
       </div>
     </div>
@@ -31,18 +38,18 @@
     <div class="mb-2">
       <div class="flex-1 mb-1">{{ t(':poe_log_file') }}</div>
       <input v-model.trim="clientLog"
-        class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/Grinding Gear Games/Path of Exile/logs/Client.txt">
+        class="rounded bg-surface-base px-1 block w-full font-sans" placeholder="...?/Grinding Gear Games/Path of Exile/logs/Client.txt">
     </div>
     <div class="mb-4">
       <div class="flex-1 mb-1">{{ t(':poe_cfg_file') }}</div>
       <input v-model.trim="gameConfig"
-        class="rounded bg-gray-900 px-1 block w-full font-sans" placeholder="...?/My Games/Path of Exile/production_Config.ini">
+        class="rounded bg-surface-base px-1 block w-full font-sans" placeholder="...?/My Games/Path of Exile/production_Config.ini">
     </div>
-    <hr class="mb-4 mx-8 border-gray-700">
+    <hr class="mb-4 mx-8 border-line">
     <div class="mb-2">
       <div class="mb-1">{{ t(':overlay_bg') }}</div>
       <div class="flex gap-4 items-baseline">
-        <input v-model="overlayBackground" class="rounded bg-gray-900 px-1 block w-48 font-poe text-center" />
+        <input v-model="overlayBackground" class="rounded bg-surface-base px-1 block w-48 font-poe text-center" />
         <ui-radio v-model="overlayBackground" value="rgba(255, 255, 255, 0)">{{ t(':overlay_bg_none') }}</ui-radio>
       </div>
     </div>
@@ -51,8 +58,8 @@
     <ui-checkbox class="mb-4"
       v-model="showAttachNotification">{{ t(':show_overlay_ready') }}</ui-checkbox>
     <div class="mb-4">
-      <div class="flex-1 mb-1">{{ t(':window_title') }} <span class="bg-gray-200 text-gray-900 rounded px-1">{{ t('Restart required') }}</span></div>
-      <input v-model="windowTitle" class="rounded bg-gray-900 px-1 block w-full mb-1 font-poe" />
+      <div class="flex-1 mb-1">{{ t(':window_title') }} <span class="bg-accent text-content-inverse rounded px-1">{{ t('Restart required') }}</span></div>
+      <input v-model="windowTitle" class="rounded bg-surface-base px-1 block w-full mb-1 font-poe" />
     </div>
   </div>
 </template>
@@ -74,6 +81,7 @@ export default defineComponent({
 
     return {
       t,
+      theme: configModelValue(() => props.config, 'theme'),
       fontSize: configModelValue(() => props.config, 'fontSize'),
       overlayBackgroundClose: configModelValue(() => props.config, 'overlayBackgroundClose'),
       overlayBackground: configModelValue(() => props.config, 'overlayBackground'),

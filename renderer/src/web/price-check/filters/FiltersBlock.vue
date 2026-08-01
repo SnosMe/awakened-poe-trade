@@ -54,14 +54,14 @@
     </div>
     <div v-if="!statsVisibility.disabled && hasStats" class="mb-4" :class="(presets.length > 1) ? 'mt-1' : 'mt-4'">
       <div class="flex" v-if="presets.length > 1">
-        <div class="w-5 border-b border-gray-700" />
-        <div class="flex divide-x border-gray-700 border-t border-l border-r rounded-t overflow-hidden">
+        <div class="w-5 border-b border-line" />
+        <div class="flex divide-x border-line border-t border-l border-r rounded-t overflow-hidden">
           <button v-for="preset in presets"
             :class="[$style.presetBtn, { [$style.active]: preset.active }]"
             @click="selectPreset(preset.id)"
           >{{ t(preset.id) }}</button>
         </div>
-        <div class="flex-1 border-b border-gray-700" />
+        <div class="flex-1 border-b border-line" />
       </div>
       <form @submit.prevent="handleStatsSubmit">
         <filter-modifier v-for="filter of filteredStats" :key="filter.tag + '/' + filter.text"
@@ -70,7 +70,7 @@
           :show-sources="showFilterSources"
           @submit="handleStatsSubmit" />
         <div v-if="!filteredStats.length && !showUnknownMods"
-          class="border-b border-gray-700 py-2">{{ t('filters.empty') }}</div>
+          class="border-b border-line py-2">{{ t('filters.empty') }}</div>
         <template v-if="showUnknownMods">
           <unknown-modifier v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
             :stat="stat" />
@@ -78,12 +78,12 @@
         <input type="submit" class="hidden" />
       </form>
       <div class="flex gap-x-4">
-        <button @click="statsVisibility.disabled = !statsVisibility.disabled" class="bg-gray-700 px-2 py-1 text-gray-400 leading-none rounded-b w-40"
-          >{{ t('filters.collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-gray-600"></i></button>
+        <button @click="statsVisibility.disabled = !statsVisibility.disabled" class="bg-surface-hover px-2 py-1 text-content-muted leading-none rounded-b w-40"
+          >{{ t('filters.collapse') }} <i class="fas fa-chevron-up pl-1 text-xs text-content-muted"></i></button>
         <ui-toggle v-if="filteredStats.length !== stats.length"
-          v-model="showHidden" class="text-gray-400 pt-2">{{ t('filters.hidden_toggle') }}</ui-toggle>
+          v-model="showHidden" class="text-content-muted pt-2">{{ t('filters.hidden_toggle') }}</ui-toggle>
         <ui-toggle
-          v-model="showFilterSources" class="ml-auto text-gray-400 pt-2">{{ t('filters.mods_toggle') }}</ui-toggle>
+          v-model="showFilterSources" class="ml-auto text-content-muted pt-2">{{ t('filters.mods_toggle') }}</ui-toggle>
       </div>
     </div>
   </div>
@@ -179,16 +179,16 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .presetBtn {
-  @apply border-gray-700 bg-gray-800;
+  @apply border-line bg-surface-raised;
   @apply px-2;
   min-width: 3rem;
 
   &:hover {
-    @apply bg-gray-700;
+    @apply bg-surface-hover;
   }
 
   &.active {
-    background: linear-gradient(to bottom, theme('colors.gray.900'), theme('colors.gray.800'));
+    background: linear-gradient(to bottom, rgb(var(--c-surface-base)), rgb(var(--c-surface-raised)));
   }
 }
 </style>

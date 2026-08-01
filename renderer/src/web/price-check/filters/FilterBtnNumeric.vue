@@ -89,30 +89,30 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .btn {
-  @apply bg-gray-900 rounded;
+  @apply bg-surface-base rounded;
   @apply border border-transparent;
   @apply pr-1;
   line-height: 1.25rem;
 
   &.active {
-    @apply border-gray-500;
+    @apply border-line-strong;
   }
 }
 
 .input {
   @apply text-center;
   @apply bg-transparent;
-  @apply text-gray-300;
+  @apply text-content-body;
   @apply select-all;
 
   &:hover,
   &:focus {
-    @apply bg-gray-700;
-    @apply -my-px border-t border-b border-gray-500;
+    @apply bg-surface-hover;
+    @apply -my-px border-t border-b border-line-strong;
   }
 
   &::placeholder {
-    @apply text-gray-400;
+    @apply text-content-muted;
   }
 
   &:focus { cursor: none; }

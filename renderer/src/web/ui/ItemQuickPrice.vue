@@ -5,11 +5,11 @@
         <img :src="itemImg" class="max-w-full max-h-full overflow-hidden">
       </div>
     </slot>
-    <i class="fas fa-arrow-right text-gray-600 px-1 text-sm"></i>
+    <i class="fas fa-arrow-right text-content-muted px-1 text-sm"></i>
     <div class="whitespace-nowrap overflow-hidden">
-      <span v-if="approx && !isRange" class="text-gray-600 font-sans">~ </span>
+      <span v-if="approx && !isRange" class="text-content-muted font-sans">~ </span>
       <span :class="{ [$style.golden]: isValuable, 'px-1': (minText === '?') }">{{ minText }}</span>
-      <span v-if="isRange" class="text-gray-600 font-sans"> ~ </span>
+      <span v-if="isRange" class="text-content-muted font-sans"> ~ </span>
       <span v-if="isRange" :class="{ [$style.golden]: isValuable }">{{ maxText }}</span>
       <span v-if="!currencyText" class="font-sans" :class="{ [$style.golden]: isValuable }"> ×</span>
       <span v-else-if="price" :class="{ [$style.golden]: isValuable }">&nbsp;{{ price.currency }}</span>
@@ -89,6 +89,6 @@ export default defineComponent({
 
 <style module>
 .golden {
-  color: #e4c29a;
+  color: rgb(var(--c-accent-strong));
 }
 </style>

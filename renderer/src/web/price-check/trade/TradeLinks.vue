@@ -1,11 +1,11 @@
 <template>
   <div class="flex gap-px">
     <template v-if="builtin">
-      <button @click="open(false)" class="bg-gray-700 text-gray-400 rounded-l px-2">{{ t('Trade') }}</button>
-      <button @click="open(true)" class="bg-gray-700 text-gray-400 rounded-r px-2"><i class="fas fa-external-link-alt text-xs" /></button>
+      <button @click="open(false)" class="bg-surface-hover text-content-muted rounded-l px-2">{{ t('Trade') }}</button>
+      <button @click="open(true)" class="bg-surface-hover text-content-muted rounded-r px-2"><i class="fas fa-external-link-alt text-xs" /></button>
     </template>
     <button v-else
-      @click="open(true)" class="bg-gray-700 text-gray-400 rounded px-2">{{ t('Trade') }} <i class="fas fa-external-link-alt text-xs" /></button>
+      @click="open(true)" class="bg-surface-hover text-content-muted rounded px-2">{{ t('Trade') }} <i class="fas fa-external-link-alt text-xs" /></button>
   </div>
 </template>
 

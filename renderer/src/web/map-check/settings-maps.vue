@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col overflow-hidden h-full">
     <div class="flex p-1">
-      <input :placeholder="t('Search') + '...'" v-model="search" class="bg-gray-900 rounded px-1">
+      <input :placeholder="t('Search') + '...'" v-model="search" class="bg-surface-base rounded px-1">
       <UiToggle v-model="onlySelected" class="mx-2">{{ t(':search_selected') }}</UiToggle>
       <UiToggle v-model="showNewStats" class="ml-12">{{ t(':new_mods_icon') }}</UiToggle>
     </div>
     <div class="flex items-baseline py-1 shadow">
       <div class="flex-1 px-2 leading-none">{{ t(':search_stat_col', [filteredStats.length]) }}</div>
       <div class="flex gap-x-1 text-center items-center" style="padding-right: calc(0.875rem + 2.350rem);">
-        <i class="w-8 py-1 bg-orange-600 fas fa-exclamation-triangle"></i>
-        <i class="w-8 py-1 bg-red-700 fas fa-skull-crossbones"></i>
-        <i class="w-8 py-1 bg-green-700 fas fa-check"></i>
+        <i class="w-8 py-1 bg-warn fas fa-exclamation-triangle"></i>
+        <i class="w-8 py-1 bg-danger fas fa-skull-crossbones"></i>
+        <i class="w-8 py-1 bg-good fas fa-check"></i>
       </div>
     </div>
     <VirtualScroll

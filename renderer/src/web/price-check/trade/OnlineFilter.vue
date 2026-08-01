@@ -1,13 +1,13 @@
 <template>
   <ui-popover :delay="[80, null]" placement="bottom-start" boundary="#price-window">
     <template #target>
-      <button class="rounded mr-1 px-2 truncate" :class="showWarning() ? 'text-orange-500' : 'text-gray-500'">
+      <button class="rounded mr-1 px-2 truncate" :class="showWarning() ? 'text-warn-text' : 'text-content-muted'">
         <span><i class="fas fa-history"></i> {{ t(popoverLabelId()) }}</span>
         <span v-if="showLeagueName()">, {{ filters.trade.league }}</span>
       </button>
     </template>
     <template #content>
-      <div class="flex gap-x-8 p-2 bg-gray-800 text-gray-400">
+      <div class="flex gap-x-8 p-2 bg-surface-raised text-content-muted">
         <div class="flex flex-col gap-y-1">
           <div class="mb-1">
             <ui-toggle
