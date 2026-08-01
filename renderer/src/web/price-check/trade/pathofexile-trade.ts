@@ -135,6 +135,7 @@ interface TradeRequest {
           stack_size?: FilterRange
           memory_level?: FilterRange
           foulborn_item?: FilterBoolean
+          vestigial?: FilterBoolean
         }
       }
       armour_filters?: {
@@ -331,6 +332,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
   if (filters.foulborn?.value === false) {
     propSet(query.filters, 'misc_filters.filters.foulborn_item.option', String(false))
+  }
+  if (filters.vestigial?.value === false) {
+    propSet(query.filters, 'misc_filters.filters.vestigial.option', String(false))
   }
   if (filters.mirrored?.disabled) {
     propSet(query.filters, 'misc_filters.filters.mirrored.option', String(false))

@@ -123,6 +123,8 @@ export default {
   UNMODIFIABLE: 'Unmodifiable',
   FOULBORN_NAME: /^Foulborn (.*)$/,
   FOULBORN_MODIFIER: 'Foulborn Unique Modifier',
+  VESTIGIAL_NAME: /^Vestigial (.*)$/,
+  VESTIGIAL_IMPLICIT: 'Vestigial Implicit Modifier',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

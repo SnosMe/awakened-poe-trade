@@ -241,6 +241,8 @@ export function calculatedStatToFilter (
       filter.tag = FilterTag.Corrupted
     } else if (sources.some(s => s.modifier.info.generation === 'eldritch')) {
       filter.tag = FilterTag.Eldritch
+    } else if (sources.some(s => s.modifier.info.generation === 'vestigial')) {
+      filter.tag = FilterTag.Vestigial
     } else if (item.isSynthesised) {
       filter.tag = FilterTag.Synthesised
     }
@@ -462,7 +464,11 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
         // hide only if fractured mod has corresponding explicit variant
         filter.hidden = 'filters.hide_for_crafting'
       }
-    } else if (filter.tag === FilterTag.Foulborn || filter.tag === FilterTag.Variant) {
+    } else if (
+      filter.tag === FilterTag.Foulborn ||
+      filter.tag === FilterTag.Vestigial ||
+      filter.tag === FilterTag.Variant
+    ) {
       filter.disabled = false
     }
   }

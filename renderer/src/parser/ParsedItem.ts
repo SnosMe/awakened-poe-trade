@@ -68,6 +68,7 @@ export interface ParsedItem {
   isVeiled?: boolean
   isFoil?: boolean
   isFoulborn?: boolean
+  isVestigial?: boolean
   statsByType: StatCalculated[]
   newMods: ParsedModifier[]
   unknownModifiers: Array<{

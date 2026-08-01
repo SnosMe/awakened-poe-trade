@@ -53,6 +53,9 @@ export interface ItemFilters {
   foulborn?: {
     value: boolean
   }
+  vestigial?: {
+    value: boolean
+  }
   influences?: Array<{
     value: ItemInfluence
     disabled: boolean
@@ -172,6 +175,7 @@ export enum FilterTag {
   Corrupted = 'corrupted',
   Synthesised = 'synthesised',
   Foulborn = 'foulborn',
+  Vestigial = 'vestigial',
   Eldritch = 'eldritch',
   Variant = 'variant',
   Property = 'property',

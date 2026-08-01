@@ -397,6 +397,10 @@ export function createFilters (
     filters.foulborn = {
       value: Boolean(item.isFoulborn)
     }
+
+    filters.vestigial = {
+      value: Boolean(item.isVestigial)
+    }
   }
 
   if (item.category === ItemCategory.HeistContract) {

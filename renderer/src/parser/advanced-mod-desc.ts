@@ -13,7 +13,7 @@ export interface ParsedModifier {
 
 export interface ModifierInfo {
   type: ModifierType
-  generation?: 'suffix' | 'prefix' | 'corrupted' | 'eldritch' | 'foulborn'
+  generation?: 'suffix' | 'prefix' | 'corrupted' | 'eldritch' | 'foulborn' | 'vestigial'
   name?: string
   tier?: number
   rank?: number
@@ -56,6 +56,7 @@ export function parseModInfoLine (line: string): ModifierInfo {
     switch (match.groups!.type) {
       case _$.IMPLICIT_MODIFIER:
       case _$.CORRUPTED_IMPLICIT:
+      case _$.VESTIGIAL_IMPLICIT:
         type = ModifierType.Implicit; break
       case _$.FRACTURED_PREFIX:
       case _$.FRACTURED_SUFFIX:
@@ -78,6 +79,8 @@ export function parseModInfoLine (line: string): ModifierInfo {
         generation = 'corrupted'; break
       case _$.FOULBORN_MODIFIER:
         generation = 'foulborn'; break
+      case _$.VESTIGIAL_IMPLICIT:
+        generation = 'vestigial'; break
     }
 
     name = match.groups!.name ?? undefined
