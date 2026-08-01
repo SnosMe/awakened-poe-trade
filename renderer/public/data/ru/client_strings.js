@@ -107,6 +107,7 @@ export default {
   ELDRITCH_MOD_R4: 'Превосходный',
   ELDRITCH_MOD_R5: 'Первоклассный',
   ELDRITCH_MOD_R6: 'Безупречный',
+  MAP_AREA: 'Map Area: ',
   SENTINEL_CHARGE: 'Заряд: ',
   SHAPER_MODS: [
     'изменения',

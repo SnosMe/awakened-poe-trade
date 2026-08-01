@@ -107,6 +107,7 @@ export default {
   ELDRITCH_MOD_R4: '특출난',
   ELDRITCH_MOD_R5: '정교한',
   ELDRITCH_MOD_R6: '완벽한',
+  MAP_AREA: 'Map Area: ',
   SENTINEL_CHARGE: '충전: ',
   SHAPER_MODS: ['- 형성', '쉐이퍼의'],
   ELDER_MODS: ['- 엘더', '엘더의'],

@@ -63,6 +63,7 @@ export interface ParsedItem {
   influences: ItemInfluence[]
   logbookAreaMods?: ParsedModifier[][]
   sentinelCharge?: number
+  mapArea?: string
   isSynthesised?: boolean
   isFractured?: boolean
   isVeiled?: boolean

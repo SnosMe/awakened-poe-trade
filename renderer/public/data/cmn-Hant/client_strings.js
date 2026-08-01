@@ -107,6 +107,7 @@ export default {
   ELDRITCH_MOD_R4: '卓越',
   ELDRITCH_MOD_R5: '精緻',
   ELDRITCH_MOD_R6: '完美',
+  MAP_AREA: 'Map Area: ',
   SENTINEL_CHARGE: '充能: ',
   SHAPER_MODS: ['塑者之', '塑者的', '塑界者的'],
   ELDER_MODS: ['尊師之', '尊師的'],
