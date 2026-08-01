@@ -64,6 +64,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMirrored,
   parseSplit,
   parseSentinelCharge,
+  parseMapArea,
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
@@ -807,6 +808,14 @@ function parseTincture (section: string[], item: ParsedItem) {
     return 'SECTION_PARSED'
   }
 
+  return 'SECTION_SKIPPED'
+}
+
+function parseMapArea (section: string[], item: ParsedItem) {
+  if (section.length === 1 && section[0].startsWith(_$.MAP_AREA)) {
+    item.mapArea = section[0].slice(_$.MAP_AREA.length)
+    return 'SECTION_PARSED'
+  }
   return 'SECTION_SKIPPED'
 }
 

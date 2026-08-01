@@ -5,6 +5,7 @@ import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF, ITEM_BY_TRANSLATED } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import { SCRYING_ORB_AREA_TRADE_IDS, SCRYING_ORB_DISCRIMINATOR } from '../trade/scrying-orb'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -59,6 +60,20 @@ export function createFilters (
     filters.stackSize = {
       value: item.stackSize?.value || 1,
       disabled: !(item.stackSize && item.stackSize.value > 1 && opts.activateStockFilter)
+    }
+  }
+  // A Scrying Orb is only worth what its map area is worth, so search the
+  // area's own trade type. Unknown areas fall through and search the plain
+  // "Scrying Orb" type, which the trade site also accepts.
+  if (item.mapArea) {
+    const areaTradeId = SCRYING_ORB_AREA_TRADE_IDS[item.mapArea]
+    if (areaTradeId) {
+      filters.searchExact = {
+        baseType: item.info.name,
+        baseTypeTrade: areaTradeId
+      }
+      filters.discriminator = { trade: SCRYING_ORB_DISCRIMINATOR }
+      return filters
     }
   }
   if (item.category === ItemCategory.Invitation) {

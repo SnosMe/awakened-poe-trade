@@ -107,6 +107,7 @@ export default {
   ELDRITCH_MOD_R4: 'Exceptional',
   ELDRITCH_MOD_R5: 'Exquisite',
   ELDRITCH_MOD_R6: 'Perfect',
+  MAP_AREA: 'Map Area: ',
   SENTINEL_CHARGE: 'Charge: ',
   SHAPER_MODS: ['of Shaping', "The Shaper's"],
   ELDER_MODS: ['of the Elder', "The Elder's"],
