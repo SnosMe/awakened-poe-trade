@@ -18,6 +18,11 @@
           </div>
         </button>
         <div class="flex items-baseline gap-x-1">
+          <button v-if="canPin" type="button" @click="togglePinned"
+            :class="[$style['pin'], { [$style['pin-active']]: isPinned }]"
+            :title="isPinned ? t('filters.unpin_default') : t('filters.pin_default')">
+            <i class="fas fa-thumbtack"></i>
+          </button>
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
           <div class="flex gap-x-px">
             <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
@@ -78,6 +83,7 @@ import FilterModifierTiers from './FilterModifierTiers.vue'
 import { AppConfig } from '@/web/Config'
 import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
 import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from './interfaces'
+import type { PriceCheckWidget } from '@/web/overlay/widgets'
 import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
@@ -219,13 +225,44 @@ export default defineComponent({
           )
         )),
       inputFocus,
-      toggleFilter
+      toggleFilter,
+      canPin: computed(() =>
+        !INTERNAL_TRADE_IDS.includes(props.filter.tradeId[0]) &&
+        props.filter.tag !== FilterTag.Property),
+      isPinned: computed(() =>
+        pinnedStats().includes(props.filter.statRef)),
+      togglePinned () {
+        const pinned = pinnedStats()
+        const at = pinned.indexOf(props.filter.statRef)
+        if (at === -1) {
+          pinned.push(props.filter.statRef)
+          props.filter.disabled = false
+        } else {
+          pinned.splice(at, 1)
+        }
+      }
     }
   }
 })
+
+function pinnedStats (): string[] {
+  return AppConfig<PriceCheckWidget>('price-check')!.defaultEnabledStats
+}
 </script>
 
 <style lang="postcss" module>
+.pin {
+  @apply text-xs leading-none;
+  @apply text-gray-700;
+  @apply px-1;
+}
+.pin:hover {
+  @apply text-gray-400;
+}
+.pin-active {
+  @apply text-gray-400;
+}
+
 .filter {
   @apply py-2;
   @apply border-b border-gray-700;

@@ -198,7 +198,9 @@
     "tag_explicit_veiled": "Veiled",
     "tag_explicit_incursion": "Incursion",
     "tag_explicit_infamous": "Mercenary",
-    "tag_explicit_essence": "Essence"
+    "tag_explicit_essence": "Essence",
+    "pin_default": "Always enable this mod by default",
+    "unpin_default": "Stop enabling this mod by default"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",
@@ -342,6 +344,9 @@
     "show_seller": "Show seller",
     "fill_rolls": "Fill stat values",
     "fill_roll_exact": "Exact value",
+    "default_enabled": "Enabled by default",
+    "default_enabled_hint": "Pin a mod from the price check panel to always tick it.",
+    "default_enabled_empty": "Nothing pinned yet.",
     "cursor_pos": "Show memorized cursor position",
     "extra_delay": "Extra time to prevent spurious Rate limiting",
     "warn_expensive": "Settings below are a compromise between increasing load on PoE website and convenient price checking / more accurate search.",

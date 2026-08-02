@@ -114,6 +114,7 @@ export default defineComponent({
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
+        defaultEnabledStats: widget.value.defaultEnabledStats,
         useEn: AppConfig().useIntlSite,
         currency: (prevItem &&
           item.info.namespace === prevItem.info.namespace &&

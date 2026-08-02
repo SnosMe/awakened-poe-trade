@@ -86,6 +86,7 @@ import CheckPositionCircle from './CheckPositionCircle.vue'
 import AppTitleBar from '@/web/ui/AppTitlebar.vue'
 import ItemQuickPrice from '@/web/ui/ItemQuickPrice.vue'
 import { PriceCheckWidget, WidgetManager, WidgetSpec } from '../overlay/interfaces'
+import { DEFAULT_ENABLED_STATS } from '../overlay/widgets'
 
 type ParseError = { name: string; message: string; rawText: ParsedItem['rawText'] }
 
@@ -113,6 +114,7 @@ export default defineComponent({
         hotkeyLocked: 'Ctrl + Alt + D',
         showSeller: false,
         searchStatRange: 10,
+        defaultEnabledStats: [...DEFAULT_ENABLED_STATS],
         showCursor: true,
         requestPricePrediction: false,
         rememberCurrency: false
