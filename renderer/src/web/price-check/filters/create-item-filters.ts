@@ -5,6 +5,7 @@ import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
 import { BaseType, ITEM_BY_REF, ITEM_BY_TRANSLATED } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
+import { PERMANENT_SC } from '../../background/Leagues'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
@@ -294,6 +295,7 @@ export function createFilters (
   if (item.isSplit) {
     filters.split = { disabled: false, hidden: false }
   } else if (
+    (!PERMANENT_SC.includes(opts.league) || opts.exact) &&
     item.info.craftable && !item.isCorrupted && !item.isMirrored &&
     !item.isSynthesised && !item.isFractured && !item.influences.length
   ) {
