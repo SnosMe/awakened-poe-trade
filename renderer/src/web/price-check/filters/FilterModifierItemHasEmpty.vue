@@ -9,12 +9,17 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { ItemRarity, ParsedItem } from '@/parser'
 import { StatFilter, ItemHasEmptyModifier } from './interfaces'
 
 export default defineComponent({
   props: {
     filter: {
       type: Object as PropType<StatFilter>,
+      required: true
+    },
+    item: {
+      type: Object as PropType<ParsedItem>,
       required: true
     }
   },
@@ -33,11 +38,17 @@ export default defineComponent({
         [ItemHasEmptyModifier.Any, 'item.has_empty_affix'],
         [ItemHasEmptyModifier.Prefix, 'item.has_empty_prefix'],
         [ItemHasEmptyModifier.Suffix, 'item.has_empty_suffix']
-      ] as const).map(([value, text]) => ({
-        text,
-        select: () => select(value),
-        isSelected: (filter.option!.value === value)
-      }))
+      ] as const)
+        .filter(([value]) => {
+          if (value === filter.option!.value) return true
+          return value === ItemHasEmptyModifier.Any &&
+            props.item.rarity === ItemRarity.Rare
+        })
+        .map(([value, text]) => ({
+          text,
+          select: () => select(value),
+          isSelected: (filter.option!.value === value)
+        }))
     })
 
     const { t } = useI18n()
