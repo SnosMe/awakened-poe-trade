@@ -233,7 +233,9 @@ export function calculatedStatToFilter (
     if (type !== ModifierType.Enchant) {
       filter.tag = FilterTag.Variant
     }
-    filter.disabled = false
+    if (!filter.oils) {
+      filter.disabled = false
+    }
   }
 
   if (type === ModifierType.Implicit) {
