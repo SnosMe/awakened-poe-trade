@@ -1,76 +1,6 @@
 [
   {
     "query": [
-      "ITEM::Splinter of Uul-Netol",
-      "ITEM::Uul-Netol's Breachstone"
-    ],
-    "items": [
-      "ITEM::Blessing of Uul-Netol",
-      "ITEM::Uul-Netol's Flawless Breachstone",
-      "UNIQUE::The Infinite Pursuit // Goliath Greaves",
-      "UNIQUE::Uul-Netol's Kiss // Labrys",
-      "UNIQUE::The Anticipation // Ezomyte Tower Shield"
-    ]
-  },
-  {
-    "query": [
-      "ITEM::Splinter of Xoph",
-      "ITEM::Xoph's Breachstone"
-    ],
-    "items": [
-      "ITEM::Blessing of Xoph",
-      "ITEM::Xoph's Flawless Breachstone",
-      "UNIQUE::The Formless Flame // Siege Helmet",
-      "UNIQUE::Xoph's Heart // Amber Amulet",
-      "UNIQUE::Xoph's Inception // Bone Bow",
-      "DIVINATION_CARD::The Escape"
-    ]
-  },
-  {
-    "query": [
-      "ITEM::Splinter of Tul",
-      "ITEM::Tul's Breachstone"
-    ],
-    "items": [
-      "ITEM::Blessing of Tul",
-      "ITEM::Tul's Flawless Breachstone",
-      "UNIQUE::Tulborn // Opal Wand",
-      "UNIQUE::The Halcyon // Jade Amulet",
-      "UNIQUE::The Snowblind Grace // Coronal Leather",
-      "DIVINATION_CARD::The Escape"
-    ]
-  },
-  {
-    "query": [
-      "ITEM::Splinter of Esh",
-      "ITEM::Esh's Breachstone"
-    ],
-    "items": [
-      "ITEM::Blessing of Esh",
-      "ITEM::Esh's Flawless Breachstone",
-      "UNIQUE::Voice of the Storm // Lapis Amulet",
-      "UNIQUE::Hand of Thought and Motion // Blinder",
-      "UNIQUE::Esh's Mirror // Thorium Spirit Shield",
-      "DIVINATION_CARD::The Escape"
-    ]
-  },
-  {
-    "query": [
-      "ITEM::Splinter of Chayula",
-      "ITEM::Chayula's Breachstone"
-    ],
-    "items": [
-      "ITEM::Blessing of Chayula",
-      "ITEM::Chayula's Flawless Breachstone",
-      "UNIQUE::Skin of the Loyal // Simple Robe, 6L",
-      "UNIQUE::Severed in Sleep // Cutlass",
-      "UNIQUE::The Blue Dream // Cobalt Jewel",
-      "UNIQUE::The Green Dream // Viridian Jewel",
-      "UNIQUE::The Red Dream // Crimson Jewel"
-    ]
-  },
-  {
-    "query": [
       "ITEM::Sacrifice at Dawn",
       "ITEM::Sacrifice at Midnight",
       "ITEM::Sacrifice at Noon",
@@ -212,7 +142,8 @@
       "ITEM::Fragment of Shape",
       "UNIQUE::Shaper's Touch // Crusader Gloves",
       "UNIQUE::Solstice Vigil // Onyx Amulet",
-      "UNIQUE::Voidwalker // Murder Boots"
+      "UNIQUE::Voidwalker // Murder Boots",
+      "GEM::Voidstorm Support // 1"
     ]
   },
   {
@@ -224,6 +155,7 @@
       "UNIQUE::Echoes of Creation // Royal Burgonet",
       "UNIQUE::Entropic Devastation // Assassin's Mitts",
       "UNIQUE::The Tides of Time // Vanguard Belt",
+      "UNIQUE::The Unblinking Eye // Harlequin Mask",
       "UNIQUE::Sublime Vision // Prismatic Jewel",
       "ITEM::Cosmic Reliquary Key"
     ]
@@ -262,7 +194,7 @@
       "ITEM::Shaper's Exalted Orb",
       "UNIQUE::Watcher's Eye // Prismatic Jewel",
       "UNIQUE::Disintegrator // Maelström Staff",
-      "UNIQUE::Voidfletcher // Primal Arrow Quiver",
+      "UNIQUE::Voidfletcher // Ornate Quiver",
       "UNIQUE::Indigon // Hubris Circlet",
       "UNIQUE::Mark of the Elder // Steel Ring",
       "UNIQUE::Mark of the Shaper // Opal Ring"
@@ -452,7 +384,8 @@
       "UNIQUE::Crown of the Inward Eye // Prophet Crown",
       "UNIQUE::Hands of the High Templar // Crusader Gloves",
       "UNIQUE::Thread of Hope // Crimson Jewel",
-      "UNIQUE::The Burden of Truth // Crystal Belt"
+      "UNIQUE::The Burden of Truth // Crystal Belt",
+      "GEM::Annihilation Support // 1"
     ]
   },
   {
@@ -462,6 +395,8 @@
     "items": [
       "UNIQUE::The Saviour // Legion Sword",
       "UNIQUE::Oriath's End",
+      "UNIQUE::Zana's Ingenuity // Prismatic Ring",
+      "UNIQUE::Thread of Hope // Massive, Crimson Jewel",
       "UNIQUE::The Tempest Rising // Goliath Greaves",
       "ITEM::Oubliette Reliquary Key"
     ]
@@ -574,6 +509,33 @@
       "UNIQUE::The Light of Meaning // Prismatic Jewel",
       "UNIQUE::The Burden of Shadows // Primordial Staff",
       "ITEM::Perfect Forest Tiger"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Zorath's Eye of Malevolence",
+      "ITEM::Zorath's Eye of Authority",
+      "ITEM::Zorath's Eye of the Inevitable",
+      "ITEM::Zorath's Eye of the Endless"
+    ],
+    "items": [
+      "UNIQUE::Subsume the Source // Faithful Helmet",
+      "UNIQUE::Spinesnatch // Fleshripper",
+      "UNIQUE::Festering Vengeance // Murderous Eye Jewel",
+      "UNIQUE::Extinguishing Grasp // Searching Eye Jewel",
+      "UNIQUE::Baleful Dominion // Hypnotic Eye Jewel",
+      "UNIQUE::Destructive Aspiration // Ghastly Eye Jewel"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Festering Vengeance // Murderous Eye Jewel",
+      "UNIQUE::Extinguishing Grasp // Searching Eye Jewel",
+      "UNIQUE::Baleful Dominion // Hypnotic Eye Jewel",
+      "UNIQUE::Destructive Aspiration // Ghastly Eye Jewel"
+    ],
+    "items": [
+      "UNIQUE::Reclaimed Malevolence // Assembled Eye Jewel"
     ]
   },
   {
@@ -739,10 +701,20 @@
   },
   {
     "query": [
-      "UNIQUE::Hall of Grandmasters // T6"
+      "UNIQUE::Hall of Grandmasters // T0"
     ],
     "items": [
       "DIVINATION_CARD::The Immortal"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::Doryani's Machinarium // T0"
+    ],
+    "items": [
+      "UNIQUE::Doryani's Delusion // Leviathan Greaves",
+      "UNIQUE::Doryani's Delusion // Warlock Boots",
+      "UNIQUE::Doryani's Delusion // Velour Boots"
     ]
   },
   {
@@ -808,14 +780,15 @@
   },
   {
     "query": [
-      "UNIQUE::Cortex // T11"
+      "UNIQUE::Cortex // T0"
     ],
     "items": [
       "UNIQUE::Bottled Faith",
       "UNIQUE::Garb of the Ephemeral // Savant's Robe",
       "UNIQUE::Perepiteia // Ezomyte Spiked Shield",
       "UNIQUE::Offering to the Serpent // Legion Gloves",
-      "DIVINATION_CARD::Imperfect Memories"
+      "GEM::Greater Kinetic Instability Support // 1",
+      "DIVINATION_CARD::The Hook"
     ]
   },
   {
@@ -833,10 +806,10 @@
   },
   {
     "query": [
-      "UNIQUE::Rewritten Distant Memory // T11",
-      "UNIQUE::Augmented Distant Memory // T11",
-      "UNIQUE::Altered Distant Memory // T11",
-      "UNIQUE::Twisted Distant Memory // T11"
+      "UNIQUE::Rewritten Distant Memory // T0",
+      "UNIQUE::Augmented Distant Memory // T0",
+      "UNIQUE::Altered Distant Memory // T0",
+      "UNIQUE::Twisted Distant Memory // T0"
     ],
     "items": [
       "UNIQUE::Circle of Anguish // Ruby Ring",
@@ -844,7 +817,7 @@
       "UNIQUE::Circle of Guilt // Iron Ring",
       "UNIQUE::Circle of Nostalgia // Amethyst Ring",
       "UNIQUE::Circle of Regret // Topaz Ring",
-      "UNIQUE::Cortex // T11"
+      "UNIQUE::Cortex // T0"
     ]
   },
   {
@@ -993,19 +966,6 @@
   },
   {
     "query": [
-      "UNIQUE::The Tower of Ordeals // T16"
-    ],
-    "items": [
-      "UNIQUE::Relic of the Pact // Sage Wand",
-      "UNIQUE::Mahuxotl's Machination // Steel Kite Shield",
-      "UNIQUE::Temptation Step // Shagreen Boots",
-      "UNIQUE::Glimpse of Chaos // Vaal Mask",
-      "UNIQUE::Yaomac's Accord // Vaal Sceptre",
-      "UNIQUE::Hateforge // Ancient Gauntlets"
-    ]
-  },
-  {
-    "query": [
       "UNIQUE::First Piece of Brutality // Imperial Staff Piece",
       "UNIQUE::Second Piece of Brutality // Imperial Staff Piece",
       "UNIQUE::Third Piece of Brutality // Imperial Staff Piece"
@@ -1126,7 +1086,7 @@
       "UNIQUE::Severed in Sleep // Cutlass",
       "UNIQUE::Eye of Chayula // Onyx Amulet",
       "UNIQUE::The Green Dream // Viridian Jewel",
-      "ITEM::Blessing of Chayula"
+      "ITEM::Flesh of Xesht"
     ],
     "items": [
       "UNIQUE::The Blue Nightmare // Cobalt Jewel",
@@ -1139,10 +1099,10 @@
   },
   {
     "query": [
-      "UNIQUE::Esh's Mirror // Thorium Spirit Shield",
+      "UNIQUE::Esh's Mirror // Vaal Spirit Shield",
       "UNIQUE::Voice of the Storm // Lapis Amulet",
-      "UNIQUE::Hand of Thought and Motion // Blinder",
-      "ITEM::Blessing of Esh"
+      "UNIQUE::Hand of Thought and Motion // Imperial Claw",
+      "ITEM::Flesh of Xesht"
     ],
     "items": [
       "UNIQUE::Esh's Visage // Vaal Spirit Shield",
@@ -1153,9 +1113,9 @@
   {
     "query": [
       "UNIQUE::Tulborn // Opal Wand",
-      "UNIQUE::The Snowblind Grace // Coronal Leather",
+      "UNIQUE::The Snowblind Grace // Zodiac Leather",
       "UNIQUE::The Halcyon // Jade Amulet",
-      "ITEM::Blessing of Tul"
+      "ITEM::Flesh of Xesht"
     ],
     "items": [
       "UNIQUE::Tulfall // Opal Wand",
@@ -1165,10 +1125,10 @@
   },
   {
     "query": [
-      "UNIQUE::The Infinite Pursuit // Goliath Greaves",
+      "UNIQUE::The Infinite Pursuit // Titan Greaves",
       "UNIQUE::The Anticipation // Ezomyte Tower Shield",
-      "UNIQUE::Uul-Netol's Kiss // Labrys",
-      "ITEM::Blessing of Uul-Netol"
+      "UNIQUE::Uul-Netol's Kiss // Vaal Axe",
+      "ITEM::Flesh of Xesht"
     ],
     "items": [
       "UNIQUE::The Red Trail // Titan Greaves",
@@ -1178,10 +1138,10 @@
   },
   {
     "query": [
-      "UNIQUE::The Formless Flame // Siege Helmet",
-      "UNIQUE::Xoph's Inception // Bone Bow",
+      "UNIQUE::The Formless Flame // Royal Burgonet",
+      "UNIQUE::Xoph's Inception // Citadel Bow",
       "UNIQUE::Xoph's Heart // Amber Amulet",
-      "ITEM::Blessing of Xoph"
+      "ITEM::Flesh of Xesht"
     ],
     "items": [
       "UNIQUE::The Formless Inferno // Royal Burgonet",
@@ -1272,6 +1232,20 @@
     ],
     "items": [
       "UNIQUE::Soul Ripper"
+    ]
+  },
+  {
+    "query": [
+      "ITEM::Trarthan Scarab",
+      "ITEM::Trarthan Scarab of Renown"
+    ],
+    "items": [
+      "UNIQUE::Hand of Heresy // Martyr Gloves",
+      "UNIQUE::Binds of Bloody Vengeance // Vanguard Belt",
+      "UNIQUE::Azadi Crest // Lacquered Buckler",
+      "UNIQUE::The Ghastly Theatre // Teak Round Shield",
+      "UNIQUE::Howlcrack // Ezomyte Burgonet",
+      "UNIQUE::Scornflux // Satin Slippers"
     ]
   },
 
@@ -1455,7 +1429,7 @@
     ],
     "items": [
       "ITEM::Diviner's Delirium Orb",
-      "ITEM::Faceted Fossil",
+      "ITEM::Fractured Fossil",
       "ITEM::Golden Oil"
     ]
   },
@@ -1499,6 +1473,7 @@
       "UNIQUE::The Balance of Terror // Cobalt Jewel",
       "UNIQUE::Sandstorm Visage // Necromancer Circlet",
       "UNIQUE::The Winds of Fate // Foul Staff",
+      "ITEM::Volatile Vaal Orb",
       "UNIQUE::The Gilded Chalice // Relic",
       "UNIQUE::The Hour of Divinity // Relic",
       "UNIQUE::The First Crest // Relics, Relic",

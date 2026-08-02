@@ -27,7 +27,7 @@ export function getDetailsId (item: ParsedItem) {
         ? `${item.mapBlighted} ${item.info.refName}`
         : item.info.refName,
       variant: variant([
-        `T${item.map!.tier ?? 0}`,
+        `T${(item.rarity === ItemRarity.Unique ? undefined : item.map!.tier) ?? 0}`,
         (item.rarity !== ItemRarity.Unique)
           ? (item.map!.tier) ? 'Gen-24' : 'Atlas'
           : null
