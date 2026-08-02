@@ -48,7 +48,7 @@
           <span v-if="showTag"
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(`filters.tag_${tag.replace('-', '_')}`) }}{{ (filter.sources.length > 1) ? ` x ${filter.sources.length}` : null }}</span>
           <filter-modifier-tiers :filter="filter" :item="item" />
-          <filter-modifier-item-has-empty :filter="filter" />
+          <filter-modifier-item-has-empty :filter="filter" :item="item" />
         </div>
         <stat-roll-slider v-if="roll && roll.bounds"
           class="ml-2 mr-4" style="width: 12.5rem;"
