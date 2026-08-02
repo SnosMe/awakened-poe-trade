@@ -1,3 +1,148 @@
+{"name":"Academy","refName":"Academy","namespace":"AREA","tradeDisc":"54575","icon":""}
+{"name":"Acid Caverns","refName":"Acid Caverns","namespace":"AREA","tradeDisc":"21257","icon":""}
+{"name":"Alleyways","refName":"Alleyways","namespace":"AREA","tradeDisc":"42968","icon":""}
+{"name":"Ancient City","refName":"Ancient City","namespace":"AREA","tradeDisc":"2545","icon":""}
+{"name":"Arachnid Nest","refName":"Arachnid Nest","namespace":"AREA","tradeDisc":"36866","icon":""}
+{"name":"Arachnid Tomb","refName":"Arachnid Tomb","namespace":"AREA","tradeDisc":"7465","icon":""}
+{"name":"Arcade","refName":"Arcade","namespace":"AREA","tradeDisc":"44259","icon":""}
+{"name":"Arena","refName":"Arena","namespace":"AREA","tradeDisc":"1371","icon":""}
+{"name":"Arid Lake","refName":"Arid Lake","namespace":"AREA","tradeDisc":"27782","icon":""}
+{"name":"Armoury","refName":"Armoury","namespace":"AREA","tradeDisc":"15108","icon":""}
+{"name":"Arsenal","refName":"Arsenal","namespace":"AREA","tradeDisc":"25202","icon":""}
+{"name":"Ashen Wood","refName":"Ashen Wood","namespace":"AREA","tradeDisc":"43927","icon":""}
+{"name":"Atoll","refName":"Atoll","namespace":"AREA","tradeDisc":"19776","icon":""}
+{"name":"Barrows","refName":"Barrows","namespace":"AREA","tradeDisc":"49687","icon":""}
+{"name":"Basilica","refName":"Basilica","namespace":"AREA","tradeDisc":"27821","icon":""}
+{"name":"Bazaar","refName":"Bazaar","namespace":"AREA","tradeDisc":"36556","icon":""}
+{"name":"Beach","refName":"Beach","namespace":"AREA","tradeDisc":"62685","icon":""}
+{"name":"Belfry","refName":"Belfry","namespace":"AREA","tradeDisc":"59460","icon":""}
+{"name":"Bog","refName":"Bog","namespace":"AREA","tradeDisc":"47614","icon":""}
+{"name":"Bone Crypt","refName":"Bone Crypt","namespace":"AREA","tradeDisc":"23253","icon":""}
+{"name":"Bramble Valley","refName":"Bramble Valley","namespace":"AREA","tradeDisc":"44170","icon":""}
+{"name":"Burial Chambers","refName":"Burial Chambers","namespace":"AREA","tradeDisc":"43016","icon":""}
+{"name":"Cage","refName":"Cage","namespace":"AREA","tradeDisc":"3883","icon":""}
+{"name":"Caldera","refName":"Caldera","namespace":"AREA","tradeDisc":"64414","icon":""}
+{"name":"Canyon","refName":"Canyon","namespace":"AREA","tradeDisc":"2336","icon":""}
+{"name":"Carcass","refName":"Carcass","namespace":"AREA","tradeDisc":"18547","icon":""}
+{"name":"Castle Ruins","refName":"Castle Ruins","namespace":"AREA","tradeDisc":"36357","icon":""}
+{"name":"Cells","refName":"Cells","namespace":"AREA","tradeDisc":"3775","icon":""}
+{"name":"Cemetery","refName":"Cemetery","namespace":"AREA","tradeDisc":"12635","icon":""}
+{"name":"Channel","refName":"Channel","namespace":"AREA","tradeDisc":"22278","icon":""}
+{"name":"Chateau","refName":"Chateau","namespace":"AREA","tradeDisc":"39459","icon":""}
+{"name":"City Square","refName":"City Square","namespace":"AREA","tradeDisc":"44762","icon":""}
+{"name":"Cold River","refName":"Cold River","namespace":"AREA","tradeDisc":"38080","icon":""}
+{"name":"Colonnade","refName":"Colonnade","namespace":"AREA","tradeDisc":"31349","icon":""}
+{"name":"Colosseum","refName":"Colosseum","namespace":"AREA","tradeDisc":"16355","icon":""}
+{"name":"Conservatory","refName":"Conservatory","namespace":"AREA","tradeDisc":"6755","icon":""}
+{"name":"Coral Ruins","refName":"Coral Ruins","namespace":"AREA","tradeDisc":"41363","icon":""}
+{"name":"Core","refName":"Core","namespace":"AREA","tradeDisc":"35484","icon":""}
+{"name":"Courthouse","refName":"Courthouse","namespace":"AREA","tradeDisc":"49777","icon":""}
+{"name":"Courtyard","refName":"Courtyard","namespace":"AREA","tradeDisc":"25370","icon":""}
+{"name":"Coves","refName":"Coves","namespace":"AREA","tradeDisc":"49159","icon":""}
+{"name":"Crater","refName":"Crater","namespace":"AREA","tradeDisc":"5132","icon":""}
+{"name":"Crimson Temple","refName":"Crimson Temple","namespace":"AREA","tradeDisc":"46612","icon":""}
+{"name":"Crimson Township","refName":"Crimson Township","namespace":"AREA","tradeDisc":"10687","icon":""}
+{"name":"Crystal Ore","refName":"Crystal Ore","namespace":"AREA","tradeDisc":"17684","icon":""}
+{"name":"Cursed Crypt","refName":"Cursed Crypt","namespace":"AREA","tradeDisc":"8544","icon":""}
+{"name":"Dark Forest","refName":"Dark Forest","namespace":"AREA","tradeDisc":"34447","icon":""}
+{"name":"Defiled Cathedral","refName":"Defiled Cathedral","namespace":"AREA","tradeDisc":"47897","icon":""}
+{"name":"Desert","refName":"Desert","namespace":"AREA","tradeDisc":"34997","icon":""}
+{"name":"Desert Spring","refName":"Desert Spring","namespace":"AREA","tradeDisc":"10211","icon":""}
+{"name":"Dig","refName":"Dig","namespace":"AREA","tradeDisc":"43432","icon":""}
+{"name":"Dry Sea","refName":"Dry Sea","namespace":"AREA","tradeDisc":"53637","icon":""}
+{"name":"Dunes","refName":"Dunes","namespace":"AREA","tradeDisc":"53116","icon":""}
+{"name":"Dungeon","refName":"Dungeon","namespace":"AREA","tradeDisc":"64256","icon":""}
+{"name":"Estuary","refName":"Estuary","namespace":"AREA","tradeDisc":"40753","icon":""}
+{"name":"Excavation","refName":"Excavation","namespace":"AREA","tradeDisc":"33025","icon":""}
+{"name":"Factory","refName":"Factory","namespace":"AREA","tradeDisc":"41763","icon":""}
+{"name":"Fields","refName":"Fields","namespace":"AREA","tradeDisc":"36207","icon":""}
+{"name":"Flooded Mine","refName":"Flooded Mine","namespace":"AREA","tradeDisc":"63065","icon":""}
+{"name":"Forbidden Woods","refName":"Forbidden Woods","namespace":"AREA","tradeDisc":"26156","icon":""}
+{"name":"Forking River","refName":"Forking River","namespace":"AREA","tradeDisc":"29382","icon":""}
+{"name":"Foundry","refName":"Foundry","namespace":"AREA","tradeDisc":"31509","icon":""}
+{"name":"Frozen Cabins","refName":"Frozen Cabins","namespace":"AREA","tradeDisc":"51403","icon":""}
+{"name":"Fungal Hollow","refName":"Fungal Hollow","namespace":"AREA","tradeDisc":"34425","icon":""}
+{"name":"Gardens","refName":"Gardens","namespace":"AREA","tradeDisc":"11533","icon":""}
+{"name":"Geode","refName":"Geode","namespace":"AREA","tradeDisc":"58981","icon":""}
+{"name":"Ghetto","refName":"Ghetto","namespace":"AREA","tradeDisc":"14879","icon":""}
+{"name":"Glacier","refName":"Glacier","namespace":"AREA","tradeDisc":"4592","icon":""}
+{"name":"Grave Trough","refName":"Grave Trough","namespace":"AREA","tradeDisc":"34760","icon":""}
+{"name":"Graveyard","refName":"Graveyard","namespace":"AREA","tradeDisc":"53902","icon":""}
+{"name":"Grotto","refName":"Grotto","namespace":"AREA","tradeDisc":"19420","icon":""}
+{"name":"Haunted Mansion","refName":"Haunted Mansion","namespace":"AREA","tradeDisc":"1215","icon":""}
+{"name":"Iceberg","refName":"Iceberg","namespace":"AREA","tradeDisc":"59084","icon":""}
+{"name":"Infested Valley","refName":"Infested Valley","namespace":"AREA","tradeDisc":"24414","icon":""}
+{"name":"Ivory Temple","refName":"Ivory Temple","namespace":"AREA","tradeDisc":"16982","icon":""}
+{"name":"Jungle Valley","refName":"Jungle Valley","namespace":"AREA","tradeDisc":"4003","icon":""}
+{"name":"Laboratory","refName":"Laboratory","namespace":"AREA","tradeDisc":"43561","icon":""}
+{"name":"Lair","refName":"Lair","namespace":"AREA","tradeDisc":"8823","icon":""}
+{"name":"Lava Chamber","refName":"Lava Chamber","namespace":"AREA","tradeDisc":"7088","icon":""}
+{"name":"Lava Lake","refName":"Lava Lake","namespace":"AREA","tradeDisc":"20343","icon":""}
+{"name":"Leyline","refName":"Leyline","namespace":"AREA","tradeDisc":"12937","icon":""}
+{"name":"Lighthouse","refName":"Lighthouse","namespace":"AREA","tradeDisc":"43308","icon":""}
+{"name":"Lookout","refName":"Lookout","namespace":"AREA","tradeDisc":"48831","icon":""}
+{"name":"Malformation","refName":"Malformation","namespace":"AREA","tradeDisc":"3421","icon":""}
+{"name":"Marshes","refName":"Marshes","namespace":"AREA","tradeDisc":"42115","icon":""}
+{"name":"Mausoleum","refName":"Mausoleum","namespace":"AREA","tradeDisc":"57831","icon":""}
+{"name":"Maze","refName":"Maze","namespace":"AREA","tradeDisc":"46524","icon":""}
+{"name":"Mesa","refName":"Mesa","namespace":"AREA","tradeDisc":"19999","icon":""}
+{"name":"Mineral Pools","refName":"Mineral Pools","namespace":"AREA","tradeDisc":"44313","icon":""}
+{"name":"Moon Temple","refName":"Moon Temple","namespace":"AREA","tradeDisc":"41751","icon":""}
+{"name":"Mud Geyser","refName":"Mud Geyser","namespace":"AREA","tradeDisc":"36946","icon":""}
+{"name":"Museum","refName":"Museum","namespace":"AREA","tradeDisc":"33220","icon":""}
+{"name":"Necropolis","refName":"Necropolis","namespace":"AREA","tradeDisc":"2279","icon":""}
+{"name":"Orchard","refName":"Orchard","namespace":"AREA","tradeDisc":"38855","icon":""}
+{"name":"Overgrown Ruin","refName":"Overgrown Ruin","namespace":"AREA","tradeDisc":"26732","icon":""}
+{"name":"Overgrown Shrine","refName":"Overgrown Shrine","namespace":"AREA","tradeDisc":"26468","icon":""}
+{"name":"Palace","refName":"Palace","namespace":"AREA","tradeDisc":"51878","icon":""}
+{"name":"Park","refName":"Park","namespace":"AREA","tradeDisc":"32613","icon":""}
+{"name":"Pen","refName":"Pen","namespace":"AREA","tradeDisc":"19828","icon":""}
+{"name":"Peninsula","refName":"Peninsula","namespace":"AREA","tradeDisc":"57690","icon":""}
+{"name":"Phantasmagoria","refName":"Phantasmagoria","namespace":"AREA","tradeDisc":"47634","icon":""}
+{"name":"Pier","refName":"Pier","namespace":"AREA","tradeDisc":"60732","icon":""}
+{"name":"Pit","refName":"Pit","namespace":"AREA","tradeDisc":"11490","icon":""}
+{"name":"Plateau","refName":"Plateau","namespace":"AREA","tradeDisc":"34832","icon":""}
+{"name":"Plaza","refName":"Plaza","namespace":"AREA","tradeDisc":"35076","icon":""}
+{"name":"Port","refName":"Port","namespace":"AREA","tradeDisc":"47088","icon":""}
+{"name":"Precinct","refName":"Precinct","namespace":"AREA","tradeDisc":"58250","icon":""}
+{"name":"Primordial Blocks","refName":"Primordial Blocks","namespace":"AREA","tradeDisc":"15595","icon":""}
+{"name":"Primordial Pool","refName":"Primordial Pool","namespace":"AREA","tradeDisc":"25302","icon":""}
+{"name":"Promenade","refName":"Promenade","namespace":"AREA","tradeDisc":"54757","icon":""}
+{"name":"Racecourse","refName":"Racecourse","namespace":"AREA","tradeDisc":"57536","icon":""}
+{"name":"Ramparts","refName":"Ramparts","namespace":"AREA","tradeDisc":"52736","icon":""}
+{"name":"Reef","refName":"Reef","namespace":"AREA","tradeDisc":"53973","icon":""}
+{"name":"Relic Chambers","refName":"Relic Chambers","namespace":"AREA","tradeDisc":"35162","icon":""}
+{"name":"Residence","refName":"Residence","namespace":"AREA","tradeDisc":"4755","icon":""}
+{"name":"Scriptorium","refName":"Scriptorium","namespace":"AREA","tradeDisc":"53075","icon":""}
+{"name":"Sepulchre","refName":"Sepulchre","namespace":"AREA","tradeDisc":"27716","icon":""}
+{"name":"Shipyard","refName":"Shipyard","namespace":"AREA","tradeDisc":"11724","icon":""}
+{"name":"Shore","refName":"Shore","namespace":"AREA","tradeDisc":"22593","icon":""}
+{"name":"Shrine","refName":"Shrine","namespace":"AREA","tradeDisc":"64812","icon":""}
+{"name":"Siege","refName":"Siege","namespace":"AREA","tradeDisc":"3756","icon":""}
+{"name":"Silo","refName":"Silo","namespace":"AREA","tradeDisc":"24497","icon":""}
+{"name":"Spider Forest","refName":"Spider Forest","namespace":"AREA","tradeDisc":"4651","icon":""}
+{"name":"Spider Lair","refName":"Spider Lair","namespace":"AREA","tradeDisc":"60607","icon":""}
+{"name":"Stagnation","refName":"Stagnation","namespace":"AREA","tradeDisc":"3182","icon":""}
+{"name":"Strand","refName":"Strand","namespace":"AREA","tradeDisc":"10021","icon":""}
+{"name":"Sulphur Vents","refName":"Sulphur Vents","namespace":"AREA","tradeDisc":"6074","icon":""}
+{"name":"Summit","refName":"Summit","namespace":"AREA","tradeDisc":"60634","icon":""}
+{"name":"Sunken City","refName":"Sunken City","namespace":"AREA","tradeDisc":"11215","icon":""}
+{"name":"Temple","refName":"Temple","namespace":"AREA","tradeDisc":"45792","icon":""}
+{"name":"Terrace","refName":"Terrace","namespace":"AREA","tradeDisc":"42558","icon":""}
+{"name":"Thicket","refName":"Thicket","namespace":"AREA","tradeDisc":"737","icon":""}
+{"name":"Tower","refName":"Tower","namespace":"AREA","tradeDisc":"54446","icon":""}
+{"name":"Toxic Sewer","refName":"Toxic Sewer","namespace":"AREA","tradeDisc":"25747","icon":""}
+{"name":"Tropical Island","refName":"Tropical Island","namespace":"AREA","tradeDisc":"5647","icon":""}
+{"name":"Underground River","refName":"Underground River","namespace":"AREA","tradeDisc":"20216","icon":""}
+{"name":"Underground Sea","refName":"Underground Sea","namespace":"AREA","tradeDisc":"18545","icon":""}
+{"name":"Vaal Pyramid","refName":"Vaal Pyramid","namespace":"AREA","tradeDisc":"28018","icon":""}
+{"name":"Vault","refName":"Vault","namespace":"AREA","tradeDisc":"57839","icon":""}
+{"name":"Villa","refName":"Villa","namespace":"AREA","tradeDisc":"2144","icon":""}
+{"name":"Volcano","refName":"Volcano","namespace":"AREA","tradeDisc":"30639","icon":""}
+{"name":"Waste Pool","refName":"Waste Pool","namespace":"AREA","tradeDisc":"42556","icon":""}
+{"name":"Wasteland","refName":"Wasteland","namespace":"AREA","tradeDisc":"17533","icon":""}
+{"name":"Waterways","refName":"Waterways","namespace":"AREA","tradeDisc":"28402","icon":""}
+{"name":"Wharf","refName":"Wharf","namespace":"AREA","tradeDisc":"54239","icon":""}
 {"name":"Acid Slitherer","refName":"Acid Slitherer","namespace":"CAPTURED_BEAST","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQmVzdGlhcnlPcmJGdWxsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/3214b44360/BestiaryOrbFull.png"}
 {"name":"Adolescent Rhex","refName":"Adolescent Rhex","namespace":"CAPTURED_BEAST","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQmVzdGlhcnlPcmJGdWxsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/3214b44360/BestiaryOrbFull.png"}
 {"name":"Alpine Devil","refName":"Alpine Devil","namespace":"CAPTURED_BEAST","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQmVzdGlhcnlPcmJGdWxsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/3214b44360/BestiaryOrbFull.png"}
@@ -862,6 +1007,7 @@
 {"name":"Cooldown Recovery Support","refName":"Cooldown Recovery Support","namespace":"GEM","icon":"https://web.poecdn.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0Nvb2xkb3duUmVjb3ZlcnkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwiZ2UiOnRydWV9XQ/21c017b506/CooldownRecovery.png","gem":{"maxLevel":3}}
 {"name":"Corrupting Cry Support","refName":"Corrupting Cry Support","namespace":"GEM","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0NvcnJ1cHRpbmdDcnkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/27dd12964c/CorruptingCry.png","gem":{"maxLevel":20}}
 {"name":"Corrupting Fever","refName":"Corrupting Fever","namespace":"GEM","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9Db3JydXB0ZWRCbG9vZFN0cmVhbSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/fdc2a5d375/CorruptedBloodStream.png","gem":{"maxLevel":20}}
+{"name":"Coursing Current Support","refName":"Coursing Current Support","namespace":"GEM","icon":"https://web.poecdn.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0RlZXB3YXRlckJvc3MiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwiZ2UiOnRydWV9XQ/e0a8d3c626/DeepwaterBoss.png","gem":{"maxLevel":3}}
 {"name":"Crackling Lance","refName":"Crackling Lance","namespace":"GEM","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9EaXNlbnRlZ3JhdGVHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/89788eeb5b/DisentegrateGem.png","gem":{"maxLevel":20}}
 {"name":"Crackling Lance of Branching","refName":"Crackling Lance of Branching","namespace":"GEM","tradeDisc":"alt_x","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9EaXNlbnRlZ3JhdGVHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/89788eeb5b/DisentegrateGem.png","gem":{"transfigured":true,"normalVariant":"Crackling Lance","maxLevel":20}}
 {"name":"Crackling Lance of Disintegration","refName":"Crackling Lance of Disintegration","namespace":"GEM","tradeDisc":"alt_y","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9EaXNlbnRlZ3JhdGVHZW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/89788eeb5b/DisentegrateGem.png","gem":{"transfigured":true,"normalVariant":"Crackling Lance","maxLevel":20}}
@@ -2966,6 +3112,7 @@
 {"name":"Screaming Essence of Zeal","refName":"Screaming Essence of Zeal","namespace":"ITEM","tradeTag":"screaming-essence-of-zeal","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9aZWFsNSIsInNjYWxlIjoxfV0/27f4023314/Zeal5.png"}
 {"name":"Screaming Invitation","refName":"Screaming Invitation","namespace":"ITEM","craftable":{"category":"Invitation"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9UYW5nbGVkT3JiUXVlc3Q1Iiwic2NhbGUiOjF9XQ/aad87e6738/TangledOrbQuest5.png"}
 {"name":"Scroll of Wisdom","refName":"Scroll of Wisdom","namespace":"ITEM","tradeTag":"wisdom","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lJZGVudGlmaWNhdGlvbiIsInNjYWxlIjoxfV0/c2d03ed3fd/CurrencyIdentification.png"}
+{"name":"Scrying Orb","refName":"Scrying Orb","namespace":"ITEM","tradeDisc":"scrying_orb","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU2NyeWluZ09yYiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/045d452175/ScryingOrb.png"}
 {"name":"Seaglass Amulet","refName":"Seaglass Amulet","namespace":"ITEM","craftable":{"category":"Amulet"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9DcmVzY2VudEFtdWxldCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/ef6f218ca4/CrescentAmulet.png"}
 {"name":"Searching Eye Jewel","refName":"Searching Eye Jewel","namespace":"ITEM","craftable":{"category":"Abyss Jewel"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1NlYXJjaGluZ0V5ZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/ff2df16522/SearchingEye.png"}
 {"name":"Secutor Helm","refName":"Secutor Helm","namespace":"ITEM","craftable":{"category":"Helmet"},"armour":{"ar":[98,116],"ev":[98,116]},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0hlbG1ldFN0ckRleDUiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/b609cfed8b/HelmetStrDex5.png","w":2,"h":2}
@@ -3327,6 +3474,7 @@
 {"name":"Two-Toned Boots","refName":"Two-Toned Boots","namespace":"ITEM","craftable":{"category":"Boots"},"armour":{"ar":[126,145],"es":[26,30]},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Ud29Ub25lZEJvb3RzM0IiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/e3271c5de1/TwoTonedBoots3B.png","w":2,"h":2,"disc":{"propAR":true,"propES":true}}
 {"name":"Tyrant's Sekhem","refName":"Tyrant's Sekhem","namespace":"ITEM","craftable":{"category":"Sceptre"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9TY2VwdGVycy9zY2VwdGVyMyIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/366212755a/scepter3.png","w":2,"h":3}
 {"name":"Tzamoto's Ducat","refName":"Tzamoto's Ducat","namespace":"ITEM","tradeTag":"tzamotos-ducat","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVlcHdhdGVyL0R1Y2F0UmVkdWNpbmciLCJzY2FsZSI6MX1d/346f6e5138/DucatReducing.png"}
+{"name":"Ukatoa's Ducat","refName":"Ukatoa's Ducat","namespace":"ITEM","tradeTag":"ukatoas-ducat","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVlcHdhdGVyL0R1Y2F0RWxkcml0Y2giLCJzY2FsZSI6MX1d/2f8809ba8a/DucatEldritch.png"}
 {"name":"Ultimatum Scarab","refName":"Ultimatum Scarab","namespace":"ITEM","tradeTag":"ultimatum-scarab","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU2NhcmFicy9MZXNzZXJTY2FyYWJVbHRpbWF0dW0iLCJzY2FsZSI6MX1d/b1b423625d/LesserScarabUltimatum.png"}
 {"name":"Ultimatum Scarab of Bribing","refName":"Ultimatum Scarab of Bribing","namespace":"ITEM","tradeTag":"ultimatum-scarab-of-bribing","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU2NhcmFicy9Ob3JtYWxTY2FyYWJVbHRpbWF0dW0iLCJzY2FsZSI6MX1d/d688264f91/NormalScarabUltimatum.png"}
 {"name":"Ultimatum Scarab of Catalysing","refName":"Ultimatum Scarab of Catalysing","namespace":"ITEM","tradeTag":"ultimatum-scarab-of-catalysing","exchangeable":true,"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU2NhcmFicy9UaWVyNFNjYXJhYlVsdGltYXR1bSIsInNjYWxlIjoxfV0/abfc80cf45/Tier4ScarabUltimatum.png"}
@@ -3558,7 +3706,7 @@
 {"name":"Azadi Crest","refName":"Azadi Crest","namespace":"UNIQUE","unique":{"base":"Lacquered Buckler","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL0F6YWRpQ3Jlc3QiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/df9c0253e1/AzadiCrest.png"}
 {"name":"Badge of the Brotherhood","refName":"Badge of the Brotherhood","namespace":"UNIQUE","unique":{"base":"Turquoise Amulet","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9Bc3Nhc3NpblVuaXF1ZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/3616219d7d/AssassinUnique.png"}
 {"name":"Balefire","refName":"Balefire","namespace":"UNIQUE","unique":{"base":"Opal Sceptre","disenchantValue":5.72},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9TY2VwdGVycy9CYWVsZmlyZSIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/082c0ee423/Baelfire.png"}
-{"name":"Baleful Dominion","refName":"Baleful Dominion","namespace":"UNIQUE","unique":{"base":"Hypnotic Eye Jewel","disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpclJpdmV0ZWQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7a233ac972/GlintingDespairRiveted.png"}
+{"name":"Baleful Dominion","refName":"Baleful Dominion","namespace":"UNIQUE","unique":{"base":"Hypnotic Eye Jewel","fixedStats":["Historic"],"disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpclJpdmV0ZWQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7a233ac972/GlintingDespairRiveted.png"}
 {"name":"Bated Breath","refName":"Bated Breath","namespace":"UNIQUE","unique":{"base":"Chain Belt","disenchantValue":1.86},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvQmF0ZWRCcmVhdGgiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/0a8cc4529f/BatedBreath.png"}
 {"name":"Beacon of Madness","refName":"Beacon of Madness","namespace":"UNIQUE","unique":{"base":"Two-Toned Boots","fixedStats":["Grants Level # Embrace Madness Skill","#% increased Movement Speed"],"disenchantValue":17.82},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9UYW5nbWF6dWFybW91cmJvb3RzIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/664521517c/Tangmazuarmourboots.png"}
 {"name":"Bear's Girdle","refName":"Bear's Girdle","namespace":"UNIQUE","unique":{"base":"Leather Belt","disenchantValue":1.63},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvQmVhcnNDbHV0Y2giLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/31930452e4/BearsClutch.png"}
@@ -3727,7 +3875,7 @@
 {"name":"Deidbell","refName":"Deidbell","namespace":"UNIQUE","unique":{"base":"Gilded Sallet","disenchantValue":5.15},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0RlaWRiZWxsIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/fd66b0b28f/Deidbell.png"}
 {"name":"Demon Stitcher","refName":"Demon Stitcher","namespace":"UNIQUE","unique":{"base":"Satin Gloves","disenchantValue":4.08},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvRGVtb25TdGljaGVyIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/0269893a5c/DemonSticher.png"}
 {"name":"Dendrobate","refName":"Dendrobate","namespace":"UNIQUE","unique":{"base":"Sentinel Jacket","disenchantValue":6.94},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9EZW5kcm9iYXRpcyIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/7c2d6dd5ce/Dendrobatis.png"}
-{"name":"Destructive Aspiration","refName":"Destructive Aspiration","namespace":"UNIQUE","unique":{"base":"Ghastly Eye Jewel","disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpckdoYXN0bHkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6955255dd7/GlintingDespairGhastly.png"}
+{"name":"Destructive Aspiration","refName":"Destructive Aspiration","namespace":"UNIQUE","unique":{"base":"Ghastly Eye Jewel","fixedStats":["Historic"],"disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpckdoYXN0bHkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6955255dd7/GlintingDespairGhastly.png"}
 {"name":"Destructive Play","refName":"Destructive Play","namespace":"UNIQUE","unique":{"base":"Minor Idol"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmVsaWNzLzJVbmlxdWVBdGxhc1JlbGljMXgxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/040b94f2b1/2UniqueAtlasRelic1x1.png"}
 {"name":"Devoto's Devotion","refName":"Devoto's Devotion","namespace":"UNIQUE","unique":{"base":"Nightmare Bascinet","disenchantValue":8.65},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0hlbG1ldFN0ckRleDJ1bmlxdWUiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/65fa7daa88/HelmetStrDex2unique.png"}
 {"name":"Dialla's Malefaction","refName":"Dialla's Malefaction","namespace":"UNIQUE","unique":{"base":"Sage's Robe","disenchantValue":72.46},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9EaWFsbGFzTWFsZWZhY3Rpb24iLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/842ace4d64/DiallasMalefaction.png"}
@@ -3747,9 +3895,9 @@
 {"name":"Doon Cuebiyari","refName":"Doon Cuebiyari","namespace":"UNIQUE","unique":{"base":"Vaal Sceptre","disenchantValue":17.3},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kTWFjZXMvRG9vbkN1ZWJpeWFyaSIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/8a4a0ccb6b/DoonCuebiyari.png"}
 {"name":"Doppelgänger Guise","refName":"Doppelgänger Guise","namespace":"UNIQUE","unique":{"base":"Sadist Garb","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9Db2xsZWN0b3JzR2FyYkRpZmYiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/eb8a6d36ef/CollectorsGarbDiff.png"}
 {"name":"Doryani's Catalyst","refName":"Doryani's Catalyst","namespace":"UNIQUE","unique":{"base":"Vaal Sceptre","disenchantValue":8.05},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9TY2VwdGVycy9Eb3J5YW5pc0NhdGFseXN0IiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/aa54cbb507/DoryanisCatalyst.png"}
-{"name":"Doryani's Delusion","refName":"Doryani's Delusion","namespace":"UNIQUE","unique":{"base":"Velour Boots","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Eb3JpeWFuaXNHcmVlbiIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/ef81cb1e57/DoriyanisGreen.png"}
-{"name":"Doryani's Delusion","refName":"Doryani's Delusion","namespace":"UNIQUE","unique":{"base":"Warlock Boots","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Eb3JpeWFuaXNCbHVlIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/0288b52fee/DoriyanisBlue.png"}
-{"name":"Doryani's Delusion","refName":"Doryani's Delusion","namespace":"UNIQUE","unique":{"base":"Leviathan Greaves","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Eb3JpeWFuaXNSZWQiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/10255d4b05/DoriyanisRed.png"}
+{"name":"Doryani's Delusion","refName":"Doryani's Delusion","namespace":"UNIQUE","unique":{"base":"Leviathan Greaves","fixedStats":["#% increased Movement Speed"],"disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Eb3JpeWFuaXNSZWQiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/10255d4b05/DoriyanisRed.png"}
+{"name":"Doryani's Delusion","refName":"Doryani's Delusion","namespace":"UNIQUE","unique":{"base":"Velour Boots","fixedStats":["#% increased Movement Speed"],"disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Eb3JpeWFuaXNHcmVlbiIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/ef81cb1e57/DoriyanisGreen.png"}
+{"name":"Doryani's Delusion","refName":"Doryani's Delusion","namespace":"UNIQUE","unique":{"base":"Warlock Boots","fixedStats":["#% increased Movement Speed"],"disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Eb3JpeWFuaXNCbHVlIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/0288b52fee/DoriyanisBlue.png"}
 {"name":"Doryani's Fist","refName":"Doryani's Fist","namespace":"UNIQUE","unique":{"base":"Vaal Gauntlets","disenchantValue":44.78},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvRG9yeWFuaXNGaXN0IiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/92cfa78e4d/DoryanisFist.png"}
 {"name":"Doryani's Invitation","refName":"Doryani's Invitation","namespace":"UNIQUE","unique":{"base":"Heavy Belt","disenchantValue":1.63},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvRG9yeWFuaXNJbnZpdGF0aW9uIiwidyI6MiwiaCI6MSwic2NhbGUiOjF9XQ/d0085639cc/DoryanisInvitation.png"}
 {"name":"Doryani's Machinarium","refName":"Doryani's Machinarium","namespace":"UNIQUE","unique":{"base":"Map","disenchantValue":48.93},"map":{},"icon":"https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Eb3J5YW5pcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/581444be53/Doryanis.png"}
@@ -3796,7 +3944,7 @@
 {"name":"Eternal Damnation","refName":"Eternal Damnation","namespace":"UNIQUE","unique":{"base":"Agate Amulet","disenchantValue":165.78},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbndlbnNBbXVsZXQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/1d40745e7d/AnwensAmulet.png"}
 {"name":"Ewar's Mirage","refName":"Ewar's Mirage","namespace":"UNIQUE","unique":{"base":"Antique Rapier","disenchantValue":2.09},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9SYXBpZXJzL0V3YXJzTWlyYWdlIiwidyI6MSwiaCI6NCwic2NhbGUiOjF9XQ/c7b916c7f4/EwarsMirage.png"}
 {"name":"Expedition's End","refName":"Expedition's End","namespace":"UNIQUE","unique":{"base":"Sentinel Jacket","disenchantValue":11.11},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9BZG1pcmFsc0phY2tldCIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/8c204b4c87/AdmiralsJacket.png"}
-{"name":"Extinguishing Grasp","refName":"Extinguishing Grasp","namespace":"UNIQUE","unique":{"base":"Searching Eye Jewel","disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpclNlYXJjaGluZyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/20b880c8a7/GlintingDespairSearching.png"}
+{"name":"Extinguishing Grasp","refName":"Extinguishing Grasp","namespace":"UNIQUE","unique":{"base":"Searching Eye Jewel","fixedStats":["Historic"],"disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpclNlYXJjaGluZyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/20b880c8a7/GlintingDespairSearching.png"}
 {"name":"Extractor Mentis","refName":"Extractor Mentis","namespace":"UNIQUE","unique":{"base":"Agate Amulet","disenchantValue":1.75},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9FeHRyYWN0b3JNZW50aXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/af5684bd74/ExtractorMentis.png"}
 {"name":"Extreme Archaeology","refName":"Extreme Archaeology","namespace":"UNIQUE","unique":{"base":"Minor Idol"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmVsaWNzLzJVbmlxdWVBdGxhc1JlbGljMXgxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/040b94f2b1/2UniqueAtlasRelic1x1.png"}
 {"name":"Eye of Chayula","refName":"Eye of Chayula","namespace":"UNIQUE","unique":{"base":"Onyx Amulet","disenchantValue":4.07},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbXVsZXQ3VW5pcXVlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/6b059ec15d/Amulet7Unique.png"}
@@ -3823,7 +3971,7 @@
 {"name":"Fenumus' Weave","refName":"Fenumus' Weave","namespace":"UNIQUE","unique":{"base":"Carnal Mitts","disenchantValue":8.51},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvU3BpZGVyQXJtb3VyIEdsb3ZlcyIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/cb4ae94f6d/SpiderArmour%20Gloves.png"}
 {"name":"Fertile Mind","refName":"Fertile Mind","namespace":"UNIQUE","unique":{"base":"Cobalt Jewel","disenchantValue":3.51},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0RFWHRvSU5UIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/b363fdbd52/DEXtoINT.png"}
 {"name":"Festering Resentment","refName":"Festering Resentment","namespace":"UNIQUE","unique":{"base":"Demon Dagger","disenchantValue":130.43},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9EYWdnZXJzL1ZpcnVsZW5jZSIsInciOjEsImgiOjMsInNjYWxlIjoxfV0/2ac68fe77e/Virulence.png"}
-{"name":"Festering Vengeance","refName":"Festering Vengeance","namespace":"UNIQUE","unique":{"base":"Murderous Eye Jewel","disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpck11cmRlcm91cyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/79b525340a/GlintingDespairMurderous.png"}
+{"name":"Festering Vengeance","refName":"Festering Vengeance","namespace":"UNIQUE","unique":{"base":"Murderous Eye Jewel","fixedStats":["Historic"],"disenchantValue":10},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpck11cmRlcm91cyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/79b525340a/GlintingDespairMurderous.png"}
 {"name":"Fevered Mind","refName":"Fevered Mind","namespace":"UNIQUE","unique":{"base":"Cobalt Jewel","disenchantValue":3.51},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0JsdWVDb3JydXB0NCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/ad8d514185/BlueCorrupt4.png"}
 {"name":"Fidelitas' Spike","refName":"Fidelitas' Spike","namespace":"UNIQUE","unique":{"base":"Jagged Foil","disenchantValue":1.86},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL0ZpZGVsaXRhc1NwaWtlIiwidyI6MSwiaCI6NCwic2NhbGUiOjF9XQ/de1d15ceb1/FidelitasSpike.png"}
 {"name":"Firesong","refName":"Firesong","namespace":"UNIQUE","unique":{"base":"Crimson Jewel","disenchantValue":10.52},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEpld2VsNyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/dd6b13c77c/RedJewel7.png"}
@@ -3906,6 +4054,7 @@
 {"name":"Heatshiver","refName":"Heatshiver","namespace":"UNIQUE","unique":{"base":"Leather Hood","disenchantValue":3.51},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0hlYXRzaGl2ZXIiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/b1860c890e/Heatshiver.png"}
 {"name":"Hegemony's Era","refName":"Hegemony's Era","namespace":"UNIQUE","unique":{"base":"Judgement Staff","disenchantValue":15.84},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvSGVnZW1vbnlzRXJhIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/85929506ae/HegemonysEra.png"}
 {"name":"Heretic's Veil","refName":"Heretic's Veil","namespace":"UNIQUE","unique":{"base":"Deicide Mask","disenchantValue":42.21},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0ZhY2VPZkRpdmluaXR5IiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/dcefc8975e/FaceOfDivinity.png"}
+{"name":"Heroic Tragedy","refName":"Heroic Tragedy","namespace":"UNIQUE","unique":{"base":"Timeless Jewel","fixedStats":["Historic"]},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0V4cGVkaXRvbkNpdmlsaXphdGlvbiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/38604b66d4/ExpeditonCivilization.png"}
 {"name":"Hezmana's Bloodlust","refName":"Hezmana's Bloodlust","namespace":"UNIQUE","unique":{"base":"Vaal Axe","disenchantValue":12.88},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kQXhlcy9IZXptYW5hc0Jsb29kbHVzdCIsInciOjIsImgiOjQsInNjYWxlIjoxfV0/fdbd48147f/HezmanasBloodlust.png"}
 {"name":"Hidden Potential","refName":"Hidden Potential","namespace":"UNIQUE","unique":{"base":"Viridian Jewel","disenchantValue":17.82},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL3VuaXF1ZTE3IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/c445828c50/unique17.png"}
 {"name":"Hiltless","refName":"Hiltless","namespace":"UNIQUE","unique":{"base":"Reaver Sword","disenchantValue":6.94},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kU3dvcmRzL0hpbHRsZXNzIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/04689b7d41/Hiltless.png"}
@@ -4154,7 +4303,7 @@
 {"name":"Rain of Splinters","refName":"Rain of Splinters","namespace":"UNIQUE","unique":{"base":"Crimson Jewel","disenchantValue":8.51},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlZEthcnVpIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/283aad3d25/RedKarui.png"}
 {"name":"Rainbowstride","refName":"Rainbowstride","namespace":"UNIQUE","unique":{"base":"Conjurer Boots","disenchantValue":9.3},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9yYWluYm93c3RyaWRlIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/bf663baf47/rainbowstride.png"}
 {"name":"Rakiata's Dance","refName":"Rakiata's Dance","namespace":"UNIQUE","unique":{"base":"Engraved Greatsword","disenchantValue":768.72},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kU3dvcmRzL1Jha2lhdGFTd29yZCIsInciOjIsImgiOjQsInNjYWxlIjoxfV0/ec593eeaa8/RakiataSword.png"}
-{"name":"Ralakesh's Impatience","refName":"Ralakesh's Impatience","namespace":"UNIQUE","unique":{"base":"Riveted Boots","disenchantValue":70.35},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9SYWxha2VzaHNJbXBhdGllbmNlIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/54540f0f3d/RalakeshsImpatience.png"}
+{"name":"Ralakesh's Impatience","refName":"Ralakesh's Impatience","namespace":"UNIQUE","unique":{"base":"Riveted Boots","fixedStats":["+#% to Cold Resistance","+#% to Chaos Resistance","#% increased Movement Speed","Corrupted Blood cannot be inflicted on you"],"disenchantValue":70.35},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9SYWxha2VzaHNJbXBhdGllbmNlIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/54540f0f3d/RalakeshsImpatience.png"}
 {"name":"Rashkaldor's Patience","refName":"Rashkaldor's Patience","namespace":"UNIQUE","unique":{"base":"Jade Amulet","disenchantValue":8.02},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9SYXNoa2FsZG9yc1BhdGllbmNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/336e3419f4/RashkaldorsPatience.png"}
 {"name":"Rat's Nest","refName":"Rat's Nest","namespace":"UNIQUE","unique":{"base":"Ursine Pelt","disenchantValue":4.93},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1JhdHNOZXN0IiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/857976167e/RatsNest.png"}
 {"name":"Rathpith Globe","refName":"Rathpith Globe","namespace":"UNIQUE","unique":{"base":"Titanium Spirit Shield","disenchantValue":43.48},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL1NoaWVsZEludDZ1bmlxdWUiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/5f2434a635/ShieldInt6unique.png"}
@@ -4167,7 +4316,7 @@
 {"name":"Rearguard","refName":"Rearguard","namespace":"UNIQUE","unique":{"base":"Blunt Arrow Quiver","disenchantValue":3.03},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVpdmVycy9SZWFyZ3VhcmQiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/9b285161a6/Rearguard.png"}
 {"name":"Rebuke of the Vaal","refName":"Rebuke of the Vaal","namespace":"UNIQUE","unique":{"base":"Vaal Blade","disenchantValue":12.88},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL09uZUhhbmRTd29yZDdVbmlxdWUiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/90312b1e4a/OneHandSword7Unique.png"}
 {"name":"Reckless Defence","refName":"Reckless Defence","namespace":"UNIQUE","unique":{"base":"Cobalt Jewel","disenchantValue":3.51},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1JlY2tsZXNzRGVmZW5zZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/923e6cb6b5/RecklessDefense.png"}
-{"name":"Reclaimed Malevolence","refName":"Reclaimed Malevolence","namespace":"UNIQUE","unique":{"base":"Assembled Eye Jewel","disenchantValue":40},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpckNvbWJpbmVkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/846059bcfd/GlintingDespairCombined.png"}
+{"name":"Reclaimed Malevolence","refName":"Reclaimed Malevolence","namespace":"UNIQUE","unique":{"base":"Assembled Eye Jewel","fixedStats":["Historic"],"disenchantValue":40},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0dsaW50aW5nRGVzcGFpckNvbWJpbmVkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/846059bcfd/GlintingDespairCombined.png"}
 {"name":"Redbeak","refName":"Redbeak","namespace":"UNIQUE","unique":{"base":"Rusted Sword","disenchantValue":1},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL09uZUhhbmRTd29yZDFVbmlxdWUiLCJ3IjoxLCJoIjozLCJzY2FsZSI6MX1d/a3010a69f5/OneHandSword1Unique.png"}
 {"name":"Redblade Band","refName":"Redblade Band","namespace":"UNIQUE","unique":{"base":"Unset Ring","disenchantValue":9.87},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmVkYmxhZGUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/cf85c48dff/Redblade.png"}
 {"name":"Redblade Banner","refName":"Redblade Banner","namespace":"UNIQUE","unique":{"base":"Painted Tower Shield","disenchantValue":5.46},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL1JlZGJsYWRlQmFubmVyIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/33221fb3e1/RedbladeBanner.png"}
@@ -4288,7 +4437,7 @@
 {"name":"Rotblood Promise","refName":"Rotblood Promise","namespace":"UNIQUE","unique":{"base":"Unset Ring","disenchantValue":7.34},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQ3Vyc2VkRXllIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/6f6b42ce7e/CursedEye.png"}
 {"name":"Rotgut","refName":"Rotgut","namespace":"UNIQUE","unique":{"base":"Quicksilver Flask","disenchantValue":3.17},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvUm90Z3V0IiwidyI6MSwiaCI6Miwic2NhbGUiOjEsImxldmVsIjoxfV0/80c2799242/Rotgut.png"}
 {"name":"Roth's Reach","refName":"Roth's Reach","namespace":"UNIQUE","unique":{"base":"Recurve Bow","disenchantValue":1.65},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Cb3dzL1NhcmtoYW1zUmVhY2giLCJ3IjoyLCJoIjo0LCJzY2FsZSI6MX1d/89bf0cff0b/SarkhamsReach.png"}
-{"name":"Rotmother's Mutiny","refName":"Rotmother's Mutiny","namespace":"UNIQUE","unique":{"base":"Pearlescent Amulet","disenchantValue":5.46},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9QZWFybGVzY2VudEFtdWxldFVuaXF1ZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/2549296e04/PearlescentAmuletUnique.png"}
+{"name":"Rotmother's Mutiny","refName":"Rotmother's Mutiny","namespace":"UNIQUE","unique":{"base":"Pearlescent Amulet","fixedStats":["+#% to all Elemental Resistances","+#% to all maximum Resistances","#% increased Light Radius"],"disenchantValue":5.46},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9QZWFybGVzY2VudEFtdWxldFVuaXF1ZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/2549296e04/PearlescentAmuletUnique.png"}
 {"name":"Ruinous Wager","refName":"Ruinous Wager","namespace":"UNIQUE","unique":{"base":"Minor Idol"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmVsaWNzLzJVbmlxdWVBdGxhc1JlbGljMXgxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/040b94f2b1/2UniqueAtlasRelic1x1.png"}
 {"name":"Rumi's Concoction","refName":"Rumi's Concoction","namespace":"UNIQUE","unique":{"base":"Granite Flask","disenchantValue":15.37},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvQmxvY2tGbGFzayIsInciOjEsImgiOjIsInNjYWxlIjoxLCJsZXZlbCI6MX1d/3bc27f19d5/BlockFlask.png"}
 {"name":"Ryslatha's Coil","refName":"Ryslatha's Coil","namespace":"UNIQUE","unique":{"base":"Studded Belt","disenchantValue":62.5},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvUnl1c2xhdGhhc0NsdXRjaGVzIiwidyI6MiwiaCI6MSwic2NhbGUiOjF9XQ/5b990decd3/RyuslathasClutches.png"}
@@ -4306,6 +4455,7 @@
 {"name":"Scold's Bridle","refName":"Scold's Bridle","namespace":"UNIQUE","unique":{"base":"Mind Cage","disenchantValue":13.26},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1Njb2xkc0JyaWRsZSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/d8277c58aa/ScoldsBridle.png"}
 {"name":"Scornflux","refName":"Scornflux","namespace":"UNIQUE","unique":{"base":"Satin Slippers","disenchantValue":9.06},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9NaXN0eVN0ZXBzIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/16d2da76b3/MistySteps.png"}
 {"name":"Scorpion's Call","refName":"Scorpion's Call","namespace":"UNIQUE","unique":{"base":"Heavy Arrow Quiver","disenchantValue":7.36},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVpdmVycy9CbG9vZFNhbmRRdWl2ZXIiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/57b1387b43/BloodSandQuiver.png"}
+{"name":"Screams of the Desiccated","refName":"Screams of the Desiccated","namespace":"UNIQUE","unique":{"base":"Leather Belt","fixedStats":["+# to Intelligence","+#% to Chaos Resistance"],"disenchantValue":46.12},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvU291bGNvcmQiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/3817a36c97/Soulcord.png"}
 {"name":"Seablister","refName":"Seablister","namespace":"UNIQUE","unique":{"base":"Spiny Round Shield","disenchantValue":9.87},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL1NlYWJsaXN0ZXIiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/b4d54a2c77/Seablister.png"}
 {"name":"Sealed Domain","refName":"Sealed Domain","namespace":"UNIQUE","unique":{"base":"Minor Idol"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmVsaWNzLzFVbmlxdWVBdGxhc1JlbGljMXgxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d1acb9e320/1UniqueAtlasRelic1x1.png"}
 {"name":"Second Piece of Brutality","refName":"Second Piece of Brutality","namespace":"UNIQUE","unique":{"base":"Imperial Staff Piece","disenchantValue":9.45},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvSGFyYmluZ2VyU2hhcmRzL1NoYXJkMiIsInciOjEsImgiOjIsInNjYWxlIjoxfV0/992359550f/Shard2.png"}
@@ -4404,7 +4554,7 @@
 {"name":"Stranglegasp","refName":"Stranglegasp","namespace":"UNIQUE","unique":{"base":"Onyx Amulet","disenchantValue":203.28},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9HaWZ0T2ZHbG9waCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/babc794c98/GiftOfGloph.png"}
 {"name":"String of Servitude","refName":"String of Servitude","namespace":"UNIQUE","unique":{"base":"Heavy Belt","disenchantValue":1.63},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvU3RyaW5nX29mX1NlcnZpdHVkZSIsInciOjIsImgiOjEsInNjYWxlIjoxfV0/a19be8cb67/String_of_Servitude.png"}
 {"name":"Sublime Vision","refName":"Sublime Vision","namespace":"UNIQUE","unique":{"base":"Prismatic Jewel","fixedStats":["Auras from your Skills have #% increased Effect on you","#% increased Effect of Non-Curse Auras from your Skills on Enemies"],"disenchantValue":6},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1N1YmxpbWVWaXNpb24iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwic2hhcGVyIjp0cnVlfV0/c2fd05d3b6/SublimeVision.png"}
-{"name":"Subsume the Source","refName":"Subsume the Source","namespace":"UNIQUE","unique":{"base":"Faithful Helmet","disenchantValue":50.4},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0JvbmVzb2Z0aGVTYWludHNVbnNvY2tldGVkIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/4c4bfa081f/BonesoftheSaintsUnsocketed.png"}
+{"name":"Subsume the Source","refName":"Subsume the Source","namespace":"UNIQUE","unique":{"base":"Faithful Helmet","fixedStats":["#% increased Explicit Modifier magnitudes","Socketed Rare Abyssal Jewels will be Consumed\nOne modifier from Consumed Jewels will be retained","Cannot have non-Abyssal sockets"],"disenchantValue":50.4},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0JvbmVzb2Z0aGVTYWludHNVbnNvY2tldGVkIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/4c4bfa081f/BonesoftheSaintsUnsocketed.png"}
 {"name":"Sudden Dawn","refName":"Sudden Dawn","namespace":"UNIQUE","unique":{"base":"Steel Circlet","disenchantValue":5.01},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1NvdWxsZXNzRWxlZ2FuY2UiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/9c572a99fe/SoullessElegance.png"}
 {"name":"Sunblast","refName":"Sunblast","namespace":"UNIQUE","unique":{"base":"Cloth Belt","disenchantValue":17.39},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvQmVsdDgiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/c50a807f09/Belt8.png"}
 {"name":"Sundance","refName":"Sundance","namespace":"UNIQUE","unique":{"base":"Clasped Boots","disenchantValue":2.16},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9TdW5kYW5jZSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/b3a611197c/Sundance.png"}
@@ -4473,6 +4623,7 @@
 {"name":"The Deep One's Hide","refName":"The Deep One's Hide","namespace":"UNIQUE","unique":{"base":"Studded Round Shield","disenchantValue":1.75},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL0NoaXRpbmh1bGwiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/90921c2a19/Chitinhull.png"}
 {"name":"The Devourer of Minds","refName":"The Devourer of Minds","namespace":"UNIQUE","unique":{"base":"Pig-Faced Bascinet","disenchantValue":37.5},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1ViZXJFbGRlckhlbG0iLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MSwiZWxkZXIiOnRydWV9XQ/c701291b5a/UberElderHelm.png"}
 {"name":"The Devouring Diadem","refName":"The Devouring Diadem","namespace":"UNIQUE","unique":{"base":"Necromancer Circlet","disenchantValue":28.74},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1RoZURldm91cmluZ0RpYWRlbSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/8bc93d2104/TheDevouringDiadem.png"}
+{"name":"The Draugur's Lantern","refName":"The Draugur's Lantern","namespace":"UNIQUE","unique":{"base":"Ancient Spirit Shield","disenchantValue":9.87},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL0dob3N0ZmxhbWVMYW50ZXJuIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/3f2900f607/GhostflameLantern.png"}
 {"name":"The Druggery","refName":"The Druggery","namespace":"UNIQUE","unique":{"base":"Cloth Belt","disenchantValue":5.72},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvVGhlRHJ1Z2dlcnkiLCJ3IjoyLCJoIjoxLCJzY2FsZSI6MX1d/136b59f839/TheDruggery.png"}
 {"name":"The Embalmer","refName":"The Embalmer","namespace":"UNIQUE","unique":{"base":"Carnal Mitts","disenchantValue":4.26},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvQWxsZWxvcGF0aHkiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/bcf128d770/Allelopathy.png"}
 {"name":"The Ephemeral Bond","refName":"The Ephemeral Bond","namespace":"UNIQUE","unique":{"base":"Lapis Amulet","disenchantValue":8.91},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9DaGFyZ2UgQW1wbGlmaWVyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/a285d4c77a/Charge%20Amplifier.png"}
@@ -4527,6 +4678,7 @@
 {"name":"The Overflowing Chalice","refName":"The Overflowing Chalice","namespace":"UNIQUE","unique":{"base":"Sulphur Flask","disenchantValue":2.7},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvT3ZlcmZsb3dpbmdDaGFsaWNlIiwidyI6MSwiaCI6Miwic2NhbGUiOjEsImxldmVsIjoxfV0/ff0069d957/OverflowingChalice.png"}
 {"name":"The Pandemonius","refName":"The Pandemonius","namespace":"UNIQUE","unique":{"base":"Jade Amulet","disenchantValue":7.16},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9HbGFjaWVyQ2Fjb29uVXBncmFkZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/f54aa988e2/GlacierCacoonUpgrade.png"}
 {"name":"The Pariah","refName":"The Pariah","namespace":"UNIQUE","unique":{"base":"Unset Ring","disenchantValue":22.03},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvVGhlUGFyaWFoIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/778fe35c1e/ThePariah.png"}
+{"name":"The Perandus Pact","refName":"The Perandus Pact","namespace":"UNIQUE","unique":{"base":"Prismatic Jewel","fixedStats":[],"disenchantValue":1},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1BlcmFuZHVzSmV3ZWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7ac6e17e8f/PerandusJewel.png"}
 {"name":"The Perfect Form","refName":"The Perfect Form","namespace":"UNIQUE","unique":{"base":"Zodiac Leather","disenchantValue":6.96},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9UaGVQZXJmZWN0Rm9ybSIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/b149b68ecb/ThePerfectForm.png"}
 {"name":"The Poet's Pen","refName":"The Poet's Pen","namespace":"UNIQUE","unique":{"base":"Somatic Wand","disenchantValue":8.31},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9XYW5kcy9Qb2V0c1BlbiIsInciOjEsImgiOjMsInNjYWxlIjoxfV0/f6f0645739/PoetsPen.png"}
 {"name":"The Poised Prism","refName":"The Poised Prism","namespace":"UNIQUE","unique":{"base":"Primal Arrow Quiver","disenchantValue":8.54},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVpdmVycy9QcmlzbWF0aWNHbGVhbSIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/25341c4e59/PrismaticGleam.png"}
@@ -4577,6 +4729,7 @@
 {"name":"The Vinktar Square","refName":"The Vinktar Square","namespace":"UNIQUE","unique":{"base":"Map","disenchantValue":61.99},"map":{},"icon":"https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9UaGVWaW5rdGFyU3F1YXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d26b82ca56/TheVinktarSquare.png"}
 {"name":"The Warden's Brand","refName":"The Warden's Brand","namespace":"UNIQUE","unique":{"base":"Iron Ring","disenchantValue":2.36},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvVGhlV2FyZGVuc0JhbmQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/5d3830d11d/TheWardensBand.png"}
 {"name":"The Wasp Nest","refName":"The Wasp Nest","namespace":"UNIQUE","unique":{"base":"Throat Stabber","disenchantValue":5.72},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9DbGF3cy9MZXZpYXRoYW5pdm9yeSIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/8d31776c34/Leviathanivory.png"}
+{"name":"The Wellhook","refName":"The Wellhook","namespace":"UNIQUE","unique":{"base":"Fishing Rod","disenchantValue":851.24},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9GaXNoaW5nUm9kcy9BYnlzc2FsUm9kIiwidyI6MSwiaCI6NCwic2NhbGUiOjF9XQ/2b87296401/AbyssalRod.png"}
 {"name":"The Whispering Ice","refName":"The Whispering Ice","namespace":"UNIQUE","unique":{"base":"Vile Staff","disenchantValue":5.15},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9TdGF2ZXMvU3RhZmY4dW5pcXVlIiwidyI6MiwiaCI6NCwic2NhbGUiOjF9XQ/04e7459f43/Staff8unique.png"}
 {"name":"The Will of Esh","refName":"The Will of Esh","namespace":"UNIQUE","unique":{"base":"Synaptic Ring","disenchantValue":3.96},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQnJlYWNobG9yZFJpbmdVbmlxdWVfRXNoIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/553690867e/BreachlordRingUnique_Esh.png"}
 {"name":"The Will of Tul","refName":"The Will of Tul","namespace":"UNIQUE","unique":{"base":"Cryonic Ring","disenchantValue":3.96},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQnJlYWNobG9yZFJpbmdVbmlxdWVfVHVsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/9588c2ec88/BreachlordRingUnique_Tul.png"}
@@ -4732,7 +4885,7 @@
 {"name":"Yoke of Suffering","refName":"Yoke of Suffering","namespace":"UNIQUE","unique":{"base":"Onyx Amulet","disenchantValue":236.36},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9Zb2tlT2ZTdWZmZXJpbmciLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/80cc716213/YokeOfSuffering.png"}
 {"name":"Yriel's Fostering","refName":"Yriel's Fostering","namespace":"UNIQUE","unique":{"base":"Exquisite Leather","disenchantValue":12.14},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9QYWxlQ291bmNpbEFybW91ciIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/f3c31cf6b4/PaleCouncilArmour.png"}
 {"name":"Zahndethus' Cassock","refName":"Zahndethus' Cassock","namespace":"UNIQUE","unique":{"base":"Sage's Robe","disenchantValue":2.9},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9aYWhuZGV0aHVzY2Fzc29jayIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/6de1273e49/Zahndethuscassock.png"}
-{"name":"Zana's Ingenuity","refName":"Zana's Ingenuity","namespace":"UNIQUE","unique":{"base":"Prismatic Ring","disenchantValue":59.8},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQ2lyY2xlb2ZQcm90ZWN0aW9uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/f77892ff5c/CircleofProtection.png"}
+{"name":"Zana's Ingenuity","refName":"Zana's Ingenuity","namespace":"UNIQUE","unique":{"base":"Prismatic Ring","fixedStats":["#% increased Cast Speed","#% increased maximum Energy Shield","+#% to all Elemental Resistances"],"disenchantValue":59.8},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQ2lyY2xlb2ZQcm90ZWN0aW9uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/f77892ff5c/CircleofProtection.png"}
 {"name":"Zeel's Amplifier","refName":"Zeel's Amplifier","namespace":"UNIQUE","unique":{"base":"Polished Spiked Shield","disenchantValue":4.13},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL1plYWxzQW1wbGlmaWVyIiwidyI6MiwiaCI6Miwic2NhbGUiOjF9XQ/d1e9af3da7/ZealsAmplifier.png"}
 {"name":"Zerphi's Heart","refName":"Zerphi's Heart","namespace":"UNIQUE","unique":{"base":"Paua Amulet","disenchantValue":26.52},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9aZXJwaGlzSGVhcnQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/3e35140dfe/ZerphisHeart.png"}
 {"name":"Zerphi's Last Breath","refName":"Zerphi's Last Breath","namespace":"UNIQUE","unique":{"base":"Grand Mana Flask","disenchantValue":106.41},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvWmVycGhpc0xhc3RCcmVhdGgiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/bf8cb7b943/ZerphisLastBreath.png"}
