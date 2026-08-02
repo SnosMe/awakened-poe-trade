@@ -33,7 +33,7 @@ export interface ParsedItem {
   weaponPHYSICAL?: number
   weaponELEMENTAL?: number
   mapBlighted?: 'Blighted' | 'Blight-ravaged'
-  mapCompletionReward?: string // translated
+  mapCompletionReward?: BaseType
   map?: {
     tier: number | undefined
     itemQuantity?: number
@@ -63,7 +63,7 @@ export interface ParsedItem {
   influences: ItemInfluence[]
   logbookAreaMods?: ParsedModifier[][]
   sentinelCharge?: number
-  mapArea?: string // translated
+  mapArea?: BaseType
   isSynthesised?: boolean
   isFractured?: boolean
   isVeiled?: boolean

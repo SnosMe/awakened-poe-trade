@@ -269,7 +269,10 @@ function parseMap (section: string[], item: ParsedItem) {
       item.map.moreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
       isParsed = 'SECTION_PARSED'
     } else if (_$.MAP_COMPLETION_REWARD.test(line)) {
-      item.mapCompletionReward = _$.MAP_COMPLETION_REWARD.exec(line)![1]
+      const rewardName = _$.MAP_COMPLETION_REWARD.exec(line)![1]
+      const rewardInfo = ITEM_BY_TRANSLATED('UNIQUE', rewardName)
+      if (!rewardInfo) throw new Error('Unknown Unique Item.')
+      item.mapCompletionReward = rewardInfo[0]
       isParsed = 'SECTION_PARSED'
     }
   }
@@ -829,7 +832,10 @@ function parseScryingOrb (section: string[], item: ParsedItem) {
 
   if (section.length === 1) {
     if (section[0].startsWith(_$.SCRYING_MAP_AREA)) {
-      item.mapArea = section[0].slice(_$.SCRYING_MAP_AREA.length)
+      const areaName = section[0].slice(_$.SCRYING_MAP_AREA.length)
+      const areaInfo = ITEM_BY_TRANSLATED('AREA', areaName)
+      if (!areaInfo) throw new Error('Unknown Area name.')
+      item.mapArea = areaInfo[0]
       return 'SECTION_PARSED'
     }
   }

@@ -3,7 +3,7 @@ import { ParsedItem, ItemCategory, ItemRarity } from '@/parser'
 import { MAGIC_ONLY_OR_UNIQUE_ITEM, CONSUMABLE_CRAFTABLE_ITEM } from '@/parser/meta'
 import { tradeTag } from '../trade/common'
 import { ModifierType } from '@/parser/modifiers'
-import { BaseType, ITEM_BY_REF, ITEM_BY_TRANSLATED } from '@/assets/data'
+import { BaseType, ITEM_BY_REF } from '@/assets/data'
 import { CATEGORY_TO_TRADE_ID } from '../trade/pathofexile-trade'
 import { PERMANENT_SC } from '../../background/Leagues'
 
@@ -83,12 +83,12 @@ export function createFilters (
   if (item.info.refName === 'Scrying Orb') {
     filters.searchExact = {
       baseType: item.info.name,
-      baseTypeTrade: ITEM_BY_TRANSLATED('AREA', item.mapArea!)![0].tradeDisc!
+      baseTypeTrade: item.mapArea!.tradeDisc!
     }
     filters.discriminator = {
       trade: item.info.tradeDisc!
     }
-    filters.scryingMapArea = item.mapArea!
+    filters.scryingMapArea = item.mapArea!.name
 
     return filters
   }
@@ -153,8 +153,8 @@ export function createFilters (
 
     if (item.mapCompletionReward) {
       filters.mapCompletionReward = {
-        name: item.mapCompletionReward,
-        nameTrade: t(opts, ITEM_BY_TRANSLATED('UNIQUE', item.mapCompletionReward)![0])
+        name: item.mapCompletionReward.name,
+        nameTrade: t(opts, item.mapCompletionReward)
       }
     }
 
