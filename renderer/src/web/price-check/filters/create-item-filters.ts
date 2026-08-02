@@ -80,6 +80,18 @@ export function createFilters (
     }
     return filters
   }
+  if (item.info.refName === 'Scrying Orb') {
+    filters.searchExact = {
+      baseType: item.info.name,
+      baseTypeTrade: ITEM_BY_TRANSLATED('AREA', item.mapArea!)![0].tradeDisc!
+    }
+    filters.discriminator = {
+      trade: item.info.tradeDisc!
+    }
+    filters.scryingMapArea = item.mapArea!
+
+    return filters
+  }
   if (
     item.category === ItemCategory.DivinationCard ||
     item.category === ItemCategory.Currency ||

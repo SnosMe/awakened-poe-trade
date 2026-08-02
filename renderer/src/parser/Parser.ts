@@ -65,6 +65,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseMirrored,
   parseSplit,
   parseSentinelCharge,
+  parseScryingOrb,
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
@@ -817,6 +818,18 @@ function parseSentinelCharge (section: string[], item: ParsedItem) {
   if (section.length === 1) {
     if (section[0].startsWith(_$.SENTINEL_CHARGE)) {
       item.sentinelCharge = parseInt(section[0].slice(_$.SENTINEL_CHARGE.length), 10)
+      return 'SECTION_PARSED'
+    }
+  }
+  return 'SECTION_SKIPPED'
+}
+
+function parseScryingOrb (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Scrying Orb') return 'PARSER_SKIPPED'
+
+  if (section.length === 1) {
+    if (section[0].startsWith(_$.SCRYING_MAP_AREA)) {
+      item.mapArea = section[0].slice(_$.SCRYING_MAP_AREA.length)
       return 'SECTION_PARSED'
     }
   }
