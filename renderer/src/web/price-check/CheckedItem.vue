@@ -130,6 +130,7 @@ export default defineComponent({
           (item.category === ItemCategory.Map) ||
           (item.category === ItemCategory.HeistContract) ||
           (item.category === ItemCategory.HeistBlueprint) ||
+          (item.category === ItemCategory.Chart) ||
           (item.category === ItemCategory.SanctumRelic) ||
           (item.category === ItemCategory.Charm) ||
           (item.category === ItemCategory.Idol) ||
@@ -188,6 +189,7 @@ export default defineComponent({
         props.item.category !== ItemCategory.CapturedBeast &&
         props.item.category !== ItemCategory.HeistContract &&
         props.item.category !== ItemCategory.HeistBlueprint &&
+        props.item.category !== ItemCategory.Chart &&
         props.item.category !== ItemCategory.Invitation &&
         props.item.info.refName !== 'Expedition Logbook' &&
         !props.item.isUnidentified

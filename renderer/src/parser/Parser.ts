@@ -58,6 +58,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSockets,
   parseHeistContract,
   parseHeistBlueprint,
+  parseChart,
   parseAreaLevel,
   parseAtzoatlRooms,
   parseMirroredTablet,
@@ -980,6 +981,21 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
       item.heistBlueprint.wingsRevealed = parseInt(line.slice(_$.HEIST_WINGS_REVEALED.length), 10)
     }
   }
+
+  return 'SECTION_PARSED'
+}
+
+function parseChart (section: string[], item: ParsedItem) {
+  if (item.category !== ItemCategory.Chart) return 'PARSER_SKIPPED'
+
+  parseAreaLevelNested(section, item)
+  if (!item.areaLevel) {
+    return 'SECTION_SKIPPED'
+  }
+
+  const areaInfo = ITEM_BY_TRANSLATED('AREA', section[0])
+  if (!areaInfo) throw new Error('Unknown Area name.')
+  item.mapArea = areaInfo[0]
 
   return 'SECTION_PARSED'
 }

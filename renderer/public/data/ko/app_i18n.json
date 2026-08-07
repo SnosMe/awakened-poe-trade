@@ -103,7 +103,8 @@
     "foil_unique": "반짝이",
     "mirrored": "복제된",
     "not_mirrored": "복제되지 않은",
-    "map_foil_reward": "반짝이 {0}"
+    "map_foil_reward": "반짝이 {0}",
+    "chart_sulphur": "망자의 유황: {0}%"
   },
   "item_category": {
     "prop": "유형: {0}",

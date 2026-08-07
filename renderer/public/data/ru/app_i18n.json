@@ -126,11 +126,12 @@
     "not_mirrored": "Не отражено",
     "split": "Разделено",
     "not_split": "Не разделено",
-    "map_foil_reward": "Особая {0}"
+    "map_foil_reward": "Особая {0}",
+    "chart_sulphur": "Мертвецкая сера: {0}%"
   },
   "item_category": {
     "prop": "Категория: {0}",
-    "map": "Map",
+    "map": "Карта",
     "jewel_abyss": "Самоцвет Бездны",
     "accessory_amulet": "Амулет",
     "accessory_belt": "Пояс",
@@ -170,7 +171,8 @@
     "tincture": "Микстура",
     "azmeri_charm": "Оберег",
     "idol": "Идол",
-    "graft": "Нарост"
+    "graft": "Нарост",
+    "chart": "Морская карта"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",

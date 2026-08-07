@@ -40,7 +40,8 @@ export function createExactStatFilters (
     !item.influences.length &&
     !item.isFractured &&
     item.category !== ItemCategory.Tincture &&
-    item.category !== ItemCategory.Idol
+    item.category !== ItemCategory.Idol &&
+    item.category !== ItemCategory.Chart
   ) {
     keepByType.push(ModifierType.Implicit)
   }
@@ -50,6 +51,7 @@ export function createExactStatFilters (
     item.category !== ItemCategory.Map &&
     item.category !== ItemCategory.HeistContract &&
     item.category !== ItemCategory.HeistBlueprint &&
+    item.category !== ItemCategory.Chart &&
     item.category !== ItemCategory.Sentinel
   )) {
     keepByType.push(ModifierType.Explicit)
@@ -63,7 +65,7 @@ export function createExactStatFilters (
 
   const ctx: FiltersCreationContext = {
     item,
-    searchInRange: (item.category !== ItemCategory.Map)
+    searchInRange: (item.category !== ItemCategory.Map && item.category !== ItemCategory.Chart)
       ? Math.min(2, opts.searchStatRange)
       : opts.searchStatRange,
     filters: [],

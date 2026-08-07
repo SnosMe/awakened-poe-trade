@@ -105,6 +105,7 @@ const isMapLike = computed(() => {
     category === ItemCategory.HeistContract ||
     category === ItemCategory.HeistBlueprint ||
     category === ItemCategory.Invitation ||
+    category === ItemCategory.Chart ||
     refName === 'Expedition Logbook')
 })
 </script>
