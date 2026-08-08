@@ -1,6 +1,8 @@
+{"name":"Глубоководное плато","refName":"Abyssal Plain","namespace":"AREA","tradeDisc":"AbyssalPlain","icon":""}
 {"name":"Академия","refName":"Academy","namespace":"AREA","tradeDisc":"54575","icon":""}
 {"name":"Едкие пещеры","refName":"Acid Caverns","namespace":"AREA","tradeDisc":"21257","icon":""}
 {"name":"Переулок","refName":"Alleyways","namespace":"AREA","tradeDisc":"42968","icon":""}
+{"name":"Поле якорей","refName":"Anchorfield","namespace":"AREA","tradeDisc":"Anchorfield","icon":""}
 {"name":"Древний город","refName":"Ancient City","namespace":"AREA","tradeDisc":"2545","icon":""}
 {"name":"Гнездо пауков","refName":"Arachnid Nest","namespace":"AREA","tradeDisc":"36866","icon":""}
 {"name":"Паучья гробница","refName":"Arachnid Tomb","namespace":"AREA","tradeDisc":"7465","icon":""}
@@ -19,6 +21,7 @@
 {"name":"Трясина","refName":"Bog","namespace":"AREA","tradeDisc":"47614","icon":""}
 {"name":"Гробница","refName":"Bone Crypt","namespace":"AREA","tradeDisc":"23253","icon":""}
 {"name":"Колючая долина","refName":"Bramble Valley","namespace":"AREA","tradeDisc":"44170","icon":""}
+{"name":"Владения Морского царя","refName":"Brine King's Domain","namespace":"AREA","tradeDisc":"BrineKingsDomain","icon":""}
 {"name":"Погребальные камеры","refName":"Burial Chambers","namespace":"AREA","tradeDisc":"43016","icon":""}
 {"name":"Клетка","refName":"Cage","namespace":"AREA","tradeDisc":"3883","icon":""}
 {"name":"Кальдера","refName":"Caldera","namespace":"AREA","tradeDisc":"64414","icon":""}
@@ -30,6 +33,7 @@
 {"name":"Канал","refName":"Channel","namespace":"AREA","tradeDisc":"22278","icon":""}
 {"name":"Усадьба","refName":"Chateau","namespace":"AREA","tradeDisc":"39459","icon":""}
 {"name":"Городская площадь","refName":"City Square","namespace":"AREA","tradeDisc":"44762","icon":""}
+{"name":"Поросший ракушками шельф","refName":"Clam-infested Shelf","namespace":"AREA","tradeDisc":"ClamInfestedShelf","icon":""}
 {"name":"Холодная река","refName":"Cold River","namespace":"AREA","tradeDisc":"38080","icon":""}
 {"name":"Колоннада","refName":"Colonnade","namespace":"AREA","tradeDisc":"31349","icon":""}
 {"name":"Колизей","refName":"Colosseum","namespace":"AREA","tradeDisc":"16355","icon":""}
@@ -49,9 +53,11 @@
 {"name":"Пустыня","refName":"Desert","namespace":"AREA","tradeDisc":"34997","icon":""}
 {"name":"Пустынный источник","refName":"Desert Spring","namespace":"AREA","tradeDisc":"10211","icon":""}
 {"name":"Развалины","refName":"Dig","namespace":"AREA","tradeDisc":"43432","icon":""}
+{"name":"Водолазная отмель","refName":"Diving Shoals","namespace":"AREA","tradeDisc":"DivingShoals","icon":""}
 {"name":"Высохшее море","refName":"Dry Sea","namespace":"AREA","tradeDisc":"53637","icon":""}
 {"name":"Дюны","refName":"Dunes","namespace":"AREA","tradeDisc":"53116","icon":""}
 {"name":"Подземелье","refName":"Dungeon","namespace":"AREA","tradeDisc":"64256","icon":""}
+{"name":"Мистические глубины","refName":"Eldritch Depths","namespace":"AREA","tradeDisc":"EldritchDepths","icon":""}
 {"name":"Устье реки","refName":"Estuary","namespace":"AREA","tradeDisc":"40753","icon":""}
 {"name":"Раскопки","refName":"Excavation","namespace":"AREA","tradeDisc":"33025","icon":""}
 {"name":"Фактория","refName":"Factory","namespace":"AREA","tradeDisc":"41763","icon":""}
@@ -70,10 +76,13 @@
 {"name":"Кладбище","refName":"Graveyard","namespace":"AREA","tradeDisc":"53902","icon":""}
 {"name":"Грот","refName":"Grotto","namespace":"AREA","tradeDisc":"19420","icon":""}
 {"name":"Дом с привидениями","refName":"Haunted Mansion","namespace":"AREA","tradeDisc":"1215","icon":""}
+{"name":"Опасные глубины","refName":"Hazardous Depths","namespace":"AREA","tradeDisc":"HazardousDepths","icon":""}
 {"name":"Айсберг","refName":"Iceberg","namespace":"AREA","tradeDisc":"59084","icon":""}
+{"name":"Заражённые батисферы","refName":"Infested Bathyspheres","namespace":"AREA","tradeDisc":"InfestedBathyspheres","icon":""}
 {"name":"Заражённая долина","refName":"Infested Valley","namespace":"AREA","tradeDisc":"24414","icon":""}
 {"name":"Храм из слоновой кости","refName":"Ivory Temple","namespace":"AREA","tradeDisc":"16982","icon":""}
 {"name":"Долина джунглей","refName":"Jungle Valley","namespace":"AREA","tradeDisc":"4003","icon":""}
+{"name":"Могила Кишары","refName":"Kishara's Rest","namespace":"AREA","tradeDisc":"KisharasRest","icon":""}
 {"name":"Лаборатория","refName":"Laboratory","namespace":"AREA","tradeDisc":"43561","icon":""}
 {"name":"Логово","refName":"Lair","namespace":"AREA","tradeDisc":"8823","icon":""}
 {"name":"Лавовая тюрьма","refName":"Lava Chamber","namespace":"AREA","tradeDisc":"7088","icon":""}
@@ -81,6 +90,7 @@
 {"name":"Тропа","refName":"Leyline","namespace":"AREA","tradeDisc":"12937","icon":""}
 {"name":"Навигационная башня","refName":"Lighthouse","namespace":"AREA","tradeDisc":"43308","icon":""}
 {"name":"Обзорная площадка","refName":"Lookout","namespace":"AREA","tradeDisc":"48831","icon":""}
+{"name":"Затерянные руины","refName":"Lost Ruins","namespace":"AREA","tradeDisc":"LostRuins","icon":""}
 {"name":"Недра","refName":"Malformation","namespace":"AREA","tradeDisc":"3421","icon":""}
 {"name":"Болота","refName":"Marshes","namespace":"AREA","tradeDisc":"42115","icon":""}
 {"name":"Мавзолей","refName":"Mausoleum","namespace":"AREA","tradeDisc":"57831","icon":""}
@@ -96,6 +106,7 @@
 {"name":"Заросшая обитель","refName":"Overgrown Shrine","namespace":"AREA","tradeDisc":"26468","icon":""}
 {"name":"Дворец","refName":"Palace","namespace":"AREA","tradeDisc":"51878","icon":""}
 {"name":"Парк","refName":"Park","namespace":"AREA","tradeDisc":"32613","icon":""}
+{"name":"Морская пучина","refName":"Pelagic Abyss","namespace":"AREA","tradeDisc":"PelagicAbyss","icon":""}
 {"name":"Загон","refName":"Pen","namespace":"AREA","tradeDisc":"19828","icon":""}
 {"name":"Мыс","refName":"Peninsula","namespace":"AREA","tradeDisc":"57690","icon":""}
 {"name":"Фантасмагория","refName":"Phantasmagoria","namespace":"AREA","tradeDisc":"47634","icon":""}
@@ -114,6 +125,8 @@
 {"name":"Палата древностей","refName":"Relic Chambers","namespace":"AREA","tradeDisc":"35162","icon":""}
 {"name":"Резиденция","refName":"Residence","namespace":"AREA","tradeDisc":"4755","icon":""}
 {"name":"Скрипторий","refName":"Scriptorium","namespace":"AREA","tradeDisc":"53075","icon":""}
+{"name":"Морские колонны","refName":"Sea Pillars","namespace":"AREA","tradeDisc":"SeaPillars","icon":""}
+{"name":"Донные хребты","refName":"Seafloor Ridges","namespace":"AREA","tradeDisc":"SeafloorRidges","icon":""}
 {"name":"Усыпальница","refName":"Sepulchre","namespace":"AREA","tradeDisc":"27716","icon":""}
 {"name":"Верфь","refName":"Shipyard","namespace":"AREA","tradeDisc":"11724","icon":""}
 {"name":"Берег","refName":"Shore","namespace":"AREA","tradeDisc":"22593","icon":""}
@@ -127,6 +140,7 @@
 {"name":"Серное озеро","refName":"Sulphur Vents","namespace":"AREA","tradeDisc":"6074","icon":""}
 {"name":"Вершина","refName":"Summit","namespace":"AREA","tradeDisc":"60634","icon":""}
 {"name":"Затонувший город","refName":"Sunken City","namespace":"AREA","tradeDisc":"11215","icon":""}
+{"name":"Затонувшие тотемы","refName":"Sunken Totems","namespace":"AREA","tradeDisc":"SunkenTotems","icon":""}
 {"name":"Храм","refName":"Temple","namespace":"AREA","tradeDisc":"45792","icon":""}
 {"name":"Терраса","refName":"Terrace","namespace":"AREA","tradeDisc":"42558","icon":""}
 {"name":"Чаща","refName":"Thicket","namespace":"AREA","tradeDisc":"737","icon":""}
@@ -135,6 +149,8 @@
 {"name":"Тропический остров","refName":"Tropical Island","namespace":"AREA","tradeDisc":"5647","icon":""}
 {"name":"Подземная река","refName":"Underground River","namespace":"AREA","tradeDisc":"20216","icon":""}
 {"name":"Подземное море","refName":"Underground Sea","namespace":"AREA","tradeDisc":"18545","icon":""}
+{"name":"Подводные рощи","refName":"Undersea Groves","namespace":"AREA","tradeDisc":"UnderseaGroves","icon":""}
+{"name":"Непримечательное дно","refName":"Unremarkable Seabed","namespace":"AREA","tradeDisc":"UnremarkableSeabed","icon":""}
 {"name":"Пирамида ваал","refName":"Vaal Pyramid","namespace":"AREA","tradeDisc":"28018","icon":""}
 {"name":"Хранилище","refName":"Vault","namespace":"AREA","tradeDisc":"57839","icon":""}
 {"name":"Поместье","refName":"Villa","namespace":"AREA","tradeDisc":"2144","icon":""}
@@ -1979,6 +1995,8 @@
 {"name":"Медный меч","refName":"Copper Sword","namespace":"ITEM","craftable":{"category":"One-Handed Sword"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL09uZUhhbmRTd29yZDIiLCJ3IjoxLCJoIjozLCJzY2FsZSI6MX1d/606dae9ce9/OneHandSword2.png","h":3}
 {"name":"Медный ростовой щит","refName":"Copper Tower Shield","namespace":"ITEM","craftable":{"category":"Shield"},"armour":{"ar":[151,173]},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL1NoaWVsZFN0cjUiLCJ3IjoyLCJoIjo0LCJzY2FsZSI6MX1d/ee43ed9cee/ShieldStr5.png","w":2,"h":4}
 {"name":"Амулет с кораллом","refName":"Coral Amulet","namespace":"ITEM","craftable":{"category":"Amulet"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9BbXVsZXQyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/fe19a0a686/Amulet2.png"}
+{"name":"Морская карта кораллового леса","refName":"Coral Forest Chart","namespace":"ITEM","craftable":{"category":"Chart"},"tradeDisc":"chart","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVlcHdhdGVyL0RlZXB3YXRlclRvcm5NYXAyIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImRjZCI6MTN9XQ/e06af0c1ae/DeepwaterTornMap2.png"}
+{"name":"Морская карта кораллового рифа","refName":"Coral Reef Chart","namespace":"ITEM","craftable":{"category":"Chart"},"tradeDisc":"chart","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVlcHdhdGVyL0RlZXB3YXRlclRvcm5NYXAzIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImRjZCI6MTN9XQ/894944efa8/DeepwaterTornMap3.png"}
 {"name":"Кольцо с кораллом","refName":"Coral Ring","namespace":"ITEM","craftable":{"category":"Ring"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6e12710920/Ring2.png"}
 {"name":"Верёвочный пояс","refName":"Cord Belt","namespace":"ITEM","craftable":{"category":"Belt"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvU291bGNvcmRCZWx0IiwidyI6MiwiaCI6MSwic2NhbGUiOjF9XQ/48ebd82bfa/SoulcordBelt.png","w":2}
 {"name":"Кожаный доспех короны","refName":"Coronal Leather","namespace":"ITEM","craftable":{"category":"Body Armour"},"armour":{"ev":[491,579]},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9Cb2R5RGV4M0MiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/e30de2c7a6/BodyDex3C.png","w":2,"h":3}
@@ -3060,6 +3078,7 @@
 {"name":"Святой флакон жизни","refName":"Sanctified Life Flask","namespace":"ITEM","craftable":{"category":"Flask"},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbGlmZWZsYXNrMTAiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/c32c443453/lifeflask10.png","h":2}
 {"name":"Святой флакон маны","refName":"Sanctified Mana Flask","namespace":"ITEM","craftable":{"category":"Flask"},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvbWFuYWZsYXNrMTAiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjF9XQ/437e6be59d/manaflask10.png","h":2}
 {"name":"Талисман песчаного плевуна","refName":"Sand Spitter Talisman","namespace":"ITEM","craftable":{"category":"Amulet"},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQW11bGV0cy9OZXdUYWxpc21hbjMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e015e2d7cc/NewTalisman3.png"}
+{"name":"Морская карта песчаного дна","refName":"Sandy Seabed Chart","namespace":"ITEM","craftable":{"category":"Chart"},"tradeDisc":"chart","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVlcHdhdGVyL0RlZXB3YXRlclRvcm5NYXAxIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImRjZCI6MTN9XQ/e108d791dc/DeepwaterTornMap1.png"}
 {"name":"Демон-кровомант","refName":"Sanguimancer Demon","namespace":"ITEM","icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXptZXJpL0hlbGxzY2FwZURlbW9uRWxpdGUyQ29ycHNlIiwidyI6MywiaCI6Miwic2NhbGUiOjF9XQ/a795ad40fa/HellscapeDemonElite2Corpse.png","w":3,"h":2}
 {"name":"Червлёный камзол","refName":"Sanguine Raiment","namespace":"ITEM","craftable":{"category":"Body Armour"},"armour":{"ev":[545,627],"es":[110,127]},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9Cb2R5RGV4SW50MUMiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/95329b265f/BodyDexInt1C.png","w":2,"h":3}
 {"name":"Сапфировый флакон","refName":"Sapphire Flask","namespace":"ITEM","craftable":{"category":"Flask"},"icon":"https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3Mvc2FwcGhpcmUiLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjEsImZpIjp0cnVlfV0/7762dad209/sapphire.png","h":2}
@@ -3902,7 +3921,7 @@
 {"name":"Приглашение Дориани","refName":"Doryani's Invitation","namespace":"UNIQUE","unique":{"base":"Heavy Belt","disenchantValue":1.63},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQmVsdHMvRG9yeWFuaXNJbnZpdGF0aW9uIiwidyI6MiwiaCI6MSwic2NhbGUiOjF9XQ/d0085639cc/DoryanisInvitation.png"}
 {"name":"Машинариум Дориани","refName":"Doryani's Machinarium","namespace":"UNIQUE","unique":{"base":"Map","disenchantValue":48.93},"map":{},"icon":"https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Eb3J5YW5pcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/581444be53/Doryanis.png"}
 {"name":"Прототип Дориани","refName":"Doryani's Prototype","namespace":"UNIQUE","unique":{"base":"Saint's Hauberk","disenchantValue":42.21},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9TaG9ja0Nsb2FrIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/44e73cc73c/ShockCloak.png"}
-{"name":"Сабля Гневного капитана","refName":"Dread Captain's Cutlass","namespace":"UNIQUE","unique":{"base":"Ghostflame Blade","disenchantValue":14.49},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL0NhcHRhaW5zQ3V0bGFzc1ZhcmlhbnQwMCIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/f0e7655eeb/CaptainsCutlassVariant00.png"}
+{"name":"Сабля Гневного капитана","refName":"Dread Captain's Cutlass","namespace":"UNIQUE","unique":{"base":"Ghostflame Blade","fixedStats":["Can be Allflame Crafted as if Rare\nCannot gain Intangibility"],"disenchantValue":14.49},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL0NhcHRhaW5zQ3V0bGFzc1ZhcmlhbnQwMCIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/f0e7655eeb/CaptainsCutlassVariant00.png"}
 {"name":"Изгиб ужаса","refName":"Dreadarc","namespace":"UNIQUE","unique":{"base":"Cleaver","disenchantValue":1.56},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kQXhlcy9EcmVhZGFyYyIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/fd1e188ee3/Dreadarc.png"}
 {"name":"Осколки снов","refName":"Dream Fragments","namespace":"UNIQUE","unique":{"base":"Sapphire Ring","disenchantValue":3.95},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvUmluZzZVbmlxdWUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/0c74ddd77c/Ring6Unique.png"}
 {"name":"Перо грёз","refName":"Dreamfeather","namespace":"UNIQUE","unique":{"base":"Eternal Sword","disenchantValue":13.66},"icon":"https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9PbmVIYW5kV2VhcG9ucy9PbmVIYW5kU3dvcmRzL0RyZWFtZmVhdGhlciIsInciOjIsImgiOjMsInNjYWxlIjoxfV0/89a3a7588c/Dreamfeather.png"}
