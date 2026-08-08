@@ -167,6 +167,7 @@
     "tier": "Tier {0}",
     "preset_pseudo": "Pseudo",
     "preset_base_item": "Base item",
+    "preset_bulk": "Bulk",
     "hide_const_roll": "Roll is not variable",
     "hide_ele_dps": "Elemental damage is not the main source of DPS",
     "hide_phys_dps": "Physical damage is not the main source of DPS",

@@ -159,9 +159,9 @@ export function createFilters (
       }
     }
 
-    if (item.map!.tier) {
+    if (item.mapTier) {
       filters.mapTier = {
-        value: item.map!.tier,
+        value: item.mapTier,
         disabled: false
       }
     }

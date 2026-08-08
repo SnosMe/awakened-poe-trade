@@ -45,6 +45,30 @@ export function createPresets (
     item.category === ItemCategory.Chart ||
     item.category === ItemCategory.Sentinel
   ) {
+    if (item.rarity !== ItemRarity.Unique && (
+      (item.category === ItemCategory.Map && !item.mapCompletionReward) ||
+      item.category === ItemCategory.Chart
+    )) {
+      const bulkPreset: FilterPreset = {
+        id: 'filters.preset_bulk',
+        filters: createFilters(item, { ...opts, exact: true }),
+        stats: createExactStatFilters(item, item.statsByType, { ...opts, mode: 'bulk' })
+      }
+      if (item.rarity === ItemRarity.Rare && !item.isUnidentified) {
+        const propsPreset: FilterPreset = {
+          id: 'filters.preset_pseudo',
+          filters: createFilters(item, { ...opts, exact: true }),
+          stats: createExactStatFilters(item, item.statsByType, { ...opts, mode: 'props' })
+        }
+        return {
+          active: propsPreset.id,
+          presets: [propsPreset, bulkPreset]
+        }
+      } else {
+        return { active: bulkPreset.id, presets: [bulkPreset] }
+      }
+    }
+
     return {
       active: 'filters.preset_exact',
       presets: [{

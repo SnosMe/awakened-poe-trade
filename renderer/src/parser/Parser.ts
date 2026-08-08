@@ -227,9 +227,7 @@ function parseMapTier (item: ParserState) {
   const execResult = _$.MAP_TIER.exec(item.baseType || item.name)
   if (!execResult) return
 
-  item.map = {
-    tier: Number(execResult[1])
-  }
+  item.mapTier = Number(execResult[1])
 
   if (item.baseType) {
     item.baseType = item.baseType.replace(execResult[0], '')
@@ -238,36 +236,39 @@ function parseMapTier (item: ParserState) {
   }
 }
 
+function parseAreaPropNested (line: string, item: ParsedItem): boolean {
+  if (line.startsWith(_$.MAP_ITEM_QUANTITY)) {
+    item.areaItemQuantity = parseInt(line.slice(_$.MAP_ITEM_QUANTITY.length), 10)
+    return true
+  } else if (line.startsWith(_$.MAP_ITEM_RARITY)) {
+    item.areaItemRarity = parseInt(line.slice(_$.MAP_ITEM_RARITY.length), 10)
+    return true
+  } else if (line.startsWith(_$.MAP_MONSTER_PACK_SIZE)) {
+    item.areaPackSize = parseInt(line.slice(_$.MAP_MONSTER_PACK_SIZE.length), 10)
+    return true
+  }
+  return false
+}
+
 function parseMap (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.Map) return 'PARSER_SKIPPED'
-
-  if (!item.map) {
-    item.map = { tier: undefined }
-  }
 
   let isParsed: SectionParseResult = 'SECTION_SKIPPED'
 
   for (const line of section) {
-    if (line.startsWith(_$.MAP_ITEM_QUANTITY)) {
-      item.map.itemQuantity = parseInt(line.slice(_$.MAP_ITEM_QUANTITY.length), 10)
-      isParsed = 'SECTION_PARSED'
-    } else if (line.startsWith(_$.MAP_ITEM_RARITY)) {
-      item.map.itemRarity = parseInt(line.slice(_$.MAP_ITEM_RARITY.length), 10)
-      isParsed = 'SECTION_PARSED'
-    } else if (line.startsWith(_$.MAP_MONSTER_PACK_SIZE)) {
-      item.map.packSize = parseInt(line.slice(_$.MAP_MONSTER_PACK_SIZE.length), 10)
+    if (parseAreaPropNested(line, item)) {
       isParsed = 'SECTION_PARSED'
     } else if (line.startsWith(_$.MAP_MORE_MAPS)) {
-      item.map.moreMaps = parseInt(line.slice(_$.MAP_MORE_MAPS.length), 10)
+      item.mapMoreMaps = parseInt(line.slice(_$.MAP_MORE_MAPS.length), 10)
       isParsed = 'SECTION_PARSED'
     } else if (line.startsWith(_$.MAP_MORE_SCARABS)) {
-      item.map.moreScarabs = parseInt(line.slice(_$.MAP_MORE_SCARABS.length), 10)
+      item.mapMoreScarabs = parseInt(line.slice(_$.MAP_MORE_SCARABS.length), 10)
       isParsed = 'SECTION_PARSED'
     } else if (line.startsWith(_$.MAP_MORE_CURRENCY)) {
-      item.map.moreCurrency = parseInt(line.slice(_$.MAP_MORE_CURRENCY.length), 10)
+      item.mapMoreCurrency = parseInt(line.slice(_$.MAP_MORE_CURRENCY.length), 10)
       isParsed = 'SECTION_PARSED'
     } else if (line.startsWith(_$.MAP_MORE_DIVINATION_CARDS)) {
-      item.map.moreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
+      item.mapMoreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
       isParsed = 'SECTION_PARSED'
     } else if (_$.MAP_COMPLETION_REWARD.test(line)) {
       const rewardName = _$.MAP_COMPLETION_REWARD.exec(line)![1]
@@ -315,10 +316,10 @@ function pickCorrectVariant (item: ParserState) {
     if (cond.propES && !item.armourES) continue
 
     if (cond.mapTier) {
-      if (!item.map?.tier) continue
-      if (cond.mapTier === 'W' && !(item.map.tier <= 5)) continue
-      if (cond.mapTier === 'Y' && !(item.map.tier >= 6 && item.map.tier <= 10)) continue
-      if (cond.mapTier === 'R' && !(item.map.tier >= 11)) continue
+      if (!item.mapTier) continue
+      if (cond.mapTier === 'W' && !(item.mapTier <= 5)) continue
+      if (cond.mapTier === 'Y' && !(item.mapTier >= 6 && item.mapTier <= 10)) continue
+      if (cond.mapTier === 'R' && !(item.mapTier >= 11)) continue
     }
 
     if (cond.hasImplicit && !item.statsByType.some(calc =>
@@ -908,8 +909,7 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
 function parseHeistContract (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.HeistContract) return 'PARSER_SKIPPED'
 
-  parseAreaLevelNested(section, item)
-  if (!item.areaLevel) {
+  if (!parseAreaLevelNested(section, item)) {
     return 'SECTION_SKIPPED'
   }
 
@@ -957,8 +957,7 @@ function parseHeistContract (section: string[], item: ParsedItem) {
 function parseHeistBlueprint (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.HeistBlueprint) return 'PARSER_SKIPPED'
 
-  parseAreaLevelNested(section, item)
-  if (!item.areaLevel) {
+  if (!parseAreaLevelNested(section, item)) {
     return 'SECTION_SKIPPED'
   }
 
@@ -988,8 +987,7 @@ function parseHeistBlueprint (section: string[], item: ParsedItem) {
 function parseChart (section: string[], item: ParsedItem) {
   if (item.category !== ItemCategory.Chart) return 'PARSER_SKIPPED'
 
-  parseAreaLevelNested(section, item)
-  if (!item.areaLevel) {
+  if (!parseAreaLevelNested(section, item)) {
     return 'SECTION_SKIPPED'
   }
 
@@ -997,16 +995,25 @@ function parseChart (section: string[], item: ParsedItem) {
   if (!areaInfo) throw new Error('Unknown Area name.')
   item.mapArea = areaInfo[0]
 
+  for (const line of section) {
+    if (parseAreaPropNested(line, item)) {
+      // line parsed
+    } else if (line.startsWith(_$.CHART_SULPHUR)) {
+      item.chartSulphur = parseInt(line.slice(_$.CHART_SULPHUR.length), 10)
+    }
+  }
+
   return 'SECTION_PARSED'
 }
 
-function parseAreaLevelNested (section: string[], item: ParsedItem) {
+function parseAreaLevelNested (section: string[], item: ParsedItem): boolean {
   for (const line of section) {
     if (line.startsWith(_$.AREA_LEVEL)) {
       item.areaLevel = Number(line.slice(_$.AREA_LEVEL.length))
-      break
+      return true
     }
   }
+  return false
 }
 
 function parseAreaLevel (section: string[], item: ParsedItem) {
@@ -1017,11 +1024,11 @@ function parseAreaLevel (section: string[], item: ParsedItem) {
     item.info.refName !== 'Forbidden Tome'
   ) return 'PARSER_SKIPPED'
 
-  parseAreaLevelNested(section, item)
+  if (!parseAreaLevelNested(section, item)) {
+    return 'SECTION_SKIPPED'
+  }
 
-  return (item.areaLevel)
-    ? 'SECTION_PARSED'
-    : 'SECTION_SKIPPED'
+  return 'SECTION_PARSED'
 }
 
 function parseAtzoatlRooms (section: string[], item: ParsedItem) {
