@@ -281,7 +281,10 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     propSet(query.filters, 'trade_filters.filters.price.option', filters.trade.currency)
   }
 
-  if (filters.trade.collapseListings === 'api' && (filters.trade.offline || !filters.trade.merchantOnly)) {
+  if (
+    filters.trade.collapseListings === 'api' &&
+    (filters.trade.offline || !filters.trade.merchantOnly || filters.trade.collapseMerchant)
+  ) {
     propSet(query.filters, 'trade_filters.filters.collapse.option', String(true))
   }
 

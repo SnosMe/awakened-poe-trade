@@ -34,16 +34,19 @@ export function createFilters (
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
-      collapseListings: opts.collapseListings
+      collapseListings: opts.collapseListings,
+      collapseMerchant: false
     }
   }
 
-  if (!opts.currency) {
-    if ((!item.info.craftable || CONSUMABLE_CRAFTABLE_ITEM.has(item.category!)) &&
-      item.rarity !== ItemRarity.Unique
-    ) {
+  if (
+    (!item.info.craftable || CONSUMABLE_CRAFTABLE_ITEM.has(item.category!)) &&
+    item.rarity !== ItemRarity.Unique
+  ) {
+    if (!opts.currency) {
       filters.trade.currency = 'chaos_divine'
     }
+    filters.trade.collapseMerchant = true
   }
 
   if (item.category === ItemCategory.Gem) {

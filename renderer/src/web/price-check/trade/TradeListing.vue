@@ -112,6 +112,7 @@ const MIN_GROUPED = 10
 
 function useTradeApi () {
   let searchId = 0
+  let collapseMerchant = false
   const error = shallowRef<string | null>(null)
   const searchResult = shallowRef<SearchResult | null>(null)
   const fetchResults = shallowRef<PricingResult[]>([])
@@ -120,7 +121,7 @@ function useTradeApi () {
     const out: Array<PricingResult & { listedTimes: number }> = []
     for (const result of fetchResults.value) {
       if (result == null) break
-      if (out.length === 0 || result.hasFee) {
+      if (out.length === 0 || (result.hasFee && !collapseMerchant)) {
         out.push({ listedTimes: 1, ...result })
         continue
       }
@@ -163,6 +164,7 @@ function useTradeApi () {
         return
       }
       searchResult.value = _searchResult
+      collapseMerchant = filters.trade.collapseMerchant
 
       // first two req are parallel, then sequential on demand
       {

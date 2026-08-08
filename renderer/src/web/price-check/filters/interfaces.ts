@@ -93,6 +93,7 @@ export interface ItemFilters {
     currency: string | undefined
     league: string
     collapseListings: 'api' | 'app'
+    collapseMerchant: boolean
   }
 }
 
