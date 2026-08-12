@@ -136,7 +136,7 @@ export function valdoBadMods (ctx: FiltersCreationContext): void {
   for (const lethalStatRef of VALDO_LETHAL_STATS) {
     if (ctx.item.statsByType.some(calc => calc.stat.ref === lethalStatRef)) continue
 
-    const lethalStat = findAndResolveByRef(lethalStatRef, ctx.item.category)
+    const lethalStat = findAndResolveByRef(lethalStatRef, ModifierType.Explicit, ctx.item.category)
     const filter = statToNotFilter({
       stat: lethalStat,
       type: ModifierType.Explicit,

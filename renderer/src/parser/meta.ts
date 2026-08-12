@@ -50,7 +50,8 @@ export enum ItemCategory {
   Charm = 'Charm',
   Idol = 'Idol',
   Graft = 'Graft',
-  Chart = 'Chart'
+  Chart = 'Chart',
+  MercenaryWarrant = 'Mercenary Warrant'
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([

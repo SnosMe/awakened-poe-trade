@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style['filter']">
+  <div :class="[$style.filter, { [$style.grouped]: grouped }]">
     <div v-if="showSourceInfo" :class="$style['mods']">
       <div class="pl-5 py-1" v-for="(source, idx) of filter.sources" :key="idx">
         <source-info :source="source" :filter="filter" />
@@ -7,16 +7,22 @@
     </div>
     <div class="flex flex-col min-w-0 flex-1">
       <div class="pb-px flex items-baseline justify-between">
-        <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
-          <i class="w-5" :class="{
-            'far fa-square text-gray-500': isDisabled,
-            'fas fa-check-square': !isDisabled
-          }"></i>
-          <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-            <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
-            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
-          </div>
-        </button>
+        <div class="flex items-baseline min-w-0 mr-2">
+          <button :class="[$style.checkbox, { [$style.checked]: !isDisabled, [$style.uncheckedHint]: isDisabled && groupExpanded }]"
+            @click="toggleFilter" type="button">
+            <i :class="isDisabled ? 'far fa-square' : 'fas fa-check-square'" />
+          </button>
+          <button class="flex text-left min-w-0" @click="smartToggle" type="button">
+            <div class="search-text flex-1 relative flex min-w-0" style="line-height: 1rem;">
+              <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
+              <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
+            </div>
+          </button>
+          <button v-if="groupExpanded !== undefined"
+            :class="$style.expandBtn" @click="toggleExpanded" type="button">
+            <i :class="groupExpanded ? 'fas fa-chevron-down' : 'fas fa-chevron-right'" />
+          </button>
+        </div>
         <div class="flex items-baseline gap-x-1">
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
           <div class="flex gap-x-px">
@@ -60,14 +66,12 @@
         <div style="width: calc(2*3rem + 1px)" />
       </div>
     </div>
-    <div class="flex flex-col">
-      <modifier-anointment :filter="filter" />
-    </div>
+    <modifier-anointment class="self-center" :filter="filter" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, ref, nextTick } from 'vue'
+import { defineComponent, PropType, computed, ref, nextTick, useCssModule, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UiPopover from '@/web/ui/Popover.vue'
 import StatRollSlider from '../../ui/StatRollSlider.vue'
@@ -82,7 +86,7 @@ import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
   components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider, UiPopover },
-  emits: ['submit'],
+  emits: ['submit', 'update:groupExpanded'],
   props: {
     filter: {
       type: Object as PropType<StatFilter>,
@@ -93,11 +97,32 @@ export default defineComponent({
       required: true
     },
     showSources: {
+      type: Boolean
+    },
+    groupExpanded: {
       type: Boolean,
-      required: true
+      default: undefined
+    },
+    grouped: {
+      type: Boolean
     }
   },
   setup (props, ctx) {
+    const $style = useCssModule()
+
+    watch(() => props.filter.disabled && props.groupExpanded, (uncheckedHint) => {
+      if (!uncheckedHint) return
+
+      const animations = document.getAnimations().filter(animation =>
+        animation instanceof CSSAnimation &&
+        animation.animationName === $style.uncheckedHintAnim)
+      const time = animations.find(animation =>
+        animation.currentTime !== 0)?.currentTime ?? 0
+      for (const animation of animations) {
+        animation.currentTime = time
+      }
+    }, { flush: 'post' })
+
     const showTag = computed(() =>
       props.filter.tag !== FilterTag.Property &&
       props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
@@ -172,6 +197,26 @@ export default defineComponent({
       }
     }
 
+    function toggleExpanded () {
+      ctx.emit('update:groupExpanded', !props.groupExpanded)
+    }
+
+    function smartToggle (e: MouseEvent) {
+      if (e.detail === 0) {
+        ctx.emit('submit')
+      } else {
+        if (!props.filter.disabled && props.groupExpanded === true) {
+          ctx.emit('update:groupExpanded', false)
+        } else {
+          props.filter.disabled = !props.filter.disabled
+
+          if (!props.filter.disabled && props.groupExpanded === false) {
+            ctx.emit('update:groupExpanded', true)
+          }
+        }
+      }
+    }
+
     const { t } = useI18n()
 
     return {
@@ -219,7 +264,9 @@ export default defineComponent({
           )
         )),
       inputFocus,
-      toggleFilter
+      toggleFilter,
+      toggleExpanded,
+      smartToggle
     }
   }
 })
@@ -227,10 +274,43 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .filter {
-  @apply py-2;
-  @apply border-b border-gray-700;
+  padding: theme('spacing.2') 0;
+  border-bottom: 1px solid theme('colors.gray.700');
   display: flex;
+  align-items: baseline;
   position: relative;
+}
+.filter.grouped {
+  padding-left: theme('spacing.5');
+}
+
+.checkbox {
+  display: flex;
+  min-width: theme('width.5');
+
+  &:not(.checked) {
+    color: theme('colors.gray.500');
+  }
+
+  &.uncheckedHint {
+    animation: uncheckedHintAnim 0.5s ease-out infinite alternate;
+  }
+}
+
+@keyframes uncheckedHintAnim {
+  from {
+    color: theme('colors.gray.700');
+  }
+  to {
+    color: theme('colors.gray.500');
+  }
+}
+
+.expandBtn {
+  display: flex;
+  min-width: theme('width.5');
+  padding-left: theme('spacing[1.5]');
+  color: theme('colors.gray.500');
 }
 
 .rollInput {

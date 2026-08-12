@@ -1,5 +1,6 @@
 import { createFilters } from './create-item-filters'
 import { createExactStatFilters, initUiModFilters } from './create-stat-filters'
+import { createMercenaryFilters } from './pseudo/mercenary'
 import { ModifierType, sumStatsByModType } from '@/parser/modifiers'
 import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
 import type { FilterPreset } from './interfaces'
@@ -25,6 +26,15 @@ export function createPresets (
         filters: createFilters(item, { ...opts, exact: true }),
         stats: createExactStatFilters(item, sumStatsByModType(area), opts)
       }))
+    }
+  } else if (item.info.refName === 'Mercenary Warrant') {
+    return {
+      active: 'filters.preset_exact',
+      presets: [{
+        id: 'filters.preset_exact',
+        filters: createFilters(item, { ...opts, exact: true }),
+        stats: createMercenaryFilters(item)
+      }]
     }
   }
 

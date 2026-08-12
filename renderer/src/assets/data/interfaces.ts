@@ -18,8 +18,10 @@ export interface Stat {
   dp?: true
   matchers: StatMatcher[]
   better: StatBetter
+  modFamily?: string[]
   fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
   anointments?: Array<{ roll: number, oils: string }>
+  mercenary?: { supportTier?: number }
   trade: {
     inverted?: true
     option?: true

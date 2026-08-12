@@ -1,5 +1,5 @@
 import { ItemInfluence, ItemCategory } from '@/parser'
-import { ItemFilters, StatFilter, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
+import { ItemFilters, StatFilter, FilterOrGroup, INTERNAL_TRADE_IDS, InternalTradeId } from '../filters/interfaces'
 import { setProperty as propSet } from 'dot-prop'
 import { DateTime } from 'luxon'
 import { Host } from '@/web/background/IPC'
@@ -90,7 +90,7 @@ interface TradeRequest {
     name?: string | { discriminator: string, option: string }
     type?: string | { discriminator: string, option: string }
     stats: Array<{
-      type: 'and' | 'if' | 'count' | 'not'
+      type: 'and' | 'if' | 'count' | 'not' | 'mercenary'
       value?: FilterRange
       filters: Array<{
         id: string
@@ -258,7 +258,7 @@ export interface PricingResult {
   ign: string
 }
 
-export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
+export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]) {
   const body: TradeRequest = {
     query: {
       status: {
@@ -412,7 +412,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
   }
 
   for (const stat of stats) {
-    if (!stat.tradeId[0].startsWith('item.')) continue
+    if (stat.group || !stat.tradeId[0].startsWith('item.')) continue
 
     if (stat.tradeId[0] === 'item.has_empty_modifier') {
       const TARGET_ID = {
@@ -552,8 +552,9 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     }
   }
 
-  type BareStatFilter = Omit<StatFilter, 'statRef' | 'text' | 'tag' | 'sources'>
-  const realStats: BareStatFilter[] = stats.filter(stat =>
+  type NoUiStatFilter = Pick<StatFilter, 'not' | keyof BareStatFilter>
+  const realStats: NoUiStatFilter[] = stats.filter((stat): stat is StatFilter =>
+    !stat.group &&
     !INTERNAL_TRADE_IDS.includes(stat.tradeId[0]))
   if (filters.veiled) {
     for (const statRef of filters.veiled.statRefs) {
@@ -583,11 +584,23 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
     filters: []
   }
 
+  for (const group of stats) {
+    if (group.group !== 'mercenary') continue
+
+    query.stats.push({
+      type: 'mercenary',
+      value: { min: 1 + group.supports.filter(stat => !stat.disabled).length },
+      disabled: group.skill.disabled,
+      filters: [
+        ...everyTradeIdToQuery(group.skill),
+        ...group.supports.flatMap(stat => everyTradeIdToQuery(stat))
+      ]
+    })
+  }
+
   for (const stat of realStats) {
     if (stat.not) {
-      for (const id of stat.tradeId) {
-        qNot.filters.push(tradeIdToQuery(id, stat))
-      }
+      qNot.filters.push(...everyTradeIdToQuery(stat))
     } else {
       if (stat.tradeId.length === 1) {
         qAnd.filters.push(tradeIdToQuery(stat.tradeId[0], stat))
@@ -596,7 +609,7 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[]) {
           type: 'count',
           value: { min: 1 },
           disabled: stat.disabled,
-          filters: stat.tradeId.map(id => tradeIdToQuery(id, stat))
+          filters: everyTradeIdToQuery(stat)
         })
       }
     }
@@ -705,7 +718,13 @@ function getMinMax (roll: StatFilter['roll'], divisor: number) {
   return !roll.tradeInvert ? { min: a, max: b } : { min: b, max: a }
 }
 
-function tradeIdToQuery (id: string, stat: Pick<StatFilter, 'roll' | 'option' | 'disabled'>) {
+type BareStatFilter = Pick<StatFilter, 'roll' | 'option' | 'disabled' | 'tradeId'>
+
+function everyTradeIdToQuery (stat: BareStatFilter) {
+  return stat.tradeId.map(id => tradeIdToQuery(id, stat))
+}
+
+function tradeIdToQuery (id: string, stat: BareStatFilter) {
   let roll = stat.roll
 
   const divMinMax = id.startsWith('{div_by_100}') ? 100 : 1

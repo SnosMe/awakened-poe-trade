@@ -16,7 +16,7 @@ export function applyFlaskHybridMod (ctx: FiltersCreationContext) {
     !ctx.filters.some(filter => filter.statRef === STATS.INCR_EFFECT)
   if (!applicable) return
 
-  const effectStat = findAndResolveByRef(STATS.INCR_EFFECT, ctx.item.category)
+  const effectStat = findAndResolveByRef(STATS.INCR_EFFECT, ModifierType.Explicit, ctx.item.category)
   const filter = statToNotFilter({
     stat: effectStat,
     type: ModifierType.Explicit,

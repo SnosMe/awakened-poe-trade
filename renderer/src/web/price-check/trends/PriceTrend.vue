@@ -50,7 +50,7 @@
       </div>
     </template>
   </div>
-  <div v-else-if="!item.info.craftable" class="flex items-center pb-4" style="min-height: 3rem;">
+  <div v-else-if="showFallback" class="flex items-center pb-4" style="min-height: 3rem;">
     <item-quick-price class="flex-1 text-base justify-center"
       currency-text
       :item-img="item.info.icon"
@@ -118,6 +118,13 @@ export default defineComponent({
       },
       isValuableBasetype: computed(() => {
         return isValuableBasetype(props.item)
+      }),
+      showFallback: computed(() => {
+        const { item } = props
+        return (
+          !item.info.craftable &&
+          item.info.refName !== 'Mercenary Warrant' // need vertical space
+        )
       }),
       slowdown
     }

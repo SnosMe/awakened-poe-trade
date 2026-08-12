@@ -134,7 +134,8 @@ export default defineComponent({
           (item.category === ItemCategory.SanctumRelic) ||
           (item.category === ItemCategory.Charm) ||
           (item.category === ItemCategory.Idol) ||
-          (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
+          (!CATEGORY_TO_TRADE_ID.has(item.category!) &&
+            item.info.refName !== 'Mercenary Warrant') ||
           (item.isUnidentified) ||
           (item.isVeiled)
         )

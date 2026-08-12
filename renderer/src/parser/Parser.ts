@@ -8,7 +8,7 @@ import {
   BaseType
 } from '@/assets/data'
 import { ModifierType, sumStatsByModType } from './modifiers'
-import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg } from './stat-translations'
+import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg, ParsedStat } from './stat-translations'
 import { ItemCategory, ACCESSORY } from './meta'
 import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
@@ -70,6 +70,12 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
+  parseMercenaryGems,
+  parseMercenaryGems,
+  parseMercenaryGems,
+  parseMercenaryGems,
+  parseMercenaryGems,
+  parseMercenaryGems,
   parseModifiers, // enchant
   parseModifiers, // scourge
   parseModifiers, // implicit
@@ -721,6 +727,34 @@ function parseLogbookArea (section: string[], item: ParsedItem) {
   } else {
     item.logbookAreaMods.push(areaMods)
   }
+
+  return 'SECTION_PARSED'
+}
+
+function parseMercenaryGems (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Mercenary Warrant') return 'PARSER_SKIPPED'
+
+  const skill = tryParseTranslation({ string: section[0], unscalable: true }, ModifierType.Pseudo, ItemCategory.MercenaryWarrant)
+  if (!skill) return 'SECTION_SKIPPED'
+
+  const group: ParsedStat[] = [skill]
+
+  for (const line of section.slice(1)) {
+    const support = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Pseudo, ItemCategory.MercenaryWarrant)
+    if (support) {
+      group.push(support)
+    } else {
+      item.unknownModifiers.push({
+        text: line,
+        type: ModifierType.Pseudo
+      })
+    }
+  }
+
+  if (!item.mercenarySkills) {
+    item.mercenarySkills = []
+  }
+  item.mercenarySkills.push(group)
 
   return 'SECTION_PARSED'
 }

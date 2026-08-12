@@ -5,7 +5,7 @@ import type { ParsedItem } from '@/parser/ParsedItem'
 export interface FilterPreset {
   id: string
   filters: ItemFilters
-  stats: StatFilter[]
+  stats: FilterOrGroup[]
 }
 
 interface SearchFilter {
@@ -103,7 +103,19 @@ export interface FilterNumeric {
   disabled: boolean
 }
 
+export type FilterOrGroup =
+  | StatFilter
+  | MercenaryFilterGroup
+
+export interface MercenaryFilterGroup {
+  group: 'mercenary'
+  expanded: boolean // NOTE: mutable in UI
+  skill: StatFilter
+  supports: StatFilter[]
+}
+
 export interface StatFilter {
+  group?: never
   tradeId: string[]
   statRef: string
   text: string

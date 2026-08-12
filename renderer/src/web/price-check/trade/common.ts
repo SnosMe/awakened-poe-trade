@@ -1,5 +1,5 @@
 import { shallowReactive } from 'vue'
-import type { ItemFilters, StatFilter } from '../filters/interfaces'
+import type { ItemFilters, FilterOrGroup } from '../filters/interfaces'
 import { AppConfig } from '@/web/Config'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
@@ -22,8 +22,8 @@ export type TradeResponse<T> = (T & { error?: null }) | {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filters: ItemFilters): 'trade' | 'bulk' {
-  if (stats.some(s => !s.disabled)) {
+export function apiToSatisfySearch (item: ParsedItem, stats: FilterOrGroup[], filters: ItemFilters): 'trade' | 'bulk' {
+  if (stats.some(s => s.group === 'mercenary' || !s.disabled)) {
     return 'trade'
   }
 

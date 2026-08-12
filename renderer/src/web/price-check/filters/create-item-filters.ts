@@ -46,7 +46,9 @@ export function createFilters (
     if (!opts.currency) {
       filters.trade.currency = 'chaos_divine'
     }
-    filters.trade.collapseMerchant = true
+    if (item.info.refName !== 'Mercenary Warrant') {
+      filters.trade.collapseMerchant = true
+    }
   }
 
   if (item.category === ItemCategory.Gem) {
@@ -274,12 +276,7 @@ export function createFilters (
     // item.isCorrupted && -- let the buyer corrupt
     (item.category === ItemCategory.Jewel || item.category === ItemCategory.AbyssJewel))
 
-  if (!item.isUnmodifiable && (
-    item.rarity === ItemRarity.Normal ||
-    item.rarity === ItemRarity.Magic ||
-    item.rarity === ItemRarity.Rare ||
-    item.rarity === ItemRarity.Unique
-  )) {
+  if (item.info.craftable && !item.isUnmodifiable) {
     filters.corrupted = {
       value: item.isCorrupted,
       exact: forAdornedJewel
@@ -301,11 +298,11 @@ export function createFilters (
       value: 'magic',
       disabled: true
     }
-  } else if (
+  } else if (item.info.craftable && (
     item.rarity === ItemRarity.Normal ||
     item.rarity === ItemRarity.Magic ||
     item.rarity === ItemRarity.Rare
-  ) {
+  )) {
     filters.rarity = {
       value: 'nonunique',
       disabled: false

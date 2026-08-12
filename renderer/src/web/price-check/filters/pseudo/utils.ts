@@ -42,10 +42,11 @@ function _findAndResolveByRef (
 
 export function findAndResolveByRef (
   name: string,
+  modType: ModifierType,
   itemCategory: ItemCategory | undefined,
   hint?: ResolveHint
 ): Stat {
-  const stat = _findAndResolveByRef(name, ModifierType.Explicit, itemCategory, hint)
+  const stat = _findAndResolveByRef(name, modType, itemCategory, hint)
   if (!stat) {
     throw new Error(`Unexpected stat shape: ${name}`)
   }
