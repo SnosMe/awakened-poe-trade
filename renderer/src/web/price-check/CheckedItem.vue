@@ -36,6 +36,10 @@
       <trade-links v-if="tradeAPI === 'trade'"
         :get-link="makeTradeLink" />
     </div>
+    <p v-if="showComplexityHint" :class="$style.complexityHint">
+      <i class="fas fa-info-circle" />
+      {{ t('item.complexity_hint') }}
+    </p>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
       <div class="mb-1">{{ t('Support development on') }} <a href="https://patreon.com/awakened_poe_trade" class="inline-flex align-middle animate__animated animate__fadeInRight" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
@@ -239,6 +243,8 @@ export default defineComponent({
       show,
       handleSearchMouseenter,
       showSupportLinks,
+      showComplexityHint: computed(() => !widget.value.builtinBrowser && !doSearch.value &&
+        props.item.info.refName === 'Mercenary Warrant'),
       presets: computed(() => presets.value.presets.map(preset =>
         ({ id: preset.id, active: (preset.id === presets.value.active) }))),
       selectPreset (id: string) {
@@ -254,3 +260,20 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="postcss" module>
+.complexityHint {
+  display: flex;
+  align-items: baseline;
+  gap: theme('spacing.2');
+  margin-top: theme('spacing.4');
+  padding: theme('spacing.2') theme('spacing.4') theme('spacing.2') theme('spacing.3');
+  border-radius: theme('borderRadius.DEFAULT');
+  background: theme('colors.gray.900');
+  text-wrap-style: pretty;
+
+  & > i {
+    color: theme('colors.gray.600');
+  }
+}
+</style>

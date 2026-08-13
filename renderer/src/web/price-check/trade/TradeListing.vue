@@ -80,8 +80,8 @@
   </div>
   <ui-error-box v-else>
     <template #name>{{ t(':error') }}</template>
-    <p>Error: {{ error }}</p>
-    <p>{{ t('app.leagues_failed_help') }}</p>
+    <p v-if="error.includes('JSON')">{{ t('app.leagues_failed_help') }}</p>
+    <p v-else>Error: {{ error }}</p>
     <template #actions>
       <button class="btn" @click="execSearch">{{ t('Retry') }}</button>
       <button class="btn" @click="openTradeLink">{{ t('Browser') }}</button>
