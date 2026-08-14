@@ -71,7 +71,7 @@ export function createPresets (
           stats: createExactStatFilters(item, item.statsByType, { ...opts, mode: 'props' })
         }
         return {
-          active: propsPreset.id,
+          active: (item.mapArea!.area!.special) ? bulkPreset.id : propsPreset.id,
           presets: [propsPreset, bulkPreset]
         }
       } else {

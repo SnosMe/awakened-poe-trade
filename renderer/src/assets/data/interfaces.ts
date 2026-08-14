@@ -94,8 +94,9 @@ export interface BaseType {
     fixedStats?: Array<Stat['ref']>
     disenchantValue?: number
   }
-  map?: {
+  area?: {
     screenshot?: string
+    special?: true
   }
   gem?: {
     vaal?: true
