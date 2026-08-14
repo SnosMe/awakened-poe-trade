@@ -4,6 +4,7 @@ import {
   ITEM_BY_TRANSLATED,
   ITEM_BY_REF,
   STAT_BY_MATCH_STR,
+  MERCENARY_BUILDS,
   StatBetter,
   BaseType
 } from '@/assets/data'
@@ -83,6 +84,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: parseBlightedMap },
+  { virtual: parseMercenaryBuild },
   { virtual: pickCorrectVariant },
   { virtual: calcBasePercentile }
 ]
@@ -757,6 +759,22 @@ function parseMercenaryGems (section: string[], item: ParsedItem) {
   item.mercenarySkills.push(group)
 
   return 'SECTION_PARSED'
+}
+
+function parseMercenaryBuild (item: ParsedItem) {
+  if (item.info.refName !== 'Mercenary Warrant') return
+
+  const build = MERCENARY_BUILDS.find(build => {
+    const primarySkills = build.skills.filter(skill => skill.type === 'primary')
+    return primarySkills.every(skill =>
+      item.mercenarySkills!.some((group, idx) =>
+        group[0].stat.ref === skill.name &&
+        idx < primarySkills.length
+      ))
+  })
+  if (!build) throw new Error('Unknown Mercenary Build.')
+
+  item.mercenaryBuild = build
 }
 
 function parseModifiers (section: string[], item: ParsedItem) {

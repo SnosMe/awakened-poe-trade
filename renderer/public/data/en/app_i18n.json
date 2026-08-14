@@ -42,6 +42,7 @@
   "Phantasmal": "Phantasmal",
 
   "item": {
+    "not_group": "None of",
     "prop_quality": "Q {0}%",
     "base_percentile": "Base Percentile: {0}%",
     "armour": "Armour: {0}",
@@ -202,7 +203,12 @@
     "tag_explicit_veiled": "Veiled",
     "tag_explicit_incursion": "Incursion",
     "tag_explicit_infamous": "Mercenary",
-    "tag_explicit_essence": "Essence"
+    "tag_explicit_essence": "Essence",
+    "tag_brick": "brick",
+    "tag_mercenary_primary": "primary",
+    "tag_mercenary_secondary": "secondary",
+    "tag_mercenary_utility": "utility",
+    "tag_filter_group": "Stat Group"
   },
   "online_filter": {
     "offline_toggle": "Offline & Online",

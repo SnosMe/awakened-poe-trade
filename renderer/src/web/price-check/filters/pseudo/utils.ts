@@ -71,3 +71,16 @@ export function statToNotFilter (opts: {
     not: true
   }
 }
+
+export function metaNotFilter (opts: {
+  disabled: StatFilter['disabled']
+}): StatFilter {
+  return {
+    tradeId: ['item.not_group'],
+    statRef: 'Not',
+    text: 'Not',
+    tag: FilterTag.FilterGroup,
+    sources: [],
+    disabled: opts.disabled
+  }
+}

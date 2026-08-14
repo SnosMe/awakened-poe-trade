@@ -60,6 +60,7 @@
   "Phantasmal": "Фантомный",
 
   "item": {
+    "not_group": "Ни одного из",
     "prop_quality": "К-во: {0}%",
     "base_percentile": "Ролл значений базы: {0}%",
     "armour": "Броня: {0}",
@@ -219,7 +220,12 @@
     "tag_explicit_veiled": "Завуалирован",
     "tag_explicit_incursion": "Вмешательство",
     "tag_explicit_infamous": "Наёмник",
-    "tag_explicit_essence": "Сущность"
+    "tag_explicit_essence": "Сущность",
+    "tag_brick": "кирпич",
+    "tag_mercenary_primary": "основной",
+    "tag_mercenary_secondary": "дополнительный",
+    "tag_mercenary_utility": "вспомогательный",
+    "tag_filter_group": "группа свойств"
   },
   "online_filter": {
     "offline_toggle": "Офлайн и Онлайн",

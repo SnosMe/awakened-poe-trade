@@ -12,7 +12,9 @@
             @click="toggleFilter" type="button">
             <i :class="isDisabled ? 'far fa-square' : 'fas fa-check-square'" />
           </button>
-          <button class="flex text-left min-w-0" @click="smartToggle" type="button">
+          <button :class="$style.labelBtn" @click="smartToggle" type="button">
+            <img v-if="filter.mercenary?.icon"
+              :src="filter.mercenary.icon">
             <div class="search-text flex-1 relative flex min-w-0" style="line-height: 1rem;">
               <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
               <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
@@ -306,6 +308,21 @@ export default defineComponent({
   }
 }
 
+.labelBtn {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  text-align: left;
+
+  & > img {
+    width: theme('width.4');
+    margin-right: theme('spacing.1');
+    position: relative;
+    top: 2px;
+    margin-top: -100%;
+  }
+}
+
 .expandBtn {
   display: flex;
   min-width: theme('width.5');
@@ -422,13 +439,19 @@ export default defineComponent({
 .tag-explicit-essence::before {
   background-image: url('/images/essence.png'); }
 
-.tag-corrupted {
+.tag-corrupted,
+.tag-brick {
   @apply bg-red-700 text-red-100; }
 .tag-fractured {
   @apply bg-yellow-400 text-black; }
 .tag-crafted, .tag-synthesised {
   @apply bg-blue-600 text-blue-100; }
-.tag-implicit, .tag-explicit {
+.tag-implicit,
+.tag-explicit,
+.tag-mercenary-primary,
+.tag-mercenary-secondary,
+.tag-mercenary-utility,
+.tag-filter-group {
   @apply -mx-1 text-gray-600;
   text-shadow: 0 0 4px theme('colors.gray.900');
 }
@@ -450,7 +473,8 @@ export default defineComponent({
   position: absolute;
   left: 0px;
   right: 0px;
-  top: 0px;
+  top: -2px;
+  padding-top: 2px;
   padding-bottom: 1px;
   z-index: 10;
 

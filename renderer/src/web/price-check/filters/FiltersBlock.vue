@@ -67,7 +67,7 @@
       </div>
       <form @submit.prevent="handleStatsSubmit">
         <template v-for="filter of filteredStats">
-          <filter-mercenary-group v-if="filter.group === 'mercenary'" :key="`group_${filter.skill.tag}_${filter.skill.text}`"
+          <filter-group v-if="filter.group" :key="`group_${filter.meta.tag}_${filter.meta.text}`"
             :group="filter"
             :item="item"
             @submit="handleStatsSubmit" />
@@ -102,7 +102,7 @@ import { defineComponent, watch, shallowRef, shallowReactive, computed, PropType
 import { useI18n } from 'vue-i18n'
 import UiToggle from '@/web/ui/UiToggle.vue'
 import FilterModifier from './FilterModifier.vue'
-import FilterMercenaryGroup from './FilterMercenaryGroup.vue'
+import FilterGroup from './FilterGroup.vue'
 import FilterBtnNumeric from './FilterBtnNumeric.vue'
 import FilterBtnLogical from './FilterBtnLogical.vue'
 import UnknownModifier from './UnknownModifier.vue'
@@ -114,7 +114,7 @@ export default defineComponent({
   emits: ['submit', 'preset'],
   components: {
     FilterModifier,
-    FilterMercenaryGroup,
+    FilterGroup,
     FilterBtnNumeric,
     FilterBtnLogical,
     UnknownModifier,
@@ -163,8 +163,8 @@ export default defineComponent({
       showFilterSources,
       totalSelectedMods: computed(() => {
         return props.stats.filter(stat => {
-          if (stat.group === 'mercenary') {
-            return !stat.skill.disabled
+          if (stat.group) {
+            return !stat.meta.disabled
           }
           return !stat.disabled
         }).length
@@ -172,8 +172,8 @@ export default defineComponent({
       filteredStats: computed(() => {
         const show = showHidden.value
         return props.stats.filter(s => {
-          if (s.group === 'mercenary') {
-            return Boolean(s.skill.hidden) === show
+          if (s.group) {
+            return Boolean(s.meta.hidden) === show
           }
           return Boolean(s.hidden) === show
         })

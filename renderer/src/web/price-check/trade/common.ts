@@ -23,7 +23,7 @@ export type TradeResponse<T> = (T & { error?: null }) | {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function apiToSatisfySearch (item: ParsedItem, stats: FilterOrGroup[], filters: ItemFilters): 'trade' | 'bulk' {
-  if (stats.some(s => s.group === 'mercenary' || !s.disabled)) {
+  if (stats.some(s => s.group ? !s.meta.disabled : !s.disabled)) {
     return 'trade'
   }
 

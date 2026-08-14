@@ -1,12 +1,12 @@
 <template>
   <div>
-    <FilterModifier :key="`${group.skill.tag}_${group.skill.text}`"
-      :filter="group.skill"
+    <FilterModifier :key="`${group.meta.tag}_${group.meta.text}`"
+      :filter="group.meta"
       :item="item"
       v-model:group-expanded="group.expanded"
       @submit="handleStatsSubmit" />
     <template v-if="group.expanded">
-      <FilterModifier v-for="filter of group.supports" :key="`${filter.tag}_${filter.text}`"
+      <FilterModifier v-for="filter of group.stats" :key="`${filter.tag}_${filter.text}`"
         :filter="filter"
         :item="item"
         grouped
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { MercenaryFilterGroup } from './interfaces'
+import { FilterGroup } from './interfaces'
 import { ParsedItem } from '@/parser'
 
 const emit = defineEmits<{
@@ -26,7 +26,7 @@ const emit = defineEmits<{
 import FilterModifier from './FilterModifier.vue'
 
 defineProps<{
-  group: MercenaryFilterGroup,
+  group: FilterGroup,
   item: ParsedItem
 }>()
 
