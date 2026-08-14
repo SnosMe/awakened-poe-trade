@@ -186,6 +186,8 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
     { ns: 'ITEM', url: 'djinn-coins', type: 'DjinnCoin' },
     { ns: 'ITEM', url: 'astrolabes', type: 'Astrolabe' },
     { ns: 'ITEM', url: 'runegrafts', type: 'Runegraft' },
+    { ns: 'ITEM', url: 'ducats', type: 'Ducat' },
+    { ns: 'ITEM', url: 'enshrouding-crystals', type: 'EnshroudingCrystal' },
     { ns: 'DIVINATION_CARD', url: 'divination-cards', type: 'DivinationCard' },
     { ns: 'CAPTURED_BEAST', url: 'beasts', type: 'Beast' },
     { ns: 'UNIQUE', url: 'unique-jewels', type: 'UniqueJewel' },
