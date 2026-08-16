@@ -1,0 +1,571 @@
+[
+  {
+    "name": "Stormhand",
+    "skills": [
+      {"type": "primary", "name": "Conductivity"},
+      {"type": "primary", "name": "Sigil of Power"},
+      {"type": "secondary", "name": "Spark"},
+      {"type": "secondary", "name": "Arc"},
+      {"type": "secondary", "name": "Ball Lightning of Static"},
+      {"type": "secondary", "name": "Greater Stormcall"},
+      {"type": "secondary", "name": "Greater Shock Nova"},
+      {"type": "secondary", "name": "Orb of Storms"},
+      {"type": "secondary", "name": "Stormcall"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Wrath"},
+      {"type": "utility", "name": "Purity of Lightning"},
+      {"type": "utility", "name": "Proximity Shield"}
+    ]
+  },
+  {
+    "name": "Frosthand",
+    "skills": [
+      {"type": "primary", "name": "Frost Bomb"},
+      {"type": "primary", "name": "Frostbite"},
+      {"type": "secondary", "name": "Frost Wall"},
+      {"type": "secondary", "name": "Eye of Winter"},
+      {"type": "secondary", "name": "Vortex"},
+      {"type": "secondary", "name": "Frostbolt"},
+      {"type": "secondary", "name": "Ice Nova"},
+      {"type": "secondary", "name": "Ice Nova of Projection"},
+      {"type": "secondary", "name": "Icestorm"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Purity of Ice"},
+      {"type": "utility", "name": "Discipline"}
+    ]
+  },
+  {
+    "name": "Flamehand",
+    "skills": [
+      {"type": "primary", "name": "Flame Wall"},
+      {"type": "primary", "name": "Flammability"},
+      {"type": "secondary", "name": "Greater Flame Dash"},
+      {"type": "secondary", "name": "Flameblast"},
+      {"type": "secondary", "name": "Vaal Flameblast"},
+      {"type": "secondary", "name": "Fireball"},
+      {"type": "secondary", "name": "Fireball of Impact"},
+      {"type": "secondary", "name": "Rolling Magma"},
+      {"type": "secondary", "name": "Flame Surge"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Purity of Fire"},
+      {"type": "utility", "name": "Anger"},
+      {"type": "utility", "name": "Flame Aegis"}
+    ]
+  },
+  {
+    "name": "Withertouch",
+    "skills": [
+      {"type": "primary", "name": "Bane"},
+      {"type": "primary", "name": "Temporal Chains"},
+      {"type": "secondary", "name": "Greater Soulrend"},
+      {"type": "secondary", "name": "Scourstorm"},
+      {"type": "secondary", "name": "Blight"},
+      {"type": "secondary", "name": "Essence Drain of Wickedness"},
+      {"type": "secondary", "name": "Altar of Chaos"},
+      {"type": "utility", "name": "Malevolence"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Clarity"},
+      {"type": "utility", "name": "Withering Step"},
+      {"type": "utility", "name": "Wither Totem"}
+    ]
+  },
+  {
+    "name": "Reanimator",
+    "skills": [
+      {"type": "primary", "name": "Raise Zombie of Gigantism"},
+      {"type": "primary", "name": "Desecrate"},
+      {"type": "secondary", "name": "Raise Zombie of Falling"},
+      {"type": "secondary", "name": "Summon Skeletons"},
+      {"type": "secondary", "name": "Flesh Offering"},
+      {"type": "secondary", "name": "Bone Offering"},
+      {"type": "secondary", "name": "Summon Raging Spirit"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Blasphemy Enfeeble"},
+      {"type": "utility", "name": "Relic of Binding"}
+    ]
+  },
+  {
+    "name": "Cruel Mistress",
+    "skills": [
+      {"type": "primary", "name": "Despair"},
+      {"type": "primary", "name": "Void Sphere"},
+      {"type": "secondary", "name": "Dark Bargain"},
+      {"type": "secondary", "name": "Voltaxic Burst"},
+      {"type": "secondary", "name": "Soulrend of Reaping"},
+      {"type": "secondary", "name": "Forbidden Rite Totem"},
+      {"type": "secondary", "name": "Summon Seeking Void"},
+      {"type": "secondary", "name": "Profane Cascade"},
+      {"type": "utility", "name": "Zealotry"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Envy"}
+    ]
+  },
+  {
+    "name": "Blade Ambusher",
+    "skills": [
+      {"type": "primary", "name": "Blade Trap"},
+      {"type": "primary", "name": "Trarthan Agility"},
+      {"type": "secondary", "name": "Spectral Throw of Trarthus"},
+      {"type": "secondary", "name": "Spectral Helix of Trarthus"},
+      {"type": "utility", "name": "Smoke Mine"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Summon Skitterbots"},
+      {"type": "utility", "name": "Bear Trap"}
+    ]
+  },
+  {
+    "name": "Shock Ambusher",
+    "skills": [
+      {"type": "primary", "name": "Conductivity"},
+      {"type": "primary", "name": "Vaal Lightning Trap"},
+      {"type": "secondary", "name": "Lightning Trap"},
+      {"type": "secondary", "name": "Lightning Spire Trap"},
+      {"type": "secondary", "name": "Ball Lightning of Orbiting Trap"},
+      {"type": "secondary", "name": "Lightning Warp Trap"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Smoke Mine"},
+      {"type": "utility", "name": "Summon Skitterbots"},
+      {"type": "utility", "name": "Zealotry"}
+    ]
+  },
+  {
+    "name": "Frost Ambusher",
+    "skills": [
+      {"type": "primary", "name": "Frost Shield"},
+      {"type": "primary", "name": "Greater Vortex Trap"},
+      {"type": "secondary", "name": "Ice Trap"},
+      {"type": "secondary", "name": "Creeping Frost Trap"},
+      {"type": "utility", "name": "Summon Skitterbots"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Arctic Armour"},
+      {"type": "utility", "name": "Vaal Arctic Armour"}
+    ]
+  },
+  {
+    "name": "Bladecaster",
+    "skills": [
+      {"type": "primary", "name": "Clutches of the Damned"},
+      {"type": "primary", "name": "Bloody Warp"},
+      {"type": "secondary", "name": "Seismic Crush"},
+      {"type": "secondary", "name": "Bladefall"},
+      {"type": "secondary", "name": "Blade Vortex"},
+      {"type": "secondary", "name": "Ethereal Knives"},
+      {"type": "secondary", "name": "Bladefall of Trarthus"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Aspect of the Spider"},
+      {"type": "utility", "name": "Frost Shield"}
+    ]
+  },
+  {
+    "name": "Bladebitter",
+    "skills": [
+      {"type": "primary", "name": "Viper Strike"},
+      {"type": "primary", "name": "Abyssal Cry"},
+      {"type": "secondary", "name": "Venom Gyre"},
+      {"type": "secondary", "name": "Profane Strike"},
+      {"type": "secondary", "name": "Cobra Lash"},
+      {"type": "secondary", "name": "Pestilent Strike"},
+      {"type": "utility", "name": "Whirling Blades"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Malevolence"},
+      {"type": "utility", "name": "Withering Step"},
+      {"type": "utility", "name": "Grace"}
+    ]
+  },
+  {
+    "name": "Eruptor",
+    "skills": [
+      {"type": "primary", "name": "Infernal Cry"},
+      {"type": "primary", "name": "Leap Slam"},
+      {"type": "primary", "name": "Triggerslam"},
+      {"type": "secondary", "name": "Volcanic Fissure of Snaking"},
+      {"type": "secondary", "name": "Consecrated Path"},
+      {"type": "secondary", "name": "Tectonic Slam"},
+      {"type": "secondary", "name": "Ashen Fissure"},
+      {"type": "utility", "name": "Molten Shell"},
+      {"type": "utility", "name": "Determination"},
+      {"type": "utility", "name": "Purity of Fire"},
+      {"type": "utility", "name": "Herald of Ash"},
+      {"type": "utility", "name": "Flame Link"}
+    ]
+  },
+  {
+    "name": "Ripper",
+    "skills": [
+      {"type": "primary", "name": "Tunnelslam"},
+      {"type": "primary", "name": "Enrage"},
+      {"type": "secondary", "name": "Cleave"},
+      {"type": "secondary", "name": "Vaal Cleave"},
+      {"type": "secondary", "name": "Slicing Wind"},
+      {"type": "secondary", "name": "Chain Hook of Trarthus"},
+      {"type": "secondary", "name": "Leap Slam of Groundbreaking"},
+      {"type": "utility", "name": "Molten Shell"},
+      {"type": "utility", "name": "Determination"},
+      {"type": "utility", "name": "Leap Slam"},
+      {"type": "utility", "name": "Vitality"}
+    ]
+  },
+  {
+    "name": "Earthshaker",
+    "skills": [
+      {"type": "primary", "name": "Intimidating Cry"},
+      {"type": "primary", "name": "Leap Slam"},
+      {"type": "secondary", "name": "Vaal Ground Slam"},
+      {"type": "secondary", "name": "Ground Slam"},
+      {"type": "secondary", "name": "Earthquake of Amplification"},
+      {"type": "secondary", "name": "Tectonic Cascade"},
+      {"type": "secondary", "name": "Sunder of Trarthus"},
+      {"type": "utility", "name": "Determination"},
+      {"type": "utility", "name": "Molten Shell"},
+      {"type": "utility", "name": "Burrow"},
+      {"type": "utility", "name": "Endure"},
+      {"type": "utility", "name": "Vaal Vitality"}
+    ]
+  },
+  {
+    "name": "Smoulderstrike",
+    "skills": [
+      {"type": "primary", "name": "Punishment"},
+      {"type": "primary", "name": "Inflame"},
+      {"type": "secondary", "name": "Vaal Molten Strike"},
+      {"type": "secondary", "name": "Infernal Blow of Immolation"},
+      {"type": "secondary", "name": "Molten Strike"},
+      {"type": "secondary", "name": "Flamebolt Strike"},
+      {"type": "utility", "name": "Anger"},
+      {"type": "utility", "name": "Leap Slam"},
+      {"type": "utility", "name": "Molten Shell"},
+      {"type": "utility", "name": "Flame Aegis"},
+      {"type": "utility", "name": "Infernal Cry"}
+    ]
+  },
+  {
+    "name": "Striker",
+    "skills": [
+      {"type": "primary", "name": "Vigilant Strike"},
+      {"type": "primary", "name": "Enduring Cry"},
+      {"type": "primary", "name": "Physical Aegis"},
+      {"type": "secondary", "name": "Heavy Strike of Vulnerability"},
+      {"type": "secondary", "name": "Boneshatter"},
+      {"type": "secondary", "name": "Dual Strike"},
+      {"type": "utility", "name": "Determination"},
+      {"type": "utility", "name": "Leap Slam"},
+      {"type": "utility", "name": "Molten Shell"},
+      {"type": "utility", "name": "Vitality"},
+      {"type": "utility", "name": "Vaal Ancestral Warchief"},
+      {"type": "utility", "name": "Decoy Totem"}
+    ]
+  },
+  {
+    "name": "Sanguimancer",
+    "skills": [
+      {"type": "primary", "name": "Boiling Blood"},
+      {"type": "primary", "name": "Storm Call of Trarthus"},
+      {"type": "primary", "name": "Bodyswap"},
+      {"type": "secondary", "name": "Exsanguinate"},
+      {"type": "secondary", "name": "Vaal Reap"},
+      {"type": "secondary", "name": "Reap"},
+      {"type": "secondary", "name": "Corrupted Blade Vortex of the Scythe"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Pride"},
+      {"type": "utility", "name": "Proximity Shield"},
+      {"type": "utility", "name": "Vaal Vitality"}
+    ]
+  },
+  {
+    "name": "Kineticist",
+    "skills": [
+      {"type": "primary", "name": "Elemental Weakness"},
+      {"type": "primary", "name": "Flame Wall"},
+      {"type": "secondary", "name": "Kinetic Bolt"},
+      {"type": "secondary", "name": "Barrage"},
+      {"type": "secondary", "name": "Greater Kinetic Blast"},
+      {"type": "secondary", "name": "Kinetic Blast of Clustering"},
+      {"type": "secondary", "name": "Kinetic Rain of Impact"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Haste"},
+      {"type": "utility", "name": "Inspiring Cry"}
+    ]
+  },
+  {
+    "name": "Warpriest",
+    "skills": [
+      {"type": "primary", "name": "Holy Relic"},
+      {"type": "primary", "name": "Smite"},
+      {"type": "secondary", "name": "Beacons of Faith"},
+      {"type": "secondary", "name": "Dominating Blow"},
+      {"type": "secondary", "name": "Raise Spectre: Holy Flame Elementals"},
+      {"type": "secondary", "name": "Touch of God"},
+      {"type": "utility", "name": "Purity of Lightning"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Herald of Purity"}
+    ]
+  },
+  {
+    "name": "Cardinal",
+    "skills": [
+      {"type": "primary", "name": "Holy Hammers"},
+      {"type": "primary", "name": "Holy Strike"},
+      {"type": "secondary", "name": "Holy Sweep"},
+      {"type": "secondary", "name": "Sanctified Strike"},
+      {"type": "secondary", "name": "Consecrated Path"},
+      {"type": "utility", "name": "Purity of Lightning"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Herald of Purity"},
+      {"type": "utility", "name": "Wrath"}
+    ]
+  },
+  {
+    "name": "Fallen Reverend",
+    "skills": [
+      {"type": "primary", "name": "Absolution"},
+      {"type": "primary", "name": "Raise Spectre of Transience"},
+      {"type": "primary", "name": "Desecrate"},
+      {"type": "secondary", "name": "Reinforce: Fallen Bishop"},
+      {"type": "secondary", "name": "Reinforce: Fallen Emperor"},
+      {"type": "secondary", "name": "Reinforce: Fallen Osseotitan"},
+      {"type": "utility", "name": "Wrath"},
+      {"type": "utility", "name": "Zealotry"},
+      {"type": "utility", "name": "Battlemage's Cry"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Frostblink"}
+    ]
+  },
+  {
+    "name": "Winter Deacon",
+    "skills": [
+      {"type": "primary", "name": "Frost Shield"},
+      {"type": "primary", "name": "Vaal Glacial Hammer"},
+      {"type": "secondary", "name": "Ice Crash"},
+      {"type": "secondary", "name": "Glacial Hammer"},
+      {"type": "secondary", "name": "Earthquake of Winter"},
+      {"type": "secondary", "name": "Heavy Strike of Trarthus"},
+      {"type": "utility", "name": "Hatred"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Frost Bomb"},
+      {"type": "utility", "name": "Arctic Armour"},
+      {"type": "utility", "name": "Purity of Ice"}
+    ]
+  },
+  {
+    "name": "Storming Zealot",
+    "skills": [
+      {"type": "primary", "name": "Unnerving Blast"},
+      {"type": "primary", "name": "Wave of Conviction"},
+      {"type": "secondary", "name": "Divine Ire"},
+      {"type": "secondary", "name": "Tornado of Elemental Turbulence"},
+      {"type": "secondary", "name": "Divine Retribution"},
+      {"type": "secondary", "name": "Shockwave Totem of Shocking"},
+      {"type": "utility", "name": "Wrath"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Flame Dash"}
+    ]
+  },
+  {
+    "name": "Flaming Charlatan",
+    "skills": [
+      {"type": "primary", "name": "Holy Flame Totem"},
+      {"type": "primary", "name": "Purifying Flame"},
+      {"type": "secondary", "name": "Holy Mortar"},
+      {"type": "secondary", "name": "Wave of Conviction of Trarthus"},
+      {"type": "secondary", "name": "Scorching Ray Totem"},
+      {"type": "secondary", "name": "Meteor"},
+      {"type": "utility", "name": "Lightning Warp"},
+      {"type": "utility", "name": "Flame Dash"},
+      {"type": "utility", "name": "Herald of Ash"},
+      {"type": "utility", "name": "Anger"}
+    ]
+  },
+  {
+    "name": "Toxicologist",
+    "skills": [
+      {"type": "primary", "name": "Withering Step"},
+      {"type": "primary", "name": "Chaotic Burst"},
+      {"type": "primary", "name": "Chaotic Shot"},
+      {"type": "secondary", "name": "Vaal Caustic Arrow"},
+      {"type": "secondary", "name": "Toxic Rain"},
+      {"type": "secondary", "name": "Scourge Arrow of Menace"},
+      {"type": "secondary", "name": "Caustic Arrow"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Blink Arrow"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Malevolence"},
+      {"type": "utility", "name": "Trarthan Agility"}
+    ]
+  },
+  {
+    "name": "Sniper",
+    "skills": [
+      {"type": "primary", "name": "Ensnaring Arrow"},
+      {"type": "primary", "name": "Poacher's Mark"},
+      {"type": "secondary", "name": "Greater Split Arrow"},
+      {"type": "secondary", "name": "Rain of Arrows of Saturation"},
+      {"type": "secondary", "name": "Tornado Shot"},
+      {"type": "secondary", "name": "Shrapnel Ballista"},
+      {"type": "secondary", "name": "Barrage of Volley Fire"},
+      {"type": "secondary", "name": "Siege Ballista of Trarthus"},
+      {"type": "secondary", "name": "Split Arrow"},
+      {"type": "secondary", "name": "Puncture"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Blink Arrow"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Frenzy"},
+      {"type": "utility", "name": "Haste"}
+    ]
+  },
+  {
+    "name": "Thunderquiver",
+    "skills": [
+      {"type": "primary", "name": "Lightning Arrow"},
+      {"type": "primary", "name": "Assassin's Mark"},
+      {"type": "secondary", "name": "Galvanic Arrow"},
+      {"type": "secondary", "name": "Greater Lightning Arrow"},
+      {"type": "secondary", "name": "Vaal Lightning Arrow"},
+      {"type": "secondary", "name": "Storm Rain"},
+      {"type": "utility", "name": "Wrath"},
+      {"type": "utility", "name": "Blink Arrow"},
+      {"type": "utility", "name": "Trarthan Agility"},
+      {"type": "utility", "name": "Precision"},
+      {"type": "utility", "name": "Dash"}
+    ]
+  },
+  {
+    "name": "Flamequiver",
+    "skills": [
+      {"type": "primary", "name": "Burning Arrow"},
+      {"type": "primary", "name": "Alchemist's Mark"},
+      {"type": "secondary", "name": "Vaal Burning Arrow"},
+      {"type": "secondary", "name": "Molten Well"},
+      {"type": "secondary", "name": "Artillery Ballista"},
+      {"type": "secondary", "name": "Explosive Arrow"},
+      {"type": "secondary", "name": "Blast Rain of Trarthus"},
+      {"type": "secondary", "name": "Conflagration"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Blink Arrow"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Blasphemy Flammability"}
+    ]
+  },
+  {
+    "name": "Manyshot",
+    "skills": [
+      {"type": "primary", "name": "Ice Shot"},
+      {"type": "primary", "name": "Vaal Grace"},
+      {"type": "secondary", "name": "Vaal Ice Shot"},
+      {"type": "secondary", "name": "Frigid Forkshot"},
+      {"type": "secondary", "name": "Icicle Rain"},
+      {"type": "secondary", "name": "Mirror Arrow"},
+      {"type": "utility", "name": "Hatred"},
+      {"type": "utility", "name": "Frost Bomb"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Blink Arrow"}
+    ]
+  },
+  {
+    "name": "Bastion",
+    "skills": [
+      {"type": "primary", "name": "Shield Crush"},
+      {"type": "primary", "name": "Shield Charge"},
+      {"type": "secondary", "name": "Spectral Shield Throw of Trarthus"},
+      {"type": "secondary", "name": "Tempest Shield"},
+      {"type": "secondary", "name": "Prismplate"},
+      {"type": "utility", "name": "Determination"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Intimidating Cry"},
+      {"type": "utility", "name": "Physical Aegis"},
+      {"type": "utility", "name": "Impenetrable Bastion"}
+    ]
+  },
+  {
+    "name": "Bloodletter",
+    "skills": [
+      {"type": "primary", "name": "Bloodthirst"},
+      {"type": "primary", "name": "Blood Mortar"},
+      {"type": "primary", "name": "Lacerate"},
+      {"type": "secondary", "name": "Bladestorm"},
+      {"type": "secondary", "name": "Perforate"},
+      {"type": "utility", "name": "Leap Slam"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Determination"},
+      {"type": "utility", "name": "Oil Slick"}
+    ]
+  },
+  {
+    "name": "Shattersword",
+    "skills": [
+      {"type": "primary", "name": "Call of Steel"},
+      {"type": "primary", "name": "Rallying Cry"},
+      {"type": "primary", "name": "Triggerblades"},
+      {"type": "secondary", "name": "Shattering Steel"},
+      {"type": "secondary", "name": "Splitting Steel"},
+      {"type": "secondary", "name": "Lancing Steel"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Whirling Blades"},
+      {"type": "utility", "name": "Grace"},
+      {"type": "utility", "name": "Brutal Teachings"}
+    ]
+  },
+  {
+    "name": "Swiftblade",
+    "skills": [
+      {"type": "primary", "name": "Cyclone of the Empire"},
+      {"type": "primary", "name": "Rallying Cry"},
+      {"type": "primary", "name": "Triggerblades"},
+      {"type": "secondary", "name": "Flicker Strike"},
+      {"type": "secondary", "name": "Vaal Double Strike"},
+      {"type": "utility", "name": "Pride"},
+      {"type": "utility", "name": "Leap Slam"},
+      {"type": "utility", "name": "Incite"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Steelskin Ally"}
+    ]
+  },
+  {
+    "name": "Combatant",
+    "skills": [
+      {"type": "primary", "name": "Inspiring Cry"},
+      {"type": "primary", "name": "Herald of Ice"},
+      {"type": "secondary", "name": "Frost Blades"},
+      {"type": "secondary", "name": "Wild Strike"},
+      {"type": "secondary", "name": "Spectral Helix"},
+      {"type": "secondary", "name": "Static Strike"},
+      {"type": "utility", "name": "Wrath"},
+      {"type": "utility", "name": "Dash"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Purity of Ice"}
+    ]
+  },
+  {
+    "name": "Mysterious Diver",
+    "skills": [
+      {"type": "primary", "name": "Elemental Hit of Ice"},
+      {"type": "primary", "name": "Frost Bomb"},
+      {"type": "secondary", "name": "Frost Blades"},
+      {"type": "secondary", "name": "Wild Strike"},
+      {"type": "secondary", "name": "Herald of Ice"},
+      {"type": "utility", "name": "Hatred"},
+      {"type": "utility", "name": "Purity of Ice"},
+      {"type": "utility", "name": "Frostblink"},
+      {"type": "utility", "name": "Dash"}
+    ]
+  }
+]
