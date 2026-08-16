@@ -121,7 +121,7 @@ export interface StatFilter {
   text: string
   tag: FilterTag
   oils?: string[]
-  mercenary?: { icon?: string }
+  mercenary?: { icon?: string, tier?: number }
   sources: StatCalculated['sources']
   not?: true
   roll?: {
@@ -157,6 +157,7 @@ const _INTERNAL_TRADE_IDS = [
   'item.crit',
   'item.aps',
   'item.has_empty_modifier',
+  'item.mercenary_6link',
   'item.map_item_quantity',
   'item.map_item_rarity',
   'item.map_pack_size',
@@ -212,5 +213,6 @@ export enum FilterTag {
   MercenaryPrimary = 'mercenary-primary',
   MercenarySecondary = 'mercenary-secondary',
   MercenaryUtility = 'mercenary-utility',
+  MercenarySupport = 'mercenary-support',
   FilterGroup = 'filter-group'
 }

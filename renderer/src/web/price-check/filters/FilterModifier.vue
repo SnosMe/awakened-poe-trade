@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="flex flex-col min-w-0 flex-1">
-      <div class="pb-px flex items-baseline justify-between">
+      <div class="flex items-baseline" :class="showInputs && 'justify-between'">
         <div class="flex items-baseline min-w-0 mr-2">
           <button :class="[$style.checkbox, { [$style.checked]: !isDisabled, [$style.uncheckedHint]: isDisabled && groupExpanded }]"
             @click="toggleFilter" type="button">
@@ -15,6 +15,8 @@
           <button :class="$style.labelBtn" @click="smartToggle" type="button">
             <img v-if="filter.mercenary?.icon"
               :src="filter.mercenary.icon">
+            <span v-if="filter.not && miniFilter"
+              :class="[$style.tag, $style['tag-not']]">{{ t('filters.tag_not') }}</span>
             <div class="search-text flex-1 relative flex min-w-0" style="line-height: 1rem;">
               <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
               <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
@@ -25,19 +27,22 @@
             <i :class="groupExpanded ? 'fas fa-chevron-down' : 'fas fa-chevron-right'" />
           </button>
         </div>
-        <div class="flex items-baseline gap-x-1">
+        <filter-modifier-tiers v-if="miniFilter && !showInputs"
+          :filter="filter" :item="item" />
+        <div v-else-if="showInputs"
+          class="flex items-baseline gap-x-1">
           <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
           <div class="flex gap-x-px">
             <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
-              v-if="showInputs" ref="inputMinEl"
+              ref="inputMinEl"
               v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
             <input :class="$style['rollInput']" :placeholder="t('max')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
-              v-if="showInputs" ref="inputMaxEl"
+              ref="inputMaxEl"
               v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
           </div>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex pt-px" v-if="!miniFilter">
         <div class="w-5 flex items-start">
           <ui-popover v-if="isHidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
             <template #target>
@@ -127,6 +132,7 @@ export default defineComponent({
 
     const showTag = computed(() =>
       props.filter.tag !== FilterTag.Property &&
+      props.filter.tag !== FilterTag.MercenarySupport &&
       props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
       props.item.info.refName !== 'Chronicle of Atzoatl' &&
       props.item.info.refName !== 'Mirrored Tablet' &&
@@ -238,6 +244,13 @@ export default defineComponent({
         set (value: '' | number | undefined) { props.filter.roll!.max = value }
       }),
       tag: computed(() => props.filter.tag),
+      miniFilter: computed(() => !props.filter.hidden && (
+        (props.item.info.refName === 'Mercenary Warrant' && props.grouped) ||
+        props.item.info.refName === 'Chronicle of Atzoatl' ||
+        props.item.info.refName === 'Mirrored Tablet' ||
+        props.item.info.refName === 'Filled Coffin' ||
+        props.item.category === ItemCategory.Gem
+      )),
       // TODO: change
       changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
       showInputs: computed(() => props.filter.roll != null && !props.filter.oils),
@@ -320,6 +333,10 @@ export default defineComponent({
     position: relative;
     top: 2px;
     margin-top: -100%;
+  }
+
+  & > .tag {
+    margin-right: theme('spacing.1');
   }
 }
 

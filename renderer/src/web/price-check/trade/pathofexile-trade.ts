@@ -5,6 +5,7 @@ import { DateTime } from 'luxon'
 import { Host } from '@/web/background/IPC'
 import { TradeResponse, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { stat, STAT_BY_REF_V2, pseudoStatByRef } from '@/assets/data'
+import { decodeFamilyFromSource as decodeMercenarySupports } from '../filters/pseudo/mercenary'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
@@ -601,19 +602,77 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         filters: group.stats.flatMap(stat => everyTradeIdToQuery(stat))
       })
     } else if (group.group === 'mercenary') {
-      const { meta: skill, stats: supports } = group
+      const { meta: skill, stats } = group
 
       if (skill.tag === FilterTag.MercenaryPrimary) {
         appendAndFilter({ ...skill, disabled: false }, qAnd, query.stats)
       }
 
+      for (const stat of stats) {
+        if (skill.disabled) break
+
+        if (stat.not) {
+          // add only when enabled, so we don't clutter web UI when players
+          // want to open in a browser and check the filters applied
+          if (!stat.disabled) {
+            qNot.filters.push(...everyTradeIdToQuery(stat))
+          }
+        } else if (stat.tradeId[0] === 'item.mercenary_6link') {
+          if (stat.disabled) continue
+
+          const possibleSupports = stat.sources.map(source => decodeMercenarySupports(source))
+          const tier3Count = (typeof stat.roll?.min === 'number') ? Math.min(Math.max(stat.roll.min, 0), 5) : 0
+
+          if (tier3Count < 5) {
+            query.stats.push({
+              type: 'mercenary',
+              disabled: false,
+              ...weightedGroupToQuery({
+                allOf: [skill.tradeId],
+                someOf: {
+                  min: 5,
+                  ids: possibleSupports.map(family => {
+                    if (family.length > 2) {
+                      family = family.filter(stat => stat.mercenary!.tier! >= 2)
+                    }
+                    return family.flatMap(stat => stat.trade.ids[ModifierType.Pseudo])
+                  })
+                }
+              })
+            })
+          }
+
+          if (tier3Count > 0) {
+            query.stats.push({
+              type: 'mercenary',
+              disabled: false,
+              ...weightedGroupToQuery({
+                allOf: [skill.tradeId],
+                someOf: {
+                  min: tier3Count,
+                  ids: possibleSupports.map(family => {
+                    return family[family.length - 1].trade.ids[ModifierType.Pseudo]
+                  })
+                }
+              })
+            })
+          }
+        }
+      }
+
+      const linkedSupports = stats.filter(stat => !stat.not && !INTERNAL_TRADE_IDS.includes(stat.tradeId[0]))
+
+      // not using `weightedGroupToQuery` for better trade site experience
+      const enabledLinksCount = linkedSupports.filter(stat => !stat.disabled).length
       query.stats.push({
         type: 'mercenary',
-        value: { min: 1 + supports.filter(stat => !stat.disabled).length },
-        disabled: skill.disabled,
+        value: (!skill.disabled && enabledLinksCount)
+          ? { min: 1 + enabledLinksCount }
+          : undefined,
+        disabled: skill.disabled || !enabledLinksCount,
         filters: [
           ...everyTradeIdToQuery(skill),
-          ...supports.flatMap(stat => everyTradeIdToQuery(stat))
+          ...linkedSupports.flatMap(stat => everyTradeIdToQuery(stat))
         ]
       })
     }
@@ -728,6 +787,37 @@ function getMinMax (roll: StatFilter['roll'], divisor: number) {
   const b = typeof roll.max === 'number' ? roll.max * sign / divisor : undefined
 
   return !roll.tradeInvert ? { min: a, max: b } : { min: b, max: a }
+}
+
+interface WeightedGroup {
+  someOf?: { min: number, ids: Array<StatFilter['tradeId']> }
+  allOf?: Array<StatFilter['tradeId']>
+}
+
+function weightedGroupToQuery (group: WeightedGroup): Pick<TradeStatGroup, 'value' | 'filters'> {
+  const someOf = group.someOf ?? { min: 0, ids: [] }
+  const allOf = group.allOf ?? []
+
+  // max possible surplus from `someOf` ids
+  const surplus = Math.max(0, someOf.ids.length - someOf.min)
+  // the weight for all `allOf` conditions must overpower the `someOf` surplus
+  const weight = surplus + 1
+
+  const totalMin = someOf.min + allOf.length * weight
+  const flatIds: string[] = someOf.ids.flatMap(familyIds => familyIds)
+
+  for (const familyIds of allOf) {
+    for (const id of familyIds) {
+      for (let i = 0; i < weight; i++) {
+        flatIds.push(id)
+      }
+    }
+  }
+
+  return {
+    value: { min: totalMin },
+    filters: flatIds.map(id => ({ id }))
+  }
 }
 
 type BareStatFilter = Pick<StatFilter, 'roll' | 'option' | 'disabled' | 'tradeId'>

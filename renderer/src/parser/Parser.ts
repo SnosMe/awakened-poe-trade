@@ -478,6 +478,8 @@ function parseItemLevel (section: string[], item: ParsedItem) {
   let prefix = _$.ITEM_LEVEL
   if (item.info.refName === 'Filled Coffin') {
     prefix = _$.CORPSE_LEVEL
+  } else if (item.info.refName === 'Mercenary Warrant') {
+    prefix = _$.MERCENARY_LEVEL
   }
 
   for (const line of section) {

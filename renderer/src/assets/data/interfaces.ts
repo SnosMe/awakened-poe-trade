@@ -21,7 +21,7 @@ export interface Stat {
   modFamily?: string[]
   fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
   anointments?: Array<{ roll: number, oils: string }>
-  mercenary?: { icon?: string, supportTier?: number }
+  mercenary?: { icon?: string, supports?: string[], tier?: number, canonical?: string }
   trade: {
     inverted?: true
     option?: true
@@ -247,6 +247,7 @@ export interface TranslationDict {
   VESTIGIAL_IMPLICIT: string
   SCRYING_MAP_AREA: string
   CHART_SULPHUR: string
+  MERCENARY_LEVEL: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

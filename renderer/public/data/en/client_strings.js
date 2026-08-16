@@ -127,6 +127,7 @@ export default {
   VESTIGIAL_IMPLICIT: 'Vestigial Implicit Modifier',
   SCRYING_MAP_AREA: 'Map Area: ',
   CHART_SULPHUR: "Dead Man's Sulphur: ",
+  MERCENARY_LEVEL: 'Mercenary Level: ',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,
