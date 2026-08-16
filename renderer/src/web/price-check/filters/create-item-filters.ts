@@ -276,7 +276,7 @@ export function createFilters (
     // item.isCorrupted && -- let the buyer corrupt
     (item.category === ItemCategory.Jewel || item.category === ItemCategory.AbyssJewel))
 
-  if (item.info.craftable && !item.isUnmodifiable) {
+  if (!item.isUnmodifiable && (item.info.craftable || item.rarity === ItemRarity.Unique)) {
     filters.corrupted = {
       value: item.isCorrupted,
       exact: forAdornedJewel
