@@ -4,7 +4,13 @@
       :filter="group.meta"
       :item="item"
       v-model:group-expanded="group.expanded"
-      @submit="handleStatsSubmit" />
+      @submit="handleStatsSubmit">
+      <template #inputs>
+        <FilterModifierLinks v-if="group.group === 'mercenary'"
+          class="ml-auto"
+          :group="group" />
+      </template>
+    </FilterModifier>
     <template v-if="group.expanded">
       <FilterModifier v-for="filter of group.stats" :key="`${filter.tag}_${filter.text}`"
         :filter="filter"
@@ -24,9 +30,10 @@ const emit = defineEmits<{
 }>()
 
 import FilterModifier from './FilterModifier.vue'
+import FilterModifierLinks from './FilterModifierLinks.vue'
 
 defineProps<{
-  group: FilterGroup,
+  group: FilterGroup
   item: ParsedItem
 }>()
 
@@ -34,7 +41,3 @@ function handleStatsSubmit () {
   emit('submit')
 }
 </script>
-
-<style lang="postcss" module>
-
-</style>

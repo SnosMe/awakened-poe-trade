@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="flex flex-col min-w-0 flex-1">
-      <div class="flex items-baseline" :class="showInputs && 'justify-between'">
+      <div class="flex items-baseline">
         <div class="flex items-baseline min-w-0 mr-2">
           <button :class="[$style.checkbox, { [$style.checked]: !isDisabled, [$style.uncheckedHint]: isDisabled && groupExpanded }]"
             @click="toggleFilter" type="button">
@@ -29,18 +29,20 @@
         </div>
         <filter-modifier-tiers v-if="miniFilter && !showInputs"
           :filter="filter" :item="item" />
-        <div v-else-if="showInputs"
-          class="flex items-baseline gap-x-1">
-          <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
-          <div class="flex gap-x-px">
-            <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
-              ref="inputMinEl"
-              v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
-            <input :class="$style['rollInput']" :placeholder="t('max')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
-              ref="inputMaxEl"
-              v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
+        <slot name="inputs">
+          <div v-if="showInputs"
+            class="flex items-baseline gap-x-1 ml-auto">
+            <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
+            <div class="flex gap-x-px">
+              <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
+                ref="inputMinEl"
+                v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
+              <input :class="$style['rollInput']" :placeholder="t('max')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
+                ref="inputMaxEl"
+                v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
+            </div>
           </div>
-        </div>
+        </slot>
       </div>
       <div class="flex pt-px" v-if="!miniFilter">
         <div class="w-5 flex items-start">
@@ -245,7 +247,8 @@ export default defineComponent({
       }),
       tag: computed(() => props.filter.tag),
       miniFilter: computed(() => !props.filter.hidden && (
-        (props.item.info.refName === 'Mercenary Warrant' && props.grouped) ||
+        props.filter.tag === FilterTag.MercenarySupport ||
+        (props.filter.tag === FilterTag.Property && props.item.info.refName === 'Mercenary Warrant') ||
         props.item.info.refName === 'Chronicle of Atzoatl' ||
         props.item.info.refName === 'Mirrored Tablet' ||
         props.item.info.refName === 'Filled Coffin' ||
@@ -302,6 +305,7 @@ export default defineComponent({
 .checkbox {
   display: flex;
   min-width: theme('width.5');
+  margin-top: -99px; /* not allowed to extend baseline */
 
   &:not(.checked) {
     color: theme('colors.gray.500');
@@ -332,7 +336,7 @@ export default defineComponent({
     margin-right: theme('spacing.1');
     position: relative;
     top: 2px;
-    margin-top: -100%;
+    margin-top: -99px; /* not allowed to extend baseline */
   }
 
   & > .tag {
@@ -345,6 +349,7 @@ export default defineComponent({
   min-width: theme('width.5');
   padding-left: theme('spacing[1.5]');
   color: theme('colors.gray.500');
+  margin-top: -99px; /* not allowed to extend baseline */
 }
 
 .rollInput {

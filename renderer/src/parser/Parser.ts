@@ -747,9 +747,10 @@ function parseMercenaryGems (section: string[], item: ParsedItem) {
     const support = tryParseTranslation({ string: line, unscalable: true }, ModifierType.Pseudo, ItemCategory.MercenaryWarrant)
     if (support) {
       group.push(support)
-    } else {
+    }
+    if (!support || (support.stat.mercenary!.syntheticFamily && support.stat.mercenary!.tier !== 3)) {
       item.unknownModifiers.push({
-        text: line,
+        text: `${line} [${section[0]}]`,
         type: ModifierType.Pseudo
       })
     }

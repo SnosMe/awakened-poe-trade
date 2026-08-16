@@ -608,22 +608,40 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         appendAndFilter({ ...skill, disabled: false }, qAnd, query.stats)
       }
 
+      const socketedSupports = stats.filter(stat => !stat.not && !INTERNAL_TRADE_IDS.includes(stat.tradeId[0]))
+      const enabledSocketedCount = socketedSupports.filter(stat => !stat.disabled).length
+
+      const localNotMode = stats.some(stat => stat.tradeId[0] === 'item.mercenary_6link')
+      const localNotStats = (localNotMode) ? stats.filter(stat => stat.not && !stat.disabled) : []
+
       for (const stat of stats) {
-        if (skill.disabled) break
+        if (skill.disabled || enabledSocketedCount === 5) break
 
         if (stat.not) {
+          if (localNotMode) continue
+
           // add only when enabled, so we don't clutter web UI when players
           // want to open in a browser and check the filters applied
           if (!stat.disabled) {
             qNot.filters.push(...everyTradeIdToQuery(stat))
           }
         } else if (stat.tradeId[0] === 'item.mercenary_6link') {
-          if (stat.disabled) continue
+          const forceEnabled = (stat.disabled && localNotStats.length > 0)
+          if (stat.disabled && !forceEnabled) continue
 
-          const possibleSupports = stat.sources.map(source => decodeMercenarySupports(source))
-          const tier3Count = (typeof stat.roll?.min === 'number') ? Math.min(Math.max(stat.roll.min, 0), 5) : 0
+          const possibleSupports = stat.sources
+            .map(source => decodeMercenarySupports(source))
+            .filter(family => !localNotStats.some(notStat =>
+              notStat.statRef === family[0].mercenary!.canonical ||
+              notStat.statRef === family[0].ref
+            ))
+          let tier3Count = (typeof stat.roll?.min === 'number') ? Math.min(Math.max(stat.roll.min, 0), 5) : 0
+          if (forceEnabled) {
+            tier3Count = 0
+          }
 
           if (tier3Count < 5) {
+            // 6-Link group
             query.stats.push({
               type: 'mercenary',
               disabled: false,
@@ -633,7 +651,8 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
                   min: 5,
                   ids: possibleSupports.map(family => {
                     if (family.length > 2) {
-                      family = family.filter(stat => stat.mercenary!.tier! >= 2)
+                      const minTier = (family[0].mercenary!.syntheticFamily) ? 3 : 2
+                      family = family.filter(stat => stat.mercenary!.tier! >= minTier)
                     }
                     return family.flatMap(stat => stat.trade.ids[ModifierType.Pseudo])
                   })
@@ -643,6 +662,7 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
           }
 
           if (tier3Count > 0) {
+            // Tier-3 Gems group
             query.stats.push({
               type: 'mercenary',
               disabled: false,
@@ -651,6 +671,8 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
                 someOf: {
                   min: tier3Count,
                   ids: possibleSupports.map(family => {
+                    // we simply count any last gem in the family as Tier 3,
+                    // users can override this with "Not" filter, e.g. to remove "Knockback (Tier: 1)"
                     return family[family.length - 1].trade.ids[ModifierType.Pseudo]
                   })
                 }
@@ -660,21 +682,23 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         }
       }
 
-      const linkedSupports = stats.filter(stat => !stat.not && !INTERNAL_TRADE_IDS.includes(stat.tradeId[0]))
-
       // not using `weightedGroupToQuery` for better trade site experience
-      const enabledLinksCount = linkedSupports.filter(stat => !stat.disabled).length
       query.stats.push({
         type: 'mercenary',
-        value: (!skill.disabled && enabledLinksCount)
-          ? { min: 1 + enabledLinksCount }
+        value: (!skill.disabled && enabledSocketedCount)
+          ? { min: 1 + enabledSocketedCount }
           : undefined,
-        disabled: skill.disabled || !enabledLinksCount,
+        // for a Skill without any checked Support Gems we use a simple AND filter below
+        disabled: skill.disabled || !enabledSocketedCount,
         filters: [
           ...everyTradeIdToQuery(skill),
-          ...linkedSupports.flatMap(stat => everyTradeIdToQuery(stat))
+          ...socketedSupports.flatMap(stat => everyTradeIdToQuery(stat))
         ]
       })
+
+      if (!skill.disabled && !enabledSocketedCount) {
+        appendAndFilter(skill, qAnd, query.stats)
+      }
     }
   }
 

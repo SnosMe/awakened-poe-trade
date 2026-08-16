@@ -28,7 +28,11 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
 
   const rules = BUILD_RULES.find(rule => rule.build === item.mercenaryBuild!.name)
 
-  for (const [skill, ...supports] of item.mercenarySkills!) {
+  for (let [skill, ...supports] of item.mercenarySkills!) {
+    const rawSupports = supports
+    supports = rawSupports.filter(support =>
+      !support.stat.mercenary!.syntheticFamily || support.stat.mercenary!.tier === 3)
+
     const skillType = item.mercenaryBuild!.skills.find(buildSkill =>
       buildSkill.name === skill.stat.ref)!.type
     const skillFilter = skillToFilter({
@@ -39,7 +43,7 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
     })
 
     if (!supports.length) {
-      if (skillType === 'primary') {
+      if (skillType === 'primary' && !rawSupports.length) {
         skillFilter.hidden = 'filters.mercenary_primary_no_support'
       }
       out.push(skillFilter)
@@ -69,15 +73,13 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
 
     if (supports.length === 5 && possibleSupports.length) {
       const tier3Count = supports.filter(support => support.stat.mercenary!.tier! >= 3).length
-      if (tier3Count > 1) {
-        filterGroup.stats.push(propToFilter({
-          ref: '6-link',
-          tradeId: 'item.mercenary_6link',
-          roll: { min: 0, max: 5, value: tier3Count },
-          sources: possibleSupports.map(family => encodeFamilyToSource(family)),
-          disabled: true
-        }, { filters: [], item, searchInRange: 0, statsByType: [] }))
-      }
+      filterGroup.stats.push(propToFilter({
+        ref: '6-Link',
+        tradeId: 'item.mercenary_6link',
+        roll: { min: 0, max: 5, value: tier3Count },
+        sources: possibleSupports.map(family => encodeFamilyToSource(family)),
+        disabled: true
+      }, { filters: [], item, searchInRange: 0, statsByType: [] }))
     }
 
     for (const support of supports) {
@@ -112,26 +114,28 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
       })
     }
 
-    for (const family of possibleSupports) {
-      const linked = family[0].mercenary!.canonical
-        ? supports.some(support => support.stat.mercenary!.canonical === family[0].mercenary!.canonical)
-        : supports.some(support => support.stat.ref === family[0].ref)
-      if (linked) continue
+    if (supports.length === 5 && possibleSupports.length) {
+      for (const family of possibleSupports) {
+        const linked = family[0].mercenary!.canonical
+          ? rawSupports.some(support => support.stat.mercenary!.canonical === family[0].mercenary!.canonical)
+          : rawSupports.some(support => support.stat.ref === family[0].ref)
+        if (linked) continue
 
-      let canonStat = family[0]
-      if (family[0].mercenary!.canonical) {
-        canonStat = family.find(support => support.ref === family[0].mercenary!.canonical)!
+        let canonStat = family[0]
+        if (family[0].mercenary!.canonical) {
+          canonStat = family.find(support => support.ref === family[0].mercenary!.canonical)!
+        }
+
+        filterGroup.stats.push({
+          tradeId: family.flatMap(support => support.trade.ids[ModifierType.Pseudo]),
+          statRef: canonStat.ref,
+          text: canonStat.matchers[0].string,
+          tag: FilterTag.MercenarySupport,
+          sources: [],
+          not: true,
+          disabled: true
+        })
       }
-
-      filterGroup.stats.push({
-        tradeId: family.flatMap(support => support.trade.ids[ModifierType.Pseudo]),
-        statRef: canonStat.ref,
-        text: canonStat.matchers[0].string,
-        tag: FilterTag.MercenarySupport,
-        sources: [],
-        not: true,
-        disabled: true
-      })
     }
 
     out.push(filterGroup)
