@@ -71,7 +71,6 @@ export interface ItemFilters {
     name: string
     nameTrade: string
   }
-  scryingMapArea?: string
   itemLevel?: FilterNumeric
   stackSize?: FilterNumeric
   unidentified?: {
