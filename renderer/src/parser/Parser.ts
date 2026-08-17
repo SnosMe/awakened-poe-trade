@@ -682,7 +682,7 @@ function parseWeapon (section: string[], item: ParsedItem) {
 }
 
 function parseAccessory (section: string[], item: ParsedItem) {
-  if (!item.category || !ACCESSORY.has(item.category)) return 'PARSER_SKIPPED'
+  if (!ACCESSORY.has(item.category!) && item.category !== ItemCategory.Quiver) return 'PARSER_SKIPPED'
 
   if (parseMemoryStrandsNested(section, item)) {
     return 'SECTION_PARSED'
