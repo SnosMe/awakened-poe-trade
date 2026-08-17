@@ -39,12 +39,12 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseCategoryByHelpText,
   { virtual: parseMapTier },
   { virtual: normalizeName },
-  parseVaalGemName,
   { virtual: findInDatabase },
   // -----------
   parseItemLevel,
   parseTalismanTier,
   parseGem,
+  parseVaalGem,
   parseArmour,
   parseWeapon,
   parseAccessory,
@@ -499,17 +499,13 @@ function parseTalismanTier (section: string[], item: ParsedItem) {
   return 'SECTION_SKIPPED'
 }
 
-function parseVaalGemName (section: string[], item: ParserState) {
+function parseVaalGem (section: string[], item: ParserState) {
   if (item.category !== ItemCategory.Gem) return 'PARSER_SKIPPED'
 
-  // TODO blocked by https://www.pathofexile.com/forum/view-thread/3231236
   if (section.length === 1) {
-    let gemName: string | undefined
-    if (ITEM_BY_TRANSLATED('GEM', section[0])) {
-      gemName = section[0]
-    }
-    if (gemName) {
-      item.name = ITEM_BY_TRANSLATED('GEM', gemName)![0].refName
+    const gemInfo = ITEM_BY_TRANSLATED('GEM', section[0])
+    if (gemInfo) {
+      item.vaalGem = gemInfo[0]
       return 'SECTION_PARSED'
     }
   }

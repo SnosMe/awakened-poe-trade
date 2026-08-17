@@ -60,6 +60,7 @@ export interface ParsedItem {
   chartSulphur?: number
 
   gemLevel?: number
+  vaalGem?: BaseType
   imbuedGem?: boolean
   mercenaryBuild?: MercenaryBuild
   mercenarySkills?: ParsedStat[][]

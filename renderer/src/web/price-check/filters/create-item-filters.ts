@@ -468,6 +468,15 @@ function createGemFilters (
     }
   }
 
+  if (item.vaalGem) {
+    filters.searchExact.sub = {
+      baseType: item.vaalGem.name,
+      baseTypeTrade: t(opts, item.vaalGem),
+      discriminatorTrade: item.info.tradeDisc,
+      disabled: false
+    }
+  }
+
   filters.corrupted = {
     value: item.isCorrupted
   }
