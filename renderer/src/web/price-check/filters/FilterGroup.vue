@@ -3,8 +3,7 @@
     <FilterModifier :key="`${group.meta.tag}_${group.meta.text}`"
       :filter="group.meta"
       :item="item"
-      v-model:group-expanded="group.expanded"
-      @submit="handleStatsSubmit">
+      v-model:group-expanded="group.expanded">
       <template #inputs>
         <FilterModifierLinks v-if="group.group === 'mercenary'"
           class="ml-auto"
@@ -15,8 +14,7 @@
       <FilterModifier v-for="filter of group.stats" :key="`${filter.tag}_${filter.text}`"
         :filter="filter"
         :item="item"
-        grouped
-        @submit="handleStatsSubmit" />
+        grouped />
     </template>
   </div>
 </template>
@@ -25,10 +23,6 @@
 import { FilterGroup } from './interfaces'
 import { ParsedItem } from '@/parser'
 
-const emit = defineEmits<{
-  (e: 'submit'): void
-}>()
-
 import FilterModifier from './FilterModifier.vue'
 import FilterModifierLinks from './FilterModifierLinks.vue'
 
@@ -36,8 +30,4 @@ defineProps<{
   group: FilterGroup
   item: ParsedItem
 }>()
-
-function handleStatsSubmit () {
-  emit('submit')
-}
 </script>

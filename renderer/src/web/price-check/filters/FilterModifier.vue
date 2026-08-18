@@ -9,10 +9,10 @@
       <div class="flex items-baseline">
         <div class="flex items-baseline min-w-0 mr-2">
           <button :class="[$style.checkbox, { [$style.checked]: !isDisabled, [$style.uncheckedHint]: isDisabled && groupExpanded }]"
-            @click="toggleFilter" type="button">
+            @click="toggleFilter" type="submit">
             <i :class="isDisabled ? 'far fa-square' : 'fas fa-check-square'" />
           </button>
-          <button :class="$style.labelBtn" @click="smartToggle" type="button">
+          <button :class="$style.labelBtn" @click="smartToggle" type="submit">
             <img v-if="filter.mercenary?.icon"
               :src="filter.mercenary.icon">
             <span v-if="filter.not && miniFilter"
@@ -95,7 +95,7 @@ import SourceInfo from './SourceInfo.vue'
 
 export default defineComponent({
   components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider, UiPopover },
-  emits: ['submit', 'update:groupExpanded'],
+  emits: ['update:groupExpanded'],
   props: {
     filter: {
       type: Object as PropType<StatFilter>,
@@ -200,11 +200,10 @@ export default defineComponent({
     }
 
     function toggleFilter (e: MouseEvent) {
-      if (e.detail === 0) {
-        ctx.emit('submit')
-      } else {
-        props.filter.disabled = !props.filter.disabled
-      }
+      if (e.detail === 0) return
+      e.preventDefault()
+
+      props.filter.disabled = !props.filter.disabled
     }
 
     function toggleExpanded () {
@@ -212,17 +211,16 @@ export default defineComponent({
     }
 
     function smartToggle (e: MouseEvent) {
-      if (e.detail === 0) {
-        ctx.emit('submit')
-      } else {
-        if (!props.filter.disabled && props.groupExpanded === true) {
-          ctx.emit('update:groupExpanded', false)
-        } else {
-          props.filter.disabled = !props.filter.disabled
+      if (e.detail === 0) return
+      e.preventDefault()
 
-          if (!props.filter.disabled && props.groupExpanded === false) {
-            ctx.emit('update:groupExpanded', true)
-          }
+      if (!props.filter.disabled && props.groupExpanded === true) {
+        ctx.emit('update:groupExpanded', false)
+      } else {
+        props.filter.disabled = !props.filter.disabled
+
+        if (!props.filter.disabled && props.groupExpanded === false) {
+          ctx.emit('update:groupExpanded', true)
         }
       }
     }
