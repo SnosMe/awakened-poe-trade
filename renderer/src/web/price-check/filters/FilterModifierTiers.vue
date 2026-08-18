@@ -72,6 +72,7 @@ export default defineComponent({
 <style lang="postcss" module>
 .tier-1, .tier-2, .not-tier-1, .merc-gilded {
   @apply rounded px-1;
+  white-space: nowrap;
 }
 
 .tier-1 {

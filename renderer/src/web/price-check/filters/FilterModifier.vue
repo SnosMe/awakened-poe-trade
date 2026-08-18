@@ -28,7 +28,8 @@
           </button>
         </div>
         <filter-modifier-tiers v-if="miniFilter && !showInputs"
-          :filter="filter" :item="item" />
+          :filter="filter" :item="item"
+          :class="{ 'mr-4': Boolean(rollOptions) }" />
         <slot name="inputs">
           <div v-if="showInputs"
             class="flex items-baseline gap-x-1 ml-auto">
@@ -41,6 +42,14 @@
                 ref="inputMaxEl"
                 v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
             </div>
+          </div>
+          <div v-else-if="rollOptions" :class="$style.rollOptions">
+            <button v-for="option of rollOptions" :key="option.value" type="submit"
+              @click="handleOptionClick($event, option.value)"
+              :class="[$style.rollOption, {
+                [$style.filterChecked]: !filter.disabled,
+                [$style.checked]: option.value === filter.option!.value
+              }]">{{ option.text }}</button>
           </div>
         </slot>
       </div>
@@ -92,6 +101,12 @@ import { AppConfig } from '@/web/Config'
 import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
 import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
+import { SearchMode as MercSearchMode } from './pseudo/mercenary.js'
+
+interface RollOption {
+  text: string
+  value: number
+}
 
 export default defineComponent({
   components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider, UiPopover },
@@ -199,6 +214,18 @@ export default defineComponent({
       props.filter.disabled = false
     }
 
+    function handleOptionClick (e: MouseEvent, value: number) {
+      if (e.detail === 0) return
+      e.preventDefault()
+
+      if (value === props.filter.option!.value) {
+        props.filter.disabled = !props.filter.disabled
+      } else {
+        props.filter.option!.value = value
+        props.filter.disabled = false
+      }
+    }
+
     function toggleFilter (e: MouseEvent) {
       if (e.detail === 0) return
       e.preventDefault()
@@ -255,6 +282,14 @@ export default defineComponent({
       // TODO: change
       changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
       showInputs: computed(() => props.filter.roll != null && !props.filter.oils),
+      rollOptions: computed<RollOption[] | undefined>(() => {
+        if (props.filter.tag === FilterTag.MercenarySupport && props.filter.option) {
+          return [
+            { text: t('filters.option_merc_required'), value: MercSearchMode.Required },
+            { text: t('filters.option_merc_optional'), value: MercSearchMode.Optional }
+          ]
+        }
+      }),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
       text: computed(() => {
@@ -280,6 +315,7 @@ export default defineComponent({
           )
         )),
       inputFocus,
+      handleOptionClick,
       toggleFilter,
       toggleExpanded,
       smartToggle
@@ -380,6 +416,31 @@ export default defineComponent({
   @apply rounded;
   @apply px-2;
   text-align: center;
+}
+
+.rollOptions {
+  display: flex;
+  align-items: baseline;
+  gap: theme('spacing.1');
+  margin: -99px 0; /* not allowed to extend baseline */
+  margin-left: auto;
+}
+
+.rollOption {
+  background: theme('colors.gray.700');
+  color: theme('colors.gray.400');
+  padding: 0 theme('spacing.2');
+  border: 1px solid transparent;
+  min-width: theme('width.10');
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.125rem;
+  border-radius: theme('borderRadius.DEFAULT');
+
+  &.checked.filterChecked {
+    color: theme('colors.gray.300');
+    border-color: theme('colors.gray.500');
+  }
 }
 
 .mods {

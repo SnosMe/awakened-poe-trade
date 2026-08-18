@@ -111,6 +111,7 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
         tag: FilterTag.MercenarySupport,
         mercenary: { tier: tier },
         sources: [],
+        option: { value: SearchMode.Required },
         disabled: true
       })
     }
@@ -171,6 +172,11 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
   }
 
   return out
+}
+
+export enum SearchMode {
+  Optional = 0,
+  Required = 1
 }
 
 function findGemByRef (name: string): Stat {

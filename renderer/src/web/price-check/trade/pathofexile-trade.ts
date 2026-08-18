@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
 import { Host } from '@/web/background/IPC'
 import { TradeResponse, Account, getTradeEndpoint, adjustRateLimits, RATE_LIMIT_RULES, preventQueueCreation } from './common'
 import { stat, STAT_BY_REF_V2, pseudoStatByRef } from '@/assets/data'
-import { decodeFamilyFromSource as decodeMercenarySupports } from '../filters/pseudo/mercenary'
+import { decodeFamilyFromSource as decodeMercenarySupports, SearchMode as MercSearchMode } from '../filters/pseudo/mercenary'
 import { RateLimiter } from './RateLimiter'
 import { ModifierType } from '@/parser/modifiers'
 import { Cache } from './Cache'
@@ -606,16 +606,19 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
 
       if (skill.tag === FilterTag.MercenaryPrimary) {
         appendAndFilter({ ...skill, disabled: false }, qAnd, query.stats)
+      } else if (!skill.disabled) {
+        appendAndFilter(skill, qAnd, query.stats)
       }
 
       const socketedSupports = stats.filter(stat => !stat.not && !INTERNAL_TRADE_IDS.includes(stat.tradeId[0]))
-      const enabledSocketedCount = socketedSupports.filter(stat => !stat.disabled).length
+      const enabledOptionalGems = socketedSupports.filter(stat => !stat.disabled && stat.option!.value === MercSearchMode.Optional)
+      const enabledRequiredGems = socketedSupports.filter(stat => !stat.disabled && stat.option!.value === MercSearchMode.Required)
 
       const localNotMode = stats.some(stat => stat.tradeId[0] === 'item.mercenary_6link')
       const localNotStats = (localNotMode) ? stats.filter(stat => stat.not && !stat.disabled) : []
 
       for (const stat of stats) {
-        if (skill.disabled || enabledSocketedCount === 5) break
+        if (skill.disabled || enabledRequiredGems.length === 5) break
 
         if (stat.not) {
           if (localNotMode) continue
@@ -682,22 +685,40 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         }
       }
 
-      // not using `weightedGroupToQuery` for better trade site experience
-      query.stats.push({
-        type: 'mercenary',
-        value: (!skill.disabled && enabledSocketedCount)
-          ? { min: 1 + enabledSocketedCount }
-          : undefined,
-        // for a Skill without any checked Support Gems we use a simple AND filter below
-        disabled: skill.disabled || !enabledSocketedCount,
-        filters: [
-          ...everyTradeIdToQuery(skill),
-          ...socketedSupports.flatMap(stat => everyTradeIdToQuery(stat))
-        ]
-      })
-
-      if (!skill.disabled && !enabledSocketedCount) {
-        appendAndFilter(skill, qAnd, query.stats)
+      if (enabledOptionalGems.length >= 2) {
+        // Mixed N-1 & AND group
+        query.stats.push({
+          type: 'mercenary',
+          disabled: false,
+          ...weightedGroupToQuery({
+            allOf: [
+              skill.tradeId,
+              ...enabledRequiredGems.map(stat => stat.tradeId)
+            ],
+            someOf: {
+              min: enabledOptionalGems.length - 1,
+              ids: enabledOptionalGems.map(stat => stat.tradeId)
+            }
+          })
+        })
+      } else {
+        // AND group. Not using `weightedGroupToQuery` for better trade site experience
+        query.stats.push({
+          type: 'mercenary',
+          value: (!skill.disabled && enabledRequiredGems.length)
+            ? { min: 1 + enabledRequiredGems.length }
+            : undefined,
+          // for a Skill without any checked Support Gems we use a simple AND filter
+          disabled: skill.disabled || !enabledRequiredGems.length,
+          filters: [
+            ...everyTradeIdToQuery(skill),
+            ...socketedSupports.flatMap(stat => everyTradeIdToQuery({
+              ...stat,
+              option: undefined,
+              disabled: (stat.option!.value === MercSearchMode.Optional) ? true : stat.disabled
+            }))
+          ]
+        })
       }
     }
   }
@@ -828,7 +849,7 @@ function weightedGroupToQuery (group: WeightedGroup): Pick<TradeStatGroup, 'valu
   const weight = surplus + 1
 
   const totalMin = someOf.min + allOf.length * weight
-  const flatIds: string[] = someOf.ids.flatMap(familyIds => familyIds)
+  const flatIds: string[] = []
 
   for (const familyIds of allOf) {
     for (const id of familyIds) {
@@ -837,6 +858,7 @@ function weightedGroupToQuery (group: WeightedGroup): Pick<TradeStatGroup, 'valu
       }
     }
   }
+  flatIds.push(...someOf.ids.flatMap(familyIds => familyIds))
 
   return {
     value: { min: totalMin },
