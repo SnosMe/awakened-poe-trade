@@ -128,6 +128,7 @@ export default {
   SCRYING_MAP_AREA: '지도 지역: ',
   CHART_SULPHUR: '망자의 유황: ',
   MERCENARY_LEVEL: '용병 레벨: ',
+  MERCENARY_BUILD: '빌드: ',
   // ---
   CHAT_SYSTEM: /^: (?<body>.+)$/,
   CHAT_TRADE: /^\$(?:<(?<guild_tag>.+?)> )?(?<char_name>.+?): (?<body>.+)$/,

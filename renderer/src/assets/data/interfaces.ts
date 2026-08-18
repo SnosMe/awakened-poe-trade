@@ -60,14 +60,14 @@ export interface DropEntry {
 export interface BaseType {
   name: string
   refName: string
-  namespace: (
-    'DIVINATION_CARD' |
-    'CAPTURED_BEAST' |
-    'UNIQUE' |
-    'ITEM' |
-    'GEM' |
-    'AREA'
-  )
+  namespace:
+    | 'DIVINATION_CARD'
+    | 'CAPTURED_BEAST'
+    | 'UNIQUE'
+    | 'ITEM'
+    | 'GEM'
+    | 'AREA'
+    | 'MERCENARY_BUILD'
   icon: string
   w?: number
   h?: number
@@ -110,10 +110,10 @@ export interface BaseType {
     es?: [min: number, max: number]
     ward?: [min: number, max: number]
   }
+  mercenaryBuild?: BaseType['refName'] | MercenaryBuild
 }
 
 export interface MercenaryBuild {
-  name: string
   skills: Array<{
     type: 'primary' | 'secondary' | 'utility'
     name: string
@@ -248,6 +248,7 @@ export interface TranslationDict {
   SCRYING_MAP_AREA: string
   CHART_SULPHUR: string
   MERCENARY_LEVEL: string
+  MERCENARY_BUILD: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

@@ -1,10 +1,9 @@
 import fnv1a from '@sindresorhus/fnv1a'
-import type { BaseType, DropEntry, MercenaryBuild, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
 
 export * from './interfaces'
 
 export let ITEM_DROP: DropEntry[]
-export let MERCENARY_BUILDS: MercenaryBuild[]
 export let CLIENT_STRINGS: TranslationDict
 export let CLIENT_STRINGS_REF: TranslationDict
 export let APP_PATRONS: Array<{ from: string, months: number, style: number }>
@@ -193,7 +192,6 @@ export function stat (text: string) {
 export async function init (lang: string) {
   CLIENT_STRINGS_REF = (await import(/* @vite-ignore */`${import.meta.env.BASE_URL}data/en/client_strings.js`)).default
   ITEM_DROP = await (await fetch(`${import.meta.env.BASE_URL}data/item-drop.json`)).json()
-  MERCENARY_BUILDS = await (await fetch(`${import.meta.env.BASE_URL}data/mercenary-builds.json`)).json()
   APP_PATRONS = await (await fetch(`${import.meta.env.BASE_URL}data/patrons.json`)).json()
 
   await loadForLang(lang)

@@ -26,14 +26,15 @@ const BUILD_RULES = [{
 export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
   const out: FilterOrGroup[] = []
 
-  const rules = BUILD_RULES.find(rule => rule.build === item.mercenaryBuild!.name)
+  const rules = BUILD_RULES.find(rule => rule.build === item.mercenaryBuild!.refName)
+  const mercenaryBuild = item.mercenaryBuild!.mercenaryBuild! as MercenaryBuild
 
   for (let [skill, ...supports] of item.mercenarySkills!) {
     const rawSupports = supports
     supports = rawSupports.filter(support =>
       !support.stat.mercenary!.syntheticFamily || support.stat.mercenary!.tier === 3)
 
-    const skillType = item.mercenaryBuild!.skills.find(buildSkill =>
+    const skillType = mercenaryBuild.skills.find(buildSkill =>
       buildSkill.name === skill.stat.ref)!.type
     const skillFilter = skillToFilter({
       stat: skill.stat,
@@ -149,7 +150,7 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
   }
   out.push(notGroup)
 
-  for (const buildSkill of item.mercenaryBuild!.skills) {
+  for (const buildSkill of mercenaryBuild.skills) {
     if (item.mercenarySkills!.some(group =>
       group[0].stat.ref === buildSkill.name)) continue
 

@@ -1,7 +1,7 @@
 import type { ModifierType, StatCalculated } from './modifiers'
 import type { ParsedModifier } from './advanced-mod-desc'
 import type { ParsedStat } from './stat-translations'
-import type { BaseType, MercenaryBuild } from '@/assets/data'
+import type { BaseType } from '@/assets/data'
 import { ItemCategory } from './meta'
 
 export enum ItemRarity {
@@ -62,7 +62,7 @@ export interface ParsedItem {
   gemLevel?: number
   vaalGem?: BaseType
   imbuedGem?: boolean
-  mercenaryBuild?: MercenaryBuild
+  mercenaryBuild?: BaseType
   mercenarySkills?: ParsedStat[][]
   talismanTier?: number
   memoryStrands?: number
