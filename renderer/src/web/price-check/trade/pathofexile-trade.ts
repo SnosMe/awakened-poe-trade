@@ -406,10 +406,6 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
     }
   }
 
-  if (filters.heistWingsRevealed && !filters.heistWingsRevealed.disabled) {
-    propSet(query.filters, 'heist_filters.filters.heist_wings.min', filters.heistWingsRevealed.value)
-  }
-
   if (filters.sentinelCharge && !filters.sentinelCharge.disabled) {
     propSet(query.filters, 'sentinel_filters.filters.sentinel_durability.min', filters.sentinelCharge.value)
   }
@@ -547,6 +543,14 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         break
       case 'item.heist_target_priceless':
         propSet(query.filters, 'heist_filters.filters.heist_objective_value.option', 'priceless')
+        break
+      case 'item.heist_wings_revealed':
+        propSet(query.filters, 'heist_filters.filters.heist_wings.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'heist_filters.filters.heist_wings.max', typeof input.max === 'number' ? input.max : undefined)
+        break
+      case 'item.heist_wings_total':
+        propSet(query.filters, 'heist_filters.filters.heist_max_wings.min', typeof input.min === 'number' ? input.min : undefined)
+        propSet(query.filters, 'heist_filters.filters.heist_max_wings.max', typeof input.max === 'number' ? input.max : undefined)
         break
       case 'item.chart_sulphur':
         propSet(query.filters, 'map_filters.filters.chart_sulphur.min', typeof input.min === 'number' ? input.min : undefined)

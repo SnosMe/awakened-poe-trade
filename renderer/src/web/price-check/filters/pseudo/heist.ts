@@ -63,15 +63,31 @@ function applyContractRules (ctx: FiltersCreationContext) {
 }
 
 function applyBlueprintRules (ctx: FiltersCreationContext) {
-  const applicable = ctx.item.category === ItemCategory.HeistBlueprint &&
-    ctx.item.rarity !== ItemRarity.Unique &&
-    !ctx.filters.some(filter => filter.tag === FilterTag.Enchant)
-  if (!applicable) return
+  if (ctx.item.category !== ItemCategory.HeistBlueprint || ctx.item.rarity === ItemRarity.Unique) return
 
-  const filter = statToNotFilter({
-    stat: pseudoStatByRef(PSEUDO.ENCHANT_MODS)!,
-    type: ModifierType.Pseudo,
+  if (!ctx.filters.some(filter => filter.tag === FilterTag.Enchant)) {
+    const filter = statToNotFilter({
+      stat: pseudoStatByRef(PSEUDO.ENCHANT_MODS)!,
+      type: ModifierType.Pseudo,
+      disabled: false
+    })
+    ctx.filters.push(filter)
+  }
+
+  const { item } = ctx
+  ctx.filters.push(propToFilter({
+    ref: 'Wings Revealed: #',
+    tradeId: 'item.heist_wings_revealed',
+    roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.heistBlueprint!.wingsRevealed! },
+    sources: [],
     disabled: false
-  })
-  ctx.filters.push(filter)
+  }, { ...ctx, searchInRange: 0 }))
+
+  ctx.filters.push(propToFilter({
+    ref: 'Total Wings: #',
+    tradeId: 'item.heist_wings_total',
+    roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: item.heistBlueprint!.wingsTotal! },
+    sources: [],
+    disabled: false
+  }, { ...ctx, searchInRange: 0 }))
 }

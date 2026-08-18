@@ -96,6 +96,7 @@
     "heist_job_engineering": "Требуется инженерное дело ({0} уровень)",
     "heist_target_priceless": "Предмет кражи: бесценный",
     "heist_wings_revealed": "Крыльев обнаружено: {0}",
+    "heist_wings_total": "Всего крыльев: {0}",
     "linked_sockets": "Связи: {0}",
     "white_sockets": "Белые: {0}",
     "quality": "Качество: {0}",

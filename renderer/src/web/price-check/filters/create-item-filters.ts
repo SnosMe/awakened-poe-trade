@@ -194,27 +194,6 @@ export function createFilters (
         disabled: false
       }
     }
-  } else if (item.category === ItemCategory.HeistBlueprint) {
-    filters.searchRelaxed = {
-      category: item.category,
-      disabled: true // TODO: blocked by https://www.pathofexile.com/forum/view-thread/3109852
-    }
-    filters.searchExact = {
-      baseType: item.info.name,
-      baseTypeTrade: t(opts, item.info)
-    }
-
-    filters.areaLevel = {
-      value: item.areaLevel!,
-      disabled: false
-    }
-
-    if (item.heistBlueprint?.wingsRevealed) {
-      filters.heistWingsRevealed = {
-        value: item.heistBlueprint.wingsRevealed,
-        disabled: false
-      }
-    }
   } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
     filters.searchExact = {
       name: item.info.name,
@@ -231,7 +210,8 @@ export function createFilters (
       if (
         item.category === ItemCategory.ClusterJewel ||
         item.category === ItemCategory.Idol ||
-        item.category === ItemCategory.Graft
+        item.category === ItemCategory.Graft ||
+        item.category === ItemCategory.HeistBlueprint
       ) {
         disabled = true
       } else if (
@@ -436,6 +416,7 @@ export function createFilters (
 
   if (
     item.category === ItemCategory.HeistContract ||
+    item.category === ItemCategory.HeistBlueprint ||
     item.category === ItemCategory.Chart
   ) {
     if (item.rarity !== ItemRarity.Unique) {

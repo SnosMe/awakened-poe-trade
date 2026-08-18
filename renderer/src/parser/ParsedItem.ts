@@ -49,6 +49,7 @@ export interface ParsedItem {
   mapMoreDivCards?: number
   heistBlueprint?: {
     wingsRevealed?: number
+    wingsTotal?: number
     target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
   }
   heistContract?: {
