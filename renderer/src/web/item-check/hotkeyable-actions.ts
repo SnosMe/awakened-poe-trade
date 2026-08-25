@@ -1,8 +1,13 @@
 import { Host } from '@/web/background/IPC'
-import { AppConfig } from '@/web/Config'
+import { AppConfig, Config } from '@/web/Config'
 import { ParsedItem, parseClipboard } from '@/parser'
 
-const POEDB_LANGS = { 'en': 'us', 'ru': 'ru', 'cmn-Hant': 'tw', 'ko': 'kr' }
+const POEDB_LANGS: Record<Config['language'], string> = {
+  'en': 'us',
+  'ru': 'ru',
+  'cmn-Hant': 'tw',
+  'ko': 'kr'
+}
 
 export function registerActions () {
   Host.onEvent('MAIN->CLIENT::item-text', (e) => {
@@ -26,7 +31,8 @@ export function openWiki (item: ParsedItem) {
   window.open(`https://www.poewiki.net/wiki/${item.info.refName}`)
 }
 export function openPoedb (item: ParsedItem) {
-  window.open(`https://poedb.tw/${POEDB_LANGS[AppConfig().language]}/search?q=${item.info.refName}`)
+  const slug = encodeURIComponent(item.info.refName.replaceAll("'", '').replaceAll(' ', '_'))
+  window.open(`https://poedb.tw/${POEDB_LANGS[AppConfig().language]}/${slug}`)
 }
 export function openCoE (item: ParsedItem) {
   const encodedClipboard = encodeURIComponent(item.rawText)
