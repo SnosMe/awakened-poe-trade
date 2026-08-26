@@ -90,16 +90,10 @@ export function createExactStatFilters (
     applyMirroredTabletRules(ctx.filters)
     return ctx.filters
   }
-  if (item.category === ItemCategory.Map || item.category === ItemCategory.Chart) {
-    for (const filter of ctx.filters) {
-      if (filter.tag !== FilterTag.Property && filter.tag !== FilterTag.Pseudo) {
-        filter.disabled = false
-      }
-    }
-    return ctx.filters
-  }
 
   for (const filter of ctx.filters) {
+    if (filter.not) continue
+
     filter.hidden = undefined
 
     if (filter.tag === FilterTag.Explicit) {
@@ -107,7 +101,7 @@ export function createExactStatFilters (
         source.modifier.info.tier != null &&
         source.modifier.info.tier <= 2
       )
-    } else if (filter.tag !== FilterTag.Property) {
+    } else if (filter.tag !== FilterTag.Property && filter.tag !== FilterTag.Pseudo) {
       filter.disabled = false
     }
 
