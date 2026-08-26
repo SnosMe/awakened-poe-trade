@@ -66,6 +66,10 @@ export function statSourcesTotal (
   sources: StatSource[],
   mode: 'sum' | 'max' = 'sum'
 ): StatRoll | undefined {
+  if (sources.every(source => !source.contributes)) {
+    return undefined
+  }
+
   const fn = (mode === 'sum')
     ? (a: number, b: number) => a + b
     : (a: number, b: number) => Math.max(a, b)

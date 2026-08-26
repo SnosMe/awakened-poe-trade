@@ -318,7 +318,7 @@ export function calculatedStatToFilter (
 
     const dp =
     calc.stat.dp ||
-    calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll!.dp)
+    calc.sources.some(s => s.stat.stat.ref === calc.stat.ref && s.stat.roll?.dp)
 
     const filterBounds = {
       min: percentRoll(roll.min, -0, Math.floor, dp),
