@@ -64,7 +64,7 @@ export interface ItemFilters {
   gemLevel?: FilterNumeric
   mapTier?: FilterNumeric
   mapBlighted?: {
-    value: 'Blighted' | 'Blight-ravaged'
+    value: 'Blighted' | 'Blight-ravaged' | false
   }
   mapCompletionReward?: {
     name: string

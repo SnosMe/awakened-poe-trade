@@ -169,6 +169,8 @@ export function createFilters (
       filters.mapBlighted = { value: 'Blighted' }
     } else if (item.info.refName === 'Blight-ravaged Map') {
       filters.mapBlighted = { value: 'Blight-ravaged' }
+    } else if (item.info.refName === 'Map') {
+      filters.mapBlighted = { value: false }
     }
 
     if (item.mapCompletionReward) {

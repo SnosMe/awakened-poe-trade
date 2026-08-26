@@ -388,6 +388,9 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
       propSet(query.filters, 'map_filters.filters.map_blighted.option', String(true))
     } else if (filters.mapBlighted.value === 'Blight-ravaged') {
       propSet(query.filters, 'map_filters.filters.map_uberblighted.option', String(true))
+    } else if (filters.mapBlighted.value === false) {
+      propSet(query.filters, 'map_filters.filters.map_blighted.option', String(false))
+      propSet(query.filters, 'map_filters.filters.map_uberblighted.option', String(false))
     }
   }
 
