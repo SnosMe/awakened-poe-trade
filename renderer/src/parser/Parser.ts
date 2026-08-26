@@ -83,7 +83,6 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseModifiers, // explicit
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
-  { virtual: parseBlightedMap },
   { virtual: pickCorrectVariant },
   { virtual: calcBasePercentile }
 ]
@@ -153,24 +152,6 @@ function normalizeName (item: ParserState) {
     const baseType = magicBasetype(item.name)
     if (baseType) {
       item.name = baseType
-    }
-  }
-
-  if (item.rarity === ItemRarity.Normal ||
-      item.rarity === ItemRarity.Rare
-  ) {
-    if (item.baseType) {
-      if (_$.MAP_BLIGHTED.test(item.baseType)) {
-        item.baseType = _$.MAP_BLIGHTED.exec(item.baseType)![1]
-      } else if (_$.MAP_BLIGHT_RAVAGED.test(item.baseType)) {
-        item.baseType = _$.MAP_BLIGHT_RAVAGED.exec(item.baseType)![1]
-      }
-    } else {
-      if (_$.MAP_BLIGHTED.test(item.name)) {
-        item.name = _$.MAP_BLIGHTED.exec(item.name)![1]
-      } else if (_$.MAP_BLIGHT_RAVAGED.test(item.name)) {
-        item.name = _$.MAP_BLIGHT_RAVAGED.exec(item.name)![1]
-      }
     }
   }
 
@@ -277,6 +258,12 @@ function parseMap (section: string[], item: ParsedItem) {
     } else if (line.startsWith(_$.MAP_MORE_DIVINATION_CARDS)) {
       item.mapMoreDivCards = parseInt(line.slice(_$.MAP_MORE_DIVINATION_CARDS.length), 10)
       isParsed = 'SECTION_PARSED'
+    } else if (line.startsWith(_$.MAP_AREA)) {
+      const areaName = section[0].slice(_$.MAP_AREA.length)
+      const areaInfo = ITEM_BY_TRANSLATED('AREA', areaName)
+      if (!areaInfo) throw new Error('Unknown Area name.')
+      item.mapArea = areaInfo[0]
+      isParsed = 'SECTION_PARSED'
     } else if (_$.MAP_COMPLETION_REWARD.test(line)) {
       const rewardName = _$.MAP_COMPLETION_REWARD.exec(line)![1]
       const rewardInfo = ITEM_BY_TRANSLATED('UNIQUE', rewardName)
@@ -287,23 +274,6 @@ function parseMap (section: string[], item: ParsedItem) {
   }
 
   return isParsed
-}
-
-function parseBlightedMap (item: ParsedItem) {
-  if (item.category !== ItemCategory.Map) return
-
-  const calc = item.statsByType.find(calc =>
-    calc.type === ModifierType.Implicit &&
-    calc.stat.ref.startsWith('Area is infested with Fungal Growths'))
-  if (calc !== undefined) {
-    if (calc.sources[0].contributes!.value === 9) {
-      item.mapBlighted = 'Blight-ravaged'
-      item.info.icon = ITEM_BY_REF('ITEM', 'Blight-ravaged Map')![0].icon
-    } else {
-      item.mapBlighted = 'Blighted'
-      item.info.icon = ITEM_BY_REF('ITEM', 'Blighted Map')![0].icon
-    }
-  }
 }
 
 function parseFractured (item: ParserState) {
@@ -888,8 +858,8 @@ function parseScryingOrb (section: string[], item: ParsedItem) {
   if (item.info.refName !== 'Scrying Orb') return 'PARSER_SKIPPED'
 
   if (section.length === 1) {
-    if (section[0].startsWith(_$.SCRYING_MAP_AREA)) {
-      const areaName = section[0].slice(_$.SCRYING_MAP_AREA.length)
+    if (section[0].startsWith(_$.MAP_AREA)) {
+      const areaName = section[0].slice(_$.MAP_AREA.length)
       const areaInfo = ITEM_BY_TRANSLATED('AREA', areaName)
       if (!areaInfo) throw new Error('Unknown Area name.')
       item.mapArea = areaInfo[0]

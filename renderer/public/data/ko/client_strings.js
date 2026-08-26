@@ -125,7 +125,7 @@ export default {
   FOULBORN_MODIFIER: '삿된 고유 속성',
   VESTIGIAL_NAME: /^흔적 (.*)$/,
   VESTIGIAL_IMPLICIT: '흔적 고정 속성',
-  SCRYING_MAP_AREA: '지도 지역: ',
+  MAP_AREA: '지도 지역: ',
   CHART_SULPHUR: '망자의 유황: ',
   MERCENARY_LEVEL: '용병 레벨: ',
   MERCENARY_BUILD: '빌드: ',

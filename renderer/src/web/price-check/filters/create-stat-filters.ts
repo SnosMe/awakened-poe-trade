@@ -25,7 +25,7 @@ export function createExactStatFilters (
   opts: { searchStatRange: number, mode?: 'props' | 'bulk' }
 ): StatFilter[] {
   if (
-    item.mapBlighted ||
+    item.info.area?.blighted ||
     item.category === ItemCategory.Invitation
   ) return []
   if (

@@ -64,7 +64,7 @@ export function createPresets (
         filters: createFilters(item, { ...opts, exact: true }),
         stats: createExactStatFilters(item, item.statsByType, { ...opts, mode: 'bulk' })
       }
-      if (item.rarity === ItemRarity.Rare && !item.isUnidentified) {
+      if (item.rarity === ItemRarity.Rare && !item.isUnidentified && !item.info.area?.blighted) {
         const propsPreset: FilterPreset = {
           id: 'filters.preset_pseudo',
           filters: createFilters(item, { ...opts, exact: true }),

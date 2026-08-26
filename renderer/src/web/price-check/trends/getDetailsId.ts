@@ -23,9 +23,7 @@ export function getDetailsId (item: ParsedItem) {
   if (item.category === ItemCategory.Map) {
     return {
       ns: item.info.namespace,
-      name: (item.mapBlighted)
-        ? `${item.mapBlighted} ${item.info.refName}`
-        : item.info.refName,
+      name: item.info.refName,
       variant: variant([
         `T${(item.rarity === ItemRarity.Unique ? undefined : item.mapTier) ?? 0}`,
         (item.rarity !== ItemRarity.Unique)

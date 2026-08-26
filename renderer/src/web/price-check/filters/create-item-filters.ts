@@ -136,7 +136,19 @@ export function createFilters (
   }
 
   if (item.category === ItemCategory.Map) {
-    if (item.rarity === ItemRarity.Unique && item.info.unique) {
+    if (item.info.area?.blighted) {
+      filters.searchExact = {
+        baseType: item.info.name,
+        baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', 'Map')![0]),
+        discriminatorTrade: 'map',
+        sub: {
+          baseType: item.mapArea!.name,
+          baseTypeTrade: item.mapArea!.tradeDisc!,
+          discriminatorTrade: item.info.tradeDisc!,
+          disabled: false
+        }
+      }
+    } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
       filters.searchExact = {
         name: item.info.name,
         nameTrade: t(opts, item.info),
@@ -153,8 +165,10 @@ export function createFilters (
       filters.searchExact.discriminatorTrade = 'map'
     }
 
-    if (item.mapBlighted) {
-      filters.mapBlighted = { value: item.mapBlighted }
+    if (item.info.refName === 'Blighted Map') {
+      filters.mapBlighted = { value: 'Blighted' }
+    } else if (item.info.refName === 'Blight-ravaged Map') {
+      filters.mapBlighted = { value: 'Blight-ravaged' }
     }
 
     if (item.mapCompletionReward) {

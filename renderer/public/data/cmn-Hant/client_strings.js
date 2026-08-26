@@ -125,7 +125,7 @@ export default {
   FOULBORN_MODIFIER: 'Foulborn Unique Modifier',
   VESTIGIAL_NAME: /^殘存 (.*)$/,
   VESTIGIAL_IMPLICIT: '殘存固定詞綴',
-  SCRYING_MAP_AREA: '地圖區域: ',
+  MAP_AREA: '地圖區域: ',
   CHART_SULPHUR: '亡者硫酸: ',
   MERCENARY_LEVEL: '傭兵等級: ',
   MERCENARY_BUILD: '流派: ',
