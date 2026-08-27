@@ -1,14 +1,15 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { percentRoll, percentRollDelta, roundRoll } from './util'
-import { FilterTag, ItemHasEmptyModifier, StatFilter } from './interfaces'
+import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup } from './interfaces'
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rules'
-import { filterItemProp, filterBasePercentile, filterMemoryStrands } from './pseudo/item-property'
+import { filterEquipmentProps, filterBasePercentile, filterMemoryStrands } from './pseudo/item-property'
 import { mapProps, valdoBadMods, chartProps } from './pseudo/maps'
 import { applyFlaskHybridMod } from './pseudo/flasks'
 import { applyHeistRules } from './pseudo/heist'
+import { filterTimelessJewelKeystones } from './pseudo/timeless-jewel'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
 import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
 
@@ -16,6 +17,7 @@ export interface FiltersCreationContext {
   readonly item: ParsedItem
   readonly searchInRange: number
   filters: StatFilter[]
+  groups: FilterGroup[]
   statsByType: StatCalculated[]
 }
 
@@ -69,6 +71,7 @@ export function createExactStatFilters (
       ? Math.min(2, opts.searchStatRange)
       : opts.searchStatRange,
     filters: [],
+    groups: [],
     statsByType: statsByType.filter(calc => keepByType.includes(calc.type))
   }
 
@@ -140,10 +143,11 @@ export function initUiModFilters (
   opts: {
     searchStatRange: number
   }
-): StatFilter[] {
+): FilterOrGroup[] {
   const ctx: FiltersCreationContext = {
     item,
     filters: [],
+    groups: [],
     searchInRange: (item.rarity === ItemRarity.Normal) ? 100 : opts.searchStatRange,
     statsByType: item.statsByType.map(calc => {
       if (calc.type === ModifierType.Fractured && calc.stat.trade.ids[ModifierType.Explicit]) {
@@ -154,13 +158,16 @@ export function initUiModFilters (
     })
   }
 
+  filterEquipmentProps(ctx)
+  if (item.info.refName === "Emperor's Vigilance") {
+    filterBasePercentile(ctx)
+  }
+  filterMemoryStrands(ctx, 'hide_memory_strands')
   if (item.info.refName !== 'Split Personality') {
-    filterItemProp(ctx)
     filterPseudo(ctx)
-    if (item.info.refName === "Emperor's Vigilance") {
-      filterBasePercentile(ctx)
-    }
-    filterMemoryStrands(ctx, 'hide_memory_strands')
+  }
+  if (item.info.unique && item.info.unique.base === 'Timeless Jewel') {
+    filterTimelessJewelKeystones(ctx)
   }
 
   if (!item.isCorrupted && !item.isMirrored) {
@@ -182,7 +189,7 @@ export function initUiModFilters (
 
   finalFilterTweaks(ctx)
 
-  return ctx.filters
+  return [...ctx.filters, ...ctx.groups]
 }
 
 export function calculatedStatToFilter (

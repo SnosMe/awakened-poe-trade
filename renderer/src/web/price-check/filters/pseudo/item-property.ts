@@ -6,7 +6,7 @@ import { ParsedItem } from '@/parser'
 import { ModifierType, StatRoll, StatSource } from '@/parser/modifiers'
 import { FilterTag, InternalTradeId, StatFilter } from '../interfaces'
 
-export function filterItemProp (ctx: FiltersCreationContext) {
+export function filterEquipmentProps (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
     armourProps(ctx)
   }

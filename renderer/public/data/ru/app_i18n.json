@@ -59,6 +59,7 @@
 
   "item": {
     "not_group": "Ни одного из",
+    "count_one_group": "Одно из",
     "prop_quality": "К-во: {0}%",
     "base_percentile": "Ролл значений базы: {0}%",
     "armour": "Броня: {0}",

@@ -80,7 +80,7 @@ export function createMercenaryFilters (item: ParsedItem): FilterOrGroup[] {
         roll: { min: 0, max: 5, value: tier3Count },
         sources: possibleSupports.map(family => encodeFamilyToSource(family)),
         disabled: true
-      }, { filters: [], item, searchInRange: 0, statsByType: [] }))
+      }, { filters: [], groups: [], item, searchInRange: 0, statsByType: [] }))
     }
 
     for (const support of supports) {

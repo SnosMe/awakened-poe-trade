@@ -608,6 +608,13 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         disabled: group.meta.disabled,
         filters: group.stats.flatMap(stat => everyTradeIdToQuery(stat))
       })
+    } else if (group.group === 'one') {
+      query.stats.push({
+        type: 'count',
+        value: { min: 1 },
+        disabled: group.meta.disabled || group.stats.every(stat => stat.disabled),
+        filters: group.stats.flatMap(stat => everyTradeIdToQuery(stat))
+      })
     } else if (group.group === 'mercenary') {
       const { meta: skill, stats } = group
 

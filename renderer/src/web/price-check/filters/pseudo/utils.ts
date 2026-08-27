@@ -84,3 +84,16 @@ export function metaNotFilter (opts: {
     disabled: opts.disabled
   }
 }
+
+export function metaCountOneFilter (opts: {
+  disabled: StatFilter['disabled']
+}): StatFilter {
+  return {
+    tradeId: ['item.count_one_group'],
+    statRef: 'Count (1)',
+    text: 'Count (1)',
+    tag: FilterTag.FilterGroup,
+    sources: [],
+    disabled: opts.disabled
+  }
+}

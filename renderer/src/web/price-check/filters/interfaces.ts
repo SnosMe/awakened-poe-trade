@@ -105,7 +105,7 @@ export type FilterOrGroup =
   | FilterGroup
 
 export interface FilterGroup {
-  group: 'not' | 'mercenary'
+  group: 'not' | 'one' | 'mercenary'
   expanded: boolean // NOTE: mutable in UI
   meta: StatFilter
   stats: StatFilter[]
@@ -141,6 +141,7 @@ export interface StatFilter {
 
 const _INTERNAL_TRADE_IDS = [
   'item.not_group',
+  'item.count_one_group',
   'item.base_percentile',
   'item.memory_strands',
   'item.armour',
