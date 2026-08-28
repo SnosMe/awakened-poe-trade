@@ -22,6 +22,7 @@ export interface Stat {
   fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
   anointments?: Array<{ roll: number, oils: string }>
   mercenary?: { icon?: string, supports?: string[], tier?: number, canonical?: string, syntheticFamily?: true }
+  jewelleryQuality?: { catalyst: string }
   trade: {
     inverted?: true
     option?: true

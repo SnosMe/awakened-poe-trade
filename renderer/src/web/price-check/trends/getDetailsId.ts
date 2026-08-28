@@ -1,6 +1,6 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { SPECIAL_SUPPORT_GEM, floorToBracket } from '../filters/create-item-filters'
-import { ACCESSORY, ARMOUR, WEAPON } from '@/parser/meta'
+import { JEWELLERY, ARMOUR, WEAPON } from '@/parser/meta'
 
 export function isValuableBasetype (item: ParsedItem): boolean {
   if (
@@ -9,7 +9,7 @@ export function isValuableBasetype (item: ParsedItem): boolean {
   ) return false
 
   return (
-    ACCESSORY.has(item.category) ||
+    JEWELLERY.has(item.category) ||
     ARMOUR.has(item.category) ||
     WEAPON.has(item.category) ||
     item.category === ItemCategory.Quiver

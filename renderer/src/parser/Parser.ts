@@ -9,7 +9,7 @@ import {
 } from '@/assets/data'
 import { ModifierType, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg, ParsedStat } from './stat-translations'
-import { ItemCategory, ACCESSORY } from './meta'
+import { ItemCategory, JEWELLERY } from './meta'
 import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
 import { magicBasetype } from './magic-name'
 import { isModInfoLine, groupLinesByMod, parseModInfoLine, parseModType, ModifierInfo, ParsedModifier, ENCHANT_LINE, SCOURGE_LINE, IMPLICIT_LINE } from './advanced-mod-desc'
@@ -86,6 +86,8 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: pickCorrectVariant },
   { virtual: calcBasePercentile }
 ]
+
+const VALUE_AUGMENTED = ' (augmented)'
 
 export function parseClipboard (clipboard: string): Result<ParsedItem, string> {
   try {
@@ -649,13 +651,29 @@ function parseWeapon (section: string[], item: ParsedItem) {
 }
 
 function parseAccessory (section: string[], item: ParsedItem) {
-  if (!ACCESSORY.has(item.category!) && item.category !== ItemCategory.Quiver) return 'PARSER_SKIPPED'
+  if (!JEWELLERY.has(item.category!) && item.category !== ItemCategory.Quiver) return 'PARSER_SKIPPED'
 
-  if (parseMemoryStrandsNested(section, item)) {
-    return 'SECTION_PARSED'
+  let isParsed: SectionParseResult = 'SECTION_SKIPPED'
+
+  for (const line of section) {
+    if (line.endsWith(VALUE_AUGMENTED)) {
+      const found = tryParseTranslation({ string: line.slice(0, -VALUE_AUGMENTED.length), unscalable: true }, ModifierType.Pseudo, undefined)
+      if (found && found.stat.jewelleryQuality) {
+        item.quality = found.roll!.value
+        item.newMods.push({
+          info: { tags: [], type: ModifierType.Pseudo },
+          stats: [found]
+        })
+        isParsed = 'SECTION_PARSED'
+      }
+    }
   }
 
-  return 'SECTION_SKIPPED'
+  if (parseMemoryStrandsNested(section, item)) {
+    isParsed = 'SECTION_PARSED'
+  }
+
+  return isParsed
 }
 
 function parseLogbookArea (section: string[], item: ParsedItem) {
