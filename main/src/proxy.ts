@@ -1,12 +1,12 @@
 import type { Server } from 'http'
-import { app, net } from 'electron'
+import { app, net, session } from 'electron'
 import type { Logger } from './RemoteLogger'
 
 const PROXY_HOSTS = [
   { host: 'www.pathofexile.com', official: true },
   { host: 'ru.pathofexile.com', official: true },
   { host: 'pathofexile.tw', official: true },
-  { host: 'poe.game.daum.net', official: true },
+  { host: 'poe.kakaogames.com', official: true },
   { host: 'poe.ninja', official: false },
   { host: 'www.poeprices.info', official: false },
 ]
@@ -51,6 +51,20 @@ export class HttpProxy {
         res.destroy(err)
       })
       req.pipe(proxyReq as unknown as NodeJS.WritableStream)
+    })
+
+    session.defaultSession.webRequest.onHeadersReceived((details, next) => {
+      // Cloudflare sets cookies with Partitioned attribute, however `net.request` API
+      // doesn't provide a way to specify partition key, so we simply remove it.
+      const cookies = details.responseHeaders?.['set-cookie']
+      if (cookies) {
+        details.responseHeaders!['set-cookie'] = cookies.map(cookie => {
+          return cookie.split(';')
+            .filter(part => part.trim().toLowerCase() !== 'partitioned')
+            .join(';')
+        })
+      }
+      next({ responseHeaders: details.responseHeaders })
     })
   }
 }

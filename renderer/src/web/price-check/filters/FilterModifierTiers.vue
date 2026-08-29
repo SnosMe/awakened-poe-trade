@@ -1,7 +1,8 @@
 <template>
   <div v-if="tags.length" class="flex items-center text-xs leading-none gap-x-1">
     <span v-for="tag of tags"
-      :class="$style[tag.type]">{{ t('filters.tier', [tag.tier]) }}</span>
+      :class="$style[tag.type]"
+    >{{ t((tag.type === 'merc-gilded') ? 'filters.tier_gilded' : 'filters.tier', [tag.tier]) }}</span>
   </div>
 </template>
 
@@ -26,6 +27,17 @@ export default defineComponent({
     const tags = computed(() => {
       const { filter, item } = props
       const out: Array<{ type: string, tier: number }> = []
+
+      if (filter.mercenary?.tier) {
+        let type: string
+        switch (filter.mercenary.tier) {
+          case 4: type = 'merc-gilded'; break
+          case 3: type = 'tier-1'; break
+          default: type = 'not-tier-1'; break
+        }
+        out.push({ type: type, tier: filter.mercenary.tier })
+      }
+
       for (const source of filter.sources) {
         const tier = source.modifier.info.tier
         if (!tier) continue
@@ -58,8 +70,9 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" module>
-.tier-1, .tier-2, .not-tier-1 {
+.tier-1, .tier-2, .not-tier-1, .merc-gilded {
   @apply rounded px-1;
+  white-space: nowrap;
 }
 
 .tier-1 {
@@ -70,5 +83,8 @@ export default defineComponent({
 }
 .not-tier-1 {
   @apply bg-gray-700 text-black;
+}
+.merc-gilded {
+  @apply bg-yellow-700 text-yellow-100;
 }
 </style>

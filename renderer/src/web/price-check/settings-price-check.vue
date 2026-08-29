@@ -2,7 +2,7 @@
   <div class="max-w-md p-2">
     <div class="mb-2" v-if="!leagues.error.value">
       <div class="flex-1 mb-1">{{ t('league') }}
-        <button class="btn" @click="leagues.load" :disabled="leagues.isLoading.value">{{ t('Refresh') }}</button>
+        <button class="btn" @click="leagues.load()" :disabled="leagues.isLoading.value">{{ t('Refresh') }}</button>
       </div>
       <div v-if="leagues.isLoading.value" class="mb-4">
         <i class="fas fa-info-circle text-gray-600"></i> {{ t('app.leagues_loading') }}</div>
@@ -21,7 +21,7 @@
       <template #name>{{ t('app.leagues_failed') }}</template>
       <p>{{ t('app.leagues_failed_help_alt') }}</p>
       <template #actions>
-        <button class="btn" @click="leagues.load">{{ t('Retry') }}</button>
+        <button class="btn" @click="leagues.load()">{{ t('Retry') }}</button>
       </template>
     </ui-error-box>
     <div class="mb-2">

@@ -1,18 +1,22 @@
 <template>
-  <div class="bg-gray-800 text-gray-200 border-gray-900 border-4 flex flex-col"
-    style="min-width: 20rem; max-width: min(100vw - var(--game-panel), 30rem);">
-    <div class="bg-gray-900 py-1 px-4 text-center">{{ itemName }}</div>
-    <div class="flex gap-1 py-1 bg-gray-900 items-center">
+  <div :class="$style.widget">
+    <div :class="$style.itemName">{{ itemName }}</div>
+    <div :class="$style.actionBtns">
       <button class="btn flex-1" @click="openWiki">wiki</button>
       <button class="btn flex-1" @click="openPoedb">poedb</button>
       <button v-if="showCoE" class="btn flex-1" @click="openCoE">CoE</button>
       <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
       <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('item.find_in_stash') }}</button>
     </div>
-    <div v-if="weaponDPS" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
-      <div>{{ t('item.physical_dps') }}</div><div class="text-right">{{ weaponDPS.phys }}</div>
-      <div>{{ t('item.elemental_dps') }}</div><div class="text-right">{{ weaponDPS.elem }}</div>
-      <div>{{ t('item.total_dps') }}</div><div class="text-right">{{ weaponDPS.total }}</div>
+    <div v-if="weaponDPS" :class="$style.itemInfo">
+      <div class="grid">
+        <div>{{ t('item.physical_dps') }}</div>
+        <div>{{ weaponDPS.phys }}</div>
+        <div>{{ t('item.elemental_dps') }}</div>
+        <div>{{ weaponDPS.elem }}</div>
+        <div>{{ t('item.total_dps') }}</div>
+        <div>{{ weaponDPS.total }}</div>
+      </div>
     </div>
     <div v-if="item.disenchantCandidates" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
       <div class="grid grid-cols-2 gap-2 overflow-auto pb-4 px-4">
@@ -65,3 +69,43 @@ const weaponDPS = computed(() => {
 
 const itemName = computed(() => props.item.info.name)
 </script>
+
+<style lang="postcss" module>
+.widget {
+  display: flex;
+  flex-direction: column;
+  background: theme('colors.gray.900');
+  color: theme('colors.gray.200');
+  padding: theme('borderWidth.4');
+  min-width: 20rem;
+  max-width: min(100vw - var(--game-panel), 30rem);
+}
+
+.itemName {
+  padding: theme('spacing.1') theme('spacing.4');
+  text-align: center;
+}
+
+.actionBtns {
+  display: flex;
+  align-items: center;
+  gap: theme('spacing.1');
+  padding: theme('spacing.1') 0;
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: center;
+  background: theme('colors.gray.800');
+  padding: theme('spacing.2') 0;
+
+  & > :global(.grid) {
+    grid-template-columns: auto auto;
+    gap: 0 theme('spacing.4');
+
+    & > div:nth-child(even) {
+      text-align: right;
+    }
+  }
+}
+</style>

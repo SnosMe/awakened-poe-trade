@@ -3,7 +3,7 @@
     style="top: 0; left: 0; height: 100%; width: 100%; position: absolute;"
     class="flex grow h-full pointer-events-none" :class="{
     'flex-row': clickPosition === 'stash',
-    'flex-row-reverse': clickPosition === 'inventory',
+    'flex-row-reverse': clickPosition === 'inventory'
   }">
     <div v-if="!isBrowserShown" class="layout-column shrink-0"
       style="width: var(--game-panel);">
@@ -182,7 +182,6 @@ export default defineComponent({
 
       item.value = (e.item ? ok(e.item as ParsedItem) : parseClipboard(e.clipboard))
         .andThen(item => (
-          (item.category === ItemCategory.HeistContract && item.rarity !== ItemRarity.Unique) ||
           (item.category === ItemCategory.Sentinel && item.rarity !== ItemRarity.Unique))
           ? err('item.unknown')
           : ok(item))
@@ -236,6 +235,12 @@ export default defineComponent({
       } else {
         wm.setFlag(props.config.wmId, 'invisible-on-blur', false)
         wm.setFlag(props.config.wmId, 'hide-on-blur', true)
+      }
+    })
+
+    watch(leagues.error, (value) => {
+      if (value === null) {
+        closeBrowser()
       }
     })
 

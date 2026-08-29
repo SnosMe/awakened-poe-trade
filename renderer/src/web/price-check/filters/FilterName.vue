@@ -54,6 +54,13 @@ export default defineComponent({
 
     const showAsActive = computed(() => {
       const { filters } = props
+
+      const activeSearch = (filters.searchRelaxed && !filters.searchRelaxed.disabled)
+        ? filters.searchRelaxed
+        : filters.searchExact
+      if (activeSearch.sub && !activeSearch.sub.disabled) {
+        return false
+      }
       return filters.searchRelaxed?.disabled
     })
 

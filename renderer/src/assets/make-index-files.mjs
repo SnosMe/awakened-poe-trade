@@ -25,9 +25,10 @@ for (const lang of LANGUAGES) {
       for (const stat of stats) {
         lineStarts.statsByRef.push({ start, hash: Number(fnv1a(stat.ref, { size: 32 })) })
         for (const matcher of stat.matchers) {
-          lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.string, { size: 32 })) })
           if (matcher.advanced) {
             lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.advanced, { size: 32 })) })
+          } else {
+            lineStarts.matchers.push({ start, hash: Number(fnv1a(matcher.string, { size: 32 })) })
           }
         }
       }

@@ -1,5 +1,5 @@
 import fnv1a from '@sindresorhus/fnv1a'
-import type { BaseType, DisenchantUniqueItem, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
 
 export * from './interfaces'
 
@@ -8,18 +8,17 @@ export let CLIENT_STRINGS: TranslationDict
 export let CLIENT_STRINGS_REF: TranslationDict
 export let APP_PATRONS: Array<{ from: string, months: number, style: number }>
 
-export let ITEM_BY_TRANSLATED = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
-export let ITEM_BY_REF = (ns: BaseType['namespace'], name: string): BaseType[] | undefined => undefined
-export let ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<BaseType> {}
-export let DISENCHANT_UNIQUE_ITEMS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<DisenchantUniqueItem> {}
+export let ITEM_BY_TRANSLATED: (ns: BaseType['namespace'], name: string) => BaseType[] | undefined = () => undefined
+export let ITEM_BY_REF: (ns: BaseType['namespace'], name: string) => BaseType[] | undefined = () => undefined
+export let ITEMS_ITERATOR: (includes: string, andIncludes?: string[]) => Generator<BaseType> = function * () {}
 
-export let ALTQ_GEM_NAMES = function * (): Generator<string> {}
-export let REPLICA_UNIQUE_NAMES = function * (): Generator<string> {}
+export let ALTQ_GEM_NAMES: () => Generator<string> = function * () {}
+export let REPLICA_UNIQUE_NAMES: () => Generator<string> = function * () {}
 
-export let STAT_BY_MATCH_STR = (name: string): { matcher: StatMatcher, stat: Stat } | undefined => undefined
-export let STAT_BY_MATCH_STR_V2 = (name: string): StatOrGroup | undefined => undefined
-export let STAT_BY_REF_V2 = (name: string): StatOrGroup | undefined => undefined
-export let STATS_ITERATOR = function * (includes: string, andIncludes?: string[]): Generator<Stat> {}
+export let STAT_BY_MATCH_STR: (name: string) => { matcher: StatMatcher, stat: Stat } | undefined = () => undefined
+export let STAT_BY_MATCH_STR_V2: (name: string) => StatOrGroup | undefined = () => undefined
+export let STAT_BY_REF_V2: (name: string) => StatOrGroup | undefined = () => undefined
+export let STATS_ITERATOR: (includes: string, andIncludes?: string[]) => Generator<Stat> = function * () {}
 
 function dataBinarySearch (data: Uint32Array, value: number, rowOffset: number, rowSize: number) {
   let left = 0
@@ -77,7 +76,6 @@ function itemNamesFromLines (items: Generator<BaseType>) {
 
 async function loadItems (language: string) {
   const ndjson = await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items.ndjson`)).text()
-  const disenchantingNdjson = await (await fetch(`${import.meta.env.BASE_URL}data/disenchanting.ndjson`)).text()
   const INDEX_WIDTH = 2
   const indexNames = new Uint32Array(await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items-name.index.bin`)).arrayBuffer())
   const indexRefNames = new Uint32Array(await (await fetch(`${import.meta.env.BASE_URL}data/${language}/items-ref.index.bin`)).arrayBuffer())
@@ -104,7 +102,6 @@ async function loadItems (language: string) {
   ITEM_BY_TRANSLATED = commonFind(indexNames, 'name')
   ITEM_BY_REF = commonFind(indexRefNames, 'refName')
   ITEMS_ITERATOR = ndjsonFindLines<BaseType>(ndjson)
-  DISENCHANT_UNIQUE_ITEMS_ITERATOR = ndjsonFindLines<DisenchantUniqueItem>(disenchantingNdjson)
   ALTQ_GEM_NAMES = itemNamesFromLines(ITEMS_ITERATOR('altQuality":["Anomalous'))
   REPLICA_UNIQUE_NAMES = itemNamesFromLines(ITEMS_ITERATOR('refName":"Replica'))
 }

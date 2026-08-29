@@ -1,27 +1,25 @@
 <template>
   <Widget :config="config" :move-handles="['tl', 'bl']" :removable="false" :inline-edit="false">
     <div class="widget-default-style flex flex-col p-1 gap-1" style="min-width: 24rem;">
-      <transition-group v-if="starred.length" tag="div"
-        :enter-active-class="$style.starredItemEnter"
-        class="flex gap-x-1 bg-gray-800 rounded">
-        <button v-for="item in starred" :key="item.info.refName + item.discr"
-          :class="$style.starredItem"
-          @click="starredItemClick($event, item)">
+      <transition-group v-if="selected.length"
+        tag="div" :class="$style.selectedItems"
+        :enter-active-class="$style.selectedItemEnter">
+        <button v-for="item in selected" :key="item.info.refName + item.discr"
+          :class="$style.selectedItem"
+          @click="selectedItemClick($event, item)">
           <ItemQuickPrice
             :item-img="item.info.icon"
             :price="item.price"
-            currency-text
-          ></ItemQuickPrice>
-          <div class="ml-1 truncate" style="max-width: 7rem;">{{ item.info.name }}</div>
-          <div v-if="item.discr"
-            class="ml-1 truncate" style="max-width: 7rem;">{{ t(item.discr) }}</div>
+            currency-text />
+          <div :class="$style.name">{{ item.info.name }}</div>
+          <div v-if="item.discr" :class="$style.name">{{ t(item.discr) }}</div>
         </button>
       </transition-group>
       <UiTimeout v-if="!showSearch"
         ref="showTimeout"
         @timeout="makeInvisible"
         class="self-center" :ms="4000" />
-      <div v-else class="bg-gray-800 rounded">
+      <div v-else :class="$style.searchWrapper">
         <div class="flex gap-x-1 p-1">
           <input type="text" :placeholder="t(':input')" class="rounded bg-gray-900 px-1 flex-1"
             v-model="searchValue">
@@ -37,29 +35,28 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <div v-for="item in (results || [])" :key="item.name">
-            <div class="flex" :class="$style.itemWrapper">
-              <div class="w-8 h-8 flex items-center justify-center">
-                <img :src="item.icon" class="max-w-full max-h-full overflow-hidden">
-              </div>
-              <div>
-                <div class="h-8 flex items-center px-1">{{ item.name }}</div>
-                <div v-if="item.gem" class="flex gap-x-1">
+          <div v-for="item in (results || [])" :key="item.name"
+            :class="$style.searchItem">
+            <img :src="item.icon" :class="$style.icon">
+            <div class="flex flex-col">
+              <div :class="$style.name">{{ item.name }}</div>
+              <div :class="$style.selectButtons">
+                <template v-if="item.gem">
                   <button v-for="altQuality in []" :key="altQuality"
                     @click="selectItem(item, { altQuality })"
                     >{{ t(altQuality) }}</button>
-                </div>
-                <div v-else-if="item.unique" class="flex gap-x-1">
-                  <button  @click="selectItem(item, { unique: true })"
+                </template>
+                <template v-else-if="item.unique">
+                  <button @click="selectItem(item, { unique: true })"
                     >{{ t('Select') }}</button>
-                </div>
+                </template>
               </div>
             </div>
           </div>
           <div v-if="results === false"
-            class="text-center p-8 max-w-xs"><i class="fas fa-search" /> {{ t(':too_many') }}</div>
+            :class="$style.searchMessage"><i class="fas fa-search" /> {{ t(':too_many') }}</div>
           <div v-else-if="!results.length"
-            class="text-center p-8 max-w-xs"><i class="fas fa-exclamation-triangle" /> {{ t(':not_found') }}</div>
+            :class="$style.searchMessage"><i class="fas fa-exclamation-triangle" /> {{ t(':not_found') }}</div>
         </div>
       </div>
     </div>
@@ -209,14 +206,14 @@ const wm = inject<WidgetManager>('wm')!
 const { t } = useI18nNs('item_search')
 const { findPriceByQuery, autoCurrency, queuePricesFetch } = usePoeninja()
 
-const showTimeout = shallowRef<{ reset:() => void } | null>(null)
+const showTimeout = shallowRef<{ reset: () => void } | null>(null)
 
 nextTick(() => {
   props.config.wmFlags = ['invisible-on-blur']
 })
 
 const searchValue = shallowRef('')
-const { items: starred, addItem, clearItems } = useSelectedItems()
+const { items: selected, addItem, clearItems } = useSelectedItems()
 
 const typeFilter = shallowRef<'gem' | 'replica'>('gem')
 
@@ -289,17 +286,17 @@ function makeInvisible () {
   props.config.wmFlags = ['invisible-on-blur']
 }
 
-function starredItemClick (e: MouseEvent, item: SelectedItem) {
+function selectedItemClick (e: MouseEvent, item: SelectedItem) {
   const parsed = (item.info.namespace === 'GEM')
     ? createVirtualItem({
-      category: ItemCategory.Gem,
-      info: item.info,
-      gemLevel: 1
-    })
+        category: ItemCategory.Gem,
+        info: item.info,
+        gemLevel: 1
+      })
     : createVirtualItem({
-      rarity: ItemRarity.Unique,
-      info: item.info
-    })
+        rarity: ItemRarity.Unique,
+        info: item.info
+      })
 
   Host.selfDispatch({
     name: 'MAIN->CLIENT::item-text',
@@ -315,27 +312,64 @@ function starredItemClick (e: MouseEvent, item: SelectedItem) {
 </script>
 
 <style lang="postcss" module>
-.itemWrapper {
-  @apply pl-1 pt-1;
-  overflow: hidden;
+.searchItem {
+  display: flex;
+  padding-left: theme('spacing.1');
+  padding-top: theme('spacing.1');
 
   &:hover {
     background: linear-gradient(to left, theme('colors.gray.800'), theme('colors.gray.900'));
   }
 
-  button {
-    @apply text-gray-600;
-    @apply px-1;
-    @apply rounded;
+  & .icon {
+    align-self: start;
+    object-position: center;
+    object-fit: contain;
+    width: 3rem;
+    height: 3rem;
   }
 
-  &:hover button {
+  & .name {
+    display: flex;
+    align-items: center;
+    height: theme('spacing.8');
+    padding: 0 theme('spacing.1');
+  }
+
+  & .selectButtons {
+    display: flex;
+    gap: theme('spacing.1');
+
+    & > button {
+      @apply text-gray-600;
+      @apply px-1;
+      @apply rounded;
+    }
+  }
+
+  &:hover .selectButtons > button {
     @apply text-gray-400;
     @apply bg-gray-700;
   }
 }
 
-.starredItem {
+.searchMessage {
+  text-align: center;
+  padding: theme('spacing.8');
+  max-width: 20rem;
+}
+
+.selectedItems, .searchWrapper {
+  background: theme('colors.gray.800');
+  border-radius: theme('borderRadius.DEFAULT');
+}
+
+.selectedItems {
+  display: flex;
+  gap: theme('spacing.1');
+}
+
+.selectedItem {
   display: flex;
   flex-direction: column;
   @apply rounded px-1 pb-1 pt-0.5;
@@ -343,14 +377,22 @@ function starredItemClick (e: MouseEvent, item: SelectedItem) {
   &:hover {
     @apply bg-gray-700;
   }
+
+  & > .name {
+    padding-left: theme('spacing.1');
+    max-width: 7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-@keyframes starredItemEnter {
+@keyframes selectedItemEnter {
   0% { @apply bg-transparent; }
   50% { @apply bg-gray-700; }
   100% { @apply bg-transparent; }
 }
-.starredItemEnter {
-  animation: starredItemEnter 0.8s linear;
+.selectedItemEnter {
+  animation: selectedItemEnter 0.8s linear;
 }
 </style>

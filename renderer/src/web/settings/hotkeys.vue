@@ -3,39 +3,8 @@
     <div class="mb-2 bg-gray-700 rounded px-2 py-1 leading-none">
       <i class="fas fa-info-circle"></i> {{ t('settings.clear_hotkey') }}
     </div>
-    <div class="mb-8 flex flex-col">
-      <label class="mb-1">{{ t('price_check.name') }}</label>
-      <div class="flex flex-col gap-y-2 pl-4">
-        <div class="flex gap-x-2">
-          <label class="flex-1 text-gray-500">{{ t('price_check.hotkey') }}</label>
-          <div class="flex w-48 gap-x-1">
-            <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Ctrl', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Ctrl'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Ctrl</button>
-            <button :class="{ 'border-transparent': priceCheckHotkeyHold !== 'Alt', 'line-through': priceCheckHotkey === null }" @click="priceCheckHotkeyHold = 'Alt'; priceCheckHotkey = null" class="rounded px-1 bg-gray-900 border leading-none">Alt</button>
-            <span class="flex-1 text-center">+</span>
-            <hotkey-input v-model="priceCheckHotkey" class="w-20" no-mod-keys />
-          </div>
-        </div>
-        <div class="flex gap-x-2">
-          <label class="flex-1 text-gray-500">{{ t('price_check.hotkey_locked') }}</label>
-          <hotkey-input v-model="priceCheckHotkeyLocked" class="w-48" />
-        </div>
-      </div>
-    </div>
-    <div class="mb-4 flex">
-      <label class="flex-1">{{ t('settings.overlay') }} <span class="text-red-500 text-lg leading-none">*</span></label>
-      <hotkey-input required v-model="overlayKey" class="w-48" />
-    </div>
-    <div class="mb-4 flex">
-      <label class="flex-1">{{ t('map_check.name') }}</label>
-      <hotkey-input v-model="itemCheckKey" class="w-48" />
-    </div>
-    <div class="mb-4 flex">
-      <label class="flex-1">{{ t('item.info') }}</label>
-      <hotkey-input v-model="itemCheckKey" class="w-48" />
-    </div>
-    <div class="mb-8 flex">
-      <label class="flex-1">{{ t('settings.delve_grid') }}</label>
-      <hotkey-input v-model="delveGridKey" class="w-48" />
+    <div class="flex flex-col gap-4 mb-8">
+      <HotkeysGeneric :hotkeys="hotkeys" />
     </div>
     <div class="mb-8 flex">
       <label class="flex-1">{{ t('settings.stash_scroll') }}</label>
@@ -48,31 +17,56 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+export default {
+  name: 'settings.hotkeys'
+}
+</script>
+
+<script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import UiRadio from '@/web/ui/UiRadio.vue'
-import { configProp, configModelValue, findWidget } from './utils'
+import { configProp, configModelValue, _configModelValue, findWidget } from './utils'
 import { PriceCheckWidget, DelveGridWidget } from '@/web/overlay/interfaces'
 import { ItemCheckWidget } from '../item-check/widget.js'
-import HotkeyInput from './HotkeyInput.vue'
 
-export default defineComponent({
-  name: 'settings.hotkeys',
-  components: { HotkeyInput, UiRadio },
-  props: configProp(),
-  setup (props) {
-    const { t } = useI18n()
+import UiRadio from '@/web/ui/UiRadio.vue'
+import HotkeysGeneric, { HotkeySchema } from '../settings/HotkeysGeneric.vue'
 
-    return {
-      t,
-      stashScroll: configModelValue(() => props.config, 'stashScroll'),
-      delveGridKey: configModelValue(() => findWidget<DelveGridWidget>('delve-grid', props.config)!, 'toggleKey'),
-      itemCheckKey: configModelValue(() => findWidget<ItemCheckWidget>('item-check', props.config)!, 'hotkey'),
-      overlayKey: configModelValue(() => props.config, 'overlayKey'),
-      priceCheckHotkeyHold: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyHold'),
-      priceCheckHotkey: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkey'),
-      priceCheckHotkeyLocked: configModelValue(() => findWidget<PriceCheckWidget>('price-check', props.config)!, 'hotkeyLocked')
-    }
-  }
+const props = defineProps(configProp())
+
+const hotkeys = computed<HotkeySchema[]>(() => {
+  const priceCheckWidget = findWidget<PriceCheckWidget>('price-check', props.config)!
+  const itemCheckWidget = findWidget<ItemCheckWidget>('item-check', props.config)!
+  const delveGridWidget = findWidget<DelveGridWidget>('delve-grid', props.config)!
+  return [{
+    translationKey: 'price_check.name',
+    items: [{
+      translationKey: 'price_check.hotkey',
+      config: {
+        modKey: _configModelValue(priceCheckWidget, 'hotkeyHold'),
+        nonModKey: _configModelValue(priceCheckWidget, 'hotkey')
+      }
+    }, {
+      translationKey: 'price_check.hotkey_locked',
+      config: _configModelValue(priceCheckWidget, 'hotkeyLocked')
+    }]
+  }, {
+    translationKey: 'settings.overlay',
+    config: _configModelValue(props.config, 'overlayKey'),
+    required: true
+  }, {
+    translationKey: 'map_check.name',
+    config: _configModelValue(itemCheckWidget, 'hotkey')
+  }, {
+    translationKey: 'item.info',
+    config: _configModelValue(itemCheckWidget, 'hotkey')
+  }, {
+    translationKey: 'settings.delve_grid',
+    config: _configModelValue(delveGridWidget, 'toggleKey')
+  }]
 })
+
+const stashScroll = configModelValue(() => props.config, 'stashScroll')
+
+const { t } = useI18n()
 </script>

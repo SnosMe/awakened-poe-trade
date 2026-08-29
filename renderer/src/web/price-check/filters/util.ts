@@ -1,4 +1,3 @@
-
 function decimalPlaces (value: number, dp: number | boolean): number {
   if (typeof dp === 'number') {
     return dp

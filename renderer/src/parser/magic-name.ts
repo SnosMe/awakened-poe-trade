@@ -1,19 +1,21 @@
-import { ITEM_BY_REF } from '@/assets/data'
+import { ITEM_BY_TRANSLATED } from '@/assets/data'
 
 export function magicBasetype (name: string) {
-  const words = name.split(' ')
+  // Chinese and Japanese don't use spaces to separate words, so fallback to characters
+  const separator = name.includes(' ') ? ' ' : ''
+  const words = name.split(separator)
 
   const perm: string[] = words.flatMap((_, start) =>
     Array(words.length - start).fill(undefined)
       .map((_, idx) => words
         .slice(start, start + idx + 1)
-        .join(' ')
+        .join(separator)
       )
   )
 
   const result = perm
     .map(name => {
-      const result = ITEM_BY_REF('ITEM', name)
+      const result = ITEM_BY_TRANSLATED('ITEM', name)
       return { name, found: (result && result[0].craftable) }
     })
     .filter(res => res.found)

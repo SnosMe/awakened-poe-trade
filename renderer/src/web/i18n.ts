@@ -12,7 +12,7 @@ export async function init (lang: string) {
     fallbackWarn: false,
     missingWarn: false,
     messages: {
-      // eslint-disable-next-line quote-props
+      // eslint-disable-next-line @stylistic/quote-props
       'en': await (await fetch(`${import.meta.env.BASE_URL}data/en/app_i18n.json`)).json()
     }
   })
@@ -39,12 +39,14 @@ export async function loadLang (lang: string): Promise<void> {
 
 export function useI18nNs (name: string) {
   const { t } = useI18n()
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  const _t = t as Function
   return {
     t: ((path, ...args) => {
       if (typeof path === 'string' && path.startsWith(':')) {
-        return (t as any)(path.replace(':', `${name}.`), ...args)
+        return _t(path.replace(':', `${name}.`), ...args)
       } else {
-        return (t as any)(path, ...args)
+        return _t(path, ...args)
       }
     }) as typeof t
   }

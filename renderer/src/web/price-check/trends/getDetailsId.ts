@@ -1,6 +1,6 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { SPECIAL_SUPPORT_GEM, floorToBracket } from '../filters/create-item-filters'
-import { ACCESSORY, ARMOUR, WEAPON } from '@/parser/meta'
+import { JEWELLERY, ARMOUR, WEAPON } from '@/parser/meta'
 
 export function isValuableBasetype (item: ParsedItem): boolean {
   if (
@@ -9,7 +9,7 @@ export function isValuableBasetype (item: ParsedItem): boolean {
   ) return false
 
   return (
-    ACCESSORY.has(item.category) ||
+    JEWELLERY.has(item.category) ||
     ARMOUR.has(item.category) ||
     WEAPON.has(item.category) ||
     item.category === ItemCategory.Quiver
@@ -23,12 +23,12 @@ export function getDetailsId (item: ParsedItem) {
   if (item.category === ItemCategory.Map) {
     return {
       ns: item.info.namespace,
-      name: (item.mapBlighted)
-        ? `${item.mapBlighted} ${item.info.refName}`
-        : item.info.refName,
+      name: item.info.refName,
       variant: variant([
-        `T${item.map!.tier}`,
-        (item.rarity !== ItemRarity.Unique) ? 'Gen-18' : null
+        `T${(item.rarity === ItemRarity.Unique ? undefined : item.mapTier) ?? 0}`,
+        (item.rarity !== ItemRarity.Unique)
+          ? (item.mapTier) ? 'Gen-24' : 'Atlas'
+          : null
       ])
     }
   }

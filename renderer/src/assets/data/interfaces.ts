@@ -5,7 +5,6 @@ export interface StatMatcher {
   advanced?: string
   negate?: true
   value?: number
-  oils?: string // Amulet anointment
 }
 
 export enum StatBetter {
@@ -19,8 +18,11 @@ export interface Stat {
   dp?: true
   matchers: StatMatcher[]
   better: StatBetter
+  modFamily?: string[]
   fromAreaMods?: 'yes' | 'ubermap_exclusive' | 'heist_exclusive'
-  anointments?: Array<{ roll: number, oils: string }> // Ring anointments
+  anointments?: Array<{ roll: number, oils: string }>
+  mercenary?: { icon?: string, supports?: string[], tier?: number, canonical?: string, syntheticFamily?: true }
+  jewelleryQuality?: { catalyst: string }
   trade: {
     inverted?: true
     option?: true
@@ -56,22 +58,17 @@ export interface DropEntry {
   items: string[]
 }
 
-export interface DisenchantUniqueItem {
-  name: string
-  baseType: string
-  dustAmount: number
-}
-
 export interface BaseType {
   name: string
   refName: string
-  namespace: (
-    'DIVINATION_CARD' |
-    'CAPTURED_BEAST' |
-    'UNIQUE' |
-    'ITEM' |
-    'GEM'
-  )
+  namespace:
+    | 'DIVINATION_CARD'
+    | 'CAPTURED_BEAST'
+    | 'UNIQUE'
+    | 'ITEM'
+    | 'GEM'
+    | 'AREA'
+    | 'MERCENARY_BUILD'
   icon: string
   w?: number
   h?: number
@@ -96,15 +93,18 @@ export interface BaseType {
   unique?: {
     base: BaseType['refName']
     fixedStats?: Array<Stat['ref']>
+    disenchantValue?: number
   }
-  map?: {
+  area?: {
     screenshot?: string
+    special?: true
+    blighted?: true
   }
   gem?: {
     vaal?: true
-    awakened?: true
     transfigured?: true
     normalVariant?: BaseType['refName']
+    maxLevel: number
   }
   armour?: {
     ar?: [min: number, max: number]
@@ -112,6 +112,14 @@ export interface BaseType {
     es?: [min: number, max: number]
     ward?: [min: number, max: number]
   }
+  mercenaryBuild?: BaseType['refName'] | MercenaryBuild
+}
+
+export interface MercenaryBuild {
+  skills: Array<{
+    type: 'primary' | 'secondary' | 'utility'
+    name: string
+  }>
 }
 
 export interface TranslationDict {
@@ -123,7 +131,7 @@ export interface TranslationDict {
   RARITY_CURRENCY: string
   RARITY_DIVCARD: string
   RARITY_QUEST: string
-  MAP_TIER: string
+  MAP_TIER: RegExp
   MAP_ITEM_QUANTITY: string
   MAP_ITEM_RARITY: string
   MAP_MONSTER_PACK_SIZE: string
@@ -181,17 +189,33 @@ export interface TranslationDict {
   QUALITY_PHANTASMAL: RegExp
   AREA_LEVEL: string
   HEIST_WINGS_REVEALED: string
-  HEIST_TARGET: string
+  HEIST_BLUEPRINT_TARGET: string
   HEIST_BLUEPRINT_ENCHANTS: string
   HEIST_BLUEPRINT_TRINKETS: string
   HEIST_BLUEPRINT_GEMS: string
   HEIST_BLUEPRINT_REPLICAS: string
+  HEIST_CONTRACT_JOB: RegExp
+  HEIST_JOB_LOCKPICKING: string
+  HEIST_JOB_BRUTEFORCE: string
+  HEIST_JOB_PERCEPTION: string
+  HEIST_JOB_DEMOLITION: string
+  HEIST_JOB_COUNTERTHAUMATURGY: string
+  HEIST_JOB_TRAPDISARMAMENT: string
+  HEIST_JOB_AGILITY: string
+  HEIST_JOB_DECEPTION: string
+  HEIST_JOB_ENGINEERING: string
+  HEIST_CONTRACT_TARGET: RegExp
+  HEIST_TARGET_PRICELESS: string
   MIRRORED: string
+  SPLIT: string
   MODIFIER_LINE: RegExp
   PREFIX_MODIFIER: string
   SUFFIX_MODIFIER: string
   CRAFTED_PREFIX: string
   CRAFTED_SUFFIX: string
+  IMPLICIT_MODIFIER: string
+  FRACTURED_PREFIX: string
+  FRACTURED_SUFFIX: string
   UNSCALABLE_VALUE: string
   CORRUPTED_IMPLICIT: string
   MODIFIER_INCREASED: RegExp
@@ -215,10 +239,18 @@ export interface TranslationDict {
   DELVE_MODS: string[]
   VEILED_MODS: string[]
   INCURSION_MODS: string[]
+  ESSENCE_MODS: string[]
+  INFAMOUS_MODS: string[]
   FOIL_UNIQUE: string
   UNMODIFIABLE: string
   FOULBORN_NAME: RegExp
   FOULBORN_MODIFIER: string
+  VESTIGIAL_NAME: RegExp
+  VESTIGIAL_IMPLICIT: string
+  MAP_AREA: string
+  CHART_SULPHUR: string
+  MERCENARY_LEVEL: string
+  MERCENARY_BUILD: string
   // ---
   CHAT_SYSTEM: RegExp
   CHAT_TRADE: RegExp

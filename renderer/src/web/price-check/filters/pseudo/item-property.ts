@@ -6,7 +6,7 @@ import { ParsedItem } from '@/parser'
 import { ModifierType, StatRoll, StatSource } from '@/parser/modifiers'
 import { FilterTag, InternalTradeId, StatFilter } from '../interfaces'
 
-export function filterItemProp (ctx: FiltersCreationContext) {
+export function filterEquipmentProps (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
     armourProps(ctx)
   }
@@ -259,7 +259,7 @@ function isPdpsImportant (item: ParsedItem) {
 export function propToFilter (opts: {
   ref: string
   tradeId: InternalTradeId
-  roll: StatRoll
+  roll: StatRoll | undefined
   sources: StatSource[]
   dp?: boolean
   disabled?: StatFilter['disabled']
@@ -287,7 +287,7 @@ export function propToFilter (opts: {
 
 export function noSourcePseudoToFilter (opts: {
   pseudo: Stat
-  roll: StatRoll
+  roll: StatRoll | undefined
   dp?: boolean
   disabled?: StatFilter['disabled']
   hidden?: StatFilter['hidden']
@@ -303,11 +303,13 @@ export function noSourcePseudoToFilter (opts: {
       stat: {
         stat: opts.pseudo,
         translation: opts.pseudo.matchers[0],
-        roll: {
-          dp: opts.dp ?? false,
-          unscalable: false,
-          ...opts.roll
-        }
+        roll: (opts.roll)
+          ? {
+              dp: opts.dp ?? false,
+              unscalable: false,
+              ...opts.roll
+            }
+          : undefined
       },
       contributes: opts.roll
     }]

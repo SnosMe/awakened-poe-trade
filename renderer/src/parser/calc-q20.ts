@@ -79,13 +79,13 @@ export function calcPropBounds (
       ? sources.map(source => ({ ...source, contributes: undefined }))
       : (statRefs.incr.length)
           ? sources.map(source => ({
-            ...source,
-            contributes: {
-              value: base * source.contributes!.value / 100,
-              min: base * source.contributes!.min / 100,
-              max: base * source.contributes!.max / 100
-            }
-          }))
+              ...source,
+              contributes: {
+                value: base * source.contributes!.value / 100,
+                min: base * source.contributes!.min / 100,
+                max: base * source.contributes!.max / 100
+              }
+            }))
           : sources
   }
 }

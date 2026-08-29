@@ -1,5 +1,5 @@
 import { shallowReactive } from 'vue'
-import type { ItemFilters, StatFilter } from '../filters/interfaces'
+import type { ItemFilters, FilterOrGroup } from '../filters/interfaces'
 import { AppConfig } from '@/web/Config'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { RateLimiter } from './RateLimiter'
@@ -21,8 +21,9 @@ export type TradeResponse<T> = (T & { error?: null }) | {
   }
 }
 
-export function apiToSatisfySearch (item: ParsedItem, stats: StatFilter[], filters: ItemFilters): 'trade' | 'bulk' {
-  if (stats.some(s => !s.disabled)) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function apiToSatisfySearch (item: ParsedItem, stats: FilterOrGroup[], filters: ItemFilters): 'trade' | 'bulk' {
+  if (stats.some(s => s.group ? !s.meta.disabled : !s.disabled)) {
     return 'trade'
   }
 
@@ -57,7 +58,9 @@ export function adjustRateLimits (clientLimits: Set<RateLimiter>, headers: Heade
   )
 }
 
-function _adjustRateLimits (clientLimits: Set<RateLimiter>, limitStr: string, stateStr: string): void { /* eslint-disable no-console */
+function _adjustRateLimits (clientLimits: Set<RateLimiter>, limitStr: string, stateStr: string): void {
+  /* eslint-disable no-console, @typescript-eslint/no-unused-expressions */
+
   const DEBUG = false
   const DESYNC_FIX = AppConfig<PriceCheckWidget>('price-check')!.apiLatencySeconds
 
@@ -118,6 +121,8 @@ function _adjustRateLimits (clientLimits: Set<RateLimiter>, limitStr: string, st
       rl.wait()
     }
   }
+
+  /* eslint-enable */
 }
 
 export function preventQueueCreation (targets: Array<{ count: number, limiters: Iterable<RateLimiter> }>) {

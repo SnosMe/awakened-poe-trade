@@ -18,6 +18,9 @@
     "types": ["vite/client"],
     "lib": ["esnext", "dom", "dom.iterable"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue",
+    "public/data/*/client_strings.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

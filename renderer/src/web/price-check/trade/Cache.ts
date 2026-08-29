@@ -1,7 +1,7 @@
 import type { RateLimiter } from './RateLimiter'
 import hash from 'object-hash'
 
-const MIN_TTL = 300
+const CACHE_TTL = 300
 
 export class Cache {
   private cached = new Map<string, unknown>()
@@ -21,6 +21,6 @@ export class Cache {
   }
 
   static deriveTtl (...limits: RateLimiter[]): number {
-    return Math.max(MIN_TTL, ...limits.map(limit => limit.window))
+    return (limits.length) ? CACHE_TTL : 0
   }
 }

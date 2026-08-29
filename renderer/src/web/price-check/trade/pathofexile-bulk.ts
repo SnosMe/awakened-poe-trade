@@ -6,7 +6,7 @@ import { ItemFilters } from '../filters/interfaces'
 import { ParsedItem } from '@/parser'
 import { Cache } from './Cache'
 
-interface TradeRequest { /* eslint-disable camelcase */
+interface TradeRequest {
   engine: 'new'
   query: {
     status: { option: 'online' | 'onlineleague' | 'any' }

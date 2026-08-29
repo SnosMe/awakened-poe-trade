@@ -1,11 +1,12 @@
 {
   "name": "awakened-poe-trade",
-  "version": "3.27.105",
+  "version": "3.29.107",
   "private": true,
   "scripts": {
     "dev": "node build/script.mjs",
     "build": "tsc --noEmit && node build/script.mjs --prod",
-    "package": "electron-builder build"
+    "package": "electron-builder build",
+    "postinstall": "patch-package --patch-dir build"
   },
   "author": {
     "name": "Alexander Drozdov"
@@ -16,21 +17,25 @@
   },
   "main": "dist/main.js",
   "dependencies": {
-    "electron-overlay-window": "3.3.1",
-    "uiohook-napi": "1.5.x"
+    "electron-overlay-window": "4.1.0",
+    "uiohook-napi": "1.5.5"
   },
   "devDependencies": {
-    "@types/ini": "^4.1.0",
-    "@types/node": "22.x.x",
-    "@types/ws": "^8.5.3",
+    "@types/ini": "^4.1.1",
+    "@types/node": "^24.12.2",
+    "@types/ws": "^8.18.1",
     "@wokwi/bmp-ts": "^3.0.0",
-    "comlink": "^4.3.1",
-    "electron": "39.2.0",
-    "electron-builder": "26.0.12",
-    "electron-updater": "^6.3.0",
-    "esbuild": "^0.27.0",
+    "comlink": "^4.4.2",
+    "electron": "^40.10.6",
+    "electron-builder": "^26.9.0",
+    "electron-updater": "^6.8.3",
+    "esbuild": "^0.28.0",
     "ini": "^6.0.0",
-    "typescript": "5.9.x",
-    "ws": "^8.16.0"
+    "patch-package": "^8.0.1",
+    "typescript": "^6.0.2",
+    "ws": "^8.20.0"
+  },
+  "allowScripts": {
+    "electron": true
   }
 }

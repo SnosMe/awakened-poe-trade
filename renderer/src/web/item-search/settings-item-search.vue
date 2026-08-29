@@ -1,9 +1,6 @@
 <template>
   <div class="flex flex-col gap-4 p-2 max-w-md">
-    <div class="flex">
-      <label class="flex-1">{{ t('item_search.ocr_gems_key') }}</label>
-      <hotkey-input v-model="ocrGemsKey" class="w-48" />
-    </div>
+    <HotkeysGeneric :hotkeys="hotkeys" />
   </div>
 </template>
 
@@ -14,15 +11,19 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { configProp, configModelValue, findWidget } from '../settings/utils.js'
+import { defineProps, computed } from 'vue'
+import { configProp, _configModelValue, findWidget } from '../settings/utils.js'
 import { ItemSearchWidget } from './widget.js'
 
-import HotkeyInput from '../settings/HotkeyInput.vue'
+import HotkeysGeneric, { HotkeySchema } from '../settings/HotkeysGeneric.vue'
 
 const props = defineProps(configProp())
 
-const ocrGemsKey = configModelValue(() => findWidget<ItemSearchWidget>('item-search', props.config)!, 'ocrGemsKey')
-const { t } = useI18n()
+const hotkeys = computed<HotkeySchema[]>(() => {
+  const widget = findWidget<ItemSearchWidget>('item-search', props.config)!
+  return [{
+    translationKey: 'item_search.ocr_gems_key',
+    config: _configModelValue(widget, 'ocrGemsKey')
+  }]
+})
 </script>

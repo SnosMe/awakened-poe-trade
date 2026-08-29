@@ -27,12 +27,14 @@
       ref="tradeService"
       :filters="itemFilters"
       :stats="itemStats"
-      :item="item" />
+      :item="item"
+      @reset="resetTradeResults" />
     <trade-bulk
       v-if="tradeAPI === 'bulk' && doSearch"
       ref="tradeService"
       :filters="itemFilters"
-      :item="item" />
+      :item="item"
+      @reset="resetTradeResults" />
     <div v-if="!doSearch" class="flex justify-between items-center">
       <div class="flex w-40" @mouseenter="handleSearchMouseenter">
         <button class="btn" @click="doSearch = true" style="min-width: 5rem;">{{ t('Search') }}</button>
@@ -40,6 +42,10 @@
       <trade-links v-if="tradeAPI === 'trade'"
         :get-link="makeTradeLink" />
     </div>
+    <p v-if="showComplexityHint" :class="$style.complexityHint">
+      <i class="fas fa-info-circle" />
+      {{ t('item.complexity_hint') }}
+    </p>
     <stack-value :filters="itemFilters" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
       <div class="mb-1">{{ t('Support development on') }} <a href="https://patreon.com/awakened_poe_trade" class="inline-flex align-middle animate__animated animate__fadeInRight" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
@@ -131,12 +137,15 @@ export default defineComponent({
       } else {
         doSearch.value = Boolean(
           (item.rarity === ItemRarity.Unique) ||
-          (item.category === ItemCategory.Map) ||
+          (presets.value.active === 'filters.preset_bulk') ||
+          (item.mapCompletionReward) ||
+          (item.category === ItemCategory.HeistContract) ||
           (item.category === ItemCategory.HeistBlueprint) ||
           (item.category === ItemCategory.SanctumRelic) ||
           (item.category === ItemCategory.Charm) ||
           (item.category === ItemCategory.Idol) ||
-          (!CATEGORY_TO_TRADE_ID.has(item.category!)) ||
+          (!CATEGORY_TO_TRADE_ID.has(item.category!) &&
+            item.info.refName !== 'Mercenary Warrant') ||
           (item.isUnidentified) ||
           (item.isVeiled)
         )
@@ -191,6 +200,7 @@ export default defineComponent({
         props.item.category !== ItemCategory.CapturedBeast &&
         props.item.category !== ItemCategory.HeistContract &&
         props.item.category !== ItemCategory.HeistBlueprint &&
+        props.item.category !== ItemCategory.Chart &&
         props.item.category !== ItemCategory.Invitation &&
         props.item.info.refName !== 'Expedition Logbook' &&
         !props.item.isUnidentified
@@ -227,7 +237,7 @@ export default defineComponent({
 
     const disenchantValue = computed(() => {
       for (const uniqueItemDisenchanting of props.item.disenchantCandidates) {
-        if (uniqueItemDisenchanting.name == props.item.info.refName) {
+        if (uniqueItemDisenchanting.name === props.item.info.refName) {
           return uniqueItemDisenchanting.value
         }
       }
@@ -249,15 +259,37 @@ export default defineComponent({
       show,
       handleSearchMouseenter,
       showSupportLinks,
+      showComplexityHint: computed(() => !widget.value.builtinBrowser && !doSearch.value &&
+        props.item.info.refName === 'Mercenary Warrant'),
       presets: computed(() => presets.value.presets.map(preset =>
         ({ id: preset.id, active: (preset.id === presets.value.active) }))),
       selectPreset (id: string) {
         presets.value.active = id
       },
       makeTradeLink () {
-        return `https://${getTradeEndpoint()}/trade/search/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value, props.item))}`
+        return `https://${getTradeEndpoint()}/trade/search/${itemFilters.value.trade.league}?q=${JSON.stringify(createTradeRequest(itemFilters.value, itemStats.value))}`
+      },
+      resetTradeResults () {
+        doSearch.value = false
       }
     }
   }
 })
 </script>
+
+<style lang="postcss" module>
+.complexityHint {
+  display: flex;
+  align-items: baseline;
+  gap: theme('spacing.2');
+  margin-top: theme('spacing.4');
+  padding: theme('spacing.2') theme('spacing.4') theme('spacing.2') theme('spacing.3');
+  border-radius: theme('borderRadius.DEFAULT');
+  background: theme('colors.gray.900');
+  text-wrap-style: pretty;
+
+  & > i {
+    color: theme('colors.gray.600');
+  }
+}
+</style>

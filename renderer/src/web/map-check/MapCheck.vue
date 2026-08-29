@@ -57,7 +57,7 @@ const mapName = computed(() => props.item.info.name)
 const image = computed(() =>
   (props.item.rarity === ItemRarity.Unique && props.item.isUnidentified)
     ? undefined
-    : props.item.info.map?.screenshot)
+    : props.item.info.area?.screenshot)
 
 const mapStats = computed(() => prepareMapStats(props.item))
 

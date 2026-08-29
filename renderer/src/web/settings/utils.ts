@@ -30,6 +30,20 @@ export function configModelValue<ObjectT extends object, KeyT extends keyof Obje
   })
 }
 
+export function _configModelValue<ObjectT extends object, KeyT extends keyof ObjectT> (
+  obj: ObjectT,
+  key: KeyT
+) {
+  return {
+    get value (): ObjectT[KeyT] {
+      return obj[key]
+    },
+    set value (value: ObjectT[KeyT]) {
+      obj[key] = value
+    }
+  }
+}
+
 export function findWidget<T extends Widget> (type: string, config: Config) {
   return config.widgets.find(w => w.wmType === type) as T | undefined
 }

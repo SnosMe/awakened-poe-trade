@@ -1,35 +1,29 @@
 <template>
-  <div class="max-w-md p-2">
-    <div class="mb-4 flex">
-      <label class="flex-1">{{ t('stopwatch.toggle_key') }}</label>
-      <hotkey-input v-model="toggleKey" class="w-48" />
-    </div>
-    <div class="mb-4 flex">
-      <label class="flex-1">{{ t('stopwatch.reset_key') }}</label>
-      <hotkey-input v-model="resetKey" class="w-48" />
-    </div>
+  <div class="flex flex-col gap-4 p-2 max-w-md">
+    <HotkeysGeneric :hotkeys="hotkeys" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
-import HotkeyInput from '../settings/HotkeyInput.vue'
-import { configProp, configModelValue } from '../settings/utils.js'
+export default {
+  name: 'stopwatch.name'
+}
+</script>
+
+<script setup lang="ts">
+import { defineProps, computed } from 'vue'
+import { configProp, _configModelValue } from '../settings/utils.js'
 import type { StopwatchWidget } from '@/web/overlay/interfaces'
 
-export default defineComponent({
-  name: 'stopwatch.name',
-  components: { HotkeyInput },
-  props: configProp<StopwatchWidget>(),
-  setup (props) {
-    const { t } = useI18n()
+import HotkeysGeneric, { HotkeySchema } from '../settings/HotkeysGeneric.vue'
 
-    return {
-      t,
-      toggleKey: configModelValue(() => props.configWidget, 'toggleKey'),
-      resetKey: configModelValue(() => props.configWidget, 'resetKey')
-    }
-  }
-})
+const props = defineProps(configProp<StopwatchWidget>())
+
+const hotkeys = computed<HotkeySchema[]>(() => [{
+  translationKey: 'stopwatch.toggle_key',
+  config: _configModelValue(props.configWidget, 'toggleKey')
+}, {
+  translationKey: 'stopwatch.reset_key',
+  config: _configModelValue(props.configWidget, 'resetKey')
+}])
 </script>

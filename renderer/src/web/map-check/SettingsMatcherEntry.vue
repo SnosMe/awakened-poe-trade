@@ -1,6 +1,6 @@
 <template>
   <div :class="$style['row']" >
-    <div class="flex-1 flex items-center px-2 overflow-hidden gap-x-1 whitespace-nowrap">
+    <div class="flex-1 flex items-center px-2 gap-x-1 whitespace-nowrap min-w-0">
       <span v-if="matcher.tag === StatTag.Outdated" :class="[$style['tag'], $style['tag-outdated']]">{{ t('map.mods.outdated') }}</span>
       <span v-if="matcher.tag === StatTag.HeistExclusive" :class="[$style['tag'], $style['tag-heist']]">{{ t('map.mods.heist') }}</span>
       <span v-if="matcher.tag === StatTag.UberMapExclusive" :class="[$style['tag'], $style['tag-uber']]">{{ t('map.mods.uber') }}</span>
@@ -113,7 +113,8 @@ export default defineComponent({
   @apply bg-red-800;
 }
 .tag-uber {
-  @apply bg-purple-600;
+  @apply bg-gray-900;
+  outline: 1px solid theme('colors.gray.700');
 }
 .tag-outdated {
   @apply bg-red-400 text-black;

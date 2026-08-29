@@ -50,6 +50,8 @@ export enum ItemCategory {
   Charm = 'Charm',
   Idol = 'Idol',
   Graft = 'Graft',
+  Chart = 'Chart',
+  MercenaryWarrant = 'Mercenary Warrant'
 }
 
 export const WEAPON_ONE_HANDED_MELEE = new Set([
@@ -90,7 +92,7 @@ export const ARMOUR = new Set([
   ItemCategory.Shield
 ])
 
-export const ACCESSORY = new Set([
+export const JEWELLERY = new Set([
   ItemCategory.Amulet,
   ItemCategory.Belt,
   ItemCategory.Ring
@@ -117,5 +119,6 @@ export const CONSUMABLE_CRAFTABLE_ITEM = new Set([
   ItemCategory.HeistContract,
   ItemCategory.Invitation,
   ItemCategory.MemoryLine,
-  ItemCategory.ExpeditionLogbook
+  ItemCategory.ExpeditionLogbook,
+  ItemCategory.Chart
 ])

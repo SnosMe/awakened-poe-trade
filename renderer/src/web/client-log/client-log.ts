@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { CLIENT_STRINGS as _$ } from '@/assets/data'
 import { AppConfig } from '@/web/Config'
 

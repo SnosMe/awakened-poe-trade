@@ -14,8 +14,8 @@ jobs:
   renderer:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
     - run: npm ci
       working-directory: ./renderer
     - run: npm run make-index-files
@@ -24,7 +24,7 @@ jobs:
       working-directory: ./renderer
     - run: npm run build
       working-directory: ./renderer
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: renderer-dist
         path: ./renderer/dist
@@ -34,12 +34,12 @@ jobs:
     needs: renderer
     strategy:
       matrix:
-        os: [windows-2022, ubuntu-22.04, macos-13]
+        os: [windows-2022, ubuntu-22.04, macos-14]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-    - uses: actions/download-artifact@v4
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+    - uses: actions/download-artifact@v8
       with:
         name: renderer-dist
         path: ./renderer/dist

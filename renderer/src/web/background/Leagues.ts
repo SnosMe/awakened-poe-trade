@@ -53,6 +53,7 @@ export const useLeagues = createGlobalState(() => {
       const response = await Host.proxy(`${poeWebApi()}/api/leagues?type=main&realm=pc`)
       if (!response.ok) throw new Error(JSON.stringify(Object.fromEntries(response.headers)))
       const leagues: ApiLeague[] = await response.json()
+
       tradeLeagues.value = leagues
         .filter(league =>
           !PERMANENT_HC.includes(league.id) &&

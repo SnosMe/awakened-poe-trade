@@ -52,7 +52,11 @@ export default defineComponent({
 
     const hotkeyController = MainProcess.onEvent('MAIN->CLIENT::widget-action', (e) => {
       if (e.target === `stopwatch-start-stop:${props.config.wmId}`) {
-        isRunning.value ? stop() : start()
+        if (isRunning.value) {
+          stop()
+        } else {
+          start()
+        }
       } else if (e.target === `stopwatch-reset:${props.config.wmId}`) {
         reset()
       }

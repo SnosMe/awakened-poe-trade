@@ -6,7 +6,7 @@ import { usePoeninja } from '@/web/background/Prices'
 
 const cache = new Cache()
 
-interface PoepricesApiResponse { /* eslint-disable camelcase */
+interface PoepricesApiResponse {
   currency: 'chaos' | 'divine' | 'exalt'
   error: number
   error_msg: string
@@ -31,7 +31,7 @@ export interface RareItemPrice {
 export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice> {
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
-    l: useLeagues().selectedId.value,
+    l: useLeagues().selectedId.value!,
     s: 'awakened-poe-trade'
   })
 
@@ -40,7 +40,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
     const response = await Host.proxy(`www.poeprices.info/api?${query}`)
     try {
       data = await response.json() as PoepricesApiResponse
-    } catch (e) {
+    } catch {
       throw new Error(`${response.status}, poeprices.info API is under load or down.`)
     }
 
@@ -80,7 +80,7 @@ export async function requestPoeprices (item: ParsedItem): Promise<RareItemPrice
 export function getExternalLink (item: ParsedItem): string {
   const query = querystring({
     i: utf8ToBase64(transformItemText(item.rawText)),
-    l: useLeagues().selectedId.value,
+    l: useLeagues().selectedId.value!,
     s: 'awakened-poe-trade',
     w: 1
   })
@@ -116,7 +116,7 @@ function utf8ToBase64 (value: string) {
   return btoa(unescape(encodeURIComponent(value)))
 }
 
-function querystring (q: Record<string, any>) {
+function querystring (q: Record<string, string | number>) {
   return Object.entries(q)
     .map(pair => pair.map(encodeURIComponent).join('='))
     .join('&')

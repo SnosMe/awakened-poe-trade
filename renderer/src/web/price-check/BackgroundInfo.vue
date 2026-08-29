@@ -9,7 +9,7 @@
     <template #name>{{ t('app.leagues_failed') }}</template>
     <p>{{ t('app.leagues_failed_help') }}</p>
     <template #actions>
-      <button class="btn" @click="leagues.load">{{ t('Retry') }}</button>
+      <button class="btn" @click="leagues.load()">{{ t('Retry') }}</button>
       <button class="btn" @click="openCaptcha">{{ t('Browser') }}</button>
     </template>
   </ui-error-box>
@@ -45,6 +45,6 @@ const updateInfo = computed(() => {
 const leagues = useLeagues()
 
 function openCaptcha () {
-  showBrowser(`https://${poeWebApi()}/api/leagues?type=main&realm=pc&compact=1`)
+  showBrowser(`https://${poeWebApi()}/api/leagues?type=main&realm=pc`)
 }
 </script>

@@ -1,5 +1,6 @@
 import type { ModifierType, StatCalculated } from './modifiers'
 import type { ParsedModifier } from './advanced-mod-desc'
+import type { ParsedStat } from './stat-translations'
 import type { BaseType } from '@/assets/data'
 import { ItemCategory } from './meta'
 
@@ -22,6 +23,7 @@ export enum ItemInfluence {
 export interface ParsedItem {
   rarity?: ItemRarity
   itemLevel?: number
+
   armourAR?: number
   armourEV?: number
   armourES?: number
@@ -32,20 +34,36 @@ export interface ParsedItem {
   weaponAS?: number
   weaponPHYSICAL?: number
   weaponELEMENTAL?: number
-  mapBlighted?: 'Blighted' | 'Blight-ravaged'
-  mapCompletionReward?: string
-  map?: {
-    tier: number
-    itemQuantity?: number
-    itemRarity?: number
-    packSize?: number
-    moreMaps?: number
-    moreScarabs?: number
-    moreCurrency?: number
-    moreDivCards?: number
-  }
-  gemLevel?: number
+
+  mapArea?: BaseType
   areaLevel?: number
+  areaItemQuantity?: number
+  areaItemRarity?: number
+  areaPackSize?: number
+  mapCompletionReward?: BaseType
+  mapTier?: number
+  mapMoreMaps?: number
+  mapMoreScarabs?: number
+  mapMoreCurrency?: number
+  mapMoreDivCards?: number
+  heistBlueprint?: {
+    wingsRevealed?: number
+    wingsTotal?: number
+    target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
+  }
+  heistContract?: {
+    requiredJob?: 'Lockpicking' | 'Brute Force' | 'Perception' | 'Demolition' | 'Counter-Thaumaturgy' | 'Trap Disarmament' | 'Agility' | 'Deception' | 'Engineering'
+    jobLevel?: number
+    targetValue?: 'Priceless'
+  }
+  logbookAreaMods?: ParsedModifier[][]
+  chartSulphur?: number
+
+  gemLevel?: number
+  vaalGem?: BaseType
+  imbuedGem?: boolean
+  mercenaryBuild?: BaseType
+  mercenarySkills?: ParsedStat[][]
   talismanTier?: number
   memoryStrands?: number
   quality?: number
@@ -58,24 +76,21 @@ export interface ParsedItem {
   isCorrupted: boolean
   isUnmodifiable?: boolean
   isMirrored?: boolean
+  isSplit?: boolean
   influences: ItemInfluence[]
-  logbookAreaMods?: ParsedModifier[][]
   sentinelCharge?: number
   isSynthesised?: boolean
   isFractured?: boolean
   isVeiled?: boolean
   isFoil?: boolean
   isFoulborn?: boolean
+  isVestigial?: boolean
   statsByType: StatCalculated[]
   newMods: ParsedModifier[]
   unknownModifiers: Array<{
     text: string
     type: ModifierType
   }>
-  heist?: {
-    wingsRevealed?: number
-    target?: 'Enchants' | 'Trinkets' | 'Gems' | 'Replicas'
-  }
   category?: ItemCategory
   info: BaseType
   disenchantCandidates: Array<{

@@ -1,35 +1,56 @@
 <template>
-  <div :class="$style['filter']">
+  <div :class="[$style.filter, { [$style.grouped]: grouped }]">
     <div v-if="showSourceInfo" :class="$style['mods']">
       <div class="pl-5 py-1" v-for="(source, idx) of filter.sources" :key="idx">
         <source-info :source="source" :filter="filter" />
       </div>
     </div>
     <div class="flex flex-col min-w-0 flex-1">
-      <div class="pb-px flex items-baseline justify-between">
-        <button class="flex items-baseline text-left min-w-0" @click="toggleFilter" type="button">
-          <i class="w-5" :class="{
-            'far fa-square text-gray-500': isDisabled,
-            'fas fa-check-square': !isDisabled
-          }"></i>
-          <div class="search-text flex-1 mr-1 relative flex min-w-0" style="line-height: 1rem;">
-            <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
-            <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
-          </div>
-        </button>
-        <div class="flex items-baseline gap-x-1">
-          <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
-          <div class="flex gap-x-px">
-            <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
-              v-if="showInputs" ref="inputMinEl"
-              v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
-            <input :class="$style['rollInput']" :placeholder="t('max')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
-              v-if="showInputs" ref="inputMaxEl"
-              v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
-          </div>
+      <div class="flex items-baseline">
+        <div class="flex items-baseline min-w-0 mr-2">
+          <button :class="[$style.checkbox, { [$style.checked]: !isDisabled, [$style.uncheckedHint]: isDisabled && groupExpanded }]"
+            @click="toggleFilter" type="submit">
+            <i :class="isDisabled ? 'far fa-square' : 'fas fa-check-square'" />
+          </button>
+          <button :class="$style.labelBtn" @click="smartToggle" type="submit">
+            <img v-if="filter.mercenary?.icon"
+              :src="filter.mercenary.icon">
+            <span v-if="filter.not && miniFilter"
+              :class="[$style.tag, $style['tag-not']]">{{ t('filters.tag_not') }}</span>
+            <div class="search-text flex-1 relative flex min-w-0" style="line-height: 1rem;">
+              <span class="truncate"><item-modifier-text :text="text" :roll="roll?.value" /></span>
+              <span class="search-text-full whitespace-pre-wrap"><item-modifier-text :text="text" :roll="roll?.value" /></span>
+            </div>
+          </button>
+          <button v-if="groupExpanded !== undefined"
+            :class="$style.expandBtn" @click="toggleExpanded" type="button">
+            <i :class="groupExpanded ? 'fas fa-chevron-down' : 'fas fa-chevron-right'" />
+          </button>
         </div>
+        <filter-modifier-tiers v-if="miniFilter && !showInputs"
+          :filter="filter" :item="item"
+          :class="{ 'mr-4': Boolean(rollOptions) }" />
+        <slot name="inputs">
+          <div v-if="showInputs"
+            class="flex items-baseline gap-x-1 ml-auto">
+            <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
+            <div class="flex gap-x-px">
+              <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
+                ref="inputMinEl"
+                v-model.number="inputMin" @focus="inputFocus($event, 'min')" @mousewheel.stop>
+              <input :class="$style['rollInput']" :placeholder="t('max')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
+                ref="inputMaxEl"
+                v-model.number="inputMax" @focus="inputFocus($event, 'max')" @mousewheel.stop>
+            </div>
+          </div>
+          <filter-modifier-options v-else-if="miniFilter && rollOptions"
+            :class="$style.miniRollOptions"
+            show-checked="currentDisabled"
+            :options="rollOptions"
+            :filter="filter" />
+        </slot>
       </div>
-      <div class="flex">
+      <div class="flex pt-px" v-if="!miniFilter">
         <div class="w-5 flex items-start">
           <ui-popover v-if="isHidden" tag-name="div" class="flex" placement="right-start" boundary="#price-window">
             <template #target>
@@ -43,10 +64,15 @@
           </ui-popover>
         </div>
         <div class="flex-1 min-w-0 flex items-start gap-x-2">
+          <span v-if="filter.not"
+            :class="[$style['tag'], $style['tag-not']]">{{ t('filters.tag_not') }}</span>
           <span v-if="showTag"
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(`filters.tag_${tag.replace('-', '_')}`) }}{{ (filter.sources.length > 1) ? ` x ${filter.sources.length}` : null }}</span>
           <filter-modifier-tiers :filter="filter" :item="item" />
-          <filter-modifier-item-has-empty :filter="filter" />
+          <filter-modifier-options v-if="rollOptions"
+            show-checked="always"
+            :options="rollOptions"
+            :filter="filter" />
         </div>
         <stat-roll-slider v-if="roll && roll.bounds"
           class="ml-2 mr-4" style="width: 12.5rem;"
@@ -58,29 +84,28 @@
         <div style="width: calc(2*3rem + 1px)" />
       </div>
     </div>
-    <div class="flex flex-col">
-      <modifier-anointment :filter="filter" />
-    </div>
+    <modifier-anointment class="self-center" :filter="filter" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, ref, nextTick } from 'vue'
+import { defineComponent, PropType, computed, ref, nextTick, useCssModule, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UiPopover from '@/web/ui/Popover.vue'
 import StatRollSlider from '../../ui/StatRollSlider.vue'
 import ItemModifierText from '../../ui/ItemModifierText.vue'
 import ModifierAnointment from './FilterModifierAnointment.vue'
-import FilterModifierItemHasEmpty from './FilterModifierItemHasEmpty.vue'
+import FilterModifierOptions, { RollOption } from './FilterModifierOptions.vue'
 import FilterModifierTiers from './FilterModifierTiers.vue'
 import { AppConfig } from '@/web/Config'
-import { ItemRarity, ParsedItem } from '@/parser'
-import { FilterTag, StatFilter, INTERNAL_TRADE_IDS } from './interfaces'
+import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
+import { FilterTag, StatFilter, INTERNAL_TRADE_IDS, ItemHasEmptyModifier } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
+import { SearchMode as MercSearchMode } from './pseudo/mercenary.js'
 
 export default defineComponent({
-  components: { ItemModifierText, ModifierAnointment, FilterModifierItemHasEmpty, FilterModifierTiers, SourceInfo, StatRollSlider, UiPopover },
-  emits: ['submit'],
+  components: { ItemModifierText, ModifierAnointment, FilterModifierOptions, FilterModifierTiers, SourceInfo, StatRollSlider, UiPopover },
+  emits: ['update:groupExpanded'],
   props: {
     filter: {
       type: Object as PropType<StatFilter>,
@@ -91,18 +116,41 @@ export default defineComponent({
       required: true
     },
     showSources: {
+      type: Boolean
+    },
+    groupExpanded: {
       type: Boolean,
-      required: true
+      default: undefined
+    },
+    grouped: {
+      type: Boolean
     }
   },
   setup (props, ctx) {
+    const $style = useCssModule()
+
+    watch(() => props.filter.disabled && props.groupExpanded, (uncheckedHint) => {
+      if (!uncheckedHint) return
+
+      const animations = document.getAnimations().filter(animation =>
+        animation instanceof CSSAnimation &&
+        animation.animationName === $style.uncheckedHintAnim)
+      const time = animations.find(animation =>
+        animation.currentTime !== 0)?.currentTime ?? 0
+      for (const animation of animations) {
+        animation.currentTime = time
+      }
+    }, { flush: 'post' })
+
     const showTag = computed(() =>
       props.filter.tag !== FilterTag.Property &&
+      props.filter.tag !== FilterTag.MercenarySupport &&
       props.filter.tradeId[0] !== 'item.has_empty_modifier' &&
       props.item.info.refName !== 'Chronicle of Atzoatl' &&
       props.item.info.refName !== 'Mirrored Tablet' &&
       props.item.info.refName !== 'Filled Coffin' &&
-      !(props.item.rarity === ItemRarity.Unique && (
+      props.item.category !== ItemCategory.Gem &&
+      !(props.item.rarity === ItemRarity.Unique && !props.grouped && (
         props.filter.tag === FilterTag.Explicit ||
         props.filter.tag === FilterTag.Pseudo))
     )
@@ -162,10 +210,28 @@ export default defineComponent({
     }
 
     function toggleFilter (e: MouseEvent) {
-      if (e.detail === 0) {
-        ctx.emit('submit')
+      if (e.detail === 0) return
+      e.preventDefault()
+
+      props.filter.disabled = !props.filter.disabled
+    }
+
+    function toggleExpanded () {
+      ctx.emit('update:groupExpanded', !props.groupExpanded)
+    }
+
+    function smartToggle (e: MouseEvent) {
+      if (e.detail === 0) return
+      e.preventDefault()
+
+      if (!props.filter.disabled && props.groupExpanded === true) {
+        ctx.emit('update:groupExpanded', false)
       } else {
         props.filter.disabled = !props.filter.disabled
+
+        if (!props.filter.disabled && props.groupExpanded === false) {
+          ctx.emit('update:groupExpanded', true)
+        }
       }
     }
 
@@ -180,21 +246,43 @@ export default defineComponent({
       inputMaxEl,
       sliderValue,
       inputMin: computed({
-        get (): any { return props.filter.roll!.min },
-        set (value: '' | number) { props.filter.roll!.min = value }
+        get () { return props.filter.roll!.min },
+        set (value: '' | number | undefined) { props.filter.roll!.min = value }
       }),
       inputMax: computed({
-        get (): any { return props.filter.roll!.max },
-        set (value: '' | number) { props.filter.roll!.max = value }
+        get () { return props.filter.roll!.max },
+        set (value: '' | number | undefined) { props.filter.roll!.max = value }
       }),
       tag: computed(() => props.filter.tag),
+      miniFilter: computed(() => !props.filter.hidden && (
+        props.filter.tag === FilterTag.MercenarySupport ||
+        (props.filter.tag === FilterTag.Property && props.item.info.refName === 'Mercenary Warrant') ||
+        props.item.info.refName === 'Chronicle of Atzoatl' ||
+        props.item.info.refName === 'Mirrored Tablet' ||
+        props.item.info.refName === 'Filled Coffin' ||
+        props.item.category === ItemCategory.Gem
+      )),
       // TODO: change
       changeStep: computed(() => props.filter.roll!.dp ? 0.01 : 1),
       showInputs: computed(() => props.filter.roll != null && !props.filter.oils),
+      rollOptions: computed<RollOption[] | undefined>(() => {
+        if (props.filter.tag === FilterTag.MercenarySupport && props.filter.option) {
+          return [
+            { text: t('filters.option_merc_required'), value: MercSearchMode.Required },
+            { text: t('filters.option_merc_optional'), value: MercSearchMode.Optional }
+          ]
+        } else if (props.filter.tradeId[0] === 'item.has_empty_modifier') {
+          return [
+            { text: t('filters.option_empty_affix'), value: ItemHasEmptyModifier.Any },
+            { text: t('filters.option_empty_prefix'), value: ItemHasEmptyModifier.Prefix },
+            { text: t('filters.option_empty_suffix'), value: ItemHasEmptyModifier.Suffix }
+          ]
+        }
+      }),
       fontSize: computed(() => AppConfig().fontSize),
       isDisabled: computed(() => props.filter.disabled),
       text: computed(() => {
-        if (!(INTERNAL_TRADE_IDS as readonly string[]).includes(props.filter.tradeId[0])) {
+        if (!INTERNAL_TRADE_IDS.includes(props.filter.tradeId[0])) {
           return props.filter.text
         } else {
           return t(props.filter.tradeId[0], ['#', '#'])
@@ -216,7 +304,9 @@ export default defineComponent({
           )
         )),
       inputFocus,
-      toggleFilter
+      toggleFilter,
+      toggleExpanded,
+      smartToggle
     }
   }
 })
@@ -224,10 +314,64 @@ export default defineComponent({
 
 <style lang="postcss" module>
 .filter {
-  @apply py-2;
-  @apply border-b border-gray-700;
+  padding: theme('spacing.2') 0;
+  border-bottom: 1px solid theme('colors.gray.700');
   display: flex;
+  align-items: baseline;
   position: relative;
+}
+.filter.grouped {
+  padding-left: theme('spacing.5');
+}
+
+.checkbox {
+  display: flex;
+  min-width: theme('width.5');
+  margin-top: -99px; /* not allowed to extend baseline */
+
+  &:not(.checked) {
+    color: theme('colors.gray.500');
+  }
+
+  &.uncheckedHint {
+    animation: uncheckedHintAnim 0.5s ease-out infinite alternate;
+  }
+}
+
+@keyframes uncheckedHintAnim {
+  from {
+    color: theme('colors.gray.700');
+  }
+  to {
+    color: theme('colors.gray.500');
+  }
+}
+
+.labelBtn {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  text-align: left;
+
+  & > img {
+    width: theme('width.4');
+    margin-right: theme('spacing.1');
+    position: relative;
+    top: 2px;
+    margin-top: -99px; /* not allowed to extend baseline */
+  }
+
+  & > .tag {
+    margin-right: theme('spacing.1');
+  }
+}
+
+.expandBtn {
+  display: flex;
+  min-width: theme('width.5');
+  padding-left: theme('spacing[1.5]');
+  color: theme('colors.gray.500');
+  margin-top: -99px; /* not allowed to extend baseline */
 }
 
 .rollInput {
@@ -260,6 +404,11 @@ export default defineComponent({
   @apply rounded;
   @apply px-2;
   text-align: center;
+}
+
+.miniRollOptions {
+  margin: -99px 0; /* not allowed to extend baseline */
+  margin-left: auto;
 }
 
 .mods {
@@ -299,16 +448,21 @@ export default defineComponent({
 .tag-explicit-warlord,
 .tag-explicit-delve,
 .tag-explicit-veiled,
-.tag-explicit-incursion {
+.tag-explicit-incursion,
+.tag-explicit-infamous,
+.tag-explicit-essence {
   display: flex;
   align-items: center;
   @apply -mx-1 pl-0.5 gap-x-0.5 text-gray-600;
   text-shadow: 0 0 4px theme('colors.gray.900');
+  overflow: clip visible;
+  min-width: 0;
 
   &::before {
     background-size: contain;
     @apply w-5 h-5 -my-5;
     content: '';
+    flex-shrink: 0;
   }
 }
 .tag-explicit-shaper::before {
@@ -329,14 +483,24 @@ export default defineComponent({
   background-image: url('/images/veiled.png'); }
 .tag-explicit-incursion::before {
   background-image: url('/images/incursion.png'); }
+.tag-explicit-infamous::before {
+  background-image: url('/images/mercenary.png'); }
+.tag-explicit-essence::before {
+  background-image: url('/images/essence.png'); }
 
-.tag-corrupted {
+.tag-corrupted,
+.tag-brick {
   @apply bg-red-700 text-red-100; }
 .tag-fractured {
   @apply bg-yellow-400 text-black; }
 .tag-crafted, .tag-synthesised {
   @apply bg-blue-600 text-blue-100; }
-.tag-implicit, .tag-explicit {
+.tag-implicit,
+.tag-explicit,
+.tag-mercenary-primary,
+.tag-mercenary-secondary,
+.tag-mercenary-utility,
+.tag-filter-group {
   @apply -mx-1 text-gray-600;
   text-shadow: 0 0 4px theme('colors.gray.900');
 }
@@ -344,9 +508,12 @@ export default defineComponent({
   @apply bg-orange-600 text-white; }
 .tag-foulborn {
   @apply bg-pink-700 text-white; }
-.tag-enchant {
+.tag-vestigial {
   @apply bg-purple-600 text-purple-100; }
-.tag-pseudo {
+.tag-enchant {
+  @apply bg-indigo-200 text-black; }
+.tag-pseudo,
+.tag-not {
   @apply bg-gray-700 text-black; }
 </style>
 
@@ -355,7 +522,8 @@ export default defineComponent({
   position: absolute;
   left: 0px;
   right: 0px;
-  top: 0px;
+  top: -2px;
+  padding-top: 2px;
   padding-bottom: 1px;
   z-index: 10;
 

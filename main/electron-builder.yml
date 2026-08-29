@@ -2,6 +2,9 @@ publish:
   - "github"
 productName: "Awakened PoE Trade"
 npmRebuild: false
+toolsets:
+  appimage: 1.0.3
+artifactBuildCompleted: "build/apprun-patch.test.mjs"
 files:
   - "package.json"
   - from: "dist"
@@ -27,6 +30,4 @@ mac:
     arch:
     - "universal"
   identity: null
-appImage:
-  executableArgs:
-  - "--sandbox"
+  x64ArchFiles: "*"

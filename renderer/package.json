@@ -40,14 +40,10 @@
     "vue-tsc": "^2.0.0"
   },
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.21.0",
-    "eslint-config-standard-with-typescript": "^31.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-vue": "^9.1.1"
+    "@vue/eslint-config-standard-with-typescript": "^9.2.0",
+    "@vue/eslint-config-typescript": "^14.7.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-vue": "~10.8.0"
   },
   "postcss": {
     "plugins": {
