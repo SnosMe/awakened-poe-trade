@@ -8,14 +8,20 @@
       <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
       <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('item.find_in_stash') }}</button>
     </div>
-    <div v-if="weaponDPS" :class="$style.itemInfo">
+    <div :class="$style.itemInfo">
       <div class="grid">
-        <div>{{ t('item.physical_dps') }}</div>
-        <div>{{ weaponDPS.phys }}</div>
-        <div>{{ t('item.elemental_dps') }}</div>
-        <div>{{ weaponDPS.elem }}</div>
-        <div>{{ t('item.total_dps') }}</div>
-        <div>{{ weaponDPS.total }}</div>
+        <template v-if="weaponDPS">
+          <div>{{ t('item.physical_dps') }}</div>
+          <div>{{ weaponDPS.phys }}</div>
+          <div>{{ t('item.elemental_dps') }}</div>
+          <div>{{ weaponDPS.elem }}</div>
+          <div>{{ t('item.total_dps') }}</div>
+          <div>{{ weaponDPS.total }}</div>
+        </template>
+        <template v-if="item.dustEquivalent">
+          <div>{{ t('item.disenchanting') }}</div>
+          <div class="flex gap-1 items-center">{{ item.dustEquivalent.toLocaleString() }} <img src="/images/dust.png" class="w-5" /></div>
+        </template>
       </div>
     </div>
   </div>

@@ -84,6 +84,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: pickCorrectVariant },
+  { virtual: calcDisenchantDust },
   { virtual: calcBasePercentile }
 ]
 
@@ -1225,4 +1226,36 @@ function calcBasePercentile (item: ParsedItem) {
   } else if (item.armourWARD && info.ward) {
     item.basePercentile = calcPropPercentile(item.armourWARD, info.ward, QUALITY_STATS.WARD, item)
   }
+}
+
+function calcDisenchantDust (item: ParserState) {
+  if (!item.info.unique?.disenchantValue) return
+
+  let increaseByFactors = 0
+
+  // +50% per Influence Type
+  increaseByFactors += item.influences.length * 50
+
+  // +2% per 1% Item Quality
+  if (item.quality) {
+    increaseByFactors += item.quality * 2
+  }
+
+  // +50% per Corruption Implicit
+  if (item.isCorrupted) {
+    for (const mod of item.newMods) {
+      if (mod.info.generation === 'corrupted') {
+        increaseByFactors += 50
+      }
+    }
+  }
+
+  const factorsMulti = (increaseByFactors + 100) / 100
+  const term1 = 50 // ilvl 46 and below
+  const term2 = 2 * (Math.min(Math.max(item.itemLevel!, 46), 68) - 46) // ilvl 47 to 68
+  const term3 = Math.floor(3 * (Math.min(Math.max(item.itemLevel!, 46), 68) - 46) / 11) // ilvl 47 to 68
+  const term4 = 25 * (Math.min(Math.max(item.itemLevel!, 68), 84) - 68) // ilvl 69 to 84
+  const totalMulti = 5 * (term1 + term2 + term3 + term4) * factorsMulti
+
+  item.dustEquivalent = Math.floor(item.info.unique.disenchantValue * totalMulti)
 }
