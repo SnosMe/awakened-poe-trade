@@ -393,8 +393,11 @@ function upgradeConfig (_config: Config): Config {
   }
 
   const priceCheck = config.widgets.find(w => w.wmType === 'price-check') as widget.PriceCheckWidget
-  if (priceCheck.rememberCurrency === undefined) {
-    priceCheck.rememberCurrency = false
+  if (priceCheck.merchantOnly === undefined) {
+    priceCheck.merchantOnly = true
+  }
+  if (priceCheck.defaultCurrency === undefined) {
+    priceCheck.defaultCurrency = null
   }
 
   for (const widget of config.widgets) {

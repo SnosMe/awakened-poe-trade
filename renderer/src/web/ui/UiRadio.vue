@@ -1,7 +1,5 @@
 <template>
-  <button
-    @click="updateInput"
-    :class="$style['radio']">
+  <button @click="updateInput" :class="$style.radio">
     <i v-if="!isChecked" class="far fa-circle"></i>
     <i v-else class="fas fa-check-circle"></i>
     <slot />
@@ -43,5 +41,9 @@ export default defineComponent({
   @apply gap-x-1;
   align-items: baseline;
   text-align: left;
+
+  &:disabled, &:disabled > i {
+    @apply text-gray-600;
+  }
 }
 </style>

@@ -9,7 +9,7 @@
         <span v-if="!list" class="text-gray-600">...</span>
         <span v-else>{{ list.total }}{{ list.inexact ? '+' : '' }}</span>
       </div>
-      <online-filter v-if="list" :by-time="true" :filters="filters" api="trade" />
+      <online-filter v-if="list" :filters="filters" api="trade" />
       <div class="flex-1"></div>
       <trade-links v-if="list"
         :get-link="makeTradeLink" />

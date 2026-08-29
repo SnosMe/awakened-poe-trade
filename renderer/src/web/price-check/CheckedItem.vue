@@ -114,10 +114,11 @@ export default defineComponent({
     const filtersComponent = ref<ComponentPublicInstance>(null!)
 
     watch(() => props.item, (item, prevItem) => {
-      const prevCurrency = (presets.value != null) ? itemFilters.value.trade.currency : undefined
+      const prevCurrency = (presets.value != null) ? itemFilters.value.trade.currency : null
 
       presets.value = createPresets(item, {
         league: leagues.selectedId.value!,
+        merchantOnly: widget.value.merchantOnly,
         collapseListings: widget.value.collapseListings,
         activateStockFilter: widget.value.activateStockFilter,
         searchStatRange: widget.value.searchStatRange,
@@ -125,7 +126,7 @@ export default defineComponent({
         currency: (prevItem &&
           item.info.namespace === prevItem.info.namespace &&
           item.info.refName === prevItem.info.refName
-        ) ? prevCurrency : undefined
+        ) ? prevCurrency : widget.value.defaultCurrency
       })
 
       if ((!props.advancedCheck && !widget.value.smartInitialSearch) ||

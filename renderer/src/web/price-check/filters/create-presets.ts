@@ -1,4 +1,4 @@
-import { createFilters } from './create-item-filters'
+import { createFilters, CreateOptions as CreateFiltersOptions } from './create-item-filters'
 import { createExactStatFilters, initUiModFilters } from './create-stat-filters'
 import { createMercenaryFilters } from './pseudo/mercenary'
 import { ModifierType, sumStatsByModType } from '@/parser/modifiers'
@@ -7,16 +7,13 @@ import type { FilterPreset } from './interfaces'
 
 const ROMAN_NUMERALS = ['I', 'II', 'III', 'IV', 'V']
 
+type CreatePresetsOptions =
+  & Omit<CreateFiltersOptions, 'exact'>
+  & { searchStatRange: number }
+
 export function createPresets (
   item: ParsedItem,
-  opts: {
-    league: string
-    currency: string | undefined
-    collapseListings: 'app' | 'api'
-    activateStockFilter: boolean
-    searchStatRange: number
-    useEn: boolean
-  }
+  opts: CreatePresetsOptions
 ): { presets: FilterPreset[], active: string } {
   if (item.info.refName === 'Expedition Logbook') {
     return {

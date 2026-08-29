@@ -9,9 +9,10 @@ import { PERMANENT_SC } from '../../background/Leagues'
 
 export const SPECIAL_SUPPORT_GEM = ['Empower Support', 'Enlighten Support', 'Enhance Support']
 
-interface CreateOptions {
+export interface CreateOptions {
   league: string
-  currency: string | undefined
+  merchantOnly: boolean
+  currency: string | null
   collapseListings: 'app' | 'api'
   activateStockFilter: boolean
   exact: boolean
@@ -27,11 +28,11 @@ export function createFilters (
     trade: {
       offline: false,
       onlineInLeague: false,
-      merchantOnly:
+      merchantOnly: opts.merchantOnly &&
         // these are Divination Cards, and some items at start of league
         // that are on Currency Exchange but was not added to Bulk section of site yet
         !(item.info.exchangeable && !item.info.tradeTag),
-      listed: undefined,
+      listed: null,
       currency: opts.currency,
       league: opts.league,
       collapseListings: opts.collapseListings,

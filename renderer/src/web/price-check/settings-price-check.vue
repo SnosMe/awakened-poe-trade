@@ -50,14 +50,17 @@
         <ui-radio v-model="searchStatRange" :value="0">{{ t(':fill_roll_exact') }}</ui-radio>
       </div>
     </div>
-    <!-- <ui-checkbox class="mb-4"
-      v-model="rememberCurrency">{{ t(':remember_currency') }}</ui-checkbox> -->
     <ui-checkbox class="mb-4"
       v-model="activateStockFilter">{{ t(':select_stock') }}</ui-checkbox>
     <ui-checkbox class="mb-4"
       v-model="requestPricePrediction">{{ t(':show_prediction') }} <span class="bg-gray-700 px-1 rounded">www.poeprices.info</span></ui-checkbox>
     <ui-checkbox class="mb-4"
       v-model="showCursor">{{ t(':cursor_pos') }}</ui-checkbox>
+    <div class="border-2 rounded border-gray-700 mb-4">
+      <div class="bg-gray-700 p-2">{{ t(':default_settings') }}</div>
+      <online-filter-core class="p-2"
+        api="trade" context="settings" :filters="onlineFilter" />
+    </div>
     <div class="mb-4" :class="{ 'p-2 bg-orange-600 rounded': builtinBrowser }">
       <ui-checkbox v-model="builtinBrowser">{{ t(':enable_browser') }}</ui-checkbox>
       <div v-if="builtinBrowser" class="mt-1">{{ t(':builtin_browser_warning') }}</div>
@@ -99,13 +102,15 @@ import UiRadio from '@/web/ui/UiRadio.vue'
 import UiCheckbox from '@/web/ui/UiCheckbox.vue'
 import UiToggle from '@/web/ui/UiToggle.vue'
 import UiErrorBox from '@/web/ui/UiErrorBox.vue'
+import OnlineFilterCore from './trade/OnlineFilterCore.vue'
+import { ItemFilters } from './filters/interfaces.js'
 import { configModelValue, configProp, findWidget } from '../settings/utils.js'
 import type { PriceCheckWidget } from '@/web/overlay/interfaces'
 import { useLeagues } from '../background/Leagues'
 
 export default defineComponent({
   name: 'price_check.name',
-  components: { UiRadio, UiCheckbox, UiToggle, UiErrorBox },
+  components: { UiRadio, UiCheckbox, UiToggle, UiErrorBox, OnlineFilterCore },
   props: configProp(),
   setup (props) {
     const configWidget = computed(() => findWidget<PriceCheckWidget>('price-check', props.config)!)
@@ -135,7 +140,6 @@ export default defineComponent({
       hotkeyLocked: computed(() => configWidget.value.hotkeyLocked),
       smartInitialSearch: configModelValue(() => configWidget.value, 'smartInitialSearch'),
       lockedInitialSearch: configModelValue(() => configWidget.value, 'lockedInitialSearch'),
-      rememberCurrency: configModelValue(() => configWidget.value, 'rememberCurrency'),
       searchStatRange: computed<number>({
         get () {
           return configWidget.value.searchStatRange
@@ -158,7 +162,19 @@ export default defineComponent({
           configWidget.value.apiLatencySeconds = Math.min(Math.max(value, 0.5), 10)
         }
       }),
-      leagues
+      leagues,
+      onlineFilter: {
+        get league () { return props.config.leagueId! },
+        get offline () { return false },
+        get listed () { return null },
+        get onlineInLeague () { return false },
+        get currency () { return configWidget.value.defaultCurrency },
+        set currency (value) { configWidget.value.defaultCurrency = value },
+        get merchantOnly () { return configWidget.value.merchantOnly },
+        set merchantOnly (value) { configWidget.value.merchantOnly = value },
+        collapseListings: 'api',
+        collapseMerchant: false
+      } satisfies ItemFilters['trade']
     }
   }
 })

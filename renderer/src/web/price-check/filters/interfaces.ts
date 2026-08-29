@@ -86,8 +86,8 @@ export interface ItemFilters {
     offline: boolean
     onlineInLeague: boolean
     merchantOnly: boolean
-    listed: string | undefined
-    currency: string | undefined
+    listed: string | null
+    currency: string | null
     league: string
     collapseListings: 'api' | 'app'
     collapseMerchant: boolean
