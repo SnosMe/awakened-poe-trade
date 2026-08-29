@@ -8,30 +8,20 @@
       <i class="fa-solid fa-ellipsis-vertical text-gray-600"></i>
       <button class="btn flex-1 whitespace-nowrap" @click="stashSearch">{{ t('item.find_in_stash') }}</button>
     </div>
-    <div v-if="weaponDPS" :class="$style.itemInfo">
+    <div :class="$style.itemInfo">
       <div class="grid">
-        <div>{{ t('item.physical_dps') }}</div>
-        <div>{{ weaponDPS.phys }}</div>
-        <div>{{ t('item.elemental_dps') }}</div>
-        <div>{{ weaponDPS.elem }}</div>
-        <div>{{ t('item.total_dps') }}</div>
-        <div>{{ weaponDPS.total }}</div>
-      </div>
-    </div>
-    <div v-if="item.disenchantCandidates" class="grid mx-auto gap-x-4 my-2" style="grid-template-columns: auto auto;">
-      <div class="grid grid-cols-2 gap-2 overflow-auto pb-4 px-4">
-        <div v-for="uniqueItemDisenchanting in item.disenchantCandidates" class="flex">
-          <div class="bg-gray-700 rounded flex gap-x-3 items-center p-2 w-full">
-            <img :src="uniqueItemDisenchanting.icon" class="w-12" />
-            <div class="leading-tight text-left">
-              <div>{{ uniqueItemDisenchanting.name }}</div>
-              <div>
-                <img src="/images/dust.png" class="w-5" style="float: left" />
-                <span style="padding-left: 2px;">{{ uniqueItemDisenchanting.value }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <template v-if="weaponDPS">
+          <div>{{ t('item.physical_dps') }}</div>
+          <div>{{ weaponDPS.phys }}</div>
+          <div>{{ t('item.elemental_dps') }}</div>
+          <div>{{ weaponDPS.elem }}</div>
+          <div>{{ t('item.total_dps') }}</div>
+          <div>{{ weaponDPS.total }}</div>
+        </template>
+        <template v-if="item.dustEquivalent">
+          <div>{{ t('item.disenchanting') }}</div>
+          <div class="flex gap-1 items-center">{{ item.dustEquivalent.toLocaleString() }} <img src="/images/dust.png" class="w-5" /></div>
+        </template>
       </div>
     </div>
   </div>

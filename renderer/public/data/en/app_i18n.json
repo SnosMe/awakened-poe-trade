@@ -42,6 +42,7 @@
   "item": {
     "not_group": "None of",
     "count_one_group": "One of",
+    "disenchanting": "Disenchanting",
     "prop_quality": "Q {0}%",
     "base_percentile": "Base Percentile: {0}%",
     "armour": "Armour: {0}",

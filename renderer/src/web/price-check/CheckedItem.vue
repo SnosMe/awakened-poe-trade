@@ -3,12 +3,6 @@
     <filter-name
       :filters="itemFilters"
       :item="item" />
-    <div v-if="item.disenchantCandidates" class="grid" style="grid-template-columns: auto auto;">
-      <div v-if="disenchantValue" class="flex" style="padding-left: 9px">
-        <img src="/images/dust.png" class="w-5" style="float: left" />
-        <span style="padding-left: 2px;">{{ disenchantValue }}</span>
-      </div>
-    </div>
     <price-prediction v-if="showPredictedPrice" class="mb-4"
       :item="item" />
     <price-trend v-else
@@ -47,6 +41,7 @@
       {{ t('item.complexity_hint') }}
     </p>
     <stack-value :filters="itemFilters" :item="item"/>
+    <dust-value v-if="item.dustEquivalent" :item="item"/>
     <div v-if="showSupportLinks" class="mt-auto border border-dashed p-2">
       <div class="mb-1">{{ t('Support development on') }} <a href="https://patreon.com/awakened_poe_trade" class="inline-flex align-middle animate__animated animate__fadeInRight" target="_blank"><img class="inline h-5" src="/images/Patreon.svg"></a></div>
       <i18n-t keypath="app.thanks_3rd_party" tag="div">
@@ -69,7 +64,8 @@ import PriceTrend from './trends/PriceTrend.vue'
 import FiltersBlock from './filters/FiltersBlock.vue'
 import { createPresets } from './filters/create-presets'
 import PricePrediction from './price-prediction/PricePrediction.vue'
-import StackValue from './stack-value/StackValue.vue'
+import StackValue from './expected-value/StackValue.vue'
+import DustValue from './expected-value/DustValue.vue'
 import FilterName from './filters/FilterName.vue'
 import { CATEGORY_TO_TRADE_ID, createTradeRequest } from './trade/pathofexile-trade'
 import { AppConfig } from '@/web/Config'
@@ -89,7 +85,8 @@ export default defineComponent({
     PriceTrend,
     FiltersBlock,
     FilterName,
-    StackValue
+    StackValue,
+    DustValue
   },
   props: {
     item: {
@@ -235,15 +232,6 @@ export default defineComponent({
       }
     })
 
-    const disenchantValue = computed(() => {
-      for (const uniqueItemDisenchanting of props.item.disenchantCandidates) {
-        if (uniqueItemDisenchanting.name === props.item.info.refName) {
-          return uniqueItemDisenchanting.value
-        }
-      }
-      return null
-    })
-
     const { t } = useI18n()
 
     return {
@@ -253,7 +241,6 @@ export default defineComponent({
       doSearch,
       tradeAPI,
       tradeService,
-      disenchantValue,
       filtersComponent,
       showPredictedPrice,
       show,
