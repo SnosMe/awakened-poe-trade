@@ -1,6 +1,7 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { makeIndexFilesPlugin } from './src/assets/vite-plugin-make-indexes'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,7 +19,8 @@ export default defineConfig({
           isCustomElement: (tag) => tag === 'webview'
         }
       }
-    })
+    }),
+    makeIndexFilesPlugin()
   ],
   resolve: {
     alias: {

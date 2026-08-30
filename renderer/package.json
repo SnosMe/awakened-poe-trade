@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vite",
     "lint": "eslint --ext .ts,.vue src",
-    "build": "vue-tsc --noEmit && vite build",
-    "make-index-files": "node src/assets/make-index-files.mjs"
+    "build": "vue-tsc --noEmit && vite build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.x.x",

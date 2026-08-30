@@ -18,8 +18,6 @@ jobs:
     - uses: actions/setup-node@v6
     - run: npm ci
       working-directory: ./renderer
-    - run: npm run make-index-files
-      working-directory: ./renderer
     - run: npm run lint
       working-directory: ./renderer
     - run: npm run build
