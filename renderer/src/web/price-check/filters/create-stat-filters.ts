@@ -253,12 +253,20 @@ export function calculatedStatToFilter (
       filter.tag = FilterTag.Synthesised
     }
   } else if (type === ModifierType.Explicit) {
-    if (item.info.unique?.fixedStats) {
-      const fixedStats = item.info.unique.fixedStats
-      if (!fixedStats.includes(filter.statRef)) {
+    if (item.info.unique) {
+      if (item.info.unique.fixedStats) {
+        const fixedStats = item.info.unique.fixedStats
+        if (!fixedStats.includes(filter.statRef)) {
+          filter.tag = FilterTag.Variant
+        }
+      } else if (sources.some(s =>
+        s.modifier.info.generation === 'prefix' ||
+        s.modifier.info.generation === 'suffix'
+      )) {
         filter.tag = FilterTag.Variant
       }
-    } else if (sources.some(s => s.modifier.info.generation === 'foulborn')) {
+    }
+    if (sources.some(s => s.modifier.info.generation === 'foulborn')) {
       filter.tag = FilterTag.Foulborn
     } else if (sources.some(s => CLIENT_STRINGS.SHAPER_MODS.includes(s.modifier.info.name!))) {
       filter.tag = FilterTag.Shaper
