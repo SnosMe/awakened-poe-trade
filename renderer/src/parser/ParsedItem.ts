@@ -94,6 +94,7 @@ export interface ParsedItem {
   }>
   category?: ItemCategory
   info: BaseType
+  uniqueBase?: BaseType
   rawText: string
 }
 

@@ -286,9 +286,17 @@ function parseFractured (item: ParserState) {
 }
 
 function pickCorrectVariant (item: ParserState) {
-  if (!item.info.disc) return
+  item.info = _pickCorrectVariant(item.infoVariants, item) ?? item.infoVariants[0]
+  if (item.info.unique) {
+    const baseVariants = ITEM_BY_REF('ITEM', item.info.unique.base)!
+    item.uniqueBase = _pickCorrectVariant(baseVariants, item) ?? baseVariants[0]
+  }
+}
 
-  for (const variant of item.infoVariants) {
+function _pickCorrectVariant (variants: BaseType[], item: ParsedItem): BaseType | undefined {
+  if (variants.length <= 1) return variants[0]
+
+  for (const variant of variants) {
     const cond = variant.disc!
 
     if (cond.propAR && !item.armourAR) continue
@@ -314,7 +322,7 @@ function pickCorrectVariant (item: ParserState) {
 
     if (cond.sectionText && !item.rawText.includes(cond.sectionText)) continue
 
-    item.info = variant
+    return variant
   }
 
   // it may happen that we don't find correct variant
@@ -1209,9 +1217,7 @@ function transformToLegacyModifiers (item: ParsedItem) {
 }
 
 function calcBasePercentile (item: ParsedItem) {
-  const info = item.info.unique
-    ? ITEM_BY_REF('ITEM', item.info.unique.base)![0].armour
-    : item.info.armour
+  const info = item.uniqueBase?.armour ?? item.info.armour
   if (!info) return
 
   // Base percentile is the same for all defences.

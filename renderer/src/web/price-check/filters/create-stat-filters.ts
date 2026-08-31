@@ -5,7 +5,7 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rules'
-import { filterEquipmentProps, filterBasePercentile, filterMemoryStrands } from './pseudo/item-property'
+import { filterEquipmentProps, filterBasePercentile, filterMemoryStrands, BASE_PCTL_AFFECTED_IDS } from './pseudo/item-property'
 import { mapProps, valdoBadMods, chartProps } from './pseudo/maps'
 import { applyFlaskHybridMod } from './pseudo/flasks'
 import { applyHeistRules } from './pseudo/heist'
@@ -159,7 +159,7 @@ export function initUiModFilters (
   }
 
   filterEquipmentProps(ctx)
-  if (item.info.refName === "Emperor's Vigilance") {
+  if (item.rarity === ItemRarity.Unique) {
     filterBasePercentile(ctx)
   }
   filterMemoryStrands(ctx, 'hide_memory_strands')
@@ -480,12 +480,33 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       }
     } else if (filter.sources[0]?.stat.stat.jewelleryQuality) {
       filter.hidden = 'hide_jewellery_quality'
+    } else if (filter.tag === FilterTag.Property) {
+      if (
+        item.rarity === ItemRarity.Unique &&
+        BASE_PCTL_AFFECTED_IDS.includes(filter.tradeId[0]) &&
+        filter.sources.every(source => source.stat.roll?.min === source.stat.roll?.max) &&
+        (item.quality ?? 0) < 21
+      ) {
+        filter.hidden = 'hide_variable_by_base_percentile_only'
+        filter.disabled = true
+      }
     } else if (
       filter.tag === FilterTag.Foulborn ||
       filter.tag === FilterTag.Vestigial ||
       filter.tag === FilterTag.Variant
     ) {
       filter.disabled = false
+    }
+  }
+
+  const basePercentile = ctx.filters.find(fitler => fitler.tradeId[0] === 'item.base_percentile')
+  if (basePercentile && item.rarity === ItemRarity.Unique) {
+    const hasVisibleArmourProp = ctx.filters.some(filter =>
+      BASE_PCTL_AFFECTED_IDS.includes(filter.tradeId[0]) &&
+      !filter.hidden)
+    if (hasVisibleArmourProp) {
+      basePercentile.hidden = 'hide_redundant'
+      basePercentile.disabled = true
     }
   }
 

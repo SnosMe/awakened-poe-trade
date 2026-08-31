@@ -6,6 +6,8 @@ import { ParsedItem } from '@/parser'
 import { ModifierType, StatRoll, StatSource } from '@/parser/modifiers'
 import { FilterTag, InternalTradeId, StatFilter } from '../interfaces'
 
+export const BASE_PCTL_AFFECTED_IDS = ['item.armour', 'item.evasion_rating', 'item.energy_shield', 'item.ward']
+
 export function filterEquipmentProps (ctx: FiltersCreationContext) {
   if (ARMOUR.has(ctx.item.category!)) {
     armourProps(ctx)
@@ -55,8 +57,10 @@ export const ARMOUR_STATS = new Set<string>([
 function armourProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
+  const baseInfo = item.uniqueBase ?? item.info
+
   if (item.armourAR) {
-    const totalQ20 = propAt20Quality(item.armourAR, QUALITY_STATS.ARMOUR, item)
+    const totalQ20 = propAt20Quality(item.armourAR, QUALITY_STATS.ARMOUR, baseInfo.armour?.ar, item)
 
     ctx.filters.push(propToFilter({
       ref: 'Armour: #',
@@ -68,7 +72,7 @@ function armourProps (ctx: FiltersCreationContext) {
   }
 
   if (item.armourEV) {
-    const totalQ20 = propAt20Quality(item.armourEV, QUALITY_STATS.EVASION, item)
+    const totalQ20 = propAt20Quality(item.armourEV, QUALITY_STATS.EVASION, baseInfo.armour?.ev, item)
 
     ctx.filters.push(propToFilter({
       ref: 'Evasion Rating: #',
@@ -80,7 +84,7 @@ function armourProps (ctx: FiltersCreationContext) {
   }
 
   if (item.armourES) {
-    const totalQ20 = propAt20Quality(item.armourES, QUALITY_STATS.ENERGY_SHIELD, item)
+    const totalQ20 = propAt20Quality(item.armourES, QUALITY_STATS.ENERGY_SHIELD, baseInfo.armour?.es, item)
 
     ctx.filters.push(propToFilter({
       ref: 'Energy Shield: #',
@@ -92,7 +96,7 @@ function armourProps (ctx: FiltersCreationContext) {
   }
 
   if (item.armourWARD) {
-    const totalQ20 = propAt20Quality(item.armourWARD, QUALITY_STATS.WARD, item)
+    const totalQ20 = propAt20Quality(item.armourWARD, QUALITY_STATS.WARD, baseInfo.armour?.ward, item)
 
     ctx.filters.push(propToFilter({
       ref: 'Ward: #',
@@ -142,7 +146,7 @@ function weaponProps (ctx: FiltersCreationContext) {
   const { item } = ctx
 
   const attackSpeed = calcPropBounds(item.weaponAS ?? 0, { incr: ['#% increased Attack Speed'], flat: [] }, item)
-  const physQ20 = propAt20Quality(item.weaponPHYSICAL ?? 0, QUALITY_STATS.PHYSICAL_DAMAGE, item)
+  const physQ20 = propAt20Quality(item.weaponPHYSICAL ?? 0, QUALITY_STATS.PHYSICAL_DAMAGE, undefined, item)
   const pdpsQ20: StatRoll = {
     value: physQ20.roll.value * attackSpeed.roll.value,
     min: physQ20.roll.min * attackSpeed.roll.min,

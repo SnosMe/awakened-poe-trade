@@ -47,16 +47,18 @@ export const QUALITY_STATS = {
 export function propAt20Quality (
   total: number,
   statRefs: { flat: string[], incr: string[] },
+  bounds: [min: number, max: number] | undefined,
   item: ParsedItem
 ): { roll: StatRoll, sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item)
   const base = calcFlat(total, incr.value, item.quality) - flat.value
+  const [baseMin, baseMax] = bounds ?? [base, base]
   const quality = Math.max(20, item.quality ?? 0)
   return {
     roll: !Number.isNaN(base) ? {
       value: calcIncreased(base + flat.value, incr.value, quality),
-      min: calcIncreased(base + flat.min, incr.min, quality),
-      max: calcIncreased(base + flat.max, incr.max, quality)
+      min: calcIncreased(baseMin + flat.min, incr.min, quality),
+      max: calcIncreased(baseMax + flat.max, incr.max, quality)
     } : { value: 0, min: 0, max: 0 },
     sources: sources.map(source => ({ ...source, contributes: undefined }))
   }
