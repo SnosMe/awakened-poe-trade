@@ -480,6 +480,12 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       }
     } else if (filter.sources[0]?.stat.stat.jewelleryQuality) {
       filter.hidden = 'hide_jewellery_quality'
+    } else if (filter.tag === FilterTag.Implicit) {
+      if (item.rarity === ItemRarity.Unique) {
+        // hide not Corrupted, Vestigial implicits etc., that were not consumed by pseudo stats
+        filter.hidden = 'hide_unique_base_implicit'
+        filter.disabled = true
+      }
     } else if (filter.tag === FilterTag.Property) {
       if (
         item.rarity === ItemRarity.Unique &&

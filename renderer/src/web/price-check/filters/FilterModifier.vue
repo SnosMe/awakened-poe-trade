@@ -150,9 +150,7 @@ export default defineComponent({
       props.item.info.refName !== 'Mirrored Tablet' &&
       props.item.info.refName !== 'Filled Coffin' &&
       props.item.category !== ItemCategory.Gem &&
-      !(props.item.rarity === ItemRarity.Unique && !props.grouped && (
-        props.filter.tag === FilterTag.Explicit ||
-        props.filter.tag === FilterTag.Pseudo))
+      !(props.item.rarity === ItemRarity.Unique && props.filter.tag === FilterTag.Explicit && !props.grouped)
     )
 
     const showQ20Notice = computed(() => {

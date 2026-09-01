@@ -1,4 +1,5 @@
 import { stat, pseudoStatByRef } from '@/assets/data'
+import { ItemRarity } from '@/parser/ParsedItem'
 import { ModifierType, StatCalculated, StatSource } from '@/parser/modifiers'
 import { calculatedStatToFilter, FiltersCreationContext } from '../create-stat-filters'
 import type { StatFilter } from '../interfaces'
@@ -37,6 +38,7 @@ interface PseudoRule {
     ref: string
     multiplier?: number
     required?: boolean
+    keep?: boolean
   }>
   mutate?: (filter: StatFilter) => void
 }
@@ -98,21 +100,21 @@ const PSEUDO_RULES: PseudoRule[] = [
     group: 'to_x_attr',
     stats:
       ATTRIBUTES_INFO.filter(info => info.attributes.includes('str'))
-        .map(info => ({ ref: info.ref }))
+        .map(info => ({ ref: info.ref, keep: info.attributes.length > 1 }))
   },
   {
     pseudo: stat('+# total to Dexterity'),
     group: 'to_x_attr',
     stats:
       ATTRIBUTES_INFO.filter(info => info.attributes.includes('dex'))
-        .map(info => ({ ref: info.ref }))
+        .map(info => ({ ref: info.ref, keep: info.attributes.length > 1 }))
   },
   {
     pseudo: stat('+# total to Intelligence'),
     group: 'to_x_attr',
     stats:
       ATTRIBUTES_INFO.filter(info => info.attributes.includes('int'))
-        .map(info => ({ ref: info.ref }))
+        .map(info => ({ ref: info.ref, keep: info.attributes.length > 1 }))
   },
   {
     pseudo: stat('+# total maximum Life'),
@@ -120,7 +122,7 @@ const PSEUDO_RULES: PseudoRule[] = [
     stats: [
       { ref: stat('+# to maximum Life'), required: true },
       ...ATTRIBUTES_INFO.filter(info => info.attributes.includes('str'))
-        .map(info => ({ ref: info.ref, multiplier: 5 / 10 }))
+        .map(info => ({ ref: info.ref, multiplier: 5 / 10, keep: true }))
     ]
   },
   {
@@ -128,7 +130,7 @@ const PSEUDO_RULES: PseudoRule[] = [
     stats: [
       { ref: stat('+# to maximum Mana'), required: true },
       ...ATTRIBUTES_INFO.filter(info => info.attributes.includes('int'))
-        .map(info => ({ ref: info.ref, multiplier: 5 / 10 }))
+        .map(info => ({ ref: info.ref, multiplier: 5 / 10, keep: true }))
     ]
   },
   {
@@ -305,6 +307,8 @@ const PSEUDO_RULES: PseudoRule[] = [
 export function filterPseudo (ctx: FiltersCreationContext) {
   const filterByGroup = new Map<string, StatFilter[]>()
 
+  const appliedRules: PseudoRule[] = []
+
   rulesLoop:
   for (const rule of PSEUDO_RULES) {
     const sources = filterPseudoSources(ctx.statsByType, ({ stat }, source) => {
@@ -332,6 +336,13 @@ export function filterPseudo (ctx: FiltersCreationContext) {
       }
     }
 
+    if (ctx.item.rarity === ItemRarity.Unique) {
+      const explicitSources = sources.filter(source => source.modifier.info.type === ModifierType.Explicit)
+      if (explicitSources.length < 2) {
+        continue
+      }
+    }
+
     const filter = calculatedStatToFilter({
       stat: pseudoStatByRef(rule.pseudo)!,
       type: ModifierType.Pseudo,
@@ -345,6 +356,7 @@ export function filterPseudo (ctx: FiltersCreationContext) {
     }
 
     ctx.filters.push(filter)
+    appliedRules.push(rule)
 
     if (rule.replaces && filterByGroup.has(rule.replaces)) {
       const replacedFilters = filterByGroup.get(rule.replaces)!
@@ -361,7 +373,7 @@ export function filterPseudo (ctx: FiltersCreationContext) {
   }
 
   ctx.statsByType = ctx.statsByType.filter(m =>
-    !PSEUDO_RULES.some(rule => rule.stats.some(({ ref }) => m.stat.ref === ref)))
+    !appliedRules.some(rule => rule.stats.some(({ ref, keep }) => m.stat.ref === ref && !keep)))
 
   if (filterByGroup.has('to_x_ele_res')) {
     const resFilters = filterByGroup.get('to_x_ele_res')!
