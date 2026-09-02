@@ -14,7 +14,7 @@
             <FullscreenImage
               :src="img.url"
               :disabled="isEditing || isMoving"
-              class="rounded overflow-hidden" />
+              class="rounded overflow-hidden w-full h-full" />
             <button v-if="isEditing" @click="remove(img.id)"
               class="bg-gray-800 absolute top-0 right-0 rounded-bl text-red-500 leading-none px-2 py-1 flex"><i class="fas fa-times"></i></button>
             <button v-if="isEditing" data-qa="drag-handle"

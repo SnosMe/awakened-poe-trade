@@ -13,7 +13,8 @@
         >{{ profile.text }}</button>
       </div>
     </div>
-    <FullscreenImage v-if="image" :src="image" style="height: auto;" />
+    <FullscreenImage v-if="image"
+      :class="$style.screenshot" :src="image" />
     <div v-if="!mapStats.length" class="px-8 py-2">
       {{ t('map_check.no_mods') }}
     </div>
@@ -88,3 +89,12 @@ const profiles = computed(() => {
   }))
 })
 </script>
+
+<style lang="postcss" module>
+.screenshot {
+  aspect-ratio: 21 / 9;
+  width: 100%;
+  height: auto;
+  background: theme('colors.gray.700');
+}
+</style>
