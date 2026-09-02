@@ -289,6 +289,7 @@
     "name": "Map check",
     "has_outdated": "Wording of some stats has been changed. Check and update dangerous map mods in the settings. (This message will be hidden as soon as you remove all outdated stats)",
     "no_mods": "Item has no modifiers.",
+    "maven_reminder": "Contains the Boss required for\nMaven's Invitation",
     "profile": "Profile",
     "search_selected": "Only selected",
     "search_stat_col": "Stat (found: {0})",

@@ -15,18 +15,26 @@
     </div>
     <FullscreenImage v-if="image"
       :class="$style.screenshot" :src="image" />
-    <div v-if="!mapStats.length" class="px-8 py-2">
-      {{ t('map_check.no_mods') }}
-    </div>
-    <div v-else class="py-2 flex flex-col">
-      <MapStatButton v-for="stat in mapStats" :key="stat.matcher"
-        :stat="stat" :config="config" />
-      <div v-for="stat of unknownModifiers" :key="stat.type + '/' + stat.text"
-        class="py-1 px-8">
-        <span class="text-orange-400">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
+    <div :class="$style.body">
+      <div v-if="item.mapArea && MEMORY_MAPS.includes(item.mapArea.refName)"
+        :class="$style.mavenReminder">
+        <img src="/images/maven-witness.png" class="w-8">
+        <span>{{ t('map_check.maven_reminder') }}</span>
+      </div>
+      <div v-if="!mapStats.length" class="px-8">
+        {{ t('map_check.no_mods') }}
+      </div>
+      <div v-else class="flex flex-col">
+        <MapStatButton v-for="stat in mapStats" :key="stat.matcher"
+          :stat="stat" :config="config" />
+        <div v-for="stat of unknownModifiers" :key="stat.type + '/' + stat.text"
+          class="py-1 px-8">
+          <span class="text-orange-400">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
+        </div>
       </div>
     </div>
-    <div v-if="hasOutdatedTranslation" class="py-2 px-8 bg-gray-700">{{ t('map_check.has_outdated') }}</div>
+    <div v-if="hasOutdatedTranslation"
+      class="py-2 px-8 bg-gray-700">{{ t('map_check.has_outdated') }}</div>
   </div>
 </template>
 
@@ -47,6 +55,12 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
+
+const MEMORY_MAPS = [
+  'Courtyard of Wasting',
+  'Chambers of Impurity',
+  'Theatre of Lies'
+]
 
 const hasOutdatedTranslation = computed<boolean>(() => {
   const { profile } = props.config
@@ -93,8 +107,41 @@ const profiles = computed(() => {
 <style lang="postcss" module>
 .screenshot {
   aspect-ratio: 21 / 9;
-  width: 100%;
-  height: auto;
   background: theme('colors.gray.700');
+  position: relative;
+  border: 1px solid black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(255 255 255 / 0.08);
+    border: 1px outset rgb(255 255 255 / 0.18);
+    border-top-width: 2px;
+    border-left-width: 2px;
+    pointer-events: none;
+  }
+}
+
+.screenshot + .body {
+  border-top: theme('borderWidth.4') solid theme('colors.gray.900');
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: theme('spacing.1');
+  padding: theme('spacing.2') 0;
+}
+
+.mavenReminder {
+  display: flex;
+  align-items: center;
+  gap: theme('spacing.2');
+  padding: 0 theme('spacing.8');
+  white-space: pre-wrap;
+  font-style: italic;
+  color: theme('colors.gray.500');
+  line-height: 1.25;
 }
 </style>
