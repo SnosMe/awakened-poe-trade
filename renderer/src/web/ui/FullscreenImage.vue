@@ -1,9 +1,10 @@
 <template>
   <div class="w-full h-full"
     @mouseenter="isHovered = true"
-    @mouseleave="isHovered = false">
+    @mouseleave="isHovered = false"
+    @click= "isClicked = !isClicked">
     <img :class="$style.img" :src="resolvedSrc">
-    <teleport v-if="isHovered && !disabled" to="body">
+    <teleport v-if="(isHovered || isClicked) && !disabled" to="body">
       <div :class="$style.imgFullscreenWrapper">
         <img :class="$style.imgFullscreen" :src="resolvedSrc">
       </div>
@@ -20,6 +21,7 @@ const props = defineProps<{
 }>()
 
 const isHovered = shallowRef(false)
+const isClicked = shallowRef(false)
 const resolvedSrc = computed(() => {
   if (props.src.includes('://')) {
     return props.src
