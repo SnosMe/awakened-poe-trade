@@ -166,7 +166,7 @@ export function initUiModFilters (
   if (item.info.refName !== 'Split Personality') {
     filterPseudo(ctx)
   }
-  if (item.info.unique && item.info.unique.base === 'Timeless Jewel') {
+  if (item.uniqueBase?.refName === 'Timeless Jewel') {
     filterTimelessJewelKeystones(ctx)
   }
 

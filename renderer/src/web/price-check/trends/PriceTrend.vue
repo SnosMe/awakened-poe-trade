@@ -11,7 +11,7 @@
         :price="trend.price"
         :fraction="filters.stackSize != null"
         :item-img="item.info.icon"
-        :item-base="item.info"
+        :item-base="item.uniqueBase ?? item.info"
       >
         <template #item v-if="isValuableBasetype">
           <span class="text-gray-400">{{ t(':base_item') }}</span>
@@ -54,7 +54,7 @@
     <item-quick-price class="flex-1 text-base justify-center"
       currency-text
       :item-img="item.info.icon"
-      :item-base="item.info" />
+      :item-base="item.uniqueBase ?? item.info" />
   </div>
 </template>
 

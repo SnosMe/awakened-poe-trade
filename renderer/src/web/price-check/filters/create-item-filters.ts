@@ -149,11 +149,11 @@ export function createFilters (
           disabled: false
         }
       }
-    } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
+    } else if (item.rarity === ItemRarity.Unique && item.uniqueBase) {
       filters.searchExact = {
         name: item.info.name,
         nameTrade: t(opts, item.info),
-        baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
+        baseTypeTrade: t(opts, item.uniqueBase)
       }
     } else {
       filters.searchExact = {
@@ -162,7 +162,7 @@ export function createFilters (
       }
     }
 
-    if (item.info.refName === 'Map' || item.info.unique?.base === 'Map') {
+    if (item.info.refName === 'Map' || item.uniqueBase?.refName === 'Map') {
       filters.searchExact.discriminatorTrade = 'map'
     }
 
@@ -211,11 +211,11 @@ export function createFilters (
         disabled: false
       }
     }
-  } else if (item.rarity === ItemRarity.Unique && item.info.unique) {
+  } else if (item.rarity === ItemRarity.Unique && item.uniqueBase) {
     filters.searchExact = {
       name: item.info.name,
       nameTrade: t(opts, item.info),
-      baseTypeTrade: t(opts, ITEM_BY_REF('ITEM', item.info.unique.base)![0])
+      baseTypeTrade: t(opts, item.uniqueBase)
     }
   } else {
     filters.searchExact = {

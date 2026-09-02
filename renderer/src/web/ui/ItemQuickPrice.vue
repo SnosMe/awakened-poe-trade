@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, computed, PropType } from 'vue'
 import { displayRounding } from '../background/Prices'
-import { ITEM_BY_REF, BaseType } from '@/assets/data'
+import { BaseType } from '@/assets/data'
 
 export default defineComponent({
   props: {
@@ -60,12 +60,8 @@ export default defineComponent({
     const imgSize = computed(() => {
       if (!props.itemBase) return 'w-8 h-8'
 
-      const base = (props.itemBase.unique)
-        ? ITEM_BY_REF('ITEM', props.itemBase.unique.base)![0]
-        : props.itemBase
-
-      const width = base.w ?? 1
-      const height = base.h ?? 1
+      const width = props.itemBase.w ?? 1
+      const height = props.itemBase.h ?? 1
 
       if (height > 1) {
         return 'w-8 h-10 -my-1'

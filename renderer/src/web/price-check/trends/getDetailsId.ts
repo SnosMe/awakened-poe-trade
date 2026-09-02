@@ -103,7 +103,7 @@ function forBasetype (item: ParsedItem) {
 }
 
 function forUniqueItem (item: ParsedItem) {
-  if (!item.info.unique) return
+  if (!item.uniqueBase) return
 
   return {
     ns: item.info.namespace,
@@ -112,7 +112,7 @@ function forUniqueItem (item: ParsedItem) {
       getUniqueVariant(item),
       (item.category === ItemCategory.Flask) ? null
         : (item.category === ItemCategory.SanctumRelic) ? 'Relic'
-            : item.info.unique.base,
+            : item.uniqueBase.refName,
       (item.sockets?.linked) ? `${item.sockets.linked}L` : null
     ])
   }
