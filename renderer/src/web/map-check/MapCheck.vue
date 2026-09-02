@@ -20,7 +20,7 @@
     <div v-else class="py-2 flex flex-col">
       <MapStatButton v-for="stat in mapStats" :key="stat.matcher"
         :stat="stat" :config="config" />
-      <div v-for="stat of item.unknownModifiers" :key="stat.type + '/' + stat.text"
+      <div v-for="stat of unknownModifiers" :key="stat.type + '/' + stat.text"
         class="py-1 px-8">
         <span class="text-orange-400">{{ t('Not recognized modifier') }} &mdash;</span> {{ stat.text }}
       </div>
@@ -33,7 +33,8 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ItemRarity, ParsedItem } from '@/parser'
-import { prepareMapStats } from './prepare-map-stats'
+import { ModifierType } from '@/parser/modifiers'
+import { prepareMapStat } from './prepare-map-stats'
 import { type MapCheckConfig, isOutdated } from './common.js'
 
 import MapStatButton from './MapStatButton.vue'
@@ -52,14 +53,31 @@ const hasOutdatedTranslation = computed<boolean>(() => {
     .some(entry => isOutdated(profile, entry))
 })
 
-const mapName = computed(() => props.item.info.name)
+const mapName = computed(() => {
+  const { item } = props
+  if (item.info.area?.blighted) {
+    return item.info.name
+  }
+  return item.mapArea?.name ?? item.info.name
+})
 
-const image = computed(() =>
-  (props.item.rarity === ItemRarity.Unique && props.item.isUnidentified)
-    ? undefined
-    : props.item.info.area?.screenshot)
+const image = computed(() => {
+  const { item } = props
+  if (
+    (item.rarity === ItemRarity.Unique && item.isUnidentified) ||
+    item.info.area?.blighted
+  ) return
 
-const mapStats = computed(() => prepareMapStats(props.item))
+  return item.info.area?.screenshot ??
+    item.mapArea?.area?.screenshot
+})
+
+const mapStats = computed(() => props.item.statsByType
+  .filter(calc => calc.type === ModifierType.Explicit)
+  .map(calc => prepareMapStat(calc)))
+
+const unknownModifiers = computed(() => props.item.unknownModifiers
+  .filter(mod => mod.type === ModifierType.Explicit))
 
 const profiles = computed(() => {
   const ROMAN_NUMERALS = ['I', 'II', 'III']
