@@ -49,34 +49,34 @@ const PSEUDO_RULES: PseudoRule[] = [
     disabled: false,
     stats:
       RESISTANCES_INFO.filter(info => info.elements.length)
-        .map(info => ({ ref: info.ref, multiplier: info.elements.length }))
+        .map(info => ({ ref: info.ref, multiplier: info.elements.length, keep: info.chaos }))
   },
   {
     pseudo: stat('+#% total to Fire Resistance'),
     group: 'to_x_ele_res',
     stats:
       RESISTANCES_INFO.filter(info => info.elements.includes('fire'))
-        .map(info => ({ ref: info.ref }))
+        .map(info => ({ ref: info.ref, keep: info.elements.length > 1 || info.chaos }))
   },
   {
     pseudo: stat('+#% total to Cold Resistance'),
     group: 'to_x_ele_res',
     stats:
       RESISTANCES_INFO.filter(info => info.elements.includes('cold'))
-        .map(info => ({ ref: info.ref }))
+        .map(info => ({ ref: info.ref, keep: info.elements.length > 1 || info.chaos }))
   },
   {
     pseudo: stat('+#% total to Lightning Resistance'),
     group: 'to_x_ele_res',
     stats:
       RESISTANCES_INFO.filter(info => info.elements.includes('lightning'))
-        .map(info => ({ ref: info.ref }))
+        .map(info => ({ ref: info.ref, keep: info.elements.length > 1 || info.chaos }))
   },
   {
     pseudo: stat('+#% total to Chaos Resistance'),
     stats:
       RESISTANCES_INFO.filter(info => info.chaos === true)
-        .map(info => ({ ref: info.ref })),
+        .map(info => ({ ref: info.ref, keep: info.elements.length > 0 })),
     mutate (filter) {
       if (filter.sources.length === 1 &&
           filter.sources[0].modifier.info.type === ModifierType.Crafted
