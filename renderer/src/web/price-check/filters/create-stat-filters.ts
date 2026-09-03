@@ -30,11 +30,6 @@ export function createExactStatFilters (
     item.info.area?.blighted ||
     item.category === ItemCategory.Invitation
   ) return []
-  if (
-    item.isUnidentified &&
-    item.rarity === ItemRarity.Unique &&
-    !item.isSynthesised
-  ) return []
 
   const keepByType = [ModifierType.Pseudo, ModifierType.Fractured, ModifierType.Enchant, ModifierType.Necropolis, ModifierType.Imbued]
 

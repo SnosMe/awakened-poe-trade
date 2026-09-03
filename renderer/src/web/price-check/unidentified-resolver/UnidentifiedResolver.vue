@@ -18,7 +18,7 @@
 import { defineComponent, PropType, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { BaseType, ITEMS_ITERATOR } from '@/assets/data'
-import { ItemRarity, ParsedItem } from '@/parser'
+import { ItemRarity, ParsedItem, makeIdentifiedUnique } from '@/parser'
 
 export default defineComponent({
   emits: ['identify'],
@@ -56,11 +56,7 @@ export default defineComponent({
     })
 
     function select (info: BaseType) {
-      const newItem: ParsedItem = {
-        ...props.item!,
-        info: info
-      }
-      ctx.emit('identify', newItem)
+      ctx.emit('identify', makeIdentifiedUnique(info, props.item!))
     }
 
     const { t } = useI18n()

@@ -214,6 +214,18 @@ function findInDatabase (item: ParserState) {
   }
 }
 
+export function makeIdentifiedUnique (uniqueInfo: BaseType, unidentified: ParsedItem): ParsedItem {
+  const newItem: ParsedItem = {
+    ...unidentified,
+    info: uniqueInfo,
+    uniqueBase: unidentified.info
+  }
+
+  calcDisenchantDust(newItem)
+
+  return newItem
+}
+
 function parseMapTier (item: ParserState) {
   const execResult = _$.MAP_TIER.exec(item.baseType || item.name)
   if (!execResult) return
@@ -1234,7 +1246,7 @@ function calcBasePercentile (item: ParsedItem) {
   }
 }
 
-function calcDisenchantDust (item: ParserState) {
+function calcDisenchantDust (item: ParsedItem) {
   if (!item.info.unique?.disenchantValue) return
 
   let increaseByFactors = 0
