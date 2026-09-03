@@ -337,9 +337,11 @@ export function filterPseudo (ctx: FiltersCreationContext) {
     }
 
     if (ctx.item.rarity === ItemRarity.Unique) {
-      const explicitSources = sources.filter(source => source.modifier.info.type === ModifierType.Explicit)
-      if (explicitSources.length < 2) {
-        continue
+      if (ctx.item.isCorrupted) {
+        if (sources.length < 2) continue
+      } else {
+        const explicitSources = sources.filter(source => source.modifier.info.type === ModifierType.Explicit)
+        if (explicitSources.length < 2) continue
       }
     }
 

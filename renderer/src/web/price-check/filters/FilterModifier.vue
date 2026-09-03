@@ -74,7 +74,7 @@
             :options="rollOptions"
             :filter="filter" />
         </div>
-        <stat-roll-slider v-if="roll && roll.bounds"
+        <stat-roll-slider v-if="roll && roll.bounds && showBounds()"
           class="ml-2 mr-4" style="width: 12.5rem;"
           v-model="sliderValue"
           :roll="roll.value"
@@ -150,7 +150,7 @@ export default defineComponent({
       props.item.info.refName !== 'Mirrored Tablet' &&
       props.item.info.refName !== 'Filled Coffin' &&
       props.item.category !== ItemCategory.Gem &&
-      !(props.item.rarity === ItemRarity.Unique && props.filter.tag === FilterTag.Explicit && !props.grouped)
+      !(props.item.rarity === ItemRarity.Unique && props.filter.tag === FilterTag.Explicit && (props.filter.roll?.bounds || props.filter.hidden) && !props.grouped)
     )
 
     const showQ20Notice = computed(() => {
@@ -301,6 +301,7 @@ export default defineComponent({
             props.filter.sources[0].modifier.info.rank != null
           )
         )),
+      showBounds: () => props.item.rarity === ItemRarity.Unique,
       inputFocus,
       toggleFilter,
       toggleExpanded,

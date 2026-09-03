@@ -353,7 +353,7 @@ export function calculatedStatToFilter (
       min: undefined,
       max: undefined,
       default: filterDefault,
-      bounds: (item.rarity === ItemRarity.Unique && roll.min !== roll.max && calc.stat.better !== StatBetter.NotComparable)
+      bounds: (roll.min !== roll.max && calc.stat.better !== StatBetter.NotComparable)
         ? filterBounds
         : undefined,
       dp: dp,
@@ -369,32 +369,30 @@ export function calculatedStatToFilter (
     }
   }
 
-  hideNotVariableStat(filter, item)
-
   return filter
 }
 
 function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
-  if (item.rarity !== ItemRarity.Unique) return
-  if (filter.tag === FilterTag.Implicit &&
-    item.category === ItemCategory.Jewel) return
-  if (
-    filter.tag !== FilterTag.Implicit &&
+  if (item.rarity !== ItemRarity.Unique || (
     filter.tag !== FilterTag.Explicit &&
-    filter.tag !== FilterTag.Pseudo
-  ) return
+    filter.tag !== FilterTag.Property
+  )) return
 
   if (!filter.roll) {
     filter.hidden = 'filters.hide_const_roll'
+    filter.disabled = true
   } else if (!filter.roll.bounds) {
     filter.roll.min = undefined
     filter.roll.max = undefined
     filter.hidden = 'filters.hide_const_roll'
+    filter.disabled = true
   }
 
-  if (item.isFoulborn && filter.tag === FilterTag.Explicit) {
+  if (item.isFoulborn && (
+    filter.tag === FilterTag.Explicit ||
+    (filter.tag === FilterTag.Property && filter.sources.length)
+  )) {
     // some mod not being replaced with foulborn one can be important
-    filter.hidden = undefined
     filter.disabled = false
   }
 }
@@ -422,7 +420,7 @@ function filterAdjustmentForNegate (
 ) {
   roll.tradeInvert = !roll.tradeInvert
   roll.isNegated = true
-  const swap = JSON.parse(JSON.stringify(roll)) as typeof roll
+  const swap = structuredClone(roll)
 
   if (swap.bounds && roll.bounds) {
     roll.bounds.min = -1 * swap.bounds.max
@@ -472,6 +470,8 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   }
 
   for (const filter of ctx.filters) {
+    hideNotVariableStat(filter, item)
+
     if (filter.tag === FilterTag.Fractured) {
       const mod = ctx.item.statsByType.find(mod => mod.stat.ref === filter.statRef)!
       if (mod.stat.trade.ids[ModifierType.Explicit]) {
@@ -481,7 +481,7 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
     } else if (filter.sources[0]?.stat.stat.jewelleryQuality) {
       filter.hidden = 'hide_jewellery_quality'
     } else if (filter.tag === FilterTag.Implicit) {
-      if (item.rarity === ItemRarity.Unique) {
+      if (item.rarity === ItemRarity.Unique && !item.isCorrupted && item.category !== ItemCategory.Jewel) {
         // hide not Corrupted, Vestigial implicits etc., that were not consumed by pseudo stats
         filter.hidden = 'hide_unique_base_implicit'
         filter.disabled = true
