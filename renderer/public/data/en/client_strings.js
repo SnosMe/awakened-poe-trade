@@ -101,6 +101,8 @@ export default {
   INCURSION_OBSTRUCTED: 'Obstructed Rooms:',
   EATER_IMPLICIT: /^Eater of Worlds Implicit Modifier \((?<rank>.+)\)$/,
   EXARCH_IMPLICIT: /^Searing Exarch Implicit Modifier \((?<rank>.+)\)$/,
+  ITEM_EATER: 'Eater of Worlds Item',
+  ITEM_EXARCH: 'Searing Exarch Item',
   ELDRITCH_MOD_R1: 'Lesser',
   ELDRITCH_MOD_R2: 'Greater',
   ELDRITCH_MOD_R3: 'Grand',

@@ -223,6 +223,8 @@ export interface TranslationDict {
   INCURSION_OBSTRUCTED: string
   EATER_IMPLICIT: RegExp
   EXARCH_IMPLICIT: RegExp
+  ITEM_EATER: string
+  ITEM_EXARCH: string
   ELDRITCH_MOD_R1: string
   ELDRITCH_MOD_R2: string
   ELDRITCH_MOD_R3: string

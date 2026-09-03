@@ -101,6 +101,8 @@ export default {
   INCURSION_OBSTRUCTED: 'Отделённые комнаты:',
   EATER_IMPLICIT: /^Собственное свойство Пожирателя миров \((?<rank>.+)\)$/,
   EXARCH_IMPLICIT: /^Собственное свойство Пламенного экзарха \((?<rank>.+)\)$/,
+  ITEM_EATER: 'Предмет Пожирателя миров',
+  ITEM_EXARCH: 'Предмет Пламенного экзарха',
   ELDRITCH_MOD_R1: 'Мелкий',
   ELDRITCH_MOD_R2: 'Крупный',
   ELDRITCH_MOD_R3: 'Великий',

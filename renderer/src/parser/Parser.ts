@@ -114,6 +114,9 @@ export function parseClipboard (clipboard: string): Result<ParsedItem, string> {
       }
 
       for (const section of sections) {
+        // workaround upstream bug
+        parseEldritchItem(section)
+
         const result = parser(section, parsed.value)
         if (result === 'SECTION_PARSED') {
           sections = sections.filter(s => s !== section)
@@ -223,7 +226,7 @@ export function makeIdentifiedUnique (uniqueInfo: BaseType, unidentified: Parsed
 
   calcDisenchantDust(newItem)
 
-  return newItem
+  return Object.freeze(newItem)
 }
 
 function parseMapTier (item: ParserState) {
@@ -831,11 +834,9 @@ function parseModifiers (section: string[], item: ParsedItem) {
 }
 
 function parseMirrored (section: string[], item: ParsedItem) {
-  if (section.length === 1) {
-    if (section[0] === _$.MIRRORED) {
-      item.isMirrored = true
-      return 'SECTION_PARSED'
-    }
+  if (section[0] === _$.MIRRORED) {
+    item.isMirrored = true
+    return 'SECTION_PARSED'
   }
   return 'SECTION_SKIPPED'
 }
@@ -906,6 +907,19 @@ function parseScryingOrb (section: string[], item: ParsedItem) {
     }
   }
   return 'SECTION_SKIPPED'
+}
+
+function parseEldritchItem (section: string[]): void {
+  // these don't have a dedicated section and are appended to last-ish one,
+  // it can be Explicit Mods section, Corrupted, or Mirrored line.
+  while (section.length) {
+    const lastLine = section[section.length - 1]
+    if (lastLine === _$.ITEM_EATER || lastLine === _$.ITEM_EXARCH) {
+      section.pop()
+    } else {
+      break
+    }
+  }
 }
 
 function parseSynthesised (section: string[], item: ParserState) {

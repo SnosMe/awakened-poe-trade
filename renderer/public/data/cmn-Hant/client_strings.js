@@ -101,6 +101,8 @@ export default {
   INCURSION_OBSTRUCTED: '受阻的房間：',
   EATER_IMPLICIT: /^吞噬天地固定詞綴 \((?<rank>.+)\)$/,
   EXARCH_IMPLICIT: /^灼烙總督固定詞綴 \((?<rank>.+)\)$/,
+  ITEM_EATER: '吞噬天地物品',
+  ITEM_EXARCH: '卓烙總督物品',
   ELDRITCH_MOD_R1: '低階',
   ELDRITCH_MOD_R2: '高階',
   ELDRITCH_MOD_R3: '宏偉',
