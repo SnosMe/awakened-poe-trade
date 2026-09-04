@@ -33,7 +33,7 @@ export default defineComponent({
         switch (filter.mercenary.tier) {
           case 4: type = 'merc-gilded'; break
           case 3: type = 'tier-1'; break
-          default: type = 'not-tier-1'; break
+          default: type = (filter.mercenary.maxTier) ? 'tier-2' : 'not-tier-1'; break
         }
         out.push({ type: type, tier: filter.mercenary.tier })
       }

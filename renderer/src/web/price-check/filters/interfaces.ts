@@ -118,7 +118,7 @@ export interface StatFilter {
   text: string
   tag: FilterTag
   oils?: string[]
-  mercenary?: { icon?: string, tier?: number }
+  mercenary?: { icon?: string, tier?: number, maxTier?: boolean }
   sources: StatCalculated['sources']
   not?: true
   roll?: {
