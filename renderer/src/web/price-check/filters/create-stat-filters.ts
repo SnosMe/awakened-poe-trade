@@ -1,5 +1,6 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
+import { JEWELLERY } from '@/parser/meta'
 import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup } from './interfaces'
 import { filterPseudo } from './pseudo'
@@ -372,6 +373,12 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
     filter.tag !== FilterTag.Explicit &&
     filter.tag !== FilterTag.Property
   )) return
+
+  if (item.quality && JEWELLERY.has(item.category!) &&
+    filter.sources.some(source =>
+      source.modifier.info.rollIncr &&
+      !source.stat.roll?.unscalable)
+  ) return
 
   if (!filter.roll) {
     filter.hidden = 'filters.hide_const_roll'
