@@ -128,3 +128,21 @@ export enum ModifierType {
   Fractured = 'fractured',
   Imbued = 'imbued'
 }
+
+export enum ModifierMechanic {
+  Corruption = 'corrupted',
+  Eldritch = 'eldritch',
+  Foulborn = 'foulborn',
+  Vestigial = 'vestigial',
+  Shaper = 'explicit-shaper',
+  Elder = 'explicit-elder',
+  Crusader = 'explicit-crusader',
+  Hunter = 'explicit-hunter',
+  Redeemer = 'explicit-redeemer',
+  Warlord = 'explicit-warlord',
+  Delve = 'explicit-delve',
+  Unveiled = 'explicit-veiled',
+  Incursion = 'explicit-incursion',
+  Infamous = 'explicit-infamous',
+  Essence = 'explicit-essence'
+}

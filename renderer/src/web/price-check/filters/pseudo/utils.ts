@@ -65,7 +65,7 @@ export function statToNotFilter (opts: {
     text: (opts.stat.matchers.find(
       matcher => Boolean(matcher.negate) === Boolean(opts.negateString)
     ) ?? opts.stat.matchers[0]).string,
-    tag: (opts.type as unknown) as FilterTag,
+    tag: opts.type,
     sources: [],
     disabled: opts.disabled,
     not: true

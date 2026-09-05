@@ -1,5 +1,5 @@
 import type { ItemInfluence, ItemCategory } from '@/parser'
-import type { StatCalculated } from '@/parser/modifiers'
+import { ModifierType, ModifierMechanic, type StatCalculated } from '@/parser/modifiers'
 
 export interface FilterPreset {
   id: string
@@ -183,36 +183,25 @@ export enum ItemHasEmptyModifier {
   Suffix = 2
 }
 
-export enum FilterTag {
-  Pseudo = 'pseudo',
-  Explicit = 'explicit',
-  Implicit = 'implicit',
-  Crafted = 'crafted',
-  Enchant = 'enchant',
-  Scourge = 'scourge',
-  Fractured = 'fractured',
-  Corrupted = 'corrupted',
+enum FilterTagExtra {
   Synthesised = 'synthesised',
-  Foulborn = 'foulborn',
-  Vestigial = 'vestigial',
-  Eldritch = 'eldritch',
   Variant = 'variant',
   Property = 'property',
-  Shaper = 'explicit-shaper',
-  Elder = 'explicit-elder',
-  Crusader = 'explicit-crusader',
-  Hunter = 'explicit-hunter',
-  Redeemer = 'explicit-redeemer',
-  Warlord = 'explicit-warlord',
-  Delve = 'explicit-delve',
-  Unveiled = 'explicit-veiled',
-  Incursion = 'explicit-incursion',
-  Infamous = 'explicit-infamous',
-  Essence = 'explicit-essence',
   Brick = 'brick',
   MercenaryPrimary = 'mercenary-primary',
   MercenarySecondary = 'mercenary-secondary',
   MercenaryUtility = 'mercenary-utility',
   MercenarySupport = 'mercenary-support',
   FilterGroup = 'filter-group'
+}
+
+export type FilterTag =
+  | ModifierType
+  | ModifierMechanic
+  | FilterTagExtra
+
+export const FilterTag = {
+  ...ModifierType,
+  ...ModifierMechanic,
+  ...FilterTagExtra
 }

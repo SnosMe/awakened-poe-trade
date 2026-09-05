@@ -7,7 +7,7 @@ import {
   StatBetter,
   BaseType
 } from '@/assets/data'
-import { ModifierType, sumStatsByModType } from './modifiers'
+import { ModifierType, ModifierMechanic, sumStatsByModType } from './modifiers'
 import { linesToStatStrings, tryParseTranslation, getRollOrMinmaxAvg, ParsedStat } from './stat-translations'
 import { ItemCategory, JEWELLERY } from './meta'
 import { IncursionRoom, ParsedItem, ItemInfluence, ItemRarity } from './ParsedItem'
@@ -1276,7 +1276,7 @@ function calcDisenchantDust (item: ParsedItem) {
   // +50% per Corruption Implicit
   if (item.isCorrupted) {
     for (const mod of item.newMods) {
-      if (mod.info.generation === 'corrupted') {
+      if (mod.info.mechanic === ModifierMechanic.Corruption) {
         increaseByFactors += 50
       }
     }

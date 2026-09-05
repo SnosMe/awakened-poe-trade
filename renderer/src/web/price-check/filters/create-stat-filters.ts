@@ -1,5 +1,5 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
-import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
+import { ModifierType, ModifierMechanic, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { JEWELLERY } from '@/parser/meta'
 import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup } from './interfaces'
@@ -12,7 +12,7 @@ import { applyFlaskHybridMod } from './pseudo/flasks'
 import { applyHeistRules } from './pseudo/heist'
 import { filterTimelessJewelKeystones } from './pseudo/timeless-jewel'
 import { decodeOils, applyAnointmentRules } from './pseudo/anointments'
-import { StatBetter, CLIENT_STRINGS } from '@/assets/data'
+import { StatBetter } from '@/assets/data'
 
 export interface FiltersCreationContext {
   readonly item: ParsedItem
@@ -222,7 +222,7 @@ export function calculatedStatToFilter (
     tradeId: stat.trade.ids[type],
     statRef: stat.ref,
     text: translation.string,
-    tag: (type as unknown) as FilterTag,
+    tag: type,
     oils: decodeOils(calc),
     sources: sources,
     roll: undefined,
@@ -239,11 +239,11 @@ export function calculatedStatToFilter (
   }
 
   if (type === ModifierType.Implicit) {
-    if (sources.some(s => s.modifier.info.generation === 'corrupted')) {
-      filter.tag = FilterTag.Corrupted
-    } else if (sources.some(s => s.modifier.info.generation === 'eldritch')) {
+    if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Corruption)) {
+      filter.tag = FilterTag.Corruption
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Eldritch)) {
       filter.tag = FilterTag.Eldritch
-    } else if (sources.some(s => s.modifier.info.generation === 'vestigial')) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Vestigial)) {
       filter.tag = FilterTag.Vestigial
     } else if (item.isSynthesised) {
       filter.tag = FilterTag.Synthesised
@@ -262,30 +262,30 @@ export function calculatedStatToFilter (
         filter.tag = FilterTag.Variant
       }
     }
-    if (sources.some(s => s.modifier.info.generation === 'foulborn')) {
+    if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Foulborn)) {
       filter.tag = FilterTag.Foulborn
-    } else if (sources.some(s => CLIENT_STRINGS.SHAPER_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Shaper)) {
       filter.tag = FilterTag.Shaper
-    } else if (sources.some(s => CLIENT_STRINGS.ELDER_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Elder)) {
       filter.tag = FilterTag.Elder
-    } else if (sources.some(s => CLIENT_STRINGS.HUNTER_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Hunter)) {
       filter.tag = FilterTag.Hunter
-    } else if (sources.some(s => CLIENT_STRINGS.WARLORD_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Warlord)) {
       filter.tag = FilterTag.Warlord
-    } else if (sources.some(s => CLIENT_STRINGS.REDEEMER_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Redeemer)) {
       filter.tag = FilterTag.Redeemer
-    } else if (sources.some(s => CLIENT_STRINGS.CRUSADER_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Crusader)) {
       filter.tag = FilterTag.Crusader
-    } else if (sources.some(s => CLIENT_STRINGS.DELVE_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Delve)) {
       filter.tag = FilterTag.Delve
-    } else if (sources.some(s => CLIENT_STRINGS.VEILED_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Unveiled)) {
       // can't drop from ground, so don't show
       // filter.tag = FilterTag.Unveiled
-    } else if (sources.some(s => CLIENT_STRINGS.INCURSION_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Incursion)) {
       filter.tag = FilterTag.Incursion
-    } else if (sources.some(s => CLIENT_STRINGS.ESSENCE_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Essence)) {
       filter.tag = FilterTag.Essence
-    } else if (sources.some(s => CLIENT_STRINGS.INFAMOUS_MODS.includes(s.modifier.info.name!))) {
+    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Infamous)) {
       filter.tag = FilterTag.Infamous
     }
   }
