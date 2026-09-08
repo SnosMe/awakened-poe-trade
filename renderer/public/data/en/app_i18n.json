@@ -43,7 +43,7 @@
     "not_group": "None of",
     "count_one_group": "One of",
     "disenchanting": "Disenchanting",
-    "prop_quality": "Q {0}%",
+    "prop_quality": "(Quality: {0}%)",
     "base_percentile": "Base Percentile: {0}%",
     "armour": "Armour: {0}",
     "evasion_rating": "Evasion Rating: {0}",

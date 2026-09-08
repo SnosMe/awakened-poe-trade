@@ -32,8 +32,11 @@
           :class="{ 'mr-4': Boolean(rollOptions) }" />
         <slot name="inputs">
           <div v-if="showInputs"
-            class="flex items-baseline gap-x-1 ml-auto">
-            <div v-if="showQ20Notice" :class="$style['qualityLabel']">{{ t('item.prop_quality', [calcQuality]) }}</div>
+            class="flex items-baseline gap-x-1 shrink-0 ml-auto">
+            <div v-if="showQ20Notice"
+              :class="$style.qualityLabel">{{ t('item.prop_quality', [calcQuality]) }}</div>
+            <img v-for="img of rollTags"
+              :class="$style.rollTag" :src="img">
             <div class="flex gap-x-px">
               <input :class="$style['rollInput']" :placeholder="t('min')" :min="roll?.bounds?.min" :max="roll?.bounds?.max" :step="changeStep" type="number"
                 ref="inputMinEl"
@@ -289,6 +292,23 @@ export default defineComponent({
       }),
       roll: computed(() => props.filter.roll),
       isHidden: computed(() => props.filter.hidden != null),
+      rollTags: computed(() => {
+        const out: string[] = []
+        for (const source of props.filter.sources) {
+          if (source.stat.roll?.generation === 'volatile') {
+            out.push('/images/VolatileVaalOrb.png'); break
+          } else if (source.stat.roll?.generation === 'reflecting') {
+            out.push('/images/ReflectingMist.png'); break
+          }
+        }
+        const increased = props.filter.sources.some(source =>
+          source.modifier.info.rollIncr &&
+          source.stat.roll && !source.stat.roll.unscalable)
+        if (increased) {
+          out.push('/images/increased.png')
+        }
+        return out
+      }),
       hiddenReason: computed(() => t(props.filter.hidden!)),
       showSourceInfo: computed(() =>
         props.showSources &&
@@ -357,7 +377,7 @@ export default defineComponent({
     width: theme('width.4');
     margin-right: theme('spacing.1');
     position: relative;
-    top: 2px;
+    top: 0.125rem;
     margin-top: -99px; /* not allowed to extend baseline */
   }
 
@@ -399,11 +419,10 @@ export default defineComponent({
 }
 
 .qualityLabel {
-  @apply text-gray-500;
-  @apply border border-gray-700;
-  @apply rounded;
-  @apply px-2;
-  text-align: center;
+  padding-right: theme('spacing.1');
+  color: theme('colors.gray.500');
+  font-size: 0.8125rem;
+  white-space: nowrap;
 }
 
 .miniRollOptions {
@@ -493,7 +512,7 @@ export default defineComponent({
 .tag-brick {
   @apply bg-red-700 text-red-100; }
 .tag-fractured {
-  @apply bg-yellow-400 text-black; }
+  @apply bg-orange-300 text-black; }
 .tag-crafted, .tag-synthesised {
   @apply bg-blue-600 text-blue-100; }
 .tag-implicit,
@@ -516,6 +535,13 @@ export default defineComponent({
 .tag-pseudo,
 .tag-not {
   @apply bg-gray-700 text-black; }
+
+.rollTag {
+  width: theme('width.5');
+  position: relative;
+  top: 0.3125rem;
+  margin-top: -99px; /* not allowed to extend baseline */
+}
 </style>
 
 <style lang="postcss">

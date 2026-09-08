@@ -347,10 +347,17 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
     filter.tag !== FilterTag.Property
   )) return
 
+  // always show stat increased by Catalyst
   if (item.quality && JEWELLERY.has(item.category!) &&
     filter.sources.some(source =>
       source.modifier.info.rollIncr &&
-      !source.stat.roll?.unscalable)
+      source.stat.roll && !source.stat.roll.unscalable)
+  ) return
+
+  // always show scalable stat on VVO corrupted item
+  if (item.isCorrupted &&
+    item.newMods.some(mod => mod.stats.some(stat => stat.roll?.generation === 'volatile')) &&
+    filter.sources.some(source => source.stat.roll && !source.stat.roll.unscalable)
   ) return
 
   if (!filter.roll) {

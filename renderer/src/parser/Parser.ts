@@ -81,6 +81,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseModifiers, // scourge
   parseModifiers, // implicit
   parseModifiers, // explicit
+  { virtual: augmentModifiers },
   { virtual: transformToLegacyModifiers },
   { virtual: parseFractured },
   { virtual: pickCorrectVariant },
@@ -818,8 +819,6 @@ function parseModifiers (section: string[], item: ParsedItem) {
       if (statLines[0] === _$.VEILED_PREFIX || statLines[0] === _$.VEILED_SUFFIX) {
         modInfo.type = ModifierType.Veiled
         item.isVeiled = true
-      } else if (item.isSynthesised && modInfo.type === ModifierType.Implicit) {
-        modInfo.mechanic ??= ModifierMechanic.Synthesised
       }
       parseStatsFromMod(statLines, item, { info: modInfo, stats: [] })
     }
@@ -1235,6 +1234,26 @@ function parseStatsFromMod (lines: string[], item: ParsedItem, modifier: ParsedM
     text: line,
     type: modifier.info.type
   })))
+}
+
+function augmentModifiers (item: ParsedItem) {
+  for (const mod of item.newMods) {
+    if (item.isSynthesised && mod.info.type === ModifierType.Implicit) {
+      mod.info.mechanic ??= ModifierMechanic.Synthesised
+    }
+
+    for (const stat of mod.stats) {
+      if (stat.roll?.generation !== 'legacy' || stat.roll.unscalable) continue
+
+      if (item.rarity === ItemRarity.Unique && item.isCorrupted) {
+        stat.roll.generation = 'volatile'
+      } else if (item.rarity === ItemRarity.Rare && item.isMirrored &&
+        (item.category === ItemCategory.Ring || item.category === ItemCategory.Amulet)
+      ) {
+        stat.roll.generation = 'reflecting'
+      }
+    }
+  }
 }
 
 /**

@@ -61,7 +61,7 @@
     "not_group": "Ни одного из",
     "count_one_group": "Одно из",
     "disenchanting": "Распыление",
-    "prop_quality": "К-во: {0}%",
+    "prop_quality": "(Качество: {0}%)",
     "base_percentile": "Ролл значений базы: {0}%",
     "armour": "Броня: {0}",
     "evasion_rating": "Уклонение: {0}",
