@@ -354,11 +354,16 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
       source.stat.roll && !source.stat.roll.unscalable)
   ) return
 
-  // always show scalable stat on VVO corrupted item
-  if (item.isCorrupted &&
-    item.newMods.some(mod => mod.stats.some(stat => stat.roll?.generation === 'volatile')) &&
-    filter.sources.some(source => source.stat.roll && !source.stat.roll.unscalable)
-  ) return
+  // always show scalable stat on corrupted item
+  const hasRollAndScalable = filter.sources.some(source => source.stat.roll && !source.stat.roll.unscalable)
+  if (item.isCorrupted && hasRollAndScalable) {
+    const isVvoCorrupted = item.newMods.some(mod => mod.stats.some(stat => stat.roll?.generation === 'volatile'))
+    if (!isVvoCorrupted) {
+      // some stat not being reduced compared to other VVO corrupted items can be important
+      filter.disabled = false
+    }
+    return
+  }
 
   if (!filter.roll) {
     filter.hidden = 'filters.hide_const_roll'
@@ -368,12 +373,18 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
     filter.roll.max = undefined
     filter.hidden = 'filters.hide_const_roll'
     filter.disabled = true
+  } else if (
+    BASE_PCTL_AFFECTED_IDS.includes(filter.tradeId[0]) &&
+    filter.sources.every(source => source.stat.roll?.min === source.stat.roll?.max) &&
+    (item.quality ?? 0) < 21
+  ) {
+    filter.roll.min = undefined
+    filter.roll.max = undefined
+    filter.hidden = 'hide_variable_by_base_percentile_only'
+    filter.disabled = true
   }
 
-  if (item.isFoulborn && (
-    filter.tag === FilterTag.Explicit ||
-    (filter.tag === FilterTag.Property && filter.sources.length)
-  )) {
+  if (item.isFoulborn && filter.tag === FilterTag.Explicit) {
     // some mod not being replaced with foulborn one can be important
     filter.disabled = false
   }
@@ -466,16 +477,6 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
       if (item.rarity === ItemRarity.Unique && !item.isCorrupted && item.category !== ItemCategory.Jewel) {
         // hide not Corrupted, Vestigial implicits etc., that were not consumed by pseudo stats
         filter.hidden = 'hide_unique_base_implicit'
-        filter.disabled = true
-      }
-    } else if (filter.tag === FilterTag.Property) {
-      if (
-        item.rarity === ItemRarity.Unique &&
-        BASE_PCTL_AFFECTED_IDS.includes(filter.tradeId[0]) &&
-        filter.sources.every(source => source.stat.roll?.min === source.stat.roll?.max) &&
-        (item.quality ?? 0) < 21
-      ) {
-        filter.hidden = 'hide_variable_by_base_percentile_only'
         filter.disabled = true
       }
     } else if (
