@@ -818,6 +818,8 @@ function parseModifiers (section: string[], item: ParsedItem) {
       if (statLines[0] === _$.VEILED_PREFIX || statLines[0] === _$.VEILED_SUFFIX) {
         modInfo.type = ModifierType.Veiled
         item.isVeiled = true
+      } else if (item.isSynthesised && modInfo.type === ModifierType.Implicit) {
+        modInfo.mechanic ??= ModifierMechanic.Synthesised
       }
       parseStatsFromMod(statLines, item, { info: modInfo, stats: [] })
     }

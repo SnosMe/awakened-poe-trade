@@ -219,8 +219,7 @@ function mechanicFromModName (name: string): ModifierMechanic | undefined {
   } else if (_$.DELVE_MODS.includes(name)) {
     return ModifierMechanic.Delve
   } else if (_$.VEILED_MODS.includes(name)) {
-    // can't drop from ground, so don't show
-    // return ModifierMechanic.Unveiled
+    return ModifierMechanic.Unveiled
   } else if (_$.INCURSION_MODS.includes(name)) {
     return ModifierMechanic.Incursion
   } else if (_$.ESSENCE_MODS.includes(name)) {

@@ -375,7 +375,8 @@ export function filterPseudo (ctx: FiltersCreationContext) {
   }
 
   ctx.statsByType = ctx.statsByType.filter(m =>
-    !appliedRules.some(rule => rule.stats.some(({ ref, keep }) => m.stat.ref === ref && !keep)))
+    !appliedRules.some(rule => rule.stats.some(({ ref, keep }) =>
+      m.stat.ref === ref && (!keep || ctx.item.rarity !== ItemRarity.Unique))))
 
   if (filterByGroup.has('to_x_ele_res')) {
     const resFilters = filterByGroup.get('to_x_ele_res')!

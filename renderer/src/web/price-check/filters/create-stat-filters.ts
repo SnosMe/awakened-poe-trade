@@ -1,5 +1,5 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
-import { ModifierType, ModifierMechanic, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
+import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { JEWELLERY } from '@/parser/meta'
 import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup } from './interfaces'
@@ -238,18 +238,11 @@ export function calculatedStatToFilter (
     }
   }
 
-  if (type === ModifierType.Implicit) {
-    if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Corruption)) {
-      filter.tag = FilterTag.Corruption
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Eldritch)) {
-      filter.tag = FilterTag.Eldritch
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Vestigial)) {
-      filter.tag = FilterTag.Vestigial
-    } else if (item.isSynthesised) {
-      filter.tag = FilterTag.Synthesised
-    }
-  } else if (type === ModifierType.Explicit) {
-    if (item.info.unique) {
+  if (
+    type === ModifierType.Implicit ||
+    type === ModifierType.Explicit
+  ) {
+    if (type === ModifierType.Explicit && item.info.unique) {
       if (item.info.unique.fixedStats) {
         const fixedStats = item.info.unique.fixedStats
         if (!fixedStats.includes(filter.statRef)) {
@@ -259,34 +252,14 @@ export function calculatedStatToFilter (
         s.modifier.info.generation === 'prefix' ||
         s.modifier.info.generation === 'suffix'
       )) {
+        // recognized unveiled mods are overridden below, this is kept as fallback
         filter.tag = FilterTag.Variant
       }
     }
-    if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Foulborn)) {
-      filter.tag = FilterTag.Foulborn
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Shaper)) {
-      filter.tag = FilterTag.Shaper
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Elder)) {
-      filter.tag = FilterTag.Elder
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Hunter)) {
-      filter.tag = FilterTag.Hunter
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Warlord)) {
-      filter.tag = FilterTag.Warlord
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Redeemer)) {
-      filter.tag = FilterTag.Redeemer
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Crusader)) {
-      filter.tag = FilterTag.Crusader
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Delve)) {
-      filter.tag = FilterTag.Delve
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Unveiled)) {
-      // can't drop from ground, so don't show
-      // filter.tag = FilterTag.Unveiled
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Incursion)) {
-      filter.tag = FilterTag.Incursion
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Essence)) {
-      filter.tag = FilterTag.Essence
-    } else if (sources.some(s => s.modifier.info.mechanic === ModifierMechanic.Infamous)) {
-      filter.tag = FilterTag.Infamous
+
+    const mechanic = sources.find(s => s.modifier.info.mechanic != null)?.modifier.info.mechanic
+    if (mechanic) {
+      filter.tag = mechanic
     }
   }
 

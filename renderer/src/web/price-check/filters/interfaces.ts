@@ -184,7 +184,6 @@ export enum ItemHasEmptyModifier {
 }
 
 enum FilterTagExtra {
-  Synthesised = 'synthesised',
   Variant = 'variant',
   Property = 'property',
   Brick = 'brick',

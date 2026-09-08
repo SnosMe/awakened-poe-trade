@@ -130,6 +130,7 @@ export enum ModifierType {
 }
 
 export enum ModifierMechanic {
+  Synthesised = 'synthesised',
   Corruption = 'corrupted',
   Eldritch = 'eldritch',
   Foulborn = 'foulborn',

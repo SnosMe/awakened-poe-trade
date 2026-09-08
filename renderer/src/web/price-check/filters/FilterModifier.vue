@@ -68,7 +68,8 @@
             :class="[$style['tag'], $style['tag-not']]">{{ t('filters.tag_not') }}</span>
           <span v-if="showTag"
             :class="[$style['tag'], $style[`tag-${tag}`]]">{{ t(`filters.tag_${tag.replace('-', '_')}`) }}{{ (filter.sources.length > 1) ? ` x ${filter.sources.length}` : null }}</span>
-          <filter-modifier-tiers :filter="filter" :item="item" />
+          <filter-modifier-tiers v-if="!showBounds()"
+            :filter="filter" :item="item" />
           <filter-modifier-options v-if="rollOptions"
             show-checked="always"
             :options="rollOptions"
@@ -427,10 +428,11 @@ export default defineComponent({
 }
 
 .tag {
-  @apply px-1;
-  @apply rounded;
-  @apply text-xs;
+  padding: 0 theme('spacing.1');
+  border-radius: theme('borderRadius.DEFAULT');
+  font-size: theme('fontSize.xs');
   line-height: 1;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
 }
