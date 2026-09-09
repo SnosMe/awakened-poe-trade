@@ -684,9 +684,10 @@
     ],
     "items": [
       "UNIQUE::Headhunter // Leather Belt",
-      "UNIQUE::Mageblood // Heavy Belt",
+      "UNIQUE::Mageblood // 4 Flasks, Heavy Belt",
       "UNIQUE::Defiance of Destiny // Paua Amulet",
-      "UNIQUE::The Squire // Elegant Round Shield"
+      "UNIQUE::The Squire // Elegant Round Shield",
+      "UNIQUE::Soul Taker // Siege Axe"
     ]
   },
   {
@@ -780,7 +781,8 @@
   },
   {
     "query": [
-      "UNIQUE::Cortex // T0"
+      "UNIQUE::Cortex // T0",
+      "UNIQUE::Replica Cortex // T0"
     ],
     "items": [
       "UNIQUE::Bottled Faith",
@@ -819,6 +821,31 @@
       "UNIQUE::Circle of Regret // Topaz Ring",
       "UNIQUE::Cortex // T0"
     ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Twilight Temple // T0"
+    ],
+    "items": [
+      "UNIQUE::Vix Lunaris // Cardinal Round Shield",
+      "UNIQUE::Invictus Solaris // Archon Kite Shield"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Vinktar Square // T0"
+    ],
+    "items": [
+      "UNIQUE::Vessel of Vinktar"
+    ]
+  },
+  {
+    "query": [
+      "UNIQUE::The Coward's Trial // T0",
+      "UNIQUE::Replica Poorjoy's Asylum // T0",
+      "UNIQUE::Poorjoy's Asylum // T0"
+    ],
+    "items": []
   },
   {
     "query": [
