@@ -1,6 +1,7 @@
 import { ParsedItem, ItemRarity, ItemCategory } from '@/parser'
 import { ModifierType, StatCalculated, statSourcesTotal, translateStatWithRoll } from '@/parser/modifiers'
 import { JEWELLERY } from '@/parser/meta'
+import { getPropQuality, QUALITY_CHANGING_ENCHANT } from '@/parser/calc-q20'
 import { percentRoll, percentRollDelta, roundRoll } from './util'
 import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup } from './interfaces'
 import { filterPseudo } from './pseudo'
@@ -376,7 +377,7 @@ function hideNotVariableStat (filter: StatFilter, item: ParsedItem) {
   } else if (
     BASE_PCTL_AFFECTED_IDS.includes(filter.tradeId[0]) &&
     filter.sources.every(source => source.stat.roll?.min === source.stat.roll?.max) &&
-    (item.quality ?? 0) < 21
+    getPropQuality(item) < 21
   ) {
     filter.roll.min = undefined
     filter.roll.max = undefined
@@ -465,7 +466,11 @@ function finalFilterTweaks (ctx: FiltersCreationContext) {
   for (const filter of ctx.filters) {
     hideNotVariableStat(filter, item)
 
-    if (filter.tag === FilterTag.Fractured) {
+    if (filter.tag === FilterTag.Enchant) {
+      if (QUALITY_CHANGING_ENCHANT.includes(filter.statRef)) {
+        filter.hidden = 'hide_enchant_meta_stat'
+      }
+    } else if (filter.tag === FilterTag.Fractured) {
       const mod = ctx.item.statsByType.find(mod => mod.stat.ref === filter.statRef)!
       if (mod.stat.trade.ids[ModifierType.Explicit]) {
         // hide only if fractured mod has corresponding explicit variant

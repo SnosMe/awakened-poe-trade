@@ -103,6 +103,7 @@ import FilterModifierOptions, { RollOption } from './FilterModifierOptions.vue'
 import FilterModifierTiers from './FilterModifierTiers.vue'
 import { AppConfig } from '@/web/Config'
 import { ItemCategory, ItemRarity, ParsedItem } from '@/parser'
+import { getTradeMaxQuality } from '@/parser/calc-q20.js'
 import { FilterTag, StatFilter, INTERNAL_TRADE_IDS, ItemHasEmptyModifier } from './interfaces'
 import SourceInfo from './SourceInfo.vue'
 import { SearchMode as MercSearchMode } from './pseudo/mercenary.js'
@@ -168,7 +169,7 @@ export default defineComponent({
       ].includes(props.filter.tradeId[0])
     })
 
-    const calcQuality = computed(() => Math.max(20, props.item.quality || 0))
+    const calcQuality = computed(() => getTradeMaxQuality(props.item))
 
     const inputMinEl = ref<HTMLInputElement | null>(null)
     const inputMaxEl = ref<HTMLInputElement | null>(null)

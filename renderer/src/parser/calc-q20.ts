@@ -44,6 +44,27 @@ export const QUALITY_STATS = {
   }
 }
 
+export const QUALITY_CHANGING_ENCHANT = [
+  stat('Quality does not increase Defences'),
+  stat('Quality does not increase Physical Damage')
+]
+
+export function getTradeMaxQuality (item: ParsedItem): number {
+  if (item.statsByType.some(calc => QUALITY_CHANGING_ENCHANT.includes(calc.stat.ref))) {
+    return 0
+  }
+  // currently Trade Site applies 20% to everything else,
+  // including Mirrored items
+  return Math.max(20, item.quality ?? 0)
+}
+
+export function getPropQuality (item: ParsedItem): number {
+  if (item.statsByType.some(calc => QUALITY_CHANGING_ENCHANT.includes(calc.stat.ref))) {
+    return 0
+  }
+  return item.quality ?? 0
+}
+
 export function propAt20Quality (
   total: number,
   statRefs: { flat: string[], incr: string[] },
@@ -51,9 +72,9 @@ export function propAt20Quality (
   item: ParsedItem
 ): { roll: StatRoll, sources: StatSource[] } {
   const { incr, flat, sources } = calcPropBase(statRefs, item)
-  const base = calcFlat(total, incr.value, item.quality) - flat.value
+  const base = calcFlat(total, incr.value, getPropQuality(item)) - flat.value
   const [baseMin, baseMax] = bounds ?? [base, base]
-  const quality = Math.max(20, item.quality ?? 0)
+  const quality = getTradeMaxQuality(item)
   return {
     roll: !Number.isNaN(base) ? {
       value: calcIncreased(base + flat.value, incr.value, quality),
@@ -99,7 +120,7 @@ export function calcPropPercentile (
   item: ParsedItem
 ): number {
   const { incr, flat } = calcPropBase(statRefs, item)
-  const roll = calcFlat(total, incr.value, item.quality ?? 0) - flat.value
+  const roll = calcFlat(total, incr.value, getPropQuality(item)) - flat.value
   const [min, max] = bounds
   const result = Math.round(((roll - min) / (max - min)) * 100)
   return Math.min(Math.max(result, 0), 100)
