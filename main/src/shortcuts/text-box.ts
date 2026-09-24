@@ -12,9 +12,11 @@ const AUTO_CLEAR = [
   '&', // Guild
   '/' // Command
 ]
+const clipboardSettleDelay = () =>
+  process.platform === 'linux' ? new Promise(r => setTimeout(r, 30)) : Promise.resolve()
 
 export function typeInChat (text: string, send: boolean, clipboard: HostClipboard) {
-  clipboard.restoreShortly((clipboard) => {
+  clipboard.restoreShortly(async (clipboard) => {
     const modifiers = process.platform === 'darwin' ? [Key.Meta] : [Key.Ctrl]
 
     if (text.startsWith(PLACEHOLDER_LAST)) {
@@ -37,6 +39,8 @@ export function typeInChat (text: string, send: boolean, clipboard: HostClipboar
       }
     }
 
+    await clipboardSettleDelay()
+
     uIOhook.keyTap(Key.V, modifiers)
 
     if (send) {
@@ -55,9 +59,10 @@ export function stashSearch (
   clipboard: HostClipboard,
   overlay: OverlayWindow
 ) {
-  clipboard.restoreShortly((clipboard) => {
+  clipboard.restoreShortly(async (clipboard) => {
     overlay.assertGameActive()
     clipboard.writeText(text)
+    await clipboardSettleDelay()
     uIOhook.keyTap(Key.F, [Key.Ctrl])
     uIOhook.keyTap(Key.V, [process.platform === 'darwin' ? Key.Meta : Key.Ctrl])
     uIOhook.keyTap(Key.Enter)
