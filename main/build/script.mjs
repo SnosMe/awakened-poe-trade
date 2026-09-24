@@ -1,3 +1,4 @@
+// @ts-check
 import child_process from 'child_process'
 import electron from 'electron'
 import esbuild from 'esbuild'
@@ -5,13 +6,18 @@ import esbuild from 'esbuild'
 const isDev = !process.argv.includes('--prod')
 
 const electronRunner = (() => {
+  /** @type {child_process.ChildProcess | null} */
   let handle = null
   return {
     restart () {
       console.info('Restarting Electron process.')
 
       if (handle) handle.kill()
-      handle = child_process.spawn(electron, ['.'], {
+      const args = ['.']
+      if (process.platform === 'linux') {
+        args.unshift('--ozone-platform', 'x11')
+      }
+      handle = child_process.spawn(String(electron), args, {
         stdio: 'inherit'
       })
     }
