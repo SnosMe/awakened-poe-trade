@@ -166,7 +166,6 @@ function splitJsonBlob (jsonBlob: string): PriceDatabase {
     { ns: 'ITEM', url: 'currency', type: 'Currency' },
     { ns: 'ITEM', url: 'fragments', type: 'Fragment' },
     { ns: 'ITEM', url: 'delirium-orbs', type: 'DeliriumOrb' },
-    { ns: 'ITEM', url: 'scarabs', type: 'Scarab' },
     { ns: 'ITEM', url: 'artifacts', type: 'Artifact' },
     { ns: 'ITEM', url: 'base-types', type: 'BaseType' },
     { ns: 'ITEM', url: 'fossils', type: 'Fossil' },

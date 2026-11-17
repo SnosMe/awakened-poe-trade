@@ -51,6 +51,7 @@
     "crit": "치명타 확률: {0}%",
     "aps": "초당 공격 횟수: {0}",
     "map_item_quantity": "아이템 수량: {0}%",
+    "map_atlas_drops": "아틀라스 획득물: {0}%",
     "map_item_rarity": "아이템 희귀도: {0}%",
     "map_pack_size": "몬스터 무리 규모: {0}%",
     "has_empty_modifier": "비었거나 작업대 모드 1",
