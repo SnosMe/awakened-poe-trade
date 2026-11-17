@@ -106,11 +106,13 @@ export function mapProps (bulk: boolean, ctx: FiltersCreationContext): void {
     }
   }
 
-  const explicitMods = item.newMods.filter(mod => mod.info.generation === 'prefix' || mod.info.generation === 'suffix')
-  if (explicitMods.length === 8) {
+  const explicitMods = item.newMods.filter(mod =>
+    mod.info.type === ModifierType.Explicit ||
+    mod.info.type === ModifierType.Fractured)
+  if (explicitMods.length >= 8) {
     ctx.filters.push(noSourcePseudoToFilter({
       pseudo: pseudoStatByRef(PSEUDO.EXPLICIT_MODIFIERS)!,
-      roll: { min: 0, max: 8, value: explicitMods.length },
+      roll: { min: 0, max: 9, value: explicitMods.length },
       disabled: false
     }, { ...ctx, searchInRange: 0 }))
   }

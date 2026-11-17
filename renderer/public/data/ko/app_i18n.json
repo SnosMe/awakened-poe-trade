@@ -192,7 +192,8 @@
     "tag_explicit_veiled": "장막",
     "tag_explicit_incursion": "기습",
     "tag_explicit_infamous": "악명 높은",
-    "tag_explicit_essence": "에센스"
+    "tag_explicit_essence": "에센스",
+    "tag_explicit_rareonly": "희귀만"
   },
   "online_filter": {
     "offline_toggle": "오프라인 & 온라인",

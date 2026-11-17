@@ -135,6 +135,7 @@ export enum ModifierMechanic {
   Eldritch = 'eldritch',
   Foulborn = 'foulborn',
   Vestigial = 'vestigial',
+  RareOnly = 'explicit-rareonly',
   Shaper = 'explicit-shaper',
   Elder = 'explicit-elder',
   Crusader = 'explicit-crusader',

@@ -471,7 +471,8 @@ export default defineComponent({
 .tag-explicit-veiled,
 .tag-explicit-incursion,
 .tag-explicit-infamous,
-.tag-explicit-essence {
+.tag-explicit-essence,
+.tag-explicit-rareonly {
   display: flex;
   align-items: center;
   @apply -mx-1 pl-0.5 gap-x-0.5 text-gray-600;
@@ -508,6 +509,8 @@ export default defineComponent({
   background-image: url('/images/mercenary.png'); }
 .tag-explicit-essence::before {
   background-image: url('/images/essence.png'); }
+.tag-explicit-rareonly::before {
+  background-image: url('/images/rareonly.png'); }
 
 .tag-corrupted,
 .tag-brick {

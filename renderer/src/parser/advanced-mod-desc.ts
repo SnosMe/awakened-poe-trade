@@ -77,6 +77,8 @@ export function parseModInfoLine (line: string): ModifierInfo {
       case _$.FRACTURED_SUFFIX:
       case _$.CRAFTED_SUFFIX:
         generation = 'suffix'; break
+      case _$.RARE_ONLY_AFFIX:
+        mechanic = ModifierMechanic.RareOnly; break
       case _$.CORRUPTED_IMPLICIT:
         mechanic = ModifierMechanic.Corruption; break
       case _$.FOULBORN_MODIFIER:
