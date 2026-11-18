@@ -262,6 +262,10 @@ export function createFilters (
     }
   }
 
+  if (JEWELLERY.has(item.category!) && !item.quality) {
+    filters.notCatalysed = { disabled: false }
+  }
+
   if (item.quality && item.quality >= 20 && !JEWELLERY.has(item.category!)) {
     if (
       item.category === ItemCategory.Flask || item.category === ItemCategory.Tincture ||

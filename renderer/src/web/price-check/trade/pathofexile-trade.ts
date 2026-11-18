@@ -359,6 +359,9 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
   if (filters.mirrored?.disabled) {
     propSet(query.filters, 'misc_filters.filters.mirrored.option', String(false))
   }
+  if (filters.notCatalysed && !filters.notCatalysed.disabled) {
+    propSet(query.filters, 'misc_filters.filters.quality.max', 0)
+  }
 
   if (filters.gemLevel && !filters.gemLevel.disabled) {
     propSet(query.filters, 'misc_filters.filters.gem_level.min', filters.gemLevel.value)

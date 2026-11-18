@@ -23,6 +23,8 @@
         :filter="filters.gemLevel" :name="t('item.gem_level')" />
       <filter-btn-numeric v-if="filters.quality"
         :filter="filters.quality" :name="t('item.quality')" />
+      <filter-btn-logical v-if="filters.notCatalysed"
+        :filter="filters.notCatalysed" :text="t('item.not_catalysed')" />
       <template v-if="filters.influences">
         <filter-btn-logical v-for="influence of filters.influences" :key="influence.value"
           :filter="influence" :text="influence.value" :img="`/images/influence-${influence.value}.png`" />
