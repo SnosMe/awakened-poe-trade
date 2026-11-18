@@ -68,6 +68,7 @@ const parsers: Array<ParserFn | { virtual: VirtualParserFn }> = [
   parseSentinelCharge,
   parseScryingOrb,
   parseMercenary,
+  parseViscera,
   parseLogbookArea,
   parseLogbookArea,
   parseLogbookArea,
@@ -706,6 +707,24 @@ function parseAccessory (section: string[], item: ParsedItem) {
   return isParsed
 }
 
+function parseViscera (section: string[], item: ParsedItem) {
+  if (item.info.refName !== 'Viscera') return 'PARSER_SKIPPED'
+  if (section.length === 1) {
+    switch (section[0]) {
+      case _$.VISCERA_HEAD:
+        item.category = ItemCategory.HeadViscera; break
+      case _$.VISCERA_LOWER_LIMB:
+        item.category = ItemCategory.LowerLimbViscera; break
+      case _$.VISCERA_UPPER_LIMB:
+        item.category = ItemCategory.UpperLimbViscera; break
+      case _$.VISCERA_TORSO:
+        item.category = ItemCategory.TorsoViscera; break
+    }
+    if (item.category) return 'SECTION_PARSED'
+  }
+  return 'SECTION_SKIPPED'
+}
+
 function parseLogbookArea (section: string[], item: ParsedItem) {
   if (item.info.refName !== 'Expedition Logbook') return 'PARSER_SKIPPED'
   if (section.length < 3) return 'SECTION_SKIPPED'
@@ -803,7 +822,8 @@ function parseModifiers (section: string[], item: ParsedItem) {
     item.rarity !== ItemRarity.Normal &&
     item.rarity !== ItemRarity.Magic &&
     item.rarity !== ItemRarity.Rare &&
-    item.rarity !== ItemRarity.Unique
+    item.rarity !== ItemRarity.Unique &&
+    item.info.refName !== 'Viscera'
   ) {
     return 'PARSER_SKIPPED'
   }
@@ -975,7 +995,7 @@ function parseVestigial (item: ParserState) {
   }
 }
 
-function parseCategoryByHelpText (section: string[], item: ParsedItem) {
+function parseCategoryByHelpText (section: string[], item: ParserState) {
   if (section[0] === _$.BEAST_HELP) {
     item.category = ItemCategory.CapturedBeast
     return 'SECTION_PARSED'
@@ -984,6 +1004,9 @@ function parseCategoryByHelpText (section: string[], item: ParsedItem) {
     return 'SECTION_PARSED'
   } else if (section[0] === _$.VOIDSTONE_HELP) {
     item.category = ItemCategory.Voidstone
+    return 'SECTION_PARSED'
+  } else if (section[0] === _$.VISCERA_HELP) {
+    item.name = 'Viscera'
     return 'SECTION_PARSED'
   }
 

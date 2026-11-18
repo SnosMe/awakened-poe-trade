@@ -175,7 +175,11 @@
     "azmeri_charm": "Оберег",
     "idol": "Идол",
     "graft": "Нарост",
-    "chart": "Морская карта"
+    "chart": "Морская карта",
+    "viscera_arm": "Верхняя конечность",
+    "viscera_leg": "Нижняя конечность",
+    "viscera_head": "Голова",
+    "viscera_body": "Туловище"
   },
   "filters": {
     "selected_some": "Св-ва: {0} из {1}",

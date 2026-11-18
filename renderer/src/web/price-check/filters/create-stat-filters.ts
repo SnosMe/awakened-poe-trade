@@ -267,9 +267,10 @@ export function calculatedStatToFilter (
   }
 
   if (roll && !filter.option) {
-    if (item.rarity === ItemRarity.Magic && (
-      item.isUnmodifiable || item.isCorrupted || item.isMirrored
-    )) {
+    if (
+      (item.rarity === ItemRarity.Magic && (item.isUnmodifiable || item.isCorrupted || item.isMirrored)) ||
+      item.info.refName === 'Viscera'
+    ) {
       percent = 0
     } else if (
       item.rarity === ItemRarity.Unique ||

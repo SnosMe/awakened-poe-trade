@@ -144,7 +144,11 @@
     "accessory_trinket": "도둑 장신구",
     "sanctum_relic": "성역 유물",
     "tincture": "팅크",
-    "azmeri_charm": "부적"
+    "azmeri_charm": "부적",
+    "viscera_arm": "상지",
+    "viscera_leg": "하지",
+    "viscera_head": "머리",
+    "viscera_body": "몸통"
   },
   "filters": {
     "selected_some": "{1} 중 {0}개 선택",

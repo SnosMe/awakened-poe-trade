@@ -48,7 +48,10 @@ export function createFilters (
     if (!opts.currency) {
       filters.trade.currency = 'chaos_divine'
     }
-    if (item.info.refName !== 'Mercenary Warrant') {
+    if (
+      item.info.refName !== 'Mercenary Warrant' &&
+      item.info.refName !== 'Viscera'
+    ) {
       filters.trade.collapseMerchant = true
     }
   }
@@ -133,6 +136,12 @@ export function createFilters (
         value: item.itemLevel,
         disabled: false
       }
+    }
+    return filters
+  }
+  if (item.info.refName === 'Viscera') {
+    filters.searchExact = {
+      category: item.category
     }
     return filters
   }

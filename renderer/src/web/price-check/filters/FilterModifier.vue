@@ -154,6 +154,7 @@ export default defineComponent({
       props.item.info.refName !== 'Chronicle of Atzoatl' &&
       props.item.info.refName !== 'Mirrored Tablet' &&
       props.item.info.refName !== 'Filled Coffin' &&
+      props.item.info.refName !== 'Viscera' &&
       props.item.category !== ItemCategory.Gem &&
       !(props.item.rarity === ItemRarity.Unique && props.filter.tag === FilterTag.Explicit && (props.filter.roll?.bounds || props.filter.hidden) && !props.grouped)
     )
