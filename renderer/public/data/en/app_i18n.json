@@ -95,6 +95,7 @@
     "open_on_craftofexile": "Open base item on Craft of Exile",
     "info": "Item info",
     "corrupted": "Corrupted",
+    "twice_corrupted": "Twice Corrupted",
     "not_corrupted": "Not Corrupted",
     "mod_tier": "Tier: {0}",
     "mod_rank": "Rank: {0}",

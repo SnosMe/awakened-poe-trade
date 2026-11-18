@@ -129,6 +129,7 @@ interface TradeRequest {
           quality?: FilterRange
           gem_level?: FilterRange
           corrupted?: FilterBoolean
+          twice_corrupted?: FilterBoolean
           fractured_item?: FilterBoolean
           gem_imbued?: FilterBoolean
           mirrored?: FilterBoolean
@@ -332,6 +333,9 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
 
   if (filters.corrupted?.value === false || filters.corrupted?.exact) {
     propSet(query.filters, 'misc_filters.filters.corrupted.option', String(filters.corrupted.value))
+  }
+  if (filters.corrupted?.value === true && filters.corrupted.twice === false) {
+    propSet(query.filters, 'misc_filters.filters.twice_corrupted.option', String(filters.corrupted.twice))
   }
   if (filters.fractured?.value === false) {
     propSet(query.filters, 'misc_filters.filters.fractured_item.option', String(false))

@@ -112,6 +112,7 @@
     "open_on_poedb": "Открыть предмет в PoEDB",
     "info": "Проверка предмета",
     "corrupted": "Осквернен",
+    "twice_corrupted": "Дважды осквернен",
     "not_corrupted": "Не осквернен",
     "mod_tier": "Уровень: {0}",
     "mod_rank": "Ранг: {0}",

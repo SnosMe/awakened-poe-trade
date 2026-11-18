@@ -3,9 +3,10 @@
     <button class="px-2 rounded border overflow-hidden text-ellipsis"
       :class="{ 'border-gray-500': showAsActive, 'border-gray-900': !showAsActive }"
       @click="toggleAccuracy">{{ label }}</button>
-    <button v-if="filters.corrupted" class="px-2" @click="corrupted = !corrupted">
-      <span v-if="corrupted" class="text-red-500">{{ t('item.corrupted') }}</span>
-      <span v-else class="text-gray-600">{{ t('item.not_corrupted') }}</span>
+    <button v-if="filters.corrupted" class="px-2" @click="toggleCorrupted">
+      <span v-if="!filters.corrupted.value" class="text-gray-600">{{ t('item.not_corrupted') }}</span>
+      <span v-else-if="filters.corrupted.twice" class="text-red-500">{{ t('item.twice_corrupted') }}</span>
+      <span v-else class="text-red-500">{{ t('item.corrupted') }}</span>
     </button>
   </div>
 </template>
@@ -71,17 +72,19 @@ export default defineComponent({
       }
     }
 
-    const corrupted = computed<boolean>({
-      get () { return props.filters.corrupted!.value },
-      set (value) { props.filters.corrupted!.value = value }
-    })
+    function toggleCorrupted () {
+      const { filters } = props
+      if (filters.corrupted) {
+        filters.corrupted.value = !filters.corrupted.value
+      }
+    }
 
     return {
       t,
       label,
       showAsActive,
       toggleAccuracy,
-      corrupted
+      toggleCorrupted
     }
   }
 })

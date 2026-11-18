@@ -39,6 +39,7 @@ export default {
   TAG_WARD: '수호: ',
   BLOCK_CHANCE: '막기 확률: ',
   CORRUPTED: '타락',
+  TWICE_CORRUPTED: '두 번 타락',
   UNIDENTIFIED: '미확인',
   ITEM_SUPERIOR: /^상급 (.*)$/,
   MAP_BLIGHTED: /^역병 걸린 (.*)$/,

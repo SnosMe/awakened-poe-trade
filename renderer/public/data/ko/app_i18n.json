@@ -86,6 +86,7 @@
     "open_on_poedb": "PoEDB에서 아이템 보기",
     "info": "아이템 정보",
     "corrupted": "타락",
+    "twice_corrupted": "두 번 타락",
     "not_corrupted": "타락되지 않은",
     "mod_tier": "티어: {0}",
     "mod_rank": "등급: {0}",
