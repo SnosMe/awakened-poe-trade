@@ -32,74 +32,70 @@ const RULES: FilterRule[] = [
 
   // TierApex
   { ref: stat('Has Room: Apex of Atzoatl'), disabled: false },
+  { ref: stat('Has Room: Cradle of Creation (Tier 3)'), disabled: false },
 
-  // Tier0
+  // Tier0 (corrupt items)
   { ref: stat('Has Room: Corruption Chamber (Tier 1)'), remove: true },
   { ref: stat('Has Room: Catalyst of Corruption (Tier 2)'), remove: true },
   { ref: stat('Has Room: Locus of Corruption (Tier 3)'), disabled: false },
 
-  // Tier0
+  // Tier0 (corrupt gems)
   { ref: stat('Has Room: Gemcutter\'s Workshop (Tier 1)'), remove: true },
   { ref: stat('Has Room: Department of Thaumaturgy (Tier 2)'), remove: true },
   { ref: stat('Has Room: Doryani\'s Institute (Tier 3)'), disabled: false },
 
-  // Tier0
+  // Tier0 (sacrifice a unique item)
   { ref: stat('Has Room: Sacrificial Chamber (Tier 1)'), remove: true },
   { ref: stat('Has Room: Hall of Offerings (Tier 2)'), remove: true },
   { ref: stat('Has Room: Apex of Ascension (Tier 3)'), disabled: false },
 
-  // Tier1
+  // Tier1 (chests full of currency)
   { ref: stat('Has Room: Vault (Tier 1)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Treasury (Tier 2)') },
   { ref: stat('Has Room: Wealth of the Vaal (Tier 3)'), disabled: false },
 
-  // Tier1
+  // Tier1 (corrupt maps)
   { ref: stat('Has Room: Surveyor\'s Study (Tier 1)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Office of Cartography (Tier 2)') },
-  { ref: stat('Has Room: Atlas of Worlds (Tier 3)') },
+  { ref: stat('Has Room: Atlas of Worlds (Tier 3)'), disabled: false },
 
-  // Tier1
+  // Tier1 (Timeless Monolith)
   { ref: stat('Has Room: Hall of Mettle (Tier 1)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Hall of Heroes (Tier 2)') },
   { ref: stat('Has Room: Hall of Legends (Tier 3)') },
 
-  // Tier2
+  // Tier2 (chests full of items)
   { ref: stat('Has Room: Storage Room (Tier 1)'), remove: true },
   { ref: stat('Has Room: Warehouses (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Museum of Artefacts (Tier 3)') },
 
-  // Tier2
+  // Tier2 (monster pack size)
   { ref: stat('Has Room: Guardhouse (Tier 1)'), remove: true },
   { ref: stat('Has Room: Barracks (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Hall of War (Tier 3)') },
 
-  // Tier2
+  // Tier2 (item yield of the Temple)
   { ref: stat('Has Room: Workshop (Tier 1)'), remove: true },
   { ref: stat('Has Room: Engineering Department (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Factory (Tier 3)') },
 
-  // Tier2
-  { ref: stat('Has Room: Royal Meeting Room (Tier 1)'), remove: true },
-  { ref: stat('Has Room: Hall of Lords (Tier 2)'), hidden: HIDDEN_GREEDY },
-  { ref: stat('Has Room: Throne of Atziri (Tier 3)') },
-
-  // Tier2
+  // Tier2 (Tormented Spirits)
   { ref: stat('Has Room: Torment Cells (Tier 1)'), remove: true },
   { ref: stat('Has Room: Torture Cages (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Sadist\'s Den (Tier 3)') },
 
-  // Tier2
+  // Tier2 (Contains Strongboxes)
   { ref: stat('Has Room: Strongbox Chamber (Tier 1)'), remove: true },
   { ref: stat('Has Room: Hall of Locks (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Court of Sealed Death (Tier 3)') },
 
-  // Tier2
+  // Tier2 (rarity of items dropped)
   { ref: stat('Has Room: Jeweller\'s Workshop (Tier 1)'), remove: true },
   { ref: stat('Has Room: Jewellery Forge (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: Glittering Halls (Tier 3)') },
 
-  // Tier2
-  { ref: stat('Has Room: Splinter Research Lab (Tier 1)'), remove: true },
+  // Tier2 (Unstable Breaches)
+  { ref: stat('Has Room: Anomaly Research Lab (Tier 1)'), remove: true },
   { ref: stat('Has Room: Breach Containment Chamber (Tier 2)'), hidden: HIDDEN_GREEDY },
   { ref: stat('Has Room: House of the Others (Tier 3)') },
 
@@ -135,12 +131,12 @@ const RULES: FilterRule[] = [
 
   // Tier3
   { ref: stat('Has Room: Flame Workshop (Tier 1)'), remove: true },
-  { ref: stat('Has Room: Omnitect Forge (Tier 2)'), remove: true },
+  { ref: stat('Has Room: Royal Forge (Tier 2)'), remove: true },
   { ref: stat('Has Room: Crucible of Flame (Tier 3)'), hidden: HIDDEN_GREEDY },
 
   // Tier3
   { ref: stat('Has Room: Lightning Workshop (Tier 1)'), remove: true },
-  { ref: stat('Has Room: Omnitect Reactor Plant (Tier 2)'), remove: true },
+  { ref: stat('Has Room: Grand Reactor (Tier 2)'), remove: true },
   { ref: stat('Has Room: Conduit of Lightning (Tier 3)'), hidden: HIDDEN_GREEDY },
 
   // Tier3
