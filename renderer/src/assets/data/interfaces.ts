@@ -224,7 +224,8 @@ export interface TranslationDict {
   IMPLICIT_MODIFIER: string
   FRACTURED_PREFIX: string
   FRACTURED_SUFFIX: string
-  RARE_ONLY_AFFIX: string
+  RARE_ONLY_PREFIX: string
+  RARE_ONLY_SUFFIX: string
   UNSCALABLE_VALUE: string
   CORRUPTED_IMPLICIT: string
   MODIFIER_INCREASED: RegExp
