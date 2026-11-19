@@ -513,6 +513,16 @@
   },
   {
     "query": [
+      "ITEM::Cursed Poppet"
+    ],
+    "items": [
+      "UNIQUE::Bane of the Apostate // Judgement Staff",
+      "UNIQUE::Veil of Flesh // Callous Mask",
+      "UNIQUE::The Covetous Dark // Eye Gouger"
+    ]
+  },
+  {
+    "query": [
       "ITEM::Zorath's Eye of Malevolence",
       "ITEM::Zorath's Eye of Authority",
       "ITEM::Zorath's Eye of the Inevitable",
