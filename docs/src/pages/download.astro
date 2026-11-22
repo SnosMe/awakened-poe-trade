@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config';
+
+const { appVersion, github } = siteConfig;
+const releasesUrl = github.releasesUrl;
+---
+
+<Layout title="Download">
+  <p>
+    You can download Awakened Poe Trade here. Any other mirrors are not known
+    to the developer, downloading from them may be unsafe.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Download link</th>
+        <th>Automatic updates</th>
+        <th>Startup time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href={`${releasesUrl}/download/v${appVersion}/Awakened-PoE-Trade-Setup-${appVersion}.exe`}>
+            Windows 10+ (installer)
+          </a>
+        </td>
+        <td>✔</td>
+        <td>Fast</td>
+      </tr>
+      <tr>
+        <td>
+          <a href={`${releasesUrl}/download/v${appVersion}/Awakened-PoE-Trade-${appVersion}.exe`}>
+            Windows 10+ (portable)
+          </a>
+        </td>
+        <td>❌</td>
+        <td>Slower</td>
+      </tr>
+      <tr>
+        <td>
+          <a href={`${releasesUrl}/download/v${appVersion}/Awakened-PoE-Trade-${appVersion}.AppImage`}>
+            Linux (AppImage)
+          </a>
+        </td>
+        <td>✔</td>
+        <td>n/a</td>
+      </tr>
+      <tr>
+        <td>
+          <a href={`${releasesUrl}/download/v${appVersion}/Awakened-PoE-Trade-${appVersion}-universal.dmg`}>
+            macOS (dmg)
+          </a>
+        </td>
+        <td>❌</td>
+        <td>n/a</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Latest version is <span class="bg-gray-100 border rounded px-1">{appVersion}</span>
+  </p>
+
+  <p class="text-sm">
+    *The app is unsigned, which means you'll have to bypass security
+    warnings on Windows and <a href="https://support.apple.com/en-us/HT202491#openanyway">macOS</a> to open it.
+  </p>
+
+  <hr />
+
+  <h3>Requirements</h3>
+
+  <ul>
+    <li>
+      PoE display mode
+      <ul>
+        <li>✔ Windowed Fullscreen, Windowed</li>
+        <li>❌ Fullscreen</li>
+      </ul>
+    </li>
+    <li>
+      PoE language
+      <ul>
+        <li>✔ English, Russian</li>
+        <li>❌ Portuguese, Thai, French, German, Spanish, Korean</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    No Administrator rights required, but<br />
+    ⚠ <strong>If you run PoE client as Admin, OS security boundaries take effect.
+    In order for Awakened PoE Trade to have access to the PoE window, it must be started with Administrator rights.</strong>
+  </p>
+
+  <p>
+    ❌ <strong>Not compatible with "GeForce Now" or any other cloud gaming service that do not forward clipboard data.</strong>
+  </p>
+</Layout>

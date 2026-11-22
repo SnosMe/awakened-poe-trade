@@ -22,7 +22,3 @@ yarn-error.log*
 
 # Electron-builder output
 /dist_electron
-
-# vitepress
-docs/.vitepress/dist
-docs/.vitepress/cache
