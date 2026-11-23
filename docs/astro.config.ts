@@ -11,6 +11,7 @@ export default defineConfig({
     format: 'file'
   },
   trailingSlash: 'never',
+  scopedStyleStrategy: 'class',
   markdown: {
     shikiConfig: {
       theme: 'light-plus',

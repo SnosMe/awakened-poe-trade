@@ -19,37 +19,41 @@ const currentPath = Astro.url.pathname.replace(/(?:\.html)?\/?$/, '');
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="shortcut icon" type="image/png" href={`${base}/favicon.png`} />
     <meta name="google-site-verification" content="R0xdvBEYFTxfn0RxHhquiA6tBgvshYv3ODk-oNSuq4g" />
   </head>
-  <body class="bg-white text-gray-900">
-    <div class="max-w-screen-md mx-auto">
+  <body>
+    <div class="page-container">
       <!-- Site Header -->
-      <div id="site-header" class="flex items-center justify-between py-4 border-b mb-4">
-        <a href={`${base}/`} id="site-logo" class="flex items-center">
+      <header class="site-header">
+        <a href={`${base}/`} class="site-logo">
           <img src={`${base}/favicon.png`} alt="Logo" />
-          <span class="ml-4 font-semibold text-lg">{siteConfig.title}</span>
+          <span>{siteConfig.title}</span>
         </a>
-        <div class="flex text-sm gap-2">
-          {siteConfig.socialLinks.map((item) => (
-            <a
-              class="text-white px-1"
-              style={`background: ${item.color}`}
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {item.text}
-            </a>
-          ))}
+        <div class="header-actions">
+          <div class="social-links">
+            {siteConfig.socialLinks.map((item) => (
+              <a
+                class="social-link"
+                style={`background-color: ${item.color}`}
+                href={item.link} target="_blank" rel="nofollow"
+              >
+                {item.text}
+              </a>
+            ))}
+          </div>
+          <button id="_menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="_siteNav">
+            Menu
+          </button>
         </div>
-      </div>
+      </header>
 
       <!-- Main Columns -->
-      <div class="flex mb-4 items-start">
-        <nav class="w-1/4 border shadow-sm rounded p-2 text-sm flex flex-col flex-shrink-0">
+      <div class="main-columns">
+        <nav id="_siteNav" class="site-nav">
           {siteConfig.sidebar.map((group, i) => (
             <>
               {group.items.map((item) => {
@@ -57,21 +61,240 @@ const currentPath = Astro.url.pathname.replace(/(?:\.html)?\/?$/, '');
                 const isActive = currentPath === targetPath;
                 return (
                   <a
-                    class={isActive ? "px-2 py-1 rounded m-px bg-gray-800 text-white" : "px-2 py-1 rounded m-px hover:bg-gray-200"}
+                    class:list={[{ active: isActive }]}
                     href={targetPath}
                   >
                     {item.text}
                   </a>
                 );
               })}
-              {i < siteConfig.sidebar.length - 1 && <hr class="my-1 mx-2" />}
+              {i < siteConfig.sidebar.length - 1 && <hr />}
             </>
           ))}
         </nav>
-        <article class="w-3/4 ml-8 markdown-body">
+        <article class="markdown-body">
           <slot />
         </article>
       </div>
+
+      <footer class="site-footer">
+        <p>&copy; <span id="_copyYear">2020-present</span> Alexander Drozdov</p>
+        <p class="max-w-sm">This product isn't affiliated with or endorsed by Grinding Gear Games in any way.</p>
+      </footer>
     </div>
   </body>
 </html>
+
+<script is:inline>
+const yearEl = document.getElementById('_copyYear');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear().toString();
+}
+</script>
+
+<script>
+const toggleBtn = document.getElementById('_menuToggle');
+const siteNav = document.getElementById('_siteNav');
+
+toggleBtn?.addEventListener('click', () => {
+  const isOpen = siteNav?.classList.toggle('open');
+  toggleBtn.setAttribute('aria-expanded', String(isOpen));
+});
+</script>
+
+<style>
+html {
+  overflow-y: scroll;
+  @apply bg-white text-gray-900;
+}
+
+.page-container {
+  max-width: theme('screens.md');
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: theme('spacing.2') theme('spacing.12');
+  margin: theme('spacing.4') 0;
+  padding: theme('spacing.4');
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+
+  & > img {
+    width: theme('spacing.12');
+    height: theme('spacing.12');
+    flex-shrink: 0;
+  }
+
+  & > span {
+    margin-left: theme('spacing.2');
+    @apply font-semibold;
+    @apply text-xl;
+  }
+}
+
+.header-actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: theme('spacing.2');
+}
+
+.social-links {
+  display: flex;
+  gap: theme('spacing.2');
+}
+
+.social-link {
+  @apply text-white;
+  background-clip: padding-box;
+}
+
+.social-link, .menu-toggle {
+  padding: 0 theme('spacing.2');
+  @apply border border-transparent;
+  text-align: center;
+  line-height: theme('height.7');
+  min-width: 4.375rem;
+}
+
+.menu-toggle {
+  flex: 1;
+  color: theme('colors.gray.900');
+  background-color: theme('colors.white');
+  border-color: theme('colors.gray.300');
+  @apply font-semibold;
+
+  &:hover {
+    background-color: theme('colors.gray.100');
+  }
+}
+
+.main-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-nav {
+  display: none;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    padding: 0 theme('spacing.4');
+    margin-bottom: theme('spacing.4');
+  }
+}
+
+.site-nav a {
+  @apply py-1 text-gray-600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &:hover {
+    color: theme('colors.gray.900');
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: theme('colors.gray.900');
+    @apply font-semibold;
+  }
+}
+
+.site-nav hr {
+  @apply my-1 mx-2;
+}
+
+article {
+  @apply bg-white;
+  padding: theme('spacing.4');
+  width: 100%;
+  min-width: 0;
+}
+
+.site-footer {
+  @apply p-6 mt-8;
+  @apply text-sm text-gray-500;
+  @apply border-t border-gray-200;
+}
+
+@media (min-width: 768px) {
+  body {
+    @apply text-sm;
+  }
+
+  .site-header {
+    flex-wrap: nowrap;
+    margin-top: theme('spacing.12');
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .site-header, .site-footer {
+    margin-left: calc(theme('width.44') + theme('spacing.4'));
+  }
+
+  .site-logo {
+    & > span {
+      margin-left: theme('spacing.4');
+      @apply text-lg;
+    }
+  }
+
+  .header-actions {
+    flex: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .social-link {
+    line-height: theme('height.6');
+    min-width: 0;
+  }
+
+  .main-columns {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: theme('width.44');
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .site-nav a {
+    @apply px-2;
+
+    &.active {
+      background: linear-gradient(to right, theme('colors.gray.100'), theme('colors.white'));
+    }
+  }
+
+  article {
+    @apply border;
+    padding: theme('spacing.6');
+    margin-left: theme('spacing.4');
+  }
+
+  .site-footer {
+    border: none;
+    margin-top: 0;
+  }
+}
+</style>

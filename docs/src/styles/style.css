@@ -23,9 +23,17 @@
     th, td {
       padding: 6px 13px;
       border-width: 1px;
+
+      &:first-child { border-left: none; }
+      &:last-child { border-right: none; }
     }
 
-    tr {
+    td {
+      &:first-child { padding-left: 0; }
+      &:last-child { padding-right: 0; }
+    }
+
+    &.stripped tr {
       &:nth-child(2n) {
         background-color: #f7fafc;
       }
@@ -123,7 +131,6 @@
     margin: 0;
     font-size: 0.85em;
     background-color: #edf2f7;
-    border-radius: 0.25em;
     color: #4a5568;
   }
 
@@ -138,7 +145,6 @@
     padding: 0.85em 0;
     overflow: auto;
     background-color: #edf2f7;
-    border-radius: 0.25rem;
     word-break: normal;
 
     code {
