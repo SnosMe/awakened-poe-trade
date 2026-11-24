@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "@types/node": "^24.19.2",
     "astro": "^6.4.8",
     "autoprefixer": "^10.7.0",
     "postcss": "^8.5.33",

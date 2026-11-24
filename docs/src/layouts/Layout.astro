@@ -1,6 +1,7 @@
 ---
-import { siteConfig } from '../config';
+import { siteConfig } from '../config.js';
 import '../styles/global.css';
+import FundingBanner from './FundingBanner.astro';
 
 interface Props {
   title?: string;
@@ -28,27 +29,30 @@ const currentPath = Astro.url.pathname.replace(/(?:\.html)?\/?$/, '');
   <body>
     <div class="page-container">
       <!-- Site Header -->
-      <header class="site-header">
-        <a href={`${base}/`} class="site-logo">
-          <img src={`${base}/favicon.png`} alt="Logo" />
-          <span>{siteConfig.title}</span>
-        </a>
-        <div class="header-actions">
-          <div class="social-links">
-            {siteConfig.socialLinks.map((item) => (
-              <a
-                class="social-link"
-                style={`background-color: ${item.color}`}
-                href={item.link} target="_blank" rel="nofollow"
-              >
-                {item.text}
-              </a>
-            ))}
+      <header class="site-header-container">
+        <div class="site-header">
+          <a href={`${base}/`} class="site-logo">
+            <img src={`${base}/favicon.png`} alt="Logo" />
+            <span>{siteConfig.title}</span>
+          </a>
+          <div class="header-actions">
+            <div class="social-links">
+              {siteConfig.socialLinks.map((item) => (
+                <a
+                  class="social-link"
+                  style={{ backgroundColor: item.color }}
+                  href={item.link} target="_blank" rel="nofollow"
+                >
+                  {item.text}
+                </a>
+              ))}
+            </div>
+            <button id="_menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="_siteNav">
+              Menu
+            </button>
           </div>
-          <button id="_menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="_siteNav">
-            Menu
-          </button>
         </div>
+        <!-- <FundingBanner id="_banner" class="banner" /> -->
       </header>
 
       <!-- Main Columns -->
@@ -95,10 +99,14 @@ if (yearEl) {
 <script>
 const toggleBtn = document.getElementById('_menuToggle');
 const siteNav = document.getElementById('_siteNav');
+const bannerEl = document.getElementById('_banner');
 
 toggleBtn?.addEventListener('click', () => {
   const isOpen = siteNav?.classList.toggle('open');
   toggleBtn.setAttribute('aria-expanded', String(isOpen));
+  if (bannerEl) {
+    bannerEl.style.display = isOpen ? 'none' : '';
+  }
 });
 </script>
 
@@ -111,6 +119,12 @@ html {
 .page-container {
   max-width: theme('screens.md');
   margin: 0 auto;
+  --x-padding: theme('spacing.4');
+}
+
+.site-header-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .site-header {
@@ -119,8 +133,7 @@ html {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: theme('spacing.2') theme('spacing.12');
-  margin: theme('spacing.4') 0;
-  padding: theme('spacing.4');
+  padding: var(--x-padding);
 }
 
 .site-logo {
@@ -188,8 +201,8 @@ html {
   &.open {
     display: flex;
     flex-direction: column;
-    padding: 0 theme('spacing.4');
-    margin-bottom: theme('spacing.4');
+    padding: 0 var(--x-padding);
+    margin-bottom: var(--x-padding);
   }
 }
 
@@ -216,13 +229,14 @@ html {
 
 article {
   @apply bg-white;
-  padding: theme('spacing.4');
+  padding: var(--x-padding);
   width: 100%;
   min-width: 0;
 }
 
 .site-footer {
-  @apply p-6 mt-8;
+  @apply mt-8;
+  padding: theme('spacing.4') var(--x-padding);
   @apply text-sm text-gray-500;
   @apply border-t border-gray-200;
 }
@@ -232,15 +246,24 @@ article {
     @apply text-sm;
   }
 
-  .site-header {
-    flex-wrap: nowrap;
-    margin-top: theme('spacing.12');
-    margin-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
+  .page-container {
+    --x-padding: theme('spacing.6');
   }
 
-  .site-header, .site-footer {
+  .site-header-container {
+    margin-top: theme('spacing.12');
+  }
+
+  .banner {
+    margin-bottom: theme('spacing.4');
+  }
+
+  .site-header {
+    flex-wrap: nowrap;
+    padding: theme('spacing.4') 0;
+  }
+
+  .site-header-container, .site-footer {
     margin-left: calc(theme('width.44') + theme('spacing.4'));
   }
 
@@ -288,7 +311,6 @@ article {
 
   article {
     @apply border;
-    padding: theme('spacing.6');
     margin-left: theme('spacing.4');
   }
 
