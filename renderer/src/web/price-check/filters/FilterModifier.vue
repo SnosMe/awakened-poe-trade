@@ -303,6 +303,9 @@ export default defineComponent({
       rollTags: computed(() => {
         const out: string[] = []
         for (const source of props.filter.sources) {
+          // Mercenary gems don't have it set, this can't be caught by TS
+          if (!source.stat) return []
+
           if (source.stat.roll?.generation === 'volatile') {
             out.push('/images/VolatileVaalOrb.png'); break
           } else if (source.stat.roll?.generation === 'reflecting') {
