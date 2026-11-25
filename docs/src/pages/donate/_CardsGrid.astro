@@ -1,0 +1,169 @@
+---
+import linkIcon from '../../assets/external-link.svg?raw';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<div class="support-grid">
+  <!-- Patreon Card -->
+  <section class="support-card card-patreon">
+    <img class="card-media" src={`${base}/cards-patreon.png`} alt="Patreon membership preview" />
+    <div class="card-body">
+      <div class="card-header">
+        <h3>Patreon</h3>
+        <span class="card-tag">Monthly / One-Time</span>
+      </div>
+      <p class="card-desc">
+        Monthly recurring donation &mdash; choose any custom amount, starting at $1.
+      </p>
+      <p class="card-tip">
+        <strong>One-time tip:</strong> You can also send a one-time tip by canceling your membership immediately after the first payment is processed.
+      </p>
+      <a
+        href="https://patreon.com/awakened_poe_trade" target="_blank"
+        class="link-btn"
+      >
+        <span>Support on Patreon</span>
+        <Fragment set:html={linkIcon} />
+      </a>
+    </div>
+  </section>
+
+  <!-- Steam Card -->
+  <section class="support-card card-steam">
+    <img class="card-media" src={`${base}/cards-steam.png`} alt="Steam gift cards preview" />
+    <div class="card-body">
+      <div class="card-header">
+        <h3>Steam</h3>
+        <span class="card-tag">Gift Cards & Wishlist</span>
+      </div>
+      <p class="card-desc">
+        Send a digital gift card or one of the games on my Steam wishlist as a direct gift.
+      </p>
+      <p class="card-tip">
+        <strong>Regional note:</strong> My Steam account region is Ukraine.
+      </p>
+      <a
+        href="https://store.steampowered.com/wishlist/id/SnosMe/" target="_blank"
+        class="link-btn"
+      >
+        <span>Steam Profile</span>
+        <Fragment set:html={linkIcon} />
+      </a>
+    </div>
+  </section>
+</div>
+
+<style>
+.support-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--x-padding) theme('spacing.4');
+}
+
+@media (width >= theme('screens.sm')) {
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.support-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid theme('colors.gray.200');
+}
+
+.card-media {
+  width: 100%;
+  height: theme('spacing.36');
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid theme('colors.gray.200');
+  background-color: theme('colors.gray.100');
+}
+
+.card-body {
+  padding: theme('spacing.5');
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5lh;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: theme('spacing.2');
+  white-space: nowrap;
+
+  & > h3 {
+    margin: 0;
+    @apply text-base font-semibold;
+  }
+}
+
+.card-tag {
+  font-size: theme('fontSize.xs');
+  line-height: theme('lineHeight.normal');
+  padding: 0 theme('spacing[1.5]');
+  border: 1px solid theme('colors.gray.200');
+  background-color: theme('colors.gray.50');
+  color: theme('colors.gray.700');
+  margin: -99px 0;
+}
+
+.card-tip {
+  padding: theme('spacing.2') theme('spacing[2.5]');
+  border-left: 3px solid theme('colors.gray.200');
+  background-color: theme('colors.gray.50');
+  color: theme('colors.gray.600');
+}
+
+.link-btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: theme('spacing.2');
+  width: 100%;
+  padding: theme('spacing.2') theme('spacing.4');
+  font-size: theme('fontSize.sm');
+  line-height: theme('height.5');
+  font-weight: theme('fontWeight.semibold');
+  transition: background-color 0.15s ease;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  & > :global(svg) {
+    flex-shrink: 0;
+  }
+
+  .card-patreon & {
+    background-color: theme('colors.patreon.DEFAULT');
+    color: theme('colors.white') !important;
+
+    &:hover {
+      background-color: theme('colors.patreon.hover');
+    }
+  }
+
+  .card-steam & {
+    background-color: theme('colors.steam.DEFAULT');
+    color: theme('colors.white') !important;
+
+    &:hover {
+      background-color: theme('colors.steam.hover');
+    }
+  }
+}
+</style>

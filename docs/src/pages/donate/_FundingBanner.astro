@@ -14,7 +14,7 @@ interface Patron {
 }
 
 const patrons: Patron[] = JSON.parse(
-  fs.readFileSync(new URL('../../../renderer/public/data/patrons.json', import.meta.url), { encoding: 'utf8' }));
+  fs.readFileSync(new URL('../../../../renderer/public/data/patrons.json', import.meta.url), { encoding: 'utf8' }));
 
 const activeCount = 0; // TODO
 const formerCount = 0; // TODO
@@ -43,7 +43,7 @@ function shuffle (array: unknown[]): void {
 
 shuffle(names);
 
-const scrollSpeed = `${(names.length * 0.850).toFixed(3)}s`;
+const scrollSpeed = `${(names.length * 1.100).toFixed(3)}s`;
 ---
 
 <div class:list={["banner", className]} data-nosnippet {...attrs}>

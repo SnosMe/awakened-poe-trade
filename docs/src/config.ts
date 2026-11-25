@@ -7,7 +7,7 @@ export const siteConfig = {
   },
   socialLinks: [
     { text: 'Discord', color: '#7289DA', link: 'https://github.com/SnosMe/awakened-poe-trade/issues/22' },
-    { text: 'Patreon', color: '#FF424D', link: 'https://patreon.com/awakened_poe_trade' },
+    { text: 'Donate', color: '#F96854', link: '/donate' },
     { text: 'GitHub', color: '#181717', link: 'https://github.com/SnosMe/awakened-poe-trade' }
   ],
   sidebar: [
