@@ -136,6 +136,9 @@ export function parseClipboard (clipboard: string): Result<ParsedItem, string> {
 }
 
 function itemTextToSections (text: string) {
+  const ZWSP = '\u200b' // gem icons representation in copied text
+  text = text.replaceAll(ZWSP, '')
+
   const lines = text.split(/\r?\n/)
   if (lines[lines.length - 1] === '') {
     lines.pop()
