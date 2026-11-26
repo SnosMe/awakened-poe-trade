@@ -33,7 +33,10 @@ const currentPath = Astro.url.pathname.replace(/(?:\.html)?\/?$/, '');
         <div class="site-header">
           <a href={`${base}/`} class="site-logo">
             <img src={`${base}/favicon.png`} alt="Logo" />
-            <span>{siteConfig.title}</span>
+            <div class="title">
+              <div class="primary">{siteConfig.title}</div>
+              <div class="secondary">v{siteConfig.appVersion}</div>
+            </div>
           </a>
           <div class="header-actions">
             <div class="social-links">
@@ -41,7 +44,7 @@ const currentPath = Astro.url.pathname.replace(/(?:\.html)?\/?$/, '');
                 <a
                   class="social-link"
                   style={{ backgroundColor: item.color }}
-                  href={item.link} target="_blank" rel="nofollow"
+                  href={item.link.startsWith('/') ? `${base}${item.link}` : item.link} target="_blank"
                 >
                   {item.text}
                 </a>
@@ -52,7 +55,7 @@ const currentPath = Astro.url.pathname.replace(/(?:\.html)?\/?$/, '');
             </button>
           </div>
         </div>
-        <!-- <FundingBanner id="_banner" class="banner" /> -->
+        <FundingBanner id="_banner" class="banner" />
       </header>
 
       <!-- Main Columns -->
@@ -146,10 +149,23 @@ html {
     flex-shrink: 0;
   }
 
-  & > span {
+  & > .title {
+    display: flex;
+    flex-direction: column;
+    gap: theme('spacing.1');
     margin-left: theme('spacing.2');
-    @apply font-semibold;
-    @apply text-xl;
+    line-height: 1;
+    white-space: nowrap;
+
+    & > .primary {
+      font-size: theme('fontSize.xl');
+      @apply font-semibold;
+    }
+
+    & > .secondary {
+      font-size: theme('fontSize.xs');
+      color: theme('colors.gray.700');
+    }
   }
 }
 
@@ -241,7 +257,7 @@ article {
   @apply border-t border-gray-200;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   body {
     @apply text-sm;
   }
@@ -268,9 +284,12 @@ article {
   }
 
   .site-logo {
-    & > span {
+    & > .title {
       margin-left: theme('spacing.4');
-      @apply text-lg;
+
+      & > .primary {
+        font-size: theme('fontSize.lg');
+      }
     }
   }
 

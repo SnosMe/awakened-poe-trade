@@ -123,6 +123,12 @@ export interface MercenaryBuild {
   }>
 }
 
+export interface Patrons {
+  exportedAt: number
+  activeTotal: number
+  sources: Array<{ from: string, months: number, style: number }>
+}
+
 export interface TranslationDict {
   RARITY_NORMAL: string
   RARITY_MAGIC: string

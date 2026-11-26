@@ -1,12 +1,12 @@
 import fnv1a from '@sindresorhus/fnv1a'
-import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict } from './interfaces'
+import type { BaseType, DropEntry, Stat, StatOrGroup, StatMatcher, TranslationDict, Patrons } from './interfaces'
 
 export * from './interfaces'
 
 export let ITEM_DROP: DropEntry[]
 export let CLIENT_STRINGS: TranslationDict
 export let CLIENT_STRINGS_REF: TranslationDict
-export let APP_PATRONS: Array<{ from: string, months: number, style: number }>
+export let APP_PATRONS: Patrons
 
 export let ITEM_BY_TRANSLATED: (ns: BaseType['namespace'], name: string) => BaseType[] | undefined = () => undefined
 export let ITEM_BY_REF: (ns: BaseType['namespace'], name: string) => BaseType[] | undefined = () => undefined

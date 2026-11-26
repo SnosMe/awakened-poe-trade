@@ -119,14 +119,14 @@ export default defineComponent({
     const selectedComponent = shallowRef<Component>(SettingsHotkeys)
 
     const podiumVisible = shallowRef(false)
-    const patrons = shallowRef<Array<typeof APP_PATRONS>>([])
+    const patrons = shallowRef<Array<typeof APP_PATRONS['sources']>>([])
 
     const configClone = shallowRef<Config | null>(null)
     watch(() => props.config.wmWants, (wmWants) => {
       if (wmWants === 'show') {
         configClone.value = reactive(JSON.parse(JSON.stringify(AppConfig())))
         patrons.value = [1, 2, 3, 4, 5].map(i =>
-          shuffle(APP_PATRONS.filter(row => row.style === i))
+          shuffle(APP_PATRONS.sources.filter(row => row.style === i))
         )
       } else {
         configClone.value = null

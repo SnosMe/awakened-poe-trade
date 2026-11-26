@@ -1,20 +1,20 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { patrons, type Patron, shuffle } from './patrons-loader.js';
+import { patrons, type Patron, shuffle } from './_patrons-loader.js';
 
 interface Props extends Pick<HTMLAttributes<'div'>, 'id' | 'class'> {
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { class: className, ...attrs } = Astro.props;
 
-
-const activeCount = 0; // TODO
-const formerCount = 0; // TODO
+const activeCount = patrons.activeTotal;
+const formerCount = patrons.sources.length - activeCount;
 
 // visible on all pages
-const allTimeTop = patrons.filter(entry => entry.style >= 5);
+const allTimeTop = patrons.sources.filter(entry => entry.style >= 5);
 // randomized per page & per each static site deployment
-const randomPickPool = patrons.filter(entry => entry.style < 5);
+const randomPickPool = patrons.sources.filter(entry => entry.style < 5);
 const randPicked: Patron[] = [];
 while (randPicked.length < allTimeTop.length && randomPickPool.length) {
   const index = Math.floor(Math.random() * randomPickPool.length);
@@ -30,8 +30,7 @@ const scrollSpeed = `${(names.length * 1.100).toFixed(3)}s`;
 <div class:list={["banner", className]} data-nosnippet {...attrs}>
   <p>Updates continue thanks to {activeCount} active and {formerCount} former supporters.</p>
   <div class="become-row">
-    <!-- TODO fix link -->
-    <a href="#">Become one of the heroes&nbsp;&raquo;</a>
+    <a href={`${base}/donate`}>Become one of the heroes&nbsp;&raquo;</a>
     <div class="names" aria-hidden="true">
       <span>{names.join('\n')}</span>
     </div>

@@ -1,5 +1,5 @@
 ---
-import { patrons } from './patrons-loader.js';
+import { patrons } from './_patrons-loader.js';
 
 const tiers = [
   [95, 100],
@@ -10,13 +10,13 @@ const tiers = [
 ];
 
 const byTier = tiers.map((_, i) => {
-  return patrons.filter(p => p.style === tiers.length - i);
+  return patrons.sources.filter(p => p.style === tiers.length - i);
 });
 ---
 
 <p>
-  {/* Last updated: <i>{'TODO'}</i>. */}I update the list manually a couple of times per league,
-  so don't worry if you don't see your name immediately.</p>
+  Last updated: <i>{new Date(patrons.exportedAt).toLocaleDateString('en', { dateStyle: 'medium' })}</i>.
+  I update the list manually a couple of times per league, so don't worry if you don't see your name immediately.</p>
 <p>
   Supporters are assigned to tiers based on both their lifetime contribution amount and membership duration.
   Continued support is weighted slightly more, so 10&nbsp;months of $2 will rank you higher than a single $20&nbsp;donation.

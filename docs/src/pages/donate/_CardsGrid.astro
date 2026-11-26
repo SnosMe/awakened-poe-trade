@@ -1,13 +1,13 @@
 ---
 import linkIcon from '../../assets/external-link.svg?raw';
-
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+import cardsPatreon from '../../assets/cards-patreon.png';
+import cardsSteam from '../../assets/cards-steam.png';
 ---
 
 <div class="support-grid">
   <!-- Patreon Card -->
   <section class="support-card card-patreon">
-    <img class="card-media" src={`${base}/cards-patreon.png`} alt="Patreon membership preview" />
+    <img class="card-media" src={cardsPatreon.src} fetchpriority="high" alt="Patreon membership preview" />
     <div class="card-body">
       <div class="card-header">
         <h3>Patreon</h3>
@@ -31,7 +31,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   <!-- Steam Card -->
   <section class="support-card card-steam">
-    <img class="card-media" src={`${base}/cards-steam.png`} alt="Steam gift cards preview" />
+    <img class="card-media" src={cardsSteam.src} fetchpriority="high" alt="Steam gift cards preview" />
     <div class="card-body">
       <div class="card-header">
         <h3>Steam</h3>
