@@ -1,0 +1,105 @@
+---
+import { patrons } from './patrons-loader.js';
+
+const tiers = [
+  [95, 100],
+  [85, 95],
+  [65, 85],
+  [40, 65],
+  [0, 40],
+];
+
+const byTier = tiers.map((_, i) => {
+  return patrons.filter(p => p.style === tiers.length - i);
+});
+---
+
+<p>
+  {/* Last updated: <i>{'TODO'}</i>. */}I update the list manually a couple of times per league,
+  so don't worry if you don't see your name immediately.</p>
+<p>
+  Supporters are assigned to tiers based on both their lifetime contribution amount and membership duration.
+  Continued support is weighted slightly more, so 10&nbsp;months of $2 will rank you higher than a single $20&nbsp;donation.
+</p>
+<div class="controls">
+  <input id="show-months" type="checkbox">
+  <label for="show-months">Show months</label>
+</div>
+{byTier.map((patrons, i) => (<>
+  <hgroup>
+    <h3>Tier {i + 1}</h3>
+    <p>({i !== tiers.length - 1 ? `Top ${100 - tiers[i][0]}%` : `Bottom ${tiers[i][1]}%`})</p>
+  </hgroup>
+  <ul>
+    {patrons.map(patron => (
+      <li><span class="name">{patron.from}</span>{(patron.months > 1)
+        && <span class:list={['months', patron.months >= 12 && 'year']}> &times;{patron.months}</span>}</li>
+    ))}
+  </ul>
+</>))}
+
+<style>
+hgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: theme('spacing.2');
+
+  & > h3 {
+    margin: 0;
+    @apply text-base;
+  }
+
+  & > p {
+    color: theme('colors.gray.700');
+  }
+}
+
+ul {
+  columns: 2;
+  line-height: theme('lineHeight.tight');
+  list-style: none;
+}
+
+@media (width >= theme('screens.sm')) {
+  ul {
+    columns: 3;
+  }
+}
+
+li {
+  white-space: nowrap;
+  display: flex;
+}
+
+.name {
+  overflow-x: clip;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+.months {
+  color: theme('colors.gray.700');
+  padding-left: theme('spacing.1');
+
+  &.year {
+    font-weight: theme('fontWeight.semibold');
+    color: theme('colors.gray.800');
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: theme('spacing.1');
+  justify-content: end;
+  margin-bottom: calc(-1rem * theme('lineHeight.normal'));
+  user-select: none;
+}
+
+body:not(:has(#show-months:checked)) {
+  .months {
+    display: none;
+  }
+}
+</style>
