@@ -131,7 +131,8 @@
     "not_split": "Не разделено",
     "not_catalysed": "Не катализировано",
     "map_foil_reward": "Особая {0}",
-    "chart_sulphur": "Мертвецкая сера: {0}%"
+    "chart_sulphur": "Мертвецкая сера: {0}%",
+    "stored_experience": "Сохраненный опыт: {0} млн"
   },
   "item_category": {
     "prop": "Категория: {0}",
@@ -330,6 +331,7 @@
     "item_level": "Ур.",
     "gem_level": "Уровень",
     "quality": "К-во",
+    "stored_experience": "Опыт",
     "base_item": "База предмета",
     "graph_7d": "За неделю",
     "getting_price": "Получение цены {0}",

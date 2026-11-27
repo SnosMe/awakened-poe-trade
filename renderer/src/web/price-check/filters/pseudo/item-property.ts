@@ -42,6 +42,18 @@ export function filterMemoryStrands (ctx: FiltersCreationContext, hidden?: strin
   }
 }
 
+export function filterStoredExperience (ctx: FiltersCreationContext) {
+  if (ctx.item.storedExperience != null) {
+    ctx.filters.push(propToFilter({
+      ref: 'Stored Experience: # (millions)',
+      tradeId: 'item.stored_experience',
+      roll: { min: 0, max: Number.MAX_SAFE_INTEGER, value: ctx.item.storedExperience / 1_000_000 },
+      disabled: false,
+      sources: []
+    }, ctx))
+  }
+}
+
 const BLOCK_STATS = {
   flat: [stat('+#% Chance to Block')],
   incr: [stat('#% increased Chance to Block')]

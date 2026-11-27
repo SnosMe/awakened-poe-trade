@@ -177,7 +177,8 @@ const _INTERNAL_TRADE_IDS = [
   'item.heist_target_priceless',
   'item.heist_wings_revealed',
   'item.heist_wings_total',
-  'item.chart_sulphur'
+  'item.chart_sulphur',
+  'item.stored_experience'
 ] as const
 
 export type InternalTradeId = typeof _INTERNAL_TRADE_IDS[number]

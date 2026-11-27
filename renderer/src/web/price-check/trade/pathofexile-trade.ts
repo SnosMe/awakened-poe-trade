@@ -143,6 +143,7 @@ interface TradeRequest {
           memory_level?: FilterRange
           foulborn_item?: FilterBoolean
           vestigial?: FilterBoolean
+          stored_experience?: FilterRange
         }
       }
       armour_filters?: {
@@ -231,6 +232,7 @@ interface FetchResult {
       values: [[string, number]]
       type:
       78 | // Corpse Level (Filled Coffin)
+      31 | // Stored Experience (Facetor's Lens)
       30 | // Spawns a Level %0 Monster when Harvested
       6 | // Quality
       5 // Level
@@ -256,6 +258,7 @@ export interface PricingResult {
   corrupted?: boolean
   quality?: string
   level?: string
+  storedExperience?: string
   relativeDate: string
   priceAmount: number
   priceCurrency: string
@@ -575,6 +578,10 @@ export function createTradeRequest (filters: ItemFilters, stats: FilterOrGroup[]
         propSet(query.filters, 'map_filters.filters.chart_sulphur.min', typeof input.min === 'number' ? input.min : undefined)
         propSet(query.filters, 'map_filters.filters.chart_sulphur.max', typeof input.max === 'number' ? input.max : undefined)
         break
+      case 'item.stored_experience':
+        propSet(query.filters, 'misc_filters.filters.stored_experience.min', typeof input.min === 'number' ? input.min * 1_000_000 : undefined)
+        propSet(query.filters, 'misc_filters.filters.stored_experience.max', typeof input.max === 'number' ? input.max * 1_000_000 : undefined)
+        break
     }
   }
 
@@ -832,7 +839,8 @@ export async function requestResults (
     cache.set<FetchResult[]>(resultIds, data, Cache.deriveTtl(...RATE_LIMIT_RULES.SEARCH, ...RATE_LIMIT_RULES.FETCH))
   }
 
-  return data.map<PricingResult>(result => {
+  return data.map(result => {
+    const storedExperience = result.item.properties?.find(prop => prop.type === 31)?.values[0][0]
     return {
       id: result.id,
       itemLevel: result.item.properties?.find(prop => prop.type === 78)?.values[0][0] ?? String(result.item.ilvl),
@@ -840,6 +848,7 @@ export async function requestResults (
       corrupted: result.item.corrupted,
       quality: result.item.properties?.find(prop => prop.type === 6)?.values[0][0],
       level: result.item.properties?.find(prop => prop.type === 5)?.values[0][0],
+      storedExperience: storedExperience && Math.floor(Number(storedExperience.replaceAll(/\D/g, '')) / 1_000_000).toString(),
       relativeDate: DateTime.fromISO(result.listing.indexed).toRelative({ style: 'short' }) ?? '',
       priceAmount: result.listing.price?.amount ?? 0,
       priceCurrency: result.listing.price?.currency ?? 'no price',
@@ -853,7 +862,7 @@ export async function requestResults (
         : result.listing.account.online
           ? (result.listing.account.online.status === 'afk' ? 'afk' : 'online')
           : 'offline'
-    }
+    } satisfies PricingResult
   })
 }
 

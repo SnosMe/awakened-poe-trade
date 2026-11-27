@@ -73,6 +73,7 @@ export default {
   QUALITY_DIVERGENT: /^相異的 (.*)$/,
   QUALITY_PHANTASMAL: /^幻影的 (.*)$/,
   AREA_LEVEL: '地區等級: ',
+  STORED_EXPERIENCE: '已儲存經驗：',
   HEIST_WINGS_REVEALED: '已揭露側廂: ',
   HEIST_BLUEPRINT_TARGET: '劫盜目標：',
   HEIST_BLUEPRINT_ENCHANTS: '附魔裝備',

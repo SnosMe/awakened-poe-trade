@@ -73,6 +73,7 @@ export default {
   QUALITY_DIVERGENT: /^Divergent (.*)$/,
   QUALITY_PHANTASMAL: /^Phantasmal (.*)$/,
   AREA_LEVEL: 'Area Level: ',
+  STORED_EXPERIENCE: 'Stored Experience: ',
   HEIST_WINGS_REVEALED: 'Wings Revealed: ',
   HEIST_BLUEPRINT_TARGET: 'Heist Target: ',
   HEIST_BLUEPRINT_ENCHANTS: 'Enchanted Armaments',

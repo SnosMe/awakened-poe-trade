@@ -114,7 +114,8 @@
     "not_split": "Not Split",
     "not_catalysed": "Not Catalysed",
     "map_foil_reward": "Foil {0}",
-    "chart_sulphur": "Dead Man's Sulphur: {0}%"
+    "chart_sulphur": "Dead Man's Sulphur: {0}%",
+    "stored_experience": "Stored Experience: {0}kk"
   },
   "item_category": {
     "prop": "Category: {0}",
@@ -316,6 +317,7 @@
     "item_level": "iLvl",
     "gem_level": "Level",
     "quality": "Quality",
+    "stored_experience": "Experience",
     "base_item": "Base item",
     "graph_7d": "Last 7 days",
     "getting_price": "Getting price {0}",

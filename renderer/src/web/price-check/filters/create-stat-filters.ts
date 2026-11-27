@@ -7,7 +7,7 @@ import { FilterTag, ItemHasEmptyModifier, StatFilter, FilterGroup, FilterOrGroup
 import { filterPseudo } from './pseudo'
 import { applyRules as applyAtzoatlRules } from './pseudo/atzoatl-rules'
 import { applyRules as applyMirroredTabletRules } from './pseudo/reflection-rules'
-import { filterEquipmentProps, filterBasePercentile, filterMemoryStrands, BASE_PCTL_AFFECTED_IDS } from './pseudo/item-property'
+import { filterEquipmentProps, filterBasePercentile, filterMemoryStrands, filterStoredExperience, BASE_PCTL_AFFECTED_IDS } from './pseudo/item-property'
 import { mapProps, valdoBadMods, chartProps } from './pseudo/maps'
 import { applyFlaskHybridMod } from './pseudo/flasks'
 import { applyHeistRules } from './pseudo/heist'
@@ -76,6 +76,7 @@ export function createExactStatFilters (
 
   filterBasePercentile(ctx)
   filterMemoryStrands(ctx)
+  filterStoredExperience(ctx)
   mapProps(opts.mode === 'bulk', ctx)
   chartProps(opts.mode === 'bulk', ctx)
   valdoBadMods(ctx)

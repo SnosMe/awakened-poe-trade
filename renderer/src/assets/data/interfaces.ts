@@ -202,6 +202,7 @@ export interface TranslationDict {
   QUALITY_DIVERGENT: RegExp
   QUALITY_PHANTASMAL: RegExp
   AREA_LEVEL: string
+  STORED_EXPERIENCE: string
   HEIST_WINGS_REVEALED: string
   HEIST_BLUEPRINT_TARGET: string
   HEIST_BLUEPRINT_ENCHANTS: string

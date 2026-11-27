@@ -63,6 +63,7 @@ export interface ParsedItem {
   gemLevel?: number
   vaalGem?: BaseType
   imbuedGem?: boolean
+  storedExperience?: number
   mercenaryBuild?: BaseType
   mercenarySkills?: ParsedStat[][]
   talismanTier?: number

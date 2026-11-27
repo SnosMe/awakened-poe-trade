@@ -73,6 +73,7 @@ export default {
   QUALITY_DIVERGENT: /^Искривлённый: (.*)$/,
   QUALITY_PHANTASMAL: /^Фантомный: (.*)$/,
   AREA_LEVEL: 'Уровень области: ',
+  STORED_EXPERIENCE: 'Сохраненный опыт: ',
   HEIST_WINGS_REVEALED: 'Крыльев обнаружено: ',
   HEIST_BLUEPRINT_TARGET: 'Предмет кражи: ',
   HEIST_BLUEPRINT_ENCHANTS: 'Зачарованное вооружение',

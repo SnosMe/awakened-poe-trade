@@ -73,6 +73,7 @@ export default {
   QUALITY_DIVERGENT: /^상이한 (.*)$/,
   QUALITY_PHANTASMAL: /^몽환적인 (.*)$/,
   AREA_LEVEL: '지역 레벨: ',
+  STORED_EXPERIENCE: '저장된 경험치: ',
   HEIST_WINGS_REVEALED: '부속 건물 드러남: ',
   HEIST_BLUEPRINT_TARGET: '강탈 대상: ',
   HEIST_BLUEPRINT_ENCHANTS: '인챈트된 병기',
